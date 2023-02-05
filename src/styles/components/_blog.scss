@@ -1,0 +1,36 @@
+.blog {
+  article {
+    h2 {
+      font-size: 1.5em;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
+  main {
+    article {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      margin-bottom: 1em !important;
+
+      box-shadow: 0 1px 2px rgba(111, 116, 154, 0.07843),
+        0 2px 2px rgba(111, 116, 154, 0.07843),
+        0 1px 4px rgba(111, 116, 154, 0.07843);
+      padding: 1.5em;
+      border-radius: 8px;
+      font-size: 0.9em !important;
+
+      h2 > a {
+        color: var(--ifm-font-color-base);
+        text-decoration: none;
+      }
+
+      h4 {
+        font-size: 1.2em;
+      }
+    }
+  }
+}

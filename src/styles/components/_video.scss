@@ -1,0 +1,55 @@
+/* Video */
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.background-video-wrapper {
+  background-color: black;
+  background-color: var(--color-codat-primary);
+  background-image: url("https://files.readme.io/cd5b96b-docsbg.png");
+  background-size: cover;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  padding: 2em;
+
+  .background-video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  .banner-video {
+    padding: 1em;
+    max-width: 54em;
+    margin: auto;
+
+    h1,
+    p {
+      color: white;
+    }
+  }
+}
+
+.background-video-spacer {
+  opacity: 0;
+  margin-bottom: 8em;
+}

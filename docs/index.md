@@ -1,0 +1,344 @@
+---
+title: Welcome
+hide_title: true
+hide_description: true
+sidebar_label: What is Codat?
+slug: /
+hide_table_of_contents: true
+className: index
+tags:
+  - Overview
+  - Codat
+---
+
+<head>
+  <title>
+    Codat_docs | Connect to your small business customers' financial data
+  </title>
+  <meta
+    name="description"
+    content="Codat makes accessing consented business data from your customers' banking, accounting, and commerce platforms easy. Build once to our API to aggregate data, underwrite credit risk, and automate accounting for your SMB customers."
+  />
+  <link rel="canonical" href="https://docs.codat.io/docs" />
+  <link
+    rel="alternate"
+    href="https://docs.codat.io/docs"
+    hreflang="x-default"
+  />
+  <link rel="alternate" href="https://docs.codat.io/docs" hreflang="en" />
+  <meta property="og:url" content="https://docs.codat.io/docs" />
+</head>
+
+<div className="background-video-wrapper">
+  <video autoPlay muted loop id="myVideo" className="background-video">
+    <source src="/video/flux.mov" type="video/mov" />
+  </video>
+
+  <div className="banner-video">
+    <h1>Welcome to the Codat docs</h1>
+    <p>
+      Codat solves the connectivity challenge for developers building the next
+      generation of products for small businesses.{" "}
+    </p>
+    <p>
+      We're experts in how your application interacts with the other software
+      your customers use, so you can focus on what makes you superior.
+    </p>
+  </div>
+</div>
+
+<div className="background-video-spacer">
+  <h1>Welcome to the Codat docs</h1>
+  <p>
+    Codat solves the connectivity challenge for developers building the next
+    generation of products for small businesses.{" "}
+  </p>
+  <p>
+    We're experts in how your application interacts with the other software your
+    customers use, so you can focus on what makes you superior.
+  </p>
+</div>
+
+<p>
+  For actionable insights, enhanced financial metrics, and automatic
+  reconciliation, try <b>Assess</b> and <b>Sync for Commerce</b>, our specialist
+  products for underwriting and accounting automation.
+</p>
+<p>
+  Build to our <b>Accounting API</b>, <b>Open Banking API</b>, and{" "}
+  <b>Commerce API</b> to pull, push, transform and visualize data from over 35
+  major accounting, open banking, payments & eCommerce platforms, integrated
+  with a single standardized data model.
+</p>
+
+<hr />
+
+## Products
+
+Our products can help you make the most of your customers' consented business data.
+
+<ul className="card-container">
+  <li className="card">
+    <div className="header">
+      <img
+        src="https://www.codat.io/wp-content/uploads/2022/03/accounting-2.png"
+        className="mini-icon"
+      />
+      <h3>Accounting API</h3>
+    </div>
+    <p>
+      Standardize how you connect to your customers' accounts. View, create,
+      update, and delete data in the same way for all the leading accounting
+      platforms.
+    </p>
+    <p>
+      See our{" "}
+      <a href="https://docs.codat.io/docs/accounting-overview" target="_blank">
+        accounting integrations
+      </a>
+      .
+    </p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img
+        src="https://www.codat.io/wp-content/uploads/2022/03/Storefront-3.png"
+        className="mini-icon"
+      />
+      <h3>Commerce API</h3>
+    </div>
+    <p>
+      Connect to every payment, Point of Sale, eCommerce platform, and
+      marketplace and see your customers' sales, orders, and payments data in a
+      standardized format.
+    </p>
+    <p>
+      See our{" "}
+      <a href="https://docs.codat.io/docs/commerce-overview" target="_blank">
+        commerce integrations
+      </a>
+      .
+    </p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img
+        src="https://www.codat.io/wp-content/uploads/2022/03/Bank-2.png"
+        className="mini-icon"
+      />
+      <h3>Banking API</h3>
+    </div>
+    <p>
+      Use Open Banking data for bank accounts and transactions alongside
+      accounting and commerce data, all in one place.
+    </p>
+    <p>
+      See our{" "}
+      <a href="https://docs.codat.io/docs/banking-overview" target="_blank">
+        banking integrations
+      </a>
+      .
+    </p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img
+        src="https://www.codat.io/wp-content/uploads/2022/04/assess.png"
+        className="mini-icon"
+      />
+      <h3>Assess</h3>
+    </div>
+    <p>
+      Make smarter credit decisions for your small business customers. Assess
+      enriches your customer's accounting, commerce and banking data to surface
+      actionable insights you didn't have before.
+    </p>
+    <p>
+      Read our guide to{" "}
+      <a
+        href="https://docs.codat.io/docs/assess-how-to-get-started"
+        target="_blank"
+      >
+        getting started with Assess
+      </a>
+      .
+    </p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img
+        src="https://static.codat.io/public/icons/docs/sync.png"
+        className="mini-icon"
+      />
+      <h3>Sync for Commerce</h3>
+    </div>
+    <p>
+      Building to lots of different APIs does not scale. With Sync for Commerce,
+      you can send a merchant's data to their accounting platform without
+      worrying about which one they use.
+    </p>
+    <p>
+      Read more and find out{" "}
+      <a
+        href="https://docs.codat.io/docs/sync-commerce-overview"
+        target="_blank"
+      >
+        how to get started
+      </a>
+      .
+    </p>
+  </li>
+</ul>
+
+<hr />
+
+## Get started
+
+Take your first steps through the information and support available to you.
+
+<ul className="card-container">
+  <li className="card">
+    <div className="header">
+      <img
+        src="https://www.codat.io/wp-content/uploads/2022/03/accounting-2.png"
+        className="mini-icon"
+      />
+      <h3>Documentation</h3>
+    </div>
+    <p>
+      Begin with our developer{" "}
+      <a href="https://docs.codat.io/docs/get-started-api">
+        getting started guide
+      </a>
+      , or press
+      <code>Ctrl-K</code> to bring up the quick search bar to find the information
+      you need.
+    </p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img
+        src="https://www.codat.io/wp-content/uploads/2022/03/Stack.png"
+        className="mini-icon"
+      />
+      <h3>API reference</h3>
+    </div>
+    <p>
+      Jump in and start using the Codat API endpoints through our interactive{" "}
+      <a href="https://docs.codat.io/reference/authentication">API reference</a>
+      .
+    </p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img
+        src="https://www.codat.io/wp-content/uploads/2022/03/Handshake.png"
+        className="mini-icon"
+      />
+      <h3>Support</h3>
+    </div>
+    <p>
+      Having trouble? Explore our{" "}
+      <a href="https://codat.zendesk.com/hc/en-gb" target="_blank">
+        troubleshooting articles
+      </a>
+      , or click the "Support" icon in the bottom right to raise a case with our
+      support team.
+    </p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img
+        src="https://www.codat.io/wp-content/uploads/2022/03/Coins.png"
+        className="mini-icon"
+      />
+      <h3>Free trial</h3>
+    </div>
+    <p>
+      Click{" "}
+      <a href="https://signup.codat.io/" target="_blank">
+        here
+      </a>{" "}
+      to sign up for your free trial, or contact our sales team to schedule a
+      demo and learn about Enterprise Pricing opportunities.
+    </p>
+  </li>
+</ul>
+
+<hr />
+
+## Key concepts
+
+Understand the <a href="https://docs.codat.io/docs/core-concepts" target="_blank">key concepts &amp; terminology</a> used throughout our documentation.
+
+<ul className="card-container">
+  <li className="card">
+    <div className="header">
+      <img
+        src="https://www.codat.io/wp-content/uploads/2022/03/Target-1.png"
+        className="mini-icon"
+      />
+      <h3>Companies</h3>
+    </div>
+    <p>
+      <a href="https://docs.codat.io/docs/core-companies" target="_blank">
+        Companies
+      </a>
+      and their <a
+        href="https://docs.codat.io/docs/core-dataconnections"
+        target="_blank"
+      >
+        data connections
+      </a> are at the heart of Codat - find out more about how to create and use
+      them.
+    </p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img
+        src="https://www.codat.io/wp-content/uploads/2022/03/Handshake.png"
+        className="mini-icon"
+      />
+      <h3>Integrations</h3>
+    </div>
+    <p>
+      Learn how to set up and configure Codat's suite of over 30 integrations to
+      connect to your customers{" "}
+      <a href="https://docs.codat.io/docs/accounting-overview">Accounting</a>,{" "}
+      <a href="https://docs.codat.io/docs/commerce-overview">Sales</a> and{" "}
+      <a href="https://docs.codat.io/docs/banking-overview">Banking</a> data.
+    </p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img
+        src="https://www.codat.io/wp-content/uploads/2022/03/Stack.png"
+        className="mini-icon"
+      />
+      <h3>Data model</h3>
+    </div>
+    <p>
+      Start exploring our{" "}
+      <a href="https://docs.codat.io/docs/datamodel-accounting">accounting</a>,{" "}
+      <a href="https://docs.codat.io/docs/datamodel-commerce">commerce</a> and{" "}
+      <a href="https://docs.codat.io/docs/data-model-banking">banking</a> data
+      models, including invoices, bills, customers, suppliers, and more.
+    </p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img
+        src="https://www.codat.io/wp-content/uploads/2022/04/say-yes.png"
+        className="mini-icon"
+      />
+      <h3>Authorization flow</h3>
+    </div>
+    <p>
+      Explore how your customers can{" "}
+      <a href="https://docs.codat.io/docs/auth-flow">
+        authorize access to their data
+      </a>{" "}
+      with Link or by building a bespoke API flow.
+    </p>
+  </li>
+</ul>

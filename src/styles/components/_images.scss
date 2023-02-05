@@ -1,0 +1,16 @@
+/* Images */
+
+article .markdown > img,
+article .markdown > p > img {
+  border: 1px solid #ededed;
+  border-radius: 6px;
+  //cursor: zoom-in;
+  text-align: center;
+  max-height: 450px;
+  margin: auto;
+  margin-bottom: 2em;
+}
+
+// .lightbox .lightbox-inner img {
+//  cursor: zoom-out;
+// }

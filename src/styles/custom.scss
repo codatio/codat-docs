@@ -1,0 +1,253 @@
+/* stylelint-disable docusaurus/copyright-header */
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+
+@use "./components/admonition";
+@use "./components/back-to-top-button";
+@use "./components/blog";
+@use "./components/cards";
+@use "./components/code";
+@use "./components/doc-item";
+@use "./components/doc-page";
+@use "./components/doc-sidebar";
+@use "./components/edit-this-page";
+@use "./components/images";
+@use "./components/lists";
+@use "./components/markdown";
+@use "./components/navbar";
+@use "./components/navbar-sidebar";
+@use "./components/pagination";
+@use "./components/search";
+@use "./components/scrollbar";
+@use "./components/table";
+@use "./components/tabs";
+@use "./components/theme-toggle";
+@use "./components/toc";
+@use "./components/video";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+:root {
+  --color-black: #0d0d0d;
+  --color-interface-core: #556680;
+  --color-interface-dark: #556680;
+  --color-interface-5: #f7fafd;
+  --color-interface-10: #f0f4fa;
+  --color-interface-20: #e4ecf6;
+
+  --color-primary: var(--color-interface-core);
+
+  --color-warning-10: #fff7eb;
+  --color-warning-20: #ffeed6;
+  --color-warning-dark: #754300;
+  --color-error-10: #fdebee;
+  --color-error-20: #fcd6dd;
+  --color-error-dark: #750024;
+  --color-neutral-10: #ecf5fd;
+  --color-neutral-20: #daebfc;
+  --color-neutral-dark: #004194;
+  --color-positive-10: #eaf6ed;
+  --color-positive-20: #eaf6ed;
+  --color-positive-dark: #004c00;
+
+  --color-codat-primary: #482deb;
+  --color-link-primary: #482deb;
+
+  --ifm-color-link: var(--color-codat-primary);
+  --ifm-background-color: var(--token-primary-bg-c);
+
+  // ------------ Fonts
+  --ifm-font-family-base: "Poppins", -apple-system, BlinkMacSystemFont, Inter,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI emoji";
+  --ifm-font-family-monospace: "SFMono-Regular", "Roboto Mono", Consolas,
+    "Liberation Mono", Menlo, Courier, monospace;
+  --ifm-font-color-base: var(--color-black);
+
+  --font-weight: 400;
+  --font-weight-bold: 500;
+
+  --ifm-menu-link-sublist-icon: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgdmlld0JveD0iMCAwIDEwIDYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik04Ljk5OTg4IDVMNC45OTk4OCAxTDAuOTk5ODc4IDUiIHN0cm9rZT0iIzAzMDYwQiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K");
+
+  //#region ----------- Z Indices ------------
+  --z-sidebar: 2000;
+  --z-backdrop: 1100;
+  //#endregion
+
+  // -------
+  --ifm-navbar-link-hover-color: initial;
+  --ifm-navbar-padding-vertical: 0;
+  --ifm-navbar-item-padding-vertical: 0;
+}
+
+html[data-theme="light"] {
+  --token-primary-bg-c: #ffffff;
+  --token-secondary-bg-c: var(--color-interface-5);
+  --token-secondary-bg-c-alt: var(--color-interface-10);
+
+  --color-primary: var(--color-codat-primary);
+  --ifm-color-primary: var(--color-codat-primary);
+  --ifm-color-secondary: var(--color-interface-5);
+  --ifm-color-success: var(--color-positive-dark);
+  --ifm-color-info: var(--color-neutral-dark);
+  --ifm-color-warning: var(--color-warning-dark);
+  --ifm-color-danger: var(--color-error-dark);
+
+  --ifm-background-surface-color: var(--token-primary-bg-c);
+
+  --ifm-navbar-background-color: var(--token-primary-bg-c);
+  --ifm-navbar-shadow: 0 1px 0 0 var(--c-gray-0);
+
+  --header-color: var(--color-black);
+  --ifm-heading-color: var(--header-color);
+  --sidebar-category-c: var(--header-color);
+  --ifm-heading-color: var(--c-carbon-100);
+  --ifm-code-background: var(--c-indigo-10);
+  --ifm-font-color-base: var(--c-carbon-90);
+  //--ifm-font-color-base: var(--color-primary);
+  --markdown-text-intro-c: var(--color-primary);
+}
+
+html[data-theme="dark"] {
+  --token-primary-bg-c: #03060b;
+  --token-secondary-bg-c: #13171c;
+  --token-secondary-bg-c-alt: #252c35;
+
+  --ifm-link-color: var(--c-blue-70);
+  --ifm-link-hover-color: rgba(77, 141, 255, 0.8);
+
+  --ifm-background-surface-color: var(--token-primary-bg-c);
+
+  --ifm-navbar-background-color: var(--token-primary-bg-c);
+  --ifm-navbar-shadow: 0 1px 0 0 var(--c-gray-90);
+
+  --ifm-heading-color: #fff;
+  --ifm-font-color-base: var(--c-carbon-10);
+  --ifm-background-color: var(--token-primary-bg-c);
+  --ifm-dropdown-background-color: var(--token-primary-bg-c);
+
+  --ifm-menu-link-sublist-icon-filter: invert(100%);
+}
+
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-smoothing: antialiased;
+
+  scroll-padding-top: calc(var(--ifm-navbar-height) + 16px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+p {
+  font-size: 16px;
+  letter-spacing: 0.2px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+article {
+  a {
+    text-decoration: underline;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--ifm-font-family-base);
+}
+
+.theme-doc-version-banner {
+  display: none;
+}
+
+.theme-doc-version-badge {
+  display: none;
+}
+
+ion-grid {
+  margin: 1em 0;
+}
+
+figure {
+  margin: 0;
+}
+
+figure > * {
+  display: block;
+  margin: 0 auto;
+}
+
+figure.device {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+figcaption {
+  text-align: center;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+iframe {
+  background-color: rgba(0, 0, 0, 0.02);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+hr {
+  border-bottom: 0;
+  margin: 30px 0 !important;
+}
+
+.git-link svg {
+  height: 1em;
+  width: 1em;
+  vertical-align: -0.1em;
+}
+.git-link path {
+  fill: currentColor;
+}
+
+.cordova-ee-card {
+  max-width: 100%;
+}
+
+.cordova-ee-img {
+  width: 50px;
+  float: left;
+  margin-right: 20px;
+}
+
+.native-ee-detail {
+  float: right;
+  cursor: pointer;
+}
+
+.cordova-ee-card p {
+  margin: 1rem 0 0;
+}

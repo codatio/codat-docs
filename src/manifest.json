@@ -1,0 +1,15 @@
+{
+  "name": "Codat Documentation",
+  "short_name": "Codat_docs",
+  "start_url": "/",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/docs/assets/img/meta/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff"
+}

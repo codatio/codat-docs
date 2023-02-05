@@ -1,0 +1,25 @@
+.apiNav {
+  --color-canvas-100: var(--token-secondary-bg-c);
+
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  > a:first-child {
+    min-width: 300px;
+    background: var(--token-secondary-bg-c);
+    height: var(--ifm-navbar-height);
+    align-items: center;
+    display: flex;
+    padding-inline-start: var(--sidebar-spacing-horizontal);
+    padding-inline-end: var(--sidebar-spacing-horizontal);
+
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
+
+  > nav {
+    width: 100%;
+  }
+}

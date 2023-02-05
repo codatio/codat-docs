@@ -1,0 +1,42 @@
+/* Lists */
+
+article .markdown > ol {
+  list-style: none;
+  padding: 0em !important;
+  margin: 2em 0 !important;
+}
+
+article .markdown > ol:not([start]) {
+  counter-reset: li-counter;
+}
+
+article .markdown > ol > li {
+  counter-increment: li-counter;
+  margin-bottom: 1.5em !important;
+  position: relative;
+  margin-left: 3em;
+}
+
+article .markdown > ol > li::before {
+  content: counter(li-counter);
+  color: var(--ifm-color-base);
+  background-color: var(--color-interface-10);
+  font-weight: bold;
+  border-radius: 50%;
+  margin-right: 0.5em;
+  font-family: monospace;
+  font-size: 12px;
+  position: absolute;
+  padding: 1px 8px;
+  left: -3em;
+  margin-top: 2px;
+  line-height: 20px;
+  top: 3px;
+}
+
+article .markdown > ol ul,
+article .markdown > ul ul,
+article .markdown > ol ol,
+article .markdown > ul ol {
+  margin-top: 0.5em !important;
+}

@@ -1,0 +1,21 @@
+/* Scrollbar */
+
+:root {
+  --scrollbar-track-color: #eef0f2;
+  --scrollbar-thumb-color: #dde0e6;
+}
+
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track-color);
+  border-radius: 4px;
+}

@@ -1,0 +1,169 @@
+html[data-theme="light"] {
+  --admonition-note-c-bg: var(--c-yellow-10);
+  --admonition-info-c-bg: var(--c-blue-0);
+  --admonition-tip-c-bg: var(--c-green-10);
+  --admonition-caution-c-bg: var(--c-orange-10);
+  --admonition-danger-c-bg: var(--c-red-0);
+
+  --admonition-code-note-c-bg: var(--c-yellow-30);
+  --admonition-code-info-c-bg: var(--c-blue-10);
+  --admonition-code-tip-c-bg: var(--c-green-20);
+  --admonition-code-caution-c-bg: var(--c-orange-20);
+  --admonition-code-danger-c-bg: var(--c-red-10);
+
+  --ifm-alert-background-color: var(--color-interface-5);
+  --ifm-color-secondary-contrast-background: var(--ifm-alert-background-color);
+}
+
+html[data-theme="dark"] {
+  --admonition-note-c-bg: #241800;
+  --admonition-info-c-bg: #000d24;
+  --admonition-tip-c-bg: #00240a;
+  --admonition-caution-c-bg: #240b00;
+  --admonition-danger-c-bg: #240002;
+
+  --admonition-code-note-c-bg: #3d2900;
+  --admonition-code-info-c-bg: #00163d;
+  --admonition-code-tip-c-bg: #003d11;
+  --admonition-code-caution-c-bg: #3d1200;
+  --admonition-code-danger-c-bg: #3d0003;
+}
+
+:root {
+  --admonition-bar-note-c-bg: var(--c-yellow-80);
+  --admonition-bar-info-c-bg: var(--c-blue-80);
+  --admonition-bar-tip-c-bg: var(--c-green-80);
+  --admonition-bar-caution-c-bg: var(--c-orange-80);
+  --admonition-bar-danger-c-bg: var(--c-red-60);
+
+  --admonition-link-note-c: var(--c-yellow-90);
+  --admonition-link-info-c: var(--c-blue-90);
+  --admonition-link-tip-c: var(--c-green-90);
+  --admonition-link-caution-c: var(--c-orange-90);
+  --admonition-link-danger-c: var(--c-red-90);
+}
+
+// /* Callouts */
+.theme-admonition.alert {
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-radius: 4px;
+  margin: 2em 0 !important;
+
+  > div:first-child {
+    text-transform: initial !important;
+  }
+}
+
+//   --ifm-alert-background-color: var(--color-interface-dark) !important;
+//   --admonition-bar-c-bg: var(--color-interface-dark) !important;
+//   --admonition-code-c-bg: var(--color-interface-20) !important;
+//   --admonition-link-c: var(--color-interface-5) !important;
+
+//   background: var(--ifm-alert-background-color);
+//   color: var(--admonition-bar-c-bg);
+//   color: var(--admonition-code-c-bg);
+//   color: var(--admonition-link-c);
+
+//   & a {
+//     color: var(--color-link-primary) !important;
+//   }
+
+//   &.note {
+//     --ifm-alert-background-color: var(--color-interface-dark) !important;
+//     --admonition-bar-c-bg: var(--color-interface-dark) !important;
+//     --admonition-code-c-bg: var(--color-interface-20) !important;
+//     --admonition-link-c: var(--color-interface-5) !important;
+//   }
+
+//   &.info {
+//     --ifm-alert-background-color: var(--color-neutral-dark) !important;
+//     --admonition-bar-c-bg: var(--color-neutral-dark) !important;
+//     --admonition-code-c-bg: var(--color-neutral-20) !important;
+//     --admonition-link-c: var(--color-neutral-10) !important;
+//   }
+
+//   &.tip {
+//     --ifm-alert-background-color: var(--color-positive-dark) !important;
+//     --admonition-bar-c-bg: var(--color-positive-dark) !important;
+//     --admonition-code-c-bg: var(--color-positive-20) !important;
+//     --admonition-link-c: var(--color-positive-10) !important;
+//   }
+
+//   &.caution {
+//     --ifm-alert-background-color: var(--color-warning-dark) !important;
+//     --admonition-bar-c-bg: var(--color-warning-dark) !important;
+//     --admonition-code-c-bg: var(--color-warning-20) !important;
+//     --admonition-link-c: var(--color-warning-10) !important;
+//   }
+
+//   &.danger {
+//     --ifm-alert-background-color: var(--color-error-dark) !important;
+//     --admonition-bar-c-bg: var(--color-error-dark) !important;
+//     --admonition-code-c-bg: var(--color-error-20) !important;
+//     --admonition-link-c: var(--color-error-10) !important;
+//   }
+
+//   .callout.callout .callout-heading > * {
+//     color: #4c555a;
+//   }
+
+//   .callout.callout h3.callout-heading.empty span.callout-icon {
+//    line-height: 0.5;
+//   }
+
+//   blockquote.callout blockquote {
+//    padding: 1em !important;
+//   }
+// }
+
+// .theme-admonition {
+//   position: relative;
+//   border: none;
+
+//   --ifm-alert-color: var(--color-codat-primary);
+//   --ifm-alert-padding-horizontal: 2rem;
+//   --ifm-alert-padding-vertical: 1.5rem;
+
+//   .admonition-heading h5 {
+//     text-transform: unset;
+
+//     &:first-letter {
+//       text-transform: uppercase;
+//     }
+//   }
+
+//   .admonition-content {
+//     p {
+//       a {
+//         color: var(--admonition-link-c);
+//         text-decoration: underline;
+//       }
+
+//       code {
+//         background: var(--admonition-code-c-bg);
+//       }
+//     }
+//   }
+
+//   &-icon {
+//     display: none;
+//   }
+
+//   &-heading {
+//     font-size: 1rem;
+//     line-height: 1.6;
+//   }
+
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     z-index: 2;
+//     left: 0;
+//     top: 0;
+//     bottom: 0;
+//     width: 5px;
+//     background: var(--admonition-bar-c-bg);
+//     border-radius: 4px 0 0 4px;
+//   }
+// }
