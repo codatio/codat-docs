@@ -6,8 +6,10 @@ title: "Uploading receipts"
 
 Adding a receipt to the transaction can be done after the sync, different accounting software supports different file formats and sizes so its best to check [here](/datamodel-accounting-attachments#options-for-pushing-attachments-to-the-accounting-platform) for the supported options.
 
+```http
 **POST**
 /companies/{companyId}/syncs/{syncId}/transactions/{transactionId}/atachments
+```
 
 ```
 Content-Type: multipart/form-data; boundary=yourBoundaryString
@@ -31,10 +33,11 @@ If you use Postman, there are some extra steps you need to follow to attach a fi
 
 1.  [Set up a POST request](/using-postman-to-call-the-api), in a similar way to the example, to the following endpoint:
 
-    1.  POST
+    ```http
+        POST
 
         /companies/{companyId}/syncs/{syncId}/transactions/{transactionId}/atachments
-
+    ```
 2.  In the request setup, select **Body**.
 
 3.  From the **Body** menu, select **form-data**.

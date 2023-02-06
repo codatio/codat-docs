@@ -21,7 +21,7 @@ You can obtain the latest list of Codat categories from our <a className="extern
 5. Allows you to view the chart of accounts in our standard categorized model OR in the original format of the small business.
 6. Improves monitoring as you can use this to create alerts for deteriorating trends.
 
-#How are categories assigned to accounts?
+# How are categories assigned to accounts?
 Account categories have three sub-categories:
 
 - Account type - the highest level classification of an account, e.g. Asset, Liability, etc.
@@ -36,5 +36,5 @@ Codat tries to suggest a category for every account, but this is not always poss
 
 You can confirm categories using the <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/patch_data_companies__companyId__connections__connectionId__assess_accounts_categories" target="_blank">PATCH</a> method or Codat’s <a className="external" href="https://app.codat.io/" target="_blank">no code</a> feature in the Portal. This guarantees the categories assigned to accounts are correct. If you disagree with a suggestion, you can assign a different category.
 
-#How often is a company’s account categories updated?
+# How often is a company’s account categories updated?
 A company’s categories are updated each time it syncs to Codat. Previously-confirmed categories will not revert back to the suggested category unless a better suited category was added to Codat’s list of categories. You will then confirm whether the suggested category is correct for the account.

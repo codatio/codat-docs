@@ -61,7 +61,8 @@ Ensure that your client has created a new user (as described above) for their Sa
 
   To refresh the page in Sage 50, you can click the filter in the Suppliers view twice as below. If a supplier has been successfully created, the account will appear when the page is refreshed.  
   ![](https://files.readme.io/719da3c-supplierFilterRefresh.PNG "supplierFilterRefresh.PNG")
-  :::
+
+:::
 
 ### Sage 50 is closed and the connector is pushing data. When I open Sage, can I log in with the same credentials?
 

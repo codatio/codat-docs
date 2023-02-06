@@ -2,7 +2,7 @@
 title: "The sync process explained"
 ---
 
-```mermaid
+``` mermaid
   sequenceDiagram
     User->>+You: User Approves Expenses with receipt
     You-)+Codat: POST expense-transaction
@@ -13,7 +13,7 @@ title: "The sync process explained"
     Codat-)Accounting: Sync expense-transaction
     Codat->>-You: Sync Complete webhook event
     You->>Codat: Check transactions
-    Codat-->>You:
+    Codat-->>You: 
     par Each Succesfull Reconciliation
         You->>+Codat: POST attachment
         Codat->>Accounting: Upload Attachment

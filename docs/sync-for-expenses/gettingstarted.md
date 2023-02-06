@@ -3,10 +3,6 @@ title: "Getting started"
 tags: [syncforexpense, gettingstarted, prerequisites, platformsupport]
 ---
 
-# Getting Started
-
-## Prerequisites for Sync for Expenses
-
 ### DataTypes
 
 Before you start using sync for expenses, you will need to ensure that the following datatypes are enabled in your Codat instance.

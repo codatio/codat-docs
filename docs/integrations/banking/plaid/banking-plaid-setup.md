@@ -20,7 +20,8 @@ You'll need to:
 - If you already have a Plaid account, have your account details to hand.
 
 - If you don't, <a href="https://dashboard.plaid.com/signup" target="_blank">create an account</a> before you start the setup process.
-  :::
+
+:::
 
 ## Configure your Plaid application
 

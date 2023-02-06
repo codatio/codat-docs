@@ -1,5 +1,6 @@
 ---
 title: "Sage Bank Feeds"
+sidebar_label: Overview
 description: "Learn about our Sage Bank Feeds integration"
 createdAt: "2022-10-05T10:36:56.241Z"
 updatedAt: "2023-01-17T17:05:51.486Z"

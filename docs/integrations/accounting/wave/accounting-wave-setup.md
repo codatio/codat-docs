@@ -19,7 +19,8 @@ Before you can access data from customers using Wave for their accounting, you n
 
 - If you already have a Wave account, have your account details to hand.
 - If you don't, <a href="https://my.waveapps.com/register/" target="_blank">create an account</a> before you start registration.
-  :::
+
+:::
 
 To register your Wave application you need to use Wave's developer portal.
 

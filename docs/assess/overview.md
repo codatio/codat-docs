@@ -97,7 +97,7 @@ Assess empowers you with a host of features to help you streamline your underwri
         src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
         class="mini-icon"
       />
-      <h3>Data Integrity</h3>
+      <h3>Data integrity</h3>
     </div>
     <p>
       We cross-reference accounting data with banking data to verify data

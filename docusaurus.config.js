@@ -9,7 +9,7 @@ module.exports = {
   title: "Codat_docs",
   tagline:
     "We make accessing consented business data from your customers' banking, accounting, and commerce platforms easy. Build once to our API to aggregate data, underwrite credit risk, and automate accounting for your SMB customers.",
-  url: "https://codat.io",
+  url: "https://docs.codat.io",
   baseUrl: `${BASE_URL}/`,
   i18n: {
     defaultLocale: "en",

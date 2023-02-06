@@ -3,8 +3,6 @@ title: "Configuration and categorizing expenses"
 tags: [syncforexpense, mappingOptions, Config]
 ---
 
-# Categorize and track expenses
-
 Once your SMB user has authorized a connection to their accounting platform and you have created a data connection, you can then configure and enable Sync for Expenses.
 
 ## Configuration

@@ -38,7 +38,8 @@ Codat will **not** be able to accept any new requests to initiate another sync w
 - `Sync Failed`: This will be triggered if there are any failures during the sync process.
 
 - `Sync Completed`: This will be triggered when a sync completes without any failures.
-  :::
+
+:::
 
 ### Sync Status
 

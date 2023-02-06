@@ -13,7 +13,7 @@ The **Categorization of accounts** API consists of the following endpoints:
 - [Update categories for a company](#update-categories-for-a-company)
 - [Update the category for a specific account](#update-the-category-for-a-specific-account)
 
-#API endpoints for categorization of accounts
+# API endpoints for categorization of accounts
 
 Account categories have three sub-categories:
 
@@ -21,15 +21,17 @@ Account categories have three sub-categories:
 - Account subtype — category often used for traditional financial ratios, e.g. Current assets, Current liabilities, etc.
 - Account detail — individual accounts, e.g. Cash, Inventory, Depreciation, etc.
 
-#List all available categories
+# List all available categories
 
 The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_assess_accounts_categories" target="_blank">Swagger</a> under **Assess**. It contains the original category suggested by Codat `suggested` and the category that was confirmed by you or your customer `confirmed`.
 
 - A list of all the Codat standard categories can be found under:
 
-`GET /data/assess/accounts/categories`
-
+```http
+GET /data/assess/accounts/categories
 ```
+
+```json
 [
 {
   "type": "Asset",
@@ -48,13 +50,8 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
   "detailTypeDescription": "Use 'General services' for income generated from services the company performs or usage fees charged."
 }
 ...
-]",
-      "language": "json",
-      "name": "Standard categories of accounts - sample response"
-    }
-  ]
-}
-[/block.
+]
+```
 
 ## Get the category for a specific account
 
@@ -62,8 +59,11 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 
 The suggested and confirmed categories for a specific account can be obtained from the following endpoint:
 
-`GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categories`
+```http
+GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categories
 ```
+
+```json
 
     {
     "accountRef": {
@@ -81,18 +81,16 @@ The suggested and confirmed categories for a specific account can be obtained fr
       "detailType": "AmortisationDepreciation"
     }
 
-},",
-"language": "json",
-"name": "Suggested and confirmed categories - sample response"
 }
-]
-}
-[/block]
-#List all accounts with their categories
+```
+
+# List all accounts with their categories
 
 The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_accounts_categories" target="_blank">Swagger</a> under **Assess**.
 
-`GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categories`
+```http
+GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categories
+```
 
 ## Data model
 
@@ -164,7 +162,9 @@ The date the category was suggested for the account."
 "rows": 4
 }
 [/block]
-#Confirmed
+
+# Confirmed
+
 [block:parameters]
 {
 "data": {
@@ -214,7 +214,7 @@ The date the account category was confirmed."
   }
 ```
 
-#Update categories for a company
+# Update categories for a company
 
 The categories for all or a batch of accounts in a specific connection can be updated in Swagger under Assess.
 Note that this does not update the end accounting platform’s account, and only updates the categories saved against the company within Assess.
@@ -231,7 +231,7 @@ In the update request body, provide:
 
 You can provide a partial list of accounts you wish to update, or pass the whole object as `null` if you wish to remove the confirmed category for an account.
 
-```
+```json
 {
 "categories": [
   {
@@ -245,14 +245,12 @@ You can provide a partial list of accounts you wish to update, or pass the whole
       "modifiedDate": "2022-03-01T16:58:15.907Z"
     }
   }
-]",
-      "language": "json",
-      "name": "Update request body - example"
-    }
-  ]
+]
 }
-[/block]
-#Update the category for a specific account
+```
+
+## Update the category for a specific account
+
 The confirmed category for an account can be updated or removed.
 
 The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/patch_data_companies__companyId__connections__connectionId__assess_accounts__accountId__categories" target="_blank">Swagger</a> under **Assess**.
@@ -260,4 +258,3 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 `PATCH /data/companies/{companyId}/connections/{connectionId}/assess/accounts/{accountId}/categories`
 
 Note: Even if you are updating 2 accounts out of 100, you should still provide the categories on the other 98 accounts to prevent replacing those that were previously confirmed.
-```
