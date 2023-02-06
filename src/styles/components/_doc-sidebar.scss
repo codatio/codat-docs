@@ -182,7 +182,7 @@ html[data-theme="dark"] {
 
   .theme-doc-sidebar-item-category-level-1 {
     > .menu__list-item-collapsible > .menu__link--sublist {
-      margin-left: 2em;
+      margin-left: 5px;
       padding: 12px 8px;
     }
 
@@ -241,14 +241,18 @@ html[data-theme="dark"] {
   .menu__list-item.products,
   .menu__list-item.integrations,
   .menu__list-item.other {
-    > div > .menu__link--sublist::after {
-      --icon-size: 24px;
-      --dropdown-icon-width: var(--icon-size);
-      --dropdown-icon-height: var(--icon-size);
-      background: url("https://d33wubrfki0l68.cloudfront.net/ea8e37a6a30e9c260a8936d95c579af4a2dd3df7/6ee7e/img/docusaurus_keytar.svg")
-        center / var(--dropdown-icon-width) var(--dropdown-icon-height);
-      transform: rotate(0);
-      opacity: 1;
+    > div > .menu__link--sublist {
+      margin-left: 2em;
+
+      &::after {
+        --icon-size: 24px;
+        --dropdown-icon-width: var(--icon-size);
+        --dropdown-icon-height: var(--icon-size);
+        background: url("https://d33wubrfki0l68.cloudfront.net/ea8e37a6a30e9c260a8936d95c579af4a2dd3df7/6ee7e/img/docusaurus_keytar.svg")
+          center / var(--dropdown-icon-width) var(--dropdown-icon-height);
+        transform: rotate(0);
+        opacity: 1;
+      }
     }
   }
 
