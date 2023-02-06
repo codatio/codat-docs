@@ -6,7 +6,9 @@
 
 The official [Codat](https://codat.io) documentation.
 
+- [Browse the docs](https://codat-docs.vercel.app/)
 - [Contributing Guide](./CONTRIBUTING.md)
+- [OpenAPI Spec](https://github.com/codatio/oas)
 
 ---
 
@@ -19,7 +21,7 @@ npm install
 npm run start
 ```
 
-### Editing article markdown files
+#### Editing article markdown files
 
 `/docs`
 
