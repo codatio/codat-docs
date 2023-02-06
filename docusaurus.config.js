@@ -336,6 +336,7 @@ module.exports = {
     ],
     path.resolve(__dirname, "./node_modules/@docusaurus/theme-search-algolia"),
     "@docusaurus/theme-mermaid",
+    "@docusaurus/theme-live-codeblock",
   ],
   markdown: {
     // In order for Mermaid code blocks in Markdown to work, you also need to enable the Remark plugin with this option
