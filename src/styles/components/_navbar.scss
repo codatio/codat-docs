@@ -214,6 +214,9 @@ html[data-theme="dark"] {
 
             svg[class^="iconExternalLink"] {
               margin-left: 1em;
+
+              // Hide external link icon
+              display: none;
             }
           }
         }
