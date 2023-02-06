@@ -5,7 +5,7 @@ createdAt: "2022-05-11T17:45:39.001Z"
 updatedAt: "2023-01-11T13:09:39.574Z"
 ---
 
-Once your customers have successfully completed authorization of the connection to their data via [Link](/auth-flow), you can redirect them to the locations of your choice.
+Once your customers have successfully completed authorization of the connection to their data via [Link](/auth-flow/overview), you can redirect them to the locations of your choice.
 
 The following options of redirect configuration are available in the Codat Portal:
 

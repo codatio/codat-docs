@@ -24,7 +24,7 @@ For more details about the supported data types and operations, see [Oracle NetS
 
 ## Set up the integration
 
-See [Set up the Oracle NetSuite integration](/accounting-netsuite-setup) to learn how to set up and enable the integration.
+See [Set up the Oracle NetSuite integration](/integrations/accounting/netsuite-setup) to learn how to set up and enable the integration.
 
 ## Syncing very large data volumes
 

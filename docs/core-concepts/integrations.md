@@ -5,7 +5,7 @@ createdAt: "2019-02-15T16:11:29.274Z"
 updatedAt: "2022-10-04T13:56:20.766Z"
 ---
 
-In Codat, an integration represents a third-party data source that you can connect a [company](/core-companies) to (using a [data connection](/core-dataconnections)) so that you can access that company's business data.
+In Codat, an integration represents a third-party data source that you can connect a [company](/core-concepts/companies) to (using a [data connection](/core-concepts/connections)) so that you can access that company's business data.
 
 We currently support four types of integration, each enabling access to different types of business data: [accounting](/accounting/overview), [banking](/banking/overview), [commerce](/commerce/overview) integrations, and file upload integrations.
 
@@ -23,4 +23,4 @@ Codat’s [commerce integrations](/commerce/overview) allow you to easily pull u
 
 ## File upload
 
-Codat's [file upload integrations](/file-upload-integrations) allow your customers to share any documentation you require them to provide. This may include personal identity documents, pitch decks, contracts, or files with accounting and banking data.
+Codat's [file upload integrations](/other/file-upload) allow your customers to share any documentation you require them to provide. This may include personal identity documents, pitch decks, contracts, or files with accounting and banking data.

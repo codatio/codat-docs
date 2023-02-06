@@ -16,9 +16,9 @@ updatedAt: "2022-11-18T11:48:00.917Z"
 
 Codat’s accounting integrations allow you to pull up-to-date accounting data from your customers' accounting software as well as push data to their software. Please see our [Accounting data model](/datamodel-accounting) for details on the types of data you can pull and push.
 
-You can use [Codat's Sandbox integration](/accounting-sandbox) to start exploring the data you can work with, without any set up (other than enabling the integration).
+You can use [Codat's Sandbox integration](/integrations/accounting/sandbox) to start exploring the data you can work with, without any set up (other than enabling the integration).
 
-If you've got an existing integration that you'd like to migrate to Codat, we can migrate tokens for [most OAuth integrations](/oauth-token-migration).
+If you've got an existing integration that you'd like to migrate to Codat, we can migrate tokens for [most OAuth integrations](/introduction/migration).
 
 ## How do I set up and enable accounting integrations?
 

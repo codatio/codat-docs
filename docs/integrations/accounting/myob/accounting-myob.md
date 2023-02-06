@@ -15,7 +15,7 @@ For more details about the supported data types, see [MYOB integration reference
 
 ## Set up the integration
 
-See [Set up the MYOB integration](/accounting-myob-setup) to learn how to set up and enable the integration.
+See [Set up the MYOB integration](/integrations/accounting/myob-setup) to learn how to set up and enable the integration.
 
 :::info MYOB AccountRight or Essentials?
 

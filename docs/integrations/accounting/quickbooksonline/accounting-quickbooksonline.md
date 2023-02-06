@@ -15,7 +15,7 @@ For more details about the supported data types and operations, see [QuickBooks 
 
 ## Set up the integration
 
-See [Set up the QuickBooks Online integration](/accounting-quickbooksonline-new-setup) to learn how to set up and enable the integration.
+See [Set up the QuickBooks Online integration](/integrations/accounting/quickbooksonline-new-setup) to learn how to set up and enable the integration.
 
 ## Additional information
 

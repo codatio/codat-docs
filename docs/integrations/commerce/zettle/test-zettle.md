@@ -7,7 +7,7 @@ updatedAt: "2022-12-16T16:51:21.207Z"
 
 Codat recommends that you test your integration before sending Link URLs to customers.
 
-When you've [set up Zettle](/commerce-zettle-setup), you're ready to test the authorization process for your integration. You'll need to:
+When you've [set up Zettle](/integrations/commerce/zettle/commerce-zettle-setup), you're ready to test the authorization process for your integration. You'll need to:
 
 - Set up a test company in the [Codat Portal](https://app.codat.io).
 - Generate a Link URL to connect your test company to the Zettle store.

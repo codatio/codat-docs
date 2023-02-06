@@ -15,4 +15,4 @@ For more details about the supported data types, see [Sage Business Cloud Accoun
 
 ## Set up the integration
 
-See [Set up the Sage Business Cloud Accounting integration](/accounting-sagebusinesscloud-setup) to learn how to set up and enable the integration.
+See [Set up the Sage Business Cloud Accounting integration](/integrations/accounting/sagebusinesscloud-setup) to learn how to set up and enable the integration.

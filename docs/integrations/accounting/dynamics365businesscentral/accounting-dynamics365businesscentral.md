@@ -22,4 +22,4 @@ The integration supports all versions of Dynamics 365 Business Central released 
 
 ## Set up the integration
 
-See [Set up the Dynamics 365 Business Central integration](/accounting-dynamics365businesscentral-setup) to learn how to set up and enable the integration.
+See [Set up the Dynamics 365 Business Central integration](/integrations/accounting/dynamics365businesscentral-setup) to learn how to set up and enable the integration.

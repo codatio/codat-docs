@@ -285,7 +285,7 @@ Understand the <a href="/core-concepts" target="_blank">key concepts &amp; termi
         Companies
       </a>
       and their <a
-        href="/core-dataconnections"
+        href="/core-concepts/connections"
         target="_blank"
       >
         data connections

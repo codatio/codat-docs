@@ -73,7 +73,7 @@ _“Through the wonders of API integration, we can instantly underwrite [custome
 
 :::success
 
-[Using Codat's Link for customer authentication](/auth-flow) allows you to:
+[Using Codat's Link for customer authentication](/auth-flow/overview) allows you to:
 
 - Build trust with your customers by specifying the messaging that appears on the left panel
 - Require an action to consent to data sharing

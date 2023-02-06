@@ -7,7 +7,7 @@ updatedAt: "2023-01-06T16:34:35.590Z"
 
 Set up the [Chargebee](/commerce-chargebee) integration to retrieve recurring billing and subscriptions data from your SMB customers.
 
-Before you can use the integration, your SMB customers (merchants who use Chargebee) need to retrieve their secure API credentials from their Chargebee account and enter them in [Link](/auth-flow). Chargebee does not require any global credentials for accessing the API.
+Before you can use the integration, your SMB customers (merchants who use Chargebee) need to retrieve their secure API credentials from their Chargebee account and enter them in [Link](/auth-flow/overview). Chargebee does not require any global credentials for accessing the API.
 
 To set up the integration, you perform these tasks:
 

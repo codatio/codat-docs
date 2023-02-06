@@ -13,4 +13,4 @@ View the coverage of our Wave integration in the <a className="external" href="h
 
 ## Set up the integration
 
-See [Set up the Wave integration](/accounting-wave-setup) to learn how to set up and enable the integration.
+See [Set up the Wave integration](/integrations/accounting/wave-setup) to learn how to set up and enable the integration.
