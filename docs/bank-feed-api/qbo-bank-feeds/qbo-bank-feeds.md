@@ -30,7 +30,7 @@ Codat does not currently support pushing historic (backdated) or future (future-
 
 ## Setup overview
 
-1. See [Set up the QuickBooks Online Bank Feeds integration](/accounting-qbo-bank-feeds-setup) to learn how to set up and enable the integration.
+1. See [Set up the QuickBooks Online Bank Feeds integration](/integrations/accounting/qbo-bank-feeds-setup) to learn how to set up and enable the integration.
 2. Your SMB users must [connect one or more bank accounts to QBO](/accounting-qbo-bank-feeds-smb-customer-steps) by using Link, Codat's authentication solution, to generate a one-time username and password for QBO authorization.
 3. You can then [push bank transactions to QuickBooks Online](/accounting-qbo-bank-feeds-push-bank-transactions) for connected accounts.
 

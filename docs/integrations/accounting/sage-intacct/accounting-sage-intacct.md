@@ -17,4 +17,4 @@ For more details about the supported data types and operations, see [Sage Intacc
 
 ## Set up the integration
 
-See [Set up the Sage Intacct integration](/accounting-sage-intacct-setup) to learn how to set up and enable the integration.
+See [Set up the Sage Intacct integration](/integrations/accounting/sage-intacct-setup) to learn how to set up and enable the integration.

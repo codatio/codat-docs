@@ -15,4 +15,4 @@ For more details about the supported data types and operations, see [FreeAgent i
 
 ## Set up the integration
 
-See [Set up the FreeAgent integration](/accounting-freeagent-setup) to learn how to set up and enable the integration.
+See [Set up the FreeAgent integration](/integrations/accounting/freeagent-setup) to learn how to set up and enable the integration.

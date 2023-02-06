@@ -15,7 +15,7 @@ For more details about the supported data types and operations, see [Exact Onlin
 
 ## Set up the integration
 
-See [Set up the Exact Online integration](/accounting-exact-setup) to learn how to set up and enable the integration.
+See [Set up the Exact Online integration](/integrations/accounting/exact-setup) to learn how to set up and enable the integration.
 
 ## Supported software
 

@@ -15,7 +15,7 @@ For more details about the supported data types and operations, see [Xero FAQs](
 
 ## Set up the integration
 
-See [Set up the Xero integration](/accounting-xero-setup) to learn how to set up and enable the integration.
+See [Set up the Xero integration](/integrations/accounting/xero/accounting-xero-setup) to learn how to set up and enable the integration.
 
 :::note Pushing bank transactions
 

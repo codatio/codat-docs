@@ -16,7 +16,7 @@ To test your integration, you'll need to:
 
 ## Prerequisites
 
-Make sure that you've [set up your Xero integration](/accounting-xero-setup).
+Make sure that you've [set up your Xero integration](/integrations/accounting/xero/accounting-xero-setup).
 
 ## Create a demo Xero company
 
