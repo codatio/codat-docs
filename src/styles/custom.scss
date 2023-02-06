@@ -92,6 +92,7 @@ html[data-theme="light"] {
   --color-primary: var(--color-codat-primary);
   --ifm-color-primary: var(--color-codat-primary);
   --ifm-color-secondary: var(--color-interface-5);
+
   --ifm-color-success: var(--color-positive-dark);
   --ifm-color-info: var(--color-neutral-dark);
   --ifm-color-warning: var(--color-warning-dark);
@@ -119,6 +120,10 @@ html[data-theme="dark"] {
 
   --ifm-link-color: var(--c-blue-70);
   --ifm-link-hover-color: rgba(77, 141, 255, 0.8);
+
+  --color-primary: white;
+  --ifm-color-primary: var(--color-codat-primary);
+  --ifm-color-secondary: var(--color-interface-5);
 
   --ifm-background-surface-color: var(--token-primary-bg-c);
 

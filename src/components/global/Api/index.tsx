@@ -5,6 +5,8 @@ import Navbar from "@theme/Navbar";
 import Logo from "@theme/Logo";
 import styles from "./styles.module.scss";
 import clsx from "clsx";
+import {useWindowSize} from '@docusaurus/theme-common';
+
 //import "@stoplight/elements/styles.min.css";
 import "./index.css";
 
@@ -14,6 +16,9 @@ const Fallback = (
 );
 
 const Api = ({ url }) => {
+  const windowSize = useWindowSize();
+  const renderAPI = (windowSize === 'desktop' || windowSize === 'ssr');
+
   return (
     <Layout title="API reference">
       <div className={styles.apiNav}>
@@ -22,15 +27,18 @@ const Api = ({ url }) => {
       </div>
 
       <main>
-        <div className={styles.stoplightWrapper}>
-          <BrowserOnly>
-            {() => (
-              <Suspense fallback={Fallback}>
-                <LazyStoplight apiDescriptionUrl={url} />
-              </Suspense>
-            )}
-          </BrowserOnly>
-        </div>
+        {renderAPI
+          ? <div className={styles.stoplightWrapper}>
+            <BrowserOnly>
+              {() => (
+                <Suspense fallback={Fallback}>
+                  <LazyStoplight apiDescriptionUrl={url} />
+                </Suspense>
+              )}
+            </BrowserOnly>
+          </div>
+          : <div className="col"><p>Our API reference is currently not supported on mobile</p></div>
+        }
       </main>
     </Layout>
   );

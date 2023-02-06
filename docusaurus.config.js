@@ -128,20 +128,20 @@ module.exports = {
           position: "left",
           items: [
             {
-              href: "https://docs.codat.io/discuss",
+              href: "https://bit.ly/codatstatus",
+              label: "API status",
+              target: "_blank",
+              rel: null,
+            },
+            {
+              href: "https://github.com/orgs/codatio/discussions",
               label: "Forum",
               target: "_blank",
               rel: null,
             },
             {
-              href: "https://www.codat.io/blog/",
-              label: "Blog",
-              target: "_blank",
-              rel: null,
-            },
-            {
-              href: "https://docs.codat.io/changelog",
-              label: "Changelog",
+              href: "https://github.com/codatio",
+              label: "GitHub",
               target: "_blank",
               rel: null,
             },
@@ -151,13 +151,13 @@ module.exports = {
               target: "_blank",
               rel: null,
             },
+            // {
+            //   label: "Stack Overflow",
+            //   href: "https://stackoverflow.com/questions/tagged/codat",
+            // },
             {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/codat",
-            },
-            {
-              href: "https://bit.ly/codatstatus",
-              label: "API status",
+              href: "https://www.codat.io/blog/",
+              label: "Blog",
               target: "_blank",
               rel: null,
             },
@@ -170,13 +170,19 @@ module.exports = {
           items: [
             {
               href: "https://codat.zendesk.com/hc/en-gb",
-              label: "Help Center",
+              label: "Help center",
               target: "_blank",
               rel: null,
             },
             {
               href: "https://docs.codat.io/discuss",
               label: "Forum",
+              target: "_blank",
+              rel: null,
+            },
+            {
+              href: "https://github.com/codatio/codat-docs/issues/new",
+              label: "Issue with the docs?",
               target: "_blank",
               rel: null,
             },
@@ -207,16 +213,28 @@ module.exports = {
         //     target: '_blank',
         //   },
         // },
+        { 
+          href: "https://app.codat.io/", 
+          label: "Sign in", 
+          className: "navbarButton secondary",
+          position: "right" 
+        },
+        { 
+          href: "https://signup.codat.io/", 
+          label: "Sign up", 
+          className: "navbarButton primary",
+          position: "right" 
+        },
       ],
     },
-    tagManager: {
-      trackingID: "GTM-TKMGCBC",
-    },
-    prism: {
-      theme: { plain: {}, styles: [] },
-      // https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
-      additionalLanguages: ["shell-session", "http"],
-    },
+    // tagManager: {
+    //   trackingID: "GTM-TKMGCBC",
+    // },
+    // prism: {
+    //   theme: { plain: {}, styles: [] },
+    //   // https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
+    //   additionalLanguages: ["shell-session", "http"],
+    // },
     algolia: {
       appId: "002G1BUKXS",
       apiKey: "0a640be9644a4d830f96aed136d2a70b",
@@ -263,7 +281,7 @@ module.exports = {
         blogDescription: "Engineering and product updates from Codat.",
         postsPerPage: 10,
         routeBasePath: "/updates",
-        blogSidebarCount: 10,
+        blogSidebarCount: 8,
         blogSidebarTitle: "Latest updates",
         editUrl: "https://github.com/codatio/codat-docs/edit/main/blog/",
       },

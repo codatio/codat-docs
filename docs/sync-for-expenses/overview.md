@@ -1,6 +1,7 @@
 ---
 title: Sync for Expenses overview
 sidebar_label: Sync for Expenses
+description: Embedded accounting integrations for corporate card providers
 tags: [overview, syncforexpense]
 ---
 

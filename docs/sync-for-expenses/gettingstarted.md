@@ -1,5 +1,6 @@
 ---
 title: "Getting started"
+description: Learn how to start syncing expenses
 tags: [syncforexpense, gettingstarted, prerequisites, platformsupport]
 ---
 
