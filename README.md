@@ -9,6 +9,7 @@ The official [Codat](https://codat.io) documentation.
 - [Browse the docs](https://codat-docs.vercel.app/)
 - [Contributing Guide](./CONTRIBUTING.md)
 - [OpenAPI Spec](https://github.com/codatio/oas)
+- [Product roadmap](https://bit.ly/codatpbroadmap1) | [DX roadmap](https://bit.ly/devexroadmap)
 
 ---
 
