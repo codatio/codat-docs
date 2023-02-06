@@ -33,7 +33,7 @@ html[data-theme="dark"] .token.number {
 
 .sl-bg-canvas-100 {
   background-color: var(--token-secondary-bg-c) !important;
-  color: black;
+  color: var(#0d0d0d);
 }
 
 /* ------------------------ */
