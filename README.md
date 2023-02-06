@@ -1,5 +1,7 @@
 # Codat docs
 
+![Vercel](https://vercelbadge.vercel.app/api/codat/codat-docs)
+
 > :warning: **These docs are in beta** 
 >
 > In the meantime, please use [our existing docs](https://docs.codat.io/docs)
