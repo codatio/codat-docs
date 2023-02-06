@@ -13,7 +13,7 @@ The company overview shows a snapshot of the financial health of an individual c
 :::info Formulas for calculating key metrics
 Select **Help?** from the top navigation of the Codat portal to view the formulas used to calculate key metrics.
 
-If data in the company overview is unavailable, please read [Using the dashboards](https://docs.codat.io/docs/using-the-dashboards) for information on how to resolve this.
+If data in the company overview is unavailable, please read [Using the dashboards](/using-the-dashboards) for information on how to resolve this.
 
 ## Summary metrics
 

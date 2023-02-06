@@ -42,11 +42,11 @@ _ `Archived`: Unavailable
 \\\* `Unknown`",
 "3-0": "**modifiedDate**",
 "3-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "3-2": "Date the payment method details were last updated in the Codat system.",
 "4-0": "**sourceModifiedDate** ",
 "4-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "4-2": "Date the payment method details were last changed in the commerce system."
 },
 "cols": 3,

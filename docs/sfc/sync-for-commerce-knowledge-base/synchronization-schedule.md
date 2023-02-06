@@ -68,7 +68,7 @@ Integers from 0 to 23 inclusive",
 }
 [/block]
 
-Once the [Sync Flow is completed and Codat receives the configuration](https://docs.codat.io/docs/implementing-codats-no-code-merchant-configuration), we use it to determine the **sync period** – the period for which commerce data will be synced in one run of the sync service.
+Once the [Sync Flow is completed and Codat receives the configuration](/implementing-codats-no-code-merchant-configuration), we use it to determine the **sync period** – the period for which commerce data will be synced in one run of the sync service.
 
 To determine the sync period, we first establish the following values internally:
 

@@ -7,7 +7,9 @@ updatedAt: "2022-12-19T06:12:29.871Z"
 ---
 
 :::note Prerequisites
-You need an account and its API key to start with Codat. You can <a href="https://signup.codat.io/" target="_blank">sign up</a> for an account for free, or <a href="https://docs.codat.io/docs/core-account-signup" target="_blank">learn more</a> about creating one.
+
+You need an account and its API key to start with Codat. You can <a href="https://signup.codat.io/" target="_blank">sign up</a> for an account for free, or <a href="/core-account-signup" target="_blank">learn more</a> about creating one.
+
 :::
 
 ## In this guide...
@@ -40,7 +42,7 @@ If you are a developer and want to work with Codat using our <a href="https://do
   <summary><b>Authenticate with Codat's API</b></summary>
 
 :::caution
-Authorization headers can only be viewed and copied by users with Administrator or Developer <a href="https://docs.codat.io/docs/user-roles" target="_blank">roles</a>.
+Authorization headers can only be viewed and copied by users with Administrator or Developer <a href="/user-roles" target="_blank">roles</a>.
 :::
 
 Codat uses API keys, Base64 encoded within an authorization header, to control access to the API. To copy your authorization header, navigate to **Developers > API keys** in the <a href="https://app.codat.io/developers/api-keys" target="_blank">Codat Portal</a>.
@@ -161,7 +163,7 @@ If you have retained the connection URL from the previous step, simply open it i
 
 If you need to view the URL again, navigate to **Companies** in the <a href="https://app.codat.io/companies" target="_blank">Codat Portal</a>. Next, find the company you created for the customer, and click **Request data** next to the company name. Copy the Link URL and open it in the new tab.
 
-This opens Codat's authorization flow built using our Link <a href="https://docs.codat.io/docs/auth-flow" target="_blank">feature</a>.
+This opens Codat's authorization flow built using our Link <a href="/auth-flow" target="_blank">feature</a>.
 
 <img
   src="https://files.readme.io/cdeee57-2022-11-21_20-09-48.png"
@@ -304,22 +306,22 @@ Codat enables you to connect to over 30 different accounting, banking, and comme
 
 Navigate to **Settings > Integrations** in the Portal. Choose the integration type, find the platform you need, and set it up. Once you've enabled the platform, create a data connection to it, as you have done with the Sandbox earlier. You will need valid credentials for the platform you are trying to link.
 
-You can review our detailed instructions for setting up integrations like [Xero](https://docs.codat.io/docs/accounting-xero-setup), [QuickBooks Online](https://docs.codat.io/docs/accounting-quickbooksonline-new-setup), [PayPal](https://docs.codat.io/docs/set-up-paypal-in-production), [Plaid](https://docs.codat.io/docs/banking-plaid-setup), and many more.
+You can review our detailed instructions for setting up integrations like [Xero](/accounting-xero-setup), [QuickBooks Online](/accounting-quickbooksonline-new-setup), [PayPal](/set-up-paypal-in-production), [Plaid](/banking-plaid-setup), and many more.
 
 ### Curious about what other data Codat can provide you with?
 
 Codat pulls a variety of data types from the source platforms, making it easy to suit the needs of your use case.
 
-With our [accounting integrations](https://docs.codat.io/docs/datamodel-accounting), you can pull financial statements, earning and spending detail, journal entries, tax details, and many more. Our [banking integrations](https://docs.codat.io/docs/datamodel-banking) provide you with banking transactions, accounts, and account balances. Finally, our [commerce integrations](https://docs.codat.io/docs/datamodel-commerce) can show you details of orders, customers, payments, products, and others.
+With our [accounting integrations](/datamodel-accounting), you can pull financial statements, earning and spending detail, journal entries, tax details, and many more. Our [banking integrations](/datamodel-banking) provide you with banking transactions, accounts, and account balances. Finally, our [commerce integrations](/datamodel-commerce) can show you details of orders, customers, payments, products, and others.
 
 ### Keen to customize the look and feel of the auth flow?
 
-Colors, logos, and icons of Codat's authorization flow [can be changed](https://docs.codat.io/docs/set-up-your-company-branding) for a bespoke experience. Navigate to **Settings > Auth flow > Branding** in the Codat Portal and adjust to fit the flow to your brand's palette.
+Colors, logos, and icons of Codat's authorization flow [can be changed](/set-up-your-company-branding) for a bespoke experience. Navigate to **Settings > Auth flow > Branding** in the Codat Portal and adjust to fit the flow to your brand's palette.
 
-Then, use the Link URL of the company you created earlier to review your customer's experience with the flow. You can even take the customization [one step further](https://docs.codat.io/docs/set-up-link) and amend the accompanying text and behaviors.
+Then, use the Link URL of the company you created earlier to review your customer's experience with the flow. You can even take the customization [one step further](/set-up-link) and amend the accompanying text and behaviors.
 
 ### Want to migrate your existing integration to Codat?
 
 If you already have an OAuth application with one of our supported integrations, you can seamlessly migrate your customers' connections — without your customers needing to reconnect.
 
-You can choose a self-service token migration, or engage us for a managed migration. [Choose the option](https://docs.codat.io/docs/oauth-token-migration) that best suits your use case.
+You can choose a self-service token migration, or engage us for a managed migration. [Choose the option](/oauth-token-migration) that best suits your use case.

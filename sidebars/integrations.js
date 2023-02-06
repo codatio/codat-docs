@@ -9,7 +9,7 @@ module.exports = [
     label: "Accounting",
     collapsed: true,
     items: [
-      "integrations/accounting/accounting-overview",
+      "integrations/accounting/overview",
       "integrations/accounting/accounting-platform-keys",
       {
         type: "category",
@@ -220,7 +220,7 @@ module.exports = [
     label: "Banking",
     collapsed: true,
     items: [
-      "integrations/banking/banking-overview",
+      "integrations/banking/overview",
       {
         type: "category",
         label: "Proxy access",
@@ -272,7 +272,7 @@ module.exports = [
     label: "Commerce",
     collapsed: true,
     items: [
-      "integrations/commerce/commerce-overview",
+      "integrations/commerce/overview",
       "integrations/commerce/api-workflow",
       "integrations/commerce/commerce-platform-keys",
       "integrations/commerce/commerce-sync-settings",

@@ -15,7 +15,7 @@ From the **Transfers** endpoints, you can:
 - [Retrieve a single transfer for a specified company](https://api.codat.io/swagger/index.html#/Transfers/get_companies__companyId__connections__connectionId__data_transfers__transferId_)
 - [Add a new transfer for a specified company](https://api.codat.io/swagger/index.html#/Transfers/post_companies__companyId__connections__connectionId__push_transfers)
 
-**Transfers** is a child data type of [account transactions](https://docs.codat.io/docs/datamodel-accounting-account-transactions).
+**Transfers** is a child data type of [account transactions](/datamodel-accounting-account-transactions).
 
 ## Data model
 
@@ -32,25 +32,25 @@ From the **Transfers** endpoints, you can:
 "1-1": "_string_",
 "1-2": "Description of the transfer.",
 "2-0": "**contactRef** ",
-"2-1": "[_Reference type_](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-contactref)",
+"2-1": "[_Reference type_](/datamodel-accounting-referencetypes#section-contactref)",
 "2-2": "The customer or supplier for the transfer, if available.",
 "3-0": "**date** ",
 "3-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "3-2": "The day on which the transfer was made.",
 "4-0": "**from**/**to**",
 "4-1": "",
-"4-2": "The details of the [accounts](https://docs.codat.io/docs/datamodel-accounting-transfers#section-transfer-account-details) the transfer is moving from or to.",
+"4-2": "The details of the [accounts](/datamodel-accounting-transfers#section-transfer-account-details) the transfer is moving from or to.",
 "5-0": "**trackingCategoryRefs**",
-"5-1": "[_Reference type_](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-trackingcategoryref)",
+"5-1": "[_Reference type_](/datamodel-accounting-referencetypes#section-trackingcategoryref)",
 "5-2": "Reference to the tracking categories this transfer is being tracked against.",
 "6-0": "**modifiedDate**",
 "6-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "6-2": "Date the record was last updated in the Codat system.",
 "7-0": "**sourceModifiedDate**",
 "7-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "7-2": "Date the record was last changed in the accounting system."
 },
 "cols": 3,
@@ -72,11 +72,11 @@ See [date](https://docs.codat.io/docs/datamodel-shared-date)",
 "h-1": "Type",
 "h-2": "Description",
 "0-0": "accountRef",
-"0-1": "[_Reference type_](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-accountref)",
+"0-1": "[_Reference type_](/datamodel-accounting-referencetypes#section-accountref)",
 "0-2": "The account that the transfer is moving from or to.",
 "1-0": "currency",
 "1-1": "_string_  
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "1-2": "ISO currency code recorded for the transfer in the accounting platform.",
 "2-0": "amount",
 "2-1": "_decimal_",

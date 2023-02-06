@@ -7,7 +7,7 @@ updatedAt: "2022-11-24T12:56:40.816Z"
 
 If you've added a webhook URL to your rule, Codat will `POST` to that URL each time an alert is raised.
 
-The body of the request will include details such as the `RuleId`, the `RuleType` and the `CompanyId` that triggered the alert as well as data relevant to the particular rule type. Example bodies are detailed for each rule in our [Rule types](https://docs.codat.io/docs/core-rules-types) page.
+The body of the request will include details such as the `RuleId`, the `RuleType` and the `CompanyId` that triggered the alert as well as data relevant to the particular rule type. Example bodies are detailed for each rule in our [Rule types](/core-rules-types) page.
 
 ## Expected response codes
 
@@ -36,7 +36,7 @@ The HTTP header of the standard webhook call contains an `X-Codat-ClientId` whic
 
 ## Webhook security
 
-If you'd like to secure your webhook endpoints, you can add an `Authorization` header to the notifications Codat sends using the settings on the Portal's Alert settings page, or read more about [Webhook security](https://docs.codat.io/docs/core-rules-webhooksecurity).
+If you'd like to secure your webhook endpoints, you can add an `Authorization` header to the notifications Codat sends using the settings on the Portal's Alert settings page, or read more about [Webhook security](/core-rules-webhooksecurity).
 
 | Authorization method or scheme | Description                                                                                       |
 | :----------------------------- | :------------------------------------------------------------------------------------------------ |

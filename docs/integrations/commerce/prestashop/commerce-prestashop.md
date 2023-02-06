@@ -18,7 +18,7 @@ View the coverage of our PrestaShop integration in the <a className="external" h
 
 ## Set up the integration
 
-See [Set up the PrestaShop integration](https://docs.codat.io/docs/set-up-prestashop-in-production) to learn how to set up and enable the integration.
+See [Set up the PrestaShop integration](/set-up-prestashop-in-production) to learn how to set up and enable the integration.
 
 ## Configuration requirements
 
@@ -30,17 +30,25 @@ To share their data, a merchant is required to:
    If the merchant enters a redirect, they must confirm they want to use the redirect destination URL as the Store URL.
 
 2. Ensure the HTTP server is correctly configured to allow the API to be accessed.
-   :::danger",
-   "title": "Possible Errors in Merchant Connection
-   Guidance for merchants on how to configure the PrestaShop Webservice is included within Link, as well as accessible from PrestaShop directly. However due to the wide range of possible PrestaShop installations and hosting combinations, merchants may encounter unforeseen issues depending on how they have chosen to host and configure PrestaShop. For example, some HTTP servers and PrestaShop installations default to stripping out authorization headers when accessing the API.
+
+:::danger Possible Errors in Merchant Connection
+
+Guidance for merchants on how to configure the PrestaShop Webservice is included within Link, as well as accessible from PrestaShop directly. However due to the wide range of possible PrestaShop installations and hosting combinations, merchants may encounter unforeseen issues depending on how they have chosen to host and configure PrestaShop. For example, some HTTP servers and PrestaShop installations default to stripping out authorization headers when accessing the API.
+
+:::
 
 Codat Link will test whether a connection has been successful by making a test call to the API. If this fails, the following message is displayed:
 
 "Unable to verify Store URL and Webservice Key. Please ensure you have entered the correct details and that the store's Webservice is enabled."
 
-:::info
-Resources available to the PrestaShop software instance from which data is being pulled may vary wildly between small merchants (potentially running the software on their laptop) and large enterprises (likely hosted on much more scalable infrastructure). At the time of pulling data, it is not possible for Codat to know what resources are available; As a result, Codat restricts the amount of data it fetches at any one time to minimize impact on instances with the least resources. The trade-off is longer pull times for all PrestaShop instances, even where resources might be available to pull data at a higher velocity.",
-"title": "Pulling data
+:::info Pulling data
+
+Resources available to the PrestaShop software instance from which data is being pulled may vary wildly between small merchants (potentially running the software on their laptop) and large enterprises (likely hosted on much more scalable infrastructure). At the time of pulling data, it is not possible for Codat to know what resources are available; As a result, Codat restricts the amount of data it fetches at any one time to minimize impact on instances with the least resources. The trade-off is longer pull times for all PrestaShop instances, even where resources might be available to pull data at a higher velocity.
+
+:::
 
 :::caution Add-ons and plugins
+
 PrestaShop is an open-source platform built for configurability. A large part of its success is its wide-ranging add-on library featuring contributions from third party developers. Codat strives to add support for major add-ons where possible, but clients should be aware that in some cases it will not be possible to successfully retrieve data from customers with unsupported add-ons.
+
+:::

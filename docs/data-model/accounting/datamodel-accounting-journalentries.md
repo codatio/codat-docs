@@ -6,7 +6,7 @@ updatedAt: "2023-01-11T15:49:43.082Z"
 ---
 
 :::note Language tip
-For the top-level record of a company's financial transactions, refer to the [Journals](https://docs.codat.io/docs/journals) data type
+For the top-level record of a company's financial transactions, refer to the [Journals](/journals) data type
 :::
 
 Explore the <a className="external" href="https://api.codat.io/swagger/index.html#/JournalEntries" target="_blank">Journal Entries</a> endpoints in Swagger.
@@ -44,13 +44,13 @@ Codat only supports journal entries in the base currency of the company that are
 "h-2": "Description",
 "0-0": "**id** ",
 "0-1": "_string_ ",
-"0-2": "Unique identifier of the journal entry for the [company](https://docs.codat.io/docs/datamodel-accounting-company) in the accounting platform.",
+"0-2": "Unique identifier of the journal entry for the [company](/datamodel-accounting-company) in the accounting platform.",
 "1-0": "**description**",
 "1-1": "_string_",
 "1-2": "Optional description of the journal entry.",
 "2-0": "**postedOn** ",
 "2-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "2-2": "Date on which the journal entry was posted to the accounting platform, and had an impact on the general ledger. This may be different from the creation date.
 
 For example, a user creates a journal entry on Monday and saves it as draft, which has no impact on the general ledger. On Thursday, they return to the entry and post it.
@@ -63,28 +63,28 @@ For example, a user creates a journal entry on Monday and saves it as draft, whi
 Journal entries can also be backdated, so the **postedOn** date may be earlier than the **createdOn** date.",
 "3-0": "**createdOn** ",
 "3-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "3-2": "Date on which the journal was created in the accounting platform.",
 "4-0": "**updatedOn** ",
 "4-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "4-2": "Date on which the journal was last updated in the accounting platform.",
 "5-0": "**journalLines** ",
 "5-1": "",
 "5-2": "An array of [JournalLines](#journal-lines).",
 "6-0": "**modifiedDate** ",
 "6-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "6-2": "Date on which the record was last updated in the Codat system.",
 "7-0": "**sourceModifiedDate** ",
 "7-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "7-2": "Date on which the record was last changed in the accounting platform.",
 "8-0": "**recordRef** ",
-"8-1": "[_reference types_](https://docs.codat.io/docs/datamodel-accounting-referencetypes#recordref)",
+"8-1": "[_reference types_](/datamodel-accounting-referencetypes#recordref)",
 "8-2": "See [Record reference](#record-reference).",
 "9-0": "**journalRef**",
-"9-1": "[_reference types_](https://docs.codat.io/docs/datamodel-accounting-referencetypes)",
+"9-1": "[_reference types_](/datamodel-accounting-referencetypes)",
 "9-2": "Links journal entries to the relevant journal in accounting integrations that use multi-book accounting (multiple journals)."
 },
 "cols": 3,
@@ -104,8 +104,8 @@ See [date](https://docs.codat.io/docs/datamodel-shared-date)",
 | **description** | _string_                                                                                               | Description of the journal line item.                                                                                   |
 | **netAmount**   | _decimal_                                                                                              | Amount for the journal line. Debit entries are considered positive, and credit entries are considered negative.         |
 | **currency**    | _string_                                                                                               | Currency for the journal line item.                                                                                     |
-| **accountRef**  | [_reference types_](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-accountref) | See [Account reference](#account-reference).                                                                            |
-| **tracking**    | Array of [_record refs_](https://docs.codat.io/docs/datamodel-accounting-referencetypes#recordref)     | List of record refs associated with the tracking information for the line (eg to a Tracking Category, or customer etc.) |
+| **accountRef**  | [_reference types_](/datamodel-accounting-referencetypes#section-accountref) | See [Account reference](#account-reference).                                                                            |
+| **tracking**    | Array of [_record refs_](/datamodel-accounting-referencetypes#recordref)     | List of record refs associated with the tracking information for the line (eg to a Tracking Category, or customer etc.) |
 
 ### Account reference
 
@@ -119,10 +119,10 @@ Links a journal entry to any associated accounts.
 "h-2": "Description",
 "0-0": "**id** ",
 "0-1": "_string_",
-"0-2": "The ID of the [Account](https://docs.codat.io/docs/datamodel-accounting-chartofaccounts) the line is linked to.",
+"0-2": "The ID of the [Account](/datamodel-accounting-chartofaccounts) the line is linked to.",
 "1-0": "**name** ",
 "1-1": "_string_",
-"1-2": "The name of the [Account](https://docs.codat.io/docs/datamodel-accounting-chartofaccounts) the line is linked to.  
+"1-2": "The name of the [Account](/datamodel-accounting-chartofaccounts) the line is linked to.  
 _Note: this will only be populated if you've synchronised Accounts for the company._"
 },
 "cols": 3,

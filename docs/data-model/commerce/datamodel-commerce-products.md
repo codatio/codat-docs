@@ -41,8 +41,8 @@ From the **Products** endpoints you can retrieve:
 "3-1": "_string_",
 "3-2": "Description of the product recorded in the commerce or point of sale platform.",
 "4-0": "**productCategoryRefs**",
-"4-1": "See [Reference types](https://docs.codat.io/docs/datamodel-commerce-referencetypes#productcategoryref)",
-"4-2": "Array of references to the [product category or categories](https://docs.codat.io/docs/datamodel-commerce-productcategories) that this product is a member of.",
+"4-1": "See [Reference types](/datamodel-commerce-referencetypes#productcategoryref)",
+"4-2": "Array of references to the [product category or categories](/datamodel-commerce-productcategories) that this product is a member of.",
 "5-0": "**isGiftCard**",
 "5-1": "_boolean_",
 "5-2": "Whether or not the product is a gift card or voucher that can be redeemed.",
@@ -51,15 +51,15 @@ From the **Products** endpoints you can retrieve:
 "6-2": "For example, different colours, sizes, and specifications of a product.",
 "7-0": "**createdDate**",
 "7-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "7-2": "Date on which the product was created in the commerce or point of sale platform.",
 "8-0": "**modifiedDate**",
 "8-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "8-2": "Date the product was last updated in the Codat system.",
 "9-0": "**sourceModifiedDate**",
 "9-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "9-2": "Date the product was last changed in the commerce or point of sale platform.",
 "10-0": "**status**",
 "10-1": "_string_",
@@ -123,7 +123,7 @@ Variations of a product available for sale. For example, the product in a differ
 "9-2": "Indicates whether or not the product requires physical delivery.",
 "10-0": "**createdDate**",
 "10-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "10-2": "Date on which the product variant was created in the commerce or point of sale platform."
 },
 "cols": 3,
@@ -148,7 +148,7 @@ Price of the product variant in the base currency of the commerce or point of sa
 "h-2": "Description",
 "0-0": "**currency**",
 "0-1": "_string_  
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "0-2": "Currency of the product variant price.",
 "1-0": "**unitPrice**",
 "1-1": "_decimal_",
@@ -180,7 +180,7 @@ Inventory quantity in a location
 | Field           | Type                                                                                                 | Description                                 |
 | :-------------- | :--------------------------------------------------------------------------------------------------- | :------------------------------------------ |
 | **quantity**    | _decimal_                                                                                            | The quantity of inventory at this location. |
-| **locationRef** | _[reference type](https://docs.codat.io/docs/datamodel-commerce-referencetypes#section-locationref)_ | The location of the inventory.              |
+| **locationRef** | _[reference type](/datamodel-commerce-referencetypes#section-locationref)_ | The location of the inventory.              |
 
 ## Example data
 

@@ -34,7 +34,7 @@ Note that for refunds `quantity` is a negative value and `unitPrice` is a positi
 "h-2": "Description",
 "0-0": "**id**",
 "0-1": "_string_",
-"0-2": "Identifier of the order, unique to the [company](https://docs.codat.io/docs/datamodel-commerce-companyinfo).",
+"0-2": "Identifier of the order, unique to the [company](/datamodel-commerce-companyinfo).",
 "1-0": "**orderNumber**",
 "1-1": "_string_ ",
 "1-2": "Friendly reference for the order in the commerce or point of sale platform.",
@@ -43,11 +43,11 @@ Note that for refunds `quantity` is a negative value and `unitPrice` is a positi
 "2-2": "ISO code for the country where the order was placed.",
 "3-0": "**currency**",
 "3-1": "_string_  
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "3-2": "Currency in which the order was placed.",
 "4-0": "**createdDate**",
 "4-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "4-2": "Date on which the order was first recorded in the commerce or point of sale platform.",
 "5-0": "**closedDate**",
 "5-1": "_string (optional)_",
@@ -73,25 +73,25 @@ See [order line items](#section-order-line-items)",
 "11-2": "Line items relating to the order.",
 "12-0": "**payments**",
 "12-1": "_array_  
-See [payments](https://docs.codat.io/docs/datamodel-commerce-payments)",
+See [payments](/datamodel-commerce-payments)",
 "12-2": "Payments for this order.",
 "13-0": "**serviceCharges**",
 "13-1": "_array_  
 See [serviceCharges](#section-service-charges)",
 "13-2": "Service charges for this order.",
 "14-0": "**locationRef**",
-"14-1": "_[reference type](https://docs.codat.io/docs/datamodel-commerce-referencetypes#section-locationref)_",
+"14-1": "_[reference type](/datamodel-commerce-referencetypes#section-locationref)_",
 "14-2": "Reference to the geographic location where the order was placed.",
 "15-0": "**customerRef**",
-"15-1": "_[reference type](https://docs.codat.io/docs/datamodel-commerce-referencetypes#section-customerref)_",
+"15-1": "_[reference type](/datamodel-commerce-referencetypes#section-customerref)_",
 "15-2": "Reference to the customer that placed the order.",
 "16-0": "**modifiedDate** ",
 "16-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "16-2": "Date the order was last updated in the Codat system.",
 "17-0": "**sourceModifiedDate** ",
 "17-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "17-2": "Date the order was last changed in the commerce or point of sale platform."
 },
 "cols": 3,
@@ -133,10 +133,10 @@ For refunds, quantity is a negative value.",
 "5-1": "_decimal_",
 "5-2": "Price per unit of goods or service.",
 "6-0": "**productRef**",
-"6-1": "_[reference type](https://docs.codat.io/docs/datamodel-commerce-referencetypes#section-productref)_",
+"6-1": "_[reference type](/datamodel-commerce-referencetypes#section-productref)_",
 "6-2": "Reference that links the line item to the correct product details.",
 "7-0": "**productVariantRef**",
-"7-1": "_[reference type](https://docs.codat.io/docs/datamodel-commerce-referencetypes#section-productvariantref)_",
+"7-1": "_[reference type](/datamodel-commerce-referencetypes#section-productvariantref)_",
 "7-2": "Reference that links the line item to the specific version of product that has been ordered.",
 "8-0": "**discountAllocations**",
 "8-1": "_array_  
@@ -165,7 +165,7 @@ Details or any discounts applied to an order line item.
 ## Payments
 
 Details of a customer's payment for their order.  
-See [payments](https://docs.codat.io/docs/datamodel-commerce-payments).
+See [payments](/datamodel-commerce-payments).
 
 ## Service charges
 

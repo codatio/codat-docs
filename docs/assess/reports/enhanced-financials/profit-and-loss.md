@@ -7,7 +7,7 @@ updatedAt: "2022-11-02T14:39:20.426Z"
 
 The _Enhanced Profit and Loss_ endpoint provides a fully categorized profit and loss statement over a specified period(s) of time, for a specific company’s accounting connection.
 
-Refer to the [Assess reporting structure](https://docs.codat.io/docs/assess-reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/assess-reporting-structure) page for more detail on reports in Assess.
 
 For _Enhanced Profit and Loss_, these are the dimensions and measures:
 
@@ -43,7 +43,7 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 "h-3": "Required",
 "0-0": "**reportDate** ",
 "0-1": "_string_
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "0-2": "YYYY-MM-DD
 
 Datetime or, Date (inclusive of whole day).",
@@ -137,9 +137,9 @@ Ordered by latest to earliest periods."
 "h-2": "Description",
 "0-1": "_string_ ",
 "1-1": "_string_
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "2-1": "_string_
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "0-2": "“Period n”",
 "1-2": "YYYY-MM-DD
 
@@ -331,7 +331,7 @@ See [Dimension (index = “4”) items](#dimension-index--4-items)",
 "rows": 2
 }
 [/block]
-If any account needs to be recategorized, use the [API: Categorization of accounts](https://docs.codat.io/docs/assess-api-categorization-of-accounts) endpoint.
+If any account needs to be recategorized, use the [API: Categorization of accounts](/assess-api-categorization-of-accounts) endpoint.
 
 ## Measures
 

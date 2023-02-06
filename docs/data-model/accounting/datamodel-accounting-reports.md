@@ -38,14 +38,14 @@ The following table lists the required data types for each report:
 "data": {
 "h-0": "Aged Debtors Report",
 "h-1": "Aged Creditors Report",
-"0-0": "[Customers](https://docs.codat.io/docs/datamodel-accounting-customers)",
-"1-0": "[Invoices](https://docs.codat.io/docs/datamodel-accounting-invoices)",
-"2-0": "[Credit notes](https://docs.codat.io/docs/datamodel-accounting-creditnotes)",
-"3-0": "[Payments](https://docs.codat.io/docs/datamodel-accounting-payments)",
-"0-1": "[Suppliers](https://docs.codat.io/docs/datamodel-accounting-suppliers)",
-"1-1": "[Bills](https://docs.codat.io/docs/datamodel-accounting-bills)",
-"2-1": "[Bill credit notes](https://docs.codat.io/docs/datamodel-accounting-billcreditnotes)",
-"3-1": "[Bill payments](https://docs.codat.io/docs/datamodel-accounting-billpayments)"
+"0-0": "[Customers](/datamodel-accounting-customers)",
+"1-0": "[Invoices](/datamodel-accounting-invoices)",
+"2-0": "[Credit notes](/datamodel-accounting-creditnotes)",
+"3-0": "[Payments](/datamodel-accounting-payments)",
+"0-1": "[Suppliers](/datamodel-accounting-suppliers)",
+"1-1": "[Bills](/datamodel-accounting-bills)",
+"2-1": "[Bill credit notes](/datamodel-accounting-billcreditnotes)",
+"3-1": "[Bill payments](/datamodel-accounting-billpayments)"
 },
 "cols": 2,
 "rows": 4
@@ -95,7 +95,7 @@ The structure of the report will be as the example below:
 "0-2": "Date that the report was generated or calculated from the underlying data",
 "1-0": "reportDate",
 "1-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "1-2": "Date that the report was generated for. This can be specified when calling the API.",
 "2-0": "**Aged Debtors**
 data.CustomerId
@@ -129,13 +129,13 @@ data.SupplierName",
 "5-0": "agedOutstandingAmounts.details",
 "1-0": "agedOutstandingAmounts",
 "0-1": "_string_
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "0-2": "The currency of the amount due from the customer or owed to the supplier",
 "1-1": "array",
 "2-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "3-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "2-2": "The start date of the period",
 "1-2": "Each `agedOutstandingAmount` object contains a 30 day period detailing the monies due or owed from that period.",
 "3-2": "The end date of the period",

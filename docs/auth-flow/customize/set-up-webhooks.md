@@ -18,5 +18,5 @@ Therefore, the alert rule would have to specify the company ID, and the account 
 
 There are two ways to set up an alert:
 
-- Use a [webhook](https://docs.codat.io/docs/core-rules-create), or
-- Use a [redirect parameter](https://docs.codat.io/docs/redirect-urls#redirect-with-reserved-query-parameters), such as the status code.
+- Use a [webhook](/core-rules-create), or
+- Use a [redirect parameter](/redirect-urls#redirect-with-reserved-query-parameters), such as the status code.

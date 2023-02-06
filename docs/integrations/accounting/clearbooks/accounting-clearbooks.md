@@ -15,4 +15,4 @@ View the coverage of our Clear Books integration in the <a className="external" 
 
 ## Set up the integration
 
-See [Set up the Clear Books integration](https://docs.codat.io/docs/accounting-clearbooks-setup) to learn how to set up and enable the integration.
+See [Set up the Clear Books integration](/accounting-clearbooks-setup) to learn how to set up and enable the integration.

@@ -7,5 +7,5 @@ updatedAt: "2022-10-04T14:17:53.561Z"
 
 In the Codat portal you can set up and manage:
 
-- [Accounts for users](https://docs.codat.io/docs/adding-additional-users) within your organisation, including assigning permissions through [user roles](https://docs.codat.io/docs/user-roles).
-- [Companies](https://docs.codat.io/docs/portal-managing-companies) to access data from your customer's businesses.
+- [Accounts for users](/adding-additional-users) within your organisation, including assigning permissions through [user roles](/user-roles).
+- [Companies](/portal-managing-companies) to access data from your customer's businesses.

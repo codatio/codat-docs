@@ -1,5 +1,5 @@
 ---
-title: "Marketing Metrics"
+title: "Marketing metrics"
 description: "Reference document for the ratios and metrics produced by the marketing metrics endpoint"
 createdAt: "2022-04-28T14:02:24.969Z"
 updatedAt: "2022-11-02T14:41:42.370Z"
@@ -7,7 +7,7 @@ updatedAt: "2022-11-02T14:41:42.370Z"
 
 The Marketing Metrics endpoint retrieves the _marketing to revenue_ and _marketing to expense_ metrics over one or more periods of time. These marketing metrics are calculated from accounting data. It is generated from data available on the customer's profit and loss statement.
 
-Refer to the [Assess reporting structure](https://docs.codat.io/docs/assess-reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/assess-reporting-structure) page for more detail on reports in Assess.
 
 For Marketing Metrics, these are the dimensions and measures:
 
@@ -28,7 +28,7 @@ For Marketing Metrics, these are the dimensions and measures:
 - Is structured based on dimension (index =“0”), i.e. Period.
 - The endpoint will return **marketing to expense** and **marketing to revenue** metrics for each period.
 
-View the Marketing Metrics [formulas](https://docs.codat.io/docs/assess-financial-metrics#marketing-metrics-formulas).
+View the Marketing Metrics [formulas](/assess-financial-metrics#marketing-metrics-formulas).
 
 The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_accountingMetrics_marketing" target="_blank">Swagger</a> under **Assess**.
 
@@ -44,7 +44,7 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 "h-3": "Required",
 "0-0": "**reportDate** ",
 "0-1": "_string_
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "0-2": "YYYY-MM-DD
 
 Datetime or Date (inclusive of the whole day).",
@@ -145,12 +145,12 @@ Ordered by latest to earliest periods."
 "0-2": ""Period n"",
 "1-0": "**start** ",
 "1-1": "_string_
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "1-2": "YYYY-MM-DD
 
 Date in which the period begins (inclusive).",
 "2-1": "_string_
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "2-0": "**end** ",
 "2-2": "YYYY-MM-DD
 

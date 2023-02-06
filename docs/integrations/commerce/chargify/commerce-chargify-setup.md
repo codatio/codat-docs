@@ -5,9 +5,9 @@ createdAt: "2022-08-08T13:28:16.586Z"
 updatedAt: "2023-01-06T16:35:29.843Z"
 ---
 
-Set up the [Chargify](https://docs.codat.io/docs/commerce-chargify) integration to retrieve recurring billing and subscriptions data from your SMB customers.
+Set up the [Chargify](/commerce-chargify) integration to retrieve recurring billing and subscriptions data from your SMB customers.
 
-Before you can use the integration, your SMB customers (merchants who use Chargify) need to retrieve their secure API credentials from their Chargify account and enter them in [Link](https://docs.codat.io/docs/auth-flow). Chargify does not require any global credentials for accessing the API.
+Before you can use the integration, your SMB customers (merchants who use Chargify) need to retrieve their secure API credentials from their Chargify account and enter them in [Link](/auth-flow). Chargify does not require any global credentials for accessing the API.
 
 To set up the integration, you perform these tasks:
 

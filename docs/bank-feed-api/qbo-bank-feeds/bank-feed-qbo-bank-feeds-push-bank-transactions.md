@@ -5,7 +5,7 @@ createdAt: "2022-09-06T09:59:07.201Z"
 updatedAt: "2023-01-11T15:59:49.369Z"
 ---
 
-When an SMB user has [connected one or more bank accounts to QuickBooks Online](https://docs.codat.io/docs/accounting-qbo-bank-feeds-smb-customer-steps), you can push bank transactions from a connected account to QuickBooks Online (one account at a time). To identify a user's connected bank accounts, see [Retrieve bank account status and information](https://docs.codat.io/docs/bank-feed-qbo-bank-feeds-setup#retrieve-bank-account-status-and-information).
+When an SMB user has [connected one or more bank accounts to QuickBooks Online](/accounting-qbo-bank-feeds-smb-customer-steps), you can push bank transactions from a connected account to QuickBooks Online (one account at a time). To identify a user's connected bank accounts, see [Retrieve bank account status and information](/bank-feed-qbo-bank-feeds-setup#retrieve-bank-account-status-and-information).
 
 :::caution Pushing historic and future bank feeds
 

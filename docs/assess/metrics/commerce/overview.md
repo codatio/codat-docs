@@ -1,5 +1,6 @@
 ---
-title: "Commerce Metrics"
+title: "Commerce metrics"
+sidebar_label: Overview
 description: "Describes the metrics and formulas used by the commerce metrics endpoints"
 createdAt: "2022-04-04T07:04:34.727Z"
 updatedAt: "2022-11-30T14:38:23.838Z"
@@ -12,7 +13,8 @@ We will only produce metrics for the platforms that support the following data t
 - Commerce - Company Info
 - Commerce - Customers
 - Commerce - Orders
-  :::
+
+:::
 
 This feature provides a set of pre-calculated ratios and metrics focussed on commerce/sales data to assess merchant health. It exposes some of the key insights lenders need to assess the credit risk of a company using commerce data. _Commerce Metrics_ provides the data that lets you see what works and what doesn't, providing the opportunity to advise your customers / prospects on what they can do to improve their performance.
 

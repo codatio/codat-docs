@@ -14,7 +14,7 @@ All the endpoints mentioned in this guide are available in our <a href="https://
 
 Within your application, present your merchant with a list of accounting platforms they can connect to.
 
-On select, your merchant should be [redirected to the Sync configuration flow URL](https://docs.codat.io/docs/implementing-codats-no-code-merchant-configuration) where they will be prompted to authorize access to their accounting data.
+On select, your merchant should be [redirected to the Sync configuration flow URL](/implementing-codats-no-code-merchant-configuration) where they will be prompted to authorize access to their accounting data.
 
 :::info
 
@@ -58,9 +58,9 @@ Get a list of the integrations you've enabled, as well as the associated metadat
 
 Our available integrations for Sync for Commerce:
 
-- [Xero (UK only)](https://docs.codat.io/docs/accounting-xero)
-- [QuickBooks Online (UK and FR only)](https://docs.codat.io/docs/accounting-quickbooksonline)
-- [FreeAgent (UK only)](https://docs.codat.io/docs/accounting-freeagent)
+- [Xero (UK only)](/accounting-xero)
+- [QuickBooks Online (UK and FR only)](/accounting-quickbooksonline)
+- [FreeAgent (UK only)](/accounting-freeagent)
 
 Call our `GET /integrations` endpoint, querying for enabled integrations.
 
@@ -211,7 +211,7 @@ When the user selects the integration you're ready to progress them to the Sync 
 
 :::caution Incorrect platform selection
 
-If your merchant accidentally selects the wrong accounting package, you can resolve this by [deleting that Connection](https://docs.codat.io/docs/core-dataconnections#how-do-i-delete-a-data-connection) for the incorrectly selected accounting software and returning them to the accounting platform selection stage.
+If your merchant accidentally selects the wrong accounting package, you can resolve this by [deleting that Connection](/core-dataconnections#how-do-i-delete-a-data-connection) for the incorrectly selected accounting software and returning them to the accounting platform selection stage.
 :::
 
 When you're ready to proceed, you can get the URL of the sync configuration flow using the variables you've retained.
@@ -233,8 +233,8 @@ Our no-code and low-code flows take care of platform selection and authorization
 
 You can read more about those here:
 
-- [Authorize with Embedded Link](https://docs.codat.io/docs/authorize-embedded-link)
-- [Authorize with Hosted Link](https://docs.codat.io/docs/authorize-hosted-link)
+- [Authorize with Embedded Link](/authorize-embedded-link)
+- [Authorize with Hosted Link](/authorize-hosted-link)
 
 ### 1. Authorize
 

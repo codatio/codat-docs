@@ -7,6 +7,6 @@ authors: mcclowes
 link: "https://docs.codat.io/docs/pull-and-push-history#push-history"
 ---
 
-[Read more...](https://docs.codat.io/docs/pull-and-push-history#push-history)
+[Read more...](/pull-and-push-history#push-history)
 
 <!--truncate-->

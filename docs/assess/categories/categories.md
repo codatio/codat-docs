@@ -1,5 +1,5 @@
 ---
-title: "Account Categorization"
+title: "Account categorization"
 description: "Categorization standardizes financial statements which are used to produce insights about your customers' financial health"
 createdAt: "2022-02-21T13:57:52.224Z"
 updatedAt: "2022-11-02T14:38:07.399Z"
@@ -28,7 +28,7 @@ Account categories have three sub-categories:
 - Account subtype - the category often used for traditional financial ratios, e.g. Current assets, Current liabilities, etc.
 - Account detail type - the most granular level of categorization, e.g. Cash, Inventory, Depreciation, etc.
 
-Categories are assigned in two ways. First, Codat automatically suggests categories for accounts. Second, you assign a category to an account. Categories can be assigned via our [Categorization of accounts API](https://docs.codat.io/docs/assess-api-categorization-of-accounts#update-categories-for-a-company) or through Codat's Portal (see [How to categorize accounts](https://docs.codat.io/docs/assess-in-the-portal-categorization-of-accounts#how-to-categorize-accounts)).
+Categories are assigned in two ways. First, Codat automatically suggests categories for accounts. Second, you assign a category to an account. Categories can be assigned via our [Categorization of accounts API](/assess-api-categorization-of-accounts#update-categories-for-a-company) or through Codat's Portal (see [How to categorize accounts](/assess/portal/overview-categorization-of-accounts#how-to-categorize-accounts)).
 
 ## Uncategorised accounts
 

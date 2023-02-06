@@ -5,7 +5,7 @@ createdAt: "2020-04-06T07:37:50.107Z"
 updatedAt: "2022-10-17T16:27:12.407Z"
 ---
 
-To minimize the performance impact of the [rate limits](https://docs.codat.io/docs/zoho-book-limits#zoho-books-rate-limits) described below, by default Codat pulls a reduced dataset from Zoho Books for some data types.
+To minimize the performance impact of the [rate limits](/zoho-book-limits#zoho-books-rate-limits) described below, by default Codat pulls a reduced dataset from Zoho Books for some data types.
 
 The following table summarizes the fields which are excluded when pulling reduced datasets from Zoho Books.
 [block:parameters]

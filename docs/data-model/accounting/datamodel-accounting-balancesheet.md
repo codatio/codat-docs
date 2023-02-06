@@ -25,7 +25,7 @@ This report will reflect the structure and line descriptions that the business h
 By default, Codat pulls (up to) 24 months of balance sheets for a company. You can adjust this to fetch more history, where available, by updating the `monthsToSync` value for `balanceSheet` on the [data type settings endpoint](https://docs.codat.io/reference/post_profile-syncsettings).
 
 **Want to pull this in a standardised structure?**
-Our [Enhanced Financials](https://docs.codat.io/docs/assess-enhanced-financials) endpoints provide the same report under standardized headings, allowing you to pull it in the same format for all of your business customers.
+Our [Enhanced Financials](/assess/reports/enhanced-financials/financials) endpoints provide the same report under standardized headings, allowing you to pull it in the same format for all of your business customers.
 
 ## Data model
 
@@ -40,7 +40,7 @@ Our [Enhanced Financials](https://docs.codat.io/docs/assess-enhanced-financials)
 "2-0": "**mostRecentAvailableMonth** ",
 "3-0": "**earliestAvailableMonth** ",
 "0-1": "_string_
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "2-1": "_string_",
 "3-1": "_string_",
 "1-2": "An array of BalanceSheet reports.",
@@ -95,7 +95,7 @@ See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
 "1-1": "_string_",
 "2-1": "_decimal_",
 "3-2": "An array of ReportLine items.",
-"0-2": "Reference for an account in the accounting platform. This is unique to the [company](https://docs.codat.io/docs/datamodel-accounting-company).",
+"0-2": "Reference for an account in the accounting platform. This is unique to the [company](/datamodel-accounting-company).",
 "1-2": "Name of the account in the accounting platform.",
 "2-2": "Balance of the account in the accounting platform."
 },

@@ -51,7 +51,7 @@ Unfortunately, QuickBooks Self Employed uses a different API to QuickBooks Onlin
 
 ## How does Codat handle QuickBooks Online's "Expense" transactions
 
-QuickBooks Online uses _expenses_ to record purchases that are paid immediately. Where these are recorded against a [supplier](https://docs.codat.io/docs/datamodel-accounting-suppliers), they are made available in Codat's [Bills](https://docs.codat.io/docs/datamodel-accounting-bills) and [Bill payments](https://docs.codat.io/docs/datamodel-accounting-billpayments) datasets.
+QuickBooks Online uses _expenses_ to record purchases that are paid immediately. Where these are recorded against a [supplier](/datamodel-accounting-suppliers), they are made available in Codat's [Bills](/datamodel-accounting-bills) and [Bill payments](/datamodel-accounting-billpayments) datasets.
 
 ## Why can't I sync purchase orders from a QuickBooks Online Demo account?
 
@@ -59,4 +59,4 @@ Intuit only make Purchase Orders available on paid QuickBooks Online subscriptio
 
 ## Tracking categories
 
-In Codat, QBO's "classes" and "locations" are mapped to [tracking categories](https://docs.codat.io/docs/datamodel-accounting-trackingcategories).
+In Codat, QBO's "classes" and "locations" are mapped to [tracking categories](/datamodel-accounting-trackingcategories).

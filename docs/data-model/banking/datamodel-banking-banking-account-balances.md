@@ -23,7 +23,7 @@ Whilst you can choose to sync hourly, this may incur usage charges from Plaid or
 From the Banking Account Balances endpoint, you can retrieve a list of all bank account balances:  
 `GET /companies/{companyId}/connections/{connectionId}/data/banking-accountBalances`
 
-Responses are paged, so you should provide `page` and `pageSize` query parameters in your request. See [Pagination](https://docs.codat.io/docs/pagination) for details.
+Responses are paged, so you should provide `page` and `pageSize` query parameters in your request. See [Pagination](/pagination) for details.
 
 # Data model
 
@@ -41,15 +41,15 @@ Responses are paged, so you should provide `page` and `pageSize` query parameter
 "1-2": "An object containing bank balance data.",
 "2-0": "date",
 "2-1": "_string_  
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "2-2": "Date of the balance.",
 "3-0": "modifiedDate",
 "3-1": "_string_  
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "3-2": "Date the balance was last changed in the Codat's cache.",
 "4-0": "sourceModified",
 "4-1": "_string_  
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "4-2": "Date the balance was last updated in the underlying open banking provider's data."
 },
 "cols": 3,

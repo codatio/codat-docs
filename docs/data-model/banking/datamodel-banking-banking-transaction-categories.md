@@ -23,7 +23,7 @@ From the Banking Transaction Categories endpoint, you can retrieve:
 
   Note that in this endpoint example, _auto-and-transport_ is a transaction category.
 
-Responses are paged, so you should provide `page` and `pageSize` query parameters in your request. See [Pagination](https://docs.codat.io/docs/pagination) for details.
+Responses are paged, so you should provide `page` and `pageSize` query parameters in your request. See [Pagination](/pagination) for details.
 
 # Data model
 
@@ -50,13 +50,13 @@ Responses are paged, so you should provide `page` and `pageSize` query parameter
 "4-2": "Status of the bank transaction category, i.e. "active", "archived", "unknown".",
 "5-0": "modifiedDate",
 "5-1": "_string_  
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "5-2": "YYYY-MM-DDT00:00:00Z
 
 The date the record was last updated in Codat's cache.",
 "6-0": "sourceModifiedDate",
 "6-1": "_string_  
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "6-2": "YYYY-MM-DDT00:00:00
 
 The date the record was last changed in the originating system.",

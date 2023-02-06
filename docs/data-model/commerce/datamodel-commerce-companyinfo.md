@@ -41,8 +41,8 @@ In the Codat system, company information includes standard commercial details ab
 "5-2": "Registration number given to the linked company by the companies authority in the country of origin. In the UK this is Companies House.",
 "6-0": "**baseCurrency** ",
 "6-1": "_string_  
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
-"6-2": "Currency set in the commerce platform of the linked company. Used by the [currency rate](https://docs.codat.io/docs/datamodel-shared-currencyrate).",
+See [currency](/datamodel-shared-currency)",
+"6-2": "Currency set in the commerce platform of the linked company. Used by the [currency rate](/datamodel-shared-currencyrate).",
 "7-0": "**accountBalances**",
 "7-1": "",
 "7-2": "An array of [Account balances](#section-account-balances).",
@@ -51,15 +51,15 @@ See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
 "8-2": "URL addresses for the source of commerce data.",
 "9-0": "**createdDate** ",
 "9-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "9-2": "Date the linked company was created in the commerce platform.",
 "10-0": "**modifiedDate** ",
 "10-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "10-2": "Date the record was last updated in the Codat system.",
 "11-0": "**sourceModifiedDate** ",
 "11-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "11-2": "Date the record was last changed in the commerce system."
 },
 "cols": 3,

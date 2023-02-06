@@ -22,11 +22,11 @@ The accounting metrics and ratios of your linked companies are presented through
 
 ![Accounting dashboard screenshot](https://files.readme.io/022dcc5-Accounting2.png)
 
-- [Company overview](https://docs.codat.io/docs/company-overview) - A snapshot of the financial health of an individual company.
-- [Profit and loss](https://docs.codat.io/docs/profit-and-loss) - The revenue, costs, and expenses of the company for a specified period. Drill down to compare custom periods and view trends.
-- [Balance sheet](https://docs.codat.io/docs/balance-sheet) - The assets, liabilities, and equity of the company for a specified period. Drill down to compare custom periods and view trends.
-- [Customer overview](https://docs.codat.io/docs/company-overview) - Key metrics for the company's top customers, including revenue earned and outstanding invoices. Drill down into invoice details for all customers.
-- [Supplier overview](https://docs.codat.io/docs/supplier-overview) - Key metrics for the company's top suppliers, including expenditure and outstanding bills. Drill down into bill details for all suppliers.
+- [Company overview](/company-overview) - A snapshot of the financial health of an individual company.
+- [Profit and loss](/profit-and-loss) - The revenue, costs, and expenses of the company for a specified period. Drill down to compare custom periods and view trends.
+- [Balance sheet](/balance-sheet) - The assets, liabilities, and equity of the company for a specified period. Drill down to compare custom periods and view trends.
+- [Customer overview](/company-overview) - Key metrics for the company's top customers, including revenue earned and outstanding invoices. Drill down into invoice details for all customers.
+- [Supplier overview](/supplier-overview) - Key metrics for the company's top suppliers, including expenditure and outstanding bills. Drill down into bill details for all suppliers.
 
 All data is pulled directly or derived from Codat's API endpoints. Currently, only accounting data types are supported.
 

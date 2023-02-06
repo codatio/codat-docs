@@ -9,8 +9,8 @@ Now that the Mollie integration is set up and tested, you can pull live consente
 
 ### Prerequisites:
 
-- [Set up your Mollie integration](https://docs.codat.io/docs/commerce-mollie-setup)
-- [Test your Mollie integration](https://docs.codat.io/docs/commerce-mollie-test)
+- [Set up your Mollie integration](/commerce-mollie-setup)
+- [Test your Mollie integration](/commerce-mollie-test)
 
 ## Add a company and connect it to your Mollie app
 
@@ -27,9 +27,9 @@ Perform these steps in the <a href="https://app.codat.io" target="_blank">Codat 
 
 ## Customer authorization using Link
 
-Before you can retrieve commerce data from Mollie, your customer needs to authorize your access and connect their commerce data to the Mollie integration. They do this using Codat [Link](https://docs.codat.io/docs/use-link-for-the-authentication-flow).
+Before you can retrieve commerce data from Mollie, your customer needs to authorize your access and connect their commerce data to the Mollie integration. They do this using Codat [Link](/use-link-for-the-authentication-flow).
 
-1. Send the Link URL, which you obtained in [Set up your Mollie integration](https://docs.codat.io/docs/commerce-mollie-setup), to your customer. Alternatively, you can embed the authorization journey into your site or application using the Link API.
+1. Send the Link URL, which you obtained in [Set up your Mollie integration](/commerce-mollie-setup), to your customer. Alternatively, you can embed the authorization journey into your site or application using the Link API.
 
 2. In the Link UI or through the embedded authorization flow, the customer authorizes access to a requested subset of their Mollie data. The exact steps depend on your Link configuration, but in general your customer must:
 

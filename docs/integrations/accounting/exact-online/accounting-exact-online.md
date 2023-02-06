@@ -11,11 +11,11 @@ You can synchronize accounting and banking data with <a className="external" hre
 
 View the coverage of our <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=pbbf" target="_blank">Exact Online (UK)</a> and <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=qudb" target="_blank">Exact Online (NL)</a> integrations in the Data coverage explorer.
 
-For more details about the supported data types and operations, see [Exact Online integration reference](https://docs.codat.io/docs/exact-online-integration-reference).
+For more details about the supported data types and operations, see [Exact Online integration reference](/exact-online-integration-reference).
 
 ## Set up the integration
 
-See [Set up the Exact Online integration](https://docs.codat.io/docs/accounting-exact-setup) to learn how to set up and enable the integration.
+See [Set up the Exact Online integration](/accounting-exact-setup) to learn how to set up and enable the integration.
 
 ## Supported software
 

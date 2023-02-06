@@ -5,7 +5,7 @@ createdAt: "2020-02-25T17:44:15.137Z"
 updatedAt: "2022-12-16T16:54:44.252Z"
 ---
 
-When you've [set up and enabled Plaid](https://docs.codat.io/docs/banking-plaid-setup), you can test your integration with Plaid's sandbox. You'll need to:
+When you've [set up and enabled Plaid](/banking-plaid-setup), you can test your integration with Plaid's sandbox. You'll need to:
 
 - Set up a test company.
 - Generate a Link URL to connect your test company to Plaid's sandbox.
@@ -29,7 +29,7 @@ To connect your test company to Plaid's sandbox, you can either generate a Link 
 2. Next to the company name, select **Request data**.  
    The **Links URL...** dialog box is displayed.
 3. At the bottom of the dialog box, select **Create**.
-4. Copy the generated URL and go straight to [Connect to Plaid's sandbox](https://docs.codat.io/docs/test-your-plaid-integration#section-connect-to-plaids-sandbox).
+4. Copy the generated URL and go straight to [Connect to Plaid's sandbox](/test-your-plaid-integration#section-connect-to-plaids-sandbox).
 
 ## Generate a Link URL via the API
 

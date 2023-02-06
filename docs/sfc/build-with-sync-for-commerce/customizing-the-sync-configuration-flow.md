@@ -15,7 +15,7 @@ The Sync configuration flow is a white-labelled solution that can be tailored to
 
 To create a branded experience, you can:
 
-- Set up your company name, logo, and icon via the [branding settings](https://docs.codat.io/docs/set-up-link) in the Portal.
+- Set up your company name, logo, and icon via the [branding settings](/set-up-link) in the Portal.
 - Update the text fields of the flow  
   Updating the text fields helps ensure that your users clearly understand what they are sharing via the Sync for Commerce flow and which accounts they should choose to ensure it works correctly.
 
@@ -23,35 +23,35 @@ To create a branded experience, you can:
 
 You can customize every bit of text in the Sync configuration flow.
 
-1. [Main title](https://docs.codat.io/docs/customizing-the-sync-configuration-flow#main-title)
+1. [Main title](/customizing-the-sync-configuration-flow#main-title)
 
 <img
   src="https://files.readme.io/1e4761e-Main_title.png"
   alt="Main title section of the Sync configuration flow"
 />
 
-2. [Checkbox captions](https://docs.codat.io/docs/customizing-the-sync-configuration-flow#checkbox-captions)
+2. [Checkbox captions](/customizing-the-sync-configuration-flow#checkbox-captions)
 
 <img
   src="https://files.readme.io/bd64beb-Checkbox_items.png"
   alt="Checkbox section section of the Sync configuration flow"
 />
 
-3. [Text on the **Previous** and **Next** buttons](https://docs.codat.io/docs/customizing-the-sync-configuration-flow#buttons)
+3. [Text on the **Previous** and **Next** buttons](/customizing-the-sync-configuration-flow#buttons)
 
 <img
   src="https://files.readme.io/e41eb47-Buttons.png"
   alt="Move buttons section of the Sync configuration flow"
 />
 
-4. Feature title, feature description, and required field indicator description ([Sales](https://docs.codat.io/docs/customizing-the-sync-configuration-flow#sales-title-and-description), [Fees](https://docs.codat.io/docs/customizing-the-sync-configuration-flow#fees-title-and-description), [Payments](https://docs.codat.io/docs/customizing-the-sync-configuration-flow#payments-title-and-description))
+4. Feature title, feature description, and required field indicator description ([Sales](/customizing-the-sync-configuration-flow#sales-title-and-description), [Fees](/customizing-the-sync-configuration-flow#fees-title-and-description), [Payments](/customizing-the-sync-configuration-flow#payments-title-and-description))
 
 <img
   src="https://files.readme.io/9c0450e-Feature_title.png"
   alt="Feature text section of the Sync configuration flow"
 />
 
-5. Feature categories title, feature categories title description, and feature categories ([Sales](https://docs.codat.io/docs/customizing-the-sync-configuration-flow#sales-feature-categories), [Fees](https://docs.codat.io/docs/customizing-the-sync-configuration-flow#fees-feature-categories), [Payments](https://docs.codat.io/docs/customizing-the-sync-configuration-flow#payments-feature-categories))
+5. Feature categories title, feature categories title description, and feature categories ([Sales](/customizing-the-sync-configuration-flow#sales-feature-categories), [Fees](/customizing-the-sync-configuration-flow#fees-feature-categories), [Payments](/customizing-the-sync-configuration-flow#payments-feature-categories))
 
 <img
   src="https://files.readme.io/858fd2e-Feature_categories.png"
@@ -326,7 +326,7 @@ POST sync/commerce/config/ui/accounts/platform/{commerceKey}
 }
 ````
 
-In the request above, the `commerceKey` is the Codat platform key of the selected commerce platform. You can find a list of keys for the supported platforms in the [Accounting platform selection](https://docs.codat.io/docs/sync-platform-selection) section.  
+In the request above, the `commerceKey` is the Codat platform key of the selected commerce platform. You can find a list of keys for the supported platforms in the [Accounting platform selection](/sync-platform-selection) section.  
 To find the `account-key`, consult the tables below. Note that fields marked with an '\*' cannot be removed.
 
 #### Sales feature categories

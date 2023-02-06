@@ -111,7 +111,7 @@ Here's how your SMB users interact with the QBD connector.
 
 - The SMB user downloads the connector as part of the link flow.
 - Initially, the connector installer requires administrator privileges (admin rights) to run.
-- The SMB user completes some simple steps to complete the installation (as described in [Install the QuickBooks Desktop connector](https://docs.codat.io/docs/installing-the-quickbooks-connector)). In summary, they'll need to:
+- The SMB user completes some simple steps to complete the installation (as described in [Install the QuickBooks Desktop connector](/installing-the-quickbooks-connector)). In summary, they'll need to:
   - Enter their unique license number (their Codat Company ID), which is provided during the link flow.
   - Complete some steps to point the connector at the correct accounting package data file on their local machine.
 
@@ -121,13 +121,13 @@ The connector has a UI that is accessible from the system tray. Your SMB users d
 
 ## System requirements
 
-See [QuickBooks Desktop requirements](https://docs.codat.io/docs/software-and-hardware-requirements) to learn about the supported versions of QuickBooks Desktop, and the hardware, software, environment and networking requirements for running the connector.
+See [QuickBooks Desktop requirements](/software-and-hardware-requirements) to learn about the supported versions of QuickBooks Desktop, and the hardware, software, environment and networking requirements for running the connector.
 
 ## Install the connector
 
-See [Install the QuickBooks Desktop connector](https://docs.codat.io/docs/installing-the-quickbooks-connector) to learn how to set up and enable the connector.
+See [Install the QuickBooks Desktop connector](/installing-the-quickbooks-connector) to learn how to set up and enable the connector.
 
 :::note Installation in hosted environments
 
-[Installation on Right Networks hosted instances](https://docs.codat.io/docs/install-qbd-connector-right-networks) is currently available in beta.
+[Installation on Right Networks hosted instances](/install-qbd-connector-right-networks) is currently available in beta.
 :::

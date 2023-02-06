@@ -27,7 +27,7 @@ Details of a product or service that a customer buys from a supplier or sells to
 "h-2": "Description",
 "0-0": "**id** ",
 "0-1": "_string_",
-"0-2": "Identifier for the item that is unique to a [company](https://docs.codat.io/docs/datamodel-accounting-company) in the accounting platform.",
+"0-2": "Identifier for the item that is unique to a [company](/datamodel-accounting-company) in the accounting platform.",
 "1-0": "**name** ",
 "1-1": "_string_",
 "1-2": "Name of the item in the accounting platform.",
@@ -36,11 +36,11 @@ Details of a product or service that a customer buys from a supplier or sells to
 "2-2": "Friendly reference for the item.",
 "3-0": "**modifiedDate** ",
 "3-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "3-2": "Date when the record was last updated in the Codat system.",
 "4-0": "**sourceModifiedDate** ",
 "4-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "4-2": "Date when the record was last updated in the accounting platform.",
 "5-0": "**itemStatus** ",
 "5-1": "_string_",
@@ -85,7 +85,7 @@ See [date](https://docs.codat.io/docs/datamodel-shared-date)",
   }
   [/block]
 
-<sup id="footnote-1">Note 1</sup> [Due to a limitation in Xero's API](https://docs.codat.io/docs/xero-faq#section-5-why-do-all-of-my-items-from-xero-have-their-status-as-unknown),
+<sup id="footnote-1">Note 1</sup> [Due to a limitation in Xero's API](/xero-faq#section-5-why-do-all-of-my-items-from-xero-have-their-status-as-unknown),
 all items from Xero are mapped as `Unknown`.
 
 ### Bill item
@@ -96,8 +96,8 @@ Details of the product or service when it is bought from a supplier.
 | :-------------- | :---------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------- |
 | **description** | _string_                                                                                              | Short description of the product or service that has been bought by the customer.                                        |
 | **unitPrice**   | _decimal_                                                                                             | Unit price of the product or service.                                                                                    |
-| **accountRef**  | _[reference type](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-accountref)_ | Reference of the [account](https://docs.codat.io/docs/datamodel-accounting-chartofaccounts) to which the item is linked. |
-| **taxRateRef**  | _[reference type](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-taxrateref)_ | Reference of the [tax rate](https://docs.codat.io/docs/datamodel-accounting-taxrates) to which the item is linked.       |
+| **accountRef**  | _[reference type](/datamodel-accounting-referencetypes#section-accountref)_ | Reference of the [account](/datamodel-accounting-chartofaccounts) to which the item is linked. |
+| **taxRateRef**  | _[reference type](/datamodel-accounting-referencetypes#section-taxrateref)_ | Reference of the [tax rate](/datamodel-accounting-taxrates) to which the item is linked.       |
 
 ### Invoice item
 
@@ -107,8 +107,8 @@ Details of the product or service when it is sold to a customer.
 | :-------------- | :---------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------- |
 | **description** | _string_                                                                                              | Short description of the product or service that is provided by the customer.                                            |
 | **unitPrice**   | _decimal_                                                                                             | Unit price of the product or service.                                                                                    |
-| **accountRef**  | _[reference type](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-accountref)_ | Reference of the [account](https://docs.codat.io/docs/datamodel-accounting-chartofaccounts) to which the item is linked. |
-| **taxRateRef**  | _[reference type](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-taxrateref)_ | Reference of the [tax rate](https://docs.codat.io/docs/datamodel-accounting-taxrates) to which the item is linked.       |
+| **accountRef**  | _[reference type](/datamodel-accounting-referencetypes#section-accountref)_ | Reference of the [account](/datamodel-accounting-chartofaccounts) to which the item is linked. |
+| **taxRateRef**  | _[reference type](/datamodel-accounting-referencetypes#section-taxrateref)_ | Reference of the [tax rate](/datamodel-accounting-taxrates) to which the item is linked.       |
 
 ### Item reference
 

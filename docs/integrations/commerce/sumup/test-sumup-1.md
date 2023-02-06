@@ -8,7 +8,7 @@ updatedAt: "2022-12-16T16:48:51.760Z"
 
 Codat recommends that you test your integration before sending link URLs to customers.
 
-When you've [set up your SumUp integration](https://docs.codat.io/docs/set-up-sumup-in-production-1), you're ready to test the authorization process for your integration. You'll need to:
+When you've [set up your SumUp integration](/set-up-sumup-in-production-1), you're ready to test the authorization process for your integration. You'll need to:
 
 - Set up a test company in the <a href="https://app.codat.io/" target="_blank">Codat Portal</a>.
 - Create a corresponding test app in SumUp.

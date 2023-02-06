@@ -8,7 +8,7 @@ updatedAt: "2023-01-06T16:59:13.488Z"
 
 Before you can pull commerce data from companies using SumUp, you will need to set up the integration in Codat's Portal. You'll need to:
 
-- Log in to the <a className="external" href="https://portal.codat.io" target="_blank">Codat portal</a>.
+- Log in to the <a className="external" href="https://app.codat.io" target="_blank">Codat portal</a>.
 - Create a SumUp live app in the <a className="external" href="https://me.sumup.com/en-gb/login/" target="_blank">SumUp portal</a> and retrieve your secure credentials (API key and secret).
 - Add your SumUp account to the Codat Portal in Production and enable the SumUp integration.
 - Check your sync settings.
@@ -27,10 +27,10 @@ If you already have a SumUp account, have your account details at hand. If not, 
 
 ## Add your secure credentials to the Codat Portal and enable the SumUp integration
 
-1. Sign in to the <a href="https://portal.codat.io" target="_blank">Codat Portal</a>.
+1. Sign in to the <a href="https://app.codat.io" target="_blank">Codat Portal</a>.
 2. On the navigation bar, select **Settings > Integrations > Commerce**.
 3. Find the **SumUp** integration, then select **Set up** to view the **Integration settings** page.
-4. Choose what [type of access to company data](https://docs.codat.io/docs/data-sync-settings) you wish to have for this integration: one-off or continuous.
+4. Choose what [type of access to company data](/data-sync-settings) you wish to have for this integration: one-off or continuous.
 5. From the **OAuth - Create Client Credentials** section, copy and paste.
 
 - **Client ID** value into **Client Id**.
@@ -50,6 +50,6 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 ## Check your sync settings in the Codat Portal
 
-If this is your first commerce integration, update your [data type settings](https://docs.codat.io/docs/commerce-sync-settings) to enable commerce data types.
+If this is your first commerce integration, update your [data type settings](/commerce-sync-settings) to enable commerce data types.
 
-You're now ready to [set up companies](https://docs.codat.io/docs/portal-managing-companies#add-a-new-company) for your customers in the Codat Portal.
+You're now ready to [set up companies](/portal-managing-companies#add-a-new-company) for your customers in the Codat Portal.

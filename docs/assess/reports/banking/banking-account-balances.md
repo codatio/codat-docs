@@ -12,7 +12,7 @@ Please note, this feature is in beta testing. We encourage you to provide any fe
 
 This endpoint retrieves the current balance and balance limit for a company, over one or more periods of time, and provides the data in the currency requested in the query parameters.
 
-Refer to the [Assess reporting structure](https://docs.codat.io/docs/assess-reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/assess-reporting-structure) page for more detail on reports in Assess.
 
 For _Banking account balances_, these are the dimensions and measures:
 
@@ -46,7 +46,7 @@ GET ​/data​/companies​/{companyId}​/assess​/bankingMetrics/accountBala
     "h-3": "Required",
     "2-0": "**reportDate**",
     "2-1": "*string*
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
     "2-2": "YYYY-MM-DD
 
 Users can specify a specific date, however the response will be provided for the full month.",
@@ -69,7 +69,7 @@ Default is 'false'.",
     "6-3": "Optional",
     "0-0": "**query**",
     "0-1": "*string*
-See [Querying](https://docs.codat.io/docs/querying-1)",
+See [Querying](/querying-1)",
     "0-2": "Codat query string.
 
 It can be empty. If empty, it returns data for all bank accounts for a specific company.",
@@ -161,12 +161,12 @@ Ordered by latest to earliest periods."
     "0-2": ""Period n"",
     "1-0": "**start** ",
     "1-1": "*string*
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
     "1-2": "YYYY-MM-DD
 
 Date in which the period begins (inclusive).",
     "2-1": "*string*
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
     "2-0": "**end** ",
     "2-2": "YYYY-MM-DD
 

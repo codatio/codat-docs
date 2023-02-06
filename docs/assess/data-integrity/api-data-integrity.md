@@ -1,5 +1,5 @@
 ---
-title: "API: Data Integrity"
+title: "API: data integrity"
 description: "Reference document for the Data Integrity endpoints"
 createdAt: "2022-01-13T14:46:31.445Z"
 updatedAt: "2022-11-22T16:18:03.295Z"
@@ -67,12 +67,12 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 "1-2": "The data type you want match results for.
 
 **Accounting source:**
-[bankAccounts](https://docs.codat.io/docs/datamodel-accounting-bankaccounts)
-[accountTransactions](https://docs.codat.io/docs/datamodel-accounting-account-transactions)
+[bankAccounts](/datamodel-accounting-bankaccounts)
+[accountTransactions](/datamodel-accounting-account-transactions)
 
 **Banking source:**
-[banking-accounts](https://docs.codat.io/docs/data-model-banking-banking-accounts)
-[banking-transactions](https://docs.codat.io/docs/data-model-banking-banking-transactions)
+[banking-accounts](/data-model-banking-banking-accounts)
+[banking-transactions](/data-model-banking-banking-transactions)
 
 Submit as route parameter.",
 "1-3": "Required",
@@ -140,7 +140,7 @@ Submit as route parameter."
 "h-2": "Description",
 "0-0": "**lastMatched**",
 "0-1": "_string_
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "0-2": "The date the matching algorithm last ran against the company’s bank transactions.",
 "1-2": "One of the following:
 
@@ -213,13 +213,13 @@ See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
 "2-0": "**minOverlappingDate**",
 "3-0": "**maxOverlappingDate**",
 "0-1": "_string_
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "1-1": "_string_
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "2-1": "_string_
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "3-1": "_string_
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "0-2": "Earliest date of transaction set.",
 "1-2": "Latest date of transaction set.",
 "2-2": "Earliest date where transactions exist in both accounting and banking platforms.",
@@ -311,7 +311,7 @@ It can be left blank. E.g.
 query=date>2020-12-01
 
 Submit as query parameter.
-This follows the standard [Codat query language](https://docs.codat.io/docs/querying-1).",
+This follows the standard [Codat query language](/querying-1).",
     "0-0": "**companyId**",
     "0-1": "*string* ",
     "0-2": "The ID of the company you want match results for.
@@ -322,12 +322,12 @@ Submit as route parameter.",
     "1-2": "The data type you want match results for.
 
 **Accounting source:**
-[bankAccounts](https://docs.codat.io/docs/datamodel-accounting-bankaccounts)
-[accountTransactions](https://docs.codat.io/docs/datamodel-accounting-account-transactions)
+[bankAccounts](/datamodel-accounting-bankaccounts)
+[accountTransactions](/datamodel-accounting-account-transactions)
 
 **Banking source:**
-[banking-accounts](https://docs.codat.io/docs/data-model-banking-banking-accounts)
-[banking-transactions](https://docs.codat.io/docs/data-model-banking-banking-transactions)
+[banking-accounts](/data-model-banking-banking-accounts)
+[banking-transactions](/data-model-banking-banking-transactions)
 
 Submit as route parameter.",
     "1-1": "*string*",
@@ -514,7 +514,7 @@ Then you would call each of the _Summaries endpoints_ with (url-escaped) query=d
 
 ## Details
 
-This endpoint exposes match results record by record for a given data type, filtered based on a query string in the same way as summary results. The results are [paginated](https://docs.codat.io/docs/pagination) and support [ordering](https://docs.codat.io/docs/ordering-results-1), following the same conventions as our other data endpoints.
+This endpoint exposes match results record by record for a given data type, filtered based on a query string in the same way as summary results. The results are [paginated](/pagination) and support [ordering](/ordering-results-1), following the same conventions as our other data endpoints.
 
 The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__assess_dataTypes__dataType__dataIntegrity_details" target="_blank">Swagger</a> under **Assess**.
 
@@ -539,7 +539,7 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 "2-2": "Can query any property in response.
 
 Submit as query parameter.
-This follows the standard [Codat query language](https://docs.codat.io/docs/querying-1).",
+This follows the standard [Codat query language](/querying-1).",
 "5-2": "State the property name by which you would like to order the response by.
 
 Submit as query parameter.",
@@ -557,12 +557,12 @@ Submit as route parameter.",
 "1-2": "The data type you want match results for.
 
 **Accounting source:**
-[bankAccounts](https://docs.codat.io/docs/datamodel-accounting-bankaccounts)
-[accountTransactions](https://docs.codat.io/docs/datamodel-accounting-account-transactions)
+[bankAccounts](/datamodel-accounting-bankaccounts)
+[accountTransactions](/datamodel-accounting-account-transactions)
 
 **Banking source:**
-[banking-accounts](https://docs.codat.io/docs/data-model-banking-banking-accounts)
-[banking-transactions](https://docs.codat.io/docs/data-model-banking-banking-transactions)
+[banking-accounts](/data-model-banking-banking-accounts)
+[banking-transactions](/data-model-banking-banking-transactions)
 
 Submit as route parameter.",
 "0-3": "Required",
@@ -600,12 +600,12 @@ Submit as route parameter.",
 "1-1": "_string_",
 "2-1": "_string_",
 "3-1": "_date_
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "4-1": "_string_",
 "5-1": "_number_",
 "6-1": "_string_",
 "7-1": "_array_
-See [Transactions matches array](https://docs.codat.io/docs/assess-api-data-integrity#transactions-matches)",
+See [Transactions matches array](/assess-api-data-integrity#transactions-matches)",
 "5-2": "The transaction value.",
 "3-2": "The date of the transaction.",
 "7-2": "Refer to the matches array table below."
@@ -635,7 +635,7 @@ This outlines the transaction(s) in which the original transaction has matched w
 "1-1": "_string_",
 "2-1": "_string_",
 "3-1": "_date_
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "4-1": "_string_",
 "5-1": "_number_",
 "6-1": "_string_",
@@ -676,7 +676,7 @@ See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
 "3-1": "_string_",
 "4-1": "_string_",
 "5-1": "_array_
-See [Accounts matches array](https://docs.codat.io/docs/assess-api-data-integrity#accounts-matches)",
+See [Accounts matches array](/assess-api-data-integrity#accounts-matches)",
 "1-2": "ID GUID representing the connection of the accounting or banking platform.",
 "2-2": "The account’s id.",
 "3-2": "The name of the account.",

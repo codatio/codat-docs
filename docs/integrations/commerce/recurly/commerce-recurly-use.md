@@ -5,9 +5,9 @@ createdAt: "2022-08-01T16:20:34.184Z"
 updatedAt: "2022-10-20T09:00:21.155Z"
 ---
 
-The Recurly integration is part of the [Domain Discovery Program](https://docs.codat.io/docs/domain-discovery-program), so Codat doesn't yet expose standardized data types or provide any data visualization or metrics (for example, in Assess).
+The Recurly integration is part of the [Domain Discovery Program](/domain-discovery-program), so Codat doesn't yet expose standardized data types or provide any data visualization or metrics (for example, in Assess).
 
-Instead, when an SMB customer (a company) has [linked their Recurly account](https://docs.codat.io/docs/commerce-recurly-setup#smb-customer-authenticate-and-connect-your-commerce-data), you can access their subscriptions and billing data through the `proxy` endpoint in the Codat API. Only GET requests are currently supported.
+Instead, when an SMB customer (a company) has [linked their Recurly account](/commerce-recurly-setup#smb-customer-authenticate-and-connect-your-commerce-data), you can access their subscriptions and billing data through the `proxy` endpoint in the Codat API. Only GET requests are currently supported.
 
 ## Send a proxy request
 
@@ -29,5 +29,5 @@ To view a list of all available endpoints, see the <a className="external" href=
 
 :::caution
 
-Use of the Recurly integration is subject to participation in the Codat [Domain discovery program](https://docs.codat.io/docs/domain-discovery-program). Be aware of the [program expectations](https://docs.codat.io/docs/domain-discovery-program) before using the integration.
+Use of the Recurly integration is subject to participation in the Codat [Domain discovery program](/domain-discovery-program). Be aware of the [program expectations](/domain-discovery-program) before using the integration.
 :::

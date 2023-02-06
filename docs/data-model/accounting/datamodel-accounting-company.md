@@ -10,7 +10,7 @@ Explore the company <a className="external" href="https://api.codat.io/swagger/i
 View the coverage for company info in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=company" target="_blank">Data coverage explorer</a>.
 
 :::info Company information or companies?
-Company information is standard information that is held in the accounting platform about a company. [Companies](ref:companies) is an endpoint that lists businesses in the Codat system that have linked and shared their data sources.
+Company information is standard information that is held in the accounting platform about a company. [Companies](/codat-api#/operations/list-companies) is an endpoint that lists businesses in the Codat system that have linked and shared their data sources.
 :::
 
 ## Data model
@@ -38,11 +38,11 @@ Company information is standard information that is held in the accounting platf
 "7-1": "_string_",
 "8-1": "_string_",
 "9-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "10-1": "_string_
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "12-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "3-2": "An array of [Addresses](#section-addresses).",
 "4-2": "An array of [PhoneNumbers](#section-phone-numbers).",
 "5-2": "An array of [WebLinks](#section-web-links).",
@@ -52,7 +52,7 @@ See [date](https://docs.codat.io/docs/datamodel-shared-date)",
 "7-2": "Registration number given to the linked company by the companies authority in the country of origin. In the UK this is Companies House.",
 "8-2": "Company tax number.",
 "9-2": "Start date of the financial year for the company.",
-"10-2": "Currency set in the accounting platform of the linked company. Used by the [currency rate](https://docs.codat.io/docs/datamodel-shared-currencyrate).",
+"10-2": "Currency set in the accounting platform of the linked company. Used by the [currency rate](/datamodel-shared-currencyrate).",
 "12-2": "Date the linked company was created in the accounting platform.",
 "11-0": "**sourceUrls** ",
 "11-1": "_dictionary of strings_",
@@ -60,7 +60,7 @@ See [date](https://docs.codat.io/docs/datamodel-shared-date)",
 
 For example, for Xero integrations two URLs are returned. These have many potential use cases, such as [deep linking](https://developer.xero.com/documentation/api-guides/deep-link-xero).",
 "6-0": "**ledgerLockDate** ",
-"6-1": "_string_ See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+"6-1": "_string_ See [date](/datamodel-shared-date)",
 "6-2": "If set in the accounting platform, the date (in the ISO 8601 date/time format) after which accounting transactions cannot be edited. Commonly used when books are closed at year-end."
 },
 "cols": 3,

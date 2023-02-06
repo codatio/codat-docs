@@ -33,7 +33,7 @@ The Tax Components endpoint returns tax rates from the commerce platform.
 "3-2": "The Boolean flag to indicate when a Tax Rate Component compounds on a sale.",
 "4-2": "Date the product was last changed in the commerce or point of sale platform.",
 "4-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)"
+See [date](/datamodel-shared-date)"
 },
 "cols": 3,
 "rows": 5

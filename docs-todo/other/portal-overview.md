@@ -5,7 +5,7 @@ createdAt: "2019-05-08T17:39:42.345Z"
 updatedAt: "2022-11-24T12:52:27.523Z"
 ---
 
-Once you have [signed up for your account](https://docs.codat.io/docs/creating-your-account), you will be able to sign in to the <a href="https://app.codat.io" target="_blank">Codat Portal</a>.
+Once you have [signed up for your account](/creating-your-account), you will be able to sign in to the <a href="https://app.codat.io" target="_blank">Codat Portal</a>.
 
 Once logged in, you can configure your settings and integrations, create companies and view company data, view information about your account, and access any Codat products you have configured.
 
@@ -28,7 +28,7 @@ From the Codat Portal, you can:
 - Manage access and permissions for users of the portal
 - View or regenerate API keys
 
-Developer and administrator [user roles](https://docs.codat.io/docs/user-roles) are also able to [manage upcoming changes](https://docs.codat.io/docs/portal-for-developers#api-deprecations) in the Portal.
+Developer and administrator [user roles](/user-roles) are also able to [manage upcoming changes](/portal-for-developers#api-deprecations) in the Portal.
 
 :::caution Supported browsers
 

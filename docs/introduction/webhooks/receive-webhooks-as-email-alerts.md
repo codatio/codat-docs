@@ -9,7 +9,7 @@ You can choose to specify an email address as a notification method for a rule. 
 
 The alert is also visible on the <a href="https://app.codat.io/monitor/alerts" target="_blank">Portal's raised alerts page</a>.
 
-You can add email addresses while creating a new rule, or update the email and notification details for an existing rule at any time. Learn more about creating and managing rules using our Portal [here](https://docs.codat.io/docs/core-rules-create#manage-rules-from-the-codat-portal), using our API [here](https://docs.codat.io/docs/core-rules-create#manage-rules-from-the-codat-api), and more about rule types [here](https://docs.codat.io/docs/core-rules-types).
+You can add email addresses while creating a new rule, or update the email and notification details for an existing rule at any time. Learn more about creating and managing rules using our Portal [here](/core-rules-create#manage-rules-from-the-codat-portal), using our API [here](/core-rules-create#manage-rules-from-the-codat-api), and more about rule types [here](/core-rules-types).
 
 ## Set up email alerts using the Portal
 
@@ -29,7 +29,7 @@ You can add email addresses while creating a new rule, or update the email and n
 
 1. Use Codat's [Create rule](https://docs.codat.io/reference/createrule) endpoint and complete the following parameters:
    - `companyId` to specify the company you want to monitor or omit this to apply the rule to all companies,
-   - `type` of rule that you would like to set up using its [exact naming](https://docs.codat.io/docs/core-rules-create#manage-rules-from-the-codat-api),
+   - `type` of rule that you would like to set up using its [exact naming](/core-rules-create#manage-rules-from-the-codat-api),
    - Complete the `emails` notifier with an array of email addresses that will receive notifications.
 2. Send the request to create the rule.
 

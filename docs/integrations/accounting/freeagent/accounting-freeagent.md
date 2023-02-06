@@ -11,8 +11,8 @@ You can synchronize accounting and banking data with <a className="external" hre
 
 View the coverage of our FreeAgent integration in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=fbrh" target="_blank">Data coverage explorer</a>.
 
-For more details about the supported data types and operations, see [FreeAgent integration reference](https://docs.codat.io/docs/freeagent-integration-reference).
+For more details about the supported data types and operations, see [FreeAgent integration reference](/freeagent-integration-reference).
 
 ## Set up the integration
 
-See [Set up the FreeAgent integration](https://docs.codat.io/docs/accounting-freeagent-setup) to learn how to set up and enable the integration.
+See [Set up the FreeAgent integration](/accounting-freeagent-setup) to learn how to set up and enable the integration.

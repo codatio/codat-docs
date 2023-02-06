@@ -7,7 +7,7 @@ updatedAt: "2022-11-16T09:31:15.849Z"
 
 :::info Invoices or bills?
 
-In Codat, bills are for accounts payable only. For the accounts receivable equivalent of bills, see [Invoices](https://docs.codat.io/docs/datamodel-accounting-invoices).
+In Codat, bills are for accounts payable only. For the accounts receivable equivalent of bills, see [Invoices](/datamodel-accounting-invoices).
 :::
 
 Explore the <a className="external" href="https://api.codat.io/swagger/index.html#/Bills" target="_blank">Bills</a> endpoints in Swagger.
@@ -25,7 +25,7 @@ In Codat, a bill contains details of:
 
 Some accounting platforms give a separate name to purchases where the payment is made immediately, such as something bought with a credit card or online payment. One example of this would be QuickBooks Online's _expenses_.
 
-You can find these types of transactions in our [Direct costs](https://docs.codat.io/docs/datamodel-accounting-directcosts) data model.
+You can find these types of transactions in our [Direct costs](/datamodel-accounting-directcosts) data model.
 
 ## Data model
 
@@ -37,7 +37,7 @@ You can find these types of transactions in our [Direct costs](https://docs.coda
 "h-2": "Description",
 "0-0": "**id** ",
 "0-1": "_string_",
-"0-2": "Identifier for the bill, unique for the [company](https://docs.codat.io/docs/datamodel-accounting-company) in the accounting platform.",
+"0-2": "Identifier for the bill, unique for the [company](/datamodel-accounting-company) in the accounting platform.",
 "1-0": "**reference** ",
 "1-1": "_string_",
 "2-0": "**supplierRef** ",
@@ -50,12 +50,12 @@ You can find these types of transactions in our [Direct costs](https://docs.coda
 "13-0": "**amountDue** ",
 "14-0": "**modifiedDate**",
 "1-2": "User-friendly reference for the bill.",
-"2-1": "_[reference type](https://docs.codat.io/docs/datamodel-accounting-referencetypes)_",
-"2-2": "Reference to the [supplier](https://docs.codat.io/docs/datamodel-accounting-suppliers) the bill was received from.",
+"2-1": "_[reference type](/datamodel-accounting-referencetypes)_",
+"2-2": "Reference to the [supplier](/datamodel-accounting-suppliers) the bill was received from.",
 "4-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "5-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "9-1": "_string_",
 "9-2": "Current state of the bill, either:
 
@@ -81,7 +81,7 @@ See [date](https://docs.codat.io/docs/datamodel-shared-date)",
   "13-1": "_decimal_",
   "13-2": "Amount outstanding on the bill.",
   "14-1": "_string_
-  See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+  See [date](/datamodel-shared-date)",
   "14-2": "Date the record was last updated in the Codat system.",
   "16-0": "**note** ",
   "16-1": "_string_ ",
@@ -91,17 +91,17 @@ See [date](https://docs.codat.io/docs/datamodel-shared-date)",
   "3-2": "List of references to the purchase orders for which the bill was issued.",
   "6-0": "**currency**",
   "6-1": "_string_
-  See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+  See [currency](/datamodel-shared-currency)",
   "6-2": "Currency of the bill.",
   "7-0": "**currencyRate**",
   "7-1": "_decimal_
-  See [currency rate](https://docs.codat.io/docs/datamodel-shared-currencyrate)",
-  "7-2": "Rate for converting the total amount of the bill into the base currency for the [company](https://docs.codat.io/docs/datamodel-accounting-company).",
+  See [currency rate](/datamodel-shared-currencyrate)",
+  "7-2": "Rate for converting the total amount of the bill into the base currency for the [company](/datamodel-accounting-company).",
   "8-0": "**lineItems**",
   "8-2": "Array of [BillLineItems](#section-line-items).",
   "15-0": "**sourceModifiedDate**",
   "15-1": "_string_
-  See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+  See [date](/datamodel-shared-date)",
   "15-2": "Date the record was last changed in the accounting system.",
   "8-1": "_array_ ",
   "17-0": "**paymentAllocations**",
@@ -140,26 +140,26 @@ See [date](https://docs.codat.io/docs/datamodel-shared-date)",
 "3-1": "_decimal_",
 "3-2": "Numerical value of any discounts applied.
 
-Do not use to apply discounts in Oracle NetSuite—see [Oracle NetSuite integration reference](https://docs.codat.io/docs/oracle-netsuite-integration-reference).",
+Do not use to apply discounts in Oracle NetSuite—see [Oracle NetSuite integration reference](/oracle-netsuite-integration-reference).",
 "4-2": "Amount of the line, inclusive of discounts but exclusive of tax.",
 "4-1": "_decimal_",
 "5-1": "_decimal_",
 "5-2": "Amount of tax for the line.",
 "6-1": "_decimal_",
 "6-2": "Total amount of the line, including tax.",
-"7-1": "[Reference type](https://docs.codat.io/docs/datamodel-accounting-referencetypes)",
-"7-2": "Reference to the [account](https://docs.codat.io/docs/datamodel-accounting-chartofaccounts) to which the line item is linked.",
+"7-1": "[Reference type](/datamodel-accounting-referencetypes)",
+"7-2": "Reference to the [account](/datamodel-accounting-chartofaccounts) to which the line item is linked.",
 "8-1": "_decimal_",
 "8-2": "Percentage rate (from 0 to 100) of any discounts applied to the unit amount.
 
-Do not use to apply discounts in Oracle NetSuite—see [Oracle NetSuite integration reference](https://docs.codat.io/docs/oracle-netsuite-integration-reference).",
-"9-1": "[Reference type](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-taxrateref)",
-"9-2": "Reference to the [tax rate](https://docs.codat.io/docs/datamodel-accounting-taxrates) to which the line item is linked.",
+Do not use to apply discounts in Oracle NetSuite—see [Oracle NetSuite integration reference](/oracle-netsuite-integration-reference).",
+"9-1": "[Reference type](/datamodel-accounting-referencetypes#section-taxrateref)",
+"9-2": "Reference to the [tax rate](/datamodel-accounting-taxrates) to which the line item is linked.",
 "10-0": "**itemRef** ",
-"10-1": "[Reference type](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-itemref)",
+"10-1": "[Reference type](/datamodel-accounting-referencetypes#section-itemref)",
 "10-2": "Reference to the product, service type, or inventory item to which the line item is linked.",
 "11-0": "**trackingCategoryRefs**",
-"11-2": "Collection of [categories ](https://docs.codat.io/docs/datamodel-accounting-trackingcategories) against which this item is tracked.",
+"11-2": "Collection of [categories ](/datamodel-accounting-trackingcategories) against which this item is tracked.",
 "11-1": "_array_ "
 },
 "cols": 3,
@@ -176,7 +176,7 @@ Do not use to apply discounts in Oracle NetSuite—see [Oracle NetSuite integrat
 "type": "info
 
 :::caution Requirements for reference fields
-The reference fields **supplierRef**, **accountRef**, and **taxRateRef** are only populated if the corresponding data type has been synchronized. If you see null values for these fields, please complete a new sync for the corresponding data type. For example, sync the suppliers data type for [supplierRef](https://docs.codat.io/docs/datamodel-accounting-referencetypes#supplierref).
+The reference fields **supplierRef**, **accountRef**, and **taxRateRef** are only populated if the corresponding data type has been synchronized. If you see null values for these fields, please complete a new sync for the corresponding data type. For example, sync the suppliers data type for [supplierRef](/datamodel-accounting-referencetypes#supplierref).
 :::
 
 ### Payment allocations
@@ -204,20 +204,20 @@ The reference fields **supplierRef**, **accountRef**, and **taxRateRef** are onl
 "1-1": "_string_",
 "2-1": "_string_",
 "3-1": "_string_",
-"4-1": "[_Reference type_](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-accountref)",
+"4-1": "[_Reference type_](/datamodel-accounting-referencetypes#section-accountref)",
 "5-1": "_string_
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "6-1": "_decimal_
-See [currency rate](https://docs.codat.io/docs/datamodel-shared-currencyrate)",
+See [currency rate](/datamodel-shared-currencyrate)",
 "7-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "8-1": "_decimal_",
 "10-1": "_string_
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "11-1": "_number_
-See [currency rate](https://docs.codat.io/docs/datamodel-shared-currencyrate)",
+See [currency rate](/datamodel-shared-currencyrate)",
 "12-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "13-1": "_decimal_",
 "1-2": "Identifier of the allocated payment.",
 "2-2": "Notes attached to the allocated payment.",

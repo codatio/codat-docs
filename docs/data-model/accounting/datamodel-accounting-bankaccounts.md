@@ -12,7 +12,7 @@ View the coverage for bank accounts in the <a className="external" href="https:/
 :::caution Accessing Bank Accounts through Banking API
 This datatype was originally used for accessing bank account data both in accounting integrations and open banking aggregators.
 
-To view bank account data through the Banking API, please refer to the new datatype [here](https://docs.codat.io/docs/data-model-banking-banking-accounts)
+To view bank account data through the Banking API, please refer to the new datatype [here](/data-model-banking-banking-accounts)
 :::
 
 ## Overview
@@ -30,7 +30,7 @@ Bank accounts data includes:
 [block:parameters]
 {
 "data": {
-"0-2": "Identifier for the account, unique for the [company](https://docs.codat.io/docs/datamodel-accounting-company) in the accounting platform.",
+"0-2": "Identifier for the account, unique for the [company](/datamodel-accounting-company) in the accounting platform.",
 "0-0": "**id** ",
 "h-0": "Field",
 "h-1": "Type",
@@ -52,11 +52,11 @@ Bank accounts data includes:
 "4-1": "_string_",
 "5-1": "_string_",
 "8-1": "_string_
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "12-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "13-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "1-2": "Name of the bank account in the accounting platform.",
 "3-2": "Sort code for the bank account.
 

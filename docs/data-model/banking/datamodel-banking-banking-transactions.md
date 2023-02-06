@@ -16,7 +16,7 @@ View the coverage for banking transactions in the <a className="external" href="
 From the Banking Transactions endpoint, you can retrieve a list of all bank account transactions:  
 `GET /companies/{companyId}/connections/{connectionId}/data/banking-transactions`
 
-Responses are paged, so you should provide `page` and `pageSize` query parameters in your request. See [Pagination](https://docs.codat.io/docs/pagination) for details.
+Responses are paged, so you should provide `page` and `pageSize` query parameters in your request. See [Pagination](/pagination) for details.
 
 # Data model
 
@@ -43,13 +43,13 @@ Responses are paged, so you should provide `page` and `pageSize` query parameter
 "4-2": "The currency of the bank transaction.",
 "5-0": "postedDate",
 "5-1": "_date_  
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "5-2": "YYYY-MM-DDT00:00:00Z
 
 The date the bank transaction was cleared.",
 "6-0": "authorizedDate",
 "6-1": "_date_  
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "6-2": "YYYY-MM-DDT00:00:00Z
 
 The date the bank transaction was authorized.",
@@ -61,13 +61,13 @@ The date the bank transaction was authorized.",
 "8-2": "An object of bank transaction category reference data.",
 "9-0": "modifiedDate",
 "9-1": "_date_  
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "9-2": "YYYY-MM-DDT00:00:00Z
 
 The date the record was last updated in Codat's cache.",
 "10-0": "sourceModifiedDate",
 "10-1": "_date_  
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "10-2": "YYYY-MM-DDT00:00:00
 
 The date the record was last changed in the originating system."

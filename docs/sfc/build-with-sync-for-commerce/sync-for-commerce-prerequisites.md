@@ -20,9 +20,9 @@ Sync for Commerce must be enabled for your account. You can enable products in t
 
 You need to set up one or more of the supported accounting platforms:
 
-- [Xero](https://docs.codat.io/docs/accounting-xero)
-- [QuickBooks Online](https://docs.codat.io/docs/accounting-quickbooksonline)
-- [FreeAgent](https://docs.codat.io/docs/accounting-freeagent)
+- [Xero](/accounting-xero)
+- [QuickBooks Online](/accounting-quickbooksonline)
+- [FreeAgent](/accounting-freeagent)
 
 ### Required data types
 
@@ -30,14 +30,14 @@ The following data types are required (and are enabled by default):
 
 #### Accounting
 
-- [Company info](https://docs.codat.io/docs/datamodel-accounting-company)
-- [Accounts](https://docs.codat.io/docs/datamodel-accounting-chartofaccounts)
-- [Tax rates](https://docs.codat.io/docs/datamodel-accounting-taxrates)
-- [Customers](https://docs.codat.io/docs/datamodel-accounting-customers)
-- [Suppliers](https://docs.codat.io/docs/datamodel-accounting-suppliers)
+- [Company info](/datamodel-accounting-company)
+- [Accounts](/datamodel-accounting-chartofaccounts)
+- [Tax rates](/datamodel-accounting-taxrates)
+- [Customers](/datamodel-accounting-customers)
+- [Suppliers](/datamodel-accounting-suppliers)
 
 #### Commerce
 
-- [Orders](https://docs.codat.io/docs/datamodel-commerce-orders)
-- [Transactions](https://docs.codat.io/docs/datamodel-commerce-transactions)
-- [Payments](https://docs.codat.io/docs/datamodel-commerce-payments)
+- [Orders](/datamodel-commerce-orders)
+- [Transactions](/datamodel-commerce-transactions)
+- [Payments](/datamodel-commerce-payments)

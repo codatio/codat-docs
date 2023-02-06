@@ -16,7 +16,7 @@ The Banking Accounts data type provides a list of all the SMB's bank accounts, w
 From the Banking Accounts endpoint, you can retrieve a list of all bank account balances:  
 `GET /companies/{companyId}/connections/{connectionId}/data/banking-accounts`
 
-Responses are paged, so you should provide `page` and `pageSize` query parameters in your request. See [Pagination](https://docs.codat.io/docs/pagination) for details.
+Responses are paged, so you should provide `page` and `pageSize` query parameters in your request. See [Pagination](/pagination) for details.
 
 # Data model
 
@@ -51,20 +51,20 @@ _ For `Debit` accounts, positive balances are assets and positive transactions *
 "6-2": "An object containing bank account identification information.",
 "7-0": "currency",
 "7-1": "_string_  
-See [Currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [Currency](/datamodel-shared-currency)",
 "7-2": "The currency code for the account.",
 "8-0": "institution",
 "8-1": "See [Institution](#institution)",
 "8-2": "The bank or other financial institution providing the account.",
 "9-0": "modifiedDate",
 "9-1": "_string_  
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "9-2": "YYYY-MM-DDT00:00:00Z
 
 The date the record was last updated in Codat's cache.",
 "10-0": "sourceModifiedDate",
 "10-1": "_string_  
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "10-2": "YYYY-MM-DDT00:00:00
 
 The date the record was last changed in the originating system."

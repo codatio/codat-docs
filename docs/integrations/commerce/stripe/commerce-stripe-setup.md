@@ -11,7 +11,7 @@ Our integration uses <a className="external" href="https://stripe.com/docs/conne
 
 :::note Test and live integrations
 
-This page explains how to set up both the Stripe Test and the Stripe integrations (see [Available integrations](https://docs.codat.io/docs/commerce-stripe#available-integrations) for more details).
+This page explains how to set up both the Stripe Test and the Stripe integrations (see [Available integrations](/commerce-stripe#available-integrations) for more details).
 :::
 
 To set up the Stripe integration, you'll need to:
@@ -66,7 +66,7 @@ Configure Stripe Connect to connect to our Stripe integration, and access your S
 
 ### Prerequisites
 
-To access your live credentials in Stripe, you must have [added your business details](https://docs.codat.io/docs/commerce-stripe-setup#register-as-a-stripe-connect-platform) as described in the preceding task.
+To access your live credentials in Stripe, you must have [added your business details](/commerce-stripe-setup#register-as-a-stripe-connect-platform) as described in the preceding task.
 
 1. Go to the <a className="external" href="https://dashboard.stripe.com/settings/connect" target="_blank">Connect settings</a> page.
 
@@ -136,8 +136,8 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 ## Check the commerce sync settings
 
-Syncing of all commerce data types must be enabled before you can pull commerce transactions from Stripe to Codat. Follow the steps in [Commerce sync settings](https://docs.codat.io/docs/commerce-sync-settings); you only need to do this once.
+Syncing of all commerce data types must be enabled before you can pull commerce transactions from Stripe to Codat. Follow the steps in [Commerce sync settings](/commerce-sync-settings); you only need to do this once.
 
 ## Test the integration
 
-[Test your Stripe integration](https://docs.codat.io/docs/test-stripe) explains how to use the Stripe Test integration to pull test data into Codat.
+[Test your Stripe integration](/test-stripe) explains how to use the Stripe Test integration to pull test data into Codat.

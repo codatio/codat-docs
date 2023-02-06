@@ -12,7 +12,7 @@ After you've set up an integration, follow this process to use Codat's API to en
 
 ## Enable and update commerce sync settings
 
-Update your [commerce sync settings](https://docs.codat.io/docs/commerce-sync-settings#section-update-commerce-sync-settings-via-the-api) to automatically retrieve data from a company when they authorise your connection to their data.
+Update your [commerce sync settings](/commerce-sync-settings#section-update-commerce-sync-settings-via-the-api) to automatically retrieve data from a company when they authorise your connection to their data.
 
 ## Create a company and data connection
 
@@ -72,5 +72,5 @@ When your customer authorises your connection to their company data, Codat autom
 
 :::info Sync status
 
-Before you can view data using one of the commerce endpoints, you must wait for the data synchronisation to complete. To check the status of any dataset, see the [sync status](https://docs.codat.io/docs/data-status) documentation.
+Before you can view data using one of the commerce endpoints, you must wait for the data synchronisation to complete. To check the status of any dataset, see the [sync status](/data-status) documentation.
 :::

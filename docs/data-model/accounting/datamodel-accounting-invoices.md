@@ -11,7 +11,7 @@ View the coverage for invoices in the <a className="external" href="https://know
 
 ## Overview
 
-An invoice is an itemized record of goods sold or services provided to a [customer](https://docs.codat.io/docs/datamodel-accounting-customers).
+An invoice is an itemized record of goods sold or services provided to a [customer](/datamodel-accounting-customers).
 
 In Codat, an invoice contains details of:
 
@@ -19,11 +19,11 @@ In Codat, an invoice contains details of:
 - How much the invoice is for, what portion of the invoice is tax or discounts, and what currency the amounts are represented in.
 - Who the invoice has been raised to; the _customer_.
 - The breakdown of what the invoice is for; the _line items_.
-- Any [payments](https://docs.codat.io/docs/datamodel-accounting-payments) assigned to the invoice; the _payment allocations_.
+- Any [payments](/datamodel-accounting-payments) assigned to the invoice; the _payment allocations_.
 
 :::note Invoices or bills?
 
-In Codat, invoices represent accounts receivable only. For accounts payable invoices, see [Bills](https://docs.codat.io/docs/datamodel-accounting-bills).
+In Codat, invoices represent accounts receivable only. For accounts payable invoices, see [Bills](/datamodel-accounting-bills).
 :::
 
 :::success Invoice PDF downloads
@@ -48,27 +48,27 @@ In Sage 50 and ClearBooks, you may prefer to use the **invoiceNumber** to identi
 "h-2": "Description",
 "0-0": "**id** ",
 "0-1": "_string_",
-"0-2": "Identifier for the invoice, unique to the [company](https://docs.codat.io/docs/datamodel-accounting-company) in the accounting platform.",
+"0-2": "Identifier for the invoice, unique to the [company](/datamodel-accounting-company) in the accounting platform.",
 "1-0": "**invoiceNumber** ",
 "1-1": "_string_",
 "1-2": "Friendly reference for the invoice. If available, this appears in the file name of invoice attachments.",
 "2-0": "**customerRef** ",
-"2-1": "_[reference type](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-customerref)_",
-"2-2": "Reference to the [customer](https://docs.codat.io/docs/datamodel-accounting-customers) the invoice has been issued to.",
+"2-1": "_[reference type](/datamodel-accounting-referencetypes#section-customerref)_",
+"2-2": "Reference to the [customer](/datamodel-accounting-customers) the invoice has been issued to.",
 "3-0": "**salesOrderRefs**",
 "3-1": "_array_",
-"3-2": "List of references to related [Sales orders](https://docs.codat.io/docs/datamodel-accounting-sales-orders).",
+"3-2": "List of references to related [Sales orders](/datamodel-accounting-sales-orders).",
 "4-0": "**issueDate** ",
 "4-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "4-2": "Date of the invoice as recorded in the accounting system.",
 "5-0": "**dueDate** ",
 "5-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "5-2": "Date the customer is due to be paid by.",
 "6-0": "**modifiedDate** ",
 "6-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "6-2": "Date the record was last modified in Codat in any way.
 
 For example, the `modifiedDate` changes if the invoice was modified in the accounting system, or if the underlying mappings to our data model have changed.
@@ -76,20 +76,20 @@ For example, the `modifiedDate` changes if the invoice was modified in the accou
 The `modifiedDate` does not change when you sync an unmodified invoice from the accounting system.",
 "7-0": "**sourceModifiedDate** ",
 "7-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "7-2": "Date the record was last changed in the accounting system.",
 "8-0": "**paidOnDate** ",
 "8-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "8-2": "Date the invoice was marked as paid in the accounting system. If this field is not available from the accounting software, it is calculated by Codat using associated payments.",
 "9-0": "**currency** ",
 "9-1": "_string_  
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "9-2": "Currency of the invoice.",
 "10-0": "**currencyRate** ",
 "10-1": "_number_  
-See [currency rate](https://docs.codat.io/docs/datamodel-shared-currencyrate)",
-"10-2": "Rate between the currency of the invoice and the base currency of the [company](https://docs.codat.io/docs/datamodel-accounting-company).",
+See [currency rate](/datamodel-shared-currencyrate)",
+"10-2": "Rate between the currency of the invoice and the base currency of the [company](/datamodel-accounting-company).",
 "11-0": "**lineItems** ",
 "11-1": "",
 "11-2": "An array of [InvoiceLineItems](#section-line-items).",
@@ -159,11 +159,11 @@ See [currency rate](https://docs.codat.io/docs/datamodel-shared-currencyrate)",
 | **subTotal**             | _decimal_                                                                                                      | Amount of the line, inclusive of discounts but exclusive of tax.                                                                                                                           |
 | **taxAmount**            | _decimal_                                                                                                      | Amount of tax for the line.                                                                                                                                                                |
 | **totalAmount**          | _decimal_                                                                                                      | Total amount of the line, including tax. When pushing invoices to Xero, the total amount is exclusive of tax to allow automatic calculations if a tax rate or tax amount is not specified. |
-| **accountRef**           | [reference type](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-accountref)            | Reference to the [account](https://docs.codat.io/docs/datamodel-accounting-chartofaccounts) to which the line item is linked.                                                              |
+| **accountRef**           | [reference type](/datamodel-accounting-referencetypes#section-accountref)            | Reference to the [account](/datamodel-accounting-chartofaccounts) to which the line item is linked.                                                              |
 | **discountPercentage**   | _decimal_                                                                                                      | Percentage rate (from 0 to 100) of any discounts applied to the unit amount.                                                                                                               |
-| **taxRateRef**           | [reference type](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-taxrateref)            | Reference to the [tax rate](https://docs.codat.io/docs/datamodel-accounting-taxrates) to which the line item is linked.                                                                    |
-| **itemRef**              | [reference type](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-itemref)               | Reference to the [item](https://docs.codat.io/docs/datamodel-accounting-items) the line is linked to.                                                                                      |
-| **trackingCategoryRefs** | _[reference type](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-trackingcategoryref)_ | Reference to the [tracking categories](https://docs.codat.io/docs/datamodel-accounting-trackingcategories) to which the line item is linked.                                               |
+| **taxRateRef**           | [reference type](/datamodel-accounting-referencetypes#section-taxrateref)            | Reference to the [tax rate](/datamodel-accounting-taxrates) to which the line item is linked.                                                                    |
+| **itemRef**              | [reference type](/datamodel-accounting-referencetypes#section-itemref)               | Reference to the [item](/datamodel-accounting-items) the line is linked to.                                                                                      |
+| **trackingCategoryRefs** | _[reference type](/datamodel-accounting-referencetypes#section-trackingcategoryref)_ | Reference to the [tracking categories](/datamodel-accounting-trackingcategories) to which the line item is linked.                                               |
 
 ### Payment allocations
 
@@ -186,19 +186,19 @@ See [currency rate](https://docs.codat.io/docs/datamodel-shared-currencyrate)",
 "3-1": "_string_",
 "3-2": "Reference to the allocated payment.",
 "4-0": "**accountRef**",
-"4-1": "[_Reference type_](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-accountref)",
+"4-1": "[_Reference type_](/datamodel-accounting-referencetypes#section-accountref)",
 "4-2": "The account that the allocated payment is made from or to.",
 "5-0": "**currency**",
 "5-1": "_string_  
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "5-2": "Currency the payment has been made in.",
 "6-0": "**currencyRate**",
 "6-1": "_decimal_  
-See [currency rate](https://docs.codat.io/docs/datamodel-shared-currencyrate)",
+See [currency rate](/datamodel-shared-currencyrate)",
 "6-2": "Conversion rate between the currency of the allocated payment and the currency of the company.",
 "7-0": "**paidOnDate**",
 "7-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "7-2": "The date the payment was paid.",
 "8-0": "**totalAmount**",
 "8-1": "_decimal_",
@@ -208,15 +208,15 @@ See [date](https://docs.codat.io/docs/datamodel-shared-date)",
 "9-2": "",
 "10-0": "**currency**",
 "10-1": "_string_  
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "10-2": "The currency of the transaction.",
 "11-0": "**currencyRate**",
 "11-1": "_decimal_  
-See [currency rate](https://docs.codat.io/docs/datamodel-shared-currencyrate)",
+See [currency rate](/datamodel-shared-currencyrate)",
 "11-2": "The conversion rate between the currency of the allocated payment and the currency of the transaction.",
 "12-0": "**allocatedOnDate**",
 "12-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "12-2": "The date the payment was allocated.",
 "13-0": "**totalAmount**",
 "13-1": "_decimal_",
@@ -234,7 +234,7 @@ See [date](https://docs.codat.io/docs/datamodel-shared-date)",
 
 :::caution Requirements for reference fields
 
-The reference fields **customerRef**, **accountRef**, and **taxRateRef** are only populated if the corresponding data type has been synchronised. If you see null values for these fields, please complete a new sync for the corresponding data type. For example, sync the customers data type for [customerRef](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-customerref).
+The reference fields **customerRef**, **accountRef**, and **taxRateRef** are only populated if the corresponding data type has been synchronised. If you see null values for these fields, please complete a new sync for the corresponding data type. For example, sync the customers data type for [customerRef](/datamodel-accounting-referencetypes#section-customerref).
 :::
 
 ## Example data

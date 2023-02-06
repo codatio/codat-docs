@@ -33,7 +33,7 @@ Look at the cash flow statement to understand a company's ability to pay its bil
 "1-0": "**reportInput** ",
 "2-0": "**currency** ",
 "2-1": "_string_
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "2-2": "Currency of all values in the cash flow statement.",
 "0-2": "Accounting method used when aggregating the report data. In this case, `Cash`.",
 "0-1": "_string_",
@@ -66,9 +66,9 @@ See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
 "2-0": "**cashReceipts** ",
 "3-0": "**cashPayments** ",
 "0-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "1-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "0-2": "Start date for the reporting period.",
 "1-2": "End date for the reporting period.",
 "2-2": "[ReportLines](#report-line) for cash receipts from the sale of goods.",

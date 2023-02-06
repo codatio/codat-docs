@@ -23,11 +23,11 @@ Using our Mollie integration, you can securely retrieve and view customer commer
 
 View the coverage of our Mollie integration in the <a className="external" href="https://knowledge.codat.io/supported-features/commerce?view=tab-by-integration&integrationKey=dxfw" target="_blank">Data coverage explorer</a>.
 
-For more information about the supported data types, see [Mollie integration reference](https://docs.codat.io/docs/mollie-integration-reference).
+For more information about the supported data types, see [Mollie integration reference](/mollie-integration-reference).
 
 ## Set up the integration
 
-See [Set up the Mollie integration](https://docs.codat.io/docs/commerce-mollie-setup) to learn how to set up and enable the integration.
+See [Set up the Mollie integration](/commerce-mollie-setup) to learn how to set up and enable the integration.
 
 :::info EUR base currency and UK Closed Beta
 Mollie uses a base currency of EUR and payouts (settlements) are always made in EUR. GBP is not supported as a base currency in Mollie unless you enrol in the UK Closed Beta. For more information, see the [Mollie Knowledge Base](https://help.mollie.com/hc/en-us).

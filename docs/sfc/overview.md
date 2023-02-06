@@ -1,6 +1,6 @@
 ---
 title: "Sync for Commcerce overview"
-sidebarl_label: Sync for Commerce
+sidebar_label: Sync for Commerce
 description: "Learn about Sync for Commerce and its features."
 createdAt: "2022-06-27T08:17:55.337Z"
 updatedAt: "2022-11-17T10:56:14.545Z"
@@ -70,7 +70,7 @@ Sync for Commerce is in beta. If you are interested in building with Sync for Co
 
 ## How does Sync for Commerce work?
 
-### 1. [Accounting platform selection](https://docs.codat.io/docs/sync-platform-selection)
+### 1. [Accounting platform selection](/sync-platform-selection)
 
 Your merchant will need to select and authorize their accounting platform through the Platform selection flow.
 
@@ -78,19 +78,19 @@ Your merchant will need to select and authorize their accounting platform throug
 
 2. The merchant selects one of them and is directed to their accounting platform UI where they authorize access to their accounting data.
 
-### 2. [Merchant configuration](https://docs.codat.io/docs/implementing-codats-no-code-merchant-configuration)
+### 2. [Merchant configuration](/implementing-codats-no-code-merchant-configuration)
 
 Once the access is authorized, the merchant can set how the synchronization should work through the Sync configuration flow.
 
 1. A Codat Company is created, and an accounting Connection is established.
-2. Codat automatically pulls all the [accounting data required to enable the merchant configuration](https://docs.codat.io/docs/sync-for-commerce-prerequisites#required-data-types).
+2. Codat automatically pulls all the [accounting data required to enable the merchant configuration](/sync-for-commerce-prerequisites#required-data-types).
 3. A configuration JSON document is submitted to Codat. It includes information about how the data will be mapped to the accounting platform.
 
    The configuration is based on the options selected by the merchant as they complete the Sync Flow.
 
-   To find out more about what's included in the configuration, read [Data mapping configuration](https://docs.codat.io/docs/sync-your-own-merchant-journey#data-mapping-configuration).
+   To find out more about what's included in the configuration, read [Data mapping configuration](/sync-your-own-merchant-journey#data-mapping-configuration).
 
-### 3. [Data pushing](https://docs.codat.io/docs/sync-data-pushing)
+### 3. [Data pushing](/sync-data-pushing)
 
 After the configuration is successfully submitted, you can start pushing the merchant’s data to Codat. Once the data is received, we handle its grouping and mapping according to the submitted configuration.
 
@@ -99,7 +99,7 @@ Next, the data is queued to be sent to the merchant’s accounting platform.
 We continue handling the data that’s pushed to us automatically so that merchants can enjoy effortless and seamless daily reconciliation of their commerce data.
 
 :::info
-To see how the data displays in the accounting platform after a successful synchronization via Sync for Commerce, read our [Mapping specifications](https://docs.codat.io/docs/mapping-specifications).
+To see how the data displays in the accounting platform after a successful synchronization via Sync for Commerce, read our [Mapping specifications](/mapping-specifications).
 :::
 
 Validation and error messages provide the merchant with detailed instructions on how to resolve common issues. Your support teams investigate any issues with the merchant settings using Codat’s Sync Health site.

@@ -1,5 +1,5 @@
 ---
-title: "Financial Metrics"
+title: "Financial metrics"
 description: "Reference document for the ratios and metrics produced by the financial metrics endpoint"
 createdAt: "2022-02-21T08:24:56.369Z"
 updatedAt: "2023-01-16T09:26:35.560Z"
@@ -18,7 +18,7 @@ Supported metrics:
 7. Working capital
 8. Fixed service coverage charge
 
-The Financial Metrics API leverages the [Categories](https://docs.codat.io/docs/categorization-of-accounts) feature, which maps each business's bespoke chart of accounts to a single standard chart of accounts across all of your small business customers. The Financial Metrics API is reliant on complete and accurate categorizations to produce meaningful metrics.
+The Financial Metrics API leverages the [Categories](/categorization-of-accounts) feature, which maps each business's bespoke chart of accounts to a single standard chart of accounts across all of your small business customers. The Financial Metrics API is reliant on complete and accurate categorizations to produce meaningful metrics.
 
 Any metric (including metric inputs) that have null/blank values means that data couldn't be computed.
 
@@ -26,7 +26,7 @@ Any metric (including metric inputs) that have null/blank values means that data
 
 This endpoint retrieves all the available financial performance metrics held against a company, over one or more periods of time.
 
-View the Financial Metrics [formulas](https://docs.codat.io/docs/assess-financial-metrics#financial-metrics-formulas).
+View the Financial Metrics [formulas](/assess-financial-metrics#financial-metrics-formulas).
 
 The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_financialMetrics" target="_blank">Swagger</a> under **Assess**.
 
@@ -37,7 +37,7 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 |                          Parameter                           |    Type    | Description | Required |
 | :----------------------------------------------------------: | :--------: | :---------: | -------- |
 |                        **reportDate**                        |  _string_  |
-| See [Date](https://docs.codat.io/docs/datamodel-shared-date) | YYYY-MM-DD |
+| See [Date](/datamodel-shared-date) | YYYY-MM-DD |
 
 The date in which the report is created up to. Users must specify a specific date, however the response will be provided for the full month. | Required | **periodLength** |
 | _integer_ | The number of months per period. E.g. 2 = 2 months per period.",
@@ -75,11 +75,11 @@ See [Errors](#errors) | If there are no errors, an empty array is returned. |
 |                            Field                             |                  Type                  | Description |
 | :----------------------------------------------------------: | :------------------------------------: | :---------: |
 |                         **fromDate**                         |                _string_                |
-| See [Date](https://docs.codat.io/docs/datamodel-shared-date) | The date from which the report starts. |
+| See [Date](/datamodel-shared-date) | The date from which the report starts. |
 
 YYYY-MM-DD | **toDate**
 | _string_  
-See [Date](https://docs.codat.io/docs/datamodel-shared-date) | The date on which the report ends (inclusive of day).
+See [Date](/datamodel-shared-date) | The date on which the report ends (inclusive of day).
 
 YYYY-MM-DD |
 | **value** ",

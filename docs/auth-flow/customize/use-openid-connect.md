@@ -6,7 +6,7 @@ createdAt: "2022-05-19T12:25:45.130Z"
 updatedAt: "2022-10-20T13:33:24.587Z"
 ---
 
-When a customer links their company data, OpenID Connect lets you retrieve [standard information](https://docs.codat.io/docs/use-openid-connect-1#openid-connect-fields) from the user profile of their accounting package, such as the customer's name, email address, and phone number. You might use these details to:
+When a customer links their company data, OpenID Connect lets you retrieve [standard information](/use-openid-connect-1#openid-connect-fields) from the user profile of their accounting package, such as the customer's name, email address, and phone number. You might use these details to:
 
 - Pre-fill an application form for the customer.
 - Identify accounts linked by the same person.
@@ -15,7 +15,7 @@ This article explains how to configure your authorization process to use OpenID 
 
 :::info Support for OpenID Connect
 
-- Codat's linking process can only return available profile details, which vary from platform to platform. Codat currently supports OpenID Connect for QuickBooks Online, Xero, and our testing sandbox. See [_OpenID Connect Supported fields_](https://docs.codat.io/docs/use-openid-connect-1#openid-connect-fields) for the specific fields supported for each platform.
+- Codat's linking process can only return available profile details, which vary from platform to platform. Codat currently supports OpenID Connect for QuickBooks Online, Xero, and our testing sandbox. See [_OpenID Connect Supported fields_](/use-openid-connect-1#openid-connect-fields) for the specific fields supported for each platform.
 - Codat doesn't use OpenID Connect to either verify the identity of customers, or to authorize data sharing or connections.
   :::
 
@@ -23,7 +23,7 @@ This article explains how to configure your authorization process to use OpenID 
 
 Update your redirect URL and Hosted Link URLs.
 
-1. Add any parameters that you require from the user profile to your [redirect URL](https://docs.codat.io/docs/redirect-urls). For example:
+1. Add any parameters that you require from the user profile to your [redirect URL](/redirect-urls). For example:
    `https://redirect.com/site/{companyId}?firstName={openId_given_name}&email={openId_email}&phone={openId_phone_number}`
 2. Append `?openId=true` to a Link URL before you send it to a customer. For example:
    `https://link-uat.codat.io/{companyId}/link?openId=true`

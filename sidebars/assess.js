@@ -13,10 +13,15 @@ module.exports = [
 
   //use cases
   // underwriting
-
-  // reports
-  //audit report
-  //excel reports
+  {
+    type: "category",
+    label: "Categories",
+    collapsed: true,
+    items: [
+      "assess/categories/categories",
+      "assess/categories/api-categorization-of-accounts",
+    ],
+  },
   {
     type: "category",
     label: "Reports",
@@ -56,18 +61,6 @@ module.exports = [
       "assess/reports/excel-reports",
     ],
   },
-
-  //Categorisation
-  {
-    type: "category",
-    label: "Categories",
-    collapsed: true,
-    items: [
-      "assess/categories/categories",
-      "assess/categories/api-categorization-of-accounts",
-    ],
-  },
-
   {
     type: "category",
     label: "Data integrity",

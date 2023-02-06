@@ -7,7 +7,7 @@ updatedAt: "2022-11-29T09:16:08.737Z"
 
 :::note Bill payments or payments?
 
-In Codat, bill payments represent accounts payable only. For accounts receivable, see [payments](https://docs.codat.io/docs/datamodel-accounting-payments), which includes [invoices](https://docs.codat.io/docs/datamodel-accounting-invoices) and [credit notes](https://docs.codat.io/docs/datamodel-accounting-creditnotes).
+In Codat, bill payments represent accounts payable only. For accounts receivable, see [payments](/datamodel-accounting-payments), which includes [invoices](/datamodel-accounting-invoices) and [credit notes](/datamodel-accounting-creditnotes).
 :::
 
 Explore the <a className="external" href="https://api.codat.io/swagger/index.html#/BillPayments" target="_blank">Bill Payments</a> endpoints in Swagger.
@@ -16,7 +16,7 @@ View the coverage for bill payments in the <a className="external" href="https:/
 
 ## Overview
 
-Bill payments include all accounts payable transaction data. This includes [bills](https://docs.codat.io/docs/datamodel-accounting-bills) and [credit notes against bills](https://docs.codat.io/docs/datamodel-accounting-billcreditnotes).
+Bill payments include all accounts payable transaction data. This includes [bills](/datamodel-accounting-bills) and [credit notes against bills](/datamodel-accounting-billcreditnotes).
 
 A bill payment in Codat usually represents an allocation of money within any customer accounts payable account. This includes but is not strictly limited to:
 
@@ -33,9 +33,9 @@ In Codat, a bill payment contains details of:
 - Who the payment has been paid to, the _supplier_.
 - The types of bill payments, the _line items_.
 
-Some accounting platforms give a separate name to purchases where the payment is made immediately, such as something bought with a credit card or online payment. One example of this would be QuickBooks Online's _expenses_. You can find these types of transactions in our [Direct costs](https://docs.codat.io/docs/datamodel-accounting-directcosts) data model.
+Some accounting platforms give a separate name to purchases where the payment is made immediately, such as something bought with a credit card or online payment. One example of this would be QuickBooks Online's _expenses_. You can find these types of transactions in our [Direct costs](/datamodel-accounting-directcosts) data model.
 
-Bill payments is a child data type of [account transactions](https://docs.codat.io/docs/datamodel-accounting-account-transactions).
+Bill payments is a child data type of [account transactions](/datamodel-accounting-account-transactions).
 
 ## Data model
 
@@ -47,44 +47,44 @@ Bill payments is a child data type of [account transactions](https://docs.codat.
 "h-2": "Description",
 "0-0": "**id** ",
 "0-1": "_string_ ",
-"0-2": "Identifier for the bill payment, unique for the [company](https://docs.codat.io/docs/datamodel-accounting-company) in the accounting platform.",
+"0-2": "Identifier for the bill payment, unique for the [company](/datamodel-accounting-company) in the accounting platform.",
 "1-0": "**supplierRef** ",
-"1-1": "See [reference types](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-supplierref)",
+"1-1": "See [reference types](/datamodel-accounting-referencetypes#section-supplierref)",
 "1-2": "[Supplier](#supplier-reference) against which the payment is recorded in the accounting platform.",
 "2-0": "**accountRef** ",
-"2-1": "See [reference types](https://docs.codat.io/docs/datamodel-accounting-referencetypes)",
-"2-2": "[Account](https://docs.codat.io/docs/datamodel-accounting-chartofaccounts) the payment is linked to in the accounting platform.",
+"2-1": "See [reference types](/datamodel-accounting-referencetypes)",
+"2-2": "[Account](/datamodel-accounting-chartofaccounts) the payment is linked to in the accounting platform.",
 "3-0": "**totalAmount** ",
 "3-1": "_decimal_",
 "3-2": "Amount of the payment in the payment currency. This value never changes and represents the amount of money that is paid into the supplier's account.",
 "4-0": "**currency** ",
 "4-1": "_string_  
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "4-2": "ISO currency code in which the bill payment is recorded in the accounting platform.",
 "5-0": "**currencyRate** ",
 "5-1": "_decimal_  
-see [currency rate](https://docs.codat.io/docs/datamodel-shared-currencyrate)",
-"5-2": "Rate to convert the total amount of the bill payment into the base currency for the [company](https://docs.codat.io/docs/datamodel-accounting-company), at the time of the payment.",
+see [currency rate](/datamodel-shared-currencyrate)",
+"5-2": "Rate to convert the total amount of the bill payment into the base currency for the [company](/datamodel-accounting-company), at the time of the payment.",
 "6-0": "**date** ",
 "6-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "6-2": "Date the bill payment was recorded in the accounting software.",
 "7-0": "**note** ",
 "7-1": "_string_",
 "7-2": "Additional information associated with the payment.",
 "8-0": "**paymentMethodRef**",
-"8-1": "See [reference types](https://docs.codat.io/docs/datamodel-accounting-referencetypes)",
-"8-2": "The [Payment Method](https://docs.codat.io/docs/datamodel-accounting-paymentmethods) to which the payment is linked in the accounting platform.",
+"8-1": "See [reference types](/datamodel-accounting-referencetypes)",
+"8-2": "The [Payment Method](/datamodel-accounting-paymentmethods) to which the payment is linked in the accounting platform.",
 "9-0": "**lines** ",
 "9-1": "",
 "9-2": "An array of [BillPaymentLines](#section-lines).",
 "10-0": "**modifiedDate** ",
 "10-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "10-2": "Date the record was last updated in the Codat system.",
 "11-0": "**sourceModifiedDate** ",
 "11-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "11-2": "Date the record was last changed in the accounting system.",
 "12-0": "**reference**",
 "12-1": "_string_",

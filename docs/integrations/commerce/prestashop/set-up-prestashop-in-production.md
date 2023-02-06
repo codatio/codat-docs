@@ -21,4 +21,4 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 ## Check your sync settings in the Codat Portal
 
-If this is your first commerce integration, update your [data type settings](https://docs.codat.io/docs/commerce-sync-settings) to enable commerce data types.
+If this is your first commerce integration, update your [data type settings](/commerce-sync-settings) to enable commerce data types.

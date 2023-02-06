@@ -1,6 +1,6 @@
 ---
 title: "Bank Feed API overview"
-sidebarl_label: Bank Feed API
+sidebar_label: Bank Feed API
 description: "Bank Feed API enables your SMB users to set up bank feeds from accounts in your application to supported accounting platforms."
 createdAt: "2022-11-17T12:09:28.950Z"
 updatedAt: "2023-01-05T15:04:48.214Z"
@@ -10,9 +10,9 @@ updatedAt: "2023-01-05T15:04:48.214Z"
 
 The source account might be a business current account, savings account, credit card, or payments processor feed. Bank feeds allow accounting software users to easily reconcile bank transactions against accounting entries, like invoices and bills.
 
-In Codat's API, bank feeds are represented as [Bank transactions](https://docs.codat.io/docs/datamodel-accounting-banktransactions), which are pushed from a source to a target bank account in chronological order. Bank feeds from the source account are then viewable in the SMB user's accounting software.
+In Codat's API, bank feeds are represented as [Bank transactions](/datamodel-accounting-banktransactions), which are pushed from a source to a target bank account in chronological order. Bank feeds from the source account are then viewable in the SMB user's accounting software.
 
-Bank Feed API uses standalone integrations to [popular accounting software](https://docs.codat.io/docs/bank-feed-overview#which-integrations-support-bank-feed-api). The connection journey for SMB users is handled by the integration and is different for each supported platform.
+Bank Feed API uses standalone integrations to [popular accounting software](/bank-feed-overview#which-integrations-support-bank-feed-api). The connection journey for SMB users is handled by the integration and is different for each supported platform.
 
 <img
   src="https://files.readme.io/fd21af0-codat_whitepaper_accounting-automation_diagram_B.png"
@@ -86,9 +86,9 @@ Tell us how you'd like to use Bank Feed API on <a className="external" href="htt
 
 To leverage the functionality of Bank Feed API, first choose an integration to a supported accounting platform.
 
-- [QuickBooks Online Bank Feeds](https://docs.codat.io/docs/bank-feed-qbo-bank-feeds) (US and Canada only)
-- [Sage Bank Feeds](https://docs.codat.io/docs/bank-feed-sage-bank-feeds)
-- [Xero](https://docs.codat.io/docs/accounting-xero-setup#configure-direct-bank-feeds)
+- [QuickBooks Online Bank Feeds](/bank-feed-qbo-bank-feeds) (US and Canada only)
+- [Sage Bank Feeds](/bank-feed-sage-bank-feeds)
+- [Xero](/accounting-xero-setup#configure-direct-bank-feeds)
 
 For detailed setup instructions, refer to the documentation for each integration.
 
@@ -108,7 +108,7 @@ Here's a high-level overview of the setup and connection flow for Bank Feed API.
 3. Create the following objects using Codat's Accounting API:
 
    - A Company.
-   - A [data connection](https://docs.codat.io/docs/core-dataconnections) that specifies the platform key of the Bank Feeds integration you want to use.
+   - A [data connection](/core-dataconnections) that specifies the platform key of the Bank Feeds integration you want to use.
 
 4. Provide a list of source bank accounts. These accounts will be displayed to the SMB user in the integration's authorization UI.
 
@@ -124,7 +124,7 @@ Here's a high-level overview of the setup and connection flow for Bank Feed API.
 
 7. You can add more source bank accounts, or update existing accounts as needed.
 
-When the SMB user is authorized, you can begin to push bank transactions to the target account in the accounting platform. You use the [POST /bankTransactions](ref:post_companies-companyid-connections-connectionid-push-bankaccounts-accountid-banktransactions) endpoint to do this.
+When the SMB user is authorized, you can begin to push bank transactions to the target account in the accounting platform. You use the [POST /bankTransactions](/accounting-api#/operations/post-bank-transactions) endpoint to do this.
 
 :::caution Important
 

@@ -5,17 +5,17 @@ createdAt: "2021-03-31T21:11:15.467Z"
 updatedAt: "2023-01-16T15:23:20.370Z"
 ---
 
-A data connection represents a [company's](https://docs.codat.io/docs/core-companies) connection to a data source and allows you to synchronize data (pull and/or push) with that source.
+A data connection represents a [company's](/core-companies) connection to a data source and allows you to synchronize data (pull and/or push) with that source.
 
 A company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:
 
-- A single source of [accounting data](https://docs.codat.io/docs/accounting-overview).
-- Multiple sources of [banking data](https://docs.codat.io/docs/banking-overview).
-- Multiple sources of [commerce data](https://docs.codat.io/docs/commerce-overview).
+- A single source of [accounting data](/accounting/overview).
+- Multiple sources of [banking data](/banking/overview).
+- Multiple sources of [commerce data](/commerce/overview).
 
 Any combination of accounting, banking, and commerce data connections is allowed.
 
-Before you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/docs/auth-flow).
+Before you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](/auth-flow).
 
 ## Data connection status
 
@@ -107,4 +107,4 @@ When you delete a data connection:
 
 ## Provide credentials or tokens for a data connection
 
-If you are migrating an existing integration to use Codat, you can provide tokens for the connection to migrate your users access. You can read more about how to do this on our [migration page here](https://docs.codat.io/docs/oauth-token-migration)
+If you are migrating an existing integration to use Codat, you can provide tokens for the connection to migrate your users access. You can read more about how to do this on our [migration page here](/oauth-token-migration)

@@ -18,4 +18,4 @@ View the coverage of our SumUp integration in the <a className="external" href="
 
 ## Set up the integration
 
-See [Set up the SumUp Integration](https://docs.codat.io/docs/set-up-sumup-in-production-1) to learn how to set up and enable the integration.
+See [Set up the SumUp Integration](/set-up-sumup-in-production-1) to learn how to set up and enable the integration.

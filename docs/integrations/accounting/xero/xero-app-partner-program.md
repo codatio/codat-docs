@@ -8,7 +8,7 @@ If you want to have more than 25 Xero connections, you'll need to join the **Xer
 
 To join the program, there are a series of requirements your integration must first satisfy. There may be additional use-case-specific requirements.
 
-We've broken down the requirements you need to action based on the [Xero Certification Checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/#required-for-all-integrations). During your App Partner Program, you may use these answers to facilitate your application. [We take care of a number of checkpoints for you](https://docs.codat.io/docs/xero-app-partner-program#we-take-care-of).
+We've broken down the requirements you need to action based on the [Xero Certification Checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/#required-for-all-integrations). During your App Partner Program, you may use these answers to facilitate your application. [We take care of a number of checkpoints for you](/xero-app-partner-program#we-take-care-of).
 
 :::caution Use-cases
 

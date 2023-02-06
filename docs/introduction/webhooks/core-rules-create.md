@@ -5,9 +5,11 @@ createdAt: "2019-02-20T11:20:32.835Z"
 updatedAt: "2022-11-16T12:54:20.055Z"
 ---
 
-:::info
-You'll need to be an [Administrator](https://docs.codat.io/docs/user-roles#section-administrator) or [Developer](https://docs.codat.io/docs/user-roles#section-developer) user to create rules. [Analyst](https://docs.codat.io/docs/user-roles#section-analyst) users can view alerts but not create or modify rules.",
-"title": "Required permissions
+:::info Required permissions
+
+You'll need to be an [Administrator](/user-roles#section-administrator) or [Developer](/user-roles#section-developer) user to create rules. [Analyst](/user-roles#section-analyst) users can view alerts but not create or modify rules.
+
+:::
 
 ## Manage rules from the Codat portal
 
@@ -18,12 +20,12 @@ You'll need to be an [Administrator](https://docs.codat.io/docs/user-roles#secti
 3. Select **Alerting rules**.
 4. Select **Create new rule**.
    The **Create new rule** modal is displayed.
-5. From the **Rule type** dropdown, select the event you would like to be notified of. See [Rule types](https://docs.codat.io/docs/core-rules-types) for more details of the events that trigger an alert and the details included the alert.
+5. From the **Rule type** dropdown, select the event you would like to be notified of. See [Rule types](/core-rules-types) for more details of the events that trigger an alert and the details included the alert.
 6. In the **Company** dropdown, select the company that you would like to monitor, or select **All companies** to make all companies trigger this rule.
 7. By default, alerts triggered by rules are shown in the Codat Portal, but you can also choose to send them by email or post them to a webhook. To do this:
 
 - In the **Email notifiers** box, enter a comma-separated list of email addresses that should receive the alert.
-- In the **Webhook notification URL** box enter the URL that you would like alert details posted to. See [Webhook alerts](https://docs.codat.io/docs/core-rules-webhooks) for more details.
+- In the **Webhook notification URL** box enter the URL that you would like alert details posted to. See [Webhook alerts](/core-rules-webhooks) for more details.
 
 7. Select **Save changes**.
 

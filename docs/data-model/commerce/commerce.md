@@ -17,16 +17,16 @@ View the full details of the data types that Codat supports for each commerce pl
 
 The following commerce data types are available via Codat's API:
 
-- [Company info](https://docs.codat.io/docs/datamodel-commerce-companyinfo) – details of a linked company, such as their address, phone number, and company registration.
-- [Customers](https://docs.codat.io/docs/datamodel-commerce-customers) – details of customers who have placed orders with the company.
-- [Disputes](https://docs.codat.io/docs/datamodel-commerce-disputes) – details of all transactions that customers have challenged.
-- [Locations](https://docs.codat.io/docs/datamodel-commerce-locations) – details of geographic locations where [product variant inventory](https://docs.codat.io/docs/datamodel-commerce-products#product-variant-inventory) is held.
-- [Orders](https://docs.codat.io/docs/datamodel-commerce-orders) – details of all orders received by a company, including payments, service charges, and refunds.
-- [Payments ](https://docs.codat.io/docs/datamodel-commerce-payments) – amounts reserved against the customer's funding source.
-- [Payment Methods ](https://docs.codat.io/docs/datamodel-commerce-paymentmethods) – represents the payment methods used by customers to make payments.
-- [Products](https://docs.codat.io/docs/datamodel-commerce-products) – details of the products a company has available on the system, including the price and quantity of those products, and product variants (where available).
-- [Transactions](https://docs.codat.io/docs/datamodel-commerce-transactions) – details of all financial transactions recorded in the system.
+- [Company info](/datamodel-commerce-companyinfo) – details of a linked company, such as their address, phone number, and company registration.
+- [Customers](/datamodel-commerce-customers) – details of customers who have placed orders with the company.
+- [Disputes](/datamodel-commerce-disputes) – details of all transactions that customers have challenged.
+- [Locations](/datamodel-commerce-locations) – details of geographic locations where [product variant inventory](/datamodel-commerce-products#product-variant-inventory) is held.
+- [Orders](/datamodel-commerce-orders) – details of all orders received by a company, including payments, service charges, and refunds.
+- [Payments ](/datamodel-commerce-payments) – amounts reserved against the customer's funding source.
+- [Payment Methods ](/datamodel-commerce-paymentmethods) – represents the payment methods used by customers to make payments.
+- [Products](/datamodel-commerce-products) – details of the products a company has available on the system, including the price and quantity of those products, and product variants (where available).
+- [Transactions](/datamodel-commerce-transactions) – details of all financial transactions recorded in the system.
 
 ## Integrations setup
 
-For full instructions on how to set up an integration for a specific commerce platform see the [Commerce integrations](https://docs.codat.io/docs/commerce-overview) section.
+For full instructions on how to set up an integration for a specific commerce platform see the [Commerce integrations](/commerce/overview) section.

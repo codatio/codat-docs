@@ -13,7 +13,7 @@ View the coverage for credit notes in the <a className="external" href="https://
 
 Think of a credit note as a voucher issued to a customer. It is a reduction that can be applied against one or multiple invoices. A credit note can either reduce the amount owed or cancel out an invoice entirely.
 
-In the Codat system a credit note is issued to a [customer's](https://docs.codat.io/docs/datamodel-accounting-customers) accounts receivable.
+In the Codat system a credit note is issued to a [customer's](/datamodel-accounting-customers) accounts receivable.
 
 It contains details of:
 
@@ -40,24 +40,24 @@ It contains details of:
 "13-0": "**currencyRate** ",
 "15-0": "**paymentAllocations** ",
 "16-0": "**modifiedDate** ",
-"2-2": "Reference to the [customer](https://docs.codat.io/docs/datamodel-accounting-customers) the credit note has been issued to.",
+"2-2": "Reference to the [customer](/datamodel-accounting-customers) the credit note has been issued to.",
 "3-1": "_decimal_",
 "8-1": "_decimal_",
 "13-1": "_decimal_
-see [currency rate](https://docs.codat.io/docs/datamodel-shared-currencyrate)",
+see [currency rate](/datamodel-shared-currencyrate)",
 "0-1": "_string_",
 "1-1": "_string_",
 "9-1": "_string_",
 "10-1": "_string_
-see [date](https://docs.codat.io/docs/datamodel-shared-date)",
+see [date](/datamodel-shared-date)",
 "12-1": "_string_
-see [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+see [currency](/datamodel-shared-currency)",
 "15-2": "An array of [CreditNotePaymentAllocations](#section-payment-allocations).",
 "16-1": "_string_
-see [date](https://docs.codat.io/docs/datamodel-shared-date)",
-"0-2": "Identifier for the credit note, unique to the [company](https://docs.codat.io/docs/datamodel-accounting-company) in the accounting platform.",
+see [date](/datamodel-shared-date)",
+"0-2": "Identifier for the credit note, unique to the [company](/datamodel-accounting-company) in the accounting platform.",
 "1-2": "Friendly reference for the credit note.",
-"3-2": "Total amount of credit that has been applied to the [customer's](https://docs.codat.io/docs/datamodel-accounting-customers) accounts receivable.",
+"3-2": "Total amount of credit that has been applied to the [customer's](/datamodel-accounting-customers) accounts receivable.",
 "9-2": "Current state of the credit note, either:
 
 - `Draft` - Not yet confirmed in the accounting system
@@ -71,14 +71,14 @@ see [date](https://docs.codat.io/docs/datamodel-shared-date)",
 - `Void` - Invalid or void
 
 - `Unknown`",
-  "2-1": "_[reference type](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-customerref)_",
+  "2-1": "_[reference type](/datamodel-accounting-referencetypes#section-customerref)_",
   "12-2": "Currency of the credit note.",
-  "13-2": "Rate between the currency of the credit note and the base currency of the [company](https://docs.codat.io/docs/datamodel-accounting-company).",
+  "13-2": "Rate between the currency of the credit note and the base currency of the [company](/datamodel-accounting-company).",
   "8-2": "Unused balance of totalAmount originally raised.",
   "10-2": "Date of the credit note as recorded in the accounting system.",
   "17-0": "**sourceModifiedDate** ",
   "17-1": "_string_
-  see [date](https://docs.codat.io/docs/datamodel-shared-date)",
+  see [date](/datamodel-shared-date)",
   "16-2": "Date the record was last updated in the Codat system.",
   "17-2": "Date the record was last changed in the accounting system.",
   "14-0": "**lineItems**",
@@ -100,7 +100,7 @@ see [date](https://docs.codat.io/docs/datamodel-shared-date)",
   "7-2": "Percentage rate (from 0 to 100) of discounts applied to the credit note.",
   "11-0": "**allocatedOnDate** ",
   "11-1": "_string_
-  see [date](https://docs.codat.io/docs/datamodel-shared-date)",
+  see [date](/datamodel-shared-date)",
   "11-2": "Date on which the credit note was fully allocated."
   },
   "cols": 3,
@@ -143,15 +143,15 @@ see [date](https://docs.codat.io/docs/datamodel-shared-date)",
 "4-2": "Amount of credit associated with the line item, including discounts but excluding tax.",
 "5-2": "Amount of tax associated with the line item.",
 "6-2": "Total amount of the line item, including discounts and tax.",
-"7-1": "_[reference type](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-accountref)_",
-"9-1": "_[reference type](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-taxrateref)_",
-"11-1": "_[reference type](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-trackingCategoryRef)_",
-"10-1": "_[reference type](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-itemref)_",
-"7-2": "Reference to the [account](https://docs.codat.io/docs/datamodel-accounting-chartofaccounts) to which the line item is linked.",
+"7-1": "_[reference type](/datamodel-accounting-referencetypes#section-accountref)_",
+"9-1": "_[reference type](/datamodel-accounting-referencetypes#section-taxrateref)_",
+"11-1": "_[reference type](/datamodel-accounting-referencetypes#section-trackingCategoryRef)_",
+"10-1": "_[reference type](/datamodel-accounting-referencetypes#section-itemref)_",
+"7-2": "Reference to the [account](/datamodel-accounting-chartofaccounts) to which the line item is linked.",
 "8-2": "Percentage rate of any discount applied to the line item.",
-"9-2": "Reference to the [tax rate](https://docs.codat.io/docs/datamodel-accounting-taxrates) to which the line item is linked.",
-"10-2": "Reference to the [item](https://docs.codat.io/docs/datamodel-accounting-items) the line is linked to.",
-"11-2": "Reference to the [tracking categories](https://docs.codat.io/docs/datamodel-accounting-trackingcategories) to which the line item is linked."
+"9-2": "Reference to the [tax rate](/datamodel-accounting-taxrates) to which the line item is linked.",
+"10-2": "Reference to the [item](/datamodel-accounting-items) the line is linked to.",
+"11-2": "Reference to the [tracking categories](/datamodel-accounting-trackingcategories) to which the line item is linked."
 },
 "cols": 3,
 "rows": 12
@@ -183,19 +183,19 @@ see [date](https://docs.codat.io/docs/datamodel-shared-date)",
 "1-1": "_string_",
 "2-1": "_string_",
 "3-1": "_string_",
-"4-1": "[_Reference type_](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-accountref)",
+"4-1": "[_Reference type_](/datamodel-accounting-referencetypes#section-accountref)",
 "5-1": "_string_
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "10-1": "_string_
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "11-1": "_decimal_
-See [currency rate](https://docs.codat.io/docs/datamodel-shared-currencyrate)",
+See [currency rate](/datamodel-shared-currencyrate)",
 "6-1": "_decimal_
-See [currency rate](https://docs.codat.io/docs/datamodel-shared-currencyrate)",
+See [currency rate](/datamodel-shared-currencyrate)",
 "7-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "12-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "8-1": "_decimal_",
 "13-1": "_decimal_",
 "1-2": "Identifier of the allocated payment.",
@@ -217,7 +217,7 @@ See [date](https://docs.codat.io/docs/datamodel-shared-date)",
 [/block]
 
 :::caution Requirements for reference fields
-Reference fields are only populated if the corresponding data type has been synchronised. If you see null values for these fields, please complete a new sync for the corresponding data type. For example, sync the customers data type for **[customerRef](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-customerref)**.
+Reference fields are only populated if the corresponding data type has been synchronised. If you see null values for these fields, please complete a new sync for the corresponding data type. For example, sync the customers data type for **[customerRef](/datamodel-accounting-referencetypes#section-customerref)**.
 :::
 
 ## Example data

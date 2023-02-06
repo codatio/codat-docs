@@ -14,7 +14,7 @@ Business Central is a cloud-based business management solution that allows SMBs 
 
 View the coverage of our Business Central integration in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=trji" target="_blank">Data coverage explorer</a>.
 
-For more details about the supported data types and operations, see [Dynamics 365 Business Central integration reference](https://docs.codat.io/docs/accounting-dynamics-365-business-central-reference).
+For more details about the supported data types and operations, see [Dynamics 365 Business Central integration reference](/accounting-dynamics-365-business-central-reference).
 
 ## Version support
 
@@ -22,4 +22,4 @@ The integration supports all versions of Dynamics 365 Business Central released 
 
 ## Set up the integration
 
-See [Set up the Dynamics 365 Business Central integration](https://docs.codat.io/docs/accounting-dynamics365businesscentral-setup) to learn how to set up and enable the integration.
+See [Set up the Dynamics 365 Business Central integration](/accounting-dynamics365businesscentral-setup) to learn how to set up and enable the integration.

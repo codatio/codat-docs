@@ -7,7 +7,7 @@ updatedAt: "2022-11-16T09:29:13.737Z"
 
 :::info Language tip
 
-In Codat, account transactions represent all transactions posted to a bank account within an accounting platform. For bank transactions posted within a banking platform, refer to [Banking transactions](https://docs.codat.io/docs/datamodel-banking-banking-transactions).
+In Codat, account transactions represent all transactions posted to a bank account within an accounting platform. For bank transactions posted within a banking platform, refer to [Banking transactions](/datamodel-banking-banking-transactions).
 :::
 
 Explore the <a className="external" href="https://api.codat.io/swagger/index.html#/AccountTransactions" target="_blank">Account transactions</a> endpoints in Swagger.
@@ -26,7 +26,7 @@ Account transactions are created as a result of different business activities, f
 - Direct incomes: for example, selling an item directly to a contact and receiving payment at point of sale.
 - Transfers: for example, transferring money between two bank accounts.
 
-Account transactions is the parent data type of [payments](https://docs.codat.io/docs/datamodel-accounting-payments), [bill payments](https://docs.codat.io/docs/datamodel-accounting-billpayments), [direct costs](https://docs.codat.io/docs/datamodel-accounting-directcosts), [direct incomes](https://docs.codat.io/docs/datamodel-accounting-directincomes), and [transfers](https://docs.codat.io/docs/datamodel-accounting-transfers).
+Account transactions is the parent data type of [payments](/datamodel-accounting-payments), [bill payments](/datamodel-accounting-billpayments), [direct costs](/datamodel-accounting-directcosts), [direct incomes](/datamodel-accounting-directincomes), and [transfers](/datamodel-accounting-transfers).
 
 Perform the following tasks using the <a className="external" href="https://api.codat.io/swagger/index.html#/AccountTransactions" target="_blank">Account transactions</a> endpoints:
 
@@ -52,14 +52,14 @@ Perform the following tasks using the <a className="external" href="https://api.
 | **Id**                 | _string_                                                                                             | Identifier of the direct cost (unique to the company).                                                                                        |
 | **transactionId**      | _string_                                                                                             | Identifier of the transaction (unique to the company).                                                                                        |
 | **note**               | _string_                                                                                             | Additional information about the account transaction, if available.                                                                           |
-| **bankAccountRef**     | See [Reference types](https://docs.codat.io/docs/datamodel-accounting-referencetypes#bankaccountref) | Reference to the [bank account](https://docs.codat.io/docs/datamodel-accounting-chartofaccounts) the account transaction is recorded against. |
-| **currency**           | _string_ <br /> See [Currency](https://docs.codat.io/docs/datamodel-shared-currency)                 | Currency of the account transaction.                                                                                                          |
-| **currencyRate**       | _decimal_ <br /> See [Currency rate](https://docs.codat.io/docs/datamodel-shared-currencyrate)       | Conversion rate between the account transaction currency and the base currency used by the company.                                           |
+| **bankAccountRef**     | See [Reference types](/datamodel-accounting-referencetypes#bankaccountref) | Reference to the [bank account](/datamodel-accounting-chartofaccounts) the account transaction is recorded against. |
+| **currency**           | _string_ <br /> See [Currency](/datamodel-shared-currency)                 | Currency of the account transaction.                                                                                                          |
+| **currencyRate**       | _decimal_ <br /> See [Currency rate](/datamodel-shared-currencyrate)       | Conversion rate between the account transaction currency and the base currency used by the company.                                           |
 | **lines**              | _array_ <br /> [Account transaction lines](#account-transaction-lines) (see below)                   | Array of account transaction lines.                                                                                                           |
 | **totalAmount**        | _decimal_                                                                                            | Total amount of the account transactions, inclusive of tax.                                                                                   |
-| **modifiedDate**       | _string_ <br /> See [Date](https://docs.codat.io/docs/datamodel-shared-date)                         | Date the record was last updated in Codat.                                                                                                    |
-| **sourceModifiedDate** | _string_ <br /> See [Date](https://docs.codat.io/docs/datamodel-shared-date)                         | Date the record was last changed in the accounting platform.                                                                                  |
-| **date**               | _string_ <br /> See [Date](https://docs.codat.io/docs/datamodel-shared-date)                         | The date the account transaction was recorded in the platform.                                                                                |
+| **modifiedDate**       | _string_ <br /> See [Date](/datamodel-shared-date)                         | Date the record was last updated in Codat.                                                                                                    |
+| **sourceModifiedDate** | _string_ <br /> See [Date](/datamodel-shared-date)                         | Date the record was last changed in the accounting platform.                                                                                  |
+| **date**               | _string_ <br /> See [Date](/datamodel-shared-date)                         | The date the account transaction was recorded in the platform.                                                                                |
 | **status**             | _string_                                                                                             | The status of the account transaction:                                                                                                        |
 
 - Unknown
@@ -72,7 +72,7 @@ Perform the following tasks using the <a className="external" href="https://api.
 |      Field      |                                              Type                                               |                                 Description                                 |
 | :-------------: | :---------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------: |
 | **description** |                                            _string_                                             |                   Description of the account transaction.                   |
-|  **recordRef**  | See [Reference types](https://docs.codat.io/docs/datamodel-accounting-referencetypes#recordref) | Links an account transaction line to the underlying record that created it. |
+|  **recordRef**  | See [Reference types](/datamodel-accounting-referencetypes#recordref) | Links an account transaction line to the underlying record that created it. |
 |   **amount**    |                                            _decimal_                                            |                    Amount in the bill payment currency.                     |
 
 #### Example data

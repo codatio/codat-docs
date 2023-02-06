@@ -21,7 +21,7 @@ Before sending Link URLs to your SMB customers, we recommend you test your integ
    </a>
    ; for example, invoices.
 
-3. [Create a test company](https://docs.codat.io/docs/portal-managing-companies#add-a-new-company) in the Codat Portal.
+3. [Create a test company](/portal-managing-companies#add-a-new-company) in the Codat Portal.
 
 4. Locate your test company, then click **Request data**.
 
@@ -50,4 +50,4 @@ Before sending Link URLs to your SMB customers, we recommend you test your integ
 
 6. Make sure that data for your test company is displayed in Codat Portal.
 
-To learn more about how Dynamics 365 Business Central handles certain data types, and how this affects the data available in Codat, see [Dynamics 365 Business Central integration reference](https://docs.codat.io/docs/accounting-dynamics-365-business-central-reference).
+To learn more about how Dynamics 365 Business Central handles certain data types, and how this affects the data available in Codat, see [Dynamics 365 Business Central integration reference](/accounting-dynamics-365-business-central-reference).

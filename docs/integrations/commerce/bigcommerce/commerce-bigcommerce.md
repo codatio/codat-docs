@@ -10,17 +10,17 @@ updatedAt: "2022-10-20T13:32:45.801Z"
 </a> is a SaaS-based ecommerce platform for retailers of various sizes, both B2C
 and B2B.
 
-With Codat's BigCommerce integration, you can securely connect to, retrieve, and view your SMB customers' commerce transactions from BigCommerce. Data is standardized to our data model and available through our [Commerce API](https://docs.codat.io/docs/datamodel-commerce).
+With Codat's BigCommerce integration, you can securely connect to, retrieve, and view your SMB customers' commerce transactions from BigCommerce. Data is standardized to our data model and available through our [Commerce API](/datamodel-commerce).
 
 ## Data type coverage
 
 View the coverage of our BigCommerce integration in the <a className="external" href="https://knowledge.codat.io/supported-features/commerce?view=tab-by-integration&integrationKey=vqzp" target="_blank">Data coverage explorer</a>.
 
-For more information about the supported data types, see [BigCommerce integration reference](https://docs.codat.io/docs/commerce-bigcommerce-integration-reference).
+For more information about the supported data types, see [BigCommerce integration reference](/commerce-bigcommerce-integration-reference).
 
 ## Sandbox stores
 
-Before sending Link URLs to your SMB customers, we recommend that you [test the integration](https://docs.codat.io/docs/commerce-bigcommerce-test) using sample data from a sandbox store. You must be a Technology Partner to create a sandbox store and add sample data to it. For more information, refer to the following articles in the BigCommerce Dev Center:
+Before sending Link URLs to your SMB customers, we recommend that you [test the integration](/commerce-bigcommerce-test) using sample data from a sandbox store. You must be a Technology Partner to create a sandbox store and add sample data to it. For more information, refer to the following articles in the BigCommerce Dev Center:
 
 - <a
     className="external"
@@ -45,7 +45,7 @@ Our BigCommerce integration supports the following plans: Standard, Plus, Pro, E
 
 ## Set up the integration
 
-After you've tested the integration, see [Set up the BigCommerce integration](https://docs.codat.io/docs/commerce-bigcommerce-setup) to learn how to enable your SMB customers to connect their commerce data using Link.
+After you've tested the integration, see [Set up the BigCommerce integration](/commerce-bigcommerce-setup) to learn how to enable your SMB customers to connect their commerce data using Link.
 
 :::caution Platform rate limits
 

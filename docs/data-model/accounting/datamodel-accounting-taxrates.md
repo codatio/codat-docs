@@ -38,7 +38,7 @@ In some cases, a tax is made up of multiple sub taxes, often called _components_
 "h-2": "Description",
 "0-0": "**id** ",
 "0-1": "_string_ ",
-"0-2": "Identifier for the tax rate, unique for the [company](https://docs.codat.io/docs/datamodel-accounting-company) in the accounting platform.",
+"0-2": "Identifier for the tax rate, unique for the [company](/datamodel-accounting-company) in the accounting platform.",
 "1-0": "**name** ",
 "1-1": "_string_",
 "1-2": "Codat-augmented name of the tax rate in the accounting platform.",
@@ -63,11 +63,11 @@ _ Archived - A tax rate that has been archived or is inactive in the accounting 
 "6-2": "A tax rate can be made up of multiple sub taxes, often called components of the tax. These are shown in the [TaxRateComponents](#section-components) array.",
 "7-0": "**modifiedDate** ",
 "7-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "7-2": "Date the record was last updated in the Codat system.",
 "8-0": "**sourceModifiedDate** ",
 "8-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "8-2": "Date the record was last changed in the accounting system."
 },
 "cols": 3,

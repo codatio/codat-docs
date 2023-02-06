@@ -11,7 +11,7 @@ View the coverage for suppliers in the <a className="external" href="https://kno
 
 ## Overview
 
-From the **Suppliers** endpoints, you can retrieve a list of [all the suppliers for a company](https://api.codat.io/swagger/index.html#/Suppliers/get_companies__companyId__data_suppliers). Suppliers' data links to accounts payable [bills](https://docs.codat.io/docs/datamodel-accounting-bills).
+From the **Suppliers** endpoints, you can retrieve a list of [all the suppliers for a company](https://api.codat.io/swagger/index.html#/Suppliers/get_companies__companyId__data_suppliers). Suppliers' data links to accounts payable [bills](/datamodel-accounting-bills).
 
 ## Data model
 
@@ -23,7 +23,7 @@ From the **Suppliers** endpoints, you can retrieve a list of [all the suppliers 
 "h-2": "Description",
 "0-0": "**id** ",
 "0-1": "_string_ ",
-"0-2": "Identifier for the supplier, unique to the [company](https://docs.codat.io/docs/datamodel-accounting-company) in the accounting platform.",
+"0-2": "Identifier for the supplier, unique to the [company](/datamodel-accounting-company) in the accounting platform.",
 "1-0": "**supplierName** ",
 "1-1": "_string_",
 "1-2": "Name of the supplier as recorded in the accounting system, typically the company name.",
@@ -47,7 +47,7 @@ From the **Suppliers** endpoints, you can retrieve a list of [all the suppliers 
 "7-2": "Supplier's company tax number.",
 "8-0": "**defaultCurrency** ",
 "8-1": "_string_  
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "8-2": "Default currency the supplier's transactional data is recorded in.",
 "9-0": "**status** ",
 "9-1": "_string_",
@@ -58,11 +58,11 @@ See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
 - `Archived`",
   "10-0": "**modifiedDate** ",
   "10-1": "_string_  
-  See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+  See [date](/datamodel-shared-date)",
   "10-2": "Date the record was last updated in the Codat system.",
   "11-0": "**sourceModifiedDate** ",
   "11-1": "_string_  
-  See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+  See [date](/datamodel-shared-date)",
   "11-2": "Date the record was last changed in the accounting system."
   },
   "cols": 3,

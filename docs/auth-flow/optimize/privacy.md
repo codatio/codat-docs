@@ -60,9 +60,9 @@ The most successful implementations can offer a direct phone number, support e-m
 
 Codat is widely recognized for following a high standard of data protection. Adding a "Powered by Codat" logo to your authorization flow will instantly boost your customer's trust.
 
-If you use Link, you can [enable the logo via Link settings](https://docs.codat.io/docs/set-up-link#configure-your-link-flow).
+If you use Link, you can [enable the logo via Link settings](/set-up-link#configure-your-link-flow).
 
-If you are building your own authorization flow, you can embed the logo into your app by following the instructions [here](https://docs.codat.io/docs/build-your-own-authorization-journey#bonus-show-that-your-authentication-flow-is-powered-by-codat).
+If you are building your own authorization flow, you can embed the logo into your app by following the instructions [here](/build-your-own-authorization-journey#bonus-show-that-your-authentication-flow-is-powered-by-codat).
 
 ## ⭐ Offer a mutual non-disclosure agreement (NDA)
 
@@ -73,14 +73,14 @@ _“Through the wonders of API integration, we can instantly underwrite [custome
 
 :::success
 
-[Using Codat's Link for customer authentication](https://docs.codat.io/docs/auth-flow) allows you to:
+[Using Codat's Link for customer authentication](/auth-flow) allows you to:
 
 - Build trust with your customers by specifying the messaging that appears on the left panel
 - Require an action to consent to data sharing
 - Provide various support contact details
 
-To read more about different ways to customize Link, read [Customize your Link](https://docs.codat.io/docs/set-up-link).
+To read more about different ways to customize Link, read [Customize your Link](/set-up-link).
 
-You can also [build your own authentication journey](https://docs.codat.io/docs/build-your-own-authentication-journey).
+You can also [build your own authentication journey](/build-your-own-authentication-journey).
 
 :::

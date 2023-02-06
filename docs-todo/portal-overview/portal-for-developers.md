@@ -7,7 +7,7 @@ updatedAt: "2022-12-09T13:03:30.599Z"
 
 :::note Access to Codat Developers
 
-This page is only available to users with developer and administrator [user roles](https://docs.codat.io/docs/user-roles).
+This page is only available to users with developer and administrator [user roles](/user-roles).
 :::
 
 You can access the Codat Developers space by clicking the **Developers** tab in the navigation bar of the <a href="https://app.codat.io" target="_blank">Codat Portal</a>.
@@ -47,7 +47,7 @@ Make sure you review the specifics of the deprecation and complete any necessary
 
 Once you are ready, click **Enable** to switch the deprecation on for your organization early. You can use the same button to disable the deprecation and revert to previous behavior if necessary.
 
-For more information on breaking changes and how we communicate these to you, review our [change policy](https://docs.codat.io/docs/change-policy).
+For more information on breaking changes and how we communicate these to you, review our [change policy](/change-policy).
 
 :::note Deprecation dates
 

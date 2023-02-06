@@ -7,11 +7,11 @@ updatedAt: "2022-11-22T13:54:25.826Z"
 
 Commerce reference types link between data types in the Codat commerce data model.
 
-For accounting reference types, see [Reference types](https://docs.codat.io/docs/datamodel-accounting-referencetypes) in the Accounting section.
+For accounting reference types, see [Reference types](/datamodel-accounting-referencetypes) in the Accounting section.
 
 ## customerRef
 
-Links to the [Customers](https://docs.codat.io/docs/datamodel-commerce-customers) data type. [Orders](https://docs.codat.io/docs/datamodel-commerce-orders), which include payments, discounts, and service charges, use a **customerRef** that contains the ID and name of the linked customer.
+Links to the [Customers](/datamodel-commerce-customers) data type. [Orders](/datamodel-commerce-orders), which include payments, discounts, and service charges, use a **customerRef** that contains the ID and name of the linked customer.
 
 ```json
 "customerRef": {
@@ -22,11 +22,11 @@ Links to the [Customers](https://docs.codat.io/docs/datamodel-commerce-customers
 
 ## locationRef
 
-Links to the [Locations](https://docs.codat.io/docs/datamodel-commerce-locations) data type in the following objects:
+Links to the [Locations](/datamodel-commerce-locations) data type in the following objects:
 
-- [Products variant inventory locations](https://docs.codat.io/docs/datamodel-commerce-products#section-product-variant-inventory-locations) include a **locationRef** that contains the ID and name of the location at which stock is held.
+- [Products variant inventory locations](/datamodel-commerce-products#section-product-variant-inventory-locations) include a **locationRef** that contains the ID and name of the location at which stock is held.
 
-- [Orders](https://docs.codat.io/docs/datamodel-commerce-orders) include a **locationRef** that contains the ID and name of the location where the order was placed.
+- [Orders](/datamodel-commerce-orders) include a **locationRef** that contains the ID and name of the location where the order was placed.
 
 ```json
 "locationRef": {
@@ -37,7 +37,7 @@ Links to the [Locations](https://docs.codat.io/docs/datamodel-commerce-locations
 
 ## paymentMethodRef
 
-Links to the [Payment Methods](https://docs.codat.io/docs/datamodel-commerce-paymentmethods) data type. [Payments](https://docs.codat.io/docs/datamodel-commerce-payments) include a **paymentMethodRef** that contains the ID and name of the method of payment.
+Links to the [Payment Methods](/datamodel-commerce-paymentmethods) data type. [Payments](/datamodel-commerce-payments) include a **paymentMethodRef** that contains the ID and name of the method of payment.
 
 ```json
 "paymentMethodRef": {
@@ -48,7 +48,7 @@ Links to the [Payment Methods](https://docs.codat.io/docs/datamodel-commerce-pay
 
 ## productCategoryRef
 
-Links to the [Products](https://docs.codat.io/docs/datamodel-commerce-products) data type.
+Links to the [Products](/datamodel-commerce-products) data type.
 
 ```json
 "productCategoryRef": {
@@ -59,7 +59,7 @@ Links to the [Products](https://docs.codat.io/docs/datamodel-commerce-products) 
 
 ## productRef
 
-Links to the [Products](https://docs.codat.io/docs/datamodel-commerce-products) data type. [Order line items](https://docs.codat.io/docs/datamodel-commerce-orders#section-order-line-items) include a **productRef** that contains the ID and name of the linked product.
+Links to the [Products](/datamodel-commerce-products) data type. [Order line items](/datamodel-commerce-orders#section-order-line-items) include a **productRef** that contains the ID and name of the linked product.
 
 ```json
 "productRef": {
@@ -70,7 +70,7 @@ Links to the [Products](https://docs.codat.io/docs/datamodel-commerce-products) 
 
 ## productVariantRef
 
-Links to the [Products](https://docs.codat.io/docs/datamodel-commerce-products) data type. [Order line items](https://docs.codat.io/docs/datamodel-commerce-orders#section-order-line-items) include a **productVariantRef** that contains the ID and name of the linked product variant.
+Links to the [Products](/datamodel-commerce-products) data type. [Order line items](/datamodel-commerce-orders#section-order-line-items) include a **productVariantRef** that contains the ID and name of the linked product variant.
 
 ```json
 "productVariantRef": {
@@ -81,7 +81,7 @@ Links to the [Products](https://docs.codat.io/docs/datamodel-commerce-products) 
 
 ## transactionSourceRef
 
-Links to the source of a transaction in the [Transactions](https://docs.codat.io/docs/datamodel-commerce-transactions) data type when the transaction has been triggered by an event. The **transactionSourceRef** contains the ID and type of the original event. For example, the transaction triggered by a refund will include a reference to the order that was refunded.
+Links to the source of a transaction in the [Transactions](/datamodel-commerce-transactions) data type when the transaction has been triggered by an event. The **transactionSourceRef** contains the ID and type of the original event. For example, the transaction triggered by a refund will include a reference to the order that was refunded.
 
 ```json Example
 {

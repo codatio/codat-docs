@@ -44,10 +44,10 @@ From the Transactions endpoints you can retrieve:
 "1-2": "Amount of the transaction in the base currency of the commerce or point of sale system.",
 "2-0": "**currency**",
 "2-1": "_string_  
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "2-2": "Currency of the transaction.",
 "3-0": "**transactionSourceRef**",
-"3-1": "_[reference type](https://docs.codat.io/docs/datamodel-commerce-referencetypes#section-transactionsourceref)_",
+"3-1": "_[reference type](/datamodel-commerce-referencetypes#section-transactionsourceref)_",
 "3-2": "Reference to an event that triggered a new transaction linked to the original, or source, transaction. For example, a card payment that pays for an order will be linked to that order.",
 "4-0": "**type**",
 "4-1": "_string_",
@@ -66,15 +66,15 @@ _ `Transfer` — Secure transfer of funds to the seller's bank account.",
 "5-2": "Non-standardised transaction type data from the commerce platform",
 "6-0": "**createdDate**",
 "6-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "6-2": "Date on which the transaction was first recorded in the commerce or point of sale platform.",
 "7-0": "**modifiedDate**",
 "7-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "7-2": "Date the transaction was last updated in the Codat system.",
 "8-0": "**sourceModifiedDate**",
 "8-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "8-2": "Date the transaction was last changed in the commerce or point of sale platform."
 },
 "cols": 3,

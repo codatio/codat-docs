@@ -27,7 +27,7 @@ The available integrations should be grouped by category when there are multiple
 
 To establish a sense of familiarity and certainty in users, make sure you show the correct name and logo of integration, as well as the website address that users navigate to when using their software.
 
-We recommend [using the assets provided by Codat](https://docs.codat.io/docs/build-your-own-authorization-journey#step-2-display-a-list-of-integrations-for-your-users-to-select-including-the-integration-name-and-logo) as they meet the requirements of the supported integrations.
+We recommend [using the assets provided by Codat](/build-your-own-authorization-journey#step-2-display-a-list-of-integrations-for-your-users-to-select-including-the-integration-name-and-logo) as they meet the requirements of the supported integrations.
 
 :::caution
 
@@ -55,16 +55,16 @@ Ensure there is a way to add multiple connections if your use case will benefit 
 - Show the status of existing connections e.g. showing ‘Connected ✔️' against the connected platform’s name and logo
 - Highlight previously selected platforms that are pending authorization
 
-See [here](https://docs.codat.io/docs/authorize-hosted-link#managing-existing-users-with-pending-connections) for more detail on connections with a `pendingAuth` status and [here](https://docs.codat.io/docs/querying-1#for-companies-whose-status-is-pending-with-data-connection-established) on creating a query to find these companies.
+See [here](/authorize-hosted-link#managing-existing-users-with-pending-connections) for more detail on connections with a `pendingAuth` status and [here](/querying-1#for-companies-whose-status-is-pending-with-data-connection-established) on creating a query to find these companies.
 
 :::info
-[Using Codat's Link for authorization](https://docs.codat.io/docs/auth-flow) allows you to:
+[Using Codat's Link for authorization](/auth-flow) allows you to:
 
 - Communicate to build trust with your customers by specifying the messaging that appears on the left panel
 - Require an action to consent to data sharing
 - Provide various support contact details
 
-To read more about different ways to customize Link, read [Customize your Link](https://docs.codat.io/docs/set-up-link).
+To read more about different ways to customize Link, read [Customize your Link](/set-up-link).
 
-You can also [build your own authorization journey](https://docs.codat.io/docs/build-your-own-authorization-journey).
+You can also [build your own authorization journey](/build-your-own-authorization-journey).
 :::

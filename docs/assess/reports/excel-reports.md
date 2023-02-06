@@ -18,7 +18,7 @@ Only one request will be processed at a time per SMB company and per report type
 
 ## Available report types
 
-- [Audit Report](https://docs.codat.io/docs/assess-audit-report)
+- [Audit Report](/assess-audit-report)
 
 ## Parameters
 
@@ -65,10 +65,10 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 "5-0": "**lastInvocationId** ",
 "6-0": "**reportType** ",
 "0-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "1-1": "_boolean_ ",
 "2-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "3-1": "_boolean_ ",
 "4-1": "_string_ ",
 "5-1": "_string_ ",
@@ -126,10 +126,10 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 "5-0": "**lastInvocationId** ",
 "6-0": "**reportType** ",
 "0-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "1-1": "_boolean_ ",
 "2-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "3-1": "_boolean_ ",
 "4-1": "_string_ ",
 "5-1": "_string_ ",

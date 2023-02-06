@@ -14,6 +14,6 @@ module.exports = [
   {
     type: "link",
     label: "Commerce integrations",
-    href: "integrations/commerce/commerce-overview",
+    href: "integrations/commerce/overview",
   },
 ];

@@ -11,7 +11,7 @@ Please note, this feature is in beta testing. We encourage you to provide any fe
 
 This endpoint retrieves a paginated list of banking transactions for one or more connections.
 
-Refer to the [Assess reporting structure](https://docs.codat.io/docs/assess-reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/assess-reporting-structure) page for more detail on reports in Assess.
 
 For _Banking account inflows and outflows_, these are the dimensions and measures:
 
@@ -43,7 +43,7 @@ The endpoint is available in <a href="https://api.codat.io/swagger/index.html#/A
 "h-3": "Required",
 "2-0": "**reportDate**",
 "2-1": "_string_
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "2-2": "YYYY-MM-DD
 
 Users can specify a specific date, however the response will be provided for the full month.",
@@ -66,7 +66,7 @@ Default is 'false'.",
 "6-3": "Optional",
 "0-0": "**query**",
 "0-1": "_string_
-See [Querying](https://docs.codat.io/docs/querying-1)",
+See [Querying](/querying-1)",
 "0-2": "Codat query string.
 
 It can be empty. If empty, it returns data for all bank accounts for a specific company.",
@@ -161,12 +161,12 @@ Ordered by latest to earliest periods."
 "0-2": ""Period n"",
 "1-0": "**start** ",
 "1-1": "_string_
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "1-2": "YYYY-MM-DD
 
 Date in which the period begins (inclusive).",
 "2-1": "_string_
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "2-0": "**end** ",
 "2-2": "YYYY-MM-DD
 

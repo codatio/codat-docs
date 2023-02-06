@@ -6,13 +6,13 @@ createdAt: "2022-11-07T19:58:13.342Z"
 updatedAt: "2022-11-07T20:34:47.562Z"
 ---
 
-There are [two POST endpoints in the API ](ref:data-pull) for queuing a refresh of data:
+There are [two POST endpoints in the API](/codat-api#/operations/create--many-pull-operations) for queuing a refresh of data:
 
 1. `/companies/{companyId}/data/queue/{dataType}`
    - Will queue a dataset for the specified data type
    - _dataType_ is the key of the data type e.g. `invoices`
 2. `/companies/{companyId}/data/all`
-   - Will queue a dataset for each of the data types marked as _Fetch on first link_ in your [data type settings](https://docs.codat.io/docs/data-sync-settings), where that data type is supported by the company's linked data connections
+   - Will queue a dataset for each of the data types marked as _Fetch on first link_ in your [data type settings](/data-sync-settings), where that data type is supported by the company's linked data connections
 
 :::info Multiple dataset queued exception
 

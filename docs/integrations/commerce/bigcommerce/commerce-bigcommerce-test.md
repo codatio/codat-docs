@@ -11,7 +11,7 @@ You can view the sample commerce data in the Codat Portal.
 
 ## Prerequisites
 
-- Update your [data type settings](https://docs.codat.io/docs/commerce-sync-settings) to enable commerce data types.
+- Update your [data type settings](/commerce-sync-settings) to enable commerce data types.
 
 ## Add a test company
 
@@ -37,7 +37,7 @@ In the <a className="external" href="https://app.codat.io" target="_blank">Codat
 1. Click **Companies** then locate the test company you created.
 2. Click the **Link** icon next to the test company.
 3. Enter the Link URL in a new browser tab.
-4. Follow the steps in [SMB customer: Authenticate and connect your commerce data](https://docs.codat.io/docs/commerce-bigcommerce-setup#smb-customer-authenticate-and-connect-your-commerce-data).
+4. Follow the steps in [SMB customer: Authenticate and connect your commerce data](/commerce-bigcommerce-setup#smb-customer-authenticate-and-connect-your-commerce-data).
 
 ## Retrieve sample commerce data
 
