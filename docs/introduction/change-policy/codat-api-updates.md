@@ -95,7 +95,7 @@ Removal of the 'Show Company Name Confirmation Page' toggle from Xero integratio
 
 **April 2021**
 
-- `New`: Ability to [unlink and delete data](/core-dataconnections) connections
+- `New`: Ability to [unlink and delete data](/core-concepts/connections) connections
 - `Updated`: Platform/integration name changes:
   - Sage One -> Sage Business Cloud Accounting
   - QuickBooks -> QuickBooks Desktop

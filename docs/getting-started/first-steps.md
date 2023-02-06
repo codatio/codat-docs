@@ -151,7 +151,7 @@ The endpoint returns a JSON response, confirming the unique `id` of the company 
 
 Retain the `id` and `redirect` URL for use in the next steps.
 
-You can also use the <a href="https://docs.codat.io/reference/createcompany" target="_blank"><i>Create company</i></a> endpoint in our API reference to try this out.
+You can also use the <a href="/codat-api#/operations/create-company" target="_blank"><i>Create company</i></a> endpoint in our API reference to try this out.
 
 </details>
 

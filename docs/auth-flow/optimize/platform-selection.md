@@ -58,7 +58,7 @@ Ensure there is a way to add multiple connections if your use case will benefit 
 See [here](/authorize-hosted-link#managing-existing-users-with-pending-connections) for more detail on connections with a `pendingAuth` status and [here](/querying-1#for-companies-whose-status-is-pending-with-data-connection-established) on creating a query to find these companies.
 
 :::info
-[Using Codat's Link for authorization](/auth-flow) allows you to:
+[Using Codat's Link for authorization](/auth-flow/overview) allows you to:
 
 - Communicate to build trust with your customers by specifying the messaging that appears on the left panel
 - Require an action to consent to data sharing

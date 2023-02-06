@@ -15,7 +15,7 @@ To connect your customers' financial software, you can:
 
 ## Integrate the Hosted Link flow into your app
 
-1. First, you need to create a Codat company for your SMB. We recommend doing that simultaneously as your SMB user signs up within your app. That allows you to track their connection status from day one. To create a company, follow the steps in [Managing companies via API](/managing-companies).
+1. First, you need to create a Codat company for your SMB. We recommend doing that simultaneously as your SMB user signs up within your app. That allows you to track their connection status from day one. To create a company, follow the steps in [Managing companies via API](/using-the-api/managing-companies-1).
 
 :::caution Use your merchant ID for the company name
 
@@ -58,7 +58,7 @@ Direct the user to the `redirect` URL that can be retrieved from a company's met
 
 ### Managing existing users with pending connections
 
-When a user creates a data connection, but fails to authorize access to their financial platform, a data connection is created in a [pending status](/core-dataconnections#what-does-each-status-mean) in the respective Codat company.
+When a user creates a data connection, but fails to authorize access to their financial platform, a data connection is created in a [pending status](/core-concepts/connections#what-does-each-status-mean) in the respective Codat company.
 
 In this scenario, allow your user to authorize this connection by sending them directly to the third-party authentication screen. Use the `linkUrl` value from the `dataConnections` array in the company's metadata. This will prompt the user to authorize the connection to their financial platform.
 

@@ -75,7 +75,7 @@ import '../node_modules/@codat/link-sdk/index.css';
 
 ## Embedding the Link application
 
-The component requires a `companyId` parameter to open Link for a specific company. To obtain the `companyId`, first [create a Codat company](/managing-companies) for your customer. We recommend doing that at the same time as your SMB customer signs up within your app.
+The component requires a `companyId` parameter to open Link for a specific company. To obtain the `companyId`, first [create a Codat company](/using-the-api/managing-companies-1) for your customer. We recommend doing that at the same time as your SMB customer signs up within your app.
 
 From the response to company creation, retain the `companyId` parameter. Then, initialize the Codat Link component in your app:
 

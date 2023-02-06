@@ -25,7 +25,7 @@ Clicking **Manage products** takes you to the Products page, where you can manag
 
 ## Dashboard
 
-This section gives you real-time insight into the number of companies and the current statuses of their [data connections](/core-dataconnections). A company's connections can have the following status:
+This section gives you real-time insight into the number of companies and the current statuses of their [data connections](/core-concepts/connections). A company's connections can have the following status:
 
 - Linked,
 - PendingAuth,

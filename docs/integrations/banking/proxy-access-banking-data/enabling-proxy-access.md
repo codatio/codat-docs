@@ -35,11 +35,11 @@ In the Codat Portal:
 
    3. Click **Save**.
 
-Proxy access to the selected banking data types is now enabled, though your customers must still authorize your additional access. To initiate the authorization process, resend the Link URL to your customers. For more information, see [Link](/auth-flow).
+Proxy access to the selected banking data types is now enabled, though your customers must still authorize your additional access. To initiate the authorization process, resend the Link URL to your customers. For more information, see [Link](/auth-flow/overview).
 
 :::note Adding or removing data types
 
 You can add or remove additional banking data types by repeating the steps above. Your customers will need to reauthorize your access in Link, so you’ll need to re-send them the Link URL for the integration.
 
-If you add new data types, we recommend you also update the _Data access consent_ message in Link. This message should refer to the added proxy data types, for example, Direct Debits. Customers will see this message when they authorize access to their banking data as part of the Link flow. See [Use Link for SMB authentication](/auth-flow).
+If you add new data types, we recommend you also update the _Data access consent_ message in Link. This message should refer to the added proxy data types, for example, Direct Debits. Customers will see this message when they authorize access to their banking data as part of the Link flow. See [Use Link for SMB authentication](/auth-flow/overview).
 :::

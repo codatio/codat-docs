@@ -55,7 +55,7 @@ Keep users engaged by showing them the progress of their connection. Does your s
 
 :::note
 
-[Using Codat's Link for authorization](/auth-flow) allows you to:
+[Using Codat's Link for authorization](/auth-flow/overview) allows you to:
 
 - Specify the messaging that appears on the left panel throughout the Link flow according to the 3-part value exchange
 - Link out to FAQs

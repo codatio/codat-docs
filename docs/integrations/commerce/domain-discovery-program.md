@@ -11,7 +11,7 @@ Through our integrations and API, Codat aggregates and standardizes consented bu
 
 Defining a high quality data model within a new domain is crucial to ensuring our users' needs are met. To achieve this, we work with our users to discover and define new data models through the _Domain Discovery Program_.
 
-If you choose to participate in the program, you'll benefit from early access to several integrations in new domains. Subject to some limitations explained below, you can use these integrations through the Codat API and leverage features such as [Link](/auth-flow) for SMB customer authentication.
+If you choose to participate in the program, you'll benefit from early access to several integrations in new domains. Subject to some limitations explained below, you can use these integrations through the Codat API and leverage features such as [Link](/auth-flow/overview) for SMB customer authentication.
 
 Along with other participants, you'll be asked to provide valuable data and feedback on the integrations, helping us define a high quality, standardized data model for the new domains.
 

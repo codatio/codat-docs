@@ -211,7 +211,7 @@ When the user selects the integration you're ready to progress them to the Sync 
 
 :::caution Incorrect platform selection
 
-If your merchant accidentally selects the wrong accounting package, you can resolve this by [deleting that Connection](/core-dataconnections#how-do-i-delete-a-data-connection) for the incorrectly selected accounting software and returning them to the accounting platform selection stage.
+If your merchant accidentally selects the wrong accounting package, you can resolve this by [deleting that Connection](/core-concepts/connections#how-do-i-delete-a-data-connection) for the incorrectly selected accounting software and returning them to the accounting platform selection stage.
 :::
 
 When you're ready to proceed, you can get the URL of the sync configuration flow using the variables you've retained.

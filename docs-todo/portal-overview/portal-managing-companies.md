@@ -46,7 +46,7 @@ You can rename a company at any time. This doesn't affect the connection. Next t
 
 To link a company via Portal, follow the instructions [here](/allowing-your-users-to-access-link#share-link-urls-via-portal).
 
-You can also [learn more about Link](/auth-flow).
+You can also [learn more about Link](/auth-flow/overview).
 
 ## Queue data refresh
 

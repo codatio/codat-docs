@@ -45,7 +45,7 @@ Test the authentication process that your customers will use when they connect t
 1. Ensure you are signed in to your <a className="external" href="https://www.mollie.com/en" target="_blank">Mollie</a> merchant account.
 2. In the Codat Portal, click **Companies** in the navigation bar.
 3. Hover over your test company, then click **Link URL**. The Onboarding dialog is displayed.
-4. Copy the **Link URL** and paste it into a new browser tab. This loads [Link](/auth-flow).
+4. Copy the **Link URL** and paste it into a new browser tab. This loads [Link](/auth-flow/overview).
 5. Complete the steps in Link; the exact steps depend on your Link settings.
 
    You’ll need to:

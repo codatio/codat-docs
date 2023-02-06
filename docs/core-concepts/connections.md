@@ -5,7 +5,7 @@ createdAt: "2021-03-31T21:11:15.467Z"
 updatedAt: "2023-01-16T15:23:20.370Z"
 ---
 
-A data connection represents a [company's](/core-companies) connection to a data source and allows you to synchronize data (pull and/or push) with that source.
+A data connection represents a [company's](/core-concepts/companies) connection to a data source and allows you to synchronize data (pull and/or push) with that source.
 
 A company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:
 
@@ -15,7 +15,7 @@ A company can have multiple data connections depending on the type of data sourc
 
 Any combination of accounting, banking, and commerce data connections is allowed.
 
-Before you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](/auth-flow).
+Before you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](/auth-flow/overview).
 
 ## Data connection status
 

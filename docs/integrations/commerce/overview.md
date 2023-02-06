@@ -26,7 +26,7 @@ You can connect to the following commerce platforms using our integrations:
 - [Stripe](/commerce-stripe)
 - [SumUp](/commerce-sumup)
 - [WooCommerce](/commerce-woocommerce)
-- [Zettle](/commerce-zettle)
+- [Zettle](/integrations/commerce/zettle/commerce-zettle)
 
 \* _Available through the [Domain Discovery Program](/domain-discovery-program)._
 

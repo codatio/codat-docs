@@ -20,7 +20,7 @@ For more information about the supported data types, see [Zettle integration ref
 
 ## Set up the integration
 
-See [Set up the Zettle integration](/commerce-zettle-setup) to learn how to set up and enable the integration.
+See [Set up the Zettle integration](/integrations/commerce/zettle/commerce-zettle-setup) to learn how to set up and enable the integration.
 
 :::caution Underlying provider requirements
 The Zettle APIs are not supported in the United States.

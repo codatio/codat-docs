@@ -108,7 +108,7 @@ Here's a high-level overview of the setup and connection flow for Bank Feed API.
 3. Create the following objects using Codat's Accounting API:
 
    - A Company.
-   - A [data connection](/core-dataconnections) that specifies the platform key of the Bank Feeds integration you want to use.
+   - A [data connection](/core-concepts/connections) that specifies the platform key of the Bank Feeds integration you want to use.
 
 4. Provide a list of source bank accounts. These accounts will be displayed to the SMB user in the integration's authorization UI.
 

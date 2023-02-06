@@ -18,7 +18,7 @@ Requests and responses are in JSON and the API implements robust error handling.
 
 Complex business data—like orders, payments, and taxes—is represented as _data types_ using logical and consistent schemas.
 
-The API is secured using an OAuth 2.0 [authentication flow](/auth-flow).
+The API is secured using an OAuth 2.0 [authentication flow](/auth-flow/overview).
 
 Over [30 different API integrations](/core-integrations) provide connectivity between the Codat API and supported financial systems.
 
