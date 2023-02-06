@@ -107,4 +107,4 @@ When you delete a data connection:
 
 ## Provide credentials or tokens for a data connection
 
-If you are migrating an existing integration to use Codat, you can provide tokens for the connection to migrate your users access. You can read more about how to do this on our [migration page here](/oauth-token-migration)
+If you are migrating an existing integration to use Codat, you can provide tokens for the connection to migrate your users access. You can read more about how to do this on our [migration page here](/introduction/migration)

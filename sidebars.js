@@ -26,7 +26,7 @@ module.exports = {
       collapsed: true,
       className: "introduction",
       items: [
-        "getting-started/first-steps",
+        "introduction/first-steps",
         "introduction/create-account",
         "introduction/migration",
         {
@@ -87,7 +87,32 @@ module.exports = {
       label: "Other guides",
       collapsed: true,
       className: "other",
-      items: ["other/developer-resources", "other/file-upload"],
+      items: [
+        "other/developer-resources", 
+        "other/file-upload",
+        {
+          type: "category",
+          label: "Portal",
+          collapsed: true,
+          items: [
+            "other/portal/dashboard",
+            "other/portal/companies",
+            "other/portal/developers",
+            "other/portal/pull-and-push-history",
+            "other/portal/account-management",
+          ],
+        },
+        {
+          type: "category",
+          label: "User management",
+          collapsed: true,
+          items: [
+            "other/user-management/adding-users",
+            "other/user-management/user-roles",
+            "other/user-management/sso",
+          ],
+        },
+      ],
     },
     {
       type: "category",
