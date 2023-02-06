@@ -1,5 +1,6 @@
 ---
-title: "Overview"
+title: "Accounting API overview"
+sidebar_label: Accounting API
 createdAt: "2022-11-22T19:33:11.784Z"
 updatedAt: "2022-11-22T19:33:11.784Z"
 ---

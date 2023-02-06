@@ -1,6 +1,6 @@
 ---
-title: "Assess"
-sidebar_label: Overview
+title: "Assess overview"
+sidebar_label: Assess
 description: "Learn about the features that make up the Assess product"
 createdAt: "2022-04-11T16:43:22.429Z"
 updatedAt: "2022-11-17T00:11:12.411Z"

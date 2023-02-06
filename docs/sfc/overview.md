@@ -1,5 +1,6 @@
 ---
-title: "Overview"
+title: "Sync for Commcerce overview"
+sidebarl_label: Sync for Commerce
 description: "Learn about Sync for Commerce and its features."
 createdAt: "2022-06-27T08:17:55.337Z"
 updatedAt: "2022-11-17T10:56:14.545Z"

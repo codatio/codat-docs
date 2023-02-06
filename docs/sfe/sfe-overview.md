@@ -1,5 +1,6 @@
 ---
-title: "What is Sync for Expenses"
+title: "Sync for Expenses overview"
+sidebarl_label: Sync for Expenses
 hidden: true
 createdAt: "2022-09-29T14:33:13.481Z"
 updatedAt: "2022-09-30T18:28:04.852Z"

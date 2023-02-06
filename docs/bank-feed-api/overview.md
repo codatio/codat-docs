@@ -1,5 +1,6 @@
 ---
-title: "Overview"
+title: "Bank Feed API overview"
+sidebarl_label: Bank Feed API
 description: "Bank Feed API enables your SMB users to set up bank feeds from accounts in your application to supported accounting platforms."
 createdAt: "2022-11-17T12:09:28.950Z"
 updatedAt: "2023-01-05T15:04:48.214Z"
