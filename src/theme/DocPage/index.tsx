@@ -27,6 +27,8 @@ import styles from './styles.module.css';
 import {ThemeClassNames} from '@docusaurus/theme-common';
 import Head from '@docusaurus/Head';
 
+import {useWindowSize} from '@docusaurus/theme-common';
+
 type DocPageContentProps = {
   readonly currentDocRoute: DocumentRoute;
   readonly versionMetadata: PropVersionMetadata;
@@ -55,20 +57,8 @@ function DocPageContent({
     setHiddenSidebarContainer((value) => !value);
   }, [hiddenSidebar]);
 
-  console.log(`
-     $$$$$$\\   $$$$$$\\  $$$$$$$\\   $$$$$$\\ $$$$$$$$\\ 
-    $$  __$$\\ $$  __$$\\ $$  __$$\\ $$  __$$\\\\__$$  __|
-    $$ /  \\__|$$ /  $$ |$$ |  $$ |$$ /  $$ |  $$ |   
-    $$ |      $$ |  $$ |$$ |  $$ |$$$$$$$$ |  $$ |   
-    $$ |      $$ |  $$ |$$ |  $$ |$$  __$$ |  $$ |   
-    $$ |  $$\\ $$ |  $$ |$$ |  $$ |$$ |  $$ |  $$ |   
-    \\$$$$$$  | $$$$$$  |$$$$$$$  |$$ |  $$ |  $$ |   
-     \\______/  \\______/ \\_______/ \\__|  \\__|  \\__| 
-
-    Hey!
-    We're always looking for talented developers. Get in touch or check out our careers page.
-    https://www.codat.io/careers/
-  `)
+  const windowSize = useWindowSize();
+  const renderAPI = (windowSize === 'desktop' || windowSize === 'ssr');
 
   return (
     <Layout
@@ -77,7 +67,7 @@ function DocPageContent({
       searchMetadata={{
         version,
       }}>
-      <div className={clsx(styles.docPage)}>
+      <div className={clsx(styles.docPage, renderAPI)}>
         <BackToTopButton />
 
         {sidebar && (
