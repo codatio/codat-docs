@@ -32,7 +32,7 @@ You'll need to:
 Your app development keys and production keys are not interchangeable. Development keys do _not_ work with live QuickBooks Online accounts.
 :::
 
-Before you begin, make sure you understand the different [QuickBooks Online environments](https://docs.codat.io/docs/accounting-quickbooksonline-new-setup#quickbooks-online-environments).
+Before you begin, make sure you understand the different [QuickBooks Online environments](/accounting-quickbooksonline-new-setup#quickbooks-online-environments).
 
 ## QuickBooks Online environments
 
@@ -91,7 +91,7 @@ You can find your app's development keys â€” the **Client ID** and **Client Secr
 
 ### Next steps
 
-Next, add your app's development keys to the **QuickBooks Online Sandbox** integration, as described in [Add your secure keys to Codat](https://docs.codat.io/docs/accounting-quickbooksonline-new-setup#add-your-secure-keys-to-codat).
+Next, add your app's development keys to the **QuickBooks Online Sandbox** integration, as described in [Add your secure keys to Codat](/accounting-quickbooksonline-new-setup#add-your-secure-keys-to-codat).
 
 Alternatively, you can get your app's production keys as explained in the next procedure.
 
@@ -101,7 +101,7 @@ Before you can access your app's production keys, you must complete the requirem
 
 When the production keys are available, configure the app for use with the production integration.
 
-Make sure you've [created a QuickBooks Online app configured for sandbox](https://docs.codat.io/docs/accounting-quickbooksonline-new-setup#create-a-quickbooks-online-app-configured-for-sandbox) first.
+Make sure you've [created a QuickBooks Online app configured for sandbox](/accounting-quickbooksonline-new-setup#create-a-quickbooks-online-app-configured-for-sandbox) first.
 
 In the <a className="external" href="https://developer.intuit.com/" target="_blank">Intuit Developer Portal</a>:
 
@@ -124,7 +124,7 @@ You'll need to provide the following information:
 For app hosting details, see <a className="external" href="https://codat.zendesk.com/hc/en-gb/articles/4463989520669-QBO-app-hosting" target="_blank">QBO app hosting</a> in the Codat Support Portal.
 :::
 
-3. Click **Go to the app assessment questionnaire** to open the questionnaire. See [Complete the App Assessment Questionnaire](https://docs.codat.io/docs/accounting-quickbooksonline-new-setup#completing-the-app-assessment-questionnaire) below for guidance on answering the questionnaire.
+3. Click **Go to the app assessment questionnaire** to open the questionnaire. See [Complete the App Assessment Questionnaire](/accounting-quickbooksonline-new-setup#completing-the-app-assessment-questionnaire) below for guidance on answering the questionnaire.
 
 4. When you've completed all the requirements and your questionnaire responses have been approved by Intuit, the page updates to display the production keys for your app (the Client ID and Client Secret) on the **Keys & OAuth** page.
 
@@ -145,7 +145,7 @@ When you've provided all the requested information, your app's production keysâ€
 
 ### Next steps
 
-Next, add your production keys to the **QuickBooks Online integration**, as described in [Add your secure keys to Codat](https://docs.codat.io/docs/accounting-quickbooksonline-new-setup#add-your-secure-keys-to-codat), below.
+Next, add your production keys to the **QuickBooks Online integration**, as described in [Add your secure keys to Codat](/accounting-quickbooksonline-new-setup#add-your-secure-keys-to-codat), below.
 
 ## Completing the App Assessment Questionnaire
 

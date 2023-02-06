@@ -119,7 +119,7 @@ Attempting to queue a sync before the start date produces a 500 error. The synch
 "2-2": "Status invoices are raised as.",
 "3-2": "Customer invoices are raised against.",
 "4-2": "Mapping of numeric tax rates to rates defined within the accounting software. The key represents the numeric rate. For example, 17.5% tax is expressed as a key of "17.5".",
-"5-2": "Specification of how sales data is grouped when pushing to accounting software. For more information, see [Mapping and grouping](https://docs.codat.io/docs/mapping-and-grouping-1).",
+"5-2": "Specification of how sales data is grouped when pushing to accounting software. For more information, see [Mapping and grouping](/mapping-and-grouping-1).",
 "h-2": "Description"
 },
 "cols": 3,

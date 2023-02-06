@@ -19,10 +19,10 @@ View the coverage of our Plaid integration in the <a className="external" href="
 
 The following banking data is available through the integration:
 
-- [Banking accounts](https://docs.codat.io/docs/datamodel-banking-banking-accounts)
-- [Banking account balances](https://docs.codat.io/docs/datamodel-banking-banking-account-balances)
-- [Banking transactions](https://docs.codat.io/docs/datamodel-banking-banking-transactions)
-- [Banking transaction categories](https://docs.codat.io/docs/datamodel-banking-banking-transaction-categories)
+- [Banking accounts](/datamodel-banking-banking-accounts)
+- [Banking account balances](/datamodel-banking-banking-account-balances)
+- [Banking transactions](/datamodel-banking-banking-transactions)
+- [Banking transaction categories](/datamodel-banking-banking-transaction-categories)
 
 :::info Supported financial institutions
 
@@ -40,10 +40,10 @@ The following table shows the Plaid Products required for each of Codat's bankin
 "h-1": "Associated Plaid product",
 "h-0": "Codat data type",
 "h-2": "Associated Plaid product",
-"1-0": "[Bank transactions](https://docs.codat.io/docs/datamodel-banking-banking-transactions)",
+"1-0": "[Bank transactions](/datamodel-banking-banking-transactions)",
 "1-1": "_ Transactions",
 "1-2": "",
-"0-0": "[Bank accounts](https://docs.codat.io/docs/data-model-banking-banking-accounts)",
+"0-0": "[Bank accounts](/data-model-banking-banking-accounts)",
 "0-1": "_ Auth
 
 - Identity
@@ -51,9 +51,9 @@ The following table shows the Plaid Products required for each of Codat's bankin
   "0-2": "\* Auth
 - Identity
 - Institution",
-  "2-0": "[Bank account balances](https://docs.codat.io/docs/datamodel-banking-banking-account-balances)",
+  "2-0": "[Bank account balances](/datamodel-banking-banking-account-balances)",
   "2-1": "\* Asset Reports",
-  "3-0": "[Bank Transaction Categories](https://docs.codat.io/docs/datamodel-banking-banking-transaction-categories)",
+  "3-0": "[Bank Transaction Categories](/datamodel-banking-banking-transaction-categories)",
   "3-1": "N/A
 
 Categorization is provided by Codat, not using data from Plaid."
@@ -65,9 +65,9 @@ Categorization is provided by Codat, not using data from Plaid."
 
 ## Sync Settings for Plaid
 
-Because Plaid charges per API call for some endpoints, we recommend syncing data for [Account balances](https://docs.codat.io/docs/data-model-banking-banking-account-balances) no more frequently than daily. You may also wish to only sync other data types on demand, rather than on a schedule to reduce associated costs.
+Because Plaid charges per API call for some endpoints, we recommend syncing data for [Account balances](/data-model-banking-banking-account-balances) no more frequently than daily. You may also wish to only sync other data types on demand, rather than on a schedule to reduce associated costs.
 
 :::info Proxy access
 
-If you need to access additional Plaid products, you can [enable proxy access to additional banking data](https://docs.codat.io/docs/proxy-access-banking-data).
+If you need to access additional Plaid products, you can [enable proxy access to additional banking data](/proxy-access-banking-data).
 :::

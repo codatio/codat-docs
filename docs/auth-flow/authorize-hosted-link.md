@@ -15,7 +15,7 @@ To connect your customers' financial software, you can:
 
 ## Integrate the Hosted Link flow into your app
 
-1. First, you need to create a Codat company for your SMB. We recommend doing that simultaneously as your SMB user signs up within your app. That allows you to track their connection status from day one. To create a company, follow the steps in [Managing companies via API](https://docs.codat.io/docs/managing-companies).
+1. First, you need to create a Codat company for your SMB. We recommend doing that simultaneously as your SMB user signs up within your app. That allows you to track their connection status from day one. To create a company, follow the steps in [Managing companies via API](/managing-companies).
 
 :::caution Use your merchant ID for the company name
 
@@ -26,7 +26,7 @@ We recommend that you populate the name value with the ID that you use for the m
    - `companyId`, because you will need it for directing your customers to Link and managing their connections;
    - `redirect` URL value, because you will use this URL in your app to direct the customer to start their Link journey.
 
-Once your customer finishes the Link flow, they will be redirected back to the URL you have set in the [Link settings](https://docs.codat.io/docs/redirect-urls). You can also present your customer with a confirmation screen that shows [the integrations they have set up](https://docs.codat.io/docs/core-rules-types#company-data-connection-status-changed).
+Once your customer finishes the Link flow, they will be redirected back to the URL you have set in the [Link settings](/redirect-urls). You can also present your customer with a confirmation screen that shows [the integrations they have set up](/core-rules-types#company-data-connection-status-changed).
 
 Review the parameters in the example response to creating a new company:
 
@@ -45,7 +45,7 @@ Review the parameters in the example response to creating a new company:
 }
 ```
 
-To enhance your Hosted Link experience, [set up an alert](https://docs.codat.io/docs/set-up-alerts) to monitor the connection status of the newly created company. We recommend that you set up an alert for when a user authorizes a data connection so that you can action it within your app.
+To enhance your Hosted Link experience, [set up an alert](/set-up-alerts) to monitor the connection status of the newly created company. We recommend that you set up an alert for when a user authorizes a data connection so that you can action it within your app.
 
 :::note Use the `redirect` Link URL for existing customers
 
@@ -58,7 +58,7 @@ Direct the user to the `redirect` URL that can be retrieved from a company's met
 
 ### Managing existing users with pending connections
 
-When a user creates a data connection, but fails to authorize access to their financial platform, a data connection is created in a [pending status](https://docs.codat.io/docs/core-dataconnections#what-does-each-status-mean) in the respective Codat company.
+When a user creates a data connection, but fails to authorize access to their financial platform, a data connection is created in a [pending status](/core-dataconnections#what-does-each-status-mean) in the respective Codat company.
 
 In this scenario, allow your user to authorize this connection by sending them directly to the third-party authentication screen. Use the `linkUrl` value from the `dataConnections` array in the company's metadata. This will prompt the user to authorize the connection to their financial platform.
 
@@ -70,7 +70,7 @@ Use the Hosted Link URL if your customer connection is meant to be persistent, a
 
 If this is a new user:
 
-1. Create a [company via Portal](https://docs.codat.io/docs/portal-managing-companies#add-a-new-company) for your customer.
+1. Create a [company via Portal](/portal-managing-companies#add-a-new-company) for your customer.
 2. Navigate to the **Companies** page in Portal.
 3. Find the company that you created for the customer, and click **Request data** next to the company name.
 4. Copy the Link URL from the box that appears and share it with the customer. This will allow the customer to create and authorize a data connection.
@@ -87,7 +87,7 @@ If a user already has an integration connection that hasn't been authorized and 
 If you want to onboard a large number of new companies without needing to specify company names or references, **AND** your company and your customer do not need to manage, view, or update connections in the future, use the Invite company URL:
 
 1. Sign in to the Codat portal and navigate to the **Companies** page.
-2. Click on the `Invite company` button and copy the URL that displays to share it with your customer. Before sharing, ensure that the page title and body text are correctly configured as per [Link customization settings](https://docs.codat.io/docs/set-up-link).
+2. Click on the `Invite company` button and copy the URL that displays to share it with your customer. Before sharing, ensure that the page title and body text are correctly configured as per [Link customization settings](/set-up-link).
 
 :::note Use the Link URL for existing customers
 

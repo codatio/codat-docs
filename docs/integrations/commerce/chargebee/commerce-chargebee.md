@@ -14,8 +14,8 @@ Use Codat's Commerce API with Chargebee to securely connect to, retrieve, and vi
 
 ## Data type coverage
 
-The Chargebee integration is part of the [Domain Discovery Program](https://docs.codat.io/docs/domain-discovery-program), so it doesn't yet expose any standardized commerce data types. Please contact your Account Manager or Account Executive to find out more and gain access.
+The Chargebee integration is part of the [Domain Discovery Program](/domain-discovery-program), so it doesn't yet expose any standardized commerce data types. Please contact your Account Manager or Account Executive to find out more and gain access.
 
 ## Set up the integration
 
-See [Set up the Chargebee integration](https://docs.codat.io/docs/commerce-chargebee-setup) to learn how to set up and enable the integration.
+See [Set up the Chargebee integration](/commerce-chargebee-setup) to learn how to set up and enable the integration.

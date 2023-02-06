@@ -7,17 +7,17 @@ updatedAt: "2022-11-03T09:22:59.470Z"
 
 Assess in the Portal leverages Codat APIs to produce features that serve data on the health of a business and provide insights required for making informed lending decisions. Assess consists of five sections: Profit and Loss, Balance Sheet, Commerce, Banking and Marketing.
 
-To benefit from all of the features of Assess, a company should be linked to accounting, banking and commerce data sources. Explore our [How to get started](https://docs.codat.io/docs/assess-how-to-get-started) guide.
+To benefit from all of the features of Assess, a company should be linked to accounting, banking and commerce data sources. Explore our [How to get started](/assess-how-to-get-started) guide.
 
-The categorized Profit and Loss, and Balance Sheet showcase the power of the [Categories](https://docs.codat.io/docs/categorization-of-accounts) feature which standardizes bespoke data across SMEs. After the data is standardized, meaningful insights and measurements are produced for financial performance.
+The categorized Profit and Loss, and Balance Sheet showcase the power of the [Categories](/categorization-of-accounts) feature which standardizes bespoke data across SMEs. After the data is standardized, meaningful insights and measurements are produced for financial performance.
 
 **Data Match**
 
-The data match percentage button is located next to the **Assess** header on every Assess page and it leverages the [Data Integrity](https://docs.codat.io/docs/assess-data-integrity) feature. The match percentage is pre-calculated using the [Data Integrity summaries](https://docs.codat.io/docs/assess-api-data-integrity#summaries) endpoint.
+The data match percentage button is located next to the **Assess** header on every Assess page and it leverages the [Data Integrity](/assess/data-integrity) feature. The match percentage is pre-calculated using the [Data Integrity summaries](/assess-api-data-integrity#summaries) endpoint.
 
 It takes the match percentage from the summaries endpoint for both `banking-transactions` and `accountTransactions` to calculate an overall match percentage, and it accounts for all dates, not just the optimal date range.
 
-Hovering over the button reveals further detail about the data match. Clicking the **Data match** button takes you to the **Data Integrity** page which provides detailed information about matches. Explore [Data Integrity](https://docs.codat.io/docs/assess-data-integrity).
+Hovering over the button reveals further detail about the data match. Clicking the **Data match** button takes you to the **Data Integrity** page which provides detailed information about matches. Explore [Data Integrity](/assess/data-integrity).
 
 **Reports**
 The **Reports** button is located in the top right corner of every Assess page and directs you to the [Reports](#reports) page in the Portal where you can generate and download the Audit report in Excel format.
@@ -32,7 +32,7 @@ The **Reports** button is located in the top right corner of every Assess page a
 
 ## Profit and Loss
 
-The Profit and Loss page is the landing page when accessing Assess. The page consists of the graph displaying selections for the categorized financial statement, and ratios. If you have uncategorized accounts, the Account Categorization modal will be displayed. Only uncategorized accounts will be shown and you will need to manually assign categories. Our [Categorization of accounts](https://docs.codat.io/docs/assess-in-the-portal-categorization-of-accounts) documentation provides more detail.
+The Profit and Loss page is the landing page when accessing Assess. The page consists of the graph displaying selections for the categorized financial statement, and ratios. If you have uncategorized accounts, the Account Categorization modal will be displayed. Only uncategorized accounts will be shown and you will need to manually assign categories. Our [Categorization of accounts](/assess/portal/overview-categorization-of-accounts) documentation provides more detail.
 
 ### Selection panel
 
@@ -76,13 +76,13 @@ The following information is displayed:
 
 ![P&L graph and extract of a statement based on selection criteria](https://files.readme.io/a1b310e-PL1.png)
 
-The **Statement** table renders the [Enhanced Profit and Loss](https://docs.codat.io/docs/assess-enhanced-profit-and-loss) endpoint response data to give a clear visual of the company’s performance over the specified periods. The green and red arrowheads alongside the numbers indicate an increase or decrease respectively compared to the previous period.
+The **Statement** table renders the [Enhanced Profit and Loss](/assess-enhanced-profit-and-loss) endpoint response data to give a clear visual of the company’s performance over the specified periods. The green and red arrowheads alongside the numbers indicate an increase or decrease respectively compared to the previous period.
 
 Rows can be expanded or collapsed to show more or less information. A maximum of 5 checkboxes can be checked, like Income above, to display the selection on the graph. Hovering over the graph displays a tooltip which contains information about all of the points plotted for that date.
 
 ### Ratios
 
-Ratios are produced from the [Financial Metrics](https://docs.codat.io/docs/assess-financial-metrics) endpoint. It provides a set of pre-calculated ratios and metrics used to assess a company’s financial performance. The Financial Metrics feature performs complex calculations on fully standardized financial statements to produce the following financial metrics and ratios (see [formulas](/docs/assess-financial-metrics#what-ratios-and-metrics-are-available)):
+Ratios are produced from the [Financial Metrics](/assess/metrics/accounting/api-financial-metrics) endpoint. It provides a set of pre-calculated ratios and metrics used to assess a company’s financial performance. The Financial Metrics feature performs complex calculations on fully standardized financial statements to produce the following financial metrics and ratios (see [formulas](/docs/assess-financial-metrics#what-ratios-and-metrics-are-available)):
 
 - Gross Profit Margin
 - EBITDA
@@ -103,7 +103,7 @@ The Balance Sheet page consists of a graph displaying selections for the categor
 
 The balance sheet statement provides the fully categorized statement over specified periods of time, for a specific company’s accounting connection.
 
-Check [Prerequisites](https://docs.codat.io/docs/assess-how-to-get-started#prerequisites) to make sure you have the required data types enabled.
+Check [Prerequisites](/assess-how-to-get-started#prerequisites) to make sure you have the required data types enabled.
 
 The **Data match** percentage displayed in the top right is a comparison of how closely the accounting data aligns with banking data.
 
@@ -139,7 +139,7 @@ The statement displays balance sheet data based on the **Period start**, **Perio
 
 #### Statement format
 
-Each statement has four levels. The fourth level is the original line item (general ledger account) in the company’s accounting package. The first three levels represent a smart categorization layer that we have applied. If you want to change the group that a line item is categorized to, you can do this by following the [instructions for categorizing accounts](https://docs.codat.io/docs/assess-in-the-portal-categorization-of-accounts#how-to-categorize-accounts).
+Each statement has four levels. The fourth level is the original line item (general ledger account) in the company’s accounting package. The first three levels represent a smart categorization layer that we have applied. If you want to change the group that a line item is categorized to, you can do this by following the [instructions for categorizing accounts](/assess/portal/overview-categorization-of-accounts#how-to-categorize-accounts).
 
 ##### Categorizing debit accounts
 
@@ -153,7 +153,7 @@ Debit accounts are categorized as **Asset > Current assets > Cash**. However, wh
 
 ### Ratios
 
-The ratios and metrics are calculated from the data in the statement above and use the same period configuration as set at the top of the screen. The supported metrics are (see [formulas](https://docs.codat.io/docs/assess-accounting-metrics)):
+The ratios and metrics are calculated from the data in the statement above and use the same period configuration as set at the top of the screen. The supported metrics are (see [formulas](/assess-accounting-metrics)):
 
 - Current Ratio
 - Debt Service Coverage Ratio
@@ -169,17 +169,17 @@ The Ratios table is displayed below the Statement table. Each metric/ratio can b
 
 If you are a developer, and you are looking to reproduce the outputs of this section, refer to the following API documentation:
 
-[Enhanced Balance Sheet](https://docs.codat.io/docs/assess-enhanced-balance-sheet): To produce the balance sheet statement table and graph.
-[Financial Metrics](https://docs.codat.io/docs/assess-api-financial-metrics): To produce the ratios table.
-[Data Integrity](https://docs.codat.io/docs/assess-api-data-integrity): To produce the Data match percentage.
+[Enhanced Balance Sheet](/assess-enhanced-balance-sheet): To produce the balance sheet statement table and graph.
+[Financial Metrics](/assess-api-financial-metrics): To produce the ratios table.
+[Data Integrity](/assess-api-data-integrity): To produce the Data match percentage.
 
 ## Commerce
 
-The Commerce page consists of the sales analysis and key indicators of merchant health. The [Commerce Metrics](https://docs.codat.io/docs/assess-commerce-metrics) endpoints are used to generate the graphs and metrics displayed on this page.
+The Commerce page consists of the sales analysis and key indicators of merchant health. The [Commerce Metrics](/assess-assess/metrics/commerce/overview) endpoints are used to generate the graphs and metrics displayed on this page.
 
 ### Sales
 
-The _Sales_ section provides a revenue graph generated from the [Revenue](https://docs.codat.io/docs/assess-commerce-metrics-api-revenue) endpoint, and displays the average order value for the date range selected. The dropdown to the right of the graph gives you the option to map _Revenue_ (represented as a currency) or _Revenue growth_ (represented as a percent). Hovering over the graph displays a tooltip that contains information about the point plotted for that date.
+The _Sales_ section provides a revenue graph generated from the [Revenue](/assess-commerce-metrics-api-revenue) endpoint, and displays the average order value for the date range selected. The dropdown to the right of the graph gives you the option to map _Revenue_ (represented as a currency) or _Revenue growth_ (represented as a percent). Hovering over the graph displays a tooltip that contains information about the point plotted for that date.
 
 ![Revenue and revenue growth graphs based on selection criteria](https://files.readme.io/4d18153-Sales_1.png)
 
@@ -191,11 +191,11 @@ The Merchant Health section displays customer information. You can select graphs
 
 The following metrics are displayed as follows:
 
-- [New vs. existing customers](https://docs.codat.io/docs/assess-commerce-metrics-api-customer-retention) (graph)
-- [Orders](https://docs.codat.io/docs/assess-commerce-metrics-api-orders) vs. [Refunds](https://docs.codat.io/docs/assess-commerce-metrics-api-refunds) (graph)
-- [Refund rate](https://docs.codat.io/docs/assess-commerce-metrics-api-refunds) (pill)
-- [Customer retention](https://docs.codat.io/docs/assess-commerce-metrics-api-customer-retention) (pill)
-- [Lifetime value](https://docs.codat.io/docs/assess-commerce-metrics-api-lifetime-value) (pill)
+- [New vs. existing customers](/assess-commerce-metrics-api-customer-retention) (graph)
+- [Orders](/assess-commerce-metrics-api-orders) vs. [Refunds](/assess-commerce-metrics-api-refunds) (graph)
+- [Refund rate](/assess-commerce-metrics-api-refunds) (pill)
+- [Customer retention](/assess-commerce-metrics-api-customer-retention) (pill)
+- [Lifetime value](/assess-commerce-metrics-api-lifetime-value) (pill)
 
 ## Banking
 
@@ -217,7 +217,7 @@ The _balance_ and the _Account limits_ displayed are aggregate views for the sel
 
 This graph displays when chosen in the _Select graph_ dropdown. Hovering over the graph displays a tooltip containing the total account balance for the selected bank accounts.
 
-The graph is produced from responses from the [Banking account balances](https://docs.codat.io/docs/assess-banking-account-balances) and [Banking transactions](https://docs.codat.io/docs/data-model-banking-banking-transactions) a endpoints.
+The graph is produced from responses from the [Banking account balances](/assess-banking-account-balances) and [Banking transactions](/data-model-banking-banking-transactions) a endpoints.
 
 Refer to the [formulas](/docs/assess-banking#banking-formulas) for more information about how current balances are calculated for each month.
 
@@ -227,7 +227,7 @@ Refer to the [formulas](/docs/assess-banking#banking-formulas) for more informat
 
 This graph displays when chosen in the _Select graph_ dropdown. Hovering over the graph displays a tooltip containing the total inflows and outflows for the selected bank accounts for that month.
 
-The graph is produced from the [Banking transactions](https://docs.codat.io/docs/data-model-banking-banking-transactions) endpoint response.
+The graph is produced from the [Banking transactions](/data-model-banking-banking-transactions) endpoint response.
 
 ![A bar graph showing inflows vs outflows based on selection criteria](https://files.readme.io/2a880ed-Inflows_1.png)
 
@@ -288,13 +288,13 @@ Periods to compare = 4
 
 ![An image showing marketing graphs and extract of a table of marketing data based on selection criteria](https://files.readme.io/288edbe-Mark_1.png)
 
-The [Marketing Metrics](https://docs.codat.io/docs/assess-api-marketing-metrics) endpoint is used to generate the graphs and metrics displayed on this page. The green and red arrowheads alongside the numbers indicate an increase or decrease respectively compared to the previous period.
+The [Marketing Metrics](/assess-api-marketing-metrics) endpoint is used to generate the graphs and metrics displayed on this page. The green and red arrowheads alongside the numbers indicate an increase or decrease respectively compared to the previous period.
 
 Rows can be expanded or collapsed to show more or less information. Hovering over the graph displays a tooltip which contains information about the points plotted for that date.
 
 ## Reports
 
-A **Reports** button is located in the top right corner of every Assess page. It takes you to the **Reports** page where you can generate and download the Audit report in [Excel format](https://docs.codat.io/docs/assess-excel-reports).
+A **Reports** button is located in the top right corner of every Assess page. It takes you to the **Reports** page where you can generate and download the Audit report in [Excel format](/assess-excel-reports).
 
 ![A screenshot of the reports page showing the Audit Report row with a sub-row showing a report that was generated](https://files.readme.io/a3d1d09-ReportsPage1.png)
 
@@ -306,4 +306,4 @@ When a report was successfully generated, the report name (which is also the fil
 
 ### Report types
 
-- [Audit Report](https://docs.codat.io/docs/assess-audit-report): Identifies indicators of inaccurate or out-of-date accounts, helping you to decision with confidence.
+- [Audit Report](/assess-audit-report): Identifies indicators of inaccurate or out-of-date accounts, helping you to decision with confidence.

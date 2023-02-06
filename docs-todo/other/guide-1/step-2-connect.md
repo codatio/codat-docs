@@ -19,7 +19,7 @@ Companies in Codat are your customers.
 1. On Codat's [Swagger](https://api.codat.io/swagger/index.html) page, select `Companies > POST /companies`, and then **Try it out**.
 2. To create a new company, provide a name you want to attribute to it. Parameter `name` is a required parameter to execute this request.
 
-   You can also add the `platformType` parameter to specify an integration platform you would like to set up for the new company. [Retrieve the platform key](https://docs.codat.io/docs/your-first-call-to-the-api-using-api-explorer#retrieve-platform-keys) first and then use it in your request.
+   You can also add the `platformType` parameter to specify an integration platform you would like to set up for the new company. [Retrieve the platform key](/your-first-call-to-the-api-using-api-explorer#retrieve-platform-keys) first and then use it in your request.
 
    For testing purposes, you may use the sample request below and paste it into the request body.
 
@@ -55,7 +55,7 @@ Companies in Codat are your customers.
 With a new company created, you can now link it to the Codat Sandbox environment. The Sandbox is a replica of the Portal production environment, supporting all of the same API endpoints. The Sandbox contains dummy accounting data generated especially for the purpose of your testing.
 
 1. Copy the redirect URL returned in the previous step in the response body.
-2. Send the redirect URL to your customer. They will need to paste the Link URL into their browser. Next, they will be prompted to go to [Link](https://docs.codat.io/docs/link) where they can connect to the Sandbox and complete the linking process.
+2. Send the redirect URL to your customer. They will need to paste the Link URL into their browser. Next, they will be prompted to go to [Link](/link) where they can connect to the Sandbox and complete the linking process.
 
 Once the company authorizes the connection, its status under [GET /companies/{companyId}](https://api.codat.io/swagger/index.html#/Companies/get_companies__companyId_) changes to: **linked**.
 
@@ -90,13 +90,13 @@ Once the company authorizes the connection, its status under [GET /companies/{co
 
 Before you can see the data of the linked company in the Codat Portal, they need to be synchronised. In simple terms, synchronization is needed to maintain consistency between the data on the Codat Portal and the data provided by the integration your company has linked to the Portal. When your customer authorises connection to their company data, Codat automatically obtains their datasets.
 
-_Note_: You can configure which data types are synchronized during the first link under [Codat Portal data type settings](https://docs.codat.io/docs/data-sync-settings).
+_Note_: You can configure which data types are synchronized during the first link under [Codat Portal data type settings](/data-sync-settings).
 
 The data set is queued for synchronisation when you make a request to [POST /companies/{companyId}/data/all](https://api.codat.io/swagger/index.html#/Data/post_companies__companyId__data_all). You can find your company ID in the Codat Portal on the **Companies** tab or in the [GET /companies](https://api.codat.io/swagger/index.html#/Companies/get_companies) endpoint.
 
 ![](https://files.readme.io/6045ad6-data_all.png "data all.png")
 
-When Fetch on first link is turned off in the Codat Portal [sync settings](https://docs.codat.io/docs/data-sync-settings) for a data type, you can still synchronise individual data type making a request to POST [/companies/{companyId}/data/queue/{dataType}](https://api.codat.io/swagger/index.html#/Data/post_companies__companyId__data_queue__dataType_).
+When Fetch on first link is turned off in the Codat Portal [sync settings](/data-sync-settings) for a data type, you can still synchronise individual data type making a request to POST [/companies/{companyId}/data/queue/{dataType}](https://api.codat.io/swagger/index.html#/Data/post_companies__companyId__data_queue__dataType_).
 
 <img src="https://files.readme.io/2ad35ec-data_types_bill.png" />
 

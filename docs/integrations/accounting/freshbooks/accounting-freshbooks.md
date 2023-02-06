@@ -13,7 +13,7 @@ View the coverage of our FreshBooks integration in the <a className="external" h
 
 ## Set up the integration
 
-See [Set up the FreshBooks integration](https://docs.codat.io/docs/accounting-freshbooks-setup) to learn how to set up and enable the integration.
+See [Set up the FreshBooks integration](/accounting-freshbooks-setup) to learn how to set up and enable the integration.
 
 ## Supported versions
 

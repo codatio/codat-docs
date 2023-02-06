@@ -15,7 +15,7 @@ Codat's API allows you to provide tokens for a subset of our integrations which 
 
 Self service token migration is currently supported for over twenty of our integrations, with more being added in the coming months. To view an up-to-date list, check out the available integrations in the **OAuth Token Migrations** section of our <a href="https://postman.codat.io/#88a1864c-60e8-4105-bea9-e55314d6b74d" target="_blank" class="external">Postman collection</a>.
 
-Before you migrate a token, the Company and data connection must be created. This is required because the `companyId` and `connectionId` are parameters in the PUT token migration URL (see below). You can create the Company using a POST call to the [Create company](ref:createcompany) endpoint. The connection can be created using the [Create connection](ref:createconnection) endpoint.
+Before you migrate a token, the Company and data connection must be created. This is required because the `companyId` and `connectionId` are parameters in the PUT token migration URL (see below). You can create the Company using a POST call to the [Create company](/codat-api#/operations/create-company) endpoint. The connection can be created using the [Create connection](/codat-api#/operations/create-data-connection) endpoint.
 
 To migrate, use the PUT connections endpoint. You will need to provide the integration specific information such as the organization ID and OAuth tokens that Codat should use. Because these are different for each integration, examples of the format required for the integrations available are listed in the Postman Collection linked above.
 
@@ -64,7 +64,7 @@ Every migration is different so please make sure you talk to your solutions engi
 
 | Step                                         | Details                                                                                                                                                                  | Responsibility                          |
 | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------- |
-| **1. Supply migration and platform details** | Supply a spreadsheet, with the [details described above](https://docs.codat.io/docs/oauth-token-migration#section-what-do-i-need-to-provide), to the Codat support team. | Your company                            |
+| **1. Supply migration and platform details** | Supply a spreadsheet, with the [details described above](/oauth-token-migration#section-what-do-i-need-to-provide), to the Codat support team. | Your company                            |
 | **2. Schedule the migration**                | Agree a time when the migration can take place. Based on your company's data, Codat's support team estimates how long the migration will take.                           | Your company and the Codat support team |
 | **3. Update your application details**       | Add Codat’s callback URL to the application registered with your platform provider.                                                                                      | Your company                            |
 | **4. Disable data syncing**                  | Disable data syncing in your existing application for all companies that you have chosen to migrate. This is to prevent tokens from becoming invalid.                    | Your company                            |

@@ -17,10 +17,10 @@ View the coverage of our Amazon Seller Central integration in the <a className="
 
 ## Set up the integration
 
-See [Set up the Amazon Seller Central Integration](https://docs.codat.io/docs/set-up-amazon-seller-central) to learn how to set up and enable the integration.
+See [Set up the Amazon Seller Central Integration](/set-up-amazon-seller-central) to learn how to set up and enable the integration.
 
 :::caution Underlying provider requirements
-Before setting up your Amazon Seller Central integration, you must complete all the requirements described in [Amazon Web Services, IAM & Developer Registration](https://docs.codat.io/docs/amazon-registration-steps).
+Before setting up your Amazon Seller Central integration, you must complete all the requirements described in [Amazon Web Services, IAM & Developer Registration](/amazon-registration-steps).
 
 Note that your application must be reviewed before you can start using the integration.
 :::

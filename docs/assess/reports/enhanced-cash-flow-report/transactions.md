@@ -70,7 +70,7 @@ The response structure is split into three areas: Report info, Data sources and 
 "7-0": "*pageSize**",
 "8-0": "**totalResults\*\*",
 "2-1": "*string\*
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "2-2": "YYYY-MM-DDT00:00:00Z
 
 The date the cash flow report was generated.",
@@ -191,7 +191,7 @@ See [Transactions](#transactions)",
 "6-0": "**transactionCategory**",
 "1-1": "_string_",
 "2-1": "_string_
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "2-2": "YYYY-MM-DD
 
 The date the bank transaction was posted.",

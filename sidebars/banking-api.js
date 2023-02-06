@@ -14,6 +14,6 @@ module.exports = [
   {
     type: "link",
     label: "Banking integrations",
-    href: "integrations/banking/banking-overview",
+    href: "integrations/banking/overview",
   },
 ];

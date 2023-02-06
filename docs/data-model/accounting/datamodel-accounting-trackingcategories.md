@@ -57,11 +57,11 @@ The tracking categories of a company. If a tracking category has a parent catego
 "1-2": "Identifier of 'parent' or main category that the tracking category belongs to.",
 "2-0": "**modifiedDate** ",
 "2-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "2-2": "Date when the record was last updated in the Codat system.",
 "3-0": "**sourceModifiedDate** ",
 "3-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "3-2": "Date when the record was last updated in the accounting platform.",
 "4-0": "**name** ",
 "4-1": "_string_",
@@ -98,7 +98,7 @@ The full structure of a specific tracking category including any child or sub ca
 
 ### Tracking category reference model
 
-Data types that reference a tracking category – for example, the [line items of a bill](https://docs.codat.io/docs/datamodel-accounting-bills#line-items) – use a **trackingCategoryRef** that includes the ID and name of the linked category.
+Data types that reference a tracking category – for example, the [line items of a bill](/datamodel-accounting-bills#line-items) – use a **trackingCategoryRef** that includes the ID and name of the linked category.
 
 | Field    | Type     | Description                                                             |
 | :------- | :------- | :---------------------------------------------------------------------- |

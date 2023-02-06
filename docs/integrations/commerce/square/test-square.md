@@ -15,7 +15,7 @@ You'll need to:
 
 ## Prerequisites
 
-First, [set up your Square integration](https://docs.codat.io/docs/commerce-square-setup).
+First, [set up your Square integration](/commerce-square-setup).
 
 - In Square Developer, make sure you've enabled **Sandbox** in your app's configuration settings.
 - In Codat, make sure you've configured the **Square Sandbox** integration.
@@ -42,7 +42,7 @@ Test the authorization process that your customers will see when they connect th
 3. Under **Sandbox test accounts**, open the **Default Test Account**, or another test account, to open the Sandbox seller dashboard. Keep this page open in your browser or authorization to the Sandbox account will fail in Link.
 4. In the Codat Portal, click **Companies** in the navigation bar.
 5. Hover over your test company, then click **Link URL**. The **Onboarding** dialog is displayed.
-6. Copy the **Link URL** and paste it into a new browser tab. This loads [Link](https://docs.codat.io/docs/link).
+6. Copy the **Link URL** and paste it into a new browser tab. This loads [Link](/link).
 
 7. Complete the steps in Link; the exact steps shown depend on your Link settings. You'll need to:
 

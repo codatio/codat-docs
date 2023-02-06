@@ -15,7 +15,7 @@ The profit and loss dashboard allows you to compare trends in a company's revenu
 Select **Help?** from the top navigation of the Codat portal to view the formulas used to calculate key metrics.
 :::
 
-If data in the profit and loss dashboard is unavailable, please read [Using the dashboards](https://docs.codat.io/docs/using-the-dashboards) for information on how to resolve this.
+If data in the profit and loss dashboard is unavailable, please read [Using the dashboards](/using-the-dashboards) for information on how to resolve this.
 
 ## Dashboard settings
 

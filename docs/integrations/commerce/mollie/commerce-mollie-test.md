@@ -15,7 +15,7 @@ You'll need to:
 
 ### Prerequisites
 
-First, [set up your Mollie integration](https://docs.codat.io/docs/commerce-mollie-setup).
+First, [set up your Mollie integration](/commerce-mollie-setup).
 
 Make sure that you've configured the Mollie Test integration.
 
@@ -45,7 +45,7 @@ Test the authentication process that your customers will use when they connect t
 1. Ensure you are signed in to your <a className="external" href="https://www.mollie.com/en" target="_blank">Mollie</a> merchant account.
 2. In the Codat Portal, click **Companies** in the navigation bar.
 3. Hover over your test company, then click **Link URL**. The Onboarding dialog is displayed.
-4. Copy the **Link URL** and paste it into a new browser tab. This loads [Link](https://docs.codat.io/docs/auth-flow).
+4. Copy the **Link URL** and paste it into a new browser tab. This loads [Link](/auth-flow).
 5. Complete the steps in Link; the exact steps depend on your Link settings.
 
    You’ll need to:
@@ -75,4 +75,4 @@ In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>:
 Data is only available for supported data types, for which you created test data.
 :::
 
-Now that you have tested the integration and reviewed sample data, you can [create your first live company](https://docs.codat.io/docs/portal-managing-companies#add-a-new-company).
+Now that you have tested the integration and reviewed sample data, you can [create your first live company](/portal-managing-companies#add-a-new-company).

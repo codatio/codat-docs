@@ -30,7 +30,7 @@ This report will reflect the structure and line descriptions that the business h
 By default, Codat pulls (up to) 24 months of profit and loss history for a company. You can adjust this to fetch more history, where available, by updating the `monthsToSync` value for `profitAndLoss` on the [data type settings endpoint](https://docs.codat.io/reference/post_profile-syncsettings).
 
 **Want to pull this in a standardised structure?**  
-Our [Enhanced Financials](https://docs.codat.io/docs/assess-enhanced-financials) endpoints provide the same report under standardized headings, allowing you to pull it in the same format for all of your business customers.
+Our [Enhanced Financials](/assess/reports/enhanced-financials/financials) endpoints provide the same report under standardized headings, allowing you to pull it in the same format for all of your business customers.
 
 ## Data model
 
@@ -52,7 +52,7 @@ Our [Enhanced Financials](https://docs.codat.io/docs/assess-enhanced-financials)
 - `Unknown`",
   "2-0": "**currency** ",
   "2-1": "_string_  
-  See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+  See [currency](/datamodel-shared-currency)",
   "2-2": "Base currency of the company in which the profit and loss report is presented.",
   "3-0": "**mostRecentAvailableMonth** ",
   "3-1": "_string_",
@@ -81,11 +81,11 @@ Our [Enhanced Financials](https://docs.codat.io/docs/assess-enhanced-financials)
 "h-2": "Description",
 "0-0": "**fromDate** ",
 "0-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "0-2": "Date from which the report data begins.",
 "1-0": "**toDate** ",
 "1-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "1-2": "Date on which the report data ends.",
 "2-0": "**income** ",
 "2-1": "",
@@ -129,7 +129,7 @@ See [date](https://docs.codat.io/docs/datamodel-shared-date)",
 
 | Field         | Type      | Description                                                                                                                               |
 | :------------ | :-------- | :---------------------------------------------------------------------------------------------------------------------------------------- |
-| **accountId** | _string_  | Identifier for the account, unique for the [company](https://docs.codat.io/docs/datamodel-accounting-company) in the accounting platform. |
+| **accountId** | _string_  | Identifier for the account, unique for the [company](/datamodel-accounting-company) in the accounting platform. |
 | **name**      | _string_  | Name of the report line item, for example: `Income` or `Sales`.                                                                           |
 | **value**     | _decimal_ | Numerical value of the line item.                                                                                                         |
 | **items**     |           | Report line items for the given date range.                                                                                               |

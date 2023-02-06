@@ -9,7 +9,7 @@ updatedAt: "2022-10-19T21:11:21.969Z"
 
 Tools you can use within your code.
 
-- **[Link SDK](https://www.npmjs.com/package/@codat/link-sdk)** - A React SDK to allow you to [authorize with Embedded Link](https://docs.codat.io/docs/authorize-embedded-link) within your app
+- **[Link SDK](https://www.npmjs.com/package/@codat/link-sdk)** - A React SDK to allow you to [authorize with Embedded Link](/authorize-embedded-link) within your app
 
 ## Sample projects
 

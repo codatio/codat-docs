@@ -21,7 +21,7 @@ Codat currently supports Sage 200cloud Standard **only**.
 
 Sage has recently modified the way applications and integrations are authenticated in Sage 200 API. You can find out more about the changes in <a href="https://gb-kb.sage.com/portal/app/portlets/results/viewsolution.jsp?solutionid=201204115644533" target="_blank">Sage 200 API - Guide to Sage ID Changes</a>.
 
-If you're a Codat **customer who already has an account** with Sage, please refer to section [Request new credentials](https://docs.codat.io/docs/accounting-sage200-setup#section-request-new-credentials) below. **Customers who need to set up their Sage accounts** are requested to follow the process described below.
+If you're a Codat **customer who already has an account** with Sage, please refer to section [Request new credentials](/accounting-sage200-setup#section-request-new-credentials) below. **Customers who need to set up their Sage accounts** are requested to follow the process described below.
 :::
 
 Before you can access data from customers using Sage 200cloud for their accounting, you need to set up a Sage 200cloud integration in the Codat Portal. You'll need to:
@@ -105,7 +105,7 @@ Unfortunately, you can't use a trial account to test your integration. Sage does
 :::
 
 1. Set up some test data in your Sage200cloud account. For example, some new or amended invoices.
-2. Next, go to the Codat Portal where you've enabled your integration and [create a test company](https://docs.codat.io/docs/portal-managing-companies#add-a-new-company).
+2. Next, go to the Codat Portal where you've enabled your integration and [create a test company](/portal-managing-companies#add-a-new-company).
 3. Find the Link URL for your test company. Select **Request data** next to the company name.
 4. Use the Link URL to connect your Sage 200cloud account.
    - When Link opens, select **Sage200cloud**, and then select **Continue to Sage 200cloud**.
@@ -135,5 +135,5 @@ If you link a Codat test company to one of the [Sage sandbox accounts](https://d
 :::
 
 :::note Tax rates on line items
-Due to a Sage 200cloud limitation, tax rates on line items for invoices, credit notes, bills, and bill credit notes appear differently to other integrations. For more information, see [Sage 200cloud limitations](https://docs.codat.io/docs/sage200-limitations).
+Due to a Sage 200cloud limitation, tax rates on line items for invoices, credit notes, bills, and bill credit notes appear differently to other integrations. For more information, see [Sage 200cloud limitations](/sage200-limitations).
 :::

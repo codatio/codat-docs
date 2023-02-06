@@ -50,7 +50,7 @@ For example, when querying invoices, you can use the [GET /companies/{companyId}
 `pageSize` – the size of page you wish to retrieve  
 `page` – which page number you wish to retrieve  
 `orderBy` – the property you wish to order the response by  
-`query` – any filter you wish to perform on the returned data (see [Querying](https://docs.codat.io/docs/querying-1) for details)
+`query` – any filter you wish to perform on the returned data (see [Querying](/querying-1) for details)
 
 <img src="https://files.readme.io/ac19411-invoices___data_pull.png" />
 
@@ -213,5 +213,5 @@ Required parameters
 
 For more information about data management in Codat go to:
 
-- [Pulling data ](https://docs.codat.io/docs/data-flow)
-- [Pushing data](https://docs.codat.io/docs/pushing-data)
+- [Pulling data ](/data-flow)
+- [Pushing data](/pushing-data)

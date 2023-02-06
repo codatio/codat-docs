@@ -49,7 +49,7 @@ You will not be able to link a Sage Intacct trial company. Sage Intacct trial co
 :::
 
 1. Set up some test data in your Sage Intacct account.
-2. [Create a test company](https://docs.codat.io/docs/portal-managing-companies#add-a-new-company) in the Codat Portal.
+2. [Create a test company](/portal-managing-companies#add-a-new-company) in the Codat Portal.
 3. Click **Request Data** next to the company name, and copy the Link URL.
 4. Enter the Link URL in a new browser tab.
 5. On the **Select your accounting software** step, select the **Sage Intacct** tile.

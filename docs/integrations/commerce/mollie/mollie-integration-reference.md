@@ -46,10 +46,10 @@ The following table highlights selected fields that are not available in data pu
 "h-1": "Codat data type",
 "h-2": "Status",
 "0-0": "`Settlements.status`",
-"0-1": "[Transactions](https://docs.codat.io/docs/datamodel-commerce-transactions)",
+"0-1": "[Transactions](/datamodel-commerce-transactions)",
 "0-2": "The transaction status in Codat does not reflect `open` or `pending` settlements in Mollie.",
 "1-0": "`Payments.method`",
-"1-1": "[Payments](https://docs.codat.io/docs/datamodel-commerce-payments)
+"1-1": "[Payments](/datamodel-commerce-payments)
 
 `Payments.method.type`",
 "1-2": "Only the `creditcard` and `paypal` payment methods are reflected in Codat. All other payment methods are shown as `Custom`."

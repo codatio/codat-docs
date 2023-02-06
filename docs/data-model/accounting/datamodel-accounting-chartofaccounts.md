@@ -57,10 +57,10 @@ Use the **isBankAccount** boolean to filter the company's accounts to show only 
 "11-0": "**modifiedDate** ",
 "12-0": "**sourceModifiedDate** ",
 "11-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "11-2": "Date the record was last updated in the Codat system.",
 "12-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "12-2": "Date the record was last changed in the accounting system.",
 "0-1": "_string_ ",
 "1-1": "_string_",
@@ -69,7 +69,7 @@ See [date](https://docs.codat.io/docs/datamodel-shared-date)",
 "4-1": "_string_",
 "5-1": "_string_",
 "6-1": "_string_
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "8-1": "_string_",
 "9-1": "_string_",
 "10-1": "_boolean_",
@@ -100,14 +100,14 @@ See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
   </ul>
   ", "6-2": "Currency of the account.", "0-2": "Identifier for the account,
   unique for the
-  [company](https://docs.codat.io/docs/datamodel-accounting-company).", "1-2":
+  [company](/datamodel-accounting-company).", "1-2":
   "Reference given to each nominal account for a business. It ensures money is
   allocated to the correct account. This code isn't a unique identifier in the
   Codat system." }, "cols": 3, "rows": 13 } [/block.
 
 ### Valid Datatype Links
 
-The `validDatatypeLinks` can be used to determine whether an account can be correctly mapped to another object; for example, accounts with a `type` of `income` might only support being used on an Invoice and Direct Income. For more information, see [Valid Data Type Links](https://docs.codat.io/docs/valid-data-type-links).
+The `validDatatypeLinks` can be used to determine whether an account can be correctly mapped to another object; for example, accounts with a `type` of `income` might only support being used on an Invoice and Direct Income. For more information, see [Valid Data Type Links](/valid-data-type-links).
 [block:parameters]
 {
 "data": {
@@ -129,7 +129,7 @@ The `validDatatypeLinks` can be used to determine whether an account can be corr
 
 ### Account reference
 
-Data types that reference an account, for example bill and invoice line items, use an [accountRef](https://docs.codat.io/docs/datamodel-accounting-referencetypes#accountref) that includes the ID and name of the linked account.
+Data types that reference an account, for example bill and invoice line items, use an [accountRef](/datamodel-accounting-referencetypes#accountref) that includes the ID and name of the linked account.
 [block:parameters]
 {
 "data": {

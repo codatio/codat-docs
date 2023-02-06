@@ -1,6 +1,6 @@
 ---
 title: "Push commerce data to Codat"
-description: "Push your merchant’s data to the Codat system. To find out more about the structure of data we accept, read [Examples of data](https://docs.codat.io/docs/functional-examples-of-data)."
+description: "Push your merchant’s data to the Codat system. To find out more about the structure of data we accept, read [Examples of data](/functional-examples-of-data)."
 createdAt: "2022-02-09T13:34:14.504Z"
 updatedAt: "2022-11-21T17:42:49.928Z"
 ---
@@ -17,15 +17,15 @@ All the endpoints mentioned in this guide are available in our <a href="https://
 
 1. After the merchant completes the data mapping configuration, push your merchant’s data to the data endpoint for the following data types:
 
-- [Orders](https://docs.codat.io/docs/datamodel-commerce-orders)
-- [Payments](https://docs.codat.io/docs/datamodel-commerce-payments)
-- [Transactions](https://docs.codat.io/docs/datamodel-commerce-transactions)
+- [Orders](/datamodel-commerce-orders)
+- [Payments](/datamodel-commerce-payments)
+- [Transactions](/datamodel-commerce-transactions)
 
 ```http
   POST /data/companies/{companyId}/sync/{dataType}",
 ```
 
-You can learn more about these data types in the context of Sync for Commerce and see some examples [here](https://docs.codat.io/docs/functional-examples-of-data).
+You can learn more about these data types in the context of Sync for Commerce and see some examples [here](/functional-examples-of-data).
 
 2. From the response, identify the `datasetId`. You can use this property to check whether the data has been processed and mapped successfully.
 
@@ -50,7 +50,7 @@ GET /meta/companies/{companyId}/pull/history/{datasetId}",
 }
 ```
 
-The status within the response will correspond to a dataset status, you can find a list of available statuses [here](https://docs.codat.io/docs/data-status#dataset-statuses).
+The status within the response will correspond to a dataset status, you can find a list of available statuses [here](/data-status#dataset-statuses).
 
 4. **(Optional)** The data will be synchronized with the accounting platform at the time configured by the merchant.
 
@@ -62,10 +62,10 @@ You can also check whether the data has been mapped to the accounting platform d
 GET /meta/companies/{companyId}/sync/commerce/status
 ```
 
-5. **(Optional)** You can also [set up alerting rules](https://docs.codat.io/docs/core-rules-types) to receive alerts every time the status of the datasets changes, or even when a Sync connection is deleted by the merchant completely.
+5. **(Optional)** You can also [set up alerting rules](/core-rules-types) to receive alerts every time the status of the datasets changes, or even when a Sync connection is deleted by the merchant completely.
 
 :::info How to trigger data synchronization for testing
-Refer to [How to trigger manual syncs for testing](https://docs.codat.io/docs/sync-your-own-merchant-journey#how-to-trigger-manual-syncs-for-testing) if you need to trigger data synchronization manually for testing purposes.
+Refer to [How to trigger manual syncs for testing](/sync-your-own-merchant-journey#how-to-trigger-manual-syncs-for-testing) if you need to trigger data synchronization manually for testing purposes.
 :::
 
 ## Rules for sending data

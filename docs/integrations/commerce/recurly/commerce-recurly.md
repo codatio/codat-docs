@@ -12,7 +12,7 @@ their recurring billing and subscription payment processes.
 
 Use Codat's Commerce API with Recurly to securely connect to, retrieve, and view your customers’ recurring sales and subscription transactions.
 
-The Recurly integration is part of the [Domain Discovery Program](https://docs.codat.io/docs/domain-discovery-program), so it doesn't yet expose any standardized commerce data types. Please contact your Account Manager or Account Executive to find out more and gain access.
+The Recurly integration is part of the [Domain Discovery Program](/domain-discovery-program), so it doesn't yet expose any standardized commerce data types. Please contact your Account Manager or Account Executive to find out more and gain access.
 
 ## Data type coverage
 
@@ -20,4 +20,4 @@ Because this integration is part of the Domain Discovery Program, it does not ye
 
 ## Set up the integration
 
-See [Set up the Recurly integration](https://docs.codat.io/docs/commerce-recurly-setup) to learn how to set up and enable the integration.
+See [Set up the Recurly integration](/commerce-recurly-setup) to learn how to set up and enable the integration.

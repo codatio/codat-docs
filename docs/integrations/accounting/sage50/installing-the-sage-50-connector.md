@@ -13,12 +13,12 @@ Customers must install and run the Sage 50 connector on the same computer where 
 
 To install the Sage 50 connector, the user who is connecting their company data—the SMB user—must complete the following tasks:
 
-1. [Download the connector](https://docs.codat.io/docs/installing-the-sage-50-connector#1-download-the-connector)
-2. [Launch the connector and enter their licence key](https://docs.codat.io/docs/installing-the-sage-50-connector#2-launch-the-connector-and-enter-their-licence-key)
-3. [Verify company data file](https://docs.codat.io/docs/installing-the-sage-50-connector#3-verify-company-data-file)
-4. [Select a company data file](https://docs.codat.io/docs/installing-the-sage-50-connector#4-select-a-company-data-file)
-5. [Enter their Sage 50 credentials](https://docs.codat.io/docs/installing-the-sage-50-connector#5-enter-their-sage-50-credentials)
-6. [Verify company data](https://docs.codat.io/docs/installing-the-sage-50-connector#6-verify-company-data)
+1. [Download the connector](/installing-the-sage-50-connector#1-download-the-connector)
+2. [Launch the connector and enter their licence key](/installing-the-sage-50-connector#2-launch-the-connector-and-enter-their-licence-key)
+3. [Verify company data file](/installing-the-sage-50-connector#3-verify-company-data-file)
+4. [Select a company data file](/installing-the-sage-50-connector#4-select-a-company-data-file)
+5. [Enter their Sage 50 credentials](/installing-the-sage-50-connector#5-enter-their-sage-50-credentials)
+6. [Verify company data](/installing-the-sage-50-connector#6-verify-company-data)
 
 ## 1. Download the connector
 
@@ -97,7 +97,7 @@ On the **Set your credentials** step, the user enters their Sage 50 username and
 
 If your product requires pushing data to Sage 50, the user should create a separate user login in Sage 50 to be used solely by the Sage 50 Connector. This is required to prevent concurrent access issues.
 
-For more information, see the separate article about [pushing data to Sage 50](https://docs.codat.io/docs/pushing-data-to-sage-50).
+For more information, see the separate article about [pushing data to Sage 50](/pushing-data-to-sage-50).
 :::
 
 Once the Sage 50 information has been entered, the user should click **Next** to proceed to the final step.
@@ -127,7 +127,7 @@ The user is then redirected to the Codat Link flow, where they can see that the 
 
 The initial synchronization will take several minutes to complete, although larger Sage 50 files (for example, files with a high number of transactions) might take up to 30 minutes.
 
-Depending on the configuration as [documented here](https://docs.codat.io/docs/offline-connectors), the connector will perform one of two possible actions after the initial synchronization is complete. The connector will either:
+Depending on the configuration as [documented here](/offline-connectors), the connector will perform one of two possible actions after the initial synchronization is complete. The connector will either:
 
 - Run in the background and automatically synchronize data when new datasets are queued; or
 - Uninstall itself once the initial one-time sync is complete.

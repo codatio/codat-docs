@@ -18,7 +18,7 @@ Before Codat can accept the data from your merchant, the merchant must:
 
 Our Sync configuration flow handles this for you.
 
-You can [customize your flow](https://docs.codat.io/docs/customizing-the-sync-configuration-flow) to give your users the best experience.
+You can [customize your flow](/customizing-the-sync-configuration-flow) to give your users the best experience.
 
 :::note Use our Swagger to follow this guide
 
@@ -84,13 +84,13 @@ Once authorized, the merchant is presented with Codat’s white-labeled configur
 
 - Choose which accounts within their accounting platform to push the data into
 - Link tax rates from their accounting platform to those used for their ecommerce or POS data
-- Schedule the start date, start time, and frequency of the [regular data synchronization](https://docs.codat.io/docs/synchronization-schedule)
+- Schedule the start date, start time, and frequency of the [regular data synchronization](/synchronization-schedule)
 - Set up the default invoice status
 - Set up the data grouping period
 
 :::note
 
-To provide your merchants with a branded experience, we recommend that you customize your [Sync configuration flow](https://docs.codat.io/docs/customizing-the-sync-configuration-flow), including your logo and primary color.
+To provide your merchants with a branded experience, we recommend that you customize your [Sync configuration flow](/customizing-the-sync-configuration-flow), including your logo and primary color.
 :::
 
 ### 4. Allow the merchant to review their configuration
@@ -98,9 +98,9 @@ To provide your merchants with a branded experience, we recommend that you custo
 To allow the merchants to review and modify their connection, present them with the same URL as the one used for the original setup. It will redirect the merchant to a settings page where they will be able to:
 
 - Enable and disable data synchronization
-- Schedule the start date, start time, and frequency of the [regular data synchronization](https://docs.codat.io/docs/synchronization-schedule)
+- Schedule the start date, start time, and frequency of the [regular data synchronization](/synchronization-schedule)
 - See the date and time of the last sync and the next one
-- Review and change which accounts within their accounting platform to push the data into (see [Mapping specifications](https://docs.codat.io/docs/mapping-specifications) for more information)
+- Review and change which accounts within their accounting platform to push the data into (see [Mapping specifications](/mapping-specifications) for more information)
 - Review and change the tax rates mapping
 - Set up the default invoice status
 - Set up the data grouping period
@@ -110,7 +110,7 @@ To allow the merchants to review and modify their connection, present them with 
 
 > In case the merchant severs the connection, the next scheduled data sync will fail, and no further data syncs will be attempted.
 >
-> You can [set up an alert](https://docs.codat.io/docs/core-rules-create) for the [Sync Connection Deleted](https://docs.codat.io/docs/core-rules-types#sync-connection-deleted) rule to be notified if a merchant severs their connection.
+> You can [set up an alert](/core-rules-create) for the [Sync Connection Deleted](/core-rules-types#sync-connection-deleted) rule to be notified if a merchant severs their connection.
 
 ### 5. (Optional) Check the configuration status
 
@@ -190,9 +190,9 @@ Partial sample response:
 
 Both the `enabled` and `configured` parameters should be set to `true`.
 
-You're ready to start [pushing commerce data](https://docs.codat.io/docs/sync-data-pushing) to this company.
+You're ready to start [pushing commerce data](/sync-data-pushing) to this company.
 
 :::note
 
-Don't forget to customize your [Sync configuration flow](https://docs.codat.io/docs/customizing-the-sync-configuration-flow).
+Don't forget to customize your [Sync configuration flow](/customizing-the-sync-configuration-flow).
 :::

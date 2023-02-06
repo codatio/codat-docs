@@ -11,7 +11,7 @@ The Codat Portal home page gives you a quick way of seeing the products you're u
 
 This section allows you to access other sections of the Portal where you are able to set up, monitor, and use the Codat products.
 
-Some navigation bar tabs (for example, the [Developers](https://docs.codat.io/docs/portal-for-developers) tab) are only available to specific [user roles](https://docs.codat.io/docs/user-roles).
+Some navigation bar tabs (for example, the [Developers](/portal-for-developers) tab) are only available to specific [user roles](/user-roles).
 
 ## Getting started
 
@@ -25,7 +25,7 @@ Clicking **Manage products** takes you to the Products page, where you can manag
 
 ## Dashboard
 
-This section gives you real-time insight into the number of companies and the current statuses of their [data connections](https://docs.codat.io/docs/core-dataconnections). A company's connections can have the following status:
+This section gives you real-time insight into the number of companies and the current statuses of their [data connections](/core-dataconnections). A company's connections can have the following status:
 
 - Linked,
 - PendingAuth,

@@ -6,7 +6,7 @@ createdAt: "2019-10-25T16:42:27.872Z"
 updatedAt: "2022-12-12T15:16:00.561Z"
 ---
 
-To push data to Sage 50 (UK), Codat strongly recommends that your client creates a second user in Sage for the company file that you are pushing to. See [Setting up Sage 50 and the Sage 50 connector to enable pushing data](https://docs.codat.io/docs/pushing-data-to-sage-50#section-setting-up-sage-50-and-the-sage-50-connector-to-enable-pushing-data) (below) for instructions.
+To push data to Sage 50 (UK), Codat strongly recommends that your client creates a second user in Sage for the company file that you are pushing to. See [Setting up Sage 50 and the Sage 50 connector to enable pushing data](/pushing-data-to-sage-50#section-setting-up-sage-50-and-the-sage-50-connector-to-enable-pushing-data) (below) for instructions.
 
 If you don't create a second user, both the Sage 50 application and the Codat API will try to use the same credentials at the same time. Given that Sage 50 is open, no data will be pushed.
 
@@ -28,8 +28,8 @@ To create a new user and username in Sage 50:
 4. Enter a username and password for the new user.
 5. The "Remote Data Access" step isn't necessary for pushing data, so click **Continue** to skip it.
 6. Click **Save**
-7. Download the Sage 50 connector and enter the license key to set up the connector. These steps and the preceding steps are the same as those outlined in [Install the Sage 50 connector](https://docs.codat.io/docs/installing-the-sage-50-connector).  
-   **Note**: In the [Enter their Sage 50 credentials](https://docs.codat.io/docs/installing-the-sage-50-connector#5-enter-their-sage-50-credentials) step, your client should enter the credentials of the specially created user for the Sage 50 connector and NOT the login that they use to open and use the Sage 50 application on a daily basis.
+7. Download the Sage 50 connector and enter the license key to set up the connector. These steps and the preceding steps are the same as those outlined in [Install the Sage 50 connector](/installing-the-sage-50-connector).  
+   **Note**: In the [Enter their Sage 50 credentials](/installing-the-sage-50-connector#5-enter-their-sage-50-credentials) step, your client should enter the credentials of the specially created user for the Sage 50 connector and NOT the login that they use to open and use the Sage 50 application on a daily basis.
 
 You're now ready to push data to Sage 50.
 

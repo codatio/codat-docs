@@ -5,7 +5,7 @@ createdAt: "2020-11-17T20:38:10.509Z"
 updatedAt: "2022-11-22T11:49:00.239Z"
 ---
 
-Shared types are used where the same structure of data appears in more than one data type. While you could consider our reference types as a shared type, they are detailed on their own page: [Reference types](https://docs.codat.io/docs/datamodel-accounting-referencetypes).
+Shared types are used where the same structure of data appears in more than one data type. While you could consider our reference types as a shared type, they are detailed on their own page: [Reference types](/datamodel-accounting-referencetypes).
 
 ## Address
 
@@ -13,10 +13,10 @@ Represent a location to send something, such as a bill, invoice or delivery.
 
 Addresses appear on the following data types:
 
-- [Company info](https://docs.codat.io/docs/datamodel-accounting-company)
-- [Customers](https://docs.codat.io/docs/datamodel-accounting-customers)
-- [Purchase orders](https://docs.codat.io/docs/datamodel-accounting-purchaseorders)
-- [Suppliers](https://docs.codat.io/docs/datamodel-accounting-suppliers)
+- [Company info](/datamodel-accounting-company)
+- [Customers](/datamodel-accounting-customers)
+- [Purchase orders](/datamodel-accounting-purchaseorders)
+- [Suppliers](/datamodel-accounting-suppliers)
 
 [block:parameters]
 {

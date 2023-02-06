@@ -14,6 +14,6 @@ module.exports = [
   {
     type: "link",
     label: "Accounting integrations",
-    href: "/integrations/accounting/accounting-overview",
+    href: "/integrations/accounting/overview",
   },
 ];

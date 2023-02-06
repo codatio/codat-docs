@@ -11,8 +11,8 @@ You can synchronize accounting data with <a className="external" href="https://w
 
 View the coverage of our Sage BC integration in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=tgff" target="_blank">Data coverage explorer</a>.
 
-For more details about the supported data types, see [Sage Business Cloud Accounting integration reference](https://docs.codat.io/docs/accounting-sagebusinesscloud-reference).
+For more details about the supported data types, see [Sage Business Cloud Accounting integration reference](/accounting-sagebusinesscloud-reference).
 
 ## Set up the integration
 
-See [Set up the Sage Business Cloud Accounting integration](https://docs.codat.io/docs/accounting-sagebusinesscloud-setup) to learn how to set up and enable the integration.
+See [Set up the Sage Business Cloud Accounting integration](/accounting-sagebusinesscloud-setup) to learn how to set up and enable the integration.

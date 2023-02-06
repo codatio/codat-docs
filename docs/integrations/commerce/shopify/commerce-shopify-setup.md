@@ -9,16 +9,16 @@ Set up the Shopify integration to retrieve commerce data from customers who sell
 
 :::caution
 
-Before you begin, read the _Underlying provider requirements_ on the [Shopify](https://docs.codat.io/docs/commerce-shopify) page.
+Before you begin, read the _Underlying provider requirements_ on the [Shopify](/commerce-shopify) page.
 :::
 
 To set up the Shopify integration, perform the following tasks in Shopify and the Codat Portal:
 
-- [Create a Shopify app](https://docs.codat.io/docs/commerce-shopify-setup#create-a-shopify-app)
-- [Submit your app to Shopify for approval](https://docs.codat.io/docs/commerce-shopify-setup#submit-your-app-to-shopify-for-approval)
-- [Add your app's credentials to the Shopify integration](https://docs.codat.io/docs/commerce-shopify-setup#add-your-apps-credentials-to-the-shopify-integration)
-- [Enable the Shopify integration](https://docs.codat.io/docs/commerce-shopify-setup#enable-the-shopify-integration)
-- [Check the commerce sync settings](https://docs.codat.io/docs/commerce-shopify-setup#check-the-commerce-sync-settings)
+- [Create a Shopify app](/commerce-shopify-setup#create-a-shopify-app)
+- [Submit your app to Shopify for approval](/commerce-shopify-setup#submit-your-app-to-shopify-for-approval)
+- [Add your app's credentials to the Shopify integration](/commerce-shopify-setup#add-your-apps-credentials-to-the-shopify-integration)
+- [Enable the Shopify integration](/commerce-shopify-setup#enable-the-shopify-integration)
+- [Check the commerce sync settings](/commerce-shopify-setup#check-the-commerce-sync-settings)
 
 ## Create a Shopify app
 
@@ -46,7 +46,7 @@ Create and configure an app in Shopify. When the app is created you can view the
    - **Shop data erasure endpoint:** `https://commerceintegration.codat.io/webhooks/shop/redact`
 10. Click the **Save** button that appears at the top of the page.
 
-Your app's **API key** and **API secret key** are shown in the **App credentials** section of the App setup page. You'll need these when you [add your app's credentials to the integration](https://docs.codat.io/docs/commerce-shopify-setup#add-your-apps-credentials-to-the-shopify-integration).
+Your app's **API key** and **API secret key** are shown in the **App credentials** section of the App setup page. You'll need these when you [add your app's credentials to the integration](/commerce-shopify-setup#add-your-apps-credentials-to-the-shopify-integration).
 
 ## Submit your app to Shopify for approval
 
@@ -86,7 +86,7 @@ In the Codat Portal, add the secure credentials for your Shopify app to the inte
    The **Integration settings** page is displayed.
 
 3. Under **Access to company data**, configure the permitted sync frequency for the integration. Select **Allow one-off data sync…** or **Allow continuous data sync**.
-4. Enter your app's credentials from Shopify (to find these, see [Create a Shopify app](https://docs.codat.io/docs/commerce-shopify-setup#create-a-shopify-app)).
+4. Enter your app's credentials from Shopify (to find these, see [Create a Shopify app](/commerce-shopify-setup#create-a-shopify-app)).
    - For **App URL**, enter the marketplace URL for your app, for example `https://apps.shopify.com/your-app-address`
    - For **Client Key**, enter the **API key** from Shopify.
    - For **Client Secret**, enter the **API secret key** from Shopify.
@@ -105,4 +105,4 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 ## Check the commerce sync settings
 
-All commerce data types must be enabled before you can pull commerce transactions from Shopify to Codat. Follow the steps in [Commerce sync settings](https://docs.codat.io/docs/commerce-sync-settings); you only need to do this once.
+All commerce data types must be enabled before you can pull commerce transactions from Shopify to Codat. Follow the steps in [Commerce sync settings](/commerce-sync-settings); you only need to do this once.

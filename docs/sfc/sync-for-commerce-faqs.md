@@ -14,4 +14,4 @@ Sync for Commerce also uses `id` to identify unique records. If we pick up recor
 
 If the `sourceModifiedDate` of the record is different from the previously received one, Sync for Commerce recognizes this as a modified source record and applies these changes as an adjustment.
 
-You can also start a sync manually using our [_Latest Sync_](https://docs.codat.io/reference/post-sync-latest) endpoint, or [learn more](https://docs.codat.io/docs/initiating-a-sync) about initiating it. Alternatively, you can [read more](https://docs.codat.io/docs/synchronization-schedule) about sync periods and the sync schedule.
+You can also start a sync manually using our [_Latest Sync_](https://docs.codat.io/reference/post-sync-latest) endpoint, or [learn more](/initiating-a-sync) about initiating it. Alternatively, you can [read more](/synchronization-schedule) about sync periods and the sync schedule.

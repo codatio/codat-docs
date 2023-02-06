@@ -19,13 +19,13 @@ tags:
     name="description"
     content="Codat makes accessing consented business data from your customers' banking, accounting, and commerce platforms easy. Build once to our API to aggregate data, underwrite credit risk, and automate accounting for your SMB customers."
   />
-  <link rel="canonical" href="https://docs.codat.io/docs" />
+  <link rel="canonical" href="/" />
   <link
     rel="alternate"
-    href="https://docs.codat.io/docs"
+    href="/"
     hreflang="x-default"
   />
-  <link rel="alternate" href="https://docs.codat.io/docs" hreflang="en" />
+  <link rel="alternate" href="/" hreflang="en" />
   <meta property="og:url" content="https://docs.codat.io/docs" />
 </head>
 
@@ -93,7 +93,7 @@ Our products can help you make the most of your customers' consented business da
     </p>
     <p>
       See our{" "}
-      <a href="https://docs.codat.io/docs/accounting-overview" target="_blank">
+      <a href="/accounting/overview" target="_blank">
         accounting integrations
       </a>
       .
@@ -114,7 +114,7 @@ Our products can help you make the most of your customers' consented business da
     </p>
     <p>
       See our{" "}
-      <a href="https://docs.codat.io/docs/commerce-overview" target="_blank">
+      <a href="/commerce/overview" target="_blank">
         commerce integrations
       </a>
       .
@@ -134,7 +134,7 @@ Our products can help you make the most of your customers' consented business da
     </p>
     <p>
       See our{" "}
-      <a href="https://docs.codat.io/docs/banking-overview" target="_blank">
+      <a href="/banking/overview" target="_blank">
         banking integrations
       </a>
       .
@@ -156,7 +156,7 @@ Our products can help you make the most of your customers' consented business da
     <p>
       Read our guide to{" "}
       <a
-        href="https://docs.codat.io/docs/assess-how-to-get-started"
+        href="/assess-how-to-get-started"
         target="_blank"
       >
         getting started with Assess
@@ -180,7 +180,7 @@ Our products can help you make the most of your customers' consented business da
     <p>
       Read more and find out{" "}
       <a
-        href="https://docs.codat.io/docs/sync-commerce-overview"
+        href="/sync-commerce/overview"
         target="_blank"
       >
         how to get started
@@ -207,7 +207,7 @@ Take your first steps through the information and support available to you.
     </div>
     <p>
       Begin with our developer{" "}
-      <a href="https://docs.codat.io/docs/get-started-api">
+      <a href="/get-started-api">
         getting started guide
       </a>
       , or press
@@ -269,7 +269,7 @@ Take your first steps through the information and support available to you.
 
 ## Key concepts
 
-Understand the <a href="https://docs.codat.io/docs/core-concepts" target="_blank">key concepts &amp; terminology</a> used throughout our documentation.
+Understand the <a href="/core-concepts" target="_blank">key concepts &amp; terminology</a> used throughout our documentation.
 
 <ul className="card-container">
   <li className="card">
@@ -281,11 +281,11 @@ Understand the <a href="https://docs.codat.io/docs/core-concepts" target="_blank
       <h3>Companies</h3>
     </div>
     <p>
-      <a href="https://docs.codat.io/docs/core-companies" target="_blank">
+      <a href="/core-companies" target="_blank">
         Companies
       </a>
       and their <a
-        href="https://docs.codat.io/docs/core-dataconnections"
+        href="/core-dataconnections"
         target="_blank"
       >
         data connections
@@ -304,9 +304,9 @@ Understand the <a href="https://docs.codat.io/docs/core-concepts" target="_blank
     <p>
       Learn how to set up and configure Codat's suite of over 30 integrations to
       connect to your customers{" "}
-      <a href="https://docs.codat.io/docs/accounting-overview">Accounting</a>,{" "}
-      <a href="https://docs.codat.io/docs/commerce-overview">Sales</a> and{" "}
-      <a href="https://docs.codat.io/docs/banking-overview">Banking</a> data.
+      <a href="/accounting/overview">Accounting</a>,{" "}
+      <a href="/commerce/overview">Sales</a> and{" "}
+      <a href="/banking/overview">Banking</a> data.
     </p>
   </li>
   <li className="card">
@@ -319,9 +319,9 @@ Understand the <a href="https://docs.codat.io/docs/core-concepts" target="_blank
     </div>
     <p>
       Start exploring our{" "}
-      <a href="https://docs.codat.io/docs/datamodel-accounting">accounting</a>,{" "}
-      <a href="https://docs.codat.io/docs/datamodel-commerce">commerce</a> and{" "}
-      <a href="https://docs.codat.io/docs/data-model-banking">banking</a> data
+      <a href="/datamodel-accounting">accounting</a>,{" "}
+      <a href="/datamodel-commerce">commerce</a> and{" "}
+      <a href="/data-model-banking">banking</a> data
       models, including invoices, bills, customers, suppliers, and more.
     </p>
   </li>
@@ -335,7 +335,7 @@ Understand the <a href="https://docs.codat.io/docs/core-concepts" target="_blank
     </div>
     <p>
       Explore how your customers can{" "}
-      <a href="https://docs.codat.io/docs/auth-flow">
+      <a href="/auth-flow">
         authorize access to their data
       </a>{" "}
       with Link or by building a bespoke API flow.

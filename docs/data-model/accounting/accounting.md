@@ -18,4 +18,4 @@ View the full details of the data types that Codat supports for each accounting 
 
 ## Integrations setup
 
-For full instructions on how to set up an integration for a specific accounting platform, see the [Accounting integrations](https://docs.codat.io/docs/accounting-overview) section.
+For full instructions on how to set up an integration for a specific accounting platform, see the [Accounting integrations](/accounting/overview) section.

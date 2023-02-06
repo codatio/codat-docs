@@ -4,7 +4,7 @@ createdAt: "2022-10-27T09:46:46.382Z"
 updatedAt: "2022-11-02T12:12:50.822Z"
 ---
 
-When you've [set up and enabled Basiq](https://docs.codat.io/docs/banking-basiq-setup), you can test your integration with Basiq's test bank "Hooli". You'll need to:
+When you've [set up and enabled Basiq](/banking-basiq-setup), you can test your integration with Basiq's test bank "Hooli". You'll need to:
 
 - Set up a test company.
 - Generate a Link URL for your test company
@@ -21,10 +21,12 @@ When you've [set up and enabled Basiq](https://docs.codat.io/docs/banking-basiq-
 ## Link to Basiq's test bank
 
 6. Use the link URL generated above to start the link process. You can optionally skip any accounting or commerce connections, and when prompted choose to connect banking data using Basiq.
+
 7. Enter user details
-   :::info
-   Each of your merchants will need to complete this once you're live. It will create an individual user in the Basiq application that will be associated with the individual merchant only. This is then used to provide one-time password to the merchant using the email or mobile number provided at this step.",
-   "title": "User details form
+   :::info User details form
+   Each of your merchants will need to complete this once you're live. It will create an individual user in the Basiq application that will be associated with the individual merchant only. This is then used to provide one-time password to the merchant using the email or mobile number provided at this step.
+   :::
+
 
 8. When prompted to choose a bank or institution, select "Hooli". For the login information for Hooli, consult the table on Basiq's website <a href="https://api.basiq.io/reference/testing" class="external" target="_blank">here</a>. You can choose from a number of different logins to retrieve different personas with different banking data available.
 

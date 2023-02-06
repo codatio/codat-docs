@@ -9,8 +9,8 @@ Test your Shopify integration by pulling commerce data from a Development Store 
 
 ## Prerequisites
 
-- [Set up your Shopify integration](https://docs.codat.io/docs/commerce-shopify-setup).
-- Update your [Commerce data type settings](https://docs.codat.io/docs/commerce-sync-settings) to enable commerce data types.
+- [Set up your Shopify integration](/commerce-shopify-setup).
+- Update your [Commerce data type settings](/commerce-sync-settings) to enable commerce data types.
 
 ## Add a test company
 

@@ -41,11 +41,11 @@ From the Payments endpoints you can retrieve:
 "1-2": "Payment amount (including gratuity)",
 "2-0": "currency",
 "2-1": "_string_  
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "2-2": "Currency in which the payment was made",
 "3-0": "paymentMethodRef",
-"3-1": "See [Reference types](https://docs.codat.io/docs/datamodel-commerce-referencetypes#paymentmethodref)",
-"3-2": "The [Payment Methods](https://docs.codat.io/docs/datamodel-commerce-paymentmethods) the payment is linked to in the commerce platform.",
+"3-1": "See [Reference types](/datamodel-commerce-referencetypes#paymentmethodref)",
+"3-2": "The [Payment Methods](/datamodel-commerce-paymentmethods) the payment is linked to in the commerce platform.",
 "4-0": "type",
 "4-1": "_string_",
 "4-2": "Payment method:
@@ -77,19 +77,19 @@ _ `Cancelled`",
 "6-2": "Service provider of the payment, if applicable.",
 "7-0": "dueDate",
 "7-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "7-2": "Date by which payment must be made",
 "8-0": "createdDate",
 "8-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "8-2": "Date on which the payment was made and recorded in the commerce or point of sale platform",
 "9-0": "modifiedDate",
 "9-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "9-2": "Date the payment was last updated in the Codat system",
 "10-0": "sourceModifiedDate",
 "10-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "10-2": "Date the payment was last changed in the commerce or point of sale platform"
 },
 "cols": 3,

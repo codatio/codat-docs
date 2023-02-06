@@ -11,7 +11,7 @@ View the coverage for payments in the <a className="external" href="https://know
 
 ## Overview
 
-Payments include all accounts receivable transaction data. This includes [invoices](https://docs.codat.io/docs/datamodel-accounting-invoices) and [credit notes](https://docs.codat.io/docs/datamodel-accounting-creditnotes).
+Payments include all accounts receivable transaction data. This includes [invoices](/datamodel-accounting-invoices) and [credit notes](/datamodel-accounting-creditnotes).
 
 A payment in Codat usually represents an allocation of money within any customer accounts receivable account. This includes, but is not strictly limited to:
 
@@ -29,10 +29,10 @@ In Codat, a payment contains details of:
 - The payment method used.
 - The breakdown of the types of payments – the _line items_.
 
-Payments is a child data type of [account transactions](https://docs.codat.io/docs/datamodel-accounting-account-transactions).
+Payments is a child data type of [account transactions](/datamodel-accounting-account-transactions).
 
 :::note Payments or bill payments?
-In Codat, payments represent accounts receivable only. For accounts payable, see [bill payments](https://docs.codat.io/docs/datamodel-accounting-billpayments). These include [bills](https://docs.codat.io/docs/datamodel-accounting-bills) and credit notes against bills.
+In Codat, payments represent accounts receivable only. For accounts payable, see [bill payments](/datamodel-accounting-billpayments). These include [bills](/datamodel-accounting-bills) and credit notes against bills.
 :::
 
 ## Data model
@@ -45,30 +45,30 @@ In Codat, payments represent accounts receivable only. For accounts payable, see
 "h-2": "Description",
 "0-0": "**id** ",
 "0-1": "_string_ ",
-"0-2": "Identifier for the payment, unique to the [company](https://docs.codat.io/docs/datamodel-accounting-company) in the accounting platform.",
+"0-2": "Identifier for the payment, unique to the [company](/datamodel-accounting-company) in the accounting platform.",
 "1-0": "**customerRef** ",
-"1-1": "[_customerRef_](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-accountRef)",
+"1-1": "[_customerRef_](/datamodel-accounting-referencetypes#section-accountRef)",
 "1-2": "Customer the payment is recorded against in the accounting platform.",
 "2-0": "**accountRef**",
-"2-1": "[_accountRef_](https://docs.codat.io/docs/datamodel-accounting-referencetypes#accountref)",
+"2-1": "[_accountRef_](/datamodel-accounting-referencetypes#accountref)",
 "2-2": "Account the payment is recorded against in the accounting platform.",
 "3-0": "**paymentMethodRef**",
-"3-1": "See [reference types](https://docs.codat.io/docs/datamodel-accounting-referencetypes)",
-"3-2": "The [Payment Method](https://docs.codat.io/docs/datamodel-accounting-paymentmethods) to which the payment is linked in the accounting platform.",
+"3-1": "See [reference types](/datamodel-accounting-referencetypes)",
+"3-2": "The [Payment Method](/datamodel-accounting-paymentmethods) to which the payment is linked in the accounting platform.",
 "4-0": "**totalAmount** ",
 "4-1": "_decimal_",
 "4-2": "Amount of the payment in the payment currency. This value should never change and represents the amount of money paid into the customer's account.",
 "5-0": "**currency** ",
 "5-1": "_string_  
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "5-2": "ISO currency code recorded for the payment in the accounting platform.",
 "6-0": "**currencyRate** ",
 "6-1": "_decimal_  
-See [currency rate](https://docs.codat.io/docs/datamodel-shared-currencyrate)",
-"6-2": "Rate to convert the total amount of the payment into the base currency for the [company](https://docs.codat.io/docs/datamodel-accounting-company) at the time of the payment.",
+See [currency rate](/datamodel-shared-currencyrate)",
+"6-2": "Rate to convert the total amount of the payment into the base currency for the [company](/datamodel-accounting-company) at the time of the payment.",
 "7-0": "**date** ",
 "7-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "7-2": "Date the payment was recorded in the accounting software.",
 "8-0": "**note** ",
 "8-1": "_string_",
@@ -78,11 +78,11 @@ See [date](https://docs.codat.io/docs/datamodel-shared-date)",
 "9-2": "An array of [PaymentLines](#section-payment-lines).",
 "10-0": "**modifiedDate**",
 "10-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "10-2": "Date the record was last updated in the Codat system.",
 "11-0": "**sourceModifiedDate** ",
 "11-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "11-2": "Date the record was last changed in the accounting system.",
 "12-0": "**reference** ",
 "12-1": "_string_",
@@ -123,7 +123,7 @@ A payment line is an allocation of the portion of the payment. The sum of the am
 "1-2": "See [Payment line links](#section-payment-links).",
 "2-0": "**allocatedOnDate**",
 "2-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "2-2": "The date the payment was allocated"
 },
 "cols": 3,

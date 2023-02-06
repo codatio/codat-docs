@@ -73,7 +73,7 @@ If you lose your AWS secret access key you will need to create a new IAM user wi
 7. Under "OAuth Redirect URI" enter `https://amazonsellercentral.codat.io/oauth/callback`
 8. Click Save and Exit
 
-Before you can link an Amazon company in your Codat environment, you must submit your Amazon Seller Central app for listing in the Marketplace. Apps must be reviewed and approved by Amazon, which may take up to two weeks. For more details, see [Using Amazon Seller Central apps in production](https://docs.codat.io/docs/amazon-registration-steps#using-amazon-seller-central-apps-in-production), below.
+Before you can link an Amazon company in your Codat environment, you must submit your Amazon Seller Central app for listing in the Marketplace. Apps must be reviewed and approved by Amazon, which may take up to two weeks. For more details, see [Using Amazon Seller Central apps in production](/amazon-registration-steps#using-amazon-seller-central-apps-in-production), below.
 
 ## Using Amazon Seller Central Apps to access Live Data
 

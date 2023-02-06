@@ -11,7 +11,7 @@ View the coverage for products in the <a className="external" href="https://know
 
 ## Overview
 
-Product categories are used to classify a group of [products](https://docs.codat.io/docs/datamodel-commerce-products) together, either by type (eg "Furniture"), or sometimes by tax profile.
+Product categories are used to classify a group of [products](/datamodel-commerce-products) together, either by type (eg "Furniture"), or sometimes by tax profile.
 
 ## Data Model
 
@@ -35,11 +35,11 @@ Product categories are used to classify a group of [products](https://docs.codat
 "3-2": "A boolean indicating whether there are other product categories beneath this one in the hierarchy.",
 "4-0": "**modifiedDate**",
 "4-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "4-2": "The date the record was last updated in Codat's cache.",
 "5-0": "**sourceModifiedDate**",
 "5-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "5-2": "Date the product was last changed in the commerce or point of sale platform."
 },
 "cols": 3,

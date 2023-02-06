@@ -10,11 +10,11 @@ Simply allowing your SMB customers to connect their accounts is just the beginni
 
 This guide is based on our experience of working with apps and services using Codat’s API, with thousands of SMBs connecting every day. We have broken down these optimizations into 5 critical areas:
 
-- **[The funnel](https://docs.codat.io/docs/the-funnel)**: the steps from user sign up to the point they are ready to connect
-- **[The value exchange](https://docs.codat.io/docs/value-exchange)**: why an SMB will benefit from connecting their accounts
-- **[Privacy, trust & support](https://docs.codat.io/docs/privacy-trust-and-support)**: why an SMB should trust you with their data
-- **[Platform selection](https://docs.codat.io/docs/platform-selection)**: the platforms an SMB can connect to
-- **[Connection management](https://docs.codat.io/docs/connection-management)**: giving your SMB customer control of their connection(s)
+- **[The funnel](/the-funnel)**: the steps from user sign up to the point they are ready to connect
+- **[The value exchange](/value-exchange)**: why an SMB will benefit from connecting their accounts
+- **[Privacy, trust & support](/privacy-trust-and-support)**: why an SMB should trust you with their data
+- **[Platform selection](/platform-selection)**: the platforms an SMB can connect to
+- **[Connection management](/connection-management)**: giving your SMB customer control of their connection(s)
 
 Consider these optimization areas a "go-live checklist". In the following sections, we are going to take a closer look at each of the points.
 

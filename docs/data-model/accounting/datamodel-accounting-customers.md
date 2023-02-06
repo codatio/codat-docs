@@ -13,7 +13,7 @@ View the coverage for customers in the <a className="external" href="https://kno
 
 A customer is a person or organisation that buys goods or services. From the Customers endpoints, you can retrieve a [list of all the customers of a company](https://api.codat.io/swagger/index.html#/Customers/get_companies__companyId__data_customers).
 
-Customers' data links to accounts receivable [invoices](https://docs.codat.io/docs/datamodel-accounting-invoices).
+Customers' data links to accounts receivable [invoices](/datamodel-accounting-invoices).
 
 ## Data model
 
@@ -25,7 +25,7 @@ Customers' data links to accounts receivable [invoices](https://docs.codat.io/do
 "h-2": "Description",
 "0-0": "**id** ",
 "0-1": "_string_",
-"0-2": "Identifier for the customer, unique to the [company](https://docs.codat.io/docs/datamodel-accounting-company) in the accounting platform.",
+"0-2": "Identifier for the customer, unique to the [company](/datamodel-accounting-company) in the accounting platform.",
 "1-0": "**customerName** ",
 "1-1": "_string_",
 "1-2": "Name of the customer as recorded in the accounting system, typically the company name.",
@@ -37,7 +37,7 @@ Customers' data links to accounts receivable [invoices](https://docs.codat.io/do
 "3-2": "Email address the customer can be contacted by.",
 "4-0": "**defaultCurrency** ",
 "4-1": "_string_  
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "4-2": "Default currency the transactional data of the customer is recorded in.",
 "5-0": "**phone** ",
 "5-1": "_string_",
@@ -63,11 +63,11 @@ See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
 - `Archived`",
   "11-0": "**modifiedDate** ",
   "11-1": "_string_  
-  See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+  See [date](/datamodel-shared-date)",
   "11-2": "Date the record was last updated in the Codat system.",
   "12-0": "**sourceModifiedDate** ",
   "12-1": "_string_  
-  See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+  See [date](/datamodel-shared-date)",
   "12-2": "Date the record was last changed in the accounting system."
   },
   "cols": 3,
@@ -197,7 +197,7 @@ Customers can have multiple contacts."
 
 ### Customer reference
 
-Data types that reference a customer, for example invoices, credit notes and payments, use a [customer reference](https://docs.codat.io/docs/datamodel-accounting-referencetypes#customerref) that includes the ID and name of the linked customer.
+Data types that reference a customer, for example invoices, credit notes and payments, use a [customer reference](/datamodel-accounting-referencetypes#customerref) that includes the ID and name of the linked customer.
 
 | Field    | Type     | Description                                                    |
 | :------- | :------- | :------------------------------------------------------------- |

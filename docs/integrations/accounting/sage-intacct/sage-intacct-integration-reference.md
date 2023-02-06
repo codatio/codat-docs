@@ -162,8 +162,8 @@ The following table highlights selected fields that are not available in data pu
 "h-1": "Codat data type",
 "h-2": "Status",
 "0-0": "`otherreceipt.paymentmethod` (Required)",
-"0-1": "[Direct Incomes](https://docs.codat.io/docs/datamodel-accounting-directincomes)",
-"0-2": "[Payment methods](https://docs.codat.io/docs/datamodel-accounting-paymentmethods) is not supported for the direct incomes data type.
+"0-1": "[Direct Incomes](/datamodel-accounting-directincomes)",
+"0-2": "[Payment methods](/datamodel-accounting-paymentmethods) is not supported for the direct incomes data type.
 
 When pushing direct incomes to Sage Intacct, the `paymentmethod` is always set to `Cash`."
 },

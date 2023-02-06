@@ -10,13 +10,13 @@ This document helps you get started with Assess, and covers both the API and the
 
 ## Enable Assess
 
-1. Open the <a href="https://portal.codat.io" target="_blank">Codat Portal</a> and sign in.
+1. Open the <a href="https://app.codat.io" target="_blank">Codat Portal</a> and sign in.
 2. Click on **Company**.
 3. In the left hand navigation, click _Assess_.
 
 ![Assess Profit and Loss page](https://files.readme.io/cdf1e35-Banner_1.png)
 
-4. If you have Assess enabled, you will be taken to the **Assess Profit and Loss** page. For more information, visit the [Assess in the Portal](https://docs.codat.io/docs/assess-in-the-portal) documentation.
+4. If you have Assess enabled, you will be taken to the **Assess Profit and Loss** page. For more information, visit the [Assess in the Portal](assess/portal/overview) documentation.
 5. If you don't have Assess access, you can enable it by following the onscreen prompt.
 
 ## Prerequisites
@@ -86,14 +86,14 @@ Assess is available as a no-code product in the Portal or as APIs to incorporate
 
 ### Portal
 
-Visit our [Assess in the Portal](https://docs.codat.io/docs/assess-in-the-portal) documentation.
+Visit our [Assess in the Portal](assess/portal/overview) documentation.
 
 ### API
 
 Explore the features that make up Assess:
 
-- [Categories](https://docs.codat.io/docs/assess-categories)
-- [Enhanced Financials](https://docs.codat.io/docs/assess-enhanced-financials)
-- [Accounting Metrics](https://docs.codat.io/docs/assess-financial-metrics)
-- [Commerce Metrics](https://docs.codat.io/docs/commerce-metrics)
-- [Data Integrity](https://docs.codat.io/docs/assess-data-integrity)
+- [Categories](/assess/categories)
+- [Enhanced Financials](/assess/reports/enhanced-financials/financials)
+- [Accounting Metrics](/assess/metrics/accounting/api-financial-metrics)
+- [Commerce Metrics](/assess/metrics/commerce/overview)
+- [Data Integrity](/assess/data-integrity)

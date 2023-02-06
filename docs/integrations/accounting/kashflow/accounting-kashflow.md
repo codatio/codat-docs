@@ -13,4 +13,4 @@ View the coverage of our IRIS KashFlow integration in the <a className="external
 
 ## Set up the integration
 
-See [Set up the KashFlow integration](https://docs.codat.io/docs/accounting-kashflow-setup) to learn how to set up and enable the integration.
+See [Set up the KashFlow integration](/accounting-kashflow-setup) to learn how to set up and enable the integration.

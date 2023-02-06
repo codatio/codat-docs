@@ -39,7 +39,7 @@ When **Fetch on first link** is turned _off_ for a data type:
 - The data type is not automatically queued for synchronization when a company is first linked.
 - You can still queue a pull for this individual data type using the [POST /companies/{companyId}/data/queue/{dataType}](https://api.codat.io/swagger/index.html#/Data/post_companies__companyId__data_queue__dataType_) endpoint. This might be useful for testing, or if you only need infrequent access to a dataset.
 
-For more information about how to synchronize datasets on demand, see [Synchronizing your data](https://docs.codat.io/docs/data-status).
+For more information about how to synchronize datasets on demand, see [Synchronizing your data](/data-status).
 
 ## Choose a synchronization frequency
 

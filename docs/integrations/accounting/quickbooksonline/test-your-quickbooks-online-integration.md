@@ -9,7 +9,7 @@ updatedAt: "2022-03-09T16:32:44.740Z"
 
 Before you can test your integration with QuickBooks online, you will need to
 
-- Make sure you have [Set up your QuickBooks Online integration](https://docs.codat.io/docs/accounting-quickbooksonline-new-setup) and enabled the "QuickBooks Online Sandbox" integration.
+- Make sure you have [Set up your QuickBooks Online integration](/accounting-quickbooksonline-new-setup) and enabled the "QuickBooks Online Sandbox" integration.
 - Have an Intuit developer account
 
 ## Creating your QuickBooks Online Sandbox Accounts

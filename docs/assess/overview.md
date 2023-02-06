@@ -1,6 +1,6 @@
 ---
-title: "Assess"
-sidebar_label: Overview
+title: "Assess overview"
+sidebar_label: Assess
 description: "Learn about the features that make up the Assess product"
 createdAt: "2022-04-11T16:43:22.429Z"
 updatedAt: "2022-11-17T00:11:12.411Z"
@@ -48,7 +48,7 @@ Assess empowers you with a host of features to help you streamline your underwri
       We automatically map your SMB customers' income statement and balance
       sheet to a single standard chart of accounts, meaning you can compare
       across customers easily. Explore{" "}
-      <a href="https://docs.codat.io/docs/assess-enhanced-financials">
+      <a href="/assess-enhanced-financials">
         Enhanced Financials
       </a>
       .
@@ -66,7 +66,7 @@ Assess empowers you with a host of features to help you streamline your underwri
     <p>
       We pre-calculate the top financial ratios used for risk assessments and
       credit decisioning. Explore{" "}
-      <a href="https://docs.codat.io/docs/assess-accounting-metrics">
+      <a href="/assess-accounting-metrics">
         Accounting Financial Metrics
       </a>
       .
@@ -84,7 +84,7 @@ Assess empowers you with a host of features to help you streamline your underwri
     <p>
       We provide the pre-calculated metrics you need to assess a customer’s
       revenue, orders and customer retention profile. Explore{" "}
-      <a href="https://docs.codat.io/docs/assess-commerce-metrics">
+      <a href="/assess-commerce-metrics">
         Commerce Metrics
       </a>
       .
@@ -102,7 +102,7 @@ Assess empowers you with a host of features to help you streamline your underwri
     <p>
       We cross-reference accounting data with banking data to verify data
       accuracy. Explore{" "}
-      <a href="https://docs.codat.io/docs/assess-data-integrity">
+      <a href="/assess-data-integrity">
         Data Integrity
       </a>
       .

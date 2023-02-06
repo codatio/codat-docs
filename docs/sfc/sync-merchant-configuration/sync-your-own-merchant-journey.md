@@ -12,15 +12,15 @@ Note that Sync for Commerce is in the beta phase.
 
 Building your own merchant configuration requires you to complete the following steps:
 
-1. [Create a Codat company to push the merchant’s commerce data into and establish an accounting data connection.](https://docs.codat.io/docs/sync-your-own-merchant-journey#creating-a-company-and-establishing-a-data-connection)
-2. [Enable the merchant to configure the mapping of their commerce data into their accounting platform.](https://docs.codat.io/docs/sync-your-own-merchant-journey#data-mapping-configuration)
-3. [Enable the merchant to perform ongoing integration configuration](https://docs.codat.io/docs/sync-your-own-merchant-journey#ongoing-configuration) and [disable their connection](https://docs.codat.io/docs/sync-your-own-merchant-journey#disabling-a-data-connection).
+1. [Create a Codat company to push the merchant’s commerce data into and establish an accounting data connection.](/sync-your-own-merchant-journey#creating-a-company-and-establishing-a-data-connection)
+2. [Enable the merchant to configure the mapping of their commerce data into their accounting platform.](/sync-your-own-merchant-journey#data-mapping-configuration)
+3. [Enable the merchant to perform ongoing integration configuration](/sync-your-own-merchant-journey#ongoing-configuration) and [disable their connection](/sync-your-own-merchant-journey#disabling-a-data-connection).
 
 ## Before you start
 
 Before you start, prepare the following details:
 
-- The `key` of the accounting integration selected by the merchant which you obtained at the [Accounting platform selection](https://docs.codat.io/docs/sync-platform-selection) stage.
+- The `key` of the accounting integration selected by the merchant which you obtained at the [Accounting platform selection](/sync-platform-selection) stage.
 - The ID that you use for the merchant in _your_ internal system.
 
 You can use our Postman collection to help you follow the steps outlined in this guide.
@@ -41,13 +41,13 @@ You can use our Postman collection to help you follow the steps outlined in this
   </a>
 </div>
 
-All the endpoints mentioned in this guide are also available in the <a href="https://api.codat.io/sync/swagger" target="_blank">Sync for Commerce Swagger</a>. Before you use Swagger, make sure to [authenticate](https://docs.codat.io/docs/step-1-authenticate).
+All the endpoints mentioned in this guide are also available in the <a href="https://api.codat.io/sync/swagger" target="_blank">Sync for Commerce Swagger</a>. Before you use Swagger, make sure to [authenticate](/step-1-authenticate).
 
 As an alternative, you can also use our Sync for Commerce Postman collection.
 
 ## Creating a company and establishing a data connection"
 
-After the merchant [selects the accounting platform](https://docs.codat.io/docs/sync-platform-selection) to pull the data from, perform the following steps:
+After the merchant [selects the accounting platform](/sync-platform-selection) to pull the data from, perform the following steps:
 
 1. Create a Codat company for the merchant:
 
@@ -113,12 +113,13 @@ The response to this request includes the parameters of a newly created company,
 }
 [/block]
 
-:::caution
+:::caution Keep track of the `companyId`
 
 It's important that you keep track of the Codat `companyId` that is returned at step 1:
-* It is required for the next stage of the setup, [ data pushing,](https://docs.codat.io/docs/sync-data-pushing) and any time you need to synchronize data for this merchant or interact with their configuration.
-* It is required to enable disconnected merchants to reauthorize the connection to their original Codat company without losing the history of data.",
-  "title": "Keep track of the `companyId`
+* It is required for the next stage of the setup, [ data pushing,](/sync-data-pushing) and any time you need to synchronize data for this merchant or interact with their configuration.
+* It is required to enable disconnected merchants to reauthorize the connection to their original Codat company without losing the history of data.
+
+:::
 
 Here is an example of a Codat `companyId`:
 
@@ -136,7 +137,7 @@ POST /meta/companies/{companyId}/connections
 ```
 **Request body**: `“key”`, for example `“gbol”` for Xero
 
-3. From the response, identify the `linkUrl` value for the accounting platform. Direct the merchants to this linkUrl to enable them to grant access to their accounting platform. As soon as the access is provided, Codat automatically pulls [all the accounting data required to enable the merchant configuration](https://docs.codat.io/docs/sync-commerce-overview#sync-for-commerce-prerequisistes).
+3. From the response, identify the `linkUrl` value for the accounting platform. Direct the merchants to this linkUrl to enable them to grant access to their accounting platform. As soon as the access is provided, Codat automatically pulls [all the accounting data required to enable the merchant configuration](/sync-commerce/overview#sync-for-commerce-prerequisistes).
 
 ```
 
@@ -155,7 +156,7 @@ POST /meta/companies/{companyId}/connections
 }
 ]
 }
-[/block] 4. After the merchant completes the authorization and grants access to their accounting platform, ensure they are redirected to your data mapping configuration UI by [configuring relevant redirect URLs](https://docs.codat.io/docs/redirect-urls)..
+[/block] 4. After the merchant completes the authorization and grants access to their accounting platform, ensure they are redirected to your data mapping configuration UI by [configuring relevant redirect URLs](/redirect-urls)..
 
 ## Data mapping configuration
 
@@ -191,7 +192,7 @@ GET /config/companies/{companyId}/sync/commerce
 - Update mapping at any point in time, should the underlying data in their accounting platform change (e.g. due to account deletion)
 - Schedule the start date, start time, and frequency of the regular data synchronization
 
-To learn more about scheduling data synchronization, you can read [this article](https://docs.codat.io/docs/synchronization-schedule).
+To learn more about scheduling data synchronization, you can read [this article](/synchronization-schedule).
 
 :::danger Scheduling
 
@@ -201,7 +202,7 @@ Such an approach ensures that a full calendar day’s worth of data is synchroni
 :::
 
 :::info
-You can see [Codat’s merchant configuration flow](https://docs.codat.io/docs/implementing-codats-no-code-merchant-configuration) for an example of a UI implementing this functionality.
+You can see [Codat’s merchant configuration flow](/implementing-codats-no-code-merchant-configuration) for an example of a UI implementing this functionality.
 :::
 
 3. Update the configuration via the Create Config endpoint:
@@ -210,7 +211,7 @@ You can see [Codat’s merchant configuration flow](https://docs.codat.io/docs/i
 POST /config/companies/{companyId}/sync/commerce
 ```
 
-See the [Data model](https://docs.codat.io/docs/sync-data-model) section for details on account mapping and validation requirements.
+See the [Data model](/sync-data-model) section for details on account mapping and validation requirements.
 
 ## Ongoing configuration
 
@@ -288,7 +289,7 @@ To find the date of the latest successful sync:
 GET /companies/{companyId}/sync/status/lastSuccessful
 ```
 
-2. Deactivate the scheduled syncs to avoid duplicate data: update the [Data mapping configuration object](https://docs.codat.io/docs/sync-your-own-merchant-journey#data-mapping-configuration) and set the `enabled` property to `false`.
+2. Deactivate the scheduled syncs to avoid duplicate data: update the [Data mapping configuration object](/sync-your-own-merchant-journey#data-mapping-configuration) and set the `enabled` property to `false`.
 
 :::danger Disable scheduled synchronization for testing
 

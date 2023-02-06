@@ -24,4 +24,4 @@ The following banking data types are available via Codat's API:
 
 # Integrations setup
 
-For full instructions on how to set up an integration for a specific commerce platform see the [Banking Integrations](https://docs.codat.io/docs/banking-overview) section.
+For full instructions on how to set up an integration for a specific commerce platform see the [Banking Integrations](/banking/overview) section.

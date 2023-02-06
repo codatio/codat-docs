@@ -19,9 +19,9 @@ View the coverage of our Basiq integration in the <a className="external" href="
 
 The following banking data is available through the integration:
 
-- [Banking accounts](https://docs.codat.io/docs/datamodel-banking-banking-accounts)
-- [Banking account balances](https://docs.codat.io/docs/datamodel-banking-banking-account-balances)
-- [Banking transactions](https://docs.codat.io/docs/datamodel-banking-banking-transactions)
-- [Banking transaction categories](https://docs.codat.io/docs/datamodel-banking-banking-transaction-categories)
+- [Banking accounts](/datamodel-banking-banking-accounts)
+- [Banking account balances](/datamodel-banking-banking-account-balances)
+- [Banking transactions](/datamodel-banking-banking-transactions)
+- [Banking transaction categories](/datamodel-banking-banking-transaction-categories)
   :::info Supported financial institutions
   You'll automatically gain access to any new financial institutions that Basiq adds to their platform.

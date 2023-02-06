@@ -9,16 +9,16 @@ Explore the <a className="external" href="https://api.codat.io/swagger/index.htm
 
 You can use data from the Locations endpoints to get information on:
 
-- A geographic location where [Product inventory](https://docs.codat.io/docs/datamodel-commerce-products#section-product-variant-inventory) is held.
-- A geographic location where an [Order](https://docs.codat.io/docs/datamodel-commerce-orders) was placed.
+- A geographic location where [Product inventory](/datamodel-commerce-products#section-product-variant-inventory) is held.
+- A geographic location where an [Order](/datamodel-commerce-orders) was placed.
 
 View the coverage for locations in the <a className="external" href="https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-locations" target="_blank">Data coverage explorer</a>.
 
 ## Overview
 
-The Locations datatype holds information on geographic locations at which stocks of products may be held, as referenced in the [Products data type](https://docs.codat.io/docs/datamodel-commerce-products#section-product-variant-inventory).
+The Locations datatype holds information on geographic locations at which stocks of products may be held, as referenced in the [Products data type](/datamodel-commerce-products#section-product-variant-inventory).
 
-Locations also holds information on geographic locations where orders were placed, as referenced in the [Orders data type](https://docs.codat.io/docs/datamodel-commerce-orders).
+Locations also holds information on geographic locations where orders were placed, as referenced in the [Orders data type](/datamodel-commerce-orders).
 
 From the Locations endpoints you can retrieve:
 
@@ -45,11 +45,11 @@ From the Locations endpoints you can retrieve:
 "2-2": "Addresses of the location.",
 "3-0": "**modifiedDate** ",
 "3-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "3-2": "Date the location details were last updated in the Codat system.",
 "4-0": "**sourceModifiedDate** ",
 "4-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "4-2": "Date the location details were last changed in the commerce or point of sale platform."
 },
 "cols": 3,

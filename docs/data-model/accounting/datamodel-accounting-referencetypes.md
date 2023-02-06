@@ -5,11 +5,11 @@ createdAt: "2019-02-19T11:26:11.465Z"
 updatedAt: "2022-11-22T11:47:31.000Z"
 ---
 
-For commerce reference types, see [Reference types](https://docs.codat.io/docs/datamodel-commerce-referencetypes) in the Commerce section.
+For commerce reference types, see [Reference types](/datamodel-commerce-referencetypes) in the Commerce section.
 
 ## accountRef
 
-Links to the [Accounts](https://docs.codat.io/docs/datamodel-accounting-chartofaccounts) data type.
+Links to the [Accounts](/datamodel-accounting-chartofaccounts) data type.
 
 :::note Financial Reports
 Profit & Loss and Balance Sheet reports do not have an `accountRef` object but do have an `accountId` field on each line which can be used to link to the `accounts` data type.
@@ -17,10 +17,10 @@ Profit & Loss and Balance Sheet reports do not have an `accountRef` object but d
 
 Found on:
 
-- [Bill](https://docs.codat.io/docs/datamodel-accounting-bills) line items
-- [Invoice](https://docs.codat.io/docs/datamodel-accounting-invoices) line items
-- [Journal entries](https://docs.codat.io/docs/datamodel-accounting-journalentries)
-- [Payments](https://docs.codat.io/docs/datamodel-accounting-payments)
+- [Bill](/datamodel-accounting-bills) line items
+- [Invoice](/datamodel-accounting-invoices) line items
+- [Journal entries](/datamodel-accounting-journalentries)
+- [Payments](/datamodel-accounting-payments)
 
 ```json
 "accountRef": {
@@ -31,7 +31,7 @@ Found on:
 
 ## bankAccountRef
 
-Links to the [Account transactions](https://docs.codat.io/docs/datamodel-accounting-account-transactions) data type.
+Links to the [Account transactions](/datamodel-accounting-account-transactions) data type.
 
 ```json
 "bankAccountRef": {
@@ -42,13 +42,13 @@ Links to the [Account transactions](https://docs.codat.io/docs/datamodel-account
 
 ## contactRef
 
-Links to the [Customers](https://docs.codat.io/docs/datamodel-accounting-customers) and [Suppliers](https://docs.codat.io/docs/datamodel-accounting-suppliers) data types.
+Links to the [Customers](/datamodel-accounting-customers) and [Suppliers](/datamodel-accounting-suppliers) data types.
 
 Found on:
 
-- [Direct costs](https://docs.codat.io/docs/datamodel-accounting-directcosts)
-- [Direct incomes](https://docs.codat.io/docs/datamodel-accounting-directincomes)
-- [Transfers](https://docs.codat.io/docs/datamodel-accounting-transfers)
+- [Direct costs](/datamodel-accounting-directcosts)
+- [Direct incomes](/datamodel-accounting-directincomes)
+- [Transfers](/datamodel-accounting-transfers)
 
 ```json
 "contactRef": {
@@ -59,13 +59,13 @@ Found on:
 
 ## customerRef
 
-Links to the [Customers](https://docs.codat.io/docs/datamodel-accounting-customers) data type.
+Links to the [Customers](/datamodel-accounting-customers) data type.
 
 Found on:
 
-- [Invoices](https://docs.codat.io/docs/datamodel-accounting-invoices)
-- [Credit notes](https://docs.codat.io/docs/datamodel-accounting-creditnotes)
-- [Payments](https://docs.codat.io/docs/datamodel-accounting-payments)
+- [Invoices](/datamodel-accounting-invoices)
+- [Credit notes](/datamodel-accounting-creditnotes)
+- [Payments](/datamodel-accounting-payments)
 
 ```json
 "customerRef": {
@@ -76,12 +76,12 @@ Found on:
 
 ## itemRef
 
-Links to the [Items](https://docs.codat.io/docs/datamodel-accounting-items) data type.
+Links to the [Items](/datamodel-accounting-items) data type.
 
 Found on:
 
-- [Invoices](https://docs.codat.io/docs/datamodel-accounting-invoices)
-- [Bills](https://docs.codat.io/docs/datamodel-accounting-bills)
+- [Invoices](/datamodel-accounting-invoices)
+- [Bills](/datamodel-accounting-bills)
 
 ```json
 "itemRef": {
@@ -92,7 +92,7 @@ Found on:
 
 ## journalRef
 
-Links [journal entries](https://docs.codat.io/docs/datamodel-accounting-journalentries) to the relevant [journal](https://docs.codat.io/docs/journals) in accounting integrations that use multi-book accounting (multiple journals).
+Links [journal entries](/datamodel-accounting-journalentries) to the relevant [journal](/journals) in accounting integrations that use multi-book accounting (multiple journals).
 
 ```json
 "journalRef": {
@@ -103,7 +103,7 @@ Links [journal entries](https://docs.codat.io/docs/datamodel-accounting-journale
 
 ## paymentMethodRef
 
-Links to the [Payment Method](https://docs.codat.io/docs/datamodel-accounting-paymentmethods) data type.
+Links to the [Payment Method](/datamodel-accounting-paymentmethods) data type.
 
 Found on bill payments and payments.
 
@@ -120,10 +120,10 @@ Links to the underlying record or data type.
 
 Found on:
 
-- [Journal entries](https://docs.codat.io/docs/datamodel-accounting-journalentries)
-- [Account transactions](https://docs.codat.io/docs/datamodel-accounting-account-transactions)
-- [Invoices](https://docs.codat.io/docs/datamodel-accounting-invoices)
-- [Transfers](https://docs.codat.io/docs/datamodel-accounting-transfers)
+- [Journal entries](/datamodel-accounting-journalentries)
+- [Account transactions](/datamodel-accounting-account-transactions)
+- [Invoices](/datamodel-accounting-invoices)
+- [Transfers](/datamodel-accounting-transfers)
 
 ```json
 "recordRef": {
@@ -134,12 +134,12 @@ Found on:
 
 ## supplierRef
 
-Links to the [Suppliers](https://docs.codat.io/docs/datamodel-accounting-suppliers) data type.
+Links to the [Suppliers](/datamodel-accounting-suppliers) data type.
 
 Found on:
 
-- [Bills](https://docs.codat.io/docs/datamodel-accounting-bills)
-- [Bill payments](https://docs.codat.io/docs/datamodel-accounting-billpayments)
+- [Bills](/datamodel-accounting-bills)
+- [Bill payments](/datamodel-accounting-billpayments)
 
 ```json
 "supplierRef": {
@@ -150,16 +150,16 @@ Found on:
 
 ## taxRateRef
 
-Links to the [Tax Rates](https://docs.codat.io/docs/datamodel-accounting-taxrates) data type.
+Links to the [Tax Rates](/datamodel-accounting-taxrates) data type.
 
 Found on:
 
-- [Bill](https://docs.codat.io/docs/datamodel-accounting-bills) line items
-- [Bill Credit Note](https://docs.codat.io/docs/datamodel-accounting-billcreditnotes) line items
-- [Credit Note](https://docs.codat.io/docs/datamodel-accounting-creditnotes) line items
-- [Direct incomes](https://docs.codat.io/docs/datamodel-accounting-directincomes) line items
-- [Invoice](https://docs.codat.io/docs/datamodel-accounting-invoices) line items
-- [Items](https://docs.codat.io/docs/datamodel-accounting-items)
+- [Bill](/datamodel-accounting-bills) line items
+- [Bill Credit Note](/datamodel-accounting-billcreditnotes) line items
+- [Credit Note](/datamodel-accounting-creditnotes) line items
+- [Direct incomes](/datamodel-accounting-directincomes) line items
+- [Invoice](/datamodel-accounting-invoices) line items
+- [Items](/datamodel-accounting-items)
 
 ```json
 "taxRateRef": {
@@ -171,14 +171,14 @@ Found on:
 
 ## trackingCategoryRef
 
-Links to the [Tracking Categories](https://docs.codat.io/docs/datamodel-accounting-trackingcategories) data type.
+Links to the [Tracking Categories](/datamodel-accounting-trackingcategories) data type.
 
 Found on:
 
-- [Bill credit notes](https://docs.codat.io/docs/datamodel-accounting-billcreditnotes)
-- [Bills](https://docs.codat.io/docs/datamodel-accounting-bills)
-- [Invoices](https://docs.codat.io/docs/datamodel-accounting-invoices)
-- [Purchase orders](https://docs.codat.io/docs/datamodel-accounting-purchaseorders)
+- [Bill credit notes](/datamodel-accounting-billcreditnotes)
+- [Bills](/datamodel-accounting-bills)
+- [Invoices](/datamodel-accounting-invoices)
+- [Purchase orders](/datamodel-accounting-purchaseorders)
 
 ```json
 "trackingCategoryRef": {

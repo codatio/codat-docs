@@ -15,7 +15,7 @@ The Codat API supports pulling and pushing of file attachments for invoices, bil
 
 If a company is authorized, you can query the Codat API to read, download, and upload attachments without requiring a fresh sync of data.
 
-Unlike other data types, Codat doesn't support [sync settings](https://docs.codat.io/docs/synchronising-data) for attachments.
+Unlike other data types, Codat doesn't support [sync settings](/synchronising-data) for attachments.
 :::
 
 :::info
@@ -29,7 +29,7 @@ See the <a className="external" href="https://knowledge.codat.io/supported-featu
 "data": {
 "0-0": "**id** ",
 "3-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "5-1": "_boolean_",
 "1-0": "**name** ",
 "1-1": "_string_",
@@ -37,7 +37,7 @@ See [date](https://docs.codat.io/docs/datamodel-shared-date)",
 "3-0": "**dateCreated** ",
 "4-0": "**fileSize**",
 "5-0": "**includeWhenSent** ",
-"0-2": "Identifier for the attachment, unique for the [company](https://docs.codat.io/docs/datamodel-accounting-company) in the accounting platform.",
+"0-2": "Identifier for the attachment, unique for the [company](/datamodel-accounting-company) in the accounting platform.",
 "0-1": "_string_",
 "1-2": "Name of the attachment file.",
 "2-1": "_string_",
@@ -67,7 +67,7 @@ Supported file types vary per platform. See section below on the [available opti
 
 If you use Postman, there are some extra steps you need to follow to attach a file to an invoice.
 
-1. [Set up a POST request](https://docs.codat.io/docs/using-postman-to-call-the-api), in a similar way to the example, to the following endpoint: [POST /companies/{companyId}/connections/{dataConnectionId}/push
+1. [Set up a POST request](/using-postman-to-call-the-api), in a similar way to the example, to the following endpoint: [POST /companies/{companyId}/connections/{dataConnectionId}/push
    /invoices/{invoiceId}/attachment](https://api.codat.io/swagger/ui/index#!/Invoices/Invoices_GetAttachments).
 2. In the request setup, select **Body**.
 3. From the** Body** menu, select **form-data**.

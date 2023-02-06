@@ -11,7 +11,7 @@ View the coverage for payment methods in the <a className="external" href="https
 
 ## Overview
 
-A Payment Method represents the payment method(s) used to pay a Bill. Payment Methods are referenced on [Bill Payments](https://docs.codat.io/docs/datamodel-accounting-billpayments) and [Payments](https://docs.codat.io/docs/datamodel-accounting-payments).
+A Payment Method represents the payment method(s) used to pay a Bill. Payment Methods are referenced on [Bill Payments](/datamodel-accounting-billpayments) and [Payments](/datamodel-accounting-payments).
 
 From the Payment Methods endpoints you can retrieve:
 
@@ -52,11 +52,11 @@ From the Payment Methods endpoints you can retrieve:
 - `Unknown`",
   "4-0": "**modifiedDate** ",
   "4-1": "_string_  
-  See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+  See [date](/datamodel-shared-date)",
   "4-2": "Date the payment method details were last updated in the Codat system.",
   "5-0": "**sourceModifiedDate** ",
   "5-1": "_string_  
-  See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+  See [date](/datamodel-shared-date)",
   "5-2": "Date the payment method details were last changed in the accounting system."
   },
   "cols": 3,

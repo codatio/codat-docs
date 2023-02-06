@@ -31,7 +31,7 @@ From the Customers endpoints you can retrieve:
 "h-2": "Decription",
 "0-0": "**id** ",
 "0-1": "_string_ ",
-"0-2": "Identifier for the account, unique for the [company](https://docs.codat.io/docs/datamodel-commerce-companyinfo).",
+"0-2": "Identifier for the account, unique for the [company](/datamodel-commerce-companyinfo).",
 "1-0": "**customerName** ",
 "1-1": "_string_ ",
 "1-2": "Name of the customer.",
@@ -40,7 +40,7 @@ From the Customers endpoints you can retrieve:
 "2-2": "Email address the customer can be contacted on.",
 "3-0": "**defaultCurrency**",
 "3-1": "_string_  
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "3-2": "Default currency of any transactional data for the customer, for example, orders or payments.",
 "4-0": "**phone**",
 "4-1": "_string_",
@@ -54,15 +54,15 @@ See [addresses](#section-addresses)",
 "6-2": "Any additional information about the customer.",
 "7-0": "**createdDate**",
 "7-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "7-2": "Date on which the customer details were created in the commerce or point of sale platform.",
 "8-0": "**modifiedDate** ",
 "8-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "8-2": "Date the customer details were last updated in the Codat system.",
 "9-0": "**sourceModifiedDate** ",
 "9-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "9-2": "Date the customer details were last changed in the commerce or point of sale platform."
 },
 "cols": 3,

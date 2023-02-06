@@ -1,5 +1,6 @@
 ---
-title: "Data Integrity"
+title: "Data integrity"
+sidebar_label: Overview
 description: "Matching mutable accounting data with immutable banking data to increase confidence in financial data"
 createdAt: "2022-01-18T14:55:56.434Z"
 updatedAt: "2022-11-02T14:46:09.812Z"
@@ -24,11 +25,13 @@ To use this feature the following data types need to be enabled:
 - _bankAccounts_ for the accounting data source.
 - _accountTransactions_ for the accounting data source.
 
-:::info
+:::info Deprecation notice
+
 Matching also works with the _bankAccounts_ (banking data source) and _bankTransactions_ (banking data source). Note that these data types will be deprecated in the future.
 
-It is recommended that you use _banking-accounts_ and _banking-transactions_ data types to get the most out of Data Integrity.",
-"title": "Deprecation notice
+It is recommended that you use _banking-accounts_ and _banking-transactions_ data types to get the most out of Data Integrity.
+
+:::
 
 ## Matching
 

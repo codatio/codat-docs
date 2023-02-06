@@ -39,11 +39,11 @@ With Sync for Expenses each company will have two data connections:
 
 Before you can push expenses to your customer’s accounting platform, you need to get access to it. There are three ways you can enable your customers to grant access to their financial accounts:
 
-1.  **Embedded Link:** Codat's Embedded Link is a React component that neatly sits in your front-end code, and can be deployed in a matter of minutes (see [embedded link](https://docs.codat.io/docs/authorize-embedded-link "https://docs.codat.io/docs/authorize-embedded-link")).
+1.  **Embedded Link:** Codat's Embedded Link is a React component that neatly sits in your front-end code, and can be deployed in a matter of minutes (see [embedded link](/authorize-embedded-link)).
 
-2.  **Hosted Link**: a beautifully simple, pre-built, conversion-optimized, and customizable authentication flow (See [Use Link for SMB authentication](https://docs.codat.io/docs/use-link-for-the-authentication-flow "https://docs.codat.io/docs/use-link-for-the-authentication-flow")).
+2.  **Hosted Link**: a beautifully simple, pre-built, conversion-optimized, and customizable authentication flow (See [Use Link for SMB authentication](/use-link-for-the-authentication-flow)).
 
-3.  **Build your own SMB authentication flow** for a fully customized bespoke user journey (See [Build your own authentication journey](https://docs.codat.io/docs/build-your-own-authentication-journey "https://docs.codat.io/docs/build-your-own-authentication-journey")).
+3.  **Build your own SMB authentication flow** for a fully customized bespoke user journey (See [Build your own authentication journey](/build-your-own-authentication-journey)).
 
 ### Create a data connection
 

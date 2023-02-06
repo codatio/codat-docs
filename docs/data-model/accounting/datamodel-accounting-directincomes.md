@@ -28,7 +28,7 @@ From the Direct Incomes endpoints, you can:
 - [Get a single direct income for a specific company and connection](https://api-uat.codat.io/swagger/index.html#/DirectIncomes/get_companies__companyId__connections__connectionId__data_directIncomes__directIncomeId_)
 - [Add a new direct income to a specific company's accounting package](https://api-uat.codat.io/swagger/index.html#/DirectIncomes/post_companies__companyId__connections__connectionId__push_directIncomes)
 
-Direct incomes is a child data type of [account transactions](https://docs.codat.io/docs/datamodel-accounting-account-transactions).
+Direct incomes is a child data type of [account transactions](/datamodel-accounting-account-transactions).
 
 ## Data model
 
@@ -45,19 +45,19 @@ Direct incomes is a child data type of [account transactions](https://docs.codat
 "1-1": "_string_",
 "1-2": "User-friendly reference for the direct income.",
 "2-0": "**contactRef**",
-"2-1": "[_Reference type_](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-contactref)",
+"2-1": "[_Reference type_](/datamodel-accounting-referencetypes#section-contactref)",
 "2-2": "A customer or supplier associated with the direct income.",
 "3-0": "**issueDate**",
 "3-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "3-2": "The date of the direct income as recorded in the accounting platform.",
 "4-0": "**currency**",
 "4-1": "_string_  
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "4-2": "The currency of the direct income.",
 "5-0": "**currencyRate**",
 "5-1": "_decimal_  
-See [currency rate](https://docs.codat.io/docs/datamodel-shared-currencyrate)",
+See [currency rate](/datamodel-shared-currencyrate)",
 "5-2": "The conversion rate between the currency of the direct incomes and the base currency of the company.",
 "6-0": "**lineItems**",
 "6-1": "_array_",
@@ -76,11 +76,11 @@ See [currency rate](https://docs.codat.io/docs/datamodel-shared-currencyrate)",
 "10-2": "The amount of the direct incomes, inclusive of tax.",
 "11-0": "**modifiedDate**",
 "11-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "11-2": "The date the record was last updated in the Codat system.",
 "12-0": "**sourceModifiedDate** ",
 "12-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "12-2": "The date the record was last changed in the accounting system."
 },
 "cols": 3,
@@ -105,7 +105,7 @@ See [date](https://docs.codat.io/docs/datamodel-shared-date)",
 "0-1": "_string_",
 "0-2": "A user-friendly name of the goods or services.",
 "1-0": "**accountRef** ",
-"1-1": "[_Reference type_](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-accountreff)",
+"1-1": "[_Reference type_](/datamodel-accounting-referencetypes#section-accountreff)",
 "1-2": "Reference to the account to which the line item is linked.",
 "2-0": "**unitAmount** ",
 "2-1": "_decimal_",
@@ -133,14 +133,14 @@ _Note_: If the platform does not provide this information, the quantity will be 
 "8-1": "_decimal_",
 "8-2": "The total amount of the line, including tax.",
 "9-0": "**taxRateRef**",
-"9-1": "[_Reference type_](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-taxrateref)",
+"9-1": "[_Reference type_](/datamodel-accounting-referencetypes#section-taxrateref)",
 "9-2": "Reference to the tax rate to which the line item is linked.",
 "10-0": "**itemRef**",
-"10-1": "[_Reference type_](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-itemref)",
+"10-1": "[_Reference type_](/datamodel-accounting-referencetypes#section-itemref)",
 "10-2": "Reference to the product, service type, or inventory item to which the direct cost is linked.",
 "11-0": "**trackingCategoryRefs**",
 "11-1": "_array_ ",
-"11-2": "An array of [categories](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-trackingcategoryref) against which this direct cost is tracked."
+"11-2": "An array of [categories](/datamodel-accounting-referencetypes#section-trackingcategoryref) against which this direct cost is tracked."
 },
 "cols": 3,
 "rows": 12,
@@ -167,18 +167,18 @@ _Note_: If the platform does not provide this information, the quantity will be 
 "1-1": "_string_",
 "1-2": "The identifier of the allocated payment.",
 "2-0": "**accountRef** ",
-"2-1": "[_Reference type_](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-accountref)",
+"2-1": "[_Reference type_](/datamodel-accounting-referencetypes#section-accountref)",
 "2-2": "The account that the allocated payment is made from or to.",
 "3-0": "**currency**",
-"3-1": "See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+"3-1": "See [currency](/datamodel-shared-currency)",
 "3-2": "The currency the payment has been made in.",
 "4-0": "**currencyRate**",
 "4-1": "_decimal_  
-See [currency rate](https://docs.codat.io/docs/datamodel-shared-currencyrate)",
+See [currency rate](/datamodel-shared-currencyrate)",
 "4-2": "The conversion rate between the currency of the allocated payment and the currency of the company.",
 "5-0": "**paidOnDate** ",
 "5-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "5-2": "The date the payment was made.",
 "6-0": "**totalAmount** ",
 "6-1": "_decimal_",
@@ -188,15 +188,15 @@ See [date](https://docs.codat.io/docs/datamodel-shared-date)",
 "7-2": "",
 "8-0": "**currency** ",
 "8-1": "_string_  
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "8-2": "The currency of the transaction.",
 "9-0": "**currencyRate**",
 "9-1": "_number_  
-See [currency rate](https://docs.codat.io/docs/datamodel-shared-currencyrate)",
+See [currency rate](/datamodel-shared-currencyrate)",
 "9-2": "The conversion rate between the currency of the allocated payment and the currency of the transaction.",
 "10-0": "**allocatedOnDate** ",
 "10-1": "_string_  
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "10-2": "The date the payment was allocated.",
 "11-0": "**totalAmount** ",
 "11-1": "_decimal_",

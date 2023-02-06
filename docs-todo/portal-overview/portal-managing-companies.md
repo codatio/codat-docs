@@ -10,11 +10,11 @@ In the Codat Portal, click **Companies** in the navigation bar to view a list of
 From here you can:
 
 - Search for a previously created company by clicking on the search icon
-- [Add a new company](https://docs.codat.io/docs/portal-managing-companies#add-a-new-company)
-- Copy your [Link URL](https://docs.codat.io/docs/authorize-hosted-link#use-the-hosted-link-url) to allow your customers to share their data through Link
-- [Retrieve Link URLs for existing companies](https://docs.codat.io/docs/authorize-hosted-link#use-the-hosted-link-url) to allow them to authorize additional data connections, or re-authorize unlinked connections where required
+- [Add a new company](/portal-managing-companies#add-a-new-company)
+- Copy your [Link URL](/authorize-hosted-link#use-the-hosted-link-url) to allow your customers to share their data through Link
+- [Retrieve Link URLs for existing companies](/authorize-hosted-link#use-the-hosted-link-url) to allow them to authorize additional data connections, or re-authorize unlinked connections where required
 - View details and show the status of existing companies
-- [Delete companies](https://docs.codat.io/docs/portal-managing-companies#delete-a-company.
+- [Delete companies](/portal-managing-companies#delete-a-company.
 
 ## View existing companies
 
@@ -25,7 +25,7 @@ In the companies view, you can see the following information for every company:
 - Name of the Portal user that created the company
 - Date and time of the company creation
 - Date and time of the last pull of data
-- Data connections and their [statuses](https://docs.codat.io/docs/portal-managing-companies#data-connection-statuses)
+- Data connections and their [statuses](/portal-managing-companies#data-connection-statuses)
 
 ### Data connection statuses
 
@@ -44,9 +44,9 @@ You can rename a company at any time. This doesn't affect the connection. Next t
 
 ## Link a company
 
-To link a company via Portal, follow the instructions [here](https://docs.codat.io/docs/allowing-your-users-to-access-link#share-link-urls-via-portal).
+To link a company via Portal, follow the instructions [here](/allowing-your-users-to-access-link#share-link-urls-via-portal).
 
-You can also [learn more about Link](https://docs.codat.io/docs/auth-flow).
+You can also [learn more about Link](/auth-flow).
 
 ## Queue data refresh
 
@@ -61,23 +61,23 @@ The configured sync frequency re-commences from the time of the last successful 
 
 The **<a class="external" href="https://app.codat.io/settings/data-types" target="_blank">Data type settings</a>** page in the Codat portal allows users to set a default synchronization frequency for each data type to ensure your customers' data is kept up-to-date. The available options are _hourly_, _daily_, _weekly_, and _monthly_.
 
-If you require a more specific schedule, you [queue data sync using Codat's API](https://docs.codat.io/docs/queueing-data-syncs).
+If you require a more specific schedule, you [queue data sync using Codat's API](/queueing-data-syncs).
 
-For more information on configuring your sync settings, please see [Data type settings](https://docs.codat.io/docs/data-sync-settings).
+For more information on configuring your sync settings, please see [Data type settings](/data-sync-settings).
 
 :::info Token expiry and connection de-authorization
-For some accounting platforms, if you don’t synchronize the data of a company for a significant time period (between 60 and 100 days) authorization is revoked. In this case, [provide your customer with a new link URL](https://docs.codat.io/docs/authorize-hosted-link#use-the-hosted-link-url) so that they can renew your access to their data.
+For some accounting platforms, if you don’t synchronize the data of a company for a significant time period (between 60 and 100 days) authorization is revoked. In this case, [provide your customer with a new link URL](/authorize-hosted-link#use-the-hosted-link-url) so that they can renew your access to their data.
 
 ## View company data
 
 Click on a company to access information pertaining to it:
 
 - A brief **Summary** that includes the company's revenue, operating profit, and equity, as well as an activity log
-- Codat **Products** available for this company. By default, [Accounting API](https://docs.codat.io/docs/datamodel-accounting), [Banking API](https://docs.codat.io/docs/data-model-banking) and [Commerce API](https://docs.codat.io/docs/datamodel-commerce) are enabled (read more about our integrations [here](https://docs.codat.io/docs/core-integrations))
+- Codat **Products** available for this company. By default, [Accounting API](/datamodel-accounting), [Banking API](/data-model-banking) and [Commerce API](/datamodel-commerce) are enabled (read more about our integrations [here](/core-integrations))
 
-  Note that [Assess](https://docs.codat.io/docs/assess-overview) is also visible by default, but you need to [enable it in order to get started](https://docs.codat.io/docs/assess-how-to-get-started).
+  Note that [Assess](/assess-overview) is also visible by default, but you need to [enable it in order to get started](/assess-how-to-get-started).
 
-- Company's **Data**, including the [history of dataset pulls and their statuses](https://docs.codat.io/docs/data-status), and uploaded files
+- Company's **Data**, including the [history of dataset pulls and their statuses](/data-status), and uploaded files
 
 ## Delete a company
 

@@ -13,7 +13,7 @@ View the coverage for bank transactions in the <a className="external" href="htt
 
 This datatype was originally used for accessing bank account data both in accounting integrations and open banking aggregators.
 
-To view bank account data through the Banking API, please refer to the new datatype [here](https://docs.codat.io/docs/data-model-banking-banking-transactions)
+To view bank account data through the Banking API, please refer to the new datatype [here](/data-model-banking-banking-transactions)
 :::
 
 ## Overview
@@ -43,7 +43,7 @@ Bank transactions include the:
 "10-0": "**modifiedDate** ",
 "10-2": "Date the record was last updated in the Codat system.",
 "10-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "9-2": "Type of transaction for the bank statement line, either:
 
 - `Unknown`
@@ -73,17 +73,17 @@ See [date](https://docs.codat.io/docs/datamodel-shared-date)",
   "8-2": "Current balance of the bank account, with the line item accounted for.",
   "3-2": "Description of the bank transaction.",
   "6-2": "If `true`, then the bank transaction is reconciled with the bank statement, and the accounting platform matches the bank statement.",
-  "0-2": "Identifier of the bank transaction that is unique to the [company](https://docs.codat.io/docs/datamodel-accounting-company).",
+  "0-2": "Identifier of the bank transaction that is unique to the [company](/datamodel-accounting-company).",
   "1-0": "**accountId** ",
   "1-1": "_string_",
-  "1-2": "Identifier of the bank account that is unique to the [company](https://docs.codat.io/docs/datamodel-accounting-company).",
+  "1-2": "Identifier of the bank account that is unique to the [company](/datamodel-accounting-company).",
   "2-0": "**clearedOnDate** ",
   "2-1": "_string_
-  See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+  See [date](/datamodel-shared-date)",
   "2-2": "Date the transaction was cleared by the originating bank.",
   "11-0": "**sourceModifiedDate**",
   "11-1": "_string_
-  See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+  See [date](/datamodel-shared-date)",
   "11-2": "Date the record was last changed in the accounting system.",
   "4-0": "**counterparty**",
   "4-1": "_string_

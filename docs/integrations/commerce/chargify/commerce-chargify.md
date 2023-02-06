@@ -14,8 +14,8 @@ Use Codat's Commerce API with Chargify to securely connect to, retrieve, and vie
 
 ## Data type coverage
 
-The Chargify integration is part of the [Domain Discovery Program](https://docs.codat.io/docs/domain-discovery-program), so it doesn't yet expose any standardized commerce data types. Please contact your Account Manager or Account Executive to find out more and gain access.
+The Chargify integration is part of the [Domain Discovery Program](/domain-discovery-program), so it doesn't yet expose any standardized commerce data types. Please contact your Account Manager or Account Executive to find out more and gain access.
 
 ## Set up the integration
 
-See [Set up the Chargify integration](https://docs.codat.io/docs/commerce-chargify-setup) to learn how to set up and enable the integration.
+See [Set up the Chargify integration](/commerce-chargify-setup) to learn how to set up and enable the integration.

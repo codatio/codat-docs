@@ -23,7 +23,7 @@ You can then update bank account details as needed.
 Complete the following prerequisites before setting up the Sage Bank Feeds integration.
 
 - You have access to a Testing Client for your Codat instance. Testing Clients are only available on Enterprise plans.
-- The Bank accounts and Bank transactions data types are enabled in your [Data type settings](https://docs.codat.io/docs/data-sync-settings).
+- The Bank accounts and Bank transactions data types are enabled in your [Data type settings](/data-sync-settings).
 
 For help with these prerequisites, contact your Solutions Engineer or Codat Support.
 
@@ -57,7 +57,7 @@ To upload a logo, go to the <a className="external" href="https://app.codat.io/s
 
 ## Create a Company and data connection, then add bank accounts
 
-1. Using [POST /companies](ref:createcompany), create a Company to represent your SMB user:
+1. Using [POST /companies](/codat-api#/operations/create-company), create a Company to represent your SMB user:
 
    ```http
    POST https://api.codat.io/companies
@@ -73,7 +73,7 @@ To upload a logo, go to the <a className="external" href="https://app.codat.io/s
 
    The endpoint returns a JSON response containing the company `id` and the `redirect` URL.
 
-2. Using [POST /companies/{companyId}/connections](ref:createconnection), create a data connection to Sage Bank Feeds for the Company you added. Specify the `companyId` in the URL path:
+2. Using [POST /companies/{companyId}/connections](/codat-api#/operations/create-data-connection), create a data connection to Sage Bank Feeds for the Company you added. Specify the `companyId` in the URL path:
 
    ```http
    POST https://api.codat.io/companies/{companyId}/connections
@@ -150,7 +150,7 @@ To connect a source bank account to a target bank account in Sage, your SMB user
 
 :::note
 
-Alternatively, you can [authenticate users through your own web app](https://docs.codat.io/docs/bank-feed-sage-bank-feeds-authenticate-users-web-app).
+Alternatively, you can [authenticate users through your own web app](/bank-feed-sage-bank-feeds-authenticate-users-web-app).
 :::
 
 1. On the **Banking** tab, they locate the bank account to which they want to import bank transactions.
@@ -211,4 +211,4 @@ The endpoint returns a `200` code and the updated bank account details. For exam
 
 ## Next steps
 
-Next you can [push bank transactions from a source bank account](https://docs.codat.io/docs/accounting-sage-bank-feeds-use#push-bank-transactions-from-a-source-bank-account).
+Next you can [push bank transactions from a source bank account](/accounting-sage-bank-feeds-use#push-bank-transactions-from-a-source-bank-account).

@@ -9,7 +9,7 @@ Before you can access your customers' commerce data from PayPal, you need to set
 
 :::caution
 
-Before you begin, read the Provider requirements on the [PayPal](https://docs.codat.io/docs/commerce-paypal) page.
+Before you begin, read the Provider requirements on the [PayPal](/commerce-paypal) page.
 :::
 
 You'll need to:
@@ -34,7 +34,7 @@ Make sure you keep your live credentials safe; it is not normally possible to re
 
 ## Add your app to the Codat Portal
 
-1. Sign in to the [Codat Portal](https://portal.codat.io/).
+1. Sign in to the [Codat Portal](https://app.codat.io/).
 2. On the navigation bar, select **Settings > Integrations > Commerce**.
 3. Find **PayPal**, then select **Set up** to view the **Integration settings** page.
 4. Copy the `Client ID` and `Client Secret` values obtained from PayPal in the previous step and paste into the Client ID and Client Secret fields in the Codat Portal.
@@ -49,4 +49,4 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 ## Check your sync settings in the Codat Portal
 
-If this is your first commerce integration, update your [data type settings](https://docs.codat.io/docs/commerce-sync-settings) to enable commerce data types.
+If this is your first commerce integration, update your [data type settings](/commerce-sync-settings) to enable commerce data types.

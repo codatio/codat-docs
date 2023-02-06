@@ -6,7 +6,7 @@ updatedAt: "2022-11-16T09:31:27.099Z"
 ---
 
 :::info Bill credit notes or credit notes?
-In Codat, bill credit notes represent accounts payable only. For accounts receivable, see [Credit notes](https://docs.codat.io/docs/datamodel-accounting-creditnotes).
+In Codat, bill credit notes represent accounts payable only. For accounts receivable, see [Credit notes](/datamodel-accounting-creditnotes).
 :::
 
 Explore the <a className="external" href="https://api.codat.io/swagger/index.html#/BillCreditNotes" target="_blank">Bill Credit Notes</a> endpoints in Swagger.
@@ -17,12 +17,12 @@ View the coverage for bill credit notes in the <a className="external" href="htt
 
 A bill credit note is issued by a supplier for the purpose of recording credit. For example, if a supplier was unable to fulfil an order that was placed by a business, or delivered damaged goods, they would issue a bill credit note. A bill credit note reduces the amount a business owes to the supplier. It can be refunded to the business or used to pay off future bills.
 
-In the Codat API, a bill credit note is an accounts payable record issued by a [supplier](https://docs.codat.io/docs/datamodel-accounting-suppliers).
+In the Codat API, a bill credit note is an accounts payable record issued by a [supplier](/datamodel-accounting-suppliers).
 
 A bill credit note includes details of:
 
 - The original and remaining credit.
-- Any allocations of the credit against other records, such as [bills](https://docs.codat.io/docs/datamodel-accounting-bills).
+- Any allocations of the credit against other records, such as [bills](/datamodel-accounting-bills).
 - The supplier that issued the bill credit note.
 
 ## Data model
@@ -40,23 +40,23 @@ A bill credit note includes details of:
 "13-0": "**currencyRate** ",
 "15-0": "**paymentAllocations** ",
 "16-0": "**modifiedDate** ",
-"2-2": "[Supplier](https://docs.codat.io/docs/datamodel-accounting-suppliers) that issued the bill credit note.",
+"2-2": "[Supplier](/datamodel-accounting-suppliers) that issued the bill credit note.",
 "3-1": "_decimal_",
 "13-1": "_decimal_
-See [currency rate](https://docs.codat.io/docs/datamodel-shared-currencyrate)",
+See [currency rate](/datamodel-shared-currencyrate)",
 "0-1": "_string_ ",
 "1-1": "_string_",
 "15-2": "An array of [CreditNotePaymentAllocations](#section-payment-allocations).",
 "16-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
-"0-2": "Identifier for the bill credit note that is unique to a [company](https://docs.codat.io/docs/datamodel-accounting-company) in the accounting platform.",
+See [date](/datamodel-shared-date)",
+"0-2": "Identifier for the bill credit note that is unique to a [company](/datamodel-accounting-company) in the accounting platform.",
 "1-2": "Friendly reference for the bill credit note.",
-"3-2": "Total amount of credit that has been applied to the business' account with the [supplier](https://docs.codat.io/docs/datamodel-accounting-suppliers), including discounts and tax.",
-"2-1": "_[reference type](https://docs.codat.io/docs/datamodel-accounting-referencetypes)_",
-"13-2": "Conversion rate between the currency of the bill credit note and the base currency of the [company](https://docs.codat.io/docs/datamodel-accounting-company).",
+"3-2": "Total amount of credit that has been applied to the business' account with the [supplier](/datamodel-accounting-suppliers), including discounts and tax.",
+"2-1": "_[reference type](/datamodel-accounting-referencetypes)_",
+"13-2": "Conversion rate between the currency of the bill credit note and the base currency of the [company](/datamodel-accounting-company).",
 "17-0": "**sourceModifiedDate** ",
 "17-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "16-2": "Date the record was last updated in the Codat system.",
 "17-2": "Date the record was last updated in the accounting system.",
 "14-0": "**lineItems** ",
@@ -93,15 +93,15 @@ See [date](https://docs.codat.io/docs/datamodel-shared-date)",
 - `Unknown`",
   "10-0": "**issueDate** ",
   "10-1": "_string_
-  See [date](https://docs.codat.io/docs/datamodel-shared-date)",
-  "10-2": "Date the bill credit note was issued by the [supplier](https://docs.codat.io/docs/datamodel-accounting-suppliers).",
+  See [date](/datamodel-shared-date)",
+  "10-2": "Date the bill credit note was issued by the [supplier](/datamodel-accounting-suppliers).",
   "11-0": "**allocatedOnDate** ",
   "11-1": "_string_
-  See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+  See [date](/datamodel-shared-date)",
   "11-2": "Date the bill credit note was fully refunded or allocated.",
   "12-0": "**currency** ",
   "12-1": "_string_
-  See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+  See [currency](/datamodel-shared-currency)",
   "12-2": "Currency of the bill credit note.",
   "18-0": "**note** ",
   "18-1": "_string_",
@@ -146,17 +146,17 @@ Details of each line of the bill credit note.
 "8-1": "_decimal_",
 "8-2": "Percentage rate of any discount applied to the line item.",
 "9-0": "**taxRateRef** ",
-"9-1": "_[reference type](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-taxrateref)_",
-"9-2": "Reference to the [tax rate](https://docs.codat.io/docs/datamodel-accounting-taxrates) to which the line item is linked.",
+"9-1": "_[reference type](/datamodel-accounting-referencetypes#section-taxrateref)_",
+"9-2": "Reference to the [tax rate](/datamodel-accounting-taxrates) to which the line item is linked.",
 "10-0": "**itemRef** ",
-"10-1": "_[reference type](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-itemref)_",
-"10-2": "Reference to the [item](https://docs.codat.io/docs/datamodel-accounting-items) the line is linked to.",
+"10-1": "_[reference type](/datamodel-accounting-referencetypes#section-itemref)_",
+"10-2": "Reference to the [item](/datamodel-accounting-items) the line is linked to.",
 "11-0": "**trackingCategoryRefs** ",
-"11-1": "_[reference type](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-trackingCategoryRef)_",
-"11-2": "Reference to the [tracking categories](https://docs.codat.io/docs/datamodel-accounting-trackingcategories) to which the line item is linked.",
+"11-1": "_[reference type](/datamodel-accounting-referencetypes#section-trackingCategoryRef)_",
+"11-2": "Reference to the [tracking categories](/datamodel-accounting-trackingcategories) to which the line item is linked.",
 "7-0": "**accountRef** ",
-"7-1": "_[reference type](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-accountref)_",
-"7-2": "Reference to the [account](https://docs.codat.io/docs/datamodel-accounting-chartofaccounts) to which the line item is linked."
+"7-1": "_[reference type](/datamodel-accounting-referencetypes#section-accountref)_",
+"7-2": "Reference to the [account](/datamodel-accounting-chartofaccounts) to which the line item is linked."
 },
 "cols": 3,
 "rows": 12
@@ -188,19 +188,19 @@ Details of each line of the bill credit note.
 "1-1": "_string_",
 "2-1": "_string_",
 "3-1": "_string_",
-"4-1": "[_Reference type_](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-accountref)",
+"4-1": "[_Reference type_](/datamodel-accounting-referencetypes#section-accountref)",
 "5-1": "_string_
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "6-1": "_decimal_
-See [currency rate](https://docs.codat.io/docs/datamodel-shared-currencyrate)",
+See [currency rate](/datamodel-shared-currencyrate)",
 "11-1": "_decimal_
-See [currency rate](https://docs.codat.io/docs/datamodel-shared-currencyrate)",
+See [currency rate](/datamodel-shared-currencyrate)",
 "12-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "10-1": "_string_
-See [currency](https://docs.codat.io/docs/datamodel-shared-currency)",
+See [currency](/datamodel-shared-currency)",
 "7-1": "_string_
-See [date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [date](/datamodel-shared-date)",
 "8-1": "_decimal_",
 "13-1": "_decimal_"
 },
@@ -211,7 +211,7 @@ See [date](https://docs.codat.io/docs/datamodel-shared-date)",
 
 :::caution Requirements for reference fields
 
-The reference fields **customerRef**, **accountRef**, and **taxRateRef** are only populated if the corresponding data type has been synchronised. If you see null values for these fields, please complete a new sync for the corresponding data type. For example, sync the customers data type for [customerRef](https://docs.codat.io/docs/datamodel-accounting-referencetypes#section-customerref).
+The reference fields **customerRef**, **accountRef**, and **taxRateRef** are only populated if the corresponding data type has been synchronised. If you see null values for these fields, please complete a new sync for the corresponding data type. For example, sync the customers data type for [customerRef](/datamodel-accounting-referencetypes#section-customerref).
 :::
 
 ## Example data

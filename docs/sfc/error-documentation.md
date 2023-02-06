@@ -122,7 +122,7 @@ During the configuration, the grouping object in the config API that has `groupi
 
 SMB has not selected a required nominal account for pushing sales/commerce data against.
 
-\\\* Make sure that the merchant cannot complete the configuration without selecting the accounts for required features that can be found [here](https://docs.codat.io/docs/sync-data-pushing).",
+\\\* Make sure that the merchant cannot complete the configuration without selecting the accounts for required features that can be found [here](/sync-data-pushing).",
 "12-0": "No Sales Account Present.",
 "12-1": "This error surfaces if the merchant's accounting package has no nominal account categorized as a **Sales** account.
 

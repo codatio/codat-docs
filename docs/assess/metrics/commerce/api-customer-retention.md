@@ -7,7 +7,7 @@ updatedAt: "2022-11-29T15:21:17.901Z"
 
 The Customer Retention endpoint retrieves customer information for a specific company's commerce connection, over one or more periods of time.
 
-Refer to the [Assess reporting structure](https://docs.codat.io/docs/assess-reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/assess-reporting-structure) page for more detail on reports in Assess.
 
 For Customer Retention, these are the dimensions and measures:
 
@@ -32,7 +32,7 @@ For Customer Retention, these are the dimensions and measures:
 - Is structured based on dimension (index =“0”), i.e. Period.
 - The endpoint will return metrics on **existing customers**, *new customers\*\*, *total customers**, **retention rate** and **repeat rate\*\* for each period.
 
-View the Customer Retention [formulas](https://docs.codat.io/docs/assess-commerce-metrics#what-metrics-are-available).
+View the Customer Retention [formulas](/assess-commerce-metrics#what-metrics-are-available).
 
 The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_commerceMetrics_customerRetention" target="_blank">Swagger</a> under **Assess**.
 
@@ -48,7 +48,7 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 "h-3": "Required",
 "0-0": "**reportDate** ",
 "0-1": "_string_
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "0-2": "YYYY-MM-DD
 
 Datetime or Date (inclusive of the whole day).",
@@ -147,12 +147,12 @@ Ordered by latest to earliest periods."
 "0-2": ""Period n"",
 "1-0": "**start** ",
 "1-1": "_string_
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "1-2": "YYYY-MM-DD
 
 Date in which the period begins (inclusive).",
 "2-1": "_string_
-See [Date](https://docs.codat.io/docs/datamodel-shared-date)",
+See [Date](/datamodel-shared-date)",
 "2-0": "**end** ",
 "2-2": "YYYY-MM-DD
 

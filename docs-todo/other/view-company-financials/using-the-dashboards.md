@@ -46,7 +46,7 @@ Update your configuration to sync the data types that are required to build the 
 
 ## Open the company overview
 
-A company overview is available for every company that uses [accounting data types](https://docs.codat.io/docs/accounting-data-types) and has successfully synced their data.
+A company overview is available for every company that uses [accounting data types](/accounting-data-types) and has successfully synced their data.
 
 1. In the Codat portal, in the navigation bar, select **Companies**.
 2. Find the company you're interested in and select **View Data**.
