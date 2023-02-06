@@ -17,7 +17,8 @@ Here's a summary of the time-based rate limits:
 
 - Minutely limit: an app can make 60 API calls, per company, per minute.
 - Daily limit: an app can make 5,000 API calls, per company, per day.
-  :::
+
+:::
 
 :::caution Request permission for your customers to link
 

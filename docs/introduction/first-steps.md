@@ -297,7 +297,8 @@ You have now:
 - created a Codat company that represents your small business customer,
 - authorized sandbox connections to pull various financial data, and
 - reviewed the data and its visual representation, relating it to your use case.
-  :::
+
+:::
 
 ## Next steps
 

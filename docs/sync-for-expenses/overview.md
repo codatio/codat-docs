@@ -1,5 +1,6 @@
 ---
-title: "Overview"
+title: Sync for Expenses overview
+sidebar_label: Sync for Expenses
 tags: [overview, syncforexpense]
 ---
 

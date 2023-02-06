@@ -27,7 +27,8 @@ When you've [set up Zettle](/integrations/commerce/zettle/commerce-zettle-setup)
 
 - If you already have a Zettle account, have your account details to hand.
 - If you don't, <a href="https://register.izettle.com//" target="_blank">create an account</a> before you start to create your test store.
-  :::
+
+:::
 
 1. Download the Zettle app to your smartphone or tablet. You can find the app on App Store (for iOS) or Google Play (for Android).
 2. Log in to your Zettle account. Add products, set their prices, and put some orders through.

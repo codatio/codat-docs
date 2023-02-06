@@ -140,7 +140,8 @@ For reference:
 - Xero - `gbol`
 - QuickBooks Online - `qhyg`
 - FreeAgent - `fbrh`
-  :::
+
+:::
 
 ### 3. Get branding for the integrations
 

@@ -24,7 +24,8 @@ Before you can access commerce data from customers using Clover, you need to set
   - [UK and Republic of Ireland/Europe](https://www.eu.clover.com)
 
 - If you require a Clover sandbox for testing purposes, sign up to the [Clover Sandbox developer portal](https://sandbox.dev.clover.com/developer-home/create-account) before you start to create your application
-  :::
+
+:::
 
 1. Go to the Clover developer portal and log in to your account.
 2. Select **Create App** to create an app and get API credentials.

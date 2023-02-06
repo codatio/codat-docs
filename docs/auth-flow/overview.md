@@ -96,7 +96,8 @@ Link ensures customers have a clear understanding of:
 - The value exchange on the benefits of providing data access
 - What will happen with the shared data and how it is secured
 - The data that has been shared
-  :::
+
+:::
 
 :::tip Consent
 
@@ -106,7 +107,8 @@ Link provides:
 
 - Visibility of the data requiring consent to access,
 - A way for the user to authorize consent.
-  :::
+
+:::
 
 :::tip Control
 

@@ -21,7 +21,8 @@ To use the integration, you must be located in a market that is supported by Zet
 - If you already have a Zettle developer account, have your account details to hand.
 
 - If you don't, sign up to the <a href="https://www.izettle.com/gb/developer" target="_blank"> Zettle developer portal</a> before you start to create your application.
-  :::
+
+:::
 
 1. Go to the <a className="external" href="https://www.izettle.com/gb/developer" target="_blank">Zettle developer portal</a> and log in to your account.
 2. Click **Create a new app** and go to Public API credentials.

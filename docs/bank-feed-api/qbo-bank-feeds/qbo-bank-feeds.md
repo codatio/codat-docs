@@ -1,5 +1,6 @@
 ---
 title: "QuickBooks Online Bank Feeds"
+sidebar_label: Overview
 description: "Learn about our QuickBooks Online Bank Feeds integration."
 createdAt: "2022-07-15T11:21:08.729Z"
 updatedAt: "2023-01-11T14:52:11.575Z"

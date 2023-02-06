@@ -19,7 +19,8 @@ Before you can access commerce data from customers using SumUp, you need to set 
 - If you already have a SumUp account, have your account details to hand.
 
 - If you don't, sign up to the [SumUp portal](https://me.sumup.com/en-gb/login/) before you start to create your application.
-  :::
+
+:::
 
 1. Go to the [SumUp portal](https://me.sumup.com/en-gb/login/) and log in to your account.
 2. Select **Profile** > **For Developers** and go to **Affiliate Key** section.

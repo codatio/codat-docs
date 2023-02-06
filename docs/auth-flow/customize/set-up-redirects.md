@@ -66,7 +66,8 @@ Codat supports a number of reserved query parameters for redirects. Codat will r
 :::success Before you start:
 
 - Follow steps 1 to 3 in the Redirect to a static website section above.
-  :::
+
+:::
 
 Note that this page autosaves when changes are made.
 

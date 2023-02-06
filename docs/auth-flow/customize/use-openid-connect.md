@@ -17,7 +17,8 @@ This article explains how to configure your authorization process to use OpenID 
 
 - Codat's linking process can only return available profile details, which vary from platform to platform. Codat currently supports OpenID Connect for QuickBooks Online, Xero, and our testing sandbox. See [_OpenID Connect Supported fields_](/use-openid-connect-1#openid-connect-fields) for the specific fields supported for each platform.
 - Codat doesn't use OpenID Connect to either verify the identity of customers, or to authorize data sharing or connections.
-  :::
+
+:::
 
 ## Configure your authorization process
 
