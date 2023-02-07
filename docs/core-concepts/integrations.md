@@ -29,7 +29,7 @@ Codat's [file upload integrations](/other/file-upload) allow your customers to s
 
 ---
 
-### Read next
+## Read next
 
 - Next concept: [Data type settings](/core-concepts/data-type-settings)
 - [Explore integration coverage](https://knowledge.codat.io/supported-features/accounting)

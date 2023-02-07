@@ -111,7 +111,7 @@ If you are migrating an existing integration to use Codat, you can provide token
 
 ---
 
-### Read next
+## Read next
 
 - Next concept: [Integrations](/core-concepts/integrations)
 - [`GET https://api.codat.io/companies`](/codat-api#/operations/list-companies)

@@ -26,7 +26,7 @@ If you want to build to our API directly, you can explore all endpoints and sche
 
 ---
 
-### Read next
+## Read next
 
 - [Explore the APIs](/using-the-api/overview)
 
