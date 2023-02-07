@@ -217,7 +217,7 @@ The _balance_ and the _Account limits_ displayed are aggregate views for the sel
 
 This graph displays when chosen in the _Select graph_ dropdown. Hovering over the graph displays a tooltip containing the total account balance for the selected bank accounts.
 
-The graph is produced from responses from the [Banking account balances](/assess-banking-account-balances) and [Banking transactions](/data-model-banking-banking-transactions) a endpoints.
+The graph is produced from responses from the [Banking account balances](/assess-banking-account-balances) and [Banking transactions](/data-model/banking-banking-transactions) a endpoints.
 
 Refer to the [formulas](/docs/assess-banking#banking-formulas) for more information about how current balances are calculated for each month.
 
@@ -227,7 +227,7 @@ Refer to the [formulas](/docs/assess-banking#banking-formulas) for more informat
 
 This graph displays when chosen in the _Select graph_ dropdown. Hovering over the graph displays a tooltip containing the total inflows and outflows for the selected bank accounts for that month.
 
-The graph is produced from the [Banking transactions](/data-model-banking-banking-transactions) endpoint response.
+The graph is produced from the [Banking transactions](/data-model/banking-banking-transactions) endpoint response.
 
 ![A bar graph showing inflows vs outflows based on selection criteria](https://files.readme.io/2a880ed-Inflows_1.png)
 

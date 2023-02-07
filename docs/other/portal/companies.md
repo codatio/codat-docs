@@ -73,7 +73,7 @@ For some accounting platforms, if you don’t synchronize the data of a company 
 Click on a company to access information pertaining to it:
 
 - A brief **Summary** that includes the company's revenue, operating profit, and equity, as well as an activity log
-- Codat **Products** available for this company. By default, [Accounting API](/data-model/accounting/), [Banking API](/data-model-banking) and [Commerce API](/data-model/commerce/) are enabled (read more about our integrations [here](/core-integrations))
+- Codat **Products** available for this company. By default, [Accounting API](/data-model/accounting/), [Banking API](/data-model/banking) and [Commerce API](/data-model/commerce/) are enabled (read more about our integrations [here](/core-integrations))
 
   Note that [Assess](/assess-overview) is also visible by default, but you need to [enable it in order to get started](/assess-how-to-get-started).
 
