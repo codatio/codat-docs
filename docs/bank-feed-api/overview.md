@@ -12,7 +12,7 @@ The source account might be a business current account, savings account, credit 
 
 In Codat's API, bank feeds are represented as [Bank transactions](/data-model/accounting/-banktransactions), which are pushed from a source to a target bank account in chronological order. Bank feeds from the source account are then viewable in the SMB user's accounting software.
 
-Bank Feed API uses standalone integrations to [popular accounting software](/bank-feed-overview#which-integrations-support-bank-feed-api). The connection journey for SMB users is handled by the integration and is different for each supported platform.
+Bank Feed API uses standalone integrations to [popular accounting software](/overview#which-integrations-support-bank-feed-api). The connection journey for SMB users is handled by the integration and is different for each supported platform.
 
 <img
   src="https://files.readme.io/fd21af0-codat_whitepaper_accounting-automation_diagram_B.png"
