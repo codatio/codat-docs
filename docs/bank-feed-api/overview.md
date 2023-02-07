@@ -10,7 +10,9 @@ updatedAt: "2023-01-05T15:04:48.214Z"
 
 The source account might be a business current account, savings account, credit card, or payments processor feed. Bank feeds allow accounting software users to easily reconcile bank transactions against accounting entries, like invoices and bills.
 
-In Codat's API, bank feeds are represented as [Bank transactions](/data-model/accounting/-banktransactions), which are pushed from a source to a target bank account in chronological order. Bank feeds from the source account are then viewable in the SMB user's accounting software.
+In Codat's API, bank feeds are represented as [Bank transactions](/accounting-api#/schemas/BankTransactions), which are pushed from a source to a target bank account in chronological order. Bank feeds from the source account are then viewable in the SMB user's accounting software.
+
+/accounting-api#/schemas/BankTransactions
 
 Bank Feed API uses standalone integrations to [popular accounting software](/overview#which-integrations-support-bank-feed-api). The connection journey for SMB users is handled by the integration and is different for each supported platform.
 
@@ -86,9 +88,9 @@ Tell us how you'd like to use Bank Feed API on <a className="external" href="htt
 
 To leverage the functionality of Bank Feed API, first choose an integration to a supported accounting platform.
 
-- [QuickBooks Online Bank Feeds](/bank-feed-qbo-bank-feeds) (US and Canada only)
-- [Sage Bank Feeds](/bank-feed-sage-bank-feeds)
-- [Xero](/accounting-xero-setup#configure-direct-bank-feeds)
+- [QuickBooks Online Bank Feeds](/bank-feed-api/qbo-bank-feeds/) (US and Canada only)
+- [Sage Bank Feeds](/bank-feed-api/sage-bank-feeds)
+- [Xero](/integrations/accounting/xero/accounting-xero-setup#configure-direct-bank-feeds)
 
 For detailed setup instructions, refer to the documentation for each integration.
 
