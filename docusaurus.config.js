@@ -128,12 +128,6 @@ module.exports = {
           position: "left",
           items: [
             {
-              href: "https://bit.ly/codatstatus",
-              label: "API status",
-              target: "_blank",
-              rel: null,
-            },
-            {
               href: "https://github.com/orgs/codatio/discussions",
               label: "Forum",
               target: "_blank",
@@ -148,6 +142,12 @@ module.exports = {
             {
               href: "https://twitter.com/codatdata",
               label: "Twitter",
+              target: "_blank",
+              rel: null,
+            },
+            {
+              href: "https://bit.ly/codatpbroadmap1",
+              label: "Product roadmap",
               target: "_blank",
               rel: null,
             },
@@ -175,8 +175,14 @@ module.exports = {
               rel: null,
             },
             {
+              href: "https://bit.ly/codatstatus",
+              label: "API status",
+              target: "_blank",
+              rel: null,
+            },
+            {
               href: "https://docs.codat.io/discuss",
-              label: "Forum",
+              label: "Ask the community",
               target: "_blank",
               rel: null,
             },

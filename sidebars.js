@@ -57,6 +57,7 @@ module.exports = {
       collapsed: true,
       className: "api",
       items: [
+        "using-the-api/overview",
         "using-the-api/authentication",
         "using-the-api/managing-companies-1",
         "using-the-api/modified-dates-1",
