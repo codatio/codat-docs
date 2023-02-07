@@ -49,7 +49,7 @@ The response contains a list of bank accounts with a status of either `pending` 
 
 ## Push bank transactions from a source bank account
 
-You can push [Bank transactions](/datamodel-accounting-banktransactions) from `connected` source bank accounts to target accounts in supported Sage products. The integration routes these transactions through the Sage Banking Service Provider API.
+You can push [Bank transactions](/data-model/accounting/-banktransactions) from `connected` source bank accounts to target accounts in supported Sage products. The integration routes these transactions through the Sage Banking Service Provider API.
 
 In the user's Sage package, new bank transactions for the target account will appear on the **Incoming Bank Transactions** UI.
 

@@ -10,11 +10,11 @@ In the Codat Portal, click **Companies** in the navigation bar to view a list of
 From here you can:
 
 - Search for a previously created company by clicking on the search icon
-- [Add a new company](/portal-managing-companies#add-a-new-company)
+- [Add a new company](/other/portal/companies#add-a-new-company)
 - Copy your [Link URL](/authorize-hosted-link#use-the-hosted-link-url) to allow your customers to share their data through Link
 - [Retrieve Link URLs for existing companies](/authorize-hosted-link#use-the-hosted-link-url) to allow them to authorize additional data connections, or re-authorize unlinked connections where required
 - View details and show the status of existing companies
-- [Delete companies](/portal-managing-companies#delete-a-company.
+- [Delete companies](/other/portal/companies#delete-a-company.
 
 ## View existing companies
 
@@ -25,7 +25,7 @@ In the companies view, you can see the following information for every company:
 - Name of the Portal user that created the company
 - Date and time of the company creation
 - Date and time of the last pull of data
-- Data connections and their [statuses](/portal-managing-companies#data-connection-statuses)
+- Data connections and their [statuses](/other/portal/companies#data-connection-statuses)
 
 ### Data connection statuses
 
@@ -73,7 +73,7 @@ For some accounting platforms, if you don’t synchronize the data of a company 
 Click on a company to access information pertaining to it:
 
 - A brief **Summary** that includes the company's revenue, operating profit, and equity, as well as an activity log
-- Codat **Products** available for this company. By default, [Accounting API](/datamodel-accounting), [Banking API](/data-model-banking) and [Commerce API](/datamodel-commerce) are enabled (read more about our integrations [here](/core-integrations))
+- Codat **Products** available for this company. By default, [Accounting API](/data-model/accounting/), [Banking API](/data-model-banking) and [Commerce API](/data-model/commerce/) are enabled (read more about our integrations [here](/core-integrations))
 
   Note that [Assess](/assess-overview) is also visible by default, but you need to [enable it in order to get started](/assess-how-to-get-started).
 

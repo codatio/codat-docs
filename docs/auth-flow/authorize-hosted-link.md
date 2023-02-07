@@ -70,7 +70,7 @@ Use the Hosted Link URL if your customer connection is meant to be persistent, a
 
 If this is a new user:
 
-1. Create a [company via Portal](/portal-managing-companies#add-a-new-company) for your customer.
+1. Create a [company via Portal](/other/portal/companies#add-a-new-company) for your customer.
 2. Navigate to the **Companies** page in Portal.
 3. Find the company that you created for the customer, and click **Request data** next to the company name.
 4. Copy the Link URL from the box that appears and share it with the customer. This will allow the customer to create and authorize a data connection.

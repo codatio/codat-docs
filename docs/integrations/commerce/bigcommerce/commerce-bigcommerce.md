@@ -10,7 +10,7 @@ updatedAt: "2022-10-20T13:32:45.801Z"
 </a> is a SaaS-based ecommerce platform for retailers of various sizes, both B2C
 and B2B.
 
-With Codat's BigCommerce integration, you can securely connect to, retrieve, and view your SMB customers' commerce transactions from BigCommerce. Data is standardized to our data model and available through our [Commerce API](/datamodel-commerce).
+With Codat's BigCommerce integration, you can securely connect to, retrieve, and view your SMB customers' commerce transactions from BigCommerce. Data is standardized to our data model and available through our [Commerce API](/data-model/commerce/).
 
 ## Data type coverage
 

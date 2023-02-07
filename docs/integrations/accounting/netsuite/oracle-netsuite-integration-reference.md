@@ -137,7 +137,7 @@ You can push Direct costs to NetSuite as either [Checks](https://www.netsuite.co
 
 You can push direct incomes to NetSuite as either [Cash Sales](https://www.netsuite.com/help/helpcenter/en_US/srbrowser/Browser2021_2/script/record/cashsale.html) or [Cash Refunds](https://www.netsuite.com/help/helpcenter/en_US/srbrowser/Browser2021_2/script/record/cashrefund.html). Pushing Customer Deposits is not supported.
 
-When pulling Direct incomes, the default `-Not Taxable-` tax group and tax code are ignored. You can access this information by pulling the [Tax Rates](/datamodel-accounting-taxrates) data type.
+When pulling Direct incomes, the default `-Not Taxable-` tax group and tax code are ignored. You can access this information by pulling the [Tax Rates](/data-model/accounting/-taxrates) data type.
 
 ## Invoices
 
@@ -222,16 +222,16 @@ The following tables highlight selected fields that are not available in data pu
 "h-2": "Status",
 "0-0": "`VendorCredit.customForm`,  
 `VendorCredit.postingPeriod`",
-"0-1": "[Bill credit notes](/datamodel-accounting-billcreditnotes)",
+"0-1": "[Bill credit notes](/data-model/accounting/-billcreditnotes)",
 "0-2": "Not represented in Codat's accounting data model.",
 "1-0": "`Invoice.customForm`, `Invoice.postingPeriod`",
-"1-1": "[Invoices](/datamodel-accounting-invoices)",
+"1-1": "[Invoices](/data-model/accounting/-invoices)",
 "1-2": "Not represented in Codat's accounting data model.",
 "2-0": "`Vendor.subsidiary`",
-"2-1": "[Suppliers](/datamodel-accounting-suppliers)",
+"2-1": "[Suppliers](/data-model/accounting/-suppliers)",
 "2-2": "The Suppliers data type does not show whether or not a supplier company is a subsidiary.",
 "3-0": "`Vendor.workCalendar`",
-"3-1": "[Suppliers](/datamodel-accounting-suppliers)",
+"3-1": "[Suppliers](/data-model/accounting/-suppliers)",
 "3-2": "Not represented in Codat's accounting data model."
 },
 "cols": 3,

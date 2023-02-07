@@ -58,7 +58,7 @@ We recommend that you test your integration before sending Link URLs to customer
 
 1. Sign up for a free <a href="https://my.pandle.com/users/sign_up" target="_blank">Pandle account</a> as the business owner. You'll need to add a valid email address, and a VAT number in the correct format. For the rest of the registration form, you can enter dummy details if you choose to.
 2. When your account setup is complete, log in to Pandle, choose the free subscription plan, and create some data for your test company, for example, some invoices.
-3. Next, go to the Codat portal where you've enabled your integration and [create a test company](/portal-managing-companies#add-a-new-company).
+3. Next, go to the Codat portal where you've enabled your integration and [create a test company](/other/portal/companies#add-a-new-company).
 4. Find the Link URL for your test company. Next to the company name, select **Request data**.
 5. Use the Link URL to connect your Pandle account.
    - When Link opens, select _PANDLE_, and then select _Continue to Pandle_.

@@ -19,10 +19,10 @@ View the coverage of our Plaid integration in the <a className="external" href="
 
 The following banking data is available through the integration:
 
-- [Banking accounts](/datamodel-banking-banking-accounts)
-- [Banking account balances](/datamodel-banking-banking-account-balances)
-- [Banking transactions](/datamodel-banking-banking-transactions)
-- [Banking transaction categories](/datamodel-banking-banking-transaction-categories)
+- [Banking accounts](/data-model/banking/-banking-accounts)
+- [Banking account balances](/data-model/banking/-banking-account-balances)
+- [Banking transactions](/data-model/banking/-banking-transactions)
+- [Banking transaction categories](/data-model/banking/-banking-transaction-categories)
 
 :::info Supported financial institutions
 
@@ -40,7 +40,7 @@ The following table shows the Plaid Products required for each of Codat's bankin
 "h-1": "Associated Plaid product",
 "h-0": "Codat data type",
 "h-2": "Associated Plaid product",
-"1-0": "[Bank transactions](/datamodel-banking-banking-transactions)",
+"1-0": "[Bank transactions](/data-model/banking/-banking-transactions)",
 "1-1": "_ Transactions",
 "1-2": "",
 "0-0": "[Bank accounts](/data-model-banking-banking-accounts)",
@@ -51,9 +51,9 @@ The following table shows the Plaid Products required for each of Codat's bankin
   "0-2": "\* Auth
 - Identity
 - Institution",
-  "2-0": "[Bank account balances](/datamodel-banking-banking-account-balances)",
+  "2-0": "[Bank account balances](/data-model/banking/-banking-account-balances)",
   "2-1": "\* Asset Reports",
-  "3-0": "[Bank Transaction Categories](/datamodel-banking-banking-transaction-categories)",
+  "3-0": "[Bank Transaction Categories](/data-model/banking/-banking-transaction-categories)",
   "3-1": "N/A
 
 Categorization is provided by Codat, not using data from Plaid."

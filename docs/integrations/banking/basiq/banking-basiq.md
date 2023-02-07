@@ -19,9 +19,9 @@ View the coverage of our Basiq integration in the <a className="external" href="
 
 The following banking data is available through the integration:
 
-- [Banking accounts](/datamodel-banking-banking-accounts)
-- [Banking account balances](/datamodel-banking-banking-account-balances)
-- [Banking transactions](/datamodel-banking-banking-transactions)
-- [Banking transaction categories](/datamodel-banking-banking-transaction-categories)
+- [Banking accounts](/data-model/banking/-banking-accounts)
+- [Banking account balances](/data-model/banking/-banking-account-balances)
+- [Banking transactions](/data-model/banking/-banking-transactions)
+- [Banking transaction categories](/data-model/banking/-banking-transaction-categories)
   :::info Supported financial institutions
   You'll automatically gain access to any new financial institutions that Basiq adds to their platform.

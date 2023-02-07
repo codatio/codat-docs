@@ -20,7 +20,7 @@ article .markdown > ol > li {
 article .markdown > ol > li::before {
   content: counter(li-counter);
   color: var(--ifm-color-base);
-  background-color: var(--color-interface-10);
+  background-color: var(--token-secondary-bg-c-alt);
   font-weight: bold;
   border-radius: 50%;
   margin-right: 0.5em;

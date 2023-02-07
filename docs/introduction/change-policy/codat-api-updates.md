@@ -33,7 +33,7 @@ Changes to [platform keys](/platform-keys)",
 "0-2": "November 10, 2021 (extended from September 01, 2021)",
 "1-0": "July 14, 2021",
 "1-1": "`Deprecated`
-Requiring the status field when creating [Customer](/datamodel-accounting-customers) or [Supplier](/datamodel-accounting-suppliers) in QuickBooks Online",
+Requiring the status field when creating [Customer](/data-model/accounting/-customers) or [Supplier](/data-model/accounting/-suppliers) in QuickBooks Online",
 "1-2": "October 06, 2021",
 "2-0": "July 14, 2021",
 "2-1": "`Updated`
@@ -49,7 +49,7 @@ Deprecation of [alerts resolved endpoint](https://api.codat.io/swagger/index.htm
 "4-2": "October 06, 2021",
 "5-0": "August 11, 2021",
 "5-1": "`Deprecated`
-Deprecation of bill.PurchaseOrderRef and purchaseOrder.billRef objects from the accounting data model. Learn more about [Bills data model](/datamodel-accounting-bills).",
+Deprecation of bill.PurchaseOrderRef and purchaseOrder.billRef objects from the accounting data model. Learn more about [Bills data model](/data-model/accounting/-bills).",
 "5-2": "November 10, 2021",
 "6-0": "August 11, 2021",
 "6-1": "`Deprecated`
@@ -86,7 +86,7 @@ Removal of the 'Show Company Name Confirmation Page' toggle from Xero integratio
 **June 2021**
 
 - `Updated`: Page number will be required for [Paged endpoints](/pagination#request)
-- `Deprecated`: Removing the `type` field in our [TrackingCategories model](/datamodel-accounting-trackingcategories)
+- `Deprecated`: Removing the `type` field in our [TrackingCategories model](/data-model/accounting/-trackingcategories)
 - `Deprecated`: Removing [Company status](/company-statuses) field
 
 **May 2021**

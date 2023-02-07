@@ -5,6 +5,8 @@ createdAt: "2019-02-20T13:19:55.318Z"
 updatedAt: "2022-11-23T15:22:42.512Z"
 ---
 
+A 'data type' is a specific type of data, like an [invoice](/accounting-api#/schemas/Invoice).
+
 On the <a className="external" href="https://app.codat.io/settings/data-types" target="_blank">Data type settings</a> page in the Codat Portal, you can view current settings for each data type split by integration type, override the default sync settings, and specify the fetch frequency for refreshing datasets. You can also view `dataType` keys for each data type.
 
 You can also choose whether data is automatically pulled when a company is linked for the first time, using the **Fetch on first link** setting.
@@ -61,9 +63,16 @@ To manually trigger your data to be synchronized:
 2. Select the required company, then click **Refresh data**.
 
 You can also view **Pull history** and **Push history** to check the status of previous pull and push data syncs.
-
+<!-- 
 :::note Additional sync settings
 
 Some additional settings for the data type sync are available [via our API](https://docs.codat.io/reference/post_profile-syncsettings).
 
-:::
+::: -->
+
+---
+
+### Read next
+
+- Next concept: [Data status](/core-concepts/status)
+

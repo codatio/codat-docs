@@ -75,4 +75,4 @@ In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>:
 Data is only available for supported data types, for which you created test data.
 :::
 
-Now that you have tested the integration and reviewed sample data, you can [create your first live company](/portal-managing-companies#add-a-new-company).
+Now that you have tested the integration and reviewed sample data, you can [create your first live company](/other/portal/companies#add-a-new-company).

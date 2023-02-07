@@ -93,7 +93,7 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 ## Configure direct bank feeds
 
-To create a direct bank feed using Xero's Bank Feeds API, you push (`POST`) [Bank Transactions](/datamodel-accounting-banktransactions) via the Codat API. Bank transactions must be pushed in chronological order.
+To create a direct bank feed using Xero's Bank Feeds API, you push (`POST`) [Bank Transactions](/data-model/accounting/-banktransactions) via the Codat API. Bank transactions must be pushed in chronological order.
 
 To create direct bank feeds in Xero, you must have app partner status. Additionally, the Bank Feeds API must be enabled by Xero for your registered app. For more information, see the Bank Feeds API <a href="https://developer.xero.com/documentation/bank-feeds-api/overview" target="_blank">Overview</a> in the Xero Developer documentation.
 

@@ -14,7 +14,7 @@ updatedAt: "2022-11-18T11:48:00.917Z"
 
 ![](https://files.readme.io/2b27c1b-info_banner.png "info_banner.png")
 
-Codat’s accounting integrations allow you to pull up-to-date accounting data from your customers' accounting software as well as push data to their software. Please see our [Accounting data model](/datamodel-accounting) for details on the types of data you can pull and push.
+Codat’s accounting integrations allow you to pull up-to-date accounting data from your customers' accounting software as well as push data to their software. Please see our [Accounting data model](/data-model/accounting/) for details on the types of data you can pull and push.
 
 You can use [Codat's Sandbox integration](/integrations/accounting/sandbox) to start exploring the data you can work with, without any set up (other than enabling the integration).
 

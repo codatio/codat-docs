@@ -226,7 +226,8 @@ iframe {
 
 hr {
   border-bottom: 0;
-  margin: 30px 0 !important;
+  border-top: 1px solid var(--ifm-hr-background-color);
+  margin: 3em 0 !important;
 }
 
 .git-link svg {

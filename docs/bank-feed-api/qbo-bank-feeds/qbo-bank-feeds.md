@@ -22,7 +22,7 @@ Connecting to QuickBooks Online bank feeds through this integration is only supp
 
 ## Supported data types and operations
 
-Bank feeds are represented as streams of [Bank transactions](/datamodel-accounting-banktransactions) pushed to Codat in chronological order.
+Bank feeds are represented as streams of [Bank transactions](/data-model/accounting/-banktransactions) pushed to Codat in chronological order.
 
 :::caution Pushing historic and future bank feeds
 

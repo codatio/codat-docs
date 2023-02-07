@@ -164,7 +164,7 @@ If you have retained the connection URL from the previous step, simply open it i
 
 If you need to view the URL again, navigate to **Companies** in the <a href="https://app.codat.io/companies" target="_blank">Codat Portal</a>. Next, find the company you created for the customer, and click **Request data** next to the company name. Copy the Link URL and open it in the new tab.
 
-This opens Codat's authorization flow built using our Link <a href="/auth-flow" target="_blank">feature</a>.
+This opens Codat's authorization flow built using our Link <a href="/auth-flow/overview" target="_blank">feature</a>.
 
 <img
   src="https://files.readme.io/cdeee57-2022-11-21_20-09-48.png"
@@ -314,7 +314,7 @@ You can review our detailed instructions for setting up integrations like [Xero]
 
 Codat pulls a variety of data types from the source platforms, making it easy to suit the needs of your use case.
 
-With our [accounting integrations](/datamodel-accounting), you can pull financial statements, earning and spending detail, journal entries, tax details, and many more. Our [banking integrations](/datamodel-banking) provide you with banking transactions, accounts, and account balances. Finally, our [commerce integrations](/datamodel-commerce) can show you details of orders, customers, payments, products, and others.
+With our [accounting integrations](/data-model/accounting/), you can pull financial statements, earning and spending detail, journal entries, tax details, and many more. Our [banking integrations](/data-model/banking/) provide you with banking transactions, accounts, and account balances. Finally, our [commerce integrations](/data-model/commerce/) can show you details of orders, customers, payments, products, and others.
 
 ### Keen to customize the look and feel of the auth flow?
 

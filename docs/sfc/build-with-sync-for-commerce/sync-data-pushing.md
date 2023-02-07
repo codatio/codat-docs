@@ -17,9 +17,9 @@ All the endpoints mentioned in this guide are available in our <a href="https://
 
 1. After the merchant completes the data mapping configuration, push your merchant’s data to the data endpoint for the following data types:
 
-- [Orders](/datamodel-commerce-orders)
-- [Payments](/datamodel-commerce-payments)
-- [Transactions](/datamodel-commerce-transactions)
+- [Orders](/data-model/commerce/-orders)
+- [Payments](/data-model/commerce/-payments)
+- [Transactions](/data-model/commerce/-transactions)
 
 ```http
   POST /data/companies/{companyId}/sync/{dataType}",
