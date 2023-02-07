@@ -6,7 +6,10 @@ updatedAt: "2022-11-17T19:29:19.748Z"
 ---
 
 :::caution Removing non-reference data from webhook alerts body
+
 In line with industry standard security practices, we have removed personally identifiable information, such as `companyName`, from the body of our alert webhooks. This leaves only referential information, such as `companyId`, which can be looked up using our API.
+
+:::
 
 The following rules can be configured in the Codat Portal to alert you to events affecting your companies and data.
 
