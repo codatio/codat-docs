@@ -22,7 +22,7 @@ Connecting to QuickBooks Online bank feeds through this integration is only supp
 
 ## Supported data types and operations
 
-Bank feeds are represented as streams of [Bank transactions](/data-model/accounting/-banktransactions) pushed to Codat in chronological order.
+Bank feeds are represented as streams of [Bank transactions](/accounting-api#/schemas/BankTransactions) pushed to Codat in chronological order.
 
 :::caution Pushing historic and future bank feeds
 
@@ -31,9 +31,9 @@ Codat does not currently support pushing historic (backdated) or future (future-
 
 ## Setup overview
 
-1. See [Set up the QuickBooks Online Bank Feeds integration](/integrations/accounting/qbo-bank-feeds-setup) to learn how to set up and enable the integration.
-2. Your SMB users must [connect one or more bank accounts to QBO](/accounting-qbo-bank-feeds-smb-customer-steps) by using Link, Codat's authentication solution, to generate a one-time username and password for QBO authorization.
-3. You can then [push bank transactions to QuickBooks Online](/accounting-qbo-bank-feeds-push-bank-transactions) for connected accounts.
+1. See [Set up the QuickBooks Online Bank Feeds integration](/bank-feed-api/qbo-bank-feeds/bank-feed-qbo-bank-feeds-setup) to learn how to set up and enable the integration.
+2. Your SMB users must [connect one or more bank accounts to QBO](/bank-feed-api/qbo-bank-feeds/bank-feed-qbo-bank-feeds-smb-user) by using Link, Codat's authentication solution, to generate a one-time username and password for QBO authorization.
+3. You can then [push bank transactions to QuickBooks Online](/bank-feed-api/qbo-bank-feeds/bank-feed-qbo-bank-feeds-push-bank-transactions) for connected accounts.
 
 ## Other considerations
 
@@ -51,6 +51,6 @@ We recommend you customize the appearance of the QBO Bank Feeds Link site to inc
 
 You can upload your organization logo to Link on the <a className="external" href="https://app-integration.codat.io/settings/organization" target="_blank">Manage organization</a> page of the Codat Portal.
 
-You can also customize the colors and text used in the Link flow. For more information, see [Set up your company branding](/set-up-your-company-branding).
+You can also customize the colors and text used in the Link flow. For more information, see [Set up your company branding](/auth-flow/customize/branding).
 
-To provide your SMB users with additional guidance, you can also [add a custom callout](/bank-feed-qbo-bank-feeds-setup#add-a-custom-callout-to-the-link-site) to the QBO Bank Feeds Link site.
+To provide your SMB users with additional guidance, you can also [add a custom callout](/bank-feed-api/qbo-bank-feeds/bank-feed-qbo-bank-feeds-setup#add-a-custom-callout-to-the-link-site) to the QBO Bank Feeds Link site.
