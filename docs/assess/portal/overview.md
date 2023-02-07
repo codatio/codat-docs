@@ -7,7 +7,7 @@ updatedAt: "2022-11-03T09:22:59.470Z"
 
 Assess in the Portal leverages Codat APIs to produce features that serve data on the health of a business and provide insights required for making informed lending decisions. Assess consists of five sections: Profit and Loss, Balance Sheet, Commerce, Banking and Marketing.
 
-To benefit from all of the features of Assess, a company should be linked to accounting, banking and commerce data sources. Explore our [How to get started](/assess-how-to-get-started) guide.
+To benefit from all of the features of Assess, a company should be linked to accounting, banking and commerce data sources. Explore our [How to get started](/assess/get-started) guide.
 
 The categorized Profit and Loss, and Balance Sheet showcase the power of the [Categories](/categorization-of-accounts) feature which standardizes bespoke data across SMEs. After the data is standardized, meaningful insights and measurements are produced for financial performance.
 
@@ -103,7 +103,7 @@ The Balance Sheet page consists of a graph displaying selections for the categor
 
 The balance sheet statement provides the fully categorized statement over specified periods of time, for a specific company’s accounting connection.
 
-Check [Prerequisites](/assess-how-to-get-started#prerequisites) to make sure you have the required data types enabled.
+Check [Prerequisites](/assess/get-started#prerequisites) to make sure you have the required data types enabled.
 
 The **Data match** percentage displayed in the top right is a comparison of how closely the accounting data aligns with banking data.
 
