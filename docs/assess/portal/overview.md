@@ -7,7 +7,7 @@ updatedAt: "2022-11-03T09:22:59.470Z"
 
 Assess in the Portal leverages Codat APIs to produce features that serve data on the health of a business and provide insights required for making informed lending decisions. Assess consists of five sections: Profit and Loss, Balance Sheet, Commerce, Banking and Marketing.
 
-To benefit from all of the features of Assess, a company should be linked to accounting, banking and commerce data sources. Explore our [How to get started](/assess-how-to-get-started) guide.
+To benefit from all of the features of Assess, a company should be linked to accounting, banking and commerce data sources. Explore our [How to get started](/assess/get-started) guide.
 
 The categorized Profit and Loss, and Balance Sheet showcase the power of the [Categories](/categorization-of-accounts) feature which standardizes bespoke data across SMEs. After the data is standardized, meaningful insights and measurements are produced for financial performance.
 
@@ -103,7 +103,7 @@ The Balance Sheet page consists of a graph displaying selections for the categor
 
 The balance sheet statement provides the fully categorized statement over specified periods of time, for a specific company’s accounting connection.
 
-Check [Prerequisites](/assess-how-to-get-started#prerequisites) to make sure you have the required data types enabled.
+Check [Prerequisites](/assess/get-started#prerequisites) to make sure you have the required data types enabled.
 
 The **Data match** percentage displayed in the top right is a comparison of how closely the accounting data aligns with banking data.
 
@@ -217,7 +217,7 @@ The _balance_ and the _Account limits_ displayed are aggregate views for the sel
 
 This graph displays when chosen in the _Select graph_ dropdown. Hovering over the graph displays a tooltip containing the total account balance for the selected bank accounts.
 
-The graph is produced from responses from the [Banking account balances](/assess-banking-account-balances) and [Banking transactions](/data-model-banking-banking-transactions) a endpoints.
+The graph is produced from responses from the [Banking account balances](/assess-banking-account-balances) and [Banking transactions](/data-model/banking-banking-transactions) a endpoints.
 
 Refer to the [formulas](/docs/assess-banking#banking-formulas) for more information about how current balances are calculated for each month.
 
@@ -227,7 +227,7 @@ Refer to the [formulas](/docs/assess-banking#banking-formulas) for more informat
 
 This graph displays when chosen in the _Select graph_ dropdown. Hovering over the graph displays a tooltip containing the total inflows and outflows for the selected bank accounts for that month.
 
-The graph is produced from the [Banking transactions](/data-model-banking-banking-transactions) endpoint response.
+The graph is produced from the [Banking transactions](/data-model/banking-banking-transactions) endpoint response.
 
 ![A bar graph showing inflows vs outflows based on selection criteria](https://files.readme.io/2a880ed-Inflows_1.png)
 
