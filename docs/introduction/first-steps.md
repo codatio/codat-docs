@@ -37,13 +37,13 @@ You can perform each step in the Codat Portal or using our API.
 
 ## Developer prerequisites
 
-If you are a developer and want to work with Codat using our <a href="https://codat-docs.vercel.app/codat-api#/" target="_blank">API Reference</a> or by making calls to our API in code, you first need to authenticate.
+If you are a developer and want to work with Codat using our <a className="external" href="/codat-api#/" target="_blank">API Reference</a> or by making calls to our API in code, you first need to authenticate.
 
 <details>
   <summary><b>Authenticate with Codat's API</b></summary>
 
 :::caution Viewing auth headers
-Authorization headers can only be viewed and copied by users with Administrator or Developer <a href="https://codat-docs.vercel.app/other/user-management/user-roles" target="_blank">roles</a>.
+Authorization headers can only be viewed and copied by users with Administrator or Developer <a href="/other/user-management/user-roles" target="_blank">roles</a>.
 :::
 
 Codat uses API keys, Base64 encoded within an authorization header, to control access to the API. To copy your authorization header, navigate to **Developers > API keys** in the <a href="https://app.codat.io/developers/api-keys" target="_blank">Codat Portal</a>.
@@ -92,7 +92,7 @@ var codatApiClient = axios.create({
 });
 ```
 
-You can read more about <a href="https://codat-docs.vercel.app/using-the-api/authentication" target="_blank">authentication at Codat</a>, or proceed to create your first company.
+You can read more about <a href="/using-the-api/authentication" target="_blank">authentication at Codat</a>, or proceed to create your first company.
 
 </details>
 
@@ -158,7 +158,7 @@ The endpoint returns a JSON response, confirming the unique `id` of the company 
 
 Retain the `id` and `redirect` URL for use in the next steps.
 
-You can also use the <a href="https://codat-docs.vercel.app/codat-api#/operations/create-company" target="_blank"><i>Create company</i></a> endpoint in our API reference to try this out.
+You can also use the <a href="/codat-api#/operations/create-company" target="_blank"><i>Create company</i></a> endpoint in our API reference to try this out.
 
 </details>
 
@@ -193,7 +193,7 @@ Pick up the `redirect` URL returned in the response body of the company creation
 
 Follow the flow to connect to the Codat Sandbox as your source of accounting, commerce, and banking data. You don't need to enter any credentials.
 
-Once the flow is complete, you can verify the company's status under the <a href="https://codat-docs.vercel.app/codat-api#/operations/get-companies-companyId" target="_blank"><i>View a single company</i></a> endpoint.
+Once the flow is complete, you can verify the company's status under the <a href="/codat-api#/operations/get-companies-companyId" target="_blank"><i>View a single company</i></a> endpoint.
 
 Remember to replace `{companyId}` with your company `id` obtained previously.
 
@@ -226,7 +226,7 @@ codatApiClient
 
 In the JSON response, you can see that the the `status` of data connections changed to **linked**.
 
-On first connection, Codat pulls data from the data source immediately. You can also use the <a href="https://codat-docs.vercel.app/codat-api#/operations/get-companies-companyId-dataStatus" target="_blank"><i>Get company data status</i></a> endpoint to confirm the sync was successful.
+On first connection, Codat pulls data from the data source immediately. You can also use the <a href="/codat-api#/operations/get-companies-companyId-dataStatus" target="_blank"><i>Get company data status</i></a> endpoint to confirm the sync was successful.
 
 </details>
 
@@ -262,7 +262,7 @@ Developers can also use the Portal to review how Codat polled for a specific dat
 
 Codat provides various endpoints for you to query each of the supported data types easily.
 
-For example, to query invoices, use the <a href="https://codat-docs.vercel.app/accounting-api#/operations/list-invoices" target="_blank"><i>All invoices</i></a> endpoint. You can perform filtering on the response data using querying. In this guide, we are using `page` and `pageSize` parameters to pull ten invoices for the company we created earlier.
+For example, to query invoices, use the <a href="/accounting-api#/operations/list-invoices" target="_blank"><i>All invoices</i></a> endpoint. You can perform filtering on the response data using querying. In this guide, we are using `page` and `pageSize` parameters to pull ten invoices for the company we created earlier.
 
 Remember to replace `{companyId}` with your company `id` obtained previously.
 
@@ -320,22 +320,22 @@ Codat enables you to connect to over 30 different accounting, banking, and comme
 
 Navigate to **Settings > Integrations** in the Portal. Choose the integration type, find the platform you need, and set it up. Once you've enabled the platform, create a data connection to it, as you have done with the Sandbox earlier. You will need valid credentials for the platform you are trying to link.
 
-You can review our detailed instructions for setting up integrations like [Xero](https://codat-docs.vercel.app/integrations/accounting/xero/accounting-xero), [QuickBooks Online](https://codat-docs.vercel.app/integrations/accounting/quickbooksonline/accounting-quickbooksonline), [PayPal](https://codat-docs.vercel.app/integrations/commerce/paypal/commerce-paypal), [Plaid](https://codat-docs.vercel.app/integrations/banking/plaid/banking-plaid), and many more.
+You can review our detailed instructions for setting up integrations like [Xero](/integrations/accounting/xero/accounting-xero), [QuickBooks Online](/integrations/accounting/quickbooksonline/accounting-quickbooksonline), [PayPal](/integrations/commerce/paypal/commerce-paypal), [Plaid](/integrations/banking/plaid/banking-plaid), and many more.
 
 ### Curious about what other data Codat can provide you with?
 
 Codat pulls a variety of data types from the source platforms, making it easy to suit the needs of your use case.
 
-With our [accounting integrations](https://codat-docs.vercel.app/accounting-api#/), you can pull financial statements, earning and spending detail, journal entries, tax details, and many more. Our [banking integrations](https://codat-docs.vercel.app/banking-api#/) provide you with banking transactions, accounts, and account balances. Finally, our [commerce integrations](https://codat-docs.vercel.app/commerce-api#/) can show you details of orders, customers, payments, products, and others.
+With our [accounting integrations](/accounting-api#/), you can pull financial statements, earning and spending detail, journal entries, tax details, and many more. Our [banking integrations](/banking-api#/) provide you with banking transactions, accounts, and account balances. Finally, our [commerce integrations](/commerce-api#/) can show you details of orders, customers, payments, products, and others.
 
 ### Keen to customize the look and feel of the auth flow?
 
-Colors, logos, and icons of Codat's authorization flow [can be changed](https://codat-docs.vercel.app/auth-flow/customize/branding) for a bespoke experience. Navigate to **Settings > Auth flow > Branding** in the Codat Portal and adjust to fit the flow to your brand's palette.
+Colors, logos, and icons of Codat's authorization flow [can be changed](/auth-flow/customize/branding) for a bespoke experience. Navigate to **Settings > Auth flow > Branding** in the Codat Portal and adjust to fit the flow to your brand's palette.
 
-Then, use the Link URL of the company you created earlier to review your customer's experience with the flow. You can even take the customization [one step further](https://codat-docs.vercel.app/auth-flow/customize/customize-link) and amend the accompanying text and behaviors.
+Then, use the Link URL of the company you created earlier to review your customer's experience with the flow. You can even take the customization [one step further](/auth-flow/customize/customize-link) and amend the accompanying text and behaviors.
 
 ### Want to migrate your existing integration to Codat?
 
 If you already have an OAuth application with one of our supported integrations, you can seamlessly migrate your customers' connections — without your customers needing to reconnect.
 
-You can choose a self-service token migration, or engage us for a managed migration. [Choose the option](https://codat-docs.vercel.app/introduction/migration) that best suits your use case.
+You can choose a self-service token migration, or engage us for a managed migration. [Choose the option](/introduction/migration) that best suits your use case.
