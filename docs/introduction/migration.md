@@ -5,7 +5,7 @@ createdAt: "2020-08-26T13:23:10.920Z"
 updatedAt: "2022-11-25T13:10:30.057Z"
 ---
 
-If you're new to Codat but have already built and use an OAuth application with one of our supported integrations, you're in the right place. Codat's token migration process allows you to seamlessly migrate your customers' connections from a self-managed integration to Codat—without your customers needing to reconnect.
+If you're new to Codat but have already built and use an OAuth application with one of our supported integrations, you're in the right place. Codat's token migration process allows you to seamlessly migrate your customers' connections from a self-managed integration to Codat — without your customers needing to reconnect.
 
 This page describes the information we'll need from you, and provides an overview of the migration process.
 
@@ -39,7 +39,7 @@ _Fetch on first link_ isn't supported when performing self-service token migrati
 
 ## Managed migrations
 
-For other platforms where we do not yet support the self service migration route, or if you have special considerations or concerns, Codat's solutions team offer a managed migration pathway.
+For other platforms where we do not yet support the self service migration route, or if you have special considerations or concerns, Codat's solutions team offers a managed migration pathway.
 
 :::note Supported integrations
 
@@ -53,7 +53,7 @@ You need to supply:
 - A spreadsheet - `.xls` or `.csv` file - that includes names of the companies that Codat need to migrate, and their token details.
 - Secure credentials for your application, for example, client ID and client secret.
 
-The exact details of tokens and credentials varies between different platforms; please contact your solutions engineer or our [support team](mailto:support@codat.io) to discuss the specific details requirements for your migration.
+The exact details of tokens and credentials varies between different platforms. Please contact your solutions engineer or our [support team](mailto:support@codat.io) to discuss the specific details requirements for your migration.
 
 The migration process usually involves the following steps. We recommend that you don’t start migration until you've set up the integration in Codat, and done some initial testing.
 
