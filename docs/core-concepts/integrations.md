@@ -7,21 +7,21 @@ updatedAt: "2022-10-04T13:56:20.766Z"
 
 In Codat, an integration represents a third-party data source that you can connect a [company](/core-concepts/companies) to (using a [data connection](/core-concepts/connections)) so that you can access that company's business data.
 
-We currently support four types of integration, each enabling access to different types of business data: [accounting](/accounting/overview), [banking](/banking/overview), [commerce](/commerce/overview) integrations, and file upload integrations.
+We currently support four types of integration, each enabling access to different types of business data: [accounting](/accounting-api/overview), [banking](/banking-api/overview), [commerce](/commerce-api/overview) integrations, and file upload integrations.
 
 [Explore integration coverage](https://knowledge.codat.io/supported-features/accounting).
 
 ## Accounting
 
-Codat’s [accounting integrations](/accounting/overview) allow you to easily pull up-to-date accounting data from your customers' accounting software as well as push data to their software using Codat's standard [accounting data model](/data-model/accounting/).
+Codat’s [accounting integrations](/accounting-api/overview) allow you to easily pull up-to-date accounting data from your customers' accounting software as well as push data to their software using Codat's standard [accounting data model](/data-model/accounting/).
 
 ## Banking
 
-Codat’s [banking integrations](/banking/overview) allow you to easily pull up-to-date account and transaction data from your customers' banks using Codat's standard [banking data model](/data-model-banking).
+Codat’s [banking integrations](/banking-api/overview) allow you to easily pull up-to-date account and transaction data from your customers' banks using Codat's standard [banking data model](/data-model/banking).
 
 ## Commerce
 
-Codat’s [commerce integrations](/commerce/overview) allow you to easily pull up-to-date ecommerce, payment and point-of-sale data from your customers' commerce software using Codat's standard [commerce data model](/data-model/commerce/).
+Codat’s [commerce integrations](/commerce-api/overview) allow you to easily pull up-to-date ecommerce, payment and point-of-sale data from your customers' commerce software using Codat's standard [commerce data model](/data-model/commerce/).
 
 ## File upload
 
@@ -29,7 +29,7 @@ Codat's [file upload integrations](/other/file-upload) allow your customers to s
 
 ---
 
-### Read next
+## Read next
 
 - Next concept: [Data type settings](/core-concepts/data-type-settings)
 - [Explore integration coverage](https://knowledge.codat.io/supported-features/accounting)

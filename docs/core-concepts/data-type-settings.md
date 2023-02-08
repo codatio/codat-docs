@@ -72,7 +72,7 @@ Some additional settings for the data type sync are available [via our API](http
 
 ---
 
-### Read next
+## Read next
 
 - Next concept: [Data status](/core-concepts/status)
 

@@ -29,4 +29,4 @@ The following commerce data types are available via Codat's API:
 
 ## Integrations setup
 
-For full instructions on how to set up an integration for a specific commerce platform see the [Commerce integrations](/commerce/overview) section.
+For full instructions on how to set up an integration for a specific commerce platform see the [Commerce integrations](/commerce-api/overview) section.
