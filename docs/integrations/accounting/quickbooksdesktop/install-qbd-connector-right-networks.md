@@ -94,17 +94,15 @@ Your SMB customer does the following:
 
 2. In Link, they select the **Intuit QuickBooks Desktop / Pro** tile.
 
-   ![Select your accounting software](https://files.readme.io/96cef1f-qbd-right-networks-link-flow-select-qbd-accounting-software.png "Select your accounting software")
+   ![Select your accounting software](/img/old/96cef1f-qbd-right-networks-link-flow-select-qbd-accounting-software.png "Select your accounting software")
 
 3. On the **How do you use QuickBooks Desktop?** step, they select the second option:
 
    **I'm accessing QuickBooks Desktop hosted in the cloud by Right Networks, including QuickBooks Desktop Enterprise with cloud access**.
 
-   ![How do you use QuickBooks Desktop](https://files.readme.io/935b7a6-connect-to-qbd-right-networks-option-selected.png "How do you use QuickBooks Desktop?")
-
 4. The **Connection steps** dialog is displayed, containing instructions for your SMB customers to request installation of the connector App and access their license key.
 
-   ![Connection steps](https://files.readme.io/6074fa3-right-networks-dialog-connection-steps-new.png "Connection steps")
+   ![Connection steps](/img/old/6074fa3-right-networks-dialog-connection-steps-new.png "Connection steps")
 
 5. Finally, they copy their license key from the **License key** box to use in the next procedure.
 
@@ -125,7 +123,7 @@ Next, your SMB customer does the following:
 
 3. Enters their license key from Link into the **License Key** box (see step 5 of the previous task), then clicks **Next**.
 
-<img src="https://files.readme.io/c57bf3e-qbd-connector-setup-wizard-add-company-license-details.png" />
+<img src="/img/old/c57bf3e-qbd-connector-setup-wizard-add-company-license-details.png" />
 
 4. To finish installing the connector, they must follow the steps in the **Setup Connection** and **Verify Connection** steps of the wizard. For more details, see procedures 3–5 in [Install the QuickBooks Desktop connector](/installing-the-quickbooks-connector).
 

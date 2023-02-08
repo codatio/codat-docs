@@ -33,7 +33,7 @@ You can add a custom text callout to the QBO Bank Feeds Link site to provide add
 
 The callout will be displayed at the bottom of the QBO Bank Feeds Link site. For example:
 
-![QBO Bank Feeds Link site showing custom callout text above the "Get credentials" button.](https://files.readme.io/b822e27-qbo-bank-feeds_link-site-callout-text.png)
+![QBO Bank Feeds Link site showing custom callout text above the "Get credentials" button.](/img/old/b822e27-qbo-bank-feeds_link-site-callout-text.png)
 
 ## Add a "Connect bank feeds" button to your application
 

@@ -52,7 +52,7 @@ To register your Zoho Books application.
    - Copy the **Client ID** and **Client Secret** to a Word document or similar.
 6. Select the **Settings** tab and enable any of the listed regions where your customers are based.
 
-<img src="https://files.readme.io/da47829-Zoho_Books_Settings.png" />
+<img src="/img/old/da47829-Zoho_Books_Settings.png" />
 
 7. Select the **Use the same OAuth credentials for all data centers** checkbox.  
    Your settings are saved automatically, and a confirmation message is displayed.

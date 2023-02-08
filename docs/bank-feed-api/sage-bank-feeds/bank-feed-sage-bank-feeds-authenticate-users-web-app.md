@@ -30,7 +30,7 @@ First, configure the Sage Bank Feeds integration to use your web app's URL as th
 
 3. Enter the URL of your custom web app as the **Authorization redirect URL**. For example:
 
-   ![Auth URL](https://files.readme.io/ef4ab16-sage-bank-feeds_integration-settings-page-auth-url.png "Custom authorization redirect URL entered on the Integration settings page for Sage Bank Feeds.")
+   ![Auth URL](/img/old/ef4ab16-sage-bank-feeds_integration-settings-page-auth-url.png "Custom authorization redirect URL entered on the Integration settings page for Sage Bank Feeds.")
 
 4. Click **Save**.
 
@@ -93,7 +93,7 @@ There are two authentication flows between Sage, Codat's Sage Bank Feeds integra
 
 3. If the SMB user was successfully authenticated with Codat, Sage displays a dialog listing the available source bank accounts&mdash;the bank account in your application that will send bank feeds. For example:
 
-   ![Sage account selection screen](https://files.readme.io/f73be1e-redirect_screen.PNG "Sage dialog listing the available source bank accounts")
+   ![Sage account selection screen](/img/old/f73be1e-redirect_screen.PNG "Sage dialog listing the available source bank accounts")
 
 4. The SMB user selects the bank account they want to use, then clicks **OK**.
 

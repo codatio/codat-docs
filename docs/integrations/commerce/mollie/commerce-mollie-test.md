@@ -51,7 +51,7 @@ Test the authentication process that your customers will use when they connect t
    You’ll need to:
 
 6. Select **Mollie Test** as the commerce software to connect.
-   <img src="https://files.readme.io/19b0bff-36001_Mollie_-_selection.PNG" />
+   <img src="/img/old/19b0bff-36001_Mollie_-_selection.PNG" />
 7. Sign in to your Mollie merchant account if prompted.
 8. Authorize access to the requested Mollie data types.
 9. The **Connection Successful** page in Link is displayed with the message: "You have connected Mollie Test."
@@ -61,7 +61,7 @@ Test the authentication process that your customers will use when they connect t
 
 Make sure that test commerce data from Mollie is pulled successfully into Codat. You can check what test data you have created by enabling the Test Mode toggle in the Mollie Dashboard.
 
-<img src="https://files.readme.io/762109c-36001_Mollie_-_test_toggle.PNG" />
+<img src="/img/old/762109c-36001_Mollie_-_test_toggle.PNG" />
 
 In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>:
 

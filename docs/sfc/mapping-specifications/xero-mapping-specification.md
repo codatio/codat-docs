@@ -131,7 +131,7 @@ Payment accounts contain cash. This is in contrast to all the accounts discussed
 Codat supports either bank accounts or current accounts for **Payments**. They should be of a nominal type **Asset** or **Liability** and have an **Enable payments to this account** setting turned on:
 
 <img
-  src="https://files.readme.io/5695d53-payments-setting.png"
+  src="/img/old/5695d53-payments-setting.png"
   alt="Account settings screen in Xero"
 />
 

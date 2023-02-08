@@ -112,7 +112,7 @@ Payment accounts contain cash. This is in contrast to all the accounts discussed
 Codat supports either bank accounts or current accounts for payment accounts. They should be of a QBO nominal type **Cash at bank and in hand** (**Asset**).
 
 <img
-  src="https://files.readme.io/d91d4ee-cash_at_bank.png"
+  src="/img/old/d91d4ee-cash_at_bank.png"
   alt="Account settings screen for payment accounts in QBO"
 />
 

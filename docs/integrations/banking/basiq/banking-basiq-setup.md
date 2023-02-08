@@ -21,7 +21,7 @@ You'll need to:
 3. Give your permission set a name, and select to enable all the options under "Enrich", "Institutions", "Jobs", "Accounts", "Connections", "Transactions", "Users", "Config" & "Policies". Make sure to scroll to the bottom and save your changes.
 4. Next, you can customize the UI that Basiq will show to your users when they connect. From the left hand menu go to the "Customize UI" section. On the right hand screen, you _must_ enter the redirect URL of `http://basiq.codat.io/oauth/callback` as shown below. You can customize the rest of the options in any way you choose.
 
-![](https://files.readme.io/5196747-Basiq_oauth_screenshot.png "Basiq oauth screenshot.png")
+![](/img/old/5196747-Basiq_oauth_screenshot.png "Basiq oauth screenshot.png")
 
 ## Create your API key and enable your integration in Codat
 

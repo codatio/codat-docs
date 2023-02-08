@@ -6,7 +6,7 @@ createdAt: "2022-04-11T16:43:22.429Z"
 updatedAt: "2022-11-17T00:11:12.411Z"
 ---
 
-![](https://files.readme.io/f0c6d43-73D1AFFF-6E41-47F3-8E25-BB20DA16C754.jpeg "73D1AFFF-6E41-47F3-8E25-BB20DA16C754.jpeg")
+![](/img/old/f0c6d43-73D1AFFF-6E41-47F3-8E25-BB20DA16C754.jpeg "73D1AFFF-6E41-47F3-8E25-BB20DA16C754.jpeg")
 
 **Assess helps you make smarter credit decisions on small businesses by enabling your customers to pull the latest data from the operating systems they are already using.**
 

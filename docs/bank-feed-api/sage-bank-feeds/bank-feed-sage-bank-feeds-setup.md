@@ -39,7 +39,7 @@ You can add a call-to-action link to a web page containing more information. Thi
 
 The call-to-action link will appear below the **Connection ID** box in the default Codat authentication site, for example:
 
-![Screenshot](https://files.readme.io/55b90cb-sage-bank-feeds-call-to-action-link.png "Example of a call-to-action link under the Connection ID entry box. The link text reads: Click here to obtain your Connection ID.")
+![Screenshot](/img/old/55b90cb-sage-bank-feeds-call-to-action-link.png "Example of a call-to-action link under the Connection ID entry box. The link text reads: Click here to obtain your Connection ID.")
 
 To add a call-to-action-link:
 
@@ -160,13 +160,13 @@ Alternatively, you can [authenticate users through your own web app](/bank-feed-
 
 3. The default Codat authentication site is loaded in a new browser tab:
 
-   ![Default Codat authentication UI - Connect your bank account to Sage](https://files.readme.io/bc09b4a-sage-bank-feeds_default-auth-UI-revised-wording.png)
+   ![Default Codat authentication UI - Connect your bank account to Sage](/img/old/bc09b4a-sage-bank-feeds_default-auth-UI-revised-wording.png)
 
 4. They enter their data connection ID in the **Connection ID** box, then click **Submit**.
 
 5. If the SMB user was authenticated with Codat successfully, a dialog listing the available source bank accounts (created using the `PUT / bankFeedAccounts` endpoint) is displayed. For example:
 
-   ![Sage account selection](https://files.readme.io/7ef73f0-sbs-select-source-bank-account-multiple.png "Redirect to account selection page. Select the bank account that you want to use")
+   ![Sage account selection](/img/old/7ef73f0-sbs-select-source-bank-account-multiple.png "Redirect to account selection page. Select the bank account that you want to use")
 
 6. The SMB user selects the bank account they want to connect, then clicks **OK**.
 

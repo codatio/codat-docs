@@ -38,7 +38,7 @@ Create a test company in the Codat Portal and connect it to your demo Xero compa
 
 5. You might be asked to select an organization. Select the demo company you created in the preceding task, then click **Allow access**.
 
-<img src="https://files.readme.io/658ee87-Xero-Authorize.png" />
+<img src="/img/old/658ee87-Xero-Authorize.png" />
 
 6. When you've completed all the steps in Link, you can close the browser tab or window.
 

@@ -54,7 +54,7 @@ Your SMB customer performs the following steps:
 
    The **Your Chargebee credentials** page is displayed.
 
-   ![Your Chargebee credentials](https://files.readme.io/678461b-your-chargebee-credentials-final-masked.png "The Your Chargebee credentials page")
+   ![Your Chargebee credentials](/img/old/678461b-your-chargebee-credentials-final-masked.png "The Your Chargebee credentials page")
 
 4. Opens a new browser tab and signs in to their Chargebee account.
 

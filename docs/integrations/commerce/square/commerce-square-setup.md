@@ -18,7 +18,7 @@ Two Square integrations are available in the Codat Portal:
 
 You set the environment on a per-application basis using the **Sandbox** and **Production** buttons in an application's configuration settings. These buttons are located at the top of every page in an application's settings:
 
-<img src="https://files.readme.io/77b4e8a-square-sandbox-test-app.png" />
+<img src="/img/old/77b4e8a-square-sandbox-test-app.png" />
 
 An application's credentials are different depending on whether the Square Sandbox or production is enabled for the application. To enable full production access for an application, you must first activate your Square account.
 

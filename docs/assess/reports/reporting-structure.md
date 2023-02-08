@@ -22,7 +22,7 @@ Assess reports follow a consistent structure. Reports contain four sections of i
 
 Reports can be rendered as follows (ordering is implicit rather than explicit):
 
-![A table showing an example of how a report can be rendered](https://files.readme.io/1fa20ca-Report1.png)
+![A table showing an example of how a report can be rendered](/img/old/1fa20ca-Report1.png)
 
 # Data model
 

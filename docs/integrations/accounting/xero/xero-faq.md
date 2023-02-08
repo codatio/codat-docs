@@ -23,7 +23,7 @@ Follow our guide [here](/xero-app-partner-program).
 5. Then, to create a direct Bank Feed using Xero's Bank Feeds API, you must POST [Bank Transactions](/data-model/accounting/-banktransactions).
 6. When successfully pushed to Xero, the bank transactions will appear in the 'Bank Statements' section for the bank account in the Xero UI, with the source 'Bank Feed' as below:
 
-<img src="https://files.readme.io/2530dce-bankFeedsDocs.PNG" />
+<img src="/img/old/2530dce-bankFeedsDocs.PNG" />
 
 :::info Bank Feeds vs Account Transactions
 Note that the Codat API does not support pushing Xero 'Account Transactions'. Account transaction are reconciled with statement lines from direct Bank Feeds and can be created / matched in the Xero UI.
@@ -77,7 +77,7 @@ The **Payee** in Xero is pulled to Codat as the `counterparty` of the Bank trans
 
 For example, the **Statement line** below will result in a bank statement line with a `counterparty` of `Payee 3` and a `description` with the value: `Description 3 Reference 3 3`.
 
-<img src="https://files.readme.io/d1325a1-xero-bank-statement-46713.png" />
+<img src="/img/old/d1325a1-xero-bank-statement-46713.png" />
 
 ## Can I push batch payments to Xero?
 

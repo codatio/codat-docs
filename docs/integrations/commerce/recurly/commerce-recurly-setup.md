@@ -54,7 +54,7 @@ Your SMB customer performs the following steps:
 
    The **Your Recurly API key** page is displayed.
 
-   ![Your Recurly API key](https://files.readme.io/3df665f-your-recurly-api-key-masked.png "The Your Recurly API key page")
+   ![Your Recurly API key](/img/old/3df665f-your-recurly-api-key-masked.png "The Your Recurly API key page")
 
 4. Opens a new browser tab, visits <a className="external" href="https://app.recurly.com/" target="_blank">app.recurly.com</a>, and signs in to their Recurly account.
 

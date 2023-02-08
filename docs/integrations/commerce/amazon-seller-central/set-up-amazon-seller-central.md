@@ -20,7 +20,7 @@ Before you begin, you will need to have completed all of the prerequisite setup 
 
 - These are the credentials visible on the page on the below screenshot\*
 
-![](https://files.readme.io/43ea65f-ASC.png "ASC.png")
+![](/img/old/43ea65f-ASC.png "ASC.png")
 
 6. Copy the AWS Access Key and Secret Access Key from the relevant IAM User Profile and paste into AWS access key and AWS secret access key fields in the Codat Portal.
    - This includes the key you downloaded when [creating your IAM User](/amazon-registration-steps)

@@ -26,7 +26,7 @@ Other error states may be resolved by queueing a new synchronization after waiti
 Datasets can also transition to the _NotSupported_ state if the dataset you are trying to sync is not supported by the linked platform.
 
 <img
-  src="https://files.readme.io/47eaf22-DatasetStatuses.png"
+  src="/img/old/47eaf22-DatasetStatuses.png"
   alt="A diagram of possible dataset statuses from Queued to Complete"
 />
 

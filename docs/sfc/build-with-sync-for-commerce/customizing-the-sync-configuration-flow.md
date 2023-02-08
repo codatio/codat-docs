@@ -26,35 +26,35 @@ You can customize every bit of text in the Sync configuration flow.
 1. [Main title](/customizing-the-sync-configuration-flow#main-title)
 
 <img
-  src="https://files.readme.io/1e4761e-Main_title.png"
+  src="/img/old/1e4761e-Main_title.png"
   alt="Main title section of the Sync configuration flow"
 />
 
 2. [Checkbox captions](/customizing-the-sync-configuration-flow#checkbox-captions)
 
 <img
-  src="https://files.readme.io/bd64beb-Checkbox_items.png"
+  src="/img/old/bd64beb-Checkbox_items.png"
   alt="Checkbox section section of the Sync configuration flow"
 />
 
 3. [Text on the **Previous** and **Next** buttons](/customizing-the-sync-configuration-flow#buttons)
 
 <img
-  src="https://files.readme.io/e41eb47-Buttons.png"
+  src="/img/old/e41eb47-Buttons.png"
   alt="Move buttons section of the Sync configuration flow"
 />
 
 4. Feature title, feature description, and required field indicator description ([Sales](/customizing-the-sync-configuration-flow#sales-title-and-description), [Fees](/customizing-the-sync-configuration-flow#fees-title-and-description), [Payments](/customizing-the-sync-configuration-flow#payments-title-and-description))
 
 <img
-  src="https://files.readme.io/9c0450e-Feature_title.png"
+  src="/img/old/9c0450e-Feature_title.png"
   alt="Feature text section of the Sync configuration flow"
 />
 
 5. Feature categories title, feature categories title description, and feature categories ([Sales](/customizing-the-sync-configuration-flow#sales-feature-categories), [Fees](/customizing-the-sync-configuration-flow#fees-feature-categories), [Payments](/customizing-the-sync-configuration-flow#payments-feature-categories))
 
 <img
-  src="https://files.readme.io/858fd2e-Feature_categories.png"
+  src="/img/old/858fd2e-Feature_categories.png"
   alt="Feature categories text section of the Sync configuration flow"
 />
 

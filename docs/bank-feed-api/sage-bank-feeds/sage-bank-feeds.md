@@ -15,7 +15,7 @@ Our Sage Bank Feeds integration is currently in beta. You can provide feedback o
 
 With our Sage Bank Feeds integration, you can enable a Sage user to set up a bank feed from a bank account in your application (the source account) to an account in a supported Sage product (the target account). You can then push [Bank transactions](/accounting-api#/schemas/BankTransactions) from the source account to the target account.
 
-![screenshot](https://files.readme.io/4185821-sage-bank-feeds-flowchart-test-white-border-wider.png "Pushing Bank transactions from a source to a target bank account.")
+![screenshot](/img/old/4185821-sage-bank-feeds-flowchart-test-white-border-wider.png "Pushing Bank transactions from a source to a target bank account.")
 
 With access to bank feeds, your customers can more easily reconcile bank transactions against accounting entries, like invoices and bills.
 
