@@ -23,7 +23,7 @@ You can then update bank account details as needed.
 Complete the following prerequisites before setting up the Sage Bank Feeds integration.
 
 - You have access to a Testing Client for your Codat instance. Testing Clients are only available on Enterprise plans.
-- The Bank accounts and Bank transactions data types are enabled in your [Data type settings](/data-sync-settings).
+- The Bank accounts and Bank transactions data types are enabled in your [Data type settings](/core-concepts/data-type-settings).
 
 For help with these prerequisites, contact your Solutions Engineer or Codat Support.
 
@@ -104,8 +104,9 @@ To upload a logo, go to the <a className="external" href="https://app.codat.io/s
    ```
 
    :::caution Do not send the Link URL
-
-   > Do _not_ send the `linkUrl` property to the SMB user. Unlike other Codat integrations, Company authentication is initiated within Sage as described in "SMB user flow: Connect a source bank account to Sage", below.
+   
+   Do _not_ send the `linkUrl` property to the SMB user. Unlike other Codat integrations, Company authentication is initiated within Sage as described in "SMB user flow: Connect a source bank account to Sage", below.
+   :::
 
 3. Using <a className="external" href="https://api.codat.io/swagger/index.html#/Connection/put_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts"  target="_blank">PUT / bankFeedAccounts</a>, add one or more source bank accounts to make available to the SMB user.
 
@@ -211,4 +212,4 @@ The endpoint returns a `200` code and the updated bank account details. For exam
 
 ## Next steps
 
-Next you can [push bank transactions from a source bank account](/accounting-sage-bank-feeds-use#push-bank-transactions-from-a-source-bank-account).
+Next you can [push bank transactions from a source bank account](/bank-feed-api/sage-bank-feeds/bank-feed-sage-bank-feeds-use).
