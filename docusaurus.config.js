@@ -295,6 +295,7 @@ module.exports = {
     "@docusaurus/plugin-content-pages",
     "@docusaurus/plugin-debug",
     "@docusaurus/plugin-sitemap",
+    "docusaurus-plugin-dotenv",
     // Add custom webpack config to make @stoplight/elements work
     () => ({
       name: "custom-webpack-config",
