@@ -50,7 +50,7 @@ To register your Sage Business Cloud Accounting application, you need to use Sag
 4. Select **Save**.  
    The details of your newly registered application are displayed.
 
-![](https://files.readme.io/f7ebfa6-215d3b2-Sage_Business_Cloud_App_Details_edited.png "215d3b2-Sage_Business_Cloud_App_Details_edited.png")
+![](/img/old/f7ebfa6-215d3b2-Sage_Business_Cloud_App_Details_edited.png "215d3b2-Sage_Business_Cloud_App_Details_edited.png")
 
 5. Either keep this page open in a separate browser tab, or copy the **Client ID** and **Client Secret** to a Word document or similar.
 

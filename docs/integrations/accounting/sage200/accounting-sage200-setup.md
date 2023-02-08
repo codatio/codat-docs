@@ -57,7 +57,7 @@ Subscribe to the Sage API for Sage 200 Unlimited.
 5. Select **Subscribe**.
 6. Select the **By subscribing to Sage 200 Unlimited...** checkbox and select **Confirm**.
 
-![](https://files.readme.io/dbbec39-sage_subscribe.png "sage subscribe.png")
+![](/img/old/dbbec39-sage_subscribe.png "sage subscribe.png")
 
 ## Retrieve your signing keys
 
@@ -66,7 +66,7 @@ Subscribe to the Sage API for Sage 200 Unlimited.
 3. Close the dialog box to return to your profile details.
 4. In the **Your subscriptions** section, again select **Show** and copy the **Primary key** value. This is the _subscription key_ that you also need to set up your Codat integration.
 
-<img src="https://files.readme.io/4815330-sage_keyss2.png" />
+<img src="/img/old/4815330-sage_keyss2.png" />
 
 ## Add your secure keys to the Codat Portal
 

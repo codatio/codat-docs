@@ -26,14 +26,14 @@ To obtain the connector ID from your user, please ask them to:
 2. Select the **About** link at the bottom of the connector window.
 
 <img
-  src="https://files.readme.io/4bb57a8-5f001da-Restart_connector_-_About_button-no-uat.jpg"
+  src="/img/old/4bb57a8-5f001da-Restart_connector_-_About_button-no-uat.jpg"
   alt="Sage 50 connector window showing the About link highlighted."
 />
 
 3. Select the **Copy** icon next to the **Connector Id**.
 
 <img
-  src="https://files.readme.io/5caa5e0-Restart_connector_-_Copy_button.jpg"
+  src="/img/old/5caa5e0-Restart_connector_-_Copy_button.jpg"
   alt="Copy icon highlighted next to the user's connector ID."
 />
 
@@ -50,6 +50,6 @@ Instructions for customers to find and use the **Restart connector** link.
 3. Select **Restart connector**.
 
 <img
-  src="https://files.readme.io/6278100-Restart_connector_-_restart_connector_button.jpg"
+  src="/img/old/6278100-Restart_connector_-_restart_connector_button.jpg"
   alt="Restart connector link highlighted in the Sage 50 connector window."
 />

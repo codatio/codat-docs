@@ -490,7 +490,7 @@ If however you call the Summaries endpoint with data type = banking-transactions
 By contrast, in the Data Integrity page on Portal, the match percentage displayed is match percentage by amount across accounting and banking transactions. In our example, the match percentage displayed on the Portal would be 40%:
 `match percentage = (B+C)/(A+B+C) = (£1 + £1)/(£3 +£1 + £1)`
 
-<img src="https://files.readme.io/cf7bc11-DataIntegrity1.png"/>
+<img src="/img/old/cf7bc11-DataIntegrity1.png"/>
 
 You can reproduce this match percentage yourself by fetching the summaries for accountTransactions and banking-transactions in separate API calls, and combining the results client-side, e.g. by taking a weighted average of the match percentages.
 

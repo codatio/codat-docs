@@ -30,11 +30,11 @@ If you use TrueLayer's live environment, you can test TrueLayer using either the
 2. In the TrueLayer console, select **DATA API** from the left panel.
 3. If you're using a new account, click **GO TO LIVE ENV**. If you're using an existing account, select **LIVE** from the top menu.
 
-![](https://files.readme.io/6281165-TL_Live_Environment.png "TL_Live_Environment.png")
+![](/img/old/6281165-TL_Live_Environment.png "TL_Live_Environment.png")
 
 4. In the left panel, select the settings icon.
 
-![](https://files.readme.io/d0a240b-TL_Apps.png "TL_Apps.png")
+![](/img/old/d0a240b-TL_Apps.png "TL_Apps.png")
 
 The **APP SETTINGS** page is displayed.
 

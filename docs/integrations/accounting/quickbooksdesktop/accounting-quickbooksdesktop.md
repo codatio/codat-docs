@@ -93,7 +93,7 @@ You can choose to configure the built-in Codat link flow for the connector. This
 
 Here's how that looks to your users:
 
-![](https://files.readme.io/c266e47-qbd-connector_download-page-end-of-link-flow.png)
+![](/img/old/c266e47-qbd-connector_download-page-end-of-link-flow.png)
 
 Alternatively, you can choose to build this functionality yourself using the Codat API. This involves calling the QuickBooks Desktop connector download endpoint (provided in the data connection response) and the customer ID. This allows you to maintain the look and feel of your company's brand, or to implement a specific workflow.
 

@@ -14,7 +14,7 @@ Third-party SSO allows users to access multiple applications using a set of cred
 As part of our commitment to high levels of data security, we support third-party SSO to offer your users the ability to access our products using their Microsoft or Google accounts. This feature is available on the Portal sign-in page.
 
 <img
-  src="https://files.readme.io/5840031-Screenshot_2021-12-14_143545.png"
+  src="/img/old/5840031-Screenshot_2021-12-14_143545.png"
   alt="Sign-in modal with Microsoft and Google SSO options highlighted"
 />
 
@@ -36,7 +36,7 @@ To manage the third-party SSO services, perform the following steps in Codat Por
 3. In the _Manage sign-in methods_ dialog, use the toggles to switch the services on and off.
 
 <img
-  src="https://files.readme.io/87dca5c-manage.png"
+  src="/img/old/87dca5c-manage.png"
   alt="Screenshot of the Manage sign-in methods dialog in the Codat Portal"
 />
 

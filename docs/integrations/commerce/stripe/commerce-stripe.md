@@ -53,7 +53,7 @@ To enable live mode, you must first activate your Stripe account by providing ad
 
 You can switch between _test mode_ and _live mode_ in Stripe using the toggle at the top right of the Stripe dashboard.
 
-![Test mode switch](https://files.readme.io/80db658-stripe-test-mode-switch.png "The Test mode toggle at the top-right of the Stripe developer dashboard.")
+![Test mode switch](/img/old/80db658-stripe-test-mode-switch.png "The Test mode toggle at the top-right of the Stripe developer dashboard.")
 
 ## Set up the integration
 

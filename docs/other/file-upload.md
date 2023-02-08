@@ -30,7 +30,7 @@ To let your SMB customers upload their business documents, you first need to ena
 Once enabled, an option to upload files will appear on the relevant platform selection screen. The **Business documents file upload** integration appears as a separate section in your [Link flow](/auth-flow/overview).
 
 <img
-  src="https://files.readme.io/b5ae456-file_uploads_selected.png"
+  src="/img/old/b5ae456-file_uploads_selected.png"
   alt="Link platform selection view with accounting and business files upload enabled"
 />
 

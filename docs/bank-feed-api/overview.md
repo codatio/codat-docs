@@ -17,7 +17,7 @@ In Codat's API, bank feeds are represented as [Bank transactions](/accounting-ap
 Bank Feed API uses standalone integrations to [popular accounting software](/bank-feed-api/overview#which-integrations-support-bank-feed-api). The connection journey for SMB users is handled by the integration and is different for each supported platform.
 
 <img
-  src="https://files.readme.io/fd21af0-codat_whitepaper_accounting-automation_diagram_B.png"
+  src="/img/old/fd21af0-codat_whitepaper_accounting-automation_diagram_B.png"
   alt="Data flow between your application and the SMB user's accounting platform with Bank Feed API."
 />
 

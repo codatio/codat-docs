@@ -8,11 +8,11 @@ updatedAt: "2022-11-18T11:48:00.917Z"
 <Head>
   <meta
     property="og:image"
-    content="https://files.readme.io/2b27c1b-info_banner.png"
+    content="/img/old/2b27c1b-info_banner.png"
   />
 </Head>
 
-![](https://files.readme.io/2b27c1b-info_banner.png "info_banner.png")
+![](/img/old/2b27c1b-info_banner.png "info_banner.png")
 
 Codat’s accounting integrations allow you to pull up-to-date accounting data from your customers' accounting software as well as push data to their software. Please see our [Accounting data model](/data-model/accounting/) for details on the types of data you can pull and push.
 

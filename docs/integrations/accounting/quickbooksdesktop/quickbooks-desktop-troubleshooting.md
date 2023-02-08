@@ -14,7 +14,7 @@ If any of your customers have issues regarding anti-virus blocking please report
 
 The connector's ability to access data is dependent on permissions granted by the User, normally at time of installation.
 
-![](https://files.readme.io/f336207-c650d8d-QBD-Auth.png "c650d8d-QBD-Auth.png")
+![](/img/old/f336207-c650d8d-QBD-Auth.png "c650d8d-QBD-Auth.png")
 
 If the user has not given the connector the permission to _always_ modify the company data file (allowing access even if QuickBooks is not running), the connector will be unable to process any queued syncs or pushes, unless the user has QuickBooks open and is logged in to the relevant company file. The connector will periodically check whether the correct file has been opened and will complete the queued/pending items as soon as possible.
 

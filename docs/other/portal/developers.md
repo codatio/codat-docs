@@ -22,7 +22,7 @@ In the Developers section, you can:
 
 The page also provides handy links to various Codat resources that support our developer community.
 
-<img src="https://files.readme.io/be29339-developer_section.PNG" />
+<img src="/img/old/be29339-developer_section.PNG" />
 
 ## API keys
 
@@ -39,7 +39,7 @@ For each upcoming deprecation, we provide a brief description and its implementa
 We also link each deprecation to its respective [Important updates](https://docs.codat.io/changelog) entry, where you can find further details of the change.
 
 <img
-  src="https://files.readme.io/3851067-deprecation.PNG"
+  src="/img/old/3851067-deprecation.PNG"
   alt="A detailed deprecation entry screenshot"
 />
 
