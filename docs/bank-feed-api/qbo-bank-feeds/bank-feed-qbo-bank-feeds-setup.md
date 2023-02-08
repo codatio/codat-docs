@@ -43,7 +43,7 @@ See the next procedure for details on the functionality to provide.
 
 ## Create a Company and data connection, then add bank accounts
 
-1. When an SMB user clicks the button or link you added, create a Company for them using the <a  class="external" href="https://api.codat.io/swagger/index.html#/Companies/post_companies" target="_blank">Create company</a> endpoint:
+1. When an SMB user clicks the button or link you added, create a Company for them using the <a href="/codat-api#/operations/create-company">Create a company</a> endpoint:
 
    ```http
    POST https://api.codat.io/companies
@@ -170,4 +170,4 @@ Send a request to the <a className="external" href="https://api.codat.io/swagger
 PUT /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts
 ```
 
-To connect the bank accounts you added, the SMB user needs to revisit the `linkUrl` of the data connection. You can use the <a href="codat-api#/operations/list-company-connections">List connections</a> or <a href="codat-api#/operations/get-company-connection">Get connection</a> endpoint to get the `linkUrl`.
+To connect the bank accounts you added, the SMB user needs to revisit the `linkUrl` of the data connection. You can use the <a href="/codat-api#/operations/list-company-connections">List connections</a> or <a href="/codat-api#/operations/get-company-connection">Get connection</a> endpoint to get the `linkUrl`.
