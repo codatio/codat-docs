@@ -50,8 +50,7 @@ Codat uses API keys, Base64 encoded within an authorization header, to control a
 
 Then, replace `{basicAuthHeader}` in the code snippets below.
 
-```
-Unix Bash
+```json title="Unix Bash"
 
 // Create a variable to hold your authorization header value
 // In this guide, we use:
@@ -59,8 +58,7 @@ Unix Bash
 CODAT_AUTH_HEADER='{basicAuthHeader}'
 ```
 
-```
-.NET
+```json title=".NET"
 
 // Add package RestSharp and create a new REST client
 
@@ -73,8 +71,7 @@ var codatApiClient = new RestClient(baseUrl);
 codatApiClient.AddDefaultHeader("Authorization", authHeaderValue);
 ```
 
-```
-Node.js
+```json title="Node.js"
 
 // NOTE: This example is for server side code.
 // Do not include your auth header in a client side rendered app.
@@ -117,8 +114,7 @@ Copy this URL for use in the next step. Note that this URL can be accessed again
 
 To create a company in Codat, use the `POST /companies` endpoint with a request body containing the `name` of the company. It does not have to be unique and serves to identify your customer in Codat.
 
-``` 
-Unix Bash
+```json title="Unix Bash"
 
 curl --request POST \
      --url "https://api.codat.io/companies" \
@@ -131,8 +127,7 @@ curl --request POST \
      }
 ```
 
-``` 
-.NET
+```json title=".NET"
 
 var createCompanyRequest = new RestRequest("companies", Method.Post)
     .AddBody(new
@@ -144,8 +139,7 @@ var createCompanyRequest = new RestRequest("companies", Method.Post)
 Console.WriteLine(createCompanyResponse.Content);
 ```
 
-``` 
-Node.js
+```json title="Node.js"
 
 codatApiClient
   .post("/companies", {
@@ -203,23 +197,23 @@ Once the flow is complete, you can verify the company's status under the <a href
 
 Remember to replace `{companyId}` with your company `id` obtained previously.
 
-``` 
-Unix Bash
+```json title="Unix Bash"
+
 curl --request GET \
      --url "https://api.codat.io/companies/{companyId}" \
      --header "Authorization: $CODAT_AUTH_HEADER" \
      --header "accept: application/json"
 ```
 
-``` 
-.NET
+```json title=".NET"
+
 var getCompanyRequest = new RestRequest($"companies/{companyId}", Method.Get);
 var getCompanyResponse = codatApiClient.Execute(getCompanyRequest);
 Console.WriteLine(getCompanyResponse.Content);
 ```
 
-``` 
-Node.js
+```json title="Node.js"
+
 codatApiClient
   .get(`/companies/${companyId}`)
   .then((response) => {
@@ -272,16 +266,16 @@ For example, to query invoices, use the <a href="https://codat-docs.vercel.app/a
 
 Remember to replace `{companyId}` with your company `id` obtained previously.
 
-```
-Unix Bash
+```json title="Unix Bash"
+
 curl --request GET \
      --url "https://api.codat.io/companies/{companyId}/data/invoices?page=1&pageSize=10" \
      --header "Authorization: $CODAT_AUTH_HEADER" \
      --header "accept: application/json"
 ```
 
-```
-.NET
+```json title=".NET"
+
 var getInvoicesRequest = new RestRequest($"companies/{companyId}/data/invoices", Method.Get)
     .AddQueryParameter("page", "1")
     .AddQueryParameter("pageSize", "10");
@@ -289,8 +283,8 @@ var getInvoicesRequest = new RestRequest($"companies/{companyId}/data/invoices",
 Console.WriteLine(getInvoicesResponse.Content);
 ```
 
-```
-Node.js
+```json title="Node.js"
+
 codatApiClient
   .get(`/companies/${companyId}/data/invoices`, {
       params: { page: 1, pageSize: 10 },
