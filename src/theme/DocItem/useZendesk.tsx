@@ -2,6 +2,9 @@ import { useEffect } from 'react';
 
 const useZendesk = url => {
   useEffect(() => {
+    console.log(process.env.ZENDESK_KEY)
+    if(!process.env.ZENDESK_KEY) { return null }
+
     const script = document.createElement('script');
 
     script.setAttribute("id", "ze-snippet");
