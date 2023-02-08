@@ -108,7 +108,7 @@ Follow these steps:
 6. Once saved, select **Submit** at the top of the page.
 7. Once your **Data & Security Review** has been successful, in the **Submit for Review** page, select **Request** in the **Request permission** section and wait for permissions to be granted by Exact. During this stage your app will have an **In Review** tag.
 
-![](https://files.readme.io/9fa3fdd-AppInReview.PNG "AppInReview.PNG")
+![](https://files.readme.io/9fa3fdd-AppInReview.png "AppInReview")
 
 ## Recommended list of scopes
 
