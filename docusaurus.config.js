@@ -5,6 +5,8 @@ const fetch = require("node-fetch");
 
 const BASE_URL = "";
 
+require('dotenv').config()
+
 module.exports = {
   title: "Codat_docs",
   tagline:
@@ -23,6 +25,9 @@ module.exports = {
   favicon: "img/meta/favicon-96x96.png",
   organizationName: "codat",
   projectName: "codat-docs",
+  customFields: {
+    'ZENDESK_KEY': process.env.ZENDESK_KEY,
+  },
   themeConfig: {
     sidebar: {
       hideable: true,
@@ -295,7 +300,6 @@ module.exports = {
     "@docusaurus/plugin-content-pages",
     "@docusaurus/plugin-debug",
     "@docusaurus/plugin-sitemap",
-    "docusaurus-plugin-dotenv",
     // Add custom webpack config to make @stoplight/elements work
     () => ({
       name: "custom-webpack-config",
@@ -348,5 +352,4 @@ module.exports = {
     // In order for Mermaid code blocks in Markdown to work, you also need to enable the Remark plugin with this option
     mermaid: true,
   },
-  customFields: {},
 };
