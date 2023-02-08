@@ -44,4 +44,4 @@ Our integration supports pushing bank feeds to several Sage products, including 
 
 ## Next steps
 
-See [Set up the Sage Bank Feeds integration](/bank-feed-sage-bank-feeds-setup) to learn how to set up and enable the integration.
+See [Set up the Sage Bank Feeds integration](/bank-feed-api/sage-bank-feeds/bank-feed-sage-bank-feeds-setup) to learn how to set up and enable the integration.
