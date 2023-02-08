@@ -53,6 +53,8 @@ Rule **types** must be entered exactly as shown below:
 - `Account Categories Updated`
 - `Sync Connection Deleted`
 
+:::
+
 ## Create a new rule using the API
 
 When you set up a new rule using the API, you can also set up email or webhook notifications to tell you when a rule condition is met.
