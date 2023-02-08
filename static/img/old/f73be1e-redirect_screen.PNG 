@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Image Not Found</title>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    border-top: 10px solid #1781CC;
+  }
+  h1 {
+    margin: 70px 0 0;
+    font-family: Helvetica, sans-serif;
+    font-weight: 300;
+    color: #555;
+  }
+  p {
+    margin: 15px 0 40px;
+    font-family: Helvetica, sans-serif;
+  }
+  a {
+    color: #1781CC;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: none;
+    color: #255D8B;
+  }
+  img {
+    margin-left: 20px;
+  }
+  </style>
+</head>
+
+<body id="home">
+  <h1>Image Not Found</h1>
+  <p><a href="http://readme.io">Go to ReadMe &raquo;</a></p>
+  <img src="https://files.readme.io/owlbert-icecream.png" width=400>
+</body>
+</html>
