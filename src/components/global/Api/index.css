@@ -38,6 +38,10 @@ html[data-theme="dark"] .token.number {
   color: var(--font-ui);
 }
 
+.sl-badge > div > div > div > span {
+  color: var(--font-ui);
+}
+
 /* ------------------------ */
 
 .sl-content-center {
