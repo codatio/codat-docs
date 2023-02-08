@@ -9,7 +9,7 @@ The following page describes the status codes and standard error responses used 
 
 ## Status codes
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Status code",
@@ -65,7 +65,7 @@ If syncing a data set, this could mean that either:
   "cols": 2,
   "rows": 12
   }
-  [/block.
+  
 
 ## Example account limit errors
 

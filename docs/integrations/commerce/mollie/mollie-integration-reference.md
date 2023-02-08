@@ -39,7 +39,7 @@ The following table highlights selected fields that are not available in data pu
 
 ### Unavailable Codat fields
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Mollie record and field",
@@ -57,4 +57,4 @@ The following table highlights selected fields that are not available in data pu
 "cols": 3,
 "rows": 2
 }
-[/block]
+

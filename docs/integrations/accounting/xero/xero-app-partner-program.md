@@ -31,7 +31,7 @@ Check that you are following the [Xero app partner branding guidelines](https://
 
 Codat will handle the connection to Xero through the linking journey. You will need to implement a setup page that allows your customer to manage the settings for their Xero connection:
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Requirement",
@@ -59,7 +59,7 @@ Link to power your button to connect - `Connection.linkURL`",
 "left"
 ]
 }
-[/block]
+
 
 ### 4. Error handling
 

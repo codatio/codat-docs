@@ -7,7 +7,7 @@ updatedAt: "2022-10-06T12:22:19.225Z"
 
 ## Company configuration
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -34,13 +34,13 @@ _read-only_",
 "cols": 3,
 "rows": 5
 }
-[/block]
+
 
 <a name="schedule"></a>
 
 ## Schedule
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -66,13 +66,13 @@ Attempting to queue a sync before the start date produces a 500 error. The synch
 "cols": 3,
 "rows": 4
 }
-[/block]
+
 
 <a name="configuration"></a>
 
 ## Synchronisation configuration
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -91,13 +91,13 @@ Attempting to queue a sync before the start date produces a 500 error. The synch
 "cols": 3,
 "rows": 3
 }
-[/block]
+
 
 <a name="sales"></a>
 
 ## Sales
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -125,13 +125,13 @@ Attempting to queue a sync before the start date produces a 500 error. The synch
 "cols": 3,
 "rows": 6
 }
-[/block]
+
 
 <a name="invoiceStatus"></a>
 
 ## Invoice status
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -148,14 +148,14 @@ _read-only_",
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 
 <a name="salesCustomer"></a>
 
 ## Sales customer
 
 The sales customer is a single entity in the accounting package, and is shown as the recipient of the invoices. In the case of Xero, this is one of the available 'Contacts'.
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -173,13 +173,13 @@ _read-only_",
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 
 <a name="taxRates"></a>
 
 ## Tax rates
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -197,14 +197,14 @@ _read-only_",
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 
 <a name="option"></a>
 
 ## Options
 
 A generic model for representing options that are displayed to the user.
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -228,13 +228,13 @@ Only returned for Account options.",
 "cols": 3,
 "rows": 3
 }
-[/block]
+
 
 <a name="grouping"></a>
 
 ## Groupings
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -248,14 +248,14 @@ Only returned for Account options.",
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 
 <a name="groupingPeriod"></a>
 
 ### Grouping periods
 
 The grouping period specifies the time interval at which to create invoices, and assumes that if this value is set, it is more frequent than the specified sync frequency.
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -272,7 +272,7 @@ The grouping period specifies the time interval at which to create invoices, and
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 
 <a name="groupingLevels"></a>
 
@@ -286,7 +286,7 @@ There are two levels at which grouping can be performed:
 Only optional grouping levels are included as options. Required grouping levels, such as currency and tax rate are set by default and so are not listed as possible options.
 
 The structure for both of these sections is the same:
-[block:parameters]
+
 {
 "data": {
 "0-0": "**selectedGroupByOptions** ",
@@ -302,13 +302,13 @@ The structure for both of these sections is the same:
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 
 <a name="payments"></a>
 
 ## Payments
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -324,13 +324,13 @@ The structure for both of these sections is the same:
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 
 <a name="fees"></a>
 
 ## Fees
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -345,14 +345,14 @@ The structure for both of these sections is the same:
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 
 <a name="accountType"></a>
 
 ## Account types
 
 This is an enum of different types of nominal or bank accounts that are created and synchronised within the accounting software. Depending on which sales or payment types your system is creating, you must configure accounts within the accounting software for each of these data types. Configure an existing account by selecting the account ID within the relevant section of the configuration. Create new accounts by calling the New Account Endpoint with **accountType** set to the relevant enum value.
-[block:parameters]
+
 {
 "data": {
 "h-0": "Name",
@@ -399,13 +399,13 @@ This is an enum of different types of nominal or bank accounts that are created 
 "cols": 2,
 "rows": 19
 }
-[/block]
+
 
 <a name="accounts"></a>
 
 ## Accounts
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -431,4 +431,4 @@ _read-only_",
 "cols": 3,
 "rows": 4
 }
-[/block]
+

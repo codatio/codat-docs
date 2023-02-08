@@ -33,7 +33,7 @@ The schedule of regular data syncs depend on the following values:
 Despite the monthly option being present in the configuration file, currently we only surface the **daily** option in the Sync Flow UI.
 :::
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Property",
@@ -66,7 +66,7 @@ Integers from 0 to 23 inclusive",
 "cols": 4,
 "rows": 5
 }
-[/block]
+
 
 Once the [Sync Flow is completed and Codat receives the configuration](/implementing-codats-no-code-merchant-configuration), we use it to determine the **sync period** – the period for which commerce data will be synced in one run of the sync service.
 

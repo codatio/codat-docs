@@ -135,7 +135,7 @@ We recommend grouping your updates to ensure that related values are updated con
 
 ##### Sales title and description
 
-[block:parameters]
+
 {
   "data": {
     "h-0": "Default value",
@@ -153,11 +153,11 @@ no value by default.",
     "left"
   ]
 }
-[/block]
+
 
 ##### Sales feature categories title and description
 
-[block:parameters]
+
 {
   "data": {
     "h-0": "Default value",
@@ -186,7 +186,7 @@ no value by default.",
     "left"
   ]
 }
-[/block]
+
 
 ##### Sales feature categories
 
@@ -206,7 +206,7 @@ no value by default.",
 
 ##### Fees title and description
 
-[block:parameters]
+
 {
   "data": {
     "h-0": "Default value",
@@ -224,11 +224,11 @@ no value by default.",
     "left"
   ]
 }
-[/block]
+
 
 ##### Fees feature categories title and description
 
-[block:parameters]
+
 {
   "data": {
     "h-0": "Default value",
@@ -247,7 +247,7 @@ no value by default.",
     "left"
   ]
 }
-[/block]
+
 
 ##### Fees feature categories
 
@@ -262,7 +262,7 @@ no value by default.",
 
 ##### Payments title and description
 
-[block:parameters]
+
 {
   "data": {
     "h-0": "Default value",
@@ -280,7 +280,7 @@ no value by default.",
     "left"
   ]
 }
-[/block]
+
 
 ##### Payments feature categories
 

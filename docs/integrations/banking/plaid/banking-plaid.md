@@ -34,7 +34,7 @@ You'll automatically gain access to any new financial institutions that Plaid ad
 Plaid's pricing tiers give you access to specific _products_ from your configured banking data sources. Depending on what data types you wish to fetch from Codat's API, you will need to have certain Plaid products enabled and available for use within your Plaid account.
 
 The following table shows the Plaid Products required for each of Codat's banking data types:
-[block:parameters]
+
 {
 "data": {
 "h-1": "Associated Plaid product",
@@ -61,7 +61,7 @@ Categorization is provided by Codat, not using data from Plaid."
 "cols": 2,
 "rows": 4
 }
-[/block]
+
 
 ## Sync Settings for Plaid
 
