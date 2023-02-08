@@ -60,7 +60,8 @@ Ensure that your client has created a new user (as described above) for their Sa
   :::note Refreshing Sage 50 to see pushed suppliers
 
   To refresh the page in Sage 50, you can click the filter in the Suppliers view twice as below. If a supplier has been successfully created, the account will appear when the page is refreshed.  
-  ![](/img/old/719da3c-supplierFilterRefresh.PNG "supplierFilterRefresh.PNG")
+
+  ![](/img/old/719da3c-supplierFilterRefresh.png "supplierFilterRefresh.PNG")
 
 :::
 
