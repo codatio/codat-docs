@@ -109,21 +109,25 @@ module.exports = {
               href: "/commerce-api",
               label: "Commerce API",
             },
-            {
-              href: "/accounting-api",
-              label: "Bank Feed API",
-            },
+            // {
+            //   href: "/accounting-api",
+            //   label: "Bank Feed API",
+            // },
             {
               href: "/assess-api",
               label: "Assess API",
             },
-            {
-              href: "/accounting-api",
-              label: "Sync for Commerce API",
-            },
+            // {
+            //   href: "/accounting-api",
+            //   label: "Sync for Commerce API",
+            // },
             {
               href: "/sync-for-expenses-api",
               label: "Sync for Expenses API",
+            },
+            {
+              href: "/files-api",
+              label: "Files API",
             },
           ],
         },

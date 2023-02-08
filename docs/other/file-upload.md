@@ -53,19 +53,21 @@ A zip file will be downloaded. It will contain all the files that were uploaded 
 
 ## Access file uploads via the Codat API
 
-To view all files uploaded by a company, make the following request:
+Explore the API reference [here](http://localhost:3000/files-api#/).
+
+[List files uploaded by a company](http://localhost:3000/files-api#/operations/list-files):
 
 ```json
 GET /companies/{companyId}/files
 ```
 
-To download all files for a company, make the following request:
+[Download all files for a company](http://localhost:3000/files-api#/operations/download-files):
 
 ```json
 GET /companies/{companyId}/files/download
 ```
 
-To upload files to a company, make the following request:
+[Upload files for a company](/files-api#/operations/upload-files):
 
 ```json
 POST /companies/{companyId}/connections/{connectionId}/files
