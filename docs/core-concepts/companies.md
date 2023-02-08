@@ -11,6 +11,29 @@ Typically each company is one of your customers.
 
 When you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company.
 
+```jsx live
+function Clock(props) {
+  const [date, setDate] = useState(new Date());
+  useEffect(() => {
+    const timerID = setInterval(() => tick(), 1000);
+
+    return function cleanup() {
+      clearInterval(timerID);
+    };
+  });
+
+  function tick() {
+    setDate(new Date());
+  }
+
+  return (
+    <div>
+      <h2>It is {date.toLocaleTimeString()}.</h2>
+    </div>
+  );
+}
+```
+
 ## How do I create a company?
 
 Companies can be created in one of two ways:
