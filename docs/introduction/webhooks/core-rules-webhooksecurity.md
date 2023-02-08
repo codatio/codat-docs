@@ -24,7 +24,7 @@ To enable security for your organisation's webhooks.
 
 To enable webhook security, use any valid header value in ASCII in the **alertAuthHeader**. For example:
 
-`PUT <https://api.codat.io/profile`>
+`PUT <https://api.codat.io/profile>`
 
 ```json
 {
