@@ -55,7 +55,7 @@ To connect your test company to Plaid's sandbox, you can either generate a Link 
 }
 ```
 
-:::note Linking customers in Plaid
+:::Note Linking customers in Plaid
 
 When you move to a production environment, you'll supply a link URL to each customer. The link URL is the start of the authorization process that allows you to retrieve data from your customer's bank account.
 :::

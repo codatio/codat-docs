@@ -47,7 +47,7 @@ Resources available to the PrestaShop software instance from which data is being
 
 :::
 
-:::caution Add-ons and plugins
+:::Caution Add-ons and plugins
 
 PrestaShop is an open-source platform built for configurability. A large part of its success is its wide-ranging add-on library featuring contributions from third party developers. Codat strives to add support for major add-ons where possible, but clients should be aware that in some cases it will not be possible to successfully retrieve data from customers with unsupported add-ons.
 

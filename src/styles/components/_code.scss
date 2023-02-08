@@ -5,7 +5,6 @@
 
   --code-block-line-height: 1.5;
 
-  --ifm-pre-color: var(--color-interface-core);
   --ifm-code-background: var(--c-indigo-10);
 }
 
@@ -17,14 +16,6 @@ html[data-theme="light"] {
 html[data-theme="dark"] {
   --code-block-bg-c: var(--token-secondary-bg-c);
   --color-string: var(--color-warning-20);
-}
-
-.token-line {
-  color: var(--ifm-pre-color) !important;
-}
-
-.token.string {
-  color: var(--color-string) !important;
 }
 
 :not(pre) > code {

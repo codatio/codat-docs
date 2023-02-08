@@ -47,7 +47,7 @@ Our BigCommerce integration supports the following plans: Standard, Plus, Pro, E
 
 After you've tested the integration, see [Set up the BigCommerce integration](/commerce-bigcommerce-setup) to learn how to enable your SMB customers to connect their commerce data using Link.
 
-:::caution Platform rate limits
+:::Caution Platform rate limits
 
 Be aware of the <a className="external" href="https://support.bigcommerce.com/s/article/Platform-Limits?language=en_US" target="_blank">Platform Limits</a> in place for the BigCommerce platform.
 :::

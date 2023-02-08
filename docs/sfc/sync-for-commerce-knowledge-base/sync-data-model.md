@@ -114,7 +114,7 @@ Attempting to queue a sync before the start date produces a 500 error. The synch
 "5-0": "**grouping** ",
 "4-1": "_Dictionary of decimal to [TaxRates](#taxRates)_",
 "5-1": "[_Grouping_](#grouping)",
-"0-2": "Whether or not sales data is synchronised to accounting software. This must be turned on to enable payments data synchronisation.",
+"0-2": "Whether or not sales data is synchronized to accounting software. This must be turned on to enable payments data synchronisation.",
 "1-2": "Nominal account to push to for each type of sales data.",
 "2-2": "Status invoices are raised as.",
 "3-2": "Customer invoices are raised against.",
@@ -318,7 +318,7 @@ The structure for both of these sections is the same:
 "1-1": "_Dictionary of [AccountType](#accountType) to [Account](#accounts)_",
 "0-1": "_boolean_",
 "h-2": "Description",
-"0-2": "Whether or not payments data is synchronised to accounting software.",
+"0-2": "Whether or not payments data is synchronized to accounting software.",
 "1-2": "Account to push to for each payment type."
 },
 "cols": 3,
@@ -351,7 +351,7 @@ The structure for both of these sections is the same:
 
 ## Account types
 
-This is an enum of different types of nominal or bank accounts that are created and synchronised within the accounting software. Depending on which sales or payment types your system is creating, you must configure accounts within the accounting software for each of these data types. Configure an existing account by selecting the account ID within the relevant section of the configuration. Create new accounts by calling the New Account Endpoint with **accountType** set to the relevant enum value.
+This is an enum of different types of nominal or bank accounts that are created and synchronized within the accounting software. Depending on which sales or payment types your system is creating, you must configure accounts within the accounting software for each of these data types. Configure an existing account by selecting the account ID within the relevant section of the configuration. Create new accounts by calling the New Account Endpoint with **accountType** set to the relevant enum value.
 [block:parameters]
 {
 "data": {

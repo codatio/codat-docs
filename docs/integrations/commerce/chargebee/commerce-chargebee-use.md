@@ -27,7 +27,7 @@ GET /companies/COMPANY_ID/connections/CONNECTION_ID/data/proxy?endpoint=v2/custo
 
 To view a list of all available endpoints, see the <a className="external" href="https://apidocs.eu.chargebee.com/docs/api" target="_blank">Chargebee API documentation</a>.
 
-:::caution
+:::Caution
 
 Use of the Chargebee integration is subject to participation in the Codat [Domain discovery program](/domain-discovery-program). Be aware of the program expectations before using the integration.
 :::

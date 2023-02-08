@@ -17,5 +17,5 @@ For more information about the supported data types, see [Zoho Books integration
 
 See [Set up the Zoho Books integration](/integrations/accounting/zohobooks/accounting-zohobooks-setup) to learn how to set up and enable the integration.
 
-:::caution Reduced datasets
+:::Caution Reduced datasets
 By default, reduced datasets are pulled for the Bills, Credit Notes, Customers, and Invoices data types. For more information, see [Zoho Books limits and reduced data pulls](/zoho-book-limits).

@@ -9,7 +9,7 @@ updatedAt: "2023-01-10T17:38:51.316Z"
 
 Exact Netherlands and Exact UK require different credentials. This article is intended for both versions and states where instructions are version specific or can be used for both.
 
-:::caution API rate limits
+:::Caution API rate limits
 
 The Exact Online API has rate limits to restrict the number of requests an app is permitted to send to the API during a time window, as well as other rate limits. Each rate limit has a specific behavior when exceeded – for more details, see [API limits](https://support.exactonline.com/community/s/knowledge-base#All-All-DNO-Simulation-gen-apilimits) in the Exact knowledge base.
 
@@ -20,7 +20,7 @@ Here's a summary of the time-based rate limits:
 
 :::
 
-:::caution Request permission for your customers to link
+:::Caution Request permission for your customers to link
 
 To allow your customers to connect to your production app, you _must_ first [request permission from Exact](/accounting-exact-setup#section-request-permission-to-allow-your-customers-to-connect-to-your-app), or users will get an error during the authorization flow.
 :::
@@ -77,7 +77,7 @@ The **Manage my apps** page is displayed. In the **Develop your app** tab, you'l
 
 5. In the **Enable Exact** dialog, select whether to enable the integration now or later.
 
-:::note
+:::Note
 
 Make sure that your secure keys don't contain any spaces.
 :::
@@ -116,7 +116,7 @@ On the **Data & Security Review** page in the Exact App Center, you need to sele
 
 To support a wide range of use cases, we recommend that you select the scopes shown in the following table.
 
-:::note
+:::Note
 
 If you experience issues with your app after enabling the recommended scopes, please contact Codat Support.
 :::

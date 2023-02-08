@@ -57,7 +57,7 @@ To disconnect a data connection, you'll need to provide:
 
 When a connection is set to `Unlinked`, you can continue to access any data that was already pulled or pushed to the data source, but you can't perform any new pulls or pushes (unless the connection is re-linked).
 
-:::note
+:::Note
 
 Only `Linked` data connections can be unlinked.
 :::
@@ -107,7 +107,7 @@ When you delete a data connection:
 
 ## Provide credentials or tokens for a data connection
 
-If you are migrating an existing integration to use Codat, you can provide tokens for the connection to migrate your users access. You can read more about how to do this on our [migration page here](/introduction/migration)
+If you are migrating an existing integration to use Codat, you can provide tokens for the connection to migrate your user's access. You can read more about how to do this on our [migration page here](/introduction/migration)
 
 ---
 

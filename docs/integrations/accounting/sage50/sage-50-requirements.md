@@ -6,7 +6,7 @@ createdAt: "2022-11-25T12:08:57.434Z"
 updatedAt: "2022-11-25T14:08:49.131Z"
 ---
 
-:::note Supported Sage 50 accounts and versions
+:::Note Supported Sage 50 accounts and versions
 
 Codat supports Sage 50 accounts (UK) for versions from 2018 onwards (v24+). This is in line with <a className="external" href="https://gb-kb.sage.com/portal/app/portlets/results/viewsolution.jsp?solutionid=200427112228593" target="_blank">Sage's software lifecycle policy</a>.
 
@@ -36,7 +36,7 @@ Users have successfully run the connector on older versions of Windows; however,
 
 The connector will not run on Mac OS.
 
-:::note Supported environments
+:::Note Supported environments
 
 The Sage 50 connector is designed to work in single tenant environments only, where one Windows user logs on to the same computer they use to access Sage 50 (UK). It is not designed or supported for use in hosted environments; for example, if your customer uses Online50 to access their Sage 50 accounts (UK) software.
 :::

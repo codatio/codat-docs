@@ -35,7 +35,7 @@ The invoice contains one line item for each tax rate the merchant trades in, wit
 
 If no sales have been made for a given tax rate on that day, the corresponding line item will be omitted.
 
-:::caution Rounding
+:::Caution Rounding
 
 Discounts are applied to the total of the purchase once all the items have been summed up rather than at an item level. As we are splitting out items into VAT percentages across all sales for the day, discounts need to be applied at the item level which may lead to slight rounding discrepancies compared to applying the discount at the summed level. As per the advice of most accounting packages, we add an invoice line of ± 0.01 to bring the total in line with the correct total.
 :::
@@ -56,7 +56,7 @@ The credit note contains one line item for each tax rate the merchant trades in,
 
 When purchase refunds are recorded in QBO, the negative revenue is booked to the selected account.
 
-:::caution Payments
+:::Caution Payments
 
 The following information is related to the **Payments** feature. To learn more about the configuration of **Payments**, navigate to the [Payments](/qbo-mapping-specification#payments) section.
 :::
@@ -116,7 +116,7 @@ Codat supports either bank accounts or current accounts for payment accounts. Th
   alt="Account settings screen for payment accounts in QBO"
 />
 
-:::caution Deposit accounts
+:::Caution Deposit accounts
 
 A deposit account cannot be used for payments.
 :::
@@ -133,7 +133,7 @@ Sync for Commerce supports additional payment types that can be switched on as a
 
 Codat has provided functionality to allow users to select different accounts for each different payment type.
 
-:::caution New payment types after setup
+:::Caution New payment types after setup
 
 If the user starts using other payments types after initial setup, the synchronization will stop until the accounts have been re-mapped via returning to the configuration page.
 :::

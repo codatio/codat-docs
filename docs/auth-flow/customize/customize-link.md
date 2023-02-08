@@ -17,7 +17,7 @@ Let's take QuickBooks Online as an example. Enabling this feature would show opt
 
 _Note_: Sandbox integrations will appear in the link flow by default.
 
-:::note
+:::Note
 
 You can override this behavior by appending the `link.showSandboxIntegrations` query parameter to the Link URL with a value of "true" or "false".
 :::
@@ -30,7 +30,7 @@ Before enabling these, you need to [set up one or more integrations](/core-integ
 
 For the Business documents integration type, you need to enable it in **Settings > Integrations > Other integrations**.
 
-:::note
+:::Note
 
 Let your users know what files they should upload for each integration category by providing a description under **File upload**.
 :::

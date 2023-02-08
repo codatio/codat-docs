@@ -9,7 +9,7 @@ Set up the [BigCommerce](/commerce-bigcommerce) integration to retrieve commerce
 
 With this integration, your SMB customers (merchants who sell on the BigCommerce platform) must retrieve secure credentials from their BigCommerce store and then enter them in Link as part of the authorization flow.
 
-:::caution Test the integration first
+:::Caution Test the integration first
 
 Before sending Link URLs to your SMB customers, we recommend that you [test the integration](/commerce-bigcommerce-test) using sample data from a sandbox store.
 :::
@@ -52,7 +52,7 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 Create a company to represent your SMB customer. Provide the Link URL to the customer to allow them to connect their BigCommerce store to Codat using Link.
 
-:::note Options for authorization
+:::Note Options for authorization
 
 Using Link to authorize the data connection is optional. You can also build your own authorization flow using the Codat API.
 :::
@@ -111,7 +111,7 @@ Your SMB customer does the following:
 
 11. If the data connection was successful, click **Finish** to close Link. You have now connected your BigCommerce store to Codat.
 
-:::caution Keep your store API account credentials safe
+:::Caution Keep your store API account credentials safe
 
 You can't access your store API account credentials (Client ID, Client Secret, Access Token, and API Path) again after you close the **BigCommerce API credentials** dialog. Make sure you store the downloaded text file containing these credentials in a secure location.
 

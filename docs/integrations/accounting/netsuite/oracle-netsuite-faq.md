@@ -49,7 +49,7 @@ Codat maintains a 1 to 1 relationship between an entity/subsidiary and a Codat c
 
 In order for a client to get the full picture of a company that owns multiple legal entities, its customers will need to go through a separate linking process for each legal entity that exists in the accounting package.
 
-:::caution Elimination subsidiaries
+:::Caution Elimination subsidiaries
 
 Elimination subsidiaries in Netsuite are used to record only journal entries and transactions between subsidiaries for consolidation purposes. This information is available on the non-elimination subsidiaries, so Codat won’t fetch elimination subsidiaries.
 :::

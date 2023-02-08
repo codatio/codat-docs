@@ -43,7 +43,7 @@ The customer should be able to change their mind about connecting at a later dat
 
 Link to a detailed set of instructions and FAQs that include connection guidance rather than a privacy policy directly. On top of providing extra clarity, they should further explain the value of connecting accounts.
 
-:::caution
+:::Caution
 
 Make sure you link to your own privacy policy and/or instructions and not Codat’s.
 :::

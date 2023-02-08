@@ -37,7 +37,7 @@ Current public API endpoints are designed to manage a single API key, and their 
 - `GET /profile`  
    The `apiKey` property of this endpoint response will contain only the first API key.
 
-:::note Get ahead
+:::Note Get ahead
 
 You can get ahead of this change by enabling it now in the [Portal](https://app.codat.io/developers/api-deprecations). Learn how to do that [here](doc:portal-for-developers), or read our change policy [here](doc:change-policy).
 :::

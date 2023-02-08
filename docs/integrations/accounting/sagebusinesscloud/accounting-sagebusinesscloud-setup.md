@@ -11,7 +11,7 @@ Before you can access data from customers who use Sage Business Cloud Accounting
 - Add your application's secure keys to the Codat Portal.
 - Enable your Sage Business Cloud Accounting integration in the Codat portal.
 
-:::note Supported versions and geographies
+:::Note Supported versions and geographies
 
 Codat currently supports the following versions of Sage Business Cloud Accounting:
 
@@ -23,7 +23,7 @@ Our integration with Sage Accounting API allows you to pull data from users with
 Codat does not currently support Sage Business Cloud versions that cover Australia, New Zealand, South Africa, and the Asian market edition (Hong Kong, Singapore, and Malaysia).
 :::
 
-:::caution Change to Sage Business Cloud Accounting setup
+:::Caution Change to Sage Business Cloud Accounting setup
 
 If you set up your [Codat integration with Sage Business Cloud Accounting](/accounting-sagebusinesscloud) **before** October 19, 2020, you'll notice a change to the credentials page in the Codat portal. The option **Client ID, client secret, signing secret and subscription key (API v3 - UKI)** is selected for your integration.
 
@@ -70,7 +70,7 @@ If you currently use version 3.0 of Sage Business Cloud Accounting, you don't ne
 
 6. The **Enable Sage Business Cloud Accounting** dialog is displayed. Select whether to enable the integration now or later.
 
-:::note
+:::Note
 
 Make sure that your secure keys don't contain any spaces.
 :::

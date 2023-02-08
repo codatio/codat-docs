@@ -15,5 +15,5 @@ View the coverage of our Pandle integration in the <a className="external" href=
 
 See [Set up the Pandle integration](/integrations/accounting/pandle-setup) to learn how to set up and enable the integration.
 
-:::caution Pandle Maintenance Periods
+:::Caution Pandle Maintenance Periods
 Pandle occasionally performs updates on Tuesday mornings (UK Time) that make their API temporarily unavailable. If you experience any issues fetching data from Pandle during these periods, check their [status page](http://status.pandle.com/) and queue new synchronizations when they've completed their maintenance.

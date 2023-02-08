@@ -15,7 +15,7 @@ You'll need to:
 - Add your secure credentials to the Codat Portal.
 - Enable your Plaid integration.
 
-:::note Plaid account details
+:::Note Plaid account details
 
 - If you already have a Plaid account, have your account details to hand.
 

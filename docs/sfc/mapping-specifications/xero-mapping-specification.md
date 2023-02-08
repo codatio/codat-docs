@@ -41,7 +41,7 @@ It contains a line item for each tax rate. Each line item represents the total o
 
 If no sales have been made at a given tax rate on that day, the corresponding line item will be omitted.
 
-:::caution Rounding
+:::Caution Rounding
 
 Discounts are applied to the total of the purchase once all the items have been summed up rather than at an item level. As we are splitting out items into VAT percentages across all sales for the day, discounts need to be applied at the item level which may lead to slight rounding discrepancies compared to applying the discount at the summed level. As per the advice of most accounting packages, we add an invoice line of ± 0.01 to bring the total in line with the correct total.
 :::
@@ -102,7 +102,7 @@ Codat pushes a single purchase invoice (bill) to Xero each day. This bill repres
 
 The bill is recorded against the commerce services supplier, and the expense account for the line item is set to the selected commerce fees account.
 
-:::caution Payment fee account
+:::Caution Payment fee account
 
 If the selected target account is a bank account, bills are represented as a bank transaction (spend money) and will not be represented as a bill/bill payment.
 :::
@@ -117,7 +117,7 @@ Payment fee refunds are typically booked to the same accounts configured for **P
 
 A single bill credit note is pushed each day representing all fee refunds processed that day.
 
-:::caution Payment fee refunds account
+:::Caution Payment fee refunds account
 
 If the selected target account is a bank account, bills are represented as a bank transaction (receive money) and will not be represented as a credit note.
 :::
@@ -135,7 +135,7 @@ Codat supports either bank accounts or current accounts for **Payments**. They s
   alt="Account settings screen in Xero"
 />
 
-:::caution Deposit accounts
+:::Caution Deposit accounts
 
 A deposit account cannot be used for payments.
 :::
@@ -152,12 +152,12 @@ Sync for Commerce supports additional payment types that can be switched on as a
 
 Codat has provided functionality to allow users to select different accounts for each different payment type.
 
-:::caution Accounts for card payments
+:::Caution Accounts for card payments
 
 For card payments, it’s recommended that the merchant creates a clearing account to represent their account with the commerce services provider. The clearing account can be a bank account or a nominal account in Xero that has an **Enable payments to this account** setting turned on.
 :::
 
-:::caution New payment types after setup
+:::Caution New payment types after setup
 
 If the user starts using other payments types after initial setup, the synchronization will stop until the accounts have been re-mapped via returning to the configuration page.
 :::

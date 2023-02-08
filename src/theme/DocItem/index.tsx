@@ -14,7 +14,6 @@ import type {Props} from '@theme/DocItem';
 import TOC from '@theme/TOC';
 import TOCCollapsible from '@theme/TOCCollapsible';
 import styles from './styles.module.css';
-import useZendesk from './useZendesk';
 
 import {ThemeClassNames, useWindowSize} from '@docusaurus/theme-common';
 import {DocProvider} from '@docusaurus/theme-common/internal';
@@ -47,8 +46,6 @@ export default function DocItem(props: Props): JSX.Element {
   const renderTocDesktop =
     canRenderTOC && (windowSize === 'desktop' || windowSize === 'ssr');
 
-  useZendesk();
-
   return (
     <DocProvider content={props.content}>
       {/*<Seo {...{title, description, keywords, image}} />*/}
@@ -59,6 +56,7 @@ export default function DocItem(props: Props): JSX.Element {
           className={clsx('col', {
             [styles.docItemCol]: !hideTableOfContents,
           })}>
+          {/*<DocVersionBanner versionMetadata={versionMetadata} />*/}
           <div className={styles.docItemContainer}>
             <article>
               {canRenderTOC && (

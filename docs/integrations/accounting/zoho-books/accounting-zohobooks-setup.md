@@ -15,12 +15,12 @@ Before you can access data from customers using Zoho Books for their accounting,
 
 Codat recommends that you test your integration before sending Link URLs to customers.
 
-:::note Supported versions
+:::Note Supported versions
 
 Codat currently supports the UK and US regions only for Zoho Books.
 :::
 
-:::note Zoho Books rate limits
+:::Note Zoho Books rate limits
 
 Codat works within the rate limits set by Zoho Books to minimize the impact on data syncs. By default, line items are excluded when retrieving invoices and credit notes. For customers, address and contact information is excluded.
 
@@ -29,7 +29,7 @@ See [Zoho Books limits and reduced data pulls](/zoho-book-limits) to understand 
 
 ## Register your application
 
-:::note Developer account details
+:::Note Developer account details
 
 If you already have a Zoho Books account, have your account details to hand. If you don't, [create an account](https://www.zoho.com/developer/signup.html) before you start registration.
 :::
@@ -65,7 +65,7 @@ To register your Zoho Books application.
 1. Click **Save**. A confirmation message appears if the settings were saved successfully.
 1. The **Enable Zoho Books** dialog is displayed. Select whether to enable the integration now or later.
 
-:::note
+:::Note
 
 Make sure that your secure keys don't contain any spaces.
 :::

@@ -26,7 +26,7 @@ Below is a indicative demo of a where Codat might fit in to a digital lending on
 
 1. In order to establish a connection to your customer's financial platform(s), you first need to create a Codat company for them. We recommend you create a company at the same time as your customer signs up within your app. That will allow you to track their connection status from day one. To create a company, follow the steps in [Create a Codat company](https://docs.codat.io/docs/managing-companies).
 
-:::caution Use your merchant ID for the company name
+:::Caution Use your merchant ID for the company name
 
 We recommend that you populate the name value with the ID that you use for the merchant in **your** internal system so that it’s easier to identify the Codat company that corresponds to your record of the merchant.
 :::
@@ -68,7 +68,7 @@ More information about querying can be found in [Querying](doc:querying-1). If y
 GET /integrations/{platformKey}/branding",
 ```
 
-:::caution Cache branding assets
+:::Caution Cache branding assets
 To ensure this page is performative for your users, we recommend caching the branding assets information rather than calling the branding endpoint each time a user visits the integration selection page.
 :::
 
@@ -109,7 +109,7 @@ If you don't set a redirect URL, the user will be presented with a pre-built suc
 
 If a redirect URL is not set, then pre-built UI will be presented to your user. This will be the success and overview page of Link - our pre-built white-labelled UI.
 
-:::caution Rules on number of connections to different integration types
+:::Caution Rules on number of connections to different integration types
 
 A company may link a single source of accounting data but multiple sources of banking or commerce data. Any combination of accounting, banking, and commerce connections is allowed. For more on data connections and connection statuses see [Data connections](doc:core-dataconnections).
 :::

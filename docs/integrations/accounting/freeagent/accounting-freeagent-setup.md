@@ -5,7 +5,7 @@ createdAt: "2019-04-01T10:30:01.800Z"
 updatedAt: "2023-01-10T17:38:35.904Z"
 ---
 
-:::caution FreeAgent Sandbox not supported
+:::Caution FreeAgent Sandbox not supported
 
 Codat's integration does not support linking to the FreeAgent sandbox.
 :::
@@ -53,7 +53,7 @@ Create an application in FreeAgent and then retrieve the secure application cred
 
 5. In the **Enable FreeAgent** dialog, select whether to enable the integration now or later.
 
-:::note
+:::Note
 
 Make sure that your secure keys don't contain any spaces.
 :::

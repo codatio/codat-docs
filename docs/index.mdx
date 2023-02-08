@@ -34,6 +34,10 @@ import Welcome from '@components/global/Welcome'
 <Welcome/>
 
 <div className="background-video-wrapper">
+  <video autoPlay muted loop id="myVideo" className="background-video">
+    <source src="/video/flux.mov" type="video/mov" />
+  </video>
+
   <div className="banner-video">
     <h1>Welcome to the Codat docs</h1>
     <p>
@@ -67,7 +71,7 @@ import Welcome from '@components/global/Welcome'
 <p>
   Build to our <b>Accounting API</b>, <b>Open Banking API</b>, and{" "}
   <b>Commerce API</b> to pull, push, transform and visualize data from over 35
-  major accounting, open banking, payments & eCommerce platforms, integrated
+  major accounting, Open Banking, payments & eCommerce platforms, integrated
   with a single standardized data model.
 </p>
 

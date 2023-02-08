@@ -5,7 +5,7 @@ createdAt: "2022-07-05T14:08:30.046Z"
 updatedAt: "2023-01-11T09:40:44.879Z"
 ---
 
-:::caution Right Networks - Beta testing
+:::Caution Right Networks - Beta testing
 
 Please note, support for installing the QBD connector in Right Networks hosted environments is in beta testing. If you're interested in using this functionality, please contact your Account Manager or Account Executive to find out more and gain access.
 :::
@@ -29,7 +29,7 @@ As a Codat client, you need to complete the following tasks to enable your SMB c
 3. [Enable the QBD integration](/install-qbd-connector-right-networks#enable-the-qbd-integration) in the Codat Portal.
 4. If you're using Link, [enable the Right Networks installation option](/install-qbd-connector-right-networks#optional-enable-right-networks-installation-for-your-smb-customers) in the Link flow.
 
-:::note Options for SMB authentication
+:::Note Options for SMB authentication
 
 Instead of using Link, you can provide your SMB customers with separate instructions for installing and licensing the QBD connector in their Right Networks hosted environment.
 :::
@@ -114,7 +114,7 @@ Next, your SMB customer does the following:
 
 1. Opens the **QuickBooksDesktopUI.exe** application from their Start menu.
 
-   :::note
+   :::Note
 
    If the app doesn't open, they can try opening it from the Windows system tray.
    :::

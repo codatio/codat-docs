@@ -9,7 +9,7 @@ updatedAt: "2022-12-13T11:19:58.588Z"
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-:::caution Early access
+:::Caution Early access
 
 Embedded Link is still being developed. If you run into issues with the Embedded Link solution or have any feedback, please [get in touch](mailto:embedded-link@codat.io), or even reach out to us ahead of time for advice!
 

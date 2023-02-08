@@ -20,7 +20,7 @@ The following banking data is available through the integration:
 
 Before you can set up the integration, you need to [register with TrueLayer](/register-for-truelayer) either directly or through Codat.
 
-:::caution Data synced from TrueLayer might be limited
+:::Caution Data synced from TrueLayer might be limited
 
 If over 5 minutes has elapsed since a company was linked to TrueLayer, then the integration only fetches the **previous 90 days' worth of data**. Otherwise, the integration fetches all data.
 

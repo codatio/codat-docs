@@ -17,7 +17,7 @@ Use the following process to onboard users to the Codat API. You can either onbo
 
 To create a new company, use the `POST /companies` endpoint and provide a name you want to attribute to it in the request body. Parameter `name` is a required parameter to execute this request.
 
-:::note Company name
+:::Note Company name
 
 The name of the company doesn't have to be unique. It's just there to help you identify the company in the portal. Make sure to [avoid forbidden characters](/core-concepts/companies).
 :::
@@ -43,7 +43,7 @@ You can also add the `platformType` parameter to specify an integration platform
 
 You can also find accounting platform keys [here](/accounting-platform-keys) and commerce platform keys [here](/commerce-platform-keys).
 
-:::caution Retain the company ID
+:::Caution Retain the company ID
 
 The `id` property that you receive in the response is the unique Codat identifier for this company. We recommend that you retain it for future reference.
 :::
@@ -54,7 +54,7 @@ Send the user to the `redirect` URL returned in the previous step. They will be 
 
 Once the user has completed the Link flow, the Codat platform will redirect them to the redirect URL you have configured in the **Settings > Auth flow > Link** in the Codat Portal. This URL can include the Codat `companyId` as well as any other custom query parameters.
 
-:::note Redirect parameter settings
+:::Note Redirect parameter settings
 
 For more information on setting your redirect URL, refer to [this document](/redirect-urls).
 :::
@@ -105,7 +105,7 @@ If there are datasets which are not as up-to-date as you require, you can queue 
 
 Once you've queued the sync, you can poll the [GET /companies/{companyId}/dataStatus](/codat-api#/operations/get-companies-companyId-dataStatus) endpoint (as described above) to [monitor progress of the sync](/data-status).
 
-:::note
+:::Note
 
 You can configure a sync schedule in the Codat portal to keep each data type at an acceptable freshness. For more information, please refer to your onboarding docs or contact [support@codat.io](mailto:support@codat.io).
 :::
@@ -129,7 +129,7 @@ Data Connections can become _deauthorized_ by the user revoking access within th
 
 To enable you to sync new data, you will need to ask the user to complete the auth flow in Link again.
 
-:::caution Re-linking and usage costs
+:::Caution Re-linking and usage costs
 
 Creating a new company may cause additional data to be pulled from the platform and is likely to incur additional usage costs.
 :::

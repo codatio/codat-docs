@@ -11,7 +11,7 @@ The data model for accounting data sources includes all the accounting and banki
 - Pull, or retrieve, from the Codat API.
 - Push, or submit, to an accounting platform.
 
-:::note Data coverage explorer
+:::Note Data coverage explorer
 
 View the full details of the data types that Codat supports for each accounting platform in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type" target="_blank">Data coverage explorer</a>.
 :::

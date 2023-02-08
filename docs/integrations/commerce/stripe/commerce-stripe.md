@@ -12,7 +12,7 @@ payments and charges on behalf of small businesses.
 
 Use Codat's Commerce API with Stripe to securely connect to, retrieve, and view your customers' commerce transactions.
 
-:::caution Action required by existing users
+:::Caution Action required by existing users
 
 The integration now uses <a className="external" href="https://stripe.com/docs/connect" target="_blank">_Stripe Connect_</a> to establish authenticated connections between Companies and Stripe data sources, rather than _Stripe extensions_.
 

@@ -35,7 +35,7 @@ The following table highlights selected fields that are not available in data pu
 | :------------------------ | :---------------------------------------------------------- |
 | Bank Transactions         | Bank account number is not available in the provider's API. |
 
-:::caution Item bundles in QBO
+:::Caution Item bundles in QBO
 
 _Item bundles_ in QuickBooks Online are supported for Direct Incomes, Invoices, and Credit Notes only.
 :::

@@ -49,18 +49,18 @@ The response contains a list of bank accounts with a status of either `pending` 
 
 ## Push bank transactions from a source bank account
 
-You can push [Bank transactions](/accounting-api#/schemas/BankTransactions) from `connected` source bank accounts to target accounts in supported Sage products. The integration routes these transactions through the Sage Banking Service Provider API.
+You can push [Bank transactions](/data-model/accounting/-banktransactions) from `connected` source bank accounts to target accounts in supported Sage products. The integration routes these transactions through the Sage Banking Service Provider API.
 
 In the user's Sage package, new bank transactions for the target account will appear on the **Incoming Bank Transactions** UI.
 
-:::note Bank feeds must be pushed to Codat
+:::Note Bank feeds must be pushed to Codat
 
 Transactions are not automatically downloaded to Sage when the user successfully connects a bank account.
 :::
 
 Make the following requests to the Codat API. All push requests are asynchronous.
 
-1. Push bank transactions to a target bank account using the <a href="/accounting-api#/operations/post-bank-transactions">Create bank transactions</a> endpoint. Note that:
+1. Push bank transactions to a target bank account using the <a className="external" href="https://api.codat.io/swagger/index.html#/BankAccounts/post_companies__companyId__connections__connectionId__push_bankAccounts__accountId__bankTransactions" target="_blank">Create bank transactions</a> endpoint. Note that:
 
    - You can only push bank transactions to one target account at a time.
    - Bank transactions must be pushed in chronological order.
@@ -104,9 +104,8 @@ Make the following requests to the Codat API. All push requests are asynchronous
 
 2. If the data is valid, the endpoint returns a push operation with a `status` of `Pending` (202). The status changes to `Success` if the push operation completes successfully.
 
-   :::note
+   :::Note
 
-   The status might remain as `Pending` for some time while Sage processes the bank transactions.
-   :::
+   > The status might remain as `Pending` for some time while Sage processes the bank transactions.
 
 3. Repeat the request for the remainder of the SMB customer's connected bank accounts.

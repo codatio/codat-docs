@@ -11,7 +11,7 @@ This page describes the information we'll need from you, and provides an overvie
 
 ## Self service migrations
 
-Codat's API allows you to provide tokens for a subset of our integrations which will allow you to self manage a migration.
+Codat's API allows you to provide tokens for a subset of our integrations which will allow you to self-manage a migration.
 
 Self service token migration is currently supported for over twenty of our integrations, with more being added in the coming months. To view an up-to-date list, check out the available integrations in the **OAuth Token Migrations** section of our <a href="https://postman.codat.io/#88a1864c-60e8-4105-bea9-e55314d6b74d" target="_blank" class="external">Postman collection</a>.
 
@@ -30,7 +30,7 @@ To migrate, use the PUT connections endpoint. You will need to provide the integ
 }
 ```
 
-:::caution Syncing data post-migration
+:::Caution Syncing data post-migration
 
 After successfully updating a connection with valid credentials, you'll need to initiate a sync manually using the `POST ​/companies​/{companyId}​/data​/all` endpoint.
 
@@ -41,7 +41,7 @@ _Fetch on first link_ isn't supported when performing self-service token migrati
 
 For other platforms where we do not yet support the self service migration route, or if you have special considerations or concerns, Codat's solutions team offer a managed migration pathway.
 
-:::note Supported integrations
+:::Note Supported integrations
 
 We currently have supported migrations from the following platforms: FreeAgent, FreshBooks, QuickBooks Online, Shopify, Wave, Xero, and Zoho Books.
 
@@ -68,5 +68,5 @@ Every migration is different so please make sure you talk to your solutions engi
 | **2. Schedule the migration**                | Agree a time when the migration can take place. Based on your company's data, Codat's support team estimates how long the migration will take.                           | Your company and the Codat support team |
 | **3. Update your application details**       | Add Codat’s callback URL to the application registered with your platform provider.                                                                                      | Your company                            |
 | **4. Disable data syncing**                  | Disable data syncing in your existing application for all companies that you have chosen to migrate. This is to prevent tokens from becoming invalid.                    | Your company                            |
-| **5. Migrate first company**                 | Codat's support team imports the name and token for a single company and performs an end-to-end test to make sure: <br/> - No reauthorisation is required.<br/> - Data syncs complete correctly. | Codat support team |
+| **5. Migrate first company**                 | Codat's support team imports the name and token for a single company and performs an end-to-end test to make sure: <br/> - No reauthorization is required.<br/> - Data syncs complete correctly. | Codat support team |
 | **6. Complete migration** | Codat's support team:<br/>- Migrates the remaining companies.<br/>- Performs end-to-end tests.<br/>- Completes a handover. | Codat support team |

@@ -19,7 +19,7 @@ Companies can be created in one of two ways:
 
 2. Using the [Codat portal](/other/portal/companies#add-a-new-company).
 
-:::caution Forbidden characters in company names
+:::Caution Forbidden characters in company names
 
 Company names may only contain letters, numbers, spaces, and the following symbols: `-`, `'`, `&`, `@`, `.`, `,`, `?`, `!`.
 

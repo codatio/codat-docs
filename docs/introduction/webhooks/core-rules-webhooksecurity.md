@@ -24,7 +24,7 @@ To enable security for your organisation's webhooks.
 
 To enable webhook security, use any valid header value in ASCII in the **alertAuthHeader**. For example:
 
-`PUT <https://api.codat.io/profile>`
+`PUT <https://api.codat.io/profile`>
 
 ```json
 {
@@ -49,5 +49,5 @@ If you want to override webhook security for specific rules, please contact [sup
 
 Codat's alerting rules are served from static IP addresses. This means that you are able to apply an allowlisting rule to grant network access to these notifications.
 
-- `20.77.82.168/32`
-- `51.142.76.22/32`
+- 20.77.82.168/32
+- 51.142.76.22/32

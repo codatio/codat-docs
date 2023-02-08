@@ -5,7 +5,7 @@ createdAt: "2022-02-09T14:35:17.586Z"
 updatedAt: "2022-08-16T10:27:41.705Z"
 ---
 
-:::caution Sync for Commerce: beta testing
+:::Caution Sync for Commerce: beta testing
 
 Note that Sync for Commerce is in the beta phase.
 :::
@@ -68,7 +68,7 @@ POST /meta/companies/sync
 We recommend that you populate the `name` value with the ID that you use for the merchant in _your_ internal system so that it’s easier to identify the Codat company that corresponds to your record of the merchant.
 :::
 
-:::caution Forbidden characters
+:::Caution Forbidden characters
 
 Company names may only contain letters, numbers, spaces, and the following symbols: `-`, `'`, `&`, `@`, `.`, `,`, `?`, `!`.
 :::
@@ -113,7 +113,7 @@ The response to this request includes the parameters of a newly created company,
 }
 [/block]
 
-:::caution Keep track of the `companyId`
+:::Caution Keep track of the `companyId`
 
 It's important that you keep track of the Codat `companyId` that is returned at step 1:
 * It is required for the next stage of the setup, [ data pushing,](/sync-data-pushing) and any time you need to synchronize data for this merchant or interact with their configuration.

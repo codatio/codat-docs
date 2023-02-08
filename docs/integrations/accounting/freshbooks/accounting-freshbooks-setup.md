@@ -97,7 +97,7 @@ user:teams:read"
 
 5. The **Enable FreshBooks** dialog is displayed. Select whether to enable the integration now or later.
 
-:::note
+:::Note
 
 Make sure that your secure keys don't contain any spaces.
 :::

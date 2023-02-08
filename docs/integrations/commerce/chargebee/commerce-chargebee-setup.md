@@ -27,7 +27,7 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 ## Create a company and share the Link URL with your SMB customers
 
-:::note Options for SMB authentication
+:::Note Options for SMB authentication
 
 Using Link for SMB authentication is optional. You can also build your own authentication flow using the Codat API (the platform key for Chargebee is required).
 :::

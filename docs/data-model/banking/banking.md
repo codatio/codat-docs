@@ -10,7 +10,7 @@ The data model for banking data sources includes all the data types that you can
 
 # Supported banking data types
 
-:::note Data coverage explorer
+:::Note Data coverage explorer
 
 View the full details of the data types that Codat supports for each banking platform in the <a className="external" href="https://knowledge.codat.io/supported-features/banking?view=tab-by-data-type" target="_blank">Data coverage explorer</a>.
 :::

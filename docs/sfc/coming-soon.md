@@ -4,7 +4,7 @@ createdAt: "2022-11-15T13:40:48.346Z"
 updatedAt: "2022-11-23T15:21:56.514Z"
 ---
 
-:::caution Beta testing
+:::Caution Beta testing
 
 Sync for Commerce is in beta. If you are interested in building with Sync for Commerce, please [get in touch](mailto:sync-for-commerce@codat.io).
 :::

@@ -14,7 +14,7 @@ Before you can access commerce data from customers using Clover, you need to set
 
 ## Create an app and retrieve your secure credentials
 
-:::note Developer account details
+:::Note Developer account details
 
 - If you already have a Clover developer account, have your account details to hand.
 

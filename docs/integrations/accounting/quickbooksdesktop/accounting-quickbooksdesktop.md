@@ -13,7 +13,7 @@ The connector is a Windows application that runs on the SMB user's local machine
 
 View the coverage of our QuickBooks Desktop on-premise connector in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=pqsw" target="_blank">Data coverage explorer</a>.
 
-:::caution Attachments not supported
+:::Caution Attachments not supported
 
 Uploading and downloading Attachments to QuickBooks Desktop is not supported for any data type. This functionality is not supported by the QuickBooks SDK.
 :::
@@ -127,7 +127,7 @@ See [QuickBooks Desktop requirements](/software-and-hardware-requirements) to le
 
 See [Install the QuickBooks Desktop connector](/installing-the-quickbooks-connector) to learn how to set up and enable the connector.
 
-:::note Installation in hosted environments
+:::Note Installation in hosted environments
 
 [Installation on Right Networks hosted instances](/install-qbd-connector-right-networks) is currently available in beta.
 :::

@@ -29,7 +29,7 @@ Be aware of the following information before joining the Domain Discovery Progra
 
 3. After Codat has completed the domain discovery phase for a particular integration in the program and implemented a standardized domain data model, participants will be asked to use the standardized data model (data types) instead of the proxy endpoint. The integration(s) will be retired from the program, subject to Codat's [change policy](/change-policy) for breaking changes.
 
-:::caution Support levels
+:::Caution Support levels
 
 For integrations within the scope of the program, Codat handles authentication through Link and facilitates pass through of API calls and responses. As such, we have limited ability to support or diagnose errors from the underlying integrations.
 :::

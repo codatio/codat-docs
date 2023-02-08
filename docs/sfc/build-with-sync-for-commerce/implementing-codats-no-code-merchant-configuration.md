@@ -5,7 +5,7 @@ createdAt: "2022-05-12T14:01:29.011Z"
 updatedAt: "2022-11-17T11:02:46.252Z"
 ---
 
-:::caution Beta testing
+:::Caution Beta testing
 
 Sync for Commerce is in beta. If you are interested in building with Sync for Commerce, please [get in touch](mailto:sync-for-commerce@codat.io).
 :::
@@ -20,7 +20,7 @@ Our Sync configuration flow handles this for you.
 
 You can [customize your flow](/customizing-the-sync-configuration-flow) to give your users the best experience.
 
-:::note Use our Swagger to follow this guide
+:::Note Use our Swagger to follow this guide
 
 All the endpoints mentioned in this guide are available in our <a href="https://api.codat.io/sync/swagger/" target="_blank">Sync for Commerce Swagger</a>. You can use it to try the API requests from this guide directly in your browser. Before you use Swagger, make sure to [authenticate](https://docs.codat.io/reference/authentication).
 :::
@@ -73,7 +73,7 @@ The merchant will be redirected to an authorization page for the accounting plat
 
 Once successful, they will have created a valid Connection, and will be redirected to the configuration step.
 
-:::note
+:::Note
 
 If you used our Embedded Link or Hosted Link solutions for platform selection, this step will be skipped automatically.
 :::
@@ -88,7 +88,7 @@ Once authorized, the merchant is presented with Codat’s white-labeled configur
 - Set up the default invoice status
 - Set up the data grouping period
 
-:::note
+:::Note
 
 To provide your merchants with a branded experience, we recommend that you customize your [Sync configuration flow](/customizing-the-sync-configuration-flow), including your logo and primary color.
 :::
@@ -106,7 +106,7 @@ To allow the merchants to review and modify their connection, present them with 
 - Set up the data grouping period
 - De-authorize the connection to their accounting platform
 
-:::caution
+:::Caution
 
 > In case the merchant severs the connection, the next scheduled data sync will fail, and no further data syncs will be attempted.
 >
@@ -192,7 +192,7 @@ Both the `enabled` and `configured` parameters should be set to `true`.
 
 You're ready to start [pushing commerce data](/sync-data-pushing) to this company.
 
-:::note
+:::Note
 
 Don't forget to customize your [Sync configuration flow](/customizing-the-sync-configuration-flow).
 :::

@@ -20,7 +20,7 @@ To set up the integration, you'll need to perform these tasks:
 
 To register as a partner, you'll first need to complete the <a className="external" href="https://www.lightspeedhq.com/partners/partner-application/" target="_blank">Partner Application form</a>. When asked how you plan to earn revenue as a Lightspeed Partner, choose **Integrate to Lightspeed POS** or **Build an App**, and then complete the rest of the fields accordingly.
 
-:::note Which Lightspeed product?
+:::Note Which Lightspeed product?
 
 If you're asked which product you intend to integrate with, make sure you select **Restaurant**. Codat's integration does not work with Lightspeed Retail products at this time.
 :::

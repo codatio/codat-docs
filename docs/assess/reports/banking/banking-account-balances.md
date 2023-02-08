@@ -5,7 +5,7 @@ createdAt: "2022-05-26T13:21:50.091Z"
 updatedAt: "2022-07-06T14:50:43.873Z"
 ---
 
-:::caution Banking account balances - Beta testing",
+:::Caution Banking account balances - Beta testing",
 
 Please note, this feature is in beta testing. We encourage you to provide any feedback you have on the product by selecting _Submit idea_ <a href="https://portal.productboard.com/codat/7-product-roadmap/tabs/20-accounting-api" target="_blank">here</a> on our roadmap.
 :::

@@ -40,7 +40,7 @@ To manage the third-party SSO services, perform the following steps in Codat Por
   alt="Screenshot of the Manage sign-in methods dialog in the Codat Portal"
 />
 
-:::note
+:::Note
 
 If you decide to disable third-party SSO, your users will still be able to sign in with their email and password credentials.
 

@@ -27,7 +27,7 @@ You'll need to:
 
 1. Next, you will need to create an API key. On the Basiq dashboard, from the left hand menu bar, choose the "API Keys" tab and click to create a new API Key. You will need to name your key, and choose the permissions set that you created in step (3) above.
 
-:::note Keep your API Key Safe
+:::Note Keep your API Key Safe
 
 Once your Basiq API key is generated, it is only displayed once! Keep the key safe, and make sure you have it available to copy into the Codat portal later!
 :::

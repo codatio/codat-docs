@@ -16,7 +16,7 @@ You'll need to:
 - Manage TrueLayer banking sources
 - Check banking data type settings
 
-:::note Testing the TrueLayer integration
+:::Note Testing the TrueLayer integration
 
 If you use TrueLayer's live environment, you can test TrueLayer using either the Demo Bank data source, or live bank accounts. For more information, see [Test your TrueLayer integration](/test-truelayer).
 :::

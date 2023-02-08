@@ -21,7 +21,7 @@ Replace `CHARGIFY_ENDPOINT` with the desired Chargify API object, which must be 
 
 To view a list of all available endpoints, see the <a className="external" href="https://developers.chargify.com/docs/api-docs/YXBpOjE0MTA4MjYx-chargify-api" target="_blank">Chargify API documentation</a>.
 
-:::caution
+:::Caution
 
 Use of the Chargify integration is subject to participation in the Codat [Domain discovery program](/domain-discovery-program). Be aware of the program expectations before using the integration.
 :::

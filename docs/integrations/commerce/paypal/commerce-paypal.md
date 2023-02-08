@@ -20,7 +20,7 @@ View the coverage of our PayPal integration in the <a className="external" href=
 
 See [Set up the PayPal Integration](/set-up-paypal-in-production) to learn how to set up and enable the integration.
 
-:::caution Underlying provider requirements
+:::Caution Underlying provider requirements
 Codat's PayPal integration is built using PayPal's XS2A API and is available only to organizations holding an AISP and/or PISP authorization.
 
 PayPal requires you to provide them with either an eIDAS QWAC or OBWAC, i.e. an Open Banking certification. For guidance on how to register for one of these certifications, see [Payment Services Directive 2 (PSD2) Compliance](https://developer.paypal.com/reference/guidelines/psd2-compliance/) in the PayPal developer documentation.

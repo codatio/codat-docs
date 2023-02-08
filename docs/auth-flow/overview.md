@@ -123,7 +123,7 @@ We suggest using Link for best results, which can be [embedded within your app](
 
 ## Pitfalls
 
-:::note Device compatibility
+:::Note Device compatibility
 
 Whether you build your own or use Link, browser and mobile compatibility varies for different integrations:
 
@@ -131,6 +131,6 @@ Whether you build your own or use Link, browser and mobile compatibility varies 
 - Some integrations require **downloading a desktop package** e.g. [Oracle NetSuite](/accounting-netsuite), [Microsoft Dynamics 365 Business Central](/accounting-dynamics365businesscentral).
 - Some integrations require switching to complex flows on **non mobile-optimized websites** due to the complexity of the third-party platform e.g. [Sage 200cloud](/accounting-sage200), [Sage Intacct](/accounting-sage-intacct).
 
-:::caution Link compatibility with Codat Products
+:::Caution Link compatibility with Codat Products
 
 Link is compatible with the whole product range of Codat except for [Sync for Commerce](/sync-commerce/overview) which is currently not supported. To set up your Sync for Commerce authorization flow, follow the instructions in our [Sync for Commerce documentation](/sync-commerce/overview).

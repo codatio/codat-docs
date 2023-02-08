@@ -6,7 +6,7 @@ createdAt: "2019-05-06T23:45:25.650Z"
 updatedAt: "2022-11-25T12:15:40.507Z"
 ---
 
-:::note Linking companies using the Sage 50 connector
+:::Note Linking companies using the Sage 50 connector
 
 Customers must install and run the Sage 50 connector on the same computer where Sage 50 (UK) is installed. If in doubt, ask your customer to link their accounting data from the computer that they normally use to access Sage 50 (UK).
 :::
@@ -32,7 +32,7 @@ Next, the user copies their license key (which is the same as their _CompanyId_ 
 
 If you've built your own Link flow, the **linkUrl** field on the company's Sage 50 data connection will initiate the installer download.
 
-:::note About the connector download file
+:::Note About the connector download file
 
 The Sage 50 connector is packaged as a .exe file. To increase your clients' trust in the download, the filename is prefixed with your company name; that is, the name of the company the user is connecting their data to. For example: `YourCompanyName-sage50-connector.exe`. Symbols in the filename are replaced with dashes.
 
@@ -93,7 +93,7 @@ For example:
 
 On the **Set your credentials** step, the user enters their Sage 50 username and password in the boxes provided. The username and password entered must be for a Sage 50 user account with permission to read all the data you plan to synchronize.
 
-:::caution Create a separate login for pushing data
+:::Caution Create a separate login for pushing data
 
 If your product requires pushing data to Sage 50, the user should create a separate user login in Sage 50 to be used solely by the Sage 50 Connector. This is required to prevent concurrent access issues.
 

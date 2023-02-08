@@ -5,7 +5,7 @@ createdAt: "2022-11-30T17:35:08.294Z"
 updatedAt: "2023-01-16T12:23:11.019Z"
 ---
 
-:::caution
+:::Caution
 
 This section provides instructions for a feature not enabled by default. Submit a request to Codat to activate the categorization mapping feature.
 :::
@@ -68,7 +68,7 @@ For example, in order to create categories to break down sales into products, se
 
 ```
 
-:::note
+:::Note
 
 Sync for Commerce does not support hierarchies of categories and requires a simple array of category IDs and names.
 :::

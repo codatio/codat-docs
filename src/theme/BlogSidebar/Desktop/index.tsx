@@ -17,10 +17,12 @@ import styles from "./styles.module.css";
 export default function BlogSidebarDesktop({ sidebar }: Props): JSX.Element {
   const deprecations = sidebar.items.filter((item) =>
     item.title.includes("Upcoming")
-  );
+  ); //.slice(4)
   const latest = sidebar.items.filter(
     (item) => !item.title.includes("Upcoming")
-  );
+  ); //.slice(4)
+
+  console.log(deprecations, latest);
 
   return (
     <aside className={styles.sidebarWrapper}>

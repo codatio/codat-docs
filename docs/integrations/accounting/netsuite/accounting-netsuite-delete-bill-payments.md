@@ -4,7 +4,7 @@ createdAt: "2022-12-09T17:06:02.593Z"
 updatedAt: "2023-01-04T09:51:42.874Z"
 ---
 
-:::note
+:::Note
 
 We're rolling out support for deleting other data types in the coming months - for details, see our <a className="external" href="https://portal.productboard.com/codat/7-public-product-roadmap/tabs/46-accounting-api" target="_blank">Accounting API Public Product Roadmap</a>.
 :::

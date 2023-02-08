@@ -20,7 +20,7 @@ When you're finished testing your Codat solution, you can upgrade to either of o
 
 The free account provides a trial of Codat that lasts for 365 days. When signed up to a free account you can:
 
-- Create up to 50 Companies.
+- Create up to 50 companies.
 - Create unlimited connections to Sandbox data.
 - Create up to five connections at a time to each of our accounting, commerce, and banking integrations.
 - Schedule data syncs to refresh data daily, weekly, or monthly (but not hourly).

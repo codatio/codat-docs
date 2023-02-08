@@ -210,7 +210,7 @@ When the user selects the integration you're ready to progress them to the Sync 
 
 **Retain the `platformKey` of the integration your merchant selected.** In the example above, this is passed to the `onClick` function, which would take care of that.
 
-:::caution Incorrect platform selection
+:::Caution Incorrect platform selection
 
 If your merchant accidentally selects the wrong accounting package, you can resolve this by [deleting that Connection](/core-concepts/connections#how-do-i-delete-a-data-connection) for the incorrectly selected accounting software and returning them to the accounting platform selection stage.
 :::
