@@ -300,6 +300,13 @@ module.exports = {
     "@docusaurus/plugin-content-pages",
     "@docusaurus/plugin-debug",
     "@docusaurus/plugin-sitemap",
+    [
+      "@docusaurus/plugin-google-analytics",
+      {
+        trackingID: process.env.GA_TAG,
+        anonymizeIP: true,
+      },
+    ],
     // Add custom webpack config to make @stoplight/elements work
     () => ({
       name: "custom-webpack-config",
