@@ -334,8 +334,7 @@ module.exports = {
   ],
   themes: [
     [
-      //overriding the standard docusaurus-theme-classic to provide custom schema
-      path.resolve(__dirname, "./node_modules/@docusaurus/theme-classic"),
+      path.resolve(__dirname, "./node_modules/@docusaurus/theme-classic"), //overriding the standard docusaurus-theme-classic to provide custom schema
       {
         customCss: [
           require.resolve(
@@ -349,7 +348,6 @@ module.exports = {
     "@docusaurus/theme-mermaid",
   ],
   markdown: {
-    // In order for Mermaid code blocks in Markdown to work, you also need to enable the Remark plugin with this option
-    mermaid: true,
+    mermaid: true, // In order for Mermaid code blocks in Markdown to work, you also need to enable the Remark plugin with this option
   },
 };
