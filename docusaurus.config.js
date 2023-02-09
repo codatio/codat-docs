@@ -111,7 +111,7 @@ module.exports = {
             },
             {
               href: "/bank-feed-api",
-              label: "Bank Feed API",
+              label: "Bank Feeds API",
             },
             {
               href: "/assess-api",

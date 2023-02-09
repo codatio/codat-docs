@@ -1,7 +1,7 @@
 ---
-title: "Bank Feed API overview"
-sidebar_label: Bank Feed API
-description: "Bank Feed API enables your SMB users to set up bank feeds from accounts in your application to supported accounting platforms."
+title: "Bank Feeds API overview"
+sidebar_label: Bank Feeds API
+description: "Bank Feeds API enables your SMB users to set up bank feeds from accounts in your application to supported accounting platforms."
 createdAt: "2022-11-17T12:09:28.950Z"
 updatedAt: "2023-01-05T15:04:48.214Z"
 ---
@@ -14,19 +14,19 @@ In Codat's API, bank feeds are represented as [Bank transactions](/accounting-ap
 
 /accounting-api#/schemas/BankTransactions
 
-Bank Feed API uses standalone integrations to [popular accounting software](/bank-feed-api/overview#which-integrations-support-bank-feed-api). The connection journey for SMB users is handled by the integration and is different for each supported platform.
+Bank Feeds API uses standalone integrations to [popular accounting software](/bank-feed-api/overview#which-integrations-support-bank-feed-api). The connection journey for SMB users is handled by the integration and is different for each supported platform.
 
 <img
   src="/img/old/fd21af0-codat_whitepaper_accounting-automation_diagram_B.png"
-  alt="Data flow between your application and the SMB user's accounting platform with Bank Feed API."
+  alt="Data flow between your application and the SMB user's accounting platform with Bank Feeds API."
 />
 
 :::note Product feedback
 
-Tell us how you'd like to use Bank Feed API on <a className="external" href="https://codat.productboard.com/feature-board/1378101-feature-organization/features/11073763/detail" target="_blank">Productboard</a>.
+Tell us how you'd like to use Bank Feeds API on <a className="external" href="https://codat.productboard.com/feature-board/1378101-feature-organization/features/11073763/detail" target="_blank">Productboard</a>.
 :::
 
-## Why use Bank Feed API?
+## Why use Bank Feeds API?
 
 <ul className="card-container col-2">
   <li className="card">
@@ -84,9 +84,9 @@ Tell us how you'd like to use Bank Feed API on <a className="external" href="htt
   </li>
 </ul>
 
-## Which integrations support Bank Feed API?
+## Which integrations support Bank Feeds API?
 
-To leverage the functionality of Bank Feed API, first choose an integration to a supported accounting platform.
+To leverage the functionality of Bank Feeds API, first choose an integration to a supported accounting platform.
 
 - [QuickBooks Online Bank Feeds](/bank-feed-api/qbo-bank-feeds/) (US and Canada only)
 - [Sage Bank Feeds](/bank-feed-api/sage-bank-feeds)
@@ -99,9 +99,9 @@ For detailed setup instructions, refer to the documentation for each integration
 The setup process and platform registration requirements vary for each Bank Feeds integration.
 :::
 
-## How Bank Feed API works
+## How Bank Feeds API works
 
-Here's a high-level overview of the setup and connection flow for Bank Feed API.
+Here's a high-level overview of the setup and connection flow for Bank Feeds API.
 
 1. Enable the integration you want to use on the <a className="external" href="https://app.codat.io/settings/integrations/bankfeeds" target="_blank">Bank feed integrations</a> page in the Codat Portal.
 
