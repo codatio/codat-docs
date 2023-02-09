@@ -10,7 +10,7 @@ updates:
     schedule:
       interval: "monthly"
     assignees:
-      - "mcclowes"
+    - "mcclowes"
     reviewers:
-      - "mcclowes"
-      - "dcoplowe"
+    - "mcclowes"
+    - "dcoplowe"
