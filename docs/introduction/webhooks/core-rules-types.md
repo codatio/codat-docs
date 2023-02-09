@@ -153,7 +153,7 @@ The following rules can be configured in the Codat Portal to alert you to events
 **Trigger:** A push operation times out.  
 **Additional data:** `dataType`, `pushOperationGuid`.
 
-```
+```json
 {
  "CompanyId":"f6bc5f14-87fb-438f-8d2d-db6a0964aef1",
  "RuleId":"c40791fe-b6fd-45c3-9bf7-0a16abf1b8fd",
@@ -171,7 +171,7 @@ The following rules can be configured in the Codat Portal to alert you to events
 
 **Trigger:** A Sync connection is deleted.
 
-```
+```json
 {
 "CompanyId": "e2876f0a-5102-4a7d-9743-f10133dba88f",
 "ClientId": "4f1fb082-0c62-4c74-be22-bc782b801e59",
