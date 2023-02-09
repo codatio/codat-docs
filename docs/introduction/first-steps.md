@@ -37,27 +37,29 @@ You can perform each step in the Codat Portal or using our API.
 
 ## Developer prerequisites
 
-If you are a developer and want to work with Codat using our <a href="https://docs.codat.io/reference/using-codats-api-1" target="_blank">API Reference</a> or by making calls to our API in code, you first need to authenticate.
+If you are a developer and want to work with Codat using our <a className="external" href="/codat-api#/" target="_blank">API Reference</a> or by making calls to our API in code, you first need to authenticate.
 
 <details>
   <summary><b>Authenticate with Codat's API</b></summary>
 
-:::caution
-Authorization headers can only be viewed and copied by users with Administrator or Developer <a href="/user-roles" target="_blank">roles</a>.
+:::caution Viewing auth headers
+Authorization headers can only be viewed and copied by users with Administrator or Developer <a href="/other/user-management/user-roles" target="_blank">roles</a>.
 :::
 
 Codat uses API keys, Base64 encoded within an authorization header, to control access to the API. To copy your authorization header, navigate to **Developers > API keys** in the <a href="https://app.codat.io/developers/api-keys" target="_blank">Codat Portal</a>.
 
 Then, replace `{basicAuthHeader}` in the code snippets below.
 
-```Text Unix Bash
+```json title="Unix Bash"
+
 // Create a variable to hold your authorization header value
 // In this guide, we use:
 
 CODAT_AUTH_HEADER='{basicAuthHeader}'
 ```
 
-```Text .NET
+```json title=".NET"
+
 // Add package RestSharp and create a new REST client
 
 using RestSharp;
@@ -69,7 +71,8 @@ var codatApiClient = new RestClient(baseUrl);
 codatApiClient.AddDefaultHeader("Authorization", authHeaderValue);
 ```
 
-```Text Node.js
+```json title="Node.js"
+
 // NOTE: This example is for server side code.
 // Do not include your auth header in a client side rendered app.
 
@@ -89,7 +92,7 @@ var codatApiClient = axios.create({
 });
 ```
 
-You can read more about <a href="https://docs.codat.io/reference/authentication" target="_blank">authentication at Codat</a>, or proceed to create your first company.
+You can read more about <a href="/using-the-api/authentication" target="_blank">authentication at Codat</a>, or proceed to create your first company.
 
 </details>
 
@@ -111,7 +114,8 @@ Copy this URL for use in the next step. Note that this URL can be accessed again
 
 To create a company in Codat, use the `POST /companies` endpoint with a request body containing the `name` of the company. It does not have to be unique and serves to identify your customer in Codat.
 
-````Text Unix Bash
+```json title="Unix Bash"
+
 curl --request POST \
      --url "https://api.codat.io/companies" \
      --header "Authorization: $CODAT_AUTH_HEADER" \
@@ -121,9 +125,10 @@ curl --request POST \
      {
           "name": "SMB company name"
      }
-     ```
+```
 
-```Text .NET
+```json title=".NET"
+
 var createCompanyRequest = new RestRequest("companies", Method.Post)
     .AddBody(new
     {
@@ -132,9 +137,10 @@ var createCompanyRequest = new RestRequest("companies", Method.Post)
     });
     var createCompanyResponse = codatApiClient.Execute(createCompanyRequest);
 Console.WriteLine(createCompanyResponse.Content);
-````
+```
 
-```Text Node.js
+```json title="Node.js"
+
 codatApiClient
   .post("/companies", {
       name: "SMB company name",
@@ -187,24 +193,27 @@ Pick up the `redirect` URL returned in the response body of the company creation
 
 Follow the flow to connect to the Codat Sandbox as your source of accounting, commerce, and banking data. You don't need to enter any credentials.
 
-Once the flow is complete, you can verify the company's status under the <a href="https://docs.codat.io/reference/getcompany" target="_blank"><i>View a single company</i></a> endpoint.
+Once the flow is complete, you can verify the company's status under the <a href="/codat-api#/operations/get-companies-companyId" target="_blank"><i>View a single company</i></a> endpoint.
 
 Remember to replace `{companyId}` with your company `id` obtained previously.
 
-````Text Unix Bash
+```json title="Unix Bash"
+
 curl --request GET \
      --url "https://api.codat.io/companies/{companyId}" \
      --header "Authorization: $CODAT_AUTH_HEADER" \
      --header "accept: application/json"
-     ```
+```
 
-```Text .NET
+```json title=".NET"
+
 var getCompanyRequest = new RestRequest($"companies/{companyId}", Method.Get);
 var getCompanyResponse = codatApiClient.Execute(getCompanyRequest);
 Console.WriteLine(getCompanyResponse.Content);
-````
+```
 
-```Text Node.js
+```json title="Node.js"
+
 codatApiClient
   .get(`/companies/${companyId}`)
   .then((response) => {
@@ -217,7 +226,7 @@ codatApiClient
 
 In the JSON response, you can see that the the `status` of data connections changed to **linked**.
 
-On first connection, Codat pulls data from the data source immediately. You can also use the <a href="https://docs.codat.io/reference/get_companies-companyid-datastatus" target="_blank"><i>Get company data status</i></a> endpoint to confirm the sync was successful.
+On first connection, Codat pulls data from the data source immediately. You can also use the <a href="/codat-api#/operations/get-companies-companyId-dataStatus" target="_blank"><i>Get company data status</i></a> endpoint to confirm the sync was successful.
 
 </details>
 
@@ -253,26 +262,29 @@ Developers can also use the Portal to review how Codat polled for a specific dat
 
 Codat provides various endpoints for you to query each of the supported data types easily.
 
-For example, to query invoices, use the <a href="https://docs.codat.io/reference/listinvoicespaged" target="_blank"><i>All invoices</i></a> endpoint. You can perform filtering on the response data using querying. In this guide, we are using `page` and `pageSize` parameters to pull ten invoices for the company we created earlier.
+For example, to query invoices, use the <a href="/accounting-api#/operations/list-invoices" target="_blank"><i>All invoices</i></a> endpoint. You can perform filtering on the response data using querying. In this guide, we are using `page` and `pageSize` parameters to pull ten invoices for the company we created earlier.
 
 Remember to replace `{companyId}` with your company `id` obtained previously.
 
-````Text Unix Bash
+```json title="Unix Bash"
+
 curl --request GET \
      --url "https://api.codat.io/companies/{companyId}/data/invoices?page=1&pageSize=10" \
      --header "Authorization: $CODAT_AUTH_HEADER" \
      --header "accept: application/json"
-     ```
+```
 
-```Text .NET
+```json title=".NET"
+
 var getInvoicesRequest = new RestRequest($"companies/{companyId}/data/invoices", Method.Get)
     .AddQueryParameter("page", "1")
     .AddQueryParameter("pageSize", "10");
     var getInvoicesResponse = codatApiClient.Execute(getInvoicesRequest);
 Console.WriteLine(getInvoicesResponse.Content);
-````
+```
 
-```Text Node.js
+```json title="Node.js"
+
 codatApiClient
   .get(`/companies/${companyId}/data/invoices`, {
       params: { page: 1, pageSize: 10 },
@@ -308,19 +320,19 @@ Codat enables you to connect to over 30 different accounting, banking, and comme
 
 Navigate to **Settings > Integrations** in the Portal. Choose the integration type, find the platform you need, and set it up. Once you've enabled the platform, create a data connection to it, as you have done with the Sandbox earlier. You will need valid credentials for the platform you are trying to link.
 
-You can review our detailed instructions for setting up integrations like [Xero](/accounting-xero-setup), [QuickBooks Online](/accounting-quickbooksonline-new-setup), [PayPal](/set-up-paypal-in-production), [Plaid](/banking-plaid-setup), and many more.
+You can review our detailed instructions for setting up integrations like [Xero](/integrations/accounting/xero/accounting-xero), [QuickBooks Online](/integrations/accounting/quickbooksonline/accounting-quickbooksonline), [PayPal](/integrations/commerce/paypal/commerce-paypal), [Plaid](/integrations/banking/plaid/banking-plaid), and many more.
 
 ### Curious about what other data Codat can provide you with?
 
 Codat pulls a variety of data types from the source platforms, making it easy to suit the needs of your use case.
 
-With our [accounting integrations](/data-model/accounting/), you can pull financial statements, earning and spending detail, journal entries, tax details, and many more. Our [banking integrations](/data-model/banking/) provide you with banking transactions, accounts, and account balances. Finally, our [commerce integrations](/data-model/commerce/) can show you details of orders, customers, payments, products, and others.
+With our [accounting integrations](/accounting-api#/), you can pull financial statements, earning and spending detail, journal entries, tax details, and many more. Our [banking integrations](/banking-api#/) provide you with banking transactions, accounts, and account balances. Finally, our [commerce integrations](/commerce-api#/) can show you details of orders, customers, payments, products, and others.
 
 ### Keen to customize the look and feel of the auth flow?
 
-Colors, logos, and icons of Codat's authorization flow [can be changed](/set-up-your-company-branding) for a bespoke experience. Navigate to **Settings > Auth flow > Branding** in the Codat Portal and adjust to fit the flow to your brand's palette.
+Colors, logos, and icons of Codat's authorization flow [can be changed](/auth-flow/customize/branding) for a bespoke experience. Navigate to **Settings > Auth flow > Branding** in the Codat Portal and adjust to fit the flow to your brand's palette.
 
-Then, use the Link URL of the company you created earlier to review your customer's experience with the flow. You can even take the customization [one step further](/set-up-link) and amend the accompanying text and behaviors.
+Then, use the Link URL of the company you created earlier to review your customer's experience with the flow. You can even take the customization [one step further](/auth-flow/customize/customize-link) and amend the accompanying text and behaviors.
 
 ### Want to migrate your existing integration to Codat?
 
