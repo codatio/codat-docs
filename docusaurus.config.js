@@ -109,10 +109,10 @@ module.exports = {
               href: "/commerce-api",
               label: "Commerce API",
             },
-            // {
-            //   href: "/accounting-api",
-            //   label: "Bank Feed API",
-            // },
+            {
+              href: "/bank-feed-api",
+              label: "Bank Feed API",
+            },
             {
               href: "/assess-api",
               label: "Assess API",
@@ -190,7 +190,7 @@ module.exports = {
               rel: null,
             },
             {
-              href: "https://docs.codat.io/discuss",
+              href: "https://github.com/orgs/codatio/discussions",
               label: "Ask the community",
               target: "_blank",
               rel: null,

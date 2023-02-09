@@ -9,11 +9,15 @@ The value exchange is maybe the single most important part of your implementatio
 
 Simply requiring the data to be connected for a certain feature of your product to function is not good enough. You must build trust and promote the benefit of connected data.
 
--[ ] Include the 3-part value exchange -[ ] Embed CTAs that drive users to connect at advantageous points in your app -[ ] Link out to FAQs -[ ] Bonus: gamify the connection process by using a progress or strength meter
+- Include the 3-part value exchange
+- Embed CTAs that drive users to connect at advantageous points in your app
+- Link out to FAQs
+- Bonus: gamify the connection process by using a progress or strength meter
 
 :::success Why this matters
 
 You may see **up to 50% ** of visitors deciding to connect, with conversion increasing month-on-month with a well-executed value exchange.
+
 :::
 
 ## Include the 3-part value exchange
@@ -36,6 +40,7 @@ The 3-part value exchange should be brief but informative and include:
 **Banking integrations**: Connecting this [banking integration] allows us to compare the validity and completeness of your accounting data as well as calculate your estimated burn rate and runway.
 
 **Accounting integrations**: Connecting this [accounting integration] allows us to evaluate your financial health and determine the risk score.
+
 :::
 
 3. Tell your customer what they should do next

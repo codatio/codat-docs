@@ -14,7 +14,15 @@ Let your SMB customers understand what will happen with their connected data. Of
 It is imperative your customers trust you with their data, otherwise they may not consent to connecting their accounts.
 :::
 
--[ ] Specify the data being shared and what will happen to it -[ ] Communicate to build trust with your customers -[ ] Require an action to consent to data sharing -[ ] Let the user know they can disconnect at any time -[ ] Link to a connection guide -[ ] Use statistical data to reinforce trust -[ ] Provide various support contact details -[ ] Show that your authorization flow is powered by Codat -[ ] Bonus: Offer a mutual non-disclosure agreement (NDA)
+- Specify the data being shared and what will happen to it
+- Communicate to build trust with your customers
+- Require an action to consent to data sharing
+- Let the user know they can disconnect at any time
+- Link to a connection guide
+- Use statistical data to reinforce trust
+- Provide various support contact details
+- Show that your authorization flow is powered by Codat
+- Bonus: Offer a mutual non-disclosure agreement (NDA)
 
 ## Specify the data being shared and what will happen to it
 
