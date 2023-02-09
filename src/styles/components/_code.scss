@@ -21,6 +21,14 @@ html[data-theme="dark"] {
   color: var(--ifm-pre-color) !important;
 }
 
+.token-line {
+  color: var(--ifm-pre-color) !important;
+}
+
+.token.string {
+  color: var(--color-string) !important;
+}
+
 :not(pre) > code {
   position: relative;
   margin-block-start: -0.125rem;
