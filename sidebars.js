@@ -84,6 +84,7 @@ module.exports = {
             "introduction/webhooks/receive-webhooks-as-email-alerts",
           ],
         },
+        "introduction/change-policy",
       ],
     },
     {
