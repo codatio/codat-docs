@@ -28,4 +28,9 @@ module.exports = [
       "bank-feed-api/qbo-bank-feeds/bank-feed-qbo-bank-feeds-push-bank-transactions",     
     ],
   },
+  // {
+  //   type: "link",
+  //   href: "/accounting-api",
+  //   label: "API reference",
+  // },
 ];

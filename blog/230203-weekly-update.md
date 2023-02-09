@@ -4,7 +4,6 @@ date: "2023-02-03"
 tags: ["Update", "Product"]
 draft: false
 authors: mcclowes
-link: "https://docs.codat.io/updates"
 ---
 
 A new product for easy syncing with bookkeeping software and ERPs, and other qualithy of life improvements.

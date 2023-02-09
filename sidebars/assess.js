@@ -101,7 +101,6 @@ module.exports = [
       },
     ],
   },
-
   {
     type: "category",
     label: "Assess in the Portal",
@@ -112,6 +111,10 @@ module.exports = [
       "assess/portal/categorization-of-accounts",
     ],
   },
-
   'assess/troubleshooting',
+  {
+    type: "link",
+    href: "/assess-api",
+    label: "Assess API reference",
+  },
 ];

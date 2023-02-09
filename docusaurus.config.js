@@ -95,7 +95,7 @@ module.exports = {
           items: [
             {
               href: "/codat-api",
-              label: "Codat API",
+              label: "Common API",
             },
             {
               href: "/accounting-api",
