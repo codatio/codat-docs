@@ -43,11 +43,17 @@ module.exports = {
       collapsed: true,
       className: "core",
       items: [
+        "core-concepts/overview",
         "core-concepts/companies",
         "core-concepts/connections",
         "core-concepts/integrations",
         "core-concepts/data-type-settings",
         "core-concepts/status",
+        {
+          type: "link",
+          href: "/codat-api",
+          label: "Common API reference",
+        },
       ],
     },
     {

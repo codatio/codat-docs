@@ -4,7 +4,6 @@ date: "2023-01-15"
 tags: ["Deprecation", "Data deletion"]
 draft: false
 authors: d-laing
-link: "https://docs.codat.io/changelog/upcoming-2023-01-31-deprecation-of-uat-environment"
 ---
 
 On April 10, 2023, Codat will change the way Accounting data deleted by Company users within their accounting package is handled.

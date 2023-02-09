@@ -4,7 +4,6 @@ date: "2023-01-15"
 tags: ["Deprecation", "Bank accounts"]
 draft: false
 authors: d-laing
-link: "https://docs.codat.io/updates"
 ---
 
 On April 10, 2023, Codat will deprecate legacy `bankAccount` endpoints.

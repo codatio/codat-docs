@@ -4,7 +4,6 @@ date: "2022-10-18"
 tags: ["API keys", "Portal"]
 draft: false
 authors: mcclowes
-link: "https://docs.codat.io/v2.0.0/changelog/api-key-improvements"
 ---
 
 As well as a number of UI improvements, you can now create up to 10 API keys and authorization headers. They set us up for a number of important changes around API keys coming soon.

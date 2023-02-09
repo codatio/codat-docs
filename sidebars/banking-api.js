@@ -16,4 +16,9 @@ module.exports = [
     label: "Banking integrations",
     href: "integrations/banking/overview",
   },
+  {
+    type: "link",
+    href: "/banking-api",
+    label: "Banking API reference",
+  },
 ];
