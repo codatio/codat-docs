@@ -82,7 +82,7 @@ Your merchant will need to select and authorize their accounting platform throug
 
 Once the access is authorized, the merchant can set how the synchronization should work through the Sync configuration flow.
 
-1. A Codat Company is created, and an accounting Connection is established.
+1. A Codat company is created, and an accounting Connection is established.
 2. Codat automatically pulls all the [accounting data required to enable the merchant configuration](/sync-for-commerce-prerequisites#required-data-types).
 3. A configuration JSON document is submitted to Codat. It includes information about how the data will be mapped to the accounting platform.
 

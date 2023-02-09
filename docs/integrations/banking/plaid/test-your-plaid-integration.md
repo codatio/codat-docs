@@ -1,6 +1,6 @@
 ---
 title: "Test your Plaid integration"
-description: "Test our Plaid integration by pulling data from Plaid's sandbox to a test Company"
+description: "Test our Plaid integration by pulling data from Plaid's sandbox to a test company"
 createdAt: "2020-02-25T17:44:15.137Z"
 updatedAt: "2022-12-16T16:54:44.252Z"
 ---

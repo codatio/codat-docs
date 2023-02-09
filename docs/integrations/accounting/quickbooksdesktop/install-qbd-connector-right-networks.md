@@ -16,7 +16,7 @@ Your SMB customers can install our QuickBooks Desktop connector on a hosted inst
 
 Your organization must first be approved as a Right Networks independent software vendor (ISV). To request this, contact [cpadula@rightnetworks.com](mailto:cpadula@rightnetworks.com) and state that you are working with Codat.
 
-To meet Right Networks requirements, you must have a **minimum of 10 users for your application** across one or more Companies in Codat.
+To meet Right Networks requirements, you must have a **minimum of 10 users for your application** across one or more companies in Codat.
 
 Your SMB customers, who will share their data through the integration, must use one of the [supported hosted products](/install-qbd-connector-right-networks#supported-hosted-products) in order to install the connector.
 

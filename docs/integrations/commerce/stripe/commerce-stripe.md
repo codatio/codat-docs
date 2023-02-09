@@ -14,7 +14,7 @@ Use Codat's Commerce API with Stripe to securely connect to, retrieve, and view 
 
 :::caution Action required by existing users
 
-The integration now uses <a className="external" href="https://stripe.com/docs/connect" target="_blank">_Stripe Connect_</a> to establish authenticated connections between Companies and Stripe data sources, rather than _Stripe extensions_.
+The integration now uses <a className="external" href="https://stripe.com/docs/connect" target="_blank">_Stripe Connect_</a> to establish authenticated connections between companies and Stripe data sources, rather than _Stripe extensions_.
 
 If you're an existing user, you must configure your Stripe integration to use Stripe Connect before you can link any more customers (merchants). Existing data connections are unaffected until 2024, the planned deprecation date for Stripe extensions.
 
@@ -41,7 +41,7 @@ Codat provides two Stripe integrations: **Stripe Test** and **Stripe**. The foll
 
 To enable live mode, you must first activate your Stripe account by providing additional information about your business.",
 "h-2": "Retrieves...",
-"0-2": "Test data from Stripe, available for Company info, Customers, Disputes, Payments, Products, and Transactions.",
+"0-2": "Test data from Stripe, available for company info, Customers, Disputes, Payments, Products, and Transactions.",
 "1-2": "Live data from production Stripe accounts."
 },
 "cols": 3,

@@ -41,9 +41,9 @@ Add functionality—for example, a button or link—to your application that let
 
 See the next procedure for details on the functionality to provide.
 
-## Create a Company and data connection, then add bank accounts
+## Create a company and data connection, then add bank accounts
 
-1. When an SMB user clicks the button or link you added, create a Company for them using the <a href="/codat-api#/operations/create-company">Create a company</a> endpoint:
+1. When an SMB user clicks the button or link you added, create a company for them using the <a href="/codat-api#/operations/create-company">Create a company</a> endpoint:
 
    ```http
    POST https://api.codat.io/companies
@@ -160,9 +160,9 @@ PATCH /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedA
 }
 ```
 
-## Add new source bank accounts for a Company
+## Add new source bank accounts for a company
 
-You can add new source bank accounts to an existing Company and data connection. This makes those bank accounts available to the SMB user to connect to.
+You can add new source bank accounts to an existing company and data connection. This makes those bank accounts available to the SMB user to connect to.
 
 Send a request to the <a className="external" href="https://api.codat.io/swagger/index.html#/Connection/put_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts" target="_blank">PUT /connectionInfo/bankFeedAccounts</a> endpoint and specify the bank accounts you want to add in the request body.
 

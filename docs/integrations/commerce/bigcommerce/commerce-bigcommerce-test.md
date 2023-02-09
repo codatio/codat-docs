@@ -1,6 +1,6 @@
 ---
 title: "Test your BigCommerce integration"
-description: "Test our BigCommerce integration by pulling sandbox data to a test Company"
+description: "Test our BigCommerce integration by pulling sandbox data to a test company"
 createdAt: "2022-07-18T14:14:57.301Z"
 updatedAt: "2022-10-19T16:18:50.870Z"
 ---

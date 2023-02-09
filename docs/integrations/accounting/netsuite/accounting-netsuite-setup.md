@@ -14,7 +14,7 @@ Before you can access data from your clients using Oracle NetSuite for their acc
 
 ## Configure the Oracle NetSuite integration
 
-Oracle NetSuite does not require any global credentials for accessing the API. Instead, your clients will be asked to install a [bundle ](https://www.netsuite.co.uk/portal/uk/suiteapp/install.shtml) containing configuration for the Codat integration. Specifically, the bundle contains a script that is used to get or update certain types of data (e.g. attachments) and an integration record to enable the linking process. When linking, if the Company has not yet installed the bundle, it will be redirected to a page containing information about the installation process.
+Oracle NetSuite does not require any global credentials for accessing the API. Instead, your clients will be asked to install a [bundle ](https://www.netsuite.co.uk/portal/uk/suiteapp/install.shtml) containing configuration for the Codat integration. Specifically, the bundle contains a script that is used to get or update certain types of data (e.g. attachments) and an integration record to enable the linking process. When linking, if the company has not yet installed the bundle, it will be redirected to a page containing information about the installation process.
 
 To install bundles on their account, the company must have the Administrator role or the relevant permission to allow bundle installation.
 

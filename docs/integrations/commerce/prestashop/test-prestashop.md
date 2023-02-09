@@ -1,6 +1,6 @@
 ---
 title: "Test PrestaShop"
-description: "Test our PrestaShop integration by pulling sample data to a test Company"
+description: "Test our PrestaShop integration by pulling sample data to a test company"
 createdAt: "2021-09-17T00:16:28.634Z"
 updatedAt: "2022-10-20T08:56:09.678Z"
 ---
@@ -31,7 +31,7 @@ Before you start to test PrestaShop, make sure that you have:
 - Set up [PrestaShop](/set-up-prestashop-in-production).
 - Updated your [sync settings](/commerce-sync-settings) to enable commerce data types.
 
-## Set up a test company in the Codat Portal and connect your test Company to a test account in PrestaShop
+## Set up a test company in the Codat Portal and connect your test company to a test account in PrestaShop
 
 1. Go to the <a href="https://portal-uat.codat.io/" target="_blank">Codat Portal</a> and sign in.
 2. Go to **Companies**.

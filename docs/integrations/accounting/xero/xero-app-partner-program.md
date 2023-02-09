@@ -37,7 +37,7 @@ Codat will handle the connection to Xero through the linking journey. You will n
 "h-0": "Requirement",
 "h-1": "Recommendations",
 "0-0": "Display the name of the tenant that has been connected",
-"0-1": "By default Codat includes a page, post successful connection displaying the Company Name connected.
+"0-1": "By default Codat includes a page, post successful connection displaying the name of the connected company.
 
 Alternatively this can be retrieved from Company Info endpoint.",
 "1-0": "Display the current status of the connection(s). If disconnected, provide a button to connect to Xero",

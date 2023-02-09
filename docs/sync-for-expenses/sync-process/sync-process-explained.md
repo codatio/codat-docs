@@ -24,7 +24,7 @@ title: "The sync process explained"
 
 ### [Create expense-transactions datasets](expense-transactions)
 
-After the company has categorised their expenses using the mapping options, you can post the reconciliations to **POST** `/companies/{companyId}/expense-reconciliations` - in the response you will receive a `datasetId`.
+After the company has categorized their expenses using the mapping options, you can post the reconciliations to **POST** `/companies/{companyId}/expense-reconciliations` - in the response you will receive a `datasetId`.
 
 ### [Initiate Sync](syncing-expenses)
 

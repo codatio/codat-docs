@@ -1,6 +1,6 @@
 ---
 title: "Reauthorize a company"
-description: "Learn how to reauthorize Companies that have become deauthorized"
+description: "Learn how to reauthorize companies that have become deauthorized"
 createdAt: "2020-08-25T14:29:25.341Z"
 updatedAt: "2022-12-16T16:51:51.244Z"
 ---
