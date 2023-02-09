@@ -3,7 +3,6 @@
     "",
     "\\docs",
     "\\docs\\assess",
-    "\\docs\\assess\\reports\\banking",
     "\\docs\\integrations",
     "\\docs\\integrations\\banking",
     "\\docs\\other",
@@ -11,6 +10,5 @@
     "\\docs\\usecases",
     "\\docs\\using-the-api"
   ],
-  "SelectedNode": "\\docs\\using-the-api\\querying.md",
   "PreviewInSolutionExplorer": false
 }
