@@ -52,12 +52,17 @@ const dataModels = {
     "Tax component",
     "Transaction",
   ],
+  bankFeeds: [
+    "Bank feed bank account",
+    //"Bank feed bank transactions",
+  ],
 };
 
 const schemaPaths = {
   accounting: "/accounting-api#/schemas/",
   banking: "/banking-api#/schemas/",
   commerce: "/commerce-api#/schemas/",
+  bankFeeds: "/bank-feeds-api#/schemas/",
 };
 
 const composePaths = (schemaPaths, dataModels) => {
