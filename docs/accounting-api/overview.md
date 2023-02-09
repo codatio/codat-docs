@@ -1,14 +1,13 @@
 ---
 title: "Accounting API overview"
 sidebar_label: Accounting API
+image: /img/old/2b27c1b-info_banner.png
 description: "Codat's Accounting API is a flexible API for pulling and pushing up-to-date accounting data to your customers' accounting software. It gives you a simple way to view, create, update, and delete data without having to worry about each platform's specific complexities."
 createdAt: "2022-11-22T19:33:11.784Z"
 updatedAt: "2022-11-22T19:33:11.784Z"
 ---
 
-<Head>
-  <meta property="og:image" content="/img/old/2b27c1b-info_banner.png"/>
-</Head>
+
 
 ![](/img/old/2b27c1b-info_banner.png "info_banner.png")
 
@@ -19,7 +18,7 @@ updatedAt: "2022-11-22T19:33:11.784Z"
         src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
         class="mini-icon"
       />
-      <h2>Accounting integrations</h2>
+      <h3>Accounting integrations</h3>
     </div>
     <p>
       We connect to many on-premise and cloud accounting packages, removing the complexity of building individual integrations. 
@@ -37,7 +36,7 @@ updatedAt: "2022-11-22T19:33:11.784Z"
         src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
         class="mini-icon"
       />
-      <h2>Data consistency</h2>
+      <h3>Data consistency</h3>
     </div>
     <p>
       Our data model normalizes and aggregates data from different platforms so that you can use it in a consistent way, fast. 
@@ -55,7 +54,7 @@ updatedAt: "2022-11-22T19:33:11.784Z"
         src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
         class="mini-icon"
       />
-      <h2>Support your customers</h2>
+      <h3>Support your customers</h3>
     </div>
     <p> Send expense data directly to your SMB customer's platform or retrieve their bills to save them hours of manual data entry. 
  </p>
