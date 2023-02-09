@@ -1,8 +1,6 @@
 ---
 title: "Accounting API overview"
 sidebar_label: Accounting API
-header:
-  image: /img/old/2b27c1b-info_banner.png
 description: "Codat's Accounting API is a flexible API for pulling and pushing up-to-date accounting data to your customers' accounting software. It gives you a simple way to view, create, update, and delete data without having to worry about each platform's specific complexities."
 createdAt: "2022-11-22T19:33:11.784Z"
 updatedAt: "2022-11-22T19:33:11.784Z"
