@@ -9,3 +9,8 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "monthly"
+    assignees:
+      - "mcclowes"
+    reviewers:
+      - "mcclowes"
+      - "dcoplowe"
