@@ -19,7 +19,7 @@ This functionality is available for categorizing sales data and facilitates auto
 Before the feature switch is toggled on, the Sync Flow UI displays a Sales category, along with Refund, Taxes, and Gratuity. These are standard available mapping categories of Sync for Commerce.
 
 <img
-  src="https://files.readme.io/983ceb0-34c49797-e20b-43b1-9047-578a81dceb78.png"
+  src="/img/old/983ceb0-34c49797-e20b-43b1-9047-578a81dceb78.png"
   alt="Sync Flow with standard sales categories"
 />
 
@@ -28,14 +28,14 @@ Once you enable the feature, an additional category mapping page is added to the
 In this example, we break down sales into courses, products, and services.
 
 <img
-  src="https://files.readme.io/7c4f5c0-c68df5c3-4a6f-4cfa-9ca0-b3473fb2a318.png"
+  src="/img/old/7c4f5c0-c68df5c3-4a6f-4cfa-9ca0-b3473fb2a318.png"
   alt="Sync Flow with additional product categories"
 />
 
 The account mapping page for standard categories is available on the next page of the Sync Flow. It does not have a “Sales” mapping anymore, superseded by “Other sales” on the previous screen. The same categorization is also available in the Sync Flow settings.
 
 <img
-  src="https://files.readme.io/f774a48-7eb40aee-9370-4222-8300-1f33a6210c73.png"
+  src="/img/old/f774a48-7eb40aee-9370-4222-8300-1f33a6210c73.png"
   alt="Standard categories with sales categorization enabled"
 />
 

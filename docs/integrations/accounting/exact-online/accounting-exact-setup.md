@@ -59,11 +59,11 @@ Before you can access data from customers using Exact for their accounting, you 
    - The **Redirect URL** must be as follows, for both production and testing apps: `https://exact.codat.io/oauth/callback`
 6. Accept the terms and conditions then click **Register**.
 
-<img src="https://files.readme.io/0e788f0-exact-app-details-dialog.png" />
+<img src="/img/old/0e788f0-exact-app-details-dialog.png" />
 
 The **Manage my apps** page is displayed. In the **Develop your app** tab, you'll see the **Client ID** and **Client secret** for your app. To find this page again, go to **Manage my apps** then select the app you created.
 
-![](https://files.readme.io/bb55b4c-ExactRegisterAPIKey.png "ExactRegisterAPIKey.png")
+![](/img/old/bb55b4c-ExactRegisterAPIKey.png "ExactRegisterAPIKey.png")
 
 ## Add your app's secure keys to the Codat Portal
 
@@ -108,7 +108,7 @@ Follow these steps:
 6. Once saved, select **Submit** at the top of the page.
 7. Once your **Data & Security Review** has been successful, in the **Submit for Review** page, select **Request** in the **Request permission** section and wait for permissions to be granted by Exact. During this stage your app will have an **In Review** tag.
 
-![](https://files.readme.io/9fa3fdd-AppInReview.PNG "AppInReview.PNG")
+![](/img/old/9fa3fdd-AppInReview.png "AppInReview.PNG")
 
 ## Recommended list of scopes
 

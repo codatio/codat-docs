@@ -21,7 +21,7 @@ You can add email addresses while creating a new rule, or update the email and n
 3. Save your changes.
 
 <img
-  src="https://files.readme.io/e311872-2022-11-16_14-49-03.png"
+  src="/img/old/e311872-2022-11-16_14-49-03.png"
   alt="New rule creation modal in the Codat Portal"
 />
 

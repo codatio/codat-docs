@@ -54,4 +54,9 @@ module.exports = [
   "sfc/error-documentation",
   "sfc/sync-for-commerce-faqs",
   "sfc/coming-soon",
+  // {
+  //   type: "link",
+  //   href: "/accounting-api",
+  //   label: "Sync for Commerce API",
+  // },
 ];

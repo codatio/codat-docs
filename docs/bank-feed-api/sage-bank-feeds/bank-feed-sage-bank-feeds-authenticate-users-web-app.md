@@ -5,7 +5,7 @@ createdAt: "2023-01-17T15:05:04.877Z"
 updatedAt: "2023-01-17T17:00:51.812Z"
 ---
 
-Our [Sage Bank Feeds](/bank-feed-sage-bank-feeds) integration uses an authorization UI to authenticate an SMB user based on their submitted data connection ID. Your SMB users are represented in Codat as Companies. To learn how this method works, see [SMB user flow: Connect a source bank account to Sage](/bank-feed-sage-bank-feeds-setup#smb-user-flow-connect-a-source-bank-account-to-sage).
+Our [Sage Bank Feeds](/bank-feed-api/sage-bank-feeds/) integration uses an authorization UI to authenticate an SMB user based on their submitted data connection ID. Your SMB users are represented in Codat as Companies. To learn how this method works, see [SMB user flow: Connect a source bank account to Sage](/bank-feed-api/sage-bank-feeds/bank-feed-sage-bank-feeds-setup#smb-user-flow-connect-a-source-bank-account-to-sage).
 
 Instead of this UI, your own web app can authenticate SMB users based on the Company and data connection they're linked to. With this method, when a user selects your organization as a bank feeds provider in a Sage product, they're redirected to your web app instead of the Codat authorization UI.
 
@@ -18,7 +18,7 @@ You must have completed the following setup tasks:
 - Create a data connection for the Company to the Sage Bank Feeds integration
 - Add one or more source bank accounts to make available to the SMB user
 
-For help with completing these tasks, see [Enable the Sage Bank Feeds integration](/bank-feed-sage-bank-feeds-setup#enable-the-sage-bank-feeds-integration) and [Create a Company and data connection, then add bank accounts](/bank-feed-sage-bank-feeds-setup#create-a-company-and-data-connection-then-add-bank-accounts).
+For help with completing these tasks, see [Enable the Sage Bank Feeds integration](/bank-feed-api/sage-bank-feeds/bank-feed-sage-bank-feeds-setup#enable-the-sage-bank-feeds-integration) and [Create a Company and data connection, then add bank accounts](/bank-feed-api/sage-bank-feeds/bank-feed-sage-bank-feeds-setup#create-a-company-and-data-connection-then-add-bank-accounts).
 
 ## Configure your custom web app as a redirect URL
 
@@ -30,7 +30,7 @@ First, configure the Sage Bank Feeds integration to use your web app's URL as th
 
 3. Enter the URL of your custom web app as the **Authorization redirect URL**. For example:
 
-   ![Auth URL](https://files.readme.io/ef4ab16-sage-bank-feeds_integration-settings-page-auth-url.png "Custom authorization redirect URL entered on the Integration settings page for Sage Bank Feeds.")
+   ![Auth URL](/img/old/ef4ab16-sage-bank-feeds_integration-settings-page-auth-url.png "Custom authorization redirect URL entered on the Integration settings page for Sage Bank Feeds.")
 
 4. Click **Save**.
 
@@ -93,10 +93,10 @@ There are two authentication flows between Sage, Codat's Sage Bank Feeds integra
 
 3. If the SMB user was successfully authenticated with Codat, Sage displays a dialog listing the available source bank accounts&mdash;the bank account in your application that will send bank feeds. For example:
 
-   ![Sage account selection screen](https://files.readme.io/f73be1e-redirect_screen.PNG "Sage dialog listing the available source bank accounts")
+   ![Sage account selection screen](/img/old/f73be1e-redirect_screen.PNG "Sage dialog listing the available source bank accounts")
 
 4. The SMB user selects the bank account they want to use, then clicks **OK**.
 
 5. Sage redirects the SMB user to the Sage product from which they began the authentication flow.
 
-You can now use the <a className="external" href="https://api.codat.io/swagger/index.html#/Connection/get_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts" target="_blank">GET /bankFeedAccounts</a> endpoint to retrieve the source bank accounts and push bank transactions. For details, see [Use your Sage Bank Feeds integration](/bank-feed-sage-bank-feeds-use).
+You can now use the <a className="external" href="https://api.codat.io/swagger/index.html#/Connection/get_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts" target="_blank">GET /bankFeedAccounts</a> endpoint to retrieve the source bank accounts and push bank transactions. For details, see [Use your Sage Bank Feeds integration](/bank-feed-api/sage-bank-feeds/bank-feed-sage-bank-feeds-use).

@@ -83,7 +83,7 @@ In the Intuit Developer Portal, create and register a QuickBooks Online app and 
    https://quickbooksonlinesandbox.codat.io/oauth2/callback
    ```
 
-   ![Enter the Redirect URI for the Codat QuickBooks Online Sandbox integration.](https://files.readme.io/2fbd2a6-intuit-developer_enter-sandbox-redirect-uri.png)
+   ![Enter the Redirect URI for the Codat QuickBooks Online Sandbox integration.](/img/old/2fbd2a6-intuit-developer_enter-sandbox-redirect-uri.png)
 
 8. Click **Save**.
 
@@ -111,7 +111,7 @@ In the <a className="external" href="https://developer.intuit.com/" target="_bla
 
 2. Next, you need to provide all the information requested in the **Add details about your app** checklist:
 
-<img src="https://files.readme.io/904ecc7-qbo-production-keys-app-assessment-questionnaire-link.png" />
+<img src="/img/old/904ecc7-qbo-production-keys-app-assessment-questionnaire-link.png" />
 
 :::note Help with the app details checklist
 
@@ -141,7 +141,7 @@ For app hosting details, see <a className="external" href="https://codat.zendesk
 
 When you've provided all the requested information, your app's production keys—the Client ID and Client Secret—are made available on the **Keys & OAuth** page. To find the keys, select **Keys & credentials** under **Production Settings**:
 
-![](https://files.readme.io/853c0d4-intuit-developer-portal_select-production-keys-left-nav.png)
+![](/img/old/853c0d4-intuit-developer-portal_select-production-keys-left-nav.png)
 
 ### Next steps
 

@@ -78,7 +78,7 @@ If this is a new user:
 If a user already has an integration connection that hasn't been authorized and is not in an active state, click the integration name and copy the URL from the **Connections** section instead of the Link URL. Share this link with the user to allow them to authorize the specific connection.
 
 <img
-  src="https://files.readme.io/4c41ef0-manage.png"
+  src="/img/old/4c41ef0-manage.png"
   alt="Connection URL modal to manage an existing connection"
 />
 

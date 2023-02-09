@@ -7,7 +7,7 @@ updatedAt: "2023-01-06T16:01:49.187Z"
 
 No application registration is required for the KashFlow integration to function. When linking, the company will be asked to enter a username and password that Codat will store securely and use to sync their data.
 
-![](https://files.readme.io/ab9e496-Codat_Engineering_Elliot_KashFlow_Link.png "Codat Engineering   Elliot   KashFlow Link.png")
+![](/img/old/ab9e496-Codat_Engineering_Elliot_KashFlow_Link.png "Codat Engineering   Elliot   KashFlow Link.png")
 
 ## Enable the IRIS KashFlow integration
 

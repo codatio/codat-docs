@@ -54,7 +54,7 @@ Your SMB customer performs the following steps:
 
    The **Your Chargify credentials** page is displayed.
 
-   ![Your Chargify credentials](https://files.readme.io/66cdc91-your-chargify-credentials-final-masked.png "The Your Chargify credentials page")
+   ![Your Chargify credentials](/img/old/66cdc91-your-chargify-credentials-final-masked.png "The Your Chargify credentials page")
 
 4. Opens a new browser tab, visits <a className="external" href="https://app.chargify.com/" target="_blank">app.chargify.com</a>, and signs in to their Chargify account.
 

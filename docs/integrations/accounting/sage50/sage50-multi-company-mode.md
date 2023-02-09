@@ -10,7 +10,7 @@ When multi-company mode is enabled in Sage 50, a single installed Sage 50 connec
 
 _Example of the Sage 50 connector with two connected companies:_
 
-<img src="https://files.readme.io/4cc7c7e-Sage_50_Multi-company_mode_-_home_screen.png" />
+<img src="/img/old/4cc7c7e-Sage_50_Multi-company_mode_-_home_screen.png" />
 
 ## Setting up multi-company mode
 
@@ -19,7 +19,7 @@ Ensure you have a connector installed and successfully linked with a company on 
 - When a new Link URL for a newly created company is followed on a machine that has a connector already installed.
 - By clicking the **Add new connection** button on the connector screen and following the on-screen steps:
 
-<img src="https://files.readme.io/bcb1e5a-Sage_50_Multi-company_mode_-_home_screen_Add_new_connection_button.png" />
+<img src="/img/old/bcb1e5a-Sage_50_Multi-company_mode_-_home_screen_Add_new_connection_button.png" />
 
 The steps are the same for both of these options:
 
@@ -33,7 +33,7 @@ Rather than a separate connector being installed, the same connector will now ha
 
 Right-click on the Sage 50 Connector tray icon (usually found in the bottom-right of the screen) and select **Open Sage 50 Connector**. This will display the connector, which is now in multi-company mode:
 
-<img src="https://files.readme.io/f304b80-Sage_50_Multi-company_mode_-_home_screen.png" />
+<img src="/img/old/f304b80-Sage_50_Multi-company_mode_-_home_screen.png" />
 
 ## Syncing in multi-company mode
 
@@ -46,11 +46,11 @@ In multi-company mode you can choose to:
 
 Click the **Perform Sync** button next to the company you wish to force a manual sync of data with:
 
-<img src="https://files.readme.io/9a9a1b5-Sage_50_Multi-company_mode_-_perform_sync_button.png" />
+<img src="/img/old/9a9a1b5-Sage_50_Multi-company_mode_-_perform_sync_button.png" />
 
 Upon successful sync, the multi-company connector view will show the status of the sync for the company:
 
-<img src="https://files.readme.io/d311f65-Sage_50_Multi-company_mode_-_success_sync.png" />
+<img src="/img/old/d311f65-Sage_50_Multi-company_mode_-_success_sync.png" />
 
 # 2. Sync all companies from the tray
 
@@ -62,7 +62,7 @@ Upon successful sync, the multi-company connector view will show the status of t
 
 When syncing all companies for a connector in multi-company mode, you can't stop (cancel) any companies that are currently syncing. Currently syncing companies are represented by a blue cloud with a white arrow pointing upwards:
 
-<img src="https://files.readme.io/c3802a2-Sage_50_Multi-company_mode_-_blue_clouds.png" />
+<img src="/img/old/c3802a2-Sage_50_Multi-company_mode_-_blue_clouds.png" />
 
 However, you can choose to cancel any companies that are yet to begin syncing but are 'queued' to do so, i.e. pending syncs. _Queued syncs_ are represented by an empty cloud icon in the multi-company connector view.
 

@@ -34,11 +34,11 @@ Bill Payments and Vendor Prepayment Applications (when applied to Bills) are rem
 
 If you specify a `billPaymentId` that corresponds to a Bill Credit in NetSuite, the Bill Credit object itself is not deleted. The Bill Credit is updated so that it no longer applies to any Bills, and is shown as _Unapplied_. For example:
 
-<img src="https://files.readme.io/5bc9146-netsuite-bill-credit-unapplied.jpg" />
+<img src="/img/old/5bc9146-netsuite-bill-credit-unapplied.jpg" />
 
 If you specify a Bill payment ID that corresponds to a Deposit in NetSuite, only Deposit lines that affect Accounts Payable are deleted. These lines are displayed in the **Other Deposits** and **Cash Back** tabs on the Deposit:
 
-<img src="https://files.readme.io/5a8b826-netsuite-deposit-other-deposits-lines.png" />
+<img src="/img/old/5a8b826-netsuite-deposit-other-deposits-lines.png" />
 
 ## Example of deleting a Bill payment
 

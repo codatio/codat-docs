@@ -119,7 +119,7 @@ In the <a className="external" href="https://app.codat.io/" target="_blank">Coda
 
 5. Assuming you requested the `read_only` scope for Stripe Connect, leave the **Use read-write scope** toggle deselected.
 
-   ![Read Write Scope toggle](https://files.readme.io/18021fe-use-read-write-scope-toggle.png "The Use read-write scope toggle, deselected by default.")
+   ![Read Write Scope toggle](/img/old/18021fe-use-read-write-scope-toggle.png "The Use read-write scope toggle, deselected by default.")
 
    If you're using the `read_write` scope (the Stripe default), then select the **Use read-write scope** toggle.
 

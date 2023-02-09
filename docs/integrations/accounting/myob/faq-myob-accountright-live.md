@@ -15,7 +15,7 @@ It must be stored online. Whilst MYOB AccountRight Live gives the option to stor
 
 When a company data file is correctly stored online (to enable linking with the Codat integration), the file should be visible when selecting 'Online' from the 'Open' menu within MYOB AccountRight.
 
-<img src="https://files.readme.io/9c4e75a-AR_Live_Cloud_docs.PNG" />
+<img src="/img/old/9c4e75a-AR_Live_Cloud_docs.PNG" />
 
 ## Does the integration support multiple company data files for the same linked connection?
 

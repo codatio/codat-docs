@@ -105,7 +105,7 @@ Enter the name you want to give the entity that represents your SMB customer and
 Copy this URL for use in the next step. Note that this URL can be accessed again at any time in the future.
 
 <img
-  src="https://files.readme.io/5ab4ca8-2022-11-21_16-26-23.png"
+  src="/img/old/5ab4ca8-2022-11-21_16-26-23.png"
   alt="Success modal of new company creation with company name and Link URL displayed"
 />
 
@@ -173,7 +173,7 @@ If you need to view the URL again, navigate to **Companies** in the <a href="htt
 This opens Codat's authorization flow built using our Link <a href="/auth-flow/overview" target="_blank">feature</a>.
 
 <img
-  src="https://files.readme.io/cdeee57-2022-11-21_20-09-48.png"
+  src="/img/old/cdeee57-2022-11-21_20-09-48.png"
   alt="Link URL in the Request Data modal"
 />
 
@@ -182,7 +182,7 @@ Follow the flow and select **Codat Sandbox** as your source of accounting, comme
 When all Sandbox connections are complete, you'll see a confirmation message. You can now close the tab. Meanwhile, Codat pulls the Sandbox data via the established connection.
 
 <img
-  src="https://files.readme.io/e802c95-2022-11-21_20-15-14.png"
+  src="/img/old/e802c95-2022-11-21_20-15-14.png"
   alt="Link flow step connecting to Codat Sandbox for accounting data. Sandbox integration is selected"
 />
 
@@ -237,7 +237,7 @@ Now you are ready to examine the company's financial data and view the datasets 
 Navigate back to the **Companies** page in the <a href="https://app.codat.io/companies" target="_blank">Codat Portal</a>. You will see your newly created company, along with the connections to the Accounting, Commerce, and Banking Sandboxes that were connected in the previous step.
 
 <img
-  src="https://files.readme.io/671c3bb-2022-11-22_16-04-26.png"
+  src="/img/old/671c3bb-2022-11-22_16-04-26.png"
   alt="Example created company is visible in the companies list with its connections to sandbox"
 />
 
@@ -246,14 +246,14 @@ Now, click the company name and use the side menu to navigate to **Products**. Y
 Here, we review the SMB customer's invoice data pulled from the accounting Sandbox. This data helps with business forecasts and cash flow management based on sales changes over time, average payment timelines, and amounts related to the invoices.
 
 <img
-  src="https://files.readme.io/32f7dff-2022-11-22_16-22-17.png"
+  src="/img/old/32f7dff-2022-11-22_16-22-17.png"
   alt="Invoices data type view of Codat's accounting API"
 />
 
 Developers can also use the Portal to review how Codat polled for a specific data type and the results it received at the bottom of each data type page.
 
 <img
-  src="https://files.readme.io/bf495eb-2022-11-22_16-28-50.png"
+  src="/img/old/bf495eb-2022-11-22_16-28-50.png"
   alt="Invoices data type view of Codat's accounting API"
 />
 

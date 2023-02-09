@@ -43,11 +43,17 @@ module.exports = {
       collapsed: true,
       className: "core",
       items: [
+        "core-concepts/overview",
         "core-concepts/companies",
         "core-concepts/connections",
         "core-concepts/integrations",
         "core-concepts/data-type-settings",
         "core-concepts/status",
+        {
+          type: "link",
+          href: "/codat-api",
+          label: "Common API reference",
+        },
       ],
     },
     {
@@ -66,6 +72,18 @@ module.exports = {
         "using-the-api/querying",
         "using-the-api/queueing-data-syncs-1",
         "using-the-api/errors",
+        {
+          type: "category",
+          label: "Webhooks",
+          collapsed: true,
+          items: [
+            "introduction/webhooks/core-rules-create",
+            "introduction/webhooks/core-rules-types",
+            "introduction/webhooks/core-rules-webhooks",
+            "introduction/webhooks/core-rules-webhooksecurity",
+            "introduction/webhooks/receive-webhooks-as-email-alerts",
+          ],
+        },
       ],
     },
     {

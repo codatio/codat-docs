@@ -41,7 +41,7 @@ If you don't have app partner status with Xero, **25 max connections** is displa
 For example:
 
 <img
-  src="https://files.readme.io/f3cc615-xero-non-partner-company-25-connection-max-limit.png.jpg"
+  src="/img/old/f3cc615-xero-non-partner-company-25-connection-max-limit.png.jpg"
   alt="xero-non-partner-company-25-connection-max-limit.png.jpg"
 />
 
@@ -99,7 +99,7 @@ To create direct bank feeds in Xero, you must have app partner status. Additiona
 
 Make sure you enable Bank Feeds in your Codat portal. You can do so by navigating to the **Manage** section of the portal under the **Integrations > Accounting** tab, and clicking the toggle. Save the page to validate this configuration.
 
-![](https://files.readme.io/fd2290d-2022-04-28_11h09_24.png "2022-04-28_11h09_24.png")
+![](/img/old/fd2290d-2022-04-28_11h09_24.png "2022-04-28_11h09_24.png")
 
 If you don't have access to direct bank feeds, a 403 error is returned if you try to push bank transactions to Xero. For example:
 
@@ -153,4 +153,4 @@ For detailed information about applying for app partner status with Xero, review
 
 To start the app partner application process, click **Join the Xero App Store** on the **App details** page for your app. You can also contact api@xero.com with the details of the application you are building.
 
-<img src="https://files.readme.io/01c6df4-xero-app-partner-status.png" />
+<img src="/img/old/01c6df4-xero-app-partner-status.png" />

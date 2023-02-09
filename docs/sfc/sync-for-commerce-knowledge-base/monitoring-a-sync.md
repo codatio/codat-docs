@@ -17,7 +17,7 @@ You can use the **search bar** (2) to narrow down the records by sync Id, compan
 Display the sync queue for a specific period by indicating a **date range** (3). Finally, [review the possible statuses](/error-documentation#status-codes) of the syncs and filter the records by their **status code** (4).
 
 <img
-  src="https://files.readme.io/068227e-2023-01-13_09-27-21.png"
+  src="/img/old/068227e-2023-01-13_09-27-21.png"
   alt="Sync Health page view with numbered annotations on the key page elements: the dashboard, filters, status filter, and the main data table"
 />
 
@@ -26,7 +26,7 @@ For further detail, review your **sync history** (5) by clicking the relevant sy
 You can also navigate to the Config tab to view and download the merchant's sync configuration.
 
 <img
-  src="https://files.readme.io/86ad267-2023-01-16_14-06-17.png"
+  src="/img/old/86ad267-2023-01-16_14-06-17.png"
   alt="Detailed view of a sync log entry with Summary and Config tabs "
 />
 

@@ -23,7 +23,7 @@ You can then update bank account details as needed.
 Complete the following prerequisites before setting up the Sage Bank Feeds integration.
 
 - You have access to a Testing Client for your Codat instance. Testing Clients are only available on Enterprise plans.
-- The Bank accounts and Bank transactions data types are enabled in your [Data type settings](/data-sync-settings).
+- The Bank accounts and Bank transactions data types are enabled in your [Data type settings](/core-concepts/data-type-settings).
 
 For help with these prerequisites, contact your Solutions Engineer or Codat Support.
 
@@ -39,7 +39,7 @@ You can add a call-to-action link to a web page containing more information. Thi
 
 The call-to-action link will appear below the **Connection ID** box in the default Codat authentication site, for example:
 
-![Screenshot](https://files.readme.io/55b90cb-sage-bank-feeds-call-to-action-link.png "Example of a call-to-action link under the Connection ID entry box. The link text reads: Click here to obtain your Connection ID.")
+![Screenshot](/img/old/55b90cb-sage-bank-feeds-call-to-action-link.png "Example of a call-to-action link under the Connection ID entry box. The link text reads: Click here to obtain your Connection ID.")
 
 To add a call-to-action-link:
 
@@ -104,8 +104,9 @@ To upload a logo, go to the <a className="external" href="https://app.codat.io/s
    ```
 
    :::caution Do not send the Link URL
-
-   > Do _not_ send the `linkUrl` property to the SMB user. Unlike other Codat integrations, Company authentication is initiated within Sage as described in "SMB user flow: Connect a source bank account to Sage", below.
+   
+   Do _not_ send the `linkUrl` property to the SMB user. Unlike other Codat integrations, Company authentication is initiated within Sage as described in "SMB user flow: Connect a source bank account to Sage", below.
+   :::
 
 3. Using <a className="external" href="https://api.codat.io/swagger/index.html#/Connection/put_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts"  target="_blank">PUT / bankFeedAccounts</a>, add one or more source bank accounts to make available to the SMB user.
 
@@ -159,13 +160,13 @@ Alternatively, you can [authenticate users through your own web app](/bank-feed-
 
 3. The default Codat authentication site is loaded in a new browser tab:
 
-   ![Default Codat authentication UI - Connect your bank account to Sage](https://files.readme.io/bc09b4a-sage-bank-feeds_default-auth-UI-revised-wording.png)
+   ![Default Codat authentication UI - Connect your bank account to Sage](/img/old/bc09b4a-sage-bank-feeds_default-auth-UI-revised-wording.png)
 
 4. They enter their data connection ID in the **Connection ID** box, then click **Submit**.
 
 5. If the SMB user was authenticated with Codat successfully, a dialog listing the available source bank accounts (created using the `PUT / bankFeedAccounts` endpoint) is displayed. For example:
 
-   ![Sage account selection](https://files.readme.io/7ef73f0-sbs-select-source-bank-account-multiple.png "Redirect to account selection page. Select the bank account that you want to use")
+   ![Sage account selection](/img/old/7ef73f0-sbs-select-source-bank-account-multiple.png "Redirect to account selection page. Select the bank account that you want to use")
 
 6. The SMB user selects the bank account they want to connect, then clicks **OK**.
 
@@ -211,4 +212,4 @@ The endpoint returns a `200` code and the updated bank account details. For exam
 
 ## Next steps
 
-Next you can [push bank transactions from a source bank account](/accounting-sage-bank-feeds-use#push-bank-transactions-from-a-source-bank-account).
+Next you can [push bank transactions from a source bank account](/bank-feed-api/sage-bank-feeds/bank-feed-sage-bank-feeds-use).

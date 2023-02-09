@@ -43,11 +43,11 @@ Ensure that your client has created a new user (as described above) for their Sa
 
 1. Open the Sage 50 connector from the tray icon (usually located in the bottom-right toolbar on a computer running Windows). Do this by right-clicking the connector icon and selecting **Open Sage 50 connector**.
 
-   ![](https://files.readme.io/ce398a2-Sage_50_Push_data_-_Open_Sage_50_connector.png "Sage 50 Push data - Open Sage 50 connector.png")
+   ![](/img/old/ce398a2-Sage_50_Push_data_-_Open_Sage_50_connector.png "Sage 50 Push data - Open Sage 50 connector.png")
 
 2. Click **Manage connection** for the relevant company data file
 
-   ![](https://files.readme.io/d84aee4-Sage_50_Push_data_-_Manage_connection.png "Sage 50 Push data - Manage connection.png")
+   ![](/img/old/d84aee4-Sage_50_Push_data_-_Manage_connection.png "Sage 50 Push data - Manage connection.png")
 
 3. Edit the credentials so that the Username and Password saved are those of the user created exclusively for the connector, and not the credentials of any user that logs on to the Sage 50 application on a regular basis.
 
@@ -60,7 +60,8 @@ Ensure that your client has created a new user (as described above) for their Sa
   :::note Refreshing Sage 50 to see pushed suppliers
 
   To refresh the page in Sage 50, you can click the filter in the Suppliers view twice as below. If a supplier has been successfully created, the account will appear when the page is refreshed.  
-  ![](https://files.readme.io/719da3c-supplierFilterRefresh.PNG "supplierFilterRefresh.PNG")
+
+  ![](/img/old/719da3c-supplierFilterRefresh.png "supplierFilterRefresh.PNG")
 
 :::
 

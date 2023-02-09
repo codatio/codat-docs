@@ -4,7 +4,6 @@ date: "2022-08-17"
 tags: ["Update", "Product"]
 draft: false
 authors: mcclowes
-link: "https://docs.codat.io/updates"
 ---
 
 We've got a host of Portal and DX improvements for you this week.

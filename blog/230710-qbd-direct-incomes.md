@@ -4,7 +4,6 @@ date: "2023-07-10"
 tags: ["Deprecation", "UAT"]
 draft: true
 authors: mcclowes
-link: "https://docs.codat.io/changelog/upcoming-2023-01-31-deprecation-of-uat-environment"
 ---
 
 On July 10, 2023, Codat will change the mappings for the Direct incomes data type for the QuickBooks Desktop on-premise connector.

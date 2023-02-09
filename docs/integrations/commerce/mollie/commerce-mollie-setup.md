@@ -31,7 +31,7 @@ You need to add sample data to Mollie first because it does not provide any read
 7. Return to the **Your apps** page and locate your app.
 8. Copy the **Client ID** and **Client Secret** for your app to a text file or similar.
 
-<img src="https://files.readme.io/051e9fd-36001_Mollie_-_client_id.PNG" />
+<img src="/img/old/051e9fd-36001_Mollie_-_client_id.PNG" />
 
 ## Add your app's secure credentials to the integration
 
