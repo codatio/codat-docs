@@ -104,8 +104,9 @@ Make the following requests to the Codat API. All push requests are asynchronous
 
 2. If the data is valid, the endpoint returns a push operation with a `status` of `Pending` (202). The status changes to `Success` if the push operation completes successfully.
 
-   :::note
+:::note
 
-   > The status might remain as `Pending` for some time while Sage processes the bank transactions.
+The status might remain as `Pending` for some time while Sage processes the bank transactions.
+:::
 
 3. Repeat the request for the remainder of the SMB customer's connected bank accounts.

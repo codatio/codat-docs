@@ -13,7 +13,7 @@ Before setting up the integration, make sure that:
 
 - Your Solutions Engineer has provided access to the QuickBooks Online Bank Feeds integration.
 - Your SMB users who will connect to QBO Bank Feeds are located in the US and Canada only.
-- You've enabled Bank accounts and Bank transactions in your [Data type settings](/data-sync-settings).
+- You've enabled Bank accounts and Bank transactions in your [Data type settings](/core-concepts/data-type-settings).
 - You've customized Link for your institution.
 
 ## Enable the QBO Bank Feeds integration
@@ -89,7 +89,7 @@ See the next procedure for details on the functionality to provide.
    ```
 
 3. Using the <a href="https://api.codat.io/swagger/index.html#/Connection/put_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts" target="_blank">PUT /bankFeedAccounts</a> endpoint, add one or more source bank accounts.
-   
+
    ```http
    PUT /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts
    ```
@@ -125,7 +125,7 @@ See the next procedure for details on the functionality to provide.
 
 5. The SMB user opens the `linkUrl` in their browser.
 
-6. Using Link and QBO, the SMB user can now [connect their chosen bank accounts to QuickBooks Online](/accounting-qbo-bank-feeds-smb-customer-steps).
+6. Using Link and QBO, the SMB user can now [connect their chosen bank accounts to QuickBooks Online](/bank-feed-api/qbo-bank-feeds/bank-feed-qbo-bank-feeds-smb-user).
 
 :::caution Do not hardcode the Link URL
 

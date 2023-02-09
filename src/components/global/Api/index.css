@@ -2,7 +2,9 @@
 
 html[data-theme="light"] {
   --font-ui: var(--ifm-font-family-base);
+  --font-ui: #03060b;
   --font-prose: var(--ifm-font-family-base);
+  --font-prose: #03060b;
 
   --color-link: var(--ifm-color-link);
   --color-text-primary: var(--color-link);
@@ -33,10 +35,6 @@ html[data-theme="dark"] .token.number {
 
 .sl-bg-canvas-100 {
   background-color: var(--token-secondary-bg-c) !important;
-  color: var(--font-ui);
-}
-
-.sl-badge > div > div > div > span {
   color: var(--font-ui);
 }
 
