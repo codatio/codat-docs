@@ -106,6 +106,12 @@ module.exports = [
     collapsed: true,
     items: ["data-model/commerce/commerce", ...paths.commerce, ,],
   },
+  {
+    type: "category",
+    label: "Bank feeds",
+    collapsed: true,
+    items: ["data-model/bank-feeds/bank-feeds", ...paths.bankFeeds, ,],
+  },
   // {
   //   type: "category",
   //   label: "Shared",
