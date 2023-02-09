@@ -8,7 +8,9 @@ updatedAt: "2022-10-20T15:24:34.963Z"
 The platform selection stage is the pivotal moment where your customers need to easily find the software they use and are ready to connect. Getting this right is critical to give your customers the best chance of connectivity.
 
 :::info Why this matters
+
 The action that most positively correlates to a successful connection is a user clicking a platform/integration name card, with a **50% increase of conversion** if done. This is the result of a well-executed platform selection flow.
+
 :::
 
 ## Explain what is about to happen
@@ -32,6 +34,7 @@ We recommend [using the assets provided by Codat](/build-your-own-authorization-
 :::caution
 
 Make sure to show the full integration name to avoid confusion i.e. QuickBooks Online vs QuickBooks Desktop, Sage Business Cloud Accounting vs Sage Intacct.
+
 :::
 
 ## Include a search function
@@ -58,6 +61,7 @@ Ensure there is a way to add multiple connections if your use case will benefit 
 See [here](/authorize-hosted-link#managing-existing-users-with-pending-connections) for more detail on connections with a `pendingAuth` status and [here](/querying-1#for-companies-whose-status-is-pending-with-data-connection-established) on creating a query to find these companies.
 
 :::info
+
 [Using Codat's Link for authorization](/auth-flow/overview) allows you to:
 
 - Communicate to build trust with your customers by specifying the messaging that appears on the left panel

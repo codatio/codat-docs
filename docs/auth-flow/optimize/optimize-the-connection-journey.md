@@ -26,7 +26,7 @@ Each section includes:
 - A helpful checklist to use when building your authorization flow.
 
 \*Codat analyzed implementations and the dropoff/conversion rate at each stage. We were able to attribute a positive correlation to the execution of each of the five critical areas.
-}
+
 :::
 
 For further resources on good design practices and some inspiration, Codat recommends:
