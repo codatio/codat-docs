@@ -14,7 +14,7 @@ In Codat's API, bank feeds are represented as [Bank transactions](/accounting-ap
 
 /accounting-api#/schemas/BankTransactions
 
-Bank Feeds API uses standalone integrations to [popular accounting software](/bank-feed-api/overview#which-integrations-support-bank-feed-api). The connection journey for SMB users is handled by the integration and is different for each supported platform.
+Bank Feeds API uses standalone integrations to [popular accounting software](/bank-feeds-api/overview#which-integrations-support-bank-feeds-api). The connection journey for SMB users is handled by the integration and is different for each supported platform.
 
 <img
   src="/img/old/fd21af0-codat_whitepaper_accounting-automation_diagram_B.png"
@@ -88,8 +88,8 @@ Tell us how you'd like to use Bank Feeds API on <a className="external" href="ht
 
 To leverage the functionality of Bank Feeds API, first choose an integration to a supported accounting platform.
 
-- [QuickBooks Online Bank Feeds](/bank-feed-api/qbo-bank-feeds/) (US and Canada only)
-- [Sage Bank Feeds](/bank-feed-api/sage-bank-feeds)
+- [QuickBooks Online Bank Feeds](/bank-feeds-api/qbo-bank-feeds/) (US and Canada only)
+- [Sage Bank Feeds](/bank-feeds-api/sage-bank-feeds)
 - [Xero](/integrations/accounting/xero/accounting-xero-setup#configure-direct-bank-feeds)
 
 For detailed setup instructions, refer to the documentation for each integration.

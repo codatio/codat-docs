@@ -212,4 +212,4 @@ The endpoint returns a `200` code and the updated bank account details. For exam
 
 ## Next steps
 
-Next you can [push bank transactions from a source bank account](/bank-feed-api/sage-bank-feeds/bank-feed-sage-bank-feeds-use).
+Next you can [push bank transactions from a source bank account](/bank-feeds-api/sage-bank-feeds/bank-feed-sage-bank-feeds-use).

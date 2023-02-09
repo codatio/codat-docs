@@ -110,7 +110,7 @@ module.exports = {
               label: "Commerce API",
             },
             {
-              href: "/bank-feed-api",
+              href: "/bank-feeds-api",
               label: "Bank Feeds API",
             },
             {
