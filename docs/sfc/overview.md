@@ -14,7 +14,7 @@ We do all the heavy lifting, mapping your merchants' data according to accountin
 
 Your merchants can seamlessly reconcile their ecommerce and accounting data, allowing them to spend more time on growing their business.
 
-:::Caution Beta testing
+:::caution Beta testing
 
 Sync for Commerce is in beta. If you are interested in building with Sync for Commerce, please [get in touch](mailto:sync-for-commerce@codat.io).
 :::
@@ -98,7 +98,7 @@ Next, the data is queued to be sent to the merchant’s accounting platform.
 
 We continue handling the data that’s pushed to us automatically so that merchants can enjoy effortless and seamless daily reconciliation of their commerce data.
 
-:::info
+:::info Info
 To see how the data displays in the accounting platform after a successful synchronization via Sync for Commerce, read our [Mapping specifications](/mapping-specifications).
 :::
 

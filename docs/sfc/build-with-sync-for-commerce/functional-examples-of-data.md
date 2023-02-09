@@ -11,10 +11,10 @@ We include some examples of how the data is represented **in the accounting plat
 
 Our [Sync for Commerce Postman collection](https://postman.codat.io/#166a0b48-9f98-47f6-91cd-0986a3de626f) also includes some sample Orders, Payments, and Transactions `POST` requests that you can use as an example.
 
-:::info
+:::info Info
 To check whether the data has been mapped to the accounting platform successfully, follow the steps outlined in the [Data pushing](/sync-data-pushing) section.
 
-:::Caution
+:::caution Caution
 
 **ALL** the data types listed for each feature are required. If you don’t push any of these data types, the sync will fail and no data will be displayed in the SMB’s accounting platform.
 

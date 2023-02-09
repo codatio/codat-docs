@@ -16,7 +16,7 @@ Within your application, present your merchant with a list of accounting platfor
 
 On select, your merchant should be [redirected to the Sync configuration flow URL](/implementing-codats-no-code-merchant-configuration) where they will be prompted to authorize access to their accounting data.
 
-:::info
+:::info Info
 
 Over the steps in this guide, you'll need to retain several variables:
 
@@ -210,7 +210,7 @@ When the user selects the integration you're ready to progress them to the Sync 
 
 **Retain the `platformKey` of the integration your merchant selected.** In the example above, this is passed to the `onClick` function, which would take care of that.
 
-:::Caution Incorrect platform selection
+:::caution Incorrect platform selection
 
 If your merchant accidentally selects the wrong accounting package, you can resolve this by [deleting that Connection](/core-concepts/connections#how-do-i-delete-a-data-connection) for the incorrectly selected accounting software and returning them to the accounting platform selection stage.
 :::
@@ -252,7 +252,7 @@ You should have retained the `companyId`.
 
 You can retrieve the `platformKey` when you need it.
 
-:::info
+:::info Info
 
 Call `GET /companies/{companyId}/connections`. There should only be one connection returned if your settings are configured correctly. The `platformKey` is (incorrectly) called `integrationKey` in the response.
 

@@ -6,7 +6,7 @@ createdAt: "2021-02-12T12:07:42.887Z"
 updatedAt: "2022-12-19T06:12:29.871Z"
 ---
 
-:::Note Prerequisites
+:::note Prerequisites
 
 You need an account and its API key to start with Codat. You can <a href="https://signup.codat.io/" target="_blank">sign up</a> for an account for free, or <a href="/core-account-signup" target="_blank">learn more</a> about creating one.
 
@@ -42,7 +42,7 @@ If you are a developer and want to work with Codat using our <a href="https://do
 <details>
   <summary><b>Authenticate with Codat's API</b></summary>
 
-:::Caution
+:::caution Caution
 Authorization headers can only be viewed and copied by users with Administrator or Developer <a href="/user-roles" target="_blank">roles</a>.
 :::
 

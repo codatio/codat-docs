@@ -15,7 +15,7 @@ Before you can access data from customers using Wave for their accounting, you n
 
 ## Register your application
 
-:::Note Developer account details
+:::note Developer account details
 
 - If you already have a Wave account, have your account details to hand.
 - If you don't, <a href="https://my.waveapps.com/register/" target="_blank">create an account</a> before you start registration.
@@ -35,7 +35,7 @@ To register your Wave application you need to use Wave's developer portal.
    - In the _Redirect URIs_ box, enter `https://wave.codat.io/oauth/callback`
    - In the _Logo_ box, select _Choose File_ to upload your company logo. The logo appears on the authorization page that your customers see.
 
-:::Caution Logo displayed on authorization page
+:::caution Logo displayed on authorization page
 If you don't upload your own company logo, the Codat logo appears on the authorization page.
 :::
 
@@ -54,7 +54,7 @@ If you don't upload your own company logo, the Codat logo appears on the authori
 1. Click **Save**. A confirmation message appears if the settings were saved successfully
 1. The **Enable Wave** dialog is displayed. Select whether to enable the integration now or later.
 
-:::Note
+:::note
 Make sure that your secure keys don't contain any spaces.
 :::
 

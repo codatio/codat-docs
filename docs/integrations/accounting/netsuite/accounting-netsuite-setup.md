@@ -18,7 +18,7 @@ Oracle NetSuite does not require any global credentials for accessing the API. I
 
 To install bundles on their account, the company must have the Administrator role or the relevant permission to allow bundle installation.
 
-:::Note Unmanaged bundles
+:::note Unmanaged bundles
 
 Codat's bundles are referred to as unmanaged bundles in Oracle NetSuite. This means that with any potential bundle updates in the future, you will have to let your clients know that they will have to upgrade their bundles to the new version individually on their accounts.
 :::

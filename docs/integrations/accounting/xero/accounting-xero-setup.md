@@ -79,7 +79,7 @@ Next, you can add the secure keys for your Xero application to the Codat Portal.
 4. Click **Save**. A confirmation message appears if the settings were saved successfully.
 5. The **Enable Xero** dialog is displayed. Select whether to enable the integration now or later.
 
-:::Note
+:::note
 
 Make sure that your secure keys don't contain any spaces.
 :::
@@ -123,14 +123,14 @@ To link more than 25 companies (excluding connections to the Xero demo company) 
 
 Xero have specific requirements about who can gain app partner status and how they must build their integration. **Xero app partnership is not possible for all use cases.**
 
-:::Caution Connection limits for non-partner apps
+:::caution Connection limits for non-partner apps
 
 Xero apps created by non-partners, known as _uncertified apps_, are limited to a maximum of 25 connections (excluding connections to the Xero demo company).
 
 To remove this connection limit, you must be granted _app partner_ status with Xero. For more information, see [App Partner Overview](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/overview) and [OAuth 2.0 API limits](https://developer.xero.com/documentation/guides/oauth2/limits/#uncertified-app-limits) in the Xero Developer documentation.
 :::
 
-:::Caution Financial services providers
+:::caution Financial services providers
 
 Financial services providers may be subject to additional commercial terms before being granted app partner status with Xero. If you are a financial services provider, we strongly recommend that you contact Xero before you start to build your integration. You can also contact your Codat sales or solutions representative to learn more about Xero app partnership.
 :::

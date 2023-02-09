@@ -27,7 +27,7 @@ In the Test integration, Codat considers Mollie data as sample when its `testmod
 
 For help with adding test transactions, see <a className="external" href="https://docs.mollie.com/overview/testing" target="_blank">Testing the Mollie API</a> in the Mollie documentation.
 
-:::Caution Mollie payment data limitations
+:::caution Mollie payment data limitations
 You can't create Disputes and Settlements test data due to local legal limitations for storing sample data. Additionally, Products and Locations data types are not supported by Mollie.
 
 ## Set up a test company and enable commerce data sources
@@ -71,7 +71,7 @@ In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>:
 4. Click the **Commerce API** tab.
 5. Use the tabs to view test data that was pulled from Mollie. For example, click **Customers** or **Transactions**.
 
-:::info
+:::info Info
 Data is only available for supported data types, for which you created test data.
 :::
 

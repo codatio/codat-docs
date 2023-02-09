@@ -5,7 +5,7 @@ createdAt: "2022-02-09T14:35:17.586Z"
 updatedAt: "2022-08-16T10:27:41.705Z"
 ---
 
-:::Caution Sync for Commerce: beta testing
+:::caution Sync for Commerce: beta testing
 
 Note that Sync for Commerce is in the beta phase.
 :::
@@ -68,7 +68,7 @@ POST /meta/companies/sync
 We recommend that you populate the `name` value with the ID that you use for the merchant in _your_ internal system so that it’s easier to identify the Codat company that corresponds to your record of the merchant.
 :::
 
-:::Caution Forbidden characters
+:::caution Forbidden characters
 
 Company names may only contain letters, numbers, spaces, and the following symbols: `-`, `'`, `&`, `@`, `.`, `,`, `?`, `!`.
 :::
@@ -113,7 +113,7 @@ The response to this request includes the parameters of a newly created company,
 }
 [/block]
 
-:::Caution Keep track of the `companyId`
+:::caution Keep track of the `companyId`
 
 It's important that you keep track of the Codat `companyId` that is returned at step 1:
 * It is required for the next stage of the setup, [ data pushing,](/sync-data-pushing) and any time you need to synchronize data for this merchant or interact with their configuration.
@@ -201,7 +201,7 @@ As sales data is typically represented on a calendar day basis, we strongly reco
 Such an approach ensures that a full calendar day’s worth of data is synchronized, which facilitates the reconciliation of data between the merchant’s commercial and accounting platforms.
 :::
 
-:::info
+:::info Info
 You can see [Codat’s merchant configuration flow](/implementing-codats-no-code-merchant-configuration) for an example of a UI implementing this functionality.
 :::
 
@@ -251,7 +251,7 @@ When you disable a data connection, the next scheduled data sync will fail, and 
 
 Only the data from the latest synchronization is removed. Your configuration is retained, and, if the connection is restored, the next synchronization will happen as scheduled.
 
-:::info
+:::info Info
 
 It is not possible to deauthorize a connection using the [no-code Sync for Commerce merchant configuration flow UI](docs:implementing-codats-no-code-merchant-configuration), only delete it. If you delete the connection, the configuration will be removed, as well as any data that has been synchronized.
 :::

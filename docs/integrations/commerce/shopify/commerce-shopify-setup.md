@@ -7,7 +7,7 @@ updatedAt: "2023-01-06T16:44:14.501Z"
 
 Set up the Shopify integration to retrieve commerce data from customers who sell their products on Shopify's ecommerce platform.
 
-:::Caution
+:::caution Caution
 
 Before you begin, read the _Underlying provider requirements_ on the [Shopify](/commerce-shopify) page.
 :::
@@ -65,7 +65,7 @@ In the Shopify Partners site:
 6. Click **App visibility**.
 7. In the **Manage app visibility** dialog, select **Unlisted**, unless you want your app to be visible in the public Shopify App Store, then click **Save**.
 
-:::Note Differences between listed and unlisted apps
+:::note Differences between listed and unlisted apps
 
 You can choose whether to make your Shopify app _listed_ (fully visible in the Shopify App Store) or _unlisted_ (it will not appear in Shopify App Store search engines or results). Both types of apps have a public Shopify App Store URL.
 :::

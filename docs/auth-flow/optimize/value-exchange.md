@@ -53,7 +53,7 @@ Further educate your users on the benefits of connecting their accounts by linki
 
 Keep users engaged by showing them the progress of their connection. Does your solution require multiple types of data to be connected (e.g., a loan application)? Motivate SMBs to connect more sources of data by increasing the "strength" of their application with every connected integration.
 
-:::Note
+:::note
 
 [Using Codat's Link for authorization](/auth-flow/overview) allows you to:
 

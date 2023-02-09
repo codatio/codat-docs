@@ -11,7 +11,7 @@ Codat's enterprise clients can use our partner credentials to enable the integra
 
 If you would like to enable our integration with Sage Intacct, please contact your Solutions Engineer to gain access to partner credentials for your instance and to discuss the process of [becoming a Sage Intacct partner](https://marketplace.intacct.com/BecomeAPartner).
 
-:::Note Entity Level access required
+:::note Entity Level access required
 
 _Entity Level access_ must be enabled in Sage Intacct before a company can connect to the integration.
 :::
@@ -38,12 +38,12 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 We recommend that you test your integration before sending Link URLs to customers. You'll need your own Sage Intacct account to do this.
 
-:::Caution Sage Intacct trial companies
+:::caution Sage Intacct trial companies
 
 You will not be able to link a Sage Intacct trial company. Sage Intacct trial companies do not support the Webservices API, which is needed to link and sync data via Codat.
 :::
 
-:::Note Full admin privileges
+:::note Full admin privileges
 
 **Prerequisites:** You must have Full admin privileges in Sage Intacct, and user role permissions.
 :::

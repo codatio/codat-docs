@@ -20,5 +20,5 @@ View the coverage of our Clover integration in the <a className="external" href=
 
 See [Set up the Clover integration](/set-up-your-clover-integration) to learn how to set up and enable the integration.
 
-:::Caution Underlying provider requirements
+:::caution Underlying provider requirements
 Clover has restrictions on the use cases for which they will approve apps. Before setting up the integration, review the [Clover App Market Developer Program Policies](https://www.clover.com/app-market-policies) to make sure your use case is supported.

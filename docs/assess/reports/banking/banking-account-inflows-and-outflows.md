@@ -5,7 +5,7 @@ createdAt: "2022-06-27T09:46:18.437Z"
 updatedAt: "2022-07-06T14:51:04.121Z"
 ---
 
-:::Caution Banking account inflows and outflows - Beta testing
+:::caution Banking account inflows and outflows - Beta testing
 Please note, this feature is in beta testing. We encourage you to provide any feedback you have on the product by selecting _Submit idea_ <a href="https://portal.productboard.com/codat/7-product-roadmap/tabs/20-accounting-api" target="_blank">here</a> on our roadmap.
 :::
 

@@ -10,7 +10,7 @@ You can capture your SMB's business documents in addition to contributed data ac
 
 The file upload integrations are available in the Codat Portal in **Settings > Integrations > Other integrations**.
 
-:::Caution
+:::caution Caution
 
 Although we scan all uploaded files for viruses, we recommend that you do the same for optimum security.
 :::

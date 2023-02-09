@@ -6,7 +6,7 @@ createdAt: "2022-04-04T07:04:34.727Z"
 updatedAt: "2022-11-30T14:38:23.838Z"
 ---
 
-:::Caution Supported platforms
+:::caution Supported platforms
 
 We will only produce metrics for the platforms that support the following data types:
 

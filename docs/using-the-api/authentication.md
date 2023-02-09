@@ -13,13 +13,13 @@ Codat expects the API key to be included in all API requests to the server, Base
 
 `Authorization: Basic YOUR_ENCODED_API_KEY`
 
-:::info
+:::info Info
 You must replace <code>YOUR_ENCODED_API_KEY</code> with your API key, Base64 encoded
 :::
 
 ## Getting your authorization header
 
-:::Caution
+:::caution Caution
 Authorization headers can only be viewed and copied by users with Administrator or Developer roles.
 :::
 

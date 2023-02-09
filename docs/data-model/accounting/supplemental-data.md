@@ -70,7 +70,7 @@ Note that the `dataSource` and `requiredData` parameter values must match the in
 You can also retrieve your supplemental data configuration by using the following endpoint:
 `GET /integrations​/{platformKey}/datatypes/{datatype}/supplementalDataConfig`
 
-:::Caution Content validation
+:::caution Content validation
 Codat does not validate the contents of the supplemental data configuration request. If the specified data source or properties do not exist, the request will fail.
 :::
 

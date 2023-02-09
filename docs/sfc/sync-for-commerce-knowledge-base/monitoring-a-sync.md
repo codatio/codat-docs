@@ -30,7 +30,7 @@ You can also navigate to the Config tab to view and download the merchant's sync
   alt="Detailed view of a sync log entry with Summary and Config tabs "
 />
 
-:::Note
+:::note
 
 Your clients can also monitor the status of their syncs on the Sync Health page. They will only see records for their specific merchant.
 :::

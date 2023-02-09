@@ -34,7 +34,7 @@ You can set your brand's primary color to define the color of buttons and other 
   alt="Branding settings screen with company name, logo, icon, and colour picker displayed"
 />
 
-:::Note
+:::note
 
 Light colors may cause accessibility issues. For best results, use a dark primary color.
 

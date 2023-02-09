@@ -18,7 +18,7 @@ Before you can access data from customers who use Dynamics 365 Business Central,
 
 We recommend you [test your integration](/test-your-dynamics-365-business-central-integration) using a trial Business Central account before production use.
 
-:::Caution The Dynamics 365 Business Central extension must be installed
+:::caution The Dynamics 365 Business Central extension must be installed
 
 During the SMB linking process, the Dynamics 365 Business Central extension package _must_ be successfully installed to the user's account in order for the integration to function. The extension is published by Codat.
 
@@ -36,7 +36,7 @@ Register your Business Central application on the Microsoft Azure portal.
    - To gain access to any Azure configuration that your company has already set up—for example, for user authentication—enter your company email when you sign up.
 
    - If your organization is using Azure Active Directory (Azure AD) to control access to Dynamics 365 Business Central, ask your Azure AD administrator to add your account to the correct group.
-     :::Caution Unable to create account
+     :::caution Unable to create account
      > Contact your Business Central administrator if you can't create a new Business Central account. They might have disabled this feature.
 
 2. After you've signed in, select **Azure Active Directory** on the home page or left menu.

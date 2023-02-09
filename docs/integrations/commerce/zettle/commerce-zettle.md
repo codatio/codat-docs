@@ -22,10 +22,10 @@ For more information about the supported data types, see [Zettle integration ref
 
 See [Set up the Zettle integration](/integrations/commerce/zettle/commerce-zettle-setup) to learn how to set up and enable the integration.
 
-:::Caution Underlying provider requirements
+:::caution Underlying provider requirements
 The Zettle APIs are not supported in the United States.
 
 Regardless of where you are located when building your app, you can integrate with Zettle only in supported markets.
 
-:::Caution Zettle Food & Drink is deprecated
+:::caution Zettle Food & Drink is deprecated
 The Zettle Food & Drink integration is now deprecated and the documentation has been removed.

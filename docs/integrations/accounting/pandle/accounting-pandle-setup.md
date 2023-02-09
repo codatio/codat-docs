@@ -39,7 +39,7 @@ Pandle will issue secure keys to you, including a client ID and client secret. I
 
 5. The **Enable Pandle** dialog is displayed. Select whether to enable the integration now or later.
 
-:::Note
+:::note
 Make sure that your secure keys don't contain any spaces.
 :::
 

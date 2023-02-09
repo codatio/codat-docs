@@ -36,7 +36,7 @@ Codat does not fix issues related to older versions of the software. Please upgr
 
 If you experience compatibility issues with companies using older versions of the software, Codat support will advise you to upgrade to a supported version.
 
-:::Caution QuickBooks Desktop for Mac
+:::caution QuickBooks Desktop for Mac
 
 Codat does not currently support Intuit QuickBooks for Mac OS. Only the QuickBooks Desktop for Windows versions listed above are supported.
 :::
@@ -58,7 +58,7 @@ Users have successfully run the connector on older versions of Windows; however,
 
 The connector will not run on Mac OS.
 
-:::Note Supported environments
+:::note Supported environments
 
 Our QuickBooks Desktop Connector is designed to work in single-tenant environments only, where one Windows user logs on to the same computer they use to access QuickBooks Desktop.
 

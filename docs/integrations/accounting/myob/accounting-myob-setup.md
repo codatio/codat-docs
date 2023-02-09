@@ -5,7 +5,7 @@ createdAt: "2019-06-24T13:14:45.915Z"
 updatedAt: "2023-01-13T14:17:05.765Z"
 ---
 
-:::Note AccountRight or Essentials?
+:::note AccountRight or Essentials?
 
 MYOB have migrated their Essentials API to a new version. The new version will be using the AccountRight API. You can read more about the update on <a href="https://developer.myob.com/api/accountright/v2//" target="_blank">MYOB website</a>.
 
@@ -47,7 +47,7 @@ You should allow a minimum of 72 hours for MYOB to set up your developer account
 7. Select **Register App**.
 8. On the** Developer Dashboard** you will now find your application key and secret. You'll need these for the next stage of the process.
 
-:::Caution MYOB Limitation
+:::caution MYOB Limitation
 
 MYOB will only automatically activate the first two API keys you create. All further API keys will need to be manually activated by the MYOB Support Team prior to use, even if the original keys have been deleted. For more information about it, have a look at the <a href="https://apisupport.myob.com/hc/en-us/articles/360000490416" target="_blank">article </a> in MYOB knowledge base.
 :::
@@ -67,7 +67,7 @@ MYOB will only automatically activate the first two API keys you create. All fur
 
 5. The **Enable MYOB AccountRight and Essentials** dialog is displayed. Select whether to enable the integration now or later.
 
-:::Note
+:::note
 
 Make sure that your secure keys don't contain any spaces.
 :::

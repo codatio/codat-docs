@@ -12,7 +12,7 @@ Before setting up your Amazon Seller Central integration, you will need to:
 - Create an IAM Policy
 - Create an IAM role that trusts your IAM User
 - Add an AWS Security Token Service Policy to your IAM User.
-  :::Caution Registration Requirements
+  :::caution Registration Requirements
   Amazon has manual verification steps as part of their developer registration process. Please note that it can take some time for your application to be reviewed before you can start using Codat's Amazon Seller Central integration.
 
 :::info Charges & Fees
@@ -36,7 +36,7 @@ You will only need to select the "Selling Partners" APIs. You will need to be cl
 **Security Controls Section**
 You will need to outline the controls you have in place to ensure the security of any synced data. Amazon require you to demonstrate that you will be compliant with their privacy and data sharing policies; and you will need to provide your company's incident response policy.
 
-:::Caution Personally Identifiable Information (PII)
+:::caution Personally Identifiable Information (PII)
 Amazon is highly sensitive about PII data from their merchant’s customers.
 
 Due to the stringent restrictions, Codat does not pull any PII data from Amazon to populate our Customers datatype.
@@ -100,7 +100,7 @@ To use Amazon Seller Central app credentials in a production environment (connec
 8. Amazon will communicate the outcome of your form submission in due course.
    After approval, apps take approximately **2 weeks** to be published and made available for use in production environments.
 
-:::Caution App image dimensions
+:::caution App image dimensions
 
 Some sections of the form require you to upload images of your application in specific dimensions. These requirements must be complied with.
 :::

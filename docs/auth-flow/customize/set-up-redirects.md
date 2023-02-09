@@ -13,7 +13,7 @@ The following options of redirect configuration are available in the Codat Porta
 - redirect with custom query parameters
 - redirect with reserved query parameters
 
-:::Note Redirect URLs in Embedded Link
+:::note Redirect URLs in Embedded Link
 
 Note that configuring redirects in the Codat Portal is only possible for Hosted Link. For Embedded Link, build out the required redirect configuration within your application.
 :::
@@ -54,7 +54,7 @@ For example, if you set your Redirect URL to: `https://www.codat.io/{journeyType
 - `...f67e946f84c9/link?journeyType=demo` would ultimately send you to `https://www.codat.io/demo/success?ClientType=`.
 - `...f67e946f84c9/link` would ultimately send you to `https://www.codat.io//success?ClientType=`.
 
-:::Caution Special character encoding
+:::caution Special character encoding
 
 Please ensure any and all special characters used in the link URL are correctly encoded; otherwise custom parameters may not pull through correctly.
 :::
@@ -76,7 +76,7 @@ To set up a redirect with reserved query parameters:
 1. In the **Redirect URL** box, enter a base URL along with the reserved parameters you want to use to build the redirect. To add a parameter, wrap it in curly braces. For example: `https://redirect.site/{sourceType}/?flow=Codat&statuscode={statusCode}&errormessage={errorMessage}`
 2. If you use the redirect parameter values shown above, your customer is redirected to: `https://redirect.site/accounting/?flow=Codat&statuscode=403&errormessage=User%20cancelled`.
 
-:::Note Availability of reserved query parameters
+:::note Availability of reserved query parameters
 
 Please note that the names of the parameters listed in the table below are currently available for the following platforms:  
 **accounting**: FreeAgent, Freshbooks, Microsoft Dynamics 365 Business Central, MYOB AccountRight, Pandle, Quickbooks Online, Sage Business Cloud, Wave  
@@ -220,7 +220,7 @@ The **Authorization Complete Redirection Url** is a URL your customers are sent 
 Example configuration:  
 If you set the redirect to `https://{dynamichost}/example` and set the dynamic host to `dynamichost=codat.io` the redirect will be evaluated to `https://codat.io/example`.
 
-:::Note Reserved parameters
+:::note Reserved parameters
 
 Do not use reserved parameters in your redirect hosts.
 :::

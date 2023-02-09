@@ -5,7 +5,7 @@ createdAt: "2022-09-05T15:58:36.027Z"
 updatedAt: "2022-12-09T13:03:30.599Z"
 ---
 
-:::Note Access to Codat Developers
+:::note Access to Codat Developers
 
 This page is only available to users with developer and administrator [user roles](/user-roles).
 :::
@@ -49,7 +49,7 @@ Once you are ready, click **Enable** to switch the deprecation on for your organ
 
 For more information on breaking changes and how we communicate these to you, review our [change policy](/change-policy).
 
-:::Note Deprecation dates
+:::note Deprecation dates
 
 Note that if your organization's client is newly created, some deprecations will automatically be enabled for you and not available in the self-serve list.
 

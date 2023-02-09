@@ -29,7 +29,7 @@ To establish a sense of familiarity and certainty in users, make sure you show t
 
 We recommend [using the assets provided by Codat](/build-your-own-authorization-journey#step-2-display-a-list-of-integrations-for-your-users-to-select-including-the-integration-name-and-logo) as they meet the requirements of the supported integrations.
 
-:::Caution
+:::caution Caution
 
 Make sure to show the full integration name to avoid confusion i.e. QuickBooks Online vs QuickBooks Desktop, Sage Business Cloud Accounting vs Sage Intacct.
 :::

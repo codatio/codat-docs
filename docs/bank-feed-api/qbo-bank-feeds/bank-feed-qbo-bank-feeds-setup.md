@@ -43,7 +43,7 @@ See the next procedure for details on the functionality to provide.
 
 ## Create a Company and data connection, then add bank accounts
 
-1. When an SMB user clicks the button or link you added, create a Company for them using the <a  class="external" href="https://api.codat.io/swagger/index.html#/Companies/post_companies" target="_blank">Create company</a> endpoint:
+1. When an SMB user clicks the button or link you added, create a Company for them using the <a href="/codat-api#/operations/create-company">Create a company</a> endpoint:
 
    ```http
    POST https://api.codat.io/companies
@@ -51,7 +51,7 @@ See the next procedure for details on the functionality to provide.
 
    Request body:
 
-   ```http
+   ```json
    {
      "name": "COMPANY_NAME"
    }
@@ -59,7 +59,7 @@ See the next procedure for details on the functionality to provide.
 
    The endpoint returns a JSON response containing the company `id` and the `redirect` URL.
 
-2. Using the <a className="external" href="https://api.codat.io/swagger/index.html#/Connection/post_companies__companyId__connections" target="_blank">POST /connections</a> endpoint, create a data connection to QBO Bank Feeds for the company.
+2. Using the <a href="/codat-api#/operations/create-data-connection">POST /connections</a> endpoint, create a data connection to QBO Bank Feeds for the company.
 
    ```http
    POST https://api.codat.io/companies/COMPANY_ID/connections
@@ -88,8 +88,8 @@ See the next procedure for details on the functionality to provide.
    }
    ```
 
-3. Using the <a className="external" href="https://api.codat.io/swagger/index.html#/Connection/put_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts" target="_blank">PUT /bankFeedAccounts</a> endpoint, add one or more source bank accounts.
-
+3. Using the <a href="https://api.codat.io/swagger/index.html#/Connection/put_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts" target="_blank">PUT /bankFeedAccounts</a> endpoint, add one or more source bank accounts.
+   
    ```http
    PUT /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts
    ```
@@ -127,7 +127,7 @@ See the next procedure for details on the functionality to provide.
 
 6. Using Link and QBO, the SMB user can now [connect their chosen bank accounts to QuickBooks Online](/accounting-qbo-bank-feeds-smb-customer-steps).
 
-:::Caution Do not hardcode the Link URL
+:::caution Do not hardcode the Link URL
 
 Do _not_ hardcode the `linkUrl` into your application code. It is unique to the originating customer and must not be shared with other users.
 :::
@@ -170,4 +170,4 @@ Send a request to the <a className="external" href="https://api.codat.io/swagger
 PUT /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts
 ```
 
-To connect the bank accounts you added, the SMB user needs to revisit the `linkUrl` of the data connection. You can use the <a  class="external" href="https://api.codat.io/swagger/index.html#/Connection/get_companies__companyId__connections" target="_blank">Get connections</a> or <a  class="external" href="https://api.codat.io/swagger/index.html#/Connection/get_companies__companyId__connections__connectionId_" target="_blank">Get a single connection</a> endpoint to get the `linkUrl`.
+To connect the bank accounts you added, the SMB user needs to revisit the `linkUrl` of the data connection. You can use the <a href="/codat-api#/operations/list-company-connections">List connections</a> or <a href="/codat-api#/operations/get-company-connection">Get connection</a> endpoint to get the `linkUrl`.

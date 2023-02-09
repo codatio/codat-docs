@@ -4,7 +4,7 @@ createdAt: "2022-11-16T20:24:20.979Z"
 updatedAt: "2023-01-16T17:31:55.362Z"
 ---
 
-:::Caution
+:::caution Caution
 
 This section includes instructions on how to update the text values in the Sync Flow and change visibility of feature categories (accounts).
 
@@ -95,7 +95,7 @@ In the request above, the `data-textkey` is the key of the field that you want t
 
 You can find the `data-textkey` values in the tables below.
 
-:::Caution Update the text fields consistently
+:::caution Update the text fields consistently
 
 We recommend grouping your updates to ensure that related values are updated consistently. A feature name (e.g., Sales) appears as a check box item in the left pane (Set up sales) and as the main title on the right side of the window (Sales), so it is important to update both `configure-setupSidebar-checkboxes-sales` and `configure-content-sales-title`.
 

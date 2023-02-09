@@ -15,7 +15,7 @@ Before you can pull commerce data from companies using SumUp, you will need to s
 
 ## Create a SumUp app and retrieve your secure credentials
 
-:::Note SumUp account details
+:::note SumUp account details
 
 If you already have a SumUp account, have your account details at hand. If not, visit <a href="https://sumup.co.uk/">SumUp</a> to sign up for an account.
 :::

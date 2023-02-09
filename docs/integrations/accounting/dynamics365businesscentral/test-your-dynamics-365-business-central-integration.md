@@ -32,14 +32,14 @@ Before sending Link URLs to your SMB customers, we recommend you test your integ
    - Authorize access to your account details.
    - Select the test company you created.
 
-   :::Caution Admin approval - Active Directory
+   :::caution Admin approval - Active Directory
 
    Depending on the SMB user's Active Directory (AD) settings for Dynamics 365, an AD admin might need to approve the connection to your app. If this applies, the user is advised to request access, which notifies the AD admins. If the user is an AD admin themselves they won't need to request access.
 
    When an AD admin approves access, the user can complete the Link steps again to establish the connection to your app.
    :::
 
-   :::Caution Multiple environment selection - Sandbox and Production
+   :::caution Multiple environment selection - Sandbox and Production
 
    During the linking process, the environment is displayed when you select a company that is available in a sandbox or production environment.
 

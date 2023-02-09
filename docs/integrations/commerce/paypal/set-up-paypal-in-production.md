@@ -7,7 +7,7 @@ updatedAt: "2023-01-06T16:40:43.784Z"
 
 Before you can access your customers' commerce data from PayPal, you need to set up your integration.
 
-:::Caution
+:::caution Caution
 
 Before you begin, read the Provider requirements on the [PayPal](/commerce-paypal) page.
 :::
@@ -27,7 +27,7 @@ You'll need to:
    a) PayPay need to enable the credentials after they are created. **This may take a number of days; until this is completed by PayPal, you will not be able to access the PayPal X2SA API through Codat**.  
    b) You can contact PayPal for help at dl-pp-tpp@paypal.com
 
-:::Caution Keep your live credentials safe
+:::caution Keep your live credentials safe
 
 Make sure you keep your live credentials safe; it is not normally possible to retrieve this information from PayPal again after it has been initially requested.
 :::

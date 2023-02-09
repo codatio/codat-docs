@@ -13,7 +13,7 @@ To uninstall the Sage 50 connector, the user can right-click the connector's sys
 
 ![Text](/img/old/a829482-RightClickMenu.png "Uninstall Sage 50 connector selected in the right-click menu for system tray.")
 
-:::Note
+:::note
 
 If you've configured your company's icon in the Codat portal, you'll see that icon in the system tray and not the Codat icon.
 :::

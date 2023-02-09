@@ -9,7 +9,7 @@ Set up the Stripe integration to access commerce data from customers who use <a 
 
 Our integration uses <a className="external" href="https://stripe.com/docs/connect" target="_blank">Stripe Connect</a> to establish OAuth connections to Stripe, so you'll need to register as a Stripe Connect platform as described below. Connected Standard accounts, which represent your SMB customers in Stripe's API, are created automatically as part of the Link authorization flow.
 
-:::Note Test and live integrations
+:::note Test and live integrations
 
 This page explains how to set up both the Stripe Test and the Stripe integrations (see [Available integrations](/commerce-stripe#available-integrations) for more details).
 :::
@@ -49,7 +49,7 @@ Complete your Connect Platform profile to register for Stripe Connect. When your
 
 9. Complete the requested information to activate your account. All responses are reviewed by Stripe.
 
-:::Note
+:::note
 
 Our integration works with connected Standard accounts only.
 :::

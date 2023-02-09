@@ -17,7 +17,7 @@ To connect your customers' financial software, you can:
 
 1. First, you need to create a Codat company for your SMB. We recommend doing that simultaneously as your SMB user signs up within your app. That allows you to track their connection status from day one. To create a company, follow the steps in [Managing companies via API](/using-the-api/managing-companies-1).
 
-:::Caution Use your merchant ID for the company name
+:::caution Use your merchant ID for the company name
 
 We recommend that you populate the name value with the ID that you use for the merchant in **your** internal system so that it’s easier to identify the Codat company that corresponds to your record of the merchant.
 :::
@@ -47,7 +47,7 @@ Review the parameters in the example response to creating a new company:
 
 To enhance your Hosted Link experience, [set up an alert](/set-up-alerts) to monitor the connection status of the newly created company. We recommend that you set up an alert for when a user authorizes a data connection so that you can action it within your app.
 
-:::Note Use the `redirect` Link URL for existing customers
+:::note Use the `redirect` Link URL for existing customers
 
 Ensure to direct the existing customers to the `redirect` Link URL that you can retrieve from the company's metadata. If you create a new company and establish a new connection for a customer previously connected, you may be billed for it based on your contract.
 :::
@@ -89,7 +89,7 @@ If you want to onboard a large number of new companies without needing to specif
 1. Sign in to the Codat portal and navigate to the **Companies** page.
 2. Click on the `Invite company` button and copy the URL that displays to share it with your customer. Before sharing, ensure that the page title and body text are correctly configured as per [Link customization settings](/set-up-link).
 
-:::Note Use the Link URL for existing customers
+:::note Use the Link URL for existing customers
 
 Using the Invite company URL will not allow your customer to view, update or add new connections against the existing Codat company which represents your customer. Therefore, you should use the Link URL to manage connections for existing customers.
 

@@ -10,14 +10,14 @@ updatedAt: "2023-01-13T15:13:31.523Z"
 
 Sage 200cloud is an accounting solution for small to medium-sized businesses. This cloud-based application provides a flexible tool for organisations to manage their stock, financials, sales, purchases, and sales orders.
 
-:::Note Supported versions
+:::note Supported versions
 
 Codat currently supports Sage 200cloud Standard **only**.
 :::
 
 ## Set up Sage 200cloud
 
-:::Caution Changes in authenticating integrations
+:::caution Changes in authenticating integrations
 
 Sage has recently modified the way applications and integrations are authenticated in Sage 200 API. You can find out more about the changes in <a href="https://gb-kb.sage.com/portal/app/portlets/results/viewsolution.jsp?solutionid=201204115644533" target="_blank">Sage 200 API - Guide to Sage ID Changes</a>.
 
@@ -82,7 +82,7 @@ Subscribe to the Sage API for Sage 200 Unlimited.
 
 6. The **Enable Sage200cloud** dialog is displayed. Select whether to enable the integration now or later.
 
-:::Note
+:::note
 Make sure that your secure keys don't contain any spaces.
 :::
 
@@ -99,7 +99,7 @@ Your Sage200 cloud integration is now set up.
 
 We recommend that you test your integration before sending Link URLs to customers. You'll need your own Sage200cloud account to do this.
 
-:::Note Sage200cloud trial accounts
+:::note Sage200cloud trial accounts
 
 Unfortunately, you can't use a trial account to test your integration. Sage doesn't allow the creation or update of records from their trial accounts.
 :::
@@ -129,11 +129,11 @@ _Note_: When submitting the Sage 200 API Credential Request Form:
 - For the question 'Desktop or Web Application' select '_Web_'.
 - For the question 'Redirect URL(s)' enter: `https://sage200cloud.codat.io/oauth/callback`
 
-:::Caution Balance sheets in Sage 200's sandbox data
+:::caution Balance sheets in Sage 200's sandbox data
 
 If you link a Codat test company to one of the [Sage sandbox accounts](https://developer.sage.com/api/payments/test-in-sandbox.html#testing), the balance sheet dataset will fail to sync, and shows the status `ValidationError`. This is because the dataset fails Codat's checks, which make sure that a balance sheet balances, that is, net assets are equal to equity.
 :::
 
-:::Note Tax rates on line items
+:::note Tax rates on line items
 Due to a Sage 200cloud limitation, tax rates on line items for invoices, credit notes, bills, and bill credit notes appear differently to other integrations. For more information, see [Sage 200cloud limitations](/sage200-limitations).
 :::

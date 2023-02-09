@@ -59,6 +59,6 @@ Next, you might want to:
 - Edit your sync settings to change which data types to pull from Xero.
 - Try out the Push API to create or edit data within Xero.
 
-:::Caution Banking Data
+:::caution Banking Data
 It's not possible to create banking transactions within Xero demo companies. To test this functionality, you'll need to sign up to a free trial or create a paid Xero organization.
 :::

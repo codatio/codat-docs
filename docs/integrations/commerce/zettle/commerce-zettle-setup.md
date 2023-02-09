@@ -16,7 +16,7 @@ To use the integration, you must be located in a market that is supported by Zet
 
 ## Create an app and retrieve your secure credentials
 
-:::Note Developer account details
+:::note Developer account details
 
 - If you already have a Zettle developer account, have your account details to hand.
 

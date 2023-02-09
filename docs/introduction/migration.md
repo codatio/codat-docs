@@ -30,7 +30,7 @@ To migrate, use the PUT connections endpoint. You will need to provide the integ
 }
 ```
 
-:::Caution Syncing data post-migration
+:::caution Syncing data post-migration
 
 After successfully updating a connection with valid credentials, you'll need to initiate a sync manually using the `POST ​/companies​/{companyId}​/data​/all` endpoint.
 
@@ -41,7 +41,7 @@ _Fetch on first link_ isn't supported when performing self-service token migrati
 
 For other platforms where we do not yet support the self service migration route, or if you have special considerations or concerns, Codat's solutions team offer a managed migration pathway.
 
-:::Note Supported integrations
+:::note Supported integrations
 
 We currently have supported migrations from the following platforms: FreeAgent, FreshBooks, QuickBooks Online, Shopify, Wave, Xero, and Zoho Books.
 

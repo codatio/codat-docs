@@ -7,7 +7,7 @@ updatedAt: "2022-11-09T16:56:43.148Z"
 
 The Codat API uses a simple, flexible query language to allow you to filter response data.
 
-:::Caution Use URL encoding
+:::caution Use URL encoding
 
 Include a **URL encoded** query parameter with your request to filter data returned from the API.
 :::

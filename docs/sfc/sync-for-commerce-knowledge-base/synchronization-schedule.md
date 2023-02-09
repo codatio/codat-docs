@@ -28,7 +28,7 @@ The schedule of regular data syncs depend on the following values:
 
 ```
 
-:::Caution
+:::caution Caution
 
 Despite the monthly option being present in the configuration file, currently we only surface the **daily** option in the Sync Flow UI.
 :::
@@ -78,7 +78,7 @@ To determine the sync period, we first establish the following values internally
 
 - The sync **run date** which is the datetime of the next sync execution.
 
-:::Caution
+:::caution Caution
 
 **Due date** and the **run date** are not similar. Codat manages the **run date** according to the system load and other factors. The time gap between the sync **due date** and the sync **run date** depends on multiple factors and may differ from one sync to another.
 :::

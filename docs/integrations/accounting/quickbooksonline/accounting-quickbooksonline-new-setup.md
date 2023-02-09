@@ -27,7 +27,7 @@ You'll need to:
 4. If your app is approved, you can access its production keys for use with the production integration.
 5. Add your app's secure keys to the Codat Portal.
 
-:::Caution App keys
+:::caution App keys
 
 Your app development keys and production keys are not interchangeable. Development keys do _not_ work with live QuickBooks Online accounts.
 :::
@@ -113,7 +113,7 @@ In the <a className="external" href="https://developer.intuit.com/" target="_bla
 
 <img src="/img/old/904ecc7-qbo-production-keys-app-assessment-questionnaire-link.png" />
 
-:::Note Help with the app details checklist
+:::note Help with the app details checklist
 
 You'll need to provide the following information:
 
@@ -172,7 +172,7 @@ After you've created and configured a QuickBooks Online app, add the app's devel
 4.  Click **Save**. A confirmation message appears if the settings were saved successfully.
 5.  The **Enable QuickBooks Online Sandbox** or **Enable QuickBooks Online** dialog is displayed. Select whether to enable the integration now or later.
 
-:::Note
+:::note
 Make sure that your secure keys don't contain any spaces.
 :::
 

@@ -29,6 +29,6 @@ For more information about these modes, see [On-premise connector setup](/offlin
 
 If you'd like to enable ongoing syncs with the company, update your connector settings, and ask the SMB user to complete the linking process (i.e. downloading and installing the connector) again.
 
-:::Note Re-linking and Company IDs
+:::note Re-linking and Company IDs
 
 > The same Company ID must be used when re-completing the linking process.

@@ -52,6 +52,7 @@ Rule **types** must be entered exactly as shown below:
 - `Dataset data changed`
 - `Account Categories Updated`
 - `Sync Connection Deleted`
+:::
 
 ## Create a new rule using the API
 

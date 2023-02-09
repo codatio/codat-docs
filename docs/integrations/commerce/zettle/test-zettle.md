@@ -23,7 +23,7 @@ When you've [set up Zettle](/integrations/commerce/zettle/commerce-zettle-setup)
 
 ## Create a test store in Zettle
 
-:::Note Zettle account
+:::note Zettle account
 
 - If you already have a Zettle account, have your account details to hand.
 - If you don't, <a href="https://register.izettle.com//" target="_blank">create an account</a> before you start to create your test store.

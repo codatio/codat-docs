@@ -10,7 +10,7 @@ To push data to Sage 50 (UK), Codat strongly recommends that your client creates
 
 If you don't create a second user, both the Sage 50 application and the Codat API will try to use the same credentials at the same time. Given that Sage 50 is open, no data will be pushed.
 
-:::Caution Concurrent logins
+:::caution Concurrent logins
 
 Creating a second user that's not used for accessing the Sage 50 application avoids the possibility of data failing to push because the Sage 50 application is open and using the same credentials as the connector.
 **Note**: this issue does not affect pulling data.
@@ -57,7 +57,7 @@ Ensure that your client has created a new user (as described above) for their Sa
 
 - If Sage 50 is open during a push operation, then the user may momentarily see a processing dialog. This will remain on the user's screen for a longer period of time if the volume of data being pushed is larger.
 - If suppliers are being pushed and the user is logged into Sage 50, then the supplier will not appear in Sage 50 until the page is refreshed.
-  :::Note Refreshing Sage 50 to see pushed suppliers
+  :::note Refreshing Sage 50 to see pushed suppliers
 
   To refresh the page in Sage 50, you can click the filter in the Suppliers view twice as below. If a supplier has been successfully created, the account will appear when the page is refreshed.  
 

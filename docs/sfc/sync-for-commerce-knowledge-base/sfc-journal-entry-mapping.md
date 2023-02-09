@@ -6,7 +6,7 @@ createdAt: "2022-12-01T10:20:32.012Z"
 updatedAt: "2023-01-13T08:48:59.378Z"
 ---
 
-:::Caution
+:::caution Caution
 
 This section provides details of a feature not enabled by default. Submit a request to Codat to activate it.
 :::
@@ -25,14 +25,14 @@ The Sync for Commerce product now supports ** Journal entries**. This feature tr
 
   Journal entries simplify recording of tax data because tax rates and their associated accounts do not need to managed seperately.
 
-:::Note
+:::note
 
 [View](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries) the accounting platforms where we provide coverage for Journal entries.
 :::
 
 ## Example journal entries
 
-:::Note
+:::note
 
 You are able to map sales journal entries to any account types, including liability, unless it is explicitly prohibited by the target accounting platform.
 :::
@@ -98,7 +98,7 @@ With this feature, the merchant can map multiple tax rates from their commerce s
   alt="Sync Flow user interface displaying the tax mapping step with three sales tax categories with different mappings"
 />
 
-:::Caution
+:::caution Caution
 
 Tax categorization feature can only be enabled if the journal entry feature is already switched on.
 :::
