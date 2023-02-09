@@ -4,7 +4,7 @@ const dataModel = require("./sidebars/dataModel");
 const accountingApi = require("./sidebars/accounting-api");
 const bankingAPI = require("./sidebars/banking-api");
 const commerceAPI = require("./sidebars/commerce-api");
-const bankfeeds = require("./sidebars/bank-feed-api");
+const bankfeeds = require("./sidebars/bank-feeds-api");
 const assess = require("./sidebars/assess");
 const sfc = require("./sidebars/sync-for-commerce");
 const sfe = require("./sidebars/sync-for-expenses");
@@ -159,9 +159,9 @@ module.exports = {
         },
         {
           type: "link",
-          label: "Bank Feed API",
+          label: "Bank Feeds API",
           className: "product bankfeed",
-          href: "/bank-feed-api/overview",
+          href: "/bank-feeds-api/overview",
         },
         {
           type: "link",
