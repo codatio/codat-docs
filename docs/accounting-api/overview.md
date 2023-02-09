@@ -11,6 +11,63 @@ updatedAt: "2022-11-22T19:33:11.784Z"
 
 ![](/img/old/2b27c1b-info_banner.png "info_banner.png")
 
+Codat's Accounting API is a flexible API for pulling and pushing up-to-date accounting data to your customers' accounting software. It gives you a simple way to view, create, update, and delete data wuthout having to worry about each platform's specific complexities. 
+
+<ul className="card-container col-3">
+  <li className="card">
+    <div class="header">
+      <img
+        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        class="mini-icon"
+      />
+      <h3>Accounting integrations</h3>
+    </div>
+    <p>
+      Codat's API provides connectivity to many on-premise and cloud accounting packages, removing the complexity of building individual integrations. 
+    </p>
+    <p>
+      <a href="/integrations/accounting/overview">
+        Review our integrations
+      </a>
+    </p>
+  </li>
+
+  <li className="card">
+    <div class="header">
+      <img
+        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        class="mini-icon"
+      />
+      <h3>Data consistency</h3>
+    </div>
+    <p>
+      Our data model normalizes and aggregates data from different platforms so that you can use it in a consistent way, fast. 
+    </p>
+    <p>
+      <a href="/data-model/accounting/">
+        Explore the data model
+      </a>
+    </p>
+  </li>
+
+  <li className="card">
+    <div class="header">
+      <img
+        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        class="mini-icon"
+      />
+      <h3>Support your SMB customers</h3>
+    </div>
+    <p> Send expense data directly to your customer or retrieve their bills to save them hours of manual data entry. 
+ </p>
+    <p>
+      <a href="/accounting-api#">
+        Start with our API reference
+      </a>
+    </p>
+  </li>
+</ul>
+
 <div className="video-container">
   <iframe src="https://www.youtube.com/embed/4zLgo0iP6MI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
 </div>
