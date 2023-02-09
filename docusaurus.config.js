@@ -91,7 +91,7 @@ module.exports = {
         {
           label: "API",
           position: "left",
-          className: "navbar__link--community",
+          className: "navbar__link--api",
           items: [
             {
               href: "/codat-api",
