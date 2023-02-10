@@ -16,7 +16,7 @@ Within your application, present your merchant with a list of accounting platfor
 
 On select, your merchant should be [redirected to the Sync configuration flow URL](/implementing-codats-no-code-merchant-configuration) where they will be prompted to authorize access to their accounting data.
 
-:::info
+:::info Data requirements
 
 Over the steps in this guide, you'll need to retain several variables:
 
@@ -36,7 +36,7 @@ Your merchant needs to exist as a Company in the Codat system. Start by creating
 
 You just need to set a name in the request body.
 
-**We'll return that merchant's `companyId` for you to retain (returned here as `id`):**
+We'll return that merchant's `companyId` for you to retain (returned here as `id`):
 
 ```json
 {
@@ -58,9 +58,9 @@ Get a list of the integrations you've enabled, as well as the associated metadat
 
 Our available integrations for Sync for Commerce:
 
-- [Xero (UK only)](/accounting-xero)
-- [QuickBooks Online (UK and FR only)](/accounting-quickbooksonline)
-- [FreeAgent (UK only)](/accounting-freeagent)
+- [Xero](/accounting-xero)
+- [QuickBooks Online](/accounting-quickbooksonline)
+- [FreeAgent](/accounting-freeagent)
 
 Call our `GET /integrations` endpoint, querying for enabled integrations.
 
@@ -182,7 +182,7 @@ Display each of these integrations, using the branding to aid the user.
 
 Depending on your frontend stack, this will vary. Using React, it might look something like this:
 
-```react
+```html
 <div>
   {
     integrations.map((integration, i) => (
@@ -252,18 +252,9 @@ You should have retained the `companyId`.
 
 You can retrieve the `platformKey` when you need it.
 
-:::info
+:::info Verifying the connections
 
-Call `GET /companies/{companyId}/connections`. There should only be one connection returned if your settings are configured correctly. The `platformKey` is (incorrectly) called `integrationKey` in the response.
+Call `GET /companies/{companyId}/connections`. There should only be one connection returned if your settings are configured correctly. The `platformKey` is called `integrationKey` in the response.
 
 For Embedded Link, you can use the `onConnection` callback function to retain the connection and its `platformKey`.
-:::
-
-```http
-GET /config/sync/commerce/lqai/{platformKey}/start?merchantIdentifier={companyId}
-```
-
-:::info Checkpoint
-
-You're ready to move to the next page, where we'll cover what to do with this response, and more.
 :::

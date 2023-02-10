@@ -1,6 +1,6 @@
 ---
 title: "Push commerce data to Codat"
-description: "Push your merchant’s data to the Codat system. To find out more about the structure of data we accept, read [Examples of data](/functional-examples-of-data)."
+description: "Learn how to push your merchant’s data to the Codat systema"
 createdAt: "2022-02-09T13:34:14.504Z"
 updatedAt: "2022-11-21T17:42:49.928Z"
 ---

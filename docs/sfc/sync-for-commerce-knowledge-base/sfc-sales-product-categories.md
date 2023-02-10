@@ -5,7 +5,7 @@ createdAt: "2022-11-30T17:35:08.294Z"
 updatedAt: "2023-01-16T12:23:11.019Z"
 ---
 
-:::caution
+:::caution Enabling the feature
 
 This section provides instructions for a feature not enabled by default. Submit a request to Codat to activate the categorization mapping feature.
 :::
@@ -23,7 +23,7 @@ Before the feature switch is toggled on, the Sync Flow UI displays a Sales categ
   alt="Sync Flow with standard sales categories"
 />
 
-Once you enable the feature, an additional category mapping page is added to the Sync Flow. It replaces the Sales category with a breakdown of mapping options for each [product category you created](/sfc-sales-categories-mapping#congifure-sales-categories). We also provide a catch-all “Other sales” category that does not need to be created separately.
+Once you enable the feature, an additional category mapping page is added to the Sync Flow. It replaces the Sales category with a breakdown of mapping options for each [product category you created](/sfc/sync-for-commerce-knowledge-base/sfc-sales-product-categories#congifure-sales-categories). We also provide a catch-all “Other sales” category that does not need to be created separately.
 
 In this example, we break down sales into courses, products, and services.
 
@@ -47,7 +47,7 @@ Then, create the product categories that you want to use for splitting sales dat
 
 For example, in order to create categories to break down sales into products, services, and courses, the following request body needs to be sent:
 
-```
+```json
 {
     "ContractVersion": "9.3.1",
     "ProductCategories": [
@@ -73,9 +73,9 @@ For example, in order to create categories to break down sales into products, se
 Sync for Commerce does not support hierarchies of categories and requires a simple array of category IDs and names.
 :::
 
-If you are using the `visibleAccounts` [feature](/customizing-the-sync-configuration-flow#how-to-change-the-visibility-of-feature-categories-accounts), ensure to add `sales-accounts-sales-other` to the list of visible accounts. This is to make “Other sales” mapping visible and configurable.
+If you are using the `visibleAccounts` [feature](/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow#how-to-change-the-visibility-of-feature-categories-accounts), ensure to add `sales-accounts-sales-other` to the list of visible accounts. This is to make “Other sales” mapping visible and configurable.
 
-If you are using the `visibleAccounts` [feature ](/customizing-the-sync-configuration-flow#how-to-change-the-visibility-of-feature-categories-accounts) and some of your companies do not have product categories created, ensure to add `sales-accounts-sales` to the list of visible accounts.
+If you are using the `visibleAccounts` [feature ](/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow#how-to-change-the-visibility-of-feature-categories-accounts) and some of your companies do not have product categories created, ensure to add `sales-accounts-sales` to the list of visible accounts.
 
 ### Pitfalls
 
@@ -87,6 +87,6 @@ If you are using the `visibleAccounts` [feature ](/customizing-the-sync-configur
 
 To make a change in a product category label, amend the product categories using the `/companies/{companyId}/data/commerce-productCategories` endpoint, same as when you created them.
 
-You can [change the label](/customizing-the-sync-configuration-flow#sales-feature-categories) for “Other sales” mapping using the `configure-content-sales-accounts-entries-sales-other` key.
+You can [change the label](/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow#sales-feature-categories) for “Other sales” mapping using the `configure-content-sales-accounts-entries-sales-other` key.
 
 The titles of the product categorization pages (named “Sales accounts” and “Other accounts” once the feature is toggled on) cannot be customized. The descriptions of the additional and existing account mapping pages cannot be customized separately.

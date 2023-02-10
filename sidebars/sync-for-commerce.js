@@ -42,15 +42,6 @@ module.exports = [
       "sfc/mapping-specifications/qbo-mapping-specification",
     ],
   },
-  {
-    type: "category",
-    label: "Sync merchant configuration",
-    collapsed: true,
-    items: [
-      "sfc/sync-merchant-configuration/overview",
-      "sfc/sync-merchant-configuration/sync-your-own-merchant-journey",
-    ],
-  },
   "sfc/error-documentation",
   "sfc/sync-for-commerce-faqs",
   "sfc/coming-soon",
