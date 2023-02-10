@@ -1,6 +1,6 @@
 ---
 title: "Example data"
-description: "How Codat breaks down Orders, Payments, and Transactions data to represent it in the SMB’s accounting platform."
+description: "How Codat breaks down Orders, Payments, and Transactions data to represent it in the SMB’s accounting platform"
 createdAt: "2022-06-18T11:57:17.385Z"
 updatedAt: "2022-11-16T16:43:05.341Z"
 ---
@@ -86,13 +86,7 @@ To learn how you can use the Order data type and what is represented by each fie
 "modifiedDate": "2022-02-15T06:53:11Z",
 "sourceModifiedDate": "2022-02-14T15:46:20Z"
 }
-",
-      "language": "json",
-      "name": null
-    }
-  ]
-}
-
+```
 This example represents a card payment. Including the payment type in the Payment allows the SMB to reconcile payments of different types with different asset accounts.
 
 To learn how you can use the Payments data type and what is represented by each field, read [Payments](/data-model/accounting/-payments).
@@ -121,7 +115,7 @@ To learn how you can use the Payments data type and what is represented by each 
 To learn how you can use Transactions data type and what is represented by each field, read [Transactions](/data-model/commerce/-transactions).
 
 ### Example 4: A Transaction that reconciles the Order from Example 1 and the Payment of commerce provider fees associated with this Order
-```
+```json
 
 {
 //This id should match the id of the associated Payment
@@ -142,4 +136,3 @@ To learn how you can use Transactions data type and what is represented by each 
 ```
 
 To learn how you can use Transactions data type and what is represented by each field, read [Transactions](/data-model/commerce/-transactions).
-```

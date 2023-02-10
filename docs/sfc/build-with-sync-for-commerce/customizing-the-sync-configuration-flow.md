@@ -1,10 +1,11 @@
 ---
 title: "Customizing the Sync configuration flow"
+description: Amend the adjustable elements of the Sync flow
 createdAt: "2022-11-16T20:24:20.979Z"
 updatedAt: "2023-01-16T17:31:55.362Z"
 ---
 
-:::caution
+:::caution Customization vs. features
 
 This section includes instructions on how to update the text values in the Sync Flow and change visibility of feature categories (accounts).
 
@@ -98,8 +99,7 @@ You can find the `data-textkey` values in the tables below.
 :::caution Update the text fields consistently
 
 We recommend grouping your updates to ensure that related values are updated consistently. A feature name (e.g., Sales) appears as a check box item in the left pane (Set up sales) and as the main title on the right side of the window (Sales), so it is important to update both `configure-setupSidebar-checkboxes-sales` and `configure-content-sales-title`.
-
-````
+:::
 
 #### Default text and text keys
 
@@ -135,58 +135,21 @@ We recommend grouping your updates to ensure that related values are updated con
 
 ##### Sales title and description
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Default value",
-    "h-1": "`data-textkey` value",
-    "0-0": "Sales",
-    "0-1": "configure-content-sales-title",
-    "1-0": "Sales title description:
-no value by default.",
-    "1-1": "configure-content-sales-description"
-  },
-  "cols": 2,
-  "rows": 2,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Default value | data-textkey value |
+|---|---|
+| Sales | configure-content-sales-title |
+| Sales title description: no value by default. | configure-content-sales-description |
 
 ##### Sales feature categories title and description
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Default value",
-    "h-1": "`data-textkey` value",
-    "0-0": "Accounts",
-    "0-1": "configure-content-sales-accounts-title",
-    "1-0": "Configure accounts mapping from
-{commerce platform name} to
-{accounting platform name}.",
-    "1-1": "configure-content-sales-accounts-description",
-    "2-0": "Tax rates",
-    "2-1": "configure-content-sales-taxRates-title",
-    "3-0": "Configure tax rates mapping from
-{commerce platform name} to
-{accounting platform name}.",
-    "3-1": "configure-content-sales-taxRates-description",
-    "4-0": "Other",
-    "4-1": "configure-content-sales-other-title",
-    "5-0": "Other title description: no value by default.",
-    "5-1": "configure-content-sales-other-description"
-  },
-  "cols": 2,
-  "rows": 6,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Default value | data-textkey value |
+|---|---|
+| Accounts | configure-content-sales-accounts-title |
+| Configure accounts mapping from {commerce platform name} to {accounting platform name}. | configure-content-sales-accounts-description |
+| Tax rates | configure-content-sales-taxRates-title |
+| Configure tax rates mapping from {commerce platform name} to {accounting platform name}. | configure-content-sales-taxRates-description |
+| Other | configure-content-sales-other-title |
+| Other title description: no value by default. | configure-content-sales-other-description |
 
 ##### Sales feature categories
 
@@ -206,48 +169,17 @@ no value by default.",
 
 ##### Fees title and description
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Default value",
-    "h-1": "`data-textkey` value",
-    "0-0": "Fees",
-    "0-1": "configure-content-fees-title",
-    "1-0": "Fees title description:
-no value by default.",
-    "1-1": "configure-content-fees-description"
-  },
-  "cols": 2,
-  "rows": 2,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Default value                                | data-textkey value                 |
+|----------------------------------------------|------------------------------------|
+| Fees                                         | configure-content-fees-title       |
+| Fees title description: no value by default. | configure-content-fees-description |
 
 ##### Fees feature categories title and description
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Default value",
-    "h-1": "`data-textkey` value",
-    "0-0": "Accounts",
-    "0-1": "configure-content-fees-accounts-title",
-    "1-0": "Configure accounts mapping from
-{commerce platform name} to
-{accounting platform name}.",
-    "1-1": "configure-content-fees-accounts-description"
-  },
-  "cols": 2,
-  "rows": 2,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Default value                                                                           | data-textkey value                          |
+|-----------------------------------------------------------------------------------------|---------------------------------------------|
+| Accounts                                                                                | configure-content-fees-accounts-title       |
+| Configure accounts mapping from {commerce platform name} to {accounting platform name}. | configure-content-fees-accounts-description |
 
 ##### Fees feature categories
 
@@ -262,25 +194,10 @@ no value by default.",
 
 ##### Payments title and description
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Default value",
-    "h-1": "`data-textkey` value",
-    "0-0": "Payments",
-    "0-1": "configure-content-payments-title",
-    "1-0": "Payments title description:
-no value by default.",
-    "1-1": "configure-content-payments-description"
-  },
-  "cols": 2,
-  "rows": 2,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Default value                                    | data-textkey value                     |
+|--------------------------------------------------|----------------------------------------|
+| Payments                                         | configure-content-payments-title       |
+| Payments title description: no value by default. | configure-content-payments-description |
 
 ##### Payments feature categories
 
@@ -324,7 +241,7 @@ POST sync/commerce/config/ui/accounts/platform/{commerceKey}
 {
   "visibleAccounts": []
 }
-````
+```
 
 In the request above, the `commerceKey` is the Codat platform key of the selected commerce platform. You can find a list of keys for the supported platforms in the [Accounting platform selection](/sync-platform-selection) section.  
 To find the `account-key`, consult the tables below. Note that fields marked with an '\*' cannot be removed.
