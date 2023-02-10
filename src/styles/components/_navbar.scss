@@ -292,6 +292,17 @@ html[data-theme="dark"] {
 @media only screen and (max-width: 800px) {
   .navbarButton,
   .navbar__link--api {
-    display: none;
+    display: none !important;
+  }
+
+  .navbar-sidebar__item.menu {
+    .menu__list-item {
+      padding-left: 1em;
+      position: relative;
+    }
+
+    .menu__link--sublist {
+      padding-left: 1em !important;
+    }
   }
 }
