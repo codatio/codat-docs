@@ -86,6 +86,7 @@ To learn how you can use the Order data type and what is represented by each fie
 "modifiedDate": "2022-02-15T06:53:11Z",
 "sourceModifiedDate": "2022-02-14T15:46:20Z"
 }
+
 ```
 This example represents a card payment. Including the payment type in the Payment allows the SMB to reconcile payments of different types with different asset accounts.
 

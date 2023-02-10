@@ -22,7 +22,7 @@ Finally, review and analyze the data relevant to your use case, which Codat pull
 
 This guide is aimed at developers and non-developers alike. In three easy steps, you will create a company, link it to Codat's sandbox, and review its financial data to get acquainted with Codat's solution.
 
-:::info 🚀 Want to view data even faster?
+:::info Want to view data even faster? 🚀
 
 Your free account comes equipped with a demo company. Navigate to **Companies** in the <a href="https://app.codat.io/companies?userflow=41dae845-29a6-4dd9-b886-4cb6c3464b1d" target="_blank">Codat Portal</a> and click the demo company to examine data relevant for your use case.
 

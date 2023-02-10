@@ -32,7 +32,7 @@ _Administrator_ users have full access to all the features available in the Coda
 
 ## User roles summary
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "",
@@ -86,4 +86,4 @@ _Administrator_ users have full access to all the features available in the Coda
 "cols": 5,
 "rows": 12
 }
-[/block]
+

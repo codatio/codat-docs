@@ -140,7 +140,7 @@ The following table highlights selected fields that are not available in data pu
 
 ### Unavailable provider fields
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Codat data type and field",
@@ -151,11 +151,11 @@ The following table highlights selected fields that are not available in data pu
 "cols": 2,
 "rows": 1
 }
-[/block]
+
 
 ### Unavailable Codat fields
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Sage Intacct record and field",
@@ -170,4 +170,4 @@ When pushing direct incomes to Sage Intacct, the `paymentmethod` is always set t
 "cols": 3,
 "rows": 1
 }
-[/block]
+

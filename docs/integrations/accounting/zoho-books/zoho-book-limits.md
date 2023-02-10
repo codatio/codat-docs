@@ -8,7 +8,7 @@ updatedAt: "2022-10-17T16:27:12.407Z"
 To minimize the performance impact of the [rate limits](/zoho-book-limits#zoho-books-rate-limits) described below, by default Codat pulls a reduced dataset from Zoho Books for some data types.
 
 The following table summarizes the fields which are excluded when pulling reduced datasets from Zoho Books.
-[block:parameters]
+
 {
 "data": {
 "h-0": "Data type pulled",
@@ -35,7 +35,7 @@ If pulling complete datasets, the following fields on bill line items are always
   "cols": 2,
   "rows": 4
   }
-  [/block]
+  
   To remove these restrictions and pull complete datasets for the supported Zoho Books data types, please contact [Codat Support](mailto:support@codat.io). **After removing the restrictions, fetching large volumes of data from the above data types can take multiple days to complete.**
 
 :::info totalTaxAmount for invoices

@@ -7,7 +7,7 @@ updatedAt: "2022-11-15T14:24:24.452Z"
 
 ## Assess error codes
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Error code",
@@ -44,4 +44,4 @@ updatedAt: "2022-11-15T14:24:24.452Z"
 "cols": 2,
 "rows": 14
 }
-[/block]
+

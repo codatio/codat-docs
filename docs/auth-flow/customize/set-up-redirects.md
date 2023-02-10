@@ -83,7 +83,7 @@ Please note that the names of the parameters listed in the table below are curre
 **banking**: Plaid
 :::
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Codat’s reserved parameters",
@@ -161,7 +161,7 @@ StatusCode 501 = "Not supported."
 "left"
 ]
 }
-[/block]
+
 
 **Note**: The names of query parameters are case sensitive, e.g. `companyId` is not the same as `companyid`.
 
@@ -188,7 +188,7 @@ The **Authorization Complete Redirection Url** is a URL your customers are sent 
 - Redirect to a static website (static host)
 - Redirect with custom query parameters (dynamic host).
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Redirect",
@@ -213,7 +213,7 @@ The **Authorization Complete Redirection Url** is a URL your customers are sent 
    "left"
    ]
    }
-   [/block]
+   
 
 **Note**: The URLs must be valid URLs, which means they must have* https://* or* http\://* added before them.
 

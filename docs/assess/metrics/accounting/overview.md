@@ -18,7 +18,7 @@ The following table lists which ratios and metrics are calculated, their formula
 
 ## Financial metrics formulas
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Ratio / Metric",
@@ -203,11 +203,11 @@ a. SUM(Expense.Operating.Interest)"
 "cols": 3,
 "rows": 8
 }
-[/block.
+
 
 ## Marketing metrics formulas
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Percentage",
@@ -229,4 +229,4 @@ b. SUM(Expense)"
 "cols": 3,
 "rows": 2
 }
-[/block]
+

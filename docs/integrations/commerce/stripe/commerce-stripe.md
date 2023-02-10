@@ -29,7 +29,7 @@ View the coverage of our Stripe integration in the <a className="external" href=
 
 Codat provides two Stripe integrations: **Stripe Test** and **Stripe**. The following table explains what each integration is used for.
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Integration",
@@ -47,7 +47,7 @@ To enable live mode, you must first activate your Stripe account by providing ad
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 
 ## Switch between test and live modes
 

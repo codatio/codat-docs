@@ -34,7 +34,7 @@ The endpoint is available in <a href="https://api.codat.io/swagger/index.html#/A
 
 ## Parameters
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Parameter",
@@ -90,14 +90,14 @@ Default is "month".",
 "cols": 4,
 "rows": 7
 }
-[/block]
+
 #Data model
 
 The response structure is split into four areas: Report info, Dimensions, Measures and Report data. The structure allows Codat to add _Dimensions_ without causing a breaking change in your code.
 
 ## Report info
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -116,7 +116,7 @@ The response structure is split into four areas: Report info, Dimensions, Measur
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 ## Dimensions
 
@@ -124,7 +124,7 @@ The Assess _Banking account inflows and outflows_ consists of one dimension: Per
 
 ### Dimension (index = “0”): Period
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -146,11 +146,11 @@ Ordered by latest to earliest periods."
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 #### Dimension (index = “0”) items
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -175,7 +175,7 @@ Date in which the period ends (inclusive)."
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 ## Measures
 
@@ -185,7 +185,7 @@ The two measures for this report are as follows:
 
 ### Index “0” - Converted Inflows
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -204,11 +204,11 @@ The two measures for this report are as follows:
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 ### Index “1” - Converted Outflows
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -227,7 +227,7 @@ The two measures for this report are as follows:
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 ## Report data
 
@@ -241,7 +241,7 @@ Each period will be broken down into _Converted Inflows_ and _Converted Outflows
 
 ### Components structure
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -264,13 +264,13 @@ Each period will be broken down into _Converted Inflows_ and _Converted Outflows
 "cols": 3,
 "rows": 5
 }
-[/block]
+
 All components have the structure described in the _Measures in components_ data model below.
 
 #### Measures in components
 
 **Index "0" - Converted Inflows**
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -285,9 +285,9 @@ All components have the structure described in the _Measures in components_ data
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 **Index “1” - Converted Outflows**
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -303,7 +303,7 @@ All components have the structure described in the _Measures in components_ data
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 #Example data
 
 ```

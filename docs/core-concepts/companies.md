@@ -11,7 +11,7 @@ Typically each company is one of your customers.
 
 When you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company.
 
-## How do I create a company?
+## Creating a company
 
 Companies can be created in one of two ways:
 
@@ -26,7 +26,7 @@ Company names may only contain letters, numbers, spaces, and the following symbo
 Any forbidden characters will be removed from your company name. For example: `Example Company (Codat[1])` will be created as `Example Company Codat1`.
 :::
 
-## Managing companies
+## Managing your companies
 
 You have two options for managing companies:
 
