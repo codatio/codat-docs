@@ -34,7 +34,7 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 `GET ​/data​/companies​/{companyId}​/connections​/{connectionId}​/assess​/commerceMetrics​/refunds`
 
 #Parameters
-[block:parameters]
+
 {
 "data": {
 "h-0": "Parameter",
@@ -74,14 +74,14 @@ Default is false.",
 "cols": 4,
 "rows": 5
 }
-[/block]
+
 #Data model
 
 The response structure is split into four areas: Report info, Dimensions, Measures and Report data.
 
 ## Report info
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -97,7 +97,7 @@ The response structure is split into four areas: Report info, Dimensions, Measur
 "cols": 3,
 "rows": 2
 }
-[/block.
+
 
 ## Dimensions
 
@@ -105,7 +105,7 @@ _Refunds_ consists of these dimensions: Period and Refund metrics.
 
 ### Dimension (index = “0”): Period
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -127,11 +127,11 @@ Ordered by latest to earliest periods."
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 #### Dimension (index = “0”) items
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -156,11 +156,11 @@ Date in which the period ends (inclusive)."
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 ### Dimension (index = “1”): Refund metrics
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -180,11 +180,11 @@ See [Dimension (index = “1”) items](#dimension-index--1-items)",
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 #### Dimension (index = “1”) items
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -202,7 +202,7 @@ These will always show for any response in this report. The dimension values are
 "cols": 3,
 "rows": 1
 }
-[/block.
+
 
 ## Measures
 
@@ -212,7 +212,7 @@ The three measures for this report are as follows:
 
 ### Index “0” - Count
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -228,11 +228,11 @@ The three measures for this report are as follows:
 "cols": 3,
 "rows": 2
 }
-[/block.
+
 
 ### Index “1” - Value
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -251,11 +251,11 @@ The three measures for this report are as follows:
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 ### Index “2” - Percentage
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -274,7 +274,7 @@ The three measures for this report are as follows:
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 ## Report data
 
@@ -288,7 +288,7 @@ Each period will be broken down into _Refund metrics_.
 
 ### Components structure
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -311,13 +311,13 @@ Each period will be broken down into _Refund metrics_.
 "cols": 3,
 "rows": 5
 }
-[/block]
+
 All components have the structure described in the _Measures in components_ data model below.
 
 #### Measures in components
 
 **Index "0" - Count**
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -332,9 +332,9 @@ All components have the structure described in the _Measures in components_ data
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 **Index “1” - Value**
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -350,9 +350,9 @@ All components have the structure described in the _Measures in components_ data
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 **Index “2” - Refund rate**
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -368,7 +368,7 @@ All components have the structure described in the _Measures in components_ data
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 #Example data
 
 ```

@@ -20,7 +20,7 @@ The red exclamation mark indicates that a matching accounting account could not 
 ![An image of the popup for connected accounts](/img/old/a52c29c-DataIntegrity6.png)
 
 **Transaction type abbreviations used in the user interface**
-[block:parameters]
+
 {
 "data": {
 "0-0": "UNK - Unknown
@@ -48,4 +48,4 @@ OTH - Other",
 "cols": 3,
 "rows": 1
 }
-[/block]
+

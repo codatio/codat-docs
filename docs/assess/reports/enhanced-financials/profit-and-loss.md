@@ -34,7 +34,7 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 
 # Parameters
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Parameter",
@@ -68,7 +68,7 @@ Default is _false_.",
 "cols": 4,
 "rows": 4
 }
-[/block]
+
 
 # Data model
 
@@ -76,7 +76,7 @@ The response structure is split into four areas: Report info, Dimensions, Measur
 
 ## Report info
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -92,7 +92,7 @@ The response structure is split into four areas: Report info, Dimensions, Measur
 "cols": 3,
 "rows": 2
 }
-[/block.
+
 
 ## Dimensions
 
@@ -100,7 +100,7 @@ The _Enhanced Profit and Loss_ consists of these dimensions: Period, Category, S
 
 ### Dimension (index = “0”): Period
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -122,11 +122,11 @@ Ordered by latest to earliest periods."
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 #### Dimension (index = “0”) items
 
-[block:parameters]
+
 {
 "data": {
 "0-0": "**displayName** ",
@@ -151,11 +151,11 @@ Date in which the period ends (inclusive)."
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 ### Dimension (index = “1”): Category
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -178,11 +178,11 @@ See [Dimension (index = “1”) items](#dimension-index--1-items)",
   "cols": 3,
   "rows": 3
   }
-  [/block.
+  
 
 #### Dimension (index = “1”) items
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -202,11 +202,11 @@ These will always show for any response in this report. The dimension values are
 "cols": 3,
 "rows": 1
 }
-[/block.
+
 
 ### Dimension (index = “2”): Sub Type
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -226,11 +226,11 @@ See [Dimension (index = “2”) items](#dimension-index--2-items)",
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 #### Dimension (index = “2”) items
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -243,11 +243,11 @@ See [Dimension (index = “2”) items](#dimension-index--2-items)",
 "cols": 3,
 "rows": 1
 }
-[/block.
+
 
 ### Dimension (index = “3”): Detail Type
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -267,11 +267,11 @@ See [Dimension (index = “3”) items](#dimension-index--3-items)",
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 #### Dimension (index = “3”) items
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -286,11 +286,11 @@ Does not return the category detail types where there is no existing account dat
 "cols": 3,
 "rows": 1
 }
-[/block.
+
 
 ### Dimension (index = “4”): Accounts
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -310,11 +310,11 @@ See [Dimension (index = “4”) items](#dimension-index--4-items)",
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 #### Dimension (index = “4”) items
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -330,7 +330,7 @@ See [Dimension (index = “4”) items](#dimension-index--4-items)",
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 If any account needs to be recategorized, use the [API: Categorization of accounts](/assess-api-categorization-of-accounts) endpoint.
 
 ## Measures
@@ -340,7 +340,7 @@ _Measures_ provide information about the measures contained in the report data.
 The two measures for this report are as follows:
 
 **Index “0” - value**
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -359,9 +359,9 @@ The two measures for this report are as follows:
 "cols": 3,
 "rows": 3
 }
-[/block]
+
 **Index “1” - percentage change**
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -380,7 +380,7 @@ The two measures for this report are as follows:
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 ## Report data
 
@@ -404,7 +404,7 @@ Components are nested within each other as below (grouped by dimension (index =�
 
 ### Components structure
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -427,13 +427,13 @@ Components are nested within each other as below (grouped by dimension (index =�
 "cols": 3,
 "rows": 5
 }
-[/block]
+
 All components have the structure described in the _Measures in components_ data model below.
 
 #### Measures in components
 
 **Index "0"**
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -448,9 +448,9 @@ All components have the structure described in the _Measures in components_ data
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 **Index “1”**
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -468,7 +468,7 @@ If the system can't calculate the percentage change, this object will not displa
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 Each component level contains the total level in the currency, and the percentage change.
 
 ```

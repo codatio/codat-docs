@@ -218,7 +218,7 @@ The following tables highlight selected fields that are not available in data pu
 
 ### Unavailable Codat fields
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Oracle NetSuite record and field",
@@ -246,4 +246,4 @@ The following tables highlight selected fields that are not available in data pu
 "left"
 ]
 }
-[/block]
+

@@ -54,8 +54,6 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 `GET /data/companies/{companyId}/assess/dataTypes/{dataType}/dataIntegrity/status`
 
 ### Parameters
-
-[block:parameters]
 {
 "data": {
 "h-0": "Parameter",
@@ -88,11 +86,8 @@ Submit as route parameter."
 "cols": 4,
 "rows": 2
 }
-[/block]
 
 ### Data model
-
-[block:parameters]
 {
 "data": {
 "h-0": "Field",
@@ -128,11 +123,8 @@ Submit as route parameter."
 "cols": 3,
 "rows": 5
 }
-[/block.
 
 #### Status info
-
-[block:parameters]
 {
 "data": {
 "h-0": "Field",
@@ -158,11 +150,10 @@ See [Date](/datamodel-shared-date)",
   "cols": 3,
   "rows": 3
   }
-  [/block.
 
 #### Connection ID
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -178,11 +169,11 @@ See [Date](/datamodel-shared-date)",
 "cols": 3,
 "rows": 2
 }
-[/block.
+
 
 #### Amounts
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -198,11 +189,11 @@ See [Date](/datamodel-shared-date)",
 "cols": 3,
 "rows": 2
 }
-[/block.
+
 
 #### Dates
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -228,7 +219,7 @@ See [Date](/datamodel-shared-date)",
 "cols": 3,
 "rows": 4
 }
-[/block.
+
 
 ### Sample response
 
@@ -297,7 +288,7 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 `GET /data/companies/{companyId}/assess/dataTypes/{dataType}/dataIntegrity/summaries`
 
 ### Parameters
-[block:parameters]
+
 {
   "data": {
     "h-0": "Parameter",
@@ -336,11 +327,11 @@ Submit as route parameter.",
   "cols": 4,
   "rows": 3
 }
-[/block.
+
 
 ### Data model
 For transactions, the response contains summary statistics (such as match percentage) by both amount and count. For accounts, statistics based on amount are not meaningful, therefore we return only statistics based on count.
-[block:parameters]
+
 {
   "data": {
     "h-0": "Field",
@@ -374,10 +365,10 @@ For transactions, the response contains summary statistics (such as match percen
   "cols": 3,
   "rows": 3
 }
-[/block.
+
 
 #### By amount
-[block:parameters]
+
 {
   "data": {
     "h-0": "Field",
@@ -399,10 +390,10 @@ For transactions, the response contains summary statistics (such as match percen
   "cols": 3,
   "rows": 4
 }
-[/block.
+
 
 #### By Count
-[block:parameters]
+
 {
   "data": {
     "h-0": "Field",
@@ -424,7 +415,7 @@ For transactions, the response contains summary statistics (such as match percen
   "cols": 3,
   "rows": 4
 }
-[/block.
+
 
 ### Sample Response
 ````
@@ -509,7 +500,7 @@ E.g. if the Status response contains this:
 }
 ]
 }
-[/block]
+
 Then you would call each of the _Summaries endpoints_ with (url-escaped) query=date>=2021-09-03T12:00:00.000Z&&date<=2021-09-17T23:59:59.999.
 
 ## Details
@@ -522,7 +513,6 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 
 ### Parameters
 
-[block:parameters]
 {
 "data": {
 "2-0": "**Query**",
@@ -571,13 +561,12 @@ Submit as route parameter.",
 "cols": 4,
 "rows": 6
 }
-[/block.
+
 
 ### Data mode.
 
 #### Response for transactions
 
-[block:parameters]
 {
 "data": {
 "h-0": "Element",
@@ -613,12 +602,12 @@ See [Transactions matches array](/assess-api-data-integrity#transactions-matches
 "cols": 3,
 "rows": 8
 }
-[/block.
+
 
 #### Transactions matches
 
 This outlines the transaction(s) in which the original transaction has matched with its corresponding transaction in the other platform.
-[block:parameters]
+
 {
 "data": {
 "h-0": "Element",
@@ -650,11 +639,10 @@ See [Date](/datamodel-shared-date)",
 "cols": 3,
 "rows": 7
 }
-[/block.
+
 
 #### Response for accounts
 
-[block:parameters]
 {
 "data": {
 "h-0": "Element",
@@ -687,11 +675,10 @@ See [Accounts matches array](/assess-api-data-integrity#accounts-matches)",
 "cols": 3,
 "rows": 6
 }
-[/block.
+
 
 #### Accounts matches
 
-[block:parameters]
 {
 "data": {
 "0-0": "**type**",
@@ -716,7 +703,7 @@ See [Accounts matches array](/assess-api-data-integrity#accounts-matches)",
 "cols": 3,
 "rows": 5
 }
-[/block.
+
 
 ### Sample Response
 

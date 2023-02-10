@@ -210,7 +210,7 @@ DELETE /companies/{companyId}/connections/{connectionId}",
 
 To [boost your customers' trust](doc:privacy-trust-and-support#show-that-your-auth-flow-is-powered-by-codat), you can embed our "Powered by Codat logo" into your application.
 
-You can <a href="https://static.codat.io/public/branding/powered-by-codat.svg">download the logo</a> or link it from our content delivery network:
+You can [download the logo](https://static.codat.io/public/branding/powered-by-codat.svg") or link it from our content delivery network:
 
 <img
   src="https://static.codat.io/public/branding/powered-by-codat.svg"

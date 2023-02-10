@@ -40,7 +40,7 @@ This section describes the errors that are related to Sync for Commerce configur
 
 ### How to resolve configuration errors
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Error message",
@@ -169,7 +169,7 @@ Selected supplier not present in supplier options.",
 "left"
 ]
 }
-[/block]
+
 
 ## Post-configuration errors
 
@@ -180,7 +180,7 @@ After the commerce data is delivered into the merchant's accounting platform, th
 
 ### How to resolve post-configuration errors
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Error message",
@@ -225,13 +225,13 @@ To resolve, reconfigure the tax rate on the config API."
 "left"
 ]
 }
-[/block]
+
 
 ### Errors resolved by Codat
 
 To resolve these errors, contact your Codat representative.
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Error message",
@@ -249,4 +249,4 @@ To resolve these errors, contact your Codat representative.
 "left"
 ]
 }
-[/block]
+

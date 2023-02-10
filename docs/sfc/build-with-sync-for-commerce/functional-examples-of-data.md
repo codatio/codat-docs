@@ -90,7 +90,7 @@ To learn how you can use the Order data type and what is represented by each fie
     }
   ]
 }
-[/block]
+
 This example represents a card payment. Including the payment type in the Payment allows the SMB to reconcile payments of different types with different asset accounts.
 
 To learn how you can use the Payments data type and what is represented by each field, read [Payments](/data-model/accounting/-payments).

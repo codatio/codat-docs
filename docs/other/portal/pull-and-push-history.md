@@ -9,7 +9,7 @@ When viewing a company in the Portal, you can view **Pull history** and **Push h
 
 ## Pull history
 
-`**Companies > <company> > Pull history**`
+`Companies > Company > Data > Pull history`
 
 When a pull of data is initialized, items will appear here for each data type being pulled.
 
@@ -27,7 +27,7 @@ Where an pull encounters a validation error, you can click on the status to see 
 
 ## Push history
 
-`**Companies > <company> > Push history**`
+`Companies > Company > Data > Push history`
 
 When a pushed of data is initialized, items will appear here for each data type being pushed.
 

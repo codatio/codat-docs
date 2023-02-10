@@ -19,7 +19,7 @@ The below query functionality will only work when searching for company data (eg
 - The query takes the form of `propertyName=value`.
 - You can also include comparison operators, such as greater than, less than or equal to. The following table shows comparison operators that are supported for numeric, date, and string data types.
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Operator",
@@ -66,7 +66,7 @@ The below query functionality will only work when searching for company data (eg
 "cols": 5,
 "rows": 7
 }
-[/block]
+
 
 - Separate multiple query clauses with ampersands (`&&`) for _AND_ queries or pipes (`||`) for _OR_ queries.
 - Access sub-properties by separating them from the property with a dot (see [Invoices to a particular customer](/querying-1#invoices-to-a-particular-customer) example below).
@@ -204,7 +204,8 @@ var info = response.Data;",
     }
   ]
 }
-[/block.
+```
+
 
 ### For companies with no data connection established
 `` GET /companies?page=1&pageSize=100&query=dataConnections.count=0``
@@ -224,4 +225,4 @@ var info = response.Data;",
 }
 ]
 }
-[/block]
+```

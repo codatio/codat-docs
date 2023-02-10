@@ -36,7 +36,7 @@ Codat supports a subset of the available [OpenID Connect fields](https://openid.
 ## OpenID Connect fields
 
 The following table lists OpenID Connect fields and the accounting platforms for which they are supported.
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field and type",
@@ -162,4 +162,4 @@ _number_",
 "cols": 3,
 "rows": 20
 }
-[/block]
+

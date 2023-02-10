@@ -23,7 +23,7 @@ Only one request will be processed at a time per SMB company and per report type
 ## Parameters
 
 For each of the endpoints described below, you will provide the same parameters.
-[block:parameters]
+
 {
 "data": {
 "h-0": "Parameter",
@@ -44,14 +44,14 @@ For each of the endpoints described below, you will provide the same parameters.
   "cols": 4,
   "rows": 2
   }
-  [/block.
+  
 
 ## Request an Excel report for download
 
 The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/post_data_companies__companyId__assess_excel" target="_blank">Swagger</a> under **Assess**.
 
 `POST /data/companies/{companyId}/assess/excel`
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -87,7 +87,7 @@ See [date](/datamodel-shared-date)",
   "cols": 3,
   "rows": 7
   }
-  [/block]
+  
 
 Example
 
@@ -112,7 +112,7 @@ When the report is complete, the `inProgress` field will have the value of _fals
 The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__assess_excel" target="_blank">Swagger</a> under **Assess**.
 
 `GET /data/companies/{companyId}/assess/excel`
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -149,7 +149,7 @@ See [date](/datamodel-shared-date)",
   "cols": 3,
   "rows": 7
   }
-  [/block]
+  
   Example
 
 ```
