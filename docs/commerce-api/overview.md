@@ -61,7 +61,6 @@ Test
       </a>
     </p>
   </li>
-</ul>
 
   <li className="card">
     <div class="header">
