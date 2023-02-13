@@ -6,7 +6,7 @@ createdAt: "2022-11-22T19:33:11.784Z"
 updatedAt: "2022-11-22T19:33:11.784Z"
 ---
 
-Test
+Banner image for commerce api
 
 <ul className="card-container col-3">
   <li className="card">
@@ -18,11 +18,29 @@ Test
       <h3>Simplify your integrations</h3>
     </div>
     <p>
-      We connect to many on-premise and cloud accounting packages, removing the complexity of building individual integrations. 
+      We connect to several commerce platforms, removing the complexity of building separate integrations. 
     </p>
     <p>
-      <a href="/integrations/accounting/overview">
+      <a href="/integrations/commerce/overview">
         Review our integrations
+      </a>
+    </p>
+  </li>
+
+  <li className="card">
+    <div class="header">
+      <img
+        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        class="mini-icon"
+      />
+      <h3>Access sales information</h3>
+    </div>
+    <p>
+      Review sales performance based on product and geographic mix, retention rates, new customer growth, and more.
+    </p>
+    <p>
+      <a href="/data-model/commerce/">
+        Review the data model
       </a>
     </p>
   </li>
@@ -35,28 +53,10 @@ Test
       />
       <h3>Ensure data consistency</h3>
     </div>
-    <p>
-      Our data model normalizes and aggregates data from different platforms so that you can use it in a consistent way, fast. 
-    </p>
-    <p>
-      <a href="/data-model/accounting/">
-        Explore the data model
-      </a>
-    </p>
-  </li>
-
-  <li className="card">
-    <div class="header">
-      <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
-        class="mini-icon"
-      />
-      <h3>Support your customers</h3>
-    </div>
-    <p> Send expense data directly to your SMB customer's platform or retrieve their bills to save them hours of manual data entry. 
+    <p> Our data model normalizes and aggregates data from different platforms, so you can use it in a consistent way, fast. 
  </p>
     <p>
-      <a href="/accounting-api#">
+      <a href="/commerce-api#">
         Start with our API reference
       </a>
     </p>
@@ -68,13 +68,13 @@ Test
         src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
         class="mini-icon"
       />
-      <h3>Support your customers</h3>
+      <h3>Streamlined authorization flow</h3>
     </div>
-    <p> Send expense data directly to your SMB customer's platform or retrieve their bills to save them hours of manual data entry. 
+    <p> Merchants can share their commerce data using our Link UI or an auth flow embedded in your web app.  
  </p>
     <p>
-      <a href="/accounting-api#">
-        Start with our API reference
+      <a href="/auth-flow/overview">
+        Explore authorization
       </a>
     </p>
   </li>
