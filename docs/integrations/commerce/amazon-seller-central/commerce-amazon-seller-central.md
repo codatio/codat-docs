@@ -5,9 +5,7 @@ createdAt: "2021-08-27T22:41:15.062Z"
 updatedAt: "2022-10-20T13:32:18.005Z"
 ---
 
-<a class="external" href="https://sellercentral.amazon.com/" target="_blank">
-  Amazon Seller Central
-</a> is a platform that independent merchants use to sell their products on Amazon.
+<a class="external" href="https://sellercentral.amazon.com/" target="_blank">Amazon Seller Central</a> is a platform that independent merchants use to sell their products on Amazon.
 
 Our Commerce API supports Amazon Seller Central and allows your linked customers to share their Amazon Seller Central data through Codat. You can then retrieve this data in the same standardized format as our other commerce integrations.
 
@@ -17,12 +15,14 @@ View the coverage of our Amazon Seller Central integration in the <a className="
 
 ## Set up the integration
 
-See [Set up the Amazon Seller Central Integration](/set-up-amazon-seller-central) to learn how to set up and enable the integration.
+See [Set up the Amazon Seller Central Integration](/integrations/commerce/amazon-seller-central/set-up-amazon-seller-central) to learn how to set up and enable the integration.
 
 :::caution Underlying provider requirements
-Before setting up your Amazon Seller Central integration, you must complete all the requirements described in [Amazon Web Services, IAM & Developer Registration](/amazon-registration-steps).
+
+Before setting up your Amazon Seller Central integration, you must complete all the requirements described in [Amazon Web Services, IAM & Developer Registration](/integrations/commerce/amazon-seller-central/amazon-registration-steps).
 
 Note that your application must be reviewed before you can start using the integration.
+
 :::
 
 ## Important definitions
@@ -36,11 +36,15 @@ Both in general and in this documentation, Codat refers to our Amazon integratio
 For the sake of clarity when discussing developer registration in particular, this guide will use the exact name of the API.
 
 :::caution Rate Limits and Sync Frequency
+
 The Selling Partner API enforces rate limiting on incoming requests. Effectively, these limits work out to allowing [1 request per minute](https://developer-docs.amazon.com/sp-api/docs/orders-api-v0-reference#get-ordersv0orders). Syncing commerce data at a high frequency &ndash; for example, once every 15 minutes &ndash; will likely exceed the rate limit and cause poor performance due to throttled requests. For optimal performance, we recommend setting the sync frequency of the Amazon Seller Central integration to a long interval, such as daily or weekly.
+
 :::
 
 :::caution Multiple Marketplaces
+
 Amazon Seller Central is a global platform with separate marketplaces in separate territories around the world. While merchants can sell in multiple marketplaces, each data connection is limited to a single marketplace being served by the Amazon merchant.
 
 Your customers who sell in multiple territories can connect all their Amazon Seller Central marketplaces to Codat, but will need to go through the Link flow separately for each regional marketplace.
+
 :::
