@@ -30,6 +30,11 @@ module.exports = [
   },
   {
     type: "link",
+    href: "/integrations/accounting/xero/accounting-xero-setup#configure-direct-bank-feeds",
+    label: "Xero bank feeds",
+  },
+  {
+    type: "link",
     href: "/bank-feeds-api",
     label: "API reference",
   },
