@@ -6,7 +6,11 @@ createdAt: "2022-11-22T19:33:11.784Z"
 updatedAt: "2022-11-22T19:33:11.784Z"
 ---
 
-Banner image for commerce api
+<Head>
+  <meta property="og:image" content="/img/commerce_api_banner.png"/>
+</Head>
+
+![](/img/commerce_api_banner.png "Commerce API banner")
 
 <ul className="card-container col-3">
   <li className="card">
