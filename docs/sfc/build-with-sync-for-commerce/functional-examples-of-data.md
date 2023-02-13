@@ -1,6 +1,6 @@
 ---
 title: "Example data"
-description: "How Codat breaks down Orders, Payments, and Transactions data to represent it in the SMB’s accounting platform."
+description: "How Codat breaks down Orders, Payments, and Transactions data to represent it in the SMB’s accounting platform"
 createdAt: "2022-06-18T11:57:17.385Z"
 updatedAt: "2022-11-16T16:43:05.341Z"
 ---
@@ -11,12 +11,14 @@ We include some examples of how the data is represented **in the accounting plat
 
 Our [Sync for Commerce Postman collection](https://postman.codat.io/#166a0b48-9f98-47f6-91cd-0986a3de626f) also includes some sample Orders, Payments, and Transactions `POST` requests that you can use as an example.
 
-:::info
+:::info Checking data mapping
 To check whether the data has been mapped to the accounting platform successfully, follow the steps outlined in the [Data pushing](/sync-data-pushing) section.
+:::
 
-:::caution
+:::caution Required data types
 
 **ALL** the data types listed for each feature are required. If you don’t push any of these data types, the sync will fail and no data will be displayed in the SMB’s accounting platform.
+:::
 
 ## Sales
 
@@ -34,7 +36,7 @@ To map Sales to a merchant’s accounting platform, perform these steps:
 
 ### Example 1: An Order representing a sale
 
-```
+```json
 {
 "id": "1f463dc2-51c2-46a1-891d-bb4b279f8e36",
 "orderNumber": "1f463dc2-51c2-46a1-891d-bb4b279f8e36",
@@ -72,7 +74,7 @@ To learn how you can use the Order data type and what is represented by each fie
 
 ### Example 2: A Payment associated with the Order from Example 1
 
-```
+```json
 {
 "id": "0944c8e6-eb01-4b28-a842-d0693f459395",
 "amount": 85,
@@ -84,20 +86,15 @@ To learn how you can use the Order data type and what is represented by each fie
 "modifiedDate": "2022-02-15T06:53:11Z",
 "sourceModifiedDate": "2022-02-14T15:46:20Z"
 }
-",
-      "language": "json",
-      "name": null
-    }
-  ]
-}
 
+```
 This example represents a card payment. Including the payment type in the Payment allows the SMB to reconcile payments of different types with different asset accounts.
 
 To learn how you can use the Payments data type and what is represented by each field, read [Payments](/data-model/accounting/-payments).
 
 ### Example 3: A Transaction that reconciles the Order from Example 1 and the Payment from Example 2
-```
 
+```json
 {
 //This id should match the id of the associated Payment
 "id": "0944c8e6-eb01-4b28-a842-d0693f459395",
@@ -119,7 +116,7 @@ To learn how you can use the Payments data type and what is represented by each 
 To learn how you can use Transactions data type and what is represented by each field, read [Transactions](/data-model/commerce/-transactions).
 
 ### Example 4: A Transaction that reconciles the Order from Example 1 and the Payment of commerce provider fees associated with this Order
-```
+```json
 
 {
 //This id should match the id of the associated Payment
@@ -140,4 +137,3 @@ To learn how you can use Transactions data type and what is represented by each 
 ```
 
 To learn how you can use Transactions data type and what is represented by each field, read [Transactions](/data-model/commerce/-transactions).
-```
