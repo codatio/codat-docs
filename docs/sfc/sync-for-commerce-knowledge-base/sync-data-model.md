@@ -68,7 +68,7 @@ updatedAt: "2022-10-06T12:22:19.225Z"
 
 | Field | Type | Description |
 |---|---|---|
-| name | string read-only | Display name of the option. In an HTML implementation, this must be contained in the body of an <option> tag. |
+| name | string read-only | Display name of the option. In an HTML implementation, this must be contained in the body of an <option\> tag. |
 | id | string read-only | Identifier for the option which is posted back to the configuration. In an HTML implementation, this must be contained in the value attribute of an <option> tag. |
 | classification | string read-only Only returned for Account options. | Type of the account, either nominal or bank. |
 
