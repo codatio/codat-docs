@@ -62,3 +62,21 @@ Test
     </p>
   </li>
 </ul>
+
+  <li className="card">
+    <div class="header">
+      <img
+        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        class="mini-icon"
+      />
+      <h3>Support your customers</h3>
+    </div>
+    <p> Send expense data directly to your SMB customer's platform or retrieve their bills to save them hours of manual data entry. 
+ </p>
+    <p>
+      <a href="/accounting-api#">
+        Start with our API reference
+      </a>
+    </p>
+  </li>
+</ul>
