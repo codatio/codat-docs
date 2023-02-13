@@ -13,7 +13,7 @@ updatedAt: "2022-11-22T19:33:11.784Z"
 ![](/img/banking-api/banking-api-banner.png "banking-api-banner.png")
 
 <ul className="card-container col-3">
-  <li className="card-lg">
+  <li className="card">
     <div class="header">
       <img
         src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
@@ -31,7 +31,7 @@ updatedAt: "2022-11-22T19:33:11.784Z"
     </p>
   </li>
 
-  <li className="card-lg">
+  <li className="card">
     <div class="header">
       <img
         src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
@@ -49,7 +49,7 @@ updatedAt: "2022-11-22T19:33:11.784Z"
     </p>
   </li>
 
-  <li className="card-lg">
+  <li className="card">
     <div class="header">
       <img
         src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
