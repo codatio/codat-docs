@@ -22,7 +22,7 @@ updatedAt: "2022-11-22T19:33:11.784Z"
       <h3>Simplify your integrations</h3>
     </div>
     <p>
-      We connect to several commerce platforms, removing the complexity of building separate integrations. 
+      We connect to key commerce platforms, removing the complexity of building separate integrations. 
     </p>
     <p>
       <a href="/integrations/commerce/overview">
