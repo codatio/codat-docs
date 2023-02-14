@@ -40,7 +40,7 @@ The response tells you whether match results are available, and, if they are:
 - When the results were generated, and their status.
 - The connection IDs, amounts and dates involved, to support useful querying.
 
-:::info Overlapping dates",
+:::info Overlapping dates
 
 In the UK, Open Banking allows you to pull a maximum of 24 months of data but could be less with just 18 or 12 months available.
 
@@ -54,172 +54,60 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 `GET /data/companies/{companyId}/assess/dataTypes/{dataType}/dataIntegrity/status`
 
 ### Parameters
-{
-"data": {
-"h-0": "Parameter",
-"h-1": "Type",
-"h-2": "Description",
-"h-3": "Required",
-"1-0": "**datatype**",
-"1-1": "_string_",
-"1-2": "The data type you want match results for.
+
+|Parameter|Type|Description|Required|
+|---------|----|-----------|--------|
+|**companyId**|_string_|The ID of the company you want to match results for.  Submit as route parameter|Required|
+|**datatype**|_string_|The data type you want match results for.
 
 **Accounting source:**
-[bankAccounts](/accounting-api#/schemas/bankaccounts)
-[accountTransactions](/accounting-api#/account-transactions)
+[bankAccounts](/data-model/accounting/)
+[accountTransactions](/data-model/accounting/)
 
 **Banking source:**
-[banking-accounts](//banking-api#/schemas/banking-accounts)
-[banking-transactions](//banking-api#/schemas/banking-transactions)
-
-Submit as route parameter.",
-"1-3": "Required",
-"h-4": "",
-"1-4": "",
-"0-0": "**companyId**",
-"0-1": "_string_",
-"0-3": "Required",
-"0-2": "The ID of the company you want match results for.
-
-Submit as route parameter."
-},
-"cols": 4,
-"rows": 2
-}
+[banking-accounts](/banking-api#/schemas/banking-accounts)
+[banking-transactions](/banking-api#/schemas/banking-transactions)
 
 ### Data model
-{
-"data": {
-"h-0": "Field",
-"h-3": "Description",
-"h-4": "Description",
-"0-1": "_string_",
-"0-3": "",
-"0-4": "",
-"1-1": "See [Status info](#status-info)",
-"2-4": "",
-"3-4": "",
-"4-4": "",
-"2-3": "",
-"3-3": "",
-"4-3": "",
-"2-1": "See [Connection ID](#connection-id)",
-"3-1": "See [Amounts](#amounts)",
-"4-1": "See [Dates](#dates)",
-"1-3": "",
-"3-2": "Only returned for transactions. For accounts, there is nothing returned.",
-"4-2": "Only returned for transactions. For accounts, there is nothing returned.",
-"0-2": "The data type which the data type in the URL has been matched against. For example, if you've matched _accountTransactions_ and _banking-transactions_, and you call this endpoint with _accountTransactions_ in the URL, this property would be _banking-transactions_.",
-"1-2": "",
-"2-2": "",
-"h-2": "Description",
-"h-1": "Type",
-"0-0": "**type**",
-"1-0": "**statusInfo**",
-"2-0": "**connectionIds**",
-"3-0": "**amounts**",
-"4-0": "**dates**"
-},
-"cols": 3,
-"rows": 5
-}
+
+|Field|Type|Description|
+|-----|----|-----------|
+|**Type**|_string_|The data type which the data type in the URL has been matched against. For example, if you've matched _accountTransactions_ and _banking-transactions_, and you call this endpoint with _accountTransactions_ in the URL, this property would be _banking-transactions_|
+|**statusInfo**|See [Status info](#status-info)||
+|**connectionIds**|See [Connection ID](#connection-id)||
+|**amounts**|See [Amounts](#amounts)|Only returned for transactions. For accounts, there is nothing returned.|
+|**dates**|See [Dates](#dates)|Only returned for transactions. For accounts, there is nothing returned.|
 
 #### Status info
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**lastMatched**",
-"0-1": "_string_
-See [Date](/datamodel-shared-date)",
-"0-2": "The date the matching algorithm last ran against the company’s bank transactions.",
-"1-2": "One of the following:
 
-- `Unknown`
-- `DoesNotExist` - have never attempted a match run for this company as do not have datasets required
-- `Error` - something went wrong upon matching
-- `Processing`
-- `Complete`",
-  "1-0": "**currentStatus**",
-  "1-1": "_string_",
-  "2-0": "**statusMessage**",
-  "2-1": "_string_",
-  "2-2": "Detailed explanation supporting the status value."
-  },
-  "cols": 3,
-  "rows": 3
-  }
+|Field|Type|Description|
+|-----|----|-----------|
+|**lastMatched**|_string_|The date the matching algorithm last ran against the company’s bank transactions.|
+|**currentStatus**|_string_|One of the following:<br/>- `Unknown`<br/>- `DoesNotExist` - have never attempted a match run for this company as do not have datasets required<br/>- `Error` - something went wrong upon matching<br/>- `Processing`<br/>- `Complete`|
+|**statusMessage**|_string_|Detailed explanation supporting the status value.|
 
 #### Connection ID
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**source**",
-"0-1": "_array_",
-"1-0": "**target**",
-"1-1": "_array_",
-"0-2": "An array of _strings_. The connection IDs for the type specified in the url.",
-"1-2": "An array of _strings_. The connection IDs for the type being matched to."
-},
-"cols": 3,
-"rows": 2
-}
-
+|Field|Type|Description|
+|-----|----|-----------|
+|**source**|_array_|An array of _strings_. The connection IDs for the type specified in the url.|
+|**target**|_array_|An array of _strings_. The connection IDs for the type being matched to.|
 
 #### Amounts
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**min**",
-"1-0": "**max**",
-"0-1": "_number_",
-"1-1": "_number_",
-"0-2": "Lowest value of transaction set.",
-"1-2": "Highest value of transaction set."
-},
-"cols": 3,
-"rows": 2
-}
-
+|Field|Type|Description|
+|-----|----|-----------|
+|**min**|_number_|Lowest value of transaction set.|
+|**max**|_number_|Highest value of transaction set.|
 
 #### Dates
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**minDate**",
-"1-0": "**maxDate**",
-"2-0": "**minOverlappingDate**",
-"3-0": "**maxOverlappingDate**",
-"0-1": "_string_
-See [Date](/datamodel-shared-date)",
-"1-1": "_string_
-See [Date](/datamodel-shared-date)",
-"2-1": "_string_
-See [Date](/datamodel-shared-date)",
-"3-1": "_string_
-See [Date](/datamodel-shared-date)",
-"0-2": "Earliest date of transaction set.",
-"1-2": "Latest date of transaction set.",
-"2-2": "Earliest date where transactions exist in both accounting and banking platforms.",
-"3-2": "Latest date where transactions exist in both account and banking platforms."
-},
-"cols": 3,
-"rows": 4
-}
-
+|Field|Type|Description|
+|-----|----|-----------|
+|**minDate**|_date_|Earliest date of transaction set.|
+|**maxDate**|_date_|Latest date of transaction set.|
+|**minOverlappingDate**|_date_|Earliest date where transactions exist in both accounting and banking platforms.|
+|**maxOverlappingDate**|_date_|Latest date where transactions exist in both account and banking platforms.|
 
 ### Sample response
 
@@ -274,7 +162,8 @@ See [Date](/datamodel-shared-date)",
   ]
 }
 //(identically-formatted output if you call with dataType = bankAccounts except
-//it will be keyed on banking-accounts)```
+//it will be keyed on banking-accounts)
+```
 
 
 ## Summaries
@@ -289,133 +178,39 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 
 ### Parameters
 
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "h-3": "Required",
-    "2-0": "**Query**",
-    "2-1": "*string*",
-    "2-2": "You can query any properties in the response.
-It can be left blank. E.g.
-query=date>2020-12-01
-
-Submit as query parameter.
-This follows the standard [Codat query language](/using-the-api/querying).",
-    "0-0": "**companyId**",
-    "0-1": "*string* ",
-    "0-2": "The ID of the company you want match results for.
-
-Submit as route parameter.",
-    "0-3": "Required",
-    "1-3": "Required",
-    "1-2": "The data type you want match results for.
-
-**Accounting source:**
-[bankAccounts](/accounting-api#/schemas/bankaccounts)
-[accountTransactions](/accounting-api#/account-transactions)
-
-**Banking source:**
-[banking-accounts](//banking-api#/schemas/banking-accounts)
-[banking-transactions](//banking-api#/schemas/banking-transactions)
-
-Submit as route parameter.",
-    "1-1": "*string*",
-    "1-0": "**datatype**"
-  },
-  "cols": 4,
-  "rows": 3
-}
-
+|Parameter|Type|Description|Required|
+|---------|----|-----------|--------|
+|**companyId**|_string_|The ID of the company you want match results for.  Submit as route parameter.|Required|
+|**datatype**|_string_|The data type you want match results for.<br/>**Accounting source:**<br/>[bankAccounts](/data-model/accounting)<br/>[accountTransactions](/data-model/accounting)<br/>**Banking source:**<br/>[banking-accounts](/data-model/banking)<br/>[banking-transactions](/data-model/banking)<br/>Submit as route parameter.|Required|
+|**Query**|_string_|You can query any properties in the response.  It can be left blank. E.g. query=date>2020-12-01<br/><br/>Submit as query parameter.<br/>This follows the standard [Codat query language](/using-the-api/querying).||
 
 ### Data model
+
 For transactions, the response contains summary statistics (such as match percentage) by both amount and count. For accounts, statistics based on amount are not meaningful, therefore we return only statistics based on count.
 
-{
-  "data": {
-    "h-0": "Field",
-    "h-2": "Description",
-    "h-3": "Description",
-    "0-3": "",
-    "1-3": "",
-    "3-3": "The percentage in which the system can match the bank transactions between accounting and banking platforms.",
-    "0-2": "The data type which the data type in the URL has been matched against. For example, if you've matched _accountTransactions_ and _banking-transactions_, and you call this endpoint with _accountTransactions_ in the URL, this property would be _banking-transactions_.",
-    "1-2": "",
-    "0-0": "**type**",
-    "1-0": "**byAmount**",
-    "4-3": "The sum of transaction value (if byAmount), or number of records (if byCount) in which the system cannot match the bank transactions between accounting and banking platforms.",
-    "5-3": "The sum of transaction value (if bymount), or number of records (if byCount) in which the system can match the bank transactions between accounting and banking platforms.",
-    "6-3": "The total of unmatched and matched.",
-    "3-2": "Number",
-    "4-2": "Number",
-    "5-2": "Number",
-    "6-2": "Number",
-    "3-1": "matchPercentage",
-    "4-1": "unmatched",
-    "5-1": "matched",
-    "6-1": "total",
-    "h-1": "Type",
-    "1-1": "See [By amount](#by-amount)",
-    "0-1": "*string*",
-    "2-0": "**byCount**",
-    "2-1": "See [By count](#by-count)",
-    "2-2": ""
-  },
-  "cols": 3,
-  "rows": 3
-}
-
+|Field|Type|Description|
+|-----|----|-----------|
+|**type**|_string_|The data type which the data type in the URL has been matched against. For example, if you've matched _accountTransactions_ and _banking-transactions_, and you call this endpoint with _accountTransactions_ in the URL, this property would be _banking-transactions_.|
+|**byAmount**|See [By amount](#by-amount)||
+|**byCount**|See [By count](#by-count)||
 
 #### By amount
 
-{
-  "data": {
-    "h-0": "Field",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "**matchPercentage**",
-    "1-0": "**unmatched**",
-    "2-0": "**matched**",
-    "3-0": "**total**",
-    "0-1": "*number*",
-    "1-1": "*number*",
-    "2-1": "*number*",
-    "3-1": "*number*",
-    "0-2": "The percentage of the absolute value of transactions of the type specified in the route which have a match.",
-    "1-2": "The sum of the absolute value of transactions of the type specified in the route which don't have a match.",
-    "2-2": "The sum of the absolute value of transactions of the type specified in the route which have a match.",
-    "3-2": "The total of unmatched and matched."
-  },
-  "cols": 3,
-  "rows": 4
-}
-
+|Field|Type|Description|
+|-----|----|-----------|
+|**matchPercentage**|_number_|The percentage of the absolute value of transactions of the type specified in the route which have a match.|
+|**unmatched**|_number_|The sum of the absolute value of transactions of the type specified in the route which don't have a match.|
+|**matched**|_number_|The sum of the absolute value of transactions of the type specified in the route which have a match.|
+|**total**|_number_|The total of unmatched and matched.|
 
 #### By Count
 
-{
-  "data": {
-    "h-0": "Field",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "**matchPercentage**",
-    "1-0": "**unmatched**",
-    "2-0": "**matched**",
-    "3-0": "**total**",
-    "0-1": "*number*",
-    "1-1": "*number*",
-    "2-1": "*number*",
-    "3-1": "*number*",
-    "0-2": "The percentage of records of the type specified in the route which have a match.",
-    "1-2": "The number of records of the type specified in the route which don't have a match.",
-    "2-2": "The number of records of the type specified in the route which do have a match.",
-    "3-2": "The total of unmatched and matched."
-  },
-  "cols": 3,
-  "rows": 4
-}
-
+|Field|Type|Description|
+|-----|----|-----------|
+|**matchPercentage**|_number_|The percentage of records of the type specified in the route which have a match.|
+|**unmatched**|_number_|The number of records of the type specified in the route which don't have a match.|
+|**matched**|_number_|The number of records of the type specified in the route which do have a match.|
+|**total**|_number_|The total of unmatched and matched.|
 
 ### Sample Response
 ````
@@ -490,7 +285,6 @@ Note that by default the percentage on the Portal is also restricted to the over
 E.g. if the Status response contains this:
 
 ```
-
 "dates":{
 ..
 "minOverlappingDate":"2021-09-03T12:00:00.000Z",
@@ -500,10 +294,12 @@ E.g. if the Status response contains this:
 }
 ]
 }
+```
 
 Then you would call each of the _Summaries endpoints_ with (url-escaped) query=date>=2021-09-03T12:00:00.000Z&&date<=2021-09-17T23:59:59.999.
 
 ## Details
+
 
 This endpoint exposes match results record by record for a given data type, filtered based on a query string in the same way as summary results. The results are [paginated](/using-the-api/pagination) and support [ordering](/using-the-api/ordering-results), following the same conventions as our other data endpoints.
 
@@ -513,197 +309,64 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 
 ### Parameters
 
-{
-"data": {
-"2-0": "**Query**",
-"3-0": "**page**",
-"4-0": "**pageSize**",
-"5-0": "**orderBy**",
-"2-1": "_string_",
-"5-1": "_string_",
-"h-0": "Parameter",
-"h-1": "Type",
-"h-2": "Description",
-"h-3": "Required",
-"3-3": "",
-"2-2": "Can query any property in response.
+|Parameter|Type|Description|Required|
+|---------|----|-----------|--------|
+|**companyId**|_string_|The ID of the company you want match results for.  Submit as route parameter.|Required|
+|**datatype**|_string_|The data type you want match results for.<br/>**Accounting source:**<br/>[bankAccounts](/data-model/accounting)<br/>[accountTransactions](/data-model/accounting)<br/>**Banking source:**<br/>[banking-accounts](/data-model/banking)<br/>[banking-transactions](/data-model/banking)<br/>Submit as route parameter.|Required|
+|**Query**|_string_|You can query any properties in the response.  It can be left blank. E.g. query=date>2020-12-01<br/><br/>Submit as query parameter.<br/>This follows the standard [Codat query language](/using-the-api/querying).||
+|**page**|_number_|Submit as query parameter.  Defaults to 1.||
+|**pageSize**|_number_|Submit as query parameter.  Defaults to 100.||
+|**orderBy**|_string_|State the property name by which you would like to order the response by.  Submit as query parameter.||
 
-Submit as query parameter.
-This follows the standard [Codat query language](/using-the-api/querying).",
-"5-2": "State the property name by which you would like to order the response by.
-
-Submit as query parameter.",
-"3-1": "_number_",
-"4-1": "_number_",
-"3-2": "Submit as query parameter. Defaults to 1.",
-"4-2": "Submit as query parameter. Defaults to 100.",
-"0-0": "**companyId**",
-"1-0": "**dataType**",
-"0-1": "_string_",
-"1-1": "_string_",
-"0-2": "The ID of the company you want match results for.
-
-Submit as route parameter.",
-"1-2": "The data type you want match results for.
-
-**Accounting source:**
-[bankAccounts](/accounting-api#/schemas/bankaccounts)
-[accountTransactions](/accounting-api#/account-transactions)
-
-**Banking source:**
-[banking-accounts](//banking-api#/schemas/banking-accounts)
-[banking-transactions](//banking-api#/schemas/banking-transactions)
-
-Submit as route parameter.",
-"0-3": "Required",
-"1-3": "Required"
-},
-"cols": 4,
-"rows": 6
-}
-
-
-### Data mode.
+### Data model
 
 #### Response for transactions
 
-{
-"data": {
-"h-0": "Element",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**type**",
-"1-0": "**connectionId**",
-"2-0": "**id**",
-"3-0": "**date**",
-"4-0": "**description**",
-"5-0": "**amount**",
-"6-0": "**currency**",
-"7-0": "**matches**",
-"0-2": "The data type of the record.",
-"1-2": "ID GUID representing the connection of the accounting or banking platform.",
-"2-2": "A concatenation of the accountId and transactionId, in the format accountId_transactionId. This is unique to data integrity.",
-"4-2": "The transaction description.",
-"6-2": "The currency of the transaction.",
-"0-1": "_string_",
-"1-1": "_string_",
-"2-1": "_string_",
-"3-1": "_date_
-See [Date](/datamodel-shared-date)",
-"4-1": "_string_",
-"5-1": "_number_",
-"6-1": "_string_",
-"7-1": "_array_
-See [Transactions matches array](/assess-api-data-integrity#transactions-matches)",
-"5-2": "The transaction value.",
-"3-2": "The date of the transaction.",
-"7-2": "Refer to the matches array table below."
-},
-"cols": 3,
-"rows": 8
-}
-
+|Element|Type|Description|
+|-------|----|-----------|
+|**type**|_string_|The data type of the record.|
+|**connectionId**|_string_|ID GUID representing the connection of the accounting or banking platform.|
+|**id**|_string_|A concatenation of the accountId and transactionId, in the format accountId_transactionId. This is unique to data integrity.|
+|**date**|_date_|The date of the transaction.|
+|**description**|_string_|The transaction description.|
+|**amount**|_number_|The transaction value.|
+|**currency**|_string_|The currency of the transaction.|
+|**matches**|_array_<br/>See [Transactions matches array](#transactions-matches)|Refer to the matches array table below.|
 
 #### Transactions matches
 
 This outlines the transaction(s) in which the original transaction has matched with its corresponding transaction in the other platform.
 
-{
-"data": {
-"h-0": "Element",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**type**",
-"1-0": "**connectionId**",
-"2-0": "**id**",
-"3-0": "**date**",
-"4-0": "**description**",
-"5-0": "**amount**",
-"6-0": "**currency**",
-"0-1": "_string_",
-"1-1": "_string_",
-"2-1": "_string_",
-"3-1": "_date_
-See [Date](/datamodel-shared-date)",
-"4-1": "_string_",
-"5-1": "_number_",
-"6-1": "_string_",
-"1-2": "ID GUID representing the connection of the accounting or banking platform.",
-"2-2": "A concatenation of the accountId and transactionId, in the format accountId*transactionId. This is unique to data integrity.",
-"4-2": "The transaction description.",
-"6-2": "The currency of the transaction.",
-"3-2": "The date of the transaction.",
-"5-2": "The transaction value.",
-"0-2": "The data type which the data type in the URL has been matched against. For example, if you've matched \_accountTransactions* and _banking-transactions_, and you call this endpoint with _accountTransactions_ in the URL, this property would be _banking-transactions_."
-},
-"cols": 3,
-"rows": 7
-}
-
+|Element|Type|Description|
+|-------|----|-----------|
+|**type**|_string_|The data type which the data type in the URL has been matched against. For example, if you've matched accountTransactions and banking-transactions, and you call this endpoint with accountTransactions in the URL, this property would be banking-transactions.|
+|**connectionId**|_string_|ID GUID representing the connection of the accounting or banking platform.|
+|**id**|_string_|A concatenation of the accountId and transactionId, in the format accountId_transactionId. This is unique to data integrity.|
+|**date**|_date_|The date of the transaction.|
+|**description**|_string_|The transaction description.|
+|**amount**|_number_|The transaction value.|
+|**currency**|_string_|The currency of the transaction.|
 
 #### Response for accounts
 
-{
-"data": {
-"h-0": "Element",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**type**",
-"1-0": "**connectionId**",
-"2-0": "**id**",
-"3-0": "**accountName**",
-"4-0": "**institution**",
-"5-0": "**matches**",
-"6-0": "type",
-"7-0": "connectionId",
-"8-0": "id",
-"9-0": "accountName",
-"0-1": "_string_",
-"1-1": "_string_",
-"2-1": "_string_",
-"3-1": "_string_",
-"4-1": "_string_",
-"5-1": "_array_
-See [Accounts matches array](/assess-api-data-integrity#accounts-matches)",
-"1-2": "ID GUID representing the connection of the accounting or banking platform.",
-"2-2": "The account’s id.",
-"3-2": "The name of the account.",
-"4-2": "The name of the financial institution.",
-"5-2": "Refer to the matches array table below.",
-"0-2": "The data type of the record."
-},
-"cols": 3,
-"rows": 6
-}
-
+|Element|Type|Description|
+|-------|----|-----------|
+|**type**|_string_|The data type of the record.|
+|**connectionId**|_string_|ID GUID representing the connection of the accounting or banking platform.|
+|**id**|_string_|The account’s id.|
+|**accountName**|_string_|The name of the account.|
+|**institution**|_string_|The name of the financial institution.|
+|**matches**|_array_<br/>See [Account matches array](#accounts-matches)|Refer to the matches array table below.|
 
 #### Accounts matches
 
-{
-"data": {
-"0-0": "**type**",
-"1-0": "**connectionId**",
-"2-0": "**id**",
-"3-0": "**accountName**",
-"4-0": "**institution**",
-"0-1": "_string_",
-"1-1": "_string_",
-"2-1": "_string_",
-"3-1": "_string_",
-"4-1": "_string_",
-"1-2": "ID GUID representing the connection of the accounting or banking platform.",
-"2-2": "The account’s id.",
-"3-2": "The name of the account.",
-"4-2": "The name of the financial institution.",
-"h-0": "Element",
-"h-1": "Type",
-"h-2": "Description",
-"0-2": "The data type which the data type in the URL has been matched against. For example, if you've matched _accountTransactions_ and _banking-transactions_, and you call this endpoint with _accountTransactions_ in the URL, this property would be _banking-transactions_."
-},
-"cols": 3,
-"rows": 5
-}
-
+|Element|Type|Description|
+|-------|----|-----------|
+|**type**|_string_|The data type which the data type in the URL has been matched against. For example, if you've matched accountTransactions and banking-transactions, and you call this endpoint with accountTransactions in the URL, this property would be banking-transactions.|
+|**connectionId**|_string_|ID GUID representing the connection of the accounting or banking platform.|
+|**id**|_string_|The account's id.|
+|**accountName**|_string_|The name of the account.|
+|**institution**|_string_|The name of the financial institution.|
 
 ### Sample Response
 

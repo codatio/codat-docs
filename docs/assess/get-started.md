@@ -16,7 +16,7 @@ This document helps you get started with Assess, and covers both the API and the
 
 ![Assess Profit and Loss page](/img/old/cdf1e35-Banner_1.png)
 
-4. If you have Assess enabled, you will be taken to the **Assess Profit and Loss** page. For more information, visit the [Assess in the Portal](assess/portal/overview) documentation.
+4. If you have Assess enabled, you will be taken to the **Assess Profit and Loss** page. For more information, visit the [Assess in the Portal](/assess/portal/overview) documentation.
 5. If you don't have Assess access, you can enable it by following the onscreen prompt.
 
 ## Prerequisites
@@ -86,7 +86,7 @@ Assess is available as a no-code product in the Portal or as APIs to incorporate
 
 ### Portal
 
-Visit our [Assess in the Portal](assess/portal/overview) documentation.
+Visit our [Assess in the Portal](/assess/portal/overview) documentation.
 
 ### API
 

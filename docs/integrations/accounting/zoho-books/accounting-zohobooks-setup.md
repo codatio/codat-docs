@@ -24,7 +24,7 @@ Codat currently supports the UK and US regions only for Zoho Books.
 
 Codat works within the rate limits set by Zoho Books to minimize the impact on data syncs. By default, line items are excluded when retrieving invoices and credit notes. For customers, address and contact information is excluded.
 
-See [Zoho Books limits and reduced data pulls](/integrations/accounting/zoho-books/zoho-book-limits) to understand more about how Zoho Books controls the volume of data your organization can retrieve, and the number of data connections per organization.
+See [Zoho Books limits and reduced data pulls](zoho-book-limits) to understand more about how Zoho Books controls the volume of data your organization can retrieve, and the number of data connections per organization.
 :::
 
 ## Register your application
