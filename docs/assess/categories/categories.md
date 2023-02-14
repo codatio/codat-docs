@@ -5,6 +5,10 @@ createdAt: "2022-02-21T13:57:52.224Z"
 updatedAt: "2022-11-02T14:38:07.399Z"
 ---
 
+:::caution Account category versions
+This categorization of accounts via only applies to our classic [Enhanced Financials](/assess/reports/enhanced-financials/financials). For our revised categorization aimed at eCommerce lenders, explore [Enhanced Financials for eCommerce lenders](/assess/reports/enhanced-financials-ecommerce-lenders/financials).
+:::
+
 The chart of accounts defines the financial structure of a company by providing a list of all accounts used in the company's general ledger.
 
 Every account is assigned one of Codat’s 162 categories. This allows Codat to produce insights about your SMB customers irrespective of the accounting data source they use. The assigned categories apply in the Codat platform only, not in the accounting data source.

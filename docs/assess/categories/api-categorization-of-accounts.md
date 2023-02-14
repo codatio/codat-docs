@@ -4,6 +4,9 @@ description: "Reference document for the Account Categorization endpoints"
 createdAt: "2022-02-21T12:45:33.573Z"
 updatedAt: "2022-11-02T14:38:29.977Z"
 ---
+:::caution Account category versions
+This categorization of accounts via only applies to our classic [Enhanced Financials](/assess/reports/enhanced-financials/financials). For our revised categorization aimed at eCommerce lenders, explore [Enhanced Financials for eCommerce lenders.](/assess/reports/enhanced-financials-ecommerce-lenders/financials)
+:::
 
 The **Categorization of accounts** API consists of the following endpoints:
 

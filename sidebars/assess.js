@@ -49,6 +49,16 @@ module.exports = [
       },
       {
         type: "category",
+        label: "Enhanced financials for eCommerce lenders",
+        collapsed: true,
+        items: [
+          "assess/reports/enhanced-financials-ecommerce-lenders/financials",
+          "assess/reports/enhanced-financials-ecommerce-lenders/balance-sheet",
+          "assess/reports/enhanced-financials-ecommerce-lenders/profit-and-loss",
+        ],
+      },
+      {
+        type: "category",
         label: "Banking",
         collapsed: true,
         items: [
