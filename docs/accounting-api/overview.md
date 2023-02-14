@@ -7,10 +7,10 @@ updatedAt: "2022-11-22T19:33:11.784Z"
 ---
 
 <Head>
-  <meta property="og:image" content="/img/old/2b27c1b-info_banner.png"/>
+  <meta property="og:image" content="/img/accounting-api/accounting_banner.png"/>
 </Head>
 
-![](/img/old/2b27c1b-info_banner.png "info_banner.png")
+![](/img/accounting-api/accounting_banner.png "Accounting API banner")
 
 <ul className="card-container col-3">
   <li className="card">
