@@ -26,11 +26,11 @@ The Sales feature represents all sales made in the course of a company’s norma
 
 To map Sales to a merchant’s accounting platform, perform these steps:
 
-1. Push the [Orders](/data-model/commerce/-orders) that represent any Sales made during the day. See [Example 1](/functional-examples-of-data#example-1-an-order-representing-a-sale).
-2. Push the [Payments](/data-model/commerce/-payments) associated with the Orders from Step 1. See [Example 2](/functional-examples-of-data#example-2-a-payment-associated-with-the-order-from-example-1).
-3. Push the [Transactions](/data-model/commerce/-transactions) that will enable reconciliation of the Orders from Step 1 with the Payments from Step 2. See [Example 3](/functional-examples-of-data#example-3-a-transaction-that-reconciles-the-order-from-example-1-and-the-payment-from-example-2).
+1. Push the [Orders](/commerce-api#/schemas/orders) that represent any Sales made during the day. See [Example 1](/functional-examples-of-data#example-1-an-order-representing-a-sale).
+2. Push the [Payments](/commerce-api#/schemas/payments) associated with the Orders from Step 1. See [Example 2](/functional-examples-of-data#example-2-a-payment-associated-with-the-order-from-example-1).
+3. Push the [Transactions](/commerce-api#/schemas/transactions) that will enable reconciliation of the Orders from Step 1 with the Payments from Step 2. See [Example 3](/functional-examples-of-data#example-3-a-transaction-that-reconciles-the-order-from-example-1-and-the-payment-from-example-2).
    Codat reconciles Payments and Orders using the `id` property, as shown in [Example 3](/functional-examples-of-data#example-3-a-transaction-that-reconciles-the-order-from-example-1-and-the-payment-from-example-2).
-4. Push the [Transactions](/data-model/commerce/-transactions) that represent the commerce service [Payment fees](/xero-mapping-specification#payment-fees) associated with the submitted Payments and Orders. This allows for reconciliation with the corresponding Payments and Orders. See [Example 4](/functional-examples-of-data#example-4-a-transaction-that-reconciles-the-order-from-example-1-and-the-payment-of-commerce-provider-fees-associated-with-this-order).
+4. Push the [Transactions](/commerce-api#/schemas/transactions) that represent the commerce service [Payment fees](/xero-mapping-specification#payment-fees) associated with the submitted Payments and Orders. This allows for reconciliation with the corresponding Payments and Orders. See [Example 4](/functional-examples-of-data#example-4-a-transaction-that-reconciles-the-order-from-example-1-and-the-payment-of-commerce-provider-fees-associated-with-this-order).
    Note that this only applies if you receive processing fees from your SMBs.
    Codat reconciles the Payment fee Transaction with the associated Payments and Orders using the `id` property, as shown in [Example 4](/functional-examples-of-data#example-4-a-transaction-that-reconciles-the-order-from-example-1-and-the-payment-of-commerce-provider-fees-associated-with-this-order).
 
@@ -70,7 +70,7 @@ To map Sales to a merchant’s accounting platform, perform these steps:
 
 ```
 
-To learn how you can use the Order data type and what is represented by each field, read [Orders](/data-model/commerce/-orders).
+To learn how you can use the Order data type and what is represented by each field, read [Orders](/commerce-api#/schemas/orders).
 
 ### Example 2: A Payment associated with the Order from Example 1
 
@@ -90,7 +90,7 @@ To learn how you can use the Order data type and what is represented by each fie
 ```
 This example represents a card payment. Including the payment type in the Payment allows the SMB to reconcile payments of different types with different asset accounts.
 
-To learn how you can use the Payments data type and what is represented by each field, read [Payments](/data-model/accounting/-payments).
+To learn how you can use the Payments data type and what is represented by each field, read [Payments](/accounting-api#/payments).
 
 ### Example 3: A Transaction that reconciles the Order from Example 1 and the Payment from Example 2
 
@@ -113,7 +113,7 @@ To learn how you can use the Payments data type and what is represented by each 
 
 ```
 
-To learn how you can use Transactions data type and what is represented by each field, read [Transactions](/data-model/commerce/-transactions).
+To learn how you can use Transactions data type and what is represented by each field, read [Transactions](/commerce-api#/schemas/transactions).
 
 ### Example 4: A Transaction that reconciles the Order from Example 1 and the Payment of commerce provider fees associated with this Order
 ```json
@@ -136,4 +136,4 @@ To learn how you can use Transactions data type and what is represented by each 
 
 ```
 
-To learn how you can use Transactions data type and what is represented by each field, read [Transactions](/data-model/commerce/-transactions).
+To learn how you can use Transactions data type and what is represented by each field, read [Transactions](/commerce-api#/schemas/transactions).

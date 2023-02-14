@@ -20,7 +20,7 @@ Follow our guide [here](/xero-app-partner-program).
 3. :::
 
 4. You must first have Bank Feeds [configured and allowed](/accounting-xero-setup#configuration-of-bank-feeds).
-5. Then, to create a direct Bank Feed using Xero's Bank Feeds API, you must POST [Bank Transactions](/data-model/accounting/-banktransactions).
+5. Then, to create a direct Bank Feed using Xero's Bank Feeds API, you must POST [Bank Transactions](/accounting-api#/banktransactions).
 6. When successfully pushed to Xero, the bank transactions will appear in the 'Bank Statements' section for the bank account in the Xero UI, with the source 'Bank Feed' as below:
 
 <img src="/img/old/2530dce-bankFeedsDocs.PNG" />
@@ -47,7 +47,7 @@ To see which rate limit is exceeded, please contact Codat Support.
 
 ## Why do all of my items from Xero have their status as _Unknown_?
 
-All [Items](/data-model/accounting/-items) from Xero will have their `itemStatus` mapped as `Unknown` in Codat because an item status is not exposed via Xero's API. If this is a feature you'd like to see made available, please consider voting for <a href="https://developer.xero.com/documentation/api/items/" target="_blank">this feature request on Xero's UserVoice</a>.
+All [Items](/accounting-api#/items) from Xero will have their `itemStatus` mapped as `Unknown` in Codat because an item status is not exposed via Xero's API. If this is a feature you'd like to see made available, please consider voting for <a href="https://developer.xero.com/documentation/api/items/" target="_blank">this feature request on Xero's UserVoice</a>.
 
 ## Can I push discounts to Xero at the invoice level?
 
@@ -81,7 +81,7 @@ For example, the **Statement line** below will result in a bank statement line w
 
 ## Can I push batch payments to Xero?
 
-Yes. To push a batch payment to Xero, you push a [Bill payment](/data-model/accounting/-billpayments) with multiple line items. Pushing a batch payment to Xero will create the following business objects:
+Yes. To push a batch payment to Xero, you push a [Bill payment](/accounting-api#/billpayments) with multiple line items. Pushing a batch payment to Xero will create the following business objects:
 
 - A separate bill payment for each line.
 - An account transaction that links the bill payments together.

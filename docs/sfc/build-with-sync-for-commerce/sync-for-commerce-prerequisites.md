@@ -30,14 +30,14 @@ The following data types are required (and are enabled by default):
 
 #### Accounting
 
-- [Company info](/data-model/accounting/-company)
-- [Accounts](/data-model/accounting/-chartofaccounts)
-- [Tax rates](/data-model/accounting/-taxrates)
-- [Customers](/data-model/accounting/-customers)
-- [Suppliers](/data-model/accounting/-suppliers)
+- [Company info](/accounting-api#/company)
+- [Accounts](/accounting-api#/chartofaccounts)
+- [Tax rates](/accounting-api#/taxrates)
+- [Customers](/accounting-api#/customers)
+- [Suppliers](/accounting-api#/suppliers)
 
 #### Commerce
 
-- [Orders](/data-model/commerce/-orders)
-- [Transactions](/data-model/commerce/-transactions)
-- [Payments](/data-model/commerce/-payments)
+- [Orders](/commerce-api#/schemas/orders)
+- [Transactions](/commerce-api#/schemas/transactions)
+- [Payments](/commerce-api#/schemas/payments)

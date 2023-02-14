@@ -16,7 +16,7 @@ The Sync configuration flow is a white-labelled solution that can be tailored to
 
 To create a branded experience, you can:
 
-- Set up your company name, logo, and icon via the [branding settings](/set-up-link) in the Portal.
+- Set up your company name, logo, and icon via the [branding settings](/auth-flow/customize/customize-link) in the Portal.
 - Update the text fields of the flow  
   Updating the text fields helps ensure that your users clearly understand what they are sharing via the Sync for Commerce flow and which accounts they should choose to ensure it works correctly.
 

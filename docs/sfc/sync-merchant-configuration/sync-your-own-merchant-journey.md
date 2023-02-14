@@ -190,7 +190,7 @@ Such an approach ensures that a full calendar day’s worth of data is synchroni
 :::
 
 :::info
-You can see [Codat’s merchant configuration flow](/implementing-codats-no-code-merchant-configuration) for an example of a UI implementing this functionality.
+You can see [Codat’s merchant configuration flow](/sfc/build-with-sync-for-commerce/implementing-codats-no-code-merchant-configuration) for an example of a UI implementing this functionality.
 :::
 
 3. Update the configuration via the Create Config endpoint:

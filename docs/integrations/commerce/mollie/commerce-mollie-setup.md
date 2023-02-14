@@ -63,4 +63,4 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 Syncing of all commerce data types must be enabled before you can pull commerce transactions from Mollie into Codat.
 
-Follow the steps in [Update commerce sync settings in the Codat Portal](/commerce-sync-settings#update-commerce-sync-settings-in-the-codat-portal). You only need to do this once.
+Follow the steps in [Update commerce sync settings in the Codat Portal](/integrations/commerce/commerce-sync-settings#update-commerce-sync-settings-in-the-codat-portal). You only need to do this once.

@@ -65,8 +65,8 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 "1-2": "The data type you want match results for.
 
 **Accounting source:**
-[bankAccounts](/data-model/accounting/-bankaccounts)
-[accountTransactions](/data-model/accounting/-account-transactions)
+[bankAccounts](/accounting-api#/bankaccounts)
+[accountTransactions](/accounting-api#/account-transactions)
 
 **Banking source:**
 [banking-accounts](/data-model/banking-banking-accounts)
@@ -313,8 +313,8 @@ Submit as route parameter.",
     "1-2": "The data type you want match results for.
 
 **Accounting source:**
-[bankAccounts](/data-model/accounting/-bankaccounts)
-[accountTransactions](/data-model/accounting/-account-transactions)
+[bankAccounts](/accounting-api#/bankaccounts)
+[accountTransactions](/accounting-api#/account-transactions)
 
 **Banking source:**
 [banking-accounts](/data-model/banking-banking-accounts)
@@ -547,8 +547,8 @@ Submit as route parameter.",
 "1-2": "The data type you want match results for.
 
 **Accounting source:**
-[bankAccounts](/data-model/accounting/-bankaccounts)
-[accountTransactions](/data-model/accounting/-account-transactions)
+[bankAccounts](/accounting-api#/bankaccounts)
+[accountTransactions](/accounting-api#/account-transactions)
 
 **Banking source:**
 [banking-accounts](/data-model/banking-banking-accounts)

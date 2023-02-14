@@ -26,7 +26,7 @@ You can push bank transactions to several [supported Sage products](/bank-feeds-
 
 ## Supported data types and operations
 
-Bank feeds are represented as streams of [Bank transactions](/data-model/accounting/-banktransactions) pushed to Codat in chronological order.
+Bank feeds are represented as streams of [Bank transactions](/accounting-api#/banktransactions) pushed to Codat in chronological order.
 
 ## Setup overview
 

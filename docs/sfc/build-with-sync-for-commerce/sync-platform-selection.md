@@ -14,7 +14,7 @@ All the endpoints mentioned in this guide are available in our <a href="https://
 
 Within your application, present your merchant with a list of accounting platforms they can connect to.
 
-On select, your merchant should be [redirected to the Sync configuration flow URL](/implementing-codats-no-code-merchant-configuration) where they will be prompted to authorize access to their accounting data.
+On select, your merchant should be [redirected to the Sync configuration flow URL](/sfc/build-with-sync-for-commerce/implementing-codats-no-code-merchant-configuration) where they will be prompted to authorize access to their accounting data.
 
 :::info Data requirements
 

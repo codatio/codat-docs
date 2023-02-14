@@ -68,7 +68,7 @@ See [here](/authorize-hosted-link#managing-existing-users-with-pending-connectio
 - Require an action to consent to data sharing
 - Provide various support contact details
 
-To read more about different ways to customize Link, read [Customize your Link](/set-up-link).
+To read more about different ways to customize Link, read [Customize your Link](/auth-flow/customize/customize-link).
 
 You can also [build your own authorization journey](/build-your-own-authorization-journey).
 :::
