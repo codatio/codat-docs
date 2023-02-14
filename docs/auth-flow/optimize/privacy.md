@@ -70,7 +70,7 @@ Codat is widely recognized for following a high standard of data protection. Add
 
 If you use Link, you can [enable the logo via Link settings](/auth-flow/customize/customize-link#configure-your-link-flow).
 
-If you are building your own authorization flow, you can embed the logo into your app by following the instructions [here](/build-your-own-authorization-journey#bonus-show-that-your-authentication-flow-is-powered-by-codat).
+If you are building your own authorization flow, you can embed the logo into your app by following the instructions [here](/auth-flow/build/build-your-own-authorization-journey#bonus-show-that-your-authentication-flow-is-powered-by-codat).
 
 ## ⭐ Offer a mutual non-disclosure agreement (NDA)
 

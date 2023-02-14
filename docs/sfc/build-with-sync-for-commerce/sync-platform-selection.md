@@ -234,8 +234,8 @@ Our no-code and low-code flows take care of platform selection and authorization
 
 You can read more about those here:
 
-- [Authorize with Embedded Link](/authorize-embedded-link)
-- [Authorize with Hosted Link](/authorize-hosted-link)
+- [Authorize with Embedded Link](/auth-flow/authorize-embedded-link)
+- [Authorize with Hosted Link](/auth-flow/authorize-hosted-link)
 
 ### 1. Authorize
 
