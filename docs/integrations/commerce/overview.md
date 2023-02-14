@@ -28,7 +28,7 @@ You can connect to the following commerce platforms using our integrations:
 - [WooCommerce](/commerce-woocommerce)
 - [Zettle](/integrations/commerce/zettle/commerce-zettle)
 
-\* _Available through the [Domain Discovery Program](/domain-discovery-program)._
+\* _Available through the [Domain Discovery Program](/integrations/commerce/domain-discovery-program)._
 
 To view and compare commerce data coverage by integration, use the <a  class="external" href="https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&integrationKey=aiwb&dataType=commerce-companyInfo" target="_blank">Data coverage explorer</a> and select the **Commerce API** product.
 

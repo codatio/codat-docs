@@ -11,7 +11,7 @@ Please note, this feature is in beta testing. We encourage you to provide any fe
 
 This endpoint retrieves a paginated list of banking transactions for one or more connections.
 
-Refer to the [Assess reporting structure](/assess-reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/assess/reports/reporting-structure) page for more detail on reports in Assess.
 
 For _Banking account inflows and outflows_, these are the dimensions and measures:
 
@@ -66,7 +66,7 @@ Default is 'false'.",
 "6-3": "Optional",
 "0-0": "**query**",
 "0-1": "_string_
-See [Querying](/querying-1)",
+See [Querying](/using-the-api/querying-1)",
 "0-2": "Codat query string.
 
 It can be empty. If empty, it returns data for all bank accounts for a specific company.",

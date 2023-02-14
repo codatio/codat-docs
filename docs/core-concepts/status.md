@@ -13,7 +13,7 @@ There are three ways to initiate the synchronization of data:
 - Use the API to queue a data synchronization (known as a _dataset_)
 - Use the Sync settings feature in the Codat Portal
 
-By default, full synchronization of each data type marked as _Fetch on first link_ in your [data type settings](/data-sync-settings) will be queued automatically when a company first authorizes itself with Codat.
+By default, full synchronization of each data type marked as _Fetch on first link_ in your [data type settings](/core-conepts/data-type-settings) will be queued automatically when a company first authorizes itself with Codat.
 
 ## Dataset statuses
 

@@ -95,7 +95,7 @@ Check the details in the **Access Confirmation** dialog, and then click **Done**
 
 ## 5. Wait for the connector to complete first link
 
-Once access to QuickBooks has been granted, the connector will process the datasets you have chosen to _fetch on first link_ (see [Data Sync Settings](/data-sync-settings)). Upon completion of the first link, a message will be shown to the user confirming that their data has been synchronised.
+Once access to QuickBooks has been granted, the connector will process the datasets you have chosen to _fetch on first link_ (see [Data Sync Settings](/core-conepts/data-type-settings)). Upon completion of the first link, a message will be shown to the user confirming that their data has been synchronised.
 
 If you have chosen to have your connectors perform a one-time synchronisation, the connector will uninstall itself and set the company status to _deauthorised_.
 

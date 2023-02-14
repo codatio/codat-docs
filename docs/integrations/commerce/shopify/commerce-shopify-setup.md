@@ -105,4 +105,4 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 ## Check the commerce sync settings
 
-All commerce data types must be enabled before you can pull commerce transactions from Shopify to Codat. Follow the steps in [Commerce sync settings](/commerce-sync-settings); you only need to do this once.
+All commerce data types must be enabled before you can pull commerce transactions from Shopify to Codat. Follow the steps in [Commerce sync settings](/integrations/commerce/commerce-sync-settings); you only need to do this once.

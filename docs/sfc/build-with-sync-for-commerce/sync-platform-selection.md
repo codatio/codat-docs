@@ -14,7 +14,7 @@ All the endpoints mentioned in this guide are available in our <a href="https://
 
 Within your application, present your merchant with a list of accounting platforms they can connect to.
 
-On select, your merchant should be [redirected to the Sync configuration flow URL](/implementing-codats-no-code-merchant-configuration) where they will be prompted to authorize access to their accounting data.
+On select, your merchant should be [redirected to the Sync configuration flow URL](/sfc/build-with-sync-for-commerce/implementing-codats-no-code-merchant-configuration) where they will be prompted to authorize access to their accounting data.
 
 :::info Data requirements
 
@@ -58,9 +58,9 @@ Get a list of the integrations you've enabled, as well as the associated metadat
 
 Our available integrations for Sync for Commerce:
 
-- [Xero](/accounting-xero)
-- [QuickBooks Online](/accounting-quickbooksonline)
-- [FreeAgent](/accounting-freeagent)
+- [Xero](integrations/accounting/xero/accounting-xero)
+- [QuickBooks Online](/integrations/accounting/quickbooksonline/accounting-quickbooksonline)
+- [FreeAgent](/integrations/accounting/freeagent/accounting-freeagent)
 
 Call our `GET /integrations` endpoint, querying for enabled integrations.
 
@@ -234,8 +234,8 @@ Our no-code and low-code flows take care of platform selection and authorization
 
 You can read more about those here:
 
-- [Authorize with Embedded Link](/authorize-embedded-link)
-- [Authorize with Hosted Link](/authorize-hosted-link)
+- [Authorize with Embedded Link](/auth-flow/authorize-embedded-link)
+- [Authorize with Hosted Link](/auth-flow/authorize-hosted-link)
 
 ### 1. Authorize
 

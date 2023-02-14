@@ -22,7 +22,7 @@ We recommend you [test your integration](/test-your-dynamics-365-business-centra
 
 During the SMB linking process, the Dynamics 365 Business Central extension package _must_ be successfully installed to the user's account in order for the integration to function. The extension is published by Codat.
 
-For more information, see [Extension installation process](/accounting-dynamics365businesscentral-setup#extension-installation-process) below.
+For more information, see [Extension installation process](/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral-setup#extension-installation-process) below.
 :::
 
 ## Register your application

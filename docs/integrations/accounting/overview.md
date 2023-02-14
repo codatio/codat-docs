@@ -24,7 +24,7 @@ If you've got an existing integration that you'd like to migrate to Codat, we ca
 
 Most accounting software providers require you to register with them before you're able to access data from their platform via Codat. In most cases, this is free and should only take a few minutes.
 
-The specific steps and requirements vary but we've detailed them all in the set up pages below, such as [Set up QuickBooks Online](/accounting-quickbooksonline-setup) and [Set up Xero](/accounting-xero-setup).
+The specific steps and requirements vary but we've detailed them all in the set up pages below, such as [Set up QuickBooks Online](/integrations/accounting/quickbooksonline/accounting-quickbooksonline-setup) and [Set up Xero](integrations/accounting/xero/accounting-xero-setup).
 
 ## Supported accounting software
 
@@ -34,26 +34,26 @@ You can also explore the data types supported by each integration in the interac
 
 ## Cloud
 
-- [ClearBooks](/accounting-clearbooks)
-- [Dynamics 365 Business Central](/accounting-dynamics365businesscentral)
-- [Exact Online (NL and UK)](/accounting-exact)
-- [FreeAgent](/accounting-freeagent)
-- [FreshBooks](/accounting-freshbooks)
-- [KashFlow](/accounting-kashflow)
-- [MYOB AccountRight and Essentials](/accounting-myob)
-- [Oracle NetSuite](/accounting-netsuite)
-- [Pandle](/accounting-pandle)
-- [QuickBooks Online](/accounting-quickbooksonline)
-- [Sage 200cloud](/accounting-sage200)
-- [Sage Business Cloud Accounting](/accounting-sagebusinesscloud) (UK, US, Ireland, Canada, France, Germany, and Spain)
-- [Sage Intacct](/accounting-sage-intacct)
-- [Wave](/accounting-wave)
-- [Xero](/accounting-xero)
-- [Zoho Books](/accounting-zohobooks)
+- [ClearBooks](/integrations/accounting/clearbooks/accounting-clearbooks)
+- [Dynamics 365 Business Central](/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral)
+- [Exact Online (NL and UK)](/integrations/accounting/exact/accounting-exact)
+- [FreeAgent](/integrations/accounting/freeagent/accounting-freeagent)
+- [FreshBooks](/integrations/accounting/freshbooks/accounting-freshbooks)
+- [KashFlow](/integrations/accounting/kashflow/accounting-kashflow)
+- [MYOB AccountRight and Essentials](integrations/accounting/accounting-myob)
+- [Oracle NetSuite](/integrations/accounting/netsuite/accounting-netsuite)
+- [Pandle](/integrations/accounting/clearbooks/accounting-pandle)
+- [QuickBooks Online](/integrations/accounting/quickbooksonline/accounting-quickbooksonline)
+- [Sage 200cloud](/integrations/accounting/accounting-sage200)
+- [Sage Business Cloud Accounting](/integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud) (UK, US, Ireland, Canada, France, Germany, and Spain)
+- [Sage Intacct](/integrations/accounting/sage-intacct/accounting-sage-intacct)
+- [Wave](integrations/accounting/wave/accounting-wave)
+- [Xero](integrations/accounting/xero/accounting-xero)
+- [Zoho Books](/integrations/accounting/zohobooks/accounting-zohobooks)
 
 ## On-premise
 
-- [QuickBooks Desktop](/accounting-quickbooksdesktop)
-- [Sage 50 (UK)](/accounting-sage50)
+- [QuickBooks Desktop](/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop)
+- [Sage 50 (UK)](integrations/accounting/sage50/accounting-sage50)
 
 You can also refer to [Accounting platform keys](/accounting-platform-keys) to view the unique 4-character keys that identify accounting platforms in our APIs.

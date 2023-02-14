@@ -144,7 +144,7 @@ POST /meta/companies/{companyId}/connections
 }
 ]
 }
- 4. After the merchant completes the authorization and grants access to their accounting platform, ensure they are redirected to your data mapping configuration UI by [configuring relevant redirect URLs](/redirect-urls)..
+ 4. After the merchant completes the authorization and grants access to their accounting platform, ensure they are redirected to your data mapping configuration UI by [configuring relevant redirect URLs]((/auth-flow/customize/set-up-redirects)..
 
 ## Data mapping configuration
 
@@ -190,7 +190,7 @@ Such an approach ensures that a full calendar day’s worth of data is synchroni
 :::
 
 :::info
-You can see [Codat’s merchant configuration flow](/implementing-codats-no-code-merchant-configuration) for an example of a UI implementing this functionality.
+You can see [Codat’s merchant configuration flow](/sfc/build-with-sync-for-commerce/implementing-codats-no-code-merchant-configuration) for an example of a UI implementing this functionality.
 :::
 
 3. Update the configuration via the Create Config endpoint:

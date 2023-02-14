@@ -17,15 +17,15 @@ View the full details of the data types that Codat supports for each commerce pl
 
 The following commerce data types are available via Codat's API:
 
-- [Company info](/data-model/commerce/-companyinfo) – details of a linked company, such as their address, phone number, and company registration.
-- [Customers](/data-model/commerce/-customers) – details of customers who have placed orders with the company.
-- [Disputes](/data-model/commerce/-disputes) – details of all transactions that customers have challenged.
-- [Locations](/data-model/commerce/-locations) – details of geographic locations where [product variant inventory](/data-model/commerce/-products#product-variant-inventory) is held.
-- [Orders](/data-model/commerce/-orders) – details of all orders received by a company, including payments, service charges, and refunds.
-- [Payments ](/data-model/commerce/-payments) – amounts reserved against the customer's funding source.
-- [Payment Methods ](/data-model/commerce/-paymentmethods) – represents the payment methods used by customers to make payments.
-- [Products](/data-model/commerce/-products) – details of the products a company has available on the system, including the price and quantity of those products, and product variants (where available).
-- [Transactions](/data-model/commerce/-transactions) – details of all financial transactions recorded in the system.
+- [Company info](/commerce-api#/schemas/companyinfo) – details of a linked company, such as their address, phone number, and company registration.
+- [Customers](/commerce-api#/schemas/customers) – details of customers who have placed orders with the company.
+- [Disputes](/commerce-api#/schemas/disputes) – details of all transactions that customers have challenged.
+- [Locations](/commerce-api#/schemas/locations) – details of geographic locations where [product variant inventory](/commerce-api#/schemas/products#product-variant-inventory) is held.
+- [Orders](/commerce-api#/schemas/orders) – details of all orders received by a company, including payments, service charges, and refunds.
+- [Payments ](/commerce-api#/schemas/payments) – amounts reserved against the customer's funding source.
+- [Payment Methods ](/commerce-api#/schemas/paymentmethods) – represents the payment methods used by customers to make payments.
+- [Products](/commerce-api#/schemas/products) – details of the products a company has available on the system, including the price and quantity of those products, and product variants (where available).
+- [Transactions](/commerce-api#/schemas/transactions) – details of all financial transactions recorded in the system.
 
 ## Integrations setup
 

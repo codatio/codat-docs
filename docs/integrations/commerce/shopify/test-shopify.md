@@ -10,7 +10,7 @@ Test your Shopify integration by pulling commerce data from a Development Store 
 ## Prerequisites
 
 - [Set up your Shopify integration](/commerce-shopify-setup).
-- Update your [Commerce data type settings](/commerce-sync-settings) to enable commerce data types.
+- Update your [Commerce data type settings](/integrations/commerce/commerce-sync-settings) to enable commerce data types.
 
 ## Add a test company
 

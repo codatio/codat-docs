@@ -42,7 +42,7 @@ You'll be taken to your API credentials page with App ID and secret generated. K
 1. Sign in to the [Codat Portal](https://app.codat.io/).
 2. On the navigation bar, select **Settings > Integrations > Commerce**.
 3. Find **Clover**, then select **Set up** to view the **Integration settings** page.
-4. Choose what [type of access to company data](/data-sync-settings) you wish to have for this integration: one-off or continuous.
+4. Choose what [type of access to company data](/core-conepts/data-type-settings) you wish to have for this integration: one-off or continuous.
 5. From the **API keys** page on the Clover developer portal, copy and paste:
 
    - **App ID** value into **Client Id**
@@ -59,6 +59,6 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 ## Check your sync settings in the Codat Portal
 
-If this is your first commerce integration, update your [data type settings](/commerce-sync-settings) to enable commerce data types.
+If this is your first commerce integration, update your [data type settings](/integrations/commerce/commerce-sync-settings) to enable commerce data types.
 
 You're now ready to test your Clover integration, or skip straight to [setting up companies](/other/portal/companies#add-a-new-company) for your customers in the Codat Portal.

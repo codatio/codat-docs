@@ -127,7 +127,7 @@ The user is then redirected to the Codat Link flow, where they can see that the 
 
 The initial synchronization will take several minutes to complete, although larger Sage 50 files (for example, files with a high number of transactions) might take up to 30 minutes.
 
-Depending on the configuration as [documented here](/offline-connectors), the connector will perform one of two possible actions after the initial synchronization is complete. The connector will either:
+Depending on the configuration as [documented here](/integrations/accounting/offline-connectors), the connector will perform one of two possible actions after the initial synchronization is complete. The connector will either:
 
 - Run in the background and automatically synchronize data when new datasets are queued; or
 - Uninstall itself once the initial one-time sync is complete.

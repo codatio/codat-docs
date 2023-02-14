@@ -65,8 +65,8 @@ Keep users engaged by showing them the progress of their connection. Does your s
 - Specify the messaging that appears on the left panel throughout the Link flow according to the 3-part value exchange
 - Link out to FAQs
 
-To read more about different ways to customize Link, read [Customize your Link](/set-up-link).
+To read more about different ways to customize Link, read [Customize your Link](/auth-flow/customize/customize-link).
 
-You can also [build your own authorization journey](/build-your-own-authorization-journey) and get even more control over the SMB connectivity rate.
+You can also [build your own authorization journey](/auth-flow/build/build-your-own-authorization-journey) and get even more control over the SMB connectivity rate.
 
 :::
