@@ -18,11 +18,11 @@ Before Codat can accept the data from your merchant, the merchant must:
 
 Our Sync configuration flow handles this for you.
 
-You can [customize your flow](/customizing-the-sync-configuration-flow) to give your users the best experience.
+You can [customize your flow](/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow) to give your users the best experience.
 
 :::note Use our Swagger to follow this guide
 
-All the endpoints mentioned in this guide are available in our <a href="https://api.codat.io/sync/swagger/" target="_blank">Sync for Commerce Swagger</a>. You can use it to try the API requests from this guide directly in your browser. Before you use Swagger, make sure to [authenticate](https://docs.codat.io/reference/authentication).
+All the endpoints mentioned in this guide are available in our <a href="https://api.codat.io/sync/swagger/" target="_blank">Sync for Commerce Swagger</a>. You can use it to try the API requests from this guide directly in your browser. Before you use Swagger, make sure to [authenticate](/using-the-api/authentication).
 :::
 
 ### 1. Retrieve the Sync configuration flow URL
@@ -90,7 +90,7 @@ Once authorized, the merchant is presented with Codat’s white-labeled configur
 
 :::note Building a branded experience
 
-To provide your merchants with a branded experience, we recommend that you customize your [Sync configuration flow](/customizing-the-sync-configuration-flow), including your logo and primary color.
+To provide your merchants with a branded experience, we recommend that you customize your [Sync configuration flow](/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow), including your logo and primary color.
 :::
 
 ### 4. Allow the merchant to review their configuration
@@ -195,5 +195,5 @@ You're ready to start [pushing commerce data](/sync-data-pushing) to this compan
 
 :::note Customizing the Sync flow
  
-Don't forget to customize your [Sync configuration flow](/customizing-the-sync-configuration-flow).
+Don't forget to customize your [Sync configuration flow](/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow).
 :::

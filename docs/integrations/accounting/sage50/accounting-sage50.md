@@ -42,4 +42,4 @@ See [Sage 50 requirements](sage-50-requirements) to learn about the supported ve
 
 ## Install the connector
 
-See [Install the Sage 50 connector](/installing-the-sage-50-connector) to learn how to set up and enable the connector.
+See [Install the Sage 50 connector]((/integrations/accounting/sage50/installing-the-sage-50-connector) to learn how to set up and enable the connector.

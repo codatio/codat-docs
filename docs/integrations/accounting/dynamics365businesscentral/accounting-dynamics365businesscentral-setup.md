@@ -16,7 +16,7 @@ Before you can access data from customers who use Dynamics 365 Business Central,
 - Add your secure keys to the Codat Portal
 - Enable the Dynamics 365 Business Central integration in the Codat Portal
 
-We recommend you [test your integration](/test-your-dynamics-365-business-central-integration) using a trial Business Central account before production use.
+We recommend you [test your integration](/integrations/accounting/dynamics365businesscentral/test-your-dynamics-365-business-central-integration) using a trial Business Central account before production use.
 
 :::caution The Dynamics 365 Business Central extension must be installed
 

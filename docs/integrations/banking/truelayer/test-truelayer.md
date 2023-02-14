@@ -17,8 +17,8 @@ Then, you can retrieve and check data from the connected bank account.
 
 ## Prerequisites
 
-- [Register for TrueLayer](/register-for-truelayer)
-- [Set up your TrueLayer integration](/set-up-truelayer-2)
+- [Register for TrueLayer](/integrations/banking/truelayer/register-for-truelayer)
+- [Set up your TrueLayer integration](/integrations/banking/truelayer/set-up-truelayer-2)
 
 ## Set up a test company and generate a Link URL
 
@@ -154,4 +154,4 @@ To retrieve account details using the Codat API:
 3. Optional: Use the <a href="https://api.codat.io/swagger/index.html#/BankingTransactions/get_companies__companyId__connections__connectionId__data_banking_transactions" target="blank">GET
    ​/companies​/{companyId}​/connections​/{connectionId}​/data​/banking-transactions</a> endpoint in the same way to retrieve the transactions for each account.
 
-You're now ready to set up and connect your SMB customers. Follow the methods described in [Set up a test company and generate a Link URL](/test-truelayer#section-set-up-a-test-company-and-generate-a-link-url).
+You're now ready to set up and connect your SMB customers. Follow the methods described in [Set up a test company and generate a Link URL](/integrations/banking/truelayer/test-truelayer#section-set-up-a-test-company-and-generate-a-link-url).

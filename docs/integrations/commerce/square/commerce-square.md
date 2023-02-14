@@ -19,4 +19,4 @@ View the coverage of our Square integration in the <a className="external" href=
 
 ## Set up the integration
 
-See [Set up the Square integration](/commerce-square-setup) to learn how to set up and enable the integration.
+See [Set up the Square integration](/integrations/commerce/square/commerce-square-setup) to learn how to set up and enable the integration.

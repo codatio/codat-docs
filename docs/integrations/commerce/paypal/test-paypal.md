@@ -16,7 +16,7 @@ When you've set up your PayPal integration, you're ready to test the authorizati
 
 Before you start to test PayPal, make sure that you have:
 
-- [Set up your PayPal Integration](/set-up-paypal-in-production).
+- [Set up your PayPal Integration](/integrations/commerce/paypal/set-up-paypal-in-production).
 - Updated your [sync settings](/integrations/commerce/commerce-sync-settings) to enable commerce data types.
 
 ## Create PayPal developer account and set up a PayPal sandbox

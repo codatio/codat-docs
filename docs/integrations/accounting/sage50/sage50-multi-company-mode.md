@@ -66,4 +66,4 @@ When syncing all companies for a connector in multi-company mode, you can't stop
 
 However, you can choose to cancel any companies that are yet to begin syncing but are 'queued' to do so, i.e. pending syncs. _Queued syncs_ are represented by an empty cloud icon in the multi-company connector view.
 
-All companies that were due to sync, but not currently syncing at the time of clearing the queue, will not be manually synced. All companies will then continue to sync based on your [Data type settings](/core-conepts/data-type-settings).
+All companies that were due to sync, but not currently syncing at the time of clearing the queue, will not be manually synced. All companies will then continue to sync based on your [Data type settings](/core-concepts/data-type-settings).

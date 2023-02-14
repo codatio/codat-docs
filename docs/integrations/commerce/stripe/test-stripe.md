@@ -13,7 +13,7 @@ Stripe lets you test accounts using [test API keys and test data](https://stripe
 
 ## Prerequisites
 
-Set up the Stripe Test integration by following the tasks in [Set up your Stripe integration](/commerce-stripe-setup).
+Set up the Stripe Test integration by following the tasks in [Set up your Stripe integration](/integrations/commerce/stripe/commerce-stripe-setup).
 
 ## Add a test company
 
@@ -32,7 +32,7 @@ In the <a className="external" href="https://app.codat.io/" target="_blank">Coda
    3. Enter a name for your testing account, then click **Create account**.
 
 3. Add some compatible test data to your account; for example Customers, Products, Disputes, and Payments.
-4. Complete steps 1-6 in [Register as a Stripe Connect platform](/commerce-stripe-setup#register-as-a-stripe-connect-platform) to gain access to your test credentials for the new account.
+4. Complete steps 1-6 in [Register as a Stripe Connect platform](/integrations/commerce/stripe/commerce-stripe-setup#register-as-a-stripe-connect-platform) to gain access to your test credentials for the new account.
 
 ## Connect your test company to your Stripe testing account
 

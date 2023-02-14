@@ -8,7 +8,7 @@ If you want to have more than 25 Xero connections, you'll need to join the **Xer
 
 To join the program, there are a series of requirements your integration must first satisfy. There may be additional use-case-specific requirements.
 
-We've broken down the requirements you need to action based on the [Xero Certification Checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/#required-for-all-integrations). During your App Partner Program, you may use these answers to facilitate your application. [We take care of a number of checkpoints for you](integrations/accounting/xero/xero-app-partner-program#we-take-care-of).
+We've broken down the requirements you need to action based on the [Xero Certification Checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/#required-for-all-integrations). During your App Partner Program, you may use these answers to facilitate your application. [We take care of a number of checkpoints for you](/integrations/accounting/xero/xero-app-partner-program#we-take-care-of).
 
 :::caution Use-cases
 
@@ -65,7 +65,7 @@ Link to power your button to connect - `Connection.linkURL`",
 
 Codat provides detailed error messaging including status codes and the details of the error.
 
-Your UI should communicate any errors to the SMB. Details on the types of error messages provided by Codat is available [here](https://docs.codat.io/reference/errors).
+Your UI should communicate any errors to the SMB. Details on the types of error messages provided by Codat is available [here](/using-the-api/errors).
 
 ### 7. Scopes
 

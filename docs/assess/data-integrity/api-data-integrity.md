@@ -65,8 +65,8 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 [accountTransactions](/data-model/accounting/)
 
 **Banking source:**
-[banking-accounts](/data-model/banking)
-[banking-transactions](/data-model/banking)|Required|
+[banking-accounts](/banking-api#/schemas/banking-accounts)
+[banking-transactions](/banking-api#/schemas/banking-transactions)
 
 ### Data model
 
@@ -300,7 +300,8 @@ Then you would call each of the _Summaries endpoints_ with (url-escaped) query=d
 
 ## Details
 
-This endpoint exposes match results record by record for a given data type, filtered based on a query string in the same way as summary results. The results are [paginated](/using-the-api/pagination) and support [ordering](//using-the-api/ordering-results), following the same conventions as our other data endpoints.
+
+This endpoint exposes match results record by record for a given data type, filtered based on a query string in the same way as summary results. The results are [paginated](/using-the-api/pagination) and support [ordering](/using-the-api/ordering-results), following the same conventions as our other data endpoints.
 
 The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__assess_dataTypes__dataType__dataIntegrity_details" target="_blank">Swagger</a> under **Assess**.
 

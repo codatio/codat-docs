@@ -22,4 +22,4 @@ View the coverage of our Lightspeed Restaurant integration in the <a className="
 
 ## Set up the integration
 
-See [Set up the Lightspeed Restaurant integration](/commerce-lightspeed-k-setup) to learn how to set up and enable the integration.
+See [Set up the Lightspeed Restaurant integration](/integrations/commerce/lightspeed-k/commerce-lightspeed-k-setup) to learn how to set up and enable the integration.

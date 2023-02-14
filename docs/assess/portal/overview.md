@@ -9,7 +9,7 @@ Assess in the Portal leverages Codat APIs to produce features that serve data on
 
 To benefit from all of the features of Assess, a company should be linked to accounting, banking and commerce data sources. Explore our [How to get started](/assess/get-started) guide.
 
-The categorized Profit and Loss, and Balance Sheet showcase the power of the [Categories](/categorization-of-accounts) feature which standardizes bespoke data across SMEs. After the data is standardized, meaningful insights and measurements are produced for financial performance.
+The categorized Profit and Loss, and Balance Sheet showcase the power of the [Categories](/assess/categories) feature which standardizes bespoke data across SMEs. After the data is standardized, meaningful insights and measurements are produced for financial performance.
 
 **Data Match**
 
@@ -175,11 +175,11 @@ If you are a developer, and you are looking to reproduce the outputs of this sec
 
 ## Commerce
 
-The Commerce page consists of the sales analysis and key indicators of merchant health. The [Commerce Metrics](/assess-assess/metrics/commerce/overview) endpoints are used to generate the graphs and metrics displayed on this page.
+The Commerce page consists of the sales analysis and key indicators of merchant health. The [Commerce Metrics](/assess/metrics/commerce/overview) endpoints are used to generate the graphs and metrics displayed on this page.
 
 ### Sales
 
-The _Sales_ section provides a revenue graph generated from the [Revenue](/assess-commerce-metrics-api-revenue) endpoint, and displays the average order value for the date range selected. The dropdown to the right of the graph gives you the option to map _Revenue_ (represented as a currency) or _Revenue growth_ (represented as a percent). Hovering over the graph displays a tooltip that contains information about the point plotted for that date.
+The _Sales_ section provides a revenue graph generated from the [Revenue](/assess/metrics/commerce/api-revenue) endpoint, and displays the average order value for the date range selected. The dropdown to the right of the graph gives you the option to map _Revenue_ (represented as a currency) or _Revenue growth_ (represented as a percent). Hovering over the graph displays a tooltip that contains information about the point plotted for that date.
 
 ![Revenue and revenue growth graphs based on selection criteria](/img/old/4d18153-Sales_1.png)
 
@@ -191,11 +191,11 @@ The Merchant Health section displays customer information. You can select graphs
 
 The following metrics are displayed as follows:
 
-- [New vs. existing customers](/assess-commerce-metrics-api-customer-retention) (graph)
-- [Orders](/assess-commerce-metrics-api-orders) vs. [Refunds](/assess-commerce-metrics-api-refunds) (graph)
-- [Refund rate](/assess-commerce-metrics-api-refunds) (pill)
-- [Customer retention](/assess-commerce-metrics-api-customer-retention) (pill)
-- [Lifetime value](/assess-commerce-metrics-api-lifetime-value) (pill)
+- [New vs. existing customers](/assess/metrics/commerce/api-customer-retention) (graph)
+- [Orders](/assess/metrics/commerce/api-orders) vs. [Refunds](/assess/metrics/commerce/api-refunds) (graph)
+- [Refund rate](/assess/metrics/commerce/api-refunds) (pill)
+- [Customer retention](/assess/metrics/commerce/api-customer-retention) (pill)
+- [Lifetime value](/assess/metrics/commerce/api-lifetime-value) (pill)
 
 ## Banking
 
@@ -217,7 +217,7 @@ The _balance_ and the _Account limits_ displayed are aggregate views for the sel
 
 This graph displays when chosen in the _Select graph_ dropdown. Hovering over the graph displays a tooltip containing the total account balance for the selected bank accounts.
 
-The graph is produced from responses from the [Banking account balances](/assess-banking-account-balances) and [Banking transactions](/data-model/banking-banking-transactions) a endpoints.
+The graph is produced from responses from the [Banking account balances](/assess-banking-account-balances) and [Banking transactions](//banking-api#/schemas/banking-transactions) a endpoints.
 
 Refer to the [formulas](/docs/assess-banking#banking-formulas) for more information about how current balances are calculated for each month.
 
@@ -227,7 +227,7 @@ Refer to the [formulas](/docs/assess-banking#banking-formulas) for more informat
 
 This graph displays when chosen in the _Select graph_ dropdown. Hovering over the graph displays a tooltip containing the total inflows and outflows for the selected bank accounts for that month.
 
-The graph is produced from the [Banking transactions](/data-model/banking-banking-transactions) endpoint response.
+The graph is produced from the [Banking transactions](//banking-api#/schemas/banking-transactions) endpoint response.
 
 ![A bar graph showing inflows vs outflows based on selection criteria](/img/old/2a880ed-Inflows_1.png)
 

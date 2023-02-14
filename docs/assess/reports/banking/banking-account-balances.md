@@ -67,7 +67,7 @@ Default is 'false'.",
     "6-3": "Optional",
     "0-0": "**query**",
     "0-1": "*string*
-See [Querying](/using-the-api/querying-1)",
+See [Querying](/using-the-api/querying)",
     "0-2": "Codat query string.
 
 It can be empty. If empty, it returns data for all bank accounts for a specific company.",

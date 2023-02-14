@@ -7,7 +7,7 @@ updatedAt: "2023-01-06T16:39:29.498Z"
 
 Set up the Mollie integration to access commerce data from customers who use Mollie to accept payments.
 
-The following page explains how to set up both the Test and the Production integrations. [Test your Mollie integration](/commerce-mollie-test) explains how to use the Test integration to pull sample data into Codat.
+The following page explains how to set up both the Test and the Production integrations. [Test your Mollie integration](/integrations/commerce/mollie/commerce-mollie-test) explains how to use the Test integration to pull sample data into Codat.
 
 ## Supported environments
 

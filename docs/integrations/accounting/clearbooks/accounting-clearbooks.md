@@ -15,4 +15,4 @@ View the coverage of our Clear Books integration in the <a className="external" 
 
 ## Set up the integration
 
-See [Set up the Clear Books integration](/integrations/accounting/clearbooks-setup) to learn how to set up and enable the integration.
+See [Set up the Clear Books integration](/integrations/accounting/clearbooks/clearbooks-setup) to learn how to set up and enable the integration.

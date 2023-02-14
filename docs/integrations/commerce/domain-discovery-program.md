@@ -27,7 +27,7 @@ Be aware of the following information before joining the Domain Discovery Progra
 
 2. In exchange for access to the integrations within the scope of the program, Codat expects participants to commit to providing feedback on their use of the integration, including: their usage of the data; any logic or mappings applied to the data; and, where appropriate, code snippets and samples.
 
-3. After Codat has completed the domain discovery phase for a particular integration in the program and implemented a standardized domain data model, participants will be asked to use the standardized data model (data types) instead of the proxy endpoint. The integration(s) will be retired from the program, subject to Codat's [change policy](/change-policy) for breaking changes.
+3. After Codat has completed the domain discovery phase for a particular integration in the program and implemented a standardized domain data model, participants will be asked to use the standardized data model (data types) instead of the proxy endpoint. The integration(s) will be retired from the program, subject to Codat's [change policy](/using-the-api/change-policy) for breaking changes.
 
 :::caution Support levels
 
@@ -51,10 +51,10 @@ We're exploring the following domains within the scope of the Domain Discovery P
 "0-2": "_Active_. Contact your Account Manager or Account Executive.",
 "1-2": "_Planned Q1 2023_. Contact your Account Manager or Account Executive to register your interest.",
 "2-2": "_Planned Q1 2023_. Contact your Account Manager or Account Executive to register your interest.",
-"0-1": "\* [Recurly](/commerce-recurly)
+"0-1": "\* [Recurly](/integrations/commerce/recurly/commerce-recurly)
 
-- [Chargebee](/commerce-chargebee)
-- [Chargify](/commerce-chargify),"
+- [Chargebee](/integrations/commerce/chargebee/commerce-chargebee)
+- [Chargify](/integrations/commerce/chargify/commerce-chargify),"
   },
   "cols": 3,
   "rows": 3

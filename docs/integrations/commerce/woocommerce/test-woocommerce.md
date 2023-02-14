@@ -7,7 +7,7 @@ updatedAt: "2022-10-20T09:28:19.856Z"
 
 Codat recommends that you test your integration before sending Link URLs to customers.
 
-When you've [set up and enabled WooCommerce](/commerce-woocommerce-setup), you're ready to test the authorization process for your integration, and to retrieve sample commerce data. You'll need to:
+When you've [set up and enabled WooCommerce](/integrations/commerce/woocommerce/commerce-woocommerce-setup), you're ready to test the authorization process for your integration, and to retrieve sample commerce data. You'll need to:
 
 - Set up a test company in the <a href="https://app.codat.io" target="_blank"> Codat Portal</a>.
 - Generate a Link URL to connect your test company to your online store.
@@ -34,7 +34,7 @@ Before you start to test WooCommerce, make sure that you've:
 1. On the **Companies** page of the Codat Portal, find the test company that you created earlier.
 2. Next to the company name, select **Request Data**.
 3. The **Link URL** dialog box is displayed.
-4. Paste the Link URL into your browser, which takes you to [Link](/link).
+4. Paste the Link URL into your browser, which takes you to [Hosted Link](/auth-flow/authorize-hosted-link).
 5. Choose **WooCommerce**, enter the test store URL, and follow the onscreen instructions.
 
 ## Retrieve sample commerce data

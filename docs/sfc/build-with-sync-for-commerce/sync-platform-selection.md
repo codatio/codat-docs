@@ -7,7 +7,7 @@ updatedAt: "2022-11-25T09:42:09.130Z"
 
 :::info Use our Swagger to follow along
 
-All the endpoints mentioned in this guide are available in our <a href="https://api.codat.io/sync/swagger" target="_blank">Sync for Commerce Swagger</a>. You can use it to try the API requests from this guide directly in your browser. Before you use Swagger, make sure to [authenticate](https://docs.codat.io/reference/authentication).
+All the endpoints mentioned in this guide are available in our <a href="https://api.codat.io/sync/swagger" target="_blank">Sync for Commerce Swagger</a>. You can use it to try the API requests from this guide directly in your browser. Before you use Swagger, make sure to [authenticate](/using-the-api/authentication).
 :::
 
 ## Build a platform selection flow
@@ -58,7 +58,7 @@ Get a list of the integrations you've enabled, as well as the associated metadat
 
 Our available integrations for Sync for Commerce:
 
-- [Xero](integrations/accounting/xero/accounting-xero)
+- [Xero](/integrations/accounting/xero/accounting-xero)
 - [QuickBooks Online](/integrations/accounting/quickbooksonline/accounting-quickbooksonline)
 - [FreeAgent](/integrations/accounting/freeagent/accounting-freeagent)
 

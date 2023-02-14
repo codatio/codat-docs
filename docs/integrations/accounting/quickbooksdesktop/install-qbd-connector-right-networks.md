@@ -18,16 +18,16 @@ Your organization must first be approved as a Right Networks independent softwar
 
 To meet Right Networks requirements, you must have a **minimum of 10 users for your application** across one or more Companies in Codat.
 
-Your SMB customers, who will share their data through the integration, must use one of the [supported hosted products](/install-qbd-connector-right-networks#supported-hosted-products) in order to install the connector.
+Your SMB customers, who will share their data through the integration, must use one of the [supported hosted products](/integrations/accounting/quickboksdesktop/install-qbd-connector-right-networks#supported-hosted-products) in order to install the connector.
 
 ## Setup overview
 
 As a Codat client, you need to complete the following tasks to enable your SMB customers to install our QBD connector on Right Networks hosted instances.
 
-1. Check your SMB customers are using a [supported hosted product](/install-qbd-connector-right-networks#supported-packages).
-2. [Customize branding, upload installation files, and test your implementation](/install-qbd-connector-right-networks#customize-branding-upload-app-installation-files-and-test-your-implementation).
-3. [Enable the QBD integration](/install-qbd-connector-right-networks#enable-the-qbd-integration) in the Codat Portal.
-4. If you're using Link, [enable the Right Networks installation option](/install-qbd-connector-right-networks#optional-enable-right-networks-installation-for-your-smb-customers) in the Link flow.
+1. Check your SMB customers are using a [supported hosted product](/integrations/accounting/quickboksdesktop/install-qbd-connector-right-networks#supported-packages).
+2. [Customize branding, upload installation files, and test your implementation](/integrations/accounting/quickboksdesktop/install-qbd-connector-right-networks#customize-branding-upload-app-installation-files-and-test-your-implementation).
+3. [Enable the QBD integration](/integrations/accounting/quickboksdesktop/install-qbd-connector-right-networks#enable-the-qbd-integration) in the Codat Portal.
+4. If you're using Link, [enable the Right Networks installation option](/integrations/accounting/quickboksdesktop/install-qbd-connector-right-networks#optional-enable-right-networks-installation-for-your-smb-customers) in the Link flow.
 
 :::note Options for SMB authentication
 
@@ -36,9 +36,9 @@ Instead of using Link, you can provide your SMB customers with separate instruct
 
 Next, your SMB customers must do the following:
 
-1. [Connect to QBD and request connector installation](/install-qbd-connector-right-networks#smb-customer-connects-to-qbd-and-requests-connector-installation).
-2. [Connect to QuickBooks Desktop on Right Networks](/install-qbd-connector-right-networks#smb-customer-connect-to-quickbooks-desktop-on-right-networks).
-3. [Open QBD on Right Networks](/install-qbd-connector-right-networks#smb-customer-open-qbd-on-right-networks).
+1. [Connect to QBD and request connector installation](/integrations/accounting/quickboksdesktop/install-qbd-connector-right-networks#smb-customer-connects-to-qbd-and-requests-connector-installation).
+2. [Connect to QuickBooks Desktop on Right Networks](/integrations/accounting/quickboksdesktop/install-qbd-connector-right-networks#smb-customer-connect-to-quickbooks-desktop-on-right-networks).
+3. [Open QBD on Right Networks](/integrations/accounting/quickboksdesktop/install-qbd-connector-right-networks#smb-customer-open-qbd-on-right-networks).
 
 ## Supported hosted products
 

@@ -5,7 +5,7 @@ createdAt: "2022-09-21T08:52:47.797Z"
 updatedAt: "2023-01-06T16:38:03.123Z"
 ---
 
-Set up the [LightSpeed Restaurant](/commerce-lightspeed-k) integration to retrieve sales and order information from your customers who use Lightspeed Restaurant - K Series to run their food or hospitality business.
+Set up the [LightSpeed Restaurant](/integrations/commerce/lightspeed-k/commerce-lightspeed-k) integration to retrieve sales and order information from your customers who use Lightspeed Restaurant - K Series to run their food or hospitality business.
 
 Before you can use the integration, you'll need to join the LightSpeed partner programme to get access to their APIs. You can read more about the program on their <a className="external" href="https://www.lightspeedhq.co.uk/partners/" target="_blank">website</a>.
 

@@ -14,13 +14,13 @@ Sync for Commerce must be enabled for your account. You can enable products in t
 
 ### Authentication
 
-[Authenticate](https://docs.codat.io/reference/authentication) with the Codat API using your API key.
+[Authenticate](/using-the-api/authentication) with the Codat API using your API key.
 
 ### Enable a supported platform
 
 You need to set up one or more of the supported accounting platforms:
 
-- [Xero](integrations/accounting/xero/accounting-xero)
+- [Xero](/integrations/accounting/xero/accounting-xero)
 - [QuickBooks Online](/integrations/accounting/quickbooksonline/accounting-quickbooksonline)
 - [FreeAgent](/integrations/accounting/freeagent/accounting-freeagent)
 

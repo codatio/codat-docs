@@ -13,7 +13,7 @@ View the coverage of our FreshBooks integration in the <a className="external" h
 
 ## Set up the integration
 
-See [Set up the FreshBooks integration](/integrations/accounting/freshbooks-setup) to learn how to set up and enable the integration.
+See [Set up the FreshBooks integration](/integrations/accounting/freshbooks/freshbooks-setup) to learn how to set up and enable the integration.
 
 ## Supported versions
 

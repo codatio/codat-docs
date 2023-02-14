@@ -18,7 +18,7 @@ Supported metrics:
 7. Working capital
 8. Fixed service coverage charge
 
-The Financial Metrics API leverages the [Categories](/categorization-of-accounts) feature, which maps each business's bespoke chart of accounts to a single standard chart of accounts across all of your small business customers. The Financial Metrics API is reliant on complete and accurate categorizations to produce meaningful metrics.
+The Financial Metrics API leverages the [Categories](/assess/categories) feature, which maps each business's bespoke chart of accounts to a single standard chart of accounts across all of your small business customers. The Financial Metrics API is reliant on complete and accurate categorizations to produce meaningful metrics.
 
 Any metric (including metric inputs) that have null/blank values means that data couldn't be computed.
 
@@ -26,7 +26,7 @@ Any metric (including metric inputs) that have null/blank values means that data
 
 This endpoint retrieves all the available financial performance metrics held against a company, over one or more periods of time.
 
-View the Financial Metrics [formulas](/assess-financial-metrics#financial-metrics-formulas).
+View the Financial Metrics [formulas](/assess/metrics/accounting/api-financial-metrics#financial-metrics-formulas).
 
 The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_financialMetrics" target="_blank">Swagger</a> under **Assess**.
 

@@ -18,7 +18,7 @@ View the coverage of our PrestaShop integration in the <a className="external" h
 
 ## Set up the integration
 
-See [Set up the PrestaShop integration](/set-up-prestashop-in-production) to learn how to set up and enable the integration.
+See [Set up the PrestaShop integration](/integrations/commerce/prestashop/set-up-prestashop-in-production) to learn how to set up and enable the integration.
 
 ## Configuration requirements
 

@@ -125,7 +125,7 @@ POST /meta/companies/{companyId}/connections
 ```
 **Request body**: `“key”`, for example `“gbol”` for Xero
 
-3. From the response, identify the `linkUrl` value for the accounting platform. Direct the merchants to this linkUrl to enable them to grant access to their accounting platform. As soon as the access is provided, Codat automatically pulls [all the accounting data required to enable the merchant configuration](/sync-commerce/overview#sync-for-commerce-prerequisistes).
+3. From the response, identify the `linkUrl` value for the accounting platform. Direct the merchants to this linkUrl to enable them to grant access to their accounting platform. As soon as the access is provided, Codat automatically pulls [all the accounting data required to enable the merchant configuration](/sfc/overview#sync-for-commerce-prerequisistes).
 
 ```
 

@@ -25,7 +25,7 @@ For Lifetime Value, these are the dimensions and measures:
 - Is structured based on dimension (index =“0”), i.e. Period.
 - The endpoint will return metrics on **lifetime value** for each period.
 
-View the Lifetime Value [formulas](/assess-commerce-metrics#what-metrics-are-available).
+View the Lifetime Value [formulas](/assess/metrics/commerce/overview#what-metrics-are-available).
 
 The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_commerceMetrics_lifetimeValue" target="_blank">Swagger</a> under **Assess**.
 

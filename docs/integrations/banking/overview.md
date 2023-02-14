@@ -17,8 +17,8 @@ For testing and evaluation, you can use our Banking Sandbox integration to explo
 
 ## Access additional banking data through proxy
 
-You can [access additional banking data types](/proxy-access-banking-data) through a proxy.
+You can [access additional banking data types](/integrations/banking/proxy-access-banking-data) through a proxy.
 
 ## Set up a banking integration
 
-You can choose to enable either [Plaid](/banking-plaid), [TrueLayer](/banking-truelayer), or [Basiq](/banking-basiq) (AU and NZ clients only). You'll need to register with your chosen provider before you can access banking data from their platform via our integration.
+You can choose to enable either [Plaid](/banking-plaid), [TrueLayer](/integrations/banking/basiq/banking-truelayer), or [Basiq](/integrations/banking/basiq/banking-basiq-setup) (AU and NZ clients only). You'll need to register with your chosen provider before you can access banking data from their platform via our integration.

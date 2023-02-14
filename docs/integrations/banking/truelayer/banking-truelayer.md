@@ -18,7 +18,7 @@ The following banking data is available through the integration:
 - [Banking transactions](/banking-api#/schemas/banking-transactions)
 - [Banking transaction categories](/banking-api#/schemas/banking-transaction-categories)
 
-Before you can set up the integration, you need to [register with TrueLayer](/register-for-truelayer) either directly or through Codat.
+Before you can set up the integration, you need to [register with TrueLayer](/integrations/banking/truelayer/register-for-truelayer) either directly or through Codat.
 
 :::caution Data synced from TrueLayer might be limited
 
