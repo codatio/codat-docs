@@ -35,14 +35,14 @@ Our Zoho Books integration works within these limits to minimize the performance
 
 ### API daily rate limit
 
-The _API daily rate limit_ lets organizations make a limited number of API calls to Zoho Books per day (up to 2,500 or 500 per user whichever is lower);
+The _API daily rate limit_ lets organizations make a limited number of API calls to Zoho Books per day (up to 2,500 or 500 per user, whichever is lower);
 
-If the cumulative number of API calls to the organisation you are trying to link to exceeds the daily limit, you might encounter the following issues:
+If the cumulative number of API calls to the organization you are trying to link to exceeds the daily limit, you might encounter the following issues:
 
 - **Queued data fetches:** these are included in the next day's limit.
 - **Failed data fetches:** these are indicated in Codat as fetch errors.
 
-The daily rate is shared between all API requests made to an organisation, from all users, and any service providers such as Codat, that can access data through the Zoho Books API.
+The daily rate is shared between all API requests made to an organization from all users, and any service providers, such as Codat, that can access data through the Zoho Books API.
 
 ### Per-minute rate limit
 
