@@ -26,7 +26,7 @@ You can override this behavior by appending the `link.showSandboxIntegrations` q
 
 Select which types of integrations (accounting, banking, or commerce) you'd like customers to connect. You can make each integration type optional if you want your customers to be able to skip sharing it.
 
-Before enabling these, you need to [set up one or more integrations](/core-integrations) for each integration type. Otherwise, the Link UI will display a blank 'Select your platform' page when Companies attempt to link their accounting, banking, or commerce data.
+Before enabling these, you need to [set up one or more integrations](/core-concepts/integrations) for each integration type. Otherwise, the Link UI will display a blank 'Select your platform' page when Companies attempt to link their accounting, banking, or commerce data.
 
 For the Business documents integration type, you need to enable it in **Settings > Integrations > Other integrations**.
 
