@@ -22,7 +22,7 @@ In addition to the mandatory **companyId**, you can also include these parameter
 
 | Parameter       	| Type            	| Description                                                                                 	| Required 	|
 |-----------------	|-----------------	|---------------------------------------------------------------------------------------------	|----------	|
-| **reportDate**     	| _string_<br>See [Date]()</br> 	| YYYY-MM-DD.<br>Datetime or Date (inclusive of the whole day).</br>                                   	| Optional 	|
+| **reportDate**     	| _string_<br>See Date</br> 	| YYYY-MM-DD.<br>Datetime or Date (inclusive of the whole day).</br>                                   	| Optional 	|
 | **numberOfPeriods** 	| _integer_         	| The number of periods to return.<br>If left blank, will return the latest available 12 months.</br>  	| Optional 	|
 
 ## Data model
@@ -36,7 +36,7 @@ The response structure is split into two sections: _Report Info_ and _Report Ite
 | **name**          	| _string_        	| “EnhancedBalanceSheetAccounts”                                        	|
 | **companyName**   	| _string_          	| Name of the company queried.                                          	|
 | **currency**    	| _string_          	| Currency of the Balance Sheet.                                        	|
-| **generatedDate** 	| _string_<br>See [Date]()</br>  	| Returns the YYYY-MM-DD datetime of report generation. <br>This is in UTC.</br>  	|
+| **generatedDate** 	| _string_<br>See Date</br>  	| Returns the YYYY-MM-DD datetime of report generation. <br>This is in UTC.</br>  	|
 
 ### Report Items
 
