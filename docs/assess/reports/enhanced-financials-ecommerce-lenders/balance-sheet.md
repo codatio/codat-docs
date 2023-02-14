@@ -1,6 +1,5 @@
 ---
 title: "Enhanced Balance Sheet for eCommerce lenders"
-slug: "balance-sheet-ecommerce-lenders"
 description: "Endpoint reference to produce a fully categorized balance sheet using the revised categorization version for eCommerce lenders"
 createdAt: "2023-01-25T13:57:24.867Z"
 updatedAt: "2023-01-27T15:26:01.665Z"
