@@ -36,8 +36,8 @@ module.exports = [
         items: [
           "integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral",
           "integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral-setup",
-          "integrations/accounting/dynamics365businesscentral/integrations/accounting/dynamics365businesscentral/test-your-dynamics-365-business-central-integration",
-          "integrations/accounting/dynamics365businesscentral/integrations/accounting/dynamics365businesscentral/accounting-dynamics-365-business-central-reference",
+          "integrations/accounting/dynamics365businesscentral/test-your-dynamics-365-business-central-integration",
+          "integrations/accounting/dynamics365businesscentral/accounting-dynamics-365-business-central-reference",
         ],
       },
       {
