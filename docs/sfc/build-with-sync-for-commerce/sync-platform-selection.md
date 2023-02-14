@@ -60,7 +60,7 @@ Our available integrations for Sync for Commerce:
 
 - [Xero](integrations/accounting/xero/accounting-xero)
 - [QuickBooks Online](/accounting-quickbooksonline)
-- [FreeAgent](/accounting-freeagent)
+- [FreeAgent](integrations/accounting/accounting-freeagent)
 
 Call our `GET /integrations` endpoint, querying for enabled integrations.
 

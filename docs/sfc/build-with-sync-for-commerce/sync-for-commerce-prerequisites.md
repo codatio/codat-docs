@@ -22,7 +22,7 @@ You need to set up one or more of the supported accounting platforms:
 
 - [Xero](integrations/accounting/xero/accounting-xero)
 - [QuickBooks Online](/accounting-quickbooksonline)
-- [FreeAgent](/accounting-freeagent)
+- [FreeAgent](integrations/accounting/accounting-freeagent)
 
 ### Required data types
 
