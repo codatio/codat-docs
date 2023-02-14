@@ -5,7 +5,7 @@ createdAt: "2020-02-25T17:44:15.137Z"
 updatedAt: "2022-12-16T16:54:44.252Z"
 ---
 
-When you've [set up and enabled Plaid](/banking-plaid-setup), you can test your integration with Plaid's sandbox. You'll need to:
+When you've [set up and enabled Plaid](/integrations/banking/plaid/banking-plaid-setup), you can test your integration with Plaid's sandbox. You'll need to:
 
 - Set up a test company.
 - Generate a Link URL to connect your test company to Plaid's sandbox.

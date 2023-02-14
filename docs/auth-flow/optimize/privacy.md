@@ -89,6 +89,6 @@ _“Through the wonders of API integration, we can instantly underwrite [custome
 
 To read more about different ways to customize Link, read [Customize your Link](/auth-flow/customize/customize-link).
 
-You can also [build your own authentication journey](/build-your-own-authentication-journey).
+You can also [build your own authentication journey](/auth-flow/build/build-your-own-authentication-journey).
 
 :::

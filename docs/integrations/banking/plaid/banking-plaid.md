@@ -43,7 +43,7 @@ The following table shows the Plaid Products required for each of Codat's bankin
 "1-0": "[Bank transactions](/banking-api#/schemas/banking-transactions)",
 "1-1": "_ Transactions",
 "1-2": "",
-"0-0": "[Bank accounts](//banking-api#/schemas/banking-accounts)",
+"0-0": "[Bank accounts](/banking-api#/schemas/banking-accounts)",
 "0-1": "_ Auth
 
 - Identity

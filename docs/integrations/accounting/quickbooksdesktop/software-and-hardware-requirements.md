@@ -62,7 +62,7 @@ The connector will not run on Mac OS.
 
 Our QuickBooks Desktop Connector is designed to work in single-tenant environments only, where one Windows user logs on to the same computer they use to access QuickBooks Desktop.
 
-[Installation on Right Networks hosted instances](/integrations/accounting/quickboksdesktop/install-qbd-connector-right-networks) is currently in beta.
+[Installation on Right Networks hosted instances](/integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks) is currently in beta.
 :::
 
 ## Hardware requirements

@@ -112,16 +112,16 @@ module.exports = [
     collapsed: true,
     items: ["data-model/bank-feeds/bank-feeds", ...paths.bankFeeds, ,],
   },
-  // {
-  //   type: "category",
-  //   label: "Shared",
-  //   collapsed: true,
-  //   items: [
-  //     "data-model/shared/datamodel-shared-country",
-  //     "data-model/shared/datamodel-shared-currency",
-  //     "data-model/shared/datamodel-shared-currencyrate",
-  //     "data-model/shared/datamodel-shared-date",
-  //     "data-model/shared/valid-data-type-links",
-  //   ],
-  // },
+//  {
+ //   type: "category",
+  //  label: "Shared",
+  //  collapsed: true,
+ //   items: [
+      //"data-model/shared/datamodel-shared-country",
+      // "/codat-api#/schemas/currency",
+      // "/codat-api#/schemas/currencyrate",
+      // "/codat-api#/schemas/datetime",
+      //"data-model/shared/valid-data-type-links",
+ //   ],
+//  },
 ];
