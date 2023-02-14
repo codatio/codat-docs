@@ -7,7 +7,7 @@ updatedAt: "2022-11-16T16:43:05.341Z"
 
 Codat uses the Orders, Payments, and Transactions data you push to us to represent it in the SMB’s accounting platform.
 
-We include some examples of how the data is represented **in the accounting platforms’ UI** in our [Xero mapping specification](integrations/accounting/xero/xero-mapping-specification) and [QuickBooks Online mapping specification](/qbo-mapping-specification).
+We include some examples of how the data is represented **in the accounting platforms’ UI** in our [Xero mapping specification](/integrations/accounting/xero/xero-mapping-specification) and [QuickBooks Online mapping specification](/qbo-mapping-specification).
 
 Our [Sync for Commerce Postman collection](https://postman.codat.io/#166a0b48-9f98-47f6-91cd-0986a3de626f) also includes some sample Orders, Payments, and Transactions `POST` requests that you can use as an example.
 
@@ -30,7 +30,7 @@ To map Sales to a merchant’s accounting platform, perform these steps:
 2. Push the [Payments](/commerce-api#/schemas/payments) associated with the Orders from Step 1. See [Example 2](/functional-examples-of-data#example-2-a-payment-associated-with-the-order-from-example-1).
 3. Push the [Transactions](/commerce-api#/schemas/transactions) that will enable reconciliation of the Orders from Step 1 with the Payments from Step 2. See [Example 3](/functional-examples-of-data#example-3-a-transaction-that-reconciles-the-order-from-example-1-and-the-payment-from-example-2).
    Codat reconciles Payments and Orders using the `id` property, as shown in [Example 3](/functional-examples-of-data#example-3-a-transaction-that-reconciles-the-order-from-example-1-and-the-payment-from-example-2).
-4. Push the [Transactions](/commerce-api#/schemas/transactions) that represent the commerce service [Payment fees](integrations/accounting/xero/xero-mapping-specification#payment-fees) associated with the submitted Payments and Orders. This allows for reconciliation with the corresponding Payments and Orders. See [Example 4](/functional-examples-of-data#example-4-a-transaction-that-reconciles-the-order-from-example-1-and-the-payment-of-commerce-provider-fees-associated-with-this-order).
+4. Push the [Transactions](/commerce-api#/schemas/transactions) that represent the commerce service [Payment fees](/integrations/accounting/xero/xero-mapping-specification#payment-fees) associated with the submitted Payments and Orders. This allows for reconciliation with the corresponding Payments and Orders. See [Example 4](/functional-examples-of-data#example-4-a-transaction-that-reconciles-the-order-from-example-1-and-the-payment-of-commerce-provider-fees-associated-with-this-order).
    Note that this only applies if you receive processing fees from your SMBs.
    Codat reconciles the Payment fee Transaction with the associated Payments and Orders using the `id` property, as shown in [Example 4](/functional-examples-of-data#example-4-a-transaction-that-reconciles-the-order-from-example-1-and-the-payment-of-commerce-provider-fees-associated-with-this-order).
 

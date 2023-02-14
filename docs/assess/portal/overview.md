@@ -175,7 +175,7 @@ If you are a developer, and you are looking to reproduce the outputs of this sec
 
 ## Commerce
 
-The Commerce page consists of the sales analysis and key indicators of merchant health. The [Commerce Metrics](/assess-assess/metrics/commerce/overview) endpoints are used to generate the graphs and metrics displayed on this page.
+The Commerce page consists of the sales analysis and key indicators of merchant health. The [Commerce Metrics](/assess/metrics/commerce/overview) endpoints are used to generate the graphs and metrics displayed on this page.
 
 ### Sales
 
@@ -217,7 +217,7 @@ The _balance_ and the _Account limits_ displayed are aggregate views for the sel
 
 This graph displays when chosen in the _Select graph_ dropdown. Hovering over the graph displays a tooltip containing the total account balance for the selected bank accounts.
 
-The graph is produced from responses from the [Banking account balances](/assess-banking-account-balances) and [Banking transactions](/data-model/banking-banking-transactions) a endpoints.
+The graph is produced from responses from the [Banking account balances](/assess-banking-account-balances) and [Banking transactions](//banking-api#/schemas/banking-transactions) a endpoints.
 
 Refer to the [formulas](/docs/assess-banking#banking-formulas) for more information about how current balances are calculated for each month.
 
@@ -227,7 +227,7 @@ Refer to the [formulas](/docs/assess-banking#banking-formulas) for more informat
 
 This graph displays when chosen in the _Select graph_ dropdown. Hovering over the graph displays a tooltip containing the total inflows and outflows for the selected bank accounts for that month.
 
-The graph is produced from the [Banking transactions](/data-model/banking-banking-transactions) endpoint response.
+The graph is produced from the [Banking transactions](//banking-api#/schemas/banking-transactions) endpoint response.
 
 ![A bar graph showing inflows vs outflows based on selection criteria](/img/old/2a880ed-Inflows_1.png)
 

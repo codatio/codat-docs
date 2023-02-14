@@ -5,7 +5,7 @@ createdAt: "2019-02-19T11:23:34.715Z"
 updatedAt: "2022-10-11T09:52:16.189Z"
 ---
 
-In Codat, a company represents a business sharing access to their data. Each company can have multiple [data connections](/core-concepts/connections) to different data sources such as one connection to [Xero](integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](/banking-plaid) for two bank accounts and a connection to [Zettle](/integrations/commerce/zettle/commerce-zettle) for POS data.
+In Codat, a company represents a business sharing access to their data. Each company can have multiple [data connections](/core-concepts/connections) to different data sources such as one connection to [Xero](/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](/banking-plaid) for two bank accounts and a connection to [Zettle](/integrations/commerce/zettle/commerce-zettle) for POS data.
 
 Typically each company is one of your customers.
 

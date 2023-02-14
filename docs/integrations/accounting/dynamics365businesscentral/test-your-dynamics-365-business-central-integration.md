@@ -50,4 +50,4 @@ Before sending Link URLs to your SMB customers, we recommend you test your integ
 
 6. Make sure that data for your test company is displayed in Codat Portal.
 
-To learn more about how Dynamics 365 Business Central handles certain data types, and how this affects the data available in Codat, see [Dynamics 365 Business Central integration reference](/accounting-dynamics-365-business-central-reference).
+To learn more about how Dynamics 365 Business Central handles certain data types, and how this affects the data available in Codat, see [Dynamics 365 Business Central integration reference](/integrations/accounting/dynamics365businesscentral/accounting-dynamics-365-business-central-reference).

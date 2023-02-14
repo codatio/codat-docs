@@ -69,8 +69,8 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 [accountTransactions](/accounting-api#/account-transactions)
 
 **Banking source:**
-[banking-accounts](/data-model/banking-banking-accounts)
-[banking-transactions](/data-model/banking-banking-transactions)
+[banking-accounts](//banking-api#/schemas/banking-accounts)
+[banking-transactions](//banking-api#/schemas/banking-transactions)
 
 Submit as route parameter.",
 "1-3": "Required",
@@ -317,8 +317,8 @@ Submit as route parameter.",
 [accountTransactions](/accounting-api#/account-transactions)
 
 **Banking source:**
-[banking-accounts](/data-model/banking-banking-accounts)
-[banking-transactions](/data-model/banking-banking-transactions)
+[banking-accounts](//banking-api#/schemas/banking-accounts)
+[banking-transactions](//banking-api#/schemas/banking-transactions)
 
 Submit as route parameter.",
     "1-1": "*string*",
@@ -551,8 +551,8 @@ Submit as route parameter.",
 [accountTransactions](/accounting-api#/account-transactions)
 
 **Banking source:**
-[banking-accounts](/data-model/banking-banking-accounts)
-[banking-transactions](/data-model/banking-banking-transactions)
+[banking-accounts](//banking-api#/schemas/banking-accounts)
+[banking-transactions](//banking-api#/schemas/banking-transactions)
 
 Submit as route parameter.",
 "0-3": "Required",

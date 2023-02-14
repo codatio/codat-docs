@@ -16,4 +16,4 @@ You can now find your organization's API keys and authorization headers under [D
 
 ### Additional information
 
-You can learn more about the dedicated Developers section [here](/portal-for-developers), and more about API keys [here](https://docs.codat.io/reference/authentication).
+You can learn more about the dedicated Developers section [here](/portal-for-developers), and more about API keys [here](/using-the-api/authentication).
