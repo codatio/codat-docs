@@ -11,7 +11,7 @@ The following table summarizes the fields which are excluded when pulling reduce
 
 | Data type pulled  | Fields excluded                 |
 |-------------------|---------------------------------|
-| Bills             | purchaseOrderRefs, lineItems, subTotal, taxAmount, note<br /> If pulling complete datasets, the following fields on bill line items are always populated as 0.00 in Codat:<br />discountAmount, subTotal, taxAmount|
+| Bills             | <p>purchaseOrderRefs, lineItems, subTotal, taxAmount, note</p> <p>If pulling complete datasets, the following fields on bill line items are always populated as 0.00 in Codat:</p><p>discountAmount, subTotal, taxAmount</p>|
 | Credit Notes      | Line items                      |
 | Customers         | Address and contact information |
 | Invoices          | Line items                      |
