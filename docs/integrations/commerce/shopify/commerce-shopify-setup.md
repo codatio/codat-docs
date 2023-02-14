@@ -58,7 +58,7 @@ In the Shopify Partners site:
 2. In the side panel, click **Distribution**.
 3. On the **Distribution** page, click **Choose Shopify App Store** then confirm your selection in the dialog that appears.
 
-<img src="https://files.readme.io/386725f-choose-shopify-app-store.png" />
+<img src="/img/old/386725f-choose-shopify-app-store.png" />
 
 4. Click **Create listing**.
 5. Select your Shopify partner account at the authentication prompt. The **App listing** page for your app opens.
@@ -92,7 +92,7 @@ In the Codat Portal, add the secure credentials for your Shopify app to the inte
    - For **Client Secret**, enter the **API secret key** from Shopify.
 5. If you requested access to over 60 days' of orders and your access was approved, turn on **Has request to read all orders**. Otherwise leave this setting turned off.
 
-<img src="https://files.readme.io/76d5c94-Shopify_integration_settings.png" />
+<img src="/img/old/76d5c94-Shopify_integration_settings.png" />
 
 6. Click **Save**.
 
@@ -105,4 +105,4 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 ## Check the commerce sync settings
 
-All commerce data types must be enabled before you can pull commerce transactions from Shopify to Codat. Follow the steps in [Commerce sync settings](/commerce-sync-settings); you only need to do this once.
+All commerce data types must be enabled before you can pull commerce transactions from Shopify to Codat. Follow the steps in [Commerce sync settings](/integrations/commerce/commerce-sync-settings); you only need to do this once.

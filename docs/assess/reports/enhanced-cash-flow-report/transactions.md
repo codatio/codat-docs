@@ -16,7 +16,7 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 
 ## Parameters
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Parameters",
@@ -45,7 +45,7 @@ Start and end dates can be passed through the query string.",
 "cols": 4,
 "rows": 3
 }
-[/block.
+
 
 ## Data model
 
@@ -53,7 +53,7 @@ The response structure is split into three areas: Report info, Data sources and 
 
 ### Report info
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -87,11 +87,11 @@ The date the cash flow report was generated.",
 "cols": 3,
 "rows": 6
 }
-[/block.
+
 
 ### Data sources
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -116,12 +116,12 @@ Accounting and commerce commerce source types will be available in the future.",
 "cols": 3,
 "rows": 1
 }
-[/block.
+
 
 #### Accounts
 
 **Accounts** data is returned for each connection that is of type "Banking".
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -152,11 +152,11 @@ Accounting and commerce commerce source types will be available in the future.",
 "cols": 3,
 "rows": 7
 }
-[/block.
+
 
 ### Report Items
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -170,11 +170,11 @@ See [Transactions](#transactions)",
 "cols": 3,
 "rows": 1
 }
-[/block.
+
 
 #### Transactions
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -209,11 +209,11 @@ See [Transaction category](#transaction-category)",
 "cols": 3,
 "rows": 7
 }
-[/block.
+
 
 #### Transaction category
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -231,7 +231,7 @@ See [Transaction category](#transaction-category)",
   "cols": 3,
   "rows": 1
   }
-  [/block.
+  
 
 ### Example data
 

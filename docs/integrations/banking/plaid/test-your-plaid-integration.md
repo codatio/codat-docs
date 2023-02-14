@@ -66,7 +66,7 @@ When you move to a production environment, you'll supply a link URL to each cust
 
 1. Copy the **linkUrl** value into your browser, which takes you to Plaid's sandbox.
 
-<img src="https://files.readme.io/e6adfea-Plaid_landing_page.png" />
+<img src="/img/old/e6adfea-Plaid_landing_page.png" />
 
 A message at the bottom of the screen confirms that you're in sandbox mode.
 

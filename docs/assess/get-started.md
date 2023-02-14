@@ -14,7 +14,7 @@ This document helps you get started with Assess, and covers both the API and the
 2. Click on **Company**.
 3. In the left hand navigation, click _Assess_.
 
-![Assess Profit and Loss page](https://files.readme.io/cdf1e35-Banner_1.png)
+![Assess Profit and Loss page](/img/old/cdf1e35-Banner_1.png)
 
 4. If you have Assess enabled, you will be taken to the **Assess Profit and Loss** page. For more information, visit the [Assess in the Portal](/assess/portal/overview) documentation.
 5. If you don't have Assess access, you can enable it by following the onscreen prompt.

@@ -23,7 +23,7 @@ Why not try:
    1. Give them the Hosted Link URL to share themselves: `<https://link.codat.io/companies/{companyId}`>
    2. Use a `mailto:` link to make it easier. E.g.:
 
-```Text html
+```html
 <a href="mailto:https://link.codat.io/companies/{companyId}">Invite someone else</a>
 ```
 

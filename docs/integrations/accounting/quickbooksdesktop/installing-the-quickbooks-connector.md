@@ -41,7 +41,7 @@ If you've built your own Link flow, the **linkUrl** field on the company's Quick
 **The connector requires administrator privileges (admin rights) to run.** Each time you add a company, a user with admin rights needs to run the installer, which will display the following window:
 :::
 
-<img src="https://files.readme.io/420dc1e-QBDLinkNew.JPG" />
+<img src="/img/old/420dc1e-QBDLinkNew.JPG" />
 
 The user copies their license key (the same as their _CompanyId_ in Codat) to use in the next step.
 
@@ -54,7 +54,7 @@ Next, the user runs the downloaded file to start the connector. They're prompted
 The licence key is only shown to the customer automatically if you're using the Codat Link flow rather than building your own Link flow.
 :::
 
-<img src="https://files.readme.io/2442911-Entering_License_key.png" />
+<img src="/img/old/2442911-Entering_License_key.png" />
 
 They should paste the licence key copied in the previous task into the **Licence Key** box, and then click **Install**.
 
@@ -62,13 +62,13 @@ They should paste the licence key copied in the previous task into the **Licence
 
 Next, the user needs to verify their data and selects their geographical region – either Canada, UK, or US – and then clicks **Link with [company name]**.
 
-<img src="https://files.readme.io/6658970-QBD_Connector.png" />
+<img src="/img/old/6658970-QBD_Connector.png" />
 
-<img src="https://files.readme.io/3404367-QB_region_selection.png" />
+<img src="/img/old/3404367-QB_region_selection.png" />
 
 The connector initiates the connection with QuickBooks Desktop and the user is prompted to grant access.
 
-<img src="https://files.readme.io/1afe318-QBDConfirm.PNG" />
+<img src="/img/old/1afe318-QBDConfirm.PNG" />
 
 :::info Open one copy of QuickBooks
 An error is displayed if Quickbooks Desktop is not open, or multiple instances of Quickbook Desktop are running on the same machine.
@@ -87,21 +87,21 @@ Options might vary between QuickBooks versions but are similar to:
 
 In all cases, we recommend choosing the option that allows the most access to QuickBooks so that you can sync data as easily as possible.
 
-<img src="https://files.readme.io/c650d8d-QBD-Auth.png" />
+<img src="/img/old/c650d8d-QBD-Auth.png" />
 
 Check the details in the **Access Confirmation** dialog, and then click **Done**.
 
-<img src="https://files.readme.io/7db6c59-Access_Confirmation.png" />
+<img src="/img/old/7db6c59-Access_Confirmation.png" />
 
 ## 5. Wait for the connector to complete first link
 
-Once access to QuickBooks has been granted, the connector will process the datasets you have chosen to _fetch on first link_ (see [Data Sync Settings](/data-sync-settings)). Upon completion of the first link, a message will be shown to the user confirming that their data has been synchronised.
+Once access to QuickBooks has been granted, the connector will process the datasets you have chosen to _fetch on first link_ (see [Data Sync Settings](/core-conepts/data-type-settings)). Upon completion of the first link, a message will be shown to the user confirming that their data has been synchronised.
 
 If you have chosen to have your connectors perform a one-time synchronisation, the connector will uninstall itself and set the company status to _deauthorised_.
 
 If you have chosen to install your connectors for ongoing synchronisations, the connector will periodically process any dataset syncs or pushes you have queued using the Codat portal or API. The connector will also be set to automatically start when the system reboots.
 
-<img src="https://files.readme.io/e435017-Linked_Succesfully.png" />
+<img src="/img/old/e435017-Linked_Succesfully.png" />
 
 ## Installation path
 
@@ -113,4 +113,4 @@ The QuickBooks Desktop connector is installed in Program Files inside a director
 
 For example:
 
-<img src="https://files.readme.io/8fa7d87-qbd-connector-installation-path-border.png" />
+<img src="/img/old/8fa7d87-qbd-connector-installation-path-border.png" />

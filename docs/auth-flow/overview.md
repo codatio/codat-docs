@@ -5,7 +5,7 @@ createdAt: "2022-05-11T12:25:17.094Z"
 updatedAt: "2022-11-23T13:57:58.076Z"
 ---
 
-![Conceptual drawing of a lock and key](https://files.readme.io/b80d96c-19B0071C-0CCD-4423-8903-A979A32DD225.jpeg)
+![Conceptual drawing of a lock and key](/img/old/b80d96c-19B0071C-0CCD-4423-8903-A979A32DD225.jpeg)
 
 Authorization is a key part of any Codat solution - every Company must authorize access to their data before you can pull that data. A frictionless and reassuring auth flow is essential for accessing your SMB customers' data.
 
@@ -28,7 +28,7 @@ There are three ways you can enable your customers to connect their financial ac
       conversion-optimized, and customizable authorization flow.
     </p>
     <p>
-      <a href="/authorize-hosted-link">
+      <a href="/auth-flow/authorize-hosted-link">
         Read more...
       </a>
       .
@@ -49,7 +49,7 @@ There are three ways you can enable your customers to connect their financial ac
       with our auth flow SDK.
     </p>
     <p>
-      <a href="/authorize-embedded-link">
+      <a href="/auth-flow/authorize-embedded-link">
         Read more...
       </a>
       .
@@ -67,7 +67,7 @@ There are three ways you can enable your customers to connect their financial ac
     </div>
     <p>Leverage our API for a fully customized bespoke user journey.</p>
     <p>
-      <a href="/build-your-own-authorization-journey">
+      <a href="/auth-flow/build/build-your-own-authorization-journey">
         Read more...
       </a>
       .
@@ -79,9 +79,9 @@ There are three ways you can enable your customers to connect their financial ac
 
 Link is a pre-built, conversion-optimized, and white-labelled authorization journey. Your customers can connect their financial accounts in minutes using Link. <a href="https://links.codat.io/client/873ff19e-6fe0-47b0-a4e1-e19f344c78f6?user=8ee6c557-949c-40a8-b31d-e1fa02ef7fbc" target="_blank">See a demo in action</a>.
 
-1. For best results, you can fully embed Link in your experience and [use our Embedded Link component](/authorize-embedded-link) in your front-end code.
+1. For best results, you can fully embed Link in your experience and [use our Embedded Link component](/auth-flow/authorize-embedded-link) in your front-end code.
 
-2. If you're looking to get up and running as quick as possible, use our [Hosted Link authorization flow](/authorize-hosted-link). You can use it out of the box or integrate this into your existing app.
+2. If you're looking to get up and running as quick as possible, use our [Hosted Link authorization flow](/auth-flow/authorize-hosted-link). You can use it out of the box or integrate this into your existing app.
 
 ### Link's values
 
@@ -119,7 +119,7 @@ Codat gives you control of Link, ensuring that it meets your use case and provid
 
 ## Building your own
 
-We suggest using Link for best results, which can be [embedded within your app](/authorize-embedded-link). However, where you need full control of the flow, you can use our API to [build your own authorization journey](/build-your-own-authorization-journey).
+We suggest using Link for best results, which can be [embedded within your app](/auth-flow/authorize-embedded-link). However, where you need full control of the flow, you can use our API to [build your own authorization journey](/auth-flow/build/build-your-own-authorization-journey).
 
 ## Pitfalls
 
@@ -127,9 +127,9 @@ We suggest using Link for best results, which can be [embedded within your app](
 
 Whether you build your own or use Link, browser and mobile compatibility varies for different integrations:
 
-- Some integrations are **desktop-only** e.g. [Sage 50](/accounting-sage50), [QuickBooks Desktop](/accounting-quickbooksdesktop).
-- Some integrations require **downloading a desktop package** e.g. [Oracle NetSuite](/accounting-netsuite), [Microsoft Dynamics 365 Business Central](/accounting-dynamics365businesscentral).
-- Some integrations require switching to complex flows on **non mobile-optimized websites** due to the complexity of the third-party platform e.g. [Sage 200cloud](/accounting-sage200), [Sage Intacct](/accounting-sage-intacct).
+- Some integrations are **desktop-only** e.g. [Sage 50](integrations/accounting/sage50/accounting-sage50), [QuickBooks Desktop](/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop).
+- Some integrations require **downloading a desktop package** e.g. [Oracle NetSuite](/integrations/accounting/netsuite/accounting-netsuite), [Microsoft Dynamics 365 Business Central](/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral).
+- Some integrations require switching to complex flows on **non mobile-optimized websites** due to the complexity of the third-party platform e.g. [Sage 200cloud](/integrations/accounting/accounting-sage200), [Sage Intacct](/integrations/accounting/sage-intacct/accounting-sage-intacct).
 
 :::caution Link compatibility with Codat Products
 

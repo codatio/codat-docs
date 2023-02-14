@@ -19,10 +19,10 @@ View the coverage of our Plaid integration in the <a className="external" href="
 
 The following banking data is available through the integration:
 
-- [Banking accounts](/data-model/banking/-banking-accounts)
-- [Banking account balances](/data-model/banking/-banking-account-balances)
-- [Banking transactions](/data-model/banking/-banking-transactions)
-- [Banking transaction categories](/data-model/banking/-banking-transaction-categories)
+- [Banking accounts](/banking-api#/schemas/banking-accounts)
+- [Banking account balances](/banking-api#/schemas/banking-account-balances)
+- [Banking transactions](/banking-api#/schemas/banking-transactions)
+- [Banking transaction categories](/banking-api#/schemas/banking-transaction-categories)
 
 :::info Supported financial institutions
 
@@ -34,13 +34,13 @@ You'll automatically gain access to any new financial institutions that Plaid ad
 Plaid's pricing tiers give you access to specific _products_ from your configured banking data sources. Depending on what data types you wish to fetch from Codat's API, you will need to have certain Plaid products enabled and available for use within your Plaid account.
 
 The following table shows the Plaid Products required for each of Codat's banking data types:
-[block:parameters]
+
 {
 "data": {
 "h-1": "Associated Plaid product",
 "h-0": "Codat data type",
 "h-2": "Associated Plaid product",
-"1-0": "[Bank transactions](/data-model/banking/-banking-transactions)",
+"1-0": "[Bank transactions](/banking-api#/schemas/banking-transactions)",
 "1-1": "_ Transactions",
 "1-2": "",
 "0-0": "[Bank accounts](/data-model/banking-banking-accounts)",
@@ -51,9 +51,9 @@ The following table shows the Plaid Products required for each of Codat's bankin
   "0-2": "\* Auth
 - Identity
 - Institution",
-  "2-0": "[Bank account balances](/data-model/banking/-banking-account-balances)",
+  "2-0": "[Bank account balances](/banking-api#/schemas/banking-account-balances)",
   "2-1": "\* Asset Reports",
-  "3-0": "[Bank Transaction Categories](/data-model/banking/-banking-transaction-categories)",
+  "3-0": "[Bank Transaction Categories](/banking-api#/schemas/banking-transaction-categories)",
   "3-1": "N/A
 
 Categorization is provided by Codat, not using data from Plaid."
@@ -61,7 +61,7 @@ Categorization is provided by Codat, not using data from Plaid."
 "cols": 2,
 "rows": 4
 }
-[/block]
+
 
 ## Sync Settings for Plaid
 

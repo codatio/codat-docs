@@ -22,7 +22,7 @@ Here's a summary of the time-based rate limits:
 
 :::caution Request permission for your customers to link
 
-To allow your customers to connect to your production app, you _must_ first [request permission from Exact](/accounting-exact-setup#section-request-permission-to-allow-your-customers-to-connect-to-your-app), or users will get an error during the authorization flow.
+To allow your customers to connect to your production app, you _must_ first [request permission from Exact](/integrations/accounting/exact/accounting-exact-setup#section-request-permission-to-allow-your-customers-to-connect-to-your-app), or users will get an error during the authorization flow.
 :::
 
 Before you can access data from customers using Exact for their accounting, you need to set up an Exact integration in the Codat Portal. You'll need to:
@@ -59,11 +59,11 @@ Before you can access data from customers using Exact for their accounting, you 
    - The **Redirect URL** must be as follows, for both production and testing apps: `https://exact.codat.io/oauth/callback`
 6. Accept the terms and conditions then click **Register**.
 
-<img src="https://files.readme.io/0e788f0-exact-app-details-dialog.png" />
+<img src="/img/old/0e788f0-exact-app-details-dialog.png" />
 
 The **Manage my apps** page is displayed. In the **Develop your app** tab, you'll see the **Client ID** and **Client secret** for your app. To find this page again, go to **Manage my apps** then select the app you created.
 
-![](https://files.readme.io/bb55b4c-ExactRegisterAPIKey.png "ExactRegisterAPIKey.png")
+![](/img/old/bb55b4c-ExactRegisterAPIKey.png "ExactRegisterAPIKey.png")
 
 ## Add your app's secure keys to the Codat Portal
 
@@ -98,7 +98,7 @@ Follow these steps:
 1. In the Exact App Center, select **Manage my apps** then click the **Submit for review** tab.
 2. In the **Data & Security Review** section, click **Edit**.
 3. In the **Purpose of your app** box, briefly describe what your app is for.
-4. In the **Scopes** section, select the scopes shown in the table in [Recommended list of scopes](/accounting-exact-setup#recommended-list-of-scopes). Then, go to step 5.
+4. In the **Scopes** section, select the scopes shown in the table in [Recommended list of scopes](/integrations/accounting/exact/accounting-exact-setup#recommended-list-of-scopes). Then, go to step 5.
 5. Enter the rest of the information from the perspective of your company, not Codat, but with a few exceptions for the following questions:
 
 - **Q:** **Is the data that you receive, process, or store in your app or linked systems protected against unauthorized access or disclosure, such as through encryption?** A: In the answer you may want to include that for the 3rd party integration (Codat) data is encrypted in transit using SSL and at rest using AES-256 managed by Microsoft Azure.
@@ -108,7 +108,7 @@ Follow these steps:
 6. Once saved, select **Submit** at the top of the page.
 7. Once your **Data & Security Review** has been successful, in the **Submit for Review** page, select **Request** in the **Request permission** section and wait for permissions to be granted by Exact. During this stage your app will have an **In Review** tag.
 
-![](https://files.readme.io/9fa3fdd-AppInReview.PNG "AppInReview.PNG")
+![](/img/old/9fa3fdd-AppInReview.png "AppInReview.PNG")
 
 ## Recommended list of scopes
 

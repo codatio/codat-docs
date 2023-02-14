@@ -5,13 +5,13 @@ createdAt: "2019-02-19T11:23:34.715Z"
 updatedAt: "2022-10-11T09:52:16.189Z"
 ---
 
-In Codat, a company represents a business sharing access to their data. Each company can have multiple [data connections](/core-concepts/connections) to different data sources such as one connection to [Xero](/accounting-xero) for accounting data, two connections to [Plaid](/banking-plaid) for two bank accounts and a connection to [Zettle](/integrations/commerce/zettle/commerce-zettle) for POS data.
+In Codat, a company represents a business sharing access to their data. Each company can have multiple [data connections](/core-concepts/connections) to different data sources such as one connection to [Xero](integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](/banking-plaid) for two bank accounts and a connection to [Zettle](/integrations/commerce/zettle/commerce-zettle) for POS data.
 
 Typically each company is one of your customers.
 
 When you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company.
 
-## How do I create a company?
+## Creating a company
 
 Companies can be created in one of two ways:
 
@@ -26,7 +26,7 @@ Company names may only contain letters, numbers, spaces, and the following symbo
 Any forbidden characters will be removed from your company name. For example: `Example Company (Codat[1])` will be created as `Example Company Codat1`.
 :::
 
-## Managing companies
+## Managing your companies
 
 You have two options for managing companies:
 

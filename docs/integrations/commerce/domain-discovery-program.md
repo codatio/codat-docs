@@ -37,7 +37,7 @@ For integrations within the scope of the program, Codat handles authentication t
 ## Proposed domains and integrations
 
 We're exploring the following domains within the scope of the Domain Discovery Program:
-[block:parameters]
+
 {
 "data": {
 "h-0": "Domain",
@@ -59,4 +59,4 @@ We're exploring the following domains within the scope of the Domain Discovery P
   "cols": 3,
   "rows": 3
   }
-  [/block]
+  

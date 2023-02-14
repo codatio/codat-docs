@@ -22,7 +22,7 @@ We recommend you [test your integration](/test-your-dynamics-365-business-centra
 
 During the SMB linking process, the Dynamics 365 Business Central extension package _must_ be successfully installed to the user's account in order for the integration to function. The extension is published by Codat.
 
-For more information, see [Extension installation process](/accounting-dynamics365businesscentral-setup#extension-installation-process) below.
+For more information, see [Extension installation process](/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral-setup#extension-installation-process) below.
 :::
 
 ## Register your application
@@ -45,11 +45,11 @@ Register your Business Central application on the Microsoft Azure portal.
 
 3. You might have access to more than one tenant, so check the details carefully. If you don't see the expected information, select **Switch tenant**, then select the right tenant.
 
-   ![Image](https://files.readme.io/da8746b-d365-Switch_tenants.png)
+   ![Image](/img/old/da8746b-d365-Switch_tenants.png)
 
 4. Select **App registrations** in the left menu, then click **New registration**.
 
-   ![Image](https://files.readme.io/7484936-d365-App_registrations.png)
+   ![Image](/img/old/7484936-d365-App_registrations.png)
 
 5. Enter the following details:
 
@@ -67,7 +67,7 @@ Register your Business Central application on the Microsoft Azure portal.
    >
    > Your client ID won't be shown again after you close the page.
 
-   ![Image](https://files.readme.io/93e97bf-d365-Application_id.png)
+   ![Image](/img/old/93e97bf-d365-Application_id.png)
 
 ## Generate and retrieve your client secret
 
@@ -86,7 +86,7 @@ In the Azure Portal:
 
    Your client secret is generated and displayed at the bottom of the page. **Important: The _Secret Value_ won't be displayed again in full, so you must copy the value now.**
 
-   ![image](https://files.readme.io/a5f66c9-D365.png)
+   ![image](/img/old/a5f66c9-D365.png)
 
 ## Update access permissions
 
@@ -103,7 +103,7 @@ Now update the access permissions for your application. These control the data t
    - **user_impersonation**
    - **Financials.ReadWrite.All**
 
-   ![image](https://files.readme.io/7cdb0c4-d365-delegated_permissions.png)
+   ![image](/img/old/7cdb0c4-d365-delegated_permissions.png)
 
 5. Click **Add permissions**.
 

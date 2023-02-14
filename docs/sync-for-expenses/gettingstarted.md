@@ -36,7 +36,7 @@ With Sync for Expenses each company will have two data connections:
 
 Before you can push expenses to your customer’s accounting platform, you need to get access to it. There are three ways you can enable your customers to grant access to their financial accounts:
 
-1.  **Embedded Link:** Codat's Embedded Link is a React component that neatly sits in your front-end code, and can be deployed in a matter of minutes (see [embedded link](/authorize-embedded-link)).
+1.  **Embedded Link:** Codat's Embedded Link is a React component that neatly sits in your front-end code, and can be deployed in a matter of minutes (see [embedded link](/auth-flow/authorize-embedded-link)).
 
 2.  **Hosted Link**: a beautifully simple, pre-built, conversion-optimized, and customizable authentication flow (See [Use Link for SMB authentication](/use-link-for-the-authentication-flow)).
 

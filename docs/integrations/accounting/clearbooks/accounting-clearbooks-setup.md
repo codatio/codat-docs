@@ -7,7 +7,7 @@ updatedAt: "2023-01-06T15:57:44.318Z"
 
 No application registration is required for the Clear Books integration to work. While linking their data, the SMB user is asked to enter their API key as shown:
 
-<img src="https://files.readme.io/0c9d3d9-Clear_Books_Link.png" />
+<img src="/img/old/0c9d3d9-Clear_Books_Link.png" />
 
 To find their API key, the SMB user does the following:
 
@@ -15,7 +15,7 @@ To find their API key, the SMB user does the following:
 
 2. Selects **Settings > Configure system > API keys** from the menu bar.
 
-   ![Clear Book: SMB user selects API keys from Settings > Configure system in the menu bar.](https://files.readme.io/00c84fa-clear-books_select-api-key.png)
+   ![Clear Book: SMB user selects API keys from Settings > Configure system in the menu bar.](/img/old/00c84fa-clear-books_select-api-key.png)
 
 3. Selects **Provide required information**, then provides the following information:
 
@@ -25,7 +25,7 @@ To find their API key, the SMB user does the following:
 Their API key is now available to copy from the **API keys** page (under **SOAP API**).
 
 <img
-  src="https://files.readme.io/c176f58-clear-books_api-keys-page-highlighted.png"
+  src="/img/old/c176f58-clear-books_api-keys-page-highlighted.png"
   alt="Clear Books: API keys page with the SMB user's API key highlighted under 'SOAP API'."
 />
 

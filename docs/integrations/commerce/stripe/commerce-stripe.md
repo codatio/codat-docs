@@ -29,7 +29,7 @@ View the coverage of our Stripe integration in the <a className="external" href=
 
 Codat provides two Stripe integrations: **Stripe Test** and **Stripe**. The following table explains what each integration is used for.
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Integration",
@@ -47,13 +47,13 @@ To enable live mode, you must first activate your Stripe account by providing ad
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 
 ## Switch between test and live modes
 
 You can switch between _test mode_ and _live mode_ in Stripe using the toggle at the top right of the Stripe dashboard.
 
-![Test mode switch](https://files.readme.io/80db658-stripe-test-mode-switch.png "The Test mode toggle at the top-right of the Stripe developer dashboard.")
+![Test mode switch](/img/old/80db658-stripe-test-mode-switch.png "The Test mode toggle at the top-right of the Stripe developer dashboard.")
 
 ## Set up the integration
 

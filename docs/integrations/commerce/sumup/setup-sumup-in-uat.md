@@ -46,6 +46,6 @@ Before you can access commerce data from customers using SumUp, you need to set 
 
 ## Check your sync settings in the Codat Portal
 
-If this is your first commerce integration, update your [sync settings](/commerce-sync-settings) to enable commerce data types.
+If this is your first commerce integration, update your [sync settings](/integrations/commerce/commerce-sync-settings) to enable commerce data types.
 
 Now follow the instructions in [Test SumUp](/test-sumup) to test your setup.

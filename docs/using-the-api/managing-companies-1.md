@@ -50,13 +50,13 @@ The `id` property that you receive in the response is the unique Codat identifie
 
 ## Redirect the user
 
-Send the user to the `redirect` URL returned in the previous step. They will be sent to [Link](/authorize-hosted-link) where they can select their accounting software and complete the linking process.
+Send the user to the `redirect` URL returned in the previous step. They will be sent to [Link](/auth-flow/authorize-hosted-link) where they can select their accounting software and complete the linking process.
 
 Once the user has completed the Link flow, the Codat platform will redirect them to the redirect URL you have configured in the **Settings > Auth flow > Link** in the Codat Portal. This URL can include the Codat `companyId` as well as any other custom query parameters.
 
 :::note Redirect parameter settings
 
-For more information on setting your redirect URL, refer to [this document](/redirect-urls).
+For more information on setting your redirect URL, refer to [this document]((/auth-flow/customize/set-up-redirects).
 :::
 
 Once your user is redirected to the redirect URL page, the linking process is complete and their accounting data has begun synchronizing.
@@ -65,7 +65,7 @@ Once your user is redirected to the redirect URL page, the linking process is co
 
 ## Check data freshness
 
-Use the `GET /companies/{companyId}/dataStatus` endpoint to check the [last time each data type was synchronized](/data-status).
+Use the `GET /companies/{companyId}/dataStatus` endpoint to check the [last time each data type was synchronized](/core-concepts/status).
 
 In this request, `companyId` is [the unique ID that you have received in a response to creating this company](/using-the-api/managing-companies-1#create-a-codat-company).
 
@@ -103,7 +103,7 @@ When you’re pulling data for the first time, use this endpoint to check if the
 
 If there are datasets which are not as up-to-date as you require, you can queue a data sync as described [here](/queueing-data-syncs).
 
-Once you've queued the sync, you can poll the [GET /companies/{companyId}/dataStatus](/codat-api#/operations/get-companies-companyId-dataStatus) endpoint (as described above) to [monitor progress of the sync](/data-status).
+Once you've queued the sync, you can poll the [GET /companies/{companyId}/dataStatus](/codat-api#/operations/get-companies-companyId-dataStatus) endpoint (as described above) to [monitor progress of the sync](/core-concepts/status).
 
 :::note
 
@@ -136,6 +136,6 @@ Creating a new company may cause additional data to be pulled from the platform 
 
 ## Redirect the user to complete the auth flow
 
-Get a `redirect` URL for the company by following the process [here](/authorize-hosted-link). Send the user to the `redirect` URL. They will be prompted to select their accounting software and complete the linking process using the [Link flow](/auth-flow/overview).
+Get a `redirect` URL for the company by following the process [here](/auth-flow/authorize-hosted-link). Send the user to the `redirect` URL. They will be prompted to select their accounting software and complete the linking process using the [Link flow](/auth-flow/overview).
 
 Once the user finishes the Link flow, they will be redirected back to the Redirect URL, as described [earlier in this guide](/using-the-api/managing-companies-1#redirect-the-user). At this point the re-authorization process is complete and their data has begun synchronizing again.

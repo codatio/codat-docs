@@ -185,6 +185,7 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 |**Query**|_string_|You can query any properties in the response.  It can be left blank. E.g. query=date>2020-12-01<br/><br/>Submit as query parameter.<br/>This follows the standard [Codat query language](/using-the-api/querying).||
 
 ### Data model
+
 For transactions, the response contains summary statistics (such as match percentage) by both amount and count. For accounts, statistics based on amount are not meaningful, therefore we return only statistics based on count.
 
 |Field|Type|Description|
@@ -275,7 +276,7 @@ If however you call the Summaries endpoint with data type = banking-transactions
 By contrast, in the Data Integrity page on Portal, the match percentage displayed is match percentage by amount across accounting and banking transactions. In our example, the match percentage displayed on the Portal would be 40%:
 `match percentage = (B+C)/(A+B+C) = (£1 + £1)/(£3 +£1 + £1)`
 
-<img src="https://files.readme.io/cf7bc11-DataIntegrity1.png"/>
+<img src="/img/old/cf7bc11-DataIntegrity1.png"/>
 
 You can reproduce this match percentage yourself by fetching the summaries for accountTransactions and banking-transactions in separate API calls, and combining the results client-side, e.g. by taking a weighted average of the match percentages.
 
@@ -294,6 +295,7 @@ E.g. if the Status response contains this:
 ]
 }
 ```
+
 Then you would call each of the _Summaries endpoints_ with (url-escaped) query=date>=2021-09-03T12:00:00.000Z&&date<=2021-09-17T23:59:59.999.
 
 ## Details

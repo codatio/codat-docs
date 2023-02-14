@@ -14,26 +14,21 @@ The **dashboard** (1) gives a visual summary of sync totals, including failed sy
 
 You can use the **search bar** (2) to narrow down the records by sync Id, company Id, or platform name.
 
-Display the sync queue for a specific period by indicating a **date range** (3). Finally, [review the possible statuses](/error-documentation#status-codes) of the syncs and filter the records by their **status code** (4).
+Display the sync queue for a specific period by indicating a **date range** (3). Finally, [review the possible statuses](/sfc/error-documentation#status-codes) of the syncs and filter the records by their **status code** (4).
 
 <img
-  src="https://files.readme.io/068227e-2023-01-13_09-27-21.png"
+  src="/img/old/068227e-2023-01-13_09-27-21.png"
   alt="Sync Health page view with numbered annotations on the key page elements: the dashboard, filters, status filter, and the main data table"
 />
 
-For further detail, review your **sync history** (5) by clicking the relevant sync log record. It provides sync start and end times, source and target platforms. It also displays client-friendly notes and error messages in case of sync failures. Refer to our [troubleshooting guide](/error-documentation#error-messages) for recommendations on how to resolve these.
+For further detail, review your **sync history** (5) by clicking the relevant sync log record. It provides sync start and end times, source and target platforms. It also displays client-friendly notes and error messages in case of sync failures. Refer to our [troubleshooting guide](/sfc/error-documentation#error-messages) for recommendations on how to resolve these.
 
 You can also navigate to the Config tab to view and download the merchant's sync configuration.
 
 <img
-  src="https://files.readme.io/86ad267-2023-01-16_14-06-17.png"
+  src="/img/old/86ad267-2023-01-16_14-06-17.png"
   alt="Detailed view of a sync log entry with Summary and Config tabs "
 />
-
-:::note
-
-Your clients can also monitor the status of their syncs on the Sync Health page. They will only see records for their specific merchant.
-:::
 
 ## Pitfalls
 

@@ -25,7 +25,7 @@ Codat does not currently support Sage Business Cloud versions that cover Austral
 
 :::caution Change to Sage Business Cloud Accounting setup
 
-If you set up your [Codat integration with Sage Business Cloud Accounting](/accounting-sagebusinesscloud) **before** October 19, 2020, you'll notice a change to the credentials page in the Codat portal. The option **Client ID, client secret, signing secret and subscription key (API v3 - UKI)** is selected for your integration.
+If you set up your [Codat integration with Sage Business Cloud Accounting](/integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud) **before** October 19, 2020, you'll notice a change to the credentials page in the Codat portal. The option **Client ID, client secret, signing secret and subscription key (API v3 - UKI)** is selected for your integration.
 
 **To continue to use version 3.0**, you don't need to make any changes. The integration will continue to work as normal. However, when you link new companies you must only select the UK or Ireland flags.
 
@@ -50,7 +50,7 @@ To register your Sage Business Cloud Accounting application, you need to use Sag
 4. Select **Save**.  
    The details of your newly registered application are displayed.
 
-![](https://files.readme.io/f7ebfa6-215d3b2-Sage_Business_Cloud_App_Details_edited.png "215d3b2-Sage_Business_Cloud_App_Details_edited.png")
+![](/img/old/f7ebfa6-215d3b2-Sage_Business_Cloud_App_Details_edited.png "215d3b2-Sage_Business_Cloud_App_Details_edited.png")
 
 5. Either keep this page open in a separate browser tab, or copy the **Client ID** and **Client Secret** to a Word document or similar.
 

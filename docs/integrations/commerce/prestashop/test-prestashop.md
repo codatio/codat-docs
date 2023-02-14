@@ -29,7 +29,7 @@ Before you start to test PrestaShop, make sure that you have:
       Official Getting Started Guide
     </a>
 - Set up [PrestaShop](/set-up-prestashop-in-production).
-- Updated your [sync settings](/commerce-sync-settings) to enable commerce data types.
+- Updated your [sync settings](/integrations/commerce/commerce-sync-settings) to enable commerce data types.
 
 ## Set up a test company in the Codat Portal and connect your test Company to a test account in PrestaShop
 

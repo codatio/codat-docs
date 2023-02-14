@@ -48,7 +48,7 @@ Test the authorization process that your customers will see when they connect th
 
 8. Select **Square Sandbox** as the commerce software to connect to.
 
-<img src="https://files.readme.io/5b21f24-link-site-select-square-sandbox.png" />
+<img src="/img/old/5b21f24-link-site-select-square-sandbox.png" />
 
 9. Authorize access to the listed data types.
 

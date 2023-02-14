@@ -119,7 +119,7 @@ In the <a className="external" href="https://app.codat.io/" target="_blank">Coda
 
 5. Assuming you requested the `read_only` scope for Stripe Connect, leave the **Use read-write scope** toggle deselected.
 
-   ![Read Write Scope toggle](https://files.readme.io/18021fe-use-read-write-scope-toggle.png "The Use read-write scope toggle, deselected by default.")
+   ![Read Write Scope toggle](/img/old/18021fe-use-read-write-scope-toggle.png "The Use read-write scope toggle, deselected by default.")
 
    If you're using the `read_write` scope (the Stripe default), then select the **Use read-write scope** toggle.
 
@@ -136,7 +136,7 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 ## Check the commerce sync settings
 
-Syncing of all commerce data types must be enabled before you can pull commerce transactions from Stripe to Codat. Follow the steps in [Commerce sync settings](/commerce-sync-settings); you only need to do this once.
+Syncing of all commerce data types must be enabled before you can pull commerce transactions from Stripe to Codat. Follow the steps in [Commerce sync settings](/integrations/commerce/commerce-sync-settings); you only need to do this once.
 
 ## Test the integration
 

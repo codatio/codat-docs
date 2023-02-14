@@ -1,6 +1,6 @@
 ---
 title: "Push commerce data to Codat"
-description: "Push your merchant’s data to the Codat system. To find out more about the structure of data we accept, read [Examples of data](/functional-examples-of-data)."
+description: "Learn how to push your merchant’s data to the Codat systema"
 createdAt: "2022-02-09T13:34:14.504Z"
 updatedAt: "2022-11-21T17:42:49.928Z"
 ---
@@ -17,9 +17,9 @@ All the endpoints mentioned in this guide are available in our <a href="https://
 
 1. After the merchant completes the data mapping configuration, push your merchant’s data to the data endpoint for the following data types:
 
-- [Orders](/data-model/commerce/-orders)
-- [Payments](/data-model/commerce/-payments)
-- [Transactions](/data-model/commerce/-transactions)
+- [Orders](/commerce-api#/schemas/orders)
+- [Payments](/commerce-api#/schemas/payments)
+- [Transactions](/commerce-api#/schemas/transactions)
 
 ```http
   POST /data/companies/{companyId}/sync/{dataType}",
@@ -50,7 +50,7 @@ GET /meta/companies/{companyId}/pull/history/{datasetId}",
 }
 ```
 
-The status within the response will correspond to a dataset status, you can find a list of available statuses [here](/data-status#dataset-statuses).
+The status within the response will correspond to a dataset status, you can find a list of available statuses [here](/core-concepts/status#dataset-statuses).
 
 4. **(Optional)** The data will be synchronized with the accounting platform at the time configured by the merchant.
 
@@ -62,7 +62,7 @@ You can also check whether the data has been mapped to the accounting platform d
 GET /meta/companies/{companyId}/sync/commerce/status
 ```
 
-5. **(Optional)** You can also [set up alerting rules](/core-rules-types) to receive alerts every time the status of the datasets changes, or even when a Sync connection is deleted by the merchant completely.
+5. **(Optional)** You can also [set up alerting rules](/introduction/webhooks/core-rules-types) to receive alerts every time the status of the datasets changes, or even when a Sync connection is deleted by the merchant completely.
 
 :::info How to trigger data synchronization for testing
 Refer to [How to trigger manual syncs for testing](/sync-your-own-merchant-journey#how-to-trigger-manual-syncs-for-testing) if you need to trigger data synchronization manually for testing purposes.

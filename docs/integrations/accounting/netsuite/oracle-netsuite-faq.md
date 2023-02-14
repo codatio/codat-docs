@@ -24,7 +24,7 @@ NetSuite OneWorld supports global, multi-subsidiary organizations. Codat handles
 
 **Here's an example hierarchy in Netsuite:**
 
-<img src="https://files.readme.io/4a3f5ef-image-20210611-134647.png" />
+<img src="/img/old/4a3f5ef-image-20210611-134647.png" />
 
 That same hierarchy would be 5 different companies on the Codat platform.
 Company 1: Codat Limited

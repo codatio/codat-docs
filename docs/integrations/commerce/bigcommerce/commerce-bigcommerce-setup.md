@@ -75,12 +75,12 @@ Your SMB customer does the following:
 
 2. On the Commerce step in the Link site, select the **BigCommerce** tile, then click **Next**.
 
-   ![BigCommerce Link flow](https://files.readme.io/55ada94-link-select-bigcommerce-tile.png "On the Commerce step in Link, select the BigCommerce tile.")
+   ![BigCommerce Link flow](/img/old/55ada94-link-select-bigcommerce-tile.png "On the Commerce step in Link, select the BigCommerce tile.")
 
 3. Review the requested permissions on the **Connect to BigCommerce** step, then click **Next**.  
     The **Your BigCommerce Credentials** page is displayed. Leave this page open in your browser.
 
-   ![Your BigCommerce credentials](https://files.readme.io/fecc242-your-big-commerce-credentials-border.png "Your BigCommerce credentials dialog with fields to enter your store credentials.")
+   ![Your BigCommerce credentials](/img/old/fecc242-your-big-commerce-credentials-border.png "Your BigCommerce credentials dialog with fields to enter your store credentials.")
 
 4. In a new browser tab, go to <a className="external" href="https://www.bigcommerce.com/" target="_blank">www.bigcommerce.com</a> and sign in to your dashboard.
 
@@ -96,7 +96,7 @@ Your SMB customer does the following:
    - Click **Save**.  
      The **BigCommerce API credentials** dialog is displayed and a text file containing your store API account credentials is downloaded to your computer.
 
-   ![BigCommerce API credentials](https://files.readme.io/0c78323-bigcommerce-api-credentials-dialog-masked-border.png "The BigCommerce API credentials dialog showing the Client ID, Client secret, and Access token fields.")
+   ![BigCommerce API credentials](/img/old/0c78323-bigcommerce-api-credentials-dialog-masked-border.png "The BigCommerce API credentials dialog showing the Client ID, Client secret, and Access token fields.")
 
 8. Open the downloaded text file to view the store API account credentials.
 

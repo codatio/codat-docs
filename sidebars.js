@@ -4,7 +4,7 @@ const dataModel = require("./sidebars/dataModel");
 const accountingApi = require("./sidebars/accounting-api");
 const bankingAPI = require("./sidebars/banking-api");
 const commerceAPI = require("./sidebars/commerce-api");
-const bankfeeds = require("./sidebars/bank-feed-api");
+const bankfeeds = require("./sidebars/bank-feeds-api");
 const assess = require("./sidebars/assess");
 const sfc = require("./sidebars/sync-for-commerce");
 const sfe = require("./sidebars/sync-for-expenses");
@@ -43,11 +43,17 @@ module.exports = {
       collapsed: true,
       className: "core",
       items: [
+        "core-concepts/overview",
         "core-concepts/companies",
         "core-concepts/connections",
         "core-concepts/integrations",
         "core-concepts/data-type-settings",
         "core-concepts/status",
+        {
+          type: "link",
+          href: "/codat-api",
+          label: "Common API reference",
+        },
       ],
     },
     {
@@ -66,6 +72,19 @@ module.exports = {
         "using-the-api/querying",
         "using-the-api/queueing-data-syncs-1",
         "using-the-api/errors",
+        {
+          type: "category",
+          label: "Webhooks",
+          collapsed: true,
+          items: [
+            "introduction/webhooks/core-rules-create",
+            "introduction/webhooks/core-rules-types",
+            "introduction/webhooks/core-rules-webhooks",
+            "introduction/webhooks/core-rules-webhooksecurity",
+            "introduction/webhooks/receive-webhooks-as-email-alerts",
+          ],
+        },
+        "introduction/change-policy",
       ],
     },
     {
@@ -97,10 +116,10 @@ module.exports = {
           collapsed: true,
           items: [
             "other/portal/dashboard",
+            "other/portal/account-management",
             "other/portal/companies",
             "other/portal/developers",
             "other/portal/pull-and-push-history",
-            "other/portal/account-management",
           ],
         },
         {
@@ -141,9 +160,9 @@ module.exports = {
         },
         {
           type: "link",
-          label: "Bank Feed API",
+          label: "Bank Feeds API",
           className: "product bankfeed",
-          href: "/bank-feed-api/overview",
+          href: "/bank-feeds-api/overview",
         },
         {
           type: "link",

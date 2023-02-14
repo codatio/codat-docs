@@ -93,8 +93,6 @@ GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categ
 ```
 
 ## Data model
-
-[block:parameters]
 {
 "data": {
 "h-0": "Field",
@@ -113,11 +111,8 @@ GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categ
 "cols": 3,
 "rows": 3
 }
-[/block.
 
 ## AccountRef
-
-[block:parameters]
 {
 "data": {
 "h-0": "Field",
@@ -133,11 +128,8 @@ GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categ
 "cols": 3,
 "rows": 2
 }
-[/block.
 
 ## Suggested
-
-[block:parameters]
 {
 "data": {
 "h-0": "Field",
@@ -161,11 +153,8 @@ The date the category was suggested for the account."
 "cols": 3,
 "rows": 4
 }
-[/block]
 
 # Confirmed
-
-[block:parameters]
 {
 "data": {
 "h-0": "Field",
@@ -189,7 +178,6 @@ The date the account category was confirmed."
 "cols": 3,
 "rows": 4
 }
-[/block]
 
 ```
 {

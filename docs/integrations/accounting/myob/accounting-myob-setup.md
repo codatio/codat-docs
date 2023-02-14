@@ -83,4 +83,4 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 When linking, the user will first be asked to select from their available MYOB data files. If an AccountRight data file is chosen, the company will then be asked to enter the username and password of the company data file the company wishes to link. Codat will store these securely and use to sync their data. This username and password is separate to the credentials they use to login to their MYOB account - it is the credentials securing the file itself, similar to Sage 50.
 
-![](https://files.readme.io/761a123-myob_link.png "myob link.png")
+![](/img/old/761a123-myob_link.png "myob link.png")

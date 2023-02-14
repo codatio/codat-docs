@@ -5,6 +5,8 @@ const fetch = require("node-fetch");
 
 const BASE_URL = "";
 
+require('dotenv').config()
+
 module.exports = {
   title: "Codat_docs",
   tagline:
@@ -23,6 +25,9 @@ module.exports = {
   favicon: "img/meta/favicon-96x96.png",
   organizationName: "codat",
   projectName: "codat-docs",
+  customFields: {
+    'ZENDESK_KEY': process.env.ZENDESK_KEY,
+  },
   themeConfig: {
     sidebar: {
       hideable: true,
@@ -86,11 +91,11 @@ module.exports = {
         {
           label: "API",
           position: "left",
-          className: "navbar__link--community",
+          className: "navbar__link--api",
           items: [
             {
               href: "/codat-api",
-              label: "Codat API",
+              label: "Common API",
             },
             {
               href: "/accounting-api",
@@ -105,20 +110,24 @@ module.exports = {
               label: "Commerce API",
             },
             {
-              href: "/accounting-api",
-              label: "Bank Feed API",
+              href: "/bank-feeds-api",
+              label: "Bank Feeds API",
             },
             {
               href: "/assess-api",
               label: "Assess API",
             },
-            {
-              href: "/accounting-api",
-              label: "Sync for Commerce API",
-            },
+            // {
+            //   href: "/accounting-api",
+            //   label: "Sync for Commerce API",
+            // },
             {
               href: "/sync-for-expenses-api",
               label: "Sync for Expenses API",
+            },
+            {
+              href: "/files-api",
+              label: "Files API",
             },
           ],
         },
@@ -181,7 +190,7 @@ module.exports = {
               rel: null,
             },
             {
-              href: "https://docs.codat.io/discuss",
+              href: "https://github.com/orgs/codatio/discussions",
               label: "Ask the community",
               target: "_blank",
               rel: null,
@@ -329,8 +338,7 @@ module.exports = {
   ],
   themes: [
     [
-      //overriding the standard docusaurus-theme-classic to provide custom schema
-      path.resolve(__dirname, "./node_modules/@docusaurus/theme-classic"),
+      path.resolve(__dirname, "./node_modules/@docusaurus/theme-classic"), //overriding the standard docusaurus-theme-classic to provide custom schema
       {
         customCss: [
           require.resolve(
@@ -344,8 +352,6 @@ module.exports = {
     "@docusaurus/theme-mermaid",
   ],
   markdown: {
-    // In order for Mermaid code blocks in Markdown to work, you also need to enable the Remark plugin with this option
-    mermaid: true,
+    mermaid: true, // In order for Mermaid code blocks in Markdown to work, you also need to enable the Remark plugin with this option
   },
-  customFields: {},
 };

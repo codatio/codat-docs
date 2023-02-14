@@ -19,7 +19,7 @@ Before you start to test WooCommerce, make sure that you've:
 
 - Set up the WooCommerce integration.
 - Created an online store to test the integration or have access to an online store you can connect to the Portal. Note that you don't have to use WooCommerce store for testing, but if you choose to, you may be required to pay additional charges. Please visit [WooCommerce website](https://woocommerce.com/hosting-solutions/) for more details.
-- Updated your [sync settings](/commerce-sync-settings) to enable commerce data types.
+- Updated your [sync settings](/integrations/commerce/commerce-sync-settings) to enable commerce data types.
 
 ## Set up a test company
 

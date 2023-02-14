@@ -9,7 +9,7 @@ updatedAt: "2023-01-16T18:05:01.158Z"
 
 If you want to have more than 25 Xero connections, you'll need to join the Xero App Partner Program.
 
-Follow our guide [here](/xero-app-partner-program).
+Follow our guide [here](integrations/accounting/xero/xero-app-partner-program).
 
 ## How can I set up a Bank Feed to a Xero account?
 
@@ -19,11 +19,11 @@ Follow our guide [here](/xero-app-partner-program).
 2. Xero requires a real Xero account (either a full account or a free trial) to be used for pushing bank transactions. Linking with the Xero Demo Company will not allow Bank Feeds, resulting in an appropriate 403 error.
 3. :::
 
-4. You must first have Bank Feeds [configured and allowed](/accounting-xero-setup#configuration-of-bank-feeds).
-5. Then, to create a direct Bank Feed using Xero's Bank Feeds API, you must POST [Bank Transactions](/data-model/accounting/-banktransactions).
+4. You must first have Bank Feeds [configured and allowed](integrations/accounting/xero/accounting-xero-setup#configuration-of-bank-feeds).
+5. Then, to create a direct Bank Feed using Xero's Bank Feeds API, you must POST [Bank Transactions](/accounting-api#/schemas/banktransactions).
 6. When successfully pushed to Xero, the bank transactions will appear in the 'Bank Statements' section for the bank account in the Xero UI, with the source 'Bank Feed' as below:
 
-<img src="https://files.readme.io/2530dce-bankFeedsDocs.PNG" />
+<img src="/img/old/2530dce-bankFeedsDocs.PNG" />
 
 :::info Bank Feeds vs Account Transactions
 Note that the Codat API does not support pushing Xero 'Account Transactions'. Account transaction are reconciled with statement lines from direct Bank Feeds and can be created / matched in the Xero UI.
@@ -47,7 +47,7 @@ To see which rate limit is exceeded, please contact Codat Support.
 
 ## Why do all of my items from Xero have their status as _Unknown_?
 
-All [Items](/data-model/accounting/-items) from Xero will have their `itemStatus` mapped as `Unknown` in Codat because an item status is not exposed via Xero's API. If this is a feature you'd like to see made available, please consider voting for <a href="https://developer.xero.com/documentation/api/items/" target="_blank">this feature request on Xero's UserVoice</a>.
+All [Items](/accounting-api#/schemas/items) from Xero will have their `itemStatus` mapped as `Unknown` in Codat because an item status is not exposed via Xero's API. If this is a feature you'd like to see made available, please consider voting for <a href="https://developer.xero.com/documentation/api/items/" target="_blank">this feature request on Xero's UserVoice</a>.
 
 ## Can I push discounts to Xero at the invoice level?
 
@@ -77,11 +77,11 @@ The **Payee** in Xero is pulled to Codat as the `counterparty` of the Bank trans
 
 For example, the **Statement line** below will result in a bank statement line with a `counterparty` of `Payee 3` and a `description` with the value: `Description 3 Reference 3 3`.
 
-<img src="https://files.readme.io/d1325a1-xero-bank-statement-46713.png" />
+<img src="/img/old/d1325a1-xero-bank-statement-46713.png" />
 
 ## Can I push batch payments to Xero?
 
-Yes. To push a batch payment to Xero, you push a [Bill payment](/data-model/accounting/-billpayments) with multiple line items. Pushing a batch payment to Xero will create the following business objects:
+Yes. To push a batch payment to Xero, you push a [Bill payment](/accounting-api#/schemas/billpayments) with multiple line items. Pushing a batch payment to Xero will create the following business objects:
 
 - A separate bill payment for each line.
 - An account transaction that links the bill payments together.

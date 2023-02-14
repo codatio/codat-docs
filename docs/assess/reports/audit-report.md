@@ -43,7 +43,7 @@ This section provides general information about the metrics contained in this re
 
 The image below shows the fields in the **Report Info**. Borders and styling were added to this image for clarity but is not included in the downloadable Excel file.
 
-![A sample Excel sheet showing Audit Report information](https://files.readme.io/aa43c22-ReportInfo2.png)
+![A sample Excel sheet showing Audit Report information](/img/old/aa43c22-ReportInfo2.png)
 
 This sheet provides the following general information about the report:
 
@@ -71,7 +71,7 @@ The image below shows the fields in the **Records Last Updated** report. This re
 
 Borders and styling were added to this image for clarity but is not included in the downloadable Excel file.
 
-![Extract of the Records Last Updated Excel report](https://files.readme.io/20a9208-RecordsLastUpdated1.png)
+![Extract of the Records Last Updated Excel report](/img/old/20a9208-RecordsLastUpdated1.png)
 
 ##### Report fields
 
@@ -93,7 +93,7 @@ The image below is an extract of the **Profit and Loss Trend** report that shows
 
 Borders and styling were added to this image for clarity but is not included in the downloadable Excel file.
 
-![Extract of the Profit and Loss Trends Excel report](https://files.readme.io/183aa66-PL3.png)
+![Extract of the Profit and Loss Trends Excel report](/img/old/183aa66-PL3.png)
 
 If the most recent or oldest data doesn’t exist, only those dates will be omitted from the report. In other words, you may not always get a full three years of data. Similarly, if a fourth year’s (the oldest) data doesn’t exist, the percentage change will not be calculated.
 
@@ -123,7 +123,7 @@ The data types evaluated are _Invoices_, _Payments_, _Credit Notes_, _Sales Orde
 
 The image below is an extract of the **Round Sum** report. Borders and styling were added to this image for clarity but is not included in the downloadable Excel file.
 
-![Extract of the Round Sum Excel report](https://files.readme.io/3887ee2-RoundSum6.png)
+![Extract of the Round Sum Excel report](/img/old/3887ee2-RoundSum6.png)
 
 The report provides a row per data type per month and shows the records with round sums as a percentage of the total records evaluated for that month.
 
@@ -145,7 +145,7 @@ The data types evaluated are _Invoices_, _Payments_, _Credit Notes_, _Sales Orde
 
 The image below is an extract of the **Blank Descriptions** report. Borders and styling were added to this image for clarity but is not included in the downloadable Excel file.
 
-![Extra of the Blank Descriptions report](https://files.readme.io/bce5f4d-BlankDescription1.png)
+![Extra of the Blank Descriptions report](/img/old/bce5f4d-BlankDescription1.png)
 
 Each month shows the percentage of blank descriptions per data type as well as the totals provided in the _All_ rows.
 
@@ -167,7 +167,7 @@ The data types evaluated are _Invoices_, _Payments_, _Credit Notes_, _Sales Orde
 
 The image below is an extract of the **Outside Working Hours** metric. Borders and styling were added to this image for clarity but is not included in the downloadable Excel file.
 
-![Extra of the Blank Descriptions report](https://files.readme.io/d1988b1-OutsideWorkingHours1.png)
+![Extra of the Blank Descriptions report](/img/old/d1988b1-OutsideWorkingHours1.png)
 
 Each month shows the percentage of transactions that were updated outside of working hours per data type as well as the totals provided in the _All_ rows.
 
@@ -187,7 +187,7 @@ The data types evaluated are _Invoices_ and _Bills_. Make sure these are enabled
 
 The image below is an extract of the **Backdated Records** metric. Borders and styling were added to this image for clarity but is not included in the downloadable Excel file.
 
-<img src="https://files.readme.io/e7ec18c-BackdatedRecords1.png" />
+<img src="/img/old/e7ec18c-BackdatedRecords1.png" />
 
 Each month shows the percentage of records that were backdated per data type and the totals provided in the _All_ rows.
 

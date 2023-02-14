@@ -14,7 +14,7 @@ If any of your customers have issues regarding anti-virus blocking please report
 
 The connector's ability to access data is dependent on permissions granted by the User, normally at time of installation.
 
-![](https://files.readme.io/f336207-c650d8d-QBD-Auth.png "c650d8d-QBD-Auth.png")
+![](/img/old/f336207-c650d8d-QBD-Auth.png "c650d8d-QBD-Auth.png")
 
 If the user has not given the connector the permission to _always_ modify the company data file (allowing access even if QuickBooks is not running), the connector will be unable to process any queued syncs or pushes, unless the user has QuickBooks open and is logged in to the relevant company file. The connector will periodically check whether the correct file has been opened and will complete the queued/pending items as soon as possible.
 
@@ -25,7 +25,7 @@ You can configure the QuickBooks Desktop connector to run in one of two modes:
 - One-time sync
 - Ongoing sync
 
-For more information about these modes, see [On-premise connector setup](/offline-connectors). If one-time sync is configured, the connector will be uninstalled once the sync has completed, and the company will transition to deauthorized status.
+For more information about these modes, see [On-premise connector setup](/integrations/accounting/offline-connectors). If one-time sync is configured, the connector will be uninstalled once the sync has completed, and the company will transition to deauthorized status.
 
 If you'd like to enable ongoing syncs with the company, update your connector settings, and ask the SMB user to complete the linking process (i.e. downloading and installing the connector) again.
 

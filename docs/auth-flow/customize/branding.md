@@ -15,13 +15,13 @@ Your company name, as you see it in the Portal, is also displayed in Link when y
 
 ### Set your company logo
 
-This logo appears in the navigation bar of Link, and on the [on-premise connector](/offline-connectors) screens when users link on-premise applications.
+This logo appears in the navigation bar of Link, and on the on-premise connector screens when users link on-premise applications.
 
 Use PNG, JPEG, SVG, or GIF file formats and ensure the file size does not exceed 10MB. Recommended dimensions for the company logo are 600px x 100px.
 
 ### Set a company icon
 
-This icon (uploaded as a favicon) appears as the Link browser tab icon and on the [on-premise connectors'](/offline-connectors) system tray icon.
+This icon (uploaded as a favicon) appears as the Link browser tab icon and on the on-premise connectors' system tray icon.
 
 Use ICO file format and ensure the file size does not exceed 500KB. Recommended dimensions for the company icon are 32px x 32px.
 
@@ -30,7 +30,7 @@ Use ICO file format and ensure the file size does not exceed 500KB. Recommended 
 You can set your brand's primary color to define the color of buttons and other elements within Link and Sync Flow.
 
 <img
-  src="https://files.readme.io/1cef143-branding.PNG"
+  src="/img/old/1cef143-branding.PNG"
   alt="Branding settings screen with company name, logo, icon, and colour picker displayed"
 />
 

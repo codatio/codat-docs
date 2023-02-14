@@ -18,7 +18,7 @@ We expose the data sources available to pull supplemental data and advise you to
 ## Coverage
 
 Codat currently supports supplemental data for the following data types and integrations. Explore integrations' individual pages for implementation details of each.
-[block:parameters]
+
 {
 "data": {
 "h-0": "Data type",
@@ -35,7 +35,7 @@ Netsuite",
 "cols": 2,
 "rows": 3
 }
-[/block.
+
 
 ## Configuration
 
@@ -66,7 +66,7 @@ Note that the `dataSource` and `requiredData` parameter values must match the in
     }
   ]
 }
-[/block]
+
 You can also retrieve your supplemental data configuration by using the following endpoint:
 `GET /integrations​/{platformKey}/datatypes/{datatype}/supplementalDataConfig`
 
@@ -77,7 +77,7 @@ Codat does not validate the contents of the supplemental data configuration requ
 ## Data model
 
 The `supplementalData` property on a data model entity is entirely optional.
-[block:parameters]
+
 {
   "data": {
     "h-0": "Field",
@@ -92,7 +92,7 @@ The `supplementalData` property on a data model entity is entirely optional.
   "cols": 3,
   "rows": 2
 }
-[/block.
+
 
 ### Content
 
@@ -103,7 +103,7 @@ This object contains the source supplemental data requested from an integration 
 * The object cannot be used to make available line-level information.
 
 The `dataSource` field allows us to handle scenarios in which data is mapped from different endpoints, or from multiple endpoints.
-[block:parameters]
+
 {
   "data": {
     "h-0": "Field",
@@ -119,7 +119,7 @@ The `dataSource` field allows us to handle scenarios in which data is mapped fro
   "cols": 3,
   "rows": 2
 }
-[/block]
+
 Callout for data types:
 
 This data type supports supplemental data. Read more (configuring for supplemental data)[] and review implementation procedures for (specific integrations)[].

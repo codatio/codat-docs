@@ -7,7 +7,7 @@ updatedAt: "2022-11-29T15:20:55.875Z"
 
 The Revenue endpoint retrieves the revenue and revenue growth for a specific company connection, over one or more periods of time.
 
-Refer to the [Assess reporting structure](/assess-reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/assess/reports/reporting-structure) page for more detail on reports in Assess.
 
 For Revenue, these are the dimensions and measures:
 
@@ -33,7 +33,7 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 `GET ​/data​/companies​/{companyId}​/connections​/{connectionId}​/assess​/commerceMetrics​/revenue`
 
 #Parameters
-[block:parameters]
+
 {
 "data": {
 "h-0": "Parameter",
@@ -73,14 +73,14 @@ Default is false.",
 "cols": 4,
 "rows": 5
 }
-[/block]
+
 #Data model
 
 The response structure is split into four areas: Report info, Dimensions, Measures and Report data.
 
 ## Report info
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -96,7 +96,7 @@ The response structure is split into four areas: Report info, Dimensions, Measur
 "cols": 3,
 "rows": 2
 }
-[/block.
+
 
 ## Dimensions
 
@@ -104,7 +104,7 @@ _Revenue_ consists of these dimensions: Period and Revenue.
 
 ### Dimension (index = “0”): Period
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -126,11 +126,11 @@ Ordered by latest to earliest periods."
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 #### Dimension (index = “0”) items
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -155,11 +155,11 @@ Date in which the period ends (inclusive)."
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 ### Dimension (index = “1”): Revenue
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -179,11 +179,11 @@ See [Dimension (index = “1”) items](#dimension-index--1-items)",
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 #### Dimension (index = “1”) items
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -200,7 +200,7 @@ These will always show for any response in this report. The dimension values are
 "cols": 3,
 "rows": 1
 }
-[/block.
+
 
 ## Measures
 
@@ -210,7 +210,7 @@ The two measures for this report are as follows:
 
 ### Index “0” - value
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -229,11 +229,11 @@ The two measures for this report are as follows:
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 ### Index “1” - percentage change
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -252,7 +252,7 @@ The two measures for this report are as follows:
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 ## Report data
 
@@ -266,7 +266,7 @@ Each period will be broken down into _Revenue_ and both value and percent change
 
 ### Components structure
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -289,13 +289,13 @@ Each period will be broken down into _Revenue_ and both value and percent change
 "cols": 3,
 "rows": 5
 }
-[/block]
+
 All components have the structure described in the _Measures in components_ data model below.
 
 #### Measures in components
 
 **Index "0" (Revenue)**
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -310,9 +310,9 @@ All components have the structure described in the _Measures in components_ data
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 **Index “1” (Revenue growth)**
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -330,7 +330,7 @@ If the system can't calculate the percentage change, this object will not displa
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 #Example data
 
 ```

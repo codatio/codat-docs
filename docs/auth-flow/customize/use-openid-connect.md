@@ -24,7 +24,7 @@ This article explains how to configure your authorization process to use OpenID 
 
 Update your redirect URL and Hosted Link URLs.
 
-1. Add any parameters that you require from the user profile to your [redirect URL](/redirect-urls). For example:
+1. Add any parameters that you require from the user profile to your [redirect URL]((/auth-flow/customize/set-up-redirects). For example:
    `https://redirect.com/site/{companyId}?firstName={openId_given_name}&email={openId_email}&phone={openId_phone_number}`
 2. Append `?openId=true` to a Link URL before you send it to a customer. For example:
    `https://link-uat.codat.io/{companyId}/link?openId=true`
@@ -36,7 +36,7 @@ Codat supports a subset of the available [OpenID Connect fields](https://openid.
 ## OpenID Connect fields
 
 The following table lists OpenID Connect fields and the accounting platforms for which they are supported.
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field and type",
@@ -162,4 +162,4 @@ _number_",
 "cols": 3,
 "rows": 20
 }
-[/block]
+

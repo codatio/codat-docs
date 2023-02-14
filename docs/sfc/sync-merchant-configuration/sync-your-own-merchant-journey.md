@@ -25,21 +25,9 @@ Before you start, prepare the following details:
 
 You can use our Postman collection to help you follow the steps outlined in this guide.
 
-<div>
-  <a
-    href="https://postman.codat.io/#166a0b48-9f98-47f6-91cd-0986a3de626f"
-    target="_blank"
-    style={{
-      minHeight: "32px",
-      minWidth: "128px",
-      border: "none",
-      backgroundImage: 'url("https://run.pstmn.io/button.svg")',
-      cursor: "pointer",
-    }}
-  >
-    <button class="postman-button"></button>
-  </a>
-</div>
+
+[![Run in Postman Button](https://run.pstmn.io/button.svg)](https://postman.codat.io/#166a0b48-9f98-47f6-91cd-0986a3de626f/ "Link to run in postman")
+
 
 All the endpoints mentioned in this guide are also available in the <a href="https://api.codat.io/sync/swagger" target="_blank">Sync for Commerce Swagger</a>. Before you use Swagger, make sure to [authenticate](/step-1-authenticate).
 
@@ -111,7 +99,7 @@ The response to this request includes the parameters of a newly created company,
     }
   ]
 }
-[/block]
+
 
 :::caution Keep track of the `companyId`
 
@@ -156,7 +144,7 @@ POST /meta/companies/{companyId}/connections
 }
 ]
 }
-[/block] 4. After the merchant completes the authorization and grants access to their accounting platform, ensure they are redirected to your data mapping configuration UI by [configuring relevant redirect URLs](/redirect-urls)..
+ 4. After the merchant completes the authorization and grants access to their accounting platform, ensure they are redirected to your data mapping configuration UI by [configuring relevant redirect URLs]((/auth-flow/customize/set-up-redirects)..
 
 ## Data mapping configuration
 
@@ -202,7 +190,7 @@ Such an approach ensures that a full calendar day’s worth of data is synchroni
 :::
 
 :::info
-You can see [Codat’s merchant configuration flow](/implementing-codats-no-code-merchant-configuration) for an example of a UI implementing this functionality.
+You can see [Codat’s merchant configuration flow](/sfc/build-with-sync-for-commerce/implementing-codats-no-code-merchant-configuration) for an example of a UI implementing this functionality.
 :::
 
 3. Update the configuration via the Create Config endpoint:

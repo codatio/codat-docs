@@ -14,7 +14,15 @@ Let your SMB customers understand what will happen with their connected data. Of
 It is imperative your customers trust you with their data, otherwise they may not consent to connecting their accounts.
 :::
 
--[ ] Specify the data being shared and what will happen to it -[ ] Communicate to build trust with your customers -[ ] Require an action to consent to data sharing -[ ] Let the user know they can disconnect at any time -[ ] Link to a connection guide -[ ] Use statistical data to reinforce trust -[ ] Provide various support contact details -[ ] Show that your authorization flow is powered by Codat -[ ] Bonus: Offer a mutual non-disclosure agreement (NDA)
+- Specify the data being shared and what will happen to it
+- Communicate to build trust with your customers
+- Require an action to consent to data sharing
+- Let the user know they can disconnect at any time
+- Link to a connection guide
+- Use statistical data to reinforce trust
+- Provide various support contact details
+- Show that your authorization flow is powered by Codat
+- Bonus: Offer a mutual non-disclosure agreement (NDA)
 
 ## Specify the data being shared and what will happen to it
 
@@ -60,9 +68,9 @@ The most successful implementations can offer a direct phone number, support e-m
 
 Codat is widely recognized for following a high standard of data protection. Adding a "Powered by Codat" logo to your authorization flow will instantly boost your customer's trust.
 
-If you use Link, you can [enable the logo via Link settings](/set-up-link#configure-your-link-flow).
+If you use Link, you can [enable the logo via Link settings](/auth-flow/customize/customize-link#configure-your-link-flow).
 
-If you are building your own authorization flow, you can embed the logo into your app by following the instructions [here](/build-your-own-authorization-journey#bonus-show-that-your-authentication-flow-is-powered-by-codat).
+If you are building your own authorization flow, you can embed the logo into your app by following the instructions [here](/auth-flow/build/build-your-own-authorization-journey#bonus-show-that-your-authentication-flow-is-powered-by-codat).
 
 ## ⭐ Offer a mutual non-disclosure agreement (NDA)
 
@@ -79,7 +87,7 @@ _“Through the wonders of API integration, we can instantly underwrite [custome
 - Require an action to consent to data sharing
 - Provide various support contact details
 
-To read more about different ways to customize Link, read [Customize your Link](/set-up-link).
+To read more about different ways to customize Link, read [Customize your Link](/auth-flow/customize/customize-link).
 
 You can also [build your own authentication journey](/build-your-own-authentication-journey).
 

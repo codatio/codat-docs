@@ -10,7 +10,7 @@ Test your Shopify integration by pulling commerce data from a Development Store 
 ## Prerequisites
 
 - [Set up your Shopify integration](/commerce-shopify-setup).
-- Update your [Commerce data type settings](/commerce-sync-settings) to enable commerce data types.
+- Update your [Commerce data type settings](/integrations/commerce/commerce-sync-settings) to enable commerce data types.
 
 ## Add a test company
 
@@ -30,7 +30,7 @@ Keep the **Companies** page open in your browser.
 
    Ensure the **Create store with transfer disabled to use a developer preview** checkbox is selected, and then choose **Shopify Markets** from the dropdown list:
 
-   <img src="https://files.readme.io/e6d56b7-Screenshot_2022-09-21_170904.png" />
+   <img src="/img/old/e6d56b7-Screenshot_2022-09-21_170904.png" />
 
 5. Click **Save**.
 
@@ -54,7 +54,7 @@ In the Codat Portal:
 
 When the Link flow is complete, your Development Store opens and your app is automatically installed into the Store.
 
-<img src="https://files.readme.io/d2bf06b-shopify-development-store-app-installed.png" />
+<img src="/img/old/d2bf06b-shopify-development-store-app-installed.png" />
 
 ## Retrieve commerce data
 

@@ -18,7 +18,7 @@ Two Square integrations are available in the Codat Portal:
 
 You set the environment on a per-application basis using the **Sandbox** and **Production** buttons in an application's configuration settings. These buttons are located at the top of every page in an application's settings:
 
-<img src="https://files.readme.io/77b4e8a-square-sandbox-test-app.png" />
+<img src="/img/old/77b4e8a-square-sandbox-test-app.png" />
 
 An application's credentials are different depending on whether the Square Sandbox or production is enabled for the application. To enable full production access for an application, you must first activate your Square account.
 
@@ -90,4 +90,4 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 ## Check the commerce sync settings
 
-Syncing of all commerce data types must be enabled before you can pull commerce transactions from Square to Codat. Follow the steps in [Commerce sync settings](/commerce-sync-settings); you only need to do this once.
+Syncing of all commerce data types must be enabled before you can pull commerce transactions from Square to Codat. Follow the steps in [Commerce sync settings](/integrations/commerce/commerce-sync-settings); you only need to do this once.
