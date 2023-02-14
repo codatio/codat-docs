@@ -116,10 +116,10 @@ module.exports = {
           collapsed: true,
           items: [
             "other/portal/dashboard",
+            "other/portal/account-management",
             "other/portal/companies",
             "other/portal/developers",
             "other/portal/pull-and-push-history",
-            "other/portal/account-management",
           ],
         },
         {

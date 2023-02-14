@@ -7,7 +7,7 @@ updatedAt: "2022-12-09T13:03:30.599Z"
 
 :::note Access to Codat Developers
 
-This page is only available to users with developer and administrator [user roles](/user-roles).
+This page is only available to users with developer and administrator [user roles](/other/user-management/user-roles).
 :::
 
 You can access the Codat Developers space by clicking the **Developers** tab in the navigation bar of the <a href="https://app.codat.io" target="_blank">Codat Portal</a>.
@@ -26,7 +26,7 @@ The page also provides handy links to various Codat resources that support our d
 
 ## API keys
 
-This section allows you to view and create the authorization headers and API keys for your organization. Codat uses these to control access to the API. Learn more about authentication at Codat [here](https://docs.codat.io/reference/authentication).
+This section allows you to view and create the authorization headers and API keys for your organization. Codat uses these to control access to the API. Learn more about authentication at Codat [here](/using-the-api/authentication).
 
 You can generate up to ten API keys, which enables you to build multiple solutions to our API concurrently.
 
@@ -36,7 +36,7 @@ This section lists all upcoming deprecations with self-serve feature buttons. Th
 
 For each upcoming deprecation, we provide a brief description and its implementation date. The date is always listed in your local format.
 
-We also link each deprecation to its respective [Important updates](https://docs.codat.io/changelog) entry, where you can find further details of the change.
+We also link each deprecation to its respective [Important updates](/updates) entry, where you can find further details of the change.
 
 <img
   src="/img/old/3851067-deprecation.PNG"
@@ -47,7 +47,7 @@ Make sure you review the specifics of the deprecation and complete any necessary
 
 Once you are ready, click **Enable** to switch the deprecation on for your organization early. You can use the same button to disable the deprecation and revert to previous behavior if necessary.
 
-For more information on breaking changes and how we communicate these to you, review our [change policy](/change-policy).
+For more information on breaking changes and how we communicate these to you, review our [change policy](/introduction/change-policy).
 
 :::note Deprecation dates
 
