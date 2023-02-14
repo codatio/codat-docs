@@ -118,9 +118,9 @@ module.exports = [
     collapsed: true,
     items: [
       //"data-model/shared/datamodel-shared-country",
-      "/codat-api#/schemas/currency",
-      "/codat-api#/schemas/currencyrate",
-      "/codat-api#/schemas/datetime",
+      // "/codat-api#/schemas/currency",
+      // "/codat-api#/schemas/currencyrate",
+      // "/codat-api#/schemas/datetime",
       //"data-model/shared/valid-data-type-links",
     ],
   },
