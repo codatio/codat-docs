@@ -24,7 +24,7 @@ If you've got an existing integration that you'd like to migrate to Codat, we ca
 
 Most accounting software providers require you to register with them before you're able to access data from their platform via Codat. In most cases, this is free and should only take a few minutes.
 
-The specific steps and requirements vary but we've detailed them all in the set up pages below, such as [Set up QuickBooks Online](/accounting-quickbooksonline-setup) and [Set up Xero](/accounting-xero-setup).
+The specific steps and requirements vary but we've detailed them all in the set up pages below, such as [Set up QuickBooks Online](/accounting-quickbooksonline-setup) and [Set up Xero](integrations/accounting/xero/accounting-xero-setup).
 
 ## Supported accounting software
 
@@ -47,8 +47,8 @@ You can also explore the data types supported by each integration in the interac
 - [Sage 200cloud](/accounting-sage200)
 - [Sage Business Cloud Accounting](/accounting-sagebusinesscloud) (UK, US, Ireland, Canada, France, Germany, and Spain)
 - [Sage Intacct](/accounting-sage-intacct)
-- [Wave](/accounting-wave)
-- [Xero](/accounting-xero)
+- [Wave](integrations/accounting/wave/accounting-wave)
+- [Xero](integrations/accounting/xero/accounting-xero)
 - [Zoho Books](/accounting-zohobooks)
 
 ## On-premise

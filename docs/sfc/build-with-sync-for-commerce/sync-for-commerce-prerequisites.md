@@ -20,7 +20,7 @@ Sync for Commerce must be enabled for your account. You can enable products in t
 
 You need to set up one or more of the supported accounting platforms:
 
-- [Xero](/accounting-xero)
+- [Xero](integrations/accounting/xero/accounting-xero)
 - [QuickBooks Online](/accounting-quickbooksonline)
 - [FreeAgent](/accounting-freeagent)
 
@@ -30,11 +30,11 @@ The following data types are required (and are enabled by default):
 
 #### Accounting
 
-- [Company info](/accounting-api#/company)
-- [Accounts](/accounting-api#/chartofaccounts)
-- [Tax rates](/accounting-api#/taxrates)
-- [Customers](/accounting-api#/customers)
-- [Suppliers](/accounting-api#/suppliers)
+- [Company info](/accounting-api#/schemas/CompanyDataset)
+- [Accounts](/accounting-api#/schemas/Account)
+- [Tax rates](/accounting-api#/schemas/TaxRates)
+- [Customers](/accounting-api#/schemas/Customers)
+- [Suppliers](/accounting-api#/schemas/Suppliers)
 
 #### Commerce
 

@@ -179,7 +179,7 @@ Initial configuration: `https://www.rocketbank.io/{integrationType}?flow=Codat&s
 
 ## Allowed redirect hosts
 
-The **Allowed redirect URLs** option allows you to use a [custom query parameter ](/redirect-urls#redirect-with-custom-query-parameters) to dynamically change the redirect URL, including its host, when initiating the authorization flow. When your customer starts the linking flow, Codat verifies if the host of the URL is listed as an allowable host.
+The **Allowed redirect URLs** option allows you to use a [custom query parameter ]((/auth-flow/customize/set-up-redirects#redirect-with-custom-query-parameters) to dynamically change the redirect URL, including its host, when initiating the authorization flow. When your customer starts the linking flow, Codat verifies if the host of the URL is listed as an allowable host.
 
 ## Configuration
 

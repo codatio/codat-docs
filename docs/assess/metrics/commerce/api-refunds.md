@@ -7,7 +7,7 @@ updatedAt: "2022-11-29T15:21:12.613Z"
 
 The Refunds endpoint retrieves the number and total value of refunds, and the refund rate for a specific company's commerce connection, over one or more periods of time.
 
-Refer to the [Assess reporting structure](/assess-reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/assess/reports/reporting-structure) page for more detail on reports in Assess.
 
 For Refunds, these are the dimensions and measures:
 

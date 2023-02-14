@@ -9,7 +9,7 @@ updatedAt: "2023-01-16T18:05:01.158Z"
 
 If you want to have more than 25 Xero connections, you'll need to join the Xero App Partner Program.
 
-Follow our guide [here](/xero-app-partner-program).
+Follow our guide [here](integrations/accounting/xero/xero-app-partner-program).
 
 ## How can I set up a Bank Feed to a Xero account?
 
@@ -19,8 +19,8 @@ Follow our guide [here](/xero-app-partner-program).
 2. Xero requires a real Xero account (either a full account or a free trial) to be used for pushing bank transactions. Linking with the Xero Demo Company will not allow Bank Feeds, resulting in an appropriate 403 error.
 3. :::
 
-4. You must first have Bank Feeds [configured and allowed](/accounting-xero-setup#configuration-of-bank-feeds).
-5. Then, to create a direct Bank Feed using Xero's Bank Feeds API, you must POST [Bank Transactions](/accounting-api#/banktransactions).
+4. You must first have Bank Feeds [configured and allowed](integrations/accounting/xero/accounting-xero-setup#configuration-of-bank-feeds).
+5. Then, to create a direct Bank Feed using Xero's Bank Feeds API, you must POST [Bank Transactions](/accounting-api#/schemas/banktransactions).
 6. When successfully pushed to Xero, the bank transactions will appear in the 'Bank Statements' section for the bank account in the Xero UI, with the source 'Bank Feed' as below:
 
 <img src="/img/old/2530dce-bankFeedsDocs.PNG" />

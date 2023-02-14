@@ -42,4 +42,4 @@ Consider showing a positive review from a trusted person, for example, a promine
 
 ## ⭐ Automate the population of setup pages with connected company data
 
-The higher in the funnel a customer connects their data, the more you can automate their onboarding flow by prepopulating [useful company information](/accounting-api#/company) such as company registration, tax number, addresses, and key contact info or [company annual revenue](/accounting-api#/balancesheet).
+The higher in the funnel a customer connects their data, the more you can automate their onboarding flow by prepopulating [useful company information](/accounting-api#/schemas/CompanyDataset) such as company registration, tax number, addresses, and key contact info or [company annual revenue](/accounting-api#/schemas/balancesheet).

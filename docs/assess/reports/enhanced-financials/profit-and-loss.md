@@ -7,7 +7,7 @@ updatedAt: "2022-11-02T14:39:20.426Z"
 
 The _Enhanced Profit and Loss_ endpoint provides a fully categorized profit and loss statement over a specified period(s) of time, for a specific company’s accounting connection.
 
-Refer to the [Assess reporting structure](/assess-reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/assess/reports/reporting-structure) page for more detail on reports in Assess.
 
 For _Enhanced Profit and Loss_, these are the dimensions and measures:
 

@@ -58,7 +58,7 @@ Ensure there is a way to add multiple connections if your use case will benefit 
 - Show the status of existing connections e.g. showing ‘Connected ✔️' against the connected platform’s name and logo
 - Highlight previously selected platforms that are pending authorization
 
-See [here](/authorize-hosted-link#managing-existing-users-with-pending-connections) for more detail on connections with a `pendingAuth` status and [here](/querying-1#for-companies-whose-status-is-pending-with-data-connection-established) on creating a query to find these companies.
+See [here](/authorize-hosted-link#managing-existing-users-with-pending-connections) for more detail on connections with a `pendingAuth` status and [here](/using-the-api/querying-1#for-companies-whose-status-is-pending-with-data-connection-established) on creating a query to find these companies.
 
 :::info
 

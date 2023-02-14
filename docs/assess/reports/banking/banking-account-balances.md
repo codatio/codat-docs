@@ -12,7 +12,7 @@ Please note, this feature is in beta testing. We encourage you to provide any fe
 
 This endpoint retrieves the current balance and balance limit for a company, over one or more periods of time, and provides the data in the currency requested in the query parameters.
 
-Refer to the [Assess reporting structure](/assess-reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/assess/reports/reporting-structure) page for more detail on reports in Assess.
 
 For _Banking account balances_, these are the dimensions and measures:
 
@@ -67,7 +67,7 @@ Default is 'false'.",
     "6-3": "Optional",
     "0-0": "**query**",
     "0-1": "*string*
-See [Querying](/querying-1)",
+See [Querying](/using-the-api/querying-1)",
     "0-2": "Codat query string.
 
 It can be empty. If empty, it returns data for all bank accounts for a specific company.",

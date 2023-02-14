@@ -56,7 +56,7 @@ Once the user has completed the Link flow, the Codat platform will redirect them
 
 :::note Redirect parameter settings
 
-For more information on setting your redirect URL, refer to [this document](/redirect-urls).
+For more information on setting your redirect URL, refer to [this document]((/auth-flow/customize/set-up-redirects).
 :::
 
 Once your user is redirected to the redirect URL page, the linking process is complete and their accounting data has begun synchronizing.

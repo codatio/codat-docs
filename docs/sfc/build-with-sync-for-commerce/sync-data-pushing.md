@@ -62,7 +62,7 @@ You can also check whether the data has been mapped to the accounting platform d
 GET /meta/companies/{companyId}/sync/commerce/status
 ```
 
-5. **(Optional)** You can also [set up alerting rules](/core-rules-types) to receive alerts every time the status of the datasets changes, or even when a Sync connection is deleted by the merchant completely.
+5. **(Optional)** You can also [set up alerting rules](/introduction/webhooks/core-rules-types) to receive alerts every time the status of the datasets changes, or even when a Sync connection is deleted by the merchant completely.
 
 :::info How to trigger data synchronization for testing
 Refer to [How to trigger manual syncs for testing](/sync-your-own-merchant-journey#how-to-trigger-manual-syncs-for-testing) if you need to trigger data synchronization manually for testing purposes.
