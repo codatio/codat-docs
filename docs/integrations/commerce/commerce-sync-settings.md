@@ -24,7 +24,7 @@ In the Codat Portal:
    - **Commerce - Payments**
    - **Commerce - Payment Methods**
 
-   You can update the other [Data type settings](/data-sync-settings) when you've decided how frequently you want to sync commerce data.
+   You can update the other [Data type settings](/core-conepts/data-type-settings) when you've decided how frequently you want to sync commerce data.
 
 3. Select **Save Changes** to update your configuration.
 

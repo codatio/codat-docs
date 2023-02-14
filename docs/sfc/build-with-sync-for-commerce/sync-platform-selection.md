@@ -59,8 +59,8 @@ Get a list of the integrations you've enabled, as well as the associated metadat
 Our available integrations for Sync for Commerce:
 
 - [Xero](integrations/accounting/xero/accounting-xero)
-- [QuickBooks Online](/accounting-quickbooksonline)
-- [FreeAgent](integrations/accounting/accounting-freeagent)
+- [QuickBooks Online](/integrations/accounting/quickbooksonline/accounting-quickbooksonline)
+- [FreeAgent](/integrations/accounting/freeagent/accounting-freeagent)
 
 Call our `GET /integrations` endpoint, querying for enabled integrations.
 

@@ -23,7 +23,7 @@ Access to the production environment is available on [request from Plaid](https:
 
 :::caution Creating new companies after switching environments
 
-To avoid data inconsistencies, we recommend that you create new companies when you change environments. Any companies originally created in another environment are deauthorised and require [reauthorisation](/reauthorise-url-links).
+To avoid data inconsistencies, we recommend that you create new companies when you change environments. Any companies originally created in another environment are deauthorised and require [reauthorisation](/integrations/banking/plaid/reauthorise-url-links).
 :::
 
 ## Switch environments using the Codat portal

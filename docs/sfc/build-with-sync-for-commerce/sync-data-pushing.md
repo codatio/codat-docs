@@ -50,7 +50,7 @@ GET /meta/companies/{companyId}/pull/history/{datasetId}",
 }
 ```
 
-The status within the response will correspond to a dataset status, you can find a list of available statuses [here](/data-status#dataset-statuses).
+The status within the response will correspond to a dataset status, you can find a list of available statuses [here](/core-concepts/status#dataset-statuses).
 
 4. **(Optional)** The data will be synchronized with the accounting platform at the time configured by the merchant.
 

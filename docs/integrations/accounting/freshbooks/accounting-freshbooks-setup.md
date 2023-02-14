@@ -32,7 +32,7 @@ Create and configure an application in the FreshBooks Developer Portal.
 
    - **Application Type**: Select **Private App**.
 
-   - **Scopes**: Add the scopes listed in [FreshBooks application scopes](/accounting-freshbooks-setup#freshbooks-application-scopes) on this page.
+   - **Scopes**: Add the scopes listed in [FreshBooks application scopes](/integrations/accounting/freshbooks/accounting-freshbooks-setup#freshbooks-application-scopes) on this page.
 
    - **Redirect URIs**: Enter `https://freshbooks.codat.io/oauth/callback` then click the check mark icon to save the URI.
 

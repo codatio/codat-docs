@@ -127,9 +127,9 @@ We suggest using Link for best results, which can be [embedded within your app](
 
 Whether you build your own or use Link, browser and mobile compatibility varies for different integrations:
 
-- Some integrations are **desktop-only** e.g. [Sage 50](integrations/accounting/accounting-sage50), [QuickBooks Desktop](/accounting-quickbooksdesktop).
-- Some integrations require **downloading a desktop package** e.g. [Oracle NetSuite](integrations/accounting/accounting-netsuite), [Microsoft Dynamics 365 Business Central](/accounting-dynamics365businesscentral).
-- Some integrations require switching to complex flows on **non mobile-optimized websites** due to the complexity of the third-party platform e.g. [Sage 200cloud](/accounting-sage200), [Sage Intacct](/accounting-sage-intacct).
+- Some integrations are **desktop-only** e.g. [Sage 50](integrations/accounting/sage50/accounting-sage50), [QuickBooks Desktop](/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop).
+- Some integrations require **downloading a desktop package** e.g. [Oracle NetSuite](/integrations/accounting/netsuite/accounting-netsuite), [Microsoft Dynamics 365 Business Central](/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral).
+- Some integrations require switching to complex flows on **non mobile-optimized websites** due to the complexity of the third-party platform e.g. [Sage 200cloud](/integrations/accounting/accounting-sage200), [Sage Intacct](/integrations/accounting/sage-intacct/accounting-sage-intacct).
 
 :::caution Link compatibility with Codat Products
 

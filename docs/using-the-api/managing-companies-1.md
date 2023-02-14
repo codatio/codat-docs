@@ -65,7 +65,7 @@ Once your user is redirected to the redirect URL page, the linking process is co
 
 ## Check data freshness
 
-Use the `GET /companies/{companyId}/dataStatus` endpoint to check the [last time each data type was synchronized](/data-status).
+Use the `GET /companies/{companyId}/dataStatus` endpoint to check the [last time each data type was synchronized](/core-concepts/status).
 
 In this request, `companyId` is [the unique ID that you have received in a response to creating this company](/using-the-api/managing-companies-1#create-a-codat-company).
 
@@ -103,7 +103,7 @@ When you’re pulling data for the first time, use this endpoint to check if the
 
 If there are datasets which are not as up-to-date as you require, you can queue a data sync as described [here](/queueing-data-syncs).
 
-Once you've queued the sync, you can poll the [GET /companies/{companyId}/dataStatus](/codat-api#/operations/get-companies-companyId-dataStatus) endpoint (as described above) to [monitor progress of the sync](/data-status).
+Once you've queued the sync, you can poll the [GET /companies/{companyId}/dataStatus](/codat-api#/operations/get-companies-companyId-dataStatus) endpoint (as described above) to [monitor progress of the sync](/core-concepts/status).
 
 :::note
 
