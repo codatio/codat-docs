@@ -22,8 +22,8 @@ In addition to the mandatory **companyId**, you can also include these parameter
 
 | Parameter       	| Type            	| Description                                                                                 	| Required 	|
 |-----------------	|-----------------	|---------------------------------------------------------------------------------------------	|----------	|
-| **reportDate**     	| _string_<br\>See [Date]() 	| YYYY-MM-DD.<br\>Datetime or Date (inclusive of the whole day).                                  	| Optional 	|
-| **numberOfPeriods** 	| _integer_         	| The number of periods to return.<br\>If left blank, will return the latest available 12 months. 	| Optional 	|
+| **reportDate**     	| _string_<br>See [Date]()</br> 	| YYYY-MM-DD.<br>Datetime or Date (inclusive of the whole day).</br>                                   	| Optional 	|
+| **numberOfPeriods** 	| _integer_         	| The number of periods to return.<br>If left blank, will return the latest available 12 months.</br>  	| Optional 	|
 
 ## Data model
 
@@ -36,7 +36,7 @@ The response structure is split into two sections: _Report Info_ and _Report Ite
 | **name**          	| _string_        	| “EnhancedBalanceSheetAccounts”                                        	|
 | **companyName**   	| _string_          	| Name of the company queried.                                          	|
 | **currency**    	| _string_          	| Currency of the Balance Sheet.                                        	|
-| **generatedDate** 	| _string_<br\>See [Date]() 	| Returns the YYYY-MM-DD datetime of report generation. <br\>This is in UTC. 	|
+| **generatedDate** 	| _string_<br>See [Date]()</br>  	| Returns the YYYY-MM-DD datetime of report generation. <br>This is in UTC.</br>  	|
 
 ### Report Items
 
@@ -44,18 +44,18 @@ The report items are sorted first by _date_, then by _category_ alphabetically.
 
 | Field           	| Type                        	| Description                                                                            	|
 |-----------------	|-----------------------------	|----------------------------------------------------------------------------------------	|
-| **date**            	| _string_<br\>See Date             	| Last date of the period.                                                               	|
+| **date**            	| _string_<br>See Date</br>              	| Last date of the period.                                                               	|
 | **balance**         	| _decimal_                     	| Balance of the account as reported on the Balance Sheet.                               	|
 | **accountName**     	| _string_                      	| Name of the account.                                                                   	|
 | **accountId**       	| _string_                      	| The unique account id.                                                                 	|
-| **accountCategory** 	| _object_<br\>See [Account Category](/assess/reports/enhanced-financials-ecommerce-lenders/balance-sheet#account-category) 	| An object containing the suggested or confirmed account categories, up to five levels. 	|
+| **accountCategory** 	| _object_<br>See [Account Category](/assess/reports/enhanced-financials-ecommerce-lenders/balance-sheet#account-category) 	| An object containing the suggested or confirmed account categories, up to five levels.</br>  	|
 
 #### Account Category
 
 | Field  	| Type                 	| Description                                                                                                                              	|
 |--------	|----------------------	|------------------------------------------------------------------------------------------------------------------------------------------	|
 | **status** 	| _string_               	| Returns a status of "Suggested" or "Confirmed". If an account has a confirmed category, it will replace any suggested category returned. 	|
-| **levels** 	| _object_<br\>See [Levels](/assess/reports/enhanced-financials-ecommerce-lenders/balance-sheet#levels) 	| An object containing an ordered list of account category levels.                                                                         	|
+| **levels** 	| _object_<br>See [Levels](/assess/reports/enhanced-financials-ecommerce-lenders/balance-sheet#levels)</br>  	| An object containing an ordered list of account category levels.                                                                         	|
 
 #### Levels
 
