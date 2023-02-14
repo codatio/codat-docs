@@ -26,7 +26,7 @@ For Orders, these are the dimensions and measures:
 - Is structured based on dimension (index =“0”), i.e. Period.
 - The endpoint will return the **number of orders**, **total value** and **average order value** for each period.
 
-View the Orders [formulas](/assess-commerce-metrics#what-metrics-are-available).
+View the Orders [formulas](/assess/metrics/commerce/overview#what-metrics-are-available).
 
 The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_commerceMetrics_orders" target="_blank">Swagger</a> under **Assess**.
 

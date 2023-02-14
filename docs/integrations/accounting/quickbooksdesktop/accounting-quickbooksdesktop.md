@@ -129,5 +129,5 @@ See [Install the QuickBooks Desktop connector](/installing-the-quickbooks-connec
 
 :::note Installation in hosted environments
 
-[Installation on Right Networks hosted instances](/install-qbd-connector-right-networks) is currently available in beta.
+[Installation on Right Networks hosted instances](/integrations/accounting/quickboksdesktop/install-qbd-connector-right-networks) is currently available in beta.
 :::

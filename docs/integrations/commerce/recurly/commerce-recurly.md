@@ -20,4 +20,4 @@ Because this integration is part of the Domain Discovery Program, it does not ye
 
 ## Set up the integration
 
-See [Set up the Recurly integration](/commerce-recurly-setup) to learn how to set up and enable the integration.
+See [Set up the Recurly integration](/integrations/commerce/recurly/commerce-recurly-setup) to learn how to set up and enable the integration.

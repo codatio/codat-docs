@@ -19,5 +19,5 @@ See [Set up the QuickBooks Online integration](/integrations/accounting/quickboo
 
 ## Additional information
 
-- [QuickBooks Online FAQ](/faq-quickbooks-online)
+- [QuickBooks Online FAQ](/integrations/accounting/quickbooksonline/faq-quickbooks-online)
 - [QuickBooks Online integration reference](/quickbooks-online-integration-reference)

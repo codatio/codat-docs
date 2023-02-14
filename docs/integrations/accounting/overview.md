@@ -42,18 +42,18 @@ You can also explore the data types supported by each integration in the interac
 - [KashFlow](/integrations/accounting/kashflow/accounting-kashflow)
 - [MYOB AccountRight and Essentials](integrations/accounting/accounting-myob)
 - [Oracle NetSuite](/integrations/accounting/netsuite/accounting-netsuite)
-- [Pandle](/integrations/accounting/clearbooks/accounting-pandle)
+- [Pandle](/integrations/accounting/pandle/accounting-pandle)
 - [QuickBooks Online](/integrations/accounting/quickbooksonline/accounting-quickbooksonline)
-- [Sage 200cloud](/integrations/accounting/accounting-sage200)
+- [Sage 200cloud](/integrations/accounting/sage200/accounting-sage200)
 - [Sage Business Cloud Accounting](/integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud) (UK, US, Ireland, Canada, France, Germany, and Spain)
 - [Sage Intacct](/integrations/accounting/sage-intacct/accounting-sage-intacct)
 - [Wave](integrations/accounting/wave/accounting-wave)
 - [Xero](integrations/accounting/xero/accounting-xero)
-- [Zoho Books](/integrations/accounting/zohobooks/accounting-zohobooks)
+- [Zoho Books](/integrations/accounting/zoho-books/accounting-zoho-books)
 
 ## On-premise
 
 - [QuickBooks Desktop](/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop)
 - [Sage 50 (UK)](integrations/accounting/sage50/accounting-sage50)
 
-You can also refer to [Accounting platform keys](/accounting-platform-keys) to view the unique 4-character keys that identify accounting platforms in our APIs.
+You can also refer to [Accounting platform keys](/integrations/accounting/accounting-platform-keys) to view the unique 4-character keys that identify accounting platforms in our APIs.

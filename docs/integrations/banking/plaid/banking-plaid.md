@@ -65,9 +65,9 @@ Categorization is provided by Codat, not using data from Plaid."
 
 ## Sync Settings for Plaid
 
-Because Plaid charges per API call for some endpoints, we recommend syncing data for [Account balances](/data-model/banking-banking-account-balances) no more frequently than daily. You may also wish to only sync other data types on demand, rather than on a schedule to reduce associated costs.
+Because Plaid charges per API call for some endpoints, we recommend syncing data for [Account balances](/banking-api#/schemas/AccountBalance) no more frequently than daily. You may also wish to only sync other data types on demand, rather than on a schedule to reduce associated costs.
 
 :::info Proxy access
 
-If you need to access additional Plaid products, you can [enable proxy access to additional banking data](/proxy-access-banking-data).
+If you need to access additional Plaid products, you can [enable proxy access to additional banking data](/integrations/banking/proxy-access-banking-data).
 :::

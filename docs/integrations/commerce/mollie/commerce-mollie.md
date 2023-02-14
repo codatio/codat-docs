@@ -27,7 +27,7 @@ For more information about the supported data types, see [Mollie integration ref
 
 ## Set up the integration
 
-See [Set up the Mollie integration](/commerce-mollie-setup) to learn how to set up and enable the integration.
+See [Set up the Mollie integration](/integrations/commerce/mollie/commerce-mollie-setup) to learn how to set up and enable the integration.
 
 :::info EUR base currency and UK Closed Beta
 Mollie uses a base currency of EUR and payouts (settlements) are always made in EUR. GBP is not supported as a base currency in Mollie unless you enrol in the UK Closed Beta. For more information, see the [Mollie Knowledge Base](https://help.mollie.com/hc/en-us).

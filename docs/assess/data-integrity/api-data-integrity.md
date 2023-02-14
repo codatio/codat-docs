@@ -302,7 +302,7 @@ It can be left blank. E.g.
 query=date>2020-12-01
 
 Submit as query parameter.
-This follows the standard [Codat query language](/using-the-api/querying-1).",
+This follows the standard [Codat query language](/using-the-api/querying).",
     "0-0": "**companyId**",
     "0-1": "*string* ",
     "0-2": "The ID of the company you want match results for.
@@ -505,7 +505,7 @@ Then you would call each of the _Summaries endpoints_ with (url-escaped) query=d
 
 ## Details
 
-This endpoint exposes match results record by record for a given data type, filtered based on a query string in the same way as summary results. The results are [paginated](/using-the-api/pagination) and support [ordering](/using-the-api/ordering-results-1), following the same conventions as our other data endpoints.
+This endpoint exposes match results record by record for a given data type, filtered based on a query string in the same way as summary results. The results are [paginated](/using-the-api/pagination) and support [ordering](/using-the-api/ordering-results), following the same conventions as our other data endpoints.
 
 The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__assess_dataTypes__dataType__dataIntegrity_details" target="_blank">Swagger</a> under **Assess**.
 
@@ -529,7 +529,7 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 "2-2": "Can query any property in response.
 
 Submit as query parameter.
-This follows the standard [Codat query language](/using-the-api/querying-1).",
+This follows the standard [Codat query language](/using-the-api/querying).",
 "5-2": "State the property name by which you would like to order the response by.
 
 Submit as query parameter.",

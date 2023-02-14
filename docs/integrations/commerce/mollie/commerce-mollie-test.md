@@ -15,7 +15,7 @@ You'll need to:
 
 ### Prerequisites
 
-First, [set up your Mollie integration](/commerce-mollie-setup).
+First, [set up your Mollie integration](/integrations/commerce/mollie/commerce-mollie-setup).
 
 Make sure that you've configured the Mollie Test integration.
 

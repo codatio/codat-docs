@@ -41,7 +41,7 @@ You can also add the `platformType` parameter to specify an integration platform
 }
 ```
 
-You can also find accounting platform keys [here](/accounting-platform-keys) and commerce platform keys [here](/commerce-platform-keys).
+You can also find accounting platform keys [here](/integrations/accounting/accounting-platform-keys) and commerce platform keys [here](/integrations/commerce/commerce-platform-keys).
 
 :::caution Retain the company ID
 

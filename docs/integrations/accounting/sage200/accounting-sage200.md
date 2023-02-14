@@ -14,7 +14,7 @@ View the coverage of our Sage 200cloud integration in the <a className="external
 
 ## Set up the integration
 
-See [Set up the Sage 200cloud integration](/integrations/accounting/sage200-setup) to learn how to set up and enable the integration.
+See [Set up the Sage 200cloud integration](/integrations/accounting/sage200/sage200-setup) to learn how to set up and enable the integration.
 
 ## Supported versions
 

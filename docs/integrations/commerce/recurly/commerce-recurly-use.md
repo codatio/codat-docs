@@ -7,7 +7,7 @@ updatedAt: "2022-10-20T09:00:21.155Z"
 
 The Recurly integration is part of the [Domain Discovery Program](/integrations/commerce/domain-discovery-program), so Codat doesn't yet expose standardized data types or provide any data visualization or metrics (for example, in Assess).
 
-Instead, when an SMB customer (a company) has [linked their Recurly account](/commerce-recurly-setup#smb-customer-authenticate-and-connect-your-commerce-data), you can access their subscriptions and billing data through the `proxy` endpoint in the Codat API. Only GET requests are currently supported.
+Instead, when an SMB customer (a company) has [linked their Recurly account](/integrations/commerce/recurly/commerce-recurly-setup#smb-customer-authenticate-and-connect-your-commerce-data), you can access their subscriptions and billing data through the `proxy` endpoint in the Codat API. Only GET requests are currently supported.
 
 ## Send a proxy request
 

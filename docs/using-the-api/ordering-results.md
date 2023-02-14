@@ -5,7 +5,7 @@ createdAt: "2020-02-27T01:32:43.041Z"
 updatedAt: "2022-11-07T20:00:50.251Z"
 ---
 
-In addition to [queries](/using-the-api/querying-1), you can limit response data using the `orderBy` parameter to specify the ordering of records in the response.
+In addition to [queries](/using-the-api/querying), you can limit response data using the `orderBy` parameter to specify the ordering of records in the response.
 
 The API can return results in ascending order or descending order. You can also order results returned from custom queries.
 

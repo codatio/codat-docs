@@ -7,7 +7,7 @@ updatedAt: "2023-01-06T16:45:24.060Z"
 
 Set up the Square integration to access commerce data from customers who use Square to accept payments.
 
-The following page explains how to set up both the Sandbox and the production integrations. [Test your Square integration](/test-square) explains how to use the Square Sandbox integration to pull sample data into Codat.
+The following page explains how to set up both the Sandbox and the production integrations. [Test your Square integration](/integrations/commerce/square/test-square) explains how to use the Square Sandbox integration to pull sample data into Codat.
 
 ## Supported environments
 
@@ -28,7 +28,7 @@ We recommend starting with the Square Sandbox, so you can retrieve and check sam
 
 ## Create a Square application and get your credentials
 
-Create an application in Square, enable sandbox or production, and then retrieve the secure application credentials to use in Codat. If you plan to [test the integration](/test-square), make sure you enable sandbox rather than production.
+Create an application in Square, enable sandbox or production, and then retrieve the secure application credentials to use in Codat. If you plan to [test the integration](/integrations/commerce/square/test-square), make sure you enable sandbox rather than production.
 
 1. Visit <a className="external" href="https://developer.squareup.com/" target="_blank">Square Developer</a> and sign in to your Square account.
 
