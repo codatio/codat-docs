@@ -31,7 +31,7 @@ The Zoho Books API has the following connection limits and rate limits:
 - Per-minute rate limit
 - Refresh token limit
 
-Our Zoho Books integration works within these limits to minimize the performance impact of pulling and pushing large volumes of data. It tries to maximise the number of records retrieved per API call, but for some data types or if the retrictions described above are removed it is only possible to fetch a single record for each API call.
+Our Zoho Books integration works within these limits to minimize the performance impact of pulling and pushing large volumes of data. To do so, the integration maximises the number of records retrieved per API call for most data types. However, for certain data types, the integration can only fetch a single record for each API call to Zoho Books, impacting performance. This also applies to additional data types where the restrictions on pulling reduced datasets described above are removed.
 
 ### API daily rate limit
 
