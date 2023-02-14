@@ -13,7 +13,7 @@ The categorized Profit and Loss, and Balance Sheet showcase the power of the [Ca
 
 **Data Match**
 
-The data match percentage button is located next to the **Assess** header on every Assess page and it leverages the [Data Integrity](/assess/data-integrity) feature. The match percentage is pre-calculated using the [Data Integrity summaries](/assess-api-data-integrity#summaries) endpoint.
+The data match percentage button is located next to the **Assess** header on every Assess page and it leverages the [Data Integrity](/assess/data-integrity) feature. The match percentage is pre-calculated using the [Data Integrity summaries](/assess/data-integrity/api-data-integrity#summaries) endpoint.
 
 It takes the match percentage from the summaries endpoint for both `banking-transactions` and `accountTransactions` to calculate an overall match percentage, and it accounts for all dates, not just the optimal date range.
 
@@ -76,13 +76,13 @@ The following information is displayed:
 
 ![P&L graph and extract of a statement based on selection criteria](/img/old/a1b310e-PL1.png)
 
-The **Statement** table renders the [Enhanced Profit and Loss](/assess-enhanced-profit-and-loss) endpoint response data to give a clear visual of the company’s performance over the specified periods. The green and red arrowheads alongside the numbers indicate an increase or decrease respectively compared to the previous period.
+The **Statement** table renders the [Enhanced Profit and Loss](/assess/reports/enhanced-financials/profit-and-loss) endpoint response data to give a clear visual of the company’s performance over the specified periods. The green and red arrowheads alongside the numbers indicate an increase or decrease respectively compared to the previous period.
 
 Rows can be expanded or collapsed to show more or less information. A maximum of 5 checkboxes can be checked, like Income above, to display the selection on the graph. Hovering over the graph displays a tooltip which contains information about all of the points plotted for that date.
 
 ### Ratios
 
-Ratios are produced from the [Financial Metrics](/assess/metrics/accounting/api-financial-metrics) endpoint. It provides a set of pre-calculated ratios and metrics used to assess a company’s financial performance. The Financial Metrics feature performs complex calculations on fully standardized financial statements to produce the following financial metrics and ratios (see [formulas](/docs/assess-financial-metrics#what-ratios-and-metrics-are-available)):
+Ratios are produced from the [Financial Metrics](/assess/metrics/accounting/api-financial-metrics) endpoint. It provides a set of pre-calculated ratios and metrics used to assess a company’s financial performance. The Financial Metrics feature performs complex calculations on fully standardized financial statements to produce the following financial metrics and ratios (see [formulas](/assess/metrics/accounting/api-financial-metrics#what-ratios-and-metrics-are-available)):
 
 - Gross Profit Margin
 - EBITDA
@@ -171,7 +171,7 @@ If you are a developer, and you are looking to reproduce the outputs of this sec
 
 [Enhanced Balance Sheet](/assess-enhanced-balance-sheet): To produce the balance sheet statement table and graph.
 [Financial Metrics](/assess-api-financial-metrics): To produce the ratios table.
-[Data Integrity](/assess-api-data-integrity): To produce the Data match percentage.
+[Data Integrity](/assess/data-integrity/api-data-integrity): To produce the Data match percentage.
 
 ## Commerce
 
@@ -217,17 +217,13 @@ The _balance_ and the _Account limits_ displayed are aggregate views for the sel
 
 This graph displays when chosen in the _Select graph_ dropdown. Hovering over the graph displays a tooltip containing the total account balance for the selected bank accounts.
 
-The graph is produced from responses from the [Banking account balances](/assess-banking-account-balances) and [Banking transactions](//banking-api#/schemas/banking-transactions) a endpoints.
-
-Refer to the [formulas](/docs/assess-banking#banking-formulas) for more information about how current balances are calculated for each month.
-
 ![A banking graph based on selection criteria](/img/old/11d2897-banking_balances_1.png)
 
 ### Inflows vs outflows graph
 
 This graph displays when chosen in the _Select graph_ dropdown. Hovering over the graph displays a tooltip containing the total inflows and outflows for the selected bank accounts for that month.
 
-The graph is produced from the [Banking transactions](//banking-api#/schemas/banking-transactions) endpoint response.
+The graph is produced from the [Banking transactions](/banking-api#/schemas/banking-transactions) endpoint response.
 
 ![A bar graph showing inflows vs outflows based on selection criteria](/img/old/2a880ed-Inflows_1.png)
 
@@ -256,7 +252,7 @@ To review an existing excluded term, clicking on the term itself within the _Exc
 
 ## Marketing
 
-The Marketing page displays graphs for the **Marketing to revenue** and **Marketing to expense** metrics, and a table of the percentages and metric inputs. These marketing metrics are calculated from accounting data. It is generated from data available on the customer's profit and loss statement (see [formulas](/docs/assess-financial-metrics#marketing-metrics-formulas)).
+The Marketing page displays graphs for the **Marketing to revenue** and **Marketing to expense** metrics, and a table of the percentages and metric inputs. These marketing metrics are calculated from accounting data. It is generated from data available on the customer's profit and loss statement (see [formulas](/assess/metrics/accounting/api-financial-metrics#marketing-metrics-formulas)).
 
 ### Selection panel
 

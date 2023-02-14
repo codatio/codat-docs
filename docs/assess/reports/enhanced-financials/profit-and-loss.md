@@ -43,7 +43,7 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 "h-3": "Required",
 "0-0": "**reportDate** ",
 "0-1": "_string_
-See [Date](/datamodel-shared-date)",
+See [Date](/common-api#/schemas/DateTime)",
 "0-2": "YYYY-MM-DD
 
 Datetime or, Date (inclusive of whole day).",
@@ -137,9 +137,9 @@ Ordered by latest to earliest periods."
 "h-2": "Description",
 "0-1": "_string_ ",
 "1-1": "_string_
-See [Date](/datamodel-shared-date)",
+See [Date](/common-api#/schemas/DateTime)",
 "2-1": "_string_
-See [Date](/datamodel-shared-date)",
+See [Date](/common-api#/schemas/DateTime)",
 "0-2": "“Period n”",
 "1-2": "YYYY-MM-DD
 
@@ -331,7 +331,7 @@ See [Dimension (index = “4”) items](#dimension-index--4-items)",
 "rows": 2
 }
 
-If any account needs to be recategorized, use the [API: Categorization of accounts](/assess-api-categorization-of-accounts) endpoint.
+If any account needs to be recategorized, use the [API: Categorization of accounts](/assess/categorization/api-categorization-of-accounts) endpoint.
 
 ## Measures
 

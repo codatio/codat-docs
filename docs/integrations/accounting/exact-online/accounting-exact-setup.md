@@ -22,7 +22,7 @@ Here's a summary of the time-based rate limits:
 
 :::caution Request permission for your customers to link
 
-To allow your customers to connect to your production app, you _must_ first [request permission from Exact](/integrations/accounting/exact/accounting-exact-setup#section-request-permission-to-allow-your-customers-to-connect-to-your-app), or users will get an error during the authorization flow.
+To allow your customers to connect to your production app, you _must_ first [request permission from Exact](/integrations/accounting/exact-online/accounting-exact-setup#section-request-permission-to-allow-your-customers-to-connect-to-your-app), or users will get an error during the authorization flow.
 :::
 
 Before you can access data from customers using Exact for their accounting, you need to set up an Exact integration in the Codat Portal. You'll need to:
@@ -98,7 +98,7 @@ Follow these steps:
 1. In the Exact App Center, select **Manage my apps** then click the **Submit for review** tab.
 2. In the **Data & Security Review** section, click **Edit**.
 3. In the **Purpose of your app** box, briefly describe what your app is for.
-4. In the **Scopes** section, select the scopes shown in the table in [Recommended list of scopes](/integrations/accounting/exact/accounting-exact-setup#recommended-list-of-scopes). Then, go to step 5.
+4. In the **Scopes** section, select the scopes shown in the table in [Recommended list of scopes](/integrations/accounting/exact-online/accounting-exact-setup#recommended-list-of-scopes). Then, go to step 5.
 5. Enter the rest of the information from the perspective of your company, not Codat, but with a few exceptions for the following questions:
 
 - **Q:** **Is the data that you receive, process, or store in your app or linked systems protected against unauthorized access or disclosure, such as through encryption?** A: In the answer you may want to include that for the 3rd party integration (Codat) data is encrypted in transit using SSL and at rest using AES-256 managed by Microsoft Azure.

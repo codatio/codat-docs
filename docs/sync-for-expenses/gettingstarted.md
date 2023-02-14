@@ -40,7 +40,7 @@ Before you can push expenses to your customer’s accounting platform, you need 
 
 2.  **Hosted Link**: a beautifully simple, pre-built, conversion-optimized, and customizable authentication flow (See [Use Link for SMB authentication](/use-link-for-the-authentication-flow)).
 
-3.  **Build your own SMB authentication flow** for a fully customized bespoke user journey (See [Build your own authentication journey](/build-your-own-authentication-journey)).
+3.  **Build your own SMB authentication flow** for a fully customized bespoke user journey (See [Build your own authentication journey](/auth-flow/build/build-your-own-authentication-journey)).
 
 ### Create a data connection
 

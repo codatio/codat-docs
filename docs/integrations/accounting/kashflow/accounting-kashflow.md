@@ -13,4 +13,4 @@ View the coverage of our IRIS KashFlow integration in the <a className="external
 
 ## Set up the integration
 
-See [Set up the KashFlow integration](/integrations/accounting/kashflow/kashflow-setup) to learn how to set up and enable the integration.
+See [Set up the KashFlow integration](/integrations/accounting/kashflow/accounting-kashflow-setup) to learn how to set up and enable the integration.

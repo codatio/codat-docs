@@ -42,7 +42,7 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 "h-3": "Required",
 "0-0": "**reportDate** ",
 "0-1": "_string_
-See [Date](/datamodel-shared-date)",
+See [Date](/common-api#/schemas/DateTime)",
 "0-2": "YYYY-MM-DD
 
 Datetime or Date (inclusive of the whole day).",
@@ -141,12 +141,12 @@ Ordered by latest to earliest periods."
 "0-2": ""Period n"",
 "1-0": "**start** ",
 "1-1": "_string_
-See [Date](/datamodel-shared-date)",
+See [Date](/common-api#/schemas/DateTime)",
 "1-2": "YYYY-MM-DD
 
 Date in which the period begins (inclusive).",
 "2-1": "_string_
-See [Date](/datamodel-shared-date)",
+See [Date](/common-api#/schemas/DateTime)",
 "2-0": "**end** ",
 "2-2": "YYYY-MM-DD
 
