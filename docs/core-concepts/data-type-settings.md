@@ -63,12 +63,10 @@ To manually trigger your data to be synchronized:
 2. Select the required company, then click **Refresh data**.
 
 You can also view **Pull history** and **Push history** to check the status of previous pull and push data syncs.
-<!-- 
+
 :::note Additional sync settings
-
-Some additional settings for the data type sync are available [via our API](https://docs.codat.io/reference/post_profile-syncsettings).
-
-::: -->
+Some additional settings for the data type sync are available [via our API](/codat-api#/operations/post-profile-syncSettings).
+:::
 
 ---
 
