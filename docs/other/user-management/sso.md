@@ -13,7 +13,7 @@ As part of our commitment to high levels of data security, we support third-part
 
 If the relevant settings are enabled, the **Sign in with Google** and **Sign in with Microsoft** options are available on the Codat Portal sign-in page:
 
-![](/img/other-guides/portal_sign-in-to-codat.png)
+![](/img/other-guides/portal_sign-in-to-codat.png "test")
 ![](/img/old/dbbec39-sage_subscribe.png "sage subscribe.png")
 
 As long as the email addresses are the same, attempting to sign in with a Google or Microsoft account will automatically link the account to the existing Codat account. Users must first have been invited to use Codat with the same email address that they use to access the third-party account (Google or Microsoft).
@@ -47,7 +47,7 @@ You can also maintain a custom login message, which will be displayed every time
 
 :::
 
-![](/img/other-guides/portal_manage-sign-in-inc-custom-login-message.png)
+![](/img/other-guides/portal_manage-sign-in-inc-custom-login-message.png "test")
 
 :::note
 
