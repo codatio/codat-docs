@@ -15,7 +15,7 @@ To connect your customers' financial software, you can:
 
 ## Integrate the Hosted Link flow into your app
 
-1. First, you need to create a Codat company for your SMB. We recommend doing that simultaneously as your SMB user signs up within your app. That allows you to track their connection status from day one. To create a company, follow the steps in [Managing companies](/using-the-api/managing-companies-1).
+1. First, you need to create a Codat company for your SMB. We recommend doing that simultaneously as your SMB user signs up within your app. That allows you to track their connection status from day one. To create a company, follow the steps in [Managing companies](/using-the-api/managing-companies).
 
 :::caution Use your merchant ID for the company name
 

@@ -5,7 +5,7 @@ createdAt: "2021-12-03T10:16:28.225Z"
 updatedAt: "2022-01-11T15:11:06.060Z"
 ---
 
-You can enable proxy access to banking data types from [Plaid](/integrations/banking/plaid/banking-plaid) and [TrueLayer](/integrations/banking/basiq/banking-truelayer), in addition to the data types that are mapped to the Codat API. This gives you access to a wider range of data types in your customers’ banking data from Plaid or TrueLayer.
+You can enable proxy access to banking data types from [Plaid](/integrations/banking/plaid/banking-plaid) and [TrueLayer](/integrations/banking/truelayer/banking-truelayer), in addition to the data types that are mapped to the Codat API. This gives you access to a wider range of data types in your customers’ banking data from Plaid or TrueLayer.
 
 If proxy access is enabled, requests for the additional banking data types are routed directly to the relevant endpoints in the Plaid or TrueLayer API. The additional banking data types are not mapped to Codat's data model.
 

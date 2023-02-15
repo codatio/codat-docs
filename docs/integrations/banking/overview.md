@@ -21,4 +21,4 @@ You can [access additional banking data types](/integrations/banking/proxy-acces
 
 ## Set up a banking integration
 
-You can choose to enable either [Plaid](/integrations/banking/plaid/banking-plaid), [TrueLayer](/integrations/banking/basiq/banking-truelayer), or [Basiq](/integrations/banking/basiq/banking-basiq-setup) (AU and NZ clients only). You'll need to register with your chosen provider before you can access banking data from their platform via our integration.
+You can choose to enable either [Plaid](/integrations/banking/plaid/banking-plaid), [TrueLayer](/integrations/banking/truelayer/banking-truelayer), or [Basiq](/integrations/banking/basiq/banking-basiq-setup) (AU and NZ clients only). You'll need to register with your chosen provider before you can access banking data from their platform via our integration.

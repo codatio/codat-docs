@@ -11,13 +11,13 @@ You can synchronize accounting data with <a className="external" href="https://q
 
 View the coverage of our QuickBooks Online integration in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=qhyg" target="_blank">Data coverage explorer</a>.
 
-For more details about the supported data types and operations, see [QuickBooks Online integration reference](/quickbooks-online-integration-reference).
+For more details about the supported data types and operations, see [QuickBooks Online integration reference](/integrations/accounting/quickbooksonline/quickbooks-online-integration-reference).
 
 ## Set up the integration
 
-See [Set up the QuickBooks Online integration](/integrations/accounting/quickbooksonline-new-setup) to learn how to set up and enable the integration.
+See [Set up the QuickBooks Online integration](/integrations/accounting/quickbooksonline/quickbooksonline-new-setup) to learn how to set up and enable the integration.
 
 ## Additional information
 
 - [QuickBooks Online FAQ](/integrations/accounting/quickbooksonline/faq-quickbooks-online)
-- [QuickBooks Online integration reference](/quickbooks-online-integration-reference)
+- [QuickBooks Online integration reference](/integrations/accounting/quickbooksonline/quickbooks-online-integration-reference)

@@ -67,7 +67,7 @@ Once your user is redirected to the redirect URL page, the linking process is co
 
 Use the `GET /companies/{companyId}/dataStatus` endpoint to check the [last time each data type was synchronized](/core-concepts/status).
 
-In this request, `companyId` is [the unique ID that you have received in a response to creating this company](/using-the-api/managing-companies-1#create-a-codat-company).
+In this request, `companyId` is [the unique ID that you have received in a response to creating this company](/using-the-api/managing-companies#create-a-codat-company).
 
 When you’re pulling data for the first time, use this endpoint to check if the sync was successful.
 
@@ -138,4 +138,4 @@ Creating a new company may cause additional data to be pulled from the platform 
 
 Get a `redirect` URL for the company by following the process [here](/auth-flow/authorize-hosted-link). Send the user to the `redirect` URL. They will be prompted to select their accounting software and complete the linking process using the [Link flow](/auth-flow/overview).
 
-Once the user finishes the Link flow, they will be redirected back to the Redirect URL, as described [earlier in this guide](/using-the-api/managing-companies-1#redirect-the-user). At this point the re-authorization process is complete and their data has begun synchronizing again.
+Once the user finishes the Link flow, they will be redirected back to the Redirect URL, as described [earlier in this guide](/using-the-api/managing-companies#redirect-the-user). At this point the re-authorization process is complete and their data has begun synchronizing again.

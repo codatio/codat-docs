@@ -31,7 +31,7 @@ Any forbidden characters will be removed from your company name. For example: `E
 You have two options for managing companies:
 
 - [Manage companies via the Portal](/other/portal/companies).
-- [Manage companies via Codat's API](/using-the-api/managing-companies-1).
+- [Manage companies via Codat's API](/using-the-api/managing-companies).
 
 ---
 

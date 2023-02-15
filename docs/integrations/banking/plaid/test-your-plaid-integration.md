@@ -29,7 +29,7 @@ To connect your test company to Plaid's sandbox, you can either generate a Link 
 2. Next to the company name, select **Request data**.  
    The **Links URL...** dialog box is displayed.
 3. At the bottom of the dialog box, select **Create**.
-4. Copy the generated URL and go straight to [Connect to Plaid's sandbox](/test-your-plaid-integration#section-connect-to-plaids-sandbox).
+4. Copy the generated URL and go straight to [Connect to Plaid's sandbox](/integrations/banking/plaid/test-your-plaid-integration#section-connect-to-plaids-sandbox).
 
 ## Generate a Link URL via the API
 
