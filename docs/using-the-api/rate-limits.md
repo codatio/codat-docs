@@ -1,3 +1,8 @@
+---
+title: "Rate limits"
+description: "Learn about Codat's API rate limits and their usage"
+---
+
 ## Third-party rate limits
 
 Many of the financial platforms that Codat integrates with impose rate limits on the use of their APIs. These limits are enforced and reported separately by each API.

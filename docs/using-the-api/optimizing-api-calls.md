@@ -1,10 +1,15 @@
+---
+title: "Optimizing API calls"
+description: "Learn how to use our APIs efficiently and ensure you are not reaching our rate limits"
+---
+
 :::note Rate limits
 
 Ensure you are familiar with our [rate limits](https://docs.codat.io/docs/rate-limits) before optimizing your API calls to Codat.
 
 :::
 
-Making as few calls to Codat as possible results in a number of benefits. It allows you to reduce your costs and delivers an improved user experience. With fewer calls, you process less data and access that data faster. This means reduced waiting time for your users, less computational time for your systems, and decreased internet traffic between you and Codat.
+Making as few calls to Codat as possible rallows you to reduce your costs and delivers an improved user experience. With fewer calls, you process less data and access that data faster, meaning reduced waiting time for your users, less computational time for your systems, and decreased internet traffic between you and Codat.
 
 Make use of our querying, ordering, and alerting systems to gain finite control over the data you access. Use these methods to optimize how you access Codat. 
 

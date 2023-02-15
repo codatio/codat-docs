@@ -1,8 +1,15 @@
+---
+title: "Push: Creating and updating data"
+description: "Understand how to push data to Codat's integrated platforms"
+---
+
 In addition to pulling data from integrations, you can push data to create and update records in the underlying integrations using Codat's data model.
 
-> 📘 
-> 
-> View the full details of Codat's support for pushing data for each accounting platform in the <a class="external" href="https://knowledge.codat.io/supported-features/accounting" target="_blank">Data Coverage Explorer</a>.
+:::note Data coverage
+
+View the full details of Codat's support for pushing data for each accounting platform in the <a class="external" href="https://knowledge.codat.io/supported-features/accounting" target="_blank">Data Coverage Explorer</a>.
+
+:::
 
 ## Types of push
 
