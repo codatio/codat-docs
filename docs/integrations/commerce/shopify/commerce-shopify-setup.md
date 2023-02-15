@@ -27,7 +27,7 @@ Create and configure an app in Shopify. When the app is created you can view the
 
 1. Log in to the [Shopify Partners](https://developers.shopify.com/) site using your Shopify partner account credentials.
 
-   :::note
+   :::note Shopify partner account
    [Create a partner account](https://partners.shopify.com/signup/developer) if you don't already have one.
    :::
 
