@@ -5,10 +5,9 @@ createdAt: "2022-07-05T14:08:30.046Z"
 updatedAt: "2023-01-11T09:40:44.879Z"
 ---
 
-:::caution Right Networks - Beta testing
-
-Please note, support for installing the QBD connector in Right Networks hosted environments is in beta testing. If you're interested in using this functionality, please contact your Account Manager or Account Executive to find out more and gain access.
-:::
+> 🚧 Right Networks - Beta testing
+> 
+> Support for installing the QBD connector in Right Networks hosted environments is currently in beta testing. If you're interested in using this functionality, please contact your Account Manager or Account Executive to find out more and gain access.
 
 Your SMB customers can install our QuickBooks Desktop connector on a hosted instance of QuickBooks Desktop (QBD) provided by <a  class="external" href="https://www.rightnetworks.com/" target="_blank">Right Networks</a>. In a hosted instance, users access QBD through a virtual desktop hosted in the cloud rather than by installing the program locally.
 
@@ -18,27 +17,26 @@ Your organization must first be approved as a Right Networks independent softwar
 
 To meet Right Networks requirements, you must have a **minimum of 10 users for your application** across one or more Companies in Codat.
 
-Your SMB customers, who will share their data through the integration, must use one of the [supported hosted products](/integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks#supported-hosted-products) in order to install the connector.
+Your SMB customers, who will share their data through the integration, must use one of the [supported hosted products](doc:install-qbd-connector-right-networks#supported-hosted-products) in order to install the connector.
 
 ## Setup overview
 
 As a Codat client, you need to complete the following tasks to enable your SMB customers to install our QBD connector on Right Networks hosted instances.
 
-1. Check your SMB customers are using a [supported hosted product](/integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks#supported-packages).
-2. [Customize branding, upload installation files, and test your implementation](/integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks#customize-branding-upload-app-installation-files-and-test-your-implementation).
-3. [Enable the QBD integration](/integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks#enable-the-qbd-integration) in the Codat Portal.
-4. If you're using Link, [enable the Right Networks installation option](/integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks#optional-enable-right-networks-installation-for-your-smb-customers) in the Link flow.
+1. Check your SMB customers are using a [supported hosted product](doc:install-qbd-connector-right-networks#supported-packages).
+2. [Customize branding, upload installation files, and test your implementation](doc:install-qbd-connector-right-networks#customize-branding-upload-app-installation-files-and-test-your-implementation).
+3. [Enable the QBD integration](doc:install-qbd-connector-right-networks#enable-the-qbd-integration) in the Codat Portal.
+4. If you're using Link, [enable the Right Networks installation option](doc:install-qbd-connector-right-networks#optional-enable-right-networks-installation-for-your-smb-customers) in the Link flow.
 
-:::note Options for SMB authentication
-
-Instead of using Link, you can provide your SMB customers with separate instructions for installing and licensing the QBD connector in their Right Networks hosted environment.
-:::
+> 📘 Options for SMB authentication
+> 
+> Instead of using Link, you can provide your SMB customers with separate instructions for installing and licensing the QBD connector in their Right Networks hosted environment.
 
 Next, your SMB customers must do the following:
 
-1. [Connect to QBD and request connector installation](/integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks#smb-customer-connects-to-qbd-and-requests-connector-installation).
-2. [Connect to QuickBooks Desktop on Right Networks](/integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks#smb-customer-connect-to-quickbooks-desktop-on-right-networks).
-3. [Open QBD on Right Networks](/integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks#smb-customer-open-qbd-on-right-networks).
+1. [Connect to QBD and request connector installation](doc:install-qbd-connector-right-networks#smb-customer-connects-to-qbd-and-requests-connector-installation).
+2. [Connect to QuickBooks Desktop on Right Networks](doc:install-qbd-connector-right-networks#smb-customer-connect-to-quickbooks-desktop-on-right-networks).
+3. [Open QBD on Right Networks](doc:install-qbd-connector-right-networks#smb-customer-open-qbd-on-right-networks).
 
 ## Supported hosted products
 
@@ -54,12 +52,12 @@ Your SMB customers must use one of the following supported products:
 If Right Networks approve your request to become a registered ISV, they'll provide instructions for uploading your connector app to a secure site. Your connector app files must be approved by Right Networks before your implementation is made live.
 
 1. Sign in to the <a  class="external" href="https://app.codat.io" target="_blank">Codat Portal</a>.
-2. Go to the <a className="external" href="https://app.codat.io/settings/organization" target="_blank">Organization settings</a> area.
+2. Go to the <a class="external" href="https://app.codat.io/settings/organization" target="_blank">**Organization settings**</a> area.
 3. Add your organization name, and upload a logo and an ICO file to use as the QBD connector icon.
 4. Download your connector app installation files from the Codat Portal and provide them to Right Networks for evaluation.
    1. In the navigation bar, select **Settings > Integrations > Accounting**.
    2. Click **Manage** next to the **QuickBooks Desktop** integration.
-   3. In the **Right Networks / QuickBooks enterprise with cloud access** section, click **Download**. The installation files are downloaded to your computer as a ZIP file.
+   3. Click **Download** under **Installation files for Right Networks**. The installation files are downloaded to your computer as a ZIP file.
    4. Upload the ZIP file to the secure site as advised by Right Networks.
 5. Right Networks evaluate the connector app files.
 6. Right Networks provide you with access to a test account in which a QBD instance and our QBD connector are both installed. Use the test account to validate that the implementation works as expected. You'll need to create a test company in the Codat Portal.
@@ -68,12 +66,16 @@ If Right Networks approve your request to become a registered ISV, they'll provi
 
 ## Optional: Enable Right Networks installation for your SMB customers
 
-If you're using Link, you can enable the Right Networks installation path in the Codat Link flow. This lets your SMB customers choose whether to install the QBD connector locally, or in their Right Networks hosted environment.
+If you're using Link, you can enable the Right Networks installation path in the Codat Link flow. This lets your SMB customers choose whether to install the QBD connector locally, or in their Right Networks hosted environment (see step three in [SMB customer: Requests connector installation](doc:install-qbd-connector-right-networks#smb-customer-requests-connector-installation)).
 
 1. Sign in to the <a  class="external" href="https://app.codat.io" target="_blank">Codat Portal</a>.
 2. In the navigation bar, select **Settings > Integrations > Accounting**.
 3. Click **Manage** next to the **QuickBooks Desktop** integration.
-4. Select **Enable your customer users to see the Right Networks install guide in the QBD connector download UI**.
+4. Select the checkbox named **Enable your customer users to see the Right Networks install guide in the QBD connector download UI**.
+
+   > 📘 
+   > 
+   > This checkbox must be enabled by your Solutions Consultant.
 
 ## Enable the QBD integration
 
@@ -94,15 +96,33 @@ Your SMB customer does the following:
 
 2. In Link, they select the **Intuit QuickBooks Desktop / Pro** tile.
 
-   ![Select your accounting software](/img/old/96cef1f-qbd-right-networks-link-flow-select-qbd-accounting-software.png "Select your accounting software")
+   ![Select your accounting software](https://files.readme.io/96cef1f-qbd-right-networks-link-flow-select-qbd-accounting-software.png "Select your accounting software")
 
 3. On the **How do you use QuickBooks Desktop?** step, they select the second option:
 
    **I'm accessing QuickBooks Desktop hosted in the cloud by Right Networks, including QuickBooks Desktop Enterprise with cloud access**.
 
-4. The **Connection steps** dialog is displayed, containing instructions for your SMB customers to request installation of the connector App and access their license key.
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/935b7a6-connect-to-qbd-right-networks-option-selected.png",
+        "How do you use QuickBooks Desktop?",
+        "How do you use QuickBooks Desktop"
+      ],
+      "align": "center",
+      "sizing": "550px"
+    }
+  ]
+}
+[/block]
 
-   ![Connection steps](/img/old/6074fa3-right-networks-dialog-connection-steps-new.png "Connection steps")
+
+
+4. The  **Connection steps** dialog is displayed, containing instructions for your SMB customers to request installation of the connector App and access their license key.
+
+   ![Connection steps](https://files.readme.io/6074fa3-right-networks-dialog-connection-steps-new.png "Connection steps")
 
 5. Finally, they copy their license key from the **License key** box to use in the next procedure.
 
@@ -114,18 +134,34 @@ Next, your SMB customer does the following:
 
 1. Opens the **QuickBooksDesktopUI.exe** application from their Start menu.
 
-   :::note
-
-   If the app doesn't open, they can try opening it from the Windows system tray.
-   :::
+   > 📘 
+   > 
+   > If the app doesn't open, they can try opening it from the Windows system tray.
 
 2. In the connector app setup wizard, clicks **Add new connection**.
 
 3. Enters their license key from Link into the **License Key** box (see step 5 of the previous task), then clicks **Next**.
 
-<img src="/img/old/c57bf3e-qbd-connector-setup-wizard-add-company-license-details.png" />
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/c57bf3e-qbd-connector-setup-wizard-add-company-license-details.png",
+        "qbd-connector-setup-wizard-add-company-license-details.png",
+        600
+      ],
+      "align": "center",
+      "sizing": "smart",
+      "border": true
+    }
+  ]
+}
+[/block]
 
-4. To finish installing the connector, they must follow the steps in the **Setup Connection** and **Verify Connection** steps of the wizard. For more details, see procedures 3–5 in [Install the QuickBooks Desktop connector](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector).
+
+
+4. To finish installing the connector, they must follow the steps in the **Setup Connection** and **Verify Connection** steps of the wizard. For more details, see procedures 3–5 in [Install the QuickBooks Desktop connector](doc:installing-the-quickbooks-connector). 
 
 To verify the connector is running, your SMB customer should look for the **QuickBooks Connector** app in the Windows system tray. The app uses your organization's logo.
 
