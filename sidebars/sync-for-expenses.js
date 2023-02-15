@@ -22,6 +22,6 @@ module.exports = [
   {
     type: "link",
     href: "/sync-for-expenses-api",
-    label: "Sync for Expenses API",
+    label: "API reference",
   },
 ];
