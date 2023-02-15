@@ -59,7 +59,7 @@ To use our Shopify integration using public apps, you must first create a public
 - Your app must meet the [Requirements for apps in the Shopify App Store](https://shopify.dev/apps/store/requirements), as published on the Shopify Developers Platform.
 - Shopify must review and approve your app, which can take up to two weeks.
 
-Additionally, if you need to access over 60 days' of orders, you must submit a _Read all orders_ request as noted in [Create a Shopify public app](commerce-shopify-setup#create-a-shopify-app). You'll receive an email from Shopify when your request has been processed; this might take up to seven business days.
+Additionally, if you need to access over 60 days' of orders, you must submit a _Read all orders_ request as noted in [Create a Shopify public app](commerce-shopify-setup#create-a-shopify-public-app). You'll receive an email from Shopify when your request has been processed; this might take up to seven business days.
 
 :::caution Important
 

@@ -89,7 +89,7 @@ In the Codat Portal, add the secure credentials for your Shopify app to the inte
 
    The **Integration settings** page is displayed.
 
-3. Enter your app's credentials from Shopify (to find these, see [Create a Shopify app](/integrations/commerce/shopify/commerce-shopify-setup#create-a-shopify-public-app)).
+3. Enter your app's credentials from Shopify (to find these, see [Create a Shopify public app](/integrations/commerce/shopify/commerce-shopify-setup#create-a-shopify-public-app)).
    - For **Client Key**, enter the **API key** from Shopify.
    - For **Client Secret**, enter the **API secret key** from Shopify.
 
