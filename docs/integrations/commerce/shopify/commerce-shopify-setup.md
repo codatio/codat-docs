@@ -9,7 +9,7 @@ Set up the Shopify integration to retrieve commerce data from customers who sell
 
 This article explains how to set up the Shopify integration using the _public apps_ connection method.
 
-:::caution
+:::caution Before you begin
 Before you begin, read the _Underlying provider requirements_ on the [Shopify](/integrations/commerce/shopify/commerce-shopify) page.
 :::
 
