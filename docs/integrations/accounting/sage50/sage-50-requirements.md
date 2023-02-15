@@ -15,7 +15,7 @@ See a full list of supported Sage 50 versions below. We aim for this list to be 
 
 ## Supported versions
 
-Codat support versions 24, 25, 26, 27 and 28 of Sage 50c Accounts Standard & Professional.
+Codat support versions 25, 26, 27, 28, and 29 of Sage 50c Accounts Standard & Professional.
 
 ## Unsupported versions
 
