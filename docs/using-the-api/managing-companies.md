@@ -1,6 +1,5 @@
 ---
 title: "Managing companies"
-slug: "managing-companies-1"
 description: "Learn how to manage companies, their connections, and their data via API"
 createdAt: "2022-11-07T19:57:50.555Z"
 updatedAt: "2022-12-21T06:24:11.564Z"
@@ -22,7 +21,7 @@ To create a new company, use the `POST /companies` endpoint and provide a name y
 The name of the company doesn't have to be unique. It's just there to help you identify the company in the portal. Make sure to [avoid forbidden characters](/core-concepts/companies).
 :::
 
-You can also add the `platformType` parameter to specify an integration platform you would like to set up for the new company. [Retrieve the platform key](/your-first-call-to-the-api-using-api-explorer#retrieve-platform-keys) first and then use it in your request.
+You can also add the `platformType` parameter to specify an integration platform you would like to set up for the new company. Retrieve the platform key first and then use it in your request.
 
 ```json Sample request
 {
@@ -101,7 +100,7 @@ When you’re pulling data for the first time, use this endpoint to check if the
 
 ## Queue a new data sync (Optional)
 
-If there are datasets which are not as up-to-date as you require, you can queue a data sync as described [here](/queueing-data-syncs).
+If there are datasets which are not as up-to-date as you require, you can queue a data sync as described [here](/using-the-api/queueing-data-syncs).
 
 Once you've queued the sync, you can poll the [GET /companies/{companyId}/dataStatus](/codat-api#/operations/get-companies-companyId-dataStatus) endpoint (as described above) to [monitor progress of the sync](/core-concepts/status).
 

@@ -46,7 +46,7 @@ The following page describes the status codes and standard error responses used 
 
 - `Payment Required`: Your Free account is older than 365 days and has expired. Please contact our [solutions team](mailto:solutions@codat.io) to upgrade your plan.
 
-For example responses, see [Example account limit errors](/status-codes#example-account-limit-errors).",
+",
 "8-0": "409",
 "8-1": "**Conflict:** The resource is not ready.
 

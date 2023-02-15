@@ -9,7 +9,7 @@ updatedAt: "2022-11-02T14:48:33.149Z"
 
 To view the Data Integrity feature in the Portal, a company needs to:
 
-- Be linked to an accounting and banking source of data. You can do this either in the Codat [Portal](/get-started-2-connect) or using the Codat [API](/step-2-connect).
+- Be linked to an accounting and banking source of data. You can do this either in the Codat Portalor using the Codat API.
 - Have bank accounts and bank transactions set to [sync](/core-concepts/data-type-settings).
 - Select **View data > Data integrity** by the linked company to display the cross-referenced results. All matched transactions are listed under the **Records found** tab. Transactions for which no matches were found are listed under **Records not found**.
 

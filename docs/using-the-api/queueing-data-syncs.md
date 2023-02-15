@@ -1,6 +1,5 @@
 ---
 title: "Queueing data syncs"
-slug: "queueing-data-syncs-1"
 description: "Overview of queuing data refresh in Codat's API"
 createdAt: "2022-11-07T19:58:13.342Z"
 updatedAt: "2022-11-07T20:34:47.562Z"

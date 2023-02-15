@@ -1,7 +1,6 @@
 ---
 title: "Build your own auth flow"
 sidebar_label: Overview
-slug: "build-your-own-authorization-journey"
 excerpt: "Explore how to create your own journey to connect your customers' financial platforms"
 hidden: false
 createdAt: "2022-06-28T14:27:30.620Z"
