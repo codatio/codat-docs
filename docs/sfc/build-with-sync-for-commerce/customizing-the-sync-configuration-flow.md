@@ -5,7 +5,7 @@ createdAt: "2022-11-16T20:24:20.979Z"
 updatedAt: "2023-01-16T17:31:55.362Z"
 ---
 
-:::caution
+:::caution Customization vs. features
 
 This section includes instructions on how to update the text values in the Sync Flow and change visibility of feature categories (accounts).
 
