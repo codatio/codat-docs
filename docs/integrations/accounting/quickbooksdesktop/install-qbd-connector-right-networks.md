@@ -5,9 +5,11 @@ createdAt: "2022-07-05T14:08:30.046Z"
 updatedAt: "2023-01-11T09:40:44.879Z"
 ---
 
-> 🚧 Right Networks - Beta testing
-> 
-> Support for installing the QBD connector in Right Networks hosted environments is currently in beta testing. If you're interested in using this functionality, please contact your Account Manager or Account Executive to find out more and gain access.
+:::caution Right Networks - Beta testing
+
+Support for installing the QBD connector in Right Networks hosted environments is currently in beta testing. If you're interested in using this functionality, please contact your Account Manager or Account Executive to find out more and gain access.
+
+:::
 
 Your SMB customers can install our QuickBooks Desktop connector on a hosted instance of QuickBooks Desktop (QBD) provided by <a  class="external" href="https://www.rightnetworks.com/" target="_blank">Right Networks</a>. In a hosted instance, users access QBD through a virtual desktop hosted in the cloud rather than by installing the program locally.
 
@@ -28,9 +30,11 @@ As a Codat client, you need to complete the following tasks to enable your SMB c
 3. [Enable the QBD integration](doc:install-qbd-connector-right-networks#enable-the-qbd-integration) in the Codat Portal.
 4. If you're using Link, [enable the Right Networks installation option](doc:install-qbd-connector-right-networks#optional-enable-right-networks-installation-for-your-smb-customers) in the Link flow.
 
-> 📘 Options for SMB authentication
-> 
-> Instead of using Link, you can provide your SMB customers with separate instructions for installing and licensing the QBD connector in their Right Networks hosted environment.
+:::note Options for SMB authentication
+ 
+Instead of using Link, you can provide your SMB customers with separate instructions for installing and licensing the QBD connector in their Right Networks hosted environment.
+
+:::
 
 Next, your SMB customers must do the following:
 
@@ -73,9 +77,11 @@ If you're using Link, you can enable the Right Networks installation path in the
 3. Click **Manage** next to the **QuickBooks Desktop** integration.
 4. Select the checkbox named **Enable your customer users to see the Right Networks install guide in the QBD connector download UI**.
 
-   > 📘 
-   > 
-   > This checkbox must be enabled by your Solutions Consultant.
+   :::note
+   
+   This checkbox must be enabled by your Solutions Consultant.
+
+   :::
 
 ## Enable the QBD integration
 
@@ -134,9 +140,11 @@ Next, your SMB customer does the following:
 
 1. Opens the **QuickBooksDesktopUI.exe** application from their Start menu.
 
-   > 📘 
-   > 
-   > If the app doesn't open, they can try opening it from the Windows system tray.
+   :::note 
+    
+   If the app doesn't open, they can try opening it from the Windows system tray.
+
+   :::
 
 2. In the connector app setup wizard, clicks **Add new connection**.
 
