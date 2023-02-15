@@ -10,7 +10,7 @@ The categorization engine uses machine learning and has been fully trained again
 
 The **Enhanced Cash Flow Transactions** endpoint provides a fully categorized list of banking transactions for a company. Accounts and transaction data are obtained from the company's banking data sources.
 
-The endpoint is available in our <a href="https://api.codat.io/swagger/index.html#/Assess/get_companies__companyId__reports_enhancedCashFlow_transactions">API reference</a>.
+The endpoint is available in our <a href="/assess-api#/operations/get-companies-companyId-reports-enhancedCashFlow-transactions">API reference</a>.
 
 `GET /companies/{companyId}/reports/enhancedCashFlow/transactions`
 

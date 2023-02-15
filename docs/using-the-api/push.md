@@ -119,7 +119,7 @@ The endpoint for pushing a record is as follows:
 
 `POST /companies/{companyId}/connections/{connectionId}/push/{dataType}`
 
-An example would be <a class="external" href="https://api.codat.io/swagger/index.html#/Invoices/post_companies__companyId__connections__connectionId__push_invoices" target="_blank">posting a new invoice to an accounting package for a given company</a>.
+An example would be <a href="/accounting-api#/operations/post-invoice">posting a new invoice to an accounting package for a given company</a>.
 
 The request body should be a JSON object which conforms to the structure of the options endpoint above. It is expected that the options endpoint is queried before performing any push operation.
 

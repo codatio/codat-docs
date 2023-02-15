@@ -25,7 +25,7 @@ If successful, a list of [Plaid items](https://plaid.com/docs/quickstart/glossar
 
 This example shows a proxy request to the `/direct-debits` endpoint in the TrueLayer Data API.
 
-1. Get an account ID from the [Bank accounts](https://api.codat.io/swagger/index.html#/BankAccounts/get_companies__companyId__connections__connectionId__data_bankAccounts) endpoint in the Codat API:
+1. Get an account ID from the [Bank accounts](/accounting-api#/operations/list-bank-accounts) endpoint in the Codat API:
 
 ```
 GET /companies/{companyId}/connections/{connectionId}/data/bankAccounts

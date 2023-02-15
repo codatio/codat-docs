@@ -28,7 +28,7 @@ This endpoint retrieves all the available financial performance metrics held aga
 
 View the Financial Metrics [formulas](/assess/metrics/accounting/api-financial-metrics#financial-metrics-formulas).
 
-The endpoint is available in our <a href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_financialMetrics">API reference</a>.
+The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-financialMetrics">API reference</a>.
 
 `GET /data/companies/{companyId}/connections/{connectionId}/assess/financialMetrics`
 

@@ -88,7 +88,7 @@ See the next procedure for details on the functionality to provide.
    }
    ```
 
-3. Using the <a href="https://api.codat.io/swagger/index.html#/Connection/put_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts" target="_blank">PUT /bankFeedAccounts</a> endpoint, add one or more source bank accounts.
+3. Using the <a href="/bank-feeds-api#/operations/put-bank-feeds" target="_blank">PUT /bankFeedAccounts</a> endpoint, add one or more source bank accounts.
 
    ```http
    PUT /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts
@@ -134,7 +134,7 @@ Do _not_ hardcode the `linkUrl` into your application code. It is unique to the 
 
 ## Retrieve bank account status and information
 
-You can use the <a href="https://api.codat.io/swagger/index.html#/Connection/get_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts" target="blank">GET /connectionInfo/bankFeedAccounts</a> endpoint to view the following information for a data connection:
+You can use the <a href="/bank-feeds-api#/operations/put-bank-feeds" target="blank">GET /connectionInfo/bankFeedAccounts</a> endpoint to view the following information for a data connection:
 
 - Available source bank accounts—the accounts that the SMB user can connect to QBO.
 - The connection status of the available source bank accounts (either `connected` or `pending`).
@@ -146,7 +146,7 @@ GET /connections/{connectionId}/connectionInfo/bankFeedAccounts
 
 ## Update an existing bank account for a Company
 
-Use the <a href="https://api.codat.io/swagger/index.html#/Connection/patch_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts__bankAccountId_" target="_blank">PATCH /connectionInfo/bankFeedAccounts/{bankAccountId}</a> endpoint to update an existing bank account for a Company and data connection.
+Use the <a href="/bank-feeds-api#/operations/get-bank-feed" target="_blank">PATCH /connectionInfo/bankFeedAccounts/{bankAccountId}</a> endpoint to update an existing bank account for a Company and data connection.
 
 Provide the bank account details you want to update as request parameters. For example, to update the account name, send the following request:
 
@@ -164,7 +164,7 @@ PATCH /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedA
 
 You can add new source bank accounts to an existing Company and data connection. This makes those bank accounts available to the SMB user to connect to.
 
-Send a request to the <a href="https://api.codat.io/swagger/index.html#/Connection/put_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts" target="_blank">PUT /connectionInfo/bankFeedAccounts</a> endpoint and specify the bank accounts you want to add in the request body.
+Send a request to the <a href="/bank-feeds-api#/operations/put-bank-feeds" target="_blank">PUT /connectionInfo/bankFeedAccounts</a> endpoint and specify the bank accounts you want to add in the request body.
 
 ```http
 PUT /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts

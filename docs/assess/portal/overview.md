@@ -286,6 +286,8 @@ Periods to compare = 4
 
 The [Marketing Metrics](/assess-api-marketing-metrics) endpoint is used to generate the graphs and metrics displayed on this page. The green and red arrowheads alongside the numbers indicate an increase or decrease respectively compared to the previous period.
 
+See the [API reference](/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-accountingMetrics-marketing).
+
 Rows can be expanded or collapsed to show more or less information. Hovering over the graph displays a tooltip which contains information about the points plotted for that date.
 
 ## Reports

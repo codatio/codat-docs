@@ -9,7 +9,7 @@ The Codat API uses a simple set of query parameters on most of its endpoints to 
 
 ## Request
 
-Our endpoints which return multiple results are paged, e.g. [companies ](https://api.codat.io/swagger/index.html#/Companies/get_companies) or [push ](https://api.codat.io/swagger/index.html#/Push/get_companies__companyId__push) operations. If you're calling these endpoints, you will need to supply a `page` query parameter. You can configure the size of each page by using the `pageSize` query parameter.
+Our endpoints which return multiple results are paged, e.g. [`GET /companies`](/codat-api#/operations/list-companies). If you're calling these endpoints, you will need to supply a `page` query parameter. You can configure the size of each page by using the `pageSize` query parameter.
 
 A typical request will have the following properties:
 

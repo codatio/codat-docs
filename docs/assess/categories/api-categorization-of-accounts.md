@@ -26,7 +26,7 @@ Account categories have three sub-categories:
 
 # List all available categories
 
-The endpoint is available in our <a href="https://api.codat.io/swagger/index.html#/Assess/get_data_assess_accounts_categories">API reference</a>. It contains the original category suggested by Codat `suggested` and the category that was confirmed by you or your customer `confirmed`.
+The endpoint is available in our <a href="/assess-api#/operations/get-data-assess-accounts-categories">API reference</a>. It contains the original category suggested by Codat `suggested` and the category that was confirmed by you or your customer `confirmed`.
 
 - A list of all the Codat standard categories can be found under:
 
@@ -58,7 +58,7 @@ GET /data/assess/accounts/categories
 
 ## Get the category for a specific account
 
-The endpoint is available in our <a href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_accounts__accountId__categories">API reference</a>.
+The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-accounts-accountId-categories">API reference</a>.
 
 The suggested and confirmed categories for a specific account can be obtained from the following endpoint:
 
@@ -89,7 +89,7 @@ GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categ
 
 # List all accounts with their categories
 
-The endpoint is available in our <a href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_accounts_categories">API reference</a>.
+The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-accounts-categories">API reference</a>.
 
 ```http
 GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categories
@@ -207,10 +207,10 @@ The date the account category was confirmed."
 
 # Update categories for a company
 
-The categories for all or a batch of accounts in a specific connection can be updated in Swagger under Assess.
+The categories for all or a batch of accounts in a specific connection can be updated in Sthe API reference.
 Note that this does not update the end accounting platform’s account, and only updates the categories saved against the company within Assess.
 
-The endpoint is available in our <a href="https://api.codat.io/swagger/index.html#/Assess/patch_data_companies__companyId__connections__connectionId__assess_accounts_categories">API reference</a>.
+The endpoint is available in our <a href="/assess-api#/operations/patch-data-companies-companyId-connections-connectionId-assess-accounts-categories">API reference</a>.
 
 `PATCH /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categories`
 
@@ -244,7 +244,7 @@ You can provide a partial list of accounts you wish to update, or pass the whole
 
 The confirmed category for an account can be updated or removed.
 
-The endpoint is available in our <a href="https://api.codat.io/swagger/index.html#/Assess/patch_data_companies__companyId__connections__connectionId__assess_accounts__accountId__categories">API reference</a>.
+The endpoint is available in our <a href="/assess-api#/operations/patch-data-companies-companyId-connections-connectionId-assess-accounts-accountId-categories">API reference</a>.
 
 `PATCH /data/companies/{companyId}/connections/{connectionId}/assess/accounts/{accountId}/categories`
 

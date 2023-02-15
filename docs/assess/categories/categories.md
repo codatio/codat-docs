@@ -13,8 +13,9 @@ The chart of accounts defines the financial structure of a company by providing 
 
 Every account is assigned one of Codat’s 162 categories. This allows Codat to produce insights about your SMB customers irrespective of the accounting data source they use. The assigned categories apply in the Codat platform only, not in the accounting data source.
 
-You can obtain the latest list of Codat categories from our <a href="https://api.codat.io/swagger/index.html#/Assess/get_data_assess_accounts_categories">API reference</a> documentation by calling the following endpoint:
-`GET ​/data​/assess​/accounts​/categories`
+You can obtain the latest list of Codat categories from our <a href="/assess-api#/operations/get-data-assess-accounts-categories">API reference</a> documentation by calling the following endpoint:
+
+`GET /data/assess/accounts/categories`
 
 # The benefits of categorizing accounts
 
@@ -38,7 +39,7 @@ Categories are assigned in two ways. First, Codat automatically suggests categor
 
 Codat tries to suggest a category for every account, but this is not always possible. All accounts need to be categorized to produce accurate metrics.
 
-You can confirm categories using the <a href="https://api.codat.io/swagger/index.html#/Assess/patch_data_companies__companyId__connections__connectionId__assess_accounts_categories" target="_blank">PATCH</a> method or Codat’s <a className="external" href="https://app.codat.io/" target="_blank">no code</a> feature in the Portal. This guarantees the categories assigned to accounts are correct. If you disagree with a suggestion, you can assign a different category.
+You can confirm categories using the <a href="/assess-api#/operations/patch-data-companies-companyId-connections-connectionId-assess-accounts-categories">PATCH</a> method or Codat’s <a className="external" href="https://app.codat.io/" target="_blank">no code</a> feature in the Portal. This guarantees the categories assigned to accounts are correct. If you disagree with a suggestion, you can assign a different category.
 
 # How often is a company’s account categories updated?
 A company’s categories are updated each time it syncs to Codat. Previously-confirmed categories will not revert back to the suggested category unless a better suited category was added to Codat’s list of categories. You will then confirm whether the suggested category is correct for the account.

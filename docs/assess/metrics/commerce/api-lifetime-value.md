@@ -27,7 +27,7 @@ For Lifetime Value, these are the dimensions and measures:
 
 View the Lifetime Value [formulas](/assess/metrics/commerce/overview#what-metrics-are-available).
 
-The endpoint is available in our <a href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_commerceMetrics_lifetimeValue">API reference</a>.
+The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-commerceMetrics-lifetimeValue">API reference</a>.
 
 `GET /data/companies/{companyId}/connections/{connectionId}/assess/commerceMetrics/lifetimeValue`
 
