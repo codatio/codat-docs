@@ -165,7 +165,7 @@ Properties on the object are as follows:
 
 ## Synchronous vs asynchronous push
 
-The majority of platforms are implemented to push asynchronously so you will receive a `Pending` push operation in response to your push request.  You can use the details in this response to [monitor the status of your push request](doc:pushing-data#section-step-3-monitoring-status-of-push). 
+The majority of platforms are implemented to push asynchronously so you will receive a `Pending` push operation in response to your push request.  You can use the details in this response to monitor the status of your push request. 
 
 For some platforms, pushing may be implemented synchronously and you may receive a `Success` or `Failed` push operation in response to your push request (in place of a `Pending` push operation). However, we strongly suggest that you assume that all pushes will be processed asynchronously when integrating with Codat.
 
@@ -185,10 +185,8 @@ The Codat API provides two endpoints for monitoring push operations: one for vie
 
 You can:
 
-- List all push operations (paged) for a company using  
-  <a class="external" href="https://api.codat.io/swagger/index.html#/Push/get_companies__companyId__push" target="_blank">GET /companies/{companyId}/push</a>.
-- Get a single push operation by ID using  
-  <a class="external" href="https://api.codat.io/swagger/index.html#/Push/get_companies__companyId__push__pushOperationKey_" target="_blank">GET /companies/{companyId}/push/{pushOperationKey}</a>.
+- List all push operations (paged) for a company using `GET /companies/{companyId}/push`
+- Get a single push operation by ID using `GET /companies/{companyId}/push/{pushOperationKey}`.
 
 You can periodically poll the single endpoint while a push is in a `Pending` state to identify when it enters a `Success` or `Failed` state, at which point the outcome can be communicated to the user. 
 
@@ -196,4 +194,4 @@ The list endpoint can be used to present to the user a list of recent push reque
 
 ## 2. Webhooks
 
-A second option for monitoring push operations is to register a subscription to the "Push status changed" rule. This can be configured by following the instructions in our documentation for [subscribing to rules](doc:core-rules-create).
+A second option for monitoring push operations is to register a subscription to the "Push status changed" rule. This can be configured by following the instructions in our documentation for [subscribing to rules](/introduction/webhooks/core-rules-create).
