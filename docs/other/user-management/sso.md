@@ -7,41 +7,49 @@ updatedAt: "2022-12-19T06:15:27.799Z"
 
 ## Overview
 
-Single sign-on (SSO) is a secure user authentication technology that allows users to access multiple applications with only one set of credentials.
+Third-party SSO allows users to access multiple applications using a set of credentials from a third-party identity provider (IdP), such as Microsoft or Google.
 
-Third-party SSO allows users to access multiple applications using a set of credentials from a third-party identity provider (IdP).
+As part of our commitment to high levels of data security, we support third-party SSO to offer your users the ability to access the Codat Portal using their Microsoft or Google account credentials.
 
-As part of our commitment to high levels of data security, we support third-party SSO to offer your users the ability to access our products using their Microsoft or Google accounts. This feature is available on the Portal sign-in page.
+If the relevant settings are enabled, the **Sign in with Google** and **Sign in with Microsoft** options are available on the Codat Portal sign-in page:
 
-<img
-  src="/img/old/5840031-Screenshot_2021-12-14_143545.png"
-  alt="Sign-in modal with Microsoft and Google SSO options highlighted"
-/>
+FIRST SCREENSHOT
 
-Apart from the immediate benefits of saving time on every sign in and having one less password to remember, third-party SSO introduces:
+As long as the email addresses are the same, attempting to sign in with a Google or Microsoft account will automatically link the account to the existing Codat account. Users must first have been invited to use Codat with the same email address that they use to access the third-party account (Google or Microsoft).
 
-- Increased security. Microsoft and Google SSO provides additional security features, including Multi-Factor Authentication.
+## Benefits of third-party SSO
+
+Apart from the immediate benefits of saving time on every sign-in and having one less password to remember, third-party SSO introduces:
+
+- Increased security. As IdPs, Microsoft and Google provide additional security features, including Multi-Factor Authentication.
 - Simplified administration. Administrators can maintain strong and consistent security policies, and manage and close user accounts with ease.
 
-## Managing third-party SSO
+:::note Enterprise SSO support
+ 
+The Codat Portal does not currently support Enterprise SSO using SAML.
 
-Both Google and Microsoft sign-in services are enabled by default in the Codat Portal. We recommend keeping them enabled to make the most of the benefits they provide. Administrators can also turn off password-based sign-in completely and force all their users to sign in with their Google or Microsoft account.
+:::
 
-As long as the email addresses are the same, attempting to sign in with a Google or Microsoft account will automatically link it to the existing Codat account.
+## Manage third-party SSO
 
-To manage the third-party SSO services, perform the following steps in Codat Portal:
+Both Google and Microsoft sign-in methods are enabled by default in the Codat Portal. We recommend keeping them enabled to make the most of the benefits they provide. As an Administrator, you can choose to disable Codat password-based sign-in completely, and force all their users to sign in with their Google or Microsoft account.
 
-1. In the navigation bar, click _Settings > Organization settings > Users_.
-2. Click _Manage sign-in_.
-3. In the _Manage sign-in methods_ dialog, use the toggles to switch the services on and off.
+To manage third-party SSO services, perform the following steps in the Codat Portal:
 
-<img
-  src="/img/old/87dca5c-manage.png"
-  alt="Screenshot of the Manage sign-in methods dialog in the Codat Portal"
-/>
+1. Go to **Settings > Organization settings > Users**.
+2. Click **Manage sign-in** (only available for Administrators).
+3. In the **Manage sign-in** dialog, use the toggles to switch the services on and off.
 
-:::note Disabling third-party SSO
+:::note
 
-If you decide to disable third-party SSO, your users will still be able to sign in with their email and password credentials.
+You can also maintain a custom login message, which will be displayed every time a user logs in. The message applies to all sign-in methods.
+
+:::
+
+SECOND SCREENSHOT
+
+:::note
+
+If you decide to disable third-party SSO, your users will still be able to sign in with their email and password credentials, if the **Password** sign-in method is enabled.
 
 :::
