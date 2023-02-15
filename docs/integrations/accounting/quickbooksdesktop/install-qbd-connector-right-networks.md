@@ -77,7 +77,7 @@ If you're using Link, you can enable the Right Networks installation path in the
 3. Click **Manage** next to the **QuickBooks Desktop** integration.
 4. Select the checkbox named **Enable your customer users to see the Right Networks install guide in the QBD connector download UI**.
 
-   :::note
+   :::note Enabling the checkbox
 
    This checkbox must be enabled by your Solutions Consultant.
 
