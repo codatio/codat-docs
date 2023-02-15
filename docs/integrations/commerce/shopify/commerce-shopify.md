@@ -34,7 +34,7 @@ To connect their commerce data using a custom app, the merchant does the followi
 2. Gets the API access token for the app.
 3. Enters the access token in Link.
 
-To get started, see [Set up Shopify using custom apps](commerce-shopify-custom-apps).
+To get started, see [Set up Shopify using custom apps](/integrations/commerce/shopify/commerce-shopify-custom-apps).
 
 ## Public apps overview and requirements
 
