@@ -21,14 +21,24 @@ To connect their bank accounts to QBO, the SMB user performs the following steps
 
 3. On the **Set up QuickBooks bank feeds** page, they click **Get credentials** to reveal their one-time username and password.
 
-   ![Image](/img/old/8f39a7b-qbo-bank-feeds_set-up-quickbooks-dialog_bank-name-placeholders.png "The Set up QuickBooks page that allows your SMB user to get their credentials.")
+   ![Image](/img/bank-feeds-api/qbo-bank-feeds/400590b-qbo-bank-feeds_smb-customer-steps-revised.png "The Set up QuickBooks page that allows your SMB user to get their credentials.")
 
-4. Next they do the following in QuickBooks Online:
-   1. Select **Bookkeeping > Transactions** and then click **Link account**.
-   2. Select your organization (that is, the bank feeds provider) from the list of institutions.
-   3. Agree to the terms and conditions.
-   4. Enter their one-time username and password into the corresponding fields and complete the authentication prompt.
-   5. Select one or more bank accounts to connect to QBO for viewing bank feeds.
-   6. In the dropdown that appears, they select the account type—the chart of accounts—that they want to view bank feeds for.
+4. Sign in to QuickBooks Online.
 
-Your SMB user has now successfully connected their chosen bank accounts to QuickBooks Online. The status of the data connection is set to `Linked`, which allows you to [push bank feeds to QuickBooks Online](/bank-feeds-api/qbo-bank-feeds/bank-feed-qbo-bank-feeds-push-bank-transactions) for the SMB user.
+5. If in Accounting View, select **Banking**.
+
+6. If in Business View, go to **Bookkeeping >Bank Transactions**.
+
+7. Click the **Link account** button.
+
+8. On the **Connect an account** screen, find and select your organization from the list of institutions.
+
+9. Agree to the terms and conditions.
+
+10. Enter their one-time username and password into QuickBooks and complete the authentication prompt.
+
+11. Select one or more bank accounts to connect to QBO for viewing bank feeds.
+
+12. In the dropdown that appears, select the account type—the chart of accounts—that they want to view bank feeds for.
+
+Your SMB user has now successfully connected their chosen bank accounts to QuickBooks Online. The status of the data connection is set to `Linked`, which allows you to [push bank feeds to QuickBooks Online](/bank-feeds-api/qbo-bank-feeds/bank-feed-qbo-bank-feeds-push-bank-transactions.md) for the SMB user.
