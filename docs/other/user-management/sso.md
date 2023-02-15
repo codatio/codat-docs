@@ -40,7 +40,7 @@ To manage third-party SSO services, perform the following steps in the Codat Por
 2. Click **Manage sign-in** (only available for Administrators).
 3. In the **Manage sign-in** dialog, use the toggles to switch the services on and off.
 
-:::note
+:::note Custom login message
 
 You can also maintain a custom login message, which will be displayed every time a user logs in. The message applies to all sign-in methods.
 
