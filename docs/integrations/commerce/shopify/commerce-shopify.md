@@ -67,4 +67,4 @@ Before setting up the integration, review the preceding requirements to make sur
 
 :::
 
-To get started, see [Set up Shopify using public apps](commerce-shopify-setup).
+To get started, see [Set up Shopify using public apps](/integrations/commerce/shopify/commerce-shopify-setup).
