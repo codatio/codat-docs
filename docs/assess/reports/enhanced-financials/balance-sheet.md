@@ -49,7 +49,7 @@ The response structure is split into four areas: Report info, Dimensions, Measur
 
 ## Report info
 
-If any account needs to be recategorized, use the [API: Categorization of accounts](/assess/categorization/api-categorization-of-accounts) endpoint.
+If any account needs to be recategorized, use the [API: Categorization of accounts](/assess/categories/api-categorization-of-accounts) endpoint.
 
 ### Measures
 

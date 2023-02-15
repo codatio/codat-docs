@@ -12,9 +12,9 @@ module.exports = [
     collapsed: true,
     items: [
       "bank-feeds-api/sage-bank-feeds/sage-bank-feeds",
-      "bank-feeds-api/sage-bank-feeds/bank-feed-sage-bank-feeds-setup",
-      "bank-feeds-api/sage-bank-feeds/bank-feed-sage-bank-feeds-use",
-      "bank-feeds-api/sage-bank-feeds/bank-feed-sage-bank-feeds-authenticate-users-web-app",    
+      "bank-feeds-api/sage-bank-feeds/sage-bank-feeds-setup",
+      "bank-feeds-api/sage-bank-feeds/sage-bank-feeds-use",
+      "bank-feeds-api/sage-bank-feeds/sage-bank-feeds-authenticate-users-web-app",    
     ],
   },
   {
@@ -23,9 +23,9 @@ module.exports = [
     collapsed: true,
     items: [
       "bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds",
-      "bank-feeds-api/qbo-bank-feeds/bank-feed-qbo-bank-feeds-setup",
-      "bank-feeds-api/qbo-bank-feeds/bank-feed-qbo-bank-feeds-smb-user",
-      "bank-feeds-api/qbo-bank-feeds/bank-feed-qbo-bank-feeds-push-bank-transactions",     
+      "bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-setup",
+      "bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-smb-user",
+      "bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions",     
     ],
   },
   {

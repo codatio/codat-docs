@@ -135,5 +135,5 @@ If you link a Codat test company to one of the [Sage sandbox accounts](https://d
 :::
 
 :::note Tax rates on line items
-Due to a Sage 200cloud limitation, tax rates on line items for invoices, credit notes, bills, and bill credit notes appear differently to other integrations. For more information, see [Sage 200cloud limitations](/sage200-limitations).
+Due to a Sage 200cloud limitation, tax rates on line items for invoices, credit notes, bills, and bill credit notes appear differently to other integrations. For more information, see [Sage 200cloud limitations](/integrations/accounting/sage200/sage200-limitations).
 :::

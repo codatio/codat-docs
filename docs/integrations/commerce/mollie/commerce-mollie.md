@@ -23,7 +23,7 @@ Using our Mollie integration, you can securely retrieve and view customer commer
 
 View the coverage of our Mollie integration in the <a className="external" href="https://knowledge.codat.io/supported-features/commerce?view=tab-by-integration&integrationKey=dxfw" target="_blank">Data coverage explorer</a>.
 
-For more information about the supported data types, see [Mollie integration reference](/mollie-integration-reference).
+For more information about the supported data types, see [Mollie integration reference](/integrations/commerce/mollie/commerce-mollie-integration-reference).
 
 ## Set up the integration
 

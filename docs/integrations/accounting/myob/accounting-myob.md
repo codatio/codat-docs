@@ -11,7 +11,7 @@ You can synchronize accounting and banking data with <a className="external" hre
 
 View the coverage of our MYOB AccountRight and Essentials integration in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=pdvj" target="_blank">Data coverage explorer</a>.
 
-For more details about the supported data types, see [MYOB integration reference](/integrations/accounting/kashflow/myob-integration-reference).
+For more details about the supported data types, see [MYOB integration reference](/integrations/accounting/myob/myob-integration-reference).
 
 ## Set up the integration
 

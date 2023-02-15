@@ -8,7 +8,7 @@ updatedAt: "2022-12-19T06:12:29.871Z"
 
 :::note Prerequisites
 
-You need an account and its API key to start with Codat. You can <a href="https://signup.codat.io/" target="_blank">sign up</a> for an account for free, or <a href="/core-account-signup" target="_blank">learn more</a> about creating one.
+You need an account and its API key to start with Codat. You can <a href="https://signup.codat.io/" target="_blank">sign up</a> for an account for free, or <a href="/core-concepts/account-signup" target="_blank">learn more</a> about creating one.
 
 :::
 

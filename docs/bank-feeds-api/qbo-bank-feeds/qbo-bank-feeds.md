@@ -31,9 +31,9 @@ Codat does not currently support pushing historic (backdated) or future (future-
 
 ## Setup overview
 
-1. See [Set up the QuickBooks Online Bank Feeds integration](/bank-feeds-api/qbo-bank-feeds/bank-feed-qbo-bank-feeds-setup) to learn how to set up and enable the integration.
-2. Your SMB users must [connect one or more bank accounts to QBO](/bank-feeds-api/qbo-bank-feeds/bank-feed-qbo-bank-feeds-smb-user) by using Link, Codat's authentication solution, to generate a one-time username and password for QBO authorization.
-3. You can then [push bank transactions to QuickBooks Online](/bank-feeds-api/qbo-bank-feeds/bank-feed-qbo-bank-feeds-push-bank-transactions) for connected accounts.
+1. See [Set up the QuickBooks Online Bank Feeds integration](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-setup) to learn how to set up and enable the integration.
+2. Your SMB users must [connect one or more bank accounts to QBO](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-smb-user) by using Link, Codat's authentication solution, to generate a one-time username and password for QBO authorization.
+3. You can then [push bank transactions to QuickBooks Online](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions) for connected accounts.
 
 ## Other considerations
 
@@ -53,4 +53,4 @@ You can upload your organization logo to Link on the <a className="external" hre
 
 You can also customize the colors and text used in the Link flow. For more information, see [Set up your company branding](/auth-flow/customize/branding).
 
-To provide your SMB users with additional guidance, you can also [add a custom callout](/bank-feeds-api/qbo-bank-feeds/bank-feed-qbo-bank-feeds-setup#add-a-custom-callout-to-the-link-site) to the QBO Bank Feeds Link site.
+To provide your SMB users with additional guidance, you can also [add a custom callout](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-setup#add-a-custom-callout-to-the-link-site) to the QBO Bank Feeds Link site.
