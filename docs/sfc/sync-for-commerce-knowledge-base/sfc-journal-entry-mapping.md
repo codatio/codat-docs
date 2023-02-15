@@ -5,31 +5,44 @@ hidden: true
 createdAt: "2022-12-01T10:20:32.012Z"
 updatedAt: "2023-01-13T08:48:59.378Z"
 ---
+With Sync for Commerce, your merchant can choose to reflect their sales data from e-commerce and point-of-sale (POS) software: 
 
-The Sync for Commerce product now supports ** Journal entries**. This feature translates the sales data from your e-commerce and point of sale (POS) software as an aggregated journal entry for the entire day's sales. This gives our clients the following advantages:
+- as an aggregated daily **sales invoice**, or
+- as an aggregated daily **journal entry**.
+
+Codat recommends using **journal entries** to benefit from these advantages:
 
 - **Ease of use**
 
-  Single daily journal entries are easier to manage, adjust, and reconcile than, for example, invoices, payments, and credit notes.
+  Single daily journal entries are easier to manage, adjust, and reconcile than, for example, invoices, payments, and credit notes. 
 
 - **Controlled impact on the general ledger**
 
-  A journal entry is the most granular way to impact a company's general ledger without being confined to specific account types.
+  A journal entry is the most granular way to impact a company's general ledger without being confined to specific account types. 
 
 - **Tax data made simple**
 
-  Journal entries simplify recording of tax data because tax rates and their associated accounts do not need to managed seperately.
+  Journal entries simplify the recording of tax data because tax rates and their associated accounts do not need to be managed separately.
 
-:::note
+:::note Journal entry coverage
 
 [View](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries) the accounting platforms where we provide coverage for Journal entries.
 :::
+
+## Choosing a sync type
+
+Your merchant can choose the sync type they prefer while performing their company's configuration for the first time in the Sync Flow. Note that the selection cannot be changed after the initial configuration is complete.
+
+<img
+  src="/img/sync-for-commerce/2023-01-24_16-34-28.png"
+  alt="An image of the Sync Flow Choosing the sync type in the Sync Flow"
+/>
 
 ## Example journal entries
 
 :::note Mapping journal entries
 
-You are able to map sales journal entries to any account types, including liability, unless it is explicitly prohibited by the target accounting platform.
+You can map sales journal entries to any account types, including liability, unless it is explicitly prohibited by the target accounting platform.
 :::
 
 ### Sales
@@ -84,7 +97,7 @@ The example journal entry covers payment processing fees and payment fees refund
 
 ## Tax categorization in daily journals
 
-If you have the journal entry feature activated, you can enhance it by requesting Codat to enable the tax categorization feature. It is aimed at merchants operating in places where products incur multiple taxes remitted to different authorities.
+The tax categorization feature is available to every merchant using daily journals, as long as their commerce platform supports tax components. It is aimed at merchants operating in places where products incur multiple taxes remitted to different authorities.
 
 With this feature, the merchant can map multiple tax rates from their commerce solution to relevant tax accounts in their accounting system. It adds an extra screen to the Sync Flow, where the mapping takes place. This creates separate journal lines for the daily journal entry.
 

@@ -31,6 +31,13 @@ Data connections can have one of the statuses described in the following table.
 
 ## Linked data connection example
 
+Verify that a connection returns a Linked `status` using one of our [Connections](/codat-api#/operations/list-company-connections) endpoints. 
+
+In the response, note the following fields:
+
+- `sourceId` identifies the source of information, like a bank or accounting software; 
+- `integrationId` identifies the Codat integration that supports the data source.
+
 ```json Data connections - example
 {
   "id": "00000000-0000-0000-0000-000000000000",
