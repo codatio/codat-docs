@@ -106,7 +106,7 @@ export default function DocItem(props: Props): JSX.Element {
           location="bottom"
           buttonText="Enter"
           cookieName="cookieConsent2"
-          style={{ background: "#556680", height: "100px", textAlign: "center" }}
+          style={{ background: "#556680", minHeight: "100px", textAlign: "center" }}
           buttonStyle={{ backgroundColor: "white", fontSize: "12px", borderRadius: "4px" }}
         >
           Welcome to our new docs! <br/>
