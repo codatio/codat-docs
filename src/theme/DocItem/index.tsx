@@ -112,6 +112,7 @@ export default function DocItem(props: Props): JSX.Element {
           Welcome to our new docs! <br/>
           They're in beta so you may find a issues in our content. <br/>
           You can contribute to them <a href="https://github.com/codatio/codat-docs" target="_blank">here</a>.
+          See the old docs <a href="https://codat.readme.io/">here</a>.
         </CookieConsent>
 
         <div className="end">
