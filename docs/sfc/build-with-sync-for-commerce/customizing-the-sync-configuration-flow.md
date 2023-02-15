@@ -5,11 +5,12 @@ createdAt: "2022-11-16T20:24:20.979Z"
 updatedAt: "2023-01-16T17:31:55.362Z"
 ---
 
-:::caution Customization vs. features
+:::caution
 
 This section includes instructions on how to update the text values in the Sync Flow and change visibility of feature categories (accounts).
 
-If you're looking to disable a feature (e.g., Fees), contact your Account Manager.
+If you are looking to omit a specific feature prompt (for example, if you do not support the concept of fees), contact your Account Manager.
+
 :::
 
 The Sync configuration flow is a white-labelled solution that can be tailored to fit the needs of your clients.
