@@ -1,5 +1,5 @@
 ---
-title: "Installation on a Right Networks hosted instance"
+title: "Install the QuickBooks Desktop connector on Right Networks"
 description: "Learn how to install our QuickBooks Desktop connector on Right Networks hosted instances of QBD."
 createdAt: "2022-07-05T14:08:30.046Z"
 updatedAt: "2023-01-11T09:40:44.879Z"
@@ -8,6 +8,7 @@ updatedAt: "2023-01-11T09:40:44.879Z"
 :::caution Right Networks - Beta testing
 
 Please note, support for installing the QBD connector in Right Networks hosted environments is in beta testing. If you're interested in using this functionality, please contact your Account Manager or Account Executive to find out more and gain access.
+
 :::
 
 Your SMB customers can install our QuickBooks Desktop connector on a hosted instance of QuickBooks Desktop (QBD) provided by <a  class="external" href="https://www.rightnetworks.com/" target="_blank">Right Networks</a>. In a hosted instance, users access QBD through a virtual desktop hosted in the cloud rather than by installing the program locally.
@@ -32,6 +33,7 @@ As a Codat client, you need to complete the following tasks to enable your SMB c
 :::note Options for SMB authentication
 
 Instead of using Link, you can provide your SMB customers with separate instructions for installing and licensing the QBD connector in their Right Networks hosted environment.
+
 :::
 
 Next, your SMB customers must do the following:
@@ -73,7 +75,13 @@ If you're using Link, you can enable the Right Networks installation path in the
 1. Sign in to the <a  class="external" href="https://app.codat.io" target="_blank">Codat Portal</a>.
 2. In the navigation bar, select **Settings > Integrations > Accounting**.
 3. Click **Manage** next to the **QuickBooks Desktop** integration.
-4. Select **Enable your customer users to see the Right Networks install guide in the QBD connector download UI**.
+4. Select the checkbox named **Enable your customer users to see the Right Networks install guide in the QBD connector download UI**.
+
+   :::note Enabling the checkbox
+
+   This checkbox must be enabled by your Solutions Consultant.
+
+   :::
 
 ## Enable the QBD integration
 
