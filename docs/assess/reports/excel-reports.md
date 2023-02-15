@@ -31,7 +31,7 @@ For each of the endpoints described below, you will provide the same parameters.
 
 ## Request an Excel report for download
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/post_data_companies__companyId__assess_excel" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="https://api.codat.io/swagger/index.html#/Assess/post_data_companies__companyId__assess_excel">API reference</a>.
 
 `POST /data/companies/{companyId}/assess/excel`
 
@@ -65,7 +65,7 @@ The status tells you if the last report requested is complete. It only returns t
 
 When the report is complete, the `inProgress` field will have the value of _false_ whilst the `success` field will show _true_.
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__assess_excel" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__assess_excel">API reference</a>.
 
 `GET /data/companies/{companyId}/assess/excel`
 
@@ -122,7 +122,7 @@ See [date](/common-api#/schemas/DateTime)",
 
 ## Download the report
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/post_data_companies__companyId__assess_excel_download" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="https://api.codat.io/swagger/index.html#/Assess/post_data_companies__companyId__assess_excel_download">API reference</a>.
 
 `POST /data/companies/{companyId}/assess/excel/download`
 

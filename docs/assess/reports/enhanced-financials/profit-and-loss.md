@@ -28,7 +28,7 @@ For _Enhanced Profit and Loss_, these are the dimensions and measures:
 
 - Is structured based on dimension (index =“0”). i.e. Period
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_enhancedProfitAndLoss" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_enhancedProfitAndLoss">API reference</a>.
 
 `GET /data/companies{companyId}/connections/{connectionId}/assess/enhancedProfitandLoss`
 

@@ -49,7 +49,7 @@ This means that companies can have data for different date ranges from different
 It is recommended that you use match results only for the date range when data from both sources overlap; this is provided for you in the _Overlapping dates_ part of the status response.
 :::
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__assess_dataTypes__dataType__dataIntegrity_status" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__assess_dataTypes__dataType__dataIntegrity_status">API reference</a>.
 
 `GET /data/companies/{companyId}/assess/dataTypes/{dataType}/dataIntegrity/status`
 
@@ -172,7 +172,7 @@ This endpoint exposes a summary of match results for a given data type filtered 
 
 So, for example, if you wanted to see summary match results only for transactions after 1 December 2020, you could send ‘query=date>2020-12-01’.
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__assess_dataTypes__dataType__dataIntegrity_summaries" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__assess_dataTypes__dataType__dataIntegrity_summaries">API reference</a>.
 
 `GET /data/companies/{companyId}/assess/dataTypes/{dataType}/dataIntegrity/summaries`
 
@@ -303,7 +303,7 @@ Then you would call each of the _Summaries endpoints_ with (url-escaped) query=d
 
 This endpoint exposes match results record by record for a given data type, filtered based on a query string in the same way as summary results. The results are [paginated](/using-the-api/pagination) and support [ordering](/using-the-api/ordering-results), following the same conventions as our other data endpoints.
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__assess_dataTypes__dataType__dataIntegrity_details" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__assess_dataTypes__dataType__dataIntegrity_details">API reference</a>.
 
 `GET /data/companies/{companyId}/assess/dataTypes/{dataType}/dataIntegrity/details`
 

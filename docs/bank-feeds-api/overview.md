@@ -112,7 +112,7 @@ Here's a high-level overview of the setup and connection flow for Bank Feeds API
 
 4. Provide a list of source bank accounts. These accounts will be displayed to the SMB user in the integration's authorization UI.
 
-   You use the <a className="external" href="https://api.codat.io/swagger/index.html#/Connection/put_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts" target="_blank">PUT /connectionInfo/bankFeedAccounts</a> endpoint to do this.
+   You use the <a href="https://api.codat.io/swagger/index.html#/Connection/put_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts" target="_blank">PUT /connectionInfo/bankFeedAccounts</a> endpoint to do this.
 
 5. Initiate the SMB user connection journey - when the user chooses a source bank account to connect to their accounting platform. This process varies by integration:
 

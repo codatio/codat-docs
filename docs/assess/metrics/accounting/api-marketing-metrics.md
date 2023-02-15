@@ -30,7 +30,7 @@ For Marketing Metrics, these are the dimensions and measures:
 
 View the Marketing Metrics [formulas](/assess/metrics/accounting/api-financial-metrics#marketing-metrics-formulas).
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_accountingMetrics_marketing" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_accountingMetrics_marketing">API reference</a>.
 
 `GET /data/companies/{companyId}/connections/{connectionId}/assess/accountingMetrics/marketing`
 

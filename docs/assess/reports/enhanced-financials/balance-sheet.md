@@ -35,7 +35,7 @@ Debit accounts are categorized as **Asset > Current assets > Cash**. However, wh
 
 <br />
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_enhancedBalanceSheet" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_enhancedBalanceSheet">API reference</a>.
 
 ```http
 GET /data/companies{companyId}/connections/{connectionId}/assess/enhancedBalanceSheet

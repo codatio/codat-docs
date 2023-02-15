@@ -28,7 +28,7 @@ For _Banking account inflows and outflows_, these are the dimensions and measure
 
 - Is structured based on dimension (index =“0”). i.e. Period
 
-The endpoint is available in <a href="https://api.codat.io/swagger/index.html#/Assess" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in <a href="https://api.codat.io/swagger/index.html#/Assess">API reference</a>.
 
 `GET ​/data​/companies​/{companyId}​/assess​/banking/bankingInflowsOutflows`
 
