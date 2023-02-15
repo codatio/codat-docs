@@ -27,7 +27,7 @@ The Audit Report requires an accounting integration with at least one of the fol
 
 The Excel file generated contains the `UnAnalyzedDataTypes` field in the [Report Info](#report-info) sheet which lists the data types that are required to maximize the value of the Audit Report but are disabled. It is recommended you enable these data types.
 
-Data types can be enabled using <a className="external" href="https://api.codat.io/swagger/index.html#/Profile/post_profile_syncSettings" target="_blank">Codat's API</a> or in the <a className="external" href="/core-concepts/data-type-settings" target="_blank">Portal</a>.
+Data types can be enabled in the <a className="external" href="/core-concepts/data-type-settings" target="_blank">Portal</a>.
 
 ## Generating the report
 

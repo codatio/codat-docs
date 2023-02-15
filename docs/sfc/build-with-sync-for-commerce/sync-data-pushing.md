@@ -10,11 +10,6 @@ updatedAt: "2022-11-21T17:42:49.928Z"
 Sync for Commerce is in beta. If you are interested in building with Sync for Commerce, please [get in touch](mailto:sync-for-commerce@codat.io).
 :::
 
-:::info Use our Swagger to follow this guide
-
-All the endpoints mentioned in this guide are available in our <a href="https://api.codat.io/sync/swagger" target="_blank">Sync for Commerce Swagger</a>. You can use it to try the API requests from this guide directly in your browser. Before you use Swagger, make sure to [authenticate](/using-the-api/authentication).
-:::
-
 1. After the merchant completes the data mapping configuration, push your merchant’s data to the data endpoint for the following data types:
 
 - [Orders](/commerce-api#/schemas/orders)

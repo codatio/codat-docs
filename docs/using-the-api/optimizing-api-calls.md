@@ -5,7 +5,7 @@ description: "Learn how to use our APIs efficiently and ensure you are not reach
 
 :::note Rate limits
 
-Ensure you are familiar with our [rate limits](https://docs.codat.io/docs/rate-limits) before optimizing your API calls to Codat.
+Ensure you are familiar with our [rate limits](/using-the-api/rate-limits) before optimizing your API calls to Codat.
 
 :::
 
@@ -21,7 +21,7 @@ You can also order the results by `sourceModifiedDate`. This allows you to page 
 
 :::caution Support for `sourceModifiedDate`
 
-Not all platforms support `sourceModifiedDate`. You can use `modifiedDate` instead, which denotes when a record has been updated in Codat's platform, or the underlying record date. Refer to [Modified dates](https://docs.codat.io/docs/modified-dates) for more information.
+Not all platforms support `sourceModifiedDate`. You can use `modifiedDate` instead, which denotes when a record has been updated in Codat's platform, or the underlying record date. Refer to [Modified dates](/using-the-api/modified-dates) for more information.
 
 :::
 
@@ -33,7 +33,7 @@ When a user links for the first time, there may be a need to pull all data, for 
 
 :::note Querying by the record date: example
 
-You can query our [Accounts](https://api.codat.io/swagger/index.html#/Accounts/get_companies__companyId__data_accounts) endpoint with `sourceModifiedDate` as follows:\n\n`https://api.codat.io/companies/{companyId}/data/accounts?page=1&pageSize=100&query=sourceModifiedDate>2022-08-23&orderby=-sourceModifiedDate`\n\nThis returns any accounts for the given `companyId` that were added or updated in Codat since midnight UTC on the 23 of August. Newest results are displayed first and paged with a size of 100.
+You can query our [Accounts](/accounting-api#/operations/get-accounts) endpoint with `sourceModifiedDate` as follows:\n\n`https://api.codat.io/companies/{companyId}/data/accounts?page=1&pageSize=100&query=sourceModifiedDate>2022-08-23&orderby=-sourceModifiedDate`\n\nThis returns any accounts for the given `companyId` that were added or updated in Codat since midnight UTC on the 23 of August. Newest results are displayed first and paged with a size of 100.
 
 :::
 
@@ -43,13 +43,13 @@ Where possible, use query parameters to filter down the number of results when c
 
 :::note Querying for a use case: example
 
-You can query our [Invoices](https://docs.codat.io/reference/listinvoicespaged) endpoint for an invoice use case as follows:\n\n`https://api.codat.io/companies/{companyId}/data/invoices?page=1&pageSize=100&query=customerRef.companyName=NewCo`\n\nThis returns all invoices for a company issued by a specific customer.  Instead of `customerRef.companyName`, you can use `customerRef.id` to filter by their Id instead.
+You can query our [Invoices](/accounting-api#/operations/list-invoices) endpoint for an invoice use case as follows:\n\n`https://api.codat.io/companies/{companyId}/data/invoices?page=1&pageSize=100&query=customerRef.companyName=NewCo`\n\nThis returns all invoices for a company issued by a specific customer.  Instead of `customerRef.companyName`, you can use `customerRef.id` to filter by their Id instead.
 
 :::
 
 ## Making use of alerts
 
-Consider configuring a [Dataset data changed](https://docs.codat.io/docs/core-rules-types#dataset-data-changed) rule. This will send an alert per company when new data becomes available for each data type. 
+Consider configuring a [Dataset data changed](/introduction/webhooks/core-rules-create#dataset-data-changed) rule. This will send an alert per company when new data becomes available for each data type. 
 
 This is sent in the form of a `POST` request to a webhook URL you specified. The webhook contains the company Id and data connection Id 
 

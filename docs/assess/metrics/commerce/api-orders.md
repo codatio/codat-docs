@@ -28,7 +28,7 @@ For Orders, these are the dimensions and measures:
 
 View the Orders [formulas](/assess/metrics/commerce/overview#what-metrics-are-available).
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_commerceMetrics_orders" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-commerceMetrics-orders">API reference</a>.
 
 `GET /data/companies/{companyId}/connections/{connectionId}/assess/commerceMetrics/orders`
 

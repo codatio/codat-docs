@@ -37,7 +37,7 @@ You can perform each step in the Codat Portal or using our API.
 
 ## Developer prerequisites
 
-If you are a developer and want to work with Codat using our <a className="external" href="/codat-api#/" target="_blank">API Reference</a> or by making calls to our API in code, you first need to authenticate.
+If you are a developer and want to work with Codat using our <a className="external" href="/codat-api#/">API reference</a> or by making calls to our API in code, you first need to authenticate.
 
 <details>
   <summary><b>Authenticate with Codat's API</b></summary>

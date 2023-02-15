@@ -73,7 +73,7 @@ When an API request causes an account limit to be exceeded, you'll receive a 402
 
 ### 50-company limit
 
-Error response from [POST /companies](https://api.codat.io/swagger/index.html#/Companies/post_companies) when you have exceeded the 50-company limit that applies to the Free plan.
+Error response from [POST /companies](/codat-api#/operations/create-company) when you have exceeded the 50-company limit that applies to the Free plan.
 
 For example:
 
@@ -96,28 +96,6 @@ For example:
 }
 ```
 
-### Sync frequency limit
-
-Error response from [POST /profile/syncSettings](https://api.codat.io/swagger/index.html#/Profile/post_profile_syncSettings) when the `syncSchedule` is set to less than `24`. This error is returned if you request an _hourly_ sync schedule, which is not supported on the Free plan.
-
-```
-{
-  "statusCode": 402,
-  "service": "ClientsApi",
-  "error": "SyncSettingsValidationException: Sync schedule not allowed",
-  "correlationId": "00000000-0000-0000-0000-000000000000",
-  "validation": {
-    "errors": [
-      {
-        "itemId": "SyncSettings",
-        "message": "Sync schedule is not allowed for this client.",
-        "validatorName": "SyncSettings"
-      }
-    ],
-    "warnings": []
-  }
-}
-```
 
 ### 365 day free account limit
 
