@@ -70,7 +70,7 @@ module.exports = {
         "using-the-api/ordering-results",
         "using-the-api/paging",
         "using-the-api/querying",
-        "/using-the-api/queueing-data-syncs",
+        "using-the-api/queueing-data-syncs",
         "using-the-api/errors",
         {
           type: "category",
