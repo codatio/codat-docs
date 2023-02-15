@@ -68,7 +68,7 @@ For example, in order to create categories to break down sales into products, se
 
 ```
 
-:::note
+:::note Category hierarchies not supported
 
 Sync for Commerce does not support hierarchies of categories and requires a simple array of category IDs and names.
 :::

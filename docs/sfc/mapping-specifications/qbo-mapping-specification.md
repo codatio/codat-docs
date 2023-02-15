@@ -4,6 +4,9 @@ description: "Guidelines for data mapping configuration from a commerce platform
 createdAt: "2022-04-21T14:02:26.215Z"
 updatedAt: "2022-11-23T15:21:21.160Z"
 ---
+:::note Automatic sales tax support
+Sync for Commerce supports automatic sales tax (AST) on invoices for US merchants in QuickBooks Online.
+:::
 
 ## Overview
 
