@@ -174,16 +174,18 @@ The following rules can be configured in the Codat Portal to alert you to events
 
 **Trigger:** A Sync connection is deleted.
 
-```json
+**Note:** This rule is specific to Sync for Commerce and cannot be used for other products. This rule does not send a webhook.
+
+```json Example webhook alert body
 {
-"CompanyId": "e2876f0a-5102-4a7d-9743-f10133dba88f",
-"ClientId": "4f1fb082-0c62-4c74-be22-bc782b801e59",
-"ClientName": "The Wind in the Willows",
-"DataConnectionId": "00000000-0000-0000-0000-000000000000",
-"RuleId": "0b29ecef-1ec1-459a-b61a-9de996e0d20a",
-"RuleType": "Sync Connection Deleted",
-"AlertId": "fe42cd24-a05a-4e3c-80cb-06749a73ab1e",
-"Message": "Sync connection for company e2876f0a-5102-4a7d-9743-f10133dba88f deleted",
-"Data": {}
+  "CompanyId": "e2876f0a-5102-4a7d-9743-f10133dba88f",
+  "ClientId": "4f1fb082-0c62-4c74-be22-bc782b801e59",
+  "ClientName": "The Wind in the Willows",
+  "DataConnectionId": "00000000-0000-0000-0000-000000000000",
+  "RuleId": "0b29ecef-1ec1-459a-b61a-9de996e0d20a",
+  "RuleType": "Sync Connection Deleted",
+  "AlertId": "fe42cd24-a05a-4e3c-80cb-06749a73ab1e",
+  "Message": "Sync connection for company e2876f0a-5102-4a7d-9743-f10133dba88f deleted",
+  "Data": {}
 }
 ```
