@@ -17,7 +17,7 @@ View the coverage of our Shopify integration in the <a class="external" href="ht
 
 Our Shopify integration allows your merchants to connect their commerce data using one of two methods:
 
-- [Custom apps](commerce-shopify-custom-apps)
+- [Custom apps](/integrations/commerce/shopify/commerce-shopify-custom-apps)
 - [Public apps](commerce-shopify-setup)
 
 In general, custom apps require less initial setup, with tasks completed by the merchant. Public apps require more initial setup, with tasks completed by you, the Codat client.
