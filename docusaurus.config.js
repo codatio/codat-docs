@@ -117,10 +117,10 @@ module.exports = {
               href: "/assess-api",
               label: "Assess API",
             },
-            // {
-            //   href: "/accounting-api",
-            //   label: "Sync for Commerce API",
-            // },
+            {
+              href: "/sync-for-commerce-api",
+              label: "Sync for Commerce API",
+            },
             {
               href: "/sync-for-expenses-api",
               label: "Sync for Expenses API",
