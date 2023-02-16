@@ -303,6 +303,80 @@ module.exports = {
     ],
     "@docusaurus/plugin-content-pages",
     "@docusaurus/plugin-debug",
+    [ // only works on prod
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            to: '/docs',
+            from: '/introduction/first-steps',
+          },
+          {
+            to: '/docs/core-account-signup',
+            from: '/introduction/create-account',
+          },
+          {
+            to: '/docs/using-codats-api',
+            from: '/using-the-api/overview',
+          },
+          {
+            to: '/reference/authentication',
+            from: '/using-the-api/authentication',
+          },
+          {
+            to: '/reference/querying',
+            from: '/using-the-api/querying',
+          },
+          {
+            to: '/reference/paging',
+            from: '/using-the-api/paging',
+          },
+          {
+            to: '/reference/ordering-results',
+            from: '/using-the-api/ordering-results',
+          },
+          {
+            to: '/reference/modified-dates-1',
+            from: '/using-the-api/modified-dates',
+          },
+          {
+            to: '/reference/managing-companies-1',
+            from: '/using-the-api/managing-companies',
+          },
+          {
+            to: '/reference/queueing-data-syncs-1',
+            from: '/using-the-api/queueing-data-syncs',
+          },
+          {
+            to: '/reference/errors',
+            from: '/using-the-api/errors',
+          },
+          {
+            to: '/reference/push-creating-and-updating-data',
+            from: '/using-the-api/push',
+          },
+          {
+            to: '/reference/rate-limits-1',
+            from: '/using-the-api/rate-limits',
+          },
+          {
+            to: '/reference/optimizing-your-api-calls-1',
+            from: '/using-the-api/optimizing-api-calls',
+          },
+        ],
+        createRedirects(existingPath) {
+          if (existingPath.includes('/docs')) { // Redirect from old docs prefixes to closest path
+            return [
+              existingPath.replace('/docs', ''),
+            ];
+          }
+          if (existingPath.includes('/reference')) { // Redirect from old ref prefixes to closest path
+            return [ '/using-the-api/overview',];
+          }
+          return undefined; // Return a falsy value: no redirect created
+        },
+      },
+    ],
     "@docusaurus/plugin-sitemap",
     // Add custom webpack config to make @stoplight/elements work
     () => ({
