@@ -23,6 +23,6 @@ The red exclamation mark indicates that a matching accounting account could not 
 
 |Abbreviations|Abbreviations|Abbreviations|
 |----|----|----|
-|UNK - UnknownCR - CreditDR - DebitINT - InterestDIV - DividendFEE - Fee|SCHG - Service ChargeDEP - DepositATM - Automated Teller MachinePOS - Point of SaleTFR - TransferCHK - Check|PMT - PaymentCSH - CashDDEP - Direct DepositDDR - Direct DebitRPMT - Repeat PaymentOTH - Other|
+|UNK - Unknown,CR - CreditDR - Debit, INT - InterestDIV - Dividend, FEE - Fee|SCHG - Service Charge, DEP - DepositATM - Automated Teller Machine, POS - Point of Sale, TFR - Transfer, CHK - Check|PMT - Payment, CSH - Cash, DDEP - Direct Deposit, DDR - Direct Debit, RPMT - Repeat Payment, OTH - Other|
 
 
