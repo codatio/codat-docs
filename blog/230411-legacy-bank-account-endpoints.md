@@ -1,5 +1,5 @@
 ---
-title: "Upcoming 2023-04-10: Deprecation of legacy bank account endpoints"
+title: "Upcoming 2023-04-11: Deprecation of legacy bank account endpoints"
 date: "2023-01-15"
 tags: ["Deprecation", "Bank accounts"]
 draft: false
@@ -16,14 +16,19 @@ The following endpoints will be deprecated:
 
 `GET /companies/{companyId}/data/bankAccounts`,  
 `GET /companies/{companyId}/data/bankAccounts/{accountId}`,  
-`GET ​/companies​/{companyId}​/data​/bankAccounts​/{accountId}​/transactions`.
+`GET /companies/{companyId}/data/bankAccounts/{accountId}/transactions`.
+
+:::note Update - 2023/02/16
+
+This was previously scheduled for 2023/04/10. This has been pushed back a day as this fell on a public holiday in the UK.
+:::
 
 ## Action required
 
 If you are using either of the above endpoints, you will need to instead use the following endpoints:  
 `GET /companies/{companyId}/connections/{connectionId}/data/bankAccounts`,  
 `GET /companies/{companyId}/connections/{connectionId}/data/bankAccounts/{accountId}`,  
-`GET ​/companies​/{companyId}​/connections​/{connectionId}​/data​/bankAccounts​/{accountId}​/bankTransactions`.
+`GET /companies/{companyId}/connections/{connectionId}/data/bankAccounts/{accountId}/bankTransactions`.
 
 ## Expected impact if no action is taken
 
