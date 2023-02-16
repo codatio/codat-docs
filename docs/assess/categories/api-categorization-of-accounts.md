@@ -96,91 +96,33 @@ GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categ
 ```
 
 ## Data model
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "accountRef",
-"0-1": "See [AccountRef](#accountref)",
-"0-2": "An object containing account reference data.",
-"1-2": "An object containing suggested category data.",
-"2-2": "An object containing confirmed category data.",
-"1-0": "suggested",
-"1-1": "See [Suggested](#suggested)",
-"2-0": "confirmed",
-"2-1": "See [Confirmed](#confirmed)"
-},
-"cols": 3,
-"rows": 3
-}
+| Field      | Type                          | Description                                   |
+|------------|-------------------------------|-----------------------------------------------|
+| accountRef | See [AccountRef](#accountref) | An object containing account reference data.  |
+| suggested  | See [Suggested](#suggested)   | An object containing suggested category data. |
+| confirmed  | See [Confirmed](#confirmed)   | An object containing confirmed category data. |
 
 ## AccountRef
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "id",
-"1-0": "name",
-"0-1": "_string_",
-"1-1": "_string_",
-"0-2": "The account Id.",
-"1-2": "The name of the account."
-},
-"cols": 3,
-"rows": 2
-}
+| Field     | Type                           | Description                                   |
+|-----------|--------------------------------|-----------------------------------------------|
+| id        |  _string_                      | The account Id.                               |
+| name      |  _string_                      | The name of the account.                      |
 
 ## Suggested
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "type",
-"1-0": "subtype",
-"2-0": "detailType",
-"3-0": "modifiedDate",
-"0-1": "_string_",
-"1-1": "_string_",
-"2-1": "_string_",
-"3-1": "See [Date](/common-api#/schemas/DateTime)",
-"0-2": "The suggested account type.",
-"1-2": "The suggested account subtype.",
-"2-2": "The suggested account detail type.",
-"3-2": "YYYY-MM-DDT00:00:00Z
-
-The date the category was suggested for the account."
-},
-"cols": 3,
-"rows": 4
-}
+| Field         | Type        | Description                                                                 |
+|---------------|-------------|-----------------------------------------------------------------------------|
+| type          |  _string_   | The suggested account type.                                                 |
+| subtype       |  _string_   | The suggested account subtype.                                              |
+| detailType    |  _string_   | The suggested account detail type.                                          |
+| modifiedDate  | See [Date](/datamodel-shared-date)    | The date the category was suggested for the account, YYYY-MM-DDT00:00:00Z.  |
 
 # Confirmed
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "type",
-"1-0": "subtype",
-"2-0": "detailType",
-"3-0": "modifiedDate",
-"3-1": "See [Date](/common-api#/schemas/DateTime)",
-"0-1": "_string_",
-"1-1": "_string_",
-"2-1": "_string_",
-"0-2": "The confirmed account type.",
-"1-2": "The confirmed account subtype.",
-"2-2": "The confirmed account detail type.",
-"3-2": "YYYY-MM-DDT00:00:00Z
-
-The date the account category was confirmed."
-},
-"cols": 3,
-"rows": 4
-}
+| Field         | Type        | Description                                                         |
+|---------------|-------------|---------------------------------------------------------------------|
+| type          |  _string_   | The confirmed account type.                                         |
+| subtype       |  _string_   | The confirmed account subtype.                                      |
+| detailType    |  _string_   | The confirmed account detail type.                                  |
+| modifiedDate  | See [Date](/datamodel-shared-date)   | The date the account category was confirmed, YYYY-MM-DDT00:00:00Z.  |
 
 ```
 {
