@@ -20,6 +20,8 @@ import {ThemeClassNames, useWindowSize} from '@docusaurus/theme-common';
 import {DocProvider} from '@docusaurus/theme-common/internal';
 import DocItemMetadata from '@theme/DocItem/Metadata';
 
+import CookieConsent from "react-cookie-consent";
+
 export default function DocItem(props: Props): JSX.Element {
   const {content: DocContent} = props;
   const {metadata, frontMatter} = DocContent;
@@ -88,6 +90,31 @@ export default function DocItem(props: Props): JSX.Element {
           </div>
           <div className="spacer"></div>
         </div>
+
+        <CookieConsent
+          location="bottom"
+          buttonText="Accept"
+          cookieName="cookieConsent3"
+          style={{ background: "#556680" }}
+          buttonStyle={{ backgroundColor: "white", fontSize: "12px", borderRadius: "4px" }}
+        >
+          This website uses cookies to enhance your experience.
+        </CookieConsent>
+
+
+        <CookieConsent
+          location="bottom"
+          buttonText="Enter"
+          cookieName="cookieConsent2"
+          style={{ background: "#556680", minHeight: "100px", textAlign: "center" }}
+          buttonStyle={{ backgroundColor: "white", fontSize: "12px", borderRadius: "4px" }}
+        >
+          Welcome to our new docs! <br/>
+          They're in beta so you may find a issues in our content. <br/>
+          You can contribute to them <a href="https://github.com/codatio/codat-docs" target="_blank">here</a>.
+          See the old docs <a href="https://codat.readme.io/">here</a>.
+        </CookieConsent>
+
         <div className="end">
           { !hideTableOfContents && DocContent.toc && (
             <TOC

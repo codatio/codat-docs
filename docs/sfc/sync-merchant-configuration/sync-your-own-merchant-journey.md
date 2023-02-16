@@ -29,7 +29,7 @@ You can use our Postman collection to help you follow the steps outlined in this
 [![Run in Postman Button](https://run.pstmn.io/button.svg)](https://postman.codat.io/#166a0b48-9f98-47f6-91cd-0986a3de626f/ "Link to run in postman")
 
 
-All the endpoints mentioned in this guide are also available in the <a href="https://api.codat.io/sync/swagger" target="_blank">Sync for Commerce Swagger</a>. Before you use Swagger, make sure to [authenticate](/step-1-authenticate).
+All the endpoints mentioned in this guide are also available in the <a href="/sync-for-commerce-api#/">Sync for Commerce API reference</a>.
 
 As an alternative, you can also use our Sync for Commerce Postman collection.
 

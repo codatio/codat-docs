@@ -117,7 +117,7 @@ The endpoint for pushing a record is as follows:
 
 `POST /companies/{companyId}/connections/{connectionId}/push/{dataType}`
 
-An example would be [posting a new invoice to an accounting package for a given company](/accounting-api#/operations/post-invoice).
+An example would be <a href="/accounting-api#/operations/post-invoice">posting a new invoice to an accounting package for a given company</a>.
 
 The request body should be a JSON object which conforms to the structure of the options endpoint above. It is expected that the options endpoint is queried before performing any push operation.
 

@@ -9,7 +9,7 @@ When you've set up the Sage Bank Feeds integration and your SMB customer has con
 
 ## View bank account details
 
-To view details of the source bank accounts for a specified data connection, use the <a className="external" href="https://api.codat.io/swagger/index.html#/Connection/get_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts" target="_blank">GET /bankFeedAccounts</a> endpoint.
+To view details of the source bank accounts for a specified data connection, use the <a href="https://api.codat.io/swagger/index.html#/Connection/get_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts" target="_blank">GET /bankFeedAccounts</a> endpoint.
 
 ```http
 GET /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts

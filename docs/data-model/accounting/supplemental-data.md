@@ -5,7 +5,7 @@ createdAt: "2022-10-31T13:43:56.569Z"
 updatedAt: "2022-11-04T18:14:12.996Z"
 ---
 
-Explore the <a className="external" href="https://api.codat.io/swagger/index.html#/TrackingCategories" target="_blank">Supplemental data configuration</a> endpoints in Swagger.
+Explore the <a href="https://api.codat.io/swagger/index.html#/TrackingCategories" target="_blank">Supplemental data configuration</a> endpoints in Swagger.
 
 View the coverage for supplemental data in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=trackingCategories" target="_blank">Data coverage explorer</a>.
 

@@ -18,8 +18,9 @@ The chart of accounts defines the financial structure of a company by providing 
 
 Every account is assigned one of Codat’s 162 categories. This allows Codat to produce insights about your SMB customers irrespective of the accounting data source they use. The assigned categories apply in the Codat platform only, not in the accounting data source.
 
-You can obtain the latest list of Codat categories from our <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_assess_accounts_categories" target="_blank">Swagger</a> documentation by calling the following endpoint:
-`GET ​/data​/assess​/accounts​/categories`
+You can obtain the latest list of Codat categories from our <a href="/assess-api#/operations/get-data-assess-accounts-categories">API reference</a> documentation by calling the following endpoint:
+
+`GET /data/assess/accounts/categories`
 
 #The benefits of categorizing accounts
 
@@ -95,5 +96,5 @@ The downloaded Excel file contains:
 
 - The **Categorized Account Balances** tab.
 - The output of
-  `GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categories` endpoint in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_accounts_categories" target="_blank">Swagger</a> listing the categories.
+  `GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categories` endpoint in <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-accounts-categories">API reference</a> listing the categories.
 - A balance of the account category for every financial period available in the financial statements.

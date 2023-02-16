@@ -20,11 +20,6 @@ Our Sync configuration flow handles this for you.
 
 You can [customize your flow](/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow) to give your users the best experience.
 
-:::note Use our Swagger to follow this guide
-
-All the endpoints mentioned in this guide are available in our <a href="https://api.codat.io/sync/swagger/" target="_blank">Sync for Commerce Swagger</a>. You can use it to try the API requests from this guide directly in your browser. Before you use Swagger, make sure to [authenticate](/using-the-api/authentication).
-:::
-
 ### 1. Retrieve the Sync configuration flow URL
 
 After the merchant selects their accounting platform, they should be immediately redirected to a secure URL leading them to the Sync configuration flow. To retrieve the secure URL, make the following request:

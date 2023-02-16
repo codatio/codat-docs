@@ -33,7 +33,7 @@ To connect your test company to Plaid's sandbox, you can either generate a Link 
 
 ## Generate a Link URL via the API
 
-1. Open the <a href="https://api.codat.io/swagger/index.html#/Connection/post_companies__companyId__connections" target="_blank">POST /companies/{companyId}/connections</a> endpoint.
+1. Open the <a href="/codat-api#/operations/list-company-connections" target="_blank">POST /companies/{companyId}/connections</a> endpoint.
 2. Replace `{companyId}` with the ID of the test company you've just set up.
 3. Also, in the body of the request, enter the platform key:
 
@@ -94,6 +94,6 @@ To perform a quick check from the Codat Portal:
 
 To retrieve account details from the API, use either of the following endpoints:
 
-[`GET /companies/{companyId}/connections/{connectionId}/data/banking-accounts`](https://api.codat.io/swagger/index.html#/BankingAccounts/get_companies__companyId__connections__connectionId__data_banking_accounts)
+[`GET /companies/{companyId}/connections/{connectionId}/data/banking-accounts`](/banking-api#/operations/list-banking-accounts)
 
-[`GET /companies/{companyId}/connections/{connectionId}/data/banking-transactions`](https://api.codat.io/swagger/index.html#/BankingTransactions/get_companies__companyId__connections__connectionId__data_banking_transactions)
+[`GET /companies/{companyId}/connections/{connectionId}/data/banking-transactions`](/banking-api#/operations/list-banking-transactions)
