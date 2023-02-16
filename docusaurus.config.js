@@ -365,13 +365,10 @@ module.exports = {
           },
         ],
         createRedirects(existingPath) {
-          if (existingPath.includes('/docs')) { // Redirect from old docs prefixes to closest path
+          if (existingPath.includes('')) { // Redirect from old docs prefixes to closest path
             return [
-              existingPath.replace('/docs', ''),
+              existingPath.replace('', '/docs'),
             ];
-          }
-          if (existingPath.includes('/reference')) { // Redirect from old ref prefixes to closest path
-            return [ '/using-the-api/overview',];
           }
           return undefined; // Return a falsy value: no redirect created
         },
