@@ -308,60 +308,60 @@ module.exports = {
       {
         redirects: [
           {
-            to: '/docs',
-            from: '/introduction/first-steps',
+            to:  '/introduction/first-steps',
+            from: '/docs',
           },
           {
-            to: '/docs/core-account-signup',
-            from: '/introduction/create-account',
+            to:  '/introduction/create-account',
+            from: '/docs/core-account-signup',
           },
           {
-            to: '/docs/using-codats-api',
-            from: '/using-the-api/overview',
+            to:  '/using-the-api/overview',
+            from: '/docs/using-codats-api',
           },
           {
-            to: '/reference/authentication',
-            from: '/using-the-api/authentication',
+            to:  '/using-the-api/authentication',
+            from: '/reference/authentication',
           },
           {
-            to: '/reference/querying',
-            from: '/using-the-api/querying',
+            to:  '/using-the-api/querying',
+            from: '/reference/querying',
           },
           {
-            to: '/reference/paging',
-            from: '/using-the-api/paging',
+            to:  '/using-the-api/paging',
+            from: '/reference/paging',
           },
           {
-            to: '/reference/ordering-results',
-            from: '/using-the-api/ordering-results',
+            to:  '/using-the-api/ordering-results',
+            from: '/reference/ordering-results',
           },
           {
-            to: '/reference/modified-dates-1',
-            from: '/using-the-api/modified-dates',
+            to:  '/using-the-api/modified-dates',
+            from: '/reference/modified-dates-1',
           },
           {
-            to: '/reference/managing-companies-1',
-            from: '/using-the-api/managing-companies',
+            to:  '/using-the-api/managing-companies',
+            from: '/reference/managing-companies-1',
           },
           {
-            to: '/reference/queueing-data-syncs-1',
-            from: '/using-the-api/queueing-data-syncs',
+            to:  '/using-the-api/queueing-data-syncs',
+            from: '/reference/queueing-data-syncs-1',
           },
           {
-            to: '/reference/errors',
-            from: '/using-the-api/errors',
+            to:  '/using-the-api/errors',
+            from: '/reference/errors',
           },
           {
-            to: '/reference/push-creating-and-updating-data',
-            from: '/using-the-api/push',
+            to:  '/using-the-api/push',
+            from: '/reference/push-creating-and-updating-data',
           },
           {
-            to: '/reference/rate-limits-1',
-            from: '/using-the-api/rate-limits',
+            to:  '/using-the-api/rate-limits',
+            from: '/reference/rate-limits-1',
           },
           {
-            to: '/reference/optimizing-your-api-calls-1',
-            from: '/using-the-api/optimizing-api-calls',
+            to:  '/using-the-api/optimizing-api-calls',
+            from: '/reference/optimizing-your-api-calls-1',
           },
         ],
         createRedirects(existingPath) {
