@@ -38,11 +38,11 @@ Note: `totalResults` returns the number of results after applying any filter you
 
 ## Example
 
-```http Title="HTTP"
+```http title="HTTP"
 GET /companies/{companyId}/data/invoices?page=5&pageSize=20
 ```
 
-```javascript Title="Javascript"
+```javascript title="Javascript"
 var query = new InvoicesQuery(companyId, 
                     /* filter query */ null, 
                     /* page number  */ 5, 
@@ -51,7 +51,7 @@ var query = new InvoicesQuery(companyId,
 
 // Following of the pages directly from the HAL links is not yet supported by the client library.
 ```
-```csharp Title="C#"
+```csharp title="C#"
 var request = new RestRequest("companies/{companyId}/data/invoices", Method.GET);
 request.AddUrlSegment("companyId", companyId);
 request.AddQueryParameter("page", 5.ToString());
@@ -61,7 +61,7 @@ var response = client.Execute(request);
 var info = response.Data;
 ```
 
-```json Title="Sample response"
+```json title="Sample response"
 {
 "results": ["...":"..."],
 "pageNumber": 5,
