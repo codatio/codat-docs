@@ -364,14 +364,6 @@ module.exports = {
             from: '/reference/optimizing-your-api-calls-1',
           },
         ],
-        createRedirects(existingPath) {
-          if (existingPath.includes('')) { // Redirect from old docs prefixes to closest path
-            return [
-              existingPath.replace('', '/docs'),
-            ];
-          }
-          return undefined; // Return a falsy value: no redirect created
-        },
       },
     ],
     "@docusaurus/plugin-sitemap",
