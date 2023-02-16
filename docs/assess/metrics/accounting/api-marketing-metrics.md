@@ -34,77 +34,30 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 
 `GET /data/companies/{companyId}/connections/{connectionId}/assess/accountingMetrics/marketing`
 
-#Parameters
-[block:parameters]
-{
-"data": {
-"h-0": "Parameter",
-"h-1": "Type",
-"h-2": "Description",
-"h-3": "Required",
-"0-0": "**reportDate** ",
-"0-1": "_string_
-See [Date](/datamodel-shared-date)",
-"0-2": "YYYY-MM-DD
+|Parameter|Type|Description|Required|
+|---------|----|-----------|--------|
+|**reportDate**|_date_|YYYY-MM-DD<br/><br/>Datetime or Date (inclusive of the whole day)|Required|
+|**periodLength**|_integer_|Based on the period unit provided.<br/><br/>It must be positive, not zero and an integer.|Required|
+|**numberOfPeriods**|_integer_|The number of periods to return.<br/><br/>It must be positive, not zero and an integer.|Required|
+|**includeDisplayNames**|_boolean_|Shows the _dimensionDisplayName_ and _itemDisplayName_ in measures to make the report data human-readable.<br/><br/>Default is 'false'.|Optional|
+|**showInputValues**|_boolean_|If set to _true_, then the system includes the input values within the response.<br/><br/>Default to 'false'.|Optional|
 
-Datetime or Date (inclusive of the whole day).",
-"0-3": "Required",
-"1-0": "**periodLength** ",
-"1-1": "_integer_ ",
-"1-2": "Based on the period unit provided.
-
-It must be positive, not zero and an integer.",
-"1-3": "Required",
-"2-0": "**numberOfPeriods** ",
-"2-1": "_integer_ ",
-"2-2": "The number of periods to return.
-
-It must be positive, not zero and an integer.",
-"2-3": "Required",
-"3-0": "**includeDisplayNames** ",
-"3-1": "_boolean_ ",
-"3-2": "Shows the _dimensionDisplayName_ and _itemDisplayName_ in measures to make the report data human-readable.
-
-Default is 'false'.",
-"3-3": "Optional",
-"4-0": "**showInputValues**",
-"4-1": "_boolean_",
-"4-3": "Optional",
-"4-2": "If set to _true_, then the system includes the input values within the response.
-
-Default to 'false'."
-},
-"cols": 4,
-"rows": 5
-}
-[/block]
-#Data model
+# Data model
 
 The response structure is split into four areas: Report info, Dimensions, Measures and Report data.
 
 ## Report info
 
-[block:parameters]
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**name** ",
-"0-1": "_string_",
-"0-2": ""marketing_metrics"",
-"1-0": "**displayName** ",
-"1-1": "_string_",
-"1-2": ""Marketing metrics""
-},
-"cols": 3,
-"rows": 2
-}
-[/block.
+|Field|Type|Description|
+|-----|----|-----------|
+|**name**|_string_|"marketing_metrics"|
+|**displayName**|_string_|"Marketing metrics"|
 
 ## Dimensions
 
 _Marketing metrics_ consists of these dimensions: Period, Marketing metrics and Metric inputs.
+
+--- Continue from https://docs.codat.io/docs/assess-api-marketing-metrics ---
 
 ### Dimension (index = “0”): Period
 
