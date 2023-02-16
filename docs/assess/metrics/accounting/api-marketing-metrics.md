@@ -73,32 +73,6 @@ _Marketing metrics_ consists of these dimensions: Period, Marketing metrics and 
 | **start**       | _string_ See [Date](/datamodel-shared-date) | YYYY-MM-DD Date in which the period begins (inclusive). |
 | **end**         | _string_ See [Date](/datamodel-shared-date) | YYYY-MM-DD Date in which the period ends (inclusive).   |
 
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**displayName** ",
-"0-1": "_string_",
-"0-2": ""Period n"",
-"1-0": "**start** ",
-"1-1": "_string_
-See [Date](/datamodel-shared-date)",
-"1-2": "YYYY-MM-DD
-
-Date in which the period begins (inclusive).",
-"2-1": "_string_
-See [Date](/datamodel-shared-date)",
-"2-0": "**end** ",
-"2-2": "YYYY-MM-DD
-
-Date in which the period ends (inclusive)."
-},
-"cols": 3,
-"rows": 3
-}
-
-
 ### Dimension (index = “1”): Marketing metrics
 
 | **Field**       | Type                                                                   | Description                            |

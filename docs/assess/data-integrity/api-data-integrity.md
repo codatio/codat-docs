@@ -59,29 +59,6 @@ The endpoint is available in our <a href="/assess-api#/operations/get-dataIntegr
 | **companyId** | _string_ | The ID of the company you want match results for. Submit as route parameter. | Required |
 | **datatype** | _string_ | The data type you want match results for. **Accounting source:** [bankAccounts](/data-model/accounting/-bankaccounts), [accountTransactions](/data-model/accounting/-account-transactions). **Banking source:** [banking-accounts](/data-model/banking-banking-accounts), [banking-transactions](/data-model/banking-banking-transactions). Submit as route parameter. | Required |
 
-**Accounting source:**
-[bankAccounts](/data-model/accounting/-bankaccounts)
-[accountTransactions](/data-model/accounting/-account-transactions)
-
-**Banking source:**
-[banking-accounts](/data-model/banking-banking-accounts)
-[banking-transactions](/data-model/banking-banking-transactions)
-
-Submit as route parameter.",
-"1-3": "Required",
-"h-4": "",
-"1-4": "",
-"0-0": "**companyId**",
-"0-1": "_string_",
-"0-3": "Required",
-"0-2": "The ID of the company you want match results for.
-
-Submit as route parameter."
-},
-"cols": 4,
-"rows": 2
-}
-
 ### Data model
 | **Field** | Type | Description |
 |---|---|---|
@@ -106,20 +83,6 @@ Submit as route parameter."
 | **currentStatus** | _string_ | One of the following: `Unknown`, `DoesNotExist` - have never attempted a match run for this company as do not have datasets required, `Error` - something went wrong upon matching, `Processing`, `Complete`  |
 | **statusMessage** | _string_ | Detailed explanation supporting the status value. |
 
-- `Unknown`
-- `DoesNotExist` - have never attempted a match run for this company as do not have datasets required
-- `Error` - something went wrong upon matching
-- `Processing`
-- `Complete`",
-  "1-0": "**currentStatus**",
-  "1-1": "_string_",
-  "2-0": "**statusMessage**",
-  "2-1": "_string_",
-  "2-2": "Detailed explanation supporting the status value."
-  },
-  "cols": 3,
-  "rows": 3
-  }
 
 #### Connection ID
 | **Field** | Type | Description |
@@ -143,12 +106,6 @@ Submit as route parameter."
 | **minOverlappingDate** | _string_, See [Date](/datamodel-shared-date) | Earliest date where transactions exist in both accounting and banking platforms. |
 | **maxOverlappingDate** | _string_, See [Date](/datamodel-shared-date) | Latest date where transactions exist in both account and banking platforms.      |
 
-|Field|Type|Description|
-|-----|----|-----------|
-|**minDate**|_date_|Earliest date of transaction set.|
-|**maxDate**|_date_|Latest date of transaction set.|
-|**minOverlappingDate**|_date_|Earliest date where transactions exist in both accounting and banking platforms.|
-|**maxOverlappingDate**|_date_|Latest date where transactions exist in both account and banking platforms.|
 
 ### Sample response
 
@@ -235,6 +192,7 @@ For transactions, the response contains summary statistics (such as match percen
 | **byAmount** | See [By amount](#by-amount) |  |
 | **byCount** | See [By count](#by-count) |  |
 
+
 #### By amount
 | **Field** | Type | Description |
 |---|---|---|
@@ -251,28 +209,6 @@ For transactions, the response contains summary statistics (such as match percen
 | **unmatched ** | _number_ | The number of records of the type specified in the route which don't have a match. |
 | **matched** | _number_ | The number of records of the type specified in the route which do have a match. |
 | **total** | _number_ | The total of unmatched and matched.  |
-
-{
-  "data": {
-    "h-0": "Field",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "**matchPercentage**",
-    "1-0": "**unmatched**",
-    "2-0": "**matched**",
-    "3-0": "**total**",
-    "0-1": "*number*",
-    "1-1": "*number*",
-    "2-1": "*number*",
-    "3-1": "*number*",
-    "0-2": "The percentage of records of the type specified in the route which have a match.",
-    "1-2": "The number of records of the type specified in the route which don't have a match.",
-    "2-2": "The number of records of the type specified in the route which do have a match.",
-    "3-2": "The total of unmatched and matched."
-  },
-  "cols": 3,
-  "rows": 4
-}
 
 
 ### Sample Response
@@ -394,7 +330,6 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 | **currency** | _string_ | The currency of the transaction.  |
 | **matches** | _array_, See [Transactions matches array](/assess-api-data-integrity#transactions-matches) | Refer to the matches array table below. |
 
-
 #### Transactions matches
 This outlines the transaction(s) in which the original transaction has matched with its corresponding transaction in the other platform.
 
@@ -418,7 +353,6 @@ This outlines the transaction(s) in which the original transaction has matched w
 | **accountName ** | _string_ | The name of the account.  |
 | **institution ** | _string_ | The name of the financial institution. |
 | **matches** | _array_, See [Accounts matches array](/assess-api-data-integrity#accounts-matches) | Refer to the matches array table below. |
-
 
 #### Accounts matches
 | **Element ** | Type  | Description |

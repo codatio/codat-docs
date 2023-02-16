@@ -59,7 +59,6 @@ The response structure is split into four areas: Report info, Dimensions, Measur
 | **name**        | string | "customer_retention" |
 | **displayName** | string | "Customer Retention" |
 
-
 ## Dimensions
 
 _Customer retention_ consists of these dimensions: Period and Customer retention metrics.
@@ -72,7 +71,6 @@ _Customer retention_ consists of these dimensions: Period and Customer retention
 | **type**        | _string_                                                                | "datespan"                                                                                                         |
 | **items**       | _array_, See [Dimension (index = “0”) items](#dimension-index--0-items) | Returns an array of “Period”. This is driven by the query parameter values. Ordered by latest to earliest periods. |
 
-
 #### Dimension (index = “0”) items
 
 | **Field**       | Type                                          | Description                                              |
@@ -81,19 +79,6 @@ _Customer retention_ consists of these dimensions: Period and Customer retention
 | **start**       | _string_, See [Date](/datamodel-shared-date)  | YYYY-MM-DD, Date in which the period begins (inclusive). |
 | **end**         | _string_, See [Date](/datamodel-shared-date)  | YYYY-MM-DD, Date in which the period ends (inclusive).   |
 
-Date in which the period begins (inclusive).",
-"2-1": "_string_
-See [Date](/datamodel-shared-date)",
-"2-0": "**end** ",
-"2-2": "YYYY-MM-DD
-
-Date in which the period ends (inclusive)."
-},
-"cols": 3,
-"rows": 3
-}
-
-
 ### Dimension (index = “1”): Customer retention metrics
 
 | **Field**       | Type                                                                     | Description                                     |
@@ -101,7 +86,6 @@ Date in which the period ends (inclusive)."
 | **displayName** | _string_                                                                 | "Customer retention metrics"                    |
 | **type**        | _string_                                                                 | "string"                                        |
 | **items**       | _array_ , See [Dimension (index = “1”) items](#dimension-index--1-items) | Returns an array of customer retention metrics. |  
-
 
 #### Dimension (index = “1”) items
 
