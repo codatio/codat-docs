@@ -34,45 +34,13 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 
 #Parameters
 
-{
-"data": {
-"h-0": "Parameter",
-"h-1": "Type",
-"h-2": "Description",
-"h-3": "Required",
-"0-0": "**reportDate** ",
-"0-1": "_string_
-See [Date](/datamodel-shared-date)",
-"0-2": "YYYY-MM-DD
-
-Datetime or Date (inclusive of the whole day).",
-"0-3": "Required",
-"1-0": "**periodUnit** ",
-"1-1": "_string_ ",
-"1-2": "The period unit of time returned, and it can be: “Day”, “Week”, “Month”, “Year”.",
-"1-3": "Required",
-"2-0": "**periodLength** ",
-"2-1": "_integer_ ",
-"2-2": "Based on the period unit provided.
-
-It must be positive, not zero and an integer.",
-"2-3": "Required",
-"3-0": "**numberOfPeriods** ",
-"3-1": "_integer_ ",
-"3-2": "The number of periods to return.
-
-It must be positive, not zero and an integer.",
-"3-3": "Required",
-"4-0": "**includeDisplayNames** ",
-"4-1": "_boolean_ ",
-"4-2": "Shows the _dimensionDisplayName_ and _itemDisplayName_ in measures to make the report data human-readable.
-
-Default is false.",
-"4-3": "Optional"
-},
-"cols": 4,
-"rows": 5
-}
+| **Parameter**           | Type                                        | Description                                                                                                                  | Required |
+|-------------------------|---------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|----------|
+| **reportDate**          | _string_ See [Date](/datamodel-shared-date) | YYYY-MM-DD Datetime or Date (inclusive of the whole day).                                                                    | Required |
+| **periodUnit**          | _string_                                    | The period unit of time returned, and it can be: “Day”, “Week”, “Month”, “Year”.                                             | Required |
+| **periodLength**        | _integer_                                   | Based on the period unit provided. It must be positive, not zero and an integer.                                             | Required |
+| **numberOfPeriods**     | _integer_                                   | The number of periods to return. It must be positive, not zero and an integer.                                               | Required |
+| **includeDisplayNames** | _boolean_                                   | Shows the _dimensionDisplayName_ and _itemDisplayName_ in measures to make the report data human-readable. Default is false. | Optional |
 
 #Data model
 
@@ -80,23 +48,10 @@ The response structure is split into four areas: Report info, Dimensions, Measur
 
 ## Report info
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**name** ",
-"0-1": "_string_",
-"0-2": ""revenue"",
-"1-0": "**displayName** ",
-"1-1": "_string_",
-"1-2": ""Revenue""
-},
-"cols": 3,
-"rows": 2
-}
-
+|Field|Type|Description|
+|----|----|----|
+|**name**|_string_|"revenue"|
+|**displayName**|_string_|"Revenue"|
 
 ## Dimensions
 
@@ -105,102 +60,35 @@ _Revenue_ consists of these dimensions: Period and Revenue.
 ### Dimension (index = “0”): Period
 
 
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**displayName** ",
-"0-1": "_string_",
-"0-2": ""Period"",
-"1-0": "**type** ",
-"1-1": "_string_",
-"1-2": ""datespan"",
-"2-0": "**items** ",
-"2-1": "_array_
-See [Dimension (index = “0”) items](#dimension-index--0-items)",
-"2-2": "Returns an array of “Period”. This is driven by the query parameter values.
+|Field|Type|Description|
+|----|----|----|
+|**displayName**|_string_|"Period"|
+|**type**|_string_|"datespan"|
+|**items**|_array_, See [Dimension (index = "0") items](#dimension-index--0-items)|Returns an array of "Period". This is driven by the query parameter values.Ordered by latest to earliest periods.|
 
-Ordered by latest to earliest periods."
-},
-"cols": 3,
-"rows": 3
-}
 
 
 #### Dimension (index = “0”) items
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**displayName** ",
-"0-1": "_string_",
-"0-2": ""Period n"",
-"1-0": "**start** ",
-"1-1": "_string_
-See [Date](/datamodel-shared-date)",
-"1-2": "YYYY-MM-DD
-
-Date in which the period begins (inclusive).",
-"2-1": "_string_
-See [Date](/datamodel-shared-date)",
-"2-0": "**end** ",
-"2-2": "YYYY-MM-DD
-
-Date in which the period ends (inclusive)."
-},
-"cols": 3,
-"rows": 3
-}
-
+|Field|Type|Description|
+|----|----|----|
+|**displayName**|_string_|"Period n"|
+|**start**|_string_, See [Date](/datamodel-shared-date)|YYYY-MM-DDDate in which the period begins (inclusive).|
+|**end**|_string_, See [Date](/datamodel-shared-date)|YYYY-MM-DDDate in which the period ends (inclusive).|
 
 ### Dimension (index = “1”): Revenue
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**displayName** ",
-"0-1": "_string_",
-"0-2": ""Revenue"",
-"1-0": "**type** ",
-"1-1": "_string_",
-"1-2": ""string"",
-"2-0": "**items** ",
-"2-1": "array
-See [Dimension (index = “1”) items](#dimension-index--1-items)",
-"2-2": "Returns an array of revenue metrics."
-},
-"cols": 3,
-"rows": 3
-}
-
+|Field|Type|Description|
+|----|----|----|
+|**displayName**|_string_|"Revenue"|
+|**type**|_string_|"string"|
+|**items**|_array_, See [Dimension (index = "1") items](#dimension-index--1-items)|Returns an array of revenue metrics.|
 
 #### Dimension (index = “1”) items
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**value** ",
-"0-1": "_string_",
-"0-2": "\* “Revenue value”
-
-- “Revenue growth”
-
-These will always show for any response in this report. The dimension values are not dependent on the user’s query parameters."
-},
-"cols": 3,
-"rows": 1
-}
-
+|Field|Type|Description|
+|----|----|----|
+|**value**|_string_|Revenue value or Revenue growth. These will always show for any response in this report. The dimension values are not dependent on the user's query parameters.|
 
 ## Measures
 
@@ -211,47 +99,21 @@ The two measures for this report are as follows:
 ### Index “0” - value
 
 
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**displayName** ",
-"0-1": "_string_",
-"0-2": ""Value"",
-"1-0": "**units** ",
-"1-1": "_string_",
-"1-2": "The base currency of the company’s commerce connection.",
-"2-0": "**type** ",
-"2-1": "_string_",
-"2-2": ""currency""
-},
-"cols": 3,
-"rows": 3
-}
+|Field|Type|Description|
+|----|----|----|
+|**displayName**|_string_|"Value"|
+|**units**|_string_|The base currency of the company's commerce connection.|
+|**type**|_string_|"currency"|
+
 
 
 ### Index “1” - percentage change
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**displayName** ",
-"0-1": "_string_",
-"1-0": "**units** ",
-"1-1": "_string_",
-"2-0": "**type** ",
-"2-1": "_string_",
-"0-2": "“Percentage change vs. previous period”",
-"1-2": ""%"",
-"2-2": "“percentage”"
-},
-"cols": 3,
-"rows": 3
-}
+|Field|Type|Description|
+|----|----|----|
+|**displayName**|_string_|"Percentage change vs. previous period"|
+|**units**|_string_|"%"|
+|**type**|_string_|"percentage"|
 
 
 ## Report data
@@ -266,29 +128,14 @@ Each period will be broken down into _Revenue_ and both value and percent change
 
 ### Components structure
 
+|Field|Type|Description|
+|----|----|----|
+|**dimension**|_number_|Index 1|
+|**dimensionDisplayName**|_string_|Shows when _includeDisplayNames_ is set to _true_.|
+|**item**|_number_||
+|**itemDisplayName**|_string_|Shows when _includeDisplayNames_ is set to _true_.|
+|**measures**|See [Measures in components](#measures-in-components)||
 
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**dimension** ",
-"0-1": "_number_",
-"0-2": "Index 1",
-"1-0": "**dimensionDisplayName** ",
-"1-1": "_string_",
-"1-2": "Shows when _includeDisplayNames_ is set to _true_.",
-"2-0": "**item** ",
-"2-1": "_number_",
-"3-0": "**itemDisplayName** ",
-"4-0": "**measures** ",
-"3-1": "_string_",
-"3-2": "Shows when _includeDisplayNames_ is set to _true_.",
-"4-1": "See [Measures in components](#measures-in-components)"
-},
-"cols": 3,
-"rows": 5
-}
 
 All components have the structure described in the _Measures in components_ data model below.
 
@@ -296,40 +143,17 @@ All components have the structure described in the _Measures in components_ data
 
 **Index "0" (Revenue)**
 
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**measureDisplayName** ",
-"0-1": "_string_",
-"0-2": ""Value"",
-"1-0": "**value** ",
-"1-1": "_number_"
-},
-"cols": 3,
-"rows": 2
-}
+|Field|Type|Description|
+|----|----|----|
+|**measureDisplayName**|_string_|"Value"|
+|**value**|_number_| |
 
 **Index “1” (Revenue growth)**
 
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**measureDisplayName** ",
-"1-0": "**value** ",
-"0-1": "_string_",
-"1-1": "_string_",
-"0-2": "“Percentage change vs previous period”
-
-If the system can't calculate the percentage change, this object will not display.",
-"1-2": "“%”"
-},
-"cols": 3,
-"rows": 2
-}
+|Field|Type|Description|
+|----|----|----|
+|**measureDisplayName**|_string_|"Percentage change vs previous period". If the system can't calculate the percentage change, this object will not display.|
+|**value**|_string_|"%"|
 
 #Example data
 
