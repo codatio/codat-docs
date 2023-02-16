@@ -204,30 +204,6 @@ module.exports = {
           ],
           className: "navbar__link--support",
         },
-        // {
-        //   type: 'search',
-        //   position: 'right',
-        // },
-        // {
-        //   type: 'iconLink',
-        //   position: 'right',
-        //   icon: {
-        //     alt: 'twitter logo',
-        //     src: `/logos/twitter.svg`,
-        //     href: 'https://twitter.com/codatdata',
-        //     target: '_blank',
-        //   },
-        // },
-        // {
-        //   type: 'iconLink',
-        //   position: 'right',
-        //   icon: {
-        //     alt: 'github logo',
-        //     src: `/logos/github.svg`,
-        //     href: 'https://github.com/codatio',
-        //     target: '_blank',
-        //   },
-        // },
         { 
           href: "https://app.codat.io/", 
           label: "Sign in", 
@@ -243,7 +219,7 @@ module.exports = {
       ],
     },
     // tagManager: {
-    //   trackingID: "GTM-TKMGCBC",
+    //   trackingID: process.env.GA_TAG_ID,
     // },
     // prism: {
     //   theme: { plain: {}, styles: [] },

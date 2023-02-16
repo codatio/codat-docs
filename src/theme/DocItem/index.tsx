@@ -109,10 +109,9 @@ export default function DocItem(props: Props): JSX.Element {
           style={{ background: "#556680", minHeight: "100px", textAlign: "center" }}
           buttonStyle={{ backgroundColor: "white", fontSize: "12px", borderRadius: "4px" }}
         >
-          Welcome to our new docs! <br/>
-          They're in beta so you may find a issues in our content. <br/>
-          You can contribute to them <a href="https://github.com/codatio/codat-docs" target="_blank">here</a>.
-          See the old docs <a href="https://codat.readme.io/">here</a>.
+          <b>Welcome to our new docs!</b> <br/>
+          They are in beta, so you may find some snags in our content. <br/>
+          You can contribute to them <a href="https://github.com/codatio/codat-docs" target="_blank">here</a>, or see the old ones <a href="https://codat.readme.io/">here</a>.
         </CookieConsent>
 
         <div className="end">
