@@ -4,6 +4,8 @@ createdAt: "2023-01-16T16:04:25.030Z"
 updatedAt: "2023-01-16T16:39:58.995Z"
 ---
 
+import LocalStorageChecklist from '@components/global/LocalStorageChecklist'
+
 If you want to have more than 25 Xero connections, you'll need to join the **Xero App Partner Program**.
 
 To join the program, there are a series of requirements your integration must first satisfy. There may be additional use-case-specific requirements.
@@ -13,7 +15,38 @@ We've broken down the requirements you need to action based on the [Xero Certifi
 :::caution Use-cases
 
 There are additional checkpoints based on use cases.
+
 :::
+
+<details>
+  <summary>Remember your progress...</summary>
+
+  Use our interactive checkpoint list to track your progress. It will be saved in your browser.
+
+  <LocalStorageChecklist prefix="xeroChecklist" items={[
+    'Checkpoint 1 - App name',
+    'Checkpoint 2 - Branding',
+    'Checkpoint 3 - Connection',
+    'Checkpoint 4 - Error handling',
+    'Checkpoint 5 - Offline_access',
+    'Checkpoint 6 - Rate limit hit management',
+    'Checkpoint 7 - Scopes',
+    'Checkpoint 8 - Sign up with Xero',
+    'Checkpoint 9 - Modified after',
+    'Checkpoint 10 - Paging',
+    'Checkpoint 11 - Webhooks',
+    'Checkpoint 12 - Account mapping',
+    'Checkpoint 13 - Currency',
+    'Checkpoint 14 - Rounding',
+    'Checkpoint 15 - Taxes',
+    'Checkpoint 16 - Payment account mapping',
+    'Checkpoint 17 - Sign in with Xero',
+    'Checkpoint 18 - Deep linking',
+    'Checkpoint 19 - Invoice status',
+    'Checkpoint 20 - Invoice URL and bank transactions URL',
+    'Checkpoint 21 - Logs',
+  ]}/>
+</details>
 
 ## Always required
 
