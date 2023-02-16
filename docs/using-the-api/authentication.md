@@ -19,7 +19,7 @@ You must replace <code>YOUR_ENCODED_API_KEY</code> with your API key, Base64 enc
 
 ## Getting your authorization header
 
-:::caution
+:::caution Copy permissions
 Authorization headers can only be viewed and copied by users with Administrator or Developer roles.
 :::
 

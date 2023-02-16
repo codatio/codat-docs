@@ -14,7 +14,7 @@ Our endpoints which return multiple results are paged, e.g. [companies ](https:/
 A typical request will have the following properties:
 
 - `page` : This is the page number that you would like to have displayed. The default page is 1.
-- `pageSize` : You can define the number of the results you would like to have displayed on one page. The default page size is 100, while the maximum page size can be set to 5000..
+- `pageSize` : You can define the number of the results you would like to have displayed on one page. The default page size is 100, while the maximum page size can be set to 5000.
 
 ## Response
 
@@ -38,30 +38,30 @@ Note: `totalResults` returns the number of results after applying any filter you
 
 ## Example
 
-````
-GET /companies/{companyId}/data/invoices?page=5&pageSize=20",
-      "language": "http",
-      "name": "HTTP"
-    },
-    {
-      "code": "var query = new InvoicesQuery(companyId,
-                  /* filter query */ null,
-                  /* page number  */ 5,
-                  /* page size    */ 20)
-              .run(codat.uat(apiKey));
+```http Title="HTTP"
+GET /companies/{companyId}/data/invoices?page=5&pageSize=20
+```
 
-// Following of the pages directly from the HAL links is not yet supported by the client library.```
+```javascript Title="Javascript"
+var query = new InvoicesQuery(companyId, 
+                    /* filter query */ null, 
+                    /* page number  */ 5, 
+                    /* page size    */ 20)
+                .run(codat.uat(apiKey));
 
-```var request = new RestRequest("companies/{companyId}/data/invoices", Method.GET);
+// Following of the pages directly from the HAL links is not yet supported by the client library.
+```
+```csharp Title="C#"
+var request = new RestRequest("companies/{companyId}/data/invoices", Method.GET);
 request.AddUrlSegment("companyId", companyId);
 request.AddQueryParameter("page", 5.ToString());
 request.AddQueryParameter("pageSize", 20.ToString());
 request.AddHeader("Authorization", $"Basic {encodedApiKey}");
 var response = client.Execute(request);
 var info = response.Data;
-````
-
 ```
+
+```json Title="Sample response"
 {
 "results": ["...":"..."],
 "pageNumber": 5,
