@@ -303,6 +303,69 @@ module.exports = {
     ],
     "@docusaurus/plugin-content-pages",
     "@docusaurus/plugin-debug",
+    [ // only works on prod
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            to:  '/introduction/first-steps',
+            from: '/docs',
+          },
+          {
+            to:  '/introduction/create-account',
+            from: '/docs/core-account-signup',
+          },
+          {
+            to:  '/using-the-api/overview',
+            from: '/docs/using-codats-api',
+          },
+          {
+            to:  '/using-the-api/authentication',
+            from: '/reference/authentication',
+          },
+          {
+            to:  '/using-the-api/querying',
+            from: '/reference/querying',
+          },
+          {
+            to:  '/using-the-api/paging',
+            from: '/reference/paging',
+          },
+          {
+            to:  '/using-the-api/ordering-results',
+            from: '/reference/ordering-results',
+          },
+          {
+            to:  '/using-the-api/modified-dates',
+            from: '/reference/modified-dates-1',
+          },
+          {
+            to:  '/using-the-api/managing-companies',
+            from: '/reference/managing-companies-1',
+          },
+          {
+            to:  '/using-the-api/queueing-data-syncs',
+            from: '/reference/queueing-data-syncs-1',
+          },
+          {
+            to:  '/using-the-api/errors',
+            from: '/reference/errors',
+          },
+          {
+            to:  '/using-the-api/push',
+            from: '/reference/push-creating-and-updating-data',
+          },
+          {
+            to:  '/using-the-api/rate-limits',
+            from: '/reference/rate-limits-1',
+          },
+          {
+            to:  '/using-the-api/optimizing-api-calls',
+            from: '/reference/optimizing-your-api-calls-1',
+          },
+        ],
+      },
+    ],
     "@docusaurus/plugin-sitemap",
     // Add custom webpack config to make @stoplight/elements work
     () => ({
