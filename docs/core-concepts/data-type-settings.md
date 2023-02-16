@@ -3,6 +3,8 @@ title: "Data type settings"
 description: "Concept overview and key details"
 createdAt: "2019-02-20T13:19:55.318Z"
 updatedAt: "2022-11-23T15:22:42.512Z"
+tags:
+  - Core concept
 ---
 
 A 'data type' is a specific type of data, like an [invoice](/accounting-api#/schemas/Invoice).
