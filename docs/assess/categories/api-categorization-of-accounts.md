@@ -26,7 +26,7 @@ Account categories have three sub-categories:
 
 # List all available categories
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_assess_accounts_categories" target="_blank">Swagger</a> under **Assess**. It contains the original category suggested by Codat `suggested` and the category that was confirmed by you or your customer `confirmed`.
+The endpoint is available in our <a href="/assess-api#/operations/get-data-assess-accounts-categories">API reference</a>. It contains the original category suggested by Codat `suggested` and the category that was confirmed by you or your customer `confirmed`.
 
 - A list of all the Codat standard categories can be found under:
 
