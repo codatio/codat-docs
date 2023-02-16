@@ -7,6 +7,7 @@ updatedAt: "2022-12-19T09:48:25.358Z"
 
 :::info
 The categorization engine uses machine learning and has been fully trained against Plaid and TrueLayer banking data sources. It is not fully trained against the Basiq banking data source.
+:::
 
 The **Enhanced Cash Flow Transactions** endpoint provides a fully categorized list of banking transactions for a company. Accounts and transaction data are obtained from the company's banking data sources.
 

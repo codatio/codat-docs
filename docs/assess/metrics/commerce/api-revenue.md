@@ -34,13 +34,13 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 
 #Parameters
 
-| **Parameter**           | Type                                        | Description                                                                                                                  | Required |
-|-------------------------|---------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|----------|
-| **reportDate**          | _string_ See [Date](/datamodel-shared-date) | YYYY-MM-DD Datetime or Date (inclusive of the whole day).                                                                    | Required |
-| **periodUnit**          | _string_                                    | The period unit of time returned, and it can be: “Day”, “Week”, “Month”, “Year”.                                             | Required |
-| **periodLength**        | _integer_                                   | Based on the period unit provided. It must be positive, not zero and an integer.                                             | Required |
-| **numberOfPeriods**     | _integer_                                   | The number of periods to return. It must be positive, not zero and an integer.                                               | Required |
-| **includeDisplayNames** | _boolean_                                   | Shows the _dimensionDisplayName_ and _itemDisplayName_ in measures to make the report data human-readable. Default is false. | Optional |
+| **Parameter**           | Type                                         | Description                                                                                                                   | Required |
+|-------------------------|----------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|----------|
+| **reportDate**          | _string_, See [Date](/datamodel-shared-date) | YYYY-MM-DD, Datetime or Date (inclusive of the whole day).                                                                    | Required |
+| **periodUnit**          | _string_                                     | The period unit of time returned, and it can be: “Day”, “Week”, “Month”, “Year”.                                              | Required |
+| **periodLength**        | _integer_                                    | Based on the period unit provided. It must be positive, not zero and an integer.                                              | Required |
+| **numberOfPeriods**     | _integer_                                    | The number of periods to return. It must be positive, not zero and an integer.                                                | Required |
+| **includeDisplayNames** | _boolean_                                    | Shows the _dimensionDisplayName_ and _itemDisplayName_ in measures to make the report data human-readable. Default is false.  | Optional |
 
 #Data model
 
