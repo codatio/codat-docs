@@ -1,7 +1,7 @@
 ---
-title: "Upcoming 2023-04-10: Deprecation of API key management endpoints"
-sidebar_label: "2023-04-10: API key management endpoints"
-date: "2023-04-10"
+title: "Upcoming 2023-04-11: Deprecation of API key management endpoints"
+sidebar_label: "2023-04-11: API key management endpoints"
+date: "2023-04-11"
 tags: ["Deprecation", "API keys"]
 draft: false
 authors: mcclowes
@@ -17,6 +17,12 @@ The change impacts the following endpoints:
 
 - Endpoint `PUT /Profile/apiKey` will be removed,
 - Endpoint `GET /profile` will change to remove the property `apiKey`.
+
+:::note Update - 2023/02/16
+
+This was previously scheduled for 2023/04/10. This has been pushed back a day as this fell on a public holiday in the UK.
+:::
+
 
 ## Action required
 

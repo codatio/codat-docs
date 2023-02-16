@@ -1,5 +1,5 @@
 ---
-title: "Upcoming 2023-04-10: Changes to handling of deleted data"
+title: "Upcoming 2023-04-11: Changes to handling of deleted data"
 date: "2023-01-15"
 tags: ["Deprecation", "Data deletion"]
 draft: false
@@ -11,6 +11,11 @@ On April 10, 2023, Codat will change the way Accounting data deleted by Company 
 <!--truncate-->
 
 To ensure better consistency between successive data syncs, records deleted by a Company between two data syncs will now continue to be stored by Codat. A flag will be set to indicate that the data has been deleted in the underlying Accounting package.
+
+:::note Update - 2023/02/16
+
+This was previously scheduled for 2023/04/10. This has been pushed back a day as this fell on a public holiday in the UK.
+:::
 
 ## Action required
 
@@ -37,6 +42,8 @@ Note 2: For datatypes with a Status property in Codat's data model, Codat does n
 
 Note 3: For pre-existing data, the isDeleted flag may be set to null; this will be set to true/false on future data syncs.
 
-> 📘
->
-> You can get ahead of this change by enabling it now in the [Portal](https://app.codat.io/developers/api-deprecations). Learn how to do that [here](doc:portal-for-developers), or read our change policy [here](doc:change-policy).
+:::note Get ahead
+
+You can get ahead of this change by enabling it now in the [Portal](https://app.codat.io/developers/api-deprecations). Learn how to do that [here](doc:portal-for-developers), or read our change policy [here](doc:change-policy).
+
+:::
