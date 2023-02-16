@@ -7,7 +7,7 @@ updatedAt: "2022-11-29T15:21:28.930Z"
 
 The Lifetime Value endpoint retrieves the value of a specific company over one or more periods of time.
 
-Refer to the [Assess reporting structure](/assess-reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/assess/reports/reporting-structure) page for more detail on reports in Assess.
 
 For Lifetime Value, these are the dimensions and measures:
 
@@ -25,14 +25,14 @@ For Lifetime Value, these are the dimensions and measures:
 - Is structured based on dimension (index =“0”), i.e. Period.
 - The endpoint will return metrics on **lifetime value** for each period.
 
-View the Lifetime Value [formulas](/assess-commerce-metrics#what-metrics-are-available).
+View the Lifetime Value [formulas](/assess/metrics/commerce/overview#what-metrics-are-available).
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_commerceMetrics_lifetimeValue" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-commerceMetrics-lifetimeValue">API reference</a>.
 
 `GET /data/companies/{companyId}/connections/{connectionId}/assess/commerceMetrics/lifetimeValue`
 
 #Parameters
-[block:parameters]
+
 {
 "data": {
 "h-0": "Parameter",
@@ -41,7 +41,7 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 "h-3": "Required",
 "0-0": "**reportDate** ",
 "0-1": "_string_
-See [Date](/datamodel-shared-date)",
+See [Date](/common-api#/schemas/DateTime)",
 "0-2": "YYYY-MM-DD
 
 Datetime or Date (inclusive of the whole day).",
@@ -72,14 +72,14 @@ Default is false.",
 "cols": 4,
 "rows": 5
 }
-[/block]
+
 #Data model
 
 The response structure is split into four areas: Report info, Dimensions, Measures and Report data.
 
 ## Report info
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -95,7 +95,7 @@ The response structure is split into four areas: Report info, Dimensions, Measur
 "cols": 3,
 "rows": 2
 }
-[/block.
+
 
 ## Dimensions
 
@@ -103,7 +103,7 @@ _Lifetime value_ consists of these dimensions: Period and Customer retention met
 
 ### Dimension (index = “0”): Period
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -125,11 +125,11 @@ Ordered by latest to earliest periods."
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 #### Dimension (index = “0”) items
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -140,12 +140,12 @@ Ordered by latest to earliest periods."
 "0-2": ""Period n"",
 "1-0": "**start** ",
 "1-1": "_string_
-See [Date](/datamodel-shared-date)",
+See [Date](/common-api#/schemas/DateTime)",
 "1-2": "YYYY-MM-DD
 
 Date in which the period begins (inclusive).",
 "2-1": "_string_
-See [Date](/datamodel-shared-date)",
+See [Date](/common-api#/schemas/DateTime)",
 "2-0": "**end** ",
 "2-2": "YYYY-MM-DD
 
@@ -154,11 +154,11 @@ Date in which the period ends (inclusive)."
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 ### Dimension (index = “1”): Lifetime value metrics
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -178,11 +178,11 @@ See [Dimension (index = “1”) items](#dimension-index--1-items)",
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 #### Dimension (index = “1”) items
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -197,7 +197,7 @@ This will always show for any response in this report. The dimension values are 
 "cols": 3,
 "rows": 1
 }
-[/block.
+
 
 ## Measures
 
@@ -207,7 +207,7 @@ The measure for this report is as follows:
 
 ### Index “1” - Value
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -226,7 +226,7 @@ The measure for this report is as follows:
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 ## Report data
 
@@ -240,7 +240,7 @@ Each period will be broken down into _Lifetime value metrics_.
 
 ### Components structure
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -263,13 +263,13 @@ Each period will be broken down into _Lifetime value metrics_.
 "cols": 3,
 "rows": 5
 }
-[/block]
+
 All components have the structure described in the _Measures in components_ data model below.
 
 #### Measures in components
 
 **Index “1” (value)**
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -285,7 +285,7 @@ All components have the structure described in the _Measures in components_ data
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 #Example data
 
 ```

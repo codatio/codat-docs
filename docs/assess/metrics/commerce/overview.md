@@ -22,7 +22,7 @@ This feature provides a set of pre-calculated ratios and metrics focussed on com
 
 The following table lists which metrics are calculated and their formulas:
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Metric",
@@ -130,4 +130,4 @@ c. `Average customer lifespan`: average difference in days between the last and 
 "left"
 ]
 }
-[/block]
+

@@ -9,11 +9,11 @@ Assess in the Portal leverages Codat APIs to produce features that serve data on
 
 To benefit from all of the features of Assess, a company should be linked to accounting, banking and commerce data sources. Explore our [How to get started](/assess/get-started) guide.
 
-The categorized Profit and Loss, and Balance Sheet showcase the power of the [Categories](/categorization-of-accounts) feature which standardizes bespoke data across SMEs. After the data is standardized, meaningful insights and measurements are produced for financial performance.
+The categorized Profit and Loss, and Balance Sheet showcase the power of the [Categories](/assess/categories) feature which standardizes bespoke data across SMEs. After the data is standardized, meaningful insights and measurements are produced for financial performance.
 
 **Data Match**
 
-The data match percentage button is located next to the **Assess** header on every Assess page and it leverages the [Data Integrity](/assess/data-integrity) feature. The match percentage is pre-calculated using the [Data Integrity summaries](/assess-api-data-integrity#summaries) endpoint.
+The data match percentage button is located next to the **Assess** header on every Assess page and it leverages the [Data Integrity](/assess/data-integrity) feature. The match percentage is pre-calculated using the [Data Integrity summaries](/assess/data-integrity/api-data-integrity#summaries) endpoint.
 
 It takes the match percentage from the summaries endpoint for both `banking-transactions` and `accountTransactions` to calculate an overall match percentage, and it accounts for all dates, not just the optimal date range.
 
@@ -36,7 +36,7 @@ The Profit and Loss page is the landing page when accessing Assess. The page con
 
 ### Selection panel
 
-![A screenshot of the P&L selection panel](https://files.readme.io/e8a9d6f-PLSelectionPanel3.png)
+![A screenshot of the P&L selection panel](/img/old/e8a9d6f-PLSelectionPanel3.png)
 
 **Currency**: The currency displayed in the profit and loss statement. This is predefined for the P&L and reflects the currency in the accounting platform.
 
@@ -74,15 +74,15 @@ The following information is displayed:
 - Net operating profit
 - Net profit
 
-![P&L graph and extract of a statement based on selection criteria](https://files.readme.io/a1b310e-PL1.png)
+![P&L graph and extract of a statement based on selection criteria](/img/old/a1b310e-PL1.png)
 
-The **Statement** table renders the [Enhanced Profit and Loss](/assess-enhanced-profit-and-loss) endpoint response data to give a clear visual of the company’s performance over the specified periods. The green and red arrowheads alongside the numbers indicate an increase or decrease respectively compared to the previous period.
+The **Statement** table renders the [Enhanced Profit and Loss](/assess/reports/enhanced-financials/profit-and-loss) endpoint response data to give a clear visual of the company’s performance over the specified periods. The green and red arrowheads alongside the numbers indicate an increase or decrease respectively compared to the previous period.
 
 Rows can be expanded or collapsed to show more or less information. A maximum of 5 checkboxes can be checked, like Income above, to display the selection on the graph. Hovering over the graph displays a tooltip which contains information about all of the points plotted for that date.
 
 ### Ratios
 
-Ratios are produced from the [Financial Metrics](/assess/metrics/accounting/api-financial-metrics) endpoint. It provides a set of pre-calculated ratios and metrics used to assess a company’s financial performance. The Financial Metrics feature performs complex calculations on fully standardized financial statements to produce the following financial metrics and ratios (see [formulas](/docs/assess-financial-metrics#what-ratios-and-metrics-are-available)):
+Ratios are produced from the [Financial Metrics](/assess/metrics/accounting/api-financial-metrics) endpoint. It provides a set of pre-calculated ratios and metrics used to assess a company’s financial performance. The Financial Metrics feature performs complex calculations on fully standardized financial statements to produce the following financial metrics and ratios (see [formulas](/assess/metrics/accounting/api-financial-metrics#what-ratios-and-metrics-are-available)):
 
 - Gross Profit Margin
 - EBITDA
@@ -95,7 +95,7 @@ Ratios are produced from the [Financial Metrics](/assess/metrics/accounting/api-
 
 The **Ratios** table is displayed below the Statement table. Each metric/ratio can be expanded to show the inputs and values used to calculate the metric (see extract of the Ratios table below).
 
-![An extract of a table of P&L ratios based on the selection criteria](https://files.readme.io/b28af34-AssessPortal_3.png)
+![An extract of a table of P&L ratios based on the selection criteria](/img/old/b28af34-AssessPortal_3.png)
 
 ## Balance Sheet
 
@@ -109,7 +109,7 @@ The **Data match** percentage displayed in the top right is a comparison of how 
 
 ### Selection panel
 
-![A screenshot of the balance sheet selection panel](https://files.readme.io/05c0127-BSSelectionPanel2.png)
+![A screenshot of the balance sheet selection panel](/img/old/05c0127-BSSelectionPanel2.png)
 
 **Currency**: The currency displayed in the balance sheet statement. This is predefined for the balance sheet and reflects the currency in the accounting platform.
 
@@ -135,7 +135,7 @@ Periods to compare = 4
 
 The statement displays balance sheet data based on the **Period start**, **Period length** and **Periods to compare** specified at the top of the screen.
 
-![A screenshot of a balance sheet graph and extract of a statement based on selection criteria](https://files.readme.io/ec2864e-bs_graph_statement2.png)
+![A screenshot of a balance sheet graph and extract of a statement based on selection criteria](/img/old/ec2864e-bs_graph_statement2.png)
 
 #### Statement format
 
@@ -163,7 +163,7 @@ The ratios and metrics are calculated from the data in the statement above and u
 
 The Ratios table is displayed below the Statement table. Each metric/ratio can be expanded to show the inputs and values used to calculate the metric (see the extract of the Ratios table below).
 
-![An extract of a table of balance sheet ratios based on the selection criteria](https://files.readme.io/ec63022-bs_ratios.png)
+![An extract of a table of balance sheet ratios based on the selection criteria](/img/old/ec63022-bs_ratios.png)
 
 ### Developer - Feature box
 
@@ -171,31 +171,31 @@ If you are a developer, and you are looking to reproduce the outputs of this sec
 
 [Enhanced Balance Sheet](/assess-enhanced-balance-sheet): To produce the balance sheet statement table and graph.
 [Financial Metrics](/assess-api-financial-metrics): To produce the ratios table.
-[Data Integrity](/assess-api-data-integrity): To produce the Data match percentage.
+[Data Integrity](/assess/data-integrity/api-data-integrity): To produce the Data match percentage.
 
 ## Commerce
 
-The Commerce page consists of the sales analysis and key indicators of merchant health. The [Commerce Metrics](/assess-assess/metrics/commerce/overview) endpoints are used to generate the graphs and metrics displayed on this page.
+The Commerce page consists of the sales analysis and key indicators of merchant health. The [Commerce Metrics](/assess/metrics/commerce/overview) endpoints are used to generate the graphs and metrics displayed on this page.
 
 ### Sales
 
-The _Sales_ section provides a revenue graph generated from the [Revenue](/assess-commerce-metrics-api-revenue) endpoint, and displays the average order value for the date range selected. The dropdown to the right of the graph gives you the option to map _Revenue_ (represented as a currency) or _Revenue growth_ (represented as a percent). Hovering over the graph displays a tooltip that contains information about the point plotted for that date.
+The _Sales_ section provides a revenue graph generated from the [Revenue](/assess/metrics/commerce/api-revenue) endpoint, and displays the average order value for the date range selected. The dropdown to the right of the graph gives you the option to map _Revenue_ (represented as a currency) or _Revenue growth_ (represented as a percent). Hovering over the graph displays a tooltip that contains information about the point plotted for that date.
 
-![Revenue and revenue growth graphs based on selection criteria](https://files.readme.io/4d18153-Sales_1.png)
+![Revenue and revenue growth graphs based on selection criteria](/img/old/4d18153-Sales_1.png)
 
 ### Merchant Health
 
 The Merchant Health section displays customer information. You can select graphs for _New vs. existing customers_ or _Orders vs. refunds_. Hovering over the graph displays the value for each of these at that point in time.
 
-![Merchant health graphs for the orders vs. refunds selection](https://files.readme.io/108f299-AssessPortal_9.png)
+![Merchant health graphs for the orders vs. refunds selection](/img/old/108f299-AssessPortal_9.png)
 
 The following metrics are displayed as follows:
 
-- [New vs. existing customers](/assess-commerce-metrics-api-customer-retention) (graph)
-- [Orders](/assess-commerce-metrics-api-orders) vs. [Refunds](/assess-commerce-metrics-api-refunds) (graph)
-- [Refund rate](/assess-commerce-metrics-api-refunds) (pill)
-- [Customer retention](/assess-commerce-metrics-api-customer-retention) (pill)
-- [Lifetime value](/assess-commerce-metrics-api-lifetime-value) (pill)
+- [New vs. existing customers](/assess/metrics/commerce/api-customer-retention) (graph)
+- [Orders](/assess/metrics/commerce/api-orders) vs. [Refunds](/assess/metrics/commerce/api-refunds) (graph)
+- [Refund rate](/assess/metrics/commerce/api-refunds) (pill)
+- [Customer retention](/assess/metrics/commerce/api-customer-retention) (pill)
+- [Lifetime value](/assess/metrics/commerce/api-lifetime-value) (pill)
 
 ## Banking
 
@@ -211,31 +211,27 @@ All the banking values on the UI are currently converted to GBP. There may be th
 
 The _balance_ and the _Account limits_ displayed are aggregate views for the selected bank accounts and are values as of the end date of the report.
 
-![A screenshot of the banking selection panel](https://files.readme.io/1513c65-banking_balances_4.png)
+![A screenshot of the banking selection panel](/img/old/1513c65-banking_balances_4.png)
 
 ### Account Balances graph
 
 This graph displays when chosen in the _Select graph_ dropdown. Hovering over the graph displays a tooltip containing the total account balance for the selected bank accounts.
 
-The graph is produced from responses from the [Banking account balances](/assess-banking-account-balances) and [Banking transactions](/data-model/banking-banking-transactions) a endpoints.
-
-Refer to the [formulas](/docs/assess-banking#banking-formulas) for more information about how current balances are calculated for each month.
-
-![A banking graph based on selection criteria](https://files.readme.io/11d2897-banking_balances_1.png)
+![A banking graph based on selection criteria](/img/old/11d2897-banking_balances_1.png)
 
 ### Inflows vs outflows graph
 
 This graph displays when chosen in the _Select graph_ dropdown. Hovering over the graph displays a tooltip containing the total inflows and outflows for the selected bank accounts for that month.
 
-The graph is produced from the [Banking transactions](/data-model/banking-banking-transactions) endpoint response.
+The graph is produced from the [Banking transactions](/banking-api#/schemas/banking-transactions) endpoint response.
 
-![A bar graph showing inflows vs outflows based on selection criteria](https://files.readme.io/2a880ed-Inflows_1.png)
+![A bar graph showing inflows vs outflows based on selection criteria](/img/old/2a880ed-Inflows_1.png)
 
 ### Transaction table
 
 The transaction table displays below the _Inflows vs outflows_ graph and contains all transactions for the selected bank accounts, for the selected dates. Clicking the _Date_ column header orders the transactions by ascending, descending or unordered date.
 
-![An extract of a table of transactions for a selected bank account for selected dates](https://files.readme.io/969bb45-Transaction_table_1.png)
+![An extract of a table of transactions for a selected bank account for selected dates](/img/old/969bb45-Transaction_table_1.png)
 
 #### Exclude transactions
 
@@ -244,23 +240,23 @@ The filter and exclude functionality is currently unavailable for Plaid-connecte
 
 You can type into a search bar located above the table to find matches in the _Description_ column. As you type, the table refreshes with all transactions that match the search term. In the search bar, to the right, the number of matching transactions is displayed in grey and the _Exclude all_ button becomes active.
 
-![A screenshot demonstrating the search bar functionality using the word "payment" as an example and showing the results](https://files.readme.io/7142a41-Transaction_table_2.png)
+![A screenshot demonstrating the search bar functionality using the word "payment" as an example and showing the results](/img/old/7142a41-Transaction_table_2.png)
 
 Clicking the _Exclude all_ button removes the filtered results from the transaction table. The transaction table then goes back to displaying the remaining transactions for the selected dates and the graph is updated. The _Excluded terms_ box to the top right of the table, displays all excluded terms in a drop down menu.
 
 Terms that were excluded are stored locally in the browser and will continue to be excluded whenever you access _Inflows vs outflows_.
 
-![A screenshot showing the excluded terms button showing "direct cost" and "payment-customer" as examples of excluded terms](https://files.readme.io/b2e5be6-Transaction_table_3.png)
+![A screenshot showing the excluded terms button showing "direct cost" and "payment-customer" as examples of excluded terms](/img/old/b2e5be6-Transaction_table_3.png)
 
 To review an existing excluded term, clicking on the term itself within the _Excluded terms_ drop down adds it to the search bar. The transactions linked to the term are displayed in grey in the table. To reinstate a transaction back into the transactions table, click the _X_ alongside the excluded term. The graph and the transaction table updates to include the term.
 
 ## Marketing
 
-The Marketing page displays graphs for the **Marketing to revenue** and **Marketing to expense** metrics, and a table of the percentages and metric inputs. These marketing metrics are calculated from accounting data. It is generated from data available on the customer's profit and loss statement (see [formulas](/docs/assess-financial-metrics#marketing-metrics-formulas)).
+The Marketing page displays graphs for the **Marketing to revenue** and **Marketing to expense** metrics, and a table of the percentages and metric inputs. These marketing metrics are calculated from accounting data. It is generated from data available on the customer's profit and loss statement (see [formulas](/assess/metrics/accounting/api-financial-metrics#marketing-metrics-formulas)).
 
 ### Selection panel
 
-![A screenshot showing the marketing selection panel](https://files.readme.io/27785f4-MarketingSelectionPanel2.png)
+![A screenshot showing the marketing selection panel](/img/old/27785f4-MarketingSelectionPanel2.png)
 
 The dismissible banner displayed at the top of the _Marketing_ page invites you to our <a className="external" href="https://portal.productboard.com/codat/7-product-roadmap/c/459-marketing-metrics" target="_blank">product roadmap</a> to let us know which platforms and insights you would be interested in.
 
@@ -286,17 +282,19 @@ Periods to compare = 4
 
 ### Marketing data and graph
 
-![An image showing marketing graphs and extract of a table of marketing data based on selection criteria](https://files.readme.io/288edbe-Mark_1.png)
+![An image showing marketing graphs and extract of a table of marketing data based on selection criteria](/img/old/288edbe-Mark_1.png)
 
 The [Marketing Metrics](/assess-api-marketing-metrics) endpoint is used to generate the graphs and metrics displayed on this page. The green and red arrowheads alongside the numbers indicate an increase or decrease respectively compared to the previous period.
+
+See the [API reference](/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-accountingMetrics-marketing).
 
 Rows can be expanded or collapsed to show more or less information. Hovering over the graph displays a tooltip which contains information about the points plotted for that date.
 
 ## Reports
 
-A **Reports** button is located in the top right corner of every Assess page. It takes you to the **Reports** page where you can generate and download the Audit report in [Excel format](/assess-excel-reports).
+A **Reports** button is located in the top right corner of every Assess page. It takes you to the **Reports** page where you can generate and download the Audit report in [Excel format](/assess/reports/excel-reports).
 
-![A screenshot of the reports page showing the Audit Report row with a sub-row showing a report that was generated](https://files.readme.io/a3d1d09-ReportsPage1.png)
+![A screenshot of the reports page showing the Audit Report row with a sub-row showing a report that was generated](/img/old/a3d1d09-ReportsPage1.png)
 
 The **Report name** provides the name of the report and an informative description of the report's objectives.
 

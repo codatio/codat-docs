@@ -11,11 +11,11 @@ You can synchronize accounting and banking data with <a className="external" hre
 
 View the coverage of our MYOB AccountRight and Essentials integration in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=pdvj" target="_blank">Data coverage explorer</a>.
 
-For more details about the supported data types, see [MYOB integration reference](/myob-integration-reference).
+For more details about the supported data types, see [MYOB integration reference](/integrations/accounting/myob/myob-integration-reference).
 
 ## Set up the integration
 
-See [Set up the MYOB integration](/integrations/accounting/myob-setup) to learn how to set up and enable the integration.
+See [Set up the MYOB integration](/integrations/accounting/myob/accounting-myob-setup) to learn how to set up and enable the integration.
 
 :::info MYOB AccountRight or Essentials?
 

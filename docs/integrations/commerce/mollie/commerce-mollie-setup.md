@@ -7,7 +7,7 @@ updatedAt: "2023-01-06T16:39:29.498Z"
 
 Set up the Mollie integration to access commerce data from customers who use Mollie to accept payments.
 
-The following page explains how to set up both the Test and the Production integrations. [Test your Mollie integration](/commerce-mollie-test) explains how to use the Test integration to pull sample data into Codat.
+The following page explains how to set up both the Test and the Production integrations. [Test your Mollie integration](/integrations/commerce/mollie/commerce-mollie-test) explains how to use the Test integration to pull sample data into Codat.
 
 ## Supported environments
 
@@ -31,7 +31,7 @@ You need to add sample data to Mollie first because it does not provide any read
 7. Return to the **Your apps** page and locate your app.
 8. Copy the **Client ID** and **Client Secret** for your app to a text file or similar.
 
-<img src="https://files.readme.io/051e9fd-36001_Mollie_-_client_id.PNG" />
+<img src="/img/old/051e9fd-36001_Mollie_-_client_id.PNG" />
 
 ## Add your app's secure credentials to the integration
 
@@ -63,4 +63,4 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 Syncing of all commerce data types must be enabled before you can pull commerce transactions from Mollie into Codat.
 
-Follow the steps in [Update commerce sync settings in the Codat Portal](/commerce-sync-settings#update-commerce-sync-settings-in-the-codat-portal). You only need to do this once.
+Follow the steps in [Update commerce sync settings in the Codat Portal](/integrations/commerce/commerce-sync-settings#update-commerce-sync-settings-in-the-codat-portal). You only need to do this once.

@@ -5,7 +5,6 @@ date: "2023-04-10"
 tags: ["Deprecation", "API keys"]
 draft: false
 authors: mcclowes
-link: "https://docs.codat.io/changelog/upcoming-2023-01-31-deprecation-of-uat-environment"
 ---
 
 On April 10, 2023, Codat will deprecate endpoints used to manage API keys. This is to support our extended API key management that allows multiple keys.

@@ -4,7 +4,7 @@ createdAt: "2022-10-27T09:46:46.382Z"
 updatedAt: "2022-11-02T12:12:50.822Z"
 ---
 
-When you've [set up and enabled Basiq](/banking-basiq-setup), you can test your integration with Basiq's test bank "Hooli". You'll need to:
+When you've [set up and enabled Basiq](/integrations/banking/basiq/banking-basiq-setup), you can test your integration with Basiq's test bank "Hooli". You'll need to:
 
 - Set up a test company.
 - Generate a Link URL for your test company

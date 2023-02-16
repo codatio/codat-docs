@@ -13,7 +13,7 @@ There are three ways to initiate the synchronization of data:
 - Use the API to queue a data synchronization (known as a _dataset_)
 - Use the Sync settings feature in the Codat Portal
 
-By default, full synchronization of each data type marked as _Fetch on first link_ in your [data type settings](/data-sync-settings) will be queued automatically when a company first authorizes itself with Codat.
+By default, full synchronization of each data type marked as _Fetch on first link_ in your [data type settings](/core-concepts/data-type-settings) will be queued automatically when a company first authorizes itself with Codat.
 
 ## Dataset statuses
 
@@ -26,7 +26,7 @@ Other error states may be resolved by queueing a new synchronization after waiti
 Datasets can also transition to the _NotSupported_ state if the dataset you are trying to sync is not supported by the linked platform.
 
 <img
-  src="https://files.readme.io/47eaf22-DatasetStatuses.png"
+  src="/img/old/47eaf22-DatasetStatuses.png"
   alt="A diagram of possible dataset statuses from Queued to Complete"
 />
 

@@ -5,7 +5,7 @@ createdAt: "2022-08-01T15:40:28.228Z"
 updatedAt: "2023-01-06T16:43:18.033Z"
 ---
 
-Set up the [Recurly](/commerce-recurly) integration to retrieve recurring billing and subscriptions data from your SMB customers.
+Set up the [Recurly](/integrations/commerce/recurly/commerce-recurly) integration to retrieve recurring billing and subscriptions data from your SMB customers.
 
 Before you can use the integration, your SMB customers (merchants who use Recurly) need to retrieve their secure API credentials from their Recurly account and enter them in [Link](/auth-flow/overview). Recurly does not require any global credentials for accessing the API.
 
@@ -54,7 +54,7 @@ Your SMB customer performs the following steps:
 
    The **Your Recurly API key** page is displayed.
 
-   ![Your Recurly API key](https://files.readme.io/3df665f-your-recurly-api-key-masked.png "The Your Recurly API key page")
+   ![Your Recurly API key](/img/old/3df665f-your-recurly-api-key-masked.png "The Your Recurly API key page")
 
 4. Opens a new browser tab, visits <a className="external" href="https://app.recurly.com/" target="_blank">app.recurly.com</a>, and signs in to their Recurly account.
 

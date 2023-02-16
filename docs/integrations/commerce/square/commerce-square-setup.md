@@ -7,7 +7,7 @@ updatedAt: "2023-01-06T16:45:24.060Z"
 
 Set up the Square integration to access commerce data from customers who use Square to accept payments.
 
-The following page explains how to set up both the Sandbox and the production integrations. [Test your Square integration](/test-square) explains how to use the Square Sandbox integration to pull sample data into Codat.
+The following page explains how to set up both the Sandbox and the production integrations. [Test your Square integration](/integrations/commerce/square/test-square) explains how to use the Square Sandbox integration to pull sample data into Codat.
 
 ## Supported environments
 
@@ -18,7 +18,7 @@ Two Square integrations are available in the Codat Portal:
 
 You set the environment on a per-application basis using the **Sandbox** and **Production** buttons in an application's configuration settings. These buttons are located at the top of every page in an application's settings:
 
-<img src="https://files.readme.io/77b4e8a-square-sandbox-test-app.png" />
+<img src="/img/old/77b4e8a-square-sandbox-test-app.png" />
 
 An application's credentials are different depending on whether the Square Sandbox or production is enabled for the application. To enable full production access for an application, you must first activate your Square account.
 
@@ -28,7 +28,7 @@ We recommend starting with the Square Sandbox, so you can retrieve and check sam
 
 ## Create a Square application and get your credentials
 
-Create an application in Square, enable sandbox or production, and then retrieve the secure application credentials to use in Codat. If you plan to [test the integration](/test-square), make sure you enable sandbox rather than production.
+Create an application in Square, enable sandbox or production, and then retrieve the secure application credentials to use in Codat. If you plan to [test the integration](/integrations/commerce/square/test-square), make sure you enable sandbox rather than production.
 
 1. Visit <a className="external" href="https://developer.squareup.com/" target="_blank">Square Developer</a> and sign in to your Square account.
 
@@ -90,4 +90,4 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 ## Check the commerce sync settings
 
-Syncing of all commerce data types must be enabled before you can pull commerce transactions from Square to Codat. Follow the steps in [Commerce sync settings](/commerce-sync-settings); you only need to do this once.
+Syncing of all commerce data types must be enabled before you can pull commerce transactions from Square to Codat. Follow the steps in [Commerce sync settings](/integrations/commerce/commerce-sync-settings); you only need to do this once.

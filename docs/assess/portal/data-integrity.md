@@ -9,18 +9,18 @@ updatedAt: "2022-11-02T14:48:33.149Z"
 
 To view the Data Integrity feature in the Portal, a company needs to:
 
-- Be linked to an accounting and banking source of data. You can do this either in the Codat [Portal](/get-started-2-connect) or using the Codat [API](/step-2-connect).
-- Have bank accounts and bank transactions set to [sync](/data-sync-settings).
+- Be linked to an accounting and banking source of data. You can do this either in the Codat Portal or using the Codat API.
+- Have bank accounts and bank transactions set to [sync](/core-concepts/data-type-settings).
 - Select **View data > Data integrity** by the linked company to display the cross-referenced results. All matched transactions are listed under the **Records found** tab. Transactions for which no matches were found are listed under **Records not found**.
 
-![An image of the Data Integrity page showing the records found percentage and a table of records found](https://files.readme.io/3e145f8-DataIntegrity5.png)
+![An image of the Data Integrity page showing the records found percentage and a table of records found](/img/old/3e145f8-DataIntegrity5.png)
 
 The red exclamation mark indicates that a matching accounting account could not be found for the banking account. Click the indicator to reveal more information, as shown in the following image. This is not an error&mdash;it's an indication that a bank account exists but was not matched against the accounting platform.
 
-![An image of the popup for connected accounts](https://files.readme.io/a52c29c-DataIntegrity6.png)
+![An image of the popup for connected accounts](/img/old/a52c29c-DataIntegrity6.png)
 
 **Transaction type abbreviations used in the user interface**
-[block:parameters]
+
 {
 "data": {
 "0-0": "UNK - Unknown
@@ -48,4 +48,4 @@ OTH - Other",
 "cols": 3,
 "rows": 1
 }
-[/block]
+

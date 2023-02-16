@@ -18,7 +18,7 @@ Supported metrics:
 7. Working capital
 8. Fixed service coverage charge
 
-The Financial Metrics API leverages the [Categories](/categorization-of-accounts) feature, which maps each business's bespoke chart of accounts to a single standard chart of accounts across all of your small business customers. The Financial Metrics API is reliant on complete and accurate categorizations to produce meaningful metrics.
+The Financial Metrics API leverages the [Categories](/assess/categories) feature, which maps each business's bespoke chart of accounts to a single standard chart of accounts across all of your small business customers. The Financial Metrics API is reliant on complete and accurate categorizations to produce meaningful metrics.
 
 Any metric (including metric inputs) that have null/blank values means that data couldn't be computed.
 
@@ -26,9 +26,9 @@ Any metric (including metric inputs) that have null/blank values means that data
 
 This endpoint retrieves all the available financial performance metrics held against a company, over one or more periods of time.
 
-View the Financial Metrics [formulas](/assess-financial-metrics#financial-metrics-formulas).
+View the Financial Metrics [formulas](/assess/metrics/accounting/api-financial-metrics#financial-metrics-formulas).
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_financialMetrics" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-financialMetrics">API reference</a>.
 
 `GET /data/companies/{companyId}/connections/{connectionId}/assess/financialMetrics`
 
@@ -37,7 +37,7 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 |                          Parameter                           |    Type    | Description | Required |
 | :----------------------------------------------------------: | :--------: | :---------: | -------- |
 |                        **reportDate**                        |  _string_  |
-| See [Date](/datamodel-shared-date) | YYYY-MM-DD |
+| See [Date](/common-api#/schemas/DateTime) | YYYY-MM-DD |
 
 The date in which the report is created up to. Users must specify a specific date, however the response will be provided for the full month. | Required | **periodLength** |
 | _integer_ | The number of months per period. E.g. 2 = 2 months per period.",
@@ -75,11 +75,11 @@ See [Errors](#errors) | If there are no errors, an empty array is returned. |
 |                            Field                             |                  Type                  | Description |
 | :----------------------------------------------------------: | :------------------------------------: | :---------: |
 |                         **fromDate**                         |                _string_                |
-| See [Date](/datamodel-shared-date) | The date from which the report starts. |
+| See [Date](/common-api#/schemas/DateTime) | The date from which the report starts. |
 
 YYYY-MM-DD | **toDate**
 | _string_  
-See [Date](/datamodel-shared-date) | The date on which the report ends (inclusive of day).
+See [Date](/common-api#/schemas/DateTime) | The date on which the report ends (inclusive of day).
 
 YYYY-MM-DD |
 | **value** ",

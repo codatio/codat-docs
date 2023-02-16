@@ -10,11 +10,11 @@ Simply allowing your SMB customers to connect their accounts is just the beginni
 
 This guide is based on our experience of working with apps and services using Codat’s API, with thousands of SMBs connecting every day. We have broken down these optimizations into 5 critical areas:
 
-- **[The funnel](/the-funnel)**: the steps from user sign up to the point they are ready to connect
-- **[The value exchange](/value-exchange)**: why an SMB will benefit from connecting their accounts
-- **[Privacy, trust & support](/privacy-trust-and-support)**: why an SMB should trust you with their data
-- **[Platform selection](/platform-selection)**: the platforms an SMB can connect to
-- **[Connection management](/connection-management)**: giving your SMB customer control of their connection(s)
+- **[The funnel](/auth-flow/optimize/funnel)**: the steps from user sign up to the point they are ready to connect
+- **[The value exchange](/auth-flow/optimize/value-exchange)**: why an SMB will benefit from connecting their accounts
+- **[Privacy, trust & support](/auth-flow/optimize/privacy)**: why an SMB should trust you with their data
+- **[Platform selection](/auth-flow/optimize/platform-selection)**: the platforms an SMB can connect to
+- **[Connection management](/auth-flow/optimize/connection-management)**: giving your SMB customer control of their connection(s)
 
 Consider these optimization areas a "go-live checklist". In the following sections, we are going to take a closer look at each of the points.
 
@@ -26,7 +26,7 @@ Each section includes:
 - A helpful checklist to use when building your authorization flow.
 
 \*Codat analyzed implementations and the dropoff/conversion rate at each stage. We were able to attribute a positive correlation to the execution of each of the five critical areas.
-}
+
 :::
 
 For further resources on good design practices and some inspiration, Codat recommends:

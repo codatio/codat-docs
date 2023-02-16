@@ -10,7 +10,7 @@ updatedAt: "2022-11-07T19:59:38.100Z"
 - **[/Accounting API](/accounting-api)** - Access standardized accounting data from our accounting integrations.
 - **[/Banking API](/banking-api)** - Access standardized banking data from our banking integrations.
 - **[/Commerce API](/commerce-api)** - Access standardized commerce data from our commerce integrations.
-- **[/Bank Feed API](/accounting-api)** - Set up bank feeds from accounts in your application to supported accounting platforms.
+- **[/Bank Feeds API](/accounting-api)** - Set up bank feeds from accounts in your application to supported accounting platforms.
 - **[/Assess API](/assess-api)** - Make credit decisions backed by enhanced financials, metrics, reports, and data integrity features.
 - **[/Sync for Commerce API](/accounting-api)** - Push merchants' data from your ecommerce or point-of-sale (POS) platform into your merchants' accounting platform.
 - **[/Sync for Expenses API](/sync-for-expenses-api)** - Push expenses to accounting platforms.

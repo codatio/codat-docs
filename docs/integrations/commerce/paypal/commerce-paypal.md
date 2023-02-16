@@ -18,7 +18,7 @@ View the coverage of our PayPal integration in the <a className="external" href=
 
 ## Set up the integration
 
-See [Set up the PayPal Integration](/set-up-paypal-in-production) to learn how to set up and enable the integration.
+See [Set up the PayPal Integration](/integrations/commerce/paypal/set-up-paypal-in-production) to learn how to set up and enable the integration.
 
 :::caution Underlying provider requirements
 Codat's PayPal integration is built using PayPal's XS2A API and is available only to organizations holding an AISP and/or PISP authorization.

@@ -18,5 +18,5 @@ Therefore, the alert rule would have to specify the company ID, and the account 
 
 There are two ways to set up an alert:
 
-- Use a [webhook](/core-rules-create), or
-- Use a [redirect parameter](/redirect-urls#redirect-with-reserved-query-parameters), such as the status code.
+- Use a [webhook](/introduction/webhooks/core-rules-create), or
+- Use a [redirect parameter]((/auth-flow/customize/set-up-redirects#redirect-with-reserved-query-parameters), such as the status code.

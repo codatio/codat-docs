@@ -6,7 +6,7 @@ createdAt: "2019-10-25T16:42:27.872Z"
 updatedAt: "2022-12-12T15:16:00.561Z"
 ---
 
-To push data to Sage 50 (UK), Codat strongly recommends that your client creates a second user in Sage for the company file that you are pushing to. See [Setting up Sage 50 and the Sage 50 connector to enable pushing data](/pushing-data-to-sage-50#section-setting-up-sage-50-and-the-sage-50-connector-to-enable-pushing-data) (below) for instructions.
+To push data to Sage 50 (UK), Codat strongly recommends that your client creates a second user in Sage for the company file that you are pushing to. See [Setting up Sage 50 and the Sage 50 connector to enable pushing data](/integrations/accounting/sage50/pushing-data-to-sage-50#section-setting-up-sage-50-and-the-sage-50-connector-to-enable-pushing-data) (below) for instructions.
 
 If you don't create a second user, both the Sage 50 application and the Codat API will try to use the same credentials at the same time. Given that Sage 50 is open, no data will be pushed.
 
@@ -28,8 +28,8 @@ To create a new user and username in Sage 50:
 4. Enter a username and password for the new user.
 5. The "Remote Data Access" step isn't necessary for pushing data, so click **Continue** to skip it.
 6. Click **Save**
-7. Download the Sage 50 connector and enter the license key to set up the connector. These steps and the preceding steps are the same as those outlined in [Install the Sage 50 connector](/installing-the-sage-50-connector).  
-   **Note**: In the [Enter their Sage 50 credentials](/installing-the-sage-50-connector#5-enter-their-sage-50-credentials) step, your client should enter the credentials of the specially created user for the Sage 50 connector and NOT the login that they use to open and use the Sage 50 application on a daily basis.
+7. Download the Sage 50 connector and enter the license key to set up the connector. These steps and the preceding steps are the same as those outlined in [Install the Sage 50 connector]((/integrations/accounting/sage50/installing-the-sage-50-connector).  
+   **Note**: In the [Enter their Sage 50 credentials]((/integrations/accounting/sage50/installing-the-sage-50-connector#5-enter-their-sage-50-credentials) step, your client should enter the credentials of the specially created user for the Sage 50 connector and NOT the login that they use to open and use the Sage 50 application on a daily basis.
 
 You're now ready to push data to Sage 50.
 
@@ -43,11 +43,11 @@ Ensure that your client has created a new user (as described above) for their Sa
 
 1. Open the Sage 50 connector from the tray icon (usually located in the bottom-right toolbar on a computer running Windows). Do this by right-clicking the connector icon and selecting **Open Sage 50 connector**.
 
-   ![](https://files.readme.io/ce398a2-Sage_50_Push_data_-_Open_Sage_50_connector.png "Sage 50 Push data - Open Sage 50 connector.png")
+   ![](/img/old/ce398a2-Sage_50_Push_data_-_Open_Sage_50_connector.png "Sage 50 Push data - Open Sage 50 connector.png")
 
 2. Click **Manage connection** for the relevant company data file
 
-   ![](https://files.readme.io/d84aee4-Sage_50_Push_data_-_Manage_connection.png "Sage 50 Push data - Manage connection.png")
+   ![](/img/old/d84aee4-Sage_50_Push_data_-_Manage_connection.png "Sage 50 Push data - Manage connection.png")
 
 3. Edit the credentials so that the Username and Password saved are those of the user created exclusively for the connector, and not the credentials of any user that logs on to the Sage 50 application on a regular basis.
 
@@ -60,7 +60,8 @@ Ensure that your client has created a new user (as described above) for their Sa
   :::note Refreshing Sage 50 to see pushed suppliers
 
   To refresh the page in Sage 50, you can click the filter in the Suppliers view twice as below. If a supplier has been successfully created, the account will appear when the page is refreshed.  
-  ![](https://files.readme.io/719da3c-supplierFilterRefresh.PNG "supplierFilterRefresh.PNG")
+
+  ![](/img/old/719da3c-supplierFilterRefresh.png "supplierFilterRefresh.PNG")
 
 :::
 

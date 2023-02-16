@@ -8,6 +8,7 @@
 .docusaurus
 .cache-loader
 src/components/page/reference/ReleaseNotes/release-notes.json
+/.vs
 
 # Misc
 .DS_Store

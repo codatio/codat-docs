@@ -7,7 +7,7 @@ updatedAt: "2023-01-06T16:30:35.075Z"
 
 Before you can pull commerce data from merchants using Amazon Seller Central, you need to set up the integration in Codat's environments.
 
-Before you begin, you will need to have completed all of the prerequisite setup instructions [here](/amazon-registration-steps) to have setup your Amazon AWS and Seller Central credentials.
+Before you begin, you will need to have completed all of the prerequisite setup instructions [here](/integrations/commerce/amazon-seller-central/amazon-registration-steps) to have setup your Amazon AWS and Seller Central credentials.
 
 ## Retrieving your secure credentials
 
@@ -20,10 +20,10 @@ Before you begin, you will need to have completed all of the prerequisite setup 
 
 - These are the credentials visible on the page on the below screenshot\*
 
-![](https://files.readme.io/43ea65f-ASC.png "ASC.png")
+![](/img/old/43ea65f-ASC.png "ASC.png")
 
 6. Copy the AWS Access Key and Secret Access Key from the relevant IAM User Profile and paste into AWS access key and AWS secret access key fields in the Codat Portal.
-   - This includes the key you downloaded when [creating your IAM User](/amazon-registration-steps)
+   - This includes the key you downloaded when [creating your IAM User](/integrations/commerce/amazon-seller-central/amazon-registration-steps)
 7. In the Codat Portal, click **Save**.
 
 ## Enable the Amazon Seller Central integration
@@ -35,4 +35,4 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 ## Check your Sync Settings in the Codat Portal
 
-If this is your first commerce integration, update your [data type settings](/commerce-sync-settings) to enable commerce data types.
+If this is your first commerce integration, update your [data type settings](/core-concepts/data-type-settings) to enable commerce data types.

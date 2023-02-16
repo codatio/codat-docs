@@ -5,25 +5,25 @@ createdAt: "2022-07-18T14:10:03.840Z"
 updatedAt: "2023-01-06T16:31:30.675Z"
 ---
 
-Set up the [BigCommerce](/commerce-bigcommerce) integration to retrieve commerce data from your SMB customers who sell their products on the BigCommerce platform.
+Set up the [BigCommerce](/integrations/commerce/bigcommerce/commerce-bigcommerce) integration to retrieve commerce data from your SMB customers who sell their products on the BigCommerce platform.
 
 With this integration, your SMB customers (merchants who sell on the BigCommerce platform) must retrieve secure credentials from their BigCommerce store and then enter them in Link as part of the authorization flow.
 
 :::caution Test the integration first
 
-Before sending Link URLs to your SMB customers, we recommend that you [test the integration](/commerce-bigcommerce-test) using sample data from a sandbox store.
+Before sending Link URLs to your SMB customers, we recommend that you [test the integration](/integrations/commerce/bigcommerce/commerce-bigcommerce-test) using sample data from a sandbox store.
 :::
 
 Here are the tasks involved in setting up the integration:
 
 **You perform these tasks:**
 
-1. [Enable the BigCommerce integration](/commerce-bigcommerce-setup#enable-the-bigcommerce-integration) in the Codat Portal.
-2. [Create a company in Codat and share the Link URL with your SMB customers](/commerce-bigcommerce-setup#create-a-company-and-share-the-link-url).
+1. [Enable the BigCommerce integration](/integrations/commerce/bigcommerce/commerce-bigcommerce-setup#enable-the-bigcommerce-integration) in the Codat Portal.
+2. [Create a company in Codat and share the Link URL with your SMB customers](/integrations/commerce/bigcommerce/commerce-bigcommerce-setup#create-a-company-and-share-the-link-url).
 
 **Your SMB customers perform this task:**
 
-1. Use Link to [authorize Codat to access their commerce data](/commerce-bigcommerce-setup#smb-customer-authenticate-and-connect-their-commerce-data).
+1. Use Link to [authorize Codat to access their commerce data](/integrations/commerce/bigcommerce/commerce-bigcommerce-setup#smb-customer-authenticate-and-connect-their-commerce-data).
 
 ## Required OAuth scopes
 
@@ -37,7 +37,7 @@ To use our BigCommerce integration, the following OAuth scopes must be set with 
 | Information & Settings | store_v2_information_read_only  |
 | Customers              | store_v2_customers_read_only    |
 
-If a merchant doesn't have these scopes set, they'll need to create a new store API account and enter their new store credentials in Link (see [SMB customer: Authenticate and connect your commerce data](/commerce-bigcommerce-setup#smb-customer-authenticate-and-connect-your-commerce-data)).
+If a merchant doesn't have these scopes set, they'll need to create a new store API account and enter their new store credentials in Link (see [SMB customer: Authenticate and connect your commerce data](/integrations/commerce/bigcommerce/commerce-bigcommerce-setup#smb-customer-authenticate-and-connect-your-commerce-data)).
 
 Note that Codat can't determine which scopes are set or unset for a particular merchant.
 
@@ -75,12 +75,12 @@ Your SMB customer does the following:
 
 2. On the Commerce step in the Link site, select the **BigCommerce** tile, then click **Next**.
 
-   ![BigCommerce Link flow](https://files.readme.io/55ada94-link-select-bigcommerce-tile.png "On the Commerce step in Link, select the BigCommerce tile.")
+   ![BigCommerce Link flow](/img/old/55ada94-link-select-bigcommerce-tile.png "On the Commerce step in Link, select the BigCommerce tile.")
 
 3. Review the requested permissions on the **Connect to BigCommerce** step, then click **Next**.  
     The **Your BigCommerce Credentials** page is displayed. Leave this page open in your browser.
 
-   ![Your BigCommerce credentials](https://files.readme.io/fecc242-your-big-commerce-credentials-border.png "Your BigCommerce credentials dialog with fields to enter your store credentials.")
+   ![Your BigCommerce credentials](/img/old/fecc242-your-big-commerce-credentials-border.png "Your BigCommerce credentials dialog with fields to enter your store credentials.")
 
 4. In a new browser tab, go to <a className="external" href="https://www.bigcommerce.com/" target="_blank">www.bigcommerce.com</a> and sign in to your dashboard.
 
@@ -92,11 +92,11 @@ Your SMB customer does the following:
 
    - Leave the **Token type** as **V2/V3 API token**.
    - Enter the name of your organization in the **Name** box.
-   - Set the [required OAuth scopes](/commerce-bigcommerce-setup#required-oauth-scopes).
+   - Set the [required OAuth scopes](/integrations/commerce/bigcommerce/commerce-bigcommerce-setup#required-oauth-scopes).
    - Click **Save**.  
      The **BigCommerce API credentials** dialog is displayed and a text file containing your store API account credentials is downloaded to your computer.
 
-   ![BigCommerce API credentials](https://files.readme.io/0c78323-bigcommerce-api-credentials-dialog-masked-border.png "The BigCommerce API credentials dialog showing the Client ID, Client secret, and Access token fields.")
+   ![BigCommerce API credentials](/img/old/0c78323-bigcommerce-api-credentials-dialog-masked-border.png "The BigCommerce API credentials dialog showing the Client ID, Client secret, and Access token fields.")
 
 8. Open the downloaded text file to view the store API account credentials.
 

@@ -49,7 +49,7 @@ This means that companies can have data for different date ranges from different
 It is recommended that you use match results only for the date range when data from both sources overlap; this is provided for you in the _Overlapping dates_ part of the status response.
 :::
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__assess_dataTypes__dataType__dataIntegrity_status" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="/assess-api#/operations/get-dataIntegrity-status-for-dataType">API reference</a>.
 
 `GET /data/companies/{companyId}/assess/dataTypes/{dataType}/dataIntegrity/status`
 
@@ -65,8 +65,8 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 [accountTransactions](/data-model/accounting/)
 
 **Banking source:**
-[banking-accounts](/data-model/banking)
-[banking-transactions](/data-model/banking)|Required|
+[banking-accounts](/banking-api#/schemas/banking-accounts)
+[banking-transactions](/banking-api#/schemas/banking-transactions)
 
 ### Data model
 
@@ -172,7 +172,7 @@ This endpoint exposes a summary of match results for a given data type filtered 
 
 So, for example, if you wanted to see summary match results only for transactions after 1 December 2020, you could send ‘query=date>2020-12-01’.
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__assess_dataTypes__dataType__dataIntegrity_summaries" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-assess-dataTypes-dataType-dataIntegrity-summaries">API reference</a>.
 
 `GET /data/companies/{companyId}/assess/dataTypes/{dataType}/dataIntegrity/summaries`
 
@@ -185,6 +185,7 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 |**Query**|_string_|You can query any properties in the response.  It can be left blank. E.g. query=date>2020-12-01<br/><br/>Submit as query parameter.<br/>This follows the standard [Codat query language](/using-the-api/querying).||
 
 ### Data model
+
 For transactions, the response contains summary statistics (such as match percentage) by both amount and count. For accounts, statistics based on amount are not meaningful, therefore we return only statistics based on count.
 
 |Field|Type|Description|
@@ -275,7 +276,7 @@ If however you call the Summaries endpoint with data type = banking-transactions
 By contrast, in the Data Integrity page on Portal, the match percentage displayed is match percentage by amount across accounting and banking transactions. In our example, the match percentage displayed on the Portal would be 40%:
 `match percentage = (B+C)/(A+B+C) = (£1 + £1)/(£3 +£1 + £1)`
 
-<img src="https://files.readme.io/cf7bc11-DataIntegrity1.png"/>
+<img src="/img/old/cf7bc11-DataIntegrity1.png"/>
 
 You can reproduce this match percentage yourself by fetching the summaries for accountTransactions and banking-transactions in separate API calls, and combining the results client-side, e.g. by taking a weighted average of the match percentages.
 
@@ -294,13 +295,15 @@ E.g. if the Status response contains this:
 ]
 }
 ```
+
 Then you would call each of the _Summaries endpoints_ with (url-escaped) query=date>=2021-09-03T12:00:00.000Z&&date<=2021-09-17T23:59:59.999.
 
 ## Details
 
-This endpoint exposes match results record by record for a given data type, filtered based on a query string in the same way as summary results. The results are [paginated](/using-the-api/pagination) and support [ordering](//using-the-api/ordering-results), following the same conventions as our other data endpoints.
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__assess_dataTypes__dataType__dataIntegrity_details" target="_blank">Swagger</a> under **Assess**.
+This endpoint exposes match results record by record for a given data type, filtered based on a query string in the same way as summary results. The results are [paginated](/using-the-api/pagination) and support [ordering](/using-the-api/ordering-results), following the same conventions as our other data endpoints.
+
+The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-assess-dataTypes-dataType-dataIntegrity-details">API reference</a>.
 
 `GET /data/companies/{companyId}/assess/dataTypes/{dataType}/dataIntegrity/details`
 

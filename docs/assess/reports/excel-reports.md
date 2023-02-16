@@ -31,7 +31,7 @@ For each of the endpoints described below, you will provide the same parameters.
 
 ## Request an Excel report for download
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/post_data_companies__companyId__assess_excel" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="/assess-api#/operations/post-data-companies-companyId-assess-excel">API reference</a>.
 
 `POST /data/companies/{companyId}/assess/excel`
 
@@ -65,10 +65,10 @@ The status tells you if the last report requested is complete. It only returns t
 
 When the report is complete, the `inProgress` field will have the value of _false_ whilst the `success` field will show _true_.
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__assess_excel" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-assess-excel">API reference</a>.
 
 `GET /data/companies/{companyId}/assess/excel`
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -82,10 +82,10 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 "5-0": "**lastInvocationId** ",
 "6-0": "**reportType** ",
 "0-1": "_string_
-See [date](/datamodel-shared-date)",
+See [date](/common-api#/schemas/DateTime)",
 "1-1": "_boolean_ ",
 "2-1": "_string_
-See [date](/datamodel-shared-date)",
+See [date](/common-api#/schemas/DateTime)",
 "3-1": "_boolean_ ",
 "4-1": "_string_ ",
 "5-1": "_string_ ",
@@ -105,7 +105,7 @@ See [date](/datamodel-shared-date)",
   "cols": 3,
   "rows": 7
   }
-  [/block]
+  
   Example
 
 ```
@@ -122,7 +122,7 @@ See [date](/datamodel-shared-date)",
 
 ## Download the report
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/post_data_companies__companyId__assess_excel_download" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="/assess-api#/operations/post-data-companies-companyId-assess-excel-download">API reference</a>.
 
 `POST /data/companies/{companyId}/assess/excel/download`
 

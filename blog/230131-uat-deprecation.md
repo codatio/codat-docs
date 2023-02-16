@@ -4,7 +4,6 @@ date: "2023-01-15"
 tags: ["Deprecation", "UAT"]
 draft: false
 authors: jasond-s
-link: "https://docs.codat.io/changelog/upcoming-2023-01-31-deprecation-of-uat-environment"
 description: On January 31, 2023, Codat will deprecate its UAT environment and move to a single Production Codat environment, with the option of separate Live and Test accounts. Any accounts that you hold in the UAT environment will be replaced with Test accounts in the single Production environment.
 ---
 
@@ -32,7 +31,7 @@ To make this change as seamless as possible, we will be migrating all of the acc
 Example of user logging into the Production environment with both Live and Test accounts:
 
 <img
-  src="https://files.readme.io/66d6e34-4df0df69-b94c-4a46-b229-73430182704c.png"
+  src="/img/old/66d6e34-4df0df69-b94c-4a46-b229-73430182704c.png"
   alt="Example of a production environment with a production account and a test account."
 />
 

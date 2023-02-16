@@ -1,6 +1,6 @@
 ---
 title: "Mapping specifications"
-description: "Guides for data mapping configuration from a commerce platform to the supported accounting platforms (Xero, QuickBooks online)."
+description: "Guides for data mapping configuration from a commerce platform to the supported accounting platforms (Xero, QuickBooks online)"
 createdAt: "2022-04-20T16:14:55.742Z"
 updatedAt: "2022-11-16T20:31:55.943Z"
 ---

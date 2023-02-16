@@ -5,7 +5,7 @@ createdAt: "2022-08-08T13:28:16.586Z"
 updatedAt: "2023-01-06T16:35:29.843Z"
 ---
 
-Set up the [Chargify](/commerce-chargify) integration to retrieve recurring billing and subscriptions data from your SMB customers.
+Set up the [Chargify](/integrations/commerce/chargify/commerce-chargify) integration to retrieve recurring billing and subscriptions data from your SMB customers.
 
 Before you can use the integration, your SMB customers (merchants who use Chargify) need to retrieve their secure API credentials from their Chargify account and enter them in [Link](/auth-flow/overview). Chargify does not require any global credentials for accessing the API.
 
@@ -54,7 +54,7 @@ Your SMB customer performs the following steps:
 
    The **Your Chargify credentials** page is displayed.
 
-   ![Your Chargify credentials](https://files.readme.io/66cdc91-your-chargify-credentials-final-masked.png "The Your Chargify credentials page")
+   ![Your Chargify credentials](/img/old/66cdc91-your-chargify-credentials-final-masked.png "The Your Chargify credentials page")
 
 4. Opens a new browser tab, visits <a className="external" href="https://app.chargify.com/" target="_blank">app.chargify.com</a>, and signs in to their Chargify account.
 

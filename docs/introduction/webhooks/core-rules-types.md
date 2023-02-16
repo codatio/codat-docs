@@ -6,16 +6,19 @@ updatedAt: "2022-11-17T19:29:19.748Z"
 ---
 
 :::caution Removing non-reference data from webhook alerts body
+
 In line with industry standard security practices, we have removed personally identifiable information, such as `companyName`, from the body of our alert webhooks. This leaves only referential information, such as `companyId`, which can be looked up using our API.
+
+:::
 
 The following rules can be configured in the Codat Portal to alert you to events affecting your companies and data.
 
 ## Account categories updated
 
-**Trigger:** Anytime that Codat updates the `suggested` fields or a user updates the `confirmed` fields.
+**Trigger:** Anytime that Codat updates the `suggested` fields or a user updates the `confirmed` fields.  
 **Additional data:** `modifiedDate`.
 
-```
+```json
 {
 "CompanyId": "f1c35bdc-1546-41b9-baf4-3f31135af968",
 "ClientId": "4b6091c4-32b8-4e08-ac31-f7dc7477674b",
@@ -33,10 +36,10 @@ The following rules can be configured in the Codat Portal to alert you to events
 
 ## Company data connection status changed
 
-**Trigger:** A data connection's status changes.
+**Trigger:** A data connection's status changes.  
 **Additional data:** `dataConnectionId`, `platformKey`, `newStatus`, `oldStatus`.
 
-```
+```json
 {
  "CompanyId":"0ec09c80-e82b-4409-a150-5a5211c215f4",
  "RuleId":"ca3b6004-f1bb-43e7-860f-1386e108b684",
@@ -54,10 +57,10 @@ The following rules can be configured in the Codat Portal to alert you to events
 
 ## Data sync completed
 
-**Trigger:** Data synchronisation is completed; a notification will be generated for each `dataType` as the sync completes.
+**Trigger:** Data synchronisation is completed; a notification will be generated for each `dataType` as the sync completes.  
 **Additional data:** `dataType`, `datasetId`.
 
-```
+```json
 {
   "CompanyId": "7626befb-0c7d-49a4-9366-bc4c81b4e4b7",
   "ClientId": "a9244b9d-7055-48f4-80a4-b758d39da98c",
@@ -76,10 +79,10 @@ The following rules can be configured in the Codat Portal to alert you to events
 
 ## Dataset data changed
 
-**Trigger:** A dataset synchronisation has completed and this has resulted in updates within Codat's data cache - this could be through the creation of new records or a change to existing records.
+**Trigger:** A dataset synchronisation has completed and this has resulted in updates within Codat's data cache - this could be through the creation of new records or a change to existing records.  
 **Additional data:** `dataType`, `datasetId`.
 
-```
+```json
 {
 "CompanyId": "ac712d04-c107-424d-a801-be76d677e508",
 "RuleId": "70328e0e-9d8d-48fd-9306-7a39973009c3",
@@ -95,10 +98,10 @@ The following rules can be configured in the Codat Portal to alert you to events
 
 ## Dataset status has changed to an error state
 
-**Trigger:** The synchronisation of a dataset fails.
+**Trigger:** The synchronisation of a dataset fails.  
 **Additional data:** `dataType`, `datasetStatus`, `datasetId`.
 
-```
+```json
 {
  "CompanyId":"0ec09c80-e82b-4409-a150-5a5211c215f4",
  "RuleId":"ca3b6004-f1bb-43e7-860f-1386e108b684",
@@ -117,7 +120,7 @@ The following rules can be configured in the Codat Portal to alert you to events
 
 **Trigger:** After a new company has successfully synchronised at least one dataType for the first time.
 
-```
+```json
 {
   "CompanyId": "0ec09c80-e82b-4409-a150-5a5211c215f4",
   "RuleId": "dba7daa5-be88-40ae-a596-d23549498b17",
@@ -130,10 +133,10 @@ The following rules can be configured in the Codat Portal to alert you to events
 
 ## Push operation status has changed
 
-**Trigger:** A push operation's status changes.
+**Trigger:** A push operation's status changes.  
 **Additional data:** `dataType`, `status`, `pushOperationKey`.
 
-```
+```json
 {
  "CompanyId":"f6bc5f14-87fb-438f-8d2d-db6a0964aef1",
  "RuleId":"c40791fe-b6fd-45c3-9bf7-0a16abf1b8fd",
@@ -150,10 +153,10 @@ The following rules can be configured in the Codat Portal to alert you to events
 
 ## Push operation has timed out
 
-**Trigger:** A push operation times out.
+**Trigger:** A push operation times out.  
 **Additional data:** `dataType`, `pushOperationGuid`.
 
-```
+```json
 {
  "CompanyId":"f6bc5f14-87fb-438f-8d2d-db6a0964aef1",
  "RuleId":"c40791fe-b6fd-45c3-9bf7-0a16abf1b8fd",
@@ -171,16 +174,18 @@ The following rules can be configured in the Codat Portal to alert you to events
 
 **Trigger:** A Sync connection is deleted.
 
-```
+**Note:** This rule is specific to Sync for Commerce and cannot be used for other products. This rule does not send a webhook.
+
+```json Example webhook alert body
 {
-"CompanyId": "e2876f0a-5102-4a7d-9743-f10133dba88f",
-"ClientId": "4f1fb082-0c62-4c74-be22-bc782b801e59",
-"ClientName": "The Wind in the Willows",
-"DataConnectionId": "00000000-0000-0000-0000-000000000000",
-"RuleId": "0b29ecef-1ec1-459a-b61a-9de996e0d20a",
-"RuleType": "Sync Connection Deleted",
-"AlertId": "fe42cd24-a05a-4e3c-80cb-06749a73ab1e",
-"Message": "Sync connection for company e2876f0a-5102-4a7d-9743-f10133dba88f deleted",
-"Data": {}
+  "CompanyId": "e2876f0a-5102-4a7d-9743-f10133dba88f",
+  "ClientId": "4f1fb082-0c62-4c74-be22-bc782b801e59",
+  "ClientName": "The Wind in the Willows",
+  "DataConnectionId": "00000000-0000-0000-0000-000000000000",
+  "RuleId": "0b29ecef-1ec1-459a-b61a-9de996e0d20a",
+  "RuleType": "Sync Connection Deleted",
+  "AlertId": "fe42cd24-a05a-4e3c-80cb-06749a73ab1e",
+  "Message": "Sync connection for company e2876f0a-5102-4a7d-9743-f10133dba88f deleted",
+  "Data": {}
 }
 ```

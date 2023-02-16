@@ -5,38 +5,18 @@ createdAt: "2020-04-06T07:37:50.107Z"
 updatedAt: "2022-10-17T16:27:12.407Z"
 ---
 
-To minimize the performance impact of the [rate limits](/zoho-book-limits#zoho-books-rate-limits) described below, by default Codat pulls a reduced dataset from Zoho Books for some data types.
+To minimize the performance impact of the [rate limits](zoho-book-limits#zoho-books-rate-limits) described below, by default Codat pulls a reduced dataset from Zoho Books for some data types.
 
 The following table summarizes the fields which are excluded when pulling reduced datasets from Zoho Books.
-[block:parameters]
-{
-"data": {
-"h-0": "Data type pulled",
-"h-1": "Fields excluded",
-"1-0": "Credit Notes",
-"1-1": "Line items",
-"2-0": "Customers",
-"2-1": "Address and contact information",
-"0-0": "Bills",
-"0-1": "`purchaseOrderRefs`
-`lineItems`
-`subTotal`
-`taxAmount`
-`note`
 
-If pulling complete datasets, the following fields on bill line items are always populated as `0.00` in Codat:
+| Data type pulled  | Fields excluded                 |
+|-------------------|---------------------------------|
+| Bills             | <p>`purchaseOrderRefs`, `lineItems`, `subTotal`, `taxAmount`, `note`</p> <p>If pulling complete datasets, the following fields on bill line items are always populated as 0.00 in Codat:</p><p>`discountAmount`, `subTotal`, `taxAmount`</p>|
+| Credit Notes      | Line items                      |
+| Customers         | Address and contact information |
+| Invoices          | Line items                      |
 
-- `discountAmount`
-- `subTotal`
-- `taxAmount`",
-  "3-0": "Invoices",
-  "3-1": "Line items"
-  },
-  "cols": 2,
-  "rows": 4
-  }
-  [/block]
-  To remove these restrictions and pull complete datasets for the supported Zoho Books data types, please contact [Codat Support](mailto:support@codat.io). **After removing the restrictions, fetching large volumes of data from the above data types can take multiple days to complete.**
+To remove these restrictions and pull complete datasets for the supported Zoho Books data types, please contact [Codat Support](mailto:support@codat.io). **After removing the restrictions, fetching large volumes of data from the above data types can take multiple days to complete.**
 
 :::info totalTaxAmount for invoices
 
@@ -51,22 +31,22 @@ The Zoho Books API has the following connection limits and rate limits:
 - Per-minute rate limit
 - Refresh token limit
 
-Our Zoho Books integration works within these limits to minimize the performance impact of pulling and pushing large volumes of data.
+Our Zoho Books integration works within these limits to minimize the performance impact of pulling and pushing large volumes of data. To do so, the integration maximises the number of records retrieved per API call for most data types. However, for certain data types, the integration can only fetch a single record for each API call to Zoho Books, impacting performance. This also applies to additional data types where the restrictions on pulling reduced datasets described above are removed.
 
 ### API daily rate limit
 
-The _API daily rate limit_ lets organizations retrieve up to 2,500 data records from Zoho Books per day; for example, invoices, bills, and payments.
+The _API daily rate limit_ lets organizations make a limited number of API calls to Zoho Books per day (up to 2,500 or 500 per user, whichever is lower);
 
-If the cumulative number of data records synchronized across your linked companies exceeds the daily limit, you might encounter the following issues:
+If the cumulative number of API calls to the organization you are trying to link to exceeds the daily limit, you might encounter the following issues:
 
 - **Queued data fetches:** these are included in the next day's limit.
 - **Failed data fetches:** these are indicated in Codat as fetch errors.
 
-The 2,500 records are shared between you and the other users in your organization. The daily rate limit applies to all the linked companies in your organization and to any service providers, such as Codat, that can access your data through the Zoho Books API.
+The daily rate is shared between all API requests made to an organization from all users, and any service providers, such as Codat, that can access data through the Zoho Books API.
 
 ### Per-minute rate limit
 
-Zoho Books can synchronize a maximum of about 60 data records per minute—the _per-minute rate limit_.
+Zoho Books can make about 60 API calls per minute—the _per-minute rate limit_.
 
 This rate limit can affect the performance of the integration when pulling and pushing data from Zoho Books.
 

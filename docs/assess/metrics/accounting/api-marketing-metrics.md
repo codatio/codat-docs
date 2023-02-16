@@ -7,7 +7,7 @@ updatedAt: "2022-11-02T14:41:42.370Z"
 
 The Marketing Metrics endpoint retrieves the _marketing to revenue_ and _marketing to expense_ metrics over one or more periods of time. These marketing metrics are calculated from accounting data. It is generated from data available on the customer's profit and loss statement.
 
-Refer to the [Assess reporting structure](/assess-reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/assess/reports/reporting-structure) page for more detail on reports in Assess.
 
 For Marketing Metrics, these are the dimensions and measures:
 
@@ -28,40 +28,85 @@ For Marketing Metrics, these are the dimensions and measures:
 - Is structured based on dimension (index =“0”), i.e. Period.
 - The endpoint will return **marketing to expense** and **marketing to revenue** metrics for each period.
 
-View the Marketing Metrics [formulas](/assess-financial-metrics#marketing-metrics-formulas).
-
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_accountingMetrics_marketing" target="_blank">Swagger</a> under **Assess**.
+View the Marketing Metrics [formulas](/assess/metrics/accounting/api-financial-metrics#marketing-metrics-formulas).
 
 `GET /data/companies/{companyId}/connections/{connectionId}/assess/accountingMetrics/marketing`
 
-|Parameter|Type|Description|Required|
-|---------|----|-----------|--------|
-|**reportDate**|_date_|YYYY-MM-DD<br/><br/>Datetime or Date (inclusive of the whole day)|Required|
-|**periodLength**|_integer_|Based on the period unit provided.<br/><br/>It must be positive, not zero and an integer.|Required|
-|**numberOfPeriods**|_integer_|The number of periods to return.<br/><br/>It must be positive, not zero and an integer.|Required|
-|**includeDisplayNames**|_boolean_|Shows the _dimensionDisplayName_ and _itemDisplayName_ in measures to make the report data human-readable.<br/><br/>Default is 'false'.|Optional|
-|**showInputValues**|_boolean_|If set to _true_, then the system includes the input values within the response.<br/><br/>Default to 'false'.|Optional|
+#Parameters
 
-# Data model
+{
+"data": {
+"h-0": "Parameter",
+"h-1": "Type",
+"h-2": "Description",
+"h-3": "Required",
+"0-0": "**reportDate** ",
+"0-1": "_string_
+See [Date](/common-api#/schemas/DateTime)",
+"0-2": "YYYY-MM-DD
+
+Datetime or Date (inclusive of the whole day).",
+"0-3": "Required",
+"1-0": "**periodLength** ",
+"1-1": "_integer_ ",
+"1-2": "Based on the period unit provided.
+
+It must be positive, not zero and an integer.",
+"1-3": "Required",
+"2-0": "**numberOfPeriods** ",
+"2-1": "_integer_ ",
+"2-2": "The number of periods to return.
+
+It must be positive, not zero and an integer.",
+"2-3": "Required",
+"3-0": "**includeDisplayNames** ",
+"3-1": "_boolean_ ",
+"3-2": "Shows the _dimensionDisplayName_ and _itemDisplayName_ in measures to make the report data human-readable.
+
+Default is 'false'.",
+"3-3": "Optional",
+"4-0": "**showInputValues**",
+"4-1": "_boolean_",
+"4-3": "Optional",
+"4-2": "If set to _true_, then the system includes the input values within the response.
+
+Default to 'false'."
+},
+"cols": 4,
+"rows": 5
+}
+
+#Data model
 
 The response structure is split into four areas: Report info, Dimensions, Measures and Report data.
 
 ## Report info
 
-|Field|Type|Description|
-|-----|----|-----------|
-|**name**|_string_|"marketing_metrics"|
-|**displayName**|_string_|"Marketing metrics"|
+
+{
+"data": {
+"h-0": "Field",
+"h-1": "Type",
+"h-2": "Description",
+"0-0": "**name** ",
+"0-1": "_string_",
+"0-2": ""marketing_metrics"",
+"1-0": "**displayName** ",
+"1-1": "_string_",
+"1-2": ""Marketing metrics""
+},
+"cols": 3,
+"rows": 2
+}
+
 
 ## Dimensions
 
 _Marketing metrics_ consists of these dimensions: Period, Marketing metrics and Metric inputs.
 
---- Continue from https://docs.codat.io/docs/assess-api-marketing-metrics ---
-
 ### Dimension (index = “0”): Period
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -83,11 +128,11 @@ Ordered by latest to earliest periods."
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 #### Dimension (index = “0”) items
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -98,12 +143,12 @@ Ordered by latest to earliest periods."
 "0-2": ""Period n"",
 "1-0": "**start** ",
 "1-1": "_string_
-See [Date](/datamodel-shared-date)",
+See [Date](/common-api#/schemas/DateTime)",
 "1-2": "YYYY-MM-DD
 
 Date in which the period begins (inclusive).",
 "2-1": "_string_
-See [Date](/datamodel-shared-date)",
+See [Date](/common-api#/schemas/DateTime)",
 "2-0": "**end** ",
 "2-2": "YYYY-MM-DD
 
@@ -112,11 +157,11 @@ Date in which the period ends (inclusive)."
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 ### Dimension (index = “1”): Marketing metrics
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -136,11 +181,11 @@ See [Dimension (index = “1”) items](#dimension-index--1-items)",
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 #### Dimension (index = “1”) items
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -157,12 +202,12 @@ This will always show for any response in this report. The dimension values are 
 "cols": 3,
 "rows": 1
 }
-[/block.
+
 
 ### Dimension (index = "2"): Metric inputs
 
 This displays when the `showInputValues` is set to 'true'.
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -181,11 +226,11 @@ See [Dimension (index = “2”) items](#dimension-index--2-items)"
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 #### Dimension (index = "2") items
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -203,7 +248,7 @@ This shows when `showInputValues` is set to _true_ in the user's query parameter
 "cols": 3,
 "rows": 1
 }
-[/block.
+
 
 ## Measures
 
@@ -213,7 +258,7 @@ The measure for this report is as follows:
 
 ### Index “0” - Percentage
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -232,11 +277,11 @@ The measure for this report is as follows:
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 ### Index “1” - Percentage change
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -255,11 +300,11 @@ The measure for this report is as follows:
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 ### Index “2” - Value
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -278,7 +323,7 @@ The measure for this report is as follows:
 "cols": 3,
 "rows": 3
 }
-[/block.
+
 
 ## Report data
 
@@ -297,7 +342,7 @@ Components are nested within each other as below (grouped by dimension (index =�
 
 ### Components structure
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -320,13 +365,13 @@ Components are nested within each other as below (grouped by dimension (index =�
 "cols": 3,
 "rows": 5
 }
-[/block]
+
 All components have the structure described in the _Measures in components_ data model below.
 
 #### Measures in components
 
 **Index “0” (percentage)**
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -342,9 +387,9 @@ All components have the structure described in the _Measures in components_ data
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 **Index “1” (percentage change)**
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -362,9 +407,9 @@ If the system can't calculate the percentage change, this object will not displa
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 **Index "2" (value)**
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -379,7 +424,7 @@ If the system can't calculate the percentage change, this object will not displa
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 #Example data
 
 ```

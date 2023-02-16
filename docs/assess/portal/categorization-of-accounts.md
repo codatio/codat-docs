@@ -5,15 +5,22 @@ createdAt: "2022-04-13T12:10:47.847Z"
 updatedAt: "2022-11-02T14:49:04.132Z"
 ---
 
-:::info Access to Account Categorization
-You need Assess enabled to access Account Categorization.
+:::caution Account categorization versions
+
+There are two account categorization versions now available in the Codat Portal. 
+
+_Version 2_ supports our classic [Enhanced Financials](/assess/reports/enhanced-financials/financials) endpoints. Continue using this version as your categories version if you are calling these endpoints, as described in this article.
+
+_Version 3_ is a revised version of account categories that supports our new [Enhanced Financials for eCommerce Lenders](/assess/reports/enhanced-financials-ecommerce-lenders/financials) endpoints. Learn how to [categorize the accounts](/assess/reports/enhanced-financials-ecommerce-lenders/categorize-accounts) using _Version 3_ if you choose to use these endpoints.
+:::
 
 The chart of accounts defines the financial structure of a company by providing a list of all accounts used in the company's general ledger.
 
 Every account is assigned one of Codat’s 162 categories. This allows Codat to produce insights about your SMB customers irrespective of the accounting data source they use. The assigned categories apply in the Codat platform only, not in the accounting data source.
 
-You can obtain the latest list of Codat categories from our <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_assess_accounts_categories" target="_blank">Swagger</a> documentation by calling the following endpoint:
-`GET ​/data​/assess​/accounts​/categories`
+You can obtain the latest list of Codat categories from our <a href="/assess-api#/operations/get-data-assess-accounts-categories">API reference</a> documentation by calling the following endpoint:
+
+`GET /data/assess/accounts/categories`
 
 #The benefits of categorizing accounts
 
@@ -89,5 +96,5 @@ The downloaded Excel file contains:
 
 - The **Categorized Account Balances** tab.
 - The output of
-  `GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categories` endpoint in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_accounts_categories" target="_blank">Swagger</a> listing the categories.
+  `GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categories` endpoint in <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-accounts-categories">API reference</a> listing the categories.
 - A balance of the account category for every financial period available in the financial statements.

@@ -30,7 +30,7 @@ If you already have a SumUp account, have your account details at hand. If not, 
 1. Sign in to the <a href="https://app.codat.io" target="_blank">Codat Portal</a>.
 2. On the navigation bar, select **Settings > Integrations > Commerce**.
 3. Find the **SumUp** integration, then select **Set up** to view the **Integration settings** page.
-4. Choose what [type of access to company data](/data-sync-settings) you wish to have for this integration: one-off or continuous.
+4. Choose what [type of access to company data](/core-concepts/data-type-settings) you wish to have for this integration: one-off or continuous.
 5. From the **OAuth - Create Client Credentials** section, copy and paste.
 
 - **Client ID** value into **Client Id**.
@@ -50,6 +50,6 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 ## Check your sync settings in the Codat Portal
 
-If this is your first commerce integration, update your [data type settings](/commerce-sync-settings) to enable commerce data types.
+If this is your first commerce integration, update your [data type settings](/integrations/commerce/commerce-sync-settings) to enable commerce data types.
 
 You're now ready to [set up companies](/other/portal/companies#add-a-new-company) for your customers in the Codat Portal.

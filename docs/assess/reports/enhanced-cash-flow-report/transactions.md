@@ -10,13 +10,13 @@ The categorization engine uses machine learning and has been fully trained again
 
 The **Enhanced Cash Flow Transactions** endpoint provides a fully categorized list of banking transactions for a company. Accounts and transaction data are obtained from the company's banking data sources.
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_companies__companyId__reports_enhancedCashFlow_transactions" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="/assess-api#/operations/get-companies-companyId-reports-enhancedCashFlow-transactions">API reference</a>.
 
 `GET /companies/{companyId}/reports/enhancedCashFlow/transactions`
 
 ## Parameters
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Parameters",
@@ -45,7 +45,7 @@ Start and end dates can be passed through the query string.",
 "cols": 4,
 "rows": 3
 }
-[/block.
+
 
 ## Data model
 
@@ -53,7 +53,7 @@ The response structure is split into three areas: Report info, Data sources and 
 
 ### Report info
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -70,7 +70,7 @@ The response structure is split into three areas: Report info, Data sources and 
 "7-0": "*pageSize**",
 "8-0": "**totalResults\*\*",
 "2-1": "*string\*
-See [Date](/datamodel-shared-date)",
+See [Date](/common-api#/schemas/DateTime)",
 "2-2": "YYYY-MM-DDT00:00:00Z
 
 The date the cash flow report was generated.",
@@ -87,11 +87,11 @@ The date the cash flow report was generated.",
 "cols": 3,
 "rows": 6
 }
-[/block.
+
 
 ### Data sources
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -116,12 +116,12 @@ Accounting and commerce commerce source types will be available in the future.",
 "cols": 3,
 "rows": 1
 }
-[/block.
+
 
 #### Accounts
 
 **Accounts** data is returned for each connection that is of type "Banking".
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -152,11 +152,11 @@ Accounting and commerce commerce source types will be available in the future.",
 "cols": 3,
 "rows": 7
 }
-[/block.
+
 
 ### Report Items
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -170,11 +170,11 @@ See [Transactions](#transactions)",
 "cols": 3,
 "rows": 1
 }
-[/block.
+
 
 #### Transactions
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -191,7 +191,7 @@ See [Transactions](#transactions)",
 "6-0": "**transactionCategory**",
 "1-1": "_string_",
 "2-1": "_string_
-See [Date](/datamodel-shared-date)",
+See [Date](/common-api#/schemas/DateTime)",
 "2-2": "YYYY-MM-DD
 
 The date the bank transaction was posted.",
@@ -209,11 +209,11 @@ See [Transaction category](#transaction-category)",
 "cols": 3,
 "rows": 7
 }
-[/block.
+
 
 #### Transaction category
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -231,7 +231,7 @@ See [Transaction category](#transaction-category)",
   "cols": 3,
   "rows": 1
   }
-  [/block.
+  
 
 ### Example data
 

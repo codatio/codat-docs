@@ -12,22 +12,22 @@ After you've set up an integration, follow this process to use Codat's API to en
 
 ## Enable and update commerce sync settings
 
-Update your [commerce sync settings](/commerce-sync-settings#section-update-commerce-sync-settings-via-the-api) to automatically retrieve data from a company when they authorise your connection to their data.
+Update your [commerce sync settings](/integrations/commerce/commerce-sync-settings#update-commerce-sync-settings-via-the-api) to automatically retrieve data from a company when they authorise your connection to their data.
 
 ## Create a company and data connection
 
 Create a Codat company and data connection for your customer.
 
-1. Open the [POST /companies](https://api.codat.io/swagger/index.html#/Companies/post_companies) endpoint.
+1. Open the [Create a company](/codat-api#/operations/create-company) endpoint.
 2. Enter a **companyName** and **platformType** and submit your request.
    The response returned includes:
-
-- The **linkUrl** which allows your customer to authorise your connection to their data.
-- The data connection **id** which allows you to sync the company's data.
+   
+   - The **linkUrl** which allows your customer to authorise your connection to their data.
+   - The data connection **id** which allows you to sync the company's data.
 
 3. Copy the **linkUrl** and send it to your customer.
 
-```
+```json
 {
 "name": "john",
 "platformType": "woocommerce",
@@ -35,7 +35,7 @@ Create a Codat company and data connection for your customer.
 }
 ```
 
-```
+```json
 {
 "id": "fc0043b0-8c40-4c5b-b92f-f155cb720451",
 "name": "john",
@@ -63,14 +63,20 @@ Create a Codat company and data connection for your customer.
 When your customer authorises your connection to their company data, Codat automatically fetches their datasets. You can pull these datasets from the following endpoints. Use the company and data connection **id** that you've already created. See above.
 
 `GET /companies/{{companyId}}/connections/{{connectionId}}/data/commerce-customers`
+
 `GET /.../commerce-disputes`
+
 `GET /.../commerce-info`
+
 `GET /.../commerce-orders`
+
 `GET /.../commerce-payments`
+
 `GET /.../commerce-products`
+
 `GET /.../commerce-transactions`
 
 :::info Sync status
 
-Before you can view data using one of the commerce endpoints, you must wait for the data synchronisation to complete. To check the status of any dataset, see the [sync status](/data-status) documentation.
+Before you can view data using one of the commerce endpoints, you must wait for the data synchronisation to complete. To check the status of any dataset, see the [sync status](/core-concepts/status) documentation.
 :::

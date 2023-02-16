@@ -18,7 +18,7 @@ You'll need to:
 
 :::note Testing the TrueLayer integration
 
-If you use TrueLayer's live environment, you can test TrueLayer using either the Demo Bank data source, or live bank accounts. For more information, see [Test your TrueLayer integration](/test-truelayer).
+If you use TrueLayer's live environment, you can test TrueLayer using either the Demo Bank data source, or live bank accounts. For more information, see [Test your TrueLayer integration](/integrations/banking/truelayer/test-truelayer).
 :::
 
 ## Retrieve your secure keys from TrueLayer
@@ -30,11 +30,11 @@ If you use TrueLayer's live environment, you can test TrueLayer using either the
 2. In the TrueLayer console, select **DATA API** from the left panel.
 3. If you're using a new account, click **GO TO LIVE ENV**. If you're using an existing account, select **LIVE** from the top menu.
 
-![](https://files.readme.io/6281165-TL_Live_Environment.png "TL_Live_Environment.png")
+![](/img/old/6281165-TL_Live_Environment.png "TL_Live_Environment.png")
 
 4. In the left panel, select the settings icon.
 
-![](https://files.readme.io/d0a240b-TL_Apps.png "TL_Apps.png")
+![](/img/old/d0a240b-TL_Apps.png "TL_Apps.png")
 
 The **APP SETTINGS** page is displayed.
 
@@ -59,7 +59,7 @@ You need to configure the TrueLayer integration in the [Codat Portal](https://ap
 1. On the navigation bar, select **Settings > Integrations > Banking**.
 2. Click **Set up** on the **TrueLayer** tile.  
    The **Integration settings** page for TrueLayer is displayed.
-3. Find the [secure keys you retrieved from TrueLayer](/set-up-truelayer-2#retrieve-your-secure-keys-from-truelayer).
+3. Find the [secure keys you retrieved from TrueLayer](/integrations/banking/truelayer/set-up-truelayer-2#retrieve-your-secure-keys-from-truelayer).
 4. On the **Integration settings** page, enter your secure keys from TrueLayer:
    - Enter the **client_id** in the **Client ID** box.
    - Enter the **client_secret** in the **Client Secret** box.

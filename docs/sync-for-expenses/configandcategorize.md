@@ -1,5 +1,6 @@
 ---
 title: "Configuration and categorizing expenses"
+description: Set up, map, and enable the Sync for Expenses solution
 tags: [syncforexpense, mappingOptions, Config]
 ---
 
