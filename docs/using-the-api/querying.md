@@ -73,8 +73,9 @@ The below query functionality will only work when searching for company data (eg
 
 :::info Combining queries
 
-To combine AND and OR queries, use brackets (`{` and `}`) like so:
-`query={totalAmount > 100 || totalAmount < 50} && status != paid`",
+To combine AND and OR queries, use curly braces (`{` and `}`), for example:<br>
+`query={totalAmount > 100 || totalAmount < 50} && status != paid`
+:::
 
 :::info Query length limits
 
