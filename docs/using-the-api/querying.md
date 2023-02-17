@@ -79,7 +79,7 @@ var query = new InvoicesQuery(companyId, 'amountDue>0')
 </TabItem>
 <TabItem value="csharp" label="C#">
 
-```csharp
+```c
 var request = new RestRequest("companies/{companyId}/data/invoices", Method.GET);
 request.AddUrlSegment("companyId", companyId);
 request.AddUrlSegment("query", "amountDue>0");
