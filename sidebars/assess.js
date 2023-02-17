@@ -57,16 +57,6 @@ module.exports = [
           "assess/reports/enhanced-financials-ecommerce-lenders/profit-and-loss",
         ],
       },
-      {
-        type: "category",
-        label: "Banking",
-        collapsed: true,
-        items: [
-          "assess/reports/banking/overview",
-          "assess/reports/banking/banking-account-balances",
-          "assess/reports/banking/banking-account-inflows-and-outflows",
-        ],
-      },
       "assess/reports/audit-report",
       "assess/reports/excel-reports",
     ],
