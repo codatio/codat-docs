@@ -77,7 +77,7 @@ var query = new InvoicesQuery(companyId, 'amountDue>0')
 .run(codat.uat(apiKey));
 ```
 </TabItem>
-<TabItem value="csharp" label="C#">
+<TabItem value="c" label="C#">
 
 ```c
 var request = new RestRequest("companies/{companyId}/data/invoices", Method.GET);
@@ -110,9 +110,9 @@ var query = new InvoicesQuery(companyId, 'currency=GBP')
 .run(codat.uat(apiKey));
 ```
 </TabItem>
-<TabItem value="csharp" label="C#">
+<TabItem value="c" label="C#">
 
-```csharp
+```c
 var request = new RestRequest("companies/{companyId}/data/invoices", Method.GET);
 request.AddUrlSegment("companyId", companyId);
 request.AddUrlSegment("query", "currency=GBP");
@@ -143,9 +143,9 @@ var query = new InvoicesQuery(companyId, 'customerRef.id=61')
 .run(codat.uat(apiKey));
 ```
 </TabItem>
-<TabItem value="csharp" label="C#">
+<TabItem value="c" label="C#">
 
-```csharp
+```c
 var request = new RestRequest("companies/{companyId}/data/invoices", Method.GET);
 request.AddUrlSegment("companyId", companyId);
 request.AddUrlSegment("query", "customerRef.id=61");
@@ -176,9 +176,9 @@ var query = new InvoicesQuery(companyId, 'amountDue>0&&totalAmount<1000')
 .run(codat.uat(apiKey));
 ```
 </TabItem>
-<TabItem value="csharp" label="C#">
+<TabItem value="c" label="C#">
 
-```csharp
+```c
 var request = new RestRequest("companies/{companyId}/data/invoices", Method.GET);
 request.AddUrlSegment("companyId", companyId);
 request.AddUrlSegment("query", "amountDue>0&&totalAmount<1000");
@@ -209,9 +209,9 @@ var query = new InvoicesQuery(companyId,'dueDate>2021-01-28')
 .run(codat.uat(apiKey));
 ```
 </TabItem>
-<TabItem value="csharp" label="C#">
+<TabItem value="c" label="C#">
 
-```csharp
+```c
 var request = new RestRequest("companies/{companyId}/data/invoices", Method.GET);
 request.AddUrlSegment("companyId", companyId);
 request.AddUrlSegment("query", "dueDate>2021-01-28");
@@ -233,9 +233,9 @@ _Note_: the page size value is obligatory for querying.
 GET /companies?page=1&pageSize=100&query=dataConnections.status=PendingAuth
 ```
 </TabItem>
-<TabItem value="csharp" label="C#">
+<TabItem value="c" label="C#">
 
-```csharp
+```c
 var request = new RestRequest("companies", Method.GET);
 request.AddUrlSegment("page", 1);
 request.AddUrlSegment("query", "dataConnections.status=PendingAuth");
@@ -257,9 +257,9 @@ var info = response.Data;
 GET /companies?page=1&pageSize=100&query=dataConnections.count=0
 ```
 </TabItem>
-<TabItem value="csharp" label="C#">
+<TabItem value="c" label="C#">
 
-```csharp
+```c
 var request = new RestRequest("companies", Method.GET);
 request.AddUrlSegment("page", 1);
 request.AddUrlSegment("query", "dataConnections.count=0");
