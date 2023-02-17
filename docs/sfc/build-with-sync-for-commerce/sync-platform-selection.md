@@ -5,18 +5,13 @@ createdAt: "2022-02-09T13:30:23.915Z"
 updatedAt: "2022-11-25T09:42:09.130Z"
 ---
 
-:::info Use our Swagger to follow along
-
-All the endpoints mentioned in this guide are available in our <a href="https://api.codat.io/sync/swagger" target="_blank">Sync for Commerce Swagger</a>. You can use it to try the API requests from this guide directly in your browser. Before you use Swagger, make sure to [authenticate](https://docs.codat.io/reference/authentication).
-:::
-
 ## Build a platform selection flow
 
 Within your application, present your merchant with a list of accounting platforms they can connect to.
 
-On select, your merchant should be [redirected to the Sync configuration flow URL](/implementing-codats-no-code-merchant-configuration) where they will be prompted to authorize access to their accounting data.
+On select, your merchant should be [redirected to the Sync configuration flow URL](/sfc/build-with-sync-for-commerce/implementing-codats-no-code-merchant-configuration) where they will be prompted to authorize access to their accounting data.
 
-:::info Info
+:::info Data requirements
 
 Over the steps in this guide, you'll need to retain several variables:
 
@@ -36,7 +31,7 @@ Your merchant needs to exist as a company in the Codat system. Start by creating
 
 You just need to set a name in the request body.
 
-**We'll return that merchant's `companyId` for you to retain (returned here as `id`):**
+We'll return that merchant's `companyId` for you to retain (returned here as `id`):
 
 ```json
 {
@@ -58,9 +53,9 @@ Get a list of the integrations you've enabled, as well as the associated metadat
 
 Our available integrations for Sync for Commerce:
 
-- [Xero (UK only)](/accounting-xero)
-- [QuickBooks Online (UK and FR only)](/accounting-quickbooksonline)
-- [FreeAgent (UK only)](/accounting-freeagent)
+- [Xero](/integrations/accounting/xero/accounting-xero)
+- [QuickBooks Online](/integrations/accounting/quickbooksonline/accounting-quickbooksonline)
+- [FreeAgent](/integrations/accounting/freeagent/accounting-freeagent)
 
 Call our `GET /integrations` endpoint, querying for enabled integrations.
 
@@ -182,7 +177,7 @@ Display each of these integrations, using the branding to aid the user.
 
 Depending on your frontend stack, this will vary. Using React, it might look something like this:
 
-```react
+```html
 <div>
   {
     integrations.map((integration, i) => (
@@ -234,8 +229,8 @@ Our no-code and low-code flows take care of platform selection and authorization
 
 You can read more about those here:
 
-- [Authorize with Embedded Link](/authorize-embedded-link)
-- [Authorize with Hosted Link](/authorize-hosted-link)
+- [Authorize with Embedded Link](/auth-flow/authorize-embedded-link)
+- [Authorize with Hosted Link](/auth-flow/authorize-hosted-link)
 
 ### 1. Authorize
 
@@ -252,18 +247,9 @@ You should have retained the `companyId`.
 
 You can retrieve the `platformKey` when you need it.
 
-:::info Info
+:::info Verifying the connections
 
-Call `GET /companies/{companyId}/connections`. There should only be one connection returned if your settings are configured correctly. The `platformKey` is (incorrectly) called `integrationKey` in the response.
+Call `GET /companies/{companyId}/connections`. There should only be one connection returned if your settings are configured correctly. The `platformKey` is called `integrationKey` in the response.
 
 For Embedded Link, you can use the `onConnection` callback function to retain the connection and its `platformKey`.
-:::
-
-```http
-GET /config/sync/commerce/lqai/{platformKey}/start?merchantIdentifier={companyId}
-```
-
-:::info Checkpoint
-
-You're ready to move to the next page, where we'll cover what to do with this response, and more.
 :::

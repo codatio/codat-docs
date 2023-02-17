@@ -5,7 +5,7 @@ createdAt: "2020-02-25T17:44:15.137Z"
 updatedAt: "2022-12-16T16:54:44.252Z"
 ---
 
-When you've [set up and enabled Plaid](/banking-plaid-setup), you can test your integration with Plaid's sandbox. You'll need to:
+When you've [set up and enabled Plaid](/integrations/banking/plaid/banking-plaid-setup), you can test your integration with Plaid's sandbox. You'll need to:
 
 - Set up a test company.
 - Generate a Link URL to connect your test company to Plaid's sandbox.
@@ -29,11 +29,11 @@ To connect your test company to Plaid's sandbox, you can either generate a Link 
 2. Next to the company name, select **Request data**.  
    The **Links URL...** dialog box is displayed.
 3. At the bottom of the dialog box, select **Create**.
-4. Copy the generated URL and go straight to [Connect to Plaid's sandbox](/test-your-plaid-integration#section-connect-to-plaids-sandbox).
+4. Copy the generated URL and go straight to [Connect to Plaid's sandbox](/integrations/banking/plaid/test-your-plaid-integration#section-connect-to-plaids-sandbox).
 
 ## Generate a Link URL via the API
 
-1. Open the <a href="https://api.codat.io/swagger/index.html#/Connection/post_companies__companyId__connections" target="_blank">POST /companies/{companyId}/connections</a> endpoint.
+1. Open the <a href="/codat-api#/operations/list-company-connections" target="_blank">POST /companies/{companyId}/connections</a> endpoint.
 2. Replace `{companyId}` with the ID of the test company you've just set up.
 3. Also, in the body of the request, enter the platform key:
 
@@ -94,6 +94,6 @@ To perform a quick check from the Codat Portal:
 
 To retrieve account details from the API, use either of the following endpoints:
 
-[`GET /companies/{companyId}/connections/{connectionId}/data/banking-accounts`](https://api.codat.io/swagger/index.html#/BankingAccounts/get_companies__companyId__connections__connectionId__data_banking_accounts)
+[`GET /companies/{companyId}/connections/{connectionId}/data/banking-accounts`](/banking-api#/operations/list-banking-accounts)
 
-[`GET /companies/{companyId}/connections/{connectionId}/data/banking-transactions`](https://api.codat.io/swagger/index.html#/BankingTransactions/get_companies__companyId__connections__connectionId__data_banking_transactions)
+[`GET /companies/{companyId}/connections/{connectionId}/data/banking-transactions`](/banking-api#/operations/list-banking-transactions)

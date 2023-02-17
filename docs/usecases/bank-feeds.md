@@ -112,7 +112,7 @@ Example request body:
     }
   ]
 }
-[/block]
+
 The response body will include a linkUrl - included below.
 
 ### Create new connection on existing company
@@ -132,7 +132,7 @@ Example request body:
 }
 ]
 }
-[/block]
+
 The response body will include a linkUrl.
 
 From either the new company or existing company flows, the user should be directed to this linkUrl provided in the response body.
@@ -178,7 +178,7 @@ Example request body:
     }
   ]
 }
-[/block.
+
 
 ### Best practices
 

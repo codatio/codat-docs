@@ -16,4 +16,9 @@ module.exports = [
     label: "Commerce integrations",
     href: "integrations/commerce/overview",
   },
+  {
+    type: "link",
+    href: "/commerce-api",
+    label: "Commerce API reference",
+  },
 ];

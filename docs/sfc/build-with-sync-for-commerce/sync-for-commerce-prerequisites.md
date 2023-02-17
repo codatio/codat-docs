@@ -14,15 +14,15 @@ Sync for Commerce must be enabled for your account. You can enable products in t
 
 ### Authentication
 
-[Authenticate](https://docs.codat.io/reference/authentication) with the Codat API using your API key.
+[Authenticate](/using-the-api/authentication) with the Codat API using your API key.
 
 ### Enable a supported platform
 
 You need to set up one or more of the supported accounting platforms:
 
-- [Xero](/accounting-xero)
-- [QuickBooks Online](/accounting-quickbooksonline)
-- [FreeAgent](/accounting-freeagent)
+- [Xero](/integrations/accounting/xero/accounting-xero)
+- [QuickBooks Online](/integrations/accounting/quickbooksonline/accounting-quickbooksonline)
+- [FreeAgent](/integrations/accounting/freeagent/accounting-freeagent)
 
 ### Required data types
 
@@ -30,14 +30,14 @@ The following data types are required (and are enabled by default):
 
 #### Accounting
 
-- [Company info](/data-model/accounting/-company)
-- [Accounts](/data-model/accounting/-chartofaccounts)
-- [Tax rates](/data-model/accounting/-taxrates)
-- [Customers](/data-model/accounting/-customers)
-- [Suppliers](/data-model/accounting/-suppliers)
+- [Company info](/accounting-api#/schemas/CompanyDataset)
+- [Accounts](/accounting-api#/schemas/Account)
+- [Tax rates](/accounting-api#/schemas/TaxRates)
+- [Customers](/accounting-api#/schemas/Customers)
+- [Suppliers](/accounting-api#/schemas/Suppliers)
 
 #### Commerce
 
-- [Orders](/data-model/commerce/-orders)
-- [Transactions](/data-model/commerce/-transactions)
-- [Payments](/data-model/commerce/-payments)
+- [Orders](/commerce-api#/schemas/orders)
+- [Transactions](/commerce-api#/schemas/transactions)
+- [Payments](/commerce-api#/schemas/payments)

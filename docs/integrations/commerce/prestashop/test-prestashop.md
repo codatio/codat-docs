@@ -5,7 +5,7 @@ createdAt: "2021-09-17T00:16:28.634Z"
 updatedAt: "2022-10-20T08:56:09.678Z"
 ---
 
-When you've [set up PrestaShop](/set-up-prestashop-in-production), you're ready to test the authorization process for your integration. You'll need to:
+When you've [set up PrestaShop](/integrations/commerce/prestashop/set-up-prestashop-in-production), you're ready to test the authorization process for your integration. You'll need to:
 
 - Generate a Link URL to connect your test company to your PrestaShop sandbox.
 - Retrieve commerce data.
@@ -28,8 +28,8 @@ Before you start to test PrestaShop, make sure that you have:
     >
       Official Getting Started Guide
     </a>
-- Set up [PrestaShop](/set-up-prestashop-in-production).
-- Updated your [sync settings](/commerce-sync-settings) to enable commerce data types.
+- Set up [PrestaShop](/integrations/commerce/prestashop/set-up-prestashop-in-production).
+- Updated your [sync settings](/integrations/commerce/commerce-sync-settings) to enable commerce data types.
 
 ## Set up a test company in the Codat Portal and connect your test company to a test account in PrestaShop
 

@@ -7,7 +7,11 @@ updatedAt: "2022-10-20T15:10:20.026Z"
 
 The steps up to the point of connection should be kept to a minimum. The journey that leads up to connecting shouldn't be slow and arduous. It should be simple, clearly communicate the value of connecting data, and allow your customer to get connected as fast as possible:
 
--[ ] Encourage to connect in the greeting e-mail -[ ] Ask your users to connect within 3 actions from signup -[ ] Make sure the CTA to connect is visible to the users -[ ] Use social proof to increase trust in your solution -[ ] Bonus: automate the population of any setup pages with connected company data
+- Encourage to connect in the greeting e-mail  
+- Ask your users to connect within 3 actions from signup
+- Make sure the CTA to connect is visible to the users
+- Use social proof to increase trust in your solution
+- Bonus: automate the population of any setup pages with connected company data
 
 :::success Why this matters
 
@@ -38,4 +42,4 @@ Consider showing a positive review from a trusted person, for example, a promine
 
 ## ⭐ Automate the population of setup pages with connected company data
 
-The higher in the funnel a customer connects their data, the more you can automate their onboarding flow by prepopulating [useful company information](/data-model/accounting/-company) such as company registration, tax number, addresses, and key contact info or [company annual revenue](/data-model/accounting/-balancesheet).
+The higher in the funnel a customer connects their data, the more you can automate their onboarding flow by prepopulating [useful company information](/accounting-api#/schemas/CompanyDataset) such as company registration, tax number, addresses, and key contact info or [company annual revenue](/accounting-api#/schemas/balancesheet).

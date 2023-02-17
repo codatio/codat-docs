@@ -40,3 +40,12 @@ article .markdown > ol ol,
 article .markdown > ul ol {
   margin-top: 0.5em !important;
 }
+
+.task-list-item {
+  list-style-type: none;
+
+  .task-checkbox{
+    margin-right: 5px;
+    cursor: pointer;
+  }
+}

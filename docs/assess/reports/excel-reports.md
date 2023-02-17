@@ -14,80 +14,36 @@ The process to download an Excel report is:
 3. [Download](#download-the-report) the latest Excel report.
 
 Only one request will be processed at a time per SMB company and per report type. The generated report is kept in blob storage and gets replaced when a new one is generated.
-.
+
 
 ## Available report types
 
-- [Audit Report](/assess-audit-report)
+- [Audit Report](/assess/reports/audit-report)
 
 ## Parameters
 
 For each of the endpoints described below, you will provide the same parameters.
-[block:parameters]
-{
-"data": {
-"h-0": "Parameter",
-"h-1": "Type",
-"h-2": "Description",
-"h-3": "Required",
-"0-0": "**companyId** ",
-"1-0": "**reportType** ",
-"0-1": "_string_",
-"1-1": "_string_",
-"0-2": "The company ID for which you want to produce an Excel report for download.",
-"1-2": "The type of report you want to generate and download.
 
-- “audit”",
-  "0-3": "Required",
-  "1-3": "Required"
-  },
-  "cols": 4,
-  "rows": 2
-  }
-  [/block.
+|Parameter|Type|Description|Requried|
+|---------|----|-----------|--------|
+|**companyId**|_string_|The company ID for which you want to produce an Excel report for download.|Required|
+|**reportType**|_string_|The type of report you want to generate and download.  For the audit report this is set to "audit".|Required|
 
 ## Request an Excel report for download
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/post_data_companies__companyId__assess_excel" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="/assess-api#/operations/post-data-companies-companyId-assess-excel">API reference</a>.
 
 `POST /data/companies/{companyId}/assess/excel`
-[block:parameters]
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**lastGenerated**",
-"1-0": "**inProgress** ",
-"2-0": "**queued** ",
-"3-0": "**success** ",
-"4-0": "**errorMessage** ",
-"5-0": "**lastInvocationId** ",
-"6-0": "**reportType** ",
-"0-1": "_string_
-See [date](/datamodel-shared-date)",
-"1-1": "_boolean_ ",
-"2-1": "_string_
-See [date](/datamodel-shared-date)",
-"3-1": "_boolean_ ",
-"4-1": "_string_ ",
-"5-1": "_string_ ",
-"6-1": "_string_ ",
-"0-2": "The date and time of the report that is being generated.",
-"1-2": "\* true - the request was successful and the report is being generated.
 
-- false - the request was unsuccessful and the report is not being generated.",
-  "2-2": "The time a successful request was queued.",
-  "3-2": " \* true - the requested report was successfully queued.
-- false - the requested report wasn’t able to be queued. ",
-  "5-2": "A unique ID generated for this request.",
-  "6-2": "The report requested in the query string.",
-  "4-2": "The error message if the status was unsuccessful."
-  },
-  "cols": 3,
-  "rows": 7
-  }
-  [/block]
+|Field|Type|Description|
+|-----|----|-----------|
+|**lastGenerated**|_date_|The date and time of the report that is being generated.|
+|**inProgress**|_boolean_|- True - the request was successful and the report is being generated.<br/>- False - the request was unsuccessful and the report is not being generated.|
+|**queued**|_date_|The time a successful request was queued.|
+|**succcess**|_boolean_|- True - the requested report was successfully queued.<br/>- False - the requested report wasn’t able to be queued.|
+|**errorMessage**|_string_|The error message if the status was unsuccessful.|
+|**lastInvocationId**|_string_|A unique ID generated for this request.|
+|**reportType**|_string_|The report requested in the query string.|
 
 Example
 
@@ -109,10 +65,10 @@ The status tells you if the last report requested is complete. It only returns t
 
 When the report is complete, the `inProgress` field will have the value of _false_ whilst the `success` field will show _true_.
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__assess_excel" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-assess-excel">API reference</a>.
 
 `GET /data/companies/{companyId}/assess/excel`
-[block:parameters]
+
 {
 "data": {
 "h-0": "Field",
@@ -126,10 +82,10 @@ The endpoint is available in <a className="external" href="https://api.codat.io/
 "5-0": "**lastInvocationId** ",
 "6-0": "**reportType** ",
 "0-1": "_string_
-See [date](/datamodel-shared-date)",
+See [date](/common-api#/schemas/DateTime)",
 "1-1": "_boolean_ ",
 "2-1": "_string_
-See [date](/datamodel-shared-date)",
+See [date](/common-api#/schemas/DateTime)",
 "3-1": "_boolean_ ",
 "4-1": "_string_ ",
 "5-1": "_string_ ",
@@ -149,7 +105,7 @@ See [date](/datamodel-shared-date)",
   "cols": 3,
   "rows": 7
   }
-  [/block]
+  
   Example
 
 ```
@@ -166,7 +122,7 @@ See [date](/datamodel-shared-date)",
 
 ## Download the report
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/post_data_companies__companyId__assess_excel_download" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="/assess-api#/operations/post-data-companies-companyId-assess-excel-download">API reference</a>.
 
 `POST /data/companies/{companyId}/assess/excel/download`
 

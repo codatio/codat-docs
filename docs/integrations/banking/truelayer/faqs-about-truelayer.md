@@ -9,16 +9,16 @@ If your TrueLayer question isn't answered on this page, please contact our suppo
 
 ## What does a customer see when they link their bank account?
 
-Codat uses TrueLayer's customer journey to link a bank account. This includes a standard landing page for all customers, and a login page for their banking institution. To find out exactly what your customers will see, set up a test company and generate a link URL as described in [Test TrueLayer](/test-truelayer#set-up-a-test-company-and-generate-a-link-url).
+Codat uses TrueLayer's customer journey to link a bank account. This includes a standard landing page for all customers, and a login page for their banking institution. To find out exactly what your customers will see, set up a test company and generate a link URL as described in [Test TrueLayer](/integrations/banking/truelayer/test-truelayer#set-up-a-test-company-and-generate-a-link-url).
 
 ## Can I specify the bank we want to connect to when we're initiating the OAuth process?
 
-Yes. When you create a data connection to sync banking data for a company, you also supply a platform key. For more information, see [Test TrueLayer](/test-truelayer#set-up-a-test-company-and-generate-a-link-url).
+Yes. When you create a data connection to sync banking data for a company, you also supply a platform key. For more information, see [Test TrueLayer](/integrations/banking/truelayer/test-truelayer#set-up-a-test-company-and-generate-a-link-url).
 
 ## Does Codat automatically sync banking data on a regular basis?
 
-Banking data is synchronized in the same way as data from accounting integrations.  
-[Configure sync settings](/data-sync-settings) explains how to adjust the fetch order and sync frequency to suit your requirements.
+Banking data is synchronised in the same way as data from accounting integrations.  
+[Configure sync settings](/core-concepts/data-type-settings) explains how to adjust the fetch order and sync frequency to suit your requirements.
 
 ## How are we billed for connections to TrueLayer accounts?
 

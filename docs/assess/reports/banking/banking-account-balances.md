@@ -5,14 +5,14 @@ createdAt: "2022-05-26T13:21:50.091Z"
 updatedAt: "2022-07-06T14:50:43.873Z"
 ---
 
-:::caution Banking account balances - Beta testing",
+:::caution Banking account balances - Beta testing
 
 Please note, this feature is in beta testing. We encourage you to provide any feedback you have on the product by selecting _Submit idea_ <a href="https://portal.productboard.com/codat/7-product-roadmap/tabs/20-accounting-api" target="_blank">here</a> on our roadmap.
 :::
 
 This endpoint retrieves the current balance and balance limit for a company, over one or more periods of time, and provides the data in the currency requested in the query parameters.
 
-Refer to the [Assess reporting structure](/assess-reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/assess/reports/reporting-structure) page for more detail on reports in Assess.
 
 For _Banking account balances_, these are the dimensions and measures:
 
@@ -29,15 +29,11 @@ For _Banking account balances_, these are the dimensions and measures:
 
 - Is structured based on dimension (index =“0”). i.e. Period
 
-The endpoint is available in <a href="https://api.codat.io/swagger/index.html#/Assess" target="_blank">Swagger</a> under **Assess**.
-
-```http
-GET ​/data​/companies​/{companyId}​/assess​/bankingMetrics/accountBalances
-`
+`GET /data/companies/{companyId}/assess/bankingMetrics/accountBalances`
 
 
 ## Parameters
-[block:parameters]
+
 {
   "data": {
     "h-0": "Parameter",
@@ -46,7 +42,7 @@ GET ​/data​/companies​/{companyId}​/assess​/bankingMetrics/accountBala
     "h-3": "Required",
     "2-0": "**reportDate**",
     "2-1": "*string*
-See [Date](/datamodel-shared-date)",
+See [Date](/common-api#/schemas/DateTime)",
     "2-2": "YYYY-MM-DD
 
 Users can specify a specific date, however the response will be provided for the full month.",
@@ -69,7 +65,7 @@ Default is 'false'.",
     "6-3": "Optional",
     "0-0": "**query**",
     "0-1": "*string*
-See [Querying](/querying-1)",
+See [Querying](/using-the-api/querying)",
     "0-2": "Codat query string.
 
 It can be empty. If empty, it returns data for all bank accounts for a specific company.",
@@ -93,13 +89,12 @@ Default is "month".",
   "cols": 4,
   "rows": 7
 }
-[/block]
+
 #Data model
 
 The response structure is split into four areas: Report info, Dimensions, Measures and Report data. The structure allows Codat to add *Dimensions* without causing a breaking change in your code.
 
 ## Report info
-[block:parameters]
 {
   "data": {
     "h-0": "Field",
@@ -118,14 +113,12 @@ The response structure is split into four areas: Report info, Dimensions, Measur
   "cols": 3,
   "rows": 3
 }
-[/block.
 
 ## Dimensions
 
 The Assess *Banking account balances* consists of one dimension: Period.
 
 ### Dimension (index = “0”): Period
-[block:parameters]
 {
   "data": {
     "h-0": "Field",
@@ -147,10 +140,8 @@ Ordered by latest to earliest periods."
   "cols": 3,
   "rows": 3
 }
-[/block.
 
 #### Dimension (index = “0”) items
-[block:parameters]
 {
   "data": {
     "h-0": "Field",
@@ -161,12 +152,12 @@ Ordered by latest to earliest periods."
     "0-2": ""Period n"",
     "1-0": "**start** ",
     "1-1": "*string*
-See [Date](/datamodel-shared-date)",
+See [Date](/common-api#/schemas/DateTime)",
     "1-2": "YYYY-MM-DD
 
 Date in which the period begins (inclusive).",
     "2-1": "*string*
-See [Date](/datamodel-shared-date)",
+See [Date](/common-api#/schemas/DateTime)",
     "2-0": "**end** ",
     "2-2": "YYYY-MM-DD
 
@@ -175,7 +166,6 @@ Date in which the period ends (inclusive)."
   "cols": 3,
   "rows": 3
 }
-[/block.
 
 ## Measures
 
@@ -184,7 +174,6 @@ Date in which the period ends (inclusive)."
 The two measures for this report are as follows:
 
 ### Index “0” - Converted Current Balance
-[block:parameters]
 {
   "data": {
     "h-0": "Field",
@@ -203,10 +192,8 @@ The two measures for this report are as follows:
   "cols": 3,
   "rows": 3
 }
-[/block.
 
 ### Index “1” - Converted Balance Limit
-[block:parameters]
 {
   "data": {
     "h-0": "Field",
@@ -225,7 +212,6 @@ The two measures for this report are as follows:
   "cols": 3,
   "rows": 3
 }
-[/block.
 
 ## Report data
 
@@ -238,7 +224,6 @@ Each object is grouped by dimension (index=“0”) which is the number of perio
 Each period will be broken down into *Converted Current Balance* and *Converted Balance Limit*.
 
 ### Components structure
-[block:parameters]
 {
   "data": {
     "h-0": "Field",
@@ -261,13 +246,11 @@ Each period will be broken down into *Converted Current Balance* and *Converted 
   "cols": 3,
   "rows": 5
 }
-[/block]
 All components have the structure described in the *Measures in components* data model below.
 
 #### Measures in components
 
 **Index "0" - Converted Current Balance**
-[block:parameters]
 {
   "data": {
     "h-0": "Field",
@@ -282,9 +265,8 @@ All components have the structure described in the *Measures in components* data
   "cols": 3,
   "rows": 2
 }
-[/block]
+
 **Index “1” - Converted Balance Limit**
-[block:parameters]
 {
   "data": {
     "h-0": "Field",
@@ -300,10 +282,9 @@ All components have the structure described in the *Measures in components* data
   "cols": 3,
   "rows": 2
 }
-[/block]
-#Example data
-```
 
+# Example data
+```
 {
 "reportInfo": {
 "name": "banking_account_balances",
@@ -387,4 +368,3 @@ All components have the structure described in the *Measures in components* data
 
 ```
 
-```

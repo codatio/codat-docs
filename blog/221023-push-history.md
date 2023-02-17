@@ -4,9 +4,10 @@ date: "2022-10-23"
 tags: ["Portal"]
 draft: false
 authors: mcclowes
-link: "https://docs.codat.io/docs/pull-and-push-history#push-history"
 ---
 
-[Read more...](/pull-and-push-history#push-history)
+You can now view a table of data pushed for each company.
 
 <!--truncate-->
+
+[Read more...](/pull-and-push-history#push-history)

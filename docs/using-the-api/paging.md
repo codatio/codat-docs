@@ -9,12 +9,12 @@ The Codat API uses a simple set of query parameters on most of its endpoints to 
 
 ## Request
 
-Our endpoints which return multiple results are paged, e.g. [companies ](https://api.codat.io/swagger/index.html#/Companies/get_companies) or [push ](https://api.codat.io/swagger/index.html#/Push/get_companies__companyId__push) operations. If you're calling these endpoints, you will need to supply a `page` query parameter. You can configure the size of each page by using the `pageSize` query parameter.
+Our endpoints which return multiple results are paged, e.g. [`GET /companies`](/codat-api#/operations/list-companies). If you're calling these endpoints, you will need to supply a `page` query parameter. You can configure the size of each page by using the `pageSize` query parameter.
 
 A typical request will have the following properties:
 
 - `page` : This is the page number that you would like to have displayed. The default page is 1.
-- `pageSize` : You can define the number of the results you would like to have displayed on one page. The default page size is 100, while the maximum page size can be set to 5000..
+- `pageSize` : You can define the number of the results you would like to have displayed on one page. The default page size is 100, while the maximum page size can be set to 5000.
 
 ## Response
 
@@ -38,30 +38,30 @@ Note: `totalResults` returns the number of results after applying any filter you
 
 ## Example
 
-````
-GET /companies/{companyId}/data/invoices?page=5&pageSize=20",
-      "language": "http",
-      "name": "HTTP"
-    },
-    {
-      "code": "var query = new InvoicesQuery(companyId,
-                  /* filter query */ null,
-                  /* page number  */ 5,
-                  /* page size    */ 20)
-              .run(codat.uat(apiKey));
+```http title="HTTP"
+GET /companies/{companyId}/data/invoices?page=5&pageSize=20
+```
 
-// Following of the pages directly from the HAL links is not yet supported by the client library.```
+```javascript title="Javascript"
+var query = new InvoicesQuery(companyId, 
+                    /* filter query */ null, 
+                    /* page number  */ 5, 
+                    /* page size    */ 20)
+                .run(codat.uat(apiKey));
 
-```var request = new RestRequest("companies/{companyId}/data/invoices", Method.GET);
+// Following of the pages directly from the HAL links is not yet supported by the client library.
+```
+```csharp title="C#"
+var request = new RestRequest("companies/{companyId}/data/invoices", Method.GET);
 request.AddUrlSegment("companyId", companyId);
 request.AddQueryParameter("page", 5.ToString());
 request.AddQueryParameter("pageSize", 20.ToString());
 request.AddHeader("Authorization", $"Basic {encodedApiKey}");
 var response = client.Execute(request);
 var info = response.Data;
-````
-
 ```
+
+```json title="Sample response"
 {
 "results": ["...":"..."],
 "pageNumber": 5,

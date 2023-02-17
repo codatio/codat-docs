@@ -8,7 +8,7 @@ updatedAt: "2022-06-16T13:20:53.350Z"
 The Banking feature provides the banking data needed to assess an SMBs ability to repay a loan. Outputs are auto-calculated for you across the full history of financial statements for a linked company and can be retrieved for a single period or spread across multiple periods enabling you to perform time series analysis of the financial performance of the company.
 
 #Banking formulas
-[block:parameters]
+
 {
 "data": {
 "h-0": "Metric",
@@ -28,7 +28,7 @@ Use the banking-transaction `postedDate` and `banking-transaction` value to work
 "cols": 2,
 "rows": 2
 }
-[/block.
+
 
 ## Calculating the current balances for two periods
 
@@ -39,7 +39,7 @@ The latest sync for the company was on June 8 2022 which is the date of the late
 a. Current balance on June 8 2022 is £190,000.
 b. Transactions from April 1 to June 7 (inclusive) total £11,000.
 c. Transactions from March 1 to 31 March 31 (inclusive) total £5,000.
-[block:parameters]
+
 {
 "data": {
 "h-0": "Date",
@@ -62,4 +62,4 @@ c. Transactions total from March 1 to 31 March 31 (inclusive)"
 "cols": 3,
 "rows": 2
 }
-[/block]
+

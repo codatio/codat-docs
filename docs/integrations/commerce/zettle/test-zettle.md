@@ -39,7 +39,7 @@ When you've [set up Zettle](/integrations/commerce/zettle/commerce-zettle-setup)
 2. Next to the company name, select **Request data**.
 3. The **Links URL...** dialogue box is displayed.
 4. At the bottom of the **Link URL...** dialogue box, copy the URL for **Commerce**.
-5. Paste the Link URL into your browser, which takes you to [Link](/link).
+5. Paste the Link URL into your browser, which takes you to [Hosted Link](/auth-flow/authorize-hosted-link).
 6. Choose **Zettle** and then **Continue to Zettle**.
 7. You will be prompted to log in to your Zettle account and authorize access to your account details.
 

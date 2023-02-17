@@ -39,7 +39,7 @@ ul.card-container.col-3 p {
 html[data-theme="light"] {
   li.card {
     background-color: var(--token-primary-bg-c);
-    border: 2px solid var(--token-primary-bg-c-alt);
+    border: 2px solid var(--token-secondary-bg-c-alt);
   }
 }
 
@@ -55,9 +55,8 @@ li.card {
   flex-direction: column;
   margin: 0 !important;
 
-  box-shadow: 0 1px 2px rgba(111, 116, 154, 0.07843),
-    0 2px 2px rgba(111, 116, 154, 0.07843),
-    0 1px 4px rgba(111, 116, 154, 0.07843);
+  border: 1px solid var(--token-secondary-bg-c-alt); 
+  box-shadow: none;
   padding: 1.5em;
   border-radius: 8px;
   font-size: 0.9em !important;

@@ -3,6 +3,8 @@ title: "Data status"
 description: "Concept overview and key details"
 createdAt: "2020-04-08T22:29:11.173Z"
 updatedAt: "2022-11-23T15:23:18.810Z"
+tags:
+  - Core concept
 ---
 
 Synchronizing a data type ensures that our data cache is up-to-date with the data source and means you'll be able to retrieve the synchronized company's data using our API or view the data in [the Portal](https://app.codat.io).
@@ -13,7 +15,7 @@ There are three ways to initiate the synchronization of data:
 - Use the API to queue a data synchronization (known as a _dataset_)
 - Use the Sync settings feature in the Codat Portal
 
-By default, full synchronization of each data type marked as _Fetch on first link_ in your [data type settings](/data-sync-settings) will be queued automatically when a company first authorizes itself with Codat.
+By default, full synchronization of each data type marked as _Fetch on first link_ in your [data type settings](/core-concepts/data-type-settings) will be queued automatically when a company first authorizes itself with Codat.
 
 ## Dataset statuses
 

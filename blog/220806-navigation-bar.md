@@ -4,9 +4,12 @@ date: "2022-08-06"
 tags: ["Portal", "Updates"]
 draft: false
 authors: mcclowes
-link: "https://docs.codat.io/changelog/portal-new-navigation"
 ---
 
-[Read more...](https://docs.codat.io/changelog/portal-new-navigation)
+The Portal has been rearranged to make accessing Codat functionality and settings more intuitive.
 
 <!--truncate-->
+
+- The vertical navbar has been replaced with a horizontal one, and sections of the Portal have their own vertical nav in its place. 
+- All settings are now in the settings section.
+- We've added a monitor section for the functionality that helps you monitor and maintain a healthy Codat solution.

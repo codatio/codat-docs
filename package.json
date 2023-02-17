@@ -26,7 +26,6 @@
     ]
   },
   "dependencies": {
-    "@codat/link-sdk": "^1.0.1-alpha.20",
     "@docusaurus/core": "^2.3.1",
     "@docusaurus/mdx-loader": "^2.3.1",
     "@docusaurus/plugin-client-redirects": "^2.3.1",
@@ -58,6 +57,7 @@
     "process": "^0.11.10",
     "querystring-es3": "^0.2.1",
     "react": "^17.0.1",
+    "react-cookie-consent": "^8.0.1",
     "react-dom": "^17.0.1",
     "remark-html": "^15.0.1",
     "remark-parse": "^10.0.1",

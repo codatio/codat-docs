@@ -1,5 +1,6 @@
 ---
 title: "Account management"
+description: "Learn how to reset your Codat account password"
 createdAt: "2022-10-17T16:04:35.337Z"
 updatedAt: "2022-10-19T16:02:07.525Z"
 ---

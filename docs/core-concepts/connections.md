@@ -3,6 +3,8 @@ title: "Connections"
 description: "Concept overview and key details"
 createdAt: "2021-03-31T21:11:15.467Z"
 updatedAt: "2023-01-16T15:23:20.370Z"
+tags:
+  - Core concept
 ---
 
 A data connection represents a [company's](/core-concepts/companies) connection to a data source and allows you to synchronize data (pull and/or push) with that source.
@@ -31,6 +33,13 @@ Data connections can have one of the statuses described in the following table.
 
 ## Linked data connection example
 
+Verify that a connection returns a Linked `status` using one of our [Connections](/codat-api#/operations/list-company-connections) endpoints. 
+
+In the response, note the following fields:
+
+- `sourceId` identifies the source of information, like a bank or accounting software; 
+- `integrationId` identifies the Codat integration that supports the data source.
+
 ```json Data connections - example
 {
   "id": "00000000-0000-0000-0000-000000000000",
@@ -47,7 +56,7 @@ Data connections can have one of the statuses described in the following table.
 
 ## Disconnect a data connection to revoke your access to a data source
 
-You can disconnect a data connection using the <a className="external" href="https://api.codat.io/swagger/index.html#/Connection/patch_companies__companyId__connections__connectionId_" target="_blank">PATCH /connectionId endpoint</a>. This revokes your access to synchronize data with the linked company and sets the data connection's status to `Unlinked`.
+You can disconnect a data connection using the <a href="https://api.codat.io/swagger/index.html#/Connection/patch_companies__companyId__connections__connectionId_" target="_blank">PATCH /connectionId endpoint</a>. This revokes your access to synchronize data with the linked company and sets the data connection's status to `Unlinked`.
 
 To disconnect a data connection, you'll need to provide:
 
@@ -94,7 +103,7 @@ Request body:
 
 ## Delete a data connection
 
-To delete a data connection, send a request to the <a className="external" href="https://api.codat.io/swagger/index.html#/Connection/delete_companies__companyId__connections__connectionId_" target="_blank">DELETE /connectionId endpoint</a> and provide the `companyId` and `connectionId` as path parameters.
+To delete a data connection, send a request to the <a href="https://api.codat.io/swagger/index.html#/Connection/delete_companies__companyId__connections__connectionId_" target="_blank">DELETE /connectionId endpoint</a> and provide the `companyId` and `connectionId` as path parameters.
 
 ```http
 DELETE /companies/COMPANY_ID/connections/CONNECTION_ID

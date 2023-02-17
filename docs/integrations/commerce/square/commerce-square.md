@@ -5,9 +5,7 @@ createdAt: "2020-09-18T08:54:12.512Z"
 updatedAt: "2022-10-20T13:38:20.108Z"
 ---
 
-<a className="external" href="https://squareup.com/" target="_blank">
-  Square
-</a> helps retail businesses to start, run, and grow. They make it easy for sellers
+[Square](https://squareup.com/) helps retail businesses to start, run, and grow. They make it easy for sellers
 to accept payments in person, through Square POS devices, and online through seller
 websites.
 
@@ -19,4 +17,4 @@ View the coverage of our Square integration in the <a className="external" href=
 
 ## Set up the integration
 
-See [Set up the Square integration](/commerce-square-setup) to learn how to set up and enable the integration.
+See [set up the Square integration](/integrations/commerce/square/commerce-square-setup) to learn how to set up and enable the integration.

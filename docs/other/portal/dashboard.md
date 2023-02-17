@@ -12,7 +12,7 @@ The Codat Portal home page gives you a quick way of seeing the products you're u
 
 This section allows you to access other sections of the Portal where you are able to set up, monitor, and use the Codat products.
 
-Some navigation bar tabs (for example, the [Developers](/portal-for-developers) tab) are only available to specific [user roles](/user-roles).
+Some navigation bar tabs (for example, the [Developers](/other/portal/developers) tab) are only available to specific [user roles](/other/user-management/user-roles).
 
 ## Getting started
 
@@ -34,7 +34,5 @@ This section gives you real-time insight into the number of companies and the cu
 - Unlinked, or
 - No connections.
 
-Note that:
+Note that you can access the list of companies by selecting the **View all companies** button.
 
-- You can access the list of companies by selecting the **View all companies** button.
-- All the statuses can be accessed via API using the <a class="external" href="https://api.codat.io/swagger/index.html#/Metrics/get_metrics_companies" target="_blank">Metrics</a> endpoint.

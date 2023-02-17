@@ -11,9 +11,9 @@ This document provides guidelines for data mapping configuration from a commerce
 
 In Codat's Sync flow, the data types are grouped under the three features:
 
-- [Sales](/xero-mapping-specification#sales)
-- [Fees](/xero-mapping-specification#fees)
-- [Payments](/xero-mapping-specification#payments)
+- [Sales](/sfc/mapping-specifications/xero-mapping-specification#sales)
+- [Fees](/sfc/mapping-specifications/xero-mapping-specification#fees)
+- [Payments](/sfc/mapping-specifications/xero-mapping-specification#payments)
 
 ## Sales
 
@@ -21,7 +21,7 @@ The **Sales** feature represents all sales made in the course of a company’s n
 
 To set up **Sales** using the Codat Sync for Commerce UI flow, a merchant needs to complete the following steps:
 
-1. Select the accounts for **[Sales](/xero-mapping-specification#sales-1)**, **[Refunds](/xero-mapping-specification#refunds)**, **[Gratuity](/xero-mapping-specification#gratuity)**, and **[Prepaid](/xero-mapping-specification#prepaid)** features from the respective dropdown lists. The lists display all the applicable accounts available on the merchant’s Xero accounting platform.
+1. Select the accounts for **[Sales](/sfc/mapping-specifications/xero-mapping-specification#sales)**, **[Refunds](/sfc/mapping-specifications/xero-mapping-specification#refunds)**, **[Gratuity](/sfc/mapping-specifications/xero-mapping-specification#gratuity)**, and **[Prepaid](/sfc/mapping-specifications/xero-mapping-specification#prepaid)** features from the respective dropdown lists. The lists display all the applicable accounts available on the merchant’s Xero accounting platform.
 2. Select the tax rates that they wish to apply to the data they are sending.
 3. Select the preferred status for invoices representing the **Sales** data within their accounting platform.
 
@@ -48,15 +48,15 @@ Discounts are applied to the total of the purchase once all the items have been 
 
 When the merchant receives payment for the reported sales, the invoice is marked as paid and is balanced by the merchant’s holding account (also known as a clearing or a liquid account) for the respective payment type.
 
-To learn more about the configuration of **Payments**, navigate to the [Payments](/xero-mapping-specification#payments) section.
+To learn more about the configuration of **Payments**, navigate to the [Payments](/sfc/mapping-specifications/xero-mapping-specification#payments) section.
 
 #### Refunds
 
 Refunds represent a catch-all for all refunds, cash or non-cash.
 
-Similar to **[Sales](/xero-mapping-specification#sales)**, **Refunds** are usually booked on a nominal account that the merchant uses to book their revenue, of the Xero type **Revenue**.
+Similar to **[Sales](/sfc/mapping-specifications/xero-mapping-specification#sales)**, **Refunds** are usually booked on a nominal account that the merchant uses to book their revenue, of the Xero type **Revenue**.
 
-Typically, merchants would push **[Sales](/xero-mapping-specification#sales)** and **Refunds** into the same account. However, they can use a different account if they wish to report them separately.
+Typically, merchants would push **[Sales](/sfc/mapping-specifications/xero-mapping-specification#sales)** and **Refunds** into the same account. However, they can use a different account if they wish to report them separately.
 
 When purchase refunds are recorded in Xero, the negative revenue will be booked to the selected account.
 
@@ -82,13 +82,13 @@ The **Prepaid** feature includes the transactions pertaining to selling and rede
 
 Transactions of the type **Prepaid** should be booked into a **Liability** account.
 
-The purchase of prepaid items will appear as a line item on the daily **[Sales](/xero-mapping-specification#sales)** invoice in Xero.
+The purchase of prepaid items will appear as a line item on the daily **[Sales](/sfc/mapping-specifications/xero-mapping-specification#sales)** invoice in Xero.
 
-Note that when a customer uses the prepaid item (for example, purchases an item with a gift card), this is processed as a normal sale (see **[Sales](/xero-mapping-specification#sales)**).
+Note that when a customer uses the prepaid item (for example, purchases an item with a gift card), this is processed as a normal sale (see **[Sales](/sfc/mapping-specifications/xero-mapping-specification#sales)**).
 
 ## Fees
 
-The Fees feature encompasses the transactions that involve the commerce service provider, including **[Payment fees](/xero-mapping-specification#payment-fees)** that a commerce platform charges the merchant for processing their card transactions and **[Payment fee refunds](/xero-mapping-specification#payment-fee-refunds)**.
+The Fees feature encompasses the transactions that involve the commerce service provider, including **[Payment fees](/sfc/mapping-specifications/xero-mapping-specification#payment-fees)** that a commerce platform charges the merchant for processing their card transactions and **[Payment fee refunds](/sfc/mapping-specifications/xero-mapping-specification#payment-fee-refunds)**.
 
 ### Fees account mapping
 
@@ -126,7 +126,7 @@ A cash refund payment for the whole value of the credit note is simultaneously p
 
 ## Payments
 
-Payment accounts contain cash. This is in contrast to all the accounts discussed in the **[Sales](/xero-mapping-specification#sales)** and **[Fees](/xero-mapping-specification#fees)** sections, which are nominal accounts and represent accounting concepts rather than hard cash.
+Payment accounts contain cash. This is in contrast to all the accounts discussed in the **[Sales](/sfc/mapping-specifications/xero-mapping-specification#sales)** and **[Fees](/sfc/mapping-specifications/xero-mapping-specification#fees)** sections, which are nominal accounts and represent accounting concepts rather than hard cash.
 
 Codat supports either bank accounts or current accounts for **Payments**. They should be of a nominal type **Asset** or **Liability** and have an **Enable payments to this account** setting turned on:
 
@@ -164,6 +164,6 @@ If the user starts using other payments types after initial setup, the synchroni
 
 Codat pushes a single payment to Xero per day per payment type which has been used that day.
 
-For example, if the merchant processes ten card payments and twenty cash payments in one day, two payments are pushed. These payments are recorded against the daily sales invoice (see **[Sales](/xero-mapping-specification#sales)**).
+For example, if the merchant processes ten card payments and twenty cash payments in one day, two payments are pushed. These payments are recorded against the daily sales invoice (see **[Sales](/sfc/mapping-specifications/xero-mapping-specification#sales)**).
 
 If you are pushing **Sales** and **Payments** simultaneously, the sales invoices will be pushed to Xero fully paid (as no further cash is expected from customers).

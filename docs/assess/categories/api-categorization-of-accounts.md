@@ -4,6 +4,9 @@ description: "Reference document for the Account Categorization endpoints"
 createdAt: "2022-02-21T12:45:33.573Z"
 updatedAt: "2022-11-02T14:38:29.977Z"
 ---
+:::caution Account category versions
+This categorization of accounts via only applies to our classic [Enhanced Financials](/assess/reports/enhanced-financials/financials). For our revised categorization aimed at eCommerce lenders, explore [Enhanced Financials for eCommerce lenders.](/assess/reports/enhanced-financials-ecommerce-lenders/financials)
+:::
 
 The **Categorization of accounts** API consists of the following endpoints:
 
@@ -23,7 +26,7 @@ Account categories have three sub-categories:
 
 # List all available categories
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_assess_accounts_categories" target="_blank">Swagger</a> under **Assess**. It contains the original category suggested by Codat `suggested` and the category that was confirmed by you or your customer `confirmed`.
+The endpoint is available in our <a href="/assess-api#/operations/get-data-assess-accounts-categories">API reference</a>. It contains the original category suggested by Codat `suggested` and the category that was confirmed by you or your customer `confirmed`.
 
 - A list of all the Codat standard categories can be found under:
 
@@ -55,7 +58,7 @@ GET /data/assess/accounts/categories
 
 ## Get the category for a specific account
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_accounts__accountId__categories" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-accounts-accountId-categories">API reference</a>.
 
 The suggested and confirmed categories for a specific account can be obtained from the following endpoint:
 
@@ -86,110 +89,40 @@ GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categ
 
 # List all accounts with their categories
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/get_data_companies__companyId__connections__connectionId__assess_accounts_categories" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-accounts-categories">API reference</a>.
 
 ```http
 GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categories
 ```
 
 ## Data model
-
-[block:parameters]
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "accountRef",
-"0-1": "See [AccountRef](#accountref)",
-"0-2": "An object containing account reference data.",
-"1-2": "An object containing suggested category data.",
-"2-2": "An object containing confirmed category data.",
-"1-0": "suggested",
-"1-1": "See [Suggested](#suggested)",
-"2-0": "confirmed",
-"2-1": "See [Confirmed](#confirmed)"
-},
-"cols": 3,
-"rows": 3
-}
-[/block.
+| Field      | Type                          | Description                                   |
+|------------|-------------------------------|-----------------------------------------------|
+| accountRef | See [AccountRef](#accountref) | An object containing account reference data.  |
+| suggested  | See [Suggested](#suggested)   | An object containing suggested category data. |
+| confirmed  | See [Confirmed](#confirmed)   | An object containing confirmed category data. |
 
 ## AccountRef
-
-[block:parameters]
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "id",
-"1-0": "name",
-"0-1": "_string_",
-"1-1": "_string_",
-"0-2": "The account Id.",
-"1-2": "The name of the account."
-},
-"cols": 3,
-"rows": 2
-}
-[/block.
+| Field     | Type                           | Description                                   |
+|-----------|--------------------------------|-----------------------------------------------|
+| id        |  _string_                      | The account Id.                               |
+| name      |  _string_                      | The name of the account.                      |
 
 ## Suggested
-
-[block:parameters]
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "type",
-"1-0": "subtype",
-"2-0": "detailType",
-"3-0": "modifiedDate",
-"0-1": "_string_",
-"1-1": "_string_",
-"2-1": "_string_",
-"3-1": "See [Date](/datamodel-shared-date)",
-"0-2": "The suggested account type.",
-"1-2": "The suggested account subtype.",
-"2-2": "The suggested account detail type.",
-"3-2": "YYYY-MM-DDT00:00:00Z
-
-The date the category was suggested for the account."
-},
-"cols": 3,
-"rows": 4
-}
-[/block]
+| Field         | Type        | Description                                                                 |
+|---------------|-------------|-----------------------------------------------------------------------------|
+| type          |  _string_   | The suggested account type.                                                 |
+| subtype       |  _string_   | The suggested account subtype.                                              |
+| detailType    |  _string_   | The suggested account detail type.                                          |
+| modifiedDate  | See [Date](/datamodel-shared-date)    | The date the category was suggested for the account, YYYY-MM-DDT00:00:00Z.  |
 
 # Confirmed
-
-[block:parameters]
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "type",
-"1-0": "subtype",
-"2-0": "detailType",
-"3-0": "modifiedDate",
-"3-1": "See [Date](/datamodel-shared-date)",
-"0-1": "_string_",
-"1-1": "_string_",
-"2-1": "_string_",
-"0-2": "The confirmed account type.",
-"1-2": "The confirmed account subtype.",
-"2-2": "The confirmed account detail type.",
-"3-2": "YYYY-MM-DDT00:00:00Z
-
-The date the account category was confirmed."
-},
-"cols": 3,
-"rows": 4
-}
-[/block]
+| Field         | Type        | Description                                                         |
+|---------------|-------------|---------------------------------------------------------------------|
+| type          |  _string_   | The confirmed account type.                                         |
+| subtype       |  _string_   | The confirmed account subtype.                                      |
+| detailType    |  _string_   | The confirmed account detail type.                                  |
+| modifiedDate  | See [Date](/datamodel-shared-date)   | The date the account category was confirmed, YYYY-MM-DDT00:00:00Z.  |
 
 ```
 {
@@ -216,10 +149,10 @@ The date the account category was confirmed."
 
 # Update categories for a company
 
-The categories for all or a batch of accounts in a specific connection can be updated in Swagger under Assess.
+The categories for all or a batch of accounts in a specific connection can be updated in Sthe API reference.
 Note that this does not update the end accounting platform’s account, and only updates the categories saved against the company within Assess.
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/patch_data_companies__companyId__connections__connectionId__assess_accounts_categories" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="/assess-api#/operations/patch-data-companies-companyId-connections-connectionId-assess-accounts-categories">API reference</a>.
 
 `PATCH /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categories`
 
@@ -253,7 +186,7 @@ You can provide a partial list of accounts you wish to update, or pass the whole
 
 The confirmed category for an account can be updated or removed.
 
-The endpoint is available in <a className="external" href="https://api.codat.io/swagger/index.html#/Assess/patch_data_companies__companyId__connections__connectionId__assess_accounts__accountId__categories" target="_blank">Swagger</a> under **Assess**.
+The endpoint is available in our <a href="/assess-api#/operations/patch-data-companies-companyId-connections-connectionId-assess-accounts-accountId-categories">API reference</a>.
 
 `PATCH /data/companies/{companyId}/connections/{connectionId}/assess/accounts/{accountId}/categories`
 

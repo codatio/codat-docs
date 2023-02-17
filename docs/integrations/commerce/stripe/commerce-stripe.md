@@ -18,7 +18,7 @@ The integration now uses <a className="external" href="https://stripe.com/docs/c
 
 If you're an existing user, you must configure your Stripe integration to use Stripe Connect before you can link any more customers (merchants). Existing data connections are unaffected until 2024, the planned deprecation date for Stripe extensions.
 
-See [Set up the Stripe integration](/commerce-stripe-setup) for the steps you need to take to update your integration.
+See [Set up the Stripe integration](/integrations/commerce/stripe/commerce-stripe-setup) for the steps you need to take to update your integration.
 :::
 
 ## Data type coverage
@@ -29,7 +29,7 @@ View the coverage of our Stripe integration in the <a className="external" href=
 
 Codat provides two Stripe integrations: **Stripe Test** and **Stripe**. The following table explains what each integration is used for.
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "Integration",
@@ -47,7 +47,7 @@ To enable live mode, you must first activate your Stripe account by providing ad
 "cols": 3,
 "rows": 2
 }
-[/block]
+
 
 ## Switch between test and live modes
 
@@ -57,4 +57,4 @@ You can switch between _test mode_ and _live mode_ in Stripe using the toggle at
 
 ## Set up the integration
 
-See [Set up your Stripe integration](/commerce-stripe-setup) to learn how to set up and enable the integration.
+See [Set up your Stripe integration](/integrations/commerce/stripe/commerce-stripe-setup) to learn how to set up and enable the integration.

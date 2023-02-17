@@ -13,15 +13,15 @@ Before they start the linking process, the user must open QuickBooks Desktop and
 
 To install the QuickBooks Desktop connector, the user who is connecting their company data must complete the following tasks:
 
-1. [Download the connector](/installing-the-quickbooks-connector#1-download-the-connector)
+1. [Download the connector](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector#1-download-the-connector)
 
-2. [Launch the connector and enter the licence key](/installing-the-quickbooks-connector#2-launch-the-connector-and-enter-the-licence-key)
+2. [Launch the connector and enter the licence key](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector#2-launch-the-connector-and-enter-the-licence-key)
 
-3. [Verify files, select a region and initiate Link](/installing-the-quickbooks-connector#3-verify-files-select-a-region-and-initiate-link)
+3. [Verify files, select a region and initiate Link](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector#3-verify-files-select-a-region-and-initiate-link)
 
-4. [Authorize the connector to access QuickBooks](/installing-the-quickbooks-connector#4-authorize-the-connector-to-access-quickbooks)
+4. [Authorize the connector to access QuickBooks](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector#4-authorize-the-connector-to-access-quickbooks)
 
-5. [Wait for the connector to complete first link](/installing-the-quickbooks-connector#5-wait-for-the-connector-to-complete-first-link)
+5. [Wait for the connector to complete first link](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector#5-wait-for-the-connector-to-complete-first-link)
 
 ## 1. Download the connector
 
@@ -95,7 +95,7 @@ Check the details in the **Access Confirmation** dialog, and then click **Done**
 
 ## 5. Wait for the connector to complete first link
 
-Once access to QuickBooks has been granted, the connector will process the datasets you have chosen to _fetch on first link_ (see [Data Sync Settings](/data-sync-settings)). Upon completion of the first link, a message will be shown to the user confirming that their data has been synchronized.
+Once access to QuickBooks has been granted, the connector will process the datasets you have chosen to _fetch on first link_ (see [Data Sync Settings](/core-concepts/data-type-settings)). Upon completion of the first link, a message will be shown to the user confirming that their data has been synchronised.
 
 If you have chosen to have your connectors perform a one-time synchronization, the connector will uninstall itself and set the company status to _deauthorized_.
 

@@ -38,3 +38,9 @@ If you'd like to opt-in to a breaking change before its planned implementation d
 Ensure you are familiar with the details of the deprecation you plan to enable and have completed any necessary preparations. 
 
 Only users with [developer](https://codat-docs.vercel.app/other/user-management/user-roles) and [administrator](https://codat-docs.vercel.app/other/user-management/user-roles) roles are able to access the Developers tab and enable the deprecations early.
+
+## Deprecation schedule
+
+You can also [subscribe to our deprecation calendar](https://calendar.google.com/calendar/embed?src=c_83b00ebce11207e3c2b7b51fab82909ccff1e5a15f8d466f5919733aca458efb%40group.calendar.google.com).
+
+<iframe src="https://calendar.google.com/calendar/embed?src=c_83b00ebce11207e3c2b7b51fab82909ccff1e5a15f8d466f5919733aca458efb%40group.calendar.google.com" style={{border: 0}} width="800" height="600" frameborder="0" scrolling="no"></iframe>

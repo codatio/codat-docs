@@ -27,11 +27,11 @@ The Audit Report requires an accounting integration with at least one of the fol
 
 The Excel file generated contains the `UnAnalyzedDataTypes` field in the [Report Info](#report-info) sheet which lists the data types that are required to maximize the value of the Audit Report but are disabled. It is recommended you enable these data types.
 
-Data types can be enabled using <a className="external" href="https://api.codat.io/swagger/index.html#/Profile/post_profile_syncSettings" target="_blank">Codat's API</a> or in the <a className="external" href="/data-sync-settings" target="_blank">Portal</a>.
+Data types can be enabled in the <a className="external" href="/core-concepts/data-type-settings" target="_blank">Portal</a>.
 
 ## Generating the report
 
-The Audit Report can be generated via API or through [Codat's Portal](/assess/portal/overview#reports). The [Excel reports](/assess-excel-reports) page describes how to generate and download the report via API.
+The Audit Report can be generated via API or through [Codat's Portal](/assess/portal/overview#reports). The [Excel reports](/assess/reports/excel-reports) page describes how to generate and download the report via API.
 
 ## Understanding the report
 
@@ -83,7 +83,7 @@ Borders and styling were added to this image for clarity but is not included in 
 
 This section of the Audit Report displays Gross Profit, Net Operating Profit and Net Profit metrics on a month-by-month basis with percentage change and yearly summaries. This offers insight into any extreme changes that could be indicative of abnormal growth, fraud or additional debt taken on by the company.
 
-Explore [Enhanced Profit and Loss](/assess-enhanced-profit-and-loss) to see the full categorized profit and loss statement.
+Explore [Enhanced Profit and Loss](/assess/reports/enhanced-financials/profit-and-loss) to see the full categorized profit and loss statement.
 
 #### Report structure
 

@@ -3,6 +3,8 @@ title: "Data type settings"
 description: "Concept overview and key details"
 createdAt: "2019-02-20T13:19:55.318Z"
 updatedAt: "2022-11-23T15:22:42.512Z"
+tags:
+  - Core concept
 ---
 
 A 'data type' is a specific type of data, like an [invoice](/accounting-api#/schemas/Invoice).
@@ -41,7 +43,7 @@ When **Fetch on first link** is turned _off_ for a data type:
 - The data type is not automatically queued for synchronization when a company is first linked.
 - You can still queue a pull for this individual data type using the [POST /companies/{companyId}/data/queue/{dataType}](https://api.codat.io/swagger/index.html#/Data/post_companies__companyId__data_queue__dataType_) endpoint. This might be useful for testing, or if you only need infrequent access to a dataset.
 
-For more information about how to synchronize datasets on demand, see [Synchronizing your data](/data-status).
+For more information about how to synchronize datasets on demand, see [Synchronizing your data](/core-concepts/status).
 
 ## Choose a synchronization frequency
 
@@ -63,12 +65,10 @@ To manually trigger your data to be synchronized:
 2. Select the required company, then click **Refresh data**.
 
 You can also view **Pull history** and **Push history** to check the status of previous pull and push data syncs.
-<!-- 
+
 :::note Additional sync settings
-
-Some additional settings for the data type sync are available [via our API](https://docs.codat.io/reference/post_profile-syncsettings).
-
-::: -->
+Some additional settings for the data type sync are available [via our API](/codat-api#/operations/post-profile-syncSettings).
+:::
 
 ---
 

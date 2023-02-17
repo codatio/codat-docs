@@ -20,11 +20,11 @@ in a single system.
 
 View the coverage of our Oracle NetSuite integration in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=akxx" target="_blank">Data coverage explorer</a>.
 
-For more details about the supported data types and operations, see [Oracle NetSuite integration reference](/oracle-netsuite-integration-reference).
+For more details about the supported data types and operations, see [Oracle NetSuite integration reference](/integrations/accounting/netsuite/oracle-netsuite-integration-reference).
 
 ## Set up the integration
 
-See [Set up the Oracle NetSuite integration](/integrations/accounting/netsuite-setup) to learn how to set up and enable the integration.
+See [Set up the Oracle NetSuite integration](/integrations/accounting/netsuite/accounting-netsuite-setup) to learn how to set up and enable the integration.
 
 ## Syncing very large data volumes
 

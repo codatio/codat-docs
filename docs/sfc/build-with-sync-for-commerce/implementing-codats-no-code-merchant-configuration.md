@@ -18,12 +18,7 @@ Before Codat can accept the data from your merchant, the merchant must:
 
 Our Sync configuration flow handles this for you.
 
-You can [customize your flow](/customizing-the-sync-configuration-flow) to give your users the best experience.
-
-:::note Use our Swagger to follow this guide
-
-All the endpoints mentioned in this guide are available in our <a href="https://api.codat.io/sync/swagger/" target="_blank">Sync for Commerce Swagger</a>. You can use it to try the API requests from this guide directly in your browser. Before you use Swagger, make sure to [authenticate](https://docs.codat.io/reference/authentication).
-:::
+You can [customize your flow](/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow) to give your users the best experience.
 
 ### 1. Retrieve the Sync configuration flow URL
 
@@ -73,7 +68,7 @@ The merchant will be redirected to an authorization page for the accounting plat
 
 Once successful, they will have created a valid Connection, and will be redirected to the configuration step.
 
-:::note
+:::note Using Codat's Link solution
 
 If you used our Embedded Link or Hosted Link solutions for platform selection, this step will be skipped automatically.
 :::
@@ -88,9 +83,9 @@ Once authorized, the merchant is presented with Codat’s white-labeled configur
 - Set up the default invoice status
 - Set up the data grouping period
 
-:::note
+:::note Building a branded experience
 
-To provide your merchants with a branded experience, we recommend that you customize your [Sync configuration flow](/customizing-the-sync-configuration-flow), including your logo and primary color.
+To provide your merchants with a branded experience, we recommend that you customize your [Sync configuration flow](/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow), including your logo and primary color.
 :::
 
 ### 4. Allow the merchant to review their configuration
@@ -106,11 +101,12 @@ To allow the merchants to review and modify their connection, present them with 
 - Set up the data grouping period
 - De-authorize the connection to their accounting platform
 
-:::caution Caution
+:::caution Sync connection deleted
 
-> In case the merchant severs the connection, the next scheduled data sync will fail, and no further data syncs will be attempted.
->
-> You can [set up an alert](/core-rules-create) for the [Sync Connection Deleted](/core-rules-types#sync-connection-deleted) rule to be notified if a merchant severs their connection.
+In case the merchant severs the connection, the next scheduled data sync will fail, and no further data syncs will be attempted.
+
+You can [set up an alert](/introduction/webhooks/core-rules-create) for the [Sync Connection Deleted](/introduction/webhooks/core-rules-types#sync-connection-deleted) rule to be notified if a merchant severs their connection.
+:::
 
 ### 5. (Optional) Check the configuration status
 
@@ -126,7 +122,7 @@ GET /companies/{companyId}
 
 Sample response:
 
-```http
+```json
 {
   "results": [
     {
@@ -192,7 +188,7 @@ Both the `enabled` and `configured` parameters should be set to `true`.
 
 You're ready to start [pushing commerce data](/sync-data-pushing) to this company.
 
-:::note
-
-Don't forget to customize your [Sync configuration flow](/customizing-the-sync-configuration-flow).
+:::note Customizing the Sync flow
+ 
+Don't forget to customize your [Sync configuration flow](/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow).
 :::

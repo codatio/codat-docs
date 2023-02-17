@@ -26,7 +26,7 @@ Codat's bundles are referred to as unmanaged bundles in Oracle NetSuite. This me
 1. Log in to the [Codat Portal](https://app.codat.io).
 2. On the navigation bar, select **Settings > Integrations > Accounting**.
 3. Find **Oracle NetSuite** then select **Set up** to view the **Integration settings** page.
-4. Choose what type of access to company data you want to have for this integration: one-off or continuous. For help, see [Sync settings](/data-sync-settings).
+4. Choose what type of access to company data you want to have for this integration: one-off or continuous. For help, see [Sync settings](/core-concepts/data-type-settings).
 5. Click **Save**.
 
 ## Enable the Oracle NetSuite integration

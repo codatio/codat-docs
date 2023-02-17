@@ -1,4 +1,4 @@
----
+   ---
 title: "Test your Shopify integration"
 description: "Test your Shopify integration by pulling sample data to a test company"
 createdAt: "2021-01-14T13:50:30.467Z"
@@ -9,8 +9,8 @@ Test your Shopify integration by pulling commerce data from a Development Store 
 
 ## Prerequisites
 
-- [Set up your Shopify integration](/commerce-shopify-setup).
-- Update your [Commerce data type settings](/commerce-sync-settings) to enable commerce data types.
+- Set up your Shopify integration using either the custom apps or public apps connection method.
+- Update your [Commerce data type settings](/integrations/commerce/commerce-sync-settings) to enable commerce data types.
 
 ## Add a test company
 
@@ -23,7 +23,7 @@ Keep the **Companies** page open in your browser.
 
 ## Create a Development Store and sample data
 
-1. Log in to the <a className="external" href="https://developers.shopify.com/" target="_blank">Shopify Partners</a> site with your partner account credentials.
+1. Log in to the <a href="https://developers.shopify.com/" target="_blank">Shopify Partners</a> site with your partner account credentials.
 2. Select **Stores > Add store**.
 3. On the **Add store** page, select **Development store**.
 4. Enter all the requested details and make a note of the **Store URL**.
@@ -43,9 +43,15 @@ Test the authorization process that your customers will see when they connect th
 In the Codat Portal:
 
 1. Click **Companies** then locate the test company you created in the preceding task.
+
 2. Next to the company name, click **Request data**.
+
 3. In the **Onboarding** dialog, copy the **Link URL**.
-4. Paste the Link URL into a new browser tab; the Link site loads.
+
+4. Paste the Link URL into a new browser tab to load Link.
+
+   The following steps apply if you're using public apps. If you're using custom apps, go to step six.
+
 5. Complete the steps in Link; the exact steps shown depend on your Link settings. You'll need to:
    1. When asked to select your commerce software, select the **Shopify** tile.
    2. Authorize access to the listed commerce data types.
@@ -54,7 +60,13 @@ In the Codat Portal:
 
 When the Link flow is complete, your Development Store opens and your app is automatically installed into the Store.
 
-<img src="/img/old/d2bf06b-shopify-development-store-app-installed.png" />
+   <img src="/img/old/d2bf06b-shopify-development-store-app-installed.png" />
+
+6. (If using custom apps.) Complete the steps in Link; the exact steps shown depend on your Link settings. You'll need to:
+
+   1. On the **Connect your Shopify store** screen, enter the name of your Development Store and your API Access Token, then click **Continue**.
+
+When the Link flow is complete, your Development Store opens and your custom app is automatically installed into the Store.
 
 ## Retrieve commerce data
 

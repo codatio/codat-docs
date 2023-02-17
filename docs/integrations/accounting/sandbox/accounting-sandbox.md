@@ -15,4 +15,4 @@ View the coverage of our Sandbox integration in the <a className="external" href
 
 ## Set up the integration
 
-See [Set up Codat Sandbox](/accounting-sandbox-setup) to learn how to set up and enable the integration.
+See [Set up Codat Sandbox](/integrations/accounting/sandbox/accounting-sandbox-setup) to learn how to set up and enable the integration.

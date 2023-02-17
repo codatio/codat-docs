@@ -32,7 +32,7 @@ Create and configure an application in the FreshBooks Developer Portal.
 
    - **Application Type**: Select **Private App**.
 
-   - **Scopes**: Add the scopes listed in [FreshBooks application scopes](/accounting-freshbooks-setup#freshbooks-application-scopes) on this page.
+   - **Scopes**: Add the scopes listed in [FreshBooks application scopes](/integrations/accounting/freshbooks/accounting-freshbooks-setup#freshbooks-application-scopes) on this page.
 
    - **Redirect URIs**: Enter `https://freshbooks.codat.io/oauth/callback` then click the check mark icon to save the URI.
 
@@ -48,7 +48,7 @@ The following table lists the recommended scopes to set for your FreshBooks appl
 
 These are the minimum scopes needed to allow _read_ (pull) access to the FreshBooks objects that are supported by Codat. If you want to _push_ data to FreshBooks, also select the corresponding _write_ scopes for the objects you need to push. If the scopes you require change in future, all connected companies will need to reauthenticate with your app.
 
-[block:parameters]
+
 {
 "data": {
 "h-0": "",
@@ -83,7 +83,7 @@ user:teams:read"
 "left"
 ]
 }
-[/block]
+
 
 ## Add your app's secure keys to the Codat Portal
 

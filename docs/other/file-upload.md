@@ -10,7 +10,7 @@ You can capture your SMB's business documents in addition to contributed data ac
 
 The file upload integrations are available in the Codat Portal in **Settings > Integrations > Other integrations**.
 
-:::caution Caution
+:::caution Scanning for viruses
 
 Although we scan all uploaded files for viruses, we recommend that you do the same for optimum security.
 :::
@@ -53,15 +53,15 @@ A zip file will be downloaded. It will contain all the files that were uploaded 
 
 ## Access file uploads via the Codat API
 
-Explore the API reference [here](http://localhost:3000/files-api#/).
+Explore the API reference [here](/files-api#/).
 
-[List files uploaded by a company](http://localhost:3000/files-api#/operations/list-files):
+[List files uploaded by a company](/files-api#/operations/list-files):
 
 ```json
 GET /companies/{companyId}/files
 ```
 
-[Download all files for a company](http://localhost:3000/files-api#/operations/download-files):
+[Download all files for a company](/files-api#/operations/download-files):
 
 ```json
 GET /companies/{companyId}/files/download

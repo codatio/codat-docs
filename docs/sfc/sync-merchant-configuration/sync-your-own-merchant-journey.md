@@ -25,23 +25,11 @@ Before you start, prepare the following details:
 
 You can use our Postman collection to help you follow the steps outlined in this guide.
 
-<div>
-  <a
-    href="https://postman.codat.io/#166a0b48-9f98-47f6-91cd-0986a3de626f"
-    target="_blank"
-    style={{
-      minHeight: "32px",
-      minWidth: "128px",
-      border: "none",
-      backgroundImage: 'url("https://run.pstmn.io/button.svg")',
-      cursor: "pointer",
-    }}
-  >
-    <button class="postman-button"></button>
-  </a>
-</div>
 
-All the endpoints mentioned in this guide are also available in the <a href="https://api.codat.io/sync/swagger" target="_blank">Sync for Commerce Swagger</a>. Before you use Swagger, make sure to [authenticate](/step-1-authenticate).
+[![Run in Postman Button](https://run.pstmn.io/button.svg)](https://postman.codat.io/#166a0b48-9f98-47f6-91cd-0986a3de626f/ "Link to run in postman")
+
+
+All the endpoints mentioned in this guide are also available in the <a href="/sync-for-commerce-api#/">Sync for Commerce API reference</a>.
 
 As an alternative, you can also use our Sync for Commerce Postman collection.
 
@@ -111,7 +99,7 @@ The response to this request includes the parameters of a newly created company,
     }
   ]
 }
-[/block]
+
 
 :::caution Keep track of the `companyId`
 
@@ -137,7 +125,7 @@ POST /meta/companies/{companyId}/connections
 ```
 **Request body**: `“key”`, for example `“gbol”` for Xero
 
-3. From the response, identify the `linkUrl` value for the accounting platform. Direct the merchants to this linkUrl to enable them to grant access to their accounting platform. As soon as the access is provided, Codat automatically pulls [all the accounting data required to enable the merchant configuration](/sync-commerce/overview#sync-for-commerce-prerequisistes).
+3. From the response, identify the `linkUrl` value for the accounting platform. Direct the merchants to this linkUrl to enable them to grant access to their accounting platform. As soon as the access is provided, Codat automatically pulls [all the accounting data required to enable the merchant configuration](/sfc/overview#sync-for-commerce-prerequisistes).
 
 ```
 
@@ -156,7 +144,7 @@ POST /meta/companies/{companyId}/connections
 }
 ]
 }
-[/block] 4. After the merchant completes the authorization and grants access to their accounting platform, ensure they are redirected to your data mapping configuration UI by [configuring relevant redirect URLs](/redirect-urls)..
+ 4. After the merchant completes the authorization and grants access to their accounting platform, ensure they are redirected to your data mapping configuration UI by [configuring relevant redirect URLs]((/auth-flow/customize/set-up-redirects)..
 
 ## Data mapping configuration
 
@@ -201,8 +189,8 @@ As sales data is typically represented on a calendar day basis, we strongly reco
 Such an approach ensures that a full calendar day’s worth of data is synchronized, which facilitates the reconciliation of data between the merchant’s commercial and accounting platforms.
 :::
 
-:::info Info
-You can see [Codat’s merchant configuration flow](/implementing-codats-no-code-merchant-configuration) for an example of a UI implementing this functionality.
+:::info
+You can see [Codat’s merchant configuration flow](/sfc/build-with-sync-for-commerce/implementing-codats-no-code-merchant-configuration) for an example of a UI implementing this functionality.
 :::
 
 3. Update the configuration via the Create Config endpoint:

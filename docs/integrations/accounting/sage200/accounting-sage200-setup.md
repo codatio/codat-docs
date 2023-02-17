@@ -21,7 +21,7 @@ Codat currently supports Sage 200cloud Standard **only**.
 
 Sage has recently modified the way applications and integrations are authenticated in Sage 200 API. You can find out more about the changes in <a href="https://gb-kb.sage.com/portal/app/portlets/results/viewsolution.jsp?solutionid=201204115644533" target="_blank">Sage 200 API - Guide to Sage ID Changes</a>.
 
-If you're a Codat **customer who already has an account** with Sage, please refer to section [Request new credentials](/accounting-sage200-setup#section-request-new-credentials) below. **Customers who need to set up their Sage accounts** are requested to follow the process described below.
+If you're a Codat **customer who already has an account** with Sage, please refer to section [Request new credentials](/integrations/accounting/sage200/accounting-sage200-setup#section-request-new-credentials) below. **Customers who need to set up their Sage accounts** are requested to follow the process described below.
 :::
 
 Before you can access data from customers using Sage 200cloud for their accounting, you need to set up a Sage 200cloud integration in the Codat Portal. You'll need to:
@@ -135,5 +135,5 @@ If you link a Codat test company to one of the [Sage sandbox accounts](https://d
 :::
 
 :::note Tax rates on line items
-Due to a Sage 200cloud limitation, tax rates on line items for invoices, credit notes, bills, and bill credit notes appear differently to other integrations. For more information, see [Sage 200cloud limitations](/sage200-limitations).
+Due to a Sage 200cloud limitation, tax rates on line items for invoices, credit notes, bills, and bill credit notes appear differently to other integrations. For more information, see [Sage 200cloud limitations](/integrations/accounting/sage200/sage200-limitations).
 :::

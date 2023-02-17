@@ -24,7 +24,7 @@ Next, the user is asked to confirm that they want to uninstall the Sage 50 conne
 
 ## Uninstallation if the connector is closed before the first link
 
-The Sage 50 connector will be uninstalled if the user closes the connector before they've completed all the link flow steps (see [Set up the Sage 50 connector](/installing-the-sage-50-connector)).
+The Sage 50 connector will be uninstalled if the user closes the connector before they've completed all the link flow steps (see [Set up the Sage 50 connector](/integrations/accounting/sage50/installing-the-sage-50-connector).
 
 When the close icon is clicked, the connector is uninstalled, and the Codat company that was going to be linked will become _PendingAuth_.
 

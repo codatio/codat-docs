@@ -13,7 +13,7 @@ You'll need to:
 - Retrieve your app's secure keys.
 - Add the app's secure keys to the Codat Portal.
 
-To link more than 25 companies, you need to [become a Xero app partner](/accounting-xero-setup#apply-to-become-a-xero-app-partner).
+To link more than 25 companies, you need to [become a Xero app partner](/integrations/accounting/xero/accounting-xero-setup#apply-to-become-a-xero-app-partner).
 
 ## Create a Xero app
 
@@ -51,7 +51,7 @@ If you want to apply to become a Xero app partner, you need to provide your priv
 2. Enter `https://` links to your privacy policy and terms and conditions in the relevant boxes.
 3. Click **Save**.
 
-For details on how to become a Xero app partner, see [Apply to become a Xero app partner](/accounting-xero-setup#apply-to-become-a-xero-app-partner).
+For details on how to become a Xero app partner, see [Apply to become a Xero app partner](/integrations/accounting/xero/accounting-xero-setup#apply-to-become-a-xero-app-partner).
 
 ## Retrieve your app's secure keys
 
@@ -93,7 +93,7 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 ## Configure direct bank feeds
 
-To create a direct bank feed using Xero's Bank Feeds API, you push (`POST`) [Bank Transactions](/data-model/accounting/-banktransactions) via the Codat API. Bank transactions must be pushed in chronological order.
+To create a direct bank feed using Xero's Bank Feeds API, you push (`POST`) [Bank Transactions](/accounting-api#/schemas/banktransactions) via the Codat API. Bank transactions must be pushed in chronological order.
 
 To create direct bank feeds in Xero, you must have app partner status. Additionally, the Bank Feeds API must be enabled by Xero for your registered app. For more information, see the Bank Feeds API <a href="https://developer.xero.com/documentation/bank-feeds-api/overview" target="_blank">Overview</a> in the Xero Developer documentation.
 

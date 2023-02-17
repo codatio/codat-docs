@@ -45,7 +45,7 @@ We built Embedded Link to be flexible so that you can integrate and initialize i
 2. Tailored to be flexible and support your custom onboarding and connection journey flows
 3. Fast and easy implementation with a pre-built code component
 4. Authentication in line with OAuth 2.0 standards
-5. UI that can be [customized](/set-up-link) and reflects your [company branding](/set-up-your-company-branding)
+5. UI that can be [customized](/auth-flow/customize/customize-link) and reflects your [company branding](/auth-flow/customize/branding)
 
 ## Resources
 
@@ -75,7 +75,7 @@ import '../node_modules/@codat/link-sdk/index.css';
 
 ## Embedding the Link application
 
-The component requires a `companyId` parameter to open Link for a specific company. To obtain the `companyId`, first [create a Codat company](/using-the-api/managing-companies-1) for your customer. We recommend doing that at the same time as your SMB customer signs up within your app.
+The component requires a `companyId` parameter to open Link for a specific company. To obtain the `companyId`, first [create a Codat company](/using-the-api/managing-companies) for your customer. We recommend doing that at the same time as your SMB customer signs up within your app.
 
 From the response to company creation, retain the `companyId` parameter. Then, initialize the Codat Link component in your app:
 

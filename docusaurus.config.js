@@ -91,11 +91,11 @@ module.exports = {
         {
           label: "API",
           position: "left",
-          className: "navbar__link--community",
+          className: "navbar__link--api",
           items: [
             {
               href: "/codat-api",
-              label: "Codat API",
+              label: "Common API",
             },
             {
               href: "/accounting-api",
@@ -109,18 +109,18 @@ module.exports = {
               href: "/commerce-api",
               label: "Commerce API",
             },
-            // {
-            //   href: "/accounting-api",
-            //   label: "Bank Feed API",
-            // },
+            {
+              href: "/bank-feeds-api",
+              label: "Bank Feeds API",
+            },
             {
               href: "/assess-api",
               label: "Assess API",
             },
-            // {
-            //   href: "/accounting-api",
-            //   label: "Sync for Commerce API",
-            // },
+            {
+              href: "/sync-for-commerce-api",
+              label: "Sync for Commerce API",
+            },
             {
               href: "/sync-for-expenses-api",
               label: "Sync for Expenses API",
@@ -190,7 +190,7 @@ module.exports = {
               rel: null,
             },
             {
-              href: "https://docs.codat.io/discuss",
+              href: "https://github.com/orgs/codatio/discussions",
               label: "Ask the community",
               target: "_blank",
               rel: null,
@@ -204,30 +204,6 @@ module.exports = {
           ],
           className: "navbar__link--support",
         },
-        // {
-        //   type: 'search',
-        //   position: 'right',
-        // },
-        // {
-        //   type: 'iconLink',
-        //   position: 'right',
-        //   icon: {
-        //     alt: 'twitter logo',
-        //     src: `/logos/twitter.svg`,
-        //     href: 'https://twitter.com/codatdata',
-        //     target: '_blank',
-        //   },
-        // },
-        // {
-        //   type: 'iconLink',
-        //   position: 'right',
-        //   icon: {
-        //     alt: 'github logo',
-        //     src: `/logos/github.svg`,
-        //     href: 'https://github.com/codatio',
-        //     target: '_blank',
-        //   },
-        // },
         { 
           href: "https://app.codat.io/", 
           label: "Sign in", 
@@ -243,7 +219,7 @@ module.exports = {
       ],
     },
     // tagManager: {
-    //   trackingID: "GTM-TKMGCBC",
+    //   trackingID: process.env.GA_TAG_ID,
     // },
     // prism: {
     //   theme: { plain: {}, styles: [] },
@@ -303,6 +279,69 @@ module.exports = {
     ],
     "@docusaurus/plugin-content-pages",
     "@docusaurus/plugin-debug",
+    [ // only works on prod
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            to:  '/introduction/first-steps',
+            from: '/docs',
+          },
+          {
+            to:  '/introduction/create-account',
+            from: '/docs/core-account-signup',
+          },
+          {
+            to:  '/using-the-api/overview',
+            from: '/docs/using-codats-api',
+          },
+          {
+            to:  '/using-the-api/authentication',
+            from: '/reference/authentication',
+          },
+          {
+            to:  '/using-the-api/querying',
+            from: '/reference/querying',
+          },
+          {
+            to:  '/using-the-api/paging',
+            from: '/reference/paging',
+          },
+          {
+            to:  '/using-the-api/ordering-results',
+            from: '/reference/ordering-results',
+          },
+          {
+            to:  '/using-the-api/modified-dates',
+            from: '/reference/modified-dates-1',
+          },
+          {
+            to:  '/using-the-api/managing-companies',
+            from: '/reference/managing-companies-1',
+          },
+          {
+            to:  '/using-the-api/queueing-data-syncs',
+            from: '/reference/queueing-data-syncs-1',
+          },
+          {
+            to:  '/using-the-api/errors',
+            from: '/reference/errors',
+          },
+          {
+            to:  '/using-the-api/push',
+            from: '/reference/push-creating-and-updating-data',
+          },
+          {
+            to:  '/using-the-api/rate-limits',
+            from: '/reference/rate-limits-1',
+          },
+          {
+            to:  '/using-the-api/optimizing-api-calls',
+            from: '/reference/optimizing-your-api-calls-1',
+          },
+        ],
+      },
+    ],
     "@docusaurus/plugin-sitemap",
     // Add custom webpack config to make @stoplight/elements work
     () => ({
