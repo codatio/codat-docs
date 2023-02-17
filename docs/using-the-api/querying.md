@@ -48,7 +48,7 @@ The total length of your query should be under 2048 characters in order to be va
 
 Our `GET /{dataType}` endpoints typically return an array of items of that given data type. If you want to retrieve just a single data type by an ID, you can use a query. For example:
 
-`query=id%253D81be41e9-5c2c-4064-829c-bca43b5e6f59.
+`query=id%253D81be41e9-5c2c-4064-829c-bca43b5e6f59.`
 
 ## Example queries
 

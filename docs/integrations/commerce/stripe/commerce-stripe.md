@@ -29,25 +29,10 @@ View the coverage of our Stripe integration in the <a className="external" href=
 
 Codat provides two Stripe integrations: **Stripe Test** and **Stripe**. The following table explains what each integration is used for.
 
-
-{
-"data": {
-"h-0": "Integration",
-"0-0": "**Stripe Test** ",
-"1-0": "**Stripe** ",
-"h-1": "Connects to...",
-"0-1": "Stripe _test mode_ using the _test client ID_ and _test Secret key_.",
-"1-1": "Stripe _live mode_ using the _live client ID_ and _live Secret key_.
-
-To enable live mode, you must first activate your Stripe account by providing additional information about your business.",
-"h-2": "Retrieves...",
-"0-2": "Test data from Stripe, available for Company info, Customers, Disputes, Payments, Products, and Transactions.",
-"1-2": "Live data from production Stripe accounts."
-},
-"cols": 3,
-"rows": 2
-}
-
+|Integration|Connects to...|Retrieves...|
+|----|----|----|
+|**Stripe Test**|Stripe _test mode_ using the _test client ID_ and _test Secret key_.|Test data from Stripe, available for Company info, Customers, Disputes, Payments, Products, and Transactions.|
+|**Stripe**|Stripe _live mode_ using the _live client ID_ and _live Secret key_. To enable live mode, you must first activate your Stripe account by providing additional information about your business.|Live data from production Stripe accounts.|
 
 ## Switch between test and live modes
 
