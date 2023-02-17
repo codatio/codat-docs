@@ -33,42 +33,12 @@ The endpoint is available in our <a href="/assess-api#/operations/get-companies-
 `GET /data/companies{companyId}/connections/{connectionId}/assess/enhancedProfitandLoss`
 
 # Parameters
-
-
-{
-"data": {
-"h-0": "Parameter",
-"h-1": "Type",
-"h-2": "Description",
-"h-3": "Required",
-"0-0": "**reportDate** ",
-"0-1": "_string_
-See [Date](/common-api#/schemas/DateTime)",
-"0-2": "YYYY-MM-DD
-
-Datetime or, Date (inclusive of whole day).",
-"0-3": "Required",
-"1-0": "**periodlength** ",
-"1-1": "_integer_ ",
-"2-0": "**numberOfPeriods** ",
-"3-0": "**includeDisplayNames** ",
-"2-1": "_integer_ ",
-"3-1": "_boolean_ ",
-"1-2": "The number of months per period.
-
-It must be positive, not zero and an integer.",
-"2-2": "The number of periods to return. It must be positive, not zero and an integer.",
-"3-2": "Shows the _dimensionDisplayName_ and _itemDisplayName_ in measures to make the report data human-readable.
-
-Default is _false_.",
-"1-3": "Required",
-"2-3": "Required",
-"3-3": "Optional"
-},
-"cols": 4,
-"rows": 4
-}
-
+|Parameter|Type|Description|Required|
+|----|----|----|----|
+|**reportDate**|_string_, See [Date](/common-api#/schemas/DateTime)|YYYY-MM-DD, Datetime or Date (inclusive of whole day).|Required|
+|**periodlength**|_integer_|The number of months per period. It must be positive, not zero and an integer.|Required|
+|**numberOfPeriods**|_integer_|The number of periods to return. It must be positive, not zero and an integer.|Required|
+|**includeDisplayNames**|_boolean_|Shows the _dimensionDisplayName_ and _itemDisplayName_ in measures to make the report data human-readable. Default is _false_.|Optional|
 
 # Data model
 
@@ -76,22 +46,12 @@ The response structure is split into four areas: Report info, Dimensions, Measur
 
 ## Report info
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**name** ",
-"0-1": "_string_ ",
-"1-0": "**displayName** ",
-"1-1": "_string_ ",
-"0-2": "“enhanced_profit_and_loss”",
-"1-2": "“Enhanced Profit and Loss”"
-},
-"cols": 3,
-"rows": 2
-}
+|Parameter|Type|Description|Required|
+|----|----|----|----|
+|**reportDate**|_string_, See [Date](/common-api#/schemas/DateTime)|YYYY-MM-DD, Datetime or, Date (inclusive of whole day).|Required|
+|**periodlength**|_integer_|The number of months per period. It must be positive, not zero and an integer.|Required|
+|**numberOfPeriods**|_integer_|The number of periods to return. It must be positive, not zero and an integer.|Required|
+|**includeDisplayNames**|_boolean_|Shows the _dimensionDisplayName_ and _itemDisplayName_ in measures to make the report data human-readable. Default is _false_.|Optional|
 
 
 ## Dimensions
@@ -100,236 +60,81 @@ The _Enhanced Profit and Loss_ consists of these dimensions: Period, Category, S
 
 ### Dimension (index = “0”): Period
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**displayName** ",
-"1-0": "**type** ",
-"2-0": "**items** ",
-"0-1": "_string_ ",
-"1-1": "_string_ ",
-"2-1": "_array_
-See [Dimension (index = “0”) items](#dimension-index--0-items)",
-"0-2": "“Period”",
-"1-2": "“datespan”",
-"2-2": "Returns an array of “Period”. This is driven by the query parameter values.
-
-Ordered by latest to earliest periods."
-},
-"cols": 3,
-"rows": 3
-}
+|Field|Type|Description|
+|----|----|----|
+|**displayName**|_string_|"Period"|
+|**type**|_string_|"datespan"|
+|**items**|_array_, See [Dimension (index = "0") items](#dimension-index--0-items)|Returns an array of "Period". This is driven by the query parameter values. Ordered by latest to earliest periods.|
 
 
 #### Dimension (index = “0”) items
 
-
-{
-"data": {
-"0-0": "**displayName** ",
-"1-0": "**start** ",
-"2-0": "**end** ",
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-1": "_string_ ",
-"1-1": "_string_
-See [Date](/common-api#/schemas/DateTime)",
-"2-1": "_string_
-See [Date](/common-api#/schemas/DateTime)",
-"0-2": "“Period n”",
-"1-2": "YYYY-MM-DD
-
-Date in which the period begins (inclusive).",
-"2-2": "YYYY-MM-DD
-
-Date in which the period ends (inclusive)."
-},
-"cols": 3,
-"rows": 3
-}
+|Field|Type|Description|
+|----|----|----|
+|**displayName**|_string_|"Period n"|
+|**start**|_string_, See [Date](/common-api#/schemas/DateTime)|YYYY-MM-DD, Date in which the period begins (inclusive).|
+|**end**|_string_, See [Date](/common-api#/schemas/DateTime)|YYYY-MM-DD, Date in which the period ends (inclusive).|
 
 
 ### Dimension (index = “1”): Category
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**displayName** ",
-"1-0": "**type** ",
-"2-0": "**items** ",
-"0-1": "_string_",
-"1-1": "_string_",
-"2-1": "_array_
-See [Dimension (index = “1”) items](#dimension-index--1-items)",
-"0-2": "“Type”",
-"1-2": "“string”",
-"2-2": "\* Returns an array of “Categories”.
-
-- Ordered as: Income and Expense.
-- Also includes Gross Profit, Net Operating Profit and Net Profit as calculated values."
-  },
-  "cols": 3,
-  "rows": 3
-  }
-  
+|Field|Type|Description|
+|----|----|----|
+|**displayName**|_string_|"Type"|
+|**type**|_string_|"string"|
+|**items**|_array_, See [Dimension (index = "1") items](#dimension-index--1-items)|Returns an array of "Categories". Ordered as: Income and Expense. Also includes Gross Profit, Net Operating Profit and Net Profit as calculated values.|
 
 #### Dimension (index = “1”) items
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**value** ",
-"0-1": "_string_",
-"0-2": "\* “Income”
-
-- “Expense”
-- “Gross Profit”
-- “Net Operating Profit”
-- “Net Profit”
-
-These will always show for any response in this report. The dimension values are not dependent on the user’s query parameters."
-},
-"cols": 3,
-"rows": 1
-}
+|Field|Type|Description|
+|----|----|----|
+|**value**|_string_|"Income", "Expense", "Gross Profit", "Net Operating Profit", "Net Profit". These will always show for any response in this report. The dimension values are not dependent on the user's query parameters.|
 
 
 ### Dimension (index = “2”): Sub Type
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**displayName** ",
-"1-0": "**type** ",
-"2-0": "**items** ",
-"0-1": "_string_",
-"1-1": "_string_",
-"2-1": "_array_
-See [Dimension (index = “2”) items](#dimension-index--2-items)",
-"0-2": "“Sub Type”",
-"1-2": "“string”",
-"2-2": "Returns an array of “Sub Type” of unique values. For example, “Operating” and “Non Operating”."
-},
-"cols": 3,
-"rows": 3
-}
+|Field|Type|Description|
+|----|----|----|
+|**displayName**|_string_|"Sub Type"|
+|**type**|_string_|"string"|
+|**items**|_array_, See [Dimension (index = "2") items](#dimension-index--2-items)|Returns an array of "Sub Type" of unique values. For example, "Operating" and "Non Operating".|
 
 
 #### Dimension (index = “2”) items
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**value** ",
-"0-1": "_string_",
-"0-2": "Returns all sub types available for the company queried."
-},
-"cols": 3,
-"rows": 1
-}
-
+|Field|Type|Description|
+|----|----|----|
+|**value**|_string_|Returns all sub types available for the company queried.|
 
 ### Dimension (index = “3”): Detail Type
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**displayName** ",
-"0-1": "_string_",
-"1-1": "_string_",
-"1-0": "**type** ",
-"2-0": "**items** ",
-"2-1": "_array_
-See [Dimension (index = “3”) items](#dimension-index--3-items)",
-"0-2": "“Detail Type”",
-"1-2": "“string”",
-"2-2": "Returns an array of “Detail Type” of unique values."
-},
-"cols": 3,
-"rows": 3
-}
-
+|Field|Type|Description|
+|----|----|----|
+|**displayName**|_string_|"Detail Type"|
+|**type**|_string_|"string"|
+|**items**|_array_, See [Dimension (index = "3") items](#dimension-index--3-items)|Returns an array of "Detail Type" of unique values.|
 
 #### Dimension (index = “3”) items
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**value** ",
-"0-1": "_string_",
-"0-2": "Returns all category detail types available for the company queried.
-
-Does not return the category detail types where there is no existing account data."
-},
-"cols": 3,
-"rows": 1
-}
+|Field|Type|Description|
+|----|----|----|
+|**value**|_string_|Returns all category detail types available for the company queried. Does not return the category detail types where there is no existing account data.|
 
 
 ### Dimension (index = “4”): Accounts
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**displayName** ",
-"0-1": "_string_",
-"1-0": "**type** ",
-"1-1": "_string_",
-"2-0": "**items** ",
-"2-1": "_array_
-See [Dimension (index = “4”) items](#dimension-index--4-items)",
-"2-2": "Returns an array of "Accounts".",
-"0-2": ""Accounts"",
-"1-2": ""recordRef""
-},
-"cols": 3,
-"rows": 3
-}
-
+|Field|Type|Description|
+|----|----|----|
+|**displayName**|_string_|"Accounts"|
+|**type**|_string_|"recordRef"|
+|**items**|_array_, See [Dimension (index = "4") items](#dimension-index--4-items)|Returns an array of "Accounts".|
 
 #### Dimension (index = “4”) items
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**id** ",
-"0-1": "_string_",
-"1-0": "**displayName** ",
-"1-1": "_string_",
-"0-2": "Unique record of the account.",
-"1-2": "Name of the account."
-},
-"cols": 3,
-"rows": 2
-}
+|Field|Type|Description|
+|----|----|----|
+|**id**|_string_|Unique record of the account.|
+|**displayName**|_string_|Name of the account.|
 
 If any account needs to be recategorized, use the [API: Categorization of accounts](/assess/categories/api-categorization-of-accounts) endpoint.
 
@@ -341,45 +146,19 @@ The two measures for this report are as follows:
 
 **Index “0” - value**
 
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**displayName** ",
-"0-1": "_string_",
-"2-0": "**type** ",
-"2-1": "_string_",
-"0-2": "“Value”",
-"2-2": "“currency”",
-"1-0": "**units** ",
-"1-1": "_string_",
-"1-2": "Currency of the P&L."
-},
-"cols": 3,
-"rows": 3
-}
+|Field|Type|Description|
+|----|----|----|
+|**displayName**|_string_|"Value"|
+|**units**|_string_|Currency of the P&L.|
+|**type**|_string_|"currency"|
 
 **Index “1” - percentage change**
 
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**displayName** ",
-"2-0": "**type** ",
-"0-1": "_string_",
-"2-1": "_string_",
-"0-2": "“Percentage change vs. previous period”",
-"2-2": "“percentage”",
-"1-0": "**units** ",
-"1-1": "_string_",
-"1-2": ""%""
-},
-"cols": 3,
-"rows": 3
-}
+|Field|Type|Description|
+|----|----|----|
+|**displayName**|_string_|"Percentage change vs. previous period"|
+|**units**|_string_|"%"|
+|**type**|_string_|"percentage"|
 
 
 ## Report data
@@ -404,29 +183,13 @@ Components are nested within each other as below (grouped by dimension (index =�
 
 ### Components structure
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**dimension** ",
-"0-1": "_number_ ",
-"1-0": "**dimensionDisplayName** ",
-"2-0": "**item** ",
-"3-0": "**itemDisplayName** ",
-"4-0": "**measures**",
-"1-1": "_string_ ",
-"3-1": "_string_",
-"2-1": "_number_",
-"1-2": "Shows when _includeDisplayNames_ is set to _true_.",
-"3-2": "Shows when _includeDisplayNames_ is set to _true_.",
-"4-1": "See [Measures in components](#measures-in-components)",
-"0-2": "Index 1 to 4, see dimensions."
-},
-"cols": 3,
-"rows": 5
-}
+|Field|Type|Description|
+|----|----|----|
+|**dimension**|_number_|Index 1 to 4, see dimensions.|
+|**dimensionDisplayName**|_string_|Shows when _includeDisplayNames_ is set to _true_.|
+|**item**|_number_||
+|**itemDisplayName**|_string_|Shows when _includeDisplayNames_ is set to _true_.|
+|**measures**|See [Measures in components](#measures-in-components)||
 
 All components have the structure described in the _Measures in components_ data model below.
 
@@ -434,40 +197,17 @@ All components have the structure described in the _Measures in components_ data
 
 **Index "0"**
 
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**measureDisplayName** ",
-"1-0": "**value**",
-"0-1": "_string_ ",
-"0-2": "“Value”",
-"1-1": "_number_ "
-},
-"cols": 3,
-"rows": 2
-}
+|Field|Type|Description|
+|----|----|----|
+|**measureDisplayName**|_string_|"Value"|
+|**value**|_number_||
 
 **Index “1”**
 
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**measureDisplayName** ",
-"1-0": "**value**",
-"0-1": "_string_",
-"1-1": "_string_",
-"0-2": "“Percentage change vs previous period”
-
-If the system can't calculate the percentage change, this object will not display.",
-"1-2": "“%”"
-},
-"cols": 3,
-"rows": 2
-}
+|Field|Type|Description|
+|----|----|----|
+|**measureDisplayName**|_string_|"Percentage change vs previous period". If the system can't calculate the percentage change, this object will not display.|
+|**value**|_string_|"%"|
 
 Each component level contains the total level in the currency, and the percentage change.
 

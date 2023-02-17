@@ -48,42 +48,9 @@ The following table lists the recommended scopes to set for your FreshBooks appl
 
 These are the minimum scopes needed to allow _read_ (pull) access to the FreshBooks objects that are supported by Codat. If you want to _push_ data to FreshBooks, also select the corresponding _write_ scopes for the objects you need to push. If the scopes you require change in future, all connected companies will need to reauthenticate with your app.
 
-
-{
-"data": {
-"h-0": "",
-"h-1": "",
-"h-2": "",
-"0-0": "user:profile:read  
-user:bills:read  
-user:bill_payments:read  
-user:business:read  
-user:bill_vendors:read  
-user:clients:read  
-user:credit_notes:read",
-"0-1": "user:estimates:read  
-user:expenses:read  
-user:journal_entries:read  
-user:online_payments:read  
-user:payments:read  
-user:projects:read  
-user:retainers:read",
-"0-2": "user:taxes:read  
-user:billable_items:read  
-user:invoices:read  
-user:other_income:read  
-user:reports:read  
-user:teams:read"
-},
-"cols": 3,
-"rows": 1,
-"align": [
-"left",
-"left",
-"left"
-]
-}
-
+||||
+|----|----|----|
+|user:profile:read, user:bills:read, user:bill_payments:read, user:business:read, user:bill_vendors:read, user:clients:read  user:credit_notes:read|user:estimates:read, user:expenses:read, user:journal_entries:read, user:online_payments:read, user:payments:read, user:projects:read, user:retainers:read|user:taxes:read, user:billable_items:read, user:invoices:read, user:other_income:read, user:reports:read, user:teams:read|
 
 ## Add your app's secure keys to the Codat Portal
 
