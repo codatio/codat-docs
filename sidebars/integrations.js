@@ -213,6 +213,7 @@ module.exports = [
           "integrations/accounting/zoho-books/zoho-books-integration-reference",
         ],
       },
+      "integrations/accounting/offline-connectors",
     ],
   },
   {
