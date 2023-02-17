@@ -97,4 +97,3 @@ Callout for integrations:
 
 This integration supports supplemental data. Read more about (configuring for supplemental data)[] and how you can (pull it for this integration)[].
 Then a separate page perhaps? Or Reference, or Set up pages
-```
