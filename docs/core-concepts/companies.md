@@ -7,6 +7,14 @@ tags:
   - Core concept
 ---
 
+:::info Welcome to our new docs!
+
+They are in beta, so you may find some snags in our content.
+
+You can contribute to them <a href="https://github.com/codatio/codat-docs" target="_blank">here</a>, or see the old ones <a href="https://codat.readme.io/">here</a>.
+
+:::
+
 In Codat, a company represents a business sharing access to their data. Each company can have multiple [data connections](/core-concepts/connections) to different data sources such as one connection to [Xero](/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](/integrations/commerce/zettle/commerce-zettle) for POS data.
 
 Typically each company is one of your customers.

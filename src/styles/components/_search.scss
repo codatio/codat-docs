@@ -36,6 +36,9 @@ html[data-theme="dark"] {
   [class^="searchBox_"] {
     flex-grow: 1;
     max-width: 14rem;
+
+    //remove
+    display: none;
   }
 
   @media (max-width: 996px) {
