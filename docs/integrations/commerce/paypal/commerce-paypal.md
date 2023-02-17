@@ -5,9 +5,7 @@ createdAt: "2021-03-25T13:08:19.226Z"
 updatedAt: "2022-11-15T13:20:16.445Z"
 ---
 
-<a className="external" href="https://www.paypal.com/" target="_blank">
-  PayPal
-</a> is an international online payment processing platform that handles credit card
+[PayPal](https://www.paypal.com/) is an international online payment processing platform that handles credit card
 payments and charges on behalf of small businesses.
 
 Use Codat's Commerce API with PayPal to securely connect to, retrieve, and view your customers' commerce transactions.
@@ -21,9 +19,12 @@ View the coverage of our PayPal integration in the <a className="external" href=
 See [Set up the PayPal Integration](/integrations/commerce/paypal/set-up-paypal-in-production) to learn how to set up and enable the integration.
 
 :::caution Underlying provider requirements
+
 Codat's PayPal integration is built using PayPal's XS2A API and is available only to organizations holding an AISP and/or PISP authorization.
 
 PayPal requires you to provide them with either an eIDAS QWAC or OBWAC, i.e. an Open Banking certification. For guidance on how to register for one of these certifications, see [Payment Services Directive 2 (PSD2) Compliance](https://developer.paypal.com/reference/guidelines/psd2-compliance/) in the PayPal developer documentation.
+
+:::
 
 ## Supported versions and geographies
 

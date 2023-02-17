@@ -13,17 +13,24 @@ Follow our guide [here](/integrations/accounting/xero/xero-app-partner-program).
 
 ## How can I set up a Bank Feed to a Xero account?
 
-:::danger Prerequisites
+:::caution Prerequisites
 
-1. When pushing transaction to an existing bank account, that bank account must have been previously pulled (synced) via the Codat API.
+Be aware of the following prerequisites:
+
+1. When pushing transactions to an existing bank account, that bank account must have been previously pulled (synced) via the Codat API.
 2. Xero requires a real Xero account (either a full account or a free trial) to be used for pushing bank transactions. Linking with the Xero Demo Company will not allow Bank Feeds, resulting in an appropriate 403 error.
-3. :::
 
-4. You must first have Bank Feeds [configured and allowed](/integrations/accounting/xero/accounting-xero-setup#configuration-of-bank-feeds).
-5. Then, to create a direct Bank Feed using Xero's Bank Feeds API, you must POST [Bank Transactions](/accounting-api#/schemas/banktransactions).
-6. When successfully pushed to Xero, the bank transactions will appear in the 'Bank Statements' section for the bank account in the Xero UI, with the source 'Bank Feed' as below:
+::
 
-<img src="/img/old/2530dce-bankFeedsDocs.PNG" />
+To set up a Bank Feed to a Xero account:
+
+1. You must first have Bank Feeds [configured and allowed](/integrations/accounting/xero/accounting-xero-setup#configuration-of-bank-feeds).
+
+2. Then, to create a direct Bank Feed using Xero's Bank Feeds API, you must POST [Bank Transactions](/accounting-api#/schemas/banktransactions).
+
+3. When successfully pushed to Xero, the bank transactions will appear in the 'Bank Statements' section for the bank account in the Xero UI, with the source 'Bank Feed' as below:
+
+   <img src="/img/old/2530dce-bankFeedsDocs.PNG" />
 
 :::info Bank Feeds vs Account Transactions
 Note that the Codat API does not support pushing Xero 'Account Transactions'. Account transaction are reconciled with statement lines from direct Bank Feeds and can be created / matched in the Xero UI.
