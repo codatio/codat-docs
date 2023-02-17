@@ -39,7 +39,7 @@ You can add a call-to-action link to a web page containing more information. Thi
 
 The call-to-action link will appear below the **Connection ID** box in the default Codat authentication site, for example:
 
-![Screenshot](https://files.readme.io/55b90cb-sage-bank-feeds-call-to-action-link.png "Example of a call-to-action link under the Connection ID entry box. The link text reads: Click here to obtain your Connection ID.")
+![Screenshot](/img/old/55b90cb-sage-bank-feeds-call-to-action-link.png "Example of a call-to-action link under the Connection ID entry box. The link text reads: Click here to obtain your Connection ID.")
 
 To add a call-to-action-link:
 
