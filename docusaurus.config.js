@@ -36,11 +36,11 @@ module.exports = {
       { name: "keywords", content: "codat, docs, updates" },
       {
         name: "og:image",
-        content: "https://docs.codat.io/img/meta/open-graph.png",
+        content: "https://docs.codat.io/img/meta/codat-bg.png",
       },
       {
         name: "twitter:image",
-        content: "https://docs.codat.io/img/meta/open-graph.png",
+        content: "https://docs.codat.io/img/meta/codat-bg.png",
       },
       {
         name: "twitter:card",
