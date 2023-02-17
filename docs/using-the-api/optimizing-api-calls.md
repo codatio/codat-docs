@@ -34,7 +34,9 @@ When a user links for the first time, there may be a need to pull all data, for 
 :::note Querying by the record date: example
 
 You can query our [Accounts](/accounting-api#/operations/get-accounts) endpoint with `sourceModifiedDate` as follows:  
-`https://api.codat.io/companies/{companyId}/data/accounts?page=1&pageSize=100&query=sourceModifiedDate>2022-08-23&orderby=-sourceModifiedDate`  
+
+```http
+https://api.codat.io/companies/{companyId}/data/accounts?page=1&pageSize=100&query=sourceModifiedDate>2022-08-23&orderby=-sourceModifiedDate
 This returns any accounts for the given `companyId` that were added or updated in Codat since midnight UTC on the 23 of August. Newest results are displayed first and paged with a size of 100.
 
 :::
