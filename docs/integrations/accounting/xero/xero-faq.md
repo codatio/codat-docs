@@ -20,7 +20,7 @@ Be aware of the following prerequisites:
 1. When pushing transactions to an existing bank account, that bank account must have been previously pulled (synced) via the Codat API.
 2. Xero requires a real Xero account (either a full account or a free trial) to be used for pushing bank transactions. Linking with the Xero Demo Company will not allow Bank Feeds, resulting in an appropriate 403 error.
 
-::
+:::
 
 To set up a Bank Feed to a Xero account:
 
