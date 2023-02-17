@@ -13,7 +13,7 @@ Codat expects the API key to be included in all API requests to the server, Base
 
 `Authorization: Basic YOUR_ENCODED_API_KEY`
 
-:::info Info
+:::info
 You must replace <code>YOUR_ENCODED_API_KEY</code> with your API key, Base64 encoded
 :::
 

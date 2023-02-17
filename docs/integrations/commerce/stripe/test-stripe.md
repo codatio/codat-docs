@@ -63,5 +63,5 @@ In the <a className="external" href="https://app.codat.io/" target="_blank">Coda
 1. Select **Commerce API**.
 1. Use the **Data type** dropdown to view test data from your Stripe testing account. For example, select **Products** or **Transactions**.
 
-:::info Info
+:::info
 Data is only available for supported commerce data types for which test data exists.

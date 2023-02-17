@@ -71,7 +71,7 @@ In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>:
 4. Click the **Commerce API** tab.
 5. Use the tabs to view test data that was pulled from Mollie. For example, click **Customers** or **Transactions**.
 
-:::info Info
+:::info
 Data is only available for supported data types, for which you created test data.
 :::
 

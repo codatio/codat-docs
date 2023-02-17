@@ -72,6 +72,6 @@ In the <a href="https://app.codat.io/" target="_blank">Codat Portal</a>:
 
 5. Use the tabs to view test data that was pulled from Square. For example, click **Products** or **Orders**.
 
-:::info Info
+:::info
 Test data is only available for supported data types for which test data exists in Square.
 :::

@@ -239,7 +239,7 @@ When you disable a data connection, the next scheduled data sync will fail, and 
 
 Only the data from the latest synchronization is removed. Your configuration is retained, and, if the connection is restored, the next synchronization will happen as scheduled.
 
-:::info Info
+:::info
 
 It is not possible to deauthorize a connection using the [no-code Sync for Commerce merchant configuration flow UI](docs:implementing-codats-no-code-merchant-configuration), only delete it. If you delete the connection, the configuration will be removed, as well as any data that has been synchronized.
 :::

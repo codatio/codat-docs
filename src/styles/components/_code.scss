@@ -11,14 +11,12 @@
 
 html[data-theme="light"] {
   --code-block-bg-c: var(--color-interface-10);
+  --color-string: var(--color-warning-dark);
 }
 
 html[data-theme="dark"] {
   --code-block-bg-c: var(--token-secondary-bg-c);
-}
-
-.token-line {
-  color: var(--ifm-pre-color) !important;
+  --color-string: var(--color-warning-20);
 }
 
 .token-line {

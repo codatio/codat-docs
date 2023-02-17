@@ -7,7 +7,7 @@ updatedAt: "2023-01-06T16:40:43.784Z"
 
 Before you can access your customers' commerce data from PayPal, you need to set up your integration.
 
-:::caution Caution
+:::caution
 
 Before you begin, read the Provider requirements on the [PayPal](/integrations/commerce/paypal/commerce-paypal) page.
 :::

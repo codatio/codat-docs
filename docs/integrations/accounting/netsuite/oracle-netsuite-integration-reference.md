@@ -71,7 +71,7 @@ When pushing data to NetSuite, you can apply a discount to any Codat data type t
 
 For example, to apply a discount to a Bill, specify an existing discount item record (`itemType = "Discount"`) from NetSuite in the request body. Codat pushes discounts to NetSuite as separate line items; only the item type and the discount amount are sent.
 
-:::caution Caution
+:::caution
 
 Do not use the Codat properties `lineItems.discountAmount` and `lineItems.discountPercentage` to apply discounts to records in NetSuite.
 :::

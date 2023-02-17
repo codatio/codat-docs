@@ -27,7 +27,7 @@ GET /companies/COMPANY_ID/connections/CONNECTION_ID/data/proxy?endpoint=/account
 
 To view a list of all available endpoints, see the <a className="external" href="https://developers.recurly.com/api/v2021-02-25/index.html" target="_blank">Recurly Developer Hub</a>.
 
-:::caution Caution
+:::caution
 
 Use of the Recurly integration is subject to participation in the Codat [Domain discovery program](/integrations/commerce/domain-discovery-program). Be aware of the [program expectations](/integrations/commerce/domain-discovery-program) before using the integration.
 :::
