@@ -90,9 +90,7 @@ module.exports = [
     collapsed: true,
     items: [
       "data-model/accounting/accounting",
-      ...paths.accounting,
-      "data-model/accounting/supplemental-data",
-    ],
+      ...paths.accounting],
   },
   {
     type: "category",
