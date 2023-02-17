@@ -5,6 +5,14 @@ createdAt: "2022-02-01T13:51:23.646Z"
 updatedAt: "2022-10-17T10:03:46.223Z"
 ---
 
+:::info Welcome to our new docs!
+
+They are in beta, so you may find some snags in our content.
+
+You can contribute to them <a href="https://github.com/codatio/codat-docs" target="_blank">here</a>, or see the old ones <a href="https://codat.readme.io/">here</a>.
+
+:::
+
 Codat provides a free account that lets you explore and test our API and standardized integrations.
 
 <p>

@@ -6,6 +6,14 @@ createdAt: "2019-02-20T09:38:52.916Z"
 updatedAt: "2022-11-07T19:59:38.100Z"
 ---
 
+:::info Welcome to our new docs!
+
+They are in beta, so you may find some snags in our content.
+
+You can contribute to them <a href="https://github.com/codatio/codat-docs" target="_blank">here</a>, or see the old ones <a href="https://codat.readme.io/">here</a>.
+
+:::
+
 - **[/Codat API](/codat-api)** - Manage the building blocks of Codat, including companies, connections, and more.
 - **[/Accounting API](/accounting-api)** - Access standardized accounting data from our accounting integrations.
 - **[/Banking API](/banking-api)** - Access standardized banking data from our banking integrations.
