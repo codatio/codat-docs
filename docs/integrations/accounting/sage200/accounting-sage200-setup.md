@@ -8,7 +8,7 @@ updatedAt: "2023-01-13T15:13:31.523Z"
 
 ## About Sage 200cloud
 
-Sage 200cloud is an accounting solution for small to medium-sized businesses. This cloud-based application provides a flexible tool for organisations to manage their stock, financials, sales, purchases, and sales orders.
+Sage 200cloud is an accounting solution for small to medium-sized businesses. This cloud-based application provides a flexible tool for organizations to manage their stock, financials, sales, purchases, and sales orders.
 
 :::note Supported versions
 
