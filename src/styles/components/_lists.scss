@@ -41,6 +41,11 @@ article .markdown > ul ol {
   margin-top: 0.5em !important;
 }
 
-.task-checkbox{
-  margin-right: 5px;
+.task-list-item {
+  list-style-type: none;
+
+  .task-checkbox{
+    margin-right: 5px;
+    cursor: pointer;
+  }
 }
