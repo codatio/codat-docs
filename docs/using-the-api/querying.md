@@ -56,6 +56,9 @@ Note that characters (<, >) are url-encoded.
 
 ### Invoices with amounts outstanding
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 <Tabs>
 <TabItem value="http" label="HTTP">
 
@@ -88,6 +91,9 @@ var info = response.Data;
 </Tabs>
 
 ### GBP Invoices
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <Tabs>
 <TabItem value="http" label="HTTP">
@@ -122,6 +128,9 @@ var info = response.Data;
 
 ### Invoices to a particular customer
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 <Tabs>
 <TabItem value="http" label="HTTP">
 
@@ -155,6 +164,9 @@ var info = response.Data;
 
 ### Outstanding Invoices of value less than 1000
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 <Tabs>
 <TabItem value="http" label="HTTP">
 
@@ -187,6 +199,9 @@ var info = response.Data;
 </Tabs>
 
 ### Invoices that are due after a certain date (YYYY-MM-DD) e.g. "2021-01-28"
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <Tabs>
 <TabItem value="http" label="HTTP">
@@ -223,6 +238,9 @@ var info = response.Data;
 
 _Note_: the page size value is obligatory for querying.
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 <Tabs>
 <TabItem value="http" label="HTTP">
 
@@ -246,6 +264,9 @@ var info = response.Data;
 ### For companies with no data connection established
 
 *Note*: The page size value is obligatory for querying.
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <Tabs>
 <TabItem value="http" label="HTTP">
