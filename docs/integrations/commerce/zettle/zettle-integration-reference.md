@@ -16,3 +16,7 @@ Sometimes a provider's API does not grant access to a field that exists in a Cod
 The following table highlights selected fields that are not available in data pulled and pushed from Zettle.
 
 ### Unavailable provider fields
+
+| Codat data type                      | Status                              |
+|--------------------------------------|-------------------------------------|
+| `Commerce.Payments.paymentProvider`  | Not available in the provider's API |

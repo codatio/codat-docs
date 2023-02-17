@@ -13,12 +13,12 @@ Customers must install and run the Sage 50 connector on the same computer where 
 
 To install the Sage 50 connector, the user who is connecting their company data—the SMB user—must complete the following tasks:
 
-1. [Download the connector]((/integrations/accounting/sage50/installing-the-sage-50-connector#1-download-the-connector)
-2. [Launch the connector and enter their licence key]((/integrations/accounting/sage50/installing-the-sage-50-connector#2-launch-the-connector-and-enter-their-licence-key)
-3. [Verify company data file]((/integrations/accounting/sage50/installing-the-sage-50-connector#3-verify-company-data-file)
-4. [Select a company data file]((/integrations/accounting/sage50/installing-the-sage-50-connector#4-select-a-company-data-file)
-5. [Enter their Sage 50 credentials]((/integrations/accounting/sage50/installing-the-sage-50-connector#5-enter-their-sage-50-credentials)
-6. [Verify company data]((/integrations/accounting/sage50/installing-the-sage-50-connector#6-verify-company-data)
+1. [Download the connector](/integrations/accounting/sage50/installing-the-sage-50-connector#1-download-the-connector)
+2. [Launch the connector and enter their licence key](/integrations/accounting/sage50/installing-the-sage-50-connector#2-launch-the-connector-and-enter-their-licence-key)
+3. [Verify company data file](/integrations/accounting/sage50/installing-the-sage-50-connector#3-verify-company-data-file)
+4. [Select a company data file](/integrations/accounting/sage50/installing-the-sage-50-connector#4-select-a-company-data-file)
+5. [Enter their Sage 50 credentials](/integrations/accounting/sage50/installing-the-sage-50-connector#5-enter-their-sage-50-credentials)
+6. [Verify company data](/integrations/accounting/sage50/installing-the-sage-50-connector#6-verify-company-data)
 
 ## 1. Download the connector
 

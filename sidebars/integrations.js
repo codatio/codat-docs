@@ -131,7 +131,6 @@ module.exports = [
         items: [
           "integrations/accounting/quickbooksonline/accounting-quickbooksonline",
           "integrations/accounting/quickbooksonline/accounting-quickbooksonline-new-setup",
-          "integrations/accounting/quickbooksonline/test-your-quickbooks-online-integration",
           "integrations/accounting/quickbooksonline/faq-quickbooks-online",
           "integrations/accounting/quickbooksonline/quickbooks-online-integration-reference",
         ],
