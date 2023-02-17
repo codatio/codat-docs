@@ -108,6 +108,7 @@ For example, when rendering the "fullyQualifiedCategory" from the above example 
 ## Step 2: Pushing a record
 
 :::caution Pushing data not referenced by the Options endpoint
+
 If you attempt to push a record using fields that are not documented in the Options response for that company, the additional data may not be pushed to the platform and you may receive validation errors in response to your "push" request.
 :::
 

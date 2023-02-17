@@ -3,6 +3,8 @@ title: "Integrations"
 description: "Concept overview and key details"
 createdAt: "2019-02-15T16:11:29.274Z"
 updatedAt: "2022-10-04T13:56:20.766Z"
+tags:
+  - Core concept
 ---
 
 In Codat, an integration represents a third-party data source that you can connect a [company](/core-concepts/companies) to (using a [data connection](/core-concepts/connections)) so that you can access that company's business data.

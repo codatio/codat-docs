@@ -2,10 +2,8 @@
 title: "Expense transactions"
 ---
 
-# expense-transactions
-
 An expense reconciliation represents the context behind the purchase.
-s
+
 It can include details about the purchase, for example:
 
 - Which account in the general ledger the transaction should be reconciled to
@@ -16,7 +14,7 @@ It can include details about the purchase, for example:
 
 When pushing expenses, use your transaction `id` so that it can serve as an idempotency key. Codat validates `id`'s to ensure that every `id` is unique to a company. This approach prevents duplicate transactions being created in your SMBs' bank feeds.
 
-**Transaction Types**
+## Transaction Types
 
 The way Codat handles, maps and processes a transaction is based on the specified `type` and signage of the transaction.
 
@@ -26,8 +24,10 @@ The way Codat handles, maps and processes a transaction is based on the specifie
 | **Refund**           | Can be used to represent any refunds and returns on an original transaction.                                          |
 | **Reward**           | Can be used to represent reward redemption such as points for cash.                                                   |
 | **Chargeback**       | Is similar, to a refund in behaviour and represents a return of transaction/payment sum which may have been disputed. |
-| **Adjustment**       | Can be used to represent write-off's & transaction adjustments such as foreign exchange adjustments                   |
-| **Transfer**         | Can be used to represent bank withdrawals, a top up of debit card account, a pay down of a credit card account.       |
+| **AdjustmentIn**       | An adjustment that decreases the balance of the credit account or increases the balance of a bank account. Can be used to represent write-off's & transaction adjustments such as foreign exchange adjustments                 |
+| **AdjustmentOut**       | An adjustment that increases the balance of the credit account or decreases the balance of a bank account. Can be used to represent write-off's & transaction adjustments such as foreign exchange adjustments |
+| **TransferIn**         | A transfer that decreases the balance of the credit account or increases the balance of a bank account. Can be used to represent a top up of debit card account, a pay down of a credit card account or a balance transfer to another credit card.       |
+| **TransferOut**         | A transfer that increases the balance of the credit account or decreases the balance of a bank account. Can be used to represent cash withdrawals or balance transfer to another credit card.       |
 
 ```json http
 {

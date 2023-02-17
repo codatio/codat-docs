@@ -34,45 +34,13 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 
 #Parameters
 
-{
-"data": {
-"h-0": "Parameter",
-"h-1": "Type",
-"h-2": "Description",
-"h-3": "Required",
-"0-0": "**reportDate** ",
-"0-1": "_string_
-See [Date](/common-api#/schemas/DateTime)",
-"0-2": "YYYY-MM-DD
-
-Datetime or Date (inclusive of the whole day).",
-"0-3": "Required",
-"1-0": "**periodUnit** ",
-"1-1": "_string_ ",
-"1-2": "The period unit of time returned, and it can be: “Day”, “Week”, “Month”, “Year”.",
-"1-3": "Required",
-"2-0": "**periodLength** ",
-"2-1": "_integer_ ",
-"2-2": "Based on the period unit provided.
-
-It must be positive, not zero and an integer.",
-"2-3": "Required",
-"3-0": "**numberOfPeriods** ",
-"3-1": "_integer_ ",
-"3-2": "The number of periods to return.
-
-It must be positive, not zero and an integer.",
-"3-3": "Required",
-"4-0": "**includeDisplayNames** ",
-"4-1": "_boolean_ ",
-"4-2": "Shows the _dimensionDisplayName_ and _itemDisplayName_ in measures to make the report data human-readable.
-
-Default is false.",
-"4-3": "Optional"
-},
-"cols": 4,
-"rows": 5
-}
+| **Parameter**           | Type                                        | Description                                                                                                                  | Required |
+|-------------------------|---------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|----------|
+| **reportDate**          | _string_ See [Date](/datamodel-shared-date) | YYYY-MM-DD Datetime or Date (inclusive of the whole day).                                                                    | Required |
+| **periodUnit**          | _string_                                    | The period unit of time returned, and it can be: “Day”, “Week”, “Month”, “Year”.                                             | Required |
+| **periodLength**        | _integer_                                   | Based on the period unit provided. It must be positive, not zero and an integer.                                             | Required |
+| **numberOfPeriods**     | _integer_                                   | The number of periods to return. It must be positive, not zero and an integer.                                               | Required |
+| **includeDisplayNames** | _boolean_                                   | Shows the _dimensionDisplayName_ and _itemDisplayName_ in measures to make the report data human-readable. Default is false. | Optional |
 
 #Data model
 
@@ -80,23 +48,10 @@ The response structure is split into four areas: Report info, Dimensions, Measur
 
 ## Report info
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**name** ",
-"0-1": "_string_",
-"0-2": ""orders"",
-"1-0": "**displayName** ",
-"1-1": "_string_",
-"1-2": ""Orders""
-},
-"cols": 3,
-"rows": 2
-}
-
+| **Field**       | Type     | Description |
+|-----------------|----------|-------------|
+| **name**        | _string_ | "orders"    |
+| **displayName** | _string_ | "Orders"    |
 
 ## Dimensions
 
@@ -105,102 +60,34 @@ _Orders_ consists of these dimensions: Period and Order metrics.
 ### Dimension (index = “0”): Period
 
 
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**displayName** ",
-"0-1": "_string_",
-"0-2": ""Period"",
-"1-0": "**type** ",
-"1-1": "_string_",
-"1-2": ""datespan"",
-"2-0": "**items** ",
-"2-1": "_array_
-See [Dimension (index = “0”) items](#dimension-index--0-items)",
-"2-2": "Returns an array of “Period”. This is driven by the query parameter values.
-
-Ordered by latest to earliest periods."
-},
-"cols": 3,
-"rows": 3
-}
+| Field           | Type      | Description                                                                                                                                                           |
+| --------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **displayName** | _string_  | Period n                                                                                                                                                              |
+| **type**        | _string_  | datespan                                                                                                                                                              |
+| **items**       | _array_   | See [Dimension (index = “0”) items](#dimension-index--0-items). Returns an array of “Period”. This is driven by the query parameter                                   |
 
 
 #### Dimension (index = “0”) items
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**displayName** ",
-"0-1": "_string_",
-"0-2": ""Period n"",
-"1-0": "**start** ",
-"1-1": "_string_
-See [Date](/common-api#/schemas/DateTime)",
-"1-2": "YYYY-MM-DD
-
-Date in which the period begins (inclusive).",
-"2-1": "_string_
-See [Date](/common-api#/schemas/DateTime)",
-"2-0": "**end** ",
-"2-2": "YYYY-MM-DD
-
-Date in which the period ends (inclusive)."
-},
-"cols": 3,
-"rows": 3
-}
-
+| Field           | Type                                        | Description                                               |
+|-----------------|---------------------------------------------|-----------------------------------------------------------|
+| **displayName** | _string_                                    | "Period n"                                                |
+| **start**       | _string_ See [Date](/datamodel-shared-date) | YYYY-MM-DD,  Date in which the period begins (inclusive). |
+| **end**         | _string_ See [Date](/datamodel-shared-date) | YYYY-MM-DD,  Date in which the period ends (inclusive).   |
 
 ### Dimension (index = “1”): Order metrics
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**displayName** ",
-"0-1": "_string_",
-"0-2": ""Order metrics"",
-"1-0": "**type** ",
-"1-1": "_string_",
-"1-2": ""string"",
-"2-0": "**items** ",
-"2-1": "array
-See [Dimension (index = “1”) items](#dimension-index--1-items)",
-"2-2": "Returns an array of order metrics."
-},
-"cols": 3,
-"rows": 3
-}
-
+| **Field**       | Type                                                                   | Description                        |
+|-----------------|------------------------------------------------------------------------|------------------------------------|
+| **displayName** | _string_                                                               | "Order metrics"                    |
+| **type**        | _string_                                                               | "string"                           |
+| **items**       | _array_ See [Dimension (index = “1”) items](#dimension-index--1-items) | Returns an array of order metrics. |
 
 #### Dimension (index = “1”) items
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**value** ",
-"0-1": "_string_",
-"0-2": "\* “Number of orders”
-
-- “Total value”
-- "Average order value"
-
-These will always show for any response in this report. The dimension values are not dependent on the user’s query parameters."
-},
-"cols": 3,
-"rows": 1
-}
+| **Field** | Type     | Description                                                                                                                                                                                |
+|-----------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **value** | _string_ | “Number of orders”, “Total value” or "Average order value". These will always show for any response in this report. The dimension values are not dependent on the user’s query parameters. |
 
 
 ## Measures
@@ -211,45 +98,18 @@ The two measures for this report are as follows:
 
 ### Index “0” - Count
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**displayName** ",
-"0-1": "_string_",
-"0-2": ""Count"",
-"1-0": "**type** ",
-"1-1": "_number_",
-"1-2": ""int""
-},
-"cols": 3,
-"rows": 2
-}
-
+| **Field**       | Type     | Description |
+|-----------------|----------|-------------|
+| **displayName** | _string_ | "Count"     |
+| **type**        | _number_ | "int"       |
 
 ### Index “1” - Value
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**displayName** ",
-"0-1": "_string_",
-"1-0": "**units** ",
-"1-1": "_string_",
-"2-0": "**type** ",
-"2-1": "_string_",
-"0-2": "“value”",
-"1-2": "The base currency of the company’s commerce connection.",
-"2-2": "“currency”"
-},
-"cols": 3,
-"rows": 3
-}
+| **Field**       | Type     | Description                                             |
+|-----------------|----------|---------------------------------------------------------|
+| **displayName** | _string_ | “value”                                                 |
+| **units**       | _string_ | The base currency of the company’s commerce connection. |
+| **type**        | _string_ | “currency”                                              |
 
 
 ## Report data
@@ -264,29 +124,13 @@ Each period will be broken down into _Order metrics_.
 
 ### Components structure
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**dimension** ",
-"0-1": "_number_",
-"0-2": "Index 1",
-"1-0": "**dimensionDisplayName** ",
-"1-1": "_string_",
-"1-2": "Shows when _includeDisplayNames_ is set to _true_.",
-"2-0": "**item** ",
-"2-1": "_number_",
-"3-0": "**itemDisplayName** ",
-"4-0": "**measures** ",
-"3-1": "_string_",
-"3-2": "Shows when _includeDisplayNames_ is set to _true_.",
-"4-1": "See [Measures in components](#measures-in-components)"
-},
-"cols": 3,
-"rows": 5
-}
+| **Field**                | Type                                                  | Description                                        |
+|--------------------------|-------------------------------------------------------|----------------------------------------------------|
+| **dimension**            | _number_                                              | Index 1                                            |
+| **dimensionDisplayName** | _string_                                              | Shows when _includeDisplayNames_ is set to _true_. |
+| **item**                 | _number_                                              |                                                    |
+| **itemDisplayName**      | _string_                                              | Shows when _includeDisplayNames_ is set to _true_. |
+| **measures**             | See [Measures in components](#measures-in-components) |                                                    |
 
 All components have the structure described in the _Measures in components_ data model below.
 
@@ -294,38 +138,17 @@ All components have the structure described in the _Measures in components_ data
 
 **Index "0" - Count**
 
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**measureDisplayName** ",
-"0-1": "_string_",
-"0-2": ""Count"",
-"1-0": "**value** ",
-"1-1": "_number_"
-},
-"cols": 3,
-"rows": 2
-}
+| **Field**              | Type   | Description |
+|------------------------|--------|-------------|
+| **measureDisplayName** | string | "Count"     |
+| **value**              | number |             |
 
 **Index “1” - Value**
 
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**measureDisplayName** ",
-"1-0": "**value** ",
-"0-1": "_string_",
-"1-1": "_string_",
-"0-2": "“value"",
-"1-2": ""
-},
-"cols": 3,
-"rows": 2
-}
+| **Field**              | Type   | Description |
+|------------------------|--------|-------------|
+| **measureDisplayName** | string | "value"     |
+| **value**              | number |             |
 
 #Example data
 

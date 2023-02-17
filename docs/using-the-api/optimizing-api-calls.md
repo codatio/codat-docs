@@ -33,7 +33,13 @@ When a user links for the first time, there may be a need to pull all data, for 
 
 :::note Querying by the record date: example
 
-You can query our [Accounts](/accounting-api#/operations/get-accounts) endpoint with `sourceModifiedDate` as follows:<br/>`https://api.codat.io/companies/{companyId}/data/accounts?page=1&pageSize=100&query=sourceModifiedDate>2022-08-23&orderby=-sourceModifiedDate`<br/>This returns any accounts for the given `companyId` that were added or updated in Codat since midnight UTC on the 23 of August. Newest results are displayed first and paged with a size of 100.
+You can query our [Accounts](/accounting-api#/operations/get-accounts) endpoint with `sourceModifiedDate` as follows:
+
+
+`https://api.codat.io/companies/{companyId}/data/accounts?page=1&pageSize=100&query=sourceModifiedDate>2022-08-23&orderby=-sourceModifiedDate`
+
+
+This returns any accounts for the given `companyId` that were added or updated in Codat since midnight UTC on the 23 of August. Newest results are displayed first and paged with a size of 100.
 
 :::
 
@@ -43,7 +49,13 @@ Where possible, use query parameters to filter down the number of results when c
 
 :::note Querying for a use case: example
 
-You can query our [Invoices](/accounting-api#/operations/list-invoices) endpoint for an invoice use case as follows:<br/>`https://api.codat.io/companies/{companyId}/data/invoices?page=1&pageSize=100&query=customerRef.companyName=NewCo`<br/>This returns all invoices for a company issued by a specific customer.  Instead of `customerRef.companyName`, you can use `customerRef.id` to filter by their Id instead.
+You can query our [Invoices](/accounting-api#/operations/list-invoices) endpoint for an invoice use case as follows:
+
+
+`https://api.codat.io/companies/{companyId}/data/invoices?page=1&pageSize=100&query=customerRef.companyName=NewCo`
+
+
+This returns all invoices for a company issued by a specific customer.  Instead of `customerRef.companyName`, you can use `customerRef.id` to filter by their Id instead.
 
 :::
 
