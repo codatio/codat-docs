@@ -19,53 +19,15 @@ The below query functionality will only work when searching for company data (eg
 - The query takes the form of `propertyName=value`.
 - You can also include comparison operators, such as greater than, less than or equal to. The following table shows comparison operators that are supported for numeric, date, and string data types.
 
-
-{
-"data": {
-"h-0": "Operator",
-"h-1": "Name",
-"h-2": "Number",
-"h-3": "String",
-"0-0": "**=**",
-"2-0": "**~**",
-"3-0": "**>**",
-"4-0": "**<**",
-"5-0": "**>=**",
-"6-0": "**<=**",
-"0-1": "Equals",
-"2-1": "Contains",
-"3-1": "Greater than",
-"4-1": "Less than",
-"5-1": "Greater than or equal to",
-"6-1": "Less than or equal to",
-"0-2": "✔",
-"2-2": "❌",
-"3-2": "✔",
-"4-2": "✔",
-"5-2": "✔",
-"6-2": "✔",
-"0-3": "✔",
-"2-3": "✔",
-"3-3": "❌",
-"4-3": "❌",
-"5-3": "❌",
-"6-3": "❌",
-"1-0": "**!=**",
-"1-1": "Not equals",
-"1-2": "✔",
-"1-3": "✔",
-"0-4": "✔",
-"1-4": "✔",
-"3-4": "✔",
-"4-4": "✔",
-"5-4": "✔",
-"6-4": "✔",
-"h-4": "Date",
-"2-4": "❌"
-},
-"cols": 5,
-"rows": 7
-}
+|Operator|Name|Number|String|Date|
+|----|----|----|----|----|
+|**=**|Equals|✔|✔|✔|
+|**!=**|Not equals|✔|✔|✔|
+|**~**|Contains|❌|✔|❌|
+|**>**|Greater than|✔|❌|✔|
+|**<**|Less than|✔|❌|✔|
+|**>=**|Greater than or equal to|✔|❌|✔|
+|**<=**|Less than or equal to|✔|❌|✔|
 
 
 - Separate multiple query clauses with ampersands (`&&`) for _AND_ queries or pipes (`||`) for _OR_ queries.
@@ -85,7 +47,7 @@ The total length of your query should be under 2048 characters in order to be va
 
 Our `GET /{dataType}` endpoints typically return an array of items of that given data type. If you want to retrieve just a single data type by an ID, you can use a query. For example:
 
-`query=id%253D81be41e9-5c2c-4064-829c-bca43b5e6f59.
+`query=id%253D81be41e9-5c2c-4064-829c-bca43b5e6f59.`
 
 ## Example queries
 

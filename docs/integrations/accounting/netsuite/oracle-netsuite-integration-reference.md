@@ -218,32 +218,9 @@ The following tables highlight selected fields that are not available in data pu
 
 ### Unavailable Codat fields
 
-
-{
-"data": {
-"h-0": "Oracle NetSuite record and field",
-"h-1": "Codat data type",
-"h-2": "Status",
-"0-0": "`VendorCredit.customForm`,  
-`VendorCredit.postingPeriod`",
-"0-1": "[Bill credit notes](/accounting-api#/schemas/billcreditnotes)",
-"0-2": "Not represented in Codat's accounting data model.",
-"1-0": "`Invoice.customForm`, `Invoice.postingPeriod`",
-"1-1": "[Invoices](/accounting-api#/schemas/invoices)",
-"1-2": "Not represented in Codat's accounting data model.",
-"2-0": "`Vendor.subsidiary`",
-"2-1": "[Suppliers](/accounting-api#/schemas/Suppliers)",
-"2-2": "The Suppliers data type does not show whether or not a supplier company is a subsidiary.",
-"3-0": "`Vendor.workCalendar`",
-"3-1": "[Suppliers](/accounting-api#/schemas/Suppliers)",
-"3-2": "Not represented in Codat's accounting data model."
-},
-"cols": 3,
-"rows": 4,
-"align": [
-"left",
-"left",
-"left"
-]
-}
-
+|Oracle NetSuite record and field|Codat data type|Status|
+|----|----|----|
+|`VendorCredit.customForm`,  `VendorCredit.postingPeriod`|[Bill credit notes](/accounting-api#/schemas/billcreditnotes)|Not represented in Codat's accounting data model.|
+|`Invoice.customForm`, `Invoice.postingPeriod`|[Invoices](/accounting-api#/schemas/invoices)|Not represented in Codat's accounting data model.|
+|`Vendor.subsidiary`|[Suppliers](/accounting-api#/schemas/Suppliers)|The Suppliers data type does not show whether or not a supplier company is a subsidiary.|
+|`Vendor.workCalendar`|[Suppliers](/accounting-api#/schemas/Suppliers)|Not represented in Codat's accounting data model.|

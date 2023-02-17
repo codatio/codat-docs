@@ -72,35 +72,14 @@ Check that you are following the [Xero app partner branding guidelines](https://
 
 Codat will handle the connection to Xero through the linking journey. You will need to implement a setup page that allows your customer to manage the settings for their Xero connection:
 
-
-{
-"data": {
-"h-0": "Requirement",
-"h-1": "Recommendations",
-"0-0": "Display the name of the tenant that has been connected",
-"0-1": "By default Codat includes a page, post successful connection displaying the Company Name connected.
-
-Alternatively this can be retrieved from Company Info endpoint.",
-"1-0": "Display the current status of the connection(s). If disconnected, provide a button to connect to Xero",
-"1-1": "Status - `Connection.status` endpoint.  
-Link to power your button to connect - `Connection.linkURL`",
-"2-0": "Disconnect",
-"2-1": "To disconnect the connection use the PATCH connections endpoint.",
-"3-0": "Handle a disconnect from Xero's side",
-"3-1": "Codat handles the disconnection from Xero’s end - Codat unlinks the connection.",
-"4-0": "1:1 or multi-org connection",
-"4-1": "Codat allows your customers to select their Xero organisation using the native Xero UI. You can allow your customer to connect to multiple organisations within Xero by creating a separate Codat company per organisation.",
-"5-0": "Disconnection process for off-boarding",
-"5-1": "Connections can be disconnected through the PATCH connections endpoint to prevent further syncs or the DELETE connections endpoint to prevent both further syncs and querying of historically synced data within Codat."
-},
-"cols": 2,
-"rows": 6,
-"align": [
-"left",
-"left"
-]
-}
-
+|Requirement|Recommendations|
+|----|----|
+|Display the name of the tenant that has been connected|By default Codat includes a page, post successful connection displaying the Company Name connected. Alternatively this can be retrieved from Company Info endpoint.|
+|Display the current status of the connection(s). If disconnected, provide a button to connect to Xero|Status - `Connection.status` endpoint. Link to power your button to connect - `Connection.linkURL`|
+|Disconnect|To disconnect the connection use the PATCH connections endpoint.|
+|Handle a disconnect from Xero's side|Codat handles the disconnection from Xero's end - Codat unlinks the connection.|
+|1:1 or multi-org connection|Codat allows your customers to select their Xero organisation using the native Xero UI. You can allow your customer to connect to multiple organisations within Xero by creating a separate Codat company per organisation.|
+|Disconnection process for off-boarding|Connections can be disconnected through the PATCH connections endpoint to prevent further syncs or the DELETE connections endpoint to prevent both further syncs and querying of historically synced data within Codat.|
 
 ### 4. Error handling
 

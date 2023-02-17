@@ -38,25 +38,8 @@ For integrations within the scope of the program, Codat handles authentication t
 
 We're exploring the following domains within the scope of the Domain Discovery Program:
 
-{
-"data": {
-"h-0": "Domain",
-"h-1": "Proposed/available integrations",
-"0-0": "Recurring Billing and Subscriptions",
-"1-0": "Marketing and Social Media",
-"2-0": "Customer Relationship Management (CRM)",
-"1-1": "To be announced",
-"2-1": "To be announced",
-"h-2": "Status",
-"0-2": "_Active_. Contact your Account Manager or Account Executive.",
-"1-2": "_Planned Q1 2023_. Contact your Account Manager or Account Executive to register your interest.",
-"2-2": "_Planned Q1 2023_. Contact your Account Manager or Account Executive to register your interest.",
-"0-1": "\* [Recurly](/integrations/commerce/recurly/commerce-recurly)
-
-- [Chargebee](/integrations/commerce/chargebee/commerce-chargebee)
-- [Chargify](/integrations/commerce/chargify/commerce-chargify),"
-  },
-  "cols": 3,
-  "rows": 3
-  }
-  
+|Domain|Proposed/available integrations|Status|
+|----|----|----|
+|Recurring Billing and Subscriptions|[Recurly](/integrations/commerce/recurly/commerce-recurly), [Chargebee](/integrations/commerce/chargebee/commerce-chargebee), [Chargify](/integrations/commerce/chargify/commerce-chargify),|_Active_. Contact your Account Manager or Account Executive.|
+|Marketing and Social Media|To be announced|_Planned Q1 2023_. Contact your Account Manager or Account Executive to register your interest.|
+|Customer Relationship Management (CRM)|To be announced|_Planned Q1 2023_. Contact your Account Manager or Account Executive to register your interest.|

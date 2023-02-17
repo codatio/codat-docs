@@ -17,36 +17,11 @@ The endpoint is available in our <a href="/assess-api#/operations/get-companies-
 
 ## Parameters
 
-
-{
-"data": {
-"h-0": "Parameters",
-"h-1": "Type",
-"h-2": "Description",
-"h-3": "Required",
-"0-0": "**page** ",
-"0-1": "_integer_",
-"0-2": "Default is 1.",
-"0-3": "Optional",
-"1-0": "**pageSize** ",
-"1-1": "_integer_",
-"1-2": "Maximum integer allowed is 5,000.
-
-Default is 100.",
-"1-3": "Optional",
-"2-0": "**query** ",
-"2-1": "_string_",
-"2-2": "_Start_ and _end dates_ can be set based on `postedDate`.
-
-The default for `postedDate` is the latest data against the available transactions.
-
-Start and end dates can be passed through the query string.",
-"2-3": "Optional"
-},
-"cols": 4,
-"rows": 3
-}
-
+|Parameters|Type|Description|Required|
+|----|----|----|----|
+|**page**|_integer_|Default is 1.|Optional|
+|**pageSize**|_integer_|Maximum integer allowed is 5,000. Default is 100.|Optional|
+|**query**|_string_|_Start_ and _end dates_ can be set based on `postedDate`. The default for `postedDate` is the latest data against the available transactions. Start and end dates can be passed through the query string.|Optional|
 
 ## Data model
 
@@ -55,184 +30,58 @@ The response structure is split into three areas: Report info, Data sources and 
 ### Report info
 
 
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**reportName**",
-"1-0": "**companyName**",
-"0-1": "_string_",
-"1-1": "_string_",
-"0-2": ""Cash transactions report"",
-"1-2": "The name of the company being queried.",
-"2-0": "**generatedDate**",
-"6-0": "**pageNumber**",
-"7-0": "*pageSize**",
-"8-0": "**totalResults\*\*",
-"2-1": "*string\*
-See [Date](/common-api#/schemas/DateTime)",
-"2-2": "YYYY-MM-DDT00:00:00Z
-
-The date the cash flow report was generated.",
-"3-0": "**pageNumber**",
-"4-0": "**pageSize**",
-"5-0": "**totalResults**",
-"3-1": "_number_",
-"4-1": "_number_",
-"5-1": "_number_",
-"3-2": "The number of the page queried.",
-"4-2": "The number of transactions returned per page.",
-"5-2": "The total number of transactions available for a company for the period specified in the query string."
-},
-"cols": 3,
-"rows": 6
-}
-
+|Field|Type|Description|
+|----|----|----|
+|**reportName**|_string_|"Cash transactions report"|
+|**companyName**|_string_|The name of the company being queried.|
+|**generatedDate**|_string_, See [Date](/common-api#/schemas/DateTime)|YYYY-MM-DDT00:00:00Z. The date the cash flow report was generated.|
+|**pageNumber**|_number_|The number of the page queried.|
+|**pageSize**|_number_|The number of transactions returned per page.|
+|**totalResults**|_number_|The total number of transactions available for a company for the period specified in the query string.|
 
 ### Data sources
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**accounts**",
-"0-1": "_array_
-See [Accounts](#accounts)",
-"0-2": "An array containing bank account data for each connected banking data source that have the following data types enabled:
-
-- `banking-accounts`
-- `banking-transactions`",
-  "1-0": "**sourceRef**",
-  "1-1": "_enum_",
-  "1-2": "Set to the integration type, i.e. currently "Banking".
-
-Accounting and commerce commerce source types will be available in the future.",
-"2-0": "**accounts**",
-"2-1": "_array_",
-"2-2": ""
-},
-"cols": 3,
-"rows": 1
-}
-
+|Field|Type|Description|
+|----|----|----|
+|**accounts**|_array_, See [Accounts](#accounts)|An array containing bank account data for each connected banking data source that have the following data types enabled: `banking-accounts`, `banking-transactions`.|
 
 #### Accounts
 
 **Accounts** data is returned for each connection that is of type "Banking".
 
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**sourceRef**",
-"2-0": "**accountProvider**",
-"3-0": "**accountName**",
-"4-0": "**accountType**",
-"5-0": "**currency**",
-"6-0": "**currentBalance**",
-"0-1": "_enum_",
-"0-2": "A source reference containing the `sourceType` object "Banking".",
-"2-1": "_string_",
-"2-2": "The bank or other financial institution providing the account.",
-"3-2": "The name of the account according to the provider.",
-"3-1": "_string_",
-"4-2": "The type of banking account, e.g. credit or debit.",
-"4-1": "_string_",
-"5-2": "The currency code for the bank account.",
-"6-2": "The balance of the bank account.",
-"6-1": "_decimal_",
-"5-1": "_string_",
-"1-0": "**platformName**",
-"1-1": "_string_",
-"1-2": "Name of the banking data source, e.g. "Plaid"."
-},
-"cols": 3,
-"rows": 7
-}
-
+|Field|Type|Description|
+|----|----|----|
+|**sourceRef**|_enum_|A source reference containing the `sourceType` object "Banking".|
+|**platformName**|_string_|Name of the banking data source, e.g. "Plaid".|
+|**accountProvider**|_string_|The bank or other financial institution providing the account.|
+|**accountName**|_string_|The name of the account according to the provider.|
+|**accountType**|_string_|The type of banking account, e.g. credit or debit.|
+|**currency**|_string_|The currency code for the bank account.|
+|**currentBalance**|_decimal_|The balance of the bank account.|
 
 ### Report Items
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**transactions**",
-"0-1": "_array_
-See [Transactions](#transactions)",
-"0-2": "An array of transaction data."
-},
-"cols": 3,
-"rows": 1
-}
-
+|Field|Type|Description|
+|----|----|----|
+|**transactions**|_array_, See [Transactions](#transactions)|An array of transaction data.|
 
 #### Transactions
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**sourceRef**",
-"0-1": "_enum_",
-"0-2": "A source reference object containing `sourceType` object "Banking".",
-"1-0": "**id**",
-"2-0": "**date**",
-"3-0": "**description**",
-"4-0": "**amount**",
-"5-0": "**currency**",
-"6-0": "**transactionCategory**",
-"1-1": "_string_",
-"2-1": "_string_
-See [Date](/common-api#/schemas/DateTime)",
-"2-2": "YYYY-MM-DD
-
-The date the bank transaction was posted.",
-"3-1": "_string_",
-"4-1": "_decimal_",
-"5-2": "The currency code for the account.",
-"5-1": "_string_",
-"6-1": "_object_
-See [Transaction category](#transaction-category)",
-"1-2": "The unique identifier of the bank transaction.",
-"3-2": "The description of the bank transaction.",
-"4-2": "The bank transaction amount.",
-"6-2": "Contains an array of category levels."
-},
-"cols": 3,
-"rows": 7
-}
-
+|Field|Type|Description|
+|----|----|----|
+|**sourceRef**|_enum_|A source reference object containing `sourceType` object "Banking".|
+|**id**|_string_|The unique identifier of the bank transaction.|
+|**date**|_string_, See [Date](/common-api#/schemas/DateTime)|YYYY-MM-DD, The date the bank transaction was posted.|
+|**description**|_string_|The description of the bank transaction.|
+|**amount**|_decimal_|The bank transaction amount.|
+|**currency**|_string_|The currency code for the account.|
+|**transactionCategory**|_object_, See [Transaction category](#transaction-category)|Contains an array of category levels.|
 
 #### Transaction category
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**levels**",
-"0-1": "_array_",
-"0-2": "An array of category levels against an individual transaction. For example:
-
-- "Income"
-- "Revenue"
-- "Subscription"
-- "SubscriptionUpgrade""
-  },
-  "cols": 3,
-  "rows": 1
-  }
-  
+|Field|Type|Description|
+|----|----|----|
+|**levels**|_array_|An array of category levels against an individual transaction. For example: "Income", "Revenue", "Subscription", "SubscriptionUpgrade".|  
 
 ### Example data
 

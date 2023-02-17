@@ -19,23 +19,11 @@ We expose the data sources available to pull supplemental data and advise you to
 
 Codat currently supports supplemental data for the following data types and integrations. Explore integrations' individual pages for implementation details of each.
 
-{
-"data": {
-"h-0": "Data type",
-"h-1": "Integration",
-"0-0": "Invoices",
-"1-0": "Customers",
-"2-0": "Journal entries",
-"0-1": "Xero
-Netsuite",
-"1-1": "Xero
-Netsuite",
-"2-1": "Quickbooks Online"
-},
-"cols": 2,
-"rows": 3
-}
-
+|Data type|Integration|
+|----|----|
+|Invoices|Xero, Netsuite|
+|Customers|Xero, Netsuite|
+|Journal entries|Quickbooks Online|
 
 ## Configuration
 
@@ -66,6 +54,7 @@ Note that the `dataSource` and `requiredData` parameter values must match the in
     }
   ]
 }
+```
 
 You can also retrieve your supplemental data configuration by using the following endpoint:
 `GET /integrations​/{platformKey}/datatypes/{datatype}/supplementalDataConfig`
@@ -78,21 +67,10 @@ Codat does not validate the contents of the supplemental data configuration requ
 
 The `supplementalData` property on a data model entity is entirely optional.
 
-{
-  "data": {
-    "h-0": "Field",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "**platformKey**",
-    "1-0": "**content**",
-    "0-1": "_string_",
-    "1-2": "An array of [Content](#section-content).",
-    "0-2": "The unique key for the platform that this supplemental data was fetched from."
-  },
-  "cols": 3,
-  "rows": 2
-}
-
+|Field|Type|Description|
+|----|----|----|
+|**platformKey**|_string_|The unique key for the platform that this supplemental data was fetched from.|
+|**content**| |An array of [Content](#section-content).|
 
 ### Content
 
@@ -104,21 +82,10 @@ This object contains the source supplemental data requested from an integration 
 
 The `dataSource` field allows us to handle scenarios in which data is mapped from different endpoints, or from multiple endpoints.
 
-{
-  "data": {
-    "h-0": "Field",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "**dataSource**",
-    "1-0": "**data**",
-    "0-1": "_string_",
-    "1-1": "__",
-    "1-2": "Review integration's own documentation to determine parameter values",
-    "0-2": "Review integration's own documentation to determine parameter values"
-  },
-  "cols": 3,
-  "rows": 2
-}
+|Field|Type|Description|
+|----|----|----|
+|**dataSource**|_string_|Review integration's own documentation to determine parameter values|
+|**data**|__|Review integration's own documentation to determine parameter values|
 
 Callout for data types:
 
