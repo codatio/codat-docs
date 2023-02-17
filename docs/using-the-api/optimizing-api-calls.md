@@ -9,7 +9,7 @@ Ensure you are familiar with our [rate limits](/using-the-api/rate-limits) befor
 
 :::
 
-Making as few calls to Codat as possible rallows you to reduce your costs and delivers an improved user experience. With fewer calls, you process less data and access that data faster, meaning reduced waiting time for your users, less computational time for your systems, and decreased internet traffic between you and Codat.
+Making as few calls to Codat as possible allows you to reduce your costs and delivers an improved user experience. With fewer calls, you process less data and access that data faster, meaning reduced waiting time for your users, less computational time for your systems, and decreased internet traffic between you and Codat.
 
 Make use of our querying, ordering, and alerting systems to gain finite control over the data you access. Use these methods to optimize how you access Codat. 
 

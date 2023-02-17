@@ -23,14 +23,14 @@ The name of the company doesn't have to be unique. It's just there to help you i
 
 You can also add the `platformType` parameter to specify an integration platform you would like to set up for the new company. Retrieve the platform key first and then use it in your request.
 
-```json Sample request
+```json Title="Sample request"
 {
   "name": "Platypus Properties",
   "platformType": "gbol"
 }
 ```
 
-```json Sample response
+```json Title="Sample response"
 {
   "id": "8f74269c-6cbf-4c5e-9b93-599965a7fd49",
   "name": "Platypus Properties",
@@ -72,7 +72,7 @@ When you’re pulling data for the first time, use this endpoint to check if the
 
 ### Response for a successful first sync
 
-```json
+```json 
 {
   "suppliers": {
     "dataType": "suppliers",
@@ -104,7 +104,7 @@ If there are datasets which are not as up-to-date as you require, you can queue 
 
 Once you've queued the sync, you can poll the [GET /companies/{companyId}/dataStatus](/codat-api#/operations/get-companies-companyId-dataStatus) endpoint (as described above) to [monitor progress of the sync](/core-concepts/status).
 
-:::note
+:::note Configuring the sync schedule
 
 You can configure a sync schedule in the Codat portal to keep each data type at an acceptable freshness. For more information, please refer to your onboarding docs or contact [support@codat.io](mailto:support@codat.io).
 :::
