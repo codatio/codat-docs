@@ -17,7 +17,7 @@ Yes. When you create a data connection to sync banking data for a company, you a
 
 ## Does Codat automatically sync banking data on a regular basis?
 
-Banking data is synchronised in the same way as data from accounting integrations.  
+Banking data is synchronized in the same way as data from accounting integrations.  
 [Configure sync settings](/core-concepts/data-type-settings) explains how to adjust the fetch order and sync frequency to suit your requirements.
 
 ## How are we billed for connections to TrueLayer accounts?

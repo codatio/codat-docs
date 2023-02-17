@@ -110,7 +110,7 @@ Unfortunately, you can't use a trial account to test your integration. Sage does
 4. Use the Link URL to connect your Sage 200cloud account.
    - When Link opens, select **Sage200cloud**, and then select **Continue to Sage 200cloud**.
    - Log in to your Sage 200cloud account.
-   - Authorise access to your account details.
+   - Authorize access to your account details.
 5. Make sure that test data from your account is displayed for your test company in the Codat Portal.
 
 ## Request new credentials

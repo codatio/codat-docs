@@ -19,9 +19,9 @@ We also recommend that you test your integration using a free Pandle account.
 
 Currently Pandle doesn’t support online registrations, so you’ll need to send an email to [support@pandle.com](mailto:support@pandle.com) that includes the following details:
 
-- **App name** – A short name for your app. Your customers will see this when they authorise your connection to their data.
+- **App name** – A short name for your app. Your customers will see this when they authorize your connection to their data.
 - **Description** – A short description of what your app does that mentions Codat. For example: “As lenders, we’ll connect to our customers’ accounts to view or update them using Codat’s Pandle integration”.
-- **Re-direct URI** – Customers are redirected to this URL after they authorise your app connection. For a Codat integration you must use `https://pandle.codat.io/oauth/callback`
+- **Re-direct URI** – Customers are redirected to this URL after they authorize your app connection. For a Codat integration you must use `https://pandle.codat.io/oauth/callback`
 
 ## Wait for your secure keys
 
@@ -63,5 +63,5 @@ We recommend that you test your integration before sending Link URLs to customer
 5. Use the Link URL to connect your Pandle account.
    - When Link opens, select _PANDLE_, and then select _Continue to Pandle_.
    - Log in to your Pandle account.
-   - Authorise access to your account details.
+   - Authorize access to your account details.
 6. Make sure that any data you've set up in your Pandle account is displayed in Codat portal for your test company.
