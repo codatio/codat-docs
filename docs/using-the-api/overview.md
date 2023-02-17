@@ -14,7 +14,7 @@ You can contribute to them <a href="https://github.com/codatio/codat-docs" targe
 
 :::
 
-- **[/Codat API](/codat-api)** - Manage the building blocks of Codat, including companies, connections, and more.
+- **[/Common API](/codat-api)** - Manage the building blocks of Codat, including companies, connections, and more.
 - **[/Accounting API](/accounting-api)** - Access standardized accounting data from our accounting integrations.
 - **[/Banking API](/banking-api)** - Access standardized banking data from our banking integrations.
 - **[/Commerce API](/commerce-api)** - Access standardized commerce data from our commerce integrations.
@@ -22,6 +22,7 @@ You can contribute to them <a href="https://github.com/codatio/codat-docs" targe
 - **[/Assess API](/assess-api)** - Make credit decisions backed by enhanced financials, metrics, reports, and data integrity features.
 - **[/Sync for Commerce API](/accounting-api)** - Push merchants' data from your ecommerce or point-of-sale (POS) platform into your merchants' accounting platform.
 - **[/Sync for Expenses API](/sync-for-expenses-api)** - Push expenses to accounting platforms.
+- **[/Files API](/files-api)** - Capture your SMB's business documents with our file upload functionality.
 
 ---
 
