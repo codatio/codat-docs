@@ -28,8 +28,9 @@ To create a new user and username in Sage 50:
 4. Enter a username and password for the new user.
 5. The "Remote Data Access" step isn't necessary for pushing data, so click **Continue** to skip it.
 6. Click **Save**
-7. Download the Sage 50 connector and enter the license key to set up the connector. These steps and the preceding steps are the same as those outlined in [Install the Sage 50 connector]((/integrations/accounting/sage50/installing-the-sage-50-connector).  
-   **Note**: In the [Enter their Sage 50 credentials]((/integrations/accounting/sage50/installing-the-sage-50-connector#5-enter-their-sage-50-credentials) step, your client should enter the credentials of the specially created user for the Sage 50 connector and NOT the login that they use to open and use the Sage 50 application on a daily basis.
+7. Download the Sage 50 connector and enter the license key to set up the connector. These steps and the preceding steps are the same as those outlined in [Install the Sage 50 connector](/integrations/accounting/sage50/installing-the-sage-50-connector).  
+   
+   **Note**: In the [Enter their Sage 50 credentials](/integrations/accounting/sage50/installing-the-sage-50-connector#5-enter-their-sage-50-credentials) step, your client should enter the credentials of the specially created user for the Sage 50 connector and NOT the login that they use to open and use the Sage 50 application on a daily basis.
 
 You're now ready to push data to Sage 50.
 
@@ -57,13 +58,14 @@ Ensure that your client has created a new user (as described above) for their Sa
 
 - If Sage 50 is open during a push operation, then the user may momentarily see a processing dialog. This will remain on the user's screen for a longer period of time if the volume of data being pushed is larger.
 - If suppliers are being pushed and the user is logged into Sage 50, then the supplier will not appear in Sage 50 until the page is refreshed.
+  
   :::note Refreshing Sage 50 to see pushed suppliers
 
   To refresh the page in Sage 50, you can click the filter in the Suppliers view twice as below. If a supplier has been successfully created, the account will appear when the page is refreshed.  
 
   ![](/img/old/719da3c-supplierFilterRefresh.png "supplierFilterRefresh.PNG")
 
-:::
+   :::
 
 ### Sage 50 is closed and the connector is pushing data. When I open Sage, can I log in with the same credentials?
 
