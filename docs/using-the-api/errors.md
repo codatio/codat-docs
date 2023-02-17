@@ -77,7 +77,7 @@ Error response from [POST /companies](/codat-api#/operations/create-company) whe
 
 For example:
 
-```
+```json
 {
 "statusCode": 402,
 "service": "PublicApi",
@@ -101,7 +101,7 @@ For example:
 
 Error response when your account has expired and you make a request to any endpoint. This error is returned if your Free account is older than 365 days and has expired.
 
-```
+```json
 {
   "statusCode": 402,
   "service": "PublicApi",
@@ -122,7 +122,7 @@ Error response when your account has expired and you make a request to any endpo
 
 The content of an error response includes a more detailed error message and a `correlationId`, which can be used to identify a particular response. Please include the `correlationId` in text format if you are contacting Codat support regarding an error.
 
-```
+```json
 {
 "statusCode": 404,
 "service": "QuickbooksOnline",

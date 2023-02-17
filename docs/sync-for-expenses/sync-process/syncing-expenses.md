@@ -2,14 +2,14 @@
 title: "Syncing expenses"
 ---
 
-# Synchronizing expenses
-
 Once you have pushed data to Codat and created datasets you can then initiate the sync process.
 
 The sync process includes fetching the transactional datasets from the data cache, validating and mapping the data, and then pushing it to the accounting platform.
 
 :::tip Datasets
+
 Syncs are independent of creating datasets, so you can continue to create new datasets while a sync is ongoing.
+
 :::
 
 ```json http

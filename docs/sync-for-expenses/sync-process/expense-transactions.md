@@ -2,10 +2,8 @@
 title: "Expense transactions"
 ---
 
-# expense-transactions
-
 An expense reconciliation represents the context behind the purchase.
-s
+
 It can include details about the purchase, for example:
 
 - Which account in the general ledger the transaction should be reconciled to
@@ -16,7 +14,7 @@ It can include details about the purchase, for example:
 
 When pushing expenses, use your transaction `id` so that it can serve as an idempotency key. Codat validates `id`'s to ensure that every `id` is unique to a company. This approach prevents duplicate transactions being created in your SMBs' bank feeds.
 
-**Transaction Types**
+## Transaction Types
 
 The way Codat handles, maps and processes a transaction is based on the specified `type` and signage of the transaction.
 
