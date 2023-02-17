@@ -45,6 +45,11 @@ html[data-theme="dark"] .token.number {
   display: none !important;
 }
 
+/* Remove */
+.SendButtonHolder {
+  display: none !important;
+}
+
 @media (min-width: 850px) {
   .api-ref-stoplight {
   }
