@@ -2,7 +2,9 @@
 
 > :warning: **These docs are in beta** 
 >
-> In the meantime, please use [our existing docs](https://docs.codat.io/docs)
+> They are in beta, so you may find some snags in our content.
+> 
+> You can contribute to them <a href="https://github.com/codatio/codat-docs" target="_blank">here</a>, or see the old ones <a href="https://codat.readme.io/">here</a>.
 
 The official [Codat](https://codat.io) documentation.
 
