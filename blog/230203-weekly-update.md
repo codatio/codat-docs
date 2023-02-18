@@ -29,3 +29,13 @@ Sync for Expenses is an API and a set of supporting tools. It has been built to 
 #### Portal
 
 - **New:** Companies chart on the dashboard
+
+### Deprecations
+
+Don't forget about our upcoming deprecations:
+
+- [https://docs.codat.io/updates/230411-api-keys]
+- [https://docs.codat.io/updates/230411-deletion-of-data]
+- [https://docs.codat.io/updates/230411-legacy-bank-account-endpoints]
+
+Stay on top of deprecations by checking out and subscribing to our deprecation calendar here: <https://docs.codat.io/introduction/change-policy>

@@ -16,7 +16,7 @@ See what's new in Codat this week
 
 We've just released our new docs:
 
-https://docs.codat.io/
+<https://docs.codat.io/>
 
 They are in beta, so you may find some snags in our content.
 
@@ -44,3 +44,13 @@ Launch new accounting integrations faster and save on ongoing maintenance by sta
 Sync for Expenses is an API and a set of supporting tools. It has been built to enable corporate card and expense management platforms to provide high-quality integrations with multiple accounting platforms through a standardized API.
 
 [Read the docs...](https://codat2.stoplight.io/docs/sync-for-expenses-v2/fjx7t6em0l1ux-overview)
+
+### Deprecations
+
+Don't forget about our upcoming deprecations:
+
+- [https://docs.codat.io/updates/230411-api-keys]
+- [https://docs.codat.io/updates/230411-deletion-of-data]
+- [https://docs.codat.io/updates/230411-legacy-bank-account-endpoints]
+
+Stay on top of deprecations by checking out and subscribing to our deprecation calendar here: <https://docs.codat.io/introduction/change-policy>
