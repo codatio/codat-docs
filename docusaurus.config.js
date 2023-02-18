@@ -296,10 +296,6 @@ module.exports = {
             from: '/docs/get-started',
           },
           {
-            to:  '/introduction/first-steps',
-            from: '/docs/get-started-api#step-2-connect',
-          },
-          {
             to:  '/introduction/create-account',
             from: '/docs/core-account-signup',
           },
