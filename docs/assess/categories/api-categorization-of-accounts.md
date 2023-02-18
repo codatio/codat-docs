@@ -81,7 +81,7 @@ GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categ
     "confirmed": {
       "type": "Expense",
       "subtype": "Operating",
-      "detailType": "AmortisationDepreciation"
+      "detailType": "AmortizationDepreciation"
     }
 
 }

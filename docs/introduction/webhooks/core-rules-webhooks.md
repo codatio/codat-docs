@@ -40,5 +40,5 @@ If you'd like to secure your webhook endpoints, you can add an `Authorization` h
 
 | Authorization method or scheme | Description                                                                                       |
 | :----------------------------- | :------------------------------------------------------------------------------------------------ |
-| Basic                          | A base-64 encoded username and password is added to the authorisation header of the HTTP request. |
-| Bearer                         | A custom value or token is added to the authorisation header.                                     |
+| Basic                          | A base-64 encoded username and password is added to the authorization header of the HTTP request. |
+| Bearer                         | A custom value or token is added to the authorization header.                                     |

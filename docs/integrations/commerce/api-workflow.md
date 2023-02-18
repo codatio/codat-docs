@@ -78,5 +78,5 @@ When your customer authorises your connection to their company data, Codat autom
 
 :::info Sync status
 
-Before you can view data using one of the commerce endpoints, you must wait for the data synchronisation to complete. To check the status of any dataset, see the [sync status](/core-concepts/status) documentation.
+Before you can view data using one of the commerce endpoints, you must wait for the data synchronization to complete. To check the status of any dataset, see the [sync status](/core-concepts/status) documentation.
 :::

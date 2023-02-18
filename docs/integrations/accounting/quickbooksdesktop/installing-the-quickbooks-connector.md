@@ -97,9 +97,9 @@ Check the details in the **Access Confirmation** dialog, and then click **Done**
 
 Once access to QuickBooks has been granted, the connector will process the datasets you have chosen to _fetch on first link_ (see [Data Sync Settings](/core-concepts/data-type-settings)). Upon completion of the first link, a message will be shown to the user confirming that their data has been synchronised.
 
-If you have chosen to have your connectors perform a one-time synchronisation, the connector will uninstall itself and set the company status to _deauthorised_.
+If you have chosen to have your connectors perform a one-time synchronization, the connector will uninstall itself and set the company status to _deauthorised_.
 
-If you have chosen to install your connectors for ongoing synchronisations, the connector will periodically process any dataset syncs or pushes you have queued using the Codat portal or API. The connector will also be set to automatically start when the system reboots.
+If you have chosen to install your connectors for ongoing synchronizations, the connector will periodically process any dataset syncs or pushes you have queued using the Codat portal or API. The connector will also be set to automatically start when the system reboots.
 
 <img src="/img/old/e435017-Linked_Succesfully.png" />
 
