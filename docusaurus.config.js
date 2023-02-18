@@ -288,6 +288,18 @@ module.exports = {
             from: '/docs',
           },
           {
+            to:  '/introduction/first-steps',
+            from: 'https://docs.codat.io/docs/guide-1',
+          },
+          {
+            to:  '/introduction/first-steps',
+            from: 'https://docs.codat.io/docs/get-started',
+          },
+          {
+            to:  '/introduction/first-steps',
+            from: 'https://docs.codat.io/docs/get-started-api#step-2-connect',
+          },
+          {
             to:  '/introduction/create-account',
             from: '/docs/core-account-signup',
           },
