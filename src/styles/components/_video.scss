@@ -19,8 +19,8 @@
 .background-video-wrapper {
   background-color: black;
   background-color: var(--color-codat-primary);
-  background-image: url("/img/banner.png");
-  background-size: cover;
+  background: rgb(47,27,166);
+  background: linear-gradient(135deg, rgba(47,27,166,1) 0%, rgba(127,108,241,1) 100%);
   overflow: hidden;
   position: absolute;
   left: 0;
@@ -28,6 +28,36 @@
   right: 0;
   z-index: -1;
   padding: 2em;
+
+  &.banking {
+    background: rgb(27,166,112);
+    background: linear-gradient(135deg, rgba(27,166,112,1) 0%, rgba(127,108,241,1) 100%);
+  }
+
+  &.commerce {
+    background: rgb(166,105,27);
+    background: linear-gradient(135deg, rgba(166,105,27,1) 0%, rgba(127,108,241,1) 100%);
+  }
+
+  &.bankfeed {
+    background: rgb(27,166,140);
+    background: linear-gradient(135deg, rgba(27,166,140,1) 0%, rgba(127,108,241,1) 100%);
+  }
+
+  &.sfc {
+    background: rgb(166,27,155);
+    background: linear-gradient(135deg, rgba(166,27,155,1) 0%, rgba(127,108,241,1) 100%);
+  }
+
+  &.sfe {
+    background: rgb(166,27,54);
+    background: linear-gradient(135deg, rgba(166,27,54,1) 0%, rgba(127,108,241,1) 100%);
+  }
+
+  &.assess {
+    background: rgb(117,27,166);
+    background: linear-gradient(135deg, rgba(117,27,166,1) 0%, rgba(127,108,241,1) 100%);
+  }
 
   .background-video {
     position: absolute;

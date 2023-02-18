@@ -1,6 +1,9 @@
 ---
 title: "Commerce API overview"
 sidebar_label: Commerce API
+hide_title: true
+hide_description: true
+hide_table_of_contents: true
 description: "Codat's Commerce API enables you to pull up-to-date commerce data from several leading payments, point-of-sale, and eCommerce systems. You can view your SMB customers' products, orders, payments, payouts, disputes, and more - all standardized to our Commerce data model."
 createdAt: "2022-11-22T19:33:11.784Z"
 updatedAt: "2022-11-22T19:33:11.784Z"
@@ -10,7 +13,27 @@ updatedAt: "2022-11-22T19:33:11.784Z"
   <meta property="og:image" content="/img/commerce_api_banner.png"/>
 </Head>
 
-![](/img/commerce_api_banner.png "Commerce API banner")
+<div className="background-video-wrapper commerce">
+  <div className="banner-video">
+    <h1>Commerce API</h1>
+    <p>
+      Codat's Commerce API enables you to pull up-to-date commerce data from several leading payments, point-of-sale, and eCommerce systems. 
+    </p>
+    <p>
+      You can view your SMB customers' products, orders, payments, payouts, disputes, and more - all standardized to our Commerce data model.
+    </p>
+  </div>
+</div>
+
+<div className="background-video-spacer commerce">
+  <h1>Commerce API</h1>
+  <p>
+    Codat's Commerce API enables you to pull up-to-date commerce data from several leading payments, point-of-sale, and eCommerce systems. 
+  </p>
+  <p>
+    You can view your SMB customers' products, orders, payments, payouts, disputes, and more - all standardized to our Commerce data model.
+  </p>
+</div>
 
 <ul className="card-container col-3">
   <li className="card">
@@ -84,5 +107,6 @@ updatedAt: "2022-11-22T19:33:11.784Z"
   </li>
 </ul>
 
-<p>
-</p>
+<br/>
+
+![](/img/commerce_api_banner.png "Commerce API banner")
