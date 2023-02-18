@@ -118,7 +118,7 @@ The following rules can be configured in the Codat Portal to alert you to events
 
 ## New company synchronized
 
-**Trigger:** After a new company has successfully synchronised at least one dataType for the first time.
+**Trigger:** After a new company has successfully synchronized at least one dataType for the first time.
 
 ```json
 {
