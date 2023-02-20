@@ -6,6 +6,12 @@ createdAt: "2022-10-03T15:09:17.646Z"
 updatedAt: "2022-11-23T13:59:04.149Z"
 ---
 
+<Head>
+  <meta property="og:image" content="/img/link/link-banner.png"/>
+</Head>
+
+![](/img/link/link-banner.png)
+
 With Hosted Link, you can choose how you want your customers to start their authorization journey while benefitting from an out-of-the-box solution built, provided, and hosted by Codat.
 
 To connect your customers' financial software, you can:
