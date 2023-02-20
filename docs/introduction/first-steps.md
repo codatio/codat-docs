@@ -22,7 +22,7 @@ You need an account and its API key to start with Codat. You can <a href="https:
 
 ## In this guide...
 
-With Codat, you can leverage the financial data of your SMB customers to make smarter and faster decisions.
+With Codat, you can more easily build integrated financial products for SMBs.
 
 Set up your customers by adding them as companies in Codat. Then, establish authorized connections to the customers' accounting, banking, or commerce platforms using one of our integrations.
 
