@@ -349,44 +349,44 @@ module.exports = {
           },
           // Changelog - remove soon
           { 
-            to: 'https://docs.codat.io/updates/220817-sage-50-soft-deletion',
-            from: 'https://docs.codat.io/changelog/41921-sage-50-deleted-payment-on-accounts-soft-deleted',
+            to: '/updates/220817-sage-50-soft-deletion',
+            from: '/changelog/41921-sage-50-deleted-payment-on-accounts-soft-deleted',
           },
           { 
-            to: 'https://docs.codat.io/updates/220826-wbo-invoice-push',
-            from: 'https://docs.codat.io/changelog/42327-qbo-change-to-invoice-push-validation',
+            to: '/updates/220826-wbo-invoice-push',
+            from: '/changelog/42327-qbo-change-to-invoice-push-validation',
           },
           { 
-            to: 'https://docs.codat.io/updates/220817-qbd-refs',
-            from: 'https://docs.codat.io/changelog/42998-qbd-push-validation-accountref-itemref',
+            to: '/updates/220817-qbd-refs',
+            from: '/changelog/42998-qbd-push-validation-accountref-itemref',
           },
           { 
-            to: 'https://docs.codat.io/updates/220825-string-request-deprecation',
-            from: 'https://docs.codat.io/changelog/44714-deprecation-string-request-create-connections-endpoint',
+            to: '/updates/220825-string-request-deprecation',
+            from: '/changelog/44714-deprecation-string-request-create-connections-endpoint',
           },
           { 
-            to: 'https://docs.codat.io/updates/220926-freshbooks-expenses',
-            from: 'https://docs.codat.io/changelog/upcoming-2023-01-10-freshbooks-expenses-no-longer-fetched-as-bills-and-bill-payments',
+            to: '/updates/220926-freshbooks-expenses',
+            from: '/changelog/upcoming-2023-01-10-freshbooks-expenses-no-longer-fetched-as-bills-and-bill-payments',
           },
           { 
-            to: 'https://docs.codat.io/updates/221003-quickbooks-online',
-            from: 'https://docs.codat.io/changelog/upcoming-2023-01-10-quickbooks-online-purchases-will-no-longer-be-fetched-as-bills-and-bill-payments',
+            to: '/updates/221003-quickbooks-online',
+            from: '/changelog/upcoming-2023-01-10-quickbooks-online-purchases-will-no-longer-be-fetched-as-bills-and-bill-payments',
           },
           { 
-            to: 'https://docs.codat.io/updates/230131-uat-deprecation',
-            from: 'https://docs.codat.io/changelog/upcoming-2023-01-31-deprecation-of-uat-environment',
+            to: '/updates/230131-uat-deprecation',
+            from: '/changelog/upcoming-2023-01-31-deprecation-of-uat-environment',
           },
           { 
-            to: 'https://docs.codat.io/updates/230411-deletion-of-data',
-            from: 'https://docs.codat.io/changelog/upcoming-2023-04-10-changes-to-handling-of-deleted-data',
+            to: '/updates/230411-deletion-of-data',
+            from: '/changelog/upcoming-2023-04-10-changes-to-handling-of-deleted-data',
           },
           { 
-            to: 'https://docs.codat.io/updates/230411-api-keys',
-            from: 'https://docs.codat.io/changelog/upcoming-2023-04-10-deprecation-of-api-key-management',
+            to: '/updates/230411-api-keys',
+            from: '/changelog/upcoming-2023-04-10-deprecation-of-api-key-management',
           },
           { 
-            to: 'https://docs.codat.io/updates/230411-legacy-bank-account-endpoints',
-            from: 'https://docs.codat.io/changelog/upcoming-2023-04-10-deprecation-of-legacy-bank-account-endpoints'
+            to: '/updates/230411-legacy-bank-account-endpoints',
+            from: '/changelog/upcoming-2023-04-10-deprecation-of-legacy-bank-account-endpoints'
           }
         ],
       },
