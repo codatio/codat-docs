@@ -6,6 +6,14 @@ createdAt: "2021-02-12T12:07:42.887Z"
 updatedAt: "2022-12-19T06:12:29.871Z"
 ---
 
+:::info Welcome to our new docs!
+
+They are in beta, so you may find some snags in our content.
+
+You can contribute to them <a href="https://github.com/codatio/codat-docs" target="_blank">here</a>, or see the old ones <a href="https://codat.readme.io/">here</a>.
+
+:::
+
 :::note Prerequisites
 
 You need an account and its API key to start with Codat. You can <a href="https://signup.codat.io/" target="_blank">sign up</a> for an account for free, or <a href="/core-concepts/account-signup" target="_blank">learn more</a> about creating one.
@@ -14,7 +22,7 @@ You need an account and its API key to start with Codat. You can <a href="https:
 
 ## In this guide...
 
-With Codat, you can leverage the financial data of your SMB customers to make smarter and faster decisions.
+With Codat, you can more easily build integrated financial products for SMBs.
 
 Set up your customers by adding them as companies in Codat. Then, establish authorized connections to the customers' accounting, banking, or commerce platforms using one of our integrations.
 

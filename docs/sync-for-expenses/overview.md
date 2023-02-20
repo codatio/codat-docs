@@ -1,11 +1,32 @@
 ---
 title: Sync for Expenses overview
 sidebar_label: Sync for Expenses
+hide_title: true
+hide_description: true
+hide_table_of_contents: true
 description: Embedded accounting integrations for corporate card providers
 tags: [overview, syncforexpense]
 ---
 
-![An image from the static](/img/sync-for-expenses/sfe-banner.png)
+<Head>
+  <meta property="og:image" content="/img/sync-for-expenses/sfe-banner.png"/>
+</Head>
+
+<div className="background-video-wrapper sfe">
+  <div className="banner-video">
+    <h1>Sync for Expenses</h1>
+    <p>
+      Embedded accounting integrations for corporate card providers
+    </p>
+  </div>
+</div>
+
+<div className="background-video-spacer sfe">
+  <h1>Sync for Expenses</h1>
+  <p>
+    Embedded accounting integrations for corporate card providers
+  </p>
+</div>
 
 # Overview
 
@@ -14,6 +35,8 @@ Sync for Expenses is an API and a set of supporting tools. It has been built to 
 | Standardised expense push                                      | Easy reconciliation of receipts                                      | Live two-way sync                                                                                                 |
 | -------------------------------------------------------------- | -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
 | Different accounting platforms represent expenses differently. | Reconciling receipts against expenses is easy with standard support. | Sync for Expenses stays in touch with the SMB’s general ledger so your integrations are more robust and reliable. |
+
+![An image from the static](/img/sync-for-expenses/sfe-banner.png)
 
 ## Features
 

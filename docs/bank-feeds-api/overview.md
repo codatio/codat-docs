@@ -1,10 +1,34 @@
 ---
 title: "Bank Feeds API overview"
 sidebar_label: Bank Feeds API
+hide_title: true
+hide_description: true
+hide_table_of_contents: true
 description: "Bank Feeds API enables your SMB users to set up bank feeds from accounts in your application to supported accounting platforms."
 createdAt: "2022-11-17T12:09:28.950Z"
 updatedAt: "2023-01-05T15:04:48.214Z"
 ---
+
+<Head>
+  <meta property="og:image" content="/img/old/fd21af0-codat_whitepaper_accounting-automation_diagram_B.png"/>
+</Head>
+
+
+<div className="background-video-wrapper bankfeed">
+  <div className="banner-video">
+    <h1>Bank Feeds API</h1>
+    <p>
+      Bank Feeds API enables your SMB users to set up bank feeds from accounts in your application to supported accounting platforms.
+    </p>
+  </div>
+</div>
+
+<div className="background-video-spacer bankfeed">
+  <h1>Bank Feeds API</h1>
+  <p>
+    Bank Feeds API enables your SMB users to set up bank feeds from accounts in your application to supported accounting platforms.
+  </p>
+</div>
 
 **A bank feed is a connection between a _source bank account_—in your application—and a _target bank account_ in a supported accounting package.**
 

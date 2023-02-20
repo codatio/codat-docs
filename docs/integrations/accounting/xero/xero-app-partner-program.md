@@ -71,14 +71,14 @@ Check that you are following the [Xero app partner branding guidelines](https://
 
 Codat will handle the connection to Xero through the linking journey. You will need to implement a setup page that allows your customer to manage the settings for their Xero connection:
 
-| Requirement                                                                                           | Recommendations                                                                                                                                                                                                             |
-| :---------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Display the name of the tenant that has been connected                                                | By default Codat includes a page, post successful connection displaying the Company Name connected.<br/>Alternatively this can be retrieved from Company Info endpoint.                                                     |
-| Display the current status of the connection(s). If disconnected, provide a button to connect to Xero | Status - `Connection.status` endpoint. <br/>Link to power your button to connect - `Connection.linkURL`                                                                                                                     |
-| Disconnect                                                                                            | To disconnect the connection use the PATCH connections endpoint.                                                                                                                                                            |
-| Handle a disconnect from Xero's side                                                                  | Codat handles the disconnection from Xero’s end - Codat unlinks the connection.                                                                                                                                             |
-| 1:1 or multi-org connection                                                                           | Codat allows your customers to select their Xero organization using the native Xero UI. You can allow your customer to connect to multiple organizations within Xero by creating a separate Codat company per organization. |
-| Disconnection process for off-boarding                                                                | Connections can be disconnected through the PATCH connections endpoint to prevent further syncs or the DELETE connections endpoint to prevent both further syncs and querying of historically synced data within Codat.     |
+| Requirement | Recommendations |
+| :-- | :-- |
+| Display the name of the tenant that has been connected | By default Codat includes a page, post successful connection displaying the Company Name connected.<br/>Alternatively this can be retrieved from Company Info endpoint. |
+| Display the current status of the connection(s). If disconnected, provide a button to connect to Xero | Status - `Connection.status` endpoint.  <br/>Link to power your button to connect - `Connection.linkURL` |
+| Disconnect | To disconnect the connection use the PATCH connections endpoint. |
+| Handle a disconnect from Xero's side | Codat handles the disconnection from Xero’s end - Codat unlinks the connection. |
+| 1:1 or multi-org connection | Codat allows your customers to select their Xero organization using the native Xero UI. You can allow your customer to connect to multiple organizations within Xero by creating a separate Codat company per organization. |
+| Disconnection process for off-boarding | Connections can be disconnected through the PATCH connections endpoint to prevent further syncs or the DELETE connections endpoint to prevent both further syncs and querying of historically synced data within Codat. |
 
 ### 4. Error handling
 
@@ -156,7 +156,7 @@ Please refer to Xero's guidance.
 
 ### 18. Deep linking
 
-Deep-linking enables your application to create a link that directs the user to a specific resource within a specific Xero Organisation. This provides a quick and easy way for the user to jump into Xero to see or take action against the resource referenced in your product.
+Deep-linking enables your application to create a link that directs the user to a specific resource within a specific Xero Organization. This provides a quick and easy way for the user to jump into Xero to see or take action against the resource referenced in your product.
 
 You can view the direct links via the Company Info endpoint specifically sourceURLs.
 

@@ -25,7 +25,6 @@ To connect their bank accounts to QBO, the SMB user performs the following steps
 
 4. Sign in to QuickBooks Online.
 
-<<<<<<< HEAD:docs/bank-feeds-api/qbo-bank-feeds/bank-feed-qbo-bank-feeds-smb-user.md
 5. If in Accounting View, select **Banking**.
 
 6. If in Business View, go to **Bookkeeping >Bank Transactions**.

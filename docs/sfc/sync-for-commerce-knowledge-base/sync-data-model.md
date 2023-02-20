@@ -13,7 +13,7 @@ updatedAt: "2022-10-06T12:22:19.225Z"
 | accountingSoftwareCompanyName | string, read-only | Name of the company as recorded in the linked accounting software. |
 | enabled | boolean | Whether synchronization is turned on or off. |
 | schedule | [Schedule](/sfc/sync-for-commerce-knowledge-base/sync-data-model#schedule) | Sync frequency and timing. |
-| configuration | [Synchronization configuration](/sfc/sync-for-commerce-knowledge-base/sync-data-model#synchronisation-configuration) | Configuration of sync accounts and grouping. |
+| configuration | [Synchronization configuration](/sfc/sync-for-commerce-knowledge-base/sync-data-model#synchronization-configuration) | Configuration of sync accounts and grouping. |
 
 ## Schedule
 
@@ -54,7 +54,7 @@ updatedAt: "2022-10-06T12:22:19.225Z"
 
 | Field | Type | Description |
 |---|---|---|
-| selectedCustomerId | string (must be an id contained in ` customerOptions) | ID of the chosen customer from the accounting software. The ID is linked to created invoices, which represent sales transactions. |
+| selectedCustomerId | string (must be an id contained in `customerOptions`) | ID of the chosen customer from the accounting software. The ID is linked to created invoices, which represent sales transactions. |
 | customerOptions | Array of Option read-only | List of possible customers from the accounting software. |
 
 ## Tax rates

@@ -105,10 +105,10 @@ If you don't have access to direct bank feeds, a 403 error is returned if you tr
 
 ```json Bank transactions push error - Xero
 {
-  "type": "invalid-organisation-bank-feeds",
-  "title": "Invalid Organisation",
+  "type": "invalid-organization-bank-feeds",
+  "title": "Invalid Organization",
   "status": 403,
-  "detail": "The organisation does not support automated bank feeds."
+  "detail": "The organization does not support automated bank feeds."
 }
 ```
 

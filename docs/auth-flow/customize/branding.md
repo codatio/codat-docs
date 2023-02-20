@@ -31,7 +31,7 @@ You can set your brand's primary color to define the color of buttons and other 
 
 <img
   src="/img/old/1cef143-branding.PNG"
-  alt="Branding settings screen with company name, logo, icon, and colour picker displayed"
+  alt="Branding settings screen with company name, logo, icon, and color picker displayed"
 />
 
 :::note

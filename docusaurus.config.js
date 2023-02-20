@@ -36,11 +36,11 @@ module.exports = {
       { name: "keywords", content: "codat, docs, updates" },
       {
         name: "og:image",
-        content: "https://docs.codat.io/img/meta/open-graph.png",
+        content: "https://docs.codat.io/img/meta/codat-bg.png",
       },
       {
         name: "twitter:image",
-        content: "https://docs.codat.io/img/meta/open-graph.png",
+        content: "https://docs.codat.io/img/meta/codat-bg.png",
       },
       {
         name: "twitter:card",
@@ -128,6 +128,10 @@ module.exports = {
             {
               href: "/files-api",
               label: "Files API",
+            },
+            {
+              href: "https://github.com/codatio/oas",
+              label: "OpenAPI spec",
             },
           ],
         },
@@ -288,6 +292,14 @@ module.exports = {
             from: '/docs',
           },
           {
+            to:  '/introduction/first-steps',
+            from: '/docs/guide-1',
+          },
+          {
+            to:  '/introduction/first-steps',
+            from: '/docs/get-started',
+          },
+          {
             to:  '/introduction/create-account',
             from: '/docs/core-account-signup',
           },
@@ -339,6 +351,47 @@ module.exports = {
             to:  '/using-the-api/optimizing-api-calls',
             from: '/reference/optimizing-your-api-calls-1',
           },
+          // Changelog - remove soon
+          { 
+            to: '/updates/220817-sage-50-soft-deletion',
+            from: '/changelog/41921-sage-50-deleted-payment-on-accounts-soft-deleted',
+          },
+          { 
+            to: '/updates/220826-wbo-invoice-push',
+            from: '/changelog/42327-qbo-change-to-invoice-push-validation',
+          },
+          { 
+            to: '/updates/220817-qbd-refs',
+            from: '/changelog/42998-qbd-push-validation-accountref-itemref',
+          },
+          { 
+            to: '/updates/220825-string-request-deprecation',
+            from: '/changelog/44714-deprecation-string-request-create-connections-endpoint',
+          },
+          { 
+            to: '/updates/220926-freshbooks-expenses',
+            from: '/changelog/upcoming-2023-01-10-freshbooks-expenses-no-longer-fetched-as-bills-and-bill-payments',
+          },
+          { 
+            to: '/updates/221003-quickbooks-online',
+            from: '/changelog/upcoming-2023-01-10-quickbooks-online-purchases-will-no-longer-be-fetched-as-bills-and-bill-payments',
+          },
+          { 
+            to: '/updates/230131-uat-deprecation',
+            from: '/changelog/upcoming-2023-01-31-deprecation-of-uat-environment',
+          },
+          { 
+            to: '/updates/230411-deletion-of-data',
+            from: '/changelog/upcoming-2023-04-10-changes-to-handling-of-deleted-data',
+          },
+          { 
+            to: '/updates/230411-api-keys',
+            from: '/changelog/upcoming-2023-04-10-deprecation-of-api-key-management',
+          },
+          { 
+            to: '/updates/230411-legacy-bank-account-endpoints',
+            from: '/changelog/upcoming-2023-04-10-deprecation-of-legacy-bank-account-endpoints'
+          }
         ],
       },
     ],

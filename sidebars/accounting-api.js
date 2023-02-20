@@ -19,6 +19,6 @@ module.exports = [
   {
     type: "link",
     href: "/accounting-api",
-    label: "API reference",
+    label: "Accounting API reference",
   },
 ];

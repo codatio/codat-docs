@@ -1,10 +1,33 @@
 ---
 title: "Sync for Commcerce overview"
 sidebar_label: Sync for Commerce
-description: "Learn about Sync for Commerce and its features"
+hide_title: true
+hide_description: true
+hide_table_of_contents: true
+description: "Embedded accounting integrations for PoS and eCommerce platforms."
 createdAt: "2022-06-27T08:17:55.337Z"
 updatedAt: "2022-11-17T10:56:14.545Z"
 ---
+
+<Head>
+  <meta property="og:image" content="/img/codat_banner.png"/>
+</Head>
+
+<div className="background-video-wrapper sfc">
+  <div className="banner-video">
+    <h1>Sync for Commerce</h1>
+    <p>
+      Embedded accounting integrations for PoS and eCommerce platforms.
+    </p>
+  </div>
+</div>
+
+<div className="background-video-spacer sfc">
+    <h1>Sync for Commerce</h1>
+    <p>
+      Embedded accounting integrations for PoS and eCommerce platforms.
+    </p>
+</div>
 
 **Building to lots of different APIs does not scale. With Sync for Commerce, you can send a merchant's data to their accounting platform without worrying about which one they use.**
 
