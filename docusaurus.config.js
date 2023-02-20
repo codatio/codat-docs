@@ -29,6 +29,26 @@ module.exports = {
     'ZENDESK_KEY': process.env.ZENDESK_KEY,
   },
   themeConfig: {
+    typesense: {
+      typesenseCollectionName: 'codat-docs', // Replace with your own doc site's name. Should match the collection name in the scraper settings.
+
+      typesenseServerConfig: {
+        nodes: [
+          {
+            host: '3n6945ds2yqfiv1cp-1.a1.typesense.net',
+            port: 443,
+            protocol: 'https',
+          }
+        ],
+        apiKey: 'x4tbdGWEWv2JCI8U3C6kdwdE8OiThCO1',
+      },
+
+      // Optional: Typesense search parameters: https://typesense.org/docs/0.24.0/api/search.html#search-parameters
+      typesenseSearchParameters: {},
+
+      // Optional
+      contextualSearch: true,
+    },
     sidebar: {
       hideable: true,
     },
@@ -208,17 +228,17 @@ module.exports = {
           ],
           className: "navbar__link--support",
         },
-        { 
-          href: "https://app.codat.io/", 
-          label: "Sign in", 
+        {
+          href: "https://app.codat.io/",
+          label: "Sign in",
           className: "navbarButton secondary",
-          position: "right" 
+          position: "right"
         },
-        { 
-          href: "https://signup.codat.io/", 
-          label: "Sign up", 
+        {
+          href: "https://signup.codat.io/",
+          label: "Sign up",
           className: "navbarButton primary",
-          position: "right" 
+          position: "right"
         },
       ],
     },
@@ -230,12 +250,6 @@ module.exports = {
     //   // https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
     //   additionalLanguages: ["shell-session", "http"],
     // },
-    algolia: {
-      appId: "002G1BUKXS",
-      apiKey: "0a640be9644a4d830f96aed136d2a70b",
-      indexName: "codat",
-      contextualSearch: true,
-    },
   },
   plugins: [
     "docusaurus-plugin-sass",
@@ -352,43 +366,43 @@ module.exports = {
             from: '/reference/optimizing-your-api-calls-1',
           },
           // Changelog - remove soon
-          { 
+          {
             to: '/updates/220817-sage-50-soft-deletion',
             from: '/changelog/41921-sage-50-deleted-payment-on-accounts-soft-deleted',
           },
-          { 
+          {
             to: '/updates/220826-wbo-invoice-push',
             from: '/changelog/42327-qbo-change-to-invoice-push-validation',
           },
-          { 
+          {
             to: '/updates/220817-qbd-refs',
             from: '/changelog/42998-qbd-push-validation-accountref-itemref',
           },
-          { 
+          {
             to: '/updates/220825-string-request-deprecation',
             from: '/changelog/44714-deprecation-string-request-create-connections-endpoint',
           },
-          { 
+          {
             to: '/updates/220926-freshbooks-expenses',
             from: '/changelog/upcoming-2023-01-10-freshbooks-expenses-no-longer-fetched-as-bills-and-bill-payments',
           },
-          { 
+          {
             to: '/updates/221003-quickbooks-online',
             from: '/changelog/upcoming-2023-01-10-quickbooks-online-purchases-will-no-longer-be-fetched-as-bills-and-bill-payments',
           },
-          { 
+          {
             to: '/updates/230131-uat-deprecation',
             from: '/changelog/upcoming-2023-01-31-deprecation-of-uat-environment',
           },
-          { 
+          {
             to: '/updates/230411-deletion-of-data',
             from: '/changelog/upcoming-2023-04-10-changes-to-handling-of-deleted-data',
           },
-          { 
+          {
             to: '/updates/230411-api-keys',
             from: '/changelog/upcoming-2023-04-10-deprecation-of-api-key-management',
           },
-          { 
+          {
             to: '/updates/230411-legacy-bank-account-endpoints',
             from: '/changelog/upcoming-2023-04-10-deprecation-of-legacy-bank-account-endpoints'
           }
@@ -440,8 +454,8 @@ module.exports = {
         ],
       },
     ],
-    path.resolve(__dirname, "./node_modules/@docusaurus/theme-search-algolia"),
     "@docusaurus/theme-mermaid",
+    "docusaurus-theme-search-typesense"
   ],
   markdown: {
     mermaid: true, // In order for Mermaid code blocks in Markdown to work, you also need to enable the Remark plugin with this option
