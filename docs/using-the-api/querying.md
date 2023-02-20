@@ -48,7 +48,7 @@ The total length of your query should be under 2048 characters in order to be va
 
 Our `GET /{dataType}` endpoints typically return an array of items of that given data type. If you want to retrieve just a single data type by an ID, you can use a query. For example:
 
-`query=id%253D81be41e9-5c2c-4064-829c-bca43b5e6f59.
+`query=id%253D81be41e9-5c2c-4064-829c-bca43b5e6f59.`
 
 ## Example queries
 
@@ -56,18 +56,30 @@ Note that characters (<, >) are url-encoded.
 
 ### Invoices with amounts outstanding
 
-`GET /companies/{companyId}/data/invoices?query=amountDue%3e0`
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-```javascript Title="Javascript"
+<Tabs>
+<TabItem value="http" label="HTTP">
+
+```http
+GET /companies/{companyId}/data/invoices?query=amountDue%3e0
+```
+
+</TabItem>
+<TabItem value="javascript" label="Javascript">
+
+```javascript
 import {InvoicesQuery} from 'codat-queries';
 import { api as codat } from 'codat';
 
 var query = new InvoicesQuery(companyId, 'amountDue>0')
 .run(codat.uat(apiKey));
 ```
+</TabItem>
+<TabItem value="c" label="C#">
 
-
-```csharp Title="C#"
+```c
 var request = new RestRequest("companies/{companyId}/data/invoices", Method.GET);
 request.AddUrlSegment("companyId", companyId);
 request.AddUrlSegment("query", "amountDue>0");
@@ -75,20 +87,32 @@ request.AddHeader("Authorization", $"Basic {encodedApiKey}");
 var response = client.Execute(request);
 var info = response.Data;
 ```
+</TabItem>
+</Tabs>
 
 ### GBP Invoices
 
-` GET /companies/{companyId}/data/invoices?query=currency%3dGBP`
+<Tabs>
+<TabItem value="http" label="HTTP">
 
-```javascript Title="Javascript"
+```http
+GET /companies/{companyId}/data/invoices?query=currency%3dGBP
+```
+
+</TabItem>
+<TabItem value="javascript" label="Javascript">
+
+```javascript
 import {InvoicesQuery} from 'codat-queries';
 import { api as codat } from 'codat';
 
 var query = new InvoicesQuery(companyId, 'currency=GBP')
 .run(codat.uat(apiKey));
 ```
+</TabItem>
+<TabItem value="c" label="C#">
 
-```csharp Title="C#"
+```c
 var request = new RestRequest("companies/{companyId}/data/invoices", Method.GET);
 request.AddUrlSegment("companyId", companyId);
 request.AddUrlSegment("query", "currency=GBP");
@@ -96,20 +120,32 @@ request.AddHeader("Authorization", $"Basic {encodedApiKey}");
 var response = client.Execute(request);
 var info = response.Data;
 ```
+</TabItem>
+</Tabs>
 
 ### Invoices to a particular customer
 
-` GET /companies/{companyId}/data/invoices?query=customerRef.id%3d61`
+<Tabs>
+<TabItem value="http" label="HTTP">
 
-```javascript Title="Javascript"
+```http
+GET /companies/{companyId}/data/invoices?query=customerRef.id%3d61
+```
+
+</TabItem>
+<TabItem value="javascript" label="Javascript">
+
+```javascript
 import {InvoicesQuery} from 'codat-queries';
 import { api as codat } from 'codat';
 
 var query = new InvoicesQuery(companyId, 'customerRef.id=61')
 .run(codat.uat(apiKey));
 ```
+</TabItem>
+<TabItem value="c" label="C#">
 
-```csharp Title="C#"
+```c
 var request = new RestRequest("companies/{companyId}/data/invoices", Method.GET);
 request.AddUrlSegment("companyId", companyId);
 request.AddUrlSegment("query", "customerRef.id=61");
@@ -117,20 +153,32 @@ request.AddHeader("Authorization", $"Basic {encodedApiKey}");
 var response = client.Execute(request);
 var info = response.Data;
 ```
+</TabItem>
+</Tabs>
 
 ### Outstanding Invoices of value less than 1000
 
-` GET /companies/{companyId}/data/invoices?query=amountDue%3e0%26%26totalAmount%3c1000`
+<Tabs>
+<TabItem value="http" label="HTTP">
 
-```javascript Title="Javascript"
+```http
+GET /companies/{companyId}/data/invoices?query=amountDue%3e0%26%26totalAmount%3c1000
+```
+
+</TabItem>
+<TabItem value="javascript" label="Javascript">
+
+```javascript
 import {InvoicesQuery} from 'codat-queries';
 import { api as codat } from 'codat';
 
 var query = new InvoicesQuery(companyId, 'amountDue>0&&totalAmount<1000')
 .run(codat.uat(apiKey));
 ```
+</TabItem>
+<TabItem value="c" label="C#">
 
-```csharp Title="C#"
+```c
 var request = new RestRequest("companies/{companyId}/data/invoices", Method.GET);
 request.AddUrlSegment("companyId", companyId);
 request.AddUrlSegment("query", "amountDue>0&&totalAmount<1000");
@@ -138,20 +186,32 @@ request.AddHeader("Authorization", $"Basic {encodedApiKey}");
 var response = client.Execute(request);
 var info = response.Data;
 ```
+</TabItem>
+</Tabs>
 
 ### Invoices that are due after a certain date (YYYY-MM-DD) e.g. "2021-01-28"
 
-` GET /companies/{companyId}/data/invoices?query=dueDate%3E2021-01-28`
+<Tabs>
+<TabItem value="http" label="HTTP">
 
-```javascript Title="Javascript"
+```http
+GET /companies/{companyId}/data/invoices?query=dueDate%3E2021-01-28
+```
+
+</TabItem>
+<TabItem value="javascript" label="Javascript">
+
+```javascript
 import {InvoicesQuery} from 'codat-queries';
 import { api as codat } from 'codat';
 
 var query = new InvoicesQuery(companyId,'dueDate>2021-01-28')
 .run(codat.uat(apiKey));
 ```
+</TabItem>
+<TabItem value="c" label="C#">
 
-```csharp Title="C#"
+```c
 var request = new RestRequest("companies/{companyId}/data/invoices", Method.GET);
 request.AddUrlSegment("companyId", companyId);
 request.AddUrlSegment("query", "dueDate>2021-01-28");
@@ -159,14 +219,23 @@ request.AddHeader("Authorization", $"Basic {encodedApiKey}");
 var response = client.Execute(request);
 var info = response.Data;
 ```
+</TabItem>
+</Tabs>
 
 ### For companies whose status is "Pending" (with data connection established)
 
-`GET /companies?page=1&pageSize=100&query=dataConnections.status=PendingAuth`
-
 _Note_: the page size value is obligatory for querying.
 
-```csharp Title="C#"
+<Tabs>
+<TabItem value="http" label="HTTP">
+
+```http
+GET /companies?page=1&pageSize=100&query=dataConnections.status=PendingAuth
+```
+</TabItem>
+<TabItem value="c" label="C#">
+
+```c
 var request = new RestRequest("companies", Method.GET);
 request.AddUrlSegment("page", 1);
 request.AddUrlSegment("query", "dataConnections.status=PendingAuth");
@@ -174,14 +243,23 @@ request.AddHeader("Authorization", $"Basic {encodedApiKey}");
 var response = client.Execute(request);
 var info = response.Data;
 ```
+</TabItem>
+</Tabs>
 
 ### For companies with no data connection established
-`` GET /companies?page=1&pageSize=100&query=dataConnections.count=0``
 
 *Note*: The page size value is obligatory for querying.
 
-```csharp Title="C#"
+<Tabs>
+<TabItem value="http" label="HTTP">
 
+```http
+GET /companies?page=1&pageSize=100&query=dataConnections.count=0
+```
+</TabItem>
+<TabItem value="c" label="C#">
+
+```c
 var request = new RestRequest("companies", Method.GET);
 request.AddUrlSegment("page", 1);
 request.AddUrlSegment("query", "dataConnections.count=0");
@@ -189,3 +267,5 @@ request.AddHeader("Authorization", $"Basic {encodedApiKey}");
 var response = client.Execute(request);
 var info = response.Data;
 ```
+</TabItem>
+</Tabs>

@@ -38,11 +38,20 @@ Note: `totalResults` returns the number of results after applying any filter you
 
 ## Example
 
-```http title="HTTP"
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="http" label="HTTP">
+
+```http
 GET /companies/{companyId}/data/invoices?page=5&pageSize=20
 ```
 
-```javascript title="Javascript"
+</TabItem>
+<TabItem value="javascript" label="Javascript">
+
+```javascript
 var query = new InvoicesQuery(companyId, 
                     /* filter query */ null, 
                     /* page number  */ 5, 
@@ -51,7 +60,10 @@ var query = new InvoicesQuery(companyId,
 
 // Following of the pages directly from the HAL links is not yet supported by the client library.
 ```
-```csharp title="C#"
+</TabItem>
+<TabItem value="csharp" label="C#">
+
+```csharp
 var request = new RestRequest("companies/{companyId}/data/invoices", Method.GET);
 request.AddUrlSegment("companyId", companyId);
 request.AddQueryParameter("page", 5.ToString());
@@ -60,6 +72,8 @@ request.AddHeader("Authorization", $"Basic {encodedApiKey}");
 var response = client.Execute(request);
 var info = response.Data;
 ```
+</TabItem>
+</Tabs>
 
 ```json title="Sample response"
 {
