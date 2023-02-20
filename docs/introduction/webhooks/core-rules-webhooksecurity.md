@@ -9,7 +9,7 @@ To prevent unauthorized users from posting content to your webhook, Codat can ad
 
 ## Enable webhook security in the Codat portal
 
-To enable security for your organisation's webhooks.
+To enable security for your organization's webhooks.
 
 1. Sign in to the Codat Portal.
 2. Select **Monitor > Alerts > Alert settings**.

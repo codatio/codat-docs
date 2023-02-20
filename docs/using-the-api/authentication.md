@@ -7,7 +7,7 @@ updatedAt: "2022-11-07T19:59:38.100Z"
 
 Codat uses API keys to control access to the API.
 
-You must keep the API key secret, so make sure it isn't available in publicly accessible areas, such as GitHub and client-side code. Codat recommends the API key is only inserted at release time, and the number of people at your organisation with access to your API key is minimised.
+You must keep the API key secret, so make sure it isn't available in publicly accessible areas, such as GitHub and client-side code. Codat recommends the API key is only inserted at release time, and the number of people at your organization with access to your API key is minimised.
 
 Codat expects the API key to be included in all API requests to the server, Base64 encoded within an 'Authorization' header.
 

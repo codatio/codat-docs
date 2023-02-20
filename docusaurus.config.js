@@ -288,6 +288,14 @@ module.exports = {
             from: '/docs',
           },
           {
+            to:  '/introduction/first-steps',
+            from: '/docs/guide-1',
+          },
+          {
+            to:  '/introduction/first-steps',
+            from: '/docs/get-started',
+          },
+          {
             to:  '/introduction/create-account',
             from: '/docs/core-account-signup',
           },

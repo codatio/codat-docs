@@ -70,7 +70,7 @@ Alternatively, you could follow these steps:
 1. In the **Companies** tab, click the company and select **Accounting API** in the left hand menu.
 2. In the `Data type` field, select **Accounting data > Accounts**, and click the **Categorize accounts** button (the button displays only if you have Assess enabled).
 
-   You can learn more about **Account subtype** and **Account detail type** in the <a className="external" href="https://links.codat.io/account-categorisation/help" target="_blank">Terminology guide</a>.
+   You can learn more about **Account subtype** and **Account detail type** in the <a className="external" href="https://links.codat.io/account-categorization/help" target="_blank">Terminology guide</a>.
 
 3. Select **Categorize** next to the account category that contains the account type you want to set a category to.
 4. Set an **Account type**, **Account subtype** and **Account detail** for each account listed.
