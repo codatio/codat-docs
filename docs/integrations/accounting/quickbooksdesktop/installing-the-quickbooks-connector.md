@@ -6,9 +6,11 @@ updatedAt: "2022-10-17T16:14:54.800Z"
 ---
 
 :::info Linking companies using the QuickBooks Desktop connector
+
 The QuickBooks Desktop connector must be run on the same computer as the QuickBooks Desktop application. Advise your client to install the connector on the computer they normally use when working with QuickBooks Desktop.
 
 Before they start the linking process, the user must open QuickBooks Desktop and log in to the company they want to link.
+
 :::
 
 To install the QuickBooks Desktop connector, the user who is connecting their company data must complete the following tasks:
@@ -28,9 +30,11 @@ To install the QuickBooks Desktop connector, the user who is connecting their co
 First, the user downloads the connector from a Codat Link URL.
 
 :::info Connector download file
+
 The QuickBooks Desktop connector is packaged as a .exe file. To increase your client's trust in the download, the filename is prefixed with your company name (the name of the company the user is connecting their data to). For example: `YourCompanyName-quickbooksDesktop-connector.exe`. Symbols in the filename are replaced with dashes.
 
 Additionally, the file is signed with an Extended Validation Code Signing Digital Certificate issued by GlobalSign.
+
 :::
 
 If you're using the Codat Link flow, the user can download the connector after they've selected QuickBooks Desktop as their accounting package.
@@ -38,7 +42,9 @@ If you're using the Codat Link flow, the user can download the connector after t
 If you've built your own Link flow, the **linkUrl** field on the company's QuickBooks data connection will initiate the installer download.
 
 :::info Connector permissions
+
 **The connector requires administrator privileges (admin rights) to run.** Each time you add a company, a user with admin rights needs to run the installer, which will display the following window:
+
 :::
 
 <img src="/img/old/420dc1e-QBDLinkNew.JPG" />
@@ -95,7 +101,7 @@ Check the details in the **Access Confirmation** dialog, and then click **Done**
 
 ## 5. Wait for the connector to complete first link
 
-Once access to QuickBooks has been granted, the connector will process the datasets you have chosen to _fetch on first link_ (see [Data Sync Settings](/core-concepts/data-type-settings)). Upon completion of the first link, a message will be shown to the user confirming that their data has been synchronised.
+Once access to QuickBooks has been granted, the connector will process the datasets you have chosen to _fetch on first link_ (see [Data Sync Settings](/core-concepts/data-type-settings)). Upon completion of the first link, a message will be shown to the user confirming that their data has been synchronized.
 
 If you have chosen to have your connectors perform a one-time synchronization, the connector will uninstall itself and set the company status to _deauthorised_.
 

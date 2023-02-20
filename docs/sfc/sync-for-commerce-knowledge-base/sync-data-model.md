@@ -36,7 +36,7 @@ updatedAt: "2022-10-06T12:22:19.225Z"
 
 | Field | Type | Description |
 |---|---|---|
-| syncSales | boolean | Whether or not sales data is synchronised to accounting software. This must be turned on to enable payments data synchronization. |
+| syncSales | boolean | Whether or not sales data is synchronized to accounting software. This must be turned on to enable payments data synchronization. |
 | accounts | Dictionary of AccountType to Account | Nominal account to push to for each type of sales data. |
 | invoiceStatus | InvoiceStatus | Status invoices are raised as. |
 | salesCustomer | SalesCustomer | Customer invoices are raised against. |
@@ -54,7 +54,7 @@ updatedAt: "2022-10-06T12:22:19.225Z"
 
 | Field | Type | Description |
 |---|---|---|
-| selectedCustomerId | string (must be an id contained in ` customerOptions) | ID of the chosen customer from the accounting software. The ID is linked to created invoices, which represent sales transactions. |
+| selectedCustomerId | string (must be an id contained in `customerOptions`) | ID of the chosen customer from the accounting software. The ID is linked to created invoices, which represent sales transactions. |
 | customerOptions | Array of Option read-only | List of possible customers from the accounting software. |
 
 ## Tax rates
@@ -108,7 +108,7 @@ The structure for both of these sections is the same:
 
 | Field | Type | Description |
 |---|---|---|
-| syncPayments | boolean | Whether or not payments data is synchronised to accounting software. |
+| syncPayments | boolean | Whether or not payments data is synchronized to accounting software. |
 | accounts | Dictionary of AccountType to Account | Account to push to for each payment type. |
 
 ## Fees
@@ -120,7 +120,7 @@ The structure for both of these sections is the same:
 
 ## Account types
 
-This is an enum of different types of nominal or bank accounts that are created and synchronised within the accounting software. Depending on which sales or payment types your system is creating, you must configure accounts within the accounting software for each of these data types. Configure an existing account by selecting the account ID within the relevant section of the configuration. Create new accounts by calling the New Account Endpoint with **accountType** set to the relevant enum value.
+This is an enum of different types of nominal or bank accounts that are created and synchronized within the accounting software. Depending on which sales or payment types your system is creating, you must configure accounts within the accounting software for each of these data types. Configure an existing account by selecting the account ID within the relevant section of the configuration. Create new accounts by calling the New Account Endpoint with **accountType** set to the relevant enum value.
 
 | Name | Section |
 |---|---|
