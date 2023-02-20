@@ -101,6 +101,11 @@ module.exports = {
             "introduction/webhooks/receive-webhooks-as-email-alerts",
           ],
         },
+        {
+          type: "link",
+          href: "https://github.com/codatio/oas",
+          label: "OpenAPI spec"
+        },
         "introduction/change-policy",
       ],
     },
