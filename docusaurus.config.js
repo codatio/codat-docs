@@ -129,6 +129,10 @@ module.exports = {
               href: "/files-api",
               label: "Files API",
             },
+            {
+              href: "https://github.com/codatio/oas",
+              label: "OpenAPI spec",
+            },
           ],
         },
         { to: "updates", label: "Updates", position: "left" }, // or position: 'right'
