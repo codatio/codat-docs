@@ -55,7 +55,7 @@ There are three ways to check the status of the sync:
 
 ### Check transactions
 
-Once the sync has completed, you should check whether the transactions were successfully sync'd to the accounting package - this can be done via the [transaction metadata endpoint](/sync-for-expenses-api#/operations/get-sync-transactions)
+Once the sync has completed, you should check whether the transactions were successfully synced to the accounting package. This can be done via the [transaction metadata endpoint](/sync-for-expenses-api#/operations/get-sync-transactions)
 
 ```http title="Transaction status"
 GET https://expensesync.codat.io/companies/{companyId}/syncs/{syncId}/transactions
