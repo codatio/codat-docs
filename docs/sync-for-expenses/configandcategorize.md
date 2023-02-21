@@ -73,7 +73,7 @@ Sync for Expenses currently supports option 2 only.
 #### Customer
 <ul>
    <li>
-      Choose which customer (<code>bankAccount.id</code>) income related activities such as cashback will be associated too.  
+      Choose which customer (<code>customer.id</code>) any income-related activities, such as cashback, should be associated with.  
    </li>
    <ul>
       <li>
