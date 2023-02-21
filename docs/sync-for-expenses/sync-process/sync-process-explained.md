@@ -45,7 +45,7 @@ A `syncId` will be returned to the response payload.
 
 ### Check sync status
 
-There are three ways that you can check the status of the sync:
+There are three ways to check the status of the sync:
 
 1.  Using webhooks and the `sync completed` rule
 
