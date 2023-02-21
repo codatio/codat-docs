@@ -30,7 +30,7 @@ Using this endpoint you will be able to:
 #### Bank Account
 <ul>
    <li>
-      Choose which bank account (<code>bankAccount.id</code>) purchases will be made from, this can also be a credit card account.
+      Choose which bank account (<code>bankAccount.id</code>) purchases will be made from. This can also be a credit card account.
    </li>
    <ul>
       <li>
