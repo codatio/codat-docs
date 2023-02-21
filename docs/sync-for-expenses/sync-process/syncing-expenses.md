@@ -1,6 +1,10 @@
 ---
 title: "Syncing expenses"
+description: "Syncing expense-transaction datasets to your customers accounting software"
 ---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 Once you have pushed data to Codat and created datasets you can then initiate the sync process.
 
@@ -12,18 +16,11 @@ Syncs are independent of creating datasets, so you can continue to create new da
 
 :::
 
-```json http
-{
-  "method": "post",
-  "baseUrl": "https://expensesync.codat.io",
-  "headers": {
-    "authorization": ""
-  },
-  "url": "/companies/{companyId}/syncs",
-  "body": {
-    "datasetIds": ["fd4cc60e-8666-4443-8fad-12c56d7420ee"]
-  }
-}
+```http title="Sync datasets"
+ POST https://expensesync.codat.io/companies/{companyId}/syncs
+    {
+       "datasetIds": ["fd4cc60e-8666-4443-8fad-12c56d7420ee"]
+    }
 ```
 
 ### Webhook Events
@@ -32,31 +29,31 @@ Codat provides three webhooks which you can subscribe to:
 
 - `Sync Started`: this will be triggered when a sync process for a company starts.
 
-:::warning Syncs
+:::caution Multiple Syncs
 Codat will **not** be able to accept any new requests to initiate another sync whilst a sync is ongoing.
+:::
 
 - `Sync Failed`: This will be triggered if there are any failures during the sync process.
 
 - `Sync Completed`: This will be triggered when a sync completes without any failures.
 
-:::
-
 ### Sync Status
 
 Once you have pushed data to Codat, you can use the sync status endpoints to check whether the sync was completed successfully and see the details of any errors that may have occurred.
 
-```json http
-{
-  "method": "get",
-  "baseUrl": "https://expensesync.codat.io",
-  "headers": {
-    "authorization": ""
-  },
-  "url": "/companies/{companyId}/syncs/{syncId}/status"
-}
+<Tabs>
+
+<Tabitem value="Request URL" label="Request URL">
+
+```http
+GET https://expensesync.codat.io/companies/companyId/syncs/syncId/status
 ```
 
-```json title="Sample sync success"
+</Tabitem>
+
+<Tabitem value="Success" label="Sync Successful">
+
+```json
 {
   "companyId": "71c1fdae-e104-4668-8a4c-7f795aafc2a4",
   "syncId": "ea86bb15-7a89-4b2d-a18d-626cc0e28137",
@@ -69,7 +66,11 @@ Once you have pushed data to Codat, you can use the sync status endpoints to che
 }
 ```
 
-```json title="Sample sync failed"
+</Tabitem>
+
+<Tabitem value="Failed" label="Sync Failed">
+
+```json
 {
   "companyId": "8cba59e5-ae8a-418b-918a-09f90850e8d8",
   "syncId": "2b5d5fd1-f4b2-49de-98c3-ca37a0dcd8cd",
@@ -82,24 +83,32 @@ Once you have pushed data to Codat, you can use the sync status endpoints to che
 }
 ```
 
+</Tabitem>
+
+</Tabs>
+
+
 ### Transactions Status
 
 In addition to sync status endpoints, Codat provides a transactions endpoint where you can see the status of individual transactions.
 
 This enables you to see if the transaction has synced successfully, or details or the errors associated to the transaction if it was unsuccessful.
 
-```json http
-{
-  "method": "get",
-  "baseUrl": "https://expensesync.codat.io",
-  "headers": {
-    "authorization": ""
-  },
-  "url": "/companies/{companyId}/syncs/{syncId}/transactions"
-}
+
+
+<Tabs>
+
+<Tabitem value="Request URL" label="Request URL">
+
+```http
+GET https://expensesync.codat.io/companies/{companyId}/syncs/{syncId}/transactions
 ```
 
-```json title="Sample Success"
+</Tabitem>
+
+<Tabitem value="Success" label="Successful Transactions">
+
+```json
 {
   "results": [
     {
@@ -130,7 +139,11 @@ This enables you to see if the transaction has synced successfully, or details o
 }
 ```
 
-```json title="Sample Failiure"
+</Tabitem>
+
+<Tabitem value="Failed" label="Failed Transactions">
+
+```json
 {
   "results": [
     {
@@ -162,3 +175,7 @@ This enables you to see if the transaction has synced successfully, or details o
   }
 }
 ```
+
+</Tabitem>
+
+</Tabs>

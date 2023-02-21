@@ -1,5 +1,6 @@
 ---
 title: "Uploading receipts"
+description: "Upload receipts for complete auditability"
 ---
 
 # Upload Receipts
@@ -7,8 +8,7 @@ title: "Uploading receipts"
 Adding a receipt to the transaction can be done after the sync, different accounting software supports different file formats and sizes so its best to check [here](/accounting-api#/attachments#options-for-pushing-attachments-to-the-accounting-platform) for the supported options.
 
 ```http
-**POST**
-/companies/{companyId}/syncs/{syncId}/transactions/{transactionId}/atachments
+POST https://expensesync.codat.io/companies/{companyId}/syncs/{syncId}/transactions/{transactionId}/atachments
 ```
 
 ```
@@ -31,12 +31,10 @@ Content-Disposition: form-data; name="yourFileData"; filename="TEST_SEND_FILE.tx
 
 If you use Postman, there are some extra steps you need to follow to attach a file to an invoice.
 
-1.  [Set up a POST request](/using-postman-to-call-the-api), in a similar way to the example, to the following endpoint:
+1.  Set up a POST request, in a similar way to the example [here](https://postman.codat.io/#f3b78b32-f1a7-4016-b222-fd26efdcc126), to the following endpoint:
 
     ```http
-        POST
-
-        /companies/{companyId}/syncs/{syncId}/transactions/{transactionId}/atachments
+        POST https://expensesync.codat.io/companies/{companyId}/syncs/{syncId}/transactions/{transactionId}/atachments
     ```
 2.  In the request setup, select **Body**.
 
