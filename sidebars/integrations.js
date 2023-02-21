@@ -4,6 +4,7 @@ module.exports = [
     label: "Integration coverage",
     href: "https://knowledge.codat.io/supported-features/accounting",
   },
+  "integrations/all-integrations",
   {
     type: "category",
     label: "Accounting",
