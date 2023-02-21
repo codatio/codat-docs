@@ -71,9 +71,9 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 
 |Field|Type|Description|
 |----|----|----|
-|**lastGenerated**|_string_, See [date](/common-api#/schemas/DateTime)|The date and time of the report that is being generated.|
+|**lastGenerated**|_string_, See [date](/codat-api#/schemas/DateTime)|The date and time of the report that is being generated.|
 |**inProgress**|_boolean_|true - the request was successful and the report is being generated. false - the request was unsuccessful and the report is not being generated.|
-|**queued**|_string_, See [date](/common-api#/schemas/DateTime)|The time a successful request was queued.|
+|**queued**|_string_, See [date](/codat-api#/schemas/DateTime)|The time a successful request was queued.|
 |**success**|_boolean_|true - the requested report was successfully queued. false - the requested report wasn't able to be queued.|
 |**errorMessage**|_string_|The error message if the status was unsuccessful.|
 |**lastInvocationId**|_string_|A unique ID generated for this request.|
