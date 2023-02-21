@@ -39,7 +39,7 @@ Using this endpoint you will be able to:
 <li>For <strong>credit cards</strong> you can use an additional query parameter e.g. <code>query=metadata.isDeleted=false&&isBankAccount=true&&type=liability</code></li>
       </li>
       <li>
-         You can <a href="/accounting-api#/operations/post-account">POST</a> to the accounting api to <strong>create</strong> a new account.
+         You can <a href="/accounting-api#/operations/post-account">POST</a> to the Accounting API to <strong>create</strong> a new account.
       </li>
    </ul>
 </ul>
