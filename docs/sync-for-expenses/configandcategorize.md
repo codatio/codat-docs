@@ -58,7 +58,7 @@ Sync for Expenses currently supports option 2 only.
 #### Supplier
 <ul>
    <li>
-      A (<code>supplier.id</code>) is required to associate all spend against. 
+      A supplier (<code>supplier.id</code>) is required to associate all spending against that supplier. 
    </li>
    <ul>
       <li>
