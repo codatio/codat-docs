@@ -5,7 +5,7 @@ description: "Upload receipts for complete auditability"
 
 # Upload Receipts
 
-Adding a receipt to the transaction can be done after the sync, different accounting software supports different file formats and sizes so its best to check [here](/accounting-api#/attachments#options-for-pushing-attachments-to-the-accounting-platform) for the supported options.
+Adding a receipt to the transaction can be done after the sync, different accounting software supports different file formats and sizes, so it is best to check [here](/accounting-api#/attachments#options-for-pushing-attachments-to-the-accounting-platform) for the supported options.
 
 ```http
 POST https://expensesync.codat.io/companies/{companyId}/syncs/{syncId}/transactions/{transactionId}/atachments
