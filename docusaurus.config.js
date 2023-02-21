@@ -405,7 +405,11 @@ module.exports = {
           {
             to: '/updates/230411-legacy-bank-account-endpoints',
             from: '/changelog/upcoming-2023-04-10-deprecation-of-legacy-bank-account-endpoints'
-          }
+          },
+          {
+            to:  '/updates',
+            from: '/changelog',
+          },
         ],
         createRedirects(existingPath) {
           if (existingPath.includes('/docs/banking-')) {
