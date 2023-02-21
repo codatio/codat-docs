@@ -23,7 +23,7 @@ Below is a indicative demo of a where Codat might fit in to a digital lending on
 
 ### 1. Create a Codat company when a user signs up for your app
 
-1. In order to establish a connection to your customer's financial platform(s), you first need to create a Codat company for them. We recommend you create a company at the same time as your customer signs up within your app. That will allow you to track their connection status from day one. To create a company, follow the steps in [Create a Codat company](/using-the-api/managing-companies/managing-companies).
+1. In order to establish a connection to your customer's financial platform(s), you first need to create a Codat company for them. We recommend you create a company at the same time as your customer signs up within your app. That will allow you to track their connection status from day one. To create a company, follow the steps in [Create a Codat company](/using-the-api/managing-companies#create-a-codat-company).
 
 :::caution Use your merchant ID for the company name
 
