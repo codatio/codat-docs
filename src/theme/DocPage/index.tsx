@@ -158,9 +158,16 @@ function DocPage(props: Props): JSX.Element {
   const currentDocRoute = docRoutes.find((docRoute) =>
     matchPath(location.pathname, docRoute),
   );
+
   if (!currentDocRoute) {
-    return <NotFound />;
+    return <NotFound
+      route={docRoutes}
+      versionMetadata={versionMetadata}
+      location={location}
+      sidebar={versionMetadata.docsSidebars.docs}
+    />;
   }
+
   return (
     <>
       <Head>
