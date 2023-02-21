@@ -36,7 +36,7 @@ POST https://expensesync.codat.io/companies/{companyId}/expense-reconciliations
 
 ### [Initiate Sync](syncing-expenses)
 
-You can then initiate the sync process for multiple datasets by making an api request to the [sync endpoint](/sync-for-expenses-api#/operations/intiate-sync).
+You can then initiate the sync process for multiple datasets by making an API request to the [sync endpoint](/sync-for-expenses-api#/operations/intiate-sync).
 
 ```http title="Initiate a sync of expense datasets"
 POST  https://expensesync.codat.io/companies/{companyId}/data/expense-transactions
