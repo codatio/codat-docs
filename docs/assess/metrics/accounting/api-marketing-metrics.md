@@ -35,7 +35,7 @@ View the Marketing Metrics [formulas](/assess/metrics/accounting/api-financial-m
 #Parameters
 | Parameter               | Type                                        | Description                                                                                                                | Required |
 |-------------------------|---------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|----------|
-| **reportDate**          | _string_ See [Date](/datamodel-shared-date) | YYYY-MM-DD Datetime or Date (inclusive of the whole day).                                                                  | Required |
+| **reportDate**          | _string_ See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD Datetime or Date (inclusive of the whole day).                                                                  | Required |
 | **periodLength**        | _integer_                                   | Based on the period unit provided. It must be positive, not zero and an integer.                                           | Required |
 | **numberOfPeriods**     | _integer_                                   | The number of periods to return. It must be positive, not zero and an integer.                                             | Required |
 | **includeDisplayNames** | _boolean_                                   | Shows the dimensionDisplayName and itemDisplayName in measures to make the report data human-readable. Default is 'false'. | Optional |
@@ -70,8 +70,8 @@ _Marketing metrics_ consists of these dimensions: Period, Marketing metrics and 
 | **Field**       | Type                                        | Description                                             |
 |-----------------|---------------------------------------------|---------------------------------------------------------|
 | **displayName** | _string_                                    | "Period n"                                              |
-| **start**       | _string_ See [Date](/datamodel-shared-date) | YYYY-MM-DD Date in which the period begins (inclusive). |
-| **end**         | _string_ See [Date](/datamodel-shared-date) | YYYY-MM-DD Date in which the period ends (inclusive).   |
+| **start**       | _string_ See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD Date in which the period begins (inclusive). |
+| **end**         | _string_ See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD Date in which the period ends (inclusive).   |
 
 ### Dimension (index = “1”): Marketing metrics
 

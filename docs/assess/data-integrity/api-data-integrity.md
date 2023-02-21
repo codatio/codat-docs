@@ -79,7 +79,7 @@ The endpoint is available in our <a href="/assess-api#/operations/get-dataIntegr
 #### Status info
 | **Field** | Type | Description |
 |---|---|---|
-| **lastMatched** | _string_, See [Date](/datamodel-shared-date) | The date the matching algorithm last ran against the company’s bank transactions. |
+| **lastMatched** | _string_, See [Date](/codat-api#/schemas/DateTime) | The date the matching algorithm last ran against the company’s bank transactions. |
 | **currentStatus** | _string_ | One of the following: `Unknown`, `DoesNotExist` - have never attempted a match run for this company as do not have datasets required, `Error` - something went wrong upon matching, `Processing`, `Complete`  |
 | **statusMessage** | _string_ | Detailed explanation supporting the status value. |
 
@@ -101,10 +101,10 @@ The endpoint is available in our <a href="/assess-api#/operations/get-dataIntegr
 #### Dates
 | **Field**              | Type                                         | Description                                                                      |
 |------------------------|----------------------------------------------|----------------------------------------------------------------------------------|
-| **minDate**            | _string_, See [Date](/datamodel-shared-date) | Earliest date of transaction set.                                                |
-| **maxDate**            | _string_, See [Date](/datamodel-shared-date) | Latest date of transaction set.                                                  |
-| **minOverlappingDate** | _string_, See [Date](/datamodel-shared-date) | Earliest date where transactions exist in both accounting and banking platforms. |
-| **maxOverlappingDate** | _string_, See [Date](/datamodel-shared-date) | Latest date where transactions exist in both account and banking platforms.      |
+| **minDate**            | _string_, See [Date](/codat-api#/schemas/DateTime) | Earliest date of transaction set.                                                |
+| **maxDate**            | _string_, See [Date](/codat-api#/schemas/DateTime) | Latest date of transaction set.                                                  |
+| **minOverlappingDate** | _string_, See [Date](/codat-api#/schemas/DateTime) | Earliest date where transactions exist in both accounting and banking platforms. |
+| **maxOverlappingDate** | _string_, See [Date](/codat-api#/schemas/DateTime) | Latest date where transactions exist in both account and banking platforms.      |
 
 
 ### Sample response
@@ -324,7 +324,7 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 | **type** | _string_ | The data type of the record.  |
 | **connectionId** | _string_ | ID GUID representing the connection of the accounting or banking platform.  |
 | **id** | _string_ | A concatenation of the accountId and transactionId, in the format accountId_transactionId. This is unique to data integrity.  |
-| **date** | _date_, See [Date](/datamodel-shared-date) | The date of the transaction.  |
+| **date** | _date_, See [Date](/codat-api#/schemas/DateTime) | The date of the transaction.  |
 | **description** | _string_ | The transaction description.  |
 | **amount** | _number_ | The transaction value.  |
 | **currency** | _string_ | The currency of the transaction.  |
@@ -338,7 +338,7 @@ This outlines the transaction(s) in which the original transaction has matched w
 | **type** | _string_ | The data type which the data type in the URL has been matched against. For example, if you've matched _accountTransactions* and _banking-transactions_, and you call this endpoint with _accountTransactions_ in the URL, this property would be _banking-transactions_. |
 | **connectionId** | _string_ | ID GUID representing the connection of the accounting or banking platform. |
 | **id ** | _string_ | A concatenation of the accountId and transactionId, in the format accountId_transactionId. This is unique to data integrity. |
-| **date** | _date_, See [Date](/datamodel-shared-date) | The date of the transaction.  |
+| **date** | _date_, See [Date](/codat-api#/schemas/DateTime) | The date of the transaction.  |
 | **description** | _string_ | The transaction description.  |
 | **amount** | _number_ | The transaction value.  |
 | **currency** | _string_ | The currency of the transaction.  |
