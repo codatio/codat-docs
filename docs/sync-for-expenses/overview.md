@@ -48,7 +48,7 @@ Sync for Expenses is an API and a set of supporting tools. It has been built to 
       <h3>Standardised API</h3>
     </div>
     <p>
-      The sync for expenses api is completely standardised with a datamodel based on expense card providers. 
+      The Sync for Expenses API is completely standardised with a datamodel based on expense card providers. 
     </p>
   </li>
 
