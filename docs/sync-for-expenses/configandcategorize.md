@@ -34,7 +34,8 @@ Using this endpoint you will be able to:
    </li>
    <ul>
       <li>
-         <a href="/accounting-api#/operations/get-account">GET</a> A list of available accounts, You can use this request to retrieve a list of relevant accounts from your customers accounting software you should also add additional query parameters e.g. <code>query=metadata.isDeleted=false&&isBankAccount=true</code>. 
+         <a href="/accounting-api#/operations/get-account">GET</a> a list of available accounts.  
+         Use this request to retrieve a list of relevant accounts from your customers' accounting software.  You should also add additional query parameters, e.g. <code>query=metadata.isDeleted=false&&isBankAccount=true</code>. 
 <li>For <strong>credit cards</strong> you can use an additional query parameter e.g. <code>query=metadata.isDeleted=false&&isBankAccount=true&&type=liability</code></li>
       </li>
       <li>
