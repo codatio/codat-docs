@@ -63,7 +63,7 @@ GET https://expensesync.codat.io/companies/{companyId}/syncs/{syncId}/transactio
 
 ### [Upload Receipts](uploading-receipts)
 
-To post the attachment for each transactionId. with a status of `Completed` and integrationType of `expense` they can then call the [attachment endpoint](/sync-for-expenses-api#/operations/upload-attachment)
+To post the attachment for each `transactionId` with a status of `Completed` and integrationType of `expense`, call the [attachment endpoint](/sync-for-expenses-api#/operations/upload-attachment)
 
 ```http title="Upload receipt"
 POST https://expensesync.codat.io/companies/{companyId}/syncs/{syncId}/transactions/{transactionId}/attachments
