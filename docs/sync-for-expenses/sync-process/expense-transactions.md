@@ -127,7 +127,7 @@ The way Codat handles, maps and processes a transaction is based on the specifie
     </div>
     <p>
       An adjustment that increases the balance of the credit account or decreases the balance of a bank account. </p>
-<p>Can be used to represent write-off's & transaction adjustments such as foreign exchange adjustments. 
+<p>Can be used to represent write-offs & transaction adjustments such as foreign exchange adjustments. 
     </p>
   </li>
 
