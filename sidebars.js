@@ -221,4 +221,7 @@ module.exports = {
   sfc: sfc,
   assess: assess,
   syncForExpenses: sfe,
+  underwriting: [
+    "/underwriting/introduction"
+  ]
 };
