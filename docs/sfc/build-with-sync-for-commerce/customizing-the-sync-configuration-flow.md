@@ -244,7 +244,7 @@ POST sync/commerce/config/ui/accounts/platform/{commerceKey}
 }
 ```
 
-In the request above, the `commerceKey` is the Codat platform key of the selected commerce platform. You can find a list of keys for the supported platforms in the [Accounting platform selection](/sync-platform-selection) section.  
+In the request above, the `commerceKey` is the Codat platform key of the selected commerce platform. You can find a list of keys for the supported platforms on the [Platform selection flow](/sfc/build-with-sync-for-commerce/sync-platform-selection) page.  
 To find the `account-key`, consult the tables below. Note that fields marked with an '\*' cannot be removed.
 
 #### Sales feature categories

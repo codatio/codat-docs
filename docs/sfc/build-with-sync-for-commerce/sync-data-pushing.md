@@ -1,6 +1,6 @@
 ---
 title: "Push commerce data to Codat"
-description: "Learn how to push your merchant’s data to the Codat systema"
+description: "Learn how to push your merchant’s data to the Codat system"
 createdAt: "2022-02-09T13:34:14.504Z"
 updatedAt: "2022-11-21T17:42:49.928Z"
 ---
