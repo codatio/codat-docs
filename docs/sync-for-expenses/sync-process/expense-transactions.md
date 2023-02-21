@@ -88,7 +88,7 @@ The way Codat handles, maps and processes a transaction is based on the specifie
       <h3>chargeback</h3>
     </div>
     <p>
-      Is similar, to a refund in behaviour and represents a return of transaction/payment sum which may have been disputed.
+      Is similar to a refund in behavior and represents a return of transaction or payment sum which may have been disputed.
     </p>
   </li>
 
