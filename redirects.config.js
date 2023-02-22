@@ -1,3 +1,253 @@
+
+const acc = [
+  {
+    integration: "Clear Books",
+    platformkey: "jhch",
+    to: "",
+  },
+  {
+    integration: "Dynamics 365 Business Central",
+    platformkey: "trji",
+    to: "",
+  },
+  {
+    integration: "Exact (Netherlands)",
+    platformkey: "qudb",
+    to: "",
+  },
+  {
+    integration: "Exact (UK)",
+    platformkey: "pbbf",
+    to: "",
+  },
+  {
+    integration: "FreeAgent",
+    platformkey: "fbrh",
+    to: "",
+  },
+  {
+    integration: "FreshBooks",
+    platformkey: "vxvy",
+    to: "",
+  },
+  {
+    integration: "KashFlow",
+    platformkey: "wvzu",
+    to: "",
+  },
+  {
+    integration: "MYOB AccountRight Live",
+    platformkey: "pdvj",
+    to: "",
+  },
+  {
+    integration: "Oracle NetSuite",
+    platformkey: "akxx",
+    to: "",
+  },
+  {
+    integration: "Pandle",
+    platformkey: "vjms",
+    to: "",
+  },
+  {
+    integration: "QuickBooks",
+    platformkey: "pqsw",
+    to: "",
+  },
+  {
+    integration: "QuickBooks Online",
+    platformkey: "qhyg",
+    to: "",
+  },
+  {
+    integration: "QuickBooks Online Sandbox",
+    platformkey: "ndsk",
+    to: "",
+  },
+  {
+    integration: "Sage 200cloud",
+    platformkey: "jcrp",
+    to: "",
+  },
+  {
+    integration: "Sage 50",
+    platformkey: "hbql",
+    to: "",
+  },
+  {
+    integration: "Sage Intacct",
+    platformkey: "knfz",
+    to: "",
+  },
+  {
+    integration: "Sage One",
+    platformkey: "tgff",
+    to: "",
+  },
+  {
+    integration: "Sandbox",
+    platformkey: "mqjo",
+    to: "",
+  },
+  {
+    integration: "Wave",
+    platformkey: "pbtz",
+    to: "",
+  },
+  {
+    integration: "Xero",
+    platformkey: "gbol",
+    to: "",
+  },
+  {
+    integration: "Zoho Books",
+    platformkey: "rwuv",
+    to: "",
+  },
+]
+
+const bank = [
+  {
+    integration: "Banking Sandbox",
+    platformKey: "qhnd",
+    to: "",
+  },
+  {
+    integration: "Basiq",
+    platformKey: "dfxm",
+    to: "",
+  },
+  {
+    integration: "Demo Bank",
+    platformKey: "syin",
+    to: "",
+  },
+  {
+    integration: "Partner Banking",
+    platformKey: "qwes",
+    to: "",
+  },
+  {
+    integration: "Plaid",
+    platformKey: "suuo",
+    to: "",
+  },
+]
+
+const comm = [
+  {
+    integration: "Amazon Seller Central",
+    platformKey: "qkdj",
+    to: "",
+  },
+  {
+    integration: "BigCommerce",
+    platformKey: "vqzp",
+    to: "",
+  },
+  {
+    integration: "Chargebee",
+    platformKey: "xwsy",
+    to: "",
+  },
+  {
+    integration: "Chargify",
+    platformKey: "rkgp",
+    to: "",
+  },
+  {
+    integration: "Clover",
+    platformKey: "fqly",
+    to: "",
+  },
+  {
+    integration: "Commerce Sandbox",
+    platformKey: "aiwb",
+    to: "",
+  },
+  {
+    integration: "Lightspeed K",
+    platformKey: "ldgh",
+    to: "",
+  },
+  {
+    integration: "Lightspeed K Trial",
+    platformKey: "ltes",
+    to: "",
+  },
+  {
+    integration: "Mollie",
+    platformKey: "dxfw",
+    to: "",
+  },
+  {
+    integration: "Mollie Test",
+    platformKey: "dlqr",
+    to: "",
+  },
+  {
+    integration: "Partner Commerce",
+    platformKey: "lqai",
+    to: "",
+  },
+  {
+    integration: "PayPal",
+    platformKey: "gvom",
+    to: "",
+  },
+  {
+    integration: "PrestaShop",
+    platformKey: "zgbz",
+    to: "",
+  },
+  {
+    integration: "Recurly",
+    platformKey: "lhcb",
+    to: "",
+  },
+  {
+    integration: "Shopify",
+    platformKey: "fztf",
+    to: "",
+  },
+  {
+    integration: "Square",
+    platformKey: "zsth",
+    to: "",
+  },
+  {
+    integration: "Square Sandbox",
+    platformKey: "xcwv",
+    to: "",
+  },
+  {
+    integration: "Stripe",
+    platformKey: "exgd",
+    to: "",
+  },
+  {
+    integration: "Stripe Test",
+    platformKey: "yzth",
+    to: "",
+  },
+  {
+    integration: "SumUp",
+    platformKey: "pshf",
+    to: "",
+  },
+  {
+    integration: "WooCommerce",
+    platformKey: "ltpp",
+    to: "",
+  },
+  {
+    integration: "iZettle Go",
+    platformKey: "ugxp",
+    to: "",
+  },
+]
+
 module.exports = {
   redirects: [
     {

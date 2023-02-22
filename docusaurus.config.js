@@ -93,8 +93,7 @@ module.exports = {
     colorMode: {
       defaultMode: "light",
     },
-    navbar
-    },
+    navbar,
     // tagManager: {
     //   trackingID: process.env.GA_TAG_ID,
     // },
