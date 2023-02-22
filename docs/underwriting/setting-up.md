@@ -1,19 +1,28 @@
 To begin building the underwriting demo app, make the following preparations:
 
-Create a free Codat account
+## Setting up in the Codat Portal
 
-We provide a free account that lets you explore and test our APIs and other products, including Assess. It also comes equipped with a sample company. 
+<input type="checkbox" unchecked /> Create a free Codat account
+
+We provide a [free account](https://signup.codat.io/) that lets you explore and test our APIs and other products, including Assess. It also comes equipped with a sample company. 
 
 You will not be charged when using the account for this demo project. 
 
-Enable data types needed for underwriting
+<input type="checkbox" unchecked /> Enable data types needed for underwriting
 
-Log in to the Codat Portal and click on the Settings tab in the top menu. Then, navigate to Integrations > Data types and make sure that balanceSheet and profitAndLoss accounting data types are set to fetch on first link. If you don’t have these data types enabled, the Assess product will not work in this demo. 
+Log in to the [Codat Portal](https://app.codat.io/) and click on the **Settings** tab in the top menu. Then, navigate to **Integrations > Data types** and make sure that `balanceSheet` and `profitAndLoss` accounting data types are set to fetch on first link. If you don’t have these data types enabled, the Assess product will not work in this demo. 
 
-Check your auth flow settings
+<input type="checkbox" unchecked /> Check your auth flow settings
 
-In the Codat Portal, click on the Settings tab in the top menu. Then, navigate to Auth flow > Link. Scroll down to Integration categories and ensure Accounting integration caategory is enabled, and Sandbox integrations switch is toggled on. 
+In the [Codat Portal](https://app.codat.io/), click on the **Settings** tab in the top menu. Then, navigate to **Auth flow > Link**. Scroll down to _Integration categories_ and ensure _Accounting_ integration category is enabled, and _Sandbox integrations_ switch is toggled on. 
 
-Enable the Assess product
+<input type="checkbox" unchecked /> Enable the Assess product
 
-Log in to the Codat Portal and click on the Companies tab in the top menu. Click on the company you are performing underwriting for, and navigate to Products > Assess. Then, follow the on-screen prompt to enable the product. If it is already enabled, you will be taken straight to the Assess Profit and Loss page.
+Log in to the [Codat Portal](https://app.codat.io/) and click on the **Settings** tab in the top menu. Select **Organization settings**, then **Products**. Find **Assess** in the list of proudcts and toggle the switch to enable it.
+
+ ## Setting up your local environment
+
+ :::info Demo app
+Perform these steps if you plan to explore our sample project and run the demo app.
+:::
+
