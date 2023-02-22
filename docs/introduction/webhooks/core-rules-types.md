@@ -172,9 +172,9 @@ The following rules can be configured in the Codat Portal to alert you to events
 
 ## Sync Connection Deleted
 
-**Trigger:** A Sync connection is deleted.
+**Trigger:** A Sync for Commerce connection is deleted.
 
-**Note:** This rule is specific to Sync for Commerce and cannot be used for other products. This rule does not send a webhook.
+**Note:** This rule is specific to Sync for Commerce and cannot be used for other products.
 
 ```json Example webhook alert body
 {
