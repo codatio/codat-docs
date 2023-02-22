@@ -416,7 +416,7 @@ module.exports = {
             console.log(existingPath)
             // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X
             return [
-              existingPath.replace('/', '/docs'),
+              '/integrations/banking/overview'
             ];
           }
           if (existingPath.includes('/docs')) {
