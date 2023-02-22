@@ -9,7 +9,7 @@ some intro about the various steps? the swimlanes maybe?
 
 We will now take you through the end-to-end application process, including steps to be performed by the lender and the borrower. 
 
-<input type="checkbox" unchecked /> **Initiate a new loan application**
+<input type="checkbox" unchecked /> <b>Initiate a new loan application</b>  
 
 When a prospective borrower starts a new loan application by calling the `application/start` endpoint, we return an application `id` and then use it as the company name to create a company using Codat's `POST /companies` endpoint. 
 
@@ -24,7 +24,7 @@ code snippets for the mermaid diagram steps
 
 
 
-<input type="checkbox" unchecked /> **Provide application details**
+<input type="checkbox" unchecked /> <b>Provide application details</b>  
 
 The borrower then uses the application `id` to complete the application form.
 
@@ -34,7 +34,7 @@ If the details provided are valid, they are stored against the application id wi
 
 
 
-<input type="checkbox" unchecked /> **Provide financial data**
+<input type="checkbox" unchecked /> <b>Provide financial data</b>  
 
 The borrower also needs to provide Codat access to their accounting platform so that we can fetch the data required to underwrite their application. 
 
@@ -44,7 +44,7 @@ In the demo project, we expect you to select the **Codat Sandbox** as the source
 
 Screenshots?
 
-<input type="checkbox" unchecked /> **Check the status of the loan**
+<input type="checkbox" unchecked /> <b>Check the status of the loan</b>  
 
 The borrower and lender can check the loan status anytime by calling the `GET applications/{applicationId}`. 
 
@@ -66,7 +66,7 @@ what codat does - webhooks
 
 
 
-<input type="checkbox" unchecked /> **Manually categorize accounts**
+<input type="checkbox" unchecked /> <b>Manually categorize accounts</b>  
 
 While Codat’s Assess product is able to automatically categorize most of the source chart of accounts accounts, it is not always possible, and a manual intervention is required. 
 
