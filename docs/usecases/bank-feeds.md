@@ -32,7 +32,7 @@ This specification covers QuickBooks Online, as discussed up to this point.
 
 Any integrations to further platforms beyond QBO will require some work to enable the authentication user journey. The bank transaction data push will be largely re-usable.
 
-An integration to Xero will require a further specification, to be supplied when AmEx is ready to proceed with the Xero bank feed.
+An integration to Xero will require a further specification.
 
 ## Solution
 
@@ -40,33 +40,33 @@ An integration to Xero will require a further specification, to be supplied when
 
 diagram
 
-1. User is logged into AmEx BCA.
-2. User selects the option to connect BCA bank transactions to QBO.
-   - This will be a button that AmEx implements into the BCA experience.
+1. User is logged into your platform
+2. User selects the option to connect bank transactions to QBO.
+   - This will be a button that client implements into your bank experience.
 3. User directed to credential generation screen.
-   - When the user clicks the button in step 2, AmEx will call the Codat API: - POST Company (or POST Connection if the company already exists in
+   - When the user clicks the button in step 2, call the Codat API: - POST Company (or POST Connection if the company already exists in
      Codat)
    - The request body will specify QBO bank feeds as the connection to be created
-   - The response body includes a linkUrl; AmEx will direct the user to this linkUrl.
+   - The response body includes a linkUrl; direct the user to this linkUrl.
    - The linkUrl will take the user to the Set up QuickBooks bank feeds page, hosted by Codat.
    - The user follows the steps on the Set up QuickBooks bank feeds page to generate unique credentials. These credentials will be used in step 6.
 4. User logs in to QBO and selects the Link Account option.
-5. User searches the QBO account list for AmEx BCA (the name provided in the request
+5. User searches the QBO account list for your bank (the name provided in the request
    to Intuit).
 
 diagram
 
-6. After selecting the AmEx BCA option in step 5, the user will be prompted to enter credentials. The user enters credentials that they were given in step 3.
+6. After selecting the your bank option in step 5, the user will be prompted to enter credentials. The user enters credentials that they were given in step 3.
 7. User selects which Bank Account to link, and which account to map the Bank Account to. This page is hosted by QBO. The user can select from any account in the chart of accounts that is a bank account or credit card and does not have an existing bank feed linked.
 8. Bank feed link is complete.
 9. Codat connection status changes to Linked.
-10. AmEx can set up a webhook alert that will notify when the connection status changes to Linked, indicating a successful connection.
+10. client can set up a webhook alert that will notify when the connection status changes to Linked, indicating a successful connection.
 
 ### Deauthorization user journey
 
 Codat provides the ability to disconnect a bank feed to QuickBooks Online.
 
-We recommend that the option to disconnect an existing bank feed is offered to the AmEx BCA customer.
+We recommend that the option to disconnect an existing bank feed is offered to the your bank customer.
 
 The implementation section covers the API call to disconnect a connection.
 
@@ -78,10 +78,10 @@ Diagram
 
 QuickBooks Online bank feeds must be enabled by Intuit before the solution can go into production. The process is as below:
 
-1. AmEx requests Codat to enable bank feeds: provides name that will appear in
+1. client requests Codat to enable bank feeds: provides name that will appear in
    the QBO connection journey
-2. Codat makes request to Intuit on AmEx’s behalf to enable bank feeds
-3. Intuit approves AmEx to appear in the QBO bank selection screen.
+2. Codat makes request to Intuit on client’s behalf to enable bank feeds
+3. Intuit approves client to appear in the QBO bank selection screen.
 
 Note: _This step from Intuit is subject to approval; it is unlikely that Intuit will reject a client building via Codat._
 
@@ -97,7 +97,7 @@ There are two scenarios that must be addressed for this: creating a new Company 
 
 Creating a new company is appropriate when the user does not have any other existing use cases with Codat.
 
-The name is to be specified by AmEx, with the desired company name to be created.
+The name is to be specified by client, with the desired company name to be created.
 
 The platformKey is `hcws`, representing QBO Bank Feeds.
 
@@ -153,7 +153,7 @@ Deauthorization Bank feeds can be deauthorized using the Delete connection endpo
 
 ### Posting bank transactions
 
-Once the authorization journey is completed, AmEx will post bank transactions to QBO
+Once the authorization journey is completed, post bank transactions to QBO
 via the Codat API.
 
 POST Bank Transaction
