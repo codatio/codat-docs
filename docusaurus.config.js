@@ -405,8 +405,29 @@ module.exports = {
           {
             to: '/updates/230411-legacy-bank-account-endpoints',
             from: '/changelog/upcoming-2023-04-10-deprecation-of-legacy-bank-account-endpoints'
-          }
+          },
+          {
+            to:  '/updates',
+            from: '/changelog',
+          },
         ],
+        createRedirects(existingPath) {
+          if (existingPath.includes('/docs/banking-')) {
+            console.log(existingPath)
+            // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X
+            return [
+              existingPath.replace('/', '/docs'),
+            ];
+          }
+          if (existingPath.includes('/docs')) {
+            // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X
+            return [
+              existingPath.replace('/', '/docs'),
+            ];
+          }
+          
+          return undefined; // Return a falsy value: no redirect created
+        },
       },
     ],
     "@docusaurus/plugin-sitemap",

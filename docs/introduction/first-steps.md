@@ -16,7 +16,7 @@ You can contribute to them <a href="https://github.com/codatio/codat-docs" targe
 
 :::note Prerequisites
 
-You need an account and its API key to start with Codat. You can <a href="https://signup.codat.io/" target="_blank">sign up</a> for an account for free, or <a href="/core-concepts/account-signup" target="_blank">learn more</a> about creating one.
+You need an account and its API key to start with Codat. You can <a href="https://signup.codat.io/" target="_blank">sign up</a> for an account for free, or <a href="/introduction/create-account" target="_blank">learn more</a> about creating one.
 
 :::
 

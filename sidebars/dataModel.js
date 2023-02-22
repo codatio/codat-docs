@@ -10,7 +10,6 @@ const dataModels = {
     "Account transaction",
     "Balance sheet",
     "Bank account",
-    "Bank transaction",
     "Bank transactions",
     "Bill",
     "Bill credit note",

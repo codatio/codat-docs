@@ -38,9 +38,9 @@ Before you can push expenses to your customer’s accounting platform, you need 
 
 1.  **Embedded Link:** Codat's Embedded Link is a React component that neatly sits in your front-end code, and can be deployed in a matter of minutes (see [embedded link](/auth-flow/authorize-embedded-link)).
 
-2.  **Hosted Link**: a beautifully simple, pre-built, conversion-optimized, and customizable authentication flow (See [Use Link for SMB authentication](/use-link-for-the-authentication-flow)).
+2.  **Hosted Link**: a beautifully simple, pre-built, conversion-optimized, and customizable authentication flow (See [Authorize with Hosted Link](/auth-flow/authorize-hosted-link)).
 
-3.  **Build your own SMB authentication flow** for a fully customized bespoke user journey (See [Build your own authentication journey](/auth-flow/build/build-your-own-authentication-journey)).
+3.  **Build your own SMB authentication flow** for a fully customized bespoke user journey (See [Build your own auth flow](/auth-flow/build/build-your-own-authorization-journey)).
 
 ### Create a data connection
 

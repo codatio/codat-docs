@@ -1,6 +1,6 @@
 ---
 title: "Push commerce data to Codat"
-description: "Learn how to push your merchant’s data to the Codat systema"
+description: "Learn how to push your merchant’s data to the Codat system"
 createdAt: "2022-02-09T13:34:14.504Z"
 updatedAt: "2022-11-21T17:42:49.928Z"
 ---
@@ -20,7 +20,7 @@ Sync for Commerce is in beta. If you are interested in building with Sync for Co
   POST /data/companies/{companyId}/sync/{dataType}",
 ```
 
-You can learn more about these data types in the context of Sync for Commerce and see some examples [here](/functional-examples-of-data).
+You can learn more about these data types in the context of Sync for Commerce and see some examples [here](/sfc/build-with-sync-for-commerce/functional-examples-of-data).
 
 2. From the response, identify the `datasetId`. You can use this property to check whether the data has been processed and mapped successfully.
 
@@ -60,7 +60,9 @@ GET /meta/companies/{companyId}/sync/commerce/status
 5. **(Optional)** You can also [set up alerting rules](/introduction/webhooks/core-rules-types) to receive alerts every time the status of the datasets changes, or even when a Sync connection is deleted by the merchant completely.
 
 :::info How to trigger data synchronization for testing
-Refer to [How to trigger manual syncs for testing](/sync-your-own-merchant-journey#how-to-trigger-manual-syncs-for-testing) if you need to trigger data synchronization manually for testing purposes.
+
+Refer to [How to trigger manual syncs for testing](/sfc/sync-merchant-configuration/sync-your-own-merchant-journey) if you need to trigger data synchronization manually for testing purposes.
+
 :::
 
 ## Rules for sending data

@@ -35,7 +35,7 @@ The endpoint is available in our <a href="/assess-api#/operations/get-companies-
 # Parameters
 |Parameter|Type|Description|Required|
 |----|----|----|----|
-|**reportDate**|_string_, See [Date](/common-api#/schemas/DateTime)|YYYY-MM-DD, Datetime or Date (inclusive of whole day).|Required|
+|**reportDate**|_string_, See [Date](/codat-api#/schemas/DateTime)|YYYY-MM-DD, Datetime or Date (inclusive of whole day).|Required|
 |**periodlength**|_integer_|The number of months per period. It must be positive, not zero and an integer.|Required|
 |**numberOfPeriods**|_integer_|The number of periods to return. It must be positive, not zero and an integer.|Required|
 |**includeDisplayNames**|_boolean_|Shows the _dimensionDisplayName_ and _itemDisplayName_ in measures to make the report data human-readable. Default is _false_.|Optional|
@@ -48,7 +48,7 @@ The response structure is split into four areas: Report info, Dimensions, Measur
 
 |Parameter|Type|Description|Required|
 |----|----|----|----|
-|**reportDate**|_string_, See [Date](/common-api#/schemas/DateTime)|YYYY-MM-DD, Datetime or, Date (inclusive of whole day).|Required|
+|**reportDate**|_string_, See [Date](/codat-api#/schemas/DateTime)|YYYY-MM-DD, Datetime or, Date (inclusive of whole day).|Required|
 |**periodlength**|_integer_|The number of months per period. It must be positive, not zero and an integer.|Required|
 |**numberOfPeriods**|_integer_|The number of periods to return. It must be positive, not zero and an integer.|Required|
 |**includeDisplayNames**|_boolean_|Shows the _dimensionDisplayName_ and _itemDisplayName_ in measures to make the report data human-readable. Default is _false_.|Optional|
@@ -72,8 +72,8 @@ The _Enhanced Profit and Loss_ consists of these dimensions: Period, Category, S
 |Field|Type|Description|
 |----|----|----|
 |**displayName**|_string_|"Period n"|
-|**start**|_string_, See [Date](/common-api#/schemas/DateTime)|YYYY-MM-DD, Date in which the period begins (inclusive).|
-|**end**|_string_, See [Date](/common-api#/schemas/DateTime)|YYYY-MM-DD, Date in which the period ends (inclusive).|
+|**start**|_string_, See [Date](/codat-api#/schemas/DateTime)|YYYY-MM-DD, Date in which the period begins (inclusive).|
+|**end**|_string_, See [Date](/codat-api#/schemas/DateTime)|YYYY-MM-DD, Date in which the period ends (inclusive).|
 
 
 ### Dimension (index = “1”): Category

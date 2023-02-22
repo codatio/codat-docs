@@ -32,7 +32,7 @@ The **Reports** button is located in the top right corner of every Assess page a
 
 ## Profit and Loss
 
-The Profit and Loss page is the landing page when accessing Assess. The page consists of the graph displaying selections for the categorized financial statement, and ratios. If you have uncategorized accounts, the Account Categorization modal will be displayed. Only uncategorized accounts will be shown and you will need to manually assign categories. Our [Categorization of accounts](/assess/portal/overview-categorization-of-accounts) documentation provides more detail.
+The Profit and Loss page is the landing page when accessing Assess. The page consists of the graph displaying selections for the categorized financial statement, and ratios. If you have uncategorized accounts, the Account Categorization modal will be displayed. Only uncategorized accounts will be shown and you will need to manually assign categories. Our [Categorization of accounts](/assess/portal/categorization-of-accounts) documentation provides more detail.
 
 ### Selection panel
 
@@ -139,7 +139,7 @@ The statement displays balance sheet data based on the **Period start**, **Perio
 
 #### Statement format
 
-Each statement has four levels. The fourth level is the original line item (general ledger account) in the company’s accounting package. The first three levels represent a smart categorization layer that we have applied. If you want to change the group that a line item is categorized to, you can do this by following the [instructions for categorizing accounts](/assess/portal/overview-categorization-of-accounts#how-to-categorize-accounts).
+Each statement has four levels. The fourth level is the original line item (general ledger account) in the company’s accounting package. The first three levels represent a smart categorization layer that we have applied. If you want to change the group that a line item is categorized to, you can do this by following the [instructions for categorizing accounts](/assess/portal/categorization-of-accounts#how-to-categorize-accounts).
 
 ##### Categorizing debit accounts
 
@@ -153,7 +153,7 @@ Debit accounts are categorized as **Asset > Current assets > Cash**. However, wh
 
 ### Ratios
 
-The ratios and metrics are calculated from the data in the statement above and use the same period configuration as set at the top of the screen. The supported metrics are (see [formulas](/assess-accounting-metrics)):
+The ratios and metrics are calculated from the data in the statement above and use the same period configuration as set at the top of the screen. The supported metrics are (see [formulas](/assess/metrics/accounting/overview)):
 
 - Current Ratio
 - Debt Service Coverage Ratio
@@ -169,9 +169,9 @@ The Ratios table is displayed below the Statement table. Each metric/ratio can b
 
 If you are a developer, and you are looking to reproduce the outputs of this section, refer to the following API documentation:
 
-[Enhanced Balance Sheet](/assess-enhanced-balance-sheet): To produce the balance sheet statement table and graph.
-[Financial Metrics](/assess-api-financial-metrics): To produce the ratios table.
-[Data Integrity](/assess/data-integrity/api-data-integrity): To produce the Data match percentage.
+- [Enhanced Balance Sheet](/assess/reports/enhanced-financials/balance-sheet): To produce the balance sheet statement table and graph.
+- [Financial Metrics](/assess/metrics/accounting/api-financial-metrics): To produce the ratios table.
+- [Data Integrity](/assess/data-integrity/api-data-integrity): To produce the Data match percentage.
 
 ## Commerce
 
@@ -284,7 +284,7 @@ Periods to compare = 4
 
 ![An image showing marketing graphs and extract of a table of marketing data based on selection criteria](/img/old/288edbe-Mark_1.png)
 
-The [Marketing Metrics](/assess-api-marketing-metrics) endpoint is used to generate the graphs and metrics displayed on this page. The green and red arrowheads alongside the numbers indicate an increase or decrease respectively compared to the previous period.
+The [Marketing Metrics](/assess/metrics/accounting/api-marketing-metrics) endpoint is used to generate the graphs and metrics displayed on this page. The green and red arrowheads alongside the numbers indicate an increase or decrease respectively compared to the previous period.
 
 See the [API reference](/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-accountingMetrics-marketing).
 
@@ -304,4 +304,4 @@ When a report was successfully generated, the report name (which is also the fil
 
 ### Report types
 
-- [Audit Report](/assess-audit-report): Identifies indicators of inaccurate or out-of-date accounts, helping you to decision with confidence.
+- [Audit Report](/assess/reports/audit-report): Identifies indicators of inaccurate or out-of-date accounts, helping you to decision with confidence.
