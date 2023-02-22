@@ -30,6 +30,7 @@ const dataModels = {
     "Sales order",
     "Supplier",
     "Tax rate",
+    "Tracking category",
     "Transfer",
   ],
   banking: [
