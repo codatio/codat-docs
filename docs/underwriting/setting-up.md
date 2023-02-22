@@ -1,3 +1,8 @@
+---
+title: "Setting up the solution"
+description: "Write a description"
+---
+
 To begin building the underwriting demo app, make the following preparations:
 
 ## Setting up in the Codat Portal
