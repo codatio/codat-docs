@@ -9,9 +9,9 @@ some intro about the various steps? the swimlanes maybe?
 
 We will now take you through the end-to-end application process, including steps to be performed by the lender and the borrower. 
 
-<input type="checkbox" unchecked /> <b>Initiate a new loan application</b><br/>
+<input type="checkbox" unchecked /> <b>Initiate a new loan application</b>
 
-When a prospective borrower starts a new loan application by calling the `application/start` endpoint, we return an application `id` and then use it as the company name to create a company using Codat's `POST /companies` endpoint. 
+<br/>When a prospective borrower starts a new loan application by calling the `application/start` endpoint, we return an application `id` and then use it as the company name to create a company using Codat's `POST /companies` endpoint. 
 
 This allows us to assign the application a reference in Codat, even though we don't have the company details yet. When the new company is created, the company and application `id`s are stored, and then returned to the prospective borrower, together with a `linkUrl`.
 
@@ -24,9 +24,9 @@ code snippets for the mermaid diagram steps
 
 
 
-<input type="checkbox" unchecked /> <b>Provide application details</b><br/>
+<input type="checkbox" unchecked /> <b>Provide application details</b>
 
-The borrower then uses the application `id` to complete the application form.
+<br/>The borrower then uses the application `id` to complete the application form.
 
 In the example app, we only request the borrower's full name, company name, and the loan amount, length, and purpose. These details are posted to the `applications/forms` endpoint, which validates that the required fields exist and are within acceptable limits.
 
@@ -34,9 +34,9 @@ If the details provided are valid, they are stored against the application id wi
 
 
 
-<input type="checkbox" unchecked /> <b>Provide financial data</b><br/>
+<input type="checkbox" unchecked /> <b>Provide financial data</b>
 
-The borrower also needs to provide Codat access to their accounting platform so that we can fetch the data required to underwrite their application. 
+<br/>The borrower also needs to provide Codat access to their accounting platform so that we can fetch the data required to underwrite their application. 
 
 To enable this, share the linkUrl returned by the POST /companies endpoint with the borrower. They should navigate to the link, follow the flow built using our [Link feature](https://docs.codat.io/auth-flow/overview), and select a platform that is the source of their accounting data. 
 
@@ -44,9 +44,9 @@ In the demo project, we expect you to select the **Codat Sandbox** as the source
 
 Screenshots?
 
-<input type="checkbox" unchecked /> <b>Check the status of the loan</b><br/>
+<input type="checkbox" unchecked /> <b>Check the status of the loan</b>
 
-The borrower and lender can check the loan status anytime by calling the `GET applications/{applicationId}`. 
+<br/>The borrower and lender can check the loan status anytime by calling the `GET applications/{applicationId}`. 
 
 The underwriting model we use in the demo requires the following data about the company and the borrower:
 
@@ -68,7 +68,7 @@ what codat does - webhooks
 
 <input type="checkbox" unchecked /> <b>Manually categorize accounts</b>  
 
-While Codat’s Assess product is able to automatically categorize most of the source chart of accounts accounts, it is not always possible, and a manual intervention is required. 
+<br/>While Codat’s Assess product is able to automatically categorize most of the source chart of accounts accounts, it is not always possible, and a manual intervention is required. 
 
 In our demo, when accounts are pulled from the Accounting Sandbox and categorized, one account remains without a specified category. You need to assign a category to it before the application is ready for underwriting. This is because the Profit and Loss, and Balance Sheet metrics in Assess depend on fully categorized accounts.
 
