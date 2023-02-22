@@ -23,10 +23,10 @@ The **revenue** metric relies on the the `profitAndLoss` endpoint and the `opera
 
 Finally, the gearing ratio used in the example model is the **debt ratio**, calculated by dividing total debt by total assets. It uses the `balanceSheet` endpoint and its `asset` and non-current payable loans `liability` values. Having too much debt may indicate a higher financial risk associated with the company. 
 
-[[Code snippet - criticak pieces of logic, comments on which file to find them in
+Code snippet - criticak pieces of logic, comments on which file to find them in
 
 how do you get meaningful data from the response
 
-this is hwo we’ve normalized this]]
+this is hwo we’ve normalized this
 
 Only if all the thresholds are met or surpassed by the applicant, the loan request is automatically updated with an _Accepted_ status. Otherwise, the application is updated with a _Rejected_ status. We also cater for a scenario of programmatic errors that means a decision could not be made with a _UnderwritingFailure_ status.

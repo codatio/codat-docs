@@ -14,7 +14,7 @@ We also provide you with a demo project, where you can see underwriting with Cod
 
 This project demonstrates how you can leverage Codat to automate the process of underwriting a loan application. 
 
-[Not really this project anymore, because we now talk about a build guide with a demo in it as an example]
+-Not really this project anymore, because we now talk about a build guide with a demo in it as an example
 
 Work through this guide to:
 

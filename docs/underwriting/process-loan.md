@@ -13,9 +13,9 @@ This allows us to assign the application a reference in Codat, even though we do
 We also store the date the application was created to use as a reference date later.
 
 
-[code - show how we created a company]
+code - show how we created a company
 
-[code snippets for the mermaid diagram steps]
+code snippets for the mermaid diagram steps
 
 
 
@@ -37,7 +37,7 @@ To enable this, share the linkUrl returned by the POST /companies endpoint with 
 
 In the demo project, we expect you to select the **Codat Sandbox** as the source of accounting data. You can authorize this connection without entering any credentials. You should also skip the step of uploading business documents.
 
-[Screenshots?]
+Screenshots?
 
 <input type="checkbox" unchecked /> **Check the status of the loan**
 
@@ -55,7 +55,7 @@ Once the data requirements needed for the underwriting model are complete, and t
 
 
 
-[what codat does - webhooks]
+what codat does - webhooks
 
 
 
