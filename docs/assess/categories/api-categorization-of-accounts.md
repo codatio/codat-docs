@@ -114,7 +114,7 @@ GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categ
 | type          |  _string_   | The suggested account type.                                                 |
 | subtype       |  _string_   | The suggested account subtype.                                              |
 | detailType    |  _string_   | The suggested account detail type.                                          |
-| modifiedDate  | See [Date](/datamodel-shared-date)    | The date the category was suggested for the account, YYYY-MM-DDT00:00:00Z.  |
+| modifiedDate  | See [Date](/codat-api#/schemas/DateTime)    | The date the category was suggested for the account, YYYY-MM-DDT00:00:00Z.  |
 
 # Confirmed
 | Field         | Type        | Description                                                         |
@@ -122,7 +122,7 @@ GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categ
 | type          |  _string_   | The confirmed account type.                                         |
 | subtype       |  _string_   | The confirmed account subtype.                                      |
 | detailType    |  _string_   | The confirmed account detail type.                                  |
-| modifiedDate  | See [Date](/datamodel-shared-date)   | The date the account category was confirmed, YYYY-MM-DDT00:00:00Z.  |
+| modifiedDate  | See [Date](/codat-api#/schemas/DateTime)   | The date the account category was confirmed, YYYY-MM-DDT00:00:00Z.  |
 
 ```
 {
