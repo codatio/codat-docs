@@ -323,7 +323,7 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 |---|---|---|
 | **type** | _string_ | The data type of the record.  |
 | **connectionId** | _string_ | ID GUID representing the connection of the accounting or banking platform.  |
-| **id** | _string_ | A concatenation of the accountId and transactionId, in the format accountId_transactionId. This is unique to data integrity.  |
+| **id** | _string_ | ID GUID of the transaction. |
 | **date** | _date_, See [Date](/codat-api#/schemas/DateTime) | The date of the transaction.  |
 | **description** | _string_ | The transaction description.  |
 | **amount** | _number_ | The transaction value.  |
@@ -337,7 +337,7 @@ This outlines the transaction(s) in which the original transaction has matched w
 |---|---|---|
 | **type** | _string_ | The data type which the data type in the URL has been matched against. For example, if you've matched _accountTransactions* and _banking-transactions_, and you call this endpoint with _accountTransactions_ in the URL, this property would be _banking-transactions_. |
 | **connectionId** | _string_ | ID GUID representing the connection of the accounting or banking platform. |
-| **id ** | _string_ | A concatenation of the accountId and transactionId, in the format accountId_transactionId. This is unique to data integrity. |
+| **id** | _string_ | ID GUID of the transaction. |
 | **date** | _date_, See [Date](/codat-api#/schemas/DateTime) | The date of the transaction.  |
 | **description** | _string_ | The transaction description.  |
 | **amount** | _number_ | The transaction value.  |
