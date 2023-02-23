@@ -10,6 +10,8 @@ const BASE_URL = "";
 
 require('dotenv').config()
 
+console.log(redirects)
+
 module.exports = {
   title: "Codat_docs",
   tagline:

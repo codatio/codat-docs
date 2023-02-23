@@ -5,111 +5,115 @@ const mapIntegrationRedirect = (item, category) => {
   }
 }
 
+const mapIntegrationRedirects = (items, category) => {
+  return items.map(item => mapIntegrationRedirect(item, category))
+}
+
 const acc = [
   {
     integration: "Clear Books",
     platformkey: "jhch",
-    to: "integrations/accounting/clearbooks/accounting-clearbooks",
+    to: "/integrations/accounting/clearbooks/accounting-clearbooks",
   },
   {
     integration: "Dynamics 365 Business Central",
     platformkey: "trji",
-    to: "integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral",
+    to: "/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral",
   },
   {
     integration: "Exact (Netherlands)",
     platformkey: "qudb",
-    to: "integrations/accounting/exact-online/accounting-exact-online",
+    to: "/integrations/accounting/exact-online/accounting-exact-online",
   },
   {
     integration: "Exact (UK)",
     platformkey: "pbbf",
-    to: "integrations/accounting/exact-online/accounting-exact-online",
+    to: "/integrations/accounting/exact-online/accounting-exact-online",
   },
   {
     integration: "FreeAgent",
     platformkey: "fbrh",
-    to: "integrations/accounting/freeagent/accounting-freeagent",
+    to: "/integrations/accounting/freeagent/accounting-freeagent",
   },
   {
     integration: "FreshBooks",
     platformkey: "vxvy",
-    to: "integrations/accounting/freshbooks/accounting-freshbooks",
+    to: "/integrations/accounting/freshbooks/accounting-freshbooks",
   },
   {
     integration: "KashFlow",
     platformkey: "wvzu",
-    to: "integrations/accounting/kashflow/accounting-kashflow",
+    to: "/integrations/accounting/kashflow/accounting-kashflow",
   },
   {
     integration: "MYOB AccountRight Live",
     platformkey: "pdvj",
-    to: "integrations/accounting/myob/accounting-myob",
+    to: "/integrations/accounting/myob/accounting-myob",
   },
   {
     integration: "Oracle NetSuite",
     platformkey: "akxx",
-    to: "integrations/accounting/netsuite/accounting-netsuite",
+    to: "/integrations/accounting/netsuite/accounting-netsuite",
   },
   {
     integration: "Pandle",
     platformkey: "vjms",
-    to: "integrations/accounting/pandle/accounting-pandle",
+    to: "/integrations/accounting/pandle/accounting-pandle",
   },
   {
     integration: "QuickBooks",
     platformkey: "pqsw",
-    to: "integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop",
+    to: "/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop",
   },
   {
     integration: "QuickBooks Online",
     platformkey: "qhyg",
-    to: "integrations/accounting/quickbooksonline/accounting-quickbooksonline",
+    to: "/integrations/accounting/quickbooksonline/accounting-quickbooksonline",
   },
   {
     integration: "QuickBooks Online Sandbox",
     platformkey: "ndsk",
-    to: "integrations/accounting/quickbooksonline/accounting-quickbooksonline",
+    to: "/integrations/accounting/quickbooksonline/accounting-quickbooksonline",
   },
   {
     integration: "Sage 200cloud",
     platformkey: "jcrp",
-    to: "integrations/accounting/sage200/accounting-sage200",
+    to: "/integrations/accounting/sage200/accounting-sage200",
   },
   {
     integration: "Sage 50",
     platformkey: "hbql",
-    to: "integrations/accounting/sage50/accounting-sage50",
+    to: "/integrations/accounting/sage50/accounting-sage50",
   },
   {
     integration: "Sage Intacct",
     platformkey: "knfz",
-    to: "integrations/accounting/sage-intacct/accounting-sage-intacct",
+    to: "/integrations/accounting/sage-intacct/accounting-sage-intacct",
   },
   {
     integration: "Sage One",
     platformkey: "tgff",
-    to: "integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud",
+    to: "/integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud",
   },
   {
     integration: "Sandbox",
     platformkey: "mqjo",
-    to: "integrations/accounting/sandbox/accounting-sandbox",
+    to: "/integrations/accounting/sandbox/accounting-sandbox",
   },
   {
     integration: "Wave",
     platformkey: "pbtz",
-    to: "integrations/accounting/wave/accounting-wave",
+    to: "/integrations/accounting/wave/accounting-wave",
   },
   {
     integration: "Xero",
     platformkey: "gbol",
-    to: "integrations/accounting/xero/accounting-xero",
+    to: "/integrations/accounting/xero/accounting-xero",
   },
   {
     integration: "Zoho Books",
     platformkey: "rwuv",
-    to: "integrations/accounting/zoho-books/accounting-zoho-books",
+    to: "/integrations/accounting/zoho-books/accounting-zoho-books",
   },
 ]
 
@@ -117,17 +121,17 @@ const bank = [
   {
     integration: "Banking Sandbox",
     platformKey: "qhnd",
-    to: "integrations/banking/overview",
+    to: "/integrations/banking/overview",
   },
   {
     integration: "Basiq",
     platformKey: "dfxm",
-    to: "integrations/banking/basiq/banking-basiq",
+    to: "/integrations/banking/basiq/banking-basiq",
   },
   {
     integration: "Plaid",
     platformKey: "suuo",
-    to: "integrations/banking/plaid/banking-plaid",
+    to: "/integrations/banking/plaid/banking-plaid",
   },
 ]
 
@@ -135,107 +139,107 @@ const comm = [
   {
     integration: "Amazon Seller Central",
     platformKey: "qkdj",
-    to: "integrations/commerce/amazon-seller-central/commerce-amazon-seller-central",
+    to: "/integrations/commerce/amazon-seller-central/commerce-amazon-seller-central",
   },
   {
     integration: "BigCommerce",
     platformKey: "vqzp",
-    to: "integrations/commerce/bigcommerce/commerce-bigcommerce",
+    to: "/integrations/commerce/bigcommerce/commerce-bigcommerce",
   },
   {
     integration: "Chargebee",
     platformKey: "xwsy",
-    to: "integrations/commerce/chargebee/commerce-chargebee",
+    to: "/integrations/commerce/chargebee/commerce-chargebee",
   },
   {
     integration: "Chargify",
     platformKey: "rkgp",
-    to: "integrations/commerce/chargify/commerce-chargify",
+    to: "/integrations/commerce/chargify/commerce-chargify",
   },
   {
     integration: "Clover",
     platformKey: "fqly",
-    to: "integrations/commerce/clover/commerce-clover",
+    to: "/integrations/commerce/clover/commerce-clover",
   },
   {
     integration: "Commerce Sandbox",
     platformKey: "aiwb",
-    to: "integrations/commerce/lightspeed-k/commerce-lightspeed-k",
+    to: "/integrations/commerce/lightspeed-k/commerce-lightspeed-k",
   },
   {
     integration: "Lightspeed K",
     platformKey: "ldgh",
-    to: "integrations/commerce/lightspeed-k/commerce-lightspeed-k",
+    to: "/integrations/commerce/lightspeed-k/commerce-lightspeed-k",
   },
   {
     integration: "Lightspeed K Trial",
     platformKey: "ltes",
-    to: "integrations/commerce/lightspeed-k/commerce-lightspeed-k",
+    to: "/integrations/commerce/lightspeed-k/commerce-lightspeed-k",
   },
   {
     integration: "Mollie",
     platformKey: "dxfw",
-    to: "integrations/commerce/mollie/commerce-mollie",
+    to: "/integrations/commerce/mollie/commerce-mollie",
   },
   {
     integration: "Mollie Test",
     platformKey: "dlqr",
-    to: "integrations/commerce/mollie/commerce-mollie",
+    to: "/integrations/commerce/mollie/commerce-mollie",
   },
   {
     integration: "PayPal",
     platformKey: "gvom",
-    to: "integrations/commerce/paypal/commerce-paypal",
+    to: "/integrations/commerce/paypal/commerce-paypal",
   },
   {
     integration: "PrestaShop",
     platformKey: "zgbz",
-    to: "integrations/commerce/prestashop/commerce-prestashop",
+    to: "/integrations/commerce/prestashop/commerce-prestashop",
   },
   {
     integration: "Recurly",
     platformKey: "lhcb",
-    to: "integrations/commerce/recurly/commerce-recurly",
+    to: "/integrations/commerce/recurly/commerce-recurly",
   },
   {
     integration: "Shopify",
     platformKey: "fztf",
-    to: "integrations/commerce/shopify/commerce-shopify",
+    to: "/integrations/commerce/shopify/commerce-shopify",
   },
   {
     integration: "Square",
     platformKey: "zsth",
-    to: "integrations/commerce/square/commerce-square",
+    to: "/integrations/commerce/square/commerce-square",
   },
   {
     integration: "Square Sandbox",
     platformKey: "xcwv",
-    to: "integrations/commerce/square/commerce-square",
+    to: "/integrations/commerce/square/commerce-square",
   },
   {
     integration: "Stripe",
     platformKey: "exgd",
-    to: "integrations/commerce/stripe/commerce-stripe",
+    to: "/integrations/commerce/stripe/commerce-stripe",
   },
   {
     integration: "Stripe Test",
     platformKey: "yzth",
-    to: "integrations/commerce/stripe/commerce-stripe",
+    to: "/integrations/commerce/stripe/commerce-stripe",
   },
   {
     integration: "SumUp",
     platformKey: "pshf",
-    to: "integrations/commerce/sumup/commerce-sumup",
+    to: "/integrations/commerce/sumup/commerce-sumup",
   },
   {
     integration: "WooCommerce",
     platformKey: "ltpp",
-    to: "integrations/commerce/woocommerce/commerce-woocommerce",
+    to: "/integrations/commerce/woocommerce/commerce-woocommerce",
   },
   {
     integration: "iZettle Go",
     platformKey: "ugxp",
-    to: "integrations/commerce/zettle/commerce-zettle",
+    to: "/integrations/commerce/zettle/commerce-zettle",
   },
 ]
 
@@ -350,9 +354,9 @@ module.exports = {
       to:  '/updates',
       from: '/changelog',
     },
-    ...mapIntegrationRedirect(acc, "accounting"),
-    ...mapIntegrationRedirect(bank, "banking"),
-    ...mapIntegrationRedirect(comm, "commerce"),
+    ...mapIntegrationRedirects(acc, "accounting"),
+    ...mapIntegrationRedirects(bank, "banking"),
+    ...mapIntegrationRedirects(comm, "commerce"),
   ],
   createRedirects(existingPath) {
     if (existingPath.includes('/docs/banking-')) {
