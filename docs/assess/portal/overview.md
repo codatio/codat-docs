@@ -237,6 +237,7 @@ The transaction table displays below the _Inflows vs outflows_ graph and contain
 
 :::info Unavailable for Plaid
 The filter and exclude functionality is currently unavailable for Plaid-connected companies. This will be available soon.
+:::
 
 You can type into a search bar located above the table to find matches in the _Description_ column. As you type, the table refreshes with all transactions that match the search term. In the search bar, to the right, the number of matching transactions is displayed in grey and the _Exclude all_ button becomes active.
 
