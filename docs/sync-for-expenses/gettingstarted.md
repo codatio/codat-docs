@@ -8,6 +8,11 @@ tags: [syncforexpense, gettingstarted, prerequisites, platformsupport]
 
 Before you start using sync for expenses, you will need to ensure that the following datatypes are enabled in your Codat instance.
 
+
+<details>
+  <summary>Recommended Data Type Settings</summary>
+
+
 | DataType Name       | dataType           | Use Case                                                                                                                                                                                               | Fetch On First Link | Sync Frequency |
 | ------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- | -------------- |
 | Bank Accounts       | bankAccounts       | A bank account is the primary account from where expenses will be paid from.                                                                                                                           | ✅                  | daily          |
@@ -21,6 +26,8 @@ Before you start using sync for expenses, you will need to ensure that the follo
 | Transfers           | transfers          | A record of the expense transaction between two bank accounts such as topping up or paying down the expense card.                                                                                      | ❌                  | none           |
 | Customers           | customers          | Customers can be used to record and associate income transactions such as reclaiming a cashback reward.                                                                                                | ✅                  | daily          |
 | Direct Incomes      | directIncomes      | Typically direct incomes are used to represent any income generating transaction type such as cashback rewards.                                                                                        | ❌                  | none           |
+
+</details>
 
 ## Connect to an SMB’s accounting platform
 
