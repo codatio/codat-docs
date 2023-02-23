@@ -1,7 +1,7 @@
 const mapIntegrationRedirect = (item, category) => {
   return {
     to: item.to,
-    from: `/redirects/integrations/${category}/${integration.platformKey}`
+    from: `/redirects/integrations/${category}/${item.platformKey}`
   }
 }
 
