@@ -19,7 +19,6 @@ For details of the affected integrations and the Redirect URIs you need to add, 
 
 <a class="external" href="https://codat.zendesk.com/hc/en-gb/articles/9389011101341--UAT-Deprecation-Changes-to-the-app-setup-used-for-your-new-Test-account-" target="_blank">UAT Deprecation - Changes to the developer app setup of your new Test account</a>
 
-<hr>
 :::
 
 <!--truncate-->
