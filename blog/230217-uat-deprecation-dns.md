@@ -15,9 +15,7 @@ We've now switched over the existing public DNS for the UAT environment to point
 
 In some scenarios, you now need to make minor configuration changes to the Redirect URIs used in your third-party developer apps. **This is required in order to start linking new companies in your Codat Test account.**
 
-For details of the affected integrations and the Redirect URIs you need to add, see the following Knowledgebase article:
-
-<a class="external" href="https://codat.zendesk.com/hc/en-gb/articles/9389011101341--UAT-Deprecation-Changes-to-the-app-setup-used-for-your-new-Test-account-" target="_blank">UAT Deprecation - Changes to the developer app setup of your new Test account</a>
+For details of the affected integrations and the Redirect URIs you need to add, see the [Knowledgebase article](https://codat.zendesk.com/hc/en-gb/articles/9389011101341--UAT-Deprecation-Changes-to-the-app-setup-used-for-your-new-Test-account-).
 
 :::
 
