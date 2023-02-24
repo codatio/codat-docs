@@ -7,7 +7,7 @@ draft: false
 authors: mcclowes
 ---
 
-On April 10, 2023, Codat will deprecate endpoints used to manage API keys. This is to support our extended API key management that allows multiple keys.
+On April 11, 2023, Codat will deprecate endpoints used to manage API keys. This is to support our extended API key management that allows multiple keys.
 
 <!--truncate-->
 
