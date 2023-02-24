@@ -6,7 +6,7 @@ draft: false
 authors: d-laing
 ---
 
-On April 10, 2023, Codat will deprecate legacy `bankAccount` endpoints.
+On April 11, 2023, Codat will deprecate legacy `bankAccount` endpoints.
 
 <!--truncate-->
 
@@ -32,7 +32,7 @@ If you are using either of the above endpoints, you will need to instead use the
 
 ## Expected impact if no action is taken
 
-After April 10, 2023, calls to the deprecated endpoints will return a 404 error.
+After April 11, 2023, calls to the deprecated endpoints will return a 404 error.
 
 ```json
 {

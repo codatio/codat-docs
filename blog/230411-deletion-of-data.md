@@ -6,7 +6,7 @@ draft: false
 authors: d-laing
 ---
 
-On April 10, 2023, Codat will change the way Accounting data deleted by Company users within their accounting package is handled.
+On April 11, 2023, Codat will change the way Accounting data deleted by Company users within their accounting package is handled.
 
 <!--truncate-->
 
@@ -19,7 +19,7 @@ This was previously scheduled for 2023/04/10. This has been pushed back a day as
 
 ## Action required
 
-From April 10, 2023, the Codat API will return data that was not previously returned. Therefore, if data pertaining to records deleted between two successive data syncs is not required for your use case, you will need to filter out deleted records. This can be achieved by querying Codat's API with:  
+From April 11, 2023, the Codat API will return data that was not previously returned. Therefore, if data pertaining to records deleted between two successive data syncs is not required for your use case, you will need to filter out deleted records. This can be achieved by querying Codat's API with:  
 `?query=metadata.isDeleted!=true`
 
 ## Expected impact if no action is taken
@@ -38,7 +38,7 @@ Accounting data deleted by a Company between two data syncs can be identified wi
 
 Note 1: This change applies to only Accounting data deleted by a Company between successive Codat data syncs. Records that were both created and deleted by a Company before the first Codat sync will never be included in Codat data.
 
-Note 2: For datatypes with a Status property in Codat's data model, Codat does not currently delete data, but instead updates the status property. The `metadata.isDeleted` flag will be set to True after April 10, 2023.
+Note 2: For datatypes with a Status property in Codat's data model, Codat does not currently delete data, but instead updates the status property. The `metadata.isDeleted` flag will be set to True after April 11, 2023.
 
 Note 3: For pre-existing data, the isDeleted flag may be set to null; this will be set to true/false on future data syncs.
 
