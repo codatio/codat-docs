@@ -8,7 +8,15 @@ description: "Review the key goals, purpose, and structure of Codat's underwriti
 Codat's build guides are for our developer users. We assume you are technically savvy and know how to use an API.
 :::
 
-## Key goals
+## Build guide summary
+
+:dart: Completing this guide lets you experience the end-to-end underwriting process flow, both as an applicant and as a lender, and understand the key steps of building an underwriting application supported by Codat's [Assess](/assess/overview) product.
+
+:hourglass_flowing_sand: Estimated time to complete: X minutes
+
+:hammer: The project is implemented in [.NET 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) as a backend API that uses features of Codat's [Assess](/assess/overview) product.
+
+## Key targets
 
 In simple terms, underwriting means checking an applicant’s finances to make a decision on their loan request. With this build guide, we will explain how a lender can use Codat to automate the underwriting decision-making using our [Assess](/assess/overview) product against the end-to-end lending process. We also provide you with a demo project, where you can see underwriting with Codat in action. 
 
@@ -23,14 +31,6 @@ This guide does not cover:
 
 - Building a user interface to support the application form submissions and review of the application’s underwriting status,
 - Details or recommendations of various financial metrics used in different underwriting models.
-
-## Build guide summary
-
-:dart: Completing this guide lets you experience the end-to-end underwriting process flow, both as an applicant and as a lender, and understand the key steps of building an underwriting application supported by Codat's Assess product.
-
-:hourglass_flowing_sand: Estimated time to complete: X minutes
-
-:hammer: The project is implemented in [.NET 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) as a backend API that uses features of Codat's [Assess](/assess/overview) product.
 
 ## Running the demo project
 
