@@ -18,8 +18,12 @@ If you require purchase data from QuickBooks Online, use the Codat Direct costs 
 Expected impact if no action is taken
 Pulling Bill Credit notes, Bills and Bill payments will no longer include QuickBooks Online purchase data, so you may not see the data you expect.
 
-Additional information
-Puling Bills and Bill payments for a Company with a pre-existing completed data sync [for these datatypes] will result in any pre-existing Bills and Bill payments that represent QuickBooks Online purchases being voided (Bills) or deleted (Bill payments).
+## Additional information
 
-📘
+Pulling Bills and Bill payments for a Company with a pre-existing completed data sync (for these datatypes) will result in any pre-existing Bills and Bill payments that represent QuickBooks Online purchases being voided (Bills) or deleted (Bill payments).
+
+:::note Get ahead
+
 You can get ahead of this change by enabling it now in the Portal.
+
+:::
