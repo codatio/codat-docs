@@ -75,8 +75,15 @@ what codat does - webhooks
 
 While Codat’s Assess product is able to automatically categorize most of the source chart of accounts accounts, it is not always possible, and a manual intervention is required. 
 
-In our demo, when accounts are pulled from the Accounting Sandbox and categorized, one account remains without a specified category. You need to assign a category to it before the application is ready for underwriting. This is because the Profit and Loss, and Balance Sheet metrics in Assess depend on fully categorized accounts.
-
 To do that, log in to the [Codat Portal](https://app.codat.io/) and click on the **Companies** tab in the top menu. Click on the company you are performing underwriting for, and navigate to **Products > Assess**. Red **Categorization required** button to the right of the company name indicates there are uncategorized accounts in the chart. 
 
 Clicking the button takes you to the **Account categorization** page which displays a list of all the uncategorized accounts. You can select the **Account type**, **Account subtype**, and **Account detail** from drop down lists. Once this is done, you can **Save** the categorization.
+
+In real world, an underwriting specialist would do this I assume
+
+:::tip Demo app: free account
+
+
+In our demo, when accounts are pulled from the Accounting Sandbox and categorized, one account remains without a specified category. You need to assign a category to it before the application is ready for underwriting. This is because the Profit and Loss, and Balance Sheet metrics in Assess depend on fully categorized accounts.
+
+:::

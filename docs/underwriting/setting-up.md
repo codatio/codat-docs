@@ -6,6 +6,7 @@ description: "Prepare your Codat instance and local environment for the underwri
 
 <input type="checkbox" unchecked /> <b>Create a free Codat account</b>  
 
+<br />
 
 We provide a [free account](https://signup.codat.io/) that lets you explore and test our APIs and other products, including Assess. It also comes equipped with a sample company. 
 
