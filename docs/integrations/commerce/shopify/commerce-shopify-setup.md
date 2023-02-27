@@ -5,6 +5,12 @@ createdAt: "2021-01-14T16:41:39.945Z"
 updatedAt: "2023-01-06T16:44:14.501Z"
 ---
 
+:::caution Documentation under review
+
+Our documentation on using public apps to connect to Shopify is currently being reviewed. We'll publish updates to this content in the near future.
+
+:::
+
 Set up the Shopify integration to retrieve commerce data from customers who sell their products on Shopify's ecommerce platform.
 
 This article explains how to set up the Shopify integration using the _public apps_ connection method.
