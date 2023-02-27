@@ -26,6 +26,8 @@ To successfully complete an underwriting request using the demo project, make su
 
 <input type="checkbox" unchecked /> <b>Check your auth flow settings</b><br/>
 
+
+
 In the [Codat Portal](https://app.codat.io/), click on the **Settings** tab in the top menu. Then, navigate to **Auth flow > Link**. Scroll down to _Integration categories_ and ensure _Accounting_ integration category is enabled, and _Sandbox integrations_ switch is toggled on. 
 
 You may want to explore and customize Codat's [auth flow](/auth-flow/customize/customize-link) further as part of following this build guide, or working on an underwriting solution of your own.
