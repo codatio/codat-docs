@@ -14,7 +14,7 @@ You will not be charged when using the account for running the example underwrit
 
 :::
 
-<input type="checkbox" unchecked /> <b>Enable data types needed for underwriting</b><br />
+<input type="checkbox" unchecked /> <b>Enable data types needed for underwriting</b>  
 
 Log in to the [Codat Portal](https://app.codat.io/) and click on the **Settings** tab in the top menu. Then, navigate to **Integrations > Data types** and make sure that data types required by Assess that you intend to use in the underwriting logic are set to fetch on first link. 
 
@@ -24,8 +24,7 @@ To successfully complete an underwriting request using the demo project, make su
 
 :::
 
-<input type="checkbox" unchecked /> <b>Check your auth flow settings</b>  
-
+<input type="checkbox" unchecked /> <b>Check your auth flow settings</b><br/>
 
 In the [Codat Portal](https://app.codat.io/), click on the **Settings** tab in the top menu. Then, navigate to **Auth flow > Link**. Scroll down to _Integration categories_ and ensure _Accounting_ integration category is enabled, and _Sandbox integrations_ switch is toggled on. 
 
