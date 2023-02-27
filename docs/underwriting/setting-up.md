@@ -4,9 +4,9 @@ description: "Prepare your Codat instance and local environment for the underwri
 ---
 ## Setting up in the Codat Portal
 
-<input type="checkbox" unchecked /> <b>Create a free Codat account</b>  
+<input type="checkbox" unchecked> <b>Create a free Codat account</b>  
 
-<br />
+<br/>
 We provide a [free account](https://signup.codat.io/) that lets you explore and test our APIs and other products, including Assess. It also comes equipped with a sample company. 
 
 :::tip Demo app: free account
