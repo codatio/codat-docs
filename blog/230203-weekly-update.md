@@ -12,13 +12,13 @@ A new product for easy syncing with bookkeeping software and ERPs, and other qua
 
 ## What's new
 
-### [Sync for Expenses](https://codat2.stoplight.io/docs/sync-for-expenses-v2/fjx7t6em0l1ux-overview)
+### [Sync for Expenses](https://docs.codat.io/sync-for-expenses/overview)
 
 Launch new accounting integrations faster and save on ongoing maintenance by standardizing how you sync with bookkeeping software and ERPs.
 
 Sync for Expenses is an API and a set of supporting tools. It has been built to enable corporate card and expense management platforms to provide high-quality integrations with multiple accounting platforms through a standardized API.
 
-[Read the docs...](https://codat2.stoplight.io/docs/sync-for-expenses-v2/fjx7t6em0l1ux-overview)
+[Read the docs...](https://docs.codat.io/sync-for-expenses/overview)
 
 ### Accounting API
 
