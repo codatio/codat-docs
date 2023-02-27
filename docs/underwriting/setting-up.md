@@ -14,9 +14,8 @@ You will not be charged when using the account for running the example underwrit
 
 :::
 
-<input type="checkbox" unchecked /> <b>Enable data types needed for underwriting</b>  
+<input type="checkbox" unchecked /> <b>Enable data types needed for underwriting</b><br />
 
-<br />
 Log in to the [Codat Portal](https://app.codat.io/) and click on the **Settings** tab in the top menu. Then, navigate to **Integrations > Data types** and make sure that data types required by Assess that you intend to use in the underwriting logic are set to fetch on first link. 
 
 :::tip Demo app: data types
