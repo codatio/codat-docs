@@ -10,7 +10,7 @@ We provide a [free account](https://signup.codat.io/) that lets you explore and 
 
 :::tip Demo app: free account
 
-You will not be charged when using the account for running the example underwriting project.
+- [ ] You will not be charged when using the account for running the example underwriting project.
 
 :::
 
@@ -24,9 +24,9 @@ To successfully complete an underwriting request using the demo project, make su
 
 :::
 
-<input type="checkbox" unchecked /> <b>Check your auth flow settings</b><br/>
-
-
+<input type="checkbox" unchecked /> <b>Check your auth flow settings</b>
+&nbsp;
+&nbsp;
 
 In the [Codat Portal](https://app.codat.io/), click on the **Settings** tab in the top menu. Then, navigate to **Auth flow > Link**. Scroll down to _Integration categories_ and ensure _Accounting_ integration category is enabled, and _Sandbox integrations_ switch is toggled on. 
 
