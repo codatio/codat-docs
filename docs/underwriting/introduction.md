@@ -1,6 +1,6 @@
 ---
 title: "Build guide overview"
-description: "Review the key goals, purpose, and structure of Codat's underwriting build guide"
+description: "Key goals, purpose, and structure of Codat's underwriting build guide"
 ---
 
 :::tip Who is this guide for?
@@ -8,13 +8,13 @@ description: "Review the key goals, purpose, and structure of Codat's underwriti
 Codat's build guides are for our developer users. We assume you are technically savvy and know how to use an API.
 :::
 
-## Build guide summary
+## Summary
 
-:dart: Completing this guide lets you experience the end-to-end underwriting process flow, both as an applicant and as a lender, and understand the key steps of building an underwriting application supported by Codat's [Assess](/assess/overview) product.
+:dart: This guide lets you experience the end-to-end underwriting process flow, both as an applicant and as a lender, and understand the key steps of building an underwriting application supported by Codat's [Assess](/assess/overview) product.
 
 :hourglass_flowing_sand: Estimated time to complete: X minutes
 
-:hammer: The project is implemented in [.NET 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) as a backend API that uses features of Codat's [Assess](/assess/overview) product.
+:hammer: The project is implemented in [.NET 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) as a backend API.
 
 ## Key targets
 
@@ -91,3 +91,6 @@ Note that the other directory in the repository, `Codat.Demos.Underwriting.Api.T
      ├──ApplicationStore.cs // Handles creating and storing the loan application in-memory
      └──LoanUnderwriter.cs  // Decision process method for the underwriting model used in the demo
 ```
+### Read next
+
+- [Setting up Codat and your local environment](/underwriting/setting-up)
