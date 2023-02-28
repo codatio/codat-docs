@@ -28,7 +28,7 @@ Before pushing data into accounting software, it is often necessary to collect s
 
 Our `/options` endpoint exposes which fields are required to be pushed for a specific linked company, and the options which may be selected for each field.
 
-## GET /options
+### GET /options
 
 You can retrieve the options for a given data type by calling:
 
@@ -91,7 +91,7 @@ This example describes the nominal account object as requiring three properties 
 - The `name` property is an unrestricted string. 
 - The `fullyQualifiedCategory` property is an enum property, namely it accepts a string chosen from a list of options (in this case, "Asset.CashOnHand" and "Asset.Checking"). The `displayName` on the options can be used to display the user a more descriptive name, such as "Cash On Hand" and "Checking".
 
-## Displaying options to your user
+### Displaying options to your user
 
 The structure of the options endpoint is designed such that it can be easily parsed into a set of controls which can be displayed to the end user such that they can select how data is pushed into their accounting software.
 
@@ -112,7 +112,7 @@ For example, when rendering the "fullyQualifiedCategory" from the above example 
 If you attempt to push a record using fields that are not documented in the Options response for that company, the additional data may not be pushed to the platform and you may receive validation errors in response to your "push" request.
 :::
 
-## The push endpoint
+### The push endpoint
 
 The endpoint for pushing a record is as follows:
 
@@ -156,13 +156,13 @@ Properties on the object are as follows:
 - **data**: The object which was pushed. If the push has completed successfully, this represents the object as it appears in the platform (with any platform-generated fields populated)
 - **validation**: A human-readable object describing validation decisions Codat has made when pushing data into the platform. If a push has failed because of validation errors, they will be detailed here.
 
-## Synchronous vs asynchronous push
+### Synchronous vs asynchronous push
 
 The majority of platforms are implemented to push asynchronously so you will receive a `Pending` push operation in response to your push request.  You can use the details in this response to monitor the status of your push request. 
 
 For some platforms, pushing may be implemented synchronously and you may receive a `Success` or `Failed` push operation in response to your push request (in place of a `Pending` push operation). However, we strongly suggest that you assume that all pushes will be processed asynchronously when integrating with Codat.
 
-## Timeouts
+### Timeouts
 
 It is possible for an operation to be in a `Pending` status indefinitely, for example if a user's on-premise software is offline. To avoid possible issues this could create for clients, Codat provides a timeout functionality for push operations in the `Pending` status. If the `timeoutInMinutes` property has been set on a push operation, Codat will guarantee that the operation will not be processed after that deadline. If the deadline expires, the status of the push operation will change to `TimedOut`.
 
@@ -172,7 +172,7 @@ For asynchronous push operations, where the push is initially in a `Pending` sta
 
 Codat supports two methods of monitoring the status of push operations: polling and webhooks. 
 
-## 1. Polling
+### 1. Polling
 
 The Codat API provides two endpoints for monitoring push operations: one for viewing the status of all the most recent push operations, and one for viewing the status of a single push operation, identified by the `PushOperationKey` returned when you requested the push.
 
@@ -185,6 +185,6 @@ You can periodically poll the single endpoint while a push is in a `Pending` sta
 
 The list endpoint can be used to present to the user a list of recent push requests and their statuses. This can be useful for applications which push data frequently.
 
-## 2. Webhooks
+### 2. Webhooks
 
 A second option for monitoring push operations is to register a subscription to the "Push status changed" rule. This can be configured by following the instructions in our documentation for [subscribing to rules](/introduction/webhooks/core-rules-create).
