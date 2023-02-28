@@ -22,14 +22,14 @@ In simple terms, underwriting means checking an applicant’s finances to make a
 
 With this build guide, we will explain how a lender can use Codat to automate the underwriting decision-making using our [Assess](/assess/overview) product against the end-to-end lending process. We also provide you with a demo project, where you can see underwriting with Codat in action. 
 
-Explore our demo project to:
+✔️ Explore our demo project to:
 
 - Create a test company via Codat’s API and submit an example loan application form,
 - Access and fetch test financial data using Codat’s Enhanced Profit and Loss and Enhanced Balance Sheet endpoints,
 - Use Codat’s webhooks to trigger the underwriting of a loan,
 - Produce an automated underwriting decision based on custom financial metrics. 
 
-This guide does not cover: 
+❌ This guide does not cover: 
 
 - Building a user interface to support the application form submissions and review of the application’s underwriting status,
 - Details or recommendations of various financial metrics used in different underwriting models.
