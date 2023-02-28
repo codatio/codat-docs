@@ -94,14 +94,9 @@ module.exports = {
       defaultMode: "light",
     },
     navbar,
-    // tagManager: {
-    //   trackingID: process.env.GA_TAG_ID,
-    // },
-    // prism: {
-    //   theme: { plain: {}, styles: [] },
-    //   // https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
-    //   additionalLanguages: ["shell-session", "http"],
-    // },
+    tagManager: {
+      trackingID: process.env.GTM_ID,
+    },
   },
   plugins: [
     "docusaurus-plugin-sass",
