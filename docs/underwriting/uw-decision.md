@@ -1,26 +1,38 @@
 ---
-title: "Making a decision"
-description: "Write a description"
+title: "Making an application decision"
+description: "Review how to automatically make a loan decision based on underwriting metrics"
 ---
 
-## Using Assess' enhanced financials
-
-### Fetching financial data with Assess
+## Fetching financial data with Assess
 
 Let’s review how Codat supports the automatic decision-making by providing the data required to calculate the ratios. To fetch the data used by the [LoanUnderwriter](https://dev.azure.com/codat/Codat%20Spikes/_git/DemosUnderwriting?path=/Codat.Demos.Underwriting.Api/Services/LoanUnderwriter.cs&version=GBmain) service, we use Assess' [Enhanced Profit and Loss](https://docs.codat.io/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-enhancedProfitAndLoss) and [Enhanced Balance Sheet](https://docs.codat.io/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-enhancedBalanceSheet) endpoints for analysis:
 
-- `GET https://api.codat.io/data/companies/{companyId}/connections/{connectionId}/assess/enhancedProfitAndLoss`
-- `GET https://api.codat.io/data/companies/{companyId}/connections/{connectionId}/assess/enhancedBalanceSheet`
+```html
+GET https://api.codat.io/data/companies/{companyId}/connections/{connectionId}/assess/enhancedProfitAndLoss
+GET https://api.codat.io/data/companies/{companyId}/connections/{connectionId}/assess/enhancedBalanceSheet
+```
 
 Both endpoints require a `reportDate`, `periodLength`, and `numberOfPeriods` as query parameters. The loan application's `createdDate` is used where the year and previous month are set as the `reportDate`. This ensures that a full year of financial data is returned by Codat. In addition, `includeDisplayNames` parameter is set to `true` in the request because it allows accounts to be accessed via Codat's standardized taxonomy display names.
 
+:::tip Demo app: pulling data from Codat
+
 Once both enhanced data types have been fetched, they are passed to the [LoanUnderwriter](https://dev.azure.com/codat/Codat%20Spikes/_git/DemosUnderwriting?path=/Codat.Demos.Underwriting.Api/Services/LoanUnderwriter.cs&version=GBmain) service together with the application's loan amount and term length. This is to perform an assessment of the prospective borrower's credit worthiness.
 
-### Metrics used for underwriting
+Any details on the file directory and if there is anything specific to do there? 
+
+ApplicationOrchestrator.cs?
+
+how do you get meaningful data from the response
+
+this is hwo we’ve normalized this
+
+:::
+
+## Metrics used for underwriting
 
 Each lender is expected to have their own set of metrics and checks they use to review an application. These can be easily supported by Assess and its associated data types to provide automatic decision-making on the loan application. 
 
-The underwriting model we use as our example in the [LoanUnderwriter](https://dev.azure.com/codat/Codat%20Spikes/_git/DemosUnderwriting?path=/Codat.Demos.Underwriting.Api/Services/LoanUnderwriter.cs&version=GBmain) service is a rules-based model that requires example thresholds to be passed for gross profit margin, revenue, and gearing ratio. 
+The underwriting model we use as our example in the [LoanUnderwriter](https://dev.azure.com/codat/Codat%20Spikes/_git/DemosUnderwriting?path=/Codat.Demos.Underwriting.Api/Services/LoanUnderwriter.cs&version=GBmain) service is a rules-based model that requires example thresholds to be passed for gross profit margin, revenue, and gearing ratio. You would have previously maintained these thresholds in `appsettings.json`.
 
 **Gross profit margin** metric uses `operating` income values and `costOfSales` expense values returned by the `profitAndLoss` endpoint. It is calculated by subtracting cost of sales from net sales, and dividing the resulting gross profit by net sales. It is then expressed by a ratio, and indicates a business’s profitability. 
 
@@ -28,10 +40,33 @@ The **revenue** metric relies on the the `profitAndLoss` endpoint and the `opera
 
 Finally, the gearing ratio used in the example model is the **debt ratio**, calculated by dividing total debt by total assets. It uses the `balanceSheet` endpoint and its `asset` and non-current payable loans `liability` values. Having too much debt may indicate a higher financial risk associated with the company. 
 
-Code snippet - criticak pieces of logic, comments on which file to find them in
+import Tabs from '@theme/Tabs';
 
-how do you get meaningful data from the response
+import TabItem from '@theme/TabItem';
 
-this is hwo we’ve normalized this
+:::tip Demo app: underwriting metrics
+
+<Tabs>
+  <TabItem value="Gross profit margin" label="Gross profit margin">Code snippet - critical pieces of logic, comments on which file to find them in </TabItem>
+  <TabItem value="Revenue" label="Revenue">Code snippet - critical pieces of logic, comments on which file to find them in </TabItem>
+  <TabItem value="Debt ratio" label="Debt ratio">Code snippet - critical pieces of logic, comments on which file to find them in </TabItem>
+</Tabs>
+:::
+
+## Generating an automatic decision
 
 Only if all the thresholds are met or surpassed by the applicant, the loan request is automatically updated with an _Accepted_ status. Otherwise, the application is updated with a _Rejected_ status. We also cater for a scenario of programmatic errors that means a decision could not be made with a _UnderwritingFailure_ status.
+
+:::tip Demo app: receiving the decision
+
+Any details on the file directory and if there is anything specific to do there?
+
+Continue calling the `GET applications/{applicationId}` endpoint periodically to view the status of the loan until it is updated with an underwriting decision.
+
+:::
+
+## Recap
+
+Following this guide, you were able to plan or create your own underwriting application using Codat's Assess product. You also had the opportunity to see it in action by executing our demo project. 
+
+Next, you can find out more about [Assess](/assess/overview), or explore other use cases.
