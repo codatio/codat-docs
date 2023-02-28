@@ -7,40 +7,36 @@ Before you can run the demo underwriting app, you will need to set up your local
 
 ## Prerequisites
 
-You need to have the following installed locally:
+You need to install the following:
 
 - .NET version 7.0 or higher
 - [ngrok](https://ngrok.com/) (optional)
 
    ngrok is a free tool for exposing services from a local server to the public Internet. You can use a different tool or method to do this, if you prefer. 
 
-You can configure and run the demo app in the terminal. Alternatively, use an IDE or code editor like Visual Studio, Visual Studio Code, or JetBrains Rider.
+You can configure and run the demo app in the terminal, or use your preferred IDE or code editor.
 
-## Optional: Configure ngrok to allow the demo app to access Codat's webhooks
+## Configure ngrok to allow the demo app to access Codat's webhooks
 
-If using ngrok, perform these steps:
+If using ngrok to expose the demo app, perform these steps:
 
 1. Go to the root directory where ngrok is installed.
 
 2. Open the `ngrok.exe` file to launch the ngrok terminal.
 
-3. The demo app is configured to listen for Codat's webhooks on port `5069`. So, you must allow your local machine to receive web traffic through that port.
-
-   Run the following command in the ngrok terminal:
+3. Configure your local machine to receive web traffic on port 5069. The demo app is configured to listen for Codat's webhooks on this port.
 
    ```bash
    .\ngrok.exe http 5069
    ```   
 
-4. ngrok displays information about the session. Copy the _forwarding address_; for example, `https://aa111-bb222-cc333-dd444.eu.ngrok.io` to use in the next procedure.
+4. ngrok starts a new session. Copy the **forwarding address**; for example, `https://aa111-bb222-cc333-dd444.eu.ngrok.io`. You'll need this in the next task.
 
-## Configure webhooks in the Codat Portal
+## Configure Codat webhooks
+  
+1. In the [Codat Portal](https://app.codat.io), go to **Monitor > Alerts > Alerting rules**.
 
-1. Sign in to the [Codat Portal](https://app.codat.io).
-   
-2. Go to **Monitor > Alerts > Alerting rules**.
-
-3. Create three rules, one for each webhook, as shown in the following table:
+2. Create three rules, one for each webhook, as shown in the following table:
 
    |  Rule type                                  | Webhook notification URL                                    |
    |---------------------------------------------|-------------------------------------------------------------|
@@ -48,13 +44,13 @@ If using ngrok, perform these steps:
    | Data sync completed                         | `<server-url>/webhooks/codat/datatype-sync-complete`        |
    | Account categories updated                  | `<server-url>/webhooks/codat/account-categorisation-update` |
 
-   If you're using ngrok, use the forwarding address as the `<server-url>`. For example:
+   If using ngrok, replace the `<server-url>` with the forwarding address. For example:
 
    ```http
    https://pg5e-tf03-w9w-64fd-4000-2c87-.eu.ngrok.io/webhooks/codat/account-categorisation-update
    ```
 
-  TODO: Add a screenshot of the rules dialog
+  TODO: Add a screenshot of the rules dialog box.
 
 ## Set your API key
 
