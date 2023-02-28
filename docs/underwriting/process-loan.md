@@ -32,16 +32,11 @@ In our demo, we do not provide a UI for the loan application form. For your unde
 
 The borrower then uses the application `id` to complete the application form. If the details provided are valid, they are stored against the application `id` with an acknowledgement of their receipt. 
 
-import Tabs from '@theme/Tabs';
+In the example app, we only request the borrower's full name, company name, and the loan amount, length, and purpose. These details are posted to the `applications/forms` endpoint, which validates that the required fields exist and are within acceptable limits.
 
-import TabItem from '@theme/TabItem';
+:::tip Demo app: example application
 
-:::tip Demo app: form details
-
-<Tabs>
-  <TabItem value="Required details" label="Required details">In the example app, we only request the borrower's full name, company name, and the loan amount, length, and purpose. These details are posted to the `applications/forms` endpoint, which validates that the required fields exist and are within acceptable limits.</TabItem>
-  <TabItem value="Example application" label="Example application">
-  ```json
+```json
 {
   "id": "applicationId", 
   "companyName": "Example Company",
@@ -50,9 +45,7 @@ import TabItem from '@theme/TabItem';
   "loanTerm": 36, // must be at least 12 months
   "loanPurpose": "Growth marketing campaign."
 }
-```  
-</TabItem>
-</Tabs>
+```
 :::
 
 
