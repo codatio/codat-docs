@@ -46,18 +46,19 @@ module.exports = {
           label: "Assess API",
         },
         {
-          href: "/sync-for-commerce-api",
-          label: "Sync for Commerce API",
-        },
-        {
           href: "/sync-for-expenses-api",
           label: "Sync for Expenses API",
+        },
+        {
+          href: "/sync-for-commerce-api",
+          label: "Sync for Commerce API",
         },
         {
           href: "/files-api",
           label: "Files API",
         },
         {
+          className: "borderTop",
           href: "https://github.com/codatio/oas",
           label: "OpenAPI spec",
         },
