@@ -48,7 +48,6 @@ The borrower then uses the application `id` to complete the application form. If
     In our demo, we request the borrower's full name, company name, and the loan amount, length, and purpose. These details are posted to the `applications/forms` endpoint, which validates that the required fields exist and are within acceptable limits.
   </TabItem>
   <TabItem value="Example form" label="Example form">  
-
     ```json
     {
     "id": "applicationId", 
