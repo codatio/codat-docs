@@ -2,7 +2,7 @@
 title: "Setting up for underwriting"
 description: "Prepare your Codat instance and local environment for the underwriting app build"
 ---
-## Setting up in the Codat Portal
+## Setting up in the Codat Portal  
 
 <input type="checkbox" unchecked/> <b>Create a free Codat account</b>  
 
@@ -34,3 +34,6 @@ Log in to the [Codat Portal](https://app.codat.io/) and click on the **Settings*
 Perform these steps if you plan to explore our sample project and run the demo app.
 :::
 
+### Read next
+
+- [Processing a loan application](/underwriting/process-loan)

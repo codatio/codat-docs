@@ -64,3 +64,9 @@ Any details on the file directory and if there is anything specific to do there?
 Continue calling the `GET applications/{applicationId}` endpoint periodically to view the status of the loan until it is updated with an underwriting decision.
 
 :::
+
+## Recap
+
+Following this guide, you were able to plan or create your own underwriting application using Codat's Assess product. You also had the opportunity to see it in action by executing our demo project. 
+
+Next, you can find out more about [Assess](/assess/overview), or explore other use cases.
