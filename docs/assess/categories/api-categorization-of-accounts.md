@@ -154,7 +154,9 @@ Note that this does not update the end accounting platform’s account, and only
 
 The endpoint is available in our <a href="/assess-api#/operations/patch-data-companies-companyId-connections-connectionId-assess-accounts-categories">API reference</a>.
 
-`PATCH /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categories`
+```http
+PATCH /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categories
+```
 
 In the update request body, provide:
 
@@ -188,6 +190,8 @@ The confirmed category for an account can be updated or removed.
 
 The endpoint is available in our <a href="/assess-api#/operations/patch-data-companies-companyId-connections-connectionId-assess-accounts-accountId-categories">API reference</a>.
 
-`PATCH /data/companies/{companyId}/connections/{connectionId}/assess/accounts/{accountId}/categories`
+```http
+PATCH /data/companies/{companyId}/connections/{connectionId}/assess/accounts/{accountId}/categories
+```
 
 Note: Even if you are updating 2 accounts out of 100, you should still provide the categories on the other 98 accounts to prevent replacing those that were previously confirmed.

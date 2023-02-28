@@ -57,7 +57,7 @@ Register your Business Central application on the Microsoft Azure portal.
 
    - **Supported account types**: Select **Accounts in any organizational directory (Any Azure AD directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**. This allows Codat to access data in Dynamics 365 Business Central.
 
-   - **Redirect URI**: Select **Web**, then enter the following URL: `<https://dynamics365businesscentral.codat.io/oauth/callback`>
+   - **Redirect URI**: Select **Web**, then enter the following URL: ` <https://dynamics365businesscentral.codat.io/oauth/callback> `
 
 6. Select **Register**.
 
