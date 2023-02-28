@@ -60,16 +60,17 @@ In the example app, we only request the borrower's full name, company name, and 
 :::tip Demo app: loan application
 
 <Tabs>
-  <TabItem value="Starting an application" label="Starting an application">We only request the borrower's full name, company name, and the loan amount, length, and purpose. These details are posted to the `applications/forms` endpoint, which validates that the required fields exist and are within acceptable limits.
+  <TabItem value="Starting an application" label="Starting an application">
+    We only request the borrower's full name, company name, and the loan amount, length, and purpose. These details are posted to the `applications/forms` endpoint, which validates that the required fields exist and are within acceptable limits.
   </TabItem>
   <TabItem value="Application UI" label="Application UI">
-  Example application form
-  
-  ```json
-    id": "applicationId", 
-    "companyName": "Example Company",
-    "fullName": "John Smith",
-  ```
+    Example application form  
+
+    ```json
+        id": "applicationId", 
+        "companyName": "Example Company",
+        "fullName": "John Smith",
+    ```
   </TabItem>
 </Tabs>
 :::
