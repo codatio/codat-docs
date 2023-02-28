@@ -23,7 +23,9 @@ import TabItem from '@theme/TabItem';
 
 <Tabs>
   <TabItem value="Starting an application" label="Starting an application">  
-   In our demo, we do not provide a UI for the loan application form. For your underwriting solution. We use an example `application/start` endpoint when a new loan application is triggered. For your business case, we recommend developing an interface to enable form submission and status review. 
+   In our demo, we do not provide a UI for the loan application form. For your business case, we recommend developing an interface to enable form submission and status review. 
+    
+  We use an example `application/start` endpoint when a new loan application is triggered.  
   </TabItem>
   <TabItem value="Creating a company" label="Creating a company">  
   Code snippet - critical pieces of logic, comments on which file to find them in 
@@ -33,7 +35,7 @@ import TabItem from '@theme/TabItem';
 
 🙏🏽 <input type="checkbox" unchecked /> <b>Provide application details</b>  
 
-The borrower uses the application `id` returned to them to complete the application form. If the details provided are valid, they are stored against the application `id` with an acknowledgement of their receipt. 
+The borrower uses the application `id` returned to them to complete the application form. If the details provided are valid, they are stored against the application `id` with an acknowledgement of their receipt. We expect the applicant to use your business' graphic interface to fill the required application details.
 
 :::tip Demo app: loan application
 
@@ -80,7 +82,7 @@ The borrower and lender should be able to check the loan status anytime. In our 
 
 You can use the webhooks previously set up to track the progress of the application. 
 
-We can only assess the application and provide an outcome once the data requirements for the underwriting model are complete. The loan request is then automatically updated with an _Accepted_ or _Rejected_ status to indicate the decision made on the loan, or with an _UnderwritingFailure_ status to cater for programmatic errors.
+We can only assess the application and provide an outcome once the data requirements for the underwriting model are complete. The loan request is then automatically updated with a relevant status to indicate the decision made on the loan, or any errors that occurred in the process.
 
 :::tip Demo app: data requirements
 

@@ -5,6 +5,9 @@ description: "Review how to automatically make a loan decision based on underwri
 
 ## Fetching financial data with Assess
 
+
+You can explore Assess' other endpoints to focus on data relevant for your underwriting model. 
+
 Let’s review how Codat supports the automatic decision-making by providing the data required to calculate the ratios. To fetch the data used by the [LoanUnderwriter](https://dev.azure.com/codat/Codat%20Spikes/_git/DemosUnderwriting?path=/Codat.Demos.Underwriting.Api/Services/LoanUnderwriter.cs&version=GBmain) service, we use Assess' [Enhanced Profit and Loss](https://docs.codat.io/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-enhancedProfitAndLoss) and [Enhanced Balance Sheet](https://docs.codat.io/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-enhancedBalanceSheet) endpoints for analysis:
 
 ```html
@@ -55,13 +58,13 @@ import TabItem from '@theme/TabItem';
 
 ## Generating an automatic decision
 
-Only if all the thresholds are met or surpassed by the applicant, the loan request is automatically updated with an _Accepted_ status. Otherwise, the application is updated with a _Rejected_ status. We also cater for a scenario of programmatic errors that means a decision could not be made with a _UnderwritingFailure_ status.
+-We expect you to have your own list of statuses, thresholds, data requirements, and error handling. - Expand on this
 
 :::tip Demo app: receiving the decision
 
-Any details on the file directory and if there is anything specific to do there?
-
 Continue calling the `GET applications/{applicationId}` endpoint periodically to view the status of the loan until it is updated with an underwriting decision.
+
+Only if all the thresholds are met or surpassed by the applicant, the loan request is automatically updated with an _Accepted_ status. Otherwise, the application is updated with a _Rejected_ status. We also cater for a scenario of programmatic errors that means a decision could not be made with a _UnderwritingFailure_ status.
 
 :::
 
