@@ -33,6 +33,8 @@ If using ngrok to expose the demo app, perform these steps:
 4. ngrok starts a new session. Copy the **forwarding address**; for example, `https://aa111-bb222-cc333-dd444.eu.ngrok.io`. You'll need this in the next task.
 
 ## Configure Codat webhooks
+
+Introduction.
   
 1. In the [Codat Portal](https://app.codat.io), go to **Monitor > Alerts > Alerting rules**.
 
@@ -54,18 +56,16 @@ If using ngrok to expose the demo app, perform these steps:
 
 ## Set your API key
 
-1. Navigate to the `\DemosUnderwriting\Codat.Demos.Underwriting.Api\` directory. 
+1. In the Codat Portal, go to **Developers > API keys**.
+2. Copy your API key from the **API key** column.
 
-2. Edit the following properties in the `appsettings.json` file:
+:::tip Demo app: Setting your API key 
 
-   - For the `CodatApiKey`, enter your API key from the Codat Portal.
+If you're using our demo app, perform the following steps to set your API key:
 
-3. Run the demo app from your editor; for example:
+1. Navigate to the `\DemosUnderwriting\Codat.Demos.Underwriting.Api\` directory.
+2. Edit the `appsettings.json` file and enter your API key as the `CodatApiKey`.
 
-   ```
-   dotnet run
-   ```
-
-The demo app runs. ???
+:::
 
 TO DO: Add something about which profiles to use in `Properties/launchProperties.json`. 
