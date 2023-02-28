@@ -24,6 +24,13 @@ In the [Codat Portal](https://app.codat.io/), click on the **Settings** tab in t
 
 You may want to explore and customize Codat's [auth flow](/auth-flow/customize/customize-link) further as part of following this build guide, or working on an underwriting solution of your own.
 
+:::tip Demo app: auth flow settings
+
+Perform these steps if you plan to explore our sample project and run the demo app.
+hen, navigate to **Auth flow > Link**. Scroll down to _Integration categories_ and ensure _Accounting_ integration category is enabled, and _Sandbox integrations_ switch is toggled on.
+
+:::
+
 <input type="checkbox" unchecked /> <b>Enable the Assess product</b>  
 
 Log in to the [Codat Portal](https://app.codat.io/) and click on the **Settings** tab in the top menu. Select **Organization settings**, then **Products**. Find **Assess** in the list of products and toggle the switch to enable it.

@@ -20,7 +20,7 @@ Codat's build guides are for our developer users. We assume you are technically 
 
 In simple terms, underwriting means checking an applicant’s finances to make a decision on their loan request. 
 
-With this build guide, we will explain how a lender can use Codat to automate the underwriting decision-making using our [Assess](/assess/overview) product against the end-to-end lending process. We also provide you with a demo project, where you can see underwriting with Codat in action. 
+With this build guide, we will explain how a lender can use Codat to automate the underwriting decision-making using our [Assess](/assess/overview) product against the end-to-end lending process. We also provide you with a demo project, where you can see underwriting with Codat in action using our Sandbox integration data. 
 
 ✔️ Explore our demo project to:
 

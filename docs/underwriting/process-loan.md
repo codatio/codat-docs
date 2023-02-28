@@ -78,9 +78,9 @@ Screenshots?
 
 The borrower and lender should be able to check the loan status anytime. In our demo, this can be done by calling the `GET applications/{applicationId}`. 
 
-We can only assess the application and provide an outcome once the data requirements for the underwriting model are complete. The loan request is then automatically updated with an _Accepted_ or _Rejected_ status to indicate the decision made on the loan, or with an _UnderwritingFailure_ status to cater for programmatic errors.
+You can use the webhooks previously set up to track the progress of the application. 
 
-SOMETHING ABOUT WEBHOOKS? WHAT DO WE ACTUALLY DO WITH THEM NOW
+We can only assess the application and provide an outcome once the data requirements for the underwriting model are complete. The loan request is then automatically updated with an _Accepted_ or _Rejected_ status to indicate the decision made on the loan, or with an _UnderwritingFailure_ status to cater for programmatic errors.
 
 :::tip Demo app: data requirements
 
