@@ -7,6 +7,10 @@ description: "End-to-end application process steps carried out by the lender and
 You can review a [swimlane diagram](https://github.com/codatio/build-guide-underwriting-be#implementing-the-solution) of the underwriting process flow followed by our guide and the demo app.
 :::  
 
+
+Use Swagger
+
+
 🙏🏽 <input type="checkbox" unchecked /> <b>Initiate a new loan application</b>  
 
 When a prospective borrower starts a new loan application by calling your relevant endpoint, we expect it to return an application `id`. This is so we can use it as the company name to create a company using Codat's `POST /companies` endpoint. 
@@ -84,7 +88,26 @@ You can use the webhooks previously set up to track the progress of the applicat
 
 We can only assess the application and provide an outcome once the data requirements for the underwriting model are complete. The loan request is then automatically updated with a relevant status to indicate the decision made on the loan, or any errors that occurred in the process.
 
-:::tip Demo app: data requirements
+
+
+💰 <input type="checkbox" unchecked /> <b>Manually categorize accounts</b>   
+
+While Codat’s Assess product is able to automatically categorize most of the source chart of accounts accounts, it is not always possible, and a manual intervention may be required. 
+
+To do that, the underwriting analyst needs to log in to the [Codat Portal](https://app.codat.io/) and click on the **Companies** tab in the top menu. Next, click on the company they are performing underwriting for, and navigate to **Products > Assess**. The red **Categorization required** button to the right of the company name indicates there are uncategorized accounts in the chart. 
+
+Clicking the button takes the analyst to the **Account categorization** page which displays a list of all the uncategorized accounts. They can select the **Account type**, **Account subtype**, and **Account detail** from drop down lists. Once this is done, they can **Save** the categorization. This enables the underwriting process to continue.
+
+
+SCREENSHOT
+
+:::tip Demo app: account categorization
+
+In our demo, when accounts are pulled from Codat's Accounting Sandbox and categorized, one account remains without a specified category. You need to assign a category to it before the demo application is ready for underwriting. This is because the Profit and Loss, and Balance Sheet data types in Assess depend on fully categorized accounts.
+
+:::
+
+:::tip
 
 The underwriting model we use in the demo requires the following data about the company and the borrower:
 
@@ -96,20 +119,19 @@ The underwriting model we use in the demo requires the following data about the 
 
 :::
 
-💰 <input type="checkbox" unchecked /> <b>Manually categorize accounts</b>   
 
-While Codat’s Assess product is able to automatically categorize most of the source chart of accounts accounts, it is not always possible, and a manual intervention may be required. 
+:::tip Play around with thresholds
 
-To do that, the underwriting analyst needs to log in to the [Codat Portal](https://app.codat.io/) and click on the **Companies** tab in the top menu. Next, click on the company they are performing underwriting for, and navigate to **Products > Assess**. The red **Categorization required** button to the right of the company name indicates there are uncategorized accounts in the chart. 
-
-Clicking the button takes the analyst to the **Account categorization** page which displays a list of all the uncategorized accounts. They can select the **Account type**, **Account subtype**, and **Account detail** from drop down lists. Once this is done, they can **Save** the categorization. This enables the underwriting process to continue.
-
-
-:::tip Demo app: account categorization
-
-In our demo, when accounts are pulled from Codat's Accounting Sandbox and categorized, one account remains without a specified category. You need to assign a category to it before the demo application is ready for underwriting. This is because the Profit and Loss, and Balance Sheet data types in Assess depend on fully categorized accounts.
+In the `appsettings.json` file of the `\DemosUnderwriting\Codat.Demos.Underwriting.Api\` directory, you can also choose to set your own example thresholds to be passed for gross profit margin, revenue, and gearing ratio. These are the metrics our demo uses to make an underwriting decision.
 
 :::
+
+A real company
+
+try linking other sandboxes, other types of company
+
+
+
 
 ### Read next
 

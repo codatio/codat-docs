@@ -2,6 +2,9 @@
 title: "Setting up for underwriting"
 description: "Prepare your Codat instance and local environment for the underwriting app build"
 ---
+By the end of this oage, you will...
+
+
 ## Setting up in the Codat Portal  
 
 <input type="checkbox" unchecked/> <b>Create a Codat account</b>  
@@ -19,11 +22,10 @@ Some intro text
 
 Log in to the [Codat Portal](https://app.codat.io/) and click on the **Settings** tab in the top menu. Then, navigate to **Integrations > Data types** and make sure that data types required by Assess that you intend to use in the underwriting logic are set to fetch on first link. 
 
-:::tip Demo app: data types
+Demo app: data types
 
 To successfully complete an underwriting request using the demo project, make sure that `balanceSheet` and `profitAndLoss` accounting data types are set to fetch on first link. 
 
-:::
 
 <input type="checkbox" unchecked /> <b>Check your auth flow settings</b>
 
@@ -39,6 +41,8 @@ To use Codat's Sandbox in the demo app, ensure the _Sandbox integrations_ switch
 
 Log in to the [Codat Portal](https://app.codat.io/) and click on the **Settings** tab in the top menu. Select **Organization settings**, then **Products**. Find **Assess** in the list of products and toggle the switch to enable it.
 
+When assess is enabled, you get access to... These data types are enabled for you. Move this up to after APIkey. Why we are using the assess product is important. we are using the categorization feature. 
+
 <input type="checkbox" unchecked /> <b>Configure Codat webhooks</b>
 
 Introduction. WHat is this for? If your underwriting process needs more webhooks, this is where you can set these up. 
@@ -47,7 +51,7 @@ Introduction. WHat is this for? If your underwriting process needs more webhooks
 
 2. Create three rules, one for each webhook, as shown in the following table. Make sure to replace the `<server-url>` with your relevant forwarding address.
 
-   |  Rule type                                  | Webhook notification URL                                    |
+   |  Rule name                                  | Webhook notification URL                                    |
    |---------------------------------------------|-------------------------------------------------------------|
    | Company Data Connection status has changed  | `<server-url>/webhooks/codat/data-connection-status`        |
    | Data sync completed                         | `<server-url>/webhooks/codat/datatype-sync-complete`        |
@@ -158,14 +162,12 @@ Follow the instructions for getting your API key (link). Next:
 1. Navigate to the `\DemosUnderwriting\Codat.Demos.Underwriting.Api\` directory.
 2. Edit the `appsettings.json` file and enter your API key as the `CodatApiKey`.
 
-:::tip Demo app: setting thresholds 
 
-In the `appsettings.json` file of the `\DemosUnderwriting\Codat.Demos.Underwriting.Api\` directory, you can also choose to set your own example thresholds to be passed for gross profit margin, revenue, and gearing ratio. These are the metrics our demo uses to make an underwriting decision.
-
-:::
 
 TO DO: Add something about which profiles to use in `Properties/launchProperties.json`. 
 
-### Read next
+## Recap
+
+## Read next
 
 - [Processing a loan application](/underwriting/process-loan)
