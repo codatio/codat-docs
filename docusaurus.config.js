@@ -34,7 +34,6 @@ module.exports = {
   themeConfig: {
     typesense: {
       typesenseCollectionName: 'codat-docs', // Replace with your own doc site's name. Should match the collection name in the scraper settings.
-
       typesenseServerConfig: {
         nodes: [
           {
@@ -45,12 +44,8 @@ module.exports = {
         ],
         apiKey: 'x4tbdGWEWv2JCI8U3C6kdwdE8OiThCO1',
       },
-
-      // Optional: Typesense search parameters: https://typesense.org/docs/0.24.0/api/search.html#search-parameters
-      typesenseSearchParameters: {},
-
-      // Optional
-      contextualSearch: true,
+      typesenseSearchParameters: {}, // Optional: Typesense search parameters: https://typesense.org/docs/0.24.0/api/search.html#search-parameters
+      contextualSearch: true, // Optional
     },
     sidebar: {
       hideable: true,
