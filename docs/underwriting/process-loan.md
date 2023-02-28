@@ -64,8 +64,11 @@ In the example app, we only request the borrower's full name, company name, and 
   </TabItem>
   <TabItem value="Application UI" label="Application UI">
   Example application form
-  ```bash
-  gradient secrets set team --name=<name> --value=<secret>
+  
+  ```json
+    id": "applicationId", 
+    "companyName": "Example Company",
+    "fullName": "John Smith",
   ```
   </TabItem>
 </Tabs>
