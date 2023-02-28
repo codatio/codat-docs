@@ -5,24 +5,33 @@ description: "End-to-end application process steps of the lender and the borrowe
 
 <input type="checkbox" unchecked /> <b>Initiate a new loan application</b>  
 
-
-
-
 When a prospective borrower starts a new loan application by calling the `application/start` endpoint, we return an application `id` and then use it as the company name to create a company using Codat's `POST /companies` endpoint. 
 
 This allows us to assign the application a reference in Codat, even though we don't have the company details yet. When the new company is created, the company and application `id`s are stored, and then returned to the prospective borrower, together with a `linkUrl`.
 
 We also advise to store the date the application was created to use as a reference date later.
 
+import Tabs from '@theme/Tabs';
 
-code - show how we created a company
+import TabItem from '@theme/TabItem';
 
-code snippets for the mermaid diagram steps
+:::tip Demo app: loan application
+
+<Tabs>
+  <TabItem value="Starting an application" label="Starting an application">We use the `application/start` endpoint when a new loan application is triggered, and return an application `id` to then use it as the company name to create a company.</TabItem>
+  <TabItem value="Application UI" label="Application UI">In our demo, we do not provide a UI for the loan application form. For your underwriting solution, we recommend developing an interface to enable form submission. </TabItem>
+  <TabItem value="Creating a company" label="Creating a company">Code snippet - critical pieces of logic, comments on which file to find them in </TabItem>
+</Tabs>
+:::
+
+
 
 
 :::tip Demo app: loan application
 
 In our demo, we do not provide a UI for the loan application form. For your underwriting solution, we recommend developing an interface to enable form submission. 
+
+code - show how we created a company?
 
 :::
 
@@ -48,6 +57,19 @@ In the example app, we only request the borrower's full name, company name, and 
 ```
 :::
 
+:::tip Demo app: loan application
+
+<Tabs>
+  <TabItem value="Starting an application" label="Starting an application">We only request the borrower's full name, company name, and the loan amount, length, and purpose. These details are posted to the `applications/forms` endpoint, which validates that the required fields exist and are within acceptable limits.
+  </TabItem>
+  <TabItem value="Application UI" label="Application UI">
+  Example application form
+  ```bash
+  gradient secrets set team --name=<name> --value=<secret>
+  ```
+  </TabItem>
+</Tabs>
+:::
 
 
 <input type="checkbox" unchecked /> <b>Provide financial data</b>  

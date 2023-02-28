@@ -8,12 +8,6 @@ description: "Prepare your Codat instance and local environment for the underwri
 
 We provide a [free account](https://signup.codat.io/) that lets you explore and test our APIs and other products, including Assess. It also comes equipped with a sample company. 
 
-:::tip Demo app: free account
-
-You will not be charged when using the account for running the example underwriting project.
-
-:::
-
 <input type="checkbox" unchecked /> <b>Enable data types needed for underwriting</b>  
 
 Log in to the [Codat Portal](https://app.codat.io/) and click on the **Settings** tab in the top menu. Then, navigate to **Integrations > Data types** and make sure that data types required by Assess that you intend to use in the underwriting logic are set to fetch on first link. 
@@ -31,7 +25,6 @@ In the [Codat Portal](https://app.codat.io/), click on the **Settings** tab in t
 You may want to explore and customize Codat's [auth flow](/auth-flow/customize/customize-link) further as part of following this build guide, or working on an underwriting solution of your own.
 
 <input type="checkbox" unchecked /> <b>Enable the Assess product</b>  
-
 
 Log in to the [Codat Portal](https://app.codat.io/) and click on the **Settings** tab in the top menu. Select **Organization settings**, then **Products**. Find **Assess** in the list of products and toggle the switch to enable it.
 
