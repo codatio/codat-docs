@@ -53,6 +53,26 @@ There are three ways to check the status of the sync:
 
 3.  Using the Sync Health Site for Sync for Expenses
 
+<details>
+  <summary>Sync status codes</summary>
+
+| Code | Reason                                        |
+| :--- | :-------------------------------------------- |
+| 1000 | In Progress                                   |
+| 1010 | In Progress (Long running - over ten minutes) |
+| 2000 | Success (Data pushed)                         |
+| 2040 | Success (No data pushed)                      |
+| 4000 | Configuration Error                           |
+| 4040 | Company deleted/de-authorized                 |
+| 4220 | Company deleted/de-authorized                 |
+| 4260 | Accounting platform billing expiry            |
+| 5000 | Generic Server error                          |
+| 5080 | Duplication protection                        |
+| 5120 | Data processing error                         |
+| 5130 | Data push error                               |
+
+</details>
+
 ### Check transactions
 
 Once the sync has completed, you should check whether the transactions were successfully synced to the accounting package. This can be done via the [transaction metadata endpoint](/sync-for-expenses-api#/operations/get-sync-transactions)
@@ -68,3 +88,5 @@ To post the attachment for each `transactionId` with a status of `Completed` and
 ```http title="Upload receipt"
 POST https://expensesync.codat.io/companies/{companyId}/syncs/{syncId}/transactions/{transactionId}/attachments
 ```
+
+  
