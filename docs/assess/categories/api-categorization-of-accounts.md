@@ -153,7 +153,7 @@ GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categ
 
 # Update categories for a company
 
-The categories for all or a batch of accounts in a specific connection can be updated in Swagger under Assess.
+The categories for all or a batch of accounts in a specific connection can be updated in the  Assess API reference.
 Note that this does not update the end accounting platform’s account, and only updates the categories saved against the company within Assess.
 
 The endpoint is available in our <a href="/assess-api#/operations/patch-data-companies-companyId-connections-connectionId-assess-accounts-categories">API reference</a>.
