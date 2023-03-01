@@ -36,9 +36,6 @@ html[data-theme="dark"] {
   [class^="searchBox_"] {
     flex-grow: 1;
     max-width: 14rem;
-
-    //remove
-    display: none;
   }
 
   @media (max-width: 996px) {
@@ -50,8 +47,9 @@ html[data-theme="dark"] {
 
   .DocSearch-Button {
     width: 100%;
-    border-radius: 8px;
     box-shadow: var(--docsearch-searchbox-shadow);
+    border: 1px solid #eee;
+    border-radius: 4px;
 
     .DocSearch-Button-Keys {
       min-width: 0;

@@ -10,7 +10,6 @@ const dataModels = {
     "Account transaction",
     "Balance sheet",
     "Bank account",
-    "Bank transaction",
     "Bank transactions",
     "Bill",
     "Bill credit note",
@@ -31,6 +30,7 @@ const dataModels = {
     "Sales order",
     "Supplier",
     "Tax rate",
+    "Tracking category",
     "Transfer",
   ],
   banking: [

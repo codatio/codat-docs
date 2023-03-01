@@ -8,6 +8,11 @@ tags: [syncforexpense, gettingstarted, prerequisites, platformsupport]
 
 Before you start using sync for expenses, you will need to ensure that the following datatypes are enabled in your Codat instance.
 
+
+<details>
+  <summary>Recommended Data Type Settings</summary>
+
+
 | DataType Name       | dataType           | Use Case                                                                                                                                                                                               | Fetch On First Link | Sync Frequency |
 | ------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- | -------------- |
 | Bank Accounts       | bankAccounts       | A bank account is the primary account from where expenses will be paid from.                                                                                                                           | ✅                  | daily          |
@@ -21,6 +26,8 @@ Before you start using sync for expenses, you will need to ensure that the follo
 | Transfers           | transfers          | A record of the expense transaction between two bank accounts such as topping up or paying down the expense card.                                                                                      | ❌                  | none           |
 | Customers           | customers          | Customers can be used to record and associate income transactions such as reclaiming a cashback reward.                                                                                                | ✅                  | daily          |
 | Direct Incomes      | directIncomes      | Typically direct incomes are used to represent any income generating transaction type such as cashback rewards.                                                                                        | ❌                  | none           |
+
+</details>
 
 ## Connect to an SMB’s accounting platform
 
@@ -38,21 +45,15 @@ Before you can push expenses to your customer’s accounting platform, you need 
 
 1.  **Embedded Link:** Codat's Embedded Link is a React component that neatly sits in your front-end code, and can be deployed in a matter of minutes (see [embedded link](/auth-flow/authorize-embedded-link)).
 
-2.  **Hosted Link**: a beautifully simple, pre-built, conversion-optimized, and customizable authentication flow (See [Use Link for SMB authentication](/use-link-for-the-authentication-flow)).
+2.  **Hosted Link**: a beautifully simple, pre-built, conversion-optimized, and customizable authentication flow (See [Authorize with Hosted Link](/auth-flow/authorize-hosted-link)).
 
-3.  **Build your own SMB authentication flow** for a fully customized bespoke user journey (See [Build your own authentication journey](/auth-flow/build/build-your-own-authentication-journey)).
+3.  **Build your own SMB authentication flow** for a fully customized bespoke user journey (See [Build your own auth flow](/auth-flow/build/build-your-own-authorization-journey)).
 
 ### Create a data connection
 
 Once your customer has authorized access to their accounting platform, you will need to create a connection against the company for the partner expense integration.
 
-```json http
-{
-  "method": "POST",
-  "baseUrl": "https://expensesync.codat.io",
-  "url": "/companies/{companyId}/connections/partnerexpense",
-  "headers": {
-    "authorization": ""
-  }
-}
+``` http
+  POST https://expensesync.codat.io/companies/{companyId}/connections/partnerexpense
 ```
+

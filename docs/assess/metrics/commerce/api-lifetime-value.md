@@ -35,7 +35,7 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 
 | **Parameter**           | Type                                        | Description                                                                                                              | Required |
 |-------------------------|---------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|----------|
-| **reportDate**          | _string_ See [Date](/datamodel-shared-date) | YYYY-MM-DD Datetime or Date (inclusive of the whole day).                                                                | Required |
+| **reportDate**          | _string_ See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD Datetime or Date (inclusive of the whole day).                                                                | Required |
 | **periodUnit**          | _string_                                    | The period unit of time returned, and it can be: “Day”, “Week”, “Month”, “Year”.                                         | Required |
 | **periodLength**        | _integer_                                   | Based on the period unit provided. It must be positive, not zero and an integer.                                         | Required |
 | **numberOfPeriods**     | _integer_                                   | The number of periods to return. It must be positive, not zero and an integer.                                           | Required |
@@ -70,8 +70,8 @@ _Lifetime value_ consists of these dimensions: Period and Customer retention met
 | **Field**       | Type                                          | Description                                              |
 |-----------------|-----------------------------------------------|----------------------------------------------------------|
 | **displayName** | _string_                                      | "Period n"                                               |
-| **start**       | _string_, See [Date](/datamodel-shared-date)  | YYYY-MM-DD, Date in which the period begins (inclusive). |
-| **end**         | _string_, See [Date](/datamodel-shared-date)  | YYYY-MM-DD, Date in which the period ends (inclusive).   |
+| **start**       | _string_, See [Date](/codat-api#/schemas/DateTime)  | YYYY-MM-DD, Date in which the period begins (inclusive). |
+| **end**         | _string_, See [Date](/codat-api#/schemas/DateTime)  | YYYY-MM-DD, Date in which the period ends (inclusive).   |
 
 
 ### Dimension (index = “1”): Lifetime value metrics

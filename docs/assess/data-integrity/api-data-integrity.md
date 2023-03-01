@@ -57,7 +57,7 @@ The endpoint is available in our <a href="/assess-api#/operations/get-dataIntegr
 | Parameter | Type | Description | Required |
 |---|---|---|---|
 | **companyId** | _string_ | The ID of the company you want match results for. Submit as route parameter. | Required |
-| **datatype** | _string_ | The data type you want match results for. **Accounting source:** [bankAccounts](/data-model/accounting/-bankaccounts), [accountTransactions](/data-model/accounting/-account-transactions). **Banking source:** [banking-accounts](/data-model/banking-banking-accounts), [banking-transactions](/data-model/banking-banking-transactions). Submit as route parameter. | Required |
+| **datatype** | _string_ | The data type you want match results for. **Accounting source:** [bankAccounts](/accounting-api#/schemas/BankAccount), [accountTransactions](/accounting-api#/schemas/AccountTransaction). **Banking source:** [banking-accounts](/banking-api#/schemas/Account), [banking-transactions](/banking-api#/schemas/Transaction). Submit as route parameter. | Required |
 
 ### Data model
 | **Field** | Type | Description |
@@ -79,7 +79,7 @@ The endpoint is available in our <a href="/assess-api#/operations/get-dataIntegr
 #### Status info
 | **Field** | Type | Description |
 |---|---|---|
-| **lastMatched** | _string_, See [Date](/datamodel-shared-date) | The date the matching algorithm last ran against the company’s bank transactions. |
+| **lastMatched** | _string_, See [Date](/codat-api#/schemas/DateTime) | The date the matching algorithm last ran against the company’s bank transactions. |
 | **currentStatus** | _string_ | One of the following: `Unknown`, `DoesNotExist` - have never attempted a match run for this company as do not have datasets required, `Error` - something went wrong upon matching, `Processing`, `Complete`  |
 | **statusMessage** | _string_ | Detailed explanation supporting the status value. |
 
@@ -101,10 +101,10 @@ The endpoint is available in our <a href="/assess-api#/operations/get-dataIntegr
 #### Dates
 | **Field**              | Type                                         | Description                                                                      |
 |------------------------|----------------------------------------------|----------------------------------------------------------------------------------|
-| **minDate**            | _string_, See [Date](/datamodel-shared-date) | Earliest date of transaction set.                                                |
-| **maxDate**            | _string_, See [Date](/datamodel-shared-date) | Latest date of transaction set.                                                  |
-| **minOverlappingDate** | _string_, See [Date](/datamodel-shared-date) | Earliest date where transactions exist in both accounting and banking platforms. |
-| **maxOverlappingDate** | _string_, See [Date](/datamodel-shared-date) | Latest date where transactions exist in both account and banking platforms.      |
+| **minDate**            | _string_, See [Date](/codat-api#/schemas/DateTime) | Earliest date of transaction set.                                                |
+| **maxDate**            | _string_, See [Date](/codat-api#/schemas/DateTime) | Latest date of transaction set.                                                  |
+| **minOverlappingDate** | _string_, See [Date](/codat-api#/schemas/DateTime) | Earliest date where transactions exist in both accounting and banking platforms. |
+| **maxOverlappingDate** | _string_, See [Date](/codat-api#/schemas/DateTime) | Latest date where transactions exist in both account and banking platforms.      |
 
 
 ### Sample response
@@ -179,7 +179,7 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 |---|---|---|---|
 | **companyId** | _string_ | The ID of the company you want match results for. Submit as route parameter. | Required |
 | **datatype** | _string_ | The data type you want match results for. | Required |
-| **Query** | _string_ | You can query any properties in the response.It can be left blank. E.g.query=date>2020-12-01. Submit as query parameter. This follows the standard [Codat query language](/querying-1). |  |
+| **Query** | _string_ | You can query any properties in the response.It can be left blank. E.g.query=date>2020-12-01. Submit as query parameter. This follows the standard [Codat query language](/using-the-api/querying). |  |
 
 
 ### Data model
@@ -299,7 +299,7 @@ Then you would call each of the _Summaries endpoints_ with (url-escaped) query=d
 ## Details
 
 
-This endpoint exposes match results record by record for a given data type, filtered based on a query string in the same way as summary results. The results are [paginated](/using-the-api/pagination) and support [ordering](/using-the-api/ordering-results), following the same conventions as our other data endpoints.
+This endpoint exposes match results record by record for a given data type, filtered based on a query string in the same way as summary results. The results are [paginated](/using-the-api/paging) and support [ordering](/using-the-api/ordering-results), following the same conventions as our other data endpoints.
 
 The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-assess-dataTypes-dataType-dataIntegrity-details">API reference</a>.
 
@@ -323,12 +323,12 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 |---|---|---|
 | **type** | _string_ | The data type of the record.  |
 | **connectionId** | _string_ | ID GUID representing the connection of the accounting or banking platform.  |
-| **id** | _string_ | A concatenation of the accountId and transactionId, in the format accountId_transactionId. This is unique to data integrity.  |
-| **date** | _date_, See [Date](/datamodel-shared-date) | The date of the transaction.  |
+| **id** | _string_ | ID GUID of the transaction. |
+| **date** | _date_, See [Date](/codat-api#/schemas/DateTime) | The date of the transaction.  |
 | **description** | _string_ | The transaction description.  |
 | **amount** | _number_ | The transaction value.  |
 | **currency** | _string_ | The currency of the transaction.  |
-| **matches** | _array_, See [Transactions matches array](/assess-api-data-integrity#transactions-matches) | Refer to the matches array table below. |
+| **matches** | _array_, See [Transactions matches array](/assess/data-integrity/api-data-integrity#transactions-matches) | Refer to the matches array table below. |
 
 #### Transactions matches
 This outlines the transaction(s) in which the original transaction has matched with its corresponding transaction in the other platform.
@@ -337,8 +337,8 @@ This outlines the transaction(s) in which the original transaction has matched w
 |---|---|---|
 | **type** | _string_ | The data type which the data type in the URL has been matched against. For example, if you've matched _accountTransactions* and _banking-transactions_, and you call this endpoint with _accountTransactions_ in the URL, this property would be _banking-transactions_. |
 | **connectionId** | _string_ | ID GUID representing the connection of the accounting or banking platform. |
-| **id ** | _string_ | A concatenation of the accountId and transactionId, in the format accountId_transactionId. This is unique to data integrity. |
-| **date** | _date_, See [Date](/datamodel-shared-date) | The date of the transaction.  |
+| **id** | _string_ | ID GUID of the transaction. |
+| **date** | _date_, See [Date](/codat-api#/schemas/DateTime) | The date of the transaction.  |
 | **description** | _string_ | The transaction description.  |
 | **amount** | _number_ | The transaction value.  |
 | **currency** | _string_ | The currency of the transaction.  |
@@ -352,7 +352,7 @@ This outlines the transaction(s) in which the original transaction has matched w
 | **id ** | _string_ | The account’s id. |
 | **accountName ** | _string_ | The name of the account.  |
 | **institution ** | _string_ | The name of the financial institution. |
-| **matches** | _array_, See [Accounts matches array](/assess-api-data-integrity#accounts-matches) | Refer to the matches array table below. |
+| **matches** | _array_, See [Accounts matches array](/assess/data-integrity/api-data-integrity#transactions-matches) | Refer to the matches array table below. |
 
 #### Accounts matches
 | **Element ** | Type  | Description |

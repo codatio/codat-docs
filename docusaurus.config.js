@@ -3,6 +3,9 @@ const { ProvidePlugin } = require("webpack");
 const path = require("path");
 const fetch = require("node-fetch");
 
+const navbar = require("./nav.config");
+const redirects = require("./redirects.config");
+
 const BASE_URL = "";
 
 require('dotenv').config()
@@ -29,6 +32,21 @@ module.exports = {
     'ZENDESK_KEY': process.env.ZENDESK_KEY,
   },
   themeConfig: {
+    typesense: {
+      typesenseCollectionName: 'codat-docs', // Replace with your own doc site's name. Should match the collection name in the scraper settings.
+      typesenseServerConfig: {
+        nodes: [
+          {
+            host: '3n6945ds2yqfiv1cp-1.a1.typesense.net',
+            port: 443,
+            protocol: 'https',
+          }
+        ],
+        apiKey: 'x4tbdGWEWv2JCI8U3C6kdwdE8OiThCO1',
+      },
+      typesenseSearchParameters: {}, // Optional: Typesense search parameters: https://typesense.org/docs/0.24.0/api/search.html#search-parameters
+      contextualSearch: true, // Optional
+    },
     sidebar: {
       hideable: true,
     },
@@ -70,171 +88,9 @@ module.exports = {
     colorMode: {
       defaultMode: "light",
     },
-    navbar: {
-      hideOnScroll: true,
-      logo: {
-        alt: "Site logo",
-        src: `/logos/codat-docs-dark.png`,
-        srcDark: `/logos/codat-docs-light.png`,
-        href: "/",
-        target: "_self",
-        width: 170,
-        height: 28,
-      },
-      items: [
-        {
-          type: "doc",
-          docId: "index",
-          label: "Docs",
-          position: "left",
-        },
-        {
-          label: "API",
-          position: "left",
-          className: "navbar__link--api",
-          items: [
-            {
-              href: "/codat-api",
-              label: "Common API",
-            },
-            {
-              href: "/accounting-api",
-              label: "Accounting API",
-            },
-            {
-              href: "/banking-api",
-              label: "Banking API",
-            },
-            {
-              href: "/commerce-api",
-              label: "Commerce API",
-            },
-            {
-              href: "/bank-feeds-api",
-              label: "Bank Feeds API",
-            },
-            {
-              href: "/assess-api",
-              label: "Assess API",
-            },
-            {
-              href: "/sync-for-commerce-api",
-              label: "Sync for Commerce API",
-            },
-            {
-              href: "/sync-for-expenses-api",
-              label: "Sync for Expenses API",
-            },
-            {
-              href: "/files-api",
-              label: "Files API",
-            },
-            {
-              href: "https://github.com/codatio/oas",
-              label: "OpenAPI spec",
-            },
-          ],
-        },
-        { to: "updates", label: "Updates", position: "left" }, // or position: 'right'
-        {
-          label: "Community",
-          position: "left",
-          items: [
-            {
-              href: "https://github.com/orgs/codatio/discussions",
-              label: "Forum",
-              target: "_blank",
-              rel: null,
-            },
-            {
-              href: "https://github.com/codatio",
-              label: "GitHub",
-              target: "_blank",
-              rel: null,
-            },
-            {
-              href: "https://twitter.com/codatdata",
-              label: "Twitter",
-              target: "_blank",
-              rel: null,
-            },
-            {
-              href: "https://bit.ly/codatpbroadmap1",
-              label: "Product roadmap",
-              target: "_blank",
-              rel: null,
-            },
-            // {
-            //   label: "Stack Overflow",
-            //   href: "https://stackoverflow.com/questions/tagged/codat",
-            // },
-            {
-              href: "https://www.codat.io/blog/",
-              label: "Blog",
-              target: "_blank",
-              rel: null,
-            },
-          ],
-          className: "navbar__link--community",
-        },
-        {
-          label: "Support",
-          position: "left",
-          items: [
-            {
-              href: "https://codat.zendesk.com/hc/en-gb",
-              label: "Help center",
-              target: "_blank",
-              rel: null,
-            },
-            {
-              href: "https://bit.ly/codatstatus",
-              label: "API status",
-              target: "_blank",
-              rel: null,
-            },
-            {
-              href: "https://github.com/orgs/codatio/discussions",
-              label: "Ask the community",
-              target: "_blank",
-              rel: null,
-            },
-            {
-              href: "https://github.com/codatio/codat-docs/issues/new",
-              label: "Issue with the docs?",
-              target: "_blank",
-              rel: null,
-            },
-          ],
-          className: "navbar__link--support",
-        },
-        { 
-          href: "https://app.codat.io/", 
-          label: "Sign in", 
-          className: "navbarButton secondary",
-          position: "right" 
-        },
-        { 
-          href: "https://signup.codat.io/", 
-          label: "Sign up", 
-          className: "navbarButton primary",
-          position: "right" 
-        },
-      ],
-    },
-    // tagManager: {
-    //   trackingID: process.env.GA_TAG_ID,
-    // },
-    // prism: {
-    //   theme: { plain: {}, styles: [] },
-    //   // https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
-    //   additionalLanguages: ["shell-session", "http"],
-    // },
-    algolia: {
-      appId: "002G1BUKXS",
-      apiKey: "0a640be9644a4d830f96aed136d2a70b",
-      indexName: "codat",
-      contextualSearch: true,
+    navbar,
+    tagManager: {
+      trackingID: process.env.GTM_ID,
     },
   },
   plugins: [
@@ -285,115 +141,7 @@ module.exports = {
     "@docusaurus/plugin-debug",
     [ // only works on prod
       '@docusaurus/plugin-client-redirects',
-      {
-        redirects: [
-          {
-            to:  '/introduction/first-steps',
-            from: '/docs',
-          },
-          {
-            to:  '/introduction/first-steps',
-            from: '/docs/guide-1',
-          },
-          {
-            to:  '/introduction/first-steps',
-            from: '/docs/get-started',
-          },
-          {
-            to:  '/introduction/create-account',
-            from: '/docs/core-account-signup',
-          },
-          {
-            to:  '/using-the-api/overview',
-            from: '/docs/using-codats-api',
-          },
-          {
-            to:  '/using-the-api/authentication',
-            from: '/reference/authentication',
-          },
-          {
-            to:  '/using-the-api/querying',
-            from: '/reference/querying',
-          },
-          {
-            to:  '/using-the-api/paging',
-            from: '/reference/paging',
-          },
-          {
-            to:  '/using-the-api/ordering-results',
-            from: '/reference/ordering-results',
-          },
-          {
-            to:  '/using-the-api/modified-dates',
-            from: '/reference/modified-dates-1',
-          },
-          {
-            to:  '/using-the-api/managing-companies',
-            from: '/reference/managing-companies-1',
-          },
-          {
-            to:  '/using-the-api/queueing-data-syncs',
-            from: '/reference/queueing-data-syncs-1',
-          },
-          {
-            to:  '/using-the-api/errors',
-            from: '/reference/errors',
-          },
-          {
-            to:  '/using-the-api/push',
-            from: '/reference/push-creating-and-updating-data',
-          },
-          {
-            to:  '/using-the-api/rate-limits',
-            from: '/reference/rate-limits-1',
-          },
-          {
-            to:  '/using-the-api/optimizing-api-calls',
-            from: '/reference/optimizing-your-api-calls-1',
-          },
-          // Changelog - remove soon
-          { 
-            to: '/updates/220817-sage-50-soft-deletion',
-            from: '/changelog/41921-sage-50-deleted-payment-on-accounts-soft-deleted',
-          },
-          { 
-            to: '/updates/220826-wbo-invoice-push',
-            from: '/changelog/42327-qbo-change-to-invoice-push-validation',
-          },
-          { 
-            to: '/updates/220817-qbd-refs',
-            from: '/changelog/42998-qbd-push-validation-accountref-itemref',
-          },
-          { 
-            to: '/updates/220825-string-request-deprecation',
-            from: '/changelog/44714-deprecation-string-request-create-connections-endpoint',
-          },
-          { 
-            to: '/updates/220926-freshbooks-expenses',
-            from: '/changelog/upcoming-2023-01-10-freshbooks-expenses-no-longer-fetched-as-bills-and-bill-payments',
-          },
-          { 
-            to: '/updates/221003-quickbooks-online',
-            from: '/changelog/upcoming-2023-01-10-quickbooks-online-purchases-will-no-longer-be-fetched-as-bills-and-bill-payments',
-          },
-          { 
-            to: '/updates/230131-uat-deprecation',
-            from: '/changelog/upcoming-2023-01-31-deprecation-of-uat-environment',
-          },
-          { 
-            to: '/updates/230411-deletion-of-data',
-            from: '/changelog/upcoming-2023-04-10-changes-to-handling-of-deleted-data',
-          },
-          { 
-            to: '/updates/230411-api-keys',
-            from: '/changelog/upcoming-2023-04-10-deprecation-of-api-key-management',
-          },
-          { 
-            to: '/updates/230411-legacy-bank-account-endpoints',
-            from: '/changelog/upcoming-2023-04-10-deprecation-of-legacy-bank-account-endpoints'
-          }
-        ],
-      },
+      redirects
     ],
     "@docusaurus/plugin-sitemap",
     // Add custom webpack config to make @stoplight/elements work
@@ -440,8 +188,8 @@ module.exports = {
         ],
       },
     ],
-    path.resolve(__dirname, "./node_modules/@docusaurus/theme-search-algolia"),
     "@docusaurus/theme-mermaid",
+    "docusaurus-theme-search-typesense"
   ],
   markdown: {
     mermaid: true, // In order for Mermaid code blocks in Markdown to work, you also need to enable the Remark plugin with this option

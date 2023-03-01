@@ -27,7 +27,7 @@ Perform these steps in the <a href="https://app.codat.io" target="_blank">Codat 
 
 ## Customer authorization using Link
 
-Before you can retrieve commerce data from Mollie, your customer needs to authorize your access and connect their commerce data to the Mollie integration. They do this using Codat [Link](/use-link-for-the-authentication-flow).
+Before you can retrieve commerce data from Mollie, your customer needs to authorize your access and connect their commerce data to the Mollie integration.
 
 1. Send the Link URL, which you obtained in [Set up your Mollie integration](/integrations/commerce/mollie/commerce-mollie-setup), to your customer. Alternatively, you can embed the authorization journey into your site or application using the Link API.
 
