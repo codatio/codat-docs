@@ -79,7 +79,7 @@ Codat can't guarantee that Shopify will approve your public app or grant access 
 
 To work with our Shopify integration, your public app needs to support some specific functionality. This is required to meet Shopify's requirements and to enable your merchants to authenticate and share their data using [Hosted Link](/docs/auth-flow/authorize-hosted-link). In particular, Shopify require that app authorization flows begin in the Shopify App Store.
 
-TO DO: Add swimlane diagram here
+![diagram](/img/integrations/commerce/shopify/shopify-public-apps-flow-diagram.png)
 
 ### Configure your public app as the redirect URL
 
