@@ -1,14 +1,12 @@
 ---
 title: "Categorize accounts in Portal"
-description: "Learn how to view and change automatically proposed categories for enhancedbalance sheet and profit and loss statements"
+description: "Learn how to view and change automatically proposed categories for enhanced balance sheet and profit and loss statements"
 createdAt: "2023-01-27T10:32:29.917Z"
 updatedAt: "2023-01-27T16:35:29.376Z"
 ---
 :::caution Account categorization versions - latest
 
 There are two account categorization versions currently available in the Codat Portal. 
-
-_Version 2_ supports our legacy [Enhanced Financials](/assess/reports/enhanced-financials-legacy/financials) endpoints. Refer to legacy [categorization instructions](/assess/portal/categorization-of-accounts) if you are still calling these endpoints.
 
 _Version 3_ is a revised version of account categories that should be used going forward. It supports our new [Enhanced Financials](/assess/reports/enhanced-financials-revised/financials) endpoints. Continue reading to learn how to categorize the accounts using _Version 3_.
 :::

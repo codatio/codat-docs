@@ -10,8 +10,6 @@ updatedAt: "2022-11-02T14:49:04.132Z"
 There are two account categorization versions currently available in the Codat Portal. 
 
 _Version 2_ supports our legacy [Enhanced Financials](/assess/reports/enhanced-financials-legacy/financials) endpoints. Continue using this version as your categories version if you are still calling these endpoints, as described in this article.
-
-_Version 3_ is a revised version of account categories that should be used going forward. It supports our new [Enhanced Financials](/assess/reports/enhanced-financials-revised/financials) endpoints. Learn how to [categorize the accounts](/assess/reports/enhanced-financials-revised/categorize-accounts) using _Version 3_.
 :::
 
 The chart of accounts defines the financial structure of a company by providing a list of all accounts used in the company's general ledger.
