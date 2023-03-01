@@ -81,12 +81,20 @@ To work with our Shopify integration, your public app needs to support some spec
 
 TO DO: Add swimlane diagram here
 
+### Configure your public app as the redirect URL
+
+It's important to set the App Store URL of your public app as the redirect URL for the Shopify integration. When this is configured, the merchant is redirected back to your app in the App Store after they've authenticated in Hosted Link.
+
+1. In the Codat Portal, go to the [Redirects](https://app.codat.io/settings/redirects) page.
+2. Enter your store URL in the **URL** field.
+3. Under **Allowed redirects URLs**, add your store URL.
+
 ### Public app flow
 
 Your public app must support the following functionality.
 
 1. The merchant views your app in the Shopify App Store. If your app is unlisted, they open the app URL that you provided.
-2. Your app captures and stores the `Shop` value and HMAC (hash message authentication code) contained in the app URL.
+2. Your app captures and stores the `Shop` value and HMAC (hash message authentication code) contained in the store URL.
 
    :::note HMAC validation
 
