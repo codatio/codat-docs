@@ -1,24 +1,24 @@
 ---
-title: "Categorizing accounts in the Portal"
+title: "Legacy categorization of accounts"
 description: "Categorization of accounts standardizes financial statements which are used to produce insights about your customers' financial health"
 createdAt: "2022-04-13T12:10:47.847Z"
 updatedAt: "2022-11-02T14:49:04.132Z"
 ---
 
-:::caution Account categorization versions
+:::caution Account categorization versions - legacy
 
-There are two account categorization versions now available in the Codat Portal. 
+There are two account categorization versions currently available in the Codat Portal. 
 
-_Version 2_ supports our classic [Enhanced Financials](/assess/reports/enhanced-financials/financials) endpoints. Continue using this version as your categories version if you are calling these endpoints, as described in this article.
+_Version 2_ supports our legacy [Enhanced Financials](/assess/reports/enhanced-financials-legacy/financials) endpoints. Continue using this version as your categories version if you are still calling these endpoints, as described in this article.
 
-_Version 3_ is a revised version of account categories that supports our new [Enhanced Financials for eCommerce Lenders](/assess/reports/enhanced-financials-ecommerce-lenders/financials) endpoints. Learn how to [categorize the accounts](/assess/reports/enhanced-financials-ecommerce-lenders/categorize-accounts) using _Version 3_ if you choose to use these endpoints.
+_Version 3_ is a revised version of account categories that should be used going forward. It supports our new [Enhanced Financials](/assess/reports/enhanced-financials-revised/financials) endpoints. Learn how to [categorize the accounts](/assess/reports/enhanced-financials-revised/categorize-accounts) using _Version 3_.
 :::
 
 The chart of accounts defines the financial structure of a company by providing a list of all accounts used in the company's general ledger.
 
 Every account is assigned one of Codat’s 162 categories. This allows Codat to produce insights about your SMB customers irrespective of the accounting data source they use. The assigned categories apply in the Codat platform only, not in the accounting data source.
 
-You can obtain the latest list of Codat categories from our <a href="/assess-api#/operations/get-data-assess-accounts-categories">API reference</a> documentation by calling the following endpoint:
+You can obtain the latest list of Codat categories from our <a href="/assess-api#/operations/get-data-assess-accounts-categories">API reference</a> documentation by calling the relevant endpoint.
 
 # The benefits of categorizing accounts
 

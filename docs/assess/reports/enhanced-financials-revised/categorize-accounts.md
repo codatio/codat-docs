@@ -1,14 +1,19 @@
 ---
-title: "Categorize accounts for eCommerce lenders"
-description: "Learn how to view and change automatically proposed categories focused on eCommerce lender requirements"
+title: "Categorize accounts in Portal"
+description: "Learn how to view and change automatically proposed categories for enhancedbalance sheet and profit and loss statements"
 createdAt: "2023-01-27T10:32:29.917Z"
 updatedAt: "2023-01-27T16:35:29.376Z"
 ---
-:::caution Account category versions
-The categories outlined here will not be returned by the older [Enhanced Balance Sheet](/assess/reports/enhanced-financials/balance-sheet) and [Enhanced Profit and Loss](/assess/reports/enhanced-financials/profit-and-loss) endpoints. They use an [older version](https://docs.codat.io/docs/assess-categories) of the account category taxonomy.
+:::caution Account categorization versions - latest
+
+There are two account categorization versions currently available in the Codat Portal. 
+
+_Version 2_ supports our legacy [Enhanced Financials](/assess/reports/enhanced-financials-legacy/financials) endpoints. Refer to legacy [categorization instructions](/assess/portal/categorization-of-accounts) if you are still calling these endpoints.
+
+_Version 3_ is a revised version of account categories that should be used going forward. It supports our new [Enhanced Financials](/assess/reports/enhanced-financials-revised/financials) endpoints. Continue reading to learn how to categorize the accounts using _Version 3_.
 :::
 
-With Enhanced Financials for eCommerce Lenders, Codat automatically suggests a category for each account that appears in the enhanced Profit and Loss and Balance Sheet. 
+With Enhanced Financials, Codat automatically suggests a category for each account that appears in the enhanced Profit and Loss and Balance Sheet. 
 
 If you disagree with the suggested category, you can change it to a more suitable one. This only impacts the category field in Assess and does not lead to any changes in the underlying accounting platform.
 
@@ -18,7 +23,7 @@ You can view all available categories proposed for accounts and, where relevant,
 
 ![An image of the Assess portal view and the categorization button](/img/assess/acct-categorization-v3-1.png)
 
-2. On the **Account Categorization** page, use the **Categories version** selector to choose version 3. This version represents the revised account categorization that Codat created for the eCommerce lending use case. 
+2. On the **Account Categorization** page, use the **Categories version** selector to choose version 3. This version represents the latest account categorization. 
 
    Here, you can view the categories automatically proposed for various accounts.
 
@@ -32,4 +37,4 @@ You can view all available categories proposed for accounts and, where relevant,
 
 ![An image of the Assess Categorization view in the Portal with an account in process of recategorizing](/img/assess/acct-categorization-v3-3.png)
 
-That's it! The Enhanced Profit and Loss and Enhanced Balance Sheet for eCommerce lenders will return the updated category for the accounts going forward.
+That's it! The Enhanced Profit and Loss and Enhanced Balance Sheet will return the updated category for the accounts going forward.

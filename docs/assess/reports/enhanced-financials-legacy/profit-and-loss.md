@@ -5,6 +5,10 @@ createdAt: "2022-03-10T14:12:26.131Z"
 updatedAt: "2022-11-02T14:39:20.426Z"
 ---
 
+:::caution New version of enhanced financials
+Functionality described here has been superseded by a newer version of enhanced financials using revised accounting categories. Explore the new enhanced financials [here](/assess/reports/enhanced-financials-revised/financials).
+:::
+
 The _Enhanced Profit and Loss_ endpoint provides a fully categorized profit and loss statement over a specified period(s) of time, for a specific company’s accounting connection.
 
 Refer to the [Assess reporting structure](/assess/reports/reporting-structure) page for more detail on reports in Assess.
