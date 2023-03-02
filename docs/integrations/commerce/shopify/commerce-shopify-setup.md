@@ -1,6 +1,6 @@
 ---
 title: "Set up Shopify using public apps"
-description: "Explore our API integration with Shopify"
+description: "Learn how to set up the Shopify integration using the public apps connection method"
 createdAt: "2021-01-14T16:41:39.945Z"
 updatedAt: "2023-01-06T16:44:14.501Z"
 ---
@@ -9,11 +9,16 @@ Set up the Shopify integration to retrieve commerce data from customers who sell
 
 This article explains how to set up the Shopify integration using the _public apps_ connection method.
 
-:::caution Before you begin
-Before you begin, read the _Underlying provider requirements_ on the [Shopify](/integrations/commerce/shopify/commerce-shopify) page.
-:::
+## Before you begin
 
-To set up the Shopify integration, perform the following tasks in Shopify and the Codat Portal:
+Before setting up the integration, make sure that you:
+
+- Understand [how public apps work](/integrations/commerce/shopify/commerce-shopify#about-public-apps)
+- Build an app that meets the [Requirements for public apps](/integrations/commerce/shopify/commerce-shopify-requirements-public-apps)
+
+## Summary
+
+Perform the following tasks in Shopify and the Codat Portal:
 
 - [Create a Shopify app](/integrations/commerce/shopify/commerce-shopify-setup#create-a-shopify-app)
 - [Submit your app to Shopify for approval](/integrations/commerce/shopify/commerce-shopify-setup#submit-your-app-to-shopify-for-approval)
@@ -23,7 +28,7 @@ To set up the Shopify integration, perform the following tasks in Shopify and th
 
 ## Create a Shopify public app
 
-Create and configure an app in Shopify. When the app is created you can view the secure app credentials.
+Create and configure a public app in Shopify. When the app is created you can view the secure app credentials.
 
 1. Log in to the [Shopify Partners](https://developers.shopify.com/) site using your Shopify partner account credentials.
 
