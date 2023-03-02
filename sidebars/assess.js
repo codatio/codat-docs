@@ -18,8 +18,8 @@ module.exports = [
     label: "Categories",
     collapsed: true,
     items: [
-      "assess/categories/categories",
-      "assess/categories/api-categorization-of-accounts",
+      "assess/reports/enhanced-financials/categorize-accounts",
+      "assess/portal/categorization-of-accounts",  
     ],
   },
   {
@@ -45,16 +45,6 @@ module.exports = [
           "assess/reports/enhanced-financials/financials",
           "assess/reports/enhanced-financials/balance-sheet",
           "assess/reports/enhanced-financials/profit-and-loss",
-        ],
-      },
-      {
-        type: "category",
-        label: "Enhanced financials for eCommerce lenders",
-        collapsed: true,
-        items: [
-          "assess/reports/enhanced-financials-ecommerce-lenders/financials",
-          "assess/reports/enhanced-financials-ecommerce-lenders/balance-sheet",
-          "assess/reports/enhanced-financials-ecommerce-lenders/profit-and-loss",
         ],
       },
       "assess/reports/audit-report",
@@ -108,7 +98,6 @@ module.exports = [
     items: [
       "assess/portal/overview",
       "assess/portal/data-integrity",
-      "assess/portal/categorization-of-accounts",
     ],
   },
   'assess/troubleshooting',
