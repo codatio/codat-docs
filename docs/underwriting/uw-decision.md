@@ -3,9 +3,15 @@ title: "Making an application decision"
 description: "Review how to automatically make a loan decision based on underwriting metrics"
 ---
 
+## 🚀 In this section, you will...
 
 This is a reference page
 
+1 This is our decisioning
+
+2 This is how we get the report / fetching that data
+
+3 This is how we get the decision
 
 
 
@@ -99,11 +105,6 @@ how the metrics above become a decision
 :::
 
 
-1 This is our decisioning
-
-2 This is how we get the report / fetching that data
-
-3 This is how we get the decision
 
 
 
