@@ -13,8 +13,8 @@ _Enhanced Profit and Loss Accounts_ and _Enhanced Balance Sheet Accounts_ endpoi
 
 You can explore these endpoints further: 
 
-- [Enhanced Profit and Loss](/assess/reports/enhanced-financials-revised/profit-and-loss)
-- [Enhanced Balance Sheet](/assess/reports/enhanced-financials-revised/balance-sheet)
-- [How to recategorize accounts](/assess/reports/enhanced-financials-revised/categorize-accounts)
+- [Enhanced Profit and Loss](/assess/reports/enhanced-financials/profit-and-loss)
+- [Enhanced Balance Sheet](/assess/reports/enhanced-financials/balance-sheet)
+- [How to recategorize accounts](/assess/reports/enhanced-financials/categorize-accounts)
 
 You can also explore our [legacy version of Enhanced Financials](/assess/reports/enhanced-financials-legacy/financials).

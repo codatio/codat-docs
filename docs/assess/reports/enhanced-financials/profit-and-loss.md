@@ -7,7 +7,7 @@ updatedAt: "2023-01-27T15:26:01.665Z"
 
 The Enhanced Profit and Loss Accounts endpoint returns a list of categorized accounts that appear on a company’s Profit and Loss. It also includes a balance per the financial statement date.
 
-Codat suggests a category for each account automatically, but you can [change it](/assess/reports/enhanced-financials-revised/categorize-accounts) to a more suitable one. 
+Codat suggests a category for each account automatically, but you can [change it](/assess/reports/enhanced-financials/categorize-accounts) to a more suitable one. 
 
 Explore the _Enhanced Profit and Loss Accounts_ endpoint in in our [Assess API reference](/assess-api#/operations/get-companies-companyId-reports-enhancedProfitAndLoss-accounts).
 
@@ -45,14 +45,14 @@ The report items are sorted first by _date_, then by _category_ alphabetically.
 | **balance**         	| _decimal_                     	| Balance of the account as reported on the Balance Sheet.                               	|
 | **accountName**     	| _string_                      	| Name of the account.                                                                   	|
 | **accountId**       	| _string_                      	| The unique account id.                                                                 	|
-| **accountCategory** 	| _object_<br/>See [Account Category](/assess/reports/enhanced-financials-revised/profit-and-loss#account-category) 	| An object containing the suggested or confirmed account categories, up to five levels.  	|
+| **accountCategory** 	| _object_<br/>See [Account Category](/assess/reports/enhanced-financials/profit-and-loss#account-category) 	| An object containing the suggested or confirmed account categories, up to five levels.  	|
 
 #### Account Category
 
 | Field  	| Type                 	| Description                                                                                                                              	|
 |--------	|----------------------	|------------------------------------------------------------------------------------------------------------------------------------------	|
 | **status** 	| _string_               	| Returns a status of "Suggested" or "Confirmed". If an account has a confirmed category, it will replace any suggested category returned. 	|
-| **levels** 	| _object_<br/>See [Levels](/assess/reports/enhanced-financials-revised/profit-and-loss#levels)  	| An object containing an ordered list of account category levels.                                                                         	|
+| **levels** 	| _object_<br/>See [Levels](/assess/reports/enhanced-financials/profit-and-loss#levels)  	| An object containing an ordered list of account category levels.                                                                         	|
 
 #### Levels
 

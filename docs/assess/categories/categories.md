@@ -6,7 +6,7 @@ updatedAt: "2022-11-02T14:38:07.399Z"
 ---
 
 :::caution Account category versions
-This categorization of accounts via only applies to our legacy [Enhanced Financials](/assess/reports/enhanced-financials-legacy/financials). For categorization using the latest categories, explore the [revised Enhanced Financials](/assess/reports/enhanced-financials-revised/financials).
+This categorization of accounts via only applies to our legacy [Enhanced Financials](/assess/reports/enhanced-financials-legacy/financials). For categorization using the latest categories, explore the [revised Enhanced Financials](/assess/reports/enhanced-financials/financials).
 :::
 
 The chart of accounts defines the financial structure of a company by providing a list of all accounts used in the company's general ledger.
