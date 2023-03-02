@@ -18,7 +18,7 @@ Every account is assigned one of Codat’s 162 categories. This allows Codat to 
 
 You can obtain the latest list of Codat categories from our <a href="/assess-api#/operations/get-data-assess-accounts-categories">API reference</a> documentation by calling the relevant endpoint.
 
-## The benefits of categorizing accounts
+## Benefits of categorizing accounts
 
 1. Easy to identify comparable accounts across a company’s portfolio of businesses.
 2. Codat uses the categorized data to produce additional insights, e.g. financial ratios and statements.
