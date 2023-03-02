@@ -62,7 +62,7 @@ Make sure to replace the `<server-url>` with your relevant forwarding address. F
    | Data sync completed                         | `<server-url>/webhooks/codat/datatype-sync-complete`        |
    | Account categories updated                  | `<server-url>/webhooks/codat/account-categorisation-update` |
 
-### <input type="checkbox" unchecked /> Demo app repository
+### <input type="checkbox" unchecked /> Clone the app repository
 
 Pick up our underwriting demo repository on [GitHub](https://github.com/codatio/build-guide-underwriting-be) and clone it. 
 
