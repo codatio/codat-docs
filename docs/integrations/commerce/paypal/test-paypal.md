@@ -8,9 +8,9 @@ updatedAt: "2022-10-20T08:54:42.581Z"
 When you've set up your PayPal integration, you're ready to test the authorization process for your integration. You'll need to:
 
 - Create a PayPal developer account, and set up a PayPal Sandbox
-- Set up a test company.
+- Set up a test company
 - Generate a Link URL to connect your test company to your PayPal sandbox
-- Retrieve commerce data.
+- Retrieve commerce data
 
 ## Pre-requisites
 
@@ -26,7 +26,7 @@ To create sandbox PayPal accounts for use in testing, you will need to:
 1. Sign up to PayPal at https://paypal.com if you do not already have a PayPal account.
    Note: The account type you select and details entered are not especially relevant; this account is needed only to access PayPal’s Developer Dashboard (see next step), and will not be relevant to your integration with PayPal
 2. Navigate to [PayPal’s Developer Dashboard](https://developer.paypal.com/developer/applications) and Sign in using your PayPal account (created in previous step)
-3. Once signed in, you will be able to create ‘dummy’ PayPal accounts within PayPal’s SandBox. In the left hand navigation menu, click Accounts under the Sandbox heading
+3. Once signed in, you will be able to create ‘dummy’ PayPal accounts within PayPal’s SandBox. In the page navigation menu, click Sandbox Accounts under the Testing Tools heading
 4. You will see that PayPal provision two sandbox accounts by default (one ‘Business’, one ‘Personal’); you can also create your own by clicking Create Account.
    a) Codat’s integration supports only Business accounts. For testing your API integration through Codat, you will need to create Sandbox accounts of type ‘Business’
    b) Each Sandbox account has it’s own username (email ID) and Password, accessed by clicking on the ‘…' icon in the 'Manage Accounts’ column of the Sandbox list, and selecting View/Edit account
