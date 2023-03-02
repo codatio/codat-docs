@@ -79,13 +79,13 @@ Note that this page autosaves when changes are made.
 To set up a redirect with reserved query parameters:
 
 1. In the **Redirect URL** box, enter a base URL along with the reserved parameters you want to use to build the redirect. To add a parameter, wrap it in curly braces. For example: 
-```
-https://redirect.site/{sourceType}/?flow=Codat&statuscode={statusCode}&errormessage={errorMessage}
-```
+   ```http
+   https://redirect.site/{sourceType}/?flow=Codat&statuscode={statusCode}&errormessage={errorMessage}
+   ```
 2. If you use the redirect parameter values shown above, your customer is redirected to: 
-```
-https://redirect.site/accounting/?flow=Codat&statuscode=403&errormessage=User%20cancelled
-```
+   ```http
+   https://redirect.site/accounting/?flow=Codat&statuscode=403&errormessage=User%20cancelled
+   ```
 
 :::note Availability of reserved query parameters
 
@@ -120,20 +120,20 @@ https://www.rocketbank.io/{integrationType}?flow=Codat&statuscode={statusCode}&e
 ```
 
 1. For a user who authenticates the connection and can be redirected to the next stage in the flow, the redirect would be: 
-```
-https://www.rocketbank.io/accounting?flow=Codat&statuscode=200&errormessage=
-```
+   ```http
+   https://www.rocketbank.io/accounting?flow=Codat&statuscode=200&errormessage=
+   ```
 
 2. For a user who quits the linking process without providing access to their financial data either because a) their platform is not supported or b) they do not wish to provide access to their data, the redirect below would be where they can upload the relevant documents manually.
-```
-https://www.rocketbank.io/accounting?flow=Codat&statuscode=403&errormessage=User%20cancelled
-````
+   ```http
+   https://www.rocketbank.io/accounting?flow=Codat&statuscode=403&errormessage=User%20cancelled
+   ```
 
 
 3. For a user who encounters an unexpected error during the linking process, the redirect below would be where they can contact your support team for assistance.
-```
-https://www.rocketbank.io/accounting?flow=Codat&statuscode=500&errormessage= Unknown%20error%20occured
-```
+   ```http
+   https://www.rocketbank.io/accounting?flow=Codat&statuscode=500&errormessage= Unknown%20error%20occured
+   ```
 
 ## Allowed redirect hosts
 
