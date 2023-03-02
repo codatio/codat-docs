@@ -14,6 +14,15 @@ This is a reference page
 3 This is how we get the decision
 
 
+-- Metrics used for underwriting
+
+Don't use the word "metrics" here - they are just "data points".
+
+This is our decisioning logic. Explain how they are related to the thresholds you can set.
+
+Here's how we get the data
+
+Here's how we make a decision based on that data.
 
 ## Fetching financial data with Assess
 

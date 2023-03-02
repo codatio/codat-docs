@@ -137,10 +137,6 @@ We can only assess the application and provide an outcome once the data requirem
 
 🙏🏽💰 This step can be performed by both borrower and lender.
 
-import Tabs from '@theme/Tabs';
-
-import TabItem from '@theme/TabItem';
-
 :::tip Ready to explore further?
 
 <Tabs>
