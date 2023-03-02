@@ -93,7 +93,7 @@ You can export the chart of accounts in an Excel file:
 The downloaded Excel file contains:
 
 - The **Categorized Account Balances** tab.
-- The output of the endpoint below in <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-accounts-categories">API reference</a> listing the categories.
+- The output from the <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-accounts-categories">List suggested and confirmed account categories</a> endpoint.
  ```http
  GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categories
  ``` 
