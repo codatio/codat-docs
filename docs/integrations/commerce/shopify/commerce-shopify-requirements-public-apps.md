@@ -46,7 +46,7 @@ The following diagram outlines the functionality your app must provide, such as 
 1. The merchant views your app in the Shopify App Store. If your app is unlisted, they open the app URL that you provided.
 2. Your app captures and stores the `Shop` value and HMAC (hash message authentication code) contained in the store URL.
 
-   :::note HMAC validation
+   :::info HMAC validation
 
    Your app _must_ validate the HMAC as explained in [this blog post](https://medium.com/@jophin.joseph88/shopify-webhooks-hmac-validation-on-nodejs-express-ac66bc288e3e).
 
