@@ -55,3 +55,5 @@ If you choose this connection method, you need to do the following:
 3. If your app is approved, enter its secure credentials in the Codat Portal.
 
 If you choose this connection method, you should be aware of Shopify's requirements for public apps, as well as the specific functionality that your app will need to provide. These are outlined in [Requirements for public apps](/integrations/commerce/shopify/commerce-shopify-requirements-public-apps).
+
+To get started, see [Set up Shopify using public apps](/integrations/commerce/shopify/commerce-shopify-setup).
