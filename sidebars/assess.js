@@ -18,7 +18,7 @@ module.exports = [
     label: "Categories",
     collapsed: true,
     items: [
-      "assess/reports/enhanced-financials-revised/categorize-accounts",
+      "assess/reports/enhanced-financials/categorize-accounts",
       "assess/portal/categorization-of-accounts",  
     ],
   },
@@ -42,9 +42,9 @@ module.exports = [
         label: "Enhanced financials",
         collapsed: true,
         items: [
-          "assess/reports/enhanced-financials-revised/financials",
-          "assess/reports/enhanced-financials-revised/balance-sheet",
-          "assess/reports/enhanced-financials-revised/profit-and-loss",
+          "assess/reports/enhanced-financials/financials",
+          "assess/reports/enhanced-financials/balance-sheet",
+          "assess/reports/enhanced-financials/profit-and-loss",
         ],
       },
       "assess/reports/audit-report",
