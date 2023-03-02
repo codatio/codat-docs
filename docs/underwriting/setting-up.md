@@ -6,34 +6,34 @@ description: "Prepare your Codat instance and local environment for the underwri
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-## 🚀 In this section, you will...
+### 🚀 In this section, you will...
 * Create your Codat account, 
 * Enable the Assess product, 
 * Configure webhooks, 
 * Set up your local environment, and
-* Prepare to run the demo app.
+* Run the demo app.
 
-## <input type="checkbox" unchecked/> Create a Codat account 
+### <input type="checkbox" unchecked/> Create a Codat account 
 
 We provide a [free account](https://signup.codat.io/) that lets you explore and test our APIs and other products, including Assess. It also comes equipped with a sample company. When you start working on your own underwriting solution, you may want to explore other [plans](https://www.codat.io/plans/) that Codat offers. 
 
-## <input type="checkbox" unchecked/> Get your API key
+### <input type="checkbox" unchecked/> Get your API key
 
 In the [Developers](https://app.codat.io/developers/api-keys) section of the Codat Portal, copy your API key from the **API key** column. You will need this to run the demo app. Make sure you copy the API key, not the auth header.
 
-## <input type="checkbox" unchecked /> Enable the Assess product 
+### <input type="checkbox" unchecked /> Enable the Assess product 
 
 In the [Products](https://app.codat.io/settings/products) section of the Codat Portal, find **Assess** in the list of products and toggle the switch to enable it. This also enables the data types required by the product, for example, `balanceSheet` and `profitAndLoss` used by the demo app. 
 
 In this app, we are using the [categorization](https://docs.codat.io/assess/reports/enhanced-financials/categorize-accounts) feature provided by Assess. It allows you to perform automating decisioning based on the categorized chart of accounts. 
 
-## <input type="checkbox" unchecked /> Check your auth flow settings
+### <input type="checkbox" unchecked /> Check your auth flow settings
 
 In the **Auth Flow > Link** [settings](https://app.codat.io/settings/link-settings/data-connections), scroll to _Integration categories_. Ensure _Accounting_ integration category is enabled, and the _Sandbox integrations_ switch is toggled on.
 
 You may want to explore and customize Codat's [auth flow](/auth-flow/customize/customize-link) further as part of working on an underwriting solution of your own.
 
-## <input type="checkbox" unchecked /> Configure ngrok
+### <input type="checkbox" unchecked /> Configure ngrok
 
 We recommend using [ngrok](https://ngrok.com/) to access Codat's webhooks. After installing, go to its root directory. Open the `ngrok.exe` file to launch the ngrok terminal. 
 
@@ -44,7 +44,7 @@ Then, configure your local machine to receive web traffic on port 5069. The demo
    ``` 
 This triggers ngrok to start a new session. Copy the **forwarding address** - you will use it to set up webhooks.
 
-## <input type="checkbox" unchecked /> Configure Codat webhooks
+### <input type="checkbox" unchecked /> Configure Codat webhooks
 
 In the [Alerting rules](https://app.codat.io/monitor/rules) section of the Codat Portal, create three rules, one for each webhook we will use. These can be found below.
 
@@ -62,7 +62,7 @@ Make sure to replace the `<server-url>` with your relevant forwarding address. F
    | Data sync completed                         | `<server-url>/webhooks/codat/datatype-sync-complete`        |
    | Account categories updated                  | `<server-url>/webhooks/codat/account-categorisation-update` |
 
-## <input type="checkbox" unchecked /> Demo app repository
+### <input type="checkbox" unchecked /> Demo app repository
 
 Pick up our underwriting demo repository on [GitHub](https://github.com/codatio/build-guide-underwriting-be) and clone it. 
 
@@ -103,11 +103,11 @@ Note that the other directory in the repository, `Codat.Demos.Underwriting.Api.T
      ├──ApplicationStore.cs // Handles creating and storing the loan application in-memory
      └──LoanUnderwriter.cs  // Decision process method for the underwriting model used in the demo
 ```
-## Set your API key
+### <input type="checkbox" unchecked/> Set your API key
 
 In the `\DemosUnderwriting\Codat.Demos.Underwriting.Api\` directory, edit the `appsettings.json` file and enter the API key you copied previously as the `CodatApiKey`.
 
-## Run the app
+### <input type="checkbox" unchecked/> Run the app
 
 David will provide instruction for how to run the app using:
 1. the command line
@@ -137,7 +137,7 @@ David will provide instruction for how to run the app using:
 
 </Tabs>
 
-## Recap
+### Recap
 
 You have now set up your Codat Portal instance and your local environment in preparation for running the app. You have also cloned the repository, and initiated the app run.
 
