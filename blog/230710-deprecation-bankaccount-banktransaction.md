@@ -13,7 +13,7 @@ Requests made to the following endpoints for banking data connections will no lo
 - `POST /companies/{companyId}/data/queue/{bankAccounts}`
 - `POST /companies/{companyId}/data/queue/{bankTransactions}`
 
-After the change is implemented a call to either of these endpoints for a Plaid, TrueLayer or Basiq data connection ID will return a 400 response. 
+After the change is implemented, a call to either of these endpoints for a Plaid, TrueLayer, or Basiq data connection ID will return a 400 response. 
 
 ## Action required​
 
