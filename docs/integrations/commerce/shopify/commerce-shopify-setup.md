@@ -76,6 +76,7 @@ In the Shopify Partners site:
    :::note Differences between listed and unlisted apps
 
    You can choose whether to make your Shopify app _listed_ (fully visible in the Shopify App Store) or _unlisted_ (it will not appear in Shopify App Store search engines or results). Both types of apps have a public Shopify App Store URL.
+
    :::
 
 8. Click **Start listing**. The **English listing** page is displayed.
@@ -95,8 +96,8 @@ In the Codat Portal, add the secure credentials for your Shopify app to the inte
    The **Integration settings** page is displayed.
 
 3. Enter your app's credentials from Shopify (to find these, see [Create a Shopify public app](/integrations/commerce/shopify/commerce-shopify-setup#create-a-shopify-public-app)).
-   - For **Client Key**, enter the **API key** from Shopify.
-   - For **Client Secret**, enter the **API secret key** from Shopify.
+   - For **Client ID**, enter the **API key** from Shopify.
+   - For **Client secret**, enter the **API secret key** from Shopify.
 
 4. If you requested access to over 60 days' of orders and your access was approved, turn on **Has request to read all orders**. Otherwise leave this setting turned off.
 
