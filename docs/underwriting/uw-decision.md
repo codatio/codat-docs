@@ -24,6 +24,9 @@ Here's how we get the data
 
 Here's how we make a decision based on that data.
 
+## Review the app's decisioning logic
+
+
 ## Fetching financial data with Assess
 
 

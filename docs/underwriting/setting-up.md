@@ -117,21 +117,19 @@ David will provide instruction for how to run the app using:
 <Tabs>
 <TabItem value="cmd" label="Command line">
 
-```js
-```
+command line
+
 </TabItem>
 
 <TabItem value="rider" label="Rider">
 
-```js
-```
+rider
 
 </TabItem>
 
 <TabItem value="vs" label="Visual studio">
 
-```js
-```
+visual studio
 
 </TabItem>
 
