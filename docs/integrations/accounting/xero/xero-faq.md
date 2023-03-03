@@ -42,10 +42,10 @@ The Xero API doesn't allow the creation of Direct costs (_spend money transactio
 
 To support pushing negative values to Xero for these data types, our integration uses some custom logic.
 
-| When you push...                    | Data is pushed as...                |  Codat creates...                              |
-|-------------------------------------|-------------------------------------|------------------------------------------------|
-| A negative Direct income to Xero    | A positive Direct cost              | A positive _spend money transaction_ in Xero   |
-| A negative Direct cost to Xero      | A positive Direct income            | A positive _receive money transaction_ in Xero |
+| When you push...                    | Codat creates...                               |
+|-------------------------------------|------------------------------------------------|
+| A negative Direct income to Xero    | A positive _spend money transaction_ in Xero   |
+| A negative Direct cost to Xero      | A positive _receive money transaction_ in Xero |
 
 :::caution Objects are reversed
 
