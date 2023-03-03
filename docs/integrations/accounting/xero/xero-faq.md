@@ -53,9 +53,9 @@ Be aware that both the type (Direct income or Direct cost) and the sign of the c
 
 :::
 
-You push negative Direct incomes and Direct costs to Xero as an array of `lines` in an Account transaction, the same as for other accounting integrations. Arrays can contain a mix of both positive and negative lines.
+You push negative Direct incomes and Direct costs to Xero as an array of `lineItems` in an Account transaction, the same as for other accounting integrations. Arrays can contain a mix of both positive and negative lines.
 
-```json title="Example request body for negative Direct cost pushed to Xero"
+```json title="Example: request body for pushing a negative Direct cost to Xero"
 {
     ...
     "contactRef": {
