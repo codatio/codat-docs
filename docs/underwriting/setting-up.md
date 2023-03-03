@@ -134,7 +134,7 @@ Make sure the `http` profile is set and press run.
 
 <TabItem value="vs" label="Visual studio">
 
-Ensure the `http` profile is set and press run.
+Ensure the `http` profile is set and press the play icon.
 ![](/img/use-cases/underwriting/underwriting-guide-visual-studio-2022.png)
 
 </TabItem>
