@@ -18,8 +18,8 @@ SHORT SWIMLANE DIAGRAM
     participant backend as Underwriting Backend 
     participant codat as Codat API
     frontend ->> backend: Submit application
-    backend ->> codat: Fetch data
-    codat ->> backend: Fetch data
+    backend ->> codat: Request enriched data
+    codat ->> backend: Fetched data
     backend ->> backend: Underwrite loan
     backend ->> frontend: Application outcome
 ```
