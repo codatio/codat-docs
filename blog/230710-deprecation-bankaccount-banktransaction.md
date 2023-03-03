@@ -7,6 +7,8 @@ authors: GraceCodat
 
 On July 10, 2023, Codat will deprecate the use of `bankAccounts` and `bankTransactions` data types for syncing banking data connections via Plaid, TrueLayer and Basiq. The use of these data types for accounting data connections will remain unchanged.
 
+<!--truncate-->
+
 Requests made to the following endpoints for banking data connections will no longer trigger a sync:
 
 - `POST /companies/{companyId}/data/queue/bankAccounts`
