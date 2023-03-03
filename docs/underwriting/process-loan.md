@@ -14,11 +14,14 @@ SHORT SWIMLANE DIAGRAM
 
 ``` mermaid
   sequenceDiagram
-    User->>+You: User Approves Expenses with receipt
-    You-)+Codat: POST expense-transaction
-    Codat-->>-You: datasetId
-    You-)+Codat: initiate sync
-    Note over You,Codat: specify datasetId's to sync
+    participant frontend as Underwriting Frontend 
+    participant backend as Underwriting Backend 
+    participant codat as Codat API
+    frontend ->> backend: Submit application
+    backend ->> codat: Request enriched data
+    codat ->> backend: Fetched data
+    backend ->> backend: Underwrite loan
+    backend ->> frontend: Application outcome
 ```
 
  

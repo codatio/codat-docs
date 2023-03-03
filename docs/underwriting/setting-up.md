@@ -116,20 +116,26 @@ David will provide instruction for how to run the app using:
 
 <Tabs>
 <TabItem value="cmd" label="Command line">
+Run the following command in the root directory (Codat.Demos.Underwriting.Api)
 
-command line
-
+```sh
+dotnet.exe run --launch-profile http
+```
+Once running open the following page in your web browser:
+http://localhost:5069/swagger/index.html
 </TabItem>
 
 <TabItem value="rider" label="Rider">
 
-rider
+Make sure the `http` profile is set and press run.
+![](/img/use-cases/underwriting/underwriting-guide-rider.png)
 
 </TabItem>
 
 <TabItem value="vs" label="Visual studio">
 
-visual studio
+Ensure the `http` profile is set and press the play icon.
+![](/img/use-cases/underwriting/underwriting-guide-visual-studio-2022.png)
 
 </TabItem>
 
