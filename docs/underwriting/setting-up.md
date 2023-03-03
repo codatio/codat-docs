@@ -109,11 +109,6 @@ In the `\DemosUnderwriting\Codat.Demos.Underwriting.Api\` directory, edit the `a
 
 ### <input type="checkbox" unchecked/> Run the app
 
-David will provide instruction for how to run the app using:
-1. the command line
-2. Rider
-3. Visual Studio (to be confirmed)
-
 <Tabs>
 <TabItem value="cmd" label="Command line">
 
