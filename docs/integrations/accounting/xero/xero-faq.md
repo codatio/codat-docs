@@ -40,7 +40,7 @@ Note that the Codat API does not support pushing Xero 'Account Transactions'. Ac
 
 The Xero API doesn't allow the creation of Direct costs (_spend money transactions_) or Direct incomes (_receive money transactions_) with negative values.
 
-To support pushing negative values for these data types to Xero, our integration uses some custom logic.
+To support pushing negative values to Xero for these data types, our integration uses some custom logic.
 
 | When you push...                    | Data is pushed as...                |  Codat creates...                              |
 |-------------------------------------|-------------------------------------|------------------------------------------------|
