@@ -70,7 +70,7 @@ The main file directory for the demo app is `Codat.Demos.Underwriting.Api`. Key 
 
 Note that the other directory in the repository, `Codat.Demos.Underwriting.Api.Tests`, contains a series of unit tests for the demo app and is not needed for you to run the demo project. 
 
-```json title="Codat.Demos.Underwriting.Api"
+```json title="Codat.Demos.Underwriting.Api directory"
 ├──BindingModule.cs
 ├──Codat.Demos.Underwriting.Api.csproj
 ├──Program.cs
@@ -116,25 +116,27 @@ David will provide instruction for how to run the app using:
 
 <Tabs>
 <TabItem value="cmd" label="Command line">
-Run the following command in the root directory (Codat.Demos.Underwriting.Api)
+
+Run the following command in the root directory `Codat.Demos.Underwriting.Api`:
 
 ```sh
 dotnet.exe run --launch-profile http
 ```
-Once running open the following page in your web browser:
-http://localhost:5069/swagger/index.html
+Once running, open the following page in your web browser:
+`http://localhost:5069/swagger/index.html`
 </TabItem>
 
 <TabItem value="rider" label="Rider">
 
-Make sure the `http` profile is set and press run.
+Make sure the `http` profile is set and press "Run".
+
 ![](/img/use-cases/underwriting/underwriting-guide-rider.png)
 
 </TabItem>
 
 <TabItem value="vs" label="Visual studio">
 
-Ensure the `http` profile is set and press the play icon.
+Ensure the `http` profile is set and press the "Play" icon.
 ![](/img/use-cases/underwriting/underwriting-guide-visual-studio-2022.png)
 
 </TabItem>
