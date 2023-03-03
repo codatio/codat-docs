@@ -47,19 +47,60 @@ To support pushing negative values for these data types to Xero, our integration
 | A negative Direct income to Xero    | A positive Direct cost              | A positive _spend money transaction_ in Xero   |
 | A negative Direct cost to Xero      | A positive Direct income            | A positive _receive money transaction_ in Xero |
 
-:::info Objects are reversed
+:::caution Objects are reversed
 
-Both the type (Direct income or Direct cost) and the sign of the created business object are reversed in Xero.
+Be aware that both the type (Direct income or Direct cost) and the sign of the created business object are reversed in Xero.
 
 :::
 
 You push negative Direct incomes and Direct costs to Xero as an array of `lines` in an Account transaction, the same as for other accounting integrations. Arrays can contain a mix of both positive and negative lines.
 
-Example payload here
+```json title="Example request body for negative Direct cost pushed to Xero"
+{
+    ...
+    "contactRef": {
+        "id": "699f0091-b127-4796-9f15-41a2f42abeb2",
+        "dataType": "suppliers"
+    },
+    "issueDate": "2023-02-28",
+    "currency": "GBP",
+    "lineItems": [
+        {
+            "description": "negative direct cost, no tax",
+            "unitAmount": 35,
+            "quantity": -1,  // negative
+            "subTotal": -35,  // negative
+            "taxAmount": 0,
+            "totalAmount": -35,  // negative
+            "accountRef": {
+                "id": "02c0e212-9afb-4983-9c67-120656ff8d03"
+            }
+        }
+    ],
+    "paymentAllocations": [
+        {
+            "payment": {
+                "accountRef": {
+                    "id": "bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4"
+                },
+                "currency": "GBP"
+            },
+            "allocation": {
+                "totalAmount": -35
+            }
+        }
+    ],
+    "taxAmount": 0,
+    "totalAmount": -35
+}
 
-### Pulling Direct incomes and Direct costs from Xero
+```
 
-It's possible to create negative _spend money transactions_ and _receive money transactions_ in the Xero UI. Objects created in this way are pulled to Codat as negative Direct incomes and Direct costs, respectively (that is, they are not reversed).
+The `changes` array in the push operation response shows the reversed data types that were created in Xero.
+
+### Pulling negative Direct incomes and Direct costs from Xero
+
+It's possible to create negative _spend money transactions_ and _receive money transactions_ in the Xero UI. Objects created in this way are pulled to Codat as negative Direct incomes and negative Direct costs, respectively (that is, they are not reversed).
 
 ## How are Xero contacts represented in the Codat API?
 
