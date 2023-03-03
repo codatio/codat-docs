@@ -3,7 +3,7 @@ title: "Upcoming 2023-07-10: Deprecation of the use of bankAccounts and bankTran
 date: "2023-07-10"
 tags: ["Deprecation"]
 draft: true
-authors: d-laing
+authors: GraceCodat
 ---
 
 On July 10, 2023, Codat will deprecate the use of `bankAccounts` and `bankTransactions` data types for syncing banking data connections via Plaid, TrueLayer and Basiq. The use of these data types for accounting data connections will remain unchanged.
