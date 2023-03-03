@@ -32,7 +32,7 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 
 `GET /data/companies/{companyId}/connections/{connectionId}/assess/commerceMetrics/orders`
 
-#Parameters
+# Parameters
 
 | **Parameter**           | Type                                        | Description                                                                                                                  | Required |
 |-------------------------|---------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|----------|
@@ -42,7 +42,7 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 | **numberOfPeriods**     | _integer_                                   | The number of periods to return. It must be positive, not zero and an integer.                                               | Required |
 | **includeDisplayNames** | _boolean_                                   | Shows the _dimensionDisplayName_ and _itemDisplayName_ in measures to make the report data human-readable. Default is false. | Optional |
 
-#Data model
+# Data model
 
 The response structure is split into four areas: Report info, Dimensions, Measures and Report data.
 

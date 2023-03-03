@@ -35,9 +35,8 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 ## Parameters
 
 |                          Parameter                           |    Type    | Description | Required |
-| :----------------------------------------------------------: | :--------: | :---------: | -------- |
-|                        **reportDate**                        |  _string_  |
-| See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD |
+| :----------------------------------------------------------: | :--------: | :---------: | :-------:|
+|                        **reportDate**                        |  _string_  | See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD |
 
 The date in which the report is created up to. Users must specify a specific date, however the response will be provided for the full month. | Required | **periodLength** |
 | _integer_ | The number of months per period. E.g. 2 = 2 months per period.",

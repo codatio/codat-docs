@@ -32,7 +32,7 @@ View the Marketing Metrics [formulas](/assess/metrics/accounting/api-financial-m
 
 `GET /data/companies/{companyId}/connections/{connectionId}/assess/accountingMetrics/marketing`
 
-#Parameters
+# Parameters
 | Parameter               | Type                                        | Description                                                                                                                | Required |
 |-------------------------|---------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|----------|
 | **reportDate**          | _string_ See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD Datetime or Date (inclusive of the whole day).                                                                  | Required |
@@ -41,7 +41,7 @@ View the Marketing Metrics [formulas](/assess/metrics/accounting/api-financial-m
 | **includeDisplayNames** | _boolean_                                   | Shows the dimensionDisplayName and itemDisplayName in measures to make the report data human-readable. Default is 'false'. | Optional |
 | **showInputValues**     | _boolean_                                   | If set to true, then the system includes the input values within the response. Default to 'false'.                         |          | 
 
-#Data model
+# Data model
 
 The response structure is split into four areas: Report info, Dimensions, Measures and Report data.
 
@@ -93,10 +93,11 @@ _Marketing metrics_ consists of these dimensions: Period, Marketing metrics and 
 ### Dimension (index = "2"): Metric inputs
 
 This displays when the `showInputValues` is set to 'true'.
+
 | **Field**       | Type                                                               | Description     |
 |-----------------|--------------------------------------------------------------------|-----------------|
 | **displayName** | _string_                                                           | "Metric inputs" |
-| ***type**       | _string_                                                           | "string"        |
+| **type**        | _string_                                                           | "string"        |
 | **items**       | _array_ [Dimension (index = “2”) items](#dimension-index--2-items) |                 |
 
 #### Dimension (index = "2") items
@@ -165,6 +166,7 @@ All components have the structure described in the _Measures in components_ data
 #### Measures in components
 
 **Index “0” (percentage)**
+
 | **Field**              | Type     | Description  |
 |------------------------|----------|--------------|
 | **measureDisplayName** | _string_ | “Percentage" |

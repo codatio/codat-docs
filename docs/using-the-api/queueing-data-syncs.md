@@ -17,5 +17,7 @@ There are [two POST endpoints in the API](/codat-api#/operations/create--many-pu
 
 If you try to queue a synchronization for a data type that is already in process, you'll receive an exception.
 
-`"error": "DatasetAlreadyInProgressException: Cannot queue {dataType} sync for {companyId} as previous sync {dataSetId} is still in progress"`
+```
+"error": "DatasetAlreadyInProgressException: Cannot queue {dataType} sync for {companyId} as previous sync {dataSetId} is still in progress"
+```
 :::

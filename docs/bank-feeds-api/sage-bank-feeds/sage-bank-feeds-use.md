@@ -72,7 +72,8 @@ Make the following requests to the Codat API. All push requests are asynchronous
    POST https://api.codat.io/companies/COMPANY_ID/connections/CONNECTION_ID/push/bankAccounts/ACCOUNT_ID/bankTransactions
    ```
 
-   Where `ACCOUNT_ID` is the `id` of a connected source bank account (returned from `GET /connectionInfo/BankFeedAccounts`).
+   Where `ACCOUNT_ID` is the `id` of a connected source bank account (returned from    
+   `GET /connectionInfo/BankFeedAccounts`).
 
    Example request body (all fields are mandatory):
 
