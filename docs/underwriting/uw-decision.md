@@ -1,6 +1,6 @@
 ---
 title: "How the decisioning works"
-description: "Reference page with details on our decisioning logic, fetching data, and coming to a decision."
+description: "Reference page with details on our decisioning logic, fetching data, and coming to a decision"
 ---
 
 ## 🚀 In this section, you will...
@@ -19,7 +19,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-<TabItem value="gpm" label="<b>Gross profit margin</b>">
+<TabItem value="gpm" label="Gross profit margin">
 
 **Gross profit margin** uses `Income.Operating` values and `Expense.CostOfSales` values returned by Assess' `profitAndLoss` endpoint. It is calculated by subtracting cost of sales from net sales, and dividing the resulting gross profit by net sales. It is then expressed by a ratio, and indicates a business’s profitability. 
  

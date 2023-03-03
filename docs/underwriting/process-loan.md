@@ -111,7 +111,7 @@ To do that, the underwriting analyst needs to log in to the [Codat Portal](https
 
 Clicking the button takes the analyst to the **Account categorization** page which displays a list of all the uncategorized accounts. They can select the **Account type**, **Account subtype**, and **Account detail** from drop down lists. Once this is done, they can **Save** the categorization. This enables the underwriting process to continue.
 
-💰 This step is normally performed by the borrower.
+💰 This step is normally performed by the lender.
 
 SCREENSHOT
 
