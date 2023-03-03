@@ -1,7 +1,7 @@
 const mapIntegrationRedirect = (item, category) => {
   return {
     to: item.to,
-    from: `/redirects/integrations/${category}/${item.platformkey}`
+    from: `/redirects/integrations/${category}/${item.platformKey}`
   }
 }
 
@@ -12,107 +12,107 @@ const mapIntegrationRedirects = (items, category) => {
 const acc = [
   {
     integration: "Clear Books",
-    platformkey: "jhch",
+    platformKey: "jhch",
     to: "/integrations/accounting/clearbooks/accounting-clearbooks",
   },
   {
     integration: "Dynamics 365 Business Central",
-    platformkey: "trji",
+    platformKey: "trji",
     to: "/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral",
   },
   {
     integration: "Exact (Netherlands)",
-    platformkey: "qudb",
+    platformKey: "qudb",
     to: "/integrations/accounting/exact-online/accounting-exact-online",
   },
   {
     integration: "Exact (UK)",
-    platformkey: "pbbf",
+    platformKey: "pbbf",
     to: "/integrations/accounting/exact-online/accounting-exact-online",
   },
   {
     integration: "FreeAgent",
-    platformkey: "fbrh",
+    platformKey: "fbrh",
     to: "/integrations/accounting/freeagent/accounting-freeagent",
   },
   {
     integration: "FreshBooks",
-    platformkey: "vxvy",
+    platformKey: "vxvy",
     to: "/integrations/accounting/freshbooks/accounting-freshbooks",
   },
   {
     integration: "KashFlow",
-    platformkey: "wvzu",
+    platformKey: "wvzu",
     to: "/integrations/accounting/kashflow/accounting-kashflow",
   },
   {
     integration: "MYOB AccountRight Live",
-    platformkey: "pdvj",
+    platformKey: "pdvj",
     to: "/integrations/accounting/myob/accounting-myob",
   },
   {
     integration: "Oracle NetSuite",
-    platformkey: "akxx",
+    platformKey: "akxx",
     to: "/integrations/accounting/netsuite/accounting-netsuite",
   },
   {
     integration: "Pandle",
-    platformkey: "vjms",
+    platformKey: "vjms",
     to: "/integrations/accounting/pandle/accounting-pandle",
   },
   {
     integration: "QuickBooks",
-    platformkey: "pqsw",
+    platformKey: "pqsw",
     to: "/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop",
   },
   {
     integration: "QuickBooks Online",
-    platformkey: "qhyg",
+    platformKey: "qhyg",
     to: "/integrations/accounting/quickbooksonline/accounting-quickbooksonline",
   },
   {
     integration: "QuickBooks Online Sandbox",
-    platformkey: "ndsk",
+    platformKey: "ndsk",
     to: "/integrations/accounting/quickbooksonline/accounting-quickbooksonline",
   },
   {
     integration: "Sage 200cloud",
-    platformkey: "jcrp",
+    platformKey: "jcrp",
     to: "/integrations/accounting/sage200/accounting-sage200",
   },
   {
     integration: "Sage 50",
-    platformkey: "hbql",
+    platformKey: "hbql",
     to: "/integrations/accounting/sage50/accounting-sage50",
   },
   {
     integration: "Sage Intacct",
-    platformkey: "knfz",
+    platformKey: "knfz",
     to: "/integrations/accounting/sage-intacct/accounting-sage-intacct",
   },
   {
     integration: "Sage One",
-    platformkey: "tgff",
+    platformKey: "tgff",
     to: "/integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud",
   },
   {
     integration: "Sandbox",
-    platformkey: "mqjo",
+    platformKey: "mqjo",
     to: "/integrations/accounting/sandbox/accounting-sandbox",
   },
   {
     integration: "Wave",
-    platformkey: "pbtz",
+    platformKey: "pbtz",
     to: "/integrations/accounting/wave/accounting-wave",
   },
   {
     integration: "Xero",
-    platformkey: "gbol",
+    platformKey: "gbol",
     to: "/integrations/accounting/xero/accounting-xero",
   },
   {
     integration: "Zoho Books",
-    platformkey: "rwuv",
+    platformKey: "rwuv",
     to: "/integrations/accounting/zoho-books/accounting-zoho-books",
   },
 ]
