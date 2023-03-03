@@ -2,7 +2,6 @@
 title: "Upcoming 2023-07-10: Deprecation of the use of bankAccounts and bankTransactions data types for banking data connections"
 date: "2023-07-10"
 tags: ["Deprecation"]
-draft: true
 authors: GraceCodat
 ---
 

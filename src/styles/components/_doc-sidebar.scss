@@ -184,6 +184,7 @@ html[data-theme="dark"] {
     > .menu__list-item-collapsible > .menu__link--sublist {
       margin-left: 5px;
       padding: 12px 8px;
+      font-size: .813rem;
     }
 
     &.products > .menu__list {
@@ -243,6 +244,7 @@ html[data-theme="dark"] {
   .menu__list-item.other {
     > div > .menu__link--sublist {
       margin-left: 2em;
+      font-size: initial;
 
       &::after {
         --icon-size: 24px;
