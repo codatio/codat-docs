@@ -22,7 +22,7 @@ There are additional checkpoints based on use cases.
 <details>
   <summary>Remember your progress...</summary>
 
-Use our interactive checkpoint list to track your progress. It will be saved in your browser.
+ Use our interactive checkpoint list to track your progress. It will be saved in your browser.
 
   <BrowserOnly>
     {
