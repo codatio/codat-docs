@@ -55,3 +55,9 @@ updatedAt: "2022-11-18T11:48:00.917Z"
 - [SumUp](/integrations/commerce/sumup/commerce-sumup)
 - [WooCommerce](/integrations/commerce/woocommerce/commerce-woocommerce)
 - [Zettle](/integrations/commerce/zettle/commerce-zettle)
+
+## Bank feeds
+
+- [QuickBooks Online](/bank-feeds-api/qbo-bank-feeds/)
+- [Sage](/bank-feeds-api/sage-bank-feeds/)
+- [Xero](/integrations/accounting/xero/accounting-xero-setup#configure-direct-bank-feeds)

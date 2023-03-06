@@ -1,6 +1,7 @@
 ---
 title: "Set up the QuickBooks Online Bank Feeds integration"
 description: "Set up our integration with QuickBooks Online Bank Feeds."
+sidebar_label: Setting up
 createdAt: "2022-09-05T13:13:20.253Z"
 updatedAt: "2023-01-11T15:07:17.188Z"
 ---

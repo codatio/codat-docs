@@ -1,8 +1,9 @@
 module.exports = [
-  {
+{
     type: "link",
-    label: "Integration coverage",
-    href: "https://knowledge.codat.io/supported-features/accounting",
+    href: "/",
+    label: "All Docs",
+    className: "back",
   },
   "integrations/all-integrations",
   {
@@ -442,5 +443,20 @@ module.exports = [
         ],
       },
     ],
+  },
+  {
+    type: "category",
+    label: "Bank feeds",
+    collapsed: true,
+    items: [
+      "bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds",
+      "bank-feeds-api/sage-bank-feeds/sage-bank-feeds",
+      "integrations/accounting/xero/accounting-xero-setup",
+    ],
+  },
+  {
+    type: "link",
+    label: "Integration coverage",
+    href: "https://knowledge.codat.io/supported-features/accounting",
   },
 ];

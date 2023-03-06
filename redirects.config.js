@@ -355,11 +355,11 @@ module.exports = {
       from: '/changelog',
     },
     {
-      to:  '/integrations/accounting/xero/accounting-xero-setup#configure-direct-bank-feeds', //xero
+      to:  '/integrations/accounting/xero/accounting-xero-setup', //xero
       from: '/redirects/integrations/bankfeeds/qalf',
     },
     {
-      to:  '/bank-feeds-api/sage-bank-feeds/', //sage
+      to:  '/bank-feeds-api/sage-bank-feeds', //sage
       from: '/redirects/integrations/bankfeeds/olpr',
     },
     ...mapIntegrationRedirects(acc, "accounting"),

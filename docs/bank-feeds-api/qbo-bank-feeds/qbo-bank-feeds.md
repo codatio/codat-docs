@@ -1,6 +1,7 @@
 ---
 title: "QuickBooks Online Bank Feeds"
 sidebar_label: Overview
+displayed_sidebar: bankfeeds
 description: "Learn about our QuickBooks Online Bank Feeds integration."
 createdAt: "2022-07-15T11:21:08.729Z"
 updatedAt: "2023-01-11T14:52:11.575Z"
@@ -29,7 +30,7 @@ Bank feeds are represented as streams of [Bank transactions](/accounting-api#/sc
 Codat does not currently support pushing historic (backdated) or future (future-dated) bank feeds to QBO.
 :::
 
-## Setup overview
+## How it works
 
 1. See [Set up the QuickBooks Online Bank Feeds integration](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-setup) to learn how to set up and enable the integration.
 2. Your SMB users must [connect one or more bank accounts to QBO](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-smb-user) by using Link, Codat's authentication solution, to generate a one-time username and password for QBO authorization.
@@ -54,3 +55,9 @@ You can upload your organization logo to Link on the <a className="external" hre
 You can also customize the colors and text used in the Link flow. For more information, see [Set up your company branding](/auth-flow/customize/branding).
 
 To provide your SMB users with additional guidance, you can also [add a custom callout](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-setup#add-a-custom-callout-to-the-link-site) to the QBO Bank Feeds Link site.
+
+---
+
+## Read next
+
+How to [set up the integration](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-setup)

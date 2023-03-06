@@ -17,14 +17,14 @@ module.exports = {
       type: "doc",
       id: "index",
       label: "What is Codat?",
-      className: "hidden",
+      className: "top-level-item hidden",
     },
     {
       type: "category",
       label: "Getting started",
       //label: '_getStarted',
       collapsed: true,
-      className: "introduction",
+      className: "top-level-item introduction",
       items: [
         "introduction/first-steps",
         "introduction/create-account",
@@ -41,7 +41,7 @@ module.exports = {
       label: "Core concepts",
       //label: '_concepts',
       collapsed: true,
-      className: "core",
+      className: "top-level-item core",
       items: [
         "core-concepts/overview",
         "core-concepts/companies",
@@ -61,7 +61,7 @@ module.exports = {
       label: "Using our API",
       //label: '_api',
       collapsed: true,
-      className: "api",
+      className: "top-level-item api",
       items: [
         "using-the-api/overview",
         {
@@ -114,21 +114,21 @@ module.exports = {
       label: "Authorization flow",
       //label: '_authFlow',
       collapsed: true,
-      className: "auth",
+      className: "top-level-item auth",
       items: authFlow,
     },
     {
       type: "category",
       label: "Data model",
       collapsed: true,
-      className: "data",
+      className: "top-level-item data",
       items: dataModel,
     },
     {
       type: "category",
       label: "Other guides",
       collapsed: true,
-      className: "other",
+      className: "top-level-item other",
       items: [
         "other/developer-resources", 
         "other/file-upload",
@@ -160,7 +160,7 @@ module.exports = {
       type: "category",
       label: "Products",
       collapsed: true,
-      className: "products",
+      className: "top-level-item products",
       items: [
         {
           type: "link",
@@ -207,11 +207,10 @@ module.exports = {
       ],
     },
     {
-      type: "category",
+      type: "link",
       label: "Integrations",
-      collapsed: true,
-      className: "integrations",
-      items: integrations,
+      className: "top-level-item integrations",
+      href: "integrations/all-integrations",
     },
   ],
   accounting: accountingApi,
@@ -221,4 +220,5 @@ module.exports = {
   sfc: sfc,
   assess: assess,
   syncForExpenses: sfe,
+  integrations: integrations,
 };
