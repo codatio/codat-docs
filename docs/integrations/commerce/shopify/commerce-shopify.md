@@ -25,7 +25,7 @@ When setting up the integration, you can take one of two approaches for enabling
 
     Built by you and must be approved by Shopify before use. A single public app can be installed on multiple Shopify stores.
 
-In general, custom apps require less initial setup, with tasks completed by the merchant. Public apps require more initial setup, with tasks completed by you, the Codat client.
+In general, custom apps require less initial setup, with tasks completed by the merchant. Public apps require more initial setup, with tasks completed by you, the Codat client. Choose the option that best suits your circumstances. 
 
 ## About custom apps
 
