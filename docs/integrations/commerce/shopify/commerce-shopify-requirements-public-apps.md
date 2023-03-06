@@ -67,4 +67,4 @@ The following diagram outlines the functionality your app must provide, such as 
 7. Hosted Link is loaded in the merchant's browser. The merchant enters their Shopify credentials to authenticate.
 8. If authenticated, the merchant is redirected back to your app in the App Store.
 
-The merchant has now successfully connected their Shopify store via the public apps connection method. You can now retrieve commerce data through the Commerce API.
+The merchant has now successfully connected their Shopify store via the public apps approach. You can now retrieve commerce data through the Commerce API.

@@ -1,17 +1,17 @@
 ---
 title: "Set up Shopify using custom apps"
-description: "Learn how to use the custom apps method to set up the integration"
+description: "Learn how to set up the Shopify integration using the custom apps approach to merchant data connection"
 createdAt: "2021-01-14T16:41:39.945Z"
 updatedAt: "2023-01-06T16:44:14.501Z"
 ---
 
-This article explains how to set up the Shopify integration using the _custom apps_ connection method. 
+This article explains how to set up the Shopify integration using the _custom apps_ approach for enabling your merchants to connect and share their commerce data. 
 
 Before you start, make sure you understand the merchant connection flow when using custom apps.
 
 ## Merchant connection flow using a custom app
 
-When the integration is enabled with the _custom apps_ connection method, merchants are directed to a Shopify store connection UI during the Codat Link flow.
+When the integration is enabled with the _custom apps_ approach, merchants are directed to a Shopify store connection UI during the Codat Link flow.
 
 _Shopify store connection UI_
 
@@ -71,7 +71,7 @@ Merchants must have the following permissions to connect their Shopify store and
 
 ## Configure the Shopify integration for use with custom apps
 
-To configure the Shopify integration for use with the _custom apps_ connection method:
+To configure the Shopify integration for use with the _custom apps_ approach:
 
 1. In the Codat Portal, go to the <a class="external" href="https://app.codat.io/settings/integrations/commerce" target="blank">**Commerce integrations**</a> page.
 
