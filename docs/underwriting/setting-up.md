@@ -48,7 +48,7 @@ This triggers ngrok to start a new session. Copy the **forwarding address** - yo
 
 In the [Alerting rules](https://app.codat.io/monitor/rules) section of the Codat Portal, create three rules, one for each webhook we will use. These can be found below.
 
-![](/img/use-cases/rule-creation-screen.png)
+![](/img/use-cases/underwriting/rule-creation-screen.png)
 
 Make sure to replace the `<server-url>` with your relevant forwarding address. For example, if using ngrok:
 
