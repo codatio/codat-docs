@@ -40,6 +40,8 @@ We recommend using [ngrok](https://ngrok.com/) to access Codat's webhooks.
 
 After installing, go to its root directory. If working with Windows, open the `ngrok.exe` file to launch the ngrok terminal. Then, configure your local machine to receive web traffic on port 5069. The demo app is configured to listen for Codat's webhooks on this port.
 
+This triggers ngrok to start a new session. Copy the **forwarding address** - you will use it to set up webhooks.
+
 <Tabs>
    <TabItem value="win" label="Windows OS">  
 
@@ -58,9 +60,7 @@ After installing, go to its root directory. If working with Windows, open the `n
    ```
 
    </TabItem>
-</Tabs>  
-  
-This triggers ngrok to start a new session. Copy the **forwarding address** - you will use it to set up webhooks.
+</Tabs>
 
 ### <input type="checkbox" unchecked /> Configure Codat webhooks
 
