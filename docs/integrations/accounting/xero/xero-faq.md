@@ -49,7 +49,7 @@ To support pushing negative values to Xero for these data types, our integration
 
 :::caution Objects are reversed
 
-Be aware that both the type (Direct income or Direct cost) and the sign of the created business object are reversed in Xero.
+When pushing negative Direct incomes and Direct costs to Xero, be aware that both the type (Direct income or Direct cost) and the sign of the created business objects are reversed.
 
 :::
 
@@ -96,11 +96,11 @@ You push negative Direct incomes and Direct costs to Xero as an array of `lineIt
 
 ```
 
-The `changes` array in the push operation response shows the reversed data types that were created in Xero.
+If the push is successful, the `changes` array in the push operation response will show the reversed data types that were created.
 
 ### Pulling negative Direct incomes and Direct costs from Xero
 
-It's possible to create negative _spend money transactions_ and _receive money transactions_ in the Xero UI. Objects created in this way are pulled to Codat as negative Direct incomes and negative Direct costs, respectively (that is, they are not reversed).
+It's possible to create negative _spend money transactions_ and _receive money transactions_ in the Xero UI. Objects created in this way are always pulled to Codat as negative Direct incomes and negative Direct costs, respectively (that is, they are not reversed).
 
 ## How are Xero contacts represented in the Codat API?
 
