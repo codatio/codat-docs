@@ -92,6 +92,9 @@ The demo app now has all the components that it needs to produce an underwriting
 
 🙏🏽💰 The decisioning is normally performed by the lender, but the borrower is able to query an application's status at any point. 
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 :::tip Ready for more?
 
 <Tabs>
@@ -116,7 +119,7 @@ The demo app now has all the components that it needs to produce an underwriting
   <TabItem value="realco" label="Real company">  
 
   Take the demo one step further and use real credentials to link a new company to your existing financial data in an accounting platform. Set up the [integration](/integrations/accounting/overview) you plan to use, and connect to it while following the auth flow. Then, review how the app makes a decision based on your company's real data. 
-  
+
   </TabItem>
 </Tabs>
 
