@@ -139,7 +139,7 @@ module.exports = {
     },
     {
       href: "https://app.codat.io/",
-      label: "Sign in",
+      label: "Portal",
       className: "navbarButton secondary",
       position: "right"
     },
