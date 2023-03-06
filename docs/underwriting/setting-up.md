@@ -58,8 +58,8 @@ After installing, go to its root directory. If working with Windows, open the `n
    ```
 
    </TabItem>
-</Tabs>
-   
+</Tabs>  
+  
 This triggers ngrok to start a new session. Copy the **forwarding address** - you will use it to set up webhooks.
 
 ### <input type="checkbox" unchecked /> Configure Codat webhooks
