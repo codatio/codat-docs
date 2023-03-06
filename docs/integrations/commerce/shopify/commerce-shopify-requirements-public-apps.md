@@ -31,11 +31,13 @@ You'll need to:
 
 ### Configure your public app as a redirect URL
 
-First, it's important to set the Shopify App Store URL of your public app - for example, `https://apps.shopify.com/myapp` - as a redirect URL for the Shopify integration. When this is configured, the merchant is redirected back to your app in the App Store after they've authenticated in Hosted Link.
+First, it's important to set your Shopify App Store URL - for example, `https://apps.shopify.com/myapp` - as a redirect URL. When this is configured, the merchant is redirected back to the App Store after they've authenticated in Hosted Link.
+
+To set a redirect URL:
 
 1. In the Codat Portal, go to the [Redirects](https://app.codat.io/settings/redirects) page.
-2. Enter your store URL in the **URL** field.
-3. Under **Allowed redirects URLs**, add your store URL.
+2. Enter your App Store URL in the **URL** field.
+3. Under **Allowed redirects URLs**, add your App Store URL.
 
 ### App functionality and authorization flow
 
@@ -43,7 +45,7 @@ The following diagram outlines the functionality your app must provide, such as 
 
 ![Shopify functional requirements for public apps](/img/integrations/commerce/shopify/shopify-public-apps-flow-diagram.png "Swimlane diagram showing the functional requirements for Shopify public apps.")
 
-1. The merchant views your app in the Shopify App Store. If your app is unlisted, they open the app URL that you provided.
+1. The merchant views your app in the Shopify App Store. If it's unlisted, they open the app URL that you provided.
 2. Your app captures and stores the `Shop` value and HMAC (hash message authentication code) contained in the store URL.
 
    :::info HMAC validation
@@ -55,15 +57,15 @@ The following diagram outlines the functionality your app must provide, such as 
 3. Your app [creates a company](/codat-api#/operations/create-company) to represent the merchant.
 4. Your app [creates a data connection](/codat-api#/operations/create-data-connection) to Shopify. Supply the returned `companyId` in the request path and the platform key `fztf` in the body.
    
-   The endpoint returns a `linkUrl` value in the response.
+   A `linkUrl` value is returned.
 
-5. Your app forms a store-specific Link URL by appending the `Shop` value (stored in step two) to the `linkUrl` as a query parameter.
+5. Your app appends the `Shop` value (stored in step two) to the `linkUrl` as a query parameter to form a store-specific Link URL.
 
    ```
    https://link.codat.io/company/<companyId>?<shop-value>
    ```
 
-6. Your app redirects the merchant to the store-specific Link URL, including the `Shop` parameter.
+6. Your app redirects the merchant to the store-specific Link URL, including the `Shop` query parameter.
 7. Hosted Link is loaded in the merchant's browser. The merchant enters their Shopify credentials to authenticate.
 8. If authenticated, the merchant is redirected back to your app in the App Store.
 
