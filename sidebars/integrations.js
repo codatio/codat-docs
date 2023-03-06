@@ -451,6 +451,11 @@ module.exports = [
     items: [
       {
         type: "link",
+        href: "/integrations/bankfeeds/overview",
+        label: "Overview",
+      },
+      {
+        type: "link",
         href: "/bank-feeds-api/qbo-bank-feeds/",
         label: "QuickBooks Online",
       },
