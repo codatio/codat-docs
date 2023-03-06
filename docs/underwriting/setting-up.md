@@ -142,4 +142,4 @@ Ensure the `http` profile is set and press the "Play" icon.
 
 You have now set up your Codat Portal instance and your local environment in preparation for running the app. You have also cloned the repository, and initiated the app run.
 
-Next, you will [process a loan application](/underwriting/process-loan).
+Next, see the app in action and [process a loan application](/underwriting/process-loan).

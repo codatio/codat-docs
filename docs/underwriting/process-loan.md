@@ -95,20 +95,28 @@ The demo app now has all the components that it needs to produce an underwriting
 :::tip Ready for more?
 
 <Tabs>
-  <TabItem value="assess" label="Assess in the Portal">
+  <TabItem value="assess" label="Assess in the Portal">  
+
   Navigate to <b>Products > Assess</b> in the [Codat Portal](https://app.codat.io/) and explore the visual representation of the financial data pulled by our endpoints. Focus on Profit and Loss, and Balance Sheet data, as these are used in the app for loan underwriting. 
+
   </TabItem>
   
-  <TabItem value="thresh" label="Thresholds">
+  <TabItem value="thresh" label="Thresholds">  
+
   In the `appsettings.json` file of the `\DemosUnderwriting\Codat.Demos.Underwriting.Api\` directory, set your own example thresholds for data points used by the app's underwriting service. Play around with the values to see how this affects the application decision.
+
   </TabItem>
 
-  <TabItem value="comptype" label="Company types">
+  <TabItem value="comptype" label="Company types">  
+
   Start another loan application, and choose a company type different from <b>Small UK Company</b> when linking the Sandbox. This will provide you with a different set of financial data to be used in the decision-making. 
+
   </TabItem>
 
-  <TabItem value="realco" label="Real company">
+  <TabItem value="realco" label="Real company">  
+
   Take the demo one step further and use real credentials to link a new company to your existing financial data in an accounting platform. Set up the [integration](/integrations/accounting/overview) you plan to use, and connect to it while following the auth flow. Then, review how the app makes a decision based on your company's real data. 
+  
   </TabItem>
 </Tabs>
 
