@@ -39,7 +39,7 @@ Bank feeds are represented as streams of [Bank transactions](/accounting-api#/sc
 
 ## Supported Sage products
 
-Our integration supports pushing bank feeds to several Sage products, including Sage Business Cloud, Sage Intacct, and Sage 50. For a complete list, see the <a className="external" href="https://developer.sage.com/banking-service/provider-api/what-is-sage-banking-service/supported-regions-products/" target="_blank">supported regions and products</a>.
+Our integration supports pushing bank feeds to several Sage products, including Sage Business Cloud, Sage Intacct, and Sage 50. For a complete list, see the [supported regions and products](https://developer.sage.com/banking-service/provider-api/banking-service/supported-regions-products/).
 
 ---
 
