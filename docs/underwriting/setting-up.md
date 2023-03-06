@@ -54,6 +54,8 @@ After installing, go to its root directory. If working with Windows, open the `n
 
    <TabItem value="mac" label="Mac OS">
 
+   Run the following command in the root directory `Codat.Demos.Underwriting.Api`:
+   
    ```bash
    brew install ngrok ngrok http 5069
    ```  
