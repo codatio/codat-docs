@@ -210,7 +210,7 @@ module.exports = {
       type: "link",
       label: "Integrations",
       className: "top-level-item integrations",
-      href: "integrations/all-integrations",
+      href: "/integrations/all-integrations",
     },
   ],
   accounting: accountingApi,

@@ -449,9 +449,21 @@ module.exports = [
     label: "Bank feeds",
     collapsed: true,
     items: [
-      "bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds",
-      "bank-feeds-api/sage-bank-feeds/sage-bank-feeds",
-      "integrations/accounting/xero/accounting-xero-setup",
+      {
+        type: "link",
+        href: "/bank-feeds-api/qbo-bank-feeds/",
+        label: "QuickBooks Online",
+      },
+      {
+        type: "link",
+        href: "/bank-feeds-api/sage-bank-feeds/",
+        label: "Sage",
+      },
+      {
+        type: "link",
+        href: "/integrations/accounting/xero/accounting-xero-setup",
+        label: "Xero",
+      }
     ],
   },
   {
