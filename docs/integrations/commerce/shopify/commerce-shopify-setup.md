@@ -28,7 +28,7 @@ Perform the following tasks in Shopify and the Codat Portal:
 
 ## Create a Shopify public app
 
-Create and configure a public app in Shopify. When the app is created you can view the secure app credentials.
+When the app is created you can view the secure app credentials.
 
 1. Log in to the [Shopify Partners](https://developers.shopify.com/) site using your Shopify partner account credentials.
 
