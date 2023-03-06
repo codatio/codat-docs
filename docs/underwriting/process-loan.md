@@ -94,7 +94,7 @@ The demo app now has all the components that it needs to produce an underwriting
 
 🙏🏽💰 The decisioning is normally performed by the lender, but the borrower is able to query an application's status at any point. 
 
-:::tip Ready for more?
+
 
 <Tabs>
   <TabItem value="assess" label="Assess in the Portal">  
@@ -123,7 +123,7 @@ The demo app now has all the components that it needs to produce an underwriting
 
 </Tabs>
 
-:::
+
 
 ## Recap
 
