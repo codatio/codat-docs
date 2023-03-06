@@ -15,15 +15,19 @@ We currently support four types of integration, each enabling access to differen
 
 ## Accounting
 
-Codat’s [accounting integrations](/accounting-api/overview) allow you to easily pull up-to-date accounting data from your customers' accounting software as well as push data to their software using Codat's standard [accounting data model](/data-model/accounting/).
+Codat’s [accounting integrations](/integrations/accounting/overview) allow you to easily pull up-to-date accounting data from your customers' accounting software as well as push data to their software using Codat's standard [accounting data model](/data-model/accounting/).
 
 ## Banking
 
-Codat’s [banking integrations](/banking-api/overview) allow you to easily pull up-to-date account and transaction data from your customers' banks using Codat's standard [banking data model](/data-model/banking).
+Codat’s [banking integrations](/integrations/banking/overview) allow you to easily pull up-to-date account and transaction data from your customers' banks using Codat's standard [banking data model](/data-model/banking).
 
 ## Commerce
 
-Codat’s [commerce integrations](/commerce-api/overview) allow you to easily pull up-to-date ecommerce, payment and point-of-sale data from your customers' commerce software using Codat's standard [commerce data model](/data-model/commerce/).
+Codat’s [commerce integrations](/integrations/commerce/overview) allow you to easily pull up-to-date ecommerce, payment and point-of-sale data from your customers' commerce software using Codat's standard [commerce data model](/data-model/commerce/).
+
+## Bank feeds
+
+Codat’s [bank feeds integrations](/integrations/bankfeeds/overview) allow you to easily pull up-to-date ecommerce, payment and point-of-sale data from your customers' commerce software using Codat's standard [commerce data model](/data-model/commerce/).
 
 ## File upload
 
