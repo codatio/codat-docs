@@ -15,6 +15,8 @@ Each lender usually has their own set of data points they use to review an appli
 
 The underwriting model we use as our example in the [LoanUnderwriter](https://dev.azure.com/codat/Codat%20Spikes/_git/DemosUnderwriting?path=/Codat.Demos.Underwriting.Api/Services/LoanUnderwriter.cs&version=GBmain) service is a rules-based model that requires certain thresholds to be passed for **gross profit margin**, **revenue**, and **gearing ratio**. The threshold values for these data points are maintained in `appsettings.json`.
 
+It also requires validated application details and the company's fully categorized chart of accounts.
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
