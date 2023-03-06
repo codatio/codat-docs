@@ -92,34 +92,7 @@ The demo app now has all the components that it needs to produce an underwriting
 
 🙏🏽💰 The decisioning is normally performed by the lender, but the borrower is able to query an application's status at any point. 
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
-:::tip Ready for more?
-
-<Tabs>
-  <TabItem value="assess" label="Assess in the Portal">  
-
-  Navigate to <b>Products > Assess</b> in the [Codat Portal](https://app.codat.io/) and explore the visual representation of the financial data pulled by our endpoints. Focus on Profit and Loss, and Balance Sheet data, as these are used in the app for loan underwriting. 
-
-  </TabItem>
-  
-  <TabItem value="thresh" label="Thresholds">  
-
-  In the `appsettings.json` file of the `\DemosUnderwriting\Codat.Demos.Underwriting.Api\` directory, set your own example thresholds for data points used by the app's underwriting service. Play around with the values to see how this affects the application decision.
-
-  </TabItem>
-
-  <TabItem value="comptype" label="Company types">  
-
-  Start another loan application, and choose a company type different from <b>Small UK Company</b> when linking the Sandbox. This will provide you with a different set of financial data to be used in the decision-making. 
-
-  </TabItem>
-
-
-</Tabs>
-
-:::
 
 ## Recap
 
