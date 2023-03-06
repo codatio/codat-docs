@@ -1,5 +1,5 @@
 ---
-title: "Setting up for the demo app"
+title: "Set up the demo app"
 description: "Prepare your Codat instance and local environment for the underwriting app execution"
 ---
 

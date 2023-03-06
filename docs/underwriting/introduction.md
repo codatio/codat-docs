@@ -5,12 +5,14 @@ description: "Goals, purpose, and structure of Codat's underwriting demo app gui
 
 :::tip Who is this guide for?
 
-Codat's demo app guides are for our developer users. We assume you are a tech-savvy backend developer and know how to use an API. No frontend experience is needed.
+This guide is for developers. We assume you are a tech-savvy backend developer and know how to use an API. No frontend experience is needed.
+
 :::
 
 ## Overview
 
-🎯 In simple terms, underwriting means checking an applicant’s finances to make a decision on their loan request. With the demo app, you will experience the end-to-end underwriting process flow with automatic decision-making supported by Codat's [Assess](/assess/overview) product. We will focus on the lender's perspective. 
+🎯 Codat makes underwriting easier by getting you trusted data with which to check an loan applicant’s finances. With our demo app, you will experience the end-to-end underwriting process flow with automatic decision-making supported by Codat's [Assess](/assess/overview) product. We will focus on the lender's perspective. 
+
 
 ⏳ Estimated time to complete: X minutes
 
@@ -27,7 +29,8 @@ Codat's demo app guides are for our developer users. We assume you are a tech-sa
 
 ❌ This guide does not cover: 
 
-- Building a user interface to support the application form submissions and review of the application’s underwriting status,
+- Building application form and dashboard UIs
+
 - Details or recommendations of various financial metrics used in different underwriting models.
 
 ## Why we use Assess
@@ -38,7 +41,8 @@ In turn, this helps you make a comprehensive assessment of your customer's finan
 
 ## About the demo app
 
-Pick up our underwriting demo repository on [GitHub](https://github.com/codatio/build-guide-underwriting-be) and clone it. 
+Clone our underwriting demo repository on [GitHub](https://github.com/codatio/build-guide-underwriting-be). 
+
 
 To run the demo app, you need to have an account with Codat, enable the Assess product, and get your API key to use it in the demo app. You also need a way to access remote systems from your locally hosted server. We will take you through these steps in detail when [setting up the solution](/underwriting/setting-up). 
 

@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 ## 🚀 In this section, you will...
 * Review the basic process flow followed by the demo app,
-* Create and fill a new loan application,
+* Create a new loan application,
 * Create a Codat company and connect it to the Codat Sandbox,
 * Fetch financial data to assess the applicant's financial health, 
 * Categorize accounts to meet Assess' requirements, and
