@@ -63,3 +63,10 @@ If you choose this connection method, you should be aware of Shopify's requireme
 
 To get started, see [Set up Shopify using public apps](/integrations/commerce/shopify/commerce-shopify-setup).
 
+---
+
+## Read next
+
+- [Set up Shopify using custom apps](/integrations/commerce/shopify/commerce-shopify-custom-apps)
+- [Set up Shopify using public apps](/integrations/commerce/shopify/commerce-shopify-setup)
+
