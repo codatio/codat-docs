@@ -31,7 +31,7 @@ In general, custom apps require less initial setup, with tasks completed by the 
 
 A [custom app](https://help.shopify.com/en/manual/apps/custom-apps) is exclusively linked to a merchant's individual Shopify store and can't be linked to multiple stores. Custom apps are not listed on the Shopify app store or subject to Shopify's app approval process. With this approach, each merchant creates a custom app in their Shopify store.
 
-Custom apps use API access tokens (API keys) for authentication rather than OAuth 2.0.
+Custom apps use API access tokens (API keys) for authentication.
 
 There are no additional provider requirements when using this approach.
 
@@ -45,7 +45,9 @@ To get started, see [Set up Shopify using custom apps](/integrations/commerce/sh
 
 ## About public apps
 
-[Public apps](https://help.shopify.com/en/manual/apps/app-types#public-apps) are built to connect to multiple Shopify stores owned by multiple merchants. This means you can use a single public app to access data from multiple different merchant stores. Public apps offer a low-friction way for merchants to link their commerce data to Codat. With this approach, you build a single public app that provides specific functionality and then use its secure credentials to authorize your access to Shopify commerce data.
+[Public apps](https://help.shopify.com/en/manual/apps/app-types#public-apps) are built to connect to multiple Shopify stores owned by multiple merchants. This means you can use a single public app to access data from multiple different merchant stores.
+
+Public apps offer a low-friction way for merchants to link their commerce data to Codat. With this approach, you build a single public app and use its secure credentials to authorize your access to Shopify commerce data.
 
 _Listed apps_ are published on the Shopify app store whereas _unlisted apps_ are not. Only listed apps can be discovered directly from the app store by merchants.
 
