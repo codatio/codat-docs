@@ -99,7 +99,7 @@ In the Codat Portal, add the secure credentials for your Shopify app to the inte
    - For **Client ID**, enter the **API key** from Shopify.
    - For **Client secret**, enter the **API secret key** from Shopify.
 
-4. If you requested access to over 60 days' of orders and your access was approved, turn on **Has request to read all orders**. Otherwise leave this setting turned off.
+4. If you requested access to over 60 days of orders and your access was approved, turn on **Has request to read all orders**. Otherwise leave this setting turned off.
 
    ![Shopify integration settings](/img/integrations/commerce/shopify/76d5c94-Shopify_integration_settings.png "The 'Has request to read all orders' checkbox on the Shopify integration settings page.")
 
