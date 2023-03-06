@@ -4,14 +4,13 @@ description: "End-to-end application process steps carried out by the lender and
 ---
 
 ## 🚀 In this section, you will...
+* Create and fill a new loan application,
+* Create a Codat company and connect it to the Codat Sandbox,
+* Fetch financial data to assess the applicant's financial health, 
+* Categorize accounts to meet Assess' requirements, and
+* Receive a decision on the loan. 
 
 :::note Underwriting process flow
-
-Review the full [swimlane diagram](https://github.com/codatio/build-guide-underwriting-be#implementing-the-solution) of the underwriting process flow followed by the demo app.
-:::  
-
-SHORT SWIMLANE DIAGRAM
-
 ``` mermaid
   sequenceDiagram
     participant frontend as Underwriting Frontend 
@@ -22,7 +21,10 @@ SHORT SWIMLANE DIAGRAM
     codat ->> backend: Fetched data
     backend ->> backend: Underwrite loan
     backend ->> frontend: Application outcome
-```
+```  
+Review the full [swimlane diagram](https://github.com/codatio/build-guide-underwriting-be#implementing-the-solution) of the underwriting process flow followed by the demo app.
+:::  
+
 
  
 Use Swagger http://localhost:5069/swagger/index.html
