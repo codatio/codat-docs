@@ -33,7 +33,7 @@ This guide is for developers. We assume you are a tech-savvy backend developer a
 
 - Details or recommendations of various financial metrics used in different underwriting models.
 
-## Why we use Assess
+## Why we use _Assess_
 
 The demo app makes use of the categorization feature of Assess. It assigns a category to each account in the company's chart of accounts, thus standardizing the data irrespective of its source. 
 
@@ -46,6 +46,6 @@ Clone our underwriting demo repository on [GitHub](https://github.com/codatio/bu
 
 To run the demo app, you need to have an account with Codat, enable the Assess product, and get your API key to use it in the demo app. You also need a way to access remote systems from your locally hosted server. We will take you through these steps in detail when [setting up the solution](/underwriting/setting-up). 
 
-## Recap
+## What's next
 
 Now that you know the focus and purpose of our demo app and its guide, continue on and [set up Codat and your local environment](/underwriting/setting-up).

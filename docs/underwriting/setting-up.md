@@ -7,11 +7,11 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 ### 🚀 In this section, you will...
-* Create your Codat account, 
-* Enable the Assess product, 
-* Configure webhooks, 
-* Set up your local environment, and
-* Run the demo app.
+* Create your Codat account
+* Enable the Assess product
+* Configure webhooks
+* Set up your local environment
+* Run the demo app
 
 ### <input type="checkbox" unchecked/> Create a Codat account 
 
@@ -23,9 +23,9 @@ In the [Developers](https://app.codat.io/developers/api-keys) section of the Cod
 
 ### <input type="checkbox" unchecked /> Enable the Assess product 
 
-In the [Products](https://app.codat.io/settings/products) section of the Codat Portal, find **Assess** in the list of products and toggle the switch to enable it. This also enables the data types required by the product, for example, `balanceSheet` and `profitAndLoss` used by the demo app. 
+In the [Products](https://app.codat.io/settings/products) section of the Codat Portal, find **Assess** in the list of products and enable it. The data types required by this product will be configured automatically. For example, `balanceSheet` and `profitAndLoss` will be enabled, which are used by this demo app.
 
-In this app, we are using the [categorization](https://docs.codat.io/assess/reports/enhanced-financials/categorize-accounts) feature provided by Assess. It allows you to perform automating decisioning based on the categorized chart of accounts. 
+We use Assess' [categorization](https://docs.codat.io/assess/reports/enhanced-financials/categorize-accounts) feature. It allows you to perform automating decisioning based on the categorized accounts. 
 
 ### <input type="checkbox" unchecked /> Check your auth flow settings
 
@@ -35,13 +35,31 @@ You may want to explore and customize Codat's [auth flow](/auth-flow/customize/c
 
 ### <input type="checkbox" unchecked /> Configure ngrok
 
-We recommend using [ngrok](https://ngrok.com/) to access Codat's webhooks. After installing, go to its root directory. Open the `ngrok.exe` file to launch the ngrok terminal. 
+The app will use several webhooks to track completion of the financial data sync and the categorization of accounts, and Sandbox linking completion. 
+We recommend using [ngrok](https://ngrok.com/) to access Codat's webhooks. 
 
-Then, configure your local machine to receive web traffic on port 5069. The demo app is configured to listen for Codat's webhooks on this port.
+After installing, go to its root directory. If working with Windows, open the `ngrok.exe` file to launch the ngrok terminal. Then, configure your local machine to receive web traffic on port 5069. The demo app is configured to listen for Codat's webhooks on this port.
+
+<Tabs>
+   <TabItem value="win" label="Windows OS">  
+
+   Run the following command in the root directory `Codat.Demos.Underwriting.Api`:
 
    ```bash
    .\ngrok.exe http 5069
-   ``` 
+   ```
+
+   </TabItem>
+
+   <TabItem value="mac" label="Mac OS">
+
+   ```bash
+   brew install ngrok ngrok http 5069
+   ```
+
+   </TabItem>
+</Tabs>
+   
 This triggers ngrok to start a new session. Copy the **forwarding address** - you will use it to set up webhooks.
 
 ### <input type="checkbox" unchecked /> Configure Codat webhooks
