@@ -110,11 +110,11 @@ The demo app now has all the components that it needs to produce an underwriting
 
 Try these suggestions to make the most of your experience with the demo app:
 
-- **View Assess in the Portal**
+- **View Assess in the Portal**  
   Navigate to **Products > Assess** in the [Portal](https://app.codat.io/) to view a visual representation of the financial data pulled by our endpoints, including `balanceSheet` and `profitAndLoss`.
   
-- **Play around with thresholds**
-  In the `appsettings.json` file in the `\Codat.Demos.Underwriting.Api\` directory, set your own example thresholds for data points used by the app's underwriting service and see how this affects the application decision.
+- **Play around with thresholds**  
+  In the `appsettings.json` file in the `Codat.Demos.Underwriting.Api\` directory, set your own example thresholds for data points used by the app's underwriting service and see how this affects the application decision.
 
 - **Underwrite using different datasets**  
   Start another loan application, and choose a different Sandbox company type to get a different set of financial data to be used in the decision-making. 
@@ -122,7 +122,7 @@ Try these suggestions to make the most of your experience with the demo app:
 - **Use a company's real data**  
   Take the demo one step further and use real credentials to access existing financial data in an accounting platform. Set up the [integration](/integrations/accounting/overview) you plan to use, and connect to it while following the auth flow. Then, review how the app makes a decision based on your company's real data. 
 
-- **Inspect the underwriting logic ** 
+- **Inspect the underwriting logic**  
   We provide [detailed information](/underwriting/uw-decision) about the underwriting logic we included in our demo app, and how exactly the financial data is fetched. 
   
 
