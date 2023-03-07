@@ -86,37 +86,37 @@ The main file directory for the demo app is `Codat.Demos.Underwriting.Api`. Key 
 Note that the other directory in the repository, `Codat.Demos.Underwriting.Api.Tests`, contains a series of unit tests for the demo app and is not needed for you to run the demo project. 
 
 ```json title="Codat.Demos.Underwriting.Api directory"
-├──BindingModule.cs
-├──Codat.Demos.Underwriting.Api.csproj
-├──Program.cs
-├──appsettings.Development.json
-├──appsettings.json // Add your API key in this file
-|   
-├──Controllers // Controllers for the API endpoints to manage expected actions and results
-|    ├──UnderwritingController.cs // Front-end endpoint controller
-|    └──WebhooksController.cs     // Back-end endpoint controller
-|       
-├──DataClients // A service to make API calls to Codat
-|    └──CodatDataClient.cs
-|       
-├──Exceptions // Definitions for managing error events 
-|    ├──...
-|       
-├──Extensions // Used to extend classes in C#
-|    └──CollectionExtensions.cs
-|       
-├──Models // Represent the shape of data that will be returned to the user
-|    ├──...
-|       
-├──Orchestrators // Manages the six methods that relate to endpoints used in the app
-|    └──ApplicationOrchestrator.cs
-|       
-├──Properties // Setup for http, https, and IIS Express profiles
-|    └──launchSettings.json
-|       
-└──Services // Key application components that perform specified tasks
-     ├──ApplicationStore.cs // Handles creating and storing the loan application in-memory
-     └──LoanUnderwriter.cs  // Decision process method for the underwriting model used in the demo
+   ├──BindingModule.cs
+   ├──Codat.Demos.Underwriting.Api.csproj
+   ├──Program.cs
+   ├──appsettings.Development.json
+   ├──appsettings.json // Add your API key in this file
+   |   
+   ├──Controllers // Controllers for the API endpoints to manage expected actions and results
+   |    ├──UnderwritingController.cs // Front-end endpoint controller
+   |    └──WebhooksController.cs     // Back-end endpoint controller
+   |       
+   ├──DataClients // A service to make API calls to Codat
+   |    └──CodatDataClient.cs
+   |       
+   ├──Exceptions // Definitions for managing error events 
+   |    ├──...
+   |       
+   ├──Extensions // Used to extend classes in C#
+   |    └──CollectionExtensions.cs
+   |       
+   ├──Models // Represent the shape of data that will be returned to the user
+   |    ├──...
+   |       
+   ├──Orchestrators // Manages the six methods that relate to endpoints used in the app
+   |    └──ApplicationOrchestrator.cs
+   |       
+   ├──Properties // Setup for http, https, and IIS Express profiles
+   |    └──launchSettings.json
+   |       
+   └──Services // Key application components that perform specified tasks
+      ├──ApplicationStore.cs // Handles creating and storing the loan application in-memory
+      └──LoanUnderwriter.cs  // Decision process method for the underwriting model used in the demo
 ```
 ### <input type="checkbox" unchecked/> Set your API key
 
