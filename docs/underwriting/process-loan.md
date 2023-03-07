@@ -36,9 +36,9 @@ You can also review the detailed [swimlane diagram](https://github.com/codatio/b
 
 Call the `/applications/start` endpoint to trigger the creation of a new loan application. In the background, the app creates a company using Codat's `POST /companies` endpoint using the application `id` as the company name.
 
-Codat returns the company and application `id`s in the endpoint response together with a `linkUrl`. In the app, we will use these elements to fill applecation details and connect a data source next. 
+Codat returns the company and application `id`s in the endpoint response together with a `linkUrl`. In the app, we will use these elements to fill applecation details and connect a data source next.  
 
-```json Title="Example enpoint response"
+```json title="Example endpoint response"
   {
     "id": "1c727866-6923-4f81-aa7b-c7fd8c533586",
     "codatCompanyId": "a9e28b79-6a98-4190-948d-3bd4d60e7c0a",
@@ -100,9 +100,9 @@ Clicking the button takes you to the **Account categorization** page which displ
 The demo app now has all the components that it needs to produce an underwriting decision. The decision is automatically made by the 
 [LoanUnderwriter](https://dev.azure.com/codat/Codat%20Spikes/_git/DemosUnderwriting?path=/Codat.Demos.Underwriting.Api/Services/LoanUnderwriter.cs&version=GBmain) service based on thresholds that need to be passed by the applicant. We then update the loan application with a relevant status to indicate the decision made on the loan, or any errors that occurred in the process. You can poll the `GET applications/{applicationId}` endpoint in [Swagger](http://localhost:5069/swagger/index.html) anytime to check the status of your loan. 
 
-:::tip Ready for more? 💪
+### 💪 Ready for more? 
 
-Try out different scenarios to make the most of your experience with the demo app:
+:::tip Try these scenarios to make the most of your experience with the demo app:
 
 <Tabs>
   <TabItem value="assess" label="Assess in the Portal">  

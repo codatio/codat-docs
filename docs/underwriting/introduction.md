@@ -17,9 +17,7 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 
 🛠️ The demo project is implemented in [.NET 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) as a backend API. You can configure and run the demo app in the terminal, or use your preferred IDE or code editor.
 
-### What this guide covers
-
-#### ✔️ Explore the guide and the demo app to:
+### ✔️ Explore the guide and the demo app to:
 
 - Create and submit an example loan application form,
 - Create a test company via Codat’s API to represent the borrower,
@@ -28,7 +26,7 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 - Use Codat’s webhooks to trigger the underwriting of a loan,
 - Produce an automated underwriting decision based on custom financial data points. 
 
-#### ❌ This guide does not cover: 
+### ❌ This guide does not cover: 
 
 - Building any application form and dashboard UIs,
 - Details or recommendations of various financial data points used in different underwriting models.
