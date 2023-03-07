@@ -96,6 +96,8 @@ The demo app now has all the components that it needs to produce an underwriting
 
 :::tip Explore further
 
+Does it work if I put text here?
+
 <Tabs>
   <TabItem value="assess" label="Assess in the Portal">  
 
@@ -117,7 +119,8 @@ The demo app now has all the components that it needs to produce an underwriting
   Take the demo one step further and use real credentials to access existing financial data in an accounting platform. Set up the [integration](/integrations/accounting/overview) you plan to use, and connect to it while following the auth flow. Then, review how the app makes a decision based on your company's real data. 
 
   </TabItem>
-</Tabs>
+</Tabs>  
+:::
 
 ### Recap
 
