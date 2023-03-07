@@ -1,5 +1,6 @@
 ---
 title: "Welcome to the demo app guide"
+description: "  " 
 ---
 
 :::tip Who is this guide for?
