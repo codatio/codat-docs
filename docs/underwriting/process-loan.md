@@ -1,6 +1,6 @@
 ---
 title: "Demo app in action"
-description: "Follow the end-to-end application process steps of the underwriting demo app to start an application, analyze it, and make a decision on the loan request"
+description: "Follow the underwriting demo app end-to-end to start an application, analyze it, and make a decision on the loan request"
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -39,12 +39,12 @@ Call the `/applications/start` endpoint to trigger the creation of a new loan ap
 Codat returns the company and application `id`s in the endpoint response together with a `linkUrl`. In the app, we will use these elements to fill applecation details and connect a data source next. 
 
 ```json Title="Example enpoint response"
-{
-   "id": "1c727866-6923-4f81-aa7b-c7fd8c533586",
-   "codatCompanyId": "a9e28b79-6a98-4190-948d-3bd4d60e7c0a",
-   "status": "Started", 
-   "linkUrl": "https://link.codat.io/company/a9e28b79-6a98-4190-948d-3bd4d60e7c0a"
-}
+  {
+    "id": "1c727866-6923-4f81-aa7b-c7fd8c533586",
+    "codatCompanyId": "a9e28b79-6a98-4190-948d-3bd4d60e7c0a",
+    "status": "Started", 
+    "linkUrl": "https://link.codat.io/company/a9e28b79-6a98-4190-948d-3bd4d60e7c0a"
+  }
 ```
 
 ### <input type="checkbox" unchecked /> Provide application details  
