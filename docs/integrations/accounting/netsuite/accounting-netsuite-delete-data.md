@@ -1,5 +1,5 @@
 ---
-title: "Delete Bill payments from Oracle NetSuite"
+title: "Delete data from Oracle NetSuite"
 createdAt: "2022-12-09T17:06:02.593Z"
 updatedAt: "2023-01-04T09:51:42.874Z"
 ---
