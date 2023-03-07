@@ -17,7 +17,7 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 
 🛠️ The demo project is implemented in [.NET 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) as a backend API. You can configure and run the demo app in the terminal, or use your preferred IDE or code editor.
 
-### ✔️ Explore the guide and the demo app to:
+### ✔️ Delve into the demo app to...
 
 - Create and submit an example loan application form,
 - Create a test company via Codat’s API to represent the borrower,
@@ -26,25 +26,24 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 - Use Codat’s webhooks to trigger the underwriting of a loan,
 - Produce an automated underwriting decision based on custom financial data points. 
 
-### ❌ This guide does not cover: 
+### ❌ This guide does not cover...
 
 - Building any application form and dashboard UIs,
 - Details or recommendations of various financial data points used in different underwriting models.
 
+### About the demo app
+
+The app's codebase is available via our [GitHub repo](https://github.com/codatio/build-guide-underwriting-be). Clone it locally to try out the application.
+
+The codebase uses Codat and its [Assess](/assess/overview) product to make an underwriting decision. We will walk you through the setup in the Portal and the code [next](/underwriting/setting-up). 
+
 ### Why we use _Assess_
 
-The demo app makes use of the categorization feature of [Assess](/assess/overview). It assigns a category to each account in the company's chart of accounts, thus standardizing the data irrespective of its source. 
+The demo app makes use of the categorization feature of [Assess](/assess/overview). It assigns a category to each account in the company's full list of accounts, thus standardizing the data irrespective of its source. 
 
 In turn, this helps you make a comprehensive assessment of your customer's financial health, produce additional insights (e.g. calculate financial ratios), and automate decisioning based on these insights. 
 
-### About the demo app
+### Read next
 
-The app's code base is available via our [GitHub repo](https://github.com/codatio/build-guide-underwriting-be). Clone it locally to try out the application.
-
-To run the demo app, you need to have an account with Codat, enable the Assess product, and get your API key to use it in the demo app. You also need a way to access remote systems from your locally hosted server. We recommend using [ngrok](https://ngrok.com/) for that purpose. 
-
-We will take you through these steps in detail when [setting up the demo app](/underwriting/setting-up). 
-
-### What's next
-
-Now that you know the focus and purpose of our demo app and its guide, go ahead and [set up Codat and your local environment](/underwriting/setting-up).
+Now that you know the focus and purpose of our demo app and its guide, take the next step:
+* [Set up Codat and your local environment](/underwriting/setting-up).

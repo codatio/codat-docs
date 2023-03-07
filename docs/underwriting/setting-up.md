@@ -17,10 +17,6 @@ import TabItem from "@theme/TabItem";
 
 We provide a [free account](https://signup.codat.io/) that lets you explore and test our APIs and other products, including Assess. It also comes equipped with a sample company. When you start working on your own underwriting solution, you may want to explore our other [plans](https://www.codat.io/plans/).
 
-### <input type="checkbox" unchecked/> Get your API key
-
-In the [Developers](https://app.codat.io/developers/api-keys) section of the Codat Portal, copy your API key from the **API key** column. You will need this to run the demo app. Make sure you copy the API key, not the auth header.
-
 ### <input type="checkbox" unchecked /> Enable the Assess product 
 
 In the [Products](https://app.codat.io/settings/products) section of the Codat Portal, find **Assess** in the list of products and enable it. This also enables data types required by this product. For example, `balanceSheet` and `profitandLoss`, which are used by the demo app, will be enabled.
@@ -33,11 +29,11 @@ In the **Auth Flow > Link [settings](https://app.codat.io/settings/link-settings
 
 You may want to explore and customize Codat's [auth flow](/auth-flow/customize/customize-link) further as part of working on an underwriting solution of your own.
 
-### <input type="checkbox" unchecked /> Configure ngrok
+### <input type="checkbox" unchecked /> Listen for webhooks
 
 The app will use several webhooks to track completion of the financial data sync and the categorization of accounts, and Sandbox linking completion. 
 
-We recommend using [ngrok](https://ngrok.com/) to access Codat's webhooks. After installing ngrok, go to its root directory. If working with Windows, open the `ngrok.exe` file to launch the ngrok terminal. Then, configure your local machine to receive web traffic on port 5069. The demo app is configured to listen for Codat's webhooks on this port.
+We will use [ngrok](https://ngrok.com/) for the demo to listen for Codat's webhooks. After installing ngrok, go to its root directory. If working with Windows, open the `ngrok.exe` file to launch the ngrok terminal. Then, configure your local machine to receive web traffic on port 5069. The demo app is configured to listen for Codat's webhooks on this port.
 
 <Tabs>
    <TabItem value="win" label="Windows OS">  
@@ -47,7 +43,7 @@ We recommend using [ngrok](https://ngrok.com/) to access Codat's webhooks. After
    ```bash
    .\ngrok.exe http 5069
    ```  
-   This triggers ngrok to start a new session. Copy the **forwarding address** - you will use it to set up webhooks.
+   This triggers ngrok to start a new session. Copy the **forwarding address** - this will be the `<server-url>` for the webhooks.
 
    </TabItem>
 
@@ -58,7 +54,7 @@ We recommend using [ngrok](https://ngrok.com/) to access Codat's webhooks. After
    ```bash
    brew install ngrok ngrok http 5069
    ```  
-   This triggers ngrok to start a new session. Copy the **forwarding address** - you will use it to set up webhooks.
+   This triggers ngrok to start a new session. Copy the **forwarding address** - this will be the `<server-url>` for the webhooks.
 
    </TabItem>
 </Tabs>
@@ -67,25 +63,25 @@ We recommend using [ngrok](https://ngrok.com/) to access Codat's webhooks. After
 
 In the [Alerting rules](https://app.codat.io/monitor/rules) section of the Codat Portal, create three rules, one for each webhook we will use:
 
-   |  Rule name                                  | Webhook notification URL                                    |
+   |  Rule type                                  | Webhook notification URL                                    |
    |---------------------------------------------|-------------------------------------------------------------|
-   | Company Data Connection status has changed  | `<server-url>/webhooks/codat/data-connection-status`        |
-   | Data sync completed                         | `<server-url>/webhooks/codat/datatype-sync-complete`        |
-   | Account categories updated                  | `<server-url>/webhooks/codat/account-categorisation-update` |
+   | Company Data Connection status has changed  | ```<server-url>/webhooks/codat/data-connection-status```       |
+   | Data sync completed                         | ```<server-url>/webhooks/codat/datatype-sync-complete```       |
+   | Account categories updated                  | ```<server-url>/webhooks/codat/account-categorisation-update```|
 
-Click **Create rule** to open the new rule creation window. Select the rule type, apply it to all companies, and assign in a webhook URL. Make sure to replace the `<server-url>` with your forwarding address.
+Click **Create rule** to open the new rule creation window. Select the rule type, apply it to all companies, and assign it a webhook URL. Make sure to replace the `<server-url>` with your forwarding address.
 
    ![](/img/use-cases/underwriting/rule-creation-screen.png)
 
-### <input type="checkbox" unchecked /> Clone the app repository
+### <input type="checkbox" unchecked /> Clone the code
 
-Clone our demo repository on [GitHub](https://github.com/codatio/build-guide-underwriting-be) to download the underwriting demo app. 
+Clone our demo repo on [GitHub](https://github.com/codatio/build-guide-underwriting-be) to download the underwriting demo app. 
 
 The main file directory for the demo app is `Codat.Demos.Underwriting.Api`. Key logic components of the app are located in `Controllers`, `Orchestrator`, and `Services` folders.
 
 Note that the other directory in the repository, `Codat.Demos.Underwriting.Api.Tests`, contains a series of unit tests for the demo app and is not needed for you to run the demo project. 
 
-```go title="Codat.Demos.Underwriting.Api directory"
+```sh title="Codat.Demos.Underwriting.Api directory"
    ├──BindingModule.cs
    ├──Codat.Demos.Underwriting.Api.csproj
    ├──Program.cs
@@ -120,7 +116,9 @@ Note that the other directory in the repository, `Codat.Demos.Underwriting.Api.T
 ```
 ### <input type="checkbox" unchecked/> Set your API key
 
-In the `\Codat.Demos.Underwriting.Api\` directory, edit the `appsettings.json` file and enter the API key you copied previously as the `CodatApiKey`.
+In the [Developers](https://app.codat.io/developers/api-keys) section of the Codat Portal, copy your API key from the **API key** column **(not the auth header)**. 
+
+In the `Codat.Demos.Underwriting.Api\` directory, edit the `appsettings.json` file and enter the API key you just copied as the `CodatApiKey`.
 
 ### <input type="checkbox" unchecked/> Run the app
 
@@ -130,7 +128,7 @@ In the `\Codat.Demos.Underwriting.Api\` directory, edit the `appsettings.json` f
 Run the following command in the root directory `Codat.Demos.Underwriting.Api`:
 
 ```sh
-dotnet.exe run --launch-profile http
+dotnet run --launch-profile http
 ```
 Once running, open the Swagger page in your web browser: `http://localhost:5069/swagger/index.html` You will use it to call the demo's endpoints.
 
@@ -156,6 +154,6 @@ Ensure the `http` profile is set and press the "Play" icon. The IDE will automat
 
 ### Recap
 
-You have now set up your Codat instance and your local environment in preparation for running the app. You have also cloned the repository and initiated the app run.
+You have now set up your Codat instance and your local environment in preparation for running the app. You have also cloned the repository and started running the app.
 
-Next, [see the app in action](/underwriting/process-loan).
+Next, [use the app to underwrite a loan](/underwriting/process-loan).

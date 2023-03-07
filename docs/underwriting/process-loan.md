@@ -14,6 +14,9 @@ import TabItem from '@theme/TabItem';
 * Receive a decision on the loan. 
 
 :::note Underwriting demo process flow
+
+This diagram shows the steps of the underwriting process as performed by the demo app and helps you visualize the relationship and information exchange between its different components.
+
 ``` mermaid
   sequenceDiagram
     participant frontend as Underwriting Frontend 
@@ -25,14 +28,16 @@ import TabItem from '@theme/TabItem';
     backend ->> backend: Underwrite loan
     backend ->> frontend: Application outcome
 ```  
-You can also review the detailed [swimlane diagram](https://github.com/codatio/build-guide-underwriting-be#implementing-the-solution) of the flow followed by the demo app.
+You can also review the detailed [diagram](https://github.com/codatio/build-guide-underwriting-be#implementing-the-solution) of the flow that the demo app follows.
 :::  
 
 ### <input type="checkbox" unchecked /> Start a new loan application  
 
 🙏🏽 This step is normally performed by the borrower.
 
-💡 Use [Swagger](http://localhost:5069/swagger/index.html) to interact with the various endpoints used by the demo app. There are three endpoints that support the creation and processing of the application form, and three endpoints to interact with webhook rules you have previously set up. If you using an IDE, Swagger should have opened in your browser automatically when you first ran the app. 
+💡 We will use [Swagger](http://localhost:5069/swagger/index.html) to act as a presentation layer and allow us to interact with the various endpoints used by the demo app. 
+
+There are three endpoints that support the creation and processing of the application form, and three endpoints to interact with webhook rules you have previously set up. If you using an IDE, Swagger should have opened in your browser automatically when you first ran the app. 
 
 Call the `/applications/start` endpoint to trigger the creation of a new loan application. In the background, the app creates a company using Codat's `POST /companies` endpoint using the application `id` as the company name.
 
@@ -102,34 +107,24 @@ The demo app now has all the components that it needs to produce an underwriting
 
 ### 💪 Ready for more? 
 
-:::tip Try these scenarios to make the most of your experience with the demo app:
+Try these suggestions to make the most of your experience with the demo app:
 
-<Tabs>
-  <TabItem value="assess" label="Assess in the Portal">  
+- View Assess in the [Portal](https://app.codat.io/) by navigating to **Products > Assess**  
+  It provides you with a visual representation of the financial data pulled by our endpoints.
+  
+- Play around with thresholds  
+  In the `appsettings.json` file in the `\Codat.Demos.Underwriting.Api\` directory, set your own example thresholds for data points used by the app's underwriting service and see how this affects the application decision.
 
-  Navigate to <b>Products > Assess</b> in the [Codat Portal](https://app.codat.io/) and explore the visual representation of the financial data pulled by our endpoints. Focus on Profit and Loss, and Balance Sheet data, as these are used in the app for loan underwriting. 
+- Underwrite using different datasets  
+  Start another loan application, and choose a different Sandbox company type to get a different set of financial data to be used in the decision-making. 
 
-  </TabItem>
-    <TabItem value="thresh" label="Thresholds">  
-
-  In the `appsettings.json` file in the `\Codat.Demos.Underwriting.Api\` directory, set your own example thresholds for data points used by the app's underwriting service. Play around with the values to see how this affects the application decision.
-
-  </TabItem>
-  <TabItem value="comptype" label="Company types">  
-
-  Start another loan application, and choose a company type different from <b>Small UK Company</b> when linking the Sandbox. This will provide you with a different set of financial data to be used in the decision-making. 
-
-  </TabItem>
-  <TabItem value="realco" label="Real company">  
-
+- Use a company's real data  
   Take the demo one step further and use real credentials to access existing financial data in an accounting platform. Set up the [integration](/integrations/accounting/overview) you plan to use, and connect to it while following the auth flow. Then, review how the app makes a decision based on your company's real data. 
 
-  </TabItem>
-</Tabs>  
-:::
+- Inspect the underwriting logic  
+  We provide [detailed information](/underwriting/uw-decision) about the underwriting logic we included in our demo app, and how exactly the financial data is fetched. 
+  
 
 ### Recap
 
 You have now successfully run the demo app, covering all the key underwriting process steps. You have started and completed an application, connected and fetched accounting data, and received a decision on your loan application. 
-
-Next, you can [read more](/underwriting/uw-decision) about the underwriting logic we included in our demo app, and how exactly the financial data is fetched. 
