@@ -35,9 +35,9 @@ You can also review the detailed technical [diagram](https://github.com/codatio/
 
 🙏🏽 This step is normally performed by the borrower.
 
-:::tip Undewriting frontend
+:::note Undewriting frontend
 
-We use [Swagger](http://localhost:5069/swagger/index.html) to act as a presentation layer and allow us to interact with the various endpoints used by the demo app. There are three endpoints that support the creation and processing of the application form, and three endpoints to interact with webhook rules you have previously set up. If you using an IDE, Swagger should have opened in your browser automatically when you first ran the app.
+We use [Swagger](http://localhost:5069/swagger/index.html) to act as a presentation layer and allow us to interact with the various endpoints used by the demo app. There are three endpoints that support the creation and processing of the application form, and three endpoints to interact with webhook rules you have previously set up. If you are using an IDE, Swagger should have opened in your browser automatically when you first ran the app.
 :::
 
 Call the `/applications/start` endpoint to trigger the creation of a new loan application. In the background, the app creates a company using Codat's `POST /companies` endpoint using the application `id` as the company name.
