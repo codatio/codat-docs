@@ -38,7 +38,7 @@ Call the `/applications/start` endpoint to trigger the creation of a new loan ap
 
 Codat returns the company and application `id`s in the endpoint response together with a `linkUrl`. In the app, we will use these elements to fill applecation details and connect a data source next. 
 
-```json Title="Example /applications/start response"
+```json Title="Example enpoint response"
 {
    "id": "1c727866-6923-4f81-aa7b-c7fd8c533586",
    "codatCompanyId": "a9e28b79-6a98-4190-948d-3bd4d60e7c0a",
@@ -49,9 +49,9 @@ Codat returns the company and application `id`s in the endpoint response togethe
 
 ### <input type="checkbox" unchecked /> Provide application details  
 
-Once you receive the the application id, complete the application form using the `/applications/{applicationId}/form` endpoint. In our demo, we request the applicant's full name, company name, and the loan amount, length, and purpose. If the details provided are valid, they are stored against the application `id` with an acknowledgement of their receipt. 
-
 🙏🏽 This step is normally performed by the borrower.
+
+Once you receive the the application id, complete the application form using the `/applications/{applicationId}/form` endpoint. In our demo, we request the applicant's full name, company name, and the loan amount, length, and purpose. If the details provided are valid, they are stored against the application `id` with an acknowledgement of their receipt. 
 
 ```json title="Example application form"
   {
@@ -66,13 +66,11 @@ Once you receive the the application id, complete the application form using the
 
 ### <input type="checkbox" unchecked /> Share financial data  
 
-Next, you need to provide Codat access to an accounting platform so that we can fetch the data required to underwrite the application. 
-
 🙏🏽 This step is normally performed by the borrower.
 
-To enable this, open the `linkUrl` returned by the new application response in your browser window. Follow the flow built using [Link](/auth-flow/overview), our hosted or embedded integrated authorization flow. 
+Next, you need to provide Codat access to an accounting platform so that we can fetch the data required to underwrite the application. Open the `linkUrl` returned by the new application response in your browser window. Follow the flow built using [Link](/auth-flow/overview), our hosted or embedded integrated authorization flow. 
 
-Select the **Codat Sandbox** as the source of accounting data:
+Select the **Codat Sandbox** as the source of accounting data.
 * You can choose any company type that best fits your use case.
 * You don't need to enter any credentials to authorize this connection. 
 * You should also skip the step of uploading business documents. 

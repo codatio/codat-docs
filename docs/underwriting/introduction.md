@@ -5,7 +5,7 @@ description: "  "
 
 :::tip Who is this guide for?
 
-This guide is for developers. We assume you are a tech-savvy backend developer and know how to use an API. No frontend experience is needed.
+This guide is for tech-savvy backend developers who know how to use an API. No frontend experience is needed.
 
 :::
 
@@ -23,7 +23,8 @@ This guide is for developers. We assume you are a tech-savvy backend developer a
 
 - Create and submit an example loan application form,
 - Create a test company via Codat’s API to represent the borrower,
-- Access and fetch test financial data using Codat’s Enhanced Profit and Loss and Enhanced Balance Sheet endpoints,
+- Link the test company to Codat's sandbox source of financial data,
+- Fetch that data using Codat’s Enhanced Profit and Loss and Enhanced Balance Sheet endpoints,
 - Use Codat’s webhooks to trigger the underwriting of a loan,
 - Produce an automated underwriting decision based on custom financial data points. 
 

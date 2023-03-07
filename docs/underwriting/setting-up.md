@@ -65,7 +65,7 @@ We recommend using [ngrok](https://ngrok.com/) to access Codat's webhooks. After
 
 ### <input type="checkbox" unchecked /> Configure Codat webhooks
 
-In the [Alerting rules](https://app.codat.io/monitor/rules) section of the Codat Portal, create three rules, one for each webhook we will use, as per the table below.
+In the [Alerting rules](https://app.codat.io/monitor/rules) section of the Codat Portal, create three rules, one for each webhook we will use:
 
    |  Rule name                                  | Webhook notification URL                                    |
    |---------------------------------------------|-------------------------------------------------------------|
@@ -73,7 +73,7 @@ In the [Alerting rules](https://app.codat.io/monitor/rules) section of the Codat
    | Data sync completed                         | `<server-url>/webhooks/codat/datatype-sync-complete`        |
    | Account categories updated                  | `<server-url>/webhooks/codat/account-categorisation-update` |
 
-Click **Create rule** to open the new rule creation window. Select the rule type, apply it to all companies, and assign in a webhook URL. Make sure to replace the `<server-url>` with your relevant forwarding address.
+Click **Create rule** to open the new rule creation window. Select the rule type, apply it to all companies, and assign in a webhook URL. Make sure to replace the `<server-url>` with your forwarding address.
 
    ![](/img/use-cases/underwriting/rule-creation-screen.png)
 
