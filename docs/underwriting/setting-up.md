@@ -85,7 +85,7 @@ The main file directory for the demo app is `Codat.Demos.Underwriting.Api`. Key 
 
 Note that the other directory in the repository, `Codat.Demos.Underwriting.Api.Tests`, contains a series of unit tests for the demo app and is not needed for you to run the demo project. 
 
-```c title="Codat.Demos.Underwriting.Api directory"
+```bash title="Codat.Demos.Underwriting.Api directory"
    ├──BindingModule.cs
    ├──Codat.Demos.Underwriting.Api.csproj
    ├──Program.cs
