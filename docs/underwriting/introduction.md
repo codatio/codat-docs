@@ -1,98 +1,49 @@
 ---
-title: "Build guide overview"
-description: "Key goals, purpose, and structure of Codat's underwriting build guide"
+title: "Welcome to the demo app guide"
+description: "  " 
 ---
 
 :::tip Who is this guide for?
 
-Codat's build guides are for our developer users. We assume you are technically savvy and know how to use an API.
+This guide is for tech-savvy backend developers who know how to use an API. No frontend experience is needed.
+
 :::
 
-## Summary
+### Overview
 
-:dart: This guide lets you experience the end-to-end underwriting process flow, both as an applicant and as a lender, and understand the key steps of building an underwriting application supported by Codat's [Assess](/assess/overview) product.
+🎯 Codat makes underwriting easier by getting you trusted data with which to check a loan applicant’s finances. With our demo app, you will experience the end-to-end underwriting process flow with automatic decision-making supported by Codat's [Assess](/assess/overview) product. We will focus on the lender's perspective. 
 
-:hourglass_flowing_sand: Estimated time to complete: X minutes
+⏳ Estimated time to complete: X minutes
 
-:hammer: The project is implemented in [.NET 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) as a backend API.
+🛠️ The demo project is implemented in [.NET 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) as a backend API. You can configure and run the demo app in the terminal, or use your preferred IDE or code editor.
 
-## Key targets
+### ✔️ Delve into the demo app to...
 
-In simple terms, underwriting means checking an applicant’s finances to make a decision on their loan request. 
-
-With this build guide, we will explain how a lender can use Codat to automate the underwriting decision-making using our [Assess](/assess/overview) product against the end-to-end lending process. We also provide you with a demo project, where you can see underwriting with Codat in action using our Sandbox integration data. 
-
-✔️ Explore our demo project to:
-
-- Create a test company via Codat’s API and submit an example loan application form,
-- Access and fetch test financial data using Codat’s Enhanced Profit and Loss and Enhanced Balance Sheet endpoints,
+- Create and submit an example loan application form,
+- Create a test company via Codat’s API to represent the borrower,
+- Link the test company to Codat's sandbox source of financial data,
+- Fetch that data using Codat’s Enhanced Profit and Loss and Enhanced Balance Sheet endpoints,
 - Use Codat’s webhooks to trigger the underwriting of a loan,
-- Produce an automated underwriting decision based on custom financial metrics. 
+- Produce an automated underwriting decision based on custom financial data points. 
 
-❌ This guide does not cover: 
+### ❌ This guide does not cover...
 
-- Building a user interface to support the application form submissions and review of the application’s underwriting status,
-- Details or recommendations of various financial metrics used in different underwriting models.
+- Building any application form and dashboard UIs,
+- Details or recommendations of various financial data points used in different underwriting models.
 
-## Running the demo project
+### About the demo app
 
-Pick up our underwriting demo repository on [Github](https://github.com/codatio/build-guide-underwriting-be) and clone it. 
+The app's codebase is available via our [GitHub repo](https://github.com/codatio/build-guide-underwriting-be). Clone it locally to try out the application.
 
-To run the demo app, you need to have an account with Codat, enable the Assess product, and get your API key to use it in the demo app. You also need a way to access remote systems from your locally hosted server. We will take you through these steps in detail when [setting up the solution](/underwriting/setting-up). 
+The codebase uses Codat and its [Assess](/assess/overview) product to make an underwriting decision. We will walk you through the setup in the Portal and the code [next](/underwriting/setting-up). 
 
-### Directory structure
+### Why we use _Assess_
 
-The main file directory for the demo app is `Codat.Demos.Underwriting.Api`. Key logic components of the app are located in `Controllers`, `Orchestrator`, and `Services` folders.
+The demo app makes use of the categorization feature of [Assess](/assess/overview). It assigns a category to each account in the company's full list of accounts, thus standardizing the data irrespective of its source. 
 
-Note that the other directory in the repository, `Codat.Demos.Underwriting.Api.Tests`, contains a series of unit tests for the demo app and is not needed for you to run the demo project. 
+In turn, this helps you make a comprehensive assessment of your customer's financial health, produce additional insights (e.g. calculate financial ratios), and automate decisioning based on these insights. 
 
-```json title="Codat.Demos.Underwriting.Api"
-├──BindingModule.cs
-├──Codat.Demos.Underwriting.Api.csproj
-├──Program.cs
-├──appsettings.Development.json
-├──appsettings.json // Maintain your API key and desired underwriting thresholds in this file
-|   
-├──Controllers // Controllers for the API endpoints to manage expected actions and results
-|    ├──UnderwritingController.cs // Front-end endpoint controller
-|    └──WebhooksController.cs     // Back-end endpoint controller
-|       
-├──DataClients // A service to make API calls to Codat
-|    └──CodatDataClient.cs
-|       
-├──Exceptions // Definitions for managing error events 
-|    ├──ApplicationOrchestratorException.cs
-|    ├──ApplicationStatusStoreException.cs
-|    ├──ApplicationStoreException.cs
-|    ├──CodatDataClientException.cs
-|    ├──ConfigurationMissingException.cs
-|    ├──LoanUnderwriterException.cs
-|    └──StreamHelperException.cs
-|       
-├──Extensions // Used to add new methods to the IEnumerable class
-|    └──CollectionExtensions.cs
-|       
-├──Models // Represent the shape of data that will be returned to the user
-|    ├──Application.cs
-|    ├──CodatAlerts.cs
-|    ├──CodatPaginatedResponse.cs
-|    ├──Company.cs
-|    ├──DataConnection.cs
-|    ├──FinancialMetric.cs
-|    ├──Platform.cs
-|    ├──Report.cs
-|    └──UnderwritingParameters.cs
-|       
-├──Orchestrators // Manages the six methods that relate to endpoints used in the app
-|    └──ApplicationOrchestrator.cs
-|       
-├──Properties // IDE setup for http, https, and IIS Express profiles
-|    └──launchSettings.json
-|       
-└──Services // Key application components that perform specified tasks
-     ├──ApplicationStore.cs // Handles creating and storing the loan application in-memory
-     └──LoanUnderwriter.cs  // Decision process method for the underwriting model used in the demo
-```
 ### Read next
 
-- [Setting up Codat and your local environment](/underwriting/setting-up)
+Now that you know the focus and purpose of our demo app and its guide, take the next step:
+* [Set up Codat and your local environment](/underwriting/setting-up).

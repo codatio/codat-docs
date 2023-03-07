@@ -224,7 +224,6 @@ module.exports = {
   underwriting: [
     "underwriting/introduction",
     "underwriting/setting-up",
-    "underwriting/set-up-local-env",
     "underwriting/process-loan",
     "underwriting/uw-decision",
   ]
