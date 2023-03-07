@@ -41,7 +41,7 @@ In turn, this helps you make a comprehensive assessment of your customer's finan
 
 Clone our underwriting demo repository on [GitHub](https://github.com/codatio/build-guide-underwriting-be). 
 
-To run the demo app, you need to have an account with Codat, enable the Assess product, and get your API key to use it in the demo app. You also need a way to access remote systems from your locally hosted server. We will take you through these steps in detail when [setting up the solution](/underwriting/setting-up). 
+To run the demo app, you need to have an account with Codat, enable the Assess product, and get your API key to use it in the demo app. You also need a way to access remote systems from your locally hosted server. We will take you through these steps in detail when [setting up the demo app](/underwriting/setting-up). 
 
 ### What's next
 

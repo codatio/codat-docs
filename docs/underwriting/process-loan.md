@@ -94,9 +94,9 @@ The demo app now has all the components that it needs to produce an underwriting
 
 🙏🏽💰 The decisioning is normally performed by the lender, but the borrower is able to query an application's status at any point. 
 
-:::tip Explore further
+:::tip Ready for more? 💪
 
-Does it work if I put text here?
+Try these suggestions to make the most of your experience with the demo app and try in in different scenarios.
 
 <Tabs>
   <TabItem value="assess" label="Assess in the Portal">  
@@ -124,4 +124,6 @@ Does it work if I put text here?
 
 ### Recap
 
-You have now successfully run the demo app, covering all the key underwriting process steps. You have started and completed an application, connected and fetched accounting data, and received a decision on your loan application. Next, you can [read more](/underwriting/uw-decision) about the underwriting logic we included in our demo app, and how exactly the financial data is fetched. 
+You have now successfully run the demo app, covering all the key underwriting process steps. You have started and completed an application, connected and fetched accounting data, and received a decision on your loan application. 
+
+Next, you can [read more](/underwriting/uw-decision) about the underwriting logic we included in our demo app, and how exactly the financial data is fetched. 
