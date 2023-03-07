@@ -1,6 +1,5 @@
 ---
 title: "Welcome to the demo app guide"
-description: "Goals, purpose, and structure of Codat's underwriting demo app guide"
 ---
 
 :::tip Who is this guide for?
