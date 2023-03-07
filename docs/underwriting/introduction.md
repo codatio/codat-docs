@@ -15,18 +15,19 @@ This guide is for developers. We assume you are a tech-savvy backend developer a
 
 ⏳ Estimated time to complete: X minutes
 
-🛠️ The demo project is implemented in [.NET 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) as a backend API. We also recommend using [ngrok](https://ngrok.com/) for exposing services from a local server to the public Internet. You can configure and run the demo app in the terminal, or use your preferred IDE or code editor.
+🛠️ The demo project is implemented in [.NET 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) as a backend API. You can configure and run the demo app in the terminal, or use your preferred IDE or code editor.
 
 ### What this guide covers
 
-✔️ Explore the guide and the demo app to:
+#### ✔️ Explore the guide and the demo app to:
 
-- Create a test company via Codat’s API and submit an example loan application form,
+- Create and submit an example loan application form,
+- Create a test company via Codat’s API to represent the borrower,
 - Access and fetch test financial data using Codat’s Enhanced Profit and Loss and Enhanced Balance Sheet endpoints,
 - Use Codat’s webhooks to trigger the underwriting of a loan,
 - Produce an automated underwriting decision based on custom financial data points. 
 
-❌ This guide does not cover: 
+#### ❌ This guide does not cover: 
 
 - Building any application form and dashboard UIs,
 - Details or recommendations of various financial data points used in different underwriting models.
@@ -39,9 +40,11 @@ In turn, this helps you make a comprehensive assessment of your customer's finan
 
 ### About the demo app
 
-Clone our underwriting demo repository on [GitHub](https://github.com/codatio/build-guide-underwriting-be). 
+The app's code base is available via our [GitHub repo](https://github.com/codatio/build-guide-underwriting-be). Clone it locally to try out the application.
 
-To run the demo app, you need to have an account with Codat, enable the Assess product, and get your API key to use it in the demo app. You also need a way to access remote systems from your locally hosted server. We will take you through these steps in detail when [setting up the demo app](/underwriting/setting-up). 
+To run the demo app, you need to have an account with Codat, enable the Assess product, and get your API key to use it in the demo app. You also need a way to access remote systems from your locally hosted server. We recommend using [ngrok](https://ngrok.com/) for that purpose. 
+
+We will take you through these steps in detail when [setting up the demo app](/underwriting/setting-up). 
 
 ### What's next
 
