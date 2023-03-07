@@ -1,11 +1,11 @@
 ---
 title: "Demo app in action"
-description: "Understand how to follow the end-to-end application process steps as intended in the underwriting demo app"
+description: "Follow the end-to-end application process steps of the underwriting demo app to start an application, analyze it, and make a decision on the loan request"
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## 🚀 In this section, you will...
+### 🚀 In this section, you will...
 * Review the basic process flow followed by the demo app,
 * Create a new loan application,
 * Create a Codat company and connect it to the Codat Sandbox,
@@ -28,7 +28,7 @@ import TabItem from '@theme/TabItem';
 You can also review the detailed [swimlane diagram](https://github.com/codatio/build-guide-underwriting-be#implementing-the-solution) of the flow followed by the demo app.
 :::  
 
-## <input type="checkbox" unchecked /> Start a new loan application  
+### <input type="checkbox" unchecked /> Start a new loan application  
 
 💡 Use [Swagger](http://localhost:5069/swagger/index.html) to interact with the various endpoints used by the demo app. It has three endpoints that support the creation and processing of the application form, and three endpoints to interact with webhook rules you have previously set up. Swagger should have opened in your browser automatically when you first ran the app. 
 
@@ -47,7 +47,7 @@ This allows us to assign the application a reference in Codat, even though we do
 ```
 🙏🏽 This step is normally performed by the borrower.
 
-## <input type="checkbox" unchecked /> Provide application details  
+### <input type="checkbox" unchecked /> Provide application details  
 
 Once you receive the the application id, complete the application form using the `/applications/{applicationId}/form` endpoint. In our demo, we request the applicant's full name, company name, and the loan amount, length, and purpose.If the details provided are valid, they are stored against the application `id` with an acknowledgement of their receipt. 
 
@@ -63,7 +63,7 @@ Once you receive the the application id, complete the application form using the
 ```
 🙏🏽 This step is normally performed by the borrower.
 
-## <input type="checkbox" unchecked /> Share financial data  
+### <input type="checkbox" unchecked /> Share financial data  
 
 Next, you need to provide Codat access to an accounting platform so that we can fetch the data required to underwrite the application. 
 
@@ -73,7 +73,7 @@ To enable this, open the `linkUrl` returned by our `POST /companies` endpoint in
 
 ![](/img/use-cases/underwriting/sandbox-credentials-modal.png)
 
-## <input type="checkbox" unchecked /> Manually categorize accounts 
+### <input type="checkbox" unchecked /> Manually categorize accounts 
 
 While Codat’s Assess product is able to automatically categorize most of the source chart of accounts accounts, it is not always possible, and a manual intervention may be required. 
 
@@ -87,12 +87,14 @@ Clicking the button takes you to the **Account categorization** page which displ
 
 ![](/img/use-cases/underwriting/0000-acct-categorization-modal-06-03-2023.png)
 
-## <input type="checkbox" unchecked /> Make the decision on the loan 
+### <input type="checkbox" unchecked /> Make the decision on the loan 
 
 The demo app now has all the components that it needs to produce an underwriting decision. The decision is automatically made by the 
 [LoanUnderwriter](https://dev.azure.com/codat/Codat%20Spikes/_git/DemosUnderwriting?path=/Codat.Demos.Underwriting.Api/Services/LoanUnderwriter.cs&version=GBmain) service based on thresholds that need to be passed by the applicant. We then update the loan application with a relevant status to indicate the decision made on the loan, or any errors that occurred in the process. You can poll the `GET applications/{applicationId}` endpoint in [Swagger](http://localhost:5069/swagger/index.html) anytime to check the status of your loan. 
 
 🙏🏽💰 The decisioning is normally performed by the lender, but the borrower is able to query an application's status at any point. 
+
+:::tip Explore further
 
 <Tabs>
   <TabItem value="assess" label="Assess in the Portal">  
@@ -100,29 +102,23 @@ The demo app now has all the components that it needs to produce an underwriting
   Navigate to <b>Products > Assess</b> in the [Codat Portal](https://app.codat.io/) and explore the visual representation of the financial data pulled by our endpoints. Focus on Profit and Loss, and Balance Sheet data, as these are used in the app for loan underwriting. 
 
   </TabItem>
-  
-  <TabItem value="thresh" label="Thresholds">  
+    <TabItem value="thresh" label="Thresholds">  
 
   In the `appsettings.json` file of the `\DemosUnderwriting\Codat.Demos.Underwriting.Api\` directory, set your own example thresholds for data points used by the app's underwriting service. Play around with the values to see how this affects the application decision.
 
   </TabItem>
-
   <TabItem value="comptype" label="Company types">  
 
   Start another loan application, and choose a company type different from <b>Small UK Company</b> when linking the Sandbox. This will provide you with a different set of financial data to be used in the decision-making. 
 
   </TabItem>
-
   <TabItem value="realco" label="Real company">  
 
   Take the demo one step further and use real credentials to access existing financial data in an accounting platform. Set up the [integration](/integrations/accounting/overview) you plan to use, and connect to it while following the auth flow. Then, review how the app makes a decision based on your company's real data. 
 
   </TabItem>
-
 </Tabs>
 
-
-
-## Recap
+### Recap
 
 You have now successfully run the demo app, covering all the key underwriting process steps. You have started and completed an application, connected and fetched accounting data, and received a decision on your loan application. Next, you can [read more](/underwriting/uw-decision) about the underwriting logic we included in our demo app, and how exactly the financial data is fetched. 

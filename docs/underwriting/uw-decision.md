@@ -3,13 +3,13 @@ title: "How the decisioning works"
 description: "Reference page with details on our decisioning logic, fetching data, and coming to a decision"
 ---
 
-## 🚀 In this section, you will...
+### 🚀 In this section, you will...
 
 * Review the app's decisioning logic,
 * Understand how we fetch the required data, 
 * See how the app makes a decision based on that data. 
 
-## <input type="checkbox" unchecked/> Review the app's decisioning logic
+### <input type="checkbox" unchecked/> Review the app's decisioning logic
 
 Each lender usually has their own set of data points they use to review an application. 
 
@@ -47,7 +47,7 @@ Its threshold is maintained as `MaxGearingRatio` in `appsettings.json`. In the d
 
 </Tabs>
 
-## <input type="checkbox" unchecked/> See how we fetch financial data
+### <input type="checkbox" unchecked/> See how we fetch financial data
 
 Codat supports the automatic loan decision-making by providing the data required to calculate the ratios described previously. To fetch the required data, we use Assess' [Enhanced Profit and Loss](https://docs.codat.io/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-enhancedProfitAndLoss) and [Enhanced Balance Sheet](https://docs.codat.io/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-enhancedBalanceSheet) endpoints for analysis:
 
@@ -60,7 +60,7 @@ Both endpoints require a `reportDate`, `periodLength`, and `numberOfPeriods` as 
 
 Once both enhanced data types have been fetched, they are passed to the [LoanUnderwriter](https://dev.azure.com/codat/Codat%20Spikes/_git/DemosUnderwriting?path=/Codat.Demos.Underwriting.Api/Services/LoanUnderwriter.cs&version=GBmain) service together with the application's loan amount and term length. This is to perform an assessment of the prospective borrower's credit worthiness and make a decision on their application.
 
-## <input type="checkbox" unchecked/> Understand how we generate an automatic decision
+### <input type="checkbox" unchecked/> Understand how we generate an automatic decision
 
 Once the demo app fetches the data, it uses the results to calculate the data points we use in our underwriting model: gross profit margin, revenue, and gearing ratio. In the underwriting industry, there are other models and data points that can be used to make a decision. The selection depends on the needs of your business. 
 
@@ -72,7 +72,7 @@ The [LoanUnderwriter](https://dev.azure.com/codat/Codat%20Spikes/_git/DemosUnder
 
 Only if all the thresholds are met or surpassed by the applicant, the app updates the loan request automatically with an _Accepted_ status. Otherwise, the application is updated with a _Rejected_ status. The app also caters for a scenario of programmatic errors that means a decision could not be made with a _UnderwritingFailure_ status.
 
-## <input type="checkbox" unchecked/> Access additional resources
+### <input type="checkbox" unchecked/> Access additional resources
 
 🗝️ You may want to enhance this simple working guide with some UI elements - why not use [Embedded Link](https://docs.codat.io/auth-flow/authorize-embedded-link) to seamlessly include our authorization journey into your app?
 
@@ -80,7 +80,7 @@ Only if all the thresholds are met or surpassed by the applicant, the app update
 
 🧠 See what else [Codat recommends](https://www.codat.io/blog/how-to-underwrite-ecommerce-merchants-effectively/) to build your underwriting process effectively. 
 
-## Recap
+### Recap
 
 In this reference section, you have learned and understood in detail the data points we chose for our underwriting model, how we fetched the data used in in the calculation of these data points, and how all of this influenced the decision on the loan made automatically. 
 
