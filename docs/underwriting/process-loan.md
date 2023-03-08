@@ -1,5 +1,5 @@
 ---
-title: "Demo app in action"
+title: "Try the demo out"
 description: "Follow the underwriting demo app end-to-end to start an application, analyze it, and make a decision on the loan request"
 ---
 import Tabs from '@theme/Tabs';
@@ -37,7 +37,7 @@ You can also review the detailed technical [diagram](https://github.com/codatio/
 
 :::note Undewriting frontend
 
-We use [Swagger](http://localhost:5069/swagger/index.html) to act as a presentation layer and allow us to interact with the various endpoints used by the demo app. There are three endpoints that support the creation and processing of the application form, and three endpoints to interact with webhook rules you have previously set up. If you are using an IDE, Swagger should have opened in your browser automatically when you first ran the app.
+We use [Swagger](http://localhost:5069/swagger/index.html) to act as a presentation layer to interact with the demo endpoints. There are three endpoints that support the creation and processing of the application form, and three endpoints to interact with webhook rules you have previously set up. Remember to click **Try it out** and **Execute** when working with Swagger.
 :::
 
 Call the `/applications/start` endpoint to trigger the creation of a new loan application. In the background, the app creates a company using Codat's `POST /companies` endpoint using the application `id` as the company name.
@@ -87,15 +87,15 @@ Select the **Codat Sandbox** as the source of accounting data.
 
 💰 This step is normally performed by the lender.
 
-While Codat’s Assess product is able to automatically categorize most of the source accounts, it is not always possible, and a manual intervention may be required. 
+The demo app makes use of the categorization feature of [Assess](/assess/overview). When fetching financial data, Codat’s Assess product analyses the full list of a company's accounts and assigns a category to each account. While it is able to automatically categorize most of the source accounts, it is not always possible, and a manual intervention may be required. 
 
-In our demo, when accounts are pulled from Codat's Accounting Sandbox and categorized, one account remains without a specified category. You need to assign a category to it before the demo application is ready for underwriting. This is because the Profit and Loss, and Balance Sheet data types in Assess depend on fully categorized accounts.
+In our demo, one account remains without a specified category. You need to assign a category to it before the demo application is ready for underwriting. This is because the Profit and Loss, and Balance Sheet data types in Assess depend on fully categorized accounts.
 
-To do that, click on the **Companies** tab in the top menu in the [Codat Portal](https://app.codat.io/). Next, click on the company you are performing underwriting for, and navigate to **Products > Assess**. The red **Categorization required** button to the right of the company name indicates there are uncategorized accounts in the chart. 
+To do that, click on the **Companies** tab in the top menu in the [Codat Portal](https://app.codat.io/). Next, click on the company you are performing underwriting for, and navigate to **Products > Assess**. Click the red **Categorization required** button to the right of the company name. 
 
 ![](/img/use-cases/underwriting/0000-acct-categorization-modal-06-03-2023.png)
 
-Clicking the button takes you to the **Account categorization** page which displays a list of all the uncategorized accounts. Select the **Account type**, **Account subtype**, and **Account detail** from drop down lists. Once this is done, **Save** the categorization. 
+This takes you to the **Account categorization** page which displays the uncategorized account. **Account type** and **Account subtype** are pre-filled for you. **Categories version** should be set to _Version 2_. Select _Accounts Payable_ as **Account detail** in the drop down and **Save** the categorization. 
 
 ![](/img/use-cases/underwriting/0000-categorization-screen.png)
 

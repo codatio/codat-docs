@@ -1,5 +1,5 @@
 ---
-title: "Welcome to the demo app guide"
+title: "Demo app overview"
 description: "  " 
 ---
 
@@ -9,11 +9,11 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 
 :::
 
-### Overview
+### Summary
 
 🎯 Codat makes underwriting easier by getting you trusted data with which to check a loan applicant’s finances. With our demo app, you will experience the end-to-end underwriting process flow with automatic decision-making supported by Codat's [Assess](/assess/overview) product. We will focus on the lender's perspective. 
 
-⏳ Estimated time to complete: X minutes
+⏳ Estimated time to complete: 20 minutes
 
 🛠️ The demo project is implemented in [.NET 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) as a backend API. You can configure and run the demo app in the terminal, or use your preferred IDE or code editor.
 
@@ -39,9 +39,9 @@ The codebase uses Codat and its [Assess](/assess/overview) product to make an un
 
 ### Why we use _Assess_
 
-The demo app makes use of the categorization feature of [Assess](/assess/overview). It assigns a category to each account in the company's full list of accounts, thus standardizing the data irrespective of its source. 
+The demo app makes use of the categorization feature of [Assess](/assess/overview). This feature analyses the full list of a company's accounts and assigns a category to each account. For example, Assess will categorize a VAT account as  _Liability > Current liabilities > Taxes payable_. 
 
-In turn, this helps you make a comprehensive assessment of your customer's financial health, produce additional insights (e.g. calculate financial ratios), and automate decisioning based on these insights. 
+This standardizes the data irrespective of its source and helps you make a comprehensive assessment of your customer's financial health, produce additional insights (e.g. calculate financial ratios), and automate decisioning based on these insights. 
 
 ### Read next
 

@@ -111,6 +111,24 @@ module.exports = [
       "assess/portal/categorization-of-accounts",
     ],
   },
+  {
+    type: "category",
+    label: "Use case demos",
+    collapsed: true,
+    items: [
+      {
+        type: "category",
+        label: "Loan underwriting",
+        collapsed: true,
+        items: [
+          "underwriting/introduction",
+          "underwriting/setting-up",
+          "underwriting/process-loan",
+          "underwriting/uw-decision",
+               ],
+      },  
+           ],
+  }, 
   'assess/troubleshooting',
   {
     type: "link",

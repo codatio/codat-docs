@@ -19,15 +19,13 @@ We provide a [free account](https://signup.codat.io/) that lets you explore and 
 
 ### <input type="checkbox" unchecked /> Enable the Assess product 
 
-In the [Products](https://app.codat.io/settings/products) section of the Codat Portal, find **Assess** in the list of products and enable it. This also enables data types required by this product. For example, `balanceSheet` and `profitandLoss`, which are used by the demo app, will be enabled.
+In the **Settings > Organization settings > [Products](https://app.codat.io/settings/products)** section of the Codat Portal, find **Assess** in the list of products and enable it. This also enables data types required by this product. For example, `balanceSheet` and `profitandLoss`, which are used by the demo app, will be enabled.
 
 We use Assess' [categorization](https://docs.codat.io/assess/reports/enhanced-financials/categorize-accounts) feature. It allows you to perform automated decisioning based on the categorized accounts. 
 
-### <input type="checkbox" unchecked /> Check your auth flow settings
+### <input type="checkbox" unchecked /> Update your auth flow settings
 
-In the **Auth Flow > Link [settings](https://app.codat.io/settings/link-settings/data-connections)**, scroll to _Integration categories_. Ensure the _Accounting_ integration category is enabled, and the _Sandbox integrations_ switch is toggled on.
-
-You may want to explore and customize Codat's [auth flow](/auth-flow/customize/customize-link) further as part of working on an underwriting solution of your own.
+In the **Settings > Auth Flow > Link** [settings](https://app.codat.io/settings/link-settings/data-connections), ensure the _Sandbox integrations_ switch is toggled on. Check that the _Accounting_ integration category is enabled, and disable _Commerce_ and _Banking_ integration categories. 
 
 ### <input type="checkbox" unchecked /> Listen for webhooks
 
@@ -61,7 +59,7 @@ We will use [ngrok](https://ngrok.com/) for the demo to listen for Codat's webho
 
 ### <input type="checkbox" unchecked /> Configure Codat webhooks
 
-In the [Alerting rules](https://app.codat.io/monitor/rules) section of the Codat Portal, create three rules, one for each webhook we will use:
+In the **Monitor > Alerts > [Alerting rules](https://app.codat.io/monitor/rules)** section of the Codat Portal, create three rules, one for each webhook we will use:
 
    |  Rule type                                  | Webhook notification URL                                    |
    |---------------------------------------------|-------------------------------------------------------------|
@@ -116,9 +114,7 @@ Note that the other directory in the repository, `Codat.Demos.Underwriting.Api.T
 ```
 ### <input type="checkbox" unchecked/> Set your API key
 
-In the [Developers](https://app.codat.io/developers/api-keys) section of the Codat Portal, copy your API key from the **API key** column **(not the auth header)**. 
-
-In the `Codat.Demos.Underwriting.Api\` directory, edit the `appsettings.json` file and enter the API key you just copied as the `CodatApiKey`.
+In the [Developers](https://app.codat.io/developers/api-keys) section of the Codat Portal, copy your API key from the **API key** column **(not the auth header)**. You can click **Create another API key** if one wasn't automatically generated for you. In the `Codat.Demos.Underwriting.Api\` directory, edit the `appsettings.json` file and enter the API key you just copied as the `CodatApiKey`.
 
 ### <input type="checkbox" unchecked/> Run the app
 

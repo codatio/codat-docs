@@ -221,10 +221,4 @@ module.exports = {
   sfc: sfc,
   assess: assess,
   syncForExpenses: sfe,
-  underwriting: [
-    "underwriting/introduction",
-    "underwriting/setting-up",
-    "underwriting/process-loan",
-    "underwriting/uw-decision",
-  ]
 };
