@@ -17,14 +17,26 @@ html[data-theme="dark"] {
   --ifm-tabs-spacing: 0.5rem;
 }
 
+.tabs-container {
+  margin: 2em 0;
+
+  > div {
+    margin-block-start: 0.75rem !important;
+  }
+
+  ul + div {
+    padding: 0.5em;
+    border: 1px solid #eee;
+  }
+}
+
 .tabs {
   .tabs__item {
     font-weight: 400;
-    font-size: 0.75rem;
     line-height: 100%;
     letter-spacing: 0;
 
-    border-radius: 1000px;
+    border-radius: 4px;
     border: 1px solid rgba(0, 0, 0, 0);
 
     padding-block-start: calc(var(--ifm-tabs-padding-vertical) - 1px);
@@ -49,8 +61,4 @@ html[data-theme="dark"] {
       }
     }
   }
-}
-
-.tabs-container > div {
-  margin-block-start: 0.75rem !important;
 }

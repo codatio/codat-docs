@@ -34,7 +34,7 @@ After the company has categorised their expenses using the mapping options, you 
 POST https://api.codat.io/companies/{companyId}/expense-reconciliations
 ```
 
-### [Initiate Sync](syncing-expenses)
+### [Initiate sync](syncing-expenses)
 
 You can then initiate the sync process for multiple datasets by making an API request to the [sync endpoint](/sync-for-expenses-api#/operations/intiate-sync).
 
