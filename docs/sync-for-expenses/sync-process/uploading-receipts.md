@@ -433,7 +433,7 @@ Click through the tabs to see the supported attachment options for each integrat
 You can upload supported file types through the [upload-attachment](sync-for-expenses-api#/operations/upload-attachment) endpoint. The request accepts the attachment as multipart form data.
 
 ```http
-POST https://expensesync.codat.io/companies/{companyId}/syncs/{syncId}/transactions/{transactionId}/atachments
+POST https://api.codat.io/companies/{companyId}/syncs/{syncId}/transactions/{transactionId}/atachments
 ```
 
 ```
@@ -459,7 +459,7 @@ If you use Postman, there are some extra steps you need to follow to attach a fi
 1.  Set up a POST request, in a similar way to the example [here](https://postman.codat.io/#f3b78b32-f1a7-4016-b222-fd26efdcc126), to the following endpoint:
 
     ```http
-        POST https://expensesync.codat.io/companies/{companyId}/syncs/{syncId}/transactions/{transactionId}/atachments
+        POST https://api.codat.io/companies/{companyId}/syncs/{syncId}/transactions/{transactionId}/atachments
     ```
 2.  In the request setup, select **Body**.
 
