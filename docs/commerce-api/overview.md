@@ -1,6 +1,7 @@
 ---
 title: "Commerce API overview"
 sidebar_label: Commerce API
+displayed_sidebar: commerceAPI
 hide_title: true
 hide_description: true
 hide_table_of_contents: true

@@ -1,6 +1,7 @@
 ---
 title: "Accounting API overview"
 sidebar_label: Accounting API
+displayed_sidebar: accountingAPI
 hide_title: true
 hide_description: true
 hide_table_of_contents: true

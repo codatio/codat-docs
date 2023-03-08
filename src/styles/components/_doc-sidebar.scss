@@ -101,6 +101,15 @@ html[data-theme="dark"] {
   }
   
   .menu__list-item {
+    &.header {
+      margin-bottom: 1em;
+      
+      a {
+        font-weight: bold;
+        font-size: 1em;
+      }
+    }
+
     &:not(:first-child) {
       margin-block-start: 0;
     }

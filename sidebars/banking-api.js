@@ -5,7 +5,12 @@ module.exports = [
     label: "All Docs",
     className: "back",
   },
-  "banking-api/overview",
+  {
+    type: "link",
+    label: "Banking API",
+    href: "/banking-api/overview",
+    className: "header",
+  },
   {
     type: "link",
     label: "Banking data model",

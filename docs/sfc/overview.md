@@ -1,6 +1,7 @@
 ---
 title: "Sync for Commcerce overview"
 sidebar_label: Sync for Commerce
+displayed_sidebar: sfc
 hide_title: true
 hide_description: true
 hide_table_of_contents: true

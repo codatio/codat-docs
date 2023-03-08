@@ -5,7 +5,12 @@ module.exports = [
     label: "All Docs",
     className: "back",
   },
-  "bank-feeds-api/overview",
+  {
+    type: "link",
+    label: "Bank Feeds API",
+    href: "/bank-feeds-api/overview",
+    className: "header",
+  },
   {
     type: "category",
     label: "Sage bank feeds",

@@ -1,6 +1,7 @@
 ---
 title: "Banking API overview"
 sidebar_label: Banking API
+displayed_sidebar: bankingAPI
 hide_title: true
 hide_description: true
 hide_table_of_contents: true
