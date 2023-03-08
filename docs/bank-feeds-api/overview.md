@@ -1,6 +1,7 @@
 ---
 title: "Bank Feeds API overview"
 sidebar_label: Bank Feeds API
+displayed_sidebar: bankfeeds
 hide_title: true
 hide_description: true
 hide_table_of_contents: true

@@ -5,14 +5,33 @@ module.exports = [
     label: "All Docs",
     className: "back",
   },
-  //guides
-  "assess/overview",
-  "assess/get-started",
+  {
+    type: "link",
+    label: "Assess",
+    href: "/assess/overview",
+    className: "header",
+  },
   //getting started
   // launch checklist
-
-  //use cases
-  // underwriting
+  {
+    type: "category",
+    label: "Guides",
+    collapsed: true,
+    items: [
+      "assess/get-started",
+      {
+        type: "category",
+        label: "Loan underwriting",
+        collapsed: true,
+        items: [
+          "underwriting/introduction",
+          "underwriting/setting-up",
+          "underwriting/process-loan",
+          "underwriting/uw-decision",
+        ],
+      },  
+    ],
+  }, 
   {
     type: "category",
     label: "Categories",
@@ -100,24 +119,6 @@ module.exports = [
       "assess/portal/data-integrity",
     ],
   },
-  {
-    type: "category",
-    label: "Use case demos",
-    collapsed: true,
-    items: [
-      {
-        type: "category",
-        label: "Loan underwriting",
-        collapsed: true,
-        items: [
-          "underwriting/introduction",
-          "underwriting/setting-up",
-          "underwriting/process-loan",
-          "underwriting/uw-decision",
-               ],
-      },  
-           ],
-  }, 
   'assess/troubleshooting',
   {
     type: "link",

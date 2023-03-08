@@ -1,7 +1,7 @@
 const authFlow = require("./sidebars/authFlow");
 const dataModel = require("./sidebars/dataModel");
 
-const accountingApi = require("./sidebars/accounting-api");
+const accountingAPI = require("./sidebars/accounting-api");
 const bankingAPI = require("./sidebars/banking-api");
 const commerceAPI = require("./sidebars/commerce-api");
 const bankfeeds = require("./sidebars/bank-feeds-api");
@@ -213,12 +213,12 @@ module.exports = {
       href: "/integrations/all-integrations",
     },
   ],
-  accounting: accountingApi,
-  banking: bankingAPI,
-  commerce: commerceAPI,
+  accountingAPI: accountingAPI,
+  bankingAPI: bankingAPI,
+  commerceAPI: commerceAPI,
   bankfeeds: bankfeeds,
   sfc: sfc,
   assess: assess,
-  syncForExpenses: sfe,
+  sfe: sfe,
   integrations: integrations,
 };
