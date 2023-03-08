@@ -76,9 +76,10 @@ Only if all the thresholds are met or surpassed by the applicant, the app update
 
 🗝️ You may want to enhance this simple working guide with some UI elements - why not use [Embedded Link](https://docs.codat.io/auth-flow/authorize-embedded-link) to seamlessly include our authorization journey into your app?
 
-📊 If you are interested in underwriting models used by lenders in the industry, you can explore some recommended articles.
+📊 If you are interested in underwriting models used by lenders in the industry, you can explore some recommended articles such as [Bigfoot Capital's](https://www.bigfootcap.com/revenue-based-financing/) blog on revenue-based finance or [Workweeks](https://workweek.com/2023/03/02/unlocking-lending-innovation) article on unlocking underwriting innovation.
 
-💸 Assess' additional features, like the [enhanced cash flow report](/assess/reports/enhanced-cash-flow-report/overview), can help you expand the data points you use for loan assessments and automatic decisioning. 
+💸 Lenders also use Assess to understand a business' liquidity via the [enhanced cash flow report](/assess/reports/enhanced-cash-flow-report/overview), or whether a business' accounts are accurate using both [data integrity](/assess/data-integrity) and the [audit report](/assess/reports/audit-report).
+💸 Assess' additional features, like the , can help you expand the data points you use for loan assessments and automatic decisioning. 
 
 🧠 See what else [Codat recommends](https://www.codat.io/blog/how-to-underwrite-ecommerce-merchants-effectively/) to build your underwriting process effectively. 
 
