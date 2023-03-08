@@ -76,7 +76,7 @@ Only if all the thresholds are met or surpassed by the applicant, the app update
 
 🗝️ You may want to enhance this simple working guide with some UI elements - why not use [Embedded Link](https://docs.codat.io/auth-flow/authorize-embedded-link) to seamlessly include our authorization journey into your app?
 
-📊 If you are interested in underwriting models used by lenders in the industry, you can explore them SOMEWHERE
+📊 If you are interested in underwriting models used by lenders in the industry, you can explore some recommended articles.
 
 💸 Assess' additional features, like the [enhanced cash flow report](/assess/reports/enhanced-cash-flow-report/overview), can help you expand the data points you use for loan assessments and automatic decisioning. 
 
