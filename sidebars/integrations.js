@@ -99,7 +99,7 @@ module.exports = [
           "integrations/accounting/netsuite/accounting-netsuite",
           "integrations/accounting/netsuite/accounting-netsuite-setup",
           "integrations/accounting/netsuite/company-linking-journey",
-          "integrations/accounting/netsuite/accounting-netsuite-delete-data",
+          "integrations/accounting/netsuite/accounting-netsuite-delete-bills-billpayments",
           "integrations/accounting/netsuite/oracle-netsuite-faq",
           "integrations/accounting/netsuite/oracle-netsuite-integration-reference",
         ],
