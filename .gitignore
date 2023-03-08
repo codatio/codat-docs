@@ -10,6 +10,7 @@
 src/components/page/reference/ReleaseNotes/release-notes.json
 /.vs
 
+
 # Misc
 .DS_Store
 .env.local
@@ -23,3 +24,7 @@ yarn-debug.log*
 yarn-error.log*
 
 static/**/node_modules/
+
+# JetBrains Rider
+.idea/
+*.sln.iml
