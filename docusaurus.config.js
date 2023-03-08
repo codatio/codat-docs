@@ -89,9 +89,6 @@ module.exports = {
       defaultMode: "light",
     },
     navbar,
-    tagManager: {
-      trackingID: process.env.GTM_ID,
-    },
   },
   plugins: [
     "docusaurus-plugin-sass",
@@ -175,6 +172,13 @@ module.exports = {
         };
       },
     }),
+    [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: process.env.GTM_ID,
+        anonymizeIP: true,
+      },
+    ],
   ],
   themes: [
     [
