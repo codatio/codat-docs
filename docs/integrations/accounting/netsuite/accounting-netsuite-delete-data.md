@@ -1,15 +1,19 @@
 ---
 title: "Delete data from Oracle NetSuite"
+description: "New description goes here"
 createdAt: "2022-12-09T17:06:02.593Z"
 updatedAt: "2023-01-04T09:51:42.874Z"
 ---
 
-:::note
+:::info Delete Bills and Bill payments only
 
-We're rolling out support for deleting other data types in the coming months - for details, see our <a className="external" href="https://portal.productboard.com/codat/7-public-product-roadmap/tabs/46-accounting-api" target="_blank">Accounting API Public Product Roadmap</a>.
+The ability to delete data from Oracle NetSuite is currently supported for Bills and Bill payments only.
+
+We're rolling out support for other data types in the coming months&mdash;for details, see our [Accounting API Public Product Roadmap](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/46-accounting-api).
+
 :::
 
-You can delete Bill payments from Oracle NetSuite using the new _Delete object_ endpoint:
+You can delete Bill payments from Oracle NetSuite using the _Delete object_ endpoint:
 
 ```http
 DELETE /companies/{companyId}/connections/{connectionId}/push/billPayments/{billPaymentId}
