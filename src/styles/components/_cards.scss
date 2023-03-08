@@ -79,8 +79,11 @@ li.card div.header {
   align-items: center;
 
   h3 {
-    margin: 0.5em;
     font-size: 16px;
+  }
+
+  img + h3 {
+    margin: 0.5em;
   }
 }
 

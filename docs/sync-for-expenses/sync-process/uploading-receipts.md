@@ -6,7 +6,7 @@ description: "Upload receipts for complete auditability"
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
 
-# Upload Receipts
+## Upload receipts
 
 Adding a receipt to the transaction can be done after the sync, different accounting software supports different file formats and sizes.
 

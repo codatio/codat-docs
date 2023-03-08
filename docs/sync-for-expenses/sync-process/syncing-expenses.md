@@ -23,7 +23,7 @@ Syncs are independent of creating datasets, so you can continue to create new da
     }
 ```
 
-### Webhook Events
+### Webhook events
 
 Codat provides three webhooks which you can subscribe to:
 
@@ -37,7 +37,7 @@ Codat will **not** be able to accept any new requests to initiate another sync w
 
 - `Sync Completed`: This will be triggered when a sync completes without any failures.
 
-### Sync Status
+### Sync status
 
 Once you have pushed data to Codat, you can use the sync status endpoints to check whether the sync was completed successfully and see the details of any errors that may have occurred.
 
@@ -88,7 +88,7 @@ GET https://api.codat.io/companies/companyId/syncs/syncId/status
 </Tabs>
 
 
-### Transactions Status
+### Transactions status
 
 In addition to sync status endpoints, Codat provides a transactions endpoint where you can see the status of individual transactions.
 
