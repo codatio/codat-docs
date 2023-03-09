@@ -1,8 +1,5 @@
 ---
 title: "Banking account balances"
-hidden: true
-createdAt: "2022-05-26T13:21:50.091Z"
-updatedAt: "2022-07-06T14:50:43.873Z"
 ---
 
 :::caution Banking account balances - Beta testing

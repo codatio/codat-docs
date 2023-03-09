@@ -1,8 +1,5 @@
 ---
 title: "Pitfalls"
-hidden: true
-createdAt: "2022-11-11T16:59:01.531Z"
-updatedAt: "2022-11-11T16:59:48.407Z"
 ---
 
 Errors in the authorization journey are possible at steps 3, 6, and 7.

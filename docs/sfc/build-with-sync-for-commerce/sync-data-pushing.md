@@ -61,7 +61,7 @@ GET /meta/companies/{companyId}/sync/commerce/status
 
 :::info How to trigger data synchronization for testing
 
-Refer to [How to trigger manual syncs for testing](/sfc/sync-merchant-configuration/sync-your-own-merchant-journey) if you need to trigger data synchronization manually for testing purposes.
+Refer to [How to trigger manual syncs for testing](/sfc/sync-for-commerce-knowledge-base/initiating-a-sync) if you need to trigger data synchronization manually for testing purposes.
 
 :::
 

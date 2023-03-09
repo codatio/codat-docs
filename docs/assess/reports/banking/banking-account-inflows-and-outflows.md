@@ -1,8 +1,5 @@
 ---
 title: "Banking account inflows and outflows"
-hidden: true
-createdAt: "2022-06-27T09:46:18.437Z"
-updatedAt: "2022-07-06T14:51:04.121Z"
 ---
 
 :::caution Banking account inflows and outflows - Beta testing

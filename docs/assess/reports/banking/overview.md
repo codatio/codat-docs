@@ -1,8 +1,5 @@
 ---
 title: "Banking"
-hidden: true
-createdAt: "2022-05-23T08:45:15.824Z"
-updatedAt: "2022-06-16T13:20:53.350Z"
 ---
 
 The Banking feature provides the banking data needed to assess an SMBs ability to repay a loan. Outputs are auto-calculated for you across the full history of financial statements for a linked company and can be retrieved for a single period or spread across multiple periods enabling you to perform time series analysis of the financial performance of the company.

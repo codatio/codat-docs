@@ -1,8 +1,5 @@
 ---
 title: "Setup SumUp in UAT"
-hidden: true
-createdAt: "2021-05-28T11:18:15.425Z"
-updatedAt: "2021-08-06T10:38:03.547Z"
 ---
 
 Before you can access commerce data from customers using SumUp, you need to set up a SumUp integration in the Codat Portal in UAT. You'll need to:

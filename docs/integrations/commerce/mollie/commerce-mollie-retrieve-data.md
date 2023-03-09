@@ -1,8 +1,5 @@
 ---
 title: "Retrieve commerce data from Mollie"
-hidden: true
-createdAt: "2022-02-15T14:12:15.093Z"
-updatedAt: "2022-05-20T09:13:26.861Z"
 ---
 
 Now that the Mollie integration is set up and tested, you can pull live consented commerce data, including orders and payments, from your customers into Codat.

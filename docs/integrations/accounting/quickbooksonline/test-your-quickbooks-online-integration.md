@@ -1,8 +1,5 @@
 ---
 title: "Test your QuickBooks Online Integration"
-hidden: true
-createdAt: "2022-03-09T16:30:54.229Z"
-updatedAt: "2022-03-09T16:32:44.740Z"
 ---
 
 ## Prerequisites
