@@ -46,9 +46,9 @@ If you're an Admin, you can view the available pricing plans and upgrade via Str
 
 ### Start-up plan billing
 
-When using our start-up plan, you do not pay any monthly commitment fees. Instead, you will be charged for what you use - **£25/$30 per month for each active company**. 
+When using our start-up plan, you do not pay any monthly commitment fees. Instead, you will be charged for **each active company**. Active companies represent your customer connections where you have successfully pulled or pushed data within your billing period. 
 
-Active companies represent your customer connections where you have successfully pulled or pushed data within your billing period. You can use our Billing [dashboard](https://app.codat.io/settings/billing/usage) to track your usage and stay in control of your bills. 
+You can use our Billing [dashboard](https://app.codat.io/settings/billing/usage) to track your usage and stay in control of your bills. 
 
 :::tip Sandbox connections
 
