@@ -5,7 +5,12 @@ module.exports = [
     label: "All Docs",
     className: "back",
   },
-  "sync-for-expenses/overview",
+  {
+    type: "link",
+    label: "Sync for Expenses",
+    href: "sync-for-expenses/overview",
+    className: "header",
+  },
   "sync-for-expenses/gettingstarted",
   "sync-for-expenses/configandcategorize",
   {

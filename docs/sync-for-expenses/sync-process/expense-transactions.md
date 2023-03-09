@@ -51,7 +51,7 @@ This approach prevents duplicate transactions being created in your SMBs' accoun
 }
 ```
 
-## Transaction Types
+## Transaction types
 
 The way Codat handles, maps and processes a transaction is based on the specified `type` of the transaction.
 

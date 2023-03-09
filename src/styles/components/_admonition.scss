@@ -45,13 +45,21 @@ html[data-theme="dark"] {
 
 // /* Callouts */
 .theme-admonition.alert {
-  border-width: 1px !important;
-  border-style: solid !important;
+  border-width: 1px;
+  border-style: solid;
   border-radius: 4px;
-  margin: 2em 0 !important;
+  margin: 2em 0;
 
   > div:first-child {
     text-transform: initial !important;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 

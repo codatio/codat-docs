@@ -5,6 +5,9 @@ createdAt: "2019-02-20T09:52:29.305Z"
 updatedAt: "2022-11-09T16:56:43.148Z"
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 The Codat API uses a simple, flexible query language to allow you to filter response data.
 
 :::caution Use URL encoding
@@ -57,12 +60,13 @@ Our `GET /{dataType}` endpoints typically return an array of items of that given
 
 ## Example queries
 
-Note that characters (<, >) are url-encoded.
+**Note:** some characters are url-encoded:
+- < = `%3c`
+- \> = `%3e`
 
 ### Invoices with amounts outstanding
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+Query: `amountDue > 0`
 
 <Tabs>
 <TabItem value="http" label="HTTP">
@@ -95,7 +99,9 @@ var info = response.Data;
 </TabItem>
 </Tabs>
 
-### GBP Invoices
+### Invoices in GBP
+
+Query: `currency = GBP`
 
 <Tabs>
 <TabItem value="http" label="HTTP">
@@ -128,7 +134,9 @@ var info = response.Data;
 </TabItem>
 </Tabs>
 
-### Invoices to a particular customer
+### Invoices for a specific customer
+
+Query: `customerRef.id = 61`
 
 <Tabs>
 <TabItem value="http" label="HTTP">
@@ -161,7 +169,9 @@ var info = response.Data;
 </TabItem>
 </Tabs>
 
-### Outstanding Invoices of value less than 1000
+### Outstanding Invoices worth less than 1000
+
+Query: `amountDue > 0 && totalAmount < 1000`
 
 <Tabs>
 <TabItem value="http" label="HTTP">
@@ -194,8 +204,12 @@ var info = response.Data;
 </TabItem>
 </Tabs>
 
-### Invoices that are due after a certain date (YYYY-MM-DD) e.g. "2021-01-28"
+### Invoices that are due after a certain date 
 
+e.g. "2021-01-28" (YYYY-MM-DD format) 
+  
+Query: `dueDate > 2021-01-28`
+  
 <Tabs>
 <TabItem value="http" label="HTTP">
 
@@ -227,7 +241,9 @@ var info = response.Data;
 </TabItem>
 </Tabs>
 
-### For companies whose status is "Pending" (with data connection established)
+### Companies with "Pending" status connections
+  
+Query: `dataConnections.status=PendingAuth`
 
 _Note_: the page size value is obligatory for querying.
 
@@ -251,8 +267,10 @@ var info = response.Data;
 </TabItem>
 </Tabs>
 
-### For companies with no data connection established
+### For companies with no connections
 
+Query: `dataConnections.count = 0`
+  
 *Note*: The page size value is obligatory for querying.
 
 <Tabs>
@@ -274,3 +292,15 @@ var info = response.Data;
 ```
 </TabItem>
 </Tabs>
+  
+## Queries that won't work
+
+Although you can query properties of objects, you can't query arrays.  
+
+✅ Objects: Invoices > `customerRef.id`
+  
+`GET /invoices?page=1&pageSize=100&query=customerRef.id%3Def6f54c1-eb45-4956-b8cd-1be82ad665f2`
+  
+❌ Arrays: Invoices > `lineItems`
+  
+`GET /invoices?page=1&pageSize=100&query=lineItems.unitAmount%3D700`

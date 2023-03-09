@@ -1,6 +1,7 @@
 ---
 title: "Assess overview"
 sidebar_label: Assess
+displayed_sidebar: assess
 hide_table_of_contents: true
 description: "Learn about the features that make up the Assess product"
 createdAt: "2022-04-11T16:43:22.429Z"

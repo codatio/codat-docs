@@ -5,7 +5,12 @@ module.exports = [
     label: "All Docs",
     className: "back",
   },
-  "sfc/overview",
+  {
+    type: "link",
+    label: "Sync for Commerce",
+    href: "/sfc/overview",
+    className: "header",
+  },
   {
     type: "category",
     label: "Concepts and features",

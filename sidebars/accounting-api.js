@@ -5,7 +5,12 @@ module.exports = [
     label: "All Docs",
     className: "back",
   },
-  "accounting-api/overview",
+  {
+    type: "link",
+    label: "Accounting API",
+    href: "/accounting-api/overview",
+    className: "header",
+  },
   {
     type: "link",
     label: "Accounting data model",

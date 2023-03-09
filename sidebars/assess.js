@@ -5,14 +5,33 @@ module.exports = [
     label: "All Docs",
     className: "back",
   },
-  //guides
-  "assess/overview",
-  "assess/get-started",
+  {
+    type: "link",
+    label: "Assess",
+    href: "/assess/overview",
+    className: "header",
+  },
   //getting started
   // launch checklist
-
-  //use cases
-  // underwriting
+  {
+    type: "category",
+    label: "Guides",
+    collapsed: true,
+    items: [
+      "assess/get-started",
+      {
+        type: "category",
+        label: "Loan underwriting",
+        collapsed: true,
+        items: [
+          "assess/guides/underwriting/introduction",
+          "assess/guides/underwriting/setting-up",
+          "assess/guides/underwriting/process-loan",
+          "assess/guides/underwriting/uw-decision",
+        ],
+      },  
+    ],
+  }, 
   {
     type: "category",
     label: "Categories",
