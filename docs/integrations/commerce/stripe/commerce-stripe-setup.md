@@ -33,21 +33,17 @@ Complete your Connect Platform profile to register for Stripe Connect. When your
 
 3. Click **Get started with Connect**.
 
-4. Select **Platform or marketplace** in the pop-up window, then click **Continue**.
+4. Under **Complete your platform profile**, click **Start**.
 
-   The **Get started with Connect** page is displayed.
-
-5. Under **Complete your platform profile**, click **Start**.
-
-6. Answer the multiple-choice questions about your business and then submit your responses.
+5. Answer the multiple-choice questions about your business and then submit your responses.
 
    Stripe recommends the optimal type of connected account for your business: either _Standard_, _Express_, or _Custom_. **Do not create a connected account, either manually or through the Stripe API.** Connected Standard accounts representing your SMB customers will be created automatically as part of the Link flow.
 
-7. Return to the **Get started with Connect** page.
+6. Return to the **Get started with Connect** page.
 
-8. Under **Add business details to activate your account**, click **Start now**.
+7. Under **Add business details to activate your account**, click **Start now**.
 
-9. Complete the requested information to activate your account. All responses are reviewed by Stripe.
+8. Complete the requested information to activate your account. All responses are reviewed by Stripe.
 
 :::note
 
