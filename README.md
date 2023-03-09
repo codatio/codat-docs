@@ -19,7 +19,7 @@ The official [Codat](https://codat.io) documentation.
 
 ### Create a .env file
 
-The docusaurus config expects certain environment variables defined. We've included `.env.example` - copy this and rename it to `.env`. You can enter any random string for the IDs.
+The docusaurus config expects certain environment variables to be defined. We've included `.env.example` - copy this and rename it to `.env`. You can enter any random string for the IDs.
 
 ```
 copy .env.example .env # on Windows 
