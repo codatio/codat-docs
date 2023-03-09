@@ -33,7 +33,7 @@ The below query functionality will only work when searching for company data (e.
 | <=       	| Less than or equal to    	| ✔      	| ❌      	| ✔    	|
 
 - Separate multiple query clauses with ampersands (`&&`) for _AND_ queries or pipes (`||`) for _OR_ queries.
-- Access sub-properties by separating them from the property with a dot (see [Invoices to a particular customer](/using-the-api/querying#invoices-to-a-particular-customer) example below).
+- Access sub-properties by separating them from the property with a dot (see [Invoices to a particular customer](/using-the-api/querying#invoices-to-a-particular-customer) example below). This is only applicable to objects within our data endpoints. We do not support querying inside arrays.
 
 :::info Combining queries
 
@@ -45,6 +45,11 @@ To combine AND and OR queries, use curly braces (`{` and `}`). For example:
 :::info Query length limits
 
 The total length of your query should be under 2048 characters in order to be valid. If your query is longer, the API will return an error message.
+:::
+
+:::info Querying on null fields
+
+We do not currently support querying on null fields. 
 :::
 
 ## Getting all vs one item
@@ -286,7 +291,7 @@ var response = client.Execute(request);
 var info = response.Data;
 ```
 </TabItem>
-</Tabs>  
+</Tabs>
 
 
   
