@@ -298,6 +298,6 @@ Although you can query properties of objects, you can't query arrays.
   
 `GET /invoices?page=1&pageSize=100&query=customerRef.id%3Def6f54c1-eb45-4956-b8cd-1be82ad665f2`
   
-❌ E.g. arrrays - Invoices > `lineItems`
+❌ Arrays: Invoices > `lineItems`
   
 `GET /invoices?page=1&pageSize=100&query=lineItems.unitAmount%3D700`
