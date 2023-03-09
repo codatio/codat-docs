@@ -57,7 +57,7 @@ Our `GET /{dataType}` endpoints typically return an array of items of that given
 
 **Note:** some characters are url-encoded:
 - < = `%3c`
-- > = `%3e`
+- \> = `%3e`
 
 ### Invoices with amounts outstanding
 
