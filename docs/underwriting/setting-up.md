@@ -51,7 +51,7 @@ We will use [ngrok](https://ngrok.com/) here to listen for Codat's webhooks.
 
    <TabItem value="mac" label="Mac OS">
 
-   In terminal run the following commands:
+   In the terminal, run the following commands:
    
    ```bash
    brew install ngrok
