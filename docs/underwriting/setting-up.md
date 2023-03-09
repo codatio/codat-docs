@@ -31,28 +31,35 @@ In the **Settings > Auth Flow > Link** [settings](https://app.codat.io/settings/
 
 The app will use several webhooks to track completion of the financial data sync and the categorization of accounts, and Sandbox linking completion. 
 
-We will use [ngrok](https://ngrok.com/) for the demo to listen for Codat's webhooks. After installing ngrok, go to its root directory. If working with Windows, open the `ngrok.exe` file to launch the ngrok terminal. Then, configure your local machine to receive web traffic on port 5069. The demo app is configured to listen for Codat's webhooks on this port.
+We will use [ngrok](https://ngrok.com/) here to listen for Codat's webhooks. 
 
 <Tabs>
    <TabItem value="win" label="Windows OS">  
 
-   Run the following command in the root directory `Codat.Demos.Underwriting.Api`:
+   In Windows PowerShell, run the following commands:
 
    ```bash
-   .\ngrok.exe http 5069
-   ```  
-   This triggers ngrok to start a new session. Copy the **forwarding address** - this will be the `<server-url>` for the webhooks.
+   choco install ngrok
+   ngrok http 5069
+   ```
+   
+   This will install ngrok using [Chocolatey](https://chocolatey.org/) and run it at port 5069. 
+   
+   Copy the **forwarding address** - this will be the `<server-url>` for the webhooks.
 
    </TabItem>
 
    <TabItem value="mac" label="Mac OS">
 
-   Run the following command in the root directory `Codat.Demos.Underwriting.Api`:
+   In the terminal, run the following commands:
    
    ```bash
-   brew install ngrok ngrok http 5069
+   brew install ngrok
+   ngrok http 5069
    ```  
-   This triggers ngrok to start a new session. Copy the **forwarding address** - this will be the `<server-url>` for the webhooks.
+   This will install ngrok using [Homebrew](https://brew.sh/) and run it at port 5069. 
+   
+   Copy the **forwarding address** - this will be the `<server-url>` for the webhooks.
 
    </TabItem>
 </Tabs>

@@ -39,7 +39,9 @@ The codebase uses Codat and its [Assess](/assess/overview) product to make an un
 
 ### Why we use _Assess_
 
-The demo app makes use of the categorization feature of [Assess](/assess/overview). This feature analyses the full list of a company's accounts and assigns a category to each account. As such, this solves the problem of bookkeepers giving different names for the same accoutning category. For example, one bookkeepr may call their marketing account Facebook Ads whereas another may call it Online Marketing. Assess will categorize a both accounts in the same way, specifically, _Expense > Operating > Marketing_ enabling lenders to use a standardized taxonomy irrespective of how the bookkeeper managers their accounts.
+The demo app makes use of the categorization feature of [Assess](/assess/overview). This feature analyses the full list of a company's accounts and assigns a category to each account. This solves the problem of bookkeepers giving different names to the same accounting category. 
+
+For example, one bookkeeper may name their marketing account "Facebook Ads", and another may call it "Online Marketing". Assess will categorize both accounts in the same way - as _Expense > Operating > Marketing_. This enables lenders to use a standardized taxonomy, no matter how the bookkeeper manages their accounts.
 
 This standardizes the data irrespective of its source and helps you make a comprehensive assessment of your customer's financial health, produce additional insights (e.g. calculate financial ratios), and automate decisioning based on these insights. 
 
