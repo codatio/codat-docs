@@ -20,11 +20,13 @@ html[data-theme="dark"] {
 .tabs-container {
   margin: 2em 0;
 
+
   > div {
     margin-block-start: 0.75rem !important;
   }
 
   ul + div {
+    border-radius: 4px;
     padding: 0.5em;
     border: 1px solid #eee;
   }
