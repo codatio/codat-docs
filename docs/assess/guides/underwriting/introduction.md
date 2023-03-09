@@ -1,6 +1,6 @@
 ---
 title: "Introduction"
-description: "Underwrite with Codat and our Assess product." 
+description: "Underwrite with Codat and our Assess product" 
 ---
 
 :::tip Who is this guide for?
