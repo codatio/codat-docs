@@ -362,6 +362,10 @@ module.exports = {
       to:  '/bank-feeds-api/sage-bank-feeds', //sage
       from: '/redirects/integrations/bankfeeds/olpr',
     },
+    {
+      to:  '/using-the-api/errors', //sage
+      from: '/docs/status-codes',
+    },
     ...mapIntegrationRedirects(acc, "accounting"),
     ...mapIntegrationRedirects(bank, "banking"),
     ...mapIntegrationRedirects(comm, "commerce"),

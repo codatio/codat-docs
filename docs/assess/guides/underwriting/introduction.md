@@ -1,5 +1,6 @@
 ---
-title: "Introduction"
+title: "Our underwriting guide"
+sidebar_label: "Introduction"
 description: "Underwrite with Codat and our Assess product" 
 ---
 
