@@ -294,7 +294,7 @@ var info = response.Data;
 
 Although you can query properties of objects, you can't query arrays.  
 
-✅ E.g. objects - Invoices > `customerRef.id`
+✅ Objects: Invoices > `customerRef.id`
   
 `GET /invoices?page=1&pageSize=100&query=customerRef.id%3Def6f54c1-eb45-4956-b8cd-1be82ad665f2`
   
