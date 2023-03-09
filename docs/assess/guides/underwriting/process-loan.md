@@ -1,5 +1,5 @@
 ---
-title: "Try the demo out"
+title: "Make a loan decision"
 description: "Follow the underwriting demo app end-to-end to start an application, analyze it, and make a decision on the loan request"
 ---
 import Tabs from '@theme/Tabs';
@@ -123,7 +123,7 @@ Try these suggestions to make the most of your experience with the demo app:
   Take the demo one step further and use real credentials to access existing financial data in an accounting platform. Set up the [integration](/integrations/accounting/overview) you plan to use, and connect to it while following the auth flow. Then, review how the app makes a decision based on your company's real data. 
 
 - **Inspect the underwriting logic**  
-  We provide [detailed information](/underwriting/uw-decision) about the underwriting logic we included in our demo app, and how exactly the financial data is fetched. 
+  We provide [detailed information](/assess/guides/underwriting/uw-decision) about the underwriting logic we included in our demo app, and how exactly the financial data is fetched. 
   
 
 ### Recap
