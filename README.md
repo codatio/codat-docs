@@ -17,14 +17,23 @@ The official [Codat](https://codat.io) documentation.
 
 ## Running locally
 
-#### Run the project
+### Create a .env file
+
+The docusaurus config expects certain environment variables defined. We've included `.env.example` - copy this and rename it to `.env`. You can enter any random string for the IDs.
+
+```
+copy .env.example .env # on Windows 
+cp .env.example .env # on Mac
+```
+
+### Run the project
 
 ```sh
 npm install
 npm run start
 ```
 
-#### Editing article markdown files
+### Editing article markdown files
 
 `/docs`
 

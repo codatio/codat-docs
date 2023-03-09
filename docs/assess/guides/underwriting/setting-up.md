@@ -159,4 +159,8 @@ Ensure the `http` profile is set and press the "Play" icon. The IDE will automat
 
 You have now set up your Codat instance and your local environment in preparation for running the app. You have also cloned the repository and started running the app.
 
-Next, [use the app to underwrite a loan](/underwriting/process-loan).
+---
+
+### Read next
+
+- [Use the app to underwrite a loan](/assess/guides/underwriting/process-loan).
