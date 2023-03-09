@@ -309,7 +309,7 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 | **Parameter** | Type | Description |
 |---|---|---|
 | **companyId** | _string_ | The percentage of the absolute value of transactions of the type specified in the route which have a match.The percentage of records of the type specified in the route which have a match. |
-| **dataType** | _string_ | The data type you want match results for. **Accounting source: **[bankAccounts](/data-model/accounting/-bankaccounts), [accountTransactions](/data-model/accounting/-account-transactions). **Banking source:** [banking-accounts](/data-model/banking-banking-accounts), [banking-transactions](/data-model/banking-banking-transactions). Submit as route parameter. |
+| **dataType** | _string_ | The data type you want match results for. **Accounting source: **[bankAccounts](/accounting-api#/schemas/BankAccount), [accountTransactions](/accounting-api#/schemas/AccountTransaction). **Banking source:** [banking-accounts](/banking-api#/schemas/Account), [banking-transactions](/banking-api#/schemas/Transaction). Submit as route parameter. |
 | **Query** | _string_ | Can query any property in response.  |
 | **page** | _number_ | Submit as query parameter. Defaults to 1. |
 | **pageSize** | _number_ | Submit as query parameter. Defaults to 100. |
