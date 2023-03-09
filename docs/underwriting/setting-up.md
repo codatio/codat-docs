@@ -36,7 +36,7 @@ We will use [ngrok](https://ngrok.com/) here to listen for Codat's webhooks.
 <Tabs>
    <TabItem value="win" label="Windows OS">  
 
-   In windows PowerShell run the following commands:
+   In Windows PowerShell, run the following commands:
 
    ```bash
    choco install ngrok
