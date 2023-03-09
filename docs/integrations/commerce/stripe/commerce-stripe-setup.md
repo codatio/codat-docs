@@ -25,7 +25,7 @@ To set up the Stripe integration, you'll need to:
 
 ## Register as a Stripe Connect platform
 
-Complete your Connect Platform profile to register for Stripe Connect. When your profile is complete and your business details are approved, you can access your live platform credentials. To access your test credentials, you only need to complete steps 1–6.
+Complete your Connect Platform profile to register for Stripe Connect. When your profile is complete and your business details are approved, you can access your live platform credentials. To access your test credentials, you only need to complete steps 1–5.
 
 1. Visit <a className="external" href="https://stripe.com/" target="_blank">Stripe</a> and sign in to your developer account.
 
