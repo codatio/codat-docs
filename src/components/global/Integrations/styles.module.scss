@@ -1,0 +1,69 @@
+.integrationsList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
+  margin-bottom: 2em;
+}
+
+.integration {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 0.5em;
+
+  display: flex;
+  flex-direction: column;
+  margin: 0 !important;
+
+  background-color: var(--token-primary-bg-c);
+  border: 2px solid var(--token-secondary-bg-c-alt);
+  box-shadow: none;
+  padding: 1em;
+  border-radius: 8px;
+  font-size: 0.9em !important;
+
+  > div:first-child {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 !important;
+  
+    a {
+      text-decoration: none;
+      padding-left: 0.5em;
+      //padding-top: 12px;
+    }
+  }
+}
+
+.zeroState {
+  margin-bottom: 2em;
+}
+
+.tag {
+  margin-top: 0.5em;
+  background: var(--token-secondary-bg-c-alt);
+  border-radius: 2px;
+  width: fit-content;
+  padding: 5px;
+}
+
+.search {
+  background-color: var(--token-primary-bg-c);
+  border: 2px solid var(--token-secondary-bg-c-alt);
+  box-shadow: none;
+  padding: 1.5em;
+  border-radius: 8px;
+  font-size: 0.9em !important;
+  width: 100%;
+}
+
+.header {
+  margin: 2em 0;
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+  border-radius: 4px;
+  object-fit: contain;
+}
