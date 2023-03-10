@@ -58,18 +58,21 @@ Once your customer has authorized access to their accounting platform, you will 
 ```
 
 ``` mermaid
-  sequenceDiagram
-      participant You
-      participant Codat
-      participant Company
-          You->>+Codat: Create Company
-          Codat->>-You: Company created successfully
-          You->>Codat: Create `partnerExpense` data connection
-              Note over You, Codat: partnerExpense connection created<br> with a status of `Linked`
-          You->>+Codat: Create Accounting data connection
-          Codat-->>-You: accounting data connection created successfully
-              Note over You, Codat: Accounting connection will be created<br> with status `Pending Auth`
-          You->>Company: redirect Company to the linkUrl in the accounting data connection
-          Company-->>Company: Company authorises accounting software
-          Company->>You: Company redirected to your application
+sequenceDiagram
+    participant You
+    participant Codat
+    participant Company (SMB)
+    participant Accounting Software
+        You->>+Codat: Create Company
+        Codat->>-You: Company created successfully
+        You->>+Codat: Create `partnerExpense` data connection
+        Codat-->>-You: data connection created
+            Note over You, Codat: The partnerExpense connection is created with<br> a status of `Linked` and does not need to be authorised
+        You->>+Codat: Create Accounting data connection
+        Codat-->>-You: accounting data connection created successfully
+            Note over You, Codat: Accounting connection will be created<br> with status `Pending Auth`
+        You->>+Company (SMB): redirect Company to the linkUrl in the accounting data connection
+        Company (SMB)-->>Accounting Software: Company authorises accounting software
+        Accounting Software-->>Company (SMB): 
+        Company (SMB)->>-You: Company redirected to your application
 ```
