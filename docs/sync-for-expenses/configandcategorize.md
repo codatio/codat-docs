@@ -12,7 +12,7 @@ The [configuration endpoint](/sync-for-expenses-api#/operations/get-company-conf
 You can check the config at any time to confirm your companies' configuration.
 
 ```http title="Company Config"
-GET https://api.codat.io/companies/{companyId}/config
+GET https://api.codat.io/companies/{companyId}/sync/expenses/config
 {
     "bankAccount": {
         "id": "{selectedBankAccountId}"

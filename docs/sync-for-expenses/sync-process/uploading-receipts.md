@@ -433,7 +433,7 @@ Click through the tabs to see the supported attachment options for each integrat
 You can upload supported file types through the [upload-attachment](sync-for-expenses-api#/operations/upload-attachment) endpoint. The request accepts the attachment as multipart form data.
 
 ```http
-POST https://api.codat.io/companies/{companyId}/syncs/{syncId}/transactions/{transactionId}/atachments
+POST https://api.codat.io/companies/{companyId}/sync/expenses/syncs/{syncId}/transactions/{transactionId}/atachments
 ```
 
 ```

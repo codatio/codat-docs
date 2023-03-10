@@ -17,7 +17,7 @@ Syncs are independent of creating datasets, so you can continue to create new da
 :::
 
 ```http title="Sync datasets"
- POST https://api.codat.io/companies/{companyId}/syncs
+ POST https://api.codat.io/companies/{companyId}/sync/expenses/syncs
     {
        "datasetIds": ["fd4cc60e-8666-4443-8fad-12c56d7420ee"]
     }
@@ -46,7 +46,7 @@ Once you have pushed data to Codat, you can use the sync status endpoints to che
 <Tabitem value="Request URL" label="Request URL">
 
 ```http
-GET https://api.codat.io/companies/companyId/syncs/syncId/status
+GET https://api.codat.io/companies/{companyId}/sync/expenses/syncs/syncId/status
 ```
 
 </Tabitem>
@@ -101,7 +101,7 @@ This enables you to see if the transaction has synced successfully, or details o
 <Tabitem value="Request URL" label="Request URL">
 
 ```http
-GET https://api.codat.io/companies/{companyId}/syncs/{syncId}/transactions
+GET https://api.codat.io/companies/{companyId}/sync/expenses/syncs/{syncId}/transactions
 ```
 
 </Tabitem>
