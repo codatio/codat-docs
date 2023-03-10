@@ -14,19 +14,17 @@ Use the following process to onboard users to the Codat API. You can either onbo
 
 ## Create a Codat company
 
-To create a new company, use the `POST /companies` endpoint and provide a name you want to attribute to it in the request body. Parameter `name` is a required parameter to execute this request.
+To create a new company, use the `POST /companies` endpoint and provide a name you want to attribute to it in the request body. Parameter `name` is a required parameter to execute this request. You can also provide a `description` to store additional information about the company.
 
 :::note Company name
 
 The name of the company doesn't have to be unique. It's just there to help you identify the company in the portal. Make sure to [avoid forbidden characters](/core-concepts/companies).
 :::
 
-You can also add the `platformType` parameter to specify an integration platform you would like to set up for the new company. Retrieve the platform key first and then use it in your request.
-
 ```json Title="Sample request"
 {
   "name": "Platypus Properties",
-  "platformType": "gbol"
+  "description": "Platypuses are venomous mammals"
 }
 ```
 
@@ -34,14 +32,11 @@ You can also add the `platformType` parameter to specify an integration platform
 {
   "id": "8f74269c-6cbf-4c5e-9b93-599965a7fd49",
   "name": "Platypus Properties",
-  "platform": "Xero",
+  "description": "Platypuses are venomous mammals",
   "redirect": "https://link.codat.io/company/8f74269c-6cbf-4c5e-9b93-599965a7fd49",
   "dataConnections": []
 }
 ```
-
-You can also find accounting platform keys [here](/integrations/accounting/accounting-platform-keys) and commerce platform keys [here](/integrations/commerce/commerce-platform-keys).
-
 :::caution Retain the company ID
 
 The `id` property that you receive in the response is the unique Codat identifier for this company. We recommend that you retain it for future reference.

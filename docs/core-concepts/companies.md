@@ -19,7 +19,7 @@ In Codat, a company represents a business sharing access to their data. Each com
 
 Typically each company is one of your customers.
 
-When you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company.
+When you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.
 
 ## Creating a company
 
