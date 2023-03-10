@@ -1,9 +1,6 @@
 ---
 title: "Bank feeds transactions in QuickBooks Online"
 description: "How to build QuickBooks Bank Feeds powered by Codat"
-hidden: true
-createdAt: "2022-11-11T15:43:45.150Z"
-updatedAt: "2022-11-11T17:13:20.052Z"
 ---
 
 Things to add:
