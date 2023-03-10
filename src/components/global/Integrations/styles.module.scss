@@ -3,6 +3,13 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1em;
   margin-bottom: 2em;
+
+  @media screen and (max-width: 860px) {
+    & {
+      grid-template-columns: 1fr;
+      grid-auto-rows: auto;
+    }
+  }
 }
 
 .integration {
