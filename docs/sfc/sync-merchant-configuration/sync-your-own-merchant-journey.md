@@ -104,7 +104,7 @@ The response to this request includes the parameters of a newly created company,
 :::caution Keep track of the `companyId`
 
 It's important that you keep track of the Codat `companyId` that is returned at step 1:
-* It is required for the next stage of the setup, [ data pushing,](/sync-data-pushing) and any time you need to synchronize data for this merchant or interact with their configuration.
+* It is required any time you need to synchronize data for this merchant or interact with their configuration.
 * It is required to enable disconnected merchants to reauthorize the connection to their original Codat company without losing the history of data.
 
 :::
