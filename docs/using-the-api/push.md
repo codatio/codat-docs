@@ -1,38 +1,49 @@
 ---
-title: "Push: Creating and updating data"
+title: "Creating and updating data"
 description: "Understand how to push data to Codat's integrated platforms"
 ---
 
-In addition to pulling data from integrations, you can push data to create and update records in the underlying integrations using Codat's data model.
+In addition to pulling data from integrations, you can push data to create and update records in the underlying integrations using a single data model.
+
+- Do we need to have 'in addition to' we should position this as a nother core feature of Codat?
 
 :::note Data coverage
 
-View the full details of Codat's support for pushing data for each accounting platform in the <a class="external" href="https://knowledge.codat.io/supported-features/accounting" target="_blank">Data Coverage Explorer</a>.
+View the full details of Codat's support for creating/updating data for each accounting platform in the <a class="external" href="https://knowledge.codat.io/supported-features/accounting" target="_blank">Data Coverage Explorer</a>.
 
 :::
 
 ## Types of push
-
-Codat supports two types of push to a company's data source: 
+We should be talking in terms of CRUD (Create (POST), Read (GET), Update (PUT), Delete (DELETE))
+Codat supports two types of push to a company's data source:
 
 - `POST` - Create a record in a company's accounting software
 - `PUT` - Update an existing record
 
 Create and update operations behave similarly, with both having an options endpoint and returning a _pushOperation_ to allow you to monitor the state of the push. 
 
-There are some additional considerations when updating to help ensure the company's data integrity.
+There are some additional considerations when updating to help ensure the company's data integrity. <- could people confuse this with the assess feature?
 
 ## Step 1: Options
 
+- This is for back end use only. Remove any reference to what our client's 'user' may be wanting to do. 
+
 Before pushing data into accounting software, it is often necessary to collect some details from the user as to how they would like the data to be inserted. This includes names and amounts on transactional entities, but also factors such as categorization of entities, which is often handled differently between different accounting packages. A good example of this is specifying where on the balance sheet/profit and loss reports the user would like a newly-created nominal account to appear.
+
+- Each integration behaves differently, and have numerous requirements per feild. 
+- When building to create/update endpoints use the options endpoint to understand the specific requirements to be able write to the underlying integration.
+- In some cases, options are presented from the connected integration. 
+- We also include example responses for this API allowing you to start building without nessessaly created an account for that integration.
 
 Our `/options` endpoint exposes which fields are required to be pushed for a specific linked company, and the options which may be selected for each field.
 
 ### GET /options
 
+- keep this stuff, add refenence to our api ref.
+
 You can retrieve the options for a given data type by calling:
 
-`GET /companies/{companyId}/connections/{connectionId}/dataTypes/{dataType}/options/POST` 
+`GET /companies/{companyId}/connections/{connectionId}/dataTypes/{dataType}/options/POST` <- this is the wrong url 
 
 <a class="external" href="https://docs.codat.io/reference/get_companies-companyid-connections-connectionid-datatypes-datatype-options-put" target="_blank">See the API reference</a>.
 
@@ -93,6 +104,8 @@ This example describes the nominal account object as requiring three properties 
 
 ### Displaying options to your user
 
+- Why this section?
+
 The structure of the options endpoint is designed such that it can be easily parsed into a set of controls which can be displayed to the end user such that they can select how data is pushed into their accounting software.
 
 For example, when rendering the "fullyQualifiedCategory" from the above example as a control on a HTML form, it can be parsed into the following:
@@ -107,12 +120,20 @@ For example, when rendering the "fullyQualifiedCategory" from the above example 
 
 ## Step 2: Pushing a record
 
+- Long term: all feilds should be referenced by options endpoint.
+- Short term keep this. 
+- Remove reference to push.
+- Stick to one data type throughout doc.
+
 :::caution Pushing data not referenced by the Options endpoint
 
 If you attempt to push a record using fields that are not documented in the Options response for that company, the additional data may not be pushed to the platform and you may receive validation errors in response to your "push" request.
 :::
 
 ### The push endpoint
+
+- We should talk about the models and refer to our API ref schemas available 
+- Checkout our full schemas (ref to them (for acccouts data type)) for the relevent data tpye. Note that here we present the 'get' request schemas as they include the followings fields modeifiedDate, and sourceModifiedDate, as such are not used in create/update requests.
 
 The endpoint for pushing a record is as follows:
 
@@ -121,6 +142,8 @@ The endpoint for pushing a record is as follows:
 An example would be <a href="/accounting-api#/operations/post-invoice">posting a new invoice to an accounting package for a given company</a>.
 
 The request body should be a JSON object which conforms to the structure of the options endpoint above. It is expected that the options endpoint is queried before performing any push operation.
+
+- The above sentence should be reworked to remove the expectation of hitting the opts endpoint. 
 
 For example, a valid request body for the example above would be as follows:
 
@@ -132,6 +155,7 @@ For example, a valid request body for the example above would be as follows:
 }
 ```
 The response from the push endpoint is a PushOperation object, which is structured as follows:
+- This is missign the `data` object push in the request. We should also add some validation object -- it could be a simple 'we cut of the string xyz as the platform only supports N characters.
 
 ```json
 {
@@ -158,6 +182,9 @@ Properties on the object are as follows:
 
 ### Synchronous vs asynchronous push
 
+- QUESTION: What platforms we pushed synchronously?
+
+- Take an opinion: Our push is async. therefore only talk about it being async. 
 The majority of platforms are implemented to push asynchronously so you will receive a `Pending` push operation in response to your push request.  You can use the details in this response to monitor the status of your push request. 
 
 For some platforms, pushing may be implemented synchronously and you may receive a `Success` or `Failed` push operation in response to your push request (in place of a `Pending` push operation). However, we strongly suggest that you assume that all pushes will be processed asynchronously when integrating with Codat.
@@ -172,7 +199,11 @@ For asynchronous push operations, where the push is initially in a `Pending` sta
 
 Codat supports two methods of monitoring the status of push operations: polling and webhooks. 
 
+Webhooks first: (we should push users to use webhooks as it's better use of resources).
+
 ### 1. Polling
+
+- Less discussion about this.
 
 The Codat API provides two endpoints for monitoring push operations: one for viewing the status of all the most recent push operations, and one for viewing the status of a single push operation, identified by the `PushOperationKey` returned when you requested the push.
 
@@ -187,4 +218,9 @@ The list endpoint can be used to present to the user a list of recent push reque
 
 ### 2. Webhooks
 
+- More chat on this. 
+
 A second option for monitoring push operations is to register a subscription to the "Push status changed" rule. This can be configured by following the instructions in our documentation for [subscribing to rules](/introduction/webhooks/core-rules-create).
+
+
+- Next steps: Checkout guide on creating and invoice in Sage Intacct. (The new guide).
