@@ -54,6 +54,6 @@ Before you can push expenses to your customer’s accounting platform, you need 
 Once your customer has authorized access to their accounting platform, you will need to create a connection against the company for the partner expense integration.
 
 ``` http
-  POST https://api.codat.io/companies/{companyId}/connections/partnerexpense
+  POST https://api.codat.io/companies/{companyId}/sync/expenses/connections/partnerexpense
 ```
 
