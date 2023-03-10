@@ -39,7 +39,7 @@ With Sync for Expenses each company will have two data connections:
 - One will be to their accounting platform
 - The other will be to the partner expense integration
 
-When you create the partner expense connection it will already be 'Linked' so you won't need to authorise this connection again. 
+When you create the partner expense connection it will already be 'Linked' so you won't need to authorize this connection again. 
 
 ## Enable your SMB to authorize access to their data
 
