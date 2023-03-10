@@ -55,7 +55,7 @@ If you do not already have an AWS account, you can register for a free tier acco
 
 ## Create your IAM User, Access Policy & Role
 
-Please follow steps 2 through 5 on Amazon's instructional guide [here](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#step-2-create-an-iam-user) to create the required user, policy and role.
+Please follow steps 2 through 5 on Amazon's instructional guide [here](https://developer-docs.amazon.com/sp-api/docs/creating-and-configuring-iam-policies-and-entities) to create the required user, policy and role.
 
 :::danger Important - Step 2.8
 
