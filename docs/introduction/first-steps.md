@@ -61,16 +61,16 @@ Then, replace `{basicAuthHeader}` in the code snippets below.
 <Tabs>
   <TabItem value="bash" label="Unix Bash">  
 
-    ```bash
+  ```bash
     // Create a variable to hold your authorization header value
     // In this guide, we use:
     CODAT_AUTH_HEADER='{basicAuthHeader}'
-    ```
+  ```
   </TabItem>
 
   <TabItem value="dontnet" label=".NET">  
 
-    ```bash
+  ```bash
     // Add package RestSharp and create a new REST client
 
     using RestSharp;
@@ -80,12 +80,12 @@ Then, replace `{basicAuthHeader}` in the code snippets below.
 
     var codatApiClient = new RestClient(baseUrl);
     codatApiClient.AddDefaultHeader("Authorization", authHeaderValue);
-    ```  
+  ```  
   </TabItem>
 
   <TabItem value="nodejs" label="Node.js">  
 
-    ```javascript  
+  ```javascript  
 
     // NOTE: This example is for server side code.
     // Do not include your auth header in a client side rendered app.
@@ -104,7 +104,7 @@ Then, replace `{basicAuthHeader}` in the code snippets below.
         "Content-Type": "application/json;charset=UTF-8",
       },
     });
-    ```
+  ```
    </TabItem>
 </Tabs>
 
@@ -133,7 +133,7 @@ To create a company in Codat, use the `POST /companies` endpoint with a request 
 <Tabs>
   <TabItem value="curl" label="Unix Bash">  
 
-    ```bash
+  ```bash
     curl --request POST \
         --url "https://api.codat.io/companies" \
         --header "Authorization: $CODAT_AUTH_HEADER" \
@@ -144,13 +144,13 @@ To create a company in Codat, use the `POST /companies` endpoint with a request 
                 "name": "SMB company name",
                 "description": "Any additional information about the company"
         }
-    ```    
+  ```    
 
   </TabItem>
 
   <TabItem value="dontnet" label=".NET">  
 
-    ```bash
+  ```bash
     var createCompanyRequest = new RestRequest("companies", Method.Post)
         .AddBody(new
         {
@@ -159,12 +159,12 @@ To create a company in Codat, use the `POST /companies` endpoint with a request 
         });
         var createCompanyResponse = codatApiClient.Execute(createCompanyRequest);
     Console.WriteLine(createCompanyResponse.Content);
-    ```  
+  ```  
   </TabItem>
 
   <TabItem value="nodejs" label="Node.js">  
 
-    ```javascript  
+  ```javascript  
     codatApiClient
       .post("/companies", {
         name: "SMB company name",
@@ -176,7 +176,7 @@ To create a company in Codat, use the `POST /companies` endpoint with a request 
       .catch((error) => {
           console.log(error);
       });
-    ```
+  ```
    </TabItem>
 </Tabs>
 
@@ -226,27 +226,27 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
 <Tabs>
   <TabItem value="bash" label="Unix Bash">  
 
-    ```bash
+  ```bash
     curl --request GET \
         --url "https://api.codat.io/companies/{companyId}" \
         --header "Authorization: $CODAT_AUTH_HEADER" \
         --header "accept: application/json"
-    ```
+  ```
 
   </TabItem>
 
   <TabItem value="dontnet" label=".NET">  
 
-    ```bash
+  ```bash
     var getCompanyRequest = new RestRequest($"companies/{companyId}", Method.Get);
     var getCompanyResponse = codatApiClient.Execute(getCompanyRequest);
     Console.WriteLine(getCompanyResponse.Content);
-    ```  
+  ```  
   </TabItem>
 
   <TabItem value="nodejs" label="Node.js">  
 
-    ```javascript  
+  ```javascript  
     codatApiClient
       .get(`/companies/${companyId}`)
       .then((response) => {
@@ -255,7 +255,7 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
       .catch((error) => {
           console.log(error);
       });
-    ```
+  ```
    </TabItem>
 </Tabs>
 
@@ -304,29 +304,29 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
 <Tabs>
   <TabItem value="curl" label="Unix Bash">  
 
-    ```bash
+  ```bash
     curl --request GET \
         --url "https://api.codat.io/companies/{companyId}/data/invoices?page=1&pageSize=10" \
         --header "Authorization: $CODAT_AUTH_HEADER" \
         --header "accept: application/json"
-    ```
+  ```
 
   </TabItem>
 
   <TabItem value="dontnet" label=".NET">  
 
-    ```bash
+  ```bash
     var getInvoicesRequest = new RestRequest($"companies/{companyId}/data/invoices", Method.Get)
         .AddQueryParameter("page", "1")
         .AddQueryParameter("pageSize", "10");
         var getInvoicesResponse = codatApiClient.Execute(getInvoicesRequest);
     Console.WriteLine(getInvoicesResponse.Content);
-    ```  
+  ```  
   </TabItem>
 
   <TabItem value="nodejs" label="Node.js">  
 
-    ```javascript  
+  ```javascript  
     codatApiClient
       .get(`/companies/${companyId}/data/invoices`, {
           params: { page: 1, pageSize: 10 },
@@ -337,7 +337,7 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
       .catch((error) => {
           console.log(error);
       });
-    ```
+  ```
    </TabItem>
 </Tabs>  
 
