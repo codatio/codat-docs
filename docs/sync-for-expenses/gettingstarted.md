@@ -59,3 +59,22 @@ Once your customer has authorized access to their accounting platform, you will 
   POST https://api.codat.io/companies/{companyId}/sync/expenses/connections/partnerexpense
 ```
 
+``` mermaid
+sequenceDiagram
+    participant You
+    participant Codat
+    participant Company (SMB)
+    participant Accounting Software
+        You->>+Codat: Create Company
+        Codat->>-You: Company created successfully
+        You->>+Codat: Create `partnerExpense` data connection
+        Codat-->>-You: data connection created
+            Note over You, Codat: The partnerExpense connection is created with<br> a status of `Linked` and does not need to be authorised
+        You->>+Codat: Create Accounting data connection
+        Codat-->>-You: accounting data connection created successfully
+            Note over You, Codat: Accounting connection will be created<br> with status `Pending Auth`
+        You->>+Company (SMB): redirect Company to the linkUrl in the accounting data connection
+        Company (SMB)-->>Accounting Software: Company authorises accounting software
+        Accounting Software-->>Company (SMB): 
+        Company (SMB)->>-You: Company redirected to your application
+```
