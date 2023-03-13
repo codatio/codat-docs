@@ -186,8 +186,6 @@ Partial sample response:
 
 Both the `enabled` and `configured` parameters should be set to `true`.
 
-You're ready to start [pushing commerce data](/sfc/build-with-sync-for-commerce/sync-data-pushing) to this company.
-
 :::note Customizing the Sync flow
  
 Don't forget to customize your [Sync configuration flow](/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow).

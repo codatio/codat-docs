@@ -111,7 +111,7 @@ Once the access is authorized, the merchant can set how the synchronization shou
 
    The configuration is based on the options selected by the merchant as they complete the Sync Flow.
 
-### 3. [Data pushing](/sfc/build-with-sync-for-commerce/sync-data-pushing)
+### 3. Data pushing
 
 After the configuration is successfully submitted, you can start pushing the merchant’s data to Codat. Once the data is received, we handle its grouping and mapping according to the submitted configuration.
 
