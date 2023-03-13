@@ -2,9 +2,9 @@
 title: "First steps with Codat"
 sidebar_label: First steps
 description: "A practical introduction to Codat's Portal and API"
-createdAt: "2021-02-12T12:07:42.887Z"
-updatedAt: "2022-12-19T06:12:29.871Z"
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 :::info Welcome to our new docs!
 
@@ -58,47 +58,55 @@ Codat uses API keys, Base64 encoded within an authorization header, to control a
 
 Then, replace `{basicAuthHeader}` in the code snippets below.
 
-```json title="Unix Bash"
+<Tabs>
+  <TabItem value="bash" label="Unix Bash">  
 
-// Create a variable to hold your authorization header value
-// In this guide, we use:
+    ```bash
+    // Create a variable to hold your authorization header value
+    // In this guide, we use:
+    CODAT_AUTH_HEADER='{basicAuthHeader}'
+    ```
+  </TabItem>
 
-CODAT_AUTH_HEADER='{basicAuthHeader}'
-```
+  <TabItem value="dontnet" label=".NET">  
 
-```json title=".NET"
+    ```bash
+    // Add package RestSharp and create a new REST client
 
-// Add package RestSharp and create a new REST client
+    using RestSharp;
 
-using RestSharp;
+    var baseUrl = "https://api.codat.io";
+    var authHeaderValue = "{basicAuthHeader}";
 
-var baseUrl = "https://api.codat.io";
-var authHeaderValue = "{basicAuthHeader}";
+    var codatApiClient = new RestClient(baseUrl);
+    codatApiClient.AddDefaultHeader("Authorization", authHeaderValue);
+    ```  
+  </TabItem>
 
-var codatApiClient = new RestClient(baseUrl);
-codatApiClient.AddDefaultHeader("Authorization", authHeaderValue);
-```
+  <TabItem value="nodejs" label="Node.js">  
 
-```json title="Node.js"
+    ```javascript  
 
-// NOTE: This example is for server side code.
-// Do not include your auth header in a client side rendered app.
+    // NOTE: This example is for server side code.
+    // Do not include your auth header in a client side rendered app.
 
-// npm install axios@1.1.3
+    // npm install axios@1.1.3
 
-const axios = require("axios");
+    const axios = require("axios");
 
-var baseUrl = "https://api.codat.io";
-var authHeaderValue = "{basicAuthHeader}";
+    var baseUrl = "https://api.codat.io";
+    var authHeaderValue = "{basicAuthHeader}";
 
-var codatApiClient = axios.create({
-    baseURL: baseUrl,
-  headers: {
-      Authorization: authHeaderValue,
-    "Content-Type": "application/json;charset=UTF-8",
-  },
-});
-```
+    var codatApiClient = axios.create({
+        baseURL: baseUrl,
+      headers: {
+          Authorization: authHeaderValue,
+        "Content-Type": "application/json;charset=UTF-8",
+      },
+    });
+    ```
+   </TabItem>
+</Tabs>
 
 You can read more about <a href="/using-the-api/authentication" target="_blank">authentication at Codat</a>, or proceed to create your first company.
 
@@ -122,46 +130,55 @@ Copy this URL for use in the next step. Note that this URL can be accessed again
 
 To create a company in Codat, use the `POST /companies` endpoint with a request body containing the `name` of the company. It does not have to be unique and serves to identify your customer in Codat.
 
-```json title="Unix Bash"
+<Tabs>
+  <TabItem value="curl" label="Unix Bash">  
 
-curl --request POST \
-     --url "https://api.codat.io/companies" \
-     --header "Authorization: $CODAT_AUTH_HEADER" \
-     --header "accept: application/json" \
-     --header "content-type: application/json" \
-     --data '
-     {
-            "name": "SMB company name",
-            "description": "Any additional information about the company"
-     }
-```
+    ```bash
+    curl --request POST \
+        --url "https://api.codat.io/companies" \
+        --header "Authorization: $CODAT_AUTH_HEADER" \
+        --header "accept: application/json" \
+        --header "content-type: application/json" \
+        --data '
+        {
+                "name": "SMB company name",
+                "description": "Any additional information about the company"
+        }
+    ```    
 
-```json title=".NET"
+  </TabItem>
 
-var createCompanyRequest = new RestRequest("companies", Method.Post)
-    .AddBody(new
-    {
-        name = "SMB company name",
+  <TabItem value="dontnet" label=".NET">  
+
+    ```bash
+    var createCompanyRequest = new RestRequest("companies", Method.Post)
+        .AddBody(new
+        {
+            name = "SMB company name",
+            description = "Any additional information about the company"
+        });
+        var createCompanyResponse = codatApiClient.Execute(createCompanyRequest);
+    Console.WriteLine(createCompanyResponse.Content);
+    ```  
+  </TabItem>
+
+  <TabItem value="nodejs" label="Node.js">  
+
+    ```javascript  
+    codatApiClient
+      .post("/companies", {
+        name: "SMB company name",
         description = "Any additional information about the company"
-    });
-    var createCompanyResponse = codatApiClient.Execute(createCompanyRequest);
-Console.WriteLine(createCompanyResponse.Content);
-```
-
-```json title="Node.js"
-
-codatApiClient
-  .post("/companies", {
-    name: "SMB company name",
-    description = "Any additional information about the company"
-  })
-  .then((response) => {
-      console.log(response.data);
-  })
-  .catch((error) => {
-      console.log(error);
-  });
-```
+      })
+      .then((response) => {
+          console.log(response.data);
+      })
+      .catch((error) => {
+          console.log(error);
+      });
+    ```
+   </TabItem>
+</Tabs>
 
 The endpoint returns a JSON response, confirming the unique `id` of the company and a `redirect` URL used to establish a connection with a data source.
 
@@ -206,32 +223,41 @@ Once the flow is complete, you can verify the company's status under the <a href
 
 Remember to replace `{companyId}` with your company `id` obtained previously.
 
-```json title="Unix Bash"
+<Tabs>
+  <TabItem value="bash" label="Unix Bash">  
 
-curl --request GET \
-     --url "https://api.codat.io/companies/{companyId}" \
-     --header "Authorization: $CODAT_AUTH_HEADER" \
-     --header "accept: application/json"
-```
+    ```bash
+    curl --request GET \
+        --url "https://api.codat.io/companies/{companyId}" \
+        --header "Authorization: $CODAT_AUTH_HEADER" \
+        --header "accept: application/json"
+    ```
 
-```json title=".NET"
+  </TabItem>
 
-var getCompanyRequest = new RestRequest($"companies/{companyId}", Method.Get);
-var getCompanyResponse = codatApiClient.Execute(getCompanyRequest);
-Console.WriteLine(getCompanyResponse.Content);
-```
+  <TabItem value="dontnet" label=".NET">  
 
-```json title="Node.js"
+    ```bash
+    var getCompanyRequest = new RestRequest($"companies/{companyId}", Method.Get);
+    var getCompanyResponse = codatApiClient.Execute(getCompanyRequest);
+    Console.WriteLine(getCompanyResponse.Content);
+    ```  
+  </TabItem>
 
-codatApiClient
-  .get(`/companies/${companyId}`)
-  .then((response) => {
-      console.log(response.data);
-  })
-  .catch((error) => {
-      console.log(error);
-  });
-```
+  <TabItem value="nodejs" label="Node.js">  
+
+    ```javascript  
+    codatApiClient
+      .get(`/companies/${companyId}`)
+      .then((response) => {
+          console.log(response.data);
+      })
+      .catch((error) => {
+          console.log(error);
+      });
+    ```
+   </TabItem>
+</Tabs>
 
 In the JSON response, you can see that the the `status` of data connections changed to **linked**.
 
@@ -275,36 +301,45 @@ For example, to query invoices, use the <a href="/accounting-api#/operations/lis
 
 Remember to replace `{companyId}` with your company `id` obtained previously.
 
-```json title="Unix Bash"
+<Tabs>
+  <TabItem value="curl" label="Unix Bash">  
 
-curl --request GET \
-     --url "https://api.codat.io/companies/{companyId}/data/invoices?page=1&pageSize=10" \
-     --header "Authorization: $CODAT_AUTH_HEADER" \
-     --header "accept: application/json"
-```
+    ```bash
+    curl --request GET \
+        --url "https://api.codat.io/companies/{companyId}/data/invoices?page=1&pageSize=10" \
+        --header "Authorization: $CODAT_AUTH_HEADER" \
+        --header "accept: application/json"
+    ```
 
-```json title=".NET"
+  </TabItem>
 
-var getInvoicesRequest = new RestRequest($"companies/{companyId}/data/invoices", Method.Get)
-    .AddQueryParameter("page", "1")
-    .AddQueryParameter("pageSize", "10");
-    var getInvoicesResponse = codatApiClient.Execute(getInvoicesRequest);
-Console.WriteLine(getInvoicesResponse.Content);
-```
+  <TabItem value="dontnet" label=".NET">  
 
-```json title="Node.js"
+    ```bash
+    var getInvoicesRequest = new RestRequest($"companies/{companyId}/data/invoices", Method.Get)
+        .AddQueryParameter("page", "1")
+        .AddQueryParameter("pageSize", "10");
+        var getInvoicesResponse = codatApiClient.Execute(getInvoicesRequest);
+    Console.WriteLine(getInvoicesResponse.Content);
+    ```  
+  </TabItem>
 
-codatApiClient
-  .get(`/companies/${companyId}/data/invoices`, {
-      params: { page: 1, pageSize: 10 },
-  })
-  .then((response) => {
-      console.log(response.data);
-  })
-  .catch((error) => {
-      console.log(error);
-  });
-```
+  <TabItem value="nodejs" label="Node.js">  
+
+    ```javascript  
+    codatApiClient
+      .get(`/companies/${companyId}/data/invoices`, {
+          params: { page: 1, pageSize: 10 },
+      })
+      .then((response) => {
+          console.log(response.data);
+      })
+      .catch((error) => {
+          console.log(error);
+      });
+    ```
+   </TabItem>
+</Tabs>  
 
 In the JSON response, the API provides ten detailed invoices as a result.
 
