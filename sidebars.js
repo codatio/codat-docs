@@ -71,10 +71,10 @@ module.exports = {
           items: [
             "using-the-api/authentication",
             "using-the-api/managing-companies",
-            "using-the-api/modified-dates",
-            "using-the-api/ordering-results",
-            "using-the-api/paging",
             "using-the-api/querying",
+            "using-the-api/paging",
+            "using-the-api/ordering-results",
+            "using-the-api/modified-dates",
             "using-the-api/queueing-data-syncs",
             "using-the-api/errors",
           ]
