@@ -1,5 +1,5 @@
 ---
-title: "Push: Creating and updating data"
+title: "Creating and updating data"
 description: "Understand how to push data to Codat's integrated platforms"
 ---
 

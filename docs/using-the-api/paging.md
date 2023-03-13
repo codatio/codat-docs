@@ -94,3 +94,14 @@ var info = response.Data;
 }
 }
 ```
+
+:::info Recap
+You have learned:
+- How to paginate with the `page` and `pageSize` parameters
+:::
+
+---
+
+## Read next
+
+- [Ordering results](/using-the-api/ordering-results)

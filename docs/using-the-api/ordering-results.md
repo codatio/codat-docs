@@ -44,3 +44,14 @@ To see the same list sorted in descending order, that is the newest outstanding 
 ```http
 GET /companies/{companyId}/data/bills?query=amountDue%3E0&orderBy=-dueDate
 ```
+
+:::info Recap
+You have learned:
+- How to sort data with the `orderBy` parameter
+:::
+
+---
+
+## Read next
+
+- [Modified dates](/using-the-api/modified-dates)
