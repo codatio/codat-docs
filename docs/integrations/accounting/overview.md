@@ -34,7 +34,7 @@ You can also explore the data types supported by each integration in the interac
 
 ## Cloud
 
-- [ClearBooks](/integrations/accounting/clearbooks/accounting-clearbooks)
+- [Clear Books](/integrations/accounting/clearbooks/accounting-clearbooks)
 - [Dynamics 365 Business Central](/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral)
 - [Exact Online (NL and UK)](/integrations/accounting/exact-online/accounting-exact-online)
 - [FreeAgent](/integrations/accounting/freeagent/accounting-freeagent)

@@ -1,6 +1,6 @@
 export const integrations = [
   {
-    "name": "ClearBooks",
+    "name": "Clear Books",
     "to": "/integrations/accounting/clearbooks/accounting-clearbooks",
     "type": "accounting",
     "img": "https://static.codat.io/public/officialLogos/Square/C23CFE49-1C1B-49BD-9192-8280B281F0C0.png"
