@@ -1,25 +1,19 @@
 ---
 title: "Delete Bills and Bill payments from NetSuite"
-description: "Learn how to delete Bills and Bill payments using the dedicated delete object endpoints."
+description: "Learn how to delete Bills and Bill payments from NetSuite using the deletion endpoints."
 createdAt: "2022-12-09T17:06:02.593Z"
 updatedAt: "2023-01-04T09:51:42.874Z"
 ---
 
-:::info Future support for deleting data
-
-To check the data types and platforms for which we plan to add support for deleting data, see the [Accounting API Public Product Roadmap](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/46-accounting-api).
-
-:::
-
 The _Delete bill_ and _Delete bill payment_ endpoints allow you to delete specified Bills and Bill payments from Oracle NetSuite.
 
-1. Make a `DELETE` request to the relevant endpoint, specifying the _Codat ID_ of the Bill or Bill payment to be deleted in the request URL:
+1. Make a `DELETE` request to the relevant endpoint, specifying the Codat ID of the Bill or Bill payment to be deleted in the request URL:
    
-   ```http title="Delete a Bill"
+   ```http title="Delete a Bill:"
    DELETE /companies/{companyId}/connections/{connectionId}/push/bills/{billId}
    ```
    
-   ```http title="Delete a Bill payment"
+   ```http title="Delete a Bill payment:"
    DELETE /companies/{companyId}/connections/{connectionId}/push/billPayments/{billPaymentId}
    ```
 
@@ -32,9 +26,9 @@ The _Delete bill_ and _Delete bill payment_ endpoints allow you to delete specif
 
    :::
 
-2. [List push operations](/codat-api#/operations/get-companies-companyId-push) for the company. A `Success` status for the push operation means the Bill or Bill payment object was deleted from NetSuite.
+2. [List the push operations](/codat-api#/operations/get-companies-companyId-push) for the company. A `Success` status for the push operation means the Bill or Bill payment object was deleted from NetSuite.
 
-3. Go to the NetSuite UI and check that the Bill or Bill Payment object no longer exists.
+3. Check that the Bill or Bill Payment object no longer exists in the NetSuite UI.
 
 ## Deleting Bills linked to Bill payments
 
@@ -59,5 +53,10 @@ If you specify a `billPaymentId` that corresponds to a Bill Credit in NetSuite, 
 
 If you specify a `billPaymentId` that corresponds to a Deposit in NetSuite, only Deposit lines that affect Accounts Payable are deleted. These lines are displayed in the **Other Deposits** and **Cash Back** tabs on the Deposit:
 
-<img src="/img/old/5a8b826-netsuite-deposit-other-deposits-lines.png" />
+![Image](/img/integrations/accounting/netsuite/netsuite_deposite-other-deposits.png "A NetSuite Deposit with the Other Deposits and Cash Back tabs highlighted.")
 
+:::info Future support for deleting objects
+
+To check the data types for which we plan to add support for deleting objects from the source accounting platform, see the [Accounting API Public Product Roadmap](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/46-accounting-api).
+
+:::
