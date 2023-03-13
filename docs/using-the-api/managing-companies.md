@@ -7,17 +7,17 @@ updatedAt: "2022-12-21T06:24:11.564Z"
 
 ## Onboarding your users
 
-Your users/customers are [companies](/core-concepts/companies). 
+Your users/customers are [companies](/core-concepts/companies). To access their data you'll need to onboard them.
+
+You'll have to go through the following steps:
+1. Create a company
+2. Authorize access to sources of data
+3. Pull the data
 
 You can either onboard users:
 
 - When they first create an account with your service
 - At the first point you wish to retrieve their financial data
-
-You'll have to go through the following steps:
-1. Create a company
-2. 
-
 
 ### Create a company
 
@@ -51,7 +51,7 @@ The `id` property that you receive in the response is the unique Codat identifie
 
 ### Authorize access
 
-You can 
+Once you've created the company, they'll need to give you permission to pull their data. There are several approaches to this, but for simplicity we've just cover our out-of-the-box [hosted link](/auth-flow/authorize-hosted-link) approach.
 
 Send the user to the `redirect` URL returned in the previous step. They will be sent to [Link](/auth-flow/authorize-hosted-link) where they can select their accounting software and complete the linking process.
 
@@ -145,12 +145,15 @@ Get a `redirect` URL for the company by following the process [here](/auth-flow/
 
 Once the user finishes the Link flow, they will be redirected back to the Redirect URL, as described [earlier in this guide](/using-the-api/managing-companies#redirect-the-user). At this point the re-authorization process is complete and their data has begun synchronizing again.
 
+## Deleting companies
+
+You can delete companies in the Portal in the table in **Companes**.
 
 :::info Recap
 You've learned:
-- How to authorize API calls
-- Where to find your auth header
-- How to create and delete API keys
+- How to create a company and authroize access to their data
+- The basics of pulling data
+- Managing companies
 :::
 
 ---
