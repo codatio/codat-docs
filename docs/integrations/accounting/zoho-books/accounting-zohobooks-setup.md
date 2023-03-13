@@ -42,7 +42,7 @@ To register your Zoho Books application.
    The **Create New Client** page is displayed.
 3. Add the following details:
    - From the **Client Type** list, select **Server-based Applications**.
-   - In the **Client Name** box, enter your company's name. Your customers see this when they authorise your connection to their accounting system.
+   - In the **Client Name** box, enter your company's name. Your customers see this when they authorize your connection to their accounting system.
    - In the **Homepage URL** box, enter your company's website address.
    - In the **Authorized redirect URIs** box, enter `https://zohobooks.codat.io/oauth/callback`
 4. Click **Create**.  

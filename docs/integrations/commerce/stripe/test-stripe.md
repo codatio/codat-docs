@@ -1,6 +1,6 @@
 ---
 title: "Test your Stripe integration"
-description: "Test our Stripe integration by pulling sample data to a test Company"
+description: "Test our Stripe integration by pulling sample data to a test company"
 createdAt: "2021-02-04T12:16:20.828Z"
 updatedAt: "2022-10-20T09:25:35.756Z"
 ---

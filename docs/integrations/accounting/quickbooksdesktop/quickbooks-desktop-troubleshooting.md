@@ -18,7 +18,7 @@ The connector's ability to access data is dependent on permissions granted by th
 
 If the user has not given the connector the permission to _always_ modify the company data file (allowing access even if QuickBooks is not running), the connector will be unable to process any queued syncs or pushes, unless the user has QuickBooks open and is logged in to the relevant company file. The connector will periodically check whether the correct file has been opened and will complete the queued/pending items as soon as possible.
 
-## The first link was successful but the company became deauthorised immediately after the datasets completed
+## The first link was successful but the company became deauthorized immediately after the datasets completed
 
 You can configure the QuickBooks Desktop connector to run in one of two modes:
 
@@ -29,6 +29,6 @@ For more information about these modes, see [On-premise connector setup](/integr
 
 If you'd like to enable ongoing syncs with the company, update your connector settings, and ask the SMB user to complete the linking process (i.e. downloading and installing the connector) again.
 
-:::note Re-linking and Company IDs
+:::note Re-linking and company IDs
 
 > The same Company ID must be used when re-completing the linking process.

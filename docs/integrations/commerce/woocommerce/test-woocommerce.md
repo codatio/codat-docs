@@ -1,6 +1,6 @@
 ---
 title: "Test your WooCommerce integration"
-description: "Test our WooCommerce integration by pulling sample data to a test Company"
+description: "Test our WooCommerce integration by pulling sample data to a test company"
 createdAt: "2021-03-23T11:58:41.051Z"
 updatedAt: "2022-10-20T09:28:19.856Z"
 ---

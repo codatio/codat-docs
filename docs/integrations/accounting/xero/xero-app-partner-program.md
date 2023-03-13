@@ -4,7 +4,7 @@ createdAt: "2023-01-16T16:04:25.030Z"
 updatedAt: "2023-01-16T16:39:58.995Z"
 ---
 
-import LocalStorageChecklist from '@components/global/LocalStorageChecklist'
+import LocalStorageChecklist from "@components/global/LocalStorageChecklist";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 
 If you want to have more than 25 Xero connections, you'll need to join the **Xero App Partner Program**.
@@ -19,11 +19,10 @@ There are additional checkpoints based on use cases.
 
 :::
 
-
 <details>
   <summary>Remember your progress...</summary>
 
-  Use our interactive checkpoint list to track your progress. It will be saved in your browser.
+ Use our interactive checkpoint list to track your progress. It will be saved in your browser.
 
   <BrowserOnly>
     {

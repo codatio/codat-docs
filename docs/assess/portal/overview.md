@@ -60,7 +60,7 @@ Periods to compare = 4
 
 ### Mapping to a common statement outline
 
-On load, we will automatically categorise the lines on the business's profit and loss statement. The results will be presented in a modal for you to review. When you are finished reviewing each group, press _Next_. In some cases, we may not be able to automatically map every statement line - these will highlight in red and you will be required to select the relevant category from the list. Once complete, press _Save_ to view the final statement.
+On load, we will automatically categorize the lines on the business's profit and loss statement. The results will be presented in a modal for you to review. When you are finished reviewing each group, press _Next_. In some cases, we may not be able to automatically map every statement line - these will highlight in red and you will be required to select the relevant category from the list. Once complete, press _Save_ to view the final statement.
 
 ### Statement
 

@@ -14,7 +14,7 @@ Use Codat's Commerce API with Stripe to securely connect to, retrieve, and view 
 
 :::caution Action required by existing users
 
-The integration now uses <a className="external" href="https://stripe.com/docs/connect" target="_blank">_Stripe Connect_</a> to establish authenticated connections between Companies and Stripe data sources, rather than _Stripe extensions_.
+The integration now uses <a className="external" href="https://stripe.com/docs/connect" target="_blank">_Stripe Connect_</a> to establish authenticated connections between companies and Stripe data sources, rather than _Stripe extensions_.
 
 If you're an existing user, you must configure your Stripe integration to use Stripe Connect before you can link any more customers (merchants). Existing data connections are unaffected until 2024, the planned deprecation date for Stripe extensions.
 

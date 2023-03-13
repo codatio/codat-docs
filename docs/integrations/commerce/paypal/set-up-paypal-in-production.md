@@ -15,7 +15,7 @@ Before you begin, read the Provider requirements on the [PayPal](/integrations/c
 You'll need to:
 
 - Sign in to the [Codat Portal](https://app.codat.io/).
-- Register as a Third Party Provider (TPP) to access PayPal’s X2SA API and request your sandbox credentials. PayPal will require you to provide them with either an eIDAS QWAC or OBWAC (i.e. an open banking certification)
+- Register as a Third Party Provider (TPP) to access PayPal’s X2SA API and request your sandbox credentials. PayPal will require you to provide them with either an eIDAS QWAC or OBWAC (i.e. an Open Banking certification)
 - Add your secure credentials to the Codat Portal and enable your test PayPal integration.
 - Check your sync settings.
 

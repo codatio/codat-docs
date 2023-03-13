@@ -1,6 +1,6 @@
 ---
 title: "Test your PayPal Integration"
-description: "Test your PayPal integration by pulling sandbox data to a test Company"
+description: "Test your PayPal integration by pulling sandbox data to a test company"
 createdAt: "2021-03-25T13:09:00.370Z"
 updatedAt: "2022-10-20T08:54:42.581Z"
 ---

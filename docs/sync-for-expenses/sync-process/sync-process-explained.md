@@ -28,7 +28,7 @@ import TabItem from "@theme/TabItem";
 
 ### [Create expense-transactions datasets](expense-transactions)
 
-After the company has categorised their expenses using the mapping options, you can create expense-transaction datasets, in the response you will receive a `datasetId`.
+After the company has categorized their expenses using the mapping options, you can create expense-transaction datasets, in the response you will receive a `datasetId`.
 
 ```http title="Create expense dataset"
 POST https://api.codat.io/companies/{companyId}/sync/expenses/expense-reconciliations

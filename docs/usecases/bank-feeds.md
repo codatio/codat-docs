@@ -88,9 +88,9 @@ Note: _This step from Intuit is subject to approval; it is unlikely that Intuit 
 
 The user journey is initiated by directing the user to a Codat-provided linkUrl that corresponds to a Codat QuickBooks Bank Feed connection.
 
-There are two scenarios that must be addressed for this: creating a new Company and corresponding QBO bank feed connection, and creating a QBO bank feed connection for an existing company.
+There are two scenarios that must be addressed for this: creating a new company and corresponding QBO bank feed connection, and creating a QBO bank feed connection for an existing company.
 
-#### Create new Company
+#### Create new company
 
 Creating a new company is appropriate when the user does not have any other existing use cases with Codat.
 
@@ -112,9 +112,9 @@ Example request body:
 
 The response body will include a linkUrl - included below.
 
-### Create new connection on existing Company
+### Create new connection on existing company
 
-Creating a new connection for an existing Company is appropriate when the user has another existing use case with Codat, and as a result has a corresponding companyId. This existing companyId should be provided in the request to create a new connection.
+Creating a new connection for an existing company is appropriate when the user has another existing use case with Codat, and as a result has a corresponding companyId. This existing companyId should be provided in the request to create a new connection.
 
 The platformKey is `hcws`, representing QBO Bank Feeds.
 

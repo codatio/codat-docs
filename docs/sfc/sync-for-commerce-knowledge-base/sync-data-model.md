@@ -115,7 +115,7 @@ The structure for both of these sections is the same:
 
 | Field | Type | Description |
 |---|---|---|
-| syncFees | boolean | Whether or not to synchronise fees data to the accounting software. |
+| syncFees | boolean | Whether or not to synchronize fees data to the accounting software. |
 | accounts | Dictionary of AccountType to Account | Account to push to for each fee type. |
 
 ## Account types

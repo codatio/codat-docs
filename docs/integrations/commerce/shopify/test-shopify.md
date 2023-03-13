@@ -1,6 +1,6 @@
 ---
 title: "Test your Shopify integration"
-description: "Test your Shopify integration by pulling sample data to a test Company"
+description: "Test your Shopify integration by pulling sample data to a test company"
 createdAt: "2021-01-14T13:50:30.467Z"
 updatedAt: "2022-10-20T09:22:23.459Z"
 ---
