@@ -41,15 +41,17 @@ If you're using the Codat Link flow, the user can download the connector after t
 
 If you've built your own Link flow, the **linkUrl** field on the company's QuickBooks data connection will initiate the installer download.
 
-:::info Connector permissions
-
-**The connector requires administrator privileges (admin rights) to run.** Each time you add a company, a user with admin rights needs to run the installer, which will display the following window:
-
-:::
+**Administrator privileges (admin rights) are required to run the connector.** When you add a new company, a user with admin rights needs to run the installer, which will display the following dialog:
 
 <img src="/img/old/420dc1e-QBDLinkNew.JPG" />
 
 The user copies their license key (the same as their _CompanyId_ in Codat) to use in the next step.
+
+::: info What if the SMB user isn't a Windows admin?
+
+If the SMB user isn't a Windows administrator on their system, a different administrator must approve the installation and then run QuickBooks Desktop using the **Run as Administrator** option. This will initiate the first link of the company. QuickBooks Desktop must then be closed for the connector to start syncing data.
+
+:::
 
 ## 2. Launch the connector and enter the licence key
 
