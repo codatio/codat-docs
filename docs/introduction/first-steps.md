@@ -131,7 +131,8 @@ curl --request POST \
      --header "content-type: application/json" \
      --data '
      {
-          "name": "SMB company name"
+            "name": "SMB company name",
+            "description": "Any additional information about the company"
      }
 ```
 
@@ -140,8 +141,8 @@ curl --request POST \
 var createCompanyRequest = new RestRequest("companies", Method.Post)
     .AddBody(new
     {
-          name = "SMB company name",
-        platformType = "mqjo"
+        name = "SMB company name",
+        description = "Any additional information about the company"
     });
     var createCompanyResponse = codatApiClient.Execute(createCompanyRequest);
 Console.WriteLine(createCompanyResponse.Content);
@@ -151,8 +152,8 @@ Console.WriteLine(createCompanyResponse.Content);
 
 codatApiClient
   .post("/companies", {
-      name: "SMB company name",
-    platformType: "mqjo",
+    name: "SMB company name",
+    description = "Any additional information about the company"
   })
   .then((response) => {
       console.log(response.data);
