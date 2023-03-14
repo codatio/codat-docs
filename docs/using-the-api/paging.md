@@ -95,7 +95,7 @@ var info = response.Data;
 }
 ```
 
-:::info Recap
+:::tip Recap
 You have learned:
 - How to paginate with the `page` and `pageSize` parameters
 :::
