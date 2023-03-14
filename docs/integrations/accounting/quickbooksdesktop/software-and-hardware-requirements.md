@@ -45,10 +45,15 @@ Codat does not currently support Intuit QuickBooks for Mac OS. Only the QuickBoo
 
 The QBD connector works with QBD running in single-user or multi-user mode. In QBD multi-user mode, users on different machines with different QBD data files can sync data to Codat.
 
-Note the following limitations when using QBD in multi-user mode:
+## Limitations
 
-- The QuickBooks company file that is open on a user's machine must be the same as the configured company file for the Codat QBD connector.
-- Only one instance of QBD can be open on a user's machine at a time.
+The following limitations apply when using the connector with QBD running in either single-user or multi-user mode.
+
+If QuickBooks Desktop is open on the SMB user's machine, the open QuickBooks company file must be the same as the company file that's configured for the connector.
+
+Only one instance of QBD can be open on a user's machine at a time.
+
+If QuickBooks Desktop is closed on the user's machine, syncing will only occur if the relevant option is selected when you [authorize the connector to access QuickBooks](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector#4-authorize-the-connector-to-access-quickbooks).
 
 ## Supported operating systems
 
