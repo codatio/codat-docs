@@ -1,16 +1,16 @@
 ---
-title: "Sage 50 (UK) (on-premise)"
+title: "Sage 50 (UK & Ireland) (on-premise)"
 slug: "accounting-sage50"
-description: "Learn about our Sage 50 (UK) on-premise connector."
+description: "Learn about our Sage 50 (UK & Ireland) on-premise connector."
 createdAt: "2019-03-01T11:25:56.865Z"
 updatedAt: "2022-11-25T16:20:17.651Z"
 ---
 
-The Codat Sage 50 (UK) on-premise connector is a Windows application that enables SMBs using Sage 50 (UK) to fully integrate with the Codat platform.
+The Codat Sage 50 (UK & Ireland) on-premise connector is a Windows application that enables SMBs using Sage 50 (UK & Ireland) to fully integrate with the Codat platform.
 
 ## Data type coverage
 
-View the coverage of our Sage 50 (UK) integration in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=hbql" target="_blank">Data coverage explorer</a>.
+View the coverage of our Sage 50 (UK & Ireland) integration in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=hbql" target="_blank">Data coverage explorer</a>.
 
 ## Branding, link journey and enabling the integration
 

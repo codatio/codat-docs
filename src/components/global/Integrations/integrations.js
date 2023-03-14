@@ -70,7 +70,7 @@ export const integrations = [
     "name": "Sage 50",
     "to": "/integrations/accounting/sage50/accounting-sage50",
     "type": "accounting",
-    "tag": "On-premise, UK",
+    "tag": "On-premise, UK & Ireland",
     "img": "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png"
   },
   {
