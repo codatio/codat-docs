@@ -54,10 +54,24 @@ export const integrations = [
     "img": "https://static.codat.io/public/officialLogos/Square/396C3158-5DD7-481B-A7C4-A795CA31792B.png"
   },
   {
+    "name": "QuickBooks Desktop",
+    "to": "/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop",
+    "type": "accounting",
+    "tag": "On-premise",
+    "img": "https://static.codat.io/public/officialLogos/Square/19EEFA32-58A8-4097-B95A-EF150BF24FA0.png"
+  },
+  {
     "name": "QuickBooks Online",
     "to": "/integrations/accounting/quickbooksonline/accounting-quickbooksonline",
     "type": "accounting",
     "img": "https://static.codat.io/public/officialLogos/Square/19EEFA32-58A8-4097-B95A-EF150BF24FA0.png"
+  },
+  {
+    "name": "Sage 50",
+    "to": "/integrations/accounting/sage50/accounting-sage50",
+    "type": "accounting",
+    "tag": "On-premise, UK",
+    "img": "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png"
   },
   {
     "name": "Sage 200cloud",
@@ -95,20 +109,6 @@ export const integrations = [
     "to": "/integrations/accounting/zoho-books/accounting-zoho-books",
     "type": "accounting",
     "img": "https://static.codat.io/public/officialLogos/Square/42C00468-A250-4355-9723-42E2DF730D77.png"
-  },
-  {
-    "name": "QuickBooks Desktop",
-    "to": "/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop",
-    "type": "accounting",
-    "tag": "On-premise",
-    "img": "https://static.codat.io/public/officialLogos/Square/19EEFA32-58A8-4097-B95A-EF150BF24FA0.png"
-  },
-  {
-    "name": "Sage 50",
-    "to": "/integrations/accounting/sage50/accounting-sage50",
-    "type": "accounting",
-    "tag": "On-premise, UK",
-    "img": "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png"
   },
   {
     "name": "Plaid",
