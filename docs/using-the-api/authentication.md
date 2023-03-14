@@ -11,10 +11,10 @@ You must keep the API key secret, so make sure it isn't available in publicly ac
 
 Codat expects the API key to be included in all API requests to the server, Base64 encoded within an 'Authorization' header.
 
-`Authorization: Basic <YOUR_ENCODED_API_KEY>`
+`Authorization: Basic YOUR_ENCODED_API_KEY`
 
 :::info
-Replace <code>\<YOUR_ENCODED_API_KEY\></code> with your API key, Base64 encoded
+Replace *`YOUR_ENCODED_API_KEY`* with your API key, Base64 encoded
 :::
 
 ## Finding your authorization header
@@ -34,7 +34,7 @@ You can have up to 10 keys per client. You can create new keys in the Portal at 
 
 You can delete keys in the Portal too. Deleted keys will no longer authorize API calls.
 
-:::info Recap
+:::tip Recap
 You've learned:
 - How to authorize API calls
 - Where to find your auth header
