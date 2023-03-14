@@ -25,7 +25,7 @@ You should be aware of the following behavior when pushing Direct costs with tax
 
 ## Direct incomes
 
-Direct incomes are mapped from [Bank Transaction Explanations](https://dev.freeagent.com/docs/bank_transaction_explanations) in FreeAgent. This object does not support multiple lines, so Direct incomes pulled from FreeAgent only include a single object in the `lineItems` array.
+Direct incomes pulled from FreeAgent only contain a single line in the `lineItems` array.
 
 The `currencyRate` field is not populated when pulling Direct incomes in foreign currencies due to limitations of the provider's API.
 
