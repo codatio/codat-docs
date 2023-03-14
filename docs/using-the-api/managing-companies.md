@@ -147,7 +147,7 @@ Once the user finishes the Link flow, they will be redirected back to the Redire
 
 ## Deleting companies
 
-You can delete companies in the Portal in the table in **Companes**.
+You can delete companies in the Portal in the table in **Companies**.
 
 :::info Recap
 You've learned:
