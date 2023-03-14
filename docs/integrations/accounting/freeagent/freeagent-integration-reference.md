@@ -13,7 +13,7 @@ Direct costs are mapped from [Bank Transaction Explanations](https://dev.freeage
 
 When pulling Direct costs in foreign currencies, the `currencyRate` field is not populated due to limitations of the provider's API.
 
-When pushing Direct costs, the currency of the created object will be the same as that of the bank account. This is because FreeAgent doesn't allow users to post foreign currencies to a bank account.
+When pushing Direct costs, the currency of the created object will be the same as that of the associated bank account. This is because FreeAgent doesn't allow users to post foreign currencies to bank accounts.
 
 ### Tax handling when pushing Direct costs
 
