@@ -19,7 +19,7 @@ The internal logic of the dashboard has changed, and the endpoint is no longer i
 
 ## Action required​
 
-If you are using the current `GET /metrics/companies` endpoint to perform monitoring outside of the Portal dashboard, make sure to use alternative API calls instead. You can obtain data connection statuses from the `GET /companies` instead. 
+If you are using the current `GET /metrics/companies` endpoint to perform monitoring outside of the Portal dashboard, make sure to use alternative API calls instead. You can obtain data connection statuses from the `GET /companies`. 
 
 ## Expected impact if no action is taken​
 
