@@ -17,7 +17,7 @@ To onboard a new user or customer:
 You can either onboard users:
 
 - When they first create an account with your service
-- At the first point you wish to retrieve their financial data
+- At the first point you want to retrieve their financial data
 
 ### Create a company
 
