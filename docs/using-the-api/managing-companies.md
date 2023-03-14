@@ -7,7 +7,7 @@ updatedAt: "2022-12-21T06:24:11.564Z"
 
 ## Onboarding your users
 
-Your users/customers are [companies](/core-concepts/companies). To access their data you'll need to onboard them.
+Your users or customers are [companies](/core-concepts/companies). To access their data you'll need to onboard them.
 
 To onboard a new user or customer:
 1. Create a company
