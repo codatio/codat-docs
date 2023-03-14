@@ -45,7 +45,7 @@ To see the same list sorted in descending order, that is the newest outstanding 
 GET /companies/{companyId}/data/bills?query=amountDue%3E0&orderBy=-dueDate
 ```
 
-:::info Recap
+:::tip Recap
 You have learned:
 - How to sort data with the `orderBy` parameter
 :::
