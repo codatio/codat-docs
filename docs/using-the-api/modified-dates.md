@@ -69,7 +69,7 @@ This query retrieves invoices with issue dates that are greater than twelve mont
 
 :::info Recap
 You've learned:
-- How dates are used to keen company data up to date
+- How dates are used to keep company data up to date
 - The difference between `modifiedDate` and `sourceModifiedDate`
 :::
 
