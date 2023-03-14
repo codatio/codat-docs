@@ -92,7 +92,7 @@ Status codes for push operations created in the Codat API might be different fro
 
 When a push operation is created in the API, some service providers may use a `202 Accepted` code, which implies that the request has been accepted for processing, but the processing has not completed. However, the push API may return a 200 Success code for the push operation successfully created in the Codat API.
 
-:::info Recap
+:::tip Recap
 You've learned about error codes you might encounter while using the API.
 :::
 
