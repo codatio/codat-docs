@@ -47,10 +47,8 @@ If you've built your own Link flow, the **linkUrl** field on the company's Quick
 
 The user copies their license key (the same as their _CompanyId_ in Codat) to use in the next step.
 
-::: info What if the SMB user isn't a Windows admin?
-
-If the SMB user isn't a Windows administrator on their system, a different administrator must approve the installation and then run QuickBooks Desktop using the **Run as Administrator** option. This will initiate the first link of the company. QuickBooks Desktop must then be closed for the connector to start syncing data.
-
+:::info What if the SMB user isn't a Windows admin?
+If the SMB user isn't a Windows administrator on their own system, a different administrator must approve the installation and run Quickbooks Desktop using the **Run as Administrator** option, both during the initial link and when adding companies to an existing connector. When installed in this way, the connector is only able to sync data while Quickbooks Desktop is closed.
 :::
 
 ## 2. Launch the connector and enter the licence key
