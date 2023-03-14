@@ -5,7 +5,7 @@ createdAt: "2022-02-21T12:45:33.573Z"
 updatedAt: "2022-11-02T14:38:29.977Z"
 ---
 :::caution Account category versions
-This categorization of accounts via only applies to our classic [Enhanced Financials](/assess/reports/enhanced-financials/financials). For our revised categorization aimed at eCommerce lenders, explore [Enhanced Financials for eCommerce lenders.](/assess/reports/enhanced-financials-ecommerce-lenders/financials)
+This categorization of accounts via only applies to our legacy [Enhanced Financials](/assess/reports/enhanced-financials-legacy/financials). For categorization using the latest categories, explore the [revised Enhanced Financials](/assess/reports/enhanced-financials/financials).
 :::
 
 The **Categorization of accounts** API consists of the following endpoints:
@@ -81,7 +81,7 @@ GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categ
     "confirmed": {
       "type": "Expense",
       "subtype": "Operating",
-      "detailType": "AmortisationDepreciation"
+      "detailType": "AmortizationDepreciation"
     }
 
 }
@@ -97,36 +97,33 @@ GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categ
 
 ## Data model
 
-|Field|Type|Description|
-|-----|----|-----------|
-|accountRef|See [AccountRef](#accountref)|An object containing account reference data.|
-|suggested|See [Suggested](#suggested)|An object containing suggested category data.|
-|confirmed|See [Confirmed](#confirmed)|An object containing confirmed category data.|
+| Field      | Type                          | Description                                   |
+|------------|-------------------------------|-----------------------------------------------|
+| accountRef | See [AccountRef](#accountref) | An object containing account reference data.  |
+| suggested  | See [Suggested](#suggested)   | An object containing suggested category data. |
+| confirmed  | See [Confirmed](#confirmed)   | An object containing confirmed category data. |
 
 ## AccountRef
-
-|Field|Type|Description|
-|-----|----|-----------|
-|id|_string_|The account Id.|
-|name|_string_|The name of the account.|
+| Field     | Type                           | Description                                   |
+|-----------|--------------------------------|-----------------------------------------------|
+| id        |  _string_                      | The account Id.                               |
+| name      |  _string_                      | The name of the account.                      |
 
 ## Suggested
-
-|Field|Type|Description|
-|-----|----|-----------|
-|type|_string_|The suggested account type.|
-|subtype|_string_|The suggested account subtype.|
-|detailType|_string_|The suggested account detail type.|
-|modifiedDate|_date_|The date the category was suggested for the account.|
+| Field         | Type        | Description                                                                 |
+|---------------|-------------|-----------------------------------------------------------------------------|
+| type          |  _string_   | The suggested account type.                                                 |
+| subtype       |  _string_   | The suggested account subtype.                                              |
+| detailType    |  _string_   | The suggested account detail type.                                          |
+| modifiedDate  | See [Date](/codat-api#/schemas/DateTime)    | The date the category was suggested for the account, YYYY-MM-DDT00:00:00Z.  |
 
 # Confirmed
-
-|Field|Type|Description|
-|-----|----|-----------|
-|type|_string_|The confirmed account type.|
-|subtype|_string_|The confirmed account subtype.|
-|detailType|_string_|The confirmed account detail type.|
-|modifiedDate|_date_|The date the category was confirmed for the account.|
+| Field         | Type        | Description                                                         |
+|---------------|-------------|---------------------------------------------------------------------|
+| type          |  _string_   | The confirmed account type.                                         |
+| subtype       |  _string_   | The confirmed account subtype.                                      |
+| detailType    |  _string_   | The confirmed account detail type.                                  |
+| modifiedDate  | See [Date](/codat-api#/schemas/DateTime)   | The date the account category was confirmed, YYYY-MM-DDT00:00:00Z.  |
 
 ```
 {
@@ -158,7 +155,9 @@ Note that this does not update the end accounting platform’s account, and only
 
 The endpoint is available in our <a href="/assess-api#/operations/patch-data-companies-companyId-connections-connectionId-assess-accounts-categories">API reference</a>.
 
-`PATCH /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categories`
+```http
+PATCH /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categories
+```
 
 In the update request body, provide:
 
@@ -192,6 +191,8 @@ The confirmed category for an account can be updated or removed.
 
 The endpoint is available in our <a href="/assess-api#/operations/patch-data-companies-companyId-connections-connectionId-assess-accounts-accountId-categories">API reference</a>.
 
-`PATCH /data/companies/{companyId}/connections/{connectionId}/assess/accounts/{accountId}/categories`
+```http
+PATCH /data/companies/{companyId}/connections/{connectionId}/assess/accounts/{accountId}/categories
+```
 
 Note: Even if you are updating 2 accounts out of 100, you should still provide the categories on the other 98 accounts to prevent replacing those that were previously confirmed.

@@ -14,7 +14,7 @@ Use Codat's Commerce API with Stripe to securely connect to, retrieve, and view 
 
 :::caution Action required by existing users
 
-The integration now uses <a className="external" href="https://stripe.com/docs/connect" target="_blank">_Stripe Connect_</a> to establish authenticated connections between Companies and Stripe data sources, rather than _Stripe extensions_.
+The integration now uses <a className="external" href="https://stripe.com/docs/connect" target="_blank">_Stripe Connect_</a> to establish authenticated connections between companies and Stripe data sources, rather than _Stripe extensions_.
 
 If you're an existing user, you must configure your Stripe integration to use Stripe Connect before you can link any more customers (merchants). Existing data connections are unaffected until 2024, the planned deprecation date for Stripe extensions.
 
@@ -29,25 +29,10 @@ View the coverage of our Stripe integration in the <a className="external" href=
 
 Codat provides two Stripe integrations: **Stripe Test** and **Stripe**. The following table explains what each integration is used for.
 
-
-{
-"data": {
-"h-0": "Integration",
-"0-0": "**Stripe Test** ",
-"1-0": "**Stripe** ",
-"h-1": "Connects to...",
-"0-1": "Stripe _test mode_ using the _test client ID_ and _test Secret key_.",
-"1-1": "Stripe _live mode_ using the _live client ID_ and _live Secret key_.
-
-To enable live mode, you must first activate your Stripe account by providing additional information about your business.",
-"h-2": "Retrieves...",
-"0-2": "Test data from Stripe, available for Company info, Customers, Disputes, Payments, Products, and Transactions.",
-"1-2": "Live data from production Stripe accounts."
-},
-"cols": 3,
-"rows": 2
-}
-
+|Integration|Connects to...|Retrieves...|
+|----|----|----|
+|**Stripe Test**|Stripe _test mode_ using the _test client ID_ and _test Secret key_.|Test data from Stripe, available for Company info, Customers, Disputes, Payments, Products, and Transactions.|
+|**Stripe**|Stripe _live mode_ using the _live client ID_ and _live Secret key_. To enable live mode, you must first activate your Stripe account by providing additional information about your business.|Live data from production Stripe accounts.|
 
 ## Switch between test and live modes
 

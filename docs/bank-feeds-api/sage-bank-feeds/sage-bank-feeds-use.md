@@ -72,7 +72,8 @@ Make the following requests to the Codat API. All push requests are asynchronous
    POST https://api.codat.io/companies/COMPANY_ID/connections/CONNECTION_ID/push/bankAccounts/ACCOUNT_ID/bankTransactions
    ```
 
-   Where `ACCOUNT_ID` is the `id` of a connected source bank account (returned from `GET /connectionInfo/BankFeedAccounts`).
+   Where `ACCOUNT_ID` is the `id` of a connected source bank account (returned from    
+   `GET /connectionInfo/BankFeedAccounts`).
 
    Example request body (all fields are mandatory):
 
@@ -104,9 +105,9 @@ Make the following requests to the Codat API. All push requests are asynchronous
 
 2. If the data is valid, the endpoint returns a push operation with a `status` of `Pending` (202). The status changes to `Success` if the push operation completes successfully.
 
-   :::note
+:::note
 
-   The status might remain as `Pending` for some time while Sage processes the bank transactions.
-   :::
+The status might remain as `Pending` for some time while Sage processes the bank transactions.
+:::
 
 3. Repeat the request for the remainder of the SMB customer's connected bank accounts.

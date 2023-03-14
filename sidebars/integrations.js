@@ -1,9 +1,11 @@
 module.exports = [
-  {
+{
     type: "link",
-    label: "Integration coverage",
-    href: "https://knowledge.codat.io/supported-features/accounting",
+    href: "/",
+    label: "All Docs",
+    className: "back",
   },
+  "integrations/all-integrations",
   {
     type: "category",
     label: "Accounting",
@@ -97,7 +99,7 @@ module.exports = [
           "integrations/accounting/netsuite/accounting-netsuite",
           "integrations/accounting/netsuite/accounting-netsuite-setup",
           "integrations/accounting/netsuite/company-linking-journey",
-          "integrations/accounting/netsuite/accounting-netsuite-delete-bill-payments",
+          "integrations/accounting/netsuite/accounting-netsuite-delete-bills-billpayments",
           "integrations/accounting/netsuite/oracle-netsuite-faq",
           "integrations/accounting/netsuite/oracle-netsuite-integration-reference",
         ],
@@ -131,7 +133,6 @@ module.exports = [
         items: [
           "integrations/accounting/quickbooksonline/accounting-quickbooksonline",
           "integrations/accounting/quickbooksonline/accounting-quickbooksonline-new-setup",
-          "integrations/accounting/quickbooksonline/test-your-quickbooks-online-integration",
           "integrations/accounting/quickbooksonline/faq-quickbooks-online",
           "integrations/accounting/quickbooksonline/quickbooks-online-integration-reference",
         ],
@@ -213,6 +214,7 @@ module.exports = [
           "integrations/accounting/zoho-books/zoho-books-integration-reference",
         ],
       },
+      "integrations/accounting/offline-connectors",
     ],
   },
   {
@@ -385,7 +387,8 @@ module.exports = [
         items: [
           "integrations/commerce/shopify/commerce-shopify",
           "integrations/commerce/shopify/commerce-shopify-custom-apps",
-          "integrations/commerce/shopify/commerce-shopify-setup",
+          "integrations/commerce/shopify/commerce-shopify-requirements-public-apps",
+          "integrations/commerce/shopify/commerce-shopify-setup",          
           "integrations/commerce/shopify/test-shopify",
         ],
       },
@@ -441,5 +444,37 @@ module.exports = [
         ],
       },
     ],
+  },
+  {
+    type: "category",
+    label: "Bank feeds",
+    collapsed: true,
+    items: [
+      {
+        type: "link",
+        href: "/integrations/bankfeeds/overview",
+        label: "Overview",
+      },
+      {
+        type: "link",
+        href: "/bank-feeds-api/qbo-bank-feeds/",
+        label: "QuickBooks Online",
+      },
+      {
+        type: "link",
+        href: "/bank-feeds-api/sage-bank-feeds/",
+        label: "Sage",
+      },
+      {
+        type: "link",
+        href: "/integrations/accounting/xero/accounting-xero-setup",
+        label: "Xero",
+      }
+    ],
+  },
+  {
+    type: "link",
+    label: "Integration coverage",
+    href: "https://knowledge.codat.io/supported-features/accounting",
   },
 ];

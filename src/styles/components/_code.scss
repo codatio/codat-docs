@@ -65,6 +65,10 @@ html[data-theme="dark"] {
 #__docusaurus {
   [class*="codeBlockContainer_"] {
     box-shadow: none;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 

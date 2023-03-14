@@ -5,28 +5,35 @@ createdAt: "2021-01-13T16:44:23.830Z"
 updatedAt: "2022-10-28T12:28:46.081Z"
 ---
 
-<a class="external" href="https://www.shopify.com/" target="_blank">Shopify</a> is an ecommerce platform that helps SMBs to sell their products online.
+[Shopify](https://www.shopify.com/) is an ecommerce platform that helps SMBs to sell their products online.
 
 With Codat's Shopify integration, you can securely retrieve your SMB customers' commerce transactions, standardized to our commerce data model.
 
 ## Data type coverage
 
-View the coverage of our Shopify integration in the <a class="external" href="https://knowledge.codat.io/supported-features/commerce?view=tab-by-integration&integrationKey=fztf" target="_blank">Data Coverage Explorer</a>.
+View the coverage of our Shopify integration in the [Data Coverage Explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-integration&integrationKey=fztf).
 
-## Connection methods
+## Approaches to merchant data sharing
 
-Our Shopify integration allows your merchants to connect their commerce data using one of two methods:
+When setting up the integration, you can take one of two approaches for enabling your merchants to connect and share their commerce data, as follows: 
 
 - [Custom apps](/integrations/commerce/shopify/commerce-shopify-custom-apps)
+
+    Created by merchants exclusively for their Shopify stores.
+
 - [Public apps](/integrations/commerce/shopify/commerce-shopify-setup)
 
-In general, custom apps require less initial setup, with tasks completed by the merchant. Public apps require more initial setup, with tasks completed by you, the Codat client.
+    Built by you and must be approved by Shopify before use. A single public app can be installed on multiple Shopify stores.
 
-## Custom apps overview and requirements
+In general, custom apps require less initial setup, with tasks completed by the merchant. Public apps require more initial setup, with tasks completed by you, the Codat client. Choose the option that best suits your circumstances. 
 
-A <a class="external" href="https://help.shopify.com/en/manual/apps/custom-apps" target="_blank">custom app</a> is exclusively linked to a merchant's individual Shopify store and can't be linked to multiple stores. Custom apps are not subject to Shopify's app approval process or listed on the Shopify app store. They use API access tokens (API keys) for authentication rather than OAuth 2.0.
+## About custom apps
 
-There are no additional provider requirements when using this connection method.
+A [custom app](https://help.shopify.com/en/manual/apps/custom-apps) is exclusively linked to a merchant's individual Shopify store and can't be linked to multiple stores. Custom apps are not listed on the Shopify app store or subject to Shopify's app approval process. With this approach, each merchant creates a custom app in their Shopify store.
+
+Custom apps use API access tokens (API keys) for authentication.
+
+There are no additional provider requirements when using this approach.
 
 To connect their commerce data using a custom app, the merchant does the following:
 
@@ -36,11 +43,15 @@ To connect their commerce data using a custom app, the merchant does the followi
 
 To get started, see [Set up Shopify using custom apps](/integrations/commerce/shopify/commerce-shopify-custom-apps).
 
-## Public apps overview and requirements
+## About public apps
 
-<a class="external" href="https://help.shopify.com/en/manual/apps/app-types#public-apps" target="_blank">Public apps</a> are built to connect to multiple Shopify stores owned by multiple merchants. So, you can use a single public app to access data from multiple different merchant stores. They offer a low-friction way for merchants to link their commerce data to Codat.
+[Public apps](https://help.shopify.com/en/manual/apps/app-types#public-apps) are built to connect to multiple Shopify stores owned by multiple merchants. This means you can use a single public app to access data from multiple different merchant stores.
 
-_Listed apps_ are published on the Shopify app store whereas _unlisted apps_ are not. Only listed apps can be installed directly from the app store by merchants. Public apps use an OAuth 2.0 authentication flow.
+Public apps offer a low-friction way for merchants to link their commerce data to Codat. With this approach, you build a single public app and use its secure credentials to authorize your access to Shopify commerce data.
+
+_Listed apps_ are published on the Shopify app store whereas _unlisted apps_ are not. Only listed apps can be discovered directly from the app store by merchants.
+
+Public apps use an OAuth 2.0 authentication flow.
 
 If you choose this connection method, you need to do the following:
 
@@ -50,21 +61,14 @@ If you choose this connection method, you need to do the following:
 
 3. If your app is approved, enter its secure credentials in the Codat Portal.
 
-### Provider requirements for public apps
-
-**Unlike custom apps, public apps must pass Shopify's app approval process before use.**
-
-To use our Shopify integration using public apps, you must first create a public app in Shopify that meets the following criteria:
-
-- Your app must meet the [Requirements for apps in the Shopify App Store](https://shopify.dev/apps/store/requirements), as published on the Shopify Developers Platform.
-- Shopify must review and approve your app, which can take up to two weeks.
-
-Additionally, if you need to access over 60 days' of orders, you must submit a _Read all orders_ request as noted in [Create a Shopify public app](commerce-shopify-setup#create-a-shopify-public-app). You'll receive an email from Shopify when your request has been processed; this might take up to seven business days.
-
-:::caution Important
-
-Before setting up the integration, review the preceding requirements to make sure your use case is in accordance with Shopify's Terms of Service. **Codat can't guarantee that Shopify will approve your public app or grant access to over 60 days' of order data.**
-
-:::
+If you choose this connection method, you should be aware of Shopify's requirements for public apps, as well as the specific functionality that your app will need to provide. These are outlined in [Requirements for public apps](/integrations/commerce/shopify/commerce-shopify-requirements-public-apps).
 
 To get started, see [Set up Shopify using public apps](/integrations/commerce/shopify/commerce-shopify-setup).
+
+---
+
+## Read next
+
+- [Set up Shopify using custom apps](/integrations/commerce/shopify/commerce-shopify-custom-apps)
+- [Set up Shopify using public apps](/integrations/commerce/shopify/commerce-shopify-setup)
+

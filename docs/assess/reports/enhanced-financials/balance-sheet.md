@@ -1,88 +1,142 @@
 ---
 title: "Enhanced Balance Sheet"
-description: "Reference document for the endpoint that produce a fully categorized balance sheet statement"
-createdAt: "2022-03-14T16:26:58.720Z"
-updatedAt: "2022-11-02T14:39:48.397Z"
+description: "Endpoint reference to produce a fully categorized balance sheet statement"
+createdAt: "2023-01-25T13:57:24.867Z"
+updatedAt: "2023-01-27T15:26:01.665Z"
 ---
+The Enhanced Balance Sheet Accounts endpoint returns a list of categorized accounts that appear on a company’s Balance Sheet along with a balance per financial statement date.
 
-The _Enhanced Balance Sheet_ endpoint provides a fully categorized balance sheet over a specified period(s) of time, for a specific company’s accounting connection.
+Codat suggests a category for each account automatically, but you can [change it](/assess/reports/enhanced-financials/categorize-accounts) to a more suitable one. 
 
-Refer to the [Assess reporting structure](/assess/reports/reporting-structure) page for more detail on reports in Assess.
+Explore the _Enhanced Balance Sheet Accounts_ endpoint in our [Assess API reference](/assess-api#/operations/get-companies-companyId-reports-enhanced/assess-api#/operations/get-companies-companyId-reports-enhancedBalanceSheet-accounts).
 
-For _Enhanced Balance Sheet_, these are the dimensions and measures:
-
-**Dimensions**
-
-- Period
-- Category
-- Sub Type
-- Detail Type
-- Accounts
-
-**Measures**
-
-- Value
-- Percentage change
-
-**Report Data**
-
-- Is structured based on dimension (index =“0”). i.e. Period
-
-<br />
-
-**Categorizing debit accounts**
-Debit accounts are categorized as **Asset > Current assets > Cash**. However, when the debit account is in overdraft over a given period, the **Enhanced Balance Sheet** automatically categorizes it as **Liability > Non-current liabilities > Loans payable**, and changes the sign from negative to positive.
-
-<br />
-
-The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-enhancedBalanceSheet">API reference</a>.
-
-```http
-GET /data/companies{companyId}/connections/{connectionId}/assess/enhancedBalanceSheet
-```
+`GET /companies/{companyId}/reports/enhancedBalanceSheet/accounts`
 
 ## Parameters
 
+In addition to the mandatory **companyId**, you can also include these parameters in your API call.
+
+| Parameter       	| Type            	| Description                                                                                 	| Required 	|
+|-----------------	|-----------------	|---------------------------------------------------------------------------------------------	|----------	|
+| **reportDate**     	| _string_<br/>See Date 	| YYYY-MM-DD.<br/>Datetime or Date (inclusive of the whole day).                                   	| Optional 	|
+| **numberOfPeriods** 	| _integer_         	| The number of periods to return.<br/>If left blank, will return the latest available 12 months.  	| Optional 	|
+
 ## Data model
 
-The response structure is split into four areas: Report info, Dimensions, Measures and Report data.
+The response structure is split into two sections: _Report Info_ and _Report Items_.
 
-## Report info
+### Report Info
 
-If any account needs to be recategorized, use the [API: Categorization of accounts](/assess/categories/api-categorization-of-accounts) endpoint.
+| Field         	| Type            	| Description                                                           	|
+|---------------	|-----------------	|-----------------------------------------------------------------------	|
+| **name**          	| _string_        	| “EnhancedBalanceSheetAccounts”                                        	|
+| **companyName**   	| _string_          	| Name of the company queried.                                          	|
+| **currency**    	| _string_          	| Currency of the Balance Sheet.                                        	|
+| **generatedDate** 	| _string_<br/>See Date  	| Returns the YYYY-MM-DD datetime of report generation. <br/>This is in UTC.  	|
 
-### Measures
+### Report Items
 
-_Measures_ provide information about the measures contained in the report data.
+The report items are sorted first by _date_, then by _category_ alphabetically.
 
-The two measures for this report are as follows:
+| Field           	| Type                        	| Description                                                                            	|
+|-----------------	|-----------------------------	|----------------------------------------------------------------------------------------	|
+| **date**            	| _string_<br/>See Date              	| Last date of the period.                                                               	|
+| **balance**         	| _decimal_                     	| Balance of the account as reported on the Balance Sheet.                               	|
+| **accountName**     	| _string_                      	| Name of the account.                                                                   	|
+| **accountId**       	| _string_                      	| The unique account id.                                                                 	|
+| **accountCategory** 	| _object_<br/>See [Account Category](/assess/reports/enhanced-financials/balance-sheet#account-category) 	| An object containing the suggested or confirmed account categories, up to five levels.  	|
 
-### Report data
+#### Account Category
 
-The report data combines multiple reporting dimensions and outputs the value of each combination. Each dimension reference is specified.
+| Field  	| Type                 	| Description                                                                                                                              	|
+|--------	|----------------------	|------------------------------------------------------------------------------------------------------------------------------------------	|
+| **status** 	| _string_               	| Returns a status of "Suggested" or "Confirmed". If an account has a confirmed category, it will replace any suggested category returned. 	|
+| **levels** 	| _object_<br/>See [Levels](/assess/reports/enhanced-financials/balance-sheet#levels)  	| An object containing an ordered list of account category levels.                                                                         	|
 
-Since the report data is reflective of 5 dimensions and their measures, the tables below represent each component grouping.
+#### Levels
 
-Each object is grouped by dimension (index=“0”) which is the number of periods specified by the user in the query parameters.
+| Field         | Type      | Description                                                                                |
+| :------------ | :-------- | :----------------------------------------------------------------------------------------- |
+| **levelName** | _string_  | Account category name                                                                      |
+| **confidence** | _decimal_ | Confidence level of the category. This will only be populated where `status` = "Suggested" |
 
-Each period will be broken down into Category, Sub Type, Detail Type and Accounts.
+Explore the example response:
 
-Components are nested within each other as below (grouped by dimension (index =“0”), i.e. _Period_). Both value and percent change measures are included for each level.
-
+```json
+{
+    "reportInfo": {
+        "reportName": "EnhancedBalanceSheetAccounts",
+        "companyName": "ABC LTD",
+        "generatedDate": "2022-01-01",
+    },
+    "reportItems": [
+        {
+            "date": "2022-01-01",
+            "balance": 70,
+            "accountName": "Sales UK",
+            "acountId": "13931cbf-ea06-4d6e-9538-a8457fa66011", 
+            "accountCategory": {
+                "status": "Suggested",
+                "levels": [
+                    {
+                        "levelName": "Asset",
+                        "confidence": 0.99
+                    },
+                    {
+                        "levelName": "Current",
+                        "confidence": 0.95
+                    }
+                ]
+            }
+        },
+        {
+            "date": "2022-01-01",
+            "balance": 30,
+            "accountName": "Sales US",
+            "acountId": "13931cbf-ea06-4d6e-9538-a8457fa66011",
+            "accountCategory": {
+                "lastUpdated": "datetime",
+                "status": "Suggested",
+                "levels": [
+                    {
+                        "levelName": "Asset",
+                        "confidence": 0.99
+                    },
+                    {
+                        "levelName": "Current",
+                        "confidence": 0.95
+                    }
+                ]
+            }
+        },
+        {
+            "date": "2022-01-01",
+            "balance": 70,
+            "accountName": "Amazon",
+            "acountId": "13931cbf-ea06-4d6e-9538-a8457fa66011",
+            "accountCategory": {
+                "lastUpdated": "datetime",
+                "status": "Suggested",
+                "levels": [
+                    {
+                        "levelName": "Asset",
+                        "confidence": 0.99
+                    },
+                    {
+                        "levelName": "Current",
+                        "confidence": 0.95
+                    },
+                    {
+                        "levelName": "RelatedParties",
+                        "confidence": 0.97
+                    }
+                ]
+            }
+        }
+    ]
+}
 ```
-	components - “Category”, e.g. Asset
 
-		components - “Sub Type”, e.g. Non-current assets
-
-			components - “Detail Type”, e.g. Equipment and machinery
-
-				components - “Accounts”, e.g. Computer equipment
-```
-
-#### Components structure
-
-All components have the structure described in the _Measures in components_ data model below.
-
-##### Measures in components
-
-Each component level contains the total level in the currency, and the percentage change.
+:::caution Legacy enhanced financials 
+The categories outlined here will not be returned by the legacy [Enhanced Balance Sheet](/assess/reports/enhanced-financials-legacy/balance-sheet) endpoint. It uses an [outdated version](/assess/categories/) of the account category taxonomy.
+:::

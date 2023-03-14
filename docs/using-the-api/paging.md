@@ -14,7 +14,7 @@ Our endpoints which return multiple results are paged, e.g. [`GET /companies`](/
 A typical request will have the following properties:
 
 - `page` : This is the page number that you would like to have displayed. The default page is 1.
-- `pageSize` : You can define the number of the results you would like to have displayed on one page. The default page size is 100, while the maximum page size can be set to 5000..
+- `pageSize` : You can define the number of the results you would like to have displayed on one page. The default page size is 100, while the maximum page size can be set to 5000.
 
 ## Response
 
@@ -38,30 +38,44 @@ Note: `totalResults` returns the number of results after applying any filter you
 
 ## Example
 
-````
-GET /companies/{companyId}/data/invoices?page=5&pageSize=20",
-      "language": "http",
-      "name": "HTTP"
-    },
-    {
-      "code": "var query = new InvoicesQuery(companyId,
-                  /* filter query */ null,
-                  /* page number  */ 5,
-                  /* page size    */ 20)
-              .run(codat.uat(apiKey));
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-// Following of the pages directly from the HAL links is not yet supported by the client library.```
+<Tabs>
+<TabItem value="http" label="HTTP">
 
-```var request = new RestRequest("companies/{companyId}/data/invoices", Method.GET);
+```http
+GET /companies/{companyId}/data/invoices?page=5&pageSize=20
+```
+
+</TabItem>
+<TabItem value="javascript" label="Javascript">
+
+```javascript
+var query = new InvoicesQuery(companyId, 
+                    /* filter query */ null, 
+                    /* page number  */ 5, 
+                    /* page size    */ 20)
+                .run(codat.uat(apiKey));
+
+// Following of the pages directly from the HAL links is not yet supported by the client library.
+```
+</TabItem>
+<TabItem value="csharp" label="C#">
+
+```csharp
+var request = new RestRequest("companies/{companyId}/data/invoices", Method.GET);
 request.AddUrlSegment("companyId", companyId);
 request.AddQueryParameter("page", 5.ToString());
 request.AddQueryParameter("pageSize", 20.ToString());
 request.AddHeader("Authorization", $"Basic {encodedApiKey}");
 var response = client.Execute(request);
 var info = response.Data;
-````
-
 ```
+</TabItem>
+</Tabs>
+
+```json title="Sample response"
 {
 "results": ["...":"..."],
 "pageNumber": 5,
@@ -80,3 +94,14 @@ var info = response.Data;
 }
 }
 ```
+
+:::tip Recap
+You have learned:
+- How to paginate with the `page` and `pageSize` parameters
+:::
+
+---
+
+## Read next
+
+- [Ordering results](/using-the-api/ordering-results)

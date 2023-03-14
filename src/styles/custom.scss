@@ -12,6 +12,7 @@
 @use "./components/blog";
 @use "./components/cards";
 @use "./components/code";
+@use "./components/cookie";
 @use "./components/doc-item";
 @use "./components/doc-page";
 @use "./components/doc-sidebar";
@@ -60,6 +61,7 @@
 
   --ifm-color-link: var(--color-codat-primary);
   --ifm-background-color: var(--token-primary-bg-c);
+  --ifm-pre-core: #2b3442;
 
   // ------------ Fonts
   --ifm-font-family-base: "Poppins", -apple-system, BlinkMacSystemFont, Inter,

@@ -39,22 +39,7 @@ The following table highlights selected fields that are not available in data pu
 
 ### Unavailable Codat fields
 
-
-{
-"data": {
-"h-0": "Mollie record and field",
-"h-1": "Codat data type",
-"h-2": "Status",
-"0-0": "`Settlements.status`",
-"0-1": "[Transactions](/commerce-api#/schemas/transactions)",
-"0-2": "The transaction status in Codat does not reflect `open` or `pending` settlements in Mollie.",
-"1-0": "`Payments.method`",
-"1-1": "[Payments](/commerce-api#/schemas/payments)
-
-`Payments.method.type`",
-"1-2": "Only the `creditcard` and `paypal` payment methods are reflected in Codat. All other payment methods are shown as `Custom`."
-},
-"cols": 3,
-"rows": 2
-}
-
+|Mollie record and field|Codat data type|Status|
+|----|----|----|
+|`Settlements.status`|[Transactions](/commerce-api#/schemas/transactions)|The transaction status in Codat does not reflect `open` or `pending` settlements in Mollie.|
+|`Payments.method`|[Payments](/commerce-api#/schemas/payments) `Payments.method.type`|Only the `creditcard` and `paypal` payment methods are reflected in Codat. All other payment methods are shown as `Custom`.|

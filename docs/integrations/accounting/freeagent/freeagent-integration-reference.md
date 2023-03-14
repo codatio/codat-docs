@@ -24,9 +24,12 @@ FreeAgent provides a unique transfer ID for each side of the transfer. Codat's d
 FreeAgent does not support transferring funds between a bank account and a nominal account.
 
 :::caution Negative amounts in FreeAgent transfers
+
 When pushing a transfer transaction via the FreeAgent API, you can enter `gross_value` as a negative value, in effect changing the direction of the transfer. Codat's data model does not support pushing negative to/from transfer amounts.
 
 You can achieve the same result by swapping the `to` and `from` bank accounts when pushing the data from Codat.
+
+:::
 
 When pulling and pushing Transfers from FreeAgent, the following fields are not available:
 

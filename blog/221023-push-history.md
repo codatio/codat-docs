@@ -10,4 +10,4 @@ You can now view a table of data pushed for each company.
 
 <!--truncate-->
 
-[Read more...](/pull-and-push-history#push-history)
+[Read more...](/other/portal/pull-and-push-history#push-history)

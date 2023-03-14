@@ -3,6 +3,9 @@ const { ProvidePlugin } = require("webpack");
 const path = require("path");
 const fetch = require("node-fetch");
 
+const navbar = require("./nav.config");
+const redirects = require("./redirects.config");
+
 const BASE_URL = "";
 
 require('dotenv').config()
@@ -29,6 +32,21 @@ module.exports = {
     'ZENDESK_KEY': process.env.ZENDESK_KEY,
   },
   themeConfig: {
+    typesense: {
+      typesenseCollectionName: 'codat-docs', // Replace with your own doc site's name. Should match the collection name in the scraper settings.
+      typesenseServerConfig: {
+        nodes: [
+          {
+            host: '3n6945ds2yqfiv1cp-1.a1.typesense.net',
+            port: 443,
+            protocol: 'https',
+          }
+        ],
+        apiKey: 'x4tbdGWEWv2JCI8U3C6kdwdE8OiThCO1',
+      },
+      typesenseSearchParameters: {}, // Optional: Typesense search parameters: https://typesense.org/docs/0.24.0/api/search.html#search-parameters
+      contextualSearch: true, // Optional
+    },
     sidebar: {
       hideable: true,
     },
@@ -36,11 +54,11 @@ module.exports = {
       { name: "keywords", content: "codat, docs, updates" },
       {
         name: "og:image",
-        content: "https://docs.codat.io/img/meta/open-graph.png",
+        content: "https://docs.codat.io/img/meta/codat-bg.png",
       },
       {
         name: "twitter:image",
-        content: "https://docs.codat.io/img/meta/open-graph.png",
+        content: "https://docs.codat.io/img/meta/codat-bg.png",
       },
       {
         name: "twitter:card",
@@ -70,192 +88,7 @@ module.exports = {
     colorMode: {
       defaultMode: "light",
     },
-    navbar: {
-      hideOnScroll: true,
-      logo: {
-        alt: "Site logo",
-        src: `/logos/codat-docs-dark.png`,
-        srcDark: `/logos/codat-docs-light.png`,
-        href: "/",
-        target: "_self",
-        width: 170,
-        height: 28,
-      },
-      items: [
-        {
-          type: "doc",
-          docId: "index",
-          label: "Docs",
-          position: "left",
-        },
-        {
-          label: "API",
-          position: "left",
-          className: "navbar__link--api",
-          items: [
-            {
-              href: "/codat-api",
-              label: "Common API",
-            },
-            {
-              href: "/accounting-api",
-              label: "Accounting API",
-            },
-            {
-              href: "/banking-api",
-              label: "Banking API",
-            },
-            {
-              href: "/commerce-api",
-              label: "Commerce API",
-            },
-            {
-              href: "/bank-feeds-api",
-              label: "Bank Feeds API",
-            },
-            {
-              href: "/assess-api",
-              label: "Assess API",
-            },
-            {
-              href: "/sync-for-commerce-api",
-              label: "Sync for Commerce API",
-            },
-            {
-              href: "/sync-for-expenses-api",
-              label: "Sync for Expenses API",
-            },
-            {
-              href: "/files-api",
-              label: "Files API",
-            },
-          ],
-        },
-        { to: "updates", label: "Updates", position: "left" }, // or position: 'right'
-        {
-          label: "Community",
-          position: "left",
-          items: [
-            {
-              href: "https://github.com/orgs/codatio/discussions",
-              label: "Forum",
-              target: "_blank",
-              rel: null,
-            },
-            {
-              href: "https://github.com/codatio",
-              label: "GitHub",
-              target: "_blank",
-              rel: null,
-            },
-            {
-              href: "https://twitter.com/codatdata",
-              label: "Twitter",
-              target: "_blank",
-              rel: null,
-            },
-            {
-              href: "https://bit.ly/codatpbroadmap1",
-              label: "Product roadmap",
-              target: "_blank",
-              rel: null,
-            },
-            // {
-            //   label: "Stack Overflow",
-            //   href: "https://stackoverflow.com/questions/tagged/codat",
-            // },
-            {
-              href: "https://www.codat.io/blog/",
-              label: "Blog",
-              target: "_blank",
-              rel: null,
-            },
-          ],
-          className: "navbar__link--community",
-        },
-        {
-          label: "Support",
-          position: "left",
-          items: [
-            {
-              href: "https://codat.zendesk.com/hc/en-gb",
-              label: "Help center",
-              target: "_blank",
-              rel: null,
-            },
-            {
-              href: "https://bit.ly/codatstatus",
-              label: "API status",
-              target: "_blank",
-              rel: null,
-            },
-            {
-              href: "https://github.com/orgs/codatio/discussions",
-              label: "Ask the community",
-              target: "_blank",
-              rel: null,
-            },
-            {
-              href: "https://github.com/codatio/codat-docs/issues/new",
-              label: "Issue with the docs?",
-              target: "_blank",
-              rel: null,
-            },
-          ],
-          className: "navbar__link--support",
-        },
-        // {
-        //   type: 'search',
-        //   position: 'right',
-        // },
-        // {
-        //   type: 'iconLink',
-        //   position: 'right',
-        //   icon: {
-        //     alt: 'twitter logo',
-        //     src: `/logos/twitter.svg`,
-        //     href: 'https://twitter.com/codatdata',
-        //     target: '_blank',
-        //   },
-        // },
-        // {
-        //   type: 'iconLink',
-        //   position: 'right',
-        //   icon: {
-        //     alt: 'github logo',
-        //     src: `/logos/github.svg`,
-        //     href: 'https://github.com/codatio',
-        //     target: '_blank',
-        //   },
-        // },
-        { 
-          href: "https://app.codat.io/", 
-          label: "Sign in", 
-          className: "navbarButton secondary",
-          position: "right" 
-        },
-        { 
-          href: "https://signup.codat.io/", 
-          label: "Sign up", 
-          className: "navbarButton primary",
-          position: "right" 
-        },
-      ],
-    },
-    // tagManager: {
-    //   trackingID: "GTM-TKMGCBC",
-    // },
-    // prism: {
-    //   theme: { plain: {}, styles: [] },
-    //   // https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
-    //   additionalLanguages: ["shell-session", "http"],
-    // },
-    algolia: {
-      appId: "002G1BUKXS",
-      apiKey: "0a640be9644a4d830f96aed136d2a70b",
-      indexName: "codat",
-      contextualSearch: true,
-    },
+    navbar,
   },
   plugins: [
     "docusaurus-plugin-sass",
@@ -303,6 +136,10 @@ module.exports = {
     ],
     "@docusaurus/plugin-content-pages",
     "@docusaurus/plugin-debug",
+    [ // only works on prod
+      '@docusaurus/plugin-client-redirects',
+      redirects
+    ],
     "@docusaurus/plugin-sitemap",
     // Add custom webpack config to make @stoplight/elements work
     () => ({
@@ -335,6 +172,13 @@ module.exports = {
         };
       },
     }),
+    [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: process.env.GTM_ID,
+        anonymizeIP: true,
+      },
+    ],
   ],
   themes: [
     [
@@ -348,8 +192,8 @@ module.exports = {
         ],
       },
     ],
-    path.resolve(__dirname, "./node_modules/@docusaurus/theme-search-algolia"),
     "@docusaurus/theme-mermaid",
+    "docusaurus-theme-search-typesense"
   ],
   markdown: {
     mermaid: true, // In order for Mermaid code blocks in Markdown to work, you also need to enable the Remark plugin with this option

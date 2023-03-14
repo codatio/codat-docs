@@ -1,6 +1,10 @@
 ---
 title: "Accounting API overview"
 sidebar_label: Accounting API
+displayed_sidebar: accountingAPI
+hide_title: true
+hide_description: true
+hide_table_of_contents: true
 description: "Codat's Accounting API is a flexible API for pulling and pushing up-to-date accounting data to your customers' accounting software. It gives you a simple way to view, create, update, and delete data without having to worry about each platform's specific complexities."
 createdAt: "2022-11-22T19:33:11.784Z"
 updatedAt: "2022-11-22T19:33:11.784Z"
@@ -10,7 +14,27 @@ updatedAt: "2022-11-22T19:33:11.784Z"
   <meta property="og:image" content="/img/accounting-api/accounting_banner.png"/>
 </Head>
 
-![](/img/accounting-api/accounting_banner.png "Accounting API banner")
+<div className="background-video-wrapper accounting">
+  <div className="banner-video">
+    <h1>Accounting API</h1>
+    <p>
+      Codat's Accounting API is a flexible API for pulling and pushing up-to-date accounting data to your customers' accounting software.
+    </p>
+    <p>
+      It gives you a simple way to view, create, update, and delete data without having to worry about each platform's specific complexities.
+    </p>
+  </div>
+</div>
+
+<div className="background-video-spacer accounting">
+  <h1>Accounting API</h1>
+  <p>
+    Codat's Accounting API is a flexible API for pulling and pushing up-to-date accounting data to your customers' accounting software.
+  </p>
+  <p>
+    It gives you a simple way to view, create, update, and delete data without having to worry about each platform's specific complexities.
+  </p>
+</div>
 
 <ul className="card-container col-3">
   <li className="card">
@@ -67,5 +91,6 @@ updatedAt: "2022-11-22T19:33:11.784Z"
   </li>
 </ul>
 
-<p>
-</p>
+<br/>
+
+![](/img/accounting-api/accounting_banner.png "Accounting API banner")

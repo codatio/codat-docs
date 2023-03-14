@@ -1,19 +1,17 @@
 ---
 title: "Set up Shopify using public apps"
-description: "Explore our API integration with Shopify"
+description: "Learn how to set up the Shopify integration using the public apps approach to merchant data connection"
 createdAt: "2021-01-14T16:41:39.945Z"
 updatedAt: "2023-01-06T16:44:14.501Z"
 ---
 
 Set up the Shopify integration to retrieve commerce data from customers who sell their products on Shopify's ecommerce platform.
 
-This article explains how to set up the Shopify integration using the _public apps_ connection method.
+This article explains how to set up the Shopify integration using the _public apps_ approach.
 
-:::caution Before you begin
-Before you begin, read the _Underlying provider requirements_ on the [Shopify](/integrations/commerce/shopify/commerce-shopify) page.
-:::
+<details>
 
-To set up the Shopify integration, perform the following tasks in Shopify and the Codat Portal:
+<summary>You will learn how to...</summary>
 
 - [Create a Shopify app](/integrations/commerce/shopify/commerce-shopify-setup#create-a-shopify-app)
 - [Submit your app to Shopify for approval](/integrations/commerce/shopify/commerce-shopify-setup#submit-your-app-to-shopify-for-approval)
@@ -21,9 +19,18 @@ To set up the Shopify integration, perform the following tasks in Shopify and th
 - [Enable the Shopify integration](/integrations/commerce/shopify/commerce-shopify-setup#enable-the-shopify-integration)
 - [Check the commerce sync settings](/integrations/commerce/shopify/commerce-shopify-setup#check-the-commerce-sync-settings)
 
+</details>
+
+## Before you begin
+
+Before setting up the integration, make sure that you:
+
+- Understand [how public apps work](/integrations/commerce/shopify/commerce-shopify#about-public-apps)
+- Build an app that meets the [Requirements for public apps](/integrations/commerce/shopify/commerce-shopify-requirements-public-apps)
+
 ## Create a Shopify public app
 
-Create and configure an app in Shopify. When the app is created you can view the secure app credentials.
+When the app is created you can view the secure app credentials.
 
 1. Log in to the [Shopify Partners](https://developers.shopify.com/) site using your Shopify partner account credentials.
 
@@ -71,6 +78,7 @@ In the Shopify Partners site:
    :::note Differences between listed and unlisted apps
 
    You can choose whether to make your Shopify app _listed_ (fully visible in the Shopify App Store) or _unlisted_ (it will not appear in Shopify App Store search engines or results). Both types of apps have a public Shopify App Store URL.
+
    :::
 
 8. Click **Start listing**. The **English listing** page is displayed.
@@ -90,12 +98,12 @@ In the Codat Portal, add the secure credentials for your Shopify app to the inte
    The **Integration settings** page is displayed.
 
 3. Enter your app's credentials from Shopify (to find these, see [Create a Shopify public app](/integrations/commerce/shopify/commerce-shopify-setup#create-a-shopify-public-app)).
-   - For **Client Key**, enter the **API key** from Shopify.
-   - For **Client Secret**, enter the **API secret key** from Shopify.
+   - For **Client ID**, enter the **API key** from Shopify.
+   - For **Client secret**, enter the **API secret key** from Shopify.
 
-4. If you requested access to over 60 days' of orders and your access was approved, turn on **Has request to read all orders**. Otherwise leave this setting turned off.
+4. If you requested access to over 60 days of orders and your access was approved, turn on **Has request to read all orders**. Otherwise leave this setting turned off.
 
-   <img src="/img/old/76d5c94-Shopify_integration_settings.png" />
+   ![Shopify integration settings](/img/integrations/commerce/shopify/76d5c94-Shopify_integration_settings.png "The 'Has request to read all orders' checkbox on the Shopify integration settings page.")
 
 5. Under **Access to company data**, configure the permitted sync frequency for the integration. Select **Allow one-off data sync…** or **Allow continuous data sync**.
 

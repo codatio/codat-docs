@@ -5,7 +5,7 @@ createdAt: "2019-07-17T14:20:47.797Z"
 updatedAt: "2023-01-16T18:05:01.158Z"
 ---
 
-## What is the Xero App Partnerniship Program? How can I join it?
+## What is the Xero App Partnership Program? How can I join it?
 
 If you want to have more than 25 Xero connections, you'll need to join the Xero App Partner Program.
 
@@ -13,21 +13,94 @@ Follow our guide [here](/integrations/accounting/xero/xero-app-partner-program).
 
 ## How can I set up a Bank Feed to a Xero account?
 
-:::danger Prerequisites
+:::caution Prerequisites
 
-1. When pushing transaction to an existing bank account, that bank account must have been previously pulled (synced) via the Codat API.
+Be aware of the following prerequisites:
+
+1. When pushing transactions to an existing bank account, that bank account must have been previously pulled (synced) via the Codat API.
 2. Xero requires a real Xero account (either a full account or a free trial) to be used for pushing bank transactions. Linking with the Xero Demo Company will not allow Bank Feeds, resulting in an appropriate 403 error.
-3. :::
 
-4. You must first have Bank Feeds [configured and allowed](/integrations/accounting/xero/accounting-xero-setup#configuration-of-bank-feeds).
-5. Then, to create a direct Bank Feed using Xero's Bank Feeds API, you must POST [Bank Transactions](/accounting-api#/schemas/banktransactions).
-6. When successfully pushed to Xero, the bank transactions will appear in the 'Bank Statements' section for the bank account in the Xero UI, with the source 'Bank Feed' as below:
+:::
 
-<img src="/img/old/2530dce-bankFeedsDocs.PNG" />
+To set up a Bank Feed to a Xero account:
+
+1. You must first have Bank Feeds [configured and allowed](/integrations/accounting/xero/accounting-xero-setup#configuration-of-bank-feeds).
+
+2. Then, to create a direct Bank Feed using Xero's Bank Feeds API, you must POST [Bank Transactions](/accounting-api#/operations/post-bank-transactions).
+
+3. When successfully pushed to Xero, the bank transactions will appear in the 'Bank Statements' section for the bank account in the Xero UI, with the source 'Bank Feed' as below:
+
+   <img src="/img/old/2530dce-bankFeedsDocs.PNG" />
 
 :::info Bank Feeds vs Account Transactions
 Note that the Codat API does not support pushing Xero 'Account Transactions'. Account transaction are reconciled with statement lines from direct Bank Feeds and can be created / matched in the Xero UI.
 :::
+
+## How do I push negative Direct incomes and Direct costs to Xero?
+
+The Xero API doesn't allow the creation of Direct costs (_spend money transactions_) or Direct incomes (_receive money transactions_) with negative values.
+
+To support pushing negative values to Xero for these data types, our integration uses some custom logic.
+
+| When you push...                    | Codat creates...                               |
+|-------------------------------------|------------------------------------------------|
+| A negative Direct income to Xero    | A positive _spend money transaction_ in Xero   |
+| A negative Direct cost to Xero      | A positive _receive money transaction_ in Xero |
+
+:::caution Objects are reversed
+
+When pushing negative Direct incomes and Direct costs to Xero, be aware that both the type (Direct income or Direct cost) and the sign of the created business objects are reversed.
+
+:::
+
+You push negative Direct incomes and Direct costs to Xero as an array of `lineItems` in an Account transaction, the same as for other accounting integrations. Arrays can contain a mix of both positive and negative lines.
+
+```json title="Example: request body for pushing a negative Direct cost to Xero"
+{
+    ...
+    "contactRef": {
+        "id": "699f0091-b127-4796-9f15-41a2f42abeb2",
+        "dataType": "suppliers"
+    },
+    "issueDate": "2023-02-28",
+    "currency": "GBP",
+    "lineItems": [
+        {
+            "description": "negative direct cost, no tax",
+            "unitAmount": 35,
+            "quantity": -1,  // negative
+            "subTotal": -35,  // negative
+            "taxAmount": 0,
+            "totalAmount": -35,  // negative
+            "accountRef": {
+                "id": "02c0e212-9afb-4983-9c67-120656ff8d03"
+            }
+        }
+    ],
+    "paymentAllocations": [
+        {
+            "payment": {
+                "accountRef": {
+                    "id": "bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4"
+                },
+                "currency": "GBP"
+            },
+            "allocation": {
+                "totalAmount": -35
+            }
+        }
+    ],
+    "taxAmount": 0,
+    "totalAmount": -35
+}
+
+```
+
+If the push is successful, the `changes` array in the push operation response will show the reversed data types that were created.
+
+### Pulling negative Direct incomes and Direct costs from Xero
+
+It's possible to create negative _spend money transactions_ and _receive money transactions_ in the Xero UI. Objects created in this way are always pulled to Codat as negative Direct incomes and negative Direct costs, respectively (that is, they are not reversed).
 
 ## How are Xero contacts represented in the Codat API?
 
@@ -47,7 +120,7 @@ To see which rate limit is exceeded, please contact Codat Support.
 
 ## Why do all of my items from Xero have their status as _Unknown_?
 
-All [Items](/accounting-api#/schemas/items) from Xero will have their `itemStatus` mapped as `Unknown` in Codat because an item status is not exposed via Xero's API. If this is a feature you'd like to see made available, please consider voting for <a href="https://developer.xero.com/documentation/api/items/" target="_blank">this feature request on Xero's UserVoice</a>.
+All [Items](accounting-api#/schemas/Item) from Xero will have their `itemStatus` mapped as `Unknown` in Codat because an item status is not exposed via Xero's API. If this is a feature you'd like to see made available, please consider voting for <a href="https://developer.xero.com/documentation/api/items/" target="_blank">this feature request on Xero's UserVoice</a>.
 
 ## Can I push discounts to Xero at the invoice level?
 
@@ -81,7 +154,7 @@ For example, the **Statement line** below will result in a bank statement line w
 
 ## Can I push batch payments to Xero?
 
-Yes. To push a batch payment to Xero, you push a [Bill payment](/accounting-api#/schemas/billpayments) with multiple line items. Pushing a batch payment to Xero will create the following business objects:
+Yes. To push a batch payment to Xero, you push a [Bill payment](/accounting-api#/operations/post-bill-payment) with multiple line items. Pushing a batch payment to Xero will create the following business objects:
 
 - A separate bill payment for each line.
 - An account transaction that links the bill payments together.

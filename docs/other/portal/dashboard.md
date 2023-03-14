@@ -6,7 +6,7 @@ createdAt: "2021-05-25T10:55:38.491Z"
 updatedAt: "2023-01-16T16:45:57.942Z"
 ---
 
-The Codat Portal home page gives you a quick way of seeing the products you're using in your Codat environment, the breakdown of your Company connections by status, and the Portal's navigation bar.
+The Codat Portal home page gives you a quick way of seeing the products you're using in your Codat environment, the breakdown of your company connections by status, and the Portal's navigation bar.
 
 ## Navigation bar
 

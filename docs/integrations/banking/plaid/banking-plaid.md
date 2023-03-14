@@ -35,33 +35,12 @@ Plaid's pricing tiers give you access to specific _products_ from your configure
 
 The following table shows the Plaid Products required for each of Codat's banking data types:
 
-{
-"data": {
-"h-1": "Associated Plaid product",
-"h-0": "Codat data type",
-"h-2": "Associated Plaid product",
-"1-0": "[Bank transactions](/banking-api#/schemas/banking-transactions)",
-"1-1": "_ Transactions",
-"1-2": "",
-"0-0": "[Bank accounts](/banking-api#/schemas/banking-accounts)",
-"0-1": "_ Auth
-
-- Identity
-- Institution",
-  "0-2": "\* Auth
-- Identity
-- Institution",
-  "2-0": "[Bank account balances](/banking-api#/schemas/banking-account-balances)",
-  "2-1": "\* Asset Reports",
-  "3-0": "[Bank Transaction Categories](/banking-api#/schemas/banking-transaction-categories)",
-  "3-1": "N/A
-
-Categorization is provided by Codat, not using data from Plaid."
-},
-"cols": 2,
-"rows": 4
-}
-
+|Codat data type|Associated Plaid product|
+|----|----|
+|[Bank accounts](/banking-api#/schemas/banking-accounts)|Auth, Identity, Institution|
+|[Bank transactions](/banking-api#/schemas/banking-transactions)|Transactions|
+|[Bank account balances](/banking-api#/schemas/banking-account-balances)|Asset Reports|
+|[Bank Transaction Categories](/banking-api#/schemas/banking-transaction-categories)|N/A. These categories are Codat-provided categories powered by Codat's categorization model. This does not use the categories provided by Plaid.|
 
 ## Sync Settings for Plaid
 
@@ -70,4 +49,5 @@ Because Plaid charges per API call for some endpoints, we recommend syncing data
 :::info Proxy access
 
 If you need to access additional Plaid products, you can [enable proxy access to additional banking data](/integrations/banking/proxy-access-banking-data).
+
 :::

@@ -1,5 +1,5 @@
 ---
-title: "Queueing data syncs"
+title: "Refreshing company data"
 description: "Overview of queuing data refresh in Codat's API"
 createdAt: "2022-11-07T19:58:13.342Z"
 updatedAt: "2022-11-07T20:34:47.562Z"
@@ -15,7 +15,15 @@ There are [two POST endpoints in the API](/codat-api#/operations/create--many-pu
 
 :::info Multiple dataset queued exception
 
-If you try to queue a synchronisation for a data type that is already in process, you'll receive an exception.
+If you try to queue a synchronization for a data type that is already in process, you'll receive an exception.
 
-`"error": "DatasetAlreadyInProgressException: Cannot queue {dataType} sync for {companyId} as previous sync {dataSetId} is still in progress"`
+```
+"error": "DatasetAlreadyInProgressException: Cannot queue {dataType} sync for {companyId} as previous sync {dataSetId} is still in progress"
+```
 :::
+
+---
+
+## Read next
+
+- [Status codes and errors](/using-the-api/errors)

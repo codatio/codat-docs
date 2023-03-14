@@ -91,6 +91,10 @@ html[data-theme="dark"] {
   h1 {
     margin-block-start: 5rem;
   }
+  
+  h3 > a {
+   text-decoration: none; 
+  }
 
   h2 + h3,
   h3 + h4,

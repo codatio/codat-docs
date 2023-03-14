@@ -23,7 +23,7 @@ You'll need these for the next page.
 
 ### 1. Create your merchant as a Company
 
-Your merchant needs to exist as a Company in the Codat system. Start by creating it:
+Your merchant needs to exist as a company in the Codat system. Start by creating it:
 
 ```http
   POST /meta/companies/sync
@@ -236,7 +236,7 @@ You can read more about those here:
 
 Each of those options will mean that you:
 
-- Have created a Company for your merchant
+- Have created a company for your merchant
 - Have created a connection with their preferred account platform
 
 ### 2. Redirect the user to the sync configuration flow

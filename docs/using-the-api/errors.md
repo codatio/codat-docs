@@ -9,63 +9,20 @@ The following page describes the status codes and standard error responses used 
 
 ## Status codes
 
-
-{
-"data": {
-"h-0": "Status code",
-"h-1": "Explanation",
-"2-0": "400",
-"3-0": "401",
-"5-0": "403",
-"6-0": "404",
-"7-0": "405",
-"10-0": "500",
-"11-0": "503",
-"2-1": "**Bad Request:** The server can't process the request because of an apparent client-side error.",
-"3-1": "**Unauthorized:** The supplied Codat API key is incorrect.",
-"5-1": "**Forbidden:** This error is returned in the following scenarios:
-
-- The requested endpoint is for administrators only.
-
-- A downstream endpoint can't be accessed.",
-  "6-1": "**Not Found:** This error is returned in the following scenarios:
-
-- The requested resource could not be found.
-
-- The data type is not support by the underlying platform.
-  In this case, the error message is: "Datatype [name] not supported by platform(s) [name]".",
-  "7-1": "**Method Not Allowed:** You are attempting to use an unauthorized method.",
-  "10-1": "**Internal Server Error: **There is a problem with our server. Please try again later.",
-  "11-1": "**Service Unavailable:** The Codat API is temporarily offline for maintenance. Please try again later.",
-  "4-0": "402",
-  "4-1": "**Payment Required:** An account limit has been reached. The type of account limit is described in the `error` property:
-
-- `Company limit exceeded`: You have exceeded the 50-company limit that applies to a Free or Test plan. We recommend that you delete any companies you no longer need and retry the request.
-
-- `SyncSettingsValidationException: Sync schedule not allowed`: You have requested an _hourly_ sync schedule; this functionality is not included in the Free plan.
-
-- `Payment Required`: Your Free account is older than 365 days and has expired. Please contact our [solutions team](mailto:solutions@codat.io) to upgrade your plan.
-
-",
-"8-0": "409",
-"8-1": "**Conflict:** The resource is not ready.
-
-If syncing a data set, this could mean that either:
-
-- The data set has not been requested.
-
-- The syncing of data set has not been completed.",
-  "0-0": "200",
-  "1-0": "202",
-  "0-1": "**Success** ",
-  "1-1": "**Accepted** (pending)",
-  "9-0": "429",
-  "9-1": "**Too Many Requests:** You have made too many requests in a given amount of time; please retry later."
-  },
-  "cols": 2,
-  "rows": 12
-  }
-  
+| Status code 	| Explanation 	|
+|---	|---	|
+| 200 	| **Success** 	|
+| 202 	| **Accepted** (pending) 	|
+| 400 	| **Bad Request:** The server can't process the request because of an apparent client-side error. 	|
+| 401 	| **Unauthorized:** The supplied Codat API key is incorrect. 	|
+| 402 	| **Payment Required:** An account limit has been reached. The type of account limit is described in the `error` property:  <br/>- `Company limit exceeded`: You have exceeded the 50-company limit that applies to a Free or Test plan. We recommend that you delete any companies you no longer need and retry the request.  <br/>- `SyncSettingsValidationException: Sync schedule not allowed`: You have requested an _hourly_ sync schedule; this functionality is not included in the Free plan.  <br/>- `Payment Required`: Your Free account is older than 365 days and has expired. Please contact our [solutions team](mailto:solutions@codat.io) to upgrade your plan.  <br/>For example responses, see [Example account limit errors](doc:status-codes#example-account-limit-errors). 	|
+| 403 	| **Forbidden:** This error is returned in the following scenarios:  <br/>- The requested endpoint is for administrators only.  <br/>- A downstream endpoint can't be accessed. 	|
+| 404 	| **Not Found:** This error is returned in the following scenarios:  <br/>- The requested resource could not be found.  <br/>- The data type is not supported by the underlying platform.  <br/>    In this case, the error message is: "Datatype [name] not supported by platform(s) [name]". 	|
+| 405 	| **Method Not Allowed:** You are attempting to use an unauthorized method. 	|
+| 409 	| **Conflict:** The resource is not ready.  <br/>If syncing a data set, this could mean that either:  <br/>- The data set has not been requested.  <br/>- The syncing of data set has not been completed. 	|
+| 429 	| **Too Many Requests:** You have made too many requests in a given amount of time; please retry later. 	|
+| 500 	| **Internal Server Error:** There is a problem with our server. Please try again later. 	|
+| 503 	| **Service Unavailable:** The Codat API is temporarily offline for maintenance. Please try again later. 	|
 
 ## Example account limit errors
 
@@ -77,7 +34,7 @@ Error response from [POST /companies](/codat-api#/operations/create-company) whe
 
 For example:
 
-```
+```json
 {
 "statusCode": 402,
 "service": "PublicApi",
@@ -87,7 +44,7 @@ For example:
   "errors": [
     {
       "itemId": "Company",
-      "message": "Company limit exceeded. Learn more at https://docs.codat.io/docs/environments-1",
+      "message": "Company limit exceeded. Learn more at https://docs.codat.io/using-the-api/errors",
       "validatorName": "CreateCompany"
     }
   ],
@@ -95,13 +52,11 @@ For example:
 }
 }
 ```
-
-
 ### 365 day free account limit
 
 Error response when your account has expired and you make a request to any endpoint. This error is returned if your Free account is older than 365 days and has expired.
 
-```
+```json
 {
   "statusCode": 402,
   "service": "PublicApi",
@@ -110,7 +65,7 @@ Error response when your account has expired and you make a request to any endpo
   "validation": {
     "errors": [
       {
-        "message": "Account expired. Learn more at https://docs.codat.io/docs/environments-1",
+        "message": "Account expired. Learn more at https://docs.codat.io/using-the-api/errors",
       }
     ],
     "warnings": []
@@ -122,7 +77,7 @@ Error response when your account has expired and you make a request to any endpo
 
 The content of an error response includes a more detailed error message and a `correlationId`, which can be used to identify a particular response. Please include the `correlationId` in text format if you are contacting Codat support regarding an error.
 
-```
+```json
 {
 "statusCode": 404,
 "service": "QuickbooksOnline",
@@ -136,3 +91,13 @@ The content of an error response includes a more detailed error message and a `c
 Status codes for push operations created in the Codat API might be different from the status codes returned in the responses from the service providers.
 
 When a push operation is created in the API, some service providers may use a `202 Accepted` code, which implies that the request has been accepted for processing, but the processing has not completed. However, the push API may return a 200 Success code for the push operation successfully created in the Codat API.
+
+:::tip Recap
+You've learned about error codes you might encounter while using the API.
+:::
+
+---
+
+## Read next
+
+- [Creating and updating data](/using-the-api/push)

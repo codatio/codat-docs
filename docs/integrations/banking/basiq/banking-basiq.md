@@ -7,7 +7,7 @@ updatedAt: "2022-10-20T10:20:35.670Z"
 
 <a class="external" href="https://basiq.io/" target="_blank">
   Basiq
-</a> is a third-party provider of open banking services with connections to bank
+</a> is a third-party provider of Open Banking services with connections to bank
 accounts at over 130 financial institutions, covering the Australian and New Zealand
 markets.
 

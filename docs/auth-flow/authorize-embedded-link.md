@@ -9,6 +9,12 @@ updatedAt: "2022-12-13T11:19:58.588Z"
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
+<Head>
+  <meta property="og:image" content="/img/link/link-sdk-banner.png"/>
+</Head>
+
+![](/img/link/link-sdk-banner.png)
+
 :::caution Early access
 
 Embedded Link is still being developed. If you run into issues with the Embedded Link solution or have any feedback, please [get in touch](mailto:embedded-link@codat.io), or even reach out to us ahead of time for advice!

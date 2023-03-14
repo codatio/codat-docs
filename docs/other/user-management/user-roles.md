@@ -32,7 +32,7 @@ _Administrator_ users have full access to all the features available in the Coda
 
 ### User roles summary
 
-|                                           	| Onboarding 	| Analyst 	| Developer 	| Administrator 	|
+| Action                                     	| Onboarding 	| Analyst 	| Developer 	| Administrator 	|
 |-------------------------------------------	|------------	|---------	|-----------	|---------------	|
 | Add companies                             	| ✔          	| ✔       	| ✔         	| ✔             	|
 | View connection status                    	| ✔          	| ✔       	| ✔         	| ✔             	|

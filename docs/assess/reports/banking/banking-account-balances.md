@@ -1,8 +1,5 @@
 ---
 title: "Banking account balances"
-hidden: true
-createdAt: "2022-05-26T13:21:50.091Z"
-updatedAt: "2022-07-06T14:50:43.873Z"
 ---
 
 :::caution Banking account balances - Beta testing
@@ -33,139 +30,45 @@ For _Banking account balances_, these are the dimensions and measures:
 
 
 ## Parameters
+|Parameter|Type|Description|Required|
+|----|----|----|----|
+|**query**|*string*, See [Querying](/using-the-api/querying)|Codat query string. It can be empty. If empty, it returns data for all bank accounts for a specific company.|Optional|
+|**displayCurrency**|*string*|The currency, in ISO 4217 format, the results are converted to. Default is "GBP".|Required|
+|**reportDate**|*string*, See [Date](/codat-api#/schemas/DateTime)|YYYY-MM-DD, Users can specify a specific date, however the response will be provided for the full month.|Required|
+|Period unit|*string*|"day","week", "month", "year", Default is "month".|Required|
+|**periodLength**|*integer*|The number of months per period. E.g. 2 = 2 months per period.|Required|
+|**numberOfPeriods**|*integer*|The number of periods to return. There will be no pagination as a query parameter, however Codat will limit the number of periods to request to 12 periods.|Required|
+|**includeDisplayNames**"|*boolean*|Shows the *dimensionDisplayName* and *itemDisplayName* in measures to make the report data human-readable. Default is 'false'.|Optional|
 
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "h-3": "Required",
-    "2-0": "**reportDate**",
-    "2-1": "*string*
-See [Date](/common-api#/schemas/DateTime)",
-    "2-2": "YYYY-MM-DD
-
-Users can specify a specific date, however the response will be provided for the full month.",
-    "2-3": "Required",
-    "5-0": "**numberOfPeriods** ",
-    "5-1": "*integer*",
-    "5-2": "The number of periods to return.
-
-There will be no pagination as a query parameter, however Codat will limit the number of periods to request to 12 periods.",
-    "5-3": "Required",
-    "4-0": "**periodLength** ",
-    "4-1": "*integer*",
-    "4-2": "The number of months per period. E.g. 2 = 2 months per period.",
-    "4-3": "Required",
-    "6-0": "**includeDisplayNames**",
-    "6-1": "*boolean*",
-    "6-2": "Shows the *dimensionDisplayName* and *itemDisplayName* in measures to make the report data human-readable.
-
-Default is 'false'.",
-    "6-3": "Optional",
-    "0-0": "**query**",
-    "0-1": "*string*
-See [Querying](/using-the-api/querying)",
-    "0-2": "Codat query string.
-
-It can be empty. If empty, it returns data for all bank accounts for a specific company.",
-    "1-0": "**displayCurrency**",
-    "1-1": "*string*",
-    "0-3": "Optional",
-    "1-3": "Required",
-    "1-2": "The currency, in ISO 4217 format, the results are converted to.
-
-Default is "GBP".",
-    "3-0": "Period unit",
-    "3-1": "*string*",
-    "3-2": ""day"
-"week"
-"month"
-"year"
-
-Default is "month".",
-    "3-3": "Required"
-  },
-  "cols": 4,
-  "rows": 7
-}
-
-#Data model
+# Data model
 
 The response structure is split into four areas: Report info, Dimensions, Measures and Report data. The structure allows Codat to add *Dimensions* without causing a breaking change in your code.
 
 ## Report info
-{
-  "data": {
-    "h-0": "Field",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "**name** ",
-    "0-1": "*string*",
-    "0-2": ""banking_account_balances"",
-    "1-0": "**displayName** ",
-    "1-1": "*string*",
-    "1-2": ""Banking account balances"",
-    "2-0": "**currencyConversion**",
-    "2-1": "*string*",
-    "2-2": "Returns the currency passed in the query parameter `displayCurrency`."
-  },
-  "cols": 3,
-  "rows": 3
-}
+|Field|Type|Description|
+|----|----|----|
+|**name**|*string*|"banking_account_balances"|
+|**displayName**|*string*|"Banking account balances"|
+|**currencyConversion**|*string*|Returns the currency passed in the query parameter `displayCurrency`.|
 
 ## Dimensions
 
 The Assess *Banking account balances* consists of one dimension: Period.
 
 ### Dimension (index = “0”): Period
-{
-  "data": {
-    "h-0": "Field",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "**displayName** ",
-    "0-1": "*string*",
-    "0-2": ""Period"",
-    "1-0": "**type** ",
-    "1-1": "*string*",
-    "1-2": ""datespan"",
-    "2-0": "**items** ",
-    "2-1": "*array*
-See [Dimension (index = “0”) items](#dimension-index--0-items)",
-    "2-2": "Returns an array of “Period”. This is driven by the query parameter values.
-
-Ordered by latest to earliest periods."
-  },
-  "cols": 3,
-  "rows": 3
-}
+|Field|Type|Description|
+|----|----|----|
+|**displayName**|*string*|"Period"|
+|**type**|*string*|"datespan"|
+|**items**|*array*, See [Dimension (index = "0") items](#dimension-index--0-items)|Returns an array of "Period". This is driven by the query parameter values.Ordered by latest to earliest periods.|
 
 #### Dimension (index = “0”) items
-{
-  "data": {
-    "h-0": "Field",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "**displayName** ",
-    "0-1": "*string*",
-    "0-2": ""Period n"",
-    "1-0": "**start** ",
-    "1-1": "*string*
-See [Date](/common-api#/schemas/DateTime)",
-    "1-2": "YYYY-MM-DD
 
-Date in which the period begins (inclusive).",
-    "2-1": "*string*
-See [Date](/common-api#/schemas/DateTime)",
-    "2-0": "**end** ",
-    "2-2": "YYYY-MM-DD
-
-Date in which the period ends (inclusive)."
-  },
-  "cols": 3,
-  "rows": 3
-}
+|Field|Type|Description|
+|----|----|----|
+|**displayName**|*string*|"Period n"|
+|**start**|*string*, See [Date](/codat-api#/schemas/DateTime)|YYYY-MM-DD, Date in which the period begins (inclusive).|
+|**end**|*string*, See [Date](/codat-api#/schemas/DateTime)|YYYY-MM-DD, Date in which the period ends (inclusive).|
 
 ## Measures
 
@@ -174,44 +77,20 @@ Date in which the period ends (inclusive)."
 The two measures for this report are as follows:
 
 ### Index “0” - Converted Current Balance
-{
-  "data": {
-    "h-0": "Field",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "**displayName** ",
-    "0-1": "*string*",
-    "0-2": ""Converted Current Balance"",
-    "2-0": "**type** ",
-    "2-1": "*string*",
-    "2-2": ""currency"",
-    "1-0": "**units**",
-    "1-1": "*string*",
-    "1-2": "The currency selected to display in the query parameters, `displayCurrency`."
-  },
-  "cols": 3,
-  "rows": 3
-}
+
+|Field|Type|Description|
+|----|----|----|
+|**displayName**|*string*|"Converted Current Balance"|
+|**units**|*string*|The currency selected to display in the query parameters, `displayCurrency`.|
+|**type**|*string*|"currency"|
 
 ### Index “1” - Converted Balance Limit
-{
-  "data": {
-    "h-0": "Field",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "**displayName** ",
-    "0-1": "*string*",
-    "2-0": "**type** ",
-    "2-1": "*string*",
-    "0-2": "“Converted Balance Limit”",
-    "2-2": "“currency”",
-    "1-0": "**units**",
-    "1-1": "*string*",
-    "1-2": "The currency selected to display in the query parameter, `displayCurrency`."
-  },
-  "cols": 3,
-  "rows": 3
-}
+
+|Field|Type|Description|
+|----|----|----|
+|**displayName**|*string*|"Converted Balance Limit"|
+|**units**|*string*|The currency selected to display in the query parameter, `displayCurrency`.|
+|**type**|*string*|"currency"|
 
 ## Report data
 
@@ -224,64 +103,32 @@ Each object is grouped by dimension (index=“0”) which is the number of perio
 Each period will be broken down into *Converted Current Balance* and *Converted Balance Limit*.
 
 ### Components structure
-{
-  "data": {
-    "h-0": "Field",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "**dimension** ",
-    "0-1": "*number*",
-    "0-2": ""0"",
-    "1-0": "**dimensionDisplayName** ",
-    "1-1": "*string*",
-    "1-2": "Shows when *includeDisplayNames* is set to *true*.",
-    "2-0": "**item** ",
-    "2-1": "*number*",
-    "3-0": "**itemDisplayName** ",
-    "4-0": "**measures** ",
-    "3-1": "*string*",
-    "3-2": "Shows when *includeDisplayNames* is set to *true*.",
-    "4-1": "See [Measures in components](#measures-in-components)"
-  },
-  "cols": 3,
-  "rows": 5
-}
+
+|Field|Type|Description|
+|----|----|----|
+|**dimension**|*number*|"0"|
+|**dimensionDisplayName**|*string*|Shows when *includeDisplayNames* is set to *true*.|
+|**item**|*number*||
+|**itemDisplayName**|*string*|Shows when *includeDisplayNames* is set to *true*.|
+|**measures**|See [Measures in components](#measures-in-components)||
+
 All components have the structure described in the *Measures in components* data model below.
 
 #### Measures in components
 
 **Index "0" - Converted Current Balance**
-{
-  "data": {
-    "h-0": "Field",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "**measureDisplayName** ",
-    "0-1": "*string*",
-    "0-2": ""Converted Current Balance"",
-    "1-0": "**value** ",
-    "1-1": "*currency*"
-  },
-  "cols": 3,
-  "rows": 2
-}
+
+|Field|Type|Description|
+|----|----|----|
+|**measureDisplayName**|*string*|"Converted Current Balance"|
+|**value**|*currency*||
 
 **Index “1” - Converted Balance Limit**
-{
-  "data": {
-    "h-0": "Field",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "**measureDisplayName** ",
-    "1-0": "**value** ",
-    "0-1": "*string*",
-    "1-1": "*currency*",
-    "0-2": "“Converted Balance Limit"",
-    "1-2": ""
-  },
-  "cols": 3,
-  "rows": 2
-}
+
+|Field|Type|Description|
+|----|----|----|
+|**measureDisplayName**|*string*|"Converted Balance Limit"|
+|**value**|*currency*||
 
 # Example data
 ```

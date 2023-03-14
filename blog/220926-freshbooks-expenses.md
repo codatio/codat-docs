@@ -18,7 +18,8 @@ If you require expense data from Freshbooks, use the Codat Direct costs datatype
 Expected impact if no action is taken
 Pulling Bills and Bill payments will no longer include Freshbooks expense data, so you may not see the data you expect.
 
-Additional information
-Puling Bills and Bill payments for a Company with a pre-existing completed data sync [for these datatypes] will result in any pre-existing Bills and Bill payments that represent Freshbooks expenses being voided (Bills) or deleted (Bill payments).
+### Additional information
 
-You can get ahead of this change by enabling it now in the Portal. Learn how to do that here, or read our change policy here.
+Pulling Bills and Bill payments for a Company with a pre-existing completed data sync (for these datatypes) will result in any pre-existing Bills and Bill payments that represent Freshbooks expenses being voided (Bills) or deleted (Bill payments).
+
+You can get ahead of this change by enabling it now in the Portal. Learn how to do that [here](https://docs.codat.io/other/portal/developers), or read our [change policy](https://docs.codat.io/introduction/change-policy).

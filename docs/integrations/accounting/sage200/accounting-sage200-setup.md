@@ -8,7 +8,7 @@ updatedAt: "2023-01-13T15:13:31.523Z"
 
 ## About Sage 200cloud
 
-Sage 200cloud is an accounting solution for small to medium-sized businesses. This cloud-based application provides a flexible tool for organisations to manage their stock, financials, sales, purchases, and sales orders.
+Sage 200cloud is an accounting solution for small to medium-sized businesses. This cloud-based application provides a flexible tool for organizations to manage their stock, financials, sales, purchases, and sales orders.
 
 :::note Supported versions
 
@@ -110,7 +110,7 @@ Unfortunately, you can't use a trial account to test your integration. Sage does
 4. Use the Link URL to connect your Sage 200cloud account.
    - When Link opens, select **Sage200cloud**, and then select **Continue to Sage 200cloud**.
    - Log in to your Sage 200cloud account.
-   - Authorise access to your account details.
+   - Authorize access to your account details.
 5. Make sure that test data from your account is displayed for your test company in the Codat Portal.
 
 ## Request new credentials

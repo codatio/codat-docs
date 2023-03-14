@@ -5,20 +5,25 @@ module.exports = [
     label: "All Docs",
     className: "back",
   },
-  "banking-api/overview",
+  {
+    type: "link",
+    label: "Banking API",
+    href: "/banking-api/overview",
+    className: "header",
+  },
   {
     type: "link",
     label: "Banking data model",
-    href: "data-model/banking/",
+    href: "/data-model/banking/",
   },
   {
     type: "link",
     label: "Banking integrations",
-    href: "integrations/banking/overview",
+    href: "/integrations/banking/overview",
   },
   {
     type: "link",
-    href: "/banking-api",
     label: "Banking API reference",
+    href: "/banking-api",
   },
 ];

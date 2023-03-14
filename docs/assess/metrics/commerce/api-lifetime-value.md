@@ -29,73 +29,30 @@ View the Lifetime Value [formulas](/assess/metrics/commerce/overview#what-metric
 
 The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-commerceMetrics-lifetimeValue">API reference</a>.
 
-`GET /data/companies/{companyId}/connections/{connectionId}/assess/commerceMetrics/lifetimeValue`
+```http
+GET /data/companies/{companyId}/connections/{connectionId}/assess/commerceMetrics/lifetimeValue
+```
 
-#Parameters
+# Parameters
 
-{
-"data": {
-"h-0": "Parameter",
-"h-1": "Type",
-"h-2": "Description",
-"h-3": "Required",
-"0-0": "**reportDate** ",
-"0-1": "_string_
-See [Date](/common-api#/schemas/DateTime)",
-"0-2": "YYYY-MM-DD
+| **Parameter**           | Type                                        | Description                                                                                                              | Required |
+|-------------------------|---------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|----------|
+| **reportDate**          | _string_ See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD Datetime or Date (inclusive of the whole day).                                                                | Required |
+| **periodUnit**          | _string_                                    | The period unit of time returned, and it can be: “Day”, “Week”, “Month”, “Year”.                                         | Required |
+| **periodLength**        | _integer_                                   | Based on the period unit provided. It must be positive, not zero and an integer.                                         | Required |
+| **numberOfPeriods**     | _integer_                                   | The number of periods to return. It must be positive, not zero and an integer.                                           | Required |
+| **includeDisplayNames** | _boolean_                                   | Shows the dimensionDisplayName and itemDisplayName in measures to make the report data human-readable. Default is false. | Optional |
 
-Datetime or Date (inclusive of the whole day).",
-"0-3": "Required",
-"1-0": "**periodUnit** ",
-"1-1": "_string_ ",
-"1-2": "The period unit of time returned, and it can be: “Day”, “Week”, “Month”, “Year”.",
-"1-3": "Required",
-"2-0": "**periodLength** ",
-"2-1": "_integer_ ",
-"2-2": "Based on the period unit provided.
-
-It must be positive, not zero and an integer.",
-"2-3": "Required",
-"3-0": "**numberOfPeriods** ",
-"3-1": "_integer_ ",
-"3-2": "The number of periods to return.
-
-It must be positive, not zero and an integer.",
-"3-3": "Required",
-"4-0": "**includeDisplayNames** ",
-"4-1": "_boolean_ ",
-"4-2": "Shows the _dimensionDisplayName_ and _itemDisplayName_ in measures to make the report data human-readable.
-
-Default is false.",
-"4-3": "Optional"
-},
-"cols": 4,
-"rows": 5
-}
-
-#Data model
+# Data model
 
 The response structure is split into four areas: Report info, Dimensions, Measures and Report data.
 
 ## Report info
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**name** ",
-"0-1": "_string_",
-"0-2": ""lifetime_value"",
-"1-0": "**displayName** ",
-"1-1": "_string_",
-"1-2": ""Lifetime Value""
-},
-"cols": 3,
-"rows": 2
-}
-
+| **Field**       | Type     | Description      |
+|-----------------|----------|------------------|
+| **name**        | _string_ | "lifetime_value" |
+| **displayName** | _string_ | "Lifetime Value" |
 
 ## Dimensions
 
@@ -103,101 +60,36 @@ _Lifetime value_ consists of these dimensions: Period and Customer retention met
 
 ### Dimension (index = “0”): Period
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**displayName** ",
-"0-1": "_string_",
-"0-2": ""Period"",
-"1-0": "**type** ",
-"1-1": "_string_",
-"1-2": ""datespan"",
-"2-0": "**items** ",
-"2-1": "_array_
-See [Dimension (index = “0”) items](#dimension-index--0-items)",
-"2-2": "Returns an array of “Period”. This is driven by the query parameter values.
-
-Ordered by latest to earliest periods."
-},
-"cols": 3,
-"rows": 3
-}
+| **Field**       | Type                                                                    | Description                                                                                                        |
+|-----------------|-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
+| **displayName** | _string_                                                                | "Period"                                                                                                           |
+| **type**        | _string_                                                                | "datespan"                                                                                                         |
+| **items**       | _array_, See [Dimension (index = “0”) items](#dimension-index--0-items) | Returns an array of “Period”. This is driven by the query parameter values. Ordered by latest to earliest periods. |
 
 
 #### Dimension (index = “0”) items
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**displayName** ",
-"0-1": "_string_",
-"0-2": ""Period n"",
-"1-0": "**start** ",
-"1-1": "_string_
-See [Date](/common-api#/schemas/DateTime)",
-"1-2": "YYYY-MM-DD
-
-Date in which the period begins (inclusive).",
-"2-1": "_string_
-See [Date](/common-api#/schemas/DateTime)",
-"2-0": "**end** ",
-"2-2": "YYYY-MM-DD
-
-Date in which the period ends (inclusive)."
-},
-"cols": 3,
-"rows": 3
-}
+| **Field**       | Type                                          | Description                                              |
+|-----------------|-----------------------------------------------|----------------------------------------------------------|
+| **displayName** | _string_                                      | "Period n"                                               |
+| **start**       | _string_, See [Date](/codat-api#/schemas/DateTime)  | YYYY-MM-DD, Date in which the period begins (inclusive). |
+| **end**         | _string_, See [Date](/codat-api#/schemas/DateTime)  | YYYY-MM-DD, Date in which the period ends (inclusive).   |
 
 
 ### Dimension (index = “1”): Lifetime value metrics
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**displayName** ",
-"0-1": "_string_",
-"0-2": ""Lifetime value metrics"",
-"1-0": "**type** ",
-"1-1": "_string_",
-"1-2": ""string"",
-"2-0": "**items** ",
-"2-1": "array
-See [Dimension (index = “1”) items](#dimension-index--1-items)",
-"2-2": "Returns an array of customer retention metrics."
-},
-"cols": 3,
-"rows": 3
-}
+| **Field**       | Type                                                                     | Description                                     |
+|-----------------|--------------------------------------------------------------------------|-------------------------------------------------|
+| **displayName** | _string_                                                                 | "Customer retention metrics"                    |
+| **type**        | _string_                                                                 | "string"                                        |
+| **items**       | _array_ , See [Dimension (index = “1”) items](#dimension-index--1-items) | Returns an array of customer retention metrics. |  
 
 
 #### Dimension (index = “1”) items
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**value** ",
-"0-1": "_string_",
-"0-2": "“Lifetime value”
-
-This will always show for any response in this report. The dimension values are not dependent on the user’s query parameters."
-},
-"cols": 3,
-"rows": 1
-}
-
+| **Field** | Type     | Description                                                                                                                                    |
+|-----------|----------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| **value** | _string_ | “Lifetime value” This will always show for any response in this report. The dimension values are not dependent on the user’s query parameters. |
 
 ## Measures
 
@@ -207,26 +99,11 @@ The measure for this report is as follows:
 
 ### Index “1” - Value
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**displayName** ",
-"0-1": "_string_",
-"1-0": "**units** ",
-"1-1": "_string_",
-"2-0": "**type** ",
-"2-1": "_string_",
-"0-2": "“Value”",
-"1-2": "The base currency of the company’s commerce connection.",
-"2-2": "“currency”"
-},
-"cols": 3,
-"rows": 3
-}
-
+| **Field**       | Type     | Description                                             |
+|-----------------|----------|---------------------------------------------------------|
+| **displayName** | _string_ | “Value”                                                 |
+| **units**       | _string_ | The base currency of the company’s commerce connection. |
+| **type**        | _string_ | “currency”                                              |
 
 ## Report data
 
@@ -240,29 +117,13 @@ Each period will be broken down into _Lifetime value metrics_.
 
 ### Components structure
 
-
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**dimension** ",
-"0-1": "_number_",
-"0-2": "Index 1",
-"1-0": "**dimensionDisplayName** ",
-"1-1": "_string_",
-"1-2": "Shows when _includeDisplayNames_ is set to _true_.",
-"2-0": "**item** ",
-"2-1": "_number_",
-"3-0": "**itemDisplayName** ",
-"4-0": "**measures** ",
-"3-1": "_string_",
-"3-2": "Shows when _includeDisplayNames_ is set to _true_.",
-"4-1": "See [Measures in components](#measures-in-components)"
-},
-"cols": 3,
-"rows": 5
-}
+| **Field**                | Type                                                  | Description                                    |
+|--------------------------|-------------------------------------------------------|------------------------------------------------|
+| **dimension**            | _number_                                              | Index 1                                        |
+| **dimensionDisplayName** | _string_                                              | Shows when includeDisplayNames is set to true. |
+| **item**                 | _string_                                              |                                                |
+| **itemDisplayName**      | _string_                                              | Shows when includeDisplayNames is set to true. |
+| **measures**             | See [Measures in components](#measures-in-components) |                                                |
 
 All components have the structure described in the _Measures in components_ data model below.
 
@@ -270,23 +131,12 @@ All components have the structure described in the _Measures in components_ data
 
 **Index “1” (value)**
 
-{
-"data": {
-"h-0": "Field",
-"h-1": "Type",
-"h-2": "Description",
-"0-0": "**measureDisplayName** ",
-"1-0": "**value** ",
-"0-1": "_string_",
-"1-1": "_string_",
-"0-2": "“Value"",
-"1-2": ""
-},
-"cols": 3,
-"rows": 2
-}
+| **Field**              | Type     | Description |
+|------------------------|----------|-------------|
+| **measureDisplayName** | _string_ | “Value"     |
+| **value**              | _string_ |             |
 
-#Example data
+# Example data
 
 ```
 {

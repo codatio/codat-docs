@@ -42,7 +42,7 @@ html[data-theme="dark"] .token.number {
   color: var(--font-ui);
 }*/
 .sl-badge {
-  display: none;
+  display: none !important;
 }
 
 @media (min-width: 850px) {
@@ -58,7 +58,17 @@ html[data-theme="dark"] .token.number {
   .api-ref-stoplight {
     display: none;
   }
+}
 
+.JsonSchemaViewer {
+  border: 1px solid var(--token-secondary-bg-c-alt);
+  border-radius: 4px;
+  padding: 0.5em;
+  margin-top: 1em;
+}
+
+.JsonSchemaViewer > .sl-prose.sl-markdown-viewer {
+  margin-bottom: 1em;
 }
 
 /* ------------------------ */

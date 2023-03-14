@@ -5,11 +5,11 @@ createdAt: "2020-04-02T10:24:15.274Z"
 updatedAt: "2022-11-24T12:14:59.848Z"
 ---
 
-To prevent unauthorized users from posting content to your webhook, Codat can add an `Authorization` header to the requests sent. You can set this up either via the Codat portal.
+To prevent unauthorized users from posting content to your webhook, Codat can add an `Authorization` header to the requests sent. You can set this up either via the Codat portal or API.
 
 ## Enable webhook security in the Codat portal
 
-To enable security for your organisation's webhooks.
+To enable security for your organization's webhooks.
 
 1. Sign in to the Codat Portal.
 2. Select **Monitor > Alerts > Alert settings**.
@@ -19,6 +19,26 @@ To enable security for your organisation's webhooks.
 | :----------------------------- | :------------------------------------------------------------------------------------------------- |
 | Basic                          | A base-64 encoded username and password are added to the authorization header of the HTTP request. |
 | Bearer                         | A custom value or token is added to the authorization header.                                      |
+
+
+To enable webhook security, use any valid header value in ASCII in the **alertAuthHeader**. For example:
+
+`PUT <https://api.codat.io/profile>`
+
+```json
+{
+    "name": "Client Name"
+    "logoUrl": "https://logo.png"
+    "iconUrl": "https://icon.ico"
+    "redirectUrl": "https://link.com/complete"
+    "apiKey": "API-KEY"
+    "alertAuthHeader": "Basic amFzb246cGFzc3dvcmQ=" // API accepts any raw string value
+    "confirmCompanyName": false
+
+}
+```
+
+The authorization header is included in all webhook alerts sent to your account.
 
 ## Disable webhook security for specific rules
 

@@ -6,9 +6,11 @@ updatedAt: "2022-10-17T16:14:54.800Z"
 ---
 
 :::info Linking companies using the QuickBooks Desktop connector
+
 The QuickBooks Desktop connector must be run on the same computer as the QuickBooks Desktop application. Advise your client to install the connector on the computer they normally use when working with QuickBooks Desktop.
 
 Before they start the linking process, the user must open QuickBooks Desktop and log in to the company they want to link.
+
 :::
 
 To install the QuickBooks Desktop connector, the user who is connecting their company data must complete the following tasks:
@@ -28,22 +30,26 @@ To install the QuickBooks Desktop connector, the user who is connecting their co
 First, the user downloads the connector from a Codat Link URL.
 
 :::info Connector download file
+
 The QuickBooks Desktop connector is packaged as a .exe file. To increase your client's trust in the download, the filename is prefixed with your company name (the name of the company the user is connecting their data to). For example: `YourCompanyName-quickbooksDesktop-connector.exe`. Symbols in the filename are replaced with dashes.
 
 Additionally, the file is signed with an Extended Validation Code Signing Digital Certificate issued by GlobalSign.
+
 :::
 
 If you're using the Codat Link flow, the user can download the connector after they've selected QuickBooks Desktop as their accounting package.
 
 If you've built your own Link flow, the **linkUrl** field on the company's QuickBooks data connection will initiate the installer download.
 
-:::info Connector permissions
-**The connector requires administrator privileges (admin rights) to run.** Each time you add a company, a user with admin rights needs to run the installer, which will display the following window:
-:::
+**Administrator privileges (admin rights) are required to run the connector.** When you add a new company, a user with admin rights needs to run the installer, which will display the following dialog:
 
 <img src="/img/old/420dc1e-QBDLinkNew.JPG" />
 
 The user copies their license key (the same as their _CompanyId_ in Codat) to use in the next step.
+
+:::info What if the SMB user isn't a Windows admin?
+If the SMB user isn't a Windows administrator on their own system, a different administrator must approve the installation and run Quickbooks Desktop using the **Run as Administrator** option, both during the initial link and when adding companies to an existing connector. When installed in this way, the connector is only able to sync data while Quickbooks Desktop is closed.
+:::
 
 ## 2. Launch the connector and enter the licence key
 
@@ -95,11 +101,11 @@ Check the details in the **Access Confirmation** dialog, and then click **Done**
 
 ## 5. Wait for the connector to complete first link
 
-Once access to QuickBooks has been granted, the connector will process the datasets you have chosen to _fetch on first link_ (see [Data Sync Settings](/core-concepts/data-type-settings)). Upon completion of the first link, a message will be shown to the user confirming that their data has been synchronised.
+Once access to QuickBooks has been granted, the connector will process the datasets you have chosen to _fetch on first link_ (see [Data Sync Settings](/core-concepts/data-type-settings)). Upon completion of the first link, a message will be shown to the user confirming that their data has been synchronized.
 
-If you have chosen to have your connectors perform a one-time synchronisation, the connector will uninstall itself and set the company status to _deauthorised_.
+If you have chosen to have your connectors perform a one-time synchronization, the connector will uninstall itself and set the company status to _deauthorised_.
 
-If you have chosen to install your connectors for ongoing synchronisations, the connector will periodically process any dataset syncs or pushes you have queued using the Codat portal or API. The connector will also be set to automatically start when the system reboots.
+If you have chosen to install your connectors for ongoing synchronizations, the connector will periodically process any dataset syncs or pushes you have queued using the Codat portal or API. The connector will also be set to automatically start when the system reboots.
 
 <img src="/img/old/e435017-Linked_Succesfully.png" />
 

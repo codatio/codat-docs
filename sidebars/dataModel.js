@@ -10,7 +10,6 @@ const dataModels = {
     "Account transaction",
     "Balance sheet",
     "Bank account",
-    "Bank transaction",
     "Bank transactions",
     "Bill",
     "Bill credit note",
@@ -31,6 +30,7 @@ const dataModels = {
     "Sales order",
     "Supplier",
     "Tax rate",
+    "Tracking category",
     "Transfer",
   ],
   banking: [
@@ -90,9 +90,7 @@ module.exports = [
     collapsed: true,
     items: [
       "data-model/accounting/accounting",
-      ...paths.accounting,
-      "data-model/accounting/supplemental-data",
-    ],
+      ...paths.accounting],
   },
   {
     type: "category",
@@ -112,16 +110,4 @@ module.exports = [
     collapsed: true,
     items: ["data-model/bank-feeds/bank-feeds", ...paths.bankFeeds, ,],
   },
-//  {
- //   type: "category",
-  //  label: "Shared",
-  //  collapsed: true,
- //   items: [
-      //"data-model/shared/datamodel-shared-country",
-      // "/codat-api#/schemas/currency",
-      // "/codat-api#/schemas/currencyrate",
-      // "/codat-api#/schemas/datetime",
-      //"data-model/shared/valid-data-type-links",
- //   ],
-//  },
 ];

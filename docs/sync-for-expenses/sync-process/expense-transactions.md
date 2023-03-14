@@ -1,71 +1,135 @@
 ---
 title: "Expense transactions"
+description: Create expense-transaction datasets to represent your customers spend
 ---
 
-# expense-transactions
+An [expense transaction](/sync-for-expenses-api#/operations/create-expense-dataset) represents the context behind the purchase.
 
-An expense reconciliation represents the context behind the purchase.
-s
-It can include details about the purchase, for example:
+It can include details about the purchase from the mapping options, for example:
 
-- Which account in the general ledger the transaction should be reconciled to
+- The type of transaction, e.g. a payment or refund
 
-- The associated tax rates
+- Which account in the general ledger the transaction should be reconciled to `accountRef`
 
-- Any applicable tracking categories
+- The associated tax rates `taxRateRef`
 
-When pushing expenses, use your transaction `id` so that it can serve as an idempotency key. Codat validates `id`'s to ensure that every `id` is unique to a company. This approach prevents duplicate transactions being created in your SMBs' bank feeds.
+- Any applicable tracking categories `trackingRefs`
 
-**Transaction Types**
+When pushing expenses, use your transaction `id` so that it can serve as an idempotency key. Codat validates `id`'s to ensure that every `id` is unique to a company. 
+This approach prevents duplicate transactions being created in your SMBs' accounting software.
 
-The way Codat handles, maps and processes a transaction is based on the specified `type` and signage of the transaction.
-
-| **Transaction Type** | **Description and Usage**                                                                                             |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| **Payment**          | Is used to represent any spend that takes place on the account and interest on credit purchases.                      |
-| **Refund**           | Can be used to represent any refunds and returns on an original transaction.                                          |
-| **Reward**           | Can be used to represent reward redemption such as points for cash.                                                   |
-| **Chargeback**       | Is similar, to a refund in behaviour and represents a return of transaction/payment sum which may have been disputed. |
-| **Adjustment**       | Can be used to represent write-off's & transaction adjustments such as foreign exchange adjustments                   |
-| **Transfer**         | Can be used to represent bank withdrawals, a top up of debit card account, a pay down of a credit card account.       |
-
-```json http
+```json title="Expense transaction"
 {
-  "method": "post",
-  "baseUrl": "https://expensesync.codat.io",
-  "headers": {
-    "authorization": ""
-  },
-  "url": "/companies/{companyId}/data/expense-transactions",
-  "body": {
-    "items": [
-      {
-        "id": "08ca1f02-0374-11ed-b939-0242ac120002",
-        "type": "payment",
-        "issueDate": "2021-05-21T00:00:00+00:00",
-        "currency": "GBP",
-        "currencyRate": 1.18,
-        "merchantName": "Amazon UK",
-        "lines": [
-          {
-            "netAmount": 110.42,
-            "taxAmount": 14.43,
-            "taxRateRef": {
+  "items": [
+    {
+      "id": "08ca1f02-0374-11ed-b939-0242ac120002",
+      "type": "payment",
+      "issueDate": "2021-05-21T00:00:00+00:00",
+      "currency": "GBP",
+      "currencyRate": 1.18,
+      "merchantName": "Amazon UK",
+      "lines": [
+        {
+          "netAmount": 110.42,
+          "taxAmount": 14.43,
+          "taxRateRef": {
+            "id": "08ca1c6e-0374-11ed-b939-0242ac120002"
+          },
+          "accountRef": {
+            "id": "08ca1c6e-0374-11ed-b939-0242ac120002"
+          },
+          "trackingRefs": [
+            {
               "id": "08ca1c6e-0374-11ed-b939-0242ac120002"
-            },
-            "accountRef": {
-              "id": "08ca1c6e-0374-11ed-b939-0242ac120002"
-            },
-            "trackingRefs": [
-              {
-                "id": "08ca1c6e-0374-11ed-b939-0242ac120002"
-              }
-            ]
-          }
-        ],
-        "notes": "string"
-      }
-    ]
-  }
+            }
+          ]
+        }
+      ],
+      "notes": "Amazon UK | Online Purchase | Order 123XX45"
+    }
+  ]
 }
 ```
+
+## Transaction types
+
+The way Codat handles, maps and processes a transaction is based on the specified `type` of the transaction.
+
+
+<ul className="card-container col-2">
+  <li className="card">
+    <div class="header">
+      <h3>payment</h3>
+    </div>
+    <p>
+      Is used to represent any spend that takes place on the account and interest on credit purchases. 
+    </p>
+  </li>
+
+  <li className="card">
+    <div class="header">
+      <h3>refund</h3>
+    </div>
+    <p>
+      Can be used to represent any refunds and returns on an original transaction.
+    </p>
+  </li>
+
+  <li className="card">
+    <div class="header">
+      <h3>reward</h3>
+    </div>
+    <p>
+      Can be used to represent reward redemptions such as cashback.
+    </p>
+  </li>
+<li className="card">
+    <div class="header">
+      <h3>chargeback</h3>
+    </div>
+    <p>
+      Is similar to a refund in behavior and represents a return of transaction or payment sum which may have been disputed.
+    </p>
+  </li>
+
+  <li className="card">
+    <div class="header">
+      <h3>transferIn</h3>
+    </div>
+    <p>
+      A transfer that decreases the balance of the credit card account or increases the balance of a bank account. </p>
+<p>Can be used to represent a top up of debit card account, a pay down of a credit card account or a balance transfer to another credit card.</p>
+    
+  </li>
+
+  <li className="card">
+    <div class="header">
+      <h3>transferOut</h3>
+    </div>
+    <p>
+      A transfer that increases the balance of the credit account or decreases the balance of a bank account.</p>
+<p> Can be used to represent cash withdrawals or balance transfer to another credit card.</p>
+    
+  </li>
+  <li className="card">
+    <div class="header">
+      <h3>adjustmentIn</h3>
+    </div>
+    <p>
+      An adjustment that decreases the balance of the credit account or increases the balance of a bank account. </p>
+      <p>Can be used to represent write-offs & transaction adjustments such as foreign exchange adjustments. 
+    </p>
+  </li>
+
+  <li className="card">
+    <div class="header">
+      <h3>adjustmentOut</h3>
+    </div>
+    <p>
+      An adjustment that increases the balance of the credit account or decreases the balance of a bank account. </p>
+<p>Can be used to represent write-offs & transaction adjustments such as foreign exchange adjustments. 
+    </p>
+  </li>
+
+</ul>
+

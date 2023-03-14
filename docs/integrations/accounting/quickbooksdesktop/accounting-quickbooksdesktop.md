@@ -11,11 +11,12 @@ The connector is a Windows application that runs on the SMB user's local machine
 
 ## Data type coverage
 
-View the coverage of our QuickBooks Desktop on-premise connector in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=pqsw" target="_blank">Data coverage explorer</a>.
+View the coverage of our QuickBooks Desktop on-premise connector in the [Data coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=pqsw).
 
 :::caution Attachments not supported
 
 Uploading and downloading Attachments to QuickBooks Desktop is not supported for any data type. This functionality is not supported by the QuickBooks SDK.
+
 :::
 
 ## Features and benefits
@@ -110,7 +111,7 @@ Enable the QuickBooks Desktop connector in the <a className="external" href="htt
 Here's how your SMB users interact with the QBD connector.
 
 - The SMB user downloads the connector as part of the link flow.
-- Initially, the connector installer requires administrator privileges (admin rights) to run.
+- The user needs administrator privileges (admin rights) to run the connector installer. Alternatively, a different administrator can approve the installation and run the connector.
 - The SMB user completes some simple steps to complete the installation (as described in [Install the QuickBooks Desktop connector](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector)). In summary, they'll need to:
   - Enter their unique license number (their Codat Company ID), which is provided during the link flow.
   - Complete some steps to point the connector at the correct accounting package data file on their local machine.
@@ -127,7 +128,8 @@ See [QuickBooks Desktop requirements](/integrations/accounting/quickbooksdesktop
 
 See [Install the QuickBooks Desktop connector](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector) to learn how to set up and enable the connector.
 
-:::note Installation in hosted environments
+:::info Installation in hosted environments
 
 [Installation on Right Networks hosted instances](/integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks) is currently available in beta.
+
 :::

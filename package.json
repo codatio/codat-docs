@@ -1,6 +1,6 @@
 {
   "name": "codat-docs",
-  "version": "1.0.1",
+  "version": "1.2.0",
   "private": true,
   "scripts": {
     "build": "npm run build:${VERCEL_ENV:-preview}",
@@ -51,6 +51,7 @@
     "crowdin": "^3.5.0",
     "docusaurus-plugin-module-alias": "^0.0.2",
     "docusaurus-plugin-sass": "^0.2.1",
+    "docusaurus-theme-search-typesense": "^0.9.0-3",
     "dotenv": "^16.0.3",
     "fs-extra": "^9.1.0",
     "modern-normalize": "^1.1.0",

@@ -66,3 +66,15 @@ GET /companies/{companyId}/data/invoices?page=1&query=issueDate%3C{todayMinus12M
 ```
 
 This query retrieves invoices with issue dates that are greater than twelve months old and a source modified date that is greater than or equal to one month old.
+
+:::tip Recap
+You've learned:
+- How dates are used to keep company data up to date
+- The difference between `modifiedDate` and `sourceModifiedDate`
+:::
+
+---
+
+## Read next
+
+- [Refreshing company data](/using-the-api/modified-dates)

@@ -57,7 +57,7 @@ The following rules can be configured in the Codat Portal to alert you to events
 
 ## Data sync completed
 
-**Trigger:** Data synchronisation is completed; a notification will be generated for each `dataType` as the sync completes.  
+**Trigger:** Data synchronization is completed; a notification will be generated for each `dataType` as the sync completes.  
 **Additional data:** `dataType`, `datasetId`.
 
 ```json
@@ -79,7 +79,7 @@ The following rules can be configured in the Codat Portal to alert you to events
 
 ## Dataset data changed
 
-**Trigger:** A dataset synchronisation has completed and this has resulted in updates within Codat's data cache - this could be through the creation of new records or a change to existing records.  
+**Trigger:** A dataset synchronization has completed and this has resulted in updates within Codat's data cache - this could be through the creation of new records or a change to existing records.  
 **Additional data:** `dataType`, `datasetId`.
 
 ```json
@@ -98,7 +98,7 @@ The following rules can be configured in the Codat Portal to alert you to events
 
 ## Dataset status has changed to an error state
 
-**Trigger:** The synchronisation of a dataset fails.  
+**Trigger:** The synchronization of a dataset fails.  
 **Additional data:** `dataType`, `datasetStatus`, `datasetId`.
 
 ```json
@@ -116,9 +116,9 @@ The following rules can be configured in the Codat Portal to alert you to events
 }
 ```
 
-## New company synchronised
+## New company synchronized
 
-**Trigger:** After a new company has successfully synchronised at least one dataType for the first time.
+**Trigger:** After a new company has successfully synchronized at least one dataType for the first time.
 
 ```json
 {
@@ -172,9 +172,9 @@ The following rules can be configured in the Codat Portal to alert you to events
 
 ## Sync Connection Deleted
 
-**Trigger:** A Sync connection is deleted.
+**Trigger:** A Sync for Commerce connection is deleted.
 
-**Note:** This rule is specific to Sync for Commerce and cannot be used for other products. This rule does not send a webhook.
+**Note:** This rule is specific to Sync for Commerce and cannot be used for other products.
 
 ```json Example webhook alert body
 {
