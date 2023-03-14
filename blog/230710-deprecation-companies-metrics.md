@@ -10,9 +10,9 @@ On July 10, 2023, Codat will deprecate the `GET /metrics/companies` endpoint pre
 <!--truncate-->
 
 It provided the following status metrics:
-- Currently linked,
-- No longer linked,
-- Not yet linked,
+- Currently linked
+- No longer linked
+- Not yet linked
 - All time linked. 
 
 The internal logic of the dashboard has changed, and the endpoint is no longer in use. After the change is implemented, any requests made to `GET /metrics/companies` will return a 404 error. 
