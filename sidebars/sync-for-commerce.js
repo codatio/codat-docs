@@ -32,8 +32,6 @@ module.exports = [
       "sfc/build-with-sync-for-commerce/sync-for-commerce-prerequisites",
       "sfc/build-with-sync-for-commerce/sync-platform-selection",
       "sfc/build-with-sync-for-commerce/implementing-codats-no-code-merchant-configuration",
-      "sfc/build-with-sync-for-commerce/sync-data-pushing",
-      "sfc/build-with-sync-for-commerce/functional-examples-of-data",
       "sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow",
     ],
   },
