@@ -9,7 +9,7 @@ updatedAt: "2022-12-21T06:24:11.564Z"
 
 Your users/customers are [companies](/core-concepts/companies). To access their data you'll need to onboard them.
 
-You'll have to go through the following steps:
+To onboard a new user or customer:
 1. Create a company
 2. Authorize access to sources of data
 3. Pull the data
