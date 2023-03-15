@@ -1,19 +1,24 @@
 ---
 title: "Set up the Xero integration"
-description: "Explore our API integration with Xero."
+description: "Explore our API integration with Xero"
 createdAt: "2019-02-20T10:49:51.454Z"
 updatedAt: "2023-01-16T11:30:45.447Z"
 ---
 
-Before you can access data from your customers who use Xero for their accounting, you need to set up the Xero integration.
+In this guide, we'll show you how to quickly set up our Xero API integration and start accessing accounting data from your SMB customers who use Xero.
 
-You'll need to:
+When you've completed this guide, you can use the Xero integration to connect up to 25 companies. If you want to connect more than 25 companies, you need to [register with Xero as an official Xero App Partner](#).
 
-- Create a Xero app.
-- Retrieve your app's secure keys.
-- Add the app's secure keys to the Codat Portal.
+:::tip Tell us your use case
+Xero App Partnership is not possible for all use cases. We encourage you to work closely with Codat for guidance on your specific use case.
+:::
 
-To link more than 25 companies, you need to [become a Xero app partner](/integrations/accounting/xero/accounting-xero-setup#apply-to-become-a-xero-app-partner).
+Steps to set up your Xero integration:
+
+- Create a Xero app
+- Retrieve your app's secure keys
+- Add the app's secure keys to the Codat Portal
+- Enable the Xero integration
 
 ## Create a Xero app
 
