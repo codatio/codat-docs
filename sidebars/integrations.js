@@ -223,6 +223,7 @@ module.exports = [
     collapsed: true,
     items: [
       "integrations/banking/overview",
+      "integrations/banking/banking-platform-keys",
       {
         type: "category",
         label: "Proxy access",
@@ -388,7 +389,7 @@ module.exports = [
           "integrations/commerce/shopify/commerce-shopify",
           "integrations/commerce/shopify/commerce-shopify-custom-apps",
           "integrations/commerce/shopify/commerce-shopify-requirements-public-apps",
-          "integrations/commerce/shopify/commerce-shopify-setup",          
+          "integrations/commerce/shopify/commerce-shopify-setup",
           "integrations/commerce/shopify/test-shopify",
         ],
       },
