@@ -54,6 +54,6 @@ You can also explore the data types supported by each integration in the interac
 ## On-premise
 
 - [QuickBooks Desktop](/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop)
-- [Sage 50 (UK)](/integrations/accounting/sage50/accounting-sage50)
+- [Sage 50 (UK & Ireland)](/integrations/accounting/sage50/accounting-sage50)
 
 You can also refer to [Accounting platform keys](/integrations/accounting/accounting-platform-keys) to view the unique 4-character keys that identify accounting platforms in our APIs.

@@ -8,7 +8,7 @@ updatedAt: "2022-11-25T14:08:49.131Z"
 
 :::note Supported Sage 50 accounts and versions
 
-Codat supports Sage 50 accounts (UK) for versions from 2018 onwards (v24+). This is in line with <a className="external" href="https://gb-kb.sage.com/portal/app/portlets/results/viewsolution.jsp?solutionid=200427112228593" target="_blank">Sage's software lifecycle policy</a>.
+Codat supports Sage 50 accounts (UK & Ireland) for versions from 2018 onwards (v24+). This is in line with <a className="external" href="https://gb-kb.sage.com/portal/app/portlets/results/viewsolution.jsp?solutionid=200427112228593" target="_blank">Sage's software lifecycle policy</a>.
 
 See a full list of supported Sage 50 versions below. We aim for this list to be as comprehensive and current as possible. If you experience issues with the supported versions or would like to register your interest in an unsupported version, please contact support@codat.io
 :::
@@ -19,9 +19,9 @@ Codat support versions 25, 26, 27, 28, and 29 of Sage 50c Accounts Standard & Pr
 
 ## Unsupported versions
 
-The Codat Sage 50 connector is not compatible with all non-UK versions of Sage 50.
+The Codat Sage 50 connector is not compatible with all non-UKI (UK & Ireland) versions of Sage 50.
 
-The following UK versions are also not supported:
+The following UKI versions are also not supported:
 
 - Construction for Sage 50
 - Sage 50 HR
@@ -30,7 +30,7 @@ The following UK versions are also not supported:
 
 ## Supported operating systems
 
-The Codat Sage 50 connector is supported for Sage 50 (UK) running on Windows 10 or Windows 11 with the latest service packs installed.
+The Codat Sage 50 connector is supported for Sage 50 (UK & Ireland) running on Windows 10 or Windows 11 with the latest service packs installed.
 
 Users have successfully run the connector on older versions of Windows; however, we do not officially support this due to Microsoft's withdrawal of support for these operating systems.
 
@@ -38,7 +38,7 @@ The connector will not run on Mac OS.
 
 :::note Supported environments
 
-The Sage 50 connector is designed to work in single tenant environments only, where one Windows user logs on to the same computer they use to access Sage 50 (UK). It is not designed or supported for use in hosted environments; for example, if your customer uses Online50 to access their Sage 50 accounts (UK) software.
+The Sage 50 connector is designed to work in single tenant environments only, where one Windows user logs on to the same computer they use to access Sage 50 (UK & Ireland). It is not designed or supported for use in hosted environments; for example, if your customer uses Online50 to access their Sage 50 accounts (UK & Ireland) software.
 :::
 
 ## Hardware requirements

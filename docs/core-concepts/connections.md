@@ -45,7 +45,7 @@ In the response, note the following fields:
   "id": "00000000-0000-0000-0000-000000000000",
   "integrationId": "18cb53c4-3807-4a5a-8da9-303053a40002",
   "sourceId": "58e1d32f-a092-438a-bffb-3bf6af9ba8ec",
-  "platformName": "Sage 50 (UK)",
+  "platformName": "Sage 50 (UK & Ireland)",
   "linkUrl": "https://link.codat.io/companies/00000000-0000-0000-0000-000000000000/connections/00000000-0000-0000-0000-000000000000/start",
   "status": "Linked",
   "lastSync": "2022-01-01T12:00:00.0000000Z",
