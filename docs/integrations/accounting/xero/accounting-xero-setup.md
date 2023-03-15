@@ -7,94 +7,84 @@ updatedAt: "2023-01-16T11:30:45.447Z"
 
 In this guide, we'll show you how to quickly set up our Xero API integration and start accessing accounting data from your SMB customers who use Xero.
 
-When you've completed this guide, you can use the Xero integration to connect up to 25 companies. If you want to connect more than 25 companies, you need to [register with Xero as an official Xero App Partner](#).
+When you've completed this guide, you can use the Xero integration to connect up to 25 companies. If you want to connect more than 25 companies, you need to [register with Xero as an official Xero App Partner](/integrations/accounting/xero/xero-app-partner-program).
 
-:::tip Tell us your use case
+:::tip Tell us about your use case
 Xero App Partnership is not possible for all use cases. We encourage you to work closely with Codat for guidance on your specific use case.
 :::
 
-Steps to set up your Xero integration:
+🚀 **Steps to set up the Xero integration:**
 
-- Create a Xero app
+- Create a Xero app and configure the redirect URI
 - Retrieve your app's secure keys
 - Add the app's secure keys to the Codat Portal
 - Enable the Xero integration
 
-## Create a Xero app
+## Create a Xero app and configure the redirect URI
 
-Create and configure an app in Xero Developer.
-
-1. Log in to <a className="external" href="https://developer.xero.com/" target="blank">Xero Developer</a> using your Xero credentials, or sign up for a Xero Developer account if you don't already have one.
-
-2. On the **My Apps** tab, click **New app**.
-
-3. Enter the following information in the **Add a new app** dialog:
-
-   - **App name**: Enter a name for your application. This will be displayed to your users when they share their accounting data in Link, so choose a name that clearly identifies your organization.
+1. Log in to the [Xero Developer portal](https://developer.xero.com/) using your Xero credentials.
+   :::info Free trial account
+   You can sign up for a free trial Xero Developer account.   
+   :::
+2. Select the **My Apps** tab.
+2. Click the **New app** button at the top right.
+3. Enter the following information in the **Add a new app** window:
+   - **App name**: Enter a name for your application. This will be displayed to your users when they share their accounting data in your auth flow, so choose a name that clearly identifies your organization.
    - **Integration type**: Select **Web app**.
    - **Company or application URL**: Enter the URL for your company's website prefixed with `https://`
    - **Redirect URI**: Enter `https://xero.codat.io/oauth2/callback`
-
 4. Select the checkbox to agree to the Xero Developer Platform Terms & Conditions.
-
 5. Click **Create app**.
 
-Your new app is displayed on the **Apps details** page.
+Your new app is displayed on the **App details** page.
 
-If you don't have app partner status with Xero, **25 max connections** is displayed next to the app on the **My Apps** tab. Non app partners can only link a maximum of 25 companies through the integration.
+:::tip Save time by adding document links now
+It's worth adding links to your privacy policy and terms and conditions at this stage. This is a requirement if you want to [become a Xero App Partner](/integrations/accounting/xero/xero-app-partner-program) and will save you time later.
 
-For example:
-
-<img
-  src="/img/old/f3cc615-xero-non-partner-company-25-connection-max-limit.png.jpg"
-  alt="xero-non-partner-company-25-connection-max-limit.png.jpg"
-/>
-
-If you want to apply to become a Xero app partner, you need to provide your privacy policy and terms and conditions for your app.
-
-1. Open the **App details** page for your app.
-2. Enter `https://` links to your privacy policy and terms and conditions in the relevant boxes.
-3. Click **Save**.
-
-For details on how to become a Xero app partner, see [Apply to become a Xero app partner](/integrations/accounting/xero/accounting-xero-setup#apply-to-become-a-xero-app-partner).
+1. Select your app.
+2. On the **App details** page, enter links prefixed with `https://` in the **Privacy policy URL** and **Terms and conditions URL** fields.
+3. Click the **Save** button.
+:::
 
 ## Retrieve your app's secure keys
 
-Retrieve the secure keys for the app you created in Xero Developer.
+You'll need to retrieve your app's secure keys&mdash;the client ID and client secret&mdash;from the Xero Developer portal.
 
-1. Click **My Apps** in the top navigation bar, then select your application from the list.
-
-2. Click **Configuration** in the left pane.
-
-3. Click the eye icon to show your app's Client ID in the **Client id** box.
-
-4. Click **Generate a secret** to generate a client secret for your app; the secret appears in the **Client secret 1** box.
-
-   **Note**: **Copy the secret and store it in a safe place.** If you leave the **Configuration** page, you won't be able to view the same client secret again; you'll need to generate a new one.
-
-5. Keep this page open in your browser. You'll need to enter your secure keys in the following procedure.
+1. Select the **My Apps** tab and then select your app.
+2. Select **Configuration** in the left pane.
+3. Click the eye icon to reveal your app's **Client id**.
+4. Click **Generate a secret** to generate a client secret for your app. The secret appears in the **Client secret 1** box.
+   :::danger Keep the client secret safe!
+   Copy the client secret for your app and store it in a safe place. If you leave the **Configuration** page for your app, you won't be able to view the client secret again and will need to generate a new one.
+   :::
+5. Keep the **Configuration** page open in your browser. You'll need to enter your secure keys in the next procedure.
 
 ## Add your Xero app's secure keys to the Codat Portal
 
-Next, you can add the secure keys for your Xero application to the Codat Portal.
+Next, add the secure keys for your Xero application to the Codat Portal.
 
-1. In the Codat Portal, go to the <a className="external" href="https://app.codat.io/settings/integrations/accounting" target="_blank">**Accounting integrations**</a> page.
+1. In the Codat Portal, navigate to **Settings > Integrations > Accounting** to view the [**Accounting integrations**](https://app.codat.io/settings/integrations/accounting) page.
 2. Locate **Xero** and click **Set up**.
-3. Under **Integration settings**, enter the values for the **Client ID** and **Client secret** from your app in Xero Developer.
+3. Under **Integration settings**, enter the values for the **Client ID** and **Client secret** from your app in the Xero Developer portal. Secure keys must not contain spaces.
 4. Click **Save**. A confirmation message appears if the settings were saved successfully.
 5. The **Enable Xero** dialog is displayed. Select whether to enable the integration now or later.
 
-:::note
-
-Make sure that your secure keys don't contain any spaces.
-:::
-
 ## Enable the Xero integration
 
-1. In the Codat Portal, go to the <a className="external" href="https://app.codat.io/settings/integrations/accounting" target="blank">**Accounting integrations**</a> page.
-2. Locate **Xero** and click the toggle to enable the integration.
+1. In the Codat Portal, go to the [**Accounting integrations**](https://app.codat.io/settings/integrations/accounting) page.
+2. Locate **Xero** and select the toggle to enable the integration.
 
 You can also click **Manage** to view the integration's settings page, and then enable the integration from there.
+
+## Next steps
+
+You can now use your Xero integration to connect up to 25 companies. If you want to use your integration to connect more than 25 companies you need to [register with Xero as an official Xero App Partner](/integrations/accounting/xero/xero-app-partner-program).
+
+If you want to set up bank feeds, see the next section.
+
+<hr />
+
+// stopped here at 17:12 on 15 March 2023
 
 ## Configure direct bank feeds
 
@@ -116,6 +106,8 @@ If you don't have access to direct bank feeds, a 403 error is returned if you tr
   "detail": "The organization does not support automated bank feeds."
 }
 ```
+
+THIS SECTION MOVES TO A NEW PAGE???
 
 ## Apply to become a Xero App partner
 
