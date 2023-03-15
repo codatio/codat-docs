@@ -60,16 +60,20 @@ const Integrations = () => {
       <IntegrationsList integrations={filteredIntegrations.filter(integration => integration.type === "accounting")}/>
 
       <h2 className={styles.header}>Banking</h2>
-      
+
       <IntegrationsList integrations={filteredIntegrations.filter(integration => integration.type === "banking")}/>
 
       <h2 className={styles.header}>Commerce</h2>
-      
+
       <IntegrationsList integrations={filteredIntegrations.filter(integration => integration.type === "commerce")}/>
 
       <h2 className={styles.header}>Bank feeds</h2>
-      
+
       <IntegrationsList integrations={filteredIntegrations.filter(integration => integration.type === "bankfeeds")}/>
+
+      <h2 className={styles.header}>Sync For Expenses</h2>
+
+      <IntegrationsList integrations={filteredIntegrations.filter(integration => integration.type === "Sync For Expenses")}/>
     </div>
   );
 };
