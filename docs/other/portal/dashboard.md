@@ -26,7 +26,9 @@ Clicking **Manage products** takes you to the Products page, where you can manag
 
 ## Dashboard
 
-This section gives you real-time insight into the number of companies and the current statuses of their [data connections](/core-concepts/connections). A company's connections can have the following status:
+This section gives you real-time insight into the number of companies and the current statuses of their [data connections](/core-concepts/connections). Note that you can access the list of companies by selecting the **View all companies** button.
+
+A company's connections can have the following status:
 
 - Linked,
 - PendingAuth,
@@ -34,5 +36,4 @@ This section gives you real-time insight into the number of companies and the cu
 - Unlinked, or
 - No connections.
 
-Note that you can access the list of companies by selecting the **View all companies** button.
-
+The dashboard also displays the number of total created companies and the number of active companies for the current billing period. Active companies represent your customer connections where you have successfully pulled or pushed data within that billing period. This helps you track your usage and stay in control of your bills.

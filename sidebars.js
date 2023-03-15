@@ -139,6 +139,7 @@ module.exports = {
           items: [
             "other/portal/dashboard",
             "other/portal/account-management",
+            "other/portal/usage-and-billing",
             "other/portal/companies",
             "other/portal/developers",
             "other/portal/pull-and-push-history",
