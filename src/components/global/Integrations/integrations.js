@@ -248,3 +248,25 @@ export const integrations = [
     "img": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png"
   },
 ]
+
+export const sfeIntegrations = [
+  {
+    "name": "QuickBooks Online",
+    "to": "/integrations/accounting/quickbooksonline/accounting-quickbooksonline",
+    "type": "Sync For Expenses",
+    "img": "https://static.codat.io/public/officialLogos/Square/19EEFA32-58A8-4097-B95A-EF150BF24FA0.png"
+  },
+  {
+    "name": "Xero",
+    "to": "/integrations/accounting/xero/accounting-xero",
+    "type": "Sync For Expenses",
+    "img": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png"
+  },
+  {
+    "name": "Oracle NetSuite",
+    "to": "/integrations/accounting/netsuite/accounting-netsuite",
+    "type": "Sync For Expenses",
+    "tag": "Credit Cards only",
+    "img": "https://static.codat.io/public/officialLogos/Square/9815B998-024D-4415-A40B-89903B2CAD6F.png"
+  }
+]

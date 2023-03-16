@@ -21,7 +21,7 @@ const Integration = ({integration}) => {
   )
 }
 
-const IntegrationsList = ({integrations}) => {
+export const IntegrationsList = ({integrations}) => {
   if (integrations.length && integrations.length >= 1) {
     return (
       <div className={styles.integrationsList}>
@@ -60,15 +60,15 @@ const Integrations = () => {
       <IntegrationsList integrations={filteredIntegrations.filter(integration => integration.type === "accounting")}/>
 
       <h2 className={styles.header}>Banking</h2>
-      
+
       <IntegrationsList integrations={filteredIntegrations.filter(integration => integration.type === "banking")}/>
 
       <h2 className={styles.header}>Commerce</h2>
-      
+
       <IntegrationsList integrations={filteredIntegrations.filter(integration => integration.type === "commerce")}/>
 
       <h2 className={styles.header}>Bank feeds</h2>
-      
+
       <IntegrationsList integrations={filteredIntegrations.filter(integration => integration.type === "bankfeeds")}/>
     </div>
   );
