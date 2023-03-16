@@ -76,7 +76,7 @@ After installing the library, add it to your project:
 
 ```
 import { CodatLink } from '@codat/link-sdk';
-import '../node_modules/@codat/link-sdk/index.css';
+import '@codat/link-sdk/index.css';
 ```
 
 ## Embedding the Link application
@@ -90,7 +90,7 @@ From the response to company creation, retain the `companyId` parameter. Then, i
 
 ```js
 <CodatLink
-  companyId="a00a0a00-0a0a-a0aa-0000a00aa00a"
+  companyId="0f19b01c-3d1f-4dbf-80b6-37ab241bea2e"
   onConnection={(id) => alert("Success: Connection " + id + " established")} // Called each time a connection is established
   onFinish={() => alert("Finished")} // Called when the flow is completed
   onClose={() => alert("Closed")} // Called when the user clicks 'X' or completes the whole flow
@@ -114,7 +114,8 @@ const AuthFlow = ({ id }) => {
   return (
     <CodatLink
       companyId="0f19b01c-3d1f-4dbf-80b6-37ab241bea2e"
-      onSuccess={() => alert("success")}
+      onConnection={(id) => alert("Success: Connection " + id + " established")} // Called each time a connection is established
+      onFinish={() => alert("Finished")} // Called when the flow is completed
       onError={() => alert("error")}
       onClose={() => alert("on close")}
     />
