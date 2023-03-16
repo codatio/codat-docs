@@ -1,8 +1,6 @@
 ---
 title: "Developer resources"
 description: "Demo apps, tutorials, sample code, starter projects, and other tools to help you build your Codat solution"
-createdAt: "2022-10-19T20:43:13.391Z"
-updatedAt: "2022-10-19T21:11:21.969Z"
 ---
 
 ## SDKs
