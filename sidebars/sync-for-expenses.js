@@ -8,7 +8,7 @@ module.exports = [
   {
     type: "link",
     label: "Sync for Expenses",
-    href: "sync-for-expenses/overview",
+    href: "/sync-for-expenses/overview",
     className: "header",
   },
   "sync-for-expenses/gettingstarted",

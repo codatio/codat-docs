@@ -21,7 +21,7 @@ const Integration = ({integration}) => {
   )
 }
 
-const IntegrationsList = ({integrations}) => {
+export const IntegrationsList = ({integrations}) => {
   if (integrations.length && integrations.length >= 1) {
     return (
       <div className={styles.integrationsList}>
@@ -70,10 +70,6 @@ const Integrations = () => {
       <h2 className={styles.header}>Bank feeds</h2>
 
       <IntegrationsList integrations={filteredIntegrations.filter(integration => integration.type === "bankfeeds")}/>
-
-      <h2 className={styles.header}>Sync For Expenses</h2>
-
-      <IntegrationsList integrations={filteredIntegrations.filter(integration => integration.type === "Sync For Expenses")}/>
     </div>
   );
 };

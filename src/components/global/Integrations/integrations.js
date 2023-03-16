@@ -247,6 +247,9 @@ export const integrations = [
     "type": "bankfeeds",
     "img": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png"
   },
+]
+
+export const sfeIntegrations = [
   {
     "name": "QuickBooks Online",
     "to": "/integrations/accounting/quickbooksonline/accounting-quickbooksonline",
