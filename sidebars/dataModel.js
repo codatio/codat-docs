@@ -84,6 +84,7 @@ const composePaths = (schemaPaths, dataModels) => {
 const paths = composePaths(schemaPaths, dataModels);
 
 module.exports = [
+  "data-model/all-datatypes",
   {
     type: "category",
     label: "Accounting",
