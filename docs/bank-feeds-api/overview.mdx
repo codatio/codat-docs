@@ -10,10 +10,12 @@ createdAt: "2022-11-17T12:09:28.950Z"
 updatedAt: "2023-01-05T15:04:48.214Z"
 ---
 
+import {IntegrationsList} from '@components/global/Integrations'
+import {bankfeedsIntegrations} from '@components/global/Integrations/integrations'
+
 <Head>
   <meta property="og:image" content="/img/old/fd21af0-codat_whitepaper_accounting-automation_diagram_B.png"/>
 </Head>
-
 
 <div className="background-video-wrapper bankfeed">
   <div className="banner-video">
@@ -109,11 +111,11 @@ Tell us how you'd like to use Bank Feeds API on <a className="external" href="ht
 
 ## Which integrations support Bank Feeds API?
 
-To leverage the functionality of Bank Feeds API, first choose an integration to a supported accounting platform.
+To use Bank Feeds API, first choose an integration to a supported accounting platform.
 
-- [QuickBooks Online Bank Feeds](/bank-feeds-api/qbo-bank-feeds/) (US and Canada only)
-- [Sage Bank Feeds](/bank-feeds-api/sage-bank-feeds)
-- [Xero](/integrations/accounting/xero/accounting-xero-setup#configure-direct-bank-feeds)
+<br/>
+
+<IntegrationsList integrations={bankfeedsIntegrations}/>
 
 For detailed setup instructions, refer to the documentation for each integration.
 

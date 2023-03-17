@@ -12,7 +12,6 @@ tags: [overview, syncforexpense]
 import {IntegrationsList} from '@components/global/Integrations'
 import {sfeIntegrations} from '@components/global/Integrations/integrations'
 
-
 <Head>
   <meta property="og:image" content="/img/sync-for-expenses/sfe-banner.png"/>
 </Head>
