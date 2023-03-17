@@ -24,7 +24,7 @@ module.exports = [
       "sync-for-expenses/sync-process/uploading-receipts",
     ],
   },
-   "sync-for-expenses/syn-for-expenses-faq",
+   "sync-for-expenses/sync-for-expenses-faq",
   {
     type: "link",
     href: "/sync-for-expenses-api",
