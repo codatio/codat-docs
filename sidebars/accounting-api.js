@@ -12,6 +12,24 @@ module.exports = [
     className: "header",
   },
   {
+    type: "category",
+    label: "Guides",
+    collapsed: true,
+    items: [
+      {
+        type: "category",
+        label: "Invoice finance lending",
+        collapsed: true,
+        items: [
+          "accounting-api/guides/invoice-finance/introduction",
+          "accounting-api/guides/invoice-finance/setting-up",
+          "accounting-api/guides/invoice-finance/process-invoice",
+          "accounting-api/guides/invoice-finance/inv-fin-decision",
+        ],
+      },  
+    ],
+  },
+  {
     type: "link",
     label: "Accounting data model",
     href: "/data-model/accounting/",
