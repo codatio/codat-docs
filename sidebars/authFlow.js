@@ -62,6 +62,7 @@ module.exports = [
     label: "Optimize your auth flow",
     collapsed: true,
     items: [
+      "auth-flow/optimize/monitor-auth-flow",
       "auth-flow/optimize/optimize-the-connection-journey",
       "auth-flow/optimize/funnel",
       "auth-flow/optimize/value-exchange",
