@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import { dataTypes } from "./dataTypes";
 
 const getRoute = (dataType) => {
-  return `/${dataType.product}-api#/schemas/${dataType.name.split(' ').join()}`
+  return `/${dataType.product}-api#/schemas/${dataType.name.split(' ').join('')}`
 }
 
 const DataType = ({dataType}) => {
