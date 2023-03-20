@@ -7,17 +7,19 @@ createdAt: "2022-07-15T11:21:08.729Z"
 updatedAt: "2023-01-11T14:52:11.575Z"
 ---
 
-Our QuickBooks Online Bank Feeds integration makes it possible for your customers to connect bank accounts from your application to QuickBooks Online (QBO). Transactions from connected accounts are then available to view as _bank feeds_. By having visibility of bank feeds, your customers can more easily perform reconciliation of bank transactions against accounting entries.
+## Overview
 
-With our integration, you can push your customers' bank transactions from connected accounts to Codat in a standardized format. These bank transactions are pushed from Codat to QBO and are available to view in the **Transactions** area.
+With our QuickBooks Online Bank Feeds integration, your SMB customers can connect bank accounts from your application to QuickBooks Online (QBO). Their transactions are then available to view as _bank feeds_ in QBO. With visibility of bank feeds, your SMB customers can more easily reconcile bank transactions against accounting entries.
+
+Once an SMB user has connected an account via the integration, you can push their bank transactions from QBO to Codat in a standardized format. Codat then pushes bank transactions to QBO on a daily schedule. An SMB user can also trigger a push on demand by updating their transactions in the QBO UI.
+
+Transactions are available to view as bank feeds in the **Transactions** area in QBO.
 
 :::note Availability of our QBO Bank Feeds integration
-
 Please contact your Account Manager or Account Executive if you're interested in using this integration.
 :::
 
 :::caution Geographical support
-
 Connecting to QuickBooks Online bank feeds through this integration is only supported for SMB users who are located in the US and Canada.
 :::
 
@@ -27,7 +29,9 @@ Bank feeds are represented as streams of [Bank transactions](/accounting-api#/sc
 
 :::caution Pushing historic and future bank feeds
 
+
 Codat does not currently support pushing historic (backdated) or future (future-dated) bank feeds to QBO.
+
 :::
 
 ## How it works
