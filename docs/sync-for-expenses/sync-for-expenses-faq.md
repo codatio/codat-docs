@@ -48,6 +48,8 @@ Our detailed documentation aimed at developers and a variety of SDKs mean you ca
 5. Adjacency to Codat’s product range
 
 You can use Sync for Expenses alongside all Codat use cases or products.
+
+
 For example, if you are issuing credit cards, using Codat’s Assess product would allow you to determine the risk associated with the company that has the same `companyId` and API key.
 
 
