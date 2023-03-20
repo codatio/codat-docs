@@ -3,7 +3,7 @@ title: "Set up the Xero integration"
 description: "Learn how to set up our API integration with Xero"
 ---
 
-In this guide, we'll show you how to quickly set up our Xero API integration so you can start accessing accounting data from your SMB customers who use Xero.
+In this guide, we'll show you how to quickly set up our Xero API integration so you can access accounting data from your SMB customers who use Xero.
 
 When you've completed this guide, you can use the Xero integration to connect up to 25 companies. If you want to connect more than 25 companies, you'll need to [register as an official Xero App Partner](/integrations/accounting/xero/xero-app-partner-program).
 
