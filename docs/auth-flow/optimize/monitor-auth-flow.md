@@ -16,7 +16,7 @@ Analyze the **auth funnel** to see how many customers completed their authorizat
 If an integration category is marked as optional in **Settings > Auth flow > Link**, skipping that step increases the auth success measure of the funnel.
 :::
 
-Finally, visualize your stats of auth flow completion using the **graph**. It represents the ratio of the number of commpleted auth journeys to the number of started auth flows within a given week, expressed as a percentage. 
+Finally, visualize your stats of auth flow completion using the **graph**. It represents the ratio of the number of completed auth journeys to the number of started auth flows within a given week, expressed as a percentage. 
 
 Note that the monitor starts producing the auth flow completion chart only when a non-zero number of auth flows is completed in a given week. As a result, initial weeks of use may not appear if no journeys have been completed. 
 
