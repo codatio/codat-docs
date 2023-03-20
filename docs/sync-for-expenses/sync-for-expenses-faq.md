@@ -17,7 +17,7 @@ Our token migration process allows you to seamlessly migrate your customers' con
 Sync for Expenses only handles foreign currencies if each transaction is converted back to the currency of the bank account where the transaction is recorded. It does not support separate bank accounts for each foreign exchange currency. 
 
 ## How do I reconnect a company? 
-If a user disconnects, you can use a webhook and redirect your user to the `linkUrl` of the accounting connection to re-authenticate. If a company changes accounting platforms, it is better to remove the accounting connection completely and create a new one. 
+If a user disconnects, you can use a [webhook](/introduction/webhooks/core-rules-types#company-data-connection-status-changed) and redirect your user to the `linkUrl` of the accounting connection to re-authenticate. If a company changes accounting platforms, it is better to remove the accounting connection completely and create a new one. 
 
 ## What is the difference between effectiveTaxRate and totalTaxRate?
 If a transaction has multiple tax components, each component may be calculated based on the original amount separately, and then added together. 
