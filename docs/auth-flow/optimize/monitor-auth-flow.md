@@ -3,7 +3,7 @@ title: "Monitor your auth flow"
 description: "Keep track of the customers' auth journey success rates across all integration categories"
 ---
 
-In the Codat Portal, we provide you with an opportunity to monitor your customers' authorization actions so you can gain insight about your auth flow and optimize it where necessary. This monitoring is performed across all enabled integration categories.
+We equip you with tools to monitor your auth flow. In the Codat Portal, you can see where your customers are struggling and optimize the flow where necessary. This monitoring is performed across all enabled integration categories.  
 
 ![](/img/link/0002-auth-flow-monitor.png)
 
@@ -18,6 +18,5 @@ If an integration category is marked as optional in **Settings > Auth flow > Lin
 
 Finally, visualize your stats of auth flow completion using the **graph**. It represents the ratio of the number of completed auth journeys to the number of started auth flows within a given week, expressed as a percentage. 
 
-Note that the monitor starts producing the auth flow completion chart only when a non-zero number of auth flows is completed in a given week. As a result, initial weeks of use may not appear if no journeys have been completed. 
-
+Note that monitoring only begins when your first customer successfully authorizes. As a result, initial weeks of use may not appear on the conversion chart if no journeys have been completed.  
 Next, you can review our advice on [optimizing the auth flow](/auth-flow/optimize/optimize-the-connection-journey). 
