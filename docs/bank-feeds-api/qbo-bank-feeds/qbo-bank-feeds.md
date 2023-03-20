@@ -9,11 +9,13 @@ updatedAt: "2023-01-11T14:52:11.575Z"
 
 ## Overview
 
-With our QuickBooks Online Bank Feeds integration, your SMB customers can connect bank accounts from your application to QuickBooks Online (QBO). Their transactions are then available to view as _bank feeds_ in QBO. With visibility of bank feeds, your SMB customers can more easily reconcile bank transactions against accounting entries.
+With our integration, your SMB customers can connect bank accounts from your application to QuickBooks Online (QBO). You can then push bank transactions from those accounts to QBO, via Codat, in a standardized format.
 
-Once an SMB user has connected an account via the integration, you can push their bank transactions from QBO to Codat in a standardized format. Codat then pushes bank transactions to QBO on a daily schedule. An SMB user can also trigger a push on demand by updating their transactions in the QBO UI.
+Bank transactions are automatically pushed from Codat to QBO on a daily schedule. SMB users can also trigger pushes on demand by updating their transactions in the QBO UI.
 
-Transactions are available to view as bank feeds in the **Transactions** area in QBO.
+SMB users can view their bank transactions as bank feeds in the **Transactions** area in QBO. From here they can easily reconcile bank transactions from your application against accounting entries.
+
+This guide explains how to set up the integration with your application, the steps for SMB users to connect their bank accounts to QBO, and how to push bank transactions.
 
 :::note Availability of our QBO Bank Feeds integration
 Please contact your Account Manager or Account Executive if you're interested in using this integration.
