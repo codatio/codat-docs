@@ -19,7 +19,7 @@ Sync for Expenses only handles foreign currencies if each transaction is convert
 ## How do I reconnect a company? 
 If a user disconnects, you can use a webhook and redirect your user to the `linkUrl` of the accounting connection to re-authenticate. If a company swaps accounting platforms, it is better to remove the accounting connection completely and create a new one. 
 
-## What is the difference between effectiveTaxRate and totalTaxRate?
+## What is the difference between `effectiveTaxRate` and `totalTaxRate`?
 If a transaction has multiple tax components, each component may be calculated based on the original amount separately, and then added together. Alternatively, primary tax can be calculated on the item cost, and another tax component is added on top of that amount. This is known as compounding. In this case, the effective tax rate is the rate that results in the total amount of tax with compounding when applied to the original amount. The `totalTaxRate` is the total, not compounded, sum of the components of a tax rate. Further details can be found in Codat's docs. 
 
 ## Where can I find logo files for the accounting platforms supported by Sync for Expenses?
