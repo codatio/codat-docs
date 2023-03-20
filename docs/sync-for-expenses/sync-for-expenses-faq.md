@@ -53,4 +53,4 @@ You can use Sync for Expenses alongside all Codat use cases or products.
 For example, if you are issuing credit cards, using Codat’s Assess product would allow you to determine the risk associated with the company that has the same `companyId` and API key.
 
 
-Likewise, you can use billPayments to retrieve a list of bills from your customer’s accounting software and enable them to pay these and reconcile their payments.
+Likewise, you can use `billPayments` to retrieve a list of bills from your customer’s accounting software and enable them to pay these and reconcile their payments.
