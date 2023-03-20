@@ -17,7 +17,7 @@ Let's take QuickBooks Online as an example. Enabling this feature would show opt
 
 :::note Sandbox integrations in the auth flow
 
-Sandbox integrations appear in the link flow by default. You can override this behavior by appending the `link.showSandboxIntegrations` query parameter to the Link URL with a value of "true" or "false".
+Sandbox integrations appear in the auth flow by default. You can override this behavior by appending the `link.showSandboxIntegrations` query parameter to the Link URL with a value of "true" or "false".
 :::
 
 **Integration categories**
@@ -30,8 +30,7 @@ For the Business documents integration type, you need to enable it in **Settings
 
 :::tip Banking integrations in the auth flow
 
-You should only enable one of the banking integrations at a time. This ensures optimal use of Hosted or Embedded Link, as each integration is [represented differently](/integrations/banking/overview#banking-integrations-in-the-authorization-flow) in the auth flow.
-
+You should only enable one of the banking integrations at a time. This ensures optimal use of Hosted or Embedded Link, as each banking integration is [represented differently](/integrations/banking/overview#banking-integrations-in-the-authorization-flow) in the auth flow.
 :::
 
 **Retries**  

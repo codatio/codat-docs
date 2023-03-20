@@ -31,8 +31,8 @@ You'll need to register with your chosen provider before you can access banking 
 
 ## Banking integrations in the authorization flow
 
-You should only enable one of the banking integrations at a time. This ensures optimal use of Hosted or Embedded Link, as each integration is represented differently in the auth flow. Mixing multiple approaches may confuse users and lead to reduced auth completion rates.
+You should only enable one of the banking integrations at a time. This ensures optimal use of Hosted or Embedded Link, as each integration is represented differently in the auth flow. Combining multiple approaches may confuse users and lead to reduced auth completion rates.
 
 - **Plaid** integration appears pre-selected for the user, and they are able to select the correct bank account once they continue linking to Plaid. 
 - **TrueLayer** integration appears in the auth flow as a set of banks that it supports, ready for the user to choose. 
-- **Basiq** integration in the auth flow appears as an integration tile, and the bank account selection happens when the flow directs to Basiq.
+- **Basiq** integration appears in the auth flow as an integration tile, and the bank account selection happens when the flow directs to Basiq.
