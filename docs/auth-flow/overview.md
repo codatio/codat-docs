@@ -127,9 +127,9 @@ Our auth flow solution supports many real-life applications and scenarios that y
 
 - **Asynchronous use of Link**
 
-In your customer's organization, the person signing up with Codat may not have the credentials for the integration platform they want to connect. To enable them to proceed and explore the product, you can make the the authorization step optional.
+In your customer's organization, the person signing up with Codat may not have their credentials to hand. To enable them to proceed and explore the product, you can make upfront authorization optional. Later, remind them to authorize, providing a clear indication of the value to them. 
 
-Later, approach them with a request to authorize and provide them with an option to authorize themselves, or invite someone else. This can be done via email, or within your product. If the user chooses to invite someone else, this will share the Link URL with the stakeholder who has the credentials for the relevant platform.
+The user signing up may not have access to their business' financial data at all. For best results, provide them with an option to authorize themselves, or to invite someone else to (e.g. a member of their finance team). This can be done via email, or within your product. If the user chooses to invite someone else, this will share the Link URL with the stakeholder who has the credentials for the relevant platform.
 
 This way, users do not have to share credentials with each other, and the user with platform access can complete the authorization asynchronously. 
 
