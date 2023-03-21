@@ -12,7 +12,7 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 
 ### Summary
 
-🎯 With our demo app, you will go through the invoice financing process flow, from establishing a connection with a borrower's accounting platfirm to issuing a decision on selected invoices. You will see how Codat makes it easier for the borrower to raise capital against the amounts due from customers, and for the lender to make an invoice financing decision. 
+🎯 With our demo app, you will go through the invoice financing process flow, from establishing a connection with a borrower's accounting platform to issuing a decision on selected invoices. You will see how Codat makes it easier for the borrower to raise capital against the amounts due from customers, and for the lender to make an invoice financing decision. 
 
 ⏳ Estimated time to complete: 20-30 minutes
 
@@ -43,11 +43,11 @@ The demo app relies on Codat's [Accounting API](/accounting-api/overview). Our u
 
 - Invoice collection
 
- We remove the manual effort of uploading and extracting invoice data with our accounting platform integrations, saving your team’s time and effort and providing the borrower with a better digital experience.
+    We remove the manual effort of uploading and extracting invoice data with our accounting platform integrations, saving your team’s time and effort and providing the borrower with a better digital experience.
 
 - Risk assessment
 
-Our accounting platform integrations give you real-time insight into the financial health of a business and its customers, allowing you to make better invoice financing decisions.
+    Our accounting platform integrations give you real-time insight into the financial health of a business and its customers, allowing you to make better invoice financing decisions.
 
 ### Read next
 
