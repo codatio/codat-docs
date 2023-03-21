@@ -15,11 +15,13 @@ import TabItem from "@theme/TabItem";
 
 ### <input type="checkbox" unchecked/> Create a Codat account 
 
-We provide a [free account](https://signup.codat.io/) that lets you explore and test our APIs and other products, including Assess. It also comes equipped with a sample company. When you start working on your own underwriting solution, you may want to explore our other [plans](https://www.codat.io/plans/).
+We provide a [free account](https://signup.codat.io/) that lets you explore and test our APIs and other products. It also comes equipped with a sample company. When you start working on your own invoice financing solution, you may want to explore our other [plans](https://www.codat.io/plans/).
+
+Your new account already has the Accounting API product, the Codat Sandbox integration, and the relevant data types enabled to get you started quicker.
 
 ### <input type="checkbox" unchecked /> Update your auth flow settings
 
-In the **Settings > Auth Flow > Link** [settings](https://app.codat.io/settings/link-settings/data-connections), ensure the _Sandbox integrations_ switch is toggled on. Check that the _Accounting_ integration category is enabled, and disable _Commerce_ and _Banking_ integration categories. 
+In the **Settings > Auth Flow > Link** [settings](https://app.codat.io/settings/link-settings/data-connections), check that the _Accounting_ integration category is enabled, and disable _Commerce_ and _Banking_ integration categories. 
 
 ### <input type="checkbox" unchecked /> Listen for webhooks
 
@@ -66,7 +68,6 @@ In the **Monitor > Alerts > [Alerting rules](https://app.codat.io/monitor/rules)
    |---------------------------------------------|-------------------------------------------------------------|
    | Company Data Connection status has changed  | ```<server-url>/webhooks/codat/data-connection-status```       |
    | Data sync completed                         | ```<server-url>/webhooks/codat/datatype-sync-complete```       |
-   | Account categories updated                  | ```<server-url>/webhooks/codat/account-categorisation-update```|
 
 Click **Create rule** to open the new rule creation window. Select the rule type, apply it to all companies, and assign it a webhook URL. Make sure to replace the `<server-url>` with your forwarding address.
 
