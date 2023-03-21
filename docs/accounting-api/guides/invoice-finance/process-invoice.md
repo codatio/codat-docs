@@ -19,14 +19,15 @@ This diagram shows the steps of the underwriting process as performed by the dem
 
 ``` mermaid
   sequenceDiagram
-    participant frontend as Underwriting Frontend 
-    participant backend as Underwriting Backend 
+    participant frontend as Invoice Financing Frontend 
+    participant backend as Invoice Financing Backend 
     participant codat as Codat API
     frontend ->> backend: Submit application
-    backend ->> codat: Request enriched data
+    backend ->> codat: Request filtered invoice data
+    backend ->> codat: Request invoice and customer risk data
     codat ->> backend: Fetched data
-    backend ->> backend: Underwrite loan
-    backend ->> frontend: Application outcome
+    backend ->> backend: Assess eligible invoices 
+    backend ->> frontend: Array of decisions per valid invoice
 ```  
 You can also review the detailed technical [diagram](https://github.com/codatio/build-guide-underwriting-be#implementing-the-solution) of the flow that the demo app follows.
 :::  
@@ -83,22 +84,6 @@ Select the **Codat Sandbox** as the source of accounting data.
 
 ![](/img/use-cases/underwriting/sandbox-credentials-modal.png)
 
-### <input type="checkbox" unchecked /> Manually categorize accounts 
-
-💰 This step is normally performed by the lender.
-
-The demo app makes use of the categorization feature of [Assess](/assess/overview). When fetching financial data, Codat’s Assess product analyses the full list of a company's accounts and assigns a category to each account. While it is able to automatically categorize most of the source accounts, it is not always possible, and a manual intervention may be required. 
-
-In our demo, one account remains without a specified category. You need to assign a category to it before the demo application is ready for underwriting. This is because the Profit and Loss, and Balance Sheet data types in Assess depend on fully categorized accounts.
-
-To do that, click on the **Companies** tab in the top menu in the [Codat Portal](https://app.codat.io/). Next, click on the company you are performing underwriting for, and navigate to **Products > Assess**. Click the red **Categorization required** button to the right of the company name. 
-
-![](/img/use-cases/underwriting/0000-acct-categorization-modal-06-03-2023.png)
-
-This takes you to the **Account categorization** page which displays the uncategorized account. **Account type** and **Account subtype** are pre-filled for you. **Categories version** should be set to _Version 2_. Select _Accounts Payable_ as **Account detail** in the drop down and **Save** the categorization. 
-
-![](/img/use-cases/underwriting/0000-categorization-screen.png)
-
 ### <input type="checkbox" unchecked /> Make the decision on the loan 
 
 🙏🏽💰 The decisioning is normally performed by the lender, but the borrower is able to query an application's status at any point.
@@ -116,16 +101,16 @@ Try these suggestions to make the most of your experience with the demo app:
 - **Play around with thresholds**  
   In the `appsettings.json` file in the `Codat.Demos.Underwriting.Api\` directory, set your own example thresholds for data points used by the app's underwriting service and see how this affects the application decision.
 
-- **Underwrite using different datasets**  
+- **Finance an invoice-based loan using different datasets**  
   Start another loan application, and choose a different Sandbox company type to get a different set of financial data to be used in the decision-making. 
 
 - **Use a company's real data**  
   Take the demo one step further and use real credentials to access existing financial data in an accounting platform. Set up the [integration](/integrations/accounting/overview) you plan to use, and connect to it while following the auth flow. Then, review how the app makes a decision based on your company's real data. 
 
 - **Inspect the invoice financing logic**  
-  We provide [detailed information](/accounting-api/guides/invoice-finance/inv-fin-decision) about the underwriting logic we included in our demo app, and how exactly the financial data is fetched. 
+  We provide [detailed information](/accounting-api/guides/invoice-finance/inv-fin-decision) about the risk assessment logic we included in our demo app, and how exactly the financial data is fetched and analyzed. 
   
 
 ### Recap
 
-You have now successfully run the demo app, covering all the key underwriting process steps. You have started and completed an application, connected and fetched accounting data, and received a decision on your loan application. 
+You have now successfully run the demo app, covering all the key inoice financing process steps. You have started and completed an application, connected and fetched accounting data, and received a decision on your application. 
