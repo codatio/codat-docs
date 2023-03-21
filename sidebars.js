@@ -76,6 +76,7 @@ module.exports = {
             "using-the-api/paging",
             "using-the-api/querying",
             "using-the-api/queueing-data-syncs",
+            "using-the-api/push",
             "using-the-api/errors",
           ]
         },
@@ -84,7 +85,6 @@ module.exports = {
           label: "Advanced",
           collapsed: true,
           items: [
-            "using-the-api/push",
             "using-the-api/rate-limits",
             "using-the-api/optimizing-api-calls",
           ]
