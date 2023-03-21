@@ -40,4 +40,16 @@ To connect their bank accounts to QBO, the SMB user performs the following steps
 
 12. In the dropdown that appears, select the account type—the chart of accounts—that they want to view bank feeds for.
 
+13. Select a start date for the bank feed.
+
+   :::caution Limitation on pushing historic transactions
+   
+   Bank feed start dates earlier than seven days ago are ignored. The integration only supports pushing historic bank transactions up to seven days old.
+
+   :::
+
+14. Click **Connect**.
+
+The SMB user ca
+
 Your SMB user has now successfully connected their chosen bank accounts to QuickBooks Online. The status of the data connection is set to `Linked`, which allows you to [push bank feeds to QuickBooks Online](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions) for the SMB user.

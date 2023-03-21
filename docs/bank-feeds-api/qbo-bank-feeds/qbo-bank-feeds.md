@@ -34,7 +34,7 @@ In this guide, we show you how to set up the QuickBooks Online Bank Feeds integr
 
 Bank feeds are represented as streams of accounting [Bank transactions](/accounting-api#/schemas/BankTransactions) pushed in chronological order.
 
-You can push backdated transactions of up to seven days, based on the _feed start date_ chosen by the SMB user in QBO. All bank transactions must be cleared, with a `clearedOnDate` set to the current day or the prior day.
+You can push historic transactions up to seven days old, based on the _feed start date_ chosen by the SMB user in QBO. All bank transactions must be cleared, with a `clearedOnDate` set to the current day or the prior day.
 
 Pushing future (future-dated) bank transactions is not supported.
 
