@@ -1,7 +1,7 @@
 ---
-title: "Our invoice finance guide"
+title: "Our invoice financing guide"
 sidebar_label: "Introduction"
-description: "  " 
+description: "Selective invoice financing with Codat and our Accounting API" 
 ---
 
 :::tip Who is this guide for?
@@ -12,7 +12,7 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 
 ### Summary
 
-🎯 Codat makes underwriting easier by getting you trusted data with which to check a loan applicant’s finances. With our demo app, you will experience the end-to-end underwriting process flow with automatic decision-making. We will focus on the lender's perspective. 
+🎯 With our demo app, you will go through the invoice financing process flow, from establishing a connection with a borrower's accounting platfirm to issuing a decision on selected invoices. You will see how Codat makes it easier for the borrower to raise capital against the amounts due from customers, and for the lender to make an invoice financing decision. 
 
 ⏳ Estimated time to complete: 20-30 minutes
 
@@ -20,33 +20,34 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 
 ### ✔️ Delve into the demo app to...
 
-- Create and submit an example loan application form,
-- Create a test company via Codat’s API to represent the borrower,
-- Link the test company to Codat's sandbox source of financial data,
-- Fetch that data using Codat’s Enhanced Profit and Loss and Enhanced Balance Sheet endpoints,
-- Use Codat’s webhooks to trigger the underwriting of a loan,
-- Produce an automated underwriting decision based on custom financial data points. 
+- Establish a connection with our test accounting platform,
+- Pull invoice data required for the financing assessment, 
+- Check the invoices' eligibility based on a set of criteria we defined in the app,
+- Issue a decision on eligible invoices. 
 
 ### ❌ This guide does not cover...
 
 - Building any application form and dashboard UIs,
-- Details or recommendations of various financial data points used in different underwriting models.
+- Carrying out due diligence checks on the borrower,
+- Instructions on how to build your own invoice financing product.
 
 ### About the demo app
 
 The app's codebase is available via our [GitHub repo](https://github.com/codatio/build-guide-underwriting-be). Clone it locally to try out the application.
 
-The codebase uses Codat and its [Assess](/assess/overview) product to make an underwriting decision. We will walk you through the setup in the Portal and the code [next](/accounting-api/guides/invoice-finance/setting-up). 
+The codebase uses Codat and its [Accounting API](/accounting-api/overview) product to make an invoice financing decision. We will walk you through the setup in the Portal and the code [next](/accounting-api/guides/invoice-finance/setting-up). 
 
 ### Why we use _Accounting API_
 
-The demo app makes use of the categorization feature of [Assess](/assess/overview). This feature analyses the full list of a company's accounts and assigns a category to each account. This solves the problem of bookkeepers giving different names to the same accounting category. 
+The demo app relies on Codat's [Accounting API](/accounting-api/overview). Our universal API simplifies the following aspects of invoice financing:
 
-For example, one bookkeeper may name their marketing account "Facebook Ads", and another may call it "Online Marketing". Assess will categorize both accounts in the same way - as _Expense > Operating > Marketing_. This enables lenders to use a standardized taxonomy, no matter how the bookkeeper manages their accounts.
+- Invoice collection
 
-This standardizes the data irrespective of its source and helps you make a comprehensive assessment of your customer's financial health, produce additional insights (e.g. calculate financial ratios), and automate decisioning based on these insights. 
+ We remove the manual effort of uploading and extracting invoice data with our accounting platform integrations, saving your team’s time and effort and providing the borrower with a better digital experience.
 
----
+- Risk assessment
+
+Our accounting platform integrations give you real-time insight into the financial health of a business and its customers, allowing you to make better invoice financing decisions.
 
 ### Read next
 
