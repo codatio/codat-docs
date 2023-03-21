@@ -26,7 +26,7 @@ You will need to:
 
 You should allow a minimum of 72 hours for MYOB to set up your developer account. If you already have a MYOB developer account, you can skip this section.
 
-1. Go to <a className="external" href="https://developer.myob.com/program/become-a-myob-developer-partner/" target="_blank">MYOB's page for developers</a>.
+1. Go to <a className="external" href="https://developer.myob.com/become-a-myob-developer-partner/" target="_blank">MYOB's page for developers</a>.
 2. Scroll to the bottom of the page and select **Join the MYOB Developer Program Today**.
 3. Complete the **Developer Registration** form. You can use the 'Open Access' (free) tier to create the required app credentials, but if you require a private MYOB sandbox for testing, you may wish to explore one of the paid tiers. Contact MYOB directly for more information on this.
 4. To complete your registration, select **Submit**.  
