@@ -1,15 +1,16 @@
 ---
 title: "Push bank transactions from Codat to QuickBooks Online"
 description: "Learn how to push your SMB users' bank transactions via our QuickBooks Online Bank Feeds integration."
-createdAt: "2022-09-06T09:59:07.201Z"
-updatedAt: "2023-01-11T15:59:49.369Z"
+sidebar_label: "Push bank transactions to QBO"
 ---
 
 When an SMB user has [connected one or more bank accounts to QuickBooks Online](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-smb-user), you can push bank transactions from a connected account to QuickBooks Online (one account at a time). To identify a user's connected bank accounts, see [Retrieve bank account status and information](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-setup#retrieve-bank-account-status-and-information).
 
-:::caution Pushing historic and future bank feeds
+You can push backdated transactions of up to seven days, based on the _feed start date_ chosen by the SMB user in QBO. All bank transactions must be cleared.
 
-Codat does not currently support pushing historic (backdated) or future (future-dated) bank feeds to QBO.
+:::caution Future bank feeds not supported
+
+Pushing future (future-dated) bank transactions is not supported.
 :::
 
 ## Recommendations for pushing bank transactions

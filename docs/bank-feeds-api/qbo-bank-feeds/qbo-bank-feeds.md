@@ -3,50 +3,46 @@ title: "QuickBooks Online Bank Feeds"
 sidebar_label: Overview
 displayed_sidebar: bankfeeds
 description: "Learn about our QuickBooks Online Bank Feeds integration."
-createdAt: "2022-07-15T11:21:08.729Z"
-updatedAt: "2023-01-11T14:52:11.575Z"
 ---
+
+:::info Availability and geographical support
+
+Please contact your Account Manager or Account Executive if you're interested in using our QuickBooks Online Bank Feeds integration.
+
+Connecting to QuickBooks Online bank feeds through this integration is only supported for SMB users who are located in the US and Canada.
+
+:::
 
 ## Overview
 
-With our integration, your SMB customers can connect bank accounts from your application to QuickBooks Online (QBO). You can then push bank transactions from those accounts to QBO, via Codat, in a standardized format.
+With our integration, your SMB customers can connect their bank accounts in your application to QuickBooks Online (QBO). You can then push bank transactions from those accounts to QBO, via Codat, in a standardized format.
 
-Bank transactions are automatically pushed from Codat to QBO on a daily schedule. SMB users can also trigger pushes on demand by updating their transactions in the QBO UI.
+SMB users can view their transactions in the **Transactions** area in QBO. From here they can easily reconcile transactions from your application against accounting entries.
 
-SMB users can view their bank transactions as bank feeds in the **Transactions** area in QBO. From here they can easily reconcile bank transactions from your application against accounting entries.
+Note that bank transactions are sent from Codat to QBO on a daily schedule. Your SMB users can override this by updating their transactions in the QBO UI at any time.
 
-This guide explains how to set up the integration with your application, the steps for SMB users to connect their bank accounts to QBO, and how to push bank transactions.
+## About this guide
 
-:::note Availability of our QBO Bank Feeds integration
-Please contact your Account Manager or Account Executive if you're interested in using this integration.
-:::
+In this guide, we show you how to set up the QuickBooks Online Bank Feeds integration with your application. We also explain the account connection process for SMB users and how to push bank transactions from your application.
 
-:::caution Geographical support
-Connecting to QuickBooks Online bank feeds through this integration is only supported for SMB users who are located in the US and Canada.
-:::
-
-## Supported data types and operations
-
-Bank feeds are represented as streams of [Bank transactions](/accounting-api#/schemas/BankTransactions) pushed to Codat in chronological order.
-
-:::caution Pushing historic and future bank feeds
+1. [Set up the QuickBooks Online Bank Feeds integration](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-setup).
+2. Your SMB users [connect one or more bank accounts to QBO](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-smb-user) using a one-time username and password.
+3. You can then [push bank transactions for connected accounts to QuickBooks Online](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions).
 
 
-Codat does not currently support pushing historic (backdated) or future (future-dated) bank feeds to QBO.
+## Bank transactions support
 
-:::
+Bank feeds are represented as streams of accounting [Bank transactions](/accounting-api#/schemas/BankTransactions) pushed in chronological order.
 
-## How it works
+You can push backdated transactions of up to seven days, based on the _feed start date_ chosen by the SMB user in QBO. All bank transactions must be cleared, with a `clearedOnDate` set to the current day or the prior day.
 
-1. See [Set up the QuickBooks Online Bank Feeds integration](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-setup) to learn how to set up and enable the integration.
-2. Your SMB users must [connect one or more bank accounts to QBO](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-smb-user) by using Link, Codat's authentication solution, to generate a one-time username and password for QBO authorization.
-3. You can then [push bank transactions to QuickBooks Online](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions) for connected accounts.
+Pushing future (future-dated) bank transactions is not supported.
 
-## Other considerations
+## Considerations
 
-### How often are bank transactions pushed to QuickBooks?
+### How often are bank transactions sent to QuickBooks?
 
-Bank transactions are automatically pushed from Codat to QBO on a daily basis. To view the latest bank transactions, SMB users can click **Update** in the Transactions area in QBO. This triggers an immediate push of bank transactions and overrides the daily schedule.
+Bank transactions are automatically sent from Codat to QBO on a daily schedule. To view the latest bank transactions, SMB users can click **Update** in the **Transactions** area in QBO. This triggers an immediate push of bank transactions and overrides the daily schedule.
 
 ### Disabling bank feeds
 
