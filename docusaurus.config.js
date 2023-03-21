@@ -179,6 +179,13 @@ module.exports = {
         anonymizeIP: true,
       },
     ],
+    [
+      '@docusaurus/plugin-google-analytics',
+      {
+        trackingID: process.env.GA_ID,
+        anonymizeIP: true,
+      },
+    ],
   ],
   themes: [
     [
