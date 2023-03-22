@@ -58,7 +58,7 @@ GET https://api.codat.io/data/companies/{companyId}/connections/{connectionId}/a
 
 Both endpoints require a `reportDate`, `periodLength`, and `numberOfPeriods` as query parameters. The loan application's `createdDate` is used where the year and previous month are set as the `reportDate`. This ensures that a full year of financial data is returned by Codat. In addition, `includeDisplayNames` parameter is set to `true` in the request because it allows accounts to be accessed via Codat's standardized taxonomy display names.
 
-Once both enhanced data types have been fetched, they are passed to the [LoanUnderwriter]https://github.com/codatio/build-guide-underwriting-be/blob/main/Codat.Demos.Underwriting.Api/Services/LoanUnderwriter.cs) service together with the application's loan amount and term length. This is to perform an assessment of the prospective borrower's creditworthiness and make a decision on their application.
+Once both enhanced data types have been fetched, they are passed to the [LoanUnderwriter](https://github.com/codatio/build-guide-underwriting-be/blob/main/Codat.Demos.Underwriting.Api/Services/LoanUnderwriter.cs) service together with the application's loan amount and term length. This is to perform an assessment of the prospective borrower's creditworthiness and make a decision on their application.
 
 ### <input type="checkbox" unchecked/> Understand how we generate an automatic decision
 
