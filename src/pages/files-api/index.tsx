@@ -5,15 +5,7 @@ const URL = "https://raw.githubusercontent.com/codatio/oas/main/json/Codat-Files
 
 const FilesApi = () => {
   return (
-    <>
-      <head>
-        <title>
-          Files API reference | Codat_docs
-        </title>
-      </head>
-
-      <Api url={URL}/>
-    </>
+    <Api url={URL} title="Files API reference"/>
   );
 }
 

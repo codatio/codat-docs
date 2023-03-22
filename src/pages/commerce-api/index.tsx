@@ -5,15 +5,7 @@ const URL = "https://raw.githubusercontent.com/codatio/oas/main/json/Codat-Comme
 
 const CommerceApi = () => {
   return (
-    <>
-      <head>
-        <title>
-          Commerce API reference | Codat_docs
-        </title>
-      </head>
-
-      <Api url={URL}/>
-    </>
+    <Api url={URL} title="Commerce API reference"/>
   );
 }
 

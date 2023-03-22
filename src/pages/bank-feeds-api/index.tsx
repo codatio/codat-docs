@@ -5,15 +5,7 @@ const URL = "https://raw.githubusercontent.com/codatio/oas/main/json/Codat-Bank-
 
 const BankFeedApi = () => {
   return (
-    <>
-      <head>
-        <title>
-          Bank Feeds API reference | Codat_docs
-        </title>
-      </head>
-
-      <Api url={URL}/>
-    </>
+    <Api url={URL} title="Bank Feeds API reference"/>
   );
 }
 
