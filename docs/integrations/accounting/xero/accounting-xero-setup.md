@@ -80,7 +80,7 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 ## Next steps
 
-You can now use your Xero integration to connect up to 25 companies. If you want to use your integration to connect more than 25 companies you need to [register with Xero as an official Xero App Partner](/integrations/accounting/xero/xero-app-partner-program).
+You can now use your Xero integration to connect up to 25 companies. If you want to use your integration to connect more than 25 companies, you need to [register with Xero as an official Xero App Partner](/integrations/accounting/xero/xero-app-partner-program).
 
 See the following sections for more information about Xero App partnership and configuring direct bank feeds using Xero's Bank Feeds API.
 
