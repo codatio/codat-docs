@@ -1,34 +1,41 @@
 ---
-title: "Managin expenses with Codat"
+title: "Managing expenses with Codat"
+sidebar_label: "Managing expenses"
 description: "An overview of the expense management use case supported by Codat"
 ---
 
-Expense management makes it easy for a small business to manage automatically reconcile expense payments from their corporate card to their accounting package.
-
+Make expense management easier for your small business customers with Codat. We integrate data from corporate cards and expenses management platforms into accounting platforms your customers use.
 
 ### How Codat can help
 
-We can support traditonal banks, neobanks, and digital lenders in their underwriting activity by leveraging our Assess and Accounting, Commerce, and Banking API products. 
+We can support corporate card providers, neobanks, and expense management platforms in their expense management activity by leveraging our [Accounting API](/accounting-api/overview) and [Sync for Expenses](/sync-for-expenses/overview) products. It will provide your customer with greater visibility of spend tracking against expense categories, and automatically reconcile expense payments against bank statement lines.
 
-**Accounting, Commerce and Banking APIs**
+![](/img/use-cases/summary-pages/795ecc39-managing-expenses.png)
 
-We have done the heavy lifting for you by building integrations with a standardized data model to the accounting, commerce, and banking platforms your customers already use. This gives you access to real-time data that you can pull, create, or update to support your use case.
+**Accounting API**
 
-For example, if you need a customer's invoices as part of your assessment, our integrations allow you to pull and monitor invoices and the associated customers.This can even include line-item breakdowns and a PDF copy of the invoice where available. This approach removes the manual effort required to upload and extract the data, saving you time and effort, and providing your customer with a better digital experience. 
+We have done the heavy lifting for you by building integrations with a standardized data model to the accounting platforms your customers already use. This gives you access to real-time data that you can pull, create, or update to support your use case.
 
-You can do this for any data types we support, and even automatically synchronise them on a schedule.
+For example, you can pull the following data from our endpoints:
+- `bankAccounts` to retrieve a list of bank accounts which can be mapped, enabling the user to dictate which bank account their expenses should be recorded against.
+- `accounts` to retrieve a list of accounts which can be mapped, enabling the user to dictate which GL account different categories of expenses should be recorded against.
+- `trackingCategories` to retrieve a list of tracking categories which can be mapped, enabling the user to track expenses against identifiers which sit outside of their chart of accounts including departments and locations.
+- `taxRates` retrieve a list of tax rates which can be pushed against the direct cost depending on the category of spend.
 
-Codat can also support an automatic reconciliation process, helping your customer to reduce the time and effort of manual processing, and increasing accuracy. For example, you can push a payment to their accounting platform and reconcile it against the invoice, marking it as paid. 
+Then, use the same API to create a direct cost within the customer's accounting application, thus recording an expense. Once the direct cost has been created, a bank transaction line can then be pushed to the customers accounting platform and reconciled against the direct cost. You can also record refunds and top-ups using Codat. 
 
-**Assess**
+**Sync for Expenses**
 
-[Assess](/assess/overview) uses ML-powered categorization on top of the latest accounting, commerce, and banking data, standardizing the data irrespective of its source. It also provides pre-calculated financial metrics and reports based on contextual, real-time data, helping you make more informed risk assessments.
+Codat’s Sync for Expenses product lets you take expense management one step further, as it is a standardized API with a set of supporting tools. This simplifies the provision of high-quality integrations with multiple accounting platforms and lets you leverage the following benefits:
 
-You can also use this data to produce additional insights (e.g. calculate financial ratios) and automate decisioning based on these insights, all via one API.
+- Connect to your SMB's accounting platform faster, as Codat handles authorization and linking, and takes into account intricate details such as rate limits.
+- Automatically categorize and tag expenses according to your SMB's bookkeeping. We attribute the spend to the correct chart of accounts and enable further categorization via tracking categories.
+- Easily push any purchases to the SMB's accounting platform, where they are represented with an expense. Your customers can also push attachments for complete auditability.
+- Synchronize and map expenses with control. Our API is built to standardize data based on feedback from customers and industry expertise, so you can sync transactions based on what they represent and let Codat handle the processesing and formatting them in a way required by the accounting platform.
 
 ### Use case demos
 
-Codat provides you with demo guides, where you can see our products in action. Check back soon to view our demo built specifically for the Managing expenses use case.
+Codat provides you with demo guides, where you can see our products in action. Check back soon to view our demo built specifically for the expense management use case.
 
 ### Read next
 

@@ -1,5 +1,6 @@
 ---
 title: "Underwriting with Codat"
+sidebar_label: "Underwriting"
 description: "An overview of the underwriting use case supported by Codat"
 ---
 
@@ -8,6 +9,8 @@ During underwriting, the lender evaluates a borrower's financial history, income
 ### How Codat can help
 
 We can support traditonal banks, neobanks, and digital lenders in their underwriting activity by leveraging our Assess and Accounting, Commerce, and Banking API products. 
+
+![](/img/use-cases/summary-pages/dbdaea6d-underwriting.png)
 
 **Accounting, Commerce and Banking APIs**
 
