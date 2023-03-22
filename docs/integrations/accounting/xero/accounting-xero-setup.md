@@ -153,3 +153,7 @@ If you don't have access to direct bank feeds, a 403 error is returned if you tr
   "detail": "The organization does not support automated bank feeds."
 }
 ```
+
+## Recap
+
+In this setup guide, you've learned how to create a Xero app configured with the required Codat redirect URI; retrieve the secure keys for your app and add them to the Xero integration in the Codat Portal; and enable the integration. You've also learned how to create direct bank feeds by posting Bank transactions via Codat's API, as well as Xero's requirements for using their Bank Feeds API.
