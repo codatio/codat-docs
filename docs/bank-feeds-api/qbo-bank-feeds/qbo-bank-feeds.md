@@ -44,9 +44,11 @@ Pushing future (future-dated) bank transactions is not supported.
 
 Bank transactions are automatically sent from Codat to QBO on a daily schedule. To view the latest bank transactions, SMB users can click **Update** in the **Transactions** area in QBO. This triggers an immediate push of bank transactions and overrides the daily schedule.
 
-### Disabling bank feeds
+### Disconnecting bank feeds
 
-If an SMB customer turns off a bank feed for a connected account, you won't be able to push further bank transactions to that account.
+Your SMB users can disable bank feeds for their target accounts using the options in QBO. This stops the target account from receiving any further transactions, and so any subsequent pushes will fail.
+
+When a bank feed is disabled in QBO, it will take 10 days for the status of the connected bank account in Codat to change to `disconnected`. 
 
 ### Customize Link for your SMB users
 
