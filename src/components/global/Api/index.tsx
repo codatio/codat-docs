@@ -14,9 +14,9 @@ const Fallback = (
   <div style={{ minHeight: "calc(100vh - var(--ifm-navbar-height))" }} />
 );
 
-const Api = ({ url }) => {
+const Api = ({ url, title="API reference"}) => {
   return (
-    <Layout title="API reference" className="api-ref-stoplight-wrapper">
+    <Layout title={title} className="api-ref-stoplight-wrapper">
       <div className={styles.apiNav}>
         <Logo />
         <Navbar />
