@@ -200,8 +200,8 @@ module.exports = [
           "integrations/accounting/xero/accounting-xero-test",
           "integrations/accounting/xero/xero-faq",
           "integrations/accounting/xero/xero-integration-reference",
-          "integrations/accounting/xero/accounting-xero-become-app-partner",
           "integrations/accounting/xero/xero-app-partner-program",
+          "integrations/accounting/xero/accounting-xero-app-partner-guidance",
         ],
       },
       {

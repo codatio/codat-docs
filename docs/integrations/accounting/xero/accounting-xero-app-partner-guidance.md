@@ -3,83 +3,70 @@ title: "Xero App Partner guidance by use case"
 description: "Article description goes here"
 ---
 
-## What does it mean to be a Xero App Partner?
+The process of becoming a Xero App Partner depends on your use case. Xero has two categories of App Partner:
 
-Anyone can create a Xero App and use that App to connect a small number of companies but you need to become a certified Xero App Partner to unlock the full value of connectivity with Xero. 
+- [Financial Services App Partners](#financial-services-partners), including [Lending App Partners](#lending-partners) and [Payments App Partners](#payments-partners)
+- [Ecosystem App Partners](#ecosystem-app-partners)
 
-Benefits of becoming a Xero App Partner include:
+For guidance on what category applies to your use case, consult your Codat account team.
 
-- No limit to the number of companies you can connect to via your Xero integration.
-- The opportunity to reach millions of subscribers and advisors through the [Xero App Store](http://www.xero.com/marketplace) and [app partner program](https://developer.xero.com/app-partner).
-
-Anyone can create a Xero App, and use that App to connect up to 25 companies, but you need to become a certified Xero App Partner to unlock the full value of connectivity with Xero. 
-
-## How to become a Xero App Partner
-
-The process of becoming an App Partner depends on your use case. 
-
-Xero has two categories of App Partner:
-
-- Financial Services Partners
-- Ecosystem App Partners
-
-For guidance on how your use case fits into these two categories, please consult your Codat account team.
+To avoid unnecessary delays, we recommend progressing both the commercial and technical aspects of App Partnership in parallel, if possible.
 
 :::caution App partnership is not always possible
 
-It is important to note that Xero App Partnership is not possible for all use cases.
+Note that Xero App Partnership is not possible for every use case.
 
 :::
 
-## Financial Services Partners
+## Financial Services App Partners
 
-There are several subcategories within Financial Services. Please follow the guidance for your specific use case. 
+There are several subcategories within Financial Services; follow the guidance for your specific use case. 
 
 You are required to obtain Xero's written consent for each Financial Services use case that you implement.
 
-## Lending Partners
+## Lending App Partners
 
-:::caution Caution
+:::info Geographic restrictions for lending partners
 
-App Partnership is currently only available to lenders operating in specific countries including the UK, Australia, and New Zealand.
+App Partnership is currently only available to lenders operating in specific countries, including the UK, Australia, and New Zealand.
 
-Lenders operating in the US, Canada and Ireland are currently unable to become Xero App Partners.
+Lenders operating in the US, Canada, and Ireland are currently unable to become Xero App Partners.
 
 :::
 
-To become a Lending App Partner you must:
+To become a Lending App Partner you need to:
 
-- Implement "lending write-back", as described below.
+- Implement *lending write-back* functionality within your application, as described below.
 - Set up a Commercial Agreement with Xero.
-- Comply with all the relevant Certification Checkpoints.
-
-If possible, we recommend progressing both the commercial and technical aspects of App Partnership in parallel to avoid unnecessary delays.
+- Comply with all the relevant [Xero Certification Checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/).
 
 ### Lending write-back
 
-Xero has one unique technical requirement for lenders. 
+Xero has one unique technical requirement for lenders: lending write-back.
 
-The goal of the write back is to maintain the financial position in Xero for the customer at any point of the lending cycle. This will be achieved by recording the loan liability, the interest and/or fees, repayments, and facilitating the reconciliation of bank accounts.
+The goal of the write-back is to maintain the customer's financial position in Xero at all points of the lending cycle. This is achieved by recording the loan liability, interest and/or fees, and repayments, and facilitating the reconciliation of bank accounts.
 
-[You can read Xero’s developer documentation on write-back here](https://developer.xero.com/documentation/guides/how-to-guides/general-lending-integration-guide/). 
+To learn about write-back in depth, see the [Xero developer documentation](https://developer.xero.com/documentation/guides/how-to-guides/general-lending-integration-guide/).
 
-:::info Work closely with your account team
+:::tip Work closely with your account team on write-back
 
-We recommend that you work closely with your Codat account team to implement write-back for detailed guidance specific to the type of lending you do.
+We recommend you work closely with your Codat account team to implement lending write-back in your application. They can provide detailed guidance that is specific to the type of lending you do.
 
 :::
 
-### Commercial Agreement for Lending Partners
+### Commercial Agreement for Lending App Partners
 
-The commercial terms of this agreement are between you as a lender and Xero. Codat is not involved in the negotiation of that commercial agreement. 
+Xero requires a commercial agreement in order for you to become a Xero App Partner for lending. When you're ready to apply for Xero App Partnership, please contact your Codat account team and we will connect you with a relevant contact at Xero. The commercial terms of this agreement are between you as a lender and Xero. Codat is not involved in the negotiation of that commercial agreement. 
 
-When you are ready to apply for Xero App Partnership please contact your Codat account team and we will connect you with a relevant contact at Xero.
+When you're ready to apply for Xero App Partnership please contact your Codat account team and we'll connect you with a relevant contact at Xero.
 
-### Certification Checkpoints for Lending Partners
+### Certification Checkpoints for Lending App Partners
 
-Lenders are required to complete all the mandatory Certification Checkpoints required of App Partners. Read our [guide to Xero’s Certification Checkpoints](https://www.notion.so/App-Certification-Checkpoints-40ecafeb176945bb818ce13ed47bafdf). 
+Lenders are required to complete all the mandatory Certification Checkpoints required of App Partners. We've broken down the Certification Checkpoints in [Joining the Xero App Partner Program](/integrations/accounting/xero/xero-app-partner-program).
 
-We suggest completing the checkpoints in the following order for the most efficient implementation:
+For the most efficient implementation, we suggest completing the checkpoints in the following order:
+
+**Lending App Partners**
 
 1. Checkpoint 8 - Sign Up with Xero
 2. Checkpoint 7 - Scopes
@@ -88,26 +75,26 @@ We suggest completing the checkpoints in the following order for the most effici
 5. Checkpoint 2 - Branding
 6. Checkpoint 1 - App Name
 
-## Payments Partners
+## Payments App Partners
 
 To become a Payments App Partner you need to:
 
 - Set up a Commercial Agreement with Xero.
 - Comply with the relevant Certification Checkpoints.
 
-We recommend progressing both the commercial and technical aspects of App Partnership in parallel to avoid unnecessary delays.
+### Commercial Agreement for Payments App Partners
 
-### Commercial Agreement for Payments Partners
+Xero requires a commercial agreement in order for you to become a Xero App Partner for payments. When you're ready to apply for Xero App Partnership, please contact your Codat account team and we will connect you with a relevant contact at Xero. The commercial terms of this agreement are between you and Xero. Codat is not involved in the negotiation of that commercial agreement. 
 
-The commercial terms of this agreement are between you and Xero. Codat is not involved in the negotiation of that commercial agreement. 
+When you're ready to apply for Xero App Partnership please contact your Codat account team and we'll connect you with a relevant contact at Xero.
 
-When you are ready apply for Xero App Partnership contact your Codat account team and we will connect you with a relevant contact at Xero.
+### Certification Checkpoints for Payments App Partners
 
-### Certification Checkpoints for Payments Partners
+Payments providers are required to complete all the mandatory Certification Checkpoints required of App Partners. We've broken down the Certification Checkpoints in [Joining the Xero App Partner Program](/integrations/accounting/xero/xero-app-partner-program).
 
-Lenders are required to complete all the mandatory Certification Checkpoints required of App Partners. Please read our guide to ADD LINK - Xero's Certification Checkpoints.
+For the most efficient implementation, we suggest completing the checkpoints in the following order:
 
-We suggest completing the checkpoints in the following order for the most efficient implementation:
+**Payments App Partners**
 
 1. Checkpoint 8 - Sign Up with Xero
 2. Checkpoint 7 - Scopes
@@ -116,11 +103,11 @@ We suggest completing the checkpoints in the following order for the most effici
 5. Checkpoint 2 - Branding
 6. Checkpoint 1 - App Name
 
-Depending on the nature of your Payments solution, you may also need to implement the checkpoints required for Apps that post or put data.
+Depending on the nature of your Payments solution, you may also need to implement the checkpoints required for Apps that POST or PUT data.
 
-### FX hedging, Investments and Financial Marketplaces
+### FX hedging, Investments, and Financial Marketplaces
 
-Currently Xero does not permit App Partnership for these use cases. Please consult your Codat account team for guidance if your App falls into one of these subcategories.
+Currently, Xero does not permit App Partnership for FX hedging, Investments, and Financial Marketplaces use cases. Please consult your Codat account team for guidance if your App falls into one of those subcategories.
 
 ## Ecosystem App Partners
 
@@ -129,21 +116,21 @@ To become an Ecosystem App Partner you need to:
 - Create a Commercial Agreement with Xero.
 - Comply with the relevant Certification Checkpoints.
 
-We recommend progressing both the commercial and technical aspects of App Partnership in parallel to avoid unnecessary delays.
+### Commercial Agreement for Ecosystem App Partners
 
-### Commercial Agreement for Ecosystem Partners
+Xero's App Store is designed to support the go-to-market efforts of its Apps. Xero's commercial model with its Ecosystem App Partners is a referral revenue share model in which App Partners pay Xero 15% of monthly revenue (excluding fees) for net sales made through the Xero App store. 
 
-Xero’s App Store is designed to support the go-to-market efforts of its Apps. Xero’s commercial model with its Ecosystem App Partners is a referral revenue share model in which App Partners pay Xero 15% of monthly revenue (exclusding fees) for net sales made through the Xero App store. 
+These sales are tracked by the _Sign Up with Xero_ flow required by Xero's Certification checkpoints (Checkpoint 8). For more information about the checkpoints, see [Joining the Xero App Partner Program](/integrations/accounting/xero/xero-app-partner-program).
 
-These sales are tracked by the Sign Up with Xero flow required by ADD LINK - Xero's Certification checkpoints. 
+When you're ready apply for Xero App Partnership please contact your Codat account team and we'll connect you with a relevant contact at Xero so you can create your commercial agreement with them.
 
-When you are ready apply for Xero App Partnership please contact your Codat account team and we will connect you with a relevant contact at Xero so you can create your commercial agreement with Xero.
+### Certification Checkpoints for Ecosystem App Partners
 
-### Certification Checkpoints for Ecosytem Partners
+Ecosystem Partners are required to complete all the mandatory Certification Checkpoints required of App Partners. We've broken down the Certification Checkpoints in [Joining the Xero App Partner Program](/integrations/accounting/xero/xero-app-partner-program).
 
-Ecosystem Partners are required to complete all the mandatory Certification Checkpoints required of App Partners. Please read our guide to ADD LINK - Xero's Certification Checkpoints. 
+For the most efficient implementation, we suggest completing the checkpoints in the following order:
 
-We suggest completing the checkpoints in the following order for the most efficient implementation:
+**Ecosystem App Partners**
 
 1. Checkpoint 8 - Sign Up with Xero
 2. Checkpoint 7 - Scopes
@@ -152,4 +139,4 @@ We suggest completing the checkpoints in the following order for the most effici
 5. Checkpoint 2 - Branding
 6. Checkpoint 1 - App Name
 
-Depending on the nature of your solution, you may also need to implement the checkpoints required for Apps that post or put data.
+Depending on the nature of your solution, you may also need to implement the checkpoints required for Apps that POST or PUT data.

@@ -1,7 +1,6 @@
 ---
 title: "Joining the Xero App Partner Program"
-createdAt: "2023-01-16T16:04:25.030Z"
-updatedAt: "2023-01-16T16:39:58.995Z"
+description: "Unlock the full value of connectivity with Xero by becoming a Xero App Partner"
 ---
 
 import LocalStorageChecklist from "@components/global/LocalStorageChecklist";
@@ -9,9 +8,14 @@ import BrowserOnly from "@docusaurus/BrowserOnly";
 
 If you want to have more than 25 Xero connections, you'll need to join the **Xero App Partner Program**.
 
-To join the program, there are a series of requirements your integration must first satisfy. There may be additional use-case-specific requirements.
+Becoming a certified Xero App Partner brings the following benefits:
 
-We've broken down the requirements you need to action based on the [Xero Certification Checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/#required-for-all-integrations). During your App Partner Program, you may use these answers to facilitate your application. [We take care of a number of checkpoints for you](/integrations/accounting/xero/xero-app-partner-program#we-take-care-of).
+- No limit to the number of companies (SMBs) you can connect to via your Xero integration.
+- The opportunity to reach millions of subscribers and advisors through the [Xero App Store](http://www.xero.com/marketplace) and [app partner program](https://developer.xero.com/app-partner).
+
+To join the program, there are a series of requirements your integration must first satisfy. There are also some additional use case-specific requirements, as explained in [Xero App Partner guidance by use case](/integrations/accounting/xero/accounting-xero-app-partner-guidance).
+
+We've broken down the requirements you need to action based on the [Xero Certification Checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/#required-for-all-integrations). During your App Partner Program application, you may use the answers on this page to facilitate your application. [We take care of a number of checkpoints for you](/integrations/accounting/xero/xero-app-partner-program#we-take-care-of).
 
 :::caution Use-cases
 
