@@ -1,9 +1,7 @@
 ---
 title: "Use cases with Codat"
-description: "Industries, applications and use cases that can be made easier with Codat"
+description: "Codat's product range supports a variety of use cases, helping you simplify and automate your processes and improving your customers' digital experience"
 ---
-
-Codat's product range supports a variety of use cases, helping you simplify and automate your processes and improving your customers' digital experience. 
 
 <ul className="card-container">
   <li className="card">
@@ -21,8 +19,9 @@ Codat's product range supports a variety of use cases, helping you simplify and 
       <a href="/usecases/summary/underwriting">Read more</a> about this use case.
     </p>    
     <p>
-      <a href="/assess/guides/underwriting/introduction">Loan underwriting demo</a>.
-      <a href="/assess/guides/underwriting/introduction">Invoice financing demo</a>.
+      <a href="/assess/guides/underwriting/introduction">Loan underwriting demo</a>
+      <br/>
+      <a href="/assess/guides/underwriting/introduction">Invoice financing demo</a>
     </p>
   </li>
   <li className="card">
