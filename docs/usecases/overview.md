@@ -108,7 +108,7 @@ description: "Codat's product range supports a variety of use cases, helping you
       <h3>Integrating commerce data</h3>
     </div>
     <p>
-      Amazing text about how important Codat is for this use case.
+      Use Codat to integrate high-volume sales and payment data from PoS, eCommerce, and payments platforms into your SMBs' accounting platforms automatically, saving them time and effort.
     </p>
     <p>
       <a href="/usecases/summary/integrating-commerce-data">Read more</a> about this use case.

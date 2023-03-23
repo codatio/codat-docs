@@ -1,48 +1,22 @@
 ---
-title: "Managing payroll with Codat"
-sidebar_label: "Managing payroll"
-description: "An overview of the payroll management use case supported by Codat"
+title: "Integrating commerce data with Codat"
+sidebar_label: "Integrating commerce data"
+description: "An overview of the commerce data integration use case supported by Codat"
 ---
 
-Integrating high-volume sales and payment data from PoS, eCommerce, and payments platforms into accounting platforms.
-Integrating commerce data from PoS, eCommerce, and payments platforms into accounting platforms.
-
-PoS systems want to group the high-volume data from their PoS (corresponding to sales their SMB has generated) and push it into their SMBs' accounting platform automatically, saving the SMB time and effort
+Use Codat to integrate high-volume sales and payment data from PoS, eCommerce, and payments platforms into your SMBs' accounting platforms automatically, saving them time and effort.
 
 ### How Codat can help
 
-We can support HR and payroll software software companies and vertical SaaS companies in their activity by leveraging our [Accounting API](/accounting-api/overview) product in response to customers' requests for accounting integrations. 
+We can support PoS system companies, eCommerce platforms, and vertical SaaS companies in their activity by leveraging our [Sync for Commerce](/accounting-api/overview) and [Commerce API] products. This helps your SMB customers avoid costly mistakes by automating sales data updates. They can understand their cash flow better thanks to the daily import of sales, and automatically reconcile payments, invoices, fees, and payouts on a daily basis to their chart of accounts.
 
-PoS systems
+For example, Sync for Commerce can be used to save your customers time and effort by pushing high-volume data from their PoS (corresponding to sales their SMB has generated) into their SMBs' accounting platform automatically.
 
-Vertical SaaS
-
-eCommerce platforms
-
-
-Integrating with Codat helps your SMB customers remove complexity and repetition from payroll processing, eliminate manual entry and mapping of payroll data, and save time on tasks that usually need to be completed multiple times a month. 
-
-The Codat Sync for Commerce module allows you to push e-commerce or point of sale transaction data into merchants’ accounting platforms.
-
-SMB Benefits
-Avoid Errors
-Cut admin in half
-Streamline your accounting
-Automating sales data updates helps SME’s avoid costly mistakes and stressful situations. 
-
-Less manual data entry allows SME’s to focus on growing their business.
-
-Enable SMB's to automatically Reconcile payments, invoices, fee's and payouts on a daily basis to configured chart of accounts
-
-Better visibility
- 
-
-Tax compliance
-Daily import of sales also allows SME’s to better understand Cashflow
-
-SMEs spend 12 working days per year on tax compliance.
+![](/img/use-cases/summary-pages/e229b82b-integrating-commerce-data.png)
 
 **Sync for Commerce**
+
+
 
 Embedded accounting integrations for Point-of-Sale providers
 
