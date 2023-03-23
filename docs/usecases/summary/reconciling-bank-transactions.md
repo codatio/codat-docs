@@ -1,36 +1,24 @@
 ---
-title: "Managing payroll with Codat"
-sidebar_label: "Managing payroll"
-description: "An overview of the payroll management use case supported by Codat"
+title: "Reconciling bank transactions with Codat"
+sidebar_label: "Reconciling bank transactions"
+description: "An overview of the bank transactions reconciliation use case supported by Codat"
 ---
 
-Pulling customers' bank transaction data into their accounting platforms'  bank transaction ledgers
+Support your customers by pulling their bank transaction data into their accounting platforms' bank transaction ledgers to ensure these records match each other.
 
 ### How Codat can help
 
-We can support HR and payroll software software companies and vertical SaaS companies in their activity by leveraging our [Accounting API](/accounting-api/overview) product in response to customers' requests for accounting integrations. 
+We can support traditional banks and neobanks in their activity by leveraging our **[Accounting API](/accounting-api/overview)** product. We have done the heavy lifting for you by building integrations with a standardized data model to the accounting platforms your customers already use. This gives you access to real-time data that you can pull, create, or update to support your use case.
 
-Integrating with Codat helps your SMB customers remove complexity and repetition from payroll processing, eliminate manual entry and mapping of payroll data, and save time on tasks that usually need to be completed multiple times a month. 
+Bank reconciliation is the process of ensuring that the information in a business’s accounting records matches the information in their bank account. Traditionally, this would be done by comparing a bank statement to the ledger entries, but our Accounting API makes it possible to upload bank transactions to the accounting platform.
 
-Description
-Pulling customers' bank transaction data into their accounting platforms'  bank transaction ledgers
+![](/img/use-cases/summary-pages/6c7b9e84-bank-reconciliation.png)
 
-Example customer profiles
-Banks
-
-Neobanks
-
-**Accounting API**
-
-We have done the heavy lifting for you by building integrations with a standardized data model to the accounting platforms your customers already use. This gives you access to real-time data that you can pull, create, or update to support your use case.
-
-Each business may need to reconcile payroll costs, pensions, and taxes to different nominal accounts, based on their business type and the accounting platform they use. Codat provides an endpoint to pull chart of accounts and tracking categories data in order to avoid manual categorization efforts and give flexibility to SMBs for reconciling data. As a payroll platform, you will need to build a flexible interface for your customer to perform the mapping.  
-
-Then, use our create / update functionality to post a journal that shows correct amounts against each account. These transactions can easily be reconciled against the business's bank feed.
+This saves your customers time by removing manual entry and importing bank transactions, removes the potential for errors, and facilitates matching by providing additional details, like a merchant's name. 
 
 ### Use case demos
 
-Codat provides you with demo guides, where you can see our products in action. Check back soon to view our demo built specifically for the payroll management use case.
+Codat provides you with demo guides, where you can see our products in action. Check back soon to view our demo built specifically for the bank transactions reconciliation use case.
 
 ### Read next
 

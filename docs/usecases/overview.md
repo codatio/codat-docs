@@ -80,7 +80,7 @@ description: "Codat's product range supports a variety of use cases, helping you
       Engage Codat and automate your customers' accounts payable processes by reflecting outstanding and paid bills and invoices from business software spend and suppliers in their accounting platforms. 
     </p>
     <p>
-      <a href="/usecases/summary/automating-payables">Discover pyables automation 🡢</a>
+      <a href="/usecases/summary/automating-payables">Discover payables automation 🡢</a>
     </p>
   </li>
   <li className="card">
@@ -92,10 +92,10 @@ description: "Codat's product range supports a variety of use cases, helping you
       <h3>Automating receivables</h3>
     </div>
     <p>
-      Amazing text about how important Codat is for this use case.
+      Engage Codat and automate your customers' accounts receivable processes by reflecting outstanding and received invoices from their buyers in their accounting platforms.
     </p>
     <p>
-      <a href="/usecases/summary/automating-receivables">Read more</a> about this use case.
+      <a href="/usecases/summary/automating-receivables">Discover receivables automation 🡢</a>
     </p>
   </li>
   <li className="card">
@@ -122,10 +122,10 @@ description: "Codat's product range supports a variety of use cases, helping you
       <h3>Reconciling bank transactions</h3>
     </div>
     <p>
-      Amazing text about how important Codat is for this use case.
+      Support your customers by pulling their bank transaction data into their accounting platforms' bank transaction ledgers to ensure these records match each other.
     </p>
     <p>
-      <a href="/usecases/summary/reconciling-bank-transactions">Read more</a> about this use case.
+      <a href="/usecases/summary/reconciling-bank-transactions.md"><b>Discover bank transactions reconciliation 🡢</b></a>
     </p>
   </li>
 </ul>

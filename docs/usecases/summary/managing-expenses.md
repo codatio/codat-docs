@@ -19,8 +19,8 @@ We have done the heavy lifting for you by building integrations with a standardi
 For example, you can pull the following data from our endpoints:
 - `bankAccounts` to retrieve a list of bank accounts which can be mapped, enabling the user to dictate which bank account their expenses should be recorded against.
 - `accounts` to retrieve a list of accounts which can be mapped, enabling the user to dictate which GL account different categories of expenses should be recorded against.
-- `trackingCategories` to retrieve a list of tracking categories which can be mapped, enabling the user to track expenses against identifiers which sit outside of their chart of accounts including departments and locations.
-- `taxRates` retrieve a list of tax rates which can be pushed against the direct cost depending on the category of spend.
+- `trackingCategories` to retrieve a list of tracking categories which can be mapped, enabling the user to track expenses against identifiers which sit outside of their chart of accounts, including departments and locations.
+- `taxRates` to retrieve a list of tax rates which can be pushed against the direct cost depending on the category of spend.
 
 Then, use the same API to create a direct cost within the customer's accounting application, thus recording an expense. Once the direct cost has been created, a bank transaction line can then be pushed to the customers accounting platform and reconciled against the direct cost. You can also record refunds and top-ups using Codat. 
 
