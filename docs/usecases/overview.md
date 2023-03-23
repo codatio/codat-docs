@@ -62,7 +62,7 @@ description: "Codat's product range supports a variety of use cases, helping you
       </div>
       <p><h3><b>Dashboarding</b></h3></p>
     <p>
-      We enable you to pull real-time SMB data from accounting platforms and display it in business management and financial forecasting platforms so you can provide better advice to your customers.
+      We enable you to pull real-time SMB data from accounting platforms and display it in business and financial forecasting platforms so you can provide better advice to your customers.
     </p>
     <p>
       <a href="/usecases/summary/dashboarding"><b>Discover dashboarding 🡢</b></a>
