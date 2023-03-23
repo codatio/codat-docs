@@ -8,9 +8,10 @@ description: "Codat's product range supports a variety of use cases, helping you
   <li className="card">
     <div className="header">
       <img
-        src="https://www.codat.io/wp-content/uploads/2022/03/accounting-2.png"
+        src="/img/use-cases/summary-pages/logo-lending.svg"
         className="mini-icon"
       />
+      <br/>
       <h3>Underwriting</h3>
     </div>
     <p>

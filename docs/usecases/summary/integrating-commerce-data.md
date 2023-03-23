@@ -16,7 +16,16 @@ For example, Sync for Commerce can be used to save your customers time and effor
 
 **Sync for Commerce**
 
+Codat's Commerce API enables you to pull up-to-date commerce data from several leading payments, point-of-sale, and eCommerce systems. You can view your SMB customers' products, orders, payments, payouts, disputes, and more - all standardized to our Commerce data model.
 
+
+Building to lots of different APIs does not scale. With Sync for Commerce, you can send a merchant's data to their accounting platform without worrying about which one they use.
+
+Sync for Commerce allows you to push merchants' data from your ecommerce or point-of-sale (POS) platform into each merchant's accounting platform.
+
+We do all the heavy lifting, mapping your merchants' data according to accounting best-practices and features available within each accounting platform.
+
+Your merchants can seamlessly reconcile their ecommerce and accounting data, allowing them to spend more time on growing their business.
 
 Embedded accounting integrations for Point-of-Sale providers
 
