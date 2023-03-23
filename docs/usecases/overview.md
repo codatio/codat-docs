@@ -35,7 +35,7 @@ description: "Codat's product range supports a variety of use cases, helping you
       Make expense management easier for your small business customers with Codat. We integrate data from corporate cards and expenses management platforms into accounting platforms your customers use.
     </p>
     <p>
-      <a href="/usecases/summary/managing-expenses.md"><b>Discover expense management 🡢</b>.
+      <a href="/usecases/summary/managing-expenses.md"><b>Discover expense management 🡢</b></a>
     </p>    
   </li>
   <li className="card">
@@ -50,7 +50,7 @@ description: "Codat's product range supports a variety of use cases, helping you
       Use Codat to integrate your customers' payroll data from their HR and payroll platforms into their accounting platforms and to support its reconciliation.
     </p>
     <p>
-      <a href="/usecases/summary/managing-payroll"><b>Discover payroll management 🡢</b>.
+      <a href="/usecases/summary/managing-payroll"><b>Discover payroll management 🡢</b></a>
     </p> 
   </li>
   <li className="card">
@@ -65,7 +65,7 @@ description: "Codat's product range supports a variety of use cases, helping you
       We enable you to pull real-time SMB data from accounting platforms and display it in business management and financial forecasting platforms. This helps you deliver high-level plans and provide better advice to your customers.
     </p>
     <p>
-      <a href="/usecases/summary/dashboarding"><b>Discover dashboarding 🡢</b>
+      <a href="/usecases/summary/dashboarding"><b>Discover dashboarding 🡢</b></a>
     </p>
   </li>
   <li className="card">
@@ -80,7 +80,7 @@ description: "Codat's product range supports a variety of use cases, helping you
       Engage Codat and automate your customers' accounts payable processes by reflecting outstanding and paid bills and invoices from business software spend and suppliers in their accounting platforms. 
     </p>
     <p>
-      <a href="/usecases/summary/automating-payables">Discover payables automation 🡢</a>
+      <a href="/usecases/summary/automating-payables"><b>Discover payables automation 🡢</b></a>
     </p>
   </li>
   <li className="card">
@@ -95,7 +95,7 @@ description: "Codat's product range supports a variety of use cases, helping you
       Engage Codat and automate your customers' accounts receivable processes by reflecting outstanding and received invoices from their buyers in their accounting platforms.
     </p>
     <p>
-      <a href="/usecases/summary/automating-receivables">Discover receivables automation 🡢</a>
+      <a href="/usecases/summary/automating-receivables"><b>Discover receivables automation 🡢</b></a>
     </p>
   </li>
   <li className="card">
