@@ -8,7 +8,7 @@ During underwriting, the lender evaluates a borrower's financial history, income
 
 ### How Codat can help
 
-We can support traditonal banks, neobanks, and digital lenders in their underwriting activity by leveraging our Assess and Accounting, Commerce, and Banking API products. 
+We can support traditonal banks, neobanks, and digital lenders in their underwriting activity by leveraging our [Assess](/assess/overview) and [Accounting](/accounting-api/overview), [Commerce](/commerce-api/overview), and [Banking](/banking-api/overview) API products. 
 
 ![](/img/use-cases/summary-pages/dbdaea6d-underwriting.png)
 

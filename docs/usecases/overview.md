@@ -20,61 +20,61 @@ description: "Codat's product range supports a variety of use cases, helping you
       <a href="/usecases/summary/underwriting"><b>Discover underwriting 🡢</b></a>
     </p>    
     <p>
-      Check out our <a href="/assess/guides/underwriting/introduction">loan underwriting</a> and <a href="/assess/guides/underwriting/introduction">invoice financing</a> demos
+      Check out our <a href="/assess/guides/underwriting/introduction">loan underwriting</a> and <a href="/assess/guides/underwriting/introduction">invoice financing</a> demos.
     </p>
   </li>
   <li className="card">
     <div className="header">
       <img
-        src="https://www.codat.io/wp-content/uploads/2022/03/Bank-2.png"
+        src="/img/use-cases/summary-pages/logo-sync-expenses.svg"
         className="mini-icon"
       />
-      <h3>Managing expenses</h3>
+      <p><h3><b>Managing expenses</b></h3></p>
     </div>
     <p>
       Make expense management easier for your small business customers with Codat. We integrate data from corporate cards and expenses management platforms into accounting platforms your customers use.
     </p>
     <p>
-      <a href="/usecases/summary/managing-expenses.md">Read more</a> about this use case.
+      <a href="/usecases/summary/managing-expenses.md"><b>Discover expense management 🡢</b>.
     </p>    
   </li>
   <li className="card">
     <div className="header">
       <img
-        src="https://www.codat.io/wp-content/uploads/2022/03/Storefront-3.png"
+        src="/img/use-cases/summary-pages/logo-payroll.svg"
         className="mini-icon"
       />
-      <h3>Managing payroll</h3>
+      <p><h3><b>Managing payroll</b></h3></p>
     </div>
     <p>
       Use Codat to integrate your customers' payroll data from their HR and payroll platforms into their accounting platforms and to support its reconciliation.
     </p>
     <p>
-      <a href="/usecases/summary/managing-payroll">Read more</a> about this use case.
+      <a href="/usecases/summary/managing-payroll"><b>Discover payroll management 🡢</b>.
     </p> 
   </li>
   <li className="card">
     <div className="header">
       <img
-        src="https://www.codat.io/wp-content/uploads/2022/04/Frame-3805.png"
+        src="/img/use-cases/summary-pages/logo-dashboarding.svg"
         className="mini-icon"
       />
-      <h3>Dashboarding</h3>
+      <p><h3><b>Dashboarding</b></h3></p>
     </div>
     <p>
       We enable you to pull real-time SMB data from accounting platforms and display it in business management and financial forecasting platforms. This helps you deliver high-level plans and provide better advice to your customers.
     </p>
     <p>
-      <a href="/usecases/summary/dashboarding">Read more</a> about this use case.
+      <a href="/usecases/summary/dashboarding"><b>Discover dashboarding 🡢</b>
     </p>
   </li>
   <li className="card">
     <div className="header">
       <img
-        src="https://www.codat.io/wp-content/uploads/2022/04/assess.png"
+        src="/img/use-cases/summary-pages/logo-accounts-payable.svg"
         className="mini-icon"
       />
-      <h3>Automating payables</h3>
+      <p><h3><b>Automating payables</b></h3></p>
     </div>
     <p>
       Engage Codat and automate your customers' accounts payable processes by reflecting outstanding and paid bills and invoices from business software spend and suppliers in their accounting platforms. 
@@ -86,10 +86,10 @@ description: "Codat's product range supports a variety of use cases, helping you
   <li className="card">
     <div className="header">
       <img
-        src="https://www.codat.io/wp-content/uploads/2022/03/CreditCard.png"
+        src="/img/use-cases/summary-pages/logo-accounts-receivable.svg"
         className="mini-icon"
       />
-      <h3>Automating receivables</h3>
+      <p><h3><b>Automating receivables</b></h3></p>
     </div>
     <p>
       Engage Codat and automate your customers' accounts receivable processes by reflecting outstanding and received invoices from their buyers in their accounting platforms.
@@ -101,10 +101,10 @@ description: "Codat's product range supports a variety of use cases, helping you
   <li className="card">
     <div className="header">
       <img
-        src="https://static.codat.io/public/icons/docs/sync.png"
+        src="/img/use-cases/summary-pages/logo-sync-commerce.svg"
         className="mini-icon"
       />
-      <h3>Integrating commerce data</h3>
+      <p><h3><b>Integrating commerce data</b></h3></p>
     </div>
     <p>
       Use Codat to integrate high-volume sales and payment data from PoS, eCommerce, and payments platforms into your SMBs' accounting platforms automatically, saving them time and effort.
@@ -116,10 +116,10 @@ description: "Codat's product range supports a variety of use cases, helping you
     <li className="card">
     <div className="header">
       <img
-        src="https://static.codat.io/public/icons/docs/sync.png"
+        src="/img/use-cases/summary-pages/logo-pull-push.svg"
         className="mini-icon"
       />
-      <h3>Reconciling bank transactions</h3>
+      <p><h3><b>Reconciling bank transactions</b></h3></p>
     </div>
     <p>
       Support your customers by pulling their bank transaction data into their accounting platforms' bank transaction ledgers to ensure these records match each other.
