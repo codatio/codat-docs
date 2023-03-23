@@ -17,12 +17,10 @@ description: "Codat's product range supports a variety of use cases, helping you
       During underwriting, the lender evaluates a borrower's financial history, income, assets, and debts to determine the financial risk the borrower poses to the lender. The goal, in the end, is to provide loans and insurance products for SMBs based on the outcome of that assessment. 
     </p>
     <p>
-      <a href="/usecases/summary/underwriting"><b>Discover underwriting →</b></a>.
+      <a href="/usecases/summary/underwriting"><b>Discover underwriting 🡢</b></a>
     </p>    
     <p>
-      <a href="/assess/guides/underwriting/introduction">Loan underwriting demo</a>
-      <br/>
-      <a href="/assess/guides/underwriting/introduction">Invoice financing demo</a>
+      Check out our <a href="/assess/guides/underwriting/introduction">loan underwriting</a> and <a href="/assess/guides/underwriting/introduction">invoice financing</a> demos
     </p>
   </li>
   <li className="card">
@@ -79,10 +77,10 @@ description: "Codat's product range supports a variety of use cases, helping you
       <h3>Automating payables</h3>
     </div>
     <p>
-      Amazing text about how important Codat is for this use case. 
+      Engage Codat and automate your customers' accounts payable processes by reflecting outstanding and paid bills and invoices from business software spend and suppliers in their accounting platforms. 
     </p>
     <p>
-      <a href="/usecases/summary/automating-payables">Read more</a> about this use case.
+      <a href="/usecases/summary/automating-payables">Discover pyables automation 🡢</a>
     </p>
   </li>
   <li className="card">
@@ -112,7 +110,7 @@ description: "Codat's product range supports a variety of use cases, helping you
       Use Codat to integrate high-volume sales and payment data from PoS, eCommerce, and payments platforms into your SMBs' accounting platforms automatically, saving them time and effort.
     </p>
     <p>
-      <a href="/usecases/summary/integrating-commerce-data">Read more</a> about this use case.
+      <a href="/usecases/summary/integrating-commerce-data"><b>Discover commerce data integration 🡢</b></a>
     </p>
   </li>
     <li className="card">

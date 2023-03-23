@@ -1,38 +1,34 @@
 ---
-title: "Managing payroll with Codat"
-sidebar_label: "Managing payroll"
-description: "An overview of the payroll management use case supported by Codat"
+title: "Automating payables with Codat"
+sidebar_label: "Automating payables"
+description: "An overview of the payables automation use case supported by Codat"
 ---
 
-Automate SMB AP processes by reflecting outstanding and paid bills and invoices from business software spend / suppliers in their accounting platforms
+Engage Codat and automate your customers' accounts payable processes by reflecting outstanding and paid bills and invoices from business software spend and suppliers in their accounting platforms.
 
 ### How Codat can help
 
-We can support HR and payroll software software companies and vertical SaaS companies in their activity by leveraging our [Accounting API](/accounting-api/overview) product in response to customers' requests for accounting integrations. 
+We can support B2B payment and invoicing software companies, payment providers, and vertical SaaS companies in their activity by leveraging our [Accounting API](/accounting-api/overview) product. 
 
-Integrating with Codat helps your SMB customers remove complexity and repetition from payroll processing, eliminate manual entry and mapping of payroll data, and save time on tasks that usually need to be completed multiple times a month. 
-
-Description
-Automate SMB AP processes by reflecting their outstanding and paid bills / invoices from suppliers in their accounting platforms.
-
-Example customer profiles
-B2B payment and invoicing software
-
-Payment providers
-
-Vertical SaaS
+It enables businesses to track and manage their spend, typically including the whole purchasing flow from the creation of the PO through to a bill payment.
 
 **Accounting API**
 
 We have done the heavy lifting for you by building integrations with a standardized data model to the accounting platforms your customers already use. This gives you access to real-time data that you can pull, create, or update to support your use case.
 
-Each business may need to reconcile payroll costs, pensions, and taxes to different nominal accounts, based on their business type and the accounting platform they use. Codat provides an endpoint to pull chart of accounts and tracking categories data in order to avoid manual categorization efforts and give flexibility to SMBs for reconciling data. As a payroll platform, you will need to build a flexible interface for your customer to perform the mapping.  
+For automating payables, the Accounting API brings you and your customers these benefits:
 
-Then, use our create / update functionality to post a journal that shows correct amounts against each account. These transactions can easily be reconciled against the business's bank feed.
+- Increased visibility by enabling the, to track spend forecasts against budgets
+- Reduce time and effor by automating the PO matching process
+- Perform faster payments, building better relationships with suppliers
+- Improve compliance without unnecessary bureaucracy
+- Simplify reconciliation by marking bills as paid when the purchase is completed
+
+![](/use-cases/summary-pages/d0c6b0b7-automating-payables.png)
 
 ### Use case demos
 
-Codat provides you with demo guides, where you can see our products in action. Check back soon to view our demo built specifically for the payroll management use case.
+Codat provides you with demo guides, where you can see our products in action. Check back soon to view our demo built specifically for the payables automation use case.
 
 ### Read next
 
