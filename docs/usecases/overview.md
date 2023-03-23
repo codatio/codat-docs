@@ -9,11 +9,10 @@ description: "Codat's product range supports a variety of use cases, helping you
     <div className="header">
       <img
         src="/img/use-cases/summary-pages/logo-lending.svg"
-        className="mini-icon"
+        className="icon"
       />
-      <br/>
-      <h3>Underwriting</h3>
     </div>
+      <h3><b>Underwriting</b></h3>
     <p>
       During underwriting, the lender evaluates a borrower's financial history, income, assets, and debts to determine the financial risk the borrower poses to the lender. The goal, in the end, is to provide loans and insurance products for SMBs based on the outcome of that assessment. 
     </p>
