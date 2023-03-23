@@ -217,6 +217,7 @@ module.exports = {
       type: "category",
       label: "Use cases",
       collapsed: true,
+      className: "top-level-item usecases",
       items: [
         "/usecases/overview",
         "/usecases/summary/underwriting",
