@@ -1,5 +1,5 @@
 ---
-title: "Modified dates"
+title: "Using modified dates"
 description: "Understanding when data has been modified"
 createdAt: "2022-11-07T19:53:44.472Z"
 updatedAt: "2022-11-28T13:03:19.120Z"
