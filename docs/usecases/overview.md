@@ -12,12 +12,12 @@ description: "Codat's product range supports a variety of use cases, helping you
         className="icon"
       />
     </div>
-      <h3><b>Underwriting</b></h3>
+    <p><h3><b>Underwriting</b></h3></p>
     <p>
       During underwriting, the lender evaluates a borrower's financial history, income, assets, and debts to determine the financial risk the borrower poses to the lender. The goal, in the end, is to provide loans and insurance products for SMBs based on the outcome of that assessment. 
     </p>
     <p>
-      <a href="/usecases/summary/underwriting">Read more</a> about this use case.
+      <a href="/usecases/summary/underwriting"><b>Discover underwriting →</b></a>.
     </p>    
     <p>
       <a href="/assess/guides/underwriting/introduction">Loan underwriting demo</a>
