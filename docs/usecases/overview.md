@@ -120,7 +120,7 @@ description: "Codat's product range supports a variety of use cases, helping you
         className="icon"
       />
       </div>
-      <p><h3><b>Reconciling bank transactions</b></h3></p>
+      <p><h3><b>Bank transactions</b></h3></p>
     <p>
       Support your customers by pulling their bank transaction data into their accounting platforms' bank transaction ledgers to ensure these records match each other.
     </p>
