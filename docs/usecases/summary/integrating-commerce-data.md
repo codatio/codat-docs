@@ -30,6 +30,8 @@ You can connect to your SMB customers' PoS, eCommerce and Subscription platforms
 
 Codat provides you with demo guides, where you can see our products in action. Check back soon to view our demo built specifically for the commerce data integration use case.
 
+---
+
 ### Read next
 
-Review the range of [use cases](/usecases/overview) Codat can support you with and find one that suits you best.
+Review the full range of [use cases](/usecases/overview) Codat can support you with and find one that suits you best.

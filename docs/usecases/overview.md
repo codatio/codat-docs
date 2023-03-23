@@ -9,123 +9,123 @@ description: "Codat's product range supports a variety of use cases, helping you
     <div className="header">
       <img
         src="/img/use-cases/summary-pages/logo-lending.svg"
-        className="icon"
+        className="icon usecase"
       />
     </div>
-    <p><h3><b>Underwriting</b></h3></p>
+    <h3>Underwriting</h3>
     <p>
-      During underwriting, the lender evaluates a borrower's financial history, income, assets, and debts to determine the financial risk the borrower poses to the lender with the goal to provide loans and insurance products based on the outcome. 
+      Evaluates borrowers' financial history, income, assets, and debts to determine financial risk. 
     </p>
     <p>
-      <a href="/usecases/summary/underwriting"><b>Discover underwriting 🡢</b></a>
+      <a href="/usecases/summary/underwriting"><b>Discover underwriting →</b></a>
     </p>    
     <p>
-      Check out our <a href="/assess/guides/underwriting/introduction">loan underwriting</a> and <a href="/assess/guides/underwriting/introduction">invoice financing</a> demos.
+      Check out our <a href="/assess/guides/underwriting/introduction">loan underwriting</a> and <a href="/assess/guides/underwriting/introduction">invoice financing</a> guides.
     </p>
   </li>
   <li className="card">
     <div className="header">
       <img
         src="/img/use-cases/summary-pages/logo-sync-expenses.svg"
-        className="icon"
+        className="icon usecase"
       />
-      </div>
-      <p><h3><b>Managing expenses</b></h3></p>
+    </div>
+    <h3>Managing expenses</h3>
     <p>
-      Make expense management easier for your small business customers with Codat. We integrate data from corporate cards and expenses management platforms into accounting platforms your customers use.
+      Integrate data from corporate cards and expenses management platforms into accounting platforms your customers use.
     </p>
     <p>
-      <a href="/usecases/summary/managing-expenses.md"><b>Discover expense management 🡢</b></a>
+      <a href="/usecases/summary/managing-expenses.md"><b>Discover expense management →</b></a>
     </p>    
   </li>
   <li className="card">
     <div className="header">
       <img
         src="/img/use-cases/summary-pages/logo-payroll.svg"
-        className="icon"
+        className="icon usecase"
       />
-      </div>
-      <p><h3><b>Managing payroll</b></h3></p>
+    </div>
+    <h3>Managing payroll</h3>
     <p>
-      Use Codat to integrate your customers' payroll data from their HR and payroll platforms into their accounting platforms and to support its reconciliation.
+      Integrate your customers' payroll data from their HR and payroll platforms into their accounting platforms and to support its reconciliation.
     </p>
     <p>
-      <a href="/usecases/summary/managing-payroll"><b>Discover payroll management 🡢</b></a>
+      <a href="/usecases/summary/managing-payroll"><b>Discover payroll management →</b></a>
     </p> 
   </li>
   <li className="card">
     <div className="header">
       <img
         src="/img/use-cases/summary-pages/logo-dashboarding.svg"
-        className="icon"
+        className="icon usecase"
       />
-      </div>
-      <p><h3><b>Dashboarding</b></h3></p>
+    </div>
+    <h3>Dashboarding</h3>
     <p>
-      We enable you to pull real-time SMB data from accounting platforms and display it in business and financial forecasting platforms so you can provide better advice to your customers.
+      Pull real-time SMB data from accounting platforms and display it in your platform, providing insight to your customers.
     </p>
     <p>
-      <a href="/usecases/summary/dashboarding"><b>Discover dashboarding 🡢</b></a>
+      <a href="/usecases/summary/dashboarding"><b>Discover dashboarding →</b></a>
     </p>
   </li>
   <li className="card">
     <div className="header">
       <img
         src="/img/use-cases/summary-pages/logo-accounts-payable.svg"
-        className="icon"
+        className="icon usecase"
       />
-      </div>
-      <p><h3><b>Automating payables</b></h3></p>
+    </div>
+    <h3>Automating payables</h3>
     <p>
-      Automate your customers' accounts payable processes by reflecting outstanding and paid bills from business software and suppliers in their accounting platforms. 
+      Automate your customers' accounts payable processes by reflecting bills from business software and suppliers in their accounting platforms. 
     </p>
     <p>
-      <a href="/usecases/summary/automating-payables"><b>Discover payables automation 🡢</b></a>
+      <a href="/usecases/summary/automating-payables"><b>Discover payables automation →</b></a>
     </p>
   </li>
   <li className="card">
     <div className="header">
       <img
         src="/img/use-cases/summary-pages/logo-accounts-receivable.svg"
-        className="icon"
+        className="icon usecase"
       />
-      </div>
-      <p><h3><b>Automating receivables</b></h3></p>
+    </div>
+    <h3>Automating receivables</h3>
     <p>
       Automate your customers' accounts receivable processes by reflecting outstanding and received invoices from their buyers in their accounting platforms.
     </p>
     <p>
-      <a href="/usecases/summary/automating-receivables"><b>Discover receivables automation 🡢</b></a>
+      <a href="/usecases/summary/automating-receivables"><b>Discover receivables automation →</b></a>
     </p>
   </li>
   <li className="card">
     <div className="header">
       <img
         src="/img/use-cases/summary-pages/logo-sync-commerce.svg"
-        className="icon"
+        className="icon usecase"
       />
-      </div>
-      <p><h3><b>Integrating commerce data</b></h3></p>
+    </div>
+    <h3>Integrating commerce data</h3>
     <p>
-      Integrate high-volume sales and payment data from PoS, eCommerce, and payments platforms into your SMBs' accounting platforms automatically, saving them time and effort.
+      Integrate high-volume sales and payment data from PoS, eCommerce, and payments platforms into your SMBs' accounting platforms.
     </p>
     <p>
-      <a href="/usecases/summary/integrating-commerce-data"><b>Discover commerce data integration 🡢</b></a>
+      <a href="/usecases/summary/integrating-commerce-data"><b>Discover commerce data integration →</b></a>
     </p>
   </li>
     <li className="card">
     <div className="header">
       <img
         src="/img/use-cases/summary-pages/logo-pull-push.svg"
-        className="icon"
+        className="icon usecase"
       />
-      </div>
-      <p><h3><b>Bank transactions</b></h3></p>
+    </div>
+    <h3>Bank transactions</h3>
     <p>
-      Support your customers by pulling their bank transaction data into their accounting platforms' bank transaction ledgers to ensure these records match each other.
+      Pulling your customers' bank transaction data into accounting platform bank transaction ledgers for reconcilliation.
     </p>
     <p>
-      <a href="/usecases/summary/reconciling-bank-transactions.md"><b>Discover bank transactions reconciliation 🡢</b></a>
+      <a href="/usecases/summary/reconciling-bank-transactions.md"><b>Discover bank transactions reconciliation →</b></a>
     </p>
   </li>
 </ul>

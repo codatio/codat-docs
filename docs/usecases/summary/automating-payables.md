@@ -30,6 +30,8 @@ For automating payables, the Accounting API brings you and your customers these 
 
 Codat provides you with demo guides, where you can see our products in action. Check back soon to view our demo built specifically for the payables automation use case.
 
+---
+
 ### Read next
 
-Review the range of [use cases](/usecases/overview) Codat can support you with and find one that suits you best.
+Review the full range of [use cases](/usecases/overview) Codat can support you with and find one that suits you best.

@@ -28,6 +28,8 @@ html[data-theme="dark"] {
   --ifm-menu-color-active: var(--ifm-link-color);
 
   --sidebar-spacing-horizontal: 1.5rem;
+
+  --ifm-menu-link-padding-horizontal: 1em;
 }
 
 //overrides
@@ -249,6 +251,7 @@ html[data-theme="dark"] {
     &.data,
     &.products,
     &.integrations,
+    &.usecases,
     &.other {
       > div > .menu__link--sublist,
       > a.menu__link {
@@ -273,34 +276,40 @@ html[data-theme="dark"] {
   .menu__list-item.products {
     margin-top: 3em;
 
-    .menu__list-item.product > .menu__link {
-      padding-inline-start: 0;
-      padding-inline-end: 0;
-      margin-block-end: 0;
+    .menu__list-item.product {
+      &:first-child {
+        margin-top: 1em;
+      }
 
-      display: flex;
-      align-items: center;
-      flex-direction: row-reverse;
-      justify-content: flex-end;
-
-      &::after {
-        content: " ";
-
-        min-width: auto;
-
-        width: var(--dropdown-icon-width);
-        height: var(--dropdown-icon-height);
-
-        margin-inline-end: var(--dropdown-icon-gap);
+      > .menu__link {
+        padding-inline-start: 0;
+        padding-inline-end: 0;
         margin-block-end: 0;
 
-        --icon-size: 24px;
-        --dropdown-icon-width: var(--icon-size);
-        --dropdown-icon-height: var(--icon-size);
-        background: url("https://d33wubrfki0l68.cloudfront.net/ea8e37a6a30e9c260a8936d95c579af4a2dd3df7/6ee7e/img/docusaurus_keytar.svg")
-          center / var(--dropdown-icon-width) var(--dropdown-icon-height);
-        transform: rotate(0);
-        opacity: 1;
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+
+        &::after {
+          content: " ";
+
+          min-width: auto;
+
+          width: var(--dropdown-icon-width);
+          height: var(--dropdown-icon-height);
+
+          margin-inline-end: var(--dropdown-icon-gap);
+          margin-block-end: 0;
+
+          --icon-size: 24px;
+          --dropdown-icon-width: var(--icon-size);
+          --dropdown-icon-height: var(--icon-size);
+          background: url("https://d33wubrfki0l68.cloudfront.net/ea8e37a6a30e9c260a8936d95c579af4a2dd3df7/6ee7e/img/docusaurus_keytar.svg")
+            center / var(--dropdown-icon-width) var(--dropdown-icon-height);
+          transform: rotate(0);
+          opacity: 1;
+        }
       }
     }
   }
@@ -315,80 +324,77 @@ html[data-theme="dark"] {
 
   .menu__list-item {
     &.introduction > div > .menu__link--sublist::after {
-      background: url("/img/sidebar/introduction.svg") center /
-        var(--dropdown-icon-width) var(--dropdown-icon-height) !important;
+      background: url("/img/sidebar/introduction.svg");
+      background-size: cover !important;
     }
 
     &.core > div > .menu__link--sublist::after {
-      background: url("/img/sidebar/core-concepts.svg") center /
-        var(--dropdown-icon-width) var(--dropdown-icon-height) !important;
+      background: url("/img/sidebar/core-concepts.svg");
+      background-size: cover !important;
     }
 
     &.api > div > .menu__link--sublist::after {
-      background: url("/img/sidebar/api.svg") center / var(--dropdown-icon-width)
-        var(--dropdown-icon-height) !important;
+      background: url("/img/sidebar/api.svg");
+      background-size: cover !important;
     }
-
+    
     &.auth > div > .menu__link--sublist::after {
-      background: url("/img/sidebar/auth-flow.svg") center /
-        var(--dropdown-icon-width) var(--dropdown-icon-height) !important;
+      background: url("/img/sidebar/auth-flow.svg") !important;
+      background-size: cover !important;
     }
 
     &.data > div > .menu__link--sublist::after {
-      background: url("/img/sidebar/data-model.svg") center /
-        var(--dropdown-icon-width) var(--dropdown-icon-height) !important;
+      background: url("/img/sidebar/data-model.svg") !important;
+      background-size: cover !important;
     }
 
     &.products > div > .menu__link--sublist::after {
-      background: url("/img/sidebar/products.svg") center /
-        var(--dropdown-icon-width) var(--dropdown-icon-height) !important;
+      background: url("/img/sidebar/products.svg") !important;
+      background-size: cover !important;
     }
 
     &.integrations > .menu__link::after {
-      background: url("/img/sidebar/integrations.svg") center /
-        var(--dropdown-icon-width) var(--dropdown-icon-height) !important;
+      background: url("/img/sidebar/integrations.svg") !important;
+      background-size: cover !important;
+    }
+
+    &.usecases > div > .menu__link--sublist::after {
+      background: url("/img/sidebar/usecase.svg") !important;
+      background-size: cover !important;
     }
 
     &.other > div > .menu__link--sublist::after {
-      background: url("/img/sidebar/other-guides.svg") center /
-        var(--dropdown-icon-width) var(--dropdown-icon-height) !important;
+      background: url("/img/sidebar/other-guides.svg") !important;
+      background-size: cover !important;
     }
 
     // Products
-    &.assess > .menu__link::after {
-      background: url("https://www.codat.io/wp-content/uploads/2022/04/assess.png")
-        center / var(--dropdown-icon-width) var(--dropdown-icon-height) !important;
+    &.product,
+    &.usecase {
+      & > .menu__link {
+        padding: 2px !important;
+
+        &::after {
+          width: 40px !important;
+          height: 40px !important;
+          background-size: cover !important;
+        }
+      }
     }
 
-    &.sfc > .menu__link::after {
-      background: url("https://static.codat.io/public/icons/docs/sync.png") center /
-        var(--dropdown-icon-width) var(--dropdown-icon-height) !important;
-    }
+    &.accounting > .menu__link::after { background-image: url("/logos/products/Accounting.svg") !important; }
 
-    &.sfe > .menu__link::after {
-      background: url("https://www.codat.io/wp-content/uploads/2022/03/accounting-2.png")
-        center / var(--dropdown-icon-width) var(--dropdown-icon-height) !important;
-    }
+    &.banking > .menu__link::after { background-image: url("/logos/products/Banking.svg") !important; }
 
-    &.accounting > .menu__link::after {
-      background: url("https://www.codat.io/wp-content/uploads/2022/03/accounting-2.png")
-        center / var(--dropdown-icon-width) var(--dropdown-icon-height) !important;
-    }
+    &.commerce > .menu__link::after { background-image: url("/logos/products/Commerce.svg") !important; }
 
-    &.banking > .menu__link::after {
-      background: url("https://www.codat.io/wp-content/uploads/2022/03/Bank-2.png")
-        center / var(--dropdown-icon-width) var(--dropdown-icon-height) !important;
-    }
+    &.bankfeed > .menu__link::after { background-image: url("/logos/products/BankFeeds.svg") !important; }
 
-    &.commerce > .menu__link::after {
-      background: url("https://www.codat.io/wp-content/uploads/2022/03/Storefront-3.png")
-        center / var(--dropdown-icon-width) var(--dropdown-icon-height) !important;
-    }
+    &.assess > .menu__link::after { background-image: url("/logos/products/Assess.svg") !important; }
 
-    &.bankfeed > .menu__link::after {
-      background: url("https://www.codat.io/wp-content/uploads/2022/03/Stack.png")
-        center / var(--dropdown-icon-width) var(--dropdown-icon-height) !important;
-    }
+    &.sfc > .menu__link::after { background-image: url("/logos/products/SyncforCommerce.svg") !important; }
+
+    &.sfe > .menu__link::after { background-image: url("/logos/products/SyncforExpenses.svg") !important; }
   }
 
   .theme-doc-sidebar-item-category-level-1 > div > .menu__link,

@@ -31,6 +31,8 @@ Then, use the same API to create invoices and credit notes within the accounting
 
 Codat provides you with demo guides, where you can see our products in action. Check back soon to view our demo built specifically for the receivables automation use case.
 
+---
+
 ### Read next
 
-Review the range of [use cases](/usecases/overview) Codat can support you with and find one that suits you best.
+Review the full range of [use cases](/usecases/overview) Codat can support you with and find one that suits you best.
