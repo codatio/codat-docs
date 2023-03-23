@@ -24,7 +24,7 @@ For automating payables, the Accounting API brings you and your customers these 
 - Improve compliance without unnecessary bureaucracy
 - Simplify reconciliation by marking bills as paid when the purchase is completed
 
-
+![](/img/use-cases/summary-pages/d0c6b0b7-automating-payables.png)
 
 ### Use case demos
 
