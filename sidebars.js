@@ -64,31 +64,24 @@ module.exports = {
       className: "top-level-item api",
       items: [
         "using-the-api/overview",
+        "using-the-api/authentication",
+        "using-the-api/managing-companies",
         {
           type: "category",
-          label: "Basics",
-          collapsed: false,
+          label: "Pulling data",
+          collapsed: true,
           items: [
-            "using-the-api/authentication",
-            "using-the-api/managing-companies",
             "using-the-api/querying",
             "using-the-api/paging",
             "using-the-api/ordering-results",
             "using-the-api/modified-dates",
-            "using-the-api/queueing-data-syncs",
-            "using-the-api/errors",
-          ]
+          ],
         },
-        {
-          type: "category",
-          label: "Advanced",
-          collapsed: true,
-          items: [
-            "using-the-api/push",
-            "using-the-api/rate-limits",
-            "using-the-api/optimizing-api-calls",
-          ]
-        },
+        "using-the-api/queueing-data-syncs",
+        "using-the-api/push",
+        "using-the-api/errors",
+        "using-the-api/rate-limits",
+        "using-the-api/optimizing-api-calls",
         {
           type: "category",
           label: "Webhooks",
