@@ -117,3 +117,63 @@ Codat's product range supports a variety of use cases, helping you simplify and 
     </p>
   </li>
 </ul>
+
+
+
+
+<ul className="card-container col-3">
+  <li className="card">
+    <div class="header">
+      <img
+        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        class="mini-icon"
+      />
+      <h3>Simplify your integrations</h3>
+    </div>
+    <p>
+      We connect to many on-premise and cloud accounting packages, removing the complexity of building individual integrations. 
+    </p>
+    <p>
+      <a href="/integrations/accounting/overview">
+        Review our integrations
+      </a>
+    </p>
+  </li>
+
+  <li className="card">
+    <div class="header">
+      <img
+        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        class="mini-icon"
+      />
+      <h3>Ensure data consistency</h3>
+    </div>
+    <p>
+      Our data model normalizes and aggregates data from different platforms so that you can use it in a consistent way, fast. 
+    </p>
+    <p>
+      <a href="/data-model/accounting/">
+        Explore the data model
+      </a>
+    </p>
+  </li>
+
+  <li className="card">
+    <div class="header">
+      <img
+        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        class="mini-icon"
+      />
+      <h3>Support your customers</h3>
+    </div>
+    <p> Send expense data directly to your SMB customer's platform or retrieve their bills to save them hours of manual data entry. 
+ </p>
+    <p>
+      <a href="/accounting-api#">
+        Start with our API reference
+      </a>
+    </p>
+  </li>
+</ul>
+
+<br/>

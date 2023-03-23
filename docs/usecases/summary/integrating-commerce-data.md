@@ -7,6 +7,8 @@ description: "An overview of the payroll management use case supported by Codat"
 Integrating high-volume sales and payment data from PoS, eCommerce, and payments platforms into accounting platforms.
 Integrating commerce data from PoS, eCommerce, and payments platforms into accounting platforms.
 
+PoS systems want to group the high-volume data from their PoS (corresponding to sales their SMB has generated) and push it into their SMBs' accounting platform automatically, saving the SMB time and effort
+
 ### How Codat can help
 
 We can support HR and payroll software software companies and vertical SaaS companies in their activity by leveraging our [Accounting API](/accounting-api/overview) product in response to customers' requests for accounting integrations. 
@@ -85,7 +87,7 @@ SMEs spend 12 working days per year on tax compliance.
 
 **Commerce API**
 
-We have done the heavy lifting for you by building integrations with a standardized data model to the accounting platforms your customers already use. This gives you access to real-time data that you can pull, create, or update to support your use case.
+We have done the heavy lifting for you by building integrations with a standardized data model to the commerce platforms your customers already use. This gives you access to real-time data that you can pull, create, or update to support your use case.
 
 
 Universal API to access 15+ PoS, eCommerce and Subscription platform integrations across 
@@ -96,7 +98,7 @@ Standardized commerce data model, enabling developers to easily build integratio
 
 ### Use case demos
 
-Codat provides you with demo guides, where you can see our products in action. Check back soon to view our demo built specifically for the payroll management use case.
+Codat provides you with demo guides, where you can see our products in action. Check back soon to view our demo built specifically for the commerce data integration use case.
 
 ### Read next
 
