@@ -14,7 +14,7 @@ For example, the Accounting API eliminate the need to manually reconcile invoice
 
 ![](/img/use-cases/summary-pages/fad7ec95-4automating-receivables.png)
 
-**Accounting API**
+#### Accounting API
 
 We have done the heavy lifting for you by building integrations with a standardized data model to the accounting platforms your customers already use. This gives you access to real-time data that you can pull, create, or update to support your use case.
 

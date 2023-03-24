@@ -12,7 +12,7 @@ We can support HR and payroll software software companies and vertical SaaS comp
 
 Integrating with Codat helps your SMB customers remove complexity and repetition from payroll processing, eliminate manual entry and mapping of payroll data, and save time on tasks that usually need to be completed multiple times a month. 
 
-**Accounting API**
+#### Accounting API
 
 We have done the heavy lifting for you by building integrations with a standardized data model to the accounting platforms your customers already use. This gives you access to real-time data that you can pull, create, or update to support your use case.
 

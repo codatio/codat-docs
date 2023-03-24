@@ -122,7 +122,7 @@ description: "Codat's product range supports a variety of use cases, helping you
     </div>
     <h3>Bank transactions</h3>
     <p>
-      Pulling your customers' bank transaction data into accounting platform bank transaction ledgers for reconcilliation.
+      Pull your customers' bank transaction data into accounting platform bank transaction ledgers for reconcilliation.
     </p>
     <p>
       <a href="/usecases/summary/reconciling-bank-transactions.md"><b>Discover bank transactions reconciliation →</b></a>

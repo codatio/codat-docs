@@ -14,13 +14,13 @@ For example, Sync for Commerce can be used to save your customers time and effor
 
 ![](/img/use-cases/summary-pages/75fd84ed-commerce-data.png)
 
-**Sync for Commerce**
+#### Sync for Commerce
 
 Sync for Commerce is a white-label application for point-of-sale and eCommerce providers that automates merchant bookkeeping to Codat’s suite of accounting platforms. We map your customers' data according to accounting best-practices and features available within each platform. This lets your customer seamlessly reconcile their ecommerce and accounting data, allowing them to spend more time on growing their business. 
 
 They can also understand their cash flow better thanks to the daily import of sales, and automatically reconcile payments, invoices, fees, and payouts on a daily basis to their chart of accounts - as an aggregate invoice or a journal entry.
 
-**Commerce API**
+#### Commerce API
 
 For a more bespoke approach, use our Commerce API, where we have done the heavy lifting for you by building integrations with a standardized data model to the commerce platforms your customers already use. This gives you access to real-time data that you can pull, create, or update to support your use case.
 

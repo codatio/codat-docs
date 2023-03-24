@@ -14,7 +14,7 @@ For example, you can use Codat when building a financial planning and analysis (
 
 ![](/img/use-cases/summary-pages/982cf32b-fpa-dashboarding.png)
 
-**Accounting API**
+#### Accounting API
 
 We have done the heavy lifting for you by building integrations with a standardized data model to the accounting platforms your customers already use. This gives you access to real-time data that you can pull, create, or update to support your use case.
 

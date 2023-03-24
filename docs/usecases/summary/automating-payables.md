@@ -12,7 +12,7 @@ We can support B2B payment and invoicing software companies, payment providers, 
 
 It enables businesses to track and manage their spend, typically including the whole purchasing flow from the creation of the PO through to a bill payment.
 
-**Accounting API**
+#### Accounting API
 
 We have done the heavy lifting for you by building integrations with a standardized data model to the accounting platforms your customers already use. This gives you access to real-time data that you can pull, create, or update to support your use case.
 
