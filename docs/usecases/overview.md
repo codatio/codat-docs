@@ -8,7 +8,7 @@ description: "Codat's product range supports a variety of use cases, helping you
   <li className="card">
     <div className="header">
       <img
-        src="/img/use-cases/summary-pages/logo-lending.svg"
+        src="/logos/usecases/lending.svg"
         className="icon usecase"
       />
     </div>
@@ -20,13 +20,13 @@ description: "Codat's product range supports a variety of use cases, helping you
       <a href="/usecases/summary/underwriting"><b>Discover underwriting →</b></a>
     </p>    
     <p>
-      Check out our <a href="/assess/guides/underwriting/introduction">loan underwriting</a> and <a href="/assess/guides/underwriting/introduction">invoice financing</a> guides.
+      Check out our <a href="/assess/guides/underwriting/introduction">loan underwriting</a> guide.
     </p>
   </li>
   <li className="card">
     <div className="header">
       <img
-        src="/img/use-cases/summary-pages/logo-sync-expenses.svg"
+        src="/logos/usecases/sync-expenses.svg"
         className="icon usecase"
       />
     </div>
@@ -41,7 +41,7 @@ description: "Codat's product range supports a variety of use cases, helping you
   <li className="card">
     <div className="header">
       <img
-        src="/img/use-cases/summary-pages/logo-payroll.svg"
+        src="/logos/usecases/payroll.svg"
         className="icon usecase"
       />
     </div>
@@ -56,7 +56,7 @@ description: "Codat's product range supports a variety of use cases, helping you
   <li className="card">
     <div className="header">
       <img
-        src="/img/use-cases/summary-pages/logo-dashboarding.svg"
+        src="/logos/usecases/dashboarding.svg"
         className="icon usecase"
       />
     </div>
@@ -71,7 +71,7 @@ description: "Codat's product range supports a variety of use cases, helping you
   <li className="card">
     <div className="header">
       <img
-        src="/img/use-cases/summary-pages/logo-accounts-payable.svg"
+        src="/logos/usecases/accounts-payable.svg"
         className="icon usecase"
       />
     </div>
@@ -86,7 +86,7 @@ description: "Codat's product range supports a variety of use cases, helping you
   <li className="card">
     <div className="header">
       <img
-        src="/img/use-cases/summary-pages/logo-accounts-receivable.svg"
+        src="/logos/usecases/accounts-receivable.svg"
         className="icon usecase"
       />
     </div>
@@ -101,7 +101,7 @@ description: "Codat's product range supports a variety of use cases, helping you
   <li className="card">
     <div className="header">
       <img
-        src="/img/use-cases/summary-pages/logo-sync-commerce.svg"
+        src="/logos/usecases/sync-commerce.svg"
         className="icon usecase"
       />
     </div>
@@ -116,7 +116,7 @@ description: "Codat's product range supports a variety of use cases, helping you
     <li className="card">
     <div className="header">
       <img
-        src="/img/use-cases/summary-pages/logo-pull-push.svg"
+        src="/logos/usecases/pull-push.svg"
         className="icon usecase"
       />
     </div>
