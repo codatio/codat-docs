@@ -82,6 +82,8 @@ Only if all the thresholds are met or surpassed by the applicant, the app update
 
 🧠 See what else [Codat recommends](https://www.codat.io/blog/how-to-underwrite-ecommerce-merchants-effectively/) to build your underwriting process effectively. 
 
+🗣️ Anything unclear in this guide? Got feedback? We're working on a whole host of new content for you, so [let us know](https://github.com/orgs/codatio/discussions/new?category=general).
+
 ### Recap
 
 In this reference section, you have learned and understood in detail the data points we chose for our underwriting model, how we fetched the data used in in the calculation of these data points, and how all of this influenced the decision on the loan made automatically. 
