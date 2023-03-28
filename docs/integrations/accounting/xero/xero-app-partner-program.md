@@ -17,11 +17,28 @@ To join the program, there are a series of requirements your integration must fi
 
 We've broken down the requirements you need to action based on the [Xero Certification Checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/#required-for-all-integrations). During your App Partner Program application, you may use the answers on this page to facilitate your application. [We take care of a number of checkpoints for you](/integrations/accounting/xero/xero-app-partner-program#we-take-care-of).
 
-:::caution Use-cases
+:::caution Use cases
 
 There are additional checkpoints based on use cases.
 
 :::
+
+<details>
+<summary><b>Additional resources</b></summary>
+
+In the Xero developer documentation, see [Steps to becoming an app partner](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/app-partner-steps) and the [App Partner Program FAQs](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/faqs/).
+
+For tips and advice, read our blog post on [How to get your app certified on the Xero App Store](https://www.codat.io/blog/get-your-app-certified-on-the-xero-app-store/).
+</details>
+
+## Start your partnership application
+
+To start the Xero App Partner application process, follow these steps:
+
+1. Log in to the [Xero Developer portal](https://developer.xero.com/) using your Xero credentials.
+2. Select the **My Apps** tab and then select your app.
+3. On the **App details** page, click **Become a Xero App Partner**.
+4. Select the partnership option that applies to your use case.
 
 <details>
   <summary>Remember your progress...</summary>

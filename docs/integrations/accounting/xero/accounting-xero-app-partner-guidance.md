@@ -1,6 +1,6 @@
 ---
 title: "Xero App Partner guidance by use case"
-description: "Article description goes here"
+description: "Understand the requirements for Financial Services, Lending, Payments, and Ecosystem App Partners"
 ---
 
 The process of becoming a Xero App Partner depends on your use case. Xero has two categories of App Partner:
@@ -10,7 +10,7 @@ The process of becoming a Xero App Partner depends on your use case. Xero has tw
 
 For guidance on what category applies to your use case, consult your Codat account team.
 
-To avoid unnecessary delays, we recommend progressing both the commercial and technical aspects of App Partnership in parallel, if possible.
+To avoid unnecessary delays, we recommend progressing the commercial and technical aspects of App Partnership in parallel, if possible.
 
 :::caution App partnership is not always possible
 
@@ -21,6 +21,11 @@ Note that Xero App Partnership is not possible for every use case.
 ## Financial Services App Partners
 
 There are several subcategories within Financial Services; follow the guidance for your specific use case. 
+
+<details>
+  <summary>Sync status codes</summary>
+Text goes here
+</details>
 
 You are required to obtain Xero's written consent for each Financial Services use case that you implement.
 
