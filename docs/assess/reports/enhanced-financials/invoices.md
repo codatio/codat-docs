@@ -1,5 +1,5 @@
 ---
-title: "Enhanced Profit and Loss"
+title: "Enhanced Invoices"
 description: "Endpoint reference to produce a fully categorized profit and loss statement"
 createdAt: "2023-01-25T13:57:24.867Z"
 updatedAt: "2023-01-28T15:26:01.665Z"
