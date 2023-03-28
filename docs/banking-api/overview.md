@@ -14,21 +14,17 @@ updatedAt: "2022-11-22T19:33:11.784Z"
   <meta property="og:image" content="/img/banking-api/banking-api-banner.png"/>
 </Head>
 
-<div className="background-video-wrapper banking">
-  <div className="banner-video">
-    <h1>Banking API</h1>
-    <p>
-      Use Codat's Banking API to connect to your SMB customers' banks and pull up-to-date standardized account and transaction data from their bank accounts via our partner providers.
-    </p>
-  </div>
-</div>
+import PageHeader from "@components/global/PageHeader";
 
-<div className="background-video-spacer banking">
-  <h1>Banking API</h1>
+<PageHeader 
+  className="banking"
+  title="Banking API"
+  icon="/logos/products/Banking.svg"
+>
   <p>
     Use Codat's Banking API to connect to your SMB customers' banks and pull up-to-date standardized account and transaction data from their bank accounts via our partner providers.
   </p>
-</div>
+</PageHeader>
 
 <ul className="card-container col-3">
   <li className="card">

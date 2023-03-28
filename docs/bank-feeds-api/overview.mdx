@@ -17,21 +17,17 @@ import {bankfeedsIntegrations} from '@components/global/Integrations/integration
   <meta property="og:image" content="/img/old/fd21af0-codat_whitepaper_accounting-automation_diagram_B.png"/>
 </Head>
 
-<div className="background-video-wrapper bankfeed">
-  <div className="banner-video">
-    <h1>Bank Feeds API</h1>
-    <p>
-      Bank Feeds API enables your SMB users to set up bank feeds from accounts in your application to supported accounting platforms.
-    </p>
-  </div>
-</div>
+import PageHeader from "@components/global/PageHeader";
 
-<div className="background-video-spacer bankfeed">
-  <h1>Bank Feeds API</h1>
+<PageHeader 
+  className="bankfeed"
+  title="Bank Feeds API"
+  icon="/logos/products/BankFeeds.svg"
+>
   <p>
     Bank Feeds API enables your SMB users to set up bank feeds from accounts in your application to supported accounting platforms.
   </p>
-</div>
+</PageHeader>
 
 **A bank feed is a connection between a _source bank account_—in your application—and a _target bank account_ in a supported accounting package.**
 
