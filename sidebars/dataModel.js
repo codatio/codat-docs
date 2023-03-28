@@ -8,6 +8,9 @@ const dataModels = {
   accounting: [
     "Account",
     "Account transaction",
+    "Aged creditors report",
+    "Aged debtors report",
+    "Attachment",
     "Balance sheet",
     "Bank account",
     "Bank transactions",

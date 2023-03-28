@@ -31,7 +31,7 @@ This endpoint retrieves all the available financial performance metrics held aga
 ## Parameters
 
 |                          Parameter                           |    Type    | Description | Required |
-| :----------------------------------------------------------: | :--------: | :---------: | :-------:|
+| :----------------------------------------------------------- | :--------- | :---------- | :--------|
 |                        **reportDate**                        |  _string_ <br/> See [Date](/codat-api#/schemas/DateTime)  | YYYY-MM-DD <br/> The date in which the report is created up to. Users must specify a specific date, however the response will be provided for the full month.| Required |
 | **periodLength** | _integer_ | The number of months per period. E.g. 2 = 2 months per period. | Required |
 | **numberOfPeriods** | _integer_ | The number of periods to return. <br/> There will be no pagination as a query parameter, however Codat will limit the number of periods to request to 12 periods.| Required |
@@ -40,7 +40,7 @@ This endpoint retrieves all the available financial performance metrics held aga
 ## Data model
 
 |  Field   |                         Type                          | Description  |
-| :------: | :---------------------------------------------------: | :----------: |
+| :------- | :---------------------------------------------------- | :----------- |
 | **name** |                       _string_                        | Metric name. | 
 | **metricUnit** | _string_ | Depending on the metric, the response value could be:_Ratio_, or Money (e.g. EBITDA is not a ratio) |
 | **currency**| _string_ | Base currency of the company, as provided by the balance sheet, and profit and loss endpoints. |
@@ -50,7 +50,7 @@ This endpoint retrieves all the available financial performance metrics held aga
 ### Periods
 
 |                            Field                             |                  Type                  | Description |
-| :----------------------------------------------------------: | :------------------------------------: | :---------: |
+| :----------------------------------------------------------- | :------------------------------------- | :---------- |
 |                         **fromDate**                         |                _string_                | See [Date](/codat-api#/schemas/DateTime) <br/> The date from which the report starts. <br/> YYYY-MM-DD | 
 | **toDate** | _string_ | See [Date](/codat-api#/schemas/DateTime) <br/> The date on which the report ends (inclusive of day). <br/> YYYY-MM-DD |
 | **value**  | _number_ | The top level metric value that is calculated for the specified period. <br/> If the system cannot calculate for that period, the value will be null. <br/> The system will still show the metric inputs.|
@@ -68,7 +68,7 @@ If the query parameter `showMetricInputs = true`, then this array gets returned 
 ### Errors
 
 |  Field   |   Type   |         Description          |
-| :------: | :------: | :--------------------------: |
+| :------- | :------- | :--------------------------- |
 | **type** | _string_ | Metric-level error messages: <br/> `uncategorizedAccounts` (Metric level error) - where there are accounts with missing categories. <br/> `missingInputData` (Metric level error) - when the financial statements do not contain the required data points to calculate the metric. <br/> `missingAccountData` (Period specific error) - for the given period, there is no account data to calculate the metric. <br/> `datesOutOfRange` (Period specific error) - only for metrics where multiple periods are compared to drive calculation. (Free cash flow). |
 | **message** | _string_ | If _type_ is: <br/> `Uncategorized accounts` - "There are uncategorized accounts IDs, see details" <br/> `Missing input data` - "There is no <profit and loss / balance sheet> synced to this company" <br/> `Missing Account data` - “Missing account data” <br/> `Dates out of range` - "There is no data for the requested period" |
 | **details** | _string_ | If _message_ is: <br/> `Uncategorized accounts`:  <br/> _List of account category Types where there are missing account categories, e.g. “Assets, Liability”._  <br/> _List of account IDs where there are missing categories._ <br/> `Missing Account data` <br/> _List of categories that are needed for the calculation._ <br/> `Dates out of range` <br/> _Earliest date in which the company’s data exists as input for the metric calculation._|

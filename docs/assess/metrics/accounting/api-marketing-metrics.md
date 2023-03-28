@@ -35,7 +35,7 @@ View the Marketing Metrics [formulas](/assess/metrics/accounting/api-financial-m
 # Parameters
 | Parameter               | Type                                        | Description                                                                                                                | Required |
 |-------------------------|---------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|----------|
-| **reportDate**          | _string_ See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD <br/> Datetime or Date (inclusive of the whole day).                                                                  | Required |
+| **reportDate**          | _string_ <br/> See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD <br/> Datetime or Date (inclusive of the whole day).                                                                  | Required |
 | **periodLength**        | _integer_                                   | Based on the period unit provided. <br/> It must be positive, not zero and an integer.                                           | Required |
 | **numberOfPeriods**     | _integer_                                   | The number of periods to return. <br/> It must be positive, not zero and an integer.                                             | Required |
 | **includeDisplayNames** | _boolean_                                   | Shows the `dimensionDisplayName` and `itemDisplayName` in measures to make the report data human-readable. Default is `false`. | Optional |
