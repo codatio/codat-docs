@@ -2,7 +2,7 @@
 title: "Enhanced Profit and Loss"
 description: "Endpoint reference to produce a fully categorized profit and loss statement"
 createdAt: "2023-01-25T13:57:24.867Z"
-updatedAt: "2023-01-27T15:26:01.665Z"
+updatedAt: "2023-01-28T15:26:01.665Z"
 ---
 
 The Enhanced Invoices Report endpoint returns a list of invoices from the linked accountancy platform and verifies those marked as paid have actually been paid by matching with the bank statement.
@@ -59,19 +59,19 @@ The response structure is split into two areas: Report info and Report items.
 
 #### Payments
 
-| Field             | Type                                                 | Description                                                  |
-| ----------------- | ---------------------------------------------------- | ------------------------------------------------------------ |
-| **id**            | _string_                                             | ID of the payment.                                           |
-| **invoiceNumber** | _string_                                             | Number of the invoice.                                       |
-| **customerRef**   | _object_                                             | Customer reference.                                          |
-| **issueDate**     | __string_, See [Date](/codat-api#/schemas/DateTime)_ | The date the invoices was issued.                            |
-| **dueDate**       | _string_, See [Date](/codat-api#/schemas/DateTime)   | The date the invoice was due.                                |
-| **status**        | _string_                                             | The current state of the invoice.  For details please refer to the [Assess API reference](/assess-api#/operations/get-enhanced-invoices-report). |
-| **currency**      | _string_                                             | ISO 4217 currency code.                                      |
-| **totalAmount**   | _number_                                             | Total amount of the invoice in the specified currency.       |
-| **amountDue**     | _number_                                             | The amount due on the invoice.                               |
-| **paidOnDate**    | _string_                                             | The date on which the invoice was paid.                      |
-| **payments**      | _object_                                             | An array of payments made on the invoice.                    |
+| Field             | Type                                               | Description                                                  |
+| ----------------- | -------------------------------------------------- | ------------------------------------------------------------ |
+| **id**            | _string_                                           | ID of the payment.                                           |
+| **invoiceNumber** | _string_                                           | Number of the invoice.                                       |
+| **customerRef**   | _object_                                           | Customer reference.                                          |
+| **issueDate**     | _string_, See [Date](/codat-api#/schemas/DateTime) | The date the invoices was issued.                            |
+| **dueDate**       | _string_, See [Date](/codat-api#/schemas/DateTime) | The date the invoice was due.                                |
+| **status**        | _string_                                           | The current state of the invoice.  For details please refer to the [Assess API reference](/assess-api#/operations/get-enhanced-invoices-report). |
+| **currency**      | _string_                                           | ISO 4217 currency code.                                      |
+| **totalAmount**   | _number_                                           | Total amount of the invoice in the specified currency.       |
+| **amountDue**     | _number_                                           | The amount due on the invoice.                               |
+| **paidOnDate**    | _string_                                           | The date on which the invoice was paid.                      |
+| **payments**      | _object_                                           | An array of payments made on the invoice.                    |
 
 ### Example data
 

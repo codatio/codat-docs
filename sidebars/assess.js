@@ -64,6 +64,7 @@ module.exports = [
           "assess/reports/enhanced-financials/financials",
           "assess/reports/enhanced-financials/balance-sheet",
           "assess/reports/enhanced-financials/profit-and-loss",
+          "assess/reports/enhanced-financials/invoices",
         ],
       },
       "assess/reports/audit-report",
