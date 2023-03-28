@@ -1,89 +1,16 @@
-const camalize = (str) =>
-  str
-    .toLowerCase()
-    .replace(/^([a-zA-Z0-9])/g, (m, chr) => chr.toUpperCase())
-    .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+const accounting = require("../src/components/global/DataTypes/dataTypes");
 
-const dataModels = {
-  accounting: [
-    "Account",
-    "Account transaction",
-    "Balance sheet",
-    "Bank account",
-    "Bank transactions",
-    "Bill",
-    "Bill credit note",
-    "Bill payment",
-    "Cash flow statement",
-    "Credit note",
-    "Customer",
-    "Direct cost",
-    "Direct income",
-    "Invoice",
-    "Item",
-    "Journal",
-    "Journal entry",
-    "Payment",
-    "Payment method",
-    "Profit and loss report",
-    "Purchase order",
-    "Sales order",
-    "Supplier",
-    "Tax rate",
-    "Tracking category",
-    "Transfer",
-  ],
-  banking: [
-    "Account",
-    "Account balance",
-    "Transaction",
-    "Transaction category",
-  ],
-  commerce: [
-    "Company info",
-    "Customer",
-    "Dispute",
-    "Locations",
-    "Order",
-    "Payment",
-    "Payment method",
-    "Product",
-    "Product category",
-    "Tax component",
-    "Transaction",
-  ],
-  bankFeeds: [
-    "Bank feed bank account",
-    //"Bank feed bank transactions",
-  ],
-};
-
-const schemaPaths = {
-  accounting: "/accounting-api#/schemas/",
-  banking: "/banking-api#/schemas/",
-  commerce: "/commerce-api#/schemas/",
-  bankFeeds: "/bank-feeds-api#/schemas/",
-};
-
-const composePaths = (schemaPaths, dataModels) => {
-  const categories = Object.keys(schemaPaths);
-
-  const paths = {};
-
-  categories.forEach((category) => {
-    paths[category] = dataModels[category].map((model) => ({
-      href: schemaPaths[category] + camalize(model),
-      label: model,
+const composePaths = (dataTypes) => {
+  return dataTypes.map((dataType) => {
+    return {
+      href: dataType.schema,
+      label: dataType.name,
       type: "link",
-    }));
+    }
   });
-
-  return paths;
 };
 
-const paths = composePaths(schemaPaths, dataModels);
-
-module.exports = [
+const routes = [
   "data-model/all-datatypes",
   {
     type: "category",
@@ -91,24 +18,26 @@ module.exports = [
     collapsed: true,
     items: [
       "data-model/accounting/accounting",
-      ...paths.accounting],
+      ...composePaths(accounting)],
   },
   {
     type: "category",
     label: "Banking",
     collapsed: true,
-    items: ["data-model/banking/banking", ...paths.banking],
+    items: ["data-model/banking/banking", ...composePaths(banking)],
   },
   {
     type: "category",
     label: "Commerce",
     collapsed: true,
-    items: ["data-model/commerce/commerce", ...paths.commerce, ,],
+    items: ["data-model/commerce/commerce", ...composePaths(commerce)],
   },
   {
     type: "category",
     label: "Bank feeds",
     collapsed: true,
-    items: ["data-model/bank-feeds/bank-feeds", ...paths.bankFeeds, ,],
+    items: ["data-model/bank-feeds/bank-feeds", ...composePaths(bankfeeds)],
   },
 ];
+
+module.exports = routes
