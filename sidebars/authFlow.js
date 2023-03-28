@@ -14,7 +14,7 @@ module.exports = [
       {
         type: "link",
         label: "Sample project",
-        href: "https://github.com/codatio/link-sdk-sample-project",
+        href: "https://github.com/codatio/sample-project-link-sdk",
       },
     ],
   },
