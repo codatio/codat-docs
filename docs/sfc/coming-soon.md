@@ -13,8 +13,8 @@ As Sync for Commerce is in beta, we're constantly working on improving the exper
 
 ## Journals
 
-Create aggregated daily journals to represent your POS data in your accountancy package.
+You can now [create aggregated daily journals](/sfc/sync-for-commerce-knowledge-base/sfc-journal-entry-mapping) to represent your POS data in your accountancy package.
 
 ## Sales categorization with Journals
 
-Map your different categories of sales to different accounts, and aggregate daily at the category level.
+You can now [map your different categories of sales](/sfc/sync-for-commerce-knowledge-base/sfc-sales-product-categories) to different accounts, and aggregate daily at the category level.

@@ -48,7 +48,7 @@ You can also maintain a custom login message, which will be displayed every time
 
 ![](/img/other-guides/portal_manage-sign-in-inc-custom-login-message.png "test")
 
-:::note
+:::note Disabling SSO
 
 If you decide to disable third-party SSO, your users will still be able to sign in with their email and password credentials, if the **Password** sign-in method is enabled.
 

@@ -15,4 +15,4 @@ The lower limit of the sync date range is determined as the date of the last suc
 
 For the higher limit of the sync date range, you can include a `syncTo` date in the request body. If no date is provided, the current time `UtcNow` is used.
 
-Before making the call, you can also explore the [Latest Commerce Sync endpoint](https://docs.codat.io/reference/post-sync-latest) in our API Reference.
+Before making the call, you can also explore the [Latest Commerce Sync endpoint](/sync-for-commerce-api#/operations/post-sync-latest) in our API Reference.

@@ -37,11 +37,11 @@ GET /data/companies/{companyId}/connections/{connectionId}/assess/commerceMetric
 
 | **Parameter**           | Type                                        | Description                                                                                                              | Required |
 |-------------------------|---------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|----------|
-| **reportDate**          | _string_ See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD Datetime or Date (inclusive of the whole day).                                                                | Required |
+| **reportDate**          | _string_ <br/> See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD <br/> Datetime or Date (inclusive of the whole day).                                                                | Required |
 | **periodUnit**          | _string_                                    | The period unit of time returned, and it can be: “Day”, “Week”, “Month”, “Year”.                                         | Required |
 | **periodLength**        | _integer_                                   | Based on the period unit provided. It must be positive, not zero and an integer.                                         | Required |
 | **numberOfPeriods**     | _integer_                                   | The number of periods to return. It must be positive, not zero and an integer.                                           | Required |
-| **includeDisplayNames** | _boolean_                                   | Shows the dimensionDisplayName and itemDisplayName in measures to make the report data human-readable. Default is false. | Optional |
+| **includeDisplayNames** | _boolean_                                   | Shows the _dimensionDisplayName_ and _itemDisplayName_ in measures to make the report data human-readable. <br/> Default is false. | Optional |
 
 # Data model
 
@@ -64,7 +64,7 @@ _Lifetime value_ consists of these dimensions: Period and Customer retention met
 |-----------------|-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
 | **displayName** | _string_                                                                | "Period"                                                                                                           |
 | **type**        | _string_                                                                | "datespan"                                                                                                         |
-| **items**       | _array_, See [Dimension (index = “0”) items](#dimension-index--0-items) | Returns an array of “Period”. This is driven by the query parameter values. Ordered by latest to earliest periods. |
+| **items**       | _array_ <br/> See [Dimension (index = “0”) items](#dimension-index--0-items) | Returns an array of “Period”. This is driven by the query parameter values. <br/> Ordered by latest to earliest periods. |
 
 
 #### Dimension (index = “0”) items
@@ -72,8 +72,8 @@ _Lifetime value_ consists of these dimensions: Period and Customer retention met
 | **Field**       | Type                                          | Description                                              |
 |-----------------|-----------------------------------------------|----------------------------------------------------------|
 | **displayName** | _string_                                      | "Period n"                                               |
-| **start**       | _string_, See [Date](/codat-api#/schemas/DateTime)  | YYYY-MM-DD, Date in which the period begins (inclusive). |
-| **end**         | _string_, See [Date](/codat-api#/schemas/DateTime)  | YYYY-MM-DD, Date in which the period ends (inclusive).   |
+| **start**       | _string_ <br/> See [Date](/codat-api#/schemas/DateTime)  | YYYY-MM-DD, date in which the period begins (inclusive). |
+| **end**         | _string_ <br/> See [Date](/codat-api#/schemas/DateTime)  | YYYY-MM-DD, date in which the period ends (inclusive).   |
 
 
 ### Dimension (index = “1”): Lifetime value metrics
@@ -82,14 +82,14 @@ _Lifetime value_ consists of these dimensions: Period and Customer retention met
 |-----------------|--------------------------------------------------------------------------|-------------------------------------------------|
 | **displayName** | _string_                                                                 | "Customer retention metrics"                    |
 | **type**        | _string_                                                                 | "string"                                        |
-| **items**       | _array_ , See [Dimension (index = “1”) items](#dimension-index--1-items) | Returns an array of customer retention metrics. |  
+| **items**       | _array_ <br/> See [Dimension (index = “1”) items](#dimension-index--1-items) | Returns an array of customer retention metrics. |  
 
 
 #### Dimension (index = “1”) items
 
 | **Field** | Type     | Description                                                                                                                                    |
 |-----------|----------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **value** | _string_ | “Lifetime value” This will always show for any response in this report. The dimension values are not dependent on the user’s query parameters. |
+| **value** | _string_ | “Lifetime value” <br/> This will always show for any response in this report. The dimension values are not dependent on the user’s query parameters. |
 
 ## Measures
 
@@ -120,9 +120,9 @@ Each period will be broken down into _Lifetime value metrics_.
 | **Field**                | Type                                                  | Description                                    |
 |--------------------------|-------------------------------------------------------|------------------------------------------------|
 | **dimension**            | _number_                                              | Index 1                                        |
-| **dimensionDisplayName** | _string_                                              | Shows when includeDisplayNames is set to true. |
+| **dimensionDisplayName** | _string_                                              | Shows when _includeDisplayNames_ is set to true. |
 | **item**                 | _string_                                              |                                                |
-| **itemDisplayName**      | _string_                                              | Shows when includeDisplayNames is set to true. |
+| **itemDisplayName**      | _string_                                              | Shows when _includeDisplayNames_ is set to true. |
 | **measures**             | See [Measures in components](#measures-in-components) |                                                |
 
 All components have the structure described in the _Measures in components_ data model below.

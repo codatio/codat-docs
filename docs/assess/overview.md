@@ -22,7 +22,7 @@ import PageHeader from "@components/global/PageHeader";
   icon="/logos/products/Assess.svg"
 >
   <p>
-    Assess helps you make smarter credit decisions on small businesses by enabling your customers to pull the latest data from the operating systems they are already using.
+    Assess helps you make smarter credit decisions on small businesses by enabling you to pull your customers' latest data from the operating systems they are already using.
   </p>
 
   <p>

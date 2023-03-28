@@ -10,6 +10,7 @@ updatedAt: "2022-11-15T14:24:24.452Z"
 |Error code|Description|
 |----------|-----------|
 |100|A required dataset is not available for the company (either not supported, not synced, not enabled or sync failed).|
+|101|Data type {dataType} has not yet been requested or the sync is not yet complete.|
 |105|A company is missing a required data connection, e.g. banking, accounting, commerce.|
 |110|Could not retrieve the requested data.|
 |120|There is no data for the requested date range.|
@@ -22,4 +23,3 @@ updatedAt: "2022-11-15T14:24:24.452Z"
 |320|Calculated equity for one or more periods don't equal net assets.|
 |330|Can't generate Excel for company {companyId} because required parameters are missing from the request.|
 |331|Can't generate report for type {reportType}.|
-|101|Data type {dataType} has not yet been requested or the sync is not yet complete.|

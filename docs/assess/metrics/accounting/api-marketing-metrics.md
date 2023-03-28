@@ -35,11 +35,11 @@ View the Marketing Metrics [formulas](/assess/metrics/accounting/api-financial-m
 # Parameters
 | Parameter               | Type                                        | Description                                                                                                                | Required |
 |-------------------------|---------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|----------|
-| **reportDate**          | _string_ See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD Datetime or Date (inclusive of the whole day).                                                                  | Required |
-| **periodLength**        | _integer_                                   | Based on the period unit provided. It must be positive, not zero and an integer.                                           | Required |
-| **numberOfPeriods**     | _integer_                                   | The number of periods to return. It must be positive, not zero and an integer.                                             | Required |
-| **includeDisplayNames** | _boolean_                                   | Shows the dimensionDisplayName and itemDisplayName in measures to make the report data human-readable. Default is 'false'. | Optional |
-| **showInputValues**     | _boolean_                                   | If set to true, then the system includes the input values within the response. Default to 'false'.                         |          | 
+| **reportDate**          | _string_ See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD <br/> Datetime or Date (inclusive of the whole day).                                                                  | Required |
+| **periodLength**        | _integer_                                   | Based on the period unit provided. <br/> It must be positive, not zero and an integer.                                           | Required |
+| **numberOfPeriods**     | _integer_                                   | The number of periods to return. <br/> It must be positive, not zero and an integer.                                             | Required |
+| **includeDisplayNames** | _boolean_                                   | Shows the `dimensionDisplayName` and `itemDisplayName` in measures to make the report data human-readable. Default is `false`. | Optional |
+| **showInputValues**     | _boolean_                                   | If set to `true`, then the system includes the input values within the response. <br/> Default to `false`.                         |          | 
 
 # Data model
 
@@ -62,7 +62,7 @@ _Marketing metrics_ consists of these dimensions: Period, Marketing metrics and 
 |-----------------|------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
 | **displayName** | _string_                                                               | "Period"                                                                                                           |
 | **type**        | _string_                                                               | "datespan"                                                                                                         |
-| **items**       | _array_ See [Dimension (index = “0”) items](#dimension-index--0-items) | Returns an array of “Period”. This is driven by the query parameter values. Ordered by latest to earliest periods. |
+| **items**       | _array_<br/> See [Dimension (index = “0”) items](#dimension-index--0-items) | Returns an array of “Period”. This is driven by the query parameter values.<br/> Ordered by latest to earliest periods. |
 
 
 #### Dimension (index = “0”) items
@@ -70,8 +70,8 @@ _Marketing metrics_ consists of these dimensions: Period, Marketing metrics and 
 | **Field**       | Type                                        | Description                                             |
 |-----------------|---------------------------------------------|---------------------------------------------------------|
 | **displayName** | _string_                                    | "Period n"                                              |
-| **start**       | _string_ See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD Date in which the period begins (inclusive). |
-| **end**         | _string_ See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD Date in which the period ends (inclusive).   |
+| **start**       | _string_<br/> See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD <br/> Date in which the period begins (inclusive). |
+| **end**         | _string_<br/> See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD <br/> Date in which the period ends (inclusive).   |
 
 ### Dimension (index = “1”): Marketing metrics
 
@@ -79,7 +79,7 @@ _Marketing metrics_ consists of these dimensions: Period, Marketing metrics and 
 |-----------------|------------------------------------------------------------------------|----------------------------------------|
 | **displayName** | _string_                                                               | "Marketing metrics"                    |
 | **type**        | _string_                                                               | "string"                               |
-| **items**       | _array_ See [Dimension (index = “1”) items](#dimension-index--1-items) | Returns an array of marketing metrics. |
+| **items**       | _array_ <br/> See [Dimension (index = “1”) items](#dimension-index--1-items) | Returns an array of marketing metrics. |
 
 
 #### Dimension (index = “1”) items
@@ -88,7 +88,7 @@ _Marketing metrics_ consists of these dimensions: Period, Marketing metrics and 
 |-----------------|------------------------------------------------------------------------|----------------------------------------|
 | **displayName** | _string_                                                               | "Marketing metrics"                    |
 | **type**        | _string_                                                               | "string"                               |
-| **items**       | _array_ See [Dimension (index = “1”) items](#dimension-index--1-items) | Returns an array of marketing metrics. |
+| **items**       | _array_ <br/> See [Dimension (index = “1”) items](#dimension-index--1-items) | Returns an array of marketing metrics. |
 
 ### Dimension (index = "2"): Metric inputs
 
@@ -98,12 +98,12 @@ This displays when the `showInputValues` is set to 'true'.
 |-----------------|--------------------------------------------------------------------|-----------------|
 | **displayName** | _string_                                                           | "Metric inputs" |
 | **type**        | _string_                                                           | "string"        |
-| **items**       | _array_ [Dimension (index = “2”) items](#dimension-index--2-items) |                 |
+| **items**       | _array_ <br/> [Dimension (index = “2”) items](#dimension-index--2-items) |                 |
 
 #### Dimension (index = "2") items
 | **Field** | Type   | Description                                                                                                                                        |
 |-----------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| **value** | string | "Operating income" or "Operating expense" or "Marketing expense". This shows when `showInputValues` is set to true in the user's query parameters. | 
+| **value** | string | _"Operating income"_ or _"Operating expense"_ or _"Marketing expense"_. <br/>  This shows when `showInputValues` is set to true in the user's query parameters. | 
 
 ## Measures
 
@@ -156,9 +156,9 @@ Components are nested within each other as below (grouped by dimension (index =�
 | **Field**                | Type                                                  | Description                                    |
 |--------------------------|-------------------------------------------------------|------------------------------------------------|
 | **dimension**            | _number_                                              | Index 1 and 2, see dimensions.                 |
-| **dimensionDisplayName** | _string_                                              | Shows when includeDisplayNames is set to true. |
+| **dimensionDisplayName** | _string_                                              | Shows when `includeDisplayNames` is set to true. |
 | **item**                 | _number_                                              |                                                |
-| **itemDisplayName**      | _string_                                              | Shows when includeDisplayNames is set to true. |
+| **itemDisplayName**      | _string_                                              | Shows when `includeDisplayNames` is set to true. |
 | **measures**             | See [Measures in components](#measures-in-components) |                                                |
 
 All components have the structure described in the _Measures in components_ data model below.
@@ -176,7 +176,7 @@ All components have the structure described in the _Measures in components_ data
 
 | **Field**              | Type     | Description                                                                                            |
 |------------------------|----------|--------------------------------------------------------------------------------------------------------|
-| **measureDisplayName** | _string_ | “Percentage change" If the system can't calculate the percentage change, this object will not display. |
+| **measureDisplayName** | _string_ | “Percentage change" <br/> If the system can't calculate the percentage change, this object will not display. |
 | **value**              | _string_ | "%"                                                                                                    |
 
 **Index "2" (value)**
@@ -186,7 +186,7 @@ All components have the structure described in the _Measures in components_ data
 | **measureDisplayName** | _string_ | "Value"     |
 | **value**              | _number_ |             |
 
-#Example data
+# Example data
 
 ```
 {

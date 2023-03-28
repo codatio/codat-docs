@@ -5,7 +5,7 @@ createdAt: "2022-11-03T17:07:23.438Z"
 updatedAt: "2022-12-19T09:48:25.358Z"
 ---
 
-:::info
+:::info Categorization engine
 The categorization engine uses machine learning and has been fully trained against Plaid and TrueLayer banking data sources. It is not fully trained against the Basiq banking data source.
 :::
 
@@ -21,7 +21,7 @@ The endpoint is available in our <a href="/assess-api#/operations/get-companies-
 |----|----|----|----|
 |**page**|_integer_|Default is 1.|Optional|
 |**pageSize**|_integer_|Maximum integer allowed is 5,000. Default is 100.|Optional|
-|**query**|_string_|_Start_ and _end dates_ can be set based on `postedDate`. The default for `postedDate` is the latest data against the available transactions. Start and end dates can be passed through the query string.|Optional|
+|**query**|_string_|_Start_ and _end dates_ can be set based on `postedDate`. <br/> The default for `postedDate` is the latest data against the available transactions. <br/> Start and end dates can be passed through the query string.|Optional|
 
 ## Data model
 
@@ -81,7 +81,7 @@ The response structure is split into three areas: Report info, Data sources and 
 
 |Field|Type|Description|
 |----|----|----|
-|**levels**|_array_|An array of category levels against an individual transaction. For example: "Income", "Revenue", "Subscription", "SubscriptionUpgrade".|  
+|**levels**|_array_|An array of category levels against an individual transaction. For example: `Income`, `Revenue`, `Subscription`, `SubscriptionUpgrade`.|  
 
 ### Example data
 

@@ -1,32 +1,32 @@
 ---
 title: "Assess reporting structure"
-description: "Assess reporting structure"
+description: "Review the structure in which Assess reports are organized""
 createdAt: "2022-03-10T17:21:44.288Z"
 updatedAt: "2022-11-02T14:47:11.407Z"
 ---
 
 Assess reports follow a consistent structure. Reports contain four sections of information:
 
-1. Report definition information such as:
-   a. The report info (e.g. enhanced_profit_and_loss).
+1. Report definition information such as:  
+   a. The report info (e.g. enhanced_profit_and_loss).  
    b. The display name of the report (e.g. Enhanced Profit and Loss).
-2. Information about the dimension contained in the reports such as:
-   a. The type of dimension (e.g. datetime, recordRef).
-   b. The display name of the dimension (e.g. Period, Category type, Category sub type).
+2. Information about the dimension contained in the reports such as:  
+   a. The type of dimension (e.g. datetime, recordRef).  
+   b. The display name of the dimension (e.g. Period, Category type, Category sub type).  
    c. The details about each item within the dimension (e.g. displayName:"Jan 2022", start:"...", end:"...", id:"...", name:"...").
-3. Information about the measures contained in the report such as:
-   a. The display name of the measure (e.g. value of account, percentage change).
-   b. The type of the measure (e.g. currency, percentage).
-   c. The unit of the measure (e.g. %, GBP).
+3. Information about the measures contained in the report such as:  
+   a. The display name of the measure (e.g. value of account, percentage change).  
+   b. The type of the measure (e.g. currency, percentage).  
+   c. The unit of the measure (e.g. %, GBP).  
 4. The data for the report. When the _includeDisplayName_ parameter is set to _true_, it shows the _dimensionDisplayName_ and _itemDisplayName_ to make the data human-readable. The default setting for _includeDisplayName_ is _false_.
 
 Reports can be rendered as follows (ordering is implicit rather than explicit):
 
 ![A table showing an example of how a report can be rendered](/img/old/1fa20ca-Report1.png)
 
-# Data model
+## Data model
 
-## Dimensions
+### Dimensions
 
 ```
     "dimensions": [{
@@ -111,7 +111,7 @@ Reports can be rendered as follows (ordering is implicit rather than explicit):
   }],
 ```
 
-## Report data
+### Report data
 
 ```
     "data": [{
