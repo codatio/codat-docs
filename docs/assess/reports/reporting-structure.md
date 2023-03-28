@@ -1,6 +1,6 @@
 ---
 title: "Assess reporting structure"
-description: "Review the structure in which Assess reports are organized""
+description: "Review the structure in which Assess reports are organized"
 createdAt: "2022-03-10T17:21:44.288Z"
 updatedAt: "2022-11-02T14:47:11.407Z"
 ---
