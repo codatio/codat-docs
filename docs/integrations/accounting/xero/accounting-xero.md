@@ -13,7 +13,7 @@ For more details about the supported data types and operations, see [Xero FAQs](
 
 ## Xero App Partnership
 
-If you want to have more than 25 Xero connections, you'll need to join the Xero App Partner Program. For help and guidance, see [Joining the Xero App Partner Program](/integrations/accounting/xero/xero-app-partner-program) and [Xero App Partner guidance by use case](/integrations/accounting/xero/accounting-xero-app-partner-guidance).
+If you want to have more than 25 Xero connections, you'll need to join the **Xero App Partner Program**. For help with the application process, see [Joining the Xero App Partner Program](/integrations/accounting/xero/xero-app-partner-program) and [Xero App Partner guidance by use case](/integrations/accounting/xero/accounting-xero-app-partner-guidance).
 
 ## Set up the integration
 

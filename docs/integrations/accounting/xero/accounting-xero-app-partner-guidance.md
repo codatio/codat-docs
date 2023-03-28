@@ -20,12 +20,7 @@ Note that Xero App Partnership is not possible for every use case.
 
 ## Financial Services App Partners
 
-There are several subcategories within Financial Services; follow the guidance for your specific use case. 
-
-<details>
-  <summary>Sync status codes</summary>
-Text goes here
-</details>
+There are several subcategories within Financial Services; follow the guidance for your specific use case.
 
 You are required to obtain Xero's written consent for each Financial Services use case that you implement.
 
@@ -116,7 +111,7 @@ Currently, Xero does not permit App Partnership for FX hedging, Investments, and
 
 ## Xero App Store Partners
 
-To become an Ecosystem App Partner you need to:
+To become an App Store Partner you need to:
 
 - Create a Commercial Agreement with Xero.
 - Comply with the relevant Certification Checkpoints.

@@ -84,7 +84,7 @@ The application name must reflect the go-to-market name of your app or product a
 
 ### 2. Branding
 
-Where possible, use the “connect” and “disconnect” buttons provided on[ Xero's branding page](https://developer.xero.com/documentation/guides/how-to-guides/branding-your-integration/). As part of Codat's Link follow the "connect" button is already supported.
+Where possible, use the “connect” and “disconnect” buttons provided on[ Xero's branding page](https://developer.xero.com/documentation/guides/how-to-guides/branding-your-integration/). As part of Codat's Link flow, the "connect" button is already supported.
 
 Check that you are following the [Xero app partner branding guidelines](https://developer.xero.com/static/otherfiles/xero-app-partner-brand-guidelines.pdf) and note you shouldn’t distort Xero’s logo.
 
