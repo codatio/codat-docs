@@ -20,6 +20,7 @@ It takes the match percentage from the summaries endpoint for both `banking-tran
 Hovering over the button reveals further detail about the data match. Clicking the **Data match** button takes you to the **Data Integrity** page which provides detailed information about matches. Explore [Data Integrity](/assess/data-integrity).
 
 **Reports**
+
 The **Reports** button is located in the top right corner of every Assess page and directs you to the [Reports](#reports) page in the Portal where you can generate and download the Audit report in Excel format.
 
 ## Assess sections
@@ -48,15 +49,16 @@ The Profit and Loss page is the landing page when accessing Assess. The page con
 
 Select the **Period start**, **Period length** and **Periods to compare** to achieve the views you want. For example:
 
-**If you want a monthly view of the last 12 months**
-Period start = latest month (prepopulated for you)
-Period length = 1 (month)
+**If you want a monthly view of the last 12 months:**  
+
+Period start = latest month (prepopulated for you)  
+Period length = 1 (month)  
 Periods to compare = 12
 
-**If you want to view the last 4 full quarters**
-Period start = choose the last month of the last quarter you want to choose, e.g. June 2022
-Period length = 3
-Periods to compare = 4
+**If you want to view the last 4 full quarters:**  
+Period start = choose the last month of the last quarter you want to choose, e.g. June 2022  
+Period length = 3  
+Periods to compare = 4  
 
 ### Mapping to a common statement outline
 
@@ -121,15 +123,15 @@ The **Data match** percentage displayed in the top right is a comparison of how 
 
 Select the **Period start**, **Period length** and **Periods to compare** to achieve the views you want. For example:
 
-**If you want a monthly view of the last 12 months**
-Period start = latest month (prepopulated for you)
-Period length = 1 (month)
-Periods to compare = 12
+**If you want a monthly view of the last 12 months**  
+Period start = latest month (prepopulated for you)  
+Period length = 1 (month)  
+Periods to compare = 12  
 
-**If you want to view the last 4 full quarters**
-Period start = choose the last month of the last quarter you want to choose, e.g. June 2022
-Period length = 3
-Periods to compare = 4
+**If you want to view the last 4 full quarters**  
+Period start = choose the last month of the last quarter you want to choose, e.g. June 2022  
+Period length = 3  
+Periods to compare = 4  
 
 ### Balance Sheet statement and graph
 
@@ -236,7 +238,7 @@ The transaction table displays below the _Inflows vs outflows_ graph and contain
 #### Exclude transactions
 
 :::info Unavailable for Plaid
-The filter and exclude functionality is currently unavailable for Plaid-connected companies. This will be available soon.
+The filter and exclude functionality is currently unavailable for Plaid-connected companies.
 :::
 
 You can type into a search bar located above the table to find matches in the _Description_ column. As you type, the table refreshes with all transactions that match the search term. In the search bar, to the right, the number of matching transactions is displayed in grey and the _Exclude all_ button becomes active.
@@ -271,15 +273,15 @@ The dismissible banner displayed at the top of the _Marketing_ page invites you 
 
 Select the **Period start**, **Period length** and **Periods to compare** to achieve the views you want. For example:
 
-**If you want a monthly view of the last 12 months**
-Period start = latest month (prepopulated for you)
-Period length = 1 (month)
-Periods to compare = 12
+**If you want a monthly view of the last 12 months**  
+Period start = latest month (prepopulated for you)  
+Period length = 1 (month)  
+Periods to compare = 12  
 
-**If you want to view the last 4 full quarters**
-Period start = choose the last month of the last quarter you want to choose, e.g. June 2022
-Period length = 3
-Periods to compare = 4
+**If you want to view the last 4 full quarters**  
+Period start = choose the last month of the last quarter you want to choose, e.g. June 2022  
+Period length = 3  
+Periods to compare = 4  
 
 ### Marketing data and graph
 

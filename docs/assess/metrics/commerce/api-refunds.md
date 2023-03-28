@@ -37,7 +37,7 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 
 | **Parameter**           | Type                                        | Description                                                                                                                  | Required |
 |-------------------------|---------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|----------|
-| **reportDate**          | _string_ See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD Datetime or Date (inclusive of the whole day).                                                                    | Required |
+| **reportDate**          | _string_ <br/> See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD <br/> Datetime or Date (inclusive of the whole day).                                                                    | Required |
 | **periodUnit**          | _string_                                    | The period unit of time returned, and it can be: “Day”, “Week”, “Month”, “Year”.                                             | Required |
 | **periodLength**        | _integer_                                   | Based on the period unit provided. It must be positive, not zero and an integer.                                             | Required |
 | **numberOfPeriods**     | _integer_                                   | The number of periods to return. It must be positive, not zero and an integer.                                               | Required |
@@ -59,25 +59,20 @@ The response structure is split into four areas: Report info, Dimensions, Measur
 _Refunds_ consists of these dimensions: Period and Refund metrics.
 
 ### Dimension (index = “0”): Period
-| **Field**       | Type                                        | Description                                             |
-|-----------------|---------------------------------------------|---------------------------------------------------------|
-| **displayName** | _string_                                    | "Period n"                                              |
-| **start**       | _string_ See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD Date in which the period begins (inclusive). |
-| **end**         | _string_ See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD Date in which the period ends (inclusive).   |
 
 |Field|Type|Description|
 |----|----|----|
 |**displayName**|_string_|"Period"|
 |**type**|_string_|"datespan"|
-|**items**|_array_, See [Dimension (index = "0") items](#dimension-index--0-items)|Returns an array of "Period". This is driven by the query parameter values.Ordered by latest to earliest periods.|
+|**items**|_array_, <br/> See [Dimension (index = "0") items](#dimension-index--0-items)|Returns an array of "Period". This is driven by the query parameter values. <br/> Ordered by latest to earliest periods.|
 
 #### Dimension (index = “0”) items
 
 |Field|Type|Description|
 |----|----|----|
 |**displayName**|_string_|"Period n"|
-|**start**|_string_, See [Date](/codat-api#/schemas/DateTime)|YYYY-MM-DDDate in which the period begins (inclusive).|
-|**end**|_string_, See [Date](/codat-api#/schemas/DateTime)|YYYY-MM-DDDate in which the period ends (inclusive).|
+|**start**|_string_, <br/> See [Date](/codat-api#/schemas/DateTime)|YYYY-MM-DD, date in which the period begins (inclusive).|
+|**end**|_string_, <br/> See [Date](/codat-api#/schemas/DateTime)|YYYY-MM-DD, date in which the period ends (inclusive).|
 
 ### Dimension (index = “1”): Refund metrics
 
@@ -85,7 +80,7 @@ _Refunds_ consists of these dimensions: Period and Refund metrics.
 |----|----|----|
 |**displayName**|_string_|"Refund metrics"|
 |**type**|_string_|"string"|
-|**items**|_array_, See [Dimension (index = "1") items](#dimension-index--1-items)|Returns an array of refund metrics.|
+|**items**|_array_ <br/> See [Dimension (index = "1") items](#dimension-index--1-items)|Returns an array of refund metrics.|
 
 
 #### Dimension (index = “1”) items
@@ -93,7 +88,7 @@ _Refunds_ consists of these dimensions: Period and Refund metrics.
 
 |Field|Type|Description|
 |----|----|----|
-|**value**|_string_|Number of refunds, Value of refunds or Refund rate. These will always show for any response in this report. The dimension values are not dependent on the user's query parameters.|
+|**value**|_string_|Number of refunds, Value of refunds or Refund rate. <br/> These will always show for any response in this report. The dimension values are not dependent on the user's query parameters.|
 
 
 

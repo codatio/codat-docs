@@ -36,11 +36,11 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 
 | **Parameter**           | Type                                         | Description                                                                                                                   | Required |
 |-------------------------|----------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|----------|
-| **reportDate**          | _string_, See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD, Datetime or Date (inclusive of the whole day).                                                                    | Required |
+| **reportDate**          | _string_, <br/> See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD, <br/> Datetime or Date (inclusive of the whole day).                                                                    | Required |
 | **periodUnit**          | _string_                                     | The period unit of time returned, and it can be: “Day”, “Week”, “Month”, “Year”.                                              | Required |
 | **periodLength**        | _integer_                                    | Based on the period unit provided. It must be positive, not zero and an integer.                                              | Required |
 | **numberOfPeriods**     | _integer_                                    | The number of periods to return. It must be positive, not zero and an integer.                                                | Required |
-| **includeDisplayNames** | _boolean_                                    | Shows the _dimensionDisplayName_ and _itemDisplayName_ in measures to make the report data human-readable. Default is false.  | Optional |
+| **includeDisplayNames** | _boolean_                                    | Shows the _dimensionDisplayName_ and _itemDisplayName_ in measures to make the report data human-readable. <br/> Default is false.  | Optional |
 
 # Data model
 
@@ -64,7 +64,7 @@ _Revenue_ consists of these dimensions: Period and Revenue.
 |----|----|----|
 |**displayName**|_string_|"Period"|
 |**type**|_string_|"datespan"|
-|**items**|_array_, See [Dimension (index = "0") items](#dimension-index--0-items)|Returns an array of "Period". This is driven by the query parameter values.Ordered by latest to earliest periods.|
+|**items**|_array_, <br/> See [Dimension (index = "0") items](#dimension-index--0-items)|Returns an array of "Period". This is driven by the query parameter values. <br/> Ordered by latest to earliest periods.|
 
 
 
@@ -73,8 +73,8 @@ _Revenue_ consists of these dimensions: Period and Revenue.
 |Field|Type|Description|
 |----|----|----|
 |**displayName**|_string_|"Period n"|
-|**start**|_string_, See [Date](/codat-api#/schemas/DateTime)|YYYY-MM-DDDate in which the period begins (inclusive).|
-|**end**|_string_, See [Date](/codat-api#/schemas/DateTime)|YYYY-MM-DDDate in which the period ends (inclusive).|
+|**start**|_string_, <br/> See [Date](/codat-api#/schemas/DateTime)|YYYY-MM-DD <br/> Date in which the period begins (inclusive).|
+|**end**|_string_, <br/> See [Date](/codat-api#/schemas/DateTime)|YYYY-MM-DD <br/> Date in which the period ends (inclusive).|
 
 ### Dimension (index = “1”): Revenue
 
@@ -82,13 +82,13 @@ _Revenue_ consists of these dimensions: Period and Revenue.
 |----|----|----|
 |**displayName**|_string_|"Revenue"|
 |**type**|_string_|"string"|
-|**items**|_array_, See [Dimension (index = "1") items](#dimension-index--1-items)|Returns an array of revenue metrics.|
+|**items**|_array_, <br/> See [Dimension (index = "1") items](#dimension-index--1-items)|Returns an array of revenue metrics.|
 
 #### Dimension (index = “1”) items
 
 |Field|Type|Description|
 |----|----|----|
-|**value**|_string_|Revenue value or Revenue growth. These will always show for any response in this report. The dimension values are not dependent on the user's query parameters.|
+|**value**|_string_|_Revenue value_ or _Revenue growth_. <br/> These will always show for any response in this report. The dimension values are not dependent on the user's query parameters.|
 
 ## Measures
 
@@ -152,10 +152,10 @@ All components have the structure described in the _Measures in components_ data
 
 |Field|Type|Description|
 |----|----|----|
-|**measureDisplayName**|_string_|"Percentage change vs previous period". If the system can't calculate the percentage change, this object will not display.|
+|**measureDisplayName**|_string_|"Percentage change vs previous period". <br/> If the system can't calculate the percentage change, this object will not display.|
 |**value**|_string_|"%"|
 
-#Example data
+# Example data
 
 ```
 {
