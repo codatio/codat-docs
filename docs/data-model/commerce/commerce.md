@@ -8,7 +8,10 @@ updatedAt: "2022-11-23T14:24:21.457Z"
 
 import DataTypes from '@components/global/DataTypes'
 
-The data model for commerce data sources includes all the data types that you can pull, or retrieve, from the Codat API.
+The data model for commerce data sources includes all the accounting and banking data types that you can:
+
+- Get from the Codat API
+- Create, update, and delete from a given accounting platform
 
 ## Supported data types
 

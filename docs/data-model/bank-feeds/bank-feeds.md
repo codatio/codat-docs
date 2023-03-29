@@ -8,7 +8,7 @@ updatedAt: "2022-11-23T14:23:56.353Z"
 
 import DataTypes from '@components/global/DataTypes'
 
-Bank feeds uses the same underlying models as Accounting API, but with minor differences to what fields are used and required. The data model for accounting data sources includes all the accounting and banking data types that you can either:
+Bank feeds uses the same underlying models as Accounting API, but with minor differences in what fields are used and required. The data model for accounting data sources includes all the accounting and banking data types that you can:
 
 - Get from the Codat API
 - Create, update, and delete from a given accounting platform

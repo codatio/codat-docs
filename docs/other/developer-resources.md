@@ -34,9 +34,3 @@ Examples of what you can do with Codat with code you can use in your app.
 Minimal code to quickly start building something with Codat.
 
 - **[Next.js starter](https://github.com/codatio/starter-project-nextjs-codat)** - You're 5 minutes away from your first Codat API call with this simple Next.js app starter
-
-## Demo apps
-
-Examples of user experiences you can build with Codat. Inspiration only - this is opinionated code you should not use in your own app.
-
-- **[Digital lending auth flow demo](https://github.com/codatio/demo-auth-flow)** - See how Codat's auth flow might fit into an indicative digital lending website
