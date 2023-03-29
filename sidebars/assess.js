@@ -79,8 +79,8 @@ module.exports = [
         collapsed: true,
         items: [
           "assess/reports/excel-reports/excel-reports",
+          "assess/reports/excel-reports/assess-report",
           "assess/reports/excel-reports/audit-report",
-          "assess/reports/excel-reports/enhanced-financials",
         ],
       },
     ],

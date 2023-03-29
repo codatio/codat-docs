@@ -19,7 +19,7 @@ Only one request will be processed at a time per SMB company and per report type
 ## Available report types
 
 - [Audit Report](/assess/reports/excel-reports/audit-report)
-- [Enhanced Financials](/assess/reports/excel-reports/enhanced-financials)
+- [Assess Report](/assess/reports/excel-reports/assess-report)
 
 ## Parameters
 
