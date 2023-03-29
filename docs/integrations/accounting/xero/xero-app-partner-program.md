@@ -15,7 +15,7 @@ Becoming a certified Xero App Partner brings the following benefits:
 
 To join the program, there are a series of requirements your integration must first satisfy. There are also some additional use case-specific requirements, as explained in [Xero App Partner guidance by use case](/integrations/accounting/xero/accounting-xero-app-partner-guidance).
 
-We've broken down the requirements you need to action based on the [Xero Certification Checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/#required-for-all-integrations). During your App Partner Program application, you may use the answers on this page to facilitate your application. [We take care of a number of checkpoints for you](/integrations/accounting/xero/xero-app-partner-program#we-take-care-of).
+We've broken down the requirements you need to action based on the [Xero Certification Checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/#required-for-all-integrations). You can use the answers on this page to help with your App Partner Program application. [We take care of a number of checkpoints for you](/integrations/accounting/xero/xero-app-partner-program#we-take-care-of).
 
 :::caution Use cases
 
