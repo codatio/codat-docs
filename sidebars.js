@@ -22,7 +22,6 @@ module.exports = {
     {
       type: "category",
       label: "Getting started",
-      //label: '_getStarted',
       collapsed: true,
       className: "top-level-item introduction",
       items: [
@@ -39,7 +38,6 @@ module.exports = {
     {
       type: "category",
       label: "Core concepts",
-      //label: '_concepts',
       collapsed: true,
       className: "top-level-item core",
       items: [
@@ -59,7 +57,6 @@ module.exports = {
     {
       type: "category",
       label: "Using our API",
-      //label: '_api',
       collapsed: true,
       className: "top-level-item api",
       items: [
@@ -111,18 +108,17 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Authorization flow",
-      //label: '_authFlow',
-      collapsed: true,
-      className: "top-level-item auth",
-      items: authFlow,
-    },
-    {
-      type: "category",
       label: "Data model",
       collapsed: true,
       className: "top-level-item data",
       items: dataModel,
+    },
+    {
+      type: "category",
+      label: "Authorization flow",
+      collapsed: true,
+      className: "top-level-item auth",
+      items: authFlow,
     },
     {
       type: "category",

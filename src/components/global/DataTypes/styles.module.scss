@@ -34,6 +34,16 @@
   padding: 1em;
   border-radius: 8px;
   
+  div {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+    a + p {
+      margin-left: 5px;
+      opacity: 0.8;
+    }
+  }
+
   a {
     text-decoration: none;
   }
