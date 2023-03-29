@@ -14,7 +14,7 @@ For Customer Retention, these are the dimensions and measures:
 **Dimensions**
 
 - Period
-- Customer retention metrics
+- Customer retention metrics  
   This contains the following items:
   - **Existing customers:** the number of unique customers where they have placed an order(s) in the specified period AND any previous period.
   - **New customers:** the number of unique customers where they have placed an order(s) in the specified period AND NONE in any previous period.
@@ -44,11 +44,11 @@ GET /data/companies/{companyId}/connections/{connectionId}/assess/commerceMetric
 
 | **Parameter**           | Type                                         | Description                                                                                                               | Required |
 |-------------------------|----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|----------|
-| **reportDate**          | _string_, See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD, Datetime or Date (inclusive of the whole day).                                                                | Required |
+| **reportDate**          | _string_ <br/> See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD <br/> Datetime or Date (inclusive of the whole day).                                                                | Required |
 | **periodUnit**          | _string_                                     | The period unit of time returned, and it can be: “Day”, “Week”, “Month”, “Year”.                                          | Required |
 | **periodLength**        | _integer_                                    | Based on the period unit provided. It must be positive, not zero and an integer.                                          | Required |
 | **numberOfPeriods**     | _integer_                                    | The number of periods to return. It must be positive, not zero and an integer.                                            | Required |
-| **includeDisplayNames** | _boolean_                                    | Shows the dimensionDisplayName and itemDisplayName in measures to make the report data human-readable. Default is false.  | Optional |
+| **includeDisplayNames** | _boolean_                                    | Shows the dimensionDisplayName and itemDisplayName in measures to make the report data human-readable. <br/> Default is false.  | Optional |
 
 # Data model
 
@@ -71,15 +71,15 @@ _Customer retention_ consists of these dimensions: Period and Customer retention
 |-----------------|-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
 | **displayName** | _string_                                                                | "Period"                                                                                                           |
 | **type**        | _string_                                                                | "datespan"                                                                                                         |
-| **items**       | _array_, See [Dimension (index = “0”) items](#dimension-index--0-items) | Returns an array of “Period”. This is driven by the query parameter values. Ordered by latest to earliest periods. |
+| **items**       | _array_ <br/> See [Dimension (index = “0”) items](#dimension-index--0-items) | Returns an array of “Period”. This is driven by the query parameter values. <br/> Ordered by latest to earliest periods. |
 
 #### Dimension (index = “0”) items
 
 | **Field**       | Type                                          | Description                                              |
 |-----------------|-----------------------------------------------|----------------------------------------------------------|
 | **displayName** | _string_                                      | "Period n"                                               |
-| **start**       | _string_, See [Date](/codat-api#/schemas/DateTime)  | YYYY-MM-DD, Date in which the period begins (inclusive). |
-| **end**         | _string_, See [Date](/codat-api#/schemas/DateTime)  | YYYY-MM-DD, Date in which the period ends (inclusive).   |
+| **start**       | _string_ <br/> See [Date](/codat-api#/schemas/DateTime)  | YYYY-MM-DD <br/> Date in which the period begins (inclusive). |
+| **end**         | _string_ <br/> See [Date](/codat-api#/schemas/DateTime)  | YYYY-MM-DD <br/> Date in which the period ends (inclusive).   |
 
 ### Dimension (index = “1”): Customer retention metrics
 
@@ -87,13 +87,13 @@ _Customer retention_ consists of these dimensions: Period and Customer retention
 |-----------------|--------------------------------------------------------------------------|-------------------------------------------------|
 | **displayName** | _string_                                                                 | "Customer retention metrics"                    |
 | **type**        | _string_                                                                 | "string"                                        |
-| **items**       | _array_ , See [Dimension (index = “1”) items](#dimension-index--1-items) | Returns an array of customer retention metrics. |  
+| **items**       | _array_ <br/> See [Dimension (index = “1”) items](#dimension-index--1-items) | Returns an array of customer retention metrics. |  
 
 #### Dimension (index = “1”) items
 
 | **Field** | Type     | Description                                                                                                                                                                                                                 |
 |-----------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **value** | _string_ | “Existing customers”, “New customers”, "Total customers", "Retention rate" or "Repeat rate". These will always show for any response in this report. The dimension values are not dependent on the user’s query parameters. |
+| **value** | _string_ | “Existing customers”, “New customers”, "Total customers", "Retention rate", or "Repeat rate". <br/> These will always show for any response in this report. The dimension values are not dependent on the user’s query parameters. |
 
 
 ## Measures

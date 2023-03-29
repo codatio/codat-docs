@@ -19,7 +19,7 @@ See [Set up the MYOB integration](/integrations/accounting/myob/accounting-myob-
 
 :::info MYOB AccountRight or Essentials?
 
-MYOB have migrated their Essentials API to a new version. The new version will be using the AccountRight API. You can read more about the update on <a className="external" href="https://developer.myob.com/api/essentials-accounting/" target="_blank">MYOB website</a>.
+MYOB have migrated their Essentials API to a new version. The new version will be using the AccountRight API. You can read more about the update in the [MYOB developer centre](https://developer.myob.com/api/myob-business-api/api-overview/getting-started/).
 
 The new Essentials will use the same API as their AccountRight Live platform. Therefore, you only need to carry out the setup described below once to gain access to both accounting packages.
 

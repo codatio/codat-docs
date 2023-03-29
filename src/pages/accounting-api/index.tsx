@@ -5,7 +5,7 @@ const URL = "https://raw.githubusercontent.com/codatio/oas/main/json/Codat-Accou
 
 const AccountingApi = () => {
   return (
-    <Api url={URL}/>
+    <Api url={URL} title="Accounting API reference"/>
   );
 }
 

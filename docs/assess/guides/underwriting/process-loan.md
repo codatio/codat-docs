@@ -28,7 +28,7 @@ This diagram shows the steps of the underwriting process as performed by the dem
     backend ->> backend: Underwrite loan
     backend ->> frontend: Application outcome
 ```  
-You can also review the detailed technical [diagram](https://github.com/codatio/build-guide-underwriting-be#implementing-the-solution) of the flow that the demo app follows.
+You can also review the detailed technical [diagram](https://github.com/codatio/demo-loan-qualification#implementing-the-solution) of the flow that the demo app follows.
 :::  
 
 ### <input type="checkbox" unchecked /> Start a new loan application  
@@ -104,7 +104,7 @@ This takes you to the **Account categorization** page which displays the uncateg
 🙏🏽💰 The decisioning is normally performed by the lender, but the borrower is able to query an application's status at any point.
 
 The demo app now has all the components that it needs to produce an underwriting decision. The decision is automatically made by the 
-[LoanUnderwriter](https://github.com/codatio/build-guide-underwriting-be/blob/main/Codat.Demos.Underwriting.Api/Services/LoanUnderwriter.cs) service based on thresholds that need to be passed by the applicant. We then update the loan application with a relevant status to indicate the decision made on the loan, or any errors that occurred in the process. You can poll the `GET applications/{applicationId}` endpoint in [Swagger](http://localhost:5069/swagger/index.html) anytime to check the status of your loan. 
+[LoanUnderwriter](https://github.com/codatio/demo-loan-qualification/blob/main/Codat.Demos.Underwriting.Api/Services/LoanUnderwriter.cs) service based on thresholds that need to be passed by the applicant. We then update the loan application with a relevant status to indicate the decision made on the loan, or any errors that occurred in the process. You can poll the `GET applications/{applicationId}` endpoint in [Swagger](http://localhost:5069/swagger/index.html) anytime to check the status of your loan. 
 
 ### 💪 Ready for more? 
 

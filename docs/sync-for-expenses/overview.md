@@ -12,26 +12,21 @@ tags: [overview, syncforexpense]
 import {IntegrationsList} from '@components/global/Integrations'
 import {sfeIntegrations} from '@components/global/Integrations/integrations'
 
-
 <Head>
   <meta property="og:image" content="/img/sync-for-expenses/sfe-banner.png"/>
 </Head>
 
-<div className="background-video-wrapper sfe">
-  <div className="banner-video">
-    <h1>Sync for Expenses</h1>
-    <p>
-      Embedded accounting integrations for corporate card providers
-    </p>
-  </div>
-</div>
+import PageHeader from "@components/global/PageHeader";
 
-<div className="background-video-spacer sfe">
-  <h1>Sync for Expenses</h1>
+<PageHeader 
+  className="sfe"
+  title="Sync for Expenses"
+  icon="/logos/products/SyncforExpenses.svg"
+>
   <p>
     Embedded accounting integrations for corporate card providers
   </p>
-</div>
+</PageHeader>
 
 ![An image from the static](/img/sync-for-expenses/sfe-banner.png)
 

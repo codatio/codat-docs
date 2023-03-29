@@ -13,7 +13,7 @@ description: "Reference page with details on our decisioning logic, fetching dat
 
 Each lender usually has their own set of data points they use to review an application. 
 
-The underwriting model we use as our example in the [LoanUnderwriter](https://github.com/codatio/build-guide-underwriting-be/blob/main/Codat.Demos.Underwriting.Api/Services/LoanUnderwriter.cs) service is a rules-based model that requires certain thresholds to be passed for **gross profit margin**, **revenue**, and **gearing ratio**. The threshold values for these data points are maintained in `appsettings.json`.
+The underwriting model we use as our example in the [LoanUnderwriter](https://github.com/codatio/demo-loan-qualification/blob/main/Codat.Demos.Underwriting.Api/Services/LoanUnderwriter.cs) service is a rules-based model that requires certain thresholds to be passed for **gross profit margin**, **revenue**, and **gearing ratio**. The threshold values for these data points are maintained in `appsettings.json`.
 
 It also requires validated application details and the company's fully categorized accounts.
 
@@ -58,13 +58,13 @@ GET https://api.codat.io/data/companies/{companyId}/connections/{connectionId}/a
 
 Both endpoints require a `reportDate`, `periodLength`, and `numberOfPeriods` as query parameters. The loan application's `createdDate` is used where the year and previous month are set as the `reportDate`. This ensures that a full year of financial data is returned by Codat. In addition, `includeDisplayNames` parameter is set to `true` in the request because it allows accounts to be accessed via Codat's standardized taxonomy display names.
 
-Once both enhanced data types have been fetched, they are passed to the [LoanUnderwriter]https://github.com/codatio/build-guide-underwriting-be/blob/main/Codat.Demos.Underwriting.Api/Services/LoanUnderwriter.cs) service together with the application's loan amount and term length. This is to perform an assessment of the prospective borrower's creditworthiness and make a decision on their application.
+Once both enhanced data types have been fetched, they are passed to the [LoanUnderwriter](https://github.com/codatio/demo-loan-qualification/blob/main/Codat.Demos.Underwriting.Api/Services/LoanUnderwriter.cs) service together with the application's loan amount and term length. This is to perform an assessment of the prospective borrower's creditworthiness and make a decision on their application.
 
 ### <input type="checkbox" unchecked/> Understand how we generate an automatic decision
 
 Once the demo app fetches the data, it uses the results to calculate the data points we use in our underwriting model: gross profit margin, revenue, and gearing ratio. In the underwriting industry, there are other models and data points that can be used to make a decision. The selection depends on the needs of your business. 
 
-The [LoanUnderwriter](https://github.com/codatio/build-guide-underwriting-be/blob/main/Codat.Demos.Underwriting.Api/Services/LoanUnderwriter.cs) service then checks how these values compare to the thresholds set in the app: 
+The [LoanUnderwriter](https://github.com/codatio/demo-loan-qualification/blob/main/Codat.Demos.Underwriting.Api/Services/LoanUnderwriter.cs) service then checks how these values compare to the thresholds set in the app: 
 
 1. Gross profit margin must be more than `MinGrossProfitMargin` threshold set to 0.4,
 2. Revenue must exceed the `RevenueThreshold` set to 0.3, and
@@ -81,6 +81,8 @@ Only if all the thresholds are met or surpassed by the applicant, the app update
 💸 Lenders also use Assess to understand a business' liquidity via the [enhanced cash flow report](/assess/reports/enhanced-cash-flow-report/overview), or whether a business' accounts are accurate using both [data integrity](/assess/data-integrity) and the [audit report](/assess/reports/audit-report).
 
 🧠 See what else [Codat recommends](https://www.codat.io/blog/how-to-underwrite-ecommerce-merchants-effectively/) to build your underwriting process effectively. 
+
+🗣️ Anything unclear in this guide? Got feedback? We're working on a whole host of new content for you, so [let us know](https://github.com/orgs/codatio/discussions/new?category=general).
 
 ### Recap
 

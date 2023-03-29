@@ -6,14 +6,6 @@ description: "A practical introduction to Codat's Portal and API"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-:::info Welcome to our new docs!
-
-They are in beta, so you may find some snags in our content.
-
-You can contribute to them <a href="https://github.com/codatio/codat-docs" target="_blank">here</a>, or see the old ones <a href="https://codat.readme.io/docs">here</a>.
-
-:::
-
 :::note Prerequisites
 
 You need an account and its API key to start with Codat. You can <a href="https://signup.codat.io/" target="_blank">sign up</a> for an account for free, or <a href="/introduction/create-account" target="_blank">learn more</a> about creating one.

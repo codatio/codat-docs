@@ -34,7 +34,7 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 
 ### About the demo app
 
-The app's codebase is available via our [GitHub repo](https://github.com/codatio/build-guide-underwriting-be). Clone it locally to try out the application.
+The app's codebase is available via our [GitHub repo](https://github.com/codatio/demo-loan-qualification). Clone it locally to try out the application.
 
 The codebase uses Codat and its [Assess](/assess/overview) product to make an underwriting decision. We will walk you through the setup in the Portal and the code [next](/assess/guides/underwriting/setting-up). 
 

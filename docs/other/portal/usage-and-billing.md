@@ -15,10 +15,9 @@ Use the dashboard on the Portal's [home page](https://app.codat.io/) for a real-
 Active companies represent your customer connections where you have successfully pulled or pushed data within a specific billing period.
 :::
 
-### Detailed usage view
+### Start-up plan detailed usage view
 
-You can view detailed usage and billing information, including monetary amounts associated with your specific experience, by navigating to **Settings > Organization settings > Billing** in the [Codat Portal](https://app.codat.io/settings/billing). 
-
+If you are signed up to Codat's start-up plan, you can view detailed usage and billing information, including monetary amounts associated with your specific experience, by navigating to **Settings > Organization settings > Billing** in the [Codat Portal](https://app.codat.io/settings/billing). 
 The **Plans** tab provides you with a summary view of your current [plan](https://www.codat.io/plans/), a list of your enabled products, and a preliminary billing total for the current billing period based on your usage to date. 
 
 The **Usage** tab shows the active companies associated with your account and their impact on your expected billing totals. You can examine the companies that were active in the selected billing period, view this data in a graph form, and check how the number of active companies influences the amount of your predicted charge. You can also compare your usage and cost across periods by selecting a different **Billing range**. 

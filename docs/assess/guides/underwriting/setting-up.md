@@ -80,7 +80,7 @@ Click **Create rule** to open the new rule creation window. Select the rule type
 
 ### <input type="checkbox" unchecked /> Clone the code
 
-Clone our demo repo on [GitHub](https://github.com/codatio/build-guide-underwriting-be) to download the underwriting demo app. 
+Clone our demo repo on [GitHub](https://github.com/codatio/demo-loan-qualification) to download the underwriting demo app. 
 
 The main file directory for the demo app is `Codat.Demos.Underwriting.Api`. Key logic components of the app are located in `Controllers`, `Orchestrator`, and `Services` folders.
 

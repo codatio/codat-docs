@@ -5,7 +5,7 @@ createdAt: "2019-04-26T13:15:07.902Z"
 updatedAt: "2022-11-15T14:22:20.124Z"
 ---
 
-Our integrations with <a class="external" href="https://plaid.com/" target="_blank">Plaid</a>, <a  class="external" href="https://truelayer.com/" target="_blank">TrueLayer</a>, and <a class="external" href="https://basiq.io/" target="_blank">Basiq</a> enable you to retrieve up-to-date account and transaction data from your SMB customers' banks. Note that only one of these integrations can be enabled at a time.
+Our integrations with <a class="external" href="https://plaid.com/" target="_blank">Plaid</a>, <a  class="external" href="https://truelayer.com/" target="_blank">TrueLayer</a>, and <a class="external" href="https://basiq.io/" target="_blank">Basiq</a> enable you to retrieve up-to-date account and transaction data from your SMB customers' banks. 
 
 For details about the types of banking data you can pull, see the [Banking API data model](/data-model/banking).
 
@@ -28,3 +28,11 @@ You can choose to enable:
 - [Basiq](/integrations/banking/basiq/banking-basiq-setup) (AU and NZ clients only)
 
 You'll need to register with your chosen provider before you can access banking data from their platform via our integration.
+
+## Banking integrations in the authorization flow
+
+You should only enable one of the banking integrations at a time. This ensures optimal use of Hosted or Embedded Link, as each integration is represented differently in the auth flow. Combining multiple approaches may confuse users and lead to reduced auth completion rates.
+
+- **Plaid** integration appears pre-selected for the user, and they are able to select the correct bank account once they continue linking to Plaid. 
+- **TrueLayer** integration appears in the auth flow as a set of banks that it supports, ready for the user to choose. 
+- **Basiq** integration appears in the auth flow as an integration tile, and the bank account selection happens when the flow directs to Basiq.

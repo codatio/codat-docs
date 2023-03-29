@@ -14,27 +14,20 @@ updatedAt: "2022-11-22T19:33:11.784Z"
   <meta property="og:image" content="/img/commerce_api_banner.png"/>
 </Head>
 
-<div className="background-video-wrapper commerce">
-  <div className="banner-video">
-    <h1>Commerce API</h1>
-    <p>
-      Codat's Commerce API enables you to pull up-to-date commerce data from several leading payments, point-of-sale, and eCommerce systems. 
-    </p>
-    <p>
-      You can view your SMB customers' products, orders, payments, payouts, disputes, and more - all standardized to our Commerce data model.
-    </p>
-  </div>
-</div>
+import PageHeader from "@components/global/PageHeader";
 
-<div className="background-video-spacer commerce">
-  <h1>Commerce API</h1>
+<PageHeader 
+  className="commerce"
+  title="Commerce API"
+  icon="/logos/products/Commerce.svg"
+>
   <p>
     Codat's Commerce API enables you to pull up-to-date commerce data from several leading payments, point-of-sale, and eCommerce systems. 
   </p>
   <p>
     You can view your SMB customers' products, orders, payments, payouts, disputes, and more - all standardized to our Commerce data model.
   </p>
-</div>
+</PageHeader>
 
 <ul className="card-container col-3">
   <li className="card">

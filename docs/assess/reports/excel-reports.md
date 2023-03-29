@@ -38,16 +38,15 @@ The endpoint is available in our <a href="/assess-api#/operations/post-data-comp
 |Field|Type|Description|
 |-----|----|-----------|
 |**lastGenerated**|_date_|The date and time of the report that is being generated.|
-|**inProgress**|_boolean_|- True - the request was successful and the report is being generated.<br/>- False - the request was unsuccessful and the report is not being generated.|
+|**inProgress**|_boolean_|True - the request was successful and the report is being generated. <br/> False - the request was unsuccessful and the report is not being generated.|
 |**queued**|_date_|The time a successful request was queued.|
-|**succcess**|_boolean_|- True - the requested report was successfully queued.<br/>- False - the requested report wasn’t able to be queued.|
+|**succcess**|_boolean_|True - the requested report was successfully queued. <br/> False - the requested report wasn’t able to be queued.|
 |**errorMessage**|_string_|The error message if the status was unsuccessful.|
 |**lastInvocationId**|_string_|A unique ID generated for this request.|
 |**reportType**|_string_|The report requested in the query string.|
 
-Example
 
-```
+```json title="Example of an Excel report request"
 {
   "lastGenerated": "2022-10-18T12:43:33.340Z",
   "inProgress": true,
@@ -72,16 +71,15 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 |Field|Type|Description|
 |----|----|----|
 |**lastGenerated**|_string_, See [date](/codat-api#/schemas/DateTime)|The date and time of the report that is being generated.|
-|**inProgress**|_boolean_|true - the request was successful and the report is being generated. false - the request was unsuccessful and the report is not being generated.|
+|**inProgress**|_boolean_|True - the request was successful and the report is being generated. <br/> False - the request was unsuccessful and the report is not being generated.|
 |**queued**|_string_, See [date](/codat-api#/schemas/DateTime)|The time a successful request was queued.|
-|**success**|_boolean_|true - the requested report was successfully queued. false - the requested report wasn't able to be queued.|
+|**success**|_boolean_|True - the requested report was successfully queued. <br/> False - the requested report wasn't able to be queued.|
 |**errorMessage**|_string_|The error message if the status was unsuccessful.|
 |**lastInvocationId**|_string_|A unique ID generated for this request.|
 |**reportType**|_string_|The report requested in the query string.|
   
-  Example
 
-```
+```json title="Example of a status check request"
 {
 "lastGenerated": "2022-10-18T12:44:46.081Z",
 "inProgress": true,
