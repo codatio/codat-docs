@@ -49,21 +49,30 @@ module.exports = [
       "assess/reports/reporting-structure",
       {
         type: "category",
-        label: "Enhanced cash flow",
-        collapsed: true,
-        items: [
-          "assess/reports/enhanced-cash-flow-report/overview",
-          "assess/reports/enhanced-cash-flow-report/transactions",
-        ],
-      },
-      {
-        type: "category",
         label: "Enhanced financials",
         collapsed: true,
         items: [
           "assess/reports/enhanced-financials/financials",
           "assess/reports/enhanced-financials/balance-sheet",
           "assess/reports/enhanced-financials/profit-and-loss",
+        ],
+      },
+      {
+        type: "category",
+        label: "Enhanced invoices",
+        collapsed: true,
+        items: [
+          "assess/reports/enhanced-invoices-report/overview",
+          { type: "link", label: "Enhanced Invoices Report", href: "/assess-api#/operations/get-enhanced-invoices-report" },
+        ],
+      },
+      {
+        type: "category",
+        label: "Enhanced cash flow",
+        collapsed: true,
+        items: [
+          "assess/reports/enhanced-cash-flow-report/overview",
+          "assess/reports/enhanced-cash-flow-report/transactions",
         ],
       },
       "assess/reports/audit-report",
