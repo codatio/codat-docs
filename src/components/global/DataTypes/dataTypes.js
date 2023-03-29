@@ -307,7 +307,7 @@ export const bankfeeds = [
     name: "Bank account",
     schema: "/bank-feeds-api#/schemas/BankFeedBankAccount",
     product: "bank-feeds",
-    description: "",
+    description: "The target bank account in a supported accounting package for ingestion into a bank feed.",
   },
 ]
 
