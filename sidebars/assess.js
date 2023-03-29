@@ -31,43 +31,34 @@ module.exports = [
         ],
       },  
     ],
-  }, 
+  },
   {
     type: "category",
-    label: "Categories",
+    label: "Enhanced financials",
     collapsed: true,
     items: [
+      "assess/reports/enhanced-financials/financials",
+      "assess/reports/enhanced-financials/profit-and-loss",
+      "assess/reports/enhanced-financials/balance-sheet",
       "assess/reports/enhanced-financials/categorize-accounts",
-      "assess/portal/categorization-of-accounts",  
     ],
   },
   {
     type: "category",
-    label: "Reports",
+    label: "Enhanced cash flow",
     collapsed: true,
     items: [
-      "assess/reports/reporting-structure",
-      {
-        type: "category",
-        label: "Enhanced cash flow",
-        collapsed: true,
-        items: [
-          "assess/reports/enhanced-cash-flow-report/overview",
-          "assess/reports/enhanced-cash-flow-report/transactions",
-        ],
-      },
-      {
-        type: "category",
-        label: "Enhanced financials",
-        collapsed: true,
-        items: [
-          "assess/reports/enhanced-financials/financials",
-          "assess/reports/enhanced-financials/balance-sheet",
-          "assess/reports/enhanced-financials/profit-and-loss",
-        ],
-      },
-      "assess/reports/audit-report",
-      "assess/reports/excel-reports",
+      "assess/enhanced-cash-flow-report/overview",
+      "assess/enhanced-cash-flow-report/transactions",  
+    ],
+  },
+  {
+    type: "category",
+    label: "Excel",
+    collapsed: true,
+    items: [
+      "assess/excel/excel-reports",
+      "assess/excel/audit-report",
     ],
   },
   {

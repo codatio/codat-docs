@@ -1,6 +1,7 @@
 ---
-title: "Enhanced Financials"
+title: "Overview"
 description: "Introduction to Enhanced Financials"
+sidebar_label: "Overview"
 createdAt: "2022-03-10T14:10:01.080Z"
 updatedAt: "2022-11-02T14:38:50.213Z"
 ---
