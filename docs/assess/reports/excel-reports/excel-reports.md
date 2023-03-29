@@ -25,10 +25,10 @@ Only one request will be processed at a time per SMB company and per report type
 
 For each of the endpoints described below, you will provide the same parameters.
 
-|Parameter|Type|Description|Requried|
+|Parameter|Type|Description|Required|
 |---------|----|-----------|--------|
 |**companyId**|_string_|The company ID for which you want to produce an Excel report for download.|Required|
-|**reportType**|_string_|The type of report you want to generate and download.  For the audit report this is set to "audit", for the enhanced financials this is set to "enhancedFinancials"|Required|
+|**reportType**|_string_|The type of report you want to generate and download.  For the audit report this is set to "audit", for the assess report this is set to "enhancedFinancials"|Required|
 
 ## Request an Excel report for download
 
