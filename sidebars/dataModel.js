@@ -12,6 +12,24 @@ const dataTypes = [
     "product": "accounting",
   },
   {
+    key: "agedCreditor",
+    name: "Aged creditor report",
+    schema: "/accounting-api#/schemas/AgedCreditorReport",
+    product: "accounting",
+  },
+  {
+    key: "agedDebtor",
+    name: "Aged debtor report",
+    schema: "/accounting-api#/schemas/AgedDebtorReport",
+    product: "accounting",
+  },
+  {
+    key: "attachments",
+    name: "Attachments",
+    schema: "/accounting-api#/schemas/Attachment",
+    product: "accounting",
+  },
+  {
     "key": "balanceSheet",
     "name": "Balance sheet",
     "schema": "/accounting-api#/schemas/BalanceSheet",
