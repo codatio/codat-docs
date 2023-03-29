@@ -20,6 +20,8 @@ The data model for accounting data sources includes all the accounting and banki
 View the full details of the data types that Codat supports for each accounting platform in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type" target="_blank">Data coverage explorer</a>.
 :::
 
+The following accounting data types are available via Codat's API:
+
 <DataTypes category="accounting"/>
 
 <br/>

@@ -19,7 +19,7 @@ View the full details of the data types that Codat supports for each banking pla
 
 The following banking data types are available via Codat's API:
 
-<DataTypes category="banking"/>
+<DataTypes category="banking" search={false}/>
 
 <br/>
 
