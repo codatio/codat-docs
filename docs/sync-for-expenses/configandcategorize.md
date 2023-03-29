@@ -65,7 +65,7 @@ Sync for Expenses currently supports option 2 only.
          <a href="/accounting-api#/operations/list-suppliers">GET</a> a list of available suppliers in the company's accounting software. You can also add additional query parameters, e.g. <code>query=metadata.isDeleted=false&&supplierName=supplierName</code>
       </li>
       <li>
-         You can <a href="/accounting-api#/operations/create-supplier">POST</a> to create a new supplier.
+         You can <a href="/accounting-api#/operations/create-suppliers">POST</a> to create a new supplier.
       </li>
    </ul>
 </ul>
