@@ -25,14 +25,21 @@ Before setting up the integration, make sure that:
 
 ## Add a custom callout to the Link Site
 
-You can add a custom text callout to the QBO Bank Feeds Link site to provide additional guidance to users who are connecting their bank accounts to QBO.
+You can add a custom text callout, in both French and English, to the QBO Bank Feeds Link site. The text can provide additional guidance to SMB users on connecting their bank accounts to QBO.
 
 1. Go to the <a className="external" href="https://app.codat.io/settings/integrations/bankfeeds" target="_blank">**Bank feed integrations**</a> page in the Codat Portal.
 2. Click **Manage** next to **QuickBooks Online Bank Feeds**.
-3. Enter text in the **Callout title** and **Callout body** boxes (maximum of 50 and 150 characters respectively). Only plain text is supported.
+3. Enter text in the **Callout title** and **Callout body** fields (maximum of 50 and 150 characters respectively). Only plain text is supported.
+
+   :::info Localization options
+
+   You can also enter French translations for the callout title and body. These will appear in a separate box on the QBO Bank Feeds Link UI. 
+
+   :::
+
 4. Click **Save**.
 
-The callout will be displayed at the bottom of the QBO Bank Feeds Link site. For example:
+The callout will be displayed at the bottom of the QBO Bank Feeds Link UI. For example:
 
 ![QBO Bank Feeds Link site showing custom callout text above the "Get credentials" button.](/img/old/b822e27-qbo-bank-feeds_link-site-callout-text.png)
 

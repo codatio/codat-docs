@@ -4,13 +4,13 @@ description: "Learn how your SMB users can connect their bank accounts to QuickB
 sidebar_label: "SMB user connects accounts"
 ---
 
-When the SMB users visits the `linkUrl` returned from the `POST /connections` endpoint, they're directed to the QuickBooks Online Bank Feeds Link site. This site allows the SMB user to generate a one-time username and password to use to connect one or more bank accounts to QuickBooks Online (QBO).
+When the SMB users visits the `linkUrl` returned from the `POST /connections` endpoint, they're directed to the QuickBooks Online Bank Feeds Link UI. This site allows the SMB user to generate a one-time username and password to use to connect one or more bank accounts to QuickBooks Online (QBO).
 
 Link can be custom branded with your company logo and colors.
 
 ## Summary of SMB user steps
 
-To connect their bank accounts to QBO, the SMB user performs the following steps in the QBO Bank Feeds Link site and in their QBO account.
+To connect their bank accounts to QBO, the SMB user performs the following steps in the QBO Bank Feeds Link UI and in their QBO account.
 
 1. They select the **Intuit QuickBooks Bank Feeds** tile, then click **Next**.
 
@@ -44,7 +44,7 @@ To connect their bank accounts to QBO, the SMB user performs the following steps
 
    :::caution Limitation on pushing historic transactions
    
-   Bank feed start dates earlier than seven days ago are ignored. The integration only supports pushing historic bank transactions up to seven days old.
+   If the SMB user selects a bank feed start date older than seven days, it will be ignored. The integration only supports pushing historic transactions up to seven days old.
 
    :::
 
