@@ -81,7 +81,7 @@ const DataTypes = ({category, search=true}) => {
   return (
     <div>
       {
-        searchValue && <input className={styles.search} value={searchValue} onChange={handleOnChange} type="text" placeholder="Enter a data type name..." />
+        search && <input className={styles.search} value={searchValue} onChange={handleOnChange} type="text" placeholder="Enter a data type name..." />
       }
 
       { category 
