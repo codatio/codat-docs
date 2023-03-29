@@ -14,32 +14,11 @@ export const accounting = [
     description: "Account transactions represent bank activity within an accounting platform.",
   },
   {
-    key: "agedCreditor",
-    name: "Aged creditor report",
-    schema: "/accounting-api#/schemas/AgedCreditorReport",
-    product: "accounting",
-    description: "The total balance owed by a business to its suppliers over time.",
-  },
-  {
-    key: "agedDebtor",
-    name: "Aged debtor report",
-    schema: "/accounting-api#/schemas/AgedDebtorReport",
-    product: "accounting",
-    description: "The total outstanding balance due from customers to the business over time.",
-  },
-  {
     key: "attachments",
     name: "Attachments",
     schema: "/accounting-api#/schemas/Attachment",
     product: "accounting",
     description: "File attachments for invoices, bills, direct costs, and direct incomes.",
-  },
-  {
-    key: "balanceSheet",
-    name: "Balance sheet",
-    schema: "/accounting-api#/schemas/BalanceSheet",
-    product: "accounting",
-    description: "A snapshot of a company's accounts at a single point in time that provides a statement of the assets, liabilities and equity of an organization.",
   },
   {
     key: "bankAccounts",
@@ -75,13 +54,6 @@ export const accounting = [
     schema: "/accounting-api#/schemas/BillPayment",
     product: "accounting",
     description: "Bill payments include all accounts payable transaction data.",
-  },
-  {
-    key: "cashFlowStatement",
-    name: "Cash flow statement",
-    schema: "/accounting-api#/schemas/CashFlowStatement",
-    product: "accounting",
-    description: "A financial report that records all cash that is received or spent by a company during a given period.",
   },
   {
     key: "company",
@@ -161,13 +133,6 @@ export const accounting = [
     description: "A Payment Method represents the payment method(s) used to pay a Bill.",
   },
   {
-    key: "profitAndLoss",
-    name: "Profit and loss",
-    schema: "/accounting-api#/schemas/ProfitAndLossReport",
-    product: "accounting",
-    description: "A report of the financial performance of a company over a specified time period.",
-  },
-  {
     key: "purchaseOrders",
     name: "Purchase orders",
     schema: "/accounting-api#/schemas/PurchaseOrder",
@@ -208,6 +173,41 @@ export const accounting = [
     schema: "/accounting-api#/schemas/Transfer",
     product: "accounting",
     description: "A type of transaction, recording the movement of money between two bank accounts, or between a bank account and a nominal account.",
+  },
+  {
+    key: "agedCreditor",
+    name: "Report: Aged creditors",
+    schema: "/accounting-api#/schemas/AgedCreditorReport",
+    product: "accounting",
+    description: "The total balance owed by a business to its suppliers over time.",
+  },
+  {
+    key: "agedDebtor",
+    name: "Report: Aged debtors",
+    schema: "/accounting-api#/schemas/AgedDebtorReport",
+    product: "accounting",
+    description: "The total outstanding balance due from customers to the business over time.",
+  },
+  {
+    key: "balanceSheet",
+    name: "Report: Balance sheet",
+    schema: "/accounting-api#/schemas/BalanceSheet",
+    product: "accounting",
+    description: "A snapshot of a company's accounts at a single point in time that provides a statement of the assets, liabilities and equity of an organization.",
+  },
+  {
+    key: "cashFlowStatement",
+    name: "Report: Cash flow statement",
+    schema: "/accounting-api#/schemas/CashFlowStatement",
+    product: "accounting",
+    description: "A report of all cash that is received or spent by a company during a given period.",
+  },
+  {
+    key: "profitAndLoss",
+    name: "Report: Profit and loss",
+    schema: "/accounting-api#/schemas/ProfitAndLossReport",
+    product: "accounting",
+    description: "A report of the financial performance of a company over a specified time period.",
   },
 ]
 
@@ -297,7 +297,7 @@ export const commerce = [
     name: "Products",
     schema: "/commerce-api#/schemas/Product",
     product: "commerce",
-    description: "Products a company has available on the system, including the price and quantity of those products, and product variants.",
+    description: "Items in the company's inventory.",
   },
   {
     key: "commerce-productCategories",

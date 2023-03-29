@@ -5,10 +5,11 @@ import { dataTypes } from "./dataTypes";
 const DataType = ({dataType}) => {
   return (
     <div className={styles.dataType}>
-      <div className={styles.row}>
-        <a href={dataType.schema}>{dataType.name}</a>
-        <p>· {dataType.key}</p>
+      <div className={styles.title}>
+        <p><a href={dataType.schema}>{dataType.name}</a> · </p>
+        <p>{dataType.key}</p>
       </div>
+
       <p>{dataType.description}</p>
     </div>
   )
@@ -36,25 +37,25 @@ const DataTypesLists = ({dataTypes}) => {
   return (
     <div className={styles.columns}>
       <div className={styles.column}>
-        <h2 className={styles.header}>Accounting API</h2>
+        <h2 className={styles.header}>Accounting</h2>
 
         <DataTypesList dataTypes={dataTypes.filter(dataType => dataType.product === "accounting")}/>
       </div>
 
       <div className={styles.column}>
-        <h2 className={styles.header}>Commerce API</h2>
+        <h2 className={styles.header}>Commerce</h2>
 
         <DataTypesList dataTypes={dataTypes.filter(dataType => dataType.product === "commerce")}/>
       </div>
 
       <div className={styles.column}>
-        <h2 className={styles.header}>Banking API</h2>
+        <h2 className={styles.header}>Banking</h2>
 
         <DataTypesList dataTypes={dataTypes.filter(dataType => dataType.product === "banking")}/>
       </div>
 
       <div className={styles.column}>
-        <h2 className={styles.header}>Bank Feeds API</h2>
+        <h2 className={styles.header}>Bank Feeds</h2>
 
         <DataTypesList dataTypes={dataTypes.filter(dataType => dataType.product === "bank-feeds")}/>
       </div>
