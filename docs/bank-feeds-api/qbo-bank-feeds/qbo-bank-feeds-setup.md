@@ -39,7 +39,7 @@ You can add a custom text callout, in both French and English, to the QBO Bank F
 
 4. Click **Save**.
 
-The callout will be displayed at the bottom of the QBO Bank Feeds Link UI. For example:
+The callout is displayed in a gray box at the bottom of the QBO Bank Feeds Link UI, for example:
 
 ![QBO Bank Feeds Link site showing custom callout text above the "Get credentials" button.](/img/old/b822e27-qbo-bank-feeds_link-site-callout-text.png)
 

@@ -55,11 +55,11 @@ You can:
 - Upload your organization's logo on the [Manage organization](https://app-integration.codat.io/settings/organization) page of the Codat Portal.
 - Customize the colors and text used in the Link flow - see [Set up your company branding](/auth-flow/customize/branding).
 
-You can also [add a custom callout](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-setup#add-a-custom-callout-to-the-link-site) in French or English to provide your SMB users with additional guidance.
+You can also [add a custom callout](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-setup#add-a-custom-callout-to-the-link-site), in French or English, to provide your SMB users with additional guidance.
 
 ### Localization options
 
-SMB users switch btw english and french language in the QBO Bank feeds Link UI. Can provide Fr transalations of the custom call-outs.
+SMB users can switch between English and French text using the button in the QBO Bank Feeds Link UI. If you've added a [custom callout](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-setup#add-a-custom-callout-to-the-link-site) in French, this will also switch based on the selected option.
 
 ---
 
