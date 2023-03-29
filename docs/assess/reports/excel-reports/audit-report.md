@@ -31,7 +31,7 @@ Data types can be enabled in the <a className="external" href="/core-concepts/da
 
 ## Generating the report
 
-The Audit Report can be generated via API or through [Codat's Portal](/assess/portal/overview#reports). The [Excel reports](/assess/reports/excel-reports) page describes how to generate and download the report via API.
+The Audit Report can be generated via API or through [Codat's Portal](/assess/portal/overview#reports). The [Excel reports](/assess/reports/excel-reports/excel-reports) page describes how to generate and download the report via API.
 
 ## Understanding the report
 

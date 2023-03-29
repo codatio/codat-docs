@@ -18,7 +18,8 @@ Only one request will be processed at a time per SMB company and per report type
 
 ## Available report types
 
-- [Audit Report](/assess/reports/audit-report)
+- [Audit Report](/assess/reports/excel-reports/audit-report)
+- [Enhanced Financials](/assess/reports/excel-reports/enhanced-financials)
 
 ## Parameters
 
@@ -27,7 +28,7 @@ For each of the endpoints described below, you will provide the same parameters.
 |Parameter|Type|Description|Requried|
 |---------|----|-----------|--------|
 |**companyId**|_string_|The company ID for which you want to produce an Excel report for download.|Required|
-|**reportType**|_string_|The type of report you want to generate and download.  For the audit report this is set to "audit".|Required|
+|**reportType**|_string_|The type of report you want to generate and download.  For the audit report this is set to "audit", for the enhanced financials this is set to "enhancedFinancials"|Required|
 
 ## Request an Excel report for download
 
@@ -77,7 +78,7 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 |**errorMessage**|_string_|The error message if the status was unsuccessful.|
 |**lastInvocationId**|_string_|A unique ID generated for this request.|
 |**reportType**|_string_|The report requested in the query string.|
-  
+
 
 ```json title="Example of a status check request"
 {
@@ -95,6 +96,6 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 
 The endpoint is available in our <a href="/assess-api#/operations/post-data-companies-companyId-assess-excel-download">API reference</a>.
 
-`POST /data/companies/{companyId}/assess/excel/download`
+`GET /data/companies/{companyId}/assess/excel/download`
 
-The downloadable Excel file is available in the response. Click it to save to your local machine.
+The downloadable Excel file is available in the response.  Click it to save to your local machine.
