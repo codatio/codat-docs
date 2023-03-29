@@ -9,5 +9,4 @@ Credit decisioning requires accurate and up-to-date data.  Codat’s Assess Repo
 
 ## Generating the report
 
-The Assess Report can be generated via API or through [Codat's Portal](/assess/portal/overview#reports).  The [Excel reports](/assess/reports/excel-reports/excel-reports) page describes how to generate and download the report via API.
-
+The Assess Report can be generated via API or through [Codat's Portal](/assess/portal/overview#reports).  The [Excel reports](/assess/reports/excel-reports) page describes how to generate and download the report via API.
