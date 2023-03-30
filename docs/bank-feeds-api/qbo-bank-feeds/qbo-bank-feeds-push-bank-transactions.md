@@ -6,7 +6,16 @@ sidebar_label: "Push bank transactions to QBO"
 
 When an SMB user has [connected one or more bank accounts to QuickBooks Online](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-smb-user), you can push bank transactions from a connected account to QuickBooks Online (one account at a time). To identify a user's connected bank accounts, see [Retrieve bank account status and information](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-setup#retrieve-bank-account-status-and-information).
 
-You can push historic transactions of up to seven days, based on the _feed start date_ chosen by the SMB user in the QBO UI. All bank transactions must be _cleared_ and have a `clearedOnDate` set to the current or the prior day.
+## Requirements for pushing transactions
+
+To successfully push to QBO, bank transactions must be:
+
+- Cleared - the `clearedOnDate` must be set to the current or prior day.
+- In chronological order calculated from the `clearedOnDate`.
+
+## Pushing historic transactions
+
+You can push historic transactions of up to seven days, based on the _feed start date_ chosen by the SMB user in the QBO UI.
 
 :::caution Future bank feeds not supported
 
