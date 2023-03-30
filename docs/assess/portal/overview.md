@@ -21,7 +21,7 @@ Hovering over the button reveals further detail about the data match. Clicking t
 
 **Reports**
 
-The **Reports** button is located in the top right corner of every Assess page and directs you to the [Reports](#reports) page in the Portal where you can generate and download the [Assess Report](/assess/reports/excel-reports/assess-report) and the [Audit Report](/assess/reports/excel-reports/audit-report) in in [Excel format](/assess/reports/excel-reports).
+The **Reports** button is located in the top right corner of every Assess page and directs you to the [Reports](#reports) page in the Portal.
 
 ## Assess sections
 
