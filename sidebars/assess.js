@@ -66,9 +66,7 @@ module.exports = [
     collapsed: true,
     items: [
       "assess/data-integrity/overview",
-      "assess/data-integrity/status",
-      "assess/data-integrity/summaries",
-      "assess/data-integrity/details",
+      "assess/data-integrity/api-data-integrity",
     ],
   },
   {
