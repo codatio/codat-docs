@@ -1,6 +1,7 @@
 ---
 title: "Audit Report"
 description: "Identify accounting irregularities with Codat's Audit Report"
+sidebar_label: "Audit report"
 createdAt: "2022-10-18T08:18:51.069Z"
 updatedAt: "2022-11-25T15:12:37.179Z"
 ---

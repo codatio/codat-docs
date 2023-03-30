@@ -1,6 +1,7 @@
 ---
-title: "Excel reports"
-description: "Describes the process and endpoints for the generation and download of Assess Excel reports"
+title: "Excel download overview"
+description: "Describes the process and endpoints for the generation and download of Assess excel reports"
+sidebar_label: "Overview"
 createdAt: "2022-10-18T10:05:18.826Z"
 updatedAt: "2022-11-02T14:45:30.043Z"
 ---

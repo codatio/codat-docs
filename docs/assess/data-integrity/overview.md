@@ -1,7 +1,7 @@
 ---
-title: "Data integrity"
-sidebar_label: Overview
+title: "Data Integrity Overview"
 description: "Matching mutable accounting data with immutable banking data to increase confidence in financial data"
+sidebar_label: "Overview"
 createdAt: "2022-01-18T14:55:56.434Z"
 updatedAt: "2022-11-02T14:46:09.812Z"
 ---
@@ -52,3 +52,10 @@ For non-textual comparisons (like dates and numbers), the logic compares values 
 For textual comparisons (like account description), a combination of _Jaro-Winkler_ similarity and _Overlap coefficient_ (with thresholds) is used to compare how closely the string values match.
 
 In the event where the company has bank accounts with different currencies, those transactions will be matched with an accounting source with the same currency. For these companies, the matching percentage will be less accurate. This is on our roadmap to fix.
+
+
+The Data Integrity API consists of the following endpoints:
+
+- [Status](#status) endpoints: (one per datatype) exposes the information needed to usefully query results.
+- [Summaries](#summaries) endpoints: (one per datatype) exposes summary results, queryable in a granular way.
+- [Details](#details) endpoints: (one per datatype) exposes record by record information, queryable using the same parameters as the summary endpoint.

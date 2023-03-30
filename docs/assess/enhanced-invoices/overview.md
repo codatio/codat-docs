@@ -1,6 +1,7 @@
 ---
-title: "Enhanced invoices"
+title: "Enhanced Invoices Overview"
 description: "Introduction to Enhanced Invoices"
+sidebase_label: "Overview"
 createdAt: "2022-10-06T08:32:16.232Z"
 updatedAt: "2022-11-10T14:01:08.149Z"
 ---

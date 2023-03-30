@@ -29,60 +29,35 @@ module.exports = [
         ],
       },  
     ],
-  }, 
+  },
   {
     type: "category",
-    label: "Categories",
+    label: "Enhanced financials",
     collapsed: true,
     items: [
-      "assess/reports/enhanced-financials/categorize-accounts",
-      "assess/portal/categorization-of-accounts",  
+      "assess/enhanced-financials/overview",
+      "assess/enhanced-financials/profit-and-loss-accounts",
+      "assess/enhanced-financials/balance-sheet-accounts",
+      "assess/enhanced-financials/account-categorization-model-feedback",
+      "assess/enhanced-financials/supported-account-categories",
     ],
   },
   {
     type: "category",
-    label: "Reports",
+    label: "Enhanced cash flow",
     collapsed: true,
     items: [
-      "assess/reports/reporting-structure",
-      {
-        type: "category",
-        label: "Enhanced financials",
-        collapsed: true,
-        items: [
-          "assess/reports/enhanced-financials/financials",
-          "assess/reports/enhanced-financials/balance-sheet",
-          "assess/reports/enhanced-financials/profit-and-loss",
-        ],
-      },
-      {
-        type: "category",
-        label: "Enhanced invoices",
-        collapsed: true,
-        items: [
-          "assess/reports/enhanced-invoices-report/overview",
-          { type: "link", label: "Enhanced Invoices Report", href: "/assess-api#/operations/get-enhanced-invoices-report" },
-        ],
-      },
-      {
-        type: "category",
-        label: "Enhanced cash flow",
-        collapsed: true,
-        items: [
-          "assess/reports/enhanced-cash-flow-report/overview",
-          "assess/reports/enhanced-cash-flow-report/transactions",
-        ],
-      },
-      {
-        type: "category",
-        label: "Excel reports",
-        collapsed: true,
-        items: [
-          "assess/reports/excel-reports/excel-reports",
-          "assess/reports/excel-reports/assess-report",
-          "assess/reports/excel-reports/audit-report",
-        ],
-      },
+      "assess/enhanced-cash-flow/overview",
+      "assess/enhanced-cash-flow/transactions",
+    ],
+  },
+  {
+    type: "category",
+    label: "Enhanced invoices",
+    collapsed: true,
+    items: [
+      "assess/enhanced-invoices/overview",
+      { type: "link", label: "Enhanced invoices", href: "/assess-api#/operations/get-enhanced-invoices-report" },
     ],
   },
   {
@@ -90,11 +65,12 @@ module.exports = [
     label: "Data integrity",
     collapsed: true,
     items: [
-      "assess/data-integrity/data-integrity",
-      "assess/data-integrity/api-data-integrity",
+      "assess/data-integrity/overview",
+      "assess/data-integrity/status",
+      "assess/data-integrity/summaries",
+      "assess/data-integrity/details",
     ],
   },
-
   {
     type: "category",
     label: "Metrics",
@@ -132,6 +108,17 @@ module.exports = [
     items: [
       "assess/portal/overview",
       "assess/portal/data-integrity",
+      "assess/portal/categorize-accounts"
+    ],
+  },
+  {
+    type: "category",
+    label: "Excel download",
+    collapsed: true,
+    items: [
+      "assess/excel/overview",
+      "assess/excel/assess-report",
+      "assess/excel/audit-report",
     ],
   },
   'assess/troubleshooting',
