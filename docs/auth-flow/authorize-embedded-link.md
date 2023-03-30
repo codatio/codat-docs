@@ -56,7 +56,7 @@ We built Embedded Link to be flexible so that you can integrate and initialize i
 ## Resources
 
 - Grab our component library on [npm](https://www.npmjs.com/package/@codat/link-sdk)
-- View [a sample project](https://github.com/codatio/link-sdk-sample-project) adding Link to a default project
+- View [a sample project](https://github.com/codatio/sample-project-link-sdk) adding Link to a default project
 
 ## Prerequisites
 

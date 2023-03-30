@@ -27,10 +27,10 @@ Tools you can use within your code.
 
 Examples of what you can do with Codat with code you can use in your app.
 
-- **[Link SDK sample project](https://github.com/codatio/link-sdk-sample-project)** - See how to quickly use our React Link SDK
+- **[Link SDK sample project](https://github.com/codatio/sample-project-link-sdk)** - See how to quickly use our React Link SDK
 
 ## Starter projects
 
 Minimal code to quickly start building something with Codat.
 
-- **[Next.js starter](https://github.com/codatio/codat-nextjs-starter-project)** - You're 5 minutes away from your first Codat API call with this simple Next.js app starter
+- **[Next.js starter](https://github.com/codatio/starter-project-nextjs-codat)** - You're 5 minutes away from your first Codat API call with this simple Next.js app starter
