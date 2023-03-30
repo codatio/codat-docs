@@ -12,7 +12,7 @@ Each category comprises of up to 5 levels. We will populate the lowest level dee
 ## Supported account categories
 
 <iframe
-  src="https://docs.google.com/spreadsheets/d/1uocdu2wIOX1z1_6j3Q8wX6TUM1B10DoMHapbkJcZlCc/edit?usp=sharing&amp;single=false&amp;widget=true&amp;headers=false"
+  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRkvocA0AjDFFHTyQ-ivddggN996pn2_FOhzE3iThrFje_RGnAvw1QqvaLKGhWNXHCOpgtekuFqb7xt/pubhtml?widget=true&amp;headers=false"
   frameborder="0"
   style={{ top: 0, left: 0, width: "100%", height: "660px" }}
 ></iframe>
