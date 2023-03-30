@@ -308,4 +308,4 @@ When a report was successfully generated, the report name (which is also the fil
 ### Report types
 
 - [Assess Report](/assess/reports/excel-reports/assess-report): Summary of Assess data in one Excel document.
-- [Audit Report](/assess/reports/audit-report): Identifies indicators of inaccurate or out-of-date accounts, helping you to decision with confidence.
+- [Audit Report](/assess/reports/excel-reports/audit-report): Identifies indicators of inaccurate or out-of-date accounts, helping you to decision with confidence.
