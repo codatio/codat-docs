@@ -34,3 +34,12 @@ Examples of what you can do with Codat with code you can use in your app.
 Minimal code to quickly start building something with Codat.
 
 - **[Next.js starter](https://github.com/codatio/starter-project-nextjs-codat)** - You're 5 minutes away from your first Codat API call with this simple Next.js app starter
+
+## Postman Collection 
+
+**[Codat's POSTMAN Collection](https://postman.codat.io/#ea0cd8f9-c78c-4dcf-b1ab-164927e41ff2)** - A collection of Postman scripts covering multiple products and processes such as our:
+- Authentication journey
+- Sync for Commerce
+- Sync for Expenses
+- Xero's General Lending Write Back
+- Self-Service OAUTH migrations
