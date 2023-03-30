@@ -21,7 +21,7 @@ Hovering over the button reveals further detail about the data match. Clicking t
 
 **Reports**
 
-The **Reports** button is located in the top right corner of every Assess page and directs you to the [Reports](#reports) page in the Portal where you can generate and download the Audit report in Excel format.
+The **Reports** button is located in the top right corner of every Assess page and directs you to the [Reports](#reports) page in the Portal where you can generate and download the [Assess Report](/assess/reports/excel-reports/assess-report) and the [Audit Report](/assess/reports/excel-reports/audit-report) in in [Excel format](/assess/reports/excel-reports).
 
 ## Assess sections
 
@@ -295,7 +295,7 @@ Rows can be expanded or collapsed to show more or less information. Hovering ove
 
 ## Reports
 
-A **Reports** button is located in the top right corner of every Assess page. It takes you to the **Reports** page where you can generate and download the Audit report in [Excel format](/assess/reports/excel-reports).
+A **Reports** button is located in the top right corner of every Assess page. It takes you to the **Reports** page where you can generate and download the [Assess Report](/assess/reports/excel-reports/assess-report) and the [Audit Report](/assess/reports/excel-reports/audit-report) in [Excel format](/assess/reports/excel-reports).
 
 ![A screenshot of the reports page showing the Audit Report row with a sub-row showing a report that was generated](/img/old/a3d1d09-ReportsPage1.png)
 
@@ -303,8 +303,9 @@ The **Report name** provides the name of the report and an informative descripti
 
 Click the **Generate report** button to produce a new report. The **Last generated** field will be updated to the date and time you generated the report. It will keep this timestamp until the next time you generate the report.
 
-When a report was successfully generated, the report name (which is also the filename), with the file size and latest timestamp will be available for download. Clicking the **Download** button saves the Excel report to your local machine.
+When a report was successfully generated, the report name (which is also the file name), with the file size and latest timestamp will be available for download. Clicking the **Download** button saves the Excel report to your local machine.
 
 ### Report types
 
+- [Assess Report](/assess/reports/excel-reports/assess-report): Summary of Assess data in one Excel document.
 - [Audit Report](/assess/reports/audit-report): Identifies indicators of inaccurate or out-of-date accounts, helping you to decision with confidence.
