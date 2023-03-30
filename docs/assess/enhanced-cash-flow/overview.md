@@ -1,5 +1,5 @@
 ---
-title: "Enhanced cash flow overview"
+title: "Enhanced Cash Flow"
 description: "Introduction to Enhanced Cash Flow"
 sidebar_label: "Overview"
 createdAt: "2022-10-06T08:32:16.232Z"

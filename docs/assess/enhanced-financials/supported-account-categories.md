@@ -11,7 +11,7 @@ Each category comprises of up to 5 levels. We will populate the lowest level dee
 
 ## Supported account categories
 
-| L1        | L2                         | L3                                           | L4                         | L5                        |
+| Level 1        | Level 2                         | Level 3                                           | Level 4                         | Level 5                        |
 |-----------|----------------------------|----------------------------------------------|----------------------------|---------------------------|
 | Income    | Revenue                    |                                              |                            |                           |
 | Income    | Revenue                    | Advertising                                  |                            |                           |

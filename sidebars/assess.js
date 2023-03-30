@@ -38,7 +38,7 @@ module.exports = [
       "assess/enhanced-financials/overview",
       "assess/enhanced-financials/profit-and-loss-accounts",
       "assess/enhanced-financials/balance-sheet-accounts",
-      "assess/enhanced-financials/account-categorization-model-feedback",
+      "assess/enhanced-financials/categorize-accounts",
       "assess/enhanced-financials/supported-account-categories",
     ],
   },

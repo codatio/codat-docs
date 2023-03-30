@@ -1,5 +1,5 @@
 ---
-title: "Excel download overview"
+title: "Excel"
 description: "Describes the process and endpoints for the generation and download of Assess excel reports"
 sidebar_label: "Overview"
 createdAt: "2022-10-18T10:05:18.826Z"

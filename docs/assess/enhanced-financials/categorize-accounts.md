@@ -1,7 +1,7 @@
 ---
-title: "Account Categorization Model Feedback"
-description: "Learn how you can improve the account categorization model for your companies"
-sidebar_label: "Account categorization model feedback"
+title: "Categorize accounts"
+description: "Learn how you can improve predicted categories for your companies"
+sidebar_label: "Categorize accounts"
 createdAt: "2023-01-27T10:32:29.917Z"
 updatedAt: "2023-01-27T16:35:29.376Z"
 ---

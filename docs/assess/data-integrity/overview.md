@@ -1,5 +1,5 @@
 ---
-title: "Data Integrity Overview"
+title: "Data Integrity"
 description: "Matching mutable accounting data with immutable banking data to increase confidence in financial data"
 sidebar_label: "Overview"
 createdAt: "2022-01-18T14:55:56.434Z"
