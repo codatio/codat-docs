@@ -3,7 +3,7 @@ title: "Xero App Partner guidance by use case"
 description: "Understand the requirements for Financial Services, Lending, Payments, and App Store Partners"
 ---
 
-The process of becoming a Xero App Partner depends on your use case. Xero has two categories of App Partner:
+The process of becoming a Xero App Partner depends on your use case. Xero has two categories of App Partners:
 
 - [Financial Services App Partners](#financial-services-partners), including [Lending App Partners](#lending-partners) and [Payments App Partners](#payments-partners)
 - [Xero App Store Partners](#xero-app-store-partners), also known as _Ecosystem App Partners_
