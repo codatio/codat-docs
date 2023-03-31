@@ -56,7 +56,7 @@ We recommend you work closely with your Codat account team to implement lending 
 
 ### Commercial Agreement for Lending App Partners
 
-Xero requires a commercial agreement in order for you to become a Xero App Partner for lending. When you're ready to apply for Xero App Partnership, please contact your Codat account team and we will connect you with a relevant contact at Xero. The commercial terms of this agreement are between you as a lender and Xero. Codat is not involved in the negotiation of that commercial agreement. 
+Xero requires a commercial agreement for you to become a Xero App Partner for lending. The commercial terms of this agreement are between you as a lender and Xero. Codat is not involved in the negotiation of that commercial agreement. 
 
 When you're ready to apply for Xero App Partnership please contact your Codat account team and we'll connect you with a relevant contact at Xero.
 
