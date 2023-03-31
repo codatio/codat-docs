@@ -68,13 +68,12 @@ Assess empowers you with a host of features to help you streamline your underwri
       We automatically map your SMB customers' income statement and balance
       sheet to a single standard chart of accounts, meaning you can compare
       across customers easily. Explore{" "}
-      <a href="/assess/reports/enhanced-financials/financials">
+      <a href="/assess/enhanced-financials/overview">
         Enhanced Financials
       </a>
       .
     </p>
   </li>
-
   <li className="card">
     <div class="header">
       <img
@@ -122,7 +121,7 @@ Assess empowers you with a host of features to help you streamline your underwri
     <p>
       We cross-reference accounting data with banking data to verify data
       accuracy. Explore{" "}
-      <a href="/assess/data-integrity">
+      <a href="/assess/data-integrity/overview">
         Data Integrity
       </a>
       .

@@ -7,7 +7,7 @@ updatedAt: "2022-11-29T15:21:17.901Z"
 
 The Customer Retention endpoint retrieves customer information for a specific company's commerce connection, over one or more periods of time.
 
-Refer to the [Assess reporting structure](/assess/reports/reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/assess/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
 
 For Customer Retention, these are the dimensions and measures:
 

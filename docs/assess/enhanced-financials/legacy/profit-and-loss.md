@@ -6,12 +6,12 @@ updatedAt: "2022-11-02T14:39:20.426Z"
 ---
 
 :::caution New version of enhanced financials
-Functionality described here has been superseded by a newer version of enhanced financials using revised accounting categories. Explore the new [Enhanced Financials](/assess/reports/enhanced-financials/financials).
+Functionality described here has been superseded by a newer version of enhanced financials using revised accounting categories. Explore the new [Enhanced Financials](/assess/enhanced-financials/overview).
 :::
 
 The _Enhanced Profit and Loss_ endpoint provides a fully categorized profit and loss statement over a specified period(s) of time, for a specific company’s accounting connection.
 
-Refer to the [Assess reporting structure](/assess/reports/reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/assess/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
 
 For _Enhanced Profit and Loss_, these are the dimensions and measures:
 
@@ -178,11 +178,11 @@ Each period will be broken down into Category, Sub Type, Detail Type and Account
 Components are nested within each other as below (grouped by dimension (index =“0”), i.e. _Period_). Both value and percent change measures are included for each level.
 
     components - “Category”, e.g. Income
-
+    
     	components - “Sub Type”, e.g. Operating
-
+    
     		components - “Detail Type”, e.g. Other operating income
-
+    
     			components - “Accounts”, e.g. Sales
 
 ### Components structure

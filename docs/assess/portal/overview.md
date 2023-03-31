@@ -13,11 +13,11 @@ The categorized Profit and Loss, and Balance Sheet showcase the power of the [Ca
 
 **Data Match**
 
-The data match percentage button is located next to the **Assess** header on every Assess page and it leverages the [Data Integrity](/assess/data-integrity) feature. The match percentage is pre-calculated using the [Data Integrity summaries](/assess/data-integrity/api-data-integrity#summaries) endpoint.
+The data match percentage button is located next to the **Assess** header on every Assess page and it leverages the [Data Integrity](/assess/data-integrity/overview) feature. The match percentage is pre-calculated using the [Data Integrity summaries](/assess/data-integrity/api-data-integrity#summaries) endpoint.
 
 It takes the match percentage from the summaries endpoint for both `banking-transactions` and `accountTransactions` to calculate an overall match percentage, and it accounts for all dates, not just the optimal date range.
 
-Hovering over the button reveals further detail about the data match. Clicking the **Data match** button takes you to the **Data Integrity** page which provides detailed information about matches. Explore [Data Integrity](/assess/data-integrity).
+Hovering over the button reveals further detail about the data match. Clicking the **Data match** button takes you to the **Data Integrity** page which provides detailed information about matches. Explore [Data Integrity](/assess/data-integrity/overview).
 
 **Reports**
 
@@ -78,7 +78,7 @@ The following information is displayed:
 
 ![P&L graph and extract of a statement based on selection criteria](/img/old/a1b310e-PL1.png)
 
-The **Statement** table renders the [Enhanced Profit and Loss](/assess/reports/enhanced-financials/profit-and-loss) endpoint response data to give a clear visual of the company’s performance over the specified periods. The green and red arrowheads alongside the numbers indicate an increase or decrease respectively compared to the previous period.
+The **Statement** table renders the [Enhanced Profit and Loss](/assess/enhanced-financials/profit-and-loss-accounts) endpoint response data to give a clear visual of the company’s performance over the specified periods. The green and red arrowheads alongside the numbers indicate an increase or decrease respectively compared to the previous period.
 
 Rows can be expanded or collapsed to show more or less information. A maximum of 5 checkboxes can be checked, like Income above, to display the selection on the graph. Hovering over the graph displays a tooltip which contains information about all of the points plotted for that date.
 
@@ -171,7 +171,7 @@ The Ratios table is displayed below the Statement table. Each metric/ratio can b
 
 If you are a developer, and you are looking to reproduce the outputs of this section, refer to the following API documentation:
 
-- [Enhanced Balance Sheet](/assess/reports/enhanced-financials/balance-sheet): To produce the balance sheet statement table and graph.
+- [Enhanced Balance Sheet](/assess/enhanced-financials/balance-sheet-accounts): To produce the balance sheet statement table and graph.
 - [Financial Metrics](/assess/metrics/accounting/api-financial-metrics): To produce the ratios table.
 - [Data Integrity](/assess/data-integrity/api-data-integrity): To produce the Data match percentage.
 
@@ -295,7 +295,7 @@ Rows can be expanded or collapsed to show more or less information. Hovering ove
 
 ## Reports
 
-A **Reports** button is located in the top right corner of every Assess page. It takes you to the **Reports** page where you can generate and download the [Assess Report](/assess/reports/excel-reports/assess-report) and the [Audit Report](/assess/reports/excel-reports/audit-report) in [Excel format](/assess/reports/excel-reports).
+A **Reports** button is located in the top right corner of every Assess page. It takes you to the **Reports** page where you can generate and download the [Assess Report](/assess/excel/assess-report) and the [Audit Report](/assess/excel/audit-report) in [Excel format](/assess/excel/overview).
 
 ![A screenshot of the reports page showing the Audit Report row with a sub-row showing a report that was generated](/img/old/a3d1d09-ReportsPage1.png)
 
@@ -307,5 +307,5 @@ When a report was successfully generated, the report name (which is also the fil
 
 ### Report types
 
-- [Assess Report](/assess/reports/excel-reports/assess-report): Summary of Assess data in one Excel document.
-- [Audit Report](/assess/reports/excel-reports/audit-report): Identifies indicators of inaccurate or out-of-date accounts, helping you to decision with confidence.
+- [Assess Report](/assess/excel/assess-report): Summary of Assess data in one Excel document.
+- [Audit Report](/assess/excel/audit-report): Identifies indicators of inaccurate or out-of-date accounts, helping you to decision with confidence.

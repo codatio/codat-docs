@@ -8,7 +8,7 @@ updatedAt: "2023-01-27T16:35:29.376Z"
 
 There are two account categorization versions currently available in the Codat Portal. 
 
-_Version 3_ is a revised version of account categories that should be used going forward. It supports our new [Enhanced Financials](/assess/reports/enhanced-financials/financials) endpoints. Continue reading to learn how to categorize the accounts using _Version 3_.
+_Version 3_ is a revised version of account categories that should be used going forward. It supports our new [Enhanced Financials](/assess/enhanced-financials/overview) endpoints. Continue reading to learn how to categorize the accounts using _Version 3_.
 :::
 
 With Enhanced Financials, Codat automatically suggests a category for each account that appears in the enhanced Profit and Loss and Balance Sheet. 

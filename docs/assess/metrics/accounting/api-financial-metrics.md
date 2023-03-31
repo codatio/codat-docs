@@ -7,6 +7,8 @@ updatedAt: "2023-01-16T09:26:35.560Z"
 
 The Financial Metrics API provides the most commonly used financial metrics and ratios used for credit risk assessments of small and medium businesses. Metrics are auto-calculated for you across the full history of financial statements for a linked company and can be retrieved for a single period or spread across multiple periods enabling you to perform time series analysis of the financial performance of the company.
 
+Refer to the [Assess reporting structure](/assess/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
+
 Supported metrics:
 
 1. Gross profit margin

@@ -19,8 +19,8 @@ Only one request will be processed at a time per SMB company and per report type
 
 ## Available report types
 
-- [Assess Report](/assess/reports/excel-reports/assess-report)
-- [Audit Report](/assess/reports/excel-reports/audit-report)
+- [Assess Report](/assess/excel/assess-report)
+- [Audit Report](/assess/excel/audit-report)
 
 ## Parameters
 

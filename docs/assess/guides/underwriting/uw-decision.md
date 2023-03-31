@@ -24,7 +24,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="gpm" label="Gross profit margin">
 
 **Gross profit margin** uses `Income.Operating` values and `Expense.CostOfSales` values returned by Assess' [`profitAndLoss`](https://docs.codat.io/assess-api#/operations/get-enhanced-profit-and-loss) endpoint. It is calculated by subtracting cost of sales from net sales, and dividing the resulting gross profit by net sales. It is then expressed by a ratio, and indicates a business’s profitability. 
- 
+
 Its threshold is maintained as `MinGrossProfitMargin` in `appsettings.json`. In the demo app, the value is set to 0.4.
 
 </TabItem>
@@ -78,7 +78,7 @@ Only if all the thresholds are met or surpassed by the applicant, the app update
 
 📊 If you are interested in underwriting models used by lenders in the industry, you can read through [Bigfoot Capital's blog](https://www.bigfootcap.com/revenue-based-financing/) on revenue-based finance or [Workweek's article](https://workweek.com/2023/03/02/unlocking-lending-innovation) on unlocking underwriting innovation.
 
-💸 Lenders also use Assess to understand a business' liquidity via the [enhanced cash flow report](/assess/reports/enhanced-cash-flow-report/overview), or whether a business' accounts are accurate using both [data integrity](/assess/data-integrity) and the [audit report](/assess/reports/audit-report).
+💸 Lenders also use Assess to understand a business' liquidity via the [enhanced cash flow report](/assess/enhanced-cash-flow/overview), or whether a business' accounts are accurate using both [data integrity](/assess/data-integrity/overview) and the [audit report](/assess/excel/audit-report).
 
 🧠 See what else [Codat recommends](https://www.codat.io/blog/how-to-underwrite-ecommerce-merchants-effectively/) to build your underwriting process effectively. 
 

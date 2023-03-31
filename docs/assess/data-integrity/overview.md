@@ -56,6 +56,6 @@ In the event where the company has bank accounts with different currencies, thos
 
 The Data Integrity API consists of the following endpoints:
 
-- [Status](#status) endpoints: (one per datatype) exposes the information needed to usefully query results.
-- [Summaries](#summaries) endpoints: (one per datatype) exposes summary results, queryable in a granular way.
-- [Details](#details) endpoints: (one per datatype) exposes record by record information, queryable using the same parameters as the summary endpoint.
+- Status endpoints: (one per datatype) exposes the information needed to usefully query results.
+- Summaries endpoints: (one per datatype) exposes summary results, queryable in a granular way.
+- Details endpoints: (one per datatype) exposes record by record information, queryable using the same parameters as the summary endpoint.

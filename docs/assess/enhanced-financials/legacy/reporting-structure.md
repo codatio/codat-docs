@@ -113,7 +113,7 @@ Reports can be rendered as follows (ordering is implicit rather than explicit):
 
 ### Report data
 
-```
+```json
     "data": [{
           "dimension": 0,
           "item": 0,
