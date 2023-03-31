@@ -74,20 +74,20 @@ Make the following requests to the Codat API. All push requests are asynchronous
 
 3. Repeat the request for the remainder of the SMB user's connected bank accounts.
 
-## Reference
+## Transactions reference
 
-The following table provides more details about the properties you can push in the `transactions` array.
+The following table details how each property in the `transactions` array is handled when pushing bank transactions to QBO. For more details, see the [Bank account transactions](/accounting-api#/schemas/BankTransactions) data type.
 
-| **`transactions` Property**         | **Status** |
-|-------------------------------------|------------|
-| id                                  | Required   |
-| date                                | Required   |
-| description                         | Required   |
-| counterparty                        | TBC        |
-| reference                           | TBC        |
-| reconciled                          | TBC        |
-| amount                              | Required   |
-| balance                             | Required   |
-| transactionType                     | TBC        |
-| modifiedDate                        | TBC        |
-| sourceModifiedDate                  | TBC        |
+| **Property in the `transactions` array**   | **Status**                         |
+|--------------------------------------------|------------------------------------|
+| id                                         | Required                           |
+| date                                       | Required                           |
+| description                                | Required                           |
+| counterparty                               | Not supported; ignored if pushed   |
+| reference                                  | Not supported; ignored if pushed   |
+| reconciled                                 | Not supported; ignored if pushed   |
+| amount                                     | Required                           |
+| balance                                    | Required                           |
+| transactionType                            | Supported but not required         |
+| modifiedDate                               | Populated automatically on push    |
+| sourceModifiedDate                         | Populated automatically on push    |
