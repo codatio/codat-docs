@@ -93,7 +93,7 @@ Visit our [Assess in the Portal](/assess/portal/overview) documentation.
 Explore the features that make up Assess:
 
 - [Categories](/assess/categories)
-- [Enhanced Financials](/assess/reports/enhanced-financials/financials)
+- [Enhanced Financials](/assess/enhanced-financials/overview)
 - [Accounting Metrics](/assess/metrics/accounting/api-financial-metrics)
 - [Commerce Metrics](/assess/metrics/commerce/overview)
-- [Data Integrity](/assess/data-integrity)
+- [Data Integrity](/assess/data-integrity/overview)

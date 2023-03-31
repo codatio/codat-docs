@@ -6,12 +6,12 @@ updatedAt: "2022-11-02T14:39:48.397Z"
 ---
 
 :::caution New version of enhanced financials
-Functionality described here has been superseded by a newer version of enhanced financials using revised accounting categories. Explore the new [Enhanced Financials](/assess/reports/enhanced-financials/financials).
+Functionality described here has been superseded by a newer version of enhanced financials using revised accounting categories. Explore the new [Enhanced Financials](/assess/enhanced-financials/overview).
 :::
 
 The _Enhanced Balance Sheet_ endpoint provides a fully categorized balance sheet over a specified period(s) of time, for a specific company’s accounting connection.
 
-Refer to the [Assess reporting structure](/assess/reports/reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/assess/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
 
 For _Enhanced Balance Sheet_, these are the dimensions and measures:
 

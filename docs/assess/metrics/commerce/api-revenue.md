@@ -7,7 +7,7 @@ updatedAt: "2022-11-29T15:20:55.875Z"
 
 The Revenue endpoint retrieves the revenue and revenue growth for a specific company connection, over one or more periods of time.
 
-Refer to the [Assess reporting structure](/assess/reports/reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/assess/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
 
 For Revenue, these are the dimensions and measures:
 

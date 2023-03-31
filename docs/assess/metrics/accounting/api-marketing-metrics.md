@@ -7,7 +7,7 @@ updatedAt: "2022-11-02T14:41:42.370Z"
 
 The Marketing Metrics endpoint retrieves the _marketing to revenue_ and _marketing to expense_ metrics over one or more periods of time. These marketing metrics are calculated from accounting data. It is generated from data available on the customer's profit and loss statement.
 
-Refer to the [Assess reporting structure](/assess/reports/reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/assess/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
 
 For Marketing Metrics, these are the dimensions and measures:
 

@@ -21,7 +21,7 @@ We provide a [free account](https://signup.codat.io/) that lets you explore and 
 
 In the **Settings > Organization settings > [Products](https://app.codat.io/settings/products)** section of the Codat Portal, find **Assess** in the list of products and enable it. This also enables data types required by this product. For example, `balanceSheet` and `profitandLoss`, which are used by the demo app, will be enabled.
 
-We use Assess' [categorization](https://docs.codat.io/assess/reports/enhanced-financials/categorize-accounts) feature. It allows you to perform automated decisioning based on the categorized accounts. 
+We use Assess' [categorization](https://docs.codat.io/assess/enhanced-financials/categorize-accounts) feature. It allows you to perform automated decisioning based on the categorized accounts. 
 
 ### <input type="checkbox" unchecked /> Update your auth flow settings
 
@@ -42,9 +42,9 @@ We will use [ngrok](https://ngrok.com/) here to listen for Codat's webhooks.
    choco install ngrok
    ngrok http 5069
    ```
-   
+
    This will install ngrok using [Chocolatey](https://chocolatey.org/) and run it at port 5069. 
-   
+
    Copy the **forwarding address** - this will be the `<server-url>` for the webhooks.
 
    </TabItem>
@@ -52,13 +52,13 @@ We will use [ngrok](https://ngrok.com/) here to listen for Codat's webhooks.
    <TabItem value="mac" label="Mac OS">
 
    In the terminal, run the following commands:
-   
+
    ```bash
    brew install ngrok
    ngrok http 5069
-   ```  
+   ```
    This will install ngrok using [Homebrew](https://brew.sh/) and run it at port 5069. 
-   
+
    Copy the **forwarding address** - this will be the `<server-url>` for the webhooks.
 
    </TabItem>
