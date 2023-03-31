@@ -15,9 +15,9 @@ Connecting to QuickBooks Online bank feeds through the integration is only suppo
 
 ## Overview
 
-With our integration, your SMB customers can connect their bank accounts in your application to QuickBooks Online (QBO) using one-time credentials. You can then push [Bank transactions](/accounting-api#/schemas/BankTransactions) from those accounts to QBO, via Codat, in chronological order.
+With our integration, your SMB customers can connect their bank accounts in your application to QuickBooks Online (QBO) using one-time credentials. You can then push [Bank transactions](/accounting-api#/schemas/BankTransactions) from those accounts to target accounts in QBO, via Codat, in chronological order.
 
-The SMB user connection journey can occur in the QBO Bank Feeds Link UI, which is built and hosted by Codat, or in your own app via proxy endpoints for credentials generation. Your SMB users can view transactions from their connected accounts as bank feeds in QBO. From there, they can easily reconcile transactions against accounting entries.
+An SMB user can connect their bank accounts in the QBO Bank Feeds Link UI, which is built and hosted by Codat, or in your own app via proxy endpoints for credentials generation. Your SMB users can view transactions from their connected accounts as bank feeds in QBO. From there, they can easily reconcile transactions against accounting entries.
 
 Note that bank transactions are sent from Codat to QBO on a daily schedule. Your SMB users can override this by updating their transactions in the QBO UI at any time.
 
@@ -29,9 +29,9 @@ In this guide, we'll walk you through the following functionality:
 2. The SMB user [connects a bank account to QBO](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-smb-user) using a one-time username and password.
 3. When connected, you can [push bank transactions to QBO](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions) so they're available as bank feeds.
 
-## Support for pushing historic transactions
+## Pushing historic transactions
 
-You can push historic transactions up to seven days old, based on the _feed start date_ chosen by the SMB user in the QBO UI. All bank transactions must be _cleared_ and have a `clearedOnDate` set to the current or the prior day.
+You can push historic transactions up to seven days old based on the _feed start date_ chosen by the SMB user in the QBO UI. All bank transactions must be _cleared_ and have a `clearedOnDate` set to the current or the prior day.
 
 Pushing future (future-dated) bank transactions to QBO is not supported.
 

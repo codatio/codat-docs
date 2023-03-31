@@ -57,7 +57,7 @@ See the next procedure for details on the functionality to provide.
 
 ## Create a company and data connection, then add bank accounts
 
-1. When an SMB user clicks the button or link you added, create a company for them using the <a href="/codat-api#/operations/create-company">Create a company</a> endpoint:
+1. When an SMB user clicks the button or link you added, create a company for them using the [Create company](/codat-api#/operations/create-company) endpoint:
 
    ```http
    POST https://api.codat.io/companies
@@ -73,7 +73,7 @@ See the next procedure for details on the functionality to provide.
 
    The endpoint returns a JSON response containing the company `id` and the `redirect` URL.
 
-2. Using the <a href="/codat-api#/operations/create-data-connection">POST /connections</a> endpoint, create a data connection to QBO Bank Feeds for the company.
+2. Using the [Create a data connection](/codat-api#/operations/create-data-connection) endpoint, create a data connection to QBO Bank Feeds for the company.
 
    ```http
    POST https://api.codat.io/companies/COMPANY_ID/connections
@@ -102,7 +102,7 @@ See the next procedure for details on the functionality to provide.
    }
    ```
 
-3. Using the <a href="/bank-feeds-api#/operations/put-bank-feeds" target="_blank">PUT /bankFeedAccounts</a> endpoint, add one or more source bank accounts.
+3. Using the [PUT /bankFeedAccounts](/bank-feeds-api#/operations/create-bank-feed) endpoint, add one or more source bank accounts.
 
    ```http
    PUT /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts

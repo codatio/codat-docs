@@ -23,15 +23,15 @@ Pushing future (future-dated) bank transactions to QBO is not supported.
 
 :::
 
-## How often to transactions
+## How often to push transactions
 
-Bank transactions must always be sent to QBO in chronological order. Therefore, we recommend you post seven days of historic transactions on the initial push. For subsequent pushes, we recommend you post daily transaction data, which will be sent to QBO on a daily schedule.
+QBO requires that bank transactions are sent from Codat in chronological order. Therefore, we recommend you post seven days of historic transactions on the initial push. For subsequent pushes, we recommend you post daily transaction data, which will be sent to QBO on a daily schedule.
 
 ## Push bank transactions to QuickBooks Online
 
 Make the following requests to the Codat API. All push requests are asynchronous.
 
-1. Push bank transactions from an SMB user's connected bank account using the <a className="external" href="/accounting-api#/operations/post-bank-transactions" target="_blank">Create bank transactions</a> endpoint. Note that:
+1. Push bank transactions from an SMB user's connected bank account using the [Create bank transactions](/accounting-api#/operations/create-bank-transactions) endpoint. Note that:
 
    - You can only push bank transactions from one connected account at a time.
    - Bank transactions must be pushed in chronological order.
@@ -76,18 +76,18 @@ Make the following requests to the Codat API. All push requests are asynchronous
 
 ## Reference
 
-The following table provides more details the properties you can push in the `transactions` array.
+The following table provides more details about the properties you can push in the `transactions` array.
 
-| **Property**         | **Status** |
-|----------------------|------------|
-| id                   | Required   |
-| date                 | Required   |
-| description          | Required   |
-| counterparty         | TBC        |
-| reference            | TBC        |
-| reconciled           | TBC        |
-| amount               | Required   |
-| balance              | Required   |
-| transactionType      | TBC        |
-| modifiedDate         | TBC        |
-| sourceModifiedDate   | TBC        |
+| **`transactions` Property**         | **Status** |
+|-------------------------------------|------------|
+| id                                  | Required   |
+| date                                | Required   |
+| description                         | Required   |
+| counterparty                        | TBC        |
+| reference                           | TBC        |
+| reconciled                          | TBC        |
+| amount                              | Required   |
+| balance                             | Required   |
+| transactionType                     | TBC        |
+| modifiedDate                        | TBC        |
+| sourceModifiedDate                  | TBC        |
