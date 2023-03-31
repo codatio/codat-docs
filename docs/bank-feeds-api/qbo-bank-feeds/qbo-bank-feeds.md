@@ -43,9 +43,11 @@ Pushed bank transactions are automatically sent from Codat to QBO on a daily sch
 
 ### Disconnecting bank feeds
 
-The SMB user can disable bank feeds for their target accounts using the options in QBO. This stops a target account from receiving any further transactions, which means that any subsequent pushes will fail.
+An SMB user can disable bank feeds by disconnecting one or more of their bank accounts in QBO from receiving bank feeds from your application. Disconnecting an account will stop it from receiving any further transactions, which means that any subsequent pushes you make to the source account will fail.
 
-When a bank feed is disabled in QBO, it takes 10 days for the status of the connected bank account in Codat to change to `disconnected`.
+If a bank feed is disabled by an SMB user, it takes 10 days for the status of the source bank account in Codat to change to `disconnected`.
+
+A data connection can be linked to multiple source bank accounts. The status of a data connection only changes to `Unlinked` if all the available source bank accounts have a connection status of `disconnected` (to view this information, call [GET /connectionInfo/bankFeedAccounts](/bank-feeds-api#/operations/get-bank-feeds)). This might take up to one day.
 
 It's not possible to directly remove a bank account from QBO via the integration.
 

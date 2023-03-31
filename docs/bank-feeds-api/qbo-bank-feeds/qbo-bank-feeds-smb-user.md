@@ -20,19 +20,15 @@ To connect their bank accounts to QBO, the SMB user performs the following steps
 
 1. From within your application, the SMB user opens the `linkUrl` in their browser.
 
-2. They select the **Intuit QuickBooks Bank Feeds** tile, then click **Next**.
-
-   ![Link flow QBO Bank Feeds](/img/old/643cba5-link-select-accounting-software-qbo-bank-feeds.png "The select your accounting software step in Link. Select the Quickbooks Bank Feeds tile.")
-
-3. On the **Connect to QuickBooks Online Bank Feeds** step, they review the requested permissions, then click **Next**.
-
    The QBO Bank Feeds Link UI is loaded.
 
-4. On the **Set up QuickBooks** page, they click **Get credentials** to generate their unique one-time username and password for connecting an account to QBO (see step six in the next procedure). The **Revoke credentials** button appears after their credentials are generated - see [Revoke credentials](#revoke-credentials).
+2. On the **Connect to QuickBooks Online Bank Feeds** page, they review the requested permissions, then click **Next**.
+
+3. On the **Set up QuickBooks** page, they click **Get credentials** to generate their unique one-time username and password for connecting an account to QBO (see step six in the next procedure). The **Revoke credentials** button appears after their credentials are generated - see [Revoke credentials](#revoke-credentials).
 
    ![Image](/img/bank-feeds-api/qbo-bank-feeds/400590b-qbo-bank-feeds_smb-customer-steps-revised.png "The Set up QuickBooks page that allows your SMB user to get their credentials.")
 
-5. They follow the instructions displayed in the UI and in the next procedure.
+4. They follow the instructions displayed in the UI and in the next procedure.
 
 ### Enter one-time credentials in QuickBooks
 
