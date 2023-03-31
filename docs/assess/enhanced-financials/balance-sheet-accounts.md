@@ -1,6 +1,7 @@
 ---
-title: "Enhanced Balance Sheet"
+title: "Enhanced Balance Sheet Accounts"
 description: "Endpoint reference to produce a fully categorized balance sheet statement"
+sidebar_label: "Enhanced balance sheet accounts"
 createdAt: "2023-01-25T13:57:24.867Z"
 updatedAt: "2023-01-27T15:26:01.665Z"
 ---

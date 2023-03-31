@@ -1,6 +1,6 @@
 ---
-title: "API: data integrity"
-description: "Reference document for the Data Integrity endpoints"
+title: "Data Integrity"
+description: "Reference document for the data integrity endpoints"
 createdAt: "2022-01-13T14:46:31.445Z"
 updatedAt: "2022-11-22T16:18:03.295Z"
 ---
