@@ -14,7 +14,7 @@ To avoid unnecessary delays, we recommend progressing the commercial and technic
 
 :::caution App partnership is not always possible
 
-Note that Xero App Partnership is not possible for some use cases
+Note that Xero App Partnership is not possible for some use cases.
 
 :::
 
@@ -126,7 +126,7 @@ When you're ready to apply for Xero App Partnership, please contact your Codat a
 
 ### Certification Checkpoints for App Store Partners
 
-Ecosystem Partners are required to complete all the mandatory Certification Checkpoints required of App Partners. We've broken down the Certification Checkpoints in [Joining the Xero App Partner Program](/integrations/accounting/xero/xero-app-partner-program).
+App Store Partners are required to complete all the mandatory Certification Checkpoints required of App Partners. We've broken down the Certification Checkpoints in [Joining the Xero App Partner Program](/integrations/accounting/xero/xero-app-partner-program).
 
 For the most efficient implementation, we suggest completing the checkpoints in the following order:
 
