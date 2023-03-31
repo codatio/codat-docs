@@ -13,6 +13,12 @@ To successfully push to QBO, bank transactions must be:
 - Cleared (not pending) with a `clearedOnDate` of the current or prior day.
 - Ordered chronologically (earliest to latest) by the `clearedOnDate`.
 
+:::caution
+
+When calling [List bank transactions for a bank account](/accounting-api#/operations/list-bank-account-transactions), the `clearedOnDate` is returned. However, when calling [Create bank transactions](/accounting-api#/operations/create-bank-transactions), the value of `clearedOnDate` must be supplied in the `date` field.
+
+:::
+
 ## Pushing historic transactions
 
 You can push historic transactions of up to seven days, based on the _feed start date_ chosen by the SMB user in the QBO UI.
