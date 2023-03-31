@@ -54,14 +54,14 @@ Make the following requests to the Codat API. All push requests are asynchronous
          "id": "7832323211-GIF",
          "amount": 450,
          "balance": 2000,
-         "date": "2022-08-30T17:05:12.191Z", // time value is optional
+         "date": "2022-08-30T17:05:12.191Z", // clearedOnDate, time is optional
          "description": "events-hospitality"
        },
        {
          "id": "7832323211-SDC",
          "amount": 730,
          "balance": 2730,
-         "date": "2022-08-31T11:06:49.191Z", // time value is optional
+         "date": "2022-08-31T11:06:49.191Z", // clearedOnDate, time is optional
          "description": "corporate-training"
        }
      ]
@@ -78,16 +78,16 @@ Make the following requests to the Codat API. All push requests are asynchronous
 
 The following table details how each property in the `transactions` array is handled when pushing bank transactions to QBO. For more details, see the [Bank account transactions](/accounting-api#/schemas/BankTransactions) data type.
 
-| **Property in the `transactions` array**   | **Status**                         |
-|--------------------------------------------|------------------------------------|
-| id                                         | Required                           |
-| date                                       | Required                           |
-| description                                | Required                           |
-| counterparty                               | Not supported; ignored if pushed   |
-| reference                                  | Not supported; ignored if pushed   |
-| reconciled                                 | Not supported; ignored if pushed   |
-| amount                                     | Required                           |
-| balance                                    | Required                           |
-| transactionType                            | Supported but not required         |
-| modifiedDate                               | Populated automatically on push    |
-| sourceModifiedDate                         | Populated automatically on push    |
+| **Property in the `transactions` array**   | **Status**                                       |
+|--------------------------------------------|--------------------------------------------------|
+| id                                         | Required                                         |
+| date                                       | Required                                         |
+| description                                | Required                                         |
+| counterparty                               | Not supported; ignored if pushed                 |
+| reference                                  | Not supported; ignored if pushed                 |
+| reconciled                                 | Not supported; ignored if pushed                 |
+| amount                                     | Required                                         |
+| balance                                    | Required                                         |
+| transactionType                            | Optional, either `Credit`, `Debit`, or `Unknown` |
+| modifiedDate                               | Populated automatically on push                  |
+| sourceModifiedDate                         | Populated automatically on push                  |

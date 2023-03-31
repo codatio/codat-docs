@@ -214,6 +214,6 @@ You can add new source bank accounts to an existing company and data connection.
   ]
    ```
 
-2. The original `linkURL` for the company and data connection contained an `otp` with a one hour expiration window. If this has passed, you'll need to generate a new `linkUrl`. To do this, call the [GET /connection](/codat-api#/operations/get-company-connection) endpoint to obtain a new `linkUrl` for the specified company and data connection.
+2. The original `linkURL` for the company and data connection contained an `otp` with a one hour expiration window. If this has passed, you'll need to generate a new `linkUrl`. To do this, call the [List connections](/codat-api#/operations/list-company-connections) endpoint to obtain a new `linkUrl` for the specified company and data connection.
 
 3. Redirect the SMB user to the new `linkUrl` to enable them to connect the new bank account to QBO.
