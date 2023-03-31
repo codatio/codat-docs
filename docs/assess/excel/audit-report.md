@@ -32,7 +32,7 @@ Data types can be enabled in the <a className="external" href="/core-concepts/da
 
 ## Generating the report
 
-The Audit Report can be generated via API or through [Codat's Portal](/assess/portal/overview#reports). The [Excel reports](/assess/reports/excel-reports) page describes how to generate and download the report via API.
+The Audit Report can be generated via API or through [Codat's Portal](/assess/portal/overview#reports). The [Excel reports](/assess/excel/overview) page describes how to generate and download the report via API.
 
 ## Understanding the report
 
@@ -84,7 +84,7 @@ Borders and styling were added to this image for clarity but is not included in 
 
 This section of the Audit Report displays Gross Profit, Net Operating Profit and Net Profit metrics on a month-by-month basis with percentage change and yearly summaries. This offers insight into any extreme changes that could be indicative of abnormal growth, fraud or additional debt taken on by the company.
 
-Explore [Enhanced Profit and Loss](/assess/reports/enhanced-financials/profit-and-loss) to see the full categorized profit and loss statement.
+Explore [Enhanced Profit and Loss](/assess/enhanced-financials/profit-and-loss) to see the full categorized profit and loss statement.
 
 #### Report structure
 
