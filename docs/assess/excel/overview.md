@@ -19,8 +19,8 @@ Only one request will be processed at a time per SMB company and per report type
 
 ## Available report types
 
-- [Audit Report](/assess/reports/excel-reports/audit-report)
 - [Assess Report](/assess/reports/excel-reports/assess-report)
+- [Audit Report](/assess/reports/excel-reports/audit-report)
 
 ## Parameters
 
@@ -29,7 +29,7 @@ For each of the endpoints described below, you will provide the same parameters.
 |Parameter|Type|Description|Required|
 |---------|----|-----------|--------|
 |**companyId**|_string_|The company ID for which you want to produce an Excel report for download.|Required|
-|**reportType**|_string_|The type of report you want to generate and download.  For the audit report this is set to "audit", for the assess report this is set to "enhancedFinancials"|Required|
+|**reportType**|_string_|The type of report you want to generate and download.  For the audit report this is "audit", for the assess report this is "assess".|Required|
 
 ## Request an Excel report for download
 
@@ -40,9 +40,9 @@ The endpoint is available in our <a href="/assess-api#/operations/post-data-comp
 |Field|Type|Description|
 |-----|----|-----------|
 |**lastGenerated**|_date_|The date and time of the report that is being generated.|
-|**inProgress**|_boolean_|True - the request was successful and the report is being generated. <br/> False - the request was unsuccessful and the report is not being generated.|
+|**inProgress**|_boolean_|True - the request was successful and the report is being generated.<br/>False - the request was unsuccessful and the report is not being generated.|
 |**queued**|_date_|The time a successful request was queued.|
-|**succcess**|_boolean_|True - the requested report was successfully queued. <br/> False - the requested report wasn’t able to be queued.|
+|**succcess**|_boolean_|True - the requested report was successfully queued.<br/>False - the requested report wasn’t able to be queued.|
 |**errorMessage**|_string_|The error message if the status was unsuccessful.|
 |**lastInvocationId**|_string_|A unique ID generated for this request.|
 |**reportType**|_string_|The report requested in the query string.|
@@ -73,9 +73,9 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 |Field|Type|Description|
 |----|----|----|
 |**lastGenerated**|_string_, See [date](/codat-api#/schemas/DateTime)|The date and time of the report that is being generated.|
-|**inProgress**|_boolean_|True - the request was successful and the report is being generated. <br/> False - the request was unsuccessful and the report is not being generated.|
+|**inProgress**|_boolean_|True - the request was successful and the report is being generated.<br/>False - the request was unsuccessful and the report is not being generated.|
 |**queued**|_string_, See [date](/codat-api#/schemas/DateTime)|The time a successful request was queued.|
-|**success**|_boolean_|True - the requested report was successfully queued. <br/> False - the requested report wasn't able to be queued.|
+|**success**|_boolean_|True - the requested report was successfully queued.<br/>False - the requested report wasn't able to be queued.|
 |**errorMessage**|_string_|The error message if the status was unsuccessful.|
 |**lastInvocationId**|_string_|A unique ID generated for this request.|
 |**reportType**|_string_|The report requested in the query string.|
