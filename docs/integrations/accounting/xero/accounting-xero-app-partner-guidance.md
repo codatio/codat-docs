@@ -122,7 +122,7 @@ Xero's App Store is designed to support the go-to-market efforts of its Apps. Xe
 
 These sales are tracked by the _Sign Up with Xero_ flow required by Xero's Certification checkpoints (Checkpoint 8). For more information about the checkpoints, see [Joining the Xero App Partner Program](/integrations/accounting/xero/xero-app-partner-program).
 
-When you're ready apply for Xero App Partnership please contact your Codat account team and we'll connect you with a relevant contact at Xero so you can create your commercial agreement with them.
+When you're ready to apply for Xero App Partnership, please contact your Codat account team, and we'll connect you with a relevant contact at Xero so you can create your commercial agreement with them.
 
 ### Certification Checkpoints for App Store Partners
 
