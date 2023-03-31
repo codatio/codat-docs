@@ -5,7 +5,7 @@ createdAt: "2022-02-21T12:45:33.573Z"
 updatedAt: "2022-11-02T14:38:29.977Z"
 ---
 :::caution Account category versions
-This categorization of accounts via only applies to our legacy [Enhanced Financials](/assess/enhanced-financials/legacy/financials). For categorization using the latest categories, explore the [revised Enhanced Financials](/assess/enhanced-financials/financials).
+This categorization of accounts via only applies to our legacy [Enhanced Financials](/assess/enhanced-financials/legacy/financials). For categorization using the latest categories, explore the [revised Enhanced Financials](/assess/enhanced-financials/overview).
 :::
 
 The **Categorization of accounts** API consists of the following endpoints:

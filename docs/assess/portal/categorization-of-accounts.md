@@ -9,7 +9,7 @@ updatedAt: "2022-11-02T14:49:04.132Z"
 
 There are two account categorization versions currently available in the Codat Portal. 
 
-_Version 2_ supports our legacy [Enhanced Financials](/assess/reports/enhanced-financials-legacy/financials) endpoints. Continue using this version as your categories version if you are still calling these endpoints, as described in this article.
+_Version 2_ supports our legacy [Enhanced Financials](/assess/enhanced-financials/legacy/financials) endpoints. Continue using this version as your categories version if you are still calling these endpoints, as described in this article.
 :::
 
 The chart of accounts defines the financial structure of a company by providing a list of all accounts used in the company's general ledger.
@@ -94,5 +94,5 @@ The downloaded Excel file contains:
 - The output from the <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-accounts-categories">List suggested and confirmed account categories</a> endpoint.
  ```http
  GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categories
- ``` 
+ ```
 - A balance of the account category for every financial period available in the financial statements.

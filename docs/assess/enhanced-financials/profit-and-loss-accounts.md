@@ -140,5 +140,5 @@ Explore the example response:
 ```
 
 :::caution Legacy enhanced financials 
-The categories outlined here will not be returned by the legacy [Enhanced Profit and Loss](/asses/enhanced-financials/legacy/profit-and-loss) endpoint. It uses an [outdated version](/assess/categories) of the account category taxonomy.
+The categories outlined here will not be returned by the legacy [Enhanced Profit and Loss](/assess/enhanced-financials/legacy/profit-and-loss) endpoint. It uses an [outdated version](/assess/categories) of the account category taxonomy.
 :::
