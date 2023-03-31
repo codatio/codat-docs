@@ -139,5 +139,5 @@ Explore the example response:
 ```
 
 :::caution Legacy enhanced financials 
-The categories outlined here will not be returned by the legacy [Enhanced Balance Sheet](/assess/reports/enhanced-financials/legacy/balance-sheet) endpoint. It uses an [outdated version](/assess/categories) of the account category taxonomy.
+The categories outlined here will not be returned by the legacy [Enhanced Balance Sheet](/assess/enhanced-financials/legacy/balance-sheet) endpoint. It uses an [outdated version](/assess/categories) of the account category taxonomy.
 :::
