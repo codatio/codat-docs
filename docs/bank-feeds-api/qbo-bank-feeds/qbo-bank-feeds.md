@@ -45,7 +45,9 @@ Pushed bank transactions are automatically sent from Codat to QBO on a daily sch
 
 The SMB user can disable bank feeds for their target accounts using the options in QBO. This stops a target account from receiving any further transactions, which means that any subsequent pushes will fail.
 
-When a bank feed is disabled in QBO, it takes 10 days for the status of the connected bank account in Codat to change to `disconnected`. 
+When a bank feed is disabled in QBO, it takes 10 days for the status of the connected bank account in Codat to change to `disconnected`.
+
+It's not possible to directly remove a bank account from QBO via the integration.
 
 ### Customize Link for your SMB users
 

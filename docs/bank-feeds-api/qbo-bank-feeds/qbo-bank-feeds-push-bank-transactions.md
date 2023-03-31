@@ -10,8 +10,8 @@ When an SMB user has [connected one or more bank accounts to QuickBooks Online](
 
 To successfully push to QBO, bank transactions must be:
 
-- Cleared - the `clearedOnDate` must be set to the current or prior day.
-- In chronological order calculated from the `clearedOnDate`.
+- Cleared (not pending) with a `clearedOnDate` of the current or prior day.
+- Ordered chronologically (earliest to latest) by the `clearedOnDate`.
 
 ## Pushing historic transactions
 
@@ -23,9 +23,9 @@ Pushing future (future-dated) bank transactions to QBO is not supported.
 
 :::
 
-## Recommendations for pushing bank transactions
+## How often to transactions
 
-Because of the way bank transactions work, we recommend you post seven days of transactions on the initial push. For subsequent pushes, we recommend you post daily transaction data.
+Bank transactions must always be sent to QBO in chronological order. Therefore, we recommend you post seven days of historic transactions on the initial push. For subsequent pushes, we recommend you post daily transaction data, which will be sent to QBO on a daily schedule.
 
 ## Push bank transactions to QuickBooks Online
 
@@ -73,3 +73,21 @@ Make the following requests to the Codat API. All push requests are asynchronous
 2. If the data is valid, the endpoint returns a push operation with a `status` of `Pending` (202). If the push completes successfully, this changes to `Success`.
 
 3. Repeat the request for the remainder of the SMB user's connected bank accounts.
+
+## Reference
+
+The following table provides more details the properties you can push in the `transactions` array.
+
+| **Property**         | **Status** |
+|----------------------|------------|
+| id                   | Required   |
+| date                 | Required   |
+| description          | Required   |
+| counterparty         | TBC        |
+| reference            | TBC        |
+| reconciled           | TBC        |
+| amount               | Required   |
+| balance              | Required   |
+| transactionType      | TBC        |
+| modifiedDate         | TBC        |
+| sourceModifiedDate   | TBC        |
