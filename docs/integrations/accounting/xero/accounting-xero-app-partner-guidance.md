@@ -14,7 +14,7 @@ To avoid unnecessary delays, we recommend progressing the commercial and technic
 
 :::caution App partnership is not always possible
 
-Note that Xero App Partnership is not possible for every use case.
+Note that Xero App Partnership is not possible for some use cases
 
 :::
 
