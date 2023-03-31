@@ -84,9 +84,7 @@ To become a Payments App Partner you need to:
 
 ### Commercial Agreement for Payments App Partners
 
-Xero requires a commercial agreement in order for you to become a Xero App Partner for payments. When you're ready to apply for Xero App Partnership, please contact your Codat account team and we will connect you with a relevant contact at Xero. The commercial terms of this agreement are between you and Xero. Codat is not involved in the negotiation of that commercial agreement. 
-
-When you're ready to apply for Xero App Partnership please contact your Codat account team and we'll connect you with a relevant contact at Xero.
+Xero requires a commercial agreement in order for you to become a Xero App Partner for payments. When you're ready to apply for Xero App Partnership, please contact your Codat account team and we will connect you with a relevant contact at Xero. The commercial terms of this agreement are between you and Xero. Codat is not involved in the negotiation of that commercial agreement.
 
 ### Certification Checkpoints for Payments App Partners
 
