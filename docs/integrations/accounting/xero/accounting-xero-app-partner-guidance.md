@@ -5,7 +5,7 @@ description: "Understand the requirements for Financial Services, Lending, Payme
 
 The process of becoming a Xero App Partner depends on your use case. Xero has two categories of App Partners:
 
-- [Financial Services App Partners](#financial-services-partners), including [Lending App Partners](#lending-partners) and [Payments App Partners](#payments-partners)
+- [Financial Services App Partners](#financial-services-app-partners), including [Lending App Partners](#lending-app-partners) and [Payments App Partners](#payments-app-partners)
 - [Xero App Store Partners](#xero-app-store-partners), also known as _Ecosystem App Partners_
 
 For guidance on what category applies to your use case, consult your Codat account team.
