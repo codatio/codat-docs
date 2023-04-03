@@ -14,7 +14,8 @@ On the **10th July 2023**, we will be deprecating the legacy version of Account 
 - Financial metrics
 - Marketing metrics
 
-To understand exactly what will be changing & how to leverage alternatives (including migration instructions) refer to the pages below:
+To understand what exactly will change and how to leverage alternatives (including migration instructions), refer to the pages below:
+
 
 - [Clients who have built to the Assess API](docs/assess/guides/underwriting/migration-guides/deprecation-account-categories-api-clients)
 - [Clients who use Assess in the portal](docs/assess/guides/underwriting/migration-guides/deprecation-account-categories-portal)
