@@ -35,7 +35,7 @@ description: "Codat's product range supports a variety of use cases, helping you
       Integrate data from corporate cards and expenses management platforms into accounting platforms your customers use.
     </p>
     <p>
-      <a className="tertiary" href="/usecases/summary/managing-expenses.md">Discover expense management →</a>
+      <a className="tertiary" href="/usecases/summary/managing-expenses">Discover expense management →</a>
     </p>    
   </li>
   <li className="card">
