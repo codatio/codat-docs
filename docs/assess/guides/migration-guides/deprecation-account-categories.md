@@ -7,7 +7,8 @@ updatedAt: "2022-11-10T14:01:08.149Z"
 ---
 
 ## What is happening?
-On the **10th July 2023**, we will be deprecating the legacy version of Account Categories and all related features. These features include:
+On the **10th July 2023**, we will be deprecating the legacy version of Account Categories and all related features, including:
+
 - Account categories
 - Enhanced Balance Sheet (legacy version only)
 - Enhanced Profit and Loss (legacy version only)
