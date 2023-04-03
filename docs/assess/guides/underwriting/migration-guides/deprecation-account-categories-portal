@@ -1,0 +1,26 @@
+---
+title: "Clients who are using Assess in the portal"
+description: "Detailed instructions on how you can migrate from the features you're using today"
+sidebar_label: "Clients using the portal"
+createdAt: "2022-10-06T08:32:16.232Z"
+updatedAt: "2022-11-10T14:01:08.149Z"
+---
+
+
+## What will happen on deprecation?
+The following screens in **Assess** will no longer be available:
+- Profit and Loss (including Ratios)
+- Balance sheet (including Ratios)
+- Marketing
+- Categorize accounts (Version 2 only)
+
+The following screens in **Accounting API** will no longer be available:
+- Accounts - Categorize accounts
+
+
+## Instructions for migration
+
+| Feature 	| Alternative 	|  	|
+|:--	|:--	|---	|
+| Under Assess: Balance sheet screen Profit and loss screen  Ratios (at the end of Profit and loss / Balance sheet screens) Marketing screen 	| We will no longer be supporting UIs for these however you can replicate these views with more flexibility in our new Excel report: Log into the Codat Portal → Select a company → Under products, click Assess → Reports A new ‘Assess Report' option is available to be generated and downloaded. Use pivot tables and calculations to generate the metrics and views that you need. Example sheet here 	|  	|
+| Under Assess: Categorize accounts Under Accounting API Accounting Data → Accounts → Categorize accounts 	| If you want to recategorize accounts so the model learns and improves for your companies: Log into the Codat portal Select a company on the Companies page Click Categorize Accounts button Ensure the Version drop down on the right is set to Version 3 We have revamped this screen including some new features which make it easier to categorize accounts including Confidence level. If you are recategorizing accounts because the Enhanced Profit and Loss / Balance Sheet was not being returned due to uncategorized accounts: The latest version will return data regardless of whether all accounts have been categorized. You can decide using the confidence levels if you are happy proceeding without recategorizing. See example for how we suggest you interact with our new confidence levels. If you do not care about the model learning for your companies, you do not need to recategorize via Codat and can make amendments in your own environment. 	|  	|
