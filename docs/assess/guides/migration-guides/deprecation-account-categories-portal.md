@@ -8,16 +8,22 @@ updatedAt: "2022-11-10T14:01:08.149Z"
 
 
 ## What will happen on deprecation?
-The following screens in **Assess** will no longer be available:
+The following screens in **Assess** section of the portal will no longer be available:
 - Profit and Loss (including Ratios)
 - Balance sheet (including Ratios)
 - Marketing
 - Categorize accounts (Version 2 only)
 
-![Screenshot of Profit and loss being deprecated in Assess](/img/assess/account-categorization-deprecation-v2-file1.png)
+![Screenshot of Profit and loss screen that's being deprecated in Assess](/img/assess/profit-and-loss-screen-assess.png)
+![Screenshot of Balance sheet screen that's being deprecated in Assess](/img/assess/balance-sheet-screen-assess.png)
+![Screenshot of Marketing screen that's being deprecated in Assess](/img/assess/marketing-screen-assess.png)
 
-The following screens in **Accounting API** will no longer be available:
+The following screens in **Accounting API** section of the portal will no longer be available:
 - Accounts - Categorize accounts
+
+![Screenshot of categorize accounts screen that's being deprecated](/img/assess/categorize-accounts-button-accounting-api.png)
+![Screenshot of categorize accounts screen that's being deprecated](/img/assess/categorize-accounts-screen1.png)
+![Screenshot of categorize accounts screen that's being deprecated](/img/assess/categorize-accounts-screen2.png)
 
 
 ## Instructions for migration
