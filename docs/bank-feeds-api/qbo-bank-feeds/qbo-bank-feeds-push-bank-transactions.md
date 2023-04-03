@@ -4,30 +4,42 @@ description: "Learn how to push your SMB users' bank transactions via our QuickB
 sidebar_label: "Push bank transactions to QBO"
 ---
 
-When an SMB user has [connected one or more bank accounts to QuickBooks Online](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-smb-user), you can push bank transactions from a connected account to QuickBooks Online (one account at a time). To identify a user's connected bank accounts, see [Retrieve bank account status and information](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-setup#retrieve-bank-account-status-and-information).
+When an SMB user has [connected their bank accounts](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-smb-user), you're ready to push bank transactions from a source bank account to QuickBooks Online (QBO). You can push transactions from any account that has a status of `connected` when you [retrieve bank account status and information](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-setup#retrieve-bank-account-status-and-information).
 
-## Requirements for pushing transactions
+Note the following requirements before pushing bank transactions to QBO.
 
-To successfully push to QBO, bank transactions must be:
+## Ordered by cleared on date
 
-- Cleared (not pending) with a `clearedOnDate` of the current or prior day.
-- Ordered chronologically (earliest to latest) by the `clearedOnDate`.
+To be pushed successfully, bank transactions must be cleared (not pending) and have a `clearedOnDate` of the current or prior day. In the [Create bank transactions](/accounting-api#/operations/create-bank-transactions) endpoint, the `clearedOnDate` is set in the `date` field.
 
-:::caution
+Bank transactions must be ordered chronologically (from earliest to latest) by the `clearedOnDate`.
 
-When calling [List bank transactions for a bank account](/accounting-api#/operations/list-bank-account-transactions), the `clearedOnDate` is returned. However, when calling [Create bank transactions](/accounting-api#/operations/create-bank-transactions), the value of `clearedOnDate` must be supplied in the `date` field.
+:::caution Cleared on date field names
+
+The `clearedOnDate` is returned by the [List bank transactions for a bank account](/accounting-api#/operations/list-bank-account-transactions) endpoint. However, when pushing transactions with [Create bank transactions](/accounting-api#/operations/create-bank-transactions), you must supply the value of the `clearedOnDate` in the `date` field.
 
 :::
 
-## Pushing historic transactions
+## Historic transactions
 
-You can push historic transactions of up to seven days, based on the _feed start date_ chosen by the SMB user in the QBO UI.
+You can push historic transactions of up to seven days based on the _feed start date_, as chosen by the SMB user in the QBO UI.
+
+Codat sends bank transactions to QBO for a maximum of the past seven days.
 
 :::caution Future bank feeds not supported
 
 Pushing future (future-dated) bank transactions to QBO is not supported.
 
 :::
+
+## Other requirements
+
+Note the following requirements for pushing bank transactions to QBO.
+
+- You can only push bank transactions from one source bank account at a time.
+- Bank transactions must be pushed in chronological order.
+- A bank transaction can't be older than the most recent transaction available in the target bank account.
+- Up to 1000 bank transactions can be pushed at a time.
 
 ## How often to push transactions
 
@@ -37,22 +49,13 @@ QBO requires that bank transactions are sent from Codat in chronological order. 
 
 Make the following requests to the Codat API. All push requests are asynchronous.
 
-1. Push bank transactions from an SMB user's connected bank account using the [Create bank transactions](/accounting-api#/operations/create-bank-transactions) endpoint. Note that:
-
-   - You can only push bank transactions from one connected account at a time.
-   - Bank transactions must be pushed in chronological order.
-   - Bank transactions can't be older than the most recent transaction available on the destination bank account.
-   - QBO fetches bank transactions for a maximum of the past seven days.
-   - Bank transactions must have a `date` set to the prior or current day.
-   - Up to 1000 bank transactions can be pushed at a time.
+1. Push bank transactions from an SMB user's connected source bank account using the [Create bank transactions](/accounting-api#/operations/create-bank-transactions) endpoint.
 
    ```http
    POST https://api.codat.io/companies/COMPANY_ID/connections/CONNECTION_ID/push/bankAccounts/ACCOUNT_ID/bankTransactions
    ```
 
-   Example request body (all fields are mandatory):
-
-   ```json
+   ```json title="Example request body (all fields are mandatory)"
    {
      "accountId": "482342-acc-001",
      "transactions": [
@@ -78,7 +81,7 @@ Make the following requests to the Codat API. All push requests are asynchronous
 
 2. If the data is valid, the endpoint returns a push operation with a `status` of `Pending` (202). If the push completes successfully, this changes to `Success`.
 
-3. Repeat the request for the remainder of the SMB user's connected bank accounts.
+3. Repeat the request for the remainder of the SMB user's source bank accounts.
 
 ## Transactions reference
 
