@@ -2,20 +2,18 @@
 title: "Set up the QuickBooks Online Bank Feeds integration"
 description: "Set up our integration with QuickBooks Online Bank Feeds."
 sidebar_label: Setting up
-createdAt: "2022-09-05T13:13:20.253Z"
-updatedAt: "2023-01-11T15:07:17.188Z"
 ---
 
-Set up the QuickBooks Online Bank Feeds integration to let your SMB customers connect their bank accounts in your application to QuickBooks Online (QBO).
+Set up the QuickBooks Online Bank Feeds integration to let your SMB customers connect source bank accounts in your application to target accounts QuickBooks Online (QBO).
 
 ## Prerequisites
 
 Before setting up the integration, make sure that:
 
-- Your Solutions Engineer has provided access to the QuickBooks Online Bank Feeds integration.
-- Your SMB users who will connect to QBO Bank Feeds are located in the US and Canada only.
-- You've enabled Bank accounts and Bank transactions in your [Data type settings](/core-concepts/data-type-settings).
-- You've customized Link for your institution.
+- Your Solutions Engineer has provided you with access to the QuickBooks Online Bank Feeds integration.
+- SMB users who will connect to QBO Bank Feeds are located in the US and Canada only.
+- In the Codat Portal, you've enabled [Bank accounts](/accounting-api#/schemas/BankAccount) and [Bank transactions](/accounting-api#/schemas/BankTransactions) in your [Data type settings](/core-concepts/data-type-settings).
+- You've customized the QBO Bank Feeds Link UI for your institution.
 
 ## Enable the QBO Bank Feeds integration
 
@@ -23,23 +21,23 @@ Before setting up the integration, make sure that:
 2. Click **Set up** next to **QuickBooks Online Bank Feeds**.
 3. Use the toggle to set the integration to **Enabled**.
 
-:::info Integration doesn't appear in Link flow
+:::info Integration won't appear in Link flow
 
-Enabling the QuickBooks Online Bank Feeds integration doesn't make the integration visible in the Link flow.
+Enabling the integration won't make it visible in the Link flow. Instead, SMB users connect directly via a Link URL.
 
 :::
 
 ## Add a custom callout to the Link Site
 
-You can add a custom text callout, in both French and English, to the QBO Bank Feeds Link UI. This can provide additional guidance to SMB users on connecting their bank accounts to QBO.
+You can add a custom text callout, in both French and English, to the QBO Bank Feeds Link UI. These can provide additional guidance to your SMB users on connecting their bank accounts to QBO.
 
-1. Go to the <a className="external" href="https://app.codat.io/settings/integrations/bankfeeds" target="_blank">**Bank feed integrations**</a> page in the Codat Portal.
+1. Go to the [**Bank feed integrations**](https://app.codat.io/settings/integrations/bankfeeds) page in the Codat Portal.
 2. Click **Manage** next to **QuickBooks Online Bank Feeds**.
 3. Enter text in the **Callout title** and **Callout body** fields (maximum of 50 and 150 characters respectively). Only plain text is supported.
 
    :::info Localization options
 
-   You can also enter French translations for the callout title and body. These will appear in a separate box on the QBO Bank Feeds Link UI. 
+   You can also enter French translations for the callout title and body.
 
    :::
 
@@ -51,21 +49,19 @@ The callout is displayed in a gray box at the bottom of the QBO Bank Feeds Link 
 
 ## Add a "Connect bank feeds" button to your application
 
-Add functionality—for example, a button or link—to your application that lets your users connect their bank accounts to QBO for the purposes of viewing bank feeds. Use an appropriate UI label, such as _Connect account to QuickBooks_.
+Next, add a button or link to your application that prompts your SMB users to connect their bank accounts to QBO. Use an appropriate call-to-action, such as _Connect account to QuickBooks_.
 
 See the next procedure for details on the functionality to provide.
 
 ## Create a company and data connection, then add bank accounts
 
-1. When an SMB user clicks the button or link you added, create a company for them using the [Create company](/codat-api#/operations/create-company) endpoint:
+1. When the SMB user clicks the button or link you added, create a company for them using the [Create company](/codat-api#/operations/create-company) endpoint:
 
    ```http
    POST https://api.codat.io/companies
    ```
 
-   Request body:
-
-   ```json
+   ```json title="Request body"
    {
      "name": "COMPANY_NAME"
    }
@@ -102,7 +98,7 @@ See the next procedure for details on the functionality to provide.
    }
    ```
 
-3. Using the [PUT /bankFeedAccounts](/bank-feeds-api#/operations/create-bank-feed) endpoint, add one or more source bank accounts.
+3. Using the [PUT /bankFeedAccounts](/bank-feeds-api#/operations/create-bank-feed) endpoint, add one or more source bank accounts. These are the accounts the SMB user will be able to connect to QBO.
 
    ```http
    PUT /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts
@@ -110,7 +106,7 @@ See the next procedure for details on the functionality to provide.
 
    In the request body, specify a list of bank accounts (all fields shown are required):
 
-   ```json
+   ```json title="Example request body: add two checking accounts"
    [
      {
        "id": "ac-001",
@@ -135,7 +131,7 @@ See the next procedure for details on the functionality to provide.
 
    The endpoint returns a `200` response and the list of created bank accounts.
 
-4. Redirect the SMB user to the `linkUrl` returned in the response from the `POST /connections` endpoint (see step 2).
+4. Redirect the SMB user to the `linkUrl` returned in the response from the Create a data connection endpoint (see step 2).
 
    :::caution Link URL expiry
 
@@ -143,9 +139,9 @@ See the next procedure for details on the functionality to provide.
 
    :::
 
-5. The SMB user opens the `linkUrl` in their browser.
+5. The SMB user opens the `linkUrl` in their browser to load the QBO Bank Feeds Link UI.
 
-6. The SMB user can now [connect their chosen bank accounts to QuickBooks Online](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-smb-user).
+6. They can now [connect their chosen bank accounts to QuickBooks Online](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-smb-user).
 
 :::caution Do not hardcode the Link URL
 
@@ -174,9 +170,7 @@ Provide the bank account details you want to update as request parameters.
 PATCH /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts/{bankAccountId}
 ```
 
-Example request body:
-
-```json
+```json title="Example request body: update account name"
 {
   "id": "acc-002", // required id of bank account to update
   "accountName": "updated-account-name",
@@ -217,3 +211,9 @@ You can add new source bank accounts to an existing company and data connection.
 2. The original `linkURL` for the company and data connection contained an `otp` with a one hour expiration window. If this has passed, you'll need to generate a new `linkUrl`. To do this, call the [List connections](/codat-api#/operations/list-company-connections) endpoint to obtain a new `linkUrl` for the specified company and data connection.
 
 3. Redirect the SMB user to the new `linkUrl` to enable them to connect the new bank account to QBO.
+
+---
+
+## Read next
+
+Understand how the [SMB user connects their accounts](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-smb-user) to QBO.
