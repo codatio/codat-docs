@@ -82,50 +82,7 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 You can now use your Xero integration to connect up to 25 companies. If you want to use your integration to connect more than 25 companies, you need to [register with Xero as an official Xero App Partner](/integrations/accounting/xero/xero-app-partner-program).
 
-See the following sections for more information about Xero App partnership and configuring direct bank feeds using Xero's Bank Feeds API.
-
-## About Xero App Partnership
-
-:::tip Get your app certified
-
-Looking for a walkthrough of the app certification and listing process? We break down everything you need to know in our blog post, <a className="external" href="https://www.codat.io/blog/get-your-app-certified-on-the-xero-app-store/" target="_blank">"How to get your app certified on the Xero App store"</a>.
-:::
-
-To link more than 25 companies (excluding connections to the Xero demo company) you must become a Xero app partner.
-
-Xero have specific requirements about who can gain app partner status and how they must build their integration. **Xero app partnership is not possible for all use cases.**
-
-:::caution Connection limits for non-partner apps
-
-Xero apps created by non-partners, known as _uncertified apps_, are limited to a maximum of 25 connections (excluding connections to the Xero demo company).
-
-To remove this connection limit, you must be granted _app partner_ status with Xero. For more information, see [App Partner Overview](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/overview) and [OAuth 2.0 API limits](https://developer.xero.com/documentation/guides/oauth2/limits/#uncertified-app-limits) in the Xero Developer documentation.
-:::
-
-:::caution Financial services providers
-
-Financial services providers may be subject to additional commercial terms before being granted app partner status with Xero. If you are a financial services provider, we strongly recommend that you contact Xero before you start to build your integration. You can also contact your Codat sales or solutions representative to learn more about Xero app partnership.
-:::
-
-For detailed information about applying for app partner status with Xero, review the following articles in the Xero Developer documentation:
-
-- <a
-    href="https://developer.xero.com/documentation/xero-app-store/app-partner-guides/app-partner-steps"
-    target="_blank"
-  >
-    Steps to becoming an app partner
-  </a>
-
-- <a
-    href="https://developer.xero.com/documentation/xero-app-store/app-partner-guides/faqs/"
-    target="_blank"
-  >
-    App Partner Program FAQs
-  </a>
-
-To start the app partner application process, click **Join the Xero App Store** on the **App details** page for your app. You can also contact api@xero.com with the details of the application you are building.
-
-<img src="/img/old/01c6df4-xero-app-partner-status.png" />
+See the next section for information about configuring direct bank feeds using Xero's Bank Feeds API.
 
 ## Configure direct bank feeds
 
