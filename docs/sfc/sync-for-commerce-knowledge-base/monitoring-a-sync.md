@@ -1,13 +1,13 @@
 ---
-title: "Monitoring a Sync"
-description: "Learn how to monitor a sync's progress and review detailed logs"
+title: "Viewing and retrying a Sync"
+description: "Learn how to monitor a sync's progress, review detailed logs, and retry failed items"
 createdAt: "2023-01-11T05:58:45.089Z"
 updatedAt: "2023-01-16T17:26:16.794Z"
 ---
 
-Use the Sync Health page in the Codat Portal to monitor the status of your syncs and review detailed logs and error messages. This helps your support team to resolve common issues with the merchant settings or actions.
+Use the Sync Health page in the Codat Portal to monitor the status of your syncs, review detailed logs and error messages, and retry pushing failed items. This helps your support team to resolve common issues with the merchant settings or actions.
 
-Navigate to **Products > Sync for Commerce** in the <a href="https://app.codat.io/products/sync-for-commerce" target="_blank">Codat Portal</a> to view the Health page:
+In the <a href="https://app.codat.io/" target="_blank">Codat Portal</a>, click **Products** and select the relevant Sync product to view its Health page:
 
 - Check the **dashboard** (1) for a visual summary of sync totals.
 - Use the **search bar** (2) to narrow down the records by sync Id or company Id. 
@@ -16,22 +16,37 @@ Navigate to **Products > Sync for Commerce** in the <a href="https://app.codat.i
 - Use the **menu** (6) to sort and amend the **sync history** (5) table as needed.
 
 <img
-  src="/img/old/068227e-2023-01-13_09-27-21.png"
+  src="/img/sync-for-commerce/0006-sync-health-ui.png"
   alt="Sync Health page view with numbered annotations on the key page elements: the dashboard, filters, status filter, and the main data table"
 />
 
 For further detail, click a record in your sync history.  The view provides sync start and end times, and sync source and target platforms. It also displays client-friendly notes and error messages in case of sync failures. Refer to our [troubleshooting guide](/sfc/error-documentation#error-messages) for recommendations on how to resolve these. 
 
-You can also navigate to the Config tab to view and download the merchant's sync configuration.
+You can also navigate to the Config tab to view and download the merchant's sync configuration, or select the detailed push items list to retry failed pushes.
 
 <img
-  src="/img/old/86ad267-2023-01-16_14-06-17.png"
-  alt="Detailed view of a sync log entry with Summary and Config tabs "
+  src="/img/sync-for-commerce/0007-sync-details-ui.png"
+  alt="Detailed view of a sync log entry with Summary, Config, and Push Items tabs"
+/>
+
+## Retry failed items
+
+:::warning Sync for Expenses only
+
+At this time, it is possible to retry pushing failed items for Sync for Expenses only.
+
+:::
+
+In the Push Items tab of the Sync Health site you can access a detailed view of push items - single items of an accounting data type with sync metadata surrounding it. Here, you can view and retry pushing failed items, which allows engineers, support, and customers resolve issues with sync. It is possible to filter the items by their core ID or data type. 
+
+<img
+  src="/img/sync-for-commerce/0009-sync-push-items-ui.png"
+  alt="Detailed view of the Push Items tabs with two failed syncs"
 />
 
 ## Sync history for merchants
 
-Your merchants can [check their own sync history](/sfc/build-with-sync-for-commerce/implementing-codats-no-code-merchant-configuration#4-allow-the-merchant-to-review-their-configuration) and sync status in the **Sync Flow**. For each sync, the merchant can check the sync date range and its status.
+Your merchants can check their own sync history and sync status in the **Sync Flow**. For each sync, the merchant can check the sync date range and its status.
 
 ## Pitfalls
 
