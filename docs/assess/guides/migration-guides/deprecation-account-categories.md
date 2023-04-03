@@ -19,7 +19,8 @@ To understand what exactly will change and how to leverage alternatives (includi
 
 
 - [Clients who have built to the Assess API](docs/assess/guides/underwriting/migration-guides/deprecation-account-categories-api-clients)
-- [Clients who use Assess in the portal](docs/assess/guides/underwriting/migration-guides/deprecation-account-categories-portal)
+- [Clients who use Assess in the Portal](docs/assess/guides/underwriting/migration-guides/deprecation-account-categories-portal)
+
 - [Clients who use the data extract to excel in the portal](docs/assess/guides/underwriting/migration-guides/deprecation-account-categories-v2-excel)
 
 
