@@ -17,7 +17,7 @@ description: "Codat's product range supports a variety of use cases, helping you
       Evaluates borrowers' financial history, income, assets, and debts to determine financial risk. 
     </p>
     <p>
-      <a href="/usecases/summary/underwriting"><b>Discover underwriting →</b></a>
+      <a className="tertiary" href="/usecases/summary/underwriting">Discover underwriting →</a>
     </p>    
     <p>
       Check out our <a href="/assess/guides/underwriting/introduction">loan underwriting</a> guide.
@@ -35,7 +35,7 @@ description: "Codat's product range supports a variety of use cases, helping you
       Integrate data from corporate cards and expenses management platforms into accounting platforms your customers use.
     </p>
     <p>
-      <a href="/usecases/summary/managing-expenses.md"><b>Discover expense management →</b></a>
+      <a className="tertiary" href="/usecases/summary/managing-expenses">Discover expense management →</a>
     </p>    
   </li>
   <li className="card">
@@ -50,7 +50,7 @@ description: "Codat's product range supports a variety of use cases, helping you
       Integrate your customers' payroll data from their HR and payroll platforms into their accounting platforms and to support its reconciliation.
     </p>
     <p>
-      <a href="/usecases/summary/managing-payroll"><b>Discover payroll management →</b></a>
+      <a className="tertiary" href="/usecases/summary/managing-payroll">Discover payroll management →</a>
     </p> 
   </li>
   <li className="card">
@@ -65,7 +65,7 @@ description: "Codat's product range supports a variety of use cases, helping you
       Pull real-time SMB data from accounting platforms and display it in your platform, providing insight to your customers.
     </p>
     <p>
-      <a href="/usecases/summary/dashboarding"><b>Discover dashboarding →</b></a>
+      <a className="tertiary" href="/usecases/summary/dashboarding">Discover dashboarding →</a>
     </p>
   </li>
   <li className="card">
@@ -80,7 +80,7 @@ description: "Codat's product range supports a variety of use cases, helping you
       Automate your customers' accounts payable processes by reflecting bills from business software and suppliers in their accounting platforms. 
     </p>
     <p>
-      <a href="/usecases/summary/automating-payables"><b>Discover payables automation →</b></a>
+      <a className="tertiary" href="/usecases/summary/automating-payables">Discover payables automation →</a>
     </p>
   </li>
   <li className="card">
@@ -95,7 +95,7 @@ description: "Codat's product range supports a variety of use cases, helping you
       Automate your customers' accounts receivable processes by reflecting outstanding and received invoices from their buyers in their accounting platforms.
     </p>
     <p>
-      <a href="/usecases/summary/automating-receivables"><b>Discover receivables automation →</b></a>
+      <a className="tertiary" href="/usecases/summary/automating-receivables">Discover receivables automation →</a>
     </p>
   </li>
   <li className="card">
@@ -110,7 +110,7 @@ description: "Codat's product range supports a variety of use cases, helping you
       Integrate high-volume sales and payment data from PoS, eCommerce, and payments platforms into your SMBs' accounting platforms.
     </p>
     <p>
-      <a href="/usecases/summary/integrating-commerce-data"><b>Discover commerce data integration →</b></a>
+      <a className="tertiary" href="/usecases/summary/integrating-commerce-data">Discover commerce data integration →</a>
     </p>
   </li>
     <li className="card">
@@ -125,7 +125,7 @@ description: "Codat's product range supports a variety of use cases, helping you
       Pull your customers' bank transaction data into accounting platform bank transaction ledgers for reconcilliation.
     </p>
     <p>
-      <a href="/usecases/summary/reconciling-bank-transactions.md"><b>Discover bank transactions reconciliation →</b></a>
+      <a className="tertiary" href="/usecases/summary/reconciling-bank-transactions">Discover bank transactions reconciliation →</a>
     </p>
   </li>
 </ul>
