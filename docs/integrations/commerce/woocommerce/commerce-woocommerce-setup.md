@@ -7,7 +7,7 @@ Before you can pull commerce data from companies using WooCommerce, you need to 
 
 You'll need to:
 
-- Log in to the [Codat Portal](https://app.codat.io/).
+- Sign in to the [Codat Portal](https://app.codat.io/).
 - Enable the WooCommerce integration.
 - Check your sync settings.
 
