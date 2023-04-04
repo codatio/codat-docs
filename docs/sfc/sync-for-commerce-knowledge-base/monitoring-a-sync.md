@@ -28,9 +28,11 @@ In the <a href="https://app.codat.io/" target="_blank">Codat Portal</a>, click *
   alt="Sync Health page view with numbered annotations on the key page elements: the dashboard, filters, status filter, and the main data table"
 />
 
-## view detailed records
+## View detailed records
 
-To view more detailed information, click a record in your sync history.  The view provides sync start and end times, and sync source and target platforms. It also displays client-friendly notes and error messages in case of sync failures. Refer to our [troubleshooting guide](/sfc/error-documentation#error-messages) for recommendations on how to resolve these. 
+To view more detailed information, click a record in your **sync history**.  The view provides sync start and end times, and sync source and target platforms. 
+
+It also displays client-friendly notes and error messages in case of sync failures. Refer to our [troubleshooting guide](/sfc/error-documentation#error-messages) for recommendations on how to resolve these. 
 
 You can also navigate to the Config tab to view and download the customer's sync configuration, which helps establish root causes for any errors that occured. 
 
@@ -46,8 +48,6 @@ In the same detailed record view, select the **Push items** tab to access a deta
 ## Retry push items
 
 When on the **Push items** tab, you can also retry the push items in failed status. Click the **Retry failed items** button to trigger another attempt to push the data of all failed push items. 
-
-For push items in failed status, you can retry the push items by clicking the **Retry failed items** button. This will trigger an attempt to retry all the failed push items. 
 
 At this time, it is possible to view push items and retry failed ones for **Sync for Expenses only**.
 
