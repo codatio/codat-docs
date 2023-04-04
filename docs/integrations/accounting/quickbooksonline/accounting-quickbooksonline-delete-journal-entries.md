@@ -3,93 +3,37 @@ title: "Delete Journal entries from QuickBooks Online"
 description: "Description"
 ---
 
-The _Delete journal entries_ endpoint allows you to delete a specified Journal entry from QuickBooks Online (QBO).
+The [Delete Journal entries](/accounting-api#/) endpoint allows you to delete a specified Journal entry from QuickBooks Online (QBO).
 
-1. Make a `DELETE` request to the endpoint and specify the Codat ID of the Journal entry to be deleted in the request URL:
+:::danger Use with caution
 
-   ```json title="Delete a Journal entry"
+It is possible to delete any object from QuickBooks Online using this endpoint. 
+
+:::
+
+1. Make a `DELETE` request to the Delete Journal entries endpoint:
+
+   ```http title="Delete a Journal entry"
    DELETE /companies/{companyId}/connections/{connectionId}/delete/journalEntries/{journalEntryId}
    ```
 
-   TO DO: Add a link to the API Reference
+   Supply the Codat ID of the Journal entry you want to delete in the {journalEntryId} parameter.
 
-2. [List the push operations](/codat-api#/operations/get-company-push-history) for the company. Response - what do we need to highlight???
+   The endpoint returns a 200 code if the record was deleted successfully.
 
-```json
-{
-  "results": [
-    {
-      "id": "8484",
-      "postedOn": "2023-03-15T00:00:00",
-      "createdOn": "2023-03-15T00:00:00",
-      "journalLines": [
-        {
-          "description": "",
-          "netAmount": -22.3,
-          "currency": "GBP",
-          "accountRef": {
-            "id": "139",
-            "name": "Barclays"
-          },
-          "tracking": {
-            "recordRefs": [
-              {
-                "id": "DEPARTMENT_1",
-                "dataType": "trackingCategories"
-              }
-            ]
-          }
-        },
-        {
-          "description": "",
-          "netAmount": 22.3,
-          "currency": "GBP",
-          "accountRef": {
-            "id": "70",
-            "name": "Debtors"
-          },
-          "tracking": {
-            "recordRefs": [
-              {
-                "id": "DEPARTMENT_1",
-                "dataType": "trackingCategories"
-              }
-            ]
-          }
-        }
-      ],
-      "modifiedDate": "2023-03-15T11:14:37Z",
-      "sourceModifiedDate": "2023-03-15T11:13:27Z",
-      "recordRef": {
-        "id": "8484",
-        "dataType": "payments"
-      },
-      "metadata": {
-        "isDeleted": false
-      }
-    }
-  ],
-  "pageNumber": 1,
-  "pageSize": 20,
-  "totalResults": 1,
-  "_links": {
-    "current": {
-      "href": "/companies/c0c4ef53-e70c-45d5-9af4-27aa486347d7/data/journalEntries?page=1&pageSize=20&orderBy=-createdOn&query=%7Bid~8484%7C%7CrecordRef.dataType~8484%7C%7CcreatedOn%3D8484%7C%7CpostedOn%3D8484%7D%26%26metadata.isDeleted!%3Dtrue"
-    },
-    "self": {
-      "href": "/companies/c0c4ef53-e70c-45d5-9af4-27aa486347d7/data/journalEntries"
-    }
-  }
-}
-```
+2. [List the push operations](/codat-api#/operations/get-company-push-history) for the company. A `Success` status indicates that the Journal entry object was deleted from QBO.
 
-3. Check that the Journal entry no longer exists in the QBO UI.
+3. Check the Journal entry no longer exists in the QBO UI.
 
-Something about linked invoices?
+## Effect on related objects
 
+Be aware that deleting a Journal entry from QBO might cause related objects to be modified. For example, if you delete the Journal entry for a paid invoice: 
 
-Add a warning- this endpoint allows you to delete any record ??? use with caution
+- The invoice is deleted.
+- The payment object isn't deleted. The payment is converted to a payment on account. 
 
-```info
-Existing note from NetSuite - future support for deleting objects
-```
+:::info Future support for deleting objects
+
+To check the data types for which we plan to add support for deleting objects from the source accounting platform, see the [Accounting API Public Product Roadmap](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/46-accounting-api).
+
+:::
