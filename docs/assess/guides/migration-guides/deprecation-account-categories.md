@@ -16,9 +16,9 @@ On the **10th July 2023**, we will be deprecating the legacy version of Account 
 - Marketing metrics
 
 To understand what exactly will change and how to leverage alternatives (including migration instructions), refer to the pages below:
-- [Clients who have built to the Assess API](docs/assess/guides/migration-guides/deprecation-account-categories-api-clients)
-- [Clients who use Assess in the Portal](docs/assess/guides/migration-guides/deprecation-account-categories-portal2)
-- [Clients who use the data extract to Excel in the Portal](docs/assess/guides/migration-guides/deprecation-account-categories-v2-excel)
+- [Clients who have built to the Assess API](/assess/guides/migration-guides/deprecation-account-categories-api)
+- [Clients who use Assess in the Portal](/assess/guides/migration-guides/deprecation-account-categories-portal)
+- [Clients who use the data extract to Excel in the Portal](/assess/guides/migration-guides/deprecation-account-categories-excel)
 
 
 

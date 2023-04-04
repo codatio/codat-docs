@@ -6,30 +6,42 @@ createdAt: "2022-10-06T08:32:16.232Z"
 updatedAt: "2022-11-10T14:01:08.149Z"
 ---
 
-
 ## What will happen on deprecation?
 The following features in the **Assess** section of the portal will no longer be available:
-- Profit and Loss
-- Balance sheet
-- Ratios (at the end of the Profit and Loss & Balance Sheet tabs)
-- Marketing
-- Categorize accounts (Version 2 only)
 
-![Screenshot of Profit and loss screen that's being deprecated in Assess](/img/assess/profit-and-loss.png)
-![Screenshot of Balance sheet screen that's being deprecated in Assess](/img/assess/balance-sheet.png)
-![Screenshot of Marketing screen that's being deprecated in Assess](/img/assess/marketing-screen-assess.png)
-![Screenshot of categorize accounts screen that's being deprecated](/img/assess/account-categorization-v2.png)
-
-The following screens in **Accounting API** section of the portal will no longer be available:
-- Accounts - Categorize accounts
-
-![Screenshot of categorize accounts screen that's being deprecated](/img/assess/accounting-api-account-categorisation.png)
+|Feature|Portal|
+|:--|:--|
+|**Profit and loss**|![Screenshot of Profit and loss screen that's being deprecated in Assess](/img/assess/profit-and-loss.png)|
+|**Balance sheet**|![Screenshot of Balance sheet screen that's being deprecated in Assess](/img/assess/balance-sheet.png)|
+|**Ratios** <br/><br/>**Note**: These appear at the end of the Profit and Loss and Balance Sheet tabs|![Screenshot of Ratios screen that's being deprecated in Assess](/img/assess/financial-ratios.png)|
+|**Marketing**|![Screenshot of Marketing screen that's being deprecated in Assess](/img/assess/marketing-screen-assess.png)|
+|**Categorize accounts in Assess** <br/><br/>**Note**: We have new screens available for recategozing accounts using the latest categories.| ![Screenshot of categorize accounts screen that's being deprecated](/img/assess/account-categorization-v2.png)|
+|**Categorize accounts in Accounting API** <br/><br/>**Note**: We have new screens available for recategozing accounts using the latest categories.| ![Screenshot of categorize accounts screen that's being deprecated](/img/assess/accounting-api-account-categorisation.png)|
 
 
-## Migrating to the new features
+## Alternative options
 
-| Feature 	| Alternative 	|
-|:--	|:--	|
-| Any of the following data visualization features under **Assess** in the Portal:<br/> 1. Balance sheet <br/>2. Profit and loss <br/>3. Ratios (at the end of Profit and loss / Balance sheet screens) <br/>4. Marketing screen 	| We will no longer be supporting these features in the Portal, however you can replicate these data views using our new Assess report in excel. To do so: <br/> 1. Log into the Codat Portal <br/> 2. Select a company <br/> 3. Under products, click Assess and then Reports <br/>4. A new ‘Assess report' option is available to be generated and downloaded. Use pivot tables and calculations to generate the metrics and views that you need. 	|
-| Categorize accounts screen in **Assess**: <br/> 1. Select **Assess** in the left-hand menu <br/>2. Click **Categorize accounts** <br/>| There is a new version of this screen available for the latest account categories. Simply change the **Version** toggle on the top right of the screen to <i>Version 3</i> 	|
-| Categorize accounts screen in Accounting API: <br/> 1. Select **Accounting API** in the left-hand menu <br/>2. In the **Data type** drop down, select <i> Accounting data</i> and then <i>Accounts</i> <br/>3. Click **Categorize accounts** 	|  Follow the steps above to access this screen in **Assess**.|
+
+### Viewing financial statements and calculating ratios
+
+1. Log into the **Codat Portal**
+2. Select a company on the **Companies** page
+3. Under products, click **Assess**, and then **Reports**
+4.  A new **Assess Report** option is available to be generated and downloaded.
+5. Once downloaded, open the file in Microsoft Excel 
+6. Use pivot tables and charts to view and interrogate the financial statements.
+7. Sum up the balances per category to calculate financial ratios.
+
+![Screenshot of financial statements in excel](/img/assess/financial-statements-excel.png)
+
+
+### Categorizing accounts
+
+There is a new version of the account categorization screen available for the latest account categories. To access this:
+1. Select **Assess** in the left-hand menu 
+2. Click **Categorize accounts** 
+
+There is a new version of this screen available for the latest account categories. Simply change the **Version** toggle on the top right of the screen to <i>Version 3</i>
+
+![Screenshot of account categorization screen in the portal](/img/assess/account-categorization-v3.png)
+
