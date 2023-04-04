@@ -15,8 +15,8 @@ The following features in the **Assess** section of the portal will no longer be
 - Marketing
 - Categorize accounts (Version 2 only)
 
-![Screenshot of Profit and loss screen that's being deprecated in Assess](/img/assess/profit-and-loss-screen-assess.png)
-![Screenshot of Balance sheet screen that's being deprecated in Assess](/img/assess/balance-sheet-screen-assess.png)
+![Screenshot of Profit and loss screen that's being deprecated in Assess](/img/assess/profit-and-loss.png)
+![Screenshot of Balance sheet screen that's being deprecated in Assess](/img/assess/balance-sheet.png)
 ![Screenshot of Marketing screen that's being deprecated in Assess](/img/assess/marketing-screen-assess.png)
 
 The following screens in **Accounting API** section of the portal will no longer be available:
