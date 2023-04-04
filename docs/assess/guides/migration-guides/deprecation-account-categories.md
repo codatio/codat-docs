@@ -1,5 +1,5 @@
 ---
-title: "Migrate from V2 to V3 Enhanced Financials "
+title: "Migrate to the latest version of Account Categories "
 description: "Detailed instructions on how you can migrate from the features you're using today"
 sidebar_label: "Migrating to the latest Enhanced Financials"
 createdAt: "2022-10-06T08:32:16.232Z"
