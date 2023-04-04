@@ -8,7 +8,7 @@ updatedAt: "2022-11-10T14:01:08.149Z"
 
 
 ## What will happen on deprecation?
-The following tabs in **data export excel** will no longer be available:
+The following sheets in the **data export excel** will no longer be available:
 - Account categories
 - Categorized account balances
 
@@ -19,4 +19,4 @@ Note: All other tabs in the data export excel, the audit report and the banking 
 
 | Feature 	| Alternative 	|
 |:--	|:--	|
-| In the data export excel: Account categories sheet Categorized account balances sheet 	| Log into the Codat Portal → Select a company → Under products, click Assess → Reports A new ‘Assess Report' option is available to be generated and downloaded. If you do not have access to Assess, please speak to your Account Manager to get it enabled. 	|
+| If you are using the following sheets in the data export excel: <br/>1. Account categories sheet <br/>2. Categorized account balances sheet 	| The latest Account Categories can be downloaded to excel in Assess. To do so: <br/> 1. Log into the Codat Portal<br/> 2. Select a company <br/> 3. Under products, click **Assess**, and then **Reports** <br/> 4.  A new **Assess Report** option is available to be generated and downloaded. <br/><br/> If you do not have access to Assess, please speak to your Account Manager to get it enabled. 	|
