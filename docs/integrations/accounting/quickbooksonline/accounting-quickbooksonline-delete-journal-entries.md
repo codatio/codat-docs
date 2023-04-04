@@ -3,11 +3,11 @@ title: "Delete Journal entries from QuickBooks Online"
 description: "Learn how to delete Journal entries from QuickBooks Online using the deletion endpoint"
 ---
 
-The (TBC) [Delete Journal entries](/accounting-api#/) endpoint allows you to delete a specified Journal entry from QuickBooks Online (QBO).
+The _Delete Journal entries_ endpoint allows you to delete a specified Journal entry from QuickBooks Online.
 
 :::danger Use with caution
 
-The underlying QuickBooks API endpoint allows users to delete any object from their QBO instance. Make sure you specify the correct ID of the Journal entry you want to delete. 
+The underlying QuickBooks API endpoint allows users to delete any object from their QBO instance. Make sure you specify the correct ID of the Journal entry you want to delete. Deleting an object is not reversible.
 
 :::
 
