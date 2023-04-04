@@ -24,7 +24,8 @@ The following features in the **Assess** section of the portal will no longer be
 
 ### Viewing financial statements and calculating ratios
 
-1. Log into the **Codat Portal**
+1. Log into the **Codat Portal**.
+
 2. Select a company on the **Companies** page
 3. Under products, click **Assess**, and then **Reports**
 4.  A new **Assess Report** option is available to be generated and downloaded.
