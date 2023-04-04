@@ -11,7 +11,7 @@ You'll need to:
 - Enable the WooCommerce integration.
 - Check your sync settings.
 
-No registration is required to set up our WooCommerce integration.
+No registration is required to set up and enable our WooCommerce integration.
 
 ## Enable the WooCommerce integration
 
