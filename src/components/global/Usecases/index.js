@@ -129,3 +129,5 @@ const Usecases = () => {
     </ul>
   )
 }
+
+export default Usecases
