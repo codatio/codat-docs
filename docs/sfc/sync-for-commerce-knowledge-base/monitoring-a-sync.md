@@ -12,7 +12,7 @@ Use the Sync Health page in the Codat Portal to monitor the status of your syncs
 In the <a href="https://app.codat.io/" target="_blank">Codat Portal</a>, click **Products** and select the relevant Sync product to view its Health page:
 
 - Check the **dashboard** (1) for a visual summary of sync totals.
-- Use the **search bar** (2) to narrow down the records by sync Id or company Id. 
+- Use the **search bar** (2) to narrow down the records by sync ID or company ID. 
 - Display the sync history for a specific period by indicating a **date range** (3). 
 - [Review the possible statuses](/sfc/error-documentation#status-codes) of the syncs and filter the records by their **status code** (4). 
 - Use the **menu** (6) to sort and amend the **sync history** (5) table as needed.
@@ -24,18 +24,18 @@ In the <a href="https://app.codat.io/" target="_blank">Codat Portal</a>, click *
 
 ## View detailed records
 
-To view more detailed information, click a record in your **sync history**.  The view provides sync start and end times, and sync source and target platforms. 
+To view more detailed information about a record, click on an item in your **sync history**. The information appears in the **Senc Details** window and provides sync start and end times, and sync source and target platforms. 
 
 It also displays client-friendly notes and error messages in case of sync failures. Refer to our [troubleshooting guide](/sfc/error-documentation#error-messages) for recommendations on how to resolve these. 
 
-You can also navigate to the Config tab to view and download the customer's sync configuration, which helps establish root causes for any errors that occured. 
+You can also navigate to the **Config** tab to view and download the customer's sync configuration, which helps establish root causes for any errors that occured. 
 
 <img
   src="/img/sync-for-commerce/0007-sync-details-ui.png"
   alt="Detailed view of a sync log entry with Summary, Config, and Push Items tabs"
 />
 
-:::warning View and retry push items
+:::caution View and retry push items
 
 At this time, it is possible to view and retry failed push items for **Sync for Expenses only**.
 
@@ -49,7 +49,7 @@ Here, you can view each item's status, search the items by their core ID or data
 
 ## Retry push items
 
-When on the **Push items** tab, you can also retry the push items in failed status. Click the **Retry failed items** button to trigger another attempt to push the data of all failed push items. The button is only enabled if there are failed items to retry.
+On the **Push items** tab, you can also retry the push items in failed status. Click the **Retry failed items** button to trigger another attempt to push the data of all failed push items. The button is only enabled if there are failed items to retry.
 
 <img
   src="/img/sync-for-commerce/0009-sync-push-items-ui.png"
