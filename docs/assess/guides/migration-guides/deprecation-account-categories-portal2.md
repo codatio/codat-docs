@@ -13,9 +13,10 @@ The following features in the **Assess** section of the portal will no longer be
 |:--|:--|
 |**Profit and loss**|![Screenshot of Profit and loss screen that's being deprecated in Assess](/img/assess/profit-and-loss.png)|
 |**Balance sheet**|![Screenshot of Balance sheet screen that's being deprecated in Assess](/img/assess/balance-sheet.png)|
-|**Ratios** <br/><br/>**Note**: These appear at the end of the Profit and Loss and Balance Sheet tabs|![Screenshot of Ratios screen that's being deprecated in Assess](/img/assess/ratios.png)|
+|**Ratios** <br/><br/>**Note**: These appear at the end of the Profit and Loss and Balance Sheet tabs|![Screenshot of Ratios screen that's being deprecated in Assess](/img/assess/financial-ratios.png)|
 |**Marketing**|![Screenshot of Marketing screen that's being deprecated in Assess](/img/assess/marketing-screen-assess.png)|
-|**Categorize accounts** <br/><br/>**Note**: We have new screens available for recategozing accounts using the latest categories.| ![Screenshot of categorize accounts screen that's being deprecated](/img/assess/categorize-accounts-button-accounting-api.png) <br/>![Screenshot of categorize accounts screen that's being deprecated](/img/assess/categorize-accounts-screen2.png)|
+|**Categorize accounts in Assess** <br/><br/>**Note**: We have new screens available for recategozing accounts using the latest categories.| ![Screenshot of categorize accounts screen that's being deprecated](/img/assess/account-categorization-v2.png)|
+|**Categorize accounts in Accounting API** <br/><br/>**Note**: We have new screens available for recategozing accounts using the latest categories.| ![Screenshot of categorize accounts screen that's being deprecated](/img/assess/accounting-api-account-categorisation.png)|
 
 
 ## Alternative options available to you

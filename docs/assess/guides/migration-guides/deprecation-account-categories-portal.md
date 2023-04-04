@@ -18,13 +18,12 @@ The following features in the **Assess** section of the portal will no longer be
 ![Screenshot of Profit and loss screen that's being deprecated in Assess](/img/assess/profit-and-loss.png)
 ![Screenshot of Balance sheet screen that's being deprecated in Assess](/img/assess/balance-sheet.png)
 ![Screenshot of Marketing screen that's being deprecated in Assess](/img/assess/marketing-screen-assess.png)
+![Screenshot of categorize accounts screen that's being deprecated](/img/assess/account-categorization-v2.png)
 
 The following screens in **Accounting API** section of the portal will no longer be available:
 - Accounts - Categorize accounts
 
-![Screenshot of categorize accounts screen that's being deprecated](/img/assess/categorize-accounts-button-accounting-api.png)
-![Screenshot of categorize accounts screen that's being deprecated](/img/assess/categorize-accounts-screen1.png)
-![Screenshot of categorize accounts screen that's being deprecated](/img/assess/categorize-accounts-screen2.png)
+![Screenshot of categorize accounts screen that's being deprecated](/img/assess/accounting-api-account-categorisation.png)
 
 
 ## Migrating to the new features
