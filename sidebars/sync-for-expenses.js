@@ -28,7 +28,7 @@ module.exports = [
   {
     type: "link",
     href: "/sfc/sync-for-commerce-knowledge-base/monitoring-a-sync",
-    label: "Viewing and retrying a Sync",
+    label: "Monitoring a sync",
   },
    "sync-for-expenses/sync-for-expenses-faq",
   {
