@@ -21,7 +21,12 @@ The following endpoints will stop working:
 
 ## Instructions for migration
 
-Identify the endpoints you are using today and the alternative solutions available to you:
+1. Map to the new endpoints
+2. Review the changes in behaviour
+
+### Map to the new endpoints
+
+Identify the endpoints you are using today and the recommended alternative solutions:
 
 | Current endpoint 	| Alternative 	|
 |---|---|
@@ -32,3 +37,13 @@ Identify the endpoints you are using today and the alternative solutions availab
 | [Enhanced Balance sheet](/assess-api#/operations/get-enhanced-balance-sheet)  	| [Enhanced balance sheet accounts](/assess-api#/operations/get-accounts-for-enhanced-balance-sheet) <br/>Note: the response schema has changed. 	|
 | [List financial metrics](/assess-api#/operations/get-enhanced-financial-metrics) <br/><br/> [Get the marketing metrics from an accounting source](/assess-api#/operations/get-accounting-marketing-metrics) 	| We are no longer supporting the precalculated metrics available on these endpoints. You can calculate these using your own formulas from our new endpoints: <br/>[Enhanced profit and loss accounts](/assess-api#/operations/get-accounts-for-enhanced-profit-and-loss) <br/>[Enhanced balance sheet accounts](/assess-api#/operations/get-accounts-for-enhanced-balance-sheet) <br/><br/>If you would like to continue using the same formulas for the precalculated metrics we offered, you can find the formulas [here](https://docs.google.com/spreadsheets/d/1xpyQHOTQWHybOZpSnfXx54tkag0qmJ1mR76bQt9wink/edit?usp=sharing)  	|
 
+
+### Changes in behaviour
+
+The behaviour changes below apply to the latest endpoints only, the behaviour on the endpoints being deprecated has not changed.
+
+1. Our **supported categories** have changed - you will need to map to the [latest categories](/assess/enhanced-financials/supported-account-categories).
+2. We no longer require the balance sheet to balance. This means if <i>Assets - Liabilities</i> does not equal <i> Equity</i> , we will still return data via the endpoint. If you require this validation, we recommend you implement these rules in your own environment.
+3. The response schema has changed from a recursive model to a flat list of accounts per financial period.
+4. We now support <i>up to</i> 5 levels of categories per account. We will populate suggestions to the lowest relevant level and we do not require all levels to be populated to return a response.
+5. The <i>period length</i> parameter is no longer supported on the latest **Enhanced profit and loss accounts** and **Enhanced balance sheet accounts** endpoints; all data is returned in monthly increments. If you require data to be grouped by periods, we recommend you do this in your own environment.
