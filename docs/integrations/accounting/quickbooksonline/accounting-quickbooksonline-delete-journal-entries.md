@@ -11,7 +11,7 @@ The underlying QuickBooks API endpoint allows users to delete any object from th
 
 :::
 
-1. Make a `DELETE` request to the _Delete Journal entries_ endpoint:
+1. Make a DELETE request to the _Delete Journal entries_ endpoint:
 
    ```http title="Delete a Journal entry"
    DELETE /companies/{companyId}/connections/{connectionId}/delete/journalEntries/{journalEntryId}
@@ -27,10 +27,7 @@ The underlying QuickBooks API endpoint allows users to delete any object from th
 
 ## Effect on related objects
 
-Be aware that deleting a Journal entry from QBO might cause related objects to be modified. For example, if you delete the Journal entry for a paid invoice: 
-
-- The invoice is deleted.
-- The payment object isn't deleted. The payment is converted to a payment on account. 
+Be aware that deleting a Journal entry from QBO might cause related objects to be modified. For example, if you delete the Journal entry for a paid invoice, the invoice is deleted but the payment against that invoice is not. The payment is converted to a payment on account. 
 
 :::info Future support for deleting objects
 
