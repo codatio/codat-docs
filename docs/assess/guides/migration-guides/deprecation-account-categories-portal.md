@@ -30,7 +30,8 @@ The following features in the **Assess** section of the portal will no longer be
 3. Under Products, click **Assess**, and then **Reports**.
 
 4.  A new **Assess Report** option is available to be generated and downloaded.
-5. Once downloaded, open the file in Microsoft Excel 
+5. Open the downloaded file in Microsoft Excel.
+
 6. Use pivot tables and charts to view and interrogate the financial statements.
 7. Sum up the balances per category to calculate financial ratios.
 
