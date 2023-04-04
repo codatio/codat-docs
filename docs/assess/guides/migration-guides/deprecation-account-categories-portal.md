@@ -26,7 +26,8 @@ The following features in the **Assess** section of the portal will no longer be
 
 1. Log into the **Codat Portal**.
 
-2. Select a company on the **Companies** page
+2. Select a company on the **Companies** page.
+
 3. Under Products, click **Assess**, and then **Reports**.
 
 4.  A new **Assess Report** option is available to be generated and downloaded.
