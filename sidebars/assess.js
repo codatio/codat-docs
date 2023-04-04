@@ -27,7 +27,18 @@ module.exports = [
           "assess/guides/underwriting/process-loan",
           "assess/guides/underwriting/uw-decision",
         ],
-      },  
+      },
+      {
+        type: "category",
+        label: "Migration Guides",
+        collapsed: true,
+        items: [
+          "assess/guides/migration-guides/deprecation-account-categories",
+          "assess/guides/migration-guides/deprecation-account-categories-api",
+          "assess/guides/migration-guides/deprecation-account-categories-portal",
+          "assess/guides/migration-guides/deprecation-account-categories-excel",
+        ],
+      }, 
     ],
   },
   {
