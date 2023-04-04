@@ -26,7 +26,7 @@ The _Delete bill_ and _Delete bill payment_ endpoints allow you to delete specif
 
    :::
 
-2. [List the push operations](/codat-api#/operations/get-companies-companyId-push) for the company. A `Success` status for the push operation means the Bill or Bill payment object was deleted from NetSuite.
+2. [List the push operations](/codat-api#/operations/get-company-push-history) for the company. A `Success` status for the push operation means the Bill or Bill payment object was deleted from NetSuite.
 
 3. Check that the Bill or Bill Payment object no longer exists in the NetSuite UI.
 
