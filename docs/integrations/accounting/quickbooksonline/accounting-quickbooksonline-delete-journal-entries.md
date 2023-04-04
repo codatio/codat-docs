@@ -1,27 +1,27 @@
 ---
 title: "Delete Journal entries from QuickBooks Online"
-description: "Description"
+description: "Learn how to delete Journal entries from QuickBooks Online using the deletion endpoint"
 ---
 
-The [Delete Journal entries](/accounting-api#/) endpoint allows you to delete a specified Journal entry from QuickBooks Online (QBO).
+The (TBC) [Delete Journal entries](/accounting-api#/) endpoint allows you to delete a specified Journal entry from QuickBooks Online (QBO).
 
 :::danger Use with caution
 
-It is possible to delete any object from QuickBooks Online using this endpoint. 
+The underlying QuickBooks API endpoint allows users to delete any object from their QBO instance. Make sure you specify the correct ID of the Journal entry you want to delete. 
 
 :::
 
-1. Make a `DELETE` request to the Delete Journal entries endpoint:
+1. Make a `DELETE` request to the _Delete Journal entries_ endpoint:
 
    ```http title="Delete a Journal entry"
    DELETE /companies/{companyId}/connections/{connectionId}/delete/journalEntries/{journalEntryId}
    ```
 
-   Supply the Codat ID of the Journal entry you want to delete in the {journalEntryId} parameter.
+   For the `{journalEntryId}` parameter, supply the Codat ID of the Journal entry you want to delete.
 
    The endpoint returns a 200 code if the record was deleted successfully.
 
-2. [List the push operations](/codat-api#/operations/get-company-push-history) for the company. A `Success` status indicates that the Journal entry object was deleted from QBO.
+2. [List all push operations](/codat-api#/operations/get-company-push-history) for the company. A `Success` status indicates that the Journal entry object was deleted from QBO.
 
 3. Check the Journal entry no longer exists in the QBO UI.
 
