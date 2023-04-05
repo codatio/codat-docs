@@ -118,7 +118,7 @@ const Usecases = () => {
             className="icon usecase"
           />
         </div>
-        <h3>Bank transactions</h3>
+        <h3>Reconciling ank transactions</h3>
         <p>
           Pulling your customers' bank transaction data into accounting platform bank transaction ledgers for reconcilliation.
         </p>
