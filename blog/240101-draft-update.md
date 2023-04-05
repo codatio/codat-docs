@@ -1,7 +1,7 @@
 ---
 title: "Upcoming YYYY-MM-DD: Title"
 date: "2020-01-01"
-tags: ["Deprecation"]
+tags: ["Product", "Update"]
 draft: true
 authors: mcclowes
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Product update #4"
 date: "2023-04-04"
-tags: ["Deprecation"]
+tags: ["Product", "Update"]
 authors: mcclowes
 ---
 
@@ -12,19 +12,23 @@ We've improvemed our data type coverage for a number of integrations.
 ### Integration coverage improvements
 
 #### QuickBooks Online
+
 - Customer tracking on Expense lines (Direct Cost - Pull and Push)
-- Push Payment on Account refunds
+- Create `Payment` on Account refunds
 
 #### MYOB 
-- Push Journal Entries
-- Pull 'Jobs' on Tracking Categories
+
+- Create Journal Entries
+- Get `Jobs` on Tracking Categories
 
 #### Freshbooks 
-- Pull Bills
-- Pull Bill Payments
+
+- Get Bills
+- Get Bill Payments
 
 #### FreeAgent
-- We've added support for Pushing Direct Cost attachments
+
+- We've added support for pushing Direct Cost attachments
 
 ## Deprecations
 
