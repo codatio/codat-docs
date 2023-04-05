@@ -55,8 +55,10 @@ If you specify a `billPaymentId` that corresponds to a Deposit in NetSuite, only
 
 ![Image](/img/integrations/accounting/netsuite/netsuite_deposite-other-deposits.png "A NetSuite Deposit with the Other Deposits and Cash Back tabs highlighted.")
 
-:::info Future support for deleting objects
+:::info Support for object deletion
 
-To check the data types for which we plan to add support for deleting objects from the source accounting platform, see the [Accounting API Public Product Roadmap](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/46-accounting-api).
+To check which data types and platforms support object deletion, call the [List integrations](/codat-api#/operations/list-integrations) endpoint. 
+
+We're increasing support for object deletion across various accounting platforms and data types. You can check our [Accounting API Public Product Roadmap](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/46-accounting-api) for the latest status.
 
 :::
