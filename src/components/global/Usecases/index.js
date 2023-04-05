@@ -10,15 +10,15 @@ const Usecases = () => {
             className="icon usecase"
           />
         </div>
-        <h3>Underwriting</h3>
+        <h3>Lending</h3>
         <p>
           Evaluates borrowers' financial history, income, assets, and debts to determine financial risk. 
         </p>
         <p>
-          <a className="tertiary" href="/usecases/summary/underwriting">Discover underwriting →</a>
+          <a className="tertiary" href="/usecases/summary/lending">Discover lending →</a>
         </p>    
         <p>
-          Check out our <a href="/assess/guides/underwriting/introduction">loan underwriting</a> guide.
+          Check out our <a href="/assess/guides/loan-qualification/introduction">loan qualification</a> guide.
         </p>
       </li>
       <li className="card">

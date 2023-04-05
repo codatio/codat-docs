@@ -1,11 +1,13 @@
 ---
-title: "Make a loan decision"
-description: "Follow the underwriting demo app end-to-end to start an application, analyze it, and make a decision on the loan request"
+title: "Make a lending decision"
+description: "Follow the loan qualification demo app end-to-end to start an application, analyze it, and make a decision on the loan request"
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ### 🚀 In this section, you will...
+
 * Review the basic process flow followed by the demo app,
 * Create a new loan application,
 * Create a Codat company and connect it to the Codat Sandbox,
@@ -13,14 +15,14 @@ import TabItem from '@theme/TabItem';
 * Categorize accounts that were omitted by Assess, and
 * Receive a decision on the loan. 
 
-:::note Underwriting demo process flow
+:::note Loan qualification demo process flow
 
-This diagram shows the steps of the underwriting process as performed by the demo app. It helps you visualize the relationship and information exchange between the app's different components.
+This diagram shows the steps of the loan qualification process as performed by the demo app. It helps you visualize the relationship and information exchange between the app's different components.
 
 ``` mermaid
   sequenceDiagram
-    participant frontend as Underwriting Frontend 
-    participant backend as Underwriting Backend 
+    participant frontend as Lending Frontend 
+    participant backend as Lending Backend 
     participant codat as Codat API
     frontend ->> backend: Submit application
     backend ->> codat: Request enriched data
@@ -81,7 +83,7 @@ Select the **Codat Sandbox** as the source of accounting data.
 * You don't need to enter any credentials to authorize this connection. 
 * You should also skip the step of uploading business documents. 
 
-![](/img/use-cases/underwriting/sandbox-credentials-modal.png)
+![](/img/use-cases/loan qualification/sandbox-credentials-modal.png)
 
 ### <input type="checkbox" unchecked /> Manually categorize accounts 
 
@@ -89,22 +91,22 @@ Select the **Codat Sandbox** as the source of accounting data.
 
 The demo app makes use of the categorization feature of [Assess](/assess/overview). When fetching financial data, Codat’s Assess product analyses the full list of a company's accounts and assigns a category to each account. While it is able to automatically categorize most of the source accounts, it is not always possible, and a manual intervention may be required. 
 
-In our demo, one account remains without a specified category. You need to assign a category to it before the demo application is ready for underwriting. This is because the Profit and Loss, and Balance Sheet data types in Assess depend on fully categorized accounts.
+In our demo, one account remains without a specified category. You need to assign a category to it before the demo application is ready for loan qualification. This is because the Profit and Loss, and Balance Sheet data types in Assess depend on fully categorized accounts.
 
-To do that, click on the **Companies** tab in the top menu in the [Codat Portal](https://app.codat.io/). Next, click on the company you are performing underwriting for, and navigate to **Products > Assess**. Click the red **Categorization required** button to the right of the company name. 
+To do that, click on the **Companies** tab in the top menu in the [Codat Portal](https://app.codat.io/). Next, click on the company you are performing loan qualification for, and navigate to **Products > Assess**. Click the red **Categorization required** button to the right of the company name. 
 
-![](/img/use-cases/underwriting/0000-acct-categorization-modal-06-03-2023.png)
+![](/img/use-cases/loan qualification/0000-acct-categorization-modal-06-03-2023.png)
 
 This takes you to the **Account categorization** page which displays the uncategorized account. **Account type** and **Account subtype** are pre-filled for you. **Categories version** should be set to _Version 2_. Select _Accounts Payable_ as **Account detail** in the drop down and **Save** the categorization. 
 
-![](/img/use-cases/underwriting/0000-categorization-screen.png)
+![](/img/use-cases/loan qualification/0000-categorization-screen.png)
 
 ### <input type="checkbox" unchecked /> Make the decision on the loan 
 
 🙏🏽💰 The decisioning is normally performed by the lender, but the borrower is able to query an application's status at any point.
 
-The demo app now has all the components that it needs to produce an underwriting decision. The decision is automatically made by the 
-[LoanUnderwriter](https://github.com/codatio/demo-loan-qualification/blob/main/Codat.Demos.Underwriting.Api/Services/LoanUnderwriter.cs) service based on thresholds that need to be passed by the applicant. We then update the loan application with a relevant status to indicate the decision made on the loan, or any errors that occurred in the process. You can poll the `GET applications/{applicationId}` endpoint in [Swagger](http://localhost:5069/swagger/index.html) anytime to check the status of your loan. 
+The demo app now has all the components that it needs to produce an loan qualification decision. The decision is automatically made by the 
+[LoanUnderwriter](https://github.com/codatio/demo-loan-qualification/blob/main/Codat.Demos.loan qualification.Api/Services/LoanUnderwriter.cs) service based on thresholds that need to be passed by the applicant. We then update the loan application with a relevant status to indicate the decision made on the loan, or any errors that occurred in the process. You can poll the `GET applications/{applicationId}` endpoint in [Swagger](http://localhost:5069/swagger/index.html) anytime to check the status of your loan. 
 
 ### 💪 Ready for more? 
 
@@ -114,7 +116,7 @@ Try these suggestions to make the most of your experience with the demo app:
   Navigate to **Products > Assess** in the [Portal](https://app.codat.io/) to view a visual representation of the financial data pulled by our endpoints, including `balanceSheet` and `profitAndLoss`.
   
 - **Play around with thresholds**  
-  In the `appsettings.json` file in the `Codat.Demos.Underwriting.Api\` directory, set your own example thresholds for data points used by the app's underwriting service and see how this affects the application decision.
+  In the `appsettings.json` file in the `Codat.Demos.loan qualification.Api\` directory, set your own example thresholds for data points used by the app's loan qualification service and see how this affects the application decision.
 
 - **Underwrite using different datasets**  
   Start another loan application, and choose a different Sandbox company type to get a different set of financial data to be used in the decision-making. 
@@ -122,10 +124,10 @@ Try these suggestions to make the most of your experience with the demo app:
 - **Use a company's real data**  
   Take the demo one step further and use real credentials to access existing financial data in an accounting platform. Set up the [integration](/integrations/accounting/overview) you plan to use, and connect to it while following the auth flow. Then, review how the app makes a decision based on your company's real data. 
 
-- **Inspect the underwriting logic**  
-  We provide [detailed information](/assess/guides/underwriting/uw-decision) about the underwriting logic we included in our demo app, and how exactly the financial data is fetched. 
+- **Inspect the loan qualification logic**  
+  We provide [detailed information](/assess/guides/loan qualification/uw-decision) about the loan qualification logic we included in our demo app, and how exactly the financial data is fetched. 
   
 
 ### Recap
 
-You have now successfully run the demo app, covering all the key underwriting process steps. You have started and completed an application, connected and fetched accounting data, and received a decision on your loan application. 
+You have now successfully run the demo app, covering all the key loan qualification process steps. You have started and completed an application, connected and fetched accounting data, and received a decision on your loan application. 
