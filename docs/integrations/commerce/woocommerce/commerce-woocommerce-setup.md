@@ -11,13 +11,16 @@ You'll need to:
 - Enable the WooCommerce integration.
 - Check your sync settings.
 
-Registration with WooCommerce is not required to set up and enable the integration.
+Registration with WooCommerce is not required to set up and enable the integration. 
 
 ## Enable the WooCommerce integration
 
 1. In the Codat Portal, go to the [**Commerce integrations**](https://app.codat.io/settings/integrations/commerce) page.
 2. Locate **WooCommerce**, then select **Set up** to view the **Integration settings** page.
-3. In the **Application name** box, enter the name of the application to appear in WooCommerce.
+3. Enter the **Application name** to appear in WooCommerce.
+   
+   The application name is displayed when a merchant links their store and is asked for permission to connect the store.
+
 4. Choose what [type of access to company data](/core-concepts/data-type-settings) you want for this integration: one-off or continuous.
 5. Click **Save**.
 6. In the dialog that appears, click **Enable WooCommerce**.
