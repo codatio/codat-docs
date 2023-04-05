@@ -7,6 +7,8 @@ authors: e-donnelly
 
 On the **10th July 2023**, we will be deprecating the legacy version of  `Account Categories` and all related features, including:
 
+<!--truncate-->
+
 #### On the Assess API
 
 - [GET /data/assess/accounts/categories](/assess-api#/operations/list-available-account-categories)
