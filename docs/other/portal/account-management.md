@@ -7,7 +7,7 @@ description: "Learn how to change your Codat account settings and reset your pas
 
 You can now change details and settings of your user profile in the [Codat Portal](https://app.codat.io/). Click on a circle with your initials in the top right corner of the portal to access the [Account settings](https://app.codat.io/settings/account) page. 
 
-![A screenshot of the dropdown menu that allows to navigate to account settings](static/img/other-guides/0012-acct-mgt-access.png)
+![A screenshot of the dropdown menu that allows to navigate to account settings](/img/other-guides/0012-acct-mgt-access.png)
 
 In the **Profile** section, you can change the name associated with the account, and confirm your involvement with the technical implementation of your Codat solution. Remember to press **Save changes** when you are done. 
 
