@@ -23,7 +23,7 @@ If you want to change your password (for example, for security reasons), you can
 2. Then, enter and confirm your new password. We provide you with a list of password requirements, and measure the strength of your new password.
 3. Finally, press **Update password** to save your changes. 
 
-If you forgot your password and are looking to reset it, perform the following steps:
+If you have forgotten your password and are looking to reset it:
 
 1. Click **Forgot your password?** on the sign-in screen.
 2. Next, enter the email you registered with.
