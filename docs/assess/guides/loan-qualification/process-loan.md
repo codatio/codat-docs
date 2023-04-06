@@ -125,7 +125,7 @@ Try these suggestions to make the most of your experience with the demo app:
   Take the demo one step further and use real credentials to access existing financial data in an accounting platform. Set up the [integration](/integrations/accounting/overview) you plan to use, and connect to it while following the auth flow. Then, review how the app makes a decision based on your company's real data. 
 
 - **Inspect the loan qualification logic**  
-  We provide [detailed information](/assess/guides/loan qualification/uw-decision) about the loan qualification logic we included in our demo app, and how exactly the financial data is fetched. 
+  We provide [detailed information](/assess/guides/loan-qualification/uw-decision) about the loan qualification logic we included in our demo app, and how exactly the financial data is fetched. 
   
 
 ### Recap
