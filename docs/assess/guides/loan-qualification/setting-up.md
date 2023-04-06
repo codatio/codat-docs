@@ -7,6 +7,7 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 ### 🚀 In this section, you will...
+
 * Create your Codat account
 * Enable the Assess product
 * Configure webhooks
@@ -15,7 +16,7 @@ import TabItem from "@theme/TabItem";
 
 ### <input type="checkbox" unchecked/> Create a Codat account 
 
-We provide a [free account](https://signup.codat.io/) that lets you explore and test our APIs and other products, including Assess. It also comes equipped with a sample company. When you start working on your own underwriting solution, you may want to explore our other [plans](https://www.codat.io/plans/).
+We provide a [free account](https://signup.codat.io/) that lets you explore and test our APIs and other products, including Assess. It also comes equipped with a sample company. When you start working on your own loan qualification solution, you may want to explore our other [plans](https://www.codat.io/plans/).
 
 ### <input type="checkbox" unchecked /> Enable the Assess product 
 
@@ -76,11 +77,11 @@ In the **Monitor > Alerts > [Alerting rules](https://app.codat.io/monitor/rules)
 
 Click **Create rule** to open the new rule creation window. Select the rule type, apply it to all companies, and assign it a webhook URL. Make sure to replace the `<server-url>` with your forwarding address.
 
-   ![](/img/use-cases/underwriting/rule-creation-screen.png)
+   ![](/img/use-cases/loan-qualification/rule-creation-screen.png)
 
 ### <input type="checkbox" unchecked /> Clone the code
 
-Clone our demo repo on [GitHub](https://github.com/codatio/demo-loan-qualification) to download the underwriting demo app. 
+Clone our demo repo on [GitHub](https://github.com/codatio/demo-loan-qualification) to download the loan qualification demo app. 
 
 The main file directory for the demo app is `Codat.Demos.Underwriting.Api`. Key logic components of the app are located in `Controllers`, `Orchestrator`, and `Services` folders.
 
@@ -141,7 +142,7 @@ Once running, open the Swagger page in your web browser: `http://localhost:5069/
 
 Make sure the `http` profile is set and press "Run". The IDE will automatically open [Swagger](http://localhost:5069/swagger/index.html) in a new tab of your browser. You will use it to call the demo's endpoints.
 
-![](/img/use-cases/underwriting/underwriting-guide-rider.png)
+![](/img/use-cases/loan-qualification/underwriting-guide-rider.png)
 
 </TabItem>
 
@@ -149,7 +150,7 @@ Make sure the `http` profile is set and press "Run". The IDE will automatically 
 
 Ensure the `http` profile is set and press the "Play" icon. The IDE will automatically open [Swagger](http://localhost:5069/swagger/index.html) in a new tab of your browser. You will use it to call the demo's endpoints.
 
-![](/img/use-cases/underwriting/underwriting-guide-visual-studio-2022.png)
+![](/img/use-cases/loan-qualification/underwriting-guide-visual-studio-2022.png)
 
 </TabItem>
 
@@ -163,4 +164,4 @@ You have now set up your Codat instance and your local environment in preparatio
 
 ### Read next
 
-- [Use the app to underwrite a loan](/assess/guides/underwriting/process-loan).
+- [Use the app to underwrite a loan](/assess/guides/loan-qualification/process-loan).

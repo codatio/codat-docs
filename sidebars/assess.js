@@ -19,13 +19,13 @@ module.exports = [
       "assess/get-started",
       {
         type: "category",
-        label: "Loan underwriting",
+        label: "Loan qualification",
         collapsed: true,
         items: [
-          "assess/guides/underwriting/introduction",
-          "assess/guides/underwriting/setting-up",
-          "assess/guides/underwriting/process-loan",
-          "assess/guides/underwriting/uw-decision",
+          "assess/guides/loan-qualification/introduction",
+          "assess/guides/loan-qualification/setting-up",
+          "assess/guides/loan-qualification/process-loan",
+          "assess/guides/loan-qualification/uw-decision",
         ],
       },
       {

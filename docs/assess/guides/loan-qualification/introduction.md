@@ -1,7 +1,7 @@
 ---
-title: "Our underwriting guide"
+title: "Our loan qualification guide"
 sidebar_label: "Introduction"
-description: "Underwrite with Codat and our Assess product" 
+description: "Lend with Codat and our Assess product" 
 ---
 
 :::tip Who is this guide for?
@@ -12,7 +12,7 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 
 ### Summary
 
-🎯 Codat makes underwriting easier by getting you trusted data with which to check a loan applicant’s finances. With our demo app, you will experience the end-to-end underwriting process flow with automatic decision-making supported by Codat's [Assess](/assess/overview) product. We will focus on the lender's perspective. 
+🎯 Codat makes lending easier by getting you trusted data with which to check a loan applicant’s finances. With our demo app, you will experience the end-to-end lending process flow with automatic decision-making supported by Codat's [Assess](/assess/overview) product. We will focus on the lender's perspective. 
 
 ⏳ Estimated time to complete: 20-30 minutes
 
@@ -24,19 +24,19 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 - Create a test company via Codat’s API to represent the borrower,
 - Link the test company to Codat's sandbox source of financial data,
 - Fetch that data using Codat’s Enhanced Profit and Loss and Enhanced Balance Sheet endpoints,
-- Use Codat’s webhooks to trigger the underwriting of a loan,
-- Produce an automated underwriting decision based on custom financial data points. 
+- Use Codat’s webhooks to trigger the lending of a loan,
+- Produce an automated lending decision based on custom financial data points. 
 
 ### ❌ This guide does not cover...
 
 - Building any application form and dashboard UIs,
-- Details or recommendations of various financial data points used in different underwriting models.
+- Details or recommendations of various financial data points used in different lending models.
 
 ### About the demo app
 
 The app's codebase is available via our [GitHub repo](https://github.com/codatio/demo-loan-qualification). Clone it locally to try out the application.
 
-The codebase uses Codat and its [Assess](/assess/overview) product to make an underwriting decision. We will walk you through the setup in the Portal and the code [next](/assess/guides/underwriting/setting-up). 
+The codebase uses Codat and its [Assess](/assess/overview) product to make a lending decision. We will walk you through the setup in the Portal and the code [next](/assess/guides/loan-qualification/setting-up).
 
 ### Why we use _Assess_
 
@@ -51,4 +51,4 @@ This standardizes the data irrespective of its source and helps you make a compr
 ### Read next
 
 Now that you know the focus and purpose of our demo app and its guide:
-* [Set up Codat and your local environment](/assess/guides/underwriting/setting-up).
+* [Set up Codat and your local environment](/assess/guides/loan-qualification/setting-up).
