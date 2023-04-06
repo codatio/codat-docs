@@ -99,7 +99,7 @@ To do that, click on the **Companies** tab in the top menu in the [Codat Portal]
 
 This takes you to the **Account categorization** page which displays the uncategorized account. **Account type** and **Account subtype** are pre-filled for you. **Categories version** should be set to _Version 2_. Select _Accounts Payable_ as **Account detail** in the drop down and **Save** the categorization. 
 
-![](/img/use-cases/loan qualification/0000-categorization-screen.png)
+![](/img/use-cases/loan-qualification/0000-categorization-screen.png)
 
 ### <input type="checkbox" unchecked /> Make the decision on the loan 
 
