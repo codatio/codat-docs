@@ -17,7 +17,7 @@ Before setting up the integration, make sure that:
 
 ## Enable the QBO Bank Feeds integration
 
-1. In the Codat Portal, go to **Settings > Integrations > Bank feeds** to view the [**Bank feed integrations**](https://app.codat.io/settings/integrations/bankfeeds) page.
+1. In the Codat Portal, go to **Settings > Integrations > Bank feeds** to view the [**Bank feeds integrations**](https://app.codat.io/settings/integrations/bankfeeds) page.
 2. Click **Set up** next to **QuickBooks Online Bank Feeds**.
 3. Use the toggle to set the integration to **Enabled**.
 
@@ -31,7 +31,7 @@ Enabling the integration won't make it visible in the Link flow. Instead, SMB us
 
 You can add a custom text callout, in both French and English, to the QBO Bank Feeds Link UI. These can provide additional guidance to your SMB users on connecting their bank accounts to QBO.
 
-1. In the Codat Portal, go to **Settings > Integrations > Bank feeds** to view the [**Bank feed integrations**](https://app.codat.io/settings/integrations/bankfeeds) page.
+1. In the Codat Portal, go to **Settings > Integrations > Bank feeds** to view the [**Bank feeds integrations**](https://app.codat.io/settings/integrations/bankfeeds) page.
 2. Click **Manage** next to **QuickBooks Online Bank Feeds**.
 3. Enter text in the **Callout title** and **Callout body** fields (maximum of 50 and 150 characters respectively). Only plain text is supported.
 
