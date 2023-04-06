@@ -26,7 +26,7 @@ If you want to change your password (for example, for security reasons), you can
 If you have forgotten your password and are looking to reset it:
 
 1. Click **Forgot your password?** on the sign-in screen.
-2. Next, enter the email you registered with.
+2. Enter the email you registered with.
 3. Finally, click **Send reset email**.
 
 You will shortly receive an email with detailed steps required to reset your password.
