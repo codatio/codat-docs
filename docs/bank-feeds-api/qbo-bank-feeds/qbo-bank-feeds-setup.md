@@ -1,6 +1,6 @@
 ---
 title: "Set up the QuickBooks Online Bank Feeds integration"
-description: "Set up our integration with QuickBooks Online Bank Feeds."
+description: "Set up our integration with QuickBooks Online Bank Feeds"
 sidebar_label: Setting up
 ---
 
