@@ -2,7 +2,7 @@
 title: "QuickBooks Online Bank Feeds"
 sidebar_label: Overview
 displayed_sidebar: bankfeeds
-description: "Learn about our QuickBooks Online Bank Feeds integration."
+description: "Learn about our QuickBooks Online Bank Feeds integration"
 ---
 
 :::info Limited availability
