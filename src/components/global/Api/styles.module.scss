@@ -24,6 +24,11 @@
   }
 }
 
+.menuToggle {
+  padding: 1em;
+  background: var(--color-interface-5);
+}
+
 .stoplightWrapper {
   @media (max-width: 300px) {
     display: none; 
