@@ -94,7 +94,7 @@ html[data-theme="dark"] .token.number {
   .sl-elements-api > div.sl-flex:first-child {
     max-width: 100% !important;
     height: 500px;
-    transition: height 2s;
+    transition: height 1s;
   }
 
   .menu-closed .sl-elements-api > div.sl-flex:first-child  {
