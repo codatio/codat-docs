@@ -19,7 +19,9 @@ Registration with WooCommerce is not required to set up and enable the integrati
 2. Locate **WooCommerce**, then select **Set up** to view the **Integration settings** page.
 3. Enter the **Application name** to appear in WooCommerce.
    
-   The application name is displayed when a merchant links their store and is asked for permission to connect the store.
+   The application name is displayed when a merchant links their store and is asked for permission to connect the store. For example, with the application name "Codat":
+
+   ![WooCommerce store connection flow](/img/integrations/commerce/woocommerce/woocommerce-app-connection-flow.png "The WooCommerce store connection dialog using an application name of Codat")
 
 4. Choose what [type of access to company data](/core-concepts/data-type-settings) you want for this integration: one-off or continuous.
 5. Click **Save**.
