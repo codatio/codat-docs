@@ -9,7 +9,7 @@ You can synchronize accounting data with [Xero](http://www.xero.com) using our X
 
 View the coverage of our Xero integration in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=gbol" target="_blank">Data coverage explorer</a>.
 
-For more details about the supported data types and operations, see [Xero FAQs](/integrations/accounting/xero/xero-faq) and [Xero integration reference](/integrations/accounting/accounting/xero/xero-integration-reference).
+For more details about the supported data types and operations, see [Xero FAQs](/integrations/accounting/xero/xero-faq) and [Xero integration reference](/integrations/accounting/xero/xero-integration-reference).
 
 ## Xero App Partnership
 
