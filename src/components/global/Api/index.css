@@ -74,6 +74,7 @@ html[data-theme="dark"] .token.number {
   }
 
   [data-testid="two-column-right"] {
+    margin-top: 1em;
     flex-basis: 100%;
     margin-left: 0 !important;
     max-width: 100% !important;
