@@ -1,6 +1,6 @@
 ---
 title: "Push bank transactions from Codat to QuickBooks Online"
-description: "Learn how to push your SMB users' bank transactions via our QuickBooks Online Bank Feeds integration."
+description: "Learn how to push your SMB users' bank transactions via our QuickBooks Online Bank Feeds integration"
 sidebar_label: "Push bank transactions to QBO"
 ---
 
