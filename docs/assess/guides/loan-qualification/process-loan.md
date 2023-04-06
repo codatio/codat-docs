@@ -95,7 +95,7 @@ In our demo, one account remains without a specified category. You need to assig
 
 To do that, click on the **Companies** tab in the top menu in the [Codat Portal](https://app.codat.io/). Next, click on the company you are performing loan qualification for, and navigate to **Products > Assess**. Click the red **Categorization required** button to the right of the company name. 
 
-![](/img/use-cases/loan qualification/0000-acct-categorization-modal-06-03-2023.png)
+![](/img/use-cases/loan-qualification/0000-acct-categorization-modal-06-03-2023.png)
 
 This takes you to the **Account categorization** page which displays the uncategorized account. **Account type** and **Account subtype** are pre-filled for you. **Categories version** should be set to _Version 2_. Select _Accounts Payable_ as **Account detail** in the drop down and **Save** the categorization. 
 
