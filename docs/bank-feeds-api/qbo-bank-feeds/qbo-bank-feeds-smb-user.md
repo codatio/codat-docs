@@ -1,6 +1,6 @@
 ---
 title: "SMB user: Connects their chosen bank accounts to QuickBooks Online"
-description: "Learn how your SMB users can connect their bank accounts to QuickBooks Online."
+description: "Learn how your SMB users can connect their bank accounts to QuickBooks Online"
 sidebar_label: "SMB user connects accounts"
 ---
 
