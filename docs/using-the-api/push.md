@@ -235,12 +235,12 @@ You can also use our endpoints to monitor the status of your create / update ope
 
 Note the following considerations when creating or updating data to help ensure consistency in the company's data. 
 
+- If data is successfully created in the target platform, it will be visible almost immediately when retrieving that data type from Codat. If you produce point-in-time reports or make use of the `modifiedDate` to pull only recent changes from the API, this may mean your calculations built on this data are inconsistent. 
 
+  For example, you may have checked your accounts receivable position based on the balance sheet and invoice data types pulled yesterday. If you then created an invoice today, this will cause a discrepancy as there may have been changes to invoices not seen between the `lastSyncUtc` and the maximum `modifiedDate` of the invoices.
 
-2. Pushing data and it’s effect on data consistency
-When pushing data to a platform through Codat if the push was successful then the data written is reflected nearly instantly in the data through the relevant data type API. So after successfully pushing an invoice to a platform that invoice is then visible when retrieving the data from Codat. This means that any calculation that might be made on this data is now inconsistent. For instance in the example above we use the AR position in relation between the AR data types and financial statement, in the same example, a AR position on a balance sheet and invoice data type pulled yesterday will differ if I push an invoice today. The invoice data type is now no longer internally consistent, there maybe have been many changes to invoices not seen between the lastSyncUtc and the maximum modeifiedDate of the invoices. This is important if you want to produce point in time reports or make use of the modifiedDate to pull only recent changes from the API.
+- There is no coordination between the pull and create / update systems to guarantee the correct order of operations. This means, if you trigger a push operation while a pull is in progress for a data type, there is a small chance that pulled data may overwrite pushed data in our API. Therefore, we recommend you do not create / update a data type while it has a pull in progress. 
 
-2. Pushing data race problems
-When pushing data to a platform it is important to be aware of other operations that are processing data that might cause inconsistency issues. Currently there is now coordination between the pull and push systems to guarantee consistency and correct ordering of operation. If a pull is currently underway for a data type at the same time that you push data to it, there is a small chance that the pulled data could overwrite the push data if a successful push is completed between the data fetch and the write to the standardized data API. As such we advise that you do not push a entity to a data type while that data type has an active pull. 
+## Read next 
 
-- Next steps: Checkout guide on creating and invoice in Sage Intacct. (The new guide).
+Check out our guide on creating and invoice in Sage Intacct. (The new guide).
