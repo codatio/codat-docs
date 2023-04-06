@@ -106,7 +106,7 @@ This takes you to the **Account categorization** page which displays the uncateg
 🙏🏽💰 The decisioning is normally performed by the lender, but the borrower is able to query an application's status at any point.
 
 The demo app now has all the components that it needs to produce an loan qualification decision. The decision is automatically made by the 
-[LoanUnderwriter](https://github.com/codatio/demo-loan-qualification/blob/main/Codat.Demos.loan qualification.Api/Services/LoanUnderwriter.cs) service based on thresholds that need to be passed by the applicant. We then update the loan application with a relevant status to indicate the decision made on the loan, or any errors that occurred in the process. You can poll the `GET applications/{applicationId}` endpoint in [Swagger](http://localhost:5069/swagger/index.html) anytime to check the status of your loan. 
+[LoanUnderwriter](https://github.com/codatio/demo-loan-qualification/blob/main/Codat.Demos.Underwriting.Api/Services/LoanUnderwriter.cs) service based on thresholds that need to be passed by the applicant. We then update the loan application with a relevant status to indicate the decision made on the loan, or any errors that occurred in the process. You can poll the `GET applications/{applicationId}` endpoint in [Swagger](http://localhost:5069/swagger/index.html) anytime to check the status of your loan. 
 
 ### 💪 Ready for more? 
 
