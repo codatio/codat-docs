@@ -16,13 +16,13 @@ const Fallback = (
 
 const Api = ({ url, title="API reference"}) => {
   return (
-    <Layout title={title} className="api-ref-stoplight-wrapper">
+    <Layout title={title}>
       <div className={styles.apiNav}>
         <Logo />
         <Navbar />
       </div>
 
-      <main className="api-ref-stoplight-main">
+      <main>
         <div className={clsx(styles.stoplightWrapper, "api-ref-stoplight")}>
           <BrowserOnly>
             {() => (
@@ -33,7 +33,7 @@ const Api = ({ url, title="API reference"}) => {
           </BrowserOnly>
         </div>
         
-        <div className="col api-ref-stoplight-mobile"><p>Our API reference is currently not supported on mobile</p></div>
+        <div className={clsx(styles.stoplightFallback, "col")}><p>Our API reference is not supported at this screen size.</p></div>
       </main>
     </Layout>
   );

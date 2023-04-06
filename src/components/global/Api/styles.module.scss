@@ -23,3 +23,15 @@
     width: 100%;
   }
 }
+
+.stoplightWrapper {
+  @media (max-width: 300px) {
+    display: none; 
+  }
+}
+
+.stoplightFallback {
+  @media (min-width: 300px) {
+    display: none;
+  }
+}
