@@ -17,9 +17,7 @@ Registration with WooCommerce is not required to set up and enable the integrati
 
 1. In the Codat Portal, go to **Settings > Integrations > Commerce** to view the [Commerce integrations](https://app.codat.io/settings/integrations/commerce) page.
 2. Locate **WooCommerce**, then select **Set up** to view the **Integration settings** page.
-3. Enter the **Application name** to appear in WooCommerce.
-   
-   The application name is displayed when a merchant links their store and is asked for permission to connect the store. For example, with the application name "Codat":
+3. Enter the **Application name** to appear in WooCommerce. This is displayed when a merchant links their store and is asked for permission to connect it. For example, using the application name "Codat":
 
    ![WooCommerce store connection flow](/img/integrations/commerce/woocommerce/woocommerce-app-connection-flow.png "The WooCommerce store connection dialog using an application name of Codat")
 
@@ -32,5 +30,3 @@ You can also click **Manage** to view the integration's settings page, and then 
 ## Check your sync settings in the Codat Portal
 
 If this is your first commerce integration, update your [data type settings](/integrations/commerce/commerce-sync-settings) to enable commerce data types.
-
-You're now ready to [set up companies](/other/portal/companies#add-a-new-company) for your customers in the Codat Portal.
