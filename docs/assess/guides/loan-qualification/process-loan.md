@@ -83,7 +83,7 @@ Select the **Codat Sandbox** as the source of accounting data.
 * You don't need to enter any credentials to authorize this connection. 
 * You should also skip the step of uploading business documents. 
 
-![](/img/use-cases/loan qualification/sandbox-credentials-modal.png)
+![](/img/use-cases/loan-qualification/sandbox-credentials-modal.png)
 
 ### <input type="checkbox" unchecked /> Manually categorize accounts 
 
