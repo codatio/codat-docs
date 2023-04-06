@@ -1,5 +1,5 @@
 ---
-title: "Sync for Commcerce overview"
+title: "Sync for Commerce overview"
 sidebar_label: Sync for Commerce
 displayed_sidebar: sfc
 hide_title: true
