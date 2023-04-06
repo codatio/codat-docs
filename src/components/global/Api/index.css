@@ -56,6 +56,10 @@ html[data-theme="dark"] .token.number {
   margin-bottom: 1em;
 }
 
+.sl-max-w-full.sl-break-all.sl-px-1.sl-bg-canvas-tint.sl-text-muted.sl-rounded.sl-border {
+  padding: 3px 5px;
+}
+
 /* --------- Mobile ---------------- */
 
 @media (max-width: 1100px) {
@@ -83,8 +87,24 @@ html[data-theme="dark"] .token.number {
 }
 
 @media (max-width: 800px) {
-  .sl-elements-api > div:first-child {
-    display: none !important;
+  .sl-elements-api {
+    flex-direction: column;
+  }
+
+  .sl-elements-api > div.sl-flex:first-child {
+    max-width: 100% !important;
+    height: 500px;
+    transition: height 2s;
+  }
+
+  .menu-closed .sl-elements-api > div.sl-flex:first-child  {
+    height: 0;
+    overflow: hidden;
+  }
+
+  .sl-elements-api > div.sl-flex:first-child > div.sl-flex:first-child {
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   .sl-bg-canvas {

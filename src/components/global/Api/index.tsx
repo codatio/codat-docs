@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { useState, Suspense } from "react";
 import Layout from "@theme/Layout";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import Navbar from "@theme/Navbar";
@@ -15,6 +15,8 @@ const Fallback = (
 );
 
 const Api = ({ url, title="API reference"}) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <Layout title={title}>
       <div className={styles.apiNav}>
@@ -23,7 +25,15 @@ const Api = ({ url, title="API reference"}) => {
       </div>
 
       <main>
-        <div className={clsx(styles.stoplightWrapper, "api-ref-stoplight")}>
+        <div className={styles.menuToggle} onClick={() => setMenuOpen(!menuOpen)}>
+          {
+            menuOpen
+            ? "Hide endpoints"
+            : "Show all endpoints"
+          }
+        </div>
+
+        <div className={clsx(styles.stoplightWrapper, !menuOpen && "menu-closed")}>
           <BrowserOnly>
             {() => (
               <Suspense fallback={Fallback}>
