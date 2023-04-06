@@ -9,7 +9,7 @@ You can change details and settings of your user profile in the [Codat Portal](h
 
 ![A screenshot of the dropdown menu that allows to navigate to account settings](/img/other-guides/0012-acct-mgt-access.png)
 
-In the **Profile** section, you can change the name associated with the account, and confirm your involvement with the technical implementation of your Codat solution. Remember to press **Save changes** when you are done. 
+In the **Profile** section, you can change the name associated with the account, and confirm your involvement with the technical implementation of your Codat solution. Remember to click **Save changes** when you are done. 
 
 In the **Password** section, you can change your current password to a new one, following the instructions below. 
 
