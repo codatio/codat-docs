@@ -45,21 +45,6 @@ html[data-theme="dark"] .token.number {
   display: none !important;
 }
 
-@media (min-width: 850px) {
-  .api-ref-stoplight {
-  }
-
-  .api-ref-stoplight-mobile {
-    display: none;
-  }
-}
-
-@media (max-width: 850px) {
-  .api-ref-stoplight {
-    display: none;
-  }
-}
-
 .JsonSchemaViewer {
   border: 1px solid var(--token-secondary-bg-c-alt);
   border-radius: 4px;
@@ -69,6 +54,42 @@ html[data-theme="dark"] .token.number {
 
 .JsonSchemaViewer > .sl-prose.sl-markdown-viewer {
   margin-bottom: 1em;
+}
+
+/* --------- Mobile ---------------- */
+
+@media (max-width: 1100px) {
+  .sl-bg-canvas {
+    padding-left: 1.5em !important;
+    padding-right: 1.5em !important;
+  }
+
+  .sl-flex:has([data-testid="two-column-right"]) {
+    flex-wrap: wrap;
+  }
+
+  [data-testid="two-column-left"] {
+    flex-basis: 100%;
+    width: 100% !important;
+  }
+
+  [data-testid="two-column-right"] {
+    flex-basis: 100%;
+    margin-left: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .sl-elements-api > div:first-child {
+    display: none !important;
+  }
+
+  .sl-bg-canvas {
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+  }
 }
 
 /* ------------------------ */
