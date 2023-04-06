@@ -36,7 +36,7 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 
 The app's codebase is available via our [GitHub repo](https://github.com/codatio/demo-loan-qualification). Clone it locally to try out the application.
 
-The codebase uses Codat and its [Assess](/assess/overview) product to make a lending decision. We will walk you through the setup in the Portal and the code [next](/assess/guides/lending/setting-up). 
+The codebase uses Codat and its [Assess](/assess/overview) product to make a lending decision. We will walk you through the setup in the Portal and the code [next](/assess/guides/loan-qualification/setting-up).
 
 ### Why we use _Assess_
 
