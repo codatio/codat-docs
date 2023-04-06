@@ -21,7 +21,7 @@ If you want to change your password (for example, for security reasons), you can
 
 1. In the **Password** section, enter your current password.
 2. Then, enter and confirm your new password. We provide you with a list of password requirements, and measure the strength of your new password.
-3. Finally, press **Update password** to save your changes. 
+3. Finally, click **Update password** to save your changes. 
 
 If you have forgotten your password and are looking to reset it:
 
