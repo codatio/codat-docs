@@ -116,7 +116,7 @@ Try these suggestions to make the most of your experience with the demo app:
   Navigate to **Products > Assess** in the [Portal](https://app.codat.io/) to view a visual representation of the financial data pulled by our endpoints, including `balanceSheet` and `profitAndLoss`.
   
 - **Play around with thresholds**  
-  In the `appsettings.json` file in the `Codat.Demos.loan qualification.Api\` directory, set your own example thresholds for data points used by the app's loan qualification service and see how this affects the application decision.
+  In the `appsettings.json` file in the `Codat.Demos.Underwriting.Api\` directory, set your own example thresholds for data points used by the app's loan qualification service and see how this affects the application decision.
 
 - **Underwrite using different datasets**  
   Start another loan application, and choose a different Sandbox company type to get a different set of financial data to be used in the decision-making. 
