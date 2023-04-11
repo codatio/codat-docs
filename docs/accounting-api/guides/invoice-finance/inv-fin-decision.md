@@ -11,7 +11,7 @@ description: "Reference page with details on our decisioning logic, fetching dat
 
 ### <input type="checkbox" unchecked/> Fetch unpaid invoices and associated data
 
-Once the app is notified by the webhook that invoice and customer syncs are complete, it fetches a filtered invoice list that we could potentially lend against. In our demo, we focus on unpaid and partially paid invoices valued between 50 and 1000 USD, using the `query` parameter on our [List invoices](/accounting-api#/operations/list-invoices) endpoint.
+Once the app is notified by the webhook that invoice and customer syncs are complete, it fetches a filtered invoice list that we could potentially lend against. In our demo, we focus on unpaid and partially paid invoices valued between `50` and `1000 USD`, using the `query` parameter on our [List invoices](/accounting-api#/operations/list-invoices) endpoint:
 
 ```
 query = amountDue <= 1000 &&
@@ -23,7 +23,7 @@ query = amountDue <= 1000 &&
 
 From this data set, we pick up a list of unique customer Ids (`customerRef.id`) for the unpaid invoices, and then the associated customer details using the [Get customers](/accounting-api#/operations/get-customers) endpoint. 
 
-Finally, we fetch all paid invoices for each customer that has unpaid invoices proposed for invoice financing. After this, we are ready to perform risk assessment.
+Finally, we fetch all paid invoices for each of these customers to assess their previous payment behaviour. After this, we are ready to perform the risk assessment.
 
 ### <input type="checkbox" unchecked/> Assess risk for each customer
 
@@ -33,8 +33,10 @@ To perform risk assessment, we calculate the measure of **customer concentration
 
 Customer concentration is the percentage of the applicant's revenue that comes from a single customer. 
 
-Concentration (%) = Customer balance / Total outstanding balance across all customers, or, in Codat's terms,
-it is the (sum of all unpaid invoices `amountDue` for customer)/(sum of all unpaid invoices `amountDue`).
+```
+Concentration (%) = Customer balance / Total outstanding balance across all customers, or, in Codat's terms,  
+(sum of all unpaid invoices `amountDue` for customer)/(sum of all unpaid invoices `amountDue`).  
+```
 
 The concentration threshold is set to 5% in the `appSettings.json` file, which you can change later if you want to see the app run through a different scenario. 
 :::
@@ -57,8 +59,7 @@ For each remaining invoice, we calculate the following:
 - Time left to pay ratio, expressed as (Days left to pay / Terms).
 :::
 
-We then discard any invoices where `Days left to pay` value is less than `4 days. For the remaining invoices, we calculate a **charge rate** based on the  
-time left to pay ratio:
+We then discard any invoices where `Days left to pay` value is less than `4` days. For the remaining invoices, we calculate a **charge rate** based on the time left to pay ratio:
 ```
 Charge rate = 5 - (4 * Ratio), where Ratio is a rate between 1% and 5%, rounded to 1 decimal place.
 ```
