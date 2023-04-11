@@ -250,6 +250,10 @@ module.exports = {
       from: '/assess/guides/underwriting/introduction',
     },
     {
+      to:  '/usecases/summary/lending',
+      from: '/usecases/summary/underwriting',
+    },
+    {
       to:  '/introduction/first-steps',
       from: '/docs',
     },
