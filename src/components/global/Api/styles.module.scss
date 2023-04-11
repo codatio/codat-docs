@@ -27,6 +27,10 @@
 .menuToggle {
   padding: 1em;
   background: var(--color-interface-5);
+
+  @media (min-width: 800px) {
+    display: none; 
+  }
 }
 
 .stoplightWrapper {
