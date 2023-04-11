@@ -1,14 +1,14 @@
 ---
-title: "Underwriting with Codat"
-sidebar_label: "Underwriting"
-description: "An overview of the underwriting use case supported by Codat"
+title: "Lending with Codat"
+sidebar_label: "Lending"
+description: "An overview of the lending use case supported by Codat"
 ---
 
-During underwriting, the lender evaluates a borrower's financial history, income, assets, and debts to determine the financial risk the borrower poses to the lender. The goal, in the end, is to provide loans and insurance products for SMBs based on the outcome of that assessment.
+During lending, the lender evaluates a borrower's financial history, income, assets, and debts to determine the financial risk the borrower poses to the lender. The goal, in the end, is to provide loans and insurance products for SMBs based on the outcome of that assessment.
 
 ### How Codat can help
 
-We can support traditonal banks, neobanks, and digital lenders in their underwriting activity by leveraging our [Assess](/assess/overview) and [Accounting](/accounting-api/overview), [Commerce](/commerce-api/overview), and [Banking](/banking-api/overview) API products. 
+We can support traditonal banks, neobanks, and digital lenders in their lending activity by leveraging our [Assess](/assess/overview) and [Accounting](/accounting-api/overview), [Commerce](/commerce-api/overview), and [Banking](/banking-api/overview) API products. 
 
 ![](/img/use-cases/summary-pages/dbdaea6d-underwriting.png)
 
@@ -32,9 +32,9 @@ You can also use this data to produce additional insights (e.g. calculate financ
 
 We're working on guides so you can see how to build a simple application with Codat:
 
-- **[Loan underwriting](/assess/guides/underwriting/introduction)**
+- **[Loan qualification](/assess/guides/loan-qualification/introduction)**
 
-Follow the demo guide to perform the end-to-end loan underwriting process, from submitting a loan application to assessing a borrower's financial health using custom metrics, to issuing an automatic final decision on the application. 
+Follow the demo guide to perform the end-to-end loan qualification process, from submitting a loan application to assessing a borrower's financial health using custom metrics, to issuing an automatic final decision on the application. 
 
 - **Invoice finance lending** (coming soon)
 
