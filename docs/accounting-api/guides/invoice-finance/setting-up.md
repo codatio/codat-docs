@@ -8,7 +8,6 @@ import TabItem from "@theme/TabItem";
 
 ### 🚀 In this section, you will...
 * Create your Codat account
-* Enable the Assess product
 * Configure webhooks
 * Set up your local environment
 * Run the demo app
@@ -25,9 +24,9 @@ In the **Settings > Auth Flow > Link** [settings](https://app.codat.io/settings/
 
 ### <input type="checkbox" unchecked /> Listen for webhooks
 
-The app will use several webhooks to track completion of the financial data sync and the categorization of accounts, and Sandbox linking completion. 
+The app uses several webhooks to track the completion of an accounting data connection and the completion of data sync for the invoice and customer data types.
 
-We will use [ngrok](https://ngrok.com/) here to listen for Codat's webhooks. 
+We will use [ngrok](https://ngrok.com/) in the app to listen for Codat's webhooks. 
 
 <Tabs>
    <TabItem value="win" label="Windows OS">  
@@ -75,21 +74,21 @@ Click **Create rule** to open the new rule creation window. Select the rule type
 
 ### <input type="checkbox" unchecked /> Clone the code
 
-Clone our demo repo on [GitHub](https://github.com/codatio/build-guide-underwriting-be) to download the underwriting demo app. 
+Clone our demo repo on [GitHub](https://github.com/codatio/demo-invoice-finance) to download the underwriting demo app. 
 
-The main file directory for the demo app is `Codat.Demos.Underwriting.Api`. Key logic components of the app are located in `Controllers`, `Orchestrator`, and `Services` folders.
+The main file directory for the demo app is `Codat.Demos.InvoiceFinancing.Api`. Key logic components of the app are located in `Controllers`, `Orchestrator`, and `Services` folders.
 
-Note that the other directory in the repository, `Codat.Demos.Underwriting.Api.Tests`, contains a series of unit tests for the demo app and is not needed for you to run the demo project. 
+Note that the other directory in the repository, `Codat.Demos.InvoiceFinancing.Api.Tests`, contains a series of unit tests for the demo app and is not needed for you to run the demo project. 
 
-```sh title="Codat.Demos.Underwriting.Api directory"
+```sh title="Codat.Demos.InvoiceFinancing.Api directory"
    ├──BindingModule.cs
-   ├──Codat.Demos.Underwriting.Api.csproj
+   ├──Codat.Demos.InvoiceFinancing.Api.csproj
    ├──Program.cs
    ├──appsettings.Development.json
    ├──appsettings.json // Add your API key in this file
    |   
    ├──Controllers // Controllers for the API endpoints to manage expected actions and results
-   |    ├──UnderwritingController.cs // Front-end endpoint controller
+   |    ├──ApplicationController.cs // Front-end endpoint controller
    |    └──WebhooksController.cs     // Back-end endpoint controller
    |       
    ├──DataClients // A service to make API calls to Codat
@@ -98,32 +97,31 @@ Note that the other directory in the repository, `Codat.Demos.Underwriting.Api.T
    ├──Exceptions // Definitions for managing error events 
    |    ├──...
    |       
-   ├──Extensions // Used to extend classes in C#
-   |    └──CollectionExtensions.cs
-   |       
    ├──Models // Represent the shape of data that will be returned to the user
    |    ├──...
    |       
    ├──Orchestrators // Manages the six methods that relate to endpoints used in the app
-   |    └──ApplicationOrchestrator.cs
+   |    ├──ApplicationOrchestrator.cs //
+   |    └──FinancingProcessor.cs //
    |       
    ├──Properties // Setup for http, https, and IIS Express profiles
    |    └──launchSettings.json
    |       
    └──Services // Key application components that perform specified tasks
       ├──ApplicationStore.cs // Handles creating and storing the loan application in-memory
-      └──LoanUnderwriter.cs  // Decision process method for the underwriting model used in the demo
+      ├──CustomerRiskAssessor.cs // 
+      └──InvoiceFinanceAssessor.cs // 
 ```
 ### <input type="checkbox" unchecked/> Set your API key
 
-In the [Developers](https://app.codat.io/developers/api-keys) section of the Codat Portal, copy your API key from the **API key** column **(not the auth header)**. You can click **Create another API key** if one wasn't automatically generated for you. In the `Codat.Demos.Underwriting.Api\` directory, edit the `appsettings.json` file and enter the API key you just copied as the `CodatApiKey`.
+In the [Developers](https://app.codat.io/developers/api-keys) section of the Codat Portal, copy your API key from the **API key** column **(not the auth header)**. You can click **Create another API key** if one wasn't automatically generated for you. In the `Codat.Demos.InvoiceFinancing.Api` directory, edit the `appsettings.json` file and enter the API key you just copied as the `CodatApiKey`.
 
 ### <input type="checkbox" unchecked/> Run the app
 
 <Tabs>
 <TabItem value="cmd" label="Command line">
 
-Run the following command in the root directory `Codat.Demos.Underwriting.Api`:
+Run the following command in the root directory `Codat.Demos.InvoiceFinancing.Api`:
 
 ```sh
 dotnet run --launch-profile http

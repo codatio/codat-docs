@@ -33,7 +33,7 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 
 ### About the demo app
 
-The app's codebase is available via our [GitHub repo](https://github.com/codatio/build-guide-underwriting-be). Clone it locally to try out the application.
+The app's codebase is available via our [GitHub repo](https://github.com/codatio/demo-invoice-finance). Clone it locally to try out the application.
 
 The codebase uses Codat and its [Accounting API](/accounting-api/overview) product to make an invoice financing decision. We will walk you through the setup in the Portal and the code [next](/accounting-api/guides/invoice-finance/setting-up). 
 
