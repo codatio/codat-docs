@@ -34,13 +34,14 @@ html[data-theme="dark"] .token.number {
 }
 
 .sl-bg-canvas-100 {
-  background-color: var(--token-secondary-bg-c) !important;
+  --color-canvas-100: var(--token-secondary-bg-c);
   color: var(--font-ui);
 }
 
 /*.sl-badge > div > div > div > span {
   color: var(--font-ui);
 }*/
+
 .sl-badge {
   display: none !important;
 }
