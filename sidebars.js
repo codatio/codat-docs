@@ -209,7 +209,7 @@ module.exports = {
       className: "top-level-item usecases",
       items: [
         "usecases/overview",
-        "usecases/summary/underwriting",
+        "usecases/summary/lending",
         "usecases/summary/managing-expenses",
         "usecases/summary/dashboarding",
         "usecases/summary/automating-payables",
