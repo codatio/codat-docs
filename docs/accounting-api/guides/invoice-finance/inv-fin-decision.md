@@ -29,13 +29,18 @@ Finally, we fetch all paid invoices for each customer that has unpaid invoices p
 
 To perform risk assessment, we calculate the measure of **customer concentration** - the percentage of the applicant's revenue that comes from a single customer - as follows:
 
-:::tip Customer concentration
+$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
+
+:::info Customer concentration
 
 Concentration (%) = Customer balance / Total outstanding across all customers = (sum of all unpaid invoices amountDue for customer)/(sum of all unpaid invoices amountDue)
 
-attempt a formula
+attempt a formula  
 
-$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
+$$ 
+x = {-b \pm \sqrt{b^2-4ac} \over 2a}
+$$  
+
 
 We then exclude any customers that fit these criteria: 
 - 
