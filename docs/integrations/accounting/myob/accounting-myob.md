@@ -1,15 +1,23 @@
 ---
-title: "MYOB AccountRight and Essentials"
-description: "Learn about our MYOB AccountRight and Essentials integration."
+title: "MYOB Business"
+description: "Learn about our MYOB Business integration."
 createdAt: "2019-06-24T13:52:06.125Z"
 updatedAt: "2022-10-20T12:33:27.676Z"
 ---
 
-You can synchronize accounting and banking data with <a className="external" href="https://www.myob.com/" target="_blank">MYOB AccountRight and Essentials</a> using our MYOB AccountRight and Essentials integration.
+You can synchronize accounting and banking data with <a className="external" href="https://www.myob.com/" target="_blank">MYOB Business</a> using our MYOB Business integration.
+
+:::info MYOB Business, AccountRight, and Essentials
+
+Our MYOB integration applies to users using the following products:
+- MYOB Business
+- MYOB AccountRight
+- MYOB Essentials
+:::
 
 ## Data type coverage
 
-View the coverage of our MYOB AccountRight and Essentials integration in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=pdvj" target="_blank">Data coverage explorer</a>.
+View the coverage of our MYOB Business integration in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=pdvj" target="_blank">Data coverage explorer</a>.
 
 For more details about the supported data types, see [MYOB integration reference](/integrations/accounting/myob/myob-integration-reference).
 
@@ -28,7 +36,7 @@ Some users may still be on the old, non-migrated version of MYOB Essentials that
 
 ## Supported versions
 
-:::info Using MYOB AccountRight and Essentials integration
+:::info Using MYOB Business integration
 Company data must be stored in the cloud, not on a local machine.
 :::
 

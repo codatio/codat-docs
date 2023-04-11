@@ -40,7 +40,7 @@ You can also explore the data types supported by each integration in the interac
 - [FreeAgent](/integrations/accounting/freeagent/accounting-freeagent)
 - [FreshBooks](/integrations/accounting/freshbooks/accounting-freshbooks)
 - [KashFlow](/integrations/accounting/kashflow/accounting-kashflow)
-- [MYOB AccountRight and Essentials](/integrations/accounting/myob/accounting-myob)
+- [MYOB Business](/integrations/accounting/myob/accounting-myob)
 - [Oracle NetSuite](/integrations/accounting/netsuite/accounting-netsuite)
 - [Pandle](/integrations/accounting/pandle/accounting-pandle)
 - [QuickBooks Online](/integrations/accounting/quickbooksonline/accounting-quickbooksonline)
