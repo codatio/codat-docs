@@ -5,18 +5,13 @@ description: "Reference page with details on our decisioning logic, fetching dat
 
 ### 🚀 In this section, you will...
 
-* Review the app's decisioning logic,
 * Understand how we fetch the required data, 
+* Review how we assess the risk associated with customers and invoices,
 * See how the app makes a decision based on that data. 
 
-A diagram of all the checks we do in sequence?
+### <input type="checkbox" unchecked/> Fetch unpaid invoices and associated data
 
-### <input type="checkbox" unchecked/> Pull filtered invoices
-
-Our demo app starts the assessment by pulling a filtered invoice list that we could potentially lend against. We focus on unpaid and partially paid invoices valued between 50 and 1000 USD. 
-
-Endpoint
-Query
+Once the app is notified by the webhook that invoice and customer syncs are complete, it fetches a filtered invoice list that we could potentially lend against. In our demo, we focus on unpaid and partially paid invoices valued between 50 and 1000 USD, using the `query` parameter on our [List invoices](/accounting-api#/operations/list-invoices) endpoint.
 
 ```
 query = amountDue <= 1000 &&
@@ -26,7 +21,28 @@ query = amountDue <= 1000 &&
 	currency = "USD"
 ```
 
-### <input type="checkbox" unchecked/> Calculate borrower risk
+From this data set, we pick up a list of unique customer Ids (`customerRef.id`) for the unpaid invoices, and then the associated customer details using the [Get customers](/accounting-api#/operations/get-customers) endpoint. 
+
+Finally, we fetch all paid invoices for each customer that has unpaid invoices proposed for invoice financing. After this, we are ready to perform risk assessment.
+
+### <input type="checkbox" unchecked/> Assess risk for each customer
+
+To perform risk assessment, we calculate the measure of **customer concentration** - the percentage of the applicant's revenue that comes from a single customer - as follows:
+
+:::tip Customer concentration
+
+Concentration (%) = Customer balance / Total outstanding across all customers = (sum of all unpaid invoices amountDue for customer)/(sum of all unpaid invoices amountDue)
+
+attempt a formula
+
+$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
+
+We then exclude any customers that fit these criteria: 
+- 
+
+This means invoices linked to them will not be eligible for the loan. 
+
+
 
 Next, we determine the risk level for our borrower based on their previous history. We check if the borrower is typically paid back by their customers as follows:
 
