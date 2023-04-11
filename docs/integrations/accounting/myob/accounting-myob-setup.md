@@ -1,6 +1,6 @@
 ---
 title: "Set up the MYOB integration"
-description: "Explore our API integration with MYOB AccountRight and Essentials."
+description: "Explore our API integration with MYOB Business."
 createdAt: "2019-06-24T13:14:45.915Z"
 updatedAt: "2023-01-13T14:17:05.765Z"
 ---
@@ -14,7 +14,7 @@ The new Essentials will use the same API as their AccountRight Live platform. Th
 Some users may still be on the old, non-migrated version of MYOB Essentials that uses a legacy API, which is not supported by Codat. If your customer is unable to connect their non-migrated MYOB Essentials account, please advise them to reach out to MYOB support for guidance on migrating to the new version.
 :::
 
-Before you can access accounting data from customers using MYOB AccountRight and Essentials, you need to set up the integration in the Codat Portal.
+Before you can access accounting data from customers using MYOB Business, you need to set up the integration in the Codat Portal.
 
 You will need to:
 
@@ -56,7 +56,7 @@ MYOB will only automatically activate the first two API keys you create. All fur
 
 1. In the Codat Portal, go to the <a className="external" href="https://app.codat.io/settings/integrations/accounting" target="_blank">**Accounting integrations**</a> page.
 
-2. Locate **MYOB AccountRight and Essentials** and click **Set up**.
+2. Locate **MYOB Business** and click **Set up**.
 
 3. Under **Integration settings**, enter the values for the **Client ID** and **Client secret** from your app in your MYOB developer account.
 
@@ -65,7 +65,7 @@ MYOB will only automatically activate the first two API keys you create. All fur
 
 4. Click **Save**. A confirmation message appears if the settings were saved successfully.
 
-5. The **Enable MYOB AccountRight and Essentials** dialog is displayed. Select whether to enable the integration now or later.
+5. The **Enable MYOB Business** dialog is displayed. Select whether to enable the integration now or later.
 
 :::note
 
@@ -75,7 +75,7 @@ Make sure that your secure keys don't contain any spaces.
 ## Enable the MYOB integration
 
 1. In the Codat Portal, go to the <a className="external" href="https://app.codat.io/settings/integrations/accounting" target="blank">**Accounting integrations**</a> page.
-2. Locate **MYOB AccountRight and Essentials** and click the toggle to enable the integration.
+2. Locate **MYOB Business** and click the toggle to enable the integration.
 
 You can also click **Manage** to view the integration's settings page, and then enable the integration from there.
 

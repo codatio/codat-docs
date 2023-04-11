@@ -87,8 +87,8 @@ module.exports = [
         items: [
           "integrations/accounting/myob/accounting-myob",
           "integrations/accounting/myob/accounting-myob-setup",
-          "integrations/accounting/myob/faq-myob-accountright-live",
           "integrations/accounting/myob/myob-integration-reference",
+          "integrations/accounting/myob/faq-myob-accountright-live",
         ],
       },
       {
