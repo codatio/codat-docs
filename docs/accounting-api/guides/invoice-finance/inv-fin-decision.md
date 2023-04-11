@@ -27,102 +27,64 @@ Finally, we fetch all paid invoices for each customer that has unpaid invoices p
 
 ### <input type="checkbox" unchecked/> Assess risk for each customer
 
-To perform risk assessment, we calculate the measure of **customer concentration** - the percentage of the applicant's revenue that comes from a single customer - as follows:
-
-$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
+To perform risk assessment, we calculate the measure of **customer concentration** as follows:
 
 :::info Customer concentration
 
-Concentration (%) = Customer balance / Total outstanding across all customers = (sum of all unpaid invoices amountDue for customer)/(sum of all unpaid invoices amountDue)
+Customer concentration is the percentage of the applicant's revenue that comes from a single customer. 
 
-attempt a formula  
+Concentration (%) = Customer balance / Total outstanding balance across all customers, or, in Codat's terms,
+it is the (sum of all unpaid invoices `amountDue` for customer)/(sum of all unpaid invoices `amountDue`).
 
-$$ 
-x = {-b \pm \sqrt{b^2-4ac} \over 2a}
-$$  
+The concentration threshold is set to 5% in the `appSettings.json` file, which you can change later if you want to see the app run through a different scenario. 
+:::
 
+In our demo, we also exclude any customers that fit the criteria below, meaning invoices linked to them will not be eligible for the loan: 
 
-We then exclude any customers that fit these criteria: 
-- 
+- Concentration is more than the threshold of `5%`,
+- Customer `country` is not `US`, thus excluding forign business customers,
+- Customer `registrationNo` is null, thus excluding sole traders, and
+- Number of paid invoices is less than `2`, thus lowering the risk based on past behaviour.
 
-This means invoices linked to them will not be eligible for the loan. 
+### <input type="checkbox" unchecked/> Assess risk for each invoice
 
+For each remaining invoice, we calculate the following: 
 
+:::info Invoice risk
 
-Next, we determine the risk level for our borrower based on their previous history. We check if the borrower is typically paid back by their customers as follows:
+- Terms, expressed as (`dueDate` — `issueDate`),
+- Days left to pay, expressed as (`dueDate` - today's date),
+- Time left to pay ratio, expressed as (Days left to pay / Terms).
+:::
 
+We then discard any invoices where `Days left to pay` value is less than `4 days. For the remaining invoices, we calculate a **charge rate** based on the  
+time left to pay ratio:
 ```
-// filter invoices
-	// invoices.dueDate < today()
-  // invoices.dueDate > today() - 6 months
-// map reduce on invoice status
-// return a risk value
+Charge rate = 5 - (4 * Ratio), where Ratio is a rate between 1% and 5%, rounded to 1 decimal place.
 ```
-### <input type="checkbox" unchecked/> Check customer validity
-
-In our demo, we choose not to lend against invoices issued to sole traders or foreign business customers. To exclude these, we perform a customer validity check:
-
-```
-const isCustomerValid = (customer) => {
-	if(customer.registrationNo === null && customer.country !== "US") {
-		return false
-	}
-	
-	return true
-}
-
-invoices.filter(invoice => isCustomerValid(invoice))
-```
-
-### <input type="checkbox" unchecked/> Calculate customer risk
-
-We also want to understand which customers of our borrower applicant pose the lowest risk based on their past invoice payment behaviour. To do that, we search for customers with a track record of paying their bills:
-
-```
-// map over valid invoices, return list of customerRefs
-// map over customers, sum paid status for customer
-// essentially looking for customers with a track record of paying their bills
-```
-
-### <input type="checkbox" unchecked/> Assess invoice due date risk
-
-Next, we check due dates of selected invoices to understand the level of risk associated with them:
-
-```
-const overdueRisk = (invoice) => {
-	if(today() < invoice.dueDate) {
-		return 1
-	}
-	else if (today() < invoice.dueDate + 15) {
-		return 1.5
-	}
-	else if (today() < invoice.dueDate + 30)
-		return 2
-	}
-	return false // don't lend
-}
-```
-
 ### <input type="checkbox" unchecked/> Crunch some numbers
 
 Decisioning based on all the factors described above
 
+CRONCH CRONCH CRONCH 
+
 ### <input type="checkbox" unchecked/> Return a decision array
 
-Having assessed and made a decision on each eligible invoice, we are now ready to return a decision array to the borrower. This shows them which invoices we agree to lend against, and under what terms and conditions: 
+Finally, we are ready to return a decision array to the borrower. This shows them which invoices we agree to lend against, and under what terms and conditions, and can be obtained by calling the `GET applications/{applicationId}` endpoint. 
 
-```
-decisions: [
-	{
-		invoiceId: "j89ej2198jedsads", // foreign key
-		invoiceNo: "001", // purely for readability
-		amountDue: 1000.00,
-		offerAmount: 900.00, // 90% of amountDue
-		rate: 0.03, // 1-5% based on risk
-    dueDate: somedateformat // today + 90 days
-	},
-	...
-]
+```json title="Example decision response"
+  {
+    "status": "Started/AccountsLinked/Fetching/FetchError/Processing/ProcessingError/Complete" // Response displays one of these possible application statuses
+    "decisions": [ // An array of decisions per each invoice Id analysed during the application
+      {
+        "invoiceId": "string", // Codat's internal Id associated with fetched invoices
+        "invoiceNo": "string", // Identifying number of the invoice in the applicant's accounting system
+        "amountDue": decimal,  // Amount to be paid on the invoice issued to customer
+        "offerAmount": decimal // Amount the app offers to lend, calculated as 90% of amountDue
+        "rate": decimal // Rate with which the app offers to lend, based on each invoice's risk
+      }
+                 ]
+  }
 ```
 
 ### <input type="checkbox" unchecked/> Access additional resources
@@ -131,7 +93,7 @@ decisions: [
 
 📊 If you are interested in underwriting models used by lenders in the industry, you can read through [Bigfoot Capital's blog](https://www.bigfootcap.com/revenue-based-financing/) on revenue-based finance or [Workweek's article](https://workweek.com/2023/03/02/unlocking-lending-innovation) on unlocking underwriting innovation.
 
-💸 Lenders also use Assess to understand a business' liquidity via the [enhanced cash flow report](/assess/reports/enhanced-cash-flow-report/overview), or whether a business' accounts are accurate using both [data integrity](/assess/data-integrity) and the [audit report](/assess/reports/audit-report).
+ANY ARTICLES WE CAN RECOMMEND HERE?
 
 🧠 See what else [Codat recommends](https://www.codat.io/blog/how-to-underwrite-ecommerce-merchants-effectively/) to build your underwriting process effectively. 
 
@@ -141,4 +103,4 @@ decisions: [
 
 In this reference section, you have learned and understood in detail the checks we performed during our invoice finance decisioning process, how we fetched and filtered the data, and how all of this influenced the decision on the loan made automatically. 
 
-Next, you can find out more about [Accounting API](/accounting-api/overview), or explore other use cases.
+Next, you can find out more about [Accounting API](/accounting-api/overview), or [explore other use cases](https://docs.codat.io/usecases/overview).

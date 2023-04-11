@@ -84,6 +84,8 @@ The demo app now has all the components that it needs to assess the risk associa
 
 Poll the `GET applications/{applicationId}` endpoint in [Swagger](http://localhost:5069/swagger/index.html) anytime to check the status of your loan. Once the app processes all the relevant invoices, it will automatically return a response that includes a decision on each invoice assessed as part of the application.
 
+IS THIS NEEDED HERE OR ON THE NEXT PAGE INSTEAD
+
 ```json title="Example decision response"
   {
     "status": "Started/AccountsLinked/Fetching/FetchError/Processing/ProcessingError/Complete" // Response displays one of these possible application statuses
@@ -99,11 +101,14 @@ Poll the `GET applications/{applicationId}` endpoint in [Swagger](http://localho
   }
 ```
 
-You can [read more](/accounting-api/guides/invoice-finance/inv-fin-decision) about the risk assessments the app performs, and further detail of the decisioning logic.
+You can [read more](/accounting-api/guides/invoice-finance/inv-fin-decision) about the risk assessments the app performs, and further detail of the decisioning logic. The thresholds used with the logic are set in the `appsettings.json` file. 
 
 ### 💪 Ready for more? 
 
 Try these suggestions to make the most of your experience with the demo app:
+
+- **Play around with thresholds**  
+  In the `appsettings.json` file of the `Codat.Demos.InvoiceFinancing.Api\` directory, set your own example thresholds for data points used for risk assessment and see how this affects the application decision.
 
 - **Finance an invoice-based loan using different datasets**  
   Start another loan application, and choose a different Sandbox company type to get a different set of financial data to be used in the decision-making. 
