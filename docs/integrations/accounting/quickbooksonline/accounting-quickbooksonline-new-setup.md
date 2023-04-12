@@ -17,11 +17,13 @@ Video walkthrough:
   allowfullscreen
 ></iframe>
 
+<hr/>
+
 Before you can access data from customers who use QuickBooks Online for their accounting, you need to set up the QuickBooks Online integration.
 
 You'll need to:
 
-1. Create an app in the <a className="external" href="https://developer.intuit.com/" target="_blank">Intuit Developer Portal</a>.
+1. Create an app in the <a className="external" href="" target="_blank">Intuit Developer Portal</a>.
 2. Before production use, you need to enter some details about your app and complete the _App Assessment Questionnaire_ provided by Intuit. For help, see <a className="external" href="https://codat.zendesk.com/hc/en-gb/articles/4450200789661" target="_blank">QBO app assessment questionnaire</a> in the Codat Support portal.
 3. Intuit reviews your questionnaire to ensure your app meets their platform requirements.
 4. If your app is approved, you can access its production keys for use with the production integration.
@@ -38,7 +40,7 @@ Before you begin, make sure you understand the different [QuickBooks Online envi
 
 QuickBooks Online provides two separate environments:
 
-- A **sandbox company** containing sample data for development and testing purposes. You automatically get one when you create a QBO developer account. See <a className="external" href="https://developer.intuit.com/app/developer/qbo/docs/develop/sandboxes/manage-your-sandboxes" target="_blank">Create and test with a sandbox company</a> in Intuit developer.
+- A **sandbox company** containing sample data for development and testing purposes. You automatically get one when you create a QBO developer account. See <a className="external" href="https://developer.intuit.com/app/developer/qbo/docs/develop/sandboxes/manage-your-sandboxes" target="_blank">Create and test with a sandbox company</a> in the Intuit developer documentation.
 - A **live QuickBooks account** (including free trials).
 
 Sandbox companies can only connect to a QuickBooks Online app using the app's development keys. Live accounts can only connect to a QuickBooks Online app using the app's production keys.
@@ -56,13 +58,13 @@ In the Intuit Developer Portal, create and register a QuickBooks Online app and 
 
 1. Sign in to the <a href="https://developer.intuit.com/" target="_blank">Intuit Developer Portal</a>.
 
-   You can use your existing QuickBooks Online credentials to create a new Intuit Developer Account.
+   You can use your existing QuickBooks Online credentials to create a new Intuit Developer account.
 
 2. Select **Dashboard** from the top menu to view the **My Apps Dashboard** page.
 
 3. Click **Create an app**.
 
-4. Select the **QuickBooks Online and Payments** box.
+4. Select the **QuickBooks Online and Payments** option.
 
 5. Provide the following information on the **Give your app a name** page:
 
@@ -72,12 +74,9 @@ In the Intuit Developer Portal, create and register a QuickBooks Online app and 
 
    Your app is created and the **Develop your app** page is displayed.
 
-6. In the left menu, select **Keys & credentials** under **Development Settings**.
+6. In the left menu, select **Keys & credentials** under **Development Settings** to view the **Keys & OAuth** page.
 
-7. Provide the following information on the **Keys & OAuth** page:
-
-   1. Under **Redirect URIs**, click **Add URI** to add a new row to the table.
-   2. In the new row, enter the redirect URI for the QuickBooks Online Sandbox integration:
+7. Under **Redirect URIs**, click **Add URI** to add a new row to the table and then enter the redirect URI for the QuickBooks Online Sandbox integration:
 
    ```http
    https://quickbooksonlinesandbox.codat.io/oauth2/callback
@@ -87,11 +86,11 @@ In the Intuit Developer Portal, create and register a QuickBooks Online app and 
 
 8. Click **Save**.
 
-You can find your app's development keys — the **Client ID** and **Client Secret** — in the **Keys** section at the top of the page.
+You can find your app's development keys — the **Client ID** and **Client Secret** — in the **Keys** section at the top of the **Keys & OAuth** page.
 
 ### Next steps
 
-Next, add your app's development keys to the **QuickBooks Online Sandbox** integration, as described in [Add your secure keys to Codat](/integrations/accounting/quickbooksonline/accounting-quickbooksonline-new-setup#add-your-secure-keys-to-codat).
+Next, add your app's development keys to the **QuickBooks Online Sandbox** integration, as described in [Add your app's secure keys to the Codat Portal](/integrations/accounting/quickbooksonline/accounting-quickbooksonline-new-setup#add-your-apps-secure-keys-to-the-codat-portal).
 
 Alternatively, you can get your app's production keys as explained in the next procedure.
 
