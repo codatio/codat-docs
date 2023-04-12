@@ -202,6 +202,7 @@ module.exports = [
           "integrations/accounting/xero/xero-faq",
           "integrations/accounting/xero/xero-integration-reference",
           "integrations/accounting/xero/xero-app-partner-program",
+          "integrations/accounting/xero/xero-sign-up-flow",
           "integrations/accounting/xero/accounting-xero-app-partner-guidance",
         ],
       },

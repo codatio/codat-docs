@@ -137,7 +137,7 @@ We require all apps seeking certification and listing in the Xero App Store to b
 
 Codat recommends a separate webpage built out to accommodate this.
 
-For the steps to enable via Codat please see [Sign Up with Xero](https://codat.zendesk.com/hc/en-gb/articles/7772626953757).
+For the steps to enable via Codat please see [Sign Up with Xero flow](/integrations/accounting/xero/xero-sign-up-flow).
 
 ---
 
