@@ -1,5 +1,5 @@
 ---
-title: "Set up the demo app"
+title: "Set up the bill pay demo app"
 description: "Prepare your Codat instance to run the bill pay demo app"
 ---
 
