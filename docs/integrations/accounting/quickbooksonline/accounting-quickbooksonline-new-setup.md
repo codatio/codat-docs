@@ -23,7 +23,7 @@ Before you can access data from customers who use QuickBooks Online for their ac
 
 You'll need to:
 
-1. Create an app in the <a className="external" href="" target="_blank">Intuit Developer Portal</a>.
+1. Create an app in the [Intuit Developer Portal](https://developer.intuit.com/).
 2. Before production use, you need to enter some details about your app and complete the _App Assessment Questionnaire_ provided by Intuit. For help, see <a className="external" href="https://codat.zendesk.com/hc/en-gb/articles/4450200789661" target="_blank">QBO app assessment questionnaire</a> in the Codat Support portal.
 3. Intuit reviews your questionnaire to ensure your app meets their platform requirements.
 4. If your app is approved, you can access its production keys for use with the production integration.
