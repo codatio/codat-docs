@@ -42,7 +42,7 @@ export const sfeIntegrations = [
   }
 ]
 
-const accountingIntegrations = [ 
+const accountingIntegrations = [
   {
     "name": "Clear Books",
     "to": "/integrations/accounting/clearbooks/accounting-clearbooks",
@@ -279,3 +279,70 @@ export const integrations = [
   },
   ...bankfeedsIntegrations,
 ]
+
+
+export const billpayIntegrations = [
+  {
+    "name": "QuickBooks Online",
+    "to": "/integrations/accounting/quickbooksonline/accounting-quickbooksonline",
+    "type": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/19EEFA32-58A8-4097-B95A-EF150BF24FA0.png"
+  },
+  {
+    name: "MYOB Business",
+    to: "/integrations/accounting/myob/accounting-myob",
+    type: "accounting",
+    img: "https://static.codat.io/public/officialLogos/Square/00812DF4-8A0F-4F06-9566-16E5CA1346AE.png",
+  },
+  {
+    "name": "Xero",
+    "to": "/integrations/accounting/xero/accounting-xero",
+    "type": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png"
+  },
+  {
+    name: "Oracle NetSuite",
+    to: "/integrations/accounting/netsuite/accounting-netsuite",
+    type: "accounting",
+    img: "https://static.codat.io/public/officialLogos/Square/9815B998-024D-4415-A40B-89903B2CAD6F.png",
+  },
+  {
+    name: "QuickBooks Desktop",
+    to: "/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop",
+    type: "accounting",
+    tag: "On-premise",
+    img: "https://static.codat.io/public/officialLogos/Square/19EEFA32-58A8-4097-B95A-EF150BF24FA0.png",
+  },
+  {
+    name: "Sage 50",
+    to: "/integrations/accounting/sage50/accounting-sage50",
+    type: "accounting",
+    tag: "On-premise, UK & Ireland",
+    img: "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png",
+  },
+  {
+    name: "Sage Business Cloud Accounting",
+    to: "/integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud",
+    type: "accounting",
+    tag: "UK, US, Ireland, Canada, France, Germany, and Spain",
+    img: "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png",
+  },
+  {
+    name: "Sage Intacct",
+    to: "/integrations/accounting/sage-intacct/accounting-sage-intacct",
+    type: "accounting",
+    img: "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png",
+  },
+  {
+    name: "FreshBooks",
+    to: "/integrations/accounting/freshbooks/accounting-freshbooks",
+    type: "accounting",
+    img: "https://static.codat.io/public/officialLogos/Square/C08D614F-CBA9-4D30-ADF8-DCCE4F6AE25D.png",
+  },
+  {
+    name: "FreeAgent",
+    to: "/integrations/accounting/freeagent/accounting-freeagent",
+    type: "accounting",
+    img: "https://static.codat.io/public/officialLogos/Square/3DA57C23-A4FA-4BC8-8C02-A7A686ED8B36.png",
+  },
+];
