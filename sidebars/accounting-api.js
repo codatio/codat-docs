@@ -18,13 +18,12 @@ module.exports = [
     items: [
       {
         type: "category",
-        label: "Automated reconciliation",
+        label: "Bill pay",
         collapsed: true,
         items: [
-          "accounting-api/guides/auto-reconciliation/introduction",
-          "accounting-api/guides/auto-reconciliation/setting-up",
-          "accounting-api/guides/auto-reconciliation/name-tbc-1",
-          "accounting-api/guides/auto-reconciliation/name-tbc-2",
+          "accounting-api/guides/bill-pay/introduction",
+          "accounting-api/guides/bill-pay/setting-up",
+          "accounting-api/guides/bill-pay/use-bill-pay-demo-app",
         ],
       },
     ],
