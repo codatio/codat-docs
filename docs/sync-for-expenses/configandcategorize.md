@@ -162,7 +162,9 @@ When pushing an expense reconciliation, you can include a tracking category to a
 
 The tax rates enable your SMB's to accurately track taxes against purchases and, depending on the locale, allow them to recoup the tax.
 
-Accounting systems typically store a set of taxes and associated rates within the accounting package. This means that users don't have to look up or remember the rates for each type of tax. For example: Applying the tax "UK sales VAT" to line items of an invoice adds the correct rate of 20%.
+Accounting systems typically store a set of taxes and associated rates within the accounting package. This means that users don't have to look up or remember the rates for each type of tax. For example: Applying the tax "UK sales VAT" to line items of an invoice adds the correct rate of 20%. 
+
+Assigning a tax rate to a transaction is mandaotry, unless the transaction is a [transfer](sync-for-expenses/sync-process/expense-transactions#transaction-types). In some cases your customers might not need to track tax on expenses. For these transaction we recommend assigning a default tax code for 0% from the accounting package.
 
 **Refreshing the mappingOptions**
 
