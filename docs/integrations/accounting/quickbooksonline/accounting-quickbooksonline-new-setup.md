@@ -76,7 +76,7 @@ In the Intuit Developer Portal, create and register a QuickBooks Online app and 
 
 6. In the left menu, select **Keys & credentials** under **Development Settings** to view the **Keys & OAuth** page.
 
-7. Under **Redirect URIs**, click **Add URI** to add a new row to the table and then enter the redirect URI for the QuickBooks Online Sandbox integration:
+7. Under **Redirect URIs**, click **Add URI** to add a new row to the table. Then, enter the redirect URI for the QuickBooks Online Sandbox integration:
 
    ```http
    https://quickbooksonlinesandbox.codat.io/oauth2/callback
