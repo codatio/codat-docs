@@ -18,8 +18,8 @@ We have done the heavy lifting for you by building integrations with a standardi
 
 For automating payables, the Accounting API brings you and your customers these benefits:
 
-- Increased visibility by enabling the, to track spend forecasts against budgets
-- Reduce time and effor by automating the PO matching process
+- Increased visibility provided by the ability to track spend forecasts against budgets
+- Reduce time and effort by automating the PO matching process
 - Perform faster payments, building better relationships with suppliers
 - Improve compliance without unnecessary bureaucracy
 - Simplify reconciliation by marking bills as paid when the purchase is completed
