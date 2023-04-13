@@ -164,7 +164,7 @@ The tax rates enable your SMB's to accurately track taxes against purchases and,
 
 Accounting systems typically store a set of taxes and associated rates within the accounting package. This means that users don't have to look up or remember the rates for each type of tax. For example: Applying the tax "UK sales VAT" to line items of an invoice adds the correct rate of 20%. 
 
-Assigning a tax rate to a transaction is mandaotry, unless the transaction is a [transfer](sync-for-expenses/sync-process/expense-transactions#transaction-types). In some cases your customers might not need to track tax on expenses. For these transaction we recommend assigning a default tax code for 0% from the accounting package.
+Assigning a tax rate to a transaction is mandatory unless the transaction is a [transfer](/sync-for-expenses/sync-process/expense-transactions#transaction-types). In some cases, your customers might not need to track tax on expenses. We recommend assigning a default tax code for 0% from the accounting package for these transactions.
 
 **Refreshing the mappingOptions**
 
