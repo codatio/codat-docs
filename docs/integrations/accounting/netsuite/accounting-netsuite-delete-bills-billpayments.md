@@ -1,11 +1,10 @@
 ---
 title: "Delete Bills and Bill payments from NetSuite"
+sidebar_label: "Delete Bills and Bill payments"
 description: "Learn how to delete Bills and Bill payments from NetSuite using the deletion endpoints."
-createdAt: "2022-12-09T17:06:02.593Z"
-updatedAt: "2023-01-04T09:51:42.874Z"
 ---
 
-The _Delete bill_ and _Delete bill payment_ endpoints allow you to delete specified Bills and Bill payments from Oracle NetSuite.
+The [Delete bill](/accounting-api#/operations/delete-bill) and [Delete bill payment](/accounting-api#/operations/delete-billPayment) endpoints allow you to delete specified Bills and Bill payments from Oracle NetSuite.
 
 1. Make a `DELETE` request to the relevant endpoint, specifying the Codat ID of the Bill or Bill payment to be deleted in the request URL:
    
