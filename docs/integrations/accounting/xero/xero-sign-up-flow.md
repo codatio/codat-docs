@@ -21,14 +21,18 @@ Finally, present the user with the resulting account via the `Sign up success re
 
 ``` mermaid
   sequenceDiagram
-    participant frontend as Lending Frontend 
-    participant backend as Lending Backend 
-    participant codat as Codat API
-    frontend ->> backend: Submit application
-    backend ->> codat: Request enriched data
-    codat ->> backend: Fetched data
-    backend ->> backend: Underwrite loan
-    backend ->> frontend: Application outcome
+   participant cust as Customer
+    participant appm as App Marketplace 
+    participant yapp as Your App
+    participant xapi as Xero API
+    cust ->> appm: Click "Start a free trial with Xero Sign In"
+    appm ->> yapp: Redirect to your app's Sign Up with Xero URL
+    yapp -> xapi: Standard OAuth 2.0 code flow
+    yapp ->> yapp: Provision account
+    yapp ->> xapi: Request data
+    xapi ->> yapp: Receive data
+    yapp ->> yapp: Populate account
+    yapp ->> cust: Redirect user with the populated landing page via "Sign up success redirect URL"
 ```  
 
 ## How to build?
