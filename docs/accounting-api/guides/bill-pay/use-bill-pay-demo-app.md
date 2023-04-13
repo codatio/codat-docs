@@ -2,10 +2,27 @@
 title: "Use the bill pay demo app"
 description: "Connect to your customer's accounting platform, then view and pay bills in the demo app"
 ---
-   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr/>
+
 - Run the app - using **Run in Vercel** button and/or on local machine using node?
 - Connect to your customer's accounting platform (select **QBO Sandbox** in Link flow)
 - Authorize access
+- Click **Launch bills portal**.
 - (API: Retrieve a list of bank accounts)
 - Select a bank account to reconcile payments to
 - View all unpaid bills
