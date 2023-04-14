@@ -4,7 +4,9 @@ sidebar_label: "Set up and run"
 description: "Prepare your Codat instance to run the bill pay demo app"
 ---
 
-Introduction
+Introduction - what is involved in setting up the solution.
+
+Explain - You have two options for running the demo app.
 
 ## Configure your Codat account for the demo app
 
@@ -16,6 +18,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 - Enable the integration
 - Link out to the full QBO integration setup article
 
+Your Intuit Developer account is created with one US sandbox company. To add more sandbox companies for different locales, go to the [Manage sandbox companies](https://developer.intuit.com/app/developer/sandbox) page in the Ituit Developer Portal. New step - Launch your sandbox company in QBO by clicking its name.
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 
 ### Configure the demo app redirect URI
@@ -25,13 +29,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 `https://{your-domain}/connection-successful`
 
-### Enable the data types
+### Check your data type settings
 
-Required:
+Check the following data types are set to Fetch on first link in your data type settings:
 
 Bills, Bill payments, Company
 
-You have two options for running the demo app.
+For more information, see [Data type settings](/core-concepts/data-type-settings).
 
 ## Install and run the demo app locally
 
