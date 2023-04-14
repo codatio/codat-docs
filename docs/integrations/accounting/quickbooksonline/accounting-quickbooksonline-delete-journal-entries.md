@@ -5,9 +5,9 @@ description: "Learn how to delete data from QuickBooks Online using the delete e
 
 This article explains how to delete existing records from QuickBooks Online.
 
-## Deleting Journal Entries
+## Deleting Journal entries
 
-The _Delete Journal Entries_ endpoint allows you to delete a specified Journal Entry from QuickBooks Online.
+The _Delete Journal entries_ endpoint allows you to delete a specified Journal entry from QuickBooks Online.
 
 :::danger Use with caution
 
@@ -29,7 +29,7 @@ The underlying QuickBooks API endpoint allows users to delete any object from th
 
 2. [List all push operations](/codat-api#/operations/get-company-push-history) for the company. A `Success` status indicates that the Journal Entry object was deleted from QBO.
 
-3. Check the Journal Entry no longer exists in the QBO UI.
+3. Check the journal entry no longer exists in the QBO UI.
 
 ### Effect on related objects
 
