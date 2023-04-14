@@ -1,9 +1,9 @@
 ---
-title: "Delete Objects from QuickBooks Online"
-description: "Learn how to delete objects from QuickBooks Online using the deletion endpoints"
+title: "Delete data from QuickBooks Online"
+description: "Learn how to delete data from QuickBooks Online using the delete endpoints"
 ---
 
-This article explains how to delete records from QuickBooks Online.
+This article explains how to delete existing records from QuickBooks Online.
 
 ## Deleting Journal Entries
 
