@@ -22,7 +22,7 @@ query parameters can also be used to narrow the list of suppliers e.g.
 - `defaultCurrency=USD` returns suppliers that provide goods or services in dollars
 - `supplierName=Acme` returns suppliers with a name that matches the query
 
-:::info Supplier Balances
+:::tip Supplier Balances
 Currently the accounting API does not expose supplier balances on the supplier endpoint, however you can access these by
 - Aggregating bills by supplier
 - Using the [Aged debtors](/accounting-api#/operations/get-aged-debtors-report) report
