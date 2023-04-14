@@ -429,6 +429,7 @@ Click through the tabs to see the supported attachment options for each integrat
 </Tabitem>
   
 <Tabitem value="NetSuite" label="NetSuite">
+
 ```json
   {
     "type": "File",
