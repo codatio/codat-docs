@@ -133,6 +133,11 @@ const bank = [
     platformKey: "suuo",
     to: "/integrations/banking/plaid/banking-plaid",
   },
+  {
+    integration: "TrueLayer",
+    platformKey: "upvr",
+    to: "/integrations/banking/truelayer/banking-truelayer",
+  },
 ]
 
 const comm = [
@@ -392,7 +397,7 @@ module.exports = {
         existingPath.replace('/', '/docs'),
       ];
     }
-    
+
     return undefined; // Return a falsy value: no redirect created
   },
 };
