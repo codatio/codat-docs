@@ -10,10 +10,10 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 <Head>
-  <meta property="og:image" content="/img/link/link-sdk-banner.png"/>
+  <meta property="og:image" content="/img/link/0013-embedded-link-demo.png"/>
 </Head>
 
-![](/img/link/link-sdk-banner.png)
+![](/img/link/0013-embedded-link-demo.png)
 
 :::caution Early access
 
