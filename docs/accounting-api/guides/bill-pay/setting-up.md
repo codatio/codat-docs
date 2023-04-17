@@ -20,8 +20,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Your Intuit Developer account is created with one US sandbox company. To add more sandbox companies for different locales, go to the [Manage sandbox companies](https://developer.intuit.com/app/developer/sandbox) page in the Ituit Developer Portal. New step - Launch your sandbox company in QBO by clicking its name.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-
 ### Configure the demo app redirect URI
 
 - If using the hosted app, use `demo-bill-pay.vercel.app` as the domain.

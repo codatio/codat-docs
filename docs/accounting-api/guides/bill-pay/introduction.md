@@ -36,11 +36,9 @@ This guide is meant to be used alongside the [demo app project](https://github.c
 
 - Check the bill payment that was pushed to QuickBooks Online is reconciled correctly against the bill.
 
-<hr />
+## How the Bill pay app works
 
-- Introduction
-- Sequence diagram - flow of data between front-end and back-end
-- How the bill pay app works - explain the flow, the order things happen in
+(Sequence diagram - flow of data between front-end and back-end. Show the order things happen in)
 
 
 
