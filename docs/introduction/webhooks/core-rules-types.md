@@ -1,11 +1,11 @@
 ---
 title: "Rule types"
-description: "Explore scenarios of events where a rule can be configured"
+description: "Use webhooks to build responsive and resilient applications on Codat data."
 createdAt: "2021-02-23T13:11:28.821Z"
 updatedAt: "2022-11-17T19:29:19.748Z"
 ---
 
-The following rules can be configured in the Codat Portal to alert you to events affecting your companies and data.
+The following rules can be configured in the Codat Portal to trigger webhook events. These can be use to help your respond to changes in your companies and their data.
 
 | Rule name | Trigger | Additional data | 
 | :- | :- | :- |
