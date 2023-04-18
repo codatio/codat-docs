@@ -13,26 +13,19 @@ In line with industry standard security practices, we have removed personally id
 
 The following rules can be configured in the Codat Portal to alert you to events affecting your companies and data.
 
-## Account categories updated
+| Rule name | Trigger | Additional data | 
+| :- | :- | :- |
+| Company data connection status changed  | A data connection's status changes. | `dataConnectionId`, `platformKey`, `newStatus`, `oldStatus` |
+| New company synchronized                | After the first dataType is successfully synced for a new company. | |
+| Data sync completed                     | Data synchronization is completed; a notification will be generated for each `dataType` as the sync completes. | `dataType`, `datasetId` |
+| Dataset data changed                    | A dataset synchronization has completed and this has resulted in updates within Codat's data cache - this could be through the creation of new records or a change to existing records. | `dataType`, `datasetId` |
+| Dataset status has changed to an error state | The synchronization of a dataset fails. | `dataType`, `datasetStatus`, `datasetId` | 
+| Push operation status has changed       | A push operation's status changes. | `dataType`, `status`, `pushOperationKey` |
+| Push operation has timed out            | A push operation times out. |  `dataType`, `pushOperationGuid` |
+| Account categories updated              | Anytime that Codat updates the `suggested` fields or a user updates the `confirmed` fields. | `modifiedDate` |
+| Sync Connection Deleted                 | A Sync for Commerce connection is deleted. **Note:** Sync for Commerce only. |  |
 
-**Trigger:** Anytime that Codat updates the `suggested` fields or a user updates the `confirmed` fields.  
-**Additional data:** `modifiedDate`.
-
-```json
-{
-  "CompanyId": "f1c35bdc-1546-41b9-baf4-3f31135af968",
-  "ClientId": "4b6091c4-32b8-4e08-ac31-f7dc7477674b",
-  "ClientName": "Peach",
-  "DataConnectionId": "1a0efd26-1f06-4c48-803f-f8670535ff02",
-  "RuleId": "e6fd0b54-ae05-4c43-b7ea-0d340cee15a7",
-  "RuleType": "Account Categories Updated",
-  "AlertId": "c893d3c3-6e69-4b70-af18-7dca1557be6d",
-  "Message": "Account categories updated for company f1c35bdc-1546-41b9-baf4-3f31135af968.",
-  "Data": {
-    "modifiedDate": "2022-09-08T16:00:13.7714779+00:00"
-  }
-}
-```
+---
 
 ## Company data connection status changed
 
@@ -52,6 +45,21 @@ The following rules can be configured in the Codat Portal to alert you to events
     "oldStatus":"PendingAuth",
     "platformKey":"mqjo"
  }
+}
+```
+
+## New company synchronized
+
+**Trigger:** After the first dataType is successfully synced for a new company.
+
+```json
+{
+  "CompanyId": "0ec09c80-e82b-4409-a150-5a5211c215f4",
+  "RuleId": "dba7daa5-be88-40ae-a596-d23549498b17",
+  "RuleType": "New company synchronised",
+  "AlertId": "e848c2a1-ad15-41eb-915b-7a67c269bd2a",
+  "Message": "Company 0ec09c80-e82b-4409-a150-5a5211c215f4 synced for the first time",
+  "Data": {}
 }
 ```
 
@@ -116,21 +124,6 @@ The following rules can be configured in the Codat Portal to alert you to events
 }
 ```
 
-## New company synchronized
-
-**Trigger:** After the first dataType is successfully synced for a new company.
-
-```json
-{
-  "CompanyId": "0ec09c80-e82b-4409-a150-5a5211c215f4",
-  "RuleId": "dba7daa5-be88-40ae-a596-d23549498b17",
-  "RuleType": "New company synchronised",
-  "AlertId": "e848c2a1-ad15-41eb-915b-7a67c269bd2a",
-  "Message": "Company 0ec09c80-e82b-4409-a150-5a5211c215f4 synced for the first time",
-  "Data": {}
-}
-```
-
 ## Push operation status has changed
 
 **Trigger:** A push operation's status changes.  
@@ -166,6 +159,27 @@ The following rules can be configured in the Codat Portal to alert you to events
   "Data":{
     "dataType":"invoices",
     "pushOperationGuid":"476afa1c-9f27-4def-bf0d-0914ad89ed27"
+  }
+}
+```
+
+## Account categories updated
+
+**Trigger:** Anytime that Codat updates the `suggested` fields or a user updates the `confirmed` fields.  
+**Additional data:** `modifiedDate`.
+
+```json
+{
+  "CompanyId": "f1c35bdc-1546-41b9-baf4-3f31135af968",
+  "ClientId": "4b6091c4-32b8-4e08-ac31-f7dc7477674b",
+  "ClientName": "Peach",
+  "DataConnectionId": "1a0efd26-1f06-4c48-803f-f8670535ff02",
+  "RuleId": "e6fd0b54-ae05-4c43-b7ea-0d340cee15a7",
+  "RuleType": "Account Categories Updated",
+  "AlertId": "c893d3c3-6e69-4b70-af18-7dca1557be6d",
+  "Message": "Account categories updated for company f1c35bdc-1546-41b9-baf4-3f31135af968.",
+  "Data": {
+    "modifiedDate": "2022-09-08T16:00:13.7714779+00:00"
   }
 }
 ```
