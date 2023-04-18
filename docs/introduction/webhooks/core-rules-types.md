@@ -5,12 +5,6 @@ createdAt: "2021-02-23T13:11:28.821Z"
 updatedAt: "2022-11-17T19:29:19.748Z"
 ---
 
-:::caution Removing non-reference data from webhook alerts body
-
-In line with industry standard security practices, we have removed personally identifiable information, such as `companyName`, from the body of our alert webhooks. This leaves only referential information, such as `companyId`, which can be looked up using our API.
-
-:::
-
 The following rules can be configured in the Codat Portal to alert you to events affecting your companies and data.
 
 | Rule name | Trigger | Additional data | 
@@ -27,7 +21,15 @@ The following rules can be configured in the Codat Portal to alert you to events
 
 ---
 
-## Company data connection status changed
+## Rules and payloads
+
+:::caution Removing non-reference data from webhook alerts body
+
+In line with industry standard security practices, we have removed personally identifiable information, such as `companyName`, from the body of our alert webhooks. This leaves only referential information, such as `companyId`, which can be looked up using our API.
+
+:::
+
+### Company data connection status changed
 
 **Trigger:** A data connection's status changes.  
 **Additional data:** `dataConnectionId`, `platformKey`, `newStatus`, `oldStatus`.
@@ -48,7 +50,7 @@ The following rules can be configured in the Codat Portal to alert you to events
 }
 ```
 
-## New company synchronized
+### New company synchronized
 
 **Trigger:** After the first dataType is successfully synced for a new company.
 
@@ -63,7 +65,7 @@ The following rules can be configured in the Codat Portal to alert you to events
 }
 ```
 
-## Data sync completed
+### Data sync completed
 
 **Trigger:** Data synchronization is completed; a notification will be generated for each `dataType` as the sync completes.  
 **Additional data:** `dataType`, `datasetId`.
@@ -85,7 +87,7 @@ The following rules can be configured in the Codat Portal to alert you to events
 }
 ```
 
-## Dataset data changed
+### Dataset data changed
 
 **Trigger:** A dataset synchronization has completed and this has resulted in updates within Codat's data cache - this could be through the creation of new records or a change to existing records.  
 **Additional data:** `dataType`, `datasetId`.
@@ -104,7 +106,7 @@ The following rules can be configured in the Codat Portal to alert you to events
 }
 ```
 
-## Dataset status has changed to an error state
+### Dataset status has changed to an error state
 
 **Trigger:** The synchronization of a dataset fails.  
 **Additional data:** `dataType`, `datasetStatus`, `datasetId`.
@@ -124,7 +126,7 @@ The following rules can be configured in the Codat Portal to alert you to events
 }
 ```
 
-## Push operation status has changed
+### Push operation status has changed
 
 **Trigger:** A push operation's status changes.  
 **Additional data:** `dataType`, `status`, `pushOperationKey`.
@@ -144,7 +146,7 @@ The following rules can be configured in the Codat Portal to alert you to events
 }
 ```
 
-## Push operation has timed out
+### Push operation has timed out
 
 **Trigger:** A push operation times out.  
 **Additional data:** `dataType`, `pushOperationGuid`.
@@ -163,7 +165,7 @@ The following rules can be configured in the Codat Portal to alert you to events
 }
 ```
 
-## Account categories updated
+### Account categories updated
 
 **Trigger:** Anytime that Codat updates the `suggested` fields or a user updates the `confirmed` fields.  
 **Additional data:** `modifiedDate`.
@@ -184,7 +186,7 @@ The following rules can be configured in the Codat Portal to alert you to events
 }
 ```
 
-## Sync Connection Deleted
+### Sync Connection Deleted
 
 **Trigger:** A Sync for Commerce connection is deleted.
 
