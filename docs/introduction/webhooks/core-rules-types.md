@@ -20,17 +20,17 @@ The following rules can be configured in the Codat Portal to alert you to events
 
 ```json
 {
-"CompanyId": "f1c35bdc-1546-41b9-baf4-3f31135af968",
-"ClientId": "4b6091c4-32b8-4e08-ac31-f7dc7477674b",
-"ClientName": "Peach",
-"DataConnectionId": "1a0efd26-1f06-4c48-803f-f8670535ff02",
-"RuleId": "e6fd0b54-ae05-4c43-b7ea-0d340cee15a7",
-"RuleType": "Account Categories Updated",
-"AlertId": "c893d3c3-6e69-4b70-af18-7dca1557be6d",
-"Message": "Account categories updated for company f1c35bdc-1546-41b9-baf4-3f31135af968.",
-"Data": {
-  "modifiedDate": "2022-09-08T16:00:13.7714779+00:00"
-}
+  "CompanyId": "f1c35bdc-1546-41b9-baf4-3f31135af968",
+  "ClientId": "4b6091c4-32b8-4e08-ac31-f7dc7477674b",
+  "ClientName": "Peach",
+  "DataConnectionId": "1a0efd26-1f06-4c48-803f-f8670535ff02",
+  "RuleId": "e6fd0b54-ae05-4c43-b7ea-0d340cee15a7",
+  "RuleType": "Account Categories Updated",
+  "AlertId": "c893d3c3-6e69-4b70-af18-7dca1557be6d",
+  "Message": "Account categories updated for company f1c35bdc-1546-41b9-baf4-3f31135af968.",
+  "Data": {
+    "modifiedDate": "2022-09-08T16:00:13.7714779+00:00"
+  }
 }
 ```
 
@@ -84,15 +84,15 @@ The following rules can be configured in the Codat Portal to alert you to events
 
 ```json
 {
-"CompanyId": "ac712d04-c107-424d-a801-be76d677e508",
-"RuleId": "70328e0e-9d8d-48fd-9306-7a39973009c3",
-"RuleType": "Dataset data changed",
-"AlertId": "bbdbc217-9776-4cf2-9b67-0afad20bd10e",
-"Message": "Data has changed for dataset type invoices, company ac712d04-c107-424d-a801-be76d677e508",
-"Data": {
-  "dataType": "invoices",
-  "datasetId": "e05b0e4b-98f6-48e8-a231-f0720e644f26"
-}
+  "CompanyId": "ac712d04-c107-424d-a801-be76d677e508",
+  "RuleId": "70328e0e-9d8d-48fd-9306-7a39973009c3",
+  "RuleType": "Dataset data changed",
+  "AlertId": "bbdbc217-9776-4cf2-9b67-0afad20bd10e",
+  "Message": "Data has changed for dataset type invoices, company ac712d04-c107-424d-a801-be76d677e508",
+  "Data": {
+    "dataType": "invoices",
+    "datasetId": "e05b0e4b-98f6-48e8-a231-f0720e644f26"
+  }
 }
 ```
 
@@ -103,16 +103,16 @@ The following rules can be configured in the Codat Portal to alert you to events
 
 ```json
 {
- "CompanyId":"0ec09c80-e82b-4409-a150-5a5211c215f4",
- "RuleId":"ca3b6004-f1bb-43e7-860f-1386e108b684",
- "RuleType":"Data Sync Status Changed to Error",
- "AlertId":"40eda3e2-f098-47bd-b7d5-b6b08ae3819e",
- "Message":"ERROR: syncing payments triggered a ProcessingError notification at 2020-04-21T12:12:57.4250446Z ",
- "Data":{
+  "CompanyId":"0ec09c80-e82b-4409-a150-5a5211c215f4",
+  "RuleId":"ca3b6004-f1bb-43e7-860f-1386e108b684",
+  "RuleType":"Data Sync Status Changed to Error",
+  "AlertId":"40eda3e2-f098-47bd-b7d5-b6b08ae3819e",
+  "Message":"ERROR: syncing payments triggered a ProcessingError notification at 2020-04-21T12:12:57.4250446Z ",
+  "Data":{
     "dataType":"payments",
     "datasetStatus":"ProcessingError",
     "datasetId":"8ee17d26-ac12-4e2d-92d0-a90147958ee3"
- }
+  }
 }
 ```
 
@@ -158,15 +158,15 @@ The following rules can be configured in the Codat Portal to alert you to events
 
 ```json
 {
- "CompanyId":"f6bc5f14-87fb-438f-8d2d-db6a0964aef1",
- "RuleId":"c40791fe-b6fd-45c3-9bf7-0a16abf1b8fd",
- "RuleType":"Push Operation Timed Out",
- "AlertId":"a42bff38-d73c-4aab-9bb6-d8014bba5f29",
- "Message":"ERROR: pushing invoices never finished in time, timing out at 2020-09-07T08:42:13",
- "Data":{
+  "CompanyId":"f6bc5f14-87fb-438f-8d2d-db6a0964aef1",
+  "RuleId":"c40791fe-b6fd-45c3-9bf7-0a16abf1b8fd",
+  "RuleType":"Push Operation Timed Out",
+  "AlertId":"a42bff38-d73c-4aab-9bb6-d8014bba5f29",
+  "Message":"ERROR: pushing invoices never finished in time, timing out at 2020-09-07T08:42:13",
+  "Data":{
     "dataType":"invoices",
     "pushOperationGuid":"476afa1c-9f27-4def-bf0d-0914ad89ed27"
- }
+  }
 }
 ```
 
