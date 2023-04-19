@@ -284,7 +284,12 @@ GET https://api.codat.io/companies/{companyId}/data/bills?page=1&pageSize=100&qu
 
 </Tabitem>
 
-<Tabitem value="Example Bill Payment" label="Example Bill Payment">
+<Tabitem value="Example Bill Payments" label="Example Bill Payments">
+
+<Tabs>
+
+<Tabitem value="Xero" label="Xero">
+
 
 Here is a sample payment for the Xero bills
 
@@ -327,7 +332,10 @@ Here is a sample payment for the Xero bills
 }
 ```
 
-and here is a similar example for paying multiple bills from the same supplier in QuickBooks Online
+</Tabitem>
+
+<Tabitem value="QuickBooks Online" label="QuickBooks Online">
+
 
 ```json
 {
@@ -364,6 +372,154 @@ and here is a similar example for paying multiple bills from the same supplier i
     "reference": "1"
   }
 ```
+
+</Tabitem>
+
+<Tabitem value="NetSuite" label="NetSuite">
+
+:::note
+
+Note that if locations is set to mandatory in the companies Netsuite Account, the `reference` is required and should be an `id` from the [trackingCategories](/accounting-api#/operations/list-tracking-categories) prefixed with location.
+
+:::
+
+```json
+{
+  "supplierRef":{
+    "id":"727",
+    "supplierName":"Vendor -.B"
+  },
+  "totalAmount":2,
+  "accountRef": {
+    "id": "854"
+  },
+  "currency":"GBP",
+  "currencyRate":1,
+  "date":"2023-04-18T00:00:00",
+  "lines":[
+    {
+      "amount":2,
+      "links":[
+        {
+          "type":"Bill",
+          "id":"288274",
+          "amount":-1,
+          "currencyRate":1
+        },
+        {
+          "type":"Bill",
+          "id":"287594",
+          "amount":-1,
+          "currencyRate":1
+        }
+      ]
+    }
+  ],
+  "reference":"location-5"
+}
+```
+
+</Tabitem>
+
+
+<Tabitem value="Sage Intacct" label="Sage Intacct">
+
+:::note
+
+Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can be retrieved from the [options api](accounting-api#/operations/get-create-update-bills-model)
+
+:::
+
+```json
+{
+  "id": "26491",
+  "supplierRef": {
+    "id": "15",
+    "supplierName": "HC Equipment Repair"
+  },
+  "accountRef": {
+    "id": "84"
+  },
+  "totalAmount": 30000,
+  "currency": "USD",
+  "date": "2023-04-19T00:00:00",
+  "note": "",
+  "paymentMethodRef": {
+    "id": "6"
+  },
+  "lines": [
+    {
+      "amount": 15000,
+      "links": [
+        {
+          "type": "Bill",
+          "id": "26492",
+          "amount": -15000
+        }
+      ]
+    },
+    {
+      "amount": 15000,
+      "links": [
+        {
+          "type": "Bill",
+          "id": "26493",
+          "amount": -15000
+        }
+      ]
+    }
+  ]
+}
+```
+
+</Tabitem>
+
+
+<Tabitem value="MYOB" label="MYOB">
+
+```json
+{
+  "supplierRef": {
+    "id": "0749b9a9-4fd1-4d5e-ae5f-7de3887c933a"
+  },
+  "accountRef": {
+    "id": "161904cc-c2be-4cd7-afbd-ccd304473216"
+  },
+  "totalAmount": 105,
+  "currency": "AUD",
+  "date": "2023-04-19T00:00:00",
+  "note": "Payment; Sydney Coaches & Buses (YAHOO MAIL)",
+  "lines": [
+    {
+      "amount": 5,
+      "links": [
+        {
+          "type": "Bill",
+          "id": "cd5029ae-5548-4bd0-ae9e-bb572d40349d",
+          "amount": -5,
+          "currencyRate": 1
+        }
+      ]
+    },
+    {
+      "amount": 100,
+      "links": [
+        {
+          "type": "Bill",
+          "id": "edaff6be-43c2-4f1d-9511-11605ae310f0",
+          "amount": -100,
+          "currencyRate": 1
+        }
+      ]
+    }
+  ]
+}
+```
+
+</Tabitem>
+
+
+</Tabs>
 
 </Tabitem>
 
