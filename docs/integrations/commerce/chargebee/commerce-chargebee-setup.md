@@ -5,8 +5,6 @@ createdAt: "2022-08-02T16:15:07.583Z"
 updatedAt: "2023-01-06T16:34:35.590Z"
 ---
 
-[View the integration in the Portal](/integrations/commerce/chargebee/commerce-chargebee).
-
 Before you can use the integration, your SMB customers (merchants who use Chargebee) need to retrieve their secure API credentials from their Chargebee account and enter them in [Link](/auth-flow/overview). Chargebee does not require any global credentials for accessing the API.
 
 To start pulling data from Chargebee:
