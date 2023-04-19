@@ -5,7 +5,7 @@ createdAt: "2022-08-01T14:36:49.455Z"
 updatedAt: "2022-10-20T13:33:08.523Z"
 ---
 
-<a className="external" href="https://www.chargebee.com/" target="_blank">Chargebee</a> is a subscription billing management platform that enables merchants to streamline their recurring billing and subscription payment processes.
+<p><a className="external" href="https://www.chargebee.com/" target="_blank">Chargebee</a> is a subscription billing management platform that enables merchants to streamline their recurring billing and subscription payment processes.</p>
 
 Use Codat's Commerce API with Chargebee to securely connect to, retrieve, and view your customers' recurring sales and subscription transactions.
 
