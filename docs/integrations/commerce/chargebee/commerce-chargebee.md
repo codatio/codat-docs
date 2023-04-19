@@ -9,7 +9,7 @@ updatedAt: "2022-10-20T13:33:08.523Z"
 
 Use Codat's Commerce API with Chargebee to securely connect to, retrieve, and view your customers' recurring sales and subscription transactions.
 
-::: caution Data type coverage
+:::caution Data type coverage
 
 The Chargebee integration is part of the [Domain Discovery Program](/integrations/commerce/domain-discovery-program), so it doesn't yet expose any standardized commerce data types. Please contact your Account Manager or Account Executive to find out more and gain access.
 :::
