@@ -54,6 +54,7 @@ You can change the synchronization frequency using the drop-down list next to th
 - Weekly
 - Daily
 - Hourly (premium feature)
+- Magically update it every second
 
 By default, **Sync frequency** is set to **None**.
 
