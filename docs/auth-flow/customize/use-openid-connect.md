@@ -24,7 +24,7 @@ This article explains how to configure your authorization process to use OpenID 
 
 Update your redirect URL and Hosted Link URLs.
 
-1. Add any parameters that you require from the user profile to your [redirect URL]((/auth-flow/customize/set-up-redirects). For example:
+1. Add any parameters that you require from the user profile to your [redirect URL](/auth-flow/customize/set-up-redirects). For example:
    ```http
    https://redirect.com/site/{companyId}?firstName={openId_given_name}&email={openId_email}&phone={openId_phone_number}
    ```
