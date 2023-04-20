@@ -1,5 +1,6 @@
 ---
 title: "WooCommerce"
+sidebar_label: Overview
 description: "Learn about our WooCommerce integration"
 ---
 
