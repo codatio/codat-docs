@@ -5,7 +5,10 @@ createdAt: "2022-05-27T14:07:23.367Z"
 updatedAt: "2022-10-20T08:48:19.088Z"
 ---
 
-Note the following information when building your application using Codat's Mollie integration.
+:::info Data type coverage
+
+View the coverage of our Mollie integration in the <a className="external" href="https://knowledge.codat.io/supported-features/commerce?view=tab-by-integration&integrationKey=dxfw" target="_blank">Data coverage explorer</a>.
+:::
 
 ## Disputes
 
