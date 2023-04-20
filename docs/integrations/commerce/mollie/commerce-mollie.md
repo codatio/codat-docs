@@ -1,5 +1,6 @@
 ---
 title: "Mollie"
+sidebar_label: Overview
 description: "Learn about our Mollie integration"
 createdAt: "2022-02-15T14:08:00.045Z"
 updatedAt: "2022-10-20T13:35:50.304Z"
