@@ -23,11 +23,6 @@ You can either onboard users:
 
 To create a new company, use the `POST /companies` endpoint and provide a name you want to attribute to it in the request body. Parameter `name` is a required parameter to execute this request. You can also provide a `description` to store additional information about the company.
 
-:::note Company name
-
-The name of the company doesn't have to be unique. It's just there to help you identify the company in the portal. Make sure to [avoid forbidden characters](/core-concepts/companies).
-:::
-
 `POST /companies`
 
 ```json title="Sample request body"
@@ -48,12 +43,17 @@ The name of the company doesn't have to be unique. It's just there to help you i
 ```
 :::caution Retain the company ID
 
-The `id` property that you receive in the response is the unique Codat identifier for this company. We recommend that you retain it for future reference.
+The `id` property that you receive in the response is the unique Codat identifier for this company. **We recommend that you retain it for future reference.**
 :::
 
-### Authorize access
+:::note Company name
 
-Once you've created the company, they'll need to give you permission to pull their data. There are several approaches to doing this, but for simplicity we've just covered our out-of-the-box [hosted link](/auth-flow/authorize-hosted-link) approach.
+The name of the company doesn't have to be unique. It's just there to help you identify the company in the portal. Make sure to [avoid forbidden characters](/core-concepts/companies).
+:::
+
+### Authorize access to company data
+
+Once you've created the company, they'll need to give you permission to pull their data from a given source, like their accounting platform. There are several approaches to doing this, but for simplicity we've just covered our out-of-the-box [hosted link](/auth-flow/authorize-hosted-link) approach.
 
 Send the user to the `redirect` URL returned in the previous step. They will be sent to [Link](/auth-flow/authorize-hosted-link) where they can select their accounting software and complete the linking process.
 
