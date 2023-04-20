@@ -9,25 +9,24 @@ description: Embedded accounting integrations for corporate card providers
 tags: [overview, syncforexpense]
 ---
 
+import {IntegrationsList} from '@components/global/Integrations'
+import {sfeIntegrations} from '@components/global/Integrations/integrations'
+
 <Head>
   <meta property="og:image" content="/img/sync-for-expenses/sfe-banner.png"/>
 </Head>
 
-<div className="background-video-wrapper sfe">
-  <div className="banner-video">
-    <h1>Sync for Expenses</h1>
-    <p>
-      Embedded accounting integrations for corporate card providers
-    </p>
-  </div>
-</div>
+import PageHeader from "@components/global/PageHeader";
 
-<div className="background-video-spacer sfe">
-  <h1>Sync for Expenses</h1>
+<PageHeader 
+  className="sfe"
+  title="Sync for Expenses"
+  icon="/logos/products/SyncforExpenses.svg"
+>
   <p>
     Embedded accounting integrations for corporate card providers
   </p>
-</div>
+</PageHeader>
 
 ![An image from the static](/img/sync-for-expenses/sfe-banner.png)
 
@@ -36,6 +35,12 @@ tags: [overview, syncforexpense]
 Sync for Expenses is an API and a set of supporting tools. It has been built to enable corporate card and expense management platforms to provide high-quality integrations with multiple accounting platforms through a standardized API.
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://god.gw.postman.com/run-collection/9514766-9427cfd1-d3f9-4857-b3f1-d488fb6de5a6?action=collection%2Ffork&collection-url=entityId%3D9514766-9427cfd1-d3f9-4857-b3f1-d488fb6de5a6%26entityType%3Dcollection%26workspaceId%3Dc6d087b0-fc80-4d14-a903-a9017e1b54e0)
+
+## Compatible integrations
+
+<br/>
+
+<IntegrationsList integrations={sfeIntegrations}/>
 
 ## Features
 

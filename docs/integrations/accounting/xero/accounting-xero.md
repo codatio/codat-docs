@@ -1,17 +1,19 @@
 ---
 title: "Xero"
 description: "Learn about our Xero integration."
-createdAt: "2019-07-17T14:18:44.723Z"
-updatedAt: "2022-12-20T11:59:45.635Z"
 ---
 
-You can synchronize accounting data with <a className="external" href="http://www.xero.com" target="_blank">Xero</a> using our Xero integration.
+You can synchronize accounting data with [Xero](http://www.xero.com) using our Xero integration.
 
 ## Data type coverage
 
 View the coverage of our Xero integration in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=gbol" target="_blank">Data coverage explorer</a>.
 
 For more details about the supported data types and operations, see [Xero FAQs](/integrations/accounting/xero/xero-faq) and [Xero integration reference](/integrations/accounting/xero/xero-integration-reference).
+
+## Xero App Partnership
+
+If you want to have more than 25 Xero connections, you'll need to join the **Xero App Partner Program**. For help with the application process, see [Joining the Xero App Partner Program](/integrations/accounting/xero/xero-app-partner-program) and [Xero App Partner guidance by use case](/integrations/accounting/xero/accounting-xero-app-partner-guidance).
 
 ## Set up the integration
 

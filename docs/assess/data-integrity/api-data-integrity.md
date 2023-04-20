@@ -1,6 +1,6 @@
 ---
-title: "API: data integrity"
-description: "Reference document for the Data Integrity endpoints"
+title: "Data Integrity"
+description: "Reference document for the data integrity endpoints"
 createdAt: "2022-01-13T14:46:31.445Z"
 updatedAt: "2022-11-22T16:18:03.295Z"
 ---
@@ -56,8 +56,8 @@ The endpoint is available in our <a href="/assess-api#/operations/get-dataIntegr
 ### Parameters
 | Parameter | Type | Description | Required |
 |---|---|---|---|
-| **companyId** | _string_ | The ID of the company you want match results for. Submit as route parameter. | Required |
-| **datatype** | _string_ | The data type you want match results for. **Accounting source:** [bankAccounts](/accounting-api#/schemas/BankAccount), [accountTransactions](/accounting-api#/schemas/AccountTransaction). **Banking source:** [banking-accounts](/banking-api#/schemas/Account), [banking-transactions](/banking-api#/schemas/Transaction). Submit as route parameter. | Required |
+| **companyId** | _string_ | The ID of the company you want match results for. <br/> Submit as route parameter. | Required |
+| **datatype** | _string_ | The data type you want match results for. <br/> **Accounting source:** [bankAccounts](/accounting-api#/schemas/BankAccount), [accountTransactions](/accounting-api#/schemas/AccountTransaction). <br/> **Banking source:** [banking-accounts](/banking-api#/schemas/Account), [banking-transactions](/banking-api#/schemas/Transaction). <br/> Submit as route parameter. | Required |
 
 ### Data model
 | **Field** | Type | Description |
@@ -68,19 +68,11 @@ The endpoint is available in our <a href="/assess-api#/operations/get-dataIntegr
 | **amounts** | See [Amounts](#amounts) | Only returned for transactions. For accounts, there is nothing returned. |
 | **dates** | See [Dates](#dates) | Only returned for transactions. For accounts, there is nothing returned. |
 
-|Field|Type|Description|
-|-----|----|-----------|
-|**Type**|_string_|The data type which the data type in the URL has been matched against. For example, if you've matched _accountTransactions_ and _banking-transactions_, and you call this endpoint with _accountTransactions_ in the URL, this property would be _banking-transactions_|
-|**statusInfo**|See [Status info](#status-info)||
-|**connectionIds**|See [Connection ID](#connection-id)||
-|**amounts**|See [Amounts](#amounts)|Only returned for transactions. For accounts, there is nothing returned.|
-|**dates**|See [Dates](#dates)|Only returned for transactions. For accounts, there is nothing returned.|
-
 #### Status info
 | **Field** | Type | Description |
 |---|---|---|
 | **lastMatched** | _string_, See [Date](/codat-api#/schemas/DateTime) | The date the matching algorithm last ran against the company’s bank transactions. |
-| **currentStatus** | _string_ | One of the following: `Unknown`, `DoesNotExist` - have never attempted a match run for this company as do not have datasets required, `Error` - something went wrong upon matching, `Processing`, `Complete`  |
+| **currentStatus** | _string_ | One of the following: <br/> `Unknown`, <br/> `DoesNotExist` - have never attempted a match run for this company as do not have datasets required, <br/> `Error` - something went wrong upon matching, <br/> `Processing`, <br/> `Complete`  |
 | **statusMessage** | _string_ | Detailed explanation supporting the status value. |
 
 
@@ -168,7 +160,7 @@ The endpoint is available in our <a href="/assess-api#/operations/get-dataIntegr
 
 This endpoint exposes a summary of match results for a given data type filtered by a query string in the Codat query language. Only the summary results are returned, no transactions.
 
-So, for example, if you wanted to see summary match results only for transactions after 1 December 2020, you could send ‘query=date>2020-12-01’.
+So, for example, if you wanted to see summary match results only for transactions after 1 December 2020, you could send `query=date>2020-12-01`.
 
 The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-assess-dataTypes-dataType-dataIntegrity-summaries">API reference</a>.
 
@@ -179,7 +171,7 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 |---|---|---|---|
 | **companyId** | _string_ | The ID of the company you want match results for. Submit as route parameter. | Required |
 | **datatype** | _string_ | The data type you want match results for. | Required |
-| **Query** | _string_ | You can query any properties in the response.It can be left blank. E.g.query=date>2020-12-01. Submit as query parameter. This follows the standard [Codat query language](/using-the-api/querying). |  |
+| **Query** | _string_ | You can query any properties in the response, e.g. `query=date>2020-12-01`. <br/> It can also be left blank. This follows the standard [Codat query language](/using-the-api/querying). |  |
 
 
 ### Data model
@@ -276,9 +268,9 @@ By contrast, in the Data Integrity page on Portal, the match percentage displaye
 
 <img src="/img/old/cf7bc11-DataIntegrity1.png"/>
 
-You can reproduce this match percentage yourself by fetching the summaries for accountTransactions and banking-transactions in separate API calls, and combining the results client-side, e.g. by taking a weighted average of the match percentages.
+You can reproduce this match percentage yourself by fetching the summaries for _accountTransactions_ and _banking-transactions_ in separate API calls, and combining the results client-side, e.g. by taking a weighted average of the match percentages.
 
-Note that by default the percentage on the Portal is also restricted to the overlapping date range; you can reproduce this yourself by getting the min and max overlapping dates from the Status endpoint, and then restricting your calls to the Summaries endpoint to these dates using the query parameter.
+Note that by default the percentage on the Portal is also restricted to the overlapping date range; you can reproduce this yourself by getting the min and max overlapping dates from the _Status_ endpoint, and then restricting your calls to the _Summaries_ endpoint to these dates using the query parameter.
 
 E.g. if the Status response contains this:
 
@@ -294,7 +286,7 @@ E.g. if the Status response contains this:
 }
 ````
 
-Then you would call each of the _Summaries endpoints_ with (url-escaped) query=date>=2021-09-03T12:00:00.000Z&&date<=2021-09-17T23:59:59.999.
+Then you would call each of the _Summaries_ endpoints with (url-escaped) `query=date>=2021-09-03T12:00:00.000Z&&date<=2021-09-17T23:59:59.999`.
 
 ## Details
 
@@ -308,12 +300,12 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 ### Parameters
 | **Parameter** | Type | Description |
 |---|---|---|
-| **companyId** | _string_ | The percentage of the absolute value of transactions of the type specified in the route which have a match.The percentage of records of the type specified in the route which have a match. |
-| **dataType** | _string_ | The data type you want match results for. **Accounting source: **[bankAccounts](/accounting-api#/schemas/BankAccount), [accountTransactions](/accounting-api#/schemas/AccountTransaction). **Banking source:** [banking-accounts](/banking-api#/schemas/Account), [banking-transactions](/banking-api#/schemas/Transaction). Submit as route parameter. |
-| **Query** | _string_ | Can query any property in response.  |
+| **companyId** | _string_ | The ID of the company you want match results for. <br/> Submit as route parameter. |
+| **dataType** | _string_ | The data type you want match results for. <br/> **Accounting source:** <br/> **[bankAccounts](/accounting-api#/schemas/BankAccount), <br/> [accountTransactions](/accounting-api#/schemas/AccountTransaction)**. <br/> **Banking source:** <br/> **[banking-accounts](/banking-api#/schemas/Account), <br/> [banking-transactions](/banking-api#/schemas/Transaction)**. <br/> Submit as route parameter. |
+| **Query** | _string_ | Can query any property in response. This follows the standard [Codat query language](/using-the-api/querying). |
 | **page** | _number_ | Submit as query parameter. Defaults to 1. |
 | **pageSize** | _number_ | Submit as query parameter. Defaults to 100. |
-| **orderBy** | _string_ | The ID of the company you want match results for. Submit as route parameter. |
+| **orderBy** | _string_ | State the property name by which you would like to order the response by. <br/> Submit as query parameter. |
 
 
 ### Data model
@@ -323,7 +315,7 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 |---|---|---|
 | **type** | _string_ | The data type of the record.  |
 | **connectionId** | _string_ | ID GUID representing the connection of the accounting or banking platform.  |
-| **id** | _string_ | ID GUID of the transaction. |
+| **id** | _string_ | ID GUID of the transaction. This is unique to data integrity.|
 | **date** | _date_, See [Date](/codat-api#/schemas/DateTime) | The date of the transaction.  |
 | **description** | _string_ | The transaction description.  |
 | **amount** | _number_ | The transaction value.  |
@@ -335,9 +327,9 @@ This outlines the transaction(s) in which the original transaction has matched w
 
 | **Element ** | Type  | Description |
 |---|---|---|
-| **type** | _string_ | The data type which the data type in the URL has been matched against. For example, if you've matched _accountTransactions* and _banking-transactions_, and you call this endpoint with _accountTransactions_ in the URL, this property would be _banking-transactions_. |
+| **type** | _string_ | The data type which the data type in the URL has been matched against. <br/> For example, if you've matched _accountTransactions_ and _banking-transactions_, and you call this endpoint with _accountTransactions_ in the URL, this property would be _banking-transactions_. |
 | **connectionId** | _string_ | ID GUID representing the connection of the accounting or banking platform. |
-| **id** | _string_ | ID GUID of the transaction. |
+| **id** | _string_ | ID GUID of the transaction. This is unique to data integrity.|
 | **date** | _date_, See [Date](/codat-api#/schemas/DateTime) | The date of the transaction.  |
 | **description** | _string_ | The transaction description.  |
 | **amount** | _number_ | The transaction value.  |
@@ -357,7 +349,7 @@ This outlines the transaction(s) in which the original transaction has matched w
 #### Accounts matches
 | **Element ** | Type  | Description |
 |---|---|---|
-| **type** | _string_ | The data type which the data type in the URL has been matched against. For example, if you've matched _accountTransactions_ and _banking-transactions_, and you call this endpoint with _accountTransactions_ in the URL, this property would be _banking-transactions_. |
+| **type** | _string_ | The data type which the data type in the URL has been matched against. <br/> For example, if you've matched _accountTransactions_ and _banking-transactions_, and you call this endpoint with _accountTransactions_ in the URL, this property would be _banking-transactions_. |
 | **connectionId** | _string_ | ID GUID representing the connection of the accounting or banking platform.  |
 | **id ** | _string_ | The account’s id.  |
 | **accountName ** | _string_ | The name of the account.  |

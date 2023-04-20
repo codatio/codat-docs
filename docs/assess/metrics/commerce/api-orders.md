@@ -7,7 +7,7 @@ updatedAt: "2022-11-29T15:20:46.207Z"
 
 The Orders endpoint retrieves the number of orders, total value and average order value for a specific company's commerce connection, over one or more periods of time.
 
-Refer to the [Assess reporting structure](/assess/reports/reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/assess/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
 
 For Orders, these are the dimensions and measures:
 
@@ -36,11 +36,11 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 
 | **Parameter**           | Type                                        | Description                                                                                                                  | Required |
 |-------------------------|---------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|----------|
-| **reportDate**          | _string_ See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD Datetime or Date (inclusive of the whole day).                                                                    | Required |
+| **reportDate**          | _string_ <br/> See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD <br/> Datetime or Date (inclusive of the whole day).                                                                    | Required |
 | **periodUnit**          | _string_                                    | The period unit of time returned, and it can be: “Day”, “Week”, “Month”, “Year”.                                             | Required |
-| **periodLength**        | _integer_                                   | Based on the period unit provided. It must be positive, not zero and an integer.                                             | Required |
-| **numberOfPeriods**     | _integer_                                   | The number of periods to return. It must be positive, not zero and an integer.                                               | Required |
-| **includeDisplayNames** | _boolean_                                   | Shows the _dimensionDisplayName_ and _itemDisplayName_ in measures to make the report data human-readable. Default is false. | Optional |
+| **periodLength**        | _integer_                                   | Based on the period unit provided. <br/> It must be positive, not zero and an integer.                                             | Required |
+| **numberOfPeriods**     | _integer_                                   | The number of periods to return. <br/> It must be positive, not zero and an integer.                                               | Required |
+| **includeDisplayNames** | _boolean_                                   | Shows the _dimensionDisplayName_ and _itemDisplayName_ in measures to make the report data human-readable. <br/> Default is false. | Optional |
 
 # Data model
 
@@ -62,9 +62,9 @@ _Orders_ consists of these dimensions: Period and Order metrics.
 
 | Field           | Type      | Description                                                                                                                                                           |
 | --------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **displayName** | _string_  | Period n                                                                                                                                                              |
+| **displayName** | _string_  | Period                                                                                                                                                               |
 | **type**        | _string_  | datespan                                                                                                                                                              |
-| **items**       | _array_   | See [Dimension (index = “0”) items](#dimension-index--0-items). Returns an array of “Period”. This is driven by the query parameter                                   |
+| **items**       | _array_ <br/> See [Dimension (index = “0”) items](#dimension-index--0-items). | Returns an array of “Period”. <br/> This is driven by the query parameter   |                               |
 
 
 #### Dimension (index = “0”) items
@@ -72,8 +72,8 @@ _Orders_ consists of these dimensions: Period and Order metrics.
 | Field           | Type                                        | Description                                               |
 |-----------------|---------------------------------------------|-----------------------------------------------------------|
 | **displayName** | _string_                                    | "Period n"                                                |
-| **start**       | _string_ See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD,  Date in which the period begins (inclusive). |
-| **end**         | _string_ See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD,  Date in which the period ends (inclusive).   |
+| **start**       | _string_ See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD,  date in which the period begins (inclusive). |
+| **end**         | _string_ See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD,  date in which the period ends (inclusive).   |
 
 ### Dimension (index = “1”): Order metrics
 
@@ -81,13 +81,13 @@ _Orders_ consists of these dimensions: Period and Order metrics.
 |-----------------|------------------------------------------------------------------------|------------------------------------|
 | **displayName** | _string_                                                               | "Order metrics"                    |
 | **type**        | _string_                                                               | "string"                           |
-| **items**       | _array_ See [Dimension (index = “1”) items](#dimension-index--1-items) | Returns an array of order metrics. |
+| **items**       | _array_ <br/> See [Dimension (index = “1”) items](#dimension-index--1-items) | Returns an array of order metrics. |
 
 #### Dimension (index = “1”) items
 
 | **Field** | Type     | Description                                                                                                                                                                                |
 |-----------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **value** | _string_ | “Number of orders”, “Total value” or "Average order value". These will always show for any response in this report. The dimension values are not dependent on the user’s query parameters. |
+| **value** | _string_ | “Number of orders”, “Total value” or "Average order value". <br/> These will always show for any response in this report. The dimension values are not dependent on the user’s query parameters. |
 
 
 ## Measures
@@ -150,7 +150,7 @@ All components have the structure described in the _Measures in components_ data
 | **measureDisplayName** | string | "value"     |
 | **value**              | number |             |
 
-#Example data
+# Example data
 
 ```
 {

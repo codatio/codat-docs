@@ -1,10 +1,11 @@
 ---
 title: "Commerce API workflow"
+description: "After you've set up an integration, follow this process to use Codat's API to enable, link, and pull your customers' commerce data"
 createdAt: "2020-10-02T14:07:18.839Z"
 updatedAt: "2022-10-20T10:13:39.906Z"
 ---
 
-After you've set up an integration, follow this process to use Codat's API to enable, link, and pull your customers' commerce data. You'll need to:
+You'll need to:
 
 - Update your data type settings to enable commerce data types.
 - Create a company and data connection for your customer.

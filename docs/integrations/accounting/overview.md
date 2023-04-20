@@ -34,13 +34,13 @@ You can also explore the data types supported by each integration in the interac
 
 ## Cloud
 
-- [ClearBooks](/integrations/accounting/clearbooks/accounting-clearbooks)
+- [Clear Books](/integrations/accounting/clearbooks/accounting-clearbooks)
 - [Dynamics 365 Business Central](/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral)
 - [Exact Online (NL and UK)](/integrations/accounting/exact-online/accounting-exact-online)
 - [FreeAgent](/integrations/accounting/freeagent/accounting-freeagent)
 - [FreshBooks](/integrations/accounting/freshbooks/accounting-freshbooks)
 - [KashFlow](/integrations/accounting/kashflow/accounting-kashflow)
-- [MYOB AccountRight and Essentials](/integrations/accounting/myob/accounting-myob)
+- [MYOB Business](/integrations/accounting/myob/accounting-myob)
 - [Oracle NetSuite](/integrations/accounting/netsuite/accounting-netsuite)
 - [Pandle](/integrations/accounting/pandle/accounting-pandle)
 - [QuickBooks Online](/integrations/accounting/quickbooksonline/accounting-quickbooksonline)
@@ -54,6 +54,6 @@ You can also explore the data types supported by each integration in the interac
 ## On-premise
 
 - [QuickBooks Desktop](/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop)
-- [Sage 50 (UK)](/integrations/accounting/sage50/accounting-sage50)
+- [Sage 50 (UK & Ireland)](/integrations/accounting/sage50/accounting-sage50)
 
 You can also refer to [Accounting platform keys](/integrations/accounting/accounting-platform-keys) to view the unique 4-character keys that identify accounting platforms in our APIs.

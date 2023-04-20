@@ -14,8 +14,8 @@ Instead of this UI, your own web app can authenticate SMB users based on the Com
 You must have completed the following setup tasks:
 
 - Enable the Sage Bank Feeds integration
-- Create a Company to represent the SMB user
-- Create a data connection for the Company to the Sage Bank Feeds integration
+- Create a company to represent the SMB user
+- Create a data connection for the company to the Sage Bank Feeds integration
 - Add one or more source bank accounts to make available to the SMB user
 
 For help with completing these tasks, see [Enable the Sage Bank Feeds integration](/bank-feeds-api/sage-bank-feeds/sage-bank-feeds-setup#enable-the-sage-bank-feeds-integration) and [Create a Company and data connection, then add bank accounts](/bank-feeds-api/sage-bank-feeds/sage-bank-feeds-setup#create-a-company-and-data-connection-then-add-bank-accounts).
@@ -55,14 +55,14 @@ There are two authentication flows between Sage, Codat's Sage Bank Feeds integra
    ```
 
    1. The `authorizationRedirectUrl` is the web app URL that you configured in the Codat Portal.
-   2. The `authId` is the unique authorization identifier for the Company.
+   2. The `authId` is the unique authorization identifier for the company.
    3. The `redirectUri` is the URI the SMB user will be redirected to after authentication through your web app (see step two in the next procedure).
 
 6. As configured in your web app, the user is redirected to a login or user authorization page.
 
 7. The SMB user logs in to your web app.
 
-8. Your web app authenticates the user against the Codat Company and data connection to which they are linked.
+8. Your web app authenticates the user against the Codat company and data connection to which they are linked.
 
 ### Your web app redirects the user to the bank account selection screen
 

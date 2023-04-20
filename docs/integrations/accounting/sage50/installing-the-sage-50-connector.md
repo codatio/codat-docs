@@ -8,7 +8,7 @@ updatedAt: "2022-11-25T12:15:40.507Z"
 
 :::note Linking companies using the Sage 50 connector
 
-Customers must install and run the Sage 50 connector on the same computer where Sage 50 (UK) is installed. If in doubt, ask your customer to link their accounting data from the computer that they normally use to access Sage 50 (UK).
+Customers must install and run the Sage 50 connector on the same computer where Sage 50 (UK & Ireland) is installed. If in doubt, ask your customer to link their accounting data from the computer that they normally use to access Sage 50 (UK & Ireland).
 :::
 
 To install the Sage 50 connector, the user who is connecting their company data—the SMB user—must complete the following tasks:

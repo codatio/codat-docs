@@ -90,7 +90,7 @@ To set up a redirect with reserved query parameters:
 :::note Availability of reserved query parameters
 
 Please note that the names of the parameters listed in the table below are currently available for the following platforms:  
-**accounting**: FreeAgent, Freshbooks, Microsoft Dynamics 365 Business Central, MYOB AccountRight, Pandle, Quickbooks Online, Sage Business Cloud, Wave  
+**accounting**: FreeAgent, Freshbooks, Microsoft Dynamics 365 Business Central, MYOB Business, Pandle, Quickbooks Online, Sage Business Cloud, Wave  
 **banking**: Plaid
 :::
 

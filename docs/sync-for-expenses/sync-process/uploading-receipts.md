@@ -427,13 +427,146 @@ Click through the tabs to see the supported attachment options for each integrat
 ```
 
 </Tabitem>
+  
+<Tabitem value="NetSuite" label="NetSuite">
+
+```json
+  {
+    "type": "File",
+    "displayName": "File Attachment",
+    "description": "Attach a file to an NetSuite entity.",
+    "properties": {
+        "file": {
+            "type": "Number",
+            "displayName": "File Size",
+            "description": "Size of the file.",
+            "required": false,
+            "validation": {
+                "warnings": [
+                    {
+                        "field": "fileSize",
+                        "details": "File size may not exceed 100 MB."
+                    }
+                ]
+            }
+        },
+        "fileExtension": {
+            "type": "String",
+            "displayName": "File extension",
+            "description": "Must be an accepted Mime Type as derived from the file extension.",
+            "options": [
+                {
+                    "value": ".bmp",
+                    "type": "String",
+                    "displayName": "BMP",
+                    "required": false
+                },
+                {
+                    "value": ".csv",
+                    "type": "String",
+                    "displayName": "CSV",
+                    "required": false
+                },
+                {
+                    "value": ".xls",
+                    "type": "String",
+                    "displayName": "XLS",
+                    "required": false
+                },
+                {
+                    "value": ".xlsx",
+                    "type": "String",
+                    "displayName": "XLSX",
+                    "required": false
+                },
+                {
+                    "value": ".json",
+                    "type": "String",
+                    "displayName": "JSON",
+                    "required": false
+                },
+                {
+                    "value": ".pdf",
+                    "type": "String",
+                    "displayName": "PDF",
+                    "required": false
+                },
+                {
+                    "value": ".pjpg",
+                    "type": "String",
+                    "displayName": "PJPG",
+                    "required": false
+                },
+                {
+                    "value": ".pjpeg",
+                    "type": "String",
+                    "displayName": "PJPEG",
+                    "required": false
+                },
+                {
+                    "value": ".png",
+                    "type": "String",
+                    "displayName": "PNG",
+                    "required": false
+                },
+                {
+                    "value": ".txt",
+                    "type": "String",
+                    "displayName": "TXT",
+                    "required": false
+                },
+                {
+                    "value": ".svg",
+                    "type": "String",
+                    "displayName": "SVG",
+                    "required": false
+                },
+                {
+                    "value": ".tif",
+                    "type": "String",
+                    "displayName": "TIF",
+                    "required": false
+                },
+                {
+                    "value": ".tiff",
+                    "type": "String",
+                    "displayName": "TIFF",
+                    "required": false
+                },
+                {
+                    "value": ".doc",
+                    "type": "String",
+                    "displayName": "DOC",
+                    "required": false
+                },
+                {
+                    "value": ".docx",
+                    "type": "String",
+                    "displayName": "DOCX",
+                    "required": false
+                },
+                {
+                    "value": ".zip",
+                    "type": "String",
+                    "displayName": "ZIP",
+                    "required": false
+                }
+            ],
+            "required": false
+        }
+    },
+    "required": true
+}
+```
+  
+</Tabitem>
 
 </Tabs>
 
 You can upload supported file types through the [upload-attachment](sync-for-expenses-api#/operations/upload-attachment) endpoint. The request accepts the attachment as multipart form data.
 
 ```http
-POST https://api.codat.io/companies/{companyId}/syncs/{syncId}/transactions/{transactionId}/atachments
+POST https://api.codat.io/companies/{companyId}/sync/expenses/syncs/{syncId}/transactions/{transactionId}/atachments
 ```
 
 ```

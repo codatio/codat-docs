@@ -14,27 +14,20 @@ updatedAt: "2022-11-22T19:33:11.784Z"
   <meta property="og:image" content="/img/accounting-api/accounting_banner.png"/>
 </Head>
 
-<div className="background-video-wrapper accounting">
-  <div className="banner-video">
-    <h1>Accounting API</h1>
-    <p>
-      Codat's Accounting API is a flexible API for pulling and pushing up-to-date accounting data to your customers' accounting software.
-    </p>
-    <p>
-      It gives you a simple way to view, create, update, and delete data without having to worry about each platform's specific complexities.
-    </p>
-  </div>
-</div>
+import PageHeader from "@components/global/PageHeader";
 
-<div className="background-video-spacer accounting">
-  <h1>Accounting API</h1>
+<PageHeader 
+  className="accounting"
+  title="Accounting API"
+  icon="/logos/products/Accounting.svg"
+>
   <p>
     Codat's Accounting API is a flexible API for pulling and pushing up-to-date accounting data to your customers' accounting software.
   </p>
   <p>
     It gives you a simple way to view, create, update, and delete data without having to worry about each platform's specific complexities.
   </p>
-</div>
+</PageHeader>
 
 <ul className="card-container col-3">
   <li className="card">

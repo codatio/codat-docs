@@ -1,5 +1,5 @@
 ---
-title: "Modified dates"
+title: "Using modified dates"
 description: "Understanding when data has been modified"
 createdAt: "2022-11-07T19:53:44.472Z"
 updatedAt: "2022-11-28T13:03:19.120Z"
@@ -66,3 +66,15 @@ GET /companies/{companyId}/data/invoices?page=1&query=issueDate%3C{todayMinus12M
 ```
 
 This query retrieves invoices with issue dates that are greater than twelve months old and a source modified date that is greater than or equal to one month old.
+
+:::tip Recap
+You've learned:
+- How dates are used to keep company data up to date
+- The difference between `modifiedDate` and `sourceModifiedDate`
+:::
+
+---
+
+## Read next
+
+- [Refreshing company data](/using-the-api/modified-dates)

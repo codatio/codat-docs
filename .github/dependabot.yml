@@ -11,6 +11,7 @@ updates:
       interval: "monthly"
     assignees:
     - "mcclowes"
+    - "dcoplowe"
     reviewers:
     - "mcclowes"
     - "dcoplowe"

@@ -1,9 +1,6 @@
 ---
 title: "Sales as journal entries"
 description: "Review the journal entry mapping for sales data and its examples"
-hidden: true
-createdAt: "2022-12-01T10:20:32.012Z"
-updatedAt: "2023-01-13T08:48:59.378Z"
 ---
 With Sync for Commerce, your merchant can choose to reflect their sales data from e-commerce and point-of-sale (POS) software: 
 

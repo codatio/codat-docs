@@ -6,7 +6,7 @@ updatedAt: "2022-11-02T14:38:07.399Z"
 ---
 
 :::caution Account category versions
-This categorization of accounts only applies to our legacy [Enhanced Financials](/assess/reports/enhanced-financials-legacy/financials). For categorization using the latest categories, explore the [revised Enhanced Financials](/assess/reports/enhanced-financials/financials) endpoints.
+This categorization of accounts only applies to our legacy [Enhanced Financials](/assess/enhanced-financials/legacy/financials). For categorization using the latest categories, explore the [revised Enhanced Financials](/assess/enhanced-financials/overview) endpoints.
 :::
 
 The chart of accounts defines the financial structure of a company by providing a list of all accounts used in the company's general ledger.
@@ -35,7 +35,7 @@ Account categories have three sub-categories:
 
 Categories are assigned in two ways. First, Codat automatically suggests categories for accounts. Second, you assign a category to an account. Categories can be assigned via our [Categorization of accounts API](/assess/categories/api-categorization-of-accounts) or through Codat's Portal (see [How to categorize accounts](/assess/portal/categorization-of-accounts#account-categorization)).
 
-## Uncategorised accounts
+## Uncategorized accounts
 
 Codat tries to suggest a category for every account, but this is not always possible. All accounts need to be categorized to produce accurate metrics.
 

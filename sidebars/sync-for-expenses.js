@@ -8,7 +8,7 @@ module.exports = [
   {
     type: "link",
     label: "Sync for Expenses",
-    href: "sync-for-expenses/overview",
+    href: "/sync-for-expenses/overview",
     className: "header",
   },
   "sync-for-expenses/gettingstarted",
@@ -22,8 +22,15 @@ module.exports = [
       "sync-for-expenses/sync-process/expense-transactions",
       "sync-for-expenses/sync-process/syncing-expenses",
       "sync-for-expenses/sync-process/uploading-receipts",
+
     ],
   },
+  {
+    type: "link",
+    href: "/sfc/sync-for-commerce-knowledge-base/monitoring-a-sync",
+    label: "Monitoring a sync",
+  },
+   "sync-for-expenses/sync-for-expenses-faq",
   {
     type: "link",
     href: "/sync-for-expenses-api",

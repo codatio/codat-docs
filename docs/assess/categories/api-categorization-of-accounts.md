@@ -5,7 +5,7 @@ createdAt: "2022-02-21T12:45:33.573Z"
 updatedAt: "2022-11-02T14:38:29.977Z"
 ---
 :::caution Account category versions
-This categorization of accounts via only applies to our legacy [Enhanced Financials](/assess/reports/enhanced-financials-legacy/financials). For categorization using the latest categories, explore the [revised Enhanced Financials](/assess/reports/enhanced-financials/financials).
+This categorization of accounts via only applies to our legacy [Enhanced Financials](/assess/enhanced-financials/legacy/financials). For categorization using the latest categories, explore the [revised Enhanced Financials](/assess/enhanced-financials/overview).
 :::
 
 The **Categorization of accounts** API consists of the following endpoints:
@@ -96,6 +96,7 @@ GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categ
 ```
 
 ## Data model
+
 | Field      | Type                          | Description                                   |
 |------------|-------------------------------|-----------------------------------------------|
 | accountRef | See [AccountRef](#accountref) | An object containing account reference data.  |
@@ -149,7 +150,7 @@ GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categ
 
 # Update categories for a company
 
-The categories for all or a batch of accounts in a specific connection can be updated in Sthe API reference.
+The categories for all or a batch of accounts in a specific connection can be updated in the  Assess API reference.
 Note that this does not update the end accounting platform’s account, and only updates the categories saved against the company within Assess.
 
 The endpoint is available in our <a href="/assess-api#/operations/patch-data-companies-companyId-connections-connectionId-assess-accounts-categories">API reference</a>.

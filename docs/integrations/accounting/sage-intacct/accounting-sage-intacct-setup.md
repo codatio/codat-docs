@@ -58,7 +58,7 @@ You will not be able to link a Sage Intacct trial company. Sage Intacct trial co
    2. Turn on Web Services in Sage Intacct.
    3. Configure Web Services in Sage Intacct.
    4. Create a Web Services user in Sage Intacct.
-   5. Enter your Sage Intacct Company ID, username and password.
+   5. Enter your Sage Intacct company ID, username and password.
    6. Select your Sage Intacct entity from the dropdown.
    7. A probe runs in the background and identifies any permissions that you're missing in Sage Intacct. Follow the on-screen steps to enable the missing permissions.
 7. In the Codat Portal, make sure that test data from your Sage Intacct account is displayed for your test company.

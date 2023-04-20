@@ -1,14 +1,15 @@
 ---
 title: "Recurly"
+sidebar_label: Overview
 description: "Learn about our Recurly integration"
 createdAt: "2022-08-01T14:37:46.649Z"
 updatedAt: "2022-10-20T13:37:39.040Z"
 ---
 
-<a className="external" href="https://recurly.com" target="_blank">
+<p><a className="external" href="https://recurly.com" target="_blank">
   Recurly
 </a> is a subscription billing management platform that enables merchants to streamline
-their recurring billing and subscription payment processes.
+their recurring billing and subscription payment processes.</p>
 
 Use Codat's Commerce API with Recurly to securely connect to, retrieve, and view your customers’ recurring sales and subscription transactions.
 

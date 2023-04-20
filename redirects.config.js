@@ -133,6 +133,11 @@ const bank = [
     platformKey: "suuo",
     to: "/integrations/banking/plaid/banking-plaid",
   },
+  {
+    integration: "TrueLayer",
+    platformKey: "upvr",
+    to: "/integrations/banking/truelayer/banking-truelayer",
+  },
 ]
 
 const comm = [
@@ -245,6 +250,14 @@ const comm = [
 
 module.exports = {
   redirects: [
+    {
+      to:  '/assess/guides/loan-qualification/introduction',
+      from: '/assess/guides/underwriting/introduction',
+    },
+    {
+      to:  '/usecases/summary/lending',
+      from: '/usecases/summary/underwriting',
+    },
     {
       to:  '/introduction/first-steps',
       from: '/docs',
@@ -384,7 +397,7 @@ module.exports = {
         existingPath.replace('/', '/docs'),
       ];
     }
-    
+
     return undefined; // Return a falsy value: no redirect created
   },
 };

@@ -15,24 +15,22 @@ Allow sandbox or test integrations to appear in the link flow. Some integrations
 
 Let's take QuickBooks Online as an example. Enabling this feature would show options for _QuickBooks Online_ and _QuickBooks Online Sandbox_ in the link flow. This also includes the Codat Sandbox integrations.
 
-_Note_: Sandbox integrations will appear in the link flow by default.
+:::note Sandbox integrations in the auth flow
 
-:::note
-
-You can override this behavior by appending the `link.showSandboxIntegrations` query parameter to the Link URL with a value of "true" or "false".
+Sandbox integrations appear in the auth flow by default. You can override this behavior by appending the `link.showSandboxIntegrations` query parameter to the Link URL with a value of "true" or "false".
 :::
 
 **Integration categories**
 
 Select which types of integrations (accounting, banking, or commerce) you'd like customers to connect. You can make each integration type optional if you want your customers to be able to skip sharing it.
 
-Before enabling these, you need to [set up one or more integrations](/core-concepts/integrations) for each integration type. Otherwise, the Link UI will display a blank 'Select your platform' page when Companies attempt to link their accounting, banking, or commerce data.
+Before enabling these, you need to [set up one or more integrations](/core-concepts/integrations) for each integration type. Otherwise, the Link UI will display a blank 'Select your platform' page when companies attempt to link their accounting, banking, or commerce data.
 
-For the Business documents integration type, you need to enable it in **Settings > Integrations > Other integrations**.
+For the Business documents integration type, you need to enable it in **Settings > Integrations > Other integrations**. You can also let your users know what files they should upload for each integration category by providing a description under **File upload**.
 
-:::note
+:::tip Banking integrations in the auth flow
 
-Let your users know what files they should upload for each integration category by providing a description under **File upload**.
+You should only enable one of the banking integrations at a time. This ensures optimal use of Hosted or Embedded Link, as each banking integration is [represented differently](/integrations/banking/overview#banking-integrations-in-the-authorization-flow) in the auth flow.
 :::
 
 **Retries**  
@@ -59,10 +57,16 @@ This is a mandatory field where you need to specify the message you want to disp
 
 Optionally, you can add a message and a URL for terms and conditions you'd like your clients to read before they share their data with you.
 
-**What data are you gathering?**  
-List the data you're going to collect for each of the integration categories (accounting, banking, or commerce).
+**Data type information**  
+List the data you're going to collect for each of the integration categories (accounting, banking, or commerce). This is displayed in the auth flow to inform the user which data types Codat will use after linking the data source. 
 
-**Exit confirmation dialog **  
+:::tip Data types with Plaid
+
+If you enabled Plaid as your banking integration, the data type information from this section will not be shown in Link. This is because Plaid provides their own list of data types within their auth flow.
+
+:::
+
+**Exit confirmation dialog**  
 Customize the message your customers see if they cancel before completing the linking process.
 
 **Invite company page**  

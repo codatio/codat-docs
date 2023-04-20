@@ -8,9 +8,8 @@ updatedAt: "2023-01-06T16:36:12.403Z"
 Before you can access commerce data from customers using Clover, you need to set up the integration. You'll need to:
 
 - Create an app in the Clover developer portal and retrieve your secure credentials (API key and secret).
-- Log in to the [Codat Portal](https://app.codat.io/).
+- Sign in to the [Codat Portal](https://app.codat.io/).
 - Add your secure credentials to the Codat Portal and enable your Clover integration.
-- Check your data type settings.
 
 ## Create an app and retrieve your secure credentials
 

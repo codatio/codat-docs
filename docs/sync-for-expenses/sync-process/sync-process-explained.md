@@ -28,10 +28,10 @@ import TabItem from "@theme/TabItem";
 
 ### [Create expense-transactions datasets](expense-transactions)
 
-After the company has categorised their expenses using the mapping options, you can create expense-transaction datasets, in the response you will receive a `datasetId`.
+After the company has categorized their expenses using the mapping options, you can create expense-transaction datasets, in the response you will receive a `datasetId`.
 
 ```http title="Create expense dataset"
-POST https://api.codat.io/companies/{companyId}/expense-reconciliations
+POST https://api.codat.io/companies/{companyId}/sync/expenses/expense-reconciliations
 ```
 
 ### [Initiate sync](syncing-expenses)
@@ -39,7 +39,7 @@ POST https://api.codat.io/companies/{companyId}/expense-reconciliations
 You can then initiate the sync process for multiple datasets by making an API request to the [sync endpoint](/sync-for-expenses-api#/operations/intiate-sync).
 
 ```http title="Initiate a sync of expense datasets"
-POST  https://api.codat.io/companies/{companyId}/data/expense-transactions
+POST  https://api.codat.io/companies/{companyId}/sync/expenses/data/expense-transactions
 ```
 A `syncId` will be returned to the response payload.
 
@@ -78,7 +78,7 @@ There are three ways to check the status of the sync:
 Once the sync has completed, you should check whether the transactions were successfully synced to the accounting package. This can be done via the [transaction metadata endpoint](/sync-for-expenses-api#/operations/get-sync-transactions)
 
 ```http title="Transaction status"
-GET https://api.codat.io/companies/{companyId}/syncs/{syncId}/transactions
+GET https://api.codat.io/companies/{companyId}/sync/expenses/syncs/{syncId}/transactions
 ```
 
 ### [Upload Receipts](uploading-receipts)
@@ -86,7 +86,7 @@ GET https://api.codat.io/companies/{companyId}/syncs/{syncId}/transactions
 To post the attachment for each `transactionId` with a status of `Completed` and integrationType of `expense`, call the [attachment endpoint](/sync-for-expenses-api#/operations/upload-attachment)
 
 ```http title="Upload receipt"
-POST https://api.codat.io/companies/{companyId}/syncs/{syncId}/transactions/{transactionId}/attachments
+POST https://api.codat.io/companies/{companyId}/sync/expenses/syncs/{syncId}/transactions/{transactionId}/attachments
 ```
 
   

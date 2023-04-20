@@ -1,6 +1,6 @@
 ---
 title: "Test your Zettle integration"
-description: "Test our Zettle integration by pulling data from a test store to a test Company"
+description: "Test our Zettle integration by pulling data from a test store to a test company"
 createdAt: "2021-01-20T16:12:07.162Z"
 updatedAt: "2022-12-16T16:51:21.207Z"
 ---

@@ -11,10 +11,6 @@ Excerpt from QuickBooks - \*US QuickBooks Online companies created after Novembe
 
 ## How does the Quickbooks Automated Sales Tax engine (AST) affect pushing data to QBO?
 
-:::info Changes to AST handling for US companies
-The handling of Automated Sales Tax (AST) when pushing invoices, credit notes, and direct incomes to US companies is changing. For more information, see <a href="https://docs.codat.io/changelog/36186-us-tax-handling">[Upcoming: 2022-10-10] QuickBooks Online - Changes to tax handling when pushing Invoices, Credit Notes & Direct Incomes to US Companies</a> in our **Important updates**.
-:::
-
 At the line level of an invoice, bill, or credit note the taxable status of each line is noted as either `TAX` or `NON`. TaxCode objects in this context are referred to as pseudo tax codes.
 
 A TaxCode object is used to track the taxable or non-taxable status of products, services, and customers. Users can assign a sales tax code to each of their products, services, and customers based on their customers’ taxable or non-taxable status in QBO, via the Codat API.

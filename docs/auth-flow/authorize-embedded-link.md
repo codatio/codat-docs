@@ -10,10 +10,10 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 <Head>
-  <meta property="og:image" content="/img/link/link-sdk-banner.png"/>
+  <meta property="og:image" content="/img/link/0014-embedded-link-demo.png"/>
 </Head>
 
-![](/img/link/link-sdk-banner.png)
+![](/img/link/0014-embedded-link-demo.png)
 
 :::caution Early access
 
@@ -56,7 +56,7 @@ We built Embedded Link to be flexible so that you can integrate and initialize i
 ## Resources
 
 - Grab our component library on [npm](https://www.npmjs.com/package/@codat/link-sdk)
-- View [a sample project](https://github.com/codatio/link-sdk-sample-project) adding Link to a default project
+- View [a sample project](https://github.com/codatio/sample-project-link-sdk) adding Link to a default project
 
 ## Prerequisites
 
@@ -76,7 +76,7 @@ After installing the library, add it to your project:
 
 ```
 import { CodatLink } from '@codat/link-sdk';
-import '../node_modules/@codat/link-sdk/index.css';
+import '@codat/link-sdk/index.css';
 ```
 
 ## Embedding the Link application
@@ -90,7 +90,7 @@ From the response to company creation, retain the `companyId` parameter. Then, i
 
 ```js
 <CodatLink
-  companyId="a00a0a00-0a0a-a0aa-0000a00aa00a"
+  companyId="0f19b01c-3d1f-4dbf-80b6-37ab241bea2e"
   onConnection={(id) => alert("Success: Connection " + id + " established")} // Called each time a connection is established
   onFinish={() => alert("Finished")} // Called when the flow is completed
   onClose={() => alert("Closed")} // Called when the user clicks 'X' or completes the whole flow
@@ -114,7 +114,8 @@ const AuthFlow = ({ id }) => {
   return (
     <CodatLink
       companyId="0f19b01c-3d1f-4dbf-80b6-37ab241bea2e"
-      onSuccess={() => alert("success")}
+      onConnection={(id) => alert("Success: Connection " + id + " established")} // Called each time a connection is established
+      onFinish={() => alert("Finished")} // Called when the flow is completed
       onError={() => alert("error")}
       onClose={() => alert("on close")}
     />

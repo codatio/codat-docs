@@ -87,8 +87,8 @@ module.exports = [
         items: [
           "integrations/accounting/myob/accounting-myob",
           "integrations/accounting/myob/accounting-myob-setup",
-          "integrations/accounting/myob/faq-myob-accountright-live",
           "integrations/accounting/myob/myob-integration-reference",
+          "integrations/accounting/myob/faq-myob-accountright-live",
         ],
       },
       {
@@ -99,7 +99,7 @@ module.exports = [
           "integrations/accounting/netsuite/accounting-netsuite",
           "integrations/accounting/netsuite/accounting-netsuite-setup",
           "integrations/accounting/netsuite/company-linking-journey",
-          "integrations/accounting/netsuite/accounting-netsuite-delete-bill-payments",
+          "integrations/accounting/netsuite/accounting-netsuite-delete-bills-billpayments",
           "integrations/accounting/netsuite/oracle-netsuite-faq",
           "integrations/accounting/netsuite/oracle-netsuite-integration-reference",
         ],
@@ -133,6 +133,7 @@ module.exports = [
         items: [
           "integrations/accounting/quickbooksonline/accounting-quickbooksonline",
           "integrations/accounting/quickbooksonline/accounting-quickbooksonline-new-setup",
+          "integrations/accounting/quickbooksonline/accounting-quickbooksonline-delete-journal-entries",
           "integrations/accounting/quickbooksonline/faq-quickbooks-online",
           "integrations/accounting/quickbooksonline/quickbooks-online-integration-reference",
         ],
@@ -201,6 +202,8 @@ module.exports = [
           "integrations/accounting/xero/xero-faq",
           "integrations/accounting/xero/xero-integration-reference",
           "integrations/accounting/xero/xero-app-partner-program",
+          "integrations/accounting/xero/xero-sign-up-flow",
+          "integrations/accounting/xero/accounting-xero-app-partner-guidance",
         ],
       },
       {
@@ -223,6 +226,7 @@ module.exports = [
     collapsed: true,
     items: [
       "integrations/banking/overview",
+      "integrations/banking/banking-platform-keys",
       {
         type: "category",
         label: "Proxy access",
@@ -388,7 +392,7 @@ module.exports = [
           "integrations/commerce/shopify/commerce-shopify",
           "integrations/commerce/shopify/commerce-shopify-custom-apps",
           "integrations/commerce/shopify/commerce-shopify-requirements-public-apps",
-          "integrations/commerce/shopify/commerce-shopify-setup",          
+          "integrations/commerce/shopify/commerce-shopify-setup",
           "integrations/commerce/shopify/test-shopify",
         ],
       },

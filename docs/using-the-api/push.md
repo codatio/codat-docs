@@ -38,6 +38,7 @@ The response indicates that three properties must be populated:
 The `displayName` on the options can be used to display a more descriptive name, such as "Current assets".  
 
 ```json title="Partial Chart of Accounts options response"
+
 {
   "type": "Object",
   "displayName": "Nominal Account",
@@ -220,13 +221,11 @@ This results in a corresponding response from the endpoint, which is a PushOpera
 
 You should assume that all data creation and updates will be processed asynchronously when integrating with Codat. This means you will receive a `Pending` status in response to your request. You can use the details in this response to monitor the status of your request.
 
-
 ### Timeouts
 
 It is possible for an operation to be in a `Pending` status indefinitely, for example, if a user's on-premise software is offline. Codat provides a timeout functionality for such scenarios. 
 
 If the `timeoutInMinutes` property has been set on a create / update operation, Codat guarantees that the operation will not be processed after that deadline. If the deadline expires, the status of the operation will change to `TimedOut`.
-
 
 ## Monitor the status of your operation
 

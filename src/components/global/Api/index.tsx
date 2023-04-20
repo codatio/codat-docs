@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { useState, Suspense } from "react";
 import Layout from "@theme/Layout";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import Navbar from "@theme/Navbar";
@@ -14,16 +14,26 @@ const Fallback = (
   <div style={{ minHeight: "calc(100vh - var(--ifm-navbar-height))" }} />
 );
 
-const Api = ({ url }) => {
+const Api = ({ url, title="API reference"}) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <Layout title="API reference" className="api-ref-stoplight-wrapper">
+    <Layout title={title}>
       <div className={styles.apiNav}>
         <Logo />
         <Navbar />
       </div>
 
-      <main className="api-ref-stoplight-main">
-        <div className={clsx(styles.stoplightWrapper, "api-ref-stoplight")}>
+      <main>
+        <div className={styles.menuToggle} onClick={() => setMenuOpen(!menuOpen)}>
+          {
+            menuOpen
+            ? "Hide endpoints"
+            : "Show all endpoints"
+          }
+        </div>
+
+        <div className={clsx(styles.stoplightWrapper, !menuOpen && "menu-closed")}>
           <BrowserOnly>
             {() => (
               <Suspense fallback={Fallback}>
@@ -33,7 +43,7 @@ const Api = ({ url }) => {
           </BrowserOnly>
         </div>
         
-        <div className="col api-ref-stoplight-mobile"><p>Our API reference is currently not supported on mobile</p></div>
+        <div className={clsx(styles.stoplightFallback, "col")}><p>Our API reference is not supported at this screen size.</p></div>
       </main>
     </Layout>
   );

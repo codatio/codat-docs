@@ -3,6 +3,8 @@ title: "Assess overview"
 sidebar_label: Assess
 displayed_sidebar: assess
 hide_table_of_contents: true
+hide_title: true
+hide_description: true
 description: "Learn about the features that make up the Assess product"
 createdAt: "2022-04-11T16:43:22.429Z"
 updatedAt: "2022-11-17T00:11:12.411Z"
@@ -12,9 +14,21 @@ updatedAt: "2022-11-17T00:11:12.411Z"
   <meta property="og:image" content="/img/old/f0c6d43-73D1AFFF-6E41-47F3-8E25-BB20DA16C754.jpeg"/>
 </Head>
 
-**Assess helps you make smarter credit decisions on small businesses by enabling your customers to pull the latest data from the operating systems they are already using.**
+import PageHeader from "@components/global/PageHeader";
 
-You can use that data for automating decisioning and surfacing new insights on the customer, all via one API.
+<PageHeader 
+  className="assess"
+  title="Assess"
+  icon="/logos/products/Assess.svg"
+>
+  <p>
+    Assess helps you make smarter credit decisions on small businesses by enabling you to pull your customers' latest data from the operating systems they are already using.
+  </p>
+
+  <p>
+    You can use that data for automating decisioning and surfacing new insights on the customer, all via one API.
+  </p>
+</PageHeader>
 
 Assess is built on top of the latest accounting, commerce and banking data, providing you with the most important data points you need to get a full picture of SMB creditworthiness, and make a comprehensive assessment of your customers.
 
@@ -54,13 +68,12 @@ Assess empowers you with a host of features to help you streamline your underwri
       We automatically map your SMB customers' income statement and balance
       sheet to a single standard chart of accounts, meaning you can compare
       across customers easily. Explore{" "}
-      <a href="/assess/reports/enhanced-financials/financials">
+      <a href="/assess/enhanced-financials/overview">
         Enhanced Financials
       </a>
       .
     </p>
   </li>
-
   <li className="card">
     <div class="header">
       <img
@@ -108,7 +121,7 @@ Assess empowers you with a host of features to help you streamline your underwri
     <p>
       We cross-reference accounting data with banking data to verify data
       accuracy. Explore{" "}
-      <a href="/assess/data-integrity">
+      <a href="/assess/data-integrity/overview">
         Data Integrity
       </a>
       .

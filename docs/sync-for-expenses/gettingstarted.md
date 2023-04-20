@@ -4,13 +4,13 @@ description: Learn how to start syncing expenses
 tags: [syncforexpense, gettingstarted, prerequisites, platformsupport]
 ---
 
-### DataTypes
+### Data types
 
 Before you start using sync for expenses, you will need to ensure that the following datatypes are enabled in your Codat instance.
 
 
 <details>
-  <summary>Recommended Data Type Settings</summary>
+  <summary>Recommended data type Settings</summary>
 
 
 | DataType Name       | dataType           | Use Case                                                                                                                                                                                               | Fetch On First Link | Sync Frequency |
@@ -39,6 +39,8 @@ With Sync for Expenses each company will have two data connections:
 - One will be to their accounting platform
 - The other will be to the partner expense integration
 
+The partner expense connection is created with the 'Linked' status, so you won't need to authorize this connection again. 
+
 ## Enable your SMB to authorize access to their data
 
 Before you can push expenses to your customer’s accounting platform, you need to get access to it. There are three ways you can enable your customers to grant access to their financial accounts:
@@ -54,6 +56,6 @@ Before you can push expenses to your customer’s accounting platform, you need 
 Once your customer has authorized access to their accounting platform, you will need to create a connection against the company for the partner expense integration.
 
 ``` http
-  POST https://api.codat.io/companies/{companyId}/connections/partnerexpense
+  POST https://api.codat.io/companies/{companyId}/sync/expenses/connections/partnerexpense
 ```
 

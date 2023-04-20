@@ -22,7 +22,6 @@ module.exports = {
     {
       type: "category",
       label: "Getting started",
-      //label: '_getStarted',
       collapsed: true,
       className: "top-level-item introduction",
       items: [
@@ -39,7 +38,6 @@ module.exports = {
     {
       type: "category",
       label: "Core concepts",
-      //label: '_concepts',
       collapsed: true,
       className: "top-level-item core",
       items: [
@@ -59,43 +57,35 @@ module.exports = {
     {
       type: "category",
       label: "Using our API",
-      //label: '_api',
       collapsed: true,
       className: "top-level-item api",
       items: [
         "using-the-api/overview",
+        "using-the-api/authentication",
+        "using-the-api/managing-companies",
         {
           type: "category",
-          label: "Basics",
-          collapsed: false,
-          items: [
-            "using-the-api/authentication",
-            "using-the-api/managing-companies",
-            "using-the-api/modified-dates",
-            "using-the-api/ordering-results",
-            "using-the-api/paging",
-            "using-the-api/querying",
-            "using-the-api/queueing-data-syncs",
-            "using-the-api/push",
-            "using-the-api/errors",
-          ]
-        },
-        {
-          type: "category",
-          label: "Advanced",
+          label: "Pulling data",
           collapsed: true,
           items: [
-            "using-the-api/rate-limits",
-            "using-the-api/optimizing-api-calls",
-          ]
+            "using-the-api/querying",
+            "using-the-api/paging",
+            "using-the-api/ordering-results",
+            "using-the-api/modified-dates",
+          ],
         },
+        "using-the-api/queueing-data-syncs",
+        "using-the-api/push",
+        "using-the-api/errors",
+        "using-the-api/rate-limits",
+        "using-the-api/optimizing-api-calls",
         {
           type: "category",
           label: "Webhooks",
           collapsed: true,
           items: [
-            "introduction/webhooks/core-rules-create",
             "introduction/webhooks/core-rules-types",
+            "introduction/webhooks/core-rules-create",
             "introduction/webhooks/core-rules-webhooks",
             "introduction/webhooks/core-rules-webhooksecurity",
             "introduction/webhooks/receive-webhooks-as-email-alerts",
@@ -111,18 +101,17 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Authorization flow",
-      //label: '_authFlow',
-      collapsed: true,
-      className: "top-level-item auth",
-      items: authFlow,
-    },
-    {
-      type: "category",
       label: "Data model",
       collapsed: true,
       className: "top-level-item data",
       items: dataModel,
+    },
+    {
+      type: "category",
+      label: "Authorization flow",
+      collapsed: true,
+      className: "top-level-item auth",
+      items: authFlow,
     },
     {
       type: "category",
@@ -139,6 +128,7 @@ module.exports = {
           items: [
             "other/portal/dashboard",
             "other/portal/account-management",
+            "other/portal/usage-and-billing",
             "other/portal/companies",
             "other/portal/developers",
             "other/portal/pull-and-push-history",
@@ -155,6 +145,29 @@ module.exports = {
           ],
         },
       ],
+    },
+    {
+      type: "category",
+      label: "Use cases",
+      collapsed: true,
+      className: "top-level-item usecases",
+      items: [
+        "usecases/overview",
+        "usecases/summary/lending",
+        "usecases/summary/managing-expenses",
+        "usecases/summary/dashboarding",
+        "usecases/summary/automating-payables",
+        "usecases/summary/automating-receivables",
+        "usecases/summary/integrating-commerce-data",
+        "usecases/summary/managing-payroll",
+        "usecases/summary/reconciling-bank-transactions",
+      ],
+    },
+    {
+      type: "link",
+      label: "Integrations",
+      className: "top-level-item integrations",
+      href: "/integrations/all-integrations",
     },
     {
       type: "category",
@@ -205,12 +218,6 @@ module.exports = {
           href: "/sfc/overview",
         },
       ],
-    },
-    {
-      type: "link",
-      label: "Integrations",
-      className: "top-level-item integrations",
-      href: "/integrations/all-integrations",
     },
   ],
   accountingAPI: accountingAPI,
