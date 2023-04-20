@@ -1,5 +1,6 @@
 ---
 title: "Chargebee"
+sidebar_label: Overview
 description: "Learn about our Chargebee integration"
 createdAt: "2022-08-01T14:36:49.455Z"
 updatedAt: "2022-10-20T13:33:08.523Z"
