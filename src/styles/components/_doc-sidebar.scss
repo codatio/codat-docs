@@ -103,6 +103,8 @@ html[data-theme="dark"] {
   }
   
   .menu__list-item {
+    padding-left: 0!important;
+    
     &.header {
       margin-bottom: 1em;
       
@@ -191,7 +193,7 @@ html[data-theme="dark"] {
     &-level-1 {
       > .menu__list-item-collapsible > .menu__link--sublist {
         margin-left: 5px;
-        padding: 12px 8px;
+        padding: 12px 8px !important;
         font-size: .813rem;
       }
 
@@ -273,9 +275,11 @@ html[data-theme="dark"] {
     }
   }
 
-  .menu__list-item.products {
+  .menu__list-item.usecases {
     margin-top: 3em;
+  }
 
+  .menu__list-item.products {
     .menu__list-item.product {
       &:first-child {
         margin-top: 1em;
@@ -319,6 +323,10 @@ html[data-theme="dark"] {
 
     > .menu__link {
       padding: 12px 8px;
+
+      // &::after {
+      //   margin-left: 1em;
+      // }
     }
   }
 
