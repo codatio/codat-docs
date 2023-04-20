@@ -71,7 +71,7 @@ Click **Data > Pull history** to check the progress of the initial sync (if conf
 
 Data is only available where:
 - The data type [is supported](https://knowledge.codat.io/supported-features/commerce?view=tab-by-integration&integrationKey=dxfw)
-- You've created test data
+- You've [created test data](#create-some-data-in-mollie)
 :::
 
 Now that you have tested the integration and reviewed sample data, you can [create your first live company](/other/portal/companies#add-a-new-company).
