@@ -1,5 +1,6 @@
 ---
 title: "Stripe"
+sidebar_label: Overview
 description: "Learn about our Stripe integration"
 createdAt: "2021-02-04T11:21:21.334Z"
 updatedAt: "2022-10-20T13:38:41.233Z"
