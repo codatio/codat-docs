@@ -11,9 +11,9 @@ A data connection represents a [company's](/core-concepts/companies) connection 
 
 A company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:
 
-- A single source of [accounting data](/accounting-api/overview).
-- Multiple sources of [banking data](/banking-api/overview).
-- Multiple sources of [commerce data](/commerce-api/overview).
+- [Accounting data](/accounting-api/overview) - 1 active connection.
+- [Banking data](/banking-api/overview) - Multiple active connections.
+- [Commerce data](/commerce-api/overview) - Multiple active connections.
 
 Any combination of accounting, banking, and commerce data connections is allowed.
 
