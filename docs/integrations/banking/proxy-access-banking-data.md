@@ -13,7 +13,7 @@ You should only enable proxy access if you require access to customer banking da
 
 Proxy access is provided in parallel with access to the natively supported banking data types. It can't be used to access endpoints that are already supported through the Codat API (for example, `Transactions`). The additional banking data types can be accessed by every company you create.
 
-You can [enable proxy access](/integrations/banking/proxy-access-banking-data/) for either the Plaid or TrueLayer integration in the Codat Portal. The Plaid and TrueLayer integrations can't both be enabled at the same time.
+You can enable proxy access for either the Plaid or TrueLayer integration in the Codat Portal. The Plaid and TrueLayer integrations can't both be enabled at the same time.
 
 :::info Partner APIs
 
