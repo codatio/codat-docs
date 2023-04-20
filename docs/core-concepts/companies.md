@@ -40,5 +40,5 @@ You have two options for managing companies:
 ## Read next
 
 - Next concept: [Connections](/core-concepts/connections)
-- [`GET https://api.codat.io/companies`](/codat-api#/operations/list-companies)
+- [`GET /companies`](/codat-api#/operations/list-companies) API reference
 
