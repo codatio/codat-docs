@@ -31,11 +31,11 @@ To use our BigCommerce integration, the following OAuth scopes must be set with 
 
 | UI name                | Scope parameter                 |
 | ---------------------- | ------------------------------- |
-| Orders                 | store_v2_orders_read_only       |
-| Order Transactions     | store_v2_transactions_read_only |
-| Products               | store_v2_products_read_only     |
-| Information & Settings | store_v2_information_read_only  |
-| Customers              | store_v2_customers_read_only    |
+| Orders                 | `store_v2_orders_read_only`       |
+| Order Transactions     | `store_v2_transactions_read_only` |
+| Products               | `store_v2_products_read_only`     |
+| Information & Settings | `store_v2_information_read_only`  |
+| Customers              | `store_v2_customers_read_only`    |
 
 If a merchant doesn't have these scopes set, they'll need to create a new store API account and enter their new store credentials in Link (see [SMB customer: Authenticate and connect your commerce data](/integrations/commerce/bigcommerce/commerce-bigcommerce-setup#smb-customer-authenticate-and-connect-your-commerce-data)).
 
