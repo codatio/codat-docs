@@ -171,7 +171,7 @@ This would result in a corresponding response from the endpoint, which is a Push
    </TabItem>
 
    <TabItem value="with" label="Account creation with a validation error">  
- 
+
   ```json
     {
       "changes": [],
