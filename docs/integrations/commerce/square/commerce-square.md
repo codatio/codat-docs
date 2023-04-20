@@ -1,5 +1,6 @@
 ---
 title: "Square"
+sidebar_label: Overview
 description: "Learn about our Square integration"
 createdAt: "2020-09-18T08:54:12.512Z"
 updatedAt: "2022-10-20T13:38:20.108Z"
