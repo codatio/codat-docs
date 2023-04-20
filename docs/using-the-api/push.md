@@ -35,9 +35,9 @@ The response indicates that three properties must be populated:
 - `name`, an unrestricted string
 - `fullyQualifiedCategory`, an enum property that accepts a string chosen from a list of options.
 
-The `displayName` on the options can be used to display a more descriptive name, such as "Current assets".
+The `displayName` on the options can be used to display a more descriptive name, such as "Current assets".  
 
-```json Title="Partial Chart of Accounts options response"
+```json title="Partial Chart of Accounts options response"
 {
   "type": "Object",
   "displayName": "Nominal Account",
@@ -105,7 +105,7 @@ The `displayName` on the options can be used to display a more descriptive name,
 If you attempt to create a record using fields that are not documented in the Options response, you may receive validation errors in response to your request.
 :::
 
-Use the `POST /companies/{companyId}/connections/{connectionId}/push/{dataType}` endpoint to create a record in the target platform. The request body should be a JSON object which conforms to the structure of the Options endpoint response we explored previously. 
+Use the `POST /companies/{companyId}/connections/{connectionId}/push/{dataType}` endpoint to create a record in the target platform. The request body should be a JSON object which conforms to the structure of the [Options endpoint response](/using-the-api/push#understand-your-options) we explored previously. 
 
 You can also review our data model schemas (for example, the [Accounts](/accounting-api#/schemas/Account) data type) to check the full scope of fields returned in the response. Note that we base our schemas on the `GET` request, which includes `modeifiedDate` and `sourceModifiedDate` that are not used when creating or updating a record. 
 
@@ -216,15 +216,17 @@ This results in a corresponding response from the endpoint, which is a PushOpera
    </TabItem>
 </Tabs>
 
-:::info Synchronous vs asynchronous push
+### Synchronous vs asynchronous push
 
-You should assume that all data creation and updates will be processed asynchronously when integrating with Codat. Thus means you will receive a `Pending` status in response to your request. You can use the details in this response to monitor the status of your request.
-:::
+You should assume that all data creation and updates will be processed asynchronously when integrating with Codat. This means you will receive a `Pending` status in response to your request. You can use the details in this response to monitor the status of your request.
 
-:::tip Timeouts
 
-It is possible for an operation to be in a `Pending` status indefinitely, for example, if a user's on-premise software is offline. Codat provides a timeout functionality for such scenarios. If the `timeoutInMinutes` property has been set on a create / update operation, Codat guarantees that the operation will not be processed after that deadline. If the deadline expires, the status of the operation will change to `TimedOut`.
-:::
+### Timeouts
+
+It is possible for an operation to be in a `Pending` status indefinitely, for example, if a user's on-premise software is offline. Codat provides a timeout functionality for such scenarios. 
+
+If the `timeoutInMinutes` property has been set on a create / update operation, Codat guarantees that the operation will not be processed after that deadline. If the deadline expires, the status of the operation will change to `TimedOut`.
+
 
 ## Monitor the status of your operation
 
