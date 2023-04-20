@@ -1,5 +1,6 @@
 ---
 title: "SumUp"
+sidebar_label: Overview
 description: "Learn about our SumUp integration"
 createdAt: "2021-05-28T11:17:03.712Z"
 updatedAt: "2022-11-17T10:57:07.464Z"
