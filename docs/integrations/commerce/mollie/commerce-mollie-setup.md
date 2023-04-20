@@ -18,7 +18,7 @@ We provide two Mollie integrations:
 
 Start with the Test integration, so you can retrieve and check sample data. You can also make sure you're happy with the authorization flow journey before onboarding your customers.
 
-You need to add sample data to Mollie first because it does not provide any readily available test data.
+Mollie does not provide any readily available test/sandbox data, so you [need to add sample data to Mollie first](/integrations/commerce/mollie/commerce-mollie-test#create-some-data-in-mollie).
 
 ## Set up the integrations
 
