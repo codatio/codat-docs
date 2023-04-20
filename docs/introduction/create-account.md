@@ -1,5 +1,5 @@
 ---
-title: "Account and billing"
+title: "Your Codat account"
 description: "Sign up and choose an account plan that suits your needs"
 createdAt: "2022-02-01T13:51:23.646Z"
 updatedAt: "2022-10-17T10:03:46.223Z"
