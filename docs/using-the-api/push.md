@@ -116,7 +116,7 @@ You can try to create a new account using our [API reference](https://docs.codat
    </TabItem>
 
    <TabItem value="with" label="Create an account with an error">  
- 
+
   ```json  
     {
       "nominalCode": "350045006500", 
