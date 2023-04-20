@@ -1,5 +1,6 @@
 ---
 title: "Recurly"
+sidebar_label: Overview
 description: "Learn about our Recurly integration"
 createdAt: "2022-08-01T14:37:46.649Z"
 updatedAt: "2022-10-20T13:37:39.040Z"
