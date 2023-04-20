@@ -40,7 +40,7 @@ In the response, note the following fields:
 - `sourceId` identifies the source of information, like a bank or accounting software; 
 - `integrationId` identifies the Codat integration that supports the data source.
 
-```json Data connections - example
+```json title="GET /companies/{companyId}/connections"
 {
   "id": "00000000-0000-0000-0000-000000000000",
   "integrationId": "18cb53c4-3807-4a5a-8da9-303053a40002",
