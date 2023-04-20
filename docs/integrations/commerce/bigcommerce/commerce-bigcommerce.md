@@ -1,5 +1,6 @@
 ---
 title: "BigCommerce"
+sidebar_label: Overview
 description: "Learn about our BigCommerce integration"
 createdAt: "2022-07-18T14:09:10.776Z"
 updatedAt: "2022-10-20T13:32:45.801Z"
