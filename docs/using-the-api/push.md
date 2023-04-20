@@ -36,9 +36,7 @@ You can retrieve the options for a given data type by calling:
 
 <a class="external" href="https://docs.codat.io/reference/get_companies-companyid-connections-connectionid-datatypes-datatype-options-put" target="_blank">See the API reference</a>.
 
-Below is an example response from this endpoint for the accounts dataset:
-
-```json
+```json title="Response from this endpoint for the accounts dataset"
 {
   "type": "Object",
   "displayName": "Nominal Account",
@@ -85,6 +83,7 @@ Below is an example response from this endpoint for the accounts dataset:
   "required": false,
 }
 ```
+
 This example describes the nominal account object as requiring three properties to be populated: `nominalCode`, `name`, and `fullyQualifiedCategory`. 
 
 - The `nominalCode` property is a string, which has a validation warning that it must be between 1 and 7 characters long. 
@@ -103,7 +102,6 @@ For example, when rendering the "fullyQualifiedCategory" from the above example 
   <option value="Asset.Checking">Checking</option>
 </select>
 ```
-
 
 ## Step 2: Pushing a record
 
