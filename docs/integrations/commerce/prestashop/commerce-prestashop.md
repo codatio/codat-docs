@@ -1,5 +1,6 @@
 ---
 title: "PrestaShop"
+sidebar_label: Overview
 description: "Learn about our PrestaShop integration"
 createdAt: "2021-09-16T23:31:01.039Z"
 updatedAt: "2022-11-17T10:56:52.590Z"
