@@ -11,23 +11,31 @@ View the full details of Codat's support for creating and updating data for each
 
 :::
 
-A core feature that Codat offers is the ability to create and update records in the underlying integrations using a single data model. We support the following operations to push the data: 
+A core feature that Codat offers is the ability to create and update records in the underlying integrations using a single data model. 
+
+We support the following operations to push the data: 
 
 - Create a new record using the `POST` method,
 - Update an existing record using the `PUT` method.  
 
 ## Understand your options
 
-Before creating or updating data in the source platform, you need to know how you want the data to be inserted. This includes not only names or amounts on transactional entities, but also details that are handled differently across different accounting packages. For example, if you are planning to create a new account, you might want to specify where on the balance sheet and profit and loss reports you would like it to appear. Each integration may also have numerous requirements per each field you plan to push. 
+First, you need to know how the data needs to be inserted into the source platform. This includes not only names or amounts, but also details that may be handled differently across different accounting packages. 
 
-Use our `/options` endpoint to understand these specific requirements and view example responses, or try it out in our [API reference](https://docs.codat.io/codat-api#/operations/get-companies-companyId-connections-connectionId-push):
+Use our [Options](https://docs.codat.io/codat-api#/operations/get-companies-companyId-connections-connectionId-push) endpoint to understand integration-specific requirements and view example responses:
 
 ```sh
 GET https://api.codat.io/companies/{companyId}/connections/{connectionId}/options/{dataType}
 ```
 For example, if you used this endpoint to get details for creating a Chart of Accounts entry through a connection with Xero, you would receive the following response, presented here partially. 
 
-The response indicates that three properties must be populated: `nominalCode`, `name`, and `fullyQualifiedCategory`. The `nominalCode` property is a string that can be up to 10 characters long. The `name` property is an unrestricted string. Finally, the `fullyQualifiedCategory` property is an enum property that accepts a string chosen from a list of options (in this case, "Asset.Current"). The `displayName` on the options can be used to display a more descriptive name, such as "Current assets".
+The response indicates that three properties must be populated: 
+
+- `nominalCode`, a string that can be up to 10 characters long
+- `name`, an unrestricted string
+- `fullyQualifiedCategory`, an enum property that accepts a string chosen from a list of options.
+
+The `displayName` on the options can be used to display a more descriptive name, such as "Current assets".
 
 ```json Title="Partial Chart of Accounts options response"
 {
@@ -92,16 +100,16 @@ The response indicates that three properties must be populated: `nominalCode`, `
 
 ## Create a new record
 
-:::caution Creating data not referenced by the Options endpoint
+:::caution Creating data not in the Options response
 
-If you attempt to create a record using fields that are not documented in the Options response for that company, you may receive validation errors in response to your request.
+If you attempt to create a record using fields that are not documented in the Options response, you may receive validation errors in response to your request.
 :::
 
-Use the `POST /companies/{companyId}/connections/{connectionId}/push/{dataType}` endpoint to create a record in the target platform, with the request body being a JSON object which conforms to the structure of the Options endpoint we explored previously. 
+Use the `POST /companies/{companyId}/connections/{connectionId}/push/{dataType}` endpoint to create a record in the target platform. The request body should be a JSON object which conforms to the structure of the Options endpoint response we explored previously. 
 
-You can also review our full data model schemas (for example, the [Accounts](/accounting-api#/schemas/Account) data type)) to check the full scope of fields returned in the response. Note that we base our schemas on the `GET` request, which includes `modeifiedDate` and `sourceModifiedDate` that are not used to create or update a record. 
+You can also review our data model schemas (for example, the [Accounts](/accounting-api#/schemas/Account) data type) to check the full scope of fields returned in the response. Note that we base our schemas on the `GET` request, which includes `modeifiedDate` and `sourceModifiedDate` that are not used when creating or updating a record. 
 
-You can try to create a new account using our [API reference](https://docs.codat.io/accounting-api#/operations/create-account) using a valid request body, or a request body that leads to a validation error:
+Try to create a new account via our [Create account](https://docs.codat.io/accounting-api#/operations/create-account) endpoint using a valid request body, or a request body that leads to a validation error:
 
 <Tabs>
    <TabItem value="wo" label="Create an account">  
@@ -127,7 +135,7 @@ You can try to create a new account using our [API reference](https://docs.codat
    </TabItem>
 </Tabs>
 
-This would result in a corresponding response from the endpoint, which is a PushOperation object and structured as follows:
+This results in a corresponding response from the endpoint, which is a PushOperation object and is structured as follows:
 
 - **pushOperationKey**: A unique identifier generated by Codat to represent this single push operation that can be used to track the status of the push
 - **dataType**: The type of data being pushed, in this case, `chartOfAccounts`
@@ -220,9 +228,11 @@ It is possible for an operation to be in a `Pending` status indefinitely, for ex
 
 ## Monitor the status of your operation
 
-Since your asynchronous operation will initially be in a `Pending` status, you may wish to have a process that will provide an update on a final `Success` or `Failed` state. This lets you communicate the outcome of the operation to the user, or take further action in case of failures. We recommend listening to our webhooks for this purpose. 
+Your asynchronous operation will initially be in a `Pending` status. You can track an update on the final `Success` or `Failed` state to communicate the outcome of the operation to the user, or take further action in case of failures. 
 
-In the **Monitor > Alerting rules > Create new rule** [view](https://app.codat.io/monitor/rules) of the Codat Portal, create a subscription to the "Push operation status has changed" rule type. You can review detailed instructions in our documentation for [subscribing to rules](/introduction/webhooks/core-rules-create) and receiving webhooks as [email alerts](/introduction/webhooks/receive-webhooks-as-email-alerts).
+We recommend listening to our webhooks for this purpose. 
+
+In the **Monitor > Alerting rules > Create new rule** [view](https://app.codat.io/monitor/rules) of the Codat Portal, create a subscription to the _Push operation status has changed_ rule type. You can review detailed instructions in our documentation for [subscribing to rules](/introduction/webhooks/core-rules-create) and receiving webhooks as [email alerts](/introduction/webhooks/receive-webhooks-as-email-alerts).
 
 :::info Polling for status
 
@@ -232,8 +242,6 @@ You can also use our endpoints to monitor the status of your create / update ope
 :::
 
 ## Data consistency considerations
-
-Note the following considerations when creating or updating data to help ensure consistency in the company's data. 
 
 - If data is successfully created in the target platform, it will be visible almost immediately when retrieving that data type from Codat. If you produce point-in-time reports or make use of the `modifiedDate` to pull only recent changes from the API, this may mean your calculations built on this data are inconsistent. 
 
