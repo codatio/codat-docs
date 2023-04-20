@@ -28,14 +28,16 @@ To create a new company, use the `POST /companies` endpoint and provide a name y
 The name of the company doesn't have to be unique. It's just there to help you identify the company in the portal. Make sure to [avoid forbidden characters](/core-concepts/companies).
 :::
 
-```json Title="Sample request"
+`POST /companies`
+
+```json title="Sample request body"
 {
   "name": "Platypus Properties",
   "description": "Platypuses are venomous mammals"
 }
 ```
 
-```json Title="Sample response"
+```json title="Sample response"
 {
   "id": "8f74269c-6cbf-4c5e-9b93-599965a7fd49",
   "name": "Platypus Properties",
