@@ -31,7 +31,7 @@ The following banking data is available through the integration:
 
 :::tip Instant Auth and Instant Match
 
-Within our Plaid integration, we support [Instant Auth](https://plaid.com/docs/auth/coverage/instant/#instant-auth) and enable the fallback to [Instant Match](https://plaid.com/docs/auth/coverage/instant/#instant-match) as standard where Instant Auth is not available. These functionalities provide almost 7,000 financial institutions with credential-based login.
+Within our Plaid integration, we support [Instant Auth](https://plaid.com/docs/auth/coverage/instant/#instant-auth), and enable the fallback to [Instant Match](https://plaid.com/docs/auth/coverage/instant/#instant-match) as standard where Instant Auth is not available. These functionalities provide credential-based login for almost 7,000 financial institutions.
 :::
 
 ## Data mappings between Plaid and Codat
