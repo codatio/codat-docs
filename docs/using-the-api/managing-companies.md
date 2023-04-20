@@ -78,9 +78,9 @@ In this request, `companyId` is [the unique ID that you have received in a respo
 
 When you’re pulling data for the first time, use this endpoint to check if the sync was successful.
 
-#### Response for a successful first sync
+`GET /companies/{companyId}/dataStatus`
 
-```json 
+```json title="Response for a successful first sync"
 {
   "suppliers": {
     "dataType": "suppliers",
@@ -93,9 +93,7 @@ When you’re pulling data for the first time, use this endpoint to check if the
 }
 ```
 
-#### Response for an unsuccessful first sync
-
-```json
+```json title="Response for an unsuccessful first sync"
 {
   "suppliers": {
     "dataType": "suppliers”
