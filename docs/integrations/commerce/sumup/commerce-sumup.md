@@ -5,10 +5,10 @@ createdAt: "2021-05-28T11:17:03.712Z"
 updatedAt: "2022-11-17T10:57:07.464Z"
 ---
 
-<a className="external" href="https://sumup.com/" target="_blank">
+<p><a className="external" href="https://sumup.com/" target="_blank">
   SumUp
 </a> is a point of sale provider that offers in-person payment solutions through
-its app and card readers, as well as ecommerce functionality.
+its app and card readers, as well as ecommerce functionality.</p>
 
 Use Codat's Commerce API with SumUp to securely connect to, retrieve, and view your customers’ commerce transactions.
 
