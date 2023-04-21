@@ -1,18 +1,14 @@
 ---
 title: "Set up and run the bill pay demo app"
 sidebar_label: "Set up and run"
-description: "Prepare your Codat instance to run the bill pay demo app"
+description: "Configure your Codat account and then run the demo app"
 ---
 
-Introduction - what is involved in setting up the solution.
+The bill pay demo app can be installed and run locally or used as a hosted version. Whichever option you choose, you first need to set up an accounting integration, configure the app's redirect URI, and check the required data types are enabled.
 
-Explain - You have two options for running the demo app.
+We're using the QuickBooks Online Sandbox integration to provide a realistic source of sandbox data with minimal setup. You can use a different platform, if you prefer.
 
-## Configure your Codat account for the demo app
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-### Set up the QuickBooks Online Sandbox integration
+## Set up the QuickBooks Online Sandbox integration
 
 - Make sure you use your app's development keys
 - Enable the integration
@@ -20,14 +16,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Your Intuit Developer account is created with one US sandbox company. To add more sandbox companies for different locales, go to the [Manage sandbox companies](https://developer.intuit.com/app/developer/sandbox) page in the Ituit Developer Portal. New step - Launch your sandbox company in QBO by clicking its name.
 
-### Configure the demo app redirect URI
+## Configure the demo app redirect URI
 
 - If using the hosted app, use `demo-bill-pay.vercel.app` as the domain.
 - If running the app locally, use `localhost:3000` as the domain. 
 
 `https://{your-domain}/connection-successful`
 
-### Check your data type settings
+## Check your data type settings
 
 Check the following data types are set to Fetch on first link in your data type settings:
 

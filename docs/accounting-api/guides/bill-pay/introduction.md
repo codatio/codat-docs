@@ -1,18 +1,20 @@
 ---
 title: "Our bill pay guide"
 sidebar_label: "Introduction"
-description: "See how to build apps that streamline Accounts Payable processes for your customers"
+description: "Use this guide and the accompanying demo app to build solutions that streamline your customers' Accounts Payable processes"
 ---
 
-:::tip
+:::tip Who is this guide for?
 
-This guide is for tech-savvy backend developers who know how to use an API. The bill pay demo app includes a simple UI, so you'll need some frontend development experience to build a similar UI in your own bill pay solution.
+This guide is for tech-savvy backend developers who know how to use an API. The accompanying app includes a simple UI, so you'll need some frontend development experience to build a similar UI in your own bill pay solution.
 
 :::
 
 ## Summary
 
-(target) With Codat's Accounting API and integrations, you can build solutions to streamline and automate the Accounts Payable process for your SMB customers, saving them countless hours of manual admin. Our Bill Pay demo app includes the core tasks involved in automating bill pay, from viewing and paying bills to account reconciliation. To showcase how easily SMBs can authorize access to live accounting data, we use hosted Link to connect to a QuickBooks Online sandbox company. The demo app retrieves this consented data to...
+(target) With Codat's Accounting API and integrations, you can build solutions to streamline and automate the Accounts Payable process for your SMB customers &mdash; saving them countless hours of manual admin. Bill pay is an important part of AP automation. Our Bill Pay demo app includes core tasks such as viewing and paying bills, and reconciling payments against bills in the customer's accounting platform.
+
+To showcase how easily SMBs can authorize access to live accounting data, we use hosted Link to connect to a QuickBooks Online sandbox company. The demo app retrieves this consented data to provide a consolidated view of paid and unpaid bills.
 
 (egg timer) Estimated time to complete: 20-30 minutes.
 
@@ -34,7 +36,7 @@ This guide is meant to be used alongside the [demo app project](https://github.c
 
 ### 3 - See how to reconcile payments
 
-- Check the bill payment that was pushed to QuickBooks Online is reconciled correctly against the bill.
+- Check the bill payment that was pushed to QuickBooks Online was reconciled correctly against the bill.
 
 ## How the Bill pay app works
 

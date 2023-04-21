@@ -9,6 +9,7 @@ Run through the process of connecting to your customer's accounting platform, in
 
 ## Try out the authorization process in Hosted Link
 
+Maybe this doesn't need a full procedure? Could just say "we built this using Hosted Link".
 These steps would be performed by the SMB user.
 
 1. From the app start screen, click **Get Started**.
@@ -22,7 +23,7 @@ screenshot
 expanding box:
 Makes a request to the Create a company endpoint.
 
-Request body
+Request body - important
 
 3. Hosted Link loads 
 
