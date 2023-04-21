@@ -51,36 +51,42 @@ companies/{companyId}/data/accounts
 
 Does Not call bankAccounts endpoint. Your own app could include functionality for creating an account, if one does not already exist.
 
-## Bill pay app interface
+## Bill pay app UI
 
-The Bill Pay app displays a list of all paid and unpaid bills ordered by date. 
+The main page of the Bill Pay app displays a list of all paid and unpaid bills pulled from the accounting platform, ordered by issue date. 
 
-screenshot - annotated (view and pay)
+![Bill pay demo app UI](/img/use-cases/bill-pay/bill-pay_demo-bill-interface.png "The Bill pay demo app UI.")
 
-You can filter by paid and unpaid, view a bill to see more detials of line items, and mock the process of paying a bill.
+For each unpaid bill, you can view the issue date, the supplier of the goods or services received, the reference number, and the amount due.
 
-The UI shows this information:
+Select the **View unpaid bills only** toggle to view only paid or unpaid bills. The **View** and **Pay** buttons appear next to unpaid bills only.
 
-- Bill Line item details, including invoice number, due date, issue date, supplier, reference, amount due, currency 
-- The account name to map the payment to 
-- TBC: Only "bank" and "credit card" accounts in USD are shown.
+Click **View** to access additional information about a bill in the **Invoice** dialog:
+
+![bill-pay_invoice-detail-dialog](\img\use-cases\bill-pay\bill-pay_invoice-detail-dialog.png "The Invoice dialog shows additional information about an unpaid bill.")
+
+You can view the following additional information about the bill:
+
+- Bill number, currency, and due date
+- Individual line items, if contained on the original bill
+- The account name in the accounting platform
+
+You can click **Pay Bill** to make a mock payment against the bill.
 
 ## Make a mock payment
 
-Intro
+The demo app provides functionality for making mock payments against bills. To show how a payment can be reconciled back to the original bill, the app pushes a Bill payment to the accounting platform (QuickBooks Online in this guide).
 
-You can make a payment against a bill. The demo app mocks the step of making the payment. The payment is then reconciled back to the accounting platform by pushing a Bill payment to QuickBooks.
+1. Click **View** next to an unpaid bill.
+2. In the **Invoice** dialog, click **Pay Bill**.
+3. Choose a "mapping" account from the **Account name** dropdown. This is the account in your accounting platform (QuickBooks Online in this guide) that the payment should be reconciled to.
 
-These steps would be performed by the SMB user.
+   Only bank accounts in the same currency as the bill are shown. (Add technical box - the app calls the get bank accounts endoint using query parameters for account type and currency.)
 
-1. Click View next to the bill you want to pay.
-2. In the Invoice window, click **Pay Bill**.
-3. Choose an account to record the payment against from the **Account name** dropdown.
-   You don't need to enter any card details.
+4. Click **Pay Bill** to pay the total amount. You don't need to enter any card details.
 
-4. Click **Pay Bill** to pay the total amount of the bill.
+technical box:
 
-expanding box:
 The app pushes a Bill payment to QuickBooks for the amount of the bill. This reconciles the payment against the outstanding bill.
 (API: Reconcile a Bill payment against a bill)
 

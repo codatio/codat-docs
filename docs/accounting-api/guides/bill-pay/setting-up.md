@@ -14,7 +14,7 @@ We're using the QuickBooks Online Sandbox integration to provide a realistic sou
 - Enable the integration
 - Link out to the full QBO integration setup article
 
-Your Intuit Developer account is created with one US sandbox company. To add more sandbox companies for different locales, go to the [Manage sandbox companies](https://developer.intuit.com/app/developer/sandbox) page in the Ituit Developer Portal. New step - Launch your sandbox company in QBO by clicking its name.
+Your Intuit Developer account is created with one US sandbox company. To add more sandbox companies for different locales, go to the [Manage sandbox companies](https://developer.intuit.com/app/developer/sandbox) page in the Ituit Developer Portal. New step - Launch your sandbox company in QBO by clicking its name. "provision a new sandbox company"
 
 ## Configure the demo app redirect URI
 
