@@ -11,7 +11,7 @@ online payment methods into their websites or apps through a single API.
 
 Using our Mollie integration, you can securely retrieve and view customer commerce transactions processed by Mollie.
 
-::: Data type coverage
+:::info Data type coverage
 
 View the coverage of our Mollie integration in the <a className="external" href="https://knowledge.codat.io/supported-features/commerce?view=tab-by-integration&integrationKey=dxfw" target="_blank">Data coverage explorer</a>.
 
