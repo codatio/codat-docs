@@ -75,3 +75,9 @@ Data is only available where:
 :::
 
 Now that you have tested the integration and reviewed sample data, you can [create your first live company](/other/portal/companies#add-a-new-company).
+
+---
+
+## Read next
+
+[Test your Mollie integration](/integrations/commerce/mollie/commerce-mollie-test)
