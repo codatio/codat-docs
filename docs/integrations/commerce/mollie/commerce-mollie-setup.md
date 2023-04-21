@@ -1,6 +1,6 @@
 ---
 title: "Set up the Mollie integration"
-description: "How to set up Mollie and Mollie integrations."
+description: "How to set up Mollie and Mollie Test integrations."
 createdAt: "2022-02-15T14:09:36.746Z"
 updatedAt: "2023-01-06T16:39:29.498Z"
 ---
