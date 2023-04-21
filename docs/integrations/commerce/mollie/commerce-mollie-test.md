@@ -80,4 +80,4 @@ Now that you have tested the integration and reviewed sample data, you can [crea
 
 ## Read next
 
-[Test your Mollie integration](/integrations/commerce/mollie/commerce-mollie-test)
+[Mollie integration reference](/integrations/commerce/mollie/mollie-integration-reference)
