@@ -1,57 +1,10 @@
 ---
 title: "Use the bill pay demo app"
+sidebar_label: "Use the demo app"
 description: "Learn how the demo app works by making mock payments then checking the source data in QuickBooks Online."
 ---
 
-Intro
-
-Run through the process of connecting to your customer's accounting platform, in this case QuickBooks Online Sandbox.
-
-## Try out the authorization process in Hosted Link
-
-Maybe this doesn't need a full procedure? Could just say "we built this using Hosted Link".
-These steps would be performed by the SMB user.
-
-Text: Connect to your customer's accounting platform (select **QBO Sandbox** in Link flow). Authorize access.
-
-1. From the app start screen, click **Get Started**.
-
-screenshot
-
-2. Enter your company name, then click **Next**.
-
-screenshot
-
-expanding box:
-Makes a request to the Create a company endpoint.
-
-Request body - important
-
-3. Hosted Link loads 
-
-screenshot
-
-4. On the **Select your accounting software** screen, select **Intuit QuickBooks Sandbox**, then click **Next**.
-
-5. Authorize your Codat client to access your QuickBooks Online Sandbox account by clicking **Connect**. You will be able to access the data shown in the gray panel.
-
-6. In the QuickBooks OAuth dialog, read the information and then click **Connect** to authorize access.
-
-screenshot
-
-7. The Connection Successful screen is displayed. Click **Next**.
-
-You are redirected to the redirect URL specified in the Portal. The connection successful screen.
-
-8. Click **Finish**, then click **Launch Bills Portal**
-
-expanding box:
-Makes a request to the Get Bills endpoint to retieve all paid and unpaid bills from your QBO Sandbox account. (Pulls accounts payable)
-Also calls the GET accounts endpoint to retrieve the bank accounts for mapping when you pay a bill.
-
-companies/{companyId}/data/accounts
-
-Does Not call bankAccounts endpoint. Your own app could include functionality for creating an account, if one does not already exist.
+Introduction
 
 ## Bill pay app UI
 

@@ -20,7 +20,7 @@ To showcase how easily SMBs can authorize access to live accounting data, we use
 
 (hammer) The demo project is implemented in JavaScript as a backend API and a simple React(?) web app. You can run the demo app locally as a Node application, or use a version that's hosted on Vercel. Either way, you'll need to create a free QuickBooks Online account and access its sandbox company to follow along with the tasks in this guide.
 
-## Delve into the demo app...
+## Dive into the demo app...
 
 This guide is meant to be used alongside the [demo app project](https://github.com/codatio/demo-bill-pay) on GitHub. By completing the tasks and exploring the code as you go along, you'll understand the approach we've taken in the demo app.
 
@@ -42,6 +42,9 @@ This guide is meant to be used alongside the [demo app project](https://github.c
 
 (Sequence diagram - flow of data between front-end and back-end. Show the order things happen in)
 
+## What you'll need
+
+Prerequisites
 
 
 
