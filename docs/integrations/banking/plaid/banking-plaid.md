@@ -4,14 +4,19 @@ description: "Learn about our Plaid integration"
 createdAt: "2020-02-25T17:44:15.117Z"
 updatedAt: "2022-11-08T15:42:31.296Z"
 ---
-
+<p>
 <a class="external" href="https://plaid.com/" target="_blank">
   Plaid
 </a> is a third-party provider of banking services with connections to bank accounts
 at over 11,000 financial institutions across the US, Canada, UK, and Europe. Plaid's
-services are regulated in the UK by the Financial Conduct Authority (FCA).
+services are regulated in the UK by the Financial Conduct Authority (FCA). </p>
 
 Our banking integration with Plaid lets you securely connect to and retrieve your SMB customers' banking data in a standardized format.
+
+:::info Supported financial institutions
+
+You'll automatically gain access to any new financial institutions that Plaid adds to their platform.
+:::
 
 ## Data type coverage
 
@@ -24,9 +29,9 @@ The following banking data is available through the integration:
 - [Banking transactions](/banking-api#/schemas/banking-transactions)
 - [Banking transaction categories](/banking-api#/schemas/banking-transaction-categories)
 
-:::info Supported financial institutions
+:::tip Instant Auth and Instant Match
 
-You'll automatically gain access to any new financial institutions that Plaid adds to their platform.
+Within our Plaid integration, we support [Instant Auth](https://plaid.com/docs/auth/coverage/instant/#instant-auth), and enable the fallback to [Instant Match](https://plaid.com/docs/auth/coverage/instant/#instant-match) as standard where Instant Auth is not available. These functionalities provide credential-based login for almost 7,000 financial institutions.
 :::
 
 ## Data mappings between Plaid and Codat
