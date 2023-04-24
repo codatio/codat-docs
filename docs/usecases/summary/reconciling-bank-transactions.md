@@ -4,7 +4,7 @@ sidebar_label: "Reconciling bank transactions"
 description: "An overview of the bank transactions reconciliation use case supported by Codat"
 ---
 
-Support your customers by pulling their bank transaction data into their accounting platforms' bank transaction ledgers to ensure these records match each other.
+Support your customers by pushing their bank transaction data into their accounting platforms' bank transaction ledgers to ensure these records match each other.
 
 ### How Codat can help
 

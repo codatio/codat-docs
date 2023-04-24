@@ -8,7 +8,7 @@ During lending, the lender evaluates a borrower's financial history, income, ass
 
 ### How Codat can help
 
-We can support traditonal banks, neobanks, and digital lenders in their lending activity by leveraging our [Assess](/assess/overview) and [Accounting](/accounting-api/overview), [Commerce](/commerce-api/overview), and [Banking](/banking-api/overview) API products. 
+We can support traditional banks, neobanks, and digital lenders in their lending activity by leveraging our [Assess](/assess/overview) and [Accounting](/accounting-api/overview), [Commerce](/commerce-api/overview), and [Banking](/banking-api/overview) API products. 
 
 ![](/img/use-cases/summary-pages/dbdaea6d-underwriting.png)
 
@@ -18,7 +18,7 @@ We have done the heavy lifting for you by building integrations with a standardi
 
 For example, if you need a customer's invoices as part of your assessment, our integrations allow you to pull and monitor invoices and the associated customers.This can even include line-item breakdowns and a PDF copy of the invoice where available. This approach removes the manual effort required to upload and extract the data, saving you time and effort, and providing your customer with a better digital experience. 
 
-You can do this for any data types we support, and even automatically synchronise them on a schedule.
+You can do this for any data types we support, and even automatically synchronize them on a schedule.
 
 Codat can also support an automatic reconciliation process, helping your customer to reduce the time and effort of manual processing, and increasing accuracy. For example, you can push a payment to their accounting platform and reconcile it against the invoice, marking it as paid. 
 

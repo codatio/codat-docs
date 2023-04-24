@@ -16,9 +16,9 @@ It enables businesses to track and manage their spend, typically including the w
 
 We have done the heavy lifting for you by building integrations with a standardized data model to the accounting platforms your customers already use. This gives you access to real-time data that you can pull, create, or update to support your use case.
 
-For automating payables, the Accounting API brings you and your customers these benefits:
+For automating payables, the Accounting API provides you and your customers with these benefits:
 
-- Increased visibility provided by the ability to track spend forecasts against budgets
+- Increase spend visibility and track spend forecasts against budgets
 - Reduce time and effort by automating the PO matching process
 - Perform faster payments, building better relationships with suppliers
 - Improve compliance without unnecessary bureaucracy

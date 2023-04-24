@@ -10,7 +10,7 @@ Engage Codat and automate your customers' accounts receivable processes by refle
 
 We can support B2B payment and invoicing software companies, payment providers, and vertical SaaS companies in their activity by leveraging our [Accounting API](/accounting-api/overview) product. 
 
-For example, the Accounting API eliminate the need to manually reconcile invoices raised in third party applications, keeping invoicing applications in sync with the accounting platform. It also automatically records payments made against an invoice or customer account and provides visibility of income received from the sale of goods or provision of services.
+For example, the Accounting API eliminates the need to manually reconcile invoices raised in third party applications, keeping invoicing applications in sync with the accounting platform. It also automatically records payments made against an invoice or customer account and provides visibility of income received from the sale of goods or provision of services.
 
 ![](/img/use-cases/summary-pages/fad7ec95-4automating-receivables.png)
 
@@ -20,8 +20,8 @@ We have done the heavy lifting for you by building integrations with a standardi
 
 For example, you can pull the following data from our endpoints:
 
-- `bankAccounts` to retrieve a list of bank accounts which can be mapped, enabling the user to dictate which bank account payments are received into.
-- `accounts` to retrieve a list of accounts which can be mapped, enabling the user to dictate which GL account  income and any platform fees should be recorded against.
+- `bankAccounts` to retrieve a list of bank accounts which can be mapped, enabling the user to specify which bank account payments are received into.
+- `accounts` to retrieve a list of accounts which can be mapped, enabling the user to choose which GL account income and any platform fees should be recorded against.
 - `trackingCategories` to retrieve a list of tracking categories which can be mapped, enabling the user to track income against identifiers which sit outside of their chart of accounts, including departments and locations.
 - `taxRates` to retrieve a list of tax rates which can be pushed against invoices.
 
