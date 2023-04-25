@@ -64,7 +64,7 @@ This query retrieves invoices with issue dates that are greater than twelve mont
 
 ### Pitfalls
 
-- The `sourceModifiedDate` may not be populated when:
+- The `sourceModifiedDate` may not be populated and returned as `null` when:
   - Pulling attachments, balance sheets, company information, or profit & loss reports
   - The integration platform does not provide modification date information for a given data type
   - The record has been deleted from the source platform, but Codat doesn't have a record of when the deletion occurred. Void records may also be identified in the same way if the platform uses soft deletes.
