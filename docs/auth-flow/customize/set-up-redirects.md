@@ -18,6 +18,11 @@ There are a few ways you can redirect your customers:
 Your redirects will only apply to Hosted Link. For Embedded Link, build out the required redirect configuration within your application.
 :::
 
+::: note See an example
+
+Not sure how to handle the params in your website? [See an example here](https://github.com/mcclowes/hosted-link-redirect-page)
+:::
+
 ## Setting redirect settings
 
 You can find the redirect settings page in the Portal:
@@ -32,40 +37,6 @@ You can find the redirect settings page in the Portal:
 A static URL is a single, unchanging web address that every customer would be directed to.
 
 Just enter the website address that you want to redirect your customers to in the URL field.
-
-### Redirect with custom query parameters
-
-Codat supports custom query parameters for redirects. You can define your own values for each custom parameter so that you can direct different customers to, for example, different versions of a landing page. To do this, you need to add custom query parameters to the Redirect Parameter.
-
-To set up a redirect with custom query parameters:
-
-1. In the **Redirect URL** box, enter a base URL along with the parameters you want to use to build the custom redirect. To add a parameter, wrap it in curly braces. For example: `https://mybank.io/{customparam}/show`.
-2. Before you send out a **Link URL** to a customer, modify the string in the URL box by adding a question mark and the parameter name and value to the end of it.  
-   For example: `https://link.codat.io/.../link?customparam=123456`.  
-   If you want to add more than one parameter, separate them with an ampersand (`&`).
-3. If you use the redirect parameter and Link URL values shown above, your customer is redirected to `https://redirect.site/123456/show`.
-
-#### Unspecified custom parameters
-
-It's not possible to specify default parameters. If you don't add a parameter to the Link URL when the redirect is built, it's replaced with an empty string.
-
-For example, if you set your Redirect URL to the URL below...
-
-```
-https://www.mybank.io/{journeyType}/success?ClientType={clientType}
-```
-
-...the link URLs would give the following outcomes:
-
-- `...f67e946f84c9/link?journeyType=demo&clientType=test` -> `https://www.mybank.io/demo/success?ClientType=test`.
-- `...f67e946f84c9/link?clientType=test` -> `https://www.mybank.io//success?ClientType=test`.
-- `...f67e946f84c9/link?journeyType=demo` -> `https://www.mybank.io/demo/success?ClientType=`.
-- `...f67e946f84c9/link` -> `https://www.mybank.io//success?ClientType=`.
-
-:::caution Special character encoding
-
-Ensure any and all special characters used in the link URL are correctly encoded; otherwise custom parameters may not pull through correctly.
-:::
 
 ### Redirect with reserved query parameters
 
@@ -132,31 +103,68 @@ https://www.mybank.io/{integrationType}?flow=Codat&statuscode={statusCode}&error
    ```http
    https://www.mybank.io/accounting?flow=Codat&statuscode=500&errormessage= Unknown%20error%20occured
    ```
+   
+### Redirect with custom query parameters
 
-### Allowed redirect hosts
+Codat supports custom query parameters for redirects. You can define your own values for each custom parameter so that you can direct different customers to, for example, different versions of a landing page. To do this, you need to add custom query parameters to the Redirect Parameter.
 
-The **Allowed redirect URLs** option allows you to use a [custom query parameter](/auth-flow/customize/set-up-redirects#redirect-with-custom-query-parameters) to dynamically change the redirect URL, including its host, when initiating the authorization flow. When your customer starts the linking flow, Codat verifies if the host of the URL is listed as an allowable host.
+To set up a redirect with custom query parameters:
 
-### Configuration
+1. In the **Redirect URL** box, enter a base URL along with the parameters you want to use to build the custom redirect. To add a parameter, wrap it in curly braces. For example: `https://mybank.io/{customparam}/show`.
+2. Before you send out a **Link URL** to a customer, modify the string in the URL box by adding a question mark and the parameter name and value to the end of it.  
+   For example: `https://link.codat.io/.../link?customparam=123456`.  
+   If you want to add more than one parameter, separate them with an ampersand (`&`).
+3. If you use the redirect parameter and Link URL values shown above, your customer is redirected to `https://redirect.site/123456/show`.
 
-The **Authorization Complete Redirection Url** is a URL your customers are sent to when they've authenticated their connection via Link. In Codat, you can decide if you want to:
+#### Unspecified custom parameters
 
-- Redirect to a static website (static host)
-- Redirect with custom query parameters (dynamic host).
+It's not possible to specify default parameters. If you don't add a parameter to the Link URL when the redirect is built, it's replaced with an empty string.
 
+For example, if you set your Redirect URL to the URL below...
 
-| Redirect | Configuration |
-|----|----|
-| Static host|Provide one URL in **Authorization Complete Redirection Url**.|
-| Dynamic host|To build dynamically: 1. Provide one URL that uses custom parameters in **Authorization Complete Redirection Url**. 2. List one or more URLs of each allowable host in **Allowed redirect URLs**. 3. When sending the Link URL to your customers, add the configured parameters to the URL.|
-| |If the redirect evaluates to a host that has not been placed on this list, your customer will not be redirected to it and will see an error.|
+```
+https://www.mybank.io/{journeyType}/success?ClientType={clientType}
+```
+
+...the link URLs would give the following outcomes:
+
+- `...f67e946f84c9/link?journeyType=demo&clientType=test` -> `https://www.mybank.io/demo/success?ClientType=test`.
+- `...f67e946f84c9/link?clientType=test` -> `https://www.mybank.io//success?ClientType=test`.
+- `...f67e946f84c9/link?journeyType=demo` -> `https://www.mybank.io/demo/success?ClientType=`.
+- `...f67e946f84c9/link` -> `https://www.mybank.io//success?ClientType=`.
+
+:::caution Special character encoding
+
+Ensure any and all special characters used in the link URL are correctly encoded; otherwise custom parameters may not pull through correctly.
+:::
+
+## Dynamic hosts
+
+It's also possible to send users to completely different websites.
+
+#### Examples 
+
+| Redirect URL setting | Link URL | Resolves to... |
+| :- | :- | :- | 
+| `https://www.{business}.io/success` | `...f67e946f84c9/link?business=mybank` | `https://www.mybank.io/success` |
+| `https://www.{domain}/success` | `...f67e946f84c9/link?domain=mybank.io` | `https://www.mybank.io/success` |
+| `https://www.mybank{customerType}.io/success` | `...f67e946f84c9/link?customerType=business` | `https://www.mybank{business}.io/success` |
+| `https://www.mybank.{countrySuffix}/success` | `...f67e946f84c9/link?countrySuffix=com` | `https://www.mybank.com/success` |
+
+To build dynamically:
+1. Provide one URL that uses custom parameters in **Authorization Complete Redirection Url**. 
+2. List each allowed host in **Allowed redirect URLs**. 3. When sending the Link URL to your customers, add the configured parameters to the URL.
+  If the redirect evaluates to a host that has not been placed on this list, your customer will not be redirected to it and will see an error.|
 
 **Note**: The URLs must be valid URLs, which means they must have* https://* or* http\://* added before them.
-
-Example configuration:  
-If you set the redirect to `https://{dynamichost}/example` and set the dynamic host to `dynamichost=codat.io` the redirect will be evaluated to `https://codat.io/example`.
 
 :::note Reserved parameters
 
 Do not use reserved parameters in your redirect hosts.
 :::
+
+## Allowed redirect hosts
+
+Dynamic hosts will need to be defined here.
+
+If you're not using the dynamic host feature, you don't need to use this setting.
