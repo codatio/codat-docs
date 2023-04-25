@@ -12,13 +12,13 @@ This guide is for tech-savvy backend developers who know how to use an API. The 
 
 ### Summary
 
-🎯 With Codat's Accounting API and integrations, you can build solutions to streamline and automate the Accounts Payable process for your SMB customers &mdash; saving them countless hours of manual admin. Bill pay is an important part of AP automation. Our Bill Pay demo app includes core tasks such as viewing and paying bills, and reconciling payments against bills in the customer's accounting platform.
+🎯 With Codat's Accounting API, you can build solutions to streamline and automate the Accounts Payable process for your SMB customers&mdash;saving them countless hours of manual admin. Our *bill pay demo app* showcases a simple and powerful AP automation workflow, built using standard endpoints and data types in our Accounting API. Run the demo app to understand the core tasks involved in bill pay, from viewing and paying bills to reconciling payments in the customer's accounting platform.
 
-To showcase how easily SMBs can authorize access to live accounting data, we use hosted Link to connect to a QuickBooks Online sandbox company. The demo app retrieves this consented data to provide a consolidated view of paid and unpaid bills.
+The demo app uses [Hosted Link](/auth-flow/authorize-hosted-link) to show how quickly your SMB customers can authorize access to their accounting data. In this guide, we connect to a QuickBooks Online sandbox company, but you could use a different integration. The demo app retrieves consented data from the customer's accounting platform to provide a consolidated view of paid and unpaid bills.
 
 ⏳ Estimated time to complete: 20-30 minutes.
 
-🛠️ The demo project is implemented in JavaScript as a backend API and a simple React(?) web app. You can run the demo app locally as a Node application, or use a version that's hosted on Vercel. Either way, you'll need to create a free QuickBooks Online account and access its sandbox company to follow along with the tasks in this guide.
+🛠️ The demo project is implemented in JavaScript as a backend API and a frontend React (???) web app. You can run the demo app locally as a Node application, or use a version that's hosted on Vercel. Either way, you'll need to create a free QuickBooks Online account and sandbox company to follow along with the tasks in this guide.
 
 ### ✔️ Dive into the demo app...
 
