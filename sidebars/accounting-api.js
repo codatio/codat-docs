@@ -23,6 +23,7 @@ module.exports = [
         items: [
           "accounting-api/guides/bill-pay/introduction",
           "accounting-api/guides/bill-pay/setting-up",
+          "accounting-api/guides/bill-pay/authorize-access",
           "accounting-api/guides/bill-pay/use-bill-pay-demo-app",
         ],
       },
