@@ -22,17 +22,17 @@ In case of an FP&A dashboard, Codat supports the following activities:
 
 - Connecting the accounting platform  
 
-Codat handles the authorisation, linking, and intricate details such as rate limits to your customers' accounting platforms.
+Codat handles the authorization, linking, and intricate details such as rate limits of your customers' accounting platforms.
 
-- Data standardisation
+- Data standardization
 
-Once authorised, utilise Codat's standardisation of the data to enable one data model to be used to leverage all accounting platforms.
+Once authorized, utilize Codat's standardization of the data to enable one data model to be used to leverage all accounting platforms.
 
 - Pull financial data
 
 You can use a multitude of our datasets to create or pull an accounts payable ledger, an accounts recevable ledger, and journal entries, balance sheet and cashflow statements. 
 
-For an accounts payable ledger, utilise the bills, credit notes, bill payments and suppliers datasets. To build and accounts payable ledger, utilise the invoices, credit notes, payments and customers datasets.
+For an accounts payable ledger, utilize the bills, credit notes, bill payments and suppliers datasets. To build and accounts payable ledger, utilize the invoices, credit notes, payments and customers datasets.
 
 ### Use case demos
 

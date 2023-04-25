@@ -60,7 +60,7 @@ const Usecases = () => {
         </div>
         <h3>Managing payroll</h3>
         <p>
-          Integrate your customers' payroll data from their HR and payroll platforms into their accounting platforms and to support its reconciliation.
+          Integrate your customers' payroll data from their HR and payroll platforms into their accounting platforms to support its reconciliation.
         </p>
         <p>
           <a className="tertiary" href="/usecases/summary/managing-payroll">Discover payroll management →</a>
@@ -90,7 +90,7 @@ const Usecases = () => {
         </div>
         <h3>Automating payables</h3>
         <p>
-          Automate your customers' accounts payable processes by reflecting bills from business software and suppliers in their accounting platforms. 
+          Automate your customers' accounts payable processes by reflecting bills from their business software and suppliers in their accounting platforms. 
         </p>
         <p>
           <a className="tertiary" href="/usecases/summary/automating-payables">Discover payables automation →</a>
@@ -120,7 +120,7 @@ const Usecases = () => {
         </div>
         <h3>Reconciling bank transactions</h3>
         <p>
-          Pulling your customers' bank transaction data into accounting platform bank transaction ledgers for reconcilliation.
+          Pushing your customers' bank transaction data into accounting platform's bank transaction ledgers for reconcilliation.
         </p>
         <p>
           <a className="tertiary" href="/usecases/summary/reconciling-bank-transactions">Discover bank transactions reconciliation →</a>

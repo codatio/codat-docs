@@ -8,7 +8,7 @@ Use Codat to integrate high-volume sales and payment data from PoS, eCommerce, a
 
 ### How Codat can help
 
-We can support PoS system companies, eCommerce platforms, and vertical SaaS companies in their activity by leveraging our [Sync for Commerce](/sfc/overview) and [Commerce API](/commerce-api/overview) products. This helps your SMB customers avoid costly mistakes by automating sales data updates. They can understand their cash flow better thanks to the daily import of sales, and automatically reconcile payments, invoices, fees, and payouts on a daily basis to their chart of accounts.
+We can support PoS system companies, eCommerce platforms, and vertical SaaS companies in their activity by leveraging our [Sync for Commerce](/sfc/overview) and [Commerce API](/commerce-api/overview) products. This helps your SMB customers avoid costly mistakes by automating sales data updates. 
 
 For example, Sync for Commerce can be used to save your customers time and effort by pushing high-volume data from their PoS (corresponding to sales their SMB has generated) into their SMBs' accounting platform automatically.
 
@@ -16,7 +16,7 @@ For example, Sync for Commerce can be used to save your customers time and effor
 
 #### Sync for Commerce
 
-Sync for Commerce is a white-label application for point-of-sale and eCommerce providers that automates merchant bookkeeping to Codat’s suite of accounting platforms. We map your customers' data according to accounting best-practices and features available within each platform. This lets your customer seamlessly reconcile their ecommerce and accounting data, allowing them to spend more time on growing their business. 
+Sync for Commerce is a white-label application for point-of-sale and eCommerce providers that automates merchant bookkeeping to Codat’s suite of accounting platforms. We map your customers' data according to accounting best practices and features available within each platform. This lets your customer seamlessly reconcile their ecommerce and accounting data, allowing them to spend more time on growing their business. 
 
 They can also understand their cash flow better thanks to the daily import of sales, and automatically reconcile payments, invoices, fees, and payouts on a daily basis to their chart of accounts - as an aggregate invoice or a journal entry.
 
