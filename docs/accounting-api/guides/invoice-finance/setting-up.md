@@ -20,7 +20,7 @@ Your new account already has the Accounting API product, the Codat Sandbox integ
 
 ### <input type="checkbox" unchecked /> Update your auth flow settings
 
-In the **Settings > Auth Flow > Link** [settings](https://app.codat.io/settings/link-settings/data-connections), check that the _Accounting_ integration category is enabled, and disable _Commerce_ and _Banking_ integration categories. 
+In the **Settings > Auth Flow > Link** [settings](https://app.codat.io/settings/link-settings/data-connections), check that the _Sanbox integrations_ and _Accounting_ integration category are enabled, and disable _Commerce_ and _Banking_ integration categories. 
 
 ### <input type="checkbox" unchecked /> Listen for webhooks
 
@@ -35,10 +35,10 @@ We will use [ngrok](https://ngrok.com/) in the app to listen for Codat's webhook
 
    ```bash
    choco install ngrok
-   ngrok http 5069
+   ngrok http 7278
    ```
    
-   This will install ngrok using [Chocolatey](https://chocolatey.org/) and run it at port 5069. 
+   This will install ngrok using [Chocolatey](https://chocolatey.org/) and run it at port 7278. 
    
    Copy the **forwarding address** - this will be the `<server-url>` for the webhooks.
 
@@ -50,9 +50,9 @@ We will use [ngrok](https://ngrok.com/) in the app to listen for Codat's webhook
    
    ```bash
    brew install ngrok
-   ngrok http 5069
+   ngrok http 7278
    ```  
-   This will install ngrok using [Homebrew](https://brew.sh/) and run it at port 5069. 
+   This will install ngrok using [Homebrew](https://brew.sh/) and run it at port 7278. 
    
    Copy the **forwarding address** - this will be the `<server-url>` for the webhooks.
 
@@ -61,7 +61,7 @@ We will use [ngrok](https://ngrok.com/) in the app to listen for Codat's webhook
 
 ### <input type="checkbox" unchecked /> Configure Codat webhooks
 
-In the **Monitor > Alerts > [Alerting rules](https://app.codat.io/monitor/rules)** section of the Codat Portal, create three rules, one for each webhook we will use:
+In the **Monitor > Alerts > [Alerting rules](https://app.codat.io/monitor/rules)** section of the Codat Portal, create two rules for all companies, one for each webhook we will use:
 
    |  Rule type                                  | Webhook notification URL                                    |
    |---------------------------------------------|-------------------------------------------------------------|
@@ -126,13 +126,13 @@ Run the following command in the root directory `Codat.Demos.InvoiceFinancing.Ap
 ```sh
 dotnet run --launch-profile http
 ```
-Once running, open the Swagger page in your web browser: `http://localhost:5069/swagger/index.html` You will use it to call the demo's endpoints.
+Once running, open the Swagger page in your web browser: `http://localhost:7278/swagger/index.html` You will use it to call the demo's endpoints.
 
 </TabItem>
 
 <TabItem value="rider" label="Rider">
 
-Make sure the `http` profile is set and press "Run". The IDE will automatically open [Swagger](http://localhost:5069/swagger/index.html) in a new tab of your browser. You will use it to call the demo's endpoints.
+Make sure the `http` profile is set and press "Run". The IDE will automatically open [Swagger](http://localhost:7278/swagger/index.html) in a new tab of your browser. You will use it to call the demo's endpoints.
 
 ![](/img/use-cases/underwriting/underwriting-guide-rider.png)
 
@@ -140,7 +140,7 @@ Make sure the `http` profile is set and press "Run". The IDE will automatically 
 
 <TabItem value="vs" label="Visual studio">
 
-Ensure the `http` profile is set and press the "Play" icon. The IDE will automatically open [Swagger](http://localhost:5069/swagger/index.html) in a new tab of your browser. You will use it to call the demo's endpoints.
+Ensure the `http` profile is set and press the "Play" icon. The IDE will automatically open [Swagger](http://localhost:7278/swagger/index.html) in a new tab of your browser. You will use it to call the demo's endpoints.
 
 ![](/img/use-cases/underwriting/underwriting-guide-visual-studio-2022.png)
 

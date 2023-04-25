@@ -34,10 +34,10 @@ This diagram shows the steps of the underwriting process as performed by the dem
 
 :::note Loan application frontend
 
-We use [Swagger](http://localhost:5069/swagger/index.html) to act as a presentation layer to interact with the demo endpoints. There are two endpoints that support the creation and processing of the application form, and three endpoints to interact with webhook rules you have previously set up. Remember to click **Try it out** and **Execute** when working with Swagger.
+We use [Swagger](http://localhost:7278/swagger/index.html) to act as a presentation layer to interact with the demo endpoints. Remember to click **Try it out** and **Execute** when working with Swagger.
 :::
 
-Call the `GET /applications/start` endpoint to trigger the creation of a new invoice financing loan application. In the background, the app creates a company using Codat's `POST /companies` endpoint using the application `id` as the company name.
+Call the `POST /applications/start` endpoint to trigger the creation of a new invoice financing loan application. In the background, the app creates a company using Codat's `POST /companies` endpoint using the application `id` as the company name.
 
 Codat returns the company and application `id`s in the endpoint response together with a `linkUrl`. In the demo, we will use these elements to fill in the application details and connect a data source next.  
 
@@ -70,7 +70,7 @@ Once you receive the the application id, complete the application form using the
 Next, you need to provide Codat access to an accounting platform so that we can fetch the data required to assess the risk of the application associated with the applicant's customers and invoices. Open the `linkUrl` returned by the new application response in your browser window. Follow the flow built using [Link](/auth-flow/overview), our hosted or embedded integrated authorization flow. 
 
 Select the **Codat Sandbox** as the source of accounting data.
-* You can choose any company type that best fits your use case.
+* Choose the **Invoice Financing US Company** company type.
 * You don't need to enter any credentials to authorize this connection. 
 * You should also skip the step of uploading business documents. 
 
@@ -82,7 +82,7 @@ We fetch the applicant's unpaid invoices, customers associated to these unpaid i
 
 The demo app now has all the components that it needs to assess the risk associated with each customer, and risk associated with each invoice. These assessments determine the decision on each unpaid invoice included in the loan request. 
 
-Poll the `GET applications/{applicationId}` endpoint in [Swagger](http://localhost:5069/swagger/index.html) anytime to check the status of your loan. Once the app processes all the relevant invoices, it will automatically return a response that includes a decision on each invoice assessed as part of the application.
+Poll the `GET applications/{applicationId}` endpoint in [Swagger](http://localhost:7278/swagger/index.html) anytime to check the status of your loan. Once the app processes all the relevant invoices, it will automatically return a response that includes a decision on each invoice assessed as part of the application.
 
 IS THIS NEEDED HERE OR ON THE NEXT PAGE INSTEAD
 
