@@ -442,7 +442,7 @@ If your company receives a credit note from their supplier, the Company could us
 
 With the billPayment API, you can partially or fully offset the balance of an invoice by adding the credit note in the `lines` array.
 
-1. The first step is to create a `billCreditNote`
+1. The first step is to create a [`billCreditNote`](/accounting-api#/operations/create-bill-credit-note)
 2. Once this is successfully created you can create a `billPayment` and include the `billCreditNote` and the `bill` to credit in the links array
 
 ##### Creating a Credit Note
@@ -462,7 +462,6 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 <Tabitem value="Xero" label="Xero">
 
-Here is a sample payment for multiple Xero bills from the same supplier.
 
 ```json title="Credit Note Example"
 {
@@ -612,12 +611,6 @@ Here is a sample payment for multiple Xero bills from the same supplier.
 
 <Tabitem value="Sage Intacct" label="Sage Intacct">
 
-:::note
-
-Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can be retrieved from the [options api](accounting-api#/operations/get-create-update-bills-model)
-
-:::
-
 ```json
 {
   "supplierRef": {
@@ -728,6 +721,8 @@ Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can b
 
 </Tabs>
 
+Once the credit note has been created, you can offset the balance of the credit note against any outstanding invoices by creating a billPayment.
+
 ##### Allocating a Credit note against a bill
 <Tabs>
 
@@ -741,13 +736,44 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 <Tabitem value="Example Request Bodies">
 
-<Tabs>
+<Tabs>{
+"supplierRef": {
+"id": "3"
+},
+"paymentMethodRef": {
+"id": "6",
+"name": "Cash"
+},
+"accountRef": {
+"id": "360"
+},
+"totalAmount": 45,
+"currency": "USD",
+"date": "2023-04-25T00:00:00",
+"lines": [
+{
+"amount": 45,
+"links": [
+{
+"type": "Bill",
+"id": "26572",
+"amount": -405
+},
+{
+"type": "CreditNote",
+"id": "26573",
+"amount": 360
+}
+]
+}
+]
+}
 
 <Tabitem value="Xero" label="Xero">
 
 Here is a sample payment for multiple Xero bills from the same supplier.
 
-```json title="Bill Payment for same Supplier"
+```json title="Xero Crediting a Bill"
 {
   "supplierRef": {
     "id": "dec56ceb-65e9-43b3-ac98-7fe09eb37e31"
@@ -933,41 +959,34 @@ Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can b
 
 :::
 
-```json
+```json title="Payment of a bill with credit and partial payment"
 {
-  "id": "26491",
   "supplierRef": {
-    "id": "15",
-    "supplierName": "HC Equipment Repair"
+    "id": "3"
+  },
+  "paymentMethodRef": {
+    "id": "6",
+    "name": "Cash"
   },
   "accountRef": {
-    "id": "84"
+    "id": "360"
   },
-  "totalAmount": 30000,
+  "totalAmount": 45,
   "currency": "USD",
-  "date": "2023-04-19T00:00:00",
-  "note": "",
-  "paymentMethodRef": {
-    "id": "6"
-  },
+  "date": "2023-04-25T00:00:00",
   "lines": [
     {
-      "amount": 15000,
+      "amount": 45,
       "links": [
         {
           "type": "Bill",
-          "id": "26492",
-          "amount": -15000
-        }
-      ]
-    },
-    {
-      "amount": 15000,
-      "links": [
+          "id": "26572",
+          "amount": -405
+        },
         {
-          "type": "Bill",
-          "id": "26493",
-          "amount": -15000
+          "type": "CreditNote",
+          "id": "26573",
+          "amount": 360
         }
       ]
     }
@@ -1025,7 +1044,6 @@ Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can b
 </Tabitem>
 
 </Tabs>
-
 
 #### Refunding a bill payment
 
