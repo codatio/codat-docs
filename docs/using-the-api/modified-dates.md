@@ -31,29 +31,34 @@ GET /companies/{companyId}/data/invoices?page=1&query=modifiedDate%3E%3D{lastFet
 
 This query retrieves records with modified dates that are greater than or equal to (more recent than) the fetch date that you've specified.
 
+:::info Example: Retrieve company invoices updated since the last fetch  
+
+1. Track your `lastFecthDate` in your system
+2. Use `lastFetchDate` when querying data:
+
+```http
+GET /companies/{companyId}/data/invoices?page=1&query=modifiedDate%3E%3D{lastFetchDate}
+```
+
+This query retrieves records with modified dates that are greater than or equal to (more recent than) the fetch date that you've specified.
+
+:::
+
 ### Pitfalls
 
-- If the `sourceModifiedDate` changes, the `modifiedDate` will also change, even if none of the values we pull were modified. This can happen as there may be additional data types in the source not mapped to the Codat data model.
-- If the Codat data model changes (e.g. we add a new data type), the `modifiedDate` will change, even if the values of the data didn't change.
-- The `modifiedDate` is available for all data types _except_ for the following:
+- The `modifiedDate` is populated for all data types **except** for the following:
   - attachments
   - balance sheets
   - company information
   - profit & loss reports
+- If the `sourceModifiedDate` changes, the `modifiedDate` will also change, even if none of the values we pull were modified. This can happen as there may be additional data types in the source platform that are not mapped to the Codat data model.
+- If the Codat data model changes (e.g. we add a new data type), the `modifiedDate` will change, even if the values of the data didn't change.
 
 ## Source modified date
 
-**`sourceModifiedDate` shows when a record was last updated in the customer’s accounting, banking, or commerce platform.**
+**`sourceModifiedDate` shows when a record was last modified in the customer’s accounting, banking, or commerce platform.**
 
 The record may have been updated by the business, or a business process, such as when payments are made against an invoice.
-
-If the `sourceModifiedDate` is set to `null`, the record has been deleted from the accounting platform but Codat doesn't have a record of when the deletion occurred. If the accounting platform uses soft deletes, void records may also be identified in the same way .
-
-The `sourceModifiedDate` is available for all data types **except** for the following: attachments, balance sheets, company information, profit and loss reports.
-
-### Pitfalls
-
-- Integration support - Not all integrations provide information about when records were updated in their system. This field will therefore not always be available from Codat.
 
 ### Using the source modified date
 
@@ -67,14 +72,22 @@ GET /companies/{companyId}/data/invoices?page=1&query=issueDate%3C{todayMinus12M
 
 This query retrieves invoices with issue dates that are greater than twelve months old and a source modified date that is greater than or equal to one month old.
 
+### Pitfalls
+
+- The `sourceModifiedDate` may not be populated and set to `null` when:
+  - Pulling attachments, balance sheets, company information, or profit & loss reports
+  - The integration platform does not provide modification dates for a given data type
+  - The record has been deleted from the source platform, but Codat doesn't have a record of when the deletion occurred. Void records may also be identified in the same way if the platform uses soft deletes.
+
 :::tip Recap
 You've learned:
 - How dates are used to keep company data up to date
 - The difference between `modifiedDate` and `sourceModifiedDate`
+- When `modifiedDate` and `sourceModifiedDate` are not available in the data
 :::
 
 ---
 
 ## Read next
 
-- [Refreshing company data](/using-the-api/modified-dates)
+- [Refreshing company data](/using-the-api/queueing-data-syncs)
