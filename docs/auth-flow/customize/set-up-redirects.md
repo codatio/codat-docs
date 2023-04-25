@@ -36,22 +36,31 @@ You can find the redirect settings page in the Portal:
 
 A static URL is a single, unchanging web address that every customer would be directed to.
 
-Just enter the website address that you want to redirect your customers to in the URL field.
+Enter the website address that you want to redirect your customers to in the **Redirect URL > URL** field.
+
+You can ignore the other settings on the page.
 
 ### Redirect with reserved query parameters
 
-Codat supports a number of reserved query parameters for redirects. Codat will replace the reserved parameters in your redirects with pre-defined, non-customizable values. This way you can, for instance, redirect your customers through your own flows after they have left Link. To do this, you need to add reserved parameters to the Redirect Parameter and the Link URL that you send to your customer.
+You can conditionally redirect users based on what happened when authorizing.
+
+Codat supports a number of reserved query parameters for redirects. If you add reserved parameters to the Redirect URL you send to your customer, Codat will replace the parameters with the relevant information.
 
 To set up a redirect with reserved query parameters:
 
-1. In the **Redirect URL** box, enter a base URL along with the reserved parameters you want to use to build the redirect. To add a parameter, wrap it in curly braces. For example: 
-   ```http
-   https://redirect.site/{sourceType}/?flow=Codat&statuscode={statusCode}&errormessage={errorMessage}
-   ```
-2. If you use the redirect parameter values shown above, your customer is redirected to: 
-   ```http
-   https://redirect.site/accounting/?flow=Codat&statuscode=403&errormessage=User%20cancelled
-   ```
+In the **Redirect URL > URL** field, enter a base URL along with the reserved parameters you want to use to build the redirect. 
+
+To add a parameter, wrap it in curly braces. For example: 
+
+```http
+https://redirect.site/{sourceType}/?flow=Codat&statuscode={statusCode}&errormessage={errorMessage}
+```
+
+If you use the redirect parameter values shown above, your customer is redirected to: 
+  
+```http
+https://redirect.site/accounting/?flow=Codat&statuscode=403&errormessage=User%20cancelled
+```
 
 :::note Availability of reserved query parameters
 
@@ -79,11 +88,10 @@ That the names of the parameters listed in the table below are currently availab
 The names of query parameters are case sensitive, e.g. `companyId` is not the same as `companyid`.
 :::
 
-#### Configuration examples
+<details>
+  <summary><b>Use redirect params to see errors in the link flow</b></summary>
 
-Have a look at some examples of how your redirects can be configured with reserved query parameters in several typical scenarios.
-
-Initial configuration:
+Example Redirect URL:
 
 ```
 https://www.mybank.io/{integrationType}?flow=Codat&statuscode={statusCode}&errormessage={errorMessage}
@@ -103,10 +111,11 @@ https://www.mybank.io/{integrationType}?flow=Codat&statuscode={statusCode}&error
    ```http
    https://www.mybank.io/accounting?flow=Codat&statuscode=500&errormessage= Unknown%20error%20occured
    ```
+</details>
    
 ### Redirect with custom query parameters
 
-Codat supports custom query parameters for redirects. You can define your own values for each custom parameter so that you can direct different customers to, for example, different versions of a landing page. To do this, you need to add custom query parameters to the Redirect Parameter.
+Codat also supports custom query parameters for redirects. You can define your own values for each custom parameter so that you can direct different customers to, for example, different versions of a landing page. To do this, you need to add custom query parameters to the Redirect Parameter.
 
 To set up a redirect with custom query parameters:
 
