@@ -20,21 +20,9 @@ It tells you when the most recent version of the record was fetched from the dat
 
 Use the `modifiedDate` to identify and retrieve records that have changed since your last fetch.
 
-#### Example: Retrieve company invoices updated since the last fetch  
-
-1. Track your `lastFecthDate` in your system
-2. Use `lastFetchDate` when querying data:
-
-```http
-GET /companies/{companyId}/data/invoices?page=1&query=modifiedDate%3E%3D{lastFetchDate}
-```
-
-This query retrieves records with modified dates that are greater than or equal to (more recent than) the fetch date that you've specified.
-
 :::info Example: Retrieve company invoices updated since the last fetch  
 
- 1. Track your `lastFecthDate` in your system
- 2. Use `lastFetchDate` when querying data:
+Track your `lastFecthDate` in your system and use it when querying data:
 
 ```http
 GET /companies/{companyId}/data/invoices?page=1&query=modifiedDate%3E%3D{lastFetchDate}
@@ -64,7 +52,7 @@ The record may have been updated by the business, or a business process, such as
 
 Use the `sourceModifiedDate` when you want to identify records that have been updated by a business, or a business process.
 
-#### Example: Find invoices issued over 12 months ago that were updated in the last month
+:::info Example: Find invoices issued over 12 months ago that were updated in the last month  
 
 ```http
 GET /companies/{companyId}/data/invoices?page=1&query=issueDate%3C{todayMinus12Months}%26%26sourceModifiedDate%3E%3D{todayMinusOneMonth}
@@ -72,18 +60,19 @@ GET /companies/{companyId}/data/invoices?page=1&query=issueDate%3C{todayMinus12M
 
 This query retrieves invoices with issue dates that are greater than twelve months old and a source modified date that is greater than or equal to one month old.
 
+:::
+
 ### Pitfalls
 
-- The `sourceModifiedDate` may not be populated and set to `null` when:
+- The `sourceModifiedDate` may not be populated when:
   - Pulling attachments, balance sheets, company information, or profit & loss reports
-  - The integration platform does not provide modification dates for a given data type
+  - The integration platform does not provide modification date information for a given data type
   - The record has been deleted from the source platform, but Codat doesn't have a record of when the deletion occurred. Void records may also be identified in the same way if the platform uses soft deletes.
 
 :::tip Recap
 You've learned:
 - How dates are used to keep company data up to date
 - The difference between `modifiedDate` and `sourceModifiedDate`
-- When `modifiedDate` and `sourceModifiedDate` are not available in the data
 :::
 
 ---
