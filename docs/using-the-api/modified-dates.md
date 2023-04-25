@@ -20,7 +20,7 @@ It tells you when the most recent version of the record was fetched from the dat
 
 Use the `modifiedDate` to identify and retrieve records that have changed since your last fetch.
 
-#### Example: Retrieve company invoices updated since the last fetch
+#### Example: Retrieve company invoices updated since the last fetch  
 
 1. Track your `lastFecthDate` in your system
 2. Use `lastFetchDate` when querying data:
@@ -33,8 +33,8 @@ This query retrieves records with modified dates that are greater than or equal 
 
 :::info Example: Retrieve company invoices updated since the last fetch  
 
-1. Track your `lastFecthDate` in your system
-2. Use `lastFetchDate` when querying data:
+ 1. Track your `lastFecthDate` in your system
+ 2. Use `lastFetchDate` when querying data:
 
 ```http
 GET /companies/{companyId}/data/invoices?page=1&query=modifiedDate%3E%3D{lastFetchDate}
