@@ -5,7 +5,7 @@ tags: ["Product", "Update"]
 authors: mcclowes
 ---
 
-We've improvemed our delete coverage for QBO.
+We've improved our delete coverage for QBO.
 
 <!--truncate-->
 
