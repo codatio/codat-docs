@@ -22,7 +22,7 @@ Use the `modifiedDate` to identify and retrieve records that have changed since 
 
 :::info Example: Retrieve company invoices updated since the last fetch  
 
-Track your `lastFecthDate` in your system and use it when querying data:
+Track your `lastFetchDate` in your system and use it when querying data:
 
 ```http
 GET /companies/{companyId}/data/invoices?page=1&query=modifiedDate%3E%3D{lastFetchDate}
