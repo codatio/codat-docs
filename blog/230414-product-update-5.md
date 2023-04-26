@@ -9,7 +9,7 @@ We've improved our delete coverage for QBO.
 
 <!--truncate-->
 
-### Integration coverage improvements
+## Integration coverage improvements
 
 #### QuickBooks Online
 
