@@ -13,6 +13,41 @@ description: "Learn how the demo app works by making mock payments and then chec
 
 Blue expandable boxes highlight the underlying API requests the app makes to the Codat API. They also highlight additional requests your own solution could make to provide richer functionality.
 
+NEW
+
+## New section? Authorize access to accounting data using Hosted Link
+
+See Link in action
+
+After running the demo app, you'll use [Hosted Link](/auth-flow/authorize-hosted-link) to create a company in Codat and authorize access to your QuickBooks Online sandbox company. This lets you see the kind of authorization flow you might build into your own bill pay solution. 
+
+An SMB user would do this in a production scenario.
+
+1. From the Bill Pay app start screen, click **Get Started**.
+
+   ![bill-pay_app-start-screen](/img/use-cases/bill-pay/bill-pay_app-start-screen-get-started.png)
+
+2. Follow the instructions in the Link UI to:
+   - Create a company.
+   - Authorize the bill pay demo app to access required data from your QuickBooks Online sandbox company. 
+   - Launch the bill pay demo app UI.
+
+:::tip Which integration should I choose?
+
+In this guide, we're connecting to a QuickBooks Online sandbox company. If you're following along, select the **Intuit QuickBooks Sandbox** tile when prompted to select your accounting software.
+
+:::
+
+If the connection to your QuickBooks Online sandbox company was successful, you're redirected to the URL you specified in the Codat Portal earlier. Behind the scenes, the demo app created a data connection to QuickBooks Online.
+
+*Technical box:*
+When the app loads, it makes a request to the Get Bills endpoint to retieve all paid and unpaid bills from your QBO Sandbox account. (Pulls accounts payable)
+Also calls the GET accounts endpoint to retrieve the bank accounts for mapping when you pay a bill.
+
+companies/{companyId}/data/accounts
+
+Does Not call bankAccounts endpoint. Your own app could include functionality for creating an account, if one does not already exist.
+
 ### Bill pay demo app UI
 
 When you launch the demo app, you'll see a table of all paid and unpaid bills pulled from your QuickBooks Online sandbox company, ordered by issue date. 
