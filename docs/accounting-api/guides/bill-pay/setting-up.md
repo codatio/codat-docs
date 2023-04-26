@@ -8,8 +8,6 @@ description: "Prepare your Codat instance, choose an installation method, and ru
 
 - Set up the **QuickBooks Online Sandbox** integration
 
-   We've chosen QuickBooks Online because it offers a free trial account with access to realistic accounts payable data through a sandbox companies. You might want to use a different integration instead, but make sure it includes access to sandbox data.
-
 - Configure Link to use the demo app's redirect URL
 - Enable the required data types
 - Choose an installation method: either install the demo app locally or run our hosted version
@@ -17,22 +15,26 @@ description: "Prepare your Codat instance, choose an installation method, and ru
 
 ###  Set up the QuickBooks Online Sandbox integration
 
-Before you can try out the functionality of the demo app, you first need to set up the QuickBooks Online Sandbox integration. Here's a summary of the setup process &mdash; [see the documentation](/integrations/accounting/quickbooksonline/accounting-quickbooksonline-new-setup) for complete instructions.
+Before you can use the bill pay demo app, you first need to set up the QuickBooks Online Sandbox integration.
 
-1. Sign in to the [Intuit Developer Portal](https://developer.intuit.com/).
+:::info Why QuickBooks Online?
+
+We've chosen QuickBooks Online because it provides access to sandbox accounts payable data, like bills and bill payments, and also offers free trial accounts. You could use the demo app with a different Codat integration, if you prefer.
+
+:::
+
+1. Sign up or sign in to the [Intuit Developer Portal](https://developer.intuit.com/).
 2. Create a QuickBooks Online app.
 3. Configure your new app with the Codat *sandbox* redirect URI: `https://quickbooksonlinesandbox.codat.io/oauth2/callback`
 4. In the [Codat Portal](https://app.codat.io/), add your app's secure keys to the **QuickBooks Online Sandbox** integration.
    :::caution Use your development keys
-   Make sure you use your app's *development keys* when configuring the integration.
+   Make sure you use your app's *development keys* when configuring the sandbox integration.
    :::
 5. Enable the **QuickBooks Online Sandbox** integration.
 
-**Sandbox companies**
+For full instructions, see [Set up the QuickBooks Online integration](/integrations/accounting/quickbooksonline/accounting-quickbooksonline-new-setup).
 
-Your Intuit Developer account is created with a single sandbox company configured for the US. You're allowed to create additional sandbox companies for different regions. To do so, go to the [Manage sandbox companies](https://developer.intuit.com/app/developer/sandbox) page in the Intuit Developer Portal.
-
-To open a sandbox company in QuickBooks Online, click the company name on the [Manage sandbox companies](https://developer.intuit.com/app/developer/sandbox) page. Your sandbox company opens in QuickBooks Online in a new browser tab.
+Your QuickBooks Online account gives you access to a US sandbox company for testing purposes. You can open this company and take a look at some bills, bill payments, and other relevant sandbox data. You'll access some of this data later in this guide.
 
 ###  Configure Link to use the demo app's redirect URL
 
@@ -45,20 +47,12 @@ To open a sandbox company in QuickBooks Online, click the company name on the [M
    - Use `demo-bill-pay.vercel.app` if you're using our [hosted demo app](#run-the-hosted-demo-app).
    - Use `localhost:3000` if you plan to clone the repository and [run the demo app on your local machine](#install-and-run-the-demo-app-locally).
 
-###  Check your data type settings
-
-In your [data type settings](https://app.codat.io/settings/data-types), check the data types required by the demo app are set to **Fetch on first link**. You'll need to select:
-
-- Bill Payments
-- Bills
-- Company
-
 ###  Run the hosted demo app
 
 If you want to quickly see the functionality of the demo app, you can run it on our Vercel instance in a few minutes. To get a deep dive into the code, we recommend you install and run the app on your local machine (see the next section).
 
 1. Go to the [demo-bill-pay](https://github.com/codatio/demo-bill-pay) repository on GitHub.
-2. Open https://demo-bill-pay.vercel.app/ in a new browser tab. The **Bill Pay** app start screen is displayed:
+2. Open https://demo-bill-pay.vercel.app/ in a new browser tab. The **Bill Pay** start screen is displayed:
 
    ![bill-pay_app-start-screen](/img/use-cases/bill-pay/bill-pay_app-start-screen-get-started.png)
 
@@ -84,7 +78,7 @@ To run the demo app on your local machine, you'll need to have `npm` version 16.
    ```
    You can find your authorization header in the Codat Portal. Go to **Developers > API keys**, then copy your authorization header from the relevant column.
 
-4. Run the app: (??? Add tabs for Rider and Visual Studio)
+4. Run the app:
 
    ```bash
    npm run dev

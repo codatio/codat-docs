@@ -6,41 +6,39 @@ description: "Learn how the demo app works by making mock payments and then chec
 
 ### 🚀 In this section, you will:
 
+- See Hosted Link in action by authorizing access to your accounting data in QuickBooks Online
 - Learn what information is available in the bill pay demo app UI
 - Make a mock payment against a bill, learning how the data is represented in Codat
 - Check that your payment was reconciled as expected in your QuickBooks Online sandbox company
 - Review the push history in the Codat Portal
 
-Blue expandable boxes highlight the underlying API requests the app makes to the Codat API. They also highlight additional requests your own solution could make to provide richer functionality.
+Look out for the blue expandable boxes that highlight the underlying API requests the app makes to the Codat API. They also highlight additional requests your own solution could make to provide richer functionality.
 
-NEW
+### Authorize access to accounting data in QuickBooks
 
-## New section? Authorize access to accounting data using Hosted Link
+Now you're going to see [Hosted Link](/auth-flow/authorize-hosted-link) in action. You'll follow the steps your customers would take to authorize access to their accounting data for use in your bill pay application.
 
-See Link in action
+Prerequisites:
 
-After running the demo app, you'll use [Hosted Link](/auth-flow/authorize-hosted-link) to create a company in Codat and authorize access to your QuickBooks Online sandbox company. This lets you see the kind of authorization flow you might build into your own bill pay solution. 
+- Set up the QuickBooks Online Sandbox integration and configure your Link settings.
+- Install and run the demo app locally or open the [hosted version](https://demo-bill-pay.vercel.app/).
 
-An SMB user would do this in a production scenario.
+To authorize access to your accounting data:
 
-1. From the Bill Pay app start screen, click **Get Started**.
+1. From the **Bill Pay** start screen, click **Get Started**.
 
    ![bill-pay_app-start-screen](/img/use-cases/bill-pay/bill-pay_app-start-screen-get-started.png)
 
-2. Follow the instructions in the Link UI to:
-   - Create a company.
-   - Authorize the bill pay demo app to access required data from your QuickBooks Online sandbox company. 
-   - Launch the bill pay demo app UI.
+2. Follow the instructions in the UI to:
+   1. Create a company.
+   2. Connect to **Intuit QuickBooks Sandbox**. 
+   3. Authorize the demo app to access data from your sandbox QuickBooks Online company. This creates a data connection to QuickBooks Online Sandbox.
+   4. Click **Launch Bills Portal** to open the bill pay demo. Behind the scenes, the demo app redirects you to the redirect URL you set earlier.
 
-:::tip Which integration should I choose?
+![bill-pay_launch-bills-portal-screen](/img/use-cases/bill-pay/bill-pay_launch-bills-portal-screen.png)
 
-In this guide, we're connecting to a QuickBooks Online sandbox company. If you're following along, select the **Intuit QuickBooks Sandbox** tile when prompted to select your accounting software.
+### API requests
 
-:::
-
-If the connection to your QuickBooks Online sandbox company was successful, you're redirected to the URL you specified in the Codat Portal earlier. Behind the scenes, the demo app created a data connection to QuickBooks Online.
-
-*Technical box:*
 When the app loads, it makes a request to the Get Bills endpoint to retieve all paid and unpaid bills from your QBO Sandbox account. (Pulls accounts payable)
 Also calls the GET accounts endpoint to retrieve the bank accounts for mapping when you pay a bill.
 
@@ -50,7 +48,7 @@ Does Not call bankAccounts endpoint. Your own app could include functionality fo
 
 ### Bill pay demo app UI
 
-When you launch the demo app, you'll see a table of all paid and unpaid bills pulled from your QuickBooks Online sandbox company, ordered by issue date. 
+When you launch the demo app, you'll see a table of all paid and unpaid bills pulled from your sandbox QuickBooks Online company, ordered by issue date. 
 
 ![Bill pay demo app UI](/img/use-cases/bill-pay/bill-pay_demo-bill-interface.png "The Bill pay demo app UI.")
 
@@ -66,7 +64,7 @@ This contains the following additional information:
 
 - The Bill number, currency, and due date.
 - The individual line items, if contained on the original bill.
-- The account name in the accounting platform. [???]
+- The name of the nominal account in QuickBooks.
 
 Next, you can click **Pay Bill** to make a mock payment against the bill.
 
@@ -80,22 +78,22 @@ To make a mock payment:
 
    screenshot
 
-2. Choose an account from the **Account name** dropdown. This is the "mapping account" in your QuickBooks Online sandbox company &mdash;  the account the payment should be reconciled to.
+2. Choose an account from the **Account name** dropdown. This is the "mapping account" in your sandbox QuickBooks Online company &mdash; the account the payment should be reconciled to.
 
    Only bank accounts in the same currency as the bill are shown. (Add technical box - the app calls the get bank accounts endoint using query parameters for account type and currency.)
 
 3. Click **Pay Bill** to pay the total amount. You don't need to enter any card details.
 
-technical box:
+### API requests
 
 When you make a mock payment, the demo app pushes a Bill payment to QuickBooks for the total amount of the bill. This reconciles the payment against the outstanding bill.
 (API: Post a Bill payment to the accounting platform)
 
-### Check payment reconciliation in QuickBooks
+### See that the payment was reconciled in QuickBooks
 
 To help you understand the process, check that payment reconciliation happened as expected in QuickBooks Online.
 
-1. Open your Sandbox company in QuickBooks Online.. 
+1. Open your sandbox QuickBooks Online company.
 2. In the sidebar, select **Get paid & pay**.
 3. Check the status of the bill you paid:
    1. Select **Bills**, then select the **Paid** tab.
