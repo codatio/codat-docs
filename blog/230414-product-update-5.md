@@ -11,7 +11,7 @@ We've improved our delete coverage for QBO.
 
 ## Integration coverage improvements
 
-#### QuickBooks Online
+### QuickBooks Online
 
 We've added new `DELETE` functionality for our QBO integration:
 
