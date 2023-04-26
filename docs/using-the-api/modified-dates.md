@@ -76,7 +76,7 @@ You've learned:
 :::
 
 ---
-
+---
 ## Read next
 
 - [Refreshing company data](/using-the-api/queueing-data-syncs)
