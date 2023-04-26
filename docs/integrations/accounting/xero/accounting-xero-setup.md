@@ -20,7 +20,7 @@ Xero App Partnership is not possible for all use cases. We encourage you to work
 
 ## Create a Xero app and configure the redirect URI
 
-1. Log in to the [Xero Developer portal](https://developer.xero.com/) using your Xero credentials.
+1. Sign up or log in to the [Xero Developer portal](https://developer.xero.com/) using your Xero credentials.
    :::info Free trial account
    You can sign up for a free trial Xero Developer account.   
    :::
