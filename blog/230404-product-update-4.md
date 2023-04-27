@@ -5,7 +5,7 @@ tags: ["Product", "Update"]
 authors: mcclowes
 ---
 
-We've improvemed our data type coverage for a number of integrations.
+We've improved our data type coverage for a number of integrations.
 
 <!--truncate-->
 
