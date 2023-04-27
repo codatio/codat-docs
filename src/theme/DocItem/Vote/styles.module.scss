@@ -1,0 +1,35 @@
+.voteContainer {
+  // border: 1px solid var(--ifm-color-secondary-dark);
+  // border-radius: 4px;
+  // background-color: var(--ifm-alert-background-color);
+  // padding: 1em;
+  text-align: center;
+  width: 100%;
+}
+
+.voteHeader {
+  font-weight: bold;
+  margin-bottom: 1em;
+  opacity: 0.75;
+}
+
+.feedbackOptions {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.validVote {
+  margin-right: 1em;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.vote {
+  margin-right: 1em;
+  opacity: 0.5;
+  cursor: pointer;
+}
