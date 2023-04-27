@@ -35,7 +35,33 @@ Codat will **not** be able to accept any new requests to initiate another sync w
 
 - `Sync Failed`: This will be triggered if there are any failures during the sync process.
 
+```curl -X 'POST' \
+  'https://api.codat.io/rules' \
+  -H 'accept: application/json' \
+  -H 'Authorization: xxx' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "type": "sync-failed",
+  "notifiers": {
+    "webhook": "https://api.dev.v2.infinnitytest.com/api/codat/callback/sync-error"
+  }
+}'
+```
+
 - `Sync Completed`: This will be triggered when a sync completes without any failures.
+
+```curl -X 'POST' \
+  'https://api.codat.io/rules' \
+  -H 'accept: application/json' \
+  -H 'Authorization: xxxxxx' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "type": "sync-complete",
+  "notifiers": {
+    "webhook": "https://api.dev.v2.infinnitytest.com/api/codat/callback/sync-complete"
+  }
+}'
+```
 
 ### Sync status
 
