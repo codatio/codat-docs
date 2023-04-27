@@ -49,7 +49,7 @@ There are three ways to check the status of the sync:
 
 1.  Using webhooks and the `sync completed` rule
 
-2.  Polling the [sync status endpoint](sync-for-expenses-api#/operations/get-sync-by-id)
+2.  Polling the [sync status endpoint](/sync-for-expenses-api#/operations/get-sync-by-id)
 
 3.  Using the Sync Health Site for Sync for Expenses
 
