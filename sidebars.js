@@ -26,6 +26,7 @@ module.exports = {
       className: "top-level-item introduction",
       items: [
         "introduction/first-steps",
+        "introduction/first-ten-minutes",
         "introduction/create-account",
         "introduction/migration",
         {
