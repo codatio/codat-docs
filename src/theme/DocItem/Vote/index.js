@@ -20,9 +20,11 @@ const Vote = (props) => {
   }
 
   const feedbackOptions = [
+    '❤️',
     '👍',
     '🤔',
     '👎',
+    '😭',
   ]
 
   return <>
