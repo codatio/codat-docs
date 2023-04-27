@@ -12,7 +12,7 @@ description: "Learn how the demo app works by making mock payments and then chec
 - Check that your payment was reconciled as expected in your QuickBooks Online sandbox company
 - Review the push history in the Codat Portal
 
-Look out for the blue expandable boxes that highlight the underlying API requests the app makes to the Codat API. They also highlight additional requests your own solution could make to provide richer functionality.
+To understand the underlying API requests that the app makes to Codat, review the "API Request" sections on this page. These sections also highlight additional requests your own solution could make to provide richer functionality.
 
 ### Authorize access to accounting data in QuickBooks
 
@@ -30,14 +30,14 @@ To authorize access to your accounting data:
    ![bill-pay_app-start-screen](/img/use-cases/bill-pay/bill-pay_app-start-screen-get-started.png)
 
 2. Follow the instructions in the UI to:
-   1. Create a company.
+   1. Create a company in Codat.
    2. Connect to **Intuit QuickBooks Sandbox**. 
    3. Authorize the demo app to access data from your sandbox QuickBooks Online company. This creates a data connection to QuickBooks Online Sandbox.
    4. Click **Launch Bills Portal** to open the bill pay demo. Behind the scenes, the demo app redirects you to the redirect URL you set earlier.
 
 ![bill-pay_launch-bills-portal-screen](/img/use-cases/bill-pay/bill-pay_launch-bills-portal-screen.png)
 
-### API requests
+### TO DO: API requests
 
 When the app loads, it makes a request to the Get Bills endpoint to retieve all paid and unpaid bills from your QBO Sandbox account. (Pulls accounts payable)
 Also calls the GET accounts endpoint to retrieve the bank accounts for mapping when you pay a bill.
@@ -70,7 +70,7 @@ Next, you can click **Pay Bill** to make a mock payment against the bill.
 
 ### Make a mock payment
 
-The demo app provides functionality for making mock payments against bills. When you "pay" a bill, the app automatically pushes a bill payment to the accounting platform &mdash; in this case, QuickBooks Online &mdash; where it's reconciled against the source bill, which is marked as *paid*.
+The demo app provides functionality for making mock payments against bills. When you "pay" a bill, the app automatically pushes a bill payment to the accounting platform&mdash;in this case, QuickBooks Online&mdash;where it's reconciled against the source bill, which is marked as *paid*.
 
 To make a mock payment:
 
@@ -84,7 +84,7 @@ To make a mock payment:
 
 3. Click **Pay Bill** to pay the total amount. You don't need to enter any card details.
 
-### API requests
+### To Do: API requests
 
 When you make a mock payment, the demo app pushes a Bill payment to QuickBooks for the total amount of the bill. This reconciles the payment against the outstanding bill.
 (API: Post a Bill payment to the accounting platform)

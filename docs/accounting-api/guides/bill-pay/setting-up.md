@@ -4,14 +4,14 @@ sidebar_label: "Set up and run"
 description: "Prepare your Codat instance, choose an installation method, and run the demo app"
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 ### 🚀 In this section, you will...
 
 - Set up the **QuickBooks Online Sandbox** integration
-
 - Configure Link to use the demo app's redirect URL
-- Enable the required data types
-- Choose an installation method: either install the demo app locally or run our hosted version
-- Run the demo app
+- Install the demo app and run it on your local machine
 
 ###  Set up the QuickBooks Online Sandbox integration
 
@@ -19,7 +19,7 @@ Before you can use the bill pay demo app, you first need to set up the QuickBook
 
 :::info Why QuickBooks Online?
 
-We've chosen QuickBooks Online because it provides access to sandbox accounts payable data, like bills and bill payments, and also offers free trial accounts. You could use the demo app with a different Codat integration, if you prefer.
+We've chosen to use QuickBooks Online because it provides access to sandbox accounts payable data, like bills and bill payments, and also offers free trial accounts. You could use the demo app with a different Codat integration, if you prefer.
 
 :::
 
@@ -36,47 +36,52 @@ For full instructions, see [Set up the QuickBooks Online integration](/integrati
 
 Your QuickBooks Online account gives you access to a US sandbox company for testing purposes. You can open this company and take a look at some bills, bill payments, and other relevant sandbox data. You'll access some of this data later in this guide.
 
+
 ###  Configure Link to use the demo app's redirect URL
 
 1. In the Codat Portal, go to **Settings > Redirects** to view the [Redirects](https://app.codat.io/settings/redirects) page.
-2. Enter the redirect URL in the **URL** field:
+
+2. Enter the following redirect URL in the **URL** field:
    ```http
-   https://{your-domain}/connection-successful   
+   https://<YOUR_DOMAIN>/connection-successful   
    ```
-   For `{your-domain}`, enter the value that corresponds with your installation method.
-   - Use `demo-bill-pay.vercel.app` if you're using our [hosted demo app](#run-the-hosted-demo-app).
-   - Use `localhost:3000` if you plan to clone the repository and [run the demo app on your local machine](#install-and-run-the-demo-app-locally).
+   <Tabs>
+   <TabItem value="local" label="Local installation"> 
+   
+   If you intend to install and run the demo app locally, replace `<YOUR_DOMAIN>` with `localhost:3000`
+   
+   </TabItem>
 
-###  Run the hosted demo app
-
-If you want to quickly see the functionality of the demo app, you can run it on our Vercel instance in a few minutes. To get a deep dive into the code, we recommend you install and run the app on your local machine (see the next section).
-
-1. Go to the [demo-bill-pay](https://github.com/codatio/demo-bill-pay) repository on GitHub.
-2. Open https://demo-bill-pay.vercel.app/ in a new browser tab. The **Bill Pay** start screen is displayed:
-
-   ![bill-pay_app-start-screen](/img/use-cases/bill-pay/bill-pay_app-start-screen-get-started.png)
-
-3. Click **Get Started** to start the authorization flow.
-
+   <TabItem value="hosted" label="Hosted app">
+   
+   If you're using the hosted app, replace `<YOUR_DOMAIN>` with `demo-bill-pay.vercel.app`
+   
+   </TabItem>
+   </Tabs>
+   
 
 ###  Install and run the demo app locally
 
 To run the demo app on your local machine, you'll need to have `npm` version 16.9.0 installed.
 
-1. Clone the [demo-bill-pay](https://github.com/codatio/demo-bill-pay) GitHub repository to your local machine.
+1. Clone the demo app repository to your local machine:
 
-2. Install the dependencies by running the following command:
+   ```bash
+   git clone https://github.com/codatio/demo-bill-pay.git
+   ```
+
+2. On the command line, install the project dependencies:
 
    ```bash
    npm install
    ```
 
-3. In the root directory, create a `.env` file containing your Codat authorization header as an environment variable:
+3. Create a `.env` file in the project's root directory containing the following text:
 
    ```
-   CODAT_AUTH_HEADER="{your-auth-header}"
+   CODAT_AUTH_HEADER="<YOUR_AUTH_HEADER>"
    ```
-   You can find your authorization header in the Codat Portal. Go to **Developers > API keys**, then copy your authorization header from the relevant column.
+   Replace `<YOUR_AUTH_HEADER>` with the value of your authorization header from the Codat Portal. To find it, go to **Developers > API keys**, then copy your authorization header from the relevant column.
 
 4. Run the app:
 
@@ -84,12 +89,15 @@ To run the demo app on your local machine, you'll need to have `npm` version 16.
    npm run dev
    ```
 
-5. Open [https://localhost:3000](https://localhost:3000) to view the app start screen.
-6. Click **Get Started** to start the authorization flow.
+5. When the app is running, open [https://localhost:3000](https://localhost:3000) in your browser.
+
+6. You'll see the **Bill Pay** start screen:
+
+   ![bill-pay_app-start-screen-get-started](/img/use-cases/bill-pay/bill-pay_app-start-screen-get-started.png)
 
 ### Recap
 
-You've now configured Codat and run the bill pay demo app, either locally or using our hosted version.
+You've now configured Codat and run the bill pay demo app.
 
 <hr />
 

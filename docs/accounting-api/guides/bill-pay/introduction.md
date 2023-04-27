@@ -6,19 +6,17 @@ description: "Use this guide and the accompanying demo app to build solutions th
 
 :::tip Who is this guide for?
 
-This guide is for tech-savvy developers who know how to use an API. The accompanying app includes a simple UI, so you'll need some frontend development experience to build a similar UI in your own bill pay solution.
+This guide is for developers building bill pay and other Accounts Payable applications with Codat's API. If you're a general user, use the hosted version of the bill pay demo app to try out the functionality we've implemented. 
 
 :::
 
 ### Summary
 
-🎯 With Codat's Accounting API, you can build solutions to streamline and automate the Accounts Payable process for your SMB customers&mdash;saving them countless hours of manual admin. Our *bill pay demo app* showcases a simple and powerful AP automation workflow, built using standard endpoints and data types in our Accounting API. Run the demo app to understand the core tasks involved in bill pay, from viewing and paying bills to reconciling payments in the customer's accounting platform.
+🎯 With Codat's Accounting API, you can build solutions to streamline and automate the Accounts Payable process for your SMB customers&mdash;saving them countless hours of manual admin. Our *bill pay demo app* showcases a simple and powerful AP automation workflow, built using standard endpoints and data types in our Accounting API. It aims to help you understand the core tasks involved in a bill pay use case and how they can be implemented with Codat.
 
-The demo app uses [Hosted Link](/auth-flow/authorize-hosted-link) to show how quickly your SMB customers can authorize access to their accounting data. In this guide, we connect to a QuickBooks Online sandbox company, but you could use a different integration. The demo app retrieves consented data from the customer's accounting platform to provide a consolidated view of paid and unpaid bills.
+🛠️ The demo project is a web app, built using Next.js and React, that interacts with the Codat API. You can run it as a Node application on your local machine, or use a version hosted on Vercel. It uses [Hosted Link](/auth-flow/authorize-hosted-link) for authorization. The code is stored in a [public GitHub repository](https://github.com/codatio/demo-bill-pay).
 
 ⏳ Estimated time to complete: 20&ndash;30 minutes.
-
-🛠️ The demo project is implemented in JavaScript as a backend API and a frontend React (???) web app. You can run the demo app locally as a Node application, or use a version that's hosted on Vercel. Either way, you'll need to create a free QuickBooks Online account and sandbox company to follow along with the tasks in this guide. The code for the demo app is hosted in a [public GitHub repository](https://github.com/codatio/demo-bill-pay).
 
 ### What you'll need
 
@@ -26,45 +24,69 @@ To access and use the bill pay demo app, you need to:
 
 - Have a [QuickBooks Online](https://quickbooks.intuit.com/) account.
 - Set up the **QuickBooks Online Sandbox** integration (brief instructions are given in [Set up and run the bill pay demo app](/accounting-api/guides/bill-pay/setting-up)).
-- Make sure the Bills, Bill Payments, and Companies data types are set to **Fetch on first link** in the Codat Portal.
+- Enable **Fetch on first link** for the Bills, Bill Payments, and Companies data types in the Codat Portal.
 
-This guide includes sample API requests made by the app. If you want to clone the repository and explore the code in more depth, you'll need to use an IDE or text editor.
+You'll need an IDE and a Git installation to run the demo app locally.
 
 ### ✔️ Dive into the demo app...
 
-This guide is meant to be used alongside the [demo app project](https://github.com/codatio/demo-bill-pay) on GitHub. By completing the tasks and exploring the code as you go along, you'll understand the approach we've taken in the demo app.
+This guide is meant to be used alongside the [demo app project](https://github.com/codatio/demo-bill-pay) on GitHub. By completing the tasks and exploring the code as you go along, you'll understand the approach we've taken in the demo app. We've included sample API requests made by the app.
 
-### 1 - Pull standardized Accounts Payable data
+The demo app illustrates three common tasks in a typical bill pay workflow, as follows:
 
-- View all paid and unpaid bills from a QuickBooks Online sandbox company, standardized to our accounting data model.
-- See amounts, due dates, bill line items, vendor and supplier details to get an accurate picture of payments due.
+### 1 - Connect to your customers' accounting platforms
 
-### 2 - Understand payment account mapping
+- Hosted Link handles user authorization and accounting software connection.
 
-- Select a QuickBooks mapping account - the account from which the payment should originate from.
-- Pay a bill using a mock payment UI to trigger the app to push a bill payment to Codat. 
+### 2 - Display Accounts Payable data
 
-### 3 - See how to reconcile payments
+Enable your customers to:
 
-- Check the bill payment that was pushed to QuickBooks Online was reconciled correctly against the bill.
+- Access a consolidated view of paid and unpaid bills, standardized to Codat's accounting data model.
+- Get an accurate picture of what they owe, including bill amounts, due dates, line items, suppliers, and more.
 
+### 3 - Retrieve accounts for payment reconciliation
 
+Enable your customers to:
 
-### Run the demo app
+- Select a mapping account: the account the bill payment should originate from.
+- Pay bills, which triggers the demo app to push bill payments to Codat. 
 
-Add info from setting up page
+### 4 - Reconcile payments
 
-### How the Bill pay app works
+- Your customers can see that payments were reconciled against bills as expected in their accounting platform.
+
+:::tip Invoices or bills?
+Codat's data model distinguishes between invoices where the company *owes money* and invoices where the company *is owed money*. If the company has received an invoice and owes money to someone else (accounts payable) we call this a Bill.
+
+See [Invoices](/accounting-api#/schemas/Invoice) for the accounts receivable equivalent of bills.
+:::
+
+### Use the hosted app
+
+Use the [hosted app](https://demo-bill-pay.vercel.app/) to quickly see the demo app in action without having to run the code locally.
+
+### TO DO - Bill pay demo process flow
+
+The following diagram shows how the bill pay demo app works.
+
+``` mermaid
+  sequenceDiagram
+    participant frontend as Lending Frontend 
+    participant backend as Lending Backend 
+    participant codat as Codat API
+    frontend ->> backend: Foobar
+    backend ->> codat: Foobar
+    codat ->> backend: Foobar
+    backend ->> backend: Foobar
+    backend ->> frontend: Foobar
+```
 
 (Sequence diagram - flow of data between front-end and back-end. Show the order things happen in)
 
-### What you'll need
-
-Prerequisites
-
 ### Recap
 
-Text here
+You've understood the functionality of the bill pay demo app and what you'll need to get started.
 
 <hr />
 
