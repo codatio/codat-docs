@@ -15,7 +15,7 @@ Below you can see a demonstration from the engineers of the new functionality.
 
 <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
   <iframe
-    src="https://www.loom.com/share/47fad41c68ce49c8b0b1b1aa1909c154"
+    src="https://www.loom.com/embed/47fad41c68ce49c8b0b1b1aa1909c154"
     frameborder="0"
     webkitallowfullscreen
     mozallowfullscreen
@@ -41,7 +41,7 @@ See [here](https://docs.codat.io/assess/enhanced-invoices/overview) for more inf
 
 <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
   <iframe
-    src="https://www.loom.com/share/5436c8551e90401d99f03f058626ea07"
+    src="https://www.loom.com/embed/5436c8551e90401d99f03f058626ea07"
     frameborder="0"
     webkitallowfullscreen
     mozallowfullscreen
@@ -67,7 +67,7 @@ See here for [creating a directCost](https://docs.codat.io/accounting-api#/opera
 
 <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
   <iframe
-    src="https://www.loom.com/share/5436c8551e90401d99f03f058626ea07"
+    src="https://www.loom.com/embed/5436c8551e90401d99f03f058626ea07"
     frameborder="0"
     webkitallowfullscreen
     mozallowfullscreen
@@ -93,7 +93,7 @@ See [here](https://docs.codat.io/accounting-api#/operations/create-journal-entry
 
 <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
   <iframe
-    src="https://www.loom.com/share/b75c1ed71f63481bb11d0d7d54ed94a4"
+    src="https://www.loom.com/embed/b75c1ed71f63481bb11d0d7d54ed94a4"
     frameborder="0"
     webkitallowfullscreen
     mozallowfullscreen
@@ -118,7 +118,7 @@ See [here](https://docs.codat.io/integrations/accounting/quickbooksonline/accoun
 
 <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
   <iframe
-    src="https://www.loom.com/share/e517c51c9ccc497ca7380431aead7e7f"
+    src="https://www.loom.com/embed/e517c51c9ccc497ca7380431aead7e7f"
     frameborder="0"
     webkitallowfullscreen
     mozallowfullscreen
@@ -143,7 +143,7 @@ This feature simplifies the process of invoicing clients for reimbursable expens
 
 <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
   <iframe
-    src="https://www.loom.com/share/41607424e2884de1a0b44504f9468e18"
+    src="https://www.loom.com/embed/41607424e2884de1a0b44504f9468e18"
     frameborder="0"
     webkitallowfullscreen
     mozallowfullscreen
