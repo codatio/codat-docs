@@ -23,10 +23,16 @@ This guide is for developers building bill pay and other Accounts Payable applic
 To access and use the bill pay demo app, you need to:
 
 - Have a [QuickBooks Online](https://quickbooks.intuit.com/) account.
-- Set up the **QuickBooks Online Sandbox** integration (brief instructions are given in [Set up and run the bill pay demo app](/accounting-api/guides/bill-pay/setting-up)).
+- Set up the **QuickBooks Online Sandbox** integration (explained in [Set up and run the bill pay demo app](/accounting-api/guides/bill-pay/setting-up)).
 - Enable **Fetch on first link** for the Bills, Bill Payments, and Companies data types in the Codat Portal.
 
-You'll need an IDE and a Git installation to run the demo app locally.
+To install and run the demo app locally, you'll need:
+
+- npm version 16.9.0
+- An IDE or text editor
+- A local Git installation
+
+You can [use the hosted app](#use-the-hosted-app) as an alternative to hosted installation.
 
 ### ✔️ Dive into the demo app...
 
@@ -91,5 +97,7 @@ You've understood the functionality of the bill pay demo app and what you'll nee
 <hr />
 
 ### Read next
+
+Now that you know the focus and purpose of our demo app and its guide:
 
 - [Set up and run the bill pay demo app](/accounting-api/guides/bill-pay/setting-up)
