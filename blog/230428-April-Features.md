@@ -30,7 +30,7 @@ Below you can see a demonstration from the engineers of the new functionality.
   ></iframe>
 </div>
 
-Traditionally lenders look up a bank statement to verify payments for an invoice are received and the date + amount are accurate.
+Traditionally, lenders look up a bank statement to verify that payments for an invoice were received, and that payment dates and amounts are accurate.
 
 The Enhanced Invoices Report uses open banking and accounting data to automatically match paid invoices to a bank transaction record that was used to pay it, this helps to verify a customer’s payment against the companies historical invoice.
 
