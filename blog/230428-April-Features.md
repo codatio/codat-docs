@@ -11,6 +11,8 @@ This month, our product and engineering teams have been working on expanding cov
 
 In the following videos, Codat engineers demonstrate some of this new functionality.
 
+<!--truncate-->
+
 ## Assess: Enhanced Invoices Report
 
 <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
