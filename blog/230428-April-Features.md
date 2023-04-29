@@ -32,7 +32,7 @@ Below you can see a demonstration from the engineers of the new functionality.
 
 Traditionally, lenders look up a bank statement to verify that payments for an invoice were received, and that payment dates and amounts are accurate.
 
-The Enhanced Invoices Report uses open banking and accounting data to automatically match paid invoices to a bank transaction record that was used to pay it, this helps to verify a customer’s payment against the companies historical invoice.
+The Enhanced Invoices Report uses open banking and accounting data to automatically match a paid invoice to the bank transaction record that was used to pay it. This helps to verify a customer’s payment against the company's historical invoice.
 
 See [here](https://docs.codat.io/assess/enhanced-invoices/overview) for more info.
 
