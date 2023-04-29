@@ -139,7 +139,7 @@ By marking expenses on a cheque as billable, businesses can easily identify and 
 
 This feature simplifies the process of invoicing clients for reimbursable expenses.
 
-### Support for Negative direct costs on bank accounts for QuickBooks Online
+### Support for negative direct costs on bank accounts for QuickBooks Online
 
 <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
   <iframe
