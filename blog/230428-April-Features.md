@@ -34,7 +34,7 @@ Traditionally, lenders look up a bank statement to verify that payments for an i
 
 The Enhanced Invoices Report uses open banking and accounting data to automatically match a paid invoice to the bank transaction record that was used to pay it. This helps to verify a customer’s payment against the company's historical invoice.
 
-See [here](https://docs.codat.io/assess/enhanced-invoices/overview) for more info.
+See [Enhanced Invoices](https://docs.codat.io/assess/enhanced-invoices/overview) for more information.
 
 
 ### List and create trackingCategories on QuickBooks Online Direct Costs.
