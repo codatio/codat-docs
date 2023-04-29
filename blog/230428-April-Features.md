@@ -133,7 +133,7 @@ See [Delete data from QuickBooks Online](https://docs.codat.io/integrations/acco
   ></iframe>
 </div>
 
-Codat has added support for the tracking object on directCosts for QuickBooks desktop, this feature enables you to see the billable status on the cheque object in QuickBooks.
+Codat has added support for the tracking object on Direct costs for QuickBooks Desktop. This feature enables you to see the billable status on the check object in QuickBooks.
 
 By marking expenses on a cheque as billable, businesses can easily identify and allocate costs to specific customers or projects.
 
