@@ -56,7 +56,7 @@ See [Enhanced Invoices](https://docs.codat.io/assess/enhanced-invoices/overview)
   ></iframe>
 </div>
 
-This update enables you to view and assign Locations, Customers, and Classes on expenses or cheques in QuickBooks online. 
+This update enables you to view and assign Locations, Customers, and Classes on expenses or checks in QuickBooks Online. 
 
 Using these fields on Codats directCost model enables you to provide companies with valuable insights into their spending patterns across multiple locations, departments, and even individual customer profitability.
 
