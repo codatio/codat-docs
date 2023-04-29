@@ -1,5 +1,5 @@
 ---
-title: "April Feature Updates"
+title: "April feature updates"
 date: "2023-04-28"
 tags: ["Product", "Update"]
 authors: jyorston
