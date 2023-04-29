@@ -158,7 +158,7 @@ This feature simplifies the process of invoicing clients for reimbursable expens
   ></iframe>
 </div>
 
-Codat has extended support for creating refunds for expenses in QuickBooks Online, in addition to existing support for refunds on credit cards, you can now also use negative direct costs for a prepay or bank accounts. 
+We've extended our support for creating refunds for expenses in QuickBooks Online. In addition to the existing support for refunds on credit cards, you can now use negative direct costs for prepay or bank accounts. 
 
 This enhancement allows you to facilitate use cases such as refunding an erroneous transaction or representing a returned order, and managing accidental duplicate payments.
 
