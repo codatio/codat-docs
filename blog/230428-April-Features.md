@@ -7,7 +7,7 @@ authors: jyorston
 
 
 
-Last month, our product and engineering team have been working on expanding coverage across existing integrations and introducing some exciting new features.
+This month, our product and engineering teams have been working on expanding coverage across our existing integrations as well as introducing some exciting new features.
 
 Below you can see a demonstration from the engineers of the new functionality.
 
