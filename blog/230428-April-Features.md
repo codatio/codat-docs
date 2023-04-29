@@ -60,7 +60,7 @@ This update enables you to view and assign Locations, Customers, and Classes on 
 
 By using these fields on Codat's Direct cost model, you can provide companies with valuable insights into their spending patterns across multiple locations and departments, and even individual customer profitability.
 
-See here for [creating a directCost](https://docs.codat.io/accounting-api#/operations/create-direct-cost) and [retrieving a directCost](https://docs.codat.io/accounting-api#/operations/list-direct-costs)
+Review the documentation for [creating a direct cost](https://docs.codat.io/accounting-api#/operations/create-direct-cost) and [retrieving a direct cost](https://docs.codat.io/accounting-api#/operations/list-direct-costs)
 
 
 ### Create journals in Microsoft Dynamics 365 Business Central
