@@ -160,7 +160,7 @@ This feature simplifies the process of invoicing clients for reimbursable expens
 
 We've extended our support for creating refunds for expenses in QuickBooks Online. In addition to the existing support for refunds on credit cards, you can now use negative direct costs for prepay or bank accounts. 
 
-This enhancement allows you to facilitate use cases such as refunding an erroneous transaction or representing a returned order, and managing accidental duplicate payments.
+This enhancement lets you facilitate use cases such as refunding an erroneous transaction or representing a returned order, and managing accidental duplicate payments.
 
 See [directCosts](https://docs.codat.io/accounting-api#/operations/create-direct-cost) for more information on how to use this.
 
