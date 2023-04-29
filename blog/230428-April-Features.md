@@ -112,7 +112,7 @@ Codat has added support for the deletion of journal entries, bills, and invoices
 
 This improvement enables you to offer this integration to your customers, simplifying use cases such as reversing erroneous transactions and maintaining accurate financial records.
 
-See [here](https://docs.codat.io/integrations/accounting/quickbooksonline/accounting-quickbooksonline-delete-journal-entries) for more information on how to use this feature.
+See [Delete data from QuickBooks Online](https://docs.codat.io/integrations/accounting/quickbooksonline/accounting-quickbooksonline-delete-journal-entries) for more information on how to use this feature.
 
 ### Addition of the QuickBooks Desktop Tracking Object
 
