@@ -86,7 +86,7 @@ Codat now supports the creation of journal entries in Microsoft Dynamics 365 Bus
 
 This enhancement empowers you to provide this integration to your customers, streamlining use cases such as payroll reconciliation, purchase amortization, loan repayment reconciliation, and more.
 
-See [here](https://docs.codat.io/accounting-api#/operations/create-journal-entry) for more information on how to use the post journal entry endpoint.
+See the [API Reference](https://docs.codat.io/accounting-api#/operations/create-journal-entry) for more information on how to use the POST journal entry endpoint.
 
 
 ### Increased Coverage of QuickBooks Online Deletion Support
