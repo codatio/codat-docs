@@ -108,7 +108,7 @@ See the [API Reference](https://docs.codat.io/accounting-api#/operations/create-
   ></iframe>
 </div>
 
-Codat has added support for the deletion of journal entries, bills, and invoices in QuickBooks Online. 
+Codat has added support for the deletion of journal entries, bills, and invoices from QuickBooks Online. 
 
 This improvement enables you to offer this integration to your customers, simplifying use cases such as reversing erroneous transactions and maintaining accurate financial records.
 
