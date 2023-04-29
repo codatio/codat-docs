@@ -9,7 +9,7 @@ authors: jyorston
 
 This month, our product and engineering teams have been working on expanding coverage across our existing integrations as well as introducing some exciting new features.
 
-Below you can see a demonstration from the engineers of the new functionality.
+In the following videos, Codat engineers demonstrate some of this new functionality.
 
 ## Assess: Enhanced Invoices Report
 
@@ -29,6 +29,7 @@ Below you can see a demonstration from the engineers of the new functionality.
     }}
   ></iframe>
 </div>
+<br />
 
 Traditionally, lenders look up a bank statement to verify that payments for an invoice were received, and that payment dates and amounts are accurate.
 
@@ -55,6 +56,7 @@ See [Enhanced Invoices](https://docs.codat.io/assess/enhanced-invoices/overview)
     }}
   ></iframe>
 </div>
+<br />
 
 This update enables you to view and assign Locations, Customers, and Classes on expenses or checks in QuickBooks Online. 
 
@@ -81,6 +83,7 @@ Review the documentation for [creating a direct cost](https://docs.codat.io/acco
     }}
   ></iframe>
 </div>
+<br />
 
 Codat now supports the creation of journal entries in Microsoft Dynamics 365 Business Central. 
 
@@ -107,6 +110,7 @@ See the [API Reference](https://docs.codat.io/accounting-api#/operations/create-
     }}
   ></iframe>
 </div>
+<br />
 
 Codat has added support for the deletion of journal entries, bills, and invoices from QuickBooks Online. 
 
@@ -132,12 +136,11 @@ See [Delete data from QuickBooks Online](https://docs.codat.io/integrations/acco
     }}
   ></iframe>
 </div>
+<br />
 
 Codat has added support for the tracking object on Direct costs for QuickBooks Desktop. This feature enables you to see the billable status on the check object in QuickBooks.
 
-By marking expenses on a check as billable, businesses can easily identify and allocate costs to specific customers or projects.
-
-This feature simplifies the process of invoicing clients for reimbursable expenses.
+By marking expenses on a check as billable, businesses can easily identify and allocate costs to specific customers or projects. This feature simplifies the process of invoicing clients for reimbursable expenses.
 
 ### Support for negative direct costs on bank accounts for QuickBooks Online
 
@@ -157,6 +160,7 @@ This feature simplifies the process of invoicing clients for reimbursable expens
     }}
   ></iframe>
 </div>
+<br />
 
 We've extended our support for creating refunds for expenses in QuickBooks Online. In addition to the existing support for refunds on credit cards, you can now use negative direct costs for prepay or bank accounts. 
 
