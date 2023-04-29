@@ -162,6 +162,6 @@ We've extended our support for creating refunds for expenses in QuickBooks Onlin
 
 This enhancement lets you facilitate use cases such as refunding an erroneous transaction or representing a returned order, and managing accidental duplicate payments.
 
-See [directCosts](https://docs.codat.io/accounting-api#/operations/create-direct-cost) for more information on how to use this.
+See [Direct cost](https://docs.codat.io/accounting-api#/operations/create-direct-cost) for more information on how to use this feature.
 
 
