@@ -109,7 +109,7 @@ To upload a logo, go to the <a className="external" href="https://app.codat.io/s
    Do _not_ send the `linkUrl` property to the SMB user. Unlike other Codat integrations, company authentication is initiated within Sage as described in "SMB user flow: Connect a source bank account to Sage", below.
    :::
 
-3. Using <a href="https://api.codat.io/swagger/index.html#/Connection/put_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts"  target="_blank">PUT / bankFeedAccounts</a>, add one or more source bank accounts to make available to the SMB user.
+3. Using [PUT /bankFeedAccounts](/bank-feeds-api#/operations/create-bank-feed), add one or more source bank accounts to make available to the SMB user.
 
    ```http
    PUT /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts
@@ -173,13 +173,13 @@ Alternatively, you can [authenticate users through your own web app](/bank-feeds
 
 7. The SMB user is redirected to the Sage product from which they started the connection flow.
 
-You can now use the <a href="https://api.codat.io/swagger/index.html#/Connection/get_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts" target="_blank">GET /bankFeedAccounts</a> endpoint to retrieve the source bank accounts. The `status` property of a source bank account must have changed to `connected` before you can begin to push bank transactions from the account.
+You can now use the [GET /bankFeedAccounts](/bank-feeds-api#/operations/get-bank-feeds) endpoint to retrieve the source bank accounts. The `status` property of a source bank account must have changed to `connected` before you can begin to push bank transactions from the account.
 
 The SMB user flow is now complete.
 
 ## Update bank account details
 
-To update the details of one or more source bank accounts in Sage, use the <a href="https://api.codat.io/swagger/index.html#/Connection/patch_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts__bankAccountId_" target="_blank">PATCH /connectionInfo/bankFeedAccounts/{bankAccountId}</a> endpoint.
+To update the details of one or more source bank accounts in Sage, use the [PATCH /bankFeedAccounts](/bank-feeds-api#/operations/update-bank-feed) endpoint.
 
 ```http
 PATCH /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts/{bankAccountId}
