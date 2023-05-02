@@ -17,7 +17,7 @@ When you create a company, you can specify a `name` and we will automatically ge
 
 Companies can be created in one of two ways:
 
-1. Using the <a className="external" href="/codat-api#/operations/create-company" target="_blank">POST /companies</a>
+1. Using the [POST /companies](/codat-api#/operations/create-company)
 
 2. Using the [Codat portal](/other/portal/companies#add-a-new-company)
 
