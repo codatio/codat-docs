@@ -12,7 +12,7 @@ description: "See Hosted Link in action, then use the demo app to view bills and
 - Check your payment was reconciled as expected in your sandbox QuickBooks Online company
 - Review the push history in the Codat Portal
 
-To understand the underlying API requests that the app makes to Codat, review the "API requests" sections. These also highlight additional functionality that you might include in your own bill pay solution.
+To understand the underlying API requests that the app makes to Codat, review the "API" sections. These also highlight additional functionality that you might include in your own bill pay solution.
 
 ### Authorize access to accounting data in QuickBooks
 
@@ -27,20 +27,89 @@ Now you're going to see [Hosted Link](/auth-flow/authorize-hosted-link) in actio
 
 ![bill-pay_launch-bills-portal-screen](/img/use-cases/bill-pay/bill-pay_launch-bills-portal-screen.png)
 
-### TO DO: API requests
+### API: Pull accounts payable
 
-When you launch the  demo app, it pulls a list of paid and unpaid bills from your sandbox QuickBooks Online company.  
+When launched, the demo app [retrives a list of all bills](/accounting-api#/operations/list-bills) from your sandbox QuickBooks Online company, in descending order of issue date.
 
-```http title="List bills"
-/companies/<COMPANY_ID>/data/bills?page=1&pageSize=100&query=status=Open&orderBy=-issueDate
+```http title="List bills request"
+GET https://<YOUR_DOMAIN>/companies/<COMPANY_ID>/data/bills?page=1&pageSize=100&orderBy=-issueDate
 ```
 
-When the app loads, it makes a request to the Get Bills endpoint to retieve all paid and unpaid bills from your QBO Sandbox account. (Pulls accounts payable)
-Also calls the GET accounts endpoint to retrieve the bank accounts for mapping when you pay a bill.
+```json title="List bills response example"
+{
+  "results": [
+    {
+      "id": "181",
+      "supplierRef": {
+        "id": "41",
+        "supplierName": "Mark Howard"
+      },
+      "purchaseOrderRefs": [],
+      "issueDate": "2023-04-01T00:00:00",
+      "dueDate": "2023-04-01T00:00:00",
+      "currency": "GBP",
+      "currencyRate": 1,
+      "lineItems": [
+        {
+          "description": "monthly office rent",
+          "unitAmount": 1250,
+          "quantity": 1,
+          "discountAmount": 0,
+          "subTotal": 1250,
+          "taxAmount": 250,
+          "totalAmount": 1500,
+          "accountRef": {
+            "id": "41",
+            "name": "Rent Expense"
+          },
+          "taxRateRef": {
+            "id": "3_Bills",
+            "name": "20.0% S Bills",
+            "effectiveTaxRate": 20
+          },
+          "trackingCategoryRefs": [],
+          "tracking": {
+            "categoryRefs": [],
+            "isBilledTo": "Unknown",
+            "isRebilledTo": "NotApplicable"
+          },
+          "isDirectCost": false
+        }
+      ],
+      "withholdingTax": [],
+      "status": "Open",
+      "subTotal": 1250,
+      "taxAmount": 250,
+      "totalAmount": 1500,
+      "amountDue": 1500,
+      "modifiedDate": "2023-05-02T10:35:04Z",
+      "sourceModifiedDate": "2023-03-27T23:30:01Z",
+      "paymentAllocations": [],
+      "metadata": {
+        "isDeleted": false
+      }
+    },
+    # ...
+  ],
+  "pageNumber": 1,
+  "pageSize": 100,
+  "totalResults": 8,
+  "_links": {
+    "current": {
+      "href": "/companies/0f655a48-f6c2-43b4-857b-f2d6793f90b8/data/bills?page=1&pageSize=100&orderBy=-issueDate"
+    },
+    "self": {
+      "href": "/companies/0f655a48-f6c2-43b4-857b-f2d6793f90b8/data/bills"
+    }
+  }
+}
+```
 
-companies/{companyId}/data/accounts
+:::info View unpaid bills query
 
-Does Not call bankAccounts endpoint. Your own app could include functionality for creating an account, if one does not already exist.
+When the **View unpaid bills only toggle** is selected in the UI, the `&query=status=Open` query is appended to the request URL as a [Codat query string](/using-the-api/querying). This returns only unpaid bills.
+
+:::
 
 ### Bill pay demo app UI
 
@@ -78,13 +147,21 @@ The demo app provides functionality for making mock payments against bills. When
    
 3. Click **Pay Bill** to pay the total amount. You don't need to enter any card details to make a mock payment.
 
-### To Do: API requests
+### API: Pull bank accounts
 
-(At step 2, the app calls the *get bank accounts* endpoint using query parameters for account type and currency.
+At step 2 in "Make a mock payment", the demo app [retrieves the company's latest accounts](/accounting-api#/operations/list-accounts) and queries the results by account type and currency.
+
+```http
+ADD REQUEST HERE
+```
+
+### API: Post a Bill payment to the accounting platform
 
 When you make a mock payment, the demo app pushes a Bill payment to QuickBooks for the total amount of the bill. This reconciles the payment against the outstanding bill.
 
-(API: Post a Bill payment to the accounting platform)
+```http
+ADD REQUEST HERE
+```
 
 ### See that the payment was reconciled in QuickBooks
 
