@@ -19,9 +19,6 @@ To understand the underlying API requests that the app makes to Codat, review th
 Now you're going to see [Hosted Link](/auth-flow/authorize-hosted-link) in action. You'll follow the steps your customers would take to authorize access to their accounting data for use in your bill pay application.
 
 1. From the **Bill Pay** start screen, click **Get Started**.
-
-   ![bill-pay_app-start-screen](/img/use-cases/bill-pay/bill-pay_app-start-screen-get-started.png)
-
 2. Follow the instructions in the UI to:
    1. Create a company in Codat.
    2. Connect to **Intuit QuickBooks Sandbox**. 
@@ -31,6 +28,12 @@ Now you're going to see [Hosted Link](/auth-flow/authorize-hosted-link) in actio
 ![bill-pay_launch-bills-portal-screen](/img/use-cases/bill-pay/bill-pay_launch-bills-portal-screen.png)
 
 ### TO DO: API requests
+
+When you launch the  demo app, it pulls a list of paid and unpaid bills from your sandbox QuickBooks Online company.  
+
+```http title="List bills"
+/companies/<COMPANY_ID>/data/bills?page=1&pageSize=100&query=status=Open&orderBy=-issueDate
+```
 
 When the app loads, it makes a request to the Get Bills endpoint to retieve all paid and unpaid bills from your QBO Sandbox account. (Pulls accounts payable)
 Also calls the GET accounts endpoint to retrieve the bank accounts for mapping when you pay a bill.

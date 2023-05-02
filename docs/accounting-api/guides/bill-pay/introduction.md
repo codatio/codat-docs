@@ -63,14 +63,14 @@ Enable your customers to:
 - Your customers can see that payments were reconciled against bills as expected in their accounting platform.
 
 :::tip Invoices or bills?
-Codat's data model distinguishes between invoices where the company *owes money* and invoices where the company *is owed money*. If the company has received an invoice and owes money to someone else (accounts payable) we call this a Bill.
+Codat's data model distinguishes between invoices where the company *owes money* and invoices where the company *is owed money*. If the company has received an invoice and owes money to someone else (accounts payable) we call this a bill. In Codat's data model, a [Bill](/accounting-api#/schemas/Bill) is an itemised record of goods purchased from or services provided by a supplier.
 
 See [Invoices](/accounting-api#/schemas/Invoice) for the accounts receivable equivalent of bills.
 :::
 
 ### Use the hosted app
 
-Use the [hosted app](https://demo-bill-pay.vercel.app/) to quickly see the demo app in action without having to run the code locally.
+Use the [hosted app](https://demo-bill-pay.vercel.app/) to quickly see the demo app in action without having to run the code locally.¬
 
 ### TO DO - Bill pay demo process flow
 
