@@ -1,8 +1,4 @@
 .voteContainer {
-  // border: 1px solid var(--ifm-color-secondary-dark);
-  // border-radius: 4px;
-  // background-color: var(--ifm-alert-background-color);
-  // padding: 1em;
   text-align: center;
   width: 100%;
 }
@@ -29,7 +25,15 @@
 }
 
 .vote {
-  margin-right: 1em;
   opacity: 0.5;
   cursor: pointer;
+
+  &:not(:last-child) {
+    margin-right: 1em;
+  }
+}
+
+.feedback {
+  margin-top: 0.5em;
+  opacity: 0.8;
 }
