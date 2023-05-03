@@ -33,34 +33,20 @@ Codat provides three webhooks which you can subscribe to:
 Codat will **not** be able to accept any new requests to initiate another sync whilst a sync is ongoing.
 :::
 
+```
+{ "companyId": "71c1fdae-e104-4668-8a4c-7f795aafc2a4", "syncId": "ea86bb15-7a89-4b2d-a18d-626cc0e28137", "syncStatusCode": 1000, "syncStatus": "Stated", "errorMessage": "", "syncExceptionMessage": "", "syncUtc": "2022-08-03T01:30:09.0797213Z", "dataPushed": false }
+```
+
 - `Sync Failed`: This will be triggered if there are any failures during the sync process.
 
-```curl -X 'POST' \
-  'https://api.codat.io/rules' \
-  -H 'accept: application/json' \
-  -H 'Authorization: xxx' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "type": "sync-failed",
-  "notifiers": {
-    "webhook": "https://api.dev.v2.infinnitytest.com/api/codat/callback/sync-error"
-  }
-}'
+```
+{ "companyId": "71c1fdae-e104-4668-8a4c-7f795aafc2a4", "syncId": "ea86bb15-7a89-4b2d-a18d-626cc0e28137", "syncStatusCode": 4000, "syncStatus": "Failed", "errorMessage": "", "syncExceptionMessage": "", "syncUtc": "2022-08-03T01:30:09.0797213Z", "dataPushed": false }
 ```
 
 - `Sync Completed`: This will be triggered when a sync completes without any failures.
 
-```curl -X 'POST' \
-  'https://api.codat.io/rules' \
-  -H 'accept: application/json' \
-  -H 'Authorization: xxxxxx' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "type": "sync-complete",
-  "notifiers": {
-    "webhook": "https://api.dev.v2.infinnitytest.com/api/codat/callback/sync-complete"
-  }
-}'
+```
+{ "companyId": "71c1fdae-e104-4668-8a4c-7f795aafc2a4", "syncId": "ea86bb15-7a89-4b2d-a18d-626cc0e28137", "syncStatusCode": 2000, "syncStatus": "Complete", "errorMessage": "", "syncExceptionMessage": "", "syncUtc": "2022-08-03T01:30:09.0797213Z", "dataPushed": true }
 ```
 
 ### Sync status
