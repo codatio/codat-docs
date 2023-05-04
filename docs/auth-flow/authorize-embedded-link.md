@@ -103,10 +103,11 @@ From the response to company creation, retain the `companyId` parameter. Then, i
 <TabItem value="next" label="Next.js">
 
 ```js
-import dynamic from "next/dynamic"; // Use dynamic imports instead for NextJS
-
+import dynamic from 'next/dynamic'; // Use dynamic imports instead for NextJS
+import '@codat/link-sdk/index.css';
+  
 const CodatLink = dynamic(
-  () => import("@codat/link-sdk").then((mod) => mod.CodatLink),
+  () => import('@codat/link-sdk').then((mod) => mod.CodatLink),
   { ssr: false }
 );
 
