@@ -32,9 +32,9 @@ Our `/options` endpoint exposes which fields are required to be pushed for a spe
 
 You can retrieve the options for a given data type by calling:
 
-`GET /companies/{companyId}/connections/{connectionId}/dataTypes/{dataType}/options/POST` 
+`GET /companies/{companyId}/connections/{connectionId}/options/{dataType}` 
 
-<a class="external" href="https://docs.codat.io/reference/get_companies-companyid-connections-connectionid-datatypes-datatype-options-put" target="_blank">See the API reference</a>.
+<a class="external" href="https://docs.codat.io/codat-api#/operations/get-create-update-model-options-by-data-type" target="_blank">See the API reference</a>.
 
 ```json title="Response from this endpoint for the accounts dataset"
 {
