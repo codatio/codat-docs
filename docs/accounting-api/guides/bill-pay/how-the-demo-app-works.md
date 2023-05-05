@@ -4,9 +4,18 @@ sidebar_label: "How it works"
 description: "This deep dive explains the functionality of the Bill Pay demo app."
 ---
 
+### Bill pay demo process flow
+
+The following diagram shows how the bill pay demo app works.
+
 ### API: Pull accounts payable
 
 When launched, the demo app [retrives a list of all bills](/accounting-api#/operations/list-bills) from your sandbox QuickBooks Online company, in descending order of issue date.
+
+<details>
+  <summary>Expanding box</summary>
+Text goes here
+</details>
 
 ```http title="List bills request"
 GET https://<YOUR_DOMAIN>/companies/<COMPANY_ID>/data/bills?page=1&pageSize=100&orderBy=-issueDate

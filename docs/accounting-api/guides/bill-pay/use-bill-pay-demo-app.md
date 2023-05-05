@@ -63,7 +63,6 @@ The demo app provides functionality for making mock payments against bills. When
    
 3. Click **Pay Bill** to pay the total amount. You don't need to enter any card details to make a mock payment.
 
-
 ### See that the payment was reconciled in QuickBooks
 
 Next, check that your payment was reconciled correctly in QuickBooks Online.

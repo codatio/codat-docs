@@ -70,25 +70,7 @@ See [Invoices](/accounting-api#/schemas/Invoice) for the accounts receivable equ
 
 ### Use the hosted app
 
-Use the [hosted app](https://demo-bill-pay.vercel.app/) to quickly see the demo app in action without having to run the code locally.¬
-
-### TO DO - Bill pay demo process flow
-
-The following diagram shows how the bill pay demo app works.
-
-``` mermaid
-  sequenceDiagram
-    participant frontend as Lending Frontend 
-    participant backend as Lending Backend 
-    participant codat as Codat API
-    frontend ->> backend: Foobar
-    backend ->> codat: Foobar
-    codat ->> backend: Foobar
-    backend ->> backend: Foobar
-    backend ->> frontend: Foobar
-```
-
-(Sequence diagram - flow of data between front-end and back-end. Show the order things happen in)
+Use the [hosted app](https://demo-bill-pay.vercel.app/) to quickly see the demo app in action without having to run the code locally.
 
 ### Recap
 
