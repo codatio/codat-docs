@@ -128,6 +128,7 @@ module.exports = [
       "assess/excel/overview",
       "assess/excel/assess-report",
       "assess/excel/audit-report",
+      { type: "link", label: "Metrics", href: "assess/excel/metrics.xlsx" },
     ],
   },
   'assess/troubleshooting',
