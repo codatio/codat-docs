@@ -21,7 +21,6 @@ Only one request will be processed at a time per SMB company and per report type
 
 - [Assess Report](/assess/excel/assess-report)
 - [Audit Report](/assess/excel/audit-report)
-- [Metrics Template](/documents/assess-metrics.xlsx)
 
 ## Parameters
 
