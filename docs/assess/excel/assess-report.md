@@ -27,6 +27,3 @@ The Assess Report can be generated via API or through [Codat's Portal](/assess/p
 
 ## Using the report
 We recommend creating a pivot table and grouping by category Level 1-5 to replicate a financial statement view. Users can also create formulas for financial ratios.
-
-
-
