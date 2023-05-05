@@ -11,12 +11,13 @@ Our enhanced financials Excel report is designed to give you the same data you w
 This report contains an output of the following feature:
 
 - [Enhanced profit and loss accounts](/assess/enhanced-financials/profit-and-loss-accounts)
+- [Enhanced balance sheet accounts](/assess/enhanced-financials/balance-sheet-accounts)
 
 ## Prerequisites
 
 The report contains data based on the data types you have enabled. If a data type is missing, the data associated with it will be omitted.
 
-The report requires an accounting integration with the following datatypes enabled:
+This report requires an accounting integration with the following datatypes enabled:
 
 - Accounts
 - Profit and Loss
@@ -28,4 +29,10 @@ The Assess Report can be generated via API or through [Codat's Portal](/assess/p
 
 ## Using the report
 
-We have created a [Metrics Template](/documents/assess-metrics.xlsx) that users can use to paste data from this report to calculate key financial metrics.  Users can also create a pivot table and group by category Level 1-5 to replicate a financial statement view.
+We recommend creating a pivot table and grouping by category Level 1-5 to replicate a financial statement view.  Users can also create formulas for financial ratios.
+
+### Metrics template
+
+We have created a [Metrics Template](/documents/assess-metrics.xlsx) that allows users to paste data from the enhanced financials report to calculate key financial metrics and ratios.
+
+![Metrics Template](/img/assess/metrics-template.png)
