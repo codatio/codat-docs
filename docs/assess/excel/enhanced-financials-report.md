@@ -15,7 +15,7 @@ The report contains the output of the following features:
 
 ## Prerequisites
 
-The report contains data based on the data types you have enabled. If a data type is missing, the data associated with it will be omitted.
+The Enhanced Financials Excel report contains data from the currently enabled data types. If a data type is not enabled, the data associated with it is omitted.
 
 The report requires an accounting integration with the following data types enabled:
 
