@@ -20,10 +20,9 @@ This guide is for developers building bill pay and other Accounts Payable applic
 
 ### What you'll need
 
-To access and use the bill pay demo app, you need to:
+To access and use the bill pay demo app, you'll need:
 
-- Have a [QuickBooks Online](https://quickbooks.intuit.com/) account.
-- Set up the **QuickBooks Online Sandbox** integration (explained in [Set up and run the bill pay demo app](/accounting-api/guides/bill-pay/setting-up)).
+- 
 - Enable **Fetch on first link** for the Bills, Bill Payments, and Companies data types in the Codat Portal.
 
 To install and run the demo app locally, you'll need:
@@ -44,23 +43,21 @@ The demo app illustrates three common tasks in a typical bill pay workflow, as f
 
 - Hosted Link handles user authorization and accounting software connection.
 
-### 2 - Display Accounts Payable data
+### 2 - Visualize bills
 
 Enable your customers to:
 
 - Access a consolidated view of paid and unpaid bills, standardized to Codat's accounting data model.
 - Get an accurate picture of what they owe, including bill amounts, due dates, line items, suppliers, and more.
 
-### 3 - Retrieve accounts for payment reconciliation
+### 3 - Paying bills
 
 Enable your customers to:
 
 - Select a mapping account: the account the bill payment should originate from.
 - Pay bills, which triggers the demo app to push bill payments to Codat. 
 
-### 4 - Reconcile payments
-
-- Your customers can see that payments were reconciled against bills as expected in their accounting platform.
+Your customers can see that payments were reconciled against bills as expected in their accounting platform.
 
 :::tip Invoices or bills?
 Codat's data model distinguishes between invoices where the company *owes money* and invoices where the company *is owed money*. If the company has received an invoice and owes money to someone else (accounts payable) we call this a bill. In Codat's data model, a [Bill](/accounting-api#/schemas/Bill) is an itemised record of goods purchased from or services provided by a supplier.

@@ -1,6 +1,6 @@
 ---
-title: "Use the bill pay demo app"
-sidebar_label: "Use the demo app"
+title: "Use the hosted bill pay demo app"
+sidebar_label: "Use the hosted app"
 description: "See Hosted Link in action, then use the demo app to view bills and make mock payments. See how payments are reconciled in QuickBooks to close the loop."
 ---
 
@@ -55,13 +55,13 @@ The demo app provides functionality for making mock payments against bills. When
 
 1. Click **View** next to an unpaid bill, then click **Pay Bill**.
 
-2. Choose an account from the **Account name** dropdown. This is the "mapping account" in your sandbox QuickBooks Online company&mdash;the account the payment should be reconciled to.
+2. Choose an account from the **Account name** dropdown. This is the account to which you want to assign the bill payment.
    
-   :::info Accounts
+   :::info Accounts displayed
    Only bank accounts in the same currency as the bill are displayed.
    :::
    
-3. Click **Pay Bill** to pay the total amount. You don't need to enter any card details to make a mock payment.
+3. Click **Pay Bill** to pay the total amount.
 
 ### See that the payment was reconciled in QuickBooks
 

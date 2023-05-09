@@ -13,13 +13,13 @@ import TabItem from "@theme/TabItem";
 - Configure Link to use the demo app's redirect URL
 - Install the demo app and run it on your local machine
 
-###  Set up the QuickBooks Online Sandbox integration
+###  Set up QuickBooks Online
 
-Before you can use the bill pay demo app, you first need to set up the QuickBooks Online Sandbox integration.
+Set up the QuickBooks Online Sandbox integration to access a realistic set of example bills to use with the demo app. Before setting up the integration, you'll need to sign up for a [QuickBooks Online](https://quickbooks.intuit.com/) account.
 
 :::info Why QuickBooks Online?
 
-We've chosen to use QuickBooks Online because it provides access to sandbox accounts payable data, like bills and bill payments, and also offers free trial accounts. You could use the demo app with a different Codat integration, if you prefer.
+We've chosen QuickBooks Online for this demo guide because it provides easy access to sandbox data through a free trial account. You can use the demo app with a different integration, such as the Codat sandbox, if you prefer.
 
 :::
 
@@ -35,7 +35,6 @@ We've chosen to use QuickBooks Online because it provides access to sandbox acco
 For full instructions, see [Set up the QuickBooks Online integration](/integrations/accounting/quickbooksonline/accounting-quickbooksonline-new-setup).
 
 Your QuickBooks Online account gives you access to a US sandbox company for testing purposes. You can open this company and take a look at some bills, bill payments, and other relevant sandbox data. You'll access some of this data later in this guide.
-
 
 ###  Configure Link to use the demo app's redirect URL
 
@@ -57,41 +56,41 @@ Your QuickBooks Online account gives you access to a US sandbox company for test
    If you're using the hosted app, replace `<YOUR_DOMAIN>` with `demo-bill-pay.vercel.app`
    
    </TabItem>
-   </Tabs>
-   
+   </Tabs>   
 
 ###  Install and run the demo app locally
 
-To run the demo app on your local machine, you'll need to have `npm` version 16.9.0 installed.
+To run the demo app on your local machine:
 
 1. Clone the demo app repository to your local machine:
 
-   ```bash
+   ```sh
    git clone https://github.com/codatio/demo-bill-pay.git
    ```
 
 2. On the command line, install the project dependencies:
 
-   ```bash
+   ```sh
    npm install
    ```
-
-3. Create a `.env` file in the project's root directory containing the following text:
-
+   
+3. Copy the `.env.example` file in the root directory and rename it to `.env`.
+4. Edit the contents of the `.env` file as follows:
+   
    ```
    CODAT_AUTH_HEADER="<YOUR_AUTH_HEADER>"
    ```
-   Replace `<YOUR_AUTH_HEADER>` with the value of your authorization header from the Codat Portal. To find it, go to **Developers > API keys**, then copy your authorization header from the relevant column.
+   Replace `<YOUR_AUTH_HEADER>` with your authorization header from the Codat Portal. To find your auth header, go to **Developers > API keys**, then copy your authorization header from the relevant column.
 
-4. Run the app:
+5. Run the app:
 
-   ```bash
+   ```sh
    npm run dev
    ```
 
-5. When the app is running, open [https://localhost:3000](https://localhost:3000) in your browser.
+6. When the app is running, open [https://localhost:3000](https://localhost:3000) in your browser.
 
-6. You'll see the **Bill Pay** start screen:
+7. You'll see the **Bill Pay** start screen:
 
    ![bill-pay_app-start-screen-get-started](/img/use-cases/bill-pay/bill-pay_app-start-screen-get-started.png)
 

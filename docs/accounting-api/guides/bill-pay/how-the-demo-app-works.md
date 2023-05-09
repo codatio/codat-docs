@@ -1,12 +1,43 @@
 ---
 title: "How the demo app works"
 sidebar_label: "How it works"
-description: "This deep dive explains the functionality of the Bill Pay demo app."
+description: "Get a deep dive into the functionality of the Bill Pay demo app."
 ---
 
-### Bill pay demo process flow
+Now you're ready to explore the functionality of the bill pay demo app in more depth. The user flow diagram describes the app's functionality at a high level, while the API requests document the flow of data between the app and Codat's Accounting API.
 
-The following diagram shows how the bill pay demo app works.
+### Bill pay user flow
+
+```mermaid
+sequenceDiagram
+    participant user as User
+    participant backend as Demo App 
+    participant codat as Codat API
+    
+    user ->> backend: Launches bill pay app
+    backend ->> codat: Fetches Bills
+    codat -->> backend: Bills
+    backend ->> codat: Fetches Accounts
+    codat -->> backend: Accounts (banking only)
+    backend ->> user: Views paid/unpaid bills
+
+    rect rgb(189, 219, 249)
+    note right of user: Pay a bill          
+    user ->> backend: Selects a bill to pay
+    backend ->> user: Bill payment dialog
+    user ->> backend: Selects account to assign bill payment to
+    user ->> backend: Pays bill & submits bill payment
+    end
+
+    backend ->> codat: Creates Bill payment
+    codat -->> backend: Push operation
+    loop status != success
+        backend ->> codat: Get push operation
+        codat ->> backend: Push operation status
+    end
+    backend ->> backend: Update bill status
+    backend ->> user: Bill shown as paid
+```
 
 ### API: Pull accounts payable
 
