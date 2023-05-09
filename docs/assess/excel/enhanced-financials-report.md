@@ -6,7 +6,7 @@ createdAt: "2022-10-18T08:18:51.069Z"
 updatedAt: "2023-05-05T12:00:00.000Z"
 ---
 
-Our enhanced financials Excel report is designed to give you the same data you would get via the API.  You can use this report to test some companies and familiarise yourself with the data before building to the equivalent API endpoints.
+Our Enhanced Financials Excel report gives you the same data you'd get from the [Enhanced Financials endpoints](/assess/enhanced-financials/overview), but in an Excel workbook.  You can use the report to test some companies and familiarise yourself with the data before building to the equivalent API endpoints.
 
 This report contains an output of the following feature:
 
