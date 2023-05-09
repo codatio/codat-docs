@@ -15,13 +15,13 @@ The report contains the output of the following features:
 
 ## Prerequisites
 
-The Enhanced Financials Excel report contains data from the currently enabled data types.  If a data type is not enabled, the data associated with it is omitted.
-
-The report requires an accounting integration with the following data types enabled:
+The Enhanced Financials Excel report requires a company to have both an accounting connection and the following datatypes to be synced:
 
 - Accounts
 - Balance Sheet
 - Profit and Loss
+
+If these requirements are not met and empty Excel workbook will be returned.
 
 ## Generating the report
 
