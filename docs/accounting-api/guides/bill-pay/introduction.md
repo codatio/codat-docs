@@ -1,5 +1,5 @@
 ---
-title: "Our bill pay guide"
+title: "Bill pay demo app guide"
 sidebar_label: "Introduction"
 description: "Use this guide and the accompanying demo app to build solutions that streamline your customers' Accounts Payable processes"
 ---
@@ -20,18 +20,11 @@ This guide is for developers building bill pay and other Accounts Payable applic
 
 ### What you'll need
 
-To access and use the bill pay demo app, you'll need:
+The demo app works with sandbox data synced from Codat's Accounting API. To access this data, you must enable **Fetch on first link** for the Bills, Bill Payments, and Companies data types in the Codat Portal.
 
-- 
-- Enable **Fetch on first link** for the Bills, Bill Payments, and Companies data types in the Codat Portal.
+npm version 16.9.0 is required to [run the demo app locally](/accounting-api/guides/bill-pay/)
 
-To install and run the demo app locally, you'll need:
-
-- npm version 16.9.0
-- An IDE or text editor
-- A local Git installation
-
-You can [use the hosted app](#use-the-hosted-app) as an alternative to hosted installation.
+You can [use the hosted app](#use-the-hosted-app) as an alternative.
 
 ### ✔️ Dive into the demo app...
 
@@ -79,4 +72,4 @@ You've understood the functionality of the bill pay demo app and what you'll nee
 
 Now that you know the focus and purpose of our demo app and its guide:
 
-- [Set up and run the bill pay demo app](/accounting-api/guides/bill-pay/setting-up)
+- [Set up and run the bill pay demo app](/accounting-api/guides/bill-pay/run-demo-app-locally)

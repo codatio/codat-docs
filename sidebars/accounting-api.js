@@ -22,8 +22,8 @@ module.exports = [
         collapsed: true,
         items: [
           "accounting-api/guides/bill-pay/introduction",
-          "accounting-api/guides/bill-pay/setting-up",
           "accounting-api/guides/bill-pay/use-bill-pay-demo-app",
+          "accounting-api/guides/bill-pay/run-demo-app-locally",
           "accounting-api/guides/bill-pay/how-the-demo-app-works",
         ],
       },

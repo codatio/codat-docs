@@ -1,6 +1,6 @@
 ---
-title: "Set up and run the bill pay demo app"
-sidebar_label: "Set up and run"
+title: "Run the bill pay demo app locally"
+sidebar_label: "Run the app locally"
 description: "Prepare your Codat instance, choose an installation method, and run the demo app"
 ---
 
