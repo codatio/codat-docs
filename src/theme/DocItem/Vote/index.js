@@ -23,7 +23,7 @@ const VoteResponse = ({vote}) => {
   if(isPositive(vote)) {
     return <div className={styles.feedback}>Thanks for your feedback!</div>
   }
-  return <div className={styles.feedback}>Thanks for your feedback. <a href="https://github.com/codatio/codat-docs/issues" target="_blank">You can raise an issue here</a>.</div>
+  return <div className={styles.feedback}>Thanks for your feedback. <a href="https://github.com/codatio/codat-docs/issues/new" target="_blank">You can raise an issue here</a>.</div>
 }
 
 const Vote = (props) => {
