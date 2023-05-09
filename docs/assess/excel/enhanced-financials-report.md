@@ -8,7 +8,7 @@ updatedAt: "2023-05-05T12:00:00.000Z"
 
 Our Enhanced Financials Excel report gives you the same data you'd get from the [Enhanced Financials endpoints](/assess/enhanced-financials/overview), but in an Excel workbook.  You can use the report to test some companies and familiarise yourself with the data before building to the equivalent API endpoints.
 
-This report contains an output of the following feature:
+The report contains the output of the following features:
 
 - [Enhanced profit and loss accounts](/assess/enhanced-financials/profit-and-loss-accounts)
 - [Enhanced balance sheet accounts](/assess/enhanced-financials/balance-sheet-accounts)
