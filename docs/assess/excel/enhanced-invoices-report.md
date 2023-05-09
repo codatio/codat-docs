@@ -1,9 +1,9 @@
 ---
 title: "Enhanced Invoices Excel Report"
 description: "Download the Enhanced Invoices report to Excel"
-sidebar_label: "Enhanced Financials report"
+sidebar_label: "Enhanced Invoices report"
 createdAt: "2023-05-09T11:00:00.000Z"
-updatedAt: "2023-05-09T11:00:00.000Z"
+updatedAt: "2023-05-09T11:45:00.000Z"
 ---
 
 Our Enhanced Invoices Excel report gives you the same data you'd get from the [Enhanced Invoices](/assess/enhanced-invoices/overview) endpoints, but in an Excel workbook.  You can use the report to test some companies and familiarise yourself with the data before building to the equivalent API endpoints.
