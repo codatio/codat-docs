@@ -33,6 +33,6 @@ To get the most out of the report, try creating a pivot table and grouping the d
 
 ### Metrics template
 
-We have created a [Metrics Template](/documents/assess-metrics.xlsx) that allows users to paste data from the enhanced financials report to calculate key financial metrics and ratios.
+We've also created a [Metrics Template Excel file](/documents/assess-metrics.xlsx). You can paste data into this file from the Enhanced Financials report to calculate key financial metrics and ratios.
 
 ![Metrics Template](/img/assess/metrics-template.png)
