@@ -17,7 +17,7 @@ This report contains an output of the following feature:
 
 The report contains data based on the data types you have enabled. If a data type is missing, the data associated with it will be omitted.
 
-This report requires an accounting integration with the following datatypes enabled:
+The report requires an accounting integration with the following data types enabled:
 
 - Accounts
 - Profit and Loss
