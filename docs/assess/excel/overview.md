@@ -1,6 +1,6 @@
 ---
-title: "Assess reports in excel"
-description: "Describes the process and endpoints for the generation and download of Assess excel reports"
+title: "Assess reports in Excel"
+description: "Describes the process and endpoints for the generation and download of Assess Excel reports"
 sidebar_label: "Overview"
 createdAt: "2022-10-18T10:05:18.826Z"
 updatedAt: "2022-11-02T14:45:30.043Z"
@@ -21,7 +21,6 @@ Only one request will be processed at a time per SMB company and per report type
 
 - [Assess Report](/assess/excel/assess-report)
 - [Audit Report](/assess/excel/audit-report)
-- [Metrics Template](/documents/assess-metrics.xlsx)
 
 ## Parameters
 

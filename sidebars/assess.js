@@ -128,6 +128,7 @@ module.exports = [
       "assess/excel/overview",
       "assess/excel/assess-report",
       "assess/excel/audit-report",
+      "assess/excel/enhanced-financials-report",
     ],
   },
   'assess/troubleshooting',
