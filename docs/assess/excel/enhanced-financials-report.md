@@ -21,7 +21,7 @@ The Enhanced Financials Excel report requires a company to have both an accounti
 - Balance Sheet
 - Profit and Loss
 
-If these requirements are not met and empty Excel workbook will be returned.
+If these requirements are not met an empty Excel workbook will be returned.
 
 ## Generating the report
 
