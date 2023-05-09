@@ -1,6 +1,6 @@
 ---
 title: "Enhanced Financials Report"
-description: "Download the enhanced financials report to Excel"
+description: "Download the Enhanced Financials report to Excel"
 sidebar_label: "Enhanced financials report"
 createdAt: "2022-10-18T08:18:51.069Z"
 updatedAt: "2023-05-05T12:00:00.000Z"
