@@ -25,7 +25,7 @@ The report requires an accounting integration with the following data types enab
 
 ## Generating the report
 
-The Assess Report can be generated via API or through [Codat's Portal](/assess/portal/overview#reports).  The [Excel reports](/assess/excel/overview) page describes how to generate and download the report via API.
+You can generate the Enhanced Financials Excel report using the API or the Codat Portal (for details, see [Reports](/assess/portal/overview#reports)). The [Assess reports in Excel](/assess/excel/overview) article describes how to generate and download the report using the API.
 
 ## Using the report
 
