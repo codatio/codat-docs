@@ -20,8 +20,8 @@ The Enhanced Financials Excel report contains data from the currently enabled da
 The report requires an accounting integration with the following data types enabled:
 
 - Accounts
-- Profit and Loss
 - Balance Sheet
+- Profit and Loss
 
 ## Generating the report
 
