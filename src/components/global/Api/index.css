@@ -42,6 +42,20 @@ html[data-theme="dark"] .token.number {
   color: var(--font-ui);
 }*/
 
+.sl-badge,
+.sl-rounded-lg,
+.sl-button {
+  border-radius: 4px;
+}
+
+.sl-bg-primary {
+   background-color: var(--color-link) !important;
+}
+
+.sl-text-muted {
+  color: var(--font-ui);
+}
+
 .JsonSchemaViewer {
   border: 1px solid var(--token-secondary-bg-c-alt);
   border-radius: 4px;
