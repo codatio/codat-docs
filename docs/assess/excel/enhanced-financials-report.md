@@ -15,7 +15,7 @@ The report contains the output of the following features:
 
 ## Prerequisites
 
-The Enhanced Financials Excel report requires a company to have both an accounting connection and the following datatypes to be synced:
+The Enhanced Financials Excel report requires a company to have both an accounting connection and the following data types synced:
 
 - Accounts
 - Balance Sheet
