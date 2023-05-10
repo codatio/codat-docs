@@ -72,6 +72,14 @@ html[data-theme="dark"] .token.number {
   color: var(--font-ui) !important;
 }
 
+blockquote {
+  border: none !important;
+}
+
+blockquote > div {
+  border: 1px solid var(--token-secondary-bg-c-alt);
+}
+
 .JsonSchemaViewer {
   border: 1px solid var(--token-secondary-bg-c-alt);
   border-radius: 4px;
