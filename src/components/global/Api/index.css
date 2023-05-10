@@ -74,6 +74,7 @@ html[data-theme="dark"] .token.number {
 
 blockquote {
   border: none !important;
+  background: none !important;
 }
 
 blockquote > div {
