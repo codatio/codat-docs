@@ -58,7 +58,7 @@ html[data-theme="dark"] .token.number {
 }
 
 .sl-text-muted {
-  color: var(--font-ui);
+  color: var(--font-ui) !important;
 }
 
 .JsonSchemaViewer {
