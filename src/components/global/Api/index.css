@@ -42,14 +42,49 @@ html[data-theme="dark"] .token.number {
   color: var(--font-ui);
 }*/
 
+/* Hide v1.0 badge on API page */
+#mosaic-provider-react-aria-0-1 > div > div > div > div.sl-overflow-y-auto.sl-flex-1.sl-w-full.sl-px-24.sl-bg-canvas > div > div > div.sl-relative.sl-mb-5 > span {
+  display: none !important; 
+}
+
 .sl-badge {
-  display: none !important;
+  margin-bottom: 5px;
+}
+
+.sl-badge,
+.sl-rounded,
+.sl-rounded-lg,
+.sl-rounded-xl,
+.sl-rounded-full,
+.sl-button {
+  border-radius: 4px !important;
+}
+
+.sl-button {
+  cursor: pointer !important;
+}
+
+.sl-bg-primary {
+   background-color: var(--color-link) !important;
+}
+
+.sl-text-muted {
+  color: var(--font-ui) !important;
+}
+
+blockquote {
+  border: none !important;
+  background: none !important;
+}
+
+blockquote > div {
+  border: 1px solid var(--token-secondary-bg-c-alt) !important;
 }
 
 .JsonSchemaViewer {
   border: 1px solid var(--token-secondary-bg-c-alt);
   border-radius: 4px;
-  padding: 0.5em;
+  padding: 0.75em 1.5em;
   margin-top: 1em;
 }
 
@@ -59,6 +94,10 @@ html[data-theme="dark"] .token.number {
 
 .sl-max-w-full.sl-break-all.sl-px-1.sl-bg-canvas-tint.sl-text-muted.sl-rounded.sl-border {
   padding: 3px 5px;
+}
+
+.sl-product-image {
+  border: 1px solid var(--token-secondary-bg-c-alt);
 }
 
 /* --------- Mobile ---------------- */
