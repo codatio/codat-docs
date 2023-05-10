@@ -43,7 +43,7 @@ html[data-theme="dark"] .token.number {
 }*/
 
 /* Hide v1.0 badge on API page */
-.sl-badge.sl-max-w-full.sl-h-xs.sl-text-paragraph-tiny.sl-whitespace-nowrap.sl-px-1.5.sl-py-0.5.sl-bg-canvas-100.sl-text-paragraph.sl-rounded-full.sl-border-input.sl-border-0 {
+#mosaic-provider-react-aria-0-1 > div > div > div > div.sl-overflow-y-auto.sl-flex-1.sl-w-full.sl-px-24.sl-bg-canvas > div > div > div.sl-relative.sl-mb-5 > span {
   display: none !important; 
 }
 
@@ -58,6 +58,10 @@ html[data-theme="dark"] .token.number {
 .sl-rounded-full,
 .sl-button {
   border-radius: 4px !important;
+}
+
+.sl-button {
+  cursor: pointer !important;
 }
 
 .sl-bg-primary {
