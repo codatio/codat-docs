@@ -57,3 +57,15 @@ You can use Sync for Expenses alongside all Codat use cases or products.
 For example, if you are issuing credit cards, using Codat’s Assess product would allow you to determine the risk associated with the company that has the same `companyId` and API key.
 
 Likewise, you can use `billPayments` to retrieve a list of bills from your customer’s accounting software and enable them to pay these and reconcile their payments.
+
+### Can I use the Sandbox account to test a sync when implementing Sync for Expenses?
+Currently we do not support Sandbox as a destination platform when establishing an accounting connection. This is because it is hard to see data which has been pushed and our Codat sandbox has been designed for pulling data. We recommend signing up to a free QuickBooks/Xero developer account to test syncs, which will give you sandbox access as well.
+
+For more information on how to set up your accounting platform integration take a look at the [following documentation](https://docs.codat.io/integrations/accounting/overview).
+
+### Is the transaction ID unique to each connected company? 
+Each transaction id is unique to a client's company but they aren't unique across connections. We currently only support a single accounting connection per company. If a company wants to swap their accounting software or would like to link to a different entity we recommend creating a new company. 
+
+### What can we reuse from a Coat Bill Pay build for Sync for Expenses?
+You could re-use the chart of accounts, tracking categories and tax rates from our Accounting API. However, we recommend using the [mappingOptions](https://docs.codat.io/sync-for-expenses-api#/operations/get-mapping-options) for expenses because of the transaction type support. 
+Authentication, company creation and the Accounting connection linking journeys can be reused between builds. This is because the companies can use the same Id between Codat products. 
