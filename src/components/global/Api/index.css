@@ -41,6 +41,12 @@ html[data-theme="dark"] .token.number {
 /*.sl-badge > div > div > div > span {
   color: var(--font-ui);
 }*/
+
+/* Hide v1.0 badge on API page */
+.sl-badge.sl-max-w-full.sl-h-xs.sl-text-paragraph-tiny.sl-whitespace-nowrap.sl-px-1.5.sl-py-0.5.sl-bg-canvas-100.sl-text-paragraph.sl-rounded-full.sl-border-input.sl-border-0 {
+  display: none !important; 
+}
+
 .sl-badge {
   margin-bottom: 5px;
 }
