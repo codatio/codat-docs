@@ -64,9 +64,9 @@ html[data-theme="dark"] .token.number {
   cursor: pointer !important;
 }
 
-/* .sl-bg-primary {
+button.sl-bg-primary {
    background-color: var(--color-link) !important;
-} */
+}
 
 .sl-text-muted {
   color: var(--font-ui) !important;
