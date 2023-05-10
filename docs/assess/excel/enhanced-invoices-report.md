@@ -25,6 +25,6 @@ You can generate the Enhanced Invoices Excel report using the API or the Codat P
 
 ## Using the report
 
-The report is ordered so the most recent invoices are at the top of the document.  Please note Excel is limited to one million rows of data, however this limitation does not apply to the [Enhanced Invoices API](/assess-api#/operations/get-enhanced-invoices-report).
+The report is ordered so the most recent invoices are at the top of the document.  Excel is limited to one million rows of data; however, this limitation does not apply to the [Enhanced Invoices API](/assess-api#/operations/get-enhanced-invoices-report).
 
 ![Enhanced Invoices Report](/img/assess/enhanced-invoices-blur.png "Enhanced Invoices Report")
