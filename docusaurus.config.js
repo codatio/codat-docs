@@ -131,7 +131,7 @@ module.exports = {
         routeBasePath: "/updates",
         blogSidebarCount: 8,
         blogSidebarTitle: "Latest updates",
-        editUrl: "https://github.com/codatio/codat-docs/edit/main/blog/",
+        editUrl: "https://github.com/codatio/codat-docs/edit/main/",
       },
     ],
     "@docusaurus/plugin-content-pages",
