@@ -41,6 +41,9 @@ html[data-theme="dark"] .token.number {
 /*.sl-badge > div > div > div > span {
   color: var(--font-ui);
 }*/
+.sl-badge {
+  margin-bottom: 5px;
+}
 
 .sl-badge,
 .sl-rounded-lg,
