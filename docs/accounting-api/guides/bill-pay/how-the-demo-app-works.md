@@ -6,7 +6,28 @@ description: "Get a deep dive into the functionality of the Bill Pay demo app."
 
 Now you're ready to explore the functionality of the bill pay demo app in more depth. The user flow diagram describes the app's functionality at a high level, while the API requests document the flow of data between the app and Codat's Accounting API.
 
-### Bill pay user flow
+Sections:
+
+- Connect the demo app to QuickBooks Online
+- View bills
+- Pay a bill
+
+
+
+### Understand the authorization process
+
+Using the demo app and Hosted Link, create a company and then authorize access to your sandbox data in QuickBooks Online. For a seamless user experience, we've customized the Hosted Link flow to use the same branding and colors as the demo app UI.
+
+1. From the **Bill Pay** start screen, click **Get Started**.
+2. Follow the instructions to:
+   1. Create a company in Codat.
+   2. Connect to **Intuit QuickBooks Sandbox** in the Hosted Link flow. This creates a data connection to QuickBooks Online.
+   3. Authorize the demo app to access data from your sandbox QuickBooks Online company.
+   4. When you've completed the Hosted Link flow, click **Launch Bills Portal** to open the demo app. Behind the scenes, the demo app redirects you to the redirect URL.
+
+
+
+### Bill pay user flow - split into 2 separate diagrams with explanations
 
 ```mermaid
 sequenceDiagram
@@ -143,3 +164,17 @@ When you make a mock payment, the demo app pushes a Bill payment to QuickBooks f
 ```http
 ADD REQUEST HERE
 ```
+### 💪 Ready for more?
+
+Try these suggestions to make the most of your experience with the demo app:
+
+- **Access sandbox data for a different region**  
+  You can set up a sandbox QuickBooks Online company that contains data for a different region, then run through the demo app guide again. For more information, see [Create and test with a sandbox company](https://developer.intuit.com/app/developer/qbo/docs/develop/sandboxes/manage-your-sandboxes) in the Intuit developer documentation.
+
+- **Expand the app's functionality**  
+  Go one step further and develop other features that make the Accounts Payable process simpler for your customers. For example, you could provide the ability to pay a bill using a credit note, or create a new bill from within your application.
+
+- **Further reading**  
+  Explore accounting automation topics in the [Codat Blog](https://www.codat.io/blog/category/accounting-automation/). 
+
+You can also find out more about the [Accounting API](/accounting-api/overview), or explore other [use cases](/usecases/overview).
