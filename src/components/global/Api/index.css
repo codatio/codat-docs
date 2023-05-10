@@ -57,7 +57,7 @@ html[data-theme="dark"] .token.number {
 .sl-rounded-xl,
 .sl-rounded-full,
 .sl-button {
-  border-radius: 4px;
+  border-radius: 4px !important;
 }
 
 .sl-bg-primary {
@@ -71,7 +71,7 @@ html[data-theme="dark"] .token.number {
 .JsonSchemaViewer {
   border: 1px solid var(--token-secondary-bg-c-alt);
   border-radius: 4px;
-  padding: 0.5em;
+  padding: 0.75em 1.5em;
   margin-top: 1em;
 }
 
@@ -81,6 +81,10 @@ html[data-theme="dark"] .token.number {
 
 .sl-max-w-full.sl-break-all.sl-px-1.sl-bg-canvas-tint.sl-text-muted.sl-rounded.sl-border {
   padding: 3px 5px;
+}
+
+.sl-product-image {
+  border: 1px solid var(--token-secondary-bg-c-alt);
 }
 
 /* --------- Mobile ---------------- */
