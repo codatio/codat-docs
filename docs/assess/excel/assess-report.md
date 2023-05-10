@@ -2,8 +2,6 @@
 title: "Assess report"
 description: "Download the enhanced financials reports to excel"
 sidebar_label: "Assess report"
-createdAt: "2022-10-18T08:18:51.069Z"
-updatedAt: "2022-11-25T15:12:37.179Z"
 ---
 Our Assess excel report is designed to give you the same data you would get via the API. You can use this report to test some companies and familiarise yourself with the data before building to the equivalent API endpoints. 
 

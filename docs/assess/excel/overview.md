@@ -2,8 +2,6 @@
 title: "Assess reports in Excel"
 description: "Describes the process and endpoints for the generation and download of Assess Excel reports"
 sidebar_label: "Overview"
-createdAt: "2022-10-18T10:05:18.826Z"
-updatedAt: "2022-11-02T14:45:30.043Z"
 ---
 
 The Excel reports endpoints are used to produce and download excel reports. For more information on available reports, see the [report types](#available-report-types) section.
