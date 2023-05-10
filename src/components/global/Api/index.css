@@ -48,6 +48,7 @@ html[data-theme="dark"] .token.number {
 .sl-badge,
 .sl-rounded,
 .sl-rounded-lg,
+.sl-rounded-xl,
 .sl-rounded-full,
 .sl-button {
   border-radius: 4px;
