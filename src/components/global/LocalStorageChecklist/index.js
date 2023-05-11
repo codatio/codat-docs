@@ -7,9 +7,9 @@ const camalize = (str) =>
 
 const genStorageKey = (prefix, item) => `${prefix}${camalize(item)}`
 
-const LocalStorageChecklist = ({prefix='list', items}) => {
+const LocalStorageChecklist = ({items, prefix='list'}) => {
   const [ itemKeys ] = useState(items.map(item => [item, genStorageKey(prefix, item)]))
-  const [ checkedKeys, setCheckedKeys ] = useState(localStorage.getItem(prefix)?.split(',') || [])
+  const [ checkedKeys, setCheckedKeys ] = useState(typeof window !== 'undefined' && localStorage.getItem(prefix)?.split(',') || [])
 
   const toggleItem = (key) => {
     if(checkedKeys?.length <= 0) { // no array

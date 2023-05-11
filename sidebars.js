@@ -26,8 +26,9 @@ module.exports = {
       className: "top-level-item introduction",
       items: [
         "introduction/first-steps",
-        "introduction/create-account",
+        "introduction/first-ten-minutes",
         "introduction/libraries",
+        "introduction/create-account",
         "introduction/migration",
         {
           type: "link",
