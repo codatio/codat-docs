@@ -1,5 +1,6 @@
 ---
-title: "Video guide: Your first ten mins"
+title: "Video guide: Your first ten minutes"
+sidebar_label: "Video guide: Your first ten mins"
 description: "From signing up to syncing data in 10 minutes."
 ---
 
