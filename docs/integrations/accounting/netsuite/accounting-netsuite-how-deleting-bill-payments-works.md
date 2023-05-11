@@ -1,6 +1,6 @@
 ---
 title: "How deleting Bill payments works"
-sidebar_label: "How deleting Bill payments works"
+sidebar_label: "Delete Bill payments"
 description: "Learn how deleting Bill payments works in NetSuite."
 ---
 
