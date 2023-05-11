@@ -27,8 +27,8 @@ module.exports = {
       items: [
         "introduction/first-steps",
         "introduction/first-ten-minutes",
-        "introduction/create-account",
         "introduction/libraries",
+        "introduction/create-account",
         "introduction/migration",
         {
           type: "link",
