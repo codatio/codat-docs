@@ -1,27 +1,25 @@
 ---
 title: "How the demo app works"
 sidebar_label: "How it works"
-description: "Get a deep dive into the functionality of the Bill Pay demo app"
+description: "A closer look at the functionality of the bill pay demo app"
 ---
 
-Now you're ready to explore the functionality of the bill pay demo app in more depth. The user flow diagrams describes the app's functionality at a high level, while the API requests document the flow of data between the app and Codat's Accounting API.
+Now you're ready to explore the functionality of the bill pay demo app in more depth. The user flow diagrams describe the demo app's functionality at a high level, while the example API calls show the exchange of data with the Codat API.
 
-## Connect the demo app to QuickBooks Online
+## Understand the authorization flow
 
-### Understand the authorization process
+The company creation feature and [authorization flow](/accounting-api/guides/bill-pay/use-bill-pay-demo-app#connect-the-demo-app-to-quickbooks-online) were built using the Common API and Hosted Link. For a seamless user experience, we customized the Hosted Link flow with the same branding and colors as the demo app UI - see [Customize Link](/auth-flow/customize/customize-link) for more details.
 
-Using the demo app and Hosted Link, create a company and then authorize access to your sandbox data in QuickBooks Online. For a seamless user experience, we've customized the Hosted Link flow to use the same branding and colors as the demo app UI.
+The main features are:
 
-1. From the **Bill Pay** start screen, click **Get Started**.
-2. Follow the instructions to:
-   1. Create a company in Codat.
-   2. Connect to **Intuit QuickBooks Sandbox** in the Hosted Link flow. This creates a data connection to QuickBooks Online.
-   3. Authorize the demo app to access data from your sandbox QuickBooks Online company.
-   4. When you've completed the Hosted Link flow, click **Launch Bills Portal** to open the demo app. Behind the scenes, the demo app redirects you to the redirect URL.
+- Creating a company to represent the user using the [Create company](/codat-api#/operations/create-company) endpoint. This returns a unique company ID and Link URL.
+- Redirecting the user to their chosen accounting platform (in this case, QuickBooks Online) via the Link URL. This opens the OAuth login window for the accounting platform, where the user can authenticate and authorize access to their accounting data. 
+- Creating a data connection to the accounting platform using the [Create connection](/codat-api#/operations/create-data-connection) endpoint.
+- When the company is successfully connected, redirecting the user to the demo app's redirect URL, as defined in the [Link settings](/auth-flow/customize/customize-link).
 
 ## View bills
 
-Intro
+The following diagram illustrates the user flow for viewing bills in the demo app UI.
 
 :::note User flow for viewing bills
 
@@ -44,7 +42,7 @@ sequenceDiagram
 
 ### API call: Fetch Bills
 
-When launched, the demo app [retrives a list of all bills](/accounting-api#/operations/list-bills) from your sandbox QuickBooks Online company, in descending order of issue date.
+When launched, the demo app [retrieves a list of all bills](/accounting-api#/operations/list-bills) from your sandbox QuickBooks Online company, in descending order of issue date.
 
 Here is an example request:
 
@@ -52,74 +50,52 @@ Here is an example request:
 GET https://api.codat.io/companies/<COMPANY_ID>/data/bills?page=1&pageSize=100&orderBy=-issueDate
 ```
 
-```json title="List bills response example"
+```json title="Example response for List bills (200)"
 {
-  "results": [
-    {
-      "id": "181",
-      "supplierRef": {
-        "id": "41",
-        "supplierName": "Mark Howard"
-      },
-      "purchaseOrderRefs": [],
-      "issueDate": "2023-04-01T00:00:00",
-      "dueDate": "2023-04-01T00:00:00",
-      "currency": "GBP",
-      "currencyRate": 1,
-      "lineItems": [
-        {
-          "description": "monthly office rent",
-          "unitAmount": 1250,
-          "quantity": 1,
-          "discountAmount": 0,
-          "subTotal": 1250,
-          "taxAmount": 250,
-          "totalAmount": 1500,
-          "accountRef": {
-            "id": "41",
-            "name": "Rent Expense"
-          },
-          "taxRateRef": {
-            "id": "3_Bills",
-            "name": "20.0% S Bills",
-            "effectiveTaxRate": 20
-          },
-          "trackingCategoryRefs": [],
-          "tracking": {
-            "categoryRefs": [],
-            "isBilledTo": "Unknown",
-            "isRebilledTo": "NotApplicable"
-          },
-          "isDirectCost": false
+    "results": [
+      {
+        "id": "181",
+        "supplierRef": {
+          "id": "41",
+          "supplierName": "Mac's Supply Store"
+        },
+        "purchaseOrderRefs": [],
+        "issueDate": "2023-04-01T00:00:00",
+        "dueDate": "2023-04-01T00:00:00",
+        "currency": "GBP",
+        "currencyRate": 1,
+        "lineItems": [
+          {
+            #...
+          }
+        ],
+        "withholdingTax": [],
+        "status": "Open",
+        "subTotal": 1250,
+        "taxAmount": 250,
+        "totalAmount": 1500,
+        "amountDue": 1500,
+        "modifiedDate": "2023-05-02T10:35:04Z",
+        "sourceModifiedDate": "2023-03-27T23:30:01Z",
+        "paymentAllocations": [],
+        "metadata": {
+          "isDeleted": false
         }
-      ],
-      "withholdingTax": [],
-      "status": "Open",
-      "subTotal": 1250,
-      "taxAmount": 250,
-      "totalAmount": 1500,
-      "amountDue": 1500,
-      "modifiedDate": "2023-05-02T10:35:04Z",
-      "sourceModifiedDate": "2023-03-27T23:30:01Z",
-      "paymentAllocations": [],
-      "metadata": {
-        "isDeleted": false
+      },
+      # ...
+    ],
+    "pageNumber": 1,
+    "pageSize": 100,
+    "totalResults": 8,
+    "_links": {
+      "current": {
+        "href": "/companies/0f655a48-f6c2-43b4-857b-f2d6793f90b8/data/bills?page=1&pageSize=100&orderBy=-issueDate"
+      },
+      "self": {
+        "href": "/companies/0f655a48-f6c2-43b4-857b-f2d6793f90b8/data/bills"
       }
-    },
-    # ...
-  ],
-  "pageNumber": 1,
-  "pageSize": 100,
-  "totalResults": 8,
-  "_links": {
-    "current": {
-      "href": "/companies/0f655a48-f6c2-43b4-857b-f2d6793f90b8/data/bills?page=1&pageSize=100&orderBy=-issueDate"
-    },
-    "self": {
-      "href": "/companies/0f655a48-f6c2-43b4-857b-f2d6793f90b8/data/bills"
     }
   }
-}
 ```
 
 :::info View unpaid bills query
@@ -128,13 +104,15 @@ When the **View unpaid bills only toggle** is selected in the UI, the `&query=st
 
 ### API call: Fetch accounts
 
-The demo app [fetches the company's latest accounts](/accounting-api#/operations/list-accounts) (banking accounts only). Here is an example request:
+When launched, the demo app [fetches the company's latest accounts](/accounting-api#/operations/list-accounts). The account name is displayed against its respective bill in the **Reference** column of the bills table.
+
+Here is an example request:
 
 ```http title="Pull accounts"
 GET https://codat.io/companies/<COMPANY_ID>/data/accounts
 ```
 
-```json title="Example response (200)"
+```json title="Example response for Pull accounts (200)"
 {
     "results": [
       {
@@ -175,9 +153,9 @@ GET https://codat.io/companies/<COMPANY_ID>/data/accounts
   }
 ```
 
-These accounts are displayed in the **Reference** column of the bills table.
-
 ## Pay a bill
+
+The following diagram illustrates the user flow for selecting and paying a bill in the demo app UI.
 
 :::note User flow for paying a bill
 
@@ -206,9 +184,9 @@ sequenceDiagram
 
 :::
 
-The bill remains in a `pending` status during the loop process.
+The bill remains in a `pending` status during the polling process.
 
-When selecting an account in the **Bill Payment** dialog, the **Account name** dropdown only displays bank accounts in the same currency as the bill. The account type is determined using a query parameter for `isBankAccount=true`. 
+When selecting an account in the **Bill Payment** dialog, the **Account name** dropdown only displays banking accounts in the same currency as the bill. The account type is determined using a query parameter for `isBankAccount=true`. 
 
 The Bill payment will be assigned to the selected account in your sandbox QuickBooks Online company.
 
@@ -261,4 +239,4 @@ Try these suggestions to make the most of your experience with the demo app:
 - **Further reading**  
   Explore accounting automation topics in the [Codat Blog](https://www.codat.io/blog/category/accounting-automation/). 
 
-You can also find out more about the [Accounting API](/accounting-api/overview), or explore other [use cases](/usecases/overview).
+Find out more about the [Accounting API](/accounting-api/overview) or explore our other [use cases](/usecases/overview).

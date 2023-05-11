@@ -1,24 +1,29 @@
 ---
 title: "Run the bill pay demo app locally"
 sidebar_label: "Run the app locally"
-description: "Prepare your Codat instance, choose an installation method, and run the demo app"
+description: "Learn how to set up the QuickBooks integration, configure Codat, and run the demo app on your local machine"
 ---
 
 ### 🚀 In this section, you will...
 
+- Set up Codat's QuickBooks Online integration
 - Configure Link to use the demo app's redirect URL
 - Install the demo app and run it on your local machine
+- Review the push history in the Codat Portal
 
 ### Prerequisites
 
+Before running the demo app locally:
+
 - In the Codat Portal, enable **Fetch on first link** for the Bills, Bill payments, and Companies data types.
 - Make sure that npm version 16.9.0 is installed on your machine.
-- Sign up for a QuickBooks Online account at <a href="https://quickbooks.intuit.com/" target="_blank">https://quickbooks.intuit.com</a>.
 - Set up the QuickBooks Online Sandbox integration in the Codat Portal (see the next section).
 
-###  Set up QuickBooks Online
+If you haven't already, sign up for a QuickBooks Online account.
 
-Set up the QuickBooks Online Sandbox integration to access a realistic set of example bills to use with the demo app. For a detailed guide, see [Set up the QuickBooks Online integration](/integrations/accounting/quickbooksonline/accounting-quickbooksonline-new-setup).
+###  Set up the QuickBooks Online integration
+
+Start by setting up the QuickBooks Online Sandbox integration. For a detailed guide, see [Set up the QuickBooks Online integration](/integrations/accounting/quickbooksonline/accounting-quickbooksonline-new-setup).
 
 :::info Why QuickBooks Online?
 We've chosen QuickBooks Online for this demo guide because it provides easy access to sandbox data through a free trial account. You can use the demo app with a different integration that supports pushing Bill payments, such as Codat sandbox, if you prefer.
@@ -40,7 +45,7 @@ We've chosen QuickBooks Online for this demo guide because it provides easy acce
 
 ###  Configure Link to use the demo app's redirect URL
 
-Next, set the redirect URL that's defined in the demo app as the Codat Redirect URL. This URL will redirect you to the **Connection Successful** screen after you've connected the app to an accounting package in the Hosted Link flow.
+Next, set the redirect URL defined in the demo app as the Codat Redirect URL. This URL redirects you to the **Connection Successful** screen after you've connected the app to an accounting package in the Hosted Link flow.
 
 1. Sign in to the Codat Portal.
 2. On the navigation bar, go to **Settings > Redirects** to view the [Redirects](https://app.codat.io/settings/redirects) page.
@@ -86,7 +91,7 @@ Next, set the redirect URL that's defined in the demo app as the Codat Redirect 
 
 8. Click **Get Started** and follow the on-screen instructions.
 
-You can now create a company, connect to your sandbox QuickBooks Online company, and start using the demo app to view and pay bills. For further instructions, see [Use the hosted bill pay demo app](/accounting-api/guides/bill-pay/use-bill-pay-demo-app).
+You can now create a company, connect to your sandbox QuickBooks Online company, and use the demo app to view and pay bills. For further instructions, see [Use the hosted bill pay demo app](/accounting-api/guides/bill-pay/use-bill-pay-demo-app).
 
 ### Review the push history in Codat
 
@@ -99,7 +104,7 @@ After paying a bill, you can check your pushed Bill payments are reflected in th
 
 ### Recap
 
-You set up the QuickBooks Online Sandbox integration and configured Codat to run the bill pay demo app. You also ran the demo app locally.
+You set up the QuickBooks Online Sandbox integration and configured Link with the demo app's redirect URL. You ran the demo app locally and completed the authorization flow.
 
 <hr />
 
