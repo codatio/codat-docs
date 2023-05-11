@@ -37,7 +37,7 @@ When you launch the bills portal, you'll see a table of open and paid bills from
 
 ![Bill pay demo app UI](/img/use-cases/bill-pay/bill-pay_demo-bill-interface.png "The Bill pay demo app UI.")
 
-For each unpaid bill, you can view the issue date, the supplier of the goods or services received, the reference number, and the amount due.
+For each unpaid bill, you can view the issue date, the supplier of the goods or services received, the account name (in the **Reference** column), and the amount due.
 
 1. If you can only see paid bills, use the **View unpaid bills only** toggle to filter the list.
 2. Click **View** next to an unpaid bill to open the **Bill** dialog.

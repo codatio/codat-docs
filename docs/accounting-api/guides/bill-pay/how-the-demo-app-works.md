@@ -1,18 +1,12 @@
 ---
 title: "How the demo app works"
 sidebar_label: "How it works"
-description: "Get a deep dive into the functionality of the Bill Pay demo app."
+description: "Get a deep dive into the functionality of the Bill Pay demo app"
 ---
 
-Now you're ready to explore the functionality of the bill pay demo app in more depth. The user flow diagram describes the app's functionality at a high level, while the API requests document the flow of data between the app and Codat's Accounting API.
+Now you're ready to explore the functionality of the bill pay demo app in more depth. The user flow diagrams describes the app's functionality at a high level, while the API requests document the flow of data between the app and Codat's Accounting API.
 
-Sections:
-
-- Connect the demo app to QuickBooks Online
-- View bills
-- Pay a bill
-
-
+## Connect the demo app to QuickBooks Online
 
 ### Understand the authorization process
 
@@ -25,9 +19,11 @@ Using the demo app and Hosted Link, create a company and then authorize access t
    3. Authorize the demo app to access data from your sandbox QuickBooks Online company.
    4. When you've completed the Hosted Link flow, click **Launch Bills Portal** to open the demo app. Behind the scenes, the demo app redirects you to the redirect URL.
 
+## View bills
 
+Intro
 
-### Bill pay user flow - split into 2 separate diagrams with explanations
+:::note User flow for viewing bills
 
 ```mermaid
 sequenceDiagram
@@ -35,42 +31,25 @@ sequenceDiagram
     participant backend as Demo App 
     participant codat as Codat API
     
-    user ->> backend: Launches bill pay app
+    user ->> backend: Views bills
+    Note over user,backend: Launch Bills Portal
     backend ->> codat: Fetches Bills
     codat -->> backend: Bills
     backend ->> codat: Fetches Accounts
     codat -->> backend: Accounts (banking only)
     backend ->> user: Views paid/unpaid bills
-
-    rect rgb(189, 219, 249)
-    note right of user: Pay a bill          
-    user ->> backend: Selects a bill to pay
-    backend ->> user: Bill payment dialog
-    user ->> backend: Selects account to assign bill payment to
-    user ->> backend: Pays bill & submits bill payment
-    end
-
-    backend ->> codat: Creates Bill payment
-    codat -->> backend: Push operation
-    loop status != success
-        backend ->> codat: Get push operation
-        codat ->> backend: Push operation status
-    end
-    backend ->> backend: Update bill status
-    backend ->> user: Bill shown as paid
+    
 ```
+:::
 
-### API: Pull accounts payable
+### API call: Fetch Bills
 
 When launched, the demo app [retrives a list of all bills](/accounting-api#/operations/list-bills) from your sandbox QuickBooks Online company, in descending order of issue date.
 
-<details>
-  <summary>Expanding box</summary>
-Text goes here
-</details>
+Here is an example request:
 
-```http title="List bills request"
-GET https://<YOUR_DOMAIN>/companies/<COMPANY_ID>/data/bills?page=1&pageSize=100&orderBy=-issueDate
+```http title="List bills"
+GET https://api.codat.io/companies/<COMPANY_ID>/data/bills?page=1&pageSize=100&orderBy=-issueDate
 ```
 
 ```json title="List bills response example"
@@ -144,27 +123,132 @@ GET https://<YOUR_DOMAIN>/companies/<COMPANY_ID>/data/bills?page=1&pageSize=100&
 ```
 
 :::info View unpaid bills query
-
 When the **View unpaid bills only toggle** is selected in the UI, the `&query=status=Open` query is appended to the request URL as a [Codat query string](/using-the-api/querying). This returns only unpaid bills.
+:::
+
+### API call: Fetch accounts
+
+The demo app [fetches the company's latest accounts](/accounting-api#/operations/list-accounts) (banking accounts only). Here is an example request:
+
+```http title="Pull accounts"
+GET https://codat.io/companies/<COMPANY_ID>/data/accounts
+```
+
+```json title="Example response (200)"
+{
+    "results": [
+      {
+        "id": "84",
+        "name": "Accounts Receivable (A/R)",
+        "fullyQualifiedCategory": "Asset.Accounts Receivable.AccountsReceivable",
+        "fullyQualifiedName": "Asset.Accounts Receivable.AccountsReceivable.Accounts Receivable (A/R)",
+        "currency": "USD",
+        "currentBalance": 5281.52,
+        "type": "Asset",
+        "status": "Active",
+        "isBankAccount": false,
+        "modifiedDate": "2023-05-11T09:46:07Z",
+        "sourceModifiedDate": "2023-03-12T20:16:17Z",
+        "validDatatypeLinks": [],
+        "metadata": {
+          "isDeleted": false
+        }
+      },
+      #...
+     ],
+        "metadata": {
+          "isDeleted": false
+        }
+      }
+    ],
+    "pageNumber": 1,
+    "pageSize": 100,
+    "totalResults": 90,
+    "_links": {
+      "current": {
+        "href": "/companies/3e67a1ea-a124-4a54-a241-698169eb19fb/data/accounts?page=1"
+      },
+      "self": {
+        "href": "/companies/3e67a1ea-a124-4a54-a241-698169eb19fb/data/accounts"
+      }
+    }
+  }
+```
+
+These accounts are displayed in the **Reference** column of the bills table.
+
+## Pay a bill
+
+:::note User flow for paying a bill
+
+```mermaid
+sequenceDiagram
+    participant user as User
+    participant backend as Demo App 
+    participant codat as Codat API    
+              
+    user ->> backend: Selects a bill to pay
+    backend ->> user: Bill payment dialog
+    user ->> backend: Selects account to assign bill payment to
+    user ->> backend: Pays bill & submits bill payment
+
+    backend ->> codat: Creates Bill payment
+    codat -->> backend: Push operation
+    Note over codat,backend: Polls the push operation endpoint
+    loop status != success
+        backend ->> codat: Get push operation
+        codat ->> backend: Push operation status
+    end
+    backend ->> backend: Update bill status
+    backend ->> user: Bill shown as paid
+    
+```
 
 :::
 
-### API: Pull bank accounts
+The bill remains in a `pending` status during the loop process.
 
-At step 2 in "Make a mock payment", the demo app [retrieves the company's latest accounts](/accounting-api#/operations/list-accounts) and queries the results by account type and currency.
+When selecting an account in the **Bill Payment** dialog, the **Account name** dropdown only displays bank accounts in the same currency as the bill. The account type is determined using a query parameter for `isBankAccount=true`. 
 
-```http
-ADD REQUEST HERE
+The Bill payment will be assigned to the selected account in your sandbox QuickBooks Online company.
+
+### API call: Post a Bill payment to the accounting platform
+
+When you pay a bill, the demo app [creates a Bill payment](/accounting-api#/operations/create-bill-payment) in QuickBooks Online for the total amount due. This process reconciles the payment against the outstanding bill.
+
+Here is an example request:
+
+```http title="Create Bill payment"
+POST https://api.codat.io/companies/<COMPANY_ID>/connections/<CONNECTION_ID>/push/billPayments
 ```
 
-### API: Post a Bill payment to the accounting platform
-
-When you make a mock payment, the demo app pushes a Bill payment to QuickBooks for the total amount of the bill. This reconciles the payment against the outstanding bill.
-
-```http
-ADD REQUEST HERE
+```json title="Example request body"
+{
+    "supplierRef": {
+        "id": "<SUPPLIER_ID>" // ID of the supplier to reconcile payment against
+    },
+    "accountRef": {
+        "id" : "<ACCOUNT_ID>" // ID of the bank account for the payment
+    },
+    "totalAmount": 2400.00,
+    "date": "<ISO_TIMESTAMP>", // date and time of payment
+    "currency": "USD",
+    "lines": [
+      {
+        "amount": 2400.00, // total amount of bill
+        "links": [
+          {
+            "type": "Bill",
+            "id": "<BILL_ID>", // separate link for each bill the bill payment should be reconciled against
+            "amount": -2400.00
+          }
+        ]
+      }
+    ]
+  }
 ```
-### 💪 Ready for more?
+
+## 💪 Ready for more?
 
 Try these suggestions to make the most of your experience with the demo app:
 
