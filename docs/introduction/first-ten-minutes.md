@@ -7,7 +7,7 @@ import LocalStorageChecklist from "@components/global/LocalStorageChecklist";
 
 ## Your first ten minutes with Codat
 
-In this video we'll sign up to Codat, set up the Xero integration and pull data from Xero.
+In this video we'll sign up to Codat, set up the Xero integration, and pull data from Xero.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GbZwyUthL18" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
