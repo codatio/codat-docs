@@ -22,7 +22,7 @@ Only one request will be processed at a time per SMB company and per report type
 - [Enhanced Financials Report](/assess/excel/enhanced-financials-report): Contains enhanced profit and loss and balance sheet data, allowing you to calculate key metrics
 - [Enhanced Invoices Report](/assess/excel/enhanced-invoices-report): Contains enhanced invoices which are linked to payments
 
-Please also refer to the [Metrics Template](/assess/excel/enhanced-financials-report#Metrics Template) which demonstrates how we can use the data within the [Enhanced Financials Report](/assess/excel/enhanced-financials-report) to calculate financial metrics.
+Please also refer to the [Metrics Template](/assess/excel/enhanced-financials-report#metrics-template) which demonstrates how we can use the data within the [Enhanced Financials Report](/assess/excel/enhanced-financials-report) to calculate financial metrics.
 
 ## Parameters
 
