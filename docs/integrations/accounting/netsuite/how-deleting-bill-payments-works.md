@@ -1,39 +1,8 @@
 ---
-title: "Delete Bills and Bill payments from NetSuite"
-sidebar_label: "Delete Bills and Bill payments"
-description: "Learn how to delete Bills and Bill payments from NetSuite using the deletion endpoints."
+title: "How deleting Bill payments works"
+sidebar_label: "How deleting Bill payments works"
+description: "Learn how deleting Bill payments works in NetSuite."
 ---
-
-The [Delete bill](/accounting-api#/operations/delete-bill) and [Delete bill payment](/accounting-api#/operations/delete-billPayment) endpoints allow you to delete specified Bills and Bill payments from Oracle NetSuite.
-
-1. Make a `DELETE` request to the relevant endpoint, specifying the Codat ID of the Bill or Bill payment to be deleted in the request URL:
-   
-   ```http title="Delete a Bill:"
-   DELETE /companies/{companyId}/connections/{connectionId}/push/bills/{billId}
-   ```
-   
-   ```http title="Delete a Bill payment:"
-   DELETE /companies/{companyId}/connections/{connectionId}/push/billPayments/{billPaymentId}
-   ```
-
-   :::info Bill payment IDs   
-   
-   If deleting a Bill payment, the format of the ID must be either:
-
-   - A numeric string.
-   - Two numeric strings separated by a hyphen, e.g. `12345-67890`.
-
-   :::
-
-2. [List the push operations](/codat-api#/operations/get-company-push-history) for the company. A `Success` status for the push operation means the Bill or Bill payment object was deleted from NetSuite.
-
-3. Check that the Bill or Bill Payment object no longer exists in the NetSuite UI.
-
-## Deleting Bills linked to Bill payments
-
-To delete a Bill that's already linked to a Bill payment, you must delete the linked Bill payment first.
-
-## How deleting Bill payments works
 
 Depending on the original data that was pushed, a Codat Bill payment is created in NetSuite as one of the following objects:
 
