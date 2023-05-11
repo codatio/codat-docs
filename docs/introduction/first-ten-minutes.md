@@ -1,6 +1,6 @@
 ---
 title: "Video guide: Your first ten mins"
-description: "From signing up to syncing in 10 minutes."
+description: "From signing up to syncing data in 10 minutes."
 ---
 
 import LocalStorageChecklist from "@components/global/LocalStorageChecklist";
