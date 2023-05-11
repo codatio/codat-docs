@@ -1,5 +1,5 @@
 ---
-title: "Video: Your first ten minutes with Codat"
+title: "Video guide: Your first ten mins"
 description: "From signing up to syncing in 10 minutes."
 ---
 
