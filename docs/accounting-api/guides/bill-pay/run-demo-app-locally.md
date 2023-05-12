@@ -1,7 +1,7 @@
 ---
-title: "Run the bill pay demo app locally"
+title: "Run the app locally"
 sidebar_label: "Run the app locally"
-description: "Learn how to set up the QuickBooks integration, configure Codat, and run the demo app on your local machine"
+description: "Learn how to set up the QuickBooks integration, configure Codat, and run the bill pay demo app on your local machine"
 ---
 
 ### 🚀 In this section, you will...
@@ -15,11 +15,11 @@ description: "Learn how to set up the QuickBooks integration, configure Codat, a
 
 Before running the demo app locally:
 
-- In the Codat Portal, enable **Fetch on first link** for the Bills, Bill payments, and Companies data types.
+- In the Codat Portal, enable **Fetch on first link** for Bills, Bill payments, and Companies on the <a href="https://app.codat.io/settings/data-types" target="_blank">Data type settings page</a>. These data types will be automatically pulled when a company is linked for the first time.
 - Make sure that npm version 16.9.0 is installed on your machine.
 - Set up the QuickBooks Online Sandbox integration in the Codat Portal (see the next section).
 
-If you haven't already, sign up for a QuickBooks Online account.
+If you haven't already, sign up for a free QuickBooks Online account.
 
 ###  Set up the QuickBooks Online integration
 
@@ -91,7 +91,7 @@ Next, set the redirect URL defined in the demo app as the Codat Redirect URL. Th
 
 8. Click **Get Started** and follow the on-screen instructions.
 
-You can now create a company, connect to your sandbox QuickBooks Online company, and use the demo app to view and pay bills. For further instructions, see [Use the hosted bill pay demo app](/accounting-api/guides/bill-pay/use-bill-pay-demo-app).
+Like the hosted app, you can now create a company, connect to your sandbox QuickBooks Online company, and view and pay bills.
 
 ### Review the push history in Codat
 
@@ -104,7 +104,7 @@ After paying a bill, you can check your pushed Bill payments are reflected in th
 
 ### Recap
 
-You set up the QuickBooks Online Sandbox integration and configured Link with the demo app's redirect URL. You ran the demo app locally and completed the authorization flow.
+You've set up the QuickBooks Online Sandbox integration and configured Link with the demo app's redirect URL. You ran the demo app locally and completed the authorization flow.
 
 <hr />
 

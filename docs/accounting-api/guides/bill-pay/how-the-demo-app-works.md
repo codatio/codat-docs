@@ -6,6 +6,12 @@ description: "A closer look at the functionality of the bill pay demo app"
 
 Now you're ready to explore the functionality of the bill pay demo app in more depth. The user flow diagrams describe the demo app's functionality at a high level, while the example API calls show the exchange of data with the Codat API.
 
+:::tip Invoices or bills?
+Codat's data model distinguishes between invoices where the company *owes money* and invoices where the company *is owed money*. If the company has received an invoice and owes money to someone else (accounts payable) we call this a bill. In Codat's data model, a [Bill](/accounting-api#/schemas/Bill) is an itemized record of goods purchased from or services provided by a supplier.
+
+See [Invoices](/accounting-api#/schemas/Invoice) for the accounts receivable equivalent of bills.
+:::
+
 ## Understand the authorization flow
 
 The company creation feature and [authorization flow](/accounting-api/guides/bill-pay/use-bill-pay-demo-app#connect-the-demo-app-to-quickbooks-online) were built using the Common API and Hosted Link. For a seamless user experience, we customized the Hosted Link flow with the same branding and colors as the demo app UI - see [Customize Link](/auth-flow/customize/customize-link) for more details.
@@ -29,18 +35,18 @@ sequenceDiagram
     participant backend as Demo App 
     participant codat as Codat API
     
-    user ->> backend: Views bills
+    user ->> backend: View bills
     Note over user,backend: Launch Bills Portal
-    backend ->> codat: Fetches Bills
+    backend ->> codat: Fetch Bills
     codat -->> backend: Bills
-    backend ->> codat: Fetches Accounts
+    backend ->> codat: Fetch Accounts
     codat -->> backend: Accounts (banking only)
-    backend ->> user: Views paid/unpaid bills
+    backend ->> user: View paid/unpaid bills
     
 ```
 :::
 
-### API call: Fetch Bills
+### Fetch Bills (API call: List bills)
 
 When launched, the demo app [retrieves a list of all bills](/accounting-api#/operations/list-bills) from your sandbox QuickBooks Online company, in descending order of issue date.
 
@@ -102,13 +108,13 @@ GET https://api.codat.io/companies/<COMPANY_ID>/data/bills?page=1&pageSize=100&o
 When the **View unpaid bills only toggle** is selected in the UI, the `&query=status=Open` query is appended to the request URL as a [Codat query string](/using-the-api/querying). This returns only unpaid bills.
 :::
 
-### API call: Fetch accounts
+### Fetch Accounts (API call: List accounts)
 
 When launched, the demo app [fetches the company's latest accounts](/accounting-api#/operations/list-accounts). The account name is displayed against its respective bill in the **Reference** column of the bills table.
 
 Here is an example request:
 
-```http title="Pull accounts"
+```http title="List accounts"
 GET https://codat.io/companies/<COMPANY_ID>/data/accounts
 ```
 
@@ -165,14 +171,14 @@ sequenceDiagram
     participant backend as Demo App 
     participant codat as Codat API    
               
-    user ->> backend: Selects a bill to pay
-    backend ->> user: Bill payment dialog
-    user ->> backend: Selects account to assign bill payment to
-    user ->> backend: Pays bill & submits bill payment
+    user ->> backend: Select a bill to pay
+    backend ->> user: Bill Payment view
+    user ->> backend: Select account to assign bill payment to
+    user ->> backend: Pay bill & submit bill payment
 
-    backend ->> codat: Creates Bill payment
+    backend ->> codat: Create Bill payment
     codat -->> backend: Push operation
-    Note over codat,backend: Polls the push operation endpoint
+    Note over codat,backend: Poll the push operation endpoint
     loop status != success
         backend ->> codat: Get push operation
         codat ->> backend: Push operation status
@@ -190,13 +196,13 @@ When selecting an account in the **Bill Payment** dialog, the **Account name** d
 
 The Bill payment will be assigned to the selected account in your sandbox QuickBooks Online company.
 
-### API call: Post a Bill payment to the accounting platform
+### Pay a bill (API call: Create bill payments)
 
 When you pay a bill, the demo app [creates a Bill payment](/accounting-api#/operations/create-bill-payment) in QuickBooks Online for the total amount due. This process reconciles the payment against the outstanding bill.
 
 Here is an example request:
 
-```http title="Create Bill payment"
+```http title="Create Bill payments"
 POST https://api.codat.io/companies/<COMPANY_ID>/connections/<CONNECTION_ID>/push/billPayments
 ```
 
