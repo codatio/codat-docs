@@ -4,7 +4,7 @@ description: "Download the Enhanced Cash Flow report to Excel"
 sidebar_label: "Enhanced Cash Flow report"
 ---
 
-Our Enhanced Invoices Excel report gives you the same data you'd get from the [Enhanced Cash Flow](/assess/enhanced-cash-flow/overview) endpoint, but in an Excel workbook.  You can use the report to test some companies and familiarise yourself with the data before building to the equivalent API endpoint.
+Our Enhanced Cash Flow Excel report gives you the same data you'd get from the [Enhanced Cash Flow](/assess/enhanced-cash-flow/overview) endpoint, but in an Excel workbook.  You can use the report to test some companies and familiarise yourself with the data before building to the equivalent API endpoint.
 
 The report contains the output of the following features:
 
