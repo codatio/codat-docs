@@ -38,12 +38,12 @@ For more details about how the app creates a connection to QuickBooks Online via
 
 Once you've connected your accounting platform, you'll see a table of open and paid bills from the company you just connected. These are pulled from your sandbox QuickBooks Online company and ordered by issue date. 
 
-![Bill pay demo app UI](/img/use-cases/bill-pay/bill-pay_demo-bill-interface.png "The Bill pay demo app UI.")
+![bill-pay_app-view](/img/use-cases/bill-pay/bill-pay_app-view.png "Bill pay demo app UI")
 
 1. If you can only see paid bills, use the **View unpaid bills only** toggle to filter the list.
 2. Click **View** next to an unpaid bill to open the **Bill** view.
    
-   ![bill-pay_invoice-detail-dialog](/img/use-cases/bill-pay/bill-pay_invoice-detail-dialog.png "The Bill view shows additional information about an unpaid bill.")
+   ![bill-pay_invoice-detail-dialog](/img/use-cases/bill-pay/bill-pay_bill-detail-dialog-renamed.png "The Bill view shows additional information about an unpaid bill.")
    
    This contains additional information about the bill, including the bill number, due date, and line items (if any).
    
@@ -54,7 +54,9 @@ Once you've connected your accounting platform, you'll see a table of open and p
 Next, you can make a payment against a bill. When you do so, the app automatically pushes a bill payment to the accounting platform&mdash;in this case, QuickBooks Online. The payment is then reconciled against the source bill, which is marked as *paid*.
 
 1. In the **Bill Payment** view, choose an account from the **Account name** dropdown. This is the account in QuickBooks Online to which you want to assign the bill payment.
-
+   
+   ![bill-pay_payment-view](/img/use-cases/bill-pay/bill-pay_payment-view.png "The Bill Payment view with the Account Name field highlighted.")
+   
    :::info Accounts displayed
    Only banking accounts in the same currency as the bill are displayed.
    :::
