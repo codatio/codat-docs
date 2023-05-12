@@ -6,12 +6,6 @@ description: "A closer look at the functionality of the bill pay demo app"
 
 Now you're ready to explore the functionality of the bill pay demo app in more depth. The user flow diagrams describe the demo app's functionality at a high level, while the example API calls show the exchange of data with the Codat API.
 
-:::tip Invoices or bills?
-Codat's data model distinguishes between invoices where the company *owes money* and invoices where the company *is owed money*. If the company has received an invoice and owes money to someone else (accounts payable) we call this a bill. In Codat's data model, a [Bill](/accounting-api#/schemas/Bill) is an itemized record of goods purchased from or services provided by a supplier.
-
-See [Invoices](/accounting-api#/schemas/Invoice) for the accounts receivable equivalent of bills.
-:::
-
 ## Understand the authorization flow
 
 The company creation feature and [authorization flow](/accounting-api/guides/bill-pay/use-bill-pay-demo-app#connect-the-demo-app-to-quickbooks-online) were built using the Common API and Hosted Link. For a seamless user experience, we customized the Hosted Link flow with the same branding and colors as the demo app UI - see [Customize Link](/auth-flow/customize/customize-link) for more details.

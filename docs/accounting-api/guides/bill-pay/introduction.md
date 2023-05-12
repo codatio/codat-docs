@@ -44,6 +44,12 @@ The demo app illustrates three common tasks in a typical bill payment workflow, 
 
 You've understood the functionality of the bill pay demo app and what you'll need to get started.
 
+:::tip Invoices or bills?
+Codat's data model distinguishes between invoices where the company *owes money* and invoices where the company *is owed money*. If the company has received an invoice and owes money to someone else (accounts payable) we call this a bill. In Codat's data model, a [Bill](/accounting-api#/schemas/Bill) is an itemized record of goods purchased from or services provided by a supplier.
+
+See [Invoices](/accounting-api#/schemas/Invoice) for the accounts receivable equivalent of bills.
+:::
+
 <hr />
 
 ### Read next

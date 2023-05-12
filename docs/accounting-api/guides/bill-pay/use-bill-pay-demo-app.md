@@ -76,9 +76,7 @@ You've now seen the app in action by viewing and paying bills.
 Finally, you can check that your payment was reconciled correctly in QuickBooks Online. Bill payments are initially in a "pending" status, but this should change to "paid" after around a minute. 
 
 :::info Asynchronous push
-
-In Codat, create and update operations are asynchronous, which means that pushing data to an accounting platform returns a push operation in `Pending` status. You can monitor a push operation by polling the `GET /companies/{companyId}/push/{pushOperationKey}` endpoint, as described in [Polling](/using-the-api/push#1-polling).
-
+In Codat, create and update operations are asynchronous, which means that pushing data to an accounting platform returns a push operation in `Pending` status. Our webhooks allow your solution to be notified of a push operation change; alternatively you can poll as described in [Polling](/using-the-api/push#1-polling).
 :::
 
 1. Sign in to the <a href="https://developer.intuit.com/" target="_blank">Intuit Developer Portal</a>.
