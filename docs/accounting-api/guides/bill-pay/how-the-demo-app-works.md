@@ -118,7 +118,7 @@ Here is an example request:
 GET https://codat.io/companies/<COMPANY_ID>/data/accounts
 ```
 
-```json title="Example response for Pull accounts (200)"
+```json title="Example response for List accounts (200)"
 {
     "results": [
       {
