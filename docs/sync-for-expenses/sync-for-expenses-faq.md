@@ -69,3 +69,14 @@ Each transaction id is unique to a client's company but they aren't unique acros
 ### What can we reuse from a Coat Bill Pay build for Sync for Expenses?
 You could re-use the chart of accounts, tracking categories and tax rates from our Accounting API. However, we recommend using the [mappingOptions](https://docs.codat.io/sync-for-expenses-api#/operations/get-mapping-options) for expenses because of the transaction type support. 
 Authentication, company creation and the Accounting connection linking journeys can be reused between builds. This is because the companies can use the same Id between Codat products. 
+
+### How can I re sync a transaction which has previously failed once I have resolved the issue with the transaction?
+Once the issue has been resolved with the transaction then you can create a new dataset for that transaction id. You are unable to resync the transaction with the same dataset id as the other successfully synced transactions will trigger the validation for preventing duplicates. To avoid duplicates Codat checks the transaction metadata to see if that transaction id has a status of completed. If it does then we know not to sync it again. The following error will appear if a duplicate transaction has been previously synced: 
+
+```
+error: One or more transactions have previously been processed: 46dd5a8a-d74f-46f0-adf8-4f74ffe5e7c8
+```
+
+### How can I detect if an expense account has been deactivated?
+You are able to create a webhook within the Codat portal which will alert you when the Chart of Accounts has been changed. By querying the Chart of Accounts and using the isDeleted flag you will be able to identify which accounts have been deleted before a sync occurs. 
+For more information please refer to the following (documentation)[https://docs.codat.io/introduction/webhooks/core-rules-types].
