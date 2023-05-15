@@ -295,7 +295,7 @@ Rows can be expanded or collapsed to show more or less information. Hovering ove
 
 ## Reports
 
-A **Reports** button is located in the top right corner of every Assess page. It takes you to the **Reports** page where you can generate and download the [Assess Report](/assess/excel/assess-report) and the [Audit Report](/assess/excel/audit-report) in [Excel format](/assess/excel/overview).
+A **Reports** button is located in the top right corner of every Assess page. It takes you to the **Reports** page where you can generate and download various reports in [Excel format](/assess/excel/overview).
 
 ![A screenshot of the reports page showing the Audit Report row with a sub-row showing a report that was generated](/img/old/a3d1d09-ReportsPage1.png)
 
@@ -307,5 +307,7 @@ When a report was successfully generated, the report name (which is also the fil
 
 ### Report types
 
-- [Assess Report](/assess/excel/assess-report): Summary of Assess data in one Excel document.
-- [Audit Report](/assess/excel/audit-report): Identifies indicators of inaccurate or out-of-date accounts, helping you to decision with confidence.
+- [Audit Report](/assess/excel/audit-report): Identifies indicators of inaccurate or out-of-date accounts, helping you to decision with confidence
+- [Enhanced Cash Flow Report](/assess/excel/enhanced-cash-flow-report): Contains enhanced cash flow data
+- [Enhanced Financials Report](/assess/excel/enhanced-financials-report): Contains enhanced profit and loss and balance sheet data, allowing you to calculate key metrics
+- [Enhanced Invoices Report](/assess/excel/enhanced-invoices-report): Contains enhanced invoices which are linked to payments
