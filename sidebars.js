@@ -86,6 +86,29 @@ module.exports = {
           href: "/codat-api",
           label: "Common API reference",
         },
+        {
+          type: "category",
+          label: "Using the portal",
+          collapsed: true,
+          items: [
+            "other/portal/dashboard",
+            "other/portal/account-management",
+            "other/portal/usage-and-billing",
+            "other/portal/companies",
+            "other/portal/developers",
+            "other/portal/pull-and-push-history",
+          ],
+        },
+        {
+          type: "category",
+          label: "User management",
+          collapsed: true,
+          items: [
+            "other/user-management/adding-users",
+            "other/user-management/user-roles",
+            "other/user-management/sso",
+          ],
+        },
       ],
     },
     {
@@ -229,29 +252,4 @@ module.exports = {
   assess: assess,
   sfe: sfe,
   integrations: integrations,
-  otherGuides: [
-    {
-      type: "category",
-      label: "Portal",
-      collapsed: true,
-      items: [
-        "other/portal/dashboard",
-        "other/portal/account-management",
-        "other/portal/usage-and-billing",
-        "other/portal/companies",
-        "other/portal/developers",
-        "other/portal/pull-and-push-history",
-      ],
-    },
-    {
-      type: "category",
-      label: "User management",
-      collapsed: true,
-      items: [
-        "other/user-management/adding-users",
-        "other/user-management/user-roles",
-        "other/user-management/sso",
-      ],
-    },
-  ]
 };
