@@ -60,7 +60,7 @@ Transactions are not automatically downloaded to Sage when the user successfully
 
 Make the following requests to the Codat API. All push requests are asynchronous.
 
-1. Push bank transactions to a target bank account using the <a href="/accounting-api#/operations/post-bank-transactions">Create bank transactions</a> endpoint. Note that:
+1. Push bank transactions to a target bank account using the <a href="/accounting-api#/operations/create-bank-transactions">Create bank transactions</a> endpoint. Note that:
 
    - You can only push bank transactions to one target account at a time.
    - Bank transactions must be pushed in chronological order.
