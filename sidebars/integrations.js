@@ -477,6 +477,14 @@ module.exports = [
     ],
   },
   {
+    type: "category",
+    label: "Other integrations",
+    collapsed: true,
+    items: [
+      "other/file-upload",
+    ]
+  },
+  {
     type: "link",
     label: "Integration coverage",
     href: "https://knowledge.codat.io/supported-features/accounting",
