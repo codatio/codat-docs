@@ -35,7 +35,38 @@ module.exports = {
           label: "Integration coverage",
           href: "https://knowledge.codat.io/supported-features/accounting",
         },
-        "introduction/office-hours"
+        "introduction/office-hours",
+        "other/developer-resources",
+      ],
+    },
+    {
+      type: "category",
+      label: "Guides",
+      collapsed: true,
+      className: "top-level-item other",
+      items: [
+        {
+          type: "category",
+          label: "Loan qualification",
+          collapsed: true,
+          items: [
+            "guides/loan-qualification/introduction",
+            "guides/loan-qualification/setting-up",
+            "guides/loan-qualification/process-loan",
+            "guides/loan-qualification/uw-decision",
+          ],
+        },
+        {
+          type: "category",
+          label: "Bill pay",
+          collapsed: true,
+          items: [
+            "guides/bill-pay/introduction",
+            "guides/bill-pay/use-bill-pay-demo-app",
+            "guides/bill-pay/run-demo-app-locally",
+            "guides/bill-pay/how-the-demo-app-works",
+          ],
+        },
       ],
     },
     {
@@ -115,39 +146,6 @@ module.exports = {
       collapsed: true,
       className: "top-level-item auth",
       items: authFlow,
-    },
-    {
-      type: "category",
-      label: "Other guides",
-      collapsed: true,
-      className: "top-level-item other",
-      items: [
-        "other/developer-resources", 
-        "other/file-upload",
-        {
-          type: "category",
-          label: "Portal",
-          collapsed: true,
-          items: [
-            "other/portal/dashboard",
-            "other/portal/account-management",
-            "other/portal/usage-and-billing",
-            "other/portal/companies",
-            "other/portal/developers",
-            "other/portal/pull-and-push-history",
-          ],
-        },
-        {
-          type: "category",
-          label: "User management",
-          collapsed: true,
-          items: [
-            "other/user-management/adding-users",
-            "other/user-management/user-roles",
-            "other/user-management/sso",
-          ],
-        },
-      ],
     },
     {
       type: "category",
@@ -231,4 +229,29 @@ module.exports = {
   assess: assess,
   sfe: sfe,
   integrations: integrations,
+  otherGuides: [
+    {
+      type: "category",
+      label: "Portal",
+      collapsed: true,
+      items: [
+        "other/portal/dashboard",
+        "other/portal/account-management",
+        "other/portal/usage-and-billing",
+        "other/portal/companies",
+        "other/portal/developers",
+        "other/portal/pull-and-push-history",
+      ],
+    },
+    {
+      type: "category",
+      label: "User management",
+      collapsed: true,
+      items: [
+        "other/user-management/adding-users",
+        "other/user-management/user-roles",
+        "other/user-management/sso",
+      ],
+    },
+  ]
 };

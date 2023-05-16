@@ -1,11 +1,14 @@
 ---
-title: "Bill pay demo app guide"
+title: "Bill pay build guide"
 sidebar_label: "Introduction"
 description: "Use this guide and the accompanying demo app to build solutions that streamline your customers' Accounts Payable processes"
+displayed_sidebar: "docs"
 ---
 
 :::tip Who is this guide for?
+
 This guide is for developers building a bill payment solution or other applications using Accounts Payable data. The demo app is intended for demo use only.
+
 :::
 
 ### Summary

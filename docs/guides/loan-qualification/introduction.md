@@ -1,7 +1,8 @@
 ---
-title: "Our loan qualification guide"
+title: "Loan qualification build guide"
 sidebar_label: "Introduction"
 description: "Lend with Codat and our Assess product" 
+displayed_sidebar: "docs"
 ---
 
 :::tip Who is this guide for?
