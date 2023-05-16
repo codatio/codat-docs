@@ -251,7 +251,7 @@ const comm = [
 module.exports = {
   redirects: [
     {
-      to:  '/assess/guides/loan-qualification/introduction',
+      to:  '/guides/loan-qualification/introduction',
       from: '/assess/guides/underwriting/introduction',
     },
     {
