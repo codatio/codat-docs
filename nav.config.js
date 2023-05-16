@@ -135,6 +135,12 @@ module.exports = {
           rel: null,
         },
         {
+          href: "/introduction/office-hours",
+          label: "Office hours",
+          target: "_blank",
+          rel: null,
+        },
+        {
           href: "https://codat.zendesk.com/hc/en-gb",
           label: "Help center",
           target: "_blank",
