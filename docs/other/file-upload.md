@@ -15,7 +15,7 @@ The file upload integrations are available in the Codat Portal in **Settings > I
 Although we scan all uploaded files for viruses, we recommend that you do the same for optimum security.
 :::
 
-## File Upload Requirements
+## File upload requirements
 
 Uploaded files must meet the following requirements:
 
