@@ -1,6 +1,6 @@
 ---
 title: "Office Hours"
-description: "Get support with building your solution"
+description: "Get support building your solution"
 createdAt: "2020-08-26T13:23:10.920Z"
 updatedAt: "2022-11-25T13:10:30.057Z"
 ---
