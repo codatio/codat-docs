@@ -7,11 +7,13 @@ description: "Learn about our Xero Bank Feeds integration"
 
 ## Overview
 
-Our Xero Bank Feeds integration allows you to set up a bank feed from a bank account in your application (the source account) to an account within Xero (the target account). Once the feed connection is established, you can then push Bank transactions from the source account to the target account.
+Our Xero Bank Feeds integration allows you to set up a bank feed from a bank account in your application (the source account) to an account within Xero (the target account). After a feed connection is established, you can push bank transactions from the source account to the target account.
 
-_add flow diagram_
+![xero-bank-feeds-flowchart](/img/bank-feeds-api/xero-bank-feeds/xero-bank-feeds-flowchart.png "Flowchart showing bank transactions pushed from your application to Xero")
 
 With access to bank feeds, your customers can more easily reconcile bank transactions against accounting entries, like invoices and bills.
+
+Bank feeds functionality is part of our existing Xero accounting integration. 
 
 ## Supported data types and operations​
 
@@ -19,11 +21,10 @@ Bank feeds are represented as streams of [Bank account transactions](/accounting
 
 ## How it works​
 
-1. Create your Xero app. Ensure that you have Xero approval for Bank Feeds.
+1. Create a Xero app. You'll need to obtain Xero's approval for Bank Feeds.
 2. CROSSREF TO Set up the integration.
 3. Your end user can set up a bank feed either by starting from within your UI, or from Xero's "Add bank account" functionality by searching for the client name where they will then be redirected to your UI.
 4. After authentication, end users will be able to create account mappings and feed connections using the Codat-provided UI. // also refer to managing and deleting connections.
-
    
    :::info
    Alternatively, you can build your own mapping and feed management UI (Note: This option will become available in an upcoming release).
@@ -155,7 +156,7 @@ _Repeat the information about being able to build your own mapping UI in a futur
 
 After authenticating with their Xero account, the user will be redirected to a mapping screen provided by Codat.
 
-_add screenshot of mapping UI_
+![xero-bank-feeds_mapping-screen-example](/img/bank-feeds-api/xero-bank-feeds/xero-bank-feeds_mapping-screen-example.png "Codat UI for connecting and mapping bank feed accounts to Xero.")
 
 This allows the user to:
 - Select source accounts (i.e. the accounts you provided via the `PUT /bankFeedAccounts` endpoint)
@@ -234,7 +235,7 @@ To push bank transactions to Codat, make the following requests to the Codat API
    ```
 
    Where `ACCOUNT_ID` is the ID of a connected source bank account (returned from
-`GET /connectionInfo/BankFeedAccounts`).
+   `GET /connectionInfo/BankFeedAccounts`).
 
    Example request body (all fields are mandatory):
 
