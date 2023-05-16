@@ -26,7 +26,7 @@ In the **Settings > Auth Flow > Link** [settings](https://app.codat.io/settings/
 
 The app uses several webhooks to track the completion of an accounting data connection and the completion of data sync for the invoice and customer data types.
 
-We will use [ngrok](https://ngrok.com/) in the app to listen for Codat's webhooks. 
+We will use [ngrok](https://ngrok.com/) to listen for Codat's webhooks. 
 
 <Tabs>
    <TabItem value="win" label="Windows OS">  
@@ -74,7 +74,7 @@ Click **Create rule** to open the new rule creation window. Select the rule type
 
 ### <input type="checkbox" unchecked /> Clone the code
 
-Clone our demo repo on [GitHub](https://github.com/codatio/demo-invoice-finance) to download the underwriting demo app. 
+Clone our demo repo on [GitHub](https://github.com/codatio/demo-invoice-finance) to download the invoice finance lending demo app. 
 
 The main file directory for the demo app is `Codat.Demos.InvoiceFinancing.Api`. Key logic components of the app are located in `Controllers`, `Orchestrator`, and `Services` folders.
 
@@ -89,7 +89,7 @@ Note that the other directory in the repository, `Codat.Demos.InvoiceFinancing.A
    |   
    ├──Controllers // Controllers for the API endpoints to manage expected actions and results
    |    ├──ApplicationController.cs // Front-end endpoint controller
-   |    └──WebhooksController.cs     // Back-end endpoint controller
+   |    └──WebhooksController.cs    // Back-end endpoint controller
    |       
    ├──DataClients // A service to make API calls to Codat
    |    └──CodatDataClient.cs
@@ -100,7 +100,7 @@ Note that the other directory in the repository, `Codat.Demos.InvoiceFinancing.A
    ├──Models // Represent the shape of data that will be returned to the user
    |    ├──...
    |       
-   ├──Orchestrators // Manages the six methods that relate to endpoints used in the app
+   ├──Orchestrators // Manages the methods that relate to endpoints used in the app
    |    ├──ApplicationOrchestrator.cs //
    |    └──FinancingProcessor.cs //
    |       
@@ -109,8 +109,8 @@ Note that the other directory in the repository, `Codat.Demos.InvoiceFinancing.A
    |       
    └──Services // Key application components that perform specified tasks
       ├──ApplicationStore.cs // Handles creating and storing the loan application in-memory
-      ├──CustomerRiskAssessor.cs // 
-      └──InvoiceFinanceAssessor.cs // 
+      ├──CustomerRiskAssessor.cs // Handles the assessment of a customer's risk
+      └──InvoiceFinanceAssessor.cs // Handles the assessment of an eligible invoice
 ```
 ### <input type="checkbox" unchecked/> Set your API key
 

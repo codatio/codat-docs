@@ -33,18 +33,10 @@ To perform risk assessment, we calculate the measure of **customer concentration
 
 Customer concentration is the percentage of the applicant's revenue that comes from a single customer. 
 
-```
-Concentration (%) = Customer balance / Total outstanding balance across all customers, or, in Codat's terms,  
-(sum of all unpaid invoices `amountDue` for customer)/(sum of all unpaid invoices `amountDue`).  
-```
+`Concentration (%) = Customer balance / Total outstanding balance across all customers`, or, in Codat's terms, it is the sum of all unpaid invoices `amountDue` for customer divided by the sum of all unpaid invoices `amountDue`.  
 
 The concentration threshold is set to 5% in the `appSettings.json` file, which you can change later if you want to see the app run through a different scenario. 
 :::
-
-$$
-Concentration (%) = \frac{Customer balance}{Total outstanding balance across all customers}\, or, in Codat's terms,
-\frac{sum of all unpaid invoices `amountDue` for customer}{sum of all unpaid invoices `amountDue`}.
-$$
 
 In our demo, we also exclude any customers that fit the criteria below, meaning invoices linked to them will not be eligible for the loan: 
 
@@ -57,17 +49,15 @@ In our demo, we also exclude any customers that fit the criteria below, meaning 
 
 For each remaining invoice, we calculate the following: 
 
-:::info Invoice risk
-
 - Terms, expressed as (`dueDate` — `issueDate`),
 - Days left to pay, expressed as (`dueDate` - today's date),
 - Time left to pay ratio, expressed as (Days left to pay / Terms).
-:::
 
-We then discard any invoices where `Days left to pay` value is less than `4` days. For the remaining invoices, we calculate a **charge rate** based on the time left to pay ratio:
-```
-Charge rate = 5 - (4 * Ratio), where Ratio is a rate between 1% and 5%, rounded to 1 decimal place.
-```
+We then discard any invoices where `Days left to pay` value is less than `4` days. 
+
+For the remaining invoices, we calculate a **charge rate** based on the time left to pay ratio:
+
+`Charge rate = 5 - (4 * Ratio), where Ratio is a rate between 1% and 5%, rounded to 1 decimal place.`
 
 ### <input type="checkbox" unchecked/> Return a decision array
 
@@ -75,8 +65,8 @@ Finally, we are ready to return a decision array to the borrower. This shows the
 
 ```json title="Example decision response"
   {
-    "status": "Started/AccountsLinked/Fetching/FetchError/Processing/ProcessingError/Complete" // Response displays one of these possible application statuses
-    "decisions": [ // An array of decisions per each invoice Id analysed during the application
+    "status": "Complete" // Response displays an application status of "Complete" when the assessment has been finished
+    "decisions": [ // An array of decisions per each invoice Id found eligible for the loan
       {
         "invoiceId": "string", // Codat's internal Id associated with fetched invoices
         "invoiceNo": "string", // Identifying number of the invoice in the applicant's accounting system

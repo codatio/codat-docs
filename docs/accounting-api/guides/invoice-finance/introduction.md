@@ -14,7 +14,7 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 
 🎯 With our demo app, you will go through the invoice financing process flow, from establishing a connection with a borrower's accounting platform to issuing a decision on selected invoices. You will see how Codat makes it easier for the borrower to raise capital against the amounts due from customers, and for the lender to make an invoice financing decision. 
 
-⏳ Estimated time to complete: 20-30 minutes
+⏳ Estimated time to complete: 15-25 minutes
 
 🛠️ The demo project is implemented in [.NET 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) as a backend API. You can configure and run the demo app in the terminal, or use your preferred IDE or code editor.
 
@@ -51,5 +51,5 @@ The demo app relies on Codat's [Accounting API](/accounting-api/overview). Our u
 
 ### Read next
 
-Now that you know the focus and purpose of our demo app and its guide:
+Now that you know the focus and purpose of our demo app and its guide, you can:
 * [Set up Codat and your local environment](/accounting-api/guides/invoice-finance/setting-up).

@@ -14,12 +14,12 @@ import TabItem from '@theme/TabItem';
 
 :::note Invoice financing process flow
 
-This diagram shows the steps of the underwriting process as performed by the demo app. It helps you visualize the relationship and information exchange between the app's different components.
+This diagram shows the steps of the invoice financing process as performed by the demo app. It helps you visualize the relationship and information exchange between the app's different components.
 
 ``` mermaid
   sequenceDiagram
-    participant frontend as Underwriting Frontend 
-    participant backend as Underwriting Backend 
+    participant frontend as Invoice Financing Frontend 
+    participant backend as Invoice Financing Backend 
     participant codat as Codat API
     frontend ->> backend: Request new application
     backend ->> codat: Create company
@@ -73,7 +73,7 @@ Codat returns the company and application `id`s in the endpoint response togethe
 ```
 ### <input type="checkbox" unchecked /> Share financial data  
 
-Next, you need to provide Codat access to an accounting platform so that we can fetch the data required to assess the risk of the application associated with the applicant's customers and invoices. Open the `linkUrl` returned by the new application response in your browser window. Follow the flow built using [Link](/auth-flow/overview), our hosted or embedded integrated authorization flow. 
+Next, you need to provide Codat access to an accounting platform so that we can fetch the data required to assess the risk of the loan application. Open the `linkUrl` returned by the new application response in your browser window. Follow the flow built using [Link](/auth-flow/overview), our hosted or embedded integrated authorization flow. 
 
 Select the **Codat Sandbox** as the source of accounting data.
 * Choose the **Invoice Financing US Company** company type.
@@ -84,11 +84,11 @@ We fetch the applicant's unpaid invoices, customers associated to these unpaid i
 
 ![](/img/use-cases/underwriting/sandbox-credentials-modal.png)
 
-### <input type="checkbox" unchecked /> Make the decision on the loan 
+### <input type="checkbox" unchecked /> Receive the decision on the loan 
 
 The demo app now has all the components that it needs to assess the risk associated with each customer, and risk associated with each invoice. These assessments determine the decision on each unpaid invoice included in the loan request. 
 
-Poll the `GET applications/{applicationId}` endpoint in [Swagger](http://localhost:7278/swagger/index.html) anytime to check the status of your loan. Once the app processes all the relevant invoices, it will automatically return a response that includes a decision on each invoice assessed as part of the application.
+Poll the `GET applications/{applicationId}` endpoint in [Swagger](http://localhost:7278/swagger/index.html) anytime to check the status of your loan. Once the app processes all the relevant invoices, it will automatically return a response with an offer for each invoice approved for financing
 
 You can [read more](/accounting-api/guides/invoice-finance/inv-fin-decision) about the risk assessments the app performs, and further detail of the decisioning logic. The thresholds used with the logic are set in the `appsettings.json` file. 
 
