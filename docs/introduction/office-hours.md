@@ -7,7 +7,7 @@ updatedAt: "2022-11-25T13:10:30.057Z"
 
 ## Looking for some advice on how best to build with Codat? 
 
-Come along to our Office Hour and discuss your project with one of our solutions experts, James. 
+Come along to our Office Hour and discuss your project with one of our solutions experts and product team.
 
 - Are you looking to improve your customers' experience by integrating their spend with their accounting software, but uncertain of the best approach?
 - Perhaps you’re in search of expert guidance on how to process accounting data to accelerate underwriting decisions for SMBs, without increasing risk?
