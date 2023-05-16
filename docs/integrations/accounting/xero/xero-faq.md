@@ -26,7 +26,7 @@ To set up a Bank Feed to a Xero account:
 
 1. You must first have Bank Feeds [configured and allowed](/integrations/accounting/xero/accounting-xero-setup#configuration-of-bank-feeds).
 
-2. Then, to create a direct Bank Feed using Xero's Bank Feeds API, you must POST [Bank Transactions](/accounting-api#/operations/post-bank-transactions).
+2. Then, to create a direct Bank Feed using Xero's Bank Feeds API, you must POST [Bank Transactions](/accounting-api#/operations/create-bank-transactions).
 
 3. When successfully pushed to Xero, the bank transactions will appear in the 'Bank Statements' section for the bank account in the Xero UI, with the source 'Bank Feed' as below:
 
