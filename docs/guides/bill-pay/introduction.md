@@ -35,19 +35,19 @@ It walks you through [using the hosted version of the demo app](/accounting-api/
 
 ### What functionality does the app provide?
 
-The demo app illustrates three common tasks in a typical bill payment workflow, as follows:
+The demo app illustrates three common tasks in a typical bill payment workflow:
 
-#### 1 - Connect to your customer's accounting platform
+1. Connect to your customer's accounting platform
 
-#### 2 - Visualize bills
+2. Visualize bills
 
-#### 3 - Pay bills
+3. Pay bills
 
 ### Recap
 
 You've understood the functionality of the bill pay demo app and what you'll need to get started.
 
-<hr />
+---
 
 ### Read next
 
