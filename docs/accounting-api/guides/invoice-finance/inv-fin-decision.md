@@ -41,10 +41,15 @@ Concentration (%) = Customer balance / Total outstanding balance across all cust
 The concentration threshold is set to 5% in the `appSettings.json` file, which you can change later if you want to see the app run through a different scenario. 
 :::
 
+$$
+Concentration (%) = \frac{Customer balance}{Total outstanding balance across all customers}\, or, in Codat's terms,
+\frac{sum of all unpaid invoices `amountDue` for customer}{sum of all unpaid invoices `amountDue`}.
+$$
+
 In our demo, we also exclude any customers that fit the criteria below, meaning invoices linked to them will not be eligible for the loan: 
 
 - Concentration is more than the threshold of `5%`,
-- Customer `country` is not `US`, thus excluding forign business customers,
+- Customer `country` is not `US`, thus excluding foreign business customers,
 - Customer `registrationNo` is null, thus excluding sole traders, and
 - Number of paid invoices is less than `2`, thus lowering the risk based on past behaviour.
 
@@ -63,11 +68,6 @@ We then discard any invoices where `Days left to pay` value is less than `4` day
 ```
 Charge rate = 5 - (4 * Ratio), where Ratio is a rate between 1% and 5%, rounded to 1 decimal place.
 ```
-### <input type="checkbox" unchecked/> Crunch some numbers
-
-Decisioning based on all the factors described above
-
-CRONCH CRONCH CRONCH 
 
 ### <input type="checkbox" unchecked/> Return a decision array
 
