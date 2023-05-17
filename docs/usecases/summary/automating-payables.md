@@ -30,7 +30,7 @@ For automating payables, the Accounting API provides you and your customers with
 
 Codat provides you with demo guides, where you can see our products in action. View our demo built specifically for the bill payments use case:
 
-- **[Bill pay demo app guide](/accounting-api/guides/bill-pay/introduction)**
+- **[Bill pay demo app guide](/guides/bill-pay/introduction)**
 
 Follow the demo guide to see how to implement your own bill payment solution using Codat's API, from connecting to your customer's accounting platform, to paying and reconciling bills.
 

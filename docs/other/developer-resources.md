@@ -7,7 +7,8 @@ updatedAt: "2022-10-19T21:11:21.969Z"
 
 ## Build guides
 
-- **[Underwriting](https://docs.codat.io/assess/guides/loan-qualification/introduction)** - Experience the end-to-end loan qualification process flow with automatic decision-making supported by Codat's Assess product.
+- **[Loan qualification](https://docs.codat.io/guides/loan-qualification/introduction)** - Experience the end-to-end loan qualification process flow with automatic decision-making supported by Codat's Assess product.
+- **[Bill pay](https://docs.codat.io/guides/bill-pay/introduction)** - Streamline and automate the Accounts Payable (AP) process for your SMB customers
 
 ## Demo apps
 

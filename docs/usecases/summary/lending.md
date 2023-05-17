@@ -32,7 +32,7 @@ You can also use this data to produce additional insights (e.g. calculate financ
 
 We're working on guides so you can see how to build a simple application with Codat:
 
-- **[Loan qualification](/assess/guides/loan-qualification/introduction)**
+- **[Loan qualification](/guides/loan-qualification/introduction)**
 
 Follow the demo guide to perform the end-to-end loan qualification process, from submitting a loan application to assessing a borrower's financial health using custom metrics, to issuing an automatic final decision on the application. 
 
