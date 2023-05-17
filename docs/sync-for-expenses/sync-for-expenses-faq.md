@@ -66,7 +66,7 @@ For more information on how to set up your accounting platform integration take 
 ### Is the transaction ID unique to each connected company? 
 Each transaction id is unique to a client's company but they aren't unique across connections. We currently only support a single accounting connection per company. If a company wants to swap their accounting software or would like to link to a different entity we recommend creating a new company. 
 
-### What can we reuse from a Coat Bill Pay build for Sync for Expenses?
+### What can we reuse from the Codat Bill Pay build for Sync for Expenses?
 You could re-use the chart of accounts, tracking categories and tax rates from our Accounting API. However, we recommend using the [mappingOptions](https://docs.codat.io/sync-for-expenses-api#/operations/get-mapping-options) for expenses because of the transaction type support. 
 Authentication, company creation and the Accounting connection linking journeys can be reused between builds. This is because the companies can use the same Id between Codat products. 
 
