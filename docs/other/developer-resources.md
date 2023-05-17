@@ -8,6 +8,7 @@ updatedAt: "2022-10-19T21:11:21.969Z"
 ## Build guides
 
 - **[Underwriting](https://docs.codat.io/assess/guides/loan-qualification/introduction)** - Experience the end-to-end loan qualification process flow with automatic decision-making supported by Codat's Assess product.
+- **[Bill payment](https://docs.codat.io/guides/bill-pay/introduction)** - Understand the core features of a bill payment solution and how you can implement them using Codat's API.
 
 ## Demo apps
 
