@@ -134,7 +134,7 @@ Once running, open the Swagger page in your web browser: `http://localhost:7278/
 
 Make sure the `http` profile is set and press "Run". The IDE will automatically open [Swagger](http://localhost:7278/swagger/index.html) in a new tab of your browser. You will use it to call the demo's endpoints.
 
-![](/img/use-cases/underwriting/underwriting-guide-rider.png)
+![](/img/use-cases/invoice-finance/rider.png)
 
 </TabItem>
 
@@ -142,7 +142,7 @@ Make sure the `http` profile is set and press "Run". The IDE will automatically 
 
 Ensure the `http` profile is set and press the "Play" icon. The IDE will automatically open [Swagger](http://localhost:7278/swagger/index.html) in a new tab of your browser. You will use it to call the demo's endpoints.
 
-![](/img/use-cases/underwriting/underwriting-guide-visual-studio-2022.png)
+![](/img/use-cases/invoice-finance/visual-studio-2022.png)
 
 </TabItem>
 
