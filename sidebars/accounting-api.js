@@ -16,7 +16,11 @@ module.exports = [
     label: "Guides",
     collapsed: true,
     items: [
-      "guides/loan-qualification/introduction",
+      {
+        type: "link",
+        label: "Loan qualification",
+        href: "/guides/loan-qualification/introduction",
+      },
     ],
   },
   {

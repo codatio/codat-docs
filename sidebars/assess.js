@@ -17,7 +17,11 @@ module.exports = [
     collapsed: true,
     items: [
       "assess/get-started",
-      "guides/loan-qualification/introduction",
+      {
+        type: "link",
+        label: "Loan qualification",
+        href: "/guides/loan-qualification/introduction",
+      },
       {
         type: "category",
         label: "Migration Guides",
