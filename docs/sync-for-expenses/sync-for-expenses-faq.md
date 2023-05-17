@@ -80,5 +80,5 @@ error: One or more transactions have previously been processed: 46dd5a8a-d74f-46
 ```
 
 ### How can I detect if an expense account has been deactivated?
-You are able to create a webhook within the Codat portal which will alert you when the Chart of Accounts has been changed. By querying the Chart of Accounts and using the isDeleted flag you will be able to identify which accounts have been deleted before a sync occurs. 
+You can create a webhook in the Codat portal to alert you when the Chart of Accounts has been changed. By querying the Chart of Accounts and using the `isDeleted` flag, you can identify which accounts have been deleted before a sync occurs. 
 For more information please refer to the following (documentation)[https://docs.codat.io/introduction/webhooks/core-rules-types].
