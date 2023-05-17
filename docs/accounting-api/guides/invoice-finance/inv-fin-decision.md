@@ -31,7 +31,7 @@ The concentration threshold is set to 5% in the `appSettings.json` file, which y
 
 :::info Customer concentration
 
-Concentration = Customer balance / Total outstanding balance across all customers, or, in Codat's terms, it is the sum of all unpaid invoices `amountDue` for customer divided by the sum of all unpaid invoices `amountDue`.  
+Concentration = Customer balance / Total outstanding balance across all customers, or, in Codat's terms, it is the sum of all unpaid invoices `amountDue` for a customer divided by the sum of all unpaid invoices `amountDue`.  
 
 :::
 

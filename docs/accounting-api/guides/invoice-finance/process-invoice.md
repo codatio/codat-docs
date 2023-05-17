@@ -113,6 +113,8 @@ Try these suggestions to make the most of your experience with the demo app:
 
 You have now successfully run the demo app, covering all the key inoice financing process steps. You have started and completed an application, connected and fetched accounting data, and received a decision on your application. 
 
+---
+
 ### Read next
 
 - Review the app's fetching and decisioning logic [in detail](/accounting-api/guides/invoice-finance/inv-fin-decision)

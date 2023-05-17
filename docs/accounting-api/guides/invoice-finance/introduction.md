@@ -49,6 +49,8 @@ The demo app relies on Codat's [Accounting API](/accounting-api/overview). Our u
 
     Our accounting platform integrations give you real-time insight into the financial health of a business and its customers, allowing you to make better invoice financing decisions.
 
+---
+
 ### Read next
 
 Now that you know the focus and purpose of our demo app and its guide, you can:
