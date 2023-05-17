@@ -70,7 +70,7 @@ Each transaction id is unique to a client's company but they aren't unique acros
 You could re-use the chart of accounts, tracking categories and tax rates from our Accounting API. However, we recommend using the [mappingOptions](https://docs.codat.io/sync-for-expenses-api#/operations/get-mapping-options) for expenses because of the transaction type support. 
 Authentication, company creation and the Accounting connection linking journeys can be reused between builds. This is because the companies can use the same Id between Codat products. 
 
-### How can I re sync a transaction which has previously failed once I have resolved the issue with the transaction?
+### How can I resync a transaction which has previously failed once I resolve the issue with the transaction?
 Once the issue has been resolved with the transaction then you can create a new dataset for that transaction id. You are unable to resync the transaction with the same dataset id as the other successfully synced transactions will trigger the validation for preventing duplicates. To avoid duplicates Codat checks the transaction metadata to see if that transaction id has a status of completed. If it does then we know not to sync it again. The following error will appear if a duplicate transaction has been previously synced: 
 
 ```
