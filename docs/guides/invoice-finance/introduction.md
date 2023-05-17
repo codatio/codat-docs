@@ -1,5 +1,5 @@
 ---
-title: "Our invoice financing guide"
+title: "Invoice financing build guide"
 sidebar_label: "Introduction"
 description: "Selective invoice financing with Codat and our Accounting API" 
 ---

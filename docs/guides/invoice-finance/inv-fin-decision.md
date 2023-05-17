@@ -1,5 +1,5 @@
 ---
-title: "How the lending risk assessment works"
+title: "How the decisioning works"
 description: "Reference page with details on our decisioning logic, fetching data, and coming to a decision"
 ---
 
