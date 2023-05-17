@@ -35,10 +35,10 @@ We will use [ngrok](https://ngrok.com/) to listen for Codat's webhooks.
 
    ```bash
    choco install ngrok
-   ngrok http 7278
+   ngrok http 5069
    ```
    
-   This will install ngrok using [Chocolatey](https://chocolatey.org/) and run it at port 7278. 
+   This will install ngrok using [Chocolatey](https://chocolatey.org/) and run it at port 5069. 
    
    Copy the **forwarding address** - this will be the `<server-url>` for the webhooks.
 
@@ -50,9 +50,9 @@ We will use [ngrok](https://ngrok.com/) to listen for Codat's webhooks.
    
    ```bash
    brew install ngrok
-   ngrok http 7278
+   ngrok http 5069
    ```  
-   This will install ngrok using [Homebrew](https://brew.sh/) and run it at port 7278. 
+   This will install ngrok using [Homebrew](https://brew.sh/) and run it at port 5069. 
    
    Copy the **forwarding address** - this will be the `<server-url>` for the webhooks.
 
