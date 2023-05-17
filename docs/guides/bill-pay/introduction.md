@@ -1,7 +1,7 @@
 ---
 title: "Bill pay build guide"
 sidebar_label: "Introduction"
-description: "Use this guide and the accompanying demo app to build solutions that streamline your customers' Accounts Payable processes"
+description: "Use this guide and the accompanying demo app to streamline your customers' Accounts Payable processes"
 displayed_sidebar: "docs"
 ---
 
