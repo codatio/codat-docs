@@ -123,6 +123,12 @@ module.exports = {
           rel: null,
         },
         {
+          href: "https://cochat-test.azurewebsites.net/",
+          label: "Ask Cochat AI",
+          target: "_blank",
+          rel: null,
+        },
+        {
           href: "https://bit.ly/codatstatus",
           label: "API status",
           target: "_blank",
