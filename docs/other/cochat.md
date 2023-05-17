@@ -8,6 +8,11 @@ description: "Cochat is an innovative tool powered by GPT 3.5, designed to assis
 This page was written by ChatGPT.
 :::
 
+:::caution Beta
+
+Cochat is in beta and we're still refining it's training data.
+:::
+
 ## What is Cochat?
 
 Cochat is an advanced natural language processing (NLP) tool developed to enhance the user experience of Codat customers. By leveraging the power of GPT 3.5, Cochat provides an interactive and conversational interface to help users make sense of the Codat documentation and better understand how to leverage its capabilities for building integrations.
@@ -25,7 +30,7 @@ Cochat is an advanced natural language processing (NLP) tool developed to enhanc
       Get instant assistance with {" "}
       <a href="https://cochat-test.azurewebsites.net/" target="_blank">
         Cochat
-      </a> our AI tool trained on the Codat docs. Try {" "}
+      </a> our beta AI tool trained on the Codat docs. Try {" "}
       <a href="https://cochat-test.azurewebsites.net/" target="_blank">asking it a question</a>
       {" or "}
       <a href="/other/cochat">read more</a>.
