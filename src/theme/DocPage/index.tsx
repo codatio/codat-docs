@@ -28,6 +28,7 @@ import {ThemeClassNames} from '@docusaurus/theme-common';
 import Head from '@docusaurus/Head';
 
 import {useWindowSize} from '@docusaurus/theme-common';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 type DocPageContentProps = {
   readonly currentDocRoute: DocumentRoute;
@@ -168,12 +169,19 @@ function DocPage(props: Props): JSX.Element {
     />;
   }
 
+  const {siteConfig} = useDocusaurusContext();
+
+  console.log(siteConfig, siteConfig.customFields?.FEATURE_DEV_FLAG === "true")
+
   return (
     <>
       <Head>
         {/* TODO we should add a core addRoute({htmlClassName}) generic plugin option */}
         <html className={versionMetadata.className} />
       </Head>
+      {
+        siteConfig.customFields?.FEATURE_DEV_FLAG === "true" && <div className={styles.devFlag}>This is a staging build of the docs</div>
+      }
       <DocPageContent
         currentDocRoute={currentDocRoute}
         versionMetadata={versionMetadata}>
