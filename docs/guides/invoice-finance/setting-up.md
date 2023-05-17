@@ -70,7 +70,7 @@ In the **Monitor > Alerts > [Alerting rules](https://app.codat.io/monitor/rules)
 
 Click **Create rule** to open the new rule creation window. Select the rule type, apply it to all companies, and assign it a webhook URL. Make sure to replace the `<server-url>` with your forwarding address.
 
-   ![](/img/use-cases/underwriting/rule-creation-screen.png)
+   ![](/img/use-cases/invoice-finance/rule-creation-screen.png)
 
 ### <input type="checkbox" unchecked /> Clone the code
 
@@ -156,4 +156,4 @@ You have now set up your Codat instance and your local environment in preparatio
 
 ### Read next
 
-- [Use the app to provide an invoice financing decision](/accounting-api/guides/invoice-finance/process-invoice).
+- [Use the app to provide an invoice financing decision](/guides/invoice-finance/process-invoice).
