@@ -71,7 +71,9 @@ You can reuse the chart of accounts, tracking categories, and tax rates from our
 Authentication, company creation and the Accounting connection linking journeys can be reused between builds. This is because the companies can use the same Id between Codat products. 
 
 ### How can I resync a transaction which has previously failed once I resolve the issue with the transaction?
-Once the issue has been resolved with the transaction then you can create a new dataset for that transaction id. You are unable to resync the transaction with the same dataset id as the other successfully synced transactions will trigger the validation for preventing duplicates. To avoid duplicates Codat checks the transaction metadata to see if that transaction id has a status of completed. If it does then we know not to sync it again. The following error will appear if a duplicate transaction has been previously synced: 
+Once you resolve the issue with the transaction, you can create a new dataset for that transaction Id. You are unable to resync the transaction with the same dataset Id as the other successfully synced transactions will trigger the validation for preventing duplicates. To avoid duplicates, Codat checks the transaction metadata to see if a transaction Id has a status of completed. If it does, it is not synced again. 
+
+The following error will appear if a transaction has been previously synced: 
 
 ```
 error: One or more transactions have previously been processed: 46dd5a8a-d74f-46f0-adf8-4f74ffe5e7c8
