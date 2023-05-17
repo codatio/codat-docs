@@ -11,24 +11,24 @@ A data connection represents a [company's](/core-concepts/companies) connection 
 
 A company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:
 
-- A single source of [accounting data](/accounting-api/overview).
-- Multiple sources of [banking data](/banking-api/overview).
-- Multiple sources of [commerce data](/commerce-api/overview).
+- [Accounting data](/accounting-api/overview) - 1 active connection.
+- [Banking data](/banking-api/overview) - Multiple active connections.
+- [Commerce data](/commerce-api/overview) - Multiple active connections.
 
 Any combination of accounting, banking, and commerce data connections is allowed.
 
 Before you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](/auth-flow/overview).
 
-## Data connection status
+## Connection status
 
-Data connections can have one of the statuses described in the following table.
+Connections can have one of the statuses described in the following table.
 
 | Status         | Definition                                                                                                                                                                                                                                                                                                                                                                                                   |
 | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Linked         | The connection is linked to a data source; you can use it to pull and push a company's consented data to and from the underlying provider's platform.                                                                                                                                                                                                                                                        |
-| PendingAuth    | The company hasn't authorized access to their financial platform (the data source). The SMB customer selected the platform in Link but did not complete the authorization flow.                                                                                                                                                                                                                              |
-| Deauthorized   | The connection was linked but is no longer able to access data from the underlying provider's platform.<br/>You can access any data that was already pulled or pushed using this data connection. However, you can't perform any new pulls or pushes until the connection is re-linked.<br/>A data connection usually becomes Deauthorized if the company revoked your access or an expiry time was reached. |
-| Unlinked       | The data connection was previously linked but you asked for your access to be revoked (see Disconnect a data connection to revoke your access to a data source).<br/>Similar to Deauthorized, you can still access any data that was already pulled or pushed using the data connection, but can't perform any new pulls or pushes unless the connection is re-linked.                                       |
+| `Linked`        | The connection is linked to a data source; you can use it to pull and push a company's consented data to and from the underlying provider's platform.                                                                                                                                                                                                                                                        |
+| `PendingAuth`    | The company hasn't authorized access to their financial platform (the data source). The SMB customer selected the platform in Link but did not complete the authorization flow.                                                                                                                                                                                                                              |
+| `Deauthorized`   | The connection was linked but is no longer able to access data from the underlying provider's platform.<br/>You can access any data that was already pulled or pushed using this data connection. However, you can't perform any new pulls or pushes until the connection is re-linked.<br/>A data connection usually becomes Deauthorized if the company revoked your access or an expiry time was reached. |
+| `Unlinked`       | The data connection was previously linked but you asked for your access to be revoked (see Disconnect a data connection to revoke your access to a data source).<br/>Similar to Deauthorized, you can still access any data that was already pulled or pushed using the data connection, but can't perform any new pulls or pushes unless the connection is re-linked.                                       |
 | No connections | The company has been created but does not have any connections to financial platforms established in any of the above statuses.                                                                                                                                                                                                                                                                              |
 
 ## Linked data connection example
@@ -40,7 +40,7 @@ In the response, note the following fields:
 - `sourceId` identifies the source of information, like a bank or accounting software; 
 - `integrationId` identifies the Codat integration that supports the data source.
 
-```json Data connections - example
+```json title="GET /companies/{companyId}/connections"
 {
   "id": "00000000-0000-0000-0000-000000000000",
   "integrationId": "18cb53c4-3807-4a5a-8da9-303053a40002",
@@ -56,7 +56,7 @@ In the response, note the following fields:
 
 ## Disconnect a data connection to revoke your access to a data source
 
-You can disconnect a data connection using the <a href="https://api.codat.io/swagger/index.html#/Connection/patch_companies__companyId__connections__connectionId_" target="_blank">PATCH /connectionId endpoint</a>. This revokes your access to synchronize data with the linked company and sets the data connection's status to `Unlinked`.
+You can disconnect a data connection using the <a href="/codat-api#/operations/unlink-company-connection" target="_blank">PATCH /connectionId endpoint</a>. This revokes your access to synchronize data with the linked company and sets the data connection's status to `Unlinked`.
 
 To disconnect a data connection, you'll need to provide:
 
@@ -103,7 +103,7 @@ Request body:
 
 ## Delete a data connection
 
-To delete a data connection, send a request to the <a href="https://api.codat.io/swagger/index.html#/Connection/delete_companies__companyId__connections__connectionId_" target="_blank">DELETE /connectionId endpoint</a> and provide the `companyId` and `connectionId` as path parameters.
+To delete a data connection, send a request to the <a href="/codat-api#/operations/delete-company-connection" target="_blank">DELETE /connectionId endpoint</a> and provide the `companyId` and `connectionId` as path parameters.
 
 ```http
 DELETE /companies/COMPANY_ID/connections/CONNECTION_ID
@@ -123,4 +123,4 @@ If you are migrating an existing integration to use Codat, you can provide token
 ## Read next
 
 - Next concept: [Integrations](/core-concepts/integrations)
-- [`GET https://api.codat.io/companies`](/codat-api#/operations/list-companies)
+- [`GET /connections`](/codat-api#/operations/list-company-connections) API reference

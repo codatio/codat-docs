@@ -38,7 +38,7 @@ From the SMB perspective, they will see the on-premise connector app as being ow
 
 ## Requirements
 
-See [Sage 50 requirements](sage-50-requirements) to learn about the supported versions of QuickBooks desktop, and the hardware, software, environment and networking requirements for running the connector.
+See [Sage 50 requirements](sage-50-requirements) to learn about the supported versions, and the hardware, software, environment and networking requirements for running the connector.
 
 ## Install the connector
 

@@ -1,5 +1,5 @@
 ---
-title: "Upcoming 2023-04-11: Changes to handling of deleted data"
+title: "Completed 2023-04-11: Changes to handling of deleted data"
 date: "2023-01-15"
 tags: ["Deprecation", "Data deletion"]
 draft: false

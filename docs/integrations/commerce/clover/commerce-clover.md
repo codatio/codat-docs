@@ -1,14 +1,14 @@
 ---
 title: "Clover"
+sidebar_label: Overview
 description: "Learn about our Clover integration"
 createdAt: "2021-06-11T12:45:04.788Z"
 updatedAt: "2022-10-20T13:33:56.241Z"
 ---
 
-<a className="external" href="https://uk.clover.com/" target="_blank">
+<p><a className="external" href="https://uk.clover.com/" target="_blank">
   Clover
-</a> makes it easy for merchants to manage their business, combining point of sale
-and payment processing features in one software solution.
+</a> makes it easy for merchants to manage their business, combining point of sale and payment processing features in one software solution.</p>
 
 Use Codat's Commerce API with Clover to securely connect to, retrieve, and view your customers’ commerce transactions.
 

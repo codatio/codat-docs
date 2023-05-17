@@ -11,14 +11,18 @@ ul.card-container {
   grid-gap: 1rem;
   gap: 1rem;
   grid-auto-rows: minmax(150px, auto);
-}
 
-ul.card-container.col-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
+  &.col-3 {
+    grid-template-columns: repeat(3, 1fr);
+    
+    p {
+      font-size: 0.9em;
+    }
+  }
 
-ul.card-container.col-3 p {
-  font-size: 0.9em;
+  &.mini {
+    grid-auto-rows: auto;
+  }
 }
 
 @media screen and (max-width: 1220px) {
@@ -40,6 +44,20 @@ html[data-theme="light"] {
   li.card {
     background-color: var(--token-primary-bg-c);
     border: 2px solid var(--token-secondary-bg-c-alt);
+
+    &.dark {
+      background-color: #15095D;
+      color: white;
+
+      img {
+        fill: white;
+        fill-opacity: 1;
+      }
+
+      a {
+        color: white;
+      }
+    }
   }
 }
 
@@ -59,30 +77,56 @@ li.card {
   padding: 1.5em;
   border-radius: 8px;
   font-size: 0.9em !important;
-}
 
-li.card p {
-  font-size: 14px;
-}
 
-li.card p:first-child {
-  margin-top: 0;
-}
+  p {
+    font-size: 14px;
+    
+    &:first-child {
+      margin-top: 0;
+    }
 
-li.card p:last-child {
-  margin-bottom: 0;
-}
+    &:last-child {
+      margin-bottom: 0;
 
-li.card div.header {
-  display: flex;
-  align-items: center;
-
-  h3 {
-    font-size: 16px;
+      a b {
+        text-decoration: none;
+      }
+    }
   }
 
-  img + h3 {
-    margin: 0.5em;
+  .header {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    h3 {
+      font-size: 16px;
+    }
+
+    img + h3 {
+      margin: 0.5em;
+    }
+  }
+}
+
+li.card.mini {
+  flex-direction: row;
+
+  .header {
+    align-items: flex-start;
+
+    img {
+      margin-bottom: 0;
+    } 
+  }
+
+  .content {
+    padding-left: 1em;
+
+    h4 {
+      margin-bottom: 0.25em;
+    }
   }
 }
 
@@ -92,4 +136,18 @@ li.card div.header {
   height: 20px !important;
   margin-right: 10px;
   vertical-align: text-bottom;
+}
+
+.icon.usecase {
+  border-radius: 4px;
+  object-fit: cover;
+  width: 60px;
+  height: 60px;
+
+  margin-bottom: 1em;
+}
+
+.tertiary {
+  text-decoration: none;
+  font-weight: bold;
 }

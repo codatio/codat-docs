@@ -30,6 +30,7 @@ module.exports = {
   projectName: "codat-docs",
   customFields: {
     'ZENDESK_KEY': process.env.ZENDESK_KEY,
+    'FEATURE_DEV_FLAG': process.env.FEATURE_DEV_FLAG
   },
   themeConfig: {
     typesense: {
@@ -131,7 +132,7 @@ module.exports = {
         routeBasePath: "/updates",
         blogSidebarCount: 8,
         blogSidebarTitle: "Latest updates",
-        editUrl: "https://github.com/codatio/codat-docs/edit/main/blog/",
+        editUrl: "https://github.com/codatio/codat-docs/edit/main/",
       },
     ],
     "@docusaurus/plugin-content-pages",
@@ -176,6 +177,13 @@ module.exports = {
       '@docusaurus/plugin-google-gtag',
       {
         trackingID: process.env.GTM_ID,
+        anonymizeIP: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-google-analytics',
+      {
+        trackingID: process.env.GA_ID,
         anonymizeIP: true,
       },
     ],

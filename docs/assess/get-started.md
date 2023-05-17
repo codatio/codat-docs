@@ -44,7 +44,7 @@ Configure your _Link settings_. Click on the **Settings** tab in the top menu an
 ## Features
 
 <iframe
-  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=1429551319&amp;single=true&amp;widget=true&amp;headers=false"
+  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=1429551319&amp;single=false&amp;widget=true&amp;headers=false"
   frameborder="0"
   style={{ top: 0, left: 0, width: "100%", height: "660px" }}
 ></iframe>
@@ -93,7 +93,7 @@ Visit our [Assess in the Portal](/assess/portal/overview) documentation.
 Explore the features that make up Assess:
 
 - [Categories](/assess/categories)
-- [Enhanced Financials](/assess/reports/enhanced-financials/financials)
+- [Enhanced Financials](/assess/enhanced-financials/overview)
 - [Accounting Metrics](/assess/metrics/accounting/api-financial-metrics)
 - [Commerce Metrics](/assess/metrics/commerce/overview)
-- [Data Integrity](/assess/data-integrity)
+- [Data Integrity](/assess/data-integrity/overview)

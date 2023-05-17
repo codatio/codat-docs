@@ -121,6 +121,18 @@ Codat gives you control of Link, ensuring that it meets your use case and provid
 
 We suggest using Link for best results, which can be [embedded within your app](/auth-flow/authorize-embedded-link). However, where you need full control of the flow, you can use our API to [build your own authorization journey](/auth-flow/build/build-your-own-authorization-journey).
 
+## Link in practice
+
+Our auth flow solution supports many real world applications and scenarios that you can leverage regardless of the approach you take to building your auth flow.  
+
+**Asynchronous use of Link**
+
+In your customer's organization, the person signing up through Codat may not have their credentials to hand. To enable them to proceed and explore your product, you can make upfront authorization for different integration categories optional in **Settings > Auth flow > Link**. Later, remind them to authorize, providing a clear indication of the value to them. 
+
+The user signing up may not have access to their business's financial data at all. For best results, provide them with an option to authorize themselves, or to invite someone else to (e.g. a member of their finance team). This can be done via email, or within your product. If the user chooses to invite someone else, this will share the Link URL with the stakeholder who has the credentials for the relevant platform.  
+
+This way, users do not have to share credentials with each other, and the user with platform access can complete the authorization asynchronously.
+
 ## Pitfalls
 
 :::note Device compatibility

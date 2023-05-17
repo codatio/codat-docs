@@ -1,5 +1,5 @@
 ---
-title: "Sync for Commcerce overview"
+title: "Sync for Commerce overview"
 sidebar_label: Sync for Commerce
 displayed_sidebar: sfc
 hide_title: true
@@ -14,21 +14,17 @@ updatedAt: "2022-11-17T10:56:14.545Z"
   <meta property="og:image" content="/img/codat_banner.png"/>
 </Head>
 
-<div className="background-video-wrapper sfc">
-  <div className="banner-video">
-    <h1>Sync for Commerce</h1>
-    <p>
-      Embedded accounting integrations for PoS and eCommerce platforms.
-    </p>
-  </div>
-</div>
+import PageHeader from "@components/global/PageHeader";
 
-<div className="background-video-spacer sfc">
-    <h1>Sync for Commerce</h1>
+<PageHeader 
+  className="sfc"
+  title="Sync for Commerce"
+  icon="/logos/products/SyncforCommerce.svg"
+>
     <p>
       Embedded accounting integrations for PoS and eCommerce platforms.
     </p>
-</div>
+</PageHeader>
 
 **Building to lots of different APIs does not scale. With Sync for Commerce, you can send a merchant's data to their accounting platform without worrying about which one they use.**
 

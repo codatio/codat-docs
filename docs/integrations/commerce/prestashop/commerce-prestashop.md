@@ -1,14 +1,15 @@
 ---
 title: "PrestaShop"
+sidebar_label: Overview
 description: "Learn about our PrestaShop integration"
 createdAt: "2021-09-16T23:31:01.039Z"
 updatedAt: "2022-11-17T10:56:52.590Z"
 ---
 
-<a className="external" href="https://www.prestashop.com/en" target="_blank">
+<p><a className="external" href="https://www.prestashop.com/en" target="_blank">
   PrestaShop
 </a> is an open source ecommerce platform written in PHP. PrestaShop enables merchants
-to create, configure and host an online ecommerce store.
+to create, configure and host an online ecommerce store.</p>
 
 Use Codat's Commerce API with PrestaShop to securely connect to, retrieve, and view your customers’ commerce transactions.
 

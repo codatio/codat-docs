@@ -20,6 +20,8 @@ import {ThemeClassNames, useWindowSize} from '@docusaurus/theme-common';
 import {DocProvider} from '@docusaurus/theme-common/internal';
 import DocItemMetadata from '@theme/DocItem/Metadata';
 
+import Vote from './Vote';
+
 import CookieConsent from "react-cookie-consent";
 
 export default function DocItem(props: Props): JSX.Element {
@@ -82,6 +84,10 @@ export default function DocItem(props: Props): JSX.Element {
 
                 <DocContent />
               </div>
+
+              { canRenderTOC &&
+                <Vote props={props} page={props.route.path}/>
+              }
 
               {/*<DocItemFooter {...props} />*/}
             </article>

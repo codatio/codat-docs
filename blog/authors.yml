@@ -30,12 +30,18 @@ jasond-s:
 
 jyorston:
   name: James Yorston
-  title: Product Manager, Sync for Expenses
-  url: https://github.com/jyorston
-  image_url: https://github.com/jyorston.png
+  title: Principal Product Manager
+  url: https://github.com/jmyorston
+  image_url: https://github.com/jmyorston.png
 
 GraceCodat:
   name: Grace Shiach
   title: Product Manager, Integrations
   url: https://github.com/graceshiach-codat
   image_url: https://github.com/graceshiach-codat.png
+
+e-donnelly:
+  name: Eimear Donnelly
+  title: Product Manager, Assess
+  url: https://github.com/e-donnelly
+  image_url: https://github.com/e-donnelly.png

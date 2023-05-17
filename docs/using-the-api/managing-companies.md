@@ -23,19 +23,16 @@ You can either onboard users:
 
 To create a new company, use the `POST /companies` endpoint and provide a name you want to attribute to it in the request body. Parameter `name` is a required parameter to execute this request. You can also provide a `description` to store additional information about the company.
 
-:::note Company name
+`POST /companies`
 
-The name of the company doesn't have to be unique. It's just there to help you identify the company in the portal. Make sure to [avoid forbidden characters](/core-concepts/companies).
-:::
-
-```json Title="Sample request"
+```json title="Sample request body"
 {
   "name": "Platypus Properties",
   "description": "Platypuses are venomous mammals"
 }
 ```
 
-```json Title="Sample response"
+```json title="Sample response"
 {
   "id": "8f74269c-6cbf-4c5e-9b93-599965a7fd49",
   "name": "Platypus Properties",
@@ -46,12 +43,17 @@ The name of the company doesn't have to be unique. It's just there to help you i
 ```
 :::caution Retain the company ID
 
-The `id` property that you receive in the response is the unique Codat identifier for this company. We recommend that you retain it for future reference.
+The `id` property that you receive in the response is the unique Codat identifier for this company. **We recommend that you retain it for future reference.**
 :::
 
-### Authorize access
+:::note Company name
 
-Once you've created the company, they'll need to give you permission to pull their data. There are several approaches to doing this, but for simplicity we've just covered our out-of-the-box [hosted link](/auth-flow/authorize-hosted-link) approach.
+The name of the company doesn't have to be unique. It's just there to help you identify the company in the portal. Make sure to [avoid forbidden characters](/core-concepts/companies).
+:::
+
+### Authorize access to company data
+
+Once you've created the company, they'll need to give you permission to pull their data from a given source, like their accounting platform. There are several approaches to doing this, but for simplicity we've just covered our out-of-the-box [hosted link](/auth-flow/authorize-hosted-link) approach.
 
 Send the user to the `redirect` URL returned in the previous step. They will be sent to [Link](/auth-flow/authorize-hosted-link) where they can select their accounting software and complete the linking process.
 
@@ -76,9 +78,9 @@ In this request, `companyId` is [the unique ID that you have received in a respo
 
 When you’re pulling data for the first time, use this endpoint to check if the sync was successful.
 
-#### Response for a successful first sync
+`GET /companies/{companyId}/dataStatus`
 
-```json 
+```json title="Response for a successful first sync"
 {
   "suppliers": {
     "dataType": "suppliers",
@@ -91,9 +93,7 @@ When you’re pulling data for the first time, use this endpoint to check if the
 }
 ```
 
-#### Response for an unsuccessful first sync
-
-```json
+```json title="Response for an unsuccessful first sync"
 {
   "suppliers": {
     "dataType": "suppliers”
@@ -108,7 +108,7 @@ When you’re pulling data for the first time, use this endpoint to check if the
 
 If there are datasets which are not as up-to-date as you require, you can queue a data sync as described [here](/using-the-api/queueing-data-syncs).
 
-Once you've queued the sync, you can poll the [GET /companies/{companyId}/dataStatus](/codat-api#/operations/get-companies-companyId-dataStatus) endpoint (as described above) to [monitor progress of the sync](/core-concepts/status).
+Once you've queued the sync, you can poll the [GET /companies/{companyId}/dataStatus](/codat-api#/operations/get-company-data-status) endpoint (as described above) to [monitor progress of the sync](/core-concepts/status).
 
 :::note Configuring the sync schedule
 

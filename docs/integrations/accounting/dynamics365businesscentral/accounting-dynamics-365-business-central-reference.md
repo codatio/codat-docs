@@ -43,10 +43,6 @@ When pushing Customers or Suppliers to Business Central, Codat auto-creates a pl
 
 If the description was edited in Business Central, a validation error is returned on subsequent pushes. If the code was edited, the placeholder payment method is recreated.
 
-## Pushing Journal entries
-
-Pushing Journals to Business Central is not currently supported by the integration. Therefore, when pushing Journal entries to Business Central all entries are posted to the _general journal_.
-
 ## Tracking categories
 
 When pulling Tracking categories from Business Central, the `subCategories` field within the [tracking category tree model](/accounting-api#/schemas/trackingcategories#tracking-category-tree-model) is not populated. This kind of relationship can't be modeled in Business Central.

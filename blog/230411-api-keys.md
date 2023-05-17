@@ -1,5 +1,5 @@
 ---
-title: "Upcoming 2023-04-11: Deprecation of API key management endpoints"
+title: "Completed 2023-04-11: Deprecation of API key management endpoints"
 sidebar_label: "2023-04-11: API key management endpoints"
 date: "2023-01-18"
 tags: ["Deprecation", "API keys"]

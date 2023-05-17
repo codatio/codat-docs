@@ -1,5 +1,5 @@
 ---
-title: "Upcoming 2023-04-11: Deprecation of legacy bank account endpoints"
+title: "Completed 2023-04-11: Deprecation of legacy bank account endpoints"
 date: "2023-01-15"
 tags: ["Deprecation", "Bank accounts"]
 draft: false

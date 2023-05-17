@@ -62,10 +62,10 @@ Sync for Expenses currently supports option 2 only.
    </li>
    <ul>
       <li>
-         <a href="/accounting-api#/operations/get-supplier">GET</a> a list of available suppliers in the company's accounting software. You can also add additional query parameters, e.g. <code>query=metadata.isDeleted=false&&supplierName=supplierName</code>
+         <a href="/accounting-api#/operations/list-suppliers">GET</a> a list of available suppliers in the company's accounting software. You can also add additional query parameters, e.g. <code>query=metadata.isDeleted=false&&supplierName=supplierName</code>
       </li>
       <li>
-         You can <a href="/accounting-api#/operations/post-supplier">POST</a> to create a new supplier.
+         You can <a href="/accounting-api#/operations/create-suppliers">POST</a> to create a new supplier.
       </li>
    </ul>
 </ul>
@@ -162,7 +162,9 @@ When pushing an expense reconciliation, you can include a tracking category to a
 
 The tax rates enable your SMB's to accurately track taxes against purchases and, depending on the locale, allow them to recoup the tax.
 
-Accounting systems typically store a set of taxes and associated rates within the accounting package. This means that users don't have to look up or remember the rates for each type of tax. For example: Applying the tax "UK sales VAT" to line items of an invoice adds the correct rate of 20%.
+Accounting systems typically store a set of taxes and associated rates within the accounting package. This means users don't have to look up or remember the rate for each type of tax. For example, applying the tax "UK sales VAT" to the line items of an invoice adds the correct tax rate of 20%. 
+
+Assigning a tax rate to a transaction is mandatory unless the transaction is a transferIn or transferOut (see [Transaction types](/sync-for-expenses/sync-process/expense-transactions#transaction-types). In some cases, your customers might not need to track tax on expenses. We recommend assigning a default tax code for 0% from the accounting package for those transactions.
 
 **Refreshing the mappingOptions**
 

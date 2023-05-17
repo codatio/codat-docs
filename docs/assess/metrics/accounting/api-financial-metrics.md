@@ -7,6 +7,8 @@ updatedAt: "2023-01-16T09:26:35.560Z"
 
 The Financial Metrics API provides the most commonly used financial metrics and ratios used for credit risk assessments of small and medium businesses. Metrics are auto-calculated for you across the full history of financial statements for a linked company and can be retrieved for a single period or spread across multiple periods enabling you to perform time series analysis of the financial performance of the company.
 
+Refer to the [Assess reporting structure](/assess/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
+
 Supported metrics:
 
 1. Gross profit margin
@@ -24,79 +26,41 @@ Any metric (including metric inputs) that have null/blank values means that data
 
 ## Metrics
 
-This endpoint retrieves all the available financial performance metrics held against a company, over one or more periods of time.
-
-View the Financial Metrics [formulas](/assess/metrics/accounting/api-financial-metrics#financial-metrics-formulas).
-
-The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-financialMetrics">API reference</a>.
+This endpoint retrieves all the available financial performance metrics held against a company, over one or more periods of time. The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-financialMetrics">API reference</a>.
 
 `GET /data/companies/{companyId}/connections/{connectionId}/assess/financialMetrics`
 
 ## Parameters
 
 |                          Parameter                           |    Type    | Description | Required |
-| :----------------------------------------------------------: | :--------: | :---------: | :-------:|
-|                        **reportDate**                        |  _string_  | See [Date](/codat-api#/schemas/DateTime) | YYYY-MM-DD |
-
-The date in which the report is created up to. Users must specify a specific date, however the response will be provided for the full month. | Required | **periodLength** |
-| _integer_ | The number of months per period. E.g. 2 = 2 months per period.",
-"1-3": "Required |
-| **numberOfPeriods** ",
-"2-1": "_integer_",
-"2-2": "The number of periods to return.
-
-There will be no pagination as a query parameter, however Codat will limit the number of periods to request to 12 periods.| Required |
-| **showMetricInputs** | _boolean_",
-"3-2": "If set to True, then the system includes the input values within the response.
-
-Default to False. | Optional |
+| :----------------------------------------------------------- | :--------- | :---------- | :--------|
+|                        **reportDate**                        |  _string_ <br/> See [Date](/codat-api#/schemas/DateTime)  | YYYY-MM-DD <br/> The date in which the report is created up to. Users must specify a specific date, however the response will be provided for the full month.| Required |
+| **periodLength** | _integer_ | The number of months per period. E.g. 2 = 2 months per period. | Required |
+| **numberOfPeriods** | _integer_ | The number of periods to return. <br/> There will be no pagination as a query parameter, however Codat will limit the number of periods to request to 12 periods.| Required |
+| **showMetricInputs** | _boolean_| If set to True, then the system includes the input values within the response. <br/> Default to False. | Optional |
 
 ## Data model
 
 |  Field   |                         Type                          | Description  |
-| :------: | :---------------------------------------------------: | :----------: | -------------- |
-| **name** |                       _string_                        | Metric name. | **metricUnit** |
-| _string_ | Depending on the metric, the response value could be: |
-
-_ Ratio  
-_ Money (e.g. EBITDA is not a ratio) |
-| **currency**",
-"2-1": "_string_",
-"2-2": "Base currency of the company, as provided by the balance sheet, and profit and loss endpoints.
-| **periods** | _array_  
-See [Periods](#periods)",
-"3-2": "
-| **Errors** | _array_  
-See [Errors](#errors) | If there are no errors, an empty array is returned. |
+| :------- | :---------------------------------------------------- | :----------- |
+| **name** |                       _string_                        | Metric name. | 
+| **metricUnit** | _string_ | Depending on the metric, the response value could be:_Ratio_, or Money (e.g. EBITDA is not a ratio) |
+| **currency**| _string_ | Base currency of the company, as provided by the balance sheet, and profit and loss endpoints. |
+| **periods** | _array_  | See [Periods](#periods)|
+| **errors** | _array_   | See [Errors](#errors) <br/> If there are no errors, an empty array is returned. |
 
 ### Periods
 
 |                            Field                             |                  Type                  | Description |
-| :----------------------------------------------------------: | :------------------------------------: | :---------: |
-|                         **fromDate**                         |                _string_                |
-| See [Date](/codat-api#/schemas/DateTime) | The date from which the report starts. |
-
-YYYY-MM-DD | **toDate**
-| _string_  
-See [Date](/codat-api#/schemas/DateTime) | The date on which the report ends (inclusive of day).
-
-YYYY-MM-DD |
-| **value** ",
-"2-1": "_number_",
-"2-2": "The top level metric value that is calculated for the specified period.
-
-If the system cannot calculate for that period, the value will be null. The system will still show the metric inputs.
-| **inputs** | _array_  
-See [Inputs](#inputs)",
-"3-2": "Array of input values that feed into the metric calculation.
-
-By default, this array is not returned (see Parameters section) → “Show metric inputs”.
-
-If the query parameter “showMetricInputs” = True, then this array gets returned in the response. |
+| :----------------------------------------------------------- | :------------------------------------- | :---------- |
+|                         **fromDate**                         |                _string_                | See [Date](/codat-api#/schemas/DateTime) <br/> The date from which the report starts. <br/> YYYY-MM-DD | 
+| **toDate** | _string_ | See [Date](/codat-api#/schemas/DateTime) <br/> The date on which the report ends (inclusive of day). <br/> YYYY-MM-DD |
+| **value**  | _number_ | The top level metric value that is calculated for the specified period. <br/> If the system cannot calculate for that period, the value will be null. <br/> The system will still show the metric inputs.|
+| **inputs** | _array_  | See [Inputs](#inputs) <br/> Array of input values that feed into the metric calculation. <br/> By default, this array is not returned (see Parameters section) → “Show metric inputs”. <br/> If the query parameter `showMetricInputs = true`, then this array gets returned in the response. |
 
 #### Inputs
 
-If the query parameter _showMetricInputs = True_, then this array gets returned in the response.
+If the query parameter `showMetricInputs = true`, then this array gets returned in the response.
 
 | Field     | Type     | Description                                                                |
 | :-------- | :------- | :------------------------------------------------------------------------- |
@@ -106,35 +70,10 @@ If the query parameter _showMetricInputs = True_, then this array gets returned 
 ### Errors
 
 |  Field   |   Type   |         Description          |
-| :------: | :------: | :--------------------------: |
-| **type** | _string_ | Metric-level error messages: |
-
-`uncategorizedAccounts` (Metric level error) - where there are accounts with missing categories.  
-`missingInputData` (Metric level error) - when the financial statements do not contain the required data points to calculate the metric.  
-`missingAccountData` (Period specific error) - for the given period, there is no account data to calculate the metric.  
-`datesOutOfRange` (Period specific error) - only for metrics where multiple periods are compared to drive calculation. (Free cash flow). | **message**
-| _string_ | If _type_ is:
-
-`Uncategorized accounts` - "There are uncategorized accounts IDs, see details"
-
-`Missing input data` - "There is no \\<profit and loss / balance sheet> synced to this company"
-
-`Missing Account data` - “Missing account data”
-
-`Dates out of range` - "There is no data for the requested period" |
-| **details** ",
-"2-1": "_string_",
-"2-2": "If _message_ is:
-
-Uncategorized accounts:  
-_ List of account category Types where there are missing account categories, e.g. “Assets, Liability”.  
-_ List of account IDs where there are missing categories.
-
-Missing Account data  
-\\\_ List of categories that are needed for the calculation.
-
-Dates out of range  
-\\\_ Earliest date in which the company’s data exists as input for the metric calculation. |
+| :------- | :------- | :--------------------------- |
+| **type** | _string_ | Metric-level error messages: <br/> `uncategorizedAccounts` (Metric level error) - where there are accounts with missing categories. <br/> `missingInputData` (Metric level error) - when the financial statements do not contain the required data points to calculate the metric. <br/> `missingAccountData` (Period specific error) - for the given period, there is no account data to calculate the metric. <br/> `datesOutOfRange` (Period specific error) - only for metrics where multiple periods are compared to drive calculation. (Free cash flow). |
+| **message** | _string_ | If _type_ is: <br/> `Uncategorized accounts` - "There are uncategorized accounts IDs, see details" <br/> `Missing input data` - "There is no <profit and loss / balance sheet> synced to this company" <br/> `Missing Account data` - “Missing account data” <br/> `Dates out of range` - "There is no data for the requested period" |
+| **details** | _string_ | If _message_ is: <br/> `Uncategorized accounts`:  <br/> _List of account category Types where there are missing account categories, e.g. “Assets, Liability”._  <br/> _List of account IDs where there are missing categories._ <br/> `Missing Account data` <br/> _List of categories that are needed for the calculation._ <br/> `Dates out of range` <br/> _Earliest date in which the company’s data exists as input for the metric calculation._|
 
 ## JSON response example
 

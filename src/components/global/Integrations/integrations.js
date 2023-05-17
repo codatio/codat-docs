@@ -80,7 +80,7 @@ const accountingIntegrations = [
     "img": "https://static.codat.io/public/officialLogos/Square/4E552E84-0E07-41B7-9B2D-14D5EEFD11B6.png"
   },
   {
-    "name": "MYOB AccountRight and Essentials",
+    "name": "MYOB Business",
     "to": "/integrations/accounting/myob/accounting-myob",
     "type": "accounting",
     "img": "https://static.codat.io/public/officialLogos/Square/00812DF4-8A0F-4F06-9566-16E5CA1346AE.png"

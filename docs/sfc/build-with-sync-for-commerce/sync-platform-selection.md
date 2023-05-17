@@ -253,3 +253,11 @@ Call `GET /companies/{companyId}/connections`. There should only be one connecti
 
 For Embedded Link, you can use the `onConnection` callback function to retain the connection and its `platformKey`.
 :::
+
+```http
+GET /config/sync/commerce/lqai/{platformKey}/start?merchantIdentifier={companyId}
+```
+
+:::info Checkpoint
+You're ready to move to the next page, where we'll cover what to do with this response, and more.
+:::

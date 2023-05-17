@@ -14,7 +14,7 @@ module.exports = [
       {
         type: "link",
         label: "Sample project",
-        href: "https://github.com/codatio/link-sdk-sample-project",
+        href: "https://github.com/codatio/sample-project-link-sdk",
       },
     ],
   },
@@ -63,6 +63,7 @@ module.exports = [
     collapsed: true,
     items: [
       "auth-flow/optimize/optimize-the-connection-journey",
+      "auth-flow/optimize/monitor-auth-flow",
       "auth-flow/optimize/funnel",
       "auth-flow/optimize/value-exchange",
       "auth-flow/optimize/privacy",

@@ -13,14 +13,15 @@ The categorized Profit and Loss, and Balance Sheet showcase the power of the [Ca
 
 **Data Match**
 
-The data match percentage button is located next to the **Assess** header on every Assess page and it leverages the [Data Integrity](/assess/data-integrity) feature. The match percentage is pre-calculated using the [Data Integrity summaries](/assess/data-integrity/api-data-integrity#summaries) endpoint.
+The data match percentage button is located next to the **Assess** header on every Assess page and it leverages the [Data Integrity](/assess/data-integrity/overview) feature. The match percentage is pre-calculated using the [Data Integrity summaries](/assess/data-integrity/api-data-integrity#summaries) endpoint.
 
 It takes the match percentage from the summaries endpoint for both `banking-transactions` and `accountTransactions` to calculate an overall match percentage, and it accounts for all dates, not just the optimal date range.
 
-Hovering over the button reveals further detail about the data match. Clicking the **Data match** button takes you to the **Data Integrity** page which provides detailed information about matches. Explore [Data Integrity](/assess/data-integrity).
+Hovering over the button reveals further detail about the data match. Clicking the **Data match** button takes you to the **Data Integrity** page which provides detailed information about matches. Explore [Data Integrity](/assess/data-integrity/overview).
 
 **Reports**
-The **Reports** button is located in the top right corner of every Assess page and directs you to the [Reports](#reports) page in the Portal where you can generate and download the Audit report in Excel format.
+
+The **Reports** button is located in the top right corner of every Assess page and directs you to the [Reports](#reports) page in the Portal.
 
 ## Assess sections
 
@@ -48,15 +49,16 @@ The Profit and Loss page is the landing page when accessing Assess. The page con
 
 Select the **Period start**, **Period length** and **Periods to compare** to achieve the views you want. For example:
 
-**If you want a monthly view of the last 12 months**
-Period start = latest month (prepopulated for you)
-Period length = 1 (month)
+**If you want a monthly view of the last 12 months:**  
+
+Period start = latest month (prepopulated for you)  
+Period length = 1 (month)  
 Periods to compare = 12
 
-**If you want to view the last 4 full quarters**
-Period start = choose the last month of the last quarter you want to choose, e.g. June 2022
-Period length = 3
-Periods to compare = 4
+**If you want to view the last 4 full quarters:**  
+Period start = choose the last month of the last quarter you want to choose, e.g. June 2022  
+Period length = 3  
+Periods to compare = 4  
 
 ### Mapping to a common statement outline
 
@@ -76,7 +78,7 @@ The following information is displayed:
 
 ![P&L graph and extract of a statement based on selection criteria](/img/old/a1b310e-PL1.png)
 
-The **Statement** table renders the [Enhanced Profit and Loss](/assess/reports/enhanced-financials/profit-and-loss) endpoint response data to give a clear visual of the company’s performance over the specified periods. The green and red arrowheads alongside the numbers indicate an increase or decrease respectively compared to the previous period.
+The **Statement** table renders the [Enhanced Profit and Loss](/assess/enhanced-financials/profit-and-loss-accounts) endpoint response data to give a clear visual of the company’s performance over the specified periods. The green and red arrowheads alongside the numbers indicate an increase or decrease respectively compared to the previous period.
 
 Rows can be expanded or collapsed to show more or less information. A maximum of 5 checkboxes can be checked, like Income above, to display the selection on the graph. Hovering over the graph displays a tooltip which contains information about all of the points plotted for that date.
 
@@ -121,15 +123,15 @@ The **Data match** percentage displayed in the top right is a comparison of how 
 
 Select the **Period start**, **Period length** and **Periods to compare** to achieve the views you want. For example:
 
-**If you want a monthly view of the last 12 months**
-Period start = latest month (prepopulated for you)
-Period length = 1 (month)
-Periods to compare = 12
+**If you want a monthly view of the last 12 months**  
+Period start = latest month (prepopulated for you)  
+Period length = 1 (month)  
+Periods to compare = 12  
 
-**If you want to view the last 4 full quarters**
-Period start = choose the last month of the last quarter you want to choose, e.g. June 2022
-Period length = 3
-Periods to compare = 4
+**If you want to view the last 4 full quarters**  
+Period start = choose the last month of the last quarter you want to choose, e.g. June 2022  
+Period length = 3  
+Periods to compare = 4  
 
 ### Balance Sheet statement and graph
 
@@ -169,7 +171,7 @@ The Ratios table is displayed below the Statement table. Each metric/ratio can b
 
 If you are a developer, and you are looking to reproduce the outputs of this section, refer to the following API documentation:
 
-- [Enhanced Balance Sheet](/assess/reports/enhanced-financials/balance-sheet): To produce the balance sheet statement table and graph.
+- [Enhanced Balance Sheet](/assess/enhanced-financials/balance-sheet-accounts): To produce the balance sheet statement table and graph.
 - [Financial Metrics](/assess/metrics/accounting/api-financial-metrics): To produce the ratios table.
 - [Data Integrity](/assess/data-integrity/api-data-integrity): To produce the Data match percentage.
 
@@ -236,7 +238,7 @@ The transaction table displays below the _Inflows vs outflows_ graph and contain
 #### Exclude transactions
 
 :::info Unavailable for Plaid
-The filter and exclude functionality is currently unavailable for Plaid-connected companies. This will be available soon.
+The filter and exclude functionality is currently unavailable for Plaid-connected companies.
 :::
 
 You can type into a search bar located above the table to find matches in the _Description_ column. As you type, the table refreshes with all transactions that match the search term. In the search bar, to the right, the number of matching transactions is displayed in grey and the _Exclude all_ button becomes active.
@@ -271,15 +273,15 @@ The dismissible banner displayed at the top of the _Marketing_ page invites you 
 
 Select the **Period start**, **Period length** and **Periods to compare** to achieve the views you want. For example:
 
-**If you want a monthly view of the last 12 months**
-Period start = latest month (prepopulated for you)
-Period length = 1 (month)
-Periods to compare = 12
+**If you want a monthly view of the last 12 months**  
+Period start = latest month (prepopulated for you)  
+Period length = 1 (month)  
+Periods to compare = 12  
 
-**If you want to view the last 4 full quarters**
-Period start = choose the last month of the last quarter you want to choose, e.g. June 2022
-Period length = 3
-Periods to compare = 4
+**If you want to view the last 4 full quarters**  
+Period start = choose the last month of the last quarter you want to choose, e.g. June 2022  
+Period length = 3  
+Periods to compare = 4  
 
 ### Marketing data and graph
 
@@ -293,7 +295,7 @@ Rows can be expanded or collapsed to show more or less information. Hovering ove
 
 ## Reports
 
-A **Reports** button is located in the top right corner of every Assess page. It takes you to the **Reports** page where you can generate and download the Audit report in [Excel format](/assess/reports/excel-reports).
+A **Reports** button is located in the top right corner of every Assess page. It takes you to the **Reports** page where you can generate and download various reports in [Excel format](/assess/excel/overview).
 
 ![A screenshot of the reports page showing the Audit Report row with a sub-row showing a report that was generated](/img/old/a3d1d09-ReportsPage1.png)
 
@@ -301,8 +303,11 @@ The **Report name** provides the name of the report and an informative descripti
 
 Click the **Generate report** button to produce a new report. The **Last generated** field will be updated to the date and time you generated the report. It will keep this timestamp until the next time you generate the report.
 
-When a report was successfully generated, the report name (which is also the filename), with the file size and latest timestamp will be available for download. Clicking the **Download** button saves the Excel report to your local machine.
+When a report was successfully generated, the report name (which is also the file name), with the file size and latest timestamp will be available for download. Clicking the **Download** button saves the Excel report to your local machine.
 
 ### Report types
 
-- [Audit Report](/assess/reports/audit-report): Identifies indicators of inaccurate or out-of-date accounts, helping you to decision with confidence.
+- [Audit Report](/assess/excel/audit-report): Identifies indicators of inaccurate or out-of-date accounts, helping you to decision with confidence
+- [Enhanced Cash Flow Report](/assess/excel/enhanced-cash-flow-report): Contains enhanced cash flow data
+- [Enhanced Financials Report](/assess/excel/enhanced-financials-report): Contains enhanced profit and loss and balance sheet data, allowing you to calculate key metrics
+- [Enhanced Invoices Report](/assess/excel/enhanced-invoices-report): Contains enhanced invoices which are linked to payments

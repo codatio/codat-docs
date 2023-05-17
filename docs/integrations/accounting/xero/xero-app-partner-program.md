@@ -1,7 +1,6 @@
 ---
 title: "Joining the Xero App Partner Program"
-createdAt: "2023-01-16T16:04:25.030Z"
-updatedAt: "2023-01-16T16:39:58.995Z"
+description: "Unlock the full value of connectivity with Xero by becoming a Xero App Partner"
 ---
 
 import LocalStorageChecklist from "@components/global/LocalStorageChecklist";
@@ -9,15 +8,37 @@ import BrowserOnly from "@docusaurus/BrowserOnly";
 
 If you want to have more than 25 Xero connections, you'll need to join the **Xero App Partner Program**.
 
-To join the program, there are a series of requirements your integration must first satisfy. There may be additional use-case-specific requirements.
+Becoming a certified Xero App Partner brings the following benefits:
 
-We've broken down the requirements you need to action based on the [Xero Certification Checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/#required-for-all-integrations). During your App Partner Program, you may use these answers to facilitate your application. [We take care of a number of checkpoints for you](/integrations/accounting/xero/xero-app-partner-program#we-take-care-of).
+- No limit to the number of companies (SMBs) you can connect to via your Xero integration.
+- The opportunity to reach millions of subscribers and advisors through the [Xero App Store](http://www.xero.com/marketplace) and [app partner program](https://developer.xero.com/app-partner).
 
-:::caution Use-cases
+To join the program, there are a series of requirements your integration must first satisfy. There are also some additional use case-specific requirements, as explained in [Xero App Partner guidance by use case](/integrations/accounting/xero/accounting-xero-app-partner-guidance).
+
+We've broken down the requirements you need to action based on the [Xero Certification Checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/#required-for-all-integrations). You can use the answers on this page to help with your App Partner Program application. [We take care of a number of checkpoints for you](/integrations/accounting/xero/xero-app-partner-program#we-take-care-of).
+
+:::caution Use cases
 
 There are additional checkpoints based on use cases.
 
 :::
+
+<details>
+<summary><b>Additional resources</b></summary>
+
+In the Xero developer documentation, see [Steps to becoming an app partner](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/app-partner-steps) and the [App Partner Program FAQs](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/faqs/).
+
+For tips and advice, read our blog post on [How to get your app certified on the Xero App Store](https://www.codat.io/blog/get-your-app-certified-on-the-xero-app-store/).
+</details>
+
+## Start your partnership application
+
+To start the Xero App Partner application process, follow these steps:
+
+1. Log in to the [Xero Developer portal](https://developer.xero.com/) using your Xero credentials.
+2. Select the **My Apps** tab and then select your app.
+3. On the **App details** page, click **Become a Xero App Partner**.
+4. Select the partnership option that applies to your use case.
 
 <details>
   <summary>Remember your progress...</summary>
@@ -63,7 +84,7 @@ The application name must reflect the go-to-market name of your app or product a
 
 ### 2. Branding
 
-Where possible, use the “connect” and “disconnect” buttons provided on[ Xero's branding page](https://developer.xero.com/documentation/guides/how-to-guides/branding-your-integration/). As part of Codat's Link follow the "connect" button is already supported.
+Where possible, use the “connect” and “disconnect” buttons provided on[ Xero's branding page](https://developer.xero.com/documentation/guides/how-to-guides/branding-your-integration/). As part of Codat's Link flow, the "connect" button is already supported.
 
 Check that you are following the [Xero app partner branding guidelines](https://developer.xero.com/static/otherfiles/xero-app-partner-brand-guidelines.pdf) and note you shouldn’t distort Xero’s logo.
 
@@ -116,7 +137,7 @@ We require all apps seeking certification and listing in the Xero App Store to b
 
 Codat recommends a separate webpage built out to accommodate this.
 
-For the steps to enable via Codat please see [Sign Up with Xero](https://codat.zendesk.com/hc/en-gb/articles/7772626953757).
+For the steps to enable via Codat please see [Sign Up with Xero flow](/integrations/accounting/xero/xero-sign-up-flow).
 
 ---
 

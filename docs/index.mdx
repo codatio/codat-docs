@@ -14,7 +14,7 @@ tags:
 
 <head>
   <title>
-    Codat_docs | Connect to your small business customers' financial data
+    Codat_docs | Build powerful applications with financial data
   </title>
   <meta
     name="description"
@@ -27,169 +27,35 @@ tags:
 </head>
 
 import Welcome from "@components/global/Welcome";
+import PageHeader from "@components/global/PageHeader";
+import Usecases from "@components/global/Usecases";
 
 <Welcome />
 
-<div className="background-video-wrapper">
-  <div className="banner-video">
-    <h1>Welcome to the Codat docs</h1>
-    <p>
-      Codat solves the connectivity challenge for developers building the next
-      generation of financial products for small businesses.{" "}
-    </p>
-    <p>
-      We're experts in how your application interacts with the other software
-      your customers use, so you can focus on what makes you superior.
-    </p>
-  </div>
-</div>
-
-<div className="background-video-spacer">
-  <h1>Welcome to the Codat docs</h1>
+<PageHeader
+  title="Build powerful applications with financial data"
+>
   <p>
-    Codat solves the connectivity challenge for developers building the next
+    Codat solves challenges for developers building the next
     generation of financial products for small businesses.{" "}
   </p>
   <p>
-    We're experts in how your application interacts with the other software your
-    customers use, so you can focus on what makes you superior.
+    We're experts in how your application interacts with the other software
+    your customers use, so you can focus on what makes you superior.
   </p>
-</div>
+</PageHeader>
 
 <p>
-  To build integrations for small business lending, try our <b>Assess</b>{" "}
+  To build integrations for small business lending, try our <a href="/assess/overview">Assess</a>{" "}
   product. If you're developing accounting integrations for a PoS or eCommerce
-  platform, go to <b>Sync for Commerce</b>.
+  platform, go to <a href="/sfc/overview">Sync for Commerce</a>.
 </p>
 <p>
-  Building something else? Explore our <b>Accounting API</b>,{" "}
-  <b>Open Banking API</b>, and <b>Commerce API</b> to pull, push, transform and
+  Building something else? Explore our <a href="/accounting-api/overview">Accounting API</a>,{" "}
+  <a href="/banking-api/overview">Banking API</a>, and <a href="/commerce-api/overview">Commerce API</a> to pull, push, transform and
   visualize data from 35+ financial data sources, integrated with a single data
   model.
 </p>
-
-<hr />
-
-:::info Welcome to our new docs!
-
-They are in beta, so you may find some snags in our content.
-
-You can contribute to them <a href="https://github.com/codatio/codat-docs" target="_blank">here</a>, or see the old ones <a href="https://codat.readme.io/docs">here</a>.
-
-:::
-
-## Products
-
-Our products can help you make the most of your customers' consented business data.
-
-<ul className="card-container">
-  <li className="card">
-    <div className="header">
-      <img
-        src="https://www.codat.io/wp-content/uploads/2022/03/accounting-2.png"
-        className="mini-icon"
-      />
-      <h3>Accounting API</h3>
-    </div>
-    <p>
-      Standardize how you connect to your customers' accounts. View, create,
-      update, and delete data in the same way for all the leading accounting
-      platforms.
-    </p>
-    <p>
-      See our <a href="/accounting-api/overview">accounting integrations</a>.
-    </p>
-  </li>
-  <li className="card">
-    <div className="header">
-      <img
-        src="https://www.codat.io/wp-content/uploads/2022/03/Storefront-3.png"
-        className="mini-icon"
-      />
-      <h3>Commerce API</h3>
-    </div>
-    <p>
-      Connect to every payment, Point of Sale, eCommerce platform, and
-      marketplace and see your customers' sales, orders, and payments data in a
-      standardized format.
-    </p>
-    <p>
-      See our <a href="/commerce-api/overview">commerce integrations</a>.
-    </p>
-  </li>
-  <li className="card">
-    <div className="header">
-      <img
-        src="https://www.codat.io/wp-content/uploads/2022/03/Bank-2.png"
-        className="mini-icon"
-      />
-      <h3>Banking API</h3>
-    </div>
-    <p>
-      Use Open Banking data for bank accounts and transactions alongside
-      accounting and commerce data, all in one place.
-    </p>
-    <p>
-      See our <a href="/banking-api/overview">banking integrations</a>.
-    </p>
-  </li>
-  <li className="card">
-    <div className="header">
-      <img
-        src="https://www.codat.io/wp-content/uploads/2022/04/assess.png"
-        className="mini-icon"
-      />
-      <h3>Assess</h3>
-    </div>
-    <p>
-      Make smarter credit decisions for your small business customers. Assess
-      enriches your customer's accounting, commerce and banking data to surface
-      actionable insights you didn't have before.
-    </p>
-    <p>
-      Read our guide to{" "}
-      <a href="/assess/get-started">getting started with Assess</a>.
-    </p>
-  </li>
-  <li className="card">
-    <div className="header">
-      <img
-        src="https://static.codat.io/public/icons/docs/sync.png"
-        className="mini-icon"
-      />
-      <h3>Sync for Commerce</h3>
-    </div>
-    <p>
-      Building to lots of different APIs does not scale. With Sync for Commerce,
-      you can send a merchant's data to their accounting platform without
-      worrying about which one they use.
-    </p>
-    <p>
-      Read more and find out <a href="/sfc/overview">how to get started</a>.
-    </p>
-  </li>
-  <li className="card">
-    <div className="header">
-      <img
-        src="https://www.codat.io/wp-content/uploads/2022/03/CreditCard.png"
-        className="mini-icon"
-      />
-      <h3>Sync for Expenses</h3>
-    </div>
-    <p>
-      Embedded accounting integrations for corporate card providers. Launch new
-      accounting integrations faster and save on ongoing maintenance by
-      standardizing how you sync with bookkeeping software and ERPs.
-    </p>
-    <p>
-      <a href="/sync-for-expenses/overview">Read more</a> or{" "}
-      <a href="mailto:expenses@codat.io?subject=Beta access request - Sync for Expenses API&body=Hi, I would like to request beta access to the Sync for Expenses API. I am looking to build accounting integrations at...">
-        apply for access
-      </a>
-      .
-    </p>
-  </li>
-</ul>
 
 <hr />
 
@@ -198,6 +64,22 @@ Our products can help you make the most of your customers' consented business da
 Take your first steps through the information and support available to you.
 
 <ul className="card-container">
+  <li className="card dark">
+    <div className="header">
+      <img
+        src="/img/cochat/logo-openai-mini.png"
+        className="mini-icon"
+      />
+      <h3>Ask Cochat</h3>
+    </div>
+    <p>
+      Having trouble? Our AI tool, {" "}
+      <a href="https://cochat-test.azurewebsites.net/" target="_blank">
+        Cochat
+      </a>
+      , is trained on our docs. Try asking it a question.
+    </p>
+  </li>
   <li className="card">
     <div className="header">
       <img
@@ -229,23 +111,6 @@ Take your first steps through the information and support available to you.
   <li className="card">
     <div className="header">
       <img
-        src="https://www.codat.io/wp-content/uploads/2022/03/Handshake.png"
-        className="mini-icon"
-      />
-      <h3>Support</h3>
-    </div>
-    <p>
-      Having trouble? Explore our{" "}
-      <a href="https://codat.zendesk.com/hc/en-gb" target="_blank">
-        troubleshooting articles
-      </a>
-      , or click the "Support" icon in the bottom right to raise a case with our
-      support team.
-    </p>
-  </li>
-  <li className="card">
-    <div className="header">
-      <img
         src="https://www.codat.io/wp-content/uploads/2022/03/Coins.png"
         className="mini-icon"
       />
@@ -262,70 +127,129 @@ Take your first steps through the information and support available to you.
   </li>
 </ul>
 
-<hr />
+<hr/>
 
-## Key concepts
+## Use cases
 
-Understand the <a href="/core-concepts/companies">key concepts &amp; terminology</a> used throughout our documentation.
+Codat's product range supports a variety of use cases, helping you simplify and automate your processes and improving your customers' digital experience. [Read more...](/usecases/overview)
+
+<Usecases mini={true}/>
+
+<hr/>
+
+## Products
+
+Our products can help you make the most of your customers' consented business data.
 
 <ul className="card-container">
   <li className="card">
     <div className="header">
       <img
-        src="https://www.codat.io/wp-content/uploads/2022/03/Target-1.png"
-        className="mini-icon"
+        src="/logos/products/Accounting.svg"
+        className="icon usecase"
       />
-      <h3>Companies</h3>
     </div>
+    <h3>Accounting API</h3>
     <p>
-      <a href="/core-concepts/companies">Companies</a> and their{" "}
-      <a href="/core-concepts/connections">data connections</a> are at the heart
-      of Codat - find out more about how to create and use them.
+      Connect to your customers' accounts through our universal API. 
+    </p>
+    <p>
+      <a href="/accounting-api/overview">See our accounting data and integration coverage →</a>
     </p>
   </li>
   <li className="card">
     <div className="header">
       <img
-        src="https://www.codat.io/wp-content/uploads/2022/03/Handshake.png"
-        className="mini-icon"
+        src="/logos/products/Banking.svg"
+        className="icon usecase"
       />
-      <h3>Integrations</h3>
     </div>
+    <h3>Banking API</h3>
     <p>
-      Learn how to set up and configure Codat's suite of over 30 integrations to
-      connect to your customers{" "}
-      <a href="/accounting-api/overview">accounting</a>,{" "}
-      <a href="/commerce-api/overview">commerce</a> and{" "}
-      <a href="/banking-api/overview">banking</a> data.
+      Use Open Banking data for bank accounts and transactions alongside
+      our other best-in-class products.
+    </p>
+    <p>
+      <a href="/banking-api/overview">See our banking data and integration coverage →</a>
     </p>
   </li>
   <li className="card">
     <div className="header">
       <img
-        src="https://www.codat.io/wp-content/uploads/2022/03/Stack.png"
-        className="mini-icon"
+        src="/logos/products/Commerce.svg"
+        className="icon usecase"
       />
-      <h3>Data model</h3>
     </div>
+    <h3>Commerce API</h3>
     <p>
-      Start exploring our <a href="/data-model/accounting/">accounting</a>,{" "}
-      <a href="/data-model/commerce/">commerce</a> and{" "}
-      <a href="/data-model/banking">banking</a> data models, including invoices,
-      bills, customers, suppliers, and more.
+      Connect to payment, Point of Sale, and eCommerce platforms and build with your customers' sales, orders, and payments data.
+    </p>
+    <p>
+      <a href="/commerce-api/overview">See our commerce data and integration coverage →</a>
     </p>
   </li>
   <li className="card">
     <div className="header">
       <img
-        src="https://www.codat.io/wp-content/uploads/2022/04/say-yes.png"
-        className="mini-icon"
+        src="/logos/products/BankFeeds.svg"
+        className="icon usecase"
       />
-      <h3>Authorization flow</h3>
     </div>
+    <h3>Bank Feeds API</h3>
     <p>
-      Explore how your customers can{" "}
-      <a href="/auth-flow/overview">authorize access to their data</a> with Link
-      or by building a bespoke API flow.
+      Enable your SMB users to set up bank feeds from accounts in your application to supported accounting platforms.
+    </p>
+    <p>
+      <a href="/bank-feeds-api/overview">Build your first bank feed →</a>
+    </p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img
+        src="/logos/products/Assess.svg"
+        className="icon usecase"
+      />
+    </div>
+    <h3>Assess</h3>
+    <p>
+      Make smarter credit decisions for your small business customers. Enrich your customer's financial data and receive actionable insights.
+    </p>
+    <p>
+      <a href="/assess/get-started">Start assessing your customers →</a>
+    </p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img
+        src="/logos/products/SyncforExpenses.svg"
+        className="icon usecase"
+      />
+    </div>
+    <h3>Sync for Expenses</h3>
+    <p>
+      Embedded accounting integrations for corporate card providers. Standardize how you sync with bookkeeping software and ERPs.
+    </p>
+    <p>
+      <a href="/sync-for-expenses/overview">Read more</a> or{" "}
+      <a href="mailto:expenses@codat.io?subject=Beta access request - Sync for Expenses API&body=Hi, I would like to request beta access to the Sync for Expenses API. I am looking to build accounting integrations at...">
+        apply for access
+       →</a>
+      
+    </p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img
+        src="/logos/products/SyncforCommerce.svg"
+        className="icon usecase"
+      />
+    </div>
+    <h3>Sync for Commerce</h3>
+    <p>
+      Sync your merchants' data between commerce and accounting systems, and automate bookkeeping.
+    </p>
+    <p>
+      <a href="/sfc/overview">Begin syncing merchants' data →</a>
     </p>
   </li>
 </ul>

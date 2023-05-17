@@ -1,20 +1,21 @@
 ---
 title: "Zettle"
+sidebar_label: Overview
 description: "Learn about our Zettle integration"
 createdAt: "2021-01-20T15:39:57.772Z"
 updatedAt: "2022-10-20T13:39:53.409Z"
 ---
 
-<a className="external" href="https://www.zettle.com/" target="_blank">
+<p><a className="external" href="https://www.zettle.com/" target="_blank">
   Zettle
 </a> is a point-of-sale (POS) provider that makes it easy for merchants to take payments
-and track their sales, all in one place.
+and track their sales, all in one place.</p>
 
 Use Codat's Commerce API with Zettle to securely connect to, retrieve, and view your customers' commerce transactions.
 
 ## Data type coverage
 
-View the coverage of our Zettle integration in the <a className="external" href="https://knowledge.codat.io/supported-features/commerce?view=tab-by-integration&integrationKey=ugxp" target="_blank">Data coverage explorer</a>.
+<p>View the coverage of our Zettle integration in the <a className="external" href="https://knowledge.codat.io/supported-features/commerce?view=tab-by-integration&integrationKey=ugxp" target="_blank">Data coverage explorer</a>.</p>
 
 For more information about the supported data types, see [Zettle integration reference](/integrations/commerce/zettle/zettle-integration-reference).
 

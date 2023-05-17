@@ -87,8 +87,8 @@ module.exports = [
         items: [
           "integrations/accounting/myob/accounting-myob",
           "integrations/accounting/myob/accounting-myob-setup",
-          "integrations/accounting/myob/faq-myob-accountright-live",
           "integrations/accounting/myob/myob-integration-reference",
+          "integrations/accounting/myob/faq-myob-accountright-live",
         ],
       },
       {
@@ -99,7 +99,7 @@ module.exports = [
           "integrations/accounting/netsuite/accounting-netsuite",
           "integrations/accounting/netsuite/accounting-netsuite-setup",
           "integrations/accounting/netsuite/company-linking-journey",
-          "integrations/accounting/netsuite/accounting-netsuite-delete-bills-billpayments",
+          "integrations/accounting/netsuite/accounting-netsuite-how-deleting-bill-payments-works",
           "integrations/accounting/netsuite/oracle-netsuite-faq",
           "integrations/accounting/netsuite/oracle-netsuite-integration-reference",
         ],
@@ -201,6 +201,8 @@ module.exports = [
           "integrations/accounting/xero/xero-faq",
           "integrations/accounting/xero/xero-integration-reference",
           "integrations/accounting/xero/xero-app-partner-program",
+          "integrations/accounting/xero/xero-sign-up-flow",
+          "integrations/accounting/xero/accounting-xero-app-partner-guidance",
         ],
       },
       {
@@ -472,6 +474,14 @@ module.exports = [
         label: "Xero",
       }
     ],
+  },
+  {
+    type: "category",
+    label: "Other integrations",
+    collapsed: true,
+    items: [
+      "other/file-upload",
+    ]
   },
   {
     type: "link",

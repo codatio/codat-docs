@@ -14,7 +14,7 @@ Our Sage Bank Feeds integration is currently in beta. You can provide feedback o
 
 ## Overview
 
-With our Sage Bank Feeds integration, you can enable a Sage user to set up a bank feed from a bank account in your application (the source account) to an account in a supported Sage product (the target account). You can then push [Bank transactions](/accounting-api#/schemas/BankTransactions) from the source account to the target account.
+With our Sage Bank Feeds integration, you can enable a Sage user to set up a bank feed from a bank account in your application (the source account) to an account in a supported Sage product (the target account). You can then push [Bank transactions](/bank-feeds-api#/operations/create-bank-transactions) from the source account to the target account.
 
 ![screenshot](/img/old/4185821-sage-bank-feeds-flowchart-test-white-border-wider.png "Pushing Bank transactions from a source to a target bank account.")
 
@@ -27,7 +27,7 @@ You can push bank transactions to several [supported Sage products](/bank-feeds-
 
 ## Supported data types and operations
 
-Bank feeds are represented as streams of [Bank transactions](/accounting-api#/schemas/BankTransactions) pushed to Codat in chronological order.
+Bank feeds are represented as streams of [Bank transactions](/bank-feeds-api#/operations/create-bank-transactions) pushed to Codat in chronological order.
 
 ## How it works
 
@@ -35,7 +35,7 @@ Bank feeds are represented as streams of [Bank transactions](/accounting-api#/sc
 2. Your end user can set up a bank feed using the _Connect Bank_ feature in a supported Sage product. They find your institution and then select a source bank account to send bank transactions from.
   
   They are redirected to a Codat UI to enter their data connection ID to authenticate with the integration - see the [SMB user flow](/bank-feeds-api/sage-bank-feeds/sage-bank-feeds-setup#smb-user-flow-connect-a-source-bank-account-to-sage) for details. Alternatively, you can [authenticate users through your own web app](/bank-feeds-api/sage-bank-feeds/sage-bank-feeds-authenticate-users-web-app).
-3. You push transactions for authenticated users to Codat using the [Create bank transactions](/accounting-api#/operations/post-bank-transactions) endpoint - see [Use your Sage Bank Feeds integration](/bank-feeds-api/sage-bank-feeds/sage-bank-feeds-use) for details.
+3. You push transactions for authenticated users to Codat using the [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions) endpoint - see [Use your Sage Bank Feeds integration](/bank-feeds-api/sage-bank-feeds/sage-bank-feeds-use) for details.
 
 ## Supported Sage products
 

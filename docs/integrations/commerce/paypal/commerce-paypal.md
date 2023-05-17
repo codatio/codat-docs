@@ -1,5 +1,6 @@
 ---
 title: "PayPal"
+sidebar_label: Overview
 description: "Learn about our PayPal integration"
 createdAt: "2021-03-25T13:08:19.226Z"
 updatedAt: "2022-11-15T13:20:16.445Z"

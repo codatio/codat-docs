@@ -10,16 +10,16 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 <Head>
-  <meta property="og:image" content="/img/link/link-sdk-banner.png"/>
+  <meta property="og:image" content="/img/link/0014-embedded-link-demo.png"/>
 </Head>
 
-![](/img/link/link-sdk-banner.png)
+![](/img/link/0014-embedded-link-demo.png)
 
 :::caution Early access
 
-Embedded Link is still being developed. If you run into issues with the Embedded Link solution or have any feedback, please [get in touch](mailto:embedded-link@codat.io), or even reach out to us ahead of time for advice!
+Embedded Link is still being developed and a new version is coming soon. If you run into issues, please [contact support](mailto:support@codat.io). If you have any feedback, please [get in touch](mailto:embedded-link@codat.io)!
 
-You can also [request features and suggest improvements](https://portal.productboard.com/codat/12-public-devex-roadmap/c/485-embed-a-pre-built-auth-flow-in-your-website-or-app) in our roadmap - we have further improvements on the way!
+You can also [request features and suggest improvements](https://portal.productboard.com/codat/12-public-devex-roadmap/c/485-embed-a-pre-built-auth-flow-in-your-website-or-app) in our roadmap!
 :::
 
 Use the Embedded Link solution to benefit from a pre-built code component that melds best practices together with our extensive experience in building authorization flows, while seamlessly embedding it into your webpage or front-end application.
@@ -56,7 +56,7 @@ We built Embedded Link to be flexible so that you can integrate and initialize i
 ## Resources
 
 - Grab our component library on [npm](https://www.npmjs.com/package/@codat/link-sdk)
-- View [a sample project](https://github.com/codatio/link-sdk-sample-project) adding Link to a default project
+- View [a sample project](https://github.com/codatio/sample-project-link-sdk) adding Link to a default project
 
 ## Prerequisites
 
@@ -103,10 +103,11 @@ From the response to company creation, retain the `companyId` parameter. Then, i
 <TabItem value="next" label="Next.js">
 
 ```js
-import dynamic from "next/dynamic"; // Use dynamic imports instead for NextJS
-
+import dynamic from 'next/dynamic'; // Use dynamic imports instead for NextJS
+import '@codat/link-sdk/index.css';
+  
 const CodatLink = dynamic(
-  () => import("@codat/link-sdk").then((mod) => mod.CodatLink),
+  () => import('@codat/link-sdk').then((mod) => mod.CodatLink),
   { ssr: false }
 );
 

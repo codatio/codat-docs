@@ -66,6 +66,12 @@ module.exports = {
     },
     { to: "updates", label: "Updates", position: "left" }, // or position: 'right'
     {
+      href: "https://github.com/orgs/codatio/discussions",
+      label: "Forum",
+      target: "_blank",
+      rel: null,
+    },
+    {
       label: "Community",
       position: "left",
       items: [
@@ -111,8 +117,14 @@ module.exports = {
       position: "left",
       items: [
         {
-          href: "https://codat.zendesk.com/hc/en-gb",
-          label: "Help center",
+          href: "https://github.com/orgs/codatio/discussions/new?category=q-a",
+          label: "Ask the community",
+          target: "_blank",
+          rel: null,
+        },
+        {
+          href: "https://cochat-test.azurewebsites.net/",
+          label: "Ask Cochat AI",
           target: "_blank",
           rel: null,
         },
@@ -123,14 +135,20 @@ module.exports = {
           rel: null,
         },
         {
-          href: "https://github.com/orgs/codatio/discussions",
-          label: "Ask the community",
+          href: "https://github.com/codatio/codat-docs/issues/new",
+          label: "Issue with the docs?",
           target: "_blank",
           rel: null,
         },
         {
-          href: "https://github.com/codatio/codat-docs/issues/new",
-          label: "Issue with the docs?",
+          href: "/introduction/office-hours",
+          label: "Office hours",
+          target: "_blank",
+          rel: null,
+        },
+        {
+          href: "https://codat.zendesk.com/hc/en-gb",
+          label: "Help center",
           target: "_blank",
           rel: null,
         },
