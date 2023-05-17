@@ -58,6 +58,17 @@ module.exports = {
         },
         {
           type: "category",
+          label: "Invoice financing",
+          collapsed: true,
+          items: [
+            "guides/invoice-finance/introduction",
+            "guides/invoice-finance/setting-up",
+            "guides/invoice-finance/process-invoice",
+            "guides/invoice-finance/inv-fin-decision",
+          ],
+        },
+        {
+          type: "category",
           label: "Bill pay",
           collapsed: true,
           items: [
