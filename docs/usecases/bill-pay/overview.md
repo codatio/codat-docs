@@ -23,7 +23,7 @@ Many SMBs still rely on manual AP functions to run their business. One study sho
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Standardised API</h3>
@@ -36,7 +36,7 @@ Many SMBs still rely on manual AP functions to run their business. One study sho
 <li className="card">
   <div class="header">
     <img
-      src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+      src="/img/wp-icons/copy-feature-bullet.svg"
       class="mini-icon"
     />
     <h3>Saves time</h3>
@@ -49,7 +49,7 @@ Many SMBs still rely on manual AP functions to run their business. One study sho
 <li className="card">
   <div class="header">
     <img
-      src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+      src="/img/wp-icons/copy-feature-bullet.svg"
       class="mini-icon"
     />
     <h3>Increase Retention</h3>

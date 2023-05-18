@@ -44,7 +44,7 @@ Sync for Commerce is in beta. If you are interested in building with Sync for Co
 <ul className="card-container col-2">
     <li className="card">
         <div class="header">
-            <img src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+            <img src="/img/wp-icons/copy-feature-bullet.svg"
                 class="mini-icon"/>
             <h3>Standardization</h3>
         </div>
@@ -55,7 +55,7 @@ Sync for Commerce is in beta. If you are interested in building with Sync for Co
 
 <li className="card">
         <div class="header">
-            <img src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+            <img src="/img/wp-icons/copy-feature-bullet.svg"
                 class="mini-icon"/>
             <h3>Configurability</h3>
         </div>
@@ -66,7 +66,7 @@ Sync for Commerce is in beta. If you are interested in building with Sync for Co
 
    <li className="card">
         <div class="header">
-            <img src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+            <img src="/img/wp-icons/copy-feature-bullet.svg"
                 class="mini-icon"/>
             <h3>Ongoing synchronization</h3>
         </div>
@@ -77,7 +77,7 @@ Sync for Commerce is in beta. If you are interested in building with Sync for Co
 
    <li className="card">
         <div class="header">
-            <img src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+            <img src="/img/wp-icons/copy-feature-bullet.svg"
                 class="mini-icon"/>
             <h3>Fast, simple integration</h3>
         </div>
