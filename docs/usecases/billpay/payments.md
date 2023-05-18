@@ -438,7 +438,7 @@ Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can b
 
 #### Using a bill credit note to pay a bill
 
-If your company receives a credit note from their supplier, the Company could use this to offset the balance of any outstanding invoices from the same supplier. 
+If a company receives a credit note from their supplier, the company could use this to offset the balance of any outstanding invoices from the same supplier. 
 
 With the billPayment API, you can partially or fully offset the balance of an invoice by adding the credit note in the `lines` array.
 
@@ -926,9 +926,8 @@ Allocating a `billCreditNote` with a `billPayment` is **coming soon** for myob.
 
 </Tabs>
 
-#### Refunding a bill payment
 
-#### Making a bill Payment in Foreign Currencies
+
 
 
 
