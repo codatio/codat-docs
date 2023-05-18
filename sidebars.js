@@ -192,7 +192,32 @@ module.exports = {
         "usecases/summary/lending",
         "usecases/summary/managing-expenses",
         "usecases/summary/dashboarding",
-        "usecases/summary/automating-payables",
+        {
+          type: "category",
+          label: "Automating payables",
+          collapsed: true,
+          className: "top-level-item",
+          items: [
+            "usecases/summary/automating-payables",
+            {
+              type: "link",
+              label: "Demo app guide",
+              href: "https://docs.codat.io/guides/bill-pay/introduction",
+            },
+            {
+              type: "category",
+              label: "Implementation guide",
+              collapsed: true,
+              className: "top-level-item",
+              items: [
+                "usecases/bill-pay/overview",
+                "usecases/bill-pay/bills",
+                "usecases/bill-pay/mapping",
+                "usecases/bill-pay/payments",
+              ],
+            }
+          ],
+        },
         "usecases/summary/automating-receivables",
         "usecases/summary/integrating-commerce-data",
         "usecases/summary/managing-payroll",

@@ -72,9 +72,9 @@ const Usecases = ({mini}) => {
     return (
       <ul className="card-container mini">
         {
-          usecases.map(usecase => {
+          usecases.map((usecase, i) => {
             return (
-              <li className="card mini">
+              <li key={i} className="card mini">
                 <div className="header">
                   <img
                     src={usecase.icon}
@@ -99,9 +99,9 @@ const Usecases = ({mini}) => {
   return (
     <ul className="card-container">
       {
-        usecases.map(usecase => {
+        usecases.map((usecase, i) => {
           return (
-            <li className="card">
+            <li key={i} className="card">
               <div className="header">
                 <img
                   src={usecase.icon}
