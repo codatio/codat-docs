@@ -13,7 +13,7 @@ Our Xero Bank Feeds integration allows you to set up a bank feed from a bank acc
 
 With access to bank feeds, your customers can more easily reconcile bank transactions against accounting entries, like invoices and bills.
 
-Bank feeds functionality is part of our existing Xero accounting integration. 
+Bank feeds functionality is part of our existing [Xero integration](/integrations/accounting/xero/accounting-xero).
 
 ## Supported data types and operations​
 
@@ -21,40 +21,49 @@ Bank feeds are represented as streams of [Bank account transactions](/accounting
 
 ## How it works​
 
-1. Create a Xero app. You'll need to obtain Xero's approval for Bank Feeds.
-2. CROSSREF TO Set up the integration.
-3. Your end user can set up a bank feed either by starting from within your UI, or from Xero's "Add bank account" functionality by searching for the client name where they will then be redirected to your UI.
-4. After authentication, end users will be able to create account mappings and feed connections using the Codat-provided UI. // also refer to managing and deleting connections.
-   
-   :::info
-   Alternatively, you can build your own mapping and feed management UI (Note: This option will become available in an upcoming release).
+1. To start, create a Xero app in the <a href="https://developer.xero.com/" target="_blank">Xero developer portal</a>.
+
+   :::caution Approval required
+   You'll need to obtain Xero's approval for Bank Feeds.
    :::
 
-5. You push transactions for authenticated users to Codat using the [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions) endpoint - see CROSSREF TO Use your Xero Bank Feeds integration for details.
+2. CROSSREF TO Set up the integration.
+
+3. Your SMB users set up their bank feeds. They can start this process directly from your app's UI, or use the "Add bank account" feature in Xero to search for the name of your institution and then launch your UI. See CROSS-REF: SMB user account connection.
+
+4. After authenticating with Xero, SMB users create account mappings and feed connections using the Codat-provided _account mapping UI_.
+
+   :::info Coming soon: Build your own UI
+   In a future release, you'll be able to build your own UI for account mapping and feed management for Xero Bank Feeds.
+   :::
+
+5. Using the [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions) endpoint, you push bank transactions to Codat for authenticated users. See CROSSREF: Push bank transactions to Xero.
+
+6. Users can manage and delete existing feed connections using the account mapping UI.
 
 ## Read next​
 
-See CROSS REF TO Set up the Xero Bank Feeds integration to learn how to set up and enable the integration.
+CROSS REF: Set up the Xero Bank Feeds integration
 
 <hr />
 
 # Set up the Xero Bank Feeds integration
-Description: Set up our integration with Xero Bank Feeds and get your SMB users connected
+`Description: Set up our integration with Xero Bank Feeds and get your SMB users connected`
 
-Before you can push customer bank transactions to target bank accounts in Xero, you need to set up the integration for testing or production use.
+Before you can push customer bank transactions to target accounts in Xero, you need to set up the integration for testing or production use.
 
-This page explains how to:
+This article explains how to:
 
-- Create a company and data connection.
-- Provide Codat with the source bank accounts you would like to make available for connection.
+- Create a company and a data connection to Xero.
+- Provide Codat with the source bank accounts you'd like to make available for your customers to connect to.
 
-When you've completed those tasks, your SMB customers can connect their accounts to Xero using the Codat mapping UI.
+Your SMB customers can then connect their accounts to Xero using the Codat mapping UI.
 
 ## Prerequisites
 
-- You have CROSS REF: set up your Xero app and turned on the Xero integration in Codat (Note: Xero Bank Feeds uses the same integration as the Xero accounting integration (platformKey: `gbol`) >> Important enough to go in the Overview as well.
+- You have [set up a Xero app and enabled the Xero integration in Codat](/integrations/accounting/xero/accounting-xero-setup). Bank feeds functionality is part of our existing Xero accounting integration and uses the same platform key (`gbol`) and Redirect URI.
 - You have [joined the Xero App Partner Program](/accounting/xero/xero-app-partner-program).
-- Xero must have enabled the Xero Bank Feeds API for your registered app.
+- Xero have enabled the Xero Bank Feeds API for your registered app.
 
 ### Create a company and data connection, then add bank accounts​
 
@@ -140,11 +149,11 @@ When you've completed those tasks, your SMB customers can connect their accounts
 
 ## Read next
 
-See CROSSREF TO: SMB user account connection flow to learn...
+See CROSSREF TO: SMB user account connection to learn...
 
 <hr />
 
-# SMB user connects accounts
+# SMB user account connection
 
 After setting up the company, data connection and bank feed accounts (Define "bank feed accounts" earlier in the document, such as in the introduction to this article / page.), you should redirect the user to the linkUrl provided in the dataConnection response.
 
