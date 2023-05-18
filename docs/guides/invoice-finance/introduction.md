@@ -20,22 +20,22 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 
 ### ✔️ Delve into the demo app to...
 
-- Establish a connection with our test accounting platform,
-- Pull invoice data required for the financing assessment, 
-- Check the invoices' eligibility based on a set of criteria we defined in the app,
-- Issue a decision on eligible invoices. 
+- Establish a connection with our test accounting platform
+- Pull invoice data required for the financing assessment
+- Check the invoices' eligibility based on a set of criteria we defined in the app
+- Issue a decision on eligible invoices
 
 ### ❌ This guide does not cover...
 
-- Building any application form and dashboard UIs,
-- Carrying out due diligence checks on the borrower,
-- Instructions on how to build your own invoice financing product.
+- Building any application form or dashboard UIs
+- Carrying out due diligence checks on the borrower
+- Instructions on how to build your own invoice financing product
 
 ### About the demo app
 
 The app's codebase is available via our [GitHub repo](https://github.com/codatio/demo-invoice-finance). Clone it locally to try out the application.
 
-The codebase uses Codat and its [Accounting API](/accounting-api/overview) product to make an invoice financing decision. We will walk you through the setup in the Portal and the code [next](/guides/invoice-finance/setting-up). 
+The codebase uses Codat's [Accounting API](/accounting-api/overview) product to make an invoice financing decision. We will walk you through the setup in the Portal and the code when [setting up the demo app](/guides/invoice-finance/setting-up). 
 
 ### Why we use _Accounting API_
 

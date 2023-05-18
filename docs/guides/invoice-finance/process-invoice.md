@@ -61,9 +61,9 @@ We use [Swagger](http://localhost:7278/swagger/index.html) to act as a presentat
 
 Call the `POST /applications/start` endpoint to trigger the creation of a new invoice financing loan application. In the background, the app creates a company using Codat's `POST /companies` endpoint using the application `id` as the company name.
 
-Codat returns the company and application `id`s in the endpoint response together with a `linkUrl`. In the demo, we will use these elements to fill in the application details and connect a data source next.  
+Codat returns the company and application `id`s in the endpoint response together with a `linkUrl`. In the demo, we will use these elements to connect a data source.  
 
-```json title="Example endpoint response"
+```json title="Example POST /applications/start response"
   {
     "id": "1c727866-6923-4f81-aa7b-c7fd8c533586",
     "codatCompanyId": "a9e28b79-6a98-4190-948d-3bd4d60e7c0a",
@@ -73,7 +73,7 @@ Codat returns the company and application `id`s in the endpoint response togethe
 ```
 ### <input type="checkbox" unchecked /> Share financial data  
 
-Next, you need to provide Codat access to an accounting platform so that we can fetch the data required to assess the risk of the loan application. Open the `linkUrl` returned by the new application response in your browser window. Follow the flow built using [Link](/auth-flow/overview), our hosted or embedded integrated authorization flow. 
+Next, you need to provide Codat with access to an accounting platform so we can fetch the data required to assess the risk of the loan application. Open the `linkUrl` returned in the response from `POST /applications/start` in your browser. Follow the flow built using [Link](/auth-flow/overview), our hosted or embedded integrated authorization flow. 
 
 Select the **Codat Sandbox** as the source of accounting data.
 * Choose the **Invoice Financing US Company** company type.
@@ -88,7 +88,7 @@ We fetch the applicant's unpaid invoices, customers associated to these unpaid i
 
 The demo app now has all the components that it needs to assess the risk associated with each customer, and risk associated with each invoice. These assessments determine the decision on each unpaid invoice included in the loan request. 
 
-Poll the `GET applications/{applicationId}` endpoint in [Swagger](http://localhost:7278/swagger/index.html) anytime to check the status of your loan. Once the app processes all the relevant invoices, it will automatically return a response with an offer for each invoice approved for financing
+Poll the `GET applications/{applicationId}` endpoint in [Swagger](http://localhost:7278/swagger/index.html) anytime to check the status of your application. Once the app processes all the relevant invoices, it will automatically return a response with an offer for each invoice approved for financing.
 
 You can [read more](/guides/invoice-finance/inv-fin-decision) about the risk assessments the app performs, and further detail of the decisioning logic. The thresholds used with the logic are set in the `appsettings.json` file. 
 
@@ -111,7 +111,7 @@ Try these suggestions to make the most of your experience with the demo app:
 
 ### Recap
 
-You have now successfully run the demo app, covering all the key inoice financing process steps. You have started and completed an application, connected and fetched accounting data, and received a decision on your application. 
+You have now successfully run the demo app, covering all the key steps in an invoice financing process. You have started and completed an application, connected and fetched accounting data, and received a decision on your application. 
 
 ---
 

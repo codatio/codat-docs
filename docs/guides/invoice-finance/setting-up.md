@@ -8,6 +8,7 @@ import TabItem from "@theme/TabItem";
 
 ### 🚀 In this section, you will...
 * Create your Codat account
+* Verify auth flow settings
 * Configure webhooks
 * Set up your local environment
 * Run the demo app
@@ -20,11 +21,11 @@ Your new account already has the Accounting API product, the Codat Sandbox integ
 
 ### <input type="checkbox" unchecked /> Update your auth flow settings
 
-In the **Settings > Auth Flow > Link** [settings](https://app.codat.io/settings/link-settings/data-connections), check that the _Sanbox integrations_ and _Accounting_ integration category are enabled, and disable _Commerce_ and _Banking_ integration categories. 
+On the **Settings > Auth Flow > Link** [settings](https://app.codat.io/settings/link-settings/data-connections) page, check that **Sandbox integrations** and the **Accounting** integration category are both enabled. Disable the **Commerce** and **Banking** integration categories.
 
 ### <input type="checkbox" unchecked /> Listen for webhooks
 
-The app uses several webhooks to track the completion of an accounting data connection and the completion of data sync for the invoice and customer data types.
+The app uses several webhooks to track the completion of an accounting data connection and the completion of data syncs for the Invoice and Customer data types.
 
 We will use [ngrok](https://ngrok.com/) to listen for Codat's webhooks. 
 
@@ -61,7 +62,7 @@ We will use [ngrok](https://ngrok.com/) to listen for Codat's webhooks.
 
 ### <input type="checkbox" unchecked /> Configure Codat webhooks
 
-In the **Monitor > Alerts > [Alerting rules](https://app.codat.io/monitor/rules)** section of the Codat Portal, create two rules for all companies, one for each webhook we will use:
+On the **Monitor > Alerts > [Alerting rules](https://app.codat.io/monitor/rules)** page, create two rules for all companies, one for each webhook we will use:
 
    |  Rule type                                  | Webhook notification URL                                    |
    |---------------------------------------------|-------------------------------------------------------------|
@@ -76,9 +77,9 @@ Click **Create rule** to open the new rule creation window. Select the rule type
 
 Clone our demo repo on [GitHub](https://github.com/codatio/demo-invoice-finance) to download the invoice finance lending demo app. 
 
-The main file directory for the demo app is `Codat.Demos.InvoiceFinancing.Api`. Key logic components of the app are located in `Controllers`, `Orchestrator`, and `Services` folders.
+The main file directory for the demo app is `Codat.Demos.InvoiceFinancing.Api`. Key logic components of the app are located in the `Controllers`, `Orchestrator`, and `Services` directories.
 
-Note that the other directory in the repository, `Codat.Demos.InvoiceFinancing.Api.Tests`, contains a series of unit tests for the demo app and is not needed for you to run the demo project. 
+The other directory in the repository, `Codat.Demos.InvoiceFinancing.Api.Tests`, contains a series of unit tests for the demo app and is not needed for you to run the demo project. 
 
 ```sh title="Codat.Demos.InvoiceFinancing.Api directory"
    ├──BindingModule.cs
@@ -97,7 +98,7 @@ Note that the other directory in the repository, `Codat.Demos.InvoiceFinancing.A
    ├──Exceptions // Definitions for managing error events 
    |    ├──...
    |       
-   ├──Models // Represent the shape of data that will be returned to the user
+   ├──Models // Represents the shape of data that will be returned to the user
    |    ├──...
    |       
    ├──Orchestrators // Manages the methods that relate to endpoints used in the app

@@ -11,7 +11,7 @@ description: "Reference page with details on our decisioning logic, fetching dat
 
 ### <input type="checkbox" unchecked/> Fetch unpaid invoices and associated data
 
-Once the app is notified by the webhook that invoice and customer syncs are complete, it fetches a filtered invoice list that we could potentially lend against. 
+After the app is notified by the webhook that invoice and customer syncs are complete, it fetches a filtered invoice list that we could potentially lend against. 
 
 In our demo, we focus on unpaid and partially paid invoices valued between 50 and 1000 USD, using the `query` parameter on our [List invoices](/accounting-api#/operations/list-invoices) endpoint:
 
@@ -21,11 +21,11 @@ query = {status=submitted||status=partiallyPaid}&&currency=USD&&{amountDue>50&&a
 
 From this data set, we pick up a list of unique customer Ids (`customerRef.id`) for the unpaid invoices, and then the associated customer details using the [Get customers](/accounting-api#/operations/get-customers) endpoint. 
 
-Finally, we fetch all paid invoices for each of these customers to assess their previous payment behaviour. After this, we are ready to perform the risk assessment.
+Finally, we fetch all paid invoices for each of these customers to assess their previous payment behavior. After this, we are ready to perform the risk assessment.
 
 ### <input type="checkbox" unchecked/> Assess risk for each customer
 
-To perform the risk assessment of customers, we calculate the measure of **customer concentration**. It is the percentage of the applicant's revenue that comes from a single customer. 
+To perform the risk assessment of customers, we calculate the measure of **customer concentration**. This is the percentage of the applicant's revenue that comes from a single customer. 
 
 The concentration threshold is set to 5% in the `appSettings.json` file, which you can change later if you want to see the app run through a different scenario.
 
@@ -88,6 +88,8 @@ ANY ARTICLES WE CAN RECOMMEND HERE?
 🧠 See what else [Codat recommends](https://www.codat.io/blog/how-to-underwrite-ecommerce-merchants-effectively/) to build your underwriting process effectively. 
 
 [Ampla use case](https://www.codat.io/case-study/ampla/) to see how digital lending works 
+
+enhanced invoices
 
 ### Recap
 
