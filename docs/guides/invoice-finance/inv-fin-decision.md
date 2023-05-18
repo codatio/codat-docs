@@ -81,15 +81,11 @@ Finally, we are ready to return a decision array to the applicant. It shows them
 
 🗝️ You may want to enhance this simple working guide with some UI elements - why not use [Embedded Link](https://docs.codat.io/auth-flow/authorize-embedded-link) to seamlessly include our authorization journey into your app?
 
-📊 If you are interested in underwriting models used by lenders in the industry, you can read through [Bigfoot Capital's blog](https://www.bigfootcap.com/revenue-based-financing/) on revenue-based finance or [Workweek's article](https://workweek.com/2023/03/02/unlocking-lending-innovation) on unlocking underwriting innovation.
+🛍️ Take your digital lending solution one step further by using our [Assess](/assess/overview) product and its [Enhanced Invoices](/assess/enhanced-invoices/overview) endpoint. 
 
-ANY ARTICLES WE CAN RECOMMEND HERE?
+📈 If you want to understand the growth potential of the invoice financing services, you can read through [Credit Connect's blog](https://www.credit-connect.co.uk/news/demand-for-invoice-finance-predicted-to-grow/).
 
-🧠 See what else [Codat recommends](https://www.codat.io/blog/how-to-underwrite-ecommerce-merchants-effectively/) to build your underwriting process effectively. 
-
-[Ampla use case](https://www.codat.io/case-study/ampla/) to see how digital lending works 
-
-enhanced invoices
+💸 Read through our [Ampla case study](https://www.codat.io/case-study/ampla/) to see how Codat supports digital lenders in providing quicker, smarter credit decisions and offering more tailored lending services.
 
 ### Recap
 
