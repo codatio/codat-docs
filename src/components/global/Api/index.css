@@ -100,7 +100,8 @@ blockquote > div {
   border: 1px solid var(--token-secondary-bg-c-alt);
 }
 
-.sl-relative > div > ol > li::before {
+.sl-relative > div > ol > li::before,
+.sl-relative > div > ol > li::before > ol > li::before {
   display: none;
 }
 
