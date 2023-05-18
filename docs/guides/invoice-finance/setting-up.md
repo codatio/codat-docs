@@ -41,7 +41,7 @@ We will use [ngrok](https://ngrok.com/) to listen for Codat's webhooks.
    
    This will install ngrok using [Chocolatey](https://chocolatey.org/) and run it at port 5069. 
    
-   Copy the **forwarding address** - this will be the `<server-url>` for the webhooks.
+   Copy the **forwarding address** - this will be the `<SERVER_URL>` for the webhooks.
 
    </TabItem>
 
@@ -55,7 +55,7 @@ We will use [ngrok](https://ngrok.com/) to listen for Codat's webhooks.
    ```  
    This will install ngrok using [Homebrew](https://brew.sh/) and run it at port 5069. 
    
-   Copy the **forwarding address** - this will be the `<server-url>` for the webhooks.
+   Copy the **forwarding address** - this will be the `<SERVER_URL>` for the webhooks.
 
    </TabItem>
 </Tabs>
@@ -66,10 +66,10 @@ On the **Monitor > Alerts > [Alerting rules](https://app.codat.io/monitor/rules)
 
    |  Rule type                                  | Webhook notification URL                                    |
    |---------------------------------------------|-------------------------------------------------------------|
-   | Company Data Connection status has changed  | ```<server-url>/webhooks/codat/data-connection-status```       |
-   | Data sync completed                         | ```<server-url>/webhooks/codat/datatype-sync-complete```       |
+   | Company Data Connection status has changed  | ```<SERVER_URL>/webhooks/codat/data-connection-status```       |
+   | Data sync completed                         | ```<SERVER_URL>/webhooks/codat/datatype-sync-complete```       |
 
-Click **Create rule** to open the new rule creation window. Select the rule type, apply it to all companies, and assign it a webhook URL. Make sure to replace the `<server-url>` with your forwarding address.
+Click **Create rule** to open the new rule creation window. Select the rule type, apply it to all companies, and assign it a webhook URL. Make sure to replace the `<SERVER_URL>` with your forwarding address.
 
    ![](/img/use-cases/invoice-finance/rule-creation-screen.png)
 

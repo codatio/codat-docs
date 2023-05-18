@@ -70,8 +70,8 @@ Finally, we are ready to return a decision array to the applicant. It shows them
         "invoiceId": "string", // Codat's internal Id associated with fetched invoices
         "invoiceNo": "string", // Identifying number of the invoice in the applicant's accounting system
         "amountDue": decimal,  // Amount to be paid on the invoice issued to customer
-        "offerAmount": decimal // Amount the app offers to lend, calculated as 90% of amountDue
-        "rate": decimal // Rate with which the app offers to lend, based on each invoice's risk
+        "offerAmount": decimal, // Amount the app offers to lend, calculated as 90% of amountDue
+        "rate": decimal, // Rate with which the app offers to lend, based on each invoice's risk
       }
                  ]
   }
