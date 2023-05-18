@@ -21,6 +21,11 @@ module.exports = [
         label: "Loan qualification",
         href: "/guides/loan-qualification/introduction",
       },
+      {
+        type: "link",
+        label: "Bill pay",
+        href: "/guides/bill-pay/introduction",
+      },
     ],
   },
   {
