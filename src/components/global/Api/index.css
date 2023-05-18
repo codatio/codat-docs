@@ -104,6 +104,10 @@ blockquote > div {
   display: none;
 }
 
+.sl-elements-api > .sl-px-24 {
+  padding-right: 2em !important;
+}
+
 /* --------- Mobile ---------------- */
 
 @media (max-width: 1100px) {

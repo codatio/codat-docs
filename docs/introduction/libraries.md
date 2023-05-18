@@ -23,3 +23,4 @@ Codat's awesome community has self-published a number of libraries themselves!
 If you built your own library, please reach out to our [developer experience team](mailto:developer-experience@codat.io) to add it to this list! The best way to create your own library is by using the Codat [OpenAPI specification](https://github.com/codatio/oas).
 
 - [PHP](https://packagist.org/packages/thelogicstudio/codat-php)
+- [Ruby](https://github.com/rikas/codat)

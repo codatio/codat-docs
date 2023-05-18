@@ -1,7 +1,7 @@
 ---
 title: "Bill pay build guide"
 sidebar_label: "Introduction"
-description: "Use this guide and the accompanying demo app to build solutions that streamline your customers' Accounts Payable processes"
+description: "Use this guide and the accompanying demo app to streamline your customers' Accounts Payable processes"
 displayed_sidebar: "docs"
 ---
 
@@ -27,7 +27,7 @@ This guide is for developers building a bill payment solution or other applicati
 
 Together with the demo app, this guide aims to help you implement your own bill payment solution using Codat's API.
 
-It walks you through [using the hosted version of the demo app](/accounting-api/guides/bill-pay/use-bill-pay-demo-app) with data from a QuickBooks Online sandbox company. After using the hosted version, you can clone the repository and [run the demo app on your local machine](/accounting-api/guides/bill-pay/run-demo-app-locally). Finally, you can learn [how the demo app works](/accounting-api/guides/bill-pay/how-the-demo-app-works).
+It walks you through [using the hosted version of the demo app](/guides/bill-pay/use-bill-pay-demo-app) with data from a QuickBooks Online sandbox company. After using the hosted version, you can clone the repository and [run the demo app on your local machine](/guides/bill-pay/run-demo-app-locally). Finally, you can learn [how the demo app works](/guides/bill-pay/how-the-demo-app-works).
 
 ### About the demo app
 
@@ -51,4 +51,4 @@ You've understood the functionality of the bill pay demo app and what you'll nee
 
 ### Read next
 
-- [Use the hosted app](/accounting-api/guides/bill-pay/use-bill-pay-demo-app)
+- [Use the hosted app](/guides/bill-pay/use-bill-pay-demo-app)

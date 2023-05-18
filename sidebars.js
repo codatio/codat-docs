@@ -45,6 +45,7 @@ module.exports = {
       collapsed: true,
       className: "top-level-item other",
       items: [
+        "guides/overview",
         {
           type: "category",
           label: "Loan qualification",
