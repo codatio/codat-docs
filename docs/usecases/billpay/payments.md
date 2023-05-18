@@ -15,7 +15,8 @@ A bill payment in Codat usually represents an allocation of money within any cus
 
 Depending on the bill payments which are allowed by the underlying accounting package, some of these types may be combined.
 
-#### Paying a bill with a billPayment
+## Paying a bill with a billPayment
+
 If the scenario is a company making a payment to pay off a bill in full, then it should have the following properties:
 - A `totalAmount` indicating the amount of the bill that was paid. This is **always positive**. 
 - A lines array containing one element with the following properties:
@@ -93,7 +94,8 @@ Sample json of an outstanding bill from Xero.
 
 <Tabitem value="Example Bill Payment Xero" label="Example Bill Payment Xero">
 
-Here is a sample payment for the Xero bill
+Here is a sample payment for the Xero bill. Note that:
+
 - the `supplierRef.id` should be the same id as the `supplierRef.id` on the bill
 - the `accountRef.id` should be the account the payment is made from as selected in the [mapping](/usecases/billpay/mapping.md)
 - the `totalAmount` is the same as the `amountDue` on the bill
@@ -132,7 +134,7 @@ Here is a sample payment for the Xero bill
 </Tabs>
 
 
-#### Payment of multiple bills
+## Payment of multiple bills
 
 In some cases a company may make a single payment to a supplier that covers multiple invoices.
 
@@ -436,7 +438,7 @@ Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can b
 </Tabs>
 
 
-#### Using a bill credit note to pay a bill
+## Using a bill credit note to pay a bill
 
 If a company receives a credit note from their supplier, the company could use this to offset the balance of any outstanding invoices from the same supplier. 
 
@@ -445,7 +447,8 @@ With the billPayment API, you can partially or fully offset the balance of an in
 1. The first step is to create a [`billCreditNote`](/accounting-api#/operations/create-bill-credit-note)
 2. Once this is successfully created you can create a `billPayment` and include the `billCreditNote` and the `bill` to credit in the links array
 
-##### Creating a Credit Note
+### Creating a Credit Note
+
 <Tabs>
 
 <Tabitem value="Request Url" label="Request Url">

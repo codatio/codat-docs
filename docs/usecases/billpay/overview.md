@@ -1,5 +1,6 @@
 ---
-title: Bill Pay Overview
+title: Bill Pay overview
+sidebar_label: Overview
 description: "make it easier for SMBs to manage and pay suppliers from a single interface."
 
 ---
@@ -18,7 +19,6 @@ Bill pay integration make's it easier for SMBs to manage and pay their supplier 
 Many SMBs still rely on manual AP functions to run their business. One study shows that as many as 80% of all SMB invoices and 40% of all B2B payments are still settled via paper check. That’s led to a situation where a vast majority (80%) of finance leaders believe their company’s outdated AP process is holding them back and costing their business time and money
 
 ## Benefits
-
 
 <ul className="card-container col-3">
   <li className="card">
@@ -72,7 +72,7 @@ Codat handles authorization and linking to your SMB's accounting platform and ta
 
 ### [Retrieve accounts payable invoices](bills)
 
-A list of unpaid bills(accounts payable invoices) can be retrieved from the accounting platform, in the Accounting API a bill is an itemised record of goods purchased from or services provided by a supplier.
+A list of unpaid [bills](/accounting-api#/schemas/Bill) (accounts payable invoices) can be retrieved from the accounting platform, in the Accounting API a bill is an itemised record of goods purchased from or services provided by a supplier.
 Alternatively, Bills can also be created within your application and then synchronised to the accounting platform.
 
 ### [Payment Account Mapping](mapping)
@@ -89,3 +89,9 @@ Once the transaction is completed, a bill payment can then be pushed to the cust
 <br />
 
 <IntegrationsList integrations={billpayIntegrations} />
+
+---
+
+## Read next
+
+- [AP](/usecases/billpay/bills)

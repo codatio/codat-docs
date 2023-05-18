@@ -1,5 +1,5 @@
 ---
-title: Payment Method Mapping
+title: Payment method mapping
 description: "Enable SMB's to choose how to make payments"
 ---
 
@@ -23,10 +23,13 @@ The [create account model](/accounting-api#/operations/get-create-chartOfAccount
 :::
 
 ### Create a new account
+
 If the company is making payments from a payment method or account that you provide, then you should create a new account to represent this in their accounting software. This will make the companies payment reconciliation workflows in their accounting software easier.
 
 #### Prepay Account
+
 Typically if the payment method is one of the following:
+
 - Automated clearing house (ACH) or Real Time Payments (RTP)
 - Cheque / Check
 - Electronic bank transfer
@@ -65,6 +68,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 
 #### Credit Account
+
 If you are providing a credit facility for the payment e.g.
 - Commercial Credit Card
 - BNPL (Buy now pay later)
@@ -101,6 +105,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 
 ### Retrieve a list of accounts
+
 If the company is making payments from a pre-existing account, then you can retrieve a list of accounts and enable them to map payment methods against each one. For example, you might offer  the ability to make payments from a credit card, in which case the companies `billPayments` should be reconciled to a credit account.
 
 
@@ -154,3 +159,9 @@ GET https://api.codat.io/companies/{companyId}/connections/{connectionId}/data/b
 </Tabitem>
 
 </Tabs>
+
+---
+
+## Read next
+
+- [Payments](/usecases/billpay/payments)
