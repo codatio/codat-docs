@@ -97,7 +97,7 @@ Sample json of an outstanding bill from Xero.
 Here is a sample payment for the Xero bill. Note that:
 
 - the `supplierRef.id` should be the same id as the `supplierRef.id` on the bill
-- the `accountRef.id` should be the account the payment is made from as selected in the [mapping](/usecases/billpay/mapping.md)
+- the `accountRef.id` should be the account the payment is made from as selected in the [mapping](/usecases/bill-pay/mapping.md)
 - the `totalAmount` is the same as the `amountDue` on the bill
 - the `date` is the date that the payment is made to the supplier
 

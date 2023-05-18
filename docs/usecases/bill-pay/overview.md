@@ -1,8 +1,7 @@
 ---
 title: Bill Pay overview
 sidebar_label: Overview
-description: "make it easier for SMBs to manage and pay suppliers from a single interface."
-
+description: "Make it easier for SMBs to manage and pay suppliers from a single interface."
 ---
 
 
@@ -94,4 +93,4 @@ Once the transaction is completed, a bill payment can then be pushed to the cust
 
 ## Read next
 
-- [AP](/usecases/billpay/bills)
+- [Accounts Payable](/usecases/bill-pay/bills) - Retrieve and create bills using the Accounting API

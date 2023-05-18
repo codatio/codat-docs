@@ -1,11 +1,11 @@
 ---
 title: Accounts Payable
-description: "Retrieve and create bills using the accounting api"
+description: "Retrieve and create bills using the Accounting API"
 ---
 
 ### Accounts Payable
 
-In Codat's API a [Bill](/accounting-api#/schemas/Bill) represents an invoice from a [supplier](/accounting-api#/schemas/Supplier), for this use case bills can be [retrieved](/accounting-api#/operations/list-bills) from the accounting api, or you can create bills within your platform and [post](https://docs.codat.io/accounting-api#/operations/create-bill) them to your customers accounting software.
+In Codat's API a [Bill](/accounting-api#/schemas/Bill) represents an invoice from a [supplier](/accounting-api#/schemas/Supplier), for this use case bills can be [retrieved](/accounting-api#/operations/list-bills) from the Accounting API, or you can create bills within your platform and [post](https://docs.codat.io/accounting-api#/operations/create-bill) them to your customers accounting software.
 
 ### Managing Suppliers
 
@@ -15,7 +15,7 @@ Suppliers are relevant for the bill pay use case as each bill is associated to a
 
 #### Retrieve a list of suppliers
 
-You can get a [list of suppliers](/accounting-api#/operations/list-suppliers) using the accounting api
+You can get a [list of suppliers](/accounting-api#/operations/list-suppliers) using the Accounting API
 ```http request
 GET https://api.codat.io/companies/{companyId}/data/suppliers?page=1&pageSize=100
 ```
@@ -47,11 +47,11 @@ PUT https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/s
 
 ### Bills
 
-Bills can either be created in the companies accounting software and then queried through the accounting api, or bills can be created in your application and then posted to the companies accounting software.
+Bills can either be created in the companies accounting software and then queried through the Accounting API, or bills can be created in your application and then posted to the companies accounting software.
 
 #### Get a list of bills
 
-You can [get a list of bills](/accounting-api#/operations/list-bills) for a company from the accounting api
+You can [get a list of bills](/accounting-api#/operations/list-bills) for a company from the Accounting API
 ```http request
 GET https://api.codat.io/companies/{companyId}/data/bills?page=1&pageSize=100
 ```
@@ -83,4 +83,4 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 ## Read next
 
-- [Payment mapping](/usecases/billpay/mapping)
+- [Payment mapping](/usecases/bill-pay/mapping) - Enable SMBs to choose how to make payments
