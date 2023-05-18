@@ -82,7 +82,7 @@ Select the **Codat Sandbox** as the source of accounting data.
 
 We fetch the applicant's unpaid invoices, customers associated to these unpaid invoices, and each customer's historic (paid) invoices to use in the decision making. You can [read more](/guides/invoice-finance/inv-fin-decision) about the queries we used to perform the specific fetching. 
 
-![](/img/use-cases/invoice-finance/sandbox-credentials-modal.png)
+![](/img/use-cases/invoice-finance/0015-sanbox-inv-finance.png)
 
 ### <input type="checkbox" unchecked /> Receive the decision on the loan 
 
