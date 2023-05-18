@@ -164,4 +164,4 @@ You have now set up your Codat instance and your local environment in preparatio
 
 ### Read next
 
-- [Use the app to underwrite a loan](/assess/guides/loan-qualification/process-loan).
+- [Use the app to underwrite a loan](/guides/loan-qualification/process-loan).
