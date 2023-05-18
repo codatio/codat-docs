@@ -206,7 +206,7 @@ module.exports = {
             },
             {
               type: "category",
-              label: "Implementation guide",
+              label: "Implementing bill pay",
               collapsed: true,
               className: "top-level-item",
               items: [

@@ -11,7 +11,7 @@ To enable users to select which bank account a payment should originate from, yo
 In some cases your platform may support multiple payment methods and each method can be mapped to an account. 
 You should store the mapping of the relevant `accountId` as this will be needed when creating the [billPayment](/usecases/bill-pay/payments).
 
-:::tip Foreign Exchange Payments 💱
+:::tip Foreign exchange payments 💱
 
 If you are facilitating payments in a foreign currency, then the payment should either be converted to the currency of the account, or you can create a new account with the import currency.
 
@@ -26,7 +26,7 @@ The [create account model](/accounting-api#/operations/get-create-chartOfAccount
 
 If the company is making payments from a payment method or account that you provide, then you should create a new account to represent this in their accounting software. This will make the companies payment reconciliation workflows in their accounting software easier.
 
-#### Prepay Account
+#### Pre-pay account
 
 Typically if the payment method is one of the following:
 
@@ -67,7 +67,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 
 
-#### Credit Account
+#### Credit account
 
 If you are providing a credit facility for the payment e.g.
 - Commercial Credit Card
