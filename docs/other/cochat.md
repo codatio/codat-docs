@@ -18,24 +18,22 @@ Cochat is in beta and we're still refining it's training data.
 Cochat is an advanced natural language processing (NLP) tool developed to enhance the user experience of Codat customers. By leveraging the power of GPT 3.5, Cochat provides an interactive and conversational interface to help users make sense of the Codat documentation and better understand how to leverage its capabilities for building integrations.
 
 <li className="card dark">
-    <div className="header">
-      <img
-        src="/img/cochat/logo-openai-mini.png"
-        className="mini-icon"
-      />
-      <h3>Ask Cochat</h3>
-    </div>
-    <p>
-      Having trouble?{" "}
-      Get instant assistance with {" "}
-      <a href="https://cochat-test.azurewebsites.net/" target="_blank">
-        Cochat
-      </a> our beta AI tool trained on the Codat docs. Try {" "}
-      <a href="https://cochat-test.azurewebsites.net/" target="_blank">asking it a question</a>
-      {" or "}
-      <a href="/other/cochat">read more</a>.
-    </p>
-  </li>
+  <div className="header">
+    <img
+      src="/img/cochat/logo-openai-mini.png"
+      className="mini-icon"
+    />
+    <h3>Ask Cochat</h3>
+  </div>
+  <p>
+    Having trouble?{" "}
+    Get instant assistance with {" "}
+    <a href="https://cochat-test.azurewebsites.net/" target="_blank">
+      Cochat
+    </a> our beta AI tool trained on the Codat docs. Try {" "}
+    <a href="https://cochat-test.azurewebsites.net/" target="_blank">asking it a question</a>!
+  </p>
+</li>
 
 ## Benefits of Cochat
 
