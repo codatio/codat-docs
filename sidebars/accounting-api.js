@@ -23,6 +23,11 @@ module.exports = [
       },
       {
         type: "link",
+        label: "Invoice financing",
+        href: "/guides/invoice-finance/introduction",
+      },
+      {
+        type: "link",
         label: "Bill pay",
         href: "/guides/bill-pay/introduction",
       },

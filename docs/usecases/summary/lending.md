@@ -36,7 +36,7 @@ We're working on guides so you can see how to build a simple application with Co
 
 Follow the demo guide to perform the end-to-end loan qualification process, from submitting a loan application to assessing a borrower's financial health using custom metrics, to issuing an automatic final decision on the application. 
 
-- **Invoice finance lending** (coming soon)
+- **[Invoice finance lending](/guides/invoice-finance/introduction)**
 
 Invoice financing allows the SMB to raise capital using unpaid invoices as security for the funding. It gives the business access to a percentage of the invoice value quickly and helps improve its cash flow. 
 

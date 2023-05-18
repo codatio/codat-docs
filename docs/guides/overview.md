@@ -9,4 +9,5 @@ We offer build guides that help users quickly dive into various use cases. Our o
 Our current guides:
 
 - [Loan qualification](/guides/loan-qualification/introduction) - Lend with Codat and our Assess product
+- [Invoice financing](/guides/invoice-finance/introduction) - Lend against invoices leveraging our Accounting API
 - [Bill pay](/guides/bill-pay/introduction) - Streamline your customers' Accounts Payable processes
