@@ -350,7 +350,7 @@ You have now:
 
 ## Next steps
 
-### Want to pull and view data from a different platform?
+#### Want to pull and view data from a different platform?
 
 Codat enables you to connect to over 30 different accounting, banking, and commerce platforms. You can choose to pull data from a platform most relevant to you.
 
@@ -358,19 +358,19 @@ Navigate to **Settings > Integrations** in the Portal. Choose the integration ty
 
 You can review our detailed instructions for setting up integrations like [Xero](/integrations/accounting/xero/accounting-xero), [QuickBooks Online](/integrations/accounting/quickbooksonline/accounting-quickbooksonline), [PayPal](/integrations/commerce/paypal/commerce-paypal), [Plaid](/integrations/banking/plaid/banking-plaid), and many more.
 
-### Curious about what other data Codat can provide you with?
+#### Curious about what other data Codat can provide you with?
 
 Codat pulls a variety of data types from the source platforms, making it easy to suit the needs of your use case.
 
 With our [accounting integrations](/accounting-api#/), you can pull financial statements, earning and spending detail, journal entries, tax details, and many more. Our [banking integrations](/banking-api#/) provide you with banking transactions, accounts, and account balances. Finally, our [commerce integrations](/commerce-api#/) can show you details of orders, customers, payments, products, and others.
 
-### Keen to customize the look and feel of the auth flow?
+#### Keen to customize the look and feel of the auth flow?
 
 Colors, logos, and icons of Codat's authorization flow [can be changed](/auth-flow/customize/branding) for a bespoke experience. Navigate to **Settings > Auth flow > Branding** in the Codat Portal and adjust to fit the flow to your brand's palette.
 
 Then, use the Link URL of the company you created earlier to review your customer's experience with the flow. You can even take the customization [one step further](/auth-flow/customize/customize-link) and amend the accompanying text and behaviors.
 
-### Want to migrate your existing integration to Codat?
+#### Want to migrate your existing integration to Codat?
 
 If you already have an OAuth application with one of our supported integrations, you can seamlessly migrate your customers' connections — without your customers needing to reconnect.
 
