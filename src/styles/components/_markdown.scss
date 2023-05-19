@@ -83,7 +83,14 @@ html[data-theme="dark"] {
   h4,
   h5,
   h6 {
-    > a {
+    > a:not(.hash-link) {
+      //color: inherit;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    > a.hash-link {
       color: inherit;
     }
   }

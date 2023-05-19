@@ -3,11 +3,11 @@ title: Accounts Payable
 description: "Retrieve and create bills using the Accounting API"
 ---
 
-### Accounts Payable
+### Accounts payable
 
 In Codat's API a [Bill](/accounting-api#/schemas/Bill) represents an invoice from a [supplier](/accounting-api#/schemas/Supplier), for this use case bills can be [retrieved](/accounting-api#/operations/list-bills) from the Accounting API, or you can create bills within your platform and [post](https://docs.codat.io/accounting-api#/operations/create-bill) them to your customers accounting software.
 
-### Managing Suppliers
+### Managing suppliers
 
 In the accounting API a [supplier](accounting-api#/schemas/Supplier) represents a business or sole trader that provides goods or services to a company.
 

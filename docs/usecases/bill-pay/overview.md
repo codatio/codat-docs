@@ -33,31 +33,31 @@ Many SMBs still rely on manual AP functions to run their business. One study sho
     </p>
   </li>
 
-<li className="card">
-  <div class="header">
-    <img
-      src="/img/wp-icons/copy-feature-bullet.svg"
-      class="mini-icon"
-    />
-    <h3>Saves time</h3>
-  </div>
-  <p>
-    Provides a core need for your small business customers, ultimately saving them time and effort when reconciling their accounts payable data with their accounting platform.
-  </p>
-</li>
+  <li className="card">
+    <div class="header">
+      <img
+        src="/img/wp-icons/copy-feature-bullet.svg"
+        class="mini-icon"
+      />
+      <h3>Saves time</h3>
+    </div>
+    <p>
+      Provides a core need for your small business customers, ultimately saving them time and effort when reconciling their accounts payable data with their accounting platform.
+    </p>
+  </li>
 
-<li className="card">
-  <div class="header">
-    <img
-      src="/img/wp-icons/copy-feature-bullet.svg"
-      class="mini-icon"
-    />
-    <h3>Increase Retention</h3>
-  </div>
-  <p>
-    Attract and retain customers by providing them with the type of digital experience and connectivity they have come to expect as consumers
-  </p>
-</li>
+  <li className="card">
+    <div class="header">
+      <img
+        src="/img/wp-icons/copy-feature-bullet.svg"
+        class="mini-icon"
+      />
+      <h3>Increase Retention</h3>
+    </div>
+    <p>
+      Attract and retain customers by providing them with the type of digital experience and connectivity they have come to expect as consumers
+    </p>
+  </li>
 </ul>
 
 ## Features
@@ -74,11 +74,11 @@ Codat handles authorization and linking to your SMB's accounting platform and ta
 A list of unpaid [bills](/accounting-api#/schemas/Bill) (accounts payable invoices) can be retrieved from the accounting platform, in the Accounting API a bill is an itemised record of goods purchased from or services provided by a supplier.
 Alternatively, Bills can also be created within your application and then synchronised to the accounting platform.
 
-### [Payment Account Mapping](mapping)
+### [Payment account mapping](mapping)
 
 Once Authorised, you can use the bank accounts endpoint to retrieve a list of accounts which can be mapped enabling the user to dictate which account their payments should be reconciled to.
 
-### [Payment Reconciliation](payments)
+### [Payment reconciliation](payments)
 
 Once the transaction is completed, a bill payment can then be pushed to the customers accounting platform and reconciled against the bill marking it as paid.
 
