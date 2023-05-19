@@ -59,7 +59,7 @@ Assess empowers you with a host of features to help you streamline your underwri
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Enhanced financials</h3>
@@ -77,7 +77,7 @@ Assess empowers you with a host of features to help you streamline your underwri
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Accounting financial metrics</h3>
@@ -95,7 +95,7 @@ Assess empowers you with a host of features to help you streamline your underwri
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Commerce sales metrics</h3>
@@ -113,7 +113,7 @@ Assess empowers you with a host of features to help you streamline your underwri
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Data integrity</h3>

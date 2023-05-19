@@ -33,7 +33,7 @@ import PageHeader from "@components/global/PageHeader";
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Simplify your integrations</h3>
@@ -51,7 +51,7 @@ import PageHeader from "@components/global/PageHeader";
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Ensure data consistency</h3>
@@ -69,7 +69,7 @@ import PageHeader from "@components/global/PageHeader";
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Support your customers</h3>

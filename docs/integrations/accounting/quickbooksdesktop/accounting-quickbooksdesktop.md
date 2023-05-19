@@ -27,7 +27,7 @@ Our connector provides a seamless and full featured integration to QuickBooks De
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Runs in the background</h3>
@@ -40,7 +40,7 @@ Our connector provides a seamless and full featured integration to QuickBooks De
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Auto restarts and updates</h3>
@@ -53,7 +53,7 @@ Our connector provides a seamless and full featured integration to QuickBooks De
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Auto and manual syncs</h3>
@@ -66,7 +66,7 @@ Our connector provides a seamless and full featured integration to QuickBooks De
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Intuitive user interface</h3>

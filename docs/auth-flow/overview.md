@@ -18,7 +18,7 @@ There are three ways you can enable your customers to connect their financial ac
     <p>No-code</p>
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Hosted Link</h3>
@@ -39,7 +39,7 @@ There are three ways you can enable your customers to connect their financial ac
     <p>Low-code</p>
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Embedded Link</h3>
@@ -60,7 +60,7 @@ There are three ways you can enable your customers to connect their financial ac
     <p>More code</p>
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Link API</h3>
