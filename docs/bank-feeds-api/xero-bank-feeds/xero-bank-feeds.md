@@ -65,7 +65,6 @@ This article explains how to:
 Before setting up the integration, make sure that:
 
 - You've [joined the Xero App Partner Program](/accounting/xero/xero-app-partner-program).
-
 - You've [set up the Xero integration](/integrations/accounting/xero/accounting-xero-setup#create-a-xero-app-and-configure-the-redirect-uri). The main tasks are as follows:
    - In the Xero Developer portal, [create and configure a Xero app](/integrations/accounting/xero/accounting-xero-setup#create-a-xero-app-and-configure-the-redirect-uri).
    - [Retrieve your app's secure keys](/integrations/accounting/xero/accounting-xero-setup#retrieve-your-apps-secure-keys) and then add them to the integration.
@@ -105,7 +104,7 @@ Before setting up the integration, make sure that:
    
    The endpoint returns a `dataConnection` object, in `PendingAuth` status, containing a connection `id` and a `linkUrl`. Later, you'll use the `linkUrl` to redirect the SMB user to the account mapping UI.
 
-   ```json title="Response example (200)"
+   ```json title="Response example - Create connection (200)"
    {
      "id": "9d0703c1-fc71-43b7-b4e0-37cd7a863644",
      "integrationId": "0f20c943-12d0-4800-9f6c-d218f62d494c",
@@ -165,7 +164,7 @@ See CROSSREF TO: SMB user account connection to learn...
 
 # SMB user account connection
 
-After setting up a company, data connection, and one or more source bank accounts, redirect your SMB user to the `linkUrl` . The URL was returned from `POST /companies/<COMPANY_ID>/connections`.
+After setting up a company, data connection, and one or more source bank accounts, redirect your SMB user to the `linkUrl` (returned from `POST /companies/<COMPANY_ID>/connections`).
 
 :::info Link URL expiry
 For security reasons, the `linkUrl` will expire one hour after it was generated.
@@ -181,11 +180,13 @@ The SMB user can do the following:
 - Add one or more source bank accounts (the accounts you provided through the `PUT /bankFeedAccounts` endpoint).
 - Map a source bank account to an existing target bank account in Xero.
 - Select **Create New Account** to map a source bank account to a new target bank account in Xero.
-- Select the **Feed start date**&mdash;the date a bank feed connection should start from.
+- Select the **Feed start date**&mdash;the date a bank feed connection should start from. 
 - Connect the selected bank accounts to create bank feed connections.
 
+You'll be able to push bank transactions dated from the **Feed start date** and later. However, Xero's API does not support pushing historical data older than one year.  
+
 :::info Target account names
-If the user chooses the **Create New Account** option, the target bank account is created with the same name as the source bank account it is mapped to. Bank account names can be changed in Xero at any time.
+If the user chooses the **Create New Account** option, the target bank account is created with the same name as the source bank account it's mapped to. Bank account names can be changed in Xero at any time.
 :::
 
 :::caution Bank feeds must be pushed to Codat
@@ -207,12 +208,16 @@ Now that your SMB users have mapped and connected their bank accounts, you're re
 <hr />
 
 # Push bank transactions to Xero
-When your SMB users have connected their bank accounts, you're ready to push bank transactions from source bank accounts to Xero.
+When an SMB user has set up a bank feed connection, you can push bank transactions for source bank accounts to Xero. To push transactions, the source account must have  `connected` status, where the SMB user has completed the step of mapping and connecting the account.
+
+:::caution Auto-download not supported
+Transactions are not automatically downloaded to Xero when the user successfully connects a bank account. They must be pushed as described later in this article.
+:::
 
 This article explains how to:
 
 - View the details of source bank accounts, including their connection statuses.
-- Push bank transactions for connected source bank accounts.
+- Push bank transactions to a target bank account in Xero.
 
 ## Prerequisites
 
@@ -220,17 +225,15 @@ This article explains how to:
 
 ## View bank account details
 
-To get ready to push bank transactions, call  [GET connectionInfo/bankFeedAccounts](/bank-feeds-api#/operations/get-bank-feeds) to view details of the source bank accounts for a specified data connection.
-
-The response shows you whether the SMB user has completed the step of mapping and connecting accounts.
+Call  [GET connectionInfo/bankFeedAccounts](/bank-feeds-api#/operations/get-bank-feeds) to view details of the source bank accounts for a specified company and data connection.
 
 ```http title="List bank feed bank accounts"
 GET /companies/<COMPANY_ID>/connections/<CONNECTION_ID>/connectionInfo/bankFeedAccounts
 ```
 
-The response contains a list of source bank accounts with a status of either `pending`, `connected`, or `disconnected`. The `feedStartDate` property is returned for `connected` bank accounts only.
+The response lists all source bank accounts and their statuses&mdash;either `pending`, `connected`, or `disconnected`. The `feedStartDate` property is returned for `connected` bank accounts only.
 
-```json title="Response example (200)"
+```json title="Response example - List bank feed bank accounts (200)"
 [
   {
     "id": "acc-002", // the ID of the source bank account
@@ -258,48 +261,44 @@ The response contains a list of source bank accounts with a status of either `pe
 ]
 ```
 
-## Push bank transactions
+## Requirements for pushing bank transactions to Xero
 
-You can push [Bank transactions](/accounting-api#/schemas/BankTransactions) to Xero for `connected` source bank accounts. Transactions are pushed to the target Xero bank account to which the source account is mapped.
-
-In the SMB user's Xero package, new bank transactions for the target account will appear on the **Incoming Bank Transactions** UI.
-
-Bank feeds are pushed to Xero immediately, not on a schedule.
-
-:::info Bank feeds must be pushed to Codat
-Transactions are not automatically downloaded to Xero when the user successfully connects a bank account.
-:::
-
-To push bank transactions to Codat, make the following requests to the Codat API. All push requests are asynchronous.
-
-### Requirements for bank transactions pushed to Xero
+When pushing bank transactions to Xero:
 
 - You can only push bank transactions to one target account at a time.
-- Bank transactions must be pushed in chronological order.
-- Bank transactions can't be older than the most recent transaction available on the destination bank account.
-- Bank transactions must have a `date` set to the current day or earlier.
-- Up to 1000 bank transactions can be pushed at a time.
+- Transactions must be pushed in chronological order.
+- Transactions can't be older than the most recent transaction available on the destination bank account.
+- Transactions must have a `date` set to the current day or earlier, but be aware of the limitation described in "Pushing historic transactions", below.
+- A maximum of 1000 transactions can be pushed at a time.
 
-To push bank transactions to Xero:
+:::note Pushing historic transactions
+You can push bank transactions to Xero which are dated up to one year prior to the current date. Pushes containing bank transactions dated older than one year will fail.
 
-1. Push bank transactions to a target bank account using the [Create bank transactions](/accounting-api#/operations/create-bank-transactions) endpoint. 
+The `date` of a historic transaction must be later than the `feedStartDate` on the source bank account, which is determined by the **Feed start date** selected by the SMB user in the account mapping UI.
+:::
+
+## Push bank transactions to Xero
+
+To push bank transactions for a `connected` source bank account, make the following requests to the Codat API. All push requests are asynchronous. Bank feeds are sent to Xero immediately, not on a schedule.
+
+1. Post the bank transactions using the [Create bank transactions](/accounting-api#/operations/create-bank-transactions) endpoint:
 
    ```http title="Create bank transactions"
    POST https://api.codat.io/companies/<COMPANY_ID>/connections/<CONNECTION_ID>/push/bankAccounts/<ACCOUNT_ID>/bankTransactions
    ```
-   
-   Where `ACCOUNT_ID` is the ID of a connected source bank account (returned from
+
+   For the `ACCOUNT_ID`, supply the ID of a `connected` source bank account (returned from
    `GET /connectionInfo/BankFeedAccounts`).  
-   
+
    ```json title="Example request body (all fields are required)"
    {
-     "accountId": "482342-acc-001",
+     "accountId": "482342-acc-001", // source bank account ID
      "transactions": [
        {
          "id": "7832323211-GIF",
          "amount": 450,
          "balance": 2000,
-         "date": "2022-08-30T17:05:12.191Z",
+         "date": "2022-08-30T17:05:12.191Z", // max. 1 year old
          "description": "events-hospitality",
          "transactionType": "Debit"
        },
@@ -314,13 +313,15 @@ To push bank transactions to Xero:
      ]
    }
    ```
-   
+
    The balance of the last bank transaction in the array is used to update the balance of the specified bank account.
 
 2. If the data is valid, the endpoint returns a push operation with a `status` of `Pending` (202). The status changes to `Success` if the push operation completes successfully.
-   
+
    :::info Pending status
-   The push operation status might remain as `Pending` for some time while Xero processes the bank transactions.
+   The push operation status might remain in `Pending` for some time while Xero processes the bank transactions.
    :::
-   
-3. Repeat the Create bank transactions request for the rest of the user's source bank accounts.
+
+3. Repeat the Create bank transactions request for the remainder of the user's source bank accounts.
+
+In the SMB user's Xero package, new bank transactions for the target account will appear on the **Incoming Bank Transactions** UI.
