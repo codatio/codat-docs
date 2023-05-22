@@ -8,7 +8,9 @@ updatedAt: "2023-01-16T10:52:25.792Z"
 
 Simply allowing your SMB customers to connect their accounts is just the beginning. Now you should optimize your flow to ensure connectivity with your customers.
 
-This guide is based on our experience of working with apps and services using Codat’s API, with thousands of SMBs connecting every day. We have broken down these optimizations into 5 critical areas:
+### What we'll cover
+
+This guide is based on our experience of working with apps and services using Codat’s API, with thousands of SMBs connecting every day. We have broken down these optimizations by focus:
 
 - **[The funnel](/auth-flow/optimize/funnel)**: the steps from user sign up to the point they are ready to connect
 - **[The value exchange](/auth-flow/optimize/value-exchange)**: why an SMB will benefit from connecting their accounts
@@ -18,16 +20,18 @@ This guide is based on our experience of working with apps and services using Co
 
 Consider these optimization areas a "go-live checklist". In the following sections, we are going to take a closer look at each of the points.
 
-:::info
-
-Each section includes:
+#### Each section includes...
 
 - The positive impact that you can expect from following our recommendations, **including the potential conversion rate increase\***.
 - A helpful checklist to use when building your authorization flow.
 
-\*Codat analyzed implementations and the dropoff/conversion rate at each stage. We were able to attribute a positive correlation to the execution of each of the five critical areas.
+Codat has analyzed implementations and the dropoff/conversion rate at each stage. We were able to attribute a positive correlation to the execution of each of the five critical areas.
 
-:::
+### Measuring success
+
+We also equip you with a tool for [monitoring your auth flow's performance](/auth-flow/optimize/optimize-the-connection-journey).
+
+### Resources
 
 For further resources on good design practices and some inspiration, Codat recommends:
 
@@ -40,9 +44,9 @@ For further resources on good design practices and some inspiration, Codat recom
   </a>
   : the world’s largest mobile app design reference library
 
-:::info
+:::info Think about your usecase
 
-Note whilst these recommendations apply universally, some examples are more relevant for specific use cases, such as lending and underwriting, insights, or reconciliation.
+Whilst these recommendations apply universally, some examples are more relevant for specific use cases, such as lending and underwriting, insights, or reconciliation.
 :::
 
 For more examples and further help optimizing your flow, you can contact your account manager if you are on our [Enterprise plan](https://www.codat.io/plans/).

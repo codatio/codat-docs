@@ -60,7 +60,7 @@ Ensure there is a way to add multiple connections if your use case will benefit 
 
 See [here](/auth-flow/authorize-hosted-link#managing-existing-users-with-pending-connections) for more detail on connections with a `pendingAuth` status and [here](/using-the-api/querying#for-companies-whose-status-is-pending-with-data-connection-established) on creating a query to find these companies.
 
-:::info
+:::info Why use Link?
 
 [Using Codat's Link for authorization](/auth-flow/overview) allows you to:
 
@@ -72,3 +72,10 @@ To read more about different ways to customize Link, read [Customize your Link](
 
 You can also [build your own authorization journey](/auth-flow/build/build-your-own-authorization-journey).
 :::
+
+
+---
+
+## Read next
+
+- Learn how to [enhance the customer journey when a persistent connection is required](/auth-flow/optimize/connection-management)

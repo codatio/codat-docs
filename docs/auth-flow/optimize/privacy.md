@@ -98,4 +98,4 @@ You can also [build your own auth flow](/auth-flow/build/build-your-own-authoriz
 
 ## Read next
 
-- Learn how to [enhance the customer journey when a persistent connection is required](/auth-flow/optimize/connection-management)
+- Learn how to [streamline the platform selection process](/auth-flow/optimize/platform-selection)
