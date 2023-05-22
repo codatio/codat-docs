@@ -1,5 +1,6 @@
 ---
 title: "Test your Xero integration"
+sidebar_label: Testing
 description: "Create a Xero Demo Company and successfully access its sandbox data through Codat's Xero integration"
 createdAt: "2022-03-08T09:56:46.839Z"
 updatedAt: "2022-09-29T15:12:55.393Z"

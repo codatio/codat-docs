@@ -1,5 +1,6 @@
 ---
 title: "Xero"
+sidebar_label: Overview
 description: "Learn about our Xero integration."
 ---
 
