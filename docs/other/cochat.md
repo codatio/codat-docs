@@ -13,6 +13,8 @@ This page was written by ChatGPT.
 Cochat is in beta and we're still refining it's training data.
 :::
 
+![A screenshot of cochat](/img/cochat/screenshot.png)
+
 ## What is Cochat?
 
 Cochat is an advanced natural language processing (NLP) tool developed to enhance the user experience of Codat customers. By leveraging the power of GPT 3.5, Cochat provides an interactive and conversational interface to help users make sense of the Codat documentation and better understand how to leverage its capabilities for building integrations.
