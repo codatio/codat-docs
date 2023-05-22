@@ -76,7 +76,7 @@ Before setting up the integration, make sure that:
    PUT /companies/<COMPANY_ID>/connections/<CONNECTION_ID>/connectionInfo/bankFeedAccounts
    ```
    
-   For the `<CONNECTION_ID>`, use the connection `id` in the response from `POST /companies`.
+   For the `<CONNECTION_ID>`, use the connection `id` you received in the response from `POST /companies`.
    
    In the request body, specify a list of source bank accounts to make available to the SMB user. For example, to add two credit card accounts send the following request:
 
