@@ -17,9 +17,11 @@ import TabItem from "@theme/TabItem";
 
 :::caution Early access
 
-Embedded Link is still being developed and a new version is coming soon. If you run into issues, please [contact support](mailto:support@codat.io). If you have any feedback, please [get in touch](mailto:embedded-link@codat.io)!
+The currently available Embedded Link is a beta, and a new version is coming next month. If you run into issues, please [contact support](mailto:support@codat.io). 
 
-You can also [request features and suggest improvements](https://portal.productboard.com/codat/12-public-devex-roadmap/c/485-embed-a-pre-built-auth-flow-in-your-website-or-app) in our roadmap!
+This next version will solve a number of issues with this initial version, and work with non-React JS apps.
+
+If you have any feedback, please [get in touch](mailto:embedded-link@codat.io)! You can also [request features and suggest improvements](https://portal.productboard.com/codat/12-public-devex-roadmap/c/485-embed-a-pre-built-auth-flow-in-your-website-or-app) in our roadmap!
 :::
 
 Use the Embedded Link solution to benefit from a pre-built code component that melds best practices together with our extensive experience in building authorization flows, while seamlessly embedding it into your webpage or front-end application.
