@@ -20,15 +20,15 @@ Before setting up the integration, make sure that:
 - You've [set up the Xero integration](/integrations/accounting/xero/accounting-xero-setup#create-a-xero-app-and-configure-the-redirect-uri). The main tasks are as follows:
    - In the Xero Developer portal, [create and configure a Xero app](/integrations/accounting/xero/accounting-xero-setup#create-a-xero-app-and-configure-the-redirect-uri).
    - [Retrieve your app's secure keys](/integrations/accounting/xero/accounting-xero-setup#retrieve-your-apps-secure-keys) and then add them to the integration.
-   - [Enable the Xero integration](/integrations/accounting/xero/accounting-xero-setup#enable-the-xero-integration).
-
-   Bank feeds functionality is part of our existing Xero accounting integration. To configure the integration to access bank feeds, use the same Redirect URI and ensure the **Enable bank feeds** toggle is selected.
    
+   Bank feeds functionality is part of our existing Xero accounting integration. To configure the integration to access bank feeds, use the same Redirect URI as Xero and ensure the **Enable bank feeds** toggle is selected.
+   
+   - [Enable the Xero integration](/integrations/accounting/xero/accounting-xero-setup#enable-the-xero-integration).   
 - Xero have enabled the _Xero Bank Feeds API_ for your registered app.
 
 ### Create a company and data connection, then add bank accounts​
 
-1. Using [POST /companies](/codat-api#/operations/create-company), create a company to represent your SMB user:
+1. Using the [POST /companies](/codat-api#/operations/create-company) endpoint, create a company to represent your SMB user:
 
    ```http title="Create a company"
    POST https://api.codat.io/companies
@@ -42,7 +42,7 @@ Before setting up the integration, make sure that:
    
    The endpoint returns a JSON response containing the company ID (`id`) and the redirect URL (`redirect`).
 
-2. Using [POST /companies/<COMPANY_ID>/connections](/codat-api#/operations/create-data-connection), create a data connection to Xero for the company you added. Specify the company ID in the URL path and the Xero platform key in the body:
+2. Using the [POST /companies/<COMPANY_ID>/connections](/codat-api#/operations/create-data-connection) endpoint, create a data connection to Xero for the company you added. Specify the company ID in the URL path and the Xero platform key in the body:
 
    ```http title="Create connection"
    POST https://api.codat.io/companies/<COMPANY_ID>/connections
@@ -70,7 +70,7 @@ Before setting up the integration, make sure that:
    } 
    ```
 
-3. Using [PUT / bankFeedAccounts](/bank-feeds-api#/operations/create-bank-feed), add one or more source bank accounts:
+3. Using the [PUT / bankFeedAccounts](/bank-feeds-api#/operations/create-bank-feed) endpoint, add one or more source bank accounts:
    
    ```http title="Create bank feed bank accounts"
    PUT /companies/<COMPANY_ID>/connections/<CONNECTION_ID>/connectionInfo/bankFeedAccounts

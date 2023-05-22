@@ -21,7 +21,7 @@ This article explains how to:
 
 ## View bank account details
 
-Call  [GET connectionInfo/bankFeedAccounts](/bank-feeds-api#/operations/get-bank-feeds) to view details of the source bank accounts for a specified company and data connection.
+Call the [GET connectionInfo/bankFeedAccounts](/bank-feeds-api#/operations/get-bank-feeds) endpoint to view details of the source bank accounts for a specified company and data connection.
 
 ```http title="List bank feed bank accounts"
 GET /companies/<COMPANY_ID>/connections/<CONNECTION_ID>/connectionInfo/bankFeedAccounts
@@ -77,14 +77,13 @@ The `date` of a historic transaction must be later than the `feedStartDate` on t
 
 To push bank transactions for a `connected` source bank account, make the following requests to the Codat API. All push requests are asynchronous. Bank feeds transactions are sent to Xero immediately, not on a schedule.
 
-1. Post the bank transactions using the [Create bank transactions](/accounting-api#/operations/create-bank-transactions) endpoint:
+1. Post the bank transactions using the [POST /push/bankAccounts/<ACCOUNT_ID>/bankTransactions](/accounting-api#/operations/create-bank-transactions) endpoint:
 
    ```http title="Create bank transactions"
    POST https://api.codat.io/companies/<COMPANY_ID>/connections/<CONNECTION_ID>/push/bankAccounts/<ACCOUNT_ID>/bankTransactions
    ```
 
-   For the `ACCOUNT_ID`, supply the ID of a `connected` source bank account (returned from
-   `GET /connectionInfo/BankFeedAccounts`).  
+   For the `ACCOUNT_ID`, supply the ID of a `connected` source bank account (returned from the `GET /connectionInfo/BankFeedAccounts` request).  
 
    ```json title="Example request body (all fields are required)"
    {
@@ -122,6 +121,6 @@ To push bank transactions for a `connected` source bank account, make the follow
    The push operation status might remain in `Pending` for some time while Xero processes the bank transactions.
    :::
 
-3. Repeat the Create bank transactions request for the remainder of the user's source bank accounts.
+3. Repeat the `POST /push/bankAccounts/<ACCOUNT_ID>/bankTransactions` request for the remainder of the user's source bank accounts.
 
 In the SMB user's Xero package, new bank transactions for the target account will appear on the **Incoming Bank Transactions** UI.
