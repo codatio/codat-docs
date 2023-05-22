@@ -18,15 +18,9 @@ module.exports = [
     items: [
       "assess/get-started",
       {
-        type: "category",
+        type: "link",
         label: "Loan qualification",
-        collapsed: true,
-        items: [
-          "assess/guides/loan-qualification/introduction",
-          "assess/guides/loan-qualification/setting-up",
-          "assess/guides/loan-qualification/process-loan",
-          "assess/guides/loan-qualification/uw-decision",
-        ],
+        href: "/guides/loan-qualification/introduction",
       },
       {
         type: "category",

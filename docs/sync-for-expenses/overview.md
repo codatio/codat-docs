@@ -48,7 +48,7 @@ Sync for Expenses is an API and a set of supporting tools. It has been built to 
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Standardised API</h3>
@@ -61,7 +61,7 @@ Sync for Expenses is an API and a set of supporting tools. It has been built to 
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Receipt capture</h3>
@@ -74,7 +74,7 @@ Sync for Expenses is an API and a set of supporting tools. It has been built to 
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Two-way sync</h3>

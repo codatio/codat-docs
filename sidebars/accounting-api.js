@@ -17,15 +17,19 @@ module.exports = [
     collapsed: true,
     items: [
       {
-        type: "category",
+        type: "link",
+        label: "Loan qualification",
+        href: "/guides/loan-qualification/introduction",
+      },
+      {
+        type: "link",
+        label: "Invoice financing",
+        href: "/guides/invoice-finance/introduction",
+      },
+      {
+        type: "link",
         label: "Bill pay",
-        collapsed: true,
-        items: [
-          "accounting-api/guides/bill-pay/introduction",
-          "accounting-api/guides/bill-pay/use-bill-pay-demo-app",
-          "accounting-api/guides/bill-pay/run-demo-app-locally",
-          "accounting-api/guides/bill-pay/how-the-demo-app-works",
-        ],
+        href: "/guides/bill-pay/introduction",
       },
     ],
   },

@@ -11,14 +11,18 @@ ul.card-container {
   grid-gap: 1rem;
   gap: 1rem;
   grid-auto-rows: minmax(150px, auto);
-}
 
-ul.card-container.col-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
+  &.col-3 {
+    grid-template-columns: repeat(3, 1fr);
+    
+    p {
+      font-size: 0.9em;
+    }
+  }
 
-ul.card-container.col-3 p {
-  font-size: 0.9em;
+  &.mini {
+    grid-auto-rows: auto;
+  }
 }
 
 @media screen and (max-width: 1220px) {
@@ -40,6 +44,20 @@ html[data-theme="light"] {
   li.card {
     background-color: var(--token-primary-bg-c);
     border: 2px solid var(--token-secondary-bg-c-alt);
+
+    &.dark {
+      background-color: #15095D;
+      color: white;
+
+      img {
+        fill: white;
+        fill-opacity: 1;
+      }
+
+      a {
+        color: white;
+      }
+    }
   }
 }
 
@@ -77,9 +95,10 @@ li.card {
     }
   }
 
-  div.header {
+  .header {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 
     h3 {
       font-size: 16px;
@@ -87,6 +106,27 @@ li.card {
 
     img + h3 {
       margin: 0.5em;
+    }
+  }
+}
+
+li.card.mini {
+  flex-direction: row;
+  padding: 1em;
+
+  .header {
+    align-items: flex-start;
+
+    img {
+      margin-bottom: 0;
+    } 
+  }
+
+  .content {
+    padding-left: 1em;
+
+    h4 {
+      margin-bottom: 0.25em;
     }
   }
 }

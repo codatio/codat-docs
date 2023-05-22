@@ -26,36 +26,37 @@ module.exports = {
           label: "Common API",
         },
         {
+          className: "borderTop",
           href: "/accounting-api",
           label: "Accounting API",
-        },
-        {
-          href: "/banking-api",
-          label: "Banking API",
-        },
-        {
-          href: "/commerce-api",
-          label: "Commerce API",
-        },
-        {
-          href: "/bank-feeds-api",
-          label: "Bank Feeds API",
         },
         {
           href: "/assess-api",
           label: "Assess API",
         },
         {
-          href: "/sync-for-expenses-api",
-          label: "Sync for Expenses API",
+          href: "/banking-api",
+          label: "Banking API",
+        },
+        {
+          href: "/bank-feeds-api",
+          label: "Bank Feeds API",
+        },
+        {
+          href: "/commerce-api",
+          label: "Commerce API",
+        },
+        {
+          href: "/files-api",
+          label: "Files API",
         },
         {
           href: "/sync-for-commerce-api",
           label: "Sync for Commerce API",
         },
         {
-          href: "/files-api",
-          label: "Files API",
+          href: "/sync-for-expenses-api",
+          label: "Sync for Expenses API",
         },
         {
           className: "borderTop",
@@ -119,6 +120,12 @@ module.exports = {
         {
           href: "https://github.com/orgs/codatio/discussions/new?category=q-a",
           label: "Ask the community",
+          target: "_blank",
+          rel: null,
+        },
+        {
+          href: "https://cochat-test.azurewebsites.net/",
+          label: "Ask Cochat AI",
           target: "_blank",
           rel: null,
         },

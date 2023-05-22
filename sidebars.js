@@ -35,7 +35,50 @@ module.exports = {
           label: "Integration coverage",
           href: "https://knowledge.codat.io/supported-features/accounting",
         },
-        "introduction/office-hours"
+        "introduction/office-hours",
+        "other/developer-resources",
+      ],
+    },
+    {
+      type: "category",
+      label: "Guides",
+      collapsed: true,
+      className: "top-level-item other",
+      items: [
+        "guides/overview",
+        {
+          type: "category",
+          label: "Loan qualification",
+          collapsed: true,
+          items: [
+            "guides/loan-qualification/introduction",
+            "guides/loan-qualification/setting-up",
+            "guides/loan-qualification/process-loan",
+            "guides/loan-qualification/uw-decision",
+          ],
+        },
+        {
+          type: "category",
+          label: "Invoice financing",
+          collapsed: true,
+          items: [
+            "guides/invoice-finance/introduction",
+            "guides/invoice-finance/setting-up",
+            "guides/invoice-finance/process-invoice",
+            "guides/invoice-finance/inv-fin-decision",
+          ],
+        },
+        {
+          type: "category",
+          label: "Bill pay",
+          collapsed: true,
+          items: [
+            "guides/bill-pay/introduction",
+            "guides/bill-pay/use-bill-pay-demo-app",
+            "guides/bill-pay/run-demo-app-locally",
+            "guides/bill-pay/how-the-demo-app-works",
+          ],
+        },
       ],
     },
     {
@@ -54,6 +97,29 @@ module.exports = {
           type: "link",
           href: "/codat-api",
           label: "Common API reference",
+        },
+        {
+          type: "category",
+          label: "Using the portal",
+          collapsed: true,
+          items: [
+            "other/portal/dashboard",
+            "other/portal/account-management",
+            "other/portal/usage-and-billing",
+            "other/portal/companies",
+            "other/portal/developers",
+            "other/portal/pull-and-push-history",
+          ],
+        },
+        {
+          type: "category",
+          label: "User management",
+          collapsed: true,
+          items: [
+            "other/user-management/adding-users",
+            "other/user-management/user-roles",
+            "other/user-management/sso",
+          ],
         },
       ],
     },
@@ -118,39 +184,6 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Other guides",
-      collapsed: true,
-      className: "top-level-item other",
-      items: [
-        "other/developer-resources", 
-        "other/file-upload",
-        {
-          type: "category",
-          label: "Portal",
-          collapsed: true,
-          items: [
-            "other/portal/dashboard",
-            "other/portal/account-management",
-            "other/portal/usage-and-billing",
-            "other/portal/companies",
-            "other/portal/developers",
-            "other/portal/pull-and-push-history",
-          ],
-        },
-        {
-          type: "category",
-          label: "User management",
-          collapsed: true,
-          items: [
-            "other/user-management/adding-users",
-            "other/user-management/user-roles",
-            "other/user-management/sso",
-          ],
-        },
-      ],
-    },
-    {
-      type: "category",
       label: "Use cases",
       collapsed: true,
       className: "top-level-item usecases",
@@ -159,7 +192,32 @@ module.exports = {
         "usecases/summary/lending",
         "usecases/summary/managing-expenses",
         "usecases/summary/dashboarding",
-        "usecases/summary/automating-payables",
+        {
+          type: "category",
+          label: "Automating payables",
+          collapsed: true,
+          className: "top-level-item",
+          items: [
+            "usecases/summary/automating-payables",
+            {
+              type: "link",
+              label: "Demo app guide",
+              href: "https://docs.codat.io/guides/bill-pay/introduction",
+            },
+            {
+              type: "category",
+              label: "Implementing bill pay",
+              collapsed: true,
+              className: "top-level-item",
+              items: [
+                "usecases/bill-pay/overview",
+                "usecases/bill-pay/bills",
+                "usecases/bill-pay/mapping",
+                "usecases/bill-pay/payments",
+              ],
+            }
+          ],
+        },
         "usecases/summary/automating-receivables",
         "usecases/summary/integrating-commerce-data",
         "usecases/summary/managing-payroll",

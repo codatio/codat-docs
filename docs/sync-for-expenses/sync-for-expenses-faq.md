@@ -66,6 +66,19 @@ For more information on how to set up your accounting platform integration take 
 ### Is the transaction ID unique to each connected company? 
 Each transaction id is unique to a client's company but they aren't unique across connections. We currently only support a single accounting connection per company. If a company wants to swap their accounting software or would like to link to a different entity we recommend creating a new company. 
 
-### What can we reuse from a Coat Bill Pay build for Sync for Expenses?
-You could re-use the chart of accounts, tracking categories and tax rates from our Accounting API. However, we recommend using the [mappingOptions](https://docs.codat.io/sync-for-expenses-api#/operations/get-mapping-options) for expenses because of the transaction type support. 
+### What can we reuse from the Codat Bill Pay build for Sync for Expenses?
+You can reuse the chart of accounts, tracking categories, and tax rates from our Accounting API. However, we recommend using the [mappingOptions](https://docs.codat.io/sync-for-expenses-api#/operations/get-mapping-options) endpoint for expenses because of the transaction type support. 
 Authentication, company creation and the Accounting connection linking journeys can be reused between builds. This is because the companies can use the same Id between Codat products. 
+
+### How can I resync a transaction which has previously failed once I resolve the issue with the transaction?
+Once you resolve the issue with the transaction, you can create a new dataset for that transaction Id. You are unable to resync the transaction with the same dataset Id as the other successfully synced transactions will trigger the validation for preventing duplicates. To avoid duplicates, Codat checks the transaction metadata to see if a transaction Id has a status of completed. If it does, it is not synced again. 
+
+The following error will appear if a transaction has been previously synced: 
+
+```
+error: One or more transactions have previously been processed: 46dd5a8a-d74f-46f0-adf8-4f74ffe5e7c8
+```
+
+### How can I detect if an expense account has been deactivated?
+You can create a webhook in the Codat portal to alert you when the Chart of Accounts has been changed. By querying the Chart of Accounts and using the `isDeleted` flag, you can identify which accounts have been deleted before a sync occurs. 
+For more information, please refer to the [documentation](https://docs.codat.io/introduction/webhooks/core-rules-types) on creating and updating rules.

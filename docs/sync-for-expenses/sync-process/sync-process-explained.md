@@ -31,7 +31,7 @@ import TabItem from "@theme/TabItem";
 After the company has categorized their expenses using the mapping options, you can create expense-transaction datasets, in the response you will receive a `datasetId`.
 
 ```http title="Create expense dataset"
-POST https://api.codat.io/companies/{companyId}/sync/expenses/expense-reconciliations
+POST https://api.codat.io/companies/{companyId}/sync/expenses/expense-transactions
 ```
 
 ### [Initiate sync](syncing-expenses)
@@ -39,7 +39,7 @@ POST https://api.codat.io/companies/{companyId}/sync/expenses/expense-reconcilia
 You can then initiate the sync process for multiple datasets by making an API request to the [sync endpoint](/sync-for-expenses-api#/operations/intiate-sync).
 
 ```http title="Initiate a sync of expense datasets"
-POST  https://api.codat.io/companies/{companyId}/sync/expenses/data/expense-transactions
+POST  https://api.codat.io/companies/{companyId}/sync/expenses/syncs
 ```
 A `syncId` will be returned to the response payload.
 
