@@ -471,9 +471,9 @@ module.exports = [
       },
       {
         type: "link",
-        href: "/integrations/accounting/xero/accounting-xero-setup",
+        href: "/bank-feeds-api/xero-bank-feeds/",
         label: "Xero",
-      }
+      },
     ],
   },
   {
