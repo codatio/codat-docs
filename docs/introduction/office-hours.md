@@ -4,6 +4,8 @@ sidebar_label: "Drop-in sessions"
 description: "Get support and expert advice on building your solution with Codat"
 ---
 
+Come along to our Office Hour and discuss your project with our solutions experts and product team.
+
 - Are you looking to improve your customers' experience by integrating their spend with their accounting software, but uncertain of the best approach?
 - Perhaps you’re in search of expert guidance on how to process accounting data to accelerate underwriting decisions for SMBs without increasing risk?
 - Maybe you want to explore the most effective ways to utilize webhooks for managing data flow between applications?
