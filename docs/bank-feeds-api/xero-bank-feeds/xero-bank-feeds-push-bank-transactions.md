@@ -35,7 +35,7 @@ The response lists all source bank accounts and their statuses&mdash;either `pen
     "id": "acc-002", // the ID of the source bank account
     "accountName": "account-081",
     "accountType": "Credit",
-    "accountNumber": "12345670",
+    "accountNumber": "1234",
     "sortCode": "123456",
     "currency": "GBP",
     "balance": 99.99,
@@ -45,7 +45,7 @@ The response lists all source bank accounts and their statuses&mdash;either `pen
   {
     "id": "acc-003",
     "accountName": "account-095",
-    "accountType": "Credit",
+    "accountType": "Debit",
     "accountNumber": "12345671",
     "sortCode": "123456",
     "currency": "GBP",
@@ -75,7 +75,7 @@ The `date` of a historic transaction must be later than the `feedStartDate` on t
 
 ## Push bank transactions to Xero
 
-To push bank transactions for a `connected` source bank account, make the following requests to the Codat API. All push requests are asynchronous. Bank feeds are sent to Xero immediately, not on a schedule.
+To push bank transactions for a `connected` source bank account, make the following requests to the Codat API. All push requests are asynchronous. Bank feeds transactions are sent to Xero immediately, not on a schedule.
 
 1. Post the bank transactions using the [Create bank transactions](/accounting-api#/operations/create-bank-transactions) endpoint:
 
@@ -92,7 +92,7 @@ To push bank transactions for a `connected` source bank account, make the follow
      "transactions": [
        {
          "id": "7832323211-GIF",
-         "amount": 450,
+         "amount": -450,
          "balance": 2000,
          "date": "2022-08-30T17:05:12.191Z", // max. 1 year old
          "description": "events-hospitality",
@@ -100,7 +100,7 @@ To push bank transactions for a `connected` source bank account, make the follow
        },
        {
          "id": "7832323211-SDC",
-         "amount": 730,
+         "amount": -730,
          "balance": 2730,
          "date": "2022-08-31T11:06:49.191Z",
          "description": "corporate-training",
@@ -111,7 +111,11 @@ To push bank transactions for a `connected` source bank account, make the follow
    ```
 
    The balance of the last bank transaction in the array is used to update the balance of the specified bank account.
-
+   
+   :::note Positive and negative transactions
+   Credit transactions are positive and debit transactions are negative, so it's important that the sign of the transaction `amount` is consistent with the `transactionType`. A warning is returned from Codat if, for example, a $100 transaction is sent to Xero as a `Debit`. Be aware that Xero does not reverse a credit card transaction that was sent as a negative amount, and vice versa for a debit card transaction. 
+   :::
+   
 2. If the data is valid, the endpoint returns a push operation with a `status` of `Pending` (202). The status changes to `Success` if the push operation completes successfully.
 
    :::info Pending status
