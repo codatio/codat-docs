@@ -70,3 +70,10 @@ To read more about different ways to customize Link, read [Customize your Link](
 You can also [build your own authorization journey](/auth-flow/build/build-your-own-authorization-journey) and get even more control over the SMB connectivity rate.
 
 :::
+
+
+---
+
+## Read next
+
+- See our advice on [addressing privacy concerns](/auth-flow/optimize/privacy)
