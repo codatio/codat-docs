@@ -15,7 +15,7 @@ In this video we'll sign up to Codat, set up the Xero integration, and pull data
 </div>
 
 
-### Checklist
+#### Checklist
 
 <LocalStorageChecklist prefix="video-10-mins" items={[
   'Sign up to Codat',
@@ -36,7 +36,7 @@ In this video we'll pick up from the last video, create some data in Xero, and t
 </div>
 
 
-### Checklist
+#### Checklist
 
 <LocalStorageChecklist prefix="video-10-mins" items={[
   'Create a product in Xero',
