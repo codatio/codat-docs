@@ -54,7 +54,7 @@ Before setting up the integration, make sure that:
    } 
    ```
    
-   The endpoint returns a `dataConnection` object, in `PendingAuth` status, containing a connection `id` and a `linkUrl`. Later, you'll use the `linkUrl` to redirect the SMB user to the account mapping UI.
+   The endpoint returns a `dataConnection` object in `PendingAuth` status, containing a connection `id` and a `linkUrl`. Later, you'll use the `linkUrl` to redirect the SMB user to the account mapping UI.
 
    ```json title="Response example - Create connection (200)"
    {
