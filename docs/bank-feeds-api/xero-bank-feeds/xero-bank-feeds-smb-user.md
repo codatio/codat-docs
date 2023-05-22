@@ -14,14 +14,14 @@ For security reasons, the `linkUrl` will expire one hour after it was generated.
 
 After authenticating with their Xero account, the SMB user is redirected to a generic account-mapping UI provided by Codat. This lets them map and connect their source bank accounts to Xero, creating _bank feed connections_.
 
-![xero-bank-feeds_mapping-screen-example](/img/bank-feeds-api/xero-bank-feeds/xero-bank-feeds_mapping-screen-example.png "Codat UI for connecting and mapping bank feed accounts to Xero.")
+![xero-bank-feeds_mapping-screen-example](/img/bank-feeds-api/xero-bank-feeds/xero-bank-feeds_annotated-manage-connected-accounts.png "Codat UI for connecting and mapping bank feed accounts to Xero.")
 
 The SMB user can do the following:
-- Add one or more source bank accounts (the accounts you provided through the `PUT /bankFeedAccounts` endpoint).
-- Map a source bank account to an existing target bank account in Xero.
-- Select **Create New Account** to map a source bank account to a new target bank account in Xero.
-- Select the **Feed start date**&mdash;the date a bank feed connection should start from. 
-- Connect the selected bank accounts to create bank feed connections.
+1. Add one or more source bank accounts (the accounts you provided through the `PUT /bankFeedAccounts` endpoint).
+2. Map a source bank account to an existing target bank account in Xero.
+3. Select **Create New Account** to map a source bank account to a new target bank account in Xero.
+4. Select the **Feed start date**&mdash;the date a bank feed connection should start from. 
+5. Connect the selected bank accounts to create bank feed connections.
 
 You'll be able to push bank transactions dated from the **Feed start date** and later. However, Xero's API does not support pushing historical data older than one year.  
 
