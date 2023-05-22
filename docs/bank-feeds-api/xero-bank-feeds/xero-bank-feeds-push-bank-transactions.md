@@ -1,6 +1,6 @@
 ---
 title: "Push bank transactions to Xero"
-sidebar_label: Push bank transactions to Xero
+sidebar_label: Push bank transactions
 description: "Learn how to push your SMB users' bank transactions via our Xero Bank Feeds integration"
 ---
 
