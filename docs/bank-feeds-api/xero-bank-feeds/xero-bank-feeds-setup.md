@@ -16,7 +16,7 @@ This article explains how to:
 
 Before setting up the integration, make sure that:
 
-- You've [joined the Xero App Partner Program](/accounting/xero/xero-app-partner-program).
+- You've [joined the Xero App Partner Program](/integrations/accounting/xero/xero-app-partner-program).
 - You've [set up the Xero integration](/integrations/accounting/xero/accounting-xero-setup#create-a-xero-app-and-configure-the-redirect-uri). The main tasks are as follows:
    - In the Xero Developer portal, [create and configure a Xero app](/integrations/accounting/xero/accounting-xero-setup#create-a-xero-app-and-configure-the-redirect-uri).
    - [Retrieve your app's secure keys](/integrations/accounting/xero/accounting-xero-setup#retrieve-your-apps-secure-keys) and then add them to the integration.
