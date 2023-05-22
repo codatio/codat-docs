@@ -4,7 +4,7 @@ sidebar_label: Push bank transactions to Xero
 description: "Learn how to push your SMB users' bank transactions via our Xero Bank Feeds integration"
 ---
 
-When an SMB user has set up a bank feed connection, you can push bank transactions for source bank accounts to Xero. To push transactions, the source account must have  `connected` status, where the SMB user has completed the step of mapping and connecting the account.
+When an SMB user has set up a bank feed connection, you can push bank transactions for source bank accounts to Xero. The source account must have  `connected` status, where the SMB user has completed the step of mapping and connecting the account.
 
 :::caution Auto-download not supported
 Transactions are not automatically downloaded to Xero when the user successfully connects a bank account. They must be pushed as described later in this article.

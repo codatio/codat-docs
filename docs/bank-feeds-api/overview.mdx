@@ -143,7 +143,9 @@ Here's a high-level overview of the setup and connection flow for Bank Feeds API
 
    - For Sage Bank Feeds, you surface the ID of the data connection you created in your application. The SMB user must then enter this ID in the integration's authorization UI.
 
-6. The SMB user follows the instructions in the integration's authorization UI. They choose which source bank account they want to connect to their accounting platform.
+  - For QBO Bank Feeds, you redirect the user to the `linkUrl` returned in the data connection response to load the Codat-provided account mapping UI.
+
+6. The SMB user follows the instructions in the UI. They choose which source bank account they want to connect to their accounting platform.
 
 7. You can add more source bank accounts, or update existing accounts as needed.
 
