@@ -20,7 +20,7 @@ If an integration category is marked as optional in **Settings > Auth flow > Lin
 
 :::info Using your own auth flow?
 
-If you've built your own solution, the **Began flow** step will be backfilled 
+If you've built your own solution, we aren't able to collect data for the **Began flow** step. Instead, we'll estimate that step in the funnel based on the number of companies that go to the next step. All the other data points should work as expected.
 :::
 
 ### Completion rate over time
