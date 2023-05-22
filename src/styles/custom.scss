@@ -20,6 +20,7 @@
 @use "./components/images";
 @use "./components/lists";
 @use "./components/markdown";
+@use "./components/mermaid";
 @use "./components/navbar";
 @use "./components/navbar-sidebar";
 @use "./components/pagination";
@@ -30,6 +31,8 @@
 @use "./components/theme-toggle";
 @use "./components/toc";
 @use "./components/video";
+
+@import '~@fortawesome/fontawesome-svg-core/styles.css';
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap");
 

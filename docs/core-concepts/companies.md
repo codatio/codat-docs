@@ -1,6 +1,6 @@
 ---
 title: "Companies"
-description: "Concept overview and key details"
+description: "Your customer within Codat"
 createdAt: "2019-02-19T11:23:34.715Z"
 updatedAt: "2022-10-11T09:52:16.189Z"
 tags:

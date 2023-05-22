@@ -7,8 +7,9 @@ updatedAt: "2022-10-19T21:11:21.969Z"
 
 ## Build guides
 
-- **[Loan qualification](https://docs.codat.io/guides/loan-qualification/introduction)** - Experience the end-to-end loan qualification process flow with automatic decision-making supported by Codat's Assess product.
-- **[Bill pay](https://docs.codat.io/guides/bill-pay/introduction)** - Streamline and automate the Accounts Payable (AP) process for your SMB customers
+- **[Loan qualification](/guides/loan-qualification/introduction)** - Experience the end-to-end loan qualification process flow with automatic decision-making supported by Codat's Assess product.
+- **[Bill pay](/guides/bill-pay/introduction)** - Streamline and automate the Accounts Payable (AP) process for your SMB customers
+- **[Invoice finance](/guides/invoice-finance/introduction)** - Go through the invoice financing process flow, from establishing a connection with a borrower's accounting platform to issuing a decision on selected invoices
 
 ## Demo apps
 

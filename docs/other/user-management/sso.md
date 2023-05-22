@@ -1,9 +1,15 @@
 ---
-title: "Third-party SSO"
+title: "SSO"
 description: "Learn how to enable single sign-on in the Codat Portal"
 createdAt: "2021-12-14T14:49:16.827Z"
 updatedAt: "2022-12-19T06:15:27.799Z"
 ---
+
+:::note SAML SSO
+
+We'll soon be offering SAML SSO on our Enterprise plans. If you're interested in this feature, please talk to your account manager.
+
+:::
 
 ## Overview
 

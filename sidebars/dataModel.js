@@ -288,7 +288,6 @@ const composePaths = (dataTypes) => {
 };
 
 const routes = [
-  "data-model/all-datatypes",
   {
     type: "category",
     label: "Accounting",

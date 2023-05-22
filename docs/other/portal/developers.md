@@ -1,6 +1,6 @@
 ---
-title: "Portal for developers"
-description: "Explore Portal's additional features available to developers"
+title: "Enable deprecations"
+description: "Get ahead of upcoming deprecations in the Portal"
 createdAt: "2022-09-05T15:58:36.027Z"
 updatedAt: "2022-12-09T13:03:30.599Z"
 ---
@@ -9,26 +9,6 @@ updatedAt: "2022-12-09T13:03:30.599Z"
 
 This page is only available to users with developer and administrator [user roles](/other/user-management/user-roles).
 :::
-
-You can access the Codat Developers space by clicking the **Developers** tab in the navigation bar of the <a href="https://app.codat.io" target="_blank">Codat Portal</a>.
-
-In the Developers section, you can:
-
-- Manage upcoming deprecations
-- Manage your organization's API keys
-- Check the status of our APIs
-- Access our endpoints in Swagger
-- View our Postman collections
-
-The page also provides handy links to various Codat resources that support our developer community.
-
-<img src="/img/old/be29339-developer_section.PNG" />
-
-## API keys
-
-This section allows you to view and create the authorization headers and API keys for your organization. Codat uses these to control access to the API. Learn more about authentication at Codat [here](/using-the-api/authentication).
-
-You can generate up to ten API keys, which enables you to build multiple solutions to our API concurrently.
 
 ## API deprecations
 
@@ -55,3 +35,9 @@ Note that if your organization's client is newly created, some deprecations will
 
 Additionally, deprecations are no longer available to self-serve once their implementation date has passed.
 :::
+
+---
+
+## Read next
+
+- [Change policy](/introduction/change-policy)

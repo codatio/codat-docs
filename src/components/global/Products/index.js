@@ -52,7 +52,7 @@ const allProducts = [
   },
 ]
 
-const Products = ({mini, products}) => {
+const Products = ({mini, products, verbose}) => {
   const validProducts = !products
     ? allProducts
     : allProducts.filter(product => products.indexOf(product.name) !== -1)
@@ -64,19 +64,25 @@ const Products = ({mini, products}) => {
           validProducts.map(product => {
             return (
               <li className="card mini">
-                <div className="header">
-                  <img
-                    src={product.logo}
-                    className="icon usecase"
-                  />
+                <div className="card-row">
+                  <div className="header">
+                    <a href={product.link}>
+                      <img
+                        src={product.logo}
+                        className="icon product"
+                      />
+                    </a>
+                  </div>
+                  
+                  <div className="content">
+                    <h4>{product.name}</h4>
+                    <p>
+                      <a href={product.link}>Explore product →</a>
+                    </p>    
+                  </div>
                 </div>
-                
-                <div className="content">
-                  <h4>{product.name}</h4>
-                  <p>
-                    <a href={product.link}>Explore product →</a>
-                  </p>    
-                </div>
+
+                { verbose && <div>{product.description}</div> }
               </li>
             )
           })
@@ -92,10 +98,12 @@ const Products = ({mini, products}) => {
           return (
             <li ley={i} className="card">
               <div className="header">
-                <img
-                  src={product.logo}
-                  className="icon usecase"
-                />
+                <a href={product.link}>
+                  <img
+                    src={product.logo}
+                    className="icon product"
+                  />
+                </a>
               </div>
               <h3>{product.name}</h3>
               <p>

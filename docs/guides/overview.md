@@ -1,5 +1,5 @@
 ---
-title: "Build guides and tutorials"
+title: "Tutorials"
 sidebar_label: Overview
 description: "Discover streamlined, opinionated tutorials and build guides with demo apps to fast-track your proficiency in Codat's diverse use cases"
 ---

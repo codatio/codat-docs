@@ -1,5 +1,4 @@
 module.exports = [
-  "auth-flow/overview",
   {
     type: "category",
     label: "Authorize with Embedded Link",

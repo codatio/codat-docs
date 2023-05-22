@@ -1,5 +1,6 @@
 ---
 title: "Account management"
+sidebar_label: Your account
 description: "Learn how to change your Codat account settings and reset your password"
 ---
 
