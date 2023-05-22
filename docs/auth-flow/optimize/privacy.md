@@ -92,3 +92,10 @@ To read more about different ways to customize Link, read [Customize your Link](
 You can also [build your own auth flow](/auth-flow/build/build-your-own-authorization-journey).
 
 :::
+
+
+---
+
+## Read next
+
+- Learn how to [enhance the customer journey when a persistent connection is required](/auth-flow/optimize/connection-management)

@@ -46,3 +46,9 @@ Note whilst these recommendations apply universally, some examples are more rele
 :::
 
 For more examples and further help optimizing your flow, you can contact your account manager if you are on our [Enterprise plan](https://www.codat.io/plans/).
+
+---
+
+## Read next
+
+- See how to [monitor your auth flow's performance](/auth-flow/optimize/optimize-the-connection-journey)
