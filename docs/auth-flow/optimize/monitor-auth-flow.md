@@ -23,7 +23,7 @@ If an integration category is marked as optional in **Settings > Auth flow > Lin
 If you've built your own solution, the **Began flow** step will be backfilled 
 :::
 
-### Completion % over time
+### Completion rate over time
 
 Visualize your stats of auth flow completion using the **graph**. It represents the ratio of the number of completed auth journeys to the number of started auth flows within a given week, expressed as a percentage. 
 
