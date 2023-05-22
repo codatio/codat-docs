@@ -209,6 +209,10 @@ html[data-theme="dark"] {
         .dropdown__menu {
           top: 100%;
 
+          > hr {
+            margin: 0.25em !important;
+          }
+
           .dropdown__link {
             padding: 0.5em 1em;
 
@@ -317,10 +321,6 @@ html[data-theme="dark"] {
       padding-left: 1em !important;
     }
   }
-}
-
-.borderTop {
-  border-top: 1px solid #eeeeee; 
 }
 
 .navbar__link {

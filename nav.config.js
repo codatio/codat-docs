@@ -26,9 +26,9 @@ module.exports = {
           label: "Common API",
         },
         {
-          className: "borderTop",
           href: "/accounting-api",
           label: "Accounting API",
+          hr: true,
         },
         {
           href: "/assess-api",
@@ -59,19 +59,13 @@ module.exports = {
           label: "Sync for Expenses API",
         },
         {
-          className: "borderTop",
           href: "https://github.com/codatio/oas",
           label: "OpenAPI spec",
+          hr: true,
         },
       ],
     },
-    { to: "updates", label: "Updates", position: "left" }, // or position: 'right'
-    {
-      href: "https://github.com/orgs/codatio/discussions",
-      label: "Forum",
-      target: "_blank",
-      rel: null,
-    },
+    { to: "updates", label: "Updates", position: "left" },
     {
       label: "Community",
       position: "left",
