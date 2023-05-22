@@ -44,7 +44,7 @@ For further resources on good design practices and some inspiration, Codat recom
   </a>
   : the world’s largest mobile app design reference library
 
-:::info Think about your usecase
+:::info Think about your use case
 
 Whilst these recommendations apply universally, some examples are more relevant for specific use cases, such as lending and underwriting, insights, or reconciliation.
 :::
