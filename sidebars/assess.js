@@ -62,7 +62,7 @@ module.exports = [
     collapsed: true,
     items: [
       "assess/enhanced-invoices/overview",
-      { type: "link", label: "API ref", href: "/assess-api#/operations/get-enhanced-invoices-report" },
+      { type: "link", label: "Enhanced invoices report", href: "/assess-api#/operations/get-enhanced-invoices-report" },
     ],
   },
   {
