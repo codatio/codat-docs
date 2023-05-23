@@ -6,7 +6,7 @@ createdAt: "2019-07-17T14:20:47.797Z"
 updatedAt: "2023-01-16T18:05:01.158Z"
 ---
 
-## Data type behaviour
+## Data type behavior
 
 ### Items
 
