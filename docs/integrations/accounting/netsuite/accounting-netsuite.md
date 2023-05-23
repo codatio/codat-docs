@@ -5,7 +5,7 @@ createdAt: "2021-06-15T13:43:18.249Z"
 updatedAt: "2022-10-20T12:34:20.252Z"
 ---
 
-You can synchronize accounting data with Oracle NetSuite using our Oracle NetSuite integration.
+You can synchronize accounting data with Oracle NetSuite using our Oracle NetSuite integration. Here is my test change.
 
 [Oracle NetSuite](https://www.netsuite.com/portal/products/erp/financial-management/finance-accounting.shtml) is an online service that enables companies to manage all key business processes in a single system.
 
@@ -35,7 +35,7 @@ You can also apply a `syncFromUtc` time to BillCreditNotes and CreditNotes, if y
 
 The `syncFromUtc` setting can only be applied through the Codat API and to a subset of data types.
 
-:::caution Contact NetSuite before adjusting sync settings
+:::tip Contact NetSuite before adjusting sync settings
 
 If you are experiencing poor performance in Oracle NetSuite during day-to-day operations, we recommend contacting NetSuite Support before adjusting the sync settings.
 
