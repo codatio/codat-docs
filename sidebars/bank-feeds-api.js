@@ -34,9 +34,15 @@ module.exports = [
     ],
   },
   {
-    type: "link",
-    href: "/integrations/accounting/xero/accounting-xero-setup#configure-direct-bank-feeds",
+    type: "category",
     label: "Xero bank feeds",
+    collapsed: true,
+    items: [
+      "bank-feeds-api/xero-bank-feeds/xero-bank-feeds",
+      "bank-feeds-api/xero-bank-feeds/xero-bank-feeds-setup",
+      "bank-feeds-api/xero-bank-feeds/xero-bank-feeds-smb-user",
+      "bank-feeds-api/xero-bank-feeds/xero-bank-feeds-push-bank-transactions",
+    ],
   },
   {
     type: "link",

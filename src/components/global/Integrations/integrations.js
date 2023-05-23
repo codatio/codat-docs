@@ -14,7 +14,7 @@ export const bankfeedsIntegrations = [
   },
   {
     "name": "Xero bank feeds",
-    "to": "/integrations/accounting/xero/accounting-xero-setup#configure-direct-bank-feeds",
+    "to": "/bank-feeds-api/xero-bank-feeds/",
     "type": "bankfeeds",
     "img": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png",
   },
