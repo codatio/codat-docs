@@ -1,5 +1,6 @@
 ---
 title: "Set up the Xero integration"
+sidebar_label: Setup
 description: "Learn how to set up our API integration with Xero"
 ---
 

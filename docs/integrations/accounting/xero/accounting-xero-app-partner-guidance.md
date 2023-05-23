@@ -1,5 +1,6 @@
 ---
 title: "Xero App Partner guidance by use case"
+sidebar_label: Guidance by use case
 description: "Understand the requirements for Financial Services, Lending, Payments, and App Store Partners"
 ---
 

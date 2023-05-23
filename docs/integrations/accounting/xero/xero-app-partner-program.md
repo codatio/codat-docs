@@ -1,5 +1,5 @@
 ---
-title: "Joining the Xero App Partner Program"
+title: "Join the Xero App Partner Program"
 description: "Unlock the full value of connectivity with Xero by becoming a Xero App Partner"
 ---
 

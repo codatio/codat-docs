@@ -199,10 +199,16 @@ module.exports = [
           "integrations/accounting/xero/accounting-xero-setup",
           "integrations/accounting/xero/accounting-xero-test",
           "integrations/accounting/xero/xero-faq",
-          "integrations/accounting/xero/xero-integration-reference",
-          "integrations/accounting/xero/xero-app-partner-program",
-          "integrations/accounting/xero/xero-sign-up-flow",
-          "integrations/accounting/xero/accounting-xero-app-partner-guidance",
+          {
+            type: "category",
+            label: "Xero App Partnership",
+            collapsed: true,
+            items: [
+              "integrations/accounting/xero/xero-app-partner-program",
+              "integrations/accounting/xero/xero-sign-up-flow",
+              "integrations/accounting/xero/accounting-xero-app-partner-guidance",
+            ],
+          },
         ],
       },
       {
