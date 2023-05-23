@@ -44,7 +44,7 @@ module.exports = [
       "assess/enhanced-financials/categorize-accounts",
       "assess/enhanced-financials/supported-account-categories",
       { type: "link", label: "Enhanced profit and loss accounts", href: "/assess-api#/operations/get-accounts-for-enhanced-profit-and-loss" },
-      { type: "link", label: "Enhanced balance sheet", href: "/assess-api#/operations/get-accounts-for-enhanced-balance-sheet" },
+      { type: "link", label: "Enhanced balance sheet accounts", href: "/assess-api#/operations/get-accounts-for-enhanced-balance-sheet" },
     ],
   },
   {
