@@ -41,10 +41,10 @@ module.exports = [
     collapsed: true,
     items: [
       "assess/enhanced-financials/overview",
-      "assess/enhanced-financials/profit-and-loss-accounts",
-      "assess/enhanced-financials/balance-sheet-accounts",
       "assess/enhanced-financials/categorize-accounts",
       "assess/enhanced-financials/supported-account-categories",
+      { type: "link", label: "Enhanced profit and loss accounts", href: "/assess-api#/operations/get-accounts-for-enhanced-profit-and-loss" },
+      { type: "link", label: "Enhanced balance sheet accounts", href: "/assess-api#/operations/get-accounts-for-enhanced-balance-sheet" },
     ],
   },
   {
@@ -53,7 +53,7 @@ module.exports = [
     collapsed: true,
     items: [
       "assess/enhanced-cash-flow/overview",
-      "assess/enhanced-cash-flow/transactions",
+      { type: "link", label: "Enhanced cash flow transactions", href: "/assess-api#/operations/get-enhanced-cash-flow-transactions" },
     ],
   },
   {
@@ -62,7 +62,7 @@ module.exports = [
     collapsed: true,
     items: [
       "assess/enhanced-invoices/overview",
-      { type: "link", label: "Enhanced invoices", href: "/assess-api#/operations/get-enhanced-invoices-report" },
+      { type: "link", label: "Enhanced invoices report", href: "/assess-api#/operations/get-enhanced-invoices-report" },
     ],
   },
   {
