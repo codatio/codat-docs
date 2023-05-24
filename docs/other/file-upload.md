@@ -52,8 +52,8 @@ Uploaded files will not trigger webhooks.
 
 ### Access files via the Portal
 
-1. Navigate to the **Companies** page and select a company that has uploaded files. It is indicated with a green **File upload** pill.
-2. Select **Uploaded files** in the left navigation pane.
+1. Navigate to the **Companies** page and select a company that has uploaded files. This is indicated with a green `File upload` label.
+2. Select **Data > Uploaded files** in the left navigation pane.
 3. Click **Download files** for the date when the files were uploaded.
 
 A zip file will be downloaded. It will contain all the files that were uploaded on the chosen date, organized by integration.
