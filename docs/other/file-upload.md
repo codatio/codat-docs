@@ -43,7 +43,9 @@ Customize the text used in the **File upload** dialog window to provide the user
 1. Click **Settings > Auth flow > Link** in the navigation bar.
 2. In the **File upload** section, enter the text to use for the integrations.
 
-## Access uploaded files via the Portal
+## Accessing uploaded files
+
+### Access files via the Portal
 
 1. Navigate to the **Companies** page and select a company that has uploaded files. It is indicated with a green **File upload** pill.
 2. Select **Uploaded files** in the left navigation pane.
@@ -51,7 +53,7 @@ Customize the text used in the **File upload** dialog window to provide the user
 
 A zip file will be downloaded. It will contain all the files that were uploaded on the chosen date, organized by integration.
 
-## Access file uploads via the Codat API
+### Access files via the Codat API
 
 Explore the API reference [here](/files-api#/).
 
@@ -72,8 +74,3 @@ GET /companies/{companyId}/files/download
 ```json
 POST /companies/{companyId}/connections/{connectionId}/files
 ```
-
-:::caution Webhooks
-
-Uploaded files will not trigger webhooks.
-:::
