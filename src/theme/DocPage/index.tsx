@@ -171,8 +171,6 @@ function DocPage(props: Props): JSX.Element {
 
   const {siteConfig} = useDocusaurusContext();
 
-  console.log(siteConfig, siteConfig.customFields?.FEATURE_DEV_FLAG === "true")
-
   return (
     <>
       <Head>
