@@ -25,7 +25,7 @@ During the SMB linking process, the Dynamics 365 Business Central extension pack
 For more information, see [Extension installation process](/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral-setup#extension-installation-process) below.
 :::
 
-## Before you begin
+## Prerequisites
 
 A Dynamics 365 Business Central license is required to use our integration. At a minimum, you'll need a Dynamics 365 Business Central Essentials license.
 
