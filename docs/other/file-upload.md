@@ -45,6 +45,11 @@ Customize the text used in the **File upload** dialog window to provide the user
 
 ## Accessing uploaded files
 
+:::caution Webhooks
+
+Uploaded files will not trigger webhooks.
+:::
+
 ### Access files via the Portal
 
 1. Navigate to the **Companies** page and select a company that has uploaded files. It is indicated with a green **File upload** pill.
