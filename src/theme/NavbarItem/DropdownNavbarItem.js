@@ -46,7 +46,7 @@ function DropdownNavbarItemDesktop({
       document.removeEventListener('touchstart', handleClickOutside);
     };
   }, [dropdownRef]);
-  console.log('>', items)
+  
   return (
     <div
       ref={dropdownRef}
