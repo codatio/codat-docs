@@ -72,3 +72,8 @@ GET /companies/{companyId}/files/download
 ```json
 POST /companies/{companyId}/connections/{connectionId}/files
 ```
+
+:::caution Webhooks
+
+Uploaded files will not trigger webhooks.
+:::
