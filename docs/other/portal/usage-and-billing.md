@@ -37,17 +37,7 @@ When you upgrade to our start-up plan, we clone details from your existing clien
 
 To see the new client once it's been created, you will need to reauthenticate. Log out and lock back in if you are using Portal, or get a new token if you are using our APIs.
 
-We copy the following details and settings: 
-
-* All users with access to the existing client
-* Client settings and feature overrides
-* Enabled products and deprecations
-* Integration-specific settings and credentials
-* Client sync settings
-* Webhook rules and settings
-* Auth flow settings
-
-:::tip Active company limit
+:::info Active company limit
 
 Test clients are limited to 50 active connected companies. 
 

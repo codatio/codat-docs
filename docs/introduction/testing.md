@@ -1,80 +1,105 @@
 ---
 title: "Test your Codat solution"
-description: "Page TBC"
+description: "Review our suggestions and strategies for testing your Codat build"
 ---
 
-intro
+We recommend you test your solution before go-live or 
+
+You may also need to validate that your live solution is performing as expected, for example, when enabling a deprecation early. 
+
+Here are some strategies
+what you need is: 
+
+we will cover: 
 
 
-test instance
+* test client
+* sandbox data
+* Codat sandbox
+* test strategy
 
+:::info Testing without a test client
 
-create when upgrading startup
-if enterprise, please speak to us
+You can organize testing in your production client. Use Codat Sandbox or QuickBooks Online Sandbox - these are excluded from billing. Additionally, some integrations provide a separate set of credentials for testing, which you can use. 
 
-what settings are copied
+:::
 
-codat's own sandbox
+## Test client
 
-details of different integration accounts
+We recommend creating an additional instance of Codat to use for testing purposes, so that you can perform validations and verify changes without impacting your production build and setup. 
 
-sandboxes in billing
+2 different code out clients today.
+and 2 sets of Api keys.
 
+If you are on our **Free** plan, simply register for another account to create your test instance.
 
+If you are on our **Enterprise** plan, we would have already worked with you to arrange a test client. 
 
+If you upgrade to our **Start-up** plan, we clone details from your existing client to automatically create a test client for you.
 
+We copy the following details and settings: 
 
+* All users with access to the existing client
+* Client settings and feature overrides
+* Enabled products and deprecations
+* Integration-specific settings and credentials
+* Client sync settings
+* Webhook rules and settings
+* Auth flow settings
 
-Page coming soon0
+### Pitfalls
 
+- Remember that the test client will have a separate set of API keys, and you may need to maintain different credentials for the integrations in the test instance. 
 
+- To see the new client once it's been created, you will need to reauthenticate. Log out and lock back in if you are using Portal, or get a new token if you are using our APIs.
 
+- Test clients are limited to 50 active connected companies and are not included in the billing. 
 
+## Testing strategy
 
-### Test client creation
+When devising a testing strategy and a testing plan for your implementation, consider covering the following approaches:
 
-When you upgrade to our start-up plan, we automatically create a test client to support you in testing your solution before go-live or validating that your live solution is performing as expected. 
+1. Back-end integration testing
 
-We clone your
+   Once you complete the initial API build to Codat's endpoint, you need to ensure the integration is working as expected. We recommend performing validation using sandbox data (this can be Codat, Quickbooks Online, or Xero sandbox data). 
 
-Feature overrides
- Client settings (One time sync, readonly)
-Client integrations settings and credentials
-Client sync settings
-Client rules
-Client link settings
-All users will be migrated from prod client into new test client
-Currently to see the new test client once it has been created a user will need to reauthenticate (log out/log in in portal, or get a new token if using APIs)
-Test client creation happens in the background and is asynchronous so might be created quickly or might take a while to create, depending on demand
-Limit of 50 connected companies
+2. Live SMB testing
 
+   Involve one of your real SMB customers to perform authentication via your front-end digital application flow. Then, verify that the data syncs between the relevant platform and Codat, and triggers a webhook into your system to start the data pull.
 
+## Testing the integrations
 
-One question I had was: If there are any tricks for
-for maintaining sort of a set of test companies with sandbox with, like the the sandbox plaid integrations connected to them. separated from our like live production companies.
+When testing your  integrations, it is important to consider checking you can connect and authorise using a demo or sandbox account before sharing with potential customers.
 
-So I some of our integrations. The you have some box in the name.
-basically or excluded from any billing, so you could keep those maintained in your instance. You keep those on in your instance, that you won't get charge for those or anything like that. But 0
-demo company stuff, or some instance, as some integrations basically you will be charged for. because just because the company itself is a demo company, the integration is
-part of I pulled by isn't that sandbox integration
+Codat recommends testing throughout implementation with our Sandbox account and Xero and QuickBooks online who both offering demo/sandbox accounts with no fixed trials. Other integrations may require signing up to free trials in order to test the connection, as this trial can be time limited you may want to test towards the end of your implementation or request multiple trials.
 
+### Codat sandbox
 
-so to confirm my understanding. Like with the plaid integration the plan integration has really like. Although we can load up both sandbox secrets and production secrets.
-we have one setting that switches it from using the sandbox cloud environment versus the production cloud environment. And so going forward once we switch that production, then all cloud integrations
-that that go through those companies will will be using the plaque production credentials. Correct?
-user avatar
-Max Clayton Clowes
-14:58
-Exactly. So
-basically you need 2 different code out clients today.
-and 2 sets of Api keys. Now.
+### Sandbox integrations
 
-testing experience won't have those limitations. So once we roll that out, this new type of client will be able to migrate you over to that.
-and I, i'll proactively reach out to you in the next kind of couple of days before that, and then we can rem you won't. Have those limits, so you both your production and your test.
-we'll have a similar kind of experience.
+Active companies that are connected only to Codat Sandbox or QuickBooks Online Sandbox are excluded from billing, if you are using these integrations to test in your production instance. 
 
+contains sample data generated by Codat as a tool for developer testing.
 
-yeah. So when when you upgrade, you get a confirmation model that you have successfully upgraded. and that we are asynchronously creating
-a mirror of your production account
-as a test account. And then
-you can read about testing with coda here. and it links to a Doc Page. i'll have to do like a pretty rapid turnaround on it. But
+When you link to Sandbox, you are presented with different data sets to choose from. Each data set provides a different level of detail.
+
+### Other integrations
+
+| Platform 	| Integration type 	| Account type 	| Link 	| Comments 	|
+|---	|---	|---	|---	|---	|
+| Codat Sandbox 	| Sandbox integration 	| Demo company 	|  	|  	|
+| ClearBooks 	| Live integration 	| Free trial 	| https://www.clearbooks.co.uk/ 	|  	|
+| Exact 	| Live integration 	| Free trial 	| https://www.exact.com/try 	|  	|
+| FreeAgent 	| Live integration 	| Free trial 	| https://signup.sandbox.freeagent.com/signup 	| https://dev.freeagent.com/docs/quick_start 	|
+| FreshBooks 	| Live integration 	| Free trial 	| https://www.freshbooks.com/blog/freshbooks-trial 	|  	|
+| KashFlow 	| Live integration 	| Free trial 	| https://www.kashflow.com/support/kb/developer-account/ 	| Need to request a test dev account 	|
+| MYOB 	| Live integration 	| Demo company 	| https://developer.myob.com/api/myob-business-api/api-overview/getting-started/ 	| Codat only supports data hosted online. 	|
+| Microsoft 365 Dynamics Business Central 	| Live integration 	| Sandbox environment 	| https://learn.microsoft.com/en-gb/dynamics365/business-central/admin-sandbox-environments 	|  	|
+| QuickBooks Desktop 	| Live integration 	| Free trial 	| https://quickbooks.intuit.com/desktop/enterprise/contact/trial-download/?auto=true 	|  	|
+| QuickBooks Online 	| Sandbox integration 	| Demo company 	| https://developer.intuit.com/app/developer/qbo/docs/develop/sandboxes/manage-your-sandboxes 	| Not included in the billing 	|
+| Sage 50 and Business Cloud 	| Live integration 	| Free trial 	| https://www.sage.com/en-gb/products/free-trials/ 	| a Postman collection with pre-filled test data    https://developer.sage.com/accounting/quick-start/preparing-to-create-test-data/ 	|
+| Pandle 	| Live integration 	| Free account 	| https://my.pandle.com/users/sign_up 	|  	|
+| Wave 	| Live integration 	| Free account 	| https://my.waveapps.com/register/ 	|  	|
+| Xero 	| Live integration 	| Demo company 	| https://central.xero.com/s/article/Use-the-demo-company#Web 	| except for automatic bank feeds   and the ability to invite other users.<br>     demo company resets itself after 28 days 	|
+| Zoho Books 	| Live integration 	| Test company 	| https://www.zoho.com/subscriptions/api/v1/introduction/#organization-id 	| Zoho does not provide test data like the other accounting platforms but   you can setup a Test Organisation. You have the option to import data or   create new customers etc 	|
+| Plaid 	| Live integration 	| Sandbox environment 	| https://plaid.com/docs/sandbox/ 	|  Plaid demo data, the initial setup for Plaid   needs to be complete. This includes setting the client ID and accompanying   secret on the Codat integrations page. The Plaid demo data is available when   the Sandbox Secret is set. 	|
