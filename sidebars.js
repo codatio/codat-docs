@@ -132,6 +132,7 @@ module.exports = {
         "using-the-api/overview",
         "using-the-api/authentication",
         "using-the-api/managing-companies",
+        "introduction/testing",
         {
           type: "category",
           label: "Pulling data",
