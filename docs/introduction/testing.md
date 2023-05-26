@@ -30,7 +30,7 @@ Start-up and Enterprise users can switch between the production client and the t
 
 1. Your test client will have a separate set of API keys, and you may need to maintain different credentials for the integrations in the test instance. 
 
-2. To see the new client once it's been created, you will need to reauthenticate. Log out and lock back in if you are using Portal, or get a new token if you are using our APIs.
+2. To see the new client once it's been created, you will need to reauthenticate. Log out and log back in if you are using Portal, or get a new token if you are using our APIs.
 
 3. Test clients are limited to 50 active connected companies and are not included in the billing. 
 
@@ -40,19 +40,19 @@ When planning a testing strategy and scope for your implementation, consider inc
 
 1. Back-end integration testing
 
-   Once you complete the initial API build to Codat's endpoints, you need to ensure the integration is working as expected. We recommend performing validation using sandbox data (this can be Codat, Quickbooks Online, or Xero sandbox data). 
+   Once you complete the initial API build to Codat's endpoints, you need to ensure the integration is working as expected. We recommend performing the validation using sandbox data. 
 
 2. Live SMB testing
 
    Involve one of your real SMB customers to perform authentication via your front-end digital application flow. Then, verify that the data syncs between the relevant platform and Codat and triggers a webhook into your system to start the data pull.
 
-## Testing the integrations
+## Back-end integration testing
 
 When testing your integrations throughout the implementation, it is important to check you can authorize and complete the connections before you proceed to live SMB testing.
 
-We recommend using **Codat Sandbox** integrations that contain sample data generated as a tool for developer testing. When you link to these integrations, you can choose from a number of different datasets providing varying levels of detail. 
+We recommend using **Codat Sandbox** integrations that contain sample data generated as a tool for developer testing. When you link to these integrations, you can choose from a number of different datasets that provide varying levels of detail. 
 
-You can also test with Xero and QuickBooks Online, both of who offer demo or sandbox companies equipped with sample data. Other integrations may require signing up to multiple free trials in order to test the connection, or provide no sample data.
+You can also test with **Xero** and **QuickBooks Online**, both of which offer demo or sandbox companies equipped with sample data. Other integrations may require signing up to multiple free trials in order to test the connections, or provide no sample data.
 
 :::info Testing in production instance
 In your production instance, active companies that are connected only to Codat Sandbox or QuickBooks Online Sandbox are excluded from billing.

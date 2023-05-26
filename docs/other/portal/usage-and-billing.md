@@ -35,7 +35,7 @@ Active companies that are connected only to Codat Sandbox or QuickBooks Online S
 
 When you upgrade to our start-up plan, we clone details from your existing client to automatically create a test instance for you. You can use it to test your solution before go-live or validate that your live solution is performing as expected. [Learn more](/introduction/testing) about client cloning, possible testing approaches, and our recommendations.
 
-To see the new client once it's been created, you will need to reauthenticate. Log out and lock back in if you are using Portal, or get a new token if you are using our APIs.
+To see the new client once it's been created, you will need to reauthenticate. Log out and log back in if you are using Portal, or get a new token if you are using our APIs.
 
 :::info Active company limit
 
