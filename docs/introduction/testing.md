@@ -4,13 +4,11 @@ sidebar_label: "Test your Codat build"
 description: "Review our suggestions, best practices, and strategies for testing your Codat build"
 ---
 
-We advise you always test your build into Codat's endpoints during the implementation and before go-live. You should also validate that your live solution is performing as expected, for example, when enabling a deprecation early. 
+Testing is a key component of any software development process, both during the implementation and after go-live if changes are made to the solution. Here is what Codat recomments for testing your Codat build.
 
 ## Using a test instance
 
-We suggest you create an additional instance of Codat to use for testing purposes. On our **Free** plan, simply register for another account to use as your test instance. 
-
-When you upgrade to our **Start-up** plan, we automatically clone your existing client to create a test instance for you. We copy the following details and settings: 
+We recommend you use an additional instance of Codat to use for testing purposes. Upgrade to our **Start-up** plan, and we will automatically clone your existing client to create a test instance for you. We copy the following details and settings: 
 
 * All users with access to the existing client
 * Client settings and feature overrides
@@ -22,11 +20,11 @@ When you upgrade to our **Start-up** plan, we automatically clone your existing 
 
 We work directly with our **Enterprise** clients to arrange test instance creation. 
 
-Start-up and Enterprise users can switch between the production client and the test instance by using the client dropdown in the [Codat Portal](https://app.codat.io/). 
+Users can switch between the production client and the test client by using the client dropdown in the [Codat Portal](https://app.codat.io/). 
 
 ![](/img/introduction/0026-client-selection.png)
 
-### Pitfalls
+### Tips and pitfalls
 
 1. Your test client will have a separate set of API keys, and you may need to maintain different credentials for the integrations in the test instance. 
 
@@ -50,9 +48,9 @@ When planning a testing strategy and scope for your implementation, consider inc
 
 When testing your integrations throughout the implementation, it is important to check you can authorize and complete the connections before you proceed to live SMB testing.
 
-We recommend using **Codat Sandbox** integrations that contain sample data generated as a tool for developer testing. When you link to these integrations, you can choose from a number of different datasets that provide varying levels of detail. 
+We recommend using **Codat Sandbox** integrations that contain sample data generated as a tool for developer testing. When you link to these integrations, you can choose from a number of different datasets that provide varying levels of detail. These integrations are enabled by default and do not require any credentials to authorize.
 
-You can also test with **Xero** and **QuickBooks Online**, both of which offer demo or sandbox companies equipped with sample data. Other integrations may require signing up to multiple free trials in order to test the connections, or provide no sample data.
+You can also sign up and test with **Xero** and **QuickBooks Online**, both of which offer demo or sandbox companies equipped with sample data. Other integrations also provide free trials in order to test the connections, but may not provide sample data.
 
 :::info Testing in production instance
 In your production instance, active companies that are connected only to Codat Sandbox or QuickBooks Online Sandbox are excluded from billing.
