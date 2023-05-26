@@ -38,7 +38,7 @@ In line with industry standard security practices, we have removed personally id
 {
  "CompanyId":"0ec09c80-e82b-4409-a150-5a5211c215f4",
  "RuleId":"ca3b6004-f1bb-43e7-860f-1386e108b684",
- "RuleType":"DataConnectionStatusChanged",
+ "Type":"DataConnectionStatusChanged",
  "AlertId":"40eda3e2-f098-47bd-b7d5-b6b08ae3819e",
  "Message":"Data connection for SandBox status changed from PendingAuth to Linked",
  "Data":{
@@ -58,7 +58,7 @@ In line with industry standard security practices, we have removed personally id
 {
   "CompanyId": "0ec09c80-e82b-4409-a150-5a5211c215f4",
   "RuleId": "dba7daa5-be88-40ae-a596-d23549498b17",
-  "RuleType": "New company synchronised",
+  "Type": "New company synchronised",
   "AlertId": "e848c2a1-ad15-41eb-915b-7a67c269bd2a",
   "Message": "Company 0ec09c80-e82b-4409-a150-5a5211c215f4 synced for the first time",
   "Data": {}
@@ -77,7 +77,7 @@ In line with industry standard security practices, we have removed personally id
   "ClientName": "Client",
   "DataConnectionId": "3d56b944-ff98-4d6b-94cd-fa879db3b74f",
   "RuleId": "92a65d4c-5d54-4f92-8f43-30cbe30bb86b",
-  "RuleType": "Data sync completed",
+  "Type": "Data sync completed",
   "AlertId": "5e364626-6b3d-41ed-9697-0b3b59603d8f",
   "Message": "Data sync of type creditNotes completed for company 7626befb-0c7d-49a4-9366-bc4c81b4e4b7",
   "Data": {
@@ -96,7 +96,7 @@ In line with industry standard security practices, we have removed personally id
 {
   "CompanyId": "ac712d04-c107-424d-a801-be76d677e508",
   "RuleId": "70328e0e-9d8d-48fd-9306-7a39973009c3",
-  "RuleType": "Dataset data changed",
+  "Type": "Dataset data changed",
   "AlertId": "bbdbc217-9776-4cf2-9b67-0afad20bd10e",
   "Message": "Data has changed for dataset type invoices, company ac712d04-c107-424d-a801-be76d677e508",
   "Data": {
@@ -115,7 +115,7 @@ In line with industry standard security practices, we have removed personally id
 {
   "CompanyId":"0ec09c80-e82b-4409-a150-5a5211c215f4",
   "RuleId":"ca3b6004-f1bb-43e7-860f-1386e108b684",
-  "RuleType":"Data Sync Status Changed to Error",
+  "Type":"Data Sync Status Changed To Error",
   "AlertId":"40eda3e2-f098-47bd-b7d5-b6b08ae3819e",
   "Message":"ERROR: syncing payments triggered a ProcessingError notification at 2020-04-21T12:12:57.4250446Z ",
   "Data":{
@@ -135,7 +135,7 @@ In line with industry standard security practices, we have removed personally id
 {
  "CompanyId":"f6bc5f14-87fb-438f-8d2d-db6a0964aef1",
  "RuleId":"c40791fe-b6fd-45c3-9bf7-0a16abf1b8fd",
- "RuleType":"Push Operation Status Changed()",
+ "Type":"Push Operation Status Changed()",
  "AlertId":"a62bfb38-d73c-4aab-9bb6-d8014bba5f29",
  "Message":"invoices triggered notification for PushOperationStatusChanged at 2019-05-22T18:19:42.742Z",
  "Data":{
@@ -155,7 +155,7 @@ In line with industry standard security practices, we have removed personally id
 {
   "CompanyId":"f6bc5f14-87fb-438f-8d2d-db6a0964aef1",
   "RuleId":"c40791fe-b6fd-45c3-9bf7-0a16abf1b8fd",
-  "RuleType":"Push Operation Timed Out",
+  "Type":"Push Operation Timed Out",
   "AlertId":"a42bff38-d73c-4aab-9bb6-d8014bba5f29",
   "Message":"ERROR: pushing invoices never finished in time, timing out at 2020-09-07T08:42:13",
   "Data":{
@@ -177,7 +177,7 @@ In line with industry standard security practices, we have removed personally id
   "ClientName": "Peach",
   "DataConnectionId": "1a0efd26-1f06-4c48-803f-f8670535ff02",
   "RuleId": "e6fd0b54-ae05-4c43-b7ea-0d340cee15a7",
-  "RuleType": "Account Categories Updated",
+  "Type": "Account Categories Updated",
   "AlertId": "c893d3c3-6e69-4b70-af18-7dca1557be6d",
   "Message": "Account categories updated for company f1c35bdc-1546-41b9-baf4-3f31135af968.",
   "Data": {
@@ -199,7 +199,7 @@ In line with industry standard security practices, we have removed personally id
   "ClientName": "The Wind in the Willows",
   "DataConnectionId": "00000000-0000-0000-0000-000000000000",
   "RuleId": "0b29ecef-1ec1-459a-b61a-9de996e0d20a",
-  "RuleType": "Sync Connection Deleted",
+  "Type": "Sync Connection Deleted",
   "AlertId": "fe42cd24-a05a-4e3c-80cb-06749a73ab1e",
   "Message": "Sync connection for company e2876f0a-5102-4a7d-9743-f10133dba88f deleted",
   "Data": {}
