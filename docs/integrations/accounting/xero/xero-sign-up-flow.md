@@ -6,7 +6,7 @@ description: "Learn how to enable the Sign Up with Xero flow with Codat to suppo
 The **Sign Up with Xero** flow allows you to quickly onboard potential customers using pre-populated data from their Xero accounting software and show them the unique value of your app faster. Codat’s API makes it easier for you to implement it by helping you build and use redirect URLs and creating relevant companies and connections. We also provide a detailed guide of the steps you need to take.
 
 <div className="video-container">
-  <iframe width="560" height="315" src="https://youtu.be/pFGHti5Y17Q?t=30" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/pFGHti5Y17Q?t=30" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 ## When to build
