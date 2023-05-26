@@ -57,7 +57,7 @@ You can also test with Xero and QuickBooks Online, both of who offer demo or san
 In your production instance, active companies that are connected only to Codat Sandbox or QuickBooks Online Sandbox are excluded from billing.
 :::
 
-### Overview of integrations' test account
+### Overview of integrations' test accounts
 
 | Platform 	| Integration type 	| Account type 	| Notes 	|
 |---	|---	|---	|---	|
