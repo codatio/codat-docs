@@ -135,7 +135,7 @@ In line with industry standard security practices, we have removed personally id
 {
  "vompanyId":"f6bc5f14-87fb-438f-8d2d-db6a0964aef1",
  "ruleId":"c40791fe-b6fd-45c3-9bf7-0a16abf1b8fd",
- "type":"Push Operation Status Changed()",
+ "type":"Push Operation Status Changed",
  "alertId":"a62bfb38-d73c-4aab-9bb6-d8014bba5f29",
  "message":"invoices triggered notification for PushOperationStatusChanged at 2019-05-22T18:19:42.742Z",
  "data":{
