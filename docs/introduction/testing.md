@@ -8,7 +8,7 @@ Testing is a key component of any software development process, both during the 
 
 ## Using a test instance
 
-We recommend you use an additional instance of Codat to use for testing purposes. Upgrade to our **Start-up** plan, and we will automatically clone your existing client to create a test instance for you. We copy the following details and settings: 
+We recommend you use an additional instance of Codat for testing purposes. Upgrade to our **Start-up** plan, and we will automatically clone your existing client to create a test instance for you. We copy the following details and settings: 
 
 * All users with access to the existing client
 * Client settings and feature overrides
