@@ -85,21 +85,21 @@ When you link to Sandbox, you are presented with different data sets to choose f
 
 ### Other integrations
 
-| Platform 	| Integration type 	| Account type 	| Link 	| Comments 	|
-|---	|---	|---	|---	|---	|
-| Codat Sandbox 	| Sandbox integration 	| Demo company 	|  	|  	|
-| ClearBooks 	| Live integration 	| Free trial 	| [Link](https://www.clearbooks.co.uk/) 	|  	|
-| Exact 	| Live integration 	| Free trial 	| [Link](https://www.exact.com/try) 	|  	|
-| FreeAgent 	| Live integration 	| Free trial 	| [Link](https://signup.sandbox.freeagent.com/signup)	| [Link](https://dev.freeagent.com/docs/quick_start)	|
-| FreshBooks 	| Live integration 	| Free trial 	| [Link](https://www.freshbooks.com/blog/freshbooks-trial) 	|  	|
-| KashFlow 	| Live integration 	| Free trial 	| [Link](https://www.kashflow.com/support/kb/developer-account/) 	| Need to request a test dev account 	|
-| MYOB 	| Live integration 	| Demo company 	| [Link](https://developer.myob.com/api/myob-business-api/api-overview/getting-started/) 	| Codat only supports data hosted online. 	|
-| Microsoft 365 Dynamics Business Central 	| Live integration 	| Sandbox environment 	| [Link](https://learn.microsoft.com/en-gb/dynamics365/business-central/admin-sandbox-environments) 	|  	|
-| QuickBooks Desktop 	| Live integration 	| Free trial 	| [Link](https://quickbooks.intuit.com/desktop/enterprise/contact/trial-download/?auto=true) 	|  	|
-| QuickBooks Online 	| Sandbox integration 	| Demo company 	| [Link](https://developer.intuit.com/app/developer/qbo/docs/develop/sandboxes/manage-your-sandboxes) 	| Not included in the billing 	|
-| Sage 50 and Business Cloud 	| Live integration 	| Free trial 	| [Link](https://www.sage.com/en-gb/products/free-trials/) 	| a Postman collection with pre-filled test data    [Link](https://developer.sage.com/accounting/quick-start/preparing-to-create-test-data/) 	|
-| Pandle 	| Live integration 	| Free account 	| [Link](https://my.pandle.com/users/sign_up) 	|  	|
-| Wave 	| Live integration 	| Free account 	| [Link](https://my.waveapps.com/register/) 	|  	|
-| Xero 	| Live integration 	| Demo company 	| [Link](https://central.xero.com/s/article/Use-the-demo-company#Web) 	| except for automatic bank feeds   and the ability to invite other users.</br>     demo company resets itself after 28 days 	|
-| Zoho Books 	| Live integration 	| Test company 	| [Link](https://www.zoho.com/subscriptions/api/v1/introduction/#organization-id) 	| Zoho does not provide test data like the other accounting platforms but   you can setup a Test Organisation. You have the option to import data or   create new customers etc 	|
-| Plaid 	| Live integration 	| Sandbox environment 	| [Link](https://plaid.com/docs/sandbox/) 	|  Plaid demo data, the initial setup for Plaid   needs to be complete. This includes setting the client ID and accompanying   secret on the Codat integrations page. The Plaid demo data is available when   the Sandbox Secret is set. 	|
+| Platform 	| Integration type 	| Account type 	| Notes 	|
+|---	|---	|---	|---	|
+| Codat Sandbox 	| Sandbox integration 	| Demo company 	| Active companies connected only to Codat Sandbox are excluded from   billing. 	|
+| [ClearBooks](https://www.clearbooks.co.uk/) 	| Live integration 	| Free trial 	|  	|
+| [Exact](https://www.exact.com/try) 	| Live integration 	| Free trial 	|  	|
+| [FreeAgent](https://signup.sandbox.freeagent.com/signup) 	| Live integration 	| Free trial 	| Temporary free account at the [FreeAgent   Sandbox](https://dev.freeagent.com/docs/quick_start). 	|
+| [FreshBooks](https://www.freshbooks.com/blog/freshbooks-trial) 	| Live integration 	| Free trial 	|  	|
+| [KashFlow](https://www.kashflow.com/support/kb/developer-account/) 	| Live integration 	| Free trial 	| Contact KashFlow support to request a test developer account. 	|
+| [MYOB](https://developer.myob.com/api/myob-business-api/api-overview/getting-started/) 	| Live integration 	| Demo company 	| Codat only supports data hosted online. 	|
+| [Microsoft 365 Dynamics Business   Central](https://learn.microsoft.com/en-gb/dynamics365/business-central/admin-sandbox-environments) 	| Live integration 	| Sandbox environment 	|  	|
+| [QuickBooks   Desktop](https://quickbooks.intuit.com/desktop/enterprise/contact/trial-download/?auto=true) 	| Live integration 	| Free trial 	|  	|
+| [QuickBooks   Online](https://developer.intuit.com/app/developer/qbo/docs/develop/sandboxes/manage-your-sandboxes) 	| Sandbox integration 	| Demo company 	| Active companies connected only to QuickBooks Online Sandbox are excluded   from billing. 	|
+| [Sage 50 and Business   Cloud](https://www.sage.com/en-gb/products/free-trials/) 	| Live integration 	| Free trial 	| Sage also provides a [Postman   collection](https://developer.sage.com/accounting/quick-start/preparing-to-create-test-data/)   with pre-filled test data . 	|
+| [Pandle](https://my.pandle.com/users/sign_up) 	| Live integration 	| Free account 	|  	|
+| [Wave](https://my.waveapps.com/register/) 	| Live integration 	| Free account 	|  	|
+| [Xero](https://central.xero.com/s/article/Use-the-demo-company#Web) 	| Live integration 	| Demo company 	| Demo does not include automatic bank feeds and the ability to invite   other users. You are able to add your own data, but the demo company resets   itself after 28 days. 	|
+| [Zoho Books](https://www.zoho.com/subscriptions/api/v1/introduction/#organization-id) 	| Live integration 	| Test company 	| When setting up a test organisation, you can choose to import or create   test data. 	|
+| [Plaid](https://plaid.com/docs/sandbox/) 	| Live integration 	| Sandbox environment 	| Initial setup for Plaid needs to be complete to gain access to the   sandbox environment with demo data. 	|
