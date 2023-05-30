@@ -1,0 +1,386 @@
+{
+  "openapi": "3.1.0",
+  "servers": [
+    {
+      "description": "Production",
+      "url": "https://api.codat.io"
+    }
+  ],
+  "info": {
+    "title": "Files API",
+    "description": "An API for uploading and downloading files from 'File Upload' Integrations.\n\nThe Accounting file upload, Banking file upload, and Business documents file upload integrations provide simple file upload functionality.\n\n[Read more...](https://docs.codat.io/other/file-upload)\n\n[See our OpenAPI spec](https://github.com/codatio/oas) ",
+    "version": "2.1.0",
+    "contact": {
+      "name": "Codat",
+      "email": "support@codat.io"
+    },
+    "termsOfService": "https://www.codat.io/legals/"
+  },
+  "security": [
+    {
+      "auth_header": []
+    }
+  ],
+  "x-speakeasy-retries": {
+    "strategy": "backoff",
+    "backoff": {
+      "initialInterval": 500,
+      "maxInterval": 60000,
+      "maxElapsedTime": 3600000,
+      "exponent": 1.5
+    },
+    "statusCodes": [
+      408,
+      429,
+      "5XX"
+    ],
+    "retryConnectionErrors": true
+  },
+  "tags": [
+    {
+      "name": "Files",
+      "description": "Endpoints to manage uploaded files."
+    }
+  ],
+  "paths": {
+    "/companies/{companyId}/connections/{connectionId}/files": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        }
+      ],
+      "post": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "Upload files for a company",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          }
+        },
+        "description": "Upload files",
+        "operationId": "upload-files"
+      }
+    },
+    "/companies/{companyId}/files": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "List all files uploaded by a company",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Files"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "description": "Returns an array of files that have been uploaded for a given company.",
+        "operationId": "list-files"
+      }
+    },
+    "/companies/{companyId}/files/download": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "Download all files for a company",
+        "parameters": [
+          {
+            "name": "date",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/DateTime"
+            },
+            "description": "Only download files uploaded on this date"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/octet-stream": {
+                "x-speakeasy-usage-example": true,
+                "schema": {
+                  "title": "Data",
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "description": "You can specify a date to download specific files for.",
+        "operationId": "download-files"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "DateTime": {
+        "title": "Date time",
+        "type": "string",
+        "examples": [
+          "2022-10-23T00:00:00.000Z",
+          "2022-10-23T00:00:00.000Z"
+        ],
+        "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
+      },
+      "File": {
+        "title": "File",
+        "type": "object",
+        "properties": {
+          "fileName": {
+            "type": "string",
+            "nullable": true
+          },
+          "displayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceType": {
+            "type": "string",
+            "nullable": true
+          },
+          "uploaded": {
+            "$ref": "#/components/schemas/DateTime"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Files": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/File"
+        }
+      }
+    },
+    "parameters": {
+      "companyId": {
+        "name": "companyId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "example": "8a210b68-6988-11ed-a1eb-0242ac120002",
+          "description": "Unique identifier for your SMB in Codat."
+        }
+      },
+      "connectionId": {
+        "name": "connectionId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "example": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+          "description": "Unique identifier for a company's data connection."
+        }
+      }
+    },
+    "responses": {
+      "BadRequest": {
+        "description": "The request made is not valid.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Not-Found/content/application~1json/schema"
+            },
+            "examples": {
+              "Malformed query": {
+                "value": {
+                  "statusCode": 400,
+                  "service": "PublicApi",
+                  "error": "Error processing request - not valid.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Unauthorized": {
+        "description": "Your API request was not properly authorized.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Not-Found/content/application~1json/schema"
+            },
+            "examples": {
+              "Unauthorized": {
+                "value": {
+                  "statusCode": 401,
+                  "service": "PublicApi",
+                  "error": "Unauthorized",
+                  "correlationId": "7eb40d6b415d7bcd99ce658268284056",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Not-Found": {
+        "description": "One or more of the resources you referenced could not be found.\nThis might be because your company or data connection id is wrong, or was already deleted.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "x-internal": true,
+              "properties": {
+                "statusCode": {
+                  "type": "integer"
+                },
+                "service": {
+                  "type": "string"
+                },
+                "error": {
+                  "type": "string"
+                },
+                "correlationId": {
+                  "type": "string"
+                },
+                "canBeRetried": {
+                  "type": "string"
+                },
+                "detailedErrorCode": {
+                  "type": "integer"
+                }
+              }
+            },
+            "examples": {
+              "Data connection not found": {
+                "value": {
+                  "statusCode": 404,
+                  "service": "PublicApi",
+                  "error": "Data connection a22dd66b-564a-4832-9b37-7b3ce4aeb7de not found",
+                  "correlationId": "8fa2b5f4794970a4ee73758f612e8df0",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              },
+              "Company not found": {
+                "value": {
+                  "statusCode": 404,
+                  "service": "ClientsApi",
+                  "error": "No company was found with ID 846ed55c-974b-4392-a1f1-87b6fdbf3c5e",
+                  "correlationId": "0a40c2f31fc8f992fb88b0853e4166f3",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              },
+              "No data available": {
+                "value": {
+                  "statusCode": 404,
+                  "service": "PublicApi",
+                  "error": "No data available for accounts for ID e5889b459f544926ac5b8e6756df2s",
+                  "correlationId": "0a40c2f31fc8f992fb88b0853e4166f3",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Too-Many-Requests": {
+        "description": "Too many requests were made in a given amount of time. Wait a short period and then try again.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Not-Found/content/application~1json/schema"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 429,
+                  "service": "PublicApi",
+                  "error": "You have made too many requests in a given amount of time; please retry later.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "auth_header": {
+        "name": "Authorization",
+        "description": "The word \"Basic\" followed by a space and your API Key, base64 encoded, which can be found [here](https://app.codat.io/developers/api-keys)",
+        "type": "apiKey",
+        "in": "header",
+        "x-speakeasy-example": "Basic BASE_64_ENCODED(API_KEY)"
+      }
+    }
+  }
+}
