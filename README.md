@@ -1,11 +1,5 @@
 # Codat docs
 
-> :warning: **These docs are in beta** 
->
-> They are in beta, so you may find some snags in our content.
-> 
-> You can contribute to them, or see the old ones <a href="https://codat.readme.io/docs">here</a>.
-
 The official [Codat](https://codat.io) documentation.
 
 - [Browse the docs](https://docs.codat.io/)
