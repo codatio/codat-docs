@@ -81,15 +81,17 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 ## Configure direct bank feeds
 
-To post Bank transactions to Xero, you must set up and enable [Xero Bank Feeds](/bank-feeds-api/xero-bank-feeds/).
-
-To use Xero Bank Feeds, you'll need to select the **Enable bank feeds** toggle on the Xero **Integration settings** page:
+If you plan to post Bank transactions to Xero, you must set up and enable [Xero Bank Feeds](/bank-feeds-api/xero-bank-feeds/). Then, switch them on using the **Enable bank feeds** toggle on the Xero **Integration settings** page:
 
 ![Enable bank feeds toggle](/img/integrations/accounting/xero/xero_bank-feeds-toggle-enabled.png "The Xero Integration settings page with the Enable bank feeds toggle selected.")
 
 ## Recap
 
-In this setup guide, you've learned how to create a Xero app configured with the required Codat redirect URI; retrieve the secure keys for your app and add them to the Xero integration in the Codat Portal; and enable the integration.
+In this setup guide, you've learned how to:
+
+- Create a Xero app configured with the required Codat redirect URI.
+- Retrieve the secure keys for your app and add them to the Xero integration in the Codat Portal.
+- Enable the integration.
 
 ## Next steps
 
