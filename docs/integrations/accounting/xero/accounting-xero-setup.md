@@ -81,9 +81,7 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 ## Configure direct bank feeds
 
-If you plan to post Bank transactions to Xero, you must set up and enable [Xero Bank Feeds](/bank-feeds-api/xero-bank-feeds/). Then, switch them on using the **Enable bank feeds** toggle on the Xero **Integration settings** page:
-
-![Enable bank feeds toggle](/img/integrations/accounting/xero/xero_bank-feeds-toggle-enabled.png "The Xero Integration settings page with the Enable bank feeds toggle selected.")
+If you plan to post Bank transactions to Xero, you must set up and enable [Xero Bank Feeds](/bank-feeds-api/xero-bank-feeds/).
 
 ## Recap
 
