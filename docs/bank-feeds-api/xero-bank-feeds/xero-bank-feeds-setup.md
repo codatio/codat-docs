@@ -21,7 +21,7 @@ Before setting up the integration, make sure that:
    - In the Xero Developer portal, [create and configure a Xero app](/integrations/accounting/xero/accounting-xero-setup#create-a-xero-app-and-configure-the-redirect-uri).
    - [Retrieve your app's secure keys](/integrations/accounting/xero/accounting-xero-setup#retrieve-your-apps-secure-keys) and then add them to the integration.
    
-   Bank feeds functionality is part of our existing Xero accounting integration. To configure the integration to access bank feeds, use the same Redirect URI as Xero and ensure the **Enable bank feeds** toggle is selected.
+   Bank feeds functionality is part of our existing Xero accounting integration and uses the same Redirect URI.
    
    - [Enable the Xero integration](/integrations/accounting/xero/accounting-xero-setup#enable-the-xero-integration).   
 - Xero have enabled the _Xero Bank Feeds API_ for your registered app.

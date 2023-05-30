@@ -79,39 +79,18 @@ Next, add the secure keys for your Xero application to the Codat Portal.
 
 You can also click **Manage** to view the integration's settings page, and then enable the integration from there.
 
-## Next steps
-
-You can now use your Xero integration to connect up to 25 companies. If you want to use your integration to connect more than 25 companies, you need to [register with Xero as an official Xero App Partner](/integrations/accounting/xero/xero-app-partner-program).
-
-See the next section for information about configuring direct bank feeds using Xero's Bank Feeds API.
-
 ## Configure direct bank feeds
 
-To create a direct bank feed using Xero's Bank Feeds API, push (`POST`) [Bank Transactions](/accounting-api#/schemas/banktransactions) via the Codat API. Bank transactions must be pushed in chronological order.
-
-### Requirements to configure direct bank feeds
-
-To create direct bank feeds in Xero:
-- You must have Xero app partner status.
-- Xero must have enabled the Xero Bank Feeds API for your registered app.
-
-You also need to enable direct bank feeds in the Codat Portal. To do so, toggle on **Enable Bank Feeds** on the Xero integration settings page.
-
-![](/img/old/fd2290d-2022-04-28_11h09_24.png "2022-04-28_11h09_24.png")
-
-For more information, see the Bank Feeds API [Overview](https://developer.xero.com/documentation/bank-feeds-api/overview) in the Xero Developer documentation.
-
-If you don't have access to direct bank feeds, a 403 error is returned if you try to push bank transactions to Xero. For example:
-
-```json Bank transactions push error - Xero
-{
-  "type": "invalid-organization-bank-feeds",
-  "title": "Invalid Organization",
-  "status": 403,
-  "detail": "The organization does not support automated bank feeds."
-}
-```
+If you plan to post Bank transactions to Xero, you must set up and enable [Xero Bank Feeds](/bank-feeds-api/xero-bank-feeds/).
 
 ## Recap
 
-In this setup guide, you've learned how to create a Xero app configured with the required Codat redirect URI; retrieve the secure keys for your app and add them to the Xero integration in the Codat Portal; and enable the integration. You've also learned how to create direct bank feeds by posting Bank transactions via Codat's API, as well as Xero's requirements for using their Bank Feeds API.
+In this setup guide, you've learned how to:
+
+- Create a Xero app configured with the required Codat redirect URI.
+- Retrieve the secure keys for your app and add them to the Xero integration in the Codat Portal.
+- Enable the integration.
+
+## Next steps
+
+You can now use your Xero integration to connect up to 25 companies. If you want to use your integration to connect more than 25 companies, you need to [register with Xero as an official Xero App Partner](/integrations/accounting/xero/xero-app-partner-program).
