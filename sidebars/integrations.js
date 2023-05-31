@@ -287,7 +287,6 @@ module.exports = [
       "integrations/commerce/api-workflow",
       "integrations/commerce/commerce-platform-keys",
       "integrations/commerce/commerce-sync-settings",
-      "integrations/commerce/domain-discovery-program",
       {
         type: "category",
         label: "Amazon Seller Central",
