@@ -9,7 +9,7 @@ The Chargify integration doesn't yet expose standardized data types or provide a
 
 Instead, when an SMB customer (a company) has [linked their Chargify account](/integrations/commerce/chargify/commerce-chargify-setup), you can access their subscriptions and billing data through the `proxy` endpoint in the Codat API. Only GET requests are currently supported.
 
-By default, Codat disables users from making `proxy` requests. To enable proxy for Chargify contact your account manager or [support](mailto:support@codat.io).
+By default, Codat disables users from making `proxy` requests. To enable proxy for Chargify, contact your account manager or [support](mailto:support@codat.io).
 
 ## Send a proxy request
 
