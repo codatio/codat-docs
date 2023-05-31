@@ -9,7 +9,7 @@ The Recurly integration doesn't yet expose standardized data types or provide an
 
 Instead, when an SMB customer (a company) has [linked their Recurly account](/integrations/commerce/recurly/commerce-recurly-setup#smb-customer-authenticate-and-connect-your-commerce-data), you can access their subscriptions and billing data through the `proxy` endpoint in the Codat API. Only GET requests are currently supported.
 
-By default, Codat disables users from making `proxy` requests. To enable proxy for Recurly contact your account manager or [support](mailto:support@codat.io).
+By default, Codat disables users from making `proxy` requests. To enable proxy for Recurly, contact your account manager or [support](mailto:support@codat.io).
 
 ## Send a proxy request
 
