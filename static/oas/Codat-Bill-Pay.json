@@ -16,7 +16,7 @@
       "email": "support@codat.io",
       "name": "Codat"
     },
-    "description": "the Bill Pay API makes it it easier for SMBs to manage and pay supplier invoices from your application with preferential payment methods and terms and ensure that their financial software is kept up to date.\n\nCodat has done the heavy lifting for you by building integrations with a standardized data model to the accounting platforms your customers already use. \n\nThis gives you access to near real-time accounts payable data that you can get, post, or put or delete to support your use case.\n\n[See our OpenAPI spec](https://github.com/codatio/oas)",
+    "description": "The Bill Pay API makes it it easier for SMBs to manage and pay supplier invoices from your application with preferential payment methods and terms and ensure that their financial software is kept up to date.\n\nCodat has done the heavy lifting for you by building integrations with a standardized data model to the accounting platforms your customers already use. \n\nThis gives you access to near real-time accounts payable data that you can get, post, or put or delete to support your use case.\n\n[See our OpenAPI spec](https://github.com/codatio/oas)",
     "termsOfService": "https://www.codat.io/legals/"
   },
   "security": [
@@ -41,16 +41,8 @@
   },
   "tags": [
     {
-      "name": "Payment Accounts",
-      "description": "Get a list of available payment accounts or create new ones"
-    },
-    {
       "name": "Accounts",
       "description": "Retrieve and create accounts to recognise spend accurately on accounts payable invoices"
-    },
-    {
-      "name": "Suppliers",
-      "description": "Manage companies suppliers"
     },
     {
       "name": "Bills",
@@ -63,24 +55,30 @@
     {
       "name": "Bill payments",
       "description": "Create and retrieve supplier payments"
+    },
+    {
+      "name": "Suppliers",
+      "description": "Manage companies suppliers"
+    },
+    {
+      "name": "Payment accounts",
+      "description": "Get a list of available payment accounts or create new ones"
     }
   ],
   "paths": {
     "/companies/{companyId}/connections/{connectionId}/data/bankAccounts": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/connectionId"
-        }
-      ],
       "get": {
         "tags": [
-          "Payment Accounts"
+          "Payment accounts"
         ],
         "summary": "List bank accounts",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          },
           {
             "$ref": "#/components/parameters/page"
           },
@@ -663,6 +661,21 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/400"
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "409": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/409"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
         "description": "Gets the list of bank accounts for a given connection",
@@ -670,18 +683,18 @@
       }
     },
     "/companies/{companyId}/connections/{connectionId}/options/bankAccounts": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/connectionId"
-        }
-      ],
       "get": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          }
+        ],
         "summary": "Get create/update bank account model",
         "tags": [
-          "Payment Accounts"
+          "Payment accounts"
         ],
         "responses": {
           "200": {
@@ -1889,6 +1902,15 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
         "operationId": "get-create-update-bankAccounts-model",
@@ -1896,25 +1918,23 @@
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/bankAccounts": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/connectionId"
-        }
-      ],
       "post": {
         "tags": [
-          "Payment Accounts"
+          "Payment accounts"
         ],
         "summary": "Create bank account",
         "parameters": [
           {
-            "$ref": "#/components/parameters/allowSyncOnPushComplete"
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
           },
           {
             "$ref": "#/components/parameters/timeoutInMinutes"
+          },
+          {
+            "$ref": "#/components/parameters/allowSyncOnPushComplete"
           }
         ],
         "requestBody": {
@@ -1936,6 +1956,18 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1push~1bills/post/responses/400"
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
         "description": "Posts a new bank account to the accounting package for a given company.\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update bank account model](https://docs.codat.io/accounting-api#/operations/get-create-update-bankAccounts-model).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankAccounts) to see which integrations support this endpoint.\r\n",
@@ -3024,23 +3056,38 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/400"
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "409": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/409"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         }
       }
     },
     "/companies/{companyId}/connections/{connectionId}/options/chartOfAccounts": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/connectionId"
-        }
-      ],
       "get": {
         "summary": "Get create account model",
         "tags": [
           "Accounts"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          }
         ],
         "responses": {
           "200": {
@@ -7998,6 +8045,15 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
         "operationId": "get-create-chartOfAccounts-model",
@@ -8005,14 +8061,6 @@
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/accounts": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/connectionId"
-        }
-      ],
       "post": {
         "tags": [
           "Accounts"
@@ -8020,7 +8068,16 @@
         "summary": "Create account",
         "parameters": [
           {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          },
+          {
             "$ref": "#/components/parameters/timeoutInMinutes"
+          },
+          {
+            "$ref": "#/components/parameters/allowSyncOnPushComplete"
           }
         ],
         "requestBody": {
@@ -8042,6 +8099,18 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1push~1bills/post/responses/400"
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
         "description": "The *Create accounts* endpoint creates a new [account](https://docs.codat.io/accounting-api#/schemas/Account) for a given company's connection.\n\n[Accounts](https://docs.codat.io/accounting-api#/schemas/Account) are the categories a business uses to record accounting transactions.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create account model](https://docs.codat.io/accounting-api#/operations/get-create-chartOfAccounts-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account.",
@@ -8049,17 +8118,17 @@
       }
     },
     "/companies/{companyId}/data/suppliers": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ],
       "get": {
         "tags": [
           "Suppliers"
         ],
         "summary": "List suppliers",
+        "operationId": "list-suppliers",
+        "description": "Gets the latest suppliers for a company, with pagination",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
           {
             "$ref": "#/components/parameters/page"
           },
@@ -9144,23 +9213,36 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/400"
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "409": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/409"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
-        },
-        "description": "Gets the latest suppliers for a company, with pagination",
-        "operationId": "list-suppliers"
+        }
       }
     },
     "/companies/{companyId}/connections/{connectionId}/options/suppliers": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/connectionId"
-        }
-      ],
       "get": {
         "summary": "Get create/update supplier model",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          }
+        ],
         "tags": [
           "Suppliers"
         ],
@@ -14183,6 +14265,15 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
         "operationId": "get-create-update-suppliers-model",
@@ -14190,21 +14281,22 @@
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/suppliers": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/connectionId"
-        }
-      ],
       "post": {
         "tags": [
           "Suppliers"
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          },
+          {
             "$ref": "#/components/parameters/timeoutInMinutes"
+          },
+          {
+            "$ref": "#/components/parameters/allowSyncOnPushComplete"
           }
         ],
         "requestBody": {
@@ -14237,6 +14329,18 @@
                 "examples": {}
               }
             }
+          },
+          "400": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1push~1bills/post/responses/400"
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
         "summary": "Create supplier",
@@ -14245,22 +14349,20 @@
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/suppliers/{supplierId}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/supplierId"
-        },
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/connectionId"
-        }
-      ],
       "put": {
         "tags": [
           "Suppliers"
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          },
+          {
+            "$ref": "#/components/parameters/supplierId"
+          },
           {
             "$ref": "#/components/parameters/timeoutInMinutes"
           },
@@ -14287,25 +14389,35 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1push~1bills/post/responses/400"
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
         "summary": "Update supplier",
-        "description": "Update supplier\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update supplier model](https://docs.codat.io/accounting-api#/operations/get-create-update-suppliers-model).\r\n\r\n> **Supported Integrations**\r\n> \r\n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support updating suppliers.\r\n",
+        "description": "Update supplier\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update supplier model](https://docs.codat.io/accounting-api#/operations/get-create-update-suppliers-model).\n\n> **Supported Integrations**\n> \n> Check out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support updating suppliers.",
         "operationId": "update-supplier"
       }
     },
     "/companies/{companyId}/data/bills": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ],
       "get": {
         "tags": [
           "Bills"
         ],
         "summary": "List bills",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
           {
             "$ref": "#/components/parameters/page"
           },
@@ -17418,6 +17530,157 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Your `query` parameter was not correctly formed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "x-internal": true,
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer"
+                    },
+                    "service": {
+                      "type": "string"
+                    },
+                    "error": {
+                      "type": "string"
+                    },
+                    "correlationId": {
+                      "type": "string"
+                    },
+                    "canBeRetried": {
+                      "type": "string"
+                    },
+                    "detailedErrorCode": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "examples": {
+                  "Malformed query": {
+                    "value": {
+                      "statusCode": 400,
+                      "service": "ClientsApi",
+                      "error": "Error parsing query - Malformed query.",
+                      "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                      "canBeRetried": "Unknown",
+                      "detailedErrorCode": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Your API request was not properly authorized.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/400/content/application~1json/schema"
+                },
+                "examples": {
+                  "Unauthorized": {
+                    "value": {
+                      "statusCode": 401,
+                      "service": "PublicApi",
+                      "error": "Unauthorized",
+                      "correlationId": "7eb40d6b415d7bcd99ce658268284056",
+                      "canBeRetried": "Unknown",
+                      "detailedErrorCode": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "One or more of the resources you referenced could not be found.\nThis might be because your company or data connection id is wrong, or was already deleted.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/400/content/application~1json/schema"
+                },
+                "examples": {
+                  "Data connection not found": {
+                    "value": {
+                      "statusCode": 404,
+                      "service": "PublicApi",
+                      "error": "Data connection a22dd66b-564a-4832-9b37-7b3ce4aeb7de not found",
+                      "correlationId": "8fa2b5f4794970a4ee73758f612e8df0",
+                      "canBeRetried": "Unknown",
+                      "detailedErrorCode": 0
+                    }
+                  },
+                  "Company not found": {
+                    "value": {
+                      "statusCode": 404,
+                      "service": "ClientsApi",
+                      "error": "No company was found with ID 846ed55c-974b-4392-a1f1-87b6fdbf3c5e",
+                      "correlationId": "0a40c2f31fc8f992fb88b0853e4166f3",
+                      "canBeRetried": "Unknown",
+                      "detailedErrorCode": 0
+                    }
+                  },
+                  "No data available": {
+                    "value": {
+                      "statusCode": 404,
+                      "service": "PublicApi",
+                      "error": "No data available for accounts for ID e5889b459f544926ac5b8e6756df2s",
+                      "correlationId": "0a40c2f31fc8f992fb88b0853e4166f3",
+                      "canBeRetried": "Unknown",
+                      "detailedErrorCode": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "The data type's dataset has not been requested or is still syncing.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/400/content/application~1json/schema"
+                },
+                "examples": {
+                  "Conflict": {
+                    "value": {
+                      "statusCode": 409,
+                      "service": "PublicApi",
+                      "error": "The data set has not been requested.",
+                      "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                      "canBeRetried": "Unknown",
+                      "detailedErrorCode": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests were made in a given amount of time. Wait a short period and then try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/400/content/application~1json/schema"
+                },
+                "examples": {
+                  "Conflict": {
+                    "value": {
+                      "statusCode": 429,
+                      "service": "PublicApi",
+                      "error": "You have made too many requests in a given amount of time; please retry later.",
+                      "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                      "canBeRetried": "Unknown",
+                      "detailedErrorCode": 0
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "description": "﻿Gets the latest bills for a company, with pagination.",
@@ -17425,15 +17688,15 @@
       }
     },
     "/companies/{companyId}/data/bills/{billId}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/billId"
-        },
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ],
       "get": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/billId"
+          }
+        ],
         "tags": [
           "Bills"
         ],
@@ -19053,6 +19316,18 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "409": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/409"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
         "summary": "Get bill",
@@ -19061,18 +19336,18 @@
       }
     },
     "/companies/{companyId}/connections/{connectionId}/options/bills": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/connectionId"
-        }
-      ],
       "get": {
         "summary": "Get create/update bill model",
         "tags": [
           "Bills"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          }
         ],
         "responses": {
           "200": {
@@ -23530,6 +23805,15 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
         "operationId": "get-create-update-bills-model",
@@ -23537,14 +23821,6 @@
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/bills": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/connectionId"
-        }
-      ],
       "post": {
         "tags": [
           "Bills"
@@ -23552,7 +23828,16 @@
         "summary": "Create bill",
         "parameters": [
           {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          },
+          {
             "$ref": "#/components/parameters/timeoutInMinutes"
+          },
+          {
+            "$ref": "#/components/parameters/allowSyncOnPushComplete"
           }
         ],
         "requestBody": {
@@ -23828,6 +24113,40 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "The request made is not valid.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/400/content/application~1json/schema"
+                },
+                "examples": {
+                  "Malformed query": {
+                    "value": {
+                      "statusCode": 400,
+                      "service": "PublicApi",
+                      "error": "Error processing request - not valid.",
+                      "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                      "canBeRetried": "Unknown",
+                      "detailedErrorCode": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "409": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/409"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
         "description": "Posts a new bill to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill model](https://docs.codat.io/accounting-api#/operations/get-create-update-bills-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) to see which integrations support this endpoint.\n",
@@ -23835,23 +24154,21 @@
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/bills/{billId}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/billId"
-        },
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/connectionId"
-        }
-      ],
       "put": {
         "tags": [
           "Bills"
         ],
         "summary": "Update bill",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          },
+          {
+            "$ref": "#/components/parameters/billId"
+          },
           {
             "$ref": "#/components/parameters/timeoutInMinutes"
           },
@@ -23879,6 +24196,18 @@
                 "examples": {}
               }
             }
+          },
+          "400": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1push~1bills/post/responses/400"
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
         "description": "﻿Posts an updated bill to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill model](https://docs.codat.io/accounting-api#/operations/get-create-update-bills-model).\n\n> **Supported Integrations**\n> \n> Check out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support updating a bill.",
@@ -23887,6 +24216,17 @@
       "delete": {
         "summary": "Delete bill",
         "operationId": "delete-bill",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          },
+          {
+            "$ref": "#/components/parameters/billId"
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -23898,6 +24238,15 @@
                 "examples": {}
               }
             }
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
         "description": "﻿The _Delete Bills_ endpoint allows you to delete a specified Bill from an accounting platform. \n\n### Process \n1. Pass the `{billId}` to the _Delete Bills_ endpoint and store the `pushOperationKey` returned.\n2. Check the status of the delete operation by checking the status of push operation either via\n    1. [Push operation webhook](/introduction/webhooks/core-rules-types#push-operation-status-has-changed) (advised),\n    2. [Push operation status endpoint](https://docs.codat.io/codat-api#/operations/get-push-operation).\n\n   A `Success` status indicates that the Bill object was deleted from the accounting platform.\n3. (Optional) Check that the Bill was deleted from the accounting platform.\n\n### Effect on related objects\n\nBe aware that deleting a Bill from an accounting platform might cause related objects to be modified. For example, if you delete a paid Bill in QuickBooks Online, the bill is deleted but the bill payment against that bill is not. The bill payment is converted to a payment on account.\n\n## Integration specifics\nIntegrations that support soft delete do not permanently delete the object in the accounting platform.\n\n| Integration | Soft Delete | Details                                                                                                      |  \n|-------------|-------------|--------------------------------------------------------------------------------------------------------------|\n| QuickBooks Online | No          | -                                                                                                            |\n| Oracle NetSuite   | No          | When deleting a Bill that's already linked to a Bill payment, you must delete the linked Bill payment first. |\n\n> **Supported Integrations**\n> \n> This functionality is currently only supported for our QuickBooks Online abd Oracle NetSuite integrations. Check out our [public roadmap](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/46-accounting-api) to see what we're building next, and to submit ideas for new features.",
@@ -23907,20 +24256,20 @@
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/bills/{billId}/attachments": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/billId"
-        },
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/connectionId"
-        }
-      ],
       "get": {
         "tags": [
           "Bills"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          },
+          {
+            "$ref": "#/components/parameters/billId"
+          }
         ],
         "responses": {
           "200": {
@@ -23932,6 +24281,15 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
         "operationId": "list-bill-attachments",
@@ -23940,22 +24298,22 @@
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/bills/{billId}/attachments/{attachmentId}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/billId"
-        },
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/connectionId"
-        }
-      ],
       "get": {
         "tags": [
           "Bills"
         ],
+        "description": "﻿Get bill attachment.",
+        "operationId": "get-bill-attachment",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          },
+          {
+            "$ref": "#/components/parameters/billId"
+          },
           {
             "$ref": "#/components/parameters/attachmentId"
           }
@@ -23967,33 +24325,40 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Attachment"
-                }
+                },
+                "examples": {}
               }
             }
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
-        },
-        "summary": "Get bill attachment",
-        "description": "﻿Get bill attachment.",
-        "operationId": "get-bill-attachment"
+        }
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/bills/{billId}/attachments/{attachmentId}/download": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/billId"
-        },
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/connectionId"
-        }
-      ],
       "get": {
+        "summary": "Download bill attachment",
+        "operationId": "download-bill-attachment",
         "tags": [
           "Bills"
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          },
+          {
+            "$ref": "#/components/parameters/billId"
+          },
           {
             "$ref": "#/components/parameters/attachmentId"
           }
@@ -24010,28 +24375,37 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
-        "summary": "Download bill attachment",
-        "description": "﻿Download bill attachment.",
-        "operationId": "download-bill-attachment"
+        "description": "﻿Download bill attachment."
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/bills/{billId}/attachments": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/billId"
-        },
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/connectionId"
-        }
-      ],
       "post": {
+        "summary": "Upload bill attachment",
+        "operationId": "upload-bill-attachment",
         "tags": [
           "Bills"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          },
+          {
+            "$ref": "#/components/parameters/billId"
+          }
         ],
         "requestBody": {
           "content": {
@@ -24046,25 +24420,31 @@
         "responses": {
           "200": {
             "description": "Success"
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
-        "summary": "Upload bill attachment",
-        "description": "﻿Upload bill attachment.",
-        "operationId": "upload-bill-attachment"
+        "description": "﻿Upload bill attachment."
       }
     },
     "/companies/{companyId}/data/billCreditNotes": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ],
       "get": {
         "tags": [
           "Bill credit notes"
         ],
         "summary": "List bill credit notes",
+        "operationId": "list-bill-credit-notes",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
           {
             "$ref": "#/components/parameters/page"
           },
@@ -26036,31 +26416,48 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/400"
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "409": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/409"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
-        "description": "﻿Gets a list of all bill credit notes for a company, with pagination.",
-        "operationId": "list-bill-credit-notes"
+        "description": "﻿Gets a list of all bill credit notes for a company, with pagination."
       }
     },
     "/companies/{companyId}/data/billCreditNotes/{billCreditNoteId}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "name": "billCreditNoteId",
-          "in": "path",
-          "required": true,
-          "schema": {
-            "type": "string"
-          }
-        }
-      ],
       "get": {
         "tags": [
           "Bill credit notes"
         ],
         "summary": "Get bill credit note",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "name": "billCreditNoteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "examples": {
+                "$ref": "#/components/parameters/billId/schema/examples"
+              }
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -26933,6 +27330,18 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "409": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/409"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
         "description": "﻿Gets a single billCreditNote corresponding to the given ID.",
@@ -26940,18 +27349,18 @@
       }
     },
     "/companies/{companyId}/connections/{connectionId}/options/billCreditNotes": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/connectionId"
-        }
-      ],
       "get": {
         "summary": "Get create/update bill credit note model",
         "tags": [
           "Bill credit notes"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          }
         ],
         "responses": {
           "200": {
@@ -30899,6 +31308,15 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
         "operationId": "get-create-update-billCreditNotes-model",
@@ -30906,14 +31324,6 @@
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/billCreditNotes": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/connectionId"
-        }
-      ],
       "post": {
         "tags": [
           "Bill credit notes"
@@ -30921,7 +31331,16 @@
         "summary": "Create bill credit note",
         "parameters": [
           {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          },
+          {
             "$ref": "#/components/parameters/timeoutInMinutes"
+          },
+          {
+            "$ref": "#/components/parameters/allowSyncOnPushComplete"
           }
         ],
         "requestBody": {
@@ -31170,6 +31589,18 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1push~1bills/post/responses/400"
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
         "description": "Posts a new billCreditNote to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill credit note model](https://docs.codat.io/accounting-api#/operations/get-create-update-billCreditNotes-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) to see which integrations support this endpoint.\n",
@@ -31177,28 +31608,21 @@
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/billCreditNotes/{billCreditNoteId}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/connectionId"
-        },
-        {
-          "name": "billCreditNoteId",
-          "in": "path",
-          "required": true,
-          "schema": {
-            "type": "string"
-          }
-        }
-      ],
       "put": {
         "tags": [
           "Bill credit notes"
         ],
         "summary": "Update bill credit note",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          },
+          {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1billCreditNotes~1%7BbillCreditNoteId%7D/get/parameters/1"
+          },
           {
             "$ref": "#/components/parameters/timeoutInMinutes"
           },
@@ -31225,6 +31649,18 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1push~1bills/post/responses/400"
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
         "description": "﻿Posts an updated billCreditNote to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill credit note model](https://docs.codat.io/accounting-api#/operations/get-create-update-billCreditNotes-model).\n\n> **Supported Integrations**\n> \n> Check out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) for integrations that support updating bill credit notes.",
@@ -31232,17 +31668,15 @@
       }
     },
     "/companies/{companyId}/data/billPayments": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ],
       "get": {
         "tags": [
           "Bill payments"
         ],
         "summary": "List bill payments",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
           {
             "$ref": "#/components/parameters/page"
           },
@@ -32602,6 +33036,21 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/400"
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "409": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/409"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
         "description": "﻿Gets the latest billPayments for a company, with pagination.",
@@ -32609,20 +33058,18 @@
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/billPayments": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/connectionId"
-        }
-      ],
       "post": {
         "tags": [
           "Bill payments"
         ],
         "summary": "Create bill payments",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          },
           {
             "$ref": "#/components/parameters/timeoutInMinutes"
           }
@@ -32826,6 +33273,18 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1push~1bills/post/responses/400"
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
         "description": "Posts a new bill payment to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create bill payment model](https://docs.codat.io/accounting-api#/operations/get-create-billPayments-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billPayments) to see which integrations support this endpoint.\n",
@@ -32833,18 +33292,18 @@
       }
     },
     "/companies/{companyId}/connections/{connectionId}/options/billPayments": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/connectionId"
-        }
-      ],
       "get": {
         "summary": "Get create bill payment model",
         "tags": [
           "Bill payments"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          }
         ],
         "responses": {
           "200": {
@@ -35310,6 +35769,15 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
         "operationId": "get-create-billPayments-model",
@@ -35317,25 +35785,23 @@
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/billPayments/{billPaymentId}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/connectionId"
-        },
-        {
-          "schema": {
-            "type": "string"
-          },
-          "name": "billPaymentId",
-          "in": "path",
-          "required": true
-        }
-      ],
       "delete": {
         "summary": "Delete bill payment",
         "operationId": "delete-billPayment",
+        "tags": [
+          "Bill payments"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          },
+          {
+            "$ref": "#/components/parameters/billPaymentId"
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -35346,11 +35812,17 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/401"
+          },
+          "404": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/404"
+          },
+          "429": {
+            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
-        "tags": [
-          "Bill payments"
-        ],
         "description": "﻿The _Delete Bill Payments_ endpoint allows you to delete a specified Bill Payment from an accounting platform.\n\n### Process\n1. Pass the `{billPaymentId}` to the _Delete Bill Payments_ endpoint and store the `pushOperationKey` returned.\n2. Check the status of the delete operation by checking the status of push operation either via\n    1. [Push operation webhook](/introduction/webhooks/core-rules-types#push-operation-status-has-changed) (advised),\n    2. [Push operation status endpoint](https://docs.codat.io/codat-api#/operations/get-push-operation).\n\n   A `Success` status indicates that the Bill Payment object was deleted from the accounting platform.\n3. (Optional) Check that the Bill Payment was deleted from the accounting platform.\n\n### Effect on related objects\nBe aware that deleting a Bill Payment from an accounting platform might cause related objects to be modified.\n\n## Integration specifics\nIntegrations that support soft delete do not permanently delete the object in the accounting platform.\n\n| Integration | Soft Delete | Details                                                                                             |  \n|-------------|-------------|-----------------------------------------------------------------------------------------------------|\n| Oracle NetSuite   | No          | See [here](/integrations/accounting/netsuite/how-deleting-bill-payments-works) to learn more. |\n\n> **Supported Integrations**\n>\n> This functionality is currently only supported for our QuickBooks Online abd Oracle NetSuite integrations. Check out our [public roadmap](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/46-accounting-api) to see what we're building next, and to submit ideas for new features."
       }
     }
@@ -36167,6 +36639,7 @@
       },
       "BankAccounts": {
         "x-internal": true,
+        "title": "Bank Accounts",
         "allOf": [
           {
             "type": "object",
@@ -36478,7 +36951,7 @@
                 "description": "Reference to the account to which the line item is linked."
               },
               "taxRateRef": {
-                "$ref": "#/components/schemas/TaxRate/definitions/taxRateRef",
+                "$ref": "#/components/schemas/BillCreditNote/definitions/billCreditNoteLineItem/properties/taxRateRef",
                 "description": "Reference to the tax rate to which the line item is linked."
               },
               "itemRef": {
@@ -36491,7 +36964,7 @@
                 "deprecated": true,
                 "description": "Collection of categories against which this item is tracked.",
                 "items": {
-                  "$ref": "#/components/schemas/TrackingCategory/definitions/trackingCategoryRef"
+                  "$ref": "#/components/schemas/BillCreditNote/definitions/billCreditNoteLineItem/properties/trackingCategoryRefs/items"
                 }
               },
               "tracking": {
@@ -36740,7 +37213,23 @@
                 "description": "Percentage rate of any discount applied to the line item."
               },
               "taxRateRef": {
-                "$ref": "#/components/schemas/TaxRate/definitions/taxRateRef"
+                "title": "Tax rate reference",
+                "type": "object",
+                "description": "Data types that reference a tax rate, for example invoice and bill line items, use a taxRateRef that includes the ID and name of the linked tax rate.\n\nFound on:\n\n- Bill line items\n- Bill Credit Note line items\n- Credit Note line items\n- Direct incomes line items\n- Invoice line items\n- Items",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Unique identifier for the tax rate in the accounting platform."
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Name of the tax rate in the accounting platform."
+                  },
+                  "effectiveTaxRate": {
+                    "type": "number",
+                    "description": "Applicable tax rate."
+                  }
+                }
               },
               "itemRef": {
                 "description": "Reference to the item the line is linked to.",
@@ -36768,7 +37257,22 @@
                 "deprecated": true,
                 "description": "Reference to the tracking categories to which the line item is linked.",
                 "items": {
-                  "$ref": "#/components/schemas/TrackingCategory/definitions/trackingCategoryRef"
+                  "required": [
+                    "id"
+                  ],
+                  "type": "object",
+                  "description": "References a category against which the item is tracked.",
+                  "deprecated": true,
+                  "properties": {
+                    "id": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string",
+                      "nullable": true
+                    }
+                  }
                 }
               },
               "tracking": {
@@ -36779,7 +37283,7 @@
                   "categoryRefs": {
                     "type": "array",
                     "items": {
-                      "$ref": "#/components/schemas/TrackingCategory/definitions/trackingCategoryRef"
+                      "$ref": "#/components/schemas/BillCreditNote/definitions/billCreditNoteLineItem/properties/trackingCategoryRefs/items"
                     }
                   },
                   "customerRef": {
@@ -36801,7 +37305,21 @@
                     ]
                   },
                   "projectRef": {
-                    "$ref": "#/components/schemas/ProjectRef"
+                    "x-internal": true,
+                    "required": [
+                      "id"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string",
+                        "nullable": true
+                      }
+                    }
                   },
                   "isBilledTo": {
                     "$ref": "#/components/schemas/BillCreditNote/definitions/billCreditNoteLineItem/properties/tracking/definitions/billedToType"
@@ -37050,7 +37568,18 @@
               "paymentMethodRef": {
                 "allOf": [
                   {
-                    "$ref": "#/components/schemas/PaymentMethod/definitions/paymentMethodRef"
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "`id` from the Payment Methods data type"
+                      },
+                      "name": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "`name` from the Payment Methods data type"
+                      }
+                    }
                   },
                   {
                     "description": "The Payment Method to which the payment is linked in the accounting platform."
@@ -37524,332 +38053,6 @@
           }
         ]
       },
-      "CompanyDataset": {
-        "title": "Company information",
-        "description": "> View the coverage for company info in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=cashFlowStatement\" target=\"_blank\">Data coverage explorer</a>.\n\nCompany info provides standard details about a linked company such as their address, phone number, and company registration.\n\n> **Company information or companies?**\n> \n> Company information is standard information that is held in the accounting platform about a company. `Companies` is an endpoint that lists businesses in the Codat system that have linked and shared their data sources.",
-        "type": "object",
-        "properties": {
-          "companyName": {
-            "type": "string",
-            "nullable": true,
-            "description": "Name of the linked company."
-          },
-          "accountingPlatformRef": {
-            "type": "string",
-            "nullable": true,
-            "description": "Identifier or reference for the company in the accounting platform."
-          },
-          "companyLegalName": {
-            "type": "string",
-            "nullable": true,
-            "description": "Registered legal name of the linked company."
-          },
-          "addresses": {
-            "type": "array",
-            "nullable": true,
-            "description": "An array of Addresses.",
-            "items": {
-              "type": "object",
-              "properties": {
-                "type": {
-                  "$ref": "#/components/schemas/CompanyDataset/properties/addresses/items/definitions/addressType"
-                },
-                "line1": {
-                  "type": "string",
-                  "nullable": true,
-                  "description": "Line 1 of the customer address."
-                },
-                "line2": {
-                  "type": "string",
-                  "nullable": true,
-                  "description": "Line 2 of the customer address."
-                },
-                "city": {
-                  "type": "string",
-                  "nullable": true,
-                  "description": "City of the customer address."
-                },
-                "region": {
-                  "type": "string",
-                  "nullable": true,
-                  "description": "Region of the customer address."
-                },
-                "country": {
-                  "type": "string",
-                  "nullable": true,
-                  "description": "Country of the customer address."
-                },
-                "postalCode": {
-                  "type": "string",
-                  "nullable": true,
-                  "description": "Postal code or zip code."
-                }
-              },
-              "required": [
-                "type"
-              ],
-              "definitions": {
-                "addressType": {
-                  "description": "The type of the address",
-                  "type": "string",
-                  "enum": [
-                    "Unknown",
-                    "Billing",
-                    "Delivery"
-                  ]
-                }
-              }
-            }
-          },
-          "phoneNumbers": {
-            "type": "array",
-            "nullable": true,
-            "description": "An array of phone numbers.",
-            "items": {
-              "title": "Phone",
-              "type": "object",
-              "x-internal": true,
-              "properties": {
-                "number": {
-                  "type": "string",
-                  "nullable": true,
-                  "examples": [
-                    "+44 25691 154789",
-                    "(877) 492-8687",
-                    "01224 658 999"
-                  ],
-                  "description": "A phone number."
-                },
-                "type": {
-                  "$ref": "#/components/schemas/CompanyDataset/properties/phoneNumbers/items/definitions/phoneNumberType"
-                }
-              },
-              "required": [
-                "number",
-                "type"
-              ],
-              "definitions": {
-                "phoneNumberType": {
-                  "description": "The type of phone number",
-                  "type": "string",
-                  "enum": [
-                    "Primary",
-                    "Landline",
-                    "Mobile",
-                    "Fax",
-                    "Unknown"
-                  ]
-                }
-              }
-            }
-          },
-          "webLinks": {
-            "type": "array",
-            "nullable": true,
-            "description": "An array of weblinks.",
-            "items": {
-              "title": "Weblink",
-              "description": "Weblink associated with the company.",
-              "type": "object",
-              "properties": {
-                "type": {
-                  "description": "The type of the weblink.",
-                  "type": "string",
-                  "enum": [
-                    "Website",
-                    "Social",
-                    "Unknown"
-                  ]
-                },
-                "url": {
-                  "description": "The full URL for the weblink.",
-                  "type": "string",
-                  "format": "url"
-                }
-              },
-              "example": {
-                "type": "Website",
-                "url": "https://codat.io"
-              }
-            }
-          },
-          "ledgerLockDate": {
-            "$ref": "#/components/schemas/DateTime",
-            "description": "If set in the accounting platform, the date (in the ISO 8601 date/time format) after which accounting transactions cannot be edited. Commonly used when books are closed at year-end."
-          },
-          "registrationNumber": {
-            "type": "string",
-            "nullable": true,
-            "description": "Registration number given to the linked company by the companies authority in the country of origin. In the UK this is Companies House."
-          },
-          "taxNumber": {
-            "type": "string",
-            "nullable": true,
-            "description": "Company tax number."
-          },
-          "financialYearStartDate": {
-            "$ref": "#/components/schemas/DateTime",
-            "description": "Start date of the financial year for the company."
-          },
-          "baseCurrency": {
-            "type": "string",
-            "nullable": true,
-            "description": "Currency set in the accounting platform of the linked company. Used by the currency rate."
-          },
-          "sourceUrls": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string",
-              "nullable": true
-            },
-            "nullable": true,
-            "description": "URL addresses for the accounting source.\n\nFor example, for Xero integrations two URLs are returned. These have many potential use cases, such as [deep linking](https://developer.xero.com/documentation/api-guides/deep-link-xero)."
-          },
-          "createdDate": {
-            "$ref": "#/components/schemas/DateTime",
-            "description": "Date the linked company was created in the accounting platform."
-          }
-        },
-        "examples": [
-          {
-            "companyName": "ACME Corporation",
-            "accountingPlatformRef": "4444e827-401b-4925-92cb-d79086bf3b6b",
-            "companyLegalName": "ACME Corporation Ltd.",
-            "addresses": [
-              {
-                "type": "Billing",
-                "line1": "Warner House",
-                "line2": "98 Theobald's Road",
-                "city": "London",
-                "region": "",
-                "country": "United Kingdom",
-                "postalcode": "WC1X 8WB"
-              },
-              {
-                "type": "Unknown",
-                "line1": "123 Sierra Way",
-                "line2": "",
-                "city": "San Pablo",
-                "region": "CA",
-                "country": "",
-                "postalCode": "87999"
-              }
-            ],
-            "phoneNumbers": [
-              {
-                "number": "010 1234 5678",
-                "type": "Landline"
-              }
-            ],
-            "webLinks": [
-              {
-                "type": "Website",
-                "url": "https://www.wbsl.com/"
-              }
-            ],
-            "ledgerLockDate": "2019-03-04T12:08:01.881Z",
-            "registrationNumber": "1234567890",
-            "taxNumber": "GB 123456789",
-            "financialYearStartDate": "2019-04-01T00:00:00Z",
-            "baseCurrency": "USD",
-            "sourceUrls": {
-              "url1": "https://go.xero.com/organisationlogin/default.aspx?shortcode=!rxs0Q",
-              "url2": "https://reporting.xero.com/!rxs0Q"
-            },
-            "createdDate": "2020-02-03T16:42:02Z"
-          }
-        ]
-      },
-      "PaymentMethod": {
-        "title": "Payment method",
-        "description": "> View the coverage for payment methods in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=paymentMethods\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nA Payment Method represents the payment method(s) used to pay a Bill. Payment Methods are referenced on [Bill Payments](https://docs.codat.io/accounting-api#/schemas/BillPayment) and [Payments](https://docs.codat.io/accounting-api#/schemas/Payment).",
-        "type": "object",
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "Unique identifier for the payment method."
-              },
-              "name": {
-                "type": "string",
-                "nullable": true,
-                "description": "Name of the payment method."
-              },
-              "type": {
-                "$ref": "#/components/schemas/PaymentMethod/definitions/paymentMethodType"
-              },
-              "status": {
-                "$ref": "#/components/schemas/PaymentMethod/definitions/paymentMethodStatus"
-              },
-              "metadata": {
-                "$ref": "#/components/schemas/Metadata"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/ModifiedDates"
-          }
-        ],
-        "definitions": {
-          "paymentMethodRef": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "`id` from the Payment Methods data type"
-              },
-              "name": {
-                "type": "string",
-                "nullable": true,
-                "description": "`name` from the Payment Methods data type"
-              }
-            }
-          },
-          "paymentMethodType": {
-            "description": "Method of payment.",
-            "type": "string",
-            "enum": [
-              "Unknown",
-              "Cash",
-              "Check",
-              "CreditCard",
-              "DebitCard",
-              "BankTransfer",
-              "Other"
-            ]
-          },
-          "paymentMethodStatus": {
-            "description": "Status of the Payment Method.",
-            "type": "string",
-            "enum": [
-              "Unknown",
-              "Active",
-              "Archived"
-            ]
-          }
-        }
-      },
-      "PaymentMethods": {
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/PaymentMethod"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
       "Supplier": {
         "title": "Supplier",
         "description": "> View the coverage for suppliers in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nFrom the **Suppliers** endpoints, you can retrieve a list of [all the suppliers for a company](https://docs.codat.io/accounting-api#/operations/list-suppliers). Suppliers' data links to accounts payable [bills](https://docs.codat.io/accounting-api#/schemas/Bill).",
@@ -37892,7 +38095,56 @@
                 "nullable": true,
                 "description": "An array of Addresses.",
                 "items": {
-                  "$ref": "#/components/schemas/CompanyDataset/properties/addresses/items"
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "$ref": "#/components/schemas/Supplier/allOf/0/properties/addresses/items/definitions/addressType"
+                    },
+                    "line1": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Line 1 of the customer address."
+                    },
+                    "line2": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Line 2 of the customer address."
+                    },
+                    "city": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "City of the customer address."
+                    },
+                    "region": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Region of the customer address."
+                    },
+                    "country": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Country of the customer address."
+                    },
+                    "postalCode": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Postal code or zip code."
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "definitions": {
+                    "addressType": {
+                      "description": "The type of the address",
+                      "type": "string",
+                      "enum": [
+                        "Unknown",
+                        "Billing",
+                        "Delivery"
+                      ]
+                    }
+                  }
                 }
               },
               "registrationNumber": {
@@ -38052,282 +38304,6 @@
           }
         ]
       },
-      "TaxRate": {
-        "title": "Tax Rate",
-        "description": "> View the coverage for tax rates in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=taxRates\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nAccounting systems typically store a set of taxes and associated rates within the accounting package. This means that users don't have to look up or remember the rates for each type of tax. For example, applying the tax \"UK sales VAT\" to line items of an invoice adds the correct rate of 20%. \n\n### Tax components\n\nIn some cases, a tax is made up of multiple sub taxes, often called _components_ of the tax.  For example, you may have an item that is charged a tax rate called \"City import tax (8%)\" that has two components: \n\n- A city tax of 5%  \n- An import tax of 3%\n\n> **Effective tax rates**  \n> - Where there are multiple components of a tax, each component may be calculated on the original amount and added together. Alternatively, one tax may be calculated on the sub-total of the original amount plus another tax, which is referred to as _compounding_. When there is compounding, the effective tax rate is the rate that, if applied to the original amount, would result in the total amount of tax with compounding.  \n>\n> **Example:**  \n> A tax has two components. Both components have a rate of 10%, and one component is compound. In this case, there is a total tax rate of 20% but an effective tax rate of 21%.\n>\n> - For QuickBooks Online, Codat doesn't use compound rates. Instead, the calculated effective tax rate for each component is shown. This means that the effective and total rates are the same because the total tax rate is a sum of the component rates.",
-        "type": "object",
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "Identifier for the tax rate, unique for the company in the accounting platform."
-              },
-              "name": {
-                "type": "string",
-                "nullable": true,
-                "description": "Codat-augmented name of the tax rate in the accounting platform."
-              },
-              "code": {
-                "type": "string",
-                "nullable": true,
-                "description": "Code for the tax rate from the accounting platform."
-              },
-              "status": {
-                "$ref": "#/components/schemas/TaxRate/definitions/taxRateStatus"
-              },
-              "effectiveTaxRate": {
-                "type": "number",
-                "nullable": true,
-                "description": "See Effective tax rates description."
-              },
-              "totalTaxRate": {
-                "type": "number",
-                "nullable": true,
-                "description": "Total (not compounded) sum of the components of a tax rate."
-              },
-              "components": {
-                "type": "array",
-                "nullable": true,
-                "items": {
-                  "$ref": "#/components/schemas/TaxRate/definitions/taxRateComponent"
-                }
-              },
-              "validDatatypeLinks": {
-                "type": "array",
-                "nullable": true,
-                "items": {
-                  "$ref": "#/components/schemas/ValidDataTypeLinks"
-                }
-              },
-              "metadata": {
-                "$ref": "#/components/schemas/Metadata"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/ModifiedDates"
-          }
-        ],
-        "definitions": {
-          "taxRateRef": {
-            "title": "Tax rate reference",
-            "type": "object",
-            "description": "Data types that reference a tax rate, for example invoice and bill line items, use a taxRateRef that includes the ID and name of the linked tax rate.\n\nFound on:\n\n- Bill line items\n- Bill Credit Note line items\n- Credit Note line items\n- Direct incomes line items\n- Invoice line items\n- Items",
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "Unique identifier for the tax rate in the accounting platform."
-              },
-              "name": {
-                "type": "string",
-                "description": "Name of the tax rate in the accounting platform."
-              },
-              "effectiveTaxRate": {
-                "type": "number",
-                "description": "Applicable tax rate."
-              }
-            }
-          },
-          "taxRateStatus": {
-            "title": "Tax rate status",
-            "description": "Status of the tax rate in the accounting platform.  \n- `Active` - An active tax rate in use by a company.  \n- `Archived` - A tax rate that has been archived or is inactive in the accounting platform.  \n- `Unknown` - Where the status of the tax rate cannot be determined from the underlying platform.",
-            "type": "string",
-            "enum": [
-              "Unknown",
-              "Active",
-              "Archived"
-            ]
-          },
-          "taxRateComponent": {
-            "title": "Tax Rate Component",
-            "type": "object",
-            "description": "A tax rate can be made up of multiple sub taxes, often called components of the tax.",
-            "additionalProperties": false,
-            "properties": {
-              "name": {
-                "type": "string",
-                "nullable": true,
-                "description": "Name of the tax rate component."
-              },
-              "rate": {
-                "type": "number",
-                "nullable": true,
-                "description": "The rate of the tax rate component, usually a percentage."
-              },
-              "isCompound": {
-                "type": "boolean",
-                "description": "A flag to indicate with the tax is calculated using the principle of compounding. "
-              }
-            },
-            "required": [
-              "isCompound"
-            ]
-          }
-        }
-      },
-      "TaxRates": {
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/TaxRate"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
-      "TrackingCategory": {
-        "title": "Tracking category",
-        "description": "Details of a category used for tracking transactions.\n\n> Language tip\n>\n> Parameters used to track types of spend in various parts of an organization can be called  **dimensions**, **projects**, **classes**, or **locations** in different accounting platforms. In Codat, we refer to these as tracking categories.\n\nView the coverage for tracking categories in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=trackingCategories\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nTracking categories are used to monitor cost centres and control budgets that sit outside the standard chart of accounts. Customers may use tracking categories to group together and track the income and costs of specific departments, projects, locations or customers.\n\nFrom their accounting system, customers can: \n\n- Create and maintain tracking categories and tracking category types.\n- View all tracking categories that are available for use.\n- View the relationships between the categories.\n- Assign invoices, bills, credit notes, or bill credit notes to one or more categories.\n- View the categories that a transaction belongs to.\n- View all transactions in a tracking category.\n\n> **Example use case**\n>\n> Monitor the budget for your annual conference using a tracking category called 'AnnualConference2020' with the **type** set to **Costing**.\n\nIf a tracking category has a parent category, the ID of that parent category is displayed. There is also a `hasChildren` field that shows whether there are child subcategories nested beneath. ",
-        "type": "object",
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "The identifier for the item, unique per tracking category",
-                "nullable": true
-              },
-              "name": {
-                "type": "string",
-                "description": "The name of the tracking category",
-                "nullable": true
-              },
-              "status": {
-                "$ref": "#/components/schemas/TrackingCategory/definitions/status"
-              },
-              "parentId": {
-                "type": "string",
-                "description": "The identifier for this item's immediate parent",
-                "nullable": true
-              },
-              "hasChildren": {
-                "type": "boolean",
-                "description": "Boolean value indicating whether this category has SubCategories"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/ModifiedDates"
-          }
-        ],
-        "definitions": {
-          "trackingCategoryRef": {
-            "required": [
-              "id"
-            ],
-            "type": "object",
-            "description": "References a category against which the item is tracked.",
-            "deprecated": true,
-            "properties": {
-              "id": {
-                "minLength": 1,
-                "type": "string"
-              },
-              "name": {
-                "type": "string",
-                "nullable": true
-              }
-            }
-          },
-          "status": {
-            "title": "Tracking category status",
-            "type": "string",
-            "description": "Current state of the tracking category.",
-            "enum": [
-              "Unknown",
-              "Active",
-              "Archived"
-            ]
-          }
-        },
-        "examples": [
-          {
-            "id": "string",
-            "name": "string",
-            "status": "Unknown",
-            "parentId": "string",
-            "hasChildren": true,
-            "modifiedDate": "2022-10-23T00:00:00Z",
-            "sourceModifiedDate": "2022-10-23T00:00:00Z"
-          }
-        ]
-      },
-      "TrackingCategories": {
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/TrackingCategory"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
-      "TrackingCategoryTree": {
-        "title": "Tracking category tree",
-        "description": "The full structure of a specific tracking category including any child or subcategories.",
-        "type": "object",
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "The identifier for the item, unique per tracking category",
-                "nullable": true
-              },
-              "name": {
-                "type": "string",
-                "description": "The name of the tracking category",
-                "nullable": true
-              },
-              "status": {
-                "$ref": "#/components/schemas/TrackingCategory/definitions/status"
-              },
-              "parentId": {
-                "type": "string",
-                "description": "The identifier for this item's immediate parent",
-                "nullable": true
-              },
-              "hasChildren": {
-                "type": "boolean",
-                "description": "Boolean value indicating whether this category has SubCategories"
-              },
-              "subCategories": {
-                "type": "array",
-                "nullable": true,
-                "description": "A collection of subcategories that are nested beneath this category.",
-                "items": {
-                  "$ref": "#/components/schemas/TrackingCategoryTree"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/ModifiedDates"
-          }
-        ]
-      },
       "Metadata": {
         "type": "object",
         "x-internal": true,
@@ -38352,111 +38328,6 @@
           }
         },
         "title": "Attachments"
-      },
-      "Dataset": {
-        "x-internal": true,
-        "required": [
-          "companyId",
-          "connectionId",
-          "id",
-          "isCompleted",
-          "isErrored",
-          "progress",
-          "requested",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "datasetLogsUrl": {
-            "type": "string",
-            "nullable": true
-          },
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "companyId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "connectionId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "dataType": {
-            "type": "string",
-            "nullable": true
-          },
-          "status": {
-            "enum": [
-              "Initial",
-              "Queued",
-              "Fetching",
-              "MapQueued",
-              "Mapping",
-              "Complete",
-              "FetchError",
-              "MapError",
-              "InternalError",
-              "ProcessingQueued",
-              "Processing",
-              "ProcessingError",
-              "ValidationQueued",
-              "Validating",
-              "ValidationError",
-              "AuthError",
-              "Cancelled",
-              "NotSupported",
-              "RateLimitError",
-              "PermissionsError",
-              "PrerequisiteNotMet"
-            ],
-            "type": "string"
-          },
-          "errorMessage": {
-            "type": "string",
-            "nullable": true
-          },
-          "requested": {
-            "$ref": "#/components/schemas/DateTime"
-          },
-          "completed": {
-            "$ref": "#/components/schemas/DateTime",
-            "nullable": true
-          },
-          "progress": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "isCompleted": {
-            "type": "boolean"
-          },
-          "isErrored": {
-            "type": "boolean"
-          },
-          "validationInformationUrl": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "title": ""
-      },
-      "ProjectRef": {
-        "x-internal": true,
-        "required": [
-          "id"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          }
-        }
       },
       "ValidDataTypeLinks": {
         "title": "Valid data type links",
@@ -38494,7 +38365,7 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/Account"
+                "$ref": "#/components/schemas/BankAccount"
               }
             }
           },
@@ -38606,17 +38477,6 @@
           "default": true
         }
       },
-      "accountId": {
-        "name": "accountId",
-        "in": "path",
-        "required": true,
-        "schema": {
-          "type": "string",
-          "format": "uuid",
-          "example": "8a210b68-6988-11ed-a1eb-0242ac120002"
-        },
-        "description": "Unique identifier for an account"
-      },
       "attachmentId": {
         "name": "attachmentId",
         "in": "path",
@@ -38634,7 +38494,9 @@
         "required": true,
         "schema": {
           "type": "string",
-          "example": "8a210b68-6988-11ed-a1eb-0242ac120002"
+          "examples": {
+            "$ref": "#/components/parameters/billId/schema/examples"
+          }
         },
         "description": "Unique identifier for a supplier"
       },
@@ -38644,8 +38506,12 @@
         "required": true,
         "schema": {
           "type": "string",
-          "format": "uuid",
-          "example": "8a210b68-6988-11ed-a1eb-0242ac120002"
+          "examples": [
+            "13d946f0-c5d5-42bc-b092-97ece17923ab",
+            "9wg4lep4ush5cxs79pl8sozmsndbaukll3ind4g7buqbm1h2",
+            7110701885,
+            "EILBDVJVNUAGVKRQ"
+          ]
         },
         "description": "Unique identifier for a bill"
       },
@@ -38655,21 +38521,11 @@
         "required": true,
         "schema": {
           "type": "string",
-          "format": "uuid",
-          "example": "8a210b68-6988-11ed-a1eb-0242ac120002",
+          "examples": {
+            "$ref": "#/components/parameters/billId/schema/examples"
+          },
           "description": "Unique identifier for a bill payment"
         }
-      },
-      "bankAccountId": {
-        "name": "bankAccountId",
-        "in": "path",
-        "required": true,
-        "schema": {
-          "type": "string",
-          "format": "uuid",
-          "example": "8a210b68-6988-11ed-a1eb-0242ac120002"
-        },
-        "description": "Unique identifier for a bank account"
       }
     },
     "securitySchemes": {

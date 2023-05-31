@@ -618,6 +618,239 @@
           },
           "409": {
             "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/data/commerce-customers/{customerId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        },
+        {
+          "name": "customerId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "examples": {
+              "$ref": "#/components/schemas/Order/allOf/0/properties/id/examples"
+            }
+          },
+          "description": "Unique identifier for a customer."
+        }
+      ],
+      "get": {
+        "tags": [
+          "Customers"
+        ],
+        "summary": "Get customer",
+        "operationId": "get-customer",
+        "description": "Get a specific commerce customer for the given company and data connection.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Customer"
+                },
+                "examples": {
+                  "BigCommerce": {
+                    "value": {
+                      "id": "1",
+                      "customerName": "Amy Jones",
+                      "emailAddress": "a.durbanjackson+amy@codat.io",
+                      "defaultCurrency": "XXX",
+                      "phone": "07770666777",
+                      "addresses": [
+                        {
+                          "type": "Unknown",
+                          "line1": "My Billing Address ./*drop table",
+                          "city": "Portsmouth",
+                          "region": "",
+                          "country": "United Kingdom",
+                          "postalCode": "PS13HJ"
+                        },
+                        {
+                          "type": "Unknown",
+                          "line1": "This is my address, I cant hit enter.",
+                          "city": "Portsmouth",
+                          "region": "",
+                          "country": "United Kingdom",
+                          "postalCode": "PS13HJ"
+                        }
+                      ],
+                      "createdDate": "2022-06-15T15:54:15Z",
+                      "modifiedDate": "2023-04-11T10:33:49Z",
+                      "sourceModifiedDate": "2022-06-15T15:54:15Z"
+                    }
+                  },
+                  "Clover": {
+                    "value": {
+                      "id": "2CBJ8R898ZJAR",
+                      "customerName": "",
+                      "addresses": [],
+                      "createdDate": "2021-09-22T13:10:12Z",
+                      "modifiedDate": "2023-01-09T11:01:03Z",
+                      "sourceModifiedDate": "0001-01-01T00:00:00"
+                    }
+                  },
+                  "Mollie": {
+                    "value": {
+                      "id": "cst_NUkBHQmekz",
+                      "customerName": "Frod Baggins",
+                      "emailAddress": "frodo.baggings@theshire.com",
+                      "addresses": [],
+                      "createdDate": "2022-01-18T11:41:54",
+                      "modifiedDate": "2022-03-17T15:47:28Z"
+                    }
+                  },
+                  "Mollie Test": {
+                    "value": {
+                      "id": "cst_NUkBHQmekz",
+                      "customerName": "Frod Baggins",
+                      "emailAddress": "frodo.baggings@theshire.com",
+                      "addresses": [],
+                      "createdDate": "2022-01-18T11:41:54",
+                      "modifiedDate": "2022-08-17T11:33:19Z"
+                    }
+                  },
+                  "PrestaShop": {
+                    "value": {
+                      "id": "2",
+                      "customerName": "Bob Smith",
+                      "emailAddress": "bob.smith@example.com",
+                      "addresses": [
+                        {
+                          "type": "Unknown",
+                          "line1": "1 test street",
+                          "city": "City Test",
+                          "region": "Virginia",
+                          "country": "US",
+                          "postalCode": "55678"
+                        }
+                      ],
+                      "createdDate": "2021-09-02T07:54:26",
+                      "modifiedDate": "2022-01-26T15:09:42Z",
+                      "sourceModifiedDate": "2021-09-02T07:54:26"
+                    }
+                  },
+                  "Shopify": {
+                    "value": {
+                      "id": "5839032287390",
+                      "customerName": "AL A",
+                      "emailAddress": "a.macra@codat.io",
+                      "addresses": [
+                        {
+                          "type": "Unknown",
+                          "line1": "301 Ink Rooms, 28 Easton St, Farringdon",
+                          "line2": "28 Easton St, Farringdon",
+                          "city": "London",
+                          "region": "England",
+                          "country": "United Kingdom",
+                          "postalCode": "WC1X 0BE"
+                        }
+                      ],
+                      "createdDate": "2021-11-18T15:24:03",
+                      "modifiedDate": "2023-02-10T15:18:25Z",
+                      "sourceModifiedDate": "2021-11-18T15:24:03"
+                    }
+                  },
+                  "Square": {
+                    "value": {
+                      "id": "FT9948H3VD6GF8MPDD5438KY1M",
+                      "emailAddress": "fake@name.com",
+                      "phone": "+441234567890",
+                      "addresses": [
+                        {
+                          "type": "Unknown",
+                          "line1": "1 Main Street",
+                          "line2": "Flat 20",
+                          "city": "London",
+                          "region": "London",
+                          "postalCode": "W1A 1AA"
+                        }
+                      ],
+                      "createdDate": "2021-03-08T11:21:11Z",
+                      "modifiedDate": "2022-08-02T10:27:32Z",
+                      "sourceModifiedDate": "2021-03-08T11:21:11Z"
+                    }
+                  },
+                  "Stripe Test": {
+                    "value": {
+                      "id": "cus_LXdjls7KY5ZHaz",
+                      "customerName": "Barry Smith",
+                      "emailAddress": "barry@example.com",
+                      "defaultCurrency": "gbp",
+                      "addresses": [],
+                      "note": "Test Subscription",
+                      "createdDate": "2022-04-20T07:59:52Z",
+                      "modifiedDate": "2022-09-30T11:18:27Z"
+                    }
+                  },
+                  "WooCommerce": {
+                    "value": {
+                      "id": "201694267",
+                      "customerName": "Qa Test",
+                      "emailAddress": "a.macra@codat.io",
+                      "phone": "",
+                      "addresses": [
+                        {
+                          "type": "Billing",
+                          "line1": "",
+                          "line2": "",
+                          "city": "",
+                          "region": "",
+                          "country": "",
+                          "postalCode": ""
+                        }
+                      ],
+                      "createdDate": "2021-03-11T09:04:27",
+                      "modifiedDate": "2021-07-13T16:19:00Z",
+                      "sourceModifiedDate": "2021-03-11T09:07:00"
+                    }
+                  },
+                  "Zettle": {
+                    "value": {
+                      "id": "firstname.lastname@example.com",
+                      "customerName": "Firstname Lastname",
+                      "emailAddress": "firstname.lastname@example.com",
+                      "addresses": [
+                        {
+                          "type": "Unknown",
+                          "line1": "Line1",
+                          "city": "City",
+                          "country": "GB",
+                          "postalCode": "TT1 1TT"
+                        }
+                      ],
+                      "createdDate": "2021-01-07T16:17:34",
+                      "modifiedDate": "2021-01-27T13:08:51Z",
+                      "sourceModifiedDate": "2021-01-08T09:57:56"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
           }
         }
       }
@@ -637,6 +870,20 @@
           "Disputes"
         ],
         "operationId": "list-disputes",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/page"
+          },
+          {
+            "$ref": "#/components/parameters/pageSize"
+          },
+          {
+            "$ref": "#/components/parameters/query"
+          },
+          {
+            "$ref": "#/components/parameters/orderBy"
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -764,23 +1011,105 @@
           },
           "409": {
             "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "List commerce disputes",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/page"
+        "description": "List commerce disputes"
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/data/commerce-disputes/{disputeId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        },
+        {
+          "name": "disputeId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "examples": {
+              "$ref": "#/components/schemas/Order/allOf/0/properties/id/examples"
+            }
           },
-          {
-            "$ref": "#/components/parameters/pageSize"
+          "description": "Unique identifier for a dispute."
+        }
+      ],
+      "get": {
+        "summary": "Get dispute",
+        "tags": [
+          "Disputes"
+        ],
+        "operationId": "get-dispute",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dispute"
+                },
+                "examples": {
+                  "Shopify": {
+                    "value": {
+                      "id": "8502411422",
+                      "disputedTransactions": [
+                        {
+                          "id": "3684116791454",
+                          "type": "Order"
+                        }
+                      ],
+                      "totalAmount": 175,
+                      "currency": "GBP",
+                      "status": "Processing",
+                      "reason": "fraudulent",
+                      "dueDate": "2021-03-28T00:00:00",
+                      "createdDate": "2021-03-19T13:16:27",
+                      "modifiedDate": "2023-02-10T15:18:22Z",
+                      "sourceModifiedDate": "2021-03-28T11:00:17"
+                    }
+                  },
+                  "Stripe Test": {
+                    "value": {
+                      "id": "dp_1Hqhl8A8m8S1Gh7OJrvF3gsK",
+                      "disputedTransactions": [
+                        {
+                          "id": "txn_1Hqhl8A8m8S1Gh7OtmAPNr9e",
+                          "type": "Payment"
+                        }
+                      ],
+                      "totalAmount": 25,
+                      "currency": "GBP",
+                      "status": "Processing",
+                      "reason": "fraudulent",
+                      "dueDate": "2020-12-02T23:59:59Z",
+                      "createdDate": "2020-11-23T16:19:22Z",
+                      "modifiedDate": "2022-09-30T11:18:27Z"
+                    }
+                  }
+                }
+              }
+            }
           },
-          {
-            "$ref": "#/components/parameters/query"
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
           },
-          {
-            "$ref": "#/components/parameters/orderBy"
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
           }
-        ]
+        },
+        "description": "Get a specific commerce dispute."
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-info": {
@@ -912,7 +1241,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/LocationsResponse"
+                  "$ref": "#/components/schemas/Locations"
                 },
                 "examples": {
                   "Clover": {
@@ -1048,9 +1377,126 @@
           },
           "409": {
             "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
         "description": "Retrieve a list of locations as seen in the commerce platform.\n\nA `location` is a geographic place at which stocks of products may be held, or from where orders were placed."
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/data/commerce-locations/{locationId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        },
+        {
+          "name": "locationId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "examples": {
+              "$ref": "#/components/schemas/Order/allOf/0/properties/id/examples"
+            }
+          },
+          "description": "Unique identifier for a location."
+        }
+      ],
+      "get": {
+        "summary": "Get location",
+        "tags": [
+          "Locations"
+        ],
+        "operationId": "get-location",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Location"
+                },
+                "examples": {
+                  "Clover": {
+                    "value": {
+                      "id": "GA3WP1ZC3ZFK1",
+                      "name": "Codat",
+                      "address": {
+                        "type": "Inventory",
+                        "line1": "301 Ink Rooms, 28 Easton Street",
+                        "city": "London",
+                        "region": "London",
+                        "country": "GB",
+                        "postalCode": "WC1X 0BE"
+                      },
+                      "modifiedDate": "2023-01-09T11:01:03Z"
+                    }
+                  },
+                  "Lightspeed K Trial": {
+                    "value": {
+                      "id": "647208621834538",
+                      "name": "QA Shared - New Test Site",
+                      "address": {
+                        "type": "Unknown",
+                        "country": "AU"
+                      },
+                      "modifiedDate": "2023-03-02T09:48:48Z"
+                    }
+                  },
+                  "Shopify": {
+                    "value": {
+                      "id": "61375348894",
+                      "name": "301 Ink Rooms, 28 Easton St",
+                      "address": {
+                        "type": "Inventory",
+                        "line1": "301 Ink Rooms, 28 Easton St",
+                        "city": "London",
+                        "region": "London",
+                        "country": "GB",
+                        "postalCode": "WC1X 0BE"
+                      },
+                      "modifiedDate": "2023-02-10T15:18:25Z",
+                      "sourceModifiedDate": "2021-03-19T10:06:06"
+                    }
+                  },
+                  "Square": {
+                    "value": {
+                      "id": "D8DVHD1G6NT2J",
+                      "name": "Codat Limited",
+                      "address": {
+                        "type": "Inventory",
+                        "line1": "301 Ink Rooms",
+                        "line2": "28 Easton Street",
+                        "city": "London",
+                        "country": "GB",
+                        "postalCode": "WC1X0BE"
+                      },
+                      "modifiedDate": "2022-08-02T10:27:32Z",
+                      "sourceModifiedDate": "2020-01-17T14:07:30Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "description": "Retrieve a location as seen in the commerce platform.\n\nA `location` is a geographic place at which stocks of products may be held, or from where orders were placed."
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-orders": {
@@ -2441,6 +2887,9 @@
           },
           "409": {
             "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
         "description": "Get a list of orders placed or held on the linked commerce platform",
@@ -2458,6 +2907,774 @@
             "$ref": "#/components/parameters/orderBy"
           }
         ]
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/data/commerce-orders/{orderId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        },
+        {
+          "name": "orderId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "examples": {
+              "$ref": "#/components/schemas/Order/allOf/0/properties/id/examples"
+            }
+          },
+          "description": "Unique identifier for an order."
+        }
+      ],
+      "get": {
+        "summary": "Get order",
+        "tags": [
+          "Orders"
+        ],
+        "operationId": "get-order",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "x-speakeasy-usage-example": true,
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                },
+                "examples": {
+                  "Amazon Seller Central": {
+                    "value": {
+                      "id": "902-1845936-5435065",
+                      "orderNumber": "902-1845936-5435065",
+                      "country": "US ",
+                      "currency": "USD",
+                      "createdDate": "1970-01-19T03:58:30Z",
+                      "totalAmount": 10,
+                      "totalRefund": 0,
+                      "totalTaxAmount": 1.01,
+                      "totalDiscount": 0,
+                      "totalGratuity": 0,
+                      "orderLineItems": [
+                        {
+                          "id": "O05015851154158",
+                          "quantity": 1,
+                          "taxPercentage": 11.23,
+                          "totalAmount": 10,
+                          "totalTaxAmount": 1.01,
+                          "unitPrice": 8.99,
+                          "taxes": [],
+                          "productVariantRef": {
+                            "id": "NABetaASINB00551Q3CS"
+                          },
+                          "discountAllocations": []
+                        }
+                      ],
+                      "payments": [],
+                      "serviceCharges": [],
+                      "modifiedDate": "2023-01-09T09:12:12Z",
+                      "sourceModifiedDate": "1970-01-19T03:58:32Z"
+                    }
+                  },
+                  "BigCommerce": {
+                    "value": {
+                      "id": "100",
+                      "orderNumber": "100",
+                      "country": "GBR",
+                      "currency": "GBP",
+                      "createdDate": "2022-06-15T15:48:18Z",
+                      "totalAmount": 675,
+                      "totalRefund": 0,
+                      "totalTaxAmount": 112.5,
+                      "totalDiscount": 10,
+                      "totalGratuity": 0,
+                      "orderLineItems": [
+                        {
+                          "id": "1",
+                          "quantity": 1,
+                          "taxPercentage": 20,
+                          "totalAmount": 221.64,
+                          "totalTaxAmount": 36.94,
+                          "unitPrice": 187.5,
+                          "taxes": [],
+                          "productRef": {
+                            "id": "86",
+                            "name": "[Sample] Able Brewing System"
+                          },
+                          "productVariantRef": {
+                            "id": "66",
+                            "name": "[Sample] Able Brewing System"
+                          },
+                          "discountAllocations": [
+                            {
+                              "name": "Manual Discount",
+                              "totalAmount": 3.36
+                            }
+                          ]
+                        },
+                        {
+                          "id": "2",
+                          "quantity": 5,
+                          "taxPercentage": 19.9999,
+                          "totalAmount": 438.36,
+                          "totalTaxAmount": 73.06,
+                          "unitPrice": 74.1667,
+                          "taxes": [],
+                          "productRef": {
+                            "id": "81",
+                            "name": "[Sample] Orbit Terrarium - Small"
+                          },
+                          "productVariantRef": {
+                            "id": "65",
+                            "name": "[Sample] Orbit Terrarium - Small"
+                          },
+                          "discountAllocations": [
+                            {
+                              "name": "Manual Discount",
+                              "totalAmount": 6.64
+                            }
+                          ]
+                        }
+                      ],
+                      "payments": [],
+                      "serviceCharges": [
+                        {
+                          "description": "Shipping Charge",
+                          "totalAmount": 15,
+                          "taxPercentage": 20,
+                          "taxAmount": 2.5,
+                          "taxes": [],
+                          "quantity": 1,
+                          "type": "Shipping"
+                        }
+                      ],
+                      "customerRef": {
+                        "id": "0"
+                      },
+                      "modifiedDate": "2023-04-11T10:33:56Z",
+                      "sourceModifiedDate": "2022-06-15T15:48:18Z"
+                    }
+                  },
+                  "Clover": {
+                    "value": {
+                      "id": "0BCZPWGFC3M16",
+                      "orderNumber": "0BCZPWGFC3M16",
+                      "country": "GB ",
+                      "currency": "GBP",
+                      "createdDate": "2021-05-24T10:33:41Z",
+                      "totalAmount": 1200,
+                      "totalRefund": 0,
+                      "totalTaxAmount": 200,
+                      "totalDiscount": 0,
+                      "totalGratuity": 0,
+                      "orderLineItems": [
+                        {
+                          "id": "985WY5J4H12XY",
+                          "quantity": 1,
+                          "taxPercentage": 20,
+                          "totalAmount": 1200,
+                          "totalTaxAmount": 200,
+                          "unitPrice": 1000,
+                          "taxes": [
+                            {
+                              "taxComponentRef": {
+                                "id": "KAWQTPZP3R9VT",
+                                "name": "VAT 20%"
+                              },
+                              "taxAmount": 200
+                            }
+                          ],
+                          "productRef": {
+                            "id": "NMZHKK6FKF6ZJ",
+                            "name": "Laptop"
+                          },
+                          "discountAllocations": []
+                        }
+                      ],
+                      "payments": [
+                        {
+                          "id": "S2D924NX13T2G"
+                        }
+                      ],
+                      "serviceCharges": [],
+                      "locationRef": {
+                        "id": "GA3WP1ZC3ZFK1",
+                        "name": "Codat"
+                      },
+                      "modifiedDate": "2022-09-08T15:47:43Z",
+                      "sourceModifiedDate": "2021-05-24T10:33:45Z"
+                    }
+                  },
+                  "Lightspeed K Trial": {
+                    "value": {
+                      "id": "A61465.1",
+                      "orderNumber": "A61465.1",
+                      "country": "AU ",
+                      "currency": "AUD",
+                      "createdDate": "2022-12-09T02:27:14Z",
+                      "closedDate": "2022-12-09T02:27:46Z",
+                      "totalAmount": 5,
+                      "totalRefund": 0,
+                      "totalTaxAmount": 0.45,
+                      "totalDiscount": 0,
+                      "totalGratuity": 0,
+                      "orderLineItems": [
+                        {
+                          "id": "S61465.1",
+                          "quantity": 1,
+                          "taxPercentage": 10,
+                          "totalAmount": 5,
+                          "totalTaxAmount": 0.45,
+                          "unitPrice": 4.5455,
+                          "taxes": [
+                            {
+                              "taxComponentRef": {
+                                "id": "GST10",
+                                "name": "10% GST"
+                              },
+                              "taxAmount": 0.45
+                            }
+                          ],
+                          "productRef": {
+                            "id": "647208621834617",
+                            "name": "Hot Chocolate"
+                          },
+                          "discountAllocations": []
+                        }
+                      ],
+                      "payments": [
+                        {
+                          "id": "R61465.1_1_A61465.1_2022-12-09T02:27:46.273Z",
+                          "amount": 5,
+                          "currency": "AUD",
+                          "type": "Unknown",
+                          "status": "Paid",
+                          "dueDate": "0001-01-01T00:00:00",
+                          "createdDate": "2022-12-09T02:27:46",
+                          "modifiedDate": "2023-03-02T09:50:43"
+                        }
+                      ],
+                      "serviceCharges": [],
+                      "locationRef": {
+                        "id": "647208621834538",
+                        "name": "QA Shared - New Test Site"
+                      },
+                      "modifiedDate": "2023-03-08T13:49:34Z"
+                    }
+                  },
+                  "Mollie": {
+                    "value": {
+                      "id": "ord_2at3ck",
+                      "orderNumber": "1337",
+                      "country": "NLD",
+                      "currency": "EUR",
+                      "createdDate": "2022-01-20T09:28:32",
+                      "totalAmount": 1027.99,
+                      "totalRefund": 0,
+                      "totalTaxAmount": 178.41,
+                      "totalDiscount": 100,
+                      "totalGratuity": 0,
+                      "orderLineItems": [
+                        {
+                          "id": "odl_1.3tvc32",
+                          "quantity": 1,
+                          "taxPercentage": 21,
+                          "totalAmount": 329.99,
+                          "totalTaxAmount": 57.27,
+                          "unitPrice": 329.99,
+                          "taxes": [],
+                          "discountAllocations": []
+                        },
+                        {
+                          "id": "odl_1.x95vuk",
+                          "quantity": 2,
+                          "taxPercentage": 21,
+                          "totalAmount": 698,
+                          "totalTaxAmount": 121.14,
+                          "unitPrice": 399,
+                          "taxes": [],
+                          "discountAllocations": [
+                            {
+                              "name": "Discount",
+                              "totalAmount": 100
+                            }
+                          ]
+                        }
+                      ],
+                      "payments": [
+                        {
+                          "id": "tr_GpHuaqHrca",
+                          "amount": 1027.99,
+                          "currency": "EUR",
+                          "type": "OnlineCard",
+                          "status": "Failed",
+                          "dueDate": "0001-01-01T00:00:00",
+                          "createdDate": "2022-02-08T15:44:22",
+                          "modifiedDate": "2022-03-17T15:47:28",
+                          "sourceModifiedDate": "2022-02-08T16:02:02"
+                        },
+                        {
+                          "id": "tr_w7RGQc3k3V",
+                          "amount": 1027.99,
+                          "currency": "EUR",
+                          "type": "OnlineCard",
+                          "status": "Failed",
+                          "dueDate": "0001-01-01T00:00:00",
+                          "createdDate": "2022-01-20T09:28:32",
+                          "modifiedDate": "2022-03-17T15:47:28",
+                          "sourceModifiedDate": "2022-01-20T09:46:02"
+                        }
+                      ],
+                      "serviceCharges": [],
+                      "modifiedDate": "2022-03-17T15:47:28Z"
+                    }
+                  },
+                  "Mollie Test": {
+                    "value": {
+                      "id": "ord_2at3ck",
+                      "orderNumber": "1337",
+                      "country": "NLD",
+                      "currency": "EUR",
+                      "createdDate": "2022-01-20T09:28:32",
+                      "totalAmount": 1027.99,
+                      "totalRefund": 0,
+                      "totalTaxAmount": 178.41,
+                      "totalDiscount": 100,
+                      "totalGratuity": 0,
+                      "orderLineItems": [
+                        {
+                          "id": "odl_1.x95vuk",
+                          "quantity": 2,
+                          "taxPercentage": 21,
+                          "totalAmount": 698,
+                          "totalTaxAmount": 121.14,
+                          "unitPrice": 338.43,
+                          "taxes": [],
+                          "discountAllocations": [
+                            {
+                              "name": "Discount",
+                              "totalAmount": 100
+                            }
+                          ]
+                        },
+                        {
+                          "id": "odl_1.3tvc32",
+                          "quantity": 1,
+                          "taxPercentage": 21,
+                          "totalAmount": 329.99,
+                          "totalTaxAmount": 57.27,
+                          "unitPrice": 272.72,
+                          "taxes": [],
+                          "discountAllocations": []
+                        }
+                      ],
+                      "payments": [
+                        {
+                          "id": "tr_GpHuaqHrca"
+                        },
+                        {
+                          "id": "tr_w7RGQc3k3V"
+                        }
+                      ],
+                      "serviceCharges": [],
+                      "modifiedDate": "2022-08-17T11:33:19Z"
+                    }
+                  },
+                  "Partner Commerce": {
+                    "value": {
+                      "id": "6d135134-2f77-45f7-af3d-ee873e42da45",
+                      "orderNumber": "93128704",
+                      "country": "GM ",
+                      "currency": "CAD",
+                      "createdDate": "2021-02-10T01:37:23",
+                      "totalAmount": 203.82,
+                      "totalRefund": 0,
+                      "totalTaxAmount": 40.77,
+                      "totalDiscount": 25.63,
+                      "totalGratuity": 80.81,
+                      "orderLineItems": [
+                        {
+                          "id": "89f5e83a-c87d-4b60-a009-0ea9065867aa",
+                          "quantity": 3,
+                          "taxPercentage": 20,
+                          "totalAmount": 85.44,
+                          "totalTaxAmount": 17.09,
+                          "unitPrice": 28.48,
+                          "taxes": [],
+                          "productRef": {
+                            "id": "98ef828e-33e1-4c23-9383-a029f1d6a3a6"
+                          },
+                          "productVariantRef": {
+                            "id": "dffcd99e-13bb-4b89-89ef-719b3b0777e6"
+                          },
+                          "discountAllocations": [
+                            {
+                              "name": "Discount",
+                              "totalAmount": 8.54
+                            },
+                            {
+                              "name": "Discount",
+                              "totalAmount": 17.09
+                            }
+                          ]
+                        },
+                        {
+                          "id": "4c65f0d9-05c8-48eb-9c4a-1774f5073e66",
+                          "quantity": 3,
+                          "taxPercentage": 20,
+                          "totalAmount": 118.38,
+                          "totalTaxAmount": 23.68,
+                          "unitPrice": 39.46,
+                          "taxes": [],
+                          "productRef": {
+                            "id": "561f8efb-3429-4c1f-a014-1fa595f9b3c6"
+                          },
+                          "productVariantRef": {
+                            "id": "e0715a7a-0179-4a2e-b40d-800fd2f36764"
+                          },
+                          "discountAllocations": []
+                        }
+                      ],
+                      "payments": [
+                        {
+                          "id": "3ec3d4c4-8003-4f77-a44e-08b3e17057bf"
+                        }
+                      ],
+                      "serviceCharges": [],
+                      "locationRef": {
+                        "id": "d84a8ce0-d7e4-400a-b07a-d4bddd9c1873"
+                      },
+                      "customerRef": {
+                        "id": "0dc0206d-f22f-48c9-a4e5-79f8383c3426"
+                      },
+                      "modifiedDate": "2022-05-12T07:22:02Z",
+                      "sourceModifiedDate": "2021-02-10T01:37:23"
+                    }
+                  },
+                  "PrestaShop": {
+                    "value": {
+                      "id": "1",
+                      "orderNumber": "XKBKNABJK",
+                      "country": "US ",
+                      "currency": "USD",
+                      "createdDate": "2021-09-02T06:00:54",
+                      "totalAmount": 61.8,
+                      "totalRefund": 0,
+                      "totalTaxAmount": 0,
+                      "totalDiscount": 0,
+                      "totalGratuity": 0,
+                      "orderLineItems": [
+                        {
+                          "id": "1",
+                          "quantity": 1,
+                          "taxPercentage": 0,
+                          "totalAmount": 23.9,
+                          "totalTaxAmount": 0,
+                          "unitPrice": 23.9,
+                          "taxes": [],
+                          "productRef": {
+                            "id": "1",
+                            "name": "Hummingbird printed t-shirt"
+                          },
+                          "discountAllocations": []
+                        },
+                        {
+                          "id": "2",
+                          "quantity": 1,
+                          "taxPercentage": 0,
+                          "totalAmount": 35.9,
+                          "totalTaxAmount": 0,
+                          "unitPrice": 35.9,
+                          "taxes": [],
+                          "productRef": {
+                            "id": "2",
+                            "name": "Hummingbird printed sweater"
+                          },
+                          "discountAllocations": []
+                        }
+                      ],
+                      "payments": [],
+                      "serviceCharges": [
+                        {
+                          "description": "Shipping",
+                          "totalAmount": 2,
+                          "taxPercentage": 0,
+                          "taxAmount": 0,
+                          "taxes": [],
+                          "quantity": 1,
+                          "type": "Shipping"
+                        }
+                      ],
+                      "customerRef": {
+                        "id": "1",
+                        "name": "John DOE"
+                      },
+                      "modifiedDate": "2022-01-26T15:09:42Z",
+                      "sourceModifiedDate": "2021-09-02T06:00:54"
+                    }
+                  },
+                  "Shopify": {
+                    "value": {
+                      "id": "3684119445662",
+                      "orderNumber": "1007",
+                      "country": "XXX",
+                      "currency": "GBP",
+                      "createdDate": "2021-03-19T13:18:33",
+                      "totalAmount": 600,
+                      "totalRefund": 0,
+                      "totalTaxAmount": 0,
+                      "totalDiscount": 0,
+                      "totalGratuity": 0,
+                      "orderLineItems": [
+                        {
+                          "id": "9670458146974",
+                          "quantity": 4,
+                          "taxPercentage": 0,
+                          "totalAmount": 600,
+                          "totalTaxAmount": 0,
+                          "unitPrice": 150,
+                          "taxes": [],
+                          "productRef": {
+                            "id": "6595494117534",
+                            "name": "Monitor"
+                          },
+                          "productVariantRef": {
+                            "id": "39444526694558",
+                            "name": "Monitor"
+                          },
+                          "discountAllocations": []
+                        }
+                      ],
+                      "payments": [
+                        {
+                          "id": "4630233579678",
+                          "amount": 600,
+                          "currency": "GBP",
+                          "type": "OnlineCard",
+                          "status": "Failed",
+                          "paymentProvider": "Shopify Payments",
+                          "dueDate": "0001-01-01T00:00:00",
+                          "createdDate": "2021-03-19T13:17:49",
+                          "modifiedDate": "2023-02-10T15:18:24",
+                          "sourceModifiedDate": "2021-03-19T13:17:49"
+                        },
+                        {
+                          "id": "4630234497182",
+                          "amount": 600,
+                          "currency": "GBP",
+                          "type": "OnlineCard",
+                          "status": "Paid",
+                          "paymentProvider": "Shopify Payments",
+                          "dueDate": "0001-01-01T00:00:00",
+                          "createdDate": "2021-03-19T13:18:29",
+                          "modifiedDate": "2023-02-10T15:18:24",
+                          "sourceModifiedDate": "2021-03-19T13:18:29"
+                        }
+                      ],
+                      "serviceCharges": [],
+                      "customerRef": {
+                        "id": "5097398534302",
+                        "name": "Qa Test"
+                      },
+                      "modifiedDate": "2023-02-10T15:18:24Z",
+                      "sourceModifiedDate": "2022-08-01T13:12:35"
+                    }
+                  },
+                  "Square": {
+                    "value": {
+                      "id": "BDYNvtIYyWClkTjnh99CFR3fPwKZY",
+                      "orderNumber": "BDYNvtIYyWClkTjnh99CFR3fPwKZY",
+                      "country": "GB ",
+                      "currency": "GBP",
+                      "createdDate": "2021-02-14T19:38:28Z",
+                      "closedDate": "0001-01-01T00:00:00",
+                      "totalAmount": 50,
+                      "totalRefund": 0,
+                      "totalTaxAmount": 0,
+                      "totalDiscount": 0,
+                      "totalGratuity": 0,
+                      "orderLineItems": [
+                        {
+                          "id": "lLJpgArKQbBEn9nTvLRHP",
+                          "quantity": 1,
+                          "taxPercentage": 0,
+                          "totalAmount": 50,
+                          "totalTaxAmount": 0,
+                          "unitPrice": 50,
+                          "taxes": [],
+                          "discountAllocations": []
+                        }
+                      ],
+                      "payments": [],
+                      "serviceCharges": [],
+                      "locationRef": {
+                        "id": "D8DVHD1G6NT2J",
+                        "name": "Codat Limited"
+                      },
+                      "modifiedDate": "2022-08-02T10:27:33Z",
+                      "sourceModifiedDate": "2021-02-14T19:38:28Z"
+                    }
+                  },
+                  "SumUp": {
+                    "value": {
+                      "id": "07efcdd0-7f61-4d82-957f-52e8f0bd3f89",
+                      "orderNumber": "TECXTU2KT6",
+                      "country": "XXX",
+                      "currency": "GBP",
+                      "createdDate": "2021-03-30T12:20:40Z",
+                      "totalAmount": 200,
+                      "totalRefund": 0,
+                      "totalTaxAmount": 0,
+                      "totalDiscount": 0,
+                      "totalGratuity": 0,
+                      "orderLineItems": [
+                        {
+                          "id": "Product undefined by SumUp",
+                          "quantity": 1,
+                          "taxPercentage": 0,
+                          "totalAmount": 200,
+                          "totalTaxAmount": 0,
+                          "unitPrice": 200,
+                          "taxes": [],
+                          "discountAllocations": []
+                        }
+                      ],
+                      "payments": [
+                        {
+                          "id": "07efcdd0-7f61-4d82-957f-52e8f0bd3f89"
+                        }
+                      ],
+                      "serviceCharges": [],
+                      "modifiedDate": "2022-09-14T10:58:04Z"
+                    }
+                  },
+                  "WooCommerce": {
+                    "value": {
+                      "id": "111",
+                      "orderNumber": "111",
+                      "country": "GB ",
+                      "currency": "GBP",
+                      "createdDate": "2021-03-27T23:29:38Z",
+                      "totalAmount": 39.5,
+                      "totalRefund": 0,
+                      "totalTaxAmount": 6,
+                      "totalDiscount": 0,
+                      "totalGratuity": 0,
+                      "orderLineItems": [
+                        {
+                          "id": "53",
+                          "quantity": 2,
+                          "taxPercentage": 20,
+                          "totalAmount": 12,
+                          "totalTaxAmount": 2,
+                          "unitPrice": 5,
+                          "taxes": [],
+                          "productRef": {
+                            "id": "82"
+                          },
+                          "discountAllocations": []
+                        },
+                        {
+                          "id": "54",
+                          "quantity": 2,
+                          "taxPercentage": 20,
+                          "totalAmount": 24,
+                          "totalTaxAmount": 4,
+                          "unitPrice": 10,
+                          "taxes": [],
+                          "productRef": {
+                            "id": "81"
+                          },
+                          "discountAllocations": []
+                        }
+                      ],
+                      "payments": [],
+                      "serviceCharges": [
+                        {
+                          "description": "Royal Mail",
+                          "totalAmount": 3.5,
+                          "taxPercentage": 0,
+                          "taxAmount": 0,
+                          "taxes": [],
+                          "quantity": 1,
+                          "type": "Shipping"
+                        }
+                      ],
+                      "customerRef": {
+                        "id": "200585744"
+                      },
+                      "modifiedDate": "2022-07-11T15:35:48Z",
+                      "sourceModifiedDate": "2021-04-01T13:34:59Z"
+                    }
+                  },
+                  "Zettle": {
+                    "value": {
+                      "id": "7TunRi2XEeueVK3fSQEQIw",
+                      "orderNumber": "3",
+                      "country": "GB ",
+                      "currency": "GBP",
+                      "createdDate": "2020-11-23T14:27:20Z",
+                      "totalAmount": 45,
+                      "totalRefund": 0,
+                      "totalTaxAmount": 0,
+                      "totalDiscount": 0,
+                      "totalGratuity": 0,
+                      "orderLineItems": [
+                        {
+                          "id": "0",
+                          "quantity": 1,
+                          "taxPercentage": 0,
+                          "totalAmount": 45,
+                          "totalTaxAmount": 0,
+                          "unitPrice": 45,
+                          "taxes": [],
+                          "productRef": {
+                            "id": "7f9f31e4-2d97-11eb-9f55-acde48001122"
+                          },
+                          "productVariantRef": {
+                            "id": "7f9f35ea-2d97-11eb-9f55-acde48001122"
+                          },
+                          "discountAllocations": []
+                        }
+                      ],
+                      "payments": [
+                        {
+                          "id": "ed97bcde-2d97-11eb-a42e-25130f2dd258",
+                          "amount": 45,
+                          "currency": "GBP",
+                          "type": "Paypal",
+                          "status": "Unknown",
+                          "dueDate": "0001-01-01T00:00:00",
+                          "createdDate": "2020-11-23T14:27:19",
+                          "modifiedDate": "2021-10-27T15:22:37"
+                        }
+                      ],
+                      "serviceCharges": [],
+                      "modifiedDate": "2021-10-27T15:22:37Z",
+                      "sourceModifiedDate": "2020-11-23T14:27:20Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "description": "Get a specific order placed or held on the linked commerce platform."
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-payments": {
@@ -2888,6 +4105,9 @@
           },
           "409": {
             "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
         "description": "List commerce payments for the given company & data connection.",
@@ -2905,6 +4125,184 @@
             "$ref": "#/components/parameters/orderBy"
           }
         ]
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/data/commerce-payments/{paymentId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        },
+        {
+          "name": "paymentId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "examples": {
+              "$ref": "#/components/schemas/Order/allOf/0/properties/id/examples"
+            }
+          },
+          "description": "Unique identifier for a payment."
+        }
+      ],
+      "get": {
+        "summary": "Get payment",
+        "tags": [
+          "Payments"
+        ],
+        "operationId": "get-payment",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Payment"
+                },
+                "examples": {
+                  "BigCommerce": {
+                    "value": {
+                      "id": "103_1_1_refund",
+                      "amount": -64,
+                      "currency": "GBP",
+                      "type": "Unknown",
+                      "status": "Paid",
+                      "paymentProvider": "bigpaypay",
+                      "dueDate": "0001-01-01T00:00:00",
+                      "createdDate": "2022-06-15T17:13:13Z",
+                      "modifiedDate": "2023-04-11T10:33:52Z"
+                    }
+                  },
+                  "Clover": {
+                    "value": {
+                      "id": "01J7HV88GT6B8",
+                      "amount": 1000,
+                      "currency": "USD",
+                      "paymentMethodRef": {
+                        "id": "BR5M17TG091SP",
+                        "name": "Credit Card"
+                      },
+                      "type": "Card",
+                      "status": "Paid",
+                      "paymentProvider": "clover",
+                      "dueDate": "0001-01-01T00:00:00",
+                      "createdDate": "2021-05-24T10:35:08Z",
+                      "modifiedDate": "2023-01-09T11:01:02Z",
+                      "sourceModifiedDate": "2021-05-24T10:35:08Z"
+                    }
+                  },
+                  "Lightspeed K Trial": {
+                    "value": {
+                      "id": "1_A62084.1_2023-01-05T03:34:50.296Z",
+                      "amount": 0,
+                      "currency": "AUD",
+                      "paymentMethodRef": {
+                        "id": "0"
+                      },
+                      "type": "Unknown",
+                      "status": "Paid",
+                      "dueDate": "0001-01-01T00:00:00",
+                      "createdDate": "2023-01-05T03:34:50Z",
+                      "modifiedDate": "2023-03-02T09:50:43Z"
+                    }
+                  },
+                  "Mollie": {
+                    "value": {
+                      "id": "re_Azhe8TzfUK",
+                      "amount": -20,
+                      "currency": "EUR",
+                      "type": "OnlineCard",
+                      "status": "Paid",
+                      "paymentProvider": "mollie",
+                      "dueDate": "0001-01-01T00:00:00",
+                      "createdDate": "2022-01-17T16:00:46",
+                      "modifiedDate": "2022-03-17T16:15:23Z"
+                    }
+                  },
+                  "PrestaShop": {
+                    "value": {
+                      "id": "1",
+                      "amount": 20.9,
+                      "currency": "USD",
+                      "type": "Unknown",
+                      "status": "Paid",
+                      "dueDate": "0001-01-01T00:00:00",
+                      "createdDate": "2021-09-08T01:52:55",
+                      "modifiedDate": "2022-01-26T15:09:42Z"
+                    }
+                  },
+                  "Shopify": {
+                    "value": {
+                      "id": "4630233579678",
+                      "amount": 600,
+                      "currency": "GBP",
+                      "type": "OnlineCard",
+                      "status": "Failed",
+                      "paymentProvider": "Shopify Payments",
+                      "dueDate": "0001-01-01T00:00:00",
+                      "createdDate": "2021-03-19T13:17:49Z",
+                      "modifiedDate": "2023-02-10T15:18:24Z",
+                      "sourceModifiedDate": "2021-03-19T13:17:49Z"
+                    }
+                  },
+                  "SumUp": {
+                    "value": {
+                      "id": "07efcdd0-7f61-4d82-957f-52e8f0bd3f89",
+                      "amount": 200,
+                      "currency": "GBP",
+                      "type": "OnlineCard",
+                      "status": "Cancelled",
+                      "paymentProvider": "sumup",
+                      "dueDate": "0001-01-01T00:00:00",
+                      "createdDate": "2021-03-30T12:20:40Z",
+                      "modifiedDate": "2022-03-17T16:13:46Z"
+                    }
+                  },
+                  "WooCommerce": {
+                    "value": {
+                      "id": "33",
+                      "amount": 0,
+                      "currency": "GBP",
+                      "type": "Unknown",
+                      "status": "Paid",
+                      "dueDate": "0001-01-01T00:00:00",
+                      "createdDate": "2021-03-11T09:07:00Z",
+                      "modifiedDate": "2021-07-13T16:19:00Z"
+                    }
+                  },
+                  "Zettle": {
+                    "value": {
+                      "id": "09b94cfc-2d98-11eb-8021-0e1b9dcbeca1",
+                      "amount": 25,
+                      "currency": "GBP",
+                      "type": "Paypal",
+                      "status": "Unknown",
+                      "dueDate": "0001-01-01T00:00:00",
+                      "createdDate": "2020-11-23T14:28:04Z",
+                      "modifiedDate": "2021-10-27T15:22:37Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "description": "Get a specific commerce payment for the given company & data connection."
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-paymentMethods": {
@@ -3200,6 +4598,9 @@
           },
           "409": {
             "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
         "description": "Retrieve a list of payment methods, such as card, cash or other online payment methods, as held in the linked commerce platform.",
@@ -3217,6 +4618,127 @@
             "$ref": "#/components/parameters/orderBy"
           }
         ]
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/data/commerce-paymentMethods/{paymentMethodId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        },
+        {
+          "name": "paymentMethodId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "examples": {
+              "$ref": "#/components/schemas/Order/allOf/0/properties/id/examples"
+            }
+          },
+          "description": "Unique identifier for a payment method."
+        }
+      ],
+      "get": {
+        "summary": "Get payment method",
+        "tags": [
+          "Payments"
+        ],
+        "operationId": "get-payment-method",
+        "x-speakeasy-name-override": "get-method",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentMethod"
+                },
+                "examples": {
+                  "Amazon Seller Central": {
+                    "value": {
+                      "id": "COD",
+                      "name": "Cash On Delivery",
+                      "status": "Active",
+                      "modifiedDate": "2023-01-09T09:12:03Z"
+                    }
+                  },
+                  "BigCommerce": {
+                    "value": {
+                      "id": "bigcommerce_gift_certificate",
+                      "name": "Gift Certificate",
+                      "status": "Active",
+                      "modifiedDate": "2023-04-11T10:33:48Z"
+                    }
+                  },
+                  "Clover": {
+                    "value": {
+                      "id": "0DPQ6QP48YYHW",
+                      "name": "TapMango Wallet",
+                      "status": "Active",
+                      "modifiedDate": "2023-01-09T11:01:04Z"
+                    }
+                  },
+                  "Lightspeed K Trial": {
+                    "value": {
+                      "id": "647208621834260",
+                      "name": "Cash",
+                      "status": "Active",
+                      "modifiedDate": "2023-03-02T09:48:56Z"
+                    }
+                  },
+                  "Mollie": {
+                    "value": {
+                      "id": "applepay",
+                      "name": "Apple Pay",
+                      "status": "Unknown",
+                      "modifiedDate": "2022-08-09T15:08:19Z"
+                    }
+                  },
+                  "Mollie Test": {
+                    "value": {
+                      "id": "applepay",
+                      "name": "Apple Pay",
+                      "status": "Unknown",
+                      "modifiedDate": "2022-08-17T11:33:19Z"
+                    }
+                  },
+                  "Square": {
+                    "value": {
+                      "id": "BANK_ACCOUNT",
+                      "name": "Bank Account",
+                      "status": "Unknown",
+                      "modifiedDate": "2022-08-02T10:27:32Z"
+                    }
+                  },
+                  "SumUp": {
+                    "value": {
+                      "id": "CASH",
+                      "name": "Cash",
+                      "status": "Active",
+                      "modifiedDate": "2022-09-14T10:58:03Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "description": "Retrieve a specific payment method, such as card, cash or other online payment methods, as held in the linked commerce platform."
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-products": {
@@ -4423,6 +5945,9 @@
           },
           "409": {
             "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
         "parameters": [
@@ -4439,6 +5964,616 @@
             "$ref": "#/components/parameters/orderBy"
           }
         ],
+        "description": "The Products data type provides the company's product inventory, and includes the price and quantity of all products, and product variants, available for sale."
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/data/commerce-products/{productId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        },
+        {
+          "name": "productId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "examples": {
+              "$ref": "#/components/schemas/Order/allOf/0/properties/id/examples"
+            }
+          },
+          "description": "Unique identifier for a product."
+        }
+      ],
+      "get": {
+        "summary": "Get product",
+        "tags": [
+          "Products"
+        ],
+        "operationId": "get-product",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                },
+                "examples": {
+                  "Amazon Seller Central": {
+                    "value": {
+                      "id": "Chromecast",
+                      "categorization": "DEVICE",
+                      "name": "Chromecast",
+                      "description": "Cast from your phone to your TV with this all new chromecast.",
+                      "productCategoryRefs": [],
+                      "isGiftCard": false,
+                      "variants": [
+                        {
+                          "id": "packaging_asin_gating",
+                          "name": "Chromecast in a cardboard box",
+                          "quantity": 0,
+                          "isTaxEnabled": false,
+                          "sku": "packaging_asin_gating",
+                          "vatPercentage": 0,
+                          "prices": [
+                            {
+                              "currency": "GBP",
+                              "unitPrice": 50
+                            }
+                          ],
+                          "inventory": {
+                            "totalQuantity": 0,
+                            "locations": []
+                          },
+                          "shippingRequired": false,
+                          "createdDate": "2021-02-07T12:30:01Z"
+                        }
+                      ],
+                      "createdDate": "2021-02-07T12:30:01Z",
+                      "modifiedDate": "2023-01-09T09:12:11Z",
+                      "sourceModifiedDate": "2022-08-17T09:07:07Z",
+                      "status": "Published"
+                    }
+                  },
+                  "BigCommerce": {
+                    "value": {
+                      "id": "103",
+                      "categorization": "Shop All, Utility",
+                      "name": "[Sample] Canvas Laundry Cart",
+                      "description": "The last laundry cart you'll ever buy. This industrial non-collapsable cart is constructed with a steel framed body using heavyweight canvas capped with a soft leather rim sitting on four smooth rolling casters. Keeps the grubby garments off the floor and almost makes laundry enjoyable. Can also be used as the ideal storage solution: many people find it ideal for children's toys or a load of chopped firewood. Load it up and wheel it away. Natural Heavyweight Canvas with Vegetable Tanned Leather Rim Measure�",
+                      "productCategoryRefs": [],
+                      "isGiftCard": false,
+                      "variants": [
+                        {
+                          "id": "71",
+                          "name": "[Sample] Canvas Laundry Cart",
+                          "quantity": 0,
+                          "isTaxEnabled": false,
+                          "sku": "CLC",
+                          "barcode": "",
+                          "vatPercentage": 0,
+                          "prices": [
+                            {
+                              "currency": "GBP",
+                              "unitPrice": 200
+                            }
+                          ],
+                          "inventory": {
+                            "totalQuantity": 0,
+                            "locations": []
+                          },
+                          "shippingRequired": true,
+                          "createdDate": "0001-01-01T00:00:00"
+                        }
+                      ],
+                      "createdDate": "2015-07-03T18:48:07Z",
+                      "modifiedDate": "2023-04-11T10:33:49Z",
+                      "sourceModifiedDate": "2022-06-16T07:59:46Z",
+                      "status": "Published"
+                    }
+                  },
+                  "Clover": {
+                    "value": {
+                      "id": "DJANHKK2AVEYY",
+                      "name": "Coffee",
+                      "description": "Coffee",
+                      "productCategoryRefs": [],
+                      "isGiftCard": false,
+                      "variants": [
+                        {
+                          "id": "DJANHKK2AVEYY",
+                          "name": "Coffee",
+                          "quantity": 0,
+                          "isTaxEnabled": true,
+                          "sku": "12222",
+                          "barcode": "1234",
+                          "vatPercentage": 20,
+                          "prices": [
+                            {
+                              "currency": "GBP",
+                              "unitPrice": 3
+                            }
+                          ],
+                          "inventory": {
+                            "totalQuantity": 0,
+                            "locations": []
+                          },
+                          "shippingRequired": false,
+                          "createdDate": "0001-01-01T00:00:00"
+                        }
+                      ],
+                      "createdDate": "0001-01-01T00:00:00",
+                      "modifiedDate": "2023-01-09T11:01:03Z",
+                      "sourceModifiedDate": "2021-05-24T15:50:55Z",
+                      "status": "Published"
+                    }
+                  },
+                  "Lightspeed K Trial": {
+                    "value": {
+                      "id": "647208621834539",
+                      "categorization": "Alcoholic beverages",
+                      "name": "Alcoholic beverages",
+                      "description": "Alcoholic beverages",
+                      "productCategoryRefs": [
+                        {
+                          "id": "647208621834281",
+                          "name": "Alcoholic beverages"
+                        }
+                      ],
+                      "isGiftCard": false,
+                      "variants": [],
+                      "createdDate": "0001-01-01T00:00:00",
+                      "modifiedDate": "2023-03-02T09:50:32Z",
+                      "status": "Published"
+                    }
+                  },
+                  "PrestaShop": {
+                    "value": {
+                      "id": "1",
+                      "categorization": "Home - Clothes - Men",
+                      "name": "Hummingbird printed t-shirt",
+                      "description": "Symbol of lightness and delicacy, the hummingbird evokes curiosity and joy. Studio Design' PolyFaune collection features classic products with colorful patterns, inspired by the traditional japanese origamis. To wear with a chino or jeans. The sublimation textile printing process provides an exceptional color rendering and a color, guaranteed overtime.",
+                      "productCategoryRefs": [],
+                      "isGiftCard": false,
+                      "variants": [
+                        {
+                          "id": "8",
+                          "name": "Hummingbird printed t-shirt (Size = XL, Color = Black)",
+                          "quantity": 0,
+                          "isTaxEnabled": true,
+                          "sku": "demo_1",
+                          "vatPercentage": 6,
+                          "prices": [
+                            {
+                              "currency": "USD",
+                              "unitPrice": 23.9
+                            }
+                          ],
+                          "inventory": {
+                            "totalQuantity": 300,
+                            "locations": []
+                          },
+                          "shippingRequired": true,
+                          "createdDate": "0001-01-01T00:00:00"
+                        },
+                        {
+                          "id": "4",
+                          "name": "Hummingbird printed t-shirt (Size = M, Color = Black)",
+                          "quantity": 0,
+                          "isTaxEnabled": true,
+                          "sku": "demo_1",
+                          "vatPercentage": 6,
+                          "prices": [
+                            {
+                              "currency": "USD",
+                              "unitPrice": 23.9
+                            }
+                          ],
+                          "inventory": {
+                            "totalQuantity": 300,
+                            "locations": []
+                          },
+                          "shippingRequired": true,
+                          "createdDate": "0001-01-01T00:00:00"
+                        },
+                        {
+                          "id": "5",
+                          "name": "Hummingbird printed t-shirt (Size = L, Color = White)",
+                          "quantity": 0,
+                          "isTaxEnabled": true,
+                          "sku": "demo_1",
+                          "vatPercentage": 6,
+                          "prices": [
+                            {
+                              "currency": "USD",
+                              "unitPrice": 23.9
+                            }
+                          ],
+                          "inventory": {
+                            "totalQuantity": 300,
+                            "locations": []
+                          },
+                          "shippingRequired": true,
+                          "createdDate": "0001-01-01T00:00:00"
+                        },
+                        {
+                          "id": "3",
+                          "name": "Hummingbird printed t-shirt (Size = M, Color = White)",
+                          "quantity": 0,
+                          "isTaxEnabled": true,
+                          "sku": "demo_1",
+                          "vatPercentage": 6,
+                          "prices": [
+                            {
+                              "currency": "USD",
+                              "unitPrice": 23.9
+                            }
+                          ],
+                          "inventory": {
+                            "totalQuantity": 300,
+                            "locations": []
+                          },
+                          "shippingRequired": true,
+                          "createdDate": "0001-01-01T00:00:00"
+                        },
+                        {
+                          "id": "6",
+                          "name": "Hummingbird printed t-shirt (Size = L, Color = Black)",
+                          "quantity": 0,
+                          "isTaxEnabled": true,
+                          "sku": "demo_1",
+                          "vatPercentage": 6,
+                          "prices": [
+                            {
+                              "currency": "USD",
+                              "unitPrice": 23.9
+                            }
+                          ],
+                          "inventory": {
+                            "totalQuantity": 300,
+                            "locations": []
+                          },
+                          "shippingRequired": true,
+                          "createdDate": "0001-01-01T00:00:00"
+                        },
+                        {
+                          "id": "1",
+                          "name": "Hummingbird printed t-shirt (Size = S, Color = White)",
+                          "quantity": 0,
+                          "isTaxEnabled": true,
+                          "sku": "demo_1",
+                          "vatPercentage": 6,
+                          "prices": [
+                            {
+                              "currency": "USD",
+                              "unitPrice": 23.9
+                            }
+                          ],
+                          "inventory": {
+                            "totalQuantity": 300,
+                            "locations": []
+                          },
+                          "shippingRequired": true,
+                          "createdDate": "0001-01-01T00:00:00"
+                        },
+                        {
+                          "id": "2",
+                          "name": "Hummingbird printed t-shirt (Size = S, Color = Black)",
+                          "quantity": 0,
+                          "isTaxEnabled": true,
+                          "sku": "demo_1",
+                          "vatPercentage": 6,
+                          "prices": [
+                            {
+                              "currency": "USD",
+                              "unitPrice": 23.9
+                            }
+                          ],
+                          "inventory": {
+                            "totalQuantity": 300,
+                            "locations": []
+                          },
+                          "shippingRequired": true,
+                          "createdDate": "0001-01-01T00:00:00"
+                        },
+                        {
+                          "id": "7",
+                          "name": "Hummingbird printed t-shirt (Size = XL, Color = White)",
+                          "quantity": 0,
+                          "isTaxEnabled": true,
+                          "sku": "demo_1",
+                          "vatPercentage": 6,
+                          "prices": [
+                            {
+                              "currency": "USD",
+                              "unitPrice": 23.9
+                            }
+                          ],
+                          "inventory": {
+                            "totalQuantity": 300,
+                            "locations": []
+                          },
+                          "shippingRequired": true,
+                          "createdDate": "0001-01-01T00:00:00"
+                        }
+                      ],
+                      "createdDate": "2021-09-02T06:00:49",
+                      "modifiedDate": "2022-01-26T15:09:42Z",
+                      "sourceModifiedDate": "2021-09-02T06:00:49",
+                      "status": "Published"
+                    }
+                  },
+                  "Shopify": {
+                    "value": {
+                      "id": "6595494117534",
+                      "categorization": "Asus",
+                      "name": "Monitor",
+                      "description": "",
+                      "productCategoryRefs": [],
+                      "isGiftCard": false,
+                      "variants": [
+                        {
+                          "id": "39444526694558",
+                          "name": "Monitor",
+                          "quantity": 0,
+                          "isTaxEnabled": true,
+                          "sku": "",
+                          "barcode": "",
+                          "vatPercentage": 0,
+                          "prices": [
+                            {
+                              "currency": "GBP",
+                              "unitPrice": 150
+                            }
+                          ],
+                          "inventory": {
+                            "totalQuantity": 91,
+                            "locations": []
+                          },
+                          "shippingRequired": true,
+                          "createdDate": "2021-03-19T10:13:22Z"
+                        }
+                      ],
+                      "createdDate": "2021-03-19T10:13:22Z",
+                      "modifiedDate": "2023-02-10T15:18:25Z",
+                      "sourceModifiedDate": "2022-08-01T13:05:22Z",
+                      "status": "Published"
+                    }
+                  },
+                  "Square": {
+                    "value": {
+                      "id": "AX54KZQ3UAVCVPUMNEGFEU35",
+                      "categorization": "Hardware",
+                      "name": "Monitor",
+                      "productCategoryRefs": [],
+                      "isGiftCard": false,
+                      "variants": [
+                        {
+                          "id": "A5BUT6SYUNYRSQ2R7GZ6UKN6",
+                          "name": "Regular",
+                          "quantity": 0,
+                          "isTaxEnabled": true,
+                          "vatPercentage": 10,
+                          "prices": [
+                            {
+                              "currency": "GBP",
+                              "unitPrice": 200
+                            }
+                          ],
+                          "inventory": {
+                            "totalQuantity": 0,
+                            "locations": []
+                          },
+                          "shippingRequired": false,
+                          "createdDate": "2021-02-18T15:47:31Z"
+                        }
+                      ],
+                      "createdDate": "2021-02-18T15:47:31Z",
+                      "modifiedDate": "2021-06-17T14:23:02Z",
+                      "sourceModifiedDate": "2021-02-18T15:47:31Z",
+                      "status": "Unknown"
+                    }
+                  },
+                  "Stripe Test": {
+                    "value": {
+                      "id": "prod_IaSbzLnxOHmC0i",
+                      "name": "Blue T Shirt",
+                      "description": "Nice cozy cotton t shirt",
+                      "productCategoryRefs": [],
+                      "isGiftCard": false,
+                      "variants": [
+                        {
+                          "id": "price_1ICJVEA8m8S1Gh7OIOCDOG8j",
+                          "name": "Blue T Shirt - Standard Price",
+                          "quantity": 0,
+                          "isTaxEnabled": false,
+                          "vatPercentage": 0,
+                          "prices": [
+                            {
+                              "currency": "GBP",
+                              "unitPrice": 15
+                            }
+                          ],
+                          "inventory": {
+                            "totalQuantity": 0,
+                            "locations": []
+                          },
+                          "shippingRequired": true,
+                          "createdDate": "2021-01-22T06:52:16Z"
+                        },
+                        {
+                          "id": "price_1ICJQgA8m8S1Gh7OfErQdx5R",
+                          "name": "Blue T Shirt - Standard Price",
+                          "quantity": 0,
+                          "isTaxEnabled": false,
+                          "vatPercentage": 0,
+                          "prices": [
+                            {
+                              "currency": "USD",
+                              "unitPrice": 30
+                            }
+                          ],
+                          "inventory": {
+                            "totalQuantity": 0,
+                            "locations": []
+                          },
+                          "shippingRequired": true,
+                          "createdDate": "2021-01-22T06:47:34Z"
+                        },
+                        {
+                          "id": "price_1HzHiCA8m8S1Gh7OXZVa6r3F",
+                          "name": "Blue T Shirt - Standard Price",
+                          "quantity": 0,
+                          "isTaxEnabled": false,
+                          "vatPercentage": 0,
+                          "prices": [
+                            {
+                              "currency": "GBP",
+                              "unitPrice": 15
+                            }
+                          ],
+                          "inventory": {
+                            "totalQuantity": 0,
+                            "locations": []
+                          },
+                          "shippingRequired": true,
+                          "createdDate": "2020-12-17T08:19:48Z"
+                        }
+                      ],
+                      "createdDate": "2020-12-17T08:17:48Z",
+                      "modifiedDate": "2022-09-30T11:18:27Z",
+                      "sourceModifiedDate": "2021-01-22T06:52:17Z",
+                      "status": "Published"
+                    }
+                  },
+                  "WooCommerce": {
+                    "value": {
+                      "id": "27",
+                      "categorization": "Hardware",
+                      "name": "Monitor",
+                      "description": "",
+                      "productCategoryRefs": [],
+                      "isGiftCard": false,
+                      "variants": [
+                        {
+                          "id": "27",
+                          "name": "Monitor",
+                          "quantity": 0,
+                          "isTaxEnabled": true,
+                          "vatPercentage": 0,
+                          "prices": [
+                            {
+                              "currency": "GBP",
+                              "unitPrice": 150
+                            }
+                          ],
+                          "inventory": {
+                            "totalQuantity": 0,
+                            "locations": []
+                          },
+                          "shippingRequired": true,
+                          "createdDate": "2021-03-11T08:55:22"
+                        }
+                      ],
+                      "createdDate": "2021-03-11T08:55:22",
+                      "modifiedDate": "2021-07-13T16:19:00Z",
+                      "sourceModifiedDate": "2021-03-11T09:03:15",
+                      "status": "Published"
+                    }
+                  },
+                  "Zettle": {
+                    "value": {
+                      "id": "9d21fd90-a34a-11eb-b574-ad6abe469b61",
+                      "categorization": "Clothing",
+                      "name": "T-Shirt",
+                      "productCategoryRefs": [],
+                      "isGiftCard": false,
+                      "variants": [
+                        {
+                          "id": "bb9bcf30-a34a-11eb-b574-ad6abe469b61",
+                          "name": "Medium",
+                          "quantity": 0,
+                          "isTaxEnabled": true,
+                          "vatPercentage": 20,
+                          "prices": [
+                            {
+                              "currency": "GBP",
+                              "unitPrice": 10
+                            }
+                          ],
+                          "inventory": {
+                            "totalQuantity": 0,
+                            "locations": []
+                          },
+                          "shippingRequired": false,
+                          "createdDate": "0001-01-01T00:00:00"
+                        },
+                        {
+                          "id": "b919df40-a34a-11eb-b574-ad6abe469b61",
+                          "name": "Large",
+                          "quantity": 0,
+                          "isTaxEnabled": true,
+                          "vatPercentage": 20,
+                          "prices": [
+                            {
+                              "currency": "GBP",
+                              "unitPrice": 10
+                            }
+                          ],
+                          "inventory": {
+                            "totalQuantity": 0,
+                            "locations": []
+                          },
+                          "shippingRequired": false,
+                          "createdDate": "0001-01-01T00:00:00"
+                        },
+                        {
+                          "id": "bcb5cab0-a34a-11eb-b574-ad6abe469b61",
+                          "name": "Small",
+                          "quantity": 0,
+                          "isTaxEnabled": true,
+                          "vatPercentage": 20,
+                          "prices": [
+                            {
+                              "currency": "GBP",
+                              "unitPrice": 10
+                            }
+                          ],
+                          "inventory": {
+                            "totalQuantity": 0,
+                            "locations": []
+                          },
+                          "shippingRequired": false,
+                          "createdDate": "0001-01-01T00:00:00"
+                        }
+                      ],
+                      "createdDate": "2021-04-22T09:12:09Z",
+                      "modifiedDate": "2021-10-27T15:22:37Z",
+                      "sourceModifiedDate": "2021-08-04T14:32:20Z",
+                      "status": "Published"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
         "description": "The Products data type provides the company's product inventory, and includes the price and quantity of all products, and product variants, available for sale."
       }
     },
@@ -4733,6 +6868,9 @@
           },
           "409": {
             "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
         "description": "Details of all financial transactions recorded in the commerce or point of sale system are added to the Transactions data type. For example, payments, service charges, and fees.",
@@ -4750,6 +6888,140 @@
             "$ref": "#/components/parameters/orderBy"
           }
         ]
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/data/commerce-transactions/{transactionId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        },
+        {
+          "name": "transactionId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "examples": {
+              "$ref": "#/components/schemas/Order/allOf/0/properties/id/examples"
+            }
+          },
+          "description": "Unique identifier for a transaction."
+        }
+      ],
+      "get": {
+        "summary": "Get transaction",
+        "tags": [
+          "Transactions"
+        ],
+        "operationId": "get-transaction",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Transaction"
+                },
+                "examples": {
+                  "Mollie": {
+                    "value": {
+                      "id": "re_Azhe8TzfUK",
+                      "totalAmount": -20,
+                      "currency": "EUR",
+                      "type": "Refund",
+                      "createdDate": "2022-01-17T16:00:46",
+                      "modifiedDate": "2022-03-17T15:47:28Z"
+                    }
+                  },
+                  "Mollie Test": {
+                    "value": {
+                      "id": "re_Azhe8TzfUK",
+                      "totalAmount": -20,
+                      "currency": "EUR",
+                      "type": "Refund",
+                      "subType": "PaymentRefund",
+                      "createdDate": "2022-01-17T16:00:46",
+                      "modifiedDate": "2022-08-17T11:33:19Z"
+                    }
+                  },
+                  "Shopify": {
+                    "value": {
+                      "id": "ShopifyPayment-1633176289438",
+                      "totalAmount": 175,
+                      "currency": "GBP",
+                      "type": "Payment",
+                      "subType": "charge",
+                      "transactionSourceRef": {
+                        "id": "3684116791454",
+                        "type": "Order"
+                      },
+                      "createdDate": "2021-03-19T13:16:26",
+                      "modifiedDate": "2023-02-10T15:18:23Z",
+                      "sourceModifiedDate": "2021-03-19T13:16:26"
+                    }
+                  },
+                  "Stripe Test": {
+                    "value": {
+                      "id": "txn_1HpGQUA8m8S1Gh7OR21pB0Yj",
+                      "totalAmount": 50,
+                      "currency": "GBP",
+                      "type": "Payment",
+                      "subType": "charge",
+                      "transactionSourceRef": {
+                        "id": "ch_1HpGQUA8m8S1Gh7Ot4WDTus5",
+                        "type": "Payment"
+                      },
+                      "createdDate": "2020-11-19T16:56:06Z",
+                      "modifiedDate": "2022-09-30T11:18:28Z"
+                    }
+                  },
+                  "SumUp": {
+                    "value": {
+                      "id": "46d36a64-ea48-4e37-9340-3548cbf3ca2f",
+                      "totalAmount": 15,
+                      "currency": "GBP",
+                      "type": "Payment",
+                      "subType": "PAYMENT",
+                      "createdDate": "2021-03-26T21:09:59Z",
+                      "modifiedDate": "2022-09-14T10:58:03Z"
+                    }
+                  },
+                  "Zettle": {
+                    "value": {
+                      "id": "PAYMENT:09b94cfc-2d98-11eb-8021-0e1b9dcbeca1",
+                      "totalAmount": 25,
+                      "currency": "GBP",
+                      "type": "Payment",
+                      "transactionSourceRef": {
+                        "id": "09b94cfc-2d98-11eb-8021-0e1b9dcbeca1",
+                        "type": "Unknown"
+                      },
+                      "createdDate": "2020-11-23T14:27:38Z",
+                      "modifiedDate": "2021-10-27T15:23:04Z",
+                      "sourceModifiedDate": "2020-11-25T23:10:01Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "description": "Details of single financial transaction recorded in the commerce or point of sale system. For example, payments, service charges, and fees."
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-productCategories": {
@@ -4826,6 +7098,9 @@
           },
           "409": {
             "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
         "parameters": [
@@ -4843,6 +7118,63 @@
           }
         ],
         "description": "Product categories are used to classify a group of products together, either by type (eg \"Furniture\"), or sometimes by tax profile."
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/data/commerce-productCategories/{productId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        },
+        {
+          "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1data~1commerce-products~1%7BproductId%7D/parameters/2"
+        }
+      ],
+      "get": {
+        "summary": "Get product category",
+        "tags": [
+          "Products"
+        ],
+        "operationId": "get-product-category",
+        "x-speakeasy-name-override": "get-category",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductCategory"
+                },
+                "examples": {
+                  "Lightspeed K Trial": {
+                    "value": {
+                      "id": "647208621834281",
+                      "name": "Alcoholic beverages",
+                      "ancestorRefs": [],
+                      "hasChildren": false,
+                      "modifiedDate": "2023-03-02T09:49:11Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "description": "Product categories are used to classify a group of products together, either by type (e.g. \"Furniture\") or sometimes by tax profile."
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-taxComponents": {
@@ -4996,6 +7328,89 @@
           }
         },
         "description": "This endpoint returns a lists of tax rates from the commerce platform, including tax rate names and values. This supports the mapping of tax rates from the commerce platform to the accounting platform."
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/data/commerce-taxComponents/{taxId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        },
+        {
+          "name": "taxId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "examples": {
+              "$ref": "#/components/schemas/Order/allOf/0/properties/id/examples"
+            }
+          },
+          "description": "Unique identifier for a tax component."
+        }
+      ],
+      "get": {
+        "summary": "Get tax component",
+        "tags": [
+          "Tax components"
+        ],
+        "operationId": "get-tax-component",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaxComponent"
+                },
+                "examples": {
+                  "Clover": {
+                    "value": {
+                      "id": "16BCCTTGKEX4R",
+                      "name": "Flat and Percentage Rate",
+                      "rate": 0.000001,
+                      "isCompound": false,
+                      "modifiedDate": "2023-01-09T11:01:02Z"
+                    }
+                  },
+                  "Lightspeed K Trial": {
+                    "value": {
+                      "id": "GST0",
+                      "name": "Tax Exempt",
+                      "rate": 0,
+                      "isCompound": false,
+                      "modifiedDate": "2023-03-08T13:49:25Z"
+                    }
+                  },
+                  "Shopify": {
+                    "value": {
+                      "id": "GB VAT:0.2",
+                      "name": "GB VAT",
+                      "rate": 0.2,
+                      "isCompound": false,
+                      "modifiedDate": "2023-01-17T14:05:55Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "description": "This endpoint returns a specific tax rate from the commerce platform, including tax rate names and values. This supports the mapping of tax rates from the commerce platform to the accounting platform."
       }
     }
   },
@@ -5442,10 +7857,10 @@
           }
         ]
       },
-      "Locations": {
-        "title": "Locations",
+      "Location": {
+        "title": "Location",
         "type": "object",
-        "description": "The Locations datatype holds information on geographic locations at which stocks of products may be held, as referenced in the Products data type.\n\nLocations also holds information on geographic locations where orders were placed, as referenced in the Orders data type.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-locations) for this data type.",
+        "description": "The Location datatype holds information on the geographic location at which stocks of products may be held, as referenced in the Products data type.\n\nA Location also holds information on geographic locations where orders were placed, as referenced in the Orders data type.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-locations) for this data type.",
         "allOf": [
           {
             "$ref": "#/components/schemas/Order/allOf/0"
@@ -5465,6 +7880,20 @@
           },
           {
             "$ref": "#/components/schemas/ModifiedDates"
+          },
+          {
+            "type": "object",
+            "description": "Reference to a configured dynamic key value pair that is unique to the accounting platform. This feature is in private beta, contact us if you would like to learn more.",
+            "properties": {
+              "content": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "additionalProperties": {}
+                },
+                "nullable": true
+              }
+            }
           }
         ],
         "definitions": {
@@ -5510,7 +7939,7 @@
           }
         ]
       },
-      "LocationsResponse": {
+      "Locations": {
         "x-internal": true,
         "allOf": [
           {
@@ -5519,7 +7948,7 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/Locations"
+                  "$ref": "#/components/schemas/Location"
                 }
               }
             }
@@ -5630,7 +8059,7 @@
                 }
               },
               "locationRef": {
-                "$ref": "#/components/schemas/Locations/definitions/locationRef"
+                "$ref": "#/components/schemas/Location/definitions/locationRef"
               },
               "customerRef": {
                 "$ref": "#/components/schemas/Customer/definitions/customerRef"
@@ -6360,7 +8789,7 @@
                 "type": "number"
               },
               "locationRef": {
-                "$ref": "#/components/schemas/Locations/definitions/locationRef"
+                "$ref": "#/components/schemas/Location/definitions/locationRef"
               }
             }
           },
