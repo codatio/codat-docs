@@ -39,6 +39,28 @@
     ],
     "retryConnectionErrors": true
   },
+  "x-speakeasy-name-override": [
+    {
+      "operationId": "^list-*",
+      "methodNameOverride": "list"
+    },
+    {
+      "operationId": "^create-*",
+      "methodNameOverride": "create"
+    },
+    {
+      "operationId": "^get-*",
+      "methodNameOverride": "get"
+    },
+    {
+      "operationId": "^delete-*",
+      "methodNameOverride": "delete"
+    },
+    {
+      "operationId": "^update-*",
+      "methodNameOverride": "update"
+    }
+  ],
   "tags": [
     {
       "name": "Bank feed accounts",
@@ -47,9 +69,662 @@
     {
       "name": "Bank account transactions",
       "description": "Bank feed bank accounts"
+    },
+    {
+      "name": "Companies",
+      "description": "Create and manage your Codat companies."
+    },
+    {
+      "name": "Connections",
+      "description": "Manage your companies' data connections."
     }
   ],
   "paths": {
+    "/companies": {
+      "get": {
+        "summary": "List companies",
+        "tags": [
+          "Companies"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Companies"
+                },
+                "examples": {
+                  "One company": {
+                    "value": {
+                      "results": [
+                        {
+                          "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                          "name": "My Test Company",
+                          "description": "My Test Company make testing software",
+                          "platform": "",
+                          "redirect": "https://link.codat.io/company/3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                          "lastSync": "2022-01-01T12:30:00.000Z",
+                          "dataConnections": [
+                            {
+                              "id": "51baa045-4836-4317-a42e-3542e991e581",
+                              "integrationId": "1c312d69-e638-46d4-ad31-72e6c3ba8390",
+                              "integrationKey": "vjms",
+                              "sourceId": "396c3158-5dd7-481b-a7c4-a795ca31792b",
+                              "platformName": "Pandle",
+                              "linkUrl": "https://link-api.codat.io/companies/3fa85f64-5717-4562-b3fc-2c963f66afa6/connections/51baa045-4836-4317-a42e-3542e991e581/start",
+                              "status": "Linked",
+                              "lastSync": "2022-01-01T12:30:00.000Z",
+                              "created": "2022-01-01T11:30:00Z",
+                              "sourceType": "Accounting"
+                            }
+                          ],
+                          "created": "2022-01-01T11:30:00Z",
+                          "createdByUserName": "Mike Smith"
+                        }
+                      ],
+                      "pageNumber": 1,
+                      "pageSize": 100,
+                      "totalResults": 1,
+                      "_links": {
+                        "current": {
+                          "href": "/companies?page=1&pageSize=100"
+                        },
+                        "self": {
+                          "href": "/companies"
+                        }
+                      }
+                    }
+                  },
+                  "List of Companies": {
+                    "value": {
+                      "results": [
+                        {
+                          "id": "d1568dde-adf6-11ed-afa1-0242ac120002",
+                          "name": "Technicalium",
+                          "description": "Technology services, including web and app design and development",
+                          "platform": "",
+                          "redirect": "https://link.codat.io/company/d1568dde-adf6-11ed-afa1-0242ac120002",
+                          "lastSync": "2022-01-01T12:30:00.000Z",
+                          "dataConnections": [
+                            {
+                              "id": "51baa045-4836-4317-a42e-3542e991e581",
+                              "integrationId": "1c312d69-e638-46d4-ad31-72e6c3ba8390",
+                              "integrationKey": "vjms",
+                              "sourceId": "396c3158-5dd7-481b-a7c4-a795ca31792b",
+                              "platformName": "Pandle",
+                              "linkUrl": "https://link-api.codat.io/companies/d1568dde-adf6-11ed-afa1-0242ac120002/connections/51baa045-4836-4317-a42e-3542e991e581/start",
+                              "status": "Linked",
+                              "lastSync": "2022-01-01T12:30:00.000Z",
+                              "created": "2022-01-01T11:30:00Z",
+                              "sourceType": "Accounting"
+                            }
+                          ],
+                          "created": "2022-01-01T11:30:00Z",
+                          "createdByUserName": "Joe Bloggs"
+                        },
+                        {
+                          "id": "096db70b-78de-4ff0-aa98-299cb5fe17a0",
+                          "name": "Godata",
+                          "description": "A new digital agency with a passion for creating amazing digital experiences",
+                          "platform": "",
+                          "redirect": "https://link.codat.io/company/096db70b-78de-4ff0-aa98-299cb5fe17a0",
+                          "lastSync": "2022-01-01T12:30:00.000Z",
+                          "dataConnections": [
+                            {
+                              "id": "a70bc148-dc21-46b2-a257-d9c58ac15cbb",
+                              "integrationId": "1c312d69-e638-46d4-ad31-72e6c3ba8390",
+                              "integrationKey": "vjms",
+                              "sourceId": "396c3158-5dd7-481b-a7c4-a795ca31792b",
+                              "platformName": "Pandle",
+                              "linkUrl": "https://link-api.codat.io/companies/096db70b-78de-4ff0-aa98-299cb5fe17a0/connections/a70bc148-dc21-46b2-a257-d9c58ac15cbb/start",
+                              "status": "Linked",
+                              "lastSync": "2022-01-01T12:30:00.000Z",
+                              "created": "2022-01-01T11:30:00Z",
+                              "sourceType": "Accounting"
+                            }
+                          ],
+                          "created": "2022-01-01T11:30:00Z",
+                          "createdByUserName": "Mike Smith"
+                        }
+                      ],
+                      "pageNumber": 1,
+                      "pageSize": 100,
+                      "totalResults": 2,
+                      "_links": {
+                        "current": {
+                          "href": "/companies?page=1&pageSize=100"
+                        },
+                        "self": {
+                          "href": "/companies"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Malformed-Query"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "operationId": "list-companies",
+        "description": "List all companies that you have created in Codat.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/page"
+          },
+          {
+            "$ref": "#/components/parameters/pageSize"
+          },
+          {
+            "$ref": "#/components/parameters/query"
+          },
+          {
+            "$ref": "#/components/parameters/orderBy"
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create company",
+        "tags": [
+          "Companies"
+        ],
+        "operationId": "create-company",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "x-speakeasy-usage-example": true,
+                "schema": {
+                  "$ref": "#/components/schemas/Company"
+                },
+                "examples": {
+                  "New Company": {
+                    "value": {
+                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "name": "My First Company",
+                      "description": "",
+                      "platform": "",
+                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "dataConnections": [],
+                      "created": "2022-11-10T10:45:18.1950523Z",
+                      "createdByUserName": "Dan Tzabar"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "description": "Create a new company",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyRequestBody"
+              },
+              "examples": {
+                "Example with no description": {
+                  "value": {
+                    "name": "Technicalium"
+                  }
+                },
+                "Example with a description": {
+                  "value": {
+                    "name": "Technicalium",
+                    "description": "Technology services, including web and app design and development"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/companies/{companyId}": {
+      "get": {
+        "summary": "Get company",
+        "operationId": "get-company",
+        "description": "Get metadata for a single company",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "tags": [
+          "Companies"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Company"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "name": "My First Company",
+                      "description": "",
+                      "platform": "",
+                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "dataConnections": [],
+                      "created": "2022-11-10T10:45:18Z",
+                      "createdByUserName": "Dan Tzabar"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a company",
+        "operationId": "delete-company",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "description": "Delete the given company from Codat.\nThis operation is not reversible.",
+        "tags": [
+          "Companies"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update company",
+        "description": "Updates the given company with a new name and description",
+        "operationId": "update-company",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "tags": [
+          "Companies"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Company"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyRequestBody"
+              },
+              "examples": {
+                "Update name": {
+                  "value": {
+                    "name": "New Name"
+                  }
+                },
+                "Update description": {
+                  "value": {
+                    "name": "Same name",
+                    "description": "Additional documents required"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/connections": {
+      "get": {
+        "summary": "List connections",
+        "description": "List the connections for a company",
+        "operationId": "list-company-connections",
+        "tags": [
+          "Connections"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/page"
+          },
+          {
+            "$ref": "#/components/parameters/pageSize"
+          },
+          {
+            "$ref": "#/components/parameters/query"
+          },
+          {
+            "$ref": "#/components/parameters/orderBy"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Connections"
+                },
+                "examples": {
+                  "Connections": {
+                    "value": {
+                      "results": [
+                        {
+                          "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                          "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                          "integrationKey": "dfxm",
+                          "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                          "platformName": "Basiq",
+                          "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                          "status": "Linked",
+                          "lastSync": "2022-10-27T10:22:43.6464237Z",
+                          "created": "2022-10-27T09:53:29Z",
+                          "sourceType": "Banking"
+                        }
+                      ],
+                      "pageNumber": 0,
+                      "pageSize": 0,
+                      "totalResults": 0,
+                      "_links": {
+                        "self": {
+                          "href": "string"
+                        },
+                        "current": {
+                          "href": "string"
+                        },
+                        "next": {
+                          "href": "string"
+                        },
+                        "previous": {
+                          "href": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Malformed-Query"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create connection",
+        "description": "Create a data connection for a company",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "tags": [
+          "Connections"
+        ],
+        "operationId": "create-data-connection",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "platformKey": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Connection"
+                },
+                "examples": {
+                  "Connection": {
+                    "value": {
+                      "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                      "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                      "integrationKey": "dfxm",
+                      "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                      "platformName": "Basiq",
+                      "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                      "status": "Linked",
+                      "lastSync": "2022-10-27T10:22:43.6464237Z",
+                      "created": "2022-10-27T09:53:29Z",
+                      "sourceType": "Banking"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}": {
+      "get": {
+        "summary": "Get connection",
+        "operationId": "get-company-connection",
+        "description": "Get a single connection for a company",
+        "tags": [
+          "Connections"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Connection"
+                },
+                "examples": {
+                  "Connection": {
+                    "value": {
+                      "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                      "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                      "integrationKey": "dfxm",
+                      "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                      "platformName": "Basiq",
+                      "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                      "status": "Linked",
+                      "lastSync": "2022-10-27T10:22:43.6464237Z",
+                      "created": "2022-10-27T09:53:29Z",
+                      "sourceType": "Banking"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete connection",
+        "operationId": "delete-company-connection",
+        "description": "Revoke and remove a connection from a company.\nThis operation is not reversible - the end user would need to reauthorize a new data connection if you wish to view new data for this company.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          }
+        ],
+        "tags": [
+          "Connections"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Unlink connection",
+        "description": "This allows you to deauthorize a connection, without deleting it from Codat. This means you can still view any data that has previously been pulled into Codat, and also lets you re-authorize in future if your customer wishes to resume sharing their data.",
+        "operationId": "unlink-connection",
+        "tags": [
+          "Connections"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Connection"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "Example": {
+                  "value": {
+                    "status": "unlinked"
+                  }
+                }
+              }
+            }
+          },
+          "description": ""
+        }
+      }
+    },
     "/companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts/{accountId}": {
       "patch": {
         "tags": [
@@ -4777,7 +5452,7 @@
                         {
                           "accountId": "bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4",
                           "clearedOnDate": "2022-12-09T00:00:00",
-                          "description": "0019",
+                          "description": "AR-0019",
                           "counterparty": "Bank West",
                           "reconciled": true,
                           "amount": 1500,
@@ -4821,7 +5496,7 @@
                         {
                           "accountId": "bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4",
                           "clearedOnDate": "2022-12-20T00:00:00",
-                          "description": "0011",
+                          "description": "AR-0011",
                           "counterparty": "Ridgeway University",
                           "reconciled": true,
                           "amount": 2500,
@@ -4854,7 +5529,7 @@
                         {
                           "accountId": "bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4",
                           "clearedOnDate": "2022-12-23T00:00:00",
-                          "description": "0018",
+                          "description": "AR-0018",
                           "counterparty": "City Agency",
                           "reconciled": true,
                           "amount": 329.8,
@@ -4920,7 +5595,7 @@
                         {
                           "accountId": "bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4",
                           "clearedOnDate": "2023-01-19T00:00:00",
-                          "description": "0020",
+                          "description": "AR-0020",
                           "counterparty": "Ridgeway University",
                           "reconciled": true,
                           "amount": 6187.5,
@@ -5751,17 +6426,6 @@
           },
           {
             "x-stoplight": {
-              "id": "kc8ehjqr6p02q"
-            },
-            "name": "allowSyncOnPushComplete",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "default": true
-            }
-          },
-          {
-            "x-stoplight": {
               "id": "irz50qjbs3yef"
             },
             "name": "timeoutInMinutes",
@@ -5769,6 +6433,17 @@
             "schema": {
               "type": "integer",
               "format": "int32"
+            }
+          },
+          {
+            "x-stoplight": {
+              "id": "kc8ehjqr6p02q"
+            },
+            "name": "allowSyncOnPushComplete",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": true
             }
           }
         ],
@@ -5803,10 +6478,370 @@
           }
         }
       }
+    },
+    "/companies/{companyId}/connections/{connectionId}/data/proxy": {
+      "get": {
+        "tags": [
+          "Connections"
+        ],
+        "description": "A proxy or passthrough endpoint used to query unsupported third party endpoints.",
+        "operationId": "proxy",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          },
+          {
+            "name": "endpoint",
+            "in": "query",
+            "required": true,
+            "description": "The endpoint and query parameters made to the underlying integration.",
+            "schema": {
+              "type": "string",
+              "example": "generatecredentials?dataconnectionid={connectionId}"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProxyResponse"
+                },
+                "examples": {
+                  "QuickBooks Online": {
+                    "value": {
+                      "username": "b.baggins",
+                      "password": "************"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "Company": {
+        "title": "Company",
+        "description": "A company in Codat represent a small or medium sized business, whose data you wish to share",
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/parameters/companyId/schema"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the company",
+            "example": "Codat Ltd."
+          },
+          "description": {
+            "type": "string",
+            "example": "Requested early access to the new financing scheme.",
+            "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
+          },
+          "platform": {
+            "type": "string",
+            "deprecated": true,
+            "example": "Xero"
+          },
+          "redirect": {
+            "type": "string",
+            "format": "uri",
+            "description": "The `redirect` [Link URL](https://docs.codat.io/auth-flow/authorize-hosted-link) enabling the customer to start their auth flow journey for the company.",
+            "example": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739"
+          },
+          "lastSync": {
+            "$ref": "#/components/schemas/DateTime"
+          },
+          "created": {
+            "$ref": "#/components/schemas/DateTime"
+          },
+          "createdByUserName": {
+            "type": "string"
+          },
+          "dataConnections": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Connection"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "redirect"
+        ],
+        "examples": [
+          {
+            "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+            "name": "string",
+            "platform": "string",
+            "redirect": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739",
+            "lastSync": "2022-01-01T12:00:00.000Z",
+            "created": "2022-01-01T12:00:00.000Z",
+            "createdByUserName": "string",
+            "dataConnections": [
+              {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Linked",
+                "lastSync": "2022-10-27T10:22:43.6464237Z",
+                "created": "2022-10-27T09:53:29Z",
+                "sourceType": "Banking"
+              }
+            ]
+          }
+        ]
+      },
+      "Companies": {
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Company"
+                }
+              }
+            }
+          },
+          {
+            "type": "object",
+            "x-internal": true,
+            "properties": {
+              "pageNumber": {
+                "type": "integer"
+              },
+              "pageSize": {
+                "type": "integer"
+              },
+              "totalResults": {
+                "type": "integer"
+              },
+              "_links": {
+                "$ref": "#/components/schemas/Links"
+              }
+            },
+            "required": [
+              "pageNumber",
+              "pageSize",
+              "totalResults",
+              "_links"
+            ],
+            "examples": [
+              {
+                "_links": {
+                  "pageNumber": 1,
+                  "pageSize": 10,
+                  "totalResults": 1,
+                  "self": {
+                    "href": "/companies/{id}/data/{dataType}"
+                  },
+                  "current": {
+                    "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "CompanyRequestBody": {
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of company being connected.",
+            "example": "Bank of Dave"
+          },
+          "description": {
+            "$ref": "#/components/schemas/Company/properties/description"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "Connection": {
+        "title": "Connection",
+        "description": "A connection represents the link between a `company` and a source of data.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/parameters/connectionId/schema"
+          },
+          "integrationId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "fd321cb6-7963-4506-b873-e99593a45e30",
+            "description": "A Codat ID representing the integration."
+          },
+          "integrationKey": {
+            "type": "string",
+            "description": "A unique four-character ID that identifies the platform of the company's data connection. This ensures continuity if the platform changes its name in the future."
+          },
+          "sourceId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "35b92968-9851-4095-ad60-395c95cbcba4",
+            "description": "A source-specific ID used to distinguish between different sources originating from the same data connection. In general, a data connection is a single data source. However, for TrueLayer, `sourceId` is associated with a specific bank and has a many-to-one relationship with the `integrationId`."
+          },
+          "sourceType": {
+            "title": "Source Type",
+            "x-internal": true,
+            "description": "The type of platform of the connection.",
+            "type": "string",
+            "enum": [
+              "Accounting",
+              "Banking",
+              "Commerce",
+              "Other",
+              "Unknown"
+            ],
+            "example": "Accounting"
+          },
+          "platformName": {
+            "type": "string"
+          },
+          "linkUrl": {
+            "type": "string",
+            "format": "uri",
+            "example": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/2e2eb431-c1fa-4dc9-93fa-d29781c12bcd/start"
+          },
+          "status": {
+            "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
+          },
+          "lastSync": {
+            "$ref": "#/components/schemas/DateTime"
+          },
+          "created": {
+            "$ref": "#/components/schemas/DateTime"
+          },
+          "dataConnectionErrors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Connection/definitions/dataConnectionError"
+            }
+          },
+          "connectionInfo": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "required": [
+          "id",
+          "integrationId",
+          "integrationKey",
+          "sourceId",
+          "platformName",
+          "linkUrl",
+          "status",
+          "created",
+          "sourceType"
+        ],
+        "definitions": {
+          "dataConnectionStatus": {
+            "title": "Data connection status",
+            "description": "The current authorization status of the data connection.",
+            "type": "string",
+            "enum": [
+              "PendingAuth",
+              "Linked",
+              "Unlinked",
+              "Deauthorized"
+            ]
+          },
+          "dataConnectionError": {
+            "title": "Data connection error",
+            "type": "object",
+            "properties": {
+              "statusCode": {
+                "type": "string"
+              },
+              "statusText": {
+                "type": "string"
+              },
+              "errorMessage": {
+                "type": "string"
+              },
+              "erroredOnUtc": {
+                "$ref": "#/components/schemas/DateTime"
+              }
+            }
+          },
+          "dataConnectionSourceType": {
+            "title": "Source Type",
+            "description": "The type of platform of the connection.",
+            "type": "string",
+            "enum": [
+              "Accounting",
+              "Banking",
+              "Commerce",
+              "Other",
+              "Unknown"
+            ],
+            "example": "Accounting"
+          }
+        },
+        "example": {
+          "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+          "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+          "integrationKey": "dfxm",
+          "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+          "platformName": "Basiq",
+          "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+          "status": "Linked",
+          "lastSync": "2022-10-27T10:22:43.6464237Z",
+          "created": "2022-10-27T09:53:29Z",
+          "sourceType": "Banking"
+        }
+      },
+      "Connections": {
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Connection"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/Companies/allOf/1"
+          }
+        ]
+      },
       "BankFeedAccount": {
         "title": "Bank feed account",
         "type": "object",
@@ -5900,108 +6935,80 @@
         "title": "Bank account transactions",
         "description": "> **Accessing Bank Accounts through Banking API**\n> \n> This datatype was originally used for accessing bank account data both in accounting integrations and open banking aggregators. \n>\n> To view bank account data through the Banking API, please refer to the new datatype [here](https://docs.codat.io/banking-api#/operations/list-all-banking-transactions)\n\n> View the coverage for bank transactions in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankTransactions\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nTransactional banking data for a specific company and account.\n\nBank transactions include the:\n* Amount of the transaction.\n* Current account balance.\n* Transaction type, for example, credit, debit, or transfer.",
         "type": "object",
-        "properties": {
-          "accountId": {
-            "type": "string",
-            "nullable": true
-          },
-          "transactions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BankTransactions/definitions/bankTransactionLine"
-            },
-            "nullable": true
-          }
-        },
-        "definitions": {
-          "bankTransactionLine": {
-            "title": "Bank transaction line",
+        "allOf": [
+          {
             "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "accountId": {
+                "type": "string",
+                "nullable": true
+              },
+              "clearedOnDate": {
+                "$ref": "#/components/schemas/DateTime"
+              },
+              "description": {
+                "type": "string",
+                "nullable": true
+              },
+              "reconciled": {
+                "type": "boolean"
+              },
+              "amount": {
+                "type": "number"
+              },
+              "balance": {
+                "type": "number"
+              },
+              "transactionType": {
+                "$ref": "#/components/schemas/BankTransactions/definitions/bankTransactionType"
+              }
+            }
+          },
+          {
+            "x-internal": true,
             "allOf": [
               {
+                "title": "ModifiedDate",
+                "x-internal": true,
                 "type": "object",
                 "properties": {
-                  "id": {
-                    "type": "string"
-                  },
-                  "clearedOnDate": {
-                    "$ref": "#/components/schemas/DateTime"
-                  },
-                  "description": {
-                    "type": "string",
-                    "nullable": true
-                  },
-                  "counterparty": {
-                    "type": "string",
-                    "nullable": true
-                  },
-                  "reference": {
-                    "type": "string",
-                    "nullable": true
-                  },
-                  "reconciled": {
-                    "type": "boolean"
-                  },
-                  "amount": {
-                    "type": "number"
-                  },
-                  "balance": {
-                    "type": "number"
-                  },
-                  "transactionType": {
-                    "$ref": "#/components/schemas/BankTransactions/definitions/bankTransactionType"
+                  "modifiedDate": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/DateTime"
+                      },
+                      {
+                        "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nIt is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                      }
+                    ]
                   }
                 }
               },
               {
+                "title": "Source Modified Date",
                 "x-internal": true,
-                "allOf": [
-                  {
-                    "title": "ModifiedDate",
-                    "x-internal": true,
-                    "type": "object",
-                    "properties": {
-                      "modifiedDate": {
-                        "allOf": [
-                          {
-                            "$ref": "#/components/schemas/DateTime"
-                          },
-                          {
-                            "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nIt is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
-                          }
-                        ]
+                "type": "object",
+                "nullable": true,
+                "properties": {
+                  "sourceModifiedDate": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/DateTime"
+                      },
+                      {
+                        "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)):\n - When the source platform does not provide modification date information,\n - For attachments, balance sheets, company information, and profit & loss reports. \n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
                       }
-                    }
-                  },
-                  {
-                    "title": "Source Modified Date",
-                    "x-internal": true,
-                    "type": "object",
-                    "nullable": true,
-                    "properties": {
-                      "sourceModifiedDate": {
-                        "allOf": [
-                          {
-                            "$ref": "#/components/schemas/DateTime"
-                          },
-                          {
-                            "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)):\n - When the source platform does not provide modification date information,\n - For attachments, balance sheets, company information, and profit & loss reports. \n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
-                          }
-                        ]
-                      }
-                    }
+                    ]
                   }
-                ]
+                }
               }
-            ],
-            "required": [
-              "amount",
-              "balance",
-              "date",
-              "reconciled",
-              "transactionType"
             ]
-          },
+          }
+        ],
+        "definitions": {
           "bankTransactionType": {
             "title": "Bank transaction type",
             "description": "Type of transaction for the bank statement line",
@@ -6044,43 +7051,7 @@
             }
           },
           {
-            "type": "object",
-            "x-internal": true,
-            "properties": {
-              "pageNumber": {
-                "type": "integer"
-              },
-              "pageSize": {
-                "type": "integer"
-              },
-              "totalResults": {
-                "type": "integer"
-              },
-              "_links": {
-                "$ref": "#/components/schemas/Links"
-              }
-            },
-            "required": [
-              "pageNumber",
-              "pageSize",
-              "totalResults",
-              "_links"
-            ],
-            "examples": [
-              {
-                "_links": {
-                  "pageNumber": 1,
-                  "pageSize": 10,
-                  "totalResults": 1,
-                  "self": {
-                    "href": "/companies/{id}/data/{dataType}"
-                  },
-                  "current": {
-                    "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
-                  }
-                }
-              }
-            ]
+            "$ref": "#/components/schemas/Companies/allOf/1"
           }
         ]
       },
@@ -6532,6 +7503,10 @@
           "commerce-transactions"
         ],
         "example": "invoices"
+      },
+      "ProxyResponse": {
+        "type": "object",
+        "additionalProperties": true
       }
     },
     "parameters": {
@@ -6563,8 +7538,12 @@
         "required": true,
         "schema": {
           "type": "string",
-          "format": "uuid",
-          "example": "8a210b68-6988-11ed-a1eb-0242ac120002"
+          "examples": [
+            "13d946f0-c5d5-42bc-b092-97ece17923ab",
+            "9wg4lep4ush5cxs79pl8sozmsndbaukll3ind4g7buqbm1h2",
+            7110701885,
+            "EILBDVJVNUAGVKRQ"
+          ]
         },
         "description": "Unique identifier for an account"
       },
