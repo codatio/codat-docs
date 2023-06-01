@@ -13,6 +13,10 @@
         {
           "key": "Access-Control-Allow-Methods",
           "value": "GET,OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "x-datadog-origin, x-datadog-parent-id, x-datadog-sampling-priority, x-datadog-trace-id"
         }
       ]
     }
