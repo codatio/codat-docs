@@ -4,5 +4,17 @@
       "source": "/docs/angular/your-first-app/2-taking-photos",
       "destination": "/docs/angular/your-first-app/taking-photos"
     }
+  ],
+  "headers": [
+    {
+      "source": "/updates/rss.xml",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET,OPTIONS"
+        }
+      ]
+    }
   ]
 }
