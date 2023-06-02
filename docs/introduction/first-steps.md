@@ -60,15 +60,15 @@ Then, replace `{basicAuthHeader}` in the code snippets below.
   ```
   </TabItem>
 
-  <TabItem value="python" label="Python">  
-  
-  ### Installation
+  <TabItem value="python" label="Python">
+
+  ##### Installation
   
   ```bash
     pip install codat-common
   ```
 
-  ### Authentication
+  ##### Authentication
 
   ```python
     import codatcommon
@@ -84,7 +84,7 @@ Then, replace `{basicAuthHeader}` in the code snippets below.
 
   <TabItem value="nodejs" label="TypeScript">  
 
-  ### Installation
+  ##### Installation
   
   ```bash
     npm add @codat/common
@@ -94,7 +94,7 @@ Then, replace `{basicAuthHeader}` in the code snippets below.
     yarn add @codat/common
   ```
 
-  ### Authentication
+  ##### Authentication
 
   ```javascript
     import { CodatCommon } from "@codat/common";
@@ -110,13 +110,13 @@ Then, replace `{basicAuthHeader}` in the code snippets below.
 
   <TabItem value="go" label="Go">  
 
-  ### Installation
+  ##### Installation
   
   ```bash
     go get github.com/codatio/client-sdk-go/common
   ```
 
-  ### Authentication
+  ##### Authentication
 
   ```go
     import(
@@ -395,12 +395,12 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
 
   <TabItem value="python" label="Python">  
 
-  ## Installation
+  ##### Installation
   ```bash
     pip install codat-accounting
   ```
 
-  ## Usage
+  ##### Usage
 
   ```python
     import codataccounting
@@ -423,7 +423,7 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
 
   <TabItem value="nodejs" label="TypeScript">  
 
-  ## Installation
+  ##### Installation
   
   ```bash
     npm add @codat/accounting
@@ -433,7 +433,7 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
     yarn add @codat/accounting
   ```
 
-  ## Usage
+  ##### Usage
 
   ```javascript
     import { CodatAccounting } from "@codat/accounting";
@@ -457,12 +457,14 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
 
   <TabItem value="go" label="Go">  
 
-  ## Installation
+  ##### Installation
   
   ```bash
     go get github.com/codatio/client-sdk-go/accounting
   ```
 
+  ##### Usage
+  
   ```go
   package main
 
