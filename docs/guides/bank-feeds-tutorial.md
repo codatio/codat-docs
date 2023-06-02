@@ -11,7 +11,7 @@ remind that this is QuickBooks Online (QBO) only and i python   (typescript and 
 
 ## Tutorial summary
 
-🎯 With our demo app, you will go through the invoice financing process flow, from establishing a connection with a borrower's accounting platform to issuing a decision on selected invoices. You will see how Codat makes it easier for the borrower to raise capital against the amounts due from customers, and for the lender to make an invoice financing decision. 
+🎯 
 
 Our QuickBooks Online Bank Feeds integration makes it possible for your customers to connect bank accounts from your application to QuickBooks Online (QBO). Transactions from connected accounts are then available to view as bank feeds.
 
@@ -282,6 +282,8 @@ res = s.bank_account_transactions.list(req)
 ```
 
 That's it - this concludes the bank feeds reconciliation process flow. Enable your SMB user to..
+
+REMEMBER TO ALSO CHANGE THIS PAGE https://docs.codat.io/usecases/summary/reconciling-bank-transactions  
 
 ## Read next
 
