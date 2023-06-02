@@ -295,7 +295,7 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
     res = codat_common.companies.get(req)
 
     if res.company is not None:
-      print(res.company.id, res.company.name, res.company.redirect)
+      print(res.company.redirect)
   ```  
   </TabItem>
 
@@ -308,7 +308,7 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
       companyId: "{companyId}",
     }).then((res: GetCompanyResponse) => {
       if (res.statusCode == 200) {
-        console.log(res.company.id, res.company.name, res.company.redirect)
+        console.log(res.company.redirect)
       }
     });
   ```
@@ -333,7 +333,7 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
   }
 
   if res.Company != nil {
-      fmt.Println("%s %s", res.Company.Id, res.Company.Name, res.Company.Redirect)
+      fmt.Println("%s",res.Company.Redirect)
   }
   ```
   </TabItem>
@@ -464,7 +464,7 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
   ```
 
   ##### Usage
-  
+
   ```go
   package main
 
@@ -493,7 +493,7 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
       }
 
       if res.Invoices != nil {
-                fmt.Println("%s %s", res.Company.Id, res.Company.Name, res.Company.Redirect)
+        fmt.Println("%s ",res.Invoices.Results[0].id)
       }
   }
   ```
