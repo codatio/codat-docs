@@ -1,27 +1,21 @@
----
+---bank
 title: "Bank feeds reconciliation"
 sidebar_label: Bank feeds reconciliation
-description: "Example-based tutorial on reconciling bank transactions with Codat"
+description: "Example-based tutorial on reconciling bank transactions with QuickBooks Online with Codat"
 ---
 
-::: warning
+:::info 
 
-remind that this is QuickBooks Online (QBO) only and i python   (typescript and Go if you want also here on github)       
+This tutorial focuses on reconciling bank feeds with QuickBooks Online (QBO), and uses an [SDK written in Python](https://github.com/codatio/client-sdk-python/tree/main/bankfeeds). We also provide this SDK in Typescript and Go on our [GitHub](https://github.com/orgs/codatio/repositories).    
 :::
 
 ## Tutorial summary
 
-🎯 
+🎯 Our QuickBooks Online bank feeds integration makes it possible for your customers to connect bank accounts from your application to QBO. See how you can support your users by syncing their bank transaction data to QBO, ensuring the records match each other. 
 
-Our QuickBooks Online Bank Feeds integration makes it possible for your customers to connect bank accounts from your application to QuickBooks Online (QBO). Transactions from connected accounts are then available to view as bank feeds.
+⏳ Estimated time to review: 10-15 minutes
 
-⏳ Estimated time to review: 15-25 minutes
-
-🛠️ Code samples are in Python provided for... available in the two other languages we support (typescript and Go)(this links to the relevant bank feeds sdks on github).
-
-
-* Rewrite the reconciling bank feeds page with Bank Feeds API instead of accounting api?
-
+🛠️ This tutorial includes code snippets from our [Python SDK](https://github.com/codatio/client-sdk-python/tree/main/bankfeeds). However, we use the same method names in our [Typescript](https://github.com/codatio/client-sdk-typescript/tree/main/bankfeeds) and [Go](https://github.com/codatio/client-sdk-go/tree/main/bankfeeds) SDKs.
 
 ## Why reconcile bank transactions
 
@@ -76,21 +70,21 @@ QuickBooks Online bank feeds must be enabled by Intuit before the solution can g
 
 ### Preparation
 
-Use our SDK to easily implement the bank feeds solution in your app. We use our Python SDK in this tutorial, but you can also find Typescript and Go SDKs on our GitHub. 
+Use our SDKs to easily implement the bank feeds solution in your app. We use our [Python SDK](https://github.com/codatio/client-sdk-python/tree/main/bankfeeds) in this tutorial, but you can also find Typescript and Go SDKs on our [GitHub](https://github.com/orgs/codatio/repositories). 
 
-First, install the SDK: 
+First, install the client library: 
 
 ```python
 pip install codat-bank-feeds
 ```
 
-Next, import the ..., define your library, and add your Base64 encoded API key within an authorization header. To get your API key, navigate to **Developers > API keys** in the [Codat Portal](https://app.codat.io/) and copy your authorization header.
+Next, import the package and add your Base64 encoded API key within an authorization header. To get your API key, navigate to **Developers > API keys** in the [Codat Portal](https://app.codat.io/) and copy your authorization header. In our example, we chose to call our client library `bank_feeds_client`.
 
 ```python
 import codatbankfeeds
 from codatbankfeeds.models import operations, shared
 
-s = codatbankfeeds.CodatBankFeeds(
+bank_feeds_client = codatbankfeeds.CodatBankFeeds(
     security=shared.Security(
         auth_header="Basic BASE_64_ENCODED(API_KEY)",
     ),
@@ -115,12 +109,9 @@ s = codatbankfeeds.CodatBankFeeds(
             backend ->> codat: Create bank transactions
             codat -->> backend: Push operation
         end
-        backend ->> codat: Get bank transactions
-        codat -->> backend: Bank transactions
-        frontend ->> backend: View synced transactions
 ```
 
-### Authorize QBO bank feeds
+### Using Codat for bank feeds reconciliation
 
 We expect your SMB users to interact with your application via a UI. Add a button or a link to your app that lets your users trigger the connection of their bank accounts to QBO. 
 
@@ -130,37 +121,35 @@ Add functionality—for example, a button or link—to your application that let
 
 When an SMB user clicks the button or link you added, create a Company with a QBO connection for them:
 
-1. **Create a company with a QBO connection**
+#### Create a company with a QBO connection
 
-Use our [Create company](https://github.com/codatio/client-sdk-python/blob/main/bankfeeds/docs/companies/README.md#create) endpoint to trigger company creation, which will represent the SMB customer in Codat. In response, you will receive a company `id`.
-
-GITHUB OR OAS LINKS?
+Use our [Create company](https://docs.codat.io/bank-feeds-api#/operations/create-company) endpoint to trigger company creation, which will represent the SMB customer in Codat. In response, you will receive a company `id`.
 
 ```python
    req = shared.CompanyRequestBody(
     description='Requested early access to the new bank reconciliation scheme.',
     name='Elaborate Events, Inc',
                                   )
-   res = s.companies.create(req)
+   companies_response = bank_feeds_client.companies.create(req)
 ```
-   
-Next, call the [Create connection](https://github.com/codatio/client-sdk-python/blob/main/bankfeeds/docs/connections/README.md#create) endpoint to establish a data link to QBO for the company. In Codat, the platform key for QBO is `hcws`, and you should also pass the company `id` received from the previous endpoint. 
-   
+
+Next, call the [Create connection](https://docs.codat.io/bank-feeds-api#/operations/create-data-connection) endpoint to establish a data link to QBO for the company. We pass the response from the previous endpoint, and also the platform key, which for QBO is `hcws`.
+
 ```python
    req = operations.CreateDataConnectionRequest(
        request_body=operations.CreateDataConnectionRequestBody(
            platform_key='hcws',
        ),
-       company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
+       company_id=companies_response.company.id,
    )
-   res = s.connections.create(req)
+   connections_response = bank_feeds_client.connections.create(req)
 ```
 
-2. **Create bank feeds bank accounts**
+### Create bank feeds bank accounts
 
-Now, use the [Create bank feed bank accounts](https://github.com/codatio/client-sdk-python/blob/main/bankfeeds/docs/bankfeedaccounts/README.md#create) to add source bank accounts. These are the accounts the SMB user will be able to connect to QBO. 
+Now, use the [Create bank feed bank accounts](https://docs.codat.io/bank-feeds-api#/operations/create-bank-feed) to add source bank accounts. These are the accounts the SMB user will be able to connect to QBO. In the response, you will receive a list of created bank accounts.
 
-You can push historic transactions of up to seven days based on the feed start date, as chosen by the SMB user in the QBO UI.
+Note that `feed_start_date` value is chosen by your SMB user in the QBO UI and is used to limit the load of historic transactions to seven days. 
 
 ```python
 req = operations.CreateBankFeedRequest(
@@ -171,24 +160,23 @@ req = operations.CreateBankFeedRequest(
             account_type='Debit',
             balance=6531.4,
             currency='GBP',
-            feed_start_date='dolores', WHAT IS DIS IT S NOT ANYWHERE?
+            feed_start_date='dolores', WHAT IS DIS IT S NOT ANYWHERE? doesnt seem to be needed
             id='352c5955-907a-4ff1-a3a2-fa9467739251',
             modified_date='2023-01-09T14:14:14.1057478Z',
             sort_code='123456',
-            status='Pending',  IS THIS SOMETHING THAT NEEDS TO BE PASSED IN THE REQUEST?
+            status='Pending',  IS THIS SOMETHING THAT NEEDS TO BE PASSED IN THE REQUEST? doesnt seem to be needed
         ),
     ],
-    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
-    connection_id='2e9d2c44-f675-40ba-8049-353bfcb5e171',
+    company_id=companies_response.company.id,
+    connection_id=connections_response.connection.id,
 )
 
-res = s.bank_feed_accounts.create(req)
+bank_accounts_response = bank_feeds_client.bank_feed_accounts.create(req)
 ```
-In response, you will receive a list of created bank accounts. 
 
-3. **Authorize the connection via proxy**
+### Authorize the connection via proxy
 
-Finally, use our [Proxy](https://github.com/codatio/client-sdk-python/blob/main/bankfeeds/docs/connections/README.md#proxy) endpoint to authorize the previously created data connection by querying the QBO auth flow endpoints. 
+Finally, use our [Proxy](https://docs.codat.io/bank-feeds-api#/operations/proxy) endpoint to authorize the previously created data connection by querying the QBO auth flow endpoints. 
 
 DO WE NEED TO DIRECT THE PERSON TO A QBO WEB ADDRESS, OR THIS ENDPOINT DOES THAT BY ITSELF?
 
@@ -197,21 +185,20 @@ requests for the additional banking data types are routed directly to the releva
 ```python
 
 req = operations.ProxyRequest(
-    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
-    connection_id='2e9d2c44-f675-40ba-8049-353bfcb5e171',
+    company_id=companies_response.company.id,
+    connection_id=connections_response.connection.id,
     endpoint='generatecredentials?dataconnectionid={connectionId}',
 )
 
-res = s.connections.proxy(req)
+proxy_response = bank_feeds_client.connections.proxy(req)
 ```
 
-You are now ready to enable your SMB user to create and sync their bank transactions with QuickBooks Online. 
-
-### Create and sync bank transactions
-
-When an SMB user has connected one or more bank accounts to QuickBooks Online, you can push bank transactions from a connected account to QuickBooks Online (one account at a time). 
+When an SMB user has connected one or more bank accounts to QuickBooks Online, you can enable them to create and sync their bank transactions with QBO, one account at a time. 
 
 Because of the way bank transactions work, we recommend you post seven days of transactions on the initial push. For subsequent pushes, we recommend you post daily transaction data. 
+
+
+### Create bank feeds bank transactions
 
 :::info Bank transaction history
 Codat supports pushing historic (back-dated) transactions which are up to one week old.
@@ -219,9 +206,7 @@ Future-dated bank feeds are not supported
 Note that pushing future (future-dated) transactions to QBO Bank Feeds is not supported by Codat.
 :::
 
-1. **Create bank feeds bank transactions**
-
-Use the [Create bank transactions](https://github.com/codatio/client-sdk-python/blob/main/bankfeeds/docs/bankaccounttransactions/README.md#create) endpoint to post your SMB user's bank transactions to QuickBooks Online.
+Use the [Create bank transactions](https://docs.codat.io/bank-feeds-api#/operations/create-bank-transactions) endpoint to post your SMB user's bank transactions to QuickBooks Online.
 
 [Read more](https://docs.codat.io/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions) on these prerequisites.
 
@@ -239,7 +224,7 @@ You can push historic transactions of up to seven days based on the feed start d
 ```python
 req = operations.CreateBankTransactionsRequest(
     bank_transactions=shared.BankTransactions(
-        account_id='13d946f0-c5d5-42bc-b092-97ece17923ab',
+        account_id=bank_accounts_response.account.id,
         amount=7991.59,
         balance=8009.11,
         cleared_on_date='2023-01-10T14:14:14.1057478Z',
@@ -250,43 +235,44 @@ req = operations.CreateBankTransactionsRequest(
         source_modified_date='2023-01-09T14:14:14.1057478Z',
         transaction_type=shared.BankTransactionType.ATM,
     ),
-    account_id='corporis', ACCOUNT ID TWICE?
+    account_id=bank_accounts_response.account.id, ACCOUNT ID TWICE?
     allow_sync_on_push_complete=False,
-    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
-    connection_id='2e9d2c44-f675-40ba-8049-353bfcb5e171',
+    company_id=companies_response.company.id,
+    connection_id=connections_response.connection.id,
     timeout_in_minutes=613064,
 )
 
-res = s.bank_account_transactions.create(req)
+create_transactions_response = bank_feeds_client.bank_account_transactions.create(req)
 ```
 Repeat the request for the remainder of the SMB user's source bank accounts.
 
-2. **Get and display bank transactions**
+### Enhancing the user experience
 
 Once the bank transactions have been synced between the bank feed and QuickBooks Online, enable your SMB user to view the synced transactions and their status in a UI - this should be built into your app. 
 
-To display the bank transactions for a specific bank account, use the [List bank transactions for a bank account](https://github.com/codatio/client-sdk-python/blob/main/bankfeeds/docs/bankaccounttransactions/README.md#list) endpoint. 
+To display the bank transactions for a specific bank account, use the [List bank transactions for a bank account](https://docs.codat.io/bank-feeds-api#/operations/list-bank-account-transactions) endpoint. 
 
 ```python
 req = operations.ListBankAccountTransactionsRequest(
-    account_id='13d946f0-c5d5-42bc-b092-97ece17923ab',
-    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
-    connection_id='2e9d2c44-f675-40ba-8049-353bfcb5e171',
+    account_id=bank_accounts_response.account.id,
+    company_id=companies_response.company.id,
+    connection_id=connections_response.connection.id,
     order_by='-modifiedDate',
     page=1,
     page_size=100,
     query='quidem',
 )
 
-res = s.bank_account_transactions.list(req)
+list_transactions_response = bank_feeds_client.bank_account_transactions.list(req)
 ```
 
-That's it - this concludes the bank feeds reconciliation process flow. Enable your SMB user to..
+:::tip Recap
+That's it - you have followed Codat's bank feeds reconciliation process flow and understood how to implement it in code. You can now use this tutorial as a basis for your application.
+:::
 
 REMEMBER TO ALSO CHANGE THIS PAGE https://docs.codat.io/usecases/summary/reconciling-bank-transactions  
 
 ## Read next
 
-* Explore other use cases
-* Explore other bank feeds
-Something instead of "explore"
+* [Overview of the bank feeds use case](/usecases/summary/reconciling-bank-transactions)
+* [Overview of other use cases supported by Codat](/usecases/overview)
