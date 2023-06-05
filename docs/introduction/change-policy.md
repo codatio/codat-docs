@@ -5,7 +5,7 @@ createdAt: "2021-11-03T11:41:14.711Z"
 updatedAt: "2022-10-04T14:20:08.975Z"
 ---
 
-We always try to make changes to our product in a backwards-compatible way. This means you can choose whether, when and how to update your code and take advantage of the new functionality.
+We always try to make changes to our product in a backwards-compatible way. This means you can choose whether, when and how to update your code and take advantage of the new functionality.lk';';
 
 ## Backwards-compatible changes
 
