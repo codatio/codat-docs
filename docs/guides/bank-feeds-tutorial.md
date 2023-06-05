@@ -1,4 +1,4 @@
----bank
+---
 title: "Bank feeds reconciliation"
 sidebar_label: Bank feeds reconciliation
 description: "Example-based tutorial on reconciling bank transactions with QuickBooks Online with Codat"
