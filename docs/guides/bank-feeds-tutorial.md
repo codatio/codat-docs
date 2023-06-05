@@ -111,7 +111,7 @@ bank_feeds_client = codatbankfeeds.CodatBankFeeds(
         end
 ```
 
-#### Enable users to initiate connection
+### Enable users to initiate connection
 
 We expect your SMB users to interact with your application via a UI. Add a button or a link to your app that lets your users trigger the connection of their bank accounts to QBO. 
 
@@ -121,7 +121,7 @@ Add functionality—for example, a button or link—to your application that let
 
 When an SMB user clicks the button or link you added, create a Company with a QBO connection for them:
 
-#### Create a company with a QBO connection
+### Create a company with a QBO connection
 
 Use our [Create company](https://docs.codat.io/bank-feeds-api#/operations/create-company) endpoint to trigger company creation, which will represent the SMB customer in Codat. In response, you will receive a company `id`.
 
