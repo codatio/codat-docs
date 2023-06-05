@@ -4,7 +4,7 @@ sidebar_label: Bank feeds reconciliation
 description: "Example-based tutorial on reconciling bank transactions with QuickBooks Online with Codat"
 ---
 
-:::info 
+:::info Integrations and languages
 
 This tutorial focuses on reconciling bank feeds with QuickBooks Online (QBO), and uses an [SDK written in Python](https://github.com/codatio/client-sdk-python/tree/main/bankfeeds). We also provide this SDK in Typescript and Go on our [GitHub](https://github.com/orgs/codatio/repositories).    
 :::
@@ -15,7 +15,7 @@ This tutorial focuses on reconciling bank feeds with QuickBooks Online (QBO), an
 
 ⏳ Estimated time to review: 10-15 minutes
 
-🛠️ This tutorial includes code snippets from our [Python SDK](https://github.com/codatio/client-sdk-python/tree/main/bankfeeds). However, we use the same method names in our [Typescript](https://github.com/codatio/client-sdk-typescript/tree/main/bankfeeds) and [Go](https://github.com/codatio/client-sdk-go/tree/main/bankfeeds) SDKs.
+🛠️ This tutorial includes code snippets from our [Python SDK](https://github.com/codatio/client-sdk-python/tree/main/bankfeeds). However, we use the same method names in our [Typescript](https://github.com/codatio/client-sdk-typescript/tree/main/bankfeeds) and [Go](https://github.com/codatio/client-sdk-go/tree/main/bankfeeds) SDKs, which you can use instead.
 
 ## Why reconcile bank transactions
 
@@ -111,7 +111,7 @@ bank_feeds_client = codatbankfeeds.CodatBankFeeds(
         end
 ```
 
-### Using Codat for bank feeds reconciliation
+#### Enable users to initiate connection
 
 We expect your SMB users to interact with your application via a UI. Add a button or a link to your app that lets your users trigger the connection of their bank accounts to QBO. 
 
