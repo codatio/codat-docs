@@ -3,7 +3,7 @@ title: "Libraries"
 description: "Easily build with Codat's APIs with our libraries and SDKs"
 ---
 
-All libraries for Codat are listed below. If you've built anything that you'd be willing to share with the Codat community, please let us know and we'll link to it here!ytytyht
+All libraries for Codat are listed below. If you've built anything that you'd be willing to share with the Codat community, please let us know and we'll link to it here!
 
 ## Client libraries
 

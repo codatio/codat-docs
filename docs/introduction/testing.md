@@ -4,7 +4,7 @@ sidebar_label: "Test your Codat build"
 description: "Review our suggestions, best practices, and strategies for testing your Codat build"
 ---
 
-Testing is a key component of any software development process, both during the implementation and after go-live if changes are made to the solution. Here is what Codat recomments for testing your Codat build.ttff
+Testing is a key component of any software development process, both during the implementation and after go-live if changes are made to the solution. Here is what Codat recomments for testing your Codat build.
 
 ## Using a test instance
 
