@@ -6579,7 +6579,7 @@
           "alertId": {
             "type": "string",
             "format": "uuid",
-            "description": "Unique identifier of the alert."
+            "description": "Unique identifier of the webhook event."
           },
           "message": {
             "type": "string",

@@ -77,7 +77,7 @@
     },
     {
       "name": "Webhooks",
-      "description": "Manage webhooks, rules and alerts."
+      "description": "Manage webhooks, rules, and events."
     },
     {
       "name": "Integrations",
@@ -2758,7 +2758,7 @@
       },
       "Rule": {
         "title": "Webhook",
-        "description": "Configuration to alert to a url or list of email addresses based on the given type / condition.",
+        "description": "Configuration to provide an event notification to a URL or list of email addresses based on the given type or condition.",
         "examples": [
           {
             "id": "ff89c50e-a719-4ef5-a182-9917e53927b6",
@@ -3147,7 +3147,7 @@
           "alertId": {
             "type": "string",
             "format": "uuid",
-            "description": "Unique identifier of the alert."
+            "description": "Unique identifier of the webhook event."
           },
           "message": {
             "type": "string",
