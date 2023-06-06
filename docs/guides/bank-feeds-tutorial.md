@@ -2,6 +2,7 @@
 title: "Bank transactions reconciliation with QBO"
 sidebar_label: "Bank transactions reconciliation"
 description: "Example-based tutorial on reconciling bank transactions with QuickBooks Online using Codat's Bank Feeds API"
+displayed_sidebar: "docs"
 ---
 
 :::info Integrations and languages
