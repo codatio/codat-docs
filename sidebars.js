@@ -79,6 +79,11 @@ module.exports = {
             "guides/bill-pay/how-the-demo-app-works",
           ],
         },
+        {
+          type: "link",
+          href: "/guides/bank-feeds-tutorial",
+          label: "Bank transactions reconciliation"
+        },
       ],
     },
     {
