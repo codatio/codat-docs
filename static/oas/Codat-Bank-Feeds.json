@@ -6480,7 +6480,7 @@
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/proxy": {
-      "get": {
+      "post": {
         "tags": [
           "Connections"
         ],
