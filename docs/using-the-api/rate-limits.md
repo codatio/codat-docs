@@ -67,4 +67,6 @@ This gives Account B a total limit of 154,000 requests.
 
 Hard DoS-based limits are set to protect against bad actors and do not prevent sensible usage. Codat sets these limits at: 
 
-- 1,000 requests per minute from any IP Address.
+- 10,000 requests per minute from any IP Address.
+
+We may block an IP's traffic without warning if, in our view, it significantly interferes with the operation of our API.
