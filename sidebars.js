@@ -158,7 +158,7 @@ module.exports = {
             "introduction/webhooks/core-rules-create",
             "introduction/webhooks/core-rules-webhooks",
             "introduction/webhooks/core-rules-webhooksecurity",
-            "introduction/webhooks/receive-webhooks-as-email-alerts",
+            "introduction/webhooks/receive-webhooks-as-email",
           ],
         },
         {
