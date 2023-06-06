@@ -23,9 +23,9 @@ The following rules can be configured in the Codat Portal to trigger webhook eve
 
 ## Rules and payloads
 
-:::caution Removing non-reference data from webhook alerts body
+:::caution Removing non-reference data from webhook body
 
-In line with industry standard security practices, we have removed personally identifiable information, such as `companyName`, from the body of our alert webhooks. This leaves only referential information, such as `companyId`, which can be looked up using our API.
+In line with industry standard security practices, we have removed personally identifiable information, such as `companyName`, from the body of our webhooks. This leaves only referential information, such as `companyId`, which can be looked up using our API.
 
 :::
 
@@ -192,7 +192,7 @@ In line with industry standard security practices, we have removed personally id
 
 **Note:** This rule is specific to Sync for Commerce and cannot be used for other products.
 
-```json Example webhook alert body
+```json
 {
   "companyId": "e2876f0a-5102-4a7d-9743-f10133dba88f",
   "clientId": "4f1fb082-0c62-4c74-be22-bc782b801e59",
