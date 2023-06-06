@@ -69,4 +69,4 @@ Hard DoS-based limits are set to protect against bad actors and do not prevent s
 
 - 10,000 requests per minute from any IP Address.
 
-We will use discretion to decide if a particular IP is causing undue interference to the operation of the API and will block traffic without warning for the offending IP.
+We may block an IP's traffic without warning if, in our view, it significantly interferes with the operation of our API.
