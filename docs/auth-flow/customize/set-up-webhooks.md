@@ -11,7 +11,7 @@ When setting it up, consider your use case and whether it is more useful to set 
 
 For example, if a company has a designated accounting manager, you might want to:
 
-- Set up a webhook for this specific company,
+- Set up a webhook for this specific company
 - Notify the account manager
 
 Therefore, the rule would have to specify the company ID, and the account manager’s e-mail address to notify them.
