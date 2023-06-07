@@ -100,7 +100,7 @@ Provide your users with a link or a button in your app so they can trigger the c
 
 When an SMB user clicks the button or link you added, create a Codat company with a QBO Bank Feeds connection for them.
 
-BASICALLY ONE BUTTON TRIGGERS THE WHOLE LOT 
+BASICALLY ONE BUTTON TRIGGERS THE WHOLE LOT gdgfd
 
 #### Create a company with a QBO Bank Feeds connection
 
