@@ -102,7 +102,7 @@ When an SMB user clicks the button or link you added, create a Codat company wit
 
 BASICALLY ONE BUTTON TRIGGERS THE WHOLE LOT gdgfd
 
-#### Create a company with a QBO Bank Feeds connection
+### Create a company with a QBO Bank Feeds connection
 
 Use our [Create company](/bank-feeds-api#/operations/create-company) endpoint to trigger company creation, which will represent your SMB customer in Codat. In response, you will receive a company Id, which is required by subsequent endpoints.
 
@@ -126,7 +126,7 @@ Next, call the [Create connection](/bank-feeds-api#/operations/create-data-conne
    connections_response = bank_feeds_client.connections.create(req)
 ```
 
-#### Create bank feeds bank accounts
+### Create bank feeds bank accounts
 
 Now, use the [Create bank feed bank accounts](/bank-feeds-api#/operations/create-bank-feed) endpoint to add source bank accounts to Codat. These are the accounts the SMB user will be able to connect to QBO Bank Feeds. In the response, you will receive a list of created bank accounts.
 
@@ -150,7 +150,7 @@ req = operations.CreateBankFeedRequest(
 bank_accounts_response = bank_feeds_client.bank_feed_accounts.create(req)
 ```
 
-#### Authorize the connection via proxy
+### Authorize the connection via proxy
 
 Finally, use our [Proxy](/bank-feeds-api#/operations/proxy) endpoint to authorize the previously created data connection by querying QuickBooks Online's own authorization flow endpoints. 
 
@@ -190,7 +190,7 @@ Note that `feed_start_date` value is chosen by your SMB user in the QBO Auth UI 
 
 When an SMB user has completed authorization and connected one or more bank accounts to QuickBooks Online, you can create and sync their bank transactions with QBO, one account at a time. Once it's linked, QBO ocmes to ask for transactions. test transactions two lines. we give them two test transactions. then we sync transactions between codat and bank, like so: 
 
-#### Create bank feeds bank transactions
+### Create bank feeds bank transactions
 
 Note the following guidelines before syncing bank transactions, or [read more](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions) about them:
 
