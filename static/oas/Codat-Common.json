@@ -1401,11 +1401,9 @@
         "tags": [
           "Settings"
         ],
-        "x-speakeasy-ignore": true,
         "operationId": "get-profile-syncSettings",
+        "x-speakeasy-name-override": "get-sync-settings",
         "description": "Retrieve the sync settings for your client. This includes how often data types should be queued to be updated, and how much history should be fetched.",
-        "x-internal": true,
-        "deprecated": true,
         "responses": {
           "200": {
             "description": "OK",
@@ -1451,8 +1449,8 @@
         "tags": [
           "Settings"
         ],
-        "operationId": "update-sync-settings",
-        "x-speakeasy-name-override": "get-sync-settings",
+        "operationId": "update-profile-syncSettings",
+        "x-speakeasy-name-override": "update-sync-settings",
         "responses": {
           "204": {
             "description": "No Content"
