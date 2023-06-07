@@ -11,6 +11,10 @@ Handling rate limits is a challenging aspect of building financial integrations.
 
 ## Codat rate limits
 
+Codat will return a `429` status code for all requests to the API that are received while rate limiting is active. The body of the response will look like any other [error that gets returned by Codat](/using-the-api/errors).
+
+The response will also include a `retry-after` header that will advise your calling system when the current rate limiting will deactivate.
+
 ### Usage-based limits
 
 We do not currently enforce usage-based rate limits, but we do monitor them internally. If a client breaks the limits, it usually means there is an overlooked issue in their system or product. We will get in touch with the client to discuss possible improvements to reduce the number of calls. This will enhance the Codat experience for the client and their users. 
