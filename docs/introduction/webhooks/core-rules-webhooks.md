@@ -1,6 +1,6 @@
 ---
 title: "Listening to events"
-description: "Basics of webhook alerts when using Codat's APIs"
+description: "Basics of webhook events when using Codat's APIs"
 createdAt: "2020-04-01T20:16:29.839Z"
 updatedAt: "2022-11-24T12:56:40.816Z"
 ---
@@ -13,9 +13,9 @@ The body of the request will include context such as the `RuleId`, the `RuleType
 
 | Response code                                                                       | Description                                                                       |
 | :---------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------- |
-| **200** or **2xx** range status code                                                | Alert was received successfully.                                                  |
-| **300** or **3xx** range status code                                                | Redirects the alert to another URL. Codat doesn't permanently cache the redirect. |
-| **408**, **420**, **429**, **460**, **502**, **503**, **504**, **522**, and **524** | Transient error or a timeout. Codat retries the webhook alert.                    |
+| **200** or **2xx** range status code                                                | Webhook event was received successfully.                                                  |
+| **300** or **3xx** range status code                                                | Redirects the event to another URL. Codat doesn't permanently cache the redirect. |
+| **408**, **420**, **429**, **460**, **502**, **503**, **504**, **522**, and **524** | Transient error or a timeout. Codat retries the webhook event.                    |
 | Any other status code, including **400**                                            | Unrecoverable, no retry is attempted.                                             |
 
 ## Retries
@@ -36,7 +36,7 @@ The HTTP header of the standard webhook call contains an `X-Codat-ClientId` whic
 
 ## Webhook security
 
-If you'd like to secure your webhook endpoints, you can add an `Authorization` header to the notifications Codat sends using the settings on the Portal's Alert settings page, or read more about [Webhook security](/introduction/webhooks/core-rules-webhooksecurity).
+If you'd like to secure your webhook endpoints, you can add an `Authorization` header to the notifications Codat sends using the settings on the Portal's Settings page, or read more about [Webhook security](/introduction/webhooks/core-rules-webhooksecurity).
 
 | Authorization method or scheme | Description                                                                                       |
 | :----------------------------- | :------------------------------------------------------------------------------------------------ |
