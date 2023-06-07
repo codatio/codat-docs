@@ -1,5 +1,5 @@
 ---
-title: "Bank transactions reconciliation with QBO"
+title: "Bank transactions reconciliation with QBO Bank Feeds"
 sidebar_label: "Bank transactions reconciliation"
 description: "Example-based tutorial on reconciling bank transactions with QuickBooks Online using Codat's Bank Feeds API"
 displayed_sidebar: "docs"
@@ -13,7 +13,7 @@ This tutorial focuses on reconciling bank feeds with QuickBooks Online (QBO), an
 
 ## Tutorial summary
 
-🎯 Our QuickBooks Online bank feeds integration makes it possible for your customers to connect bank accounts from your application to QBO. See how you can support your users by syncing their bank transaction data to QBO, ensuring the records match each other. 
+🎯 Our QuickBooks Online Bank Feeds integration makes it possible for your customers to connect bank accounts from your application to QBO. See how you can support your users by syncing their bank transaction data to QBO Bank Feeds, ensuring the records match each other. 
 
 ⏳ Estimated time to review: 10-15 minutes
 
@@ -30,21 +30,21 @@ This saves your customers time and gives them the context they need to properly 
 
 ## Solution overview
 
-We have done the heavy lifting for you by building bank feeds integrations with a standardized data model to the accounting platforms your customers already use. This gives you access to real-time data that you can fetch, create, or update to support your customers. In this tutorial, we focus on our QuickBooks Online bank feeds integration. 
+We have done the heavy lifting for you by building bank feeds integrations with a standardized data model to the accounting platforms your customers already use. This gives you access to real-time data that you can fetch, create, or update to support your customers. In this tutorial, we focus on our QuickBooks Online Bank Feeds integration. 
 
 :::tip Prerequisites
 
-Make sure you have the QuickBooks Online bank feeds integration enabled in the Codat Portal. Navigate to **Settings > Integrations > Bank feeds** to do so, or [read more](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-setup) for detailed instructions.
+1. Make sure you have enabled the QuickBooks Online Bank Feeds integration. You can do that in the [Codat Portal](https://app.codat.io/settings/integrations/bankfeeds), or [read more](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-setup) for detailed instructions.
 
-QuickBooks Online bank feeds must be enabled by Intuit before the solution can go into production.
+2. Intuit must have approved your company to appear in the QuickBooks Online bank selection screen. Submit a request to Codat so that we can organize this with Intuit on your behalf. 
 
-We also expect your SMB users to interact with your application via a UI that you built.
+We also expect your application has a UI that your SMB users interact with.
 
 :::
 
 ### Preparation
 
-Use our SDKs to easily implement the bank feeds solution in your app. We use our [Python SDK](https://github.com/codatio/client-sdk-python/tree/main/bankfeeds) in this tutorial, but you can also find Typescript and Go SDKs on our [GitHub](https://github.com/orgs/codatio/repositories). 
+Use our SDKs to easily implement the bank feeds solution in your app. We use the [Python SDK](https://github.com/codatio/client-sdk-python/tree/main/bankfeeds) in this tutorial, but you can also find Typescript and Go SDKs on [GitHub](https://github.com/orgs/codatio/repositories). 
 
 First, install the client library: 
 
@@ -52,7 +52,7 @@ First, install the client library:
 pip install codat-bank-feeds
 ```
 
-Next, import the package and add your Base64 encoded API key within an authorization header. To get your API key, navigate to **Developers > API keys** in the [Codat Portal](https://app.codat.io/) and copy your authorization header. In our example, we chose to call our client library `bank_feeds_client`.
+Next, import the package and add your Base64 encoded API key within an authorization header. You can copy your authorization header in the [Developers](https://app.codat.io/developers/api-keys) section of the Codat Portal. In our example, we chose to call the client library `bank_feeds_client`.
 
 ```python
 import codatbankfeeds
@@ -72,28 +72,39 @@ bank_feeds_client = codatbankfeeds.CodatBankFeeds(
         participant frontend as User 
         participant backend as Bank
         participant codat as Codat
-        frontend ->>+ backend: Connect bank feed
-        backend ->> codat: Create company with QBO connection
-        codat -->> backend: Company id with QBO connection
+        participant qbo as QBO Portal
+        frontend ->> backend: Connect bank feed
+        backend ->> codat: Create company with QBO Bank Feeds connection
+        codat -->> backend: Company Id with QBO Bank Feeds connection
         backend ->> codat: Create bank feed account
         codat -->> backend: Bank feed account
-        backend ->> codat: Proxy (QBO Auth.)
-        codat -->> frontend: QBO Link flow
+        backend ->> codat: Proxy (Get QBO Bank Feeds credentials)
+        codat -->> backend: QBO Bank Feeds credentials
+        backend -->> frontend: QBO Bank Feeds credentials
+        frontend ->> qbo: Complete QBO Bank Feeds link
+        qbo ->> codat: Transactions pls
+        codat -->> qbo: test transactions here you go
         loop batch of transactions
             backend ->> codat: Create bank transactions
-            codat -->> backend: Push operation
+            codat -->> backend: Push operation status of success
+        end
+        loop batch of transactions, periodically
+            qbo ->> codat: get me more transactions list trans
+            codat -->> qbo: here is your list
         end
 ```
 
-### Enable users to initiate connection
+### SOME TITLE TO SAY HERE WE START
 
-We expect your SMB users to interact with your application via a UI that you built. Add a button or a link to your app that lets your users trigger the connection of their bank accounts to QBO. Use an appropriate call-to-action, such as _Connect account to QuickBooks_.
+Provide your users with a link or a button in your app so they can trigger the connection of their bank accounts to QBO Bank Feeds. Use an appropriate call-to-action, such as _Connect account to QuickBooks_.
 
-When an SMB user clicks the button or link you added, create a Company with a QBO connection for them.
+When an SMB user clicks the button or link you added, create a Codat company with a QBO Bank Feeds connection for them.
 
-### Create a company with a QBO connection
+BASICALLY ONE BUTTON TRIGGERS THE WHOLE LOT 
 
-Use our [Create company](/bank-feeds-api#/operations/create-company) endpoint to trigger company creation, which will represent the SMB customer in Codat. In response, you will receive a company Id, which is required by subsequent endpoints.
+#### Create a company with a QBO Bank Feeds connection
+
+Use our [Create company](/bank-feeds-api#/operations/create-company) endpoint to trigger company creation, which will represent your SMB customer in Codat. In response, you will receive a company Id, which is required by subsequent endpoints.
 
 ```python
    req = shared.CompanyRequestBody(
@@ -103,23 +114,21 @@ Use our [Create company](/bank-feeds-api#/operations/create-company) endpoint to
    companies_response = bank_feeds_client.companies.create(req)
 ```
 
-Next, call the [Create connection](/bank-feeds-api#/operations/create-data-connection) endpoint to establish a data link to QBO for the company. We pass the response from the previous endpoint, and also the platform key, which for QBO is `hcws`.
+Next, call the [Create connection](/bank-feeds-api#/operations/create-data-connection) endpoint to establish a data link to QBO Bank Feeds for the company. We pass the response from the previous endpoint in the request, and also include the platform key, which for QBO Bank Feeds is `hcws`.
 
 ```python
    req = operations.CreateDataConnectionRequest(
        request_body=operations.CreateDataConnectionRequestBody(
-           platform_key='hcws',
+           platform_key='hcws', #Codat's platform key for QBO Bank Feeds
        ),
        company_id=companies_response.company.id,
    )
    connections_response = bank_feeds_client.connections.create(req)
 ```
 
-### Create bank feeds bank accounts
+#### Create bank feeds bank accounts
 
-Now, use the [Create bank feed bank accounts](/bank-feeds-api#/operations/create-bank-feed) to add source bank accounts. These are the accounts the SMB user will be able to connect to QBO. In the response, you will receive a list of created bank accounts.
-
-Note that `feed_start_date` value is chosen by your SMB user in the QBO UI and is used to limit the load of historic transactions to seven days. 
+Now, use the [Create bank feed bank accounts](/bank-feeds-api#/operations/create-bank-feed) endpoint to add source bank accounts to Codat. These are the accounts the SMB user will be able to connect to QBO Bank Feeds. In the response, you will receive a list of created bank accounts.
 
 ```python
 req = operations.CreateBankFeedRequest(
@@ -130,11 +139,8 @@ req = operations.CreateBankFeedRequest(
             account_type='Debit',
             balance=6531.4,
             currency='GBP',
-            feed_start_date='dolores', WHAT IS DIS IT S NOT ANYWHERE? doesnt seem to be needed
             id='352c5955-907a-4ff1-a3a2-fa9467739251',
-            modified_date='2023-01-09T14:14:14.1057478Z',
             sort_code='123456',
-            status='Pending',  IS THIS SOMETHING THAT NEEDS TO BE PASSED IN THE REQUEST? doesnt seem to be needed
         ),
     ],
     company_id=companies_response.company.id,
@@ -144,11 +150,19 @@ req = operations.CreateBankFeedRequest(
 bank_accounts_response = bank_feeds_client.bank_feed_accounts.create(req)
 ```
 
-### Authorize the connection via proxy
+#### Authorize the connection via proxy
 
 Finally, use our [Proxy](/bank-feeds-api#/operations/proxy) endpoint to authorize the previously created data connection by querying QuickBooks Online's own authorization flow endpoints. 
 
 DO WE NEED TO DIRECT THE PERSON TO A QBO WEB ADDRESS, OR THIS ENDPOINT DOES THAT BY ITSELF?
+
+Embed Generate credentials endpoint in your own UI - generates credentials in your own flow. 
+Fake credentials basically 
+
+enerat5e credentials button somewhere on the bank's page
+they need to paste it into QBO
+
+
 
 
 ```python
@@ -162,11 +176,21 @@ req = operations.ProxyRequest(
 proxy_response = bank_feeds_client.connections.proxy(req)
 ```
 
-WHAT DOES THE RESPONSE PROVIDE? THE URL? does it auto open? 
+![](/img/bank-feeds-api/qbo-bank-feeds/400590b-qbo-bank-feeds_smb-customer-steps-revised.png)
 
-When an SMB user has completed authorization and connected one or more bank accounts to QuickBooks Online, you can create and sync their bank transactions with QBO, one account at a time. 
+ username and password
 
-### Create bank feeds bank transactions
+then QBO comes to ask / pull the bank transactions once it's gone to linked
+
+feed start date that the user has selected
+
+YOU GET BACK THE PASSWORD AND LOGIN AND NOW YOU NEED TO GIVE IT TO THE SMB AND TELL THEM TO GO T OQBO AND ENTER IT THERE. you can choose to give some instructions to the user on what/ where to do in qbo, like we do in own flow here (link or screenshot)
+
+Note that `feed_start_date` value is chosen by your SMB user in the QBO Auth UI and is used to limit the load of historic transactions to seven days. 
+
+When an SMB user has completed authorization and connected one or more bank accounts to QuickBooks Online, you can create and sync their bank transactions with QBO, one account at a time. Once it's linked, QBO ocmes to ask for transactions. test transactions two lines. we give them two test transactions. then we sync transactions between codat and bank, like so: 
+
+#### Create bank feeds bank transactions
 
 Note the following guidelines before syncing bank transactions, or [read more](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions) about them:
 
@@ -177,7 +201,13 @@ Note the following guidelines before syncing bank transactions, or [read more](/
 - Bank transactions can't be older than the most recent transaction available on the destination bank account.
 - Up to 1000 bank transactions can be synced at a time.
 
-Use the [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions) endpoint to post your SMB user's bank transactions to QuickBooks Online. Because of the way bank transactions work, we recommend you post seven days of transactions on the initial sync. For subsequent syncs, we recommend you post daily transaction data. 
+Use the [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions) endpoint to post your SMB user's bank transactions to QuickBooks Online. 
+
+Because of the way bank transactions work, we recommend you post seven days of transactions on the initial sync. For subsequent syncs, we recommend you post daily transaction data. 
+
+
+QBO sources the transactions from codat. so you pushed bank feeds transactions to codat, and then qbo pulled from codat.
+flow isbank -> codat -> qbo
 
 ```python
 req = operations.CreateBankTransactionsRequest(
@@ -194,15 +224,13 @@ req = operations.CreateBankTransactionsRequest(
         transaction_type=shared.BankTransactionType.ATM,
     ),
     account_id=bank_accounts_response.account.id, ACCOUNT ID TWICE?
-    allow_sync_on_push_complete=False,
     company_id=companies_response.company.id,
     connection_id=connections_response.connection.id,
-    timeout_in_minutes=613064,
 )
 
 create_transactions_response = bank_feeds_client.bank_account_transactions.create(req)
 ```
-Repeat the request for the remainder of the SMB user's source bank accounts.
+Repeat the request for the remainder of the SMB user's source bank accounts. , and qbo on a periodic basis comes to codat and asks for those transactions. 
 
 ### Enhance your users' experience
 
@@ -234,5 +262,5 @@ That's it - you have followed Codat's bank transactions reconciliation process f
 
 ## Read next
 
-* [Overview of the bank transaction reconciliation use case](/usecases/summary/reconciling-bank-transactions)
-* [Overview of other use cases supported by Codat](/usecases/overview)
+* Expand your coverage of bank feds to [Xero](/bank-feeds-api/xero-bank-feeds/) and [Sage](/bank-feeds-api/sage-bank-feeds/)
+* Learn more about how Codat can automate your lending solutions on the examples of [loan qualification](/guides/loan-qualification/introduction) and [invoice financing](/guides/invoice-finance/introduction)
