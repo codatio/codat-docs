@@ -38,7 +38,7 @@ We have done the heavy lifting for you by building bank feeds integrations with 
 
 2. Intuit must have approved your company to appear in the QuickBooks Online bank selection screen. Submit a request to Codat so that we can organize this with Intuit on your behalf. 
 
-We also expect your application has a UI that your SMB users interact with.
+We also expect that your application has a UI that your SMB users interact with.
 
 :::
 
@@ -78,29 +78,27 @@ bank_feeds_client = codatbankfeeds.CodatBankFeeds(
         codat -->> backend: Company Id with QBO Bank Feeds connection
         backend ->> codat: Create bank feed account
         codat -->> backend: Bank feed account
-        backend ->> codat: Proxy (Get QBO Bank Feeds credentials)
+        backend ->> codat: Get QBO Bank Feeds credentials via proxy
         codat -->> backend: QBO Bank Feeds credentials
         backend -->> frontend: QBO Bank Feeds credentials
         frontend ->> qbo: Complete QBO Bank Feeds link
-        qbo ->> codat: Transactions pls
-        codat -->> qbo: test transactions here you go
+        qbo ->> codat: Request bank transactions
+        codat -->> qbo: Provide test bank transactions
         loop batch of transactions
             backend ->> codat: Create bank transactions
-            codat -->> backend: Push operation status of success
+            codat -->> backend: Confirm operation status
         end
         loop batch of transactions, periodically
-            qbo ->> codat: get me more transactions list trans
-            codat -->> qbo: here is your list
+            qbo ->> codat: Request bank transactions
+            codat -->> qbo: Provide bank transactions
         end
 ```
 
-### SOME TITLE TO SAY HERE WE START
+## Solution walkthrough
 
 Provide your users with a link or a button in your app so they can trigger the connection of their bank accounts to QBO Bank Feeds. Use an appropriate call-to-action, such as _Connect account to QuickBooks_.
 
-When an SMB user clicks the button or link you added, create a Codat company with a QBO Bank Feeds connection for them.
-
-BASICALLY ONE BUTTON TRIGGERS THE WHOLE LOT gdgfd
+When an SMB user clicks the button or link you added, initiate the process described below to create a Codat company with a QBO Bank Feeds connection and provide opportunity to authorize that connection.
 
 ### Create a company with a QBO Bank Feeds connection
 
@@ -128,7 +126,7 @@ Next, call the [Create connection](/bank-feeds-api#/operations/create-data-conne
 
 ### Create bank feeds bank accounts
 
-Now, use the [Create bank feed bank accounts](/bank-feeds-api#/operations/create-bank-feed) endpoint to add source bank accounts to Codat. These are the accounts the SMB user will be able to connect to QBO Bank Feeds. In the response, you will receive a list of created bank accounts.
+Now, use the [Create bank feed bank accounts](/bank-feeds-api#/operations/create-bank-feed) endpoint to add your SMB's source bank accounts to Codat. These are the accounts the SMB user will be able to connect to QBO Bank Feeds. In the response, you will receive a list of created bank accounts.
 
 ```python
 req = operations.CreateBankFeedRequest(
@@ -152,18 +150,11 @@ bank_accounts_response = bank_feeds_client.bank_feed_accounts.create(req)
 
 ### Authorize the connection via proxy
 
-Finally, use our [Proxy](/bank-feeds-api#/operations/proxy) endpoint to authorize the previously created data connection by querying QuickBooks Online's own authorization flow endpoints. 
+Finally, use our [Proxy](/bank-feeds-api#/operations/proxy) endpoint to authorize the previously created data connection. Embed the call to this endpoint in the UI flow the user triggered when choosing to link their bank accounts. 
 
-DO WE NEED TO DIRECT THE PERSON TO A QBO WEB ADDRESS, OR THIS ENDPOINT DOES THAT BY ITSELF?
+In response, you will receive login credentials that your user needs to enter in QBO Banking to link a bank account. Share them with the user, and consider providing instructions on steps to take in QBO. For example, this is how we manage it in our QBO Link flow. 
 
-Embed Generate credentials endpoint in your own UI - generates credentials in your own flow. 
-Fake credentials basically 
-
-enerat5e credentials button somewhere on the bank's page
-they need to paste it into QBO
-
-
-
+![](/img/bank-feeds-api/qbo-bank-feeds/400590b-qbo-bank-feeds_smb-customer-steps-revised.png)
 
 ```python
 
@@ -176,23 +167,13 @@ req = operations.ProxyRequest(
 proxy_response = bank_feeds_client.connections.proxy(req)
 ```
 
-![](/img/bank-feeds-api/qbo-bank-feeds/400590b-qbo-bank-feeds_smb-customer-steps-revised.png)
+When completing the authorization in QBO Banking, your user chooses the bank accounts they want to connect. At the same time, they also choose a `feed_start_date` value that is then used to limit the load of historic transactions to seven days.
 
- username and password
+Once this is complete, you can sync transactions between the bank and Codat. QBO will then poll Codat periodically to pull these transactions to their bank feed.
 
-then QBO comes to ask / pull the bank transactions once it's gone to linked
+### Sync bank feeds bank transactions
 
-feed start date that the user has selected
-
-YOU GET BACK THE PASSWORD AND LOGIN AND NOW YOU NEED TO GIVE IT TO THE SMB AND TELL THEM TO GO T OQBO AND ENTER IT THERE. you can choose to give some instructions to the user on what/ where to do in qbo, like we do in own flow here (link or screenshot)
-
-Note that `feed_start_date` value is chosen by your SMB user in the QBO Auth UI and is used to limit the load of historic transactions to seven days. 
-
-When an SMB user has completed authorization and connected one or more bank accounts to QuickBooks Online, you can create and sync their bank transactions with QBO, one account at a time. Once it's linked, QBO ocmes to ask for transactions. test transactions two lines. we give them two test transactions. then we sync transactions between codat and bank, like so: 
-
-### Create bank feeds bank transactions
-
-Note the following guidelines before syncing bank transactions, or [read more](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions) about them:
+:::tip Bank transactions guidelines
 
 - You can push historic (back-dated) transactions that are up to seven days old based on the `feed_start_date`, as chosen by the SMB user in the QBO UI.
 - Syncing future-dated transactions to QBO is not supported.
@@ -201,36 +182,45 @@ Note the following guidelines before syncing bank transactions, or [read more](/
 - Bank transactions can't be older than the most recent transaction available on the destination bank account.
 - Up to 1000 bank transactions can be synced at a time.
 
-Use the [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions) endpoint to post your SMB user's bank transactions to QuickBooks Online. 
+:::
+
+Use the [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions) endpoint to post your SMB user's bank transactions to Codat. 
 
 Because of the way bank transactions work, we recommend you post seven days of transactions on the initial sync. For subsequent syncs, we recommend you post daily transaction data. 
 
-
-QBO sources the transactions from codat. so you pushed bank feeds transactions to codat, and then qbo pulled from codat.
-flow isbank -> codat -> qbo
-
 ```python
 req = operations.CreateBankTransactionsRequest(
-    bank_transactions=shared.BankTransactions(
-        account_id=bank_accounts_response.account.id,
-        amount=7991.59,
-        balance=8009.11,
-        cleared_on_date='2023-01-10T14:14:14.1057478Z',
-        description='HSBC Covent Grdn ATM W',
-        id='ca1ba928-fc81-4674-acb7-39205929396f',
-        modified_date='2023-01-09T14:14:14.1057478Z',
-        reconciled=False,
-        source_modified_date='2023-01-09T14:14:14.1057478Z',
-        transaction_type=shared.BankTransactionType.ATM,
+    create_bank_transactions=shared.CreateBankTransactions(
+        account_id='HSBC Business 1',
+        transactions=[
+            shared.CreateBankAccountTransaction(
+                amount=2088.76,
+                date_='2022-10-23T00:00:00.000Z',
+                description='HSBC Covent Grdn ATM W',
+                id='fa946773-9251-4aa5-ac3f-5ad019da1ffe',
+            ),
+            shared.CreateBankAccountTransaction(
+                amount=4686.51,
+                date_='2022-10-23T00:00:00.000Z',
+                description='Forbes subscription',
+                id='097b0074-f154-471b-9e6e-13b99d488e1e',
+            ),
+            shared.CreateBankAccountTransaction(
+                amount=5759.47,
+                date_='2022-10-23T00:00:00.000Z',
+                description='Wholesale Balloons, Ltd',
+                id='450ad2ab-d442-4698-82d5-02a94bb4f63c',
+            ),
+        ],
     ),
-    account_id=bank_accounts_response.account.id, ACCOUNT ID TWICE?
+    account_id=bank_accounts_response.account.id,
     company_id=companies_response.company.id,
     connection_id=connections_response.connection.id,
 )
 
 create_transactions_response = bank_feeds_client.bank_account_transactions.create(req)
 ```
-Repeat the request for the remainder of the SMB user's source bank accounts. , and qbo on a periodic basis comes to codat and asks for those transactions. 
+Repeat the request for the remainder of the SMB user's source bank accounts. Keep the bank transactions in Codat up to date, as QBO polls Codat periodically to pull these transactions to their bank feeds. 
 
 ### Enhance your users' experience
 
