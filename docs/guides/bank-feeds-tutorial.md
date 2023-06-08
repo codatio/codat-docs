@@ -11,7 +11,7 @@ This tutorial focuses on reconciling bank feeds with QuickBooks Online (QBO), an
 
 :::
 
-## Tutorial summary
+## Summary
 
 🎯 Our QuickBooks Online Bank Feeds integration makes it possible for your customers to connect bank accounts from your application to QBO. See how you can support your users by syncing their bank transaction data to QBO Bank Feeds, ensuring the records match each other. 
 
