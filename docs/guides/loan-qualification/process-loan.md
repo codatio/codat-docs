@@ -37,7 +37,7 @@ You can also review the detailed technical [diagram](https://github.com/codatio/
 
 🙏🏽 This step is normally performed by the borrower.
 
-:::note Undewriting frontend
+:::note Underwriting frontend
 
 We use [Swagger](http://localhost:5069/swagger/index.html) to act as a presentation layer to interact with the demo endpoints. There are three endpoints that support the creation and processing of the application form, and three endpoints to interact with webhook rules you have previously set up. Remember to click **Try it out** and **Execute** when working with Swagger.
 :::
