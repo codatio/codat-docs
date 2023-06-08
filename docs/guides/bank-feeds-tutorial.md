@@ -191,7 +191,7 @@ Because of the way bank transactions work, we recommend you post seven days of t
 ```python
 req = operations.CreateBankTransactionsRequest(
     create_bank_transactions=shared.CreateBankTransactions(
-        account_id='HSBC Business 1',
+        account_id='bank_accounts_response.account.id',
         transactions=[
             shared.CreateBankAccountTransaction(
                 amount=2088.76,
