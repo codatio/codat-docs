@@ -6451,7 +6451,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/BankTransactions"
+                "$ref": "#/components/schemas/CreateBankTransactions"
               }
             }
           }
@@ -7056,6 +7056,45 @@
           }
         ]
       },
+      "CreateBankTransactions": {
+        "title": "Create bank account transactions",
+        "type": "object",
+        "properties": {
+          "accountId": {
+            "type": "string",
+            "examples": {
+              "$ref": "#/components/parameters/accountId/schema/examples"
+            }
+          },
+          "transactions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateBankTransactions/definitions/CreateBankAccountTransaction"
+            }
+          }
+        },
+        "definitions": {
+          "CreateBankAccountTransaction": {
+            "title": "bank account transaction",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "number"
+              },
+              "date": {
+                "$ref": "#/components/schemas/DateTime"
+              },
+              "description": {
+                "nullable": false,
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
       "CreateBankTransactionsResponse": {
         "x-internal": true,
         "allOf": [
@@ -7063,7 +7102,7 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/BankTransactions"
+                "$ref": "#/components/schemas/CreateBankTransactions"
               }
             }
           },
