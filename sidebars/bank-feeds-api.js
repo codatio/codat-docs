@@ -13,6 +13,18 @@ module.exports = [
   },
   {
     type: "category",
+    label: "Guides",
+    collapsed: true,
+    items: [
+      {
+        type: "link",
+        label: "Bank reconciliation with QBO",
+        href: "/guides/bank-feeds-tutorial",
+      },
+    ],
+  },
+  {
+    type: "category",
     label: "Sage bank feeds",
     collapsed: true,
     items: [
