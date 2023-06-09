@@ -82,8 +82,6 @@ bank_feeds_client = codatbankfeeds.CodatBankFeeds(
         codat -->> backend: QBO Bank Feeds credentials
         backend -->> frontend: QBO Bank Feeds credentials
         frontend ->> qbo: Complete QBO Bank Feeds link
-        qbo ->> codat: Request bank transactions
-        codat -->> qbo: Provide test bank transactions
         loop batch of transactions
             backend ->> codat: Create bank transactions
             codat -->> backend: Confirm operation status
@@ -221,26 +219,6 @@ req = operations.CreateBankTransactionsRequest(
 create_transactions_response = bank_feeds_client.bank_account_transactions.create(req)
 ```
 Repeat the request for the remainder of the SMB user's source bank accounts. Keep the bank transactions in Codat up to date, as QBO polls Codat periodically to pull these transactions to their bank feeds. 
-
-### Enhance your users' experience
-
-Once the bank transactions have been synced between the bank feed and QuickBooks Online, you can enhance your SMB user's experience and allow them to view the synced transactions and their status in your application's UI. 
-
-To display the bank transactions for a specific bank account, use the [List bank transactions for a bank account](/bank-feeds-api#/operations/list-bank-account-transactions) endpoint. 
-
-```python
-req = operations.ListBankAccountTransactionsRequest(
-    account_id=bank_accounts_response.account.id,
-    company_id=companies_response.company.id,
-    connection_id=connections_response.connection.id,
-    order_by='-modifiedDate',
-    page=1,
-    page_size=100,
-    query='quidem',
-)
-
-list_transactions_response = bank_feeds_client.bank_account_transactions.list(req)
-```
 
 :::tip Recap
 
