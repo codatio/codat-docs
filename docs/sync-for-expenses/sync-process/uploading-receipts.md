@@ -8,7 +8,7 @@ import TabItem from "@theme/TabItem"
 
 ## Upload receipts
 
-You can add a receipt to the transaction after the sync. Note that different accounting software supports different file formats and sizes
+You can add a receipt to the transaction after the sync. Note that different accounting software supports different file formats and sizes.
 
 | Integration       | File size | File extension                                                                                                                                               |
 |-------------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
