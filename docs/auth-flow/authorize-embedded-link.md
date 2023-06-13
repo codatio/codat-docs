@@ -70,7 +70,7 @@ Our [sample project](https://github.com/codatio/sample-project-link-sdk) shows y
 
 ## Prerequisites
 
-If you're using React, you'll need to use React version 18 when embedding the Link component into your webpage or application. The component is also backwards compatible with React version 17.
+If you're using React, you'll need to use React version 17+ when embedding the Link component into your webpage or application.
 
 If you haven't already done so,  customize Link on the <a href="https://app.codat.io/settings/link-settings" target="_blank">**Link settings**</a> page in the Codat Portal. For example, add UI copy, set file upload options, and choose whether steps in the Link flow are optional. These settings are applied to Embedded Link as well as Hosted Link.
 
