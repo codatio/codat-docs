@@ -14,7 +14,7 @@ Codat surfaces two dates to indicate when data was last updated:
 
 **`modifiedDate` shows the freshness of data in Codat.**
 
-It tells you when the most recent version of the record was fetched from the data source and updated in Codat’s data cache. Most records keep the same modified date across a number of fetches.
+It tells you when the most recent version of the record was fetched from the data source and updated in Codat’s database cache. Most records keep the same modified date across a number of fetches.
 
 ### Using the modified date
 
@@ -40,7 +40,7 @@ This query retrieves records with modified dates that are greater than or equal 
   - company information
   - profit & loss reports
 - If the `sourceModifiedDate` changes, the `modifiedDate` will also change, even if none of the values we pull were modified. This can happen as there may be additional data types in the source platform that are not mapped to the Codat data model.
-- If the Codat data model changes (e.g. we add a new data type), the `modifiedDate` will change, even if the values of the data didn't change.
+- If the Codat data model changes (e.g. we add a new property to a data type), the `modifiedDate` will change, even if the values of the data didn't change.
 
 ## Source modified date
 
@@ -52,7 +52,7 @@ The record may have been updated by the business, or a business process, such as
 
 Use the `sourceModifiedDate` when you want to identify records that have been updated by a business, or a business process.
 
-:::info Example: Find invoices issued over 12 months ago that were updated in the last month  
+:::info Example: Find invoices issued over 12 months ago that were updated in the source platform in the last month  
 
 ```http
 GET /companies/{companyId}/data/invoices?page=1&query=issueDate%3C{todayMinus12Months}%26%26sourceModifiedDate%3E%3D{todayMinusOneMonth}
@@ -75,7 +75,6 @@ You've learned:
 - The difference between `modifiedDate` and `sourceModifiedDate`
 :::
 
----
 ---
 ## Read next
 
