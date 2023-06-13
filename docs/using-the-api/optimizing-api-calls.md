@@ -40,7 +40,7 @@ You can query our [List accounts](/accounting-api#/operations/list-accounts) end
 ```http
 https://api.codat.io/companies/{companyId}/data/accounts?page=1&pageSize=100&query=modifiedDate>2022-08-23&orderby=-modifiedDate
 ```
-This returns any accounts for the given `companyId` that were added to or updated in Codat since midnight UTC on the 23 of August, 2022. Newest results are displayed first and paged with a size of 100.
+This returns any accounts for the given `companyId` that were added or updated in Codat since midnight UTC on the 23 of August. Newest results are displayed first and paged with a size of 100.
 
 :::
 
