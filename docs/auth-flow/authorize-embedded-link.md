@@ -81,7 +81,7 @@ Embedded Link is published to `https://link-sdk.codat.io` as an ES6 module. To u
 
 1. Using the [Create company](/codat-api#/operations/create-company) endpoint, create a company, and retain its `companyID`. The component needs the `companyId` parameter to open Link for a specified company. For testing purposes, you can create a company in the Codat Portal instead.
 
-   :::note
+   :::note Company creation timeline
    We recommend you create a company at the same time as your SMB customer signs up within your app.
    :::
    
