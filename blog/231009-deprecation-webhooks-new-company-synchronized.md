@@ -24,3 +24,9 @@ If you have workflows that are dependent on the event of the first dataset compl
 ## Expected impact if no action is taken​
 
 This notification will be likely to arrive later than it currently does. If you have added code or workarounds that expect the webhook to be triggered when the first dataset is complete, you should remove or adjust these to align with the new behaviour. 
+
+:::note Get ahead
+
+You can get ahead of this change by enabling it now in the [Portal](https://app.codat.io/developers/api-deprecations). Learn how to do that [here](https://docs.codat.io/other/portal/developers), or read our [change policy](https://docs.codat.io/introduction/change-policy).
+
+:::
