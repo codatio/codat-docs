@@ -23,4 +23,4 @@ If you have workflows that are dependent on the event of the first dataset compl
 
 ## Expected impact if no action is taken​
 
-This notification will be likely to arrive later than it currently does. If you have added code or workarounds that expect the webhook to be triggered when the first dataset is complete, you should remove or adjust these to align with the new behavior. 
+This notification will be likely to arrive later than it currently does. If you have added code or workarounds that expect the webhook to be triggered when the first dataset is complete, you should remove or adjust these to align with the new behaviour. 
