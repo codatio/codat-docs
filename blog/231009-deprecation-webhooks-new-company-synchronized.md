@@ -16,7 +16,7 @@ After October 9, 2023, the webhook notification will only trigger when all datas
 
 ## Action required​
 
-This is a quality-of-life improvement that means you can rely on this alert to know when a company is no longer in the process of syncing data. 
+This is a quality-of-life improvement that means you can rely on this notification to know when a company is no longer in the process of syncing data. 
 
 If you have workflows that are dependent on the event of the first dataset completion, you will need to adjust these to expect the notification only after all datasets are complete.
 
