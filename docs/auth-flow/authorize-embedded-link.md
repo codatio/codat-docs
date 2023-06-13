@@ -21,7 +21,7 @@ If you have general feedback on the component, get in touch at [embedded-link@co
 
 :::
 
-## What's New, June 2023
+## What's New
 
 The June 2023 release of Embedded Link brings the following enhancements:
 
