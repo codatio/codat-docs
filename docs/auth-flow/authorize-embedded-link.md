@@ -25,7 +25,8 @@ If you have general feedback on the component, get in touch at [embedded-link@co
 
 The June 2023 release of Embedded Link brings the following enhancements:
 
-* **Support for non-React JavaScript apps.** Without a dependency on React, you can use Embedded Link with all JavaScript frameworks, or even with vanilla JavaScript.
+* **Support for non-React JavaScript apps** 
+   Without a dependency on React, you can use Embedded Link with all JavaScript frameworks or even with vanilla JavaScript.
 * **Increased display control.** Now, you specify dimensions for the Embedded Link component, which will expand to 100% of the given container size. Previously, the component used a fixed width and height.
 * **Navigation improvements.** Source types (accounting, commerce, and banking) can now be connected in any order you choose.
 * **Performance improvements.** Link now loads quicker and can be loaded only when required.
