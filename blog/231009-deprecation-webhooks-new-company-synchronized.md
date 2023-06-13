@@ -1,6 +1,6 @@
 ---
 title: "Upcoming 2023-10-09: Webhooks - 'New company synchronized' alert triggers after all datasets are complete"
-date: "2020-10-09"
+date: "2023-06-13"
 tags: ["Deprecation"]
 authors: mrenshawcodat
 ---
