@@ -305,40 +305,40 @@ module.exports = {
     },
     // ---- Integration pages - delete
     {
-      from: "integrations/accounting/clearbooks/accounting-clearbooks-setup",
-      to: "integrations/accounting/clearbooks/accounting-clearbooks",
+      from: "/integrations/accounting/clearbooks/accounting-clearbooks-setup",
+      to: "/integrations/accounting/clearbooks/accounting-clearbooks",
     },
     {
-      from: "integrations/accounting/freshbooks/accounting-freshbooks-setup",
-      to: "integrations/accounting/freshbooks/accounting-freshbooks",
+      from: "/integrations/accounting/freshbooks/accounting-freshbooks-setup",
+      to: "/integrations/accounting/freshbooks/accounting-freshbooks",
     },
     {
-      from: "integrations/accounting/kashflow/accounting-kashflow-setup",
-      to: "integrations/accounting/kashflow/accounting-kashflow",
+      from: "/integrations/accounting/kashflow/accounting-kashflow-setup",
+      to: "/integrations/accounting/kashflow/accounting-kashflow",
     },
     {
-      from: "integrations/accounting/pandle/accounting-pandle-setup",
-      to: "integrations/accounting/pandle/accounting-pandle",
+      from: "/integrations/accounting/pandle/accounting-pandle-setup",
+      to: "/integrations/accounting/pandle/accounting-pandle",
     },
     {
-      from: "integrations/accounting/sandbox/accounting-sandbox-setup",
-      to: "integrations/accounting/sandbox/accounting-sandbox",
+      from: "/integrations/accounting/sandbox/accounting-sandbox-setup",
+      to: "/integrations/accounting/sandbox/accounting-sandbox",
     },
     {
-      from: "integrations/accounting/wave/accounting-wave-setup",
-      to: "integrations/accounting/wave/accounting-wave",
+      from: "/integrations/accounting/wave/accounting-wave-setup",
+      to: "/integrations/accounting/wave/accounting-wave",
     },
     {
-      from: "integrations/banking/accounting-platform-keys",
-      to: "integrations/accounting/overview#platform-keys",
+      from: "/integrations/banking/accounting-platform-keys",
+      to: "/integrations/accounting/overview#platform-keys",
     },
     {
-      from: "integrations/banking/banking-platform-keys",
-      to: "integrations/banking/overview#platform-keys",
+      from: "/integrations/banking/banking-platform-keys",
+      to: "/integrations/banking/overview#platform-keys",
     },
     {
-      from: "integrations/commerce/commerce-platform-keys",
-      to: "integrations/commerce/overview#platform-keys",
+      from: "/integrations/commerce/commerce-platform-keys",
+      to: "/integrations/commerce/overview#platform-keys",
     },
     ...mapIntegrationRedirects(acc, "accounting"),
     ...mapIntegrationRedirects(bank, "banking"),
