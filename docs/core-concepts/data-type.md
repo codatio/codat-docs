@@ -19,7 +19,7 @@ In Codat, each type of data you want to create, update, or retrieve for a given 
       <h3>Accounting</h3>
     </div>
     <p>
-      For example, invoices.
+      For example, invoices, bills.
     </p>
     <p>
       <a href="/data-model/accounting/overview">Explore accounting data types →</a>
@@ -34,7 +34,7 @@ In Codat, each type of data you want to create, update, or retrieve for a given 
       <h3>Banking</h3>
     </div>
     <p>
-      For example, invoices.
+      For example, bank accounts and transactions.
     </p>
     <p>
       <a href="/data-model/accounting/overview">Explore banking data types →</a>
@@ -49,7 +49,7 @@ In Codat, each type of data you want to create, update, or retrieve for a given 
       <h3>Commerce</h3>
     </div>
     <p>
-      For example, invoices.
+      For example, customers and payments.
     </p>
     <p>
       <a href="/data-model/accounting/overview">Explore commerce data types →</a>
@@ -64,7 +64,7 @@ In Codat, each type of data you want to create, update, or retrieve for a given 
       <h3>Bank feeds</h3>
     </div>
     <p>
-      For example, invoices.
+      For example, bank feed bank accounts.
     </p>
     <p>
       <a href="/data-model/accounting/overview">Explore bank feed data types →</a>
