@@ -251,57 +251,57 @@ const comm = [
 module.exports = {
   redirects: [
     {
-      to:  '/guides/loan-qualification/introduction',
-      from: '/assess/guides/underwriting/introduction',
+      from: "/assess/guides/underwriting/introduction",
+      to: "/guides/loan-qualification/introduction",
     },
     {
-      to:  '/usecases/summary/lending',
-      from: '/usecases/summary/underwriting',
+      from: "/usecases/summary/underwriting",
+      to: "/usecases/summary/lending",
     },
     {
-      to:  '/integrations/accounting/xero/accounting-xero-setup', //xero
-      from: '/redirects/integrations/bankfeeds/qalf',
+      from: "/redirects/integrations/bankfeeds/qalf",
+      to: "/integrations/accounting/xero/accounting-xero-setup", //xero
     },
     {
-      to:  '/bank-feeds-api/sage-bank-feeds', //sage
-      from: '/redirects/integrations/bankfeeds/olpr',
+      from: "/redirects/integrations/bankfeeds/olpr",
+      to: "/bank-feeds-api/sage-bank-feeds", //sage
     },
     {
-      to:  '/using-the-api/errors', //sage
-      from: '/docs/status-codes',
+      from: "/docs/status-codes",
+      to: "/using-the-api/errors", //sage
     },
     // --- delete soon
     {
-      to: "/guides/loan-qualification/introduction",
       from: "/assess/guides/loan-qualification/introduction",
+      to: "/guides/loan-qualification/introduction",
     },
     {
-      to: "/guides/loan-qualification/setting-up",
       from: "/assess/guides/loan-qualification/setting-up",
+      to: "/guides/loan-qualification/setting-up",
     },
     {
-      to: "/guides/loan-qualification/process-loan",
       from: "/assess/guides/loan-qualification/process-loan",
+      to: "/guides/loan-qualification/process-loan",
     },
     {
-      to: "/guides/loan-qualification/uw-decision",
       from: "/assess/guides/loan-qualification/uw-decision",
+      to: "/guides/loan-qualification/uw-decision",
     },
     {
-      to: "/guides/bill-pay/introduction",
       from: "/accounting-api/guides/bill-pay/introduction",
+      to: "/guides/bill-pay/introduction",
     },
     {
-      to: "/guides/bill-pay/use-bill-pay-demo-app",
       from: "/accounting-api/guides/bill-pay/use-bill-pay-demo-app",
+      to: "/guides/bill-pay/use-bill-pay-demo-app",
     },
     {
-      to: "/guides/bill-pay/run-demo-app-locally",
       from: "/accounting-api/guides/bill-pay/run-demo-app-locally",
+      to: "/guides/bill-pay/run-demo-app-locally",
     },
     {
-      to: "/guides/bill-pay/how-the-demo-app-works",
       from: "/accounting-api/guides/bill-pay/how-the-demo-app-works",
+      to: "/guides/bill-pay/how-the-demo-app-works",
     },
     // ---- Integration pages - delete
     {
@@ -330,17 +330,16 @@ module.exports = {
     },
     {
       from: "integrations/banking/accounting-platform-keys",
-      to: "/integrations/accounting/overview#platform-keys",
+      to: "integrations/accounting/overview#platform-keys",
     },
     {
       from: "integrations/banking/banking-platform-keys",
-      to: "/integrations/banking/overview#platform-keys",
+      to: "integrations/banking/overview#platform-keys",
     },
     {
       from: "integrations/commerce/commerce-platform-keys",
-      to: "/integrations/commerce/overview#platform-keys",
+      to: "integrations/commerce/overview#platform-keys",
     },
-    
     ...mapIntegrationRedirects(acc, "accounting"),
     ...mapIntegrationRedirects(bank, "banking"),
     ...mapIntegrationRedirects(comm, "commerce"),
