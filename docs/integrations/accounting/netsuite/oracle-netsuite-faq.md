@@ -1,8 +1,7 @@
 ---
 title: "Oracle NetSuite FAQ"
 description: "Frequently asked questions about our Oracle NetSuite integration."
-createdAt: "2021-07-16T14:59:52.947Z"
-updatedAt: "2022-11-22T15:26:10.187Z"
+sidebar_label: FAQs
 ---
 
 ## Does our NetSuite integration support Multi-Book Accounting

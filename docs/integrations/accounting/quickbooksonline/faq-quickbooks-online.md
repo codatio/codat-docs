@@ -1,8 +1,7 @@
 ---
 title: "QuickBooks Online FAQ"
 description: "Frequently asked questions about our QuickBooks Online integration."
-createdAt: "2020-01-14T00:44:32.573Z"
-updatedAt: "2022-10-17T16:12:22.938Z"
+sidebar_label: FAQs
 ---
 
 ## How is sales tax handled for US companies that use QuickBooks?

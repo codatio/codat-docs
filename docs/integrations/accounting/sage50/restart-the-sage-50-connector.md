@@ -2,8 +2,7 @@
 title: "Restart the Sage 50 connector"
 slug: "restart-the-sage-50-connector"
 description: "How to enable and use the restart button on a Sage 50 connector."
-createdAt: "2020-07-16T16:28:31.526Z"
-updatedAt: "2022-11-21T11:57:31.582Z"
+sidebar_label: Restart the connector
 ---
 
 In some circumstances, your users might want to restart their Sage 50 connector. For example, they might have syncs in progress that were interrupted by a technical issue.

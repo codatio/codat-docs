@@ -1,8 +1,7 @@
 ---
 title: "Set up the Lightspeed Restaurant integration"
 description: "Explore our API integration with Lightspeed Restaurant - K Series"
-createdAt: "2022-09-21T08:52:47.797Z"
-updatedAt: "2023-01-06T16:38:03.123Z"
+sidebar_label: Setup
 ---
 
 Set up the [LightSpeed Restaurant](/integrations/commerce/lightspeed-k/commerce-lightspeed-k) integration to retrieve sales and order information from your customers who use Lightspeed Restaurant - K Series to run their food or hospitality business.

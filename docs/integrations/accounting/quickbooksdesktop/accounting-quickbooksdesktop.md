@@ -1,8 +1,7 @@
 ---
 title: "QuickBooks Desktop (on-premise)"
 description: "Learn about our QuickBooks Desktop on-premise connector."
-createdAt: "2019-02-21T11:24:07.280Z"
-updatedAt: "2022-12-22T14:29:34.191Z"
+sidebar_label: Overview
 ---
 
 Our QuickBooks Desktop on-premise connector enables SMBs who use QuickBooks Desktop to share their consented accounting data through the Codat platform.

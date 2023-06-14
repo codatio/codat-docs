@@ -1,8 +1,7 @@
 ---
 title: "Set up the Square integration"
 description: "Explore our API integration with Square"
-createdAt: "2020-09-18T08:57:56.490Z"
-updatedAt: "2023-01-06T16:45:24.060Z"
+sidebar_label: Setup
 ---
 
 Set up the Square integration to access commerce data from customers who use Square to accept payments.

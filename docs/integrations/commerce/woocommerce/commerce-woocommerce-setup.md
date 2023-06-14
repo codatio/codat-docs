@@ -1,6 +1,7 @@
 ---
 title: "Set up the WooCommerce integration"
 description: "Explore our API integration with WooCommerce"
+sidebar_label: Setup
 ---
 
 Before you can pull commerce data from companies using WooCommerce, you need to set up the integration.

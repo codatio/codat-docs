@@ -1,8 +1,7 @@
 ---
 title: "Test your Square integration"
 description: "Test our Square integration by pulling sample data to a test company"
-createdAt: "2020-09-18T08:57:30.712Z"
-updatedAt: "2022-10-20T09:24:21.873Z"
+sidebar_label: Testing
 ---
 
 You can use the Square Sandbox integration to pull test data from Square into Codat.

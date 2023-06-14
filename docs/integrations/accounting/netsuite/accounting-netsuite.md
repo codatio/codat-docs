@@ -1,8 +1,7 @@
 ---
 title: "Oracle NetSuite"
 description: "Learn about our Oracle NetSuite integration."
-createdAt: "2021-06-15T13:43:18.249Z"
-updatedAt: "2022-10-20T12:34:20.252Z"
+sidebar_label: Overview
 ---
 
 You can synchronize accounting data with Oracle NetSuite using our Oracle NetSuite integration.

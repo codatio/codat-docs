@@ -1,8 +1,7 @@
 ---
 title: "Set up the Exact Online integration"
 description: "Explore our API integration with Exact Online (NL and UK)."
-createdAt: "2019-10-22T16:31:29.733Z"
-updatedAt: "2023-01-10T17:38:51.316Z"
+sidebar_label: Setup
 ---
 
 ## Credentials for Exact Online NL and Exact Online UK

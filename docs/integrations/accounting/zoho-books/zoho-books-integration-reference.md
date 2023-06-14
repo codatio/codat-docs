@@ -1,8 +1,7 @@
 ---
 title: "Zoho Books integration reference"
 description: "Things to know when synchronizing data with Zoho Books."
-createdAt: "2022-05-30T15:40:47.777Z"
-updatedAt: "2022-12-20T09:37:45.578Z"
+sidebar_label: Reference
 ---
 
 Note the following information when building your application using Codat's Zoho Books integration.

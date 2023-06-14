@@ -2,8 +2,6 @@
 title: "Lightspeed Restaurant (K Series)"
 sidebar_label: Overview
 description: "Learn about our Lightspeed K Series integration"
-createdAt: "2022-09-21T08:47:34.719Z"
-updatedAt: "2022-10-24T15:10:41.692Z"
 ---
 
 <p><a

@@ -1,8 +1,7 @@
 ---
 title: "Install the QuickBooks Desktop connector on Right Networks"
 description: "Learn how to install our QuickBooks Desktop connector on Right Networks hosted instances of QBD."
-createdAt: "2022-07-05T14:08:30.046Z"
-updatedAt: "2023-01-11T09:40:44.879Z"
+sidebar_label: Installing on Right Networks
 ---
 
 :::caution Right Networks - Beta testing

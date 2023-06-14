@@ -1,8 +1,7 @@
 ---
 title: "Set up the Sage Business Cloud Accounting integration"
 description: "Explore our API integration with Sage Business Cloud Accounting."
-createdAt: "2020-09-11T10:50:58.802Z"
-updatedAt: "2023-01-16T16:54:34.143Z"
+sidebar_label: Setup
 ---
 
 Before you can access data from customers who use Sage Business Cloud Accounting, you need to set up the Sage Business Cloud Accounting integration in the Codat Portal. You'll need to:

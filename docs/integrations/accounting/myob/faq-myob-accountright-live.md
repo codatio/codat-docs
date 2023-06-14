@@ -1,8 +1,7 @@
 ---
-title: "FAQ - MYOB AccountRight Live"
+title: "FAQs - MYOB AccountRight Live"
 description: "Frequently asked questions about MYOB AccountRight Live."
-createdAt: "2019-06-26T12:36:38.545Z"
-updatedAt: "2022-10-17T16:03:05.998Z"
+sidebar_label: FAQs
 ---
 
 ## Where must company data be stored?

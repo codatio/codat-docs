@@ -2,8 +2,7 @@
 title: "Install the Sage 50 connector"
 slug: "installing-the-sage-50-connector"
 description: "Guide for SMB users to set up our Sage 50 on-premise connector."
-createdAt: "2019-05-06T23:45:25.650Z"
-updatedAt: "2022-11-25T12:15:40.507Z"
+sidebar_label: Installing the connector
 ---
 
 :::note Linking companies using the Sage 50 connector

@@ -2,8 +2,7 @@
 title: "Set up the Sage 200cloud integration"
 slug: "accounting-sage200-setup"
 description: "Explore our API integration with Sage 200cloud."
-createdAt: "2021-02-23T10:52:24.650Z"
-updatedAt: "2023-01-13T15:13:31.523Z"
+sidebar_label: Setup
 ---
 
 ## About Sage 200cloud
