@@ -330,15 +330,15 @@ module.exports = {
     },
     {
       from: "/integrations/banking/accounting-platform-keys",
-      to: "/integrations/accounting/overview#platform-keys",
+      to: "/integrations/accounting/overview",
     },
     {
       from: "/integrations/banking/banking-platform-keys",
-      to: "/integrations/banking/overview#platform-keys",
+      to: "/integrations/banking/overview",
     },
     {
       from: "/integrations/commerce/commerce-platform-keys",
-      to: "/integrations/commerce/overview#platform-keys",
+      to: "/integrations/commerce/overview",
     },
     ...mapIntegrationRedirects(acc, "accounting"),
     ...mapIntegrationRedirects(bank, "banking"),
