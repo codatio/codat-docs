@@ -187,6 +187,9 @@ li.card.mini {
 }
 
 li.card.hypercard {
+  --offset: 100px;
+  --timer: 8s;
+
   position: relative;
   overflow: initial;
   border-color: transparent !important;
@@ -208,12 +211,10 @@ li.card.hypercard {
       z-index: -1;
       top: 0;
       left: 0;
-      animation: spin 8s linear infinite;
+      animation: spin var(--timer) linear infinite;
   }
 
   &::after {
-    --offset: 100px;
-
     position: absolute;
     content: "";
     top: calc(var(--offset) / 6);
@@ -229,7 +230,7 @@ li.card.hypercard {
       var(--rotate)
       , #5ddcff, #3c67e3 43%, #4e00c2);
       opacity: 1;
-    transition: opacity .5s;
-    animation: spin 5s linear infinite;
+    transition: opacity var(--timer);
+    animation: spin var(--timer) linear infinite;
   }
 }
