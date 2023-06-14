@@ -24,6 +24,10 @@ module.exports = {
       label: "Get started",
       collapsed: true,
       className: "top-level-item introduction",
+      link: {
+        type: 'doc',
+        id: "get-started/overview",
+      },
       items: [
         "introduction/first-steps",
         "introduction/first-ten-minutes",
