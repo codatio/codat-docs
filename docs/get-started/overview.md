@@ -15,10 +15,7 @@ description: "Take your first steps through the information and support availabl
       <h3>Documentation</h3>
     </div>
     <p>
-      Begin with our developer{" "}
-      <a href="/introduction/first-steps">getting started guide</a>, or press
-      <code>Ctrl-K</code> to bring up the quick search bar to find the information
-      you need.
+      Begin with our <a href="/core-concepts/overview">core concepts</a>, or press <code>Ctrl-K</code> to bring up the quick search bar to find the information you need.
     </p>
   </li>
   <li className="card">
