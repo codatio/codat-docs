@@ -177,6 +177,7 @@ module.exports = {
           items: [
             "using-the-api/get-data",
             "using-the-api/queueing-data-syncs",
+            "using-the-api/pull-history",
             "using-the-api/querying",
             "using-the-api/paging",
             "using-the-api/ordering-results",
@@ -228,7 +229,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Authorization flow",
+      label: "Auth flow",
       collapsed: true,
       className: "top-level-item auth",
       link: {
@@ -310,6 +311,10 @@ module.exports = {
       label: "Products",
       collapsed: true,
       className: "top-level-item products",
+      link: {
+        type: 'doc',
+        id: "products/overview",
+      },
       items: [
         {
           type: "link",

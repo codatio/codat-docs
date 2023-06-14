@@ -2,8 +2,6 @@
 title: "Use our API"
 sidebar_label: Overview
 description: "An introduction to Codat's APIs"
-createdAt: "2019-02-20T09:38:52.916Z"
-updatedAt: "2022-11-07T19:59:38.100Z"
 ---
 
 While the Portal provides a simple way of exploring data, you'll need to use the Codat API to get the most out of your company data.

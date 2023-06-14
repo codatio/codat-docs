@@ -2,8 +2,6 @@
 title: "Authorize with Embedded Link"
 sidebar_label: Overview
 description: "Use Codat's authorization flow component and embed it in your application"
-createdAt: "2022-09-27T16:13:02.514Z"
-updatedAt: "2022-12-13T11:19:58.588Z"
 ---
 
 import Tabs from "@theme/Tabs";
