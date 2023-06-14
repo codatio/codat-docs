@@ -7,6 +7,11 @@ module.exports = [
   },
   "integrations/all-integrations",
   {
+    type: "link",
+    label: "Integration coverage",
+    href: "https://knowledge.codat.io/supported-features/accounting",
+  },
+  {
     type: "category",
     label: "Accounting",
     collapsed: true,
@@ -487,10 +492,5 @@ module.exports = [
     items: [
       "other/file-upload",
     ]
-  },
-  {
-    type: "link",
-    label: "Integration coverage",
-    href: "https://knowledge.codat.io/supported-features/accounting",
   },
 ];

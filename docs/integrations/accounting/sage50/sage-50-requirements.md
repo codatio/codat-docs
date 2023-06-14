@@ -10,7 +10,7 @@ updatedAt: "2022-11-25T14:08:49.131Z"
 
 Codat supports Sage 50 accounts (UK & Ireland) for versions from 2018 onwards (v24+). This is in line with <a className="external" href="https://gb-kb.sage.com/portal/app/portlets/results/viewsolution.jsp?solutionid=200427112228593" target="_blank">Sage's software lifecycle policy</a>.
 
-See a full list of supported Sage 50 versions below. We aim for this list to be as comprehensive and current as possible. If you experience issues with the supported versions or would like to register your interest in an unsupported version, please contact support@codat.io
+See a full list of supported Sage 50 versions below. We aim for this list to be as comprehensive and current as possible. If you experience issues with the supported versions or would like to register your interest in an unsupported version, please contact [support@codat.io](mailto:support@codat.io).
 :::
 
 ## Supported versions

@@ -21,31 +21,32 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Getting started",
+      label: "Get started",
       collapsed: true,
       className: "top-level-item introduction",
+      link: {
+        type: 'doc',
+        id: "get-started/overview",
+      },
       items: [
         "introduction/first-steps",
         "introduction/first-ten-minutes",
         "introduction/libraries",
-        "introduction/create-account",
-        "introduction/migration",
-        {
-          type: "link",
-          label: "Integration coverage",
-          href: "https://knowledge.codat.io/supported-features/accounting",
-        },
-        "introduction/office-hours",
         "other/developer-resources",
+        "introduction/office-hours",
+        "introduction/migration",
       ],
     },
     {
       type: "category",
-      label: "Guides",
+      label: "Tutorials",
       collapsed: true,
       className: "top-level-item other",
+      link: {
+        type: 'doc',
+        id: "guides/overview",
+      },
       items: [
-        "guides/overview",
         {
           type: "category",
           label: "Loan qualification",
@@ -88,34 +89,43 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Core concepts",
+      label: "Learn",
       collapsed: true,
+      customProps: {
+        hr: true,
+      },
       className: "top-level-item core",
+      link: {
+        type: 'doc',
+        id: "core-concepts/overview",
+      },
       items: [
-        "core-concepts/overview",
         "core-concepts/companies",
         "core-concepts/connections",
         "core-concepts/integrations",
-        "core-concepts/data-type-settings",
-        "core-concepts/status",
+        "core-concepts/data-type",
+        "core-concepts/status", // @tooo: move into using api?
         {
           type: "link",
           href: "/codat-api",
+          className: "external",
           label: "Common API reference",
         },
-        {
-          type: "category",
-          label: "Using the portal",
-          collapsed: true,
-          items: [
-            "other/portal/dashboard",
-            "other/portal/account-management",
-            "other/portal/usage-and-billing",
-            "other/portal/companies",
-            "other/portal/developers",
-            "other/portal/pull-and-push-history",
-          ],
-        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Configure",
+      collapsed: true,
+      className: "top-level-item config",
+      link: {
+        type: 'doc',
+        id: "other/portal/dashboard",
+      },
+      items: [
+        "configure/products",
+        "configure/integrations",
+        "core-concepts/data-type-settings",
         {
           type: "category",
           label: "User management",
@@ -126,34 +136,74 @@ module.exports = {
             "other/user-management/sso",
           ],
         },
+        {
+          type: "category",
+          label: "Plans",
+          collapsed: true,
+          items: [
+            "configure/plans/free",
+            "introduction/create-account",
+            "other/portal/usage-and-billing",
+          ],
+        },
+        "other/portal/account-management",
       ],
     },
     {
       type: "category",
-      label: "Using our API",
+      label: "Use our API",
       collapsed: true,
       className: "top-level-item api",
+      link: {
+        type: 'doc',
+        id: "using-the-api/overview",
+      },
       items: [
-        "using-the-api/overview",
         "using-the-api/authentication",
-        "using-the-api/managing-companies",
-        "introduction/testing",
         {
           type: "category",
-          label: "Pulling data",
+          label: "Manage companies",
           collapsed: true,
           items: [
+            "using-the-api/managing-companies",
+            "other/portal/companies",
+            // manage connections
+          ],
+        },
+        {
+          type: "category",
+          label: "Get data",
+          collapsed: true,
+          items: [
+            "using-the-api/get-data",
+            "using-the-api/queueing-data-syncs",
+            "using-the-api/pull-history",
             "using-the-api/querying",
             "using-the-api/paging",
             "using-the-api/ordering-results",
             "using-the-api/modified-dates",
           ],
         },
-        "using-the-api/queueing-data-syncs",
-        "using-the-api/push",
-        "using-the-api/errors",
-        "using-the-api/rate-limits",
-        "using-the-api/optimizing-api-calls",
+        {
+          type: "category",
+          label: "Modify data",
+          collapsed: true,
+          items: [
+            "using-the-api/push",
+            "other/portal/pull-and-push-history",
+          ],
+        },
+        {
+          type: "category",
+          label: "Troubleshooting",
+          collapsed: true,
+          items: [
+            "using-the-api/errors",
+            "using-the-api/rate-limits",
+            "using-the-api/optimizing-api-calls",
+          ],
+        },
+        "introduction/testing",
         {
           type: "category",
           label: "Webhooks",
@@ -167,34 +217,40 @@ module.exports = {
           ],
         },
         {
-          type: "link",
-          href: "https://github.com/codatio/oas",
-          label: "OpenAPI spec"
+          type: "category",
+          label: "Change management",
+          collapsed: true,
+          items: [
+            "introduction/change-policy",
+            "other/portal/developers",
+          ],
         },
-        "introduction/change-policy",
       ],
     },
     {
       type: "category",
-      label: "Data model",
-      collapsed: true,
-      className: "top-level-item data",
-      items: dataModel,
-    },
-    {
-      type: "category",
-      label: "Authorization flow",
+      label: "Auth flow",
       collapsed: true,
       className: "top-level-item auth",
+      link: {
+        type: 'doc',
+        id: "auth-flow/overview",
+      },
       items: authFlow,
     },
     {
       type: "category",
       label: "Use cases",
+      customProps: {
+        hr: true,
+      },
       collapsed: true,
       className: "top-level-item usecases",
+      link: {
+        type: 'doc',
+        id: "usecases/overview",
+      },
       items: [
-        "usecases/overview",
         "usecases/summary/lending",
         "usecases/summary/managing-expenses",
         "usecases/summary/dashboarding",
@@ -203,8 +259,11 @@ module.exports = {
           label: "Automating payables",
           collapsed: true,
           className: "top-level-item",
+          link: {
+            type: 'doc',
+            id: "usecases/summary/automating-payables",
+          },
           items: [
-            "usecases/summary/automating-payables",
             {
               type: "link",
               label: "Demo app guide",
@@ -238,9 +297,24 @@ module.exports = {
     },
     {
       type: "category",
+      label: "Data model",
+      collapsed: true,
+      className: "top-level-item data",
+      link: {
+        type: 'doc',
+        id: "data-model/all-datatypes",
+      },
+      items: dataModel,
+    },
+    {
+      type: "category",
       label: "Products",
       collapsed: true,
       className: "top-level-item products",
+      link: {
+        type: 'doc',
+        id: "products/overview",
+      },
       items: [
         {
           type: "link",

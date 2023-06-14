@@ -5,6 +5,11 @@ createdAt: "2020-08-26T13:23:10.920Z"
 updatedAt: "2022-11-25T13:10:30.057Z"
 ---
 
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem"
+
+
 If you're new to Codat but have already built and use an OAuth application with one of our supported integrations, you're in the right place. Codat's token migration process allows you to seamlessly migrate your customers' connections from a self-managed integration to Codat — without your customers needing to reconnect.
 
 This page describes the information we'll need from you, and provides an overview of the migration process.
@@ -19,9 +24,17 @@ Before you migrate a token, the company and data connection must be created. Thi
 
 To migrate, use the PUT connections endpoint. You will need to provide the integration specific information such as the organization ID and OAuth tokens that Codat should use. Because these are different for each integration, examples of the format required for the integrations available are listed in the Postman Collection linked above.
 
-```http
+<Tabs>
+
+<Tabitem value="Request URL" label="Request URL">
+
+```http request title="Authorize connection"
   PUT /companies/{companyId}/connections/{connectionId}/authorization
 ```
+
+</Tabitem>
+
+<Tabitem value="Request Body" label="Request Body">
 
 ```json
 {
@@ -29,6 +42,11 @@ To migrate, use the PUT connections endpoint. You will need to provide the integ
   "businessId": "test-business-1234"
 }
 ```
+
+</Tabitem>
+
+</Tabs>
+
 
 :::caution Syncing data post-migration
 

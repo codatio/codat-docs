@@ -3,6 +3,7 @@ title: "Usage and billing"
 sidebar_label: Usage and billing
 description: "Monitor your Codat usage and the corresponding billing figures to stay in control of your expenses"
 ---
+
 ### Dashboard
 
 Use the dashboard on the Portal's [home page](https://app.codat.io/) for a real-time, high-level view of the following details:

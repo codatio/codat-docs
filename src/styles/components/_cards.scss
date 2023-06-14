@@ -78,7 +78,6 @@ li.card {
   border-radius: 8px;
   font-size: 0.9em !important;
 
-
   p {
     font-size: 14px;
     
@@ -108,11 +107,27 @@ li.card {
       margin: 0.5em;
     }
   }
+
+  img {
+    transition-duration: 0.5s;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 }
 
 li.card.mini {
-  flex-direction: row;
   padding: 1em;
+
+  .card-row {
+    display: flex;
+    flex-direction: row;
+
+    &:not(:last-child) {
+      margin-bottom: 0.5em;
+    }
+  }
 
   .header {
     align-items: flex-start;
@@ -139,7 +154,8 @@ li.card.mini {
   vertical-align: text-bottom;
 }
 
-.icon.usecase {
+.icon.usecase,
+.icon.product {
   border-radius: 4px;
   object-fit: cover;
   width: 60px;
@@ -151,4 +167,70 @@ li.card.mini {
 .tertiary {
   text-decoration: none;
   font-weight: bold;
+}
+
+
+
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+li.card.hypercard {
+  --offset: 100px;
+  --timer: 8s;
+
+  position: relative;
+  overflow: initial;
+  border-color: transparent !important;
+  background-color: transparent !important;
+  //border: none !important;
+  //background:linear-gradient(left, #000, #000) no-repeat 50px 50px !important;
+  //background-image: linear-gradient(left, transparent 300px,rgba(39,39,39,.5) 300px, rgba(39,39,39,.5) 100%) !important;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 43%, #4e00c2);
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      animation: spin var(--timer) linear infinite;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--offset) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--offset) / 6));
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 43%, #4e00c2);
+      opacity: 1;
+    transition: opacity var(--timer);
+    animation: spin var(--timer) linear infinite;
+  }
 }
