@@ -31,10 +31,10 @@ module.exports = {
       items: [
         "introduction/first-steps",
         "introduction/first-ten-minutes",
-        "other/developer-resources",
         "introduction/libraries",
-        "introduction/migration",
+        "other/developer-resources",
         "introduction/office-hours",
+        "introduction/migration",
       ],
     },
     {
