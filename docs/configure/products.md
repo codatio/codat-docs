@@ -22,7 +22,7 @@ import Products from "@components/global/Products";
 
 ## Enabling products
 
-By default you'll have access to our standardized integration products - our Accounting, Banking, and Commerce APIs. For our other products, you can either enable then as you sign up, or [pmanage them in the Portal](https://app.codat.io/settings/products) (admins only).
+By default, you'll have access to our standardized integration products - our Accounting, Banking, and Commerce APIs. For our other products, you can either enable them as you sign up or [manage them in the Portal](https://app.codat.io/settings/products) (users with Administrator roles only).
 
 ## Our products
 
