@@ -100,7 +100,7 @@ Embedded Link is published to https://link-sdk.codat.io as an ES6 module. To use
    * An ID of `codat-link-container`.
    * A width and a height&mdash;we recommend 460 by 840px.
    The created `CodatLink` component will expand to 100% of the specified dimensions of the `div` container. 
-1. Import the component. If you're using the component inside a `script` tag, the tag must have `type="module" import { CodatLink } from "https://link-sdk.codat.io";` set.
+1. Import the component. If you're using the component inside a `script` tag, the tag must have `type="module" set.
 1. Initialize the Codat Link component in your app and supply the `companyId` you created in step one:
 
    ```js Title="Initialize Codat Link component (non-React)"
