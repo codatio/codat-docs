@@ -59,7 +59,7 @@ description: "Take your first steps through the information and support availabl
       Get instant assistance with {" "}
       <a href="https://cochat.codat.io" target="_blank">
         Cochat
-      </a> our beta AI tool trained on the Codat docs. Try {" "}
+      </a>, our beta AI tool trained on the Codat docs. Try {" "}
       <a href="https://cochat.codat.io" target="_blank">asking it a question</a>
       {" or "}
       <a href="/other/cochat">read more</a>.
