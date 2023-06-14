@@ -1,7 +1,6 @@
 ---
 title: "FreshBooks"
 description: "Learn about our FreshBooks integration."
-sidebar_label: Overview
 ---
 
 You can synchronize accounting data with <a className="external" href="https://www.freshbooks.com/" target="_blank">FreshBooks</a> using our FreshBooks integration.
