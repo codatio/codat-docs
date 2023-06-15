@@ -1,8 +1,7 @@
 ---
 title: "Reauthorize a company"
 description: "Learn how to reauthorize companies that have become deauthorized"
-createdAt: "2020-08-25T14:29:25.341Z"
-updatedAt: "2022-12-16T16:51:51.244Z"
+sidebar_label: Reauthorizing companies
 ---
 
 A previously linked company may become deauthorized. This means that Codat's link to a customer's banking data is no longer valid, and you can no longer queue data syncs. You can still query any historical data.
