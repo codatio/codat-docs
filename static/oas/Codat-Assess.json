@@ -1939,7 +1939,6 @@
       ],
       "get": {
         "deprecated": true,
-        "x-internal": true,
         "summary": "List financial metrics",
         "tags": [
           "Reports"
@@ -2021,7 +2020,7 @@
             "$ref": "#/components/parameters/periodLength"
           },
           {
-            "$ref": "#/components/parameters/numberOfPeriods"
+            "$ref": "#/components/parameters/numberOfPeriodsRequired"
           },
           {
             "schema": {
@@ -2164,7 +2163,7 @@
             "$ref": "#/components/parameters/periodLength"
           },
           {
-            "$ref": "#/components/parameters/numberOfPeriods"
+            "$ref": "#/components/parameters/numberOfPeriodsRequired"
           },
           {
             "$ref": "#/components/parameters/periodUnit"
@@ -2321,7 +2320,7 @@
             "$ref": "#/components/parameters/periodLength"
           },
           {
-            "$ref": "#/components/parameters/numberOfPeriods"
+            "$ref": "#/components/parameters/numberOfPeriodsRequired"
           },
           {
             "$ref": "#/components/parameters/periodUnit"
@@ -2484,7 +2483,7 @@
             "$ref": "#/components/parameters/periodLength"
           },
           {
-            "$ref": "#/components/parameters/numberOfPeriods"
+            "$ref": "#/components/parameters/numberOfPeriodsRequired"
           },
           {
             "$ref": "#/components/parameters/periodUnit"
@@ -2674,7 +2673,7 @@
             "$ref": "#/components/parameters/periodLength"
           },
           {
-            "$ref": "#/components/parameters/numberOfPeriods"
+            "$ref": "#/components/parameters/numberOfPeriodsRequired"
           },
           {
             "$ref": "#/components/parameters/periodUnit"
@@ -2792,7 +2791,7 @@
             "$ref": "#/components/parameters/periodLength"
           },
           {
-            "$ref": "#/components/parameters/numberOfPeriods"
+            "$ref": "#/components/parameters/numberOfPeriodsRequired"
           },
           {
             "$ref": "#/components/parameters/periodUnit"
@@ -2900,7 +2899,7 @@
             "$ref": "#/components/parameters/periodLength"
           },
           {
-            "$ref": "#/components/parameters/numberOfPeriods"
+            "$ref": "#/components/parameters/numberOfPeriodsRequired"
           },
           {
             "$ref": "#/components/parameters/includeDisplayNames"
@@ -3982,7 +3981,7 @@
             "$ref": "#/components/parameters/periodLength"
           },
           {
-            "$ref": "#/components/parameters/numberOfPeriods"
+            "$ref": "#/components/parameters/numberOfPeriodsRequired"
           },
           {
             "$ref": "#/components/parameters/includeDisplayNames"
@@ -5037,7 +5036,7 @@
             "$ref": "#/components/parameters/periodLength"
           },
           {
-            "$ref": "#/components/parameters/numberOfPeriods"
+            "$ref": "#/components/parameters/numberOfPeriodsRequired"
           },
           {
             "$ref": "#/components/parameters/periodUnit"
@@ -7050,14 +7049,23 @@
         },
         "description": "The number of months per period. E.g. 2 = 2 months per period."
       },
-      "numberOfPeriods": {
+      "numberOfPeriodsRequired": {
         "name": "numberOfPeriods",
         "in": "query",
         "required": true,
         "schema": {
           "type": "integer"
         },
-        "description": "The number of periods to return.  There will be no pagination as a query parameter, however Codat will limit the number of periods to request to 12 periods."
+        "description": "The number of periods to return. There will be no pagination as a query parameter."
+      },
+      "numberOfPeriods": {
+        "name": "numberOfPeriods",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "The number of periods to return. If not provided, 12 periods will be used as the default value."
       },
       "periodUnit": {
         "name": "periodUnit",
