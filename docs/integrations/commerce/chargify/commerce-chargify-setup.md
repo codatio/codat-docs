@@ -1,8 +1,7 @@
 ---
 title: "Set up the Chargify integration"
 description: "Explore our API integration with Chargify"
-createdAt: "2022-08-08T13:28:16.586Z"
-updatedAt: "2023-01-06T16:35:29.843Z"
+sidebar_label: Setup
 ---
 
 Set up the [Chargify](/integrations/commerce/chargify/commerce-chargify) integration to retrieve recurring billing and subscriptions data from your SMB customers.

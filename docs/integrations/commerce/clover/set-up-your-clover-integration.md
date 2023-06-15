@@ -1,8 +1,7 @@
 ---
 title: "Set up the Clover integration"
 description: "Explore our API integration with Clover"
-createdAt: "2022-01-26T13:31:32.440Z"
-updatedAt: "2023-01-06T16:36:12.403Z"
+sidebar_label: Setup
 ---
 
 Before you can access commerce data from customers using Clover, you need to set up the integration. You'll need to:

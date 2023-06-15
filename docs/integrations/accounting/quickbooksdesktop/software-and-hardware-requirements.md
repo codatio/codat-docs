@@ -1,8 +1,7 @@
 ---
 title: "QuickBooks Desktop requirements"
 description: "Software, hardware, environment and network requirements and configurations"
-createdAt: "2022-11-22T16:23:10.327Z"
-updatedAt: "2022-11-25T12:38:32.711Z"
+sidebar_label: Requirements
 ---
 
 ## Supported QBD versions

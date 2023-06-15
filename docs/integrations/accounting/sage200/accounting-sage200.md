@@ -2,8 +2,7 @@
 title: "Sage 200cloud"
 slug: "accounting-sage200"
 description: "Learn about our Sage 200cloud integration."
-createdAt: "2020-09-23T12:40:24.138Z"
-updatedAt: "2022-10-20T12:40:43.994Z"
+sidebar_label: Overview
 ---
 
 You can pull accounting and banking data from <a className="external" href="https://www.sage.com/en-gb/products/sage-200/" target="_blank">Sage 200cloud</a> using our Sage 200cloud integration.

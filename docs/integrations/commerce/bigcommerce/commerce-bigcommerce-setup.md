@@ -1,8 +1,7 @@
 ---
 title: "Set up the BigCommerce integration"
 description: "Explore our API integration with BigCommerce"
-createdAt: "2022-07-18T14:10:03.840Z"
-updatedAt: "2023-01-06T16:31:30.675Z"
+sidebar_label: Setup
 ---
 
 Set up the [BigCommerce](/integrations/commerce/bigcommerce/commerce-bigcommerce) integration to retrieve commerce data from your SMB customers who sell their products on the BigCommerce platform.

@@ -1,8 +1,7 @@
 ---
 title: "QuickBooks Online integration reference"
 description: "Things to know when synchronizing data with QuickBooks Online."
-createdAt: "2022-05-20T15:09:22.997Z"
-updatedAt: "2022-12-20T09:45:44.719Z"
+sidebar_label: Reference
 ---
 
 Note the following information when building your application using our QuickBooks Online integration.

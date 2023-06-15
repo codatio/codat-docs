@@ -2,8 +2,7 @@
 title: "Sage 50 requirements"
 slug: "sage-50-requirements"
 description: "Software, hardware, environment and network requirements and configurations"
-createdAt: "2022-11-25T12:08:57.434Z"
-updatedAt: "2022-11-25T14:08:49.131Z"
+sidebar_label: Requirements
 ---
 
 :::note Supported Sage 50 accounts and versions

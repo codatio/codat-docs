@@ -1,8 +1,7 @@
 ---
 title: "Set up Shopify using public apps"
 description: "Learn how to set up the Shopify integration using the public apps approach to merchant data connection"
-createdAt: "2021-01-14T16:41:39.945Z"
-updatedAt: "2023-01-06T16:44:14.501Z"
+sidebar_label: Public apps
 ---
 
 Set up the Shopify integration to retrieve commerce data from customers who sell their products on Shopify's ecommerce platform.

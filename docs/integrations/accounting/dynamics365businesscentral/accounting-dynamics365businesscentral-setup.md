@@ -2,10 +2,9 @@
 title: "Set up the Dynamics 365 Business Central integration"
 slug: "accounting-dynamics365businesscentral-setup"
 description: "Explore our API integration with Dynamics 365 Business Central."
+sidebar_label: Setup
 metadata:
   description: "Access data from customers using Dynamics 365 Business Central for their accounting."
-createdAt: "2020-08-03T10:24:23.098Z"
-updatedAt: "2023-01-10T17:32:19.524Z"
 ---
 
 Before you can access data from customers who use Dynamics 365 Business Central, you need to set up the integration in the Codat Portal. You'll need to:

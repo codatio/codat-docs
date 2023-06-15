@@ -20,19 +20,13 @@ You can use [Codat's Sandbox integration](/integrations/accounting/sandbox/accou
 
 If you've got an existing integration that you'd like to migrate to Codat, we can migrate tokens for [most OAuth integrations](/introduction/migration).
 
-## How do I set up and enable accounting integrations?
-
-Most accounting software providers require you to register with them before you're able to access data from their platform via Codat. In most cases, this is free and should only take a few minutes.
-
-The specific steps and requirements vary but we've detailed them all in the set up pages below, such as [Set up QuickBooks Online](/integrations/accounting/quickbooksonline/accounting-quickbooksonline-new-setup) and [Set up Xero](/integrations/accounting/xero/accounting-xero-setup).
-
 ## Supported accounting software
 
 Codat's integrations are able to connect to the following accounting software. You can see more information, including set up instructions for each integration, by clicking through to the documentation at the links below.
 
 You can also explore the data types supported by each integration in the interactive <a className="external" href="https://knowledge.codat.io/supported-features/accounting" target="_blank">Data coverage explorer</a>.
 
-## Cloud
+### Cloud
 
 - [Clear Books](/integrations/accounting/clearbooks/accounting-clearbooks)
 - [Dynamics 365 Business Central](/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral)
@@ -51,9 +45,17 @@ You can also explore the data types supported by each integration in the interac
 - [Xero](/integrations/accounting/xero/accounting-xero)
 - [Zoho Books](/integrations/accounting/zoho-books/accounting-zoho-books)
 
-## On-premise
+### On-premise
 
 - [QuickBooks Desktop](/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop)
 - [Sage 50 (UK & Ireland)](/integrations/accounting/sage50/accounting-sage50)
 
-You can also refer to [Accounting platform keys](/integrations/accounting/accounting-platform-keys) to view the unique 4-character keys that identify accounting platforms in our APIs.
+## Platform keys
+
+Each integration has a unique 4-character key that identifies it in our APIs. For reference, a list of all accounting integration platform keys can be found below:
+
+<iframe
+  src="https://knowledge.codat.io/integrations/platformkeys?integrationType=Accounting"
+  frameborder="0"
+  style={{ top: 0, left: 0, width: "100%", height: "1200px" }}
+></iframe>

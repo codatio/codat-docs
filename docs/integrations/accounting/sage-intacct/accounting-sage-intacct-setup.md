@@ -1,8 +1,7 @@
 ---
 title: "Set up the Sage Intacct integration"
 description: "Explore our API integration with Sage Intacct."
-createdAt: "2021-09-09T10:27:14.969Z"
-updatedAt: "2023-01-10T15:54:47.833Z"
+sidebar_label: Setup
 ---
 
 To integrate with Sage Intacct, you must be a _Sage Intacct Developer Partner_, or work with an authorized partner.

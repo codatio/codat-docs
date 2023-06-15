@@ -1,8 +1,7 @@
 ---
 title: "Set up the Zoho Books integration"
 description: "Explore our API integration with Zoho Books."
-createdAt: "2020-03-15T19:02:48.085Z"
-updatedAt: "2023-01-16T11:39:41.517Z"
+sidebar_label: Setup
 ---
 
 Zoho Books is a global accounting package with customers in the UK, US, Australia, India, and South Africa.
