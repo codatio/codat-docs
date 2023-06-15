@@ -46,7 +46,7 @@ Connection status (either success or error) is now shown during the Link flow. E
 
 Use the Embedded Link solution to benefit from a pre-built code component that melds best practices together with our extensive experience in building authorization flows, while seamlessly embedding it into your webpage or front-end application.
 
-Embedded Link is a JavaScript component that neatly sits in your front-end code, and can be deployed in a matter of minutes. It supports TypeScript and various JavaScript frameworks, including React.
+Embedded Link is a JavaScript component that neatly sits in your front-end code, and can be deployed in a matter of minutes. The component works with all major JavaScript frameworks, including React, and also with vanilla JavaScript. You can choose to implement the component in TypeScript.
 
 We built Embedded Link to be flexible so that you can integrate and initialize it in any way you want, and provide the user with a native feel of your authorization journey.
 
@@ -93,12 +93,18 @@ Embedded Link is published to https://link-sdk.codat.io as an ES6 module. To use
    :::note Company creation timeline
    We recommend you create a company at the same time as your SMB customer signs up within your app.
    :::
-   
+
 1. Create a target `div` for the `CodatLink` component that has the following attributes:
    * An ID of `codat-link-container`.
    * A width and a height&mdash;we recommend 460 by 840px.
    The created `CodatLink` component will expand to 100% of the specified dimensions of the `div` container. 
-1. Import the component. If you're using the component inside a `script` tag, the tag must have `type="module" set.
+1. Import the component. If you're using the component inside a `script` tag, the tag must have `type="module" set. 
+1. Import the Link SDK component:
+
+   ```bash
+   import { CodatLink } from "https://link-sdk.codat.io";
+   ```
+
 1. Initialize the Codat Link component in your app and supply the `companyId` you created in step one:
 
    ```js Title="Initialize Codat Link component (non-React)"
@@ -114,7 +120,7 @@ Embedded Link is published to https://link-sdk.codat.io as an ES6 module. To use
     },
    });
    ```
-   
+
 1. If you have a `browserslist` entry in your `package.json` file, make sure your production `browserslist` contains the following entries:
 
    ```js
@@ -124,7 +130,7 @@ Embedded Link is published to https://link-sdk.codat.io as an ES6 module. To use
       "not and_uc >= 0"
     ],
    ```
-   
+
 1. If you're using content security policy (CSP) headers, you *must* edit the headers as follows.
    * Add `*.codat.io` to all of `(script-src, style-src, font-src, connect-src, img-src)`, or to `default-src`.
    * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
