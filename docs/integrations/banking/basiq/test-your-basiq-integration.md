@@ -1,7 +1,6 @@
 ---
 title: "Test your Basiq integration"
-createdAt: "2022-10-27T09:46:46.382Z"
-updatedAt: "2022-11-02T12:12:50.822Z"
+sidebar_label: Testing
 ---
 
 When you've [set up and enabled Basiq](/integrations/banking/basiq/banking-basiq-setup), you can test your integration with Basiq's test bank "Hooli". You'll need to:

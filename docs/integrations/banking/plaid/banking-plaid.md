@@ -1,8 +1,7 @@
 ---
 title: "Plaid"
 description: "Learn about our Plaid integration"
-createdAt: "2020-02-25T17:44:15.117Z"
-updatedAt: "2022-11-08T15:42:31.296Z"
+sidebar_label: Overview
 ---
 <p>
 <a class="external" href="https://plaid.com/" target="_blank">

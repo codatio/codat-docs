@@ -2,8 +2,7 @@
 title: "Set up your TrueLayer integration"
 slug: "set-up-truelayer-2"
 description: "Explore our API integration with TrueLayer"
-createdAt: "2020-07-21T10:07:43.941Z"
-updatedAt: "2022-12-23T10:58:43.275Z"
+sidebar_label: Setup
 ---
 
 Before you can access your SMB customers' banking data from TrueLayer, you need to set up the integration.

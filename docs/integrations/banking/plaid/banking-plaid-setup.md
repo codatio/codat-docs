@@ -1,8 +1,7 @@
 ---
 title: "Set up your Plaid integration"
 description: "Learn how to set up our Plaid integration, customize the Link journey, and enable production access"
-createdAt: "2020-02-25T17:44:15.007Z"
-updatedAt: "2022-12-16T17:24:23.809Z"
+sidebar_label: Setup
 ---
 
 Before you can access your SMB customers' banking data from Plaid in Codat, you need to set up your integration.
