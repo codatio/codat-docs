@@ -25,20 +25,20 @@ If you have general feedback on the component, get in touch at [embedded-link@co
 
 The June 2023 release of Embedded Link brings the following enhancements:
 
-**Support for non-React JavaScript apps**   
-   Without a dependency on React, you can use Embedded Link with all JavaScript frameworks or even with vanilla JavaScript.
+### Support for non-React JavaScript apps
+Without a dependency on React, you can use Embedded Link with all JavaScript frameworks or even with vanilla JavaScript.
 
-**Increased display control**   
-   Now, you specify dimensions for the Embedded Link component, which will expand to 100% of the given container size. Previously, the component used a fixed width and height.
+### Increased display control
+Now, you specify dimensions for the Embedded Link component, which will expand to 100% of the given container size. Previously, the component used a fixed width and height.
 
-**Navigation improvements**   
-   Source types (accounting, commerce, banking, and uploaded file) can now be connected in any order you choose.
+### Navigation improvements
+Source types (accounting, commerce, banking, and uploaded file) can now be connected in any order you choose.
 
-**Performance improvements**   
-   Link now loads quicker and can be loaded only when required.
+### Performance improvements
+Link now loads quicker and can be loaded only when required.
 
-**Connection status**
-   The status of connections (either success or error) is now indicated in dialogs that appear during the Link flow. Errors can be skipped without interrupting the rest of the Link flow; for example:
+### Connection status
+Connection status (either success or error) is now shown during the Link flow. Errors can be skipped without interrupting the rest of the Link flow, for example:
 
 ![link-sdk_connection-status-error](/img/auth-flow/link-sdk_connection-status-error.png "Embedded Link SDK: Connection error dialog shown for the Codat Banking Sandbox integration.")
 
@@ -82,13 +82,11 @@ We've provided a [sample GitHub project](https://github.com/codatio/sample-proje
 
 ## Prerequisites
 
-If you're using React, you'll need to use React version 17 or above when embedding the Link component into your webpage or application.
-
-If you haven't already done so, customize Link on the <a href="https://app.codat.io/settings/link-settings" target="_blank">**Link settings**</a> page in the Codat Portal. For example, you can add UI copy, set file upload options, and choose whether steps in the Link flow are optional or disabled. These settings apply to Embedded Link and Hosted Link.
+If you haven't already done so, customize Link on the <a href="https://app.codat.io/settings/link-settings" target="_blank">**Link settings**</a> page in the Codat Portal. For example, you can add UI copy, set file upload options, choose to make steps in the Link flow optional, or disable steps. The settings apply to both Embedded Link and Hosted Link.
 
 ## Get started with non-React frameworks
 
-Embedded Link is published to https://link-sdk.codat.io as an ES6 module. To use the Embedded Link component in your app with a non-React JavaScript framework, perform the following steps:
+Embedded Link is published to https://link-sdk.codat.io as an ES6 module. To use the Embedded Link component in your webpage or app with a non-React JavaScript framework, perform the following steps:
 
 1. Using the [Create company](/codat-api#/operations/create-company) endpoint, create a company, and retain its `companyID`. The component needs the `companyId` parameter to open Link for a specified company. You can also create a company in the Codat Portal.
 
@@ -134,7 +132,7 @@ Embedded Link is published to https://link-sdk.codat.io as an ES6 module. To use
 
 ## Get started with React
 
-To use the Embedded Link component in your app with React, perform the following steps:
+To use the Embedded Link component in your webpage or app with React, perform the following steps:
 
 1. Using the [Create company](/codat-api#/operations/create-company) endpoint, create a company, and retain its `companyID`. The component needs the `companyId` parameter to open Link for a specified company. You can also create a company in the Codat Portal.
 
