@@ -79,4 +79,4 @@ In Codat, each type of data you want to create, update, or retrieve for a given 
 
 - Next concept: [Data status](/core-concepts/status)
 - [Data type settings](/core-concepts/data-type-settings)
-- Explore the [data model](/data-model/overview)
+- Explore the [data model](/data-model/all-datatypes)
