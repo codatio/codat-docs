@@ -1,0 +1,61 @@
+---
+title: Loan Transactions"
+description: "Learn how you can identify a companies loans to better understand their financial health"
+sidebar_label: "Loan transactions endpoint"
+createdAt: "2023-06-27T10:32:29.917Z"
+updatedAt: "2023-06-27T16:35:29.376Z"
+---
+
+## Introduction to Loan Transactions endpoint
+Loan data is often not uniform, spread across a variety of integrations and of different types.
+These loans are often hard to identify, analyse and group.
+Manually going through data and identifying loans is very time consuming and repetitive. This can also introduce room for human error.
+
+Our Loan Transactions endpoint can identify loans for a company's accounting, banking and commerce integrations. 
+It can work across a variety of integrations for all three integration types.
+
+The endpoint will you get a better idea of the loan obligations a compnay may have by identifying their loan transactions and loan repyaments.
+The amount of a loan a company has paid off and the number of loans a company has.
+
+The endpoint can show:
+- The loan drawdowns a company has
+- The loan repayments made by a company
+- The interest rate for a loan drawdown (where possible)
+
+Codat suggests that you make sure a company has been recently synced before hitting the endpoint.
+
+## Prerequisites
+The company must have either at least one Accounting/Banking/Commerce data connection linked and fully synced with the mandatory data types listed below.
+
+Accounting data connection:
+- JournalEntries
+- Chart of Accounts
+
+Banking data connection:
+- Banking Accounts
+- Banking Transactions
+
+Commerce data connection:
+- Commerce Transactions
+
+If the company does not have a any of these connections, then an error will be thrown.
+
+Whilst Codat support most integrations, there are a minority which are not supported.
+
+## Invoices Report
+The Loan Transactions endpoint returns a list of a companies loan transactions across all of its valid data connections.
+This may include drawdowns, repayments etc.
+
+### Accounting
+A company's journal entries will be analysed to retrieve all of their loan transactions.
+
+The interest rate will also be calculated for the loan.
+
+### Banking
+A company's banking transactions will be analysed to retrieve all of their loan transactions.
+
+The interest rate will also be calculated for the loan.
+
+### Commerce
+Returns back the total Loan amount and loan repayments. 
+For example, for a Stripe account, we can return back all the loan transactions
