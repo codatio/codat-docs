@@ -50,6 +50,8 @@ If you have a large number of companies, or particularly large company files, yo
 
 The Sage 50 connector communicates over port 443 to URLs hosted on `https://sage50.codat.io`
 
-If you experience problems with the connector transmitting data, add the following URL to your firewall allow list:
+If you experience problems with the connector transmitting data, add the following URLs to your firewall allow list:
 
 `https://sage50.codat.io/*`
+
+`https://connectors.codat.io`
