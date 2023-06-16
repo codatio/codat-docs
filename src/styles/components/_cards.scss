@@ -108,9 +108,10 @@ li.card {
     }
   }
 
-  img {
+  a:has(img) {
     transition-duration: 0.5s;
-    
+    margin-bottom: 1em;
+
     &:hover {
       transform: scale(1.1);
     }
@@ -160,17 +161,12 @@ li.card.mini {
   object-fit: cover;
   width: 60px;
   height: 60px;
-
-  margin-bottom: 1em;
 }
 
 .tertiary {
   text-decoration: none;
   font-weight: bold;
 }
-
-
-
 
 @property --rotate {
   syntax: "<angle>";
@@ -187,10 +183,15 @@ li.card.mini {
   }
 }
 
-li.card.hypercard {
+li.card.hypercard,
+a.hypercard {
   --offset: 100px;
   --timer: 8s;
+  --hypercard-color-1: #5ddcff;
+  --hypercard-color-2: #3c67e3;
+  --hypercard-color-3: #4e00c2;
 
+  z-index: 1;
   position: relative;
   overflow: initial;
   border-color: transparent !important;
@@ -205,8 +206,10 @@ li.card.hypercard {
     height: 100%;
     border-radius: 8px;
     background-image: linear-gradient(
-      var(--rotate)
-      , #5ddcff, #3c67e3 43%, #4e00c2);
+      var(--rotate), 
+      var(--hypercard-color-1),  
+      var(--hypercard-color-2) 43%, 
+      var(--hypercard-color-3));
       position: absolute;
       z-index: -1;
       top: 0;
@@ -227,10 +230,42 @@ li.card.hypercard {
     transform: scale(0.8);
     filter: blur(calc(var(--offset) / 6));
     background-image: linear-gradient(
-      var(--rotate)
-      , #5ddcff, #3c67e3 43%, #4e00c2);
-      opacity: 1;
+      var(--rotate), 
+      var(--hypercard-color-1),  
+      var(--hypercard-color-2) 43%, 
+      var(--hypercard-color-3));
+      opacity: 0.5;
     transition: opacity var(--timer);
     animation: spin var(--timer) linear infinite;
+  }
+
+  &.accounting {
+    --hypercard-color-1: #CCA4FF;
+    --hypercard-color-2: #a97de0;
+    --hypercard-color-3: #d2bfeb;
+  }
+
+  &.banking {
+    --hypercard-color-1: #64F2A1;
+    --hypercard-color-2: #3dcb7a;
+    --hypercard-color-3: #97e0b6;
+  }
+
+  &.commerce {
+    --hypercard-color-1: #FDD655;
+    --hypercard-color-2: #c29f29;
+    --hypercard-color-3: #e9d79a;
+  }
+
+  &.bank-feeds {
+    --hypercard-color-1: #37F0D1;
+    --hypercard-color-2: #138975;
+    --hypercard-color-3: #86ddcf;
+  }
+
+  &.assess {
+    --hypercard-color-1: #FF9C66;
+    --hypercard-color-2: #b05b2d;
+    --hypercard-color-3: #d8a183;
   }
 }
