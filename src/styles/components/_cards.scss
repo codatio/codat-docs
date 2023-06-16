@@ -268,4 +268,17 @@ a.hypercard {
     --hypercard-color-2: #b05b2d;
     --hypercard-color-3: #d8a183;
   }
+
+  &.sync-for-commerce {
+    --hypercard-color-1: #FF99DF;
+    --hypercard-color-2: #b63d90;
+    --hypercard-color-3: #f0c0e1;
+  }
+
+
+  &.sync-for-expenses {
+    --hypercard-color-1: #70C1FF;
+    --hypercard-color-2: #256ea5;
+    --hypercard-color-3: #95c3e7;
+  }
 }
