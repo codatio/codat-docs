@@ -1,36 +1,19 @@
 ---
 title: "Supplemental data"
-description: "Basics and examples of ordering in Codat's APIs"
+description: "Super catchy description of supplemental data"
 ---
 
-## What is Supplemental Data?
+## What is supplemental data?
 
-Supplemental data allows you to pull and push non-standardised fields alongside Codat’s standardised data model. This is useful when a particular integration contains a property which is not common across other providers and therefore does not form part of the standard data. 
+We have enhanced some of our data types with a `supplementalData` property. It gives you the ability to fetch additional fields from an integration's endpoint within our existing standard data types.
 
-example response here?
+For example, to pull our `suppliers` data type from Xero, we use Xero's [Contacts](https://developer.xero.com/documentation/api/accounting/contacts) endpoint. While we already include many of the properties of that endpoint in our standard data model, some properties, like supplier bank account details (`BankAccountDetails`), are not included. 
 
-this property is in an object format, not an array format
+By configuring supplemental data for this property, you will be able to fetch `BankAccountDetails` every time you pull our standard `suppliers` data from Xero.
 
-Supplemental data gives clients the ability to pull/push additional fields from an underlying endpoint that we already use as part of our standard model. For example:
+## Where is supplemental data available?
 
-For Suppliers on Xero, we use their underlying /Contacts endpoint
-
-Whilst many of the properties on that endpoint are already included in our standard model, some such as supplier bank account details (BankAccountDetails) are not
-
-Clients can configure supplemental data to pull BankAccountDetails alongside every pull of standard Suppliers data from Xero
-
-Think of supplemental data as adding additional fields to existing standard datatypes.
-
-part of the standardized data model
-included on existing data types
-
-## How do I configure Supplemental Data?
-In order to use Supplemental Data, you must first configure it for the given integration and datatype, for example Suppliers data from Xero. 
-
-
-## Where is Supplemental Data available? / coverage
-
-We are rapidly expanding coverage across integrations and datatypes according to client demand. See the list of our current coverage:
+We are rapidly expanding coverage across integrations and datatypes according to client demand. We currently cover the following integrations and data types:
  
 <iframe
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vToBP6lQMT_MrB8L5e_61w2LrmpoJPAVhxCVqCuoSpWgb6ga2hUXZHlLSdCr9jY_He1b-uYaDAnH6DV/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
@@ -38,8 +21,37 @@ We are rapidly expanding coverage across integrations and datatypes according to
   style={{ top: 0, left: 0, width: "100%", height: "660px" }}
 ></iframe>
 
+## How do I configure supplemental data?
 
-## Endpoint mapping? 
+In order to use supplemental data, you need to specify what supplemental data is to be passed in the response for each integration and data type pair you require. To do so, use the [endpoint name]/endpoint link.
+
+```http
+/integrations/{platformKey}/datatypes/{datatype}/supplementalDataConfig
+```
+
+Within the request body, note that the `PlatformEndpoint` and `PlatformPropertyName` parameter values must match the integration's requirements exactly, including casing. Ensure you are familiar with the source data structure as Codat does not validate the supplemental data values against the integration provider.
+
+```json Supplemental data configuration request body
+{
+    "supplementalDataConfig": {
+        "{ClientObjectName}": {
+            "dataSource": "/{PlatformEndpoint}",
+            "pullData": {
+                "{ClientDefinedName}":"{PlatformPropertyName}",
+                "{ClientDefinedName2}": "{PlatformPropertyName2}"
+            },
+            "pushData": {
+                "{ClientDefinedName}":"{PlatformPropertyName}",
+                "{ClientDefinedName2}": "{PlatformPropertyName2}"
+            },
+        }
+    }
+}
+```
+You can also retrieve your supplemental data configuration by using the [endpoint name]/endpoint link endpoint:
+`GET /integrations​/{platformKey}/datatypes/{datatype}/supplementalDataConfig`
+
+## Endpoint mapping? underlying data sources?
 
 Which endpoints/fields are available for a given datatype?
 In theory, all fields on all endpoints that we map to for a given datatype should be available, with the following caveats:
@@ -58,108 +70,25 @@ There may in the future be some specific fields which we have to block via a den
 
 ## Tips and pitfalls
 
+- Supplemental data is currently available only at record level. 
 
+- Data within the supplemental data object is not validated, manipulated, standardized, or transformed by Codat. 
 
+- It is not possible to query Codat’s API on the supplemental data.
 
-Note: Codat does not standardise or normalise the data retrieved and pushed via Supplemental Data
+- When you add or change a supplemental data configuration, it will apply to all newly synced data, but not the data synced previously. This may result in inconsistent supplemental data across the dataset. You can request us to set a full sync after any changes to configuration to be default behaviour. 
 
-Note: Supplemental data is only currently available at record-level. We will be expanding coverage to line-level properties soon.
-
-
-
+- We expose the data sources available to interact with supplemental data, but request you to refer to the platforms' own documentation for details on available data and properties for each data source.
 
 ## Frequent uses? use cases? examples? commonly requested properties?
 
+foldouts for each platform?
 
-
-
-
-## Sync considerations
-
-How does Supplemental Data interact with sync behaviour?
-When a supplemental data config is added/changed, on a delta sync it will be applied to any newly synced data, but not the previously synced data. This may not be desirable as it would result in inconsistent supplemental data across the dataset (e.g. if I had changed a property name from OldName to NewName, my previously synced data would have OldName and new data from the delta sync would have NewName).
-
-In order to counteract this, we have built a feature toggle (link) which will force the next sync after any change to the supplementalDataConfig to be a full sync. We expect this will become the default behaviour but will remain on a feature toggle as some clients may prefer not to interfere with their full sync schedules.
-
-
-
-## Overview
-
-We have enhanced some of our data types with a `SupplementalData` property. This allows you to retrieve data that does not fit our standardized model from the integrations and makes it easy to pull it.
-
-We expose the data sources available to pull supplemental data and advise you to refer to the platform's documentation for details on available data and properties for each data source.
-
-
-
-## Configuration
-
-To take advantage of supplemental data, you need to specify what supplemental data is to be passed in the response. You can specify this for each integration and data type pair. To configure the supplemental data, use the following endpoint:
-`PUT /integrations​/{platformKey}/datatypes/{datatype}/supplementalDataConfig`
-
-Note that the `dataSource` and `requiredData` parameter values must match the integration's requirements exactly, including casing. Ensure you are familiar with the source data structure as Codat does not validate the supplemental data values against the integration provider.
-
-```
-{
-"supplementalDataConfig": [
-  {
-    "dataSource": "/contacts",
-    "requiredData": [
-      "contact_friendly_name",
-      "xero_custom_contact_field"
-    ]
-  },
-  {
-    "dataSource": "/invoices",
-    "requiredData": [
-      "sourceInvoiceUrl"
-    ]
-  }
-]
-}",
-      "language": "text"
-    }
-  ]
-}
-```
-
-You can also retrieve your supplemental data configuration by using the following endpoint:
-`GET /integrations​/{platformKey}/datatypes/{datatype}/supplementalDataConfig`
-
-:::caution Content validation
-Codat does not validate the contents of the supplemental data configuration request. If the specified data source or properties do not exist, the request will fail.
-:::
-
-## Data model
-
-The `supplementalData` property on a data model entity is entirely optional.
-
-|Field|Type|Description|
-|----|----|----|
-|**platformKey**|_string_|The unique key for the platform that this supplemental data was fetched from.|
-|**content**| |An array of [Content](#section-content).|
-
-### Content
-
-This object contains the source supplemental data requested from an integration in an array format. Data within this object is not manipulated, standardized, or transformed by Codat. As a result:
-
-* Validation is not applied to the resulting data.
-* It is not possible to query Codat’s API on the supplemental data.
-* The object cannot be used to make available line-level information.
-
-The `dataSource` field allows us to handle scenarios in which data is mapped from different endpoints, or from multiple endpoints.
-
-|Field|Type|Description|
-|----|----|----|
-|**dataSource**|_string_|Review integration's own documentation to determine parameter values|
-|**data**|__|Review integration's own documentation to determine parameter values|
 
 Callout for data types:
 
 This data type supports supplemental data. Read more (configuring for supplemental data)[] and review implementation procedures for (specific integrations)[].
 
-Update the data type pages with `content` (or `supplementalData`?)
-
 Callout for integrations:
 
 This integration supports supplemental data. Read more about (configuring for supplemental data)[] and how you can (pull it for this integration)[].
-Then a separate page perhaps? Or Reference, or Set up pages
