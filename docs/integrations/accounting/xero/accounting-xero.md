@@ -12,6 +12,10 @@ View the coverage of our Xero integration in the <a className="external" href="h
 
 For more details about the supported data types and operations, see [Xero FAQs](/integrations/accounting/xero/xero-faq) and [Xero integration reference](/integrations/accounting/xero/xero-integration-reference).
 
+:::tip Supplemental data
+This integration supports the ability to fetch or create additional fields within our standard data types. Read more about [supplemental data](/using-the-api/supplemental-data) and how you can pull it for this integration.
+:::
+
 ## Xero App Partnership
 
 If you want to have more than 25 Xero connections, you'll need to join the **Xero App Partner Program**. For help with the application process, see [Joining the Xero App Partner Program](/integrations/accounting/xero/xero-app-partner-program) and [Xero App Partner guidance by use case](/integrations/accounting/xero/accounting-xero-app-partner-guidance).

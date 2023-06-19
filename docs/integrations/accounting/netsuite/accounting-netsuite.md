@@ -14,6 +14,10 @@ View the coverage of our Oracle NetSuite integration in the <a className="extern
 
 For more details about the supported data types and operations, see [Oracle NetSuite integration reference](/integrations/accounting/netsuite/oracle-netsuite-integration-reference).
 
+:::tip Supplemental data
+This integration supports the ability to fetch or create additional fields within our standard data types. Read more about [supplemental data](/using-the-api/supplemental-data) and how you can pull it for this integration.
+:::
+
 ## Set up the integration
 
 See [Set up the Oracle NetSuite integration](/integrations/accounting/netsuite/accounting-netsuite-setup) to learn how to set up and enable the integration.
