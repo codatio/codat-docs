@@ -18,12 +18,12 @@ We are rapidly expanding coverage across integrations and datatypes according to
 <iframe
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vToBP6lQMT_MrB8L5e_61w2LrmpoJPAVhxCVqCuoSpWgb6ga2hUXZHlLSdCr9jY_He1b-uYaDAnH6DV/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
   frameborder="0"
-  style={{ top: 0, left: 0, width: "100%", height: "660px" }}
+  style={{ top: 0, left: 0, width: "100%", height: "400px" }}
 ></iframe>
 
 ## How do I configure supplemental data?
 
-In order to use supplemental data, you need to specify what supplemental data should be passed in the response for each integration and data type pair you require. To do so, use the [endpoint name]/endpoint link.
+In order to use this property, you need to specify what supplemental data should be passed in the response for each integration and data type pair you require. To do so, use the [endpoint name]/endpoint link.
 
 ```http
 /integrations/{platformKey}/datatypes/{datatype}/supplementalDataConfig
@@ -31,7 +31,7 @@ In order to use supplemental data, you need to specify what supplemental data sh
 
 Within the request body, note that the `PlatformEndpoint` and `PlatformPropertyName` parameter values must match the integration's requirements exactly, including casing. Ensure you are familiar with the source data structure as Codat does not validate the supplemental data values against the integration provider.
 
-```json Supplemental data configuration request body
+```json title=Supplemental data configuration request body
 {
     "supplementalDataConfig": {
         "{ClientObjectName}": {
@@ -50,7 +50,9 @@ Within the request body, note that the `PlatformEndpoint` and `PlatformPropertyN
 ```
 
 You can also retrieve your existing supplemental data configuration by using the [endpoint name]/endpoint link endpoint:
-`GET /integrations​/{platformKey}/datatypes/{datatype}/supplementalDataConfig`
+```http
+GET /integrations​/{platformKey}/datatypes/{datatype}/supplementalDataConfig
+```
 
 ## Codat to platform endpoint mapping
 
@@ -77,7 +79,7 @@ This section details some of the commonly requested supplemental data configurat
 | `TaxType`       | See default tax rate associated with the account               |
 | `SystemAccount` | See if the account is a System Account and, if so, which type  |
 
-```json title = "Example configuration"
+```json title=Example configuration
 {
     "supplementalDataConfig": {
         "client-keyname-for-accounts": {
@@ -100,7 +102,7 @@ This section details some of the commonly requested supplemental data configurat
 | `SentToContact`       | Boolean value to indicate whether the approved invoice has been sent to   the customer |
 | `Reference`           | Display an additional external reference for   the invoice                             |
 
-```json title = "Example configuration"
+```json title=Example configuration
 {
     "supplementalDataConfig": {
         "client-keyname-for-xero-invoices": {
@@ -121,7 +123,7 @@ This section details some of the commonly requested supplemental data configurat
 | `QuantityOnHand`      | Shows the quantity of the item on hand                                           |
 | `TotalCostPool`       | Shows the value of the item on hand. Calculated using average cost   accounting. |
 
-```json title = "Example configuration"
+```json title=Example configuration
 {
     "supplementalDataConfig": {
         "client-keyname-for-items": {
@@ -141,7 +143,7 @@ This section details some of the commonly requested supplemental data configurat
 |----------------------|----------------------------------------------------------------------------------|
 | `BankAccountDetails` | Returns the bank account number of supplier                                      |
 
-```json title = "Example configuration"
+```json title=Example configuration
 {
     "supplementalDataConfig": {
         "client-Keyname-For-Xero-suppliers": {
@@ -164,7 +166,7 @@ This section details some of the commonly requested supplemental data configurat
 | `CanApplyToLiabilities` | Boolean to describe if tax rate can be used for liability accounts |
 | `CanApplyToRevenue`     | Boolean to describe if tax rate can be used for revenue accounts   |
 
-```json title = "Example configuration"
+```json title=Example configuration
 {
     "supplementalDataConfig": {
         "client-keyname-for-tax-rates": {
@@ -190,7 +192,7 @@ This section details some of the commonly requested supplemental data configurat
 | `SalesTermRef`       | Reference to the Sales Terms associated with this customer               |
 | `ParentRef` | Reference to a customer that is the immediate parent of this sub-customer |
 
-```json title = "Example configuration"
+```json title=Example configuration
 {
     "supplementalDataConfig": {
         "Client-keyname-for-QBO-customers": {
@@ -210,7 +212,7 @@ This section details some of the commonly requested supplemental data configurat
 |-----------------|----------------------------------------------------------------|
 | `SalesTermRef`       | Reference to the Sales Terms associated with this Invoice               |
 
-```json title = "Example configuration"
+```json title=Example configuration
 {
     "supplementalDataConfig": {
         "client-keyname-for-qbo-invoices": {
