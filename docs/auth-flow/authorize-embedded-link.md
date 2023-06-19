@@ -26,19 +26,19 @@ If you have general feedback on the component, get in touch at [embedded-link@co
 The June 2023 release of Embedded Link brings the following enhancements:
 
 ### Support for non-React JavaScript apps
-Without a dependency on React, you can use Embedded Link with all JavaScript frameworks or even with vanilla JavaScript.
+Without a dependency on React, you can use Embedded Link with all JavaScript frameworks or even vanilla JavaScript.
 
 ### Increased display control
-Now, you specify dimensions for the Embedded Link component, which will expand to 100% of the given container size. Previously, the component used a fixed width and height.
+Now, you need to specify the dimensions of the Embedded Link component, which will expand to fit the given container size. Previously, the component used a fixed width and height.
 
 ### Navigation improvements
-Source types (accounting, commerce, banking, and uploaded file) can now be connected in any order you choose.
+Source types (accounting, commerce, banking, and file upload) can now be connected in any order you choose.
 
 ### Performance improvements
-Link now loads quicker and can be loaded only when required.
+Link now loads more quickly and can be loaded only when required.
 
 ### Connection status
-Connection status (either success or error) is now shown during the Link flow. Errors can be skipped without interrupting the rest of the Link flow, for example:
+The connection status - either success or error - is now shown during the Embedded Link flow. The SMB user can skip errors without interrupting the rest of the Link flow, for example:
 
 ![link-sdk_connection-status-error](/img/auth-flow/link-sdk_connection-status-error.png "Embedded Link SDK: Connection error dialog shown for the Codat Banking Sandbox integration.")
 
@@ -82,7 +82,7 @@ We've provided a [sample GitHub project](https://github.com/codatio/sample-proje
 
 ## Prerequisites
 
-If you haven't already done so, customize Link on the <a href="https://app.codat.io/settings/link-settings" target="_blank">**Link settings**</a> page in the Codat Portal. For example, you can add UI copy, set file upload options, choose to make steps in the Link flow optional, or disable steps. The settings apply to both Embedded Link and Hosted Link.
+If you haven't already done so, customize Link on the <a href="https://app.codat.io/settings/link-settings" target="_blank">**Link settings**</a> page in the Codat Portal. For example, add UI copy, set file upload options, choose to make steps optional, or disable steps. The settings apply to both Embedded Link and Hosted Link.
 
 ## Get started with non-React frameworks
 
@@ -91,21 +91,21 @@ Embedded Link is published to https://link-sdk.codat.io as an ES6 module. To use
 1. Using the [Create company](/codat-api#/operations/create-company) endpoint, create a company, and retain its `companyID`. The component needs the `companyId` parameter to open Link for a specified company. You can also create a company in the Codat Portal.
 
    :::note Company creation timeline
-   We recommend you create a company at the same time as your SMB customer signs up within your app.
+   We recommend you create a company when  your SMB customer signs up within your app.
    :::
 
 1. Create a target `div` for the `CodatLink` component that has the following attributes:
    * An ID of `codat-link-container`.
-   * A width and a height&mdash;we recommend 460 by 840px.
-   The created `CodatLink` component will expand to 100% of the specified dimensions of the `div` container. 
-1. Import the component. If you're using the component inside a `script` tag, the tag must have `type="module"` set. 
-1. Import the Link SDK component:
+   * A width and a height&mdash;we recommend 460px by 840px.
+   
+   The created `CodatLink` component expands to fit 100% of the specified dimensions. 
+1. Import the Link SDK component. If you're using the component inside a `script` tag, the tag must have `type="module"` set. 
 
    ```bash
    import { CodatLink } from "https://link-sdk.codat.io";
    ```
 
-1. Initialize the Codat Link component in your app and supply the `companyId` you created in step one:
+1. Initialize the Link SDK component in your app, supplying the `companyId`of the company  you created in step one:
 
    ```js Title="Initialize Codat Link component (non-React)"
    const target = document.querySelector("#codat-link-container");
@@ -121,7 +121,7 @@ Embedded Link is published to https://link-sdk.codat.io as an ES6 module. To use
    });
    ```
 
-1. If you have a `browserslist` entry in your `package.json` file, make sure your production `browserslist` contains the following entries:
+1. If a `browserslist` entry exists in your `package.json` file, update it with the following entries for production:
 
    ```js
     "production": [
@@ -134,7 +134,7 @@ Embedded Link is published to https://link-sdk.codat.io as an ES6 module. To use
 1. If you're using content security policy (CSP) headers, you *must* edit the headers as follows.
    * Add `*.codat.io` to all of `(script-src, style-src, font-src, connect-src, img-src)`, or to `default-src`.
    * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
-1. If you're using TypeScript,  you can use the `types.d.ts` type declaration file. The contents of this file can be added to a new or an existing `.d.ts` file.
+1. If you're using TypeScript,  you can use the `types.d.ts` type declaration file. The contents of this file can be added to a new or existing `.d.ts` file.
 
 ## Get started with React
 
@@ -143,12 +143,12 @@ To use the Embedded Link component in your webpage or app with React, perform th
 1. Using the [Create company](/codat-api#/operations/create-company) endpoint, create a company, and retain its `companyID`. The component needs the `companyId` parameter to open Link for a specified company. You can also create a company in the Codat Portal.
 
    :::note Company creation timeline
-   We recommend you create a company at the same time as your SMB customer signs up within your app.
+   We recommend you create a company when your SMB customer signs up within your app.
    :::
    
 1. Download the <a href="https://dev.azure.com/codat/ea17b8fb-0083-4bb3-bcac-8a817722f00a/_apis/wit/attachments/d4cde71f-a328-44b7-a573-ed5ad9adc6bb?fileName=types.d.ts&download=true" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
 1. Copy and paste the <a href="https://dev.azure.com/codat/ea17b8fb-0083-4bb3-bcac-8a817722f00a/_apis/wit/attachments/11520cd5-799f-4fc2-9497-48d5b509a471?fileName=CodatLink.tsx&download=true" target="_blank">`CodatLink.tsx`</a> file to an appropriate location in your React or TypeScript app. Initialize this component where required.
-1. If you have a `browserslist` entry in your `package.json` file, make sure your production `browserslist` contains the following entries:
+1. If a `browserslist` entry exists in your `package.json` file, update it with the following entries for production:
 
    ```js
     "production": [
@@ -158,7 +158,7 @@ To use the Embedded Link component in your webpage or app with React, perform th
     ],
    ```
    
-1. If you're using content security policy (CSP) headers, you *must* edit the headers as follows.
+1. If you're using content security policy (CSP) headers, you *must* edit the headers as follows:
    * Add `*.codat.io` to all of `(script-src, style-src, font-src, connect-src, img-src)`, or to `default-src`.
    * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
 
@@ -212,11 +212,12 @@ const AuthFlow = ({ id }) => {
 ## Pitfalls
 
 - **Mobile compatibility** - The component is not optimized for use on mobile devices.
-- **Webpack issue** -  To be confirmed.
 
-## Completing the embedded Link flow
+## Complete button
 
-At the end of the embedded Link flow, the **Complete** button is only displayed if all connections flagged as required were made successfully. At least one successful connection is required for the button to be displayed.
+At the end of the Embedded Link flow, the **Complete** button is only displayed if:
+- All connections flagged as required were made successfully.
+- At least one connection was successful. 
 
 ## Getting help
 
