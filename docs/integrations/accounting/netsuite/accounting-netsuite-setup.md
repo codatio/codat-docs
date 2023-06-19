@@ -1,8 +1,7 @@
 ---
 title: "Set up the Oracle NetSuite integration"
 description: "Explore our API integration with Oracle NetSuite."
-createdAt: "2021-06-15T13:50:04.734Z"
-updatedAt: "2023-01-13T14:19:56.356Z"
+sidebar_label: Setup
 ---
 
 Oracle NetSuite is an online service that enables companies to manage all key business processes, in a single system.

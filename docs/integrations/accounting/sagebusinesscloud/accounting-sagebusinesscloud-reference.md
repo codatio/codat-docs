@@ -1,8 +1,7 @@
 ---
 title: "Sage Business Cloud Accounting integration reference"
 description: "Things to know when synchronizing data with Sage Business Cloud Accounting."
-createdAt: "2022-07-27T14:58:23.404Z"
-updatedAt: "2022-10-17T16:21:25.785Z"
+sidebar_label: Reference
 ---
 
 Note the following information when building your application using Codat's Sage Business Cloud Accounting integration.

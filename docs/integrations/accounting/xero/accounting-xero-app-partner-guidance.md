@@ -69,12 +69,11 @@ For the most efficient implementation, we suggest completing the checkpoints in 
 
 **Lending App Partners**
 
-1. Checkpoint 8 - Sign Up with Xero
-2. Checkpoint 7 - Scopes
-3. Checkpoint 3 - Connection
-4. Checkpoint 4 - Error Handling
-5. Checkpoint 2 - Branding
-6. Checkpoint 1 - App Name
+1. Checkpoint 7 - Scopes
+2. Checkpoint 3 - Connection
+3. Checkpoint 4 - Error Handling
+4. Checkpoint 2 - Branding
+5. Checkpoint 1 - App Name
 
 ## Payments App Partners
 

@@ -1,8 +1,7 @@
 ---
 title: "Sage Intacct"
 description: "Learn about our Sage Intacct integration."
-createdAt: "2021-09-09T10:10:05.582Z"
-updatedAt: "2022-10-20T12:43:06.889Z"
+sidebar_label: Overview
 ---
 
 You can synchronize accounting data with <a  class="external" href="https://www.sage.com/en-gb/sage-business-cloud/intacct/" target="_blank">Sage Intacct</a> using our Sage Intacct integration.

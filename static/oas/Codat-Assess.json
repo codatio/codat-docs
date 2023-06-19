@@ -1939,7 +1939,6 @@
       ],
       "get": {
         "deprecated": true,
-        "x-internal": true,
         "summary": "List financial metrics",
         "tags": [
           "Reports"
@@ -2021,7 +2020,7 @@
             "$ref": "#/components/parameters/periodLength"
           },
           {
-            "$ref": "#/components/parameters/numberOfPeriods"
+            "$ref": "#/components/parameters/numberOfPeriodsRequired"
           },
           {
             "schema": {
@@ -2164,7 +2163,7 @@
             "$ref": "#/components/parameters/periodLength"
           },
           {
-            "$ref": "#/components/parameters/numberOfPeriods"
+            "$ref": "#/components/parameters/numberOfPeriodsRequired"
           },
           {
             "$ref": "#/components/parameters/periodUnit"
@@ -2321,7 +2320,7 @@
             "$ref": "#/components/parameters/periodLength"
           },
           {
-            "$ref": "#/components/parameters/numberOfPeriods"
+            "$ref": "#/components/parameters/numberOfPeriodsRequired"
           },
           {
             "$ref": "#/components/parameters/periodUnit"
@@ -2484,7 +2483,7 @@
             "$ref": "#/components/parameters/periodLength"
           },
           {
-            "$ref": "#/components/parameters/numberOfPeriods"
+            "$ref": "#/components/parameters/numberOfPeriodsRequired"
           },
           {
             "$ref": "#/components/parameters/periodUnit"
@@ -2674,7 +2673,7 @@
             "$ref": "#/components/parameters/periodLength"
           },
           {
-            "$ref": "#/components/parameters/numberOfPeriods"
+            "$ref": "#/components/parameters/numberOfPeriodsRequired"
           },
           {
             "$ref": "#/components/parameters/periodUnit"
@@ -2792,7 +2791,7 @@
             "$ref": "#/components/parameters/periodLength"
           },
           {
-            "$ref": "#/components/parameters/numberOfPeriods"
+            "$ref": "#/components/parameters/numberOfPeriodsRequired"
           },
           {
             "$ref": "#/components/parameters/periodUnit"
@@ -2900,7 +2899,7 @@
             "$ref": "#/components/parameters/periodLength"
           },
           {
-            "$ref": "#/components/parameters/numberOfPeriods"
+            "$ref": "#/components/parameters/numberOfPeriodsRequired"
           },
           {
             "$ref": "#/components/parameters/includeDisplayNames"
@@ -3982,7 +3981,7 @@
             "$ref": "#/components/parameters/periodLength"
           },
           {
-            "$ref": "#/components/parameters/numberOfPeriods"
+            "$ref": "#/components/parameters/numberOfPeriodsRequired"
           },
           {
             "$ref": "#/components/parameters/includeDisplayNames"
@@ -5037,7 +5036,7 @@
             "$ref": "#/components/parameters/periodLength"
           },
           {
-            "$ref": "#/components/parameters/numberOfPeriods"
+            "$ref": "#/components/parameters/numberOfPeriodsRequired"
           },
           {
             "$ref": "#/components/parameters/periodUnit"
@@ -5714,7 +5713,7 @@
                         "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated"
                       },
                       {
-                        "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nIt is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                        "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
                       }
                     ]
                   }
@@ -6579,7 +6578,7 @@
           "alertId": {
             "type": "string",
             "format": "uuid",
-            "description": "Unique identifier of the alert."
+            "description": "Unique identifier of the webhook event."
           },
           "message": {
             "type": "string",
@@ -7050,14 +7049,23 @@
         },
         "description": "The number of months per period. E.g. 2 = 2 months per period."
       },
-      "numberOfPeriods": {
+      "numberOfPeriodsRequired": {
         "name": "numberOfPeriods",
         "in": "query",
         "required": true,
         "schema": {
           "type": "integer"
         },
-        "description": "The number of periods to return.  There will be no pagination as a query parameter, however Codat will limit the number of periods to request to 12 periods."
+        "description": "The number of periods to return. There will be no pagination as a query parameter."
+      },
+      "numberOfPeriods": {
+        "name": "numberOfPeriods",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "integer"
+        },
+        "description": "The number of periods to return. If not provided, 12 periods will be used as the default value."
       },
       "periodUnit": {
         "name": "periodUnit",

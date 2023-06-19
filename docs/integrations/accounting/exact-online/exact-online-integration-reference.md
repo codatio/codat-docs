@@ -1,8 +1,7 @@
 ---
 title: "Exact Online integration reference"
 description: "Things to know when synchronizing data with Exact Online (NL and UK)."
-createdAt: "2022-05-09T14:13:08.994Z"
-updatedAt: "2022-10-17T16:02:05.399Z"
+sidebar_label: Reference
 ---
 
 Be aware of the following information when building your application using Codat's Exact Online (NL and UK) integration.

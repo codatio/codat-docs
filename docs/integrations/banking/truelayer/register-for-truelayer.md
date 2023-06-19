@@ -1,8 +1,7 @@
 ---
 title: "Register for TrueLayer"
 description: "Registration options for our API integration with TrueLayer"
-createdAt: "2020-07-21T09:37:12.156Z"
-updatedAt: "2022-10-20T10:36:54.430Z"
+sidebar_label: Register
 ---
 
 Registration with TrueLayer is required to use Codat's TrueLayer banking integration.

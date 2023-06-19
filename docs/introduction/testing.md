@@ -1,6 +1,6 @@
 ---
 title: "Test your Codat solution"
-sidebar_label: "Test your Codat build"
+sidebar_label: "Test your solution"
 description: "Review our suggestions, best practices, and strategies for testing your Codat build"
 ---
 

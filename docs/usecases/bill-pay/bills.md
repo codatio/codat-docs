@@ -16,6 +16,7 @@ Suppliers are relevant for the bill pay use case as each bill is associated to a
 #### Retrieve a list of suppliers
 
 You can get a [list of suppliers](/accounting-api#/operations/list-suppliers) using the Accounting API
+
 ```http request
 GET https://api.codat.io/companies/{companyId}/data/suppliers?page=1&pageSize=100
 ```
@@ -34,6 +35,7 @@ Currently the accounting API does not expose supplier balances on the supplier e
 #### Creating a new supplier
 
 In some cases, a company may do business with a new supplier for the first time, when this happens you should [create the supplier](/accounting-api#/operations/create-supplier) first before creating a bill against the supplier.
+
 ```http request
 POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/suppliers
 ```
@@ -41,6 +43,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 #### Updating a supplier
 
 If a supplier changes address or business name, you may want to reflect this change in the companies accounting software by [updating the supplier](/accounting-api#/operations/put-supplier).
+
 ```http request
 PUT https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/suppliers/{supplierId}
 ```
@@ -52,6 +55,7 @@ Bills can either be created in the companies accounting software and then querie
 #### Get a list of bills
 
 You can [get a list of bills](/accounting-api#/operations/list-bills) for a company from the Accounting API
+
 ```http request
 GET https://api.codat.io/companies/{companyId}/data/bills?page=1&pageSize=100
 ```

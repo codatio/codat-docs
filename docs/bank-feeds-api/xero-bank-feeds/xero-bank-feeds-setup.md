@@ -86,7 +86,7 @@ Before setting up the integration, make sure that:
        "id": "acc-002", // set to desired unique ID
        "accountName": "account-081",
        "sortCode": "123456",
-       "accountType": "Credit",
+       "accountType": "Debit",
        "accountNumber": "12345670",
        "currency": "GBP",
        "balance": 99.99 // can be 0
@@ -95,7 +95,7 @@ Before setting up the integration, make sure that:
        "id": "acc-003",
        "accountName": "account-095",
        "sortCode": "123456",
-       "accountType": "Credit",
+       "accountType": "Debit",
        "accountNumber": "12345671",
        "currency": "GBP",
        "balance": 100.09

@@ -1,8 +1,7 @@
 ---
 title: "TrueLayer FAQs"
 description: "Frequently asked questions about our TrueLayer integration"
-createdAt: "2020-07-21T10:21:57.468Z"
-updatedAt: "2022-10-20T10:38:48.216Z"
+sidebar_label: FAQs
 ---
 
 If your TrueLayer question isn't answered on this page, please contact our support team.

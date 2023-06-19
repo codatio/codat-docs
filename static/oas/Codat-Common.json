@@ -77,7 +77,7 @@
     },
     {
       "name": "Webhooks",
-      "description": "Manage webhooks, rules and alerts."
+      "description": "Manage webhooks, rules, and events."
     },
     {
       "name": "Integrations",
@@ -314,15 +314,15 @@
       }
     },
     "/companies/{companyId}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ],
       "get": {
         "summary": "Get company",
         "operationId": "get-company",
         "description": "Get metadata for a single company",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
         "tags": [
           "Companies"
         ],
@@ -365,6 +365,11 @@
       "delete": {
         "summary": "Delete a company",
         "operationId": "delete-company",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
         "description": "Delete the given company from Codat.\nThis operation is not reversible.",
         "tags": [
           "Companies"
@@ -388,6 +393,11 @@
         "summary": "Update company",
         "description": "Updates the given company with a new name and description",
         "operationId": "update-company",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
         "tags": [
           "Companies"
         ],
@@ -437,11 +447,6 @@
       }
     },
     "/companies/{companyId}/connections": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ],
       "get": {
         "summary": "List connections",
         "description": "List the connections for a company",
@@ -450,6 +455,9 @@
           "Connections"
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
           {
             "$ref": "#/components/parameters/page"
           },
@@ -528,6 +536,11 @@
       "post": {
         "summary": "Create connection",
         "description": "Create a data connection for a company",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
         "tags": [
           "Connections"
         ],
@@ -586,18 +599,20 @@
       }
     },
     "/companies/{companyId}/connections/{connectionId}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/connectionId"
-        }
-      ],
       "get": {
         "summary": "Get connection",
+        "operationId": "get-company-connection",
+        "description": "Get a single connection for a company",
         "tags": [
           "Connections"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          }
         ],
         "responses": {
           "200": {
@@ -635,14 +650,20 @@
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
           }
-        },
-        "operationId": "get-company-connection",
-        "description": "Get a single connection for a company"
+        }
       },
       "delete": {
         "summary": "Delete connection",
         "operationId": "delete-company-connection",
         "description": "Revoke and remove a connection from a company.\nThis operation is not reversible - the end user would need to reauthorize a new data connection if you wish to view new data for this company.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          }
+        ],
         "tags": [
           "Connections"
         ],
@@ -668,6 +689,14 @@
         "tags": [
           "Connections"
         ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -678,9 +707,6 @@
                 }
               }
             }
-          },
-          "400": {
-            "$ref": "#/components/responses/BadRequest"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -706,7 +732,7 @@
               "examples": {
                 "Example": {
                   "value": {
-                    "status": "unlinked"
+                    "status": "Unlinked"
                   }
                 }
               }
@@ -1375,11 +1401,9 @@
         "tags": [
           "Settings"
         ],
-        "x-speakeasy-ignore": true,
         "operationId": "get-profile-syncSettings",
+        "x-speakeasy-name-override": "get-sync-settings",
         "description": "Retrieve the sync settings for your client. This includes how often data types should be queued to be updated, and how much history should be fetched.",
-        "x-internal": true,
-        "deprecated": true,
         "responses": {
           "200": {
             "description": "OK",
@@ -1425,8 +1449,8 @@
         "tags": [
           "Settings"
         ],
-        "operationId": "update-sync-settings",
-        "x-speakeasy-name-override": "get-sync-settings",
+        "operationId": "update-profile-syncSettings",
+        "x-speakeasy-name-override": "update-sync-settings",
         "responses": {
           "204": {
             "description": "No Content"
@@ -1794,9 +1818,7 @@
             "example": "Bank of Dave"
           },
           "description": {
-            "type": "string",
-            "example": "Requested early access to the new financing scheme.",
-            "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
+            "$ref": "#/components/schemas/Company/properties/description"
           }
         },
         "required": [
@@ -2129,7 +2151,9 @@
             "example": "Codat Ltd."
           },
           "description": {
-            "$ref": "#/components/schemas/CompanyRequestBody/properties/description"
+            "type": "string",
+            "example": "Requested early access to the new financing scheme.",
+            "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
           },
           "platform": {
             "type": "string",
@@ -2732,7 +2756,7 @@
       },
       "Rule": {
         "title": "Webhook",
-        "description": "Configuration to alert to a url or list of email addresses based on the given type / condition.",
+        "description": "Configuration to provide an event notification to a URL or list of email addresses based on the given type or condition.",
         "examples": [
           {
             "id": "ff89c50e-a719-4ef5-a182-9917e53927b6",
@@ -3121,7 +3145,7 @@
           "alertId": {
             "type": "string",
             "format": "uuid",
-            "description": "Unique identifier of the alert."
+            "description": "Unique identifier of the webhook event."
           },
           "message": {
             "type": "string",
@@ -3595,8 +3619,8 @@
       }
     },
     "responses": {
-      "BadRequest": {
-        "description": "The request made is not valid.",
+      "Malformed-Query": {
+        "description": "Your `query` parameter was not correctly formed",
         "content": {
           "application/json": {
             "schema": {
@@ -3606,8 +3630,8 @@
               "Malformed query": {
                 "value": {
                   "statusCode": 400,
-                  "service": "PublicApi",
-                  "error": "Error processing request - not valid.",
+                  "service": "ClientsApi",
+                  "error": "Error parsing query - Malformed query.",
                   "correlationId": "bc997528a9d7abb9161ef45f05d38599",
                   "canBeRetried": "Unknown",
                   "detailedErrorCode": 0
@@ -3631,28 +3655,6 @@
                   "service": "PublicApi",
                   "error": "Unauthorized",
                   "correlationId": "7eb40d6b415d7bcd99ce658268284056",
-                  "canBeRetried": "Unknown",
-                  "detailedErrorCode": 0
-                }
-              }
-            }
-          }
-        }
-      },
-      "Malformed-Query": {
-        "description": "Your `query` parameter was not correctly formed",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/ErrorMessage"
-            },
-            "examples": {
-              "Malformed query": {
-                "value": {
-                  "statusCode": 400,
-                  "service": "ClientsApi",
-                  "error": "Error parsing query - Malformed query.",
-                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
                   "canBeRetried": "Unknown",
                   "detailedErrorCode": 0
                 }

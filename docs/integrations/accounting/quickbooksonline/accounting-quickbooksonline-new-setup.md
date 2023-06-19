@@ -1,8 +1,7 @@
 ---
 title: "Set up the QuickBooks Online integration"
 description: "Explore our API integration with QuickBooks Online."
-createdAt: "2021-07-15T13:54:26.560Z"
-updatedAt: "2023-01-13T14:54:32.586Z"
+sidebar_label: Setup
 ---
 
 Video walkthrough:

@@ -1,8 +1,7 @@
 ---
 title: "Uninstall the Sage 50 connector"
 slug: "uninstalling-the-sage-50-connector"
-createdAt: "2019-05-08T18:49:50.691Z"
-updatedAt: "2022-11-21T11:29:03.214Z"
+sidebar_label: Uninstall the connector
 ---
 
 If a user wants to stop synchronizing their data with Sage 50, they can uninstall the Sage 50 connector from their computer.

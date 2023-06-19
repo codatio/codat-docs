@@ -9,23 +9,23 @@ The following rules can be configured in the Codat Portal to trigger webhook eve
 
 | Rule name | Trigger | Additional data | 
 | :- | :- | :- |
-| Company data connection status changed  | A data connection's status changes. | `dataConnectionId`, `platformKey`, `newStatus`, `oldStatus` |
-| New company synchronized                | After the first dataType is successfully synced for a new company. | |
-| Data sync completed                     | Data synchronization is completed; a notification will be generated for each `dataType` as the sync completes. | `dataType`, `datasetId` |
-| Dataset data changed                    | A dataset synchronization has completed and this has resulted in updates within Codat's data cache - this could be through the creation of new records or a change to existing records. | `dataType`, `datasetId` |
-| Dataset status has changed to an error state | The synchronization of a dataset fails. | `dataType`, `datasetStatus`, `datasetId` | 
-| Push operation status has changed       | A push operation's status changes. | `dataType`, `status`, `pushOperationKey` |
-| Push operation has timed out            | A push operation times out. |  `dataType`, `pushOperationGuid` |
-| Account categories updated              | Anytime that Codat updates the `suggested` fields or a user updates the `confirmed` fields. | `modifiedDate` |
-| Sync Connection Deleted                 | A Sync for Commerce connection is deleted. **Note:** Sync for Commerce only. |  |
+| [Company data connection status changed](/introduction/webhooks/core-rules-types#company-data-connection-status-changed)  | A data connection's status changes. | `dataConnectionId`, `platformKey`, `newStatus`, `oldStatus` |
+| [New company synchronized](/introduction/webhooks/core-rules-types#new-company-synchronized)                | After the first dataType is successfully synced for a new company. | |
+| [Data sync completed](/introduction/webhooks/core-rules-types#data-sync-completed)                     | Data synchronization is completed; a notification will be generated for each `dataType` as the sync completes. | `dataType`, `datasetId` |
+| [Dataset data changed](/introduction/webhooks/core-rules-types#dataset-data-changed)                    | A dataset synchronization has completed and this has resulted in updates within Codat's data cache - this could be through the creation of new records or a change to existing records. | `dataType`, `datasetId` |
+| [Dataset status has changed to an error state](/introduction/webhooks/core-rules-types#dataset-status-has-changed-to-an-error-state) | The synchronization of a dataset fails. | `dataType`, `datasetStatus`, `datasetId` | 
+| [Push operation status has changed](/introduction/webhooks/core-rules-types#push-operation-status-has-changed)       | A push operation's status changes. | `dataType`, `status`, `pushOperationKey` |
+| [Push operation has timed out](/introduction/webhooks/core-rules-types#push-operation-has-timed-out)            | A push operation times out. |  `dataType`, `pushOperationGuid` |
+| [Account categories updated](/introduction/webhooks/core-rules-types#account-categories-updated)              | Anytime that Codat updates the `suggested` fields or a user updates the `confirmed` fields. | `modifiedDate` |
+| [Sync Connection Deleted](/introduction/webhooks/core-rules-types#sync-connection-deleted)                 | A Sync for Commerce connection is deleted. **Note:** Sync for Commerce only. |  |
 
 ---
 
 ## Rules and payloads
 
-:::caution Removing non-reference data from webhook alerts body
+:::caution Removing non-reference data from webhook body
 
-In line with industry standard security practices, we have removed personally identifiable information, such as `companyName`, from the body of our alert webhooks. This leaves only referential information, such as `companyId`, which can be looked up using our API.
+In line with industry standard security practices, we have removed personally identifiable information, such as `companyName`, from the body of our webhooks. This leaves only referential information, such as `companyId`, which can be looked up using our API.
 
 :::
 
@@ -192,7 +192,7 @@ In line with industry standard security practices, we have removed personally id
 
 **Note:** This rule is specific to Sync for Commerce and cannot be used for other products.
 
-```json Example webhook alert body
+```json
 {
   "companyId": "e2876f0a-5102-4a7d-9743-f10133dba88f",
   "clientId": "4f1fb082-0c62-4c74-be22-bc782b801e59",

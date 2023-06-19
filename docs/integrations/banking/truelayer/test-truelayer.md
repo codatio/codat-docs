@@ -1,8 +1,7 @@
 ---
 title: "Test your TrueLayer integration"
 description: "Test our TrueLayer integration by pulling test data from the Demo Bank account or an alternative banking source"
-createdAt: "2020-07-21T09:47:37.808Z"
-updatedAt: "2022-10-20T10:38:24.866Z"
+sidebar_label: Testing
 ---
 
 You can test your TrueLayer banking integration by retrieving test data from the Demo Bank account, or another banking source. We recommend you do this before sending Link URLs to your SMB customers.

@@ -1,8 +1,7 @@
 ---
 title: "BigCommerce integration reference"
 description: "Things to know when pulling data from BigCommerce"
-createdAt: "2022-07-18T14:18:56.217Z"
-updatedAt: "2022-10-19T16:19:39.964Z"
+sidebar_label: Reference
 ---
 
 Note the following information when building your application using Codat's BigCommerce integration.

@@ -1,6 +1,7 @@
 ---
 title: "Set up the Stripe integration"
 description: "Explore our API integration with Stripe"
+sidebar_label: Setup
 ---
 
 Set up the Stripe integration to access commerce data from customers who use <a className="external" href="https://stripe.com/" target="_blank">Stripe</a> to accept payments.

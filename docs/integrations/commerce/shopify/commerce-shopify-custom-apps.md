@@ -1,8 +1,7 @@
 ---
 title: "Set up Shopify using custom apps"
 description: "Learn how to set up the Shopify integration using the custom apps approach to merchant data connection"
-createdAt: "2021-01-14T16:41:39.945Z"
-updatedAt: "2023-01-06T16:44:14.501Z"
+sidebar_label: Custom apps
 ---
 
 This article explains how to set up the Shopify integration using the _custom apps_ approach for enabling your merchants to connect and share their commerce data. 

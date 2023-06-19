@@ -75,18 +75,22 @@ const Usecases = ({mini}) => {
           usecases.map((usecase, i) => {
             return (
               <li key={i} className="card mini">
-                <div className="header">
-                  <img
-                    src={usecase.icon}
-                    className="icon usecase"
-                  />
-                </div>
-                
-                <div className="content">
-                  <h4>{usecase.title}</h4>
-                  <p>
-                    <a href={usecase.link}>Explore use case →</a>
-                  </p>    
+                <div className="card-row">
+                  <div className="header">
+                    <a href={usecase.link}>
+                      <img
+                        src={usecase.icon}
+                        className="icon usecase"
+                      />
+                    </a>
+                  </div>
+                  
+                  <div className="content">
+                    <h4>{usecase.title}</h4>
+                    <p>
+                      <a href={usecase.link}>Explore use case →</a>
+                    </p>    
+                  </div>
                 </div>
               </li>
             )
@@ -103,10 +107,12 @@ const Usecases = ({mini}) => {
           return (
             <li key={i} className="card">
               <div className="header">
-                <img
-                  src={usecase.icon}
-                  className="icon usecase"
-                />
+                <a href={usecase.link}>
+                  <img
+                    src={usecase.icon}
+                    className="icon usecase"
+                  />
+                </a>
               </div>
               <h3>{usecase.title}</h3>
               <p>

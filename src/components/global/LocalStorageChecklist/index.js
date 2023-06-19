@@ -40,7 +40,7 @@ const LocalStorageChecklist = ({items, prefix='list'}) => {
                 defaultChecked={checkedKeys.indexOf(item[1]) >= 0}
               />
 
-              {item[0]}
+              <label>{item[0]}</label>
             </li>
           )
         }

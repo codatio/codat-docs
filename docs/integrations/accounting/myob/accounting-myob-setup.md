@@ -1,8 +1,7 @@
 ---
 title: "Set up the MYOB integration"
 description: "Explore our API integration with MYOB Business."
-createdAt: "2019-06-24T13:14:45.915Z"
-updatedAt: "2023-01-13T14:17:05.765Z"
+sidebar_label: Setup
 ---
 
 :::note AccountRight or Essentials?

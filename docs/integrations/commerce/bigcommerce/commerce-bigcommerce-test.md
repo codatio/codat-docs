@@ -1,8 +1,7 @@
 ---
 title: "Test your BigCommerce integration"
 description: "Test our BigCommerce integration by pulling sandbox data to a test company"
-createdAt: "2022-07-18T14:14:57.301Z"
-updatedAt: "2022-10-19T16:18:50.870Z"
+sidebar_label: Testing
 ---
 
 You can test your BigCommerce integration by retrieving sample data from a sandbox store to a test company in Codat. This lets you test the Link site that your SMB customers will use when they connect their BigCommerce stores to Codat through the integration.

@@ -18,7 +18,7 @@ _Onboarding_ users have the ability to add companies to the Codat portal and lin
 
 ## Analyst
 
-_Analyst_ users have all the abilities of the _Onboarding_ users (adding and linking companies) as well as the ability to view the financial data that is uploaded, view alerts that have been set, and resolve alerts in the portal.
+_Analyst_ users have all the abilities of the _Onboarding_ users (adding and linking companies) as well as the ability to view the financial data that is uploaded, view webhooks that have been set, and resolve raised events in the portal.
 
 ## Developer
 
@@ -37,7 +37,7 @@ _Administrator_ users have full access to all the features available in the Coda
 | Add companies                             	| ✔          	| ✔       	| ✔         	| ✔             	|
 | View connection status                    	| ✔          	| ✔       	| ✔         	| ✔             	|
 | View company data                         	|            	| ✔       	| ✔         	| ✔             	|
-| View and resolve alerts                   	|            	| ✔       	| ✔         	| ✔             	|
+| View and resolve webhooks and events         	|            	| ✔       	| ✔         	| ✔             	|
 | Delete companies                          	|            	|         	| ✔         	| ✔             	|
 | Add and update rules                      	|            	|         	| ✔         	| ✔             	|
 | Configure Link                            	|            	|         	| ✔         	| ✔             	|

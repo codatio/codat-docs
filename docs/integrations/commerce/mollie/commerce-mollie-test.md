@@ -1,8 +1,7 @@
 ---
 title: "Test your Mollie integration"
 description: "Test our Mollie integration by pulling sandbox data from a test company"
-createdAt: "2022-02-15T14:11:39.636Z"
-updatedAt: "2022-10-20T08:45:57.019Z"
+sidebar_label: Testing
 ---
 
 You can use the Mollie Test integration to pull test data from Mollie into Codat.
