@@ -1,11 +1,11 @@
 ---
 title: "Supplemental data"
-description: "Super catchy description of supplemental data"
+description: "Retrieve and update additional fields from an integration using supplemental data"
 ---
 
 ## What is supplemental data?
 
-We have enhanced some of our data types with a `supplementalData` property. It gives you the ability to fetch additional fields from an integration's endpoint within our existing standard data types.
+We have enhanced some of our data types with a `supplementalData` property. It gives you the ability to fetch, update, or create additional fields from an integration's endpoint within our existing standard data types.
 
 For example, to pull our `suppliers` data type from Xero, we use Xero's [Contacts](https://developer.xero.com/documentation/api/accounting/contacts) endpoint. While we already include many of the properties of that endpoint in our standard data model, some properties, like supplier bank account details (`BankAccountDetails`), are not included. 
 
@@ -23,7 +23,7 @@ We are rapidly expanding coverage across integrations and datatypes according to
 
 ## How do I configure supplemental data?
 
-In order to use supplemental data, you need to specify what supplemental data is to be passed in the response for each integration and data type pair you require. To do so, use the [endpoint name]/endpoint link.
+In order to use supplemental data, you need to specify what supplemental data should be passed in the response for each integration and data type pair you require. To do so, use the [endpoint name]/endpoint link.
 
 ```http
 /integrations/{platformKey}/datatypes/{datatype}/supplementalDataConfig
@@ -48,25 +48,180 @@ Within the request body, note that the `PlatformEndpoint` and `PlatformPropertyN
     }
 }
 ```
-You can also retrieve your supplemental data configuration by using the [endpoint name]/endpoint link endpoint:
+
+You can also retrieve your existing supplemental data configuration by using the [endpoint name]/endpoint link endpoint:
 `GET /integrations​/{platformKey}/datatypes/{datatype}/supplementalDataConfig`
 
-## Endpoint mapping? underlying data sources?
+## Codat to platform endpoint mapping
 
-Which endpoints/fields are available for a given datatype?
-In theory, all fields on all endpoints that we map to for a given datatype should be available, with the following caveats:
+**EVERYTHING IN THIS SECTION SHOULD GO TO THE OAS**
 
-We will distinguish between ‘primary’ and ‘secondary’ endpoints - supplemental data will only be available on the ‘primary’ endpoints for a given datatype. For example:
+Review the table below for platform endpoints we use in our data types, which are available for you to pull or send supplemental data. 
 
-On billPayments for Xero we map to seven different endpoints (/Payments, /Overpayments, /PrePayments. /BatchPayments, /CreditNotes, /Organisation, /BankAccounts, /BankTransactions).
+| Data type      | Xero endpoints                                                    | QuickBooks Online endpoints | Netsuite endpoints |
+|----------------|-------------------------------------------------------------------|-----------------------------|--------------------|
+| `billPayments` | Payments, Overpayments,   PrePayments, BatchPayments, CreditNotes |                             |                    |
 
-Here we would say that /Payments, /Overpayments, /PrePayments. /BatchPayments, /CreditNotes are ‘Primary’ and therefore will have supplemental coverage under billPayments
+## Commonly requested properties
 
-Whereas /Organisation, /BankAccounts, /BankTransactions are secondary and therefore will not (you would expect to see /Organisation being covered as a ‘Primary’ endpoint under the companyInfo datatype)
+**EVERYTHING IN THIS SECTION SHOULD GO TO THE OAS**
 
-This coverage will be clearly documented when we document publicly
+This section details some of the commonly requested supplemental data configurations per platform.
 
-There may in the future be some specific fields which we have to block via a denylist due to their sensitivity (e.g. long credit card numbers, Tax File Numbers in Australia etc.) where we do not have appetite to store the data. We have not come across any yet on endpoints we already map to, but may in future (this will certainly be the case for some endpoints available via Custom Data)
+### Xero
+
+- [Accounts](https://developer.xero.com/documentation/api/accounting/accounts) endpoint
+
+| Property        | Description                                                    |
+|-----------------|----------------------------------------------------------------|
+| `TaxType`       | See default tax rate associated with the account               |
+| `SystemAccount` | See if the account is a System Account and, if so, which type  |
+
+```json title = "Example configuration"
+{
+    "supplementalDataConfig": {
+        "client-keyname-for-accounts": {
+            "dataSource": "/Accounts",
+            "pullData": {
+                "ClientNameForTaxType":"TaxType",
+                "ClientNameForSystemAccount": "SystemAccount"
+            }
+        }
+    }
+}
+```
+
+- [Invoices](https://developer.xero.com/documentation/api/accounting/invoices) endpoint
+
+| Property              | Description                                                                            |
+|-----------------------|----------------------------------------------------------------------------------------|
+| `ExpectedPaymentDate` | Displayed on the invoice if the expected   payment date has been set                   |
+| `HasAttachments`      | Boolean value to indicate if invoice has an attachment                                 |
+| `SentToContact`       | Boolean value to indicate whether the approved invoice has been sent to   the customer |
+| `Reference`           | Display an additional external reference for   the invoice                             |
+
+```json title = "Example configuration"
+{
+    "supplementalDataConfig": {
+        "client-keyname-for-xero-invoices": {
+            "dataSource": "/Invoices",
+            "pullData": {
+                "ClientNameForExpectedPaymentDate": "ExpectedPaymentDate",
+                "ClientNameForHasAttachments": "HasAttachments"
+            }
+        }
+    }
+}
+```
+
+- [Items](https://developer.xero.com/documentation/api/accounting/items) endpoint
+
+| Property              | Description                                                                      |
+|-----------------------|----------------------------------------------------------------------------------|
+| `QuantityOnHand`      | Shows the quantity of the item on hand                                           |
+| `TotalCostPool`       | Shows the value of the item on hand. Calculated using average cost   accounting. |
+
+```json title = "Example configuration"
+{
+    "supplementalDataConfig": {
+        "client-keyname-for-items": {
+            "dataSource": "/Items",
+            "pullData": {
+                "ClientNameForQuantityOnHand":"QuantityOnHand",
+                "ClientNameForTotalCostPool":"TotalCostPool"
+            }
+        }
+    }
+}
+```
+
+- [Contacts](https://developer.xero.com/documentation/api/accounting/contacts) endpoint
+
+| Property             | Description                                                                      |
+|----------------------|----------------------------------------------------------------------------------|
+| `BankAccountDetails` | Returns the bank account number of supplier                                      |
+
+```json title = "Example configuration"
+{
+    "supplementalDataConfig": {
+        "client-Keyname-For-Xero-suppliers": {
+            "dataSource": "/Contacts",
+            "pullData": {
+                "ClientNameForBankAccounts": "BankAccountDetails"
+            }
+        }
+    }
+}
+```
+
+- [Tax rates](https://developer.xero.com/documentation/api/accounting/taxrates) endpoint
+
+| Property                | Description                                                        |
+|-------------------------|--------------------------------------------------------------------|
+| `CanApplyToAssets`      | Boolean to describe if tax rate can be used   for asset accounts   |
+| `CanApplyToEquity`      | Boolean to describe if tax rate can be used for equity   accounts  |
+| `CanApplyToExpenses`    | Boolean to describe if tax rate can be used for expense accounts   |
+| `CanApplyToLiabilities` | Boolean to describe if tax rate can be used for liability accounts |
+| `CanApplyToRevenue`     | Boolean to describe if tax rate can be used for revenue accounts   |
+
+```json title = "Example configuration"
+{
+    "supplementalDataConfig": {
+        "client-keyname-for-tax-rates": {
+            "dataSource": "/TaxRates",
+            "pullData": {
+                "ClientNameForCanApplyToLiabilities":"CanApplyToLiabilities",
+                "ClientNameForCanApplyToAssets": "CanApplyToAssets",
+                "ClientNameForCanApplyToEquity": "CanApplyToEquity",
+                "ClientNameForCanApplyToExpenses": "CanApplyToExpenses",
+                "ClientNameForCanApplyToRevenue": "CanApplyToRevenue"
+            }
+        }
+    }
+}
+```
+
+### QuickBooks Online
+
+- [Customers](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/customer) endpoint
+
+| Property        | Description                                                    |
+|-----------------|----------------------------------------------------------------|
+| `SalesTermRef`       | Reference to the Sales Terms associated with this customer               |
+| `ParentRef` | Reference to a customer that is the immediate parent of this sub-customer |
+
+```json title = "Example configuration"
+{
+    "supplementalDataConfig": {
+        "Client-keyname-for-QBO-customers": {
+            "dataSource": "/Customer",
+            "pullData": {
+                "ClientNameForSalesTermRef":"SalesTermRef.value",
+                "ClientNameForParentRef": "ParentRef.value"
+            }
+        }
+    }
+}
+```
+
+- [Invoices](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/invoice) endpoint
+
+| Property        | Description                                                    |
+|-----------------|----------------------------------------------------------------|
+| `SalesTermRef`       | Reference to the Sales Terms associated with this Invoice               |
+
+```json title = "Example configuration"
+{
+    "supplementalDataConfig": {
+        "client-keyname-for-qbo-invoices": {
+            "dataSource": "/Invoice",
+            "pullData": {
+                "salesTermRef": "SalesTermRef.value"
+            }
+        }
+    }
+}
+```
 
 ## Tips and pitfalls
 
@@ -80,11 +235,14 @@ There may in the future be some specific fields which we have to block via a den
 
 - We expose the data sources available to interact with supplemental data, but request you to refer to the platforms' own documentation for details on available data and properties for each data source.
 
-## Frequent uses? use cases? examples? commonly requested properties?
-
-foldouts for each platform?
 
 
+
+
+
+
+
+---
 Callout for data types:
 
 This data type supports supplemental data. Read more (configuring for supplemental data)[] and review implementation procedures for (specific integrations)[].
@@ -92,3 +250,5 @@ This data type supports supplemental data. Read more (configuring for supplement
 Callout for integrations:
 
 This integration supports supplemental data. Read more about (configuring for supplemental data)[] and how you can (pull it for this integration)[].
+
+Update OAS with relevant endpoints + parameters
