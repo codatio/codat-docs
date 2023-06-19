@@ -1,8 +1,7 @@
 ---
 title: "TrueLayer"
 description: "Learn about our TrueLayer integration"
-createdAt: "2020-07-21T10:03:36.702Z"
-updatedAt: "2022-10-20T10:36:16.860Z"
+sidebar_label: Overview
 ---
 
 Our banking integration with <a  class="external" href="https://truelayer.com/" target="_blank">TrueLayer</a> lets you securely connect to and retrieve your SMB customers' banking data in a standardized format.

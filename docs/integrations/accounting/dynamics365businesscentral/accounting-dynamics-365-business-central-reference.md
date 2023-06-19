@@ -2,8 +2,7 @@
 title: "Dynamics 365 Business Central integration reference"
 slug: "accounting-dynamics-365-business-central-reference"
 description: "Things to know when synchronizing data with Dynamics 365 Business Central."
-createdAt: "2020-08-24T14:06:50.911Z"
-updatedAt: "2022-12-20T09:47:28.078Z"
+sidebar_label: Reference
 ---
 
 The way in which Dynamics 365 Business Central handles certain data types affects the data that is pulled from the accounting platform into Codat. This article highlights things to look out for when you view datasets.

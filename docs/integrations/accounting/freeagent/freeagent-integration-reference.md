@@ -1,8 +1,7 @@
 ---
 title: "FreeAgent integration reference"
 description: "Things to know when synchronizing data with FreeAgent."
-createdAt: "2022-04-19T10:19:35.783Z"
-updatedAt: "2022-11-23T10:13:00.662Z"
+sidebar_label: Reference
 ---
 
 Note the following information when building your application using Codat's FreeAgent integration.

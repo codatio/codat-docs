@@ -1,8 +1,7 @@
 ---
 title: "QuickBooks Desktop requirements"
 description: "Software, hardware, environment and network requirements and configurations"
-createdAt: "2022-11-22T16:23:10.327Z"
-updatedAt: "2022-11-25T12:38:32.711Z"
+sidebar_label: Requirements
 ---
 
 ## Supported QBD versions
@@ -80,4 +79,10 @@ If you have a large number of companies, or particularly large company files, yo
 
 The QuickBooks Desktop connector communicates over port 443 to URLs hosted on `https://quickbooksdesktop.codat.io` in production.
 
-If you experience problems with the connector transmitting data, please add the following URL to your firewall allow list: `https://quickbooksdesktop.codat.io/`.
+If you experience problems with the connector transmitting data, please add the following URLs to your firewall allow list: 
+
+`https://quickbooksdesktop.codat.io/`
+
+`https://connectors.codat.io`
+
+

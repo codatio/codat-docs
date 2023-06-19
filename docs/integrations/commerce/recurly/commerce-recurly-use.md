@@ -1,8 +1,7 @@
 ---
 title: "Use the Recurly integration"
 description: "When an SMB user has linked their Recurly account, access their subscriptions and billing data by making proxy requests to the Recurly API"
-createdAt: "2022-08-01T16:20:34.184Z"
-updatedAt: "2022-10-20T09:00:21.155Z"
+sidebar_label: Use
 ---
 
 The Recurly integration doesn't yet expose standardized data types or provide any data visualization or metrics (for example, in Assess).

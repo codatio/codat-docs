@@ -51,7 +51,7 @@ Review the parameters in the example response to creating a new company:
 }
 ```
 
-To enhance your Hosted Link experience, [set up an alert](/auth-flow/customize/set-up-webhooks) to monitor the connection status of the newly created company. We recommend that you set up an alert for when a user authorizes a data connection so that you can action it within your app.
+To enhance your Hosted Link experience, [set up a webhook](/auth-flow/customize/set-up-webhooks) to monitor the connection status of the newly created company. We recommend that you set up a webhook for when a user authorizes a data connection so that you can action it within your app.
 
 :::note Use the `redirect` Link URL for existing customers
 

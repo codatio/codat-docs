@@ -1,8 +1,7 @@
 ---
 title: "QuickBooks Online"
 description: "Learn about our QuickBooks Online integration."
-createdAt: "2020-01-14T00:44:33.755Z"
-updatedAt: "2022-12-20T12:08:09.996Z"
+sidebar_label: Overview
 ---
 
 You can synchronize accounting data with <a className="external" href="https://quickbooks.intuit.com/uk/online/" target="_blank">QuickBooks Online</a> using our QuickBooks Online integration.

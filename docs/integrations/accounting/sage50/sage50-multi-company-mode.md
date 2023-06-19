@@ -2,8 +2,7 @@
 title: "Multi-company mode for Sage 50 (UK & Ireland)"
 slug: "sage50-multi-company-mode"
 description: "Use our Sage 50 (UK & Ireland) connector when multi-company mode is enabled."
-createdAt: "2019-11-29T13:49:32.659Z"
-updatedAt: "2022-12-12T16:43:05.020Z"
+sidebar_label: Multi-company mode
 ---
 
 When multi-company mode is enabled in Sage 50, a single installed Sage 50 connector can sync with multiple Sage 50 company data files.

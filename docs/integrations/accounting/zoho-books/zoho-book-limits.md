@@ -1,8 +1,7 @@
 ---
 title: "Zoho Books limits and reduced data pulls"
 description: "Information about Zoho Books API rate limits and when Codat pulls reduced datasets."
-createdAt: "2020-04-06T07:37:50.107Z"
-updatedAt: "2022-10-17T16:27:12.407Z"
+sidebar_label: Limitations
 ---
 
 To minimize the performance impact of the [rate limits](zoho-book-limits#zoho-books-rate-limits) described below, by default Codat pulls a reduced dataset from Zoho Books for some data types.

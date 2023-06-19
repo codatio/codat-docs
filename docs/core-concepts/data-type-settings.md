@@ -1,5 +1,6 @@
 ---
 title: "Data type settings"
+sidebar_label: "Data types"
 description: "Concept overview and key details"
 createdAt: "2019-02-20T13:19:55.318Z"
 updatedAt: "2022-11-23T15:22:42.512Z"

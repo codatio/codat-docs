@@ -49,7 +49,7 @@ The **Sign Up with Xero URL** is the URL that is shared with the end user for th
 
    These two values will form part of the **Sign Up with Xero URL**. 
 
-   Call our `GET https://api.codat.io/profile/syncSettings` endpoint and pick up the `clientId` returned in the response. For Xero, the `platformKey` value is `gbol`, as captured in our [accounting platform key list](https://docs.codat.io/integrations/accounting/accounting-platform-keys). 
+   Call our `GET https://api.codat.io/profile/syncSettings` endpoint and pick up the `clientId` returned in the response. For Xero, the `platformKey` value is `gbol`, as captured in our [accounting platform key list](/integrations/accounting/overview#platform-keys). 
    
 2. Generate the URL.
 

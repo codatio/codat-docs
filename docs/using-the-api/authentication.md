@@ -1,6 +1,6 @@
 ---
-title: "Authentication"
-description: "Basics of authentication for Codat's APIs"
+title: "Authenticate"
+description: "Use your auth header or API key to authenticate with Codat's APIs"
 createdAt: "2019-02-20T09:38:52.916Z"
 updatedAt: "2022-11-07T19:59:38.100Z"
 ---

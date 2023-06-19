@@ -1,7 +1,5 @@
 ---
 title: "Troubleshooting"
-createdAt: "2019-03-01T13:40:49.580Z"
-updatedAt: "2022-11-22T16:35:43.216Z"
 ---
 
 ## The connector can't be downloaded or run due to corporate policy or antivirus software

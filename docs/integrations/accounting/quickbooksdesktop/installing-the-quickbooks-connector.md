@@ -1,8 +1,7 @@
 ---
 title: "Install the QuickBooks Desktop connector"
 description: "Guide for SMB users to install our QuickBooks Desktop on-premise connector."
-createdAt: "2019-03-01T13:54:07.134Z"
-updatedAt: "2022-10-17T16:14:54.800Z"
+sidebar_label: Install the connector
 ---
 
 :::info Linking companies using the QuickBooks Desktop connector
