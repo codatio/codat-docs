@@ -148,8 +148,19 @@ To use the Embedded Link component in your webpage or app with React, perform th
    
 1. Download the <a href="https://dev.azure.com/codat/ea17b8fb-0083-4bb3-bcac-8a817722f00a/_apis/wit/attachments/d4cde71f-a328-44b7-a573-ed5ad9adc6bb?fileName=types.d.ts&download=true" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
 1. Copy and paste the <a href="https://dev.azure.com/codat/ea17b8fb-0083-4bb3-bcac-8a817722f00a/_apis/wit/attachments/11520cd5-799f-4fc2-9497-48d5b509a471?fileName=CodatLink.tsx&download=true" target="_blank">`CodatLink.tsx`</a> file to an appropriate location in your React or TypeScript app. Initialize this component where required.
-1. If you have a `browserslist` entry in your `package.json` file, make sure it's updated for production as shown in step five of the preceding task.
-1. If you're using content security policy (CSP) headers, update them with the information shown in step six of the preceding task.
+1. If you have a `browserslist` entry in your `package.json` file, make sure your production `browserslist` contains the following entries:
+
+   ```js
+    "production": [
+      ">0.2% and supports es6-module",
+      "not dead",
+      "not and_uc >= 0"
+    ],
+   ```
+   
+1. If you're using content security policy (CSP) headers, you *must* edit the headers as follows.
+   * Add `*.codat.io` to all of `(script-src, style-src, font-src, connect-src, img-src)`, or to `default-src`.
+   * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
 
 ## Embedding the Link application
 
