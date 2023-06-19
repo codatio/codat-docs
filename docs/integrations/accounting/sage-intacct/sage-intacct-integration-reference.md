@@ -1,8 +1,7 @@
 ---
 title: "Sage Intacct integration reference"
 description: "Things to know when synchronizing data with Sage Intacct."
-createdAt: "2022-05-04T10:48:36.978Z"
-updatedAt: "2022-10-17T16:21:50.598Z"
+sidebar_label: Reference
 ---
 
 Note the following information when building your application using Codat's Sage Intacct integration.

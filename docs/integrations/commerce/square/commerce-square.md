@@ -2,8 +2,6 @@
 title: "Square"
 sidebar_label: Overview
 description: "Learn about our Square integration"
-createdAt: "2020-09-18T08:54:12.512Z"
-updatedAt: "2022-10-20T13:38:20.108Z"
 ---
 
 [Square](https://squareup.com/) helps retail businesses to start, run, and grow. They make it easy for sellers

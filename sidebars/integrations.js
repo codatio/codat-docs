@@ -7,30 +7,18 @@ module.exports = [
   },
   "integrations/all-integrations",
   {
+    type: "link",
+    label: "Integration coverage",
+    href: "https://knowledge.codat.io/supported-features/accounting",
+  },
+  {
     type: "category",
     label: "Accounting",
     collapsed: true,
     items: [
       "integrations/accounting/overview",
-      "integrations/accounting/accounting-platform-keys",
-      {
-        type: "category",
-        label: "Sandbox",
-        collapsed: true,
-        items: [
-          "integrations/accounting/sandbox/accounting-sandbox",
-          "integrations/accounting/sandbox/accounting-sandbox-setup",
-        ],
-      },
-      {
-        type: "category",
-        label: "Clearbooks",
-        collapsed: true,
-        items: [
-          "integrations/accounting/clearbooks/accounting-clearbooks",
-          "integrations/accounting/clearbooks/accounting-clearbooks-setup",
-        ],
-      },
+      "integrations/accounting/sandbox/accounting-sandbox",
+      "integrations/accounting/clearbooks/accounting-clearbooks",
       {
         type: "category",
         label: "Dynamics 365 Business Central",
@@ -62,24 +50,8 @@ module.exports = [
           "integrations/accounting/freeagent/freeagent-integration-reference",
         ],
       },
-      {
-        type: "category",
-        label: "Freshbooks",
-        collapsed: true,
-        items: [
-          "integrations/accounting/freshbooks/accounting-freshbooks",
-          "integrations/accounting/freshbooks/accounting-freshbooks-setup",
-        ],
-      },
-      {
-        type: "category",
-        label: "Kashflow",
-        collapsed: true,
-        items: [
-          "integrations/accounting/kashflow/accounting-kashflow",
-          "integrations/accounting/kashflow/accounting-kashflow-setup",
-        ],
-      },
+      "integrations/accounting/freshbooks/accounting-freshbooks",
+      "integrations/accounting/kashflow/accounting-kashflow",
       {
         type: "category",
         label: "MYOB",
@@ -104,15 +76,7 @@ module.exports = [
           "integrations/accounting/netsuite/oracle-netsuite-integration-reference",
         ],
       },
-      {
-        type: "category",
-        label: "Pandle",
-        collapsed: true,
-        items: [
-          "integrations/accounting/pandle/accounting-pandle",
-          "integrations/accounting/pandle/accounting-pandle-setup",
-        ],
-      },
+      "integrations/accounting/pandle/accounting-pandle",
       {
         type: "category",
         label: "QuickBooks Desktop",
@@ -181,15 +145,7 @@ module.exports = [
           "integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud-reference",
         ],
       },
-      {
-        type: "category",
-        label: "Wave",
-        collapsed: true,
-        items: [
-          "integrations/accounting/wave/accounting-wave",
-          "integrations/accounting/wave/accounting-wave-setup",
-        ],
-      },
+      "integrations/accounting/wave/accounting-wave",
       {
         type: "category",
         label: "Xero",
@@ -231,17 +187,6 @@ module.exports = [
     collapsed: true,
     items: [
       "integrations/banking/overview",
-      "integrations/banking/banking-platform-keys",
-      {
-        type: "category",
-        label: "Proxy access",
-        collapsed: true,
-        items: [
-          "integrations/banking/proxy-access-banking-data",
-          "integrations/banking/proxy-access-banking-data/enabling-proxy-access",
-          "integrations/banking/proxy-access-banking-data/example-proxy-requests",
-        ],
-      },
       {
         type: "category",
         label: "Basiq",
@@ -276,6 +221,16 @@ module.exports = [
           "integrations/banking/truelayer/faqs-about-truelayer",
         ],
       },
+      {
+        type: "category",
+        label: "Proxy access",
+        collapsed: true,
+        items: [
+          "integrations/banking/proxy-access-banking-data",
+          "integrations/banking/proxy-access-banking-data/enabling-proxy-access",
+          "integrations/banking/proxy-access-banking-data/example-proxy-requests",
+        ],
+      },
     ],
   },
   {
@@ -285,7 +240,6 @@ module.exports = [
     items: [
       "integrations/commerce/overview",
       "integrations/commerce/api-workflow",
-      "integrations/commerce/commerce-platform-keys",
       "integrations/commerce/commerce-sync-settings",
       {
         type: "category",
@@ -394,9 +348,16 @@ module.exports = [
         collapsed: true,
         items: [
           "integrations/commerce/shopify/commerce-shopify",
-          "integrations/commerce/shopify/commerce-shopify-custom-apps",
+          {
+            type: "category",
+            label: "Setup",
+            collapsed: true,
+            items: [
+              "integrations/commerce/shopify/commerce-shopify-setup",
+              "integrations/commerce/shopify/commerce-shopify-custom-apps",
+            ]
+          },
           "integrations/commerce/shopify/commerce-shopify-requirements-public-apps",
-          "integrations/commerce/shopify/commerce-shopify-setup",
           "integrations/commerce/shopify/test-shopify",
         ],
       },
@@ -487,10 +448,5 @@ module.exports = [
     items: [
       "other/file-upload",
     ]
-  },
-  {
-    type: "link",
-    label: "Integration coverage",
-    href: "https://knowledge.codat.io/supported-features/accounting",
   },
 ];

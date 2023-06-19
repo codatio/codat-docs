@@ -2,15 +2,14 @@
 title: "Sage 50 requirements"
 slug: "sage-50-requirements"
 description: "Software, hardware, environment and network requirements and configurations"
-createdAt: "2022-11-25T12:08:57.434Z"
-updatedAt: "2022-11-25T14:08:49.131Z"
+sidebar_label: Requirements
 ---
 
 :::note Supported Sage 50 accounts and versions
 
 Codat supports Sage 50 accounts (UK & Ireland) for versions from 2018 onwards (v24+). This is in line with <a className="external" href="https://gb-kb.sage.com/portal/app/portlets/results/viewsolution.jsp?solutionid=200427112228593" target="_blank">Sage's software lifecycle policy</a>.
 
-See a full list of supported Sage 50 versions below. We aim for this list to be as comprehensive and current as possible. If you experience issues with the supported versions or would like to register your interest in an unsupported version, please contact support@codat.io
+See a full list of supported Sage 50 versions below. We aim for this list to be as comprehensive and current as possible. If you experience issues with the supported versions or would like to register your interest in an unsupported version, please contact [support@codat.io](mailto:support@codat.io).
 :::
 
 ## Supported versions
@@ -51,6 +50,8 @@ If you have a large number of companies, or particularly large company files, yo
 
 The Sage 50 connector communicates over port 443 to URLs hosted on `https://sage50.codat.io`
 
-If you experience problems with the connector transmitting data, add the following URL to your firewall allow list:
+If you experience problems with the connector transmitting data, add the following URLs to your firewall allow list:
 
 `https://sage50.codat.io/*`
+
+`https://connectors.codat.io`

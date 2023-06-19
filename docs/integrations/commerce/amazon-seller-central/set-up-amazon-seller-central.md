@@ -1,8 +1,7 @@
 ---
 title: "Set up the Amazon Seller Central Integration"
 description: "Explore our API integration with Amazon Seller Central"
-createdAt: "2021-09-07T22:30:33.558Z"
-updatedAt: "2023-01-06T16:30:35.075Z"
+sidebar_label: Setup
 ---
 
 Before you can pull commerce data from merchants using Amazon Seller Central, you need to set up the integration in Codat's environments.

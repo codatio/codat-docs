@@ -1,8 +1,7 @@
 ---
 title: "Use the Chargebee integration"
 description: "When an SMB user has linked their Chargebee account, access their subscriptions and billing data by making proxy requests to the Chargebee API"
-createdAt: "2022-08-02T15:56:09.330Z"
-updatedAt: "2022-10-19T16:28:15.495Z"
+sidebar_label: Use the integration
 ---
 
 The Chargebee integration doesn't yet expose standardized data types or provide any data visualization or metrics (for example, in Assess).

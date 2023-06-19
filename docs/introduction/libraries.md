@@ -9,10 +9,84 @@ All libraries for Codat are listed below. If you've built anything that you'd be
 
 Codat offers official API libraries for different programming languages, which are regularly updated for breaking and non-breaking API changes. These client libraries are generated from our [OpenAPI specification](https://github.com/codatio/oas).
 
-- [TypeScript](https://github.com/codatio/client-sdk-typescript)
-- [Python](https://github.com/codatio/client-sdk-python)
-- [Go](https://github.com/codatio/client-sdk-go)
-- COMING SOON! [C#](https://github.com/codatio/client-sdk-csharp)
+<ul className="card-container mini">
+  <li className="card mini">
+    <div className="card-row">
+      <div className="header">
+        <a href="https://github.com/codatio/client-sdk-typescript">
+          <img
+            src="/img/libraries/typescript.svg"
+            className="icon usecase"
+          />
+        </a>
+      </div>
+      
+      <div className="content">
+        <h4>TypeScript</h4>
+        <p>
+          <a href="https://github.com/codatio/client-sdk-typescript">Start using →</a>
+        </p>    
+      </div>
+    </div>
+  </li>
+  <li className="card mini">
+    <div className="card-row">
+      <div className="header">
+        <a href="https://github.com/codatio/client-sdk-python">
+          <img
+            src="/img/libraries/python.svg"
+            className="icon usecase"
+          />
+        </a>
+      </div>
+      
+      <div className="content">
+        <h4>Python</h4>
+        <p>
+          <a href="https://github.com/codatio/client-sdk-python">Start using →</a>
+        </p>    
+      </div>
+    </div>
+  </li>
+  <li className="card mini">
+    <div className="card-row">
+      <div className="header">
+        <a href="https://github.com/codatio/client-sdk-go">
+          <img
+            src="/img/libraries/go.svg"
+            className="icon usecase"
+          />
+        </a>
+      </div>
+      
+      <div className="content">
+        <h4>Go</h4>
+        <p>
+          <a href="https://github.com/codatio/client-sdk-go">Start using →</a>
+        </p>    
+      </div>
+    </div>
+  </li>
+  <li className="card mini">
+    <div className="card-row">
+      <div className="header">
+        <a href="https://github.com/codatio/client-sdk-csharp">
+          <img
+            src="/img/libraries/csharp.svg"
+            className="icon usecase"
+          />
+        </a>
+      </div>
+      
+      <div className="content">
+        <h4>COMING SOON! C#</h4>
+        <p>
+          <a href="https://github.com/codatio/client-sdk-csharp">Start using →</a>
+        </p>    
+      </div>
+    </div>
+  </li>
+</ul>
 
 ## Community libraries
 

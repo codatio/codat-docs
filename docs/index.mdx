@@ -46,27 +46,12 @@ import Products from "@components/global/Products";
   </p>
 </PageHeader>
 
-<p>
-  To build integrations for small business lending, try our <a href="/assess/overview">Assess</a>{" "}
-  product. If you're developing accounting integrations for a PoS or eCommerce
-  platform, go to <a href="/sfc/overview">Sync for Commerce</a>. For accounting integrations for corporate cards or
-  expense management platforms, refer to <a href="/sync-for-expenses/overview">Sync for Expenses</a>. If you plan to push 
-  your customers' bank transaction data into their accounting platforms, check out our <a href="/bank-feeds-api/overview">Bank Feeds API</a>.
-</p>
-<p>
-  Building something else? Explore our <a href="/accounting-api/overview">Accounting API</a>,{" "}
-  <a href="/banking-api/overview">Banking API</a>, and <a href="/commerce-api/overview">Commerce API</a> to pull, push, transform, and
-  visualize data from 35+ financial data sources, integrated with a single data model.
-</p>
-
-<hr />
-
 ## Get started
 
 Take your first steps through the information and support available to you.
 
 <ul className="card-container">
-  <li className="card dark">
+  <li className="card dark hypercard">
     <div className="header">
       <img
         src="/img/cochat/logo-openai-mini.png"
@@ -95,7 +80,7 @@ Take your first steps through the information and support available to you.
     </div>
     <p>
       Begin with our developer{" "}
-      <a href="/introduction/first-steps">getting started guide</a>, or press
+      <a href="/introduction/first-steps">getting started guide</a>, or press{" "}
       <code>Ctrl-K</code> to bring up the quick search bar to find the information
       you need.
     </p>
@@ -119,14 +104,14 @@ Take your first steps through the information and support available to you.
         src="/img/wp-icons/Coins.png"
         className="mini-icon"
       />
-      <h3>Free trial</h3>
+      <h3>Free plan</h3>
     </div>
     <p>
       Click{" "}
       <a href="https://signup.codat.io/" target="_blank">
         here
       </a>{" "}
-      to sign up for your free trial, or contact our sales team to schedule a
+      to sign up for your free plan, or <a href="https://www.codat.io/plans/#get-in-touch" target="_blank">contact our sales team</a> to schedule a
       demo and learn about Enterprise Pricing opportunities.
     </p>
   </li>
@@ -146,4 +131,4 @@ Codat's product range supports a variety of use cases, helping you simplify and 
 
 Our products can help you make the most of your customers' consented business data.
 
-<Products/>
+<Products mini={true} verbose={true}/>

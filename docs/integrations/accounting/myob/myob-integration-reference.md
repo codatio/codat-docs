@@ -1,8 +1,7 @@
 ---
 title: "MYOB integration reference"
 description: "Things to know when synchronizing data with MYOB AccountRight and Essentials."
-createdAt: "2022-07-28T11:03:41.079Z"
-updatedAt: "2022-11-04T11:43:22.709Z"
+sidebar_label: Reference
 ---
 
 Note the following information when building your application using Codat's MYOB integration.

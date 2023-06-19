@@ -7,6 +7,9 @@ tags:
   - Core concept
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem"
+
 A data connection represents a [company's](/core-concepts/companies) connection to a data source and allows you to synchronize data (pull and/or push) with that source.
 
 A company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:
@@ -29,7 +32,7 @@ Connections can have one of the statuses described in the following table.
 | `PendingAuth`    | The company hasn't authorized access to their financial platform (the data source). The SMB customer selected the platform in Link but did not complete the authorization flow.                                                                                                                                                                                                                              |
 | `Deauthorized`   | The connection was linked but is no longer able to access data from the underlying provider's platform.<br/>You can access any data that was already pulled or pushed using this data connection. However, you can't perform any new pulls or pushes until the connection is re-linked.<br/>A data connection usually becomes Deauthorized if the company revoked your access or an expiry time was reached. |
 | `Unlinked`       | The data connection was previously linked but you asked for your access to be revoked (see Disconnect a data connection to revoke your access to a data source).<br/>Similar to Deauthorized, you can still access any data that was already pulled or pushed using the data connection, but can't perform any new pulls or pushes unless the connection is re-linked.                                       |
-| No connections | The company has been created but does not have any connections to financial platforms established in any of the above statuses.                                                                                                                                                                                                                                                                              |
+| No connections | The company has been created but does not have any connections to financial platforms established in any of the above statuses. |
 
 ## Linked data connection example
 
@@ -71,13 +74,19 @@ When a connection is set to `Unlinked`, you can continue to access any data that
 Only `Linked` data connections can be unlinked.
 :::
 
-### Example: Disconnect a data connection
+#### Example: Disconnect a data connection
 
-```http
+<Tabs>
+
+<Tabitem value="Request URL" label="Request URL">
+
+```http request title="Disconnect connection"
 PATCH /companies/COMPANY_ID/connections/CONNECTION_ID
 ```
 
-Request body:
+</Tabitem>
+
+<Tabitem value="Request Body" label="Request Body">
 
 ```json
 {
@@ -85,7 +94,12 @@ Request body:
 }
 ```
 
-### Sample response to `Unlinked` request
+</Tabitem>
+
+</Tabs>
+
+
+#### Sample response to `Unlinked` request
 
 ```json Sample response to "Unlinked" request
 {

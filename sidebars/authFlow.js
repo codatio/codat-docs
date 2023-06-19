@@ -1,8 +1,7 @@
 module.exports = [
-  "auth-flow/overview",
   {
     type: "category",
-    label: "Authorize with Embedded Link",
+    label: "Embedded Link",
     collapsed: true,
     items: [
       "auth-flow/authorize-embedded-link",
@@ -20,7 +19,7 @@ module.exports = [
   },
   {
     type: "category",
-    label: "Authorize with Hosted Link",
+    label: "Hosted Link",
     collapsed: true,
     items: [
       "auth-flow/authorize-hosted-link",
@@ -33,7 +32,7 @@ module.exports = [
   },
   {
     type: "category",
-    label: "Customize your auth flow",
+    label: "Customize",
     collapsed: true,
     items: [
       "auth-flow/customize/customize-link",
@@ -45,7 +44,7 @@ module.exports = [
   },
   {
     type: "category",
-    label: "Build your own auth flow",
+    label: "Build your own",
     collapsed: true,
     items: [
       "auth-flow/build/build-your-own-authorization-journey",
@@ -59,7 +58,7 @@ module.exports = [
   },
   {
     type: "category",
-    label: "Optimize your auth flow",
+    label: "Optimize",
     collapsed: true,
     items: [
       "auth-flow/optimize/optimize-the-connection-journey",

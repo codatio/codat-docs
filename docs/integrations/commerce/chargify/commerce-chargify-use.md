@@ -1,8 +1,7 @@
 ---
 title: "Use the Chargify integration"
 description: "When an SMB user has linked their Chargify account, access their subscriptions and billing data by making proxy requests to the Chargify API"
-createdAt: "2022-08-08T15:57:27.458Z"
-updatedAt: "2022-10-19T16:29:45.213Z"
+sidebar_label: Use the integration
 ---
 
 The Chargify integration doesn't yet expose standardized data types or provide any data visualization or metrics (for example, in Assess).

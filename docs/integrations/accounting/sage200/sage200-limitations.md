@@ -1,8 +1,7 @@
 ---
 title: "Sage 200cloud limitations"
 slug: "sage200-limitations"
-createdAt: "2020-09-23T12:42:02.621Z"
-updatedAt: "2020-09-29T09:16:44.477Z"
+sidebar_label: Limitations
 ---
 
 Details of Sage 200cloud limitations and how Codat handles these.
