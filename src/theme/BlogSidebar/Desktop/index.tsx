@@ -25,7 +25,7 @@ export default function BlogSidebarDesktop({ sidebar }: Props): JSX.Element {
   return (
     <aside className={styles.sidebarWrapper}>
       <div className={styles.sidebarLWrapper}>
-        <Logo />
+        <Logo className={styles.sidebarLOverride}/>
       </div>
 
       <nav
