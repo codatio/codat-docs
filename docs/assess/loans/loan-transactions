@@ -25,7 +25,7 @@ The endpoint can show:
 Make sure you have synced a company recently before calling the endpoint.
 
 ## Prerequisites
-The company must have either at least one Accounting/Banking/Commerce data connection linked and fully synced with the mandatory data types listed below.
+The company must have either at least one Accounting/Banking/Commerce connection linked and fully synced with the mandatory data types listed below.
 
 Accounting connection:
 - JournalEntries
