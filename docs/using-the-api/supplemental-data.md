@@ -5,7 +5,7 @@ description: "Retrieve and update additional fields from an integration using su
 
 ## What is supplemental data?
 
-Supplemental data is additional data you can include in Codat's standard data types. Where integrations contain fields not supported by our out-of-the-box data model, you can use supplemental data to fetch, create, or update these fields alongside our standard ones. 
+Supplemental data is additional data you can include in Codat's standard data types. Integrations may contain fields not supported by our out-of-the-box data model, so you can use supplemental data to fetch, create, or update these fields alongside our standard ones. 
 
 For example, to pull our `suppliers` data type from Xero, we use Xero's [Contacts](https://developer.xero.com/documentation/api/accounting/contacts) endpoint. While we already include many of the properties of that endpoint in our standard data model, some properties, like supplier bank account details (`BankAccountDetails`), are not included. 
 
