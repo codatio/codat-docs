@@ -5,7 +5,7 @@ description: "Retrieve and update additional fields from an integration using su
 
 ## What is supplemental data?
 
-We have enhanced some of our data types with a `supplementalData` property. It gives you the ability to fetch, update, or create additional fields from an integration's endpoint within our existing standard data types.
+Supplemental data is additional data you can include in Codat's standard data types. Where integrations contain fields not supported by our out-of-the-box data model, you can use supplemental data to fetch, create, or update these fields alongside our standard ones. 
 
 For example, to pull our `suppliers` data type from Xero, we use Xero's [Contacts](https://developer.xero.com/documentation/api/accounting/contacts) endpoint. While we already include many of the properties of that endpoint in our standard data model, some properties, like supplier bank account details (`BankAccountDetails`), are not included. 
 
@@ -13,7 +13,9 @@ By configuring supplemental data for this property, you will be able to fetch `B
 
 ## Where is supplemental data available?
 
-We are rapidly expanding coverage across integrations and datatypes according to client demand. We currently cover the following integrations and data types:
+We are rapidly expanding coverage across integrations and datatypes according to client demand. You can help us prioritize by leaving feedback on our [public roadmap](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/46-accounting-api/submit-idea).
+
+We currently cover the following integrations and data types:
  
 <iframe
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vToBP6lQMT_MrB8L5e_61w2LrmpoJPAVhxCVqCuoSpWgb6ga2hUXZHlLSdCr9jY_He1b-uYaDAnH6DV/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
@@ -23,15 +25,15 @@ We are rapidly expanding coverage across integrations and datatypes according to
 
 ## How do I configure supplemental data?
 
-In order to use this property, you need to specify what supplemental data should be passed in the response for each integration and data type pair you require. To do so, use the [endpoint name]/endpoint link.
+You'll need to specify what supplemental data should be passed in the response for each integration and data type pair you require. To do so, use the [endpoint name]/endpoint link.
 
 ```http
 /integrations/{platformKey}/datatypes/{datatype}/supplementalDataConfig
 ```
 
-Within the request body, note that the `PlatformEndpoint` and `PlatformPropertyName` parameter values must match the integration's requirements exactly, including casing. Ensure you are familiar with the source data structure as Codat does not validate the supplemental data values against the integration provider.
+Within the request body, `PlatformEndpoint` and `PlatformPropertyName` parameter values must match the integration's requirements exactly, including casing. Ensure you are familiar with the source data structure as Codat does not validate the supplemental data values against the integration provider.
 
-```json title=Supplemental data configuration request body
+```json title="Supplemental data configuration request body"
 {
     "supplementalDataConfig": {
         "{ClientObjectName}": {
@@ -79,7 +81,7 @@ This section details some of the commonly requested supplemental data configurat
 | `TaxType`       | See default tax rate associated with the account               |
 | `SystemAccount` | See if the account is a System Account and, if so, which type  |
 
-```json title=Example configuration
+```json title="Example configuration"
 {
     "supplementalDataConfig": {
         "client-keyname-for-accounts": {
@@ -102,7 +104,7 @@ This section details some of the commonly requested supplemental data configurat
 | `SentToContact`       | Boolean value to indicate whether the approved invoice has been sent to   the customer |
 | `Reference`           | Display an additional external reference for   the invoice                             |
 
-```json title=Example configuration
+```json title="Example configuration"
 {
     "supplementalDataConfig": {
         "client-keyname-for-xero-invoices": {
@@ -123,7 +125,7 @@ This section details some of the commonly requested supplemental data configurat
 | `QuantityOnHand`      | Shows the quantity of the item on hand                                           |
 | `TotalCostPool`       | Shows the value of the item on hand. Calculated using average cost   accounting. |
 
-```json title=Example configuration
+```json title="Example configuration"
 {
     "supplementalDataConfig": {
         "client-keyname-for-items": {
@@ -143,7 +145,7 @@ This section details some of the commonly requested supplemental data configurat
 |----------------------|----------------------------------------------------------------------------------|
 | `BankAccountDetails` | Returns the bank account number of supplier                                      |
 
-```json title=Example configuration
+```json title="Example configuration"
 {
     "supplementalDataConfig": {
         "client-Keyname-For-Xero-suppliers": {
@@ -166,7 +168,7 @@ This section details some of the commonly requested supplemental data configurat
 | `CanApplyToLiabilities` | Boolean to describe if tax rate can be used for liability accounts |
 | `CanApplyToRevenue`     | Boolean to describe if tax rate can be used for revenue accounts   |
 
-```json title=Example configuration
+```json title="Example configuration"
 {
     "supplementalDataConfig": {
         "client-keyname-for-tax-rates": {
@@ -192,7 +194,7 @@ This section details some of the commonly requested supplemental data configurat
 | `SalesTermRef`       | Reference to the Sales Terms associated with this customer               |
 | `ParentRef` | Reference to a customer that is the immediate parent of this sub-customer |
 
-```json title=Example configuration
+```json title="Example configuration"
 {
     "supplementalDataConfig": {
         "Client-keyname-for-QBO-customers": {
@@ -212,7 +214,7 @@ This section details some of the commonly requested supplemental data configurat
 |-----------------|----------------------------------------------------------------|
 | `SalesTermRef`       | Reference to the Sales Terms associated with this Invoice               |
 
-```json title=Example configuration
+```json title="Example configuration"
 {
     "supplementalDataConfig": {
         "client-keyname-for-qbo-invoices": {
@@ -236,3 +238,5 @@ This section details some of the commonly requested supplemental data configurat
 - When you add or change a supplemental data configuration, it will apply to all newly synced data, but not the data synced previously. This may result in inconsistent supplemental data across the dataset. You can request us to set a full sync after any changes to configuration to be default behaviour. 
 
 - We expose the data sources available to interact with supplemental data, but request you to refer to the platforms' own documentation for details on available data and properties for each data source.
+
+Where we are unable to retrieve requested supplemental data, the Pull operation should still complete, but will not contain the supplemental data that could not be obtained.
