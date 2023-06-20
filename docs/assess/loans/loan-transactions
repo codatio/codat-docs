@@ -43,7 +43,7 @@ If the company does not have a any of these connections, then an error will be t
 Whilst Codat support most integrations, there are a minority which are not supported.
 
 ## Invoices Report
-The Loan Transactions endpoint returns a list of a companies loan transactions across all of its valid data connections.
+The Loan transactions endpoint returns a list of a company's loan transactions across all of its valid data connections.
 This may include drawdowns, repayments etc.
 
 ### Accounting
