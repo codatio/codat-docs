@@ -9,7 +9,7 @@ description: Embedded accounting integrations for corporate card providers
 tags: [overview, syncforexpense]
 banner_title: Sync for Expenses
 banner_class: sfe
-banner_icon: "/logos/products-clear/SyncforExpenses.svg"
+banner_icon: "/logos/products-clear/sfe.svg"
 banner_image: "/img/banners/sfe-flow.png"
 banner_text: "Embedded accounting integrations for corporate card providers."
 ---

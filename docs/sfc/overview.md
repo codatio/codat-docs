@@ -8,7 +8,7 @@ hide_table_of_contents: true
 description: "Embedded accounting integrations for PoS and eCommerce platforms."
 banner_title: Sync for Commerce
 banner_class: sfc
-banner_icon: "/logos/products-clear/SyncforCommerce.svg"
+banner_icon: "/logos/products-clear/sfc.svg"
 banner_image: "/img/banners/sfc-charts.png"
 banner_text: "Embedded accounting integrations for PoS and eCommerce platforms."
 ---

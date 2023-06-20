@@ -8,7 +8,7 @@ hide_table_of_contents: true
 description: "Codat's Commerce API enables you to pull up-to-date commerce data from several leading payments, point-of-sale, and eCommerce systems. You can view your SMB customers' products, orders, payments, payouts, disputes, and more - all standardized to our Commerce data model."
 banner_title: Commerce API
 banner_class: commerce
-banner_icon: "/logos/products-clear/Commerce.svg"
+banner_icon: "/logos/products-clear/commerce.svg"
 banner_image: "/img/banners/commerce.png"
 banner_text: "Codat's Commerce API enables you to pull up-to-date commerce data from several leading payments, point-of-sale, and eCommerce systems. You can view your SMB customers' products, orders, payments, payouts, disputes, and more - all standardized to our Commerce data model."
 ---

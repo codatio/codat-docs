@@ -8,7 +8,7 @@ hide_description: true
 description: "Learn about the features that make up the Assess product"
 banner_title: Assess
 banner_class: assess
-banner_icon: "/logos/products-clear/Assess.svg"
+banner_icon: "/logos/products-clear/assess.svg"
 banner_image: "/img/banners/assess.png"
 banner_text: "Assess helps you make smarter credit decisions on small businesses by enabling you to pull your customers' latest data from the operating systems they are already using. You can use that data for automating decisioning and surfacing new insights on the customer, all via one API."
 ---
