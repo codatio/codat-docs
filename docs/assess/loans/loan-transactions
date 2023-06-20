@@ -6,7 +6,7 @@ createdAt: "2023-06-15T10:32:29.917Z"
 updatedAt: "2023-06-15T16:35:29.376Z"
 ---
 
-## Introduction to Loan Transactions endpoint
+## Introduction to Loan transactions endpoint
 Loan data is often not uniform, spread across a variety of integrations and of different types.
 These loans are often hard to identify, analyse and group.
 Manually going through data and identifying loans is very time consuming and repetitive. This can also introduce room for human error.
