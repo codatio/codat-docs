@@ -31,7 +31,7 @@ Accounting data connection:
 - JournalEntries
 - Chart of Accounts
 
-Banking data connection:
+Banking connection:
 - Banking Accounts
 - Banking Transactions
 
