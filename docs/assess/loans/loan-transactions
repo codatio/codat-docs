@@ -22,7 +22,7 @@ The endpoint can show:
 - The loan repayments made by a company
 - The interest rate for a loan drawdown (where possible)
 
-Codat suggests that you make sure a company has been recently synced before hitting the endpoint.
+Make sure you have synced a company recently before calling the endpoint.
 
 ## Prerequisites
 The company must have either at least one Accounting/Banking/Commerce data connection linked and fully synced with the mandatory data types listed below.
