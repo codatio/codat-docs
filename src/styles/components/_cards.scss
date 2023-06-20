@@ -119,6 +119,10 @@ li.card.mini {
     &:not(:last-child) {
       margin-bottom: 0.5em;
     }
+
+    &:first-child > .header > a.icon-wrapper {
+      margin-bottom: 0;
+    }
   }
 
   .header {

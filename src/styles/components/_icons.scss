@@ -16,8 +16,7 @@
 
 .icon-wrapper,
 .mini-icon {
-  transition: initial;
-  transition-duration: 0.5s;
+  transition: all 0.5s;
 
   &:hover {
     transform: scale(1.1);
