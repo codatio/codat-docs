@@ -6,25 +6,16 @@ hide_title: true
 hide_description: true
 hide_table_of_contents: true
 description: "Embedded accounting integrations for PoS and eCommerce platforms."
-createdAt: "2022-06-27T08:17:55.337Z"
-updatedAt: "2022-11-17T10:56:14.545Z"
+banner_title: Sync for Commerce
+banner_class: sfc
+banner_icon: "/logos/products-clear/SyncforCommerce.svg"
+banner_image: "/img/banners/sfc-charts.png"
+banner_text: "Embedded accounting integrations for PoS and eCommerce platforms."
 ---
 
 <Head>
   <meta property="og:image" content="/img/codat_banner.png"/>
 </Head>
-
-import PageHeader from "@components/global/PageHeader";
-
-<PageHeader 
-  className="sfc"
-  title="Sync for Commerce"
-  icon="/logos/products/SyncforCommerce.svg"
->
-    <p>
-      Embedded accounting integrations for PoS and eCommerce platforms.
-    </p>
-</PageHeader>
 
 **Building to lots of different APIs does not scale. With Sync for Commerce, you can send a merchant's data to their accounting platform without worrying about which one they use.**
 

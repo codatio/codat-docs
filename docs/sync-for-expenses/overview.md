@@ -7,6 +7,11 @@ hide_description: true
 hide_table_of_contents: true
 description: Embedded accounting integrations for corporate card providers
 tags: [overview, syncforexpense]
+banner_title: Sync for Expenses
+banner_class: sfe
+banner_icon: "/logos/products-clear/SyncforExpenses.svg"
+banner_image: "/img/banners/sfe-flow.png"
+banner_text: "Embedded accounting integrations for corporate card providers."
 ---
 
 import {IntegrationsList} from '@components/global/Integrations'
@@ -15,20 +20,6 @@ import {sfeIntegrations} from '@components/global/Integrations/integrations'
 <Head>
   <meta property="og:image" content="/img/sync-for-expenses/sfe-banner.png"/>
 </Head>
-
-import PageHeader from "@components/global/PageHeader";
-
-<PageHeader 
-  className="sfe"
-  title="Sync for Expenses"
-  icon="/logos/products/SyncforExpenses.svg"
->
-  <p>
-    Embedded accounting integrations for corporate card providers
-  </p>
-</PageHeader>
-
-![An image from the static](/img/sync-for-expenses/sfe-banner.png)
 
 # Overview
 

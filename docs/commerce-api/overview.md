@@ -6,30 +6,18 @@ hide_title: true
 hide_description: true
 hide_table_of_contents: true
 description: "Codat's Commerce API enables you to pull up-to-date commerce data from several leading payments, point-of-sale, and eCommerce systems. You can view your SMB customers' products, orders, payments, payouts, disputes, and more - all standardized to our Commerce data model."
-createdAt: "2022-11-22T19:33:11.784Z"
-updatedAt: "2022-11-22T19:33:11.784Z"
+banner_title: Commerce API
+banner_class: commerce
+banner_icon: "/logos/products-clear/Commerce.svg"
+banner_image: "/img/banners/commerce.png"
+banner_text: "Codat's Commerce API enables you to pull up-to-date commerce data from several leading payments, point-of-sale, and eCommerce systems. You can view your SMB customers' products, orders, payments, payouts, disputes, and more - all standardized to our Commerce data model."
 ---
 
 <Head>
   <meta property="og:image" content="/img/commerce_api_banner.png"/>
 </Head>
 
-import PageHeader from "@components/global/PageHeader";
-
-<PageHeader 
-  className="commerce"
-  title="Commerce API"
-  icon="/logos/products/Commerce.svg"
->
-  <p>
-    Codat's Commerce API enables you to pull up-to-date commerce data from several leading payments, point-of-sale, and eCommerce systems. 
-  </p>
-  <p>
-    You can view your SMB customers' products, orders, payments, payouts, disputes, and more - all standardized to our Commerce data model.
-  </p>
-</PageHeader>
-
-<ul className="card-container col-3">
+<ul className="card-container col-2">
   <li className="card">
     <div class="header">
       <img
