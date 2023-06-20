@@ -40,7 +40,7 @@ Commerce data connection:
 
 If the company does not have a any of these connections, then an error will be thrown.
 
-Whilst Codat support most integrations, there are a minority which are not supported.
+While Codat supports most integrations, there is a minority that is not supported.
 
 ## Invoices Report
 The Loan transactions endpoint returns a list of a company's loan transactions across all of its valid data connections.
