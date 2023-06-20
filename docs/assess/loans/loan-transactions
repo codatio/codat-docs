@@ -14,7 +14,7 @@ Manually going through data and identifying loans is very time consuming and rep
 Our Loan Transactions endpoint can identify loans from a company's accounting, banking and commerce integrations. 
 It can work across a variety of integrations for all three integration types.
 
-The endpoint will you get a better idea of the loan obligations a compnay may have by identifying their loan transactions and loan repyaments.
+The endpoint will give analysts a better idea of the loan obligations a company may have by identifying their loan transactions and loan repayments.
 The amount of a loan a company has paid off and the number of loans a company has.
 
 The endpoint can show:
