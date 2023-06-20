@@ -43,7 +43,7 @@ const allProducts = [
   },
   {
     logo: "/logos/products-clear/SyncforExpenses.svg",
-    slug: "sync-for-expenses",
+    slug: "sfe",
     name: "Sync for Expenses",
     description: "Embedded accounting integrations for corporate card providers. Standardize how you sync with bookkeeping software and ERPs.",
     link: "/sync-for-expenses/overview",
@@ -51,7 +51,7 @@ const allProducts = [
   },
   {
     logo: "/logos/products-clear/SyncforCommerce.svg",
-    slug: "sync-for-commerce",
+    slug: "sfc",
     name: "Sync for Commerce",
     description: "Sync your merchants' data between commerce and accounting systems, and automate bookkeeping.",
     link: "/sfc/overview",
