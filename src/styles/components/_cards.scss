@@ -120,7 +120,7 @@ li.card.mini {
       margin-bottom: 0.5em;
     }
 
-    &:first-child > .header > a.icon-wrapper {
+    &:first-child:last-child > .header > a.icon-wrapper {
       margin-bottom: 0;
     }
   }
