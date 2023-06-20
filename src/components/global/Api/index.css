@@ -109,6 +109,11 @@ blockquote > div {
   padding-right: 2em !important;
 }
 
+.sl-prose > ol > li::before,
+.sl-prose > ul > li::before {
+  display: none;
+}
+
 /* --------- Mobile ---------------- */
 
 @media (max-width: 1100px) {

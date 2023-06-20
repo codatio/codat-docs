@@ -18,11 +18,14 @@
 .mini-icon {
   transition: initial;
   transition-duration: 0.5s;
-  margin-bottom: 1em;
 
   &:hover {
     transform: scale(1.1);
   }
+}
+
+.icon-wrapper {
+  margin-bottom: 1em;
 }
 
 .icon-wrapper.product.animated {
@@ -83,19 +86,19 @@
   &.accounting {
     --hypercard-color-1: #CCA4FF;
     --hypercard-color-2: #a97de0;
-    --hypercard-color-3: #d2bfeb;
+    --hypercard-color-3: #8d3df6;
   }
 
   &.banking {
     --hypercard-color-1: #64F2A1;
     --hypercard-color-2: #3dcb7a;
-    --hypercard-color-3: #97e0b6;
+    --hypercard-color-3: #ccf6de;
   }
 
   &.commerce {
     --hypercard-color-1: #FDD655;
-    --hypercard-color-2: #c29f29;
-    --hypercard-color-3: #e9d79a;
+    --hypercard-color-2: #c79a00;
+    --hypercard-color-3: #efd57b;
   }
 
   &.bank-feeds {
@@ -107,7 +110,7 @@
   &.assess {
     --hypercard-color-1: #FF9C66;
     --hypercard-color-2: #b05b2d;
-    --hypercard-color-3: #d8a183;
+    --hypercard-color-3: #ffa16d;
   }
 
   &.sfc {

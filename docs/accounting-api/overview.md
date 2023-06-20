@@ -17,6 +17,8 @@ banner_text: "Codat's Accounting API is a flexible API for pulling and pushing u
   <meta property="og:image" content="/img/accounting-api/accounting_banner.png"/>
 </Head>
 
+## Benefits
+
 <ul className="card-container col-3">
   <li className="card">
     <div class="header">
@@ -75,3 +77,109 @@ banner_text: "Codat's Accounting API is a flexible API for pulling and pushing u
 <br/>
 
 ![](/img/accounting-api/accounting_banner.png "Accounting API banner")
+
+## Reference content
+
+<ul className="card-container">
+  <li className="card">
+    <div className="header">
+      <img
+        src="/img/wp-icons/accounting-2.png"
+        className="mini-icon"
+      />
+      <h3>Data model</h3>
+    </div>
+    <p>
+      See the accounting <a href="/data-model/accounting/">data types we support</a>.
+    </p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img
+        src="/img/wp-icons/Stack.png"
+        className="mini-icon"
+      />
+      <h3>API reference</h3>
+    </div>
+    <p>
+      See the Accounting API endpoints in our interactive <a href="/accounting-api#/">API reference</a>.
+    </p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img
+        src="/img/wp-icons/Financial-Services.png"
+        className="mini-icon"
+      />
+      <h3>Integrations</h3>
+    </div>
+    <p>
+      Explore our <a href="/integrations/accounting/overview">accounting integrations</a>
+    </p>
+  </li>
+</ul>
+
+## Tutorials
+
+<ul className="card-container mini">
+  <li className="card mini">
+    <div className="card-row">
+      <div className="header">
+        <a href="/guides/loan-qualification/introduction">
+          <img
+            src="/logos/usecases/company-info.svg"
+            className="icon usecase"
+          />
+        </a>
+      </div>
+      
+      <div className="content">
+        <h4>Loan qualification</h4>
+        <p>
+          <a href="/guides/loan-qualification/introduction">See the tutorial →</a>
+        </p>    
+      </div>
+    </div>
+    <p>Lend with Codat and our Assess product</p>
+  </li>
+  <li className="card mini">
+    <div className="card-row">
+      <div className="header">
+        <a href="/guides/invoice-finance/introduction">
+          <img
+            src="/logos/usecases/lending.svg"
+            className="icon usecase"
+          />
+        </a>
+      </div>
+      
+      <div className="content">
+        <h4>Invoice financing</h4>
+        <p>
+          <a href="/guides/invoice-finance/introduction">See the tutorial →</a>
+        </p>    
+      </div>
+    </div>
+    <p>Lend against invoices leveraging our Accounting API</p>
+  </li>
+  <li className="card mini">
+    <div className="card-row">
+      <div className="header">
+        <a href="/guides/bill-pay/introduction">
+          <img
+            src="/logos/usecases/payments.svg"
+            className="icon usecase"
+          />
+        </a>
+      </div>
+      
+      <div className="content">
+        <h4>Bill pay</h4>
+        <p>
+          <a href="/guides/bill-pay/introduction">See the tutorial →</a>
+        </p>    
+      </div>
+    </div>
+    <p>Streamline your customers' Accounts Payable processes</p>
+  </li>
+</ul>
