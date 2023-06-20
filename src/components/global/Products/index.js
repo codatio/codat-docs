@@ -38,7 +38,7 @@ const allProducts = [
     slug: "assess",
     name: "Assess",
     description: "Make smarter credit decisions for your small business customers. Enrich your customer's financial data and receive actionable insights.",
-    link: "/assess/get-started",
+    link: "/assess/overview",
     linkText: "Start assessing your customers →",
   },
   {
