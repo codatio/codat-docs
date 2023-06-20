@@ -18,6 +18,7 @@
 @use "./components/doc-page";
 @use "./components/doc-sidebar";
 @use "./components/edit-this-page";
+@use "./components/icons";
 @use "./components/images";
 @use "./components/lists";
 @use "./components/markdown";
@@ -169,6 +170,7 @@ h2,
 h3,
 h4 {
   font-weight: 500;
+  text-wrap: balance;
 }
 
 a {

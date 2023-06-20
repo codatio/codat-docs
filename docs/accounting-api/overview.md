@@ -6,28 +6,16 @@ hide_title: true
 hide_description: true
 hide_table_of_contents: true
 description: "Codat's Accounting API is a flexible API for pulling and pushing up-to-date accounting data to your customers' accounting software. It gives you a simple way to view, create, update, and delete data without having to worry about each platform's specific complexities."
-createdAt: "2022-11-22T19:33:11.784Z"
-updatedAt: "2022-11-22T19:33:11.784Z"
+banner_title: Accounting API
+banner_class: accounting
+banner_icon: "/logos/products-clear/Accounting.svg"
+banner_image: "/img/banners/accounting-json.png"
+banner_text: "Codat's Accounting API is a flexible API for pulling and pushing up-to-date accounting data to your customers' accounting software. It gives you a simple way to view, create, update, and delete data without having to worry about each platform's specific complexities."
 ---
 
 <Head>
   <meta property="og:image" content="/img/accounting-api/accounting_banner.png"/>
 </Head>
-
-import PageHeader from "@components/global/PageHeader";
-
-<PageHeader 
-  className="accounting"
-  title="Accounting API"
-  icon="/logos/products/Accounting.svg"
->
-  <p>
-    Codat's Accounting API is a flexible API for pulling and pushing up-to-date accounting data to your customers' accounting software.
-  </p>
-  <p>
-    It gives you a simple way to view, create, update, and delete data without having to worry about each platform's specific complexities.
-  </p>
-</PageHeader>
 
 <ul className="card-container col-3">
   <li className="card">

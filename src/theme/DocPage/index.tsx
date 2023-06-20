@@ -8,27 +8,26 @@
 import React, {ReactNode, useState, useCallback} from 'react';
 import {MDXProvider} from '@mdx-js/react';
 
-import renderRoutes from '@docusaurus/renderRoutes';
-import type {PropVersionMetadata} from '@docusaurus/plugin-content-docs-types';
 import Layout from '@theme/Layout';
 import DocSidebar from '@theme/DocSidebar';
 import MDXComponents from '@theme/MDXComponents';
 import NotFound from '@theme/NotFound';
 import type {DocumentRoute} from '@theme/DocItem';
 import type {Props} from '@theme/DocPage';
-//import IconArrow from '@theme/IconArrow';
 import BackToTopButton from '@theme/BackToTopButton';
+import Navbar from '@theme/Navbar';
+
 import {matchPath} from '@docusaurus/router';
 import {translate} from '@docusaurus/Translate';
-import Navbar from '@theme/Navbar';
+import {ThemeClassNames} from '@docusaurus/theme-common';
+import Head from '@docusaurus/Head';
+import {useWindowSize} from '@docusaurus/theme-common';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import renderRoutes from '@docusaurus/renderRoutes';
+import type {PropVersionMetadata} from '@docusaurus/plugin-content-docs-types';
 
 import clsx from 'clsx';
 import styles from './styles.module.css';
-import {ThemeClassNames} from '@docusaurus/theme-common';
-import Head from '@docusaurus/Head';
-
-import {useWindowSize} from '@docusaurus/theme-common';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 type DocPageContentProps = {
   readonly currentDocRoute: DocumentRoute;
@@ -36,12 +35,15 @@ type DocPageContentProps = {
   readonly children: ReactNode;
 };
 
-function DocPageContent({
-  currentDocRoute,
-  versionMetadata,
-  children,
-}: DocPageContentProps): JSX.Element {
+function DocPageContent(props: DocPageContentProps): JSX.Element {
+  const {
+    currentDocRoute,
+    versionMetadata,
+    children,
+  } = props
   const {pluginId, version} = versionMetadata;
+
+  console.log(props)
 
   const sidebarName = currentDocRoute.sidebar;
   const sidebar = sidebarName
@@ -135,7 +137,7 @@ function DocPageContent({
             })}>
             <div
               className={clsx(
-                'container padding-top--md padding-bottom--lg',
+                'container padding-bottom--lg',
                 styles.docItemWrapper,
                 {
                   [styles.docItemWrapperEnhanced]: hiddenSidebarContainer,
@@ -156,6 +158,7 @@ function DocPage(props: Props): JSX.Element {
     versionMetadata,
     location,
   } = props;
+  console.log(props)
   const currentDocRoute = docRoutes.find((docRoute) =>
     matchPath(location.pathname, docRoute),
   );

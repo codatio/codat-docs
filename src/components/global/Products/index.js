@@ -73,10 +73,10 @@ const Products = ({mini, products, verbose}) => {
               <li className="card mini">
                 <div className="card-row">
                   <div className="header">
-                    <a href={product.link}>
+                    <a href={product.link} className={`icon-wrapper product animated ${product.slug}`}>
                       <img
                         src={product.logo}
-                        className="icon product hypercard"
+                        className="icon product"
                       />
                     </a>
                   </div>
@@ -105,7 +105,7 @@ const Products = ({mini, products, verbose}) => {
           return (
             <li ley={i} className="card">
               <div className="header">
-                <a href={product.link} className={`hypercard ${product.slug}`}>
+                <a href={product.link} className={`icon-wrapper product animated ${product.slug}`}>
                   <img
                     src={product.logo}
                     className="icon product"
