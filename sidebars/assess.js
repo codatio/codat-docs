@@ -127,6 +127,14 @@ module.exports = [
       "assess/excel/enhanced-cash-flow-report",
     ],
   },
+  {
+    type: "category",
+    label: "Liabilities",
+    collapsed: true,
+    items: [
+      "assess/loans/loan-transactions",
+    ],
+  },
   'assess/troubleshooting',
   {
     type: "link",
