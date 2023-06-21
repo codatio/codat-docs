@@ -13,14 +13,6 @@ import TabItem from "@theme/TabItem";
 
 ![](/img/link/0014-embedded-link-demo.png)
 
-:::caution Embedded Link is in beta
-
-Embedded Link is in beta, with more enhancements coming soon. You can report any issues with the component by contacting [Codat Support](mailto:support@codat.io).
-
-If you have general feedback on the component, get in touch at [embedded-link@codat.io](mailto:embedded-link@codat.io) or use our <a href="https://portal.productboard.com/codat/12-public-devex-roadmap/c/485-embed-a-pre-built-auth-flow-in-your-website-or-app" target="_blank">public roadmap</a> to request new features and enhancements.
-
-:::
-
 ## What's New
 
 The June 2023 release of Embedded Link brings the following enhancements:
@@ -32,6 +24,14 @@ The June 2023 release of Embedded Link brings the following enhancements:
 
 ![link-sdk_connection-status-error](/img/auth-flow/link-sdk_connection-status-error.png "Embedded Link SDK: Connection error dialog shown for the Codat Banking Sandbox integration.")
 
+:::caution Embedded Link is in beta
+
+Embedded Link is in beta, with more enhancements coming soon. You can report any issues with the component by contacting [Codat Support](mailto:support@codat.io).
+
+If you have general feedback on the component, get in touch at [embedded-link@codat.io](mailto:embedded-link@codat.io) or use our <a href="https://portal.productboard.com/codat/12-public-devex-roadmap/c/485-embed-a-pre-built-auth-flow-in-your-website-or-app" target="_blank">public roadmap</a> to request new features and enhancements.
+
+:::
+
 ## Embedded Link overview
 
 Use the Embedded Link solution to benefit from a pre-built code component that melds best practices together with our extensive experience in building authorization flows, while seamlessly embedding it into your webpage or front-end application.
@@ -39,23 +39,6 @@ Use the Embedded Link solution to benefit from a pre-built code component that m
 Embedded Link is a JavaScript component that neatly sits in your front-end code, and can be deployed in a matter of minutes. The component works with all major JavaScript frameworks, including React, and also with vanilla JavaScript. You can choose to implement the component in TypeScript.
 
 We built Embedded Link to be flexible so that you can integrate and initialize it in any way you want, and provide the user with a native feel of your authorization journey.
-
-<div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
-  <iframe
-    src="https://www.loom.com/embed/431f05d4542545c58a3b389d822646a7"
-    frameborder="0"
-    webkitallowfullscreen
-    mozallowfullscreen
-    allowfullscreen
-    style={{
-      position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-      height: "100%",
-    }}
-  ></iframe>
-</div>
 
 ## Features
 
