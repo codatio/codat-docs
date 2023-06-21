@@ -1,7 +1,7 @@
 ---
 title: "Authorize with Embedded Link"
 sidebar_label: Overview
-description: "Embed Link in your application with our authorization flow component"
+description: "Embed our auth flow in your application with our low-code component"
 ---
 
 import Tabs from "@theme/Tabs";
