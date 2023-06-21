@@ -18,9 +18,9 @@ There are a few ways you can redirect your customers:
 Your redirects will only apply to Hosted Link. For Embedded Link, build out the required redirect configuration within your application.
 :::
 
-::: note See an example
+:::note See an example
 
-Not sure how to handle the params in your website? [See an example here](https://github.com/mcclowes/hosted-link-redirect-page)
+Not sure how to handle the params in your website? [See an example here](https://github.com/mcclowes/hosted-link-redirect-page).
 :::
 
 ## Setting redirect settings
