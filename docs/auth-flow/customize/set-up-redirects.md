@@ -62,13 +62,6 @@ If you use the redirect parameter values shown above, your customer is redirecte
 https://redirect.site/accounting/?flow=Codat&statuscode=403&errormessage=User%20cancelled
 ```
 
-:::note Availability of reserved query parameters
-
-That the names of the parameters listed in the table below are currently available for the following platforms:  
-**accounting**: FreeAgent, Freshbooks, Microsoft Dynamics 365 Business Central, MYOB Business, Pandle, Quickbooks Online, Sage Business Cloud, Wave  
-**banking**: Plaid
-:::
-
 | Codat's reserved parameters | Substitution values | Additional information |
 | :- | :- | :- |
 | clientId | GUID (Globally Unique Identifier)|Identifier of the client that completes the authorization flow. **Note**: As a Codat client you may have multiple Codat instances. Each of those instances will have a separate `clientId`. |
