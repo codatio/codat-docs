@@ -28,7 +28,7 @@ Make sure you have synced a company recently before calling the endpoint.
 The company must have either at least one Accounting/Banking/Commerce connection linked and fully synced with the mandatory data types listed below.
 
 Accounting connection:
-- JournalEntries
+- Journal Entries
 - Chart of Accounts
 
 Banking connection:
