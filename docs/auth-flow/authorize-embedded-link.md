@@ -82,17 +82,61 @@ We've provided a [sample GitHub project](https://github.com/codatio/sample-proje
 
 ## Prerequisites
 
-If you haven't already done so, customize Link on the <a href="https://app.codat.io/settings/link-settings" target="_blank">**Link settings**</a> page in the Codat Portal. For example, add UI copy, set file upload options, choose to make steps optional, or disable steps. The settings apply to both Embedded Link and Hosted Link.
+- **Customize you auth flow settings** - If you haven't already done so, customize Link on the <a href="https://app.codat.io/settings/link-settings" target="_blank">**Link settings**</a> page in the Codat Portal. For example, add UI copy, set file upload options, choose to make steps optional, or disable steps. The settings apply to both Embedded Link and Hosted Link.
+- **Your application** - You'll need a JavaScript application to render the component in. It should take care of creating and retrieving the `companyId` of any company you want to authorize.
+
+## Get started
+Embedded Link is published to https://link-sdk.codat.io as an ES6 module. To use the Embedded Link component in your webpage you'll need to importa
 
 <Tabs>
 <TabItem value="react" label="React">
 
-## Get started with React
+### Get started with React
 
-1. **Create a component that mounts the SDK** - you can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/snippets/CodatLink.tsx" target="_blank">`CodatLink.tsx`</a> file to an appropriate location in your React or TypeScript app
-2. **Extend your type declarations with our types** - download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
-3. Conditional steps
-  1. If a `browserslist` entry exists in your `package.json` file, you may need to update it with the following entries for production:
+For more information and an example of the component in action, [see our examples](https://github.com/codatio/sdk-link/tree/main/examples/react/readme.md).
+
+1. **Create a component that mounts the SDK** - You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/snippets/CodatLink.tsx" target="_blank">`CodatLink.tsx`</a> file to an appropriate location in your React or TypeScript app
+2. **Use this component** - We suggest wrapping the component in a modal (default dimensions 460px by 840px). The component can also take care of logic like when to show the SDK, passing in the relevant company ID, etc.
+
+  ```js
+  // AuthFlow.tsx
+  import {
+    ErrorCallbackArgs,
+  } from "https://link-sdk.codat.io";
+
+  import CodatLink from './CodatLink';
+
+  ...
+
+  const AuthFlow = ({ companyId }: {companyId: Company["id"]}) => {
+    return (
+      <div>
+        <p>Some content</p>
+      
+        <div className="modal">
+          <CodatLink
+            companyId={companyId}
+            onConnection={(newConnection: { connectionId: Connection["id"] }) => {
+              alert(`onConnection - ${newConnection.connectionId}`)
+            }}
+            onFinish={() => { alert('onFinish')}}
+            onClose={() => { alert('onClose')}}
+            onError={(error: ErrorCallbackArgs) => {
+              alert(`onError - ${error}`);
+            }}
+          />
+        </div>
+      </div>
+    );
+  };
+  
+  export default AuthFlow
+  ```
+   
+4. **Conditional steps**
+   
+  a. **Extend your type declarations with our types (if using TS)** - download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
+  b. **Update browserslist** - If a `browserslist` entry exists in your `package.json` file, you may need to update it with the following entries for production:
 
    ```js
     "production": [
@@ -101,7 +145,7 @@ If you haven't already done so, customize Link on the <a href="https://app.codat
       "not and_uc >= 0"
     ],
    ``` 
-  1. If you're using content security policy (CSP) headers, you must edit the headers:
+  c. **Update CSP headers** - If you're using content security policy (CSP) headers, you must edit the headers:
    * Add `*.codat.io` to all of `(script-src, style-src, font-src, connect-src, img-src)`, or to `default-src`.
    * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
   
@@ -109,44 +153,42 @@ If you haven't already done so, customize Link on the <a href="https://app.codat
 
 <TabItem value="other" label="Non-React">
 
-## Get started with non-React frameworks
+### Get started with non-React frameworks
 
-Embedded Link is published to https://link-sdk.codat.io as an ES6 module. To use the Embedded Link component in your webpage or app with a non-React JavaScript framework, perform the following steps:
+1. **Create a target `div` for the `CodatLink` component** - The CodatLink component will be mounted within this div.
 
-1. Using the [Create company](/codat-api#/operations/create-company) endpoint, create a company, and retain its `companyID`. The component needs the `companyId` parameter to open Link for a specified company. You can also create a company in the Codat Portal.
-
-   :::note Company creation timeline
-   We recommend you create a company when  your SMB customer signs up within your app.
-   :::
-
-1. Create a target `div` for the `CodatLink` component that has the following attributes:
-   * An ID of `codat-link-container`.
-   * A width and a height&mdash;we recommend 460px by 840px.
+   It should have:
+   * An `id` of `codat-link-container`.
+   * We suggest styling it as a modal (e.g. `position: absolute;`, of default dimensions 460px by 840px).
    
-   The created `CodatLink` component expands to fit 100% of the specified dimensions. 
-1. Import the Link SDK component. If you're using the component inside a `script` tag, the tag must have `type="module"` set. 
+   The created `CodatLink` component expands to fit 100% of the specified dimensions.
+   
+3. **Import the Link SDK component** - If you're using the component inside a `script` tag, the tag must have `type="module"` set. 
 
    ```bash
-   import { CodatLink } from "https://link-sdk.codat.io";
+    import { CodatLink } from "https://link-sdk.codat.io";
    ```
 
-1. Initialize the Link SDK component in your app, supplying the `companyId`of the company  you created in step one:
+4. **Initialize the Link SDK component in your app** - You'll need to supply the `companyId` of the company you want to authorize:
 
-   ```js Title="Initialize Codat Link component (non-React)"
-   const target = document.querySelector("#codat-link-container");
-   new CodatLink({
+  ```js Title="Initialize Codat Link component (non-React)"
+  const target = document.querySelector("#codat-link-container");
+  
+  new CodatLink({
     target,
     props: {
-    companyId: "<CODAT_COMPANY_ID>",
-    onClose: () => alert("onClose"),
-    onConnection: () => alert("onConnection"),
-    onFinish: () => alert("onFinish"),
-    onError: () => alert("onError"),
+      companyId: "<CODAT_COMPANY_ID>",
+      onClose: () => alert("onClose"),
+      onConnection: (connection) => alert(`onConnection - ${connection}`),
+      onFinish: () => alert("onFinish"),
+      onError: (error) => alert(`onError- ${error}`),
     },
-   });
-   ```
-
-1. If a `browserslist` entry exists in your `package.json` file, update it with the following entries for production:
+  });
+  ```
+4. **Conditional steps**
+   
+  a. **Extend your type declarations with our types (if using TS)** - download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
+  b. **Update browserslist** - If a `browserslist` entry exists in your `package.json` file, you may need to update it with the following entries for production:
 
    ```js
     "production": [
@@ -154,63 +196,10 @@ Embedded Link is published to https://link-sdk.codat.io as an ES6 module. To use
       "not dead",
       "not and_uc >= 0"
     ],
-   ```
-
-1. If you're using content security policy (CSP) headers, you *must* edit the headers as follows.
+   ``` 
+  c. **Update CSP headers** - If you're using content security policy (CSP) headers, you must edit the headers:
    * Add `*.codat.io` to all of `(script-src, style-src, font-src, connect-src, img-src)`, or to `default-src`.
    * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
-1. If you're using TypeScript,  you can use the `types.d.ts` type declaration file. The contents of this file can be added to a new or existing `.d.ts` file.
-
-</TabItem>
-</Tabs>
-
-## Using the CodatLink component
-
-1. Using the [Create company](/codat-api#/operations/create-company) endpoint, create a company, and retain its `companyID`. The component needs the `companyId` parameter to open Link for a specified company. You can also create a company in the Codat Portal.
-
-   :::note Company creation timeline
-   We recommend you create a company when your SMB customer signs up within your app.
-   :::
-   
-Initialize the Codat Link component in your app:
-
-<Tabs>
-<TabItem value="react" label="React">
-
-```js
-<CodatLink
-  companyId="0f19b01c-3d1f-4dbf-80b6-37ab241bea2e"
-  onConnection={(id) => alert("Success: Connection " + id + " established")} // Called each time a connection is established
-  onFinish={() => alert("Finished")} // Called when the flow is completed
-  onClose={() => alert("Closed")} // Called when the user clicks 'X' or completes the whole flow
-  onError={(err) => alert("Error: " + err)} // Called when an error is reached
-/>
-```
-</TabItem>
-
-<TabItem value="next" label="Next.js">
-
-```js
-import dynamic from 'next/dynamic'; // Use dynamic imports instead for NextJS
-import '@codat/link-sdk/index.css';
-  
-const CodatLink = dynamic(
-  () => import('@codat/link-sdk').then((mod) => mod.CodatLink),
-  { ssr: false }
-);
-
-const AuthFlow = ({ id }) => {
-  return (
-    <CodatLink
-      companyId="0f19b01c-3d1f-4dbf-80b6-37ab241bea2e"
-      onConnection={(id) => alert("Success: Connection " + id + " established")} // Called each time a connection is established
-      onFinish={() => alert("Finished")} // Called when the flow is completed
-      onError={() => alert("error")}
-      onClose={() => alert("on close")}
-    />
-  );
-};
-```
 
 </TabItem>
 </Tabs>
