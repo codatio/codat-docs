@@ -54,7 +54,7 @@
     "docusaurus-theme-search-typesense": "^0.11.0",
     "dotenv": "^16.3.1",
     "font-awesome": "^4.7.0",
-    "fs-extra": "^9.1.0",
+    "fs-extra": "^11.1.1",
     "hast-util-is-element": "^1.1.0",
     "modern-normalize": "^1.1.0",
     "process": "^0.11.10",
