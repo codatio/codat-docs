@@ -164,7 +164,6 @@ To use the Embedded Link component in your webpage or app with React, perform th
 
 ## Embedding the Link application
 
-(Q - do we need to keep / move the code snippets below?)
 Initialize the Codat Link component in your app:
 
 <Tabs>
