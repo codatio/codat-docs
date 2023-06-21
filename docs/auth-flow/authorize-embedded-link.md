@@ -84,6 +84,31 @@ We've provided a [sample GitHub project](https://github.com/codatio/sample-proje
 
 If you haven't already done so, customize Link on the <a href="https://app.codat.io/settings/link-settings" target="_blank">**Link settings**</a> page in the Codat Portal. For example, add UI copy, set file upload options, choose to make steps optional, or disable steps. The settings apply to both Embedded Link and Hosted Link.
 
+<Tabs>
+<TabItem value="react" label="React">
+
+## Get started with React
+
+1. **Create a component that mounts the SDK** - you can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/snippets/CodatLink.tsx" target="_blank">`CodatLink.tsx`</a> file to an appropriate location in your React or TypeScript app
+2. **Extend your type declarations with our types** - download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
+3. Conditional steps
+  1. If a `browserslist` entry exists in your `package.json` file, you may need to update it with the following entries for production:
+
+   ```js
+    "production": [
+      ">0.2% and supports es6-module",
+      "not dead",
+      "not and_uc >= 0"
+    ],
+   ``` 
+  1. If you're using content security policy (CSP) headers, you must edit the headers:
+   * Add `*.codat.io` to all of `(script-src, style-src, font-src, connect-src, img-src)`, or to `default-src`.
+   * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
+  
+</TabItem>
+
+<TabItem value="other" label="Non-React">
+
 ## Get started with non-React frameworks
 
 Embedded Link is published to https://link-sdk.codat.io as an ES6 module. To use the Embedded Link component in your webpage or app with a non-React JavaScript framework, perform the following steps:
@@ -136,9 +161,10 @@ Embedded Link is published to https://link-sdk.codat.io as an ES6 module. To use
    * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
 1. If you're using TypeScript,  you can use the `types.d.ts` type declaration file. The contents of this file can be added to a new or existing `.d.ts` file.
 
-## Get started with React
+</TabItem>
+</Tabs>
 
-To use the Embedded Link component in your webpage or app with React, perform the following steps:
+## Using the CodatLink component
 
 1. Using the [Create company](/codat-api#/operations/create-company) endpoint, create a company, and retain its `companyID`. The component needs the `companyId` parameter to open Link for a specified company. You can also create a company in the Codat Portal.
 
@@ -146,24 +172,6 @@ To use the Embedded Link component in your webpage or app with React, perform th
    We recommend you create a company when your SMB customer signs up within your app.
    :::
    
-1. **Extend your type declarations with our types** - download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
-2. **Create a component that mounts the SDK** - you can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/snippets/CodatLink.tsx" target="_blank">`CodatLink.tsx`</a> file to an appropriate location in your React or TypeScript app
-1. If a `browserslist` entry exists in your `package.json` file, update it with the following entries for production:
-
-   ```js
-    "production": [
-      ">0.2% and supports es6-module",
-      "not dead",
-      "not and_uc >= 0"
-    ],
-   ```
-   
-1. If you're using content security policy (CSP) headers, you *must* edit the headers as follows:
-   * Add `*.codat.io` to all of `(script-src, style-src, font-src, connect-src, img-src)`, or to `default-src`.
-   * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
-
-## Embedding the Link application
-
 Initialize the Codat Link component in your app:
 
 <Tabs>
@@ -178,7 +186,6 @@ Initialize the Codat Link component in your app:
   onError={(err) => alert("Error: " + err)} // Called when an error is reached
 />
 ```
-
 </TabItem>
 
 <TabItem value="next" label="Next.js">
@@ -208,16 +215,6 @@ const AuthFlow = ({ id }) => {
 </TabItem>
 </Tabs>
 
-## Pitfalls
-
-- **Mobile compatibility** - The component is not optimized for use on mobile devices.
-
-## Complete button
-
-At the end of the Embedded Link flow, the **Complete** button is only displayed if:
-- All connections flagged as required were made successfully.
-- At least one connection was successful. 
-
 ## Getting help
 
-To report any issues with this library, you can [get in touch](mailto:embedded-link@codat.io) with us.
+To report any issues with this library, you can [get in touch](mailto:support@codat.io) with support.
