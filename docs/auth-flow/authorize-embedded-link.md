@@ -147,7 +147,7 @@ To use the Embedded Link component in your webpage or app with React, perform th
    :::
    
 1. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
-1. Copy and paste the <a href="https://dev.azure.com/codat/ea17b8fb-0083-4bb3-bcac-8a817722f00a/_apis/wit/attachments/11520cd5-799f-4fc2-9497-48d5b509a471?fileName=CodatLink.tsx&download=true" target="_blank">`CodatLink.tsx`</a> file to an appropriate location in your React or TypeScript app. Initialize this component where required.
+2. **Create a component that mounts the SDK** - you can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/snippets/CodatLink.tsx" target="_blank">`CodatLink.tsx`</a> file to an appropriate location in your React or TypeScript app
 1. If a `browserslist` entry exists in your `package.json` file, update it with the following entries for production:
 
    ```js
