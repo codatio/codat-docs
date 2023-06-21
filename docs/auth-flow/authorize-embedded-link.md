@@ -24,21 +24,11 @@ If you have general feedback on the component, get in touch at [embedded-link@co
 ## What's New
 
 The June 2023 release of Embedded Link brings the following enhancements:
-
-### Support for non-React JavaScript apps
-Without a dependency on React, you can use Embedded Link with all JavaScript frameworks or even vanilla JavaScript.
-
-### Increased display control
-Now, you need to specify the dimensions of the Embedded Link component, which will expand to fit the given container size. Previously, the component used a fixed width and height.
-
-### Navigation improvements
-Source types (accounting, commerce, banking, and file upload) can now be connected in any order you choose.
-
-### Performance improvements
-Link now loads more quickly and can be loaded only when required.
-
-### Connection status
-The connection status - either success or error - is now shown during the Embedded Link flow. The SMB user can skip errors without interrupting the rest of the Link flow, for example:
+- **Support for non-React JavaScript apps** - Without a dependency on React, you can use Embedded Link with all JavaScript frameworks or even vanilla JavaScript.
+- **Increased display control** - Now, you need to specify the dimensions of the Embedded Link component, which will expand to fit the given container size. Previously, the component used a fixed width and height.
+- **Navigation improvements** - Source types (accounting, commerce, banking, and file upload) can now be connected in any order you choose.
+- **Performance improvements** - Link now loads more quickly and can be loaded only when required.
+- **Connection status** - The connection status - either success or error - is now shown during the Embedded Link flow. The SMB user can skip errors without interrupting the rest of the Link flow, for example:
 
 ![link-sdk_connection-status-error](/img/auth-flow/link-sdk_connection-status-error.png "Embedded Link SDK: Connection error dialog shown for the Codat Banking Sandbox integration.")
 
