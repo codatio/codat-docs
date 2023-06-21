@@ -8,7 +8,7 @@ updatedAt: "2023-06-21T16:35:29.376Z"
 
 ## Introduction to Loan transactions endpoint
 Loan data is often not uniform, spread across a variety of software applications and the data can be difficult to interpret..
-These loans are often hard to identify, analyse and group.
+These loans are often hard to identify, analyze, and group.
 Manually going through data and identifying loans is very time consuming and repetitive. This can also introduce room for human error.
 
 Our Loan Transactions endpoint can identify loans from a company's accounting, banking and commerce integrations. 
