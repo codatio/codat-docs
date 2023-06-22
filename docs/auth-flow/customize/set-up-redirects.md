@@ -1,8 +1,7 @@
 ---
 title: "Set up redirect URLs"
+sidebar_label: Redirects
 description: "Complete your customer's Hosted Link journey with a redirect location"
-createdAt: "2022-05-11T17:45:39.001Z"
-updatedAt: "2023-01-11T13:09:39.574Z"
 ---
 
 Once your customers have successfully completed authorization of the connection to their data via [Link](/auth-flow/overview), you can redirect them to another website.
@@ -182,3 +181,9 @@ Do not use reserved parameters in your redirect hosts.
 Dynamic hosts will need to be defined here. A different domain suffix would count as a different host - e.g. mybank.io and mybank.com should be listed separately.
 
 If you're not using the dynamic host feature, you don't need to use this setting.
+
+---
+
+## Read next
+
+- [Set up webhooks](/auth-flow/customize/set-up-webhooks)
