@@ -4,9 +4,7 @@ sidebar_label: Overview
 description: "Make it easier for SMBs to manage and pay suppliers from a single interface."
 ---
 
-
 import { IntegrationsList } from "@components/global/Integrations";
-
 import { billpayIntegrations } from "@components/global/Integrations/integrations";
 
 ![An image from the static](/img/use-cases/billpay/billPay.png)
