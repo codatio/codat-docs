@@ -7963,10 +7963,10 @@ blockquote > div {
   margin-top: 12px;
 }
 .sl-stack--vertical.sl-stack--4 > :not(style) ~ :not(style) {
-  margin-top: 16px;
+  margin-top: 1em;
 }
 .sl-stack--vertical.sl-stack--5 > :not(style) ~ :not(style) {
-  margin-top: 20px;
+  margin-top: 1em;
 }
 .sl-stack--vertical.sl-stack--6 > :not(style) ~ :not(style) {
   margin-top: 24px;
