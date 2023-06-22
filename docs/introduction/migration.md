@@ -61,7 +61,7 @@ For other platforms where we do not yet support the self service migration route
 
 :::note Supported integrations
 
-We currently have supported migrations from the following platforms: FreeAgent, FreshBooks, QuickBooks Online, Shopify, Wave, Xero, and Zoho Books.
+We currently have supported migrations from the following platforms: FreeAgent, FreshBooks, QuickBooks Online, Shopify, Wave, and Zoho Books.
 
 We don't have a standard migration process for our other integrations, but are happy to explore possible solutions. Please get in touch with your solutions engineer if you need to discuss migrating one of these integrations.
 :::
