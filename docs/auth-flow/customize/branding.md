@@ -1,13 +1,12 @@
 ---
 title: "Set up your company branding"
+sidebar_label: Branding
 description: "Ways to modify Link's interface to match your company's branding"
-createdAt: "2022-05-11T17:16:34.785Z"
-updatedAt: "2022-11-23T15:12:44.069Z"
 ---
 
 Link is a white-label solution that can be matched to your company's branding. Go to [Settings > Branding](https://app.codat.io/settings/branding) in the [Codat Portal](https://app.codat.io) to tailor Link for a fully custom-branded experience.
 
-Note that this page autosaves when changes are made.
+Note: this page autosaves when changes are made.
 
 ### Set your company name
 
@@ -37,5 +36,10 @@ You can set your brand's primary color to define the color of buttons and other 
 :::note
 
 Light colors may cause accessibility issues. For best results, use a dark primary color.
-
 :::
+
+---
+
+## Read next
+
+- [Set up redirect URLs](/auth-flow/customize/set-up-redirects)
