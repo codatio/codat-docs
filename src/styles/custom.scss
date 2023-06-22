@@ -20,6 +20,7 @@
 @use "./components/edit-this-page";
 @use "./components/icons";
 @use "./components/images";
+@use "./components/labels";
 @use "./components/lists";
 @use "./components/markdown";
 @use "./components/mermaid";
@@ -95,6 +96,7 @@ html[data-theme="light"] {
   --token-primary-bg-c: #ffffff;
   --token-secondary-bg-c: var(--color-interface-5);
   --token-secondary-bg-c-alt: var(--color-interface-10);
+  --token-secondary-bg-c-alt-dark: var(--color-interface-20);
 
   --color-primary: var(--color-codat-primary);
   --ifm-color-primary: var(--color-codat-primary);
@@ -124,6 +126,7 @@ html[data-theme="dark"] {
   --token-primary-bg-c: #03060b;
   --token-secondary-bg-c: #13171c;
   --token-secondary-bg-c-alt: #252c35;
+  --token-secondary-bg-c-alt-dark: #303842;
 
   --ifm-link-color: var(--c-blue-70);
   --ifm-link-hover-color: rgba(77, 141, 255, 0.8);
