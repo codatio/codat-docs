@@ -11,7 +11,7 @@ import "./index.css";
 
 const LazyStoplight = React.lazy(() => import("../../page/api/Stoplight"));
 const Fallback = (
-  <div style={{ minHeight: "calc(100vh - var(--ifm-navbar-height))" }} />
+  <div style={{ color: "red", minHeight: "calc(100vh - var(--ifm-navbar-height))" }} />
 );
 
 const Api = ({ url, title="API reference"}) => {
