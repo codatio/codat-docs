@@ -38,12 +38,12 @@ module.exports = {
       typesenseServerConfig: {
         nodes: [
           {
-            host: 'vr8b9z0js7y3lqdmp.a1.typesense.net',
+            host: 'm6ygplbafcj51wk4p.a1.typesense.net',
             port: 443,
             protocol: 'https',
           }
         ],
-        apiKey: 'O9RwfOJ3GXryEHk13L4Lz7TQV1wc3BQ7',
+        apiKey: 'aWuDOXCgmWy7LXTRBg8RbfjGvjRmiRir',
       },
       typesenseSearchParameters: {}, // Optional: Typesense search parameters: https://typesense.org/docs/0.24.0/api/search.html#search-parameters
       contextualSearch: true, // Optional
