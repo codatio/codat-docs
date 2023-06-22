@@ -17,9 +17,9 @@ banner_text: "Embedded accounting integrations for corporate card providers."
 import {IntegrationsList} from '@components/global/Integrations'
 import {sfeIntegrations} from '@components/global/Integrations/integrations'
 
-<Head>
-  <meta property="og:image" content="/img/sync-for-expenses/sfe-banner.png"/>
-</Head>
+import SocialImages from "@components/global/SocialImages";
+
+<SocialImages imgSrc="/img/sync-for-expenses/sfe-banner.png"/>
 
 # Overview
 

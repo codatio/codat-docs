@@ -13,10 +13,6 @@ banner_image: "/img/banners/sfc-charts.png"
 banner_text: "Embedded accounting integrations for PoS and eCommerce platforms."
 ---
 
-<Head>
-  <meta property="og:image" content="/img/codat_banner.png"/>
-</Head>
-
 **Building to lots of different APIs does not scale. With Sync for Commerce, you can send a merchant's data to their accounting platform without worrying about which one they use.**
 
 Sync for Commerce allows you to push merchants' data from your ecommerce or point-of-sale (POS) platform into each merchant's accounting platform.
