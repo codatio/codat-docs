@@ -69,7 +69,7 @@ Embedded Link is published to https://link-sdk.codat.io as an ES6 module. To use
 For more information and an example of the component in action, [see our examples](https://github.com/codatio/sdk-link/tree/main/examples/react/readme.md).
 
 1. **Create a component that mounts the SDK** - You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/snippets/CodatLink.tsx" target="_blank">`CodatLink.tsx`</a> file to an appropriate location in your React or TypeScript app
-2. **Use this component** - We suggest wrapping the component in a modal (default dimensions 460px by 840px). The component can also take care of logic like when to show the SDK, passing in the relevant company ID, etc.
+2. **Use this component** - We suggest wrapping the component in a modal (default dimensions 460px by 840px). The component can also take care of logic like when to [display the component](https://github.com/codatio/sdk-link/blob/main/examples/react/src/App.tsx), passing in the relevant company ID, etc.
 
   ```js
   // AuthFlow.tsx
@@ -78,8 +78,6 @@ For more information and an example of the component in action, [see our example
   } from "https://link-sdk.codat.io";
 
   import CodatLink from './CodatLink';
-
-  ...
 
   const AuthFlow = ({ companyId }: {companyId: Company["id"]}) => {
     return (
