@@ -259,11 +259,8 @@ module.exports = {
           label: "Automating payables",
           collapsed: true,
           className: "top-level-item",
-          link: {
-            type: 'doc',
-            id: "usecases/summary/automating-payables",
-          },
           items: [
+            "usecases/summary/automating-payables",
             {
               type: "link",
               label: "Demo app guide",
