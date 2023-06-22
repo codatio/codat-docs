@@ -105,7 +105,6 @@ For more information and an example of the component in action, [see our example
   ```
    
 4. **Conditional steps**
-   
   a. **Extend your type declarations with our types (if using TS)** - download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
   b. **Update browserslist** - If a `browserslist` entry exists in your `package.json` file, you may need to update it with the following entries for production:
 
@@ -157,7 +156,6 @@ For more information and an example of the component in action, [see our example
   });
   ```
 4. **Conditional steps**
-   
   a. **Extend your type declarations with our types (if using TS)** - download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
   b. **Update browserslist** - If a `browserslist` entry exists in your `package.json` file, you may need to update it with the following entries for production:
 
