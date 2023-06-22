@@ -3,6 +3,11 @@ title: "Loan qualification build guide"
 sidebar_label: "Introduction"
 description: "Lend with Codat and our Assess product" 
 displayed_sidebar: "docs"
+hide_title: true
+hide_description: true
+banner_title: Loan qualification
+banner_image: "/img/banners/risk-cropped.png"
+banner_text: "Lend with Codat and our Assess product"
 ---
 
 :::tip Who is this guide for?
