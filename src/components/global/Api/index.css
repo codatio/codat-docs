@@ -29,7 +29,8 @@ html[data-theme="dark"] {
 html[data-theme="dark"] .token.property,
 html[data-theme="dark"] .token.plain,
 html[data-theme="dark"] .token.string,
-html[data-theme="dark"] .token.number {
+html[data-theme="dark"] .token.number,
+html[data-theme="dark"] .token.punctuation {
   color: white !important;
 }
 
