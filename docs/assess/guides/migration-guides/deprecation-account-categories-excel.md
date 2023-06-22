@@ -14,7 +14,7 @@ The way you download data via the **Export data** button will change. This will 
 
 ![Screenshot of the data export button](/img/assess/data-export.png)
 
-Note: All other tabs in the data export, the audit report and the banking report will continue to be supported
+Note: All other tabs in the data export and the audit report will continue to be supported
 
 
 ## Instructions for migration
