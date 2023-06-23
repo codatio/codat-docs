@@ -71,6 +71,10 @@
       "description": "Bank feed bank accounts"
     },
     {
+      "name": "Bank account mapping",
+      "description": "Bank feed bank account mapping"
+    },
+    {
       "name": "Companies",
       "description": "Create and manage your Codat companies."
     },
@@ -265,26 +269,7 @@
             }
           },
           "400": {
-            "description": "The request made is not valid.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/responses/Conflict/content/application~1json/schema"
-                },
-                "examples": {
-                  "Malformed query": {
-                    "value": {
-                      "statusCode": 400,
-                      "service": "PublicApi",
-                      "error": "Error processing request - not valid.",
-                      "correlationId": "bc997528a9d7abb9161ef45f05d38599",
-                      "canBeRetried": "Unknown",
-                      "detailedErrorCode": 0
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/BadRequest"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -875,6 +860,85 @@
                 "examples": {}
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/bankFeedAccounts/mapping": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Bank account mapping"
+        ],
+        "summary": "List bank feed account mappings",
+        "description": "﻿The List bank feed account mappings endpoint returns information about a source bank account and any current or potential target mapping accounts.\n\nA bank feed account mapping is a specified link between the source account (provided by the Codat user) and the target account (the end users account in the underlying platform).\n\nThis endpoint is only needed if building an account management UI.",
+        "operationId": "get-bank-account-mapping",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BankFeedMappings"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Bank account mapping"
+        ],
+        "summary": "Create bank feed bank account mapping",
+        "description": "﻿The Create bank feed bank account mapping endpoint creates a new mapping between a source bank account and a potential target mapping account.\n\nA bank feed account mapping is a specified link between the source account (provided by the Codat user) and the target account (the end users account in the underlying platform).\n\nTo find valid target account options, first call List bank feed account mappings.\n\nThis endpoint is only needed if building an account management UI.",
+        "operationId": "create-bank-account-mapping",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BankFeedAccountMapping"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountMappingResult"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -6897,9 +6961,16 @@
             "description": "The sort code"
           },
           "currency": {
+            "title": "Currency",
+            "x-internal": true,
             "type": "string",
-            "nullable": true,
-            "description": "The currency e.g. USD"
+            "description": "The currency data type in Codat is the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code, e.g. _GBP_.\n\n## Unknown currencies\n\nIn line with the ISO 4217 specification, the code _XXX_ is used when the data source does not return a currency for a transaction. \n\nThere are only a very small number of edge cases where this currency code is returned by the Codat system.",
+            "format": "ISO4217",
+            "examples": [
+              "GBP",
+              "USD",
+              "EUR"
+            ]
           },
           "balance": {
             "type": "number",
@@ -6949,11 +7020,170 @@
           }
         ]
       },
+      "BankFeedAccountMapping": {
+        "title": "Bank Feed Bank Account Mapping",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "sourceAccountId": {
+            "type": "string",
+            "description": "Unique ID for the source account"
+          },
+          "targetAccountId": {
+            "type": "string",
+            "nullable": true,
+            "description": "Unique ID for the target account"
+          },
+          "feedStartDate": {
+            "$ref": "#/components/schemas/DateTime",
+            "nullable": true
+          }
+        },
+        "description": "A bank feed connection between a source account and a target account.",
+        "examples": [
+          {
+            "sourceAccountId": "acc-002",
+            "targetAccountId": "account-081",
+            "feedStartDate": "2023-01-09T14:14:14.1057478Z"
+          }
+        ]
+      },
+      "AccountMappingResult": {
+        "title": "Bank Feed Bank Account Mapping Result",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "sourceAccountId": {
+            "type": "string",
+            "description": "Unique ID for the source account"
+          },
+          "targetAccountId": {
+            "type": "string",
+            "nullable": true,
+            "description": "Unique ID for the target account"
+          },
+          "Status": {
+            "type": "string",
+            "nullable": true,
+            "description": "Status of the POST request"
+          },
+          "Error": {
+            "type": "string",
+            "nullable": true,
+            "description": "Error returned during the post request"
+          }
+        },
+        "description": "The result from POSTing a Bank Account mapping.",
+        "examples": [
+          {
+            "sourceAccountId": "acc-002",
+            "targetAccountId": "account-081",
+            "Status": "Failed",
+            "Error": "A feed connection already exists to this account"
+          }
+        ]
+      },
       "BankFeedAccounts": {
         "x-internal": true,
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/BankFeedAccount"
+        }
+      },
+      "BankFeedMappings": {
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "title": "Bank feed mapping",
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "sourceAccountId": {
+                  "type": "string",
+                  "description": "Unique ID for the source account"
+                },
+                "targetAccountId": {
+                  "type": "string",
+                  "nullable": true,
+                  "description": "Unique ID for the target account"
+                },
+                "currency": {
+                  "$ref": "#/components/schemas/BankFeedAccount/properties/currency"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "targetAccountOptions": {
+                  "type": "array",
+                  "nullable": true,
+                  "description": "An array of potential target accounts",
+                  "items": {
+                    "$ref": "#/components/schemas/BankFeedMappings/properties/results/items/definitions/targetAccountOption"
+                  }
+                },
+                "feedStartDate": {
+                  "$ref": "#/components/schemas/DateTime",
+                  "nullable": true,
+                  "description": "The date from which bank transactions can be provided to the platform"
+                }
+              },
+              "description": "A bank feed connection between a source account and a target account, including potential target accounts.",
+              "definitions": {
+                "targetAccountOption": {
+                  "title": "Target Account Option",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Id of the target account."
+                    },
+                    "name": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Name of the target account."
+                    },
+                    "accountType": {
+                      "type": "string",
+                      "description": "Type of the account."
+                    },
+                    "currency": {
+                      "$ref": "#/components/schemas/BankFeedAccount/properties/currency"
+                    },
+                    "feedConnectionId": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "The Id of the connection to the target account"
+                    }
+                  }
+                }
+              },
+              "examples": [
+                {
+                  "sourceAccountId": "acc-002",
+                  "targetAccountId": "account-081",
+                  "currency": "USD",
+                  "status": "Success",
+                  "feedStartDate": "2023-01-09T14:14:14.1057478Z"
+                },
+                {
+                  "sourceAccountId": "acc-003",
+                  "currency": "GBP",
+                  "status": "Success",
+                  "targetAccountOptions": {
+                    "name": "target-Account",
+                    "id": "account-085",
+                    "accountType": "Credit",
+                    "currency": "GBP",
+                    "feedConnectionId": "bfb1f2e4-85c0-4b74-8c4d-1ae3d7bce36e"
+                  },
+                  "feedStartDate": "2022-03-05T14:14:14.1057478Z"
+                }
+              ]
+            }
+          }
         }
       },
       "BankTransactions": {
@@ -7661,6 +7891,28 @@
       }
     },
     "responses": {
+      "BadRequest": {
+        "description": "The request made is not valid.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+            },
+            "examples": {
+              "Malformed query": {
+                "value": {
+                  "statusCode": 400,
+                  "service": "PublicApi",
+                  "error": "Error processing request - not valid.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
       "Unauthorized": {
         "description": "Your API request was not properly authorized.",
         "content": {
