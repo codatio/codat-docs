@@ -7,9 +7,9 @@ description: "Embed our auth flow in your application with our low-code componen
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-<Head>
-  <meta property="og:image" content="/img/link/0014-embedded-link-demo.png"/>
-</Head>
+import SocialImages from "@components/global/SocialImages";
+
+<SocialImages imgSrc="/img/auth-flow/embedded-link-integrations.png"/>
 
 ![](/img/link/0014-embedded-link-demo.png)
 

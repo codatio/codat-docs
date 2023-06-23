@@ -13,9 +13,9 @@ banner_image: "/img/banners/commerce.png"
 banner_text: "Codat's Commerce API enables you to pull up-to-date commerce data from several leading payments, point-of-sale, and eCommerce systems. You can view your SMB customers' products, orders, payments, payouts, disputes, and more - all standardized to our Commerce data model."
 ---
 
-<Head>
-  <meta property="og:image" content="/img/commerce_api_banner.png"/>
-</Head>
+import SocialImages from "@components/global/SocialImages";
+
+<SocialImages imgSrc="/img/banners/commerce_api_banner.png"/>
 
 <ul className="card-container col-2">
   <li className="card">
@@ -91,4 +91,4 @@ banner_text: "Codat's Commerce API enables you to pull up-to-date commerce data 
 
 <br/>
 
-![](/img/commerce_api_banner.png "Commerce API banner")
+![](/img/banners/commerce_api_banner.png "Commerce API banner")

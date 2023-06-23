@@ -13,9 +13,9 @@ banner_image: "/img/banners/banking.png"
 banner_text: "Use Codat's Banking API to connect to your SMB customers' banks and pull up-to-date standardized account and transaction data from their bank accounts via our partner providers."
 ---
 
-<Head>
-  <meta property="og:image" content="/img/banking-api/banking-api-banner.png"/>
-</Head>
+import SocialImages from "@components/global/SocialImages";
+
+<SocialImages imgSrc="/img/banking-api/banking-api-banner.png"/>
 
 <ul className="card-container col-3">
   <li className="card">

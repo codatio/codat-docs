@@ -13,9 +13,9 @@ banner_image: "/img/banners/accounting-json.png"
 banner_text: "Codat's Accounting API is a flexible API for pulling and pushing up-to-date accounting data to your customers' accounting software. It gives you a simple way to view, create, update, and delete data without having to worry about each platform's specific complexities."
 ---
 
-<Head>
-  <meta property="og:image" content="/img/accounting-api/accounting_banner.png"/>
-</Head>
+import SocialImages from "@components/global/SocialImages";
+
+<SocialImages imgSrc="/img/accounting-api/accounting_banner.png"/>
 
 ## Benefits
 

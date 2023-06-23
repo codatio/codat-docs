@@ -13,9 +13,9 @@ banner_image: "/img/banners/assess.png"
 banner_text: "Assess helps you make smarter credit decisions on small businesses by enabling you to pull your customers' latest data from the operating systems they are already using. You can use that data for automating decisioning and surfacing new insights on the customer, all via one API."
 ---
 
-<Head>
-  <meta property="og:image" content="/img/old/f0c6d43-73D1AFFF-6E41-47F3-8E25-BB20DA16C754.jpeg"/>
-</Head>
+import SocialImages from "@components/global/SocialImages";
+
+<SocialImages imgSrc="/img/old/f0c6d43-73D1AFFF-6E41-47F3-8E25-BB20DA16C754.jpeg"/>
 
 Assess is built on top of the latest accounting, commerce and banking data, providing you with the most important data points you need to get a full picture of SMB creditworthiness, and make a comprehensive assessment of your customers.
 
