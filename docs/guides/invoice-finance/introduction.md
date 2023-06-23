@@ -2,6 +2,11 @@
 title: "Invoice financing build guide"
 sidebar_label: "Introduction"
 description: "Selective invoice financing with Codat and our Accounting API" 
+hide_title: true
+hide_description: true
+banner_title: Invoice financing build guide
+banner_image: "/img/banners/lending-cropped.png"
+banner_text: "Selective invoice financing with Codat and our Accounting API"
 ---
 
 :::tip Who is this guide for?
