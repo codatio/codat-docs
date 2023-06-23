@@ -13,7 +13,7 @@ You can add email addresses while creating a new rule, or update the email and n
 
 ## Set up email notifications using the Portal
 
-1. In the <a href="https://app.codat.io/" target="_blank">Codat Portal</a>, navigate to **Monitor > Rules > Create new rule**.
+1. In the <a href="https://app.codat.io/" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Rules > Create new rule**.
 2. In the **Create new rule** modal, specify the following:
    - **Rule type** to determine which event will trigger a notification,
    - **Company** to specify the company you want to monitor, or select **All companies** to make all companies trigger this rule,

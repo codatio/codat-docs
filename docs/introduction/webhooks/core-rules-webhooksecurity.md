@@ -12,7 +12,7 @@ To prevent unauthorized users from posting content to your webhook, Codat can ad
 To enable security for your organization's webhooks.
 
 1. Sign in to the Codat Portal.
-2. Select **Monitor > Webhooks > Settings**.
+2. Select **Settings > Webhooks > Security**.
 3. Select the authorization method you're interested in and enter the required information. By default, **No Authorization** is selected so security is turned off.
 
 | Authorization method or scheme | Description                                                                                        |

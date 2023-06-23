@@ -67,7 +67,7 @@ We will use [ngrok](https://ngrok.com/) here to listen for Codat's webhooks.
 
 ### <input type="checkbox" unchecked /> Configure Codat webhooks
 
-In the **Monitor > Webhooks > [Rules](https://app.codat.io/monitor/rules)** section of the Codat Portal, create three rules, one for each webhook we will use:
+In the **Settings > Webhooks > [Rules](https://app.codat.io/settings/webhooks/rules)** section of the Codat Portal, create three rules, one for each webhook we will use:
 
    |  Rule type                                  | Webhook notification URL                                    |
    |---------------------------------------------|-------------------------------------------------------------|
