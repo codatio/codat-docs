@@ -3,8 +3,8 @@
 article .markdown {
   > img,
   > p > img,
-  > ol > li > img,
-  > ul > li > img {
+  > ol > li > p > img,
+  > ul > li > p > img {
     border: 1px solid #ededed;
     border-radius: 6px;
     text-align: center;
