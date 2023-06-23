@@ -54,6 +54,10 @@
     {
       "name": "Categories",
       "description": "Categorisation"
+    },
+    {
+      "name": "Loan transactions",
+      "description": "Loan Transactions"
     }
   ],
   "paths": {
@@ -5161,6 +5165,39 @@
           }
         ]
       }
+    },
+    "/data/companies/assess/{companyId}/reports/liability/loan/transactions": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ],
+      "get": {
+        "summary": "List loan transactions",
+        "tags": [
+          "Loan transactions"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanTransactions"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          }
+        },
+        "operationId": "list-loan-transactions",
+        "description": "Returns a list of a company's loan transactions.\n\n## Prerequisites\nThe company must have either at least one accounting, banking or commerce connection\nlinked and fully synced with the mandatory data types listed below.\n\nAccounting connection:\n- Journal Entries\n- Chart of Accounts\n\nBanking connection:\n- Banking Accounts\n- Banking Transactions\n\nCommerce connection:\n- Commerce Transactions\n\nIf the company does not have a any of these connections an error will be thrown.\n\n# Accounting #\nA company's journal entries will be analysed to retrieve all of their loan transactions.\nThe interest rate will also be calculated for the loan.\n# Banking #\nA company's banking transactions will be analysed to retrieve all of their loan transactions.\n# Commerce #\nReturns back the total Loan amount and loan repayments. \nFor example, for a Stripe account, we can return back all the loan transactions'"
+      }
     }
   },
   "webhooks": {
@@ -6841,6 +6878,152 @@
             ]
           }
         }
+      },
+      "LoanTransactions": {
+        "title": "Loan Transactions",
+        "type": "object",
+        "properties": {
+          "reportInfo": {
+            "$ref": "#/components/schemas/LoanTransactions/definitions/loanTransactionsReportInfo"
+          },
+          "reportItems": {
+            "type": "array",
+            "description": "If there are no errors, an empty array is returned.",
+            "items": {
+              "$ref": "#/components/schemas/LoanTransactions/definitions/reportItems"
+            }
+          },
+          "errors": {
+            "type": "array",
+            "description": "If there are no errors, an empty array is returned."
+          }
+        },
+        "definitions": {
+          "loanTransactionsReportInfo": {
+            "title": "Loan Transactions Report Info",
+            "type": "object",
+            "properties": {
+              "pageNumber": {
+                "type": "int",
+                "description": "The page number."
+              },
+              "pageSize": {
+                "type": "int",
+                "description": "Queried page size."
+              },
+              "totalResults": {
+                "type": "int",
+                "description": "The total number of transactions returned."
+              },
+              "reportName": {
+                "type": "string",
+                "description": "The name of the report."
+              },
+              "companyName": {
+                "type": "string",
+                "description": "Name of the company queried."
+              },
+              "generatedDate": {
+                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "description": "Returns the YYYY-MM-DD datetime of report generation.  urns the YYYY-MM-DD datetime of report generation."
+              }
+            }
+          },
+          "loanRef": {
+            "title": "Loan Reference",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "The id of the object being referred to."
+              },
+              "dataConnectionId": {
+                "type": "string",
+                "description": "The dataConnectionId the object being referred to is associated with."
+              },
+              "type": {
+                "type": "string",
+                "description": "The object type data is referring to, e.g. Account."
+              }
+            }
+          },
+          "itemRef": {
+            "title": "Item reference",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "The id of the object, e.g. the Journal entry."
+              },
+              "dataConnectionId": {
+                "type": "string",
+                "description": "The data connection id being referenced."
+              },
+              "type": {
+                "type": "string",
+                "description": "The data type the loan transaction entry was extracted from."
+              }
+            }
+          },
+          "reportItems": {
+            "type": "object",
+            "properties": {
+              "loanRef": {
+                "$ref": "#/components/schemas/LoanTransactions/definitions/loanRef",
+                "description": "Contains object that contains all the Loan transactions for that integration type."
+              },
+              "itemRef": {
+                "$ref": "#/components/schemas/LoanTransactions/definitions/itemRef",
+                "description": "Contains object of reporting properties. The loan ref will reference a different object depending on the integration type."
+              },
+              "date": {
+                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "description": "The date of that entry type occurred."
+              },
+              "amount": {
+                "type": "number",
+                "description": "The loan transaction amount."
+              },
+              "loanTransactionType": {
+                "type": "string",
+                "enum": [
+                  "Investment",
+                  "Repayment",
+                  "Interest"
+                ]
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "reportInfo": {
+              "pageNumber": 1,
+              "pageSize": 1000,
+              "totalResults": 1,
+              "reportName": "AccountingLoanTransactions",
+              "companyName": "Supermarket store",
+              "generatedDate": "2022-10-23T00:00:00Z"
+            },
+            "reportItems": [
+              {
+                "loanRef": {
+                  "id": "332",
+                  "dataConnectionId": "ecd2d6be-5194-40a1-838f-5577a4881aaa",
+                  "type": "chartOfAccount"
+                },
+                "itemRef": {
+                  "id": "755488",
+                  "dataConnectionId": "ecd2d6be-5194-40a1-838f-5577a4881aaa",
+                  "type": "journalEntry"
+                },
+                "date": "2020-08-02",
+                "amount": -455,
+                "transactionType": "Repayment"
+              }
+            ]
+          }
+        ]
       },
       "PagingInfo": {
         "type": "object",
