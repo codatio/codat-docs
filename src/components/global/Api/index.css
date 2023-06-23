@@ -101,17 +101,16 @@ blockquote > div {
   border: 1px solid var(--token-secondary-bg-c-alt);
 }
 
-.sl-relative > div > ol > li::before,
-.sl-relative > div > ol > li::before > ol > li::before {
-  display: none;
-}
-
 .sl-elements-api > .sl-px-24 {
   padding-right: 2em !important;
 }
 
+.sl-relative > div > ol > li::before,
+.sl-relative > div > ol > li::before > ol > li::before,
 .sl-prose > ol > li::before,
-.sl-prose > ul > li::before {
+.sl-prose > ul > li::before,
+.sl-prose > ol > li li::before,
+.sl-prose > ul > li li::before {
   display: none;
 }
 
