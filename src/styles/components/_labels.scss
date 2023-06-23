@@ -1,0 +1,32 @@
+.labels {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.label {
+  font-size: 0.8em;
+  padding: 0;
+  outline: none;
+  border: none;
+  appearance: none;
+  background: var(--token-secondary-bg-c-alt);
+  color: var(--ifm-heading-color);
+  border: 2px solid var(--token-secondary-bg-c-alt-dark);
+  white-space: nowrap;
+  border-radius: 3px;
+  width: fit-content;
+  padding: 0.25em;
+  margin-top: 0.5em;
+
+  &:not(:last-child) {
+    margin-right: 0.5em;
+  }
+}
+
+.tag {
+  margin-top: 0.5em;
+  background: var(--token-secondary-bg-c-alt);
+  border-radius: 2px;
+  width: fit-content;
+  padding: 5px;
+}
