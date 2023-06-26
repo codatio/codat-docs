@@ -19331,7 +19331,7 @@
           }
         },
         "summary": "Get bill",
-        "description": "﻿Get a bill.",
+        "description": "The *Get bill* endpoint returns a single bill for a given billId.\n\n[Bills](https://docs.codat.io/accounting-api#/schemas/Bill) are itemized records of goods received or services provided to the SMB.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support getting a specific bill.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n",
         "operationId": "get-bill"
       }
     },
@@ -27344,7 +27344,7 @@
             "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
-        "description": "﻿Gets a single billCreditNote corresponding to the given ID.",
+        "description": "The *Get bill credit note* endpoint returns a single bill credit note for a given billCreditNoteId.\n\n[Bill credit notes](https://docs.codat.io/accounting-api#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) for integrations that support getting a specific bill credit note.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n",
         "operationId": "get-bill-credit-note"
       }
     },
