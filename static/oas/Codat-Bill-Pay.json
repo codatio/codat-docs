@@ -24294,7 +24294,7 @@
         },
         "operationId": "list-bill-attachments",
         "summary": "List bill attachments",
-        "description": "﻿List bill attachments."
+        "description": "The *List bill attachments* endpoint returns a list of attachments avialable to download for given `billId`.\n\n[Bills](https://docs.codat.io/accounting-api#/schemas/Bill) are itemized records of goods received or services provided to the SMB.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support listing bill attachments.\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/bills/{billId}/attachments/{attachmentId}": {
@@ -24302,7 +24302,7 @@
         "tags": [
           "Bills"
         ],
-        "description": "﻿Get bill attachment.",
+        "description": "The *Get bill attachment* endpoint returns a specific attachment for a given `billId` and `attachmentId`.\n\n[Bills](https://docs.codat.io/accounting-api#/schemas/Bill) are itemized records of goods received or services provided to the SMB.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support getting a bill attachment.\n",
         "operationId": "get-bill-attachment",
         "parameters": [
           {
@@ -24386,7 +24386,7 @@
             "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
-        "description": "﻿Download bill attachment."
+        "description": "The *Download bill attachment* endpoint downloads a specific attachment for a given `billId` and `attachmentId`.\n\n[Bills](https://docs.codat.io/accounting-api#/schemas/Bill) are itemized records of goods received or services provided to the SMB.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support downloading a bill attachment.\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/bills/{billId}/attachments": {
@@ -24431,7 +24431,7 @@
             "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
-        "description": "﻿Upload bill attachment."
+        "description": "The *Upload bill attachment* endpoint uploads an attachment and assigns it against a specific `billId`.\n\n[Bills](https://docs.codat.io/accounting-api#/schemas/Bill) are itemized records of goods received or services provided to the SMB.\n\n**Integration-specific behaviour**\n\nFor more details on supported file types by integration see [Attachments](https://docs.codat.io/accounting-api#/schemas/Attachment).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support uploading a bill attachment.\n"
       }
     },
     "/companies/{companyId}/data/billCreditNotes": {
