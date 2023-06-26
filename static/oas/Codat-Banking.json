@@ -384,7 +384,7 @@
         ],
         "summary": "Get account",
         "operationId": "get-account",
-        "description": "Gets a specified bank account for a given company",
+        "description": "The *Get account* endpoint returns a single account for a given accountId.\n\n[Accounts](https://docs.codat.io/banking-api#/schemas/Account) are financial accounts maintained by a bank or other financial institution.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/banking?view=tab-by-data-type&dataType=banking-accounts) for integrations that support getting a specific account.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -622,7 +622,7 @@
         ],
         "operationId": "get-transaction-category",
         "summary": "Get transaction category",
-        "description": "Gets a specified bank transaction category for a given company",
+        "description": "The *Get transaction category* endpoint returns a single transaction category for a given transactionCategoryId.\n\n[Transaction categories](https://docs.codat.io/banking-api#/schemas/TransactionCategory) are associated with a transaction to provide greater contextual meaning to transaction activity.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/banking?view=tab-by-data-type&dataType=banking-transactionCategories) for integrations that support getting a specific transaction category.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n",
         "responses": {
           "200": {
             "description": "Success",
@@ -932,7 +932,7 @@
             }
           }
         },
-        "description": "Gets a specified bank transaction for a given company",
+        "description": "The *Get transaction* endpoint returns a single transaction for a given transactionId.\n\n[Transactions](https://docs.codat.io/banking-api#/schemas/Transaction) provide an immutable source of up-to-date information on income and expenditure.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/banking?view=tab-by-data-type&dataType=banking-transactions) for integrations that support getting a specific transaction.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n",
         "operationId": "get-transaction"
       },
       "parameters": [
