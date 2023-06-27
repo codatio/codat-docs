@@ -50,6 +50,20 @@ Within the request body, `PlatformEndpoint` and `PlatformPropertyName` parameter
     }
 }
 ```
+You can use dot notation to retrieve nested properties from within the supplemental data object. For example, maintain the followng configuration to retrieve the the `Name` value from Xero's `BrandingTheme` object with two properties, `BrandingThemeID` and `Name`.
+
+```json title="Supplemental data configuration with dot notation"
+{
+    "supplementalDataConfig": {
+        "client-Keyname-For-Xero-suppliers": {
+            "dataSource": "/Contacts",
+            "pullData": {
+                "BrandingThemeName": "BrandingTheme.Name"
+            }
+        }
+    }
+}
+```
 
 You can also retrieve your existing supplemental data configuration by using the [endpoint name]/endpoint link endpoint:
 ```http
