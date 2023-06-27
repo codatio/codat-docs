@@ -66,7 +66,7 @@ Review the table below for platform endpoints we use in our data types, which ar
 |----------------|-------------------------------------------------------------------|-----------------------------|--------------------|
 | `billPayments` | Payments, Overpayments,   PrePayments, BatchPayments, CreditNotes |                             |                    |
 
-## Commonly requested properties
+## Example properties
 
 **EVERYTHING IN THIS SECTION SHOULD GO TO THE OAS**
 
@@ -229,14 +229,14 @@ This section details some of the commonly requested supplemental data configurat
 
 ## Tips and pitfalls
 
-- Supplemental data is currently available only at record level. 
+- Supplemental data is currently available only at record level and cannot be used to interact with line-level properties. 
 
 - Data within the supplemental data object is not validated, manipulated, standardized, or transformed by Codat. 
 
 - It is not possible to query Codat’s API on the supplemental data.
 
-- When you add or change a supplemental data configuration, it will apply to all newly synced data, but not the data synced previously. This may result in inconsistent supplemental data across the dataset. You can request us to set a full sync after any changes to configuration to be default behaviour. 
+- When you add or change supplemental data configuration, the next sync of this data type will be a full sync by default to ensure that supplemental data is added to both new and previously synced records.
 
 - We expose the data sources available to interact with supplemental data, but request you to refer to the platforms' own documentation for details on available data and properties for each data source.
 
-Where we are unable to retrieve requested supplemental data, the Pull operation should still complete, but will not contain the supplemental data that could not be obtained.
+- Where we are unable to retrieve requested supplemental data, the fetch operation will still complete, but the supplemental properties will be null.
