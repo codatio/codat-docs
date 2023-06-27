@@ -104,9 +104,8 @@ For more information and an example of the component in action, [see our example
   ```
    
 4. **Conditional steps**
-<ol type="a">  
-    <li>**Extend your type declarations with our types (if using TS)** - download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.</li>  
-    <li>**Update browserslist** - If a `browserslist` entry exists in your `package.json` file, you may need to update it with the following entries for production:  
+    - **Extend your type declarations with our types (if using TS)** - download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
+    - **Update browserslist** - If a `browserslist` entry exists in your `package.json` file, you may need to update it with the following entries for production:  
 
    ```js
     "production": [
@@ -114,12 +113,11 @@ For more information and an example of the component in action, [see our example
       "not dead",
       "not and_uc >= 0"
     ],
-   ```  </li>
-    <li>**Update CSP headers** - If you're using content security policy (CSP) headers, you must edit the headers:
-   * Add `*.codat.io` to all of `(script-src, style-src, font-src, connect-src, img-src)`, or to `default-src`.
-   * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.</li>
-  </ol>
-  
+   ```
+    - **Update CSP headers** - If you're using content security policy (CSP) headers, you must edit the headers:
+       * Add `*.codat.io` to all of `(script-src, style-src, font-src, connect-src, img-src)`, or to `default-src`.
+       * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.</li>
+ 
 </TabItem>
 
 <TabItem value="other" label="Non-React">
@@ -157,8 +155,8 @@ For more information and an example of the component in action, [see our example
   });
   ```
 4. **Conditional steps**  
-    a) **Extend your type declarations with our types (if using TS)** - download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.  
-    b) **Update browserslist** - If a `browserslist` entry exists in your `package.json` file, you may need to update it with the following entries for production:  
+    - **Extend your type declarations with our types (if using TS)** - download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.  
+    - **Update browserslist** - If a `browserslist` entry exists in your `package.json` file, you may need to update it with the following entries for production:  
 
    ```js
     "production": [
@@ -167,9 +165,9 @@ For more information and an example of the component in action, [see our example
       "not and_uc >= 0"
     ],
    ```  
-    c) **Update CSP headers** - If you're using content security policy (CSP) headers, you must edit the headers:
-   * Add `*.codat.io` to all of `(script-src, style-src, font-src, connect-src, img-src)`, or to `default-src`.
-   * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
+   - **Update CSP headers** - If you're using content security policy (CSP) headers, you must edit the headers:
+      * Add `*.codat.io` to all of `(script-src, style-src, font-src, connect-src, img-src)`, or to `default-src`.
+      * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
 
 </TabItem>
 </Tabs>
