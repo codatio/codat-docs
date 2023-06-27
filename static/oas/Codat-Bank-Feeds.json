@@ -887,7 +887,7 @@
           "Bank account mapping"
         ],
         "summary": "List bank feed account mappings",
-        "description": "﻿The List bank feed account mappings endpoint returns information about a source bank account and any current or potential target mapping accounts.\n\nA bank feed account mapping is a specified link between the source account (provided by the Codat user) and the target account (the end users account in the underlying platform).\n\nThis endpoint is only needed if building an account management UI.",
+        "description": "﻿The *List bank account mappings* endpoint returns information about a source bank account and any current or potential target mapping accounts.\n\nA bank feed account mapping is a specified link between the source account (provided by the Codat user) and the target account (the end users account in the underlying platform).\n\nThis endpoint is only needed if building an account management UI.",
         "operationId": "get-bank-account-mapping",
         "responses": {
           "200": {
@@ -914,7 +914,7 @@
           "Bank account mapping"
         ],
         "summary": "Create bank feed bank account mapping",
-        "description": "﻿The Create bank feed bank account mapping endpoint creates a new mapping between a source bank account and a potential target mapping account.\n\nA bank feed account mapping is a specified link between the source account (provided by the Codat user) and the target account (the end users account in the underlying platform).\n\nTo find valid target account options, first call List bank feed account mappings.\n\nThis endpoint is only needed if building an account management UI.",
+        "description": "﻿The *Create bank account mapping* endpoint creates a new mapping between a source bank account and a potential account in the accounting platform (target account).\n\nA bank feed account mapping is a specified link between the source account (provided by the Codat user) and the target account (the end users account in the underlying platform).\n\nTo find valid target account options, first call list bank feed account mappings.\n\nThis endpoint is only needed if building an account management UI.",
         "operationId": "create-bank-account-mapping",
         "requestBody": {
           "content": {
@@ -7103,15 +7103,31 @@
               "properties": {
                 "sourceAccountId": {
                   "type": "string",
-                  "description": "Unique ID for the source account"
+                  "description": "Unique ID for the source account."
+                },
+                "sourceAccountName": {
+                  "type": "string",
+                  "description": "Name for the source account."
+                },
+                "sourceAccountNumber": {
+                  "type": "string",
+                  "description": "Account number for the source account."
+                },
+                "sourceBalance": {
+                  "type": "string",
+                  "description": "Balance for the source account."
+                },
+                "sourceCurrency": {
+                  "$ref": "#/components/schemas/BankFeedAccount/properties/currency"
                 },
                 "targetAccountId": {
                   "type": "string",
                   "nullable": true,
-                  "description": "Unique ID for the target account"
+                  "description": "Unique ID for the target account in the accounting platform."
                 },
-                "currency": {
-                  "$ref": "#/components/schemas/BankFeedAccount/properties/currency"
+                "targetAccountName": {
+                  "type": "string",
+                  "description": "Name for the target account in the accounting platform."
                 },
                 "status": {
                   "type": "string"
@@ -7119,7 +7135,7 @@
                 "targetAccountOptions": {
                   "type": "array",
                   "nullable": true,
-                  "description": "An array of potential target accounts",
+                  "description": "An array of potential target accounts.",
                   "items": {
                     "$ref": "#/components/schemas/BankFeedMappings/properties/results/items/definitions/targetAccountOption"
                   }
@@ -7127,7 +7143,7 @@
                 "feedStartDate": {
                   "$ref": "#/components/schemas/DateTime",
                   "nullable": true,
-                  "description": "The date from which bank transactions can be provided to the platform"
+                  "description": "The date from which bank transactions can be provided to the platform."
                 }
               },
               "description": "A bank feed connection between a source account and a target account, including potential target accounts.",
@@ -7144,18 +7160,6 @@
                       "type": "string",
                       "nullable": true,
                       "description": "Name of the target account."
-                    },
-                    "accountType": {
-                      "type": "string",
-                      "description": "Type of the account."
-                    },
-                    "currency": {
-                      "$ref": "#/components/schemas/BankFeedAccount/properties/currency"
-                    },
-                    "feedConnectionId": {
-                      "type": "string",
-                      "nullable": true,
-                      "description": "The Id of the connection to the target account"
                     }
                   }
                 }
@@ -7164,21 +7168,26 @@
                 {
                   "sourceAccountId": "acc-002",
                   "targetAccountId": "account-081",
-                  "currency": "USD",
+                  "sourceCurrency": "USD",
                   "status": "Success",
-                  "feedStartDate": "2023-01-09T14:14:14.1057478Z"
+                  "feedStartDate": "2023-01-09T14:14:14.1057478Z",
+                  "sourceAccountName": "ACME Bank",
+                  "sourceAccountNumber": "1234-5678",
+                  "sourceBalance": 500,
+                  "targetAccountName": "ACME Bank"
                 },
                 {
                   "sourceAccountId": "acc-003",
-                  "currency": "GBP",
+                  "sourceCurrency": "GBP",
                   "status": "Success",
                   "targetAccountOptions": {
                     "name": "target-Account",
-                    "id": "account-085",
-                    "accountType": "Credit",
-                    "currency": "GBP",
-                    "feedConnectionId": "bfb1f2e4-85c0-4b74-8c4d-1ae3d7bce36e"
+                    "id": "account-085"
                   },
+                  "sourceAccountName": "Clerkenwell Bank",
+                  "sourceAccountNumber": "5432-1457",
+                  "sourceBalance": 150,
+                  "targetAccountName": "Clerkenwell Bank",
                   "feedStartDate": "2022-03-05T14:14:14.1057478Z"
                 }
               ]
