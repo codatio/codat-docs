@@ -6888,7 +6888,7 @@
           },
           "reportItems": {
             "type": "array",
-            "description": "If there are no errors, an empty array is returned.",
+            "description": "Contains object of reporting properties. The loan ref will reference a different object depending on the integration type.",
             "items": {
               "$ref": "#/components/schemas/LoanTransactions/definitions/reportItems"
             }
