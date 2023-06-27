@@ -116,7 +116,7 @@ For more information and an example of the component in action, [see our example
    ```
     - **Update CSP headers** - If you're using content security policy (CSP) headers, you must edit the headers:
        * Add `*.codat.io` to all of `(script-src, style-src, font-src, connect-src, img-src)`, or to `default-src`.
-       * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.</li>
+       * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
  
 </TabItem>
 
