@@ -957,8 +957,8 @@
         "tags": [
           "Bank account transactions"
         ],
-        "summary": "List bank transactions for bank account",
-        "description": "Gets bank transactions for a given bank account ID",
+        "summary": "List bank account transactions",
+        "description": "The *List account bank transactions* endpoint returns a list of [bank account transactions](https://docs.codat.io/accounting-api#/schemas/BankTransactions) for a given company's connection.\n\n[Bank account transactions](https://docs.codat.io/accounting-api#/schemas/BankTransactions) are records of money that has moved in and out of an SMB's bank account.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankTransactions) for integrations that support listing bank transactions.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n",
         "operationId": "list-bank-account-transactions",
         "parameters": [
           {
@@ -6453,9 +6453,9 @@
         "tags": [
           "Bank account transactions"
         ],
-        "summary": "List push options for bank account bank transactions",
-        "description": "Gets the options of pushing bank account transactions.",
-        "operationId": "get-create-bank-account-model",
+        "summary": "Get create bank account transactions model",
+        "description": "The *Get create bank account transactions model* endpoint returns the expected data for the request payload when creating [bank account transactions](https://docs.codat.io/accounting-api#/schemas/BankTransactions) for a given company and integration.\n\n[Bank account transactions](https://docs.codat.io/accounting-api#/schemas/BankTransactions) are records of money that has moved in and out of an SMB's bank account.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankTransactions) for integrations that support creating an bank transaction.\n",
+        "operationId": "get-create-bank-transactions-model",
         "x-extension-1": null,
         "parameters": [
           {
@@ -6497,8 +6497,8 @@
         "tags": [
           "Bank account transactions"
         ],
-        "summary": "Create bank transactions",
-        "description": "Posts bank transactions to the accounting package for a given company.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankTransactions) to see which integrations support this endpoint.",
+        "summary": "Create bank account transactions",
+        "description": "The *Create bank account transactions* endpoint creates new [bank account transactions](https://docs.codat.io/accounting-api#/schemas/BankTransactions) for a given company's connection.\n\n[Bank account transactions](https://docs.codat.io/accounting-api#/schemas/BankTransactions) are records of money that has moved in and out of an SMB's bank account.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create bank transaction model](https://docs.codat.io/accounting-api#/operations/get-create-bankTransactions-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankTransactions) for integrations that support creating a bank account transactions.\n",
         "operationId": "create-bank-transactions",
         "parameters": [
           {
