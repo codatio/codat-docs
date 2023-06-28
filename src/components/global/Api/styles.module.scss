@@ -45,6 +45,10 @@
 }
 
 .stoplightFallback {
+  min-height: calc(100vh - var(--ifm-navbar-height));
+}
+
+.stoplightPlaceholder {
   @media (min-width: 300px) {
     display: none;
   }
