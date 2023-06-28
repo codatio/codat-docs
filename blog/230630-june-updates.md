@@ -37,3 +37,38 @@ Traditionally, lenders look up a bank statement to verify that payments for an i
 The Enhanced Invoices Report uses open banking and accounting data to automatically match a paid invoice to the bank transaction record that was used to pay it. This helps to verify a customer’s payment against the company's historical invoice.
 
 See [Enhanced Invoices](https://docs.codat.io/assess/enhanced-invoices/overview) for more information.
+
+
+## Sync for Expenses: Support for Microsoft Dynamics 365
+
+Codat now supports the following features within the Dynamics integration: 
+
+Create an expense to represent a company's spend and upload the associated receipt for easier matching. Each expense and its associated documents can be split into the individual line items to give better visibility and enhanced reporting.
+
+The ability to present only valid expense bank accounts and tax rates to your users to make configuration for your customers easier . 
+
+Use the tracking category objects to associate spend to the applicable dimension in Microsoft Dynamics against each expense. This will provide context to the spend and assist in transaction reports. 
+
+This addition to Sync for Expenses means that you can now begin to offer this accounting platform coverage to your customers for the following supported expense [transaction types](https://docs.codat.io/sync-for-expenses/sync-process/expense-transactions#transaction-types): Payments, Refunds, Chargeback and Rewards.
+
+For other suggestions for our Dynamics integration for the expense management use case please let us know [here](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/51-sync-for-expenses/submit-idea).
+
+## Sync for Expenses: Updating expenses support for Xero
+
+Currently if an SMB needs to alter an expense they would need to make changes to their expense management platform and their accounting package separately. This can be time consuming as making expense alterations are not uncommon tasks.   
+
+This latest addition to Sync for Expenses means that your users can update their expenses without having to duplicate the work in Xero. 
+
+Codat is now able to support users when they need to update the following  expense metadata in Xero: 
+- Net expense amount
+- Tax amount of the spend
+- Tax rate reference associated with the spend
+- Expense bank account reference
+- Tracking category objects
+- Description & notes
+
+To update an attachment or receipt users will need to delete and then create a new dataset for the updated transaction attachment before syncing it to their accounting platform. 
+
+This feature is currently only available for Xero. If you would like to see this functionality across other platforms please let us know [here](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/51-sync-for-expenses/submit-idea). 
+
+
