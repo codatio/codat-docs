@@ -24294,7 +24294,7 @@
         },
         "operationId": "list-bill-attachments",
         "summary": "List bill attachments",
-        "description": "The *List bill attachments* endpoint returns a list of attachments avialable to download for given `billId`.\n\n[Bills](https://docs.codat.io/accounting-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support listing bill attachments.\n"
+        "description": "The *List bill attachments* endpoint returns a list of attachments available to download for a given `billId`.\n\n[Bills](https://docs.codat.io/accounting-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support listing bill attachments.\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/bills/{billId}/attachments/{attachmentId}": {
