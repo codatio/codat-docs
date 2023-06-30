@@ -9,4 +9,4 @@ On October 10, 2023, Codat will change the mappings for contra manual journals o
 
 <!--truncate-->
 
-Manual Journal Contra (offsetting AP against AR) entries will no longer be mapped to Codat's billPayments and payments data model. These manual journal entries will be found in the journalEntries datatype.
+Manual Journal Contra (offsetting AP against AR) entries will no longer be mapped to Codat's `billPayments` and `payments` data model. These manual journal entries will instead be found in the `journalEntries` data type.
