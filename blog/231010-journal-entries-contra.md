@@ -5,7 +5,7 @@ tags: ["Deprecation"]
 authors: mcclowes
 ---
 
-On October 10, 2023, Codat will change the mappings for contra manual journals on the billPayments and payments datatypes.
+On October 10, 2023, Codat will change the mappings for contra manual journals on the `billPayments` and `payments` data types.
 
 <!--truncate-->
 
