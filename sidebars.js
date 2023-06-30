@@ -225,7 +225,7 @@ module.exports = {
             "other/portal/developers",
           ],
         },
-        "using-the-api/supplemental-data",
+        "using-the-api/additional-data",
       ],
     },
     {
