@@ -17,7 +17,6 @@ Currently, the `PUT bankFeedAccounts` endpoint handles the creation and updates 
 
 This is a modification aimed at improving the clarity and reliability of our API. If you are utilizing the `PUT bankFeedAccounts` endpoint, you will need to update your workflows to use the new `POST bankFeedAccounts` endpoint for creating new bank feed accounts.
 
-The `PUT bankFeedAccounts` endpoint will be flagged as deprecated on the the public OAS documentation and will be removed on November 15th 2023. We recommend planning the transition to the new endpoint as early as possible.
 
 ## Expected impact if no action is taken​
 
