@@ -6,7 +6,7 @@ draft: false
 authors: jyorston
 ---
 
-Effective from November 15, 2023, Codat will be deprecating the `PUT bankFeedAccounts` endpoint and introducing a new `POST bankFeedAccounts` endpoint. Whilst the schema will be the same, the new endpoint will only allow the creation of a single new bank feed account and will return an error if the ID already exists for the data connection.
+On November 15, 2023, Codat will deprecate the `PUT bankFeedAccounts` endpoint and introduce a new `POST bankFeedAccounts` endpoint. Using the same schema, the new endpoint will allow the creation of a single new bank feed account only. It will return an error if the account ID already exists for the data connection.
 
 <!--truncate-->
 
