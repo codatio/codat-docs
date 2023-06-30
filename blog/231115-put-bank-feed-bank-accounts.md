@@ -15,7 +15,9 @@ Currently, the `PUT bankFeedAccounts` endpoint handles the creation and updates 
 
 ## Action required​
 
-This is a modification aimed at improving the clarity and reliability of our API. If you are utilizing the `PUT bankFeedAccounts` endpoint, you will need to update your workflows to use the new `POST bankFeedAccounts` endpoint for creating new bank feed accounts.
+This change improves the clarity and reliability of our API. If you use the `PUT bankFeedAccounts` endpoint, you will need to update your workflows to call the new `POST bankFeedAccounts` endpoint for creating new bank feed accounts instead.
+
+We recommend planning the transition to the new endpoint as early as possible.
 
 
 ## Expected impact if no action is taken​
