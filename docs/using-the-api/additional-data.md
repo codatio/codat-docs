@@ -1,5 +1,6 @@
 ---
 title: "Supplemental data"
+sidebar_label: "Supplemental data"
 description: "Retrieve and update additional fields from an integration using supplemental data"
 ---
 
@@ -18,7 +19,7 @@ We are rapidly expanding coverage across integrations and datatypes according to
 We currently cover the following integrations and data types:
  
 <iframe
-  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vToBP6lQMT_MrB8L5e_61w2LrmpoJPAVhxCVqCuoSpWgb6ga2hUXZHlLSdCr9jY_He1b-uYaDAnH6DV/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
+  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vToBP6lQMT_MrB8L5e_61w2LrmpoJPAVhxCVqCuoSpWgb6ga2hUXZHlLSdCr9jY_He1b-uYaDAnH6DV/pubhtml?widget=true&amp;headers=false"
   frameborder="0"
   style={{ top: 0, left: 0, width: "100%", height: "400px" }}
 ></iframe>
@@ -50,7 +51,7 @@ Within the request body, `PlatformEndpoint` and `PlatformPropertyName` parameter
     }
 }
 ```
-You can use dot notation to retrieve nested properties from within the supplemental data object. For example, maintain the followng configuration to retrieve the the `Name` value from Xero's `BrandingTheme` object with two properties, `BrandingThemeID` and `Name`.
+You can use dot notation to retrieve nested properties from within the supplemental data object. For example, maintain the following configuration to retrieve the `Name` value from Xero's `BrandingTheme` object with two properties, `BrandingThemeID` and `Name`.
 
 ```json title="Supplemental data configuration with dot notation"
 {
@@ -76,9 +77,11 @@ GET /integrations​/{platformKey}/datatypes/{datatype}/supplementalDataConfig
 
 Review the table below for platform endpoints we use in our data types, which are available for you to pull or send supplemental data. 
 
-| Data type      | Xero endpoints                                                    | QuickBooks Online endpoints | Netsuite endpoints |
-|----------------|-------------------------------------------------------------------|-----------------------------|--------------------|
-| `billPayments` | Payments, Overpayments,   PrePayments, BatchPayments, CreditNotes |                             |                    |
+<iframe
+  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIOf4fqpv6L2Phe3iz5nLMPDdBVaAuI3La5dTMTn58TZq_6395WtUsUq7s7jAbeq2vwuseiCzu5DZG/pubhtml?widget=true&amp;headers=false"
+  frameborder="0"
+  style={{ top: 0, left: 0, width: "100%", height: "400px" }}
+></iframe>
 
 ## Example properties
 
@@ -243,7 +246,7 @@ This section details some of the commonly requested supplemental data configurat
 
 ## Tips and pitfalls
 
-- Supplemental data is currently available only at record level and cannot be used to interact with line-level properties. 
+- Supplemental data is currently available only at the record level and cannot be used to interact with line-level properties. 
 
 - Data within the supplemental data object is not validated, manipulated, standardized, or transformed by Codat. 
 
@@ -251,6 +254,6 @@ This section details some of the commonly requested supplemental data configurat
 
 - When you add or change supplemental data configuration, the next sync of this data type will be a full sync by default to ensure that supplemental data is added to both new and previously synced records.
 
-- We expose the data sources available to interact with supplemental data, but request you to refer to the platforms' own documentation for details on available data and properties for each data source.
+- We expose the data sources available to interact with supplemental data but request you to refer to the platforms' own documentation for details on available data and properties for each data source.
 
 - Where we are unable to retrieve requested supplemental data, the fetch operation will still complete, but the supplemental properties will be null.
