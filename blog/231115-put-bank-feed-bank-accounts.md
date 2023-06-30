@@ -22,4 +22,4 @@ The `PUT bankFeedAccounts` endpoint will be flagged as deprecated on the the pub
 
 ## Expected impact if no action is taken​
 
-The `PUT bankFeedAccounts` endpoint will no longer be available after the deprecation period. If you continue to use this endpoint without transitioning to the new `POST bankFeedAccounts` endpoint, your requests for creating new bank feed accounts will fail.
+The `PUT bankFeedAccounts` endpoint will no longer be available after November 15, 2023. If you continue to use this endpoint, your requests for creating new bank feed accounts will fail.
