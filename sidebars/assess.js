@@ -67,6 +67,15 @@ module.exports = [
   },
   {
     type: "category",
+    label: "Liabilities",
+    collapsed: true,
+    items: [
+      { type: "link", label: "Loan summary", href: "/assess-api#/operations/get-loan-summary" },
+      { type: "link", label: "Loan transactions", href: "/assess-api#/operations/list-loan-transactions" },
+    ],
+  },
+  {
+    type: "category",
     label: "Data integrity",
     collapsed: true,
     items: [
