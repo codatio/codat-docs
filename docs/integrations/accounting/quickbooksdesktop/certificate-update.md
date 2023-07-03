@@ -1,5 +1,5 @@
 ---
-title: "QuickBooks Desktop (on-premise)"
+title: "QuickBooks Desktop - Certificate Update"
 description: "Action Required - Certificate Update"
 sidebar_label: "Action Required - Certificate Update"
 ---
