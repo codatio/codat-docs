@@ -734,11 +734,12 @@
     },
     "/companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts/{accountId}": {
       "patch": {
+        "deprecated": true,
         "tags": [
           "Bank feed accounts"
         ],
         "summary": "Update bank feed bank account",
-        "description": "Update a single BankFeed BankAccount for a single data source connected to a single company.",
+        "description": "﻿The *Update bank feed bank account* endpoint updates a single bank feed bank account for a single data source connected to a single company.",
         "operationId": "update-bank-feed",
         "parameters": [
           {
@@ -792,8 +793,8 @@
           "Bank feed accounts"
         ],
         "summary": "List bank feed bank accounts",
-        "description": "Get BankFeed BankAccounts for a single data source connected to a single company.",
-        "operationId": "get-bank-feeds",
+        "description": "﻿The *List bank feed bank accounts* endpoint returns a list of [bank feed accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankFeedAccount) for a given company's connection.\n\n[Bank feed accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankFeedAccount) are the bank's bank account from which transactions are synced into the accounting platform.\n\n",
+        "operationId": "list-bank-feeds",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -833,7 +834,6 @@
         "description": "Put BankFeed BankAccounts for a single data source connected to a single company.",
         "operationId": "put-bank-feed",
         "deprecated": true,
-        "x-speakeasy-ignore": true,
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -1024,7 +1024,7 @@
           "Bank account transactions"
         ],
         "summary": "List bank account transactions",
-        "description": "The *List account bank transactions* endpoint returns a list of [bank account transactions](https://docs.codat.io/accounting-api#/schemas/BankTransactions) for a given company's connection.\n\n[Bank account transactions](https://docs.codat.io/accounting-api#/schemas/BankTransactions) are records of money that has moved in and out of an SMB's bank account.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankTransactions) for integrations that support listing bank transactions.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n",
+        "description": "﻿The *List account bank transactions* endpoint returns a list of [bank account transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) for a given company's connection.\n\n[Bank account transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) are records of monetary amounts that have moved in and out of an SMB's bank account.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankTransactions) for integrations that support listing bank transactions.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n",
         "operationId": "list-bank-account-transactions",
         "parameters": [
           {
@@ -6520,9 +6520,8 @@
           "Bank account transactions"
         ],
         "summary": "Get create bank account transactions model",
-        "description": "The *Get create bank account transactions model* endpoint returns the expected data for the request payload when creating [bank account transactions](https://docs.codat.io/accounting-api#/schemas/BankTransactions) for a given company and integration.\n\n[Bank account transactions](https://docs.codat.io/accounting-api#/schemas/BankTransactions) are records of money that has moved in and out of an SMB's bank account.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankTransactions) for integrations that support creating an bank transaction.\n",
+        "description": "﻿The *Get create bank account transactions model* endpoint returns the expected data for the request payload when creating [bank account transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) for a given company and integration.\n\n[Bank account transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) are records of monetary amounts that have moved in and out of an SMB's bank account.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankTransactions) for integrations that support creating an bank transaction.\n",
         "operationId": "get-create-bank-transactions-model",
-        "x-extension-1": null,
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -6564,7 +6563,7 @@
           "Bank account transactions"
         ],
         "summary": "Create bank account transactions",
-        "description": "The *Create bank account transactions* endpoint creates new [bank account transactions](https://docs.codat.io/accounting-api#/schemas/BankTransactions) for a given company's connection.\n\n[Bank account transactions](https://docs.codat.io/accounting-api#/schemas/BankTransactions) are records of money that has moved in and out of an SMB's bank account.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create bank transaction model](https://docs.codat.io/accounting-api#/operations/get-create-bankTransactions-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankTransactions) for integrations that support creating a bank account transactions.\n",
+        "description": "﻿The *Create bank account transactions* endpoint creates new [bank account transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) for a given company's connection.\n\n[Bank account transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) are records of monetary amounts that have moved in and out of an SMB's bank account.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create bank transaction model](https://docs.codat.io/bank-feeds-api#/operations/get-create-bankTransactions-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankTransactions) for integrations that support creating a bank account transactions.\n",
         "operationId": "create-bank-transactions",
         "parameters": [
           {
@@ -6632,12 +6631,12 @@
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/proxy": {
-      "post": {
+      "get": {
         "tags": [
           "Connections"
         ],
         "summary": "Proxy",
-        "description": "A proxy or passthrough endpoint used to query unsupported third party endpoints.",
+        "description": "﻿The *Proxy* endpoint can be used to generate credentials from QuickBooks Online for authentication of the Bank Feed in their portal.\n\nSee the example provided for the `endpoint` query parameter when generating credentials for QuickBooks Online.",
         "operationId": "proxy",
         "parameters": [
           {
