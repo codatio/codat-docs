@@ -10,7 +10,7 @@ Once you have synced an expense transaction to your accounting platform, you can
 
 This saves your SMB customers’ time and helps reduce errors, because they won’t need to make changes to their expense management platform and their accounting package separately. 
 
-Use our [Endpoint name](endpoint link to API ref) to edit the following expense transaction metadata:
+Use our [update expense-transactions](https://docs.codat.io/sync-for-expenses-api#/operations/update-expense-dataset) endpoint to edit the following expense transaction metadata:
 - Net expense amount 
 - Tax amount of the spend
 - Tax rate reference associated with the spend
