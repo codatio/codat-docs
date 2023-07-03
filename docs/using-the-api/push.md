@@ -186,3 +186,7 @@ The list endpoint can be used to present to the user a list of recent push reque
 ### 2. Webhooks
 
 A second option for monitoring push operations is to register a subscription to the "Push status changed" rule. This can be configured by following the instructions in our documentation for [subscribing to rules](/introduction/webhooks/core-rules-create).
+
+## Resync Data
+
+Pushes which complete successfully will create or update the specific record in Codat's system, but will not update any *associated* records.  For example, if you create a payment against an invoice, the payment will be available from Codat once the push completes, but the invoice may still show a non-zero amountDue.  To view the fully updated associated records, you'll need to requeue the relevant datasets.
