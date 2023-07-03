@@ -59,6 +59,21 @@ If you try to queue a synchronization for a data type that is already in process
 
 Refreshing data can take different amounts of time depending on the integration and the amount of data being retrieved. You can use [webhooks](/introduction/webhooks/core-rules-types) to be updated when the operation completes.
 
+## Scheduled refresh
+
+Codat can also refresh data at a set schedule, based on the set 'Sync frequency' for each data type.
+
+### Sync frequency
+
+The most common, and recommended, sync frequency is Daily. It's the best middle ground for synchronising most data type while staying well within the rate limits for all accounting platforms.
+
+Some data types like company, tax rates and charts of accounts will rarely change (monthly if at all), but are so small to sync they have no performance impact.
+
+- **Hourly** - Hourly syncs are recommended for specific use cases only and may require consideration for the rate limits, e.g. invoices and payments for invoice financing.
+- **Daily** - Best middle ground for synchronising most data type while staying well within the rate limits for most accounting platforms.
+- **Weekly** - For data types of less important or unlikely to change.
+- **Monthly** - Similar to weekly, but also recommended for at least one data type (e.g. Company) to ensure connection token does not expire when not actively synchronising data (unless only a one-time sync is required).
+
 ---
 
 ## Read next

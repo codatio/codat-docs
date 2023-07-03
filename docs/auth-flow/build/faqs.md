@@ -3,9 +3,23 @@ title: "Auth flow FAQs"
 slug: "faqs"
 excerpt: "Hints, tips and answers on improving your bespoke auth flow experience"
 hidden: false
-createdAt: "2022-11-22T16:34:56.484Z"
-updatedAt: "2022-11-23T15:15:10.291Z"
 ---
+
+## Best Practices
+
+If an end user has linked before then the same company id should be used always, even if they deauthorize.
+Unless you are 100% sure you want to delete all history of things having happened in which case delete the company and remove the association.
+
+Where possible you should be using webhooks to be informed of when to fetch data, rather than polling our API for dataset status updates.
+This will allow you to fetch fresh data as soon as it is available as well as reduce the amount of calls being made to our API.
+
+We (currently) only support data access permissions, not data usage permissions.
+This means that the user can consent to us accessing their data as a whole, not which parts or what is done with it.
+If you want to manage how the data is used then they will need to manage the permissioning in their system.
+
+Consent is done via OAuth2 and it means until you revoke permission we will be able to access all of the end users data on an on-going basis.
+
+This data is also stored forever (until revoked) in our central data database. This means that it is always available to be accessed via our API and we don’t need to keep going to the accounting platform to get it (and thus not hitting rate limits).
 
 ### What do I do when my customer user doesn't have access to the sign in credentials for their accounting/banking/commerce platform?
 

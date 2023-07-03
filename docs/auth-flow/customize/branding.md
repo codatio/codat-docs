@@ -18,11 +18,21 @@ This logo appears in the navigation bar of Link, and on the on-premise connector
 
 Use PNG, JPEG, SVG, or GIF file formats and ensure the file size does not exceed 10MB. Recommended dimensions for the company logo are 600px x 100px.
 
+:::tip On-premise connectors
+
+This also sets the image that shows on connector screens displayed when users link on-premise applications, such as Sage 50 and QuickBooks Desktop to Codat.
+:::
+
 ### Set a company icon
 
 This icon (uploaded as a favicon) appears as the Link browser tab icon and on the on-premise connectors' system tray icon.
 
 Use ICO file format and ensure the file size does not exceed 500KB. Recommended dimensions for the company icon are 32px x 32px.
+
+:::tip On-premise connectors
+
+The connectors' system tray icon, which is displayed when an on-premise application is running in the background on a customer's computer.
+:::
 
 ### Set your brand colors
 
@@ -37,6 +47,7 @@ You can set your brand's primary color to define the color of buttons and other 
 
 Light colors may cause accessibility issues. For best results, use a dark primary color.
 :::
+
 
 ---
 
