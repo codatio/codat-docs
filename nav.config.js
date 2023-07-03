@@ -141,12 +141,6 @@ module.exports = {
           target: "_blank",
           rel: null,
         },
-        {
-          href: "https://codat.zendesk.com/hc/en-gb",
-          label: "Help center",
-          target: "_blank",
-          rel: null,
-        },
       ],
       className: "navbar__link--support",
     },
