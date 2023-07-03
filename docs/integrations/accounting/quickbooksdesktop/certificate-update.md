@@ -1,3 +1,9 @@
+---
+title: "QuickBooks Desktop (on-premise)"
+description: "Action Required - Certificate Update"
+sidebar_label: "Action Required - Certificate Update"
+---
+
 # ⚠️ Action Required - QuickBooks Desktop Connector Certificate Update ⚠️
  The certificate used to sign Codat's QuickBooks Desktop connector will be expiring on Wednesday the 16th of August, 2023.
 
