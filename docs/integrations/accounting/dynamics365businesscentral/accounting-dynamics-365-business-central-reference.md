@@ -53,3 +53,7 @@ Tracking categories are not updated on Bills when sending PUT or POST requests.
 To successfully pull Transfers from Business Central, you must have followed the guidance for entering transfers described in the Dynamics 365 documentation. For more information, see <a className="external" href="https://learn.microsoft.com/en-gb/dynamics365/business-central/bank-how-transfer-bank-funds" target="_blank">Transfer Bank Funds</a>.
 
 Codat only pulls Transfers that consist of exactly two journal entry lines (each of which impacts a bank account). A journal entry containing additional lines is not mapped to Codat as a Transfer.
+
+## Paying Multiple Invoices or Bills
+
+We do not currently support paying multiple invoices or bills, from a single payment or billPayment push. This means that the payloads of these objects must have a single line item. 
