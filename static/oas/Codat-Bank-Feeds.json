@@ -831,7 +831,9 @@
         ],
         "summary": "Create bank feed bank accounts",
         "description": "Put BankFeed BankAccounts for a single data source connected to a single company.",
-        "operationId": "create-bank-feed",
+        "operationId": "put-bank-feed",
+        "deprecated": true,
+        "x-speakeasy-ignore": true,
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -860,6 +862,70 @@
                 "examples": {}
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Bank feed accounts"
+        ],
+        "summary": "Create a bank feed bank account",
+        "description": "Post a BankFeed BankAccount for a single data source connected to a single company.",
+        "operationId": "create-bank-feed",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BankFeedAccount"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BankFeedAccount"
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "id": "acc-002",
+                      "accountName": "account-081",
+                      "sortCode": "123456",
+                      "accountType": "Credit",
+                      "accountNumber": "12345670",
+                      "currency": "GBP",
+                      "balance": 99.99,
+                      "modifiedDate": "2023-01-09T14:14:14.1057478Z",
+                      "status": "pending"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -7353,6 +7419,9 @@
               "description": {
                 "nullable": false,
                 "type": "string"
+              },
+              "balance": {
+                "type": "number"
               }
             }
           }

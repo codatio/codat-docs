@@ -773,6 +773,70 @@
         }
       }
     },
+    "/companies/{companyId}/sync/expenses/expense-transactions/{transactionId}": {
+      "parameters": [
+        {
+          "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1sync~1expenses~1syncs/parameters/0"
+        },
+        {
+          "$ref": "#/components/parameters/transactionId"
+        }
+      ],
+      "put": {
+        "summary": "Update expense-transactions",
+        "tags": [
+          "Expenses"
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "syncId": {
+                      "type": "string"
+                    }
+                  },
+                  "examples": {
+                    "Example 1": {
+                      "syncId": "1ad0695c-4566-4715-918c-adbb03eac81e"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "422": {
+            "$ref": "#/components/responses/Unprocessable-Content"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "operationId": "update-expense-dataset",
+        "description": "Update an expense transaction",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateExpenseRequest"
+              }
+            }
+          }
+        }
+      }
+    },
     "/companies/{companyId}/sync/expenses/syncs/{syncId}/transactions/{transactionId}/attachments": {
       "parameters": [
         {
@@ -1904,6 +1968,72 @@
             "format": "uri-reference"
           }
         }
+      },
+      "UpdateExpenseRequest": {
+        "title": "Updating Expense Transaction Request",
+        "type": "object",
+        "examples": {
+          "Payment": {
+            "value": {
+              "type": "Payment",
+              "issueDate": "2023-05-22T00:00:00+00:00",
+              "currency": "GBP",
+              "notes": "New notes",
+              "merchantName": "My Merchant"
+            }
+          }
+        },
+        "properties": {
+          "type": "#/definitions/expenseType",
+          "issueDate": {
+            "type": "string",
+            "description": "Date the transaction was recorded.",
+            "example": "2022-06-28T00:00:00.000Z"
+          },
+          "currency": {
+            "type": "string",
+            "example": "GBP",
+            "description": "Currency the transaction was recorded in."
+          },
+          "notes": {
+            "type": "string",
+            "description": "Any private, company notes about the transaction.",
+            "example": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
+          },
+          "merchantName": {
+            "type": "string",
+            "description": "Name of the merchant where the purchase took place",
+            "example": "Amazon UK"
+          },
+          "lines": {
+            "type": "array",
+            "description": "Array of transaction lines.",
+            "items": {
+              "$ref": "#/components/schemas/ExpenseTransactionLine"
+            }
+          }
+        },
+        "definitions": {
+          "expenseType": {
+            "description": "The type of transaction.",
+            "type": "string",
+            "example": "Payment",
+            "enum": [
+              "Payment",
+              "Refund",
+              "Reward",
+              "Chargeback",
+              "TransferIn",
+              "TransferOut",
+              "AdjustmentIn",
+              "AdjustmentOut"
+            ]
+          }
+        },
+        "required": [
+          "type",
+          "issueDate"
+        ]
       }
     },
     "parameters": {
@@ -2096,6 +2226,28 @@
                   "service": "PublicApi",
                   "error": "You have made too many requests in a given amount of time; please retry later.",
                   "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Unprocessable-Content": {
+        "description": "The requests made can't be processed. This may be due to differences in platform support.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 422,
+                  "service": "ExpenseSyncApi",
+                  "error": "Expense transaction updates are not supported for platforms other than Xero.",
+                  "correlationId": "7c8e23841d211c87f49f30b248f70c93",
                   "canBeRetried": "Unknown",
                   "detailedErrorCode": 0
                 }
