@@ -1,7 +1,7 @@
 ---
 title: "Supplemental data"
 sidebar_label: "Supplemental data"
-description: "Retrieve and update additional fields from an integration using supplemental data"
+description: "Customize data types with additional fields not present in Codat's out-of-the box data models"
 ---
 
 ## What is supplemental data?
@@ -51,14 +51,15 @@ Within the request body, `PlatformEndpoint` and `PlatformPropertyName` parameter
     }
 }
 ```
-You can use dot notation to retrieve nested properties from within the supplemental data object. For example, maintain the following configuration to retrieve the `Name` value from Xero's `BrandingTheme` object with two properties, `BrandingThemeID` and `Name`.
+You can use dot notation to retrieve nested properties from within the supplemental data object. For example, maintain the following configuration to retrieve the supplier's `Name` value from Xero's `BrandingTheme` object with two properties, `BrandingThemeID` and `Name`, along with their `BankAccountDetails`.
 
 ```json title="Supplemental data configuration with dot notation"
 {
     "supplementalDataConfig": {
-        "client-Keyname-For-Xero-suppliers": {
+        "yourKeyNameForXeroSuppliers": {
             "dataSource": "/Contacts",
             "pullData": {
+                "SupplierBankAccount": "BankAccountDetails",
                 "BrandingThemeName": "BrandingTheme.Name"
             }
         }
@@ -66,183 +67,20 @@ You can use dot notation to retrieve nested properties from within the supplemen
 }
 ```
 
-You can also retrieve your existing supplemental data configuration by using the [endpoint name]/endpoint link endpoint:
+Refer to our [API reference](https://docs.codat.io/codat-api#/) for examples of configuration for popular properties of various integrations. You can also retrieve your existing supplemental data configuration by using the [endpoint name]/endpoint link endpoint:
 ```http
 GET /integrations​/{platformKey}/datatypes/{datatype}/supplementalDataConfig
 ```
 
-## Codat to platform endpoint mapping
+## Platform endpoint mapping
 
-**EVERYTHING IN THIS SECTION SHOULD GO TO THE OAS**
-
-Review the table below for platform endpoints we use in our data types, which are available for you to pull or send supplemental data. 
+Review the table below for platform endpoints we use in our data types, which are available for you to pull or send supplemental data. Refer to to the platform's individual documentation (for example, [Xero](https://developer.xero.com/documentation/api/accounting/overview) or [QBO](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/most-commonly-used/account) for further details of their endpoints).
 
 <iframe
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIOf4fqpv6L2Phe3iz5nLMPDdBVaAuI3La5dTMTn58TZq_6395WtUsUq7s7jAbeq2vwuseiCzu5DZG/pubhtml?widget=true&amp;headers=false"
   frameborder="0"
   style={{ top: 0, left: 0, width: "100%", height: "400px" }}
 ></iframe>
-
-## Example properties
-
-**EVERYTHING IN THIS SECTION SHOULD GO TO THE OAS**
-
-This section details some of the commonly requested supplemental data configurations per platform.
-
-### Xero
-
-- [Accounts](https://developer.xero.com/documentation/api/accounting/accounts) endpoint
-
-| Property        | Description                                                    |
-|-----------------|----------------------------------------------------------------|
-| `TaxType`       | See default tax rate associated with the account               |
-| `SystemAccount` | See if the account is a System Account and, if so, which type  |
-
-```json title="Example configuration"
-{
-    "supplementalDataConfig": {
-        "client-keyname-for-accounts": {
-            "dataSource": "/Accounts",
-            "pullData": {
-                "ClientNameForTaxType":"TaxType",
-                "ClientNameForSystemAccount": "SystemAccount"
-            }
-        }
-    }
-}
-```
-
-- [Invoices](https://developer.xero.com/documentation/api/accounting/invoices) endpoint
-
-| Property              | Description                                                                            |
-|-----------------------|----------------------------------------------------------------------------------------|
-| `ExpectedPaymentDate` | Displayed on the invoice if the expected   payment date has been set                   |
-| `HasAttachments`      | Boolean value to indicate if invoice has an attachment                                 |
-| `SentToContact`       | Boolean value to indicate whether the approved invoice has been sent to   the customer |
-| `Reference`           | Display an additional external reference for   the invoice                             |
-
-```json title="Example configuration"
-{
-    "supplementalDataConfig": {
-        "client-keyname-for-xero-invoices": {
-            "dataSource": "/Invoices",
-            "pullData": {
-                "ClientNameForExpectedPaymentDate": "ExpectedPaymentDate",
-                "ClientNameForHasAttachments": "HasAttachments"
-            }
-        }
-    }
-}
-```
-
-- [Items](https://developer.xero.com/documentation/api/accounting/items) endpoint
-
-| Property              | Description                                                                      |
-|-----------------------|----------------------------------------------------------------------------------|
-| `QuantityOnHand`      | Shows the quantity of the item on hand                                           |
-| `TotalCostPool`       | Shows the value of the item on hand. Calculated using average cost   accounting. |
-
-```json title="Example configuration"
-{
-    "supplementalDataConfig": {
-        "client-keyname-for-items": {
-            "dataSource": "/Items",
-            "pullData": {
-                "ClientNameForQuantityOnHand":"QuantityOnHand",
-                "ClientNameForTotalCostPool":"TotalCostPool"
-            }
-        }
-    }
-}
-```
-
-- [Contacts](https://developer.xero.com/documentation/api/accounting/contacts) endpoint
-
-| Property             | Description                                                                      |
-|----------------------|----------------------------------------------------------------------------------|
-| `BankAccountDetails` | Returns the bank account number of supplier                                      |
-
-```json title="Example configuration"
-{
-    "supplementalDataConfig": {
-        "client-Keyname-For-Xero-suppliers": {
-            "dataSource": "/Contacts",
-            "pullData": {
-                "ClientNameForBankAccounts": "BankAccountDetails"
-            }
-        }
-    }
-}
-```
-
-- [Tax rates](https://developer.xero.com/documentation/api/accounting/taxrates) endpoint
-
-| Property                | Description                                                        |
-|-------------------------|--------------------------------------------------------------------|
-| `CanApplyToAssets`      | Boolean to describe if tax rate can be used   for asset accounts   |
-| `CanApplyToEquity`      | Boolean to describe if tax rate can be used for equity   accounts  |
-| `CanApplyToExpenses`    | Boolean to describe if tax rate can be used for expense accounts   |
-| `CanApplyToLiabilities` | Boolean to describe if tax rate can be used for liability accounts |
-| `CanApplyToRevenue`     | Boolean to describe if tax rate can be used for revenue accounts   |
-
-```json title="Example configuration"
-{
-    "supplementalDataConfig": {
-        "client-keyname-for-tax-rates": {
-            "dataSource": "/TaxRates",
-            "pullData": {
-                "ClientNameForCanApplyToLiabilities":"CanApplyToLiabilities",
-                "ClientNameForCanApplyToAssets": "CanApplyToAssets",
-                "ClientNameForCanApplyToEquity": "CanApplyToEquity",
-                "ClientNameForCanApplyToExpenses": "CanApplyToExpenses",
-                "ClientNameForCanApplyToRevenue": "CanApplyToRevenue"
-            }
-        }
-    }
-}
-```
-
-### QuickBooks Online
-
-- [Customers](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/customer) endpoint
-
-| Property        | Description                                                    |
-|-----------------|----------------------------------------------------------------|
-| `SalesTermRef`       | Reference to the Sales Terms associated with this customer               |
-| `ParentRef` | Reference to a customer that is the immediate parent of this sub-customer |
-
-```json title="Example configuration"
-{
-    "supplementalDataConfig": {
-        "Client-keyname-for-QBO-customers": {
-            "dataSource": "/Customer",
-            "pullData": {
-                "ClientNameForSalesTermRef":"SalesTermRef.value",
-                "ClientNameForParentRef": "ParentRef.value"
-            }
-        }
-    }
-}
-```
-
-- [Invoices](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/invoice) endpoint
-
-| Property        | Description                                                    |
-|-----------------|----------------------------------------------------------------|
-| `SalesTermRef`       | Reference to the Sales Terms associated with this Invoice               |
-
-```json title="Example configuration"
-{
-    "supplementalDataConfig": {
-        "client-keyname-for-qbo-invoices": {
-            "dataSource": "/Invoice",
-            "pullData": {
-                "salesTermRef": "SalesTermRef.value"
-            }
-        }
-    }
-}
-```
 
 ## Tips and pitfalls
 
