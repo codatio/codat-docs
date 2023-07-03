@@ -54,6 +54,6 @@ To successfully pull Transfers from Business Central, you must have followed the
 
 Codat only pulls Transfers that consist of exactly two journal entry lines (each of which impacts a bank account). A journal entry containing additional lines is not mapped to Codat as a Transfer.
 
-## Paying Multiple Invoices or Bills
+## Paying multiple invoices or bills
 
 We do not currently support paying multiple invoices or bills, from a single payment or billPayment push. This means that the payloads of these objects must have a single line item. 
