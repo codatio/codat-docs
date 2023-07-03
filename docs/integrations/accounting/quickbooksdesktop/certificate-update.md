@@ -78,4 +78,4 @@ The UI will display an error message saying `Timed out attempting to communicate
 
 The user will have to launch QuickBooks Desktop, open the correct company file and approve access, at which point they will be prompted to approve access and can proceed with the steps as seen in flow 2.
 
-Note: This prompt may take a few moments to appear, but can be prompted by clicking the `Perform Sync` button in the Connector UI.
+Note: This prompt may take a few moments to appear, but can be triggered by clicking the `Perform Sync` button in the Connector UI.
