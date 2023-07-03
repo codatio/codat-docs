@@ -97,7 +97,7 @@ Edit > Preferences > Integrated Applications > Company Preferences
 
 You will then need to select the application named 'QuickBooks Connector' and click remove.
 
-Once you have removed the certificate, you can then re-run the installation process for the connector - either by running the downloaded (this might be in the downloads folder and might be named <your company>-quickbooksdesktop-connector) or alternatively by re-visiting the connector download page. During the installation process you will then receive a prompt asking for permission from the application certificate.
+Once you have removed the certificate, you can then re-run the installation process for the connector - either by running the downloaded (this might be in the downloads folder and might be named `YOUR_COMPANY-quickbooksdesktop-connector`) or alternatively by re-visiting the connector download page. During the installation process you will then receive a prompt asking for permission from the application certificate.
 
 ## Whitelisting
 
@@ -113,7 +113,7 @@ To white-list the connector folder, your users should:
 
 Open their Webroot SecureAnywhere Desktop app and click on Settings icon in the PC Security section.
 Navigate to the 'Whitelisted Scripts' tab and click on Advanced Whitelist
-Using the tree hierarchy, select the folder in which the connector has been installed (C:\Users\<YourUsername>\AppData\Local\Codat) and click Select.
+Using the tree hierarchy, select the folder in which the connector has been installed (C:\Users\YOUR_USERNAME\AppData\Local\Codat) and click Select.
 
 *Note: We recommend that the user selects the whole folder and not just individual connector locations. *
 

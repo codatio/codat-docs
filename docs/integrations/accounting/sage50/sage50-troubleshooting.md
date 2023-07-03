@@ -39,7 +39,7 @@ To white-list the connector folder, your users should:
 2. Click on Settings.
 3. Go to General > Exceptions and click on 'Add Exception'
 4. Click on Browse
-5. Using the tree hierarchy, select the folder in which the connector has been installed (C:\Users\<YourUsername>\AppData\Local\Codat) and click OK.
+5. Using the tree hierarchy, select the folder in which the connector has been installed (`C:\Users\YOUR_USERNAME\AppData\Local\Codat`) and click OK.
 
 *Note: We recommend that the user selects the whole folder and not just individual connector locations. *
 Double-check that the folder where the connector is located is displayed in the list and close the Avast! Dashboard
@@ -57,7 +57,7 @@ To white-list the connector folder, your users should:
 
 Open their Webroot SecureAnywhere Desktop app and click on Settings icon in the PC Security section.
 Navigate to the 'Whitelisted Scripts' tab and click on Advanced Whitelist
-Using the tree hierarchy, select the folder in which the connector has been installed (C:\Users\<YourUsername>\AppData\Local\Codat) and click Select.
+Using the tree hierarchy, select the folder in which the connector has been installed (`C:\Users\YOUR_USERNAME\AppData\Local\Codat`) and click Select.
 
 *Note: We recommend that the user selects the whole folder and not just individual connector locations. *
 
