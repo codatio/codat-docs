@@ -26,6 +26,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import renderRoutes from '@docusaurus/renderRoutes';
 import type {PropVersionMetadata} from '@docusaurus/plugin-content-docs-types';
 
+import ApiStatus from '@components/global/ApiStatus';
+
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
@@ -41,9 +43,8 @@ function DocPageContent(props: DocPageContentProps): JSX.Element {
     versionMetadata,
     children,
   } = props
-  const {pluginId, version} = versionMetadata;
 
-  console.log(props)
+  const {pluginId, version} = versionMetadata;
 
   const sidebarName = currentDocRoute.sidebar;
   const sidebar = sidebarName
@@ -69,7 +70,10 @@ function DocPageContent(props: DocPageContentProps): JSX.Element {
       pageClassName={ThemeClassNames.page.docsDocPage}
       searchMetadata={{
         version,
-      }}>
+      }}
+    >
+      <ApiStatus/>
+
       <div className={clsx(styles.docPage, renderAPI)}>
         <BackToTopButton />
 
@@ -158,7 +162,7 @@ function DocPage(props: Props): JSX.Element {
     versionMetadata,
     location,
   } = props;
-  console.log(props)
+
   const currentDocRoute = docRoutes.find((docRoute) =>
     matchPath(location.pathname, docRoute),
   );

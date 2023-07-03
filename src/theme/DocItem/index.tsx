@@ -8,9 +8,7 @@
 import React from 'react';
 
 import DocPaginator from '@theme/DocPaginator';
-//import Seo from '@theme/Seo';
 import type {Props} from '@theme/DocItem';
-//import DocItemFooter from '@theme/DocItemFooter';
 import TOC from '@theme/TOC';
 import TOCCollapsible from '@theme/TOCCollapsible';
 
