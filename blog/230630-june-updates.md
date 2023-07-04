@@ -67,7 +67,6 @@ With the addition of our new feature, your users can update the following metada
 - Tracking category objects
 - Description & notes
 
-This latest addition to Sync for Expenses means that your users can update their expenses without having to duplicate the work in Xero. 
 
 Codat is now able to support users when they need to update the following  expense metadata in Xero: 
 - Net expense amount
