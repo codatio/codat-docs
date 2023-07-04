@@ -82,3 +82,17 @@ When you are ready to connect to live data, you will need to request access from
 2. Select **Migrate to Production** and follow the process to request access to the Plaid production environment, and to get your secure credentials.
 3. Once you have your Production Secret, enter it in the box for the Production Secret within the Plaid configuration page in the Codat Portal.
 4. Please note that the Country Codes default value in Plaid's Production environment is the following: `US,CA`.
+
+## Customizing Plaid's Link
+
+You are able to customise your Plaid link journey and utilise the customised version in the link flow powered by Codat.
+
+Log into https://dashboard.plaid.com/link
+
+Create a new config by clicking the dropdown. Make note of the 'Name' and countries you choose as we will use these later.
+
+On the left bar, navigate to Institution Select and set the institutions you would like to appear. Click Publish Changes.
+
+Log into the Codat Portal and navigate to Integrations > Banking > Plaid > Manage.
+
+Enter the country code for the selected countries, and the Name which you chose earlier.
