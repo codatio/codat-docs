@@ -26,7 +26,7 @@ We currently cover the following integrations and data types:
 
 ## How do I configure supplemental data?
 
-You'll need to specify what supplemental data should be passed in the response for each integration and data type pair you require. To do so, use the [endpoint name]/endpoint link.
+You'll need to specify what supplemental data should be passed in the response for each integration and data type pair you require. To do so, use the [Configure supplemental data](/codat-api#/operations/configure-supplemental-data) endpoint.
 
 ```http
 /integrations/{platformKey}/datatypes/{datatype}/supplementalDataConfig
@@ -67,14 +67,15 @@ You can use dot notation to retrieve nested properties from within the supplemen
 }
 ```
 
-Refer to our [API reference](https://docs.codat.io/codat-api#/) for examples of configuration for popular properties of various integrations. You can also retrieve your existing supplemental data configuration by using the [endpoint name]/endpoint link endpoint:
+Refer to our [API reference](/codat-api#/operations/configure-supplemental-data) for examples of configuration for popular properties of various integrations. You can also retrieve your existing supplemental data configuration by using the [Get supplemental data configuration](/codat-api#/operations/get-supplemental-data-configuration) endpoint:
+
 ```http
 GET /integrations​/{platformKey}/datatypes/{datatype}/supplementalDataConfig
 ```
 
 ## Platform endpoint mapping
 
-Review the table below for platform endpoints we use in our data types, which are available for you to pull or send supplemental data. Refer to to the platform's individual documentation (for example, [Xero](https://developer.xero.com/documentation/api/accounting/overview) or [QBO](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/most-commonly-used/account)) for further details of their endpoints.
+Review the table below for platform endpoints we use in our data types, which are available for you to pull or send supplemental data. Refer to to the platform's individual documentation (for example, [Xero](https://developer.xero.com/documentation/api/accounting/overview) or [QBO](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/most-commonly-used/account)) for further details of their endpoints and field coverage.
 
 <iframe
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIOf4fqpv6L2Phe3iz5nLMPDdBVaAuI3La5dTMTn58TZq_6395WtUsUq7s7jAbeq2vwuseiCzu5DZG/pubhtml?widget=true&amp;headers=false"
