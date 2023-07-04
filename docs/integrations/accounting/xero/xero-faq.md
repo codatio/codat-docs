@@ -1,7 +1,7 @@
 ---
-title: "Xero Troubleshooting"
+title: "Xero troubleshooting"
 sidebar_label: Troubleshooting
-description: "Frequently asked questions about our Xero integration."
+description: "Frequently asked questions and troubleshooting guidance for our Xero integration"
 createdAt: "2019-07-17T14:20:47.797Z"
 updatedAt: "2023-01-16T18:05:01.158Z"
 ---

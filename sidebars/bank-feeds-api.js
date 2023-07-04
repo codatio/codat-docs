@@ -54,6 +54,7 @@ module.exports = [
       "bank-feeds-api/xero-bank-feeds/xero-bank-feeds-setup",
       "bank-feeds-api/xero-bank-feeds/xero-bank-feeds-smb-user",
       "bank-feeds-api/xero-bank-feeds/xero-bank-feeds-push-bank-transactions",
+      "bank-feeds-api/xero-bank-feeds/xero-bank-feeds-partner",
     ],
   },
   {
