@@ -2,8 +2,6 @@
 title: "Optimize your auth flow"
 sidebar_label: Overview
 description: "Best practices to improve your customer's authorization journey experience"
-createdAt: "2022-05-11T12:33:51.480Z"
-updatedAt: "2023-01-16T10:52:25.792Z"
 ---
 
 Simply allowing your SMB customers to connect their accounts is just the beginning. Now you should optimize your flow to ensure connectivity with your customers.

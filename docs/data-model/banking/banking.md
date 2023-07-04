@@ -2,8 +2,6 @@
 title: "Banking data types"
 sidebar_label: Data types
 description: "Connect to your SMB customers' banking data"
-createdAt: "2022-03-12T12:30:31.038Z"
-updatedAt: "2022-11-23T14:24:07.783Z"
 ---
 
 import DataTypes from '@components/global/DataTypes'

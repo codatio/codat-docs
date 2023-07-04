@@ -3,8 +3,6 @@ title: "Build your own auth flow"
 sidebar_label: Overview
 excerpt: "Explore how to create your own journey to connect your customers' financial platforms"
 hidden: false
-createdAt: "2022-06-28T14:27:30.620Z"
-updatedAt: "2022-11-14T17:52:05.345Z"
 ---
 
 Codat provides a series of endpoints that allow you to build the journey for your business customers to connect their financial platforms.

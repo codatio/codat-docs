@@ -1,8 +1,6 @@
 ---
 title: "Use your Sage Bank Feeds integration"
 description: "Learn how to push your SMB users' bank transactions to Codat via our Sage Bank Feeds integration"
-createdAt: "2022-10-06T10:41:35.980Z"
-updatedAt: "2023-01-10T14:18:49.033Z"
 ---
 
 When you've set up the Sage Bank Feeds integration and your SMB customer has connected a source bank account to a Sage product, you can start to push bank transactions to a target bank account.

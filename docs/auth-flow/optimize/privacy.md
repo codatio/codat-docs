@@ -1,8 +1,6 @@
 ---
 title: "Privacy, trust, and support"
 description: "Provide a detailed, clear, and honest explanation of how customers' data will be shared and used"
-createdAt: "2022-06-16T06:14:44.550Z"
-updatedAt: "2022-12-19T06:03:14.476Z"
 ---
 
 Transparency leads to trust. Trust leads to consent. Consent results in your customers getting value from their connected data.

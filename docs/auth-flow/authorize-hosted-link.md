@@ -2,8 +2,6 @@
 title: "Authorize with Hosted Link"
 sidebar_label: Overview
 description: "Choose how to integrate Hosted Link into your authorization flow"
-createdAt: "2022-10-03T15:09:17.646Z"
-updatedAt: "2022-11-23T13:59:04.149Z"
 ---
 
 <Head>

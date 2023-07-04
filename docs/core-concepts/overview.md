@@ -2,8 +2,6 @@
 title: "Learn the basics"
 sidebar_label: "Overview"
 description: "Understand the core concepts of Codat"
-createdAt: "2019-02-19T11:23:34.715Z"
-updatedAt: "2022-10-11T09:52:16.189Z"
 tags:
   - Core concept
 ---

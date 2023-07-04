@@ -1,8 +1,6 @@
 ---
 title: "Value exchange"
 description: "Communicate the benefits customers can receive from connecting their data"
-createdAt: "2022-06-10T22:47:32.026Z"
-updatedAt: "2022-10-20T15:21:34.752Z"
 ---
 
 The value exchange is maybe the single most important part of your implementation. It intercepts your customer at their decision point, explaining why they would benefit from connecting their accounts.

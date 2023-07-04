@@ -1,8 +1,6 @@
 ---
 title: "Platform selection"
 description: "Streamline the platform selection flow to increase conversion"
-createdAt: "2022-06-16T06:35:34.305Z"
-updatedAt: "2022-10-20T15:24:34.963Z"
 ---
 
 The platform selection stage is the pivotal moment where your customers need to easily find the software they use and are ready to connect. Getting this right is critical to give your customers the best chance of connectivity.
