@@ -94,6 +94,10 @@
     {
       "name": "Push data",
       "description": "View push options and get push statuses."
+    },
+    {
+      "name": "Supplemental data",
+      "description": "View and configure supplemental data for supported data types."
     }
   ],
   "paths": {
@@ -1666,6 +1670,195 @@
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
           }
+        }
+      }
+    },
+    "/integrations/{platformKey}/datatypes/{dataType}/supplementalDataConfig": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "platformKey",
+          "in": "path",
+          "required": true
+        },
+        {
+          "name": "dataType",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "x-internal": true,
+            "type": "string",
+            "description": "Data types that support supplemental data",
+            "enum": [
+              "chartOfAccounts",
+              "bills",
+              "company",
+              "creditNotes",
+              "customers",
+              "invoices",
+              "items",
+              "journalEntries",
+              "suppliers",
+              "taxRates",
+              "commerce-companyInfo",
+              "commerce-customers",
+              "commerce-disputes",
+              "commerce-locations",
+              "commerce-orders",
+              "commerce-payments",
+              "commerce-paymentMethods",
+              "commerce-products",
+              "commerce-productCategories",
+              "commerce-taxComponents",
+              "commerce-transactions"
+            ],
+            "example": "invoices"
+          }
+        }
+      ],
+      "get": {
+        "summary": "Get configuration",
+        "description": "The *Get configuration* endpoint returns supplemental data configuration previously created for each integration and data type combination.\n\n[Supplemental data](https://docs.codat.io/using-the-api/additional-data) is additional data you can include in Codat's standard data types.",
+        "operationId": "get-supplemental-data-configuration",
+        "x-speakeasy-name-override": "get-configuration",
+        "tags": [
+          "Supplemental data"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplementalDataConfiguration"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      },
+      "put": {
+        "summary": "Configure",
+        "description": "The *Configure* endpoint allows you to maintain or change configuration required to return supplemental data for each integration and data type combination.\n\n[Supplemental data](https://docs.codat.io/using-the-api/additional-data) is additional data you can include in Codat's standard data types.\n\n**Integration-specific behaviour**\nSee the *examples* for integration-specific frequently requested properties.",
+        "operationId": "configure-supplemental-data",
+        "x-speakeasy-name-override": "configure",
+        "tags": [
+          "Supplemental data"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SupplementalDataConfiguration"
+              },
+              "examples": {
+                "Xero - Accounts": {
+                  "value": {
+                    "yourKeyNameForAccounts": {
+                      "dataSource": "/Accounts",
+                      "pullData": {
+                        "yourNameForTaxType": "TaxType",
+                        "yourNameForSystemAccount": "SystemAccount"
+                      }
+                    }
+                  }
+                },
+                "Xero - Invoices": {
+                  "value": {
+                    "yourKeyNameForInvoices": {
+                      "dataSource": "/Invoices",
+                      "pullData": {
+                        "yourNameForExpectedPaymentDate": "ExpectedPaymentDate",
+                        "yourNameForHasAttachments": "HasAttachments"
+                      }
+                    }
+                  }
+                },
+                "Xero - Items": {
+                  "value": {
+                    "yourKeyNameForItems": {
+                      "dataSource": "/Items",
+                      "pullData": {
+                        "yourNameForQuantityOnHand": "QuantityOnHand",
+                        "yourNameForTotalCostPool": "TotalCostPool"
+                      }
+                    }
+                  }
+                },
+                "Xero - Contacts": {
+                  "value": {
+                    "yourKeyNameForContacts": {
+                      "dataSource": "/Contacts",
+                      "pullData": {
+                        "yourNameForBankAccounts": "BankAccountDetails"
+                      }
+                    }
+                  }
+                },
+                "Xero - Tax rates": {
+                  "value": {
+                    "yourKeyNameForTaxRates": {
+                      "dataSource": "/TaxRates",
+                      "pullData": {
+                        "yourNameForCanApplyToLiabilities": "CanApplyToLiabilities",
+                        "yourNameForCanApplyToAssets": "CanApplyToAssets",
+                        "yourNameForCanApplyToEquity": "CanApplyToEquity",
+                        "yourNameForCanApplyToExpenses": "CanApplyToExpenses",
+                        "yourNameForCanApplyToRevenue": "CanApplyToRevenue"
+                      }
+                    }
+                  }
+                },
+                "QBO - Customers": {
+                  "value": {
+                    "yourKeyNameForCustomers": {
+                      "dataSource": "/Customer",
+                      "pullData": {
+                        "yourNameForSalesTermRef": "SalesTermRef.value",
+                        "yourNameForParentRef": "ParentRef.value"
+                      }
+                    }
+                  }
+                },
+                "QBO - Invoices": {
+                  "value": {
+                    "yourKeyNameForInvoices": {
+                      "dataSource": "/Invoice",
+                      "pullData": {
+                        "yourNameForSalesTermRef": "SalesTermRef.value"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "description": "The configuration for the specified platform and data type."
         }
       }
     }
@@ -3637,6 +3830,51 @@
               "dataType": "payments",
               "datasetStatus": "ProcessingError",
               "datasetId": "6586f21b-ad4d-4d06-a309-712af47184a2"
+            }
+          }
+        ]
+      },
+      "SupplementalDataConfiguration": {
+        "description": "",
+        "title": "Supplemental data configuration",
+        "type": "object",
+        "additionalProperties": {
+          "type": "object",
+          "title": "Supplemental data source configuration",
+          "description": "The client's defined name for the object.",
+          "properties": {
+            "dataSource": {
+              "type": "string",
+              "description": "The underlying endpoint of the source system which the configuration is targeting. "
+            },
+            "pullData": {
+              "type": "object",
+              "description": "The additional properties that are required when pulling records.",
+              "additionalProperties": {
+                "type": "string",
+                "description": "The client's defined name for the property with the value being the source system's property name which the mapping is targeting."
+              }
+            },
+            "pushData": {
+              "type": "object",
+              "description": "The additional properties that are required to create and/or update records.",
+              "additionalProperties": {
+                "type": "string",
+                "description": "The client's defined name for the property with the value being the source system's property name which the mapping is targeting."
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "orders-supplemental-data": {
+              "dataSource": "/orders",
+              "pullData": {
+                "orderNumber": "order_num"
+              },
+              "pushData": {
+                "orderNumber": "order_num"
+              }
             }
           }
         ]

@@ -7508,6 +7508,9 @@
                   "url1": "https://connect.sandbox.com/v2/customers",
                   "url2": "https://connect.sandbox.com/v2/disputes"
                 }
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/Address/properties/supplementalData"
               }
             }
           },
@@ -7595,6 +7598,9 @@
               "note": {
                 "type": "string",
                 "description": "Any additional information about the customer"
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/Address/properties/supplementalData"
               }
             }
           },
@@ -7787,6 +7793,9 @@
               "dueDate": {
                 "description": "Date when the next action in the dispute resolution is due",
                 "$ref": "#/components/schemas/DateTime"
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/Address/properties/supplementalData"
               }
             }
           },
@@ -7880,20 +7889,6 @@
           },
           {
             "$ref": "#/components/schemas/ModifiedDates"
-          },
-          {
-            "type": "object",
-            "description": "Reference to a configured dynamic key value pair that is unique to the accounting platform. This feature is in private beta, contact us if you would like to learn more.",
-            "properties": {
-              "content": {
-                "type": "object",
-                "additionalProperties": {
-                  "type": "object",
-                  "additionalProperties": {}
-                },
-                "nullable": true
-              }
-            }
           }
         ],
         "definitions": {
@@ -8063,6 +8058,9 @@
               },
               "customerRef": {
                 "$ref": "#/components/schemas/Customer/definitions/customerRef"
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/Address/properties/supplementalData"
               }
             }
           },
@@ -8367,6 +8365,9 @@
               "dueDate": {
                 "description": "Date by which payment must be made",
                 "$ref": "#/components/schemas/DateTime"
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/Address/properties/supplementalData"
               }
             }
           },
@@ -8503,6 +8504,9 @@
               },
               "status": {
                 "$ref": "#/components/schemas/PaymentMethod/definitions/paymentMethodStatus"
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/Address/properties/supplementalData"
               }
             }
           },
@@ -8610,6 +8614,9 @@
                 "items": {
                   "$ref": "#/components/schemas/Product/definitions/productVariant"
                 }
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/Address/properties/supplementalData"
               }
             }
           }
@@ -8851,6 +8858,9 @@
               "hasChildren": {
                 "type": "boolean",
                 "description": "A boolean indicating whether there are other product categories beneath this one in the hierarchy."
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/Address/properties/supplementalData"
               }
             }
           },
@@ -8954,6 +8964,9 @@
                   true,
                   false
                 ]
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/Address/properties/supplementalData"
               }
             }
           },
@@ -9084,6 +9097,9 @@
                     "$ref": "#/components/schemas/Transaction/definitions/transactionSourceRef"
                   }
                 ]
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/Address/properties/supplementalData"
               }
             }
           },
@@ -9218,6 +9234,21 @@
           "postalCode": {
             "description": "The postal (or zip) code for the address",
             "type": "string"
+          },
+          "supplementalData": {
+            "type": "object",
+            "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting platform. [Learn more](https://docs.codat.io/using-the-api/additional-data) about supplemental data.",
+            "properties": {
+              "content": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "additionalProperties": {}
+                },
+                "nullable": true
+              }
+            },
+            "title": "Supplemental data"
           }
         },
         "definitions": {
