@@ -45,7 +45,7 @@ Codat now supports the following features within the Dynamics integration:
 
 * Create an expense to represent a company's spend and upload the associated receipt for easier matching, even splitting these into individual line items for better visibility and reporting.
 
-The ability to present only valid expense bank accounts and tax rates to your users to make configuration for your customers easier . 
+* Present only valid expense bank accounts and tax rates to your users to simplify their configuration process. 
 
 Use the tracking category objects to associate spend to the applicable dimension in Microsoft Dynamics against each expense. This will provide context to the spend and assist in transaction reports. 
 
