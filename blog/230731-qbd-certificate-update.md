@@ -78,9 +78,9 @@ If the user incorrectly approves access, the connector will fail to perform the 
 
 ![Image](/img/integrations/accounting/quickbooksdesktop/incorrect-company-open.png "Connector, Incorrect Company Open")
 
-The user can remove the erroneously approved connection by navigating to `Edit > Preferences > Integrated Applications > Company Preferences`  in the QuickBooks Desktop application, opening the correct company file, and [approving the connector's access to it](/integrations/accounting/quickbooksdesktop/certificate-update#1-the-quickbooks-desktop-application-is-open-with-the-connected-company-file).
+The user can remove the erroneously approved connection by navigating to `Edit > Preferences > Integrated Applications > Company Preferences`  in the QuickBooks Desktop application, opening the correct company file, and [approving the connector's access to it](/updates/230731-qbd-certificate-update).
 
 #### Denied access
-If the user incorrectly denies the connector's company file access request, QuickBooks Desktop will not complete the requested operation until the user opens the correct company and [authorizes the connector's access to it](/integrations/accounting/quickbooksdesktop/certificate-update#1-the-quickbooks-desktop-application-is-open-with-the-connected-company-file).
+If the user incorrectly denies the connector's company file access request, QuickBooks Desktop will not complete the requested operation until the user opens the correct company and [authorizes the connector's access to it](/updates/230731-qbd-certificate-update).
 
 The user can also remove the connection by navigating to `Edit > Preferences > Integrated Applications > Company Preferences` in the QuickBooks Desktop application.
