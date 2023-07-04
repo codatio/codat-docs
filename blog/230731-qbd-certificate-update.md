@@ -1,6 +1,8 @@
 ---
-title: "QuickBooks Desktop - Certificate Update"
-description: "Action Required - Certificate Update"
+title: "Upcoming 2023-07-31: QuickBooks Desktop - Certificate Update"
+date: "2023-07-04"
+tags: ["Action Required"]
+authors: JustinWilkinson
 ---
 
 ## ⚠️ Action Required - QuickBooks Desktop Connector Certificate Update ⚠️
