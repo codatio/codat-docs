@@ -6951,15 +6951,15 @@
             "type": "object",
             "properties": {
               "pageNumber": {
-                "type": "int",
+                "type": "integer",
                 "description": "The page number."
               },
               "pageSize": {
-                "type": "int",
+                "type": "integer",
                 "description": "Queried page size."
               },
               "totalResults": {
-                "type": "int",
+                "type": "integer",
                 "description": "The total number of transactions returned."
               },
               "reportName": {
