@@ -74,6 +74,13 @@ https://redirect.site/accounting/?flow=Codat&statuscode=403&errormessage=User%20
 | statusCode | `200`, `201`, `403`, `500`, `501` | Codat standardises the status codes returned by the integrations: <br/> **200** = Successful - user's request has been fulfilled. <br/> **201** = No content - successful, but no information about data connection will be available. _Possible scenario_: A user visits Link with a connection to their accounting source already established, so they do not take any action before exiting the flow. <br/> **403** = Not available. _Possible scenario_: A user chooses to quit the Link flow before the Linking process is completed. <br/> **501** = Platform not supported. _Possible scenario_: A user chooses an integration that is not supported by the client. At this point, the client offers them an alternative option outside of the Codat flows. <br/> **500** = Internal Server Error. Codat standardises any errors which do not fit into one of the above categories to a 500 code - Internal Server Error. |
 |errorMessage | | Codat standardises error messages for the status codes. Error messages returned in the redirect will always be mapped with the status codes listed above. <br/> **403** = "User cancelled." <br/>  **500** = "Unknown error occurred." <br/>  **501** = "Not supported." <br/>  **Note**: If you want to use the original error message from the integration, use `statusText`. |
 | statusText | _String_ | String as it's passed back from the integration. |
+| data.company.companyName | _String_ | The name of the connected party within the underlying platform. <br/>This maps to the company name property in the [company info dataset](/accounting-api#/schemas/CompanyDataset). | 
+
+
+:::note Availability of reserved query parameters
+At present, the `data.company.companyName` is only supported for the following integrations:
+- **Accounting**: Dynamics 365 Business Central, NetSuite, QuickBooks Online, Sage Intacct, and Xero.
+:::
 
 :::info Case sensitivity
 
