@@ -1,10 +1,9 @@
 ---
 title: "Become a Xero Bank Feeds Partner"
-displayed_sidebar: integrations
 description: "Unlock the full value of connectivity with Xero by becoming a Xero Bank Feeds Partner"
 ---
 
-App Partnership is required to go live with Xero Bank Feeds. It is imperative you begin the partner application process before you start your Codat implementation, because it may take months for Xero to process applications. 
+App Partnership is required to go live with Xero Bank Feeds. It is crucial you begin the partner application process before you start your Codat implementation, because the application may take months to process. 
 
 Please speak to your Codat account team to initiate this process. It will involve:
 

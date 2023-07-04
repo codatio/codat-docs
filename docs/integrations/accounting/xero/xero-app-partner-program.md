@@ -10,7 +10,7 @@ Once you have set up your Xero integration, you should consider becoming a [Xero
 - Exceed the 25 company connection cap that Xero puts on uncertified apps
 - Reach millions of Xero subscribers and advisors via the [Xero App Store](http://www.xero.com/marketplace)
 
-It can take several months to become a Xero App Partner, so we recommend you begin the process well before you need to connect more than 25 Xero users via your integration. 
+It can take several months to become a Xero App Partner, so we advise you to begin the process well before you need to connect more than 25 Xero users via your integration. 
 
 We recommend speaking with your Codat account team before you decide when to apply for partnership. When you are ready to start, we will introduce you to Xero’s Partnerships team. 
 
