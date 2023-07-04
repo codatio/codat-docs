@@ -1718,36 +1718,6 @@
           }
         }
       ],
-      "get": {
-        "summary": "Get configuration",
-        "description": "The *Get configuration* endpoint returns supplemental data configuration previously created for each integration and data type combination.\n\n[Supplemental data](https://docs.codat.io/using-the-api/additional-data) is additional data you can include in Codat's standard data types.",
-        "operationId": "get-supplemental-data-configuration",
-        "x-speakeasy-name-override": "get-configuration",
-        "tags": [
-          "Supplemental data"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SupplementalDataConfiguration"
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          }
-        }
-      },
       "put": {
         "summary": "Configure",
         "description": "The *Configure* endpoint allows you to maintain or change configuration required to return supplemental data for each integration and data type combination.\n\n[Supplemental data](https://docs.codat.io/using-the-api/additional-data) is additional data you can include in Codat's standard data types.\n\n**Integration-specific behaviour**\nSee the *examples* for integration-specific frequently requested properties.",
@@ -1859,6 +1829,36 @@
             }
           },
           "description": "The configuration for the specified platform and data type."
+        }
+      },
+      "get": {
+        "summary": "Get configuration",
+        "description": "The *Get configuration* endpoint returns supplemental data configuration previously created for each integration and data type combination.\n\n[Supplemental data](https://docs.codat.io/using-the-api/additional-data) is additional data you can include in Codat's standard data types.",
+        "operationId": "get-supplemental-data-configuration",
+        "x-speakeasy-name-override": "get-configuration",
+        "tags": [
+          "Supplemental data"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplementalDataConfiguration"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
         }
       }
     }
@@ -3275,6 +3275,7 @@
       },
       "CompanyDataConnectionStatusChangedWebhook": {
         "title": "Company data connection status changed webhook",
+        "x-internal": true,
         "description": "Webhook request body for a company's data connection status changed.",
         "type": "object",
         "properties": {
@@ -3329,6 +3330,7 @@
       },
       "DataSyncCompletedWebhook": {
         "title": "Data sync complete webhook",
+        "x-internal": true,
         "description": "Webhook request body to notify the completion of a data sync.",
         "type": "object",
         "properties": {
@@ -3402,6 +3404,7 @@
       },
       "DatasetDataChangedWebhook": {
         "title": "Dataset data changed webhook",
+        "x-internal": true,
         "description": "Webhook request body to notify that a data synchronization has completed.",
         "type": "object",
         "properties": {
@@ -3451,6 +3454,7 @@
       },
       "NewCompanySynchronizedWebhook": {
         "title": "New company synchronized webhook",
+        "x-internal": true,
         "description": "Webhook request body to notify that a new company has successfully synchronized at least one dataType for the first time.",
         "type": "object",
         "properties": {
@@ -3482,6 +3486,7 @@
       },
       "PushOperationStatusChangedWebhook": {
         "title": "Push operation status changed webhook",
+        "x-internal": true,
         "description": "Webhook request body for a push operation status change.",
         "type": "object",
         "properties": {
@@ -3536,6 +3541,7 @@
       },
       "PushOperationTimedOutWebhook": {
         "title": "Push operation timed out webhook",
+        "x-internal": true,
         "description": "Webhook request body notifying that a push push operation has timed out.",
         "type": "object",
         "properties": {
@@ -3784,6 +3790,7 @@
       },
       "DatasetStatusChangedErrorWebhook": {
         "title": "Dataset data error webhook",
+        "x-internal": true,
         "description": "Webhook request body to notify that a data synchronization has completed.",
         "type": "object",
         "properties": {
