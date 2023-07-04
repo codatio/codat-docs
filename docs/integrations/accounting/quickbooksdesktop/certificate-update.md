@@ -53,20 +53,7 @@ The next time the connector attempts to access the file, QuickBooks will request
 The end user should validate that the pop-up is referring to the company they are expecting to have connected before approving.
 ![Image](/img/integrations/accounting/quickbooksdesktop/application-certificate-approval-incorrect-company.png "Application Certificate Approval, Incorrect Company Open")
 
-###### 2.1 Incorrectly approving access
-
-If the user incorrectly approves access, the connector will identify this and fail to perform the queued operation and instead show a message indicating that the incorrect company file is open.
-![Image](/img/integrations/accounting/quickbooksdesktop/incorrect-company-open.png "Connector, Incorrect Company Open")
-
-The user can then remove the erroneously approved connection via the `Edit > Preferences > Integrated Applications > Company Preferences` modal, open the correct company file and proceed as seen in flow 2.
-
-##### 2.2 Denying access
-
-If the user incorrectly denies access to the company, QuickBooks Desktop will not be permitted access to the company and the requested operation will not succeed until the correct company is opened, and the steps seen in flow 2 are completed.
-
-If the user wishes, they can clean up the connection via the `Edit > Preferences > Integrated Applications > Company Preferences` modal.
-
-#### 2.3 The QuickBooks Desktop application is closed
+#### 3 The QuickBooks Desktop application is closed
 
 The next time the connector attempts to access the file, QuickBooks will open a prompt for the user to interact with.
 
