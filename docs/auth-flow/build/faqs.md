@@ -7,7 +7,7 @@ hidden: false
 
 ## Best Practices
 
-If an end user has linked before then the same company id should be used always, even if they deauthorize.
+If an end user has linked before, use the relevant existing company rather than creating a new company (even if they have previously deauthorized).
 Unless you are 100% sure you want to delete all history of things having happened in which case delete the company and remove the association.
 
 Where possible you should be using webhooks to be informed of when to fetch data, rather than polling our API for dataset status updates.
