@@ -1,8 +1,9 @@
 # Description
 
-Include a summary of the new content you're adding or the reason for the change. 
-Include relevant context.
-Don't link to work items.
+* Include a summary of the new content you're adding or the reason for the change. 
+* Include relevant context.
+* Do not link to work items.
+* Any PNG images should be compressed using [Tiny PNG](https://tinypng.com/) or equivalent.
 
 ## Type of change
 

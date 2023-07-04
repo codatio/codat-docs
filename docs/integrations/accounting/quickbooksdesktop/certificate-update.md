@@ -1,72 +1,66 @@
 ---
 title: "QuickBooks Desktop - Certificate Update"
 description: "Action Required - Certificate Update"
-sidebar_label: "Action Required - Certificate Update"
 ---
 
-# ⚠️ Action Required - QuickBooks Desktop Connector Certificate Update ⚠️
- The certificate used to sign Codat's QuickBooks Desktop connector will be expiring on Wednesday the 16th of August, 2023.
+## ⚠️ Action Required - QuickBooks Desktop Connector Certificate Update ⚠️
+On Wednesday the 16th of August, 2023, the certificate used to sign Codat's QuickBooks Desktop connector will expire.
 
-To ensure the QuickBooks Desktop Connector can continue to operate successfully on user machines, Codat will shortly be updating the certificate used to sign the Installer, Connector and UI.
+To ensure the QBD Connector can continue operating on user machines, Codat will shortly update the certificate used to sign the Installer, Connector, and UI.
 
-This will, unfortunately, require manual intervention from end users of the Codat QuickBooks Desktop Connector to re-authorize the application to access the connected QuickBooks Desktop company file.
+This will require manual intervention from end users (your customers) of the Codat QuickBooks Desktop Connector to re-authorize the application to access the connected QuickBooks Desktop company file.
 
 ## Background
 
-With the rise of malware, desktop applications are typically *signed* with a certificate issued by a suitable authority, which serves to verify the identity of the authors of an application. These certificates have a validity window, and Codat's certificate's validity will be expiring soon.
+The connector communicates with QuickBooks as an "Integrated Application". When an integrated application attempts to retrieve data from a company file, QuickBooks validates the certificate to ensure that the application has been granted the appropriate level of access by a suitably permissioned user. The settings for these can be found under the `Edit > Preferences > Integrated Applications > Company Preferences` modal.
 
-When an integrated application attempts to retrieve data from a company file, QuickBooks validates the certificate to ensure that the application has been granted the appropriate level of access by a suitably permissioned user.
+With the rise of malware, desktop applications are typically *signed* with a certificate issued by a suitable authority, which serves to verify the identity of the authors of an application. These certificates have a validity window, and Codat's current certificate validity will expire soon.
 
-As Codat is being issued with a new certificate, QuickBooks will no longer recognize the Connector, and will prompt the user to approve the connection to the company file.
+When Codat updates the certificate used to sign the connector, existing connectors will no longer be recognized by QuickBooks, causing a prompt for the user to approve the connection to the company file.
 
-The settings can be found under the `Edit > Preferences > Integrated Applications > Company Preferences` modal.
-![Image](/img/integrations/accounting/quickbooksdesktop/edit-preferences.png "Edit Preferences")
-![Image](/img/integrations/accounting/quickbooksdesktop/integrated-applications-modal-personal-preferences.png "My Preferences")
-![Image](/img/integrations/accounting/quickbooksdesktop/integrated-applications-modal-company-preferences.png "Company Preferences")
-
-## What does this look like for an end user?
+## End user action required
 
 There are several possible scenarios to consider, depending on the workflow of the end user of the Connector.
 
-
-### 1. New users
+### New users
 
 There will be no change in the flow for onboarding new companies.
 
-### 2 Existing Users
+### Existing users
 
-#### 2.1 The QuickBooks Desktop application is open with the connected company file
+#### 1 The QuickBooks Desktop application is open with the connected company file
 
-The simplest path is when the QuickBooks Desktop application is running and the company file the connector is attempting to access is open.
+If the QBD application is running and the connected company file is open, QuickBooks will request the end user to permit the connector to access the data again the next time that connector attempts to access the file.
 
-The next time the connector attempts to access the file, QuickBooks will open a prompt for the end user to permit the connector to access the data again. This prompt is identical to the one seen on initial link.
+The next time the connector attempts to access the file, QuickBooks will open a prompt for the end user to permit the connector to access the data again.
+This prompt is identical to the one seen on initial link.
 ![Image](/img/integrations/accounting/quickbooksdesktop/application-certificate-approval.png "Application Certificate Approval")
 
-The user will then have to decide on what type of access they would like to grant the connector.
+Next, the user will have to decide on the type of access they would like to grant the connector.
 ![Image](/img/integrations/accounting/quickbooksdesktop/authorize-whilst-closed.png "Authorized Whilst Closed")
 
-Having made this selection, they will need to confirm they are happy for the connector to have access.
+Finally, they will need to confirm they are happy for the connector to have access.
 ![Image](/img/integrations/accounting/quickbooksdesktop/confirm-access.png "Confirm Access")
 
-Once approved the connector can then access the company file as before and no further action is required.
+Once approved, the connector will be able to access the company file as before, and no further action will be required.
 
-#### 2.2 The QuickBooks Desktop application is open with a different company file
+#### 2 The QuickBooks Desktop application is open with a different company file
 
-Another probable path for multi-company set ups is when the QuickBooks Desktop application is open, but the connector is trying to access a different company file to the one that is currently open.
+For multi-company setups, it's possible that the connector will try to access a different company file to the one that is currently open in the QuickBooks Desktop application.
 
-The next time the connector attempts to access the file, QuickBooks will open a prompt for the user to interact with to approve access for the company for the currently open company.
+The next time the connector attempts to access the file, QuickBooks will request the user to interact to approve access for the company that is currently open.
 
-At this stage it would be best if the end user validated that the pop-up was referring to the company that they are expecting to have connected.
+The end user should validate that the pop-up is referring to the company they are expecting to have connected before approving.
 ![Image](/img/integrations/accounting/quickbooksdesktop/application-certificate-approval-incorrect-company.png "Application Certificate Approval, Incorrect Company Open")
 
-###### 2.2.1 Incorrectly approving access
+###### 2.1 Incorrectly approving access
 
 If the user incorrectly approves access, the connector will identify this and fail to perform the queued operation and instead show a message indicating that the incorrect company file is open.
 ![Image](/img/integrations/accounting/quickbooksdesktop/incorrect-company-open.png "Connector, Incorrect Company Open")
 
 The user can then remove the erroneously approved connection via the `Edit > Preferences > Integrated Applications > Company Preferences` modal, open the correct company file and proceed as seen in flow 2.
 
-##### 2.2.2 Denying access
+##### 2.2 Denying access
 
 If the user incorrectly denies access to the company, QuickBooks Desktop will not be permitted access to the company and the requested operation will not succeed until the correct company is opened, and the steps seen in flow 2 are completed.
 
@@ -82,3 +76,22 @@ The UI will display an error message saying `Timed out attempting to communicate
 The user will have to launch QuickBooks Desktop, open the correct company file and approve access, at which point they will be prompted to approve access and can proceed with the steps as seen in flow 2.
 
 Note: This prompt may take a few moments to appear, but can be triggered by clicking the `Perform Sync` button in the Connector UI.
+
+### Troubleshooting
+#### Managing existing connections
+The end user may choose to remove the existing application signed with the old certificate before or after approving the new certificate request. They can do so by navigating to `Edit > Preferences > Integrated Applications > Company Preferences`  in the QuickBooks Desktop application.
+![Image](/img/integrations/accounting/quickbooksdesktop/edit-preferences.png "Edit Preferences")
+![Image](/img/integrations/accounting/quickbooksdesktop/integrated-applications-modal-personal-preferences.png "My Preferences")
+![Image](/img/integrations/accounting/quickbooksdesktop/integrated-applications-modal-company-preferences.png "Company Preferences")
+
+#### Incorrectly approved access
+If the user incorrectly approves access, the connector will fail to perform the queued operation and show a message indicating that the incorrect company file is open.
+
+![Image](/img/integrations/accounting/quickbooksdesktop/incorrect-company-open.png "Connector, Incorrect Company Open")
+
+The user can remove the erroneously approved connection by navigating to `Edit > Preferences > Integrated Applications > Company Preferences`  in the QuickBooks Desktop application, opening the correct company file, and [approving the connector's access to it](/integrations/accounting/quickbooksdesktop/certificate-update#1-the-quickbooks-desktop-application-is-open-with-the-connected-company-file).
+
+#### Denied access
+If the user incorrectly denies the connector's company file access request, QuickBooks Desktop will not complete the requested operation until the user opens the correct company and [authorizes the connector's access to it](/integrations/accounting/quickbooksdesktop/certificate-update#1-the-quickbooks-desktop-application-is-open-with-the-connected-company-file).
+
+The user can also remove the connection by navigating to `Edit > Preferences > Integrated Applications > Company Preferences` in the QuickBooks Desktop application.
