@@ -1,6 +1,6 @@
 ---
 title: "Supplemental data"
-sidebar_label: "Supplemental data"
+sidebar_label: "Overview"
 description: "Customize data types with additional fields not present in Codat's out-of-the box data models"
 ---
 

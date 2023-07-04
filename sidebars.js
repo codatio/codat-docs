@@ -206,14 +206,21 @@ module.exports = {
         "introduction/testing",
         {
           type: "category",
-          label: "Webhooks",
+          label: "Supplemental data",
           collapsed: true,
           items: [
-            "introduction/webhooks/core-rules-types",
-            "introduction/webhooks/core-rules-create",
-            "introduction/webhooks/core-rules-webhooks",
-            "introduction/webhooks/core-rules-webhooksecurity",
-            "introduction/webhooks/receive-webhooks-as-email",
+            "using-the-api/supplemental-data/overview",
+            "using-the-api/supplemental-data/usecases",
+          ],
+        },
+        {
+          type: "category",
+          label: "Troubleshooting",
+          collapsed: true,
+          items: [
+            "using-the-api/errors",
+            "using-the-api/rate-limits",
+            "using-the-api/optimizing-api-calls",
           ],
         },
         {
@@ -225,7 +232,6 @@ module.exports = {
             "other/portal/developers",
           ],
         },
-        "using-the-api/additional-data",
       ],
     },
     {
