@@ -64,6 +64,12 @@ There are two authentication flows between Sage, Codat's Sage Bank Feeds integra
 
 8. Your web app authenticates the user against the Codat company and data connection to which they are linked.
 
+:::caution Iframe
+Sage will display your pages within an iframe embedded in the Sage product. Ensure that your UI can be used within this format.
+:::
+
+You must include the "Content-Security-Policy" header with a value of `frame-ancestors 'self' https://*.sagebankdrive.com https://*.sage.com https://*.intacct.com https://*.sageone.com` to ensure it functions within the iframe.
+
 ### Your web app redirects the user to the bank account selection screen
 
 1. After a prompt, your web app sends a request to the <a href="https://api.codat.io/swagger/index.html#/Connection/put_companies__companyId__connections__connectionId__authorization"
