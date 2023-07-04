@@ -5166,16 +5166,16 @@
         ]
       }
     },
-    "/data/companies/assess/{companyId}/reports/liability/loan/transactions": {
+    "/data/companies/{companyId}/assess/reports/enhancedLiabilities/loan/transactions": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
         }
       ],
       "get": {
-        "summary": "List loan transactions",
+        "summary": "List enhanced loan transactions",
         "tags": [
-          "Loan transactions"
+          "Reports"
         ],
         "responses": {
           "200": {
@@ -5196,7 +5196,54 @@
           }
         },
         "operationId": "list-loan-transactions",
-        "description": "Returns a list of a company's loan transactions.\n\n## Prerequisites\nThe company must have either at least one accounting, banking or commerce connection\nlinked and fully synced with the mandatory data types listed below.\n\nAccounting connection:\n- Journal Entries\n- Chart of Accounts\n\nBanking connection:\n- Banking Accounts\n- Banking Transactions\n\nCommerce connection:\n- Commerce Transactions\n\nIf the company does not have a any of these connections an error will be thrown.\n\n# Accounting #\nA company's journal entries will be analysed to retrieve all of their loan transactions.\nThe interest rate will also be calculated for the loan.\n# Banking #\nA company's banking transactions will be analysed to retrieve all of their loan transactions.\n# Commerce #\nReturns back the total Loan amount and loan repayments. \nFor example, for a Stripe account, we can return back all the loan transactions'"
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "banking",
+                "commerce",
+                "accounting"
+              ]
+            },
+            "in": "query",
+            "name": "sourceType",
+            "description": "Data source type",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/data/companies/{companyId}/assess/reports/enhancedLiabilities/loan": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ],
+      "get": {
+        "summary": "Get enhanced loan summaries",
+        "tags": [
+          "Reports"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanSummary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          }
+        },
+        "operationId": "get-loan-summary"
       }
     }
   },
@@ -7020,6 +7067,172 @@
                 "date": "2020-08-02",
                 "amount": -455,
                 "transactionType": "Repayment"
+              }
+            ]
+          }
+        ]
+      },
+      "LoanSummary": {
+        "title": "Loan Summary",
+        "x-stoplight": {
+          "id": "tpq5juroo1ylk"
+        },
+        "type": "object",
+        "properties": {
+          "reportInfo": {
+            "$ref": "#/components/schemas/LoanSummary/definitions/loanSummaryReportInfo",
+            "x-stoplight": {
+              "id": "f7qjivq05pm1q"
+            }
+          },
+          "reportItems": {
+            "type": "array",
+            "description": "Returns a summary of all loan activity for that integration type",
+            "items": {
+              "$ref": "#/components/schemas/LoanSummary/definitions/reportItems",
+              "x-stoplight": {
+                "id": "3o8v6y67rbrro"
+              }
+            },
+            "x-stoplight": {
+              "id": "9mupc5jphk9fa"
+            }
+          }
+        },
+        "definitions": {
+          "loanSummaryReportInfo": {
+            "title": "Loan Summary Report Info",
+            "type": "object",
+            "properties": {
+              "reportName": {
+                "type": "string",
+                "description": "The name of the report."
+              },
+              "companyName": {
+                "type": "string",
+                "description": "Name of the company queried."
+              },
+              "generatedDate": {
+                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "description": "Returns the YYYY-MM-DD datetime of report generation.  urns the YYYY-MM-DD datetime of report generation."
+              }
+            }
+          },
+          "loanRef": {
+            "title": "Loan Reference",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "The id of the object being referred to.",
+                "x-stoplight": {
+                  "id": "8iauxevkpnxyj"
+                }
+              },
+              "dataConnectionId": {
+                "type": "string",
+                "description": "The dataConnectionId the object being referred to is associated with.",
+                "x-stoplight": {
+                  "id": "vrnhmgrfndjhh"
+                }
+              },
+              "type": {
+                "type": "string",
+                "description": "The object type data is referring to, e.g. Account.",
+                "x-stoplight": {
+                  "id": "m68yr2mpbnvvq"
+                }
+              }
+            },
+            "x-stoplight": {
+              "id": "pr3pywxqc6jiu"
+            }
+          },
+          "recordRef": {
+            "title": "Item reference",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "The id of the object being referred to."
+              },
+              "dataConnectionId": {
+                "type": "string",
+                "description": "The dataConnectionId the object being referred to is associated with."
+              },
+              "integrationType": {
+                "type": "string",
+                "enum": [
+                  "Accounting",
+                  "Banking",
+                  "Commerce"
+                ],
+                "description": "The integration type begin referred to."
+              },
+              "recordRefType": {
+                "type": "string",
+                "enum": [
+                  "accounts",
+                  "banking-accounts",
+                  "commerce-transactions"
+                ],
+                "description": "The datatype being referred to."
+              }
+            }
+          },
+          "reportItems": {
+            "type": "object",
+            "properties": {
+              "recordRef": {
+                "$ref": "#/components/schemas/LoanSummary/definitions/recordRef",
+                "description": "Contains object that contains a sumamry of all loan transactions for that integration type."
+              },
+              "description": {
+                "type": "string",
+                "description": "The description of the object being referred to. E.g. the account."
+              },
+              "startDate": {
+                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "description": "The date of the earliest loan transaction.",
+                "x-stoplight": {
+                  "id": "v8jngp34fn5w4"
+                }
+              },
+              "totalInvestments": {
+                "type": "number",
+                "description": "The total loan investments for that company."
+              },
+              "totalRepayments": {
+                "type": "number",
+                "description": "The total loan repayments for that company."
+              },
+              "balance": {
+                "type": "number",
+                "description": "The total loan investments minus the total loan repayments for that company."
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "reportInfo": {
+              "reportName": "LoanSummaryReport",
+              "companyName": "The Coffee shop",
+              "generatedDate": "2022-10-23T00:00:00Z"
+            },
+            "reportItems": [
+              {
+                "recordRef": {
+                  "id": "string",
+                  "dataConnectionId": "DE34E8E3-089F-4DF4-89E9-F7C43618FCAAA",
+                  "integrationType": "Accounting",
+                  "recordRefType": "accounts"
+                },
+                "description": "string",
+                "startDate": "2015-01-07",
+                "totalInvestments": 12320,
+                "totalRepayments": 8200,
+                "balance": 4120
               }
             ]
           }
