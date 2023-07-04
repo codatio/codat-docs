@@ -28,11 +28,14 @@ The settings can be found under the `Edit > Preferences > Integrated Application
 
 There are several possible scenarios to consider, depending on the workflow of the end user of the Connector.
 
+
 ### 1. New users
 
 There will be no change in the flow for onboarding new companies.
 
-### 2. The QuickBooks Desktop application is open with the connected company file
+### 2 Existing Users
+
+#### 2.1 The QuickBooks Desktop application is open with the connected company file
 
 The simplest path is when the QuickBooks Desktop application is running and the company file the connector is attempting to access is open.
 
@@ -47,7 +50,7 @@ Having made this selection, they will need to confirm they are happy for the con
 
 Once approved the connector can then access the company file as before and no further action is required.
 
-### 3. The QuickBooks Desktop application is open with a different company file
+#### 2.2 The QuickBooks Desktop application is open with a different company file
 
 Another probable path for multi-company set ups is when the QuickBooks Desktop application is open, but the connector is trying to access a different company file to the one that is currently open.
 
@@ -56,20 +59,20 @@ The next time the connector attempts to access the file, QuickBooks will open a 
 At this stage it would be best if the end user validated that the pop-up was referring to the company that they are expecting to have connected.
 ![Image](/img/integrations/accounting/quickbooksdesktop/application-certificate-approval-incorrect-company.png "Application Certificate Approval, Incorrect Company Open")
 
-#### 3.1 Incorrectly approving access
+###### 2.2.1 Incorrectly approving access
 
 If the user incorrectly approves access, the connector will identify this and fail to perform the queued operation and instead show a message indicating that the incorrect company file is open.
 ![Image](/img/integrations/accounting/quickbooksdesktop/incorrect-company-open.png "Connector, Incorrect Company Open")
 
 The user can then remove the erroneously approved connection via the `Edit > Preferences > Integrated Applications > Company Preferences` modal, open the correct company file and proceed as seen in flow 2.
 
-#### 3.2 Denying access
+##### 2.2.2 Denying access
 
 If the user incorrectly denies access to the company, QuickBooks Desktop will not be permitted access to the company and the requested operation will not succeed until the correct company is opened, and the steps seen in flow 2 are completed.
 
 If the user wishes, they can clean up the connection via the `Edit > Preferences > Integrated Applications > Company Preferences` modal.
 
-### 4. The QuickBooks Desktop application is closed
+#### 2.3 The QuickBooks Desktop application is closed
 
 The next time the connector attempts to access the file, QuickBooks will open a prompt for the user to interact with.
 
