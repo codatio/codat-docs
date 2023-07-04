@@ -43,7 +43,7 @@ See [Enhanced Invoices](https://docs.codat.io/assess/enhanced-invoices/overview)
 
 Codat now supports the following features within the Dynamics integration: 
 
-Create an expense to represent a company's spend and upload the associated receipt for easier matching. Each expense and its associated documents can be split into the individual line items to give better visibility and enhanced reporting.
+* Create an expense to represent a company's spend and upload the associated receipt for easier matching, even splitting these into individual line items for better visibility and reporting.
 
 The ability to present only valid expense bank accounts and tax rates to your users to make configuration for your customers easier . 
 
