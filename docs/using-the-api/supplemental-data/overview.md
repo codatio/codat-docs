@@ -1,20 +1,24 @@
 ---
 title: "Supplemental data"
 sidebar_label: "Overview"
-description: "Customize data types with additional fields not present in Codat's out-of-the box data models"
+description: "Customize data types with additional properties not included in Codat's out-of-the box data models"
 ---
 
 ## What is supplemental data?
 
-Supplemental data is additional data you can include in Codat's standard data types. Integrations may contain fields not supported by our out-of-the-box data model, so you can use supplemental data to fetch, create, or update these fields alongside our standard ones. 
+Codat's supported data types include numerous standardized properties. At the same time, some data sources (e.g. Xero) may contain properties not common across other sources, and therefore not covered by our out-of-the-box data model. You can use supplemental data to extend our data type models to fetch, create, or update such properties alongside our standard ones. 
 
-For example, to pull our `suppliers` data type from Xero, we use Xero's [Contacts](https://developer.xero.com/documentation/api/accounting/contacts) endpoint. While we already include many of the properties of that endpoint in our standard data model, some properties, like supplier bank account details (`BankAccountDetails`), are not included. 
+Consider our Xero integration as an example. Codat's `suppliers` data type uses Xero's [Contact](https://developer.xero.com/documentation/api/accounting/contacts) schema. Some of its properties (like `TaxNumber`) are mapped by us by default, whereas others (like `BankAccountDetails`) are not. If you configure supplemental data for this Xero property, `suppliers` data from Xero could additionally include `BankAccountDetails`.
 
-By configuring supplemental data for this property, you will be able to fetch `BankAccountDetails` every time you pull our standard `suppliers` data from Xero.
+## Common uses of supplemental data
 
-## Where is supplemental data available?
+Integration-specific properties not included in our standard data models may still provide you with additional benefits, enriching the data relevant for your use case. For example, you can enhance our `invoices` data type with an invoice `URL`, a Xero-specific field that directs the user to a source document for an invoice hosted outside of Xero. For QBO, the `invoices` data type can be supplemented with `SalesTermRef`, providing you with sales terms associated with an invoice.
 
-We are rapidly expanding coverage across integrations and datatypes according to client demand. You can help us prioritize by leaving feedback on our [public roadmap](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/46-accounting-api/submit-idea).
+We have compiled a number of properties commonly used by our customers to enrich our standard data types. You can [review these in detail](/using-the-api/supplemental-data/usecases) to see how you can use supplemental data to your advantage.
+
+## Support for supplemental data
+
+We are rapidly expanding coverage across integrations and data types according to client demand. You can help us prioritize by leaving feedback on our [public roadmap](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/46-accounting-api/submit-idea).
 
 We currently cover the following integrations and data types:
  
@@ -67,7 +71,7 @@ You can use dot notation to retrieve nested properties from within the supplemen
 }
 ```
 
-Refer to our [API reference](/codat-api#/operations/configure-supplemental-data) for examples of configuration for popular properties of various integrations. You can also retrieve your existing supplemental data configuration by using the [Get supplemental data configuration](/codat-api#/operations/get-supplemental-data-configuration) endpoint:
+Once set, you can retrieve an existing supplemental data configuration by using the [Get supplemental data configuration](/codat-api#/operations/get-supplemental-data-configuration) endpoint:
 
 ```http
 GET /integrations​/{platformKey}/datatypes/{datatype}/supplementalDataConfig
@@ -75,7 +79,7 @@ GET /integrations​/{platformKey}/datatypes/{datatype}/supplementalDataConfig
 
 ## Platform endpoint mapping
 
-Review the table below for platform endpoints we use in our data types, which are available for you to pull or send supplemental data. Refer to to the platform's individual documentation (for example, [Xero](https://developer.xero.com/documentation/api/accounting/overview) or [QBO](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/most-commonly-used/account)) for further details of their endpoints and field coverage.
+Review the table below for platform schemas we use in our data types, which are available for you to fetch, create, or update supplemental data. Refer to to the platform's individual documentation (for example, [Xero](https://developer.xero.com/documentation/api/accounting/overview) or [QBO](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/most-commonly-used/account)) for further details of their schemas and property coverage.
 
 <iframe
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIOf4fqpv6L2Phe3iz5nLMPDdBVaAuI3La5dTMTn58TZq_6395WtUsUq7s7jAbeq2vwuseiCzu5DZG/pubhtml?widget=true&amp;headers=false"
@@ -83,13 +87,13 @@ Review the table below for platform endpoints we use in our data types, which ar
   style={{ top: 0, left: 0, width: "100%", height: "400px" }}
 ></iframe>
 
-## Tips and pitfalls
+## Pitfalls
 
 - Supplemental data is currently available only at the record level and cannot be used to interact with line-level properties. 
 
 - Data within the supplemental data object is not validated, manipulated, standardized, or transformed by Codat. 
 
-- It is not possible to query Codat’s API on the supplemental data.
+- Our [querying](/using-the-api/querying) functionality doesn't support supplemental data.
 
 - When you add or change supplemental data configuration, the next sync of this data type will be a full sync by default to ensure that supplemental data is added to both new and previously synced records.
 

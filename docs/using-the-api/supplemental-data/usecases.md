@@ -1,16 +1,21 @@
 ---
-title: "Common uses for supplemental data"
+title: "Common uses of supplemental data"
 sidebar_label: "Examples"
-description: "Customize data types with additional fields not present in Codat's out-of-the box data models"
+description: "Review properties commonly used by our customers to enhance data required for their use cases"
 ---
 
-## Commonly requested properties
+While Codat's standardized data models contain most properties available in integrations we support, it may happen that a particular integration contains a property which is not common across other platforms. It therefore does not form part of our standard data, but can be obtained using supplemental data. 
 
-This section details some of the commonly requested supplemental data configurations per platform.
+For example, you may want to enrich our standard data types relevant for your use case with:
 
-### Xero
+- Invoice URL, a Xero-specific field that allows a user to navigate to a source document for an invoice hosted outside of Xero,
+- Journal entry number, a human-friendly value specific to QBO that identifies a distinct Journal entry.
 
-- [Accounts](https://developer.xero.com/documentation/api/accounting/accounts) endpoint
+In sections below, you will find integration-specific properties commonly used to supplement standard data with, and example configuration required to support this. 
+
+## Xero
+
+### [Accounts](https://developer.xero.com/documentation/api/accounting/accounts) schema
 
 | Property        | Description                                                    |
 |-----------------|----------------------------------------------------------------|
@@ -31,7 +36,7 @@ This section details some of the commonly requested supplemental data configurat
 }
 ```
 
-- [Invoices](https://developer.xero.com/documentation/api/accounting/invoices) endpoint
+### [Invoices](https://developer.xero.com/documentation/api/accounting/invoices) schema
 
 | Property              | Description                                                                            |
 |-----------------------|----------------------------------------------------------------------------------------|
@@ -54,7 +59,7 @@ This section details some of the commonly requested supplemental data configurat
 }
 ```
 
-- [Items](https://developer.xero.com/documentation/api/accounting/items) endpoint
+### [Items](https://developer.xero.com/documentation/api/accounting/items) schema
 
 | Property              | Description                                                                      |
 |-----------------------|----------------------------------------------------------------------------------|
@@ -75,7 +80,7 @@ This section details some of the commonly requested supplemental data configurat
 }
 ```
 
-- [Contacts](https://developer.xero.com/documentation/api/accounting/contacts) endpoint
+### [Contacts](https://developer.xero.com/documentation/api/accounting/contacts) schema
 
 | Property             | Description                                                                      |
 |----------------------|----------------------------------------------------------------------------------|
@@ -94,7 +99,7 @@ This section details some of the commonly requested supplemental data configurat
 }
 ```
 
-- [Tax rates](https://developer.xero.com/documentation/api/accounting/taxrates) endpoint
+### [Tax rates](https://developer.xero.com/documentation/api/accounting/taxrates) schema
 
 | Property                | Description                                                        |
 |-------------------------|--------------------------------------------------------------------|
@@ -121,9 +126,9 @@ This section details some of the commonly requested supplemental data configurat
 }
 ```
 
-### QuickBooks Online
+## QuickBooks Online
 
-- [Customers](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/customer) endpoint
+### [Customers](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/customer) schema
 
 | Property        | Description                                                    |
 |-----------------|----------------------------------------------------------------|
@@ -144,7 +149,7 @@ This section details some of the commonly requested supplemental data configurat
 }
 ```
 
-- [Invoices](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/invoice) endpoint
+### [Invoices](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/invoice) schema
 
 | Property        | Description                                                    |
 |-----------------|----------------------------------------------------------------|
@@ -162,3 +167,7 @@ This section details some of the commonly requested supplemental data configurat
     }
 }
 ```
+---
+## Read next
+
+- Experiment with supplemental data endpoints in our [API reference](https://docs.codat.io/codat-api#/operations/configure-supplemental-data).
