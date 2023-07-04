@@ -79,7 +79,7 @@ https://redirect.site/accounting/?flow=Codat&statuscode=403&errormessage=User%20
 
 :::note Availability of reserved query parameters
 At present, the `data.company.companyName` is only supported for the following integrations:
-**accounting**: Dynamics 3655 Business Central, NetSuite, QuickBooks Online, Sage Intacct and Xero.
+- **Accounting**: Dynamics 365 Business Central, NetSuite, QuickBooks Online, Sage Intacct, and Xero.
 :::
 
 :::info Case sensitivity
