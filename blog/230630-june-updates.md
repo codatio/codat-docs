@@ -78,6 +78,6 @@ Codat is now able to support users when they need to update the following  expen
 
 To update an attachment or receipt, users need to delete it first and create a new dataset for the updated transaction attachment before syncing it to their accounting platform. 
 
-This feature is currently only available for Xero. If you would like to see this functionality across other platforms please let us know [here](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/51-sync-for-expenses/submit-idea). 
+This feature is only available for Xero. If you would like to see this functionality across other platforms, please [let us know](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/51-sync-for-expenses/submit-idea). 
 
 
