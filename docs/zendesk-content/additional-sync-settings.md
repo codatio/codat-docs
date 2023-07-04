@@ -59,7 +59,7 @@ Configuration is required per data type. The current settings, retrieved using G
 
 All Companies
 
-POST /profile/syncSettings (Swagger)
+POST /profile/syncSettings
 
 {
   "clientId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
