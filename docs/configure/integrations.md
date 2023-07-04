@@ -22,7 +22,7 @@ See our detailed integration-specific [documentation](/integrations/all-integrat
 
 ### Accounting Data
 
-Using the Codat Portal, you have the option to choose which accounting packages should be shown on the link site. For detailed guides please see
+Using the Codat Portal, you have the option to choose which accounting packages should be shown on the link site.
 
 These are configured on the Portal by going to the Integrations menu and selecting Accounting. Here you will see a list of possible accounting integrations, the ability to toggle the integration on and as you hover over each integration the option to Manage.
 
