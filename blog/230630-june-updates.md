@@ -51,7 +51,7 @@ Codat now supports the following features within the Dynamics integration:
 
 This addition to Sync for Expenses means that you can now begin to offer this accounting platform coverage to your customers for the following supported expense [transaction types](https://docs.codat.io/sync-for-expenses/sync-process/expense-transactions#transaction-types): Payments, Refunds, Chargeback and Rewards.
 
-For other suggestions for our Dynamics integration for the expense management use case please let us know [here](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/51-sync-for-expenses/submit-idea).
+For other suggestions for expense management with our Dynamics integration, please let us know on our [product roadmap](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/51-sync-for-expenses/submit-idea).
 
 ## Sync for Expenses: Updating expenses support for Xero
 
