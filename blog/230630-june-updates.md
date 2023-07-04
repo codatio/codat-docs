@@ -47,7 +47,7 @@ Codat now supports the following features within the Dynamics integration:
 
 * Present only valid expense bank accounts and tax rates to your users to simplify their configuration process. 
 
-Use the tracking category objects to associate spend to the applicable dimension in Microsoft Dynamics against each expense. This will provide context to the spend and assist in transaction reports. 
+* Use the tracking category objects to associate each expense with the applicable dimension in Microsoft Dynamics to add context to the spend and assist in transaction reports. 
 
 This addition to Sync for Expenses means that you can now begin to offer this accounting platform coverage to your customers for the following supported expense [transaction types](https://docs.codat.io/sync-for-expenses/sync-process/expense-transactions#transaction-types): Payments, Refunds, Chargeback and Rewards.
 
