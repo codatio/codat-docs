@@ -56,7 +56,16 @@ For other suggestions for expense management with our Dynamics integration, plea
 
 ## Sync for Expenses: Updating expenses support for Xero
 
-Currently if an SMB needs to alter an expense they would need to make changes to their expense management platform and their accounting package separately. This can be time consuming as making expense alterations are not uncommon tasks.   
+Previously, if an SMB wanted to modify an expense, they would need to make changes to their expense management platform and their accounting package separately. 
+
+With the addition of our new feature, your users can update the following metadata in their expenses without having to duplicate the work in Xero:
+
+- Net expense amount
+- Tax amount of the spend
+- Tax rate reference associated with the spend
+- Expense bank account reference
+- Tracking category objects
+- Description & notes
 
 This latest addition to Sync for Expenses means that your users can update their expenses without having to duplicate the work in Xero. 
 
