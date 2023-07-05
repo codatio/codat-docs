@@ -29,7 +29,7 @@ Make sure that you've [set up your Xero integration](/integrations/accounting/xe
 
 Create a test company in the Codat Portal and connect it to your demo Xero company.
 
-1. In the navigation bar, select **Companies** then click **New company**.
+1. In the navigation bar, select **Companies**, then click **New company**.
 
 2. Enter a name for your test company, such as `xero-test`, then click **Add**. Copy the **Link URL** for your test company.
 
@@ -39,7 +39,7 @@ Create a test company in the Codat Portal and connect it to your demo Xero compa
 
 5. You might be asked to select an organization. Select the demo company you created in the preceding task, then click **Allow access**.
 
-<img src="/img/old/658ee87-Xero-Authorize.png" />
+   ![Xero app authorization window](/img/old/658ee87-Xero-Authorize.png "The Xero access request pop-up window that prompts the user to allow Codat access to data of the Xero demo company.")
 
 6. When you've completed all the steps in Link, you can close the browser tab or window.
 
@@ -60,6 +60,6 @@ Next, you might want to:
 - Edit your sync settings to change which data types to pull from Xero.
 - Try out the Push API to create or edit data within Xero.
 
-:::caution Banking Data
+:::info Testing banking data in Xero
 It's not possible to create banking transactions within Xero demo companies. To test this functionality, you'll need to sign up to a free trial or create a paid Xero organization.
 :::
