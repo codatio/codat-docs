@@ -13,7 +13,7 @@ View the coverage of our QuickBooks Online integration in the <a className="exte
 For more details about the supported data types and operations, see [QuickBooks Online integration reference](/integrations/accounting/quickbooksonline/quickbooks-online-integration-reference).
 
 :::tip Supplemental data
-This integration supports the ability to fetch or create additional fields within our standard data types. Read more about [supplemental data](/using-the-api/supplemental-data/overview) and how you can pull it for this integration.
+This integration supports the ability to include additional fields within our standard data types when fetching, creating or updating records. Read more about [supplemental data](/using-the-api/supplemental-data/overview) and how you can pull it for this integration.
 :::
 
 ## Set up the integration
