@@ -9,7 +9,8 @@ description: "Customize data types with additional properties not included in Co
 Codat's supported data types include standardized properties. Some data sources (e.g. Xero) may contain properties not common across other sources, and so are not covered by our out-of-the-box data model. You can use supplemental data to extend our data types to fetch, create, or update such properties alongside our standard ones. 
 
 
-Consider our Xero integration as an example. Codat's `suppliers` data type uses Xero's [Contact](https://developer.xero.com/documentation/api/accounting/contacts) schema. Some of its properties (like `TaxNumber`) are mapped by us by default, whereas others (like `BankAccountDetails`) are not. If you configure supplemental data for this Xero property, `suppliers` data from Xero could additionally include `BankAccountDetails`.
+Consider our Xero integration. Xero's [Contact](https://developer.xero.com/documentation/api/accounting/contacts) schema maps to Codat's `supplier` data type. Some of its properties (like `TaxNumber`) *are* mapped, whereas others (like `BankAccountDetails`) are not. If you configure supplemental data for this Xero property, `suppliers` data from Xero could additionally include `BankAccountDetails`.
+
 
 ## Common uses of supplemental data
 
