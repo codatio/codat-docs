@@ -1,7 +1,7 @@
 ---
 title: "Upcoming 2023-07-31: QuickBooks Desktop - Certificate Update"
 date: "2023-07-05"
-tags: ["Action required", "QuickBooks Desktop", "On-Premise", "Accounting"]
+tags: ["Action required", "QuickBooks Desktop"]
 authors: JustinWilkinson
 ---
 
