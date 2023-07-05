@@ -4,7 +4,8 @@ sidebar_label: "Examples"
 description: "Review properties commonly used by our customers to enhance data required for their use cases"
 ---
 
-When a particular integration contains a property which is not common across other platforms, it may happen that it does not form part of our standard data, but can be obtained using supplemental data if it benefits your use case. 
+When a particular integration contains a property which is not common across other platforms, it may happen that it does not form part of our standard data, but can be obtained using supplemental data to support your use case. 
+
 
 For example, you can enhance our `invoices` data type with an invoice `URL`, a Xero-specific field that directs the user to a source document for an invoice hosted outside of Xero. For QBO, the `invoices` data type can be supplemented with `SalesTermRef`, providing you with sales terms associated with an invoice.
 
