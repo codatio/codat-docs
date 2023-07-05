@@ -1,16 +1,16 @@
 ---
-title: "Updating Expenses"
+title: "Updating expenses"
 description: "Ensure your expense metadata is correct across your expense management platform and your booking keeping records"
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-Once you have synced an expense transaction to your accounting platform, you can make alterations to a single transaction's metadata. The change will be reflected across your expense management or corporate card platform and your accounting software/ERP.
+Once you have synced an expense transaction to your accounting platform, you can make alterations to a single transaction's metadata. The change will be reflected across your expense management or corporate card platform and your accounting software or ERP.
 
-This saves your SMB customers’ time and helps reduce errors, because they won’t need to make changes to their expense management platform and their accounting package separately. 
+This saves your SMB customers’ time and helps reduce errors because they won’t need to make changes to their expense management platform and their accounting package separately. 
 
-Use our [update expense-transactions](https://docs.codat.io/sync-for-expenses-api#/operations/update-expense-dataset) endpoint to edit the following expense transaction metadata:
+Use our [Update expense transactions](https://docs.codat.io/sync-for-expenses-api#/operations/update-expense-dataset) endpoint to edit the following expense transaction metadata:
 - Net expense amount 
 - Tax amount of the spend
 - Tax rate reference associated with the spend
