@@ -1,5 +1,5 @@
 ---
-title: "Sage 50 troubleshooting"
+title: "Sage50 troubleshooting"
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: "Upcoming 2023-10-10: Journal Entries - Change to mapping of manual contra entries"
 date: "2023-06-30"
-tags: ["Deprecation", "Accounting API", "Accounting"]
+tags: ["Deprecation"]
 authors: mcclowes
 ---
 

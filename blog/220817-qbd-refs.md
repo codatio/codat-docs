@@ -1,7 +1,7 @@
 ---
 title: "Completed 2022-10-10: QuickBooks Desktop: Only one of account ref or item ref will be allowed when pushing bills"
 date: "2022-08-17"
-tags: ["Deprecation", "Completed", "QuickBooks Desktop", "Accounting"]
+tags: ["Deprecation", "Completed"]
 draft: false
 authors: mcclowes
 ---

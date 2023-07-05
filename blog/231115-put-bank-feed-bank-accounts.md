@@ -1,7 +1,7 @@
 ---
 title: "Upcoming 2023-11-15: Deprecation of the `PUT bankFeedAccounts` endpoint"
 date: "2023-06-30"
-tags: ["Deprecation", "Bank Feeds API"]
+tags: ["Deprecation"]
 draft: false
 authors: jyorston
 ---

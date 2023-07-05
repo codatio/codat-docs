@@ -1,7 +1,7 @@
 ---
 title: "Completed 2023-01-10: QuickBooks Online - change to invoice push validation"
 date: "2022-08-26"
-tags: ["Deprecation", "Completed", "QuickBooks Online", "Accounting"]
+tags: ["Deprecation", "Completed"]
 draft: false
 authors: mcclowes
 ---
