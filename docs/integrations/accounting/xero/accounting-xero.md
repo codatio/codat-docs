@@ -13,7 +13,7 @@ View the coverage of our Xero integration in the <a className="external" href="h
 For more details about the supported data types and operations, see [Xero FAQs](/integrations/accounting/xero/xero-faq) and [Xero integration reference](/integrations/accounting/xero/xero-integration-reference).
 
 :::tip Supplemental data
-This integration supports the ability to fetch or create additional fields within our standard data types. Read more about [supplemental data](/using-the-api/supplemental-data) and how you can pull it for this integration.
+This integration supports the ability to fetch or create additional fields within our standard data types. Read more about [supplemental data](/using-the-api/supplemental-data/overview) and how you can pull it for this integration.
 :::
 
 ## Xero App Partnership
