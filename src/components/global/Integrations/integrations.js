@@ -39,6 +39,13 @@ export const sfeIntegrations = [
     "type": "Sync For Expenses",
     "tags": ["Credit Cards only"],
     "img": "https://static.codat.io/public/officialLogos/Square/9815B998-024D-4415-A40B-89903B2CAD6F.png"
+  },
+    {
+    "name": "Dynamics 365 Business Central",
+    "to": "/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral",
+    "type": "Sync For Expenses",
+    "tags": ["Payments, Refund, Chargeback & Rewards only"],
+    "img": "https://static.codat.io/public/officialLogos/Square/6B579544-0E46-4F02-B343-578CE5C3C6CC.png"
   }
 ]
 
