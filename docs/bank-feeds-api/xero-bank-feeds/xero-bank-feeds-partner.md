@@ -14,4 +14,4 @@ Please speak to your Codat account team to initiate this process. It will involv
 
 #### Xero’s technical requirements
 
-Xero’s technical requirements are complex, but Codat’s Bank Feeds API take care of many of them for you. We recommend working closely with the Codat team to ensure you address all of Xero’s requirements during your implementation.
+Xero’s technical requirements are complex, but Codat’s Bank Feeds API take care of many of them for you. We recommend working closely with Codat to ensure you address all of Xero’s requirements during your implementation.
