@@ -4,14 +4,16 @@ date: "2023-07-05"
 tags: ["Action required"]
 authors: JustinWilkinson
 ---
-### ⚠️ Action Required - QuickBooks Desktop Connector Certificate Update ⚠️
+
+**⚠️ Action Required**
+
 On Wednesday the 16th of August, 2023, the certificate used to sign Codat's QuickBooks Desktop connector will expire.
+
+<!--truncate-->
 
 To ensure the QBD Connector can continue operating on user machines, Codat will shortly update the certificate used to sign the Installer, Connector, and UI.
 
 This will require manual intervention from end users (your customers) of the Codat QuickBooks Desktop Connector. They will need to re-authorize the application to access the connected QuickBooks Desktop company file before **July 31st, 2023**.
-
-<!--truncate-->
 
 ## Background
 
