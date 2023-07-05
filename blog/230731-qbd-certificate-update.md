@@ -4,8 +4,7 @@ date: "2023-07-05"
 tags: ["Action required"]
 authors: JustinWilkinson
 ---
-
-## ⚠️ Action Required - QuickBooks Desktop Connector Certificate Update ⚠️
+### ⚠️ Action Required - QuickBooks Desktop Connector Certificate Update ⚠️
 On Wednesday the 16th of August, 2023, the certificate used to sign Codat's QuickBooks Desktop connector will expire.
 
 To ensure the QBD Connector can continue operating on user machines, Codat will shortly update the certificate used to sign the Installer, Connector, and UI.
@@ -80,7 +79,7 @@ If the user incorrectly approves access, the connector will fail to perform the 
 
 ![Image](/img/integrations/accounting/quickbooksdesktop/incorrect-company-open.png "Connector, Incorrect Company Open")
 
-The user can remove the erroneously approved connection by navigating to `Edit > Preferences > Integrated Applications > Company Preferences`  in the QuickBooks Desktop application, opening the correct company file, and [approving the connector's access to it](/updates/230731-qbd-certificate-update).
+The user can remove the erroneously approved connection by navigating to `Edit > Preferences > Integrated Applications > Company Preferences`  in the QuickBooks Desktop application, opening the correct company file, and [approving the connector's access to it](/updates/230731-qbd-certificate-update#1-the-quickbooks-desktop-application-is-open-with-the-connected-company-file).
 
 #### Denied access
 If the user incorrectly denies the connector's company file access request, QuickBooks Desktop will not complete the requested operation until the user opens the correct company and [authorizes the connector's access to it](/updates/230731-qbd-certificate-update#1-the-quickbooks-desktop-application-is-open-with-the-connected-company-file).
