@@ -1,7 +1,7 @@
 ---
 title: "Completed 2023-01-10: Freshbooks - expenses will no longer be fetched as bills and bill payments"
 date: "2022-09-26"
-tags: ["Deprecation", "Completed"]
+tags: ["Deprecation", "Completed", "Accounting", "Freshbooks"]
 draft: false
 authors: mcclowes
 ---

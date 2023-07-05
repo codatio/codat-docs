@@ -1,7 +1,7 @@
 ---
 title: "Upcoming 2023-07-10: Deprecation of legacy Account Categories and related features in Assess"
 date: "2023-04-05"
-tags: ["Deprecation"]
+tags: ["Deprecation", "Assess", "Account categorization"]
 authors: e-donnelly
 ---
 

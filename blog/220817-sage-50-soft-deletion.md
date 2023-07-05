@@ -1,7 +1,7 @@
 ---
 title: "Completed 2022-10-10: Sage 50 - deleted payment on accounts will be soft deleted  "
 date: "2022-08-17"
-tags: ["Deprecation", "Completed"]
+tags: ["Deprecation", "Completed", "Sage 50"]
 draft: false
 authors: mcclowes
 ---
