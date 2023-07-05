@@ -14,7 +14,7 @@ Consider our Xero integration as an example. Codat's `suppliers` data type uses 
 
 Integration-specific properties not included in our standard data models may still provide you with additional benefits, enriching the data relevant for your use case. For example, you can enhance our `invoices` data type with an invoice `URL`, a Xero-specific field that directs the user to a source document for an invoice hosted outside of Xero. For QBO, the `invoices` data type can be supplemented with `SalesTermRef`, providing you with sales terms associated with an invoice.
 
-We have compiled a number of properties commonly used by our customers to enrich our standard data types. You can [review these in detail](/using-the-api/supplemental-data/usecases) to see how you can use supplemental data to your advantage.
+We have compiled a list of properties commonly used by our customers to enrich our standard data types. You can [review these in detail](/using-the-api/supplemental-data/usecases) to see how you can use supplemental data to your advantage.
 
 ## Support for supplemental data
 
@@ -28,7 +28,7 @@ We currently cover the following integrations and data types:
   style={{ top: 0, left: 0, width: "100%", height: "400px" }}
 ></iframe>
 
-## How do I configure supplemental data?
+## Configure supplemental data
 
 You'll need to specify what supplemental data should be passed in the response for each integration and data type pair you require. To do so, use the [Configure supplemental data](/codat-api#/operations/configure-supplemental-data) endpoint.
 
