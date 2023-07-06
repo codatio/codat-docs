@@ -1,188 +1,254 @@
 ---
-title: "Create and update data"
-description: "Understand how to add data and update data in Codat's integrated platforms"
+title: "Creating and updating data"
+description: "Understand how to create and update data in Codat's integrated platforms"
 ---
-
-In addition to pulling data from integrations, you can push data to create and update records in the underlying integrations using Codat's data model.
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 :::note Data coverage
 
-View the full details of Codat's support for pushing data for each accounting platform in the <a class="external" href="https://knowledge.codat.io/supported-features/accounting" target="_blank">Data Coverage Explorer</a>.
+View the full details of Codat's support for creating and updating data for each accounting platform in our <a class="external" href="https://knowledge.codat.io/supported-features/accounting" target="_blank">Data Coverage Explorer</a>.
 
 :::
 
-## Types of push
+A core feature that Codat offers is the ability to create and update records in the underlying integrations using a single data model. 
 
-Codat supports two types of push to a company's data source: 
+We support the following operations to push the data: 
 
-- `POST` - Create a record in a company's accounting software
-- `PUT` - Update an existing record
+- Create a new record using the `POST` method,
+- Update an existing record using the `PUT` method.  
 
-Create and update operations behave similarly, with both having an options endpoint and returning a _pushOperation_ to allow you to monitor the state of the push. 
+## Understand your options
 
-There are some additional considerations when updating to help ensure the company's data integrity.
+First, you need to know how the data needs to be inserted into the source platform. This includes not only names or amounts, but also details that may be handled differently across different accounting packages. 
 
-## Step 1: Options
+Use our [Options](https://docs.codat.io/codat-api#/operations/get-companies-companyId-connections-connectionId-push) endpoint to understand integration-specific requirements and view example responses:
 
-Before pushing data into accounting software, it is often necessary to collect some details from the user as to how they would like the data to be inserted. This includes names and amounts on transactional entities, but also factors such as categorization of entities, which is often handled differently between different accounting packages. A good example of this is specifying where on the balance sheet/profit and loss reports the user would like a newly-created nominal account to appear.
+```sh
+GET https://api.codat.io/companies/{companyId}/connections/{connectionId}/options/{dataType}
+```
+For example, if you used this endpoint to get details for creating a Chart of Accounts entry through a connection with Xero, you would receive the following response, presented here partially. 
 
-Our `/options` endpoint exposes which fields are required to be pushed for a specific linked company, and the options which may be selected for each field.
+The response indicates that three properties must be populated: 
 
-### GET /options
+- `nominalCode`, a string that can be up to 10 characters long
+- `name`, an unrestricted string
+- `fullyQualifiedCategory`, an enum property that accepts a string chosen from a list of options.
 
-You can retrieve the options for a given data type by calling:
+The `displayName` on the options can be used to display a more descriptive name, such as "Current assets".  
 
-`GET /companies/{companyId}/connections/{connectionId}/options/{dataType}` 
-
-<a class="external" href="https://docs.codat.io/codat-api#/operations/get-create-update-model-options-by-data-type" target="_blank">See the API reference</a>.
-
-```json title="Response from this endpoint for the accounts dataset"
+```json title="Partial Chart of Accounts options response"
 {
   "type": "Object",
   "displayName": "Nominal Account",
-  "description": "Account represented in the chart of accounts or general ledger.",
+  "description": "Nominal Accounts are the categories a business uses to record transactions",
   "properties": {
     "nominalCode": {
       "type": "String",
-       "displayName": "Nominal Code",
-       "description": "Identifier for the nominal account.",
-       "required": true,
-       "validation": {
-         "warnings": [{
-            "field": "nominalCode",
-             "details": "Must have a length between 1 and 7 characters."
+      "displayName": "Nominal Code",
+      "description": "Identifier for the nominal account.",
+      "required": true,
+      "validation": {
+        "warnings": [
+          {
+            "field": "NominalCode",
+            "details": "Max length of 10 characters."
+          }
+        ],
+        "information": []
+      }
+    },
+    "name": {
+      "type": "String",
+      "displayName": "Name",
+      "description": "Name of account as it appears in the chart of accounts or general ledger.",
+      "required": true,
+      "validation": {
+        "warnings": [],
+        "information": [
+          {
+            "field": "Name",
+            "details": "Payments are enabled to this account if the name ends in .PaymentsEnabled."
           }
         ]
       }
-      
     },
-     "name": {
-       "type": "String",
-       "displayName": "Name",
-       "description": "Name of account as it appears in the chart of accounts or general ledger.",
-       "required": true
-      
+    "description": {
+      "type": "String",
+      "displayName": "Description",
+      "description": "Description for the nominal account.",
+      "required": false
     },
-     "fullyQualifiedCategory": {
+    "fullyQualifiedCategory": {
       "type": "String",
       "displayName": "Fully Qualified Category",
       "description": "Account type and category for nominal account.",
-      "options": [{
-          "value": "Asset.CashOnHand",
+      "options": [
+        {
+          "value": "Asset.Current",
           "type": "String",
-          "displayName": "Cash On Hand"
-        }, {
-          "value": "Asset.Checking",
-          "type": "String",
-          "displayName": "Checking"
-        }
+          "displayName": "Current Asset",
+          "required": false
+        },
       ],
-      "required": true,
+      "required": true
     }
   },
-  "required": false,
+  "required": true
 }
 ```
 
-This example describes the nominal account object as requiring three properties to be populated: `nominalCode`, `name`, and `fullyQualifiedCategory`. 
+## Create a new record
 
-- The `nominalCode` property is a string, which has a validation warning that it must be between 1 and 7 characters long. 
-- The `name` property is an unrestricted string. 
-- The `fullyQualifiedCategory` property is an enum property, namely it accepts a string chosen from a list of options (in this case, "Asset.CashOnHand" and "Asset.Checking"). The `displayName` on the options can be used to display the user a more descriptive name, such as "Cash On Hand" and "Checking".
+:::caution Creating data not in the Options response
 
-### Displaying options to your user
-
-The structure of the options endpoint is designed such that it can be easily parsed into a set of controls which can be displayed to the end user such that they can select how data is pushed into their accounting software.
-
-For example, when rendering the "fullyQualifiedCategory" from the above example as a control on a HTML form, it can be parsed into the following:
-
-```html
-<select name="fullyQualifiedCategory" required>
-  <option value="Asset.CashOnHand">Cash On Hand</option>
-  <option value="Asset.Checking">Checking</option>
-</select>
-```
-
-## Step 2: Pushing a record
-
-:::caution Pushing data not referenced by the Options endpoint
-
-If you attempt to push a record using fields that are not documented in the Options response for that company, the additional data may not be pushed to the platform and you may receive validation errors in response to your "push" request.
+If you attempt to create a record using fields that are not documented in the Options response, you may receive validation errors in response to your request.
 :::
 
-### The push endpoint
+Use the `POST /companies/{companyId}/connections/{connectionId}/push/{dataType}` endpoint to create a record in the target platform. The request body should be a JSON object which conforms to the structure of the [Options endpoint response](/using-the-api/push#understand-your-options) we explored previously. 
 
-The endpoint for pushing a record is as follows:
+You can also review our data model schemas (for example, the [Accounts](/accounting-api#/schemas/Account) data type) to check the full scope of fields returned in the response. Note that we base our schemas on the `GET` request, which includes `modeifiedDate` and `sourceModifiedDate` that are not used when creating or updating a record. 
 
-`POST /companies/{companyId}/connections/{connectionId}/push/{dataType}`
+Try to create a new account via our [Create account](https://docs.codat.io/accounting-api#/operations/create-account) endpoint using a valid request body, or a request body that leads to a validation error:
 
-An example would be <a href="/accounting-api#/operations/post-invoice">posting a new invoice to an accounting package for a given company</a>.
+<Tabs>
+   <TabItem value="wo" label="Create an account">  
 
-The request body should be a JSON object which conforms to the structure of the options endpoint above. It is expected that the options endpoint is queried before performing any push operation.
+  ```json  
+    {
+      "nominalCode": "4200123456", 
+      "name": "Codat Assets Account", 
+      "fullyQualifiedCategory": "Asset.Current" 
+    }
+  ```
+   </TabItem>
 
-For example, a valid request body for the example above would be as follows:
+   <TabItem value="with" label="Create an account with an error">  
 
-```json
-{
-  "nominalCode": "4200", 
-  "name": "Codat Bank Account", 
-  "fullyQualifiedCategory": "Asset.CashOnHand" 
-}
-```
-The response from the push endpoint is a PushOperation object, which is structured as follows:
+  ```json  
+    {
+      "nominalCode": "350045006500", 
+      "name": "Excessive Length Account", 
+      "fullyQualifiedCategory": "Asset.Current" 
+    }
+  ```
+   </TabItem>
+</Tabs>
 
-```json
-{
-  "pushOperationKey": "f989ebc8-1fc6-4367-acd1-1892e97bb7b0",
-  "companyId": "9ac8109a-ebf9-464a-b178-fdab4970a584",
-  "dataConnectionId": "15b69c97-318c-46c4-bb68-6f451f365227", 
-  "dataType": "accounts",
-  "status": "Pending",
-  "requestedOnUtc": "2018-08-15T17:22:00",
-  "completedOnUtc": null,
-  "data": {},
-  "validation": {}
-}
-```
-Properties on the object are as follows: 
+This results in a corresponding response from the endpoint, which is a PushOperation object and is structured as follows:
 
-- **pushOperationKey**: A unique identifier generated by Codat to represent this single push operation. This identifier can be used to track the status of the push, and should be persisted
-- **dataType**: The type of data being pushed, eg invoices, customers 
-- **status**: The status of the push operation, which can be `Pending`, `Failed`, `Success`, `TimedOut`, or `Unknown`
+- **pushOperationKey**: A unique identifier generated by Codat to represent this single push operation that can be used to track the status of the push
+- **dataType**: The type of data being pushed, in this case, `chartOfAccounts`
+- **status**: The status of the push operation, which can be `Pending`, `Failed`, `Success` or `TimedOut` 
 - **requestedOnUtc**: The datetime (in UTC) when the push was requested 
-- **completedOnUtc**: The datetime (in UTC) when the push was completed, null if Pending 
-- **data**: The object which was pushed. If the push has completed successfully, this represents the object as it appears in the platform (with any platform-generated fields populated)
+- **completedOnUtc**: The datetime (in UTC) when the push was completed, null if Pending
 - **validation**: A human-readable object describing validation decisions Codat has made when pushing data into the platform. If a push has failed because of validation errors, they will be detailed here.
+
+<Tabs>
+   <TabItem value="wo" label="Account creation response">  
+
+  ```json
+    {
+      "changes": [],
+      "data": {
+        "id": "fdeaba98-6f74-4b03-9a67-3708ea442417",
+        "nominalCode": "4200123456",
+        "name": "Codat Assets Account",
+        "fullyQualifiedCategory": "Asset.Current",
+        "type": "Unknown",
+        "status": "Unknown",
+        "isBankAccount": false,
+        "modifiedDate": "2023-03-21T17:17:59.4604771Z",
+        "validDatatypeLinks": []
+      },
+      "dataType": "chartOfAccounts",
+      "companyId": "fa115de8-5269-474e-8b63-fd697ec04b1b",
+      "pushOperationKey": "8e42e5f6-c596-4ddf-a5e4-fdc9977f5a99",
+      "dataConnectionKey": "c39b4839-9017-4fed-b1c6-af6b31ae32a5",
+      "requestedOnUtc": "2023-03-21T17:17:58.9235368Z",
+      "completedOnUtc": "2023-03-21T17:17:59.4815194Z",
+      "status": "Success",
+      "validation": {
+        "errors": [],
+        "warnings": []
+      },
+      "statusCode": 200
+    }
+  ```
+  
+   </TabItem>
+
+   <TabItem value="with" label="Account creation with a validation error">  
+
+  ```json
+    {
+      "changes": [],
+      "data": {
+        "nominalCode": "350045006500",
+        "name": "Excessive Assets Account",
+        "fullyQualifiedCategory": "Asset.Current",
+        "type": "Unknown",
+        "status": "Unknown",
+        "isBankAccount": false,
+        "validDatatypeLinks": []
+      },
+      "dataType": "chartOfAccounts",
+      "companyId": "6ce1d272-64a7-4853-b6cf-1f79db124775",
+      "pushOperationKey": "0c74f21b-0a43-492e-9aa8-0c8ad928e5b6",
+      "dataConnectionKey": "983a8fd1-a47b-48fa-b1ac-af88a6bcd3cd",
+      "requestedOnUtc": "2023-03-21T17:25:32.0939249Z",
+      "completedOnUtc": "2023-03-21T17:25:32.1587863Z",
+      "status": "Failed",
+      "errorMessage": "An error occurred in a downstream service. Correlation ID: 72e161a142c17bb5b3e480f873df0b21. Message: Push failed for Account: see validation for more information",
+      "validation": {
+        "errors": [
+          {
+            "itemId": "NominalCode",
+            "message": "Failed to push to Account as NominalCode must not be longer than 10 characters long.",
+            "validatorName": "Account"
+          }
+        ],
+        "warnings": []
+      },
+      "statusCode": 400
+    }
+  ```
+   </TabItem>
+</Tabs>
 
 ### Synchronous vs asynchronous push
 
-The majority of platforms are implemented to push asynchronously so you will receive a `Pending` push operation in response to your push request.  You can use the details in this response to monitor the status of your push request. 
-
-For some platforms, pushing may be implemented synchronously and you may receive a `Success` or `Failed` push operation in response to your push request (in place of a `Pending` push operation). However, we strongly suggest that you assume that all pushes will be processed asynchronously when integrating with Codat.
+You should assume that all data creation and updates will be processed asynchronously when integrating with Codat. This means you will receive a `Pending` status in response to your request. You can use the details in this response to monitor the status of your request.
 
 ### Timeouts
 
-It is possible for an operation to be in a `Pending` status indefinitely, for example if a user's on-premise software is offline. To avoid possible issues this could create for clients, Codat provides a timeout functionality for push operations in the `Pending` status. If the `timeoutInMinutes` property has been set on a push operation, Codat will guarantee that the operation will not be processed after that deadline. If the deadline expires, the status of the push operation will change to `TimedOut`.
+It is possible for an operation to be in a `Pending` status indefinitely, for example, if a user's on-premise software is offline. Codat provides a timeout functionality for such scenarios. 
 
-## Step 3: Monitoring status of push
+If the `timeoutInMinutes` property has been set on a create / update operation, Codat guarantees that the operation will not be processed after that deadline. If the deadline expires, the status of the operation will change to `TimedOut`.
 
-For asynchronous push operations, where the push is initially in a `Pending` status, you may wish to have a process that will provide an update on a final `Success` or `Failed` state, or `Unknown` state if the outcome of the push is unclear. This outcome can then be communicated to the user, or further actions can be taken.
+## Monitor the status of your operation
 
-Codat supports two methods of monitoring the status of push operations: polling and webhooks. 
+Your asynchronous operation will initially be in a `Pending` status. You can track an update on the final `Success` or `Failed` state to communicate the outcome of the operation to the user, or take further action in case of failures. 
 
-### 1. Polling
+We recommend listening to our webhooks for this purpose. 
 
-The Codat API provides two endpoints for monitoring push operations: one for viewing the status of all the most recent push operations, and one for viewing the status of a single push operation, identified by the `PushOperationKey` returned when you requested the push.
+In the **Monitor > Alerting rules > Create new rule** [view](https://app.codat.io/monitor/rules) of the Codat Portal, create a subscription to the _Push operation status has changed_ rule type. You can review detailed instructions in our documentation for [subscribing to rules](/introduction/webhooks/core-rules-create) and receiving webhooks as [email alerts](/introduction/webhooks/receive-webhooks-as-email-alerts).
 
-You can:
+:::info Polling for status
 
-- List all push operations (paged) for a company using `GET /companies/{companyId}/push`
-- Get a single push operation by ID using `GET /companies/{companyId}/push/{pushOperationKey}`.
+You can also use our endpoints to monitor the status of your create / update operation:
+- List all push operations for a company using `GET /companies/{companyId}/push`
+- Get a single push operation by ID using `GET /companies/{companyId}/push/{pushOperationKey}`
+:::
 
-You can periodically poll the single endpoint while a push is in a `Pending` state to identify when it enters a `Success`, `Failed`, or `Unknown` state, at which point the outcome can be communicated to the user. 
+## Data consistency considerations
 
-The list endpoint can be used to present to the user a list of recent push requests and their statuses. This can be useful for applications which push data frequently.
+- If data is successfully created in the target platform, it will be visible almost immediately when retrieving that data type from Codat. If you produce point-in-time reports or make use of the `modifiedDate` to pull only recent changes from the API, this may mean your calculations built on this data are inconsistent. 
 
-### 2. Webhooks
+  For example, you may have checked your accounts receivable position based on the balance sheet and invoice data types pulled yesterday. If you then created an invoice today, this will cause a discrepancy as there may have been changes to invoices not seen between the `lastSyncUtc` and the maximum `modifiedDate` of the invoices.
 
-A second option for monitoring push operations is to register a subscription to the "Push status changed" rule. This can be configured by following the instructions in our documentation for [subscribing to rules](/introduction/webhooks/core-rules-create).
+- There is no coordination between the pull and create / update systems to guarantee the correct order of operations. This means, if you trigger a push operation while a pull is in progress for a data type, there is a small chance that pulled data may overwrite pushed data in our API. Therefore, we recommend you do not create / update a data type while it has a pull in progress. 
+
+## Read next 
+
+Check out our guide on creating and invoice in Sage Intacct. (The new guide).
