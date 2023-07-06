@@ -3,31 +3,29 @@ import clsx from "clsx";
 
 import styles from "./styles.module.scss";
 
-const PageHeader = ({className, title, children, icon}) => {
+const PageHeader = ({className, title, text, img, children, icon}) => {
   return (
-    <>
-      <div className={clsx(styles.wrapper, className)}>
-        <div className={styles.header}>
-          <div className={styles.title}>
-            {
-              icon && <img
-              src={icon}
-              className="icon"
-            />
+    <div className={clsx(styles.wrapper, className)}>
+      <div className={styles.header}>
+        <div className={styles.title}>
+          {
+            icon && 
+            <div className={clsx("icon-wrapper product animated", styles.iconWrapper, className)}>
+              <img
+                src={icon}
+                className="icon product"
+              />
+            </div>
           }
-            
-            <h1>{title}</h1>
-          </div>
-          {children}
+          <h1>{title}</h1>
         </div>
-      </div>
 
-      <div className={clsx(styles.spacer, className)}>
-        <h1>{title}</h1>
+        {text && <p>{text}</p>}
 
         {children}
       </div>
-    </>
+      <img className={styles.heroImg} src={img}/>
+    </div>
   )
 }
 

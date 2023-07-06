@@ -1,7 +1,7 @@
 {
   "openapi": "3.1.0",
   "x-stoplight": {
-    "id": "j388fn92qyj2u"
+    "id": "9b3k769vbwcl4"
   },
   "servers": [
     {
@@ -678,7 +678,7 @@
             "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
-        "description": "Gets the list of bank accounts for a given connection",
+        "description": "The *List bank accounts* endpoint returns a list of [bank accounts](https://docs.codat.io/accounting-api#/schemas/BankAccount) for a given company's connection.\n\n[Bank accounts](https://docs.codat.io/accounting-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    ",
         "operationId": "list-bank-accounts"
       }
     },
@@ -1914,7 +1914,7 @@
           }
         },
         "operationId": "get-create-update-bankAccounts-model",
-        "description": "Get create/update bank account model. Returns the expected data for the request payload.\r\n\r\nSee the examples for integration-specific indicative models.\r\n\r\n> **Supported Integrations**\r\n> \r\n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankAccounts) for integrations that support creating and updating bank accounts.\r\n"
+        "description": "The *Get create/update bank account model* endpoint returns the expected data for the request payload when creating and updating a [bank account](https://docs.codat.io/accounting-api#/schemas/BankAccount) for a given company and integration.\r\n\r\n[Bank accounts](https://docs.codat.io/accounting-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.\r\n\r\n**Integration-specific behaviour**\r\n\r\nSee the *response examples* for integration-specific indicative models.\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankAccounts) for integrations that support creating and updating a bank account.\r\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/bankAccounts": {
@@ -1970,7 +1970,7 @@
             "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
-        "description": "Posts a new bank account to the accounting package for a given company.\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update bank account model](https://docs.codat.io/accounting-api#/operations/get-create-update-bankAccounts-model).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankAccounts) to see which integrations support this endpoint.\r\n",
+        "description": "The *Create bank account* endpoint creates a new [bank account](https://docs.codat.io/accounting-api#/schemas/BankAccount) for a given company's connection.\r\n\r\n[Bank accounts](https://docs.codat.io/accounting-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.\r\n\r\n**Integration-specific behaviour**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update bank account model](https://docs.codat.io/accounting-api#/operations/get-create-update-bankAccounts-model).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankAccounts) for integrations that support creating an account.",
         "operationId": "create-bank-account"
       }
     },
@@ -8057,7 +8057,7 @@
           }
         },
         "operationId": "get-create-chartOfAccounts-model",
-        "description": "﻿The *Get create account model* endpoint returns the expected data for the request payload when creating an [account](https://docs.codat.io/accounting-api#/schemas/Account) for a given company and integration.\n\n[Accounts](https://docs.codat.io/accounting-api#/schemas/Account) are the categories a business uses to record accounting transactions.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account."
+        "description": "The *Get create account model* endpoint returns the expected data for the request payload when creating an [account](https://docs.codat.io/accounting-api#/schemas/Account) for a given company and integration.\n\n[Accounts](https://docs.codat.io/accounting-api#/schemas/Account) are the categories a business uses to record accounting transactions.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account.\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/accounts": {
@@ -8113,7 +8113,7 @@
             "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
-        "description": "The *Create accounts* endpoint creates a new [account](https://docs.codat.io/accounting-api#/schemas/Account) for a given company's connection.\n\n[Accounts](https://docs.codat.io/accounting-api#/schemas/Account) are the categories a business uses to record accounting transactions.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create account model](https://docs.codat.io/accounting-api#/operations/get-create-chartOfAccounts-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account.",
+        "description": "The *Create account* endpoint creates a new [account](https://docs.codat.io/accounting-api#/schemas/Account) for a given company's connection.\n\n[Accounts](https://docs.codat.io/accounting-api#/schemas/Account) are the categories a business uses to record accounting transactions.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create account model](https://docs.codat.io/accounting-api#/operations/get-create-chartOfAccounts-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account.\n",
         "operationId": "create-account"
       }
     },
@@ -8124,7 +8124,7 @@
         ],
         "summary": "List suppliers",
         "operationId": "list-suppliers",
-        "description": "Gets the latest suppliers for a company, with pagination",
+        "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/accounting-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/accounting-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    ",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -14277,7 +14277,7 @@
           }
         },
         "operationId": "get-create-update-suppliers-model",
-        "description": "Get create/update supplier model. Returns the expected data for the request payload.\r\n\r\nSee the examples for integration-specific indicative models.\r\n\r\n> **Supported Integrations**\r\n> \r\n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support creating and updating suppliers."
+        "description": "The *Get create/update supplier model* endpoint returns the expected data for the request payload when creating and updating a [supplier](https://docs.codat.io/accounting-api#/schemas/Supplier) for a given company and integration.\r\n\r\n[Suppliers](https://docs.codat.io/accounting-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\r\n\r\n**Integration-specific behaviour**\r\n\r\nSee the *response examples* for integration-specific indicative models.\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support creating and updating a supplier.\r\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/suppliers": {
@@ -14344,7 +14344,7 @@
           }
         },
         "summary": "Create supplier",
-        "description": "Push suppliers\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update supplier model](https://docs.codat.io/accounting-api#/operations/get-create-update-suppliers-model).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) to see which integrations support this endpoint.\r\n",
+        "description": "The *Create supplier* endpoint creates a new [supplier](https://docs.codat.io/accounting-api#/schemas/Supplier) for a given company's connection.\r\n\r\n[Suppliers](https://docs.codat.io/accounting-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\r\n\r\n**Integration-specific behaviour**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update supplier model](https://docs.codat.io/accounting-api#/operations/get-create-update-suppliers-model).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support creating an account.\r\n",
         "operationId": "create-supplier"
       }
     },
@@ -17683,7 +17683,7 @@
             }
           }
         },
-        "description": "﻿Gets the latest bills for a company, with pagination.",
+        "description": "The *List bills* endpoint returns a list of [bills](https://docs.codat.io/accounting-api#/schemas/Bill) for a given company's connection.\n\n[Bills](https://docs.codat.io/accounting-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    ",
         "operationId": "list-bills"
       }
     },
@@ -19331,7 +19331,7 @@
           }
         },
         "summary": "Get bill",
-        "description": "﻿Get a bill.",
+        "description": "The *Get bill* endpoint returns a single bill for a given billId.\n\n[Bills](https://docs.codat.io/accounting-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support getting a specific bill.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n",
         "operationId": "get-bill"
       }
     },
@@ -23817,7 +23817,7 @@
           }
         },
         "operationId": "get-create-update-bills-model",
-        "description": "﻿Get create/update bill model.\n\n> **Supported Integrations**\n> \n> Check out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support creating and updating a bill."
+        "description": "﻿The *Get create/update bill model* endpoint returns the expected data for the request payload when creating and updating a [bill](https://docs.codat.io/accounting-api#/schemas/Bill) for a given company and integration.\n\n[Bills](https://docs.codat.io/accounting-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support creating and updating a bill.\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/bills": {
@@ -24149,7 +24149,7 @@
             "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
-        "description": "Posts a new bill to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill model](https://docs.codat.io/accounting-api#/operations/get-create-update-bills-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) to see which integrations support this endpoint.\n",
+        "description": "The *Create bill* endpoint creates a new [bill](https://docs.codat.io/accounting-api#/schemas/Bill) for a given company's connection.\n\n[Bills](https://docs.codat.io/accounting-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill model](https://docs.codat.io/accounting-api#/operations/get-create-update-bills-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support creating an account.\n",
         "operationId": "create-bill"
       }
     },
@@ -24210,7 +24210,7 @@
             "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
-        "description": "﻿Posts an updated bill to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill model](https://docs.codat.io/accounting-api#/operations/get-create-update-bills-model).\n\n> **Supported Integrations**\n> \n> Check out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support updating a bill.",
+        "description": "The *Update bill* endpoint updates an existing [bill](https://docs.codat.io/accounting-api#/schemas/Bill) for a given company's connection.\n\n[Bills](https://docs.codat.io/accounting-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill model](https://docs.codat.io/accounting-api#/operations/get-create-update-bills-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support creating an account.\n",
         "operationId": "update-bill"
       },
       "delete": {
@@ -24249,7 +24249,7 @@
             "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
-        "description": "﻿The _Delete Bills_ endpoint allows you to delete a specified Bill from an accounting platform. \n\n### Process \n1. Pass the `{billId}` to the _Delete Bills_ endpoint and store the `pushOperationKey` returned.\n2. Check the status of the delete operation by checking the status of push operation either via\n    1. [Push operation webhook](/introduction/webhooks/core-rules-types#push-operation-status-has-changed) (advised),\n    2. [Push operation status endpoint](https://docs.codat.io/codat-api#/operations/get-push-operation).\n\n   A `Success` status indicates that the Bill object was deleted from the accounting platform.\n3. (Optional) Check that the Bill was deleted from the accounting platform.\n\n### Effect on related objects\n\nBe aware that deleting a Bill from an accounting platform might cause related objects to be modified. For example, if you delete a paid Bill in QuickBooks Online, the bill is deleted but the bill payment against that bill is not. The bill payment is converted to a payment on account.\n\n## Integration specifics\nIntegrations that support soft delete do not permanently delete the object in the accounting platform.\n\n| Integration | Soft Delete | Details                                                                                                      |  \n|-------------|-------------|--------------------------------------------------------------------------------------------------------------|\n| QuickBooks Online | No          | -                                                                                                            |\n| Oracle NetSuite   | No          | When deleting a Bill that's already linked to a Bill payment, you must delete the linked Bill payment first. |\n\n> **Supported Integrations**\n> \n> This functionality is currently only supported for our QuickBooks Online abd Oracle NetSuite integrations. Check out our [public roadmap](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/46-accounting-api) to see what we're building next, and to submit ideas for new features.",
+        "description": "﻿The *Delete bill* endpoint allows you to delete a specified bill from an accounting platform. \n\n[Bills](https://docs.codat.io/accounting-api#/schemas/Bill) are itemized records of goods received or services provided to the SMB.\n\n### Process \n1. Pass the `{billId}` to the *Delete bill* endpoint and store the `pushOperationKey` returned.\n2. Check the status of the delete operation by checking the status of push operation either via\n    1. [Push operation webhook](https://docs.codat.io/introduction/webhooks/core-rules-types#push-operation-status-has-changed) (advised),\n    2. [Push operation status endpoint](https://docs.codat.io/codat-api#/operations/get-push-operation).\n\n   A `Success` status indicates that the bill object was deleted from the accounting platform.\n3. (Optional) Check that the bill was deleted from the accounting platform.\n\n### Effect on related objects\n\nBe aware that deleting a bill from an accounting platform might cause related objects to be modified. For example, if you delete a paid bill in QuickBooks Online, the bill is deleted but the bill payment against that bill is not. The bill payment is converted to a payment on account.\n\n## Integration specifics\nIntegrations that support soft delete do not permanently delete the object in the accounting platform.\n\n| Integration | Soft Delete | Details                                                                                                      |  \n|-------------|-------------|--------------------------------------------------------------------------------------------------------------|\n| QuickBooks Online | No          | -                                                                                                            |\n| Oracle NetSuite   | No          | When deleting a bill that's already linked to a bill payment, you must delete the linked bill payment first. |\n\n> **Supported Integrations**\n> \n> This functionality is currently only supported for our QuickBooks Online abd Oracle NetSuite integrations. Check out our [public roadmap](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/46-accounting-api) to see what we're building next, and to submit ideas for new features.",
         "tags": [
           "Bills"
         ]
@@ -24294,7 +24294,7 @@
         },
         "operationId": "list-bill-attachments",
         "summary": "List bill attachments",
-        "description": "﻿List bill attachments."
+        "description": "The *List bill attachments* endpoint returns a list of attachments available to download for a given `billId`.\n\n[Bills](https://docs.codat.io/accounting-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support listing bill attachments.\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/bills/{billId}/attachments/{attachmentId}": {
@@ -24302,7 +24302,7 @@
         "tags": [
           "Bills"
         ],
-        "description": "﻿Get bill attachment.",
+        "description": "The *Get bill attachment* endpoint returns a specific attachment for a given `billId` and `attachmentId`.\n\n[Bills](https://docs.codat.io/accounting-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support getting a bill attachment.\n",
         "operationId": "get-bill-attachment",
         "parameters": [
           {
@@ -24386,7 +24386,7 @@
             "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
-        "description": "﻿Download bill attachment."
+        "description": "The *Download bill attachment* endpoint downloads a specific attachment for a given `billId` and `attachmentId`.\n\n[Bills](https://docs.codat.io/accounting-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support downloading a bill attachment.\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/bills/{billId}/attachments": {
@@ -24431,7 +24431,7 @@
             "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
-        "description": "﻿Upload bill attachment."
+        "description": "The *Upload bill attachment* endpoint uploads an attachment and assigns it against a specific `billId`.\n\n[Bills](https://docs.codat.io/accounting-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\n**Integration-specific behaviour**\n\nFor more details on supported file types by integration see [Attachments](https://docs.codat.io/accounting-api#/schemas/Attachment).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support uploading a bill attachment.\n"
       }
     },
     "/companies/{companyId}/data/billCreditNotes": {
@@ -26433,7 +26433,7 @@
             "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
-        "description": "﻿Gets a list of all bill credit notes for a company, with pagination."
+        "description": "The *List bill credit notes* endpoint returns a list of [bill credit notes](https://docs.codat.io/accounting-api#/schemas/BillCreditNote) for a given company's connection.\n\n[Bill credit notes](https://docs.codat.io/accounting-api#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    "
       }
     },
     "/companies/{companyId}/data/billCreditNotes/{billCreditNoteId}": {
@@ -27344,7 +27344,7 @@
             "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
-        "description": "﻿Gets a single billCreditNote corresponding to the given ID.",
+        "description": "The *Get bill credit note* endpoint returns a single bill credit note for a given billCreditNoteId.\n\n[Bill credit notes](https://docs.codat.io/accounting-api#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) for integrations that support getting a specific bill credit note.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n",
         "operationId": "get-bill-credit-note"
       }
     },
@@ -31320,7 +31320,7 @@
           }
         },
         "operationId": "get-create-update-billCreditNotes-model",
-        "description": "﻿Get create/update bill credit note model.\n\n> **Supported Integrations**\n> \n> Check out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) for integrations that support creating and updating bill credit notes."
+        "description": "The *Get create/update bill credit note model* endpoint returns the expected data for the request payload when creating and updating a [bill credit note](https://docs.codat.io/accounting-api#/schemas/BillCreditNote) for a given company and integration.\n\n[Bill credit notes](https://docs.codat.io/accounting-api#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) for integrations that support creating and updating a bill credit note.\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/billCreditNotes": {
@@ -31603,7 +31603,7 @@
             "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
-        "description": "Posts a new billCreditNote to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill credit note model](https://docs.codat.io/accounting-api#/operations/get-create-update-billCreditNotes-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) to see which integrations support this endpoint.\n",
+        "description": "The *Create bill credit note* endpoint creates a new [bill credit note](https://docs.codat.io/accounting-api#/schemas/BillCreditNote) for a given company's connection.\n\n[Bill credit notes](https://docs.codat.io/accounting-api#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill credit note model](https://docs.codat.io/accounting-api#/operations/get-create-update-billCreditNotes-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) for integrations that support creating an account.\n",
         "operationId": "create-bill-credit-note"
       }
     },
@@ -31663,7 +31663,7 @@
             "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
-        "description": "﻿Posts an updated billCreditNote to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill credit note model](https://docs.codat.io/accounting-api#/operations/get-create-update-billCreditNotes-model).\n\n> **Supported Integrations**\n> \n> Check out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) for integrations that support updating bill credit notes.",
+        "description": "The *Update bill credit note* endpoint updates an existing [bill credit note](https://docs.codat.io/accounting-api#/schemas/BillCreditNote) for a given company's connection.\n\n[Bill credit notes](https://docs.codat.io/accounting-api#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill credit note model](https://docs.codat.io/accounting-api#/operations/get-create-update-billCreditNotes-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) for integrations that support creating an account.\n",
         "operationId": "update-bill-credit-note"
       }
     },
@@ -33053,7 +33053,7 @@
             "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
-        "description": "﻿Gets the latest billPayments for a company, with pagination.",
+        "description": "The *List bill payments* endpoint returns a list of [bill payments](https://docs.codat.io/accounting-api#/schemas/BillPayment) for a given company's connection.\n\n[Bill payments](https://docs.codat.io/accounting-api#/schemas/BillPayment) are an allocation of money within any customer accounts payable account.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    ",
         "operationId": "list-bill-payments"
       }
     },
@@ -33287,7 +33287,7 @@
             "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
-        "description": "Posts a new bill payment to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create bill payment model](https://docs.codat.io/accounting-api#/operations/get-create-billPayments-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billPayments) to see which integrations support this endpoint.\n",
+        "description": "The *Create bill payment* endpoint creates a new [bill payment](https://docs.codat.io/accounting-api#/schemas/BillPayment) for a given company's connection.\n\n[Bill payments](https://docs.codat.io/accounting-api#/schemas/BillPayment) are an allocation of money within any customer accounts payable account.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create bill payment model](https://docs.codat.io/accounting-api#/operations/get-create-billPayments-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billPayments) for integrations that support creating an account.\n",
         "operationId": "create-bill-payment"
       }
     },
@@ -35781,7 +35781,7 @@
           }
         },
         "operationId": "get-create-billPayments-model",
-        "description": "﻿Get create bill payment model.\n\n> **Supported Integrations**\n> \n> Check out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billPayments) for integrations that support creating and deleting bill payments."
+        "description": "The *Get create bill payment model* endpoint returns the expected data for the request payload when creating a [bill payment](https://docs.codat.io/accounting-api#/schemas/BillPayment) for a given company and integration.\n\n[Bill payments](https://docs.codat.io/accounting-api#/schemas/BillPayment) are an allocation of money within any customer accounts payable account.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billPayments) for integrations that support creating a bill payment.\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/billPayments/{billPaymentId}": {
@@ -35823,7 +35823,7 @@
             "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1bills/get/responses/429"
           }
         },
-        "description": "﻿The _Delete Bill Payments_ endpoint allows you to delete a specified Bill Payment from an accounting platform.\n\n### Process\n1. Pass the `{billPaymentId}` to the _Delete Bill Payments_ endpoint and store the `pushOperationKey` returned.\n2. Check the status of the delete operation by checking the status of push operation either via\n    1. [Push operation webhook](/introduction/webhooks/core-rules-types#push-operation-status-has-changed) (advised),\n    2. [Push operation status endpoint](https://docs.codat.io/codat-api#/operations/get-push-operation).\n\n   A `Success` status indicates that the Bill Payment object was deleted from the accounting platform.\n3. (Optional) Check that the Bill Payment was deleted from the accounting platform.\n\n### Effect on related objects\nBe aware that deleting a Bill Payment from an accounting platform might cause related objects to be modified.\n\n## Integration specifics\nIntegrations that support soft delete do not permanently delete the object in the accounting platform.\n\n| Integration | Soft Delete | Details                                                                                             |  \n|-------------|-------------|-----------------------------------------------------------------------------------------------------|\n| Oracle NetSuite   | No          | See [here](/integrations/accounting/netsuite/how-deleting-bill-payments-works) to learn more. |\n\n> **Supported Integrations**\n>\n> This functionality is currently only supported for our QuickBooks Online abd Oracle NetSuite integrations. Check out our [public roadmap](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/46-accounting-api) to see what we're building next, and to submit ideas for new features."
+        "description": "﻿The *Delete bill payment* endpoint allows you to delete a specified bill payment from an accounting platform.\n\n[Bill payments](https://docs.codat.io/accounting-api#/schemas/BillPayment) are an allocation of money within any customer accounts payable account.\n\n### Process\n1. Pass the `{billPaymentId}` to the *Delete bill payment* endpoint and store the `pushOperationKey` returned.\n2. Check the status of the delete operation by checking the status of push operation either via\n    1. [Push operation webhook](https://docs.codat.io/introduction/webhooks/core-rules-types#push-operation-status-has-changed) (advised),\n    2. [Push operation status endpoint](https://docs.codat.io/codat-api#/operations/get-push-operation).\n\n   A `Success` status indicates that the bill payment object was deleted from the accounting platform.\n3. (Optional) Check that the bill payment was deleted from the accounting platform.\n\n### Effect on related objects\nBe aware that deleting a bill payment from an accounting platform might cause related objects to be modified.\n\n## Integration specifics\nIntegrations that support soft delete do not permanently delete the object in the accounting platform.\n\n| Integration | Soft Delete | Details                                                                                             |  \n|-------------|-------------|-----------------------------------------------------------------------------------------------------|\n| Oracle NetSuite   | No          | See [here](/integrations/accounting/netsuite/how-deleting-bill-payments-works) to learn more. |\n\n> **Supported Integrations**\n>\n> This functionality is currently only supported for our QuickBooks Online abd Oracle NetSuite integrations. Check out our [public roadmap](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/46-accounting-api) to see what we're building next, and to submit ideas for new features."
       }
     }
   },
@@ -36868,7 +36868,7 @@
               },
               "supplementalData": {
                 "type": "object",
-                "description": "Reference to a configured dynamic key value pair that is unique to the accounting platform. This feature is in private beta, contact us if you would like to learn more.",
+                "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting platform. [Learn more](https://docs.codat.io/using-the-api/additional-data) about supplemental data.",
                 "properties": {
                   "content": {
                     "type": "object",
@@ -36878,7 +36878,8 @@
                     },
                     "nullable": true
                   }
-                }
+                },
+                "title": "Supplemental data"
               }
             }
           },
@@ -37658,7 +37659,7 @@
                 "title": "Currency rate",
                 "type": "number",
                 "nullable": true,
-                "description": "Rate to convert the total amount of the payment into the base currency for the company at the time of the payment.\n\nCurrency rates in Codat are implemented as the multiple of foreign currency units to each base currency unit.  \n\nWhere the currency rate is provided by the underlying accounting platform, it will be available from Codat with the same precision (up to a maximum of 9 decimal places). \n\nFor accounting platforms which do not provide an explicit currency rate, it is calculated as `baseCurrency / foreignCurrency` and will be returned to 9 decimal places.\n\n## Examples with base currency of GBP\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (GBP) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **USD**          | $20            | 0.781         | £15.62                     |\n| **EUR**          | €20            | 0.885         | £17.70                     |\n| **RUB**          | ₽20            | 0.011         | £0.22                      |\n\n## Examples with base currency of USD\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (USD) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **GBP**          | £20            | 1.277         | $25.54                     |\n| **EUR**          | €20            | 1.134         | $22.68                     |\n| **RUB**          | ₽20            | 0.015         | $0.30                      |"
+                "description": "Rate to convert the total amount of the payment into the base currency for the company at the time of the payment.\n\nCurrency rates in Codat are implemented as the multiple of foreign currency units to each base currency unit.  \n\nIt is not possible to perform the currency conversion with two or more non-base currencies participating in the transaction. For example, if a company's base currency is USD, and it has a bill issued in EUR, then the bill payment must happen in USD or EUR.\n\nWhere the currency rate is provided by the underlying accounting platform, it will be available from Codat with the same precision (up to a maximum of 9 decimal places). \n\nFor accounting platforms which do not provide an explicit currency rate, it is calculated as `baseCurrency / foreignCurrency` and will be returned to 9 decimal places.\n\n## Examples with base currency of GBP\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (GBP) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **USD**          | $20            | 0.781         | £15.62                     |\n| **EUR**          | €20            | 0.885         | £17.70                     |\n| **RUB**          | ₽20            | 0.011         | £0.22                      |\n\n## Examples with base currency of USD\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (USD) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **GBP**          | £20            | 1.277         | $25.54                     |\n| **EUR**          | €20            | 1.134         | $22.68                     |\n| **RUB**          | ₽20            | 0.015         | $0.30                      |"
               }
             },
             "required": [

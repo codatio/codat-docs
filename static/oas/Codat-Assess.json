@@ -54,6 +54,10 @@
     {
       "name": "Categories",
       "description": "Categorisation"
+    },
+    {
+      "name": "Loan transactions",
+      "description": "Loan Transactions"
     }
   ],
   "paths": {
@@ -5161,6 +5165,86 @@
           }
         ]
       }
+    },
+    "/data/companies/{companyId}/assess/reports/enhancedLiabilities/loan/transactions": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ],
+      "get": {
+        "summary": "List enhanced loan transactions",
+        "tags": [
+          "Reports"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanTransactions"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          }
+        },
+        "operationId": "list-loan-transactions",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "banking",
+                "commerce",
+                "accounting"
+              ]
+            },
+            "in": "query",
+            "name": "sourceType",
+            "description": "Data source type",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/data/companies/{companyId}/assess/reports/enhancedLiabilities/loan": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ],
+      "get": {
+        "summary": "Get enhanced loan summaries",
+        "tags": [
+          "Reports"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanSummary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          }
+        },
+        "operationId": "get-loan-summary"
+      }
     }
   },
   "webhooks": {
@@ -6842,6 +6926,318 @@
           }
         }
       },
+      "LoanTransactions": {
+        "title": "Loan Transactions",
+        "type": "object",
+        "properties": {
+          "reportInfo": {
+            "$ref": "#/components/schemas/LoanTransactions/definitions/loanTransactionsReportInfo"
+          },
+          "reportItems": {
+            "type": "array",
+            "description": "Contains object of reporting properties. The loan ref will reference a different object depending on the integration type.",
+            "items": {
+              "$ref": "#/components/schemas/LoanTransactions/definitions/reportItems"
+            }
+          },
+          "errors": {
+            "type": "array",
+            "description": "If there are no errors, an empty array is returned."
+          }
+        },
+        "definitions": {
+          "loanTransactionsReportInfo": {
+            "title": "Loan Transactions Report Info",
+            "type": "object",
+            "properties": {
+              "pageNumber": {
+                "type": "integer",
+                "description": "The page number."
+              },
+              "pageSize": {
+                "type": "integer",
+                "description": "Queried page size."
+              },
+              "totalResults": {
+                "type": "integer",
+                "description": "The total number of transactions returned."
+              },
+              "reportName": {
+                "type": "string",
+                "description": "The name of the report."
+              },
+              "companyName": {
+                "type": "string",
+                "description": "Name of the company queried."
+              },
+              "generatedDate": {
+                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "description": "Returns the YYYY-MM-DD datetime of report generation.  urns the YYYY-MM-DD datetime of report generation."
+              }
+            }
+          },
+          "loanRef": {
+            "title": "Loan Reference",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "The id of the object being referred to."
+              },
+              "dataConnectionId": {
+                "type": "string",
+                "description": "The dataConnectionId the object being referred to is associated with."
+              },
+              "type": {
+                "type": "string",
+                "description": "The object type data is referring to, e.g. Account."
+              }
+            }
+          },
+          "itemRef": {
+            "title": "Item reference",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "The id of the object, e.g. the Journal entry."
+              },
+              "dataConnectionId": {
+                "type": "string",
+                "description": "The data connection id being referenced."
+              },
+              "type": {
+                "type": "string",
+                "description": "The data type the loan transaction entry was extracted from."
+              }
+            }
+          },
+          "reportItems": {
+            "type": "object",
+            "properties": {
+              "loanRef": {
+                "$ref": "#/components/schemas/LoanTransactions/definitions/loanRef",
+                "description": "Contains object that contains all the Loan transactions for that integration type."
+              },
+              "itemRef": {
+                "$ref": "#/components/schemas/LoanTransactions/definitions/itemRef",
+                "description": "Contains object of reporting properties. The loan ref will reference a different object depending on the integration type."
+              },
+              "date": {
+                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "description": "The date of that entry type occurred."
+              },
+              "amount": {
+                "type": "number",
+                "description": "The loan transaction amount."
+              },
+              "loanTransactionType": {
+                "type": "string",
+                "enum": [
+                  "Investment",
+                  "Repayment",
+                  "Interest"
+                ]
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "reportInfo": {
+              "pageNumber": 1,
+              "pageSize": 1000,
+              "totalResults": 1,
+              "reportName": "AccountingLoanTransactions",
+              "companyName": "Supermarket store",
+              "generatedDate": "2022-10-23T00:00:00Z"
+            },
+            "reportItems": [
+              {
+                "loanRef": {
+                  "id": "332",
+                  "dataConnectionId": "ecd2d6be-5194-40a1-838f-5577a4881aaa",
+                  "type": "chartOfAccount"
+                },
+                "itemRef": {
+                  "id": "755488",
+                  "dataConnectionId": "ecd2d6be-5194-40a1-838f-5577a4881aaa",
+                  "type": "journalEntry"
+                },
+                "date": "2020-08-02",
+                "amount": -455,
+                "transactionType": "Repayment"
+              }
+            ]
+          }
+        ]
+      },
+      "LoanSummary": {
+        "title": "Loan Summary",
+        "x-stoplight": {
+          "id": "tpq5juroo1ylk"
+        },
+        "type": "object",
+        "properties": {
+          "reportInfo": {
+            "$ref": "#/components/schemas/LoanSummary/definitions/loanSummaryReportInfo",
+            "x-stoplight": {
+              "id": "f7qjivq05pm1q"
+            }
+          },
+          "reportItems": {
+            "type": "array",
+            "description": "Returns a summary of all loan activity for that integration type",
+            "items": {
+              "$ref": "#/components/schemas/LoanSummary/definitions/reportItems",
+              "x-stoplight": {
+                "id": "3o8v6y67rbrro"
+              }
+            },
+            "x-stoplight": {
+              "id": "9mupc5jphk9fa"
+            }
+          }
+        },
+        "definitions": {
+          "loanSummaryReportInfo": {
+            "title": "Loan Summary Report Info",
+            "type": "object",
+            "properties": {
+              "reportName": {
+                "type": "string",
+                "description": "The name of the report."
+              },
+              "companyName": {
+                "type": "string",
+                "description": "Name of the company queried."
+              },
+              "generatedDate": {
+                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "description": "Returns the YYYY-MM-DD datetime of report generation.  urns the YYYY-MM-DD datetime of report generation."
+              }
+            }
+          },
+          "loanRef": {
+            "title": "Loan Reference",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "The id of the object being referred to.",
+                "x-stoplight": {
+                  "id": "8iauxevkpnxyj"
+                }
+              },
+              "dataConnectionId": {
+                "type": "string",
+                "description": "The dataConnectionId the object being referred to is associated with.",
+                "x-stoplight": {
+                  "id": "vrnhmgrfndjhh"
+                }
+              },
+              "type": {
+                "type": "string",
+                "description": "The object type data is referring to, e.g. Account.",
+                "x-stoplight": {
+                  "id": "m68yr2mpbnvvq"
+                }
+              }
+            },
+            "x-stoplight": {
+              "id": "pr3pywxqc6jiu"
+            }
+          },
+          "recordRef": {
+            "title": "Item reference",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "The id of the object being referred to."
+              },
+              "dataConnectionId": {
+                "type": "string",
+                "description": "The dataConnectionId the object being referred to is associated with."
+              },
+              "integrationType": {
+                "type": "string",
+                "enum": [
+                  "Accounting",
+                  "Banking",
+                  "Commerce"
+                ],
+                "description": "The integration type begin referred to."
+              },
+              "recordRefType": {
+                "type": "string",
+                "enum": [
+                  "accounts",
+                  "banking-accounts",
+                  "commerce-transactions"
+                ],
+                "description": "The datatype being referred to."
+              }
+            }
+          },
+          "reportItems": {
+            "type": "object",
+            "properties": {
+              "recordRef": {
+                "$ref": "#/components/schemas/LoanSummary/definitions/recordRef",
+                "description": "Contains object that contains a sumamry of all loan transactions for that integration type."
+              },
+              "description": {
+                "type": "string",
+                "description": "The description of the object being referred to. E.g. the account."
+              },
+              "startDate": {
+                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "description": "The date of the earliest loan transaction.",
+                "x-stoplight": {
+                  "id": "v8jngp34fn5w4"
+                }
+              },
+              "totalInvestments": {
+                "type": "number",
+                "description": "The total loan investments for that company."
+              },
+              "totalRepayments": {
+                "type": "number",
+                "description": "The total loan repayments for that company."
+              },
+              "balance": {
+                "type": "number",
+                "description": "The total loan investments minus the total loan repayments for that company."
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "reportInfo": {
+              "reportName": "LoanSummaryReport",
+              "companyName": "The Coffee shop",
+              "generatedDate": "2022-10-23T00:00:00Z"
+            },
+            "reportItems": [
+              {
+                "recordRef": {
+                  "id": "string",
+                  "dataConnectionId": "DE34E8E3-089F-4DF4-89E9-F7C43618FCAAA",
+                  "integrationType": "Accounting",
+                  "recordRefType": "accounts"
+                },
+                "description": "string",
+                "startDate": "2015-01-07",
+                "totalInvestments": 12320,
+                "totalRepayments": 8200,
+                "balance": 4120
+              }
+            ]
+          }
+        ]
+      },
       "PagingInfo": {
         "type": "object",
         "x-internal": true,
@@ -6940,7 +7336,7 @@
         "title": "Currency rate",
         "type": "number",
         "nullable": true,
-        "description": "Rate to convert the total amount of the payment into the base currency for the company at the time of the payment.\n\nCurrency rates in Codat are implemented as the multiple of foreign currency units to each base currency unit.  \n\nWhere the currency rate is provided by the underlying accounting platform, it will be available from Codat with the same precision (up to a maximum of 9 decimal places). \n\nFor accounting platforms which do not provide an explicit currency rate, it is calculated as `baseCurrency / foreignCurrency` and will be returned to 9 decimal places.\n\n## Examples with base currency of GBP\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (GBP) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **USD**          | $20            | 0.781         | £15.62                     |\n| **EUR**          | €20            | 0.885         | £17.70                     |\n| **RUB**          | ₽20            | 0.011         | £0.22                      |\n\n## Examples with base currency of USD\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (USD) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **GBP**          | £20            | 1.277         | $25.54                     |\n| **EUR**          | €20            | 1.134         | $22.68                     |\n| **RUB**          | ₽20            | 0.015         | $0.30                      |"
+        "description": "Rate to convert the total amount of the payment into the base currency for the company at the time of the payment.\n\nCurrency rates in Codat are implemented as the multiple of foreign currency units to each base currency unit.  \n\nIt is not possible to perform the currency conversion with two or more non-base currencies participating in the transaction. For example, if a company's base currency is USD, and it has a bill issued in EUR, then the bill payment must happen in USD or EUR.\n\nWhere the currency rate is provided by the underlying accounting platform, it will be available from Codat with the same precision (up to a maximum of 9 decimal places). \n\nFor accounting platforms which do not provide an explicit currency rate, it is calculated as `baseCurrency / foreignCurrency` and will be returned to 9 decimal places.\n\n## Examples with base currency of GBP\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (GBP) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **USD**          | $20            | 0.781         | £15.62                     |\n| **EUR**          | €20            | 0.885         | £17.70                     |\n| **RUB**          | ₽20            | 0.011         | £0.22                      |\n\n## Examples with base currency of USD\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (USD) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **GBP**          | £20            | 1.277         | $25.54                     |\n| **EUR**          | €20            | 1.134         | $22.68                     |\n| **RUB**          | ₽20            | 0.015         | $0.30                      |"
       }
     },
     "parameters": {

@@ -107,14 +107,6 @@ li.card {
       margin: 0.5em;
     }
   }
-
-  img {
-    transition-duration: 0.5s;
-    
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
 }
 
 li.card.mini {
@@ -126,6 +118,10 @@ li.card.mini {
 
     &:not(:last-child) {
       margin-bottom: 0.5em;
+    }
+
+    &:first-child:last-child > .header > a.icon-wrapper {
+      margin-bottom: 0;
     }
   }
 
@@ -146,31 +142,10 @@ li.card.mini {
   }
 }
 
-.mini-icon {
-  float: left;
-  width: 20px;
-  height: 20px !important;
-  margin-right: 10px;
-  vertical-align: text-bottom;
-}
-
-.icon.usecase,
-.icon.product {
-  border-radius: 4px;
-  object-fit: cover;
-  width: 60px;
-  height: 60px;
-
-  margin-bottom: 1em;
-}
-
 .tertiary {
   text-decoration: none;
   font-weight: bold;
 }
-
-
-
 
 @property --rotate {
   syntax: "<angle>";
@@ -190,14 +165,15 @@ li.card.mini {
 li.card.hypercard {
   --offset: 100px;
   --timer: 8s;
+  --hypercard-color-1: #5ddcff;
+  --hypercard-color-2: #3c67e3;
+  --hypercard-color-3: #4e00c2;
 
+  z-index: 1;
   position: relative;
   overflow: initial;
   border-color: transparent !important;
   background-color: transparent !important;
-  //border: none !important;
-  //background:linear-gradient(left, #000, #000) no-repeat 50px 50px !important;
-  //background-image: linear-gradient(left, transparent 300px,rgba(39,39,39,.5) 300px, rgba(39,39,39,.5) 100%) !important;
 
   &::before {
     content: "";
@@ -205,8 +181,10 @@ li.card.hypercard {
     height: 100%;
     border-radius: 8px;
     background-image: linear-gradient(
-      var(--rotate)
-      , #5ddcff, #3c67e3 43%, #4e00c2);
+      var(--rotate), 
+      var(--hypercard-color-1),  
+      var(--hypercard-color-2) 43%, 
+      var(--hypercard-color-3));
       position: absolute;
       z-index: -1;
       top: 0;
@@ -227,9 +205,11 @@ li.card.hypercard {
     transform: scale(0.8);
     filter: blur(calc(var(--offset) / 6));
     background-image: linear-gradient(
-      var(--rotate)
-      , #5ddcff, #3c67e3 43%, #4e00c2);
-      opacity: 1;
+      var(--rotate), 
+      var(--hypercard-color-1),  
+      var(--hypercard-color-2) 43%, 
+      var(--hypercard-color-3));
+      opacity: 0.8;
     transition: opacity var(--timer);
     animation: spin var(--timer) linear infinite;
   }

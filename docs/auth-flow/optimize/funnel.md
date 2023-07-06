@@ -1,8 +1,6 @@
 ---
 title: "The funnel"
 description: "Increase your conversion rate by allowing customers to connect quickly"
-createdAt: "2022-06-09T13:18:29.938Z"
-updatedAt: "2022-10-20T15:10:20.026Z"
 ---
 
 The steps up to the point of connection should be kept to a minimum. The journey that leads up to connecting shouldn't be slow and arduous. It should be simple, clearly communicate the value of connecting data, and allow your customer to get connected as fast as possible:

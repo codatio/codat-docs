@@ -84,7 +84,7 @@
             }
           }
         },
-        "description": "Upload files",
+        "description": "The *Upload files* endpoint uploads multiple files provided by the SMB to Codat. This may include personal identity documents, pitch decks, contracts, or files with accounting and banking data.\n\nUploaded files must meet the following requirements:\n\n- Up to 20 files can be uploaded at a time.\n- PDF, XLS, XLSX, XLSB, CSV, DOC, DOCX, PPT, PPTX, JPEG, JPG, and PNG files can be uploaded.\n- Each file can be up to 10MB in size.",
         "operationId": "upload-files"
       }
     },
@@ -121,7 +121,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "Returns an array of files that have been uploaded for a given company.",
+        "description": "﻿The *List files* endpoint returns a list of all files uploaded to Codat by the SMB. ",
         "operationId": "list-files"
       }
     },
@@ -143,7 +143,7 @@
             "schema": {
               "$ref": "#/components/schemas/DateTime"
             },
-            "description": "Only download files uploaded on this date"
+            "description": "Only download files uploaded on this date."
           }
         ],
         "responses": {
@@ -173,7 +173,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "You can specify a date to download specific files for.",
+        "description": "The *Download files* endpoint downloads all files that have  been uploaded by to SMB to Codat. A `date` may be specified to download any files uploaded on the date provided.",
         "operationId": "download-files"
       }
     }

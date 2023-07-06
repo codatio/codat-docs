@@ -24,6 +24,10 @@
   width: 100%;
 }
 
+.docItemWrapper {
+  --ifm-spacing-horizontal: 0;
+}
+
 .docSidebarContainer {
   display: none;
 }

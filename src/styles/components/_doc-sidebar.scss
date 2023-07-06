@@ -293,8 +293,7 @@ html[data-theme="dark"] {
           --dropdown-icon-height: var(--icon-size);
 
           content: " ";
-          background: url("https://d33wubrfki0l68.cloudfront.net/ea8e37a6a30e9c260a8936d95c579af4a2dd3df7/6ee7e/img/docusaurus_keytar.svg")
-            center / var(--dropdown-icon-width) var(--dropdown-icon-height);
+          background: url("/img/sidebar/introduction.svg") center / var(--dropdown-icon-width) var(--dropdown-icon-height);
           transform: rotate(0);
           opacity: 1;
         }
@@ -331,21 +330,22 @@ html[data-theme="dark"] {
   }
 
   .menu__list-item {
-    &.introduction > div > .menu__link--sublist::after {
-      background: url("/img/sidebar/introduction.svg");
+    > div > .menu__link--sublist::after {
       background-size: cover !important;
+      transition-duration: 0.5s;
+    }
+
+    &.introduction > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar/introduction.svg");
     }
 
     &.core > div > .menu__link--sublist::after {
-      background: url("/img/sidebar/core-concepts.svg");
-      background-size: cover !important;
+      background-image: url("/img/sidebar/core-concepts.svg");
     }
 
     &.config > div > .menu__link--sublist {
       &::after {
-        background: url("/img/sidebar/gear-fine.svg");
-        background-size: cover !important;
-        //transform: rotate(0) !important;
+        background-image: url("/img/sidebar/gear-fine.svg");
         transition-duration: 0.5s;
       }
 
@@ -357,38 +357,31 @@ html[data-theme="dark"] {
     }
 
     &.api > div > .menu__link--sublist::after {
-      background: url("/img/sidebar/api.svg");
-      background-size: cover !important;
+      background-image: url("/img/sidebar/api.svg");
     }
     
     &.auth > div > .menu__link--sublist::after {
-      background: url("/img/sidebar/auth-flow.svg") !important;
-      background-size: cover !important;
+      background-image: url("/img/sidebar/auth-flow.svg");
     }
 
     &.data > div > .menu__link--sublist::after {
-      background: url("/img/sidebar/data-model.svg") !important;
-      background-size: cover !important;
+      background-image: url("/img/sidebar/data-model.svg");
     }
 
     &.products > div > .menu__link--sublist::after {
-      background: url("/img/sidebar/products.svg") !important;
-      background-size: cover !important;
+      background-image: url("/img/sidebar/products.svg");
     }
 
-    &.integrations > .menu__link::after {
-      background: url("/img/sidebar/integrations.svg") !important;
-      background-size: cover !important;
+    &.integrations > a.menu__link::after {
+      background-image: url("/img/sidebar/integrations.svg");
     }
 
     &.usecases > div > .menu__link--sublist::after {
-      background: url("/img/sidebar/usecase.svg") !important;
-      background-size: cover !important;
+      background-image: url("/img/sidebar/usecase.svg");
     }
 
     &.other > div > .menu__link--sublist::after {
-      background: url("/img/sidebar/other-guides.svg") !important;
-      background-size: cover !important;
+      background-image: url("/img/sidebar/other-guides.svg");
     }
   }
 
@@ -424,6 +417,69 @@ html[data-theme="dark"] {
   }
 }
 
-.top-level-item {
+html[data-theme="dark"] {
+  .menu__list-item {
+    &.introduction > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar-dark/introduction.svg") !important;
+    }
 
+    &.core > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar-dark/core-concepts.svg") !important;
+    }
+
+    &.config > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar-dark/gear-fine.svg") !important;
+    }
+
+    &.api > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar-dark/api.svg") !important;
+    }
+    
+    &.auth > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar-dark/auth-flow.svg") !important;
+    }
+
+    &.data > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar-dark/data-model.svg") !important;
+    }
+
+    &.products > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar-dark/products.svg") !important;
+    }
+
+    &.integrations > a.menu__link::after {
+      background-image: url("/img/sidebar-dark/integrations.svg") !important;
+    }
+
+    &.usecases > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar-dark/usecase.svg") !important;
+    }
+
+    &.other > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar-dark/other-guides.svg") !important;
+    }
+  }
 }
+
+// @media only screen and (max-width: 800px) {
+//   .navbar-sidebar {
+//     .navbarButton {
+//       margin-left: 0;
+
+//       &.primary {
+//         background: var(--button-primary-bg) !important;
+//       }
+//     }
+//   }
+
+//   .navbar-sidebar__item.menu {
+//     .menu__list-item {
+//       padding-left: 1em;
+//       position: relative;
+//     }
+
+//     .menu__link--sublist {
+//       padding-left: 1em !important;
+//     }
+//   }
+// }

@@ -61,6 +61,7 @@ module.exports = [
           "integrations/accounting/myob/accounting-myob-setup",
           "integrations/accounting/myob/myob-integration-reference",
           "integrations/accounting/myob/faq-myob-accountright-live",
+          "integrations/accounting/myob/myob-dev-registration",
         ],
       },
       {
@@ -86,8 +87,8 @@ module.exports = [
           "integrations/accounting/quickbooksdesktop/software-and-hardware-requirements",
           "integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector",
           "integrations/accounting/quickbooksdesktop/quickbooks-desktop-faq",
-          "integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks",
           "integrations/accounting/quickbooksdesktop/quickbooks-desktop-troubleshooting",
+          "integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks",
         ],
       },
       {
@@ -133,6 +134,7 @@ module.exports = [
           "integrations/accounting/sage50/sage50-multi-company-mode",
           "integrations/accounting/sage50/pushing-data-to-sage-50",
           "integrations/accounting/sage50/restart-the-sage-50-connector",
+          "integrations/accounting/sage50/sage50-troubleshooting",
         ],
       },
       {
@@ -155,16 +157,7 @@ module.exports = [
           "integrations/accounting/xero/accounting-xero-setup",
           "integrations/accounting/xero/accounting-xero-test",
           "integrations/accounting/xero/xero-faq",
-          {
-            type: "category",
-            label: "Xero App Partnership",
-            collapsed: true,
-            items: [
-              "integrations/accounting/xero/xero-app-partner-program",
-              "integrations/accounting/xero/xero-sign-up-flow",
-              "integrations/accounting/xero/accounting-xero-app-partner-guidance",
-            ],
-          },
+          "integrations/accounting/xero/xero-app-partner-program",
         ],
       },
       {

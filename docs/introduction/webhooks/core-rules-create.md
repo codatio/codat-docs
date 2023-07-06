@@ -14,14 +14,14 @@ You'll need to be an [Administrator](/other/user-management/user-roles#administr
 ## Create a new rule
 
 1. Sign in to the [Codat Portal](https://app.codat.io).
-2. In the navigation bar, select **Monitor**.
+2. In the navigation bar, select **Settings > Webhooks**.
 3. Select **Rules**.
 4. Select **Create new rule**.
    The **Create new rule** modal is displayed.
 5. From the **Rule type** dropdown, select the event you would like to be notified of. See [Rule types](/introduction/webhooks/core-rules-types) for more details of the events that trigger a webhook and the details included in the notification.
 6. In the **Company** dropdown, select the company that you would like to monitor, or select **All companies** to make all companies trigger this rule.
 7. By default, webhooks triggered by rules are shown in the Codat Portal, but you can also choose to send them by email or post them to a webhook. To do this:
-    - In the **Email notifiers** box, enter a comma-separated list of email addresses that should receive the notification.
+    - In the **Email addresses to notify** box, enter a comma-separated list of email addresses that should receive the notification.
     - In the **Webhook notification URL** box enter the URL that you would like webhook details posted to. See [Rule types](/introduction/webhooks/core-rules-types) for more details.
 
 7. Select **Save changes**.

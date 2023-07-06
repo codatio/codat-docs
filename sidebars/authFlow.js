@@ -7,13 +7,13 @@ module.exports = [
       "auth-flow/authorize-embedded-link",
       {
         type: "link",
-        label: "Link SDK",
-        href: "https://www.npmjs.com/package/@codat/link-sdk",
-      },
-      {
-        type: "link",
         label: "Sample project",
         href: "https://github.com/codatio/sample-project-link-sdk",
+      },
+       {
+        type: "link",
+        label: "Other examples",
+        href: "https://github.com/codatio/sdk-link/tree/main/examples",
       },
     ],
   },

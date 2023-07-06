@@ -267,33 +267,6 @@ var info = response.Data;
 </TabItem>
 </Tabs>
 
-### For companies with no connections
-
-Query: `dataConnections.count = 0`
-  
-*Note*: The page size value is obligatory for querying.
-
-<Tabs>
-<TabItem value="http" label="HTTP">
-
-```http
-GET /companies?page=1&pageSize=100&query=dataConnections.count=0
-```
-</TabItem>
-<TabItem value="c" label="C#">
-
-```c
-var request = new RestRequest("companies", Method.GET);
-request.AddUrlSegment("page", 1);
-request.AddUrlSegment("query", "dataConnections.count=0");
-request.AddHeader("Authorization", $"Basic {encodedApiKey}");
-var response = client.Execute(request);
-var info = response.Data;
-```
-</TabItem>
-</Tabs>
-
-
   
 ## Queries that won't work
 

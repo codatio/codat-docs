@@ -94,6 +94,10 @@
     {
       "name": "Push data",
       "description": "View push options and get push statuses."
+    },
+    {
+      "name": "Supplemental data",
+      "description": "View and configure supplemental data for supported data types."
     }
   ],
   "paths": {
@@ -233,7 +237,7 @@
           }
         },
         "operationId": "list-companies",
-        "description": "List all companies that you have created in Codat.",
+        "description": "﻿Returns a list of your companies. The company schema contains a list of [connections](https://docs.codat.io/codat-api#/schemas/Connection) related to the company.",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -281,6 +285,28 @@
               }
             }
           },
+          "400": {
+            "description": "The request made is not valid.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorMessage"
+                },
+                "examples": {
+                  "Malformed query": {
+                    "value": {
+                      "statusCode": 400,
+                      "service": "PublicApi",
+                      "error": "Error processing request - not valid.",
+                      "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                      "canBeRetried": "Unknown",
+                      "detailedErrorCode": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
@@ -288,7 +314,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "Create a new company",
+        "description": "﻿Creates a new company that can be used to assign connections to. \n\nIf forbidden characters (see `name` pattern) are present in the request, a company will be created with the forbidden characters removed. For example, `Company (Codat[1])` with be created as `Company Codat1`.\n\n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -317,7 +343,7 @@
       "get": {
         "summary": "Get company",
         "operationId": "get-company",
-        "description": "Get metadata for a single company",
+        "description": "﻿Returns the company for a valid identifier. If the identifier is for a deleted company, a not found response is returned.",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -370,7 +396,7 @@
             "$ref": "#/components/parameters/companyId"
           }
         ],
-        "description": "Delete the given company from Codat.\nThis operation is not reversible.",
+        "description": "﻿\nPermanently deletes a company, its connections and any cached data. This operation is irreversible. If the company ID does not exist an error is returned.",
         "tags": [
           "Companies"
         ],
@@ -391,7 +417,7 @@
       },
       "put": {
         "summary": "Update company",
-        "description": "Updates the given company with a new name and description",
+        "description": "﻿Updates both the name and description of the company.",
         "operationId": "update-company",
         "parameters": [
           {
@@ -449,7 +475,7 @@
     "/companies/{companyId}/connections": {
       "get": {
         "summary": "List connections",
-        "description": "List the connections for a company",
+        "description": "﻿List the connections for a company.",
         "operationId": "list-company-connections",
         "tags": [
           "Connections"
@@ -535,7 +561,7 @@
       },
       "post": {
         "summary": "Create connection",
-        "description": "Create a data connection for a company",
+        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \n\nUse the [List Integrations](https://docs.codat.io/codat-api#/operations/list-integrations) endpoint to access valid platform keys. ",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -602,7 +628,7 @@
       "get": {
         "summary": "Get connection",
         "operationId": "get-company-connection",
-        "description": "Get a single connection for a company",
+        "description": "﻿Returns a specific connection for a company when valid identifiers are provided. If the identifiers are for a deleted company and/or connection, a not found response is returned.",
         "tags": [
           "Connections"
         ],
@@ -655,7 +681,7 @@
       "delete": {
         "summary": "Delete connection",
         "operationId": "delete-company-connection",
-        "description": "Revoke and remove a connection from a company.\nThis operation is not reversible - the end user would need to reauthorize a new data connection if you wish to view new data for this company.",
+        "description": "﻿Revoke and remove a connection from a company.\nThis operation is not reversible. The end user would need to reauthorize a new data connection if you wish to view new data for this company.",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -684,7 +710,7 @@
       },
       "patch": {
         "summary": "Unlink connection",
-        "description": "This allows you to deauthorize a connection, without deleting it from Codat. This means you can still view any data that has previously been pulled into Codat, and also lets you re-authorize in future if your customer wishes to resume sharing their data.",
+        "description": "﻿This allows you to deauthorize a connection, without deleting it from Codat. This means you can still view any data that has previously been pulled into Codat, and also lets you re-authorize in future if your customer wishes to resume sharing their data.",
         "operationId": "unlink-connection",
         "tags": [
           "Connections"
@@ -1646,6 +1672,195 @@
           }
         }
       }
+    },
+    "/integrations/{platformKey}/datatypes/{dataType}/supplementalDataConfig": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "platformKey",
+          "in": "path",
+          "required": true
+        },
+        {
+          "name": "dataType",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "x-internal": true,
+            "type": "string",
+            "description": "Data types that support supplemental data",
+            "enum": [
+              "chartOfAccounts",
+              "bills",
+              "company",
+              "creditNotes",
+              "customers",
+              "invoices",
+              "items",
+              "journalEntries",
+              "suppliers",
+              "taxRates",
+              "commerce-companyInfo",
+              "commerce-customers",
+              "commerce-disputes",
+              "commerce-locations",
+              "commerce-orders",
+              "commerce-payments",
+              "commerce-paymentMethods",
+              "commerce-products",
+              "commerce-productCategories",
+              "commerce-taxComponents",
+              "commerce-transactions"
+            ],
+            "example": "invoices"
+          }
+        }
+      ],
+      "put": {
+        "summary": "Configure",
+        "description": "The *Configure* endpoint allows you to maintain or change configuration required to return supplemental data for each integration and data type combination.\n\n[Supplemental data](https://docs.codat.io/using-the-api/additional-data) is additional data you can include in Codat's standard data types.\n\n**Integration-specific behaviour**\nSee the *examples* for integration-specific frequently requested properties.",
+        "operationId": "configure-supplemental-data",
+        "x-speakeasy-name-override": "configure",
+        "tags": [
+          "Supplemental data"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SupplementalDataConfiguration"
+              },
+              "examples": {
+                "Xero - Accounts": {
+                  "value": {
+                    "yourKeyNameForAccounts": {
+                      "dataSource": "/Accounts",
+                      "pullData": {
+                        "yourNameForTaxType": "TaxType",
+                        "yourNameForSystemAccount": "SystemAccount"
+                      }
+                    }
+                  }
+                },
+                "Xero - Invoices": {
+                  "value": {
+                    "yourKeyNameForInvoices": {
+                      "dataSource": "/Invoices",
+                      "pullData": {
+                        "yourNameForExpectedPaymentDate": "ExpectedPaymentDate",
+                        "yourNameForHasAttachments": "HasAttachments"
+                      }
+                    }
+                  }
+                },
+                "Xero - Items": {
+                  "value": {
+                    "yourKeyNameForItems": {
+                      "dataSource": "/Items",
+                      "pullData": {
+                        "yourNameForQuantityOnHand": "QuantityOnHand",
+                        "yourNameForTotalCostPool": "TotalCostPool"
+                      }
+                    }
+                  }
+                },
+                "Xero - Contacts": {
+                  "value": {
+                    "yourKeyNameForContacts": {
+                      "dataSource": "/Contacts",
+                      "pullData": {
+                        "yourNameForBankAccounts": "BankAccountDetails"
+                      }
+                    }
+                  }
+                },
+                "Xero - Tax rates": {
+                  "value": {
+                    "yourKeyNameForTaxRates": {
+                      "dataSource": "/TaxRates",
+                      "pullData": {
+                        "yourNameForCanApplyToLiabilities": "CanApplyToLiabilities",
+                        "yourNameForCanApplyToAssets": "CanApplyToAssets",
+                        "yourNameForCanApplyToEquity": "CanApplyToEquity",
+                        "yourNameForCanApplyToExpenses": "CanApplyToExpenses",
+                        "yourNameForCanApplyToRevenue": "CanApplyToRevenue"
+                      }
+                    }
+                  }
+                },
+                "QBO - Customers": {
+                  "value": {
+                    "yourKeyNameForCustomers": {
+                      "dataSource": "/Customer",
+                      "pullData": {
+                        "yourNameForSalesTermRef": "SalesTermRef.value",
+                        "yourNameForParentRef": "ParentRef.value"
+                      }
+                    }
+                  }
+                },
+                "QBO - Invoices": {
+                  "value": {
+                    "yourKeyNameForInvoices": {
+                      "dataSource": "/Invoice",
+                      "pullData": {
+                        "yourNameForSalesTermRef": "SalesTermRef.value"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "description": "The configuration for the specified platform and data type."
+        }
+      },
+      "get": {
+        "summary": "Get configuration",
+        "description": "The *Get configuration* endpoint returns supplemental data configuration previously created for each integration and data type combination.\n\n[Supplemental data](https://docs.codat.io/using-the-api/additional-data) is additional data you can include in Codat's standard data types.",
+        "operationId": "get-supplemental-data-configuration",
+        "x-speakeasy-name-override": "get-configuration",
+        "tags": [
+          "Supplemental data"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplementalDataConfiguration"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      }
     }
   },
   "webhooks": {
@@ -1815,6 +2030,8 @@
           "name": {
             "type": "string",
             "description": "Name of company being connected.",
+            "pattern": "^[A-Za-z0-9\\s\\-',&@.,?!\\s]+$",
+            "minLength": 1,
             "example": "Bank of Dave"
           },
           "description": {
@@ -2139,7 +2356,7 @@
       },
       "Company": {
         "title": "Company",
-        "description": "A company in Codat represent a small or medium sized business, whose data you wish to share",
+        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/codat-api#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
         "type": "object",
         "properties": {
           "id": {
@@ -2215,7 +2432,7 @@
       },
       "Connection": {
         "title": "Connection",
-        "description": "A connection represents the link between a `company` and a source of data.",
+        "description": "﻿A connection represents a [company's](https://docs.codat.io/codat-api#/schemas/Company) connection to a data source and allows you to synchronize data (pull and/or push) with that source.\n\nA company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:\n\n- [Accounting data](https://docs.codat.io/accounting-api/overview) - 1 active connection.\n- [Banking data](https://docs.codat.io/banking-api/overview) - Multiple active connections.\n- [Commerce data](https://docs.codat.io/commerce-api/overview) - Multiple active connections.\nAny combination of accounting, banking, and commerce data connections is allowed.\n\nBefore you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/auth-flow/overview).",
         "type": "object",
         "properties": {
           "id": {
@@ -3058,6 +3275,7 @@
       },
       "CompanyDataConnectionStatusChangedWebhook": {
         "title": "Company data connection status changed webhook",
+        "x-internal": true,
         "description": "Webhook request body for a company's data connection status changed.",
         "type": "object",
         "properties": {
@@ -3112,6 +3330,7 @@
       },
       "DataSyncCompletedWebhook": {
         "title": "Data sync complete webhook",
+        "x-internal": true,
         "description": "Webhook request body to notify the completion of a data sync.",
         "type": "object",
         "properties": {
@@ -3185,6 +3404,7 @@
       },
       "DatasetDataChangedWebhook": {
         "title": "Dataset data changed webhook",
+        "x-internal": true,
         "description": "Webhook request body to notify that a data synchronization has completed.",
         "type": "object",
         "properties": {
@@ -3234,6 +3454,7 @@
       },
       "NewCompanySynchronizedWebhook": {
         "title": "New company synchronized webhook",
+        "x-internal": true,
         "description": "Webhook request body to notify that a new company has successfully synchronized at least one dataType for the first time.",
         "type": "object",
         "properties": {
@@ -3265,6 +3486,7 @@
       },
       "PushOperationStatusChangedWebhook": {
         "title": "Push operation status changed webhook",
+        "x-internal": true,
         "description": "Webhook request body for a push operation status change.",
         "type": "object",
         "properties": {
@@ -3319,6 +3541,7 @@
       },
       "PushOperationTimedOutWebhook": {
         "title": "Push operation timed out webhook",
+        "x-internal": true,
         "description": "Webhook request body notifying that a push push operation has timed out.",
         "type": "object",
         "properties": {
@@ -3567,6 +3790,7 @@
       },
       "DatasetStatusChangedErrorWebhook": {
         "title": "Dataset data error webhook",
+        "x-internal": true,
         "description": "Webhook request body to notify that a data synchronization has completed.",
         "type": "object",
         "properties": {
@@ -3613,6 +3837,51 @@
               "dataType": "payments",
               "datasetStatus": "ProcessingError",
               "datasetId": "6586f21b-ad4d-4d06-a309-712af47184a2"
+            }
+          }
+        ]
+      },
+      "SupplementalDataConfiguration": {
+        "description": "",
+        "title": "Supplemental data configuration",
+        "type": "object",
+        "additionalProperties": {
+          "type": "object",
+          "title": "Supplemental data source configuration",
+          "description": "The client's defined name for the object.",
+          "properties": {
+            "dataSource": {
+              "type": "string",
+              "description": "The underlying endpoint of the source system which the configuration is targeting. "
+            },
+            "pullData": {
+              "type": "object",
+              "description": "The additional properties that are required when pulling records.",
+              "additionalProperties": {
+                "type": "string",
+                "description": "The client's defined name for the property with the value being the source system's property name which the mapping is targeting."
+              }
+            },
+            "pushData": {
+              "type": "object",
+              "description": "The additional properties that are required to create and/or update records.",
+              "additionalProperties": {
+                "type": "string",
+                "description": "The client's defined name for the property with the value being the source system's property name which the mapping is targeting."
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "orders-supplemental-data": {
+              "dataSource": "/orders",
+              "pullData": {
+                "orderNumber": "order_num"
+              },
+              "pushData": {
+                "orderNumber": "order_num"
+              }
             }
           }
         ]

@@ -6,25 +6,16 @@ hide_title: true
 hide_description: true
 hide_table_of_contents: true
 description: "Use Codat's Banking API to connect to your SMB customers' banks and pull up-to-date standardized account and transaction data from their bank accounts via our partner providers."
-createdAt: "2022-11-22T19:33:11.784Z"
-updatedAt: "2022-11-22T19:33:11.784Z"
+banner_title: Banking API
+banner_class: banking
+banner_icon: "/logos/products-clear/banking.svg"
+banner_image: "/img/banners/banking.png"
+banner_text: "Use Codat's Banking API to connect to your SMB customers' banks and pull up-to-date standardized account and transaction data from their bank accounts via our partner providers."
 ---
 
-<Head>
-  <meta property="og:image" content="/img/banking-api/banking-api-banner.png"/>
-</Head>
+import SocialImages from "@components/global/SocialImages";
 
-import PageHeader from "@components/global/PageHeader";
-
-<PageHeader 
-  className="banking"
-  title="Banking API"
-  icon="/logos/products/Banking.svg"
->
-  <p>
-    Use Codat's Banking API to connect to your SMB customers' banks and pull up-to-date standardized account and transaction data from their bank accounts via our partner providers.
-  </p>
-</PageHeader>
+<SocialImages imgSrc="/img/banking-api/banking-api-banner.png"/>
 
 <ul className="card-container col-3">
   <li className="card">

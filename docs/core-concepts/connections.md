@@ -1,8 +1,6 @@
 ---
 title: "Connections"
 description: "Concept overview and key details"
-createdAt: "2021-03-31T21:11:15.467Z"
-updatedAt: "2023-01-16T15:23:20.370Z"
 tags:
   - Core concept
 ---

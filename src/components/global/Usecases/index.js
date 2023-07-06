@@ -77,7 +77,7 @@ const Usecases = ({mini}) => {
               <li key={i} className="card mini">
                 <div className="card-row">
                   <div className="header">
-                    <a href={usecase.link}>
+                    <a href={usecase.link} className="icon-wrapper usecase">
                       <img
                         src={usecase.icon}
                         className="icon usecase"
@@ -107,7 +107,7 @@ const Usecases = ({mini}) => {
           return (
             <li key={i} className="card">
               <div className="header">
-                <a href={usecase.link}>
+                <a href={usecase.link} className="icon-wrapper usecase">
                   <img
                     src={usecase.icon}
                     className="icon usecase"

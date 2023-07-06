@@ -1,8 +1,6 @@
 ---
 title: "Authorization flow"
 description: "Explore how your customers can authorize access to their data"
-createdAt: "2022-05-11T12:25:17.094Z"
-updatedAt: "2022-11-23T13:57:58.076Z"
 ---
 
 ![Conceptual drawing of a lock and key](/img/old/b80d96c-19B0071C-0CCD-4423-8903-A979A32DD225.jpeg)

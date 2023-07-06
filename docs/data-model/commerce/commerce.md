@@ -2,8 +2,6 @@
 title: "Commerce data types"
 sidebar_label: Data types
 description: "Connect to your SMB customers' eCommerce, PoS and payment data sources"
-createdAt: "2020-10-01T13:56:59.781Z"
-updatedAt: "2022-11-23T14:24:21.457Z"
 ---
 
 import DataTypes from '@components/global/DataTypes'

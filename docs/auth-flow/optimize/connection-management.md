@@ -1,8 +1,6 @@
 ---
 title: "Connection management"
 description: "Learn how to enhance the customer journey when a persistent connection is required"
-createdAt: "2022-06-16T06:45:37.839Z"
-updatedAt: "2022-09-28T11:23:22.438Z"
 ---
 
 Connecting is just the beginning of the customer journey. If your use case requires a persistent connection, then it is necessary to allow your customers to manage their ongoing connections. Your customers should feel, and be in control.

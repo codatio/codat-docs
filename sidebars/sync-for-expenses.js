@@ -22,7 +22,7 @@ module.exports = [
       "sync-for-expenses/sync-process/expense-transactions",
       "sync-for-expenses/sync-process/syncing-expenses",
       "sync-for-expenses/sync-process/uploading-receipts",
-
+      "sync-for-expenses/sync-process/updating-expenses",
     ],
   },
   {
