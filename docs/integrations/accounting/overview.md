@@ -55,7 +55,7 @@ You can also explore the data types supported by each integration in the interac
 Each integration has a unique 4-character key that identifies it in our APIs. For reference, a list of all accounting integration platform keys can be found below:
 
 <iframe
-  src="https://knowledge.codat.io/integrations/platformkeys?integrationType=Accounting"
+  src="https://knowledge.codat.io/embeds/integrations/platformkeys?integrationType=Accounting"
   frameborder="0"
   style={{ top: 0, left: 0, width: "100%", height: "1200px" }}
 ></iframe>
