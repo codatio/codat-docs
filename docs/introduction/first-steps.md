@@ -60,44 +60,78 @@ Then, replace `{basicAuthHeader}` in the code snippets below.
   ```
   </TabItem>
 
-  <TabItem value="dontnet" label=".NET">  
+  <TabItem value="python" label="Python">
 
+  ##### Installation
+  
   ```bash
-    // Add package RestSharp and create a new REST client
+    pip install codat-common
+  ```
 
-    using RestSharp;
+  ##### Authentication
 
-    var baseUrl = "https://api.codat.io";
-    var authHeaderValue = "{basicAuthHeader}";
+  ```python
+    import codatcommon
+    from codatcommon.models import shared
 
-    var codatApiClient = new RestClient(baseUrl);
-    codatApiClient.AddDefaultHeader("Authorization", authHeaderValue);
+    codat_common = codatcommon.CodatCommon(
+      security=shared.Security(
+          auth_header='{basicAuthHeader}',
+      ),
+    )
   ```  
   </TabItem>
 
-  <TabItem value="nodejs" label="Node.js">  
+  <TabItem value="nodejs" label="TypeScript">  
 
-  ```javascript  
+  ##### Installation
+  
+  ```bash
+    npm add @codat/common
+  ```
+  or
+  ```bash
+    yarn add @codat/common
+  ```
 
-    // NOTE: This example is for server side code.
-    // Do not include your auth header in a client side rendered app.
+  ##### Authentication
 
-    // npm install axios@1.1.3
+  ```javascript
+    import { CodatCommon } from "@codat/common";
 
-    const axios = require("axios");
-
-    var baseUrl = "https://api.codat.io";
-    var authHeaderValue = "{basicAuthHeader}";
-
-    var codatApiClient = axios.create({
-        baseURL: baseUrl,
-      headers: {
-          Authorization: authHeaderValue,
-        "Content-Type": "application/json;charset=UTF-8",
+    const codatCommon = new CodatCommon({
+      security: {
+        authHeader: '{basicAuthHeader}',
       },
     });
+    
   ```
-   </TabItem>
+  </TabItem>
+
+  <TabItem value="go" label="Go">  
+
+  ##### Installation
+  
+  ```bash
+    go get github.com/codatio/client-sdk-go/common
+  ```
+
+  ##### Authentication
+
+  ```go
+    import(
+      "context"
+      "log"
+      "github.com/codatio/client-sdk-go/common"
+    )
+
+    codatCommon := codatcommon.New(
+        codatcommon.WithSecurity(shared.Security{
+            AuthHeader: "{basicAuthHeader}",
+        }),
+    )
+  ```
+  </TabItem>
 </Tabs>
 
 You can read more about <a href="/using-the-api/authentication" target="_blank">authentication at Codat</a>, or proceed to create your first company.
@@ -137,39 +171,63 @@ To create a company in Codat, use the `POST /companies` endpoint with a request 
                 "description": "Any additional information about the company"
         }
   ```    
-
   </TabItem>
 
-  <TabItem value="dontnet" label=".NET">  
+  <TabItem value="python" label="Python">  
 
-  ```bash
-    var createCompanyRequest = new RestRequest("companies", Method.Post)
-        .AddBody(new
-        {
-            name = "SMB company name",
-            description = "Any additional information about the company"
-        });
-        var createCompanyResponse = codatApiClient.Execute(createCompanyRequest);
-    Console.WriteLine(createCompanyResponse.Content);
+  ```python
+    req = shared.CompanyRequestBody(
+      description='Requested early access to the new financing scheme.',
+      name='Bank of Dave',
+    )
+
+    res = codat_common.companies.create(req)
+
+    if res.company is not None:
+      print(res.company.id, res.company.name)
   ```  
   </TabItem>
 
-  <TabItem value="nodejs" label="Node.js">  
+  <TabItem value="nodejs" label="TypeScript">  
 
-  ```javascript  
-    codatApiClient
-      .post("/companies", {
-        name: "SMB company name",
-        description = "Any additional information about the company"
-      })
-      .then((response) => {
-          console.log(response.data);
-      })
-      .catch((error) => {
-          console.log(error);
-      });
+  ```javascript
+    import { CreateCompanyResponse } from "@codat/common/dist/sdk/models/operations";
+    
+    codatCommon.companies.create({
+      description: "Requested early access to the new financing scheme.",
+      name: "Bank of Dave",
+    }).then((res: CreateCompanyResponse) => {
+      if (res.statusCode == 200) {
+        console.log(res.company.id, res.company.name)
+      }
+    });
   ```
-   </TabItem>
+  </TabItem>
+
+  <TabItem value="go" label="Go">  
+
+  ```go
+  import(
+    "github.com/codatio/client-sdk-go/common/pkg/models/shared"
+    "fmt"
+  )
+
+  ctx := context.Background()
+  
+  res, err := s.Companies.Create(ctx, shared.CompanyRequestBody{
+    Description: codatcommon.String("Requested early access to the new financing scheme."),
+    Name: "Bank of Dave",
+  })
+
+  if err != nil {
+    log.Fatal(err)
+  }
+
+  if res.Company != nil {
+      fmt.Println("%s %s", res.Company.Id, res.Company.Name)
+  }
+  ```
+  </TabItem>
 </Tabs>
 
 The endpoint returns a JSON response, confirming the unique `id` of the company and a `redirect` URL used to establish a connection with a data source.
@@ -227,28 +285,58 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
 
   </TabItem>
 
-  <TabItem value="dontnet" label=".NET">  
+  <TabItem value="python" label="Python">  
 
-  ```bash
-    var getCompanyRequest = new RestRequest($"companies/{companyId}", Method.Get);
-    var getCompanyResponse = codatApiClient.Execute(getCompanyRequest);
-    Console.WriteLine(getCompanyResponse.Content);
+  ```python
+    req = operations.GetCompanyRequest(
+      company_id='{companyId}',
+    )
+
+    res = codat_common.companies.get(req)
+
+    if res.company is not None:
+      print(res.company.redirect)
   ```  
   </TabItem>
 
-  <TabItem value="nodejs" label="Node.js">  
+  <TabItem value="nodejs" label="TypeScript">  
 
-  ```javascript  
-    codatApiClient
-      .get(`/companies/${companyId}`)
-      .then((response) => {
-          console.log(response.data);
-      })
-      .catch((error) => {
-          console.log(error);
-      });
+  ```javascript
+    import { GetCompanyResponse } from "@codat/common/dist/sdk/models/operations";
+
+    codatCommon.companies.get({
+      companyId: "{companyId}",
+    }).then((res: GetCompanyResponse) => {
+      if (res.statusCode == 200) {
+        console.log(res.company.redirect)
+      }
+    });
   ```
-   </TabItem>
+  </TabItem>
+
+  <TabItem value="go" label="Go">  
+
+  ```go
+  import(
+    "github.com/codatio/client-sdk-go/common/pkg/models/shared"
+    "fmt"
+  )
+
+  ctx := context.Background()
+  
+  res, err := s.Companies.Get(ctx, operations.GetCompanyRequest{
+        CompanyID: "{companyId}",
+    })
+
+  if err != nil {
+    log.Fatal(err)
+  }
+
+  if res.Company != nil {
+      fmt.Println("%s",res.Company.Redirect)
+  }
+  ```
+  </TabItem>
 </Tabs>
 
 In the JSON response, you can see that the the `status` of data connections changed to **linked**.
@@ -305,32 +393,111 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
 
   </TabItem>
 
-  <TabItem value="dontnet" label=".NET">  
+  <TabItem value="python" label="Python">  
 
+  ##### Installation
   ```bash
-    var getInvoicesRequest = new RestRequest($"companies/{companyId}/data/invoices", Method.Get)
-        .AddQueryParameter("page", "1")
-        .AddQueryParameter("pageSize", "10");
-        var getInvoicesResponse = codatApiClient.Execute(getInvoicesRequest);
-    Console.WriteLine(getInvoicesResponse.Content);
+    pip install codat-accounting
+  ```
+
+  ##### Usage
+
+  ```python
+    import codataccounting
+    from codataccounting.models import operations
+
+    codat_accounting = codataccounting.CodatAccounting(
+        security=shared.Security(
+            auth_header="{basicAuthHeader}",
+        ),
+    )
+
+    req = operations.ListInvoicesRequest(company_id='{companyId}')
+
+    res = s.invoices.list(req)
+
+    if res.invoices is not None:
+      print(res.invoices.results)
   ```  
   </TabItem>
 
-  <TabItem value="nodejs" label="Node.js">  
+  <TabItem value="nodejs" label="TypeScript">  
 
-  ```javascript  
-    codatApiClient
-      .get(`/companies/${companyId}/data/invoices`, {
-          params: { page: 1, pageSize: 10 },
-      })
-      .then((response) => {
-          console.log(response.data);
-      })
-      .catch((error) => {
-          console.log(error);
-      });
+  ##### Installation
+  
+  ```bash
+    npm add @codat/accounting
   ```
-   </TabItem>
+  or
+  ```bash
+    yarn add @codat/accounting
+  ```
+
+  ##### Usage
+
+  ```javascript
+    import { CodatAccounting } from "@codat/accounting";
+    import { ListInvoicesResponse } from "@codat/accounting/dist/sdk/models/operations";
+    
+    const codatAccounting = new CodatAccounting({
+      security: {
+        authHeader: "{basicAuthHeader}",
+      },
+    });
+
+    codatAccounting.invoices.list({
+      companyId: "{companyId}"
+    }).then((res: ListInvoicesResponse) => {
+      if (res.statusCode == 200) {
+        console.log(res.invoices.results)
+      }
+    });
+  ```
+  </TabItem>
+
+  <TabItem value="go" label="Go">  
+
+  ##### Installation
+  
+  ```bash
+    go get github.com/codatio/client-sdk-go/accounting
+  ```
+
+  ##### Usage
+
+  ```go
+  package main
+
+  import(
+    "context"
+    "log"
+    "github.com/codatio/client-sdk-go/accounting"
+    "github.com/codatio/client-sdk-go/accounting/pkg/models/operations"
+    "fmt"
+  )
+
+  func main() {
+      codatAccounting := codataccounting.New(
+          codataccounting.WithSecurity(shared.Security{
+              AuthHeader: "{basicAuthHeader}",
+          }),
+      )
+
+      ctx := context.Background()
+      res, err := codatAccounting.Invoices.List(ctx, operations.ListInvoicesRequest{
+          CompanyID: "{companyId}"
+      })
+
+      if err != nil {
+          log.Fatal(err)
+      }
+
+      if res.Invoices != nil {
+        fmt.Println("%s ",res.Invoices.Results[0].id)
+      }
+  }
+  ```
+  </TabItem>
 </Tabs>  
 
 In the JSON response, the API provides ten detailed invoices as a result.
@@ -350,7 +517,7 @@ You have now:
 
 ## Next steps
 
-### Want to pull and view data from a different platform?
+#### Want to pull and view data from a different platform?
 
 Codat enables you to connect to over 30 different accounting, banking, and commerce platforms. You can choose to pull data from a platform most relevant to you.
 
@@ -358,19 +525,19 @@ Navigate to **Settings > Integrations** in the Portal. Choose the integration ty
 
 You can review our detailed instructions for setting up integrations like [Xero](/integrations/accounting/xero/accounting-xero), [QuickBooks Online](/integrations/accounting/quickbooksonline/accounting-quickbooksonline), [PayPal](/integrations/commerce/paypal/commerce-paypal), [Plaid](/integrations/banking/plaid/banking-plaid), and many more.
 
-### Curious about what other data Codat can provide you with?
+#### Curious about what other data Codat can provide you with?
 
 Codat pulls a variety of data types from the source platforms, making it easy to suit the needs of your use case.
 
 With our [accounting integrations](/accounting-api#/), you can pull financial statements, earning and spending detail, journal entries, tax details, and many more. Our [banking integrations](/banking-api#/) provide you with banking transactions, accounts, and account balances. Finally, our [commerce integrations](/commerce-api#/) can show you details of orders, customers, payments, products, and others.
 
-### Keen to customize the look and feel of the auth flow?
+#### Keen to customize the look and feel of the auth flow?
 
 Colors, logos, and icons of Codat's authorization flow [can be changed](/auth-flow/customize/branding) for a bespoke experience. Navigate to **Settings > Auth flow > Branding** in the Codat Portal and adjust to fit the flow to your brand's palette.
 
 Then, use the Link URL of the company you created earlier to review your customer's experience with the flow. You can even take the customization [one step further](/auth-flow/customize/customize-link) and amend the accompanying text and behaviors.
 
-### Want to migrate your existing integration to Codat?
+#### Want to migrate your existing integration to Codat?
 
 If you already have an OAuth application with one of our supported integrations, you can seamlessly migrate your customers' connections — without your customers needing to reconnect.
 

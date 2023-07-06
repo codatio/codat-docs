@@ -2,8 +2,6 @@
 title: "Assess report"
 description: "Download the enhanced financials reports to excel"
 sidebar_label: "Assess report"
-createdAt: "2022-10-18T08:18:51.069Z"
-updatedAt: "2022-11-25T15:12:37.179Z"
 ---
 Our Assess excel report is designed to give you the same data you would get via the API. You can use this report to test some companies and familiarise yourself with the data before building to the equivalent API endpoints. 
 
@@ -27,6 +25,3 @@ The Assess Report can be generated via API or through [Codat's Portal](/assess/p
 
 ## Using the report
 We recommend creating a pivot table and grouping by category Level 1-5 to replicate a financial statement view. Users can also create formulas for financial ratios.
-
-
-

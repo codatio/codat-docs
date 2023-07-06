@@ -6,29 +6,16 @@ hide_table_of_contents: true
 hide_title: true
 hide_description: true
 description: "Learn about the features that make up the Assess product"
-createdAt: "2022-04-11T16:43:22.429Z"
-updatedAt: "2022-11-17T00:11:12.411Z"
+banner_title: Assess
+banner_class: assess
+banner_icon: "/logos/products-clear/assess.svg"
+banner_image: "/img/banners/assess.png"
+banner_text: "Assess helps you make smarter credit decisions on small businesses by enabling you to pull your customers' latest data from the operating systems they are already using. You can use that data for automating decisioning and surfacing new insights on the customer, all via one API."
 ---
 
-<Head>
-  <meta property="og:image" content="/img/old/f0c6d43-73D1AFFF-6E41-47F3-8E25-BB20DA16C754.jpeg"/>
-</Head>
+import SocialImages from "@components/global/SocialImages";
 
-import PageHeader from "@components/global/PageHeader";
-
-<PageHeader 
-  className="assess"
-  title="Assess"
-  icon="/logos/products/Assess.svg"
->
-  <p>
-    Assess helps you make smarter credit decisions on small businesses by enabling you to pull your customers' latest data from the operating systems they are already using.
-  </p>
-
-  <p>
-    You can use that data for automating decisioning and surfacing new insights on the customer, all via one API.
-  </p>
-</PageHeader>
+<SocialImages imgSrc="/img/old/f0c6d43-73D1AFFF-6E41-47F3-8E25-BB20DA16C754.jpeg"/>
 
 Assess is built on top of the latest accounting, commerce and banking data, providing you with the most important data points you need to get a full picture of SMB creditworthiness, and make a comprehensive assessment of your customers.
 
@@ -59,7 +46,7 @@ Assess empowers you with a host of features to help you streamline your underwri
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Enhanced financials</h3>
@@ -77,7 +64,7 @@ Assess empowers you with a host of features to help you streamline your underwri
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Accounting financial metrics</h3>
@@ -95,7 +82,7 @@ Assess empowers you with a host of features to help you streamline your underwri
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Commerce sales metrics</h3>
@@ -113,7 +100,7 @@ Assess empowers you with a host of features to help you streamline your underwri
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Data integrity</h3>

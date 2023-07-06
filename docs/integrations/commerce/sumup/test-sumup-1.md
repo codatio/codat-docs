@@ -2,8 +2,7 @@
 title: "Test your SumUp Integration"
 slug: "test-sumup-1"
 description: "Test our SumUp integration by pulling sample data to a test company"
-createdAt: "2021-05-28T11:19:11.857Z"
-updatedAt: "2022-12-16T16:48:51.760Z"
+sidebar_label: Testing
 ---
 
 Codat recommends that you test your integration before sending link URLs to customers.

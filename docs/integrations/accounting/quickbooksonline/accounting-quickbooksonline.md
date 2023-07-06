@@ -1,8 +1,7 @@
 ---
 title: "QuickBooks Online"
 description: "Learn about our QuickBooks Online integration."
-createdAt: "2020-01-14T00:44:33.755Z"
-updatedAt: "2022-12-20T12:08:09.996Z"
+sidebar_label: Overview
 ---
 
 You can synchronize accounting data with <a className="external" href="https://quickbooks.intuit.com/uk/online/" target="_blank">QuickBooks Online</a> using our QuickBooks Online integration.
@@ -12,6 +11,10 @@ You can synchronize accounting data with <a className="external" href="https://q
 View the coverage of our QuickBooks Online integration in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=qhyg" target="_blank">Data coverage explorer</a>.
 
 For more details about the supported data types and operations, see [QuickBooks Online integration reference](/integrations/accounting/quickbooksonline/quickbooks-online-integration-reference).
+
+:::tip Supplemental data
+This integration supports the ability to include additional fields within our standard data types when fetching, creating or updating records. Read more about [supplemental data](/using-the-api/supplemental-data/overview) and how you can pull it for this integration.
+:::
 
 ## Set up the integration
 

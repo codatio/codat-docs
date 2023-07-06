@@ -1,8 +1,6 @@
 ---
 title: "Platform selection"
 description: "Streamline the platform selection flow to increase conversion"
-createdAt: "2022-06-16T06:35:34.305Z"
-updatedAt: "2022-10-20T15:24:34.963Z"
 ---
 
 The platform selection stage is the pivotal moment where your customers need to easily find the software they use and are ready to connect. Getting this right is critical to give your customers the best chance of connectivity.
@@ -60,7 +58,7 @@ Ensure there is a way to add multiple connections if your use case will benefit 
 
 See [here](/auth-flow/authorize-hosted-link#managing-existing-users-with-pending-connections) for more detail on connections with a `pendingAuth` status and [here](/using-the-api/querying#for-companies-whose-status-is-pending-with-data-connection-established) on creating a query to find these companies.
 
-:::info
+:::info Why use Link?
 
 [Using Codat's Link for authorization](/auth-flow/overview) allows you to:
 
@@ -72,3 +70,10 @@ To read more about different ways to customize Link, read [Customize your Link](
 
 You can also [build your own authorization journey](/auth-flow/build/build-your-own-authorization-journey).
 :::
+
+
+---
+
+## Read next
+
+- Learn how to [enhance the customer journey when a persistent connection is required](/auth-flow/optimize/connection-management)

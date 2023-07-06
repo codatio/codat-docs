@@ -1,8 +1,6 @@
 ---
 title: "Overview"
 description: "Explore the range of platforms you can connect to through our Commerce API."
-createdAt: "2019-01-03T14:43:17.866Z"
-updatedAt: "2022-11-15T14:21:19.493Z"
 ---
 
 Our suite of commerce integrations allow you to retrieve up-to-date ecommerce, payment, and point-of-sale data from your SMB customers' commerce platforms.
@@ -28,7 +26,7 @@ You can connect to the following commerce platforms using our integrations:
 - [WooCommerce](/integrations/commerce/woocommerce/commerce-woocommerce)
 - [Zettle](/integrations/commerce/zettle/commerce-zettle)
 
-\* _Available through the [Domain Discovery Program](/integrations/commerce/domain-discovery-program)._
+\* _Contact your account manager or contact [support](mailto:support@codat.io) to enable integration._
 
 To view and compare commerce data coverage by integration, use the <a  class="external" href="https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&integrationKey=aiwb&dataType=commerce-companyInfo" target="_blank">Data coverage explorer</a> and select the **Commerce API** product.
 
@@ -42,4 +40,12 @@ Most commerce platforms require you to register with them before you can access 
 
 Our documentation details the specific setup steps and requirements for each supported commerce platform.
 
-You can also refer to [Commerce platform keys](/integrations/commerce/commerce-platform-keys) to view the unique 4-character keys that identify commerce platforms in our APIs.
+## Platform keys
+
+Each integration has a unique 4-character key that identifies it in our APIs. For reference, a list of all commerce integration platform keys can be found below
+
+<iframe
+  src="https://knowledge.codat.io/integrations/platformkeys?integrationType=Commerce"
+  frameborder="0"
+  style={{ top: 0, left: 0, width: "100%", height: "1200px" }}
+></iframe>

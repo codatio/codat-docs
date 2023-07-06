@@ -5,6 +5,11 @@ createdAt: "2020-08-26T13:23:10.920Z"
 updatedAt: "2022-11-25T13:10:30.057Z"
 ---
 
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem"
+
+
 If you're new to Codat but have already built and use an OAuth application with one of our supported integrations, you're in the right place. Codat's token migration process allows you to seamlessly migrate your customers' connections from a self-managed integration to Codat — without your customers needing to reconnect.
 
 This page describes the information we'll need from you, and provides an overview of the migration process.
@@ -19,9 +24,17 @@ Before you migrate a token, the company and data connection must be created. Thi
 
 To migrate, use the PUT connections endpoint. You will need to provide the integration specific information such as the organization ID and OAuth tokens that Codat should use. Because these are different for each integration, examples of the format required for the integrations available are listed in the Postman Collection linked above.
 
-```http
+<Tabs>
+
+<Tabitem value="Request URL" label="Request URL">
+
+```http request title="Authorize connection"
   PUT /companies/{companyId}/connections/{connectionId}/authorization
 ```
+
+</Tabitem>
+
+<Tabitem value="Request Body" label="Request Body">
 
 ```json
 {
@@ -29,6 +42,11 @@ To migrate, use the PUT connections endpoint. You will need to provide the integ
   "businessId": "test-business-1234"
 }
 ```
+
+</Tabitem>
+
+</Tabs>
+
 
 :::caution Syncing data post-migration
 
@@ -41,21 +59,15 @@ _Fetch on first link_ isn't supported when performing self-service token migrati
 
 For other platforms where we do not yet support the self service migration route, or if you have special considerations or concerns, Codat's solutions team offers a managed migration pathway.
 
+
 :::note Supported integrations
 
-We currently have supported migrations from the following platforms: FreeAgent, FreshBooks, QuickBooks Online, Shopify, Wave, Xero, and Zoho Books.
+We currently have supported migrations from the following platforms: FreeAgent, FreshBooks, QuickBooks Online, Shopify, Wave, and Zoho Books.
 
 We don't have a standard migration process for our other integrations, but are happy to explore possible solutions. Please get in touch with your solutions engineer if you need to discuss migrating one of these integrations.
 :::
 
-You need to supply:
-
-- A spreadsheet - `.xls` or `.csv` file - that includes names of the companies that Codat need to migrate, and their token details.
-- Secure credentials for your application, for example, client ID and client secret.
-
-The exact details of tokens and credentials varies between different platforms. Please contact your solutions engineer or our [support team](mailto:support@codat.io) to discuss the specific details requirements for your migration.
-
-The migration process usually involves the following steps. We recommend that you don’t start migration until you've set up the integration in Codat, and done some initial testing.
+The migration process usually involves the following steps.
 
 :::success Plan your migration
 
@@ -64,7 +76,7 @@ Every migration is different so please make sure you talk to your solutions engi
 
 | Step                                         | Details                                                                                                                                                                  | Responsibility                          |
 | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------- |
-| **1. Supply migration and platform details** | Supply a spreadsheet, with the [details described above](/introduction/migration#managed-migrations), to the Codat support team. | Your company                            |
+| **1. Supply migration and platform details** | Supply all the required details for the specific platform to the Codat support team. | Your company                            |
 | **2. Schedule the migration**                | Agree a time when the migration can take place. Based on your company's data, Codat's support team estimates how long the migration will take.                           | Your company and the Codat support team |
 | **3. Update your application details**       | Add Codat’s callback URL to the application registered with your platform provider.                                                                                      | Your company                            |
 | **4. Disable data syncing**                  | Disable data syncing in your existing application for all companies that you have chosen to migrate. This is to prevent tokens from becoming invalid.                    | Your company                            |

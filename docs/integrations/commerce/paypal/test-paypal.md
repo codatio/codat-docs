@@ -1,8 +1,7 @@
 ---
 title: "Test your PayPal Integration"
 description: "Test your PayPal integration by pulling sandbox data to a test company"
-createdAt: "2021-03-25T13:09:00.370Z"
-updatedAt: "2022-10-20T08:54:42.581Z"
+sidebar_label: Testing
 ---
 
 When you've set up your PayPal integration, you're ready to test the authorization process for your integration. You'll need to:

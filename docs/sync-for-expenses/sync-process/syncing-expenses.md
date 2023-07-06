@@ -1,6 +1,6 @@
 ---
 title: "Syncing expenses"
-description: "Syncing expense-transaction datasets to your customers accounting software"
+description: "Syncing expense-transaction datasets to your customer's accounting software"
 ---
 
 import Tabs from "@theme/Tabs";
@@ -25,17 +25,56 @@ Syncs are independent of creating datasets, so you can continue to create new da
 
 ### Webhook events
 
-Codat provides three webhooks which you can subscribe to:
+Sync for Expenses provides two webhooks that you can subscribe to.
 
-- `Sync Started`: this will be triggered when a sync process for a company starts.
-
-:::caution Multiple Syncs
-Codat will **not** be able to accept any new requests to initiate another sync whilst a sync is ongoing.
+:::caution Multiple syncs
+Codat can't accept any requests to initiate another sync while a sync is ongoing.
 :::
 
-- `Sync Failed`: This will be triggered if there are any failures during the sync process.
+**Sync Failed**
 
-- `Sync Completed`: This will be triggered when a sync completes without any failures.
+The `Sync Failed` webhook is triggered if any failures occurred during the sync process.
+
+```json title="Sync Failed webhook"
+{
+  "CompanyId": "1f9559e7-8368-48c9-bdf4-f158e16b8b85",
+  "ClientId": "30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e",
+  "ClientName": "Expense Sync",
+  "RuleId": "289c80dc-2aee-4b71-afff-9acd8d051080",
+  "RuleType": "Sync Failed",
+  "AlertId": "72c1103b-7f17-4a3a-8db5-67c2d360a516",
+  "Message": "Sync 3bead2a1-1b3d-4d90-8077-cddc5ca68b01 for company 1f9559e7-8368-48c9-bdf4-f158e16b8b85 of type Expense has failed at step Pushing.",
+  "Data": {
+    "syncId": "3bead2a1-1b3d-4d90-8077-cddc5ca68b01",
+    "syncType": "Expense",
+    "SyncDateRangeStartUtc": "2023-05-03T12:57:58.7576091Z",
+    "SyncDateRangeFinishUtc": "2023-05-03T12:57:59.7576091Z",
+    "FailureStage": "Pushing"
+  }
+}
+```
+
+**Sync Completed**
+
+The `Sync Completed` webhook is triggered when a sync completes without any failures.
+
+```json title="Sync Completed webhook"
+{
+  "AlertId": "33a4f8e9-09ae-4334-9b00-7bbe83024672",
+  "ClientId": "30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e",
+  "ClientName": "Expense Sync",
+  "CompanyId": "1f9559e7-8368-48c9-bdf4-f158e16b8b85",
+  "Data": {
+    "syncId": "321363b4-efa9-4fbc-b71c-0b58d62f3248",
+    "syncType": "Expense",
+    "SyncDateRangeStartUtc": "2023-05-03T09:56:17.4357111Z",
+    "SyncDateRangeFinishUtc": "2023-05-03T09:56:18.4357111Z"
+  },
+  "Message": "Sync 321363b4-efa9-4fbc-b71c-0b58d62f3248 for company 1f9559e7-8368-48c9-bdf4-f158e16b8b85 of type Expense completed successfully.",
+  "RuleId": "5c27631d-3b63-4b50-8228-ee502fd113eb",
+  "RuleType": "Sync Completed"
+}
+```
 
 ### Sync status
 

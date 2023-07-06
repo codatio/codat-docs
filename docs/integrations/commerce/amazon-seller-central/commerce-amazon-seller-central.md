@@ -2,8 +2,6 @@
 title: "Amazon Seller Central"
 sidebar_label: Overview
 description: "Learn about our Amazon Seller Central integration"
-createdAt: "2021-08-27T22:41:15.062Z"
-updatedAt: "2022-10-20T13:32:18.005Z"
 ---
 
 <a class="external" href="https://sellercentral.amazon.com/" target="_blank">Amazon Seller Central</a> is a platform that independent merchants use to sell their products on Amazon.

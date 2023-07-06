@@ -1,8 +1,7 @@
 ---
 title: "QuickBooks Online FAQ"
 description: "Frequently asked questions about our QuickBooks Online integration."
-createdAt: "2020-01-14T00:44:32.573Z"
-updatedAt: "2022-10-17T16:12:22.938Z"
+sidebar_label: FAQs
 ---
 
 ## How is sales tax handled for US companies that use QuickBooks?
@@ -34,6 +33,10 @@ When the Options endpoint is called for one of these data types and an AST-enabl
 ```
 
 ## Is QuickBooks Online (FR) supported?
+
+:::caution QBO no longer available in France
+Note that QuickBooks Online (FR) will no longer be available after December 31<sup>st</sup>, 2023, as communicated by [Intuit](https://quickbooks.intuit.com/learn-support/fr-fr/help-article/account-management/faq/L5GgPEpLf_FR_fr_FR).
+:::
 
 Yes. Codat supports the same functionality for QuickBooks Online France (FR) as for QuickBooks Online UK and US.
 

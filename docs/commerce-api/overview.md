@@ -6,34 +6,22 @@ hide_title: true
 hide_description: true
 hide_table_of_contents: true
 description: "Codat's Commerce API enables you to pull up-to-date commerce data from several leading payments, point-of-sale, and eCommerce systems. You can view your SMB customers' products, orders, payments, payouts, disputes, and more - all standardized to our Commerce data model."
-createdAt: "2022-11-22T19:33:11.784Z"
-updatedAt: "2022-11-22T19:33:11.784Z"
+banner_title: Commerce API
+banner_class: commerce
+banner_icon: "/logos/products-clear/commerce.svg"
+banner_image: "/img/banners/commerce.png"
+banner_text: "Codat's Commerce API enables you to pull up-to-date commerce data from several leading payments, point-of-sale, and eCommerce systems. You can view your SMB customers' products, orders, payments, payouts, disputes, and more - all standardized to our Commerce data model."
 ---
 
-<Head>
-  <meta property="og:image" content="/img/commerce_api_banner.png"/>
-</Head>
+import SocialImages from "@components/global/SocialImages";
 
-import PageHeader from "@components/global/PageHeader";
+<SocialImages imgSrc="/img/banners/commerce_api_banner.png"/>
 
-<PageHeader 
-  className="commerce"
-  title="Commerce API"
-  icon="/logos/products/Commerce.svg"
->
-  <p>
-    Codat's Commerce API enables you to pull up-to-date commerce data from several leading payments, point-of-sale, and eCommerce systems. 
-  </p>
-  <p>
-    You can view your SMB customers' products, orders, payments, payouts, disputes, and more - all standardized to our Commerce data model.
-  </p>
-</PageHeader>
-
-<ul className="card-container col-3">
+<ul className="card-container col-2">
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Simplify your integrations</h3>
@@ -51,7 +39,7 @@ import PageHeader from "@components/global/PageHeader";
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Access sales information</h3>
@@ -69,7 +57,7 @@ import PageHeader from "@components/global/PageHeader";
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Ensure data consistency</h3>
@@ -86,7 +74,7 @@ import PageHeader from "@components/global/PageHeader";
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Streamlined authorization flow</h3>
@@ -103,4 +91,4 @@ import PageHeader from "@components/global/PageHeader";
 
 <br/>
 
-![](/img/commerce_api_banner.png "Commerce API banner")
+![](/img/banners/commerce_api_banner.png "Commerce API banner")

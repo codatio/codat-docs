@@ -251,133 +251,94 @@ const comm = [
 module.exports = {
   redirects: [
     {
-      to:  '/assess/guides/loan-qualification/introduction',
-      from: '/assess/guides/underwriting/introduction',
+      from: "/assess/guides/underwriting/introduction",
+      to: "/guides/loan-qualification/introduction",
     },
     {
-      to:  '/usecases/summary/lending',
-      from: '/usecases/summary/underwriting',
+      from: "/usecases/summary/underwriting",
+      to: "/usecases/summary/lending",
     },
     {
-      to:  '/introduction/first-steps',
-      from: '/docs',
+      from: "/redirects/integrations/bankfeeds/qalf",
+      to: "/integrations/accounting/xero/accounting-xero-setup", //xero
     },
     {
-      to:  '/introduction/first-steps',
-      from: '/docs/guide-1',
+      from: "/redirects/integrations/bankfeeds/olpr",
+      to: "/bank-feeds-api/sage-bank-feeds", //sage
     },
     {
-      to:  '/introduction/first-steps',
-      from: '/docs/get-started',
+      from: "/docs/status-codes",
+      to: "/using-the-api/errors", //sage
+    },
+    // --- delete soon
+    {
+      from: "/assess/guides/loan-qualification/introduction",
+      to: "/guides/loan-qualification/introduction",
     },
     {
-      to:  '/introduction/create-account',
-      from: '/docs/core-account-signup',
+      from: "/assess/guides/loan-qualification/setting-up",
+      to: "/guides/loan-qualification/setting-up",
     },
     {
-      to:  '/using-the-api/overview',
-      from: '/docs/using-codats-api',
+      from: "/assess/guides/loan-qualification/process-loan",
+      to: "/guides/loan-qualification/process-loan",
     },
     {
-      to:  '/using-the-api/authentication',
-      from: '/reference/authentication',
+      from: "/assess/guides/loan-qualification/uw-decision",
+      to: "/guides/loan-qualification/uw-decision",
     },
     {
-      to:  '/using-the-api/querying',
-      from: '/reference/querying',
+      from: "/accounting-api/guides/bill-pay/introduction",
+      to: "/guides/bill-pay/introduction",
     },
     {
-      to:  '/using-the-api/paging',
-      from: '/reference/paging',
+      from: "/accounting-api/guides/bill-pay/use-bill-pay-demo-app",
+      to: "/guides/bill-pay/use-bill-pay-demo-app",
     },
     {
-      to:  '/using-the-api/ordering-results',
-      from: '/reference/ordering-results',
+      from: "/accounting-api/guides/bill-pay/run-demo-app-locally",
+      to: "/guides/bill-pay/run-demo-app-locally",
     },
     {
-      to:  '/using-the-api/modified-dates',
-      from: '/reference/modified-dates-1',
+      from: "/accounting-api/guides/bill-pay/how-the-demo-app-works",
+      to: "/guides/bill-pay/how-the-demo-app-works",
+    },
+    // ---- Integration pages - delete
+    {
+      from: "/integrations/accounting/clearbooks/accounting-clearbooks-setup",
+      to: "/integrations/accounting/clearbooks/accounting-clearbooks",
     },
     {
-      to:  '/using-the-api/managing-companies',
-      from: '/reference/managing-companies-1',
+      from: "/integrations/accounting/freshbooks/accounting-freshbooks-setup",
+      to: "/integrations/accounting/freshbooks/accounting-freshbooks",
     },
     {
-      to:  '/using-the-api/queueing-data-syncs',
-      from: '/reference/queueing-data-syncs-1',
+      from: "/integrations/accounting/kashflow/accounting-kashflow-setup",
+      to: "/integrations/accounting/kashflow/accounting-kashflow",
     },
     {
-      to:  '/using-the-api/errors',
-      from: '/reference/errors',
+      from: "/integrations/accounting/pandle/accounting-pandle-setup",
+      to: "/integrations/accounting/pandle/accounting-pandle",
     },
     {
-      to:  '/using-the-api/push',
-      from: '/reference/push-creating-and-updating-data',
+      from: "/integrations/accounting/sandbox/accounting-sandbox-setup",
+      to: "/integrations/accounting/sandbox/accounting-sandbox",
     },
     {
-      to:  '/using-the-api/rate-limits',
-      from: '/reference/rate-limits-1',
+      from: "/integrations/accounting/wave/accounting-wave-setup",
+      to: "/integrations/accounting/wave/accounting-wave",
     },
     {
-      to:  '/using-the-api/optimizing-api-calls',
-      from: '/reference/optimizing-your-api-calls-1',
-    },
-    // Changelog - remove soon
-    {
-      to: '/updates/220817-sage-50-soft-deletion',
-      from: '/changelog/41921-sage-50-deleted-payment-on-accounts-soft-deleted',
+      from: "/integrations/banking/accounting-platform-keys",
+      to: "/integrations/accounting/overview",
     },
     {
-      to: '/updates/220826-wbo-invoice-push',
-      from: '/changelog/42327-qbo-change-to-invoice-push-validation',
+      from: "/integrations/banking/banking-platform-keys",
+      to: "/integrations/banking/overview",
     },
     {
-      to: '/updates/220817-qbd-refs',
-      from: '/changelog/42998-qbd-push-validation-accountref-itemref',
-    },
-    {
-      to: '/updates/220825-string-request-deprecation',
-      from: '/changelog/44714-deprecation-string-request-create-connections-endpoint',
-    },
-    {
-      to: '/updates/220926-freshbooks-expenses',
-      from: '/changelog/upcoming-2023-01-10-freshbooks-expenses-no-longer-fetched-as-bills-and-bill-payments',
-    },
-    {
-      to: '/updates/221003-quickbooks-online',
-      from: '/changelog/upcoming-2023-01-10-quickbooks-online-purchases-will-no-longer-be-fetched-as-bills-and-bill-payments',
-    },
-    {
-      to: '/updates/230131-uat-deprecation',
-      from: '/changelog/upcoming-2023-01-31-deprecation-of-uat-environment',
-    },
-    {
-      to: '/updates/230411-deletion-of-data',
-      from: '/changelog/upcoming-2023-04-10-changes-to-handling-of-deleted-data',
-    },
-    {
-      to: '/updates/230411-api-keys',
-      from: '/changelog/upcoming-2023-04-10-deprecation-of-api-key-management',
-    },
-    {
-      to: '/updates/230411-legacy-bank-account-endpoints',
-      from: '/changelog/upcoming-2023-04-10-deprecation-of-legacy-bank-account-endpoints'
-    },
-    {
-      to:  '/updates',
-      from: '/changelog',
-    },
-    {
-      to:  '/integrations/accounting/xero/accounting-xero-setup', //xero
-      from: '/redirects/integrations/bankfeeds/qalf',
-    },
-    {
-      to:  '/bank-feeds-api/sage-bank-feeds', //sage
-      from: '/redirects/integrations/bankfeeds/olpr',
-    },
-    {
-      to:  '/using-the-api/errors', //sage
-      from: '/docs/status-codes',
+      from: "/integrations/commerce/commerce-platform-keys",
+      to: "/integrations/commerce/overview",
     },
     ...mapIntegrationRedirects(acc, "accounting"),
     ...mapIntegrationRedirects(bank, "banking"),
@@ -385,7 +346,6 @@ module.exports = {
   ],
   createRedirects(existingPath) {
     if (existingPath.includes('/docs/banking-')) {
-      console.log(existingPath)
       // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X
       return [
         existingPath.replace('/', '/docs'),

@@ -2,8 +2,6 @@
 title: "Shopify"
 sidebar_label: Overview
 description: "Learn about our Shopify integration"
-createdAt: "2021-01-13T16:44:23.830Z"
-updatedAt: "2022-10-28T12:28:46.081Z"
 ---
 
 [Shopify](https://www.shopify.com/) is an ecommerce platform that helps SMBs to sell their products online.

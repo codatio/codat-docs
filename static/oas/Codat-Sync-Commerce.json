@@ -1,0 +1,2089 @@
+{
+  "openapi": "3.1.0",
+  "x-stoplight": {
+    "id": "v6f6vc930irb5"
+  },
+  "servers": [
+    {
+      "description": "Production",
+      "url": "https://api.codat.io"
+    }
+  ],
+  "info": {
+    "title": "Sync for Commerce API",
+    "version": "1.1",
+    "contact": {
+      "name": "Codat",
+      "url": "https://www.codat.io/",
+      "email": "syncforcommerce@codat.io"
+    },
+    "description": "The API for Sync for Commerce. Sync for Commerce is an API and a set of supporting tools. It has been built to enable e-commerce, point of sale platforms to provide high-quality integrations with numerous accounting platform through standardized API, seamlessly transforming business sale's data into accounting artefacts.\n[Read More...](https://docs.codat.io/sfc/overview)",
+    "termsOfService": "https://www.codat.io/legals/"
+  },
+  "security": [
+    {
+      "auth_header": []
+    }
+  ],
+  "x-speakeasy-retries": {
+    "strategy": "backoff",
+    "backoff": {
+      "initialInterval": 500,
+      "maxInterval": 60000,
+      "maxElapsedTime": 3600000,
+      "exponent": 1.5
+    },
+    "statusCodes": [
+      408,
+      429,
+      "5XX"
+    ],
+    "retryConnectionErrors": true
+  },
+  "tags": [
+    {
+      "name": "Company management",
+      "description": "Create new and manage existing Sync for Commerce companies."
+    },
+    {
+      "name": "Configuration",
+      "description": "Expressively configure preferences for any given Sync for Commerce company."
+    },
+    {
+      "name": "Sync flow preferences",
+      "description": "Configure preferences for any given Sync for Commerce company using sync flow."
+    },
+    {
+      "name": "Sync",
+      "description": "Initiate a sync of Sync for Commerce company data into their respective accounting software."
+    },
+    {
+      "name": "Integrations",
+      "description": "View useful information about codat's integrations."
+    }
+  ],
+  "paths": {
+    "/meta/companies": {
+      "get": {
+        "tags": [
+          "Company management"
+        ],
+        "summary": "List companies",
+        "description": "Retrieve a list of all companies the client has created.",
+        "operationId": "list-companies",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/page"
+          },
+          {
+            "$ref": "#/components/parameters/pageSize"
+          },
+          {
+            "$ref": "#/components/parameters/query"
+          },
+          {
+            "$ref": "#/components/parameters/orderBy"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Companies"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/meta/companies/sync": {
+      "post": {
+        "tags": [
+          "Company management"
+        ],
+        "summary": "Create Sync for Commerce company",
+        "description": "Creates a Codat company with a commerce partner data connection.",
+        "operationId": "create-company",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCompany"
+              },
+              "example": {
+                "name": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Company"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/meta/companies/{companyId}/connections": {
+      "get": {
+        "tags": [
+          "Company management"
+        ],
+        "summary": "List data connections",
+        "description": "Retrieve previously created data connections.",
+        "operationId": "list-connections",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/page"
+          },
+          {
+            "$ref": "#/components/parameters/pageSize"
+          },
+          {
+            "$ref": "#/components/parameters/query"
+          },
+          {
+            "$ref": "#/components/parameters/orderBy"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Connections"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Company management"
+        ],
+        "summary": "Create connection",
+        "description": "Create a data connection for company.",
+        "operationId": "create-connection",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Connection"
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ]
+    },
+    "/config/companies/{companyId}/sync/commerce": {
+      "get": {
+        "tags": [
+          "Configuration"
+        ],
+        "summary": "Retrieve config preferences set for a company.",
+        "description": "Retrieve current config preferences.",
+        "operationId": "get-configuration",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Configuration"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Configuration"
+        ],
+        "summary": "Create or update configuration.",
+        "description": "Make changes to configuration preferences.",
+        "operationId": "set-configuration",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Configuration"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/meta/companies/{companyId}/sync/commerce/status": {
+      "get": {
+        "tags": [
+          "Configuration"
+        ],
+        "summary": "Get status for a company's syncs",
+        "description": "Check the sync history and sync status for a company.",
+        "operationId": "get-sync-status",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ]
+    },
+    "/config/integrations": {
+      "get": {
+        "tags": [
+          "Integrations"
+        ],
+        "summary": "List information on Codat's supported integrations",
+        "description": "Retrieve a list of available integrations support by datatype and state of release.",
+        "operationId": "list-integrations",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/page"
+          },
+          {
+            "$ref": "#/components/parameters/pageSize"
+          },
+          {
+            "$ref": "#/components/parameters/query"
+          },
+          {
+            "$ref": "#/components/parameters/orderBy"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Integrations"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/config/integrations/{platformKey}/branding": {
+      "get": {
+        "tags": [
+          "Integrations"
+        ],
+        "summary": "Get branding for an integration",
+        "description": "Retrieve Integration branding assets.",
+        "operationId": "get-integration-branding",
+        "parameters": [
+          {
+            "name": "platformKey",
+            "in": "path",
+            "description": "PlatformKey",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Branding"
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "platformKey",
+          "in": "path",
+          "required": true,
+          "description": "Unique four letter identifier for the platform"
+        }
+      ]
+    },
+    "/meta/companies/{companyId}/connections/{connectionId}": {
+      "patch": {
+        "tags": [
+          "Company management"
+        ],
+        "summary": "Update data connection",
+        "description": "Update a data connection",
+        "operationId": "update-connection",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateConnection"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Connection"
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        }
+      ]
+    },
+    "/config/sync/commerce/{commerceKey}/{accountingKey}/start": {
+      "get": {
+        "tags": [
+          "Sync flow preferences"
+        ],
+        "summary": "Retrieve sync flow url",
+        "description": "Get a URL for Sync Flow including a one time passcode.",
+        "operationId": "get-sync-flow-url",
+        "parameters": [
+          {
+            "name": "commerceKey",
+            "in": "path",
+            "description": "Commerce platform key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accountingKey",
+            "in": "path",
+            "description": "Accounting platform key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "merchantIdentifier",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Identifier for your merchant, can be the merchant name or Codat company id."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SyncFlowUrl"
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "commerceKey",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier for commerce platform."
+        },
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "accountingKey",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier for accounting software."
+        }
+      ]
+    },
+    "/sync/commerce/config/ui/text": {
+      "get": {
+        "tags": [
+          "Sync flow preferences"
+        ],
+        "summary": "Retrieve preferences for text fields on Sync Flow",
+        "description": "To enable retrieval of preferences set for the text fields on Sync Flow.",
+        "operationId": "get-config-text-sync-flow",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocalizationInfo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Sync flow preferences"
+        ],
+        "summary": "Update preferences for text fields on sync flow",
+        "description": "To enable update of preferences set for the text fields on sync flow.",
+        "operationId": "update-config-text-sync-flow",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LocalizationInfo"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocalizationInfo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/clients/{clientId}/config/ui/accounts/platform/{platformKey}": {
+      "parameters": [
+        {
+          "name": "clientId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        {
+          "name": "platformKey",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      ],
+      "get": {
+        "tags": [
+          "Sync flow preferences"
+        ],
+        "summary": "List visible accounts",
+        "description": "Enable retrieval for accounts which are visible on sync flow.",
+        "operationId": "get-visible-accounts",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VisibleAccounts"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sync/commerce/config/ui/accounts/platform/{commerceKey}": {
+      "patch": {
+        "tags": [
+          "Sync flow preferences"
+        ],
+        "summary": "Update the visible accounts on Sync Flow",
+        "description": "To enable update of accounts visible preferences set on Sync Flow.",
+        "operationId": "update-visible-accounts-sync-flow",
+        "parameters": [
+          {
+            "name": "commerceKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VisibleAccounts"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VisibleAccounts"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/sync/commerce/latest": {
+      "post": {
+        "tags": [
+          "Sync"
+        ],
+        "summary": "Sync new",
+        "description": "Run a Commerce sync from the last successful sync up to the date provided (optional), otherwise UtcNow is used.\r\nIf there was no previously successful sync, the start date in the config is used.",
+        "operationId": "request-sync",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SyncToLatestArgs"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "x-speakeasy-usage-example": true,
+                "schema": {
+                  "$ref": "#/components/schemas/SyncSummary"
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ]
+    },
+    "/meta/companies/{companyId}/sync/commerce/historic": {
+      "post": {
+        "tags": [
+          "Sync"
+        ],
+        "summary": "Sync range",
+        "description": "Run a Commerce sync from the specified start date to the specified finish date in the request payload.",
+        "operationId": "request-sync-for-date-range",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SyncRange"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SyncSummary"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SyncToLatestArgs": {
+        "title": "Sync To Latest Args",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "syncTo": {
+            "$ref": "#/components/schemas/Company/properties/created",
+            "description": "The DateTime, upto which Sync will run up to starting from the previous successful sync",
+            "nullable": true
+          }
+        }
+      },
+      "SyncSummary": {
+        "type": "object",
+        "properties": {
+          "syncDateRangeUtc": {
+            "$ref": "#/components/schemas/DateRange"
+          },
+          "companyId": {
+            "type": "string",
+            "format": "guid",
+            "description": "Unique identifier for your SMB in Codat.",
+            "example": "f4637ec9-9fc0-4a02-8df0-c90d6dc86208"
+          },
+          "commerceSyncId": {
+            "type": "string",
+            "format": "guid",
+            "description": "Unique identifier for the sync in Codat.",
+            "example": "8d0a044e-b683-4fc9-bd0d-bfb2ca5731b7"
+          },
+          "syncStatusCode": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Numerical status code sync of the company data.",
+            "example": 4000
+          },
+          "syncStatus": {
+            "type": "string",
+            "nullable": true,
+            "description": "Status of the sync of the company data. This is linked to status code.",
+            "example": "ValidateError, Pending"
+          },
+          "errorMessage": {
+            "type": "string",
+            "nullable": true,
+            "description": "Friendly error message for the sync operation.",
+            "example": "Customer 3b9bf2ed-a618-4af2-80f2-f2b57fddc748 is not in an Active state. (Archived)"
+          },
+          "syncExceptionMessage": {
+            "type": "string",
+            "nullable": true,
+            "description": "Exception message for the sync operation.",
+            "example": "Customer 3b9bf2ed-a618-4af2-80f2-f2b57fddc748 is not in an Active state. (Archived)"
+          },
+          "syncUtc": {
+            "$ref": "#/components/schemas/Company/properties/created",
+            "description": "UTC DateTime for the Sync.",
+            "nullable": true
+          },
+          "dataConnections": {
+            "type": "array",
+            "description": "Array of containing objects data connection information for the company.",
+            "items": {
+              "$ref": "#/components/schemas/Connection"
+            },
+            "nullable": true
+          },
+          "dataPushed": {
+            "type": "boolean",
+            "description": "Boolean indicator for data being pushed during a sync operation.",
+            "example": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DateRange": {
+        "x-internal": true,
+        "title": "Data range",
+        "type": "object",
+        "properties": {
+          "start": {
+            "$ref": "#/components/schemas/Company/properties/created",
+            "description": "Start date of the Sync."
+          },
+          "finish": {
+            "$ref": "#/components/schemas/Company/properties/created",
+            "description": "Finish date of the Sync."
+          }
+        },
+        "additionalProperties": false
+      },
+      "SyncRange": {
+        "x-internal": true,
+        "title": "Data range",
+        "type": "object",
+        "required": [
+          "dateRange"
+        ],
+        "properties": {
+          "dateRange": {
+            "type": "object",
+            "properties": {
+              "start": {
+                "$ref": "#/components/schemas/Company/properties/created",
+                "description": "Start date of the Sync."
+              },
+              "finish": {
+                "$ref": "#/components/schemas/Company/properties/created",
+                "description": "Finish date of the Sync."
+              }
+            },
+            "required": [
+              "start",
+              "finish"
+            ]
+          }
+        }
+      },
+      "CreateCompany": {
+        "x-internal": true,
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "format": "string",
+            "description": "Name of the company in Codat with a partner-commerce data connection.",
+            "example": "Bob's Burgers"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Connection": {
+        "title": "Connection",
+        "description": "﻿A connection represents a [company's](https://docs.codat.io/codat-api#/schemas/Company) connection to a data source and allows you to synchronize data (pull and/or push) with that source.\n\nA company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:\n\n- [Accounting data](https://docs.codat.io/accounting-api/overview) - 1 active connection.\n- [Banking data](https://docs.codat.io/banking-api/overview) - Multiple active connections.\n- [Commerce data](https://docs.codat.io/commerce-api/overview) - Multiple active connections.\nAny combination of accounting, banking, and commerce data connections is allowed.\n\nBefore you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/auth-flow/overview).",
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/parameters/connectionId/schema"
+          },
+          "integrationId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "fd321cb6-7963-4506-b873-e99593a45e30",
+            "description": "A Codat ID representing the integration."
+          },
+          "integrationKey": {
+            "type": "string",
+            "description": "A unique four-character ID that identifies the platform of the company's data connection. This ensures continuity if the platform changes its name in the future."
+          },
+          "sourceId": {
+            "$ref": "#/components/schemas/Branding/properties/sourceId"
+          },
+          "sourceType": {
+            "title": "Source Type",
+            "x-internal": true,
+            "description": "The type of platform of the connection.",
+            "type": "string",
+            "enum": [
+              "Accounting",
+              "Banking",
+              "Commerce",
+              "Other",
+              "Unknown"
+            ],
+            "example": "Accounting"
+          },
+          "platformName": {
+            "type": "string"
+          },
+          "linkUrl": {
+            "type": "string",
+            "format": "uri",
+            "example": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/2e2eb431-c1fa-4dc9-93fa-d29781c12bcd/start"
+          },
+          "status": {
+            "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
+          },
+          "lastSync": {
+            "$ref": "#/components/schemas/Company/properties/created"
+          },
+          "created": {
+            "$ref": "#/components/schemas/Company/properties/created"
+          },
+          "dataConnectionErrors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Connection/definitions/dataConnectionError"
+            }
+          },
+          "connectionInfo": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "required": [
+          "id",
+          "integrationId",
+          "integrationKey",
+          "sourceId",
+          "platformName",
+          "linkUrl",
+          "status",
+          "created",
+          "sourceType"
+        ],
+        "definitions": {
+          "dataConnectionStatus": {
+            "title": "Data connection status",
+            "description": "The current authorization status of the data connection.",
+            "type": "string",
+            "enum": [
+              "PendingAuth",
+              "Linked",
+              "Unlinked",
+              "Deauthorized"
+            ]
+          },
+          "dataConnectionError": {
+            "title": "Data connection error",
+            "type": "object",
+            "properties": {
+              "statusCode": {
+                "type": "string"
+              },
+              "statusText": {
+                "type": "string"
+              },
+              "errorMessage": {
+                "type": "string"
+              },
+              "erroredOnUtc": {
+                "$ref": "#/components/schemas/Company/properties/created"
+              }
+            }
+          },
+          "dataConnectionSourceType": {
+            "title": "Source Type",
+            "description": "The type of platform of the connection.",
+            "type": "string",
+            "enum": [
+              "Accounting",
+              "Banking",
+              "Commerce",
+              "Other",
+              "Unknown"
+            ],
+            "example": "Accounting"
+          }
+        },
+        "example": {
+          "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+          "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+          "integrationKey": "dfxm",
+          "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+          "platformName": "Basiq",
+          "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+          "status": "Linked",
+          "lastSync": "2022-10-27T10:22:43.6464237Z",
+          "created": "2022-10-27T09:53:29Z",
+          "sourceType": "Banking"
+        }
+      },
+      "Companies": {
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Company"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PagingInfo"
+          }
+        ]
+      },
+      "PagingInfo": {
+        "type": "object",
+        "x-internal": true,
+        "properties": {
+          "pageNumber": {
+            "type": "integer"
+          },
+          "pageSize": {
+            "type": "integer"
+          },
+          "totalResults": {
+            "type": "integer"
+          },
+          "_links": {
+            "$ref": "#/components/schemas/Links"
+          }
+        },
+        "required": [
+          "pageNumber",
+          "pageSize",
+          "totalResults",
+          "_links"
+        ],
+        "examples": [
+          {
+            "_links": {
+              "pageNumber": 1,
+              "pageSize": 10,
+              "totalResults": 1,
+              "self": {
+                "href": "/companies/{id}/data/{dataType}"
+              },
+              "current": {
+                "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+              }
+            }
+          }
+        ]
+      },
+      "Links": {
+        "type": "object",
+        "x-internal": true,
+        "required": [
+          "self",
+          "current"
+        ],
+        "properties": {
+          "self": {
+            "$ref": "#/components/schemas/HalRef"
+          },
+          "current": {
+            "$ref": "#/components/schemas/HalRef"
+          },
+          "next": {
+            "$ref": "#/components/schemas/HalRef"
+          },
+          "previous": {
+            "$ref": "#/components/schemas/HalRef"
+          }
+        },
+        "examples": [
+          {
+            "self": {
+              "href": "/companies/{id}/data/{dataType}"
+            },
+            "current": {
+              "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+            }
+          }
+        ]
+      },
+      "HalRef": {
+        "title": "Hypertext reference",
+        "type": "object",
+        "x-internal": true,
+        "properties": {
+          "href": {
+            "type": "string",
+            "format": "uri-reference"
+          }
+        }
+      },
+      "Company": {
+        "title": "Company",
+        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/codat-api#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/parameters/companyId/schema"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the company",
+            "example": "Codat Ltd."
+          },
+          "description": {
+            "type": "string",
+            "example": "Requested early access to the new financing scheme.",
+            "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
+          },
+          "platform": {
+            "type": "string",
+            "deprecated": true,
+            "example": "Xero"
+          },
+          "redirect": {
+            "type": "string",
+            "format": "uri",
+            "description": "The `redirect` [Link URL](https://docs.codat.io/auth-flow/authorize-hosted-link) enabling the customer to start their auth flow journey for the company.",
+            "example": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739"
+          },
+          "lastSync": {
+            "$ref": "#/components/schemas/Company/properties/created"
+          },
+          "created": {
+            "title": "Date time",
+            "type": "string",
+            "examples": [
+              "2022-10-23T00:00:00.000Z",
+              "2022-10-23T00:00:00.000Z"
+            ],
+            "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
+          },
+          "createdByUserName": {
+            "type": "string"
+          },
+          "dataConnections": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Connection"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "redirect"
+        ],
+        "examples": [
+          {
+            "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+            "name": "string",
+            "platform": "string",
+            "redirect": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739",
+            "lastSync": "2022-01-01T12:00:00.000Z",
+            "created": "2022-01-01T12:00:00.000Z",
+            "createdByUserName": "string",
+            "dataConnections": [
+              {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Linked",
+                "lastSync": "2022-10-27T10:22:43.6464237Z",
+                "created": "2022-10-27T09:53:29Z",
+                "sourceType": "Banking"
+              }
+            ]
+          }
+        ]
+      },
+      "Branding": {
+        "title": "Branding",
+        "type": "object",
+        "properties": {
+          "logo": {
+            "$ref": "#/components/schemas/Branding/definitions/brandingLogo"
+          },
+          "button": {
+            "$ref": "#/components/schemas/Branding/definitions/brandingButton"
+          },
+          "sourceId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "35b92968-9851-4095-ad60-395c95cbcba4",
+            "description": "A source-specific ID used to distinguish between different sources originating from the same data connection. In general, a data connection is a single data source. However, for TrueLayer, `sourceId` is associated with a specific bank and has a many-to-one relationship with the `integrationId`."
+          }
+        },
+        "definitions": {
+          "brandingLogo": {
+            "description": "Logo branding references.",
+            "type": "object",
+            "properties": {
+              "full": {
+                "$ref": "#/components/schemas/Branding/definitions/brandingImage"
+              },
+              "square": {
+                "$ref": "#/components/schemas/Branding/definitions/brandingImage"
+              }
+            }
+          },
+          "brandingButton": {
+            "type": "object",
+            "description": "Button branding references.",
+            "properties": {
+              "default": {
+                "$ref": "#/components/schemas/Branding/definitions/brandingImage"
+              },
+              "hover": {
+                "$ref": "#/components/schemas/Branding/definitions/brandingImage"
+              }
+            }
+          },
+          "brandingImage": {
+            "title": "Branding Image",
+            "type": "object",
+            "properties": {
+              "image": {
+                "$ref": "#/components/schemas/Branding/definitions/imageReference"
+              }
+            },
+            "examples": []
+          },
+          "imageReference": {
+            "type": "object",
+            "title": "Image Reference",
+            "description": "Image reference.",
+            "properties": {
+              "src": {
+                "type": "string",
+                "format": "uri",
+                "description": "Source URL for image."
+              },
+              "alt": {
+                "type": "string",
+                "description": "Alternative text when image is not available."
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "logo": {
+              "full": {
+                "image": {
+                  "src": "https://static.codat.io/public/officialLogos/Full/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png",
+                  "alt": "xero full icon"
+                }
+              },
+              "square": {
+                "image": {
+                  "src": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B2W3607.png",
+                  "alt": "xero square icon"
+                }
+              }
+            },
+            "button": {
+              "default": {
+                "image": {
+                  "src": "https://static.codat.io/public/officialButtons/Full/8A156A5A-39CB-4F9D-856E-76EF9Q7A9607.png",
+                  "alt": "xero default button icon"
+                }
+              },
+              "hover": {
+                "image": {
+                  "src": "https://static.codat.io/public/officialLogos/Full/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png",
+                  "alt": "xero hover button icon"
+                }
+              }
+            },
+            "sourceId": "35b92968-9851-4095-ad60-395c95cbcba4"
+          }
+        ]
+      },
+      "Connections": {
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Connection"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PagingInfo"
+          }
+        ]
+      },
+      "Integrations": {
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Integration"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PagingInfo"
+          }
+        ]
+      },
+      "Integration": {
+        "title": "Integration",
+        "description": "An integration that Codat supports",
+        "examples": [
+          {
+            "key": "gbol",
+            "logoUrl": "http://example.com",
+            "name": "Xero",
+            "enabled": true,
+            "sourceId": "accounting",
+            "sourceType": "8193a927-ab7a-45a3-9dc2-d357a4932dfe",
+            "integrationId": "497a18ca-284e-40c0-985d-f72be35d468e",
+            "isOfflineConnector": true,
+            "isBeta": true,
+            "dataProvidedBy": "string",
+            "datatypeFeatures": [
+              {
+                "datatype": "invoices",
+                "supportedFeatures": [
+                  {
+                    "featureType": "get",
+                    "featureState": "release"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "minLength": 4,
+            "maxLength": 4,
+            "pattern": "[a-z]{4}",
+            "example": "gbol",
+            "description": "A unique 4-letter key to represent a platform in each integration. View [accounting](https://docs.codat.io/integrations/accounting/accounting-platform-keys), [banking](https://docs.codat.io/integrations/banking/banking-platform-keys), and [commerce](https://docs.codat.io/integrations/commerce/commerce-platform-keys) platform keys. "
+          },
+          "logoUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "name": {
+            "type": "string",
+            "example": "Xero"
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether this integration is enabled for your customers to use"
+          },
+          "sourceId": {
+            "$ref": "#/components/schemas/Branding/properties/sourceId"
+          },
+          "sourceType": {
+            "$ref": "#/components/schemas/Connection/properties/sourceType"
+          },
+          "integrationId": {
+            "$ref": "#/components/schemas/Connection/properties/integrationId"
+          },
+          "isOfflineConnector": {
+            "type": "boolean"
+          },
+          "isBeta": {
+            "type": "boolean"
+          },
+          "dataProvidedBy": {
+            "type": "string"
+          },
+          "datatypeFeatures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Integration/definitions/dataTypeFeature"
+            }
+          }
+        },
+        "required": [
+          "key",
+          "logoUrl",
+          "name",
+          "enabled"
+        ],
+        "definitions": {
+          "dataTypeFeature": {
+            "title": "Data type feature",
+            "description": "Describes support for a given datatype and associated operations",
+            "type": "object",
+            "properties": {
+              "dataType": {
+                "x-internal": true,
+                "type": "string",
+                "description": "Available Data types",
+                "enum": [
+                  "accountTransactions",
+                  "balanceSheet",
+                  "bankAccounts",
+                  "bankTransactions",
+                  "billCreditNotes",
+                  "billPayments",
+                  "bills",
+                  "cashFlowStatement",
+                  "chartOfAccounts",
+                  "company",
+                  "creditNotes",
+                  "customers",
+                  "directCosts",
+                  "directIncomes",
+                  "invoices",
+                  "items",
+                  "journalEntries",
+                  "journals",
+                  "paymentMethods",
+                  "payments",
+                  "profitAndLoss",
+                  "purchaseOrders",
+                  "salesOrders",
+                  "suppliers",
+                  "taxRates",
+                  "trackingCategories",
+                  "transfers",
+                  "banking-accountBalances",
+                  "banking-accounts",
+                  "banking-transactionCategories",
+                  "banking-transactions",
+                  "commerce-companyInfo",
+                  "commerce-customers",
+                  "commerce-disputes",
+                  "commerce-locations",
+                  "commerce-orders",
+                  "commerce-paymentMethods",
+                  "commerce-payments",
+                  "commerce-productCategories",
+                  "commerce-products",
+                  "commerce-taxComponents",
+                  "commerce-transactions"
+                ],
+                "example": "invoices"
+              },
+              "supportedFeatures": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Integration/definitions/supportedFeature"
+                }
+              }
+            },
+            "required": [
+              "datatype",
+              "supportedFeatures"
+            ],
+            "examples": [
+              {
+                "datatype": "invoices",
+                "supportedFeatures": [
+                  {
+                    "featureType": "Get",
+                    "featureState": "Release"
+                  }
+                ]
+              }
+            ]
+          },
+          "supportedFeature": {
+            "type": "object",
+            "x-internal": true,
+            "properties": {
+              "featureType": {
+                "$ref": "#/components/schemas/Integration/definitions/featureType"
+              },
+              "featureState": {
+                "$ref": "#/components/schemas/Integration/definitions/featureState"
+              }
+            },
+            "required": [
+              "featureType",
+              "featureState"
+            ]
+          },
+          "featureState": {
+            "title": "Feature state",
+            "type": "string",
+            "example": "Release",
+            "enum": [
+              "Release",
+              "Alpha",
+              "Beta",
+              "Deprecated",
+              "NotSupported",
+              "NotImplemented"
+            ]
+          },
+          "featureType": {
+            "type": "string",
+            "x-internal": true,
+            "enum": [
+              "Get",
+              "Post",
+              "Categorization",
+              "Delete",
+              "Put",
+              "GetAsPdf",
+              "DownloadAttachment",
+              "GetAttachment",
+              "GetAttachments",
+              "UploadAttachment"
+            ],
+            "example": "Get"
+          }
+        }
+      },
+      "UpdateConnection": {
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "The current authorization status of the data connection.",
+            "example": "Linked",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AccountOption": {
+        "x-internal": true,
+        "title": "Account option",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "description": "Name of the account."
+          },
+          "id": {
+            "type": "string",
+            "description": "Identifier for the account, unique for the company."
+          },
+          "nominalCode": {
+            "type": "string",
+            "nullable": true,
+            "description": "Reference given to each nominal account for a business. It ensures money is allocated to the correct account. This code isn't a unique identifier in the Codat system."
+          },
+          "classification": {
+            "type": "string",
+            "nullable": true,
+            "description": "Classification of the type of G/L account.",
+            "example": "Bank Nominal"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConfigAccount": {
+        "x-internal": true,
+        "title": "Account configuration",
+        "type": "object",
+        "description": "G/L account object for configuration.",
+        "properties": {
+          "labelText": {
+            "type": "string",
+            "nullable": true,
+            "description": "Label text for sales configuration section."
+          },
+          "descriptionText": {
+            "type": "string",
+            "nullable": true,
+            "description": "Descriprtive text for sales configuration section."
+          },
+          "selectedAccountId": {
+            "type": "string",
+            "nullable": true,
+            "description": "Selected account id from the list of available accounts."
+          },
+          "required": {
+            "type": "boolean",
+            "description": "Required section to be configured for sync."
+          },
+          "accountOptions": {
+            "type": "array",
+            "description": "Object containing account options.",
+            "items": {
+              "$ref": "#/components/schemas/AccountOption"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Configuration": {
+        "type": "object",
+        "properties": {
+          "sales": {
+            "$ref": "#/components/schemas/Sales"
+          },
+          "payments": {
+            "$ref": "#/components/schemas/Payments"
+          },
+          "newPayments": {
+            "$ref": "#/components/schemas/NewPayments"
+          },
+          "fees": {
+            "$ref": "#/components/schemas/Fees"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fees": {
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "feesSupplier": {
+            "$ref": "#/components/schemas/FeesSupplier"
+          },
+          "syncFees": {
+            "type": "boolean",
+            "description": "Boolean indicator to enable syncing fees."
+          },
+          "accounts": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ConfigAccount"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FeesSupplier": {
+        "x-internal": true,
+        "title": "Supplier fees",
+        "type": "object",
+        "properties": {
+          "selectedSupplierId": {
+            "type": "string",
+            "nullable": true,
+            "description": "Selected supplier id from the list of supplier records on the accounting software."
+          },
+          "supplierOptions": {
+            "type": "array",
+            "description": "List of supplier options from the list of supplier records on the accounting software.",
+            "items": {
+              "$ref": "#/components/schemas/Option"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Grouping": {
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "groupingPeriod": {
+            "$ref": "#/components/schemas/GroupingPeriod"
+          },
+          "groupingLevels": {
+            "$ref": "#/components/schemas/GroupingLevels"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GroupingLevels": {
+        "x-internal": true,
+        "title": "Grouping levels",
+        "type": "object",
+        "properties": {
+          "invoiceLevel": {
+            "$ref": "#/components/schemas/InvoiceLevelSelection"
+          },
+          "invoiceLineLevel": {
+            "$ref": "#/components/schemas/InvoiceLineLevelSelection"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GroupingPeriod": {
+        "x-internal": true,
+        "title": "Grouping period",
+        "type": "object",
+        "properties": {
+          "selectedGroupingPeriod": {
+            "type": "string",
+            "nullable": true,
+            "description": "Grouping period i.e. Daily sales."
+          },
+          "groupingPeriodOptions": {
+            "type": "array",
+            "description": "Array of grouping period options.",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InvoiceLevelSelection": {
+        "x-internal": true,
+        "title": "Invoice level selection",
+        "type": "object",
+        "properties": {
+          "selectedGroupByOptions": {
+            "type": "array",
+            "description": "Selected array of grouping options.",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "groupByOptions": {
+            "type": "array",
+            "description": "Options for grouping sales.",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InvoiceLineLevelSelection": {
+        "x-internal": true,
+        "title": "Invoice line level selection",
+        "type": "object",
+        "properties": {
+          "selectedGroupByOptions": {
+            "type": "array",
+            "description": "Invoice line level selection.",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "groupByOptions": {
+            "type": "array",
+            "description": "Options for grouping on invoice lines.",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InvoiceStatus": {
+        "x-internal": true,
+        "title": "Invoice status",
+        "type": "object",
+        "properties": {
+          "selectedInvoiceStatus": {
+            "type": "string",
+            "nullable": true,
+            "description": "Selected option for invoice status for invoice to be synced.",
+            "example": "Submitted"
+          },
+          "invoiceStatusOptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "description": "Options for invoice statuses."
+          }
+        },
+        "additionalProperties": false
+      },
+      "NewPayments": {
+        "x-internal": true,
+        "title": "New payments",
+        "type": "object",
+        "properties": {
+          "syncPayments": {
+            "type": "boolean",
+            "description": "Boolean indicator for syncing payments."
+          },
+          "accounts": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ConfigAccount"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "NewTaxRates": {
+        "x-internal": true,
+        "title": "New tax rates",
+        "type": "object",
+        "properties": {
+          "accountingTaxRateOptions": {
+            "type": "array",
+            "description": "Array of accounting tax rate options.",
+            "items": {
+              "$ref": "#/components/schemas/Option"
+            },
+            "nullable": true
+          },
+          "commerceTaxRateOptions": {
+            "type": "array",
+            "description": "Array of tax component options.",
+            "items": {
+              "$ref": "#/components/schemas/Option"
+            },
+            "nullable": true
+          },
+          "taxRateMappings": {
+            "type": "array",
+            "description": "Array of tax component to rate mapppings.",
+            "items": {
+              "$ref": "#/components/schemas/TaxRateMapping"
+            },
+            "nullable": true
+          },
+          "selectedDefaultZeroTaxRateId": {
+            "type": "string",
+            "description": "Default tax rate selected for sync.",
+            "nullable": true
+          },
+          "defaultZeroTaxRateOptions": {
+            "type": "array",
+            "description": "Default zero tax rate selected for sync.",
+            "items": {
+              "$ref": "#/components/schemas/Option"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Option": {
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name value of the option.",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the option."
+          }
+        },
+        "additionalProperties": false
+      },
+      "Payments": {
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "syncPayments": {
+            "type": "boolean",
+            "description": "Boolean indicator for syncing sales."
+          },
+          "accounts": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ConfigAccount"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Sales": {
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "syncSales": {
+            "type": "boolean",
+            "description": "Boolean indicator for syncing sales."
+          },
+          "accounts": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ConfigAccount"
+            },
+            "nullable": true
+          },
+          "invoiceStatus": {
+            "$ref": "#/components/schemas/InvoiceStatus"
+          },
+          "salesCustomer": {
+            "$ref": "#/components/schemas/Customer"
+          },
+          "taxRates": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/TaxRateAmount"
+            },
+            "nullable": true
+          },
+          "newTaxRates": {
+            "$ref": "#/components/schemas/NewTaxRates"
+          },
+          "grouping": {
+            "$ref": "#/components/schemas/Grouping"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Customer": {
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "selectedCustomerId": {
+            "type": "string",
+            "nullable": true,
+            "description": "Selected customer id from the list of customer records on the accounting software."
+          },
+          "customerOptions": {
+            "type": "array",
+            "description": "List of customer options from the list of customer records on the accounting software.",
+            "items": {
+              "$ref": "#/components/schemas/Option"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TaxRateAmount": {
+        "x-internal": true,
+        "title": "Tax rate amount",
+        "type": "object",
+        "properties": {
+          "selectedTaxRateId": {
+            "type": "string",
+            "description": "Selected tax rate id from the list of tax rates on the accounting software.",
+            "nullable": true
+          },
+          "taxRateOptions": {
+            "type": "array",
+            "description": "Array of tax rate options object.",
+            "items": {
+              "$ref": "#/components/schemas/Option"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TaxRateMapping": {
+        "x-internal": true,
+        "title": "Tax rate mapping",
+        "type": "object",
+        "properties": {
+          "selectedCommerceTaxRateIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Selected tax component id from the list of tax components on the commerce software.",
+            "nullable": true
+          },
+          "selectedAccountingTaxRateId": {
+            "type": "string",
+            "nullable": true,
+            "description": "Selected tax rate id from the list of tax rates on the accounting software."
+          }
+        },
+        "additionalProperties": false
+      },
+      "Localization": {
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Value of the property.",
+            "nullable": true
+          },
+          "required": {
+            "type": "boolean"
+          }
+        }
+      },
+      "LocalizationInfo": {
+        "title": "Localization info.",
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/Localization"
+        }
+      },
+      "VisibleAccounts": {
+        "title": "Visible accounts",
+        "type": "object",
+        "properties": {
+          "visibleAccounts": {
+            "description": "Visible accounts on sync flow.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        }
+      },
+      "SyncFlowUrl": {
+        "title": "Sync flow url",
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "Sync flow URL.",
+            "example": "https://sync-flow-integration.codat.io/57b6fad9-e3ca-447b-89db-e4ffa21e6ef3/aiwb/mqjo/start?otp=836415"
+          }
+        }
+      }
+    },
+    "parameters": {
+      "companyId": {
+        "name": "companyId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "example": "8a210b68-6988-11ed-a1eb-0242ac120002",
+          "description": "Unique identifier for your SMB in Codat."
+        }
+      },
+      "connectionId": {
+        "name": "connectionId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "example": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+          "description": "Unique identifier for a company's data connection."
+        }
+      },
+      "page": {
+        "name": "page",
+        "in": "query",
+        "schema": {
+          "type": "integer",
+          "format": "int32",
+          "minimum": 1,
+          "example": 1,
+          "default": 1
+        },
+        "description": "Page number. [Read more](https://docs.codat.io/using-the-api/paging)."
+      },
+      "pageSize": {
+        "name": "pageSize",
+        "in": "query",
+        "schema": {
+          "type": "integer",
+          "format": "int32",
+          "default": 100,
+          "example": 100,
+          "minimum": 1,
+          "maximum": 5000
+        },
+        "description": "Number of records to return in a page. [Read more](https://docs.codat.io/using-the-api/paging)."
+      },
+      "query": {
+        "name": "query",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string"
+        },
+        "example": "-modifiedDate",
+        "description": "Codat query string. [Read more](https://docs.codat.io/using-the-api/querying)."
+      },
+      "orderBy": {
+        "name": "orderBy",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "-modifiedDate"
+        },
+        "description": "Field to order results by. [Read more](https://docs.codat.io/using-the-api/ordering-results).",
+        "x-stoplight": {
+          "id": "4je9lwo02netu"
+        }
+      }
+    },
+    "securitySchemes": {
+      "auth_header": {
+        "name": "Authorization",
+        "description": "The word \"Basic\" followed by a space and your API Key, base64 encoded, which can be found [here](https://app.codat.io/developers/api-keys)",
+        "type": "apiKey",
+        "in": "header",
+        "x-speakeasy-example": "Basic BASE_64_ENCODED(API_KEY)"
+      }
+    }
+  }
+}

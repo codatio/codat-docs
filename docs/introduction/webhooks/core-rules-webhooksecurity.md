@@ -12,7 +12,7 @@ To prevent unauthorized users from posting content to your webhook, Codat can ad
 To enable security for your organization's webhooks.
 
 1. Sign in to the Codat Portal.
-2. Select **Monitor > Alerts > Alert settings**.
+2. Select **Settings > Webhooks > Security**.
 3. Select the authorization method you're interested in and enter the required information. By default, **No Authorization** is selected so security is turned off.
 
 | Authorization method or scheme | Description                                                                                        |
@@ -38,7 +38,7 @@ To enable webhook security, use any valid header value in ASCII in the **alertAu
 }
 ```
 
-The authorization header is included in all webhook alerts sent to your account.
+The authorization header is included in all webhook events sent to your account.
 
 ## Disable webhook security for specific rules
 
@@ -46,7 +46,7 @@ If you want to override webhook security for specific rules, please contact [sup
 
 ## Allowlisting Codat IP addresses for webhooks
 
-Codat's alerting rules are served from static IP addresses. This means that you are able to apply an allowlisting rule to grant network access to these notifications.
+Codat's webhook rules are served from static IP addresses. This means that you are able to apply an allowlisting rule to grant network access to these notifications.
 
 - `20.77.82.168/32`
 - `51.142.76.22/32`

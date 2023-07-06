@@ -1,8 +1,7 @@
 ---
 title: "Test PrestaShop"
 description: "Test our PrestaShop integration by pulling sample data to a test company"
-createdAt: "2021-09-17T00:16:28.634Z"
-updatedAt: "2022-10-20T08:56:09.678Z"
+sidebar_label: Testing
 ---
 
 When you've [set up PrestaShop](/integrations/commerce/prestashop/set-up-prestashop-in-production), you're ready to test the authorization process for your integration. You'll need to:

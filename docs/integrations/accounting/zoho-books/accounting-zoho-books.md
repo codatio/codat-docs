@@ -1,8 +1,7 @@
 ---
 title: "Zoho Books"
 description: "Learn about our Zoho Books integration."
-createdAt: "2020-04-06T06:47:41.109Z"
-updatedAt: "2022-10-20T12:44:51.424Z"
+sidebar_label: Overview
 ---
 
 You can synchronize accounting data with <a href="https://www.zoho.com/books/" target="_blank">Zoho Books</a> using our Zoho Books integration.

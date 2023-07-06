@@ -38,7 +38,6 @@ The response indicates that three properties must be populated:
 The `displayName` on the options can be used to display a more descriptive name, such as "Current assets".  
 
 ```json title="Partial Chart of Accounts options response"
-
 {
   "type": "Object",
   "displayName": "Nominal Account",

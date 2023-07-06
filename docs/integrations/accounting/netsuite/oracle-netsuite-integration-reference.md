@@ -1,8 +1,7 @@
 ---
 title: "Oracle NetSuite integration reference"
 description: "Things to know when synchronizing data with Oracle NetSuite."
-createdAt: "2022-04-05T11:55:37.895Z"
-updatedAt: "2022-12-20T10:39:14.661Z"
+sidebar_label: Reference
 ---
 
 Note the following information when building your application using Codat's Oracle NetSuite integration.

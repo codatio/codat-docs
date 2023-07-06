@@ -1,0 +1,13 @@
+.docusaurus-mermaid-container {
+  margin: 2em 0;
+  text-align: center;
+
+  .node rect.label-container,
+  .actor {
+    stroke: #482deb !important;
+  }
+
+  span.edgeLabel {
+    background-color: white !important;
+  }
+}

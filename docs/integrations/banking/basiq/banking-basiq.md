@@ -1,8 +1,7 @@
 ---
 title: "Basiq"
 description: "Learn about our Basiq integration"
-createdAt: "2022-10-06T08:43:13.400Z"
-updatedAt: "2022-10-20T10:20:35.670Z"
+sidebar_label: Overview
 ---
 
 <a class="external" href="https://basiq.io/" target="_blank">

@@ -1,0 +1,39 @@
+.voteContainer {
+  text-align: center;
+  width: 100%;
+}
+
+.voteHeader {
+  font-weight: bold;
+  margin-bottom: 1em;
+  opacity: 0.75;
+}
+
+.feedbackOptions {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.validVote {
+  margin-right: 1em;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.vote {
+  opacity: 0.5;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-right: 1em;
+  }
+}
+
+.feedback {
+  margin-top: 0.5em;
+  opacity: 0.8;
+}

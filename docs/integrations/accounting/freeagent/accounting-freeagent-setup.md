@@ -1,8 +1,7 @@
 ---
 title: "Set up the FreeAgent integration"
 description: "Explore our API integration with FreeAgent."
-createdAt: "2019-04-01T10:30:01.800Z"
-updatedAt: "2023-01-10T17:38:35.904Z"
+sidebar_label: Setup
 ---
 
 :::caution FreeAgent Sandbox not supported

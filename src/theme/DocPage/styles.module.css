@@ -24,8 +24,19 @@
   width: 100%;
 }
 
+.docItemWrapper {
+  --ifm-spacing-horizontal: 0;
+}
+
 .docSidebarContainer {
   display: none;
+}
+
+.devFlag {
+  width: 100%;
+  text-align: center;
+  padding: 4px 8px;
+  background-color: orange;
 }
 
 @media (min-width: 997px) {

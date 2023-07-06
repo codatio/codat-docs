@@ -15,7 +15,7 @@ The file upload integrations are available in the Codat Portal in **Settings > I
 Although we scan all uploaded files for viruses, we recommend that you do the same for optimum security.
 :::
 
-## File Upload Requirements
+## File upload requirements
 
 Uploaded files must meet the following requirements:
 
@@ -43,15 +43,22 @@ Customize the text used in the **File upload** dialog window to provide the user
 1. Click **Settings > Auth flow > Link** in the navigation bar.
 2. In the **File upload** section, enter the text to use for the integrations.
 
-## Access uploaded files via the Portal
+## Accessing uploaded files
 
-1. Navigate to the **Companies** page and select a company that has uploaded files. It is indicated with a green **File upload** pill.
-2. Select **Uploaded files** in the left navigation pane.
+:::caution Webhooks
+
+Uploaded files will not trigger webhooks.
+:::
+
+### Access files via the Portal
+
+1. Navigate to the **Companies** page and select a company that has uploaded files. This is indicated with a green `File upload` label.
+2. Select **Data > Uploaded files** in the left navigation pane.
 3. Click **Download files** for the date when the files were uploaded.
 
 A zip file will be downloaded. It will contain all the files that were uploaded on the chosen date, organized by integration.
 
-## Access file uploads via the Codat API
+### Access files via the Codat API
 
 Explore the API reference [here](/files-api#/).
 

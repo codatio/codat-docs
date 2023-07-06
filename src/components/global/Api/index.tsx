@@ -7,11 +7,12 @@ import styles from "./styles.module.scss";
 import clsx from "clsx";
 
 //import "@stoplight/elements/styles.min.css";
-import "./index.css";
+import "./styles/stoplight.scss";
+//import "./index.css";
 
 const LazyStoplight = React.lazy(() => import("../../page/api/Stoplight"));
 const Fallback = (
-  <div style={{ minHeight: "calc(100vh - var(--ifm-navbar-height))" }} />
+  <div className={styles.stoplightFallback} />
 );
 
 const Api = ({ url, title="API reference"}) => {
@@ -43,7 +44,7 @@ const Api = ({ url, title="API reference"}) => {
           </BrowserOnly>
         </div>
         
-        <div className={clsx(styles.stoplightFallback, "col")}><p>Our API reference is not supported at this screen size.</p></div>
+        <div className={clsx(styles.stoplightPlaceholder, "col")}><p>Our API reference is not supported at this screen size.</p></div>
       </main>
     </Layout>
   );

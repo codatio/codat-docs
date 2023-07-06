@@ -1,8 +1,7 @@
 ---
 title: "Set up the PayPal Integration"
 description: "Explore our API integration with PayPal"
-createdAt: "2021-03-25T22:00:31.772Z"
-updatedAt: "2023-01-06T16:40:43.784Z"
+sidebar_label: Setup
 ---
 
 Before you can access your customers' commerce data from PayPal, you need to set up your integration.

@@ -1,0 +1,26 @@
+/* ------- colors ******* */
+
+html[data-theme="light"] {
+  --font-ui: var(--ifm-font-family-base);
+  --font-ui: #03060b;
+  --font-prose: var(--ifm-font-family-base);
+  --font-prose: #03060b;
+
+  --color-link: var(--ifm-color-link);
+  --color-text-primary: var(--color-link);
+  --color-text-primary-dark: var(--color-link);
+  --color-primary: var(--color-link);
+  --color-primary-dark: var(--color-link);
+}
+
+html[data-theme="dark"] {
+  --font-ui: var(--ifm-font-family-base);
+  --font-prose: var(--ifm-font-family-base);
+
+  --dark-primary: #8675eb;
+  --color-link: var(--dark-primary);
+  --color-text-primary: var(--color-link);
+  --color-text-primary-dark: var(--color-link);
+  --color-primary: var(--color-link);
+  --color-primary-dark: var(--color-link);
+}
