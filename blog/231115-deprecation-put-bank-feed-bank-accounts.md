@@ -1,5 +1,5 @@
 ---
-title: "Upcoming 2023-11-15: Deprecation of the `PUT bankFeedAccounts` endpoint"
+title: "2023-11-15: Deprecation of the `PUT bankFeedAccounts` endpoint"
 date: "2023-06-30"
 tags: ["Deprecation"]
 draft: false

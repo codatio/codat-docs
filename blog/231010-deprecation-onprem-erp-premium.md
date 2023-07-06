@@ -1,23 +1,23 @@
 ---
-title: "Upcoming 2023-10-10: Change in pricing for some accounting integrations"
+title: "2023-10-10: Change in pricing for some accounting integrations"
 date: "2023-07-06"
 tags: ["Deprecation"]
 authors: mcclowes
 ---
 
-On the **10th October, 2023**, we will be changing the way you access some accounting integrations:
+On the **10th October, 2023**, we will be changing the way you access some accounting integrations.
 
 <!--truncate-->
 
-Microsoft Dynamics 365 Business Central, NetSuite, QuickBooks Desktop, Sage 50, Sage Intacct.
+**The following integrations will only be available to Enterprise plan customers:**
 
-**These integrations will only be available to Enterprise plan users.**
+Microsoft Dynamics 365 Business Central, NetSuite, QuickBooks Desktop, Sage 50, Sage Intacct.
 
 These platforms are complex integrations and typically require help from the Codat team to use effectively. For customers without access to our support and solutions teams, this can lead to a disappointing developer experience and potential issues for end customers.
 
-#### Impacted clients
+#### Impacted customers
 
-Any clients on the following plans will no longer have access to these integrations:
+Any customers on the following plans will no longer have access to these integrations:
 
 - Free plan
 - Start-up plan

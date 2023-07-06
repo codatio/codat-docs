@@ -1,5 +1,5 @@
 ---
-title: "Upcoming YYYY-MM-DD: Title"
+title: "YYYY-MM-DD: Title"
 date: "2020-01-01"
 tags: ["Product", "Update"]
 draft: true

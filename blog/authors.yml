@@ -10,17 +10,17 @@ dcoplowe:
   url: https://github.com/dcoplowe
   image_url: https://github.com/dcoplowe.png
 
-d-laing:
-  name: Daniel Laing
-  title: Technical writer
-  url: https://github.com/d-laing
-  image_url: https://github.com/d-laing.png
-
 pzaichkina:
   name: Polina Zaichkina
   title: Technical writer
   url: https://github.com/pzaichkina
   image_url: https://github.com/pzaichkina.png
+
+dhoare12:
+  name: David Hoare
+  title: CTO
+  url: https://github.com/dhoare12
+  image_url: https://github.com/dhoare12.png
 
 jasond-s:
   name: Jason Dryhurst-Smith
@@ -63,3 +63,9 @@ JustinWilkinson:
   title: Senior Software Engineer
   url: https://github.com/JustinWilkinson
   image_url: https://github.com/JustinWilkinson.png
+
+d-laing:
+  name: Daniel Laing
+  title: Technical writer
+  url: https://github.com/d-laing
+  image_url: https://github.com/d-laing.png

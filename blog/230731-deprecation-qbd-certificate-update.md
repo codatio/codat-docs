@@ -1,5 +1,5 @@
 ---
-title: "Upcoming 2023-07-31: QuickBooks Desktop - Certificate Update"
+title: "2023-07-31: Expiry of QuickBooks Desktop connector certificates"
 date: "2023-07-05"
 tags: ["Action required", "QuickBooks Desktop"]
 authors: JustinWilkinson
