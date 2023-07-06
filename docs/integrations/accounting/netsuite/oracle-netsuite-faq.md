@@ -21,7 +21,7 @@ NetSuite OneWorld supports global, multi-subsidiary organizations. Codat handles
 - Each subsidiary is treated as a unique legal entity for taxation and regulation purposes.
 - Each subsidiary has a specific nexus (tax jurisdiction) and a specific base currency. This base currency is the currency in which the subsidiary manages its financials. Subsidiary-specific data is available for reporting.
 
-**Here's an example hierarchy in Netsuite:**
+**Here's an example hierarchy in NetSuite:**
 
 <img src="/img/old/4a3f5ef-image-20210611-134647.png" />
 
@@ -50,5 +50,5 @@ In order for a client to get the full picture of a company that owns multiple le
 
 :::caution Elimination subsidiaries
 
-Elimination subsidiaries in Netsuite are used to record only journal entries and transactions between subsidiaries for consolidation purposes. This information is available on the non-elimination subsidiaries, so Codat won’t fetch elimination subsidiaries.
+Elimination subsidiaries in NetSuite are used to record only journal entries and transactions between subsidiaries for consolidation purposes. This information is available on the non-elimination subsidiaries, so Codat won’t fetch elimination subsidiaries.
 :::
