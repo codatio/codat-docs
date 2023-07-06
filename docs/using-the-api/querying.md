@@ -22,15 +22,18 @@ The below query functionality will only work when searching for company data (e.
 - The query takes the form of `propertyName=value`.
 - You can also include comparison operators, such as greater than, less than or equal to. The following table shows comparison operators that are supported for numeric, date, and string data types.
 
-| Operator 	| Name                     	| Number 	| String 	| Date 	|
-|----------	|--------------------------	|--------	|--------	|------	|
-| =        	| Equals                   	| ✔      	| ✔      	| ✔    	|
-| !=       	| Not equals               	| ✔      	| ✔      	| ✔    	|
-| ~        	| Contains                 	| ❌      	| ✔      	| ❌    	|
-| >        	| Greater than             	| ✔      	| ❌      	| ✔    	|
-| <        	| Less than                	| ✔      	| ❌      	| ✔    	|
-| >=       	| Greater than or equal to 	| ✔      	| ❌      	| ✔    	|
-| <=       	| Less than or equal to    	| ✔      	| ❌      	| ✔    	|
+| Operator 	| Name                     	| Encoded     | Number 	| String 	| Date 	|
+|----------	|--------------------------	| :-          |--------	|--------	|------	|
+| =        	| Equals                   	| `%3d`       | ✔      	| ✔      	| ✔    	|
+| !=       	| Not equals               	|  `%21%3d`   | ✔      	| ✔      	| ✔    	|
+| ~        	| Contains                 	| `%7E`       | ❌      | ✔      	| ❌    |
+| >        	| Greater than             	| `%3e`       | ✔      	| ❌      | ✔    	|
+| <        	| Less than                	| `%3c`       | ✔      	| ❌      | ✔    	|
+| >=       	| Greater than or equal to 	| `%3e%3d`    | ✔      	| ❌      | ✔    	|
+| <=       	| Less than or equal to    	|  `%3c%3d`   | ✔      	| ❌      | ✔    	|
+| &&        | AND                       | `%26%26`    |  -      | -       | -     |
+| \|\|       | OR                       |  `%7C%7C`   | -       | -       | -     |
+| {, }     | Logical separator          | `%7B`, `%7D`| -       | -       | -     |
 
 - Separate multiple query clauses with ampersands (`&&`) for _AND_ queries or pipes (`||`) for _OR_ queries.
 - Access sub-properties by separating them from the property with a dot (see [Invoices to a particular customer](/using-the-api/querying#invoices-to-a-particular-customer) example below). This is only applicable to objects within our data endpoints. We do not support querying inside arrays.
@@ -59,10 +62,6 @@ Our `GET /{dataType}` endpoints typically return an array of items of that given
 `query=id%253D81be41e9-5c2c-4064-829c-bca43b5e6f59.`
 
 ## Example queries
-
-**Note:** some characters are url-encoded:
-- < = `%3c`
-- \> = `%3e`
 
 ### Invoices with amounts outstanding
 
