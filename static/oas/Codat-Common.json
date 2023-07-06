@@ -42,24 +42,48 @@
   },
   "x-speakeasy-name-override": [
     {
-      "operationId": "^list-*",
+      "operationId": "^list-.*?",
       "methodNameOverride": "list"
     },
     {
-      "operationId": "^create-*",
-      "methodNameOverride": "create"
+      "operationId": "^list-.*?-attachments",
+      "methodNameOverride": "list-attachments"
     },
     {
-      "operationId": "^get-*",
+      "operationId": "^get-.*?",
       "methodNameOverride": "get"
     },
     {
-      "operationId": "^delete-*",
+      "operationId": "^get-create-.*?-model",
+      "methodNameOverride": "get-create-model"
+    },
+    {
+      "operationId": "^get-create-update.*?-model",
+      "methodNameOverride": "get-create-update-model"
+    },
+    {
+      "operationId": "^get-.*?-attachment",
+      "methodNameOverride": "get-attachment"
+    },
+    {
+      "operationId": "^update-.*?",
+      "methodNameOverride": "update"
+    },
+    {
+      "operationId": "^create-.*?",
+      "methodNameOverride": "create"
+    },
+    {
+      "operationId": "^delete-.*?",
       "methodNameOverride": "delete"
     },
     {
-      "operationId": "^update-*",
-      "methodNameOverride": "update"
+      "operationId": "^download-.*?-attachment",
+      "methodNameOverride": "download-attachment"
+    },
+    {
+      "operationId": "^upload-.*?-attachment",
+      "methodNameOverride": "upload-attachment"
     }
   ],
   "tags": [
@@ -3845,42 +3869,49 @@
         "description": "",
         "title": "Supplemental data configuration",
         "type": "object",
-        "additionalProperties": {
-          "type": "object",
-          "title": "Supplemental data source configuration",
-          "description": "The client's defined name for the object.",
-          "properties": {
-            "dataSource": {
-              "type": "string",
-              "description": "The underlying endpoint of the source system which the configuration is targeting. "
-            },
-            "pullData": {
+        "properties": {
+          "supplementalDataConfig": {
+            "type": "object",
+            "additionalProperties": {
               "type": "object",
-              "description": "The additional properties that are required when pulling records.",
-              "additionalProperties": {
-                "type": "string",
-                "description": "The client's defined name for the property with the value being the source system's property name which the mapping is targeting."
-              }
-            },
-            "pushData": {
-              "type": "object",
-              "description": "The additional properties that are required to create and/or update records.",
-              "additionalProperties": {
-                "type": "string",
-                "description": "The client's defined name for the property with the value being the source system's property name which the mapping is targeting."
+              "title": "Supplemental data source configuration",
+              "description": "The client's defined name for the object.",
+              "properties": {
+                "dataSource": {
+                  "type": "string",
+                  "description": "The underlying endpoint of the source system which the configuration is targeting. "
+                },
+                "pullData": {
+                  "type": "object",
+                  "description": "The additional properties that are required when pulling records.",
+                  "additionalProperties": {
+                    "type": "string",
+                    "description": "The client's defined name for the property with the value being the source system's property name which the mapping is targeting."
+                  }
+                },
+                "pushData": {
+                  "type": "object",
+                  "description": "The additional properties that are required to create and/or update records.",
+                  "additionalProperties": {
+                    "type": "string",
+                    "description": "The client's defined name for the property with the value being the source system's property name which the mapping is targeting."
+                  }
+                }
               }
             }
           }
         },
         "examples": [
           {
-            "orders-supplemental-data": {
-              "dataSource": "/orders",
-              "pullData": {
-                "orderNumber": "order_num"
-              },
-              "pushData": {
-                "orderNumber": "order_num"
+            "supplementalDataConfig": {
+              "orders-supplemental-data": {
+                "dataSource": "/orders",
+                "pullData": {
+                  "orderNumber": "order_num"
+                },
+                "pushData": {
+                  "orderNumber": "order_num"
+                }
               }
             }
           }
