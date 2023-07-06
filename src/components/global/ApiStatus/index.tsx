@@ -11,7 +11,7 @@ const ApiStatus = () => {
     setStatus(apiStatus)
   }, [])
 
-  if(status?.status?.indicator !== "none") {
+  if(status?.status?.indicator && status?.status?.indicator !== "none") {
     return <div className={styles.apiStatusWrapper}><a href={status?.page?.url} target="_blank">API status: {status?.status?.description}</a></div>
   }
 

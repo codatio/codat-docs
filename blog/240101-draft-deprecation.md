@@ -14,11 +14,11 @@ _Brief summary of the upcoming change._
 
 _Any further details of the upcoming change._
 
-## Action required​
+## Action required
 
 _Describe the set of actions that the user needs to take to be prepared for the deprecation._
 
-## Expected impact if no action is taken​
+## Expected impact if no action is taken
 
 _Describe what happens if the required actions are not completed by the deprecation date._ 
 

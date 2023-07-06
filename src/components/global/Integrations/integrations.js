@@ -60,6 +60,7 @@ const accountingIntegrations = [
     "name": "Dynamics 365 Business Central",
     "to": "/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral",
     "type": "accounting",
+    "tags": ["Premium"],
     "img": "https://static.codat.io/public/officialLogos/Square/6B579544-0E46-4F02-B343-578CE5C3C6CC.png"
   },
   {
@@ -97,6 +98,7 @@ const accountingIntegrations = [
     "name": "Oracle NetSuite",
     "to": "/integrations/accounting/netsuite/accounting-netsuite",
     "type": "accounting",
+    "tags": ["Premium"],
     "img": "https://static.codat.io/public/officialLogos/Square/9815B998-024D-4415-A40B-89903B2CAD6F.png"
   },
   {
@@ -109,7 +111,7 @@ const accountingIntegrations = [
     "name": "QuickBooks Desktop",
     "to": "/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop",
     "type": "accounting",
-    "tags": ["On-premise"],
+    "tags": ["Premium", "On-premise"],
     "img": "https://static.codat.io/public/officialLogos/Square/19EEFA32-58A8-4097-B95A-EF150BF24FA0.png"
   },
   {
@@ -122,7 +124,7 @@ const accountingIntegrations = [
     "name": "Sage 50",
     "to": "/integrations/accounting/sage50/accounting-sage50",
     "type": "accounting",
-    "tags": ["On-premise", "UK", "Ireland"],
+    "tags": ["Premium", "On-premise", "UK", "Ireland"],
     "img": "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png"
   },
   {
@@ -142,6 +144,7 @@ const accountingIntegrations = [
     "name": "Sage Intacct",
     "to": "/integrations/accounting/sage-intacct/accounting-sage-intacct",
     "type": "accounting",
+    "tags": ["Premium"],
     "img": "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png"
   },
   {
