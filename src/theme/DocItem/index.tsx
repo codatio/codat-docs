@@ -28,7 +28,7 @@ import CookieConsent from "react-cookie-consent";
 
 export default function DocItem(props: Props): JSX.Element {
   const {content: DocContent} = props;
-  console.log({props})
+
   const {metadata, frontMatter} = DocContent;
   const {
     image,

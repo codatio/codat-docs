@@ -103,7 +103,7 @@ const Products = ({mini, products, verbose}) => {
       {
         validProducts.map((product, i) => {
           return (
-            <li ley={i} className="card">
+            <li key={i} className="card">
               <div className="header">
                 <a href={product.link} className={`icon-wrapper product animated ${product.slug}`}>
                   <img
