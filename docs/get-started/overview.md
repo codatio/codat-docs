@@ -40,7 +40,7 @@ description: "Take your first steps through the information and support availabl
       <h3>Libraries</h3>
     </div>
     <p>
-      Use our <a href="/introduction/libraries">
+      Use our <a href="/get-started/libraries">
         client library SDKs
       </a>{" "}
       to get building quickly.
@@ -82,7 +82,7 @@ description: "Take your first steps through the information and support availabl
       A practical introduction to Codat's Portal and API.
     </p>
     <p>
-      <a href="/introduction/first-steps">See the guide →</a>.
+      <a href="/get-started/first-steps">See the guide →</a>.
     </p>
   </li>
   <li className="card">
@@ -97,7 +97,7 @@ description: "Take your first steps through the information and support availabl
       From signing up to syncing data in 10 minutes.
     </p>
     <p>
-      <a href="/introduction/first-ten-minutes">See the guide →</a>.
+      <a href="/get-started/first-ten-minutes">See the guide →</a>.
     </p>
   </li>
 </ul>

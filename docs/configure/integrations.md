@@ -12,7 +12,7 @@ With Codat, you can access data from 30+ accounting, ERP, eCommerce, PoS, paymen
 
 Use our Codat sandbox integrations to see Codat APIs in action without the upfront hassle of setting up any integrtations
 
-Get up and running with Xero quickly to test a real integration by following our [first ten minutes](/introduction/first-ten-minutes) video tutorial.
+Get up and running with Xero quickly to test a real integration by following our [first ten minutes](/get-started/first-ten-minutes) video tutorial.
 
 ## Setting up other integrations
 
@@ -42,5 +42,5 @@ These are configured on the Portal by going to the Integrations menu and selecti
 
 ## Read next
 
-- Video guide: [You first ten minutes](/introduction/first-ten-minutes) with Codat
+- Video guide: [You first ten minutes](/get-started/first-ten-minutes) with Codat
 - [All integrations](/integrations/all-integrations)

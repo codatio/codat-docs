@@ -136,7 +136,7 @@ module.exports = {
           rel: null,
         },
         {
-          href: "/introduction/office-hours",
+          href: "/get-started/office-hours",
           label: "Office hours",
           target: "_blank",
           rel: null,

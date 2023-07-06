@@ -541,4 +541,4 @@ Then, use the Link URL of the company you created earlier to review your custome
 
 If you already have an OAuth application with one of our supported integrations, you can seamlessly migrate your customers' connections — without your customers needing to reconnect.
 
-You can choose a self-service token migration, or engage us for a managed migration. [Choose the option](/introduction/migration) that best suits your use case.
+You can choose a self-service token migration, or engage us for a managed migration. [Choose the option](/get-started/migration) that best suits your use case.

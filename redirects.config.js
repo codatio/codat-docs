@@ -250,6 +250,32 @@ const comm = [
 
 module.exports = {
   redirects: [
+    // get started
+    {
+      from: "/introduction/first-steps",
+      to: "/get-started/first-steps",
+    },
+    {
+      from: "/introduction/first-ten-minutes",
+      to: "/get-started/first-ten-minutes",
+    },
+    {
+      from: "/introduction/libraries",
+      to: "/get-started/libraries",
+    },
+    {
+      from: "/other/developer-resources",
+      to: "/get-started/developer-resources",
+    },
+    {
+      from: "/introduction/office-hours",
+      to: "/get-started/office-hours",
+    },
+    {
+      from: "/introduction/migration",
+      to: "/get-started/migration",
+    },
+    //
     {
       from: "/assess/guides/underwriting/introduction",
       to: "/guides/loan-qualification/introduction",
