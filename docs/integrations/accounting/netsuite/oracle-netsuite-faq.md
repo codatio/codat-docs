@@ -38,7 +38,7 @@ NetSuite allows users to set custom forms for pages, including custom entry and 
 
 If the target page has a custom form set, data is pushed using the standard form for the page. Any custom fields which have been added to the custom form are not pushed.
 
-If the push operation fails, check the standard form for the page is active and is enabled for the required user role. Also check that the Codat bundle is updated to the latest version.
+If the push operation fails, check that the standard form for the page is active and is enabled for the required user role. If this is the case, next check that the standard form itself has not been modified. A common cause of push failure is custom fields on the standard form set as mandatory. 
 
 For more information, see <a className="external" href="https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_N2852749.html" target="_blank">Custom Forms</a> in the NetSuite documentation.
 
