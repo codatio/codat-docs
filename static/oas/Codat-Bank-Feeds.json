@@ -41,24 +41,48 @@
   },
   "x-speakeasy-name-override": [
     {
-      "operationId": "^list-*",
+      "operationId": "^list-.*?",
       "methodNameOverride": "list"
     },
     {
-      "operationId": "^create-*",
-      "methodNameOverride": "create"
+      "operationId": "^list-.*?-attachments",
+      "methodNameOverride": "list-attachments"
     },
     {
-      "operationId": "^get-*",
+      "operationId": "^get-.*?",
       "methodNameOverride": "get"
     },
     {
-      "operationId": "^delete-*",
+      "operationId": "^get-create-.*?-model",
+      "methodNameOverride": "get-create-model"
+    },
+    {
+      "operationId": "^get-create-update.*?-model",
+      "methodNameOverride": "get-create-update-model"
+    },
+    {
+      "operationId": "^get-.*?-attachment",
+      "methodNameOverride": "get-attachment"
+    },
+    {
+      "operationId": "^update-.*?",
+      "methodNameOverride": "update"
+    },
+    {
+      "operationId": "^create-.*?",
+      "methodNameOverride": "create"
+    },
+    {
+      "operationId": "^delete-.*?",
       "methodNameOverride": "delete"
     },
     {
-      "operationId": "^update-*",
-      "methodNameOverride": "update"
+      "operationId": "^download-.*?-attachment",
+      "methodNameOverride": "download-attachment"
+    },
+    {
+      "operationId": "^upload-.*?-attachment",
+      "methodNameOverride": "upload-attachment"
     }
   ],
   "tags": [
