@@ -66,7 +66,7 @@ module.exports = [
       },
       {
         type: "category",
-        label: "Netsuite",
+        label: "NetSuite",
         collapsed: true,
         items: [
           "integrations/accounting/netsuite/accounting-netsuite",

@@ -9,7 +9,7 @@ When your client links their NetSuite account via Codat for the first time, they
 :::danger
 If your clients do not follow these steps correctly the linking process will fail.
 
-If the _Token-based Authentication_ feature has not been enabled your client will receive an error message in Netsuite when trying to request data.
+If the _Token-based Authentication_ feature has not been enabled your client will receive an error message in NetSuite when trying to request data.
 
 To install bundles on their account, your client must have the Administrator role or the relevant permission to allow bundle installation.
 :::

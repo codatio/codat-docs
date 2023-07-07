@@ -292,7 +292,7 @@ To do this with Codat, you should leave the `supplierRef` parameter blank when c
 
 :::note
 
-Note that if locations is set to mandatory in the companies Netsuite Account, the `reference` is required and should be an `id` from the [trackingCategories](/accounting-api#/operations/list-tracking-categories) prefixed with location.
+Note that if locations is set to mandatory in the companies NetSuite Account, the `reference` is required and should be an `id` from the [trackingCategories](/accounting-api#/operations/list-tracking-categories) prefixed with location.
 
 :::
 
