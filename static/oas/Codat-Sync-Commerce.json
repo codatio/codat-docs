@@ -263,31 +263,6 @@
         }
       }
     },
-    "/meta/companies/{companyId}/sync/commerce/status": {
-      "get": {
-        "tags": [
-          "Configuration"
-        ],
-        "summary": "Get status for a company's syncs",
-        "description": "Check the sync history and sync status for a company.",
-        "operationId": "get-sync-status",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ]
-    },
     "/config/integrations": {
       "get": {
         "tags": [
@@ -701,6 +676,31 @@
           }
         }
       }
+    },
+    "/meta/companies/{companyId}/sync/commerce/status": {
+      "get": {
+        "tags": [
+          "Sync"
+        ],
+        "summary": "Get status for a company's syncs",
+        "description": "Check the sync history and sync status for a company.",
+        "operationId": "get-sync-status",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ]
     }
   },
   "components": {
