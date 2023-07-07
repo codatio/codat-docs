@@ -36,7 +36,7 @@ The below query functionality will only work when searching for company data (e.
 | {, }     | Logical separator          | `%7B`, `%7D`| -       | -       | -     |
 
 - Separate multiple query clauses with ampersands (`&&`) for _AND_ queries or pipes (`||`) for _OR_ queries.
-- Access sub-properties by separating them from the property with a dot (see [Invoices to a particular customer](/using-the-api/querying#invoices-to-a-particular-customer) example below). This is only applicable to objects within our data endpoints. We do not support querying inside arrays.
+- Access sub-properties by separating them from the property with a dot (see [Invoices to a particular customer](/using-the-api/querying#invoices-for-a-specific-customer) example below). This is only applicable to objects within our data endpoints. We do not support querying inside arrays.
 
 :::info Combining queries
 
