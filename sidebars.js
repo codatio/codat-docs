@@ -29,12 +29,12 @@ module.exports = {
         id: "get-started/overview",
       },
       items: [
-        "introduction/first-steps",
-        "introduction/first-ten-minutes",
-        "introduction/libraries",
-        "other/developer-resources",
-        "introduction/office-hours",
-        "introduction/migration",
+        "get-started/first-steps",
+        "get-started/first-ten-minutes",
+        "get-started/libraries",
+        "get-started/developer-resources",
+        //"get-started/office-hours",
+        "get-started/migration",
       ],
     },
     {

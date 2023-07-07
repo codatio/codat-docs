@@ -18,7 +18,7 @@ Codat’s accounting integrations allow you to pull up-to-date accounting data f
 
 You can use [Codat's Sandbox integration](/integrations/accounting/sandbox/accounting-sandbox) to start exploring the data you can work with, without any set up (other than enabling the integration).
 
-If you've got an existing integration that you'd like to migrate to Codat, we can migrate tokens for [most OAuth integrations](/introduction/migration).
+If you've got an existing integration that you'd like to migrate to Codat, we can migrate tokens for [most OAuth integrations](/get-started/migration).
 
 ## Supported accounting software
 
