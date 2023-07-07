@@ -2,20 +2,17 @@
 title: Loan transactions
 description: "Learn how to identify a company's loans to better understand its financial health"
 sidebar_label: "Loan transactions endpoint"
-createdAt: "2023-06-15T10:32:29.917Z"
-updatedAt: "2023-06-21T16:35:29.376Z"
 ---
 
-## Introduction to Loan transactions endpoint
-Loan data is often not uniform, spread across a variety of software applications and the data can be difficult to interpret.
+Loan data is often not uniform, spread across a variety of software applications and the data can be difficult to interpret. 
 These loans are often hard to identify, analyze, and group.
 Manually going through data and identifying loans is time-consuming and repetitive, and introduces room for human error.
 
-Our Loan Transactions endpoint can identify loans from a company's accounting, banking and commerce integrations. 
+Our Loan Transactions endpoint can identify loans from a company's accounting, banking, and commerce integrations. 
 It can work across a variety of integrations for all three integration types.
 
 The endpoint will give analysts a better idea of the loan obligations a company may have by identifying their loan transactions and loan repayments.
-This will be done via showing the amount of a loan a company has paid off and the number of loans a company has.
+This will be done by showing the amount of a loan a company has paid off and the number of loans a company has.
 
 The endpoint can show:
 - The loan drawdowns a company has
@@ -25,7 +22,7 @@ The endpoint can show:
 Make sure you have synced a company recently before calling the endpoint.
 
 ## Prerequisites
-The company must have either at least one Accounting/Banking/Commerce connection linked and fully synced with the mandatory data types listed below.
+The company must have at least one accounting, banking, or commerce connection linked and fully synced with the mandatory data types listed below.
 
 Accounting connection:
 - Journal Entries
@@ -38,8 +35,8 @@ Banking connection:
 Commerce connection:
 - Commerce Transactions
 
-If the company does not have a any of these connections an error will be thrown.
+If the company does not have any of these connections, the endpoint will respond with an error.
 
 ## Invoices Report
-The Loan transactions endpoint returns a list of a company's loan transactions across all of its valid data connections.
-This may include drawdowns, repayments and interest.
+The Loan transactions endpoint returns a list of a company's loan transactions across all its valid data connections.
+This may include drawdowns, repayments, and interest.
