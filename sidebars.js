@@ -193,17 +193,19 @@ module.exports = {
             "other/portal/pull-and-push-history",
           ],
         },
+        "introduction/testing",
         {
-          type: "category",
-          label: "Troubleshooting",
-          collapsed: true,
-          items: [
-            "using-the-api/errors",
-            "using-the-api/rate-limits",
-            "using-the-api/optimizing-api-calls",
+        type: "category",
+        label: "Webhooks",
+        collapsed: true,
+        items: [
+          "introduction/webhooks/core-rules-types",
+          "introduction/webhooks/core-rules-create",
+          "introduction/webhooks/core-rules-webhooks",
+          "introduction/webhooks/core-rules-webhooksecurity",
+          "introduction/webhooks/receive-webhooks-as-email",
           ],
         },
-        "introduction/testing",
         {
           type: "category",
           label: "Supplemental data",
