@@ -3303,22 +3303,22 @@
         "description": "Webhook request body for a company's data connection status changed.",
         "type": "object",
         "properties": {
-          "companyId": {
+          "CompanyId": {
             "$ref": "#/components/parameters/companyId/schema"
           },
-          "ruleId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ruleId"
+          "RuleId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
           },
-          "type": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/type"
+          "Type": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Type"
           },
-          "alertId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/alertId"
+          "AlertId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
           },
-          "message": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/message"
+          "Message": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
           },
-          "data": {
+          "Data": {
             "type": "object",
             "properties": {
               "dataConnectionId": {
@@ -3338,12 +3338,12 @@
         },
         "examples": [
           {
-            "companyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "ruleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "type": "DataConnectionStatusChanged",
-            "alertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "message": "Data connection for SandBox status changed from PendingAuth to Linked",
-            "data": {
+            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "Type": "DataConnectionStatusChanged",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "Data connection for SandBox status changed from PendingAuth to Linked",
+            "Data": {
               "dataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
               "newStatus": "Linked",
               "oldStatus": "PendingAuth",
@@ -3358,43 +3358,43 @@
         "description": "Webhook request body to notify the completion of a data sync.",
         "type": "object",
         "properties": {
-          "companyId": {
+          "CompanyId": {
             "$ref": "#/components/parameters/companyId/schema"
           },
-          "clientId": {
+          "ClientId": {
             "type": "string",
             "format": "uuid",
             "description": "Unique identifier for your client in Codat."
           },
-          "clientName": {
+          "ClientName": {
             "type": "string",
             "description": "Name of your client in Codat."
           },
-          "dataConnectionId": {
+          "DataConnectionId": {
             "$ref": "#/components/parameters/connectionId/schema"
           },
-          "ruleId": {
+          "RuleId": {
             "type": "string",
             "format": "uuid",
             "description": "Unique identifier for the rule."
           },
-          "type": {
+          "Type": {
             "type": "string",
             "x-stoplight": {
               "id": "34d52a089f08a"
             },
             "description": "The type of rule."
           },
-          "alertId": {
+          "AlertId": {
             "type": "string",
             "format": "uuid",
             "description": "Unique identifier of the webhook event."
           },
-          "message": {
+          "Message": {
             "type": "string",
             "description": "A human readable message about the webhook."
           },
-          "data": {
+          "Data": {
             "type": "object",
             "properties": {
               "dataType": {
@@ -3411,15 +3411,15 @@
         },
         "examples": [
           {
-            "companyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "clientId": "5e505642-9024-474d-9434-e5a44f505cc5",
-            "clientName": "string",
-            "dataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-            "ruleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "type": "Data sync completed",
-            "alertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "message": "Data sync of type creditNotes completed for company 5e505642-9024-474d-9434-e5a44f505cc5",
-            "data": {
+            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "ClientId": "5e505642-9024-474d-9434-e5a44f505cc5",
+            "ClientName": "string",
+            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "Type": "Data sync completed",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "Data sync of type creditNotes completed for company 5e505642-9024-474d-9434-e5a44f505cc5",
+            "Data": {
               "dataType": "creditNotes",
               "datasetId": "6586f21b-ad4d-4d06-a309-712af47184a2"
             }
@@ -3432,22 +3432,22 @@
         "description": "Webhook request body to notify that a data synchronization has completed.",
         "type": "object",
         "properties": {
-          "companyId": {
+          "CompanyId": {
             "$ref": "#/components/parameters/companyId/schema"
           },
-          "ruleId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ruleId"
+          "RuleId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
           },
-          "type": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/type"
+          "Type": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Type"
           },
-          "alertId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/alertId"
+          "AlertId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
           },
-          "message": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/message"
+          "Message": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
           },
-          "data": {
+          "Data": {
             "type": "object",
             "properties": {
               "dataType": {
@@ -3464,12 +3464,12 @@
         },
         "examples": [
           {
-            "companyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "ruleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "type": "Dataset data changed",
-            "alertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "message": "Data has changed for dataset type invoices, company 8a210b68-6988-11ed-a1eb-0242ac120002",
-            "data": {
+            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "Type": "Dataset data changed",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "Data has changed for dataset type invoices, company 8a210b68-6988-11ed-a1eb-0242ac120002",
+            "Data": {
               "dataType": "invoices",
               "datasetId": "6586f21b-ad4d-4d06-a309-712af47184a2"
             }
@@ -3482,29 +3482,29 @@
         "description": "Webhook request body to notify that a new company has successfully synchronized at least one dataType for the first time.",
         "type": "object",
         "properties": {
-          "companyId": {
+          "CompanyId": {
             "$ref": "#/components/parameters/companyId/schema"
           },
-          "ruleId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ruleId"
+          "RuleId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
           },
-          "type": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/type"
+          "Type": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Type"
           },
-          "alertId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/alertId"
+          "AlertId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
           },
-          "message": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/message"
+          "Message": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
           }
         },
         "examples": [
           {
-            "companyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "ruleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "type": "New company synchronised",
-            "alertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "message": "Company 8a210b68-6988-11ed-a1eb-0242ac120002 synced for the first time"
+            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "Type": "New company synchronised",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "Company 8a210b68-6988-11ed-a1eb-0242ac120002 synced for the first time"
           }
         ]
       },
@@ -3514,22 +3514,22 @@
         "description": "Webhook request body for a push operation status change.",
         "type": "object",
         "properties": {
-          "companyId": {
+          "CompanyId": {
             "$ref": "#/components/parameters/companyId/schema"
           },
-          "ruleId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ruleId"
+          "RuleId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
           },
-          "type": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/type"
+          "Type": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Type"
           },
-          "alertId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/alertId"
+          "AlertId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
           },
-          "message": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/message"
+          "Message": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
           },
-          "data": {
+          "Data": {
             "type": "object",
             "properties": {
               "dataType": {
@@ -3550,15 +3550,14 @@
         },
         "examples": [
           {
-            "companyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "ruleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "type": "Push Operation Status Changed",
-            "alertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "message": "invoices triggered notification for PushOperationStatusChanged at 2019-05-22T18:19:42.742Z",
-            "data": {
-              "dataType": "invoices",
-              "status": "Success",
-              "pushOperationKey": "c2f8847d-3047-4619-a157-6d947d8e4a73"
+            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "Type": "Push Operation Status Changed",
+            "AMessage": "invoices triggered notification for PushOperationStatusChanged at 2019-05-22T18:19:42.742Z",
+            "Data": {
+              "DataType": "invoices",
+              "Status": "Success",
+              "PushOperationKey": "c2f8847d-3047-4619-a157-6d947d8e4a73"
             }
           }
         ]
@@ -3569,22 +3568,22 @@
         "description": "Webhook request body notifying that a push push operation has timed out.",
         "type": "object",
         "properties": {
-          "companyId": {
+          "CompanyId": {
             "$ref": "#/components/parameters/companyId/schema"
           },
-          "ruleId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ruleId"
+          "RuleId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
           },
-          "type": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/type"
+          "Type": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Type"
           },
-          "alertId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/alertId"
+          "AlertId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
           },
-          "message": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/message"
+          "Message": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
           },
-          "data": {
+          "Data": {
             "type": "object",
             "properties": {
               "dataType": {
@@ -3601,12 +3600,12 @@
         },
         "examples": [
           {
-            "companyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "ruleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "type": "Push Operation Timed Out",
-            "alertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "message": "ERROR: pushing invoices never finished in time, timing out at 2020-09-07T08:42:13",
-            "data": {
+            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "Type": "Push Operation Timed Out",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "ERROR: pushing invoices never finished in time, timing out at 2020-09-07T08:42:13",
+            "Data": {
               "dataType": "invoices",
               "pushOperationKey": "c2f8847d-3047-4619-a157-6d947d8e4a73"
             }
@@ -3818,22 +3817,22 @@
         "description": "Webhook request body to notify that a data synchronization has completed.",
         "type": "object",
         "properties": {
-          "companyId": {
+          "CompanyId": {
             "$ref": "#/components/parameters/companyId/schema"
           },
-          "ruleId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ruleId"
+          "RuleId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
           },
-          "type": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/type"
+          "Type": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Type"
           },
-          "alertId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/alertId"
+          "AlertId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
           },
-          "message": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/message"
+          "Message": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
           },
-          "data": {
+          "Data": {
             "type": "object",
             "properties": {
               "dataType": {
@@ -3845,19 +3844,19 @@
                 "description": "The current status of the dataset's sync."
               },
               "datasetId": {
-                "$ref": "#/components/schemas/DatasetDataChangedWebhook/properties/data/properties/datasetId"
+                "$ref": "#/components/schemas/DatasetDataChangedWebhook/properties/Data/properties/datasetId"
               }
             }
           }
         },
         "examples": [
           {
-            "companyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "ruleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "type": "Data Sync Status Changed To Error",
-            "alertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "message": "ERROR: syncing payments triggered a ProcessingError notification at 2020-04-21T12:12:57.4250446Z.",
-            "data": {
+            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "Type": "Data Sync Status Changed To Error",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "ERROR: syncing payments triggered a ProcessingError notification at 2020-04-21T12:12:57.4250446Z.",
+            "Data": {
               "dataType": "payments",
               "datasetStatus": "ProcessingError",
               "datasetId": "6586f21b-ad4d-4d06-a309-712af47184a2"
