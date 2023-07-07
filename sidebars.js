@@ -193,16 +193,6 @@ module.exports = {
             "other/portal/pull-and-push-history",
           ],
         },
-        {
-          type: "category",
-          label: "Troubleshooting",
-          collapsed: true,
-          items: [
-            "using-the-api/errors",
-            "using-the-api/rate-limits",
-            "using-the-api/optimizing-api-calls",
-          ],
-        },
         "introduction/testing",
         {
         type: "category",
