@@ -9,7 +9,7 @@ On the **10th October, 2023**, we will be changing the way you access some accou
 
 <!--truncate-->
 
-**The following integrations will only be available to Enterprise plan customers:**
+**The following integrations will only be available to customers on an Enterprise plan (including our *Standard plan*):**
 
 Microsoft Dynamics 365 Business Central, NetSuite, QuickBooks Desktop, Sage 50, Sage Intacct.
 
