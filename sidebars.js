@@ -205,6 +205,18 @@ module.exports = {
         },
         "introduction/testing",
         {
+        type: "category",
+        label: "Webhooks",
+        collapsed: true,
+        items: [
+          "introduction/webhooks/core-rules-types",
+          "introduction/webhooks/core-rules-create",
+          "introduction/webhooks/core-rules-webhooks",
+          "introduction/webhooks/core-rules-webhooksecurity",
+          "introduction/webhooks/receive-webhooks-as-email",
+          ],
+        },
+        {
           type: "category",
           label: "Supplemental data",
           collapsed: true,
