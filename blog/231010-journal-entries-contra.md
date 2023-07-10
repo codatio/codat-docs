@@ -1,11 +1,11 @@
 ---
-title: "2023-10-10: Journal Entries - Change to mapping of manual contra entries"
+title: "2023-10-10: Quickbooks Online - Change to mapping of manual contra journal entries"
 date: "2023-06-30"
 tags: ["Deprecation"]
 authors: dharries
 ---
 
-On October 10, 2023, Codat will change the mappings for contra manual journals on the `billPayments` and `payments` data types.
+On October 10, 2023, Codat will change the mappings for contra manual journal entries on the `billPayments` and `payments` data types in Quickbooks Online.
 
 <!--truncate-->
 
