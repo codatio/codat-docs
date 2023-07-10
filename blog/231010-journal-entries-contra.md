@@ -1,7 +1,7 @@
 ---
 title: "2023-10-10: Quickbooks Online - Change to mapping of manual contra journal entries"
 date: "2023-06-30"
-tags: ["Deprecation"]
+tags: ["Deprecation", "QuickBooks Online"]
 authors: dharries
 ---
 
