@@ -24,7 +24,7 @@ In the <a href="https://app.codat.io/" target="_blank">Codat Portal</a>, click *
 
 ## View detailed records
 
-To view more detailed information about a record, click on an item in your **sync history**. The information appears in the **Senc Details** window and provides sync start and end times, and sync source and target platforms. 
+To view more detailed information about a record, click on an item in your **sync history**. The information appears in the **Sync Details** window and provides sync start and end times, and sync source and target platforms. 
 
 It also displays client-friendly notes and error messages in case of sync failures. Refer to our [troubleshooting guide](/sfc/error-documentation#error-messages) for recommendations on how to resolve these. 
 
