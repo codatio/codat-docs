@@ -70,13 +70,13 @@ Before setting up the integration, make sure that:
    } 
    ```
 
-3. Using the [PUT / bankFeedAccounts](/bank-feeds-api#/operations/create-bank-feed) endpoint, add one or more source bank accounts:
+3. Using the [POST /bankFeedAccounts](/bank-feeds-api#/operations/create-bank-feed) endpoint, add one or more source bank accounts:
    
    ```http title="Create bank feed bank accounts"
-   PUT /companies/<COMPANY_ID>/connections/<CONNECTION_ID>/connectionInfo/bankFeedAccounts
+   POST /companies/<COMPANY_ID>/connections/<CONNECTION_ID>/connectionInfo/bankFeedAccounts
    ```
    
-   For the `<CONNECTION_ID>`, use the connection `id` you received in the response from `POST /companies`.
+   For the `<CONNECTION_ID>`, use the connection `id` you received in the response from `POST /connection` request.
    
    In the request body, specify a list of source bank accounts to make available to the SMB user. For example, to add two credit card accounts send the following request:
 
