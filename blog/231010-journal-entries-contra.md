@@ -2,7 +2,7 @@
 title: "2023-10-10: Journal Entries - Change to mapping of manual contra entries"
 date: "2023-06-30"
 tags: ["Deprecation"]
-authors: mcclowes
+authors: dhoare12
 ---
 
 On October 10, 2023, Codat will change the mappings for contra manual journals on the `billPayments` and `payments` data types.
