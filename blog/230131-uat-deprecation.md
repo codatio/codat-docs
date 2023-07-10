@@ -1,5 +1,5 @@
 ---
-title: "2023-01-31: Deprecation of UAT environment"
+title: "Completed 2023-01-31: Deprecation of UAT environment"
 date: "2023-01-15"
 tags: ["Deprecation", "UAT"]
 draft: false

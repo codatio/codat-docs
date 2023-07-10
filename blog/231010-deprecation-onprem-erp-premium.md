@@ -1,7 +1,7 @@
 ---
 title: "2023-10-10: Change in pricing for some accounting integrations"
 date: "2023-07-06"
-tags: ["Deprecation"]
+tags: ["Deprecation", "Update", "Integrations", "Accounting API"]
 authors: mcclowes
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "2023-07-10: QuickBooks Desktop - change to directIncomes mappings"
+title: "Completed 2023-07-10: QuickBooks Desktop - change to directIncomes mappings"
 date: "2023-03-10"
 tags: ["Deprecation", "UAT"]
 authors: mcclowes
