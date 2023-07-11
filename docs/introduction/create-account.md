@@ -10,20 +10,22 @@ You have two options when you're ready to move to a paid plan. You can:
 
 If you're an Admin, you can view the available pricing plans and upgrade via Stripe by visiting <a href="https://app.codat.io/settings/billing" target="_blank">Billing</a> in the Codat Portal.
 
-| Feature           | Free           | Start-up       | Enterprise       |
-| :-                | :--             | :--             | :--               |
-| Seats             | Unlimited      | Unlimited      | Unlimited        |
-| Usage             | 50 companies<br/>5 connections/source | Unlimited    | Unlimited        |
-| Integrations      | Basic          | Basic           | All            |
-| On-premise connectors   | ➖             | ➖          | ✅              |
-| ERP integrations        | ➖             | ➖          | ✅              |
-| Support           | ➖             | Bug resolution  | Premium technical support              |
+| Feature                 | Free           | Start-up       | Enterprise       |
+| :-                      | :--             | :--             | :--            |
+| Seats                   | Unlimited      | Unlimited      | Unlimited        |
+| Usage                   | 50 companies<br/>5 connections/source | Unlimited  | Unlimited        |
+| Hourly syncs            | ➖             | ➖          | ✅              |
+| On-premise connectors   | ➖             | ➖          | ❇️              |
+| ERP integrations        | ➖             | ➖          | ❇️              |
+| Support                 | ➖             | Bug resolution  | Premium technical support              |
 | Implementation guidance | ➖             | ➖          | ✅              |
-| SLA               | ➖             | ➖          | ✅              |
-| OAuth SSO         | ✅             | ✅          | ✅              |
-| SAML SSO          | ➖             | ➖          | ✅              |
-| Mutual TLS        | ➖             | ➖          | ✅              |
-| Rate limits       | 500 req/day     | 1000 req/day | 1000 req/day              |
+| SLA                     | ➖             | ➖          | ✅              |
+| OAuth SSO               | ✅             | ✅          | ✅              |
+| SAML SSO                | ➖             | ➖          | ❇️              |
+| Mutual TLS              | ➖             | ➖          | ❇️              |
+| Rate limits             | 500 req/day     | 1000 req/day | 1000 req/day    |
+
+
 
 ## Start-up plan 
 
