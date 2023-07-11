@@ -69,10 +69,14 @@ The most common, and recommended, sync frequency is Daily. It's the best middle 
 
 Some data types like company, tax rates and charts of accounts will rarely change (monthly if at all), but are so small to sync they have no performance impact.
 
-- **Hourly** - Hourly syncs are recommended for specific use cases only and may require consideration for the rate limits, e.g. invoices and payments for invoice financing.
-- **Daily** - Best middle ground for synchronising most data type while staying well within the rate limits for most accounting platforms.
-- **Weekly** - For data types of less important or unlikely to change.
-- **Monthly** - Similar to weekly, but also recommended for at least one data type (e.g. Company) to ensure connection token does not expire when not actively synchronising data (unless only a one-time sync is required).
+- **Hourly**: hourly syncs are recommended for specific use cases only and may require consideration for the rate limits, e.g. invoices and payments for invoice financing.
+- **Daily**: best middle ground for synchronising most data type while staying well within the rate limits for most accounting platforms.
+- **Weekly**: best used for data types of less important or unlikely to change.
+- **Monthly**: similar to weekly, but also recommended for at least one data type (e.g. Company) to ensure connection token does not expire when not actively synchronising data (unless only a one-time sync is required).
+
+## Pitfalls
+
+- Where the same information can be garnered by using different data types, it may vary in consistency based on the data types' `lastSuccessfulSync` property. For example, if you calculate a company's accounts receivable (AR) position using invoices, credit notes, payments, account transactions, and customers that had a `lastSuccessfulSync` a few days prior, and compare it to the AR position on the balace sheet with the `lastSuccessfulSync` of today, the results are likely to differ. You need to decide on the appropriate sync frequency to ensure the data freshness fits your purpose. 
 
 ---
 
