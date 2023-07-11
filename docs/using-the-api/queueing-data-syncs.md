@@ -76,11 +76,9 @@ Some data types like company, tax rates and charts of accounts will rarely chang
 
 ## Pitfalls
 
-- Where the same metric or report could be derived using different data types, syncing data types at different schedules may cause inconsistencies. You need to decide on the appropriate sync frequency to ensure the data freshness fits your purpose. 
+- Where the same metric or report could be derived using different data types, syncing data types at different schedules may cause inconsistencies. You need to decide on the appropriate sync frequency to ensure the data freshness fits your purpose. You can check for possible inconsistencies using the data types' `lastSuccessfulSync` properties.  
 
-Any inconsistency may be indicated by data types' `lastSuccessfulSync` properties.  
-
-For example, if you calculate a company's accounts receivable (AR) position using invoices, credit notes, payments, account transactions, and customers with `lastSuccessfulSync` dates of `2023-07-10`, and compare it to the AR position on the balance sheet with the `lastSuccessfulSync` of `2023-07-11`, the results are likely to differ.
+    For example, if you calculate a company's accounts receivable (AR) position using invoices, credit notes, payments, account transactions, and customers with `lastSuccessfulSync` dates of `2023-07-10`, and compare it to the AR position on the balance sheet with the `lastSuccessfulSync` of `2023-07-11`, the results are likely to differ.
 
 ---
 
