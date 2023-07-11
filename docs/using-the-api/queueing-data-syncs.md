@@ -69,10 +69,10 @@ The most common, and recommended, sync frequency is Daily. It's the best middle 
 
 Some data types like company, tax rates and charts of accounts will rarely change (monthly if at all), but are so small to sync they have no performance impact.
 
-- **Hourly**: hourly syncs are recommended for specific use cases only and may require consideration for the rate limits, e.g. invoices and payments for invoice financing.
-- **Daily**: best middle ground for synchronising most data types while staying well within the rate limits for most accounting platforms.
-- **Weekly**: best used for data types of less important or unlikely to change.
-- **Monthly**: similar to weekly, but also recommended for at least one data type (e.g. Company) to ensure connection token does not expire when not actively synchronising data (unless only a one-time sync is required).
+- **Monthly**: We recommend at least one data type montly (e.g. Company info) just to ensure connection token does not expire when not actively synchronising data (unless only a one-time sync is required).
+- **Weekly (recommended)**: Keeps data reasonably fresh, particularly where data types change less frequently.
+- **Daily**: Gives you close-to-live picture of most data types while staying within the conservative rate limits of most accounting platforms.
+- **Hourly**: Recommended for specific use cases only and may require consideration for the rate limits, e.g. invoices and payments for invoice financing. Only available to [enterprise customers](/introduction/create-account).
 
 ## Pitfalls
 
