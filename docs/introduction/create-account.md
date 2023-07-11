@@ -15,14 +15,14 @@ If you're an Admin, you can view the available pricing plans and upgrade via Str
 | Seats                   | Unlimited      | Unlimited      | Unlimited        |
 | Usage                   | 50 companies<br/>5 connections/source | Unlimited  | Unlimited        |
 | Hourly syncs            | ➖             | ➖          | ✅              |
-| On-premise connectors   | ➖             | ➖          | ❇️              |
-| ERP integrations        | ➖             | ➖          | ❇️              |
+| On-premise connectors   | ➖             | ➖          | ☑️ Add-on             |
+| ERP integrations        | ➖             | ➖          | ☑️ Add-on             |
 | Support                 | ➖             | Bug resolution  | Premium technical support              |
 | Implementation guidance | ➖             | ➖          | ✅              |
 | SLA                     | ➖             | ➖          | ✅              |
 | OAuth SSO               | ✅             | ✅          | ✅              |
-| SAML SSO                | ➖             | ➖          | ❇️              |
-| Mutual TLS              | ➖             | ➖          | ❇️              |
+| SAML SSO                | ➖             | ➖          | ☑️ Add-on              |
+| Mutual TLS              | ➖             | ➖          | ☑️ Add-on              |
 | Rate limits             | 500 req/day     | 1000 req/day | 1000 req/day    |
 
 
