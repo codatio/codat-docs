@@ -8382,7 +8382,7 @@
           "paymentStatus": {
             "type": "string",
             "x-internal": true,
-            "description": "Status of the payment",
+            "description": "Status of the payment.",
             "enum": [
               "Pending",
               "Authorized",
@@ -8396,7 +8396,7 @@
             "type": "string",
             "x-internal": true,
             "nullable": true,
-            "description": "Status of the payment",
+            "description": "Type of payment.",
             "enum": [
               "Cash",
               "Card",
