@@ -102,3 +102,5 @@ Review the table below for platform schemas we use in our data types, which are 
 - We expose the data sources available to interact with supplemental data but request you to refer to the platforms' own documentation for details on available data and properties for each data source.
 
 - Where we are unable to retrieve requested supplemental data, the fetch operation will still complete, but the supplemental properties will be null.
+
+- Deleted objects, indicated by `metadata.isDeleted flag` set to `true`, will not be enriched by supplemental data.  You can read more about [how we handle deleted data](https://docs.codat.io/updates/230411-deletion-of-data#additional-information). 
