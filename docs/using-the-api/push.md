@@ -173,13 +173,14 @@ This results in a corresponding response from the endpoint, which includes the f
 - **requestedOnUtc**: the datetime (in UTC) when the operation was requested 
 - **completedOnUtc**: the datetime (in UTC) when the operaion was completed, null if `Pending`
 - **validation**: a human-readable object that contains validation details, including errors, encountered during the operation
+- **changes**: an array that communicates which record has changed (`recordRef` property) and the manner in which it changed (`type` property that can be `Unknown`, `Created`, `Modified`, or `Deleted`)
 
 <Tabs>
    <TabItem value="wo" label="Account creation response">  
 
   ```json
     {
-      "changes": [],
+      "changes": [...],
       "data": {
         "id": "fdeaba98-6f74-4b03-9a67-3708ea442417",
         "nominalCode": "4200123456",
@@ -212,7 +213,7 @@ This results in a corresponding response from the endpoint, which includes the f
 
   ```json
     {
-      "changes": [],
+      "changes": [...],
       "data": {
         "nominalCode": "350045006500",
         "name": "Excessive Assets Account",
