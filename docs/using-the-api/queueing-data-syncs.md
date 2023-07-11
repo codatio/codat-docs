@@ -4,6 +4,11 @@ sidebar_label: "Refresh data"
 description: "Overview of queuing a data refresh in Codat's API"
 ---
 
+:::caution Minimal data sync frequency
+
+You should refresh at least one data type monthly to ensure your connection token does not expire when not actively synchronising data, unless only a one-time sync is required.
+:::
+
 ## Check data 'freshness'
 
 Use the `GET /companies/{companyId}/dataStatus` endpoint to check the [last time each data type was synchronized](/core-concepts/status).
@@ -75,6 +80,8 @@ Some data types like company, tax rates and charts of accounts will rarely chang
 - **Hourly**: Recommended for specific use cases only and may require consideration for the rate limits, e.g. invoices and payments for invoice financing. Only available to [enterprise customers](/introduction/create-account).
 
 ## Pitfalls
+
+- 
 
 - Where the same metric or report could be derived using different data types, syncing data types at different schedules may cause inconsistencies. You need to decide on the appropriate sync frequency to ensure the data freshness fits your purpose. You can check for possible inconsistencies using the data types' `lastSuccessfulSync` properties.  
 
