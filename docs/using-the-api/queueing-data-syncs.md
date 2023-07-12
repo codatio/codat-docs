@@ -70,18 +70,20 @@ Codat can also refresh data at a set schedule, based on the set 'Sync frequency'
 
 ### Sync frequency
 
-The most common, and recommended, sync frequency is Daily. It's the best middle ground for synchronising most data type while staying well within the rate limits for all accounting platforms.
+The recommended sync frequency is weekly. It provides you with recent enough data while catering for data types that do not change often and decreasing the number of APi calls required. 
 
 Some data types like company, tax rates and charts of accounts will rarely change (monthly if at all), but are so small to sync they have no performance impact.
 
-- **Monthly**: We recommend at least one data type montly (e.g. Company info) just to ensure connection token does not expire when not actively synchronising data (unless only a one-time sync is required).
+However, you can set a more frequent sync schedule if it is required for your use case. 
+
+- **Monthly**: We recommend that you sync at least one data type monthly (e.g. Company info) to ensure connection token does not expire when not actively synchronising data (unless only a one-time sync is required).
 - **Weekly (recommended)**: Keeps data reasonably fresh, particularly where data types change less frequently.
 - **Daily**: Gives you close-to-live picture of most data types while staying within the conservative rate limits of most accounting platforms.
 - **Hourly**: Recommended for specific use cases only and may require consideration for the rate limits, e.g. invoices and payments for invoice financing. Only available to [enterprise customers](/introduction/create-account).
 
 ## Pitfalls
 
-- 
+- Ensure to perform a monthly sync for at least one data type to keep your connection token operational if you are not performing active synchronisation. You can disregard this if you only require a one-time sync.
 
 - Where the same metric or report could be derived using different data types, syncing data types at different schedules may cause inconsistencies. You need to decide on the appropriate sync frequency to ensure the data freshness fits your purpose. You can check for possible inconsistencies using the data types' `lastSuccessfulSync` properties.  
 
