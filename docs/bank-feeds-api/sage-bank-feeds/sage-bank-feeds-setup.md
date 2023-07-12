@@ -107,17 +107,16 @@ To upload a logo, go to the <a className="external" href="https://app.codat.io/s
    Do _not_ send the `linkUrl` property to the SMB user. Unlike other Codat integrations, company authentication is initiated within Sage as described in "SMB user flow: Connect a source bank account to Sage", below.
    :::
 
-3. Using [PUT /bankFeedAccounts](/bank-feeds-api#/operations/create-bank-feed), add one or more source bank accounts to make available to the SMB user.
+3. Using [POST /bankFeedAccounts](/bank-feeds-api#/operations/create-bank-feed), add one or more source bank accounts to make available to the SMB user.
 
    ```http
-   PUT /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts
+   POST /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts
    ```
 
    In the request body, specify a list of bank accounts. For example, to add two credit card accounts, send the following request (all fields shown are required):
 
    ```json
-   [
-     {
+      {
        "id": "acc-002", // set to desired unique ID
        "accountName": "account-081",
        "sortCode": "123456",
@@ -125,17 +124,7 @@ To upload a logo, go to the <a className="external" href="https://app.codat.io/s
        "accountNumber": "12345670",
        "currency": "GBP",
        "balance": 99.99 // can be 0
-     },
-     {
-       "id": "acc-003", // set to desired unique ID
-       "accountName": "account-095",
-       "sortCode": "123456",
-       "accountType": "Credit",
-       "accountNumber": "12345671",
-       "currency": "GBP",
-       "balance": 100.09 // can be 0
      }
-   ]
    ```
 
 4. The endpoint returns a `200` code and the list of created bank accounts.
