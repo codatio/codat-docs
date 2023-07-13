@@ -78,9 +78,9 @@ Sync for Expenses currently supports option 2 only.
  
 In some cases different accounting platforms have certain ways of handling suppliers and customers, based on transaction types: 
 
-|Transaction Types|   Supported Platforms                                                                      |               |                                |                                                                                             |
+|          |   Supported Platforms                                                                      |               |                                |                                                                                             |
 |:--------------:|:-------------------------------------------------------------------------------------------:|:-------------:|--------------------------------|---------------------------------------------------------------------------------------------|
-|                |                                             **Xero**                                        |      **QBO**   | **Netsuite** <\br>(credit card only) |                                      **Microsoft Dynamics**                           |
+|_Transaction Types_                |                                             **Xero**                                        |      **QBO**   | **Netsuite** <\br>(credit card only) |                                      **Microsoft Dynamics**                           |
 | Payments       | Supplier used                                                                               | Supplier used | Supplier used                  | Supplier is not associated with expense transactions due to a Dynamics platform limitation. |
 | Refund         | Customer used                                                                               | Supplier used | Supplier used                  |                                                                                             |
 | Rewards        | Customer used                                                                               | Supplier used | NA                             |                                                                                             |
@@ -90,33 +90,79 @@ In some cases different accounting platforms have certain ways of handling suppl
 | Adjustment In  | If the chart of accounts’ is a bank account, then supplier used, if not then customer used. | Customer used | NA                             |                                                                                             |
 | Adjustment Out | Supplier used                                                                               | Customer used | NA                             |                                                                                             |
 
-HTML table
-
 <table>
-    <thead>
-        <tr>
-            <th>Layer 1</th>
-            <th>Layer 2</th>
-            <th>Layer 3</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td rowspan={4}>L1 Name</td>
-            <td rowspan={2}>L2 Name A</td>
-            <td>L3 Name A</td>
-        </tr>
-        <tr>
-            <td>L3 Name B</td>
-        </tr>
-        <tr>
-            <td rowspan={2}>L2 Name B</td>
-            <td>L3 Name C</td>
-        </tr>
-        <tr>
-            <td>L3 Name D</td>
-        </tr>
-    </tbody>
+<tbody>
+  <tr>
+    <td style='text-align:center', colspan="6"><b>Supported Platforms</b></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><b>Xero</b></td>
+    <td><b>QBO</b></td>
+    <td><b>Netsuite </br>(credit card only)<b></td>
+    <td><b>Microsoft Dynamics</b></td>
+  </tr>
+  <tr>
+    <td rowspan="8"><i>Transaction Types</i></td>
+    <td></td>
+    <td>Payments</td>
+    <td>Supplier used</td>
+    <td>Supplier used</td>
+    <td>Supplier used</td>
+    <td rowspan="8">Supplier is not associated with expense transactions due to a Dynamics platform limitation.</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Refund</td>
+    <td>Customer used</td>
+    <td>Supplier used</td>
+    <td>Supplier used</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Rewards</td>
+    <td>Customer used</td>
+    <td>Supplier used</td>
+    <td>NA</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Chargeback</td>
+    <td>Customer used</td>
+    <td>Supplier used</td>
+    <td>NA</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Transfer In</td>
+    <td>Customer used</td>
+    <td>Supplier used</td>
+    <td>NA</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Transfer Out</td>
+    <td>Supplier used</td>
+    <td>Supplier used</td>
+    <td>NA</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Adjustment In</td>
+    <td>If the chart of accounts’ is a bank account, then supplier used, if not then customer used.</td>
+    <td>Customer used</td>
+    <td>NA</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Adjustment Out</td>
+    <td>Supplier used</td>
+    <td>Customer used</td>
+    <td>NA</td>
+  </tr>
+</tbody>
 </table>
 
 #### Customer
