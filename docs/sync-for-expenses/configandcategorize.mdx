@@ -30,22 +30,10 @@ Using this endpoint you will be able to:
 
 #### Bank Account
 
-<ul>
-   <li>
-      Choose which bank account (<code>bankAccount.id</code>) purchases will be made from. This can also be a credit card account.
-
-   </li>
-   <ul>
-      <li>
-         <a href="/accounting-api#/operations/get-account">GET</a> a list of available accounts.  
-         Use this request to retrieve a list of relevant accounts from your customers' accounting software.  You should also add additional query parameters, e.g. <code>query=metadata.isDeleted=false&&isBankAccount=true</code>. 
-<li>For <strong>credit cards</strong> you can use an additional query parameter e.g. <code>query=metadata.isDeleted=false&&isBankAccount=true&&type=liability</code></li>
-      </li>
-      <li>
-         You can <a href="/accounting-api#/operations/post-account">POST</a> to the Accounting API to <strong>create</strong> a new account.
-      </li>
-   </ul>
-</ul>
+- Choose which bank account (`bankAccount.id`) purchases will be made from. This can also be a credit card account.
+    - [GET](/accounting-api#/operations/get-account) a list of available accounts. Use this request to retrieve a list of relevant accounts from your customers' accounting software. You should also add additional query parameters, e.g. `query=metadata.isDeleted=false&&isBankAccount=true`. 
+    - For **credit cards**, you can use an additional query parameter, e.g. `query=metadata.isDeleted=false&&isBankAccount=true&&type=liability`.
+    - You can [POST](/accounting-api#/operations/post-account) to the Accounting API to **create** a new account.
 
 :::info Foreign Exchange 💱
 
@@ -59,23 +47,12 @@ Sync for Expenses currently supports option 2 only.
 :::
 
 #### Supplier
-<ul>
-   <li>
-      A supplier (<code>supplier.id</code>) is required to associate all spending against that supplier. 
-   </li>
-   <ul>
-      <li>
-         <a href="/accounting-api#/operations/list-suppliers">GET</a> a list of available suppliers in the company's accounting software. You can also add additional query parameters, e.g. <code>query=metadata.isDeleted=false&&supplierName=supplierName</code>
-      </li>
-      <li>
-         You can <a href="/accounting-api#/operations/create-suppliers">POST</a> to create a new supplier.
-      </li>
-   </ul>
-</ul>
 
+- A supplier (`supplier.id`) is required to associate all spending against that supplier. 
+    - [GET](/accounting-api#/operations/list-suppliers) a list of available suppliers in the company's accounting software. You can also add additional query parameters, e.g. `query=metadata.isDeleted=false&&supplierName=supplierName`.
+    - You can [POST](/accounting-api#/operations/create-suppliers) to create a new supplier.
 - Suppliers can be set at the configuration level and also at the [transaction level](https://docs.codat.io/sync-for-expenses-api#/operations/create-expense-dataset#request-body).
-    - By setting the supplier at the transaction level you will be able to override the configuration supplier, in order to sync a more accurate   
-      representation of who the spend should be associated with in the accounting platform. 
+    - By setting the supplier at the transaction level you will be able to override the configuration supplier, in order to sync a more accurate representation of who the spend should be associated with in the accounting platform. 
     - If no supplier is set at the transaction level, the spend will have the config supplier set as a default against it. 
     - The currency associated with the supplier must match the currency associated with the spend.
  
@@ -108,12 +85,12 @@ In some cases different accounting platforms have certain ways of handling suppl
       <td><b>Microsoft Dynamics</b></td>
     </tr>
     <tr>
-      <td rowspan="8"><i>Transaction Types</i></td>
+      <td style={{ textAlign: 'center' }} rowspan="8"><i>Transaction Types</i></td>
       <td>Payments</td>
       <td>Supplier used</td>
       <td>Supplier used</td>
       <td>Supplier used</td>
-      <td rowspan="8">Supplier is not associated with expense transactions due to a Dynamics platform limitation.</td>
+      <td style={{ textAlign: 'center' }} rowspan="8">Supplier is not associated with expense transactions due to a Dynamics platform limitation.</td>
     </tr>
     <tr>
       <td>Refund</td>
@@ -152,7 +129,6 @@ In some cases different accounting platforms have certain ways of handling suppl
       <td>NA</td>
     </tr>
     <tr>
-      <td>sds</td>
       <td>Adjustment Out</td>
       <td>Supplier used</td>
       <td>Customer used</td>
