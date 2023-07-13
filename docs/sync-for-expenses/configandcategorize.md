@@ -101,7 +101,7 @@ In some cases different accounting platforms have certain ways of handling suppl
     <td></td>
     <td><b>Xero</b></td>
     <td><b>QBO</b></td>
-    <td><b>Netsuite</b></n><b>(credit card only)</b></td>
+    <td><b>Netsuite (credit card only)</b></td>
     <td><b>Microsoft Dynamics</b></td>
   </tr>
   <tr>
