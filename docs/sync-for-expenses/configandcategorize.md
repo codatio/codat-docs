@@ -77,11 +77,18 @@ Sync for Expenses currently supports option 2 only.
     - The currency associated with the supplier must match the currency associated with the spend.
  
 In some cases different accounting platforms have certain ways of handling suppliers and customers, based on transaction types: 
-<iframe
-  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ5H9qT9aqJ7R2o8h7DgIBXo9ElwBvHRbooUNVylJGa747oB8e24mOxv0y2WBACyvqWChmvgUerKmIm/pubhtml?widget=true&amp;headers=false"
-  frameborder="0"
-  style={{ top: 0, left: 0, width: "100%", height: "400px" }}
-></iframe>
+
+|Transaction Types|   Supported Platforms                                                                                                                                                                                                                     |
+|:--------------:|:-------------------------------------------------------------------------------------------:|:-------------:|--------------------------------|---------------------------------------------------------------------------------------------|
+|                |                                             Xero                                            |      QBO      | Netsuite</br>(credit card only) |                                      Microsoft Dynamics                                    |
+| Payments       | Supplier used                                                                               | Supplier used | Supplier used                  | Supplier is not associated with expense transactions due to a Dynamics platform limitation. |
+| Refund         | Customer used                                                                               | Supplier used | Supplier used                  |                                                                                             |
+| Rewards        | Customer used                                                                               | Supplier used | NA                             |                                                                                             |
+| Chargeback     | Customer used                                                                               | Supplier used | NA                             |                                                                                             |
+| Transfer In    | Customer used                                                                               | Supplier used | NA                             |                                                                                             |
+| Transfer Out   | Supplier used                                                                               | Supplier used | NA                             |                                                                                             |
+| Adjustment In  | If the chart of accounts’ is a bank account, then supplier used, if not then customer used. | Customer used | NA                             |                                                                                             |
+| Adjustment Out | Supplier used                                                                               | Customer used | NA                             |                                                                                             |
 
 #### Customer
 <ul>
