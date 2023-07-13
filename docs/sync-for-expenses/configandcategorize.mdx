@@ -58,18 +58,6 @@ Sync for Expenses currently supports option 2 only.
  
 In some cases different accounting platforms have certain ways of handling suppliers and customers, based on transaction types: 
 
-|          |   Supported Platforms                                                                      |               |                                |                                                                                             |
-|:--------------:|:-------------------------------------------------------------------------------------------:|:-------------:|--------------------------------|---------------------------------------------------------------------------------------------|
-|_Transaction Types_                |                                             **Xero**                                        |      **QBO**   | **NetSuite** <br/>(credit card only) |                                      **Microsoft Dynamics**                           |
-| Payments       | Supplier used                                                                               | Supplier used | Supplier used                  | Supplier is not associated with expense transactions due to a Dynamics platform limitation. |
-| Refund         | Customer used                                                                               | Supplier used | Supplier used                  |                                                                                             |
-| Rewards        | Customer used                                                                               | Supplier used | NA                             |                                                                                             |
-| Chargeback     | Customer used                                                                               | Supplier used | NA                             |                                                                                             |
-| Transfer In    | Customer used                                                                               | Supplier used | NA                             |                                                                                             |
-| Transfer Out   | Supplier used                                                                               | Supplier used | NA                             |                                                                                             |
-| Adjustment In  | If the chart of accounts’ is a bank account, then supplier used, if not then customer used. | Customer used | NA                             |                                                                                             |
-| Adjustment Out | Supplier used                                                                               | Customer used | NA                             |                                                                                             |
-
 <table>
   <thead></thead>
   <tbody>
