@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 :::note Prerequisites
 
-You need an account and its API key to start with Codat. You can <a href="https://signup.codat.io/" target="_blank">sign up</a> for an account for free, or <a href="/introduction/create-account" target="_blank">learn more</a> about creating one.
+You need an account and its API key to start with Codat. You can <a href="https://signup.codat.io/" target="_blank">sign up</a> for an account for free, or <a href="/configure/create-account" target="_blank">learn more</a> about creating one.
 
 :::
 
@@ -43,7 +43,7 @@ If you are a developer and want to work with Codat using our <a className="exter
   <summary><b>Authenticate with Codat's API</b></summary>
 
 :::caution Viewing auth headers
-Authorization headers can only be viewed and copied by users with Administrator or Developer <a href="/other/user-management/user-roles" target="_blank">roles</a>.
+Authorization headers can only be viewed and copied by users with Administrator or Developer <a href="/configure/user-management/user-roles" target="_blank">roles</a>.
 :::
 
 Codat uses API keys, Base64 encoded within an authorization header, to control access to the API. To copy your authorization header, navigate to **Developers > API keys** in the <a href="https://app.codat.io/developers/api-keys" target="_blank">Codat Portal</a>.

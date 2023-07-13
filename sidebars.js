@@ -120,7 +120,7 @@ module.exports = {
       className: "top-level-item config",
       link: {
         type: 'doc',
-        id: "other/portal/dashboard",
+        id: "configure/portal/dashboard",
       },
       items: [
         "configure/products",
@@ -131,9 +131,9 @@ module.exports = {
           label: "User management",
           collapsed: true,
           items: [
-            "other/user-management/adding-users",
-            "other/user-management/user-roles",
-            "other/user-management/sso",
+            "configure/user-management/adding-users",
+            "configure/user-management/user-roles",
+            "configure/user-management/sso",
           ],
         },
         {
@@ -142,11 +142,11 @@ module.exports = {
           collapsed: true,
           items: [
             "configure/plans/free",
-            "introduction/create-account",
-            "other/portal/usage-and-billing",
+            "configure/create-account",
+            "configure/portal/usage-and-billing",
           ],
         },
-        "other/portal/account-management",
+        "configure/portal/account-management",
       ],
     },
     {
@@ -166,7 +166,7 @@ module.exports = {
           collapsed: true,
           items: [
             "using-the-api/managing-companies",
-            "other/portal/companies",
+            "configure/portal/companies",
             // manage connections
           ],
         },
@@ -190,20 +190,20 @@ module.exports = {
           collapsed: true,
           items: [
             "using-the-api/push",
-            "other/portal/pull-and-push-history",
+            "configure/portal/pull-and-push-history",
           ],
         },
-        "introduction/testing",
+        "using-the-api/testing",
         {
         type: "category",
         label: "Webhooks",
         collapsed: true,
         items: [
-          "introduction/webhooks/core-rules-types",
-          "introduction/webhooks/core-rules-create",
-          "introduction/webhooks/core-rules-webhooks",
-          "introduction/webhooks/core-rules-webhooksecurity",
-          "introduction/webhooks/receive-webhooks-as-email",
+          "using-the-api/webhooks/core-rules-types",
+          "using-the-api/webhooks/core-rules-create",
+          "using-the-api/webhooks/core-rules-webhooks",
+          "using-the-api/webhooks/core-rules-webhooksecurity",
+          "using-the-api/webhooks/receive-webhooks-as-email",
           ],
         },
         {
@@ -230,8 +230,8 @@ module.exports = {
           label: "Change management",
           collapsed: true,
           items: [
-            "introduction/change-policy",
-            "other/portal/developers",
+            "using-the-api/change-policy",
+            "configure/portal/developers",
           ],
         },
       ],

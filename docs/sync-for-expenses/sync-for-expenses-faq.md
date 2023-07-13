@@ -17,7 +17,7 @@ Our [token migration process](https://docs.codat.io/get-started/migration) allow
 Sync for Expenses only handles foreign currencies if each transaction is converted back to the currency of the bank account where the transaction is recorded. It does not support separate bank accounts for each foreign exchange currency. 
 
 ### How do I reconnect a company? 
-If a user disconnects, you can use a [webhook](/introduction/webhooks/core-rules-types#company-data-connection-status-changed) and redirect your user to the `linkUrl` of the accounting connection to re-authenticate. If a company changes accounting platforms, it is better to remove the accounting connection completely and create a new one. 
+If a user disconnects, you can use a [webhook](/using-the-api/webhooks/core-rules-types#company-data-connection-status-changed) and redirect your user to the `linkUrl` of the accounting connection to re-authenticate. If a company changes accounting platforms, it is better to remove the accounting connection completely and create a new one. 
 
 ### What is the difference between effectiveTaxRate and totalTaxRate?
 If a transaction has multiple tax components, each component may be calculated based on the original amount separately, and then added together. 
@@ -81,4 +81,4 @@ error: One or more transactions have previously been processed: 46dd5a8a-d74f-46
 
 ### How can I detect if an expense account has been deactivated?
 You can create a webhook in the Codat portal to inform you when the Chart of Accounts has been changed. By querying the Chart of Accounts and using the `isDeleted` flag, you can identify which accounts have been deleted before a sync occurs. 
-For more information, please refer to the [documentation](https://docs.codat.io/introduction/webhooks/core-rules-types) on creating and updating rules.
+For more information, please refer to the [documentation](https://docs.codat.io/using-the-api/webhooks/core-rules-types) on creating and updating rules.
