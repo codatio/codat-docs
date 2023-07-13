@@ -52,4 +52,4 @@ Explore alternative options you can use in our [Migration Guide`](/assess/guides
 
 ## Expected impact if no action is taken
 
-After the **10th July 2023**, the deprecated endpoints will no longer work, the portal screens will be removed and Account Categories features will be removed from the data export to Excel.
+After the **24th July 2023**, the deprecated endpoints will no longer work, the portal screens will be removed and Account Categories features will be removed from the data export to Excel.
