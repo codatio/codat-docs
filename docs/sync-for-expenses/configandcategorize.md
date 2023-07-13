@@ -90,6 +90,35 @@ In some cases different accounting platforms have certain ways of handling suppl
 | Adjustment In  | If the chart of accounts’ is a bank account, then supplier used, if not then customer used. | Customer used | NA                             |                                                                                             |
 | Adjustment Out | Supplier used                                                                               | Customer used | NA                             |                                                                                             |
 
+HTML table
+
+<table>
+    <thead>
+        <tr>
+            <th>Layer 1</th>
+            <th>Layer 2</th>
+            <th>Layer 3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan=4>L1 Name</td>
+            <td rowspan=2>L2 Name A</td>
+            <td>L3 Name A</td>
+        </tr>
+        <tr>
+            <td>L3 Name B</td>
+        </tr>
+        <tr>
+            <td rowspan=2>L2 Name B</td>
+            <td>L3 Name C</td>
+        </tr>
+        <tr>
+            <td>L3 Name D</td>
+        </tr>
+    </tbody>
+</table>
+
 #### Customer
 <ul>
    <li>
