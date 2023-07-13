@@ -1,11 +1,19 @@
 ---
-title: "Completed 2023-07-10: Deprecation of legacy Account Categories and related features in Assess"
+title: "2023-07-24: Deprecation of legacy Account Categories and related features in Assess"
 date: "2023-04-05"
 tags: ["Deprecation"]
 authors: e-donnelly
 ---
 
-On the **10th July 2023**, we will be deprecating the legacy version of  `Account Categories` and all related features, including:
+:::caution Update: July 13, 2023
+
+**Deprecation date has changed**
+
+We have extended the deprecation date from July 10th, 2023 to July 24th, 2023. On that date, the features listed below will no longer be available.
+
+:::
+
+On the **24th July 2023**, we will be deprecating the legacy version of  `Account Categories` and all related features, including:
 
 <!--truncate-->
 
