@@ -73,8 +73,13 @@ thead th:empty {
 /* Tables */
 
 .markdown {
-  table td {
-    vertical-align: top !important;
+  table {
+    th,
+    tr {
+      > td {
+        vertical-align: top;
+      }
+    }
   }
 
   .table-wrapper {
