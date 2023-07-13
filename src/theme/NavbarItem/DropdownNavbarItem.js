@@ -8,6 +8,7 @@ import {
 import {isSamePath, useLocalPathname} from '@docusaurus/theme-common/internal';
 import NavbarNavLink from '@theme/NavbarItem/NavbarNavLink';
 import NavbarItem from '@theme/NavbarItem';
+
 function isItemActive(item, localPathname) {
   if (isSamePath(item.to, localPathname)) {
     return true;
@@ -20,9 +21,11 @@ function isItemActive(item, localPathname) {
   }
   return false;
 }
+
 function containsActiveItems(items, localPathname) {
   return items.some((item) => isItemActive(item, localPathname));
 }
+
 function DropdownNavbarItemDesktop({
   items,
   position,
@@ -32,6 +35,7 @@ function DropdownNavbarItemDesktop({
 }) {
   const dropdownRef = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (!dropdownRef.current || dropdownRef.current.contains(event.target)) {
@@ -54,6 +58,7 @@ function DropdownNavbarItemDesktop({
         'dropdown--right': position === 'right',
         'dropdown--show': showDropdown,
       })}>
+
       <NavbarNavLink
         aria-haspopup="true"
         aria-expanded={showDropdown}
@@ -70,11 +75,12 @@ function DropdownNavbarItemDesktop({
         }}>
         {props.children ?? props.label}
       </NavbarNavLink>
+
       <ul className="dropdown__menu">
-        {items.map((childItemProps, i) => {
+        {items.map(({hr, ...childItemProps}, i) => {
           return <>
             {
-              childItemProps.hr === true && <hr/>
+              hr === true && <hr/>
             }
             <NavbarItem
               isDropdownItem
@@ -104,6 +110,7 @@ function DropdownNavbarItemDesktop({
     </div>
   );
 }
+
 function DropdownNavbarItemMobile({
   items,
   className,

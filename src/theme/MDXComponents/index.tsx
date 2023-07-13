@@ -4,7 +4,8 @@ import MDXComponentsOriginal from "@theme-original/MDXComponents";
 export default {
   ...MDXComponentsOriginal,
   table: ({ children, ...props }) => {
-    const tableHeadings = children[0].props.children.props.children;
+    console.log(children, props)
+    const tableHeadings = children[0]?.props.children?.props.children;
 
     const hasTheadValue =
       !Array.isArray(tableHeadings) ||
