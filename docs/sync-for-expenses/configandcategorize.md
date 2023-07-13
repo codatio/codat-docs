@@ -93,7 +93,7 @@ In some cases different accounting platforms have certain ways of handling suppl
 <table>
 <tbody>
   <tr>
-    <td style='text-align:center', colspan="6"><b>Supported Platforms</b></td>
+    <td style='text-align:center' colspan="6"><b>Supported Platforms</b></td>
   </tr>
   <tr>
     <td></td>
