@@ -144,7 +144,7 @@ NextJS is opinionated about the import strategy we're suggesting, and has an exp
 In the example below, you'll see that we make use of webpack's [magic comments](https://webpack.js.org/api/module-methods/#magic-comments) feature to avoid NextJS's caching and use normal [import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) behaviour.
 :::
 
-1. **Create a component that mounts the SDK** - You can copy and paste the example <a href="[https://github.com/codatio/sdk-link/blob/main/snippets/CodatLink.tsx](https://github.com/codatio/sdk-link/blob/main/examples/next/src/app/components/CodatLink.tsx)" target="_blank">`CodatLink.tsx`</a> file to an appropriate location in your app. Note that [`"use client"`](https://nextjs.org/docs/getting-started/react-essentials#the-use-client-directive) is used to define this as client-side code, and the import  
+1. **Create a component that mounts the SDK** - You can copy and paste the example <a href="[https://github.com/codatio/sdk-link/blob/main/snippets/CodatLink.tsx](https://github.com/codatio/sdk-link/blob/main/examples/next/src/app/components/CodatLink.tsx)" target="_blank">`CodatLink.tsx`</a> file to an appropriate location in your app. Note that [`"use client"`](https://nextjs.org/docs/getting-started/react-essentials#the-use-client-directive) is used to define this as client-side code, and the import is ignored in webpack to avoid NextJS caching (as above). 
 2. **Use this component** - We suggest wrapping the component in a modal (default dimensions 460px by 840px). The component can also take care of logic like when to [display the component](https://github.com/codatio/sdk-link/blob/main/examples/react/src/App.tsx), passing in the relevant company ID, etc.
 
   ```js
