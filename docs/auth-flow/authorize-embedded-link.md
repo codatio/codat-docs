@@ -36,12 +36,11 @@ We built Embedded Link to be flexible so that you can integrate and initialize i
 
 ## Features
 
-* An authorization flow UI built with our expertise and best practices in mind
-* Tailored to be flexible and support your custom onboarding and connection journey flows
-* Compatible with both React and non-React JavaScript frameworks
-* Fast and easy implementation with a pre-built code component
+* **Intuitive UI** based on our expertise and learned best-practices, ensuring a high-converting auth flow.
 * **Authentication** in line with OAuth 2.0 standards
 * **[Customizable](/auth-flow/customize/customize-link) UI** that reflects your [company branding](/auth-flow/customize/branding)
+* **React and non-React** JavaScript compatible
+* **Fast implementation** with a pre-built code component
 * **Dynamic imports** meaning your auth flow will never fall behind our API
 
 :::caution Embedded Link is in beta
