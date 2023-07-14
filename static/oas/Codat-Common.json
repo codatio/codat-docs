@@ -1209,9 +1209,118 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Rule"
+                "$ref": "#/components/schemas/CreateRule"
               },
-              "examples": {}
+              "examples": {
+                "Company data connection status changed": {
+                  "value": {
+                    "type": "DataConnectionStatusChanged",
+                    "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
+                    "notifiers": {
+                      "emails": [
+                        "info@client.com"
+                      ],
+                      "webhook": "https://webhook.client.com"
+                    }
+                  }
+                },
+                "New company synchronized": {
+                  "value": {
+                    "type": "New company synchronised",
+                    "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
+                    "notifiers": {
+                      "emails": [
+                        "info@client.com"
+                      ],
+                      "webhook": "https://webhook.client.com"
+                    }
+                  }
+                },
+                "Data sync completed": {
+                  "value": {
+                    "type": "Data sync completed",
+                    "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
+                    "notifiers": {
+                      "emails": [
+                        "info@client.com"
+                      ],
+                      "webhook": "https://webhook.client.com"
+                    }
+                  }
+                },
+                "Dataset data changed": {
+                  "value": {
+                    "type": "Dataset data changed",
+                    "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
+                    "notifiers": {
+                      "emails": [
+                        "info@client.com"
+                      ],
+                      "webhook": "https://webhook.client.com"
+                    }
+                  }
+                },
+                "Dataset status has changed to an error state": {
+                  "value": {
+                    "type": "Data Sync Status Changed To Error",
+                    "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
+                    "notifiers": {
+                      "emails": [
+                        "info@client.com"
+                      ],
+                      "webhook": "https://webhook.client.com"
+                    }
+                  }
+                },
+                "Push operation status has changed": {
+                  "value": {
+                    "type": "Push Operation Status Changed",
+                    "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
+                    "notifiers": {
+                      "emails": [
+                        "info@client.com"
+                      ],
+                      "webhook": "https://webhook.client.com"
+                    }
+                  }
+                },
+                "Push operation has timed out": {
+                  "value": {
+                    "type": "Push Operation Timed Out",
+                    "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
+                    "notifiers": {
+                      "emails": [
+                        "info@client.com"
+                      ],
+                      "webhook": "https://webhook.client.com"
+                    }
+                  }
+                },
+                "Account categories updated": {
+                  "value": {
+                    "type": "Account Categories Updated",
+                    "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
+                    "notifiers": {
+                      "emails": [
+                        "info@client.com"
+                      ],
+                      "webhook": "https://webhook.client.com"
+                    }
+                  }
+                },
+                "Sync Connection Deleted": {
+                  "value": {
+                    "type": "Sync Connection Deleted",
+                    "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
+                    "notifiers": {
+                      "emails": [
+                        "info@client.com"
+                      ],
+                      "webhook": "https://webhook.client.com"
+                    }
+                  }
+                }
+              }
             }
           },
           "description": "Create a webhook with the given configuration."
@@ -2995,29 +3104,11 @@
           }
         ]
       },
-      "Rule": {
-        "title": "Webhook",
-        "description": "Configuration to provide an event notification to a URL or list of email addresses based on the given type or condition.",
-        "examples": [
-          {
-            "id": "ff89c50e-a719-4ef5-a182-9917e53927b6",
-            "type": "string",
-            "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
-            "notifiers": {
-              "emails": [
-                "info@client.com"
-              ],
-              "webhook": "https://webhook.client.com"
-            }
-          }
-        ],
+      "CreateRule": {
+        "title": "Create webhook",
+        "description": "Create an event notification to a URL or list of email addresses based on the given type or condition.",
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid",
-            "example": "ff89c50e-a719-4ef5-a182-9917e53927b6"
-          },
           "type": {
             "type": "string"
           },
@@ -3045,14 +3136,56 @@
             }
           }
         },
+        "examples": [
+          {
+            "type": "DataConnectionStatusChanged",
+            "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
+            "notifiers": {
+              "emails": [
+                "info@client.com"
+              ],
+              "webhook": "https://webhook.client.com"
+            }
+          }
+        ],
         "required": [
-          "id",
           "type",
           "notifiers"
+        ]
+      },
+      "Rule": {
+        "title": "Webhook",
+        "description": "Configuration to provide an event notification to a URL or list of email addresses based on the given type or condition.",
+        "type": "object",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "nullable": false,
+                "example": "ff89c50e-a719-4ef5-a182-9917e53927b6"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/CreateRule"
+          }
         ],
-        "x-stoplight": {
-          "id": "m6zh3ardbld2w"
-        }
+        "examples": [
+          {
+            "id": "ff89c50e-a719-4ef5-a182-9917e53927b6",
+            "type": "DataConnectionStatusChanged",
+            "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
+            "notifiers": {
+              "emails": [
+                "info@client.com"
+              ],
+              "webhook": "https://webhook.client.com"
+            }
+          }
+        ]
       },
       "Rules": {
         "x-internal": true,
