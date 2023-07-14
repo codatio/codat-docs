@@ -71,10 +71,10 @@ Sync for Expenses currently supports option 2 only.
 </ul>
 
 - Suppliers can be set at the configuration level and also at the [transaction level](https://docs.codat.io/sync-for-expenses-api#/operations/create-expense-dataset#request-body).
-    - By setting the supplier at the transaction level you will be able to override the configuration supplier, in order to sync a more accurate   
+    - By setting the supplier at the transaction level you will be able to override the configuration supplier, in order to sync to a more accurate   
       representation of who the spend should be associated with in the accounting platform. 
     - If no supplier is set at the transaction level, the spend will have the config supplier set as a default against it. 
-    - The currency associated with the supplier must match the currency associated with the spend.
+    - The currency associated with the supplier must match the currency associated with the spend. This is validated by Codat, but does not validate against suppliers which allow for multiple currencies.  
  
 In some cases different accounting platforms have certain ways of handling suppliers and customers, based on transaction types: 
 <iframe
