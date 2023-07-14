@@ -10,7 +10,7 @@ Once you have synced an expense transaction to your accounting platform, you can
 
 This saves your SMB customers’ time and helps reduce errors because they won’t need to make changes to their expense management platform and their accounting package separately. 
 
-Use our [Update expense transactions](https://docs.codat.io/sync-for-expenses-api#/operations/update-expense-dataset) endpoint to edit the following expense transaction metadata:
+Use our [Update expense transactions](/sync-for-expenses-api#/operations/update-expense-dataset) endpoint to edit the following expense transaction metadata:
 - Net expense amount 
 - Tax amount of the spend
 - Tax rate reference associated with the spend
@@ -23,7 +23,7 @@ PUT  https://api.codat.io/companies/{companyId}/sync/expenses/expense-transactio
 ```
 
 :::info Compatible integrations
-At the moment you can update expenses only for Xero (Payment [transaction type](https://docs.codat.io/sync-for-expenses/sync-process/expense-transactions#transaction-types) only).
+At the moment you can update expenses only for Xero (Payment [transaction type](/sync-for-expenses/sync-process/expense-transactions#transaction-types) only).
 :::
 
 To update an attachment or receipt, you first need to delete it and then create a new dataset for the updated transaction attachment. After that, you can sync the expense to the accounting platform. Check out our guidance on [uploading receipts](/sync-for-expenses/sync-process/uploading-receipts).
