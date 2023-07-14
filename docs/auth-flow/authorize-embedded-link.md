@@ -55,7 +55,7 @@ If you have general feedback on the component, get in touch at [embedded-link@co
 
 npm is the default package manager for JS development. However, where a package is highly coupled to an API, version control becomes a big risk to the integrity of your application. This is particularly the case as Codat's APIs are non-versioned ([see our change management policy](/introduction/change-policy)).
 
-Link SDK is imported at run-time, meaning you'll always get the latest version of our auth flow UI, and there's no risk of staleness vs. our APIs. To achieve this, we make use of ES6's [import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) feature (aka dyanmic imports).
+Link SDK is imported at run-time, meaning you'll always get the latest version of our auth flow UI, and there's no risk of staleness vs. our APIs. To achieve this, we make use of ES6's [import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) feature (aka dynamic imports).
 
 As with all of Codat's products, Link SDK is still subject to [our change management policy](/introduction/change-policy) and appropriate notice will be given for changes to both our auth flow UI and any associated APIs. We have rigorous testing and security measures in place to ensure you can import our SDK with confidence.
 :::
@@ -83,6 +83,7 @@ For an example of the component in action, [see our examples](https://github.com
 
   ```js
   // AuthFlow.tsx
+
   import {
     ErrorCallbackArgs,
   } from "https://link-sdk.codat.io";
@@ -145,39 +146,45 @@ In the example below, you'll see that we make use of webpack's [magic comments](
 :::
 
 1. **Create a component that mounts the SDK** - You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/snippets/CodatLink.tsx](https://github.com/codatio/sdk-link/blob/main/examples/next/src/app/components/CodatLink.tsx)" target="_blank">`CodatLink.tsx`</a> file to an appropriate location in your app. Note that [`"use client"`](https://nextjs.org/docs/getting-started/react-essentials#the-use-client-directive) is used to define this as client-side code, and the import is ignored in webpack to avoid NextJS caching (as above). 
-2. **Use this component** - We suggest wrapping the component in a modal (default dimensions 460px by 840px). The component can also take care of logic like when to [display the component](https://github.com/codatio/sdk-link/blob/main/examples/react/src/App.tsx), passing in the relevant company ID, etc.
+2. **Use this component** - We suggest wrapping the component in a modal (default dimensions 460px by 840px). The component can also take care of logic like when to [display the component](https://github.com/codatio/sdk-link/blob/main/examples/next/src/app/page.tsx), passing in the relevant company ID, etc.
 
   ```js
-  // AuthFlow.tsx
-  import {
-    ErrorCallbackArgs,
-  } from "https://link-sdk.codat.io";
+  // page.tsx
 
-  import CodatLink from './CodatLink';
+  "use client";
 
-  const AuthFlow = ({ companyId }: {companyId: Company["id"]}) => {
-    return (
-      <div>
-        <p>Some content</p>
-      
-        <div className="modal">
-          <CodatLink
-            companyId={companyId}
-            onConnection={(newConnection: { connectionId: Connection["id"] }) => {
-              alert(`onConnection - ${newConnection.connectionId}`)
-            }}
-            onFinish={() => { alert('onFinish')}}
-            onClose={() => { alert('onClose')}}
-            onError={(error: ErrorCallbackArgs) => {
-              alert(`onError - ${error}`);
-            }}
-          />
-        </div>
-      </div>
-    );
-  };
+  import { CodatLinkComponent } from "./components/CodatLink";
+  import Image from "next/image";
+  import styles from "./page.module.css";
+  import { useState } from "react";
   
-  export default AuthFlow
+  export default function Home() {
+    const [companyId, setCompanyId] = useState("");
+    const [modalOpen, setModalOpen] = useState(false);
+  
+    return (
+      <main className={styles.main}>
+
+        // ... some other components
+
+        <div className={styles.center}>
+          {modalOpen && (
+            <div className={styles.modalWrapper}>
+              <CodatLinkComponent
+                companyId={companyId}
+                onConnection={(connection) =>
+                  alert(`On connection callback - ${connection.connectionId}`)
+                }
+                onClose={() => setModalOpen(false)}
+                onFinish={() => alert("On finish callback")}
+                onError={(error) => alert(`On error callback -${error.message}`)}
+              />
+            </div>
+          )}
+        </div>
+      </main>
+    );
+  }
   ```
    
 4. **Conditional steps**
