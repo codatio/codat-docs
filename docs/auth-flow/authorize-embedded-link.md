@@ -11,7 +11,7 @@ import SocialImages from "@components/global/SocialImages";
 
 <SocialImages imgSrc="img/auth-flow/embedded-link-selection.png"/>
 
-![](/img/link/0014-embedded-link-demo.png)
+![](/img/auth-flow/embedded-link-selection.png)
 
 <details>
 <summary><b>What's new in the latest release?</b></summary>
