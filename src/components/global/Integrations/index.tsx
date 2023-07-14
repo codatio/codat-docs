@@ -14,7 +14,7 @@ const Integration = ({integration}) => {
 
       {
         integration.tags?.length >= 1
-          ? <div class="labels">{integration.tags.map(tag=><div className="label">{tag}</div>)}</div>
+          ? <div className="labels">{integration.tags.map(tag=><div className="label">{tag}</div>)}</div>
           : ''
       }
     </div>
