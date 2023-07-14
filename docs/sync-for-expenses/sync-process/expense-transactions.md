@@ -27,6 +27,10 @@ This approach prevents duplicate transactions being created in your SMBs' accoun
       "issueDate": "2021-05-21T00:00:00+00:00",
       "currency": "GBP",
       "currencyRate": 1.18,
+      "contactRef":{
+          "id":"08ca1f02-0374-11ed-b939-0242ac120002",
+          "type": 1
+      }, 
       "merchantName": "Amazon UK",
       "lines": [
         {
