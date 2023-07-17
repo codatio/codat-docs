@@ -265,7 +265,7 @@ You will receive the following response from the _Push operation status has chan
  "AlertId":"a62bfb38-d73c-4aab-9bb6-d8014bba5f29",
  "Message":"accounts triggered notification for PushOperationStatusChanged at 2019-05-22T18:19:42.742Z",
  "Data":{
-    "dataType":"accounts",
+    "dataType":"chartOfAccounts",
     "status":"Success",
     "pushOperationKey":"8e42e5f6-c596-4ddf-a5e4-fdc9977f5a99"
  }
