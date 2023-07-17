@@ -17,6 +17,10 @@ This will require manual intervention from end users (your customers) of the Cod
 
 Codat will send a notification email to all effected clients once the update has been released. 
 
+:::info Update - 17 July, 2023
+This notice has been changed to clarify that the end user action should be taken _on or after July 31st, 2023_, to enable the updated QBD Connector to operate on user machines.
+::: 
+
 ## Background
 
 The connector communicates with QuickBooks as an "Integrated application". When an integrated application attempts to retrieve data from a company file, QuickBooks validates the certificate to ensure that the application has the appropriate level of access granted by a suitably permissioned user. The settings for these can be found by navigating to `Edit > Preferences > Integrated Applications > Company Preferences`  in the QuickBooks Desktop application.
