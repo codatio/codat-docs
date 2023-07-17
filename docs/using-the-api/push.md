@@ -11,28 +11,30 @@ View the full details of Codat's support for creating and updating data for each
 
 :::
 
-A core feature that Codat offers is the ability to create, update, and delete records in the source platforms of our integrations using our standard data models. We support the following operations (also known as CUD): 
+Codat offers the ability to create, update, and delete records in the source platforms of our integrations using our standard data models. We support the following operations (also known as CUD): 
 
-- Create a new record using the `POST` method.
-- Update an existing record using the `PUT` method.
-- Delete an existing record using the `DELETE` method.
+- **Create** a new record using the `POST` method.
+- **Update** an existing record using the `PUT` method.
+- **Delete** an existing record using the `DELETE` method.
 
-The CUD process first requires you to [check the data model](/using-the-api/push#use-a-valid-data-model) of the data type you want to create, update, or delete. This helps you ensure all required properties are included in your request. 
+The CUD process first requires you to [check the data model](/using-the-api/push#use-a-valid-data-model) of the data type you want to create, update, or delete. This helps you ensure all required properties are included in your request. Checking the model may be a one-time activity (for integrations with static properties) or be required more frequently (for integrations with higher customization options).
 
 Next, you are ready to [perform the CUD operation](/using-the-api/push#perform-the-operation) using the relevant data model. You will receive a CUD operation key in return. You can then use it to [monitor the status of the operation](/using-the-api/push#monitor-the-status-of-your-operation), or display its results.
 
 ```mermaid
 sequenceDiagram
-    participant app as Application 
+    participant app as Your application 
     participant codat as Codat
     
-    app ->> codat: Get valid model for data type
+  opt If the data model check is required
+    app ->> codat: Get CUD {{dataType}} model
     codat -->> app: Valid data type model
-    
+  end
+
     app ->> codat: Create, update, or delete record
     codat -->> app: CUD operation key
 
-    codat -->> app: CUD operation status
+    codat -->> app: CUD operation status webhook
 
     alt Status is successful
         app ->> codat: Get CUD operation
@@ -40,11 +42,11 @@ sequenceDiagram
     end
 ``` 
 
-### Synchronous vs asynchronous operations
+### Asynchronous operations
 
-You should assume that all data creation and updates will be processed asynchronously when integrating with Codat. It may take a few seconds to a couple of minutes to complete the operation, depending on the underlying platform. This means you will receive a `Pending` status in response to your CUD request. You can [monitor the status of your request via a webhook](/using-the-api/push#monitor-the-status-of-your-operation) to verify when the operation completes. 
+Data creation and updates will be handled asynchronously and will take between a few seconds to a couple of minutes to complete, depending on the underlying platform. This means you will receive a `Pending` status in response to your CUD request. You can [monitor the status of your request via a webhook](/using-the-api/push#monitor-the-status-of-your-operation) to verify when the operation completes (preferred), or poll the status. 
 
-For the few integrations that perform these requests synchronously, the behavior remains the same. 
+A CUD operation may be `Pending` indefinitely for integrations using offline connectors when the desktop application is unreachable. Manage this by setting [timeouts](/using-the-api/push#monitor-the-status-of-your-operation#timeouts). 
 
 ### Supplemental data
 
@@ -54,13 +56,13 @@ We have introduced [supplemental data](/using-the-api/supplemental-data/overview
 
 Each integration may have different requirements to the request body of a CUD operation. So, before triggering the operation, you need to know how the data should be inserted into the source platform. You can access the integration-specific model requirements using Codat's _Get model_ endpoints.
 
-In most cases, the models provide static data, such as detailing mandatory properties. Other integrations, like ERP systems, offer greater customization, so the models may also include details that are handled differently across different accounting packages.
+In most cases, the models provide static data, such as detailing mandatory properties. Some platforms, like Netsuite, offer greater customization to their users, so the corresponding model may differ.
 
 :::info Deleting records
-Our data deletion endpoints, where available, simply require the record `id`, `companyId`, and `connectionId` to be included in the request body.
+Our data deletion endpoints, where available, simply require the record `id`, `companyId`, and `connectionId` to be included in the request URL.
 :::
 
-Let's use our [Get create account model](/accounting-api#/operations/get-create-chartOfAccounts-model) endpoint to view integration-specific requirements for creating or updating the `accounts` data type in Xero. 
+Let's use our [Get create account model](/accounting-api#/operations/get-create-chartOfAccounts-model) endpoint to view integration-specific requirements for creating the `chartOfAccounts` data type in Xero. 
 
 ```sh
 GET https://api.codat.io/companies/{companyId}/connections/{connectionId}/options/chartOfAccounts
@@ -137,7 +139,7 @@ If you attempt to create or update a record using properties not documented in t
 
 Let's try creating a new account using our [Create account](/accounting-api#/operations/create-account) endpoint. The request body should be a JSON object which conforms to the structure of the [Get create account model](/accounting-api#/operations/get-create-chartOfAccounts-model) we called previously. 
 
-Note that we base our models on the `GET` request, which includes `modifiedDate` and `sourceModifiedDate` that are not used when creating or updating a record. 
+We base our models on the `GET` request, which includes `modifiedDate` and `sourceModifiedDate` that are not used when creating or updating a record. 
 
 We will try to create an account using a valid request body, and a request body that leads to a validation error:
 
@@ -168,7 +170,7 @@ We will try to create an account using a valid request body, and a request body 
 This results in a corresponding response from the endpoint, which includes the following details:
 
 - **pushOperationKey**: a unique identifier generated by Codat to represent this single create operation that can be used to track its status
-- **dataType**: the type of data being created, in this case, `accounts`
+- **dataType**: the type of data being created, in this case, `chartOfAccounts`
 - **status**: the status of the create operation, which can be `Pending`, `Failed`, `Success` or `TimedOut` 
 - **requestedOnUtc**: the datetime (in UTC) when the operation was requested 
 - **completedOnUtc**: the datetime (in UTC) when the operaion was completed, null if `Pending`
@@ -192,7 +194,7 @@ This results in a corresponding response from the endpoint, which includes the f
         "modifiedDate": "2023-03-21T17:17:59.4604771Z",
         "validDatatypeLinks": []
       },
-      "dataType": "accounts",
+      "dataType": "chartOfAccounts",
       "companyId": "fa115de8-5269-474e-8b63-fd697ec04b1b",
       "pushOperationKey": "8e42e5f6-c596-4ddf-a5e4-fdc9977f5a99",
       "dataConnectionKey": "c39b4839-9017-4fed-b1c6-af6b31ae32a5",
@@ -269,19 +271,17 @@ You will receive the following response from the _Push operation status has chan
  }
 ```
 
-You can also use our endpoints to monitor the status of your create, update, or delete operation. List all operations for a company using the [List push operations](/codat-api#/operations/get-company-push-history) endpoint, or list a single operation via the [Get push operation](/codat-api#/operations/get-push-operation).
-
-Finally, you can GET GET GET GET 
+You can also use our endpoints to monitor the status of your create, update, or delete operation. List all operations for a company using the [List push operations](/codat-api#/operations/get-company-push-history) endpoint, or list a single operation via the [Get push operation](/codat-api#/operations/get-push-operation). This is useful when you want to include summary information to your customers outlining the status of their CUD history.
 
 ### Timeouts
 
 It is possible for an operation to be in a `Pending` status indefinitely, for example, if a user's on-premise software is offline. Codat provides a timeout functionality for such scenarios. 
 
-If the `timeoutInMinutes` property has been set on a CUD operation, Codat guarantees that the operation will not be processed after that deadline. If the deadline expires, the status of the operation will change to `TimedOut`.
+To control the timeframe in which you want your CUD operation to complete, use the `timeoutInMinutes` parameter. If the deadline expires, the status of the operation will change to `TimedOut`.
 
 ## Pitfalls
 
-- When a CUD operation successfully completes, this changes the specific record in Codat's system, but does not change any *associated* records. For example, if you create a payment against an invoice, the payment becomes available in Codat once the operation completes, but the invoice may still show a non-zero `amountDue`. To view the fully updated associated records, you need to requeue all the relevant datasets.
+- When a CUD operation successfully completes, this changes the specific record in Codat's system, but does not change any *associated* records. For example, if you create a payment against an invoice, the payment becomes available in Codat once the operation completes, but the invoice may still show a non-zero `amountDue`. To view the fully updated associated records, you need to [requeue all the relevant datasets](/using-the-api/queueing-data-syncs).
 
 - Data successfully created in the target platform is visible almost immediately when retrieving that data type from Codat. If you produce point-in-time reports or use the `modifiedDate` to pull only recent changes from the API, this may impact the consistency of your data. 
 
