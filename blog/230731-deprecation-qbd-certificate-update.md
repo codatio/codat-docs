@@ -13,7 +13,9 @@ On Wednesday the 16th of August, 2023, the certificate used to sign Codat's Quic
 
 To ensure the QBD Connector can continue operating on user machines, Codat will shortly update the certificate used to sign the Installer, Connector, and UI.
 
-This will require manual intervention from end users (your customers) of the Codat QuickBooks Desktop Connector. They will need to re-authorize the application to access the connected QuickBooks Desktop company file before **July 31st, 2023**.
+This will require manual intervention from end users (your customers) of the Codat QuickBooks Desktop Connector. They will need to re-authorize the application to access the connected QuickBooks Desktop company file on or after **July 31st, 2023** after Codat has released the new version of the connector. Until action is taken the connector will be unable to communicate with QuickBooks Desktop.
+
+Codat will send a notification email to all effected clients once the update has been released. 
 
 ## Background
 
@@ -25,7 +27,7 @@ When Codat updates the certificate used to sign the connector, existing connecto
 
 ## End user action required
 
-There are several possible scenarios to consider, depending on the workflow of the end user of the Connector. All actions must be taken by **July 31st, 2023**.
+There are several possible scenarios to consider, depending on the workflow of the end user of the Connector.
 
 ### New users
 
