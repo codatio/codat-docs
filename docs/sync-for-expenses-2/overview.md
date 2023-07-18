@@ -1,7 +1,7 @@
 ---
 title: Sync for Expenses overview
 sidebar_label: Sync for Expenses
-displayed_sidebar: sfe
+displayed_sidebar: sfe2
 hide_title: true
 hide_description: true
 hide_table_of_contents: true
