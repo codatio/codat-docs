@@ -167,6 +167,7 @@ In line with industry standard security practices, we have removed personally id
 
 ### Account categories updated
 
+**Rule type:** `account-categories-updated`
 **Trigger:** Anytime that Codat updates the `suggested` fields or a user updates the `confirmed` fields.  
 **Additional data:** `modifiedDate`.
 
