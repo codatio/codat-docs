@@ -8,6 +8,7 @@ const bankfeeds = require("./sidebars/bank-feeds-api");
 const assess = require("./sidebars/assess");
 const sfc = require("./sidebars/sync-for-commerce");
 const sfe = require("./sidebars/sync-for-expenses");
+const sfe2 = require("./sidebars/sync-for-expenses-2");
 
 const integrations = require("./sidebars/integrations");
 
@@ -364,6 +365,12 @@ module.exports = {
           className: "product sfc",
           href: "/sfc/overview",
         },
+        {
+          type: "link",
+          label: "Sync for Expenses 2",
+          className: "product sfe2",
+          href: "/sync-for-expenses-2/overview",
+        },
       ],
     },
   ],
@@ -374,5 +381,6 @@ module.exports = {
   sfc: sfc,
   assess: assess,
   sfe: sfe,
+  sfe2: sfe2,
   integrations: integrations,
 };
