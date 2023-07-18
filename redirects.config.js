@@ -157,11 +157,6 @@ const comm = [
     to: "/integrations/commerce/chargebee/commerce-chargebee",
   },
   {
-    integration: "Chargify",
-    platformKey: "rkgp",
-    to: "/integrations/commerce/chargify/commerce-chargify",
-  },
-  {
     integration: "Clover",
     platformKey: "fqly",
     to: "/integrations/commerce/clover/commerce-clover",
@@ -180,6 +175,11 @@ const comm = [
     integration: "Lightspeed K Trial",
     platformKey: "ltes",
     to: "/integrations/commerce/lightspeed-k/commerce-lightspeed-k",
+  },
+  {
+    integration: "Maxio",
+    platformKey: "rkgp",
+    to: "/integrations/commerce/chargify/commerce-chargify",
   },
   {
     integration: "Mollie",

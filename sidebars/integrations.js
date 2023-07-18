@@ -267,16 +267,6 @@ module.exports = [
       },
       {
         type: "category",
-        label: "Chargify",
-        collapsed: true,
-        items: [
-          "integrations/commerce/chargify/commerce-chargify",
-          "integrations/commerce/chargify/commerce-chargify-setup",
-          "integrations/commerce/chargify/commerce-chargify-use",
-        ],
-      },
-      {
-        type: "category",
         label: "Clover",
         collapsed: true,
         items: [
@@ -292,6 +282,16 @@ module.exports = [
         items: [
           "integrations/commerce/lightspeed-k/commerce-lightspeed-k",
           "integrations/commerce/lightspeed-k/commerce-lightspeed-k-setup",
+        ],
+      },
+      {
+        type: "category",
+        label: "Maxio",
+        collapsed: true,
+        items: [
+          "integrations/commerce/chargify/commerce-chargify",
+          "integrations/commerce/chargify/commerce-chargify-setup",
+          "integrations/commerce/chargify/commerce-chargify-use",
         ],
       },
       {
