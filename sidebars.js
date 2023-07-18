@@ -248,71 +248,71 @@ module.exports = {
       },
       items: authFlow,
     },
-    {
-      type: "category",
-      label: "Use cases",
-      customProps: {
-        hr: true,
-      },
-      collapsed: true,
-      className: "top-level-item usecases",
-      link: {
-        type: 'doc',
-        id: "usecases/overview",
-      },
-      items: [
-        "usecases/summary/lending",
-        "usecases/summary/managing-expenses",
-        "usecases/summary/dashboarding",
-        {
-          type: "category",
-          label: "Automating payables",
-          collapsed: true,
-          className: "top-level-item",
-          items: [
-            "usecases/summary/automating-payables",
-            {
-              type: "link",
-              label: "Demo app guide",
-              href: "https://docs.codat.io/guides/bill-pay/introduction",
-            },
-            {
-              type: "category",
-              label: "Implementing bill pay",
-              collapsed: true,
-              className: "top-level-item",
-              items: [
-                "usecases/bill-pay/overview",
-                "usecases/bill-pay/bills",
-                "usecases/bill-pay/mapping",
-                "usecases/bill-pay/payments",
-              ],
-            }
-          ],
-        },
-        "usecases/summary/automating-receivables",
-        "usecases/summary/integrating-commerce-data",
-        "usecases/summary/managing-payroll",
-        "usecases/summary/reconciling-bank-transactions",
-      ],
-    },
-    {
-      type: "link",
-      label: "Integrations",
-      className: "top-level-item integrations",
-      href: "/integrations/all-integrations",
-    },
-    {
-      type: "category",
-      label: "Data model",
-      collapsed: true,
-      className: "top-level-item data",
-      link: {
-        type: 'doc',
-        id: "data-model/all-datatypes",
-      },
-      items: dataModel,
-    },
+    // {
+    //   type: "category",
+    //   label: "Use cases",
+    //   customProps: {
+    //     hr: true,
+    //   },
+    //   collapsed: true,
+    //   className: "top-level-item usecases",
+    //   link: {
+    //     type: 'doc',
+    //     id: "usecases/overview",
+    //   },
+    //   items: [
+    //     "usecases/summary/lending",
+    //     "usecases/summary/managing-expenses",
+    //     "usecases/summary/dashboarding",
+    //     {
+    //       type: "category",
+    //       label: "Automating payables",
+    //       collapsed: true,
+    //       className: "top-level-item",
+    //       items: [
+    //         "usecases/summary/automating-payables",
+    //         {
+    //           type: "link",
+    //           label: "Demo app guide",
+    //           href: "https://docs.codat.io/guides/bill-pay/introduction",
+    //         },
+    //         {
+    //           type: "category",
+    //           label: "Implementing bill pay",
+    //           collapsed: true,
+    //           className: "top-level-item",
+    //           items: [
+    //             "usecases/bill-pay/overview",
+    //             "usecases/bill-pay/bills",
+    //             "usecases/bill-pay/mapping",
+    //             "usecases/bill-pay/payments",
+    //           ],
+    //         }
+    //       ],
+    //     },
+    //     "usecases/summary/automating-receivables",
+    //     "usecases/summary/integrating-commerce-data",
+    //     "usecases/summary/managing-payroll",
+    //     "usecases/summary/reconciling-bank-transactions",
+    //   ],
+    // },
+    // {
+    //   type: "link",
+    //   label: "Integrations",
+    //   className: "top-level-item integrations",
+    //   href: "/integrations/all-integrations",
+    // },
+    // {
+    //   type: "category",
+    //   label: "Data model",
+    //   collapsed: true,
+    //   className: "top-level-item data",
+    //   link: {
+    //     type: 'doc',
+    //     id: "data-model/all-datatypes",
+    //   },
+    //   items: dataModel,
+    // },
     {
       type: "category",
       label: "Products",
