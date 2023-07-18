@@ -13,7 +13,7 @@ module.exports = [
   },
   {
     type: "category",
-    label: "Concepts and features",
+    label: "Concepts",
     collapsed: true,
     items: [
       "sfc/sync-for-commerce-knowledge-base/initiating-a-sync",
