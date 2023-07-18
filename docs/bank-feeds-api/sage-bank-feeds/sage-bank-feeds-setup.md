@@ -152,7 +152,7 @@ Alternatively, you can [authenticate users through your own web app](/bank-feeds
 
 4. They enter their data connection ID in the **Connection ID** box, then click **Submit**.
 
-5. If the SMB user was authenticated with Codat successfully, a dialog listing the available source bank accounts (created using the `PUT / bankFeedAccounts` endpoint) is displayed. For example:
+5. If the SMB user was authenticated with Codat successfully, a dialog listing the available source bank accounts (created using the `POST / bankFeedAccounts` endpoint) is displayed. For example:
 
 ![Sage account selection](/img/old/7ef73f0-sbs-select-source-bank-account-multiple.png "Redirect to account selection page. Select the bank account that you want to use")
 
