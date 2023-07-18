@@ -22,41 +22,37 @@ module.exports = {
       className: "navbar__link--api",
       items: [
         {
-          href: "/codat-api",
-          label: "Common API",
-        },
-        {
-          href: "/accounting-api",
-          label: "Accounting API",
-          hr: true,
-        },
-        {
-          href: "/assess-api",
-          label: "Assess API",
-        },
-        {
-          href: "/banking-api",
-          label: "Banking API",
-        },
-        {
           href: "/bank-feeds-api",
-          label: "Bank Feeds API",
+          label: "Bank Feeds",
         },
         {
-          href: "/commerce-api",
-          label: "Commerce API",
+          href: "/lending-api",
+          label: "Lending",
+        },
+        {
+          href: "/sync-for-commerce-api",
+          label: "Sync for Commerce",
+        },
+        {
+          href: "/sync-for-expenses-api",
+          label: "Sync for Expenses",
+        },
+        {
+          href: "/sync-for-payables-api",
+          label: "Sync for Payables",
+        },
+        {
+          href: "/sync-for-payroll-api",
+          label: "Sync for Payroll",
+        },
+        {
+          href: "/codat-api",
+          label: "Platform API",
+          hr: true,
         },
         {
           href: "/files-api",
           label: "Files API",
-        },
-        {
-          href: "/sync-for-commerce-api",
-          label: "Sync for Commerce API",
-        },
-        {
-          href: "/sync-for-expenses-api",
-          label: "Sync for Expenses API",
         },
         {
           href: "https://github.com/codatio/oas",

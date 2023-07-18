@@ -29,8 +29,10 @@ module.exports = {
   organizationName: "codat",
   projectName: "codat-docs",
   customFields: {
+    'DEVELOPMENT': process.env.NODE_ENV === 'development',
     'ZENDESK_KEY': process.env.ZENDESK_KEY,
-    'FEATURE_DEV_FLAG': process.env.FEATURE_DEV_FLAG
+    'FEATURE_DEV_FLAG': process.env.FEATURE_DEV_FLAG,
+    'FEATURE_NEW_PRODUCTS_FLAG': process.env.FEATURE_NEW_PRODUCTS_FLAG,
   },
   themeConfig: {
     typesense: {
@@ -112,7 +114,7 @@ module.exports = {
       {
         routeBasePath: "/",
         sidebarPath: require.resolve("./sidebars.js"),
-        editUrl: `https://github.com/codatio/codat-docs/edit/main/`,
+        editUrl: `https://github.com/codatio/codat-docs/edit/${process.env?.BRANCH || 'main'}/`,
         exclude: ["README.md"],
         lastVersion: "current",
         versions: {
@@ -132,7 +134,7 @@ module.exports = {
         routeBasePath: "/updates",
         blogSidebarCount: 8,
         blogSidebarTitle: "Latest updates",
-        editUrl: "https://github.com/codatio/codat-docs/edit/main/",
+        editUrl: `https://github.com/codatio/codat-docs/edit/${process.env?.BRANCH || 'main'}/`,
       },
     ],
     "@docusaurus/plugin-content-pages",

@@ -42,7 +42,7 @@ Follow our guide [here](/integrations/accounting/xero/xero-app-partner-program).
 
 ### How can I set up a bank feed to a Xero account?
 
-For instructions on setting up a bank feed to an account in Xero, see the [Xero Bank Feeds](/bank-feeds-api/xero-bank-feeds/) documentation.
+For instructions on setting up a bank feed to an account in Xero, see the [Xero Bank Feeds](/integrations/bank-feeds/xero-bank-feeds/) documentation.
 
 ### How do I push negative Direct incomes and Direct costs to Xero?
 

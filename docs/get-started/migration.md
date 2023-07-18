@@ -26,15 +26,15 @@ To migrate, use the PUT connections endpoint. You will need to provide the integ
 
 <Tabs>
 
-<Tabitem value="Request URL" label="Request URL">
+<TabItem value="Request URL" label="Request URL">
 
 ```http request title="Authorize connection"
   PUT /companies/{companyId}/connections/{connectionId}/authorization
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="Request Body" label="Request Body">
+<TabItem value="Request Body" label="Request Body">
 
 ```json
 {
@@ -43,7 +43,7 @@ To migrate, use the PUT connections endpoint. You will need to provide the integ
 }
 ```
 
-</Tabitem>
+</TabItem>
 
 </Tabs>
 

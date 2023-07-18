@@ -181,12 +181,17 @@ function DocPage(props: Props): JSX.Element {
   return (
     <>
       <Head>
-        {/* TODO we should add a core addRoute({htmlClassName}) generic plugin option */}
         <html className={versionMetadata.className} />
       </Head>
+
       {
         siteConfig.customFields?.FEATURE_DEV_FLAG === "true" && <div className={styles.devFlag}>This is a staging build of the docs</div>
       }
+
+      {
+        siteConfig.customFields?.FEATURE_NEW_PRODUCTS_FLAG === "true" && <div className={styles.newFlagPositive}><a href="/updates/230901-new-products">We've reorganized our products to make building with Codat easier than ever</a></div>
+      }
+
       <DocPageContent
         currentDocRoute={currentDocRoute}
         versionMetadata={versionMetadata}>

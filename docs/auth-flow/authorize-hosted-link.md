@@ -4,9 +4,9 @@ sidebar_label: Overview
 description: "Choose how to integrate Hosted Link into your authorization flow"
 ---
 
-<Head>
+<head>
   <meta property="og:image" content="/img/link/link-banner.png"/>
-</Head>
+</head>
 
 ![](/img/link/link-banner.png)
 

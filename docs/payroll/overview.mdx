@@ -1,0 +1,68 @@
+---
+title: Sync for Payroll overview
+sidebar_label: Sync for Payroll
+description: Manage payroll reconciliation with your customers' accounting platform
+displayed_sidebar: payroll
+hide_title: true
+hide_description: true
+hide_table_of_contents: true
+banner_title: Sync for Payroll
+banner_class: payroll
+banner_icon: "/img/logos/products/logo_payroll_clear.svg"
+banner_image: "/img/banners/payroll.png"
+banner_text: "Something something payroll."
+video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
+video_text: What is Sync for Payroll?
+---
+
+import Products from "@components/global/Products";
+import { IntegrationsList } from "@components/global/Integrations";
+import { payrollIntegrations } from "@components/global/Integrations/integrations";
+
+Use Codat to integrate your customers' payroll data from their HR and payroll platforms into their accounting platforms and to support its reconciliation.
+
+### How Codat helps
+
+[Sync for Payroll API](/sync-for-payroll-api) supports HR, payroll, and vertical SaaS companies integrate their product with their customers' accounting platforms. 
+
+Integrating with Codat helps your SMB customers remove complexity and repetition from payroll processing, eliminate manual entry and mapping of payroll data, and save time on tasks that usually need to be completed multiple times a month. 
+
+## Features
+
+![](/img/use-cases/summary-pages/payroll.png)
+
+## How it works
+
+```mermaid
+flowchart LR
+  subgraph X["Configuration (one time)"]
+    subgraph Auth flow
+        A["Visit Link"] --> B["Give access to accounting platform"]
+    end
+    subgraph Map accounts
+        C["Get accounts"] --> D["Map payroll components to accounts"]
+        B --> C
+    end
+  end
+  subgraph Ongoing syncing
+    E["Run payroll"] --> F["Create journal entry in accounting platofrm"]
+    D -.-> E
+  end
+```
+
+### [Connect to your SMB's accounting platform](/auth-flow/overview)
+
+Codat handles authorization and linking to your SMB's accounting platform and takes into account intricate details such as rate limits.
+
+### [Categorize and map payroll components](mapping)
+
+Each business may need to reconcile payroll costs, pensions, and taxes to different nominal accounts, based on their business type and the accounting platform they use. Codat provides an endpoint to pull chart of accounts and tracking categories data in order to avoid manual categorization efforts and give flexibility to SMBs for reconciling data. As a payroll platform, you will need to build a flexible interface for your customer to perform the mapping.  
+
+### [Sync payruns with your customers accounting software](sync-payroll)
+
+Use Codat's create and update functionality to post a journal showing the correct amounts against each account. These transactions can easily be reconciled against the business's bank feed.
+## Compatible integrations
+
+<br />
+
+<IntegrationsList integrations={payrollIntegrations} />

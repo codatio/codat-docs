@@ -355,8 +355,8 @@ module.exports = {
 
     //
     {
-      from: "/assess/guides/underwriting/introduction",
-      to: "/guides/loan-qualification/introduction",
+      from: "/guides/underwriting/introduction",
+      to: "/lending/guides/loan-qualification/introduction",
     },
     {
       from: "/usecases/summary/underwriting",
@@ -368,7 +368,7 @@ module.exports = {
     },
     {
       from: "/redirects/integrations/bankfeeds/olpr",
-      to: "/bank-feeds-api/sage-bank-feeds", //sage
+      to: "/integrations/bank-feeds/sage-bank-feeds", //sage
     },
     {
       from: "/docs/status-codes",
@@ -380,36 +380,36 @@ module.exports = {
     },
     // --- delete soon
     {
-      from: "/assess/guides/loan-qualification/introduction",
-      to: "/guides/loan-qualification/introduction",
+      from: "/guides/loan-qualification/introduction",
+      to: "/lending/guides/loan-qualification/introduction",
     },
     {
-      from: "/assess/guides/loan-qualification/setting-up",
-      to: "/guides/loan-qualification/setting-up",
+      from: "/guides/loan-qualification/setting-up",
+      to: "/lending/guides/loan-qualification/setting-up",
     },
     {
-      from: "/assess/guides/loan-qualification/process-loan",
-      to: "/guides/loan-qualification/process-loan",
+      from: "/guides/loan-qualification/process-loan",
+      to: "/lending/guides/loan-qualification/process-loan",
     },
     {
-      from: "/assess/guides/loan-qualification/uw-decision",
-      to: "/guides/loan-qualification/uw-decision",
+      from: "/guides/loan-qualification/uw-decision",
+      to: "/lending/guides/loan-qualification/uw-decision",
     },
     {
       from: "/accounting-api/guides/bill-pay/introduction",
-      to: "/guides/bill-pay/introduction",
+      to: "/payables/guides/bill-pay/introduction",
     },
     {
       from: "/accounting-api/guides/bill-pay/use-bill-pay-demo-app",
-      to: "/guides/bill-pay/use-bill-pay-demo-app",
+      to: "/payables/guides/bill-pay/use-bill-pay-demo-app",
     },
     {
       from: "/accounting-api/guides/bill-pay/run-demo-app-locally",
-      to: "/guides/bill-pay/run-demo-app-locally",
+      to: "/payables/guides/bill-pay/run-demo-app-locally",
     },
     {
       from: "/accounting-api/guides/bill-pay/how-the-demo-app-works",
-      to: "/guides/bill-pay/how-the-demo-app-works",
+      to: "/payables/guides/bill-pay/how-the-demo-app-works",
     },
     // ---- Integration pages - delete
     {
@@ -448,6 +448,115 @@ module.exports = {
       from: "/integrations/commerce/commerce-platform-keys",
       to: "/integrations/commerce/overview",
     },
+
+    // sfc
+
+    {
+      from: "/sfc/overview",
+      to: "/commerce/overview",
+    },
+    {
+      from: "/sfc/sync-for-commerce-knowledge-base/initiating-a-sync",
+      to: "/commerce/learn/initiating-a-sync",
+    },
+    {
+      from: "/sfc/sync-for-commerce-knowledge-base/monitoring-a-sync",
+      to: "/commerce/learn/monitoring-a-sync",
+    },
+    {
+      from: "/sfc/sync-for-commerce-knowledge-base/synchronization-schedule",
+      to: "/commerce/learn/synchronization-schedule",
+    },
+    {
+      from: "/sfc/sync-for-commerce-knowledge-base/sfc-journal-entry-mapping",
+      to: "/commerce/learn/sfc-journal-entry-mapping",
+    },
+    {
+      from: "/sfc/sync-for-commerce-knowledge-base/sfc-sales-product-categories",
+      to: "/commerce/learn/sfc-sales-product-categories",
+    },
+    {
+      from: "/sfc/build-with-sync-for-commerce/sync-for-commerce-prerequisites",
+      to: "/commerce/build/sync-for-commerce-prerequisites",
+    },
+    {
+      from: "/sfc/build-with-sync-for-commerce/sync-platform-selection",
+      to: "/commerce/build/sync-platform-selection",
+    },
+    {
+      from: "/sfc/build-with-sync-for-commerce/implementing-codats-no-code-merchant-configuration",
+      to: "/commerce/build/implementing-codats-no-code-merchant-configuration",
+    },
+    {
+      from: "/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow",
+      to: "/commerce/build/customizing-the-sync-configuration-flow",
+    },
+    {
+      from: "/sfc/mapping-specifications/overview",
+      to: "/commerce/mapping-specifications/overview",
+    },
+    {
+      from: "/sfc/mapping-specifications/xero-mapping-specification",
+      to: "/commerce/mapping-specifications/xero-mapping-specification",
+    },
+    {
+      from: "/sfc/mapping-specifications/qbo-mapping-specification",
+      to: "/commerce/mapping-specifications/qbo-mapping-specification",
+    },
+    {
+      from: "/sfc/error-documentation",
+      to: "/commerce/error-documentation",
+    },
+    {
+      from: "/sfc/coming-soon",
+      to: "/commerce/coming-soon",
+    },
+
+
+    // expenses
+
+    {
+      from: "/sync-for-expenses/overview",
+      to: "/expenses/overview",
+    },
+    {
+      from: "/sync-for-expenses/getting-started",
+      to: "/expenses/getting-started",
+    },
+    {
+      from: "/sync-for-expenses/config-and-categorize",
+      to: "/expenses/config-and-categorize",
+    },
+    {
+      from: "/sync-for-expenses/sync-process/sync-process-explained",
+      to: "/expenses/sync-process/sync-process-explained",
+    },
+    {
+      from: "/sync-for-expenses/sync-process/expense-transactions",
+      to: "/expenses/sync-process/expense-transactions",
+    },
+    {
+      from: "/sync-for-expenses/sync-process/syncing-expenses",
+      to: "/expenses/sync-process/syncing-expenses",
+    },
+    {
+      from: "/sync-for-expenses/sync-process/uploading-receipts",
+      to: "/expenses/sync-process/uploading-receipts",
+    },
+    {
+      from: "/sync-for-expenses/sync-process/updating-expenses",
+      to: "/expenses/sync-process/updating-expenses",
+    },
+    {
+      from: "/sync-for-expenses/faq",
+      to: "/expenses/faq",
+    },
+
+    {
+      from: "/bank-feeds/guides/bank-feeds-tutorial",
+      to: "/bank-feeds/guides/bank-feeds-tutorial",
+    },
+
     ...mapIntegrationRedirects(acc, "accounting"),
     ...mapIntegrationRedirects(bank, "banking"),
     ...mapIntegrationRedirects(comm, "commerce"),

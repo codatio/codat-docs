@@ -1,20 +1,42 @@
 export const bankfeedsIntegrations = [
   {
     "name": "QuickBooks Online bank feeds",
-    "to": "/bank-feeds-api/qbo-bank-feeds/",
+    "to": "/bank-feeds/qbo-bank-feeds/",
     "type": "bankfeeds",
     "img": "https://static.codat.io/public/officialLogos/Square/19EEFA32-58A8-4097-B95A-EF150BF24FA0.png",
     "tags": ["US", "Canada"],
   },
   {
     "name": "Sage bank feeds",
-    "to": "/bank-feeds-api/sage-bank-feeds/",
+    "to": "/bank-feeds/sage-bank-feeds/",
     "type": "bankfeeds",
     "img": "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png",
   },
   {
     "name": "Xero bank feeds",
-    "to": "/bank-feeds-api/xero-bank-feeds/",
+    "to": "/bank-feeds/xero-bank-feeds/",
+    "type": "bankfeeds",
+    "img": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png",
+  },
+]
+
+export const payrollIntegrations = [
+  {
+    "name": "QuickBooks Online bank feeds",
+    "to": "/bank-feeds/qbo-bank-feeds/",
+    "type": "bankfeeds",
+    "img": "https://static.codat.io/public/officialLogos/Square/19EEFA32-58A8-4097-B95A-EF150BF24FA0.png",
+    "tags": ["US", "Canada"],
+  },
+  {
+    "name": "Sage bank feeds",
+    "to": "/bank-feeds/sage-bank-feeds/",
+    "type": "bankfeeds",
+    "img": "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png",
+  },
+  {
+    "name": "Xero bank feeds",
+    "to": "/bank-feeds/xero-bank-feeds/",
     "type": "bankfeeds",
     "img": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png",
   },

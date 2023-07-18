@@ -17,6 +17,9 @@
   --sidebar-spacing-horizontal: 1.5rem;
 
   --ifm-menu-link-padding-horizontal: 1em;
+
+  //--icon-url: url("/img/sidebar/gear-fine.svg"); // fallback
+  --icon-url: var(--ifm-menu-link-sublist-icon)
 }
 
 html[data-theme="light"] {
@@ -113,6 +116,14 @@ html[data-theme="dark"] {
       }
     }
 
+    .menu-item-section-header {
+      opacity: 0.5;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+      font-size: 0.85em;
+      padding-left: 1rem;
+    }
+
     //.menu__list-item-collapsible--active {
     .menu__list-item-collapsible {
       a[aria-expanded="true"] + button.menu__caret {
@@ -182,7 +193,10 @@ html[data-theme="dark"] {
     align-items: center;
     letter-spacing: -0.01em;
 
-    transition: opacity 0.2s ease-out;
+    &,
+    &:after {
+      transition: opacity 0.2s ease-out, transform 0.3s;
+    }
 
     &:not(.menu__link--active:not(.menu__link--sublist)) {
       background: initial;
@@ -195,6 +209,10 @@ html[data-theme="dark"] {
         opacity: 0.7;
       }
     }
+  }
+
+  .menu__list-item .menu__list-item .menu__link::after {
+    --icon-url: var(--ifm-menu-link-sublist-icon) !important;
   }
 
   .menu__link--sublist,
@@ -210,7 +228,7 @@ html[data-theme="dark"] {
     justify-content: flex-start;
 
     &::after {
-      background: var(--ifm-menu-link-sublist-icon) center /
+      background: var(--icon-url) center /
         var(--dropdown-icon-width) var(--dropdown-icon-height);
       background-repeat: no-repeat;
 
@@ -278,30 +296,19 @@ html[data-theme="dark"] {
       }
     }
 
-    &.introduction,
-    &.core,
-    &.config,
-    &.api,
-    &.auth,
-    &.data,
-    &.product,
-    &.integrations,
-    &.usecases,
-    &.other {
-      > div > .menu__link--sublist,
-      > a.menu__link {
-        margin-left: var(--icon-gap);
+    &.top-level-item-list > div > .menu__link--sublist,
+    &.top-level-item > a.menu__link {
+      margin-left: var(--icon-gap);
 
-        &::after {
-          --icon-size: 1.5em;
-          --dropdown-icon-width: var(--icon-size);
-          --dropdown-icon-height: var(--icon-size);
+      &::after {
+        --icon-size: 1.5em;
+        --dropdown-icon-width: var(--icon-size);
+        --dropdown-icon-height: var(--icon-size);
 
-          content: " ";
-          background: url("/img/sidebar/introduction.svg") center / var(--dropdown-icon-width) var(--dropdown-icon-height);
-          transform: rotate(0);
-          opacity: 1;
-        }
+        content: " ";
+        background: var(--icon-url) center / var(--dropdown-icon-width) var(--dropdown-icon-height);
+        transform: rotate(0);
+        opacity: 1;
       }
     }
   }
@@ -335,20 +342,13 @@ html[data-theme="dark"] {
   .menu__list-item {
     > div > .menu__link--sublist::after {
       background-size: cover !important;
-      transition-duration: 0.5s;
-    }
-
-    &.introduction > div > .menu__link--sublist::after {
-      background-image: url("/img/sidebar/introduction.svg");
-    }
-
-    &.core > div > .menu__link--sublist::after {
-      background-image: url("/img/sidebar/core-concepts.svg");
+      //transition-duration: 0.5s;
+      background-image: var(--icon-url);
     }
 
     &.config > div > .menu__link--sublist {
       &::after {
-        background-image: url("/img/sidebar/gear-fine.svg");
+        background-image: var(--icon-url);
         transition-duration: 0.5s;
       }
 
@@ -358,76 +358,22 @@ html[data-theme="dark"] {
         }
       }
     }
-
-    &.api > div > .menu__link--sublist::after {
-      background-image: url("/img/sidebar/api.svg");
-    }
-    
-    &.auth > div > .menu__link--sublist::after {
-      background-image: url("/img/sidebar/auth-flow.svg");
-    }
-
-    &.data > div > .menu__link--sublist::after {
-      background-image: url("/img/sidebar/data-model.svg");
-    }
-
-    &.integrations > a.menu__link::after {
-      background-image: url("/img/sidebar/integrations.svg");
-    }
-
-    &.usecases > div > .menu__link--sublist::after {
-      background-image: url("/img/sidebar/usecase.svg");
-    }
-
-    &.other > div > .menu__link--sublist::after {
-      background-image: url("/img/sidebar/other-guides.svg");
-    }
-
-    &.product  > a.menu__link::after {
-      background-image: url("/img/sidebar/products.svg");
-    }
-
-    &.product  > a.menu__link::after {
-      background-image: url("/img/sidebar/products.svg");
-    }
-
-    &.product.accounting  > a.menu__link::after {
-      background-image: url("/img/logos/coins.svg");
-    }
-
-    &.product.assess  > a.menu__link::after {
-      background-image: url("/img/logos/icon_lending.svg");
-    }
-
-    &.product.banking  > a.menu__link::after {
-      background-image: url("/img/logos/bank.svg");
-    }
-
-    &.product.bankfeed  > a.menu__link::after {
-      background-image: url("/img/logos/bank-note.svg");
-      //background-image: url("/img/logos/icon_bankfeeds.svg");
-    }
-
-    &.product.commerce  > a.menu__link::after {
-      background-image: url("/img/logos/cart.svg");
-    }
-
-    &.product.sfe  > a.menu__link::after {
-      background-image: url("/img/logos/icon_expenses.svg");
-    }
-
-    &.product.sfc  > a.menu__link::after {
-      background-image: url("/img/logos/icon_commerce.svg");
-    }
   }
 
-  .theme-doc-sidebar-item-category-level-1 > div > .menu__link,
-  .theme-doc-sidebar-item-link-level-1.product > .menu__link,
-  .theme-doc-sidebar-item-link-level-1.integrations > .menu__link {
-    color: var(--sidebar-category-c);
+  .theme-doc-sidebar-item-category-level-1,
+  .theme-doc-sidebar-item-link-level-1.product,
+  .theme-doc-sidebar-item-link-level-1.integrations {
+    > .menu__link {
+      color: var(--sidebar-category-c);
+      line-height: 100%;
+    }
 
-    font-weight: 600;
-    line-height: 100%;
+    &.top-level-item {
+      > .menu__link,
+      > div > .menu__link { 
+        font-weight: 600;
+      }
+    }
   }
 
   nav {
@@ -453,71 +399,168 @@ html[data-theme="dark"] {
   }
 }
 
-html[data-theme="dark"] {
+// icons
+
+html[data-theme="light"] {
   .menu__list-item {
-    &.introduction > div > .menu__link--sublist::after {
-      background-image: url("/img/sidebar-dark/introduction.svg") !important;
+    &.get-started {
+      --icon-url: url("/img/sidebar/introduction.svg");
     }
 
-    &.core > div > .menu__link--sublist::after {
-      background-image: url("/img/sidebar-dark/core-concepts.svg") !important;
+    &.learn {
+      --icon-url: url("/img/sidebar/core-concepts.svg");
     }
 
-    &.config > div > .menu__link--sublist::after {
-      background-image: url("/img/sidebar-dark/gear-fine.svg") !important;
-    }
-
-    &.api > div > .menu__link--sublist::after {
-      background-image: url("/img/sidebar-dark/api.svg") !important;
+    &.api {
+      --icon-url: url("/img/sidebar/api.svg");
     }
     
-    &.auth > div > .menu__link--sublist::after {
-      background-image: url("/img/sidebar-dark/auth-flow.svg") !important;
+    &.auth {
+      --icon-url: url("/img/sidebar/auth-flow.svg");
     }
 
-    &.data > div > .menu__link--sublist::after {
-      background-image: url("/img/sidebar-dark/data-model.svg") !important;
+    &.config {
+      --icon-url: url("/img/sidebar/gear-fine.svg");
     }
 
-    &.integrations > a.menu__link::after {
-      background-image: url("/img/sidebar-dark/integrations.svg") !important;
+    &.data {
+      --icon-url: url("/img/sidebar/data-model.svg");
     }
 
-    &.usecases > div > .menu__link--sublist::after {
-      background-image: url("/img/sidebar-dark/usecase.svg") !important;
+    &.integrations {
+      --icon-url: url("/img/sidebar/integrations.svg");
     }
 
-    &.other > div > .menu__link--sublist::after {
-      background-image: url("/img/sidebar-dark/other-guides.svg") !important;
+    &.usecases {
+      --icon-url: url("/img/sidebar/usecase.svg");
     }
 
-    &.product.accounting  > a.menu__link::after {
-      background-image: url("/img/logos/coins_light.svg") !important;
+    &.tutorials {
+      --icon-url: url("/img/sidebar/other-guides.svg");
     }
 
-    &.product.assess  > a.menu__link::after {
-      background-image: url("/img/logos/icon_lending_light.svg") !important;
+    &.product {
+      --icon-url: url("/img/sidebar/products.svg");
     }
 
-    &.product.banking  > a.menu__link::after {
-      background-image: url("/img/logos/bank_light.svg") !important;
+    &.product {
+      --icon-url: url("/img/sidebar/products.svg");
     }
 
-    &.product.bankfeed  > a.menu__link::after {
-      //background-image: url("/img/logos/icon_bankfeeds_light.svg") !important;
-      background-image: url("/img/logos/bank-note_light.svg") !important;
+    &.product.accounting {
+      --icon-url: url("/img/sidebar/coins.svg");
     }
 
-    &.product.commerce  > a.menu__link::after {
-      background-image: url("/img/logos/cart_light.svg") !important;
+    &.product.assess,
+    &.product.lending {
+      --icon-url: url("/img/sidebar/icon_lending.svg");
     }
 
-    &.product.sfe  > a.menu__link::after {
-      background-image: url("/img/logos/icon_expenses_light.svg") !important;
+    &.product.banking {
+      --icon-url: url("/img/sidebar/bank.svg");
     }
 
-    &.product.sfc  > a.menu__link::after {
-      background-image: url("/img/logos/icon_commerce_light.svg") !important;
+    &.product.bankfeed {
+      --icon-url: url("/img/sidebar/bank-note.svg");
+      //--icon-url: url("/img/sidebar/icon_bankfeeds.svg");
+    }
+
+    &.product.commerce {
+      --icon-url: url("/img/sidebar/cart.svg");
+    }
+
+    &.product.sfe {
+      --icon-url: url("/img/sidebar/icon_expenses.svg");
+    }
+
+    &.product.sfc {
+      --icon-url: url("/img/sidebar/icon_commerce.svg");
+    }
+
+    &.product.sfpayables {
+      --icon-url: url("/img/sidebar/icon_payables.svg");
+    }
+
+    &.product.sfpayroll {
+      --icon-url: url("/img/sidebar/icon_payroll.svg");
+    }
+  }
+}
+
+html[data-theme="dark"] {
+  .menu__list-item {
+    &.get-started {
+      --icon-url: url("/img/sidebar-dark/introduction.svg");
+    }
+
+    &.learn {
+      --icon-url: url("/img/sidebar-dark/core-concepts.svg");
+    }
+
+    &.config {
+      --icon-url: url("/img/sidebar-dark/gear-fine.svg");
+    }
+
+    &.api {
+      --icon-url: url("/img/sidebar-dark/api.svg");
+    }
+    
+    &.auth {
+      --icon-url: url("/img/sidebar-dark/auth-flow.svg");
+    }
+
+    &.data {
+      --icon-url: url("/img/sidebar-dark/data-model.svg");
+    }
+
+    &.integrations {
+      --icon-url: url("/img/sidebar-dark/integrations.svg");
+    }
+
+    &.usecases {
+      --icon-url: url("/img/sidebar-dark/usecase.svg");
+    }
+
+    &.tutorials {
+      --icon-url: url("/img/sidebar-dark/other-guides.svg");
+    }
+
+    &.product.accounting  {
+      --icon-url: url("/img/sidebar-dark/coins_light.svg");
+    }
+
+    &.product.assess,
+    &.product.lending  {
+      --icon-url: url("/img/sidebar-dark/icon_lending_light.svg");
+    }
+
+    &.product.banking  {
+      --icon-url: url("/img/sidebar-dark/bank_light.svg");
+    }
+
+    &.product.bankfeed  {
+      //--icon-url: url("/img/sidebar-dark/icon_bankfeeds_light.svg");
+      --icon-url: url("/img/sidebar-dark/bank-note_light.svg");
+    }
+
+    &.product.commerce {
+      --icon-url: url("/img/sidebar-dark/cart_light.svg");
+    }
+
+    &.product.sfe {
+      --icon-url: url("/img/sidebar-dark/icon_expenses_light.svg");
+    }
+
+    &.product.sfc {
+      --icon-url: url("/img/sidebar-dark/icon_commerce_light.svg");
+    }
+
+    &.product.sfpayables {
+      --icon-url: url("/img/sidebar-dark/icon_payables_light.svg");
+    }
+
+    &.product.sfpayroll {
+      --icon-url: url("/img/sidebar-dark/icon_payroll_light.svg");
     }
   }
 }

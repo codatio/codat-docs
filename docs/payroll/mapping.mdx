@@ -1,0 +1,111 @@
+---
+title: Configure
+description: "Categorize and map payroll components"
+---
+
+import Payroll from "@components/global/Prototypes/Payroll";
+
+In order for your customers to be able to represent their payroll costs appropriately in their accounting software, they will first need to do some initial configuration.
+
+Typically each company will want to set:
+- Which bank account payments are made from
+- Which expense account each payroll component corresponds with
+- Any additional mapping for things like departments and locations
+
+SMB
+Has accounting platform
+
+Client
+Has payroll components list
+Has departments, locations, 
+
+
+## Select the account payroll payments will be made from
+
+The payment account is a bank account from which payroll payments can be dispersed from to employees bank accounts. 
+
+A list of the available options in the company's accounting platform can be retrieved from the [bankAccounts](/sync-for-payroll-api#/operations/list-accounts) endpoint:
+
+```http request title="List bank accounts"
+GET https://api.codat.io/companies/{companyId}/data/accounts?query=isBankAccount%3dtrue
+```
+
+## Map payroll components to relevant accounts
+
+Each company will have different preferences for how they want to record their employees payroll costs, pensions, and taxes against various nominal accounts.
+
+You will have in your system some list of *payroll components* that constitute the different parts of a company's payroll. For example:
+
+```
+const payrollComponents = [
+  {
+    id: "9017ab32-5d56-41a2-b46f-40b62f7677b7",
+    name: "Performance bonuses"
+    category: "Bonuses",
+  },
+  {
+    id: "248f6da7-c9e2-48fd-b304-ca20216a5d01",
+    name: "Pensions"
+    category: "Benefits",
+  },
+  ...
+]
+```
+
+You should provide your customer with a flexible interface to enable companies to handle the nuances of how they want to reconcile their data. Mapping could be as complex or granular as suits your usecase.
+
+### Get the accounts 
+
+You can use the [chartOfAccounts](/sync-for-payroll-api#/operations/list-accounts) to populate this interface with the `name` representing what the account is called in their accounting software.
+
+```http request title="List accounts"
+GET https://api.codat.io/companies/{companyId}/data/accounts?page=1&pageSize=100
+```
+
+Query parameters can also be used to narrow the list of accounts you want to retrieve:
+
+- `status=Active` returns only active accounts
+- `type=Expense` returns accounts that are used for recording as business expenses
+
+### Map accounts
+
+You'll need to build an interface that lists all the payroll components of your system, and allows the user to set which account in their accounting platform it corresponds to.
+
+For example:
+
+<Payroll/>
+
+## Map tracking categories
+
+Businesses may want additional categorization for their payroll expenses. For example they might want to group it by department (e.g. sales and marketing) or location.
+
+You will have in your system some list of the additional things you want to track. For example:
+
+```
+const categories = [
+  {
+    id: "77187e56-fdc0-4d0e-92d4-6189392874eb",
+    name: "Department - Sales"
+  },
+  {
+    id: "248f6da7-c9e2-48fd-b304-ca20216a5d01",
+    name: "Department - Marketing"
+  },
+  {
+    id: "25664661-ad12-452c-8c2a-13ee029f7322",
+    name: "Location - US"
+  },
+  {
+    id: "2756a658-e17b-408a-b9ba-4d3ad56342bd",
+    name: "Location - UK"
+  },
+  ...
+]
+```
+
+[Tracking categories](/sync-for-payroll-api#/operations/list-tracking-categories) can be used to retrieve departments, locations and projects for each company.
+
+```http request title="List tracking categories"
+GET https://api.codat.io/companies/{companyId}/data/trackingCategories?page=1&pageSize=100
+```
+

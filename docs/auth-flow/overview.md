@@ -143,4 +143,4 @@ Whether you build your own or use Link, browser and mobile compatibility varies 
 
 :::caution Link compatibility with Codat Products
 
-Link is compatible with the whole product range of Codat except for [Sync for Commerce](/sfc/overview) which is currently not supported. To set up your Sync for Commerce authorization flow, follow the instructions in our [Sync for Commerce documentation](/sfc/overview).
+Link is compatible with the whole product range of Codat except for [Sync for Commerce](/commerce/overview) which is currently not supported. To set up your Sync for Commerce authorization flow, follow the instructions in our [Sync for Commerce documentation](/commerce/overview).

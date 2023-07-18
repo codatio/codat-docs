@@ -21,7 +21,7 @@ You can get a [list of suppliers](/accounting-api#/operations/list-suppliers) us
 GET https://api.codat.io/companies/{companyId}/data/suppliers?page=1&pageSize=100
 ```
 
-query parameters can also be used to narrow the list of suppliers e.g.
+Query parameters can also be used to narrow the list of suppliers e.g.
 - `status=Active` returns only active suppliers
 - `defaultCurrency=USD` returns suppliers that provide goods or services in dollars
 - `supplierName=Acme` returns suppliers with a name that matches the query

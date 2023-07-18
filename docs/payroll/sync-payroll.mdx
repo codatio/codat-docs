@@ -1,0 +1,103 @@
+---
+title: Record payroll
+description: "Sync payruns with your customers accounting software"
+---
+
+## Generate payroll object
+
+Before you can record the payroll in the accounting platform, you'll need to generate a line item object for each employee for each corresponding payroll component. That means you'll likely have multiple line items for each employee.
+
+Each line item object should have the following information:
+
+- `description` - Employee name
+- `accountRef` - The corresponding account
+- `netAmount` - Net amount paid to employee
+- `currency` - The currency corresponding to the amount
+- `tracking` - A list of references to records for tracking
+
+## Record payroll
+
+In order to record payroll entries in the accounting platform, you can use the [create journal entries](/sync-for-payroll-api#/operations/create-journal-entry) endpoint to push payroll to the mapped accounts on the SMB's general ledger.
+
+The journal entry can then be reconciled against the debit entry in the companies bankfeeds.
+
+```http title="Create journal entries"
+POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/journalEntries
+```
+
+```json title="Example request body"
+
+{
+    "postedOn": "2023-02-14T00:00:00",
+    "createdOn": "2023-02-14T00:00:00",
+    "journalLines": [
+        {
+            "description": "Williamson, Brittany Marie",
+            "netAmount": 7291.67,
+            "currency": "USD",
+            "accountRef": {
+                "id": "92",
+                "name": "Payroll Wage Expenses"
+            },
+            "tracking": {
+               "recordRefs": [
+                            {
+                                "id": "DEPARTMENT_1",
+                                "dataType": "trackingCategories"
+                            }
+                        ]
+            }
+        },
+        {
+            "description": "Williamson, Brittany Marie",
+            "netAmount": 105.73,
+            "currency": "USD",
+            "accountRef": {
+                "id": "96",
+                "name": "Payroll Tax Payable"
+            },
+            "tracking": {
+                "recordRefs": []
+            }
+        },
+        {
+            "description": "Williamson, Brittany Marie",
+            "netAmount": 452.08,
+            "currency": "USD",
+            "accountRef": {
+                "id": "96",
+                "name": "Payroll Tax Payable"
+            },
+            "tracking": {
+                "recordRefs": []
+            }
+        },
+        {
+            "description": "Williamson, Brittany Marie",
+            "netAmount": 1166.67,
+            "currency": "USD",
+            "accountRef": {
+                "id": "97",
+                "name": "Payroll Expenses 401k"
+            },
+            "tracking": {
+                "recordRefs": []
+            }
+        },
+        {
+            "description": "Williamson, Brittany Marie",
+            "netAmount": -9016.15,
+            "currency": "USD",
+            "accountRef": {
+                "id": "35",
+                "name": "Checking"
+            },
+            "tracking": {
+                "recordRefs": []
+            }
+        }
+    ]
+}
+
+
+```

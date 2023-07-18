@@ -274,6 +274,16 @@ html[data-theme="dark"] {
         content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgM2gxMi4xMk03LjA2IDF2Mk0xMC40MiAxN2w0LjA0LTkuMzNMMTguNSAxN00xMS42NiAxNC4zM2g1LjZNMTAuODEgM1M5LjggNi45MiA3LjM1IDkuODhjLTIuNDQgMi45NS01IDQuNDUtNSA0LjQ1IiBzdHJva2U9IiM5MkEwQjMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBhdGggZD0iTTkuNzUgMTIuMzNzLTEuNDctMS4xMi0zLjAzLTMuMTJjLTEuNTYtMi0yLjM1LTMuNTQtMi4zNS0zLjU0IiBzdHJva2U9IiM5MkEwQjMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+");
       }
     }
+
+    .navbar-sidebar .navbar-sidebar__items:not(.navbar-sidebar__items--show-secondary) {
+      .menu__link--sublist {
+        padding-left: 1em;
+
+        &:after {
+          padding-left: 2em;
+        }      
+      }
+    }
   }
 }
 
@@ -284,7 +294,7 @@ html[data-theme="dark"] {
   margin: 1em 0.5em;
 
   &.primary {
-    background: var(--button-primary-bg);
+    background: var(--button-primary-bg) !important;
     color: white !important;
   }
 
@@ -302,7 +312,7 @@ html[data-theme="dark"] {
 @media only screen and (max-width: 800px) {
   .navbar__inner {
     .navbarButton,
-    .navbar__link--api {
+    .navbar__link--community {
       display: none !important;
     }
   }

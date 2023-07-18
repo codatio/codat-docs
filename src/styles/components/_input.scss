@@ -1,0 +1,15 @@
+input {
+  border: 2px solid #ededed;
+  margin: 0.25em;
+  padding: 0.25em;
+  border-radius: 4px;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+}
+
+.input-group {
+  margin-bottom: 1em;
+}
