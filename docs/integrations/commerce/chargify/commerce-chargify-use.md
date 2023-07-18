@@ -15,9 +15,11 @@ By default, Codat disables users from making `proxy` requests. To enable proxy f
 To proxy to the Maxio API, send a GET request to the `proxy` endpoint:
 
 ```
-GET /companies/{companyId}/connections/{connectionId}/data/proxy?endpoint=CHARGIFY_ENDPOINT
+GET /companies/{companyId}/connections/{connectionId}/data/proxy?endpoint=MAXIO_ENDPOINT
 ```
 
-Replace `CHARGIFY_ENDPOINT` with the desired Maxio API object, which must be URL encoded. For example, use `customers.json` to query a company's list of customers in Maxio.
+Replace `MAXIO_ENDPOINT` with the desired Maxio API object, which must be URL encoded. For example, use `customers.json` to query a company's list of customers in Maxio.
 
 To view a list of all available endpoints, see the <a className="external" href="https://developers.chargify.com/docs/api-docs/YXBpOjE0MTA4MjYx-chargify-api" target="_blank">Maxio API documentation</a>.
+
+Note: Maxio's docs are still in the name of their old brand, Chargify.
