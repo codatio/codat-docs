@@ -1,6 +1,6 @@
 ---
 title: "Troubleshooting"
-description: "Resolve some common errors that you may encounter with Sync for Commerce"
+description: "Common errors that you may encounter and FAQs"
 createdAt: "2022-04-21T17:44:33.185Z"
 updatedAt: "2022-11-18T17:51:18.675Z"
 ---
@@ -10,7 +10,7 @@ updatedAt: "2022-11-18T17:51:18.675Z"
 Sync for Commerce is in beta. If you are interested in building with Sync for Commerce, please [get in touch](mailto:sync-for-commerce@codat.io).
 :::
 
-## Status codes
+### Status codes
 
 | Code | Reason                                        |
 | :--- | :-------------------------------------------- |
@@ -27,7 +27,7 @@ Sync for Commerce is in beta. If you are interested in building with Sync for Co
 | 5120 | Data processing error                         |
 | 5130 | Data push error                               |
 
-## Error messages
+### Error messages
 
 This section describes the errors that are related to Sync for Commerce configuration. Some of them can be avoided by following this set of best practices:
 
@@ -38,7 +38,7 @@ This section describes the errors that are related to Sync for Commerce configur
 - Make sure to configure the grouping for all the features.
 - When choosing configuration options, only use the options provided by Codat.
 
-### How to resolve configuration errors
+#### How to resolve configuration errors
 
 | Error message | Error resolution |
 |---|---|
@@ -63,14 +63,14 @@ This section describes the errors that are related to Sync for Commerce configur
 | Selected tax rate id for `{key}% tax-rate` has no options. | This errors surfaces if the selected tax rate is not available or is not from the list of supported tax rates. <br/> Reconfigure the tax rate on the Codat configuration API using the provided options. During the configuration, only use the options available on the config API. |
 | No fees supplier has been configured. <br/> Selected supplier not present in supplier options. | These error surfaces if no fees supplier has been provided or it does not match any of the options provided by Codat. <br/> During the configuration, select the fees provider from the options available on the config API. |
 
-## Post-configuration errors
+### Post-configuration errors
 
 After the commerce data is delivered into the merchant's accounting platform, there are still some things to keep in mind to ensure that Sync for Commerce performs well:
 
 - Advise your merchants to not update, deactivate or delete the accounts they selected to use with Sync for Commerce.
 - Advise your merchants not to change the settings on the selected accounts (for example, tax rates) as this will result in a synchronization error.
 
-### How to resolve post-configuration errors
+#### How to resolve post-configuration errors
 
 | Error message | Error description and resolution |
 |---|---|
@@ -82,7 +82,7 @@ After the commerce data is delivered into the merchant's accounting platform, th
 | Supplier is not in an **Active** state. | During the first stage of the sync, validation checks to verify that no supplier data is set to any other state except for **Active**. This error is surfaced in case any inactive suppliers are detected. <br/> To resolve, reconfigure the supplier on the config API. |
 | Tax Rate `{taxRateId}` does not exist. <br/> The following Tax Rates are invalid: `{Tax rate}`. | During the first stage of the sync, validation checks to verify that the tax rate data is consistent and no tax rate data has been changed or deleted. This error is surfaced in case any updated tax data is detected. <br/> To resolve, reconfigure the tax rate on the config API. |
 
-### Errors resolved by Codat
+#### Errors resolved by Codat
 
 To resolve these errors, contact your Codat representative.
 
@@ -90,3 +90,16 @@ To resolve these errors, contact your Codat representative.
 |---|---|
 | No company was found with ID. | This exception is thrown when a company record does not exist. It may have previously existed and been deleted. |
 | Date overlaps with a previous sync date range. | This error surfaces when a scheduled daily sync overlaps or conflicts with a manually triggered sync. |
+
+## FAQs
+
+### How do you avoid creating duplicates in the accounting platforms?
+
+During a sync, we check the `createdDate` of individual records (orders, payments, and transactions). We compare this date with the start and end dates and times of the sync period. If the record's `createdDate` is within the sync period, it is selected for syncing. We then create a new record in the target platform (for example, a new order).
+
+Sync for Commerce also uses `id` to identify unique records. If we pick up records already received previously, and their ids and `sourceModifiedDate` match the existing records, we discard these from the sync scope.
+
+If the `sourceModifiedDate` of the record is different from the previously received one, Sync for Commerce recognizes this as a modified source record and applies these changes as an adjustment.
+
+You can also start a sync manually using our [_Latest Sync_](/sync-for-commerce-api#/operations/post-sync-latest) endpoint, or [learn more](/sfc/sync-for-commerce-knowledge-base/initiating-a-sync) about initiating it. Alternatively, you can [read more](/sfc/sync-for-commerce-knowledge-base/synchronization-schedule) about sync periods and the sync schedule.
+

@@ -13,10 +13,9 @@ module.exports = [
   },
   {
     type: "category",
-    label: "Concepts and features",
+    label: "Concepts",
     collapsed: true,
     items: [
-      "sfc/sync-for-commerce-knowledge-base/sync-data-model",
       "sfc/sync-for-commerce-knowledge-base/initiating-a-sync",
       "sfc/sync-for-commerce-knowledge-base/monitoring-a-sync",
       "sfc/sync-for-commerce-knowledge-base/synchronization-schedule",
@@ -45,7 +44,6 @@ module.exports = [
       "sfc/mapping-specifications/qbo-mapping-specification",
     ],
   },
-  "sfc/sync-for-commerce-faqs",
   "sfc/error-documentation",
   "sfc/coming-soon",
   {
