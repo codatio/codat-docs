@@ -4,10 +4,14 @@ const dataModel = require("./sidebars/dataModel");
 const accountingAPI = require("./sidebars/accounting-api");
 const bankingAPI = require("./sidebars/banking-api");
 const commerceAPI = require("./sidebars/commerce-api");
-const bankfeeds = require("./sidebars/bank-feeds-api");
 const assess = require("./sidebars/assess");
+
+const lending = require("./sidebars/lending");
+const bankfeeds = require("./sidebars/bank-feeds");
 const sfc = require("./sidebars/sync-for-commerce");
 const sfe = require("./sidebars/sync-for-expenses");
+const sfp = require("./sidebars/sync-for-payroll");
+const payables = require("./sidebars/payables");
 
 const integrations = require("./sidebars/integrations");
 
@@ -89,51 +93,6 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Use cases",
-      collapsed: true,
-      className: "top-level-item usecases",
-      link: {
-        type: 'doc',
-        id: "usecases/overview",
-      },
-      items: [
-        "usecases/summary/lending",
-        "usecases/summary/managing-expenses",
-        "usecases/summary/dashboarding",
-        {
-          type: "category",
-          label: "Automating payables",
-          collapsed: true,
-          className: "top-level-item",
-          items: [
-            "usecases/summary/automating-payables",
-            {
-              type: "link",
-              label: "Demo app guide",
-              href: "https://docs.codat.io/guides/bill-pay/introduction",
-            },
-            {
-              type: "category",
-              label: "Implementing bill pay",
-              collapsed: true,
-              className: "top-level-item",
-              items: [
-                "usecases/bill-pay/overview",
-                "usecases/bill-pay/bills",
-                "usecases/bill-pay/mapping",
-                "usecases/bill-pay/payments",
-              ],
-            }
-          ],
-        },
-        "usecases/summary/automating-receivables",
-        "usecases/summary/integrating-commerce-data",
-        "usecases/summary/managing-payroll",
-        "usecases/summary/reconciling-bank-transactions",
-      ],
-    },
-    {
-      type: "category",
       label: "Learn",
       collapsed: true,
       customProps: {
@@ -179,6 +138,7 @@ module.exports = {
             "configure/user-management/adding-users",
             "configure/user-management/user-roles",
             "configure/user-management/sso",
+
           ],
         },
         {
@@ -239,16 +199,19 @@ module.exports = {
           ],
         },
         "using-the-api/testing",
+          ],
+        },
+        "introduction/testing",
         {
-        type: "category",
-        label: "Webhooks",
-        collapsed: true,
-        items: [
-          "using-the-api/webhooks/core-rules-types",
-          "using-the-api/webhooks/core-rules-create",
-          "using-the-api/webhooks/core-rules-webhooks",
-          "using-the-api/webhooks/core-rules-webhooksecurity",
-          "using-the-api/webhooks/receive-webhooks-as-email",
+          type: "category",
+          label: "Webhooks",
+          collapsed: true,
+          items: [
+            "using-the-api/webhooks/core-rules-types",
+            "using-the-api/webhooks/core-rules-create",
+            "using-the-api/webhooks/core-rules-webhooks",
+            "using-the-api/webhooks/core-rules-webhooksecurity",
+            "using-the-api/webhooks/receive-webhooks-as-email",
           ],
         },
         {
@@ -322,6 +285,20 @@ module.exports = {
       href: "/assess/overview",
     },
     {
+      type: "category",
+      label: "Lending",
+      collapsed: true,
+      className: "top-level-item products",
+      link: {
+        type: 'doc',
+        id: "lending/overview",
+      },
+      items: lending,
+      customProps: {
+        hr: true,
+      },
+    },
+    {
       type: "link",
       label: "Banking API",
       className: "top-level-item products product banking",
@@ -351,6 +328,61 @@ module.exports = {
       className: "top-level-item products product sfc",
       href: "/sfc/overview",
     },
+    {
+      type: "category",
+      label: "Bank Feeds",
+      collapsed: true,
+      className: "top-level-item products",
+      link: {
+        type: 'doc',
+        id: "bank-feeds/overview",
+      },
+      items: bankfeeds,
+    },
+    {
+      type: "category",
+      label: "Sync for Commerce",
+      collapsed: true,
+      className: "top-level-item products",
+      link: {
+        type: 'doc',
+        id: "sfc/overview",
+      },
+      items: sfc,
+    },
+    {
+      type: "category",
+      label: "Sync for Expenses",
+      collapsed: true,
+      className: "top-level-item products",
+      link: {
+        type: 'doc',
+        id: "sync-for-expenses/overview",
+      },
+      items: sfe,
+    },
+    {
+      type: "category",
+      label: "Sync for Payroll",
+      collapsed: true,
+      className: "top-level-item products",
+      link: {
+        type: 'doc',
+        id: "sync-for-payroll/overview",
+      },
+      items: sfp,
+    },
+    {
+      type: "category",
+      label: "Payables",
+      collapsed: true,
+      className: "top-level-item products",
+      link: {
+        type: 'doc',
+        id: "payables/overview",
+      },
+      items: payables,
+    },
   ],
   accountingAPI: accountingAPI,
   bankingAPI: bankingAPI,
@@ -359,5 +391,7 @@ module.exports = {
   sfc: sfc,
   assess: assess,
   sfe: sfe,
+  sfp: sfp,
+  payables: payables,
   integrations: integrations,
 };
