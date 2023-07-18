@@ -131,7 +131,7 @@ The user signing up may not have access to their business's financial data at al
 
 This way, users do not have to share credentials with each other, and the user with platform access can complete the authorization asynchronously.
 
-## Pitfalls
+## 💡 Tips and traps
 
 :::note Device compatibility
 

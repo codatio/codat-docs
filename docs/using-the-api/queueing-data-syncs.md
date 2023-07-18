@@ -81,7 +81,7 @@ However, you can set a more frequent sync schedule if it is required for your us
 - **Daily**: Gives you close-to-live picture of most data types while staying within the conservative rate limits of most accounting platforms.
 - **Hourly**: Recommended for specific use cases only and may require consideration for the rate limits, e.g. invoices and payments for invoice financing. Only available to [enterprise customers](/introduction/create-account).
 
-## Pitfalls
+## 💡 Tips and traps
 
 - Ensure to perform a monthly sync for at least one data type to keep your connection token operational if you are not performing active synchronisation. You can disregard this if you only require a one-time sync.
 

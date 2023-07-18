@@ -89,7 +89,7 @@ Review the table below for platform schemas we use in our data types, which are 
   style={{ top: 0, left: 0, width: "100%", height: "400px" }}
 ></iframe>
 
-## Pitfalls
+## 💡 Tips and traps
 
 - Supplemental data is currently available only at the record level and cannot be used to interact with line-level properties. 
 
