@@ -39,9 +39,6 @@ To post the attachment for each `transactionId` with a status of `Completed` and
 POST https://api.codat.io/companies/{companyId}/sync/expenses/syncs/{syncId}/transactions/{transactionId}/attachments
 ```
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem"
-
 ## Upload receipts
 
 You can add a receipt to the transaction after the sync. Note that different accounting software supports different file formats and sizes.
