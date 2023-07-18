@@ -17,7 +17,7 @@ After authenticating with their Xero account, the SMB user is redirected to a ge
 ![xero-bank-feeds_mapping-screen-example](/img/bank-feeds-api/xero-bank-feeds/xero-bank-feeds_annotated-manage-connected-accounts.png "Codat UI for connecting and mapping bank feed accounts to Xero.")
 
 The SMB user can do the following:
-1. Add one or more source bank accounts (the accounts you provided through the `PUT /bankFeedAccounts` endpoint).
+1. Add one or more source bank accounts (the accounts you provided through the `POST /bankFeedAccounts` endpoint).
 2. Map a source bank account to an existing target bank account in Xero.
 3. Select **Create New Account** to map a source bank account to a new target bank account in Xero.
 4. Select the **Feed start date**&mdash;the date a bank feed connection should start from. 
