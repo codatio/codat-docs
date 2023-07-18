@@ -32,7 +32,7 @@ This query retrieves records with modified dates that are greater than or equal 
 
 :::
 
-### Pitfalls
+### 💡 Tips and traps
 
 - The `modifiedDate` is populated for all data types **except** for the following:
   - attachments
@@ -62,7 +62,7 @@ This query retrieves invoices with issue dates that are greater than twelve mont
 
 :::
 
-### Pitfalls
+### 💡 Tips and traps
 
 - The `sourceModifiedDate` may not be populated and returned as `null` when:
   - Pulling attachments, balance sheets, company information, or profit & loss reports

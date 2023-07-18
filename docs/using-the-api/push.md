@@ -279,7 +279,7 @@ It is possible for an operation to be in a `Pending` status indefinitely, for ex
 
 To control the timeframe in which you want your CUD operation to complete, use the `timeoutInMinutes` parameter. If the deadline expires, the status of the operation will change to `TimedOut`.
 
-## Pitfalls
+## 💡 Tips and traps
 
 - When a CUD operation successfully completes, this changes the specific record in Codat's system, but does not change any *associated* records. For example, if you create a payment against an invoice, the payment becomes available in Codat once the operation completes, but the invoice may still show a non-zero `amountDue`. To view the fully updated associated records, you need to [requeue all the relevant datasets](/using-the-api/queueing-data-syncs).
 
