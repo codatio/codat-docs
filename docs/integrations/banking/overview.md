@@ -47,7 +47,7 @@ TrueLayer works differently to our other integrations, and each banking provider
 :::
 
 <iframe
-  src="https://knowledge.codat.io/embeds/integrations/platformkeys?integrationType=Banking"
+  src="https://knowledge.codat.io/embeds/integrations/platform-keys?integrationType=Banking"
   frameborder="0"
   style={{ top: 0, left: 0, width: "100%", height: "400px" }}
 ></iframe>
