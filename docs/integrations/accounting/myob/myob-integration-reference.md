@@ -34,7 +34,7 @@ Codat does not currently support updating item based invoices.
 
 ### Synchronous integration
 
-Our MYOB integration is a synchronous integration. However, for simplicity and consistency with the rest of Codat's integrations, you should treat it as asynchronous.
+Our MYOB integration is a synchronous integration. However, for simplicity and consistency with the rest of Codat's integrations, you should treat it as asynchronous. Learn more about what that means when [creating, updating or deleting data](/using-the-api/push). 
 
 ### Multiple currencies
 
