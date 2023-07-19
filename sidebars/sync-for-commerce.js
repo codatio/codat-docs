@@ -1,16 +1,16 @@
 module.exports = [
-  {
-    type: "link",
-    href: "/",
-    label: "All Docs",
-    className: "back",
-  },
-  {
-    type: "link",
-    label: "Sync for Commerce",
-    href: "/sfc/overview",
-    className: "header",
-  },
+  // {
+  //   type: "link",
+  //   href: "/",
+  //   label: "All Docs",
+  //   className: "back",
+  // },
+  // {
+  //   type: "link",
+  //   label: "Sync for Commerce",
+  //   href: "/sfc/overview",
+  //   className: "header",
+  // },
   {
     type: "category",
     label: "Concepts and features",

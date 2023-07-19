@@ -1,16 +1,16 @@
 ---
 title: "Sync for Commerce overview"
-sidebar_label: Sync for Commerce
-displayed_sidebar: sfc
-hide_title: true
-hide_description: true
-hide_table_of_contents: true
 description: "Embedded accounting integrations for PoS and eCommerce platforms."
-banner_title: Sync for Commerce
-banner_class: sfc
-banner_icon: "/logos/products-clear/sfc.svg"
-banner_image: "/img/banners/sfc-charts.png"
-banner_text: "Embedded accounting integrations for PoS and eCommerce platforms."
+# sidebar_label: Sync for Commerce
+# displayed_sidebar: sfc
+# hide_title: true
+# hide_description: true
+# hide_table_of_contents: true
+# banner_title: Sync for Commerce
+# banner_class: sfc
+# banner_icon: "/logos/products-clear/sfc.svg"
+# banner_image: "/img/banners/sfc-charts.png"
+# banner_text: "Embedded accounting integrations for PoS and eCommerce platforms."
 ---
 
 **Building to lots of different APIs does not scale. With Sync for Commerce, you can send a merchant's data to their accounting platform without worrying about which one they use.**

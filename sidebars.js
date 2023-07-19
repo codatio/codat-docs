@@ -4,11 +4,14 @@ const dataModel = require("./sidebars/dataModel");
 const accountingAPI = require("./sidebars/accounting-api");
 const bankingAPI = require("./sidebars/banking-api");
 const commerceAPI = require("./sidebars/commerce-api");
-const bankfeeds = require("./sidebars/bank-feeds-api");
 const assess = require("./sidebars/assess");
+
+const lending = require("./sidebars/lending");
+const bankfeeds = require("./sidebars/bank-feeds");
 const sfc = require("./sidebars/sync-for-commerce");
 const sfe = require("./sidebars/sync-for-expenses");
-const sfe2 = require("./sidebars/sync-for-expenses-2");
+const sfp = require("./sidebars/sync-for-payroll");
+const payables = require("./sidebars/payables");
 
 const integrations = require("./sidebars/integrations");
 
@@ -248,130 +251,80 @@ module.exports = {
       },
       items: authFlow,
     },
-    // {
-    //   type: "category",
-    //   label: "Use cases",
-    //   customProps: {
-    //     hr: true,
-    //   },
-    //   collapsed: true,
-    //   className: "top-level-item usecases",
-    //   link: {
-    //     type: 'doc',
-    //     id: "usecases/overview",
-    //   },
-    //   items: [
-    //     "usecases/summary/lending",
-    //     "usecases/summary/managing-expenses",
-    //     "usecases/summary/dashboarding",
-    //     {
-    //       type: "category",
-    //       label: "Automating payables",
-    //       collapsed: true,
-    //       className: "top-level-item",
-    //       items: [
-    //         "usecases/summary/automating-payables",
-    //         {
-    //           type: "link",
-    //           label: "Demo app guide",
-    //           href: "https://docs.codat.io/guides/bill-pay/introduction",
-    //         },
-    //         {
-    //           type: "category",
-    //           label: "Implementing bill pay",
-    //           collapsed: true,
-    //           className: "top-level-item",
-    //           items: [
-    //             "usecases/bill-pay/overview",
-    //             "usecases/bill-pay/bills",
-    //             "usecases/bill-pay/mapping",
-    //             "usecases/bill-pay/payments",
-    //           ],
-    //         }
-    //       ],
-    //     },
-    //     "usecases/summary/automating-receivables",
-    //     "usecases/summary/integrating-commerce-data",
-    //     "usecases/summary/managing-payroll",
-    //     "usecases/summary/reconciling-bank-transactions",
-    //   ],
-    // },
-    // {
-    //   type: "link",
-    //   label: "Integrations",
-    //   className: "top-level-item integrations",
-    //   href: "/integrations/all-integrations",
-    // },
-    // {
-    //   type: "category",
-    //   label: "Data model",
-    //   collapsed: true,
-    //   className: "top-level-item data",
-    //   link: {
-    //     type: 'doc',
-    //     id: "data-model/all-datatypes",
-    //   },
-    //   items: dataModel,
-    // },
+    {
+      type: "link",
+      label: "Integrations",
+      className: "top-level-item integrations",
+      href: "/integrations/all-integrations",
+    },
     {
       type: "category",
-      label: "Products",
+      label: "Lending",
       collapsed: true,
       className: "top-level-item products",
       link: {
         type: 'doc',
-        id: "products/overview",
+        id: "lending/overview",
       },
-      items: [
-        {
-          type: "link",
-          label: "Accounting API",
-          className: "product accounting",
-          href: "/accounting-api/overview",
-        },
-        {
-          type: "link",
-          label: "Banking API",
-          className: "product banking",
-          href: "/banking-api/overview",
-        },
-        {
-          type: "link",
-          label: "Commerce API",
-          className: "product commerce",
-          href: "/commerce-api/overview",
-        },
-        {
-          type: "link",
-          label: "Bank Feeds API",
-          className: "product bankfeed",
-          href: "/bank-feeds-api/overview",
-        },
-        {
-          type: "link",
-          label: "Assess",
-          className: "product assess",
-          href: "/assess/overview",
-        },
-        {
-          type: "link",
-          label: "Sync for Expenses",
-          className: "product sfe",
-          href: "/sync-for-expenses/overview",
-        },
-        {
-          type: "link",
-          label: "Sync for Commerce",
-          className: "product sfc",
-          href: "/sfc/overview",
-        },
-        {
-          type: "link",
-          label: "Sync for Expenses 2",
-          className: "product sfe2",
-          href: "/sync-for-expenses-2/overview",
-        },
-      ],
+      items: lending,
+      customProps: {
+        hr: true,
+      },
+    },
+    {
+      type: "category",
+      label: "Bank feeds",
+      collapsed: true,
+      className: "top-level-item products",
+      link: {
+        type: 'doc',
+        id: "bank-feeds/overview",
+      },
+      items: bankfeeds,
+    },
+    {
+      type: "category",
+      label: "Sync for commerce",
+      collapsed: true,
+      className: "top-level-item products",
+      link: {
+        type: 'doc',
+        id: "sfc/overview",
+      },
+      items: sfc,
+    },
+    {
+      type: "category",
+      label: "Sync for expenses",
+      collapsed: true,
+      className: "top-level-item products",
+      link: {
+        type: 'doc',
+        id: "sync-for-expenses/overview",
+      },
+      items: sfe,
+    },
+    {
+      type: "category",
+      label: "Sync for payroll",
+      collapsed: true,
+      className: "top-level-item products",
+      link: {
+        type: 'doc',
+        id: "sync-for-payroll/overview",
+      },
+      items: sfp,
+    },
+    {
+      type: "category",
+      label: "Payables",
+      collapsed: true,
+      className: "top-level-item products",
+      link: {
+        type: 'doc',
+        id: "payables/overview",
+      },
+      items: payables,
     },
   ],
   accountingAPI: accountingAPI,
@@ -381,6 +334,7 @@ module.exports = {
   sfc: sfc,
   assess: assess,
   sfe: sfe,
-  sfe2: sfe2,
+  sfp: sfp,
+  payables: payables,
   integrations: integrations,
 };

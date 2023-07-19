@@ -26,29 +26,9 @@ module.exports = {
           label: "Common API",
         },
         {
-          href: "/accounting-api",
-          label: "Accounting API",
+          href: "/lending-api",
+          label: "Lending API",
           hr: true,
-        },
-        {
-          href: "/assess-api",
-          label: "Assess API",
-        },
-        {
-          href: "/banking-api",
-          label: "Banking API",
-        },
-        {
-          href: "/bank-feeds-api",
-          label: "Bank Feeds API",
-        },
-        {
-          href: "/commerce-api",
-          label: "Commerce API",
-        },
-        {
-          href: "/files-api",
-          label: "Files API",
         },
         {
           href: "/sync-for-commerce-api",
@@ -59,10 +39,28 @@ module.exports = {
           label: "Sync for Expenses API",
         },
         {
+          href: "/sync-for-payroll-api",
+          label: "Sync for Payroll API",
+        },
+        {
+          href: "/bank-feeds-api",
+          label: "Bank Feeds API",
+        },
+        {
+          href: "/payables-api",
+          label: "Payables API",
+        },
+        {
           href: "https://github.com/codatio/oas",
           label: "OpenAPI spec",
           hr: true,
         },
+        {
+          href: "/products/overview",
+          label: "Legacy APIs",
+          hr: true,
+        },
+        
       ],
     },
     { to: "updates", label: "Updates", position: "left" },
