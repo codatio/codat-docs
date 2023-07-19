@@ -20,7 +20,7 @@ With access to bank feeds, your customers can more easily reconcile bank transac
 
 :::note Supported Sage products
 
-You can push bank transactions to several [supported Sage products](/bank-feeds-api/sage-bank-feeds/#supported-sage-products).
+You can push bank transactions to several [supported Sage products](/bank-feeds/sage-bank-feeds/#supported-sage-products).
 :::
 
 ## Supported data types and operations
@@ -29,11 +29,11 @@ Bank feeds are represented as streams of [Bank transactions](/bank-feeds-api#/op
 
 ## How it works
 
-1. [Set up the integration](/bank-feeds-api/sage-bank-feeds/sage-bank-feeds-setup).
+1. [Set up the integration](/bank-feeds/sage-bank-feeds/sage-bank-feeds-setup).
 2. Your end user can set up a bank feed using the _Connect Bank_ feature in a supported Sage product. They find your institution and then select a source bank account to send bank transactions from.
   
-  They are redirected to a Codat UI to enter their data connection ID to authenticate with the integration - see the [SMB user flow](/bank-feeds-api/sage-bank-feeds/sage-bank-feeds-setup#smb-user-flow-connect-a-source-bank-account-to-sage) for details. Alternatively, you can [authenticate users through your own web app](/bank-feeds-api/sage-bank-feeds/sage-bank-feeds-authenticate-users-web-app).
-3. You push transactions for authenticated users to Codat using the [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions) endpoint - see [Use your Sage Bank Feeds integration](/bank-feeds-api/sage-bank-feeds/sage-bank-feeds-use) for details.
+  They are redirected to a Codat UI to enter their data connection ID to authenticate with the integration - see the [SMB user flow](/bank-feeds/sage-bank-feeds/sage-bank-feeds-setup#smb-user-flow-connect-a-source-bank-account-to-sage) for details. Alternatively, you can [authenticate users through your own web app](/bank-feeds/sage-bank-feeds/sage-bank-feeds-authenticate-users-web-app).
+3. You push transactions for authenticated users to Codat using the [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions) endpoint - see [Use your Sage Bank Feeds integration](/bank-feeds/sage-bank-feeds/sage-bank-feeds-use) for details.
 
 ## Supported Sage products
 
@@ -43,4 +43,4 @@ Our integration supports pushing bank feeds to several Sage products, including 
 
 ## Read next
 
-See [Set up the Sage Bank Feeds integration](/bank-feeds-api/sage-bank-feeds/sage-bank-feeds-setup) to learn how to set up and enable the integration.
+See [Set up the Sage Bank Feeds integration](/bank-feeds/sage-bank-feeds/sage-bank-feeds-setup) to learn how to set up and enable the integration.

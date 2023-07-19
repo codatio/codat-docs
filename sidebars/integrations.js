@@ -424,7 +424,7 @@ module.exports = [
       },
       {
         type: "link",
-        href: "/bank-feeds-api/sage-bank-feeds/",
+        href: "/bank-feeds/sage-bank-feeds/",
         label: "Sage",
       },
       {

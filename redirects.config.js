@@ -290,7 +290,7 @@ module.exports = {
     },
     {
       from: "/redirects/integrations/bankfeeds/olpr",
-      to: "/bank-feeds-api/sage-bank-feeds", //sage
+      to: "/bank-feeds/sage-bank-feeds", //sage
     },
     {
       from: "/docs/status-codes",

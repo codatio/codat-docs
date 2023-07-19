@@ -8,7 +8,7 @@ export const bankfeedsIntegrations = [
   },
   {
     "name": "Sage bank feeds",
-    "to": "/bank-feeds-api/sage-bank-feeds/",
+    "to": "/bank-feeds/sage-bank-feeds/",
     "type": "bankfeeds",
     "img": "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png",
   },

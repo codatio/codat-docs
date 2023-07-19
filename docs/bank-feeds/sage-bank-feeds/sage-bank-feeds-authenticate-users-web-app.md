@@ -3,7 +3,7 @@ title: "Authenticate users through your own web app"
 description: "You can use your own web app for the SMB user connection journey for Sage Bank Feeds"
 ---
 
-Our [Sage Bank Feeds](/bank-feeds-api/sage-bank-feeds/) integration uses an authorization UI to authenticate an SMB user based on their submitted data connection ID. Your SMB users are represented in Codat as Companies. To learn how this method works, see [SMB user flow: Connect a source bank account to Sage](/bank-feeds-api/sage-bank-feeds/sage-bank-feeds-setup#smb-user-flow-connect-a-source-bank-account-to-sage).
+Our [Sage Bank Feeds](/bank-feeds/sage-bank-feeds/) integration uses an authorization UI to authenticate an SMB user based on their submitted data connection ID. Your SMB users are represented in Codat as Companies. To learn how this method works, see [SMB user flow: Connect a source bank account to Sage](/bank-feeds/sage-bank-feeds/sage-bank-feeds-setup#smb-user-flow-connect-a-source-bank-account-to-sage).
 
 Instead of this UI, your own web app can authenticate SMB users based on the Company and data connection they're linked to. With this method, when a user selects your organization as a bank feeds provider in a Sage product, they're redirected to your web app instead of the Codat authorization UI.
 
@@ -16,7 +16,7 @@ You must have completed the following setup tasks:
 - Create a data connection for the company to the Sage Bank Feeds integration
 - Add one or more source bank accounts to make available to the SMB user
 
-For help with completing these tasks, see [Enable the Sage Bank Feeds integration](/bank-feeds-api/sage-bank-feeds/sage-bank-feeds-setup#enable-the-sage-bank-feeds-integration) and [Create a Company and data connection, then add bank accounts](/bank-feeds-api/sage-bank-feeds/sage-bank-feeds-setup#create-a-company-and-data-connection-then-add-bank-accounts).
+For help with completing these tasks, see [Enable the Sage Bank Feeds integration](/bank-feeds/sage-bank-feeds/sage-bank-feeds-setup#enable-the-sage-bank-feeds-integration) and [Create a Company and data connection, then add bank accounts](/bank-feeds/sage-bank-feeds/sage-bank-feeds-setup#create-a-company-and-data-connection-then-add-bank-accounts).
 
 ## Configure your custom web app as a redirect URL
 
@@ -103,4 +103,4 @@ You must include the "Content-Security-Policy" header with a value of `frame-anc
 
 5. Sage redirects the SMB user to the Sage product from which they began the authentication flow.
 
-You can now use the <a href="https://api.codat.io/swagger/index.html#/Connection/get_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts" target="_blank">GET /bankFeedAccounts</a> endpoint to retrieve the source bank accounts and push bank transactions. For details, see [Use your Sage Bank Feeds integration](/bank-feeds-api/sage-bank-feeds/sage-bank-feeds-use).
+You can now use the <a href="https://api.codat.io/swagger/index.html#/Connection/get_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts" target="_blank">GET /bankFeedAccounts</a> endpoint to retrieve the source bank accounts and push bank transactions. For details, see [Use your Sage Bank Feeds integration](/bank-feeds/sage-bank-feeds/sage-bank-feeds-use).

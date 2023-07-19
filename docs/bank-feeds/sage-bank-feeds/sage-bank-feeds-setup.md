@@ -139,7 +139,7 @@ To connect a source bank account to a target bank account in Sage, your SMB user
 
 :::note
 
-Alternatively, you can [authenticate users through your own web app](/bank-feeds-api/sage-bank-feeds/sage-bank-feeds-authenticate-users-web-app).
+Alternatively, you can [authenticate users through your own web app](/bank-feeds/sage-bank-feeds/sage-bank-feeds-authenticate-users-web-app).
 :::
 
 1. On the **Banking** tab, they locate the bank account to which they want to import bank transactions.
@@ -200,4 +200,4 @@ The endpoint returns a `200` code and the updated bank account details. For exam
 
 ## Next steps
 
-Next you can [push bank transactions from a source bank account](/bank-feeds-api/sage-bank-feeds/sage-bank-feeds-use).
+Next you can [push bank transactions from a source bank account](/bank-feeds/sage-bank-feeds/sage-bank-feeds-use).
