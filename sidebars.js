@@ -13,6 +13,8 @@ const sfe = require("./sidebars/sync-for-expenses");
 const sfp = require("./sidebars/sync-for-payroll");
 const payables = require("./sidebars/payables");
 
+const sfe2 = require("./sidebars/sync-for-expenses-2");
+
 const integrations = require("./sidebars/integrations");
 
 module.exports = {
@@ -337,4 +339,5 @@ module.exports = {
   sfp: sfp,
   payables: payables,
   integrations: integrations,
+  sfe2
 };
