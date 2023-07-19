@@ -10,22 +10,20 @@ sidebar_label: "Implementing a Mapping Page"
 
 If you’re pushing any data using our accounting API or creating a solution with one of the following use cases:
 
--bill pay
+- bill pay
 
--payroll
+- payroll
 
--expense management solution
+- expense management solution
 
--payments 
+- payments 
 
 This guide is also useful if you’re integrating to Xero and want to implement lending write back.
 
 
 ## Why?
 
-Whilst accounting platforms offer a default Chart of Accounts, with pre-defined system accounts to match accounting best practices, users have the ability to rename, renumber and create new accounts.  Mapping the correct accounts for your use case whilst onboarding your customer means you use the correct account specific to your customer's Chart of Accounts and avoids wasting time manually looking through inconsistent accounts across your customer base.
-
-Also, see [Optimizing API calls](/docs/using-the-api/optimizing-api-calls.md) 
+Whilst accounting platforms offer a default Chart of Accounts, with pre-defined system accounts to match accounting best practices, your customers have the ability to rename, renumber and create new accounts.  Mapping the correct accounts for your use case whilst onboarding means you use the correct account specific to your customer's Chart of Accounts and avoids wasting time manually looking through inconsistent accounts across your customer base.
 
 ## What should you consider for your implementation?
 
@@ -47,19 +45,20 @@ You’ll need front end support to create the page and then use the Codat API to
 
         account.id
 
-5. Query the response to display only active, relevant account type needed for your mapping page e.g. `type=income` and `status=active`
+5. Query the response to either
+- display only active, relevant account type needed for your mapping page e.g. `type=income` and `status=active`
 
 ```
 /companies/{{companyId}}/data/accounts?query=status=active&&type=income
 ```
 
-or set defaults for customers e.g. if you are mapping sales revenue, check to see if a “sales” account exists and present it as a suggested account for the customer to confirm   
+-  set defaults for customers, for example, if you are mapping sales revenue, check to see if a “sales” account exists and present it as a suggested account for the customer to confirm   
 
 ```
 /companies/{{companyId}}/data/accounts?query=name~sales
 ```
 
-For use cases where you’re pushing invoices or payments to Xero specifically, ensure that your customer only has the ability to select a bank account which also as the ‘enable payments to account’ option selected - you can do this by calling the [GET/Accounts](/https://docs.codat.io/accounting-api#/operations/list-accounts) endpoint and adding the query isBankAccount=true
+- for use cases where you’re pushing invoices or payments to Xero specifically, ensure that your customer only has the ability to select a bank account which also as the ‘enable payments to account’ option selected - you can do this by calling the [GET/Accounts](/https://docs.codat.io/accounting-api#/operations/list-accounts) endpoint and adding the query `isBankAccount=true`
 
 ```
 /companies/{{companyId}}/data/accounts?query=isBankAccount=true
@@ -79,7 +78,7 @@ Enable [the 'Dataset data changed' webhook](/docs/introduction/webhooks/core-rul
 
 ## Examples
 
-
+![SampleMappingPage](static/img/other-guides/codatmappingpageexample.png)
 
 
 :::
