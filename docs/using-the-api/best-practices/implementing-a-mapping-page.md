@@ -88,21 +88,21 @@ Enable [the 'Dataset data changed' webhook](/docs/introduction/webhooks/core-rul
 ### Manage your Integration UX
 If you have an SMB-facing app, ensure you implement a setup page that allows customers to connect to their accounting software and manage their settings for the integration. Ideally this should be made possible without assistance from your support or onboarding team.
 
--Display the name of the connected business in your UX as it is displayed in the accounting software
+- Display the name of the connected business in your UX as it is displayed in the accounting software
 
--Display the current status of the accounting software connection. If disconnected, provide a button to connect. 
+- Display the current status of the accounting software connection. If disconnected, provide a button to connect. 
 
--Include a button to disconnect the integration. 
+- Include a button to disconnect the integration. 
 
--Handle a disconnection from the accounting software side. If a customer disconnects your app from their accounting software, best practice is to:
+- Handle a disconnection from the accounting software side. If a customer disconnects your app from their accounting software, best practice is to:
 
     1. Create an alert in your platform to ensure the user is aware that their accounting software is not disconnected
 
     2. Guide the user to reconnect
 
--Implement a disconnection process for customers who are off-boarding from your product to ensure you aren’t accessing data beyond what is necessary
+- Implement a disconnection process for customers who are off-boarding from your product to ensure you aren’t accessing data beyond what is necessary
 
--Let users know if an error has taken place in; through error logs or error messages/alerts
+- Let users know if an error has taken place in; through error logs or error messages/alerts
  
 
 [More Xero specific best practices are available here](/https://developer.xero.com/documentation/guides/how-to-guides/integration-best-practices/)
