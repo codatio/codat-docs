@@ -296,6 +296,10 @@ module.exports = {
       from: "/docs/status-codes",
       to: "/using-the-api/errors", //sage
     },
+    {
+      from: "/integrations/accounting/myob/faq-myob-accountright-live",
+      to: "/integrations/accounting/myob/myob-integration-reference", 
+    },
     // --- delete soon
     {
       from: "/assess/guides/loan-qualification/introduction",
