@@ -78,7 +78,8 @@ Enable [the 'Dataset data changed' webhook](/docs/introduction/webhooks/core-rul
 
 ## Examples
 
-![SampleMappingPage](static/img/other-guides/codatmappingpageexample.png)
+![SampleMappingPage](/img/other-guides/codatmappingpageexample.png)
+
 
 
 :::
