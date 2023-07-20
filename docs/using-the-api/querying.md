@@ -240,6 +240,43 @@ var info = response.Data;
 </TabItem>
 </Tabs>
 
+### Invoices deleted in the source platform
+
+Query: `metadata.isDeleted!=true`
+
+Codat identifies records that have been deleted in the source accounting platform between successive data syncs using the `isDeleted` flag. You may need to exclude these records from the results.
+
+<Tabs>
+<TabItem value="http" label="HTTP">
+
+```http
+GET /companies/{companyId}/data/invoices?metadata.isDeleted%21%3dtrue
+```
+
+</TabItem>
+<TabItem value="javascript" label="Javascript">
+
+```javascript
+import {InvoicesQuery} from 'codat-queries';
+import { api as codat } from 'codat';
+
+var query = new InvoicesQuery(companyId, 'metadata.isDeleted!=true')
+.run(codat.uat(apiKey));
+```
+</TabItem>
+<TabItem value="c" label="C#">
+
+```c
+var request = new RestRequest("companies/{companyId}/data/invoices", Method.GET);
+request.AddUrlSegment("companyId", companyId);
+request.AddUrlSegment("query", "metadata.isDeleted!=true");
+request.AddHeader("Authorization", $"Basic {encodedApiKey}");
+var response = client.Execute(request);
+var info = response.Data;
+```
+</TabItem>
+</Tabs>
+
 ### Companies with "Pending" status connections
   
 Query: `dataConnections.status=PendingAuth`
@@ -265,7 +302,6 @@ var info = response.Data;
 ```
 </TabItem>
 </Tabs>
-
   
 ## Queries that won't work
 
