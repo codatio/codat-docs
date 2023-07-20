@@ -325,8 +325,8 @@ module.exports = {
       to: "/configure/portal/companies",
     },
     {
-      from: "/other/portal/dashboard.",
-      to: "/configure/portal/dashboard.",
+      from: "/other/portal/dashboard",
+      to: "/configure/portal/dashboard",
     },
     {
       from: "/other/portal/developers",
