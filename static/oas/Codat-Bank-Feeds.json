@@ -808,6 +808,57 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         }
+      },
+      "delete": {
+        "tags": [
+          "Bank feed accounts"
+        ],
+        "summary": "delete bank feed bank account",
+        "description": "The *delete bank feed bank account* endpoint enables you to remove a source account.\n\nRemoving a source account will also remove any mapping between the source bank feed bank accounts and the target bankfeed bank account.",
+        "operationId": "delete-bank-feed-bank-account",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          },
+          {
+            "$ref": "#/components/parameters/accountId"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BankFeedAccount"
+              },
+              "examples": {}
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PushOperation"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
       }
     },
     "/companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts": {
@@ -971,8 +1022,7 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BankFeedMapping"
-                },
-                "examples": {}
+                }
               }
             }
           },
@@ -7129,17 +7179,17 @@
         "properties": {
           "sourceAccountId": {
             "type": "string",
-            "description": "Unique ID for the source account"
+            "description": "Unique ID for the source account."
           },
           "targetAccountId": {
             "type": "string",
             "nullable": true,
-            "description": "Unique ID for the target account"
+            "description": "Unique ID for the target account."
           },
           "Status": {
             "type": "string",
             "nullable": true,
-            "description": "Status of the POST request"
+            "description": "Status of the POST request."
           },
           "Error": {
             "type": "string",
@@ -7221,6 +7271,21 @@
                 "type": "string",
                 "nullable": true,
                 "description": "Name of the target account."
+              },
+              "balance": {
+                "type": "number",
+                "nullable": true,
+                "description": "The balance of the account."
+              },
+              "sortCode": {
+                "type": "string",
+                "nullable": true,
+                "description": "The sort code of the account."
+              },
+              "accountNumber": {
+                "type": "string",
+                "nullable": true,
+                "description": "The account number of the account."
               }
             }
           }
@@ -7238,18 +7303,21 @@
             "targetAccountName": "ACME Bank"
           },
           {
-            "sourceAccountId": "acc-003",
-            "sourceCurrency": "GBP",
-            "status": "Success",
-            "targetAccountOptions": {
-              "name": "target-Account",
-              "id": "account-085"
-            },
-            "sourceAccountName": "Clerkenwell Bank",
-            "sourceAccountNumber": "5432-1457",
-            "sourceBalance": 150,
-            "targetAccountName": "Clerkenwell Bank",
-            "feedStartDate": "2022-03-05T14:14:14.1057478Z"
+            "sourceAccountId": "c53fd75a-dddb-4493-839a-5090b008f625",
+            "status": "pending",
+            "targetAccountOptions": [
+              {
+                "name": "account-081",
+                "id": "044096a7-1478-4554-8820-f478caad1b00",
+                "balance": 100.99,
+                "sortCode": "602336",
+                "accountNumber": "23203"
+              }
+            ],
+            "sourceAccountName": "bank name here",
+            "sourceAccountNumber": "5670",
+            "sourceBalance": 1550,
+            "sourceCurrency": "GBP"
           }
         ]
       },
