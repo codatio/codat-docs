@@ -62,7 +62,7 @@ If you try to queue a synchronization for a data type that is already in process
 ```
 :::
 
-Refreshing data can take different amounts of time depending on the integration and the amount of data being retrieved. You can use [webhooks](/introduction/webhooks/core-rules-types) to be updated when the operation completes.
+Refreshing data can take different amounts of time depending on the integration and the amount of data being retrieved. You can use [webhooks](/using-the-api/webhooks/core-rules-types) to be updated when the operation completes.
 
 ### Records deleted between syncs
 

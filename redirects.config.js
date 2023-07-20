@@ -275,6 +275,84 @@ module.exports = {
       from: "/introduction/migration",
       to: "/get-started/migration",
     },
+    // config, other, etc.
+    {
+      from: "/introduction/change-policy",
+      to: "/using-the-api/change-policy",
+    },
+    {
+      from: "/introduction/create-account",
+      to: "/configure/create-account",
+    },
+    {
+      from: "/introduction/testing",
+      to: "/using-the-api/testing",
+    },
+    {
+      from: "/introduction/webhooks/core-rules-create",
+      to: "/using-the-api/webhooks/core-rules-create",
+    },
+    {
+      from: "/introduction/webhooks/core-rules-types",
+      to: "/using-the-api/webhooks/core-rules-types",
+    },
+    {
+      from: "/introduction/webhooks/core-rules-webhooks",
+      to: "/using-the-api/webhooks/core-rules-webhooks",
+    },
+    {
+      from: "/introduction/webhooks/core-rules-webhooksecurity",
+      to: "/using-the-api/webhooks/core-rules-webhooksecurity",
+    },
+    {
+      from: "/introduction/webhooks/receive-webhooks-as-email",
+      to: "/using-the-api/webhooks/receive-webhooks-as-email",
+    },
+    {
+      from: "/other/cochat",
+      to: "/cochat",
+    },
+    {
+      from: "/other/file-upload",
+      to: "/integrations/file-upload",
+    },
+    {
+      from: "/other/portal/account-management",
+      to: "/configure/portal/account-management",
+    },
+    {
+      from: "/other/portal/companies",
+      to: "/configure/portal/companies",
+    },
+    {
+      from: "/other/portal/dashboard",
+      to: "/configure/portal/dashboard",
+    },
+    {
+      from: "/other/portal/developers",
+      to: "/configure/portal/developers",
+    },
+    {
+      from: "/other/portal/pull-and-push-history",
+      to: "/configure/portal/pull-and-push-history",
+    },
+    {
+      from: "/other/portal/usage-and-billing",
+      to: "/configure/portal/usage-and-billing",
+    },
+    {
+      from: "/other/user-management/adding-users",
+      to: "/configure/user-management/adding-users",
+    },
+    {
+      from: "/other/user-management/sso",
+      to: "/configure/user-management/sso",
+    },
+    {
+      from: "/other/user-management/user-roles",
+      to: "/configure/user-management/user-roles",
+    },
+
     //
     {
       from: "/assess/guides/underwriting/introduction",

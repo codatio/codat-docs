@@ -30,7 +30,7 @@ We recommend that you populate the name value with the ID that you use for the m
    - `companyId`, because you will need it for directing your customers to Link and managing their connections;
    - `redirect` URL value, because you will use this URL in your app to direct the customer to start their Link journey.
 
-Once your customer finishes the Link flow, they will be redirected back to the URL you have set in the [Link settings](/auth-flow/customize/set-up-redirects). You can also present your customer with a confirmation screen that shows [the integrations they have set up](introduction/webhooks/core-rules-types#company-data-connection-status-changed).
+Once your customer finishes the Link flow, they will be redirected back to the URL you have set in the [Link settings](/auth-flow/customize/set-up-redirects). You can also present your customer with a confirmation screen that shows [the integrations they have set up](using-the-api/webhooks/core-rules-types#company-data-connection-status-changed).
 
 Review the parameters in the example response to creating a new company:
 
@@ -74,7 +74,7 @@ Use the Hosted Link URL if your customer connection is meant to be persistent, a
 
 If this is a new user:
 
-1. Create a [company via Portal](/other/portal/companies#add-a-new-company) for your customer.
+1. Create a [company via Portal](/configure/portal/companies#add-a-new-company) for your customer.
 2. Navigate to the **Companies** page in Portal.
 3. Find the company that you created for the customer, and click **Request data** next to the company name.
 4. Copy the Link URL from the box that appears and share it with the customer. This will allow the customer to create and authorize a data connection.

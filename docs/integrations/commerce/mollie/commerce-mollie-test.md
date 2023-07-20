@@ -73,7 +73,7 @@ Data is only available where:
 - You've [created test data](#create-some-data-in-mollie)
 :::
 
-Now that you have tested the integration and reviewed sample data, you can [create your first live company](/other/portal/companies#add-a-new-company).
+Now that you have tested the integration and reviewed sample data, you can [create your first live company](/configure/portal/companies#add-a-new-company).
 
 ---
 

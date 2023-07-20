@@ -62,7 +62,7 @@ description: "Take your first steps through the information and support availabl
       </a>, our beta AI tool trained on the Codat docs. Try {" "}
       <a href="https://cochat.codat.io" target="_blank">asking it a question</a>
       {" or "}
-      <a href="/other/cochat">read more</a>.
+      <a href="/cochat">read more</a>.
     </p>
   </li>
 </ul>

@@ -20,7 +20,7 @@ Before sending Link URLs to your SMB customers, we recommend you test your integ
    </a>
    ; for example, invoices.
 
-3. [Create a test company](/other/portal/companies#add-a-new-company) in the Codat Portal.
+3. [Create a test company](/configure/portal/companies#add-a-new-company) in the Codat Portal.
 
 4. Locate your test company, then click **Request data**.
 
