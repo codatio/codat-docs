@@ -89,9 +89,6 @@ const sdk = new CodatAccounting({
 
 sdk.invoices.list({
   companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
-  orderBy: "-modifiedDate",
-  page: 1,
-  pageSize: 100,
   query: "amountDue>0",
 }).then((res: ListInvoicesResponse) => {
   if (res.statusCode == 200) {
@@ -139,9 +136,6 @@ const sdk = new CodatAccounting({
 
 sdk.invoices.list({
   companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
-  orderBy: "-modifiedDate",
-  page: 1,
-  pageSize: 100,
   query: "currency=GBP",
 }).then((res: ListInvoicesResponse) => {
   if (res.statusCode == 200) {
@@ -189,9 +183,6 @@ const sdk = new CodatAccounting({
 
 sdk.invoices.list({
   companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
-  orderBy: "-modifiedDate",
-  page: 1,
-  pageSize: 100,
   query: "customerRef.id=61",
 }).then((res: ListInvoicesResponse) => {
   if (res.statusCode == 200) {
@@ -239,9 +230,6 @@ const sdk = new CodatAccounting({
 
 sdk.invoices.list({
   companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
-  orderBy: "-modifiedDate",
-  page: 1,
-  pageSize: 100,
   query: "amountDue>0&&totalAmount<1000",
 }).then((res: ListInvoicesResponse) => {
   if (res.statusCode == 200) {
@@ -292,9 +280,6 @@ const sdk = new CodatAccounting({
 
 sdk.invoices.list({
   companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
-  orderBy: "-modifiedDate",
-  page: 1,
-  pageSize: 100,
   query: "dueDate>2021-01-28",
 }).then((res: ListInvoicesResponse) => {
   if (res.statusCode == 200) {
@@ -345,9 +330,6 @@ const sdk = new CodatAccounting({
 
 sdk.invoices.list({
   companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
-  orderBy: "-modifiedDate",
-  page: 1,
-  pageSize: 100,
   query: "metadata.isDeleted!=true",
 }).then((res: ListInvoicesResponse) => {
   if (res.statusCode == 200) {
