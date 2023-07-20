@@ -65,8 +65,8 @@ This query retrieves invoices with issue dates that are greater than twelve mont
 ### 💡 Tips and traps
 
 - The `sourceModifiedDate` may not be populated and returned as `null` when:
-  - Pulling attachments, balance sheets, company information, or profit & loss reports
-  - The integration platform does not provide modification date information for a given data type
+  - Pulling attachments.
+  - The integration platform does not provide modification date information for a given data type.
   - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred.
   - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records.
       - For accounting data types, you can identify if a record has been deleted between two successive syncs by [querying](/using-the-api/querying) on the `metadata.isDeleted!=true` flag.
