@@ -78,11 +78,23 @@ GET /companies/{companyId}/data/invoices?query=amountDue%3e0
 <TabItem value="javascript" label="Javascript">
 
 ```javascript
-import {InvoicesQuery} from 'codat-queries';
-import { api as codat } from 'codat';
+import { CodatAccounting } from "@codat/accounting";
+import { ListInvoicesResponse } from "@codat/accounting/dist/sdk/models/operations";
 
-var query = new InvoicesQuery(companyId, 'amountDue>0')
-.run(codat.uat(apiKey));
+const sdk = new CodatAccounting({
+  security: {
+    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  },
+});
+
+sdk.invoices.list({
+  companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
+  query: "amountDue>0",
+}).then((res: ListInvoicesResponse) => {
+  if (res.statusCode == 200) {
+    // handle response
+  }
+});
 ```
 </TabItem>
 <TabItem value="c" label="C#">
@@ -113,11 +125,23 @@ GET /companies/{companyId}/data/invoices?query=currency%3dGBP
 <TabItem value="javascript" label="Javascript">
 
 ```javascript
-import {InvoicesQuery} from 'codat-queries';
-import { api as codat } from 'codat';
+import { CodatAccounting } from "@codat/accounting";
+import { ListInvoicesResponse } from "@codat/accounting/dist/sdk/models/operations";
 
-var query = new InvoicesQuery(companyId, 'currency=GBP')
-.run(codat.uat(apiKey));
+const sdk = new CodatAccounting({
+  security: {
+    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  },
+});
+
+sdk.invoices.list({
+  companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
+  query: "currency=GBP",
+}).then((res: ListInvoicesResponse) => {
+  if (res.statusCode == 200) {
+    // handle response
+  }
+});
 ```
 </TabItem>
 <TabItem value="c" label="C#">
@@ -148,11 +172,23 @@ GET /companies/{companyId}/data/invoices?query=customerRef.id%3d61
 <TabItem value="javascript" label="Javascript">
 
 ```javascript
-import {InvoicesQuery} from 'codat-queries';
-import { api as codat } from 'codat';
+import { CodatAccounting } from "@codat/accounting";
+import { ListInvoicesResponse } from "@codat/accounting/dist/sdk/models/operations";
 
-var query = new InvoicesQuery(companyId, 'customerRef.id=61')
-.run(codat.uat(apiKey));
+const sdk = new CodatAccounting({
+  security: {
+    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  },
+});
+
+sdk.invoices.list({
+  companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
+  query: "customerRef.id=61",
+}).then((res: ListInvoicesResponse) => {
+  if (res.statusCode == 200) {
+    // handle response
+  }
+});
 ```
 </TabItem>
 <TabItem value="c" label="C#">
@@ -183,11 +219,24 @@ GET /companies/{companyId}/data/invoices?query=amountDue%3e0%26%26totalAmount%3c
 <TabItem value="javascript" label="Javascript">
 
 ```javascript
-import {InvoicesQuery} from 'codat-queries';
-import { api as codat } from 'codat';
+import { CodatAccounting } from "@codat/accounting";
+import { ListInvoicesResponse } from "@codat/accounting/dist/sdk/models/operations";
 
-var query = new InvoicesQuery(companyId, 'amountDue>0&&totalAmount<1000')
-.run(codat.uat(apiKey));
+const sdk = new CodatAccounting({
+  security: {
+    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  },
+});
+
+sdk.invoices.list({
+  companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
+  query: "amountDue>0&&totalAmount<1000",
+}).then((res: ListInvoicesResponse) => {
+  if (res.statusCode == 200) {
+    // handle response
+  }
+});
+
 ```
 </TabItem>
 <TabItem value="c" label="C#">
@@ -220,11 +269,24 @@ GET /companies/{companyId}/data/invoices?query=dueDate%3E2021-01-28
 <TabItem value="javascript" label="Javascript">
 
 ```javascript
-import {InvoicesQuery} from 'codat-queries';
-import { api as codat } from 'codat';
+import { CodatAccounting } from "@codat/accounting";
+import { ListInvoicesResponse } from "@codat/accounting/dist/sdk/models/operations";
 
-var query = new InvoicesQuery(companyId,'dueDate>2021-01-28')
-.run(codat.uat(apiKey));
+const sdk = new CodatAccounting({
+  security: {
+    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  },
+});
+
+sdk.invoices.list({
+  companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
+  query: "dueDate>2021-01-28",
+}).then((res: ListInvoicesResponse) => {
+  if (res.statusCode == 200) {
+    // handle response
+  }
+});
+
 ```
 </TabItem>
 <TabItem value="c" label="C#">
@@ -257,11 +319,23 @@ GET /companies/{companyId}/data/invoices?metadata.isDeleted%21%3dtrue
 <TabItem value="javascript" label="Javascript">
 
 ```javascript
-import {InvoicesQuery} from 'codat-queries';
-import { api as codat } from 'codat';
+import { CodatAccounting } from "@codat/accounting";
+import { ListInvoicesResponse } from "@codat/accounting/dist/sdk/models/operations";
 
-var query = new InvoicesQuery(companyId, 'metadata.isDeleted!=true')
-.run(codat.uat(apiKey));
+const sdk = new CodatAccounting({
+  security: {
+    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  },
+});
+
+sdk.invoices.list({
+  companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
+  query: "metadata.isDeleted!=true",
+}).then((res: ListInvoicesResponse) => {
+  if (res.statusCode == 200) {
+    // handle response
+  }
+});
 ```
 </TabItem>
 <TabItem value="c" label="C#">
