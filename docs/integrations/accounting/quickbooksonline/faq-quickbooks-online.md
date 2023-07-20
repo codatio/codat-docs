@@ -59,3 +59,8 @@ Intuit only make Purchase Orders available on paid QuickBooks Online subscriptio
 ## Tracking categories
 
 In Codat, QBO's "classes" and "locations" are mapped to [tracking categories](/accounting-api#/schemas/trackingcategories).
+
+## Are QuickBooks tags supported?
+
+In QuickBooks Online, you can use free text tags to track your transactions and gain additional insights. However, QBO does not surface these tags via their API, so they are not available in Codat.
+
