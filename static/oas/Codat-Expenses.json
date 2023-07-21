@@ -1100,7 +1100,7 @@
         }
       },
       "AccountMappingInfo": {
-        "title": "Account mapping info.",
+        "title": "Account mapping info",
         "type": "object",
         "additionalProperties": false,
         "x-examples": {
@@ -1283,7 +1283,7 @@
         }
       },
       "TaxRateMappingInfo": {
-        "title": "Tax rate mapping info.",
+        "title": "Tax rate mapping info",
         "type": "object",
         "additionalProperties": false,
         "x-examples": {
@@ -1352,7 +1352,7 @@
         }
       },
       "TrackingCategoryMappingInfo": {
-        "title": "Tracking category mapping info.",
+        "title": "Tracking category mapping info",
         "type": "object",
         "additionalProperties": false,
         "x-examples": {
