@@ -36334,11 +36334,9 @@
       },
       "Account": {
         "title": "Account",
-        "description": "> **Language tip:** Accounts are also referred to as **chart of accounts**, **nominal accounts**, and **general ledger**.\n\nView the coverage for accounts in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nAccounts are the categories a business uses to record accounting transactions. From the Accounts endpoints, you can retrieve a list of all accounts for a specified company. \n\nThe categories for an account include:\n  * Asset\n  * Expense\n  * Income\n  * Liability\n  * Equity.\n\n> **Accounts with no category**\n> \n> If an account is pulled from the chart of accounts and its nominal code does not lie within the category layout for the company's accounts, then the **type** is `Unknown`. The **fullyQualifiedCategory** and **fullyQualifiedName** fields return `null`.\n> \n> This approach gives a true representation of the company's accounts whilst preventing distorting financials such as a company's profit and loss and balance sheet reports.",
-        "type": "object",
+        "description": "> **Language tip:** Accounts are also referred to as **chart of accounts**, **nominal accounts**, and **general ledger**.\n\nView the coverage for accounts in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nAccounts are the categories a business uses to record accounting transactions. From the Accounts endpoints, you can retrieve a list of all accounts for a specified company. \n\nThe categories for an account include:\n  * Asset\n  * Expense\n  * Income\n  * Liability\n  * Equity.\n\nThe same account may have a different category based on the integration it is used in. For example, a current account (known as checking in the US) should be categorized as `Asset.Current` for Xero, and `Asset.Bank.Checking` for QuickBooks Online. \n\nAt the same time, each integration may have its own requirements to the categories. For example, a Paypal account in Xero is of the `Asset.Bank` category and therefore requires additional properties to be provided. \n\nTo determine the list of allowed categories for a specific integration, you can: \n- Follow our [Create, update, delete data](https://docs.codat.io/using-the-api/push) guide and use the [Get create account model](https://docs.codat.io/accounting-api#/operations/get-create-chartOfAccounts-model).\n- Refer to the integration's own documentation. \n\n> **Accounts with no category**\n> \n> If an account is pulled from the chart of accounts and its nominal code does not lie within the category layout for the company's accounts, then the **type** is `Unknown`. The **fullyQualifiedCategory** and **fullyQualifiedName** fields return `null`.\n> \n> This approach gives a true representation of the company's accounts whilst preventing distorting financials such as a company's profit and loss and balance sheet reports.",
         "allOf": [
           {
-            "type": "object",
             "properties": {
               "id": {
                 "type": "string",
@@ -36366,14 +36364,17 @@
               "fullyQualifiedCategory": {
                 "type": "string",
                 "nullable": true,
-                "description": "Full category of the account. For example:\nLiability.Current or Income.Revenue. See example data.",
+                "description": "Full category of the account. \r\n\r\nFor example, `Liability.Current` or `Income.Revenue`. To determine a list of possible categories for each integration, see our examples, follow our [Create, update, delete data](https://docs.codat.io/using-the-api/push) guide, or refer to the integration's own documentation.",
                 "example": "Asset.Current"
               },
               "fullyQualifiedName": {
                 "type": "string",
                 "nullable": true,
-                "description": "Full name of the account, for example:\n- `Liability.Current.VAT`\n- `Income.Revenue.Sales`",
-                "example": "Asset.Current.Accounts Receivable"
+                "description": "Full name of the account, for example:\n- `Cash On Hand`\n- `Rents Held In Trust`\n- `Fixed Asset`",
+                "examples": [
+                  "Cash On Hand",
+                  "Fixed Asset"
+                ]
               },
               "currency": {
                 "$ref": "#/components/schemas/Bill/allOf/0/properties/currency"
@@ -36410,11 +36411,6 @@
           {
             "$ref": "#/components/schemas/ModifiedDates"
           }
-        ],
-        "required": [
-          "type",
-          "status",
-          "isBankAccount"
         ],
         "definitions": {
           "accountRef": {
@@ -36458,7 +36454,8 @@
             "description": "Status of the account",
             "example": "Active"
           }
-        }
+        },
+        "type": "object"
       },
       "Accounts": {
         "x-internal": true,
