@@ -81,6 +81,30 @@ Implementation period, covering Implementation Specialists and associated resour
 
 </TabItem>
 
+<TabItem value="sfe" label="Sync for Expenses">
+
+#### Functionality
+
+- Expense Sync
+- Sync Flow UI
+- Config API
+
+#### Data sources
+
+- Accounting
+
+#### Supported integrations
+
+Xero, Quickbooks Online, NetSuite, Microsoft Dynamics 365
+
+#### Accounting data types
+
+- Accounts
+- Customers
+- Suppliers
+
+</TabItem>
+
 <TabItem value="accounting-api" label="Accounting API">
 
 #### Functionality
@@ -153,13 +177,6 @@ Security features relevant for larger enterprises
 - Enterprise SSO
 - Mutual TLS
 - IP Filtering
-- `COMING SOON` Bring Your Own Key (BYOK)
-- `COMING SOON` Audit Logs Access
-
-### Other Enterprise product add-ons
-
-- `COMING SOON` Higher rate limits
-- `COMING SOON` Company Cohorts
 
 ---
 
