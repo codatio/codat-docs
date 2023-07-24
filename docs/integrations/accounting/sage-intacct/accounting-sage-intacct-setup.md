@@ -10,6 +10,12 @@ Codat's enterprise clients can use our partner credentials to enable the integra
 
 If you would like to enable our integration with Sage Intacct, please contact your Solutions Engineer to gain access to partner credentials for your instance and to discuss the process of [becoming a Sage Intacct partner](https://marketplace.intacct.com/BecomeAPartner).
 
+<div className="card">
+  <h3>✨ Premium</h3>
+
+  <p>This is only available add a premium add-on on our <a href="/configure/create-account">enterprise plans</a>.</p>
+</div>
+
 :::note Entity Level access required
 
 _Entity Level access_ must be enabled in Sage Intacct before a company can connect to the integration.

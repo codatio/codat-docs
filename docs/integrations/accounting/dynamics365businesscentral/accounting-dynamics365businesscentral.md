@@ -9,6 +9,13 @@ Synchronize accounting data with <a className="external" href="https://dynamics.
 
 Business Central is a cloud-based business management solution that allows SMBs to manage their accounting processes, financial performance, supply chain, sales and marketing processes, and project delivery within a single application.
 
+
+<div className="card">
+  <h3>✨ Premium</h3>
+
+  <p>This is only available add a premium add-on on our <a href="/configure/create-account">enterprise plans</a>.</p>
+</div>
+
 ## Data type coverage
 
 View the coverage of our Business Central integration in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=trji" target="_blank">Data coverage explorer</a>.
