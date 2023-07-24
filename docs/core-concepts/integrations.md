@@ -7,6 +7,8 @@ tags:
 
 In Codat, an integration represents a third-party data source that you can connect a [company](/core-concepts/companies) to (using a [data connection](/core-concepts/connections)) so that you can access that company's business data.
 
+You can connect a company to a single accounting source and a single bank feeds source, and multiple commerce and banking platforms. 
+
 [Explore integration coverage  →](https://knowledge.codat.io/supported-features/accounting).
 
 ## Integration categories
@@ -69,7 +71,7 @@ In Codat, an integration represents a third-party data source that you can conne
       Allow accounting software users to easily reconcile bank transactions against accounting entries for our bank feeds integrations.
     </p>
     <p>
-      <a href="/integrations/bankfeeds/overview">see our Bank feeds integrations →</a>
+      <a href="/integrations/bankfeeds/overview">See our Bank feeds integrations →</a>
     </p>    
   </li>
   <li className="card">
