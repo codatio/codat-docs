@@ -1,8 +1,6 @@
 ---
 title: "Rule types"
 description: "Use webhooks to build responsive and resilient applications on Codat data."
-createdAt: "2021-02-23T13:11:28.821Z"
-updatedAt: "2022-11-17T19:29:19.748Z"
 ---
 
 The following rules can be configured in the Codat Portal to trigger webhook events. These can be use to help your respond to changes in your companies and their data.
@@ -10,9 +8,9 @@ The following rules can be configured in the Codat Portal to trigger webhook eve
 | Rule name | Trigger | Additional data | 
 | :- | :- | :- |
 | [Company data connection status changed](/using-the-api/webhooks/core-rules-types#company-data-connection-status-changed)  | A data connection's status changes. | `dataConnectionId`, `platformKey`, `newStatus`, `oldStatus` |
-| [New company synchronized](/using-the-api/webhooks/core-rules-types#new-company-synchronized)                | After the first dataType is successfully synced for a new company. | |
-| [Data sync completed](/using-the-api/webhooks/core-rules-types#data-sync-completed)                     | Data synchronization is completed; a notification will be generated for each `dataType` as the sync completes. | `dataType`, `datasetId` |
-| [Dataset data changed](/using-the-api/webhooks/core-rules-types#dataset-data-changed)                    | A dataset synchronization has completed and this has resulted in updates within Codat's data cache - this could be through the creation of new records or a change to existing records. | `dataType`, `datasetId` |
+| [New company synchronized](/using-the-api/webhooks/core-rules-types#new-company-synchronized)                | The first dataType is successfully synced for a new company. | |
+| [Data sync completed](/using-the-api/webhooks/core-rules-types#data-sync-completed)                     | Data synchronization is completed. A notification is generated for each `dataType` as the sync completes. | `dataType`, `datasetId` |
+| [Dataset data changed](/using-the-api/webhooks/core-rules-types#dataset-data-changed)                    | A dataset synchronization has completed and updated Codat's data cache through the creation of new records or a change to existing records. A notification is generated for each `dataType` as the sync completes. | `dataType`, `datasetId` |
 | [Dataset status has changed to an error state](/using-the-api/webhooks/core-rules-types#dataset-status-has-changed-to-an-error-state) | The synchronization of a dataset fails. | `dataType`, `datasetStatus`, `datasetId` | 
 | [Push operation status has changed](/using-the-api/webhooks/core-rules-types#push-operation-status-has-changed)       | A push operation's status changes. | `dataType`, `status`, `pushOperationKey` |
 | [Push operation has timed out](/using-the-api/webhooks/core-rules-types#push-operation-has-timed-out)            | A push operation times out. |  `dataType`, `pushOperationGuid` |
@@ -167,7 +165,7 @@ In line with industry standard security practices, we have removed personally id
 
 ### Account categories updated
 
-**Rule type:** `account-categories-updated`
+**Rule type:** `account-categories-updated`  
 **Trigger:** Anytime that Codat updates the `suggested` fields or a user updates the `confirmed` fields.  
 **Additional data:** `modifiedDate`.
 
@@ -190,7 +188,6 @@ In line with industry standard security practices, we have removed personally id
 ### Sync Connection Deleted
 
 **Trigger:** A Sync for Commerce connection is deleted.
-
 **Note:** This rule is specific to Sync for Commerce and cannot be used for other products.
 
 ```json
