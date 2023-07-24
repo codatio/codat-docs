@@ -12,7 +12,7 @@ The order status is not available in Orders pulled from BigCommerce. You can rev
 
 :::note Transaction limit on orders
 
-Orders containing more than 250 transactions (payments), are unable to to be fetched for our commerce-payments or commerce-orders datatypes correctly due to limitations of BigCommerce's API.
+Orders with more than 250 transactions (payments) cannot be fetched correctly for our `commerce-payments` or `commerce-orders` data types due to the limitations of BigCommerce's API.
 :::
 
 ## Payments methods
