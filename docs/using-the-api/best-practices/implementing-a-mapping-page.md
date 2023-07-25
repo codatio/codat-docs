@@ -37,7 +37,7 @@ WHY CHANGED, NOT COMPLETE? what we are trying to say is - fetch accounts on firs
 
     * Display only active accounts of relevant account type needed for your mapping page, such as `type=income` and `status=active`.  
     ```
-    /companies/{{companyId}}/data/accounts?query=status=active&&type=income
+    /companies/{{companyId}}/data/accounts?query=status%3dactive&&type%3dincome
     ```
     * Set defaults for customers. For example, if you are mapping sales revenue, check if a “Sales” account exists and present it as a suggestion.  
     ```
