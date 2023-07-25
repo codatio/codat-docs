@@ -46,11 +46,9 @@ This returns any accounts for the given `companyId` that were added or updated i
 
 ## Optimising by use case
 
-Only pull the required dataTypes for your use case.  As part of your implementation, it's worth checking which [dataTypes are needed for your use case](/docs/usecases/overview.md), rather than pulling all. 
+As part of your implementation, check which [data types are relevant to your use case](/usecases/overview), and focus on pulling only those data types. You can also use query parameters to further filter down the number of results by use case when calling to our API. 
 
-### Querying for a use case
-
-Where possible, use query parameters to filter down the number of results when calling to our API. This allows you to minimise the number of API calls and the volume of data returned. As a result, this speeds up your system, returns the data faster, and improves your user experience. 
+These approaches allow you to minimise the number of API calls and the volume of data returned. As a result, this speeds up your system, returns the data faster, and improves your user experience. 
 
 :::tip Querying for a use case: example
 

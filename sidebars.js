@@ -217,6 +217,14 @@ module.exports = {
         },
         {
           type: "category",
+          label: "Best practices",
+          collapsed: true,
+          items: [
+            "using-the-api/best-practices/implementing-a-mapping-page",
+          ],
+        },
+        {
+          type: "category",
           label: "Troubleshooting",
           collapsed: true,
           items: [

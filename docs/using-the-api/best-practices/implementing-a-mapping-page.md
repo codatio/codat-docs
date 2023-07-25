@@ -1,109 +1,72 @@
 ---
-
-title: "Implementing a Mapping Page"
-description: "How to push data to inconsistent Chart of Accounts across your user base"
-sidebar_label: "Implementing a Mapping Page"
-
+title: "Implementing an account mapping user interface"
+description: "Tips and advice on managing inconsistent Accounts across your user base's accounting software"
+sidebar_label: "Account mapping user interface"
 ---
 
-## When would you need a mapping page?
+Accounting platforms that your customers use normally offer them a default chart of accounts, pre-defined to match accounting best practices. Your customers then have the ability to rename and renumber these accounts, or create new ones, to match their business needs. This results in discrepancies of the accounts list across your customer base. To manage that and use accounts specific to your customers, provide your customers with an **account mapping user interface**. 
 
-If you’re pushing any data using our accounting API or creating a solution with one of the following use cases:
+An account mapping page is particularly helpful if you are:
+* Creating or updating data with our Accounting API.
+* Creating a solution for Bill pay, Payroll, Expense management or Payments use cases.
+* Implementing lending writeback in your Xero integration.
 
-- bill pay
+## Implementation guidance
 
-- payroll
+First, obtain front-end support to create the account mapping page. We recommend including it in your customer onboarding. As soon as the initial accounting data sync is complete, present the suggested mapping on the page and ask your customers to review it and change it where appropriate, or ask them to perform the mapping themselves.
 
-- expense management solution
-
-- payments 
-
-This guide is also useful if you’re integrating to Xero and want to implement lending write back.
-
-
-## Why?
-
-Whilst accounting platforms offer a default Chart of Accounts, with pre-defined system accounts to match accounting best practices, your customers have the ability to rename, renumber and create new accounts.  Mapping the correct accounts for your use case whilst onboarding means you use the correct account specific to your customer's Chart of Accounts and avoids wasting time manually looking through inconsistent accounts across your customer base.
-
-## What should you consider for your implementation?
-
-These requirements should be factored into your solution design from the start of Codat implementation, even if Xero is not the first integration they want to go live with, to avoid wasting developer time rebuilding features later on.
-
-It’s best to implement this mapping page as part of your customer onboarding.  As soon as the first fetch of data from the accounting platform has completed, you can present your suggested mappings or ask your customers to select the appropriate account in a mapping/config page.  
-
-You’ll need front end support to create the page and then use the Codat API to:
-
-1. Enable the Chart of Accounts data type either in the Codat portal > Settings > Integrations > Data Types and check ‘Fetch on First Link’ or alternatively use the API using this guide
-
-2. Enable [the 'Dataset data changed' webhook](/docs/introduction/webhooks/core-rules-types.md) to listen to change in underlying Accounts data 
-
-3. On receipt of an alert, queue a sync using [GET/Accounts](/https://docs.codat.io/accounting-api#/operations/list-accounts)
-
-4. Use the response from the [GET/Accounts](/https://docs.codat.io/accounting-api#/operations/list-accounts) data type to display these fields in a drop down box for the customer to select from:
-
-        account.name
-
-        account.id
-
-5. Query the response to either
-- display only active, relevant account type needed for your mapping page e.g. `type=income` and `status=active`
-
-```
-/companies/{{companyId}}/data/accounts?query=status=active&&type=income
-```
-
--  set defaults for customers, for example, if you are mapping sales revenue, check to see if a “sales” account exists and present it as a suggested account for the customer to confirm   
-
-```
-/companies/{{companyId}}/data/accounts?query=name~sales
-```
-
-- for use cases where you’re pushing invoices or payments to Xero specifically, ensure that your customer only has the ability to select a bank account which also as the ‘enable payments to account’ option selected - you can do this by calling the [GET/Accounts](/https://docs.codat.io/accounting-api#/operations/list-accounts) endpoint and adding the query `isBankAccount=true`
-
-```
-/companies/{{companyId}}/data/accounts?query=isBankAccount=true
-```
- 
-6.  If no relevant account exists, you can offer your customer to create one using [POST/Accounts](/https://docs.codat.io/accounting-api#/operations/create-account) - this will involve UI to support additional steps such as user populating the required fields, depending on the accounting platform 
-
- Also, use our Get model endpoints - [Push/Options](/https://docs.codat.io/codat-api#/operations/get-create-update-model-options-by-data-type)- to understand the required fields by platform.
-
-Once created and your mapping/config page published, you’ll need to continually validate account mappings.  Customers may continue to modify their chart of accounts after they’ve set up your integration. A best practice is to validate the customer's account mappings prior to performing any push request:
-
-Enable [the 'Dataset data changed' webhook](/docs/introduction/webhooks/core-rules-types.md) to listen to change in underlying Accounts data.  If any accounts are missing, you’ll want to notify the customer and guide them back to your configuration screen. Once there, they can fix any issues.
-
- 
-
- 
-
-## Examples
+Here is a simple example of an account mapping user interface implemented using dropdowns.
 
 ![SampleMappingPage](/img/other-guides/codatmappingpageexample.png)
 
+### Using the API for mapping
 
+Build your account mapping process to use the Codat API as follows:
 
+1. Enable the Chart of Accounts data type and set it to fetch on first link. Navigate to **Settings > Integrations > Data types** to manage [Data type settings](https://app.codat.io/settings/data-types) in the Portal or [use the API](https://docs.codat.io/codat-api#/operations/update-profile-syncSettings) instead. 
+
+    You can also read more about [data type settings](/core-concepts/data-type-settings).
+
+2. Configure the [Dataset data changed](/using-the-api/webhooks/core-rules-types#dataset-data-changed) webhook to listen for changes in the underlying data for the `chartOfAccounts` data type. You will receive a notification when the data sync completes successfully. 
+
+WHY CHANGED, NOT COMPLETE? what we are trying to say is - fetch accounts on first link, and then get notified as soon as that initial ffetch is done - once done, pull a list of accounts and show it to the customer to map
+
+3. Once notified by the webhook, call our [List accounts](/accounting-api#/operations/list-accounts) endpoint and use the response to display `account.name` and `account.id` in a dropdown box for your customer to choose the correct mapping. You can also query the response to simplify the mapping experience for your customer:
+
+    * Display only active accounts of relevant account type needed for your mapping page, such as `type=income` and `status=active`.
+    ```
+    /companies/{{companyId}}/data/accounts?query=status=active&&type=income
+    ```
+    * Set defaults for customers. For example, if you are mapping sales revenue, check if a “Sales” account exists and present it as a suggestion.
+    ```
+    /companies/{{companyId}}/data/accounts?query=name~sales
+    ```
+    * If creating or updating invoices or payments in Xero, allow your customer only to select a bank account that has the 'Enable payments to account' checkbox ticked.
+    ```
+    /companies/{{companyId}}/data/accounts?query=isBankAccount%3dtrue
+    ```
+
+:::tip Missing accounts
+
+If the account required for correct mapping does not exist, you can offer your customer to create one. You will need a user interface that supports additional steps, such as populating fields required for account creation by the specific accounting platform. You can read our guide on [creating, updating, and deleting data](/using-the-api/push).
 :::
 
-##  Additional configuration best practices for Xero
+### Mapping validation
 
-### Manage your Integration UX
-If you have an SMB-facing app, ensure you implement a setup page that allows customers to connect to their accounting software and manage their settings for the integration. Ideally this should be made possible without assistance from your support or onboarding team.
+Once the initial mapping is complete, you need to validate account mappings periodically because customers may continue changing their list of accounts after they have set up your integration. 
 
-- Display the name of the connected business in your UX as it is displayed in the accounting software
+We recommend validating the mapping prior to performing any create or update operation. Use the [Dataset data changed](/using-the-api/webhooks/core-rules-types#dataset-data-changed) webhook to listen for changes in the underlying data for the `chartOfAccounts` data type. If new accounts are present that have not been mapped yet, notify your customer and guide them back to the mapping page.
 
-- Display the current status of the accounting software connection. If disconnected, provide a button to connect. 
+## User interaction for Xero
 
-- Include a button to disconnect the integration. 
+THIS XERO THING - IT S NOT REALLY FOR ACCOUNT MAPPING, SHOULD THIS BE IN THE XERO INTEGRATION STUFF INSTEAD?
 
-- Handle a disconnection from the accounting software side. If a customer disconnects your app from their accounting software, best practice is to:
+If you provide your SMB customers with an application, we recommend you implement a setup page that allows them to connect their accounting software and manage integration settings without any assistance from your support or onboarding teams. Consider including the following:
 
-    1. Create an alert in your platform to ensure the user is aware that their accounting software is not disconnected
+- Ensure that the name of their connected business displayed in your application matches the name in the accounting software.
+- Include a button that allows them to disconnect the app from the integration. 
+- If the customer disconnects the app, alert them about it and provide an opportunity to reconnect. 
+- When off-boarding customers from your product, ensure you disconnect from their accounting software and don't access their data anymore. 
+- Inform users of any errors through error logs, messages or alerts. 
 
-    2. Guide the user to reconnect
-
-- Implement a disconnection process for customers who are off-boarding from your product to ensure you aren’t accessing data beyond what is necessary
-
-- Let users know if an error has taken place in; through error logs or error messages/alerts
- 
-
-[More Xero specific best practices are available here](/https://developer.xero.com/documentation/guides/how-to-guides/integration-best-practices/)
+You can also review [Xero's own advice](https://developer.xero.com/documentation/guides/how-to-guides/integration-best-practices/) and best practices. 
