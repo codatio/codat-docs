@@ -9,15 +9,15 @@ The following rules can be configured in the Codat Portal to trigger webhook eve
 | :- | :- | :- |
 | [Company data connection status changed](/using-the-api/webhooks/core-rules-types#company-data-connection-status-changed)  | A data connection's status changes. | `dataConnectionId`, `platformKey`, `newStatus`, `oldStatus` |
 | [New company synchronized](/using-the-api/webhooks/core-rules-types#new-company-synchronized)                | The first dataType is successfully synced for a new company. | |
-| [Data sync completed](/using-the-api/webhooks/core-rules-types#data-sync-completed)                     | Data synchronization is successfully completed in full for a specific data type. A notification is generated for each `dataType` as the sync completes. | `dataType`, `datasetId` |
-| [Dataset data changed](/using-the-api/webhooks/core-rules-types#dataset-data-changed)                    | A dataset synchronization has completed and updated Codat's data cache through the creation of new records or a change to existing records. A notification is generated for each `dataType` as the sync completes. | `dataType`, `datasetId` |
+| [Data sync completed](/using-the-api/webhooks/core-rules-types#data-sync-completed)                     | Data synchronization is successfully completed in full for a specific data type. <br/> A notification is generated for each `dataType` as the sync completes. | `dataType`, `datasetId` |
+| [Dataset data changed](/using-the-api/webhooks/core-rules-types#dataset-data-changed)                    | A dataset synchronization has completed and updated Codat's data cache through the creation of new records or a change to existing records. <br/> A notification is generated for each `dataType` as the sync completes. | `dataType`, `datasetId` |
 | [Dataset status has changed to an error state](/using-the-api/webhooks/core-rules-types#dataset-status-has-changed-to-an-error-state) | The synchronization of a dataset fails. | `dataType`, `datasetStatus`, `datasetId` | 
 | [Push operation status has changed](/using-the-api/webhooks/core-rules-types#push-operation-status-has-changed)       | A push operation's status changes. | `dataType`, `status`, `pushOperationKey` |
 | [Push operation has timed out](/using-the-api/webhooks/core-rules-types#push-operation-has-timed-out)            | A push operation times out. |  `dataType`, `pushOperationGuid` |
 | [Account categories updated](/using-the-api/webhooks/core-rules-types#account-categories-updated)              | Anytime that Codat updates the `suggested` fields or a user updates the `confirmed` fields. | `modifiedDate` |
-| [Sync Connection Deleted](/using-the-api/webhooks/core-rules-types#sync-connection-deleted)                 | A Sync for Commerce connection is deleted. **Note:** Sync for Commerce only. |  |
-| [Expenses sync completed](/using-the-api/webhooks/core-rules-types#expenses-sync-completed)                 | An expense sync has completed without any failures. **Note:** Sync for Expenses only. |`syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`|
-| [Expenses sync failed](/using-the-api/webhooks/core-rules-types#expenses-sync-failed)                 | A failure occurred during an expense sync. **Note:** Sync for Expenses only. |`syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`, `FailureStage`|
+| [Sync Connection Deleted](/using-the-api/webhooks/core-rules-types#sync-connection-deleted)                 | A Sync for Commerce connection is deleted. <br/> **Note:** Sync for Commerce only. |  |
+| [Expenses sync completed](/using-the-api/webhooks/core-rules-types#expenses-sync-completed)                 | An expense sync has completed without any failures. <br/> **Note:** Sync for Expenses only. |`syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`|
+| [Expenses sync failed](/using-the-api/webhooks/core-rules-types#expenses-sync-failed)                 | A failure occurred during an expense sync. <br/> **Note:** Sync for Expenses only. |`syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`, `FailureStage`|
 
 ---
 
