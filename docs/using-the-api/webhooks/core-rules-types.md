@@ -5,19 +5,19 @@ description: "Use webhooks to build responsive and resilient applications on Cod
 
 The following rules can be configured in the Codat Portal to trigger webhook events. These can be use to help your respond to changes in your companies and their data.
 
-| Rule name | Trigger | Additional data | 
-| :- | :- | :- |
-| [Company data connection status changed](/using-the-api/webhooks/core-rules-types#company-data-connection-status-changed)  | A data connection's status changes. | `dataConnectionId`, `platformKey`, `newStatus`, `oldStatus` |
-| [New company synchronized](/using-the-api/webhooks/core-rules-types#new-company-synchronized)                |  All datasets created during the initial sync of a company are completed.<br/><b>Legacy behavior:</b> The first `dataType` is successfully synced for a new company. [See deprecation](https://docs.codat.io/updates/231010-deprecation-webhooks-new-company-synchronized). | |
-| [Data sync completed](/using-the-api/webhooks/core-rules-types#data-sync-completed)                     | Data synchronization is successfully completed in full for a specific data type. <br/> A notification is generated for each `dataType` as the sync completes. | `dataType`, `datasetId` |
-| [Dataset data changed](/using-the-api/webhooks/core-rules-types#dataset-data-changed)                    | A dataset synchronization has completed and updated Codat's data cache through the creation of new records or a change to existing records. <br/> A notification is generated for each `dataType` as the sync completes. | `dataType`, `datasetId` |
-| [Dataset status has changed to an error state](/using-the-api/webhooks/core-rules-types#dataset-status-has-changed-to-an-error-state) | The synchronization of a dataset fails. | `dataType`, `datasetStatus`, `datasetId` | 
-| [Push operation status has changed](/using-the-api/webhooks/core-rules-types#push-operation-status-has-changed)       | A push operation's status changes. | `dataType`, `status`, `pushOperationKey` |
-| [Push operation has timed out](/using-the-api/webhooks/core-rules-types#push-operation-has-timed-out)            | A push operation times out. |  `dataType`, `pushOperationGuid` |
-| [Account categories updated](/using-the-api/webhooks/core-rules-types#account-categories-updated)              | Anytime that Codat updates the `suggested` fields or a user updates the `confirmed` fields. | `modifiedDate` |
-| [Sync Connection Deleted](/using-the-api/webhooks/core-rules-types#sync-connection-deleted)                 | A Sync for Commerce connection is deleted. <br/> **Note:** Sync for Commerce only. |  |
-| [Expenses sync completed](/using-the-api/webhooks/core-rules-types#expenses-sync-completed)                 | An expense sync has completed without any failures. <br/> **Note:** Sync for Expenses only. |`syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`|
-| [Expenses sync failed](/using-the-api/webhooks/core-rules-types#expenses-sync-failed)                 | A failure occurred during an expense sync. <br/> **Note:** Sync for Expenses only. |`syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`, `FailureStage`|
+| Rule | `Type` | Trigger | Additional data | 
+| :- | :- | :- | :- |
+| [Company data connection status changed](/using-the-api/webhooks/core-rules-types#company-data-connection-status-changed)  |`DataConnectionStatusChanged`| A data connection's status changes. | `dataConnectionId`, `platformKey`, `newStatus`, `oldStatus` |
+| [New company synchronized](/using-the-api/webhooks/core-rules-types#new-company-synchronized)                |`New company synchronised`|  All datasets created during the initial sync of a company are completed.<br/><b>Legacy behavior:</b> The first `dataType` is successfully synced for a new company. [See deprecation](https://docs.codat.io/updates/231010-deprecation-webhooks-new-company-synchronized). | |
+| [Data sync completed](/using-the-api/webhooks/core-rules-types#data-sync-completed)                     |`Data sync completed`| Data synchronization is successfully completed in full for a specific data type. <br/> A notification is generated for each `dataType` as the sync completes. | `dataType`, `datasetId` |
+| [Dataset data changed](/using-the-api/webhooks/core-rules-types#dataset-data-changed)                    |`Dataset data changed`|  A dataset synchronization has completed and updated Codat's data cache through the creation of new records or a change to existing records. <br/> A notification is generated for each `dataType` as the sync completes. | `dataType`, `datasetId` |
+| [Dataset status has changed to an error state](/using-the-api/webhooks/core-rules-types#dataset-status-has-changed-to-an-error-state) |`Data Sync Status Changed To Error`| The synchronization of a dataset fails. | `dataType`, `datasetStatus`, `datasetId` | 
+| [Push operation status has changed](/using-the-api/webhooks/core-rules-types#push-operation-status-has-changed)       |`Push Operation Status Changed`|  A push operation's status changes. | `dataType`, `status`, `pushOperationKey` |
+| [Push operation has timed out](/using-the-api/webhooks/core-rules-types#push-operation-has-timed-out)            |`Push Operation Timed Out`| A push operation times out. |  `dataType`, `pushOperationGuid` |
+| [Account categories updated](/using-the-api/webhooks/core-rules-types#account-categories-updated)              |`Account Categories Updated`| Anytime that Codat updates the `suggested` fields or a user updates the `confirmed` fields. | `modifiedDate` |
+| [Sync Connection Deleted](/using-the-api/webhooks/core-rules-types#sync-connection-deleted)                 |`Sync Connection Deleted`| A Sync for Commerce connection is deleted. <br/> **Note:** Sync for Commerce only. |  |
+| [Expense sync completed](/using-the-api/webhooks/core-rules-types#expense-sync-completed)                 |`Sync Completed`| An expense sync has completed without any failures. <br/> **Note:** Sync for Expenses only. |`syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`|
+| [Expense sync failed](/using-the-api/webhooks/core-rules-types#expense-sync-failed)                 |`Sync Failed`| A failure occurred during an expense sync. <br/> **Note:** Sync for Expenses only. |`syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`, `FailureStage`|
 
 ---
 
@@ -32,7 +32,6 @@ In line with industry standard security practices, we have removed personally id
 ### Company data connection status changed
 
 **Type**: DataConnectionStatusChanged  
-**TypeName**: `dataconnection-status-changed`  
 **Trigger:** A data connection's status changes.  
 **Additional data:** `dataConnectionId`, `platformKey`, `newStatus`, `oldStatus`.
 
@@ -55,7 +54,6 @@ In line with industry standard security practices, we have removed personally id
 ### New company synchronized
 
 **Type**: New company synchronised  
-**TypeName**: `company-new`  
 **Trigger:** Initial syncs are complete for all data types queued for a newly connected company, and at least one of those syncs is successful.   
 **Legacy behavior:** After the first `dataType` is successfully synced for a new company. [See deprecation](https://docs.codat.io/updates/231010-deprecation-webhooks-new-company-synchronized) for more information about this change.
 
@@ -73,7 +71,6 @@ In line with industry standard security practices, we have removed personally id
 ### Data sync completed
 
 **Type**: Data sync completed  
-**TypeName**: `pull-operation-complete`
 **Trigger:** Data synchronization is successfully completed in full for a specific data type.  
 Notification is sent for each `dataType` separately when the data type's individual sync is successfully complete.  
 **Additional data:** `dataType`, `datasetId`.
@@ -97,8 +94,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 
 ### Dataset data changed
 
-**Type**: Dataset data changed
-**TypeName**: `dataconnection-data-changed`
+**Type**: Dataset data changed  
 **Trigger:** A dataset synchronization has completed, which resulted in updates within Codat's data cache through the creation of new records or a change to existing records.  
 Notification is sent for each `dataType` separately when the data type's individual sync is successfully complete.  
 **Additional data:** `dataType`, `datasetId`.
@@ -120,7 +116,6 @@ Notification is sent for each `dataType` separately when the data type's individ
 ### Dataset status has changed to an error state
 
 **Type**: Data Sync Status Changed To Error  
-**TypeName**: `pull-operation-failed`  
 **Trigger:** The synchronization of a dataset fails.  
 **Additional data:** `dataType`, `datasetStatus`, `datasetId`.
 
@@ -141,8 +136,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 
 ### Push operation status has changed
 
-**Type**: Push Operation Status Changed  
-**TypeName**: `push-operation-complete`  
+**Type**: Push Operation Status Changed   
 **Trigger:** A push operation's status changes.  
 **Additional data:** `dataType`, `status`, `pushOperationKey`.
 
@@ -163,8 +157,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 
 ### Push operation has timed out
 
-**Type**: Push Operation Timed Out
-**TypeName**: `push-operation-timed-out`
+**Type**: Push Operation Timed Out  
 **Trigger:** A push operation times out.  
 **Additional data:** `dataType`, `pushOperationGuid`.
 
@@ -185,7 +178,6 @@ Notification is sent for each `dataType` separately when the data type's individ
 ### Account categories updated
 
 **Type**: Account Categories Updated  
-**TypeName**: `account-categories-updated`  
 **Trigger:** Any time that Codat updates the `suggested` fields or a user updates the `confirmed` fields.  
 **Additional data:** `modifiedDate`.
 
@@ -207,8 +199,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 
 ### Sync Connection Deleted
 
-**Type**:  Sync Connection Deleted  
-**TypeName**:  `sync-connection-deleted`  
+**Type**:  Sync Connection Deleted   
 **Trigger:** A Sync for Commerce connection is deleted.  
 **Note:** This rule is specific to Sync for Commerce and cannot be used for other products.
 
@@ -226,10 +217,9 @@ Notification is sent for each `dataType` separately when the data type's individ
 }
 ```
 
-### Expenses sync completed
+### Expense sync completed
 
 **Type**: Sync Completed  
-**TypeName**: `sync-complete`  
 **Trigger:** An expense sync has completed without any failures.  
 **Additional data:** `syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`.  
 **Note:** This rule is specific to Sync for Expenses and cannot be used for other products.
@@ -252,10 +242,9 @@ Notification is sent for each `dataType` separately when the data type's individ
 }
 ```
 
-### Expenses sync failed
+### Expense sync failed
 
 **Type**: Sync Failed  
-**TypeName**: `sync-failed`  
 **Trigger:** A failure occurred during an expense sync.  
 **Additional data:** `syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`, `FailureStage`.  
 **Note:** This rule is specific to Sync for Expenses and cannot be used for other products.
