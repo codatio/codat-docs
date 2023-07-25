@@ -8,7 +8,7 @@ The following rules can be configured in the Codat Portal to trigger webhook eve
 | Rule name | Trigger | Additional data | 
 | :- | :- | :- |
 | [Company data connection status changed](/using-the-api/webhooks/core-rules-types#company-data-connection-status-changed)  | A data connection's status changes. | `dataConnectionId`, `platformKey`, `newStatus`, `oldStatus` |
-| [New company synchronized](/using-the-api/webhooks/core-rules-types#new-company-synchronized)                | The first dataType is successfully synced for a new company. | |
+| [New company synchronized](/using-the-api/webhooks/core-rules-types#new-company-synchronized)                | The first `dataType`` is successfully synced for a new company. | |
 | [Data sync completed](/using-the-api/webhooks/core-rules-types#data-sync-completed)                     | Data synchronization is successfully completed in full for a specific data type. <br/> A notification is generated for each `dataType` as the sync completes. | `dataType`, `datasetId` |
 | [Dataset data changed](/using-the-api/webhooks/core-rules-types#dataset-data-changed)                    | A dataset synchronization has completed and updated Codat's data cache through the creation of new records or a change to existing records. <br/> A notification is generated for each `dataType` as the sync completes. | `dataType`, `datasetId` |
 | [Dataset status has changed to an error state](/using-the-api/webhooks/core-rules-types#dataset-status-has-changed-to-an-error-state) | The synchronization of a dataset fails. | `dataType`, `datasetStatus`, `datasetId` | 
@@ -52,7 +52,7 @@ In line with industry standard security practices, we have removed personally id
 
 ### New company synchronized
 
-**Trigger:** After the first `dataType`` is successfully synced for a new company.
+**Trigger:** After the first `dataType` is successfully synced for a new company.
 
 ```json
 {
@@ -68,7 +68,7 @@ In line with industry standard security practices, we have removed personally id
 ### Data sync completed
 
 **Trigger:** Data synchronization is successfully completed in full for a specific data type.  
-Notification is sent for each `dataType` separately when the data type's individual sync is successfully complete.
+Notification is sent for each `dataType` separately when the data type's individual sync is successfully complete.  
 **Additional data:** `dataType`, `datasetId`.
 
 ```json
@@ -90,8 +90,8 @@ Notification is sent for each `dataType` separately when the data type's individ
 
 ### Dataset data changed
 
-**Trigger:** A dataset synchronization has completed, which resulted in updates within Codat's data cache through the creation of new records or a change to existing records.
-Notification is sent for each `dataType` separately when the data type's individual sync is successfully complete.
+**Trigger:** A dataset synchronization has completed, which resulted in updates within Codat's data cache through the creation of new records or a change to existing records.  
+Notification is sent for each `dataType` separately when the data type's individual sync is successfully complete.  
 **Additional data:** `dataType`, `datasetId`.
 
 ```json
@@ -191,7 +191,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 
 ### Sync Connection Deleted
 
-**Trigger:** A Sync for Commerce connection is deleted.
+**Trigger:** A Sync for Commerce connection is deleted.  
 **Note:** This rule is specific to Sync for Commerce and cannot be used for other products.
 
 ```json
@@ -210,8 +210,8 @@ Notification is sent for each `dataType` separately when the data type's individ
 
 ### Expenses sync completed
 
-**Trigger:** An expense sync has completed without any failures. 
-**Additional data:** `syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`.
+**Trigger:** An expense sync has completed without any failures.  
+**Additional data:** `syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`.  
 **Note:** This rule is specific to Sync for Expenses and cannot be used for other products.
 
 ```json
@@ -234,8 +234,8 @@ Notification is sent for each `dataType` separately when the data type's individ
 
 ### Expenses sync failed
 
-**Trigger:** A failure occurred during an expense sync.
-**Additional data:** `syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`, `FailureStage`.
+**Trigger:** A failure occurred during an expense sync.  
+**Additional data:** `syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`, `FailureStage`.  
 **Note:** This rule is specific to Sync for Expenses and cannot be used for other products.
 
 ```json
