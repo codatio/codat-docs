@@ -23,7 +23,7 @@ module.exports = {
       items: [
         {
           href: "/codat-api",
-          label: "Common API",
+          label: "Platform API",
         },
         {
           href: "/lending-api",
@@ -55,12 +55,6 @@ module.exports = {
           label: "OpenAPI spec",
           hr: true,
         },
-        {
-          href: "/products/overview",
-          label: "Legacy APIs",
-          hr: true,
-        },
-        
       ],
     },
     { to: "updates", label: "Updates", position: "left" },

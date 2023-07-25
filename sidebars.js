@@ -13,8 +13,6 @@ const sfe = require("./sidebars/sync-for-expenses");
 const sfp = require("./sidebars/sync-for-payroll");
 const payables = require("./sidebars/payables");
 
-const sfe2 = require("./sidebars/sync-for-expenses-2");
-
 const integrations = require("./sidebars/integrations");
 
 module.exports = {
@@ -275,7 +273,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Bank feeds",
+      label: "Bank Feeds",
       collapsed: true,
       className: "top-level-item products",
       link: {
@@ -286,7 +284,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Sync for commerce",
+      label: "Sync for Commerce",
       collapsed: true,
       className: "top-level-item products",
       link: {
@@ -297,7 +295,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Sync for expenses",
+      label: "Sync for Expenses",
       collapsed: true,
       className: "top-level-item products",
       link: {
@@ -308,7 +306,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Sync for payroll",
+      label: "Sync for Payroll",
       collapsed: true,
       className: "top-level-item products",
       link: {
@@ -339,5 +337,4 @@ module.exports = {
   sfp: sfp,
   payables: payables,
   integrations: integrations,
-  sfe2
 };
