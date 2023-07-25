@@ -5,7 +5,7 @@ description: "Use webhooks to build responsive and resilient applications on Cod
 
 The following rules can be configured in the Codat Portal to trigger webhook events. These can be use to help your respond to changes in your companies and their data.
 
-| Rule | `Type` | Trigger | Additional data | 
+| Rule | Type | Trigger | Additional data | 
 | :- | :- | :- | :- |
 | [Company data connection status changed](/using-the-api/webhooks/core-rules-types#company-data-connection-status-changed)  |`DataConnectionStatusChanged`| A data connection's status changes. | `dataConnectionId`, `platformKey`, `newStatus`, `oldStatus` |
 | [New company synchronized](/using-the-api/webhooks/core-rules-types#new-company-synchronized)                |`New company synchronised`|  All datasets created during the initial sync of a company are completed.<br/><b>Legacy behavior:</b> The first `dataType` is successfully synced for a new company. [See deprecation](https://docs.codat.io/updates/231010-deprecation-webhooks-new-company-synchronized). | |
@@ -251,13 +251,10 @@ Notification is sent for each `dataType` separately when the data type's individ
 
 ```json
 {
-  "CompanyId": "1f9559e7-8368-48c9-bdf4-f158e16b8b85",
+  "AlertId": "72c1103b-7f17-4a3a-8db5-67c2d360a516",
   "ClientId": "30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e",
   "ClientName": "Expense Sync",
-  "RuleId": "289c80dc-2aee-4b71-afff-9acd8d051080",
-  "RuleType": "Sync Failed",
-  "AlertId": "72c1103b-7f17-4a3a-8db5-67c2d360a516",
-  "Message": "Sync 3bead2a1-1b3d-4d90-8077-cddc5ca68b01 for company 1f9559e7-8368-48c9-bdf4-f158e16b8b85 of type Expense has failed at step Pushing.",
+  "CompanyId": "1f9559e7-8368-48c9-bdf4-f158e16b8b85",
   "Data": {
     "syncId": "3bead2a1-1b3d-4d90-8077-cddc5ca68b01",
     "syncType": "Expense",
@@ -265,5 +262,8 @@ Notification is sent for each `dataType` separately when the data type's individ
     "SyncDateRangeFinishUtc": "2023-05-03T12:57:59.7576091Z",
     "FailureStage": "Pushing"
   }
+  "Message": "Sync 3bead2a1-1b3d-4d90-8077-cddc5ca68b01 for company 1f9559e7-8368-48c9-bdf4-f158e16b8b85 of type Expense has failed at step Pushing.",
+  "RuleId": "289c80dc-2aee-4b71-afff-9acd8d051080",
+  "RuleType": "Sync Failed",
 }
 ```
