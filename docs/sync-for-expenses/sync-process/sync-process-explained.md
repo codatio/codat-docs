@@ -43,6 +43,8 @@ POST  https://api.codat.io/companies/{companyId}/sync/expenses/syncs
 ```
 A `syncId` will be returned to the response payload.
 
+Multiple syncs can be initiated at once. The queueing of these syncs will be managed on the Codat side and pushed to the accounting platform.
+
 ### Check sync status
 
 There are three ways to check the status of the sync:
