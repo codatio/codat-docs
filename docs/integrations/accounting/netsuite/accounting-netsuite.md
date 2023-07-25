@@ -11,7 +11,7 @@ You can synchronize accounting data with Oracle NetSuite using our Oracle NetSui
 <div className="card">
   <h3>✨ Premium</h3>
 
-  <p>This is only available add a premium add-on on our <a href="/configure/create-account">enterprise plans</a>.</p>
+  <p>This integration is only available as a premium add-on on our <a href="/configure/create-account">enterprise plans</a>.</p>
 </div>
 
 ## Data type coverage
