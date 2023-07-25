@@ -105,7 +105,7 @@ To allow the merchants to review and modify their connection, present them with 
 
 In case the merchant severs the connection, the next scheduled data sync will fail, and no further data syncs will be attempted.
 
-You can [set up a webhook](/introduction/webhooks/core-rules-create) for the [Sync Connection Deleted](/introduction/webhooks/core-rules-types#sync-connection-deleted) rule to be notified if a merchant severs their connection.
+You can [set up a webhook](/using-the-api/webhooks/core-rules-create) for the [Sync Connection Deleted](/using-the-api/webhooks/core-rules-types#sync-connection-deleted) rule to be notified if a merchant severs their connection.
 :::
 
 ### 5. (Optional) Check the configuration status

@@ -10,12 +10,12 @@ In the Codat Portal, click **Companies** in the navigation bar to view a list of
 
 From here you can:
 
-- [Add a new company](/other/portal/companies#add-a-new-company)
+- [Add a new company](/configure/portal/companies#add-a-new-company)
 - Copy your [Link URL](/auth-flow/authorize-hosted-link#use-the-hosted-link-url) to allow your customers to share their data through Link
 - [Retrieve Link URLs for existing companies](/auth-flow/authorize-hosted-link#use-the-hosted-link-url) to allow them to authorize additional data connections, or re-authorize unlinked connections where required
 - View details and show the status of existing companies
 - Search for a previously created company by clicking on the search icon
-- [Delete companies](/other/portal/companies#delete-a-company).
+- [Delete companies](/configure/portal/companies#delete-a-company).
 
 ## Add a company
 
@@ -63,7 +63,7 @@ In the companies view, you can see the following information for every company:
 - Name of the Portal user that created the company
 - Date and time of the company creation
 - Date and time of the last pull of data
-- Data connections and their [statuses](/other/portal/companies#data-connection-statuses)
+- Data connections and their [statuses](/configure/portal/companies#data-connection-statuses)
 
 #### Data connection statuses
 

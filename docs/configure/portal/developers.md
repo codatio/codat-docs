@@ -7,7 +7,7 @@ updatedAt: "2022-12-09T13:03:30.599Z"
 
 :::note Access to Codat Developers
 
-This page is only available to users with developer and administrator [user roles](/other/user-management/user-roles).
+This page is only available to users with developer and administrator [user roles](/configure/user-management/user-roles).
 :::
 
 ## API deprecations
@@ -27,7 +27,7 @@ Make sure you review the specifics of the deprecation and complete any necessary
 
 Once you are ready, click **Enable** to switch the deprecation on for your organization early. You can use the same button to disable the deprecation and revert to previous behavior if necessary.
 
-For more information on breaking changes and how we communicate these to you, review our [change policy](/introduction/change-policy).
+For more information on breaking changes and how we communicate these to you, review our [change policy](/using-the-api/change-policy).
 
 :::note Deprecation dates
 
@@ -40,4 +40,4 @@ Additionally, deprecations are no longer available to self-serve once their impl
 
 ## Read next
 
-- [Change policy](/introduction/change-policy)
+- [Change policy](/using-the-api/change-policy)

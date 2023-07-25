@@ -51,4 +51,4 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 If this is your first commerce integration, update your [data type settings](/integrations/commerce/commerce-sync-settings) to enable commerce data types.
 
-You're now ready to [set up companies](/other/portal/companies#add-a-new-company) for your customers in the Codat Portal.
+You're now ready to [set up companies](/configure/portal/companies#add-a-new-company) for your customers in the Codat Portal.

@@ -253,7 +253,7 @@ This results in a corresponding response from the endpoint, which includes the f
 
 Your operation will initially be in a `Pending` status. You can track an update on the final `Success` or `Failed` state to communicate the outcome of the operation to the user, or take further action in case of failures. We recommend listening to our webhooks for this purpose. 
 
-In the **Monitor > Alerting rules > Create new rule** [view](https://app.codat.io/monitor/rules) of the Codat Portal, create a subscription to the _Push operation status has changed_ rule type. You can review detailed instructions in our documentation for [subscribing to rules](/introduction/webhooks/core-rules-create) and receiving webhooks as [email alerts](/introduction/webhooks/receive-webhooks-as-email).
+In the **Monitor > Alerting rules > Create new rule** [view](https://app.codat.io/monitor/rules) of the Codat Portal, create a subscription to the _Push operation status has changed_ rule type. You can review detailed instructions in our documentation for [subscribing to rules](/using-the-api/webhooks/core-rules-create) and receiving webhooks as [email alerts](/using-the-api/webhooks/receive-webhooks-as-email).
 
 You will receive the following response from the _Push operation status has changed_ webhook:
 
@@ -288,4 +288,3 @@ To control the timeframe in which you want your CUD operation to complete, use t
   For example, you may have checked your accounts receivable position based on the balance sheet and invoice data types pulled yesterday. If you created an invoice today, this will cause a discrepancy as there may have been changes to invoices not seen between the `lastSyncUtc` and the maximum `modifiedDate` of the invoices.
 
 - There is no coordination between the fetch and CUD operations to guarantee the correct order. This means, if you trigger a CUD operation while a pull is in progress for the same data type, fetched data may overwrite created or updated data in our API. We recommend you do not create or update a data type while it has a pull in progress. 
-

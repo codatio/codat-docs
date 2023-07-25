@@ -1,11 +1,9 @@
 ---
 title: "Troubleshooting"
-description: "Resolve errors in Assess"
-createdAt: "2022-10-20T14:29:04.761Z"
-updatedAt: "2022-11-15T14:24:24.452Z"
+description: "Resolve common errors in Assess"
 ---
 
-## Assess error codes
+When troubleshooting, check that you have not disabled the [data types required by Assess](https://docs.codat.io/assess/get-started#prerequisites) for all of its features to work.
 
 |Error code|Description|
 |----------|-----------|

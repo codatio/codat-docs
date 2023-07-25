@@ -11,7 +11,7 @@ Ensure you are familiar with our [rate limits](/using-the-api/rate-limits) befor
 
 Making as few calls to Codat as possible allows you to reduce your costs and your system's computational times, and decreases internet traffic between you and Codat. It also allows you to process less data and access that data faster, delivering reduced waiting time and an improved experience for your users.
 
-Use our [querying](/using-the-api/querying), [ordering](/using-the-api/ordering-results), and [notification systems](/introduction/webhooks/core-rules-types) and optimize how you access Codat and fetch the data with the methods below.
+Use our [querying](/using-the-api/querying), [ordering](/using-the-api/ordering-results), and [notification systems](/using-the-api/webhooks/core-rules-types) and optimize how you access Codat and fetch the data with the methods below.
 
 ## Querying by the record date
 
@@ -63,7 +63,7 @@ This returns all invoices for a company issued by a specific customer.  Instead 
 
 ## Making use of webhooks
 
-Consider configuring a [Dataset data changed](/introduction/webhooks/core-rules-types#dataset-data-changed) rule. This will send an event per company when new data becomes available for each data type. 
+Consider configuring a [Dataset data changed](/using-the-api/webhooks/core-rules-types#dataset-data-changed) rule. This will send an event per company when new data becomes available for each data type. 
 
 This is sent in the form of a `POST` request to a webhook URL you specified. The webhook contains the `CompanyId`, `DataConnectionId`, and details what data types have changed or updated. 
 

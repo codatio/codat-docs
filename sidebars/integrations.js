@@ -60,7 +60,6 @@ module.exports = [
           "integrations/accounting/myob/accounting-myob",
           "integrations/accounting/myob/accounting-myob-setup",
           "integrations/accounting/myob/myob-integration-reference",
-          "integrations/accounting/myob/faq-myob-accountright-live",
           "integrations/accounting/myob/myob-dev-registration",
         ],
       },
@@ -439,7 +438,7 @@ module.exports = [
     label: "Other integrations",
     collapsed: true,
     items: [
-      "other/file-upload",
+      "integrations/file-upload",
     ]
   },
 ];

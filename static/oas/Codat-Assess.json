@@ -15,7 +15,7 @@
       "name": "Codat"
     },
     "summary": "Codat's financial insights API",
-    "description": "Codat's Assess API enable you to make smarter credit decisions on your small business customers. Assess enriches your customer's accounting, commerce and banking data to surface actionable insights you didn't have before.\n\n[Read more...](https://www.codat.io/assess/)\n\n[See our OpenAPI spec](https://github.com/codatio/oas) ",
+    "description": "Check that you have enabled the [data types required by Assess](https://docs.codat.io/assess/get-started#prerequisites) for all of its features to work.  \n\n[Read more...](https://www.docs.codat.io/assess/)\n\n[See our OpenAPI spec](https://github.com/codatio/oas) ",
     "termsOfService": "https://www.codat.io/legals/"
   },
   "security": [
@@ -4114,7 +4114,7 @@
                             "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated"
                           },
                           {
-                            "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)):\n - When the source platform does not provide modification date information,\n - For attachments, balance sheets, company information, and profit & loss reports. \n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                            "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
                           }
                         ]
                       }

@@ -89,178 +89,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Learn",
-      collapsed: true,
-      customProps: {
-        hr: true,
-      },
-      className: "top-level-item core",
-      link: {
-        type: 'doc',
-        id: "core-concepts/overview",
-      },
-      items: [
-        "core-concepts/companies",
-        "core-concepts/connections",
-        "core-concepts/integrations",
-        "core-concepts/data-type",
-        "core-concepts/status", // @tooo: move into using api?
-        {
-          type: "link",
-          href: "/codat-api",
-          className: "external",
-          label: "Common API reference",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Configure",
-      collapsed: true,
-      className: "top-level-item config",
-      link: {
-        type: 'doc',
-        id: "other/portal/dashboard",
-      },
-      items: [
-        "configure/products",
-        "configure/integrations",
-        "core-concepts/data-type-settings",
-        {
-          type: "category",
-          label: "User management",
-          collapsed: true,
-          items: [
-            "other/user-management/adding-users",
-            "other/user-management/user-roles",
-            "other/user-management/sso",
-          ],
-        },
-        {
-          type: "category",
-          label: "Plans",
-          collapsed: true,
-          items: [
-            "configure/plans/free",
-            "introduction/create-account",
-            "other/portal/usage-and-billing",
-          ],
-        },
-        "other/portal/account-management",
-      ],
-    },
-    {
-      type: "category",
-      label: "Use our API",
-      collapsed: true,
-      className: "top-level-item api",
-      link: {
-        type: 'doc',
-        id: "using-the-api/overview",
-      },
-      items: [
-        "using-the-api/authentication",
-        {
-          type: "category",
-          label: "Manage companies",
-          collapsed: true,
-          items: [
-            "using-the-api/managing-companies",
-            "other/portal/companies",
-            // manage connections
-          ],
-        },
-        {
-          type: "category",
-          label: "Get data",
-          collapsed: true,
-          items: [
-            "using-the-api/get-data",
-            "using-the-api/queueing-data-syncs",
-            "using-the-api/pull-history",
-            "using-the-api/querying",
-            "using-the-api/paging",
-            "using-the-api/ordering-results",
-            "using-the-api/modified-dates",
-          ],
-        },
-        {
-          type: "category",
-          label: "Modify data",
-          collapsed: true,
-          items: [
-            "using-the-api/push",
-            "other/portal/pull-and-push-history",
-          ],
-        },
-        "introduction/testing",
-        {
-        type: "category",
-        label: "Webhooks",
-        collapsed: true,
-        items: [
-          "introduction/webhooks/core-rules-types",
-          "introduction/webhooks/core-rules-create",
-          "introduction/webhooks/core-rules-webhooks",
-          "introduction/webhooks/core-rules-webhooksecurity",
-          "introduction/webhooks/receive-webhooks-as-email",
-          ],
-        },
-        {
-          type: "category",
-          label: "Supplemental data",
-          collapsed: true,
-          items: [
-            "using-the-api/supplemental-data/overview",
-            "using-the-api/supplemental-data/usecases",
-          ],
-        },
-        {
-          type: "category",
-          label: "Best practices",
-          collapsed: true,
-          items: [
-            "using-the-api/best-practices/implementing-a-mapping-page",
-          ],
-        },
-        {
-          type: "category",
-          label: "Troubleshooting",
-          collapsed: true,
-          items: [
-            "using-the-api/errors",
-            "using-the-api/rate-limits",
-            "using-the-api/optimizing-api-calls",
-          ],
-        },
-        {
-          type: "category",
-          label: "Change management",
-          collapsed: true,
-          items: [
-            "introduction/change-policy",
-            "other/portal/developers",
-          ],
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Auth flow",
-      collapsed: true,
-      className: "top-level-item auth",
-      link: {
-        type: 'doc',
-        id: "auth-flow/overview",
-      },
-      items: authFlow,
-    },
-    {
-      type: "category",
       label: "Use cases",
-      customProps: {
-        hr: true,
-      },
       collapsed: true,
       className: "top-level-item usecases",
       link: {
@@ -304,21 +133,181 @@ module.exports = {
       ],
     },
     {
-      type: "link",
-      label: "Integrations",
-      className: "top-level-item integrations",
-      href: "/integrations/all-integrations",
+      type: "category",
+      label: "Learn",
+      collapsed: true,
+      customProps: {
+        hr: true,
+      },
+      className: "top-level-item core",
+      link: {
+        type: 'doc',
+        id: "core-concepts/overview",
+      },
+      items: [
+        "core-concepts/companies",
+        "core-concepts/connections",
+        "core-concepts/integrations",
+        "core-concepts/data-type",
+        "core-concepts/status", // @tooo: move into using api?
+        {
+          type: "link",
+          href: "/codat-api",
+          className: "external",
+          label: "Common API reference",
+        },
+      ],
     },
     {
       type: "category",
-      label: "Data model",
+      label: "Configure",
       collapsed: true,
-      className: "top-level-item data",
+      className: "top-level-item config",
       link: {
         type: 'doc',
-        id: "data-model/all-datatypes",
+        id: "configure/portal/dashboard",
       },
-      items: dataModel,
+      items: [
+        "configure/products",
+        "configure/integrations",
+        "core-concepts/data-type-settings",
+        {
+          type: "category",
+          label: "User management",
+          collapsed: true,
+          items: [
+            "configure/user-management/adding-users",
+            "configure/user-management/user-roles",
+            "configure/user-management/sso",
+          ],
+        },
+        {
+          type: "category",
+          label: "Plans",
+          collapsed: true,
+          items: [
+            "configure/plans/free",
+            "configure/create-account",
+            "configure/portal/usage-and-billing",
+          ],
+        },
+        "configure/portal/account-management",
+      ],
+    },
+    {
+      type: "category",
+      label: "Use our API",
+      collapsed: true,
+      className: "top-level-item api",
+      link: {
+        type: 'doc',
+        id: "using-the-api/overview",
+      },
+      items: [
+        "using-the-api/authentication",
+        {
+          type: "category",
+          label: "Manage companies",
+          collapsed: true,
+          items: [
+            "using-the-api/managing-companies",
+            "configure/portal/companies",
+            // manage connections
+          ],
+        },
+        {
+          type: "category",
+          label: "Get data",
+          collapsed: true,
+          items: [
+            "using-the-api/get-data",
+            "using-the-api/queueing-data-syncs",
+            "using-the-api/pull-history",
+            "using-the-api/querying",
+            "using-the-api/paging",
+            "using-the-api/ordering-results",
+            "using-the-api/modified-dates",
+          ],
+        },
+        {
+          type: "category",
+          label: "Modify data",
+          collapsed: true,
+          items: [
+            "using-the-api/push",
+            "configure/portal/pull-and-push-history",
+          ],
+        },
+        "using-the-api/testing",
+        {
+        type: "category",
+        label: "Webhooks",
+        collapsed: true,
+        items: [
+          "using-the-api/webhooks/core-rules-types",
+          "using-the-api/webhooks/core-rules-create",
+          "using-the-api/webhooks/core-rules-webhooks",
+          "using-the-api/webhooks/core-rules-webhooksecurity",
+          "using-the-api/webhooks/receive-webhooks-as-email",
+          ],
+        },
+        {
+          type: "category",
+          label: "Supplemental data",
+          collapsed: true,
+          items: [
+            "using-the-api/supplemental-data/overview",
+            "using-the-api/supplemental-data/usecases",
+          ],
+        },
+        {
+          type: "category",
+          label: "Best practices",
+          collapsed: true,
+          items: [
+            "using-the-api/best-practices/implementing-a-mapping-page",
+          ],
+        },
+        {
+          type: "category",
+          label: "Troubleshooting",
+          collapsed: true,
+          items: [
+            "using-the-api/errors",
+            "using-the-api/rate-limits",
+            "using-the-api/optimizing-api-calls",
+          ],
+        },
+        {
+          type: "category",
+          label: "Change management",
+          collapsed: true,
+          items: [
+            "using-the-api/change-policy",
+            "configure/portal/developers",
+          ],
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Auth flow",
+      collapsed: true,
+      className: "top-level-item auth",
+      link: {
+        type: 'doc',
+        id: "auth-flow/overview",
+      },
+      items: authFlow,
+    },
+    {
+      type: "link",
+      label: "Integrations",
+      customProps: {
+        hr: true,
+      },
+      className: "top-level-item integrations",
+      href: "/integrations/all-integrations",
     },
     {
       type: "category",
