@@ -8,21 +8,21 @@ import TabItem from "@theme/TabItem";
 
 ``` mermaid
 sequenceDiagram
-  User->>+You: User Approves Expenses with receipt
+  User->>+You: Approve expenses with receipt
   You-)+Codat: POST expense-transaction
   Codat-->>-You: datasetId
-  You-)+Codat: initiate sync
-  Note over You,Codat: specify datasetId's to sync
+  You-)+Codat: Initiate sync
+  Note over You,Codat: Specify datasetIds to sync
   Codat --> Codat: Sync request added to queue
   Codat-->>You: syncId
-  Codat-)Accounting: Sync expense-transaction from Queue
+  Codat-)Accounting: Sync expense-transaction from queue
   Codat->>-You: Sync Complete webhook event
   You->>Codat: Check transactions
   Codat-->>You: 
-  par Each Succesfull Reconciliation
+  par Each succesful reconciliation
     You->>+Codat: POST attachment
-    Codat->>Accounting: Upload Attachment
-    Codat-->>-You: success
+    Codat->>Accounting: Upload attachment
+    Codat-->>-You: Success
   end
   You->>-User: Expense marked as uploaded
 ```
