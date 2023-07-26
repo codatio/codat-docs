@@ -31,8 +31,6 @@ Build your account mapping process to use the Codat API as follows:
 
 2. Configure the [Dataset data changed](/using-the-api/webhooks/core-rules-types#dataset-data-changed) webhook to listen for changes in the underlying data for the `chartOfAccounts` data type. You will receive a notification when the data sync completes successfully. 
 
-WHY CHANGED, NOT COMPLETE? what we are trying to say is - fetch accounts on first link, and then get notified as soon as that initial ffetch is done - once done, pull a list of accounts and show it to the customer to map
-
 3. Once notified by the webhook, call our [List accounts](/accounting-api#/operations/list-accounts) endpoint and use the response to display `account.name` and `account.id` in a dropdown box for your customer to choose the correct mapping. You can also query the response to simplify the mapping experience for your customer:  
 
     * Display only active accounts of relevant account type needed for your mapping page, such as `type=income` and `status=active`.  
@@ -59,22 +57,6 @@ Read our guidance on [creating, updating, and deleting data](/using-the-api/push
 
 Once the initial mapping is complete, you need to validate account mappings periodically because customers may continue changing their list of accounts after they have set up your integration. 
 
-We recommend validating the mapping prior to performing any create or update operation. Use the [Dataset data changed](/using-the-api/webhooks/core-rules-types#dataset-data-changed) webhook to listen for changes in the underlying data for the `chartOfAccounts` data type. 
+We recommend validating the mapping prior to performing any create or update operation. Use the [Dataset data changed](/using-the-api/webhooks/core-rules-types#dataset-data-changed) webhook you previously set up that informs you of changes in the `chartOfAccounts` data type. 
 
 If new accounts are present that have not been mapped yet, notify your customer and guide them back to the mapping page.
-
-## User interaction for Xero
-
-THIS XERO THING - IT S NOT REALLY FOR ACCOUNT MAPPING, SHOULD THIS BE IN THE XERO INTEGRATION STUFF INSTEAD?
-
-If you provide your SMB customers with an application, we recommend you implement a setup page that allows them to connect their accounting software and manage integration settings without any assistance from your support or onboarding teams. 
-
-Consider including the following features:
-
-- Ensure that the name of their connected business displayed in your application matches the name in the accounting software.
-- Include a button that allows them to disconnect the app from the integration. 
-- If the customer disconnects the app, alert them about it and provide an opportunity to reconnect. 
-- When off-boarding customers from your product, ensure you disconnect from their accounting software and don't access their data anymore. 
-- Inform users of any errors through error logs, messages or alerts. 
-
-You can also review [Xero's own advice](https://developer.xero.com/documentation/guides/how-to-guides/integration-best-practices/) and best practices. 
