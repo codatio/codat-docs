@@ -4,7 +4,7 @@ description: "Frequently asked questions about our TrueLayer integration"
 sidebar_label: FAQs
 ---
 
-:::note Bank of Ireland account support
+:::caution Bank of Ireland account support
 Bank of Ireland accounts are temporarily unsupported and will be re-added on 17th of October, 2023.
 :::
 
