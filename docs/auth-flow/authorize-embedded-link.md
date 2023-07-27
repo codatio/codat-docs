@@ -123,6 +123,7 @@ For an example of the component in action, [see our demo app](https://github.com
    
 4. **Conditional steps**
     - **Extend your type declarations with our types (if using TS).** Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
+    - 
     - **Update browserslist.** If a `browserslist` entry exists in your `package.json` file, you may need to update it with the following entries for production:  
 
    ```js
