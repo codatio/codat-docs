@@ -18,6 +18,20 @@ The validity of the `taxRateRef.id` property on the Item depends on the value of
 
 When pulling account balances from Xero, the balance and the currency always use the company's base currency in Codat. This applies even if the source nominal accounts are in a foreign currency. This is how the information is retrieved from the Xero API.
 
+## Your application's user interface
+
+If you provide your SMB customers with an application, we recommend you implement a setup page that allows them to connect to Xero and manage integration settings without any assistance from your support or onboarding teams. 
+
+Consider including the following features:
+
+- Ensure that the name of their connected business displayed in your application matches the name in the accounting software.
+- Include a button that allows them to disconnect the app from the integration. 
+- If the customer disconnects the app, alert them about it and provide an opportunity to reconnect. 
+- When off-boarding customers from your product, ensure you disconnect from their accounting software and don't access their data anymore. 
+- Inform users of any errors through error logs, messages or alerts. 
+
+You can also review [Xero's own advice](https://developer.xero.com/documentation/guides/how-to-guides/integration-best-practices/) and best practices. 
+
 ## FAQs
 
 ### What is the Xero App Partnership Program? How can I join it?
