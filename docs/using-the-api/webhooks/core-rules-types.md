@@ -17,8 +17,8 @@ The following rules can be configured in the Codat Portal to trigger webhook eve
 | [Account categories updated](/using-the-api/webhooks/core-rules-types#account-categories-updated)              |`Account Categories Updated`| Anytime that Codat updates the `suggested` fields or a user updates the `confirmed` fields. | `modifiedDate` |
 | [Sync Connection Deleted](/using-the-api/webhooks/core-rules-types#sync-connection-deleted)                 |`Sync Connection Deleted`| A Sync for Commerce connection is deleted. <br/> **Note:** Sync for Commerce only. |  |
 | [Expense sync completed](/using-the-api/webhooks/core-rules-types#expense-sync-completed)                 |`Sync Completed`| An expense sync has completed without any failures. <br/> **Note:** Sync for Expenses only. |`syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`|
-| [Client Rate Limit Exceeded](/using-the-api/webhooks/core-rules-types#rate-limit-reached)                 |`Rate Limit Reached`| The number of requests to the API from a client has exceeded the current quota. |`dailyQuota` `expiresUtc`|
-| [Client Rate Limit Reset](/using-the-api/webhooks/core-rules-types#rate-limit-reset)                 |`Rate Limit Reset`| The client rate limit quota has reset and more requests are available. |`quotaRemaining` `resetReason` `dailyQuota` `expiresUtc`|
+| [Client rate limit exceeded](/using-the-api/webhooks/core-rules-types#client-rate-limit-reached)                 |`Rate Limit Reached`| The number of requests to the API from a client has exceeded the current quota. |`dailyQuota`, `expiresUtc`|
+| [Client Rate Limit Reset](/using-the-api/webhooks/core-rules-types#client-rate-limit-reset)                 |`Rate Limit Reset`| The client rate limit quota has reset and more requests are available. |`quotaRemaining`, `resetReason`, `dailyQuota`|
 ---
 
 ## Rules and payloads
@@ -268,18 +268,17 @@ Notification is sent for each `dataType` separately when the data type's individ
 }
 ```
 
-### Rate Limit Reached
+### Client rate limit reached
 
 **Type**: Rate Limit Reached  
-**Trigger:** The number of requests to the API from a client has exceeded the current quota.  
-**Additional data:** `dailyQuota` `expiresUtc`.  
-**Note:** This rule is specific to the client and so not `CompanyId` is present and these rules cannot be filtered by company.
+**Trigger:** The number of requests to the API from a client has exceeded the current quota. This rule is client-specific, so does not include a `companyId` and cannot be filtered by company.
+**Additional data:** `dailyQuota`, `expiresUtc`
 
 ```json
 {
   "AlertId": "72c1103b-7f17-4a3a-8db5-67c2d360a516",
   "ClientId": "30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e",
-  "ClientName": "Rate Limit Reached",
+  "ClientName": "Peach",
   "CompanyId": "1f9559e7-8368-48c9-bdf4-f158e16b8b85",
   "Data": {
     "dailyQuota": 1000,
@@ -291,19 +290,17 @@ Notification is sent for each `dataType` separately when the data type's individ
 }
 ```
 
-### Rate Limit Reset
+### Client rate limit reset
 
 **Type**: Rate Limit Reset  
-**Trigger:** The client rate limit quota has reset and more requests are available.  
-**Additional data:** `quotaRemaining` `resetReason` `dailyQuota` `expiresUtc`.  
-**Note:** This rule is specific to the client and so not `CompanyId` is present and these rules cannot be filtered by company.
-
+**Trigger:** The client rate limit quota has reset and more requests are available. This rule is client-specific, so does not include a `companyId` and cannot be filtered by company.
+**Additional data:** `quotaRemaining`, `resetReason`, `dailyQuota` 
 
 ```json
 {
   "AlertId": "72c1103b-7f17-4a3a-8db5-67c2d360a516",
   "ClientId": "30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e",
-  "ClientName": "Rate Limit Reset",
+  "ClientName": "Peach",
   "Data": {
     "quotaRemaining": 1000,
     "resetReason": "ResetReason",
