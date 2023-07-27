@@ -316,7 +316,8 @@ html[data-theme="dark"] {
   }
 
   .menu__list-item.top-level-item:not(.config) {
-    > div > .menu__link--sublist {
+    > div > .menu__link--sublist,
+    > a.menu__link {
       &:hover {
         &::after {
           transform: scale(1.1);
