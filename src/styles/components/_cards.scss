@@ -32,7 +32,7 @@ ul.card-container {
   }
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 1220px) {
   ul.card-container,
   ul.card-container.col-2 {
     grid-template-columns: 1fr;
