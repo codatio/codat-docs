@@ -391,7 +391,7 @@ html[data-theme="dark"] {
     }
 
     &.product.accounting  > a.menu__link::after {
-      background-image: url("/img/logos/icon_commerce.svg");
+      background-image: url("/img/logos/coins.svg");
     }
 
     &.product.assess  > a.menu__link::after {
@@ -399,15 +399,16 @@ html[data-theme="dark"] {
     }
 
     &.product.banking  > a.menu__link::after {
-      background-image: url("/img/logos/icon_commerce.svg");
+      background-image: url("/img/logos/bank.svg");
     }
 
     &.product.bankfeed  > a.menu__link::after {
-      background-image: url("/img/logos/icon_bankfeeds.svg");
+      background-image: url("/img/logos/bank-note.svg");
+      //background-image: url("/img/logos/icon_bankfeeds.svg");
     }
 
     &.product.commerce  > a.menu__link::after {
-      background-image: url("/img/logos/icon_commerce.svg");
+      background-image: url("/img/logos/cart.svg");
     }
 
     &.product.sfe  > a.menu__link::after {
@@ -490,7 +491,7 @@ html[data-theme="dark"] {
     }
 
     &.product.accounting  > a.menu__link::after {
-      background-image: url("/img/logos/icon_commerce_light.svg") !important;
+      background-image: url("/img/logos/coins_light.svg") !important;
     }
 
     &.product.assess  > a.menu__link::after {
@@ -498,15 +499,16 @@ html[data-theme="dark"] {
     }
 
     &.product.banking  > a.menu__link::after {
-      background-image: url("/img/logos/icon_commerce_light.svg") !important;
+      background-image: url("/img/logos/bank_light.svg") !important;
     }
 
     &.product.bankfeed  > a.menu__link::after {
-      background-image: url("/img/logos/icon_bankfeeds_light.svg") !important;
+      //background-image: url("/img/logos/icon_bankfeeds_light.svg") !important;
+      background-image: url("/img/logos/bank-note_light.svg") !important;
     }
 
     &.product.commerce  > a.menu__link::after {
-      background-image: url("/img/logos/icon_commerce_light.svg") !important;
+      background-image: url("/img/logos/cart_light.svg") !important;
     }
 
     &.product.sfe  > a.menu__link::after {
