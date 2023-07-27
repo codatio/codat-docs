@@ -5,7 +5,7 @@ description: "Use webhooks to build responsive and resilient applications on Cod
 
 The following rules can be configured in the Codat Portal to trigger webhook events. These can be use to help your respond to changes in your companies and their data.
 
-| Rule  | Trigger | Additional data | 
+| Rule / type | Trigger | Additional data | 
 | :-  | :- | :- |
 | [Company data connection status changed](/using-the-api/webhooks/core-rules-types#company-data-connection-status-changed)  <br/>`DataConnectionStatusChanged`| A data connection's status changes. | `dataConnectionId`, `platformKey`, `newStatus`, `oldStatus` |
 | [New company synchronized](/using-the-api/webhooks/core-rules-types#new-company-synchronized)                <br/>`New company synchronised`|  All datasets created during the initial sync of a company are completed.<br/><b>Legacy behavior:</b> The first `dataType` is successfully synced for a new company. [See deprecation](https://docs.codat.io/updates/231010-deprecation-webhooks-new-company-synchronized). | |
