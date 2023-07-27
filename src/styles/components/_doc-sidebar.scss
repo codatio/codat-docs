@@ -1,3 +1,24 @@
+:root {
+  --sidebar-scale: 0.9em;
+
+  --doc-sidebar-width: 17.5rem;
+
+  --dropdown-icon-width: 0.625rem;
+  --dropdown-icon-height: 0.375rem;
+  --dropdown-icon-gap: 0.688rem;
+
+  --sidebar-vertical-gap: 0.6em;
+  --sidebar-horizontal-gap: 0.5em;
+  --icon-gap: 1.75em;
+
+  --ifm-menu-link-padding-vertical: 0.5rem;
+  --ifm-menu-color-active: var(--ifm-link-color);
+
+  --sidebar-spacing-horizontal: 1.5rem;
+
+  --ifm-menu-link-padding-horizontal: 1em;
+}
+
 html[data-theme="light"] {
   --sidebar-category-c: var(--c-gray-100);
   --sidebar-border-c: var(--c-gray-0);
@@ -17,21 +38,6 @@ html[data-theme="dark"] {
   --sidebar-background: var(--token-primary-bg-c);
 }
 
-:root {
-  --doc-sidebar-width: 17.5rem;
-
-  --dropdown-icon-width: 0.625rem;
-  --dropdown-icon-height: 0.375rem;
-  --dropdown-icon-gap: 0.688rem;
-
-  --ifm-menu-link-padding-vertical: 0.5rem;
-  --ifm-menu-color-active: var(--ifm-link-color);
-
-  --sidebar-spacing-horizontal: 1.5rem;
-
-  --ifm-menu-link-padding-horizontal: 1em;
-}
-
 //overrides
 #__docusaurus {
   [class^="docSidebarContainer"] {
@@ -41,6 +47,7 @@ html[data-theme="dark"] {
     margin-block-start: 0;
     will-change: initial;
     height: 100vh;
+    font-size: var(--sidebar-scale);
     border-inline-end: 1px solid var(--sidebar-border-c);
 
     > a {
@@ -134,7 +141,7 @@ html[data-theme="dark"] {
     padding-left: 0!important;
     
     &.header {
-      margin-bottom: 1em;
+      margin-bottom: var(--sidebar-vertical-gap);
       
       a {
         font-weight: bold;
@@ -170,8 +177,7 @@ html[data-theme="dark"] {
 
   .menu__link {
     font-weight: 500;
-    font-size: 0.813rem;
-    line-height: 16px; /* identical to box height */
+    line-height: 1em; /* identical to box height */
     display: flex;
     align-items: center;
     letter-spacing: -0.01em;
@@ -192,6 +198,7 @@ html[data-theme="dark"] {
   }
 
   .menu__link--sublist,
+  .menu__list-item.product > .menu__link,
   .menu__list-item.integrations > .menu__link {
     padding-inline-start: 0;
     padding-inline-end: 0;
@@ -223,8 +230,7 @@ html[data-theme="dark"] {
     &-level-1 {
       > .menu__list-item-collapsible > .menu__link--sublist {
         margin-left: 5px;
-        padding: 12px 8px !important;
-        font-size: .813rem;
+        padding: var(--sidebar-vertical-gap) var(--sidebar-horizontal-gap) !important;
       }
     }
 
@@ -278,17 +284,16 @@ html[data-theme="dark"] {
     &.api,
     &.auth,
     &.data,
-    &.products,
+    &.product,
     &.integrations,
     &.usecases,
     &.other {
       > div > .menu__link--sublist,
       > a.menu__link {
-        margin-left: 2em;
-        font-size: initial;
+        margin-left: var(--icon-gap);
 
         &::after {
-          --icon-size: 24px;
+          --icon-size: 1.5em;
           --dropdown-icon-width: var(--icon-size);
           --dropdown-icon-height: var(--icon-size);
 
@@ -301,15 +306,12 @@ html[data-theme="dark"] {
     }
   }
 
+  .menu__list-item.product,
   .menu__list-item.integrations {
     position: relative;
 
     > .menu__link {
-      padding: 12px 8px;
-
-      // &::after {
-      //   margin-left: 1em;
-      // }
+      padding: var(--sidebar-vertical-gap) var(--sidebar-horizontal-gap);
     }
   }
 
@@ -368,10 +370,6 @@ html[data-theme="dark"] {
       background-image: url("/img/sidebar/data-model.svg");
     }
 
-    &.products > div > .menu__link--sublist::after {
-      background-image: url("/img/sidebar/products.svg");
-    }
-
     &.integrations > a.menu__link::after {
       background-image: url("/img/sidebar/integrations.svg");
     }
@@ -383,14 +381,51 @@ html[data-theme="dark"] {
     &.other > div > .menu__link--sublist::after {
       background-image: url("/img/sidebar/other-guides.svg");
     }
+
+    &.product  > a.menu__link::after {
+      background-image: url("/img/sidebar/products.svg");
+    }
+
+    &.product  > a.menu__link::after {
+      background-image: url("/img/sidebar/products.svg");
+    }
+
+    &.product.accounting  > a.menu__link::after {
+      background-image: url("/img/logos/coins.svg");
+    }
+
+    &.product.assess  > a.menu__link::after {
+      background-image: url("/img/logos/icon_lending.svg");
+    }
+
+    &.product.banking  > a.menu__link::after {
+      background-image: url("/img/logos/bank.svg");
+    }
+
+    &.product.bankfeed  > a.menu__link::after {
+      background-image: url("/img/logos/bank-note.svg");
+      //background-image: url("/img/logos/icon_bankfeeds.svg");
+    }
+
+    &.product.commerce  > a.menu__link::after {
+      background-image: url("/img/logos/cart.svg");
+    }
+
+    &.product.sfe  > a.menu__link::after {
+      background-image: url("/img/logos/icon_expenses.svg");
+    }
+
+    &.product.sfc  > a.menu__link::after {
+      background-image: url("/img/logos/icon_commerce.svg");
+    }
   }
 
   .theme-doc-sidebar-item-category-level-1 > div > .menu__link,
+  .theme-doc-sidebar-item-link-level-1.product > .menu__link,
   .theme-doc-sidebar-item-link-level-1.integrations > .menu__link {
     color: var(--sidebar-category-c);
 
     font-weight: 600;
-    font-size: 0.938rem;
     line-height: 100%;
   }
 
@@ -443,10 +478,6 @@ html[data-theme="dark"] {
       background-image: url("/img/sidebar-dark/data-model.svg") !important;
     }
 
-    &.products > div > .menu__link--sublist::after {
-      background-image: url("/img/sidebar-dark/products.svg") !important;
-    }
-
     &.integrations > a.menu__link::after {
       background-image: url("/img/sidebar-dark/integrations.svg") !important;
     }
@@ -458,28 +489,34 @@ html[data-theme="dark"] {
     &.other > div > .menu__link--sublist::after {
       background-image: url("/img/sidebar-dark/other-guides.svg") !important;
     }
+
+    &.product.accounting  > a.menu__link::after {
+      background-image: url("/img/logos/coins_light.svg") !important;
+    }
+
+    &.product.assess  > a.menu__link::after {
+      background-image: url("/img/logos/icon_lending_light.svg") !important;
+    }
+
+    &.product.banking  > a.menu__link::after {
+      background-image: url("/img/logos/bank_light.svg") !important;
+    }
+
+    &.product.bankfeed  > a.menu__link::after {
+      //background-image: url("/img/logos/icon_bankfeeds_light.svg") !important;
+      background-image: url("/img/logos/bank-note_light.svg") !important;
+    }
+
+    &.product.commerce  > a.menu__link::after {
+      background-image: url("/img/logos/cart_light.svg") !important;
+    }
+
+    &.product.sfe  > a.menu__link::after {
+      background-image: url("/img/logos/icon_expenses_light.svg") !important;
+    }
+
+    &.product.sfc  > a.menu__link::after {
+      background-image: url("/img/logos/icon_commerce_light.svg") !important;
+    }
   }
 }
-
-// @media only screen and (max-width: 800px) {
-//   .navbar-sidebar {
-//     .navbarButton {
-//       margin-left: 0;
-
-//       &.primary {
-//         background: var(--button-primary-bg) !important;
-//       }
-//     }
-//   }
-
-//   .navbar-sidebar__item.menu {
-//     .menu__list-item {
-//       padding-left: 1em;
-//       position: relative;
-//     }
-
-//     .menu__link--sublist {
-//       padding-left: 1em !important;
-//     }
-//   }
-// }
