@@ -84,7 +84,7 @@ The response structure is split into three areas: Report info, Data sources and 
 
 |Field|Type|Description|
 |----|----|----|
-|**confidence**|_decimal_|The lowest confidence scrore of the current levels.|
+|**confidence**|_decimal_|The lowest confidence score of the current levels.|
 |**levels**|_array_|An array of category levels against an individual transaction. For example: `Income`, `Revenue`, `Subscription`, `SubscriptionUpgrade`|
 
 ### Example data
