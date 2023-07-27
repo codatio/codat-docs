@@ -6,26 +6,29 @@
  */
 
 import React from 'react';
-import clsx from 'clsx';
+
 import DocPaginator from '@theme/DocPaginator';
-//import Seo from '@theme/Seo';
 import type {Props} from '@theme/DocItem';
-//import DocItemFooter from '@theme/DocItemFooter';
 import TOC from '@theme/TOC';
 import TOCCollapsible from '@theme/TOCCollapsible';
-import styles from './styles.module.css';
-import useZendesk from './useZendesk';
 
 import {ThemeClassNames, useWindowSize} from '@docusaurus/theme-common';
 import {DocProvider} from '@docusaurus/theme-common/internal';
 import DocItemMetadata from '@theme/DocItem/Metadata';
 
+import PageHeader from '@components/global/PageHeader'
 import Vote from './Vote';
+
+import clsx from 'clsx';
+import styles from './styles.module.css';
+
+import useZendesk from './useZendesk';
 
 import CookieConsent from "react-cookie-consent";
 
 export default function DocItem(props: Props): JSX.Element {
   const {content: DocContent} = props;
+
   const {metadata, frontMatter} = DocContent;
   const {
     image,
@@ -35,6 +38,11 @@ export default function DocItem(props: Props): JSX.Element {
     hide_table_of_contents: hideTableOfContents,
     toc_min_heading_level: tocMinHeadingLevel,
     toc_max_heading_level: tocMaxHeadingLevel,
+    banner_title: bannerTitle,
+    banner_image: bannerImg,
+    banner_text: bannerText,
+    banner_icon: bannerIcon,
+    banner_class: bannerClass,
   } = frontMatter;
 
   const { metadata: { editUrl } } = DocContent;
@@ -53,12 +61,25 @@ export default function DocItem(props: Props): JSX.Element {
 
   useZendesk();
 
+
   return (
     <DocProvider content={props.content}>
       {/*<Seo {...{title, description, keywords, image}} />*/}
       <DocItemMetadata />
 
-      <div className="row">
+      {
+        bannerTitle
+        &&
+        <PageHeader
+          className={bannerClass}
+          title={bannerTitle}
+          img={bannerImg}
+          text={bannerText}
+          icon={bannerIcon}
+        />
+      }
+
+      <div className={clsx('row', styles.docItemRow)}>
         <div
           className={clsx('col', {
             [styles.docItemCol]: !hideTableOfContents,
@@ -96,7 +117,7 @@ export default function DocItem(props: Props): JSX.Element {
           </div>
           <div className="spacer"></div>
         </div>
-{/*
+
         <CookieConsent
           location="bottom"
           buttonText="Accept"
@@ -105,7 +126,7 @@ export default function DocItem(props: Props): JSX.Element {
           buttonStyle={{ backgroundColor: "white", fontSize: "12px", borderRadius: "4px" }}
         >
           This website uses cookies to enhance your experience.
-        </CookieConsent>*/}
+        </CookieConsent>
 
         <div className="end">
           { !hideTableOfContents && DocContent.toc && (

@@ -1,8 +1,7 @@
 ---
 title: "Set up the PrestaShop integration"
 description: "Explore our API integration with PrestaShop"
-createdAt: "2021-09-17T00:27:41.621Z"
-updatedAt: "2023-01-06T16:42:13.196Z"
+sidebar_label: Setup
 ---
 
 Before you can access your customers' commerce data from PrestaShop, you need to set up a live integration.

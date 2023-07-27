@@ -1,188 +1,290 @@
 ---
-title: "Creating and updating data"
-description: "Understand how to push data to Codat's integrated platforms"
+title: "Create, update, and delete data"
+description: "Understand how to add, modify, and delete data in Codat's integrated platforms"
 ---
-
-In addition to pulling data from integrations, you can push data to create and update records in the underlying integrations using Codat's data model.
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 :::note Data coverage
 
-View the full details of Codat's support for pushing data for each accounting platform in the <a class="external" href="https://knowledge.codat.io/supported-features/accounting" target="_blank">Data Coverage Explorer</a>.
+View the full details of Codat's support for creating and updating data for each accounting platform in our <a class="external" href="https://knowledge.codat.io/supported-features/accounting" target="_blank">Data Coverage Explorer</a>.
 
 :::
 
-## Types of push
+Codat offers the ability to create, update, and delete records in the source platforms of our integrations using our standard data models. We support the following operations (also known as CUD): 
 
-Codat supports two types of push to a company's data source: 
+- **Create** a new record using the `POST` method.
+- **Update** an existing record using the `PUT` method.
+- **Delete** an existing record using the `DELETE` method.
 
-- `POST` - Create a record in a company's accounting software
-- `PUT` - Update an existing record
+The CUD process first requires you to [check the data model](/using-the-api/push#use-a-valid-data-model) of the data type you want to create, update, or delete. This helps you ensure all required properties are included in your request. Checking the model may be a one-time activity (for integrations with static properties) or be required more frequently (for integrations with higher customization options).
 
-Create and update operations behave similarly, with both having an options endpoint and returning a _pushOperation_ to allow you to monitor the state of the push. 
+Next, you are ready to [perform the CUD operation](/using-the-api/push#perform-the-operation) using the relevant data model. You will receive a CUD operation key in return. You can then use it to [monitor the status of the operation](/using-the-api/push#monitor-the-status-of-your-operation), or display its results.
 
-There are some additional considerations when updating to help ensure the company's data integrity.
+```mermaid
+sequenceDiagram
+    participant app as Your application 
+    participant codat as Codat
+    
+  opt If the data model check is required
+    app ->> codat: Get create/update {{dataType}} model
+    codat -->> app: Valid data type model
+  end
 
-## Step 1: Options
+    app ->> codat: Create, update, or delete record
+    codat -->> app: CUD operation key
 
-Before pushing data into accounting software, it is often necessary to collect some details from the user as to how they would like the data to be inserted. This includes names and amounts on transactional entities, but also factors such as categorization of entities, which is often handled differently between different accounting packages. A good example of this is specifying where on the balance sheet/profit and loss reports the user would like a newly-created nominal account to appear.
+    codat -->> app: CUD operation status webhook
 
-Our `/options` endpoint exposes which fields are required to be pushed for a specific linked company, and the options which may be selected for each field.
+    alt Status is successful
+        app ->> codat: Get CUD operation
+        codat -->> app: CUD operation
+    end
+``` 
 
-### GET /options
+### Asynchronous operations
 
-You can retrieve the options for a given data type by calling:
+Data creation and updates will be handled asynchronously and will take between a few seconds to a couple of minutes to complete, depending on the underlying platform. This means you will receive a `Pending` status in response to your CUD request. You can [monitor the status of your request via a webhook](/using-the-api/push#monitor-the-status-of-your-operation) to verify when the operation completes (preferred), or poll the status. 
 
-`GET /companies/{companyId}/connections/{connectionId}/options/{dataType}` 
+A CUD operation may be `Pending` indefinitely for integrations using offline connectors when the desktop application is unreachable. Manage this by setting [timeouts](/using-the-api/push#monitor-the-status-of-your-operation#timeouts). 
 
-<a class="external" href="https://docs.codat.io/codat-api#/operations/get-create-update-model-options-by-data-type" target="_blank">See the API reference</a>.
+### Supplemental data
 
-```json title="Response from this endpoint for the accounts dataset"
+We have introduced [supplemental data](/using-the-api/supplemental-data/overview) to many of our data types, enabling you to enrich these data types with additional properties not included in Codat's out-of-the box data models. You can create, update, and delete supplemental data using the same process as outlined above.
+
+## Use a valid data model
+
+Each integration may have different requirements to the request body of a CUD operation. So, before triggering the operation, you need to know how the data should be inserted into the source platform. You can access the integration-specific model requirements using Codat's _Get model_ endpoints.
+
+In most cases, the models provide static data, such as detailing mandatory properties. Some platforms, like Netsuite, offer greater customization to their users, so the corresponding model may differ.
+
+:::info Deleting records
+Our data deletion endpoints, where available, simply require the record `id`, `companyId`, and `connectionId` to be included in the request URL.
+:::
+
+Let's use our [Get create account model](/accounting-api#/operations/get-create-chartOfAccounts-model) endpoint to view integration-specific requirements for creating the `chartOfAccounts` data type in Xero. 
+
+```sh
+GET https://api.codat.io/companies/{companyId}/connections/{connectionId}/options/chartOfAccounts
+```
+The response indicates that three properties must be populated: 
+
+- `nominalCode`, a string that can be up to 10 characters long
+- `name`, an unrestricted string
+- `fullyQualifiedCategory`, an enum property that accepts a string chosen from a list of options
+
+The `displayName` on the options can be used to display a more descriptive name, such as "Current assets".  
+
+```json title="Partial Get create account model response"
 {
   "type": "Object",
   "displayName": "Nominal Account",
-  "description": "Account represented in the chart of accounts or general ledger.",
+  "description": "Nominal Accounts are the categories a business uses to record transactions",
   "properties": {
     "nominalCode": {
       "type": "String",
-       "displayName": "Nominal Code",
-       "description": "Identifier for the nominal account.",
-       "required": true,
-       "validation": {
-         "warnings": [{
-            "field": "nominalCode",
-             "details": "Must have a length between 1 and 7 characters."
+      "displayName": "Nominal Code",
+      "description": "Identifier for the nominal account.",
+      "required": true,
+      "validation": {
+        "warnings": [
+          {
+            "field": "NominalCode",
+            "details": "Max length of 10 characters."
+          }
+        ],
+        "information": []
+      }
+    },
+    "name": {
+      "type": "String",
+      "displayName": "Name",
+      "description": "Name of account as it appears in the chart of accounts or general ledger.",
+      "required": true,
+      "validation": {
+        "warnings": [],
+        "information": [
+          {
+          ...
           }
         ]
       }
-      
     },
-     "name": {
-       "type": "String",
-       "displayName": "Name",
-       "description": "Name of account as it appears in the chart of accounts or general ledger.",
-       "required": true
-      
-    },
-     "fullyQualifiedCategory": {
+    ...
+    "fullyQualifiedCategory": {
       "type": "String",
       "displayName": "Fully Qualified Category",
       "description": "Account type and category for nominal account.",
-      "options": [{
-          "value": "Asset.CashOnHand",
+      "options": [
+        {
+          "value": "Asset.Current",
           "type": "String",
-          "displayName": "Cash On Hand"
-        }, {
-          "value": "Asset.Checking",
-          "type": "String",
-          "displayName": "Checking"
-        }
+          "displayName": "Current Asset",
+          "required": false
+        },
+        ...
       ],
-      "required": true,
+      "required": true
     }
   },
-  "required": false,
+  "required": true
 }
 ```
 
-This example describes the nominal account object as requiring three properties to be populated: `nominalCode`, `name`, and `fullyQualifiedCategory`. 
+## Perform the operation
 
-- The `nominalCode` property is a string, which has a validation warning that it must be between 1 and 7 characters long. 
-- The `name` property is an unrestricted string. 
-- The `fullyQualifiedCategory` property is an enum property, namely it accepts a string chosen from a list of options (in this case, "Asset.CashOnHand" and "Asset.Checking"). The `displayName` on the options can be used to display the user a more descriptive name, such as "Cash On Hand" and "Checking".
-
-### Displaying options to your user
-
-The structure of the options endpoint is designed such that it can be easily parsed into a set of controls which can be displayed to the end user such that they can select how data is pushed into their accounting software.
-
-For example, when rendering the "fullyQualifiedCategory" from the above example as a control on a HTML form, it can be parsed into the following:
-
-```html
-<select name="fullyQualifiedCategory" required>
-  <option value="Asset.CashOnHand">Cash On Hand</option>
-  <option value="Asset.Checking">Checking</option>
-</select>
-```
-
-## Step 2: Pushing a record
-
-:::caution Pushing data not referenced by the Options endpoint
-
-If you attempt to push a record using fields that are not documented in the Options response for that company, the additional data may not be pushed to the platform and you may receive validation errors in response to your "push" request.
+:::caution Properties not in the _Get model_ response
+If you attempt to create or update a record using properties not documented in the  _Get model_ response, you may receive validation errors in response to your request.
 :::
 
-### The push endpoint
+Let's try creating a new account using our [Create account](/accounting-api#/operations/create-account) endpoint. The request body should be a JSON object which conforms to the structure of the [Get create account model](/accounting-api#/operations/get-create-chartOfAccounts-model) we called previously. 
 
-The endpoint for pushing a record is as follows:
+We base our models on the `GET` request, which includes `modifiedDate` and `sourceModifiedDate` that are not used when creating or updating a record. 
 
-`POST /companies/{companyId}/connections/{connectionId}/push/{dataType}`
+We will try to create an account using a valid request body, and a request body that leads to a validation error:
 
-An example would be <a href="/accounting-api#/operations/post-invoice">posting a new invoice to an accounting package for a given company</a>.
+<Tabs>
+   <TabItem value="wo" label="Create an account">  
 
-The request body should be a JSON object which conforms to the structure of the options endpoint above. It is expected that the options endpoint is queried before performing any push operation.
+  ```json  
+    {
+      "nominalCode": "4200123456", 
+      "name": "Codat Assets Account", 
+      "fullyQualifiedCategory": "Asset.Current" 
+    }
+  ```
+   </TabItem>
 
-For example, a valid request body for the example above would be as follows:
+   <TabItem value="with" label="Create an account with an error">  
 
-```json
+  ```json  
+    {
+      "nominalCode": "350045006500", // Nominal code intentionally consits of too many characters
+      "name": "Excessive Length Account", 
+      "fullyQualifiedCategory": "Asset.Current" 
+    }
+  ```
+   </TabItem>
+</Tabs>
+
+This results in a corresponding response from the endpoint, which includes the following details:
+
+- **pushOperationKey**: a unique identifier generated by Codat to represent this single CUD operation that can be used to track its status
+- **dataType**: the type of data being created, in this case, `chartOfAccounts`
+- **status**: the status of the create operation, which can be `Pending`, `Failed`, `Success` or `TimedOut` 
+- **requestedOnUtc**: the datetime (in UTC) when the operation was requested 
+- **completedOnUtc**: the datetime (in UTC) when the operaion was completed, null if `Pending`
+- **validation**: a human-readable object that contains validation details, including errors, encountered during the operation
+- **changes**: an array that communicates which record has changed (`recordRef` property) and the manner in which it changed (`type` property that can be `Unknown`, `Created`, `Modified`, or `Deleted`)
+
+<Tabs>
+   <TabItem value="wo" label="Account creation response">  
+
+  ```json
+    {
+      "changes": [...],
+      "data": {
+        "id": "fdeaba98-6f74-4b03-9a67-3708ea442417",
+        "nominalCode": "4200123456",
+        "name": "Codat Assets Account",
+        "fullyQualifiedCategory": "Asset.Current",
+        "type": "Unknown",
+        "status": "Unknown",
+        "isBankAccount": false,
+        "modifiedDate": "2023-03-21T17:17:59.4604771Z",
+        "validDatatypeLinks": []
+      },
+      "dataType": "chartOfAccounts",
+      "companyId": "fa115de8-5269-474e-8b63-fd697ec04b1b",
+      "pushOperationKey": "8e42e5f6-c596-4ddf-a5e4-fdc9977f5a99",
+      "dataConnectionKey": "c39b4839-9017-4fed-b1c6-af6b31ae32a5",
+      "requestedOnUtc": "2023-03-21T17:17:58.9235368Z",
+      "completedOnUtc": "2023-03-21T17:17:59.4815194Z",
+      "status": "Success",
+      "validation": {
+        "errors": [],
+        "warnings": []
+      },
+      "statusCode": 200
+    }
+  ```
+  
+   </TabItem>
+
+   <TabItem value="with" label="Account creation with a validation error">  
+
+  ```json
+    {
+      "changes": [...],
+      "data": {
+        "nominalCode": "350045006500",
+        "name": "Excessive Assets Account",
+        "fullyQualifiedCategory": "Asset.Current",
+        "type": "Unknown",
+        "status": "Unknown",
+        "isBankAccount": false,
+        "validDatatypeLinks": []
+      },
+      "dataType": "accounts",
+      "companyId": "fa115de8-5269-474e-8b63-fd697ec04b1b",
+      "pushOperationKey": "0c74f21b-0a43-492e-9aa8-0c8ad928e5b6",
+      "dataConnectionKey": "983a8fd1-a47b-48fa-b1ac-af88a6bcd3cd",
+      "requestedOnUtc": "2023-03-21T17:25:32.0939249Z",
+      "completedOnUtc": "2023-03-21T17:25:32.1587863Z",
+      "status": "Failed",
+      "errorMessage": "An error occurred in a downstream service. Correlation ID: 72e161a142c17bb5b3e480f873df0b21. Message: Push failed for Account: see validation for more information",
+      "validation": {
+        "errors": [
+          {
+            "itemId": "NominalCode",
+            "message": "Failed to push to Account as NominalCode must not be longer than 10 characters long.",
+            "validatorName": "Account"
+          }
+        ],
+        "warnings": []
+      },
+      "statusCode": 400
+    }
+  ```
+   </TabItem>
+</Tabs>
+
+## Monitor the status of your operation
+
+Your operation will initially be in a `Pending` status. You can track an update on the final `Success` or `Failed` state to communicate the outcome of the operation to the user, or take further action in case of failures. We recommend listening to our webhooks for this purpose. 
+
+In the **Monitor > Alerting rules > Create new rule** [view](https://app.codat.io/monitor/rules) of the Codat Portal, create a subscription to the _Push operation status has changed_ rule type. You can review detailed instructions in our documentation for [subscribing to rules](/using-the-api/webhooks/core-rules-create) and receiving webhooks as [email alerts](/using-the-api/webhooks/receive-webhooks-as-email).
+
+You will receive the following response from the _Push operation status has changed_ webhook:
+
+```json 
 {
-  "nominalCode": "4200", 
-  "name": "Codat Bank Account", 
-  "fullyQualifiedCategory": "Asset.CashOnHand" 
-}
+ "CompanyId":"fa115de8-5269-474e-8b63-fd697ec04b1b",
+ "RuleId":"c40791fe-b6fd-45c3-9bf7-0a16abf1b8fd",
+ "Type":"Push Operation Status Changed",
+ "AlertId":"a62bfb38-d73c-4aab-9bb6-d8014bba5f29",
+ "Message":"accounts triggered notification for PushOperationStatusChanged at 2019-05-22T18:19:42.742Z",
+ "Data":{
+    "dataType":"chartOfAccounts",
+    "status":"Success",
+    "pushOperationKey":"8e42e5f6-c596-4ddf-a5e4-fdc9977f5a99"
+ }
 ```
-The response from the push endpoint is a PushOperation object, which is structured as follows:
 
-```json
-{
-  "pushOperationKey": "f989ebc8-1fc6-4367-acd1-1892e97bb7b0",
-  "companyId": "9ac8109a-ebf9-464a-b178-fdab4970a584",
-  "dataConnectionId": "15b69c97-318c-46c4-bb68-6f451f365227", 
-  "dataType": "accounts",
-  "status": "Pending",
-  "requestedOnUtc": "2018-08-15T17:22:00",
-  "completedOnUtc": null,
-  "data": {},
-  "validation": {}
-}
-```
-Properties on the object are as follows: 
-
-- **pushOperationKey**: A unique identifier generated by Codat to represent this single push operation. This identifier can be used to track the status of the push, and should be persisted
-- **dataType**: The type of data being pushed, eg invoices, customers 
-- **status**: The status of the push operation, which can be `Pending`, `Failed`, `Success`, `TimedOut`, or `Unknown`
-- **requestedOnUtc**: The datetime (in UTC) when the push was requested 
-- **completedOnUtc**: The datetime (in UTC) when the push was completed, null if Pending 
-- **data**: The object which was pushed. If the push has completed successfully, this represents the object as it appears in the platform (with any platform-generated fields populated)
-- **validation**: A human-readable object describing validation decisions Codat has made when pushing data into the platform. If a push has failed because of validation errors, they will be detailed here.
-
-### Synchronous vs asynchronous push
-
-The majority of platforms are implemented to push asynchronously so you will receive a `Pending` push operation in response to your push request.  You can use the details in this response to monitor the status of your push request. 
-
-For some platforms, pushing may be implemented synchronously and you may receive a `Success` or `Failed` push operation in response to your push request (in place of a `Pending` push operation). However, we strongly suggest that you assume that all pushes will be processed asynchronously when integrating with Codat.
+You can also use our endpoints to monitor the status of your create, update, or delete operation. List all operations for a company using the [List push operations](/codat-api#/operations/get-company-push-history) endpoint, or list a single operation via the [Get push operation](/codat-api#/operations/get-push-operation). This is useful when you want to include summary information to your customers outlining the status of their CUD history.
 
 ### Timeouts
 
-It is possible for an operation to be in a `Pending` status indefinitely, for example if a user's on-premise software is offline. To avoid possible issues this could create for clients, Codat provides a timeout functionality for push operations in the `Pending` status. If the `timeoutInMinutes` property has been set on a push operation, Codat will guarantee that the operation will not be processed after that deadline. If the deadline expires, the status of the push operation will change to `TimedOut`.
+It is possible for an operation to be in a `Pending` status indefinitely, for example, if a user's on-premise software is offline. Codat provides a timeout functionality for such scenarios. 
 
-## Step 3: Monitoring status of push
+To control the timeframe in which you want your CUD operation to complete, use the `timeoutInMinutes` parameter. If the deadline expires, the status of the operation will change to `TimedOut`.
 
-For asynchronous push operations, where the push is initially in a `Pending` status, you may wish to have a process that will provide an update on a final `Success` or `Failed` state, or `Unknown` state if the outcome of the push is unclear. This outcome can then be communicated to the user, or further actions can be taken.
+## 💡 Tips and traps
 
-Codat supports two methods of monitoring the status of push operations: polling and webhooks. 
+- When a CUD operation successfully completes, this changes the specific record in Codat's system, but does not change any *associated* records. For example, if you create a payment against an invoice, the payment becomes available in Codat once the operation completes, but the invoice may still show a non-zero `amountDue`. To view the fully updated associated records, you need to [requeue all the relevant datasets](/using-the-api/queueing-data-syncs).
 
-### 1. Polling
+- Data successfully created in the target platform is visible almost immediately when retrieving that data type from Codat. If you produce point-in-time reports or use the `modifiedDate` to pull only recent changes from the API, this may impact the consistency of your data. 
 
-The Codat API provides two endpoints for monitoring push operations: one for viewing the status of all the most recent push operations, and one for viewing the status of a single push operation, identified by the `PushOperationKey` returned when you requested the push.
+  For example, you may have checked your accounts receivable position based on the balance sheet and invoice data types pulled yesterday. If you created an invoice today, this will cause a discrepancy as there may have been changes to invoices not seen between the `lastSyncUtc` and the maximum `modifiedDate` of the invoices.
 
-You can:
-
-- List all push operations (paged) for a company using `GET /companies/{companyId}/push`
-- Get a single push operation by ID using `GET /companies/{companyId}/push/{pushOperationKey}`.
-
-You can periodically poll the single endpoint while a push is in a `Pending` state to identify when it enters a `Success`, `Failed`, or `Unknown` state, at which point the outcome can be communicated to the user. 
-
-The list endpoint can be used to present to the user a list of recent push requests and their statuses. This can be useful for applications which push data frequently.
-
-### 2. Webhooks
-
-A second option for monitoring push operations is to register a subscription to the "Push status changed" rule. This can be configured by following the instructions in our documentation for [subscribing to rules](/introduction/webhooks/core-rules-create).
+- There is no coordination between the fetch and CUD operations to guarantee the correct order. This means, if you trigger a CUD operation while a pull is in progress for the same data type, fetched data may overwrite created or updated data in our API. We recommend you do not create or update a data type while it has a pull in progress. 

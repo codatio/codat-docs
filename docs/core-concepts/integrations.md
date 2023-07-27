@@ -1,37 +1,95 @@
 ---
 title: "Integrations"
 description: "Concept overview and key details"
-createdAt: "2019-02-15T16:11:29.274Z"
-updatedAt: "2022-10-04T13:56:20.766Z"
 tags:
   - Core concept
 ---
 
 In Codat, an integration represents a third-party data source that you can connect a [company](/core-concepts/companies) to (using a [data connection](/core-concepts/connections)) so that you can access that company's business data.
 
-We currently support four types of integration, each enabling access to different types of business data: [accounting](/accounting-api/overview), [banking](/banking-api/overview), [commerce](/commerce-api/overview) integrations, and file upload integrations.
+You can connect a company to a single accounting source and a single bank feeds source, and multiple commerce and banking platforms. 
 
-[Explore integration coverage](https://knowledge.codat.io/supported-features/accounting).
+[Explore integration coverage  →](https://knowledge.codat.io/supported-features/accounting).
 
-## Accounting
+## Integration categories
 
-Codat’s [accounting integrations](/integrations/accounting/overview) allow you to easily pull up-to-date accounting data from your customers' accounting software as well as push data to their software using Codat's standard [accounting data model](/data-model/accounting/).
-
-## Banking
-
-Codat’s [banking integrations](/integrations/banking/overview) allow you to easily pull up-to-date account and transaction data from your customers' banks using Codat's standard [banking data model](/data-model/banking).
-
-## Commerce
-
-Codat’s [commerce integrations](/integrations/commerce/overview) allow you to easily pull up-to-date ecommerce, payment and point-of-sale data from your customers' commerce software using Codat's standard [commerce data model](/data-model/commerce/).
-
-## Bank feeds
-
-Codat’s [bank feeds integrations](/integrations/bankfeeds/overview) allow you to easily pull up-to-date ecommerce, payment and point-of-sale data from your customers' commerce software using Codat's standard [commerce data model](/data-model/commerce/).
-
-## File upload
-
-Codat's [file upload integrations](/other/file-upload) allow your customers to share any documentation you require them to provide. This may include personal identity documents, pitch decks, contracts, or files with accounting and banking data.
+<ul className="card-container">
+  <li className="card">
+    <div className="header">
+      <img
+        src="/img/wp-icons/Calculator.png"
+        className="mini-icon"
+      />
+      <h3>Accounting</h3>
+    </div>
+    <p>
+      Pull up-to-date accounting data from your customers' accounting software as well as push data to their software using Codat's standard accounting data model.
+    </p>
+    <p>
+      <a href="/integrations/accounting/overview">See our accounting integrations→</a>
+    </p>    
+  </li>
+  <li className="card">
+    <div className="header">
+      <img
+        src="/img/wp-icons/Bank.png"
+        className="mini-icon"
+      />
+      <h3>Banking</h3>
+    </div>
+    <p>
+      Pull up-to-date account and transaction data from your customers' banks using Codat's standard banking data model.
+    </p>
+    <p>
+      <a href="/integrations/banking/overview">See our banking integrations →</a>
+    </p>    
+  </li>
+  <li className="card">
+    <div className="header">
+      <img
+        src="/img/wp-icons/Storefront.png"
+        className="mini-icon"
+      />
+      <h3>Commerce</h3>
+    </div>
+    <p>
+      Pull up-to-date ecommerce, payment and point-of-sale data from your customers' commerce software using Codat's standard commerce data model.
+    </p>
+    <p>
+      <a href="/integrations/commerce/overview">See our commerce integrations →</a>
+    </p>    
+  </li>
+  <li className="card">
+    <div className="header">
+      <img
+        src="/img/wp-icons/Frame-3805.png"
+        className="mini-icon"
+      />
+      <h3>Bank feeds</h3>
+    </div>
+    <p>
+      Allow accounting software users to easily reconcile bank transactions against accounting entries for our bank feeds integrations.
+    </p>
+    <p>
+      <a href="/integrations/bankfeeds/overview">See our Bank feeds integrations →</a>
+    </p>    
+  </li>
+  <li className="card">
+    <div className="header">
+      <img
+        src="/img/wp-icons/Files.png"
+        className="mini-icon"
+      />
+      <h3>File upload</h3>
+    </div>
+    <p>
+      Enable your customers to share any documentation you require them to provide. This may include personal identity documents, pitch decks, contracts, or files with accounting and banking data.
+    </p>
+    <p>
+      <a href="/integrations/file-upload">Read about file upload →</a>
+    </p>    
+  </li>
+</ul>
 
 ---
 

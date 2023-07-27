@@ -1,5 +1,6 @@
 ---
 title: "Overview"
+displayed_sidebar: integrations
 description: "Bank feeds API integrations"
 createdAt: "2019-04-26T13:15:07.902Z"
 updatedAt: "2022-11-15T14:22:20.124Z"
@@ -12,5 +13,5 @@ Read more about our [Bank Feeds API](/bank-feeds-api/overview) product.
 ## Set up bank feeds integrations
 
 - [QuickBooks Online Bank Feeds](/bank-feeds-api/qbo-bank-feeds/) (US and Canada only)
-- [Sage Bank Feeds](/bank-feeds-api/sage-bank-feeds)
-- [Xero](/integrations/accounting/xero/accounting-xero-setup#configure-direct-bank-feeds)
+- [Sage Bank Feeds](/bank-feeds-api/sage-bank-feeds/)
+- [Xero](/bank-feeds-api/xero-bank-feeds/)

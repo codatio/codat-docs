@@ -22,18 +22,21 @@ The below query functionality will only work when searching for company data (e.
 - The query takes the form of `propertyName=value`.
 - You can also include comparison operators, such as greater than, less than or equal to. The following table shows comparison operators that are supported for numeric, date, and string data types.
 
-| Operator 	| Name                     	| Number 	| String 	| Date 	|
-|----------	|--------------------------	|--------	|--------	|------	|
-| =        	| Equals                   	| ✔      	| ✔      	| ✔    	|
-| !=       	| Not equals               	| ✔      	| ✔      	| ✔    	|
-| ~        	| Contains                 	| ❌      	| ✔      	| ❌    	|
-| >        	| Greater than             	| ✔      	| ❌      	| ✔    	|
-| <        	| Less than                	| ✔      	| ❌      	| ✔    	|
-| >=       	| Greater than or equal to 	| ✔      	| ❌      	| ✔    	|
-| <=       	| Less than or equal to    	| ✔      	| ❌      	| ✔    	|
+| Operator 	| Name                     	| Encoded     | Number 	| String 	| Date 	|
+|----------	|--------------------------	| :-          |--------	|--------	|------	|
+| =        	| Equals                   	| `%3d`       | ✔      	| ✔      	| ✔    	|
+| !=       	| Not equals               	|  `%21%3d`   | ✔      	| ✔      	| ✔    	|
+| ~        	| Contains                 	| `%7E`       | ❌      | ✔      	| ❌    |
+| >        	| Greater than             	| `%3e`       | ✔      	| ❌      | ✔    	|
+| <        	| Less than                	| `%3c`       | ✔      	| ❌      | ✔    	|
+| >=       	| Greater than or equal to 	| `%3e%3d`    | ✔      	| ❌      | ✔    	|
+| <=       	| Less than or equal to    	|  `%3c%3d`   | ✔      	| ❌      | ✔    	|
+| &&        | AND                       | `%26%26`    |  -      | -       | -     |
+| \|\|       | OR                       |  `%7C%7C`   | -       | -       | -     |
+| {, }     | Logical separator          | `%7B`, `%7D`| -       | -       | -     |
 
 - Separate multiple query clauses with ampersands (`&&`) for _AND_ queries or pipes (`||`) for _OR_ queries.
-- Access sub-properties by separating them from the property with a dot (see [Invoices to a particular customer](/using-the-api/querying#invoices-to-a-particular-customer) example below). This is only applicable to objects within our data endpoints. We do not support querying inside arrays.
+- Access sub-properties by separating them from the property with a dot (see [Invoices to a particular customer](/using-the-api/querying#invoices-for-a-specific-customer) example below). This is only applicable to objects within our data endpoints. We do not support querying inside arrays.
 
 :::info Combining queries
 
@@ -60,10 +63,6 @@ Our `GET /{dataType}` endpoints typically return an array of items of that given
 
 ## Example queries
 
-**Note:** some characters are url-encoded:
-- < = `%3c`
-- \> = `%3e`
-
 ### Invoices with amounts outstanding
 
 Query: `amountDue > 0`
@@ -79,11 +78,23 @@ GET /companies/{companyId}/data/invoices?query=amountDue%3e0
 <TabItem value="javascript" label="Javascript">
 
 ```javascript
-import {InvoicesQuery} from 'codat-queries';
-import { api as codat } from 'codat';
+import { CodatAccounting } from "@codat/accounting";
+import { ListInvoicesResponse } from "@codat/accounting/dist/sdk/models/operations";
 
-var query = new InvoicesQuery(companyId, 'amountDue>0')
-.run(codat.uat(apiKey));
+const sdk = new CodatAccounting({
+  security: {
+    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  },
+});
+
+sdk.invoices.list({
+  companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
+  query: "amountDue>0",
+}).then((res: ListInvoicesResponse) => {
+  if (res.statusCode == 200) {
+    // handle response
+  }
+});
 ```
 </TabItem>
 <TabItem value="c" label="C#">
@@ -114,11 +125,23 @@ GET /companies/{companyId}/data/invoices?query=currency%3dGBP
 <TabItem value="javascript" label="Javascript">
 
 ```javascript
-import {InvoicesQuery} from 'codat-queries';
-import { api as codat } from 'codat';
+import { CodatAccounting } from "@codat/accounting";
+import { ListInvoicesResponse } from "@codat/accounting/dist/sdk/models/operations";
 
-var query = new InvoicesQuery(companyId, 'currency=GBP')
-.run(codat.uat(apiKey));
+const sdk = new CodatAccounting({
+  security: {
+    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  },
+});
+
+sdk.invoices.list({
+  companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
+  query: "currency=GBP",
+}).then((res: ListInvoicesResponse) => {
+  if (res.statusCode == 200) {
+    // handle response
+  }
+});
 ```
 </TabItem>
 <TabItem value="c" label="C#">
@@ -149,11 +172,23 @@ GET /companies/{companyId}/data/invoices?query=customerRef.id%3d61
 <TabItem value="javascript" label="Javascript">
 
 ```javascript
-import {InvoicesQuery} from 'codat-queries';
-import { api as codat } from 'codat';
+import { CodatAccounting } from "@codat/accounting";
+import { ListInvoicesResponse } from "@codat/accounting/dist/sdk/models/operations";
 
-var query = new InvoicesQuery(companyId, 'customerRef.id=61')
-.run(codat.uat(apiKey));
+const sdk = new CodatAccounting({
+  security: {
+    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  },
+});
+
+sdk.invoices.list({
+  companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
+  query: "customerRef.id=61",
+}).then((res: ListInvoicesResponse) => {
+  if (res.statusCode == 200) {
+    // handle response
+  }
+});
 ```
 </TabItem>
 <TabItem value="c" label="C#">
@@ -184,11 +219,24 @@ GET /companies/{companyId}/data/invoices?query=amountDue%3e0%26%26totalAmount%3c
 <TabItem value="javascript" label="Javascript">
 
 ```javascript
-import {InvoicesQuery} from 'codat-queries';
-import { api as codat } from 'codat';
+import { CodatAccounting } from "@codat/accounting";
+import { ListInvoicesResponse } from "@codat/accounting/dist/sdk/models/operations";
 
-var query = new InvoicesQuery(companyId, 'amountDue>0&&totalAmount<1000')
-.run(codat.uat(apiKey));
+const sdk = new CodatAccounting({
+  security: {
+    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  },
+});
+
+sdk.invoices.list({
+  companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
+  query: "amountDue>0&&totalAmount<1000",
+}).then((res: ListInvoicesResponse) => {
+  if (res.statusCode == 200) {
+    // handle response
+  }
+});
+
 ```
 </TabItem>
 <TabItem value="c" label="C#">
@@ -221,11 +269,24 @@ GET /companies/{companyId}/data/invoices?query=dueDate%3E2021-01-28
 <TabItem value="javascript" label="Javascript">
 
 ```javascript
-import {InvoicesQuery} from 'codat-queries';
-import { api as codat } from 'codat';
+import { CodatAccounting } from "@codat/accounting";
+import { ListInvoicesResponse } from "@codat/accounting/dist/sdk/models/operations";
 
-var query = new InvoicesQuery(companyId,'dueDate>2021-01-28')
-.run(codat.uat(apiKey));
+const sdk = new CodatAccounting({
+  security: {
+    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  },
+});
+
+sdk.invoices.list({
+  companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
+  query: "dueDate>2021-01-28",
+}).then((res: ListInvoicesResponse) => {
+  if (res.statusCode == 200) {
+    // handle response
+  }
+});
+
 ```
 </TabItem>
 <TabItem value="c" label="C#">
@@ -234,6 +295,55 @@ var query = new InvoicesQuery(companyId,'dueDate>2021-01-28')
 var request = new RestRequest("companies/{companyId}/data/invoices", Method.GET);
 request.AddUrlSegment("companyId", companyId);
 request.AddUrlSegment("query", "dueDate>2021-01-28");
+request.AddHeader("Authorization", $"Basic {encodedApiKey}");
+var response = client.Execute(request);
+var info = response.Data;
+```
+</TabItem>
+</Tabs>
+
+### Invoices deleted in the source platform
+
+Query: `metadata.isDeleted!=true`
+
+Codat identifies records that have been deleted in the source accounting platform between successive data syncs using the `isDeleted` flag. You may need to exclude these records from the results.
+
+<Tabs>
+<TabItem value="http" label="HTTP">
+
+```http
+GET /companies/{companyId}/data/invoices?metadata.isDeleted%21%3dtrue
+```
+
+</TabItem>
+<TabItem value="javascript" label="Javascript">
+
+```javascript
+import { CodatAccounting } from "@codat/accounting";
+import { ListInvoicesResponse } from "@codat/accounting/dist/sdk/models/operations";
+
+const sdk = new CodatAccounting({
+  security: {
+    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  },
+});
+
+sdk.invoices.list({
+  companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
+  query: "metadata.isDeleted!=true",
+}).then((res: ListInvoicesResponse) => {
+  if (res.statusCode == 200) {
+    // handle response
+  }
+});
+```
+</TabItem>
+<TabItem value="c" label="C#">
+
+```c
+var request = new RestRequest("companies/{companyId}/data/invoices", Method.GET);
+request.AddUrlSegment("companyId", companyId);
+request.AddUrlSegment("query", "metadata.isDeleted!=true");
 request.AddHeader("Authorization", $"Basic {encodedApiKey}");
 var response = client.Execute(request);
 var info = response.Data;
@@ -266,34 +376,6 @@ var info = response.Data;
 ```
 </TabItem>
 </Tabs>
-
-### For companies with no connections
-
-Query: `dataConnections.count = 0`
-  
-*Note*: The page size value is obligatory for querying.
-
-<Tabs>
-<TabItem value="http" label="HTTP">
-
-```http
-GET /companies?page=1&pageSize=100&query=dataConnections.count=0
-```
-</TabItem>
-<TabItem value="c" label="C#">
-
-```c
-var request = new RestRequest("companies", Method.GET);
-request.AddUrlSegment("page", 1);
-request.AddUrlSegment("query", "dataConnections.count=0");
-request.AddHeader("Authorization", $"Basic {encodedApiKey}");
-var response = client.Execute(request);
-var info = response.Data;
-```
-</TabItem>
-</Tabs>
-
-
   
 ## Queries that won't work
 

@@ -12,6 +12,28 @@ module.exports = [
     className: "header",
   },
   {
+    type: "category",
+    label: "Guides",
+    collapsed: true,
+    items: [
+      {
+        type: "link",
+        label: "Loan qualification",
+        href: "/guides/loan-qualification/introduction",
+      },
+      {
+        type: "link",
+        label: "Invoice financing",
+        href: "/guides/invoice-finance/introduction",
+      },
+      {
+        type: "link",
+        label: "Bill pay",
+        href: "/guides/bill-pay/introduction",
+      },
+    ],
+  },
+  {
     type: "link",
     label: "Accounting data model",
     href: "/data-model/accounting/",

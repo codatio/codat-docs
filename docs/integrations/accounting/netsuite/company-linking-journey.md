@@ -1,8 +1,7 @@
 ---
 title: "Oracle NetSuite Company linking journey"
 description: "Learn how your SMB customers can connect their NetSuite accounts to Codat."
-createdAt: "2021-11-11T15:27:38.618Z"
-updatedAt: "2022-10-17T16:05:44.832Z"
+sidebar_label: Auth flow specifics
 ---
 
 When your client links their NetSuite account via Codat for the first time, they must sign in with an [administrator account](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_4570420905.html) and setup their NetSuite instance to allow a connection. Your clients will be guided through this journey during the authorization flow. For reference, the steps they must follow are documented below.
@@ -10,7 +9,7 @@ When your client links their NetSuite account via Codat for the first time, they
 :::danger
 If your clients do not follow these steps correctly the linking process will fail.
 
-If the _Token-based Authentication_ feature has not been enabled your client will receive an error message in Netsuite when trying to request data.
+If the _Token-based Authentication_ feature has not been enabled your client will receive an error message in NetSuite when trying to request data.
 
 To install bundles on their account, your client must have the Administrator role or the relevant permission to allow bundle installation.
 :::

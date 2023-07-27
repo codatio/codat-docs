@@ -2,8 +2,6 @@
 title: "Set up the Sage Bank Feeds integration"
 description: "Set up our integration with Sage Bank Feeds and get your SMB users connected"
 sidebar_label: Setting up
-createdAt: "2022-10-05T10:37:47.188Z"
-updatedAt: "2023-01-17T17:03:43.979Z"
 ---
 
 Before you can push customer bank transactions to target bank accounts in Sage, you need to set up the integration for testing or production use.
@@ -23,7 +21,7 @@ You can then update bank account details as needed.
 
 Complete the following prerequisites before setting up the Sage Bank Feeds integration.
 
-- You have access to a Testing Client for your Codat instance. Testing Clients are only available on Enterprise plans.
+- You have access to a Testing Client for your Codat instance. Testing Clients are only available on Start-up and Enterprise plans.
 - The Bank accounts and Bank transactions data types are enabled in your [Data type settings](/core-concepts/data-type-settings).
 
 For help with these prerequisites, contact your Solutions Engineer or Codat Support.
@@ -109,17 +107,16 @@ To upload a logo, go to the <a className="external" href="https://app.codat.io/s
    Do _not_ send the `linkUrl` property to the SMB user. Unlike other Codat integrations, company authentication is initiated within Sage as described in "SMB user flow: Connect a source bank account to Sage", below.
    :::
 
-3. Using [PUT /bankFeedAccounts](/bank-feeds-api#/operations/create-bank-feed), add one or more source bank accounts to make available to the SMB user.
+3. Using [POST /bankFeedAccounts](/bank-feeds-api#/operations/create-bank-feed), add one or more source bank accounts to make available to the SMB user.
 
    ```http
-   PUT /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts
+   POST /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts
    ```
 
    In the request body, specify a list of bank accounts. For example, to add two credit card accounts, send the following request (all fields shown are required):
 
    ```json
-   [
-     {
+      {
        "id": "acc-002", // set to desired unique ID
        "accountName": "account-081",
        "sortCode": "123456",
@@ -127,17 +124,7 @@ To upload a logo, go to the <a className="external" href="https://app.codat.io/s
        "accountNumber": "12345670",
        "currency": "GBP",
        "balance": 99.99 // can be 0
-     },
-     {
-       "id": "acc-003", // set to desired unique ID
-       "accountName": "account-095",
-       "sortCode": "123456",
-       "accountType": "Credit",
-       "accountNumber": "12345671",
-       "currency": "GBP",
-       "balance": 100.09 // can be 0
      }
-   ]
    ```
 
 4. The endpoint returns a `200` code and the list of created bank accounts.
@@ -165,7 +152,7 @@ Alternatively, you can [authenticate users through your own web app](/bank-feeds
 
 4. They enter their data connection ID in the **Connection ID** box, then click **Submit**.
 
-5. If the SMB user was authenticated with Codat successfully, a dialog listing the available source bank accounts (created using the `PUT / bankFeedAccounts` endpoint) is displayed. For example:
+5. If the SMB user was authenticated with Codat successfully, a dialog listing the available source bank accounts (created using the `POST / bankFeedAccounts` endpoint) is displayed. For example:
 
 ![Sage account selection](/img/old/7ef73f0-sbs-select-source-bank-account-multiple.png "Redirect to account selection page. Select the bank account that you want to use")
 

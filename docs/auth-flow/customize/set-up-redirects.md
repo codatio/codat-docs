@@ -1,8 +1,7 @@
 ---
 title: "Set up redirect URLs"
+sidebar_label: Redirects
 description: "Complete your customer's Hosted Link journey with a redirect location"
-createdAt: "2022-05-11T17:45:39.001Z"
-updatedAt: "2023-01-11T13:09:39.574Z"
 ---
 
 Once your customers have successfully completed authorization of the connection to their data via [Link](/auth-flow/overview), you can redirect them to another website.
@@ -18,9 +17,9 @@ There are a few ways you can redirect your customers:
 Your redirects will only apply to Hosted Link. For Embedded Link, build out the required redirect configuration within your application.
 :::
 
-::: note See an example
+:::note See an example
 
-Not sure how to handle the params in your website? [See an example here](https://github.com/mcclowes/hosted-link-redirect-page)
+Not sure how to handle the params in your website? [See an example here](https://github.com/mcclowes/hosted-link-redirect-page).
 :::
 
 ## Setting redirect settings
@@ -62,13 +61,6 @@ If you use the redirect parameter values shown above, your customer is redirecte
 https://redirect.site/accounting/?flow=Codat&statuscode=403&errormessage=User%20cancelled
 ```
 
-:::note Availability of reserved query parameters
-
-That the names of the parameters listed in the table below are currently available for the following platforms:  
-**accounting**: FreeAgent, Freshbooks, Microsoft Dynamics 365 Business Central, MYOB Business, Pandle, Quickbooks Online, Sage Business Cloud, Wave  
-**banking**: Plaid
-:::
-
 | Codat's reserved parameters | Substitution values | Additional information |
 | :- | :- | :- |
 | clientId | GUID (Globally Unique Identifier)|Identifier of the client that completes the authorization flow. **Note**: As a Codat client you may have multiple Codat instances. Each of those instances will have a separate `clientId`. |
@@ -82,6 +74,13 @@ That the names of the parameters listed in the table below are currently availab
 | statusCode | `200`, `201`, `403`, `500`, `501` | Codat standardises the status codes returned by the integrations: <br/> **200** = Successful - user's request has been fulfilled. <br/> **201** = No content - successful, but no information about data connection will be available. _Possible scenario_: A user visits Link with a connection to their accounting source already established, so they do not take any action before exiting the flow. <br/> **403** = Not available. _Possible scenario_: A user chooses to quit the Link flow before the Linking process is completed. <br/> **501** = Platform not supported. _Possible scenario_: A user chooses an integration that is not supported by the client. At this point, the client offers them an alternative option outside of the Codat flows. <br/> **500** = Internal Server Error. Codat standardises any errors which do not fit into one of the above categories to a 500 code - Internal Server Error. |
 |errorMessage | | Codat standardises error messages for the status codes. Error messages returned in the redirect will always be mapped with the status codes listed above. <br/> **403** = "User cancelled." <br/>  **500** = "Unknown error occurred." <br/>  **501** = "Not supported." <br/>  **Note**: If you want to use the original error message from the integration, use `statusText`. |
 | statusText | _String_ | String as it's passed back from the integration. |
+| data.company.companyName | _String_ | The name of the connected party within the underlying platform. <br/>This maps to the company name property in the [company info dataset](/accounting-api#/schemas/CompanyDataset). | 
+
+
+:::note Availability of reserved query parameters
+At present, the `data.company.companyName` is only supported for the following integrations:
+- **Accounting**: Dynamics 365 Business Central, NetSuite, QuickBooks Online, Sage Intacct, and Xero.
+:::
 
 :::info Case sensitivity
 
@@ -189,3 +188,9 @@ Do not use reserved parameters in your redirect hosts.
 Dynamic hosts will need to be defined here. A different domain suffix would count as a different host - e.g. mybank.io and mybank.com should be listed separately.
 
 If you're not using the dynamic host feature, you don't need to use this setting.
+
+---
+
+## Read next
+
+- [Set up webhooks](/auth-flow/customize/set-up-webhooks)

@@ -1,13 +1,18 @@
 ---
 title: "Oracle NetSuite"
 description: "Learn about our Oracle NetSuite integration."
-createdAt: "2021-06-15T13:43:18.249Z"
-updatedAt: "2022-10-20T12:34:20.252Z"
+sidebar_label: Overview
 ---
 
 You can synchronize accounting data with Oracle NetSuite using our Oracle NetSuite integration.
 
 [Oracle NetSuite](https://www.netsuite.com/portal/products/erp/financial-management/finance-accounting.shtml) is an online service that enables companies to manage all key business processes in a single system.
+
+<div className="card">
+  <h3>✨ Premium</h3>
+
+  <p>This integration is only available as a premium add-on on our <a href="/configure/create-account">enterprise plans</a>.</p>
+</div>
 
 ## Data type coverage
 

@@ -1,11 +1,11 @@
 ---
-title: "Upcoming 2023-07-10: Deprecation of legacy Account Categories and related features in Assess"
+title: "Completed 2023-07-24: Deprecation of legacy Account Categories and related features in Assess"
 date: "2023-04-05"
 tags: ["Deprecation"]
 authors: e-donnelly
 ---
 
-On the **10th July 2023**, we will be deprecating the legacy version of  `Account Categories` and all related features, including:
+On the **24th July 2023**, we will be deprecating the legacy version of  `Account Categories` and all related features, including:
 
 <!--truncate-->
 
@@ -44,4 +44,17 @@ Explore alternative options you can use in our [Migration Guide`](/assess/guides
 
 ## Expected impact if no action is taken
 
-After the **10th July 2023**, the deprecated endpoints will no longer work, the portal screens will be removed and Account Categories features will be removed from the data export to Excel.
+After the **24th July 2023**, the deprecated endpoints will no longer work, the portal screens will be removed and Account Categories features will be removed from the data export to Excel.
+
+
+:::caution Update: July 24, 2023
+
+**Deprecation compelted**
+:::
+
+:::caution Update: July 13, 2023
+
+**Deprecation date has changed**
+
+We have extended the deprecation date from July 10th, 2023 to July 24th, 2023. On that date, the features listed below will no longer be available.
+:::

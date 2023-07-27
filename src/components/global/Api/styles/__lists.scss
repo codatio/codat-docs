@@ -1,0 +1,13 @@
+// Hide double list markers
+
+.sl-relative > div,
+.sl-prose {
+  > ol,
+  > ul {
+    li::before,
+    li > ul > li::before,
+    li > ol > li::before {
+      display: none;
+    }
+  }
+}

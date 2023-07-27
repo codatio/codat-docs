@@ -1,8 +1,6 @@
 ---
 title: "Data status"
 description: "Concept overview and key details"
-createdAt: "2020-04-08T22:29:11.173Z"
-updatedAt: "2022-11-23T15:23:18.810Z"
 tags:
   - Core concept
 ---

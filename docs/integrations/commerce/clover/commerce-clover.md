@@ -2,8 +2,6 @@
 title: "Clover"
 sidebar_label: Overview
 description: "Learn about our Clover integration"
-createdAt: "2021-06-11T12:45:04.788Z"
-updatedAt: "2022-10-20T13:33:56.241Z"
 ---
 
 <p><a className="external" href="https://uk.clover.com/" target="_blank">

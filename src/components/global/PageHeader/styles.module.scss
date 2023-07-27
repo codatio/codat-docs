@@ -4,12 +4,8 @@
   background: rgb(47,27,166);
   background: linear-gradient(135deg, rgba(47,27,166,1) 0%, rgba(127,108,241,1) 100%);
   overflow: hidden;
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  z-index: -1;
-  padding: 2em;
+  display: flex;
+  justify-content: flex-end;
 
   &.banking {
     background: rgb(27,166,112);
@@ -43,19 +39,19 @@
 }
 
 .header {
-  padding: 1em;
-  max-width: 54em;
+  padding: 3em;
+  max-width: 50em;
   margin: auto;
+  flex: 2;
 
   h1,
   p {
     color: white;
   }
-}
 
-.spacer {
-  opacity: 0;
-  margin-bottom: 12em;
+  p {
+    line-height: 1.7em;
+  }
 }
 
 .title {
@@ -67,8 +63,31 @@
   h1 {
     margin: 0;
   }
+}
 
-  img+h1 {
-    margin-left: 1em;
+.iconWrapper {
+  margin-right: 1em;
+  margin-bottom: 0;
+}
+
+.heroImg {
+  flex: 1;
+  max-height: 350px;
+  max-width: 500px;
+  align-self: flex-end;
+  object-position: right bottom;
+  object-fit: contain;
+  //opacity: 0.8;
+}
+
+@media (max-width: 1300px) {
+  .heroImg {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .header {
+    padding: 1em;
   }
 }

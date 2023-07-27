@@ -15,6 +15,7 @@ Invoices also include details of:
 - Any payments assigned to the invoice
 
 ## Prerequisites
+
 The company must have at least one Accounting and one Banking data connection. If the company does not have a Banking connection, invoices will still be returned without matching bank transactions.
 
 Ensure you have the following datatypes enabled:
@@ -25,5 +26,9 @@ Ensure you have the following datatypes enabled:
 - Payments
 - Credit Notes
 - Account Transactions
+
+## Enhanced Invoices Report
+
+Gets a list of invoices linked to the corresponding banking transaction
 
 Explore the _Enhanced Invoices Report_ endpoint in in our [Assess API reference](/assess-api#/operations/get-enhanced-invoices-report).

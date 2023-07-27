@@ -1,6 +1,7 @@
 ---
 title: "Requirements for public apps"
 description: "Everything you need to know to use our Shopify integration with a public app, including the provider requirements and app functionality"
+sidebar_label: Public apps requirements
 ---
 
 ## Provider requirements for public apps

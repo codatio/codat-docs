@@ -1,0 +1,127 @@
+.icon.usecase,
+.icon.product {
+  border-radius: 4px;
+  object-fit: cover;
+  width: 60px;
+  height: 60px;
+}
+
+.mini-icon {
+  float: left;
+  width: 20px;
+  height: 20px !important;
+  margin-right: 10px;
+  vertical-align: text-bottom;
+}
+
+.icon-wrapper,
+.mini-icon {
+  transition: all 0.5s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.icon-wrapper {
+  margin-bottom: 1em;
+}
+
+.icon-wrapper.product.animated {
+  --offset: 100px;
+  --timer: 8s;
+  --hypercard-color-1: #5ddcff;
+  --hypercard-color-2: #3c67e3;
+  --hypercard-color-3: #4e00c2;
+
+  z-index: 1;
+  position: relative;
+  overflow: initial;
+  border-color: transparent !important;
+  background-color: transparent !important;
+  //border: none !important;
+  //background:linear-gradient(left, #000, #000) no-repeat 50px 50px !important;
+  //background-image: linear-gradient(left, transparent 300px,rgba(39,39,39,.5) 300px, rgba(39,39,39,.5) 100%) !important;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate), 
+      var(--hypercard-color-1),  
+      var(--hypercard-color-2) 43%, 
+      var(--hypercard-color-3));
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      animation: spin var(--timer) linear infinite;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--offset) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--offset) / 6));
+    background-image: linear-gradient(
+      var(--rotate), 
+      var(--hypercard-color-1),  
+      var(--hypercard-color-2) 43%, 
+      var(--hypercard-color-3));
+      opacity: 0.4;
+    transition: opacity var(--timer);
+    animation: spin var(--timer) linear infinite;
+  }
+
+  &.accounting {
+    --hypercard-color-1: #CCA4FF;
+    --hypercard-color-2: #a97de0;
+    --hypercard-color-3: #8d3df6;
+  }
+
+  &.banking {
+    --hypercard-color-1: #64F2A1;
+    --hypercard-color-2: #3dcb7a;
+    --hypercard-color-3: #ccf6de;
+  }
+
+  &.commerce {
+    --hypercard-color-1: #FDD655;
+    --hypercard-color-2: #c79a00;
+    --hypercard-color-3: #efd57b;
+  }
+
+  &.bank-feeds {
+    --hypercard-color-1: #37F0D1;
+    --hypercard-color-2: #138975;
+    --hypercard-color-3: #86ddcf;
+  }
+
+  &.assess {
+    --hypercard-color-1: #FF9C66;
+    --hypercard-color-2: #b05b2d;
+    --hypercard-color-3: #ffa16d;
+  }
+
+  &.sfc {
+    --hypercard-color-1: #FF99DF;
+    --hypercard-color-2: #b63d90;
+    --hypercard-color-3: #f0c0e1;
+  }
+
+
+  &.sfe {
+    --hypercard-color-1: #70C1FF;
+    --hypercard-color-2: #256ea5;
+    --hypercard-color-3: #95c3e7;
+  }
+}

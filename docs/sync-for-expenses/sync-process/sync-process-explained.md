@@ -7,23 +7,24 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 ``` mermaid
-  sequenceDiagram
-    User->>+You: User Approves Expenses with receipt
-    You-)+Codat: POST expense-transaction
-    Codat-->>-You: datasetId
-    You-)+Codat: initiate sync
-    Note over You,Codat: specify datasetId's to sync
-    Codat-->>You: syncId
-    Codat-)Accounting: Sync expense-transaction
-    Codat->>-You: Sync Complete webhook event
-    You->>Codat: Check transactions
-    Codat-->>You: 
-    par Each Succesfull Reconciliation
-        You->>+Codat: POST attachment
-        Codat->>Accounting: Upload Attachment
-        Codat-->>-You: success
-    end
-    You->>-User: Expense marked as uploaded
+sequenceDiagram
+  User->>+You: Approve expenses with receipt
+  You-)+Codat: POST expense-transaction
+  Codat-->>-You: datasetId
+  You-)+Codat: Initiate sync
+  Note over You,Codat: Specify datasetIds to sync
+  Codat --> Codat: Sync request added to queue
+  Codat-->>You: syncId
+  Codat-)Accounting: Sync expense-transaction from queue
+  Codat->>-You: Sync Complete webhook event
+  You->>Codat: Check transactions
+  Codat-->>You: 
+  par Each succesful reconciliation
+    You->>+Codat: POST attachment
+    Codat->>Accounting: Upload attachment
+    Codat-->>-You: Success
+  end
+  You->>-User: Expense marked as uploaded
 ```
 
 ### [Create expense-transactions datasets](expense-transactions)
@@ -31,7 +32,7 @@ import TabItem from "@theme/TabItem";
 After the company has categorized their expenses using the mapping options, you can create expense-transaction datasets, in the response you will receive a `datasetId`.
 
 ```http title="Create expense dataset"
-POST https://api.codat.io/companies/{companyId}/sync/expenses/expense-reconciliations
+POST https://api.codat.io/companies/{companyId}/sync/expenses/expense-transactions
 ```
 
 ### [Initiate sync](syncing-expenses)
@@ -39,7 +40,7 @@ POST https://api.codat.io/companies/{companyId}/sync/expenses/expense-reconcilia
 You can then initiate the sync process for multiple datasets by making an API request to the [sync endpoint](/sync-for-expenses-api#/operations/intiate-sync).
 
 ```http title="Initiate a sync of expense datasets"
-POST  https://api.codat.io/companies/{companyId}/sync/expenses/data/expense-transactions
+POST  https://api.codat.io/companies/{companyId}/sync/expenses/syncs
 ```
 A `syncId` will be returned to the response payload.
 

@@ -13,8 +13,8 @@ const Integration = ({integration}) => {
       </div>
 
       {
-        integration.tag
-          ? <div className={styles.tag}>{integration.tag}</div>
+        integration.tags?.length >= 1
+          ? <div className="labels">{integration.tags.map(tag=><div className="label">{tag}</div>)}</div>
           : ''
       }
     </div>

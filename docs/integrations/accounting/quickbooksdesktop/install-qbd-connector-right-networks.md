@@ -1,8 +1,7 @@
 ---
 title: "Install the QuickBooks Desktop connector on Right Networks"
 description: "Learn how to install our QuickBooks Desktop connector on Right Networks hosted instances of QBD."
-createdAt: "2022-07-05T14:08:30.046Z"
-updatedAt: "2023-01-11T09:40:44.879Z"
+sidebar_label: Installing on Right Networks
 ---
 
 :::caution Right Networks - Beta testing
@@ -17,7 +16,9 @@ Your SMB customers can install our QuickBooks Desktop connector on a hosted inst
 
 Your organization must first be approved as a Right Networks independent software vendor (ISV). To request this, contact [cpadula@rightnetworks.com](mailto:cpadula@rightnetworks.com) and state that you are working with Codat.
 
-To meet Right Networks requirements, you must have a **minimum of 10 users for your application** across one or more companies in Codat.
+To meet Right Networks requirements you must meet one of the below criteria:
+- A single Right Networks account with 10 active hosted desktop users that use the app.
+- Several Right Networks accounts with a combined total of 25 active hosted desktop users that would use the app.
 
 Your SMB customers, who will share their data through the integration, must use one of the [supported hosted products](/integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks#supported-hosted-products) in order to install the connector.
 

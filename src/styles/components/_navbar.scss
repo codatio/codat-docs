@@ -209,6 +209,10 @@ html[data-theme="dark"] {
         .dropdown__menu {
           top: 100%;
 
+          > hr {
+            margin: 0.25em !important;
+          }
+
           .dropdown__link {
             padding: 0.5em 1em;
 
@@ -289,42 +293,17 @@ html[data-theme="dark"] {
   }
 }
 
+.navbar__link {
+  svg {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 800px) {
   .navbar__inner {
     .navbarButton,
     .navbar__link--api {
       display: none !important;
     }
-  }
-
-  .navbar-sidebar {
-    .navbarButton {
-      margin-left: 0;
-
-      &.primary {
-        background: var(--button-primary-bg) !important;
-      }
-    }
-  }
-
-  .navbar-sidebar__item.menu {
-    .menu__list-item {
-      padding-left: 1em;
-      position: relative;
-    }
-
-    .menu__link--sublist {
-      padding-left: 1em !important;
-    }
-  }
-}
-
-.borderTop {
-  border-top: 1px solid #eeeeee; 
-}
-
-.navbar__link {
-  svg {
-    display: none;
   }
 }

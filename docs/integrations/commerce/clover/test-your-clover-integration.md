@@ -1,8 +1,7 @@
 ---
 title: "Test your Clover integration"
 description: "Test our Clover integration by pulling sandbox data to a test company"
-createdAt: "2022-01-26T13:36:34.347Z"
-updatedAt: "2022-12-16T16:48:06.127Z"
+sidebar_label: Testing
 ---
 
 Codat recommends that you test your integration before sending link URLs to customers.

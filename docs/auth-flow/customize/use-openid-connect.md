@@ -1,9 +1,6 @@
 ---
 title: "Use OpenID Connect"
-slug: "use-openid-connect-1"
 description: "Configure your authorization process to use OpenID Connect protocol"
-createdAt: "2022-05-19T12:25:45.130Z"
-updatedAt: "2022-10-20T13:33:24.587Z"
 ---
 
 When a customer links their company data, OpenID Connect lets you retrieve [standard information](/auth-flow/customize/use-openid-connect-1#openid-connect-fields) from the user profile of their accounting package, such as the customer's name, email address, and phone number. You might use these details to:

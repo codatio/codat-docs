@@ -157,11 +157,6 @@ const comm = [
     to: "/integrations/commerce/chargebee/commerce-chargebee",
   },
   {
-    integration: "Chargify",
-    platformKey: "rkgp",
-    to: "/integrations/commerce/chargify/commerce-chargify",
-  },
-  {
     integration: "Clover",
     platformKey: "fqly",
     to: "/integrations/commerce/clover/commerce-clover",
@@ -180,6 +175,11 @@ const comm = [
     integration: "Lightspeed K Trial",
     platformKey: "ltes",
     to: "/integrations/commerce/lightspeed-k/commerce-lightspeed-k",
+  },
+  {
+    integration: "Maxio",
+    platformKey: "rkgp",
+    to: "/integrations/commerce/chargify/commerce-chargify",
   },
   {
     integration: "Mollie",
@@ -250,134 +250,203 @@ const comm = [
 
 module.exports = {
   redirects: [
+    // get started
     {
-      to:  '/assess/guides/loan-qualification/introduction',
-      from: '/assess/guides/underwriting/introduction',
+      from: "/introduction/first-steps",
+      to: "/get-started/first-steps",
     },
     {
-      to:  '/usecases/summary/lending',
-      from: '/usecases/summary/underwriting',
+      from: "/introduction/first-ten-minutes",
+      to: "/get-started/first-ten-minutes",
     },
     {
-      to:  '/introduction/first-steps',
-      from: '/docs',
+      from: "/introduction/libraries",
+      to: "/get-started/libraries",
     },
     {
-      to:  '/introduction/first-steps',
-      from: '/docs/guide-1',
+      from: "/other/developer-resources",
+      to: "/get-started/developer-resources",
     },
     {
-      to:  '/introduction/first-steps',
-      from: '/docs/get-started',
+      from: "/introduction/office-hours",
+      to: "/get-started/office-hours",
     },
     {
-      to:  '/introduction/create-account',
-      from: '/docs/core-account-signup',
+      from: "/introduction/migration",
+      to: "/get-started/migration",
+    },
+    // config, other, etc.
+    {
+      from: "/introduction/change-policy",
+      to: "/using-the-api/change-policy",
     },
     {
-      to:  '/using-the-api/overview',
-      from: '/docs/using-codats-api',
+      from: "/introduction/create-account",
+      to: "/configure/create-account",
     },
     {
-      to:  '/using-the-api/authentication',
-      from: '/reference/authentication',
+      from: "/introduction/testing",
+      to: "/using-the-api/testing",
     },
     {
-      to:  '/using-the-api/querying',
-      from: '/reference/querying',
+      from: "/introduction/webhooks/core-rules-create",
+      to: "/using-the-api/webhooks/core-rules-create",
     },
     {
-      to:  '/using-the-api/paging',
-      from: '/reference/paging',
+      from: "/introduction/webhooks/core-rules-types",
+      to: "/using-the-api/webhooks/core-rules-types",
     },
     {
-      to:  '/using-the-api/ordering-results',
-      from: '/reference/ordering-results',
+      from: "/introduction/webhooks/core-rules-webhooks",
+      to: "/using-the-api/webhooks/core-rules-webhooks",
     },
     {
-      to:  '/using-the-api/modified-dates',
-      from: '/reference/modified-dates-1',
+      from: "/introduction/webhooks/core-rules-webhooksecurity",
+      to: "/using-the-api/webhooks/core-rules-webhooksecurity",
     },
     {
-      to:  '/using-the-api/managing-companies',
-      from: '/reference/managing-companies-1',
+      from: "/introduction/webhooks/receive-webhooks-as-email",
+      to: "/using-the-api/webhooks/receive-webhooks-as-email",
     },
     {
-      to:  '/using-the-api/queueing-data-syncs',
-      from: '/reference/queueing-data-syncs-1',
+      from: "/other/cochat",
+      to: "/cochat",
     },
     {
-      to:  '/using-the-api/errors',
-      from: '/reference/errors',
+      from: "/other/file-upload",
+      to: "/integrations/file-upload",
     },
     {
-      to:  '/using-the-api/push',
-      from: '/reference/push-creating-and-updating-data',
+      from: "/other/portal/account-management",
+      to: "/configure/portal/account-management",
     },
     {
-      to:  '/using-the-api/rate-limits',
-      from: '/reference/rate-limits-1',
+      from: "/other/portal/companies",
+      to: "/configure/portal/companies",
     },
     {
-      to:  '/using-the-api/optimizing-api-calls',
-      from: '/reference/optimizing-your-api-calls-1',
-    },
-    // Changelog - remove soon
-    {
-      to: '/updates/220817-sage-50-soft-deletion',
-      from: '/changelog/41921-sage-50-deleted-payment-on-accounts-soft-deleted',
+      from: "/other/portal/dashboard",
+      to: "/configure/portal/dashboard",
     },
     {
-      to: '/updates/220826-wbo-invoice-push',
-      from: '/changelog/42327-qbo-change-to-invoice-push-validation',
+      from: "/other/portal/developers",
+      to: "/configure/portal/developers",
     },
     {
-      to: '/updates/220817-qbd-refs',
-      from: '/changelog/42998-qbd-push-validation-accountref-itemref',
+      from: "/other/portal/pull-and-push-history",
+      to: "/configure/portal/pull-and-push-history",
     },
     {
-      to: '/updates/220825-string-request-deprecation',
-      from: '/changelog/44714-deprecation-string-request-create-connections-endpoint',
+      from: "/other/portal/usage-and-billing",
+      to: "/configure/portal/usage-and-billing",
     },
     {
-      to: '/updates/220926-freshbooks-expenses',
-      from: '/changelog/upcoming-2023-01-10-freshbooks-expenses-no-longer-fetched-as-bills-and-bill-payments',
+      from: "/other/user-management/adding-users",
+      to: "/configure/user-management/adding-users",
     },
     {
-      to: '/updates/221003-quickbooks-online',
-      from: '/changelog/upcoming-2023-01-10-quickbooks-online-purchases-will-no-longer-be-fetched-as-bills-and-bill-payments',
+      from: "/other/user-management/sso",
+      to: "/configure/user-management/sso",
     },
     {
-      to: '/updates/230131-uat-deprecation',
-      from: '/changelog/upcoming-2023-01-31-deprecation-of-uat-environment',
+      from: "/other/user-management/user-roles",
+      to: "/configure/user-management/user-roles",
+    },
+
+    //
+    {
+      from: "/assess/guides/underwriting/introduction",
+      to: "/guides/loan-qualification/introduction",
     },
     {
-      to: '/updates/230411-deletion-of-data',
-      from: '/changelog/upcoming-2023-04-10-changes-to-handling-of-deleted-data',
+      from: "/usecases/summary/underwriting",
+      to: "/usecases/summary/lending",
     },
     {
-      to: '/updates/230411-api-keys',
-      from: '/changelog/upcoming-2023-04-10-deprecation-of-api-key-management',
+      from: "/redirects/integrations/bankfeeds/qalf",
+      to: "/integrations/accounting/xero/accounting-xero-setup", //xero
     },
     {
-      to: '/updates/230411-legacy-bank-account-endpoints',
-      from: '/changelog/upcoming-2023-04-10-deprecation-of-legacy-bank-account-endpoints'
+      from: "/redirects/integrations/bankfeeds/olpr",
+      to: "/bank-feeds-api/sage-bank-feeds", //sage
     },
     {
-      to:  '/updates',
-      from: '/changelog',
+      from: "/docs/status-codes",
+      to: "/using-the-api/errors", //sage
     },
     {
-      to:  '/integrations/accounting/xero/accounting-xero-setup', //xero
-      from: '/redirects/integrations/bankfeeds/qalf',
+      from: "/integrations/accounting/myob/faq-myob-accountright-live",
+      to: "/integrations/accounting/myob/myob-integration-reference", 
+    },
+    // --- delete soon
+    {
+      from: "/assess/guides/loan-qualification/introduction",
+      to: "/guides/loan-qualification/introduction",
     },
     {
-      to:  '/bank-feeds-api/sage-bank-feeds', //sage
-      from: '/redirects/integrations/bankfeeds/olpr',
+      from: "/assess/guides/loan-qualification/setting-up",
+      to: "/guides/loan-qualification/setting-up",
     },
     {
-      to:  '/using-the-api/errors', //sage
-      from: '/docs/status-codes',
+      from: "/assess/guides/loan-qualification/process-loan",
+      to: "/guides/loan-qualification/process-loan",
+    },
+    {
+      from: "/assess/guides/loan-qualification/uw-decision",
+      to: "/guides/loan-qualification/uw-decision",
+    },
+    {
+      from: "/accounting-api/guides/bill-pay/introduction",
+      to: "/guides/bill-pay/introduction",
+    },
+    {
+      from: "/accounting-api/guides/bill-pay/use-bill-pay-demo-app",
+      to: "/guides/bill-pay/use-bill-pay-demo-app",
+    },
+    {
+      from: "/accounting-api/guides/bill-pay/run-demo-app-locally",
+      to: "/guides/bill-pay/run-demo-app-locally",
+    },
+    {
+      from: "/accounting-api/guides/bill-pay/how-the-demo-app-works",
+      to: "/guides/bill-pay/how-the-demo-app-works",
+    },
+    // ---- Integration pages - delete
+    {
+      from: "/integrations/accounting/clearbooks/accounting-clearbooks-setup",
+      to: "/integrations/accounting/clearbooks/accounting-clearbooks",
+    },
+    {
+      from: "/integrations/accounting/freshbooks/accounting-freshbooks-setup",
+      to: "/integrations/accounting/freshbooks/accounting-freshbooks",
+    },
+    {
+      from: "/integrations/accounting/kashflow/accounting-kashflow-setup",
+      to: "/integrations/accounting/kashflow/accounting-kashflow",
+    },
+    {
+      from: "/integrations/accounting/pandle/accounting-pandle-setup",
+      to: "/integrations/accounting/pandle/accounting-pandle",
+    },
+    {
+      from: "/integrations/accounting/sandbox/accounting-sandbox-setup",
+      to: "/integrations/accounting/sandbox/accounting-sandbox",
+    },
+    {
+      from: "/integrations/accounting/wave/accounting-wave-setup",
+      to: "/integrations/accounting/wave/accounting-wave",
+    },
+    {
+      from: "/integrations/banking/accounting-platform-keys",
+      to: "/integrations/accounting/overview",
+    },
+    {
+      from: "/integrations/banking/banking-platform-keys",
+      to: "/integrations/banking/overview",
+    },
+    {
+      from: "/integrations/commerce/commerce-platform-keys",
+      to: "/integrations/commerce/overview",
     },
     ...mapIntegrationRedirects(acc, "accounting"),
     ...mapIntegrationRedirects(bank, "banking"),
@@ -385,7 +454,6 @@ module.exports = {
   ],
   createRedirects(existingPath) {
     if (existingPath.includes('/docs/banking-')) {
-      console.log(existingPath)
       // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X
       return [
         existingPath.replace('/', '/docs'),

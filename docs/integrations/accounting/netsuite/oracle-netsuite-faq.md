@@ -1,8 +1,7 @@
 ---
 title: "Oracle NetSuite FAQ"
 description: "Frequently asked questions about our Oracle NetSuite integration."
-createdAt: "2021-07-16T14:59:52.947Z"
-updatedAt: "2022-11-22T15:26:10.187Z"
+sidebar_label: FAQs
 ---
 
 ## Does our NetSuite integration support Multi-Book Accounting
@@ -22,7 +21,7 @@ NetSuite OneWorld supports global, multi-subsidiary organizations. Codat handles
 - Each subsidiary is treated as a unique legal entity for taxation and regulation purposes.
 - Each subsidiary has a specific nexus (tax jurisdiction) and a specific base currency. This base currency is the currency in which the subsidiary manages its financials. Subsidiary-specific data is available for reporting.
 
-**Here's an example hierarchy in Netsuite:**
+**Here's an example hierarchy in NetSuite:**
 
 <img src="/img/old/4a3f5ef-image-20210611-134647.png" />
 
@@ -39,7 +38,7 @@ NetSuite allows users to set custom forms for pages, including custom entry and 
 
 If the target page has a custom form set, data is pushed using the standard form for the page. Any custom fields which have been added to the custom form are not pushed.
 
-If the push operation fails, check the standard form for the page is active and is enabled for the required user role. Also check that the Codat bundle is updated to the latest version.
+If the push operation fails, check that the standard form for the page is active and is enabled for the required user role. If this is the case, next check that the standard form itself has not been modified. A common cause of push failure is custom fields on the standard form set as mandatory. 
 
 For more information, see <a className="external" href="https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_N2852749.html" target="_blank">Custom Forms</a> in the NetSuite documentation.
 
@@ -51,5 +50,5 @@ In order for a client to get the full picture of a company that owns multiple le
 
 :::caution Elimination subsidiaries
 
-Elimination subsidiaries in Netsuite are used to record only journal entries and transactions between subsidiaries for consolidation purposes. This information is available on the non-elimination subsidiaries, so Codat won’t fetch elimination subsidiaries.
+Elimination subsidiaries in NetSuite are used to record only journal entries and transactions between subsidiaries for consolidation purposes. This information is available on the non-elimination subsidiaries, so Codat won’t fetch elimination subsidiaries.
 :::

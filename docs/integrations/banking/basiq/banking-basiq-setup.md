@@ -1,8 +1,7 @@
 ---
 title: "Set up your Basiq integration"
 description: "Explore our API integration with Basiq"
-createdAt: "2022-10-06T08:47:25.661Z"
-updatedAt: "2022-12-16T17:20:39.560Z"
+sidebar_label: Setup
 ---
 
 Before you can access your SMB customers' banking data from Basiq in Codat, you need to set up your integration.

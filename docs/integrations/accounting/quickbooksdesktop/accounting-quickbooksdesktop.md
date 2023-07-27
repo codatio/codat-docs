@@ -1,13 +1,18 @@
 ---
 title: "QuickBooks Desktop (on-premise)"
 description: "Learn about our QuickBooks Desktop on-premise connector."
-createdAt: "2019-02-21T11:24:07.280Z"
-updatedAt: "2022-12-22T14:29:34.191Z"
+sidebar_label: Overview
 ---
 
 Our QuickBooks Desktop on-premise connector enables SMBs who use QuickBooks Desktop to share their consented accounting data through the Codat platform.
 
 The connector is a Windows application that runs on the SMB user's local machine.
+
+<div className="card">
+  <h3>✨ Premium</h3>
+
+  <p>This integration is only available as a premium add-on on our <a href="/configure/create-account">enterprise plans</a>.</p>
+</div>
 
 ## Data type coverage
 
@@ -27,7 +32,7 @@ Our connector provides a seamless and full featured integration to QuickBooks De
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Runs in the background</h3>
@@ -40,7 +45,7 @@ Our connector provides a seamless and full featured integration to QuickBooks De
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Auto restarts and updates</h3>
@@ -53,7 +58,7 @@ Our connector provides a seamless and full featured integration to QuickBooks De
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Auto and manual syncs</h3>
@@ -66,7 +71,7 @@ Our connector provides a seamless and full featured integration to QuickBooks De
   <li className="card">
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Intuitive user interface</h3>

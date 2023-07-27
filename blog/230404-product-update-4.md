@@ -44,4 +44,4 @@ The next round of deprecations will be in July:
 - <https://docs.codat.io/updates/230710-deprecation-companies-metrics>
 - <https://docs.codat.io/updates/230710-qbd-direct-incomes>
 
-Stay on top of deprecations by checking out and subscribing to our deprecation calendar here: <https://docs.codat.io/introduction/change-policy>
+Stay on top of deprecations by checking out and subscribing to our deprecation calendar here: <https://docs.codat.io/using-the-api/change-policy>

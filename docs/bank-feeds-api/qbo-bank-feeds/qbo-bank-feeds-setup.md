@@ -98,16 +98,15 @@ See the next procedure for details on the functionality to provide.
    }
    ```
 
-3. Using the [PUT /bankFeedAccounts](/bank-feeds-api#/operations/create-bank-feed) endpoint, add one or more source bank accounts. These are the accounts the SMB user will be able to connect to QBO.
+3. Using the [POST /bankFeedAccounts](/bank-feeds-api#/operations/create-bank-feed) endpoint, add one or more source bank accounts. These are the accounts the SMB user will be able to connect to QBO.
 
    ```http
-   PUT /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts
+   POST /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts
    ```
 
    In the request body, specify a list of bank accounts (all fields shown are required):
 
    ```json title="Example request body: add two checking accounts"
-   [
      {
        "id": "ac-001",
        "accountName": "account-001",
@@ -116,17 +115,7 @@ See the next procedure for details on the functionality to provide.
        "sortCode": "12-34-56",
        "currency": "USD",
        "balance": 4002 // can be 0
-     },
-     {
-       "id": "ac-002",
-       "accountName": "account-002",
-       "accountType": "checking",
-       "accountNumber": "89101112",
-       "sortCode": "12-34-56",
-       "currency": "USD",
-       "balance": 7300 // can be 0
      }
-   ]
    ```
 
    The endpoint returns a `200` response and the list of created bank accounts.

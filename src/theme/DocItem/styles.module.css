@@ -14,7 +14,15 @@
   margin-top: 0;
 }
 
+.docItemRow {
+  padding: 1em;
+}
+
 @media (min-width: 997px) {
+  .docItemRow {
+    padding: 2em;
+  }
+
   .docItemCol {
     max-width: 75% !important;
   }

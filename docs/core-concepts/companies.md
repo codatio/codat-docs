@@ -1,8 +1,6 @@
 ---
 title: "Companies"
-description: "Concept overview and key details"
-createdAt: "2019-02-19T11:23:34.715Z"
-updatedAt: "2022-10-11T09:52:16.189Z"
+description: "Your customer within Codat"
 tags:
   - Core concept
 ---
@@ -19,7 +17,7 @@ Companies can be created in one of two ways:
 
 1. Using the [POST /companies](/codat-api#/operations/create-company)
 
-2. Using the [Codat portal](/other/portal/companies#add-a-new-company)
+2. Using the [Codat portal](/configure/portal/companies#add-a-new-company)
 
 :::caution Forbidden characters in company names
 
@@ -33,7 +31,7 @@ Any forbidden characters will be removed from your company name. For example: `E
 You have two options for managing companies:
 
 - [Manage companies via Codat's API](/using-the-api/managing-companies)
-- [Manage companies via the Portal](/other/portal/companies)
+- [Manage companies via the Portal](/configure/portal/companies)
 
 ---
 

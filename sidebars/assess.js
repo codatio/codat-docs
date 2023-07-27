@@ -18,15 +18,9 @@ module.exports = [
     items: [
       "assess/get-started",
       {
-        type: "category",
+        type: "link",
         label: "Loan qualification",
-        collapsed: true,
-        items: [
-          "assess/guides/loan-qualification/introduction",
-          "assess/guides/loan-qualification/setting-up",
-          "assess/guides/loan-qualification/process-loan",
-          "assess/guides/loan-qualification/uw-decision",
-        ],
+        href: "/guides/loan-qualification/introduction",
       },
       {
         type: "category",
@@ -47,10 +41,10 @@ module.exports = [
     collapsed: true,
     items: [
       "assess/enhanced-financials/overview",
-      "assess/enhanced-financials/profit-and-loss-accounts",
-      "assess/enhanced-financials/balance-sheet-accounts",
       "assess/enhanced-financials/categorize-accounts",
       "assess/enhanced-financials/supported-account-categories",
+      { type: "link", label: "Enhanced profit and loss accounts", href: "/assess-api#/operations/get-accounts-for-enhanced-profit-and-loss" },
+      { type: "link", label: "Enhanced balance sheet accounts", href: "/assess-api#/operations/get-accounts-for-enhanced-balance-sheet" },
     ],
   },
   {
@@ -59,7 +53,7 @@ module.exports = [
     collapsed: true,
     items: [
       "assess/enhanced-cash-flow/overview",
-      "assess/enhanced-cash-flow/transactions",
+      { type: "link", label: "Enhanced cash flow transactions", href: "/assess-api#/operations/get-enhanced-cash-flow-transactions" },
     ],
   },
   {
@@ -68,7 +62,16 @@ module.exports = [
     collapsed: true,
     items: [
       "assess/enhanced-invoices/overview",
-      { type: "link", label: "Enhanced invoices", href: "/assess-api#/operations/get-enhanced-invoices-report" },
+      { type: "link", label: "Enhanced invoices report", href: "/assess-api#/operations/get-enhanced-invoices-report" },
+    ],
+  },
+  {
+    type: "category",
+    label: "Enhanced liabilties",
+    collapsed: true,
+    items: [
+      { type: "link", label: "Enhanced liabilties loan summary", href: "/assess-api#/operations/get-loan-summary" },
+      { type: "link", label: "Enhanced liabilties loan transactions", href: "/assess-api#/operations/list-loan-transactions" },
     ],
   },
   {
@@ -131,6 +134,14 @@ module.exports = [
       "assess/excel/enhanced-financials-report",
       "assess/excel/enhanced-invoices-report",
       "assess/excel/enhanced-cash-flow-report",
+    ],
+  },
+  {
+    type: "category",
+    label: "Liabilities",
+    collapsed: true,
+    items: [
+      "assess/loans/loan-transactions",
     ],
   },
   'assess/troubleshooting',

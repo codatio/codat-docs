@@ -1,8 +1,7 @@
 ---
 title: "QuickBooks Online FAQ"
 description: "Frequently asked questions about our QuickBooks Online integration."
-createdAt: "2020-01-14T00:44:32.573Z"
-updatedAt: "2022-10-17T16:12:22.938Z"
+sidebar_label: FAQs
 ---
 
 ## How is sales tax handled for US companies that use QuickBooks?
@@ -35,6 +34,10 @@ When the Options endpoint is called for one of these data types and an AST-enabl
 
 ## Is QuickBooks Online (FR) supported?
 
+:::caution QBO no longer available in France
+Note that QuickBooks Online (FR) will no longer be available after December 31<sup>st</sup>, 2023, as communicated by [Intuit](https://quickbooks.intuit.com/learn-support/fr-fr/help-article/account-management/faq/L5GgPEpLf_FR_fr_FR).
+:::
+
 Yes. Codat supports the same functionality for QuickBooks Online France (FR) as for QuickBooks Online UK and US.
 
 France-locale companies require that _journal codes_ (represented in QBO as `JournalCode` objects) are assigned to journal entries. Therefore, when pushing Journal Entries to a QBO (FR) company, Codat assigns each Journal Entry with a journal code, choosing any journal code that has a `Type` of `Others` or `Autres`. If a journal code of `Type` `Others` or `Autres` does not exist, a validation error is returned.
@@ -56,3 +59,8 @@ Intuit only make Purchase Orders available on paid QuickBooks Online subscriptio
 ## Tracking categories
 
 In Codat, QBO's "classes" and "locations" are mapped to [tracking categories](/accounting-api#/schemas/trackingcategories).
+
+## Are QuickBooks tags supported?
+
+In QuickBooks Online, you can use free text tags to track your transactions and gain additional insights. However, QBO does not surface these tags via their API, so they are not available in Codat.
+

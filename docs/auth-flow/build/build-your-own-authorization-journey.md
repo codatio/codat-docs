@@ -3,8 +3,6 @@ title: "Build your own auth flow"
 sidebar_label: Overview
 excerpt: "Explore how to create your own journey to connect your customers' financial platforms"
 hidden: false
-createdAt: "2022-06-28T14:27:30.620Z"
-updatedAt: "2022-11-14T17:52:05.345Z"
 ---
 
 Codat provides a series of endpoints that allow you to build the journey for your business customers to connect their financial platforms.
@@ -31,7 +29,7 @@ We recommend that you populate the name value with the ID that you use for the m
 :::
 
 2. From the response to step 1, retain the company ID (hereafter referred to as `companyId`) (see an example below). It is crucial that you retain this value as you will need it for directing your customers to Link and managing their connections.
-3. _(Optional)_ [Set up an alert](/auth-flow/customize/set-up-webhooks) to monitor the connection status of the newly created company.
+3. _(Optional)_ [Set up a webhook](/auth-flow/customize/set-up-webhooks) to monitor the connection status of the newly created company.
 
 ### 2. Display a list of integrations for your users to select, including the integration name and logo
 
@@ -115,7 +113,7 @@ A company may link a single source of accounting data but multiple sources of ba
 
 ### 4. Confirm successful authorization and data synchronization
 
-1. Once the connection is complete (for guidance on how to monitor the connection, read [Set up alerts](/auth-flow/customize/set-up-webhooks)), mark the connection as authorized and confirm to your user the successful authorization of the connection.
+1. Once the connection is complete (for guidance on how to monitor the connection, read [Set up webhooks](/auth-flow/customize/set-up-webhooks)), mark the connection as authorized and confirm to your user the successful authorization of the connection.
 2. Monitor the synchronization of data (also available in <a href="/codat-api#/operations/get-companies-companyId-dataStatus">Common API</a>):
 
 ```http

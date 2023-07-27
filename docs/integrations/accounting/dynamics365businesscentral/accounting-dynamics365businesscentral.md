@@ -2,13 +2,19 @@
 title: "Dynamics 365 Business Central"
 slug: "accounting-dynamics365businesscentral"
 description: "Learn about our Dynamics 365 Business Central integration."
-createdAt: "2020-08-24T13:51:53.856Z"
-updatedAt: "2022-11-30T11:43:58.775Z"
+sidebar_label: Overview
 ---
 
 Synchronize accounting data with <a className="external" href="https://dynamics.microsoft.com/en-us/business-central/overview/" target="_blank">Dynamics 365 Business Central</a> using our integration.
 
 Business Central is a cloud-based business management solution that allows SMBs to manage their accounting processes, financial performance, supply chain, sales and marketing processes, and project delivery within a single application.
+
+
+<div className="card">
+  <h3>✨ Premium</h3>
+
+  <p>This integration is only available as a premium add-on on our <a href="/configure/create-account">enterprise plans</a>.</p>
+</div>
 
 ## Data type coverage
 

@@ -24,7 +24,7 @@ In the <a href="https://app.codat.io/" target="_blank">Codat Portal</a>, click *
 
 ## View detailed records
 
-To view more detailed information about a record, click on an item in your **sync history**. The information appears in the **Senc Details** window and provides sync start and end times, and sync source and target platforms. 
+To view more detailed information about a record, click on an item in your **sync history**. The information appears in the **Sync Details** window and provides sync start and end times, and sync source and target platforms. 
 
 It also displays client-friendly notes and error messages in case of sync failures. Refer to our [troubleshooting guide](/sfc/error-documentation#error-messages) for recommendations on how to resolve these. 
 
@@ -60,7 +60,7 @@ On the **Push items** tab, you can also retry the push items in failed status. C
 
 Your customers can check their own sync history and sync status in the **Sync Flow**. For each sync, the customer can check the sync date range and its status.
 
-## Pitfalls
+## 💡 Tips and traps
 
 - Syncs are shown as failed if any of the included items fail to push. Therefore, if a sync contains a mix of failed and successfully pushed records, it will still be marked as failed. 
 - If a sync log record shows a "Please reconcile manually" note for an order, this is likely because an updated order does not have a matching original order in the platform. Therefore, Sync is unable to reconcile it, and this needs to be performed manually.

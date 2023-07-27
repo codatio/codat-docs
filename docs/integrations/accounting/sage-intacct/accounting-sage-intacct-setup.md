@@ -1,8 +1,7 @@
 ---
 title: "Set up the Sage Intacct integration"
 description: "Explore our API integration with Sage Intacct."
-createdAt: "2021-09-09T10:27:14.969Z"
-updatedAt: "2023-01-10T15:54:47.833Z"
+sidebar_label: Setup
 ---
 
 To integrate with Sage Intacct, you must be a _Sage Intacct Developer Partner_, or work with an authorized partner.
@@ -10,6 +9,12 @@ To integrate with Sage Intacct, you must be a _Sage Intacct Developer Partner_, 
 Codat's enterprise clients can use our partner credentials to enable the integration if desired. Alternatively, you can register with the Sage Intacct Developer Programme and obtain your own partner credentials.
 
 If you would like to enable our integration with Sage Intacct, please contact your Solutions Engineer to gain access to partner credentials for your instance and to discuss the process of [becoming a Sage Intacct partner](https://marketplace.intacct.com/BecomeAPartner).
+
+<div className="card">
+  <h3>✨ Premium</h3>
+
+  <p>This integration is only available as a premium add-on on our <a href="/configure/create-account">enterprise plans</a>.</p>
+</div>
 
 :::note Entity Level access required
 
@@ -49,7 +54,7 @@ You will not be able to link a Sage Intacct trial company. Sage Intacct trial co
 :::
 
 1. Set up some test data in your Sage Intacct account.
-2. [Create a test company](/other/portal/companies#add-a-new-company) in the Codat Portal.
+2. [Create a test company](/configure/portal/companies#add-a-new-company) in the Codat Portal.
 3. Click **Request Data** next to the company name, and copy the Link URL.
 4. Enter the Link URL in a new browser tab.
 5. On the **Select your accounting software** step, select the **Sage Intacct** tile.

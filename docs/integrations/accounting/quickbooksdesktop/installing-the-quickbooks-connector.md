@@ -1,8 +1,7 @@
 ---
 title: "Install the QuickBooks Desktop connector"
 description: "Guide for SMB users to install our QuickBooks Desktop on-premise connector."
-createdAt: "2019-03-01T13:54:07.134Z"
-updatedAt: "2022-10-17T16:14:54.800Z"
+sidebar_label: Install the connector
 ---
 
 :::info Linking companies using the QuickBooks Desktop connector
@@ -120,3 +119,27 @@ The QuickBooks Desktop connector is installed in Program Files inside a director
 For example:
 
 <img src="/img/old/8fa7d87-qbd-connector-installation-path-border.png" />
+
+
+## Uninstalling
+
+If your user wants to remove the QuickBooks Desktop connector and disconnect the service, there are two ways they achieve this on their computer.
+
+### System Tray
+
+The connector can be deleted from the system tray by selecting the up arrow on the Windows taskbar this will reveal any hidden icons, and the user will be able to select the connector if they use the secondary mouse button (left click) a pop up with dialog will appear.
+From this menu, the user would be able to click on Uninstall QuickBooks Connector, this launches a pop up where the user can confirm they wish to uninstall the connector.
+
+### System Settings
+
+The other way users can uninstall the connector is to go to Windows Settings > Apps & features from the menu and then search for the connector in the filter form
+
+The QuickBooks Connector will then show as a result in the list, and the user can select Uninstall to remove the connector.
+
+### Removing the App Certificate
+
+Once the user has removed the Connector, they may still want to remove the application certificate. To do this they should open QuickBooks and go to:
+
+Edit > Preferences > Integrated Applications > Company Preferences
+
+You will then need to select the application named 'QuickBooks Connector' and click Remove.

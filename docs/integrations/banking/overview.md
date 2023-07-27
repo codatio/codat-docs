@@ -36,3 +36,18 @@ You should only enable one of the banking integrations at a time. This ensures o
 - **Plaid** integration appears pre-selected for the user, and they are able to select the correct bank account once they continue linking to Plaid. 
 - **TrueLayer** integration appears in the auth flow as a set of banks that it supports, ready for the user to choose. 
 - **Basiq** integration appears in the auth flow as an integration tile, and the bank account selection happens when the flow directs to Basiq.
+
+## Platform keys
+
+Each integration has a unique 4-character key that identifies it in our APIs. For reference, a list of all banking integration platform keys can be found below.
+
+:::note TrueLayer
+
+TrueLayer works differently to our other integrations, and each banking provider has its own platform key. These have not yet been included in the table below.
+:::
+
+<iframe
+  src="https://knowledge.codat.io/embeds/integrations/platform-keys?integrationType=Banking"
+  frameborder="0"
+  style={{ top: 0, left: 0, background: "white", borderRadius: "4px", overflow: "hidden", width: "100%", height: "305px" }}
+></iframe>

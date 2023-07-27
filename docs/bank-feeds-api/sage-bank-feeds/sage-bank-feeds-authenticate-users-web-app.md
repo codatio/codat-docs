@@ -1,8 +1,6 @@
 ---
 title: "Authenticate users through your own web app"
 description: "You can use your own web app for the SMB user connection journey for Sage Bank Feeds"
-createdAt: "2023-01-17T15:05:04.877Z"
-updatedAt: "2023-01-17T17:00:51.812Z"
 ---
 
 Our [Sage Bank Feeds](/bank-feeds-api/sage-bank-feeds/) integration uses an authorization UI to authenticate an SMB user based on their submitted data connection ID. Your SMB users are represented in Codat as Companies. To learn how this method works, see [SMB user flow: Connect a source bank account to Sage](/bank-feeds-api/sage-bank-feeds/sage-bank-feeds-setup#smb-user-flow-connect-a-source-bank-account-to-sage).
@@ -63,6 +61,12 @@ There are two authentication flows between Sage, Codat's Sage Bank Feeds integra
 7. The SMB user logs in to your web app.
 
 8. Your web app authenticates the user against the Codat company and data connection to which they are linked.
+
+:::caution Iframe
+Sage will display your pages within an iframe embedded in the Sage product. Ensure that your UI can be used within this format.
+:::
+
+You must include the "Content-Security-Policy" header with a value of `frame-ancestors 'self' https://*.sagebankdrive.com https://*.sage.com https://*.intacct.com https://*.sageone.com` to ensure it functions within the iframe.
 
 ### Your web app redirects the user to the bank account selection screen
 

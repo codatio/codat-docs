@@ -1,7 +1,7 @@
 ---
 title: "Completed 2023-01-31: Deprecation of UAT environment: Date of DNS switchover"
 date: "2023-02-17"
-tags: ["Deprecation", "UAT"]
+tags: ["Deprecation", "Completed", "UAT"]
 draft: false
 authors: pzaichkina
 description: On Friday 17 February, 2023, we will switch the existing public DNS for the UAT environment, which is now deprecated, to point to the Production environment. 

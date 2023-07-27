@@ -1,8 +1,6 @@
 ---
 title: "Privacy, trust, and support"
 description: "Provide a detailed, clear, and honest explanation of how customers' data will be shared and used"
-createdAt: "2022-06-16T06:14:44.550Z"
-updatedAt: "2022-12-19T06:03:14.476Z"
 ---
 
 Transparency leads to trust. Trust leads to consent. Consent results in your customers getting value from their connected data.
@@ -92,3 +90,10 @@ To read more about different ways to customize Link, read [Customize your Link](
 You can also [build your own auth flow](/auth-flow/build/build-your-own-authorization-journey).
 
 :::
+
+
+---
+
+## Read next
+
+- Learn how to [streamline the platform selection process](/auth-flow/optimize/platform-selection)

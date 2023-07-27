@@ -2,7 +2,7 @@
 title: "Completed 2023-04-11: Deprecation of API key management endpoints"
 sidebar_label: "2023-04-11: API key management endpoints"
 date: "2023-01-18"
-tags: ["Deprecation", "API keys"]
+tags: ["Deprecation", "Completed", "API keys"]
 draft: false
 authors: mcclowes
 ---
@@ -44,6 +44,6 @@ Current public API endpoints are designed to manage a single API key, and their 
 
 :::note Get ahead
 
-You can get ahead of this change by enabling it now in the [Portal](https://app.codat.io/developers/api-deprecations). Learn how to do that [here](https://docs.codat.io/other/portal/developers), or read our [change policy](https://docs.codat.io/introduction/change-policy).
+You can get ahead of this change by enabling it now in the [Portal](https://app.codat.io/developers/api-deprecations). Learn how to do that [here](https://docs.codat.io/configure/portal/developers), or read our [change policy](https://docs.codat.io/using-the-api/change-policy).
 
 :::

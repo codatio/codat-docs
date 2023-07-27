@@ -2,8 +2,7 @@
 title: "Test your Dynamics 365 Business Central integration"
 slug: "test-your-dynamics-365-business-central-integration"
 description: "Test your integration by pulling data from a test company."
-createdAt: "2022-11-30T11:53:45.188Z"
-updatedAt: "2022-11-30T14:53:46.759Z"
+sidebar_label: Testing
 ---
 
 Before sending Link URLs to your SMB customers, we recommend you test your integration using a trial Dynamics 365 Business Central account.
@@ -21,7 +20,7 @@ Before sending Link URLs to your SMB customers, we recommend you test your integ
    </a>
    ; for example, invoices.
 
-3. [Create a test company](/other/portal/companies#add-a-new-company) in the Codat Portal.
+3. [Create a test company](/configure/portal/companies#add-a-new-company) in the Codat Portal.
 
 4. Locate your test company, then click **Request data**.
 

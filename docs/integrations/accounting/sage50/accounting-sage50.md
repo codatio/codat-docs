@@ -2,11 +2,16 @@
 title: "Sage 50 (UK & Ireland) (on-premise)"
 slug: "accounting-sage50"
 description: "Learn about our Sage 50 (UK & Ireland) on-premise connector."
-createdAt: "2019-03-01T11:25:56.865Z"
-updatedAt: "2022-11-25T16:20:17.651Z"
+sidebar_label: Overview
 ---
 
 The Codat Sage 50 (UK & Ireland) on-premise connector is a Windows application that enables SMBs using Sage 50 (UK & Ireland) to fully integrate with the Codat platform.
+
+<div className="card">
+  <h3>✨ Premium</h3>
+
+  <p>This integration is only available as a premium add-on on our <a href="/configure/create-account">enterprise plans</a>.</p>
+</div>
 
 ## Data type coverage
 
@@ -38,7 +43,7 @@ From the SMB perspective, they will see the on-premise connector app as being ow
 
 ## Requirements
 
-See [Sage 50 requirements](sage-50-requirements) to learn about the supported versions of QuickBooks desktop, and the hardware, software, environment and networking requirements for running the connector.
+See [Sage 50 requirements](sage-50-requirements) to learn about the supported versions, and the hardware, software, environment and networking requirements for running the connector.
 
 ## Install the connector
 

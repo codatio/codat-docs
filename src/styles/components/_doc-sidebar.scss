@@ -74,6 +74,13 @@ html[data-theme="dark"] {
     display: none !important;
   }
 
+  .menu {
+    hr {
+      margin: 1em 0 !important;
+      opacity: 0.3;
+    }
+  }
+
   .menu__list {
     display: block !important;
     transition: height 0.35s cubic-bezier(0.36, 0.66, 0.04, 1) 25ms !important;
@@ -83,6 +90,27 @@ html[data-theme="dark"] {
 
     li:last-of-type {
       padding-block-end: 1.5rem;
+    }
+
+    button.menu__caret {
+      display: none;
+      --ifm-menu-link-sublist-icon: url("/img/sidebar/x-circle.svg");
+
+      &:hover {
+        background: none;
+        opacity: 0.5;
+      }
+
+      &:before {
+        background-size: contain !important;
+      }
+    }
+
+    //.menu__list-item-collapsible--active {
+    .menu__list-item-collapsible {
+      a[aria-expanded="true"] + button.menu__caret {
+        display: flex;
+      }
     }
 
     .menu__list {
@@ -127,6 +155,8 @@ html[data-theme="dark"] {
     }
 
     .menu__list-item-collapsible {
+      background: none;
+      
       &:hover {
         background: none;
         opacity: 0.75;
@@ -196,10 +226,6 @@ html[data-theme="dark"] {
         padding: 12px 8px !important;
         font-size: .813rem;
       }
-
-      &.products > .menu__list {
-        padding-left: 0;
-      }
     }
 
     &-level-2,
@@ -248,6 +274,7 @@ html[data-theme="dark"] {
 
     &.introduction,
     &.core,
+    &.config,
     &.api,
     &.auth,
     &.data,
@@ -266,51 +293,7 @@ html[data-theme="dark"] {
           --dropdown-icon-height: var(--icon-size);
 
           content: " ";
-          background: url("https://d33wubrfki0l68.cloudfront.net/ea8e37a6a30e9c260a8936d95c579af4a2dd3df7/6ee7e/img/docusaurus_keytar.svg")
-            center / var(--dropdown-icon-width) var(--dropdown-icon-height);
-          transform: rotate(0);
-          opacity: 1;
-        }
-      }
-    }
-  }
-
-  .menu__list-item.usecases {
-    margin-top: 3em;
-  }
-
-  .menu__list-item.products {
-    .menu__list-item.product {
-      &:first-child {
-        margin-top: 1em;
-      }
-
-      > .menu__link {
-        padding-inline-start: 0;
-        padding-inline-end: 0;
-        margin-block-end: 0;
-
-        display: flex;
-        align-items: center;
-        flex-direction: row-reverse;
-        justify-content: flex-end;
-
-        &::after {
-          content: " ";
-
-          min-width: auto;
-
-          width: var(--dropdown-icon-width);
-          height: var(--dropdown-icon-height);
-
-          margin-inline-end: var(--dropdown-icon-gap);
-          margin-block-end: 0;
-
-          --icon-size: 24px;
-          --dropdown-icon-width: var(--icon-size);
-          --dropdown-icon-height: var(--icon-size);
-          background: url("https://d33wubrfki0l68.cloudfront.net/ea8e37a6a30e9c260a8936d95c579af4a2dd3df7/6ee7e/img/docusaurus_keytar.svg")
-            center / var(--dropdown-icon-width) var(--dropdown-icon-height);
+          background: url("/img/sidebar/introduction.svg") center / var(--dropdown-icon-width) var(--dropdown-icon-height);
           transform: rotate(0);
           opacity: 1;
         }
@@ -330,79 +313,76 @@ html[data-theme="dark"] {
     }
   }
 
+  .menu__list-item.top-level-item:not(.config) {
+    > div > .menu__link--sublist {
+      &:hover {
+        &::after {
+          transform: scale(1.1);
+        }
+      }
+
+      &:active {
+        &::after {
+          transform: scale(0.9);
+        }
+      }
+    }
+  }
+
   .menu__list-item {
-    &.introduction > div > .menu__link--sublist::after {
-      background: url("/img/sidebar/introduction.svg");
+    > div > .menu__link--sublist::after {
       background-size: cover !important;
+      transition-duration: 0.5s;
+    }
+
+    &.introduction > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar/introduction.svg");
     }
 
     &.core > div > .menu__link--sublist::after {
-      background: url("/img/sidebar/core-concepts.svg");
-      background-size: cover !important;
+      background-image: url("/img/sidebar/core-concepts.svg");
     }
 
-    &.api > div > .menu__link--sublist::after {
-      background: url("/img/sidebar/api.svg");
-      background-size: cover !important;
-    }
-    
-    &.auth > div > .menu__link--sublist::after {
-      background: url("/img/sidebar/auth-flow.svg") !important;
-      background-size: cover !important;
-    }
+    &.config > div > .menu__link--sublist {
+      &::after {
+        background-image: url("/img/sidebar/gear-fine.svg");
+        transition-duration: 0.5s;
+      }
 
-    &.data > div > .menu__link--sublist::after {
-      background: url("/img/sidebar/data-model.svg") !important;
-      background-size: cover !important;
-    }
-
-    &.products > div > .menu__link--sublist::after {
-      background: url("/img/sidebar/products.svg") !important;
-      background-size: cover !important;
-    }
-
-    &.integrations > .menu__link::after {
-      background: url("/img/sidebar/integrations.svg") !important;
-      background-size: cover !important;
-    }
-
-    &.usecases > div > .menu__link--sublist::after {
-      background: url("/img/sidebar/usecase.svg") !important;
-      background-size: cover !important;
-    }
-
-    &.other > div > .menu__link--sublist::after {
-      background: url("/img/sidebar/other-guides.svg") !important;
-      background-size: cover !important;
-    }
-
-    // Products
-    &.product,
-    &.usecase {
-      & > .menu__link {
-        padding: 2px !important;
-
+      &:hover {
         &::after {
-          width: 40px !important;
-          height: 40px !important;
-          background-size: cover !important;
+          transform: rotate(120deg);
         }
       }
     }
 
-    &.accounting > .menu__link::after { background-image: url("/logos/products/Accounting.svg") !important; }
+    &.api > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar/api.svg");
+    }
+    
+    &.auth > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar/auth-flow.svg");
+    }
 
-    &.banking > .menu__link::after { background-image: url("/logos/products/Banking.svg") !important; }
+    &.data > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar/data-model.svg");
+    }
 
-    &.commerce > .menu__link::after { background-image: url("/logos/products/Commerce.svg") !important; }
+    &.products > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar/products.svg");
+    }
 
-    &.bankfeed > .menu__link::after { background-image: url("/logos/products/BankFeeds.svg") !important; }
+    &.integrations > a.menu__link::after {
+      background-image: url("/img/sidebar/integrations.svg");
+    }
 
-    &.assess > .menu__link::after { background-image: url("/logos/products/Assess.svg") !important; }
+    &.usecases > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar/usecase.svg");
+    }
 
-    &.sfc > .menu__link::after { background-image: url("/logos/products/SyncforCommerce.svg") !important; }
-
-    &.sfe > .menu__link::after { background-image: url("/logos/products/SyncforExpenses.svg") !important; }
+    &.other > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar/other-guides.svg");
+    }
   }
 
   .theme-doc-sidebar-item-category-level-1 > div > .menu__link,
@@ -437,6 +417,69 @@ html[data-theme="dark"] {
   }
 }
 
-.top-level-item {
+html[data-theme="dark"] {
+  .menu__list-item {
+    &.introduction > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar-dark/introduction.svg") !important;
+    }
 
+    &.core > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar-dark/core-concepts.svg") !important;
+    }
+
+    &.config > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar-dark/gear-fine.svg") !important;
+    }
+
+    &.api > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar-dark/api.svg") !important;
+    }
+    
+    &.auth > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar-dark/auth-flow.svg") !important;
+    }
+
+    &.data > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar-dark/data-model.svg") !important;
+    }
+
+    &.products > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar-dark/products.svg") !important;
+    }
+
+    &.integrations > a.menu__link::after {
+      background-image: url("/img/sidebar-dark/integrations.svg") !important;
+    }
+
+    &.usecases > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar-dark/usecase.svg") !important;
+    }
+
+    &.other > div > .menu__link--sublist::after {
+      background-image: url("/img/sidebar-dark/other-guides.svg") !important;
+    }
+  }
 }
+
+// @media only screen and (max-width: 800px) {
+//   .navbar-sidebar {
+//     .navbarButton {
+//       margin-left: 0;
+
+//       &.primary {
+//         background: var(--button-primary-bg) !important;
+//       }
+//     }
+//   }
+
+//   .navbar-sidebar__item.menu {
+//     .menu__list-item {
+//       padding-left: 1em;
+//       position: relative;
+//     }
+
+//     .menu__link--sublist {
+//       padding-left: 1em !important;
+//     }
+//   }
+// }

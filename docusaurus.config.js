@@ -30,6 +30,7 @@ module.exports = {
   projectName: "codat-docs",
   customFields: {
     'ZENDESK_KEY': process.env.ZENDESK_KEY,
+    'FEATURE_DEV_FLAG': process.env.FEATURE_DEV_FLAG
   },
   themeConfig: {
     typesense: {
@@ -37,12 +38,12 @@ module.exports = {
       typesenseServerConfig: {
         nodes: [
           {
-            host: '3n6945ds2yqfiv1cp-1.a1.typesense.net',
+            host: 'm6ygplbafcj51wk4p.a1.typesense.net',
             port: 443,
             protocol: 'https',
           }
         ],
-        apiKey: 'x4tbdGWEWv2JCI8U3C6kdwdE8OiThCO1',
+        apiKey: 'aWuDOXCgmWy7LXTRBg8RbfjGvjRmiRir',
       },
       typesenseSearchParameters: {}, // Optional: Typesense search parameters: https://typesense.org/docs/0.24.0/api/search.html#search-parameters
       contextualSearch: true, // Optional

@@ -2,10 +2,9 @@
 title: "Set up the Dynamics 365 Business Central integration"
 slug: "accounting-dynamics365businesscentral-setup"
 description: "Explore our API integration with Dynamics 365 Business Central."
+sidebar_label: Setup
 metadata:
   description: "Access data from customers using Dynamics 365 Business Central for their accounting."
-createdAt: "2020-08-03T10:24:23.098Z"
-updatedAt: "2023-01-10T17:32:19.524Z"
 ---
 
 Before you can access data from customers who use Dynamics 365 Business Central, you need to set up the integration in the Codat Portal. You'll need to:
@@ -24,6 +23,12 @@ During the SMB linking process, the Dynamics 365 Business Central extension pack
 
 For more information, see [Extension installation process](/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral-setup#extension-installation-process) below.
 :::
+
+## Prerequisites
+
+A Dynamics 365 Business Central license is required to use our integration. At a minimum, you'll need a Dynamics 365 Business Central Essentials license.
+
+<p>For more information, see the Business Central <a href="https://dynamics.microsoft.com/en-us/business-central/pricing/" taret="_blank">pricing page</a> for your region.</p>
 
 ## Register your application
 

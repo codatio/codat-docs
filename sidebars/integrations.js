@@ -7,30 +7,18 @@ module.exports = [
   },
   "integrations/all-integrations",
   {
+    type: "link",
+    label: "Integration coverage",
+    href: "https://knowledge.codat.io/supported-features/accounting",
+  },
+  {
     type: "category",
     label: "Accounting",
     collapsed: true,
     items: [
       "integrations/accounting/overview",
-      "integrations/accounting/accounting-platform-keys",
-      {
-        type: "category",
-        label: "Sandbox",
-        collapsed: true,
-        items: [
-          "integrations/accounting/sandbox/accounting-sandbox",
-          "integrations/accounting/sandbox/accounting-sandbox-setup",
-        ],
-      },
-      {
-        type: "category",
-        label: "Clearbooks",
-        collapsed: true,
-        items: [
-          "integrations/accounting/clearbooks/accounting-clearbooks",
-          "integrations/accounting/clearbooks/accounting-clearbooks-setup",
-        ],
-      },
+      "integrations/accounting/sandbox/accounting-sandbox",
+      "integrations/accounting/clearbooks/accounting-clearbooks",
       {
         type: "category",
         label: "Dynamics 365 Business Central",
@@ -62,24 +50,8 @@ module.exports = [
           "integrations/accounting/freeagent/freeagent-integration-reference",
         ],
       },
-      {
-        type: "category",
-        label: "Freshbooks",
-        collapsed: true,
-        items: [
-          "integrations/accounting/freshbooks/accounting-freshbooks",
-          "integrations/accounting/freshbooks/accounting-freshbooks-setup",
-        ],
-      },
-      {
-        type: "category",
-        label: "Kashflow",
-        collapsed: true,
-        items: [
-          "integrations/accounting/kashflow/accounting-kashflow",
-          "integrations/accounting/kashflow/accounting-kashflow-setup",
-        ],
-      },
+      "integrations/accounting/freshbooks/accounting-freshbooks",
+      "integrations/accounting/kashflow/accounting-kashflow",
       {
         type: "category",
         label: "MYOB",
@@ -88,31 +60,23 @@ module.exports = [
           "integrations/accounting/myob/accounting-myob",
           "integrations/accounting/myob/accounting-myob-setup",
           "integrations/accounting/myob/myob-integration-reference",
-          "integrations/accounting/myob/faq-myob-accountright-live",
+          "integrations/accounting/myob/myob-dev-registration",
         ],
       },
       {
         type: "category",
-        label: "Netsuite",
+        label: "NetSuite",
         collapsed: true,
         items: [
           "integrations/accounting/netsuite/accounting-netsuite",
           "integrations/accounting/netsuite/accounting-netsuite-setup",
           "integrations/accounting/netsuite/company-linking-journey",
-          "integrations/accounting/netsuite/accounting-netsuite-delete-bills-billpayments",
+          "integrations/accounting/netsuite/accounting-netsuite-how-deleting-bill-payments-works",
           "integrations/accounting/netsuite/oracle-netsuite-faq",
           "integrations/accounting/netsuite/oracle-netsuite-integration-reference",
         ],
       },
-      {
-        type: "category",
-        label: "Pandle",
-        collapsed: true,
-        items: [
-          "integrations/accounting/pandle/accounting-pandle",
-          "integrations/accounting/pandle/accounting-pandle-setup",
-        ],
-      },
+      "integrations/accounting/pandle/accounting-pandle",
       {
         type: "category",
         label: "QuickBooks Desktop",
@@ -122,8 +86,8 @@ module.exports = [
           "integrations/accounting/quickbooksdesktop/software-and-hardware-requirements",
           "integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector",
           "integrations/accounting/quickbooksdesktop/quickbooks-desktop-faq",
-          "integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks",
           "integrations/accounting/quickbooksdesktop/quickbooks-desktop-troubleshooting",
+          "integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks",
         ],
       },
       {
@@ -133,7 +97,6 @@ module.exports = [
         items: [
           "integrations/accounting/quickbooksonline/accounting-quickbooksonline",
           "integrations/accounting/quickbooksonline/accounting-quickbooksonline-new-setup",
-          "integrations/accounting/quickbooksonline/accounting-quickbooksonline-delete-journal-entries",
           "integrations/accounting/quickbooksonline/faq-quickbooks-online",
           "integrations/accounting/quickbooksonline/quickbooks-online-integration-reference",
         ],
@@ -170,6 +133,7 @@ module.exports = [
           "integrations/accounting/sage50/sage50-multi-company-mode",
           "integrations/accounting/sage50/pushing-data-to-sage-50",
           "integrations/accounting/sage50/restart-the-sage-50-connector",
+          "integrations/accounting/sage50/sage50-troubleshooting",
         ],
       },
       {
@@ -182,15 +146,7 @@ module.exports = [
           "integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud-reference",
         ],
       },
-      {
-        type: "category",
-        label: "Wave",
-        collapsed: true,
-        items: [
-          "integrations/accounting/wave/accounting-wave",
-          "integrations/accounting/wave/accounting-wave-setup",
-        ],
-      },
+      "integrations/accounting/wave/accounting-wave",
       {
         type: "category",
         label: "Xero",
@@ -200,10 +156,7 @@ module.exports = [
           "integrations/accounting/xero/accounting-xero-setup",
           "integrations/accounting/xero/accounting-xero-test",
           "integrations/accounting/xero/xero-faq",
-          "integrations/accounting/xero/xero-integration-reference",
           "integrations/accounting/xero/xero-app-partner-program",
-          "integrations/accounting/xero/xero-sign-up-flow",
-          "integrations/accounting/xero/accounting-xero-app-partner-guidance",
         ],
       },
       {
@@ -226,17 +179,6 @@ module.exports = [
     collapsed: true,
     items: [
       "integrations/banking/overview",
-      "integrations/banking/banking-platform-keys",
-      {
-        type: "category",
-        label: "Proxy access",
-        collapsed: true,
-        items: [
-          "integrations/banking/proxy-access-banking-data",
-          "integrations/banking/proxy-access-banking-data/enabling-proxy-access",
-          "integrations/banking/proxy-access-banking-data/example-proxy-requests",
-        ],
-      },
       {
         type: "category",
         label: "Basiq",
@@ -271,6 +213,16 @@ module.exports = [
           "integrations/banking/truelayer/faqs-about-truelayer",
         ],
       },
+      {
+        type: "category",
+        label: "Proxy access",
+        collapsed: true,
+        items: [
+          "integrations/banking/proxy-access-banking-data",
+          "integrations/banking/proxy-access-banking-data/enabling-proxy-access",
+          "integrations/banking/proxy-access-banking-data/example-proxy-requests",
+        ],
+      },
     ],
   },
   {
@@ -280,9 +232,7 @@ module.exports = [
     items: [
       "integrations/commerce/overview",
       "integrations/commerce/api-workflow",
-      "integrations/commerce/commerce-platform-keys",
       "integrations/commerce/commerce-sync-settings",
-      "integrations/commerce/domain-discovery-program",
       {
         type: "category",
         label: "Amazon Seller Central",
@@ -316,16 +266,6 @@ module.exports = [
       },
       {
         type: "category",
-        label: "Chargify",
-        collapsed: true,
-        items: [
-          "integrations/commerce/chargify/commerce-chargify",
-          "integrations/commerce/chargify/commerce-chargify-setup",
-          "integrations/commerce/chargify/commerce-chargify-use",
-        ],
-      },
-      {
-        type: "category",
         label: "Clover",
         collapsed: true,
         items: [
@@ -341,6 +281,16 @@ module.exports = [
         items: [
           "integrations/commerce/lightspeed-k/commerce-lightspeed-k",
           "integrations/commerce/lightspeed-k/commerce-lightspeed-k-setup",
+        ],
+      },
+      {
+        type: "category",
+        label: "Maxio",
+        collapsed: true,
+        items: [
+          "integrations/commerce/chargify/commerce-chargify",
+          "integrations/commerce/chargify/commerce-chargify-setup",
+          "integrations/commerce/chargify/commerce-chargify-use",
         ],
       },
       {
@@ -390,9 +340,16 @@ module.exports = [
         collapsed: true,
         items: [
           "integrations/commerce/shopify/commerce-shopify",
-          "integrations/commerce/shopify/commerce-shopify-custom-apps",
+          {
+            type: "category",
+            label: "Setup",
+            collapsed: true,
+            items: [
+              "integrations/commerce/shopify/commerce-shopify-setup",
+              "integrations/commerce/shopify/commerce-shopify-custom-apps",
+            ]
+          },
           "integrations/commerce/shopify/commerce-shopify-requirements-public-apps",
-          "integrations/commerce/shopify/commerce-shopify-setup",
           "integrations/commerce/shopify/test-shopify",
         ],
       },
@@ -471,14 +428,17 @@ module.exports = [
       },
       {
         type: "link",
-        href: "/integrations/accounting/xero/accounting-xero-setup",
+        href: "/bank-feeds-api/xero-bank-feeds/",
         label: "Xero",
-      }
+      },
     ],
   },
   {
-    type: "link",
-    label: "Integration coverage",
-    href: "https://knowledge.codat.io/supported-features/accounting",
+    type: "category",
+    label: "Other integrations",
+    collapsed: true,
+    items: [
+      "integrations/file-upload",
+    ]
   },
 ];

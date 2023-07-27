@@ -1,8 +1,7 @@
 ---
 title: "Test your Mollie integration"
 description: "Test our Mollie integration by pulling sandbox data from a test company"
-createdAt: "2022-02-15T14:11:39.636Z"
-updatedAt: "2022-10-20T08:45:57.019Z"
+sidebar_label: Testing
 ---
 
 You can use the Mollie Test integration to pull test data from Mollie into Codat.
@@ -74,7 +73,7 @@ Data is only available where:
 - You've [created test data](#create-some-data-in-mollie)
 :::
 
-Now that you have tested the integration and reviewed sample data, you can [create your first live company](/other/portal/companies#add-a-new-company).
+Now that you have tested the integration and reviewed sample data, you can [create your first live company](/configure/portal/companies#add-a-new-company).
 
 ---
 

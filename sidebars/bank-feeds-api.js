@@ -13,6 +13,18 @@ module.exports = [
   },
   {
     type: "category",
+    label: "Guides",
+    collapsed: true,
+    items: [
+      {
+        type: "link",
+        label: "Bank reconciliation with QBO",
+        href: "/guides/bank-feeds-tutorial",
+      },
+    ],
+  },
+  {
+    type: "category",
     label: "Sage bank feeds",
     collapsed: true,
     items: [
@@ -34,9 +46,16 @@ module.exports = [
     ],
   },
   {
-    type: "link",
-    href: "/integrations/accounting/xero/accounting-xero-setup#configure-direct-bank-feeds",
+    type: "category",
     label: "Xero bank feeds",
+    collapsed: true,
+    items: [
+      "bank-feeds-api/xero-bank-feeds/xero-bank-feeds",
+      "bank-feeds-api/xero-bank-feeds/xero-bank-feeds-setup",
+      "bank-feeds-api/xero-bank-feeds/xero-bank-feeds-smb-user",
+      "bank-feeds-api/xero-bank-feeds/xero-bank-feeds-push-bank-transactions",
+      "bank-feeds-api/xero-bank-feeds/xero-bank-feeds-partner",
+    ],
   },
   {
     type: "link",

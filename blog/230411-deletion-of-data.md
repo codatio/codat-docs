@@ -1,7 +1,7 @@
 ---
 title: "Completed 2023-04-11: Changes to handling of deleted data"
 date: "2023-01-15"
-tags: ["Deprecation", "Data deletion"]
+tags: ["Deprecation", "Completed", "Data deletion"]
 draft: false
 authors: d-laing
 ---
@@ -44,6 +44,6 @@ Note 3: For pre-existing data, the isDeleted flag may be set to null; this will 
 
 :::note Get ahead
 
-You can get ahead of this change by enabling it now in the [Portal](https://app.codat.io/developers/api-deprecations). Learn how to do that [here](https://docs.codat.io/other/portal/developers), or read our [change policy](https://docs.codat.io/introduction/change-policy).
+You can get ahead of this change by enabling it now in the [Portal](https://app.codat.io/developers/api-deprecations). Learn how to do that [here](https://docs.codat.io/configure/portal/developers), or read our [change policy](https://docs.codat.io/using-the-api/change-policy).
 
 :::

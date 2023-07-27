@@ -2,8 +2,7 @@
 title: "Push data to Sage 50 (UK & Ireland)"
 slug: "pushing-data-to-sage-50"
 description: "Learn how to push data with our Sage 50 (UK & Ireland) connector and view FAQs."
-createdAt: "2019-10-25T16:42:27.872Z"
-updatedAt: "2022-12-12T15:16:00.561Z"
+sidebar_label: Push data
 ---
 
 To push data to Sage 50 (UK & Ireland), Codat strongly recommends that your client creates a second user in Sage for the company file that you are pushing to. See [Setting up Sage 50 and the Sage 50 connector to enable pushing data](/integrations/accounting/sage50/pushing-data-to-sage-50#section-setting-up-sage-50-and-the-sage-50-connector-to-enable-pushing-data) (below) for instructions.

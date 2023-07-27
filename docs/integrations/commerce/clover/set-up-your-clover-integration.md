@@ -1,8 +1,7 @@
 ---
 title: "Set up the Clover integration"
 description: "Explore our API integration with Clover"
-createdAt: "2022-01-26T13:31:32.440Z"
-updatedAt: "2023-01-06T16:36:12.403Z"
+sidebar_label: Setup
 ---
 
 Before you can access commerce data from customers using Clover, you need to set up the integration. You'll need to:
@@ -60,4 +59,4 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 If this is your first commerce integration, update your [data type settings](/integrations/commerce/commerce-sync-settings) to enable commerce data types.
 
-You're now ready to test your Clover integration, or skip straight to [setting up companies](/other/portal/companies#add-a-new-company) for your customers in the Codat Portal.
+You're now ready to test your Clover integration, or skip straight to [setting up companies](/configure/portal/companies#add-a-new-company) for your customers in the Codat Portal.

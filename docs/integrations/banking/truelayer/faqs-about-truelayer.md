@@ -1,9 +1,12 @@
 ---
 title: "TrueLayer FAQs"
 description: "Frequently asked questions about our TrueLayer integration"
-createdAt: "2020-07-21T10:21:57.468Z"
-updatedAt: "2022-10-20T10:38:48.216Z"
+sidebar_label: FAQs
 ---
+
+:::caution Bank of Ireland account support
+Bank of Ireland accounts are temporarily unsupported and will be re-added on 17th of October, 2023.
+:::
 
 If your TrueLayer question isn't answered on this page, please contact our support team.
 
@@ -31,3 +34,11 @@ The structure of the TrueLayer and Codat distribution agreement is designed so t
 ## Why can't I see running balances for some transactions?
 
 TrueLayer doesn't currently provide running balance data for transactions from Monzo or Starling, because these are not provided by the underlying bank's API.
+
+## Why am I only able to see 90 days worth of data on first link?
+
+As part of the Regulatory Technical Standards required by some institutions in Open Banking connections, SCA (Strong Customer Authentication) may impose different requirements specific to each individual bank connection. One goal of SCA is to limit the retrieval of sensitive or historical transaction data to a set period of time after the initial consent and authentication of an end-user.
+
+This means that depending on the bank, clients may only be allowed to access as much transactional data allowed by the bank for a period of 5 minutes after the initial authentication by the end-user. After this period, banks who enforce SCA will only return 90 days of transaction data.
+
+In layman terms, Codat will retrieve as much data as possible following authentication by your end-user. However, regulatory standards may limit the amount of data initially retrieved to 90 days.

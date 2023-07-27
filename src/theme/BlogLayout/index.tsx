@@ -11,6 +11,8 @@ import Layout from "@theme/Layout";
 import BlogSidebar from "@theme/BlogSidebar";
 import Navbar from "@theme/Navbar";
 
+import styles from "./styles.module.css";
+
 import type { Props } from "@theme/BlogLayout";
 
 export default function BlogLayout(props: Props): JSX.Element {
@@ -20,7 +22,7 @@ export default function BlogLayout(props: Props): JSX.Element {
   return (
     <Layout {...layoutProps}>
       <div className="blog">
-        <div className="row">
+        <div className={clsx("row", styles.row)}>
           <BlogSidebar sidebar={sidebar} />
 
           <div className="col">

@@ -1,8 +1,6 @@
 ---
-title: "Overview"
+title: "Authorization flow"
 description: "Explore how your customers can authorize access to their data"
-createdAt: "2022-05-11T12:25:17.094Z"
-updatedAt: "2022-11-23T13:57:58.076Z"
 ---
 
 ![Conceptual drawing of a lock and key](/img/old/b80d96c-19B0071C-0CCD-4423-8903-A979A32DD225.jpeg)
@@ -18,7 +16,7 @@ There are three ways you can enable your customers to connect their financial ac
     <p>No-code</p>
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Hosted Link</h3>
@@ -39,7 +37,7 @@ There are three ways you can enable your customers to connect their financial ac
     <p>Low-code</p>
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Embedded Link</h3>
@@ -60,7 +58,7 @@ There are three ways you can enable your customers to connect their financial ac
     <p>More code</p>
     <div class="header">
       <img
-        src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+        src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
       <h3>Link API</h3>
@@ -133,7 +131,7 @@ The user signing up may not have access to their business's financial data at al
 
 This way, users do not have to share credentials with each other, and the user with platform access can complete the authorization asynchronously.
 
-## Pitfalls
+## 💡 Tips and traps
 
 :::note Device compatibility
 

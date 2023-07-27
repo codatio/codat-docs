@@ -1,11 +1,12 @@
 ---
 title: "Connections"
 description: "Concept overview and key details"
-createdAt: "2021-03-31T21:11:15.467Z"
-updatedAt: "2023-01-16T15:23:20.370Z"
 tags:
   - Core concept
 ---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem"
 
 A data connection represents a [company's](/core-concepts/companies) connection to a data source and allows you to synchronize data (pull and/or push) with that source.
 
@@ -28,8 +29,8 @@ Connections can have one of the statuses described in the following table.
 | `Linked`        | The connection is linked to a data source; you can use it to pull and push a company's consented data to and from the underlying provider's platform.                                                                                                                                                                                                                                                        |
 | `PendingAuth`    | The company hasn't authorized access to their financial platform (the data source). The SMB customer selected the platform in Link but did not complete the authorization flow.                                                                                                                                                                                                                              |
 | `Deauthorized`   | The connection was linked but is no longer able to access data from the underlying provider's platform.<br/>You can access any data that was already pulled or pushed using this data connection. However, you can't perform any new pulls or pushes until the connection is re-linked.<br/>A data connection usually becomes Deauthorized if the company revoked your access or an expiry time was reached. |
-| `Unlinked`       | The data connection was previously linked but you asked for your access to be revoked (see Disconnect a data connection to revoke your access to a data source).<br/>Similar to Deauthorized, you can still access any data that was already pulled or pushed using the data connection, but can't perform any new pulls or pushes unless the connection is re-linked.                                       |
-| No connections | The company has been created but does not have any connections to financial platforms established in any of the above statuses.                                                                                                                                                                                                                                                                              |
+| `Unlinked`       | The data connection was previously linked but you asked for your access to be revoked (see [Disconnect a data connection to revoke your access to a data source](/core-concepts/connections#disconnect-a-data-connection-to-revoke-your-access-to-a-data-source)).<br/>Similar to Deauthorized, you can still access any data that was already pulled or pushed using the data connection, but can't perform any new pulls or pushes unless the connection is re-linked.                                       |
+| No connections | The company has been created but does not have any connections to financial platforms established in any of the above statuses. |
 
 ## Linked data connection example
 
@@ -56,7 +57,7 @@ In the response, note the following fields:
 
 ## Disconnect a data connection to revoke your access to a data source
 
-You can disconnect a data connection using the <a href="/codat-api#/operations/unlink-company-connection" target="_blank">PATCH /connectionId endpoint</a>. This revokes your access to synchronize data with the linked company and sets the data connection's status to `Unlinked`.
+You can disconnect a data connection using the <a href="/codat-api#/operations/unlink-connection" target="_blank">Unlink connection</a> endpoint. This revokes your access to synchronize data with the linked company and sets the data connection's status to `Unlinked`.
 
 To disconnect a data connection, you'll need to provide:
 
@@ -66,18 +67,24 @@ To disconnect a data connection, you'll need to provide:
 
 When a connection is set to `Unlinked`, you can continue to access any data that was already pulled or pushed to the data source, but you can't perform any new pulls or pushes (unless the connection is re-linked).
 
-:::note
+:::note Unlinking data connections
 
 Only `Linked` data connections can be unlinked.
 :::
 
-### Example: Disconnect a data connection
+#### Example: Disconnect a data connection
 
-```http
+<Tabs>
+
+<Tabitem value="Request URL" label="Request URL">
+
+```http request title="Disconnect connection"
 PATCH /companies/COMPANY_ID/connections/CONNECTION_ID
 ```
 
-Request body:
+</Tabitem>
+
+<Tabitem value="Request Body" label="Request Body">
 
 ```json
 {
@@ -85,7 +92,12 @@ Request body:
 }
 ```
 
-### Sample response to `Unlinked` request
+</Tabitem>
+
+</Tabs>
+
+
+#### Sample response to `Unlinked` request
 
 ```json Sample response to "Unlinked" request
 {
@@ -116,7 +128,7 @@ When you delete a data connection:
 
 ## Provide credentials or tokens for a data connection
 
-If you are migrating an existing integration to use Codat, you can provide tokens for the connection to migrate your users access. You can read more about how to do this on our [migration page here](/introduction/migration)
+If you are migrating an existing integration to use Codat, you can provide tokens for the connection to migrate your users access. You can read more about how to do this on our [migration page](/get-started/migration).
 
 ---
 

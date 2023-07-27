@@ -28,49 +28,44 @@ module.exports = {
         {
           href: "/accounting-api",
           label: "Accounting API",
-        },
-        {
-          href: "/banking-api",
-          label: "Banking API",
-        },
-        {
-          href: "/commerce-api",
-          label: "Commerce API",
-        },
-        {
-          href: "/bank-feeds-api",
-          label: "Bank Feeds API",
+          hr: true,
         },
         {
           href: "/assess-api",
           label: "Assess API",
         },
         {
-          href: "/sync-for-expenses-api",
-          label: "Sync for Expenses API",
+          href: "/banking-api",
+          label: "Banking API",
         },
         {
-          href: "/sync-for-commerce-api",
-          label: "Sync for Commerce API",
+          href: "/bank-feeds-api",
+          label: "Bank Feeds API",
+        },
+        {
+          href: "/commerce-api",
+          label: "Commerce API",
         },
         {
           href: "/files-api",
           label: "Files API",
         },
         {
-          className: "borderTop",
+          href: "/sync-for-commerce-api",
+          label: "Sync for Commerce API",
+        },
+        {
+          href: "/sync-for-expenses-api",
+          label: "Sync for Expenses API",
+        },
+        {
           href: "https://github.com/codatio/oas",
           label: "OpenAPI spec",
+          hr: true,
         },
       ],
     },
-    { to: "updates", label: "Updates", position: "left" }, // or position: 'right'
-    {
-      href: "https://github.com/orgs/codatio/discussions",
-      label: "Forum",
-      target: "_blank",
-      rel: null,
-    },
+    { to: "updates", label: "Updates", position: "left" },
     {
       label: "Community",
       position: "left",
@@ -123,6 +118,12 @@ module.exports = {
           rel: null,
         },
         {
+          href: "https://cochat.codat.io/",
+          label: "Ask Cochat AI",
+          target: "_blank",
+          rel: null,
+        },
+        {
           href: "https://bit.ly/codatstatus",
           label: "API status",
           target: "_blank",
@@ -135,8 +136,8 @@ module.exports = {
           rel: null,
         },
         {
-          href: "https://codat.zendesk.com/hc/en-gb",
-          label: "Help center",
+          href: "/get-started/office-hours",
+          label: "Office hours",
           target: "_blank",
           rel: null,
         },

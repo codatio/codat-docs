@@ -1,7 +1,7 @@
 ---
 title: "Completed 2023-04-11: Deprecation of legacy bank account endpoints"
 date: "2023-01-15"
-tags: ["Deprecation", "Bank accounts"]
+tags: ["Deprecation", "Completed", "Bank accounts"]
 draft: false
 authors: d-laing
 ---
@@ -51,4 +51,4 @@ After April 11, 2023, calls to the deprecated endpoints will return a 404 error.
 
 > 📘
 >
-> You can get ahead of this change by enabling it now in the [Portal](https://app.codat.io/developers/api-deprecations). Learn how to do that [here](https://docs.codat.io/other/portal/developers), or read our [change policy](https://docs.codat.io/introduction/change-policy).
+> You can get ahead of this change by enabling it now in the [Portal](https://app.codat.io/developers/api-deprecations). Learn how to do that [here](https://docs.codat.io/configure/portal/developers), or read our [change policy](https://docs.codat.io/using-the-api/change-policy).

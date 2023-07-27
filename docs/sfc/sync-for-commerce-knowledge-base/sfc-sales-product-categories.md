@@ -77,7 +77,7 @@ If you are using the `visibleAccounts` [feature](/sfc/build-with-sync-for-commer
 
 If you are using the `visibleAccounts` [feature ](/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow#how-to-change-the-visibility-of-feature-categories-accounts) and some of your companies do not have product categories created, ensure to add `sales-accounts-sales` to the list of visible accounts.
 
-### Pitfalls
+### 💡 Tips and traps
 
 - If you do not create any product categories after activating the feature, and then invoke the Sync Flow UI, the additional categorization page will not be displayed.
 - If you create, map, and subsequently delete a category, it will no longer appear in the Sync Flow UI. However, account mapping will still exist in the company configuration.

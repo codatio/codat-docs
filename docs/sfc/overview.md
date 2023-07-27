@@ -6,25 +6,12 @@ hide_title: true
 hide_description: true
 hide_table_of_contents: true
 description: "Embedded accounting integrations for PoS and eCommerce platforms."
-createdAt: "2022-06-27T08:17:55.337Z"
-updatedAt: "2022-11-17T10:56:14.545Z"
+banner_title: Sync for Commerce
+banner_class: sfc
+banner_icon: "/logos/products-clear/sfc.svg"
+banner_image: "/img/banners/sfc-charts.png"
+banner_text: "Embedded accounting integrations for PoS and eCommerce platforms."
 ---
-
-<Head>
-  <meta property="og:image" content="/img/codat_banner.png"/>
-</Head>
-
-import PageHeader from "@components/global/PageHeader";
-
-<PageHeader 
-  className="sfc"
-  title="Sync for Commerce"
-  icon="/logos/products/SyncforCommerce.svg"
->
-    <p>
-      Embedded accounting integrations for PoS and eCommerce platforms.
-    </p>
-</PageHeader>
 
 **Building to lots of different APIs does not scale. With Sync for Commerce, you can send a merchant's data to their accounting platform without worrying about which one they use.**
 
@@ -44,7 +31,7 @@ Sync for Commerce is in beta. If you are interested in building with Sync for Co
 <ul className="card-container col-2">
     <li className="card">
         <div class="header">
-            <img src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+            <img src="/img/wp-icons/copy-feature-bullet.svg"
                 class="mini-icon"/>
             <h3>Standardization</h3>
         </div>
@@ -55,7 +42,7 @@ Sync for Commerce is in beta. If you are interested in building with Sync for Co
 
 <li className="card">
         <div class="header">
-            <img src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+            <img src="/img/wp-icons/copy-feature-bullet.svg"
                 class="mini-icon"/>
             <h3>Configurability</h3>
         </div>
@@ -66,7 +53,7 @@ Sync for Commerce is in beta. If you are interested in building with Sync for Co
 
    <li className="card">
         <div class="header">
-            <img src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+            <img src="/img/wp-icons/copy-feature-bullet.svg"
                 class="mini-icon"/>
             <h3>Ongoing synchronization</h3>
         </div>
@@ -77,7 +64,7 @@ Sync for Commerce is in beta. If you are interested in building with Sync for Co
 
    <li className="card">
         <div class="header">
-            <img src="https://www.codat.io/wp-content/themes/class/dist/images/copy-feature-bullet.svg"
+            <img src="/img/wp-icons/copy-feature-bullet.svg"
                 class="mini-icon"/>
             <h3>Fast, simple integration</h3>
         </div>

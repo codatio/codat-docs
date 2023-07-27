@@ -2,8 +2,7 @@
 title: "Set up the Sage 200cloud integration"
 slug: "accounting-sage200-setup"
 description: "Explore our API integration with Sage 200cloud."
-createdAt: "2021-02-23T10:52:24.650Z"
-updatedAt: "2023-01-13T15:13:31.523Z"
+sidebar_label: Setup
 ---
 
 ## About Sage 200cloud
@@ -105,7 +104,7 @@ Unfortunately, you can't use a trial account to test your integration. Sage does
 :::
 
 1. Set up some test data in your Sage200cloud account. For example, some new or amended invoices.
-2. Next, go to the Codat Portal where you've enabled your integration and [create a test company](/other/portal/companies#add-a-new-company).
+2. Next, go to the Codat Portal where you've enabled your integration and [create a test company](/configure/portal/companies#add-a-new-company).
 3. Find the Link URL for your test company. Select **Request data** next to the company name.
 4. Use the Link URL to connect your Sage 200cloud account.
    - When Link opens, select **Sage200cloud**, and then select **Continue to Sage 200cloud**.

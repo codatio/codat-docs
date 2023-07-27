@@ -7,19 +7,23 @@
 
 /* You can override the default Infima variables here. */
 
-@use "./components/admonition";
+@use "./components/admonitions";
 @use "./components/back-to-top-button";
 @use "./components/blog";
 @use "./components/cards";
+@use "./components/checkbox";
 @use "./components/code";
 @use "./components/cookie";
 @use "./components/doc-item";
 @use "./components/doc-page";
 @use "./components/doc-sidebar";
 @use "./components/edit-this-page";
+@use "./components/icons";
 @use "./components/images";
+@use "./components/labels";
 @use "./components/lists";
 @use "./components/markdown";
+@use "./components/mermaid";
 @use "./components/navbar";
 @use "./components/navbar-sidebar";
 @use "./components/pagination";
@@ -30,6 +34,8 @@
 @use "./components/theme-toggle";
 @use "./components/toc";
 @use "./components/video";
+
+@import '~@fortawesome/fontawesome-svg-core/styles.css';
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap");
 
@@ -90,6 +96,7 @@ html[data-theme="light"] {
   --token-primary-bg-c: #ffffff;
   --token-secondary-bg-c: var(--color-interface-5);
   --token-secondary-bg-c-alt: var(--color-interface-10);
+  --token-secondary-bg-c-alt-dark: var(--color-interface-20);
 
   --color-primary: var(--color-codat-primary);
   --ifm-color-primary: var(--color-codat-primary);
@@ -119,6 +126,7 @@ html[data-theme="dark"] {
   --token-primary-bg-c: #03060b;
   --token-secondary-bg-c: #13171c;
   --token-secondary-bg-c-alt: #252c35;
+  --token-secondary-bg-c-alt-dark: #303842;
 
   --ifm-link-color: var(--c-blue-70);
   --ifm-link-hover-color: rgba(77, 141, 255, 0.8);
@@ -165,6 +173,7 @@ h2,
 h3,
 h4 {
   font-weight: 500;
+  text-wrap: balance;
 }
 
 a {
