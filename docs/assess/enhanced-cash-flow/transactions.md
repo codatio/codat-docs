@@ -71,18 +71,21 @@ The response structure is split into three areas: Report info, Data sources and 
 |Field|Type|Description|
 |----|----|----|
 |**sourceRef**|_enum_|A source reference object containing `sourceType` object "Banking".|
+|**accountRef**|_enum_|An account reference containing the account id and name.|
 |**id**|_string_|The unique identifier of the bank transaction.|
 |**date**|_string_, See [Date](/codat-api#/schemas/DateTime)|YYYY-MM-DD, The date the bank transaction was posted.|
 |**description**|_string_|The description of the bank transaction.|
 |**amount**|_decimal_|The bank transaction amount.|
 |**currency**|_string_|The currency code for the account.|
-|**transactionCategory**|_object_, See [Transaction category](#transaction-category)|Contains an array of category levels.|
+|**transactionCategory**|_object_, See [Transaction category](#transaction-category)|Contains a confidence score and an array of category levels.|
+|**platformName**|_string_|The payment processor responsible for the transaction.|
 
 #### Transaction category
 
 |Field|Type|Description|
 |----|----|----|
-|**levels**|_array_|An array of category levels against an individual transaction. For example: `Income`, `Revenue`, `Subscription`, `SubscriptionUpgrade`.|  
+|**confidence**|_decimal_|The lowest confidence scrore of the current levels.|
+|**levels**|_array_|An array of category levels against an individual transaction. For example: `Income`, `Revenue`, `Subscription`, `SubscriptionUpgrade`|
 
 ### Example data
 
@@ -131,12 +134,17 @@ The response structure is split into three areas: Report info, Data sources and 
                   "sourceRef": {
                       "sourceType": "Banking"
                   },
+                  "accountRef": {
+                      "id": 4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a,
+                      "name": Business Current Account
+                  },
                   "id": "05c1d8bc-3a70-42f5-afb4-94d64526c127",
                   "date": "2022-09-21",
                   "description": "transfer - Payment - customer c27fef58-ca7e-4b20-b324-7279442ba8ae",
                   "amount": 4802.27,
                   "currency": "GBP",
                   "transactionCategory": {
+                      "confidence": 58.68,
                       "levels": [
                           "Expense",
                           "CostOfSales",
@@ -144,10 +152,15 @@ The response structure is split into three areas: Report info, Data sources and 
                           "Inventory"
                       ]
                   }
+                  "platformName": "Amazon"
               },
               {
                   "sourceRef": {
                       "sourceType": "Banking"
+                  },
+                  "accountRef": {
+                      "id": 4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a,
+                      "name": Business Current Account
                   },
                   "id": "0868ff46-037d-4787-a55b-d12636eacf72",
                   "date": "2022-09-21",
@@ -155,6 +168,7 @@ The response structure is split into three areas: Report info, Data sources and 
                   "amount": -24119.58,
                   "currency": "GBP",
                   "transactionCategory": {
+                      "confidence": 76.95,
                       "levels": [
                           "Expense",
                           "CostOfSales",
@@ -162,6 +176,7 @@ The response structure is split into three areas: Report info, Data sources and 
                           "Inventory"
                       ]
                   }
+                  "platformName": "Shopify"
               }
           ]
       }
