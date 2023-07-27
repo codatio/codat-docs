@@ -11,10 +11,8 @@ Handling rate limits is a challenging aspect of building financial integrations.
 
 ## Codat rate limits
 
-:::caution Effective from 1st October 2023
-
-From the 1st of October 2023 these rate limits will be enforced by `api.codat.io` and from this date no Codat client account will be able to make API calls that exceed the calculated quota.
-
+:::caution Rate limits enforced from 1<sup>st</sup> October 2023
+From October 1, 2023, rate limits listed on this page will be enforced by `api.codat.io`, and it will not be possible to make API calls that exceed the quota.
 :::
 
 Codat will return a `429` status code for all requests to the API that are received while rate limiting is active. The body of the response will look like any other [error that gets returned by Codat](/using-the-api/errors).
@@ -49,7 +47,6 @@ Company-based limits set an upper limit on the number of data-based requests an 
 
 Note that these limits represent a global request count.
 
-
 :::note Calculating rate limits: example 1
 
 Account A has a production client with 2 active companies. The client-based limit is calculated as the greater of `(2*100 || 1,000)`, resulting in 1,000 allowed requests. Adding 1,000 \* 2 ACCs for the company-based limit gives Account A a total limit of 3,000 requests. 
@@ -70,15 +67,12 @@ This gives Account B a total limit of 154,000 requests.
 
 ### Rate limit headers
 
-In order to understand how your use of the API is currently tracking against your limits, every response from the API will include a set of headers. 
+Every response from our API includes a set of headers that show how your use compares to your rate limits: 
+- `X-Rate-Limit-Limit` tells you the maximum number of requests for the current quota period.
+- `X-Rate-Limit-Remaining` tells you the number of remaining requests you have in the quota period.
+- `X-Rate-Limit-Reset` tells you the date when the quota will be reset.
 
-`X-Rate-Limit-Limit` (number) : This header tells you what the maximum number of requests was for the current quota period.
-
-`X-Rate-Limit-Remaining` (number): This header tells you how many request you have remaining.
-
-`X-Rate-Limit-Reset` (date): This header tells you when the quota will be reset.
-
-Once the limit has been exceeded further requests will also contain the standard `Retry-After` header which will inform your system when they can next carry out that request. 
+Once the limit is exceeded, all further requests will also contain the standard `Retry-After` header that informs your system when the request can be performed next. 
 
 ## Hard DoS-based limits
 
