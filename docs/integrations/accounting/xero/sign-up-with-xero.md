@@ -1,49 +1,44 @@
 ---
-title: "Build a Sign Up with Xero flow"
+title: "Sign Up with Xero"
 description: "Learn how to enable the Sign Up with Xero flow with Codat to support your app's certification"
 ---
 
-The **Sign Up with Xero** flow allows you to quickly onboard potential customers using pre-populated data from their Xero accounting software and show them the unique value of your app faster. Codat’s API makes it easier for you to implement it by helping you build and use redirect URLs and creating relevant companies and connections. We also provide a detailed guide of the steps you need to take.
+Sign Up with Xero (SUwX) is no.8 in Xero’s list of [Certification Checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/#required-for-all-integrations). It is a requirement for all App Store Partners seeking certification. 
 
-<div className="video-container">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/pFGHti5Y17Q?t=30" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
+SUwX is optional for Financial Services Partners, depending on whether you choose to be listed in the App Store. 
 
-## When to build
+SUwX is a user journey that takes potential customers from the Xero App Store directly to your app. It serves two purposes:
 
-The [Sign Up with Xero](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/sign-up/) flow is a strict requirement for all app partners seeking certification and listing on the Xero App Store. Therefore, Xero expects to see a working example of the flow as part of your App Partner application. Note that you will only be able to launch your app and complete your listing once your application is fully approved.
+1. To reduce the steps users need to take to sign up to your app
+2. To enable Xero to track referrals that originate in the Xero App Store
 
-## What to build
+## SUwX Option A vs Option B
 
-The flow is intended to bring potential customers directly to your app from the Xero App Store and provide them a trial or an account for your app that is  pre-populated with their Xero data.
+Xero’s docs outline [two approaches to Sign Up with Xero](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/sign-up):
 
-When the customer initiates your app from the App Store, they should be immediately directed via a `Sign up with Xero URL` to authorize a connection with Xero using the standard OAuth 2.0 flow. 
+* Option A
+  * This approach typically requires significantly more developer resource and is not possible for all apps (eg. Apps that do not have a completely self-serve onboarding process and need customers to speak to a sales representative before creating an account for them)
+  * Option A uses a related concept called [Sign In with Xero](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/sign-in) which enables users to use Xero as an identity provider when logging into your app, similar to Sign In With Google or Facebook. 
+* Option B
+  * This approach is more popular with Codat clients as it is simpler and enables apps to reduce the time and developer resource required to pass Xero Certification.
 
-Upon completion, your app should provision an account or a trial for the customer, interact with the Xero API to receive the customer's data, and populate the provisioned account with it. 
+If you would like to implement SUwX Option A, please notify your Codat account team for assistance. If you would like to implement SUwX Option B, please follow the guidance below and consult your Codat account team if you have any queries.
 
-Finally, present the user with the resulting account via the `Sign up success redirect URL`. We expect this URL to lead to an existing page you have built (for example, signup, application, or onboarding forms). If you do not yet have one, consider creating it to provide a landing page for the customer. 
+## How to implement SUwX Option B using Codat
 
-``` mermaid
-  sequenceDiagram
-   participant cust as Customer
-    participant appm as App Store 
-    participant yapp as Your App
-    participant xapi as Xero API
-    cust ->> appm: Click "Start a free trial with Xero Sign In"
-    appm ->> yapp: Redirect to your app's Sign Up with Xero URL
-    yapp -> xapi: Standard OAuth 2.0 code flow
-    yapp ->> yapp: Provision account
-    yapp ->> xapi: Request data
-    xapi ->> yapp: Receive data
-    yapp ->> yapp: Populate account
-    yapp ->> cust: Redirect user with the populated landing page via "Sign up success redirect URL"
-```  
+SUwX Option B is intended to bring potential customers from the Xero App Store to an inquiry form on your website. SUwX allows you to pre-populate the form with OpenID data from Xero (eg. name + email address).
+
+If you do not have an existing signup/inquiry form, you should create one as you will require a URL to redirect customers to during the SUxW journey. In future steps we will defer to this url as your **Sign up success redirect URL**.
+
+## User Flow
+
+![Sign Up with Xero - Option B - User Flow](https://github.com/codatio/codat-docs/assets/139238209/cd32b714-fb87-444c-a702-17564376d5d9)
 
 ## How to build
 
 ### Retrieve the Sign Up with Xero URL
 
-The **Sign Up with Xero URL** is the URL that is shared with the end user for them to authorize access to Xero. It is generated by Codat, but requires you to action the following: 
+The **Sign Up with Xero URL** is the URL that is shared with the end user for them to authorize access to Xero. This URL is generated by Codat, but requires customisation to you and your Codat instance: 
 
 1. Retrieve the `clientId` and `platformKey`.
 
@@ -62,7 +57,7 @@ When this link is initiated by the customer, it triggers the creation of a compa
 
 Navigate to **Settings > Auth flow > Redirects** to access the [Redirects](https://app.codat.io/settings/redirects) page in the Codat Portal. Under **Sign up success redirect URL**, enter the base URL of the form you will display to the customer, without any parameter replacements. Your changes will be auto-saved.
 
-![](/img/integrations/accounting/xero/0021-xero-success-redirect-url.png)
+<img width="690" alt="Sign Up success redirect URL" src="https://github.com/codatio/codat-docs/assets/139238209/ee749a61-ff8e-4d5f-9055-8f7f90d4b8ef">
 
 ### Pre-populate customer's account with Xero data 
 
@@ -72,11 +67,11 @@ Once the customer authorizes the Xero connection, use the Xero OpenID data to pr
 {SignUpSuccessRedirectURL}?companyId=f3069a22-ce9a-499b-b341-a7d6564c65z1&connectionId=4302ebaf-aba6-4763-ba61-47a7992634a3&statusCode=200&openId_email=j.doe%2B1%40codat.io&openId_given_name=John&openId_family_name=Doe
 ```
 
-You can also use the Codat API and `companyId` to pull additional information of interest, such as company info, customers, or accounts. 
+You can also use the Codat API and `companyId` to pull additional information of interest, such as company info. 
 
 ### Manage the Codat company
 
-When the **Sign Up with Xero URL** is triggered and a Codat company is created, it has a name that follows the `Xero-YYYY-MM-DD-THHMMSS` convention. This is because we do not have any identifying information for the user at that point. 
+When the **Sign Up with Xero URL** is triggered and a Codat company is created, it has a name that follows the `Xero-YYYY-MM-DD-THHMMSS` convention. This is because we do not have any identifying information for the user at that point.
 
 If you have specific requirements for company naming, you can update the name via the API using our [Update company](/codat-api#/operations/update-company) endpoint. Use the `companyId` returned as part of the Xero OpenID data. 
 
