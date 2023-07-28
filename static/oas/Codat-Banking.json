@@ -940,6 +940,9 @@
           "$ref": "#/components/parameters/companyId"
         },
         {
+          "$ref": "#/components/parameters/connectionId"
+        },
+        {
           "schema": {
             "type": "string"
           },
@@ -947,9 +950,6 @@
           "in": "path",
           "required": true,
           "description": "The unique identifier for a transaction"
-        },
-        {
-          "$ref": "#/components/parameters/connectionId"
         }
       ]
     }
