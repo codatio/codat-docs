@@ -140,7 +140,10 @@ Whether you build your own or use Link, browser and mobile compatibility varies 
 - Some integrations are **desktop-only** e.g. [Sage 50](/integrations/accounting/sage50/accounting-sage50), [QuickBooks Desktop](/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop).
 - Some integrations require **downloading a desktop package** e.g. [Oracle NetSuite](/integrations/accounting/netsuite/accounting-netsuite), [Microsoft Dynamics 365 Business Central](/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral).
 - Some integrations require switching to complex flows on **non mobile-optimized websites** due to the complexity of the third-party platform e.g. [Sage 200cloud](/integrations/accounting/sage200/accounting-sage200), [Sage Intacct](/integrations/accounting/sage-intacct/accounting-sage-intacct).
+:::
 
-:::caution Link compatibility with Codat Products
+- Link is compatible with the whole product range of Codat except for [Sync for Commerce](/sfc/overview), which is currently not supported. To set up your Sync for Commerce authorization flow, follow the instructions in our [Sync for Commerce documentation](/sfc/overview).
 
-Link is compatible with the whole product range of Codat except for [Sync for Commerce](/sfc/overview) which is currently not supported. To set up your Sync for Commerce authorization flow, follow the instructions in our [Sync for Commerce documentation](/sfc/overview).
+- You should never embed Link within an iframe. Such embeds will not work abecause w eblocked them to ensure security of the solution. 
+
+- You should only enable one of the banking integrations to be displayed in the auth flow, because each integration is [represented differently](https://docs.codat.io/integrations/banking/overview#banking-integrations-in-the-authorization-flow) in the auth flow. Combining multiple approaches may confuse users and lead to reduced auth completion rates.
