@@ -7925,6 +7925,30 @@
       "ProxyResponse": {
         "type": "object",
         "additionalProperties": true
+      },
+      "ErrorMessage": {
+        "type": "object",
+        "x-internal": true,
+        "properties": {
+          "statusCode": {
+            "type": "integer"
+          },
+          "service": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "correlationId": {
+            "type": "string"
+          },
+          "canBeRetried": {
+            "type": "string"
+          },
+          "detailedErrorCode": {
+            "type": "integer"
+          }
+        }
       }
     },
     "parameters": {
@@ -8020,7 +8044,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+              "$ref": "#/components/schemas/ErrorMessage"
             },
             "examples": {
               "Malformed query": {
@@ -8042,7 +8066,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+              "$ref": "#/components/schemas/ErrorMessage"
             },
             "examples": {
               "Unauthorized": {
@@ -8064,7 +8088,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+              "$ref": "#/components/schemas/ErrorMessage"
             },
             "examples": {
               "Malformed query": {
@@ -8086,7 +8110,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+              "$ref": "#/components/schemas/ErrorMessage"
             },
             "examples": {
               "Data connection not found": {
@@ -8128,28 +8152,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "type": "object",
-              "x-internal": true,
-              "properties": {
-                "statusCode": {
-                  "type": "integer"
-                },
-                "service": {
-                  "type": "string"
-                },
-                "error": {
-                  "type": "string"
-                },
-                "correlationId": {
-                  "type": "string"
-                },
-                "canBeRetried": {
-                  "type": "string"
-                },
-                "detailedErrorCode": {
-                  "type": "integer"
-                }
-              }
+              "$ref": "#/components/schemas/ErrorMessage"
             },
             "examples": {
               "Conflict": {
@@ -8171,7 +8174,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+              "$ref": "#/components/schemas/ErrorMessage"
             },
             "examples": {
               "Conflict": {
