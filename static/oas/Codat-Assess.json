@@ -1260,6 +1260,12 @@
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
+                          }
+                        },
+                        {
+                          "accountRef": {
+                            "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
+                            "name": "Business Current Account"
                           },
                           "id": "ab5e07a0-5578-4d91-8421-2dc72713b74f",
                           "date": "2022-11-08T00:00:00",
@@ -1267,12 +1273,23 @@
                           "amount": -6905.44,
                           "currency": "GBP",
                           "transactionCategory": {
-                            "levels": []
-                          }
+                            "confidence": 52.53,
+                            "levels": [
+                              "Expense",
+                              "Operating"
+                            ]
+                          },
+                          "platformName": "Shopify"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
+                          }
+                        },
+                        {
+                          "accountRef": {
+                            "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
+                            "name": "Business Current Account"
                           },
                           "id": "9846bbed-46d3-472c-a848-1ce8ebea7213",
                           "date": "2022-11-08T00:00:00",
@@ -1280,12 +1297,22 @@
                           "amount": 4332.84,
                           "currency": "GBP",
                           "transactionCategory": {
-                            "levels": []
-                          }
+                            "confidence": 88,
+                            "levels": [
+                              "Expense"
+                            ]
+                          },
+                          "platformName": "Amazon"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
+                          }
+                        },
+                        {
+                          "accountRef": {
+                            "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
+                            "name": "Business Undeposited Funds"
                           },
                           "id": "94b213fb-d742-435e-90f1-bfe723a076d5",
                           "date": "2022-11-08T00:00:00",
@@ -1293,12 +1320,23 @@
                           "amount": 4034.3,
                           "currency": "GBP",
                           "transactionCategory": {
-                            "levels": []
-                          }
+                            "confidence": 61.08,
+                            "levels": [
+                              "Income",
+                              "Revenue"
+                            ]
+                          },
+                          "platformName": "Shopify"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
+                          }
+                        },
+                        {
+                          "accountRef": {
+                            "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
+                            "name": "Business Current Account"
                           },
                           "id": "cfceb7ff-eaa2-45b6-aca7-fa0e0b439161",
                           "date": "2022-11-08T00:00:00",
@@ -1306,12 +1344,23 @@
                           "amount": -313.76,
                           "currency": "GBP",
                           "transactionCategory": {
-                            "levels": []
-                          }
+                            "confidence": 40.98,
+                            "levels": [
+                              "Expense",
+                              "CostOfSales"
+                            ]
+                          },
+                          "platformName": "Amazon"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
+                          }
+                        },
+                        {
+                          "accountRef": {
+                            "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
+                            "name": "Business Undeposited Funds"
                           },
                           "id": "ba814f14-0fe3-41d0-9308-57f40642ac75",
                           "date": "2022-11-08T00:00:00",
@@ -1319,12 +1368,23 @@
                           "amount": -614.4,
                           "currency": "GBP",
                           "transactionCategory": {
-                            "levels": []
-                          }
+                            "confidence": 55.84,
+                            "levels": [
+                              "Income",
+                              "Revenue"
+                            ]
+                          },
+                          "platformName": "Zettle"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
+                          }
+                        },
+                        {
+                          "accountRef": {
+                            "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
+                            "name": "Business Current Account"
                           },
                           "id": "e67cc30e-fd5c-4eea-8365-ec40dfdd3ef6",
                           "date": "2022-11-08T00:00:00",
@@ -1332,12 +1392,22 @@
                           "amount": 5199.62,
                           "currency": "GBP",
                           "transactionCategory": {
-                            "levels": []
-                          }
+                            "confidence": 57.85,
+                            "levels": [
+                              "Expense"
+                            ]
+                          },
+                          "platformName": "Amazon"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
+                          }
+                        },
+                        {
+                          "accountRef": {
+                            "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
+                            "name": "Business Current Account"
                           },
                           "id": "e0f08a0b-3575-4dde-98c4-3c854028d2d2",
                           "date": "2022-11-08T00:00:00",
@@ -1345,12 +1415,23 @@
                           "amount": -21420.94,
                           "currency": "GBP",
                           "transactionCategory": {
-                            "levels": []
-                          }
+                            "confidence": 70.58,
+                            "levels": [
+                              "Expense",
+                              "Operating"
+                            ]
+                          },
+                          "platformName": "Amazon"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
+                          }
+                        },
+                        {
+                          "accountRef": {
+                            "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
+                            "name": "Business Undeposited Funds"
                           },
                           "id": "4b70d379-8284-4f44-bb37-c7935df950cc",
                           "date": "2022-11-08T00:00:00",
@@ -1358,12 +1439,22 @@
                           "amount": -30924.22,
                           "currency": "GBP",
                           "transactionCategory": {
-                            "levels": []
-                          }
+                            "confidence": 48.26,
+                            "levels": [
+                              "Income"
+                            ]
+                          },
+                          "platformName": "DoorDash"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
+                          }
+                        },
+                        {
+                          "accountRef": {
+                            "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
+                            "name": "Business Undeposited Funds"
                           },
                           "id": "76b73373-9345-472e-8edf-5be849d797fe",
                           "date": "2022-11-08T00:00:00",
@@ -1371,12 +1462,23 @@
                           "amount": -568.78,
                           "currency": "GBP",
                           "transactionCategory": {
-                            "levels": []
-                          }
+                            "confidence": 65.21,
+                            "levels": [
+                              "Income",
+                              "Revenue"
+                            ]
+                          },
+                          "platformName": "Uber"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
+                          }
+                        },
+                        {
+                          "accountRef": {
+                            "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
+                            "name": "Business Undeposited Funds"
                           },
                           "id": "ee92fd6f-e0f7-4391-85fd-4b50921b973f",
                           "date": "2022-11-08T00:00:00",
@@ -1384,8 +1486,13 @@
                           "amount": -13050.79,
                           "currency": "GBP",
                           "transactionCategory": {
-                            "levels": []
-                          }
+                            "confidence": 92.33,
+                            "levels": [
+                              "Income",
+                              "Revenue"
+                            ]
+                          },
+                          "platformName": "DoorDash"
                         }
                       ]
                     }
@@ -3780,6 +3887,7 @@
             "type": "object",
             "properties": {
               "sourceType": {
+                "description": "The data source type.",
                 "type": "string"
               }
             },
@@ -3789,6 +3897,33 @@
                   "value": {
                     "sourceRef": {
                       "sourceType": "Banking"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "accountRef": {
+            "title": "Account reference",
+            "description": "An account reference containing the account id and name.",
+            "type": "object",
+            "properties": {
+              "id": {
+                "description": "The id of the account.",
+                "type": "string"
+              },
+              "name": {
+                "description": "The name of the account.",
+                "type": "string"
+              }
+            },
+            "examples": [
+              {
+                "Example": {
+                  "value": {
+                    "accountRef": {
+                      "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
+                      "name": "Business Current Account"
                     }
                   }
                 }
@@ -3834,8 +3969,15 @@
                 "description": "Contains an array of category levels.",
                 "$ref": "#/components/schemas/EnhancedCashFlowTransactions/definitions/transactionCategory"
               },
+              "platformName": {
+                "description": "Returns the payment processor responsible for the transaction.",
+                "type": "string"
+              },
               "sourceRef": {
                 "$ref": "#/components/schemas/EnhancedCashFlowTransactions/definitions/sourceRef"
+              },
+              "accountRef": {
+                "$ref": "#/components/schemas/EnhancedCashFlowTransactions/definitions/accountRef"
               }
             }
           },
@@ -3844,17 +3986,35 @@
             "type": "object",
             "properties": {
               "confidence": {
-                "description": "Returns the confidence of the suggested category for the transaction.",
+                "description": "Returns the confidence of the suggested category for the transaction. The value is between 0 and 100.",
                 "type": "number"
               },
               "levels": {
-                "description": "An array of category levels against an individual transaction.",
+                "description": "The suggested category is an ordered array of category levels where each element (or level) is a subcategory of the previous element (or level).",
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
               }
-            }
+            },
+            "examples": [
+              {
+                "Example": {
+                  "value": {
+                    "transactionCategory": {
+                      "confidence": 92.7,
+                      "levels": [
+                        "Asset",
+                        "Current",
+                        "Bank",
+                        "BankTransfers",
+                        "ShareholderTransfers"
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
           }
         }
       },

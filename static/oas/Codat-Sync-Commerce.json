@@ -42,12 +42,8 @@
   },
   "tags": [
     {
-      "name": "Company management",
-      "description": "Create new and manage existing Sync for Commerce companies."
-    },
-    {
-      "name": "Configuration",
-      "description": "Expressively configure preferences for any given Sync for Commerce company."
+      "name": "Connections",
+      "description": "Create new and manage existing Sync for Commerce companies using the Sync flow UI."
     },
     {
       "name": "Sync flow preferences",
@@ -58,18 +54,101 @@
       "description": "Initiate a sync of Sync for Commerce company data into their respective accounting software."
     },
     {
+      "name": "Sync status",
+      "description": "Status of the sync between commerce company data into their respective accounting software."
+    },
+    {
       "name": "Integrations",
       "description": "View useful information about codat's integrations."
+    },
+    {
+      "name": "Connections (advanced)",
+      "description": "Create new and manage existing Sync for Commerce companies."
+    },
+    {
+      "name": "Configuration (advanced)",
+      "description": "Expressively configure preferences for any given Sync for Commerce company."
     }
   ],
   "paths": {
-    "/meta/companies": {
+    "/config/sync/commerce/{commerceKey}/{accountingKey}/start": {
       "get": {
         "tags": [
-          "Company management"
+          "Connections"
+        ],
+        "summary": "Retrieve sync flow url",
+        "description": "Get a URL for Sync Flow including a one time passcode.",
+        "operationId": "get-sync-flow-url",
+        "x-speakeasy-name-override": "get-sync-flow-url",
+        "parameters": [
+          {
+            "name": "commerceKey",
+            "in": "path",
+            "description": "Commerce platform key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accountingKey",
+            "in": "path",
+            "description": "Accounting platform key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "merchantIdentifier",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Identifier for your merchant, can be the merchant name or Codat company id."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SyncFlowUrl"
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "commerceKey",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier for commerce platform."
+        },
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "accountingKey",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier for accounting software."
+        }
+      ]
+    },
+    "/companies": {
+      "get": {
+        "tags": [
+          "Connections"
         ],
         "summary": "List companies",
-        "description": "Retrieve a list of all companies the client has created.",
+        "description": "Returns a list of companies.",
         "operationId": "list-companies",
         "parameters": [
           {
@@ -97,16 +176,15 @@
             }
           }
         }
-      }
-    },
-    "/meta/companies/sync": {
+      },
       "post": {
         "tags": [
-          "Company management"
+          "Connections (advanced)"
         ],
-        "summary": "Create Sync for Commerce company",
-        "description": "Creates a Codat company with a commerce partner data connection.",
+        "summary": "Create company",
+        "description": "Creates a Codat company..",
         "operationId": "create-company",
+        "x-speakeasy-name-override": "create-company",
         "requestBody": {
           "content": {
             "application/json": {
@@ -133,14 +211,15 @@
         }
       }
     },
-    "/meta/companies/{companyId}/connections": {
+    "/companies/{companyId}/connections": {
       "get": {
         "tags": [
-          "Company management"
+          "Connections (advanced)"
         ],
-        "summary": "List data connections",
-        "description": "Retrieve previously created data connections.",
+        "summary": "List connections",
+        "description": "List the connections for a company.",
         "operationId": "list-connections",
+        "x-speakeasy-name-override": "list-connections",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -173,11 +252,12 @@
       },
       "post": {
         "tags": [
-          "Company management"
+          "Connections (advanced)"
         ],
         "summary": "Create connection",
-        "description": "Create a data connection for company.",
+        "description": "Creates a connection for the company by providing a valid platformKey.",
         "operationId": "create-connection",
+        "x-speakeasy-name-override": "create-connection",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -211,13 +291,61 @@
         }
       ]
     },
+    "/companies/{companyId}/connections/{connectionId}": {
+      "patch": {
+        "tags": [
+          "Connections (advanced)"
+        ],
+        "summary": "Update connection",
+        "description": "Update a data connection",
+        "operationId": "update-connection",
+        "x-speakeasy-name-override": "update-connection",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateConnection"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Connection"
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        }
+      ]
+    },
     "/config/companies/{companyId}/sync/commerce": {
       "get": {
         "tags": [
-          "Configuration"
+          "Configuration (advanced)"
         ],
-        "summary": "Retrieve config preferences set for a company.",
-        "description": "Retrieve current config preferences.",
+        "summary": "Get company configuration",
+        "description": "Returns a company's commerce sync configuration'.",
         "operationId": "get-configuration",
         "parameters": [
           {
@@ -239,10 +367,10 @@
       },
       "post": {
         "tags": [
-          "Configuration"
+          "Configuration (advanced)"
         ],
-        "summary": "Create or update configuration.",
-        "description": "Make changes to configuration preferences.",
+        "summary": "Set configuration.",
+        "description": "Sets a company's commerce sync configuration'.",
         "operationId": "set-configuration",
         "parameters": [
           {
@@ -343,130 +471,13 @@
         }
       ]
     },
-    "/meta/companies/{companyId}/connections/{connectionId}": {
-      "patch": {
-        "tags": [
-          "Company management"
-        ],
-        "summary": "Update data connection",
-        "description": "Update a data connection",
-        "operationId": "update-connection",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          },
-          {
-            "$ref": "#/components/parameters/connectionId"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateConnection"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Connection"
-                }
-              }
-            }
-          }
-        }
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/connectionId"
-        }
-      ]
-    },
-    "/config/sync/commerce/{commerceKey}/{accountingKey}/start": {
-      "get": {
-        "tags": [
-          "Sync flow preferences"
-        ],
-        "summary": "Retrieve sync flow url",
-        "description": "Get a URL for Sync Flow including a one time passcode.",
-        "operationId": "get-sync-flow-url",
-        "parameters": [
-          {
-            "name": "commerceKey",
-            "in": "path",
-            "description": "Commerce platform key",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "accountingKey",
-            "in": "path",
-            "description": "Accounting platform key",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "merchantIdentifier",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            },
-            "description": "Identifier for your merchant, can be the merchant name or Codat company id."
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SyncFlowUrl"
-                }
-              }
-            }
-          }
-        }
-      },
-      "parameters": [
-        {
-          "schema": {
-            "type": "string"
-          },
-          "name": "commerceKey",
-          "in": "path",
-          "required": true,
-          "description": "Unique identifier for commerce platform."
-        },
-        {
-          "schema": {
-            "type": "string"
-          },
-          "name": "accountingKey",
-          "in": "path",
-          "required": true,
-          "description": "Unique identifier for accounting software."
-        }
-      ]
-    },
     "/sync/commerce/config/ui/text": {
       "get": {
         "tags": [
           "Sync flow preferences"
         ],
-        "summary": "Retrieve preferences for text fields on Sync Flow",
-        "description": "To enable retrieval of preferences set for the text fields on Sync Flow.",
+        "summary": "Get preferences for text fields",
+        "description": "Return preferences set for the text fields on sync flow.",
         "operationId": "get-config-text-sync-flow",
         "responses": {
           "200": {
@@ -485,8 +496,8 @@
         "tags": [
           "Sync flow preferences"
         ],
-        "summary": "Update preferences for text fields on sync flow",
-        "description": "To enable update of preferences set for the text fields on sync flow.",
+        "summary": "Update preferences for text fields",
+        "description": "Set preferences for the text fields on sync flow.",
         "operationId": "update-config-text-sync-flow",
         "requestBody": {
           "description": "",
@@ -538,7 +549,7 @@
           "Sync flow preferences"
         ],
         "summary": "List visible accounts",
-        "description": "Enable retrieval for accounts which are visible on sync flow.",
+        "description": "Return accounts which are visible on sync flow.",
         "operationId": "get-visible-accounts",
         "responses": {
           "200": {
@@ -559,8 +570,8 @@
         "tags": [
           "Sync flow preferences"
         ],
-        "summary": "Update the visible accounts on Sync Flow",
-        "description": "To enable update of accounts visible preferences set on Sync Flow.",
+        "summary": "Update visible accounts",
+        "description": "Update which accounts are visible on sync flow.",
         "operationId": "update-visible-accounts-sync-flow",
         "parameters": [
           {
@@ -602,8 +613,8 @@
         "tags": [
           "Sync"
         ],
-        "summary": "Sync new",
-        "description": "Run a Commerce sync from the last successful sync up to the date provided (optional), otherwise UtcNow is used.\r\nIf there was no previously successful sync, the start date in the config is used.",
+        "summary": "Initiate new sync",
+        "description": "Run a Commerce sync from the last successful sync up to the date provided (optional), otherwise UtcNow is used.\\r\\nIf there was no previously successful sync, the start date in the config is used.",
         "operationId": "request-sync",
         "parameters": [
           {
@@ -645,8 +656,8 @@
         "tags": [
           "Sync"
         ],
-        "summary": "Sync range",
-        "description": "Run a Commerce sync from the specified start date to the specified finish date in the request payload.",
+        "summary": "Initiate sync for specific range",
+        "description": "Initiate a sync for the specified start date to the specified finish date in the request payload.",
         "operationId": "request-sync-for-date-range",
         "parameters": [
           {
@@ -680,10 +691,10 @@
     "/meta/companies/{companyId}/sync/commerce/status": {
       "get": {
         "tags": [
-          "Sync"
+          "Sync status"
         ],
-        "summary": "Get status for a company's syncs",
-        "description": "Check the sync history and sync status for a company.",
+        "summary": "Get sync status",
+        "description": "Gets a list of sync statuses.",
         "operationId": "get-sync-status",
         "parameters": [
           {

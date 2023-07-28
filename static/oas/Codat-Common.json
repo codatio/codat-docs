@@ -84,10 +84,6 @@
     {
       "operationId": "^upload-.*?-attachment",
       "methodNameOverride": "upload-attachment"
-    },
-    {
-      "operationId": "dummy-operation-delete-me",
-      "methodNameOverride": "dummy-operation"
     }
   ],
   "tags": [
