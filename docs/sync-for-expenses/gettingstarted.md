@@ -27,11 +27,14 @@ Before you start using sync for expenses, you will need to ensure that the follo
 
 <details>
   <summary>Other useful data types</summary>
+  
 | DataType Name       | dataType           | Use Case |
+| -- |  -- |  -- |
 | Direct Costs        | `directCosts`        | Sync for expenses uses direct cost to represent the expense transaction within the accounting platform.        |
 | Direct Incomes      | `directIncomes`      | Typically direct incomes are used to represent any income generating transaction type such as cashback rewards.    |
 | Journal Entries     | `journalEntries`     | Journal entries are used where an accounting platform does not support a representation of direct costs. They are also used to represent transfers such as topping up or paying down the expense card.   |
 | Transfers           | `transfers`          | A record of the expense transaction between two bank accounts such as topping up or paying down the expense card.        |
+
 </details>
 
 ## Connect to an SMB’s accounting platform
