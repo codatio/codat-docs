@@ -144,6 +144,6 @@ Whether you build your own or use Link, browser and mobile compatibility varies 
 
 - Link is compatible with the whole product range of Codat except for [Sync for Commerce](/sfc/overview), which is currently not supported. To set up your Sync for Commerce authorization flow, follow the instructions in our [Sync for Commerce documentation](/sfc/overview).
 
-- You should never embed Link within an iframe. Such embeds will not work because they have been blocked to ensure the security of the solution. 
+- You should not iframe Link. Link is not compatible with iframes and will not work for security reasons (CORS). 
 
 - You should only enable one of the banking integrations to be displayed in the auth flow because each integration is [represented differently](https://docs.codat.io/integrations/banking/overview#banking-integrations-in-the-authorization-flow) in the auth flow. Combining multiple approaches may confuse users and lead to reduced auth completion rates.
