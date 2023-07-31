@@ -44,7 +44,7 @@ If the description was edited in Business Central, a validation error is returne
 
 ## Tracking categories
 
-When pulling Tracking categories from Business Central, the `subCategories` field within the [tracking category tree model](/accounting-api#/schemas/trackingcategories#tracking-category-tree-model) is not populated. This kind of relationship can't be modeled in Business Central.
+When pulling Tracking categories from Business Central, the `subCategories` field within the [tracking category tree model](/accounting-api#/schemas/TrackingCategoryTree) is not populated. This kind of relationship can't be modeled in Business Central.
 
 Tracking categories are not updated on Bills when sending PUT or POST requests.
 
