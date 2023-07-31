@@ -7,12 +7,12 @@ module.exports = [
       "auth-flow/authorize-embedded-link",
       {
         type: "link",
-        label: "Sample project",
-        href: "https://github.com/codatio/sample-project-link-sdk",
+        label: "Try it",
+        href: "https://sdk-link.vercel.app/",
       },
        {
         type: "link",
-        label: "Other examples",
+        label: "See example code",
         href: "https://github.com/codatio/sdk-link/tree/main/examples",
       },
     ],
