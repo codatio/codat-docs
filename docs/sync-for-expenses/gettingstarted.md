@@ -16,24 +16,25 @@ Before you start using sync for expenses, you will need to ensure that the follo
 | DataType Name       | dataType           | Use Case                                                                                                                                                                                               | Fetch On First Link | Sync Frequency |
 | ------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- | -------------- |
 | Accounts            | `chartOfAccounts`    | Accounts used within the general ledger to record and categorize expenses.                                                                                                                             | ✅                  | daily          |
-| Bank Accounts       | `bankAccounts`       | A bank account is the primary account from where expenses will be paid from.                                                                                                                           | ✅                  | daily          |
-| Company             | `company`            | The company info contains helpful information such as the name of the linked company & base currency and registered addresses.                                                                         | ✅                  | daily          |
+| Bank Accounts       | `bankAccounts`       | A bank account is a primary account from which expenses will be paid.                                                                                                                           | ✅                  | daily          |
+| Company             | `company`            | Company info contains helpful information, such as the name of the linked company, its base currency, and registered addresses.                                                                         | ✅                  | daily          |
 | Customers           | `customers`          | Customers can be used to record and associate income transactions such as reclaiming a cashback reward.                                                                                                | ✅                  | daily          |
-| Suppliers           | `suppliers`          | All expenses go against a single supplier representing the expense provider, this prevents companies accounting software becoming overrun with multiple merchants.                                     | ✅                  | daily          |
-| Tax Rates           | `taxRates`           | Tax rates enable companies to track expenses against the relevent tax code, this enables them to either make the expense billable or track taxes that can be reclaimed.                                | ✅                  | daily          |
-| Tracking Categories | `trackingCategories` | Tracking categories provide an additional means of categorising and tagging an expense, for example locations and departments would be tracking categories.                                            | ✅                  | daily          |
+| Suppliers           | `suppliers`          | All expenses go against a single supplier representing the expense provider, this prevents the company's accounting software from becoming overrun with multiple merchants.                                     | ✅                  | daily          |
+| Tax Rates           | `taxRates`           | Tax rates enable companies to track expenses against the relevant tax code, this enables them to either make the expense billable or track taxes that can be reclaimed.                                | ✅                  | daily          |
+| Tracking Categories | `trackingCategories` | Tracking categories provide an additional means of categorizing and tagging an expense, for example, locations and departments would be tracking categories.                                            | ✅                  | daily          |
 
 </details>
 
 <details>
-  <summary>Other useful data types</summary>
+  <summary>Other useful data types</summary>  
+
   
 | DataType Name       | dataType           | Use Case |
 | -- |  -- |  -- |
 | Direct Costs        | `directCosts`        | Sync for expenses uses direct cost to represent the expense transaction within the accounting platform.        |
-| Direct Incomes      | `directIncomes`      | Typically direct incomes are used to represent any income generating transaction type such as cashback rewards.    |
-| Journal Entries     | `journalEntries`     | Journal entries are used where an accounting platform does not support a representation of direct costs. They are also used to represent transfers such as topping up or paying down the expense card.   |
-| Transfers           | `transfers`          | A record of the expense transaction between two bank accounts such as topping up or paying down the expense card.        |
+| Direct Incomes      | `directIncomes`      | Direct incomes are typically used to represent any income-generating transaction type, such as cashback rewards.    |
+| Journal Entries     | `journalEntries`     | Journal entries are used where an accounting platform does not support a representation of direct costs. They also represent transfers such as topping up or paying down the expense card.   |
+| Transfers           | `transfers`          | A record of the expense transaction between two bank accounts, such as topping up or paying down the expense card.        |
 
 </details>
 
@@ -42,7 +43,7 @@ Before you start using sync for expenses, you will need to ensure that the follo
 In Codat, a company represents a business sharing access to their data. Each company can have multiple data connections to different data sources. For example, a business can have one connection to Xero for accounting data and a connection to Plaid for Open banking data.
 ![An image from the static](/img/sync-for-expenses/sfe-connections.png)
 
-With Sync for Expenses each company will have two data connections:
+With Sync for Expenses, each company will have two data connections:
 
 - One will be to their accounting platform
 - The other will be to the partner expense integration
