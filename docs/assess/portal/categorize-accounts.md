@@ -6,8 +6,6 @@ updatedAt: "2023-01-27T16:35:29.376Z"
 ---
 :::caution Account categorization versions - latest
 
-There are two account categorization versions currently available in the Codat Portal. 
-
 _Version 3_ is a revised version of account categories that should be used going forward. It supports our new [Enhanced Financials](/assess/enhanced-financials/overview) endpoints. Continue reading to learn how to categorize the accounts using _Version 3_.
 :::
 
