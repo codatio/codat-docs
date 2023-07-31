@@ -89,16 +89,6 @@ module.exports = {
           rel: null,
         },
         {
-          href: "https://bit.ly/codatpbroadmap1",
-          label: "Product roadmap",
-          target: "_blank",
-          rel: null,
-        },
-        // {
-        //   label: "Stack Overflow",
-        //   href: "https://stackoverflow.com/questions/tagged/codat",
-        // },
-        {
           href: "https://www.codat.io/blog/",
           label: "Blog",
           target: "_blank",
