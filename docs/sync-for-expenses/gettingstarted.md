@@ -13,7 +13,7 @@ Before you start using sync for expenses, you will need to ensure that the follo
   <summary>Recommended data type settings</summary>
 
 
-| DataType Name       | dataType           | Use Case                                                                                                                                                                                               | Fetch On First Link | Sync Frequency |
+| Data type name       | Data type           | Use case                                                                                                                                                                                               | Fetch on first link | Sync frequency |
 | ------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- | -------------- |
 | Accounts            | `chartOfAccounts`    | Accounts used within the general ledger to record and categorize expenses.                                                                                                                             | ✅                  | daily          |
 | Bank Accounts       | `bankAccounts`       | A bank account is a primary account from which expenses will be paid.                                                                                                                           | ✅                  | daily          |
@@ -29,7 +29,7 @@ Before you start using sync for expenses, you will need to ensure that the follo
   <summary>Other useful data types</summary>  
 
   
-| DataType Name       | dataType           | Use Case |
+| Data type name       | Data type           | Use case |
 | -- |  -- |  -- |
 | Direct Costs        | `directCosts`        | Sync for expenses uses direct cost to represent the expense transaction within the accounting platform.        |
 | Direct Incomes      | `directIncomes`      | Direct incomes are typically used to represent any income-generating transaction type, such as cashback rewards.    |
