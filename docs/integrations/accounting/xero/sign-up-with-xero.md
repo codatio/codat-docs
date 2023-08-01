@@ -32,7 +32,7 @@ If you do not have an existing signup/inquiry form, you should create one as you
 
 ## User Flow
 
-![Sign Up with Xero - Option B - User Flow](https://github.com/codatio/codat-docs/assets/139238209/cd32b714-fb87-444c-a702-17564376d5d9)
+![Sign Up with Xero - Option B - User Flow](https://developer.xero.com/static/img/integrations/accounting/xero/Sign-Up-with-Xero-Option-B-User-Flow.png)
 
 ## How to build
 
