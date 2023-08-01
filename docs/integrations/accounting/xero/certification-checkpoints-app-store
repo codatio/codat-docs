@@ -69,7 +69,7 @@ Your Codat account team will work with you to ensure your rate limit hit managem
 #Action Required: Minimal
 
 Xero requires that apps only have access to the data that they need. You need to ensure that you only have the Scopes enabled for the data access that you require for your use case. 
-We have created this guide to explain which Scopes typically correspond to different Codat use cases. Your Codat account team will work with you to ensure your Scopes are set appropriately for your use case. 
+We have created [this guide](https://docs.codat.io/integrations/accounting/xero/scopes) to explain which Scopes typically correspond to different Codat use cases. Your Codat account team will work with you to ensure your Scopes are set appropriately for your use case. 
 
 ### 8: Sign up with Xero
 
