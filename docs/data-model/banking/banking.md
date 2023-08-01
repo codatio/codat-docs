@@ -1,6 +1,7 @@
 ---
 title: "Banking data types"
 sidebar_label: Data types
+displayed_sidebar: bankingAPI
 description: "Connect to your SMB customers' banking data"
 ---
 
