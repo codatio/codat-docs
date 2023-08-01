@@ -149,7 +149,9 @@ Next, add your production keys to the **QuickBooks Online integration**, as desc
 
 Before you can access your app's production keys, you must complete an _App Assessment Questionnaire_. Intuit will review your answers to make sure your app meets their <a className="external" href="https://developer.intuit.com/app/developer/qbo/docs/go-live/publish-app/platform-requirements" target="_blank">publishing requirements and guidelines</a>.
 
-As a Codat client, you will be automatically linked to a shortened version of the App Assessment Questionnaire. Existing users should have received an email from Intuit with a link to the questionnaire. For recommended answers to the questions pertaining to Codat, see <a className="external" href="https://codat.zendesk.com/hc/en-gb/articles/4450200789661" target="_blank">QBO App Assessment Questionnaire</a> in the Codat Support Portal.
+As a Codat client, you will be linked to a shortened version of the App Assessment Questionnaire. This happens automatically provided you have set the sandbox environment redirect URI to `https://quickbooksonlinesandbox.codat.io/oauth2/callback` according to [our instructions](/integrations/accounting/quickbooksonline/accounting-quickbooksonline-new-setup#create-a-quickbooks-online-app-configured-for-sandbox). 
+
+Existing users should have received an email from Intuit with a link to the questionnaire. For recommended answers to the questions pertaining to Codat, see <a className="external" href="https://codat.zendesk.com/hc/en-gb/articles/4450200789661" target="_blank">QBO App Assessment Questionnaire</a> in the Codat Support Portal.
 
 To access the questionnaire from the Intuit Developer Portal:
 
