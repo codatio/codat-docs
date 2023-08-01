@@ -1,6 +1,7 @@
 ---
 title: "Accounting data types"
 sidebar_label: Data types
+displayed_sidebar: accountingAPI
 description: "Connect to your SMB customers' accounting data"
 ---
 

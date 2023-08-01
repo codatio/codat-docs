@@ -1,6 +1,7 @@
 ---
 title: "Commerce data types"
 sidebar_label: Data types
+displayed_sidebar: commerceAPI
 description: "Connect to your SMB customers' eCommerce, PoS and payment data sources"
 ---
 
