@@ -90,16 +90,6 @@ module.exports = [
     items: [
       {
         type: "category",
-        label: "Accounting metrics",
-        collapsed: true,
-        items: [
-          "assess/metrics/accounting/overview",
-          "assess/metrics/accounting/api-financial-metrics",
-          "assess/metrics/accounting/api-marketing-metrics",
-        ],
-      },
-      {
-        type: "category",
         label: "Commerce metrics",
         collapsed: true,
         items: [
