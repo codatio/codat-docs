@@ -33,7 +33,7 @@ The **Reports** button is located in the top right corner of every Assess page a
 
 ## Profit and Loss
 
-The Profit and Loss page is the landing page when accessing Assess. The page consists of the graph displaying selections for the categorized financial statement, and ratios. If you have uncategorized accounts, the Account Categorization modal will be displayed. Only uncategorized accounts will be shown and you will need to manually assign categories. Our [Categorization of accounts](/assess/portal/categorization-of-accounts) documentation provides more detail.
+The Profit and Loss page is the landing page when accessing Assess. The page consists of the graph displaying selections for the categorized financial statement, and ratios. If you have uncategorized accounts, the Account Categorization modal will be displayed. Only uncategorized accounts will be shown and you will need to manually assign categories. Our [Categorization of accounts](/assess/portal/categorize-accounts) documentation provides more detail.
 
 ### Selection panel
 
@@ -141,7 +141,7 @@ The statement displays balance sheet data based on the **Period start**, **Perio
 
 #### Statement format
 
-Each statement has four levels. The fourth level is the original line item (general ledger account) in the company’s accounting package. The first three levels represent a smart categorization layer that we have applied. If you want to change the group that a line item is categorized to, you can do this by following the [instructions for categorizing accounts](/assess/portal/categorization-of-accounts#how-to-categorize-accounts).
+Each statement has four levels. The fourth level is the original line item (general ledger account) in the company’s accounting package. The first three levels represent a smart categorization layer that we have applied. If you want to change the group that a line item is categorized to, you can do this by following the [instructions for categorizing accounts](/assess/portal/categorize-accounts).
 
 ##### Categorizing debit accounts
 
