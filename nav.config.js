@@ -22,13 +22,12 @@ module.exports = {
       className: "navbar__link--api",
       items: [
         {
-          href: "/codat-api",
-          label: "Platform API",
+          href: "/bank-feeds-api",
+          label: "Bank Feeds API",
         },
         {
           href: "/lending-api",
           label: "Lending API",
-          hr: true,
         },
         {
           href: "/sync-for-commerce-api",
@@ -39,16 +38,17 @@ module.exports = {
           label: "Sync for Expenses API",
         },
         {
+          href: "/payables-api",
+          label: "Sync for Payables API",
+        },
+        {
           href: "/sync-for-payroll-api",
           label: "Sync for Payroll API",
         },
         {
-          href: "/bank-feeds-api",
-          label: "Bank Feeds API",
-        },
-        {
-          href: "/payables-api",
-          label: "Payables API",
+          href: "/codat-api",
+          label: "Platform API",
+          hr: true,
         },
         {
           href: "https://github.com/codatio/oas",

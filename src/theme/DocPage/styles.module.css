@@ -39,6 +39,13 @@
   background-color: orange;
 }
 
+.devFlagGreen {
+  width: 100%;
+  text-align: center;
+  padding: 4px 8px;
+  background-color: green;
+}
+
 @media (min-width: 997px) {
   .docMainContainer {
     flex-grow: 1;

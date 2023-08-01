@@ -187,6 +187,9 @@ function DocPage(props: Props): JSX.Element {
       {
         siteConfig.customFields?.FEATURE_DEV_FLAG === "true" && <div className={styles.devFlag}>This is a staging build of the docs</div>
       }
+      {
+        siteConfig.customFields?.FEATURE_NEW_PRODUCTS_FLAG === "true" && <div className={styles.devFlagGreen}><a href="/updates/230901-new-products">This is a staging build of the docs</a></div>
+      }
       <DocPageContent
         currentDocRoute={currentDocRoute}
         versionMetadata={versionMetadata}>
