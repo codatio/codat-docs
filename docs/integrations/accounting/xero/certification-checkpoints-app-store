@@ -1,0 +1,185 @@
+---
+title: "Xero's Certification Checkpoints"
+description: "A guide to App Store Partner certification with Codat"
+---
+
+Codat handles many of Xero's [Certification Checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/) for you. However, there are some checkpoints that require you to take action. The key ones that you need to focus relate to your app's UI.
+In particular:
+* Checkpoint 3: Connection
+* Checkpoint 4: Error Handling
+* Checkpoint 8: Sign Up with Xero
+and, if you are pushing data:
+* Checkpoint 12 and/or 16: Account Mapping
+
+See below for a full breakdown of what you need to do for each Certification Checkpoint. 
+We recommend that you work closely with your Codat account team during your implementation of Xero's Certification Checkpoints. 
+
+## Always required
+
+### 1. App name
+
+#Action Required: Minimal
+Your app name must reflect the go-to-market name of your app or product and cannot include the word Xero. This is important because the App Name will be visible to end users at multiple points in the customer jouney. You can edit your app name in the My Apps section of your Xero Developer Portal.
+
+### 2. Branding
+
+#Action Required: Minimal
+Read Xero's [Brand Guidelines](https://developer.xero.com/static/otherfiles/xero-app-partner-brand-guidelines.pdf) and [Branding how-to-guide](https://developer.xero.com/documentation/guides/how-to-guides/branding-your-integration/).
+You must ensure you are compliant with Xero's guidance wherever you mention your Xero Partnership or use their brand assets. 
+
+Xero would like you to use [Xero-branded “connect” and “disconnect” buttons](https://developer.xero.com/documentation/guides/how-to-guides/branding-your-integration/) but this is not a hard requirement. If your app has multiple integrations, you can use a standard set of buttons for consistency of style. 
+
+### 3. Connection
+
+#Action Required: Significant
+
+While Codat handles the initial connection to Xero via the Codat Link UI, Xero requires that you create a page in your app where the user can manage their connection on an ongoing basis. You should use this page to satisfy the following requirements:
+
+| Requirement | Recommendations |
+| :-- | :-- |
+| Display the name of the tenant that has been connected | This can be retrieved from Company Info endpoint. |
+| Display the current status of the connection(s). If disconnected, provide a button to connect to Xero | Status - `Connection.status` endpoint.  <br/>Link to power your button to connect - `Connection.linkURL` |
+| Include a button to disconnect | When a user clicks on your button, use Coadt's PATCH connections endpoint to disconnect. |
+| Handle a disconnect from Xero's side | Codat handles the disconnection from Xero’s end. You need to identify when a disconnect has occured by using the alert of type “Data Connection Status Changed”. When this alert is triggered, change the connection status in your UI and display a "Reconnect" or "Connect" button. |
+| 1:1 or multi-org connection | Codat allows your customers to select their Xero organization using the native Xero UI. You can allow your customer to connect to multiple organizations within Xero by creating a separate Codat company per organization. |
+| Disconnection process for off-boarding | Connections can be disconnected through the PATCH connections endpoint to prevent further syncs or the DELETE connections endpoint to prevent both further syncs and querying of historically synced data within Codat. |
+
+### 4. Error handling
+
+#Action Required: Significant
+
+Codat provides detailed error messaging including status codes and the details of the error.
+
+If an error occurs, your UI should communicate the fact that an error has occured to the user. Detailed error messages or logs are a best practice but not a hard requirement. Details on the types of error messages provided by Codat is available [here](https://docs.codat.io/using-the-api/errors).
+
+### 5. Offline_access
+
+#Action Required: None
+
+This checkpoint is fully handled by Codat as we handle the connectivity with Xero's API.
+  
+### 6. Rate limit hit management
+
+#Action Required: Minimal
+
+Your Codat account team will work with you to ensure your rate limit hit management is handled appropriately. You do not need to take independent action on this. 
+  
+### 7. Scopes
+
+#Action Required: Minimal
+
+Xero requires that apps only have access to the data that they need. You need to ensure that you only have the Scopes enabled for the data access that you require for your use case. 
+We have created this guide to explain which Scopes typically correspond to different Codat use cases. Your Codat account team will work with you to ensure your Scopes are set appropriately for your use case. 
+
+### 8: Sign up with Xero
+
+#Action Required: Significant
+
+All apps seeking certification and listing in the Xero App Store need to build a Sign Up with Xero flow.
+
+Our full guide to Sign Up with Xero can be found [here](/integrations/accounting/xero/xero-sign-up-with-xero).
+
+---
+
+## If getting data...
+
+### 9. Modified after
+
+#Action Required: None
+
+This checkpoint is fully handled by Codat as we handle the connectivity with Xero's API.
+
+### 10. Paging
+
+#Action Required: None
+
+This checkpoint is fully handled by Codat as we handle the connectivity with Xero's API.
+
+### 11. Webhooks
+
+#Action Required: None
+
+This checkpoint is fully handled by Codat as we handle the connectivity with Xero's API. However, you should ensure you use the appropriate webhooks as you interact with the Codat API. 
+  
+---
+
+## If posting or putting data...
+
+### 12. Account mapping
+
+#Action Required: Significant
+
+If you are posting or putting data to Xero, you need to create an account mapping interface for your users to use. 
+Before you create your account mapping interface, we recommend you review Xero's [best practice guide](https://developer.xero.com/documentation/guides/how-to-guides/integration-best-practices) and Codat's [implementation guide](https://docs.codat.io/using-the-api/best-practices/implementing-a-mapping-page#docusaurus_skipToContent_fallback).
+
+### 13. Currency
+
+#Action Required: None or Minimal
+
+This checkpoint is only relevant if your app deals in multiple currencies. 
+
+Our currency datatype is available across all integrations and is aware of the currencies enabled by the SME in Xero. When pushing transactional data such as a payment in another currency, you may utilise our Push options endpoint to show the currencies available to push such as those currencies that have been set up by the SME in Xero.
+
+### 14. Rounding 
+
+#Action Required: None
+
+Codat handles the rounding of totals and ensures they match what is in Xero.
+  
+### 15. Taxes
+
+#Action Required: None or Minimal
+
+If your app handles tax in any way you need to ensure the correct tax rate is used on invoices, quotes etc. 
+
+Codat supports the pulling of tax rates as individual tax rates and on transactions (invoices, payments etc).
+
+We support the pushing of transactions where a tax rate must be defined with us handling any calculations such as compound tax rates where there are multiple tax components which must be applied to calculate the effective tax rate.
+
+We do not currently support creating new tax rates, only existing rates in a SMBs Xero account may be used. You may need to build out the mapping of tax rates in your configuration page (please see Checkpoint 12).
+
+---
+
+## If posting payments...
+
+### 16. Payment account mapping
+
+#Action Required: Significant
+
+You can use Codat’s Push options endpoint to show the options available to allow this building of a mapping interface. Codat recommends a configuration page in which the SME can choose where to map everything (please see Checkpoint 12)
+
+---
+
+## Preferred user experience
+
+Checkpoints 17-21 are best practices not requirements. You do not need to comply with these for Xero certification, although they can enhance the user experience. 
+
+### 17. Sign in with Xero
+
+If you would like to implement Sign in with Xero using Codat, please contact your Codat account team for detailed guidance.
+
+### 18. Deep linking
+
+Deep-linking enables your application to create a link that directs the user to a specific resource within a specific Xero Organization. This provides a quick and easy way for the user to jump into Xero to see or take action against the resource referenced in your product.
+
+You can view the direct links via the Company Info endpoint specifically sourceURLs.
+
+Codat also uses the Xero record ids, which enables you to implement deep links for Xero contacts by using a hyperlink with the following structure:
+
+`https://go.xero.com/Contacts/View/{customerId from Codat}`
+
+You can find further information about [deep linking in Xero's docs](https://developer.xero.com/documentation/guides/how-to-guides/deep-link-xero/).
+
+### 19. Invoice status
+
+Available when pushing via the Invoice endpoint
+
+### 20. Invoice URL and bank transactions URL
+
+This is not currently supported via Codat. Please contact your Codat account team with a feature request, if you are interested. 
+
+### 21. Logs
+
+A log of all retrieved data and syncronizations can be retrieved from the data history endpoint, this can then be displayed back to the user so, for example, they can see when invoices were last fetched from their Xero instance.
+
+The same is true for displaying a list of the records that have been created and updated, all of these operations and records can be retrieved from the push endpoint.
