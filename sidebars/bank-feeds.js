@@ -1,4 +1,16 @@
 module.exports = [
+ {
+    type: "link",
+    href: "/",
+    label: "All Docs",
+    className: "back",
+  },
+  {
+    type: "link",
+    label: "Bank Feeds",
+    href: "/bank-feeds/overview",
+    className: "header",
+  },
   {
     type: "category",
     label: "Guides",

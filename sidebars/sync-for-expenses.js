@@ -1,16 +1,16 @@
 module.exports = [
-  // {
-  //   type: "link",
-  //   href: "/",
-  //   label: "All Docs",
-  //   className: "back",
-  // },
-  // {
-  //   type: "link",
-  //   label: "Sync for Expenses",
-  //   href: "/sync-for-expenses/overview",
-  //   className: "header",
-  // },
+  {
+    type: "link",
+    href: "/",
+    label: "All Docs",
+    className: "back",
+  },
+  {
+    type: "link",
+    label: "Sync for Expenses",
+    href: "/sync-for-expenses/overview",
+    className: "header",
+  },
   "sync-for-expenses/gettingstarted",
   "sync-for-expenses/configandcategorize",
   {

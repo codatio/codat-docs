@@ -1,11 +1,13 @@
-const authFlow = require("./sidebars/authFlow");
-const dataModel = require("./sidebars/dataModel");
+const authFlow = require("./sidebars/auth-flow");
+
+const useApi = require("./sidebars/use-the-api");
+
+const products = require("./sidebars/products");
 
 const accountingAPI = require("./sidebars/accounting-api");
 const bankingAPI = require("./sidebars/banking-api");
 const commerceAPI = require("./sidebars/commerce-api");
 const assess = require("./sidebars/assess");
-
 const lending = require("./sidebars/lending");
 const bankfeeds = require("./sidebars/bank-feeds");
 const sfc = require("./sidebars/sync-for-commerce");
@@ -27,7 +29,7 @@ module.exports = {
       type: "category",
       label: "Get started",
       collapsed: true,
-      className: "top-level-item introduction",
+      className: "top-level-item get-started",
       link: {
         type: 'doc',
         id: "get-started/overview",
@@ -45,7 +47,7 @@ module.exports = {
       type: "category",
       label: "Tutorials",
       collapsed: true,
-      className: "top-level-item other",
+      className: "top-level-item tutorials",
       link: {
         type: 'doc',
         id: "guides/overview",
@@ -98,7 +100,7 @@ module.exports = {
       customProps: {
         hr: true,
       },
-      className: "top-level-item core",
+      className: "top-level-item learn",
       link: {
         type: 'doc',
         id: "core-concepts/overview",
@@ -163,94 +165,7 @@ module.exports = {
         type: 'doc',
         id: "using-the-api/overview",
       },
-      items: [
-        "using-the-api/authentication",
-        {
-          type: "category",
-          label: "Manage companies",
-          collapsed: true,
-          items: [
-            "using-the-api/managing-companies",
-            "configure/portal/companies",
-            // manage connections
-          ],
-        },
-        {
-          type: "category",
-          label: "Get data",
-          collapsed: true,
-          items: [
-            "using-the-api/get-data",
-            "using-the-api/queueing-data-syncs",
-            "using-the-api/pull-history",
-            "using-the-api/querying",
-            "using-the-api/paging",
-            "using-the-api/ordering-results",
-            "using-the-api/modified-dates",
-          ],
-        },
-        {
-          type: "category",
-          label: "Modify data",
-          collapsed: true,
-          items: [
-            "using-the-api/push",
-            "configure/portal/pull-and-push-history",
-          ],
-        },
-        "using-the-api/testing",
-          ],
-        },
-        "introduction/testing",
-        {
-          type: "category",
-          label: "Webhooks",
-          collapsed: true,
-          items: [
-            "using-the-api/webhooks/core-rules-types",
-            "using-the-api/webhooks/core-rules-create",
-            "using-the-api/webhooks/core-rules-webhooks",
-            "using-the-api/webhooks/core-rules-webhooksecurity",
-            "using-the-api/webhooks/receive-webhooks-as-email",
-          ],
-        },
-        {
-          type: "category",
-          label: "Supplemental data",
-          collapsed: true,
-          items: [
-            "using-the-api/supplemental-data/overview",
-            "using-the-api/supplemental-data/usecases",
-          ],
-        },
-        {
-          type: "category",
-          label: "Best practices",
-          collapsed: true,
-          items: [
-            "using-the-api/best-practices/implementing-a-mapping-page",
-          ],
-        },
-        {
-          type: "category",
-          label: "Troubleshooting",
-          collapsed: true,
-          items: [
-            "using-the-api/errors",
-            "using-the-api/rate-limits",
-            "using-the-api/optimizing-api-calls",
-          ],
-        },
-        {
-          type: "category",
-          label: "Change management",
-          collapsed: true,
-          items: [
-            "using-the-api/change-policy",
-            "configure/portal/developers",
-          ],
-        },
-      ],
+      items: useApi,
     },
     {
       type: "category",
@@ -269,120 +184,7 @@ module.exports = {
       className: "top-level-item integrations",
       href: "/integrations/all-integrations",
     },
-    {
-      type: "link",
-      label: "Accounting API",
-      customProps: {
-        hr: true,
-      },
-      className: "top-level-item products product accounting",
-      href: "/accounting-api/overview",
-    },
-    {
-      type: "link",
-      label: "Assess",
-      className: "top-level-item products product assess",
-      href: "/assess/overview",
-    },
-    {
-      type: "category",
-      label: "Lending",
-      collapsed: true,
-      className: "top-level-item products",
-      link: {
-        type: 'doc',
-        id: "lending/overview",
-      },
-      items: lending,
-      customProps: {
-        hr: true,
-      },
-    },
-    {
-      type: "link",
-      label: "Banking API",
-      className: "top-level-item products product banking",
-      href: "/banking-api/overview",
-    },
-    {
-      type: "link",
-      label: "Bank Feeds API",
-      className: "top-level-item products product bankfeed",
-      href: "/bank-feeds-api/overview",
-    },
-    {
-      type: "link",
-      label: "Commerce API",
-      className: "top-level-item products product commerce",
-      href: "/commerce-api/overview",
-    },
-    {
-      type: "link",
-      label: "Sync for Expenses",
-      className: "top-level-item products product sfe",
-      href: "/sync-for-expenses/overview",
-    },
-    {
-      type: "link",
-      label: "Sync for Commerce",
-      className: "top-level-item products product sfc",
-      href: "/sfc/overview",
-    },
-    {
-      type: "category",
-      label: "Bank Feeds",
-      collapsed: true,
-      className: "top-level-item products",
-      link: {
-        type: 'doc',
-        id: "bank-feeds/overview",
-      },
-      items: bankfeeds,
-    },
-    {
-      type: "category",
-      label: "Sync for Commerce",
-      collapsed: true,
-      className: "top-level-item products",
-      link: {
-        type: 'doc',
-        id: "sfc/overview",
-      },
-      items: sfc,
-    },
-    {
-      type: "category",
-      label: "Sync for Expenses",
-      collapsed: true,
-      className: "top-level-item products",
-      link: {
-        type: 'doc',
-        id: "sync-for-expenses/overview",
-      },
-      items: sfe,
-    },
-    {
-      type: "category",
-      label: "Sync for Payroll",
-      collapsed: true,
-      className: "top-level-item products",
-      link: {
-        type: 'doc',
-        id: "sync-for-payroll/overview",
-      },
-      items: sfp,
-    },
-    {
-      type: "category",
-      label: "Payables",
-      collapsed: true,
-      className: "top-level-item products",
-      link: {
-        type: 'doc',
-        id: "payables/overview",
-      },
-      items: payables,
-    },
+    ...products,
   ],
   accountingAPI: accountingAPI,
   bankingAPI: bankingAPI,
@@ -390,6 +192,7 @@ module.exports = {
   bankfeeds: bankfeeds,
   sfc: sfc,
   assess: assess,
+  lending: lending,
   sfe: sfe,
   sfp: sfp,
   payables: payables,
