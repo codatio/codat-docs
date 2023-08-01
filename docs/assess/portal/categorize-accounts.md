@@ -4,11 +4,6 @@ description: "Learn how to view and change automatically proposed categories for
 createdAt: "2023-01-27T10:32:29.917Z"
 updatedAt: "2023-01-27T16:35:29.376Z"
 ---
-:::caution Account categorization versions - latest
-
-_Version 3_ is a revised version of account categories that should be used going forward. It supports our new [Enhanced Financials](/assess/enhanced-financials/overview) endpoints. Continue reading to learn how to categorize the accounts using _Version 3_.
-:::
-
 With Enhanced Financials, Codat automatically suggests a category for each account that appears in the enhanced Profit and Loss and Balance Sheet. 
 
 If you disagree with the suggested category, you can change it to a more suitable one. This only impacts the category field in Assess and does not lead to any changes in the underlying accounting platform.
