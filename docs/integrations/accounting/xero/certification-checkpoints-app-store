@@ -3,7 +3,7 @@ title: "Xero's Certification Checkpoints"
 description: "A guide to App Store Partner certification with Codat"
 ---
 
-Codat handles many of Xero's [Certification Checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/) for you. However, there are some checkpoints that require you to take action. The key ones that you need to focus relate to your app's UI.
+Codat handles many of Xero's [Certification Checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/) for you. However, there are some checkpoints that require you to take action. The key ones that you need to focus on relate to your app's UI.
 In particular:
 * Checkpoint 3: Connection
 * Checkpoint 4: Error Handling
