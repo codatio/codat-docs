@@ -12,6 +12,16 @@ module.exports = [
     className: "header",
   },
   {
+    type: "link",
+    label: "Build guide",
+    href: "/bank-feeds-api/build-guide"
+  },
+  {
+    type: "link",
+    label: "Account mapping",
+    href: "/bank-feeds-api/account-mapping"
+  },
+  {
     type: "category",
     label: "Guides",
     collapsed: true,
