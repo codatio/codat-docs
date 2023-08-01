@@ -112,7 +112,7 @@ module.exports = {
       {
         routeBasePath: "/",
         sidebarPath: require.resolve("./sidebars.js"),
-        editUrl: `https://github.com/codatio/codat-docs/edit/main/`,
+        editUrl: `https://github.com/codatio/codat-docs/edit/${process.env?.BRANCH || 'main'}/`,
         exclude: ["README.md"],
         lastVersion: "current",
         versions: {
@@ -132,7 +132,7 @@ module.exports = {
         routeBasePath: "/updates",
         blogSidebarCount: 8,
         blogSidebarTitle: "Latest updates",
-        editUrl: "https://github.com/codatio/codat-docs/edit/main/",
+        editUrl: `https://github.com/codatio/codat-docs/edit/${process.env?.BRANCH || 'main'}/`,
       },
     ],
     "@docusaurus/plugin-content-pages",
