@@ -67,7 +67,7 @@ Once the customer authorizes the Xero connection, use the Xero OpenID data to pr
 {SignUpSuccessRedirectURL}?companyId=f3069a22-ce9a-499b-b341-a7d6564c65z1&connectionId=4302ebaf-aba6-4763-ba61-47a7992634a3&statusCode=200&openId_email=j.doe%2B1%40codat.io&openId_given_name=John&openId_family_name=Doe
 ```
 
-You can also use the Codat API and `companyId` to pull additional information of interest, such as company info. 
+You can also use the Codat API and `companyId` to pull additional information of interest, such as company info. Further guidance on using OpenID data is [available here](https://docs.codat.io/auth-flow/customize/use-openid-connect). 
 
 ### Manage the Codat company
 
