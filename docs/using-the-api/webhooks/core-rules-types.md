@@ -271,7 +271,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 ### Client rate limit reached
 
 **Type**: Rate Limit Reached  
-**Trigger:** The number of requests to the API from a client has exceeded the current quota. This rule is client-specific, so does not include a `companyId` and cannot be filtered by company.
+**Trigger:** The number of requests to the API from this client has exceeded the current quota. Rate limits apply to a client as a whole, so this rule cannot be filtered by company and does not include a `companyId`.
 **Additional data:** `dailyQuota`, `expiresUtc`
 
 ```json
@@ -293,7 +293,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 ### Client rate limit reset
 
 **Type**: Rate Limit Reset  
-**Trigger:** The client rate limit quota has reset and more requests are available. This rule is client-specific, so does not include a `companyId` and cannot be filtered by company.
+**Trigger:** The rate limit quota has reset and more requests are available. Rate limits apply to a client as a whole, so this rule cannot be filtered by company and does not include a `companyId`.
 **Additional data:** `quotaRemaining`, `resetReason`, `dailyQuota` 
 
 ```json
