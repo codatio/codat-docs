@@ -74,7 +74,7 @@ In your production instance, active companies that are connected only to Codat S
 | [Pandle](https://my.pandle.com/users/sign_up) 	| Live integration 	| Free account 	|  	|
 | [Wave](https://my.waveapps.com/register/) 	| Live integration 	| Free account 	|  	|
 | [Xero](https://central.xero.com/s/article/Use-the-demo-company#Web) 	| Live integration 	| Demo company 	| Demo does not include automatic bank feeds and the ability to invite   other users. You are able to add your own data, but the demo company resets   itself after 28 days. 	|
-| [Zoho Books](https://www.zoho.com/subscriptions/api/v1/introduction/#organization-id) 	| Live integration 	| Test company 	| When setting up a test organisation, you can choose to import or create   test data. 	|
+| [Zoho Books](https://www.zoho.com/uk/books/pricing/) 	| Live integration 	| Test company 	| When setting up a test organisation, you can choose to import or create   test data. 	|
 | [Plaid](https://plaid.com/docs/sandbox/) 	| Live integration 	| Sandbox environment 	| Initial setup for Plaid needs to be complete to gain access to the   sandbox environment with demo data. 	|
 
 ---
