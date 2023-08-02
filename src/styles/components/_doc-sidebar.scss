@@ -18,7 +18,8 @@
 
   --ifm-menu-link-padding-horizontal: 1em;
 
-  --icon-url: url("/img/sidebar/gear-fine.svg"); // fallback
+  //--icon-url: url("/img/sidebar/gear-fine.svg"); // fallback
+  --icon-url: var(--ifm-menu-link-sublist-icon)
 }
 
 html[data-theme="light"] {
@@ -412,6 +413,10 @@ html[data-theme="light"] {
     
     &.auth {
       --icon-url: url("/img/sidebar/auth-flow.svg");
+    }
+
+    &.config {
+      --icon-url: url("/img/sidebar/gear-fine.svg");
     }
 
     &.data {

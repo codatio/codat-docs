@@ -110,4 +110,4 @@ Before setting up the integration, make sure that:
 
 ## Read next
 
-Learn how your SMB users can [connect their bank accounts to Xero](/bank-feeds-api/xero-bank-feeds/xero-bank-feeds-smb-user) using the account connection UI.
+Learn how your SMB users can [connect their bank accounts to Xero](/bank-feeds/xero-bank-feeds/xero-bank-feeds-smb-user) using the account connection UI.

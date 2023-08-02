@@ -36,14 +36,23 @@
   width: 100%;
   text-align: center;
   padding: 4px 8px;
+  color: black;
   background-color: orange;
 }
 
-.devFlagGreen {
+.newFlagPositive {
   width: 100%;
   text-align: center;
   padding: 4px 8px;
-  background-color: green;
+  background-color: var(--button-primary-bg);
+  transition: 0.5s;
+
+  --ifm-link-color: white;
+  --ifm-link-hover-color: white;
+
+  &:hover a {
+    opacity: 0.7;
+  }
 }
 
 @media (min-width: 997px) {

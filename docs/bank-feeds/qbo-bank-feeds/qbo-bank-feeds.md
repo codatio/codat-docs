@@ -25,9 +25,9 @@ Note that bank transactions are sent from Codat to QBO on a daily schedule. Your
 
 In this guide, we'll walk you through the following functionality:
 
-1. [Set up the QuickBooks Online Bank Feeds integration](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-setup) to work with your application.
-2. The SMB user [connects a bank account to QBO](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-smb-user) using a one-time username and password they generated in the QBO Bank Feeds Link UI.
-3. When connected, you can [push bank transactions to QBO](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions) so they're available as bank feeds.
+1. [Set up the QuickBooks Online Bank Feeds integration](/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-setup) to work with your application.
+2. The SMB user [connects a bank account to QBO](/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-smb-user) using a one-time username and password they generated in the QBO Bank Feeds Link UI.
+3. When connected, you can [push bank transactions to QBO](/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions) so they're available as bank feeds.
 
 ## Pushing historic transactions
 
@@ -57,14 +57,14 @@ We recommend you customize the appearance of the QBO Bank Feeds Link UI to incre
 
 You can:
 - Upload your organization's logo on the [Manage organization](https://app-integration.codat.io/settings/organization) page of the Codat Portal.
-- [Add a custom callout](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-setup#add-a-custom-callout-to-the-link-site), in French or English, to provide your SMB users with additional guidance on connecting their accounts.
+- [Add a custom callout](/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-setup#add-a-custom-callout-to-the-link-site), in French or English, to provide your SMB users with additional guidance on connecting their accounts.
 
 ### Localization options
 
-SMB users can switch between English and French text using the language button in the QBO Bank Feeds Link UI. If you've added a [custom callout](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-setup#add-a-custom-callout-to-the-link-site) in French, this will also switch based on the selected language.
+SMB users can switch between English and French text using the language button in the QBO Bank Feeds Link UI. If you've added a [custom callout](/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-setup#add-a-custom-callout-to-the-link-site) in French, this will also switch based on the selected language.
 
 ---
 
 ## Read next
 
-How to [set up the integration](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-setup).
+How to [set up the integration](/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-setup).

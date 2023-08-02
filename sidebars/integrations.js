@@ -418,7 +418,7 @@ module.exports = [
       },
       {
         type: "link",
-        href: "/bank-feeds-api/qbo-bank-feeds/",
+        href: "/bank-feeds/qbo-bank-feeds/",
         label: "QuickBooks Online",
       },
       {
@@ -428,7 +428,7 @@ module.exports = [
       },
       {
         type: "link",
-        href: "/bank-feeds-api/xero-bank-feeds/",
+        href: "/bank-feeds/xero-bank-feeds/",
         label: "Xero",
       },
     ],

@@ -10,9 +10,9 @@ const commerceAPI = require("./sidebars/commerce-api");
 const assess = require("./sidebars/assess");
 const lending = require("./sidebars/lending");
 const bankfeeds = require("./sidebars/bank-feeds");
-const sfc = require("./sidebars/sync-for-commerce");
-const sfe = require("./sidebars/sync-for-expenses");
-const sfp = require("./sidebars/sync-for-payroll");
+const commerce = require("./sidebars/sync-for-commerce");
+const expenses = require("./sidebars/sync-for-expenses");
+const payroll = require("./sidebars/payroll");
 const payables = require("./sidebars/payables");
 
 const integrations = require("./sidebars/integrations");
@@ -235,11 +235,11 @@ module.exports = {
   bankingAPI: bankingAPI,
   commerceAPI: commerceAPI,
   bankfeeds: bankfeeds,
-  sfc: sfc,
+  commerce: commerce,
   assess: assess,
   lending: lending,
-  sfe: sfe,
-  sfp: sfp,
+  expenses: expenses,
+  payroll: payroll,
   payables: payables,
   integrations: integrations,
 };

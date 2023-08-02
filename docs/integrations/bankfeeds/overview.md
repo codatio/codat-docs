@@ -12,6 +12,6 @@ Read more about our [Bank Feeds API](/bank-feeds-api/overview) product.
 
 ## Set up bank feeds integrations
 
-- [QuickBooks Online Bank Feeds](/bank-feeds-api/qbo-bank-feeds/) (US and Canada only)
+- [QuickBooks Online Bank Feeds](/bank-feeds/qbo-bank-feeds/) (US and Canada only)
 - [Sage Bank Feeds](/bank-feeds/sage-bank-feeds/)
-- [Xero](/bank-feeds-api/xero-bank-feeds/)
+- [Xero](/bank-feeds/xero-bank-feeds/)

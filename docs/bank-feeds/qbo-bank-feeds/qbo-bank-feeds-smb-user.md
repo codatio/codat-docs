@@ -26,7 +26,7 @@ To connect their bank accounts to QBO, the SMB user performs the following steps
 
 3. On the **Set up QuickBooks** page, they click **Get credentials** to generate their unique one-time username and password for connecting an account to QBO (see step six in the next procedure). The **Revoke credentials** button appears immediately after their credentials are generated &mdash; see [Revoke credentials](#revoke-credentials) to learn more.
 
-   ![Image](/img/bank-feeds-api/qbo-bank-feeds/400590b-qbo-bank-feeds_smb-customer-steps-revised.png "The Set up QuickBooks page that allows your SMB user to get their credentials.")
+   ![Image](/img/bank-feeds/qbo-bank-feeds/400590b-qbo-bank-feeds_smb-customer-steps-revised.png "The Set up QuickBooks page that allows your SMB user to get their credentials.")
 
 4. They follow the instructions displayed in the UI. These are summarized in the next procedure.
 
@@ -59,7 +59,7 @@ To connect their bank accounts to QBO, the SMB user performs the following steps
 
 9. Finally, they click **Connect**.
 
-Your SMB user has now successfully connected their chosen bank accounts to QBO. The status of the data connection changes to `Linked`; you can now [push bank transactions to QBO](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions) for the SMB user.
+Your SMB user has now successfully connected their chosen bank accounts to QBO. The status of the data connection changes to `Linked`; you can now [push bank transactions to QBO](/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions) for the SMB user.
 
 ### Revoke credentials
 
@@ -69,4 +69,4 @@ The **Revoke credentials** button allows the SMB user to revoke their previously
 
 ## Read next
 
-[Push bank transactions from Codat to QBO](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions).
+[Push bank transactions from Codat to QBO](/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions).

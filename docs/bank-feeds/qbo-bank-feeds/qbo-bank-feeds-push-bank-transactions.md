@@ -4,7 +4,7 @@ description: "Learn how to push your SMB users' bank transactions via our QuickB
 sidebar_label: "Push bank transactions"
 ---
 
-When an SMB user has [connected their bank accounts](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-smb-user), you're ready to push bank transactions from a source bank account to QuickBooks Online (QBO). You can push transactions from any account that has a status of `connected` when you [retrieve bank account status and information](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-setup#retrieve-bank-account-status-and-information).
+When an SMB user has [connected their bank accounts](/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-smb-user), you're ready to push bank transactions from a source bank account to QuickBooks Online (QBO). You can push transactions from any account that has a status of `connected` when you [retrieve bank account status and information](/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-setup#retrieve-bank-account-status-and-information).
 
 Note the following requirements before pushing bank transactions to QBO.
 

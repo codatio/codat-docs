@@ -1,16 +1,16 @@
 ---
 title: "Sync for Commerce overview"
 description: "Embedded accounting integrations for PoS and eCommerce platforms."
-# sidebar_label: Sync for Commerce
-# displayed_sidebar: sfc
-# hide_title: true
-# hide_description: true
-# hide_table_of_contents: true
-# banner_title: Sync for Commerce
-# banner_class: sfc
-# banner_icon: "/logos/products-clear/sfc.svg"
-# banner_image: "/img/banners/sfc-charts.png"
-# banner_text: "Embedded accounting integrations for PoS and eCommerce platforms."
+sidebar_label: Sync for Commerce
+displayed_sidebar: commerce
+hide_title: true
+hide_description: true
+hide_table_of_contents: true
+banner_title: Sync for Commerce
+banner_class: sfc
+banner_icon: "/logos/products-clear/sfc.svg"
+banner_image: "/img/banners/sfc-charts.png"
+banner_text: "Embedded accounting integrations for PoS and eCommerce platforms."
 ---
 
 **Building to lots of different APIs does not scale. With Sync for Commerce, you can send a merchant's data to their accounting platform without worrying about which one they use.**
@@ -76,7 +76,7 @@ Sync for Commerce is in beta. If you are interested in building with Sync for Co
 
 ## How does Sync for Commerce work?
 
-### 1. [Accounting platform selection](/sfc/build-with-sync-for-commerce/sync-platform-selection)
+### 1. [Accounting platform selection](/commerce/build/sync-platform-selection)
 
 Your merchant will need to select and authorize their accounting platform through the Platform selection flow.
 
@@ -84,12 +84,12 @@ Your merchant will need to select and authorize their accounting platform throug
 
 2. The merchant selects one of them and is directed to their accounting platform UI where they authorize access to their accounting data.
 
-### 2. [Merchant configuration](/sfc/build-with-sync-for-commerce/implementing-codats-no-code-merchant-configuration)
+### 2. [Merchant configuration](/commerce/build/implementing-codats-no-code-merchant-configuration)
 
 Once the access is authorized, the merchant can set how the synchronization should work through the Sync configuration flow.
 
 1. A Codat Company is created, and an accounting Connection is established.
-2. Codat automatically pulls all the [accounting data required to enable the merchant configuration](/sfc/build-with-sync-for-commerce/sync-for-commerce-prerequisites).
+2. Codat automatically pulls all the [accounting data required to enable the merchant configuration](/commerce/build/sync-for-commerce-prerequisites).
 3. A configuration JSON document is submitted to Codat. It includes information about how the data will be mapped to the accounting platform.
 
    The configuration is based on the options selected by the merchant as they complete the Sync Flow.

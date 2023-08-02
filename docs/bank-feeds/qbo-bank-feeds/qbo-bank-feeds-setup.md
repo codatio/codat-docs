@@ -130,7 +130,7 @@ See the next procedure for details on the functionality to provide.
 
 5. The SMB user opens the `linkUrl` in their browser to load the QBO Bank Feeds Link UI.
 
-6. They can now [connect their chosen bank accounts to QuickBooks Online](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-smb-user).
+6. They can now [connect their chosen bank accounts to QuickBooks Online](/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-smb-user).
 
 :::caution Do not hardcode the Link URL
 
@@ -205,4 +205,4 @@ You can add new source bank accounts to an existing company and data connection.
 
 ## Read next
 
-Understand how the [SMB user connects their accounts](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-smb-user) to QBO.
+Understand how the [SMB user connects their accounts](/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-smb-user) to QBO.

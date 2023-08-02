@@ -1,9 +1,7 @@
 ---
-title: "Get started with Assess"
+title: "Get started with Lending"
 sidebar_label: Get started
 description: "Instructions for getting started with Assess and tables of supported features for accounting, banking and commerce data sources"
-createdAt: "2022-04-11T16:44:49.392Z"
-updatedAt: "2022-12-22T12:30:07.138Z"
 ---
 
 This document helps you get started with Assess, and covers both the API and the no-code option available in the Portal.

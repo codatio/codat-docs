@@ -41,7 +41,7 @@ Despite the monthly option being present in the configuration file, currently we
 | Sync hour (`syncHourUtc`) | _Number_ <br/> Integers from 0 to 23 inclusive | The hour of the day that will mark the start/end of any sync period. **The Sync Flow sets this value automatically to midnight (00:00 am) in the merchant's time zone.** | Optional, set to 0 by default |
 | Time zone (`timeZone`) | _string_ of IANA time zones **or** <br/> `null` (defaults to `Etc/UTC`) | The time zone applied to the start date and sync hour. | Optional, set to `ETC/Utc` by default |
 
-Once the [Sync Flow is completed and Codat receives the configuration](/sfc/build-with-sync-for-commerce/implementing-codats-no-code-merchant-configuration), we use it to determine the **sync period** – the period for which commerce data will be synced in one run of the sync service.
+Once the [Sync Flow is completed and Codat receives the configuration](/commerce/build/implementing-codats-no-code-merchant-configuration), we use it to determine the **sync period** – the period for which commerce data will be synced in one run of the sync service.
 
 To determine the sync period, we first establish the following values internally:
 

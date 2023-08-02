@@ -14,7 +14,7 @@ In the <a href="https://app.codat.io/" target="_blank">Codat Portal</a>, click *
 - Check the **dashboard** (1) for a visual summary of sync totals.
 - Use the **search bar** (2) to narrow down the records by sync ID or company ID. 
 - Display the sync history for a specific period by indicating a **date range** (3). 
-- [Review the possible statuses](/sfc/error-documentation#status-codes) of the syncs and filter the records by their **status code** (4). 
+- [Review the possible statuses](/commerce/error-documentation#status-codes) of the syncs and filter the records by their **status code** (4). 
 - Use the **menu** (6) to sort and amend the **sync history** (5) table as needed.
 
 <img
@@ -26,7 +26,7 @@ In the <a href="https://app.codat.io/" target="_blank">Codat Portal</a>, click *
 
 To view more detailed information about a record, click on an item in your **sync history**. The information appears in the **Sync Details** window and provides sync start and end times, and sync source and target platforms. 
 
-It also displays client-friendly notes and error messages in case of sync failures. Refer to our [troubleshooting guide](/sfc/error-documentation#error-messages) for recommendations on how to resolve these. 
+It also displays client-friendly notes and error messages in case of sync failures. Refer to our [troubleshooting guide](/commerce/error-documentation#error-messages) for recommendations on how to resolve these. 
 
 You can also navigate to the **Config** tab to view and download the customer's sync configuration, which helps establish root causes for any errors that occured. 
 

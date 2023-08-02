@@ -12,7 +12,26 @@ We've packaged up Codat's functionality mainly by *product*, with our *Common AP
 
 | API | Description |
 | :- | :- |
+| **[Bank Feeds API](/bank-feeds-api)** | Set up bank feeds from accounts in your application to supported accounting platforms. |
+| **[Lending API](/assess-api)** | Make credit decisions backed by enhanced financials, metrics, reports, and data integrity features. |
+| **[Sync for Commerce API](/accounting-api)** | Push merchants' data from your ecommerce or point-of-sale (POS) platform into your merchants' accounting platform. |
+| **[Sync for Expenses API](/sync-for-expenses-api)** | Push expenses to accounting platforms. |
+| **[Sync for Payables API](/sync-for-expenses-api)** | Push expenses to accounting platforms. |
+| **[Sync for Payroll API](/sync-for-expenses-api)** | Push expenses to accounting platforms. |
+
+Explore the underlying [OpenAPI Spec](https://github.com/codatio/oas).
+
+
+<details>
+<summary><b>Utilities</b></summary>
+
+| **[Files API](/files-api)** | Capture your SMB's business documents with our file upload functionality. |
 | **[Common API](/codat-api)** | Manage the building blocks of Codat, including companies, connections, and more. |
+</details>
+
+<details>
+<summary><b>Don't see what you're looking for?</b></summary>
+
 | **[Accounting API](/accounting-api)** | Access standardized accounting data from our accounting integrations. |
 | **[Assess API](/assess-api)** | Make credit decisions backed by enhanced financials, metrics, reports, and data integrity features. |
 | **[Banking API](/banking-api)** | Access standardized banking data from our banking integrations. |
@@ -21,9 +40,8 @@ We've packaged up Codat's functionality mainly by *product*, with our *Common AP
 | **[Files API](/files-api)** | Capture your SMB's business documents with our file upload functionality. |
 | **[Sync for Commerce API](/accounting-api)** | Push merchants' data from your ecommerce or point-of-sale (POS) platform into your merchants' accounting platform. |
 | **[Sync for Expenses API](/sync-for-expenses-api)** | Push expenses to accounting platforms. |
-
-Explore the underlying [OpenAPI Spec](https://github.com/codatio/oas).
-
+| **[Common API](/codat-api)** | Manage the building blocks of Codat, including companies, connections, and more. |
+</details>
 ---
 
 ## Read next

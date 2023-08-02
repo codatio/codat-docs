@@ -1,4 +1,16 @@
 module.exports = [
+  {
+    type: "link",
+    href: "/",
+    label: "All Docs",
+    className: "back",
+  },
+  {
+    type: "link",
+    label: "Sync for Payables",
+    href: "payables/overview",
+    className: "header",
+  },
     {
         type: "category",
         label: "Implementing bill pay",

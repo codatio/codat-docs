@@ -1,7 +1,7 @@
 module.exports = [
     {
         type: "link",
-        href: "/sync-for-payroll-api",
+        href: "/payroll/overview",
         label: "API reference",
     },
 ]

@@ -23,7 +23,7 @@ PUT  https://api.codat.io/companies/{companyId}/sync/expenses/expense-transactio
 ```
 
 :::info Compatible integrations
-At the moment you can update expenses only for Xero (Payment [transaction type](/sync-for-expenses/sync-process/expense-transactions#transaction-types) only).
+At the moment you can update expenses only for Xero (Payment [transaction type](/expenses/sync-process/expense-transactions#transaction-types) only).
 :::
 
-To update an attachment or receipt, you first need to delete it and then create a new dataset for the updated transaction attachment. After that, you can sync the expense to the accounting platform. Check out our guidance on [uploading receipts](/sync-for-expenses/sync-process/uploading-receipts).
+To update an attachment or receipt, you first need to delete it and then create a new dataset for the updated transaction attachment. After that, you can sync the expense to the accounting platform. Check out our guidance on [uploading receipts](/expenses/sync-process/uploading-receipts).

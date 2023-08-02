@@ -8,7 +8,7 @@ module.exports = [
   {
     type: "link",
     label: "Lending",
-    href: "/lending/overview",
+    href: "lending/overview",
     className: "header",
   },
   {
@@ -20,7 +20,7 @@ module.exports = [
       {
         type: "link",
         label: "Loan qualification",
-        href: "/guides/loan-qualification/introduction",
+        href: "guides/loan-qualification/introduction",
       },
       {
         type: "category",

@@ -17,7 +17,7 @@ This article explains how to:
 
 ## Prerequisites
 
-- You've [set up the Xero Bank Feeds integration](/bank-feeds-api/xero-bank-feeds/xero-bank-feeds-setup).
+- You've [set up the Xero Bank Feeds integration](/bank-feeds/xero-bank-feeds/xero-bank-feeds-setup).
 
 ## View bank account details
 

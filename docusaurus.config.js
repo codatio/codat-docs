@@ -30,7 +30,8 @@ module.exports = {
   projectName: "codat-docs",
   customFields: {
     'ZENDESK_KEY': process.env.ZENDESK_KEY,
-    'FEATURE_DEV_FLAG': process.env.FEATURE_DEV_FLAG
+    'FEATURE_DEV_FLAG': process.env.FEATURE_DEV_FLAG,
+    'FEATURE_NEW_PRODUCTS_FLAG': process.env.FEATURE_NEW_PRODUCTS_FLAG,
   },
   themeConfig: {
     typesense: {

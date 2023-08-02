@@ -29,7 +29,7 @@ module.exports  =[
     type: "link",
     label: "Sync for Commerce",
     className: "top-level-item products product sfc",
-    href: "/sfc/overview",
+    href: "/commerce/overview",
   },
   // {
   //   type: "category",
@@ -38,7 +38,7 @@ module.exports  =[
   //   className: "top-level-item products",
   //   link: {
   //     type: 'doc',
-  //     id: "sfc/overview",
+  //     id: "commerce/overview",
   //   },
   //   items: sfc,
   // },
@@ -46,10 +46,10 @@ module.exports  =[
     type: "link",
     label: "Sync for Expenses",
     className: "top-level-item products product sfe",
-    href: "sync-for-expenses/overview",
+    href: "expenses/overview",
     // link: {
     //   type: 'doc',
-    //   id: "sync-for-expenses/overview",
+    //   id: "expenses/overview",
     // },
     // items: sfe,
   },

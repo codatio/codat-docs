@@ -8,7 +8,7 @@ module.exports = [
   {
     type: "link",
     label: "Sync for Commerce",
-    href: "/sfc/overview",
+    href: "commerce/overview",
     className: "header",
   },
   {
@@ -16,11 +16,11 @@ module.exports = [
     label: "Concepts",
     collapsed: true,
     items: [
-      "sfc/sync-for-commerce-knowledge-base/initiating-a-sync",
-      "sfc/sync-for-commerce-knowledge-base/monitoring-a-sync",
-      "sfc/sync-for-commerce-knowledge-base/synchronization-schedule",
-      "sfc/sync-for-commerce-knowledge-base/sfc-journal-entry-mapping",
-      "sfc/sync-for-commerce-knowledge-base/sfc-sales-product-categories",
+      "commerce/learn/initiating-a-sync",
+      "commerce/learn/monitoring-a-sync",
+      "commerce/learn/synchronization-schedule",
+      "commerce/learn/sfc-journal-entry-mapping",
+      "commerce/learn/sfc-sales-product-categories",
     ],
   },
   {
@@ -28,10 +28,10 @@ module.exports = [
     label: "Build guide",
     collapsed: true,
     items: [
-      "sfc/build-with-sync-for-commerce/sync-for-commerce-prerequisites",
-      "sfc/build-with-sync-for-commerce/sync-platform-selection",
-      "sfc/build-with-sync-for-commerce/implementing-codats-no-code-merchant-configuration",
-      "sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow",
+      "commerce/build/sync-for-commerce-prerequisites",
+      "commerce/build/sync-platform-selection",
+      "commerce/build/implementing-codats-no-code-merchant-configuration",
+      "commerce/build/customizing-the-sync-configuration-flow",
     ],
   },
   {
@@ -39,13 +39,13 @@ module.exports = [
     label: "Mapping specifications",
     collapsed: true,
     items: [
-      "sfc/mapping-specifications/overview",
-      "sfc/mapping-specifications/xero-mapping-specification",
-      "sfc/mapping-specifications/qbo-mapping-specification",
+      "commerce/mapping-specifications/overview",
+      "commerce/mapping-specifications/xero-mapping-specification",
+      "commerce/mapping-specifications/qbo-mapping-specification",
     ],
   },
-  "sfc/error-documentation",
-  "sfc/coming-soon",
+  "commerce/error-documentation",
+  "commerce/coming-soon",
   {
     type: "link",
     href: "/sync-for-commerce-api",

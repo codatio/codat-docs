@@ -39,7 +39,7 @@ We have done the heavy lifting for you by building bank feeds integrations with 
 
 :::tip Prerequisites
 
-1. Make sure you have enabled the QuickBooks Online Bank Feeds integration. You can do that in the [Codat Portal](https://app.codat.io/settings/integrations/bankfeeds), or [read more](/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-setup) for detailed instructions.
+1. Make sure you have enabled the QuickBooks Online Bank Feeds integration. You can do that in the [Codat Portal](https://app.codat.io/settings/integrations/bankfeeds), or [read more](/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-setup) for detailed instructions.
 
 2. Intuit must have approved your company to appear in the QuickBooks Online bank selection screen. Submit a request to Codat so that we can organize this with Intuit on your behalf. 
 
@@ -235,5 +235,5 @@ That's it - you have followed Codat's bank transactions reconciliation process f
 
 ## Read next
 
-* Expand your coverage of bank feds to [Xero](/bank-feeds-api/xero-bank-feeds/) and [Sage](/bank-feeds/sage-bank-feeds/)
+* Expand your coverage of bank feds to [Xero](/bank-feeds/xero-bank-feeds/) and [Sage](/bank-feeds/sage-bank-feeds/)
 * Learn more about how Codat can automate your lending solutions on the examples of [loan qualification](/guides/loan-qualification/introduction) and [invoice financing](/guides/invoice-finance/introduction)

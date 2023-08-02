@@ -26,7 +26,6 @@ If you're an Admin, you can view the available pricing plans and upgrade via Str
 | Rate limits             | 500 req/day     | 1000 req/day | 1000 req/day    |
 
 
-
 ## Start-up plan 
 
 ### Features

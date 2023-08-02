@@ -26,4 +26,4 @@ If you want to have more than 25 Xero connections, you'll need to join the **Xer
 
 ## Xero Bank Feeds
 
-If you want to create or update bank transactions in Xero, you'll need to use our [Xero Bank Feeds API](/bank-feeds-api/xero-bank-feeds/).
+If you want to create or update bank transactions in Xero, you'll need to use our [Xero Bank Feeds API](/bank-feeds/xero-bank-feeds/).
