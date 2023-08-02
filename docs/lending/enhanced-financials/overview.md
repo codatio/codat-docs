@@ -49,7 +49,7 @@ You can explore this further in [Categorize accounts in the Portal](/lending/por
 
 The Enhanced Profit and Loss Accounts endpoint returns a list of categorized accounts that appear on a company’s Profit and Loss. It also includes a balance per the financial statement date.
 
-Codat suggests a category for each account automatically, but you can [change it](/lending/enhanced-financials/categorize-accounts) to a more suitable one. 
+Codat suggests a category for each account automatically, but you can [change it](#categorize-accounts) to a more suitable one. 
 
 Explore the _Enhanced Profit and Loss Accounts_ endpoint in in our [Lending API reference](/assess-api#/operations/get-companies-companyId-reports-enhancedProfitAndLoss-accounts).
 
@@ -59,6 +59,6 @@ Explore the _Enhanced Profit and Loss Accounts_ endpoint in in our [Lending API 
 
 The Enhanced Balance Sheet Accounts endpoint returns a list of categorized accounts that appear on a company’s Balance Sheet along with a balance per financial statement date.
 
-Codat suggests a category for each account automatically, but you can [change it](/lending/enhanced-financials/categorize-accounts) to a more suitable one. 
+Codat suggests a category for each account automatically, but you can [change it](#categorize-accounts) to a more suitable one. 
 
 Explore the _Enhanced Balance Sheet Accounts_ endpoint in our [Lending API reference](/assess-api#/operations/get-companies-companyId-reports-enhanced/assess-api#/operations/get-companies-companyId-reports-enhancedBalanceSheet-accounts).

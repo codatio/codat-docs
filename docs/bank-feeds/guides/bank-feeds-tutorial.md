@@ -236,4 +236,4 @@ That's it - you have followed Codat's bank transactions reconciliation process f
 ## Read next
 
 * Expand your coverage of bank feds to [Xero](/bank-feeds/xero-bank-feeds/) and [Sage](/bank-feeds/sage-bank-feeds/)
-* Learn more about how Codat can automate your lending solutions on the examples of [loan qualification](/guides/loan-qualification/introduction) and [invoice financing](/guides/invoice-finance/introduction)
+* Learn more about how Codat can automate your lending solutions on the examples of [loan qualification](/guides/loan-qualification/introduction) and [invoice financing](/lending/guides/invoice-finance/introduction)

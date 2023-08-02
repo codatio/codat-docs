@@ -34,7 +34,7 @@ module.exports = [
   },
   {
     type: "link",
-    href: "/payables-api",
+    href: "/sync-for-payables-api",
     label: "API reference",
     customProps: {
       hr: true,

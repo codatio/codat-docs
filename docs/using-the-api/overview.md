@@ -13,8 +13,8 @@ We've packaged up Codat's functionality mainly by *product*, with our *Common AP
 | Product API | Description |
 | :- | :- |
 | **[Bank Feeds API](/bank-feeds-api)** | Set up bank feeds from accounts in your application to supported accounting platforms. |
-| **[Lending API](/assess-api)** | Make credit decisions backed by enhanced financials, metrics, reports, and data integrity features. |
-| **[Sync for Commerce API](/accounting-api)** | Push merchants' data from your ecommerce or point-of-sale (POS) platform into your merchants' accounting platform. |
+| **[Lending API](/lending-api)** | Make credit decisions backed by enhanced financials, metrics, reports, and data integrity features. |
+| **[Sync for Commerce API](/sync-for-commerce-api)** | Push merchants' data from your ecommerce or point-of-sale (POS) platform into your merchants' accounting platform. |
 | **[Sync for Expenses API](/sync-for-expenses-api)** | Push expenses to accounting platforms. |
 | **[Sync for Payables API](/sync-for-payables-api)** | Push expenses to accounting platforms. |
 | **[Sync for Payroll API](/sync-for-payroll-api)** | Push expenses to accounting platforms. |
@@ -27,8 +27,8 @@ Explore the underlying [OpenAPI Spec](https://github.com/codatio/oas).
   
   We've recently reorganized our products. You can find the OpenAPI specifications you may have been using before here:
 
-  <li><a href="/sync-for-expenses-api-v2">Sync for Commerce API v1</a></li>
-  <li><a href="/sync-for-expenses-api-v1">Sync for Expenses API v1</a></li>
+  <li><a href="/sync-for-commerce-v1-api">Sync for Commerce API v1</a></li>
+  <li><a href="/sync-for-expenses-v1-api">Sync for Expenses API v1</a></li>
   <li><a href="/accounting-api">Accounting API</a></li>
   <li><a href="/banking-api">Banking API</a></li>
   <li><a href="/commerce-api">Commerce API</a></li>

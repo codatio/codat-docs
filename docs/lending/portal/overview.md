@@ -78,7 +78,7 @@ The following information is displayed:
 
 ![P&L graph and extract of a statement based on selection criteria](/img/old/a1b310e-PL1.png)
 
-The **Statement** table renders the [Enhanced Profit and Loss](/lending/enhanced-financials/profit-and-loss-accounts) endpoint response data to give a clear visual of the company’s performance over the specified periods. The green and red arrowheads alongside the numbers indicate an increase or decrease respectively compared to the previous period.
+The **Statement** table renders the [Enhanced Profit and Loss](/lending/enhanced-financials/overview#endpoints) endpoint response data to give a clear visual of the company’s performance over the specified periods. The green and red arrowheads alongside the numbers indicate an increase or decrease respectively compared to the previous period.
 
 Rows can be expanded or collapsed to show more or less information. A maximum of 5 checkboxes can be checked, like Income above, to display the selection on the graph. Hovering over the graph displays a tooltip which contains information about all of the points plotted for that date.
 
@@ -171,7 +171,7 @@ The Ratios table is displayed below the Statement table. Each metric/ratio can b
 
 If you are a developer, and you are looking to reproduce the outputs of this section, refer to the following API documentation:
 
-- [Enhanced Balance Sheet](/lending/enhanced-financials/balance-sheet-accounts): To produce the balance sheet statement table and graph.
+- [Enhanced Balance Sheet](/lending/enhanced-financials/overview#endpoints): To produce the balance sheet statement table and graph.
 - [Financial Metrics](/lending/metrics/accounting/api-financial-metrics): To produce the ratios table.
 - [Data Integrity](/lending/data-integrity/api-data-integrity): To produce the Data match percentage.
 

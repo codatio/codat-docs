@@ -52,7 +52,7 @@ import SocialImages from "@components/global/SocialImages";
       Our data model normalizes and aggregates data from different platforms so that you can use it in a consistent way, fast. 
     </p>
     <p>
-      <a href="/data-model/accounting/">
+      <a href="/accounting-api/accounting-data-types/">
         Explore the data model
       </a>
     </p>
@@ -92,7 +92,7 @@ import SocialImages from "@components/global/SocialImages";
       <h3>Data model</h3>
     </div>
     <p>
-      See the accounting <a href="/data-model/accounting/">data types we support</a>.
+      See the accounting <a href="/accounting-api/accounting-data-types/">data types we support</a>.
     </p>
   </li>
   <li className="card">
@@ -127,7 +127,7 @@ import SocialImages from "@components/global/SocialImages";
   <li className="card mini">
     <div className="card-row">
       <div className="header">
-        <a href="/guides/loan-qualification/introduction">
+        <a href="/lending/guides/loan-qualification/introduction">
           <img
             src="/img/logos/usecases/company-info.svg"
             className="icon usecase"
@@ -138,7 +138,7 @@ import SocialImages from "@components/global/SocialImages";
       <div className="content">
         <h4>Loan qualification</h4>
         <p>
-          <a href="/guides/loan-qualification/introduction">See the tutorial →</a>
+          <a href="/lending/guides/loan-qualification/introduction">See the tutorial →</a>
         </p>    
       </div>
     </div>
@@ -147,7 +147,7 @@ import SocialImages from "@components/global/SocialImages";
   <li className="card mini">
     <div className="card-row">
       <div className="header">
-        <a href="/guides/invoice-finance/introduction">
+        <a href="/lending/guides/invoice-finance/introduction">
           <img
             src="/img/logos/usecases/lending.svg"
             className="icon usecase"
@@ -158,7 +158,7 @@ import SocialImages from "@components/global/SocialImages";
       <div className="content">
         <h4>Invoice financing</h4>
         <p>
-          <a href="/guides/invoice-finance/introduction">See the tutorial →</a>
+          <a href="/lending/guides/invoice-finance/introduction">See the tutorial →</a>
         </p>    
       </div>
     </div>
@@ -167,7 +167,7 @@ import SocialImages from "@components/global/SocialImages";
   <li className="card mini">
     <div className="card-row">
       <div className="header">
-        <a href="/guides/bill-pay/introduction">
+        <a href="payables/guides/bill-pay/introduction">
           <img
             src="/img/logos/usecases/payments.svg"
             className="icon usecase"
@@ -178,7 +178,7 @@ import SocialImages from "@components/global/SocialImages";
       <div className="content">
         <h4>Bill pay</h4>
         <p>
-          <a href="/guides/bill-pay/introduction">See the tutorial →</a>
+          <a href="payables/guides/bill-pay/introduction">See the tutorial →</a>
         </p>    
       </div>
     </div>

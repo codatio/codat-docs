@@ -18,6 +18,7 @@ This will require manual intervention from end users (your customers) of the Cod
 Codat will send a notification email to all effected clients once the update has been released. 
 
 :::info Update - 17 July, 2023
+
 This notice has been changed to clarify that the end user action should be taken _on or after July 31st, 2023_, to enable the updated QBD Connector to operate on user machines.
 ::: 
 
@@ -44,12 +45,15 @@ There will be no change in the flow for onboarding new companies.
 If the QBD application is running and the connected company file is open, QuickBooks will request the end user to permit the connector to access the data again the next time that connector attempts to access the file.
 
 The next time the connector attempts to access the file, QuickBooks will open a prompt for the end user to permit the connector to access the data again. This prompt is identical to the one seen on the initial link.
+
 ![Image](/img/integrations/accounting/quickbooksdesktop/application-certificate-approval.png "Application Certificate Approval")
 
 Next, the user will have to decide on the type of access they would like to grant the connector.
+
 ![Image](/img/integrations/accounting/quickbooksdesktop/authorize-whilst-closed.png "Authorized Whilst Closed")
 
 Finally, they will need to confirm they are happy for the connector to have access to the company file.
+
 ![Image](/img/integrations/accounting/quickbooksdesktop/confirm-access.png "Confirm Access")
 
 Once approved, the connector will be able to access the company file as before, and no further action will be required.
@@ -61,6 +65,7 @@ For multi-company setups, it's possible that the connector will try to access a 
 The next time the connector attempts to access the file, QuickBooks will request the user to interact to approve access for the company that is currently open.
 
 The end user should validate that the pop-up is referring to the company they are expecting to have connected before approving.
+
 ![Image](/img/integrations/accounting/quickbooksdesktop/application-certificate-approval-incorrect-company.png "Application Certificate Approval, Incorrect Company Open")
 
 #### 3. The QuickBooks Desktop application is closed
@@ -77,9 +82,13 @@ The approval prompt may take a few moments to appear, but can be manually trigge
 ### Troubleshooting
 
 #### Managing existing connections
+
 The end user may choose to remove the existing application signed with the old certificate before or after approving the new certificate request. They can do so by navigating to `Edit > Preferences > Integrated Applications > Company Preferences` in the QuickBooks Desktop application.
+
 ![Image](/img/integrations/accounting/quickbooksdesktop/edit-preferences.png "Edit Preferences")
+
 ![Image](/img/integrations/accounting/quickbooksdesktop/integrated-applications-modal-personal-preferences.png "My Preferences")
+
 ![Image](/img/integrations/accounting/quickbooksdesktop/integrated-applications-modal-company-preferences.png "Company Preferences")
 
 #### Incorrectly approved access
@@ -90,6 +99,7 @@ If the user incorrectly approves access, the connector will fail to perform the 
 The user can remove the erroneously approved connection by navigating to `Edit > Preferences > Integrated Applications > Company Preferences`  in the QuickBooks Desktop application, opening the correct company file, and [approving the connector's access to it](/updates/230731-qbd-certificate-update#1-the-quickbooks-desktop-application-is-open-with-the-connected-company-file).
 
 #### Denied access
+
 If the user incorrectly denies the connector's company file access request, QuickBooks Desktop will not complete the requested operation until the user opens the correct company and [authorizes the connector's access to it](/updates/230731-qbd-certificate-update#1-the-quickbooks-desktop-application-is-open-with-the-connected-company-file).
 
 The user can also remove the connection by navigating to `Edit > Preferences > Integrated Applications > Company Preferences` in the QuickBooks Desktop application.

@@ -1,8 +1,6 @@
 ---
 title: "Sales with product categories"
 description: "Review the product category mapping functionality, its setup, and maintenance"
-createdAt: "2022-11-30T17:35:08.294Z"
-updatedAt: "2023-01-16T12:23:11.019Z"
 ---
 
 :::caution Enabling the feature
@@ -23,7 +21,7 @@ Before the feature switch is toggled on, the Sync Flow UI displays a Sales categ
   alt="Sync Flow with standard sales categories"
 />
 
-Once you enable the feature, an additional category mapping page is added to the Sync Flow. It replaces the Sales category with a breakdown of mapping options for each [product category you created](/sfc/learn/sfc-sales-product-categories#congifure-sales-categories). We also provide a catch-all “Other sales” category that does not need to be created separately.
+Once you enable the feature, an additional category mapping page is added to the Sync Flow. It replaces the Sales category with a breakdown of mapping options for each [product category you created](/commerce/learn/sfc-sales-product-categories#congifure-sales-categories). We also provide a catch-all “Other sales” category that does not need to be created separately.
 
 In this example, we break down sales into courses, products, and services.
 

@@ -8,7 +8,7 @@ Now you're ready to explore the functionality of the bill pay demo app in more d
 
 ## Understand the authorization flow
 
-The company creation feature and [authorization flow](/guides/bill-pay/use-bill-pay-demo-app#connect-the-demo-app-to-quickbooks-online) were built using the Common API and Hosted Link. For a seamless user experience, we customized the Hosted Link flow with the same branding and colors as the demo app UI - see [Customize Link](/auth-flow/customize/customize-link) for more details.
+The company creation feature and [authorization flow](/payables/guides/bill-pay/use-bill-pay-demo-app#connect-the-demo-app-to-quickbooks-online) were built using the Common API and Hosted Link. For a seamless user experience, we customized the Hosted Link flow with the same branding and colors as the demo app UI - see [Customize Link](/auth-flow/customize/customize-link) for more details.
 
 The main features are:
 

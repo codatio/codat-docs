@@ -48,7 +48,7 @@ import SocialImages from "@components/global/SocialImages";
       Review sales performance based on product and geographic mix, retention rates, new customer growth, and more.
     </p>
     <p>
-      <a href="/data-model/commerce/">
+      <a href="/commerce-api/commerce-data-types/">
         Review the data model
       </a>
     </p>

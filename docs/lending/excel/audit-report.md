@@ -82,7 +82,7 @@ Borders and styling were added to this image for clarity but is not included in 
 
 This section of the Audit Report displays Gross Profit, Net Operating Profit and Net Profit metrics on a month-by-month basis with percentage change and yearly summaries. This offers insight into any extreme changes that could be indicative of abnormal growth, fraud or additional debt taken on by the company.
 
-Explore [Enhanced Profit and Loss](/lending/enhanced-financials/profit-and-loss-accounts) to see the full categorized profit and loss statement.
+Explore [Enhanced Profit and Loss](/lending/enhanced-financials/overview#enhanced-profit-and-loss-accounts) to see the full categorized profit and loss statement.
 
 #### Report structure
 

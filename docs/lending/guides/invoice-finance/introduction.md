@@ -41,7 +41,7 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 
 The app's codebase is available via our [GitHub repo](https://github.com/codatio/demo-invoice-finance). Clone it locally to try out the application.
 
-The codebase uses Codat's [Accounting API](/accounting-api/overview) product to make an invoice financing decision. We will walk you through the setup in the Portal and the code when [setting up the demo app](/guides/invoice-finance/setting-up). 
+The codebase uses Codat's [Accounting API](/accounting-api/overview) product to make an invoice financing decision. We will walk you through the setup in the Portal and the code when [setting up the demo app](/lending/guides/invoice-finance/setting-up). 
 
 ### Why we use _Accounting API_
 
@@ -60,4 +60,4 @@ The demo app relies on Codat's [Accounting API](/accounting-api/overview). Our u
 ### Read next
 
 Now that you know the focus and purpose of our demo app and its guide, you can:
-* [Set up Codat and your local environment](/guides/invoice-finance/setting-up).
+* [Set up Codat and your local environment](/lending/guides/invoice-finance/setting-up).

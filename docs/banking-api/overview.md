@@ -48,7 +48,7 @@ import SocialImages from "@components/global/SocialImages";
       Retrieve up-to-date standardized data for banking acccounts, banking account balances, and banking transactions in the same way. 
     </p>
     <p>
-      <a href="/data-model/banking/">
+      <a href="/banking-api/banking-data-types/">
         Explore the data model
       </a>
     </p>

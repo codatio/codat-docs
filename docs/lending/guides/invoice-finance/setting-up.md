@@ -157,4 +157,4 @@ You have now set up your Codat instance and your local environment in preparatio
 
 ### Read next
 
-- [Use the app to provide an invoice financing decision](/guides/invoice-finance/process-invoice).
+- [Use the app to provide an invoice financing decision](/lending/guides/invoice-finance/process-invoice).

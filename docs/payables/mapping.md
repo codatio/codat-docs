@@ -15,7 +15,7 @@ You should store the mapping of the relevant `accountId` as this will be needed 
 
 If you are facilitating payments in a foreign currency, then the payment should either be converted to the currency of the account, or you can create a new account with the import currency.
 
-The [create account model](/payables-api#/operations/get-create-chartOfAccounts-model) provides a list of the companies enabled currencies, this will return:
+The [create account model](/sync-for-payables-api#/operations/get-create-chartOfAccounts-model) provides a list of the companies enabled currencies, this will return:
 - *A single value*: base currency, where only the base currency is supported (e.g. USD for a company based in the United States)
 - *Multiple values*: reflecting values selected/enabled by a user within the package
 - *No values* (empty array): where all/any currencies can be selected
@@ -35,7 +35,7 @@ Typically if the payment method is one of the following:
 - Electronic bank transfer
 - BACS (Bankers' Automated Clearing System)
 
-Then you should [create a bank account](/payables-api#/operations/create-bank-account) with an `accountType` of `Debit` to represent the account the payments are being made from:
+Then you should [create a bank account](/sync-for-payables-api#/operations/create-bank-account) with an `accountType` of `Debit` to represent the account the payments are being made from:
 
 <Tabs>
 

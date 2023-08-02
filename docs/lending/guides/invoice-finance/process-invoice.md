@@ -80,7 +80,7 @@ Select the **Codat Sandbox** as the source of accounting data.
 * You don't need to enter any credentials to authorize this connection. 
 * You should also skip the step of uploading business documents. 
 
-We fetch the applicant's unpaid invoices, customers associated to these unpaid invoices, and each customer's historic (paid) invoices to use in the decision making. You can [read more](/guides/invoice-finance/inv-fin-decision) about the queries we used to perform the specific fetching. 
+We fetch the applicant's unpaid invoices, customers associated to these unpaid invoices, and each customer's historic (paid) invoices to use in the decision making. You can [read more](/lending/guides/invoice-finance/inv-fin-decision) about the queries we used to perform the specific fetching. 
 
 ![](/img/use-cases/invoice-finance/0015-sanbox-inv-finance.png)
 
@@ -90,7 +90,7 @@ The demo app now has all the components that it needs to assess the risk associa
 
 Poll the `GET applications/{applicationId}` endpoint in [Swagger](http://localhost:7278/swagger/index.html) anytime to check the status of your application. Once the app processes all the relevant invoices, it will automatically return a response with an offer for each invoice approved for financing.
 
-You can [read more](/guides/invoice-finance/inv-fin-decision) about the risk assessments the app performs, and further detail of the decisioning logic. The thresholds used with the logic are set in the `appsettings.json` file. 
+You can [read more](/lending/guides/invoice-finance/inv-fin-decision) about the risk assessments the app performs, and further detail of the decisioning logic. The thresholds used with the logic are set in the `appsettings.json` file. 
 
 ### 💪 Ready for more? 
 
@@ -106,7 +106,7 @@ Try these suggestions to make the most of your experience with the demo app:
   Take the demo one step further and use real credentials to access existing financial data in an accounting platform. Set up the [integration](/integrations/accounting/overview) you plan to use, and connect to it while following the auth flow. Then, review how the app makes a decision based on your company's real data. 
 
 - **Inspect the invoice financing logic**  
-  We provide [detailed information](/guides/invoice-finance/inv-fin-decision) about the risk assessment logic we included in our demo app, and how exactly the financial data is fetched and analyzed. 
+  We provide [detailed information](/lending/guides/invoice-finance/inv-fin-decision) about the risk assessment logic we included in our demo app, and how exactly the financial data is fetched and analyzed. 
   
 
 ### Recap
@@ -117,4 +117,4 @@ You have now successfully run the demo app, covering all the key steps in an inv
 
 ### Read next
 
-- Review the app's fetching and decisioning logic [in detail](/guides/invoice-finance/inv-fin-decision)
+- Review the app's fetching and decisioning logic [in detail](/lending/guides/invoice-finance/inv-fin-decision)

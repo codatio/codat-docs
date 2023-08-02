@@ -6,8 +6,8 @@ sidebar_label: "Assess report"
 Our Assess excel report is designed to give you the same data you would get via the API. You can use this report to test some companies and familiarise yourself with the data before building to the equivalent API endpoints. 
 
 This report contains an output of the following features:
-- [Enhanced profit and loss accounts](/lending/enhanced-financials/profit-and-loss-accounts)
-- [Enhanced balance sheet accounts](/lending/enhanced-financials/balance-sheet-accounts)
+- [Enhanced profit and loss accounts](/lending/enhanced-financials/overview#enhanced-profit-and-loss-accounts)
+- [Enhanced balance sheet accounts](/lending/enhanced-financials/overview#enhanced-balance-sheet-accounts)
 
 ## Prerequisites
 

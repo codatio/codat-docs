@@ -6,7 +6,7 @@ sidebar_label: Banking
 
 Our integrations with <a class="external" href="https://plaid.com/" target="_blank">Plaid</a>, <a  class="external" href="https://truelayer.com/" target="_blank">TrueLayer</a>, and <a class="external" href="https://basiq.io/" target="_blank">Basiq</a> enable you to retrieve up-to-date account and transaction data from your SMB customers' banks. 
 
-For details about the types of banking data you can pull, see the [Banking API data model](/data-model/banking).
+For details about the types of banking data you can pull, see the [Banking API data model](/banking-api/banking-data-types).
 
 To view and compare banking data coverage by integration, use the <a  class="external" href="https://knowledge.codat.io/supported-features/banking?view=tab-by-data-type&integrationKey=evqv&dataType=bankAccounts" target="_blank">Data coverage explorer</a> and select the **Banking API** product.
 

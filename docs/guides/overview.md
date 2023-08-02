@@ -12,7 +12,7 @@ Our current guides and tutorials:
   <li className="card mini">
     <div className="card-row">
       <div className="header">
-        <a href="/guides/loan-qualification/introduction">
+        <a href="/lending/guides/loan-qualification/introduction">
           <img
             src="/img/logos/usecases/company-info.svg"
             className="icon usecase"
@@ -23,7 +23,7 @@ Our current guides and tutorials:
       <div className="content">
         <h4>Loan qualification</h4>
         <p>
-          <a href="/guides/loan-qualification/introduction">See the tutorial →</a>
+          <a href="/lending/guides/loan-qualification/introduction">See the tutorial →</a>
         </p>    
       </div>
     </div>
@@ -32,7 +32,7 @@ Our current guides and tutorials:
   <li className="card mini">
     <div className="card-row">
       <div className="header">
-        <a href="/guides/invoice-finance/introduction">
+        <a href="/lending/guides/invoice-finance/introduction">
           <img
             src="/img/logos/usecases/lending.svg"
             className="icon usecase"
@@ -43,7 +43,7 @@ Our current guides and tutorials:
       <div className="content">
         <h4>Invoice financing</h4>
         <p>
-          <a href="/guides/invoice-finance/introduction">See the tutorial →</a>
+          <a href="/lending/guides/invoice-finance/introduction">See the tutorial →</a>
         </p>    
       </div>
     </div>
@@ -52,7 +52,7 @@ Our current guides and tutorials:
   <li className="card mini">
     <div className="card-row">
       <div className="header">
-        <a href="/guides/bill-pay/introduction">
+        <a href="payables/guides/bill-pay/introduction">
           <img
             src="/img/logos/usecases/payments.svg"
             className="icon usecase"
@@ -63,7 +63,7 @@ Our current guides and tutorials:
       <div className="content">
         <h4>Bill pay</h4>
         <p>
-          <a href="/guides/bill-pay/introduction">See the tutorial →</a>
+          <a href="payables/guides/bill-pay/introduction">See the tutorial →</a>
         </p>    
       </div>
     </div>

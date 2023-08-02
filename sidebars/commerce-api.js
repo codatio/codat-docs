@@ -14,7 +14,7 @@ module.exports = [
   {
     type: "link",
     label: "Commerce data model",
-    href: "/data-model/commerce/",
+    href: "/commerce-api/commerce-data-types/",
   },
   {
     type: "link",

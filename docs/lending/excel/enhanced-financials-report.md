@@ -8,8 +8,8 @@ Our Enhanced Financials Excel report gives you the same data you'd get from the 
 
 The report contains the output of the following features:
 
-- [Enhanced profit and loss accounts](/lending/enhanced-financials/profit-and-loss-accounts)
-- [Enhanced balance sheet accounts](/lending/enhanced-financials/balance-sheet-accounts)
+- [Enhanced profit and loss accounts](/lending/enhanced-financials/overview#endpoints)
+- [Enhanced balance sheet accounts](/lending/enhanced-financials/overview#endpoints)
 
 ## Prerequisites
 

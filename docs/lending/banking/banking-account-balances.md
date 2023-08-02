@@ -9,7 +9,7 @@ Please note, this feature is in beta testing. We encourage you to provide any fe
 
 This endpoint retrieves the current balance and balance limit for a company, over one or more periods of time, and provides the data in the currency requested in the query parameters.
 
-Refer to the [Lending reporting structure](/lending/reports/reporting-structure) page for more detail on reports in Lending.
+Refer to the [Lending reporting structure](/lending-api#/schemas/Report) page for more detail on reports in Lending.
 
 For _Banking account balances_, these are the dimensions and measures:
 

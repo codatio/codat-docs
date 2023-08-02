@@ -58,10 +58,15 @@ module.exports = [
   },
   {
     type: "link",
-    href: "/bank-feeds-api",
-    label: "API reference",
+    href: "/bank-feeds/data-types",
+    label: "Data types",
     customProps: {
       hr: true,
     },
+  },
+  {
+    type: "link",
+    href: "/bank-feeds-api",
+    label: "API reference",
   },
 ];

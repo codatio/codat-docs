@@ -112,4 +112,4 @@ You've set up the QuickBooks Online Sandbox integration and configured Link with
 
 Explore the app's functionality in more depth:
 
-- [How the demo app works](/guides/bill-pay/how-the-demo-app-works)
+- [How the demo app works](/payables/guides/bill-pay/how-the-demo-app-works)

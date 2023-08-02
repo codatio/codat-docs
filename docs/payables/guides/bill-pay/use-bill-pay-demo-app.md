@@ -32,7 +32,7 @@ First, launch the demo app and complete the authorization flow.
 
    Click **Launch Bills Portal** to open the demo app.
 
-For more details about how the app creates a connection to QuickBooks Online via Hosted Link, see [Understand the authorization flow](/guides/bill-pay/how-the-demo-app-works#understand-the-authorization-flow).
+For more details about how the app creates a connection to QuickBooks Online via Hosted Link, see [Understand the authorization flow](/payables/guides/bill-pay/how-the-demo-app-works#understand-the-authorization-flow).
 
 ### View bills
 
@@ -106,5 +106,5 @@ You've used the demo app to view bills and make a payment.  You also checked the
 
 Now that you've tried out the demo app, you can:
 
-- [Run the bill pay demo app locally](/guides/bill-pay/run-demo-app-locally)
-- Learn more about [How the demo app works](/guides/bill-pay/how-the-demo-app-works)
+- [Run the bill pay demo app locally](/payables/guides/bill-pay/run-demo-app-locally)
+- Learn more about [How the demo app works](/payables/guides/bill-pay/how-the-demo-app-works)

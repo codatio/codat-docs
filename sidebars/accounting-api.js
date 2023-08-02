@@ -36,7 +36,7 @@ module.exports = [
   {
     type: "link",
     label: "Accounting data model",
-    href: "/data-model/accounting/",
+    href: "/accounting-api/accounting-data-types/",
   },
   {
     type: "link",

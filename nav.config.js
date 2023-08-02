@@ -38,7 +38,7 @@ module.exports = {
           label: "Sync for Expenses API",
         },
         {
-          href: "/payables-api",
+          href: "/sync-for-payables-api",
           label: "Sync for Payables API",
         },
         {

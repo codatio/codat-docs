@@ -79,21 +79,21 @@ Sync for Expenses is an API and a set of supporting tools. It has been built to 
 
 </ul>
 
-### [Connect to your SMB's accounting platform](gettingstarted)
+### [Connect to your SMB's accounting platform](/expenses/getting-started)
 
 Codat handles authorization and linking to your SMB's accounting platform and takes into account intricate details such as rate limits.
 
-### [Categorize and tag expenses](configandcategorize)
+### [Categorize and tag expenses](/expenses/config-and-categorize)
 
 Expenses can be categorized according to your SMB's bookkeeping.
 
 Sync for Expenses attributes the spend to the correct chart of accounts and enables further categorization via tracking categories which can represent departments and locations.
 
-### [Push any expenses easily](sync-process/expense-transactions)
+### [Push any expenses easily](/expenses/sync-process/expense-transactions)
 
 Everyday purchases can be pushed to the SMB's accounting platform where they are represented with an expense. Sync for Expenses also enables SMB users to push attachments for complete auditability.
 
-### [Synchronize and map expenses with control](sync-process/sync-process-explained)
+### [Synchronize and map expenses with control](/expenses/sync-process/sync-process-explained)
 
 Once a categorized expense has been pushed, a sync can be initiated. The sync processes the expenses and maps them into the format required by the accounting platform.
 
