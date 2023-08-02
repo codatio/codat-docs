@@ -39,15 +39,15 @@ Then you should [create a bank account](/accounting-api#/operations/create-bank-
 
 <Tabs>
 
-<Tabitem value="Request URL" label="Request URL">
+<TabItem value="Request URL" label="Request URL">
 
 ```http request title="Create Bank Account"
 POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/bankAccounts
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="Request Body" label="Request Body">
+<TabItem value="Request Body" label="Request Body">
 
 ```json request title="QuickBooks Example"
 {
@@ -61,7 +61,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 }
 ```
 
-</Tabitem>
+</TabItem>
 
 </Tabs>
 
@@ -77,15 +77,15 @@ Then you should create a bank account with an `accountType` of `Credit` to repre
 
 <Tabs>
 
-<Tabitem value="Request URL" label="Request URL">
+<TabItem value="Request URL" label="Request URL">
 
 ```http request title="Create Credit Account"
 POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/bankAccounts
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="Request Body" label="Request Body">
+<TabItem value="Request Body" label="Request Body">
 
 ```json request title="QuickBooks Example"
 {
@@ -99,7 +99,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 }
 ```
 
-</Tabitem>
+</TabItem>
 
 </Tabs>
 
@@ -111,15 +111,15 @@ If the company is making payments from a pre-existing account, then you can retr
 
 <Tabs>
 
-<Tabitem value="Request URL" label="Request URL">
+<TabItem value="Request URL" label="Request URL">
 
 ```http request title="Create Credit Account"
 GET https://api.codat.io/companies/{companyId}/connections/{connectionId}/data/bankAccounts
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="Response Body" label="Response Body">
+<TabItem value="Response Body" label="Response Body">
 
 ```json request title="QuickBooks Example"
 {
@@ -156,7 +156,7 @@ GET https://api.codat.io/companies/{companyId}/connections/{connectionId}/data/b
 }
 ```
 
-</Tabitem>
+</TabItem>
 
 </Tabs>
 

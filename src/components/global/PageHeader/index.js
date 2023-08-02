@@ -20,7 +20,6 @@ const BannerVideo = ({text, url}) => {
 };
 
 const PageHeader = ({className, title, text, img, children, icon, videoUrl, videoText}) => {
-  console.log(videoUrl)
   return (
     <div className={clsx(styles.wrapper, className)}>
       <div className={styles.header}>

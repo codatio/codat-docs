@@ -26,10 +26,10 @@ module.exports = [
     label: "Bill pay tutorial",
     collapsed: true,
     items: [
-      "payables/bill-pay/introduction",
-      "payables/bill-pay/use-bill-pay-demo-app",
-      "payables/bill-pay/run-demo-app-locally",
-      "payables/bill-pay/how-the-demo-app-works",
+      "payables/guides/bill-pay/introduction",
+      "payables/guides/bill-pay/use-bill-pay-demo-app",
+      "payables/guides/bill-pay/run-demo-app-locally",
+      "payables/guides/bill-pay/how-the-demo-app-works",
     ],
   },
   {

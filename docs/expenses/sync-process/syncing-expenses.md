@@ -82,15 +82,15 @@ Once you have pushed data to Codat, you can use the sync status endpoints to che
 
 <Tabs>
 
-<Tabitem value="Request URL" label="Request URL">
+<TabItem value="Request URL" label="Request URL">
 
 ```http
 GET https://api.codat.io/companies/{companyId}/sync/expenses/syncs/syncId/status
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="Success" label="Sync Successful">
+<TabItem value="Success" label="Sync Successful">
 
 ```json
 {
@@ -105,9 +105,9 @@ GET https://api.codat.io/companies/{companyId}/sync/expenses/syncs/syncId/status
 }
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="Failed" label="Sync Failed">
+<TabItem value="Failed" label="Sync Failed">
 
 ```json
 {
@@ -122,7 +122,7 @@ GET https://api.codat.io/companies/{companyId}/sync/expenses/syncs/syncId/status
 }
 ```
 
-</Tabitem>
+</TabItem>
 
 </Tabs>
 
@@ -137,15 +137,15 @@ This enables you to see if the transaction has synced successfully, or details o
 
 <Tabs>
 
-<Tabitem value="Request URL" label="Request URL">
+<TabItem value="Request URL" label="Request URL">
 
 ```http
 GET https://api.codat.io/companies/{companyId}/sync/expenses/syncs/{syncId}/transactions
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="Success" label="Successful Transactions">
+<TabItem value="Success" label="Successful Transactions">
 
 ```json
 {
@@ -178,9 +178,9 @@ GET https://api.codat.io/companies/{companyId}/sync/expenses/syncs/{syncId}/tran
 }
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="Failed" label="Failed Transactions">
+<TabItem value="Failed" label="Failed Transactions">
 
 ```json
 {
@@ -215,6 +215,6 @@ GET https://api.codat.io/companies/{companyId}/sync/expenses/syncs/{syncId}/tran
 }
 ```
 
-</Tabitem>
+</TabItem>
 
 </Tabs>

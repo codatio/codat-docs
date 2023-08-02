@@ -355,8 +355,8 @@ module.exports = {
 
     //
     {
-      from: "/lending/guides/underwriting/introduction",
-      to: "/guides/loan-qualification/introduction",
+      from: "/guides/underwriting/introduction",
+      to: "/lending/guides/loan-qualification/introduction",
     },
     {
       from: "/usecases/summary/underwriting",
@@ -380,36 +380,36 @@ module.exports = {
     },
     // --- delete soon
     {
-      from: "/lending/guides/loan-qualification/introduction",
-      to: "/guides/loan-qualification/introduction",
+      from: "/guides/loan-qualification/introduction",
+      to: "/lending/guides/loan-qualification/introduction",
     },
     {
-      from: "/lending/guides/loan-qualification/setting-up",
-      to: "/guides/loan-qualification/setting-up",
+      from: "/guides/loan-qualification/setting-up",
+      to: "/lending/guides/loan-qualification/setting-up",
     },
     {
-      from: "/lending/guides/loan-qualification/process-loan",
-      to: "/guides/loan-qualification/process-loan",
+      from: "/guides/loan-qualification/process-loan",
+      to: "/lending/guides/loan-qualification/process-loan",
     },
     {
-      from: "/lending/guides/loan-qualification/uw-decision",
-      to: "/guides/loan-qualification/uw-decision",
+      from: "/guides/loan-qualification/uw-decision",
+      to: "/lending/guides/loan-qualification/uw-decision",
     },
     {
       from: "/accounting-api/guides/bill-pay/introduction",
-      to: "/guides/bill-pay/introduction",
+      to: "/payables/guides/bill-pay/introduction",
     },
     {
       from: "/accounting-api/guides/bill-pay/use-bill-pay-demo-app",
-      to: "/guides/bill-pay/use-bill-pay-demo-app",
+      to: "/payables/guides/bill-pay/use-bill-pay-demo-app",
     },
     {
       from: "/accounting-api/guides/bill-pay/run-demo-app-locally",
-      to: "/guides/bill-pay/run-demo-app-locally",
+      to: "/payables/guides/bill-pay/run-demo-app-locally",
     },
     {
       from: "/accounting-api/guides/bill-pay/how-the-demo-app-works",
-      to: "/guides/bill-pay/how-the-demo-app-works",
+      to: "/payables/guides/bill-pay/how-the-demo-app-works",
     },
     // ---- Integration pages - delete
     {
@@ -516,39 +516,39 @@ module.exports = {
     // expenses
 
     {
-      from: "/expenses/overview",
+      from: "/sync-for-expenses/overview",
       to: "/expenses/overview",
     },
     {
-      from: "/expenses/getting-started",
+      from: "/sync-for-expenses/getting-started",
       to: "/expenses/getting-started",
     },
     {
-      from: "/expenses/config-and-categorize",
+      from: "/sync-for-expenses/config-and-categorize",
       to: "/expenses/config-and-categorize",
     },
     {
-      from: "/expenses/sync-process/sync-process-explained",
+      from: "/sync-for-expenses/sync-process/sync-process-explained",
       to: "/expenses/sync-process/sync-process-explained",
     },
     {
-      from: "/expenses/sync-process/expense-transactions",
+      from: "/sync-for-expenses/sync-process/expense-transactions",
       to: "/expenses/sync-process/expense-transactions",
     },
     {
-      from: "/expenses/sync-process/syncing-expenses",
+      from: "/sync-for-expenses/sync-process/syncing-expenses",
       to: "/expenses/sync-process/syncing-expenses",
     },
     {
-      from: "/expenses/sync-process/uploading-receipts",
+      from: "/sync-for-expenses/sync-process/uploading-receipts",
       to: "/expenses/sync-process/uploading-receipts",
     },
     {
-      from: "/expenses/sync-process/updating-expenses",
+      from: "/sync-for-expenses/sync-process/updating-expenses",
       to: "/expenses/sync-process/updating-expenses",
     },
     {
-      from: "/expenses/faq",
+      from: "/sync-for-expenses/faq",
       to: "/expenses/faq",
     },
 

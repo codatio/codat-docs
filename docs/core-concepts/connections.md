@@ -76,15 +76,15 @@ Only `Linked` data connections can be unlinked.
 
 <Tabs>
 
-<Tabitem value="Request URL" label="Request URL">
+<TabItem value="Request URL" label="Request URL">
 
 ```http request title="Disconnect connection"
 PATCH /companies/COMPANY_ID/connections/CONNECTION_ID
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="Request Body" label="Request Body">
+<TabItem value="Request Body" label="Request Body">
 
 ```json
 {
@@ -92,7 +92,7 @@ PATCH /companies/COMPANY_ID/connections/CONNECTION_ID
 }
 ```
 
-</Tabitem>
+</TabItem>
 
 </Tabs>
 
