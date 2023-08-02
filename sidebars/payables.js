@@ -8,27 +8,36 @@ module.exports = [
   {
     type: "link",
     label: "Sync for Payables",
-    href: "payables/overview",
+    href: "/payables/overview",
     className: "header",
   },
-    {
-        type: "category",
-        label: "Implementing bill pay",
-        collapsed: true,
-        items: [
-            "payables/bills",
-            "payables/mapping",
-            "payables/payments",
-        ],
+  {
+    type: "category",
+    label: "Implementing bill pay",
+    collapsed: true,
+    items: [
+      "payables/bills",
+      "payables/mapping",
+      "payables/payments",
+    ],
+  },
+  {
+    type: "category",
+    label: "Bill pay tutorial",
+    collapsed: true,
+    items: [
+      "payables/bill-pay/introduction",
+      "payables/bill-pay/use-bill-pay-demo-app",
+      "payables/bill-pay/run-demo-app-locally",
+      "payables/bill-pay/how-the-demo-app-works",
+    ],
+  },
+  {
+    type: "link",
+    href: "/payables-api",
+    label: "API reference",
+    customProps: {
+      hr: true,
     },
-    {
-        type: "link",
-        label: "Demo app guide",
-        href: "https://docs.codat.io/guides/bill-pay/introduction",
-    },
-    {
-        type: "link",
-        href: "/payables-api",
-        label: "API reference",
-    },
+  },
 ]

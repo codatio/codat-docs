@@ -1,5 +1,6 @@
 ---
 title: "Use your Sage Bank Feeds integration"
+sidebar_label: "Use"
 description: "Learn how to push your SMB users' bank transactions to Codat via our Sage Bank Feeds integration"
 ---
 

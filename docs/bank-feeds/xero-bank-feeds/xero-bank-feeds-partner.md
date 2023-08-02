@@ -1,5 +1,6 @@
 ---
 title: "Become a Xero Bank Feeds Partner"
+sidebar_label: "Xero App Partnership"
 description: "Unlock the full value of connectivity with Xero by becoming a Xero Bank Feeds Partner"
 ---
 

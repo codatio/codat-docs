@@ -7,7 +7,7 @@ updatedAt: "2022-11-29T15:21:17.901Z"
 
 The Customer Retention endpoint retrieves customer information for a specific company's commerce connection, over one or more periods of time.
 
-Refer to the [Assess reporting structure](/assess/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/lending/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
 
 For Customer Retention, these are the dimensions and measures:
 
@@ -32,12 +32,12 @@ For Customer Retention, these are the dimensions and measures:
 - Is structured based on dimension (index =“0”), i.e. Period.
 - The endpoint will return metrics on **existing customers**, *new customers\*\*, *total customers**, **retention rate** and **repeat rate\*\* for each period.
 
-View the Customer Retention [formulas](/assess/metrics/commerce/overview#what-metrics-are-available).
+View the Customer Retention [formulas](/lending/metrics/commerce/overview#what-metrics-are-available).
 
 The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-commerceMetrics-customerRetention">API reference</a>.
 
 ```http
-GET /data/companies/{companyId}/connections/{connectionId}/assess/commerceMetrics/customerRetention
+GET /data/companies/{companyId}/connections/{connectionId}/lending/commerceMetrics/customerRetention
 ```
 
 # Parameters

@@ -1,8 +1,7 @@
 ---
 title: "Xero mapping specification"
+sidebar_label: Xero
 description: "Guidelines for data mapping configuration from a commerce platform to Xero."
-createdAt: "2022-09-29T03:30:16.195Z"
-updatedAt: "2022-11-23T15:20:35.112Z"
 ---
 
 ## Overview

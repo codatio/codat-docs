@@ -1,7 +1,7 @@
 ---
 title: "Set up the QuickBooks Online Bank Feeds integration"
 description: "Set up our integration with QuickBooks Online Bank Feeds"
-sidebar_label: Setting up
+sidebar_label: Set up
 ---
 
 Set up the QuickBooks Online Bank Feeds integration to let your SMB customers connect source bank accounts in your application to target accounts in QuickBooks Online (QBO).

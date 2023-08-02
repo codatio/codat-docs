@@ -1,8 +1,7 @@
 ---
 title: "Overview"
 description: "Connect to your SMB customers' banking data through our partner providers"
-createdAt: "2019-04-26T13:15:07.902Z"
-updatedAt: "2022-11-15T14:22:20.124Z"
+sidebar_label: Banking
 ---
 
 Our integrations with <a class="external" href="https://plaid.com/" target="_blank">Plaid</a>, <a  class="external" href="https://truelayer.com/" target="_blank">TrueLayer</a>, and <a class="external" href="https://basiq.io/" target="_blank">Basiq</a> enable you to retrieve up-to-date account and transaction data from your SMB customers' banks. 

@@ -1,9 +1,26 @@
 import React from "react";
 import clsx from "clsx";
 
+import { ModalController } from "../Modal";
+
 import styles from "./styles.module.scss";
 
-const PageHeader = ({className, title, text, img, children, icon}) => {
+const BannerVideo = ({text, url}) => {
+  return <ModalController text={text}>
+    <iframe 
+      src={url}
+      width="560" 
+      height="315" 
+      title="YouTube video player" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen
+    />
+  </ModalController>
+};
+
+const PageHeader = ({className, title, text, img, children, icon, videoUrl, videoText}) => {
+  console.log(videoUrl)
   return (
     <div className={clsx(styles.wrapper, className)}>
       <div className={styles.header}>
@@ -23,7 +40,10 @@ const PageHeader = ({className, title, text, img, children, icon}) => {
         {text && <p>{text}</p>}
 
         {children}
+
+        { videoUrl && <BannerVideo text={videoText} url={videoUrl}/> }
       </div>
+
       <img className={styles.heroImg} src={img}/>
     </div>
   )

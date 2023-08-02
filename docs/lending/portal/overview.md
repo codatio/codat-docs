@@ -7,17 +7,17 @@ updatedAt: "2022-11-03T09:22:59.470Z"
 
 Assess in the Portal leverages Codat APIs to produce features that serve data on the health of a business and provide insights required for making informed lending decisions. Assess consists of five sections: Profit and Loss, Balance Sheet, Commerce, Banking and Marketing.
 
-To benefit from all of the features of Assess, a company should be linked to accounting, banking and commerce data sources. Explore our [How to get started](/assess/get-started) guide.
+To benefit from all of the features of Assess, a company should be linked to accounting, banking and commerce data sources. Explore our [How to get started](/lending/get-started) guide.
 
-The categorized Profit and Loss, and Balance Sheet showcase the power of the [Categories](/assess/categories) feature which standardizes bespoke data across SMEs. After the data is standardized, meaningful insights and measurements are produced for financial performance.
+The categorized Profit and Loss, and Balance Sheet showcase the power of the [Categories](/lending/categories) feature which standardizes bespoke data across SMEs. After the data is standardized, meaningful insights and measurements are produced for financial performance.
 
 **Data Match**
 
-The data match percentage button is located next to the **Assess** header on every Assess page and it leverages the [Data Integrity](/assess/data-integrity/overview) feature. The match percentage is pre-calculated using the [Data Integrity summaries](/assess/data-integrity/api-data-integrity#summaries) endpoint.
+The data match percentage button is located next to the **Assess** header on every Assess page and it leverages the [Data Integrity](/lending/data-integrity/overview) feature. The match percentage is pre-calculated using the [Data Integrity summaries](/lending/data-integrity/api-data-integrity#summaries) endpoint.
 
 It takes the match percentage from the summaries endpoint for both `banking-transactions` and `accountTransactions` to calculate an overall match percentage, and it accounts for all dates, not just the optimal date range.
 
-Hovering over the button reveals further detail about the data match. Clicking the **Data match** button takes you to the **Data Integrity** page which provides detailed information about matches. Explore [Data Integrity](/assess/data-integrity/overview).
+Hovering over the button reveals further detail about the data match. Clicking the **Data match** button takes you to the **Data Integrity** page which provides detailed information about matches. Explore [Data Integrity](/lending/data-integrity/overview).
 
 **Reports**
 
@@ -33,7 +33,7 @@ The **Reports** button is located in the top right corner of every Assess page a
 
 ## Profit and Loss
 
-The Profit and Loss page is the landing page when accessing Assess. The page consists of the graph displaying selections for the categorized financial statement, and ratios. If you have uncategorized accounts, the Account Categorization modal will be displayed. Only uncategorized accounts will be shown and you will need to manually assign categories. Our [Categorization of accounts](/assess/portal/categorization-of-accounts) documentation provides more detail.
+The Profit and Loss page is the landing page when accessing Assess. The page consists of the graph displaying selections for the categorized financial statement, and ratios. If you have uncategorized accounts, the Account Categorization modal will be displayed. Only uncategorized accounts will be shown and you will need to manually assign categories. Our [Categorization of accounts](/lending/portal/categorization-of-accounts) documentation provides more detail.
 
 ### Selection panel
 
@@ -78,13 +78,13 @@ The following information is displayed:
 
 ![P&L graph and extract of a statement based on selection criteria](/img/old/a1b310e-PL1.png)
 
-The **Statement** table renders the [Enhanced Profit and Loss](/assess/enhanced-financials/profit-and-loss-accounts) endpoint response data to give a clear visual of the company’s performance over the specified periods. The green and red arrowheads alongside the numbers indicate an increase or decrease respectively compared to the previous period.
+The **Statement** table renders the [Enhanced Profit and Loss](/lending/enhanced-financials/profit-and-loss-accounts) endpoint response data to give a clear visual of the company’s performance over the specified periods. The green and red arrowheads alongside the numbers indicate an increase or decrease respectively compared to the previous period.
 
 Rows can be expanded or collapsed to show more or less information. A maximum of 5 checkboxes can be checked, like Income above, to display the selection on the graph. Hovering over the graph displays a tooltip which contains information about all of the points plotted for that date.
 
 ### Ratios
 
-Ratios are produced from the [Financial Metrics](/assess/metrics/accounting/api-financial-metrics) endpoint. It provides a set of pre-calculated ratios and metrics used to assess a company’s financial performance. The Financial Metrics feature performs complex calculations on fully standardized financial statements to produce the following financial metrics and ratios (see [formulas](/assess/metrics/accounting/api-financial-metrics#what-ratios-and-metrics-are-available)):
+Ratios are produced from the [Financial Metrics](/lending/metrics/accounting/api-financial-metrics) endpoint. It provides a set of pre-calculated ratios and metrics used to assess a company’s financial performance. The Financial Metrics feature performs complex calculations on fully standardized financial statements to produce the following financial metrics and ratios (see [formulas](/lending/metrics/accounting/api-financial-metrics#what-ratios-and-metrics-are-available)):
 
 - Gross Profit Margin
 - EBITDA
@@ -105,7 +105,7 @@ The Balance Sheet page consists of a graph displaying selections for the categor
 
 The balance sheet statement provides the fully categorized statement over specified periods of time, for a specific company’s accounting connection.
 
-Check [Prerequisites](/assess/get-started#prerequisites) to make sure you have the required data types enabled.
+Check [Prerequisites](/lending/get-started#prerequisites) to make sure you have the required data types enabled.
 
 The **Data match** percentage displayed in the top right is a comparison of how closely the accounting data aligns with banking data.
 
@@ -141,7 +141,7 @@ The statement displays balance sheet data based on the **Period start**, **Perio
 
 #### Statement format
 
-Each statement has four levels. The fourth level is the original line item (general ledger account) in the company’s accounting package. The first three levels represent a smart categorization layer that we have applied. If you want to change the group that a line item is categorized to, you can do this by following the [instructions for categorizing accounts](/assess/portal/categorization-of-accounts#how-to-categorize-accounts).
+Each statement has four levels. The fourth level is the original line item (general ledger account) in the company’s accounting package. The first three levels represent a smart categorization layer that we have applied. If you want to change the group that a line item is categorized to, you can do this by following the [instructions for categorizing accounts](/lending/portal/categorization-of-accounts#how-to-categorize-accounts).
 
 ##### Categorizing debit accounts
 
@@ -155,7 +155,7 @@ Debit accounts are categorized as **Asset > Current assets > Cash**. However, wh
 
 ### Ratios
 
-The ratios and metrics are calculated from the data in the statement above and use the same period configuration as set at the top of the screen. The supported metrics are (see [formulas](/assess/metrics/accounting/overview)):
+The ratios and metrics are calculated from the data in the statement above and use the same period configuration as set at the top of the screen. The supported metrics are (see [formulas](/lending/metrics/accounting/overview)):
 
 - Current Ratio
 - Debt Service Coverage Ratio
@@ -171,17 +171,17 @@ The Ratios table is displayed below the Statement table. Each metric/ratio can b
 
 If you are a developer, and you are looking to reproduce the outputs of this section, refer to the following API documentation:
 
-- [Enhanced Balance Sheet](/assess/enhanced-financials/balance-sheet-accounts): To produce the balance sheet statement table and graph.
-- [Financial Metrics](/assess/metrics/accounting/api-financial-metrics): To produce the ratios table.
-- [Data Integrity](/assess/data-integrity/api-data-integrity): To produce the Data match percentage.
+- [Enhanced Balance Sheet](/lending/enhanced-financials/balance-sheet-accounts): To produce the balance sheet statement table and graph.
+- [Financial Metrics](/lending/metrics/accounting/api-financial-metrics): To produce the ratios table.
+- [Data Integrity](/lending/data-integrity/api-data-integrity): To produce the Data match percentage.
 
 ## Commerce
 
-The Commerce page consists of the sales analysis and key indicators of merchant health. The [Commerce Metrics](/assess/metrics/commerce/overview) endpoints are used to generate the graphs and metrics displayed on this page.
+The Commerce page consists of the sales analysis and key indicators of merchant health. The [Commerce Metrics](/lending/metrics/commerce/overview) endpoints are used to generate the graphs and metrics displayed on this page.
 
 ### Sales
 
-The _Sales_ section provides a revenue graph generated from the [Revenue](/assess/metrics/commerce/api-revenue) endpoint, and displays the average order value for the date range selected. The dropdown to the right of the graph gives you the option to map _Revenue_ (represented as a currency) or _Revenue growth_ (represented as a percent). Hovering over the graph displays a tooltip that contains information about the point plotted for that date.
+The _Sales_ section provides a revenue graph generated from the [Revenue](/lending/metrics/commerce/api-revenue) endpoint, and displays the average order value for the date range selected. The dropdown to the right of the graph gives you the option to map _Revenue_ (represented as a currency) or _Revenue growth_ (represented as a percent). Hovering over the graph displays a tooltip that contains information about the point plotted for that date.
 
 ![Revenue and revenue growth graphs based on selection criteria](/img/old/4d18153-Sales_1.png)
 
@@ -193,11 +193,11 @@ The Merchant Health section displays customer information. You can select graphs
 
 The following metrics are displayed as follows:
 
-- [New vs. existing customers](/assess/metrics/commerce/api-customer-retention) (graph)
-- [Orders](/assess/metrics/commerce/api-orders) vs. [Refunds](/assess/metrics/commerce/api-refunds) (graph)
-- [Refund rate](/assess/metrics/commerce/api-refunds) (pill)
-- [Customer retention](/assess/metrics/commerce/api-customer-retention) (pill)
-- [Lifetime value](/assess/metrics/commerce/api-lifetime-value) (pill)
+- [New vs. existing customers](/lending/metrics/commerce/api-customer-retention) (graph)
+- [Orders](/lending/metrics/commerce/api-orders) vs. [Refunds](/lending/metrics/commerce/api-refunds) (graph)
+- [Refund rate](/lending/metrics/commerce/api-refunds) (pill)
+- [Customer retention](/lending/metrics/commerce/api-customer-retention) (pill)
+- [Lifetime value](/lending/metrics/commerce/api-lifetime-value) (pill)
 
 ## Banking
 
@@ -255,7 +255,7 @@ To review an existing excluded term, clicking on the term itself within the _Exc
 
 ## Marketing
 
-The Marketing page displays graphs for the **Marketing to revenue** and **Marketing to expense** metrics, and a table of the percentages and metric inputs. These marketing metrics are calculated from accounting data. It is generated from data available on the customer's profit and loss statement (see [formulas](/assess/metrics/accounting/api-financial-metrics#marketing-metrics-formulas)).
+The Marketing page displays graphs for the **Marketing to revenue** and **Marketing to expense** metrics, and a table of the percentages and metric inputs. These marketing metrics are calculated from accounting data. It is generated from data available on the customer's profit and loss statement (see [formulas](/lending/metrics/accounting/api-financial-metrics#marketing-metrics-formulas)).
 
 ### Selection panel
 
@@ -287,7 +287,7 @@ Periods to compare = 4
 
 ![An image showing marketing graphs and extract of a table of marketing data based on selection criteria](/img/old/288edbe-Mark_1.png)
 
-The [Marketing Metrics](/assess/metrics/accounting/api-marketing-metrics) endpoint is used to generate the graphs and metrics displayed on this page. The green and red arrowheads alongside the numbers indicate an increase or decrease respectively compared to the previous period.
+The [Marketing Metrics](/lending/metrics/accounting/api-marketing-metrics) endpoint is used to generate the graphs and metrics displayed on this page. The green and red arrowheads alongside the numbers indicate an increase or decrease respectively compared to the previous period.
 
 See the [API reference](/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-accountingMetrics-marketing).
 
@@ -295,7 +295,7 @@ Rows can be expanded or collapsed to show more or less information. Hovering ove
 
 ## Reports
 
-A **Reports** button is located in the top right corner of every Assess page. It takes you to the **Reports** page where you can generate and download various reports in [Excel format](/assess/excel/overview).
+A **Reports** button is located in the top right corner of every Assess page. It takes you to the **Reports** page where you can generate and download various reports in [Excel format](/lending/excel/overview).
 
 ![A screenshot of the reports page showing the Audit Report row with a sub-row showing a report that was generated](/img/old/a3d1d09-ReportsPage1.png)
 
@@ -307,7 +307,7 @@ When a report was successfully generated, the report name (which is also the fil
 
 ### Report types
 
-- [Audit Report](/assess/excel/audit-report): Identifies indicators of inaccurate or out-of-date accounts, helping you to decision with confidence
-- [Enhanced Cash Flow Report](/assess/excel/enhanced-cash-flow-report): Contains enhanced cash flow data
-- [Enhanced Financials Report](/assess/excel/enhanced-financials-report): Contains enhanced profit and loss and balance sheet data, allowing you to calculate key metrics
-- [Enhanced Invoices Report](/assess/excel/enhanced-invoices-report): Contains enhanced invoices which are linked to payments
+- [Audit Report](/lending/excel/audit-report): Identifies indicators of inaccurate or out-of-date accounts, helping you to decision with confidence
+- [Enhanced Cash Flow Report](/lending/excel/enhanced-cash-flow-report): Contains enhanced cash flow data
+- [Enhanced Financials Report](/lending/excel/enhanced-financials-report): Contains enhanced profit and loss and balance sheet data, allowing you to calculate key metrics
+- [Enhanced Invoices Report](/lending/excel/enhanced-invoices-report): Contains enhanced invoices which are linked to payments

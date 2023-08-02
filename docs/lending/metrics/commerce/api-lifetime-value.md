@@ -7,7 +7,7 @@ updatedAt: "2022-11-29T15:21:28.930Z"
 
 The Lifetime Value endpoint retrieves the value of a specific company over one or more periods of time.
 
-Refer to the [Assess reporting structure](/assess/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/lending/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
 
 For Lifetime Value, these are the dimensions and measures:
 
@@ -25,12 +25,12 @@ For Lifetime Value, these are the dimensions and measures:
 - Is structured based on dimension (index =“0”), i.e. Period.
 - The endpoint will return metrics on **lifetime value** for each period.
 
-View the Lifetime Value [formulas](/assess/metrics/commerce/overview#what-metrics-are-available).
+View the Lifetime Value [formulas](/lending/metrics/commerce/overview#what-metrics-are-available).
 
 The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-commerceMetrics-lifetimeValue">API reference</a>.
 
 ```http
-GET /data/companies/{companyId}/connections/{connectionId}/assess/commerceMetrics/lifetimeValue
+GET /data/companies/{companyId}/connections/{connectionId}/lending/commerceMetrics/lifetimeValue
 ```
 
 # Parameters

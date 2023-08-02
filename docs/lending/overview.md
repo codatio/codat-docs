@@ -2,11 +2,17 @@
 title: "Lending overview"
 sidebar_label: Lending
 description: "Learn about the features that make up the Lending product"
+displayed_sidebar: lending
+hide_title: true
+hide_description: true
+hide_table_of_contents: true
 banner_title: Lending
 banner_class: lending
-banner_icon: "/logos/products-clear/assess.svg"
+banner_icon: "/img/logos/products/logo_assess_clear.svg"
 banner_image: "/img/banners/assess.png"
 banner_text: "Lending helps you make smarter credit decisions on small businesses by enabling you to pull your customers' latest data from the operating systems they are already using. You can use that data for automating decisioning and surfacing new insights on the customer, all via one API."
+video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
+video_text: What is Lending?
 ---
 
 import SocialImages from "@components/global/SocialImages";
@@ -51,7 +57,7 @@ Lending empowers you with a host of features to help you streamline your underwr
       We automatically map your SMB customers' income statement and balance
       sheet to a single standard chart of accounts, meaning you can compare
       across customers easily. Explore{" "}
-      <a href="/assess/enhanced-financials/overview">
+      <a href="/lending/enhanced-financials/overview">
         Enhanced Financials
       </a>
       .
@@ -68,7 +74,7 @@ Lending empowers you with a host of features to help you streamline your underwr
     <p>
       We pre-calculate the top financial ratios used for risk assessments and
       credit decisioning. Explore{" "}
-      <a href="/assess/metrics/accounting/overview">
+      <a href="/lending/metrics/accounting/overview">
         Accounting Financial Metrics
       </a>
       .
@@ -86,7 +92,7 @@ Lending empowers you with a host of features to help you streamline your underwr
     <p>
       We provide the pre-calculated metrics you need to assess a customer’s
       revenue, orders and customer retention profile. Explore{" "}
-      <a href="/assess/metrics/commerce/overview">
+      <a href="/lending/metrics/commerce/overview">
         Commerce Metrics
       </a>
       .
@@ -104,7 +110,7 @@ Lending empowers you with a host of features to help you streamline your underwr
     <p>
       We cross-reference accounting data with banking data to verify data
       accuracy. Explore{" "}
-      <a href="/assess/data-integrity/overview">
+      <a href="/lending/data-integrity/overview">
         Data Integrity
       </a>
       .

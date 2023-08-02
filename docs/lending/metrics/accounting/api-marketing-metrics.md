@@ -7,7 +7,7 @@ updatedAt: "2022-11-02T14:41:42.370Z"
 
 The Marketing Metrics endpoint retrieves the _marketing to revenue_ and _marketing to expense_ metrics over one or more periods of time. These marketing metrics are calculated from accounting data. It is generated from data available on the customer's profit and loss statement.
 
-Refer to the [Assess reporting structure](/assess/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/lending/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
 
 For Marketing Metrics, these are the dimensions and measures:
 
@@ -28,9 +28,9 @@ For Marketing Metrics, these are the dimensions and measures:
 - Is structured based on dimension (index =“0”), i.e. Period.
 - The endpoint will return **marketing to expense** and **marketing to revenue** metrics for each period.
 
-View the Marketing Metrics [formulas](/assess/metrics/accounting/api-financial-metrics#marketing-metrics-formulas).
+View the Marketing Metrics [formulas](/lending/metrics/accounting/api-financial-metrics#marketing-metrics-formulas).
 
-`GET /data/companies/{companyId}/connections/{connectionId}/assess/accountingMetrics/marketing`
+`GET /data/companies/{companyId}/connections/{connectionId}/lending/accountingMetrics/marketing`
 
 # Parameters
 | Parameter               | Type                                        | Description                                                                                                                | Required |

@@ -1,7 +1,7 @@
 ---
 title: "Set up the Sage Bank Feeds integration"
 description: "Set up our integration with Sage Bank Feeds and get your SMB users connected"
-sidebar_label: Setting up
+sidebar_label: Set up
 ---
 
 Before you can push customer bank transactions to target bank accounts in Sage, you need to set up the integration for testing or production use.

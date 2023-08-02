@@ -8,7 +8,7 @@ module.exports = [
   {
     type: "link",
     label: "Sync for Commerce",
-    href: "commerce/overview",
+    href: "/commerce/overview",
     className: "header",
   },
   {
@@ -44,7 +44,14 @@ module.exports = [
       "commerce/mapping-specifications/qbo-mapping-specification",
     ],
   },
-  "commerce/error-documentation",
+  {
+    type: "link",
+    label: "FAQs",
+    customProps: {
+      hr: true,
+    },
+    href:"/commerce/error-documentation",
+  },
   "commerce/coming-soon",
   {
     type: "link",

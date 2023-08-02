@@ -7,7 +7,7 @@
     }
   ],
   "info": {
-    "title": "Assess API",
+    "title": "Lending API",
     "version": "1.0",
     "contact": {
       "email": "support@codat.io",
@@ -15,7 +15,7 @@
       "name": "Codat"
     },
     "summary": "Codat's financial insights API",
-    "description": "Check that you have enabled the [data types required by Assess](https://docs.codat.io/assess/get-started#prerequisites) for all of its features to work.  \n\n[Read more...](https://www.docs.codat.io/assess/)\n\n[See our OpenAPI spec](https://github.com/codatio/oas) ",
+    "description": "Check that you have enabled the [data types required by Assess](https://docs.codat.io/lending/get-started#prerequisites) for all of its features to work.  \n\n[Read more...](https://www.docs.codat.io/lending/)\n\n[See our OpenAPI spec](https://github.com/codatio/oas) ",
     "termsOfService": "https://www.codat.io/legals/"
   },
   "security": [
@@ -61,7 +61,7 @@
     }
   ],
   "paths": {
-    "/data/companies/{companyId}/assess/dataTypes/{dataType}/dataIntegrity/status": {
+    "/data/companies/{companyId}/lending/dataTypes/{dataType}/dataIntegrity/status": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -97,7 +97,7 @@
         "description": "Gets match status for a given company and datatype."
       }
     },
-    "/data/companies/{companyId}/assess/dataTypes/{dataType}/dataIntegrity/summaries": {
+    "/data/companies/{companyId}/lending/dataTypes/{dataType}/dataIntegrity/summaries": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -138,7 +138,7 @@
         ]
       }
     },
-    "/data/companies/{companyId}/assess/dataTypes/{dataType}/dataIntegrity/details": {
+    "/data/companies/{companyId}/lending/dataTypes/{dataType}/dataIntegrity/details": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -1720,7 +1720,7 @@
         "description": "Gets a list of invoices linked to the corresponding banking transaction"
       }
     },
-    "/data/companies/{companyId}/connections/{connectionId}/assess/commerceMetrics/revenue": {
+    "/data/companies/{companyId}/connections/{connectionId}/lending/commerceMetrics/revenue": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -1861,7 +1861,7 @@
         ]
       }
     },
-    "/data/companies/{companyId}/connections/{connectionId}/assess/commerceMetrics/orders": {
+    "/data/companies/{companyId}/connections/{connectionId}/lending/commerceMetrics/orders": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -2018,7 +2018,7 @@
         ]
       }
     },
-    "/data/companies/{companyId}/connections/{connectionId}/assess/commerceMetrics/refunds": {
+    "/data/companies/{companyId}/connections/{connectionId}/lending/commerceMetrics/refunds": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -2181,7 +2181,7 @@
         ]
       }
     },
-    "/data/companies/{companyId}/connections/{connectionId}/assess/commerceMetrics/customerRetention": {
+    "/data/companies/{companyId}/connections/{connectionId}/lending/commerceMetrics/customerRetention": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -2371,7 +2371,7 @@
         ]
       }
     },
-    "/data/companies/{companyId}/connections/{connectionId}/assess/commerceMetrics/lifetimeValue": {
+    "/data/companies/{companyId}/connections/{connectionId}/lending/commerceMetrics/lifetimeValue": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -2489,7 +2489,7 @@
         ]
       }
     },
-    "/data/companies/{companyId}/connections/{connectionId}/assess/subscriptions/process": {
+    "/data/companies/{companyId}/connections/{connectionId}/lending/subscriptions/process": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -2525,7 +2525,7 @@
         "description": "Requests production of key subscription revenue metrics."
       }
     },
-    "/data/companies/{companyId}/connections/{connectionId}/assess/subscriptions/mrr": {
+    "/data/companies/{companyId}/connections/{connectionId}/lending/subscriptions/mrr": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -2561,7 +2561,7 @@
         "description": "Gets key metrics for subscription revenue."
       }
     },
-    "/data/companies/{companyId}/connections/{connectionId}/assess/accountingMetrics/marketing": {
+    "/data/companies/{companyId}/connections/{connectionId}/lending/accountingMetrics/marketing": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -2720,7 +2720,7 @@
         ]
       }
     },
-    "/data/companies/{companyId}/assess/excel": {
+    "/data/companies/{companyId}/lending/excel": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -2789,7 +2789,7 @@
         ]
       }
     },
-    "/data/companies/{companyId}/assess/excel/download": {
+    "/data/companies/{companyId}/lending/excel/download": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -2827,7 +2827,7 @@
         ]
       }
     },
-    "/data/companies/{companyId}/assess/reports/enhancedLiabilities/loan/transactions": {
+    "/data/companies/{companyId}/lending/reports/enhancedLiabilities/loan/transactions": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -2875,7 +2875,7 @@
         ]
       }
     },
-    "/data/companies/{companyId}/assess/reports/enhancedLiabilities/loan": {
+    "/data/companies/{companyId}/lending/reports/enhancedLiabilities/loan": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"

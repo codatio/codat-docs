@@ -8,11 +8,18 @@ module.exports = [
   {
     type: "link",
     label: "Sync for Expenses",
-    href: "expenses/overview",
+    href: "/expenses/overview",
     className: "header",
   },
   "expenses/getting-started",
-  "expenses/config-and-categorize",
+  {
+    type: "link",
+    href: "/expenses/config-and-categorize",
+    label: "Configure",
+    customProps: {
+      hr: true,
+    },
+  },
   {
     type: "category",
     label: "Pushing expenses",
@@ -25,12 +32,15 @@ module.exports = [
       "expenses/sync-process/updating-expenses",
     ],
   },
+  "expenses/monitoring-a-sync",
   {
     type: "link",
-    href: "/commerce/learn/monitoring-a-sync",
-    label: "Monitoring a sync",
+    href: "/expenses/faq",
+    label: "FAQs",
+    customProps: {
+      hr: true,
+    },
   },
-   "expenses/faq",
   {
     type: "link",
     href: "/sync-for-expenses-api",

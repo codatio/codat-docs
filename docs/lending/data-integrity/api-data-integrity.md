@@ -51,7 +51,7 @@ It is recommended that you use match results only for the date range when data f
 
 The endpoint is available in our <a href="/assess-api#/operations/get-dataIntegrity-status-for-dataType">API reference</a>.
 
-`GET /data/companies/{companyId}/assess/dataTypes/{dataType}/dataIntegrity/status`
+`GET /data/companies/{companyId}/lending/dataTypes/{dataType}/dataIntegrity/status`
 
 ### Parameters
 | Parameter | Type | Description | Required |
@@ -164,7 +164,7 @@ So, for example, if you wanted to see summary match results only for transaction
 
 The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-assess-dataTypes-dataType-dataIntegrity-summaries">API reference</a>.
 
-`GET /data/companies/{companyId}/assess/dataTypes/{dataType}/dataIntegrity/summaries`
+`GET /data/companies/{companyId}/lending/dataTypes/{dataType}/dataIntegrity/summaries`
 
 ### Parameters
 | **Parameter** | Type | Description | Required |
@@ -295,7 +295,7 @@ This endpoint exposes match results record by record for a given data type, filt
 
 The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-assess-dataTypes-dataType-dataIntegrity-details">API reference</a>.
 
-`GET /data/companies/{companyId}/assess/dataTypes/{dataType}/dataIntegrity/details`
+`GET /data/companies/{companyId}/lending/dataTypes/{dataType}/dataIntegrity/details`
 
 ### Parameters
 | **Parameter** | Type | Description |
@@ -320,7 +320,7 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 | **description** | _string_ | The transaction description.  |
 | **amount** | _number_ | The transaction value.  |
 | **currency** | _string_ | The currency of the transaction.  |
-| **matches** | _array_, See [Transactions matches array](/assess/data-integrity/api-data-integrity#transactions-matches) | Refer to the matches array table below. |
+| **matches** | _array_, See [Transactions matches array](/lending/data-integrity/api-data-integrity#transactions-matches) | Refer to the matches array table below. |
 
 #### Transactions matches
 This outlines the transaction(s) in which the original transaction has matched with its corresponding transaction in the other platform.
@@ -344,7 +344,7 @@ This outlines the transaction(s) in which the original transaction has matched w
 | **id ** | _string_ | The account’s id. |
 | **accountName ** | _string_ | The name of the account.  |
 | **institution ** | _string_ | The name of the financial institution. |
-| **matches** | _array_, See [Accounts matches array](/assess/data-integrity/api-data-integrity#transactions-matches) | Refer to the matches array table below. |
+| **matches** | _array_, See [Accounts matches array](/lending/data-integrity/api-data-integrity#transactions-matches) | Refer to the matches array table below. |
 
 #### Accounts matches
 | **Element ** | Type  | Description |

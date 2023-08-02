@@ -7,7 +7,7 @@ updatedAt: "2022-11-29T15:20:46.207Z"
 
 The Orders endpoint retrieves the number of orders, total value and average order value for a specific company's commerce connection, over one or more periods of time.
 
-Refer to the [Assess reporting structure](/assess/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/lending/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
 
 For Orders, these are the dimensions and measures:
 
@@ -26,11 +26,11 @@ For Orders, these are the dimensions and measures:
 - Is structured based on dimension (index =“0”), i.e. Period.
 - The endpoint will return the **number of orders**, **total value** and **average order value** for each period.
 
-View the Orders [formulas](/assess/metrics/commerce/overview#what-metrics-are-available).
+View the Orders [formulas](/lending/metrics/commerce/overview#what-metrics-are-available).
 
 The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-commerceMetrics-orders">API reference</a>.
 
-`GET /data/companies/{companyId}/connections/{connectionId}/assess/commerceMetrics/orders`
+`GET /data/companies/{companyId}/connections/{connectionId}/lending/commerceMetrics/orders`
 
 # Parameters
 

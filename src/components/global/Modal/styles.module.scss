@@ -1,0 +1,42 @@
+.modalButton {
+  color: white;
+  border: 2px solid white;
+  border-radius: 4px;
+  background: none;
+  cursor: pointer;
+  transition: 0.5s;
+  padding: 0.5em 0.75em;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  svg {
+    margin-right: 0.5em;
+  }
+}
+
+.modalWrapper {
+  position: fixed;
+  z-index: 999;
+  inset: 0;
+  background: #333333aa;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  border: 2px solid #ededed;
+  background: white;
+  border-radius: 4px;
+  max-width: 95vw;
+  max-height: 95vh;
+}
+
+.modalClosed {
+  display: none
+}

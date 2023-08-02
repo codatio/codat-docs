@@ -1,7 +1,7 @@
 ---
 title: "SMB user: Connects their chosen bank accounts to QuickBooks Online"
 description: "Learn how your SMB users can connect their bank accounts to QuickBooks Online"
-sidebar_label: "SMB user connects accounts"
+sidebar_label: "Auth"
 ---
 
 When the SMB user visits the `linkUrl`, they're directed to the QuickBooks Online Bank Feeds Link UI. This site allows the SMB user to generate a one-time username and password for connecting one or more bank accounts to QuickBooks Online (QBO).

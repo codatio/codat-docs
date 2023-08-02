@@ -6,12 +6,12 @@ updatedAt: "2022-11-02T14:39:48.397Z"
 ---
 
 :::caution New version of enhanced financials
-Functionality described here has been superseded by a newer version of enhanced financials using revised accounting categories. Explore the new [Enhanced Financials](/assess/enhanced-financials/overview).
+Functionality described here has been superseded by a newer version of enhanced financials using revised accounting categories. Explore the new [Enhanced Financials](/lending/enhanced-financials/overview).
 :::
 
 The _Enhanced Balance Sheet_ endpoint provides a fully categorized balance sheet over a specified period(s) of time, for a specific company’s accounting connection.
 
-Refer to the [Assess reporting structure](/assess/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/lending/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
 
 For _Enhanced Balance Sheet_, these are the dimensions and measures:
 
@@ -42,7 +42,7 @@ Debit accounts are categorized as **Asset > Current assets > Cash**. However, wh
 The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-enhancedBalanceSheet">API reference</a>.
 
 ```http
-GET /data/companies{companyId}/connections/{connectionId}/assess/enhancedBalanceSheet
+GET /data/companies{companyId}/connections/{connectionId}/lending/enhancedBalanceSheet
 ```
 
 ## Parameters
@@ -53,7 +53,7 @@ The response structure is split into four areas: Report info, Dimensions, Measur
 
 ## Report info
 
-If any account needs to be recategorized, use the [API: Categorization of accounts](/assess/categories/api-categorization-of-accounts) endpoint.
+If any account needs to be recategorized, use the [API: Categorization of accounts](/lending/categories/api-categorization-of-accounts) endpoint.
 
 ### Measures
 

@@ -8,7 +8,7 @@ hide_table_of_contents: true
 description: "Use Codat's Banking API to connect to your SMB customers' banks and pull up-to-date standardized account and transaction data from their bank accounts via our partner providers."
 banner_title: Banking API
 banner_class: banking
-banner_icon: "/logos/products-clear/banking.svg"
+banner_icon: "/img/logos/products/logo_banking_clear.svg"
 banner_image: "/img/banners/banking.png"
 banner_text: "Use Codat's Banking API to connect to your SMB customers' banks and pull up-to-date standardized account and transaction data from their bank accounts via our partner providers."
 ---

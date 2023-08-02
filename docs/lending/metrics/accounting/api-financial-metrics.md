@@ -7,7 +7,7 @@ updatedAt: "2023-01-16T09:26:35.560Z"
 
 The Financial Metrics API provides the most commonly used financial metrics and ratios used for credit risk assessments of small and medium businesses. Metrics are auto-calculated for you across the full history of financial statements for a linked company and can be retrieved for a single period or spread across multiple periods enabling you to perform time series analysis of the financial performance of the company.
 
-Refer to the [Assess reporting structure](/assess/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/lending/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
 
 Supported metrics:
 
@@ -20,7 +20,7 @@ Supported metrics:
 7. Working capital
 8. Fixed service coverage charge
 
-The Financial Metrics API leverages the [Categories](/assess/categories) feature, which maps each business's bespoke chart of accounts to a single standard chart of accounts across all of your small business customers. The Financial Metrics API is reliant on complete and accurate categorizations to produce meaningful metrics.
+The Financial Metrics API leverages the [Categories](/lending/categories) feature, which maps each business's bespoke chart of accounts to a single standard chart of accounts across all of your small business customers. The Financial Metrics API is reliant on complete and accurate categorizations to produce meaningful metrics.
 
 Any metric (including metric inputs) that have null/blank values means that data couldn't be computed.
 
@@ -28,7 +28,7 @@ Any metric (including metric inputs) that have null/blank values means that data
 
 This endpoint retrieves all the available financial performance metrics held against a company, over one or more periods of time. The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-financialMetrics">API reference</a>.
 
-`GET /data/companies/{companyId}/connections/{connectionId}/assess/financialMetrics`
+`GET /data/companies/{companyId}/connections/{connectionId}/lending/financialMetrics`
 
 ## Parameters
 

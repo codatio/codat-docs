@@ -10,38 +10,38 @@ While the Portal provides a simple way of exploring data, you'll need to use the
 
 We've packaged up Codat's functionality mainly by *product*, with our *Common API* providing core functionalities used across our product. You can explore each API and its endpoints in our API references.
 
-| API | Description |
+| Product API | Description |
 | :- | :- |
 | **[Bank Feeds API](/bank-feeds-api)** | Set up bank feeds from accounts in your application to supported accounting platforms. |
 | **[Lending API](/assess-api)** | Make credit decisions backed by enhanced financials, metrics, reports, and data integrity features. |
 | **[Sync for Commerce API](/accounting-api)** | Push merchants' data from your ecommerce or point-of-sale (POS) platform into your merchants' accounting platform. |
 | **[Sync for Expenses API](/sync-for-expenses-api)** | Push expenses to accounting platforms. |
-| **[Sync for Payables API](/sync-for-expenses-api)** | Push expenses to accounting platforms. |
-| **[Sync for Payroll API](/sync-for-expenses-api)** | Push expenses to accounting platforms. |
+| **[Sync for Payables API](/sync-for-payables-api)** | Push expenses to accounting platforms. |
+| **[Sync for Payroll API](/sync-for-payroll-api)** | Push expenses to accounting platforms. |
 
 Explore the underlying [OpenAPI Spec](https://github.com/codatio/oas).
 
 
 <details>
-<summary><b>Utilities</b></summary>
+  <summary><b>Don't see what you're looking for?</b></summary>
+  
+  We've recently reorganized our products. You can find the OpenAPI specifications you may have been using before here:
 
-| **[Files API](/files-api)** | Capture your SMB's business documents with our file upload functionality. |
-| **[Common API](/codat-api)** | Manage the building blocks of Codat, including companies, connections, and more. |
+  <li><a href="/sync-for-expenses-api-v2">Sync for Commerce API v1</a></li>
+  <li><a href="/sync-for-expenses-api-v1">Sync for Expenses API v1</a></li>
+  <li><a href="/accounting-api">Accounting API</a></li>
+  <li><a href="/banking-api">Banking API</a></li>
+  <li><a href="/commerce-api">Commerce API</a></li>
 </details>
 
-<details>
-<summary><b>Don't see what you're looking for?</b></summary>
 
-| **[Accounting API](/accounting-api)** | Access standardized accounting data from our accounting integrations. |
-| **[Assess API](/assess-api)** | Make credit decisions backed by enhanced financials, metrics, reports, and data integrity features. |
-| **[Banking API](/banking-api)** | Access standardized banking data from our banking integrations. |
-| **[Bank Feeds API](/bank-feeds-api)** | Set up bank feeds from accounts in your application to supported accounting platforms. |
-| **[Commerce API](/commerce-api)** | Access standardized commerce data from our commerce integrations. |
+### Utilities
+
+| API | Description |
+| :- | :- |  
+| **[Platform API](/codat-api)** | Manage the building blocks of Codat, including companies, connections, and more. Prev. 'Common API'|
 | **[Files API](/files-api)** | Capture your SMB's business documents with our file upload functionality. |
-| **[Sync for Commerce API](/accounting-api)** | Push merchants' data from your ecommerce or point-of-sale (POS) platform into your merchants' accounting platform. |
-| **[Sync for Expenses API](/sync-for-expenses-api)** | Push expenses to accounting platforms. |
-| **[Common API](/codat-api)** | Manage the building blocks of Codat, including companies, connections, and more. |
-</details>
+
 ---
 
 ## Read next

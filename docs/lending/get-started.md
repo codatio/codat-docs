@@ -1,21 +1,21 @@
 ---
 title: "Get started with Lending"
 sidebar_label: Get started
-description: "Instructions for getting started with Assess and tables of supported features for accounting, banking and commerce data sources"
+description: "Instructions for getting started with Lending and tables of supported features for accounting, banking and commerce data sources"
 ---
 
-This document helps you get started with Assess, and covers both the API and the no-code option available in the Portal.
+This document helps you get started with Lending, and covers both the API and the no-code option available in the Portal.
 
-## Enable Assess
+## Enable Lending
 
 1. Open the <a href="https://app.codat.io" target="_blank">Codat Portal</a> and sign in.
 2. Click on **Company**.
-3. In the left hand navigation, click _Assess_.
+3. In the left hand navigation, click _Lending_.
 
-![Assess Profit and Loss page](/img/old/cdf1e35-Banner_1.png)
+![Lending Profit and Loss page](/img/old/cdf1e35-Banner_1.png)
 
-4. If you have Assess enabled, you will be taken to the **Assess Profit and Loss** page. For more information, visit the [Assess in the Portal](/assess/portal/overview) documentation.
-5. If you don't have Assess access, you can enable it by following the onscreen prompt.
+4. If you have Lending enabled, you will be taken to the **Lending Profit and Loss** page. For more information, visit the [Lending in the Portal](/lending/portal/overview) documentation.
+5. If you don't have Lending access, you can enable it by following the onscreen prompt.
 
 ## Prerequisites
 
@@ -35,7 +35,7 @@ Configure your data type settings. Click on the **Settings** tab in the top menu
 - Commerce - Customers
 - Commerce - Orders
 
-If you don't have all of these enabled, some features of Assess will not work.
+If you don't have all of these enabled, some features of Lending will not work.
 
 Configure your _Link settings_. Click on the **Settings** tab in the top menu and then navigate to _Auth flow > Link_. Scroll down to _Integration categories_ and ensure _Accounting_, _Commerce_ and _Banking_ data types are enabled.
 
@@ -51,7 +51,7 @@ Configure your _Link settings_. Click on the **Settings** tab in the top menu an
 
 The chart of accounts defines the financial structure of a company by providing a list of all accounts used in the company's general ledger. The Categories feature lets you and your customers categorize transactions into one of the account types, such as Assets, Liabilities, Income, Expenses. There are 162 account categories defined that businesses can use.
 
-Other features of Assess leverages the Categories feature and are reliant on complete and accurate categorizations to produce meaningful results. See our categories documentation:
+Other features of Lending leverages the Categories feature and are reliant on complete and accurate categorizations to produce meaningful results. See our categories documentation:
 
 - Portal: Categorization of accounts
 - API: Categorization of accounts
@@ -80,18 +80,18 @@ We only produce commerce metrics for platforms that support the following data t
 
 ## How can you use it
 
-Assess is available as a no-code product in the Portal or as APIs to incorporate in your own solutions.
+Lending is available as a no-code product in the Portal or as APIs to incorporate in your own solutions.
 
 ### Portal
 
-Visit our [Assess in the Portal](/assess/portal/overview) documentation.
+Visit our [Lending in the Portal](/lending/portal/overview) documentation.
 
 ### API
 
-Explore the features that make up Assess:
+Explore the features that make up Lending:
 
-- [Categories](/assess/categories)
-- [Enhanced Financials](/assess/enhanced-financials/overview)
-- [Accounting Metrics](/assess/metrics/accounting/api-financial-metrics)
-- [Commerce Metrics](/assess/metrics/commerce/overview)
-- [Data Integrity](/assess/data-integrity/overview)
+- [Categories](/lending/categories)
+- [Enhanced Financials](/lending/enhanced-financials/overview)
+- [Accounting Metrics](/lending/metrics/accounting/api-financial-metrics)
+- [Commerce Metrics](/lending/metrics/commerce/overview)
+- [Data Integrity](/lending/data-integrity/overview)

@@ -355,7 +355,7 @@ module.exports = {
 
     //
     {
-      from: "/assess/guides/underwriting/introduction",
+      from: "/lending/guides/underwriting/introduction",
       to: "/guides/loan-qualification/introduction",
     },
     {
@@ -380,19 +380,19 @@ module.exports = {
     },
     // --- delete soon
     {
-      from: "/assess/guides/loan-qualification/introduction",
+      from: "/lending/guides/loan-qualification/introduction",
       to: "/guides/loan-qualification/introduction",
     },
     {
-      from: "/assess/guides/loan-qualification/setting-up",
+      from: "/lending/guides/loan-qualification/setting-up",
       to: "/guides/loan-qualification/setting-up",
     },
     {
-      from: "/assess/guides/loan-qualification/process-loan",
+      from: "/lending/guides/loan-qualification/process-loan",
       to: "/guides/loan-qualification/process-loan",
     },
     {
-      from: "/assess/guides/loan-qualification/uw-decision",
+      from: "/lending/guides/loan-qualification/uw-decision",
       to: "/guides/loan-qualification/uw-decision",
     },
     {
@@ -550,6 +550,11 @@ module.exports = {
     {
       from: "/expenses/faq",
       to: "/expenses/faq",
+    },
+
+    {
+      from: "/guides/bank-feeds-tutorial",
+      to: "/bank-feeds/guides/bank-feeds-tutorial",
     },
 
     ...mapIntegrationRedirects(acc, "accounting"),

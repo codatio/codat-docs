@@ -1,8 +1,7 @@
 ---
 title: "Overview"
 description: "Explore the accounting platforms you can connect to through our Accounting API."
-createdAt: "2020-10-02T14:09:36.204Z"
-updatedAt: "2022-11-18T11:48:00.917Z"
+sidebar_label: Accounting
 ---
 
 <Head>

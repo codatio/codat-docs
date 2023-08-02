@@ -3,11 +3,8 @@ const authFlow = require("./sidebars/auth-flow");
 const useApi = require("./sidebars/use-the-api");
 
 const products = require("./sidebars/products");
+const usecases = require("./sidebars/usecases");
 
-const accountingAPI = require("./sidebars/accounting-api");
-const bankingAPI = require("./sidebars/banking-api");
-const commerceAPI = require("./sidebars/commerce-api");
-const assess = require("./sidebars/assess");
 const lending = require("./sidebars/lending");
 const bankfeeds = require("./sidebars/bank-feeds");
 const commerce = require("./sidebars/sync-for-commerce");
@@ -15,7 +12,13 @@ const expenses = require("./sidebars/sync-for-expenses");
 const payroll = require("./sidebars/payroll");
 const payables = require("./sidebars/payables");
 
-const integrations = require("./sidebars/integrations");
+const accountingAPI = require("./sidebars/accounting-api");
+const bankingAPI = require("./sidebars/banking-api");
+const commerceAPI = require("./sidebars/commerce-api");
+
+const integrationsAccounting = require("./sidebars/integrations-accounting");
+const integrationsBanking = require("./sidebars/integrations-banking");
+const integrationsCommerce = require("./sidebars/integrations-commerce");
 
 module.exports = {
   docs: [
@@ -54,42 +57,24 @@ module.exports = {
       },
       items: [
         {
-          type: "category",
-          label: "Loan qualification",
-          collapsed: true,
-          items: [
-            "guides/loan-qualification/introduction",
-            "guides/loan-qualification/setting-up",
-            "guides/loan-qualification/process-loan",
-            "guides/loan-qualification/uw-decision",
-          ],
-        },
-        {
-          type: "category",
-          label: "Invoice financing",
-          collapsed: true,
-          items: [
-            "guides/invoice-finance/introduction",
-            "guides/invoice-finance/setting-up",
-            "guides/invoice-finance/process-invoice",
-            "guides/invoice-finance/inv-fin-decision",
-          ],
-        },
-        {
-          type: "category",
-          label: "Bill pay",
-          collapsed: true,
-          items: [
-            "guides/bill-pay/introduction",
-            "guides/bill-pay/use-bill-pay-demo-app",
-            "guides/bill-pay/run-demo-app-locally",
-            "guides/bill-pay/how-the-demo-app-works",
-          ],
+          type: "link",
+          label: "Invoice finance",
+          href: "/lending/guides/invoice-finance/introduction",
         },
         {
           type: "link",
-          href: "/guides/bank-feeds-tutorial",
-          label: "Bank transactions reconciliation"
+          label: "Loan qualification",
+          href: "/lending/guides/loan-qualification/introduction",
+        },
+        {
+          type: "link",
+          label: "Bill pay",
+          href: "/payables/guides/bill-pay/introduction",
+        },
+        {
+          type: "link",
+          label: "Bank transactions reconciliation",
+          href: "/bank-feeds/guides/bank-feeds-tutorial",
         },
       ],
     },
@@ -102,41 +87,7 @@ module.exports = {
         type: 'doc',
         id: "usecases/overview",
       },
-      items: [
-        "usecases/summary/lending",
-        "usecases/summary/managing-expenses",
-        "usecases/summary/dashboarding",
-        {
-          type: "category",
-          label: "Automating payables",
-          collapsed: true,
-          className: "top-level-item",
-          items: [
-            "usecases/summary/automating-payables",
-            {
-              type: "link",
-              label: "Demo app guide",
-              href: "https://docs.codat.io/guides/bill-pay/introduction",
-            },
-            {
-              type: "category",
-              label: "Implementing bill pay",
-              collapsed: true,
-              className: "top-level-item",
-              items: [
-                "usecases/bill-pay/overview",
-                "usecases/bill-pay/bills",
-                "usecases/bill-pay/mapping",
-                "usecases/bill-pay/payments",
-              ],
-            }
-          ],
-        },
-        "usecases/summary/automating-receivables",
-        "usecases/summary/integrating-commerce-data",
-        "usecases/summary/managing-payroll",
-        "usecases/summary/reconciling-bank-transactions",
-      ],
+      items: usecases,
     },
     {
       type: "category",
@@ -160,7 +111,7 @@ module.exports = {
           type: "link",
           href: "/codat-api",
           className: "external",
-          label: "Common API reference",
+          label: "Platform API reference",
         },
       ],
     },
@@ -224,22 +175,30 @@ module.exports = {
       items: authFlow,
     },
     {
-      type: "link",
+      type: "category",
       label: "Integrations",
+      collapsed: true,
       className: "top-level-item integrations",
-      href: "/integrations/all-integrations",
+      items: [
+        "integrations/accounting/overview",
+        "integrations/banking/overview",
+        "integrations/commerce/overview",
+        "bank-feeds/integrations/overview",
+        "integrations/file-upload",
+      ]
     },
     ...products,
   ],
-  accountingAPI: accountingAPI,
-  bankingAPI: bankingAPI,
-  commerceAPI: commerceAPI,
   bankfeeds: bankfeeds,
   commerce: commerce,
-  assess: assess,
   lending: lending,
   expenses: expenses,
   payroll: payroll,
   payables: payables,
-  integrations: integrations,
+  integrationsAccounting: integrationsAccounting,
+  integrationsBanking: integrationsBanking,
+  integrationsCommerce: integrationsCommerce,
+  accountingAPI: accountingAPI,
+  bankingAPI: bankingAPI,
+  commerceAPI: commerceAPI,
 };

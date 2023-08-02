@@ -4,7 +4,7 @@ description: "When an SMB user has linked their Recurly account, access their su
 sidebar_label: Use
 ---
 
-The Recurly integration doesn't yet expose standardized data types or provide any data visualization or metrics (for example, in Assess).
+The Recurly integration doesn't yet expose standardized data types or provide any data visualization or metrics (for example, in Lending).
 
 Instead, when an SMB customer (a company) has [linked their Recurly account](/integrations/commerce/recurly/commerce-recurly-setup#smb-customer-authenticate-and-connect-your-commerce-data), you can access their subscriptions and billing data through the `proxy` endpoint in the Codat API. Only GET requests are currently supported.
 

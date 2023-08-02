@@ -4,7 +4,7 @@ description: "Describes the process and endpoints for the generation and downloa
 sidebar_label: "Overview"
 ---
 
-The Excel reports endpoints are used to produce and download excel reports. For more information on available reports, see the [report types](#available-report-types) section.  These reports can be generated via the [portal](/assess/portal/overview#reports) or the API.
+The Excel reports endpoints are used to produce and download excel reports. For more information on available reports, see the [report types](#available-report-types) section.  These reports can be generated via the [portal](/lending/portal/overview#reports) or the API.
 
 The process to download an Excel report via the API is:
 
@@ -17,12 +17,12 @@ Only one request will be processed at a time per SMB company and per report type
 
 ## Available report types
 
-- [Audit Report](/assess/excel/audit-report): Identifies indicators of inaccurate or out-of-date accounts, helping you to decision with confidence
-- [Enhanced Cash Flow Report](/assess/excel/enhanced-cash-flow-report): Contains enhanced cash flow data
-- [Enhanced Financials Report](/assess/excel/enhanced-financials-report): Contains enhanced profit and loss and balance sheet data, allowing you to calculate key metrics
-- [Enhanced Invoices Report](/assess/excel/enhanced-invoices-report): Contains enhanced invoices which are linked to payments
+- [Audit Report](/lending/excel/audit-report): Identifies indicators of inaccurate or out-of-date accounts, helping you to decision with confidence
+- [Enhanced Cash Flow Report](/lending/excel/enhanced-cash-flow-report): Contains enhanced cash flow data
+- [Enhanced Financials Report](/lending/excel/enhanced-financials-report): Contains enhanced profit and loss and balance sheet data, allowing you to calculate key metrics
+- [Enhanced Invoices Report](/lending/excel/enhanced-invoices-report): Contains enhanced invoices which are linked to payments
 
-Please also refer to the [Metrics Template](/assess/excel/enhanced-financials-report#metrics-template) which demonstrates how we can use the data within the [Enhanced Financials Report](/assess/excel/enhanced-financials-report) to calculate financial metrics.
+Please also refer to the [Metrics Template](/lending/excel/enhanced-financials-report#metrics-template) which demonstrates how we can use the data within the [Enhanced Financials Report](/lending/excel/enhanced-financials-report) to calculate financial metrics.
 
 ## Parameters
 
@@ -37,7 +37,7 @@ For each of the endpoints described below, you will provide the same parameters.
 
 The endpoint is available in our [API Reference](/assess-api#/operations/post-data-companies-companyId-assess-excel).
 
-`POST /data/companies/{companyId}/assess/excel`
+`POST /data/companies/{companyId}/lending/excel`
 
 |Field|Type|Description|
 |-----|----|-----------|
@@ -70,7 +70,7 @@ When the report is complete, the `inProgress` field will have the value _false_ 
 
 The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-assess-excel">API reference</a>.
 
-`GET /data/companies/{companyId}/assess/excel`
+`GET /data/companies/{companyId}/lending/excel`
 
 |Field|Type|Description|
 |----|----|----|
@@ -99,6 +99,6 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 
 The endpoint is available in our <a href="/assess-api#/operations/post-data-companies-companyId-assess-excel-download">API reference</a>.
 
-`GET /data/companies/{companyId}/assess/excel/download`
+`GET /data/companies/{companyId}/lending/excel/download`
 
 The downloadable Excel file is available in the response.  Click it to save to your local machine.

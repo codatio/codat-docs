@@ -8,10 +8,12 @@ hide_description: true
 hide_table_of_contents: true
 tags: [overview, syncforexpense]
 banner_title: Sync for Expenses
-banner_class: sfe
-banner_icon: "/logos/products-clear/sfe.svg"
+banner_class: expenses
+banner_icon: "/img/logos/products/logo_expenses_clear.svg"
 banner_image: "/img/banners/sfe-flow.png"
 banner_text: "Embedded accounting integrations for corporate card providers."
+video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
+video_text: What is Sync for Expenses?
 ---
 
 import {IntegrationsList} from '@components/global/Integrations'

@@ -110,7 +110,7 @@ description: "Take your first steps through the information and support availabl
       <div className="header">
         <a href="/guides/loan-qualification/introduction">
           <img
-            src="/logos/usecases/company-info.svg"
+            src="/img/logos/usecases/company-info.svg"
             className="icon usecase"
           />
         </a>
@@ -123,14 +123,14 @@ description: "Take your first steps through the information and support availabl
         </p>    
       </div>
     </div>
-    <p>Lend with Codat and our Assess product</p>
+    <p>Lend with Codat and our Lending product</p>
   </li>
   <li className="card mini">
     <div className="card-row">
       <div className="header">
         <a href="/guides/invoice-finance/introduction">
           <img
-            src="/logos/usecases/lending.svg"
+            src="/img/logos/usecases/lending.svg"
             className="icon usecase"
           />
         </a>
@@ -150,7 +150,7 @@ description: "Take your first steps through the information and support availabl
       <div className="header">
         <a href="/guides/bill-pay/introduction">
           <img
-            src="/logos/usecases/payments.svg"
+            src="/img/logos/usecases/payments.svg"
             className="icon usecase"
           />
         </a>
@@ -170,7 +170,7 @@ description: "Take your first steps through the information and support availabl
       <div className="header">
         <a href="/guides/bank-feeds-tutorial">
           <img
-            src="/logos/usecases/sync.svg"
+            src="/img/logos/usecases/sync.svg"
             className="icon usecase"
           />
         </a>

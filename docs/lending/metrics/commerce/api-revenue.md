@@ -7,7 +7,7 @@ updatedAt: "2022-11-29T15:20:55.875Z"
 
 The Revenue endpoint retrieves the revenue and revenue growth for a specific company connection, over one or more periods of time.
 
-Refer to the [Assess reporting structure](/assess/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/lending/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
 
 For Revenue, these are the dimensions and measures:
 
@@ -26,11 +26,11 @@ For Revenue, these are the dimensions and measures:
 - Is structured based on dimension (index =“0”), i.e. Period.
 - The endpoint will return the **revenue** and **revenue growth** as a percentage change for each period.
 
-View the Revenue [formulas](/assess/metrics/commerce/overview#what-metrics-are-available).
+View the Revenue [formulas](/lending/metrics/commerce/overview#what-metrics-are-available).
 
 The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-commerceMetrics-revenue">API reference</a>.
 
-`GET /data/companies/{companyId}/connections/{connectionId}/assess/commerceMetrics/revenue`
+`GET /data/companies/{companyId}/connections/{connectionId}/lending/commerceMetrics/revenue`
 
 # Parameters
 

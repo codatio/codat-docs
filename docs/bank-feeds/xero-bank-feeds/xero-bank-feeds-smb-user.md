@@ -1,6 +1,6 @@
 ---
 title: "SMB user account connection"
-sidebar_label: Account connection
+sidebar_label: Auth
 description: "Learn how your SMB users can connect their bank accounts to Xero"
 ---
 

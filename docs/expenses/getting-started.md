@@ -13,8 +13,8 @@ Before you start using sync for expenses, you will need to ensure that the follo
   <summary>Recommended data type settings</summary>
 
 
-| DataType Name       | dataType           | Use Case                                                                                                                                                                                               | Fetch On First Link | Sync Frequency |
-| ------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- | -------------- |
+| DataType name | dataType | Use case | Fetch on first link? | Sync frequency |
+| :- | :- | :- | :- | :- |
 | Accounts            | `chartOfAccounts`    | Accounts used within the general ledger to record and categorize expenses.                                                                                                                             | ✅                  | daily          |
 | Bank Accounts       | `bankAccounts`       | A bank account is the primary account from where expenses will be paid from.                                                                                                                           | ✅                  | daily          |
 | Company             | `company`            | The company info contains helpful information such as the name of the linked company & base currency and registered addresses.                                                                         | ✅                  | daily          |
@@ -27,7 +27,9 @@ Before you start using sync for expenses, you will need to ensure that the follo
 
 <details>
   <summary>Other useful data types</summary>
-| DataType Name       | dataType           | Use Case |
+
+| DataType Name | dataType | Use Case |
+| :- | :- | :- | 
 | Direct Costs        | `directCosts`        | Sync for expenses uses direct cost to represent the expense transaction within the accounting platform.        |
 | Direct Incomes      | `directIncomes`      | Typically direct incomes are used to represent any income generating transaction type such as cashback rewards.    |
 | Journal Entries     | `journalEntries`     | Journal entries are used where an accounting platform does not support a representation of direct costs. They are also used to represent transfers such as topping up or paying down the expense card.   |
@@ -37,6 +39,7 @@ Before you start using sync for expenses, you will need to ensure that the follo
 ## Connect to an SMB’s accounting platform
 
 In Codat, a company represents a business sharing access to their data. Each company can have multiple data connections to different data sources. For example, a business can have one connection to Xero for accounting data and a connection to Plaid for Open banking data.
+
 ![An image from the static](/img/sync-for-expenses/sfe-connections.png)
 
 With Sync for Expenses each company will have two data connections:

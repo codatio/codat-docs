@@ -7,7 +7,7 @@ updatedAt: "2022-11-29T15:21:12.613Z"
 
 The Refunds endpoint retrieves the number and total value of refunds, and the refund rate for a specific company's commerce connection, over one or more periods of time.
 
-Refer to the [Assess reporting structure](/assess/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/lending/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
 
 For Refunds, these are the dimensions and measures:
 
@@ -27,11 +27,11 @@ For Refunds, these are the dimensions and measures:
 - Is structured based on dimension (index =“0”), i.e. Period.
 - The endpoint will return the **number of refunds**, **value of refunds** and **refund rate** for each period.
 
-View the Refunds [formulas](/assess/metrics/commerce/overview#what-metrics-are-available).
+View the Refunds [formulas](/lending/metrics/commerce/overview#what-metrics-are-available).
 
 The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-commerceMetrics-refunds">API reference</a>.
 
-`GET /data/companies/{companyId}/connections/{connectionId}/assess/commerceMetrics/refunds`
+`GET /data/companies/{companyId}/connections/{connectionId}/lending/commerceMetrics/refunds`
 
 # Parameters
 

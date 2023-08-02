@@ -1,7 +1,5 @@
 ---
 title: "Coming soon!"
-createdAt: "2022-11-15T13:40:48.346Z"
-updatedAt: "2022-11-23T15:21:56.514Z"
 ---
 
 :::caution Beta testing

@@ -1,6 +1,6 @@
 ---
 title: "Set up the Xero Bank Feeds integration"
-sidebar_label: Setting up
+sidebar_label: Set up
 description: "Set up our integration with Xero Bank Feeds"
 ---
 

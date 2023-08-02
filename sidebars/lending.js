@@ -8,7 +8,7 @@ module.exports = [
   {
     type: "link",
     label: "Lending",
-    href: "lending/overview",
+    href: "/lending/overview",
     className: "header",
   },
   {
@@ -18,13 +18,30 @@ module.exports = [
     items: [
       "lending/get-started",
       {
-        type: "link",
+        type: "category",
         label: "Loan qualification",
-        href: "guides/loan-qualification/introduction",
+        collapsed: true,
+        items: [
+          "lending/guides/loan-qualification/introduction",
+          "lending/guides/loan-qualification/setting-up",
+          "lending/guides/loan-qualification/process-loan",
+          "lending/guides/loan-qualification/uw-decision",
+        ],
       },
       {
         type: "category",
-        label: "Migration Guides",
+        label: "Invoice financing",
+        collapsed: true,
+        items: [
+          "lending/guides/invoice-finance/introduction",
+          "lending/guides/invoice-finance/setting-up",
+          "lending/guides/invoice-finance/process-invoice",
+          "lending/guides/invoice-finance/inv-fin-decision",
+        ],
+      },
+      {
+        type: "category",
+        label: "Migration guides",
         collapsed: true,
         items: [
           "lending/guides/migration-guides/deprecation-account-categories",
@@ -36,48 +53,23 @@ module.exports = [
     ],
   },
   {
-    type: "category",
-    label: "Enhanced financials",
-    collapsed: true,
-    items: [
-      "lending/enhanced-financials/overview",
-      "lending/enhanced-financials/categorize-accounts",
-      "lending/enhanced-financials/supported-account-categories",
-      { type: "link", label: "Enhanced profit and loss accounts", href: "/assess-api#/operations/get-accounts-for-enhanced-profit-and-loss" },
-      { type: "link", label: "Enhanced balance sheet accounts", href: "/assess-api#/operations/get-accounts-for-enhanced-balance-sheet" },
-    ],
+    type: "link",
+    label: "Enhanced Financials",
+    customProps: {
+      hr: true,
+    },
+    href: "/lending/enhanced-financials/overview",
   },
-  {
-    type: "category",
-    label: "Enhanced cash flow",
-    collapsed: true,
-    items: [
-      "lending/enhanced-cash-flow/overview",
-      { type: "link", label: "Enhanced cash flow transactions", href: "/assess-api#/operations/get-enhanced-cash-flow-transactions" },
-    ],
-  },
-  {
-    type: "category",
-    label: "Enhanced invoices",
-    collapsed: true,
-    items: [
-      "lending/enhanced-invoices/overview",
-      { type: "link", label: "Enhanced invoices report", href: "/assess-api#/operations/get-enhanced-invoices-report" },
-    ],
-  },
-  {
-    type: "category",
-    label: "Enhanced liabilties",
-    collapsed: true,
-    items: [
-      { type: "link", label: "Enhanced liabilties loan summary", href: "/assess-api#/operations/get-loan-summary" },
-      { type: "link", label: "Enhanced liabilties loan transactions", href: "/assess-api#/operations/list-loan-transactions" },
-    ],
-  },
+  "lending/enhanced-cash-flow/overview",
+  "lending/enhanced-invoices/overview",
+  "lending/enhanced-liabilities/overview",
   {
     type: "category",
     label: "Data integrity",
     collapsed: true,
+    customProps: {
+      hr: true,
+    },
     items: [
       "lending/data-integrity/overview",
       "lending/data-integrity/api-data-integrity",
@@ -115,25 +107,15 @@ module.exports = [
   },
   {
     type: "category",
-    label: "Assess in the Portal",
-    collapsed: true,
-    items: [
-      "assess/portal/overview",
-      "assess/portal/data-integrity",
-      "assess/portal/categorize-accounts"
-    ],
-  },
-  {
-    type: "category",
     label: "Excel download",
     collapsed: true,
     items: [
-      "assess/excel/overview",
-      "assess/excel/assess-report",
-      "assess/excel/audit-report",
-      "assess/excel/enhanced-financials-report",
-      "assess/excel/enhanced-invoices-report",
-      "assess/excel/enhanced-cash-flow-report",
+      "lending/excel/overview",
+      "lending/excel/assess-report",
+      "lending/excel/audit-report",
+      "lending/excel/enhanced-financials-report",
+      "lending/excel/enhanced-invoices-report",
+      "lending/excel/enhanced-cash-flow-report",
     ],
   },
   {
@@ -141,13 +123,30 @@ module.exports = [
     label: "Liabilities",
     collapsed: true,
     items: [
-      "assess/loans/loan-transactions",
+      "lending/loans/loan-transactions",
     ],
   },
-  'assess/troubleshooting',
+  {
+    type: "category",
+    label: "Assess in the Portal",
+    collapsed: true,
+    items: [
+      "lending/portal/overview",
+      "lending/portal/data-integrity",
+      "lending/portal/categorize-accounts"
+    ],
+  },
+  {
+    type: "link",
+    href: '/lending/troubleshooting',
+    label: "FAQs",
+    customProps: {
+      hr: true,
+    },
+  },
   {
     type: "link",
     href: "/assess-api",
-    label: "Assess API reference",
+    label: "API reference",
   },
 ];

@@ -8,7 +8,7 @@ updatedAt: "2023-01-27T16:35:29.376Z"
 
 There are two account categorization versions currently available in the Codat Portal. 
 
-_Version 3_ is a revised version of account categories that should be used going forward. It supports our new [Enhanced Financials](/assess/enhanced-financials/overview) endpoints. Continue reading to learn how to categorize the accounts using _Version 3_.
+_Version 3_ is a revised version of account categories that should be used going forward. It supports our new [Enhanced Financials](/lending/enhanced-financials/overview) endpoints. Continue reading to learn how to categorize the accounts using _Version 3_.
 :::
 
 With Enhanced Financials, Codat automatically suggests a category for each account that appears in the enhanced Profit and Loss and Balance Sheet. 
@@ -19,13 +19,13 @@ You can view all available categories proposed for accounts and, where relevant,
 
 1. Navigate to **Companies**, then click the company that requires categorization review. Select **Products > Assess** in the side menu. Finally, click **Categorize accounts**. 
 
-![An image of the Assess portal view and the categorization button](/img/assess/acct-categorization-v3-1.png)
+![An image of the Assess portal view and the categorization button](/img/lending/acct-categorization-v3-1.png)
 
 2. On the **Account Categorization** page, use the **Categories version** selector to choose version 3. This version represents the latest account categorization. 
 
    Here, you can view the categories automatically proposed for various accounts.
 
-![An image of the Assess Categorization view in the Portal](/img/assess/acct-categorization-v3-2.png)
+![An image of the Assess Categorization view in the Portal](/img/lending/acct-categorization-v3-2.png)
 
 3. To change the category of an account, select the account using the tickbox and click **Recategorize**. 
 
@@ -33,6 +33,6 @@ You can view all available categories proposed for accounts and, where relevant,
 
    Once saved, the account moves to the **Confirmed accounts** tab. You can also perform recategorization there.
 
-![An image of the Assess Categorization view in the Portal with an account in process of recategorizing](/img/assess/acct-categorization-v3-3.png)
+![An image of the Assess Categorization view in the Portal with an account in process of recategorizing](/img/lending/acct-categorization-v3-3.png)
 
 That's it! The Enhanced Profit and Loss and Enhanced Balance Sheet will return the updated category for the accounts going forward.

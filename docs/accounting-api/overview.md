@@ -8,9 +8,11 @@ hide_table_of_contents: true
 description: "Codat's Accounting API is a flexible API for pulling and pushing up-to-date accounting data to your customers' accounting software. It gives you a simple way to view, create, update, and delete data without having to worry about each platform's specific complexities."
 banner_title: Accounting API
 banner_class: accounting
-banner_icon: "/logos/products-clear/accounting.svg"
+banner_icon: "/img/logos/products/logo_accounting_clear.svg"
 banner_image: "/img/banners/accounting-json.png"
 banner_text: "Codat's Accounting API is a flexible API for pulling and pushing up-to-date accounting data to your customers' accounting software. It gives you a simple way to view, create, update, and delete data without having to worry about each platform's specific complexities."
+video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
+video_text: What is Lending?
 ---
 
 import SocialImages from "@components/global/SocialImages";
@@ -127,7 +129,7 @@ import SocialImages from "@components/global/SocialImages";
       <div className="header">
         <a href="/guides/loan-qualification/introduction">
           <img
-            src="/logos/usecases/company-info.svg"
+            src="/img/logos/usecases/company-info.svg"
             className="icon usecase"
           />
         </a>
@@ -140,14 +142,14 @@ import SocialImages from "@components/global/SocialImages";
         </p>    
       </div>
     </div>
-    <p>Lend with Codat and our Assess product</p>
+    <p>Lend with Codat and our Lending product</p>
   </li>
   <li className="card mini">
     <div className="card-row">
       <div className="header">
         <a href="/guides/invoice-finance/introduction">
           <img
-            src="/logos/usecases/lending.svg"
+            src="/img/logos/usecases/lending.svg"
             className="icon usecase"
           />
         </a>
@@ -167,7 +169,7 @@ import SocialImages from "@components/global/SocialImages";
       <div className="header">
         <a href="/guides/bill-pay/introduction">
           <img
-            src="/logos/usecases/payments.svg"
+            src="/img/logos/usecases/payments.svg"
             className="icon usecase"
           />
         </a>
