@@ -27,6 +27,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  padding: 1em;
 }
 
 .modal {
@@ -35,8 +36,21 @@
   border-radius: 4px;
   max-width: 95vw;
   max-height: 95vh;
+  overflow: hidden;
 }
 
 .modalClosed {
-  display: none
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .modalWrapper {
+    align-items: flex-end;
+  }
+}
+
+@media (max-width: 800px) {
+  .modal {
+    border-radius: 16px;
+  }
 }

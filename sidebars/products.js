@@ -1,7 +1,7 @@
 module.exports = [ 
   {
     type: "link",
-    label: "Bank Feeds",
+    label: "Bank Feeds API",
     className: "top-level-item products product bankfeed",
     href: "/bank-feeds/overview",
     customProps: {
@@ -10,7 +10,7 @@ module.exports = [
   },
   {
     type: "link",
-    label: "Lending",
+    label: "Lending API",
     className: "top-level-item products product lending",
     href: "/lending/overview",
   },

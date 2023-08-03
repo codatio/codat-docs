@@ -47,7 +47,7 @@ const allProducts = [
   {
     logo: "/img/logos/products/logo_lending_clear.svg",
     slug: "lending",
-    name: "Lending",
+    name: "Lending API",
     description: "Make smarter credit decisions for your small business customers. Enrich your customer's financial data and receive actionable insights.",
     link: "/lending/overview",
     linkText: "Start assessing your customers →",

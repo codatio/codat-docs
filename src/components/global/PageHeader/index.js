@@ -6,16 +6,17 @@ import { ModalController } from "../Modal";
 import styles from "./styles.module.scss";
 
 const BannerVideo = ({text, url}) => {
-  return <ModalController text={text}>
-    <iframe 
-      src={url}
-      width="560" 
-      height="315" 
-      title="YouTube video player" 
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      allowfullscreen
-    />
+  return <ModalController text={text} className={styles.fullWidth}>
+    <div className={styles.videoContainer}>
+      <iframe 
+        src={url}
+        className={styles.videoFrame}
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen
+      />
+    </div>
   </ModalController>
 };
 

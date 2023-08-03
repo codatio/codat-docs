@@ -7,7 +7,7 @@ module.exports = [
   },
   {
     type: "link",
-    label: "Bank Feeds",
+    label: "Bank Feeds API",
     href: "/bank-feeds/overview",
     className: "header",
   },

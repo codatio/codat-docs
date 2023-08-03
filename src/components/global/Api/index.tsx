@@ -3,12 +3,10 @@ import Layout from "@theme/Layout";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import Navbar from "@theme/Navbar";
 import Logo from "@theme/Logo";
-import styles from "./styles.module.scss";
 import clsx from "clsx";
 
-//import "@stoplight/elements/styles.min.css";
+import styles from "./styles.module.scss";
 import "./styles/stoplight.scss";
-//import "./index.css";
 
 const LazyStoplight = React.lazy(() => import("../../page/api/Stoplight"));
 const Fallback = (

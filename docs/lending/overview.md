@@ -1,18 +1,18 @@
 ---
-title: "Lending overview"
-sidebar_label: Lending
+title: "Lending API overview"
+sidebar_label: Lending API
 description: "Learn about the features that make up the Lending product"
 displayed_sidebar: lending
 hide_title: true
 hide_description: true
 hide_table_of_contents: true
-banner_title: Lending
+banner_title: Lending API
 banner_class: lending
 banner_icon: "/img/logos/products/logo_assess_clear.svg"
 banner_image: "/img/banners/assess.png"
 banner_text: "Lending helps you make smarter credit decisions on small businesses by enabling you to pull your customers' latest data from the operating systems they are already using. You can use that data for automating decisioning and surfacing new insights on the customer, all via one API."
 video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
-video_text: What is Lending?
+video_text: What is Lending API?
 ---
 
 import SocialImages from "@components/global/SocialImages";

@@ -1,8 +1,6 @@
 ---
 title: "Lending in the Portal"
 description: "Codat's no-code product that provides insights about a company's data to help make informed lending decisions"
-createdAt: "2022-04-11T16:50:27.970Z"
-updatedAt: "2022-11-03T09:22:59.470Z"
 ---
 
 Lending in the Portal leverages Codat APIs to produce features that serve data on the health of a business and provide insights required for making informed lending decisions. Lending consists of five sections: Profit and Loss, Balance Sheet, Commerce, Banking and Marketing.
