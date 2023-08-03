@@ -61,24 +61,7 @@ Lending empowers you with a host of features to help you streamline your underwr
       .
     </p>
   </li>
-  <li className="card">
-    <div class="header">
-      <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
-      />
-      <h3>Accounting financial metrics</h3>
-    </div>
-    <p>
-      We pre-calculate the top financial ratios used for risk assessments and
-      credit decisioning. Explore{" "}
-      <a href="/lending/metrics/accounting/overview">
-        Accounting Financial Metrics
-      </a>
-      .
-    </p>
-  </li>
-
+  
   <li className="card">
     <div class="header">
       <img
