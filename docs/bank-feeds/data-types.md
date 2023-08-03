@@ -2,6 +2,7 @@
 title: "Bank feeds data types"
 sidebar_label: Data types
 description: "Building bank feeds with Codat"
+displayed_sidebar: bankfeeds
 ---
 
 import DataTypes from '@components/global/DataTypes'

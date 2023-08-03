@@ -128,7 +128,7 @@ module.exports = [
   },
   {
     type: "category",
-    label: "Assess in the Portal",
+    label: "Lending in the Portal",
     collapsed: true,
     items: [
       "lending/portal/overview",
