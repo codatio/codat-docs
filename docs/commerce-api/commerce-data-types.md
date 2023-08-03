@@ -20,7 +20,7 @@ View the full details of the data types that Codat supports for each commerce pl
 
 The following commerce data types are available via Codat's API:
 
-<DataTypes category="commerce"/>
+<!-- <DataTypes product="commerce-api" urlPrefix="/commerce-api#"/> -->
 
 <br/>
 

@@ -20,7 +20,7 @@ View the full details of the data types that Codat supports for each accounting 
 
 The following accounting data types are available via Codat's API:
 
-<DataTypes category="accounting"/>
+<!-- <DataTypes product="accounting" urlPrefix="/accounting-api#"/> -->
 
 <br/>
 

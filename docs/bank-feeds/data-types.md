@@ -13,6 +13,6 @@ Bank feeds uses the same underlying models as Accounting API, but with minor dif
 
 ## Supported data types
 
-<DataTypes category="bank-feeds" search={false}/>
+<DataTypes product="bankFeeds" urlPrefix="/bank-feeds-api#" search={false}/>
 
 <br/>

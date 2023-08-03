@@ -91,8 +91,6 @@ const DataTypes = ({ urlPrefix, product, search=true }) => {
     setSearchValue(value);
   };
 
-  console.log(urlPrefix, product)
-
   const normalizedDataTypes = dataTypes
     .filter(dataType => productDataTypes[product].findIndex(dataTypeKey => dataType.key === dataTypeKey) !== -1)
     .map(dataType => {
