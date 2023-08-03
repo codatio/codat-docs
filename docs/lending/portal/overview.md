@@ -1,19 +1,19 @@
 ---
-title: "Assess in the Portal"
+title: "Lending in the Portal"
 description: "Codat's no-code product that provides insights about a company's data to help make informed lending decisions"
 createdAt: "2022-04-11T16:50:27.970Z"
 updatedAt: "2022-11-03T09:22:59.470Z"
 ---
 
-Assess in the Portal leverages Codat APIs to produce features that serve data on the health of a business and provide insights required for making informed lending decisions. Assess consists of five sections: Profit and Loss, Balance Sheet, Commerce, Banking and Marketing.
+Lending in the Portal leverages Codat APIs to produce features that serve data on the health of a business and provide insights required for making informed lending decisions. Lending consists of five sections: Profit and Loss, Balance Sheet, Commerce, Banking and Marketing.
 
-To benefit from all of the features of Assess, a company should be linked to accounting, banking and commerce data sources. Explore our [How to get started](/lending/get-started) guide.
+To benefit from all of the features of Lending, a company should be linked to accounting, banking and commerce data sources. Explore our [How to get started](/lending/get-started) guide.
 
 The categorized Profit and Loss, and Balance Sheet showcase the power of the [Categories](/lending/categories) feature which standardizes bespoke data across SMEs. After the data is standardized, meaningful insights and measurements are produced for financial performance.
 
 **Data Match**
 
-The data match percentage button is located next to the **Assess** header on every Assess page and it leverages the [Data Integrity](/lending/data-integrity/overview) feature. The match percentage is pre-calculated using the [Data Integrity summaries](/lending/data-integrity/api-data-integrity#summaries) endpoint.
+The data match percentage button is located next to the **Lending** header on every Lending page and it leverages the [Data Integrity](/lending/data-integrity/overview) feature. The match percentage is pre-calculated using the [Data Integrity summaries](/lending/data-integrity/api-data-integrity#summaries) endpoint.
 
 It takes the match percentage from the summaries endpoint for both `banking-transactions` and `accountTransactions` to calculate an overall match percentage, and it accounts for all dates, not just the optimal date range.
 
@@ -21,9 +21,9 @@ Hovering over the button reveals further detail about the data match. Clicking t
 
 **Reports**
 
-The **Reports** button is located in the top right corner of every Assess page and directs you to the [Reports](#reports) page in the Portal.
+The **Reports** button is located in the top right corner of every Lending page and directs you to the [Reports](#reports) page in the Portal.
 
-## Assess sections
+## Lending sections
 
 - [Profit and Loss](#profit-and-loss)
 - [Balance Sheet](#balance-sheet)
@@ -33,7 +33,7 @@ The **Reports** button is located in the top right corner of every Assess page a
 
 ## Profit and Loss
 
-The Profit and Loss page is the landing page when accessing Assess. The page consists of the graph displaying selections for the categorized financial statement, and ratios. If you have uncategorized accounts, the Account Categorization modal will be displayed. Only uncategorized accounts will be shown and you will need to manually assign categories. Our [Categorization of accounts](/lending/portal/categorization-of-accounts) documentation provides more detail.
+The Profit and Loss page is the landing page when accessing Lending. The page consists of a graph displaying selections for the categorized financial statement, and ratios. If you have uncategorized accounts, the Account Categorization modal will be displayed. Only uncategorized accounts will be shown and you will need to manually assign categories. Our [Categorization of accounts](/lending/portal/categorization-of-accounts) documentation provides more detail.
 
 ### Selection panel
 
@@ -41,7 +41,7 @@ The Profit and Loss page is the landing page when accessing Assess. The page con
 
 **Currency**: The currency displayed in the profit and loss statement. This is predefined for the P&L and reflects the currency in the accounting platform.
 
-**Period start**: Periods are defined in months. Financial statements are backwards looking, so this is the period you want to start looking back from. The system will prefill the latest full month available in the company's data. If you select a month that’s out of range, the system will notify you of the latest available month for the company.
+**Period start**: Periods are defined in months. Financial statements are backward looking, so this is the period you want to start looking back from. The system will prefill the latest full month available in the company's data. If you select a month that’s out of range, the system will notify you of the latest available month for the company.
 
 **Period length**: Specified in months.
 
@@ -66,7 +66,7 @@ On load, we will automatically categorize the lines on the business's profit and
 
 ### Statement
 
-The categorized profit and loss statement is obtained from the **Enhanced Profit and Loss** endpoint. It provides the fully categorized statement over specified periods of time, for a specific company’s accounting connection.
+The categorized profit and loss statement is obtained from the **Enhanced Profit and Loss** endpoint. It provides a fully categorized statement over specified periods of time, for a specific company’s accounting connection.
 
 The following information is displayed:
 
@@ -295,7 +295,7 @@ Rows can be expanded or collapsed to show more or less information. Hovering ove
 
 ## Reports
 
-A **Reports** button is located in the top right corner of every Assess page. It takes you to the **Reports** page where you can generate and download various reports in [Excel format](/lending/excel/overview).
+A **Reports** button is located in the top right corner of every Lending page. It takes you to the **Reports** page where you can generate and download various reports in [Excel format](/lending/excel/overview).
 
 ![A screenshot of the reports page showing the Audit Report row with a sub-row showing a report that was generated](/img/old/a3d1d09-ReportsPage1.png)
 
