@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 * Create a new loan application,
 * Create a Codat company and connect it to the Codat Sandbox,
 * Fetch financial data to assess the applicant's financial health, 
-* Categorize accounts that were omitted by Assess, and
+* Categorize accounts that were omitted by Lending, and
 * Receive a decision on the loan. 
 
 :::note Loan qualification demo process flow
@@ -59,7 +59,7 @@ Codat returns the company and application `id`s in the endpoint response togethe
 
 🙏🏽 This step is normally performed by the borrower.
 
-Once you receive the the application id, complete the application form using the `/applications/{applicationId}/form` endpoint. In our demo, we request the applicant's full name, company name, and the loan amount, length, and purpose. If the details provided are valid, they are stored against the application `id` with an acknowledgement of their receipt. 
+Once you receive the application id, complete the application form using the `/applications/{applicationId}/form` endpoint. In our demo, we request the applicant's full name, company name, and the loan amount, length, and purpose. If the details provided are valid, they are stored against the application `id` with an acknowledgment of their receipt. 
 
 ```json title="Example application form"
   {
@@ -89,15 +89,15 @@ Select the **Codat Sandbox** as the source of accounting data.
 
 💰 This step is normally performed by the lender.
 
-The demo app makes use of the categorization feature of [Assess](/lending/overview). When fetching financial data, Codat’s Assess product analyses the full list of a company's accounts and assigns a category to each account. While it is able to automatically categorize most of the source accounts, it is not always possible, and a manual intervention may be required. 
+The demo app makes use of the categorization feature of [Lending](/lending/overview). When fetching financial data, Codat’s Lending product analyses the full list of a company's accounts and assigns a category to each account. While it is able to automatically categorize most of the source accounts, it is not always possible, and manual intervention may be required. 
 
-In our demo, one account remains without a specified category. You need to assign a category to it before the demo application is ready for loan qualification. This is because the Profit and Loss, and Balance Sheet data types in Assess depend on fully categorized accounts.
+In our demo, one account remains without a specified category. You need to assign a category to it before the demo application is ready for loan qualification. This is because the Profit and Loss, and Balance Sheet data types in Lending depend on fully categorized accounts.
 
-To do that, click on the **Companies** tab in the top menu in the [Codat Portal](https://app.codat.io/). Next, click on the company you are performing loan qualification for, and navigate to **Products > Assess**. Click the red **Categorization required** button to the right of the company name. 
+To do that, click on the **Companies** tab in the top menu in the [Codat Portal](https://app.codat.io/). Next, click on the company you are performing loan qualification for, and navigate to **Products > Lending**. Click the red **Categorization required** button to the right of the company name. 
 
 ![](/img/use-cases/loan-qualification/0000-acct-categorization-modal-06-03-2023.png)
 
-This takes you to the **Account categorization** page which displays the uncategorized account. **Account type** and **Account subtype** are pre-filled for you. **Categories version** should be set to _Version 2_. Select _Accounts Payable_ as **Account detail** in the drop down and **Save** the categorization. 
+This takes you to the **Account categorization** page which displays the uncategorized account. **Account type** and **Account subtype** are pre-filled for you. **Categories version** should be set to _Version 2_. Select _Accounts Payable_ as **Account detail** in the drop-down and **Save** the categorization. 
 
 ![](/img/use-cases/loan-qualification/0000-categorization-screen.png)
 
@@ -105,15 +105,15 @@ This takes you to the **Account categorization** page which displays the uncateg
 
 🙏🏽💰 The decisioning is normally performed by the lender, but the borrower is able to query an application's status at any point.
 
-The demo app now has all the components that it needs to produce an loan qualification decision. The decision is automatically made by the 
-[LoanUnderwriter](https://github.com/codatio/demo-loan-qualification/blob/main/Codat.Demos.Underwriting.Api/Services/LoanUnderwriter.cs) service based on thresholds that need to be passed by the applicant. We then update the loan application with a relevant status to indicate the decision made on the loan, or any errors that occurred in the process. You can poll the `GET applications/{applicationId}` endpoint in [Swagger](http://localhost:5069/swagger/index.html) anytime to check the status of your loan. 
+The demo app now has all the components that it needs to produce a loan qualification decision. The decision is automatically made by the 
+[LoanUnderwriter](https://github.com/codatio/demo-loan-qualification/blob/main/Codat.Demos.Underwriting.Api/Services/LoanUnderwriter.cs) service based on thresholds that need to be passed by the applicant. We then update the loan application with a relevant status to indicate the decision made on the loan or any errors that occurred in the process. You can poll the `GET applications/{applicationId}` endpoint in [Swagger](http://localhost:5069/swagger/index.html) anytime to check the status of your loan. 
 
 ### 💪 Ready for more? 
 
 Try these suggestions to make the most of your experience with the demo app:
 
-- **View Assess in the Portal**  
-  Navigate to **Products > Assess** in the [Portal](https://app.codat.io/) to view a visual representation of the financial data pulled by our endpoints, including `balanceSheet` and `profitAndLoss`.
+- **View Lending in the Portal**  
+  Navigate to **Products > Lending** in the [Portal](https://app.codat.io/) to view a visual representation of the financial data pulled by our endpoints, including `balanceSheet` and `profitAndLoss`.
   
 - **Play around with thresholds**  
   In the `appsettings.json` file in the `Codat.Demos.Underwriting.Api\` directory, set your own example thresholds for data points used by the app's loan qualification service and see how this affects the application decision.
