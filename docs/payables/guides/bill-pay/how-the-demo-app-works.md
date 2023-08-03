@@ -8,13 +8,13 @@ Now you're ready to explore the functionality of the bill pay demo app in more d
 
 ## Understand the authorization flow
 
-The company creation feature and [authorization flow](/payables/guides/bill-pay/use-bill-pay-demo-app#connect-the-demo-app-to-quickbooks-online) were built using the Common API and Hosted Link. For a seamless user experience, we customized the Hosted Link flow with the same branding and colors as the demo app UI - see [Customize Link](/auth-flow/customize/customize-link) for more details.
+The company creation feature and [authorization flow](/payables/guides/bill-pay/use-bill-pay-demo-app#connect-the-demo-app-to-quickbooks-online) were built using the Platform API and Hosted Link. For a seamless user experience, we customized the Hosted Link flow with the same branding and colors as the demo app UI - see [Customize Link](/auth-flow/customize/customize-link) for more details.
 
 The main features are:
 
-- Creating a company to represent the user using the [Create company](/codat-api#/operations/create-company) endpoint. This returns a unique company ID and Link URL.
+- Creating a company to represent the user using the [Create company](/sync-for-payables-api#/operations/create-company) endpoint. This returns a unique company ID and Link URL.
 - Redirecting the user to their chosen accounting platform (in this case, QuickBooks Online) via the Link URL. This opens the OAuth login window for the accounting platform, where the user can authenticate and authorize access to their accounting data. 
-- Creating a data connection to the accounting platform using the [Create connection](/codat-api#/operations/create-data-connection) endpoint.
+- Creating a data connection to the accounting platform using the [Create connection](/sync-for-payables-api#/operations/create-data-connection) endpoint.
 - When the company is successfully connected, redirecting the user to the demo app's redirect URL, as defined in the [Link settings](/auth-flow/customize/customize-link).
 
 ## View bills
@@ -42,7 +42,7 @@ sequenceDiagram
 
 ### Fetch Bills (API call: List bills)
 
-When launched, the demo app [retrieves a list of all bills](/accounting-api#/operations/list-bills) from your sandbox QuickBooks Online company, in descending order of issue date.
+When launched, the demo app [retrieves a list of all bills](/sync-for-payables-api#/operations/list-bills) from your sandbox QuickBooks Online company, in descending order of issue date.
 
 Here is an example request:
 
@@ -104,7 +104,7 @@ When the **View unpaid bills only toggle** is selected in the UI, the `&query=st
 
 ### Fetch Accounts (API call: List accounts)
 
-When launched, the demo app [fetches the company's latest accounts](/accounting-api#/operations/list-accounts). The account name is displayed against its respective bill in the **Reference** column of the bills table.
+When launched, the demo app [fetches the company's latest accounts](/sync-for-payables-api#/operations/list-accounts). The account name is displayed against its respective bill in the **Reference** column of the bills table.
 
 Here is an example request:
 
@@ -192,7 +192,7 @@ The Bill payment will be assigned to the selected account in your sandbox QuickB
 
 ### Pay a bill (API call: Create bill payments)
 
-When you pay a bill, the demo app [creates a Bill payment](/accounting-api#/operations/create-bill-payment) in QuickBooks Online for the total amount due. This process reconciles the payment against the outstanding bill.
+When you pay a bill, the demo app [creates a Bill payment](/sync-for-payables-api#/operations/create-bill-payment) in QuickBooks Online for the total amount due. This process reconciles the payment against the outstanding bill.
 
 Here is an example request:
 
@@ -234,9 +234,9 @@ Try these suggestions to make the most of your experience with the demo app:
   You can set up a sandbox QuickBooks Online company that contains data for a different region, then run through the demo app guide again. For more information, see [Create and test with a sandbox company](https://developer.intuit.com/app/developer/qbo/docs/develop/sandboxes/manage-your-sandboxes) in the Intuit developer documentation.
 
 - **Expand the app's functionality**  
-  Go one step further and develop other features that make the Accounts Payable process simpler for your customers. For example, you could provide the ability to pay a bill using a credit note, or create a new bill from within your application.
+  Go one step further and develop other features that make the Accounts Payable process simpler for your customers. For example, you could provide the ability to pay a bill using a credit note or create a new bill from within your application.
 
 - **Further reading**  
   Explore accounting automation topics in the [Codat Blog](https://www.codat.io/blog/category/accounting-automation/). 
 
-Find out more about the [Accounting API](/accounting-api/overview) or explore our other [use cases](/usecases/overview).
+Find out more about [Sync for Payables](/payables/overview) or explore our other [use cases](/usecases/overview).
