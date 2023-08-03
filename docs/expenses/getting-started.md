@@ -53,7 +53,7 @@ The partner expense connection is created with the 'Linked' status, so you won't
 
 Before you can push expenses to your customer’s accounting platform, you need to get access to it. There are three ways you can enable your customers to grant access to their financial accounts:
 
-1.  **Embedded Link:** Codat's Embedded Link is a React component that neatly sits in your front-end code, and can be deployed in a matter of minutes (see [embedded link](/auth-flow/authorize-embedded-link)).
+1.  **Embedded Link:** Codat's Embedded Link is a React component that neatly sits in your front-end code, and can be deployed in a matter of minutes (see [Embedded link](/auth-flow/authorize-embedded-link)).
 
 2.  **Hosted Link**: a beautifully simple, pre-built, conversion-optimized, and customizable authentication flow (See [Authorize with Hosted Link](/auth-flow/authorize-hosted-link)).
 
