@@ -28,4 +28,4 @@ Ensure you have the following datatypes enabled:
 
 Gets a list of invoices linked to the corresponding banking transaction
 
-Explore the _Enhanced Invoices Report_ endpoint in in our [Lending API reference](/assess-api#/operations/get-enhanced-invoices-report).
+Explore the _Enhanced Invoices Report_ endpoint in our [Lending API reference](/lending-api#/operations/get-enhanced-invoices-report).
