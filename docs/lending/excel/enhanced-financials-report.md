@@ -23,7 +23,7 @@ If these requirements are not met an empty Excel workbook will be returned.
 
 ## Generating the report
 
-You can generate the Enhanced Financials Excel report using the API or the Codat Portal (for details, see [Reports](/lending/portal/overview#reports)). The [Assess reports in Excel](/lending/excel/overview) article describes how to generate and download the report using the API.
+You can generate the Enhanced Financials Excel report using the API or the Codat Portal (for details, see [Reports](/lending/portal/overview#reports)). The [Lending reports in Excel](/lending/excel/overview) article describes how to generate and download the report using the API.
 
 ## Using the report
 
