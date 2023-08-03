@@ -9,20 +9,20 @@ import TabItem from "@theme/TabItem";
 ### 🚀 In this section, you will...
 
 * Create your Codat account
-* Enable the Assess product
+* Enable the Lending product
 * Configure webhooks
 * Set up your local environment
 * Run the demo app
 
 ### <input type="checkbox" unchecked/> Create a Codat account 
 
-We provide a [free account](https://signup.codat.io/) that lets you explore and test our APIs and other products, including Assess. It also comes equipped with a sample company. When you start working on your own loan qualification solution, you may want to explore our other [plans](https://www.codat.io/plans/).
+We provide a [free account](https://signup.codat.io/) that lets you explore and test our APIs and other products, including Lending. It also comes equipped with a sample company. When you start working on your own loan qualification solution, you may want to explore our other [plans](https://www.codat.io/plans/).
 
-### <input type="checkbox" unchecked /> Enable the Assess product 
+### <input type="checkbox" unchecked /> Enable the Lending product 
 
-In the **Settings > Organization settings > [Products](https://app.codat.io/settings/products)** section of the Codat Portal, find **Assess** in the list of products and enable it. This also enables data types required by this product. For example, `balanceSheet` and `profitandLoss`, which are used by the demo app, will be enabled.
+In the **Settings > Organization settings > [Products](https://app.codat.io/settings/products)** section of the Codat Portal, find **Lending** in the list of products and enable it. This also enables the data types required by this product. For example, `balanceSheet` and `profitandLoss`, which are used by the demo app, will be enabled.
 
-We use Assess' [categorization](https://docs.codat.io/lending/enhanced-financials/categorize-accounts) feature. It allows you to perform automated decisioning based on the categorized accounts. 
+We use Lending's [categorization](https://docs.codat.io/lending/portal/categorize-accounts) feature. It allows you to perform automated decisioning based on the categorized accounts. 
 
 ### <input type="checkbox" unchecked /> Update your auth flow settings
 
@@ -30,7 +30,7 @@ In the **Settings > Auth Flow > Link** [settings](https://app.codat.io/settings/
 
 ### <input type="checkbox" unchecked /> Listen for webhooks
 
-The app will use several webhooks to track completion of the financial data sync and the categorization of accounts, and Sandbox linking completion. 
+The app will use several webhooks to track the completion of the financial data sync and the categorization of accounts, and Sandbox linking completion. 
 
 We will use [ngrok](https://ngrok.com/) here to listen for Codat's webhooks. 
 
