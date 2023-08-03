@@ -13,7 +13,7 @@ This guide is for developers building a bill payment solution or other applicati
 
 ### Summary
 
-🎯 With Codat's Accounting API, you can build solutions to streamline and automate the Accounts Payable (AP) process for your SMB customers&mdash;saving them countless hours of manual admin. Our *bill pay demo app* showcases a simple AP automation workflow, built using standard endpoints in our Accounting API. It aims to help you understand the core features of a bill payment solution and how you can implement them using Codat's API.
+🎯 With Codat's [Sync for Payables](/payables/overview), you can build solutions to streamline and automate the Accounts Payable (AP) process for your SMB customers&mdash;saving them countless hours of manual admin. Our *bill pay demo app* showcases a simple AP automation workflow, built using standard endpoints in our Accounting API. It aims to help you understand the core features of a bill payment solution and how you can implement them using Codat's API.
 
 🛠️ The demo app is built using Next.js and React. You can use a hosted version or run the code locally. The code is stored in a [public GitHub repository](https://github.com/codatio/demo-bill-pay). [Hosted Link](/auth-flow/authorize-hosted-link) is used for the authorization flow.
 
