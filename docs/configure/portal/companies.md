@@ -79,8 +79,5 @@ Clicking on a data connection allows you to manage the connection and see any li
 Click on a company to access information pertaining to it:
 
 - A brief **Summary** that includes the company's revenue, operating profit, and equity, as well as an activity log
-- Codat **Products** available for this company. By default, [Accounting API](/accounting-api/accounting-data-types/), [Banking API](/banking-api/banking-data-types) and [Commerce API](/commerce-api/commerce-data-types/) are enabled
-
-  Note that [Lending](/lending/overview) is also visible by default, but you need to [enable it in order to get started](/lending/get-started).
-
+- Codat **Products** available for this company
 - Company's **Data**, including the [history of dataset pulls and their statuses](/core-concepts/status), and uploaded files
