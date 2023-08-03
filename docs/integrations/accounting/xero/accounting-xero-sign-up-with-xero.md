@@ -77,7 +77,7 @@ If you have specific requirements for company naming, you can update the name vi
 
 ### Manage user cancellation
 
-You should build logic to handle the scenario of a user cancelling mid-flow, and serve a relevant error page. This is similar to what we recommend when using our [Link auth flow](https://docs.codat.io/auth-flow/overview). 
+You should build logic to handle the scenario of a user canceling mid-flow, and serve a relevant error page. This is similar to what we recommend when using our [Link auth flow](https://docs.codat.io/auth-flow/overview). 
 
 As part of the OpenID response parameters, you will receive the appropriate status code that you can manage accordingly. For a full list of our status codes, see [Status codes and errors](https://docs.codat.io/using-the-api/errors).
 
