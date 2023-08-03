@@ -23,7 +23,7 @@ import TabItem from '@theme/TabItem';
 <Tabs>
 <TabItem value="gpm" label="Gross profit margin">
 
-**Gross profit margin** uses `Income.Operating` values and `Expense.CostOfSales` values returned by Assess' [`profitAndLoss`](https://docs.codat.io/assess-api#/operations/get-enhanced-profit-and-loss) endpoint. It is calculated by subtracting cost of sales from net sales, and dividing the resulting gross profit by net sales. It is then expressed by a ratio, and indicates a business’s profitability. 
+**Gross profit margin** uses `Income.Operating` values and `Expense.CostOfSales` values returned by Lending' [`profitAndLoss`](https://docs.codat.io/assess-api#/operations/get-enhanced-profit-and-loss) endpoint. It is calculated by subtracting the cost of sales from net sales and dividing the resulting gross profit by net sales. It is then expressed by a ratio and indicates a business’s profitability. 
 
 Its threshold is maintained as `MinGrossProfitMargin` in `appsettings.json`. In the demo app, the value is set to 0.4.
 
@@ -31,7 +31,7 @@ Its threshold is maintained as `MinGrossProfitMargin` in `appsettings.json`. In 
 
 <TabItem value="rev" label="Revenue">
 
-The **revenue**  relies on the the [`profitAndLoss`](https://docs.codat.io/assess-api#/operations/get-enhanced-profit-and-loss) endpoint and the `Income.Operating` value returned by it, together with `loanAmount` and `loanTerm` values provided in the application form. It uses operating income value to determine whether the company’s monthly revenue covers the proposed monthly repayment to a sufficient threshold. It can serve as a useful indicator of overall business growth.
+The **revenue**  relies on the [`profitAndLoss`](https://docs.codat.io/assess-api#/operations/get-enhanced-profit-and-loss) endpoint and the `Income.Operating` value returned by it, together with `loanAmount` and `loanTerm` values provided in the application form. It uses operating income value to determine whether the company’s monthly revenue covers the proposed monthly repayment to a sufficient threshold. It can serve as a useful indicator of overall business growth.
 
 Its threshold is maintained as `RevenueThreshold` in `appsettings.json`. In the demo app, the value is set to 0.3.
 
@@ -49,7 +49,7 @@ Its threshold is maintained as `MaxGearingRatio` in `appsettings.json`. In the d
 
 ### <input type="checkbox" unchecked/> See how we fetch financial data
 
-Codat supports the automatic loan decision-making by providing the data required to calculate the ratios described previously. To fetch the required data, we use Assess' [Enhanced Profit and Loss](https://docs.codat.io/assess-api#/operations/get-enhanced-profit-and-loss) and [Enhanced Balance Sheet](https://docs.codat.io/assess-api#/operations/get-enhanced-balance-sheet) endpoints for analysis. The `{companyId}` used in the endpoint call is the same `id` as previously returned by the `/applications/start` endpoint. 
+Codat supports automatic loan decision-making by providing the data required to calculate the ratios described previously. To fetch the required data, we use Lending's [Enhanced Profit and Loss](https://docs.codat.io/assess-api#/operations/get-enhanced-profit-and-loss) and [Enhanced Balance Sheet](https://docs.codat.io/assess-api#/operations/get-enhanced-balance-sheet) endpoints for analysis. The `{companyId}` used in the endpoint call is the same `id` as previously returned by the `/applications/start` endpoint. 
 
 ```html
 GET https://api.codat.io/data/companies/{companyId}/connections/{connectionId}/lending/enhancedProfitAndLoss
@@ -78,7 +78,7 @@ Only if all the thresholds are met or surpassed by the applicant, the app update
 
 📊 If you are interested in loan qualification models used by lenders in the industry, you can read through [Bigfoot Capital's blog](https://www.bigfootcap.com/revenue-based-financing/) on revenue-based finance or [Workweek's article](https://workweek.com/2023/03/02/unlocking-lending-innovation) on unlocking loan qualification innovation.
 
-💸 Lenders also use Assess to understand a business' liquidity via the [enhanced cash flow report](/lending/enhanced-cash-flow/overview), or whether a business' accounts are accurate using both [data integrity](/lending/data-integrity/overview) and the [audit report](/lending/excel/audit-report).
+💸 Lenders also use Lending to understand a business' liquidity via the [enhanced cash flow report](/lending/enhanced-cash-flow/overview), or whether a business's accounts are accurate using both [data integrity](/lending/data-integrity/overview) and the [audit report](/lending/excel/audit-report).
 
 🧠 See what else [Codat recommends](https://www.codat.io/blog/how-to-underwrite-ecommerce-merchants-effectively/) to build your loan qualification process effectively. 
 
@@ -86,6 +86,6 @@ Only if all the thresholds are met or surpassed by the applicant, the app update
 
 ### Recap
 
-In this reference section, you have learned and understood in detail the data points we chose for our loan qualification model, how we fetched the data used in in the calculation of these data points, and how all of this influenced the decision on the loan made automatically. 
+In this reference section, you have learned and understood in detail the data points we chose for our loan qualification model, how we fetched the data used in the calculation of these data points, and how all of this influenced the decision on the loan made automatically. 
 
-Next, you can find out more about [Assess](/lending/overview), or explore other use cases.
+Next, you can find out more about [Lending](/lending/overview), or explore other use cases.
