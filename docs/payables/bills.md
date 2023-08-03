@@ -1,21 +1,21 @@
 ---
 title: Accounts Payable
-description: "Retrieve and create bills using the Accounting API"
+description: "Retrieve and create bills using the Sync for Payables API"
 ---
 
 ### Accounts payable
 
-In Codat's API a [Bill](/sync-for-payables-api#/schemas/Bill) represents an invoice from a [supplier](/sync-for-payables-api#/schemas/Supplier), for this use case bills can be [retrieved](/sync-for-payables-api#/operations/list-bills) from the Accounting API, or you can create bills within your platform and [post](https://docs.codat.io/sync-for-payables-api#/operations/create-bill) them to your customers accounting software.
+In Codat's API a [Bill](/sync-for-payables-api#/schemas/Bill) represents an invoice from a [supplier](/sync-for-payables-api#/schemas/Supplier), for this use case bills can be [retrieved](/sync-for-payables-api#/operations/list-bills) from the Sync for Payables API, or you can create bills within your platform and [post](https://docs.codat.io/sync-for-payables-api#/operations/create-bill) them to your customers' accounting software.
 
 ### Managing suppliers
 
-In the accounting API a [supplier](/sync-for-payables-api#/schemas/Supplier) represents a business or sole trader that provides goods or services to a company.
+In the Sync for Payables API, a [supplier](/sync-for-payables-api#/schemas/Supplier) represents a business or sole trader that provides goods or services to a company.
 
-Suppliers are relevant for the bill pay use case as each bill is associated to a supplier - suppliers also have important information such as addresses and contact details which could be used to notify a supplier once a payment is made.
+Suppliers are relevant for the bill pay use case as each bill is associated with a supplier - suppliers also have important information such as addresses and contact details which could be used to notify a supplier once a payment is made.
 
 #### Retrieve a list of suppliers
 
-You can get a [list of suppliers](/sync-for-payables-api#/operations/list-suppliers) using the Accounting API
+You can get a [list of suppliers](/sync-for-payables-api#/operations/list-suppliers) using the Sync for Payables API
 
 ```http request
 GET https://api.codat.io/companies/{companyId}/data/suppliers?page=1&pageSize=100
@@ -27,7 +27,7 @@ query parameters can also be used to narrow the list of suppliers e.g.
 - `supplierName=Acme` returns suppliers with a name that matches the query
 
 :::tip Supplier Balances
-Currently the accounting API does not expose supplier balances on the supplier endpoint, however you can access these by
+Currently, the Sync for Payables API does not expose supplier balances on the supplier endpoint, however, you can access these by
 - Aggregating bills by supplier
 - Using the [Aged debtors](/sync-for-payables-api#/operations/get-aged-debtors-report) report
 :::
@@ -42,7 +42,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 #### Updating a supplier
 
-If a supplier changes address or business name, you may want to reflect this change in the companies accounting software by [updating the supplier](/sync-for-payables-api#/operations/put-supplier).
+If a supplier changes address or business name, you may want to reflect this change in the company's accounting software by [updating the supplier](/sync-for-payables-api#/operations/put-supplier).
 
 ```http request
 PUT https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/suppliers/{supplierId}
@@ -50,11 +50,11 @@ PUT https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/s
 
 ### Bills
 
-Bills can either be created in the companies accounting software and then queried through the Accounting API, or bills can be created in your application and then posted to the companies accounting software.
+Bills can either be created in the company's accounting software and then queried through the Sync for Payables API, or bills can be created in your application and then posted to the company's accounting software.
 
 #### Get a list of bills
 
-You can [get a list of bills](/sync-for-payables-api#/operations/list-bills) for a company from the Accounting API
+You can [get a list of bills](/sync-for-payables-api#/operations/list-bills) for a company from the Sync for Payables API
 
 ```http request
 GET https://api.codat.io/companies/{companyId}/data/bills?page=1&pageSize=100
@@ -69,7 +69,7 @@ You can also retrieve any associated [attachments](/sync-for-payables-api#/opera
 
 #### Create a bill
 
-You can also [create a new bill](/sync-for-payables-api#/operations/create-bill) in your companies accounting software to represent goods or services purchased from a supplier.
+You can also [create a new bill](/sync-for-payables-api#/operations/create-bill) in your company's accounting software to represent goods or services purchased from a supplier.
 
 ```http request
 POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/bills
