@@ -94,6 +94,7 @@
           }
         },
         "operationId": "get-data-integrity-status",
+        "x-speakeasy-name-override": "status",
         "description": "Gets match status for a given company and datatype."
       }
     },
@@ -130,6 +131,7 @@
           }
         },
         "operationId": "get-data-integrity-summaries",
+        "x-speakeasy-name-override": "summary",
         "description": "Gets match summary for a given company and datatype, optionally restricted by a Codat query string.",
         "parameters": [
           {
@@ -172,6 +174,7 @@
           }
         },
         "operationId": "list-data-type-data-integrity-details",
+        "x-speakeasy-name-override": "details",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -1948,6 +1951,7 @@
           }
         },
         "operationId": "get-commerce-revenue-metrics",
+        "x-speakeasy-name-override": "get-commerce-revenue-metrics",
         "description": "Get the revenue and revenue growth for a specific company connection, over one or more periods of time.",
         "parameters": [
           {
@@ -2105,6 +2109,7 @@
           }
         },
         "operationId": "get-commerce-orders-metrics",
+        "x-speakeasy-name-override": "get-commerce-orders-metrics",
         "description": "Gets the order information for a specific company connection, over one or more periods of time.",
         "parameters": [
           {
@@ -2268,6 +2273,7 @@
           }
         },
         "operationId": "get-commerce-refunds-metrics",
+        "x-speakeasy-name-override": "get-commerce-refunds-metrics",
         "description": "Gets the refunds information for a specific company connection, over one or more periods of time.",
         "parameters": [
           {
@@ -2458,6 +2464,7 @@
           }
         },
         "operationId": "get-commerce-customer-retention-metrics",
+        "x-speakeasy-name-override": "get-commerce-customer-retention-metrics",
         "description": "Gets the customer retention metrics for a specific company connection, over one or more periods of time.",
         "parameters": [
           {
@@ -2576,6 +2583,7 @@
           }
         },
         "operationId": "get-commerce-lifetime-value-metrics",
+        "x-speakeasy-name-override": "get-commerce-lifetime-value-metrics",
         "description": "Gets the lifetime value metric for a specific company connection, over one or more periods of time.",
         "parameters": [
           {
@@ -2665,6 +2673,7 @@
           }
         },
         "operationId": "get-recurring-revenue-metrics",
+        "x-speakeasy-name-override": "get-recurring-revenue-metrics",
         "description": "Gets key metrics for subscription revenue."
       }
     },
@@ -2799,6 +2808,7 @@
           }
         },
         "operationId": "get-accounting-marketing-metrics",
+        "x-speakeasy-name-override": "get-accounting-marketing-metrics",
         "description": "Get the marketing metrics from an accounting source for a given company.\n\nRequest an Excel report for download.",
         "parameters": [
           {
@@ -4658,7 +4668,51 @@
             "type": "integer"
           },
           "_links": {
-            "$ref": "#/components/schemas/Links"
+            "$ref": "#/components/schemas/PagingInfo/definitions/links"
+          }
+        },
+        "definitions": {
+          "links": {
+            "title": "Hal Links",
+            "type": "object",
+            "required": [
+              "self",
+              "current"
+            ],
+            "properties": {
+              "self": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "current": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "next": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "previous": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              }
+            },
+            "examples": [
+              {
+                "self": {
+                  "href": "/companies/{id}/data/{dataType}"
+                },
+                "current": {
+                  "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+                }
+              }
+            ]
+          },
+          "halRef": {
+            "title": "Hypertext reference",
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string",
+                "format": "uri-reference"
+              }
+            }
           }
         },
         "required": [

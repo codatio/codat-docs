@@ -11,12 +11,12 @@
   ],
   "info": {
     "title": "Bank Feeds API",
-    "version": "2.1.0",
+    "version": "3.0.0",
     "contact": {
       "email": "support@codat.io",
       "name": "Codat"
     },
-    "description": "Bank Feeds API enables your SMB users to set up bank feeds from accounts in your application to supported accounting platforms.\n\nA bank feed is a connection between a source bank account—in your application—and a target bank account in a supported accounting package.\n\n[Read more...](https://docs.codat.io/bank-feeds-api/overview)\n\n[See our OpenAPI spec](https://github.com/codatio/oas) ",
+    "description": "Bank Feeds API enables your SMB users to set up bank feeds from accounts in your application to supported accounting platforms.\n\nA bank feed is a connection between a source bank account�in your application and a target bank account in a supported accounting package.\n\n[Read more...](https://docs.codat.io/bank-feeds-api/overview)\n\n[See our OpenAPI spec](https://github.com/codatio/oas)",
     "termsOfService": "https://www.codat.io/legals/"
   },
   "security": [
@@ -105,6 +105,14 @@
     {
       "name": "Connections",
       "description": "Manage your companies' data connections."
+    },
+    {
+      "name": "Refresh data",
+      "description": "Asynchronously retrieve data from an integration to refresh data in Codat."
+    },
+    {
+      "name": "Push data",
+      "description": "View push options and get push statuses."
     }
   ],
   "paths": {
@@ -6724,6 +6732,377 @@
           }
         }
       }
+    },
+    "/companies/{companyId}/data/all": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ],
+      "post": {
+        "summary": "Refresh all data",
+        "operationId": "refresh-company-data",
+        "x-speakeasy-name-override": "all",
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "description": "Refreshes all data types with `fetch on first link` set to `true` for a given company.\n\nThis is an asynchronous operation, and will bring updated data into Codat from the linked integration for you to view.\n\n[Read more](https://docs.codat.io/core-concepts/data-type-settings) about data type settings and `fetch on first link`.",
+        "tags": [
+          "Refresh data"
+        ]
+      }
+    },
+    "/companies/{companyId}/dataStatus": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ],
+      "get": {
+        "summary": "Get data status",
+        "operationId": "get-company-data-status",
+        "description": "Get the state of each data type for a company",
+        "tags": [
+          "Refresh data"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataStatusResponse"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "invoices": {
+                        "dataType": "invoices",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "success",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "bills": {
+                        "dataType": "bills",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "failure",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/data/queue/{dataType}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/dataType"
+        }
+      ],
+      "post": {
+        "summary": "Refresh data type",
+        "operationId": "refresh-data-type",
+        "x-speakeasy-name-override": "by-data-type",
+        "description": "Refreshes a given data type for a given company.\n\nThis is an asynchronous operation, and will bring updated data into Codat from the linked integration for you to view.",
+        "tags": [
+          "Refresh data"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "in": "query",
+            "name": "connectionId",
+            "description": "Optionally, provide a data connection id to only queue pull operations on that connection."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PullOperation"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/data/history": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ],
+      "get": {
+        "summary": "List pull operations",
+        "tags": [
+          "Refresh data"
+        ],
+        "operationId": "list-pull-operations",
+        "x-speakeasy-name-override": "list-pull-operations",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataConnectionHistory"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "results": [
+                        {
+                          "id": "97d60846-f07a-4d42-b5a0-0bdcc6ebf56b",
+                          "companyId": "4645bd78-8988-45bc-ac9e-67ba5df6e4e5",
+                          "connectionId": "51baa045-4836-4317-a42e-3542e991e581",
+                          "dataType": "invoices",
+                          "status": "Initial",
+                          "requested": "2022-11-14T11:18:37.2798351Z",
+                          "progress": 10,
+                          "isCompleted": false,
+                          "isErrored": false
+                        }
+                      ],
+                      "_links": {
+                        "self": {
+                          "href": "../dictionary"
+                        },
+                        "current": {
+                          "href": "../dictionary"
+                        },
+                        "next": {
+                          "href": "../dictionary"
+                        },
+                        "previous": {
+                          "href": "../dictionary"
+                        }
+                      },
+                      "pageNumber": 0,
+                      "pageSize": 0,
+                      "totalResults": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Malformed-Query"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "description": "Gets the pull operation history (datasets) for a given company.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/page"
+          },
+          {
+            "$ref": "#/components/parameters/pageSize"
+          },
+          {
+            "$ref": "#/components/parameters/query"
+          },
+          {
+            "$ref": "#/components/parameters/orderBy"
+          }
+        ]
+      }
+    },
+    "/companies/{companyId}/push": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/page"
+          },
+          {
+            "$ref": "#/components/parameters/pageSize"
+          },
+          {
+            "$ref": "#/components/parameters/query"
+          },
+          {
+            "$ref": "#/components/parameters/orderBy"
+          }
+        ],
+        "summary": "List push operations",
+        "tags": [
+          "Push data"
+        ],
+        "operationId": "get-company-push-history",
+        "x-speakeasy-name-override": "list-operations",
+        "description": "List push operation records.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PushHistoryResponse"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Malformed-Query"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/data/history/{datasetId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/datasetId"
+        }
+      ],
+      "get": {
+        "summary": "Get pull operation",
+        "operationId": "get-pull-operation",
+        "x-speakeasy-name-override": "get-pull-operation",
+        "tags": [
+          "Refresh data"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PullOperation"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "description": "Retrieve information about a single dataset or pull operation."
+      }
+    },
+    "/companies/{companyId}/push/{pushOperationKey}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": "pushOperationKey",
+          "in": "path",
+          "required": true,
+          "description": "Push operation key."
+        }
+      ],
+      "get": {
+        "summary": "Get push operation",
+        "tags": [
+          "Push data"
+        ],
+        "operationId": "get-push-operation",
+        "x-speakeasy-name-override": "get-operation",
+        "description": "Retrieve push operation.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PushOperation"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -6819,43 +7198,7 @@
             }
           },
           {
-            "type": "object",
-            "x-internal": true,
-            "properties": {
-              "pageNumber": {
-                "type": "integer"
-              },
-              "pageSize": {
-                "type": "integer"
-              },
-              "totalResults": {
-                "type": "integer"
-              },
-              "_links": {
-                "$ref": "#/components/schemas/Links"
-              }
-            },
-            "required": [
-              "pageNumber",
-              "pageSize",
-              "totalResults",
-              "_links"
-            ],
-            "examples": [
-              {
-                "_links": {
-                  "pageNumber": 1,
-                  "pageSize": 10,
-                  "totalResults": 1,
-                  "self": {
-                    "href": "/companies/{id}/data/{dataType}"
-                  },
-                  "current": {
-                    "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
-                  }
-                }
-              }
-            ]
+            "$ref": "#/components/schemas/PushHistoryResponse/allOf/1"
           }
         ]
       },
@@ -7030,7 +7373,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/Companies/allOf/1"
+            "$ref": "#/components/schemas/PushHistoryResponse/allOf/1"
           }
         ]
       },
@@ -7427,7 +7770,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/Companies/allOf/1"
+            "$ref": "#/components/schemas/PushHistoryResponse/allOf/1"
           }
         ]
       },
@@ -7926,6 +8269,268 @@
         "type": "object",
         "additionalProperties": true
       },
+      "DataStatus": {
+        "title": "Data Status",
+        "description": "Describes the state of data in the Codat cache for a company and data type",
+        "type": "object",
+        "required": [
+          "dataType",
+          "lastSuccessfulSync",
+          "currentStatus"
+        ],
+        "properties": {
+          "dataType": {
+            "type": "string"
+          },
+          "lastSuccessfulSync": {
+            "$ref": "#/components/schemas/DateTime"
+          },
+          "currentStatus": {
+            "type": "string"
+          },
+          "latestSyncId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "ad474a37-2003-478e-baee-9af9f1ec2fe3"
+          },
+          "latestSuccessfulSyncId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "8220fc90-55b6-47bc-9417-48ac6ea93101"
+          }
+        },
+        "examples": [
+          {
+            "dataType": "string",
+            "lastSuccessfulSync": "2022-01-01T13:00:00.000Z",
+            "currentStatus": "string",
+            "latestSyncId": "ad474a37-2003-478e-baee-9af9f1ec2fe3",
+            "latestSuccessfulSyncId": "8220fc90-55b6-47bc-9417-48ac6ea93101"
+          }
+        ]
+      },
+      "DataStatusResponse": {
+        "x-internal": true,
+        "title": "Data status response",
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/DataStatus"
+        }
+      },
+      "PullOperation": {
+        "title": "Pull Operation",
+        "description": "Information about a queued, in progress or completed pull operation.\n*Formally called `dataset`*",
+        "x-stoplight": {
+          "id": "hvk8xbvt7ekyg"
+        },
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "943accd0-4247-42d8-865b-363c8629e1da"
+          },
+          "companyId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "22ece347-e5f6-4896-95e0-35a4c7f17023"
+          },
+          "connectionId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "50830828-7d39-4367-b0eb-5ddb2de5faa5"
+          },
+          "dataType": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Initial",
+              "Queued",
+              "Fetching",
+              "MapQueued",
+              "Mapping",
+              "Complete",
+              "FetchError",
+              "MapError",
+              "InternalError",
+              "ProcessingQueued",
+              "Processing",
+              "ProcessingError",
+              "ValidationQueued",
+              "Validating",
+              "ValidationError",
+              "AuthError",
+              "Cancelled",
+              "Routing",
+              "RoutingError",
+              "NotSupported",
+              "RateLimitError",
+              "PermissionsError",
+              "PrerequisiteNotMet"
+            ],
+            "example": "Complete"
+          },
+          "requested": {
+            "$ref": "#/components/schemas/DateTime"
+          },
+          "progress": {
+            "type": "integer"
+          },
+          "isCompleted": {
+            "type": "boolean"
+          },
+          "isErrored": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "companyId",
+          "connectionId",
+          "dataType",
+          "status",
+          "requested",
+          "progress",
+          "isCompleted",
+          "isErrored"
+        ],
+        "examples": [
+          {
+            "id": "97d60846-f07a-4d42-b5a0-0bdcc6ebf56b",
+            "companyId": "4645bd78-8988-45bc-ac9e-67ba5df6e4e5",
+            "connectionId": "51baa045-4836-4317-a42e-3542e991e581",
+            "dataType": "invoices",
+            "status": "Initial",
+            "requested": "2022-11-14T11:18:37.2798351Z",
+            "progress": 10,
+            "isCompleted": false,
+            "isErrored": false
+          }
+        ]
+      },
+      "DataConnectionHistory": {
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PullOperation"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PushHistoryResponse/allOf/1"
+          }
+        ]
+      },
+      "PushOperationSummary": {
+        "$ref": "#/components/schemas/PushOperation"
+      },
+      "PushHistoryResponse": {
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PushOperation"
+                }
+              }
+            }
+          },
+          {
+            "type": "object",
+            "x-internal": true,
+            "properties": {
+              "pageNumber": {
+                "type": "integer"
+              },
+              "pageSize": {
+                "type": "integer"
+              },
+              "totalResults": {
+                "type": "integer"
+              },
+              "_links": {
+                "$ref": "#/components/schemas/PushHistoryResponse/allOf/1/definitions/links"
+              }
+            },
+            "definitions": {
+              "links": {
+                "title": "Hal Links",
+                "type": "object",
+                "required": [
+                  "self",
+                  "current"
+                ],
+                "properties": {
+                  "self": {
+                    "$ref": "#/components/schemas/PushHistoryResponse/allOf/1/definitions/halRef"
+                  },
+                  "current": {
+                    "$ref": "#/components/schemas/PushHistoryResponse/allOf/1/definitions/halRef"
+                  },
+                  "next": {
+                    "$ref": "#/components/schemas/PushHistoryResponse/allOf/1/definitions/halRef"
+                  },
+                  "previous": {
+                    "$ref": "#/components/schemas/PushHistoryResponse/allOf/1/definitions/halRef"
+                  }
+                },
+                "examples": [
+                  {
+                    "self": {
+                      "href": "/companies/{id}/data/{dataType}"
+                    },
+                    "current": {
+                      "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+                    }
+                  }
+                ]
+              },
+              "halRef": {
+                "title": "Hypertext reference",
+                "type": "object",
+                "properties": {
+                  "href": {
+                    "type": "string",
+                    "format": "uri-reference"
+                  }
+                }
+              }
+            },
+            "required": [
+              "pageNumber",
+              "pageSize",
+              "totalResults",
+              "_links"
+            ],
+            "examples": [
+              {
+                "_links": {
+                  "pageNumber": 1,
+                  "pageSize": 10,
+                  "totalResults": 1,
+                  "self": {
+                    "href": "/companies/{id}/data/{dataType}"
+                  },
+                  "current": {
+                    "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
       "ErrorMessage": {
         "type": "object",
         "x-internal": true,
@@ -8036,6 +8641,26 @@
         "x-stoplight": {
           "id": "4je9lwo02netu"
         }
+      },
+      "dataType": {
+        "name": "dataType",
+        "description": "The key of a Codat data type",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/DataType"
+        }
+      },
+      "datasetId": {
+        "name": "datasetId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "example": "eaed9f0f-e77b-4bc9-a58f-ab8b4b99ab18"
+        },
+        "description": "Unique ID of a dataset or pull operation."
       }
     },
     "responses": {

@@ -10,7 +10,7 @@
     "title": "Banking API",
     "summary": "Codat's standardized API for accessing banking data.",
     "description": "Codat's Banking API allows you to access standardised data from over bank accounts via third party providers.\n\nStandardize how you connect to your customers’ bank accounts. Retrieve bank account and bank transaction data in the same way via our partnerships with Plaid and TrueLayer.\n\n[Read more...](https://docs.codat.io/banking-api/overview)\n\n[See our OpenAPI spec](https://github.com/codatio/oas) ",
-    "version": "2.1.0",
+    "version": "3.0.0",
     "contact": {
       "name": "Codat",
       "email": "support@codat.io"
@@ -1604,7 +1604,51 @@
             "type": "integer"
           },
           "_links": {
-            "$ref": "#/components/schemas/Links"
+            "$ref": "#/components/schemas/PagingInfo/definitions/links"
+          }
+        },
+        "definitions": {
+          "links": {
+            "title": "Hal Links",
+            "type": "object",
+            "required": [
+              "self",
+              "current"
+            ],
+            "properties": {
+              "self": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "current": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "next": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "previous": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              }
+            },
+            "examples": [
+              {
+                "self": {
+                  "href": "/companies/{id}/data/{dataType}"
+                },
+                "current": {
+                  "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+                }
+              }
+            ]
+          },
+          "halRef": {
+            "title": "Hypertext reference",
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string",
+                "format": "uri-reference"
+              }
+            }
           }
         },
         "required": [

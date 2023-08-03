@@ -17,7 +17,7 @@
       "url": "https://www.codat.io/",
       "email": "syncforcommerce@codat.io"
     },
-    "description": "The API for Sync for Commerce. Sync for Commerce is an API and a set of supporting tools. It has been built to enable e-commerce, point of sale platforms to provide high-quality integrations with numerous accounting platform through standardized API, seamlessly transforming business sale's data into accounting artefacts.\n[Read More...](https://docs.codat.io/sfc/overview)",
+    "description": "The API for Sync for Commerce. \n\nSync for Commerce is an API and a set of supporting tools built to enable e-commerce and point of sale platforms to provide high-quality integrations with numerous accounting platform through standardized API, seamlessly transforming business sale's data into accounting artefacts.\n  \n[Read More...](https://docs.codat.io/commerce/overview)\n\n<!-- Not seeing the end points you're expecting? We've reorganized our products, and you may be using a [different version of Sync for Commerce](https://docs.codat.io/sync-for-commerce-v1-api#/). -->",
     "termsOfService": "https://www.codat.io/legals/"
   },
   "security": [
@@ -51,11 +51,7 @@
     },
     {
       "name": "Sync",
-      "description": "Initiate a sync of Sync for Commerce company data into their respective accounting software."
-    },
-    {
-      "name": "Sync status",
-      "description": "Status of the sync between commerce company data into their respective accounting software."
+      "description": "Initiate and monitor the sync of company data into accounting software."
     },
     {
       "name": "Integrations",
@@ -691,7 +687,7 @@
     "/meta/companies/{companyId}/sync/commerce/status": {
       "get": {
         "tags": [
-          "Sync status"
+          "Sync"
         ],
         "summary": "Get sync status",
         "description": "Gets a list of sync statuses.",
@@ -1017,7 +1013,51 @@
             "type": "integer"
           },
           "_links": {
-            "$ref": "#/components/schemas/Links"
+            "$ref": "#/components/schemas/PagingInfo/definitions/links"
+          }
+        },
+        "definitions": {
+          "links": {
+            "title": "Hal Links",
+            "type": "object",
+            "required": [
+              "self",
+              "current"
+            ],
+            "properties": {
+              "self": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "current": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "next": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "previous": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              }
+            },
+            "examples": [
+              {
+                "self": {
+                  "href": "/companies/{id}/data/{dataType}"
+                },
+                "current": {
+                  "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+                }
+              }
+            ]
+          },
+          "halRef": {
+            "title": "Hypertext reference",
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string",
+                "format": "uri-reference"
+              }
+            }
           }
         },
         "required": [
@@ -2011,6 +2051,30 @@
             "type": "string",
             "description": "Sync flow URL.",
             "example": "https://sync-flow-integration.codat.io/57b6fad9-e3ca-447b-89db-e4ffa21e6ef3/aiwb/mqjo/start?otp=836415"
+          }
+        }
+      },
+      "ErrorMessage": {
+        "type": "object",
+        "x-internal": true,
+        "properties": {
+          "statusCode": {
+            "type": "integer"
+          },
+          "service": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "correlationId": {
+            "type": "string"
+          },
+          "canBeRetried": {
+            "type": "string"
+          },
+          "detailedErrorCode": {
+            "type": "integer"
           }
         }
       }
