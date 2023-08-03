@@ -1,10 +1,10 @@
 ---
-title: "Assess reports in Excel"
-description: "Describes the process and endpoints for the generation and download of Assess Excel reports"
+title: "Lending reports in Excel"
+description: "Describes the process and endpoints for the generation and download of Lending Excel reports"
 sidebar_label: "Overview"
 ---
 
-The Excel reports endpoints are used to produce and download excel reports. For more information on available reports, see the [report types](#available-report-types) section.  These reports can be generated via the [portal](/lending/portal/overview#reports) or the API.
+The Excel reports endpoints are used to produce and download Excel reports. For more information on available reports, see the [report types](#available-report-types) section.  These reports can be generated via the [portal](/lending/portal/overview#reports) or the API.
 
 The process to download an Excel report via the API is:
 
@@ -12,7 +12,7 @@ The process to download an Excel report via the API is:
 2. [Check the progress status](#check-status-of-the-report) of the latest report requested (optional)
 3. [Download](#download-the-report) the latest Excel report
 
-Only one request will be processed at a time per SMB company and per report type. The generated report is kept in blob storage and gets replaced when a new one is generated.  These reports will show you what data is available from our [API](/assess-api#/operations/post-data-companies-companyId-assess-excel) without writing any code upfront, and how this can be uses to automatically generate your key financial metrics.
+Only one request will be processed at a time per SMB company and per report type. The generated report is kept in blob storage and gets replaced when a new one is generated.  These reports will show you what data is available from our [API](/lending-api#/operations/post-data-companies-companyId-assess-excel) without writing any code upfront, and how this can be used to automatically generate your key financial metrics.
 
 
 ## Available report types
@@ -35,7 +35,7 @@ For each of the endpoints described below, you will provide the same parameters.
 
 ## Request an Excel report for download
 
-The endpoint is available in our [API Reference](/assess-api#/operations/post-data-companies-companyId-assess-excel).
+The endpoint is available in our [API Reference](/lending-api#/operations/post-data-companies-companyId-assess-excel).
 
 `POST /data/companies/{companyId}/lending/excel`
 
