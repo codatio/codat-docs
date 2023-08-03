@@ -19,7 +19,7 @@ We recommend that you work closely with your Codat account team during your impl
 ### 1. App name
 
 #Action Required: Minimal
-Your app name must reflect the go-to-market name of your app or product and cannot include the word Xero. This is important because the App Name will be visible to end users at multiple points in the customer jouney. You can edit your app name in the My Apps section of your Xero Developer Portal.
+Your app name must reflect the go-to-market name of your app or product and cannot include the word Xero. This is important because the App Name will be visible to end users at multiple points in the customer journey. You can edit your app name in the My Apps section of your Xero Developer Portal.
 
 ### 2. Branding
 
@@ -39,8 +39,8 @@ While Codat handles the initial connection to Xero via the Codat Link UI, Xero r
 | :-- | :-- |
 | Display the name of the tenant that has been connected | This can be retrieved from Company Info endpoint. |
 | Display the current status of the connection(s). If disconnected, provide a button to connect to Xero | Status - `Connection.status` endpoint.  <br/>Link to power your button to connect - `Connection.linkURL` |
-| Include a button to disconnect | When a user clicks on your button, use Coadt's PATCH connections endpoint to disconnect. |
-| Handle a disconnect from Xero's side | Codat handles the disconnection from Xero’s end. You need to identify when a disconnect has occured by using the alert of type “Data Connection Status Changed”. When this alert is triggered, change the connection status in your UI and display a "Reconnect" or "Connect" button. |
+| Include a button to disconnect | When a user clicks on your button, use Codat's PATCH connections endpoint to disconnect. |
+| Handle a disconnect from Xero's side | Codat handles the disconnection from Xero’s end. You need to identify when a disconnect has occurred by using the alert of type “Data Connection Status Changed”. When this alert is triggered, change the connection status in your UI and display a "Reconnect" or "Connect" button. |
 | 1:1 or multi-org connection | Codat allows your customers to select their Xero organization using the native Xero UI. You can allow your customer to connect to multiple organizations within Xero by creating a separate Codat company per organization. |
 | Disconnection process for off-boarding | Connections can be disconnected through the PATCH connections endpoint to prevent further syncs or the DELETE connections endpoint to prevent both further syncs and querying of historically synced data within Codat. |
 
@@ -50,7 +50,7 @@ While Codat handles the initial connection to Xero via the Codat Link UI, Xero r
 
 Codat provides detailed error messaging including status codes and the details of the error.
 
-If an error occurs, your UI should communicate the fact that an error has occured to the user. Detailed error messages or logs are a best practice but not a hard requirement. Details on the types of error messages provided by Codat is available [here](https://docs.codat.io/using-the-api/errors).
+If an error occurs, your UI should communicate the fact that an error has occurred to the user. Detailed error messages or logs are a best practice but not a hard requirement. Details on the types of error messages provided by Codat is available [here](https://docs.codat.io/using-the-api/errors).
 
 ### 5. Offline_access
 
