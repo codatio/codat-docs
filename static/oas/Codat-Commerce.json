@@ -8,7 +8,7 @@
   ],
   "info": {
     "title": "Commerce API",
-    "version": "2.1.0",
+    "version": "3.0.0",
     "contact": {
       "name": "Codat",
       "email": "support@codat.io"
@@ -9249,7 +9249,51 @@
             "type": "integer"
           },
           "_links": {
-            "$ref": "#/components/schemas/Links"
+            "$ref": "#/components/schemas/PagingInfo/definitions/links"
+          }
+        },
+        "definitions": {
+          "links": {
+            "title": "Hal Links",
+            "type": "object",
+            "required": [
+              "self",
+              "current"
+            ],
+            "properties": {
+              "self": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "current": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "next": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "previous": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              }
+            },
+            "examples": [
+              {
+                "self": {
+                  "href": "/companies/{id}/data/{dataType}"
+                },
+                "current": {
+                  "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+                }
+              }
+            ]
+          },
+          "halRef": {
+            "title": "Hypertext reference",
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string",
+                "format": "uri-reference"
+              }
+            }
           }
         },
         "required": [
@@ -9438,6 +9482,30 @@
             }
           }
         ]
+      },
+      "ErrorMessage": {
+        "type": "object",
+        "x-internal": true,
+        "properties": {
+          "statusCode": {
+            "type": "integer"
+          },
+          "service": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "correlationId": {
+            "type": "string"
+          },
+          "canBeRetried": {
+            "type": "string"
+          },
+          "detailedErrorCode": {
+            "type": "integer"
+          }
+        }
       }
     },
     "parameters": {
@@ -9518,7 +9586,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+              "$ref": "#/components/schemas/ErrorMessage"
             },
             "examples": {
               "Unauthorized": {
@@ -9540,7 +9608,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+              "$ref": "#/components/schemas/ErrorMessage"
             },
             "examples": {
               "Malformed query": {
@@ -9562,7 +9630,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+              "$ref": "#/components/schemas/ErrorMessage"
             },
             "examples": {
               "Data connection not found": {
@@ -9604,28 +9672,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "type": "object",
-              "x-internal": true,
-              "properties": {
-                "statusCode": {
-                  "type": "integer"
-                },
-                "service": {
-                  "type": "string"
-                },
-                "error": {
-                  "type": "string"
-                },
-                "correlationId": {
-                  "type": "string"
-                },
-                "canBeRetried": {
-                  "type": "string"
-                },
-                "detailedErrorCode": {
-                  "type": "integer"
-                }
-              }
+              "$ref": "#/components/schemas/ErrorMessage"
             },
             "examples": {
               "Conflict": {
@@ -9647,7 +9694,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+              "$ref": "#/components/schemas/ErrorMessage"
             },
             "examples": {
               "Conflict": {

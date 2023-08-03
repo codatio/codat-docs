@@ -1,5 +1,4 @@
 const integrations = [
-  "integrations/accounting/overview",
   "integrations/accounting/sandbox/accounting-sandbox",
   "integrations/accounting/clearbooks/accounting-clearbooks",
   {
@@ -166,7 +165,7 @@ module.exports = [
   {
     type: "link",
     label: "Accounting integrations",
-    href: "integrations/accounting/overview",
+    href: "/integrations/accounting/overview",
     className: "header",
   },
   ...integrations,

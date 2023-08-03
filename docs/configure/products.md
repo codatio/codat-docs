@@ -1,24 +1,20 @@
 ---
 title: "Enable products"
 sidebar_label: "Products"
-description: "Enable additional products you need for your usecase"
+description: "Enable the products you need for your usecase"
 ---
 
 import Products from "@components/global/Products";
 
-@todo: update this.
-
-<p>
-  To build integrations for small business lending, try our <a href="/lending/overview">Lending</a>{" "}
-  product. If you're developing accounting integrations for a PoS or eCommerce
-  platform, go to <a href="/commerce/overview">Sync for Commerce</a>. For accounting integrations for corporate cards or
-  expense management platforms, refer to <a href="/expenses/overview">Sync for Expenses</a>. If you plan to push 
-  your customers' bank transaction data into their accounting platforms, check out our <a href="/bank-feeds/overview">Bank Feeds API</a>.
-</p>
+Codat's function
 
 ## Enabling products
 
-By default, you'll have access to our standardized integration products - our Accounting, Banking, and Commerce APIs. For our other products, you can either enable them as you sign up or [manage them in the Portal](https://app.codat.io/settings/products) (users with Administrator roles only).
+When signing up for a Codat account, you'll have to select and enable a product you're interested in using (you can always enable other products later). 
+
+Enabling a product will configure the portal and your new client for use of this product, including the default data type settings.
+
+You can manage your enabled products in [the portal](https://app.codat.io/settings/products) (users with Administrator roles only). Currently, you cannot disable products - please contact support if you need help with this.
 
 ## Our products
 

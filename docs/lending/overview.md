@@ -21,8 +21,6 @@ import SocialImages from "@components/global/SocialImages";
 
 Lending is built on top of the latest accounting, commerce and banking data, providing you with the most important data points you need to get a full picture of SMB creditworthiness, and make a comprehensive assessment of your customers.
 
-![](/img/old/f0c6d43-73D1AFFF-6E41-47F3-8E25-BB20DA16C754.jpeg "73D1AFFF-6E41-47F3-8E25-BB20DA16C754.jpeg")
-
 ## Who is Lending for?
 
 Lending is built for anyone who wants to make an assessment of a small business's financial health and performance.

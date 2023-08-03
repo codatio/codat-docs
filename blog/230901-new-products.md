@@ -5,13 +5,22 @@ tags: ["Update", "Products"]
 draft: true
 authors: mcclowes
 ---
+import Products from "@components/global/Products";
+
+I"M STILL WRITING THIS
 
 We've changed the way we organise our products to make Codat easier than ever to use.
 
 
 <!--truncate-->
 
-_Any further details of the upcoming change._
+## Products
+
+Our products can help you make the most of your customers' consented business data. [See more...](/products/overview)
+
+<Products mini={true} verbose={true}/>
+
+
 
 ## Action required
 

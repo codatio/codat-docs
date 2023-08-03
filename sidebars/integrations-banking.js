@@ -55,7 +55,7 @@ module.exports = [
   {
     type: "link",
     label: "Banking integrations",
-    href: "integrations/banking/overview",
+    href: "/integrations/banking/overview",
     className: "header",
   },
   ...integrations,

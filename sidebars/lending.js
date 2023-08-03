@@ -144,6 +144,7 @@ module.exports = [
       hr: true,
     },
   },
+  'lending/data-types',
   {
     type: "link",
     href: "/assess-api",

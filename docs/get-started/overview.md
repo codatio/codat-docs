@@ -168,7 +168,7 @@ description: "Take your first steps through the information and support availabl
   <li className="card mini">
     <div className="card-row">
       <div className="header">
-        <a href="/guides/bank-feeds-tutorial">
+        <a href="/bank-feeds/guides/bank-feeds-tutorial">
           <img
             src="/img/logos/usecases/sync.svg"
             className="icon usecase"
@@ -179,7 +179,7 @@ description: "Take your first steps through the information and support availabl
       <div className="content">
         <h4>Bank feeds reconciliation with QuickBooks Online</h4>
         <p>
-          <a href="/guides/bank-feeds-tutorial">See the tutorial →</a>
+          <a href="/bank-feeds/guides/bank-feeds-tutorial">See the tutorial →</a>
         </p>    
       </div>
     </div>

@@ -13,10 +13,15 @@ module.exports = [
   },
   {
     type: "link",
-    href: "/payroll/overview",
-    label: "API reference",
+    href: "/payroll/data-types",
+    label: "Data types",
     customProps: {
       hr: true,
     },
+  },
+  {
+    type: "link",
+    href: "/sync-for-payroll-api#/",
+    label: "API reference",
   },
 ]

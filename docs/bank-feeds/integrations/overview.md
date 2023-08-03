@@ -5,6 +5,8 @@ sidebar_label: Bank Feeds
 displayed_sidebar: bankfeeds
 ---
 
+import Integrations from '@components/global/Integrations'
+
 A bank feed is a connection between a source bank account—in your application—and a target bank account in a supported accounting package.
 
 Read more about our [Bank Feeds API](/bank-feeds/overview) product.

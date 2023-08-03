@@ -184,7 +184,7 @@ module.exports = [
   {
     type: "link",
     label: "Commerce integrations",
-    href: "integrations/commerce/overview",
+    href: "/integrations/commerce/overview",
     className: "header",
   },
   ...integrations,

@@ -553,7 +553,7 @@ module.exports = {
     },
 
     {
-      from: "/guides/bank-feeds-tutorial",
+      from: "/bank-feeds/guides/bank-feeds-tutorial",
       to: "/bank-feeds/guides/bank-feeds-tutorial",
     },
 

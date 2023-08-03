@@ -34,10 +34,15 @@ module.exports = [
   },
   {
     type: "link",
-    href: "/sync-for-payables-api",
-    label: "API reference",
+    href: "/payables/data-types",
+    label: "Data types",
     customProps: {
       hr: true,
     },
+  },
+  {
+    type: "link",
+    href: "/sync-for-payables-api",
+    label: "API reference",
   },
 ]
