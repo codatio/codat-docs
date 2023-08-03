@@ -2,7 +2,6 @@
 title: "New product organisation"
 date: "2023-09-01"
 tags: ["Update", "Products"]
-draft: true
 authors: mcclowes
 ---
 import Products from "@components/global/Products";
