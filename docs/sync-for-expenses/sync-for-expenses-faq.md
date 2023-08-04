@@ -43,7 +43,7 @@ Likewise, you can use `billPayments` to retrieve a list of bills from your custo
 You can reuse the chart of accounts, tracking categories, and tax rates from our Accounting API. However, we recommend using the [mappingOptions](https://docs.codat.io/sync-for-expenses-api#/operations/get-mapping-options) endpoint for expenses because of the transaction type support. 
 Authentication, company creation and the Accounting connection linking journeys can be reused between builds. This is because the companies can use the same Id between Codat products. 
 
-## Configuration & set up
+## Configuration and setup
 ### How do I reconnect a company? 
 If a user disconnects, you can use a [webhook](/using-the-api/webhooks/core-rules-types#company-data-connection-status-changed) and redirect your user to the `linkUrl` of the accounting connection to re-authenticate. If a company changes accounting platforms, it is better to remove the accounting connection completely and create a new one. 
 
