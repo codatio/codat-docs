@@ -57,13 +57,13 @@ When this link is initiated by the customer, it triggers the creation of a compa
 
 Navigate to **Settings > Auth flow > Redirects** to access the [Redirects](https://app.codat.io/settings/redirects) page in the Codat Portal. Under **Sign up success redirect URL**, enter the base URL of the form you will display to the customer, without any parameter replacements. Your changes will be auto-saved.
 
-<img src="https://github.com/codatio/codat-docs/assets/139238209/ee749a61-ff8e-4d5f-9055-8f7f90d4b8ef" width="690" alt="Sign Up success redirect URL">
+![Sign Up success redirect URL](/img/integrations/accounting/xero/Sugn-up-success-redirect.png)
 
 ### Pre-populate customer's account with Xero data 
 
 Once the customer authorizes the Xero connection, use the Xero OpenID data to pre-populate onboarding forms or fields. Here is an example redirect with OpenID parameters:
 
-```
+```http
 {SignUpSuccessRedirectURL}?companyId=f3069a22-ce9a-499b-b341-a7d6564c65z1&connectionId=4302ebaf-aba6-4763-ba61-47a7992634a3&statusCode=200&openId_email=j.doe%2B1%40codat.io&openId_given_name=John&openId_family_name=Doe
 ```  
 
