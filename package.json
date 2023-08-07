@@ -28,7 +28,7 @@
   "dependencies": {
     "@docusaurus/core": "^2.4.0",
     "@docusaurus/mdx-loader": "^2.4.0",
-    "@docusaurus/plugin-client-redirects": "^2.4.0",
+    "@docusaurus/plugin-client-redirects": "^2.4.1",
     "@docusaurus/plugin-content-docs": "^2.4.0",
     "@docusaurus/plugin-content-pages": "^2.4.0",
     "@docusaurus/plugin-debug": "^2.4.1",
