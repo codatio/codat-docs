@@ -8,7 +8,7 @@ Codat handles many of [Xero's certification checkpoints](https://developer.xero.
 * Checkpoint 3: Connection
 * Checkpoint 4: Error Handling
 * Checkpoint 8: Sign Up with Xero
-* Checkpoint 12 and/or 16: Account Mapping, if you are creating, updating, or deleting data.
+* Checkpoint 12 and 16: Account Mapping if you are creating, updating, or deleting data.
 
 We provided you with a detailed breakdown of actions you need to take for each certification checkpoint, and recommend that you work closely with your Codat account team during your implementation. 
 
