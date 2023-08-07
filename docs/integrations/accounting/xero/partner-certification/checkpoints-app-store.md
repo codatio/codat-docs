@@ -67,7 +67,7 @@ You do not need to take independent action for this checkpoint, because your Cod
 
 Xero requires that apps only have access to the data that they need, so you should only enable scopes required to access the data relevant to your use case. We provide [a guide](/integrations/accounting/xero/partner-certification/scopes) to explain which scopes typically correspond to which use cases, and will work with you to ensure your scopes are set appropriately. 
 
-### 8: Sign up with Xero
+### 8. Sign up with Xero
 
 **Action Required: Significant**
 
@@ -147,7 +147,7 @@ You can also read more about [creating, updating or deleting data](/using-the-ap
 
 ## Preferred user experience
 
-The following checkpoints are considered best practices, and not requirements. These are not mandatory for the Xero certification, but can enhance the user experience. 
+The following checkpoints are considered best practices. These are not mandatory for the Xero certification, but can enhance the user experience. 
 
 ### 17. Sign in with Xero
 
@@ -175,6 +175,6 @@ This is not currently supported via Codat. Please contact your Codat account tea
 
 ### 21. Logs
 
-You can [retrieve a log](/using-the-api/pull-history) of all data types and past syncronizations performed by Codat, and display it back to the user. This may be useful if, for example, they want to know when invoices were last fetched from their Xero instance.
+You can [retrieve a log](/using-the-api/pull-history) of all data types and past syncronizations performed by Codat, and display it back to the user, using our [List pull operations](/codat-api#/operations/list-pull-operations) endpoint. This may be useful if, for example, they want to know when invoices were last fetched from their Xero instance.
 
-You can also [retrieve and display the history](/configure/portal/pull-and-push-history) of created, updated or deleted data. 
+You can also [retrieve and display the history](/configure/portal/pull-and-push-history) of created, updated or deleted data using our [List push operations](/codat-api#/operations/get-company-push-history) endpoint. 
