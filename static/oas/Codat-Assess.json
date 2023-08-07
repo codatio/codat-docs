@@ -40,12 +40,8 @@
   },
   "tags": [
     {
-      "name": "Data integrity",
-      "description": "Data integrity is important"
-    },
-    {
       "name": "Reports",
-      "description": "Data integrity is important"
+      "description": "Enriched reports and analyses of financial data"
     },
     {
       "name": "Excel reports",
@@ -53,11 +49,15 @@
     },
     {
       "name": "Categories",
-      "description": "Categorisation"
+      "description": "Manage Codat's automatic account categorization functionality"
+    },
+    {
+      "name": "Data integrity",
+      "description": "Match mutable accounting data with immutable banking data to increase confidence in financial data"
     },
     {
       "name": "Loan transactions",
-      "description": "Loan Transactions"
+      "description": "Loan transactions"
     }
   ],
   "paths": {
@@ -3050,7 +3050,7 @@
     "schemas": {
       "Report": {
         "title": "Assess report",
-        "description": "Assess reports follow a consistent structure. Reports contain four sections of information:\n\n1. Report definition information such as:\n  a. The report info (e.g. enhanced_profit_and_loss).\n  b. The display name of the report (e.g. Enhanced Profit and Loss).\n2. Information about the dimension contained in the reports such as:\n  a. The type of dimension (e.g. datetime, recordRef).\n  b. The display name of the dimension (e.g. Period, Category type, Category sub type).\n  c. The details about each item within the dimension (e.g. displayName:\"Jan 2022\", start:\"...\", end:\"...\", id:\"...\", name:\"...\").\n3. Information about the measures contained in the report such as:\n  a. The display name of the measure (e.g. value of account, percentage change).\n  b. The type of the measure (e.g. currency, percentage).\n  c. The unit of the measure (e.g. %, GBP).\n4. The data for the report. When the *includeDisplayName* parameter is set to *true*, it shows the *dimensionDisplayName* and *itemDisplayName* to make the data human-readable. The default setting for *includeDisplayName* is *false*.\n\nReports can be rendered as follows (ordering is implicit rather than explicit):\n\n![A table showing an example of how a report can be rendered](https://files.readme.io/1fa20ca-Report1.png)\n\n# Data model\n\n## Dimensions",
+        "description": "## Structure\n\nAssess reports follow a consistent structure. Reports contain four sections of information:\n\n### 1. Report definition\n\nInformation such as:\n\n  1. The report info (e.g. enhanced_profit_and_loss).\n  2. The display name of the report (e.g. Enhanced Profit and Loss).\n  \n### 2. Dimension info\n\nInformation about the dimension contained in the reports such as:\n\n  1. The type of dimension (e.g. datetime, recordRef).\n  2. The display name of the dimension (e.g. Period, Category type, Category sub type).\n  3. The details about each item within the dimension (e.g. displayName:\"Jan 2022\", start:\"...\", end:\"...\", id:\"...\", name:\"...\").\n\n### 3. Measure info\n\nInformation about the measures contained in the report such as:\n\n  1. The display name of the measure (e.g. value of account, percentage change).\n  2. The type of the measure (e.g. currency, percentage).\n  3. The unit of the measure (e.g. %, GBP).\n  \n### 4. The data for the report\n\nWhen the *includeDisplayName* parameter is set to *true*, it shows the *dimensionDisplayName* and *itemDisplayName* to make the data human-readable. The default setting for *includeDisplayName* is *false*.\n\n\n## Displaying the report\n\nReports can be rendered as follows (ordering is implicit rather than explicit):\n\n![A table showing an example of how a report can be rendered](https://files.readme.io/1fa20ca-Report1.png)\n\n# Data model\n\n## Dimensions",
         "type": "object",
         "properties": {
           "reportInfo": {
@@ -3826,7 +3826,7 @@
       },
       "EnhancedCashFlowTransactions": {
         "title": "Enhanced cash flow transactions",
-        "description": "",
+        "description": "> **Categorization engine**\n>\n> The categorization engine uses machine learning and has been fully trained against Plaid and TrueLayer banking data sources. It is not fully trained against the Basiq banking data source.\n\nThe Enhanced Cash Flow Transactions endpoint provides a fully categorized list of banking transactions for a company. Accounts and transaction data are obtained from the company's banking data sources.",
         "type": "object",
         "properties": {
           "reportInfo": {

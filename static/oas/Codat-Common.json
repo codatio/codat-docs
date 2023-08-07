@@ -2364,7 +2364,7 @@
         }
       },
       "PushOption": {
-        "title": "Push Option",
+        "title": "Push option",
         "x-internal": true,
         "required": [
           "displayName",

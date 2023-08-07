@@ -15970,7 +15970,7 @@
         ]
       },
       "CommerceCustomer": {
-        "title": "Customer",
+        "title": "Commerce customer",
         "description": "When a customer places an order with the connected commerce store their details are added to the Customers dataset. You can use the data from the Customers endpoints to calculate key metrics, such as customer churn.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-customers) for this data type.",
         "type": "object",
         "allOf": [
@@ -16184,7 +16184,7 @@
         ]
       },
       "CommerceCompanyInfo": {
-        "title": "Company Info",
+        "title": "Commerce company info",
         "description": "In the Codat system, company information includes standard commercial details about \na linked company, such as their address, phone number, and company registration.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=companyInfo) for this data type.\n",
         "type": "object",
         "allOf": [
@@ -16316,7 +16316,7 @@
         ]
       },
       "CommerceLocation": {
-        "title": "Location",
+        "title": "Commerce location",
         "type": "object",
         "description": "The Location datatype holds information on the geographic location at which stocks of products may be held, as referenced in the Products data type.\n\nA Location also holds information on geographic locations where orders were placed, as referenced in the Orders data type.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-locations) for this data type.",
         "allOf": [
@@ -16403,7 +16403,7 @@
         ]
       },
       "CommerceOrder": {
-        "title": "Order",
+        "title": "Commerce order",
         "description": "Orders contain the transaction details for all products sold by the company, and include details of any payments, service charges, or refunds related to each order. You can use data from the Orders endpoints to calculate key metrics, such as gross sales values and monthly recurring revenue (MRR).\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-orders) for this data type.\n",
         "type": "object",
         "allOf": [
@@ -16861,7 +16861,7 @@
         ]
       },
       "CommercePaymentMethod": {
-        "title": "Payment Method",
+        "title": "Commerce payment method",
         "description": "A Payment Method represents the payment method(s) used to make payments.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-paymentMethods) for this data type.",
         "type": "object",
         "allOf": [
@@ -16939,7 +16939,7 @@
         ]
       },
       "CommercePayment": {
-        "title": "Payment",
+        "title": "Commerce payment",
         "description": "Payments contain details of all payments made by customers to a company, including: amounts, currency used, payment method, payment provider, and payment status.\n\nRefunds are recorded as separate, negative payments. Note that a refund can only occur in relation to a payment that has been completed (i.e. has a status of `Paid`). When a customer cancels an order _before_ a payment has been completed, the payment shows as `Cancelled`.\n\nYou can use data from the Payments endpoints to calculate key metrics, such as gross sales and monthly recurring revenue (MRR).\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-payments) for this data type.",
         "type": "object",
         "allOf": [
@@ -17099,7 +17099,7 @@
         ]
       },
       "CommerceProduct": {
-        "title": "Product",
+        "title": "Commerce product",
         "description": "A Product is an item in the company's inventory, and includes information about the price and quantity of all products, and variants thereof, available for sale.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-products) for this data type.\n",
         "type": "object",
         "allOf": [
@@ -17359,7 +17359,7 @@
         ]
       },
       "CommerceTransaction": {
-        "title": "Transaction",
+        "title": "Commerce transaction",
         "description": "Details of all financial transactions recorded in the commerce or point of sale system are added to the Transactions data type. For example, payments, service charges, and fees.\n\nYou can use data from the Transactions endpoints to calculate key metrics, such as:  \n- Transaction volumes  \n- Average transaction volume  \n- Average transaction value  \n- Returns  \n- Payouts\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-transactions) for this data type.",
         "type": "object",
         "allOf": [
