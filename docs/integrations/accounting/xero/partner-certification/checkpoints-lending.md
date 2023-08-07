@@ -1,5 +1,5 @@
 ---
-title: "Xero's Certification Checkpoints"
+title: "Xero's certification checkpoints"
 description: "A guide to Lending Partnership certification with Codat"
 ---
 
