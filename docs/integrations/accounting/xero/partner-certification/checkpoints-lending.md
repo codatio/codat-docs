@@ -84,9 +84,10 @@ Xero requires that apps only have access to the data that they need, so you shou
 
 **Action required: none or significant**
 
-Implemeting a Sign Up with Xero flow is not a requirement for Lending Partners as they are not required to have a listing in the Xero App Store. 
+Implementing a Sign Up with Xero flow is not a requirement for Lending Partners as they are not required to have a listing in the Xero App Store. 
   
 If you would like to be listed in the Xero App Store for go-to-market reasons, you must provide Sign Up with Xero, which requires additional development work that typically takes several days to complete. We prepared a [full guide](/integrations/accounting/xero/partner-certification/sign-up-with-xero) to the Sign Up with Xero flow.
+
 ---
 
 ## If getting data...

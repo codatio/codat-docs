@@ -3,22 +3,18 @@ title: "Sign Up with Xero"
 description: "Learn how to enable the Sign Up with Xero flow with Codat to support your app's certification"
 ---
 
-Sign Up with Xero (SUwX) is no.8 in Xero’s list of [Certification Checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/#required-for-all-integrations). It is a requirement for all App Store Partners seeking certification. 
+Providing Sign Up with Xero (SUwX) is a requirement for all App Store Partners seeking certification, as prescribed by Xero’s [certification checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/#required-for-all-integrations). It is optional for Financial Services Partners, depending on whether you choose to be listed in the App Store. 
 
-SUwX is optional for Financial Services Partners, depending on whether you choose to be listed in the App Store. 
+SUwX is a user journey that takes potential customers from the Xero App Store directly to your app. It reduces the number of steps users need to take to sign up to your app and enables Xero to track referrals that originate in the Xero App Store.
 
-SUwX is a user journey that takes potential customers from the Xero App Store directly to your app. It serves two purposes:
+## SUwX implementation options
 
-1. To reduce the steps users need to take to sign up to your app
-2. To enable Xero to track referrals that originate in the Xero App Store
-
-## SUwX Option A vs Option B
-
-Xero’s docs outline [two approaches to Sign Up with Xero](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/sign-up):
+Xero’s documentation outlines [two approaches to Sign Up with Xero](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/sign-up):
 
 * Option A
-  * This approach typically requires significantly more developer resource and is not possible for all apps (eg. Apps that do not have a completely self-serve onboarding process and need customers to speak to a sales representative before creating an account for them)
-  * Option A uses a related concept called [Sign In with Xero](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/sign-in) which enables users to use Xero as an identity provider when logging into your app, similar to Sign In With Google or Facebook. 
+  * It uses a related concept called [Sign In with Xero](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/sign-in) which enables users to use Xero as an identity provider when logging into your app, similar to Sign In With Google or Facebook. 
+  This approach typically requires significantly more developer resource and is not possible for all apps (eg. Apps that do not have a completely self-serve onboarding process and need customers to speak to a sales representative before creating an account for them)
+  * 
 * Option B
   * This approach is more popular with Codat clients as it is simpler and enables apps to reduce the time and developer resource required to pass Xero Certification.
 
