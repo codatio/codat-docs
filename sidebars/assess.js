@@ -70,7 +70,7 @@ module.exports = [
     label: "Enhanced liabilties",
     collapsed: true,
     items: [
-      "assess/enhanced-liabilties/loans-overview",
+      "assess/enhanced-liabilities/loans-overview",
       { type: "link", label: "Enhanced liabilties loan summary", href: "/assess-api#/operations/get-loan-summary" },
       { type: "link", label: "Enhanced liabilties loan transactions", href: "/assess-api#/operations/list-loan-transactions" },
     ],
