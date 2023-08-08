@@ -1,7 +1,7 @@
 ---
 title: "Enhanced Liabilities - Loans"
 description: "Learn how to identify a company's loans to better understand its financial health"
-sidebar_label: "Loans Overview"
+sidebar_label: "Enhanced liabilities loans overview"
 ---
 
 Loan data is often not uniform, spread across a variety of software applications and the data can be difficult to interpret. 
