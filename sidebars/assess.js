@@ -70,6 +70,7 @@ module.exports = [
     label: "Enhanced liabilties",
     collapsed: true,
     items: [
+      "assess/enhanced-liabilties/loans-overview",
       { type: "link", label: "Enhanced liabilties loan summary", href: "/assess-api#/operations/get-loan-summary" },
       { type: "link", label: "Enhanced liabilties loan transactions", href: "/assess-api#/operations/list-loan-transactions" },
     ],
@@ -124,14 +125,6 @@ module.exports = [
       "assess/excel/enhanced-financials-report",
       "assess/excel/enhanced-invoices-report",
       "assess/excel/enhanced-cash-flow-report",
-    ],
-  },
-  {
-    type: "category",
-    label: "Liabilities",
-    collapsed: true,
-    items: [
-      "assess/loans/loan-transactions",
     ],
   },
   'assess/troubleshooting',
