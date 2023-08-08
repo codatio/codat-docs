@@ -11,13 +11,15 @@ SUwX is a user journey that takes potential customers from the Xero App Store di
 
 Xero’s documentation outlines [two approaches to Sign Up with Xero](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/sign-up):
 
-* Option A
+* Option A  
+
   This option uses a related concept called [Sign In with Xero](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/sign-in,) which enables users to use Xero as an identity provider when logging into your app. This is similar to signing in with Google or Facebook. 
   
   This approach typically requires significantly more developer resource and is not possible for all apps (for example, apps that do not have a completely self-serve onboarding process and need customers to speak to a sales representative first).
  
 * Option B
-  * This approach is more popular with Codat clients. It is simpler and enables apps to reduce the time and developer resource required to pass Xero Certification.
+  
+  This approach is more popular with Codat clients. It is simpler and enables apps to reduce the time and developer resource required to pass Xero Certification.
 
 If you would like to implement SUwX Option A, please notify your Codat account team for assistance. If you would like to proceed with Option B, please the guidance below and consult your Codat account team if you have any queries.
 
