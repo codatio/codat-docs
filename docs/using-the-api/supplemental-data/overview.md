@@ -103,4 +103,9 @@ Review the table below for platform schemas we use in our data types, which are 
 
 - Where we are unable to retrieve requested supplemental data, the fetch operation will still complete, but the supplemental properties will be null.
 
+- If we are unable to perform the operation when creating, updating, or deleting (CUD) supplemental data, the operation will fail to avoid creating or updating potentially incomplete or inaccurate records.
+
+- If you configure properties that already exist in Codat's standard data model as supplemental properties, they will overwrite the standard data when creating, updating, or deleting records.
+
+
 - Deleted objects, indicated by `metadata.isDeleted flag` set to `true`, will not be enriched by supplemental data.  You can read more about [how we handle deleted data](https://docs.codat.io/updates/230411-deletion-of-data#additional-information). 
