@@ -1,7 +1,7 @@
 ---
 title: "Enhanced liabilities - loans"
 description: "Learn how to identify a company's loans to better understand its financial health"
-sidebar_label: "Enhanced liabilities loans overview"
+sidebar_label: "Loans overview"
 ---
 
 Loan data is often not uniform, spread across a variety of software applications and the data can be difficult to interpret. 
@@ -37,6 +37,10 @@ Commerce connection:
 
 If the company does not have any of these connections, the endpoint will respond with an error.
 
-## Invoices Report
-The Loan transactions endpoint returns a list of a company's loan transactions across all its valid data connections.
-This may include drawdowns, repayments, and interest.
+## Summary Report
+The Loan summary endpoint returns a list of a company's loan liabilities across all its valid data connections.
+This will include drawdowns, repayments, and remaining balance.
+
+## Transactions Report
+The Loan transactions endpoint returns a paged list of a company's loan transactions for the specified connection type.
+This may include drawdowns, accured interest, capital and interest repayments.
