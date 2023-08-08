@@ -47,7 +47,7 @@ While Codat handles the initial connection to Xero via the Codat Link UI, Xero r
 
 **Action required: significant**
 
-If an error occurs, your UI should communicate that fact to the user. It is best practice to provide detailed error messages or logs. Codat provides detailed error messaging for any issues with the integration, including status codes, listed [here](/using-the-api/errors).
+If an error occurs, your UI should communicate that fact to the user. It is best practice to provide detailed error messages or logs. Codat provides detailed error messaging for any issues with the integration, including status codes, listed in our [Status codes and errors](/using-the-api/errors).
 
 ### 5. Offline access
 

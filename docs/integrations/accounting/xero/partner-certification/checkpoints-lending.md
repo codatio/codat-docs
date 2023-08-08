@@ -60,7 +60,7 @@ This checkpoint assumes that your borrowers are able to manage their data connec
 
 **Action required: significant**
 
-If an error occurs, your UI should communicate that fact to the user. It is best practice to provide detailed error messages or logs. Codat provides detailed error messaging for any issues with the integration, including status codes, listed [here](/using-the-api/errors).
+If an error occurs, your UI should communicate that fact to the user. It is best practice to provide detailed error messages or logs. Codat provides detailed error messaging for any issues with the integration, including status codes, listed in our [Status codes and errors](/using-the-api/errors).
 
 ### 5. Offline access
 
