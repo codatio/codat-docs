@@ -120,14 +120,6 @@ module.exports = [
   },
   {
     type: "category",
-    label: "Liabilities",
-    collapsed: true,
-    items: [
-      "lending/loans/loan-transactions",
-    ],
-  },
-  {
-    type: "category",
     label: "Lending in the Portal",
     collapsed: true,
     items: [
