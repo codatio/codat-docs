@@ -72,7 +72,7 @@ module.exports = [
     items: [
       "assess/enhanced-liabilities/loans-overview",
       { type: "link", label: "Loan summary", href: "/assess-api#/operations/get-loan-summary" },
-      { type: "link", label: "Enhanced liabilties loan transactions", href: "/assess-api#/operations/list-loan-transactions" },
+      { type: "link", label: "Loan transactions", href: "/assess-api#/operations/list-loan-transactions" },
     ],
   },
   {
