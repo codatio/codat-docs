@@ -54,7 +54,7 @@ When this link is initiated by the customer, it triggers the creation of a compa
 
 Navigate to **Settings > Auth flow > Redirects** to access the [Redirects](https://app.codat.io/settings/redirects) page in the Codat Portal. Under **Sign up success redirect URL**, enter the base URL of the form you will display to the customer, without any parameter replacements. Your changes will be auto-saved.
 
-![Sign Up success redirect URL](/img/integrations/accounting/xero/Sugn-up-success-redirect.png)
+![Sign Up success redirect URL](/img/integrations/accounting/xero/Sign-up-success-redirect.png)
 
 ### Pre-populate customer's account with Xero data 
 
