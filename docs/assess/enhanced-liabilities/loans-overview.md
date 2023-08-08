@@ -1,5 +1,5 @@
 ---
-title: "Enhanced Liabilities - Loans"
+title: "Enhanced liabilities - loans"
 description: "Learn how to identify a company's loans to better understand its financial health"
 sidebar_label: "Enhanced liabilities loans overview"
 ---
