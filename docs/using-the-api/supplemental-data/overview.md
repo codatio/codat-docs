@@ -103,4 +103,8 @@ Review the table below for platform schemas we use in our data types, which are 
 
 - Where we are unable to retrieve requested supplemental data, the fetch operation will still complete, but the supplemental properties will be null.
 
+- On push, if we are unable to push the additional supplemental data, the push operation will fail to avoid pushing potentially incomplete or inaccurate records.
+
+- If you configure supplemental properties that also exist in Codat's standard data model, the supplemental properties will overwrite the standard data on push.
+
 - Deleted objects, indicated by `metadata.isDeleted flag` set to `true`, will not be enriched by supplemental data.  You can read more about [how we handle deleted data](https://docs.codat.io/updates/230411-deletion-of-data#additional-information). 
