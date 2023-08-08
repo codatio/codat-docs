@@ -40,10 +40,6 @@ If the company does not have any of these connections, the endpoint will respond
 The loan summary endpoint returns a list of a company's loan liabilities across all its valid data connections.
 This will include drawdowns, repayments, and remaining balance.
 
-Explore the _Enhanced Liabilities Loan Summary Report_ endpoint in our [Lending API reference](/lending-api#/operations/operations/get-loan-summary).
-
 ## Transactions Report
 The loan transactions endpoint returns a paged list of a company's loan transactions for the specified connection type.
 This may include drawdowns, accrued interest, capital and interest repayments.
-
-Explore the _Enhanced Liabilities Loan Transactions Report_ endpoint in our [Lending API reference](/lending-api#/operations/list-loan-transactions).
