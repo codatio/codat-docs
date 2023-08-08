@@ -21,7 +21,7 @@ Xero’s documentation outlines [two approaches to Sign Up with Xero](https://de
   
   This approach is more popular with Codat clients. It is simpler and enables apps to reduce the time and developer resource required to pass Xero Certification.
 
-If you would like to implement SUwX Option A, please notify your Codat account team for assistance. If you would like to proceed with Option B, please the guidance below and consult your Codat account team if you have any queries.
+If you would like to implement SUwX Option A, please notify your Codat account team for assistance. For Option B, follow the guidance below and consult your Codat account team if you have any queries.
 
 ## Implementing SUwX Option B with Codat
 
@@ -29,7 +29,7 @@ This option of the Sign Up with Xero flow is intended to bring potential custome
 
 If you do not have an existing signup or inquiry form, you should create one, because you will require a URL to redirect customers to during the SUxW journey. In this guide, we refer to this URL as your **Sign up success redirect URL**.
 
-### User Flow
+### User flow
 
 ![Sign Up with Xero - Option B - User Flow](/img/integrations/accounting/xero/Sign-Up-with-Xero-Option-B-User-Flow.png)
 
