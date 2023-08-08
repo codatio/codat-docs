@@ -13,7 +13,7 @@ Xero’s documentation outlines [two approaches to Sign Up with Xero](https://de
 
 * Option A  
 
-  This option uses a related concept called [Sign In with Xero](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/sign-in,) which enables users to use Xero as an identity provider when logging into your app. This is similar to signing in with Google or Facebook. 
+  This option uses a related concept called [Sign In with Xero](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/sign-in), which enables users to use Xero as an identity provider when logging into your app. This is similar to signing in with Google or Facebook. 
   
   This approach typically requires significantly more developer resource and is not possible for all apps (for example, apps that do not have a completely self-serve onboarding process and need customers to speak to a sales representative first).
  
