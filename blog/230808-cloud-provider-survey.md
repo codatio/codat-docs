@@ -13,4 +13,4 @@ We've prepared a quick survey on your technology stack, and how you use your clo
 
 Your responses will be confidential (if you don't want to remain anonymous then please reach out directly to your account manager to talk). Your input is valued and will directly influence our future decisions, including the potential development of a comprehensive marketplace listings from cloud providers.
 
-[**Complete the survey here**](bit.ly/codat-cloud-survey)
+[**Complete the survey here**](https://bit.ly/codat-cloud-survey)
