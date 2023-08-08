@@ -1,7 +1,7 @@
 ---
 title: "Advanced sync settings"
 description: "Review additional settings available to configure the sync of various data types"
-displayed:sidebar: "docs"
+displayed_sidebar: "docs"
 ---
 
 For most of our data types, we retrieve all available history. For financial statement data types (`balanceSheet`, `profitAndLoss`, `cashFlowStatement`), we retrieve 24 months of history. You can apply additional sync settings to change these defaults. This helps you limit the amount of data synchronized from the source platform. 
