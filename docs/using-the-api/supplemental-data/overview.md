@@ -81,7 +81,7 @@ GET /integrations​/{platformKey}/datatypes/{datatype}/supplementalDataConfig
 
 ## Platform endpoint mapping
 
-Review the table below for platform schemas we use in our data types, which are available for you to fetch, create, or update supplemental data. Refer to to the platform's individual documentation (for example, [Xero](https://developer.xero.com/documentation/api/accounting/overview) or [QBO](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/most-commonly-used/account)) for further details of their schemas and property coverage.
+Review the table below for platform schemas we use in our data types, which are available for you to fetch or create supplemental data. Refer to to the platform's individual documentation (for example, [Xero](https://developer.xero.com/documentation/api/accounting/overview) or [QBO](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/most-commonly-used/account)) for further details of their schemas and property coverage.
 
 <iframe
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIOf4fqpv6L2Phe3iz5nLMPDdBVaAuI3La5dTMTn58TZq_6395WtUsUq7s7jAbeq2vwuseiCzu5DZG/pubhtml?widget=true&amp;headers=false"
