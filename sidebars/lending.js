@@ -62,7 +62,7 @@ module.exports = [
   },
   "lending/enhanced-cash-flow/overview",
   "lending/enhanced-invoices/overview",
-  "lending/enhanced-liabilities/overview",
+  "lending/enhanced-liabilities/loans-overview",
   {
     type: "category",
     label: "Data integrity",
@@ -116,14 +116,6 @@ module.exports = [
       "lending/excel/enhanced-financials-report",
       "lending/excel/enhanced-invoices-report",
       "lending/excel/enhanced-cash-flow-report",
-    ],
-  },
-  {
-    type: "category",
-    label: "Liabilities",
-    collapsed: true,
-    items: [
-      "lending/loans/loan-transactions",
     ],
   },
   {
