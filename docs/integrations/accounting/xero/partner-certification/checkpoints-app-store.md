@@ -3,14 +3,9 @@ title: "Xero's certification checkpoints"
 description: "A guide to getting Xero's App Store Partner certification with Codat"
 ---
 
-Codat handles many of [Xero's certification checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/) for you. However, some checkpoints, especially ones related to your app's UI, require you to take action: 
+To receive an App Store Partner certification, all apps connecting to Xero must comply with a list of certification checkpoints, which you can review in detail in Xero's [own documentation](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/). 
 
-* Checkpoint 3: Connection
-* Checkpoint 4: Error Handling
-* Checkpoint 8: Sign Up with Xero
-* Checkpoint 12 and 16: Account Mapping if you are creating, updating, or deleting data.
-
-We provided you with a detailed breakdown of actions you need to take for each certification checkpoint, and recommend that you work closely with your Codat account team during your implementation. 
+Codat handles many of the certification checkpoints for you. For those that require you to take action, we prepared this companion guide that helps you understand the steps you need to take. We also recommend that you work closely with your Codat account team during your implementation. 
 
 ## Always required
 
@@ -37,7 +32,7 @@ While Codat handles the initial connection to Xero via the Codat Link UI, Xero r
 | Requirement | Recommendations |
 | :-- | :-- |
 | Display the name of the tenant that has been connected | This can be retrieved from our [Get company info](/accounting-api#/operations/get-company-info) endpoint. |
-| Display the current status of the connection(s). If disconnected, provide a button to reconnect to Xero | Status - `Connection.status` endpoint.  <br/>Link to power your button to connect - `Connection.linkURL` |
+| Display the current status of the connection. If disconnected, provide a button to reconnect to Xero | Use our [Get connection](/codat-api#/operations/get-company-connection) endpoint to check the `status` of the connection and use the `linkUrl` to reconnect|
 | Provide a button to terminate the connection | When a user clicks on the button, use our [Unlink connection](/codat-api#/operations/unlink-connection) endpoint to disconnect from Xero. |
 | Handle a disconnect from Xero's side | Use our [Data connection status changed](/using-the-api/webhooks/core-rules-types#company-data-connection-status-changed) webhook to identify when a disconnect happens. When the alert is triggered, change the connection status in your UI and display a "Reconnect" or "Connect" button.|
 | Support one-to-one or multi-organizational connection | Codat allows your customers to select their Xero organization using the native Xero UI. You can enable them to connect to multiple organizations within Xero by creating a separate Codat company per organization. |
@@ -53,7 +48,7 @@ If an error occurs, your UI should communicate that fact to the user. It is best
 
 **Action required: none**
 
-This checkpoint is fully handled by Codat as we handle the connectivity with Xero's API.
+Our Xero integration covers the requirements of this checkpoint in full.
   
 ### 6. Rate limit hit management
 
@@ -81,19 +76,19 @@ All apps seeking certification and listing in the Xero App Store need to build a
 
 **Action required: none**
 
-This checkpoint is fully handled by Codat as we handle the connectivity with Xero's API.
+Our Xero integration covers the requirements of this checkpoint in full.
 
 ### 10. Paging
 
 **Action required: none**
 
-This checkpoint is fully handled by Codat as we handle the connectivity with Xero's API.
+Our Xero integration covers the requirements of this checkpoint in full.
 
 ### 11. Webhooks
 
 **Action required: none**
 
-This checkpoint is fully handled by Codat as we handle the connectivity with Xero's API. However, ensure you use appropriate webhooks as you interact with the Codat API. You can learn more about the [webhooks we provide](/using-the-api/webhooks/core-rules-types) and [how to set them up](/using-the-api/webhooks/core-rules-create).
+Our Xero integration covers the requirements of this checkpoint in full. However, ensure you use appropriate webhooks as you interact with the Codat API. You can learn more about the [webhooks we provide](/using-the-api/webhooks/core-rules-types) and [how to set them up](/using-the-api/webhooks/core-rules-create).
   
 ---
 
@@ -111,9 +106,10 @@ If you plan to create, update or delete data in Xero, you need to create an acco
 
 This checkpoint is only relevant if your app deals with multiple currencies. 
 
-Our currency data type is available across all integrations and is aware of the currencies enabled by the SME in Xero. When creating or updating transactional data, such as a payment in another currency, use our [Get push options](/codat-api#/operations/get-create-update-model-options-by-data-type) endpoint to see which currencies have been set up by your customer in Xero. 
+Before creating or updating transactional data, such as a payment in another currency, use our [Get push options](/codat-api#/operations/get-create-update-model-options-by-data-type) endpoint to see which currencies have been set up by your customer in Xero. Then, proceed with creating or updating that transactional data.
 
 You can also read more about [creating, updating or deleting data](/using-the-api/push) with Codat.
+
 
 ### 14. Rounding 
 
@@ -147,34 +143,6 @@ You can also read more about [creating, updating or deleting data](/using-the-ap
 
 ## Preferred user experience
 
-The following checkpoints are considered best practices. These are not mandatory for the Xero certification, but can enhance the user experience. 
+The remaining checkpoints are considered best practices. These are not mandatory for the Xero certification, but can enhance the user experience. 
 
-### 17. Sign in with Xero
-
-If you would like to implement Sign in with Xero using Codat, please contact your Codat account team for detailed guidance.
-
-### 18. Deep linking
-
-Deep linking enables your application to create a link that directs the user to a specific resource within a specific Xero organization. This provides a quick and easy way for the user to jump into Xero from the resource referenced in your product.
-
-You can view the direct links in the `sourceUrls` property of our [Get company info](/accounting-api#/operations/get-company-info) endpoint. 
-
-We also use Xero record ids, which means you can implement deep links for Xero contacts by using a hyperlink with the following structure:
-
-`https://go.xero.com/Contacts/View/{Codat's customerId}`
-
-You can find further information about deep linking in Xero's [own documentation](https://developer.xero.com/documentation/guides/how-to-guides/deep-link-xero/).
-
-### 19. Invoice status
-
-Available when pushing via the Invoice endpoint
-
-### 20. Invoice URL and bank transactions URL
-
-This is not currently supported via Codat. Please contact your Codat account team with a feature request if this functionality is required for your use case. 
-
-### 21. Logs
-
-You can [retrieve a log](/using-the-api/pull-history) of all data types and past syncronizations performed by Codat, and display it back to the user, using our [List pull operations](/codat-api#/operations/list-pull-operations) endpoint. This may be useful if, for example, they want to know when invoices were last fetched from their Xero instance.
-
-You can also [retrieve and display the history](/configure/portal/pull-and-push-history) of created, updated or deleted data using our [List push operations](/codat-api#/operations/get-company-push-history) endpoint. 
+If you would like guidance on how to comply with any of these checkpoints, please consult your Codat account team.

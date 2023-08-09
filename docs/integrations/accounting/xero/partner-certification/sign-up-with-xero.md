@@ -3,11 +3,11 @@ title: "Sign Up with Xero"
 description: "Learn how to enable the Sign Up with Xero flow with Codat to support your app's certification"
 ---
 
-Providing Sign Up with Xero (SUwX) is a requirement for all App Store Partners seeking certification, as prescribed by Xero’s [certification checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/#required-for-all-integrations). It is optional for Financial Services Partners, depending on whether you choose to be listed in the App Store. 
+Providing the Sign Up with Xero flow is a requirement for all App Store Partners seeking certification, as prescribed by Xero’s [certification checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/#required-for-all-integrations). It is optional for Financial Services Partners, depending on whether you choose to be listed in the App Store. 
 
-SUwX is a user journey that takes potential customers from the Xero App Store directly to your app. It reduces the number of steps users need to take to sign up to your app and enables Xero to track referrals that originate in the Xero App Store.
+Sign Up with Xero is a user journey that takes potential customers from the Xero App Store directly to your app. It reduces the number of steps users need to take to sign up to your app and enables Xero to track referrals that originate in the Xero App Store.
 
-## SUwX implementation options
+## Flow implementation options
 
 Xero’s documentation outlines [two approaches to Sign Up with Xero](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/sign-up):
 
@@ -19,13 +19,13 @@ Xero’s documentation outlines [two approaches to Sign Up with Xero](https://de
  
 * Option B
   
-  This approach is more popular with Codat clients. It is simpler and enables apps to reduce the time and developer resource required to pass Xero Certification.
+  This approach is more popular with Codat clients. It is simpler and enables apps to reduce the time and developer resource required to pass the Xero certification.
 
-If you would like to implement SUwX Option A, please notify your Codat account team for assistance. For Option B, follow the guidance below and consult your Codat account team if you have any queries.
+If you would like to implement Option A of the Sign Up with Xero flow, please notify your Codat account team for assistance. For Option B, follow the guidance below and consult your Codat account team if you have any queries.
 
-## Implementing SUwX Option B with Codat
+## Implementing Option B of Sign Up with Xero with Codat
 
-This option of the Sign Up with Xero flow is intended to bring potential customers from the Xero App Store to an inquiry form on your website. SUwX allows you to pre-populate the form with OpenID data from Xero, like the customer's name and email address. 
+This option of the Sign Up with Xero flow is intended to bring potential customers from the Xero App Store to an inquiry form on your website. The flow allows you to pre-populate the form with OpenID data from Xero, like the customer's name and email address. 
 
 If you do not have an existing signup or inquiry form, you should create one, because you will require a URL to redirect customers to during the SUxW journey. In this guide, we refer to this URL as your **Sign up success redirect URL**.
 
