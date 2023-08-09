@@ -119,9 +119,9 @@ Codat also supports custom query parameters for redirects. You can define your o
 
 To set up a redirect with custom query parameters:
 
-1. In the **Redirect URL** box, enter a base URL along with the parameters you want to use to build the custom redirect. To add a parameter, wrap it in curly braces. For example: `https://mybank.io/{customparam}/show`.
+1. In the **Redirect URL** box, enter a base URL along with the parameters you want to use to build the custom redirect. To add a parameter, wrap it in curly braces. For example: `https://mybank.io/{customParam}/show`.
 2. Before you send out a **Link URL** to a customer, modify the URL by adding a question mark and the parameter name and value to the end of it.  
-   For example: `https://link.codat.io/.../link?customparam=123456`.  
+   For example: `https://link.codat.io/.../link?customParam=123456`.  
    If you want to add more than one parameter, separate them with an ampersand (`&`).
 3. If you use the redirect parameter and Link URL values shown above, your customer is redirected to `https://redirect.site/123456/show`.
 
