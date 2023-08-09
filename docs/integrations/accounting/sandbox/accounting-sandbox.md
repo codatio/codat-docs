@@ -5,7 +5,7 @@ description: "Learn about our Sandbox integration for syncing sample business da
 
 The Codat Sandbox integration contains sample data for developers to test our integrations and develop product demos. Sandbox gives you access to all the data types and operations supported by Codat.
 
-We've tried to make our Sandbox data as varied as possible; however, the data is auto-generated and its completeness and accuracy can't be guaranteed.
+We've tried to make our Sandbox data as varied as possible, and the data sets provide different levels of detail. However, the data is auto-generated and its completeness and accuracy can't be guaranteed.
 
 ## Data type coverage
 
