@@ -29,9 +29,7 @@ You can find the redirect settings page in the Portal:
 1. In the navigation bar click **Settings**
 2. In the side nav, click [**Auth flow > Redirects**](https://app.codat.io/settings/redirects)
 
-## Types of redirect URL
-
-### Redirect to a static URL
+## Redirect to a static URL
 
 A static URL is a single, unchanging web address that every customer would be directed to.
 
@@ -39,7 +37,7 @@ Enter the website address that you want to redirect your customers to in the **R
 
 You can ignore the other settings on the page.
 
-### Redirect with reserved query parameters
+## Redirect with reserved query parameters
 
 You can conditionally redirect users based on what happened when authorizing.
 
@@ -113,9 +111,9 @@ The names of query parameters are case sensitive, e.g. `companyId` is not the sa
 </details>
 
 
-### Redirect with custom query parameters
+## Redirect with custom query parameters
 
-Codat also supports custom query parameters for redirects. You can define your own values for each custom parameter so that you can direct different customers to, for example, different versions of a landing page. To do this, you need to add custom query parameters to the Redirect Parameter.
+Codat supports custom query parameters for redirects. You can define your own values for each custom parameter so that you can direct different customers to, for example, different versions of a landing page. To do this, you need to add custom query parameters to the Redirect Parameter.
 
 To set up a redirect with custom query parameters:
 
@@ -130,7 +128,7 @@ To set up a redirect with custom query parameters:
 Ensure any and all special characters used in the link URL are correctly encoded; otherwise custom parameters may not pull through correctly.
 :::
 
-#### Unspecified custom parameters
+:::caution Unspecified custom parameters
 
 It's not possible to specify default parameters. If you don't add a parameter to the Link URL when the redirect is built, it's replaced with an empty string.
 
@@ -153,28 +151,28 @@ It's not possible to specify default parameters. If you don't add a parameter to
    | `...f67e946f84c9/link` | `https://www.mybank.io//success?ClientType=` |
 
 </details>
+:::
 
 ## Dynamic hosts
 
-It's also possible to send users to completely different websites.
-
-#### Examples 
+It's also possible to send users to completely different websites and subdomains.
 
 | Redirect URL setting | Link URL | Resolves to... |
 | :- | :- | :- | 
-| `https://www.{business}.io/success` | `...f67e946f84c9/link?business=mybank` | `https://www.mybank.io/success` |
-| `https://www.{domain}/success` | `...f67e946f84c9/link?domain=mybank.io` | `https://www.mybank.io/success` |
-| `https://www.mybank{customerType}.io/success` | `...f67e946f84c9/link?customerType=business` | `https://www.mybank{business}.io/success` |
-| `https://www.mybank.{countrySuffix}/success` | `...f67e946f84c9/link?countrySuffix=com` | `https://www.mybank.com/success` |
+| `https://{environment}.mybank.io/success` | `...f67e946f84c9/link?environment=uat` | `https://uat.mybank.io/success` |
+| `https://mybank{customerType}.io/success` | `...f67e946f84c9/link?customerType=business` | `https://mybank{business}.io/success` |
+| `https://{website}/success` | `...f67e946f84c9/link?website=mybank.io` | `https://mybank.io/success` |
+| `https://mybank.{region}/success` | `...f67e946f84c9/link?region=com` | `https://mybank.com/success` |
+| `https://{business}.io/success` | `...f67e946f84c9/link?business=mybank` | `https://mybank.io/success` |
 
 <br/>
 
-To use this dynamic host behaviour:
+To use this dynamic host behaviour, you'll need to list each allowed host in **Allowed redirect URLs**.
 
-1. Provide one URL that uses custom parameters in **Authorization Complete Redirection Url**. 
-2. List each allowed host in **Allowed redirect URLs**. 
-3. When sending the Link URL to your customers, add the configured parameters to the URL.
-  If the redirect evaluates to a host that has not been placed on this list, your customer will not be redirected to it and will see an error.
+For the above example, `https://{environment}.mybank.io/success`, you'd have to explicitly list all valid environments:
+- `https://local.mybank.io/success`
+- `https://uat.mybank.io/success`
+- `https://prod.mybank.io/success`
 
 **Note**: The URLs must be valid URLs, which means they must have *https://* or *http://* added before them.
 
