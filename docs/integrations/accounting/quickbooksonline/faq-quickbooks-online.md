@@ -44,6 +44,14 @@ France-locale companies require that _journal codes_ (represented in QBO as `Jou
 
 The Journal Entries object in Codat's accounting data model does not have a field for journal code.
 
+:::caution Account number validation errors
+You may notice validation errors when creating new accounts for QBO Fr via our API. This is because account numbers must follow a strict format. Make sure your `nominalCode` attribute conforms to these requirements:
+
+- Length must be between 6 and 20 characters
+- Must start with the account number from the master category list
+- Name limited to alphanumeric characters
+:::
+
 ## Is QuickBooks Self Employed supported?
 
 Unfortunately, QuickBooks Self Employed uses a different API to QuickBooks Online. This API is not made public by Intuit and therefore it is not currently supported by Codat.

@@ -2,6 +2,8 @@
 title: "Onboarding to Codat"
 ---
 
+![](/img/knowledge-base/onboarding.png)
+
 1. Introduction
 
 Introduction to our Solutions team who will discuss your use case, our solution and any technical questions.

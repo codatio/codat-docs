@@ -54,7 +54,11 @@ You can change the synchronization frequency using the drop-down list next to th
 - Daily
 - Hourly (premium feature)
 
-By default, **Sync frequency** is set to **None**.
+It is not possible to specify a date or a time for synchronization. Instead, the syncs are queued automatically based on the frequency and the age of the existing data set. By default, **Sync frequency** is set to **None**. 
+
+:::note Offline connectors
+If a connector remains installed on the user’s machine and a sync frequency is configured, the offline connector will continue to periodically sync data when the connector is available.
+:::
 
 ## Queue a sync from the Codat Portal
 
