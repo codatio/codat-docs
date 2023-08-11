@@ -32,7 +32,7 @@ module.exports = [
   },
   {
     type: "category",
-    label: "Customize",
+    label: "Configure",
     collapsed: true,
     items: [
       "auth-flow/customize/customize-link",

@@ -1,6 +1,6 @@
 ---
 title: "Customize Link"
-sidebar_label: Link
+sidebar_label: Link settings
 description: "Explore the available settings to tailor Link to your authorization journey's needs"
 ---
 

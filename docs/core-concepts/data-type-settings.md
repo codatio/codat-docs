@@ -69,8 +69,8 @@ To manually trigger your data to be synchronized:
 
 You can also view **Pull history** and **Push history** to check the status of previous pull and push data syncs.
 
-:::note Additional sync settings
-Some additional settings for the data type sync are available [via our API](/codat-api#/operations/update-profile-syncSettings).
+:::note Default sync history
+For most data types, we retrieve all available history. For financial statement data types (`balanceSheet`, `profitAndLoss`, `cashFlowStatement`), we retrieve 24 months of history. These default settings can be overriden via our API using [advanced sync settings](/knowledge-base/advanced-sync-settings).
 :::
 
 ---

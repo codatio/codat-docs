@@ -42,3 +42,5 @@ Occasionally, you may see the below screen while signing into the Codat portal:
 ![](/img/knowledge-base/client-disabled.png)
 
 To resolve this issue and successfully sign in, sign out of the portal and sign back in using a different authentication method. Try signing in with Google first and if Google does not work try signing in with Microsoft.
+=======
+Some accounting platforms do not allow deletion, in these cases you should advise them to Void the data instead.
