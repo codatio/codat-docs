@@ -7,7 +7,7 @@ Support your customers accounts payable processes by integrating seamlessly with
 
 Near real time connectivity with the suppliers accounting platforms makes it easier for suppliers to submit their invoices removing friction and admin logjam from this process. 
 
-![codatio/codat-docs/static/img/knowledge-base/supplierOnboarding.png]()
+![](codatio/codat-docs/static/img/knowledge-base/supplierOnboarding.png)
 
 
 Supplier Onboarding Features
