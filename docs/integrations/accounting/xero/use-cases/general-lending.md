@@ -137,7 +137,7 @@ To: nominated bank account
 
 Amount: amount of drawdown
 
-![](/img/integrations/accounting/xero/xero-general-lending-2.PNG)
+![](/img/integrations/accounting/xero/xero-general-lending-2.png)
 
 Codat
 
@@ -159,7 +159,7 @@ Amount: amount of final payment
 
 Status: Reconciled
 
-![](/img/integrations/accounting/xero/xero-general-lending-3.PNG)
+![](/img/integrations/accounting/xero/xero-general-lending-3.png)
 
 Codat
 
@@ -179,7 +179,7 @@ Line item: TBD
 
 Account: nominated expense account
 
-![](/img/integrations/accounting/xero/xero-general-lending-4.PNG)
+![](/img/integrations/accounting/xero/xero-general-lending-4.png)
 
 Codat
 
@@ -208,7 +208,7 @@ Amount: amount of payment
 |   To    | Lender account      | Lender account       | Lender account  |
 | Amount  | Amount of drawdown  | Amount of repayment  | Amount of fee   |
 
-![](/img/integrations/accounting/xero/xero-general-lending-5.PNG)
+![](/img/integrations/accounting/xero/xero-general-lending-5.png)
 
 Data Model: Bank transactions
 

@@ -120,7 +120,7 @@ To: nominated bank account
 
 Amount: amount of drawdown
 
-![](/img/integrations/accounting/xero/xero-invoice-finance-2.PNG)
+![](/img/integrations/accounting/xero/xero-invoice-finance-2.png)
 
 Codat
 
@@ -140,7 +140,7 @@ To: Lender bank account
 
 Amount: amount of final payment
 
-![](/img/integrations/accounting/xero/xero-invoice-finance-3.PNG)
+![](/img/integrations/accounting/xero/xero-invoice-finance-3.png)
 
 Codat
 
@@ -160,7 +160,7 @@ Line item: TBD
 
 Account: nominated expense account
 
-![](/img/integrations/accounting/xero/xero-invoice-finance-4.PNG)
+![](/img/integrations/accounting/xero/xero-invoice-finance-4.png)
 
 Codat
 
@@ -188,11 +188,11 @@ links: id of original invoice
 
 Original invoice
 
-![](/img/integrations/accounting/xero/xero-invoice-finance-5.PNG)
+![](/img/integrations/accounting/xero/xero-invoice-finance-5.png)
 
 Payment
 
-![](/img/integrations/accounting/xero/xero-invoice-finance-6.PNG)
+![](/img/integrations/accounting/xero/xero-invoice-finance-6.png)
 
 Codat
 
@@ -206,7 +206,7 @@ To: Lender account
 
 Amount: amount of payment
 
-![](/img/integrations/accounting/xero/xero-invoice-finance-7.PNG)
+![](/img/integrations/accounting/xero/xero-invoice-finance-7.png)
 
 Data Model: Bank transactions
 
