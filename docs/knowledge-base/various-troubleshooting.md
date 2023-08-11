@@ -35,3 +35,10 @@ You may experience errors or limitations when reading, writing or synchronizing 
 | [Sage 50](https://help-sage50.na.sage.com/en-us/2019/Content/USERS/Role_Setup.htm)             |  - Full access <br/> - Custom <br/> - Customers & Sales <br/> - Vendors & Purchases <br/>- Inventory & Services <br/> - Banking & General Ledger <br/> - Company     |
 | [Xero](https://central.xero.com/s/article/User-roles-and-permissions-in-Xero-Business-edition?userregion=true)                |  - Adviser <br/> - Standard                                                                                                                                            |
 
+## Client Disabled via Login Provider
+
+Occasionally, you may see the below screen while signing into the Codat portal:
+
+![](/img/knowledge-base/client-disabled.png)
+
+To resolve this issue and successfully sign in, sign out of the portal and sign back in using a different authentication method. Try signing in with Google first and if Google does not work try signing in with Microsoft.

@@ -63,3 +63,39 @@ Additional communication may be required to reassure them of the process includi
 Marketing
 
 Our marketing team would be happy to help with shared announcements and potential use cases.
+
+Client onboarding
+
+When managing Codat as a partner there are a few operational decisions to consider:
+
+Who will own the configuration
+Each instance requires one-off configuration before it is ready for onboarding
+For cloud platforms: configuration includes the setup of a developer application within the accounting platform and in some cases approval or contracts before accessing production accounting data
+This can be handled by the client or by the partner on-behalf of their clients.
+Who will manage and maintain the instance
+Who will need on-going access to the Portal including API key(s)
+The responsible party should be aware of our Support process and online documentation.
+Action required
+
+When onboarding new clients your decision on who owns the configuration and management will impact who should be initially setup on the environment:
+
+Client owned Please provide the clients technical lead as the Admin email
+Distributor owned Please provide your own technical leads as the Admin email
+Client creation
+
+Codat has two environment:
+
+Staging: Hosts all UAT, Testing and Dev instances
+Production: Hosts all Production instances
+
+When onboarding a new client you will need to request the creation of new instance(s) depending on their requirements.
+
+Email solutions@codat.io with:
+Company Name
+Instances: UAT and/or Production
+Admin Email(s): Email address for the technical lead(s) who will own configuration of the instance(s)
+Creation and handover
+Our Solutions team will setup and checkout your new environment(s) before handover
+Email confirmation
+Once the instance is ready your Admin(s) will receive a confirmation email and invitation to set their password
+If a multi instance user the instance(s) will be added to their view (note staging and production environments remain separate)

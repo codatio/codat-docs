@@ -3,12 +3,19 @@ title: "Install the QuickBooks Desktop connector"
 description: "Guide for SMB users to install our QuickBooks Desktop on-premise connector."
 sidebar_label: Install the connector
 ---
+:::info QuickBooks Desktop installation checklist
 
-:::info Linking companies using the QuickBooks Desktop connector
+<input type="checkbox" unchecked/> <b>Check version is supported</b>
 
-The QuickBooks Desktop connector must be run on the same computer as the QuickBooks Desktop application. Advise your client to install the connector on the computer they normally use when working with QuickBooks Desktop.
+Your customer needs to be running a supported version of QuickBooks Desktop Pro, Enterprise or Professional. QuickBooks for Mac is not supported. 
 
-Before they start the linking process, the user must open QuickBooks Desktop and log in to the company they want to link.
+<input type="checkbox" unchecked/> <b>Check operating system requirements</b>
+
+The connector works on Windows 10, Windows 11, and Windows Server 2019, and may not work correctly on earlier versions of Windows. Your customer will need administrator permissions on your computer to complete the installation.
+
+<input type="checkbox" unchecked/> <b>Consider antivirus and firewall</b>
+
+The user's local antivirus or firewall settings may prevent the download and running of the connector. To resolve, you need to allowlist the connector.
 
 :::
 
@@ -23,6 +30,18 @@ To install the QuickBooks Desktop connector, the user who is connecting their co
 4. [Authorize the connector to access QuickBooks](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector#4-authorize-the-connector-to-access-quickbooks)
 
 5. [Wait for the connector to complete first link](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector#5-wait-for-the-connector-to-complete-first-link)
+
+
+:::info Linking companies using the QuickBooks Desktop connector
+
+The QuickBooks Desktop connector must be run on the same computer as the QuickBooks Desktop application. Advise your client to install the connector on the computer they normally use when working with QuickBooks Desktop.
+
+Before they start the linking process, the user must open QuickBooks Desktop and log in to the company they want to link. 
+
+If the user works with a hosted instance of QuickBooks Desktop (e.g. Right Networks), they must first be approved by Right Networks before proceeding. Please review our [prerequisites documentation](/integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks).
+
+:::
+
 
 ## 1. Download the connector
 

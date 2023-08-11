@@ -20,11 +20,11 @@ The first step is to configure the data source, to do this:
 3. Choose From Other Sources from the picklist
 4. Select From Web to launch the dataloader
 
-![](codatio/codat-docs/static/img/knowledge-base/api-excel-1.png)
+![](/img/knowledge-base/api-excel-1.png)
 
 Once this has been configured the main dataloader pane will appear:
 
-![](codatio/codat-docs/static/img/knowledge-base/api-excel-2.png)
+![](/img/knowledge-base/api-excel-2.png)
 
 to set this up:
 
@@ -39,20 +39,20 @@ to set this up:
 
 Assuming that the information has been entered correctly, the datatypes have been enabled and company has synced, then the request will be successful and the Microsoft Power Query window will load, this page will allow you to shape and choose which data you wish to import into your workbook.
 
-![](codatio/codat-docs/static/img/knowledge-base/api-excel-3.png)
+![](/img/knowledge-base/api-excel-3.png)
 
 First click on the List option, this will take you to a table with the column name List and each row will contain a Record.
 
-![](codatio/codat-docs/static/img/knowledge-base/api-excel-4.png)
+![](/img/knowledge-base/api-excel-4.png)
 
 At this point select Transform (1) from the navigation bar and then To Table (2), you will get a pop up where you can keep the default settings as this is going to convert the array of results to an Excel table.
 
-![](codatio/codat-docs/static/img/knowledge-base/api-excel-5.png)
+![](/img/knowledge-base/api-excel-5.png)
 
 Once this loads, select the column expander (3) and choose which fields you want to include in your final table.
 
 If the endpoint has nested JSON such as invoice or journal lines, you can expand these additional columns in the same way by clicking on the expander and selecting Expand to New Rows
 
-![](codatio/codat-docs/static/img/knowledge-base/api-excel-6.png)
+![](/img/knowledge-base/api-excel-6.png)
 
 Once you are happy with the preview of the data, click Close & Load, this will import your table into your Excel workbook.
