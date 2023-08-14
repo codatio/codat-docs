@@ -3,11 +3,11 @@ title: "Paid plans"
 description: "Upgrade to a payment plan that suits your needs"
 ---
 
-When you're ready to move to a paid plan, you can [contact our sales team](https://www.codat.io/plans/#get-in-touch) to discuss enterprise pricing options.
+When you're ready to move to a paid plan, you can [contact our sales team](https://www.codat.io/plans/#get-in-touch) to discuss pricing options.
 
 If you're an Admin, you can view the plan you're currently on in the Codat Portal.
 
-| Feature                 | Free           | Full access       |
+| Feature                 | Free trial           | Full access       |
 | :-                      | :--             | :--            |
 | Seats                   | Unlimited      | Unlimited        |
 | Usage                   | 50 companies<br/>5 connections/source | Unlimited        |
@@ -36,7 +36,7 @@ Everything from Free plus:
 
 ### Billing
 
-Our enterprise plans is much more cost effective than our start-up plan once your usage of Codat scales. [Contact our sales team](https://www.codat.io/plans/#get-in-touch) to discuss enterprise pricing options.
+[Contact our sales team](https://www.codat.io/plans/#get-in-touch) to discuss enterprise pricing options.
 
 <details>
 <summary>Other plan options</summary>
