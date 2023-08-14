@@ -26,8 +26,9 @@ If you're an Admin, you can view the plan you're currently on in the Codat Porta
 
 ### Features
 
-Everything from Start-up plus:
-
+Everything from Free plus:
+- Unlimited companies
+- Unlimited seats
 - Volume-based pricing
 - Implementation support
 - SAML SSO
