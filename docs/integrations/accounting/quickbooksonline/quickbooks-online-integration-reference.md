@@ -38,3 +38,21 @@ The following table highlights selected fields that are not available in data pu
 
 _Item bundles_ in QuickBooks Online are supported for Direct Incomes, Invoices, and Credit Notes only.
 :::
+
+## QBO app hosting
+
+To access your production credentials in QuickBooks Online, you need to confirm where your app is hosted. Since Codat interacts directly with QBO, you need to include our IPs and hosting locations as well as your own (if applicable).
+
+:::note Dynamic IPs
+Our IPs are dynamic. The set of IPs included below is correct as of Q1 2022.
+:::
+
+**Country**: United Kingdom of Great Britain and Northern Ireland
+| IP address type  | Start        | End            |
+|------------------|--------------|----------------|
+| IP address range | 20.77.152.0  | 20.77.153.255  |
+| Single IP        | 51.104.28.73 |                |
+| IP address range | 51.132.44.0  | 51.132.47.255  |
+| IP address range | 51.132.155.0 | 51.132.159.255 |
+
+

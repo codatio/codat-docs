@@ -39,7 +39,7 @@ Before you begin, make sure you understand the different [QuickBooks Online envi
 
 QuickBooks Online provides two separate environments:
 
-- A **sandbox company** containing sample data for development and testing purposes. You automatically get one when you create a QBO developer account. See <a className="external" href="https://developer.intuit.com/app/developer/qbo/docs/develop/sandboxes/manage-your-sandboxes" target="_blank">Create and test with a sandbox company</a> in the Intuit developer documentation.
+- A **sandbox company** containing sample data for development and testing purposes. You automatically get one when you create a QBO developer account. See <a className="external" href="https://developer.intuit.com/app/developer/qbo/docs/develop/sandboxes/manage-your-sandboxes" target="_blank">Create and test with a sandbox company</a> in the Intuit developer documentation, or navigate to your profile, then **Sandbox**, in the [Intuit Developer Portal](https://developer.intuit.com/).
 - A **live QuickBooks account** (including free trials).
 
 Sandbox companies can only connect to a QuickBooks Online app using the app's development keys. Live accounts can only connect to a QuickBooks Online app using the app's production keys.
