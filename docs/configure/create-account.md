@@ -3,29 +3,42 @@ title: "Paid plans"
 description: "Upgrade to a payment plan that suits your needs"
 ---
 
-You have two options when you're ready to move to a paid plan. You can:
+When you're ready to move to a paid plan, you can [contact our sales team](https://www.codat.io/plans/#get-in-touch) to discuss enterprise pricing options.
 
-- Pay through Stripe on our start-up plan based on your monthly usage.
-- [Contact our sales team](https://www.codat.io/plans/#get-in-touch) to discuss enterprise pricing options.
+If you're an Admin, you can view the plan you're currently on in the Codat Portal.
 
-If you're an Admin, you can view the available pricing plans and upgrade via Stripe by visiting <a href="https://app.codat.io/settings/billing" target="_blank">Billing</a> in the Codat Portal.
+| Feature                 | Free           | Full access       |
+| :-                      | :--             | :--            |
+| Seats                   | Unlimited      | Unlimited        |
+| Usage                   | 50 companies<br/>5 connections/source | Unlimited        |
+| Hourly syncs            | ➖             | ✅              |
+| On-premise connectors   | ➖             | ☑️ Add-on             |
+| ERP integrations        | ➖             | ☑️ Add-on             |
+| Support                 | ➖             | Premium technical support              |
+| Implementation guidance | ➖             | ✅              |
+| SLA                     | ➖             | ✅              |
+| OAuth SSO               | ✅             | ✅              |
+| SAML SSO                | ➖             | ☑️ Add-on              |
+| Mutual TLS              | ➖             | ☑️ Add-on              |
+| Rate limits             | 500 req/day     | 1000 req/day    |
 
-| Feature                 | Free           | Start-up       | Enterprise       |
-| :-                      | :--             | :--             | :--            |
-| Seats                   | Unlimited      | Unlimited      | Unlimited        |
-| Usage                   | 50 companies<br/>5 connections/source | Unlimited  | Unlimited        |
-| Hourly syncs            | ➖             | ➖          | ✅              |
-| On-premise connectors   | ➖             | ➖          | ☑️ Add-on             |
-| ERP integrations        | ➖             | ➖          | ☑️ Add-on             |
-| Support                 | ➖             | Bug resolution  | Premium technical support              |
-| Implementation guidance | ➖             | ➖          | ✅              |
-| SLA                     | ➖             | ➖          | ✅              |
-| OAuth SSO               | ✅             | ✅          | ✅              |
-| SAML SSO                | ➖             | ➖          | ☑️ Add-on              |
-| Mutual TLS              | ➖             | ➖          | ☑️ Add-on              |
-| Rate limits             | 500 req/day     | 1000 req/day | 1000 req/day    |
+## Full access
 
+### Features
 
+Everything from Start-up plus:
+
+- Volume-based pricing
+- Implementation support
+- SAML SSO
+- Hourly syncing
+
+### Billing
+
+Our enterprise plans is much more cost effective than our start-up plan once your usage of Codat scales. [Contact our sales team](https://www.codat.io/plans/#get-in-touch) to discuss enterprise pricing options.
+
+<details>
+<summary>Other plan options</summary>
 
 ## Start-up plan 
 
@@ -48,18 +61,4 @@ This excludes *Codat Sandbox* and *QuickBooks Online Sandbox*.
 :::
 
 You can use our Billing [dashboard](https://app.codat.io/settings/billing/usage) to track your usage and stay in control of your bills. 
-
-## Enterprise plan
-
-### Features
-
-Everything from Start-up plus:
-
-- Volume-based pricing
-- Implementation support
-- SAML SSO
-- Hourly syncing
-
-### Billing
-
-Our enterprise plans is much more cost effective than our start-up plan once your usage of Codat scales. [Contact our sales team](https://www.codat.io/plans/#get-in-touch) to discuss enterprise pricing options.
+</details>
