@@ -39,7 +39,7 @@ Everything from Free plus:
 [Contact our sales team](https://www.codat.io/plans/#get-in-touch) to discuss enterprise pricing options.
 
 <details>
-<summary>Other plan options</summary>
+<summary>Other options</summary>
 
 ## Start-up plan 
 
