@@ -19,7 +19,7 @@ Codat provides a free experience that lets you explore and test our API and stan
 
 When you're finished testing your Codat solution or your trial finishes, you can upgrade - see <a className="external" href="https://www.codat.io/plans/" target="_blank">Plans</a> for details.
 
-### Free plan limitations
+### Free trial limitations
 
 You can use Codat for free for 30 days. 
 
