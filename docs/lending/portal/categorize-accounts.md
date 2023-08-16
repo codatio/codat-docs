@@ -12,7 +12,7 @@ You can view all available categories proposed for accounts and, where relevant,
 
 ![An image of the Lending portal view and the categorization button](/img/lending/acct-categorization-v3-1.png)
 
-2. Here, you can view the categories for each account.  These are ordered by _importance_, which is determined by the current account balance and our confidence that we have correctly categorised this account.  An account with a high _importance_ can affect the [Enhanced Financials](/lending/enhanced-financials/overview) more than an account with a low importance.
+2. You can view the categories for each account.  These are ordered by _impact_ by default, which is determined by the current account balance and our confidence in our automatic categorization.  Accounts with a high _impact_  effect the [Enhanced Financials](/lending/enhanced-financials/overview) more, so its worth confirming these accounts.
 
 ![An image of the Lending Categorization view in the Portal](/img/lending/acct-categorization-v3-2.png)
 
