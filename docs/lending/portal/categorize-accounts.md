@@ -16,7 +16,7 @@ You can view all available categories proposed for accounts and, where relevant,
 
 ![An image of the Lending Categorization view in the Portal](/img/lending/acct-categorization-v3-2.png)
 
-3. To change the category of an account, select the accounts using the tick box and click **Recategorize**. 
+3. To change the category of an account, select the accounts using the checkbox and click **Recategorize**. 
 
    Choose an appropriate category from the proposed five levels and click **Recategorize**.  This saves the newly assigned category.  Once you have confirmed or edited an account, the _importance_ will change to zero.
 
