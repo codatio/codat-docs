@@ -25,7 +25,7 @@ You may need to perform a manual sync for a merchant, from the date of its last 
 
 The start of the sync date range is determined as the date of the last successful sync. If there were no previous successful syncs, the sync start date configured in the [Synchronization schedule](/commerce/learn/synchronization-schedule) is used.
 
-The end of the sync date range, can be set by including a syncTo date in the request body. If no date is provided, the current time UtcNow is used. Example request body (optional):
+The end of the sync date range, can be set by including a syncTo date in the request body. If no date is provided, the current time `UtcNow` is used. Example request body (optional):
 
 ```
 {
