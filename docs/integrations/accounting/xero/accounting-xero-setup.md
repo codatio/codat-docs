@@ -71,15 +71,12 @@ Next, add the secure keys for your Xero application to the Codat Portal.
 1. In the Codat Portal, go to the [**Accounting integrations**](https://app.codat.io/settings/integrations/accounting) page.
 2. Locate **Xero** and select the toggle to enable the integration.
 
-You can also click **Manage** to view the integration's settings page, and then enable the integration from there.
+You can also click **Manage** to view the integration's settings page, and then enable the integration from there. After this, you can start linking companies to Xero.
 
-## Linking Codat to Xero
+:::caution Linking multiple Xero companies
+Access to Xero is controlled via access tokens with a 1:1 relationship between a Codat company and a Xero company. 
 
-Access to Xero is controlled via access tokens. Connections between Codat Companies and Xero companies use a 1-to-1 token relationship.
-
-:::caution Are you linking multiple Xero companies?
-If you manage multiple Xero companies within one Xero instance, you must use a unique login per company.
-Failure to do this will result in your connectons to Xero deauthorizing without notice.
+If you manage multiple Xero companies within one Xero instance, you must use a unique login per company. Otherwise, your connections may be deauthorized without notice.
 :::
 
 ## Recap
