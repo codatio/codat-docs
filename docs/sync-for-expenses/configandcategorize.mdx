@@ -72,6 +72,7 @@ You can then [post](sync-for-expenses-api#/operations/save-company-configuration
 - Suppliers and Bank Accounts can be set at the configuration level and also at the [transaction level](https://docs.codat.io/sync-for-expenses-api#/operations/create-expense-dataset#request-body).
     - By setting these at the transaction level you will be able to override the configuration, in order to sync a more accurate representation of who/where the spend should be associated with/against in the accounting platform. 
     - If no override is set at the transaction level, the spend will have the config supplier or bank account set as a default against it. 
+    - This currently is not yet supported for Customers.
 
 ``` http title="Bank Account override on the expense transaction"
       "bankAccountRef":{
