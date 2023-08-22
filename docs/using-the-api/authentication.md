@@ -24,9 +24,9 @@ To create, view, and delete API keys and authorization headers in the Codat Port
 
 To manage API keys by making API calls, use the following endpoints:
 
-1. [Create API keys](https://docs.codat.io/common-api#/operations/create-api-key)
-2. [List API keys](https://docs.codat.io/common-api#/operations/list-api-keys)
-3. [Delete API keys](https://docs.codat.io/common-api#/operations/delete-api-key)
+1. [Create API keys](https://docs.codat.io/codat-api#/operations/create-api-key)
+2. [List API keys](https://docs.codat.io/codat-api#/operations/list-api-keys)
+3. [Delete API keys](https://docs.codat.io/codat-api#/operations/delete-api-key)
 
 You can only view API keys, and not the corresponding authorization headers, via the API.
 
