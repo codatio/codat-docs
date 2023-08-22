@@ -26,8 +26,6 @@ GET https://api.codat.io/companies/{companyId}/sync/expenses/config
 }
 ```
 
-Using this endpoint you will be able to:
-
 #### Bank Account
 
 - Choose which bank account (`bankAccount.id`) purchases will be made from. This can also be a credit card account.
@@ -51,10 +49,41 @@ Sync for Expenses currently supports option 2 only.
 - A supplier (`supplier.id`) is required to associate all spending against that supplier. 
     - [GET](/accounting-api#/operations/list-suppliers) a list of available suppliers in the company's accounting software. You can also add additional query parameters, e.g. `query=metadata.isDeleted=false&&supplierName=supplierName`.
     - You can [POST](/accounting-api#/operations/create-suppliers) to create a new supplier.
-- Suppliers can be set at the configuration level and also at the [transaction level](https://docs.codat.io/sync-for-expenses-api#/operations/create-expense-dataset#request-body).
-    - By setting the supplier at the transaction level you will be able to override the configuration supplier, in order to sync a more accurate representation of who the spend should be associated with in the accounting platform. 
-    - If no supplier is set at the transaction level, the spend will have the config supplier set as a default against it. 
-    - The currency associated with the supplier must match the currency associated with the spend. Codat validates the match for suppliers with a single set currency, but not for suppliers that work with multiple currencies.  
+
+#### Customer
+<ul>
+   <li>
+      Choose which customer (<code>customer.id</code>) any income-related activities, such as cashback, should be associated with.  
+   </li>
+   <ul>
+      <li>
+         <a href="/accounting-api#/operations/get-customers">GET</a> A list of available customers, you can add additional query parameters e.g. <code>query=metadata.isDeleted=false&&customerName=name</code>
+      </li>
+      <li>
+         You can <a href="/accounting-api#/operations/post-customers">POST</a> to the accounting api to create a new customer.
+      </li>
+   </ul>
+</ul>
+
+You can then [post](sync-for-expenses-api#/operations/save-company-configuration) the updated configuration to Codat to store their saved preferences.
+
+### Overriding the configuration settings
+
+- Suppliers and Bank Accounts can be set at the configuration level and also at the [transaction level](https://docs.codat.io/sync-for-expenses-api#/operations/create-expense-dataset#request-body).
+    - By setting these at the transaction level you will be able to override the configuration, in order to sync a more accurate representation of who/where the spend should be associated with/against in the accounting platform. 
+    - If no override is set at the transaction level, the spend will have the config supplier or bank account set as a default against it. 
+
+``` http title="Bank Account override on the expense transaction"
+      "bankAccountRef":{
+          "id":"08ca1f02-0374-11ed-b939-0242ac120002",
+```
+``` http title="Supplier override on the expense transaction"
+     "contactRef":{
+          "id":"08ca1f02-0374-11ed-b939-0242ac120002",
+          "type": "Supplier"
+```
+
+- The currency associated with the supplier must match the currency associated with the spend. Codat validates the match for suppliers with a single set currency, but not for suppliers that work with multiple currencies.  
  
 In some cases different accounting platforms have certain ways of handling suppliers and customers, based on transaction types: 
 
@@ -125,22 +154,7 @@ In some cases different accounting platforms have certain ways of handling suppl
   </tbody>
 </table>
 
-#### Customer
-<ul>
-   <li>
-      Choose which customer (<code>customer.id</code>) any income-related activities, such as cashback, should be associated with.  
-   </li>
-   <ul>
-      <li>
-         <a href="/accounting-api#/operations/get-customers">GET</a> A list of available customers, you can add additional query parameters e.g. <code>query=metadata.isDeleted=false&&customerName=name</code>
-      </li>
-      <li>
-         You can <a href="/accounting-api#/operations/post-customers">POST</a> to the accounting api to create a new customer.
-      </li>
-   </ul>
-</ul>
 
-You can then [post](sync-for-expenses-api#/operations/save-company-configuration) the updated configuration to Codat to store their saved preferences.
 
 ## Mapping Options
 
