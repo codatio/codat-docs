@@ -26,7 +26,7 @@ GET https://api.codat.io/companies/{companyId}/sync/expenses/config
 }
 ```
 
-#### Bank Account
+### Bank Account
 
 - Choose which bank account (`bankAccount.id`) purchases will be made from. This can also be a credit card account.
     - [GET](/accounting-api#/operations/get-account) a list of available accounts. Use this request to retrieve a list of relevant accounts from your customers' accounting software. You should also add additional query parameters, e.g. `query=metadata.isDeleted=false&&isBankAccount=true`. 
@@ -44,35 +44,27 @@ There are two ways to handle transactions in a foreign currency:
 Sync for Expenses currently supports option 2 only.
 :::
 
-#### Supplier
+### Supplier
 
 - A supplier (`supplier.id`) is required to associate all spending against that supplier. 
     - [GET](/accounting-api#/operations/list-suppliers) a list of available suppliers in the company's accounting software. You can also add additional query parameters, e.g. `query=metadata.isDeleted=false&&supplierName=supplierName`.
     - You can [POST](/accounting-api#/operations/create-suppliers) to create a new supplier.
+- The currency associated with the supplier must match the currency associated with the spend. Codat validates the match for suppliers with a single set currency, but not for suppliers that work with multiple currencies.
 
-#### Customer
-<ul>
-   <li>
-      Choose which customer (<code>customer.id</code>) any income-related activities, such as cashback, should be associated with.  
-   </li>
-   <ul>
-      <li>
-         <a href="/accounting-api#/operations/get-customers">GET</a> A list of available customers, you can add additional query parameters e.g. <code>query=metadata.isDeleted=false&&customerName=name</code>
-      </li>
-      <li>
-         You can <a href="/accounting-api#/operations/post-customers">POST</a> to the accounting api to create a new customer.
-      </li>
-   </ul>
-</ul>
+### Customer
+
+- Choose which customer (<code>customer.id</code>) any income-related activities, such as cashback, should be associated with.  
+  - <a href="/accounting-api#/operations/get-customers">GET</a> A list of available customers, you can add additional query parameters e.g. <code>query=metadata.isDeleted=false&&customerName=name</code>
+  - You can <a href="/accounting-api#/operations/post-customers">POST</a> to the accounting API to create a new customer.
 
 You can then [post](sync-for-expenses-api#/operations/save-company-configuration) the updated configuration to Codat to store their saved preferences.
 
 ### Overriding the configuration settings
 
-- Suppliers and Bank Accounts can be set at the configuration level and also at the [transaction level](https://docs.codat.io/sync-for-expenses-api#/operations/create-expense-dataset#request-body).
-    - By setting these at the transaction level you will be able to override the configuration, in order to sync a more accurate representation of who/where the spend should be associated with/against in the accounting platform. 
-    - If no override is set at the transaction level, the spend will have the config supplier or bank account set as a default against it. 
-    - This currently is not yet supported for Customers.
+- Suppliers and Bank Accounts can be set at the configuration level and at the [transaction level](https://docs.codat.io/sync-for-expenses-api#/operations/create-expense-dataset#request-body).
+    - By setting these at the transaction level, you can override the configuration and sync a more accurate representation of who or where the spend should be associated with in the accounting platform. 
+    - If no override is set at the transaction level, the spend will have the configured supplier or bank account set as a default against it. 
+    - This functionality is not currently supported for Customers.
 
 ``` http title="Bank Account override on the expense transaction"
       "bankAccountRef":{
@@ -82,11 +74,8 @@ You can then [post](sync-for-expenses-api#/operations/save-company-configuration
      "contactRef":{
           "id":"08ca1f02-0374-11ed-b939-0242ac120002",
           "type": "Supplier"
-```
-
-- The currency associated with the supplier must match the currency associated with the spend. Codat validates the match for suppliers with a single set currency, but not for suppliers that work with multiple currencies.  
- 
-In some cases different accounting platforms have certain ways of handling suppliers and customers, based on transaction types: 
+```  
+In some cases, different accounting platforms have certain ways of handling suppliers and customers, based on transaction types: 
 
 <table>
   <thead></thead>
@@ -157,9 +146,9 @@ In some cases different accounting platforms have certain ways of handling suppl
 
 
 
-## Mapping Options
+## Mapping options
 
-Every company will have their own preference on how an individual expense can be represented in their accounting software, you can retrieve these options from the `mappingOptions` [endpoint](/sync-for-expenses-api#/operations/get-mapping-options).
+Every company has its own preference on how an individual expense can be represented in their accounting software. You can retrieve these options from the `mappingOptions` [endpoint](/sync-for-expenses-api#/operations/get-mapping-options).
 
 The `mappingOptions` response can then be cached and displayed to the end user when they are finalizing their expenses before exporting.
 
@@ -207,7 +196,7 @@ You will normally see the name of the connected provider in the `expenseProvider
 
 **Accounts**
 
-The `accounts` array will include the general ledger accounts which have been pulled from the businesses accounting software. The `name` is what they have labelled the account in their accounting software, so you can display this to your end user.
+The `accounts` array will include the general ledger accounts which have been pulled from the business's accounting software. The `name` is what they have labeled the account in their accounting software, so you can display this to your end user.
 
 `validTransactionTypes` will tell you which types are accepted by the account. This prevents validation issues such as an SMB accidentally trying to reconcile an expense to an income account.
 
@@ -224,13 +213,13 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 **Tracking categories**
 
-Tracking categories are used to monitor cost centres and control budgets that sit outside of the standard chart of accounts. Your customers may use tracking categories to group and track the income and costs of specific departments, such as "sales and marketing", projects, locations or customers.
+Tracking categories are used to monitor cost centers and control budgets that sit outside of the standard chart of accounts. Your customers may use tracking categories to group and track the income and costs of specific departments, such as "sales and marketing", projects, locations, or customers.
 
 When pushing an expense reconciliation, you can include a tracking category to associate this to further categorize an expense.
 
-**Tax Rates**
+**Tax rates**
 
-The tax rates enable your SMB's to accurately track taxes against purchases and, depending on the locale, allow them to recoup the tax.
+The tax rates enable your SMBs to accurately track taxes against purchases and, depending on the locale, allow them to recoup the tax.
 
 Accounting systems typically store a set of taxes and associated rates within the accounting package. This means users don't have to look up or remember the rate for each type of tax. For example, applying the tax "UK sales VAT" to the line items of an invoice adds the correct tax rate of 20%. 
 
