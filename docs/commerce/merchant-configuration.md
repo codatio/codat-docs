@@ -113,7 +113,8 @@ Example request body:
 ##### Summary of data-textkeys and default values 
 
 <Tabs>
-   <TabItem value="main" label="Main title">
+   <TabItem value="main" label="Main title">  
+
     | Default value                  | `data-textkey` value           |
     |--------------------------------|------------------------------|
     | Set up Sync to {platform name} | `configure-setupSidebar-title` |
@@ -163,7 +164,7 @@ Example request body:
 
    </TabItem>
 
-   <TabItem value="subsection" label="Sub-section titles and description">  
+   <TabItem value="subsection" label="Sub-section titles and description">
 
     <b>Sales</b>
 
@@ -321,7 +322,7 @@ Example request body:
     | Swish                            | `payments-accounts-swish`          |
     | Prepaid payment                  | `payments-accounts-prepaidPayment` |
     | Manual                           | `payments-accounts-manual`         |  
-    
+
     `account-keys` marked with an '*'must be shown to users.
    </TabItem>
 
