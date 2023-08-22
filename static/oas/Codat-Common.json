@@ -1659,6 +1659,195 @@
         }
       }
     },
+    "/apiKeys": {
+      "get": {
+        "summary": "List API keys",
+        "description": "Use the *List API keys* endpoint to return a list of all API keys that currently exist for your client. This includes keys created via the Portal UI or the *Create API keys* endpoint.\n\n[API keys](https://docs.codat.io/accounting-api#/schemas/apiKeys) are tokens used to control access to the API. Include this token in the `Authorization` header parameter when making API calls, following the word \"Basic\" and a space with your API key.\n\nYou can [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat and managing API keys via the Portal UI or API.",
+        "operationId": "list-api-keys",
+        "x-speakeasy-name-override": "list-api-keys",
+        "tags": [
+          "Settings"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKeys"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "results": [
+                        {
+                          "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                          "apiKey": "ztHQGvnC4XN2CgUhaDWEG4ySLUJqWjp7zkbZkGHd",
+                          "createdDate": "2022-04-11T13:49:37Z"
+                        },
+                        {
+                          "id": "c438836a-61fe-443f-8a19-24cc18be21e4",
+                          "name": "azure-invoice-finance-processor",
+                          "apiKey": "ztHQGvnC4XN2CgUhaDWEG4ySLUJqWjp7zkbZkGHd",
+                          "createdDate": "2022-04-23T09:43:48Z"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create API key",
+        "operationId": "create-api-key",
+        "x-speakeasy-name-override": "create-api-key",
+        "description": "Use the *Create API keys* endpoint to generate a new API key for your client.\n\n[API keys](https://docs.codat.io/accounting-api#/schemas/apiKeys) are tokens used to control access to the API. Include this token in the `Authorization` header parameter when making API calls, following the word \"Basic\" and a space with your API key.\n\nYou can [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat and managing API keys via the Portal UI or API.\n\n### Tips and pitfalls\n\n* Your first API key is created for you. Access this key via [Codat's Portal](https://app.codat.io/developers/api-keys).\n* If you require multiple API keys, perform multiple calls to the *Create API keys* endpoint. \n* The number of API keys is limited to 10. If you have reached the maximum amount of keys, use the *Delete API key* endpoint to delete an unused key first.",
+        "tags": [
+          "Settings"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateApiKey"
+              },
+              "examples": {
+                "Create API key with name": {
+                  "value": {
+                    "name": "azure-invoice-finance-processor"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKeyDetails"
+                },
+                "examples": {
+                  "API key details": {
+                    "value": {
+                      "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                      "apiKey": "ztHQGvnC4XN2CgUhaDWEG4ySLUJqWjp7zkbZkGHd",
+                      "createdDate": "2022-04-11T13:49:37Z"
+                    }
+                  },
+                  "API key details with name": {
+                    "value": {
+                      "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                      "name": "azure-invoice-finance-processor",
+                      "apiKey": "ztHQGvnC4XN2CgUhaDWEG4ySLUJqWjp7zkbZkGHd",
+                      "createdDate": "2022-04-11T13:49:37Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorMessage"
+                },
+                "examples": {
+                  "Max length for name reached": {
+                    "value": {
+                      "statusCode": 400,
+                      "service": "PublicApi",
+                      "error": "Max string length (50) for `name` reached.",
+                      "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                      "canBeRetried": "Unknown",
+                      "detailedErrorCode": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorMessage"
+                },
+                "examples": {
+                  "Max length for name reached": {
+                    "value": {
+                      "statusCode": 400,
+                      "service": "PublicApi",
+                      "error": "Maximum number of API keys reached. To create a new API key, delete an unused key and try again.",
+                      "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                      "canBeRetried": "Unknown",
+                      "detailedErrorCode": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      }
+    },
+    "/apiKeys/{apiKeyId}": {
+      "delete": {
+        "summary": "Delete api key",
+        "operationId": "delete-api-key",
+        "x-speakeasy-name-override": "delete-api-key",
+        "parameters": [
+          {
+            "name": "apiKeyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "8a210b68-6988-11ed-a1eb-0242ac120002"
+            },
+            "description": "Unique identifier for api key."
+          }
+        ],
+        "description": "Use the *Delete API keys* endpoint to delete an existing API key, providing its valid `id` as a parameter. Note that this operation is not reversible.\n\n[API keys](https://docs.codat.io/accounting-api#/schemas/apiKeys) are tokens used to control access to the API. Include this token in the `Authorization` header parameter when making API calls, following the word \"Basic\" and a space with your API key.\n\nYou can [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat and managing API keys via the Portal UI or API.\n\n### Tips and pitfalls\n\n* It is possible to delete the last remaining API key. If this happens, a new key can be created via the [API key management page](https://app.codat.io/developers/api-keys) of the Portal.\n* It is possible to delete the API key used to authenticate the *Delete API key* request.",
+        "tags": [
+          "Settings"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      }
+    },
     "/companies/{companyId}/connections/{connectionId}/options/{dataType}": {
       "parameters": [
         {
@@ -2212,49 +2401,6 @@
             "$ref": "#/components/schemas/PagingInfo"
           }
         ]
-      },
-      "Links": {
-        "type": "object",
-        "x-internal": true,
-        "required": [
-          "self",
-          "current"
-        ],
-        "properties": {
-          "self": {
-            "$ref": "#/components/schemas/HRef"
-          },
-          "current": {
-            "$ref": "#/components/schemas/HRef"
-          },
-          "next": {
-            "$ref": "#/components/schemas/HRef"
-          },
-          "previous": {
-            "$ref": "#/components/schemas/HRef"
-          }
-        },
-        "examples": [
-          {
-            "self": {
-              "href": "/companies/{id}/data/{dataType}"
-            },
-            "current": {
-              "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
-            }
-          }
-        ]
-      },
-      "HRef": {
-        "title": "Hypertext reference",
-        "type": "object",
-        "x-internal": true,
-        "properties": {
-          "href": {
-            "type": "string",
-            "format": "uri-reference"
-          }
-        }
       },
       "PagingInfo": {
         "type": "object",
@@ -3360,6 +3506,69 @@
         ],
         "x-stoplight": {
           "id": "b1fyq05edangf"
+        }
+      },
+      "ApiKeyDetails": {
+        "title": "API key details",
+        "description": "Details of the API key.",
+        "type": "object",
+        "allOf": [
+          {
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique identifier for the API key.",
+                "example": "e288a972-b402-4b21-93f9-b5335ae5679c"
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 50,
+                "nullable": true,
+                "description": "A meaningful name assigned to the API key.",
+                "example": "azure-invoice-finance-processor"
+              },
+              "apiKey": {
+                "type": "string",
+                "description": "The API key value used to make authenticated http requests.",
+                "example": "ztHQGvnC4XN2CgUhaDWEG4ySLUJqWjp7zkbZkGHd"
+              }
+            }
+          },
+          {
+            "nullable": true,
+            "description": "Datetime in UTC the API key was created. The created date will be null if the API key created before YYYY-MM-DD.",
+            "type": "object",
+            "x-internal": true,
+            "properties": {
+              "createdDate": {
+                "$ref": "#/components/schemas/DateTime",
+                "description": "The date the entity was created."
+              }
+            }
+          }
+        ]
+      },
+      "ApiKeys": {
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiKeyDetails"
+            }
+          }
+        },
+        "description": ""
+      },
+      "CreateApiKey": {
+        "title": "Create API key",
+        "description": "Details of the API key.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/ApiKeyDetails/allOf/0/properties/name"
+          }
         }
       },
       "Branding": {
