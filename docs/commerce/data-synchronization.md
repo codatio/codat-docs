@@ -1,6 +1,7 @@
 ---
 title: "Data synchronization"
 description: "DESCRIPTION PLEASE"
+displayed_sidebar: commerce
 ---
 
 ## How data is synchronized
@@ -8,7 +9,6 @@ Once your customer has set up their sales data synchronization in the Sync Confi
 
 Data will always be synchronized for the last calendar day (up to midnight); the synchronization process itself may run some time after midnight and take some time to complete, but it will always include data only up to midnight only. This is because Accounting standards generally operate on the basis of calendar days.
 
- 
 
 ### Merchant Sync Configuration
 The daily data synchronization required the merchant to have a valid sync configuration (set up using the Sync Configuration UI). 
@@ -37,3 +37,5 @@ The merchant can re-enable their data synchronization within the Sync Configurat
 --
 
 ## Read next
+
+- 
