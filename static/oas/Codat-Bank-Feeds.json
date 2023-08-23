@@ -245,7 +245,7 @@
           }
         },
         "operationId": "list-companies",
-        "description": "﻿Returns a list of your companies. The company schema contains a list of [connections](https://docs.codat.io/DOCS_PATH#/schemas/Connection) related to the company.",
+        "description": "﻿Returns a list of your companies. The company schema contains a list of [connections](https://docs.codat.io/bank-feeds-api#/schemas/Connection) related to the company.",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -550,7 +550,7 @@
       },
       "post": {
         "summary": "Create connection",
-        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \n\nUse the [List Integrations](https://docs.codat.io/DOCS_PATH#/operations/list-integrations) endpoint to access valid platform keys. ",
+        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \n\nUse the [List Integrations](https://docs.codat.io/bank-feeds-api#/operations/list-integrations) endpoint to access valid platform keys. ",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -1247,7 +1247,7 @@
     "schemas": {
       "Company": {
         "title": "Company",
-        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/DOCS_PATH#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
+        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/bank-feeds-api#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
         "type": "object",
         "properties": {
           "id": {
@@ -1361,7 +1361,7 @@
       },
       "Connection": {
         "title": "Connection",
-        "description": "﻿A connection represents a [company's](https://docs.codat.io/DOCS_PATH#/schemas/Company) connection to a data source and allows you to synchronize data (pull and/or push) with that source.\n\nA company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:\n\n- [Accounting data](https://docs.codat.io/accounting-api/overview) - 1 active connection.\n- [Banking data](https://docs.codat.io/banking-api/overview) - Multiple active connections.\n- [Commerce data](https://docs.codat.io/commerce-api/overview) - Multiple active connections.\nAny combination of accounting, banking, and commerce data connections is allowed.\n\nBefore you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/auth-flow/overview).",
+        "description": "﻿A connection represents a [company's](https://docs.codat.io/bank-feeds-api#/schemas/Company) connection to a data source and allows you to synchronize data (pull and/or push) with that source.\n\nA company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:\n\n- [Accounting data](https://docs.codat.io/accounting-api/overview) - 1 active connection.\n- [Banking data](https://docs.codat.io/banking-api/overview) - Multiple active connections.\n- [Commerce data](https://docs.codat.io/commerce-api/overview) - Multiple active connections.\nAny combination of accounting, banking, and commerce data connections is allowed.\n\nBefore you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/auth-flow/overview).",
         "type": "object",
         "properties": {
           "id": {

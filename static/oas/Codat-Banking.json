@@ -74,7 +74,7 @@
         ],
         "summary": "List account balances",
         "operationId": "list-account-balances",
-        "description": "The *List account balances* endpoint returns a list of [account balances](https://docs.codat.io/banking-api#/schemas/AccountBalance) for a given company's connection.\n\n[Account balances](https://docs.codat.io/banking-api#/schemas/AccountBalance) are balances for a bank account, including end-of-day batch balance or running balances per transaction.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    ",
+        "description": "The *List account balances* endpoint returns a list of [account balances](https://docs.codat.io/banking-api#/schemas/AccountBalance) for a given company's connection.\n\n[Account balances](https://docs.codat.io/banking-api#/schemas/AccountBalance) are balances for a bank account, including end-of-day batch balance or running balances per transaction.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    ",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -202,7 +202,7 @@
         ],
         "summary": "List accounts",
         "operationId": "list-accounts",
-        "description": "The *List accounts* endpoint returns a list of [accounts](https://docs.codat.io/banking-api#/schemas/Account) for a given company's connection.\n\n[Accounts](https://docs.codat.io/banking-api#/schemas/Account) are financial accounts maintained by a bank or other financial institution.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    ",
+        "description": "The *List accounts* endpoint returns a list of [accounts](https://docs.codat.io/banking-api#/schemas/Account) for a given company's connection.\n\n[Accounts](https://docs.codat.io/banking-api#/schemas/Account) are financial accounts maintained by a bank or other financial institution.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    ",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -385,7 +385,7 @@
         ],
         "summary": "Get account",
         "operationId": "get-account",
-        "description": "The *Get account* endpoint returns a single account for a given accountId.\n\n[Accounts](https://docs.codat.io/banking-api#/schemas/Account) are financial accounts maintained by a bank or other financial institution.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/banking?view=tab-by-data-type&dataType=banking-accounts) for integrations that support getting a specific account.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n",
+        "description": "The *Get account* endpoint returns a single account for a given accountId.\n\n[Accounts](https://docs.codat.io/banking-api#/schemas/Account) are financial accounts maintained by a bank or other financial institution.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/banking?view=tab-by-data-type&dataType=banking-accounts) for integrations that support getting a specific account.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -605,7 +605,7 @@
             "$ref": "#/components/responses/Conflict"
           }
         },
-        "description": "The *List transaction categories* endpoint returns a list of [transaction categories](https://docs.codat.io/banking-api#/schemas/TransactionCategory) for a given company's connection.\n\n[Transaction categories](https://docs.codat.io/banking-api#/schemas/TransactionCategory) are associated with a transaction to provide greater contextual meaning to transaction activity.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    "
+        "description": "The *List transaction categories* endpoint returns a list of [transaction categories](https://docs.codat.io/banking-api#/schemas/TransactionCategory) for a given company's connection.\n\n[Transaction categories](https://docs.codat.io/banking-api#/schemas/TransactionCategory) are associated with a transaction to provide greater contextual meaning to transaction activity.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    "
       },
       "parameters": [
         {
@@ -623,7 +623,7 @@
         ],
         "operationId": "get-transaction-category",
         "summary": "Get transaction category",
-        "description": "The *Get transaction category* endpoint returns a single transaction category for a given transactionCategoryId.\n\n[Transaction categories](https://docs.codat.io/banking-api#/schemas/TransactionCategory) are associated with a transaction to provide greater contextual meaning to transaction activity.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/banking?view=tab-by-data-type&dataType=banking-transactionCategories) for integrations that support getting a specific transaction category.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n",
+        "description": "The *Get transaction category* endpoint returns a single transaction category for a given transactionCategoryId.\n\n[Transaction categories](https://docs.codat.io/banking-api#/schemas/TransactionCategory) are associated with a transaction to provide greater contextual meaning to transaction activity.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/banking?view=tab-by-data-type&dataType=banking-transactionCategories) for integrations that support getting a specific transaction category.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n",
         "responses": {
           "200": {
             "description": "Success",
@@ -682,7 +682,7 @@
         ],
         "operationId": "list-transactions",
         "summary": "List transactions",
-        "description": "The *List transactions* endpoint returns a list of [transactions](https://docs.codat.io/banking-api#/schemas/Transaction) for a given company's connection.\n\n[Transactions](https://docs.codat.io/banking-api#/schemas/Transaction) provide an immutable source of up-to-date information on income and expenditure.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    ",
+        "description": "The *List transactions* endpoint returns a list of [transactions](https://docs.codat.io/banking-api#/schemas/Transaction) for a given company's connection.\n\n[Transactions](https://docs.codat.io/banking-api#/schemas/Transaction) provide an immutable source of up-to-date information on income and expenditure.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    ",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -849,7 +849,7 @@
         "deprecated": true,
         "x-speakeasy-deprecation-replacement": "list-transactions",
         "summary": "List banking transactions",
-        "description": "The *List transactions* endpoint returns a list of [transactions](https://docs.codat.io/banking-api#/schemas/Transaction) for a given company's connection.\n\n[Transactions](https://docs.codat.io/banking-api#/schemas/Transaction) provide an immutable source of up-to-date information on income and expenditure.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    ",
+        "description": "The *List transactions* endpoint returns a list of [transactions](https://docs.codat.io/banking-api#/schemas/Transaction) for a given company's connection.\n\n[Transactions](https://docs.codat.io/banking-api#/schemas/Transaction) provide an immutable source of up-to-date information on income and expenditure.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    ",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -933,7 +933,7 @@
             }
           }
         },
-        "description": "The *Get transaction* endpoint returns a single transaction for a given transactionId.\n\n[Transactions](https://docs.codat.io/banking-api#/schemas/Transaction) provide an immutable source of up-to-date information on income and expenditure.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/banking?view=tab-by-data-type&dataType=banking-transactions) for integrations that support getting a specific transaction.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n",
+        "description": "The *Get transaction* endpoint returns a single transaction for a given transactionId.\n\n[Transactions](https://docs.codat.io/banking-api#/schemas/Transaction) provide an immutable source of up-to-date information on income and expenditure.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/banking?view=tab-by-data-type&dataType=banking-transactions) for integrations that support getting a specific transaction.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n",
         "operationId": "get-transaction"
       },
       "parameters": [
