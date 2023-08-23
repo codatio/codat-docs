@@ -38,6 +38,7 @@
     ],
     "retryConnectionErrors": true
   },
+  "x-codat-docs-path": "codat-api",
   "tags": [
     {
       "name": "Reports",
