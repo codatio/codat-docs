@@ -51,30 +51,6 @@ Sync for Expenses currently supports option 2 only.
     - You can [POST](/accounting-api#/operations/create-suppliers) to create a new supplier.
 - The currency associated with the supplier must match the currency associated with the spend. Codat validates the match for suppliers with a single set currency, but not for suppliers that work with multiple currencies.
 
-### Customer
-
-- Choose which customer (<code>customer.id</code>) any income-related activities, such as cashback, should be associated with.  
-  - <a href="/accounting-api#/operations/get-customers">GET</a> A list of available customers, you can add additional query parameters e.g. <code>query=metadata.isDeleted=false&&customerName=name</code>
-  - You can <a href="/accounting-api#/operations/post-customers">POST</a> to the accounting API to create a new customer.
-
-You can then [post](sync-for-expenses-api#/operations/save-company-configuration) the updated configuration to Codat to store their saved preferences.
-
-### Overriding the configuration settings
-
-- Suppliers and Bank Accounts can be set at the configuration level and at the [transaction level](https://docs.codat.io/sync-for-expenses-api#/operations/create-expense-dataset#request-body).
-    - By setting these at the transaction level, you can override the configuration and sync a more accurate representation of who or where the spend should be associated with in the accounting platform. 
-    - If no override is set at the transaction level, the spend will have the configured supplier or bank account set as a default against it. 
-    - This functionality is not currently supported for Customers.
-
-``` http title="Bank Account override on the expense transaction"
-      "bankAccountRef":{
-          "id":"08ca1f02-0374-11ed-b939-0242ac120002",
-```
-``` http title="Supplier override on the expense transaction"
-     "contactRef":{
-          "id":"08ca1f02-0374-11ed-b939-0242ac120002",
-          "type": "Supplier"
-```  
 In some cases, different accounting platforms have certain ways of handling suppliers and customers, based on transaction types: 
 
 <table>
@@ -144,7 +120,30 @@ In some cases, different accounting platforms have certain ways of handling supp
   </tbody>
 </table>
 
+### Customer
 
+- Choose which customer (<code>customer.id</code>) any income-related activities, such as cashback, should be associated with.  
+  - <a href="/accounting-api#/operations/get-customers">GET</a> A list of available customers, you can add additional query parameters e.g. <code>query=metadata.isDeleted=false&&customerName=name</code>
+  - You can <a href="/accounting-api#/operations/post-customers">POST</a> to the accounting API to create a new customer.
+
+You can then [post](sync-for-expenses-api#/operations/save-company-configuration) the updated configuration to Codat to store their saved preferences.
+
+### Overriding the configuration settings
+
+- Suppliers and Bank Accounts can be set at the configuration level and at the [transaction level](https://docs.codat.io/sync-for-expenses-api#/operations/create-expense-dataset#request-body).
+    - By setting these at the transaction level, you can override the configuration and sync a more accurate representation of who or where the spend should be associated with in the accounting platform. 
+    - If no override is set at the transaction level, the spend will have the configured supplier or bank account set as a default against it. 
+    - This functionality is not currently supported for Customers.
+
+``` http title="Bank Account override on the expense transaction"
+      "bankAccountRef":{
+          "id":"08ca1f02-0374-11ed-b939-0242ac120002",
+```
+``` http title="Supplier override on the expense transaction"
+     "contactRef":{
+          "id":"08ca1f02-0374-11ed-b939-0242ac120002",
+          "type": "Supplier"
+```  
 
 ## Mapping options
 
