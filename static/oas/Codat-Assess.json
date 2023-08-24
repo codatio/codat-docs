@@ -2945,7 +2945,7 @@
         ]
       }
     },
-    "/data/companies/{companyId}/assess/reports/enhancedLiabilities/loan/transactions": {
+    "/companies/{companyId}/reports/enhancedLiabilities/loan/transactions": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -2993,7 +2993,7 @@
         ]
       }
     },
-    "/data/companies/{companyId}/assess/reports/enhancedLiabilities/loan": {
+    "/companies/{companyId}/reports/enhancedLiabilities/loan": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
