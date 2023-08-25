@@ -22,7 +22,7 @@ module.exports = [
   },
   {
     type: "doc",
-    href: "/merchant-configuration",
+    href: "commerce/merchant-configuration",
     label: "Merchant configuration",
   },
   {
