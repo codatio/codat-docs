@@ -21,7 +21,7 @@ module.exports = [
     ],
   },
   {
-    type: "doc",
+    type: "link",
     href: "commerce/merchant-configuration",
     label: "Merchant configuration",
   },
