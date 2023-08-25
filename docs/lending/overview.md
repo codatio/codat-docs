@@ -1,7 +1,7 @@
 ---
-title: "Lending overview"
+title: "Lending API overview"
 # sidebar_label: Assess
-description: "Learn about the features that make up the Assess product"
+description: "Learn about the features that make up the Lending API"
 # banner_title: Assess
 # banner_class: assess
 # banner_icon: "/logos/products-clear/assess.svg"
@@ -13,21 +13,21 @@ import SocialImages from "@components/global/SocialImages";
 
 <SocialImages imgSrc="/img/old/f0c6d43-73D1AFFF-6E41-47F3-8E25-BB20DA16C754.jpeg"/>
 
-Assess is built on top of the latest accounting, commerce and banking data, providing you with the most important data points you need to get a full picture of SMB creditworthiness, and make a comprehensive assessment of your customers.
+Lending API is built on top of the latest accounting, commerce and banking data, providing you with the most important data points you need to get a full picture of SMB creditworthiness, and make a comprehensive assessment of your customers.
 
 ![](/img/old/f0c6d43-73D1AFFF-6E41-47F3-8E25-BB20DA16C754.jpeg "73D1AFFF-6E41-47F3-8E25-BB20DA16C754.jpeg")
 
-## Who is Assess for?
+## Who is Lending API for?
 
-Assess is built for anyone who wants to make an assessment of a small business's financial health and performance.
+Lending API is built for digital lenders, neobanks, corporate card providers and commerce platform who want to make an assessment of a small business's financial health and performance.
 
 Visit our <a className="external" href="https://knowledge.codat.io/coverage/products/4e02a90f-e61c-463b-9aaf-55b0e5087792" target="_blank">Data coverage explorer</a> to view all accounting, commerce and banking data sources that are supported in Assess.
 
-## Why use Assess?
+## Why use Lending API?
 
 We have done the heavy lifting for you by building integrations to the platforms your customers already use, handling the complexity of standardization and now providing pre-calculated accounting and commerce metrics and easily digestible insights that you didn’t have before, helping you automate and make smarter risk assessments.
 
-### With Assess, you can:
+### With Lending API, you can:
 
 1. Get to market faster.
 2. Expand your product lines.
@@ -36,7 +36,7 @@ We have done the heavy lifting for you by building integrations to the platforms
 
 ## Features
 
-Assess empowers you with a host of features to help you streamline your underwriting process:
+Lending API empowers you with a host of features to help you streamline your underwriting process:
 
 <ul className="card-container col-2">
   <li className="card">
@@ -51,30 +51,13 @@ Assess empowers you with a host of features to help you streamline your underwri
       We automatically map your SMB customers' income statement and balance
       sheet to a single standard chart of accounts, meaning you can compare
       across customers easily. Explore{" "}
-      <a href="/assess/enhanced-financials/overview">
+      <a href="/lending/enhanced-financials/overview">
         Enhanced Financials
       </a>
       .
     </p>
   </li>
-  <li className="card">
-    <div class="header">
-      <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
-      />
-      <h3>Accounting financial metrics</h3>
-    </div>
-    <p>
-      We pre-calculate the top financial ratios used for risk assessments and
-      credit decisioning. Explore{" "}
-      <a href="/assess/metrics/accounting/overview">
-        Accounting Financial Metrics
-      </a>
-      .
-    </p>
-  </li>
-
+  
   <li className="card">
     <div class="header">
       <img
@@ -86,8 +69,25 @@ Assess empowers you with a host of features to help you streamline your underwri
     <p>
       We provide the pre-calculated metrics you need to assess a customer’s
       revenue, orders and customer retention profile. Explore{" "}
-      <a href="/assess/metrics/commerce/overview">
+      <a href="/lending/commerce-metrics/overview">
         Commerce Metrics
+      </a>
+      .
+    </p>
+  </li>
+
+  <li className="card">
+    <div class="header">
+      <img
+        src="/img/wp-icons/copy-feature-bullet.svg"
+        class="mini-icon"
+      />
+      <h3>Enhanced invoices</h3>
+    </div>
+    <p>
+      Verify payments have been made on invoices against an immutable source. Explore{" "}
+      <a href="/lending/enhanced-invoices/overview">
+        Enhanced invoices
       </a>
       .
     </p>
@@ -104,10 +104,45 @@ Assess empowers you with a host of features to help you streamline your underwri
     <p>
       We cross-reference accounting data with banking data to verify data
       accuracy. Explore{" "}
-      <a href="/assess/data-integrity/overview">
+      <a href="/lending/data-integrity/overview">
         Data Integrity
       </a>
       .
     </p>
   </li>
+
+  <li className="card">
+    <div class="header">
+      <img
+        src="/img/wp-icons/copy-feature-bullet.svg"
+        class="mini-icon"
+      />
+      <h3>Enhanced cashflow</h3>
+    </div>
+    <p>
+      Categorized banking transactions that gives lenders the insights to accurately forecast a company's cash flow. Explore{" "}
+      <a href="/lending/enhanced-cash-flow/overview">
+        Enhanced cashflow
+      </a>
+      .
+    </p>
+  </li>
+
+  <li className="card">
+    <div class="header">
+      <img
+        src="/img/wp-icons/copy-feature-bullet.svg"
+        class="mini-icon"
+      />
+      <h3>Enhanced loan liabilities</h3>
+    </div>
+    <p>
+      Automatically identify a company's loan obligations from an array of disparate data sources. Explore{" "}
+      <a href="/lending/loans/loan-transactions">
+        Enhanced loan liabilities
+      </a>
+      .
+    </p>
+  </li>
+
 </ul>

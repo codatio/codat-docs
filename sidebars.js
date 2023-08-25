@@ -259,7 +259,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Lending",
+      label: "Lending API",
       collapsed: true,
       className: "top-level-item products",
       link: {

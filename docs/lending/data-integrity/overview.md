@@ -10,7 +10,13 @@ Accounting data is rich and contextual, but is user-entered, and therefore poten
 
 Our Data Integrity feature automatically matches these data sources for you so you don't have to. Data Integrity matches bank accounts and transactions reported in an accounting data source against bank accounts and transactions reported in banking data sources.
 
-In principle this validation can support many use cases, e.g. lending decision-making (perhaps lenders have more confidence in lending to businesses with highly accurate books), fraud detection, and invoice financing.
+Data integrity helps lenders validation that the accounts are highly accurate, or if fraud may have occurred.
+
+The Data Integrity API consists of the following endpoints:
+
+- [Status](/lending-api#/operations/get-data-integrity-status) endpoints: (one per datatype) exposes the information needed to usefully query results.
+- [Summaries](/lending-api#/operations/get-data-integrity-summaries) endpoints: (one per datatype) exposes summary results, queryable in a granular way.
+- [Details](/lending-api#/operations/list-data-integrity-details) endpoints: (one per datatype) exposes record by record information, queryable using the same parameters as the summary endpoint.
 
 ## How do we match data?
 
@@ -24,14 +30,6 @@ To use this feature the following data types need to be enabled:
 - _banking-transactions_ for the banking data source.
 - _bankAccounts_ for the accounting data source.
 - _accountTransactions_ for the accounting data source.
-
-:::info Deprecation notice
-
-Matching also works with the _bankAccounts_ (banking data source) and _bankTransactions_ (banking data source). Note that these data types will be deprecated in the future.
-
-It is recommended that you use _banking-accounts_ and _banking-transactions_ data types to get the most out of Data Integrity.
-
-:::
 
 ## Matching
 
