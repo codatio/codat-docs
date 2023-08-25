@@ -1,31 +1,35 @@
 ---
-title: "Advanced setup features"
-description: "DESCRIPTION PLEASE"
+title: "Advanced product features"
+description: "Learn about additional configuration features available with Sync for Commerce"
+sidebar_label: "Advanced features"
+displayed_sidebar: commerce
 ---
 
-## Custom re-direct
-Once a user has set up their sales data synchronization in the Sync Configuration UI, they will see a success message. You can instead re-direct the merchant to a custom URL of your choice.
+Once you have understood and performed the initial setup of our Sync for Commerce product, you can use its advanced features to enhance your merchant's experience of syncing sales data. 
 
-Append a redirectUrl query parameter and the absolute URL as the value when calling the API to request a Sync Configuration URL.
+## Custom redirect
 
-`GET config/sync/commerce/lqai/{platformKey}/start?merchantIdentifier={companyId}&redirectUrl=app.codat.io`
+When your user finishes configuring their sales data synchronization settings in the Sync configuration UI, they will see a success message to indicate the end of the journey. Instead, you can redirect the merchant to a custom URL of your choice.
 
-The resulting Sync Flow URL will include the redirect URL as shown in this example:
+Append a `redirectUrl` query parameter and the absolute URL as its value when calling the API to request a Sync configuration URL:
 
+```http
+GET config/sync/commerce/lqai/{platformKey}/start?merchantIdentifier={companyId}&redirectUrl=app.codat.io
 ```
+
+The resulting Sync flow URL will include the redirect URL as shown in this example:
+
+```json
 {
   "url": "https://sync-flow.codat.io/06de067c-1d6c-416a-8e61-676e6c135e68/lqai/gbol/start?merchantIdentifier=CoPay&otp=615853&redirectUrl=app.codat.io"
 }
 ```
 
-## Authorizing access to your customer’s data on behalf of your customer
-As part of your set up, Codat will deploy a connector to your API, allowing us to access your customers data in your systems. By default, we will, leverage your API’s authentication method (e.g. Oauth2) to request that your customers grant access to their data in your system.
+## Authorize access on behalf of your customer
 
-Given the user begins the journey to set up their sales data synchronization within your system, you may deem this to be an unnecessary step, and choose instead to grant Codat access to your customers data on their behalf. This can be achieved by creating a record of your customer wintin Codat, and providing associated authorization data for accessing their data, before redirecting them to the Sync Configuration URL (see step 3. of the set up).
+When setting up Sync for Commerce, Codat will deploy a connector to your API that allows us to access your merchants' data in your systems. By default, we use your API's authentication method (for example, OAuth 2.0) to request your customers to grant us access to that data. 
 
-If this is the desired implementation, please ensure this is discussed with your Solutions Engineer before the deployment of Codat’s connector to your API.
-
-### Authorizing access to your customer's data on behalf of your customer
+Since the user begins their configuration journey within your system, you may deem this step unnecessary. Instead, you may choose to grant Codat access to your merchants' data on their behalf. The resulting Sync flow is represented on the diagram below.
 
 ``` mermaid
   sequenceDiagram
@@ -51,22 +55,28 @@ If this is the desired implementation, please ensure this is discussed with your
     customer ->> codat: Complete Sync configuration UI
 ```
 
-## 1. Create a Company
-This step creates a record of your customer within Codat. To do this, call our POST /companies endpoint
+To authorize on behalf of your customers, create a record of your customer within Codat and provide associated authorization details needed to access their data. Then, you need to redirect them to the Sync configuration URL, as explained in step [3. Handle the integration selection](/commerce/setup#3-handle-the-integration-selection) of our setup guide.
 
-`POST /companies`
+If you would like to authorize access on behalf of your customer, please discuss this with your Solutions Engineer before deploying Codat’s connector to your API.
 
-The name property in the request body must be your unique customer identifier; you can also populate the customer’s name as the description. Example request body: 
+### 1. Create a company
 
+Use our [Create company](/sync-for-commerce-api#/operations/create-company) endpoint to create a record of your customer within Codat. 
+
+```http
+POST /companies
 ```
+The `name` property in the request body must be your unique customer identifier. You can also populate the customer’s name as the description. 
+
+```json
 {
-  name: "12345678"    // unique identifier for your customer
-  description: ""     // optionally include the customer name
+  "name": "12345678"    // Unique identifier for your customer
+  "description": ""     // Optionally include the customer name
 }
 ```
-We'll return a companyId (returned here as id):
+In response, we will provide a `companyId`, returned by this endpoint as `id`. Retain this because it will be required in subsequent steps.
 
-```
+```json
 {
   "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
   "name": "string",
@@ -79,23 +89,25 @@ We'll return a companyId (returned here as id):
 }
 ```
 
-You must retain this `companyId` as it will be required in the following steps.
+### 2. Create a connection
 
-## 2. Create a connection
+Once you have created a company to represent your customer, you need to create a connection that represents the connectivity to your system for this customer. To do this, use our [Create connections](/sync-for-commerce-api#/operations/create-connection) endpoint:
 
-Once you have created a Company to represent your customer, you can create a Connection, to represent the connectivity to your system for this customer. To do this, call our POST /connections endpoint
-
-`POST /companies/{companyId}/connections`
-
-The `platformKey` property in the request body is the `platformKey` that identifies the Codats connector to your API. (See step 3. of the set up). Your Solutions Engineer an provide this to you. Example request body: 
+```http
+POST /companies/{companyId}/connections
 ```
+
+The `platformKey` property in the request body is the key that identifies Codat's connector to your API, as explained in step [3. Handle the integration selection](/commerce/setup#3-handle-the-integration-selection) of our setup guide. Your Solutions Engineer can provide this value to you. 
+
+```json title = "Example request body"
 {
-  platformKey: "dfxm"    // identifies Codat connector to your API
+  platformKey: "dfxm"    // Identifies the Codat connector linked to your API
 }
 ```
 
-We'll return a connectionId for you to retain (returned here as id):
-```
+In response, we will provide a `connectionId`, returned by this endpoint as `id`. Retain this because it will be required in subsequent steps.
+
+```json
 {
   "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
   "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
@@ -109,21 +121,18 @@ We'll return a connectionId for you to retain (returned here as id):
   "sourceType": "Accounting"
 }
 ```
-You must retain this `connectionId` as it will be required in the following steps.
 
-## 3. Pass the required Authorization information to Codat
+## 3. Pass the authorization information to Codat
 
-Once you have created  Company and a Connection you can pass to Codat the authorization information that is required to access your customer’s data via our API.
-
-To do this, call our PUT /authorization endpoint:
+Now that you created a company and a connection, you can pass the authorization information required to access your customer’s data to Codat via our API. To do this, use our endpoint: THIS ENDPOINT DOES NOT EXIST IN THE SFC OAS?
 
 `PUT /companies/{companyId}/connections/{connectionId}/authorization`
 
-The request body will be agreed with your Solutions Engineer as part of deploying the Codat connector to your API. 
+You need to confirm the request body with your Solutions Engineer as part of deploying the Codat connector to your API. 
 
-We'll return an updated `connection` object (the same as step 2. above):
+In response, we will return an updated `connection` object, same as the one returned in the previous step:
 
-```
+```json
 {
   "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
   "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
@@ -137,15 +146,20 @@ We'll return an updated `connection` object (the same as step 2. above):
   "sourceType": "Accounting"
 }
 ```
+Notice that the `status` has changed to `Linked`, indicating that the authorization information we received allowed Codat to connect to your customers' data. 
 
-Note the `status` has changed to `Linked`, indicating that the authorization information we received has allowed Codat to connect to to your customers data. 
+Next, you can obtain the Sync configuration URL, as instructed in step [3. Handle the integration selection](/commerce/setup#3-handle-the-integration-selection) of our setup guide. Use the `companyId` value returned when creating the company as the `merchantIdentifier` parameter value. 
 
-You can then get a Sync Configuration URL, as described in Step 3. of the set up, above, specifying the `merchantIdentifier` parameter as the `companyId` that was returned after creating the Company. Codat will not ask your user to authenticate with your system as part of the Sync configuration UI. 
+Now Codat will not ask your user to authenticate with your system as part of the Sync configuration UI. 
 
-## Marketplace App listing
+### Marketplace app listing
 
-The set up assumes that your customers will initiate the process of setting up their sales data synchronization within your system. In some cases, it is possible for this journey to be initiated by the user from their Accounting or Commerce systems’ app marketplace – we are able to support this for selected Accounting packages and Commerce platforms; please consult your Solutions Engineer for more information.
+This configuration assumes that your customers will initiate the setup process for their sales data synchronization within your system. In some cases, it is also possible for the user to initiate this journey from their accounting or commerce system's app marketplace.
+
+We are able to support this for selected accounting packages and commerce platforms. Please consult your Solutions Engineer for more information on this functionality.
 
 ---
 
 ## Read next
+
+- [Merchant configuration](/commerce/merchant-configuration)

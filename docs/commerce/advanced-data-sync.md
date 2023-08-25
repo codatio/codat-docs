@@ -1,31 +1,39 @@
 ---
-title: "Advanced data synchronization"
-description: "DESCRIPTION PLEASE"
+title: "Advanced data synchronization features"
+sidebar_label: "Advanced data sync"
+description: "Learn about additional data sync options available with Sync for Commerce" 
+displayed_sidebar: commerce
 ---
 
-Data synchronization is an automated daily process, and the status of recent data synchronization operations can be viewed by a merchant in the Sync Configuration UI, and by your support team within the Portal Sync Health page.
+Data synchronization is an automated daily process. A merchant can view the status of the recent sync operations in the Sync configuration UI, and your support team can check it on the Sync Health page of our [Portal](https://app.codat.io/). 
 
-However, if needed, it is possible to get sync status information, and even initiate syncs outside of the daily schedule using the Codat API.
+However, it is possible to get sync status information and even initiate syncs outside of the daily schedule using the Codat API.
 
 ## Get sync status
-You may want or need your system to be aware of the latest sync status for a merchant. You can get a list of syncs and their status by making the following API call:
 
-`GET /meta/companies/{companyId}/sync/commerce/status`
+You may want your system to be aware of the latest sync status for a merchant. You can get a list of syncs and their status by making an API call to the [Get sync status](/sync-for-commerce-api#/operations/get-sync-status) endpoint:
 
-The response will be a list of syncs and their status information: 
+```http
+GET /meta/companies/{companyId}/sync/commerce/status
+```
 
-[todo - missing from API ref] 
+The response provides a list of syncs and their status information: 
+
+```json
+todo - missing from API ref
+```
 
 ## Initiating a sync
  
+You may need to perform a manual sync for a merchant from the date of their last successful sync to a specified date. You can do this by calling the [Initiate new sync](/sync-for-commerce-api#/operations/request-sync) endpoint:
 
-You may need to perform a manual sync for a merchant, from the date of its last successful sync to a specified date. You can do this by making the following API call:
+```http
+POST /companies/{companyId}/sync/commerce/latest
+```
 
-`POST /companies/{companyId}/sync/commerce/latest`
+The start of the sync date range is determined as the date of the last successful sync. If there were no previous successful syncs, the date configured in the [synchronization schedule](/commerce/synchronization-schedule) is used.
 
-The start of the sync date range is determined as the date of the last successful sync. If there were no previous successful syncs, the sync start date configured in the [Synchronization schedule](/commerce/learn/synchronization-schedule) is used.
-
-The end of the sync date range, can be set by including a syncTo date in the request body. If no date is provided, the current time `UtcNow` is used. Example request body (optional):
+You can set the end of the sync date range by including a `syncTo` date in the request body. If no date is provided, the current time `UtcNow` is used. For example: 
 
 ```
 {
@@ -33,15 +41,21 @@ The end of the sync date range, can be set by including a syncTo date in the req
 }
 ```
 
-You can also initiate a sync for a specified date range, by making the following API call:
+You can also initiate a sync for a specified date range by making an API call to the [Initiate sync for specific range](/sync-for-commerce-api#/operations/request-sync-for-date-range) endpoint:
 
-`POST /meta/companies/{companyId}/sync/commerce/historic`
-
-You will need to specify the sync range start and end dates in the request body.  Example request body:
-
+```http
+POST /meta/companies/{companyId}/sync/commerce/historic
 ```
+
+You will need to specify the sync range start and end dates in the request body, for example:
+
+```json
 {
   "start": "2022-01-01T12:00:00.000Z",
   "end": "2022-01-02T12:00:00.000Z"
 }
 ```
+---
+## Read next
+
+- [Synchronization schedule](/commerce/synchronization-schedule)

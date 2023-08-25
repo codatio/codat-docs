@@ -30,10 +30,10 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping m
     <div class="header">
         <img src="/img/wp-icons/copy-feature-bullet.svg"
             class="mini-icon"/>
-        <h3>Commerce and Accounting expertise</h3>
+        <h3>Commerce and accounting expertise</h3>
     </div>
     <p>
-       We handle the translation of sales and payment data into the right set of accounting entries. Sales, payments, gift cards, and more – Sync for Commerce handles all of these so you don’t have to.
+       We translate sales and payment data into the right set of accounting entries. Sales, payments, gift cards, and more – Sync for Commerce handles all of these so you don’t have to.
     </p>
 </li>
 
@@ -44,7 +44,7 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping m
         <h3>Fast, simple integration</h3>
     </div>
     <p>
-        We integrate with both the ‘source’ (POS, Payments and eCommerce) systems and Accounting software.
+        We integrate with the source sales data systems (POS, Payments and eCommerce) and with accounting software.
     </p>
 </li>
 
@@ -55,7 +55,7 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping m
         <h3>Configurability</h3>
     </div>
     <p>
-        All businesses work differently. We enable merchant and/or their book-keeper or accountant to easily configure how sales and payment data should show up in their Accounting software, to suit their specific needs.
+        All businesses work differently. We enable your merchants and their accountants to easily configure how their sales data should reflect in their accounting software to suit their needs.
     </p>
 </li>
 
@@ -66,7 +66,7 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping m
         <h3>Ongoing sales data synchronization</h3>
     </div>
     <p>
-        Automatic daily synchronization of data means Accounting software is always up to date with latest sales data.
+        Automatic daily synchronization of data means your merchants' accounting software is always up to date with latest sales data.
     </p>
 </li>
 
@@ -74,10 +74,10 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping m
     <div class="header">
         <img src="/img/wp-icons/copy-feature-bullet.svg"
             class="mini-icon"/>
-        <h3>Real world resilience</h3>
+        <h3>Real-world resilience</h3>
     </div>
     <p>
-       We’ve handled sales data for tens of thousands of merchants over may years; we’ve evolved Sync for commerce to handle thousands of different scenarios that can occur in the course of operating a small business.
+       We’ve handled sales data for tens of thousands of merchants over many years. As a result, we evolved Sync for Commerce to handle thousands of different scenarios that occur when operating a small business.
     </p>
 </li>
 
@@ -88,7 +88,7 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping m
         <h3>Observability</h3>
     </div>
     <p>
-       Nobody likes surprises when they’re trying to close their books for the month/quarter/year. Sync for Commerce comes with a dashboard alerting both the merchant and your support team in real time to any unexpected issues in the process of synchronising data. If even a penny isn’t properly accounted for, you’ll know about it!
+       Nobody likes surprises when they’re working to close their books. Sync for Commerce's dashboard provides the merchant and your support team with real-time alerts when issues occur in the data sync process. If even a penny isn’t properly accounted for, you’ll know about it!
     </p>
 </li>
 </ul>
@@ -138,3 +138,5 @@ Your support team can view each merchant’s syncs and troubleshoot any errors w
 ---
 
 ## Read next
+
+- [Set up Sync for Commerce](/commerce/setup)

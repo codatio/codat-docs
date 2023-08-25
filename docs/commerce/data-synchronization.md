@@ -1,41 +1,43 @@
 ---
 title: "Data synchronization"
-description: "DESCRIPTION PLEASE"
+description: "Understand the principles of daily data syncs and error handling in Sync for Commerce"
 displayed_sidebar: commerce
 ---
 
-## How data is synchronized
-Once your customer has set up their sales data synchronization in the Sync Configuration UI, their sales data will synchronize automatically at the end of every day.
+## Data synchronization mechanism
 
-Data will always be synchronized for the last calendar day (up to midnight); the synchronization process itself may run some time after midnight and take some time to complete, but it will always include data only up to midnight only. This is because Accounting standards generally operate on the basis of calendar days.
+Once your customer has set up their sales data synchronization in the Sync configuration UI, their sales data will sync automatically at the end of every day.
 
+We always synchronize records for the last calendar day posted up to midnight. The sync process may take some time to run and finish after midnight, but that does not change the dataset that was selected to sync. This is because accounting standards generally expect you to operate on the basis of calendar days. 
 
-### Merchant Sync Configuration
-The daily data synchronization required the merchant to have a valid sync configuration (set up using the Sync Configuration UI). 
+## Merchant sync configuration
 
-If required configuration is missing, then a sync error will occur. For example, if a merchant has not provided an Account for the sale of Gift Cards, and subsequently sells a Gift Card, an error will occur (see error handling below). 
+The daily data synchronization requires the merchant to have a valid sync configuration, which is set up using the Sync configuration UI. 
 
-In some cases, Sync for Commerce when a missing account is identified in the configuration, Codat will automatically create an account, to allow the data synchronization to go ahead.
+If the configuration is missing, then a sync error will occur. For example, if a merchant has not mapped an account for the sale of gift cards, and subsequently sells a gift card, data sync for this record will result in an error. 
 
-### Error handling
-If it is not possible to synchronize data for a given day, an error will be shown to the user in the Sync Configuration UI. Errors are rare, but can occur due to:
+In some cases, when a missing account is identified in the configuration, Codat will automatically create that account to allow the data synchronization to proceed.
 
-- An unexpected error in retrieving data from a Commerce platform or pushing data into an Accounting package, or
+## Error handling
 
-- An issue with a merchant’s Sync configuration (for example, no account has been configured for a given type of sale that has taken place in the latest calendar day)
+If it is not possible to synchronize data for a given day, the user will see an error in the Sync configuration UI. Errors are rare, but can happen due to:
 
-When an error occurs, the next daily data synchronisation will include both the latest calendar day, and previous calendar days on which an error occurred. This way, as soon as the root cause is resolved, any missing data will automatically be synchronized. 
+- An unexpected issue when retrieving data from a commerce platform or creating and updating data in the accounting package
 
-:::caution
-If a merchant’s data synchronization encounters errors for 31 consecutive days, then their data synchronization will be disabled. 
+- An issue with a merchant’s Sync configuration (for example, missing accounts for types of sales that occurred that day)
 
-This is to ensure that, when the issue is eventually resolved, we do not risk synchronizing data that the merchant has manually uploaded/reconciled already (this would result in duplicate data within the merchant’s Accounting package). 
+When an error occurs, the next daily data sync will include records of the latest and the previous calendar days. This way any missing data is automatically synced as soon as the root cause is resolved.
 
-The merchant can re-enable their data synchronization within the Sync Configuration UI (they can also update the sync start date, to the date from which they would like data synchronization to resume). 
-:::
+:::caution Disabled data sync
 
---
+We disable a merchant’s data synchronization if it ends with errors for 31 consecutive days.
 
+This ensures that we do not sync data that the merchant has already manually uploaded and reconciled when the issue is eventually resolved. Otherwise, this would result in data duplication within the merchant’s accounting package.
+
+The merchant can re-enable their data synchronization within the Sync configuration UI and even change the sync start date to the date when they wish the data sync to resume.
+:::  
+
+---
 ## Read next
 
-- 
+- [Advanced data synchronization features](/commerce/advanced-setup)
