@@ -457,11 +457,11 @@ module.exports = {
     },
     {
       from: "/sfc/sync-for-commerce-knowledge-base/initiating-a-sync",
-      to: "/commerce/learn/initiating-a-sync",
+      to: "/commerce/advanced-data-sync",
     },
     {
       from: "/sfc/sync-for-commerce-knowledge-base/monitoring-a-sync",
-      to: "/commerce/learn/monitoring-a-sync",
+      to: "/commerce/advanced-data-sync",
     },
     {
       from: "/sfc/sync-for-commerce-knowledge-base/synchronization-schedule",
@@ -469,39 +469,39 @@ module.exports = {
     },
     {
       from: "/sfc/sync-for-commerce-knowledge-base/sfc-journal-entry-mapping",
-      to: "/commerce/learn/sfc-journal-entry-mapping",
+      to: "/commerce/overview",
     },
     {
       from: "/sfc/sync-for-commerce-knowledge-base/sfc-sales-product-categories",
-      to: "/commerce/learn/sfc-sales-product-categories",
+      to: "/commerce/overview",
     },
     {
       from: "/sfc/build-with-sync-for-commerce/sync-for-commerce-prerequisites",
-      to: "/commerce/build/sync-for-commerce-prerequisites",
+      to: "/commerce/setup",
     },
     {
       from: "/sfc/build-with-sync-for-commerce/sync-platform-selection",
-      to: "/commerce/build/sync-platform-selection",
+      to: "/commerce/setup",
     },
     {
       from: "/sfc/build-with-sync-for-commerce/implementing-codats-no-code-merchant-configuration",
-      to: "/commerce/build/implementing-codats-no-code-merchant-configuration",
+      to: "/commerce/merchant-configuration",
     },
     {
       from: "/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow",
-      to: "/commerce/build/customizing-the-sync-configuration-flow",
+      to: "/commerce/setup",
     },
     {
       from: "/sfc/mapping-specifications/overview",
-      to: "/commerce/mapping-specifications/overview",
+      to: "/commerce/overview",
     },
     {
       from: "/sfc/mapping-specifications/xero-mapping-specification",
-      to: "/commerce/mapping-specifications/xero-mapping-specification",
+      to: "/commerce/overview",
     },
     {
       from: "/sfc/mapping-specifications/qbo-mapping-specification",
-      to: "/commerce/mapping-specifications/qbo-mapping-specification",
+      to: "/commerce/overview",
     },
     {
       from: "/sfc/error-documentation",

@@ -11,32 +11,20 @@ Sync for Commerce can be implemented within a commerce platform (Point of Sales,
 
 Follow the guidance below to perform the initial setup for Sync for Commerce and enable your customers to select the systems they want to connect and start the Sync configuration process.
 
-Before you begin, you need to have access to Codat's API. For 
+Before you begin, check how to [use Codat's API](/using-the-api/overview), because you will need to have access to the API to complete the setup. 
+you need to have access to Codat's API. 
 
-Sync for Commerce can be implemented within a Commerce platform (Point of Sales, Payments, or eCommerce) where sales data originates, and/or within an Accounting package to which sales data is synchronised.
+:::info Codat connector
 
-The following steps require access to Codat’s API. See [LINK DESCRIPTION PLEASE](/using-the-api/overview).
+To finish the setup, Codat will deploy a simple connector to your API that allows us to connect to your customers' data. Your Solutions Engineer will work with you to make this happen. However, you can complete most of the steps below before the Codat connector is deployed.
 
-:::info
-To complete your set up, Codat will need to deploy a simple connector to your API, to allow us to connect to your customer’s data. Your Solutions Engineer will work with you to make this happen. However, you can implement most of the steps below before the Codat connector is deployed.
 :::
 
 ## Overview
 
-[FOR ACCOUTNING PACKAGES] 
+You will need to implement a simple UI within your software that presents your users with a list of source platforms they can synchronize their data with. These can be commerce platforms or accounting packages. 
 
-Within your software, you will need to implement a simple UI that presents users with a list of Commerce platforms for your customer to synchronise data with.
-
-[FOR COMMERCE PLATFORMS]
-
-Within your software, you will need to implement a simple UI that presents users with a list of available Accounting packages for your customer to synchronise data with.
-
-
-This UI should be available only to authenticated users (i.e. users who are logged into your system).
-
-Once the user has selected a system to connect, you will need to re-direct them to Codat’s Sync Configuration User Interface (UI).
-
-Standard setup
+This interface should be available only to authenticated users - those who are logged into your system. Once the user has selected a system to connect, you need to redirect them to Codat’s Sync configuration user interface. This initial flow is presented on the diagram below.
 
 ``` mermaid
   sequenceDiagram
@@ -91,15 +79,14 @@ You can view the accounting and commerce platfors Sync for Commerce supports in 
 </Tabs>
 
 ## 1. Get branding for the integrations
-To populate your UI, you can get logos for each of Codat’s integrations.
 
-To get branding for a given integration (identified by platformKey), call:
+To populate your platform selection screen with integration logos, you can fetch branding for each integration (identified by `platformKey`). Use our [Get branding for an integration](/sync-for-commerce-api#/operations/get-integration-branding) endpoint:
 
-
+```http
 GET /config/integrations/{platformKey}/branding
-Sample response where the platformKey is gbol (Xero):
-
 ```
+
+```json title="Sample response of a Xero branding request"
 {
   "logo": {
     "full": {
@@ -121,78 +108,78 @@ Sample response where the platformKey is gbol (Xero):
 ```
 
 ## 2. Render the integrations
-In your UI, display each of these integrations, using the branding obtained in the previous step to help the user identify the right system to connect. You should exclude the integration representing the connector that Codat has deployed to your API.
 
-Depending on your frontend stack, this will vary. Using React, it might look something like this:
+Using the branding your previously obtained, display each of the relevant integrations in your UI. Make sure to exclude the integration representing the connector that Codat has deployed to your API. 
 
-```
+Your users will then use the UI to identify the right system they want to connect. 
+
+Depending on the technology you are using, integration display code will vary. Using React, it might look something like this: 
+
+```shell 
 <div>
-  {
-    integrations.map((integration, i) => (
-      <div
-        key={i}
-        onClick={selectIntegration(integration.key)}
-      >
-        <img
-          src={branding[integration.key].logo.full.image.src}
-          alt={branding[integration.key].logo.full.image.alt}
-        />
+   {
+     integrations.map((integration, i) => (
+       <div
+         key={i}
+         onClick={selectIntegration(integration.key)}
+       >
+         <img
+           src={branding[integration.key].logo.full.image.src}
+           alt={branding[integration.key].logo.full.image.alt}
+         />
 
-        <h3>{integration.name}</h3>
+         <h3>{integration.name}</h3>
 
-        <div>Link your {integration.name} account</div>
-      </div>
-    )
-  }
+         <div>Link your {integration.name} account</div>
+       </div>
+     )
+   }
 </div>
 ```
-Make sure you retain the platformKey of the integration your merchant selected. In the example above, this is passed to the onClick function, which takes care of this.
+Make sure you retain the `platformKey` of the integration your merchant selected. In the example above, the value passed to the `onClick` function that retains it.
 
 ## 3. Handle the integration selection
-Once the user has selected the system they’d like to connect, you’re ready to hand them off to Codat’s Sync Configuration UI, where your customer will authorize access to the system they’ve selected and configure their sales data synchronization.
 
- This is done be re-directing them to Sync Configuration URL. This URL is unique to each of your customers and is secured with a single use, time limited access code. You will need to request this URL from Codat’s API each time you want to take the user to the Sync Configuration UI.
+Once the user selects the system they would like to connect, you are ready to transfer them to Codat’s Sync configuration UI. Here, your customer will authorize access to the system they have selected and configure their sales data synchronization settings.
 
-To get a Sync Configuration URL, call:
+To do so, redirect your user to the Sync configuration URL. This URL is unique to each of your customers and is secured with a single-use, time-limited access code. Request this URL from our API each time you want to take the user to the configuration UI. Use our [Retrieve Sync flow URL](/sync-for-commerce-api#/operations/get-sync-flow-url) endpoint: 
 
-
-`GET /config/sync/commerce/{commerceKey}/{accoutingKey}/start?merchantIdentifier={yourMerchantIdentifier}`
-
+```http
+GET /config/sync/commerce/{commerceKey}/{accoutingKey}/start?merchantIdentifier={yourMerchantIdentifier}
+```
 You will need to populate parameter values as follows:
 
-[FOR ACCOUTNING PACKAGES] 
+<Tabs>
+<TabItem value="acctg" label="Accounting packages">  
 
-commerceKey: the platformKey for the Commerce platform selected by the user in your UI.
+- `commerceKey`: the `platformKey` of the commerce platform selected by the user in your UI
+- `accountingKey`: refers to the Codat connector. Your Solutions Engineer will provide this to you
+  
+</TabItem>
 
-accountingKey: this refers to the Codat connector to your system. Your Solutions Engineer will provide this to you.
+<TabItem value="cmmrc" label="Commerce platforms">  
 
-[FOR COMMERCE PLATFORMS] 
+- `commerceKey`: the `platformKey` of the commerce platform selected by the user in your UI
+- `accountingKey`: refers to the Codat connector. Your Solutions Engineer will provide this to you
+- `yourMerchantIdenfifier`: your unique identifier for your customer
 
-accountingKey: the platformKey for the Accounting package selected by the user in your UI.
-
-commerceKey: this refers to the Codat connector to your system. Your Solutions Engineer will provide this to you.
-
+</TabItem>
+</Tabs>
  
+In response, you will receive a URL. Redirect the user to this URL to complete the hand-off to Codat.
 
-yourMerchantIdenfifier: Your unique identifier for your customer. 
 
- 
-
-Sample response:
-```
+```json
 {
-  "url": "https://sync-flow.codat.io/df074e52-0267-4707-879b-0cc2adbd20e3/partnercommerce/xero/start?merchantIdentifier=demo merchant&otp=479149"
+  "url": "https://sync-flow.codat.io/ef075d52-0378-4718-879b-0bb0cadb20e3/partnercommerce/xero/start?merchantIdentifier=demo merchant&otp=422149"
 }
 ```
 
-Re-direct the user to the Sync Configuration URL returned in the response, to complete the hand-off to Codat.
+:::tip URL security
 
-:::tip
-This URL is unique to each of your customers and is secured with a single use, time limited access code that expires after 30 seconds. You will need to request this URL from Codat’s API each time you want to take the user to the Sync Configuration UI, and re-direct the user within 30 seconds.
+The redirect URL is unique to each of your customers and is secured with a single-use access code that expires after 30 seconds. This is a security measure that prevents unauthorized third parties from gaining access to a merchant’s Sync configuration information.
 
-This is a security measure that prevents unauthorized 3rd parties from gaining access to a merchant’s Sync Configuration information.
-
-If the access code has expired when the user is re-directed, they’ll see an HTTP 401 error. In this situation, simply request the URL again to get a new URL (which will include a new access code).
+If the access code has expired when the user is redirected, they will see an `HTTP 401` error. In this case, simply request the URL again to get a new link and access code.
 :::
 
 ---

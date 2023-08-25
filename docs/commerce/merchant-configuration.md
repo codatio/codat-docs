@@ -245,7 +245,7 @@ All dropdown list options are shown to your merchants by default, but you can ch
 You can get a full list of dropdown items by calling the [List visible accounts](/sync-for-commerce-api#/operations/get-visible-accounts) endpoint:
 
 ```http
-GET clients/{clientId}/config/ui/accounts/platform/{commerceKey}
+GET clients/{clientId}/config/ui/accounts/platform/{platformKey}
 ```
 
 This will return all dropdown items, identified by their `account-key`.
@@ -266,7 +266,7 @@ You can update the list of dropdown items displaued to your merchant by calling 
 POST sync/commerce/config/ui/accounts/platform/{commerceKey}
 ```
 
-```json title = "Example request body for managing dropdown item visibility" 
+```json title="Example request body for managing dropdown item visibility" 
 //To update the visible dropdown items to the ones provided in the request body:
 {
     "visibleAccounts": [

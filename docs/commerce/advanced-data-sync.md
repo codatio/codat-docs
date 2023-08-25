@@ -20,7 +20,18 @@ GET /meta/companies/{companyId}/sync/commerce/status
 The response provides a list of syncs and their status information: 
 
 ```json
-todo - missing from API ref
+{
+  "companyId": "0498e921-9b53-4396-a412-5g3g6094c1b3",
+  "commerceSyncId": "af888de-4d1b-44e8-8b4q-717463af00c5",
+  "syncId": "afe076de-4d2c-44d9-7e3a-717463af11c5",
+  "syncStatusCode": 2000,
+  "syncStatus": "Success",
+  "syncUtc": "2023-04-12T10:52:54.5359678Z",
+  "dataPushed": true
+  "dataConnections":
+      [...]
+    ...
+}
 ```
 
 ## Initiating a sync

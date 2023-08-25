@@ -99,7 +99,7 @@ POST /companies/{companyId}/connections
 
 The `platformKey` property in the request body is the key that identifies Codat's connector to your API, as explained in step [3. Handle the integration selection](/commerce/setup#3-handle-the-integration-selection) of our setup guide. Your Solutions Engineer can provide this value to you. 
 
-```json title = "Example request body"
+```json title="Example request body"
 {
   platformKey: "dfxm"    // Identifies the Codat connector linked to your API
 }
@@ -124,9 +124,11 @@ In response, we will provide a `connectionId`, returned by this endpoint as `id`
 
 ## 3. Pass the authorization information to Codat
 
-Now that you created a company and a connection, you can pass the authorization information required to access your customer’s data to Codat via our API. To do this, use our endpoint: THIS ENDPOINT DOES NOT EXIST IN THE SFC OAS?
+Now that you created a company and a connection, you can pass the authorization information required to access your customer’s data to Codat via our API. To do this, use our [Update authorization](/sync-for-commerce-api#/operations/update-connection-authorization) endpoint:
 
-`PUT /companies/{companyId}/connections/{connectionId}/authorization`
+```http
+PUT /companies/{companyId}/connections/{connectionId}/authorization
+```
 
 You need to confirm the request body with your Solutions Engineer as part of deploying the Codat connector to your API. 
 

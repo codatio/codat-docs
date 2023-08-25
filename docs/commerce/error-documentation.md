@@ -1,6 +1,7 @@
 ---
 title: "Troubleshooting and FAQs"
 description: "Common errors that you may encounter and frequently asked questions"
+sidebar_label: "Troubleshooting"
 displayed_sidebar: commerce
 ---
 
@@ -95,5 +96,5 @@ Sync for Commerce also uses `id` to identify unique records. If we pick up recor
 
 If the `sourceModifiedDate` of the record is different from the previously received one, Sync for Commerce recognizes this as a modified source record and applies these changes as an adjustment.
 
-You can also start a sync manually using our [_Latest Sync_](/sync-for-commerce-api#/operations/post-sync-latest) endpoint, or [learn more](/commerce/learn/initiating-a-sync) about initiating it. Alternatively, you can [read more](/commerce/learn/synchronization-schedule) about sync periods and the sync schedule.
+You can also start a sync manually using our [_Latest Sync_](/sync-for-commerce-api#/operations/post-sync-latest) endpoint, or [learn more](/commerce/learn/initiating-a-sync) about initiating it. Alternatively, you can [read more](/commerce/synchronization-schedule) about sync periods and the sync schedule.
 

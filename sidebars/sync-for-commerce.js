@@ -13,12 +13,27 @@ module.exports = [
   },
   {
     type: "category",
-    label: "Setup",
+    label: "Product setup",
     collapsed: true,
     items: [
-      "commerce/learn/initiating-a-sync",
+      "commerce/setup",
+      "commerce/advanced-setup",
     ],
   },
+  {
+    type: "doc",
+    href: "/merchant-configuration",
+    label: "Merchant configuration",
+  },
+  {
+    type: "category",
+    label: "Data sync setup",
+    collapsed: true,
+    items: [
+      "commerce/data-synchronization",
+      "commerce/advanced-data-sync",
+    ],
+  },  
   // {
   //   type: "category",
   //   label: "Concepts",
@@ -54,17 +69,21 @@ module.exports = [
   // },
   {
     type: "doc",
-    label: "FAQs",
-    id: "commerce/error-documentation",
+    label: "Sync schedule",
+    id: "commerce/synchronization-schedule",
     customProps: {
       hr: true,
       section: "Reference",
     },
   },
   {
+    type: "doc",
+    label: "FAQs",
+    id: "commerce/error-documentation",
+  },
+  {
     type: "link",
     href: "/sync-for-commerce-api",
     label: "API reference",
   },
-  "commerce/coming-soon",
 ];

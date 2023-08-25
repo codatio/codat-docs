@@ -15,13 +15,13 @@ video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
 video_text: What is Sync for Commerce?
 ---
 
-Accounting for sales is a major pain point for merchants. It usually involves manually porting data from Point of Sale (POS), Payment, and eCommerce platforms into accounting software 
+Accounting for sales is a major pain point for merchants. It usually involves them manually replicating data from Point of Sale (POS), Payment, and eCommerce platforms in their accounting software. This is often done via multiple manual bulk data downloads and data manipulation in spreadsheets and in the software.
 
-(usually via multiple manual bulk data downloads and manipulation in spreadsheets and within the Accounting software itself). The labour-intensive nature of this work means it is typically done one infrequently, leaving many merchants unable to leverage their Accounting software to effectively understand their business’ performance.
+The labour-intensive nature of this work means it is typically done infrequently, leaving many merchants unable to leverage their accounting software to understand their business’s performance.
 
-**Sync for Commerce automatically replicates and reconciles sales data from a merchant’s ‘source’ POS, Payments and eCommerce systems into their Accounting software. This eliminates manual processing by merchants, and transforms their ability run and grow their business.**
+**Sync for Commerce automatically replicates and reconciles sales data from a merchant’s source PoS, Payments, and eCommerce systems into their accounting software. This eliminates manual processing by merchants and transforms their ability to run and grow their business.**
 
-We do all the heavy lifting, integrating with merchant’s systems and mapping merchant’s data according to accounting best practices so it shows up in their Accounting software in a way that is useful to them and their book-keeper or accountant.
+We do all the heavy lifting, integrating with merchant’s systems and mapping their data according to accounting best practices. As a result, it shows up in their accounting software in a way that is useful to them and their bookkeeper or accountant.
 
 ## Why use Sync for Commerce?
 
@@ -88,52 +88,43 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping m
         <h3>Observability</h3>
     </div>
     <p>
-       Nobody likes surprises when they’re working to close their books. Sync for Commerce's dashboard provides the merchant and your support team with real-time alerts when issues occur in the data sync process. If even a penny isn’t properly accounted for, you’ll know about it!
+       Nobody likes surprises when they’re working to close their books. Sync for Commerce's dashboard provides the merchant and your support team with real-time alerts when issues occur in the data sync process. 
     </p>
 </li>
 </ul>
 
 ## How does Sync for Commerce work?
 
-### 1. Setup
+### 1. [Product setup](/commerce/setup)
 
-Quickly and easily implement Sync for Commerce within your software.
+To get started, Codat will deploy a small connector to your API that allows us to connect to your customers' data. Our Solutions Engineer will work with you to make this happen, usually completing within a few weeks.
 
-To get started, Codat will deploy a simple connector to your API, to allow us to connect to your customer’s data. Your Solutions Engineer will work with you to make this happen. This can usually be completed within a few weeks.
+If you don’t have an API already, our Professional Services team can help you to identify an alternative mechanism to connect to your customers' data, or even build you an API.
 
-If you don’t have an API already, our Professional Services team can work with you to identify an alterative mechanism to connect to your customer’s data (or even build you and API).
+You will need to implement simple functionality that allows a merchant to set up their sales data synchronization, select the systems they would like to connect, and redirect users to Codat’s Sync configuration user interface.
 
-You will need to implement some simple functionality to allow a merchant to begin setting up their sales data synchronization, select the system(s) they’d like to connect, and re-direct users to Codat’s Sync Configuration User Interface (UI)
+You can customize branding, appearance, and content of the Sync configuration UI so it integrates seamlessly into your software.
 
-You can of course customize branding, appearance, and content of the Sync Configuration UI, so it integrates seamlessly into your software.
+### 2. [Merchant configuration](/commerce/merchant-configuration)
 
-### 2. Merchant configuration
+Once the access is authorized, your customers can determine how their sales data synchronization should work using the Sync configuration flow.
 
-Once the access is authorized, the merchant can set how the synchronization should work through the Sync configuration flow.
+Once your customer lands on the Sync configuration flow UI, we will take them through an onboarding journey, allowing them to:
 
-This is how your customers will set up their sales data synchronization.
+- Authorize access to the systems we need to connect to synchronise sales data.
+- Tell us how they would like their sales data represented in their accounting software.
 
-Once your customer lands on the Sync Configuration UI, we will take them through an onboarding journey, allowing the user to
+In the background, we will retrieve some basic information from their connected systems to allow us to customize Sync for Commerce to their specific PoS, Payments, eCommerce or accounting software characteristics.
 
-Authorize access to the required system(s) to which we need to connect, to synchronise sales data
+### 3. [Data synchronization](/commerce/data-synchronization)
 
-Tell us how they’d like their sales data represented in their Accounting software
-
-In the background, we will retrieve some basic information from their connected systems to allow us to customize this to their specific POS/Payments/e-commerce/Accounting software set up
-
-### 3. Data synchronization
-
-Once the Sync Configuration is completed, we automatically synchronise data after the end of each day.
-
-You can also trigger a sync at any time through the API
+Once the Sync configuration is completed, we automatically synchronize sales data after the end of each calendar day. You can also trigger a sync at any time using our API.
 
 ### 4. Ongoing support
 
-At any time, a user can revisit the Sync Configuration UI to update their configuration, stop/re-start their automated sales data synchronisation, or revoke access to their systems
+A user can update their configuration, stop or restart their automated sales data synchronization or revoke access to their systems at any time by revisiting the Sync configuration UI. They can also use it to view completed syncs and any errors that may have occurred.
 
-Within the Sync Configuration UI, the user can also view completed syncs, and any errors that have occurred
-
-Your support team can view each merchant’s syncs and troubleshoot any errors within the Sync for Commerce Health site, accessed through the Codat Portal.
+Your support team can also view each merchant’s syncs and troubleshoot any errors using the Sync for Commerce Health site, accessed through the [Codat Portal](https://app.codat.io).
 
 ---
 
