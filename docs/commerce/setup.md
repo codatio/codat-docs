@@ -1,13 +1,17 @@
 ---
 title: "Product setup"
-description: "DESCRIPTION PLEASE"
+description: "Learn how to perform the initial setup for the Sync for Commerce product"
 displayed_sidebar: commerce
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-Enable your customers to select the systems they want to connect and start the Sync Configuration process.
+Sync for Commerce can be implemented within a commerce platform (Point of Sales, Payments, or eCommerce) where sales data originates and within an accounting package to which sales data is synchronized.
+
+Follow the guidance below to perform the initial setup for Sync for Commerce and enable your customers to select the systems they want to connect and start the Sync configuration process.
+
+Before you begin, you need to have access to Codat's API. For 
 
 Sync for Commerce can be implemented within a Commerce platform (Point of Sales, Payments, or eCommerce) where sales data originates, and/or within an Accounting package to which sales data is synchronised.
 
@@ -62,12 +66,13 @@ You can view the accounting and commerce platfors Sync for Commerce supports in 
 
   | Accounting packages               | Platform key |
   |-----------------------------------|--------------|
-  | QuickBooks Online                 |              |
-  | Xero                              |              |
-  | FreeAgent                         |              |
-  | MYOB                              |              |
-  | Exact (UK and NL)                 |              |
-  | Sage Business Cloud [coming soon] |              |
+  | Exact (NL)                        |  qudb        |
+  | Exact (UK)                        |  pbbf        |
+  | FreeAgent                         |  fbrh        |
+  | MYOB                              |  pdvj        |
+  | Sage Business Cloud (coming soon) |  tgff        |
+  | QuickBooks Online                 |  qhyg        |
+  | Xero                              |  gbol        |
 
   </TabItem>
 
@@ -77,16 +82,13 @@ You can view the accounting and commerce platfors Sync for Commerce supports in 
 
   | Commerce platforms | Platform key |
   |--------------------|--------------|
-  | Zettle by PayPal   |              |
-  | Lightspeed         |              |
-  | Clover             |              |
-  | Shopify            |              |
+  | Clover             | fqly         |
+  | Lightspeed K       | ldgh         |
+  | Shopify            | fztf         |
+  | Zettle by PayPal   | ugxp         |
 
   </TabItem>
 </Tabs>
-
-
-
 
 ## 1. Get branding for the integrations
 To populate your UI, you can get logos for each of Codat’s integrations.

@@ -465,7 +465,7 @@ module.exports = {
     },
     {
       from: "/sfc/sync-for-commerce-knowledge-base/synchronization-schedule",
-      to: "/commerce/learn/synchronization-schedule",
+      to: "/commerce/synchronization-schedule",
     },
     {
       from: "/sfc/sync-for-commerce-knowledge-base/sfc-journal-entry-mapping",

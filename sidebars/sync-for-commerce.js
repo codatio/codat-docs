@@ -26,7 +26,7 @@ module.exports = [
   //   items: [
   //     "commerce/learn/initiating-a-sync",
   //     "commerce/learn/monitoring-a-sync",
-  //     "commerce/learn/synchronization-schedule",
+  //     "commerce/synchronization-schedule",
   //     "commerce/learn/sfc-journal-entry-mapping",
   //     "commerce/learn/sfc-sales-product-categories",
   //   ],
