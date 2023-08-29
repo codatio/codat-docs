@@ -2,8 +2,6 @@
 title: "Enhanced Invoices"
 description: "Introduction to Enhanced Invoices"
 sidebar_label: "Enhanced Invoices"
-createdAt: "2022-10-06T08:32:16.232Z"
-updatedAt: "2022-11-10T14:01:08.149Z"
 ---
 
 This feature solves a key problem associated with underwriting invoices - verifying payments against historical invoices. It does this by matching invoice payments to immutable banking transactions, showing you the original transaction details found on the bank statement.
@@ -13,6 +11,8 @@ Invoices also include details of:
 - How much the invoice is for and the currency.
 - Who the invoice has been raised to; the customer.
 - Any payments assigned to the invoice
+
+Get a list of invoices linked to the corresponding banking transaction using the _Enhanced Invoices Report_ endpoint in our [Lending API reference](/lending-api#/operations/get-enhanced-invoices-report).
 
 ## Prerequisites
 
@@ -26,9 +26,3 @@ Ensure you have the following datatypes enabled:
 - Payments
 - Credit Notes
 - Account Transactions
-
-## Enhanced Invoices Report
-
-Gets a list of invoices linked to the corresponding banking transaction
-
-Explore the _Enhanced Invoices Report_ endpoint in our [Lending API reference](/lending-api#/operations/get-enhanced-invoices-report).
