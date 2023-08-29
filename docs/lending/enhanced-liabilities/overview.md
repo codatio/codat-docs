@@ -1,7 +1,7 @@
 ---
 title: Enhanced loan liabilities
 description: "Learn how to identify a company's loans to better understand its financial health"
-sidebar_label: "Overview"
+sidebar_label: "Enhanced loan liabilities"
 ---
 
 Enhanced loan liabilities removes the arduous task of manually identifying loan liabilities by automatically analyzing data from accounting, banking and commerce data sources.
@@ -17,6 +17,14 @@ The enhanced loan liabilities detection engine is capable of identifying
 
 The endpoint will give analysts a better idea of the loan obligations a company may have by identifying their loan transactions and loan repayments.
 This will be done by showing the amount of a loan a company has paid off and the number of loans a company has.
+
+## Summary Report
+The loan summary endpoint returns a list of a company's loan liabilities across all its valid data connections.
+This will include drawdowns, repayments, and remaining balance.
+
+## Transactions Report
+The loan transactions endpoint returns a paged list of a company's loan transactions for the specified connection type.
+This may include drawdowns, accrued interest, capital and interest repayments.
 
 ## Prerequisites 
 The company must have at least one accounting, banking, or commerce connection linked and fully synced with the mandatory data types listed below.

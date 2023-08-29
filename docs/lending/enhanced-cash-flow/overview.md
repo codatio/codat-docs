@@ -1,7 +1,7 @@
 ---
 title: "Enhanced Cash Flow"
 description: "Introduction to Enhanced Cash Flow"
-sidebar_label: "Overview"
+sidebar_label: "Enhanced Cash Flow"
 ---
 
 The **Enhanced Cash Flow** endpoint returns categorized banking transactions that gives lenders the insights to accurately forecast a company's cash flow.

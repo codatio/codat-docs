@@ -19,14 +19,13 @@ You can generate the Enhanced Financials Excel report using the API or the Codat
 
 To get the most out of the report, try creating a pivot table and grouping the data by category Level 1-5 to replicate a financial statement view.  You can also create formulas to calculate financial ratios from this data.
 
-[//]: # (TODO: check img url)
-![Enhanced Financials Report](/img/assess/enhanced-financials.png "Enhanced Financials Report")
+![Enhanced Financials Report](/img/lending/enhanced-financials.png "Enhanced Financials Report")
 
 ### Metrics template
 
 We've also created a [Metrics Template Excel file](/documents/assess-metrics.xlsx).  You can paste data into this file from the Enhanced Financials Excel report to calculate key financial metrics and ratios.
 
-[![Metrics Template](/img/assess/metrics-template.png "Metrics Template")](/documents/assess-metrics.xlsx)
+[![Metrics Template](/img/lending/metrics-template.png "Metrics Template")](/documents/assess-metrics.xlsx)
 
 ## Troubleshooting
 
