@@ -56,6 +56,6 @@ This reduces the number of requests you need to make to us as you only make a ca
 
 Ability to provide additional value on top of the contributed data.
 
-Now that we have the data ourselves we are also able to use it to power a suite of extra products; Assess, categorization, our portal
+Now that we have the data ourselves we are also able to use it to power a suite of extra products; Lending, categorization, our portal
 
 This increases the benefit you can get from Codat which wouldn’t be possible otherwise

@@ -39,7 +39,7 @@ export const IntegrationsList = ({integrations}) => {
   )
 }
 
-const Integrations = () => {
+const Integrations = ({type, search=true}) => {
   const [searchValue, setSearchValue] = useState('');
 
   const handleOnChange = event => {
@@ -47,29 +47,56 @@ const Integrations = () => {
     setSearchValue(value);
   };
 
+  const relevantIntegrations = type ? integrations.filter(integration => integration.type === type) : integrations
+
   const filteredIntegrations = searchValue === ""
-    ? integrations
-    : integrations.filter(integration => integration.name.toLowerCase().includes(searchValue.toLowerCase()))
+    ? relevantIntegrations
+    : relevantIntegrations.filter(integration => integration.name.toLowerCase().includes(searchValue.toLowerCase()))
+
+  const accountingIntegrations = filteredIntegrations.filter(integration => integration.type === "accounting")
+  const bankingIntegrations = filteredIntegrations.filter(integration => integration.type === "banking")
+  const commerceIntegrations = filteredIntegrations.filter(integration => integration.type === "commerce")
+  const bankFeedsIntegrations = filteredIntegrations.filter(integration => integration.type === "bankfeeds")
 
   return (
     <div>
-      <input className={styles.search} value={searchValue} onChange={handleOnChange} type="text" placeholder="Enter an integration name..." />
+      { search && <input className={styles.search} value={searchValue} onChange={handleOnChange} type="text" placeholder="Enter an integration name..." /> }
 
-      <h2 className={styles.header}>Accounting</h2>
+      {
+        accountingIntegrations.length > 0 &&
+        <>
+          <h2 className={styles.header}>Accounting</h2>
 
-      <IntegrationsList integrations={filteredIntegrations.filter(integration => integration.type === "accounting")}/>
+          <IntegrationsList integrations={accountingIntegrations}/>
+        </>
+      }
 
-      <h2 className={styles.header}>Banking</h2>
+      {
+        bankingIntegrations.length > 0 &&
+        <>
+          <h2 className={styles.header}>Banking</h2>
 
-      <IntegrationsList integrations={filteredIntegrations.filter(integration => integration.type === "banking")}/>
+          <IntegrationsList integrations={bankingIntegrations}/>
+        </>
+      }
 
-      <h2 className={styles.header}>Commerce</h2>
+      {
+        commerceIntegrations.length > 0 &&
+        <>
+          <h2 className={styles.header}>Commerce</h2>
 
-      <IntegrationsList integrations={filteredIntegrations.filter(integration => integration.type === "commerce")}/>
+          <IntegrationsList integrations={commerceIntegrations}/>
+        </>
+      }
 
-      <h2 className={styles.header}>Bank feeds</h2>
+      {
+        bankFeedsIntegrations.length > 0 &&
+        <>
+          <h2 className={styles.header}>Bank feeds</h2>
 
-      <IntegrationsList integrations={filteredIntegrations.filter(integration => integration.type === "bankfeeds")}/>
+          <IntegrationsList integrations={bankFeedsIntegrations}/>
+        </>
+      }
     </div>
   );
 };

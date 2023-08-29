@@ -11,13 +11,17 @@ Handling rate limits is a challenging aspect of building financial integrations.
 
 ## Codat rate limits
 
+:::caution Rate limits enforced from 1<sup>st</sup> October 2023
+From October 1, 2023, rate limits listed on this page will be enforced by `api.codat.io`, and it will not be possible to make API calls that exceed the quota.
+:::
+
 Codat will return a `429` status code for all requests to the API that are received while rate limiting is active. The body of the response will look like any other [error that gets returned by Codat](/using-the-api/errors).
 
-The response will also include a `retry-after` header that will advise your calling system when the current rate limiting will deactivate.
+The response will also include a `Retry-After` header that will advise your calling system when the current rate limiting will deactivate.
 
 ### Usage-based limits
 
-We do not currently enforce usage-based rate limits, but we do monitor them internally. If a client breaks the limits, it usually means there is an overlooked issue in their system or product. We will get in touch with the client to discuss possible improvements to reduce the number of calls. This will enhance the Codat experience for the client and their users. 
+If a client breaks the limits, it usually means there is an overlooked issue in their system or product. We will get in touch with the client to discuss possible improvements to reduce the number of calls. This will enhance the Codat experience for the client and their users. 
 
 ### Client-based limits
 
@@ -43,12 +47,6 @@ Company-based limits set an upper limit on the number of data-based requests an 
 
 Note that these limits represent a global request count.
 
-:::caution Daily rate limits
-
-Note that the rate limits do not automatically recalculate when a new ACC is added, and do not reset until the end of the day.
-
-:::
-
 :::note Calculating rate limits: example 1
 
 Account A has a production client with 2 active companies. The client-based limit is calculated as the greater of `(2*100 || 1,000)`, resulting in 1,000 allowed requests. Adding 1,000 \* 2 ACCs for the company-based limit gives Account A a total limit of 3,000 requests. 
@@ -67,10 +65,19 @@ This gives Account B a total limit of 154,000 requests.
 
 :::
 
-### Hard DoS-based limits
+### Rate limit headers
+
+Every response from our API includes a set of headers that show how your use compares to your rate limits: 
+- `X-Rate-Limit-Limit` tells you the maximum number of requests for the current quota period.
+- `X-Rate-Limit-Remaining` tells you the number of remaining requests you have in the quota period.
+- `X-Rate-Limit-Reset` tells you the date when the quota will be reset.
+
+Once the limit is exceeded, all further requests will also contain the standard `Retry-After` header that informs your system when the request can be performed next. 
+
+## Hard DoS-based limits
 
 Hard DoS-based limits are set to protect against bad actors and do not prevent sensible usage. Codat sets these limits at: 
 
-- 10,000 requests per minute from any IP Address.
+- 1,000 requests per minute from any IP Address.
 
 We may block an IP's traffic without warning if, in our view, it significantly interferes with the operation of our API.

@@ -53,6 +53,6 @@ Don't forget about our upcoming deprecations:
 - <https://docs.codat.io/updates/230411-deletion-of-data>
 - <https://docs.codat.io/updates/230411-legacy-bank-account-endpoints>
 
-Stay on top of deprecations by checking out and subscribing to our deprecation calendar here: <https://docs.codat.io/introduction/change-policy>
+Stay on top of deprecations by checking out and subscribing to our deprecation calendar here: <https://docs.codat.io/using-the-api/change-policy>
 
 These deprecations were previously scheduled for the 10th April, but have been pushed back a day as they fell on a UK bank holiday.

@@ -5,7 +5,7 @@ createdAt: "2022-02-21T12:45:33.573Z"
 updatedAt: "2022-11-02T14:38:29.977Z"
 ---
 :::caution Account category versions
-This categorization of accounts via only applies to our legacy [Enhanced Financials](/assess/enhanced-financials/legacy/financials). For categorization using the latest categories, explore the [revised Enhanced Financials](/assess/enhanced-financials/overview).
+This categorization of accounts via only applies to our legacy [Enhanced Financials](/lending/enhanced-financials/legacy/financials). For categorization using the latest categories, explore the [revised Enhanced Financials](/lending/enhanced-financials/overview).
 :::
 
 The **Categorization of accounts** API consists of the following endpoints:
@@ -31,7 +31,7 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-asses
 - A list of all the Codat standard categories can be found under:
 
 ```http
-GET /data/assess/accounts/categories
+GET /data/lending/accounts/categories
 ```
 
 ```json
@@ -63,7 +63,7 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 The suggested and confirmed categories for a specific account can be obtained from the following endpoint:
 
 ```http
-GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categories
+GET /data/companies/{companyId}/connections/{connectionId}/lending/accounts/categories
 ```
 
 ```json
@@ -92,7 +92,7 @@ GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categ
 The endpoint is available in our <a href="/assess-api#/operations/get-data-companies-companyId-connections-connectionId-assess-accounts-categories">API reference</a>.
 
 ```http
-GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categories
+GET /data/companies/{companyId}/connections/{connectionId}/lending/accounts/categories
 ```
 
 ## Data model
@@ -150,13 +150,13 @@ GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categ
 
 # Update categories for a company
 
-The categories for all or a batch of accounts in a specific connection can be updated in the  Assess API reference.
+The categories for all or a batch of accounts in a specific connection can be updated in the  Lending API reference.
 Note that this does not update the end accounting platform’s account, and only updates the categories saved against the company within Assess.
 
 The endpoint is available in our <a href="/assess-api#/operations/patch-data-companies-companyId-connections-connectionId-assess-accounts-categories">API reference</a>.
 
 ```http
-PATCH /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categories
+PATCH /data/companies/{companyId}/connections/{connectionId}/lending/accounts/categories
 ```
 
 In the update request body, provide:
@@ -192,7 +192,7 @@ The confirmed category for an account can be updated or removed.
 The endpoint is available in our <a href="/assess-api#/operations/patch-data-companies-companyId-connections-connectionId-assess-accounts-accountId-categories">API reference</a>.
 
 ```http
-PATCH /data/companies/{companyId}/connections/{connectionId}/assess/accounts/{accountId}/categories
+PATCH /data/companies/{companyId}/connections/{connectionId}/lending/accounts/{accountId}/categories
 ```
 
 Note: Even if you are updating 2 accounts out of 100, you should still provide the categories on the other 98 accounts to prevent replacing those that were previously confirmed.

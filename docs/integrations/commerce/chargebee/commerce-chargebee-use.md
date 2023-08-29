@@ -4,7 +4,7 @@ description: "When an SMB user has linked their Chargebee account, access their 
 sidebar_label: Use the integration
 ---
 
-The Chargebee integration doesn't yet expose standardized data types or provide any data visualization or metrics (for example, in Assess).
+The Chargebee integration doesn't yet expose standardized data types or provide any data visualization or metrics (for example, in Lending).
 
 Instead, when an SMB user has [linked their Chargebee account](/integrations/commerce/chargebee/commerce-chargebee-setup#smb-customer-authenticate-and-connect-your-commerce-data), you can access their subscriptions and billing data through the `proxy` endpoint in the Codat API. Only GET requests are currently supported. 
 

@@ -17,7 +17,7 @@ The Enhanced Invoices Excel report requires a company to have both an accounting
 - Invoices
 - Payments
 
-If these requirements are not met an empty Excel workbook will be returned.
+If these requirements are not met, an empty Excel workbook will be returned.
 
 ## Generating the report
 

@@ -12,7 +12,7 @@ The way you download data via the **Export data** button will change. This will 
 - Account categories
 - Categorized account balances
 
-![Screenshot of the data export button](/img/assess/data-export.png)
+![Screenshot of the data export button](/img/lending/data-export.png)
 
 Note: All other tabs in the data export and the audit report will continue to be supported
 

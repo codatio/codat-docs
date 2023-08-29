@@ -6,12 +6,12 @@ updatedAt: "2022-11-02T14:39:20.426Z"
 ---
 
 :::caution New version of enhanced financials
-Functionality described here has been superseded by a newer version of enhanced financials using revised accounting categories. Explore the new [Enhanced Financials](/assess/enhanced-financials/overview).
+Functionality described here has been superseded by a newer version of enhanced financials using revised accounting categories. Explore the new [Enhanced Financials](/lending/enhanced-financials/overview).
 :::
 
 The _Enhanced Profit and Loss_ endpoint provides a fully categorized profit and loss statement over a specified period(s) of time, for a specific company’s accounting connection.
 
-Refer to the [Assess reporting structure](/assess/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/lending/enhanced-financials/legacy/reporting-structure) page for more detail on reports in Assess.
 
 For _Enhanced Profit and Loss_, these are the dimensions and measures:
 
@@ -34,7 +34,7 @@ For _Enhanced Profit and Loss_, these are the dimensions and measures:
 
 The endpoint is available in our <a href="/assess-api#/operations/get-companies-companyId-reports-enhancedProfitAndLoss-accounts">API reference</a>.
 
-`GET /data/companies{companyId}/connections/{connectionId}/assess/enhancedProfitandLoss`
+`GET /data/companies{companyId}/connections/{connectionId}/lending/enhancedProfitandLoss`
 
 # Parameters
 |Parameter|Type|Description|Required|
@@ -140,7 +140,7 @@ The _Enhanced Profit and Loss_ consists of these dimensions: Period, Category, S
 |**id**|_string_|Unique record of the account.|
 |**displayName**|_string_|Name of the account.|
 
-If any account needs to be recategorized, use the [API: Categorization of accounts](/assess/categories/api-categorization-of-accounts) endpoint.
+If any account needs to be recategorized, use the [API: Categorization of accounts](/lending/categories/api-categorization-of-accounts) endpoint.
 
 ## Measures
 

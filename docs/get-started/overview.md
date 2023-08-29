@@ -62,7 +62,7 @@ description: "Take your first steps through the information and support availabl
       </a>, our beta AI tool trained on the Codat docs. Try {" "}
       <a href="https://cochat.codat.io" target="_blank">asking it a question</a>
       {" or "}
-      <a href="/other/cochat">read more</a>.
+      <a href="/cochat">read more</a>.
     </p>
   </li>
 </ul>
@@ -108,29 +108,9 @@ description: "Take your first steps through the information and support availabl
   <li className="card mini">
     <div className="card-row">
       <div className="header">
-        <a href="/guides/loan-qualification/introduction">
+        <a href="/lending/guides/invoice-finance/introduction">
           <img
-            src="/logos/usecases/company-info.svg"
-            className="icon usecase"
-          />
-        </a>
-      </div>
-      
-      <div className="content">
-        <h4>Loan qualification</h4>
-        <p>
-          <a href="/guides/loan-qualification/introduction">See the tutorial →</a>
-        </p>    
-      </div>
-    </div>
-    <p>Lend with Codat and our Assess product</p>
-  </li>
-  <li className="card mini">
-    <div className="card-row">
-      <div className="header">
-        <a href="/guides/invoice-finance/introduction">
-          <img
-            src="/logos/usecases/lending.svg"
+            src="/img/logos/usecases/lending.svg"
             className="icon usecase"
           />
         </a>
@@ -139,7 +119,7 @@ description: "Take your first steps through the information and support availabl
       <div className="content">
         <h4>Invoice financing</h4>
         <p>
-          <a href="/guides/invoice-finance/introduction">See the tutorial →</a>
+          <a href="/lending/guides/invoice-finance/introduction">See the tutorial →</a>
         </p>    
       </div>
     </div>
@@ -148,9 +128,9 @@ description: "Take your first steps through the information and support availabl
   <li className="card mini">
     <div className="card-row">
       <div className="header">
-        <a href="/guides/bill-pay/introduction">
+        <a href="payables/guides/bill-pay/introduction">
           <img
-            src="/logos/usecases/payments.svg"
+            src="/img/logos/usecases/payments.svg"
             className="icon usecase"
           />
         </a>
@@ -159,7 +139,7 @@ description: "Take your first steps through the information and support availabl
       <div className="content">
         <h4>Bill pay</h4>
         <p>
-          <a href="/guides/bill-pay/introduction">See the tutorial →</a>
+          <a href="payables/guides/bill-pay/introduction">See the tutorial →</a>
         </p>    
       </div>
     </div>
@@ -168,9 +148,9 @@ description: "Take your first steps through the information and support availabl
   <li className="card mini">
     <div className="card-row">
       <div className="header">
-        <a href="/guides/bank-feeds-tutorial">
+        <a href="/bank-feeds/guides/bank-feeds-tutorial">
           <img
-            src="/logos/usecases/sync.svg"
+            src="/img/logos/usecases/sync.svg"
             className="icon usecase"
           />
         </a>
@@ -179,7 +159,7 @@ description: "Take your first steps through the information and support availabl
       <div className="content">
         <h4>Bank feeds reconciliation with QuickBooks Online</h4>
         <p>
-          <a href="/guides/bank-feeds-tutorial">See the tutorial →</a>
+          <a href="/bank-feeds/guides/bank-feeds-tutorial">See the tutorial →</a>
         </p>    
       </div>
     </div>

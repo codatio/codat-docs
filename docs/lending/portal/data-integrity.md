@@ -1,8 +1,6 @@
 ---
-title: "Data integrity"
+title: "In the Portal"
 description: "Displays the Data Integrity percentages and describes the records that were matched and not matched"
-createdAt: "2021-06-08T11:13:26.297Z"
-updatedAt: "2022-11-02T14:48:33.149Z"
 ---
 
 ## Data integrity in the Codat Portal

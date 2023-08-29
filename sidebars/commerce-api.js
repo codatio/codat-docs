@@ -6,20 +6,20 @@ module.exports = [
     className: "back",
   },
   {
-    type: "link",
+    type: "doc",
     label: "Commerce API",
-    href: "/commerce-api/overview",
+    id: "commerce-api/overview",
     className: "header",
   },
   {
-    type: "link",
+    type: "doc",
     label: "Commerce data model",
-    href: "/data-model/commerce/",
+    id: "commerce-api/commerce-data-types",
   },
   {
-    type: "link",
+    type: "doc",
     label: "Commerce integrations",
-    href: "/integrations/commerce/overview",
+    id: "integrations/commerce/overview",
   },
   {
     type: "link",

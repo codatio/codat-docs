@@ -1,85 +1,54 @@
 ---
-title: Accounts Payable
-description: "Retrieve and create bills using the Accounting API"
+title: Managing bills
+description: "Create and fetch bills using the Sync for Payables API"
 ---
 
-### Accounts payable
+In Codat's API a [Bill](/sync-for-payables-api#/schemas/Bill) represents an invoice from a [supplier](/sync-for-payables-api#/schemas/Supplier). This is an *accounts receivable* invoice.
 
-In Codat's API a [Bill](/payables-api#/schemas/Bill) represents an invoice from a [supplier](/payables-api#/schemas/Supplier), for this use case bills can be [retrieved](/payables-api#/operations/list-bills) from the Accounting API, or you can create bills within your platform and [post](https://docs.codat.io/payables-api#/operations/create-bill) them to your customers accounting software.
+Bills can be [retrieved](/sync-for-payables-api#/operations/list-bills) from the Sync for Payables API.
 
-### Managing suppliers
+You can also create bills within your system and then [create them](https://docs.codat.io/sync-for-payables-api#/operations/create-bill) within your customers' accounting software.
 
-In the accounting API a [supplier](/payables-api#/schemas/Supplier) represents a business or sole trader that provides goods or services to a company.
+:::tip Invoices or bills?
 
-Suppliers are relevant for the bill pay use case as each bill is associated to a supplier - suppliers also have important information such as addresses and contact details which could be used to notify a supplier once a payment is made.
-
-#### Retrieve a list of suppliers
-
-You can get a [list of suppliers](/payables-api#/operations/list-suppliers) using the Accounting API
-
-```http request
-GET https://api.codat.io/companies/{companyId}/data/suppliers?page=1&pageSize=100
-```
-
-query parameters can also be used to narrow the list of suppliers e.g.
-- `status=Active` returns only active suppliers
-- `defaultCurrency=USD` returns suppliers that provide goods or services in dollars
-- `supplierName=Acme` returns suppliers with a name that matches the query
-
-:::tip Supplier Balances
-Currently the accounting API does not expose supplier balances on the supplier endpoint, however you can access these by
-- Aggregating bills by supplier
-- Using the [Aged debtors](/payables-api#/operations/get-aged-debtors-report) report
+We distinguish between invoices where the company owes money vs. is owed money. If the company has received an invoice, and owes money to someone else (accounts payable) we call this a Bill.
 :::
 
-#### Creating a new supplier
+## Get a list of existing bills
 
-In some cases, a company may do business with a new supplier for the first time, when this happens you should [create the supplier](/payables-api#/operations/create-supplier) first before creating a bill against the supplier.
+You can [get a list of bills](/sync-for-payables-api#/operations/list-bills) for a company from the Sync for Payables API
 
-```http request
-POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/suppliers
-```
-
-#### Updating a supplier
-
-If a supplier changes address or business name, you may want to reflect this change in the companies accounting software by [updating the supplier](/payables-api#/operations/put-supplier).
-
-```http request
-PUT https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/suppliers/{supplierId}
-```
-
-### Bills
-
-Bills can either be created in the companies accounting software and then queried through the Accounting API, or bills can be created in your application and then posted to the companies accounting software.
-
-#### Get a list of bills
-
-You can [get a list of bills](/payables-api#/operations/list-bills) for a company from the Accounting API
-
-```http request
+```http request title="List bills"
 GET https://api.codat.io/companies/{companyId}/data/bills?page=1&pageSize=100
 ```
 
-Query parameters can be used to filter and narrow the returned results e.g.
+Query parameters can be used to filter and narrow the returned results:
+
 - `supplierRef.supplierName=acme inc` returns only bills associated to the specified supplier
 - `dueDate>2023-06-01&&dueDate<2023-06-30` returns only bills due for payment between June 1st and June 30th
 - `amountDue>0` returns only outstanding bills with due amounts
 
-You can also retrieve any associated [attachments](/payables-api#/operations/download-bill-attachment) for a given bill such as a pdf copy of the invoice issued by the supplier.
+You can also retrieve any associated [attachments](/sync-for-payables-api#/operations/download-bill-attachment) for a given bill such as a pdf copy of the invoice issued by the supplier.
 
-#### Create a bill
+## Create a new bill
 
-You can also [create a new bill](/payables-api#/operations/create-bill) in your companies accounting software to represent goods or services purchased from a supplier.
+:::tip The corresponding supplier
 
-```http request
+Bills should correspond to a supplier. You'll need to ensure the corresponding supplier exists before creating a new bill.
+
+:::
+
+You can also [create a new bill](/sync-for-payables-api#/operations/create-bill) in your company's accounting software to represent goods or services purchased from a supplier.
+
+```http request title="Create bill"
 POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/bills
 ```
 
-#### Upload a copy of the invoice
+### Upload a copy of the invoice
 
-In some cases where a bill is being created in your application, the company may also want to save a copy of the pdf invoice against the bill in their accounting software. This can be supported via the [bill attachments endpoint](/payables-api#/operations/upload-bill-attachments)
+In some cases where a bill is being created in your application, the company may also want to save a copy of the pdf invoice against the bill in their accounting software. This can be supported via the [bill attachments endpoint](/sync-for-payables-api#/operations/upload-bill-attachments)
 
-```http request
+```http request title="Upload bill attachment"
 POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/bills/{billId}/attachments
 ```
 

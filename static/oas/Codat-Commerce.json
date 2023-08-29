@@ -8,7 +8,7 @@
   ],
   "info": {
     "title": "Commerce API",
-    "version": "2.1.0",
+    "version": "3.0.0",
     "contact": {
       "name": "Codat",
       "email": "support@codat.io"
@@ -7417,7 +7417,7 @@
   "components": {
     "schemas": {
       "CompanyInfo": {
-        "title": "Company Info",
+        "title": "Commerce company info",
         "description": "In the Codat system, company information includes standard commercial details about \na linked company, such as their address, phone number, and company registration.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=companyInfo) for this data type.\n",
         "type": "object",
         "allOf": [
@@ -7552,7 +7552,7 @@
         }
       },
       "Customer": {
-        "title": "Customer",
+        "title": "Commerce customer",
         "description": "When a customer places an order with the connected commerce store their details are added to the Customers dataset. You can use the data from the Customers endpoints to calculate key metrics, such as customer churn.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-customers) for this data type.",
         "type": "object",
         "allOf": [
@@ -7741,7 +7741,7 @@
         ]
       },
       "Dispute": {
-        "title": "Dispute",
+        "title": "Commerce dispute",
         "description": "A customer may file a payment dispute with their bank or other card issuer when they're unsatisfied with their purchase or believe they have been charged incorrectly. For example:  \n- They didn't receive an order.  \n- The product they received was different to the commerce store's description.  \n- They've been the victim of online fraud.  \n\nYou can use data from the Disputes endpoints to calculate key metrics, such as the number of chargebacks.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-disputes) for this data type.",
         "type": "object",
         "allOf": [
@@ -7858,7 +7858,7 @@
         ]
       },
       "Location": {
-        "title": "Location",
+        "title": "Commerce location",
         "type": "object",
         "description": "The Location datatype holds information on the geographic location at which stocks of products may be held, as referenced in the Products data type.\n\nA Location also holds information on geographic locations where orders were placed, as referenced in the Orders data type.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-locations) for this data type.",
         "allOf": [
@@ -7945,7 +7945,7 @@
         ]
       },
       "Order": {
-        "title": "Order",
+        "title": "Commerce order",
         "description": "Orders contain the transaction details for all products sold by the company, and include details of any payments, service charges, or refunds related to each order. You can use data from the Orders endpoints to calculate key metrics, such as gross sales values and monthly recurring revenue (MRR).\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-orders) for this data type.\n",
         "type": "object",
         "allOf": [
@@ -8327,7 +8327,7 @@
         ]
       },
       "Payment": {
-        "title": "Payment",
+        "title": "Commerce payment",
         "description": "Payments contain details of all payments made by customers to a company, including: amounts, currency used, payment method, payment provider, and payment status.\n\nRefunds are recorded as separate, negative payments. Note that a refund can only occur in relation to a payment that has been completed (i.e. has a status of `Paid`). When a customer cancels an order _before_ a payment has been completed, the payment shows as `Cancelled`.\n\nYou can use data from the Payments endpoints to calculate key metrics, such as gross sales and monthly recurring revenue (MRR).\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-payments) for this data type.",
         "type": "object",
         "allOf": [
@@ -8487,7 +8487,7 @@
         ]
       },
       "PaymentMethod": {
-        "title": "Payment Method",
+        "title": "Commerce payment method",
         "description": "A Payment Method represents the payment method(s) used to make payments.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-paymentMethods) for this data type.",
         "type": "object",
         "allOf": [
@@ -8565,7 +8565,7 @@
         ]
       },
       "Product": {
-        "title": "Product",
+        "title": "Commerce product",
         "description": "A Product is an item in the company's inventory, and includes information about the price and quantity of all products, and variants thereof, available for sale.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-products) for this data type.\n",
         "type": "object",
         "allOf": [
@@ -8825,7 +8825,7 @@
         ]
       },
       "ProductCategory": {
-        "title": "Product Category",
+        "title": "Commerce product category",
         "description": "Product categories are used to classify a group of products together, either by type (e.g. \"Furniture\"), or sometimes by tax profile.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-productCategories) for this data type.",
         "type": "object",
         "allOf": [
@@ -8924,7 +8924,7 @@
         ]
       },
       "TaxComponent": {
-        "title": "Tax Component",
+        "title": "Commerce tax component",
         "description": "The Tax Components endpoints return tax rates data from the commerce platform, including tax rate names and values. This is to support the mapping of tax rates from the commerce platform to those in the accounting platform.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-disputes) for this data type.",
         "type": "object",
         "allOf": [
@@ -9036,7 +9036,7 @@
         ]
       },
       "Transaction": {
-        "title": "Transaction",
+        "title": "Commerce transaction",
         "description": "Details of all financial transactions recorded in the commerce or point of sale system are added to the Transactions data type. For example, payments, service charges, and fees.\n\nYou can use data from the Transactions endpoints to calculate key metrics, such as:  \n- Transaction volumes  \n- Average transaction volume  \n- Average transaction value  \n- Returns  \n- Payouts\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-transactions) for this data type.",
         "type": "object",
         "allOf": [
@@ -9249,7 +9249,51 @@
             "type": "integer"
           },
           "_links": {
-            "$ref": "#/components/schemas/Links"
+            "$ref": "#/components/schemas/PagingInfo/definitions/links"
+          }
+        },
+        "definitions": {
+          "links": {
+            "title": "Hal Links",
+            "type": "object",
+            "required": [
+              "self",
+              "current"
+            ],
+            "properties": {
+              "self": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "current": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "next": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "previous": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              }
+            },
+            "examples": [
+              {
+                "self": {
+                  "href": "/companies/{id}/data/{dataType}"
+                },
+                "current": {
+                  "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+                }
+              }
+            ]
+          },
+          "halRef": {
+            "title": "Hypertext reference",
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string",
+                "format": "uri-reference"
+              }
+            }
           }
         },
         "required": [
@@ -9431,13 +9475,37 @@
                     "$ref": "#/components/schemas/DateTime"
                   },
                   {
-                    "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)):\n - When the source platform does not provide modification date information,\n - For attachments, balance sheets, company information, and profit & loss reports. \n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                    "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
                   }
                 ]
               }
             }
           }
         ]
+      },
+      "ErrorMessage": {
+        "type": "object",
+        "x-internal": true,
+        "properties": {
+          "statusCode": {
+            "type": "integer"
+          },
+          "service": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "correlationId": {
+            "type": "string"
+          },
+          "canBeRetried": {
+            "type": "string"
+          },
+          "detailedErrorCode": {
+            "type": "integer"
+          }
+        }
       }
     },
     "parameters": {
@@ -9518,7 +9586,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+              "$ref": "#/components/schemas/ErrorMessage"
             },
             "examples": {
               "Unauthorized": {
@@ -9540,7 +9608,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+              "$ref": "#/components/schemas/ErrorMessage"
             },
             "examples": {
               "Malformed query": {
@@ -9562,7 +9630,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+              "$ref": "#/components/schemas/ErrorMessage"
             },
             "examples": {
               "Data connection not found": {
@@ -9604,28 +9672,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "type": "object",
-              "x-internal": true,
-              "properties": {
-                "statusCode": {
-                  "type": "integer"
-                },
-                "service": {
-                  "type": "string"
-                },
-                "error": {
-                  "type": "string"
-                },
-                "correlationId": {
-                  "type": "string"
-                },
-                "canBeRetried": {
-                  "type": "string"
-                },
-                "detailedErrorCode": {
-                  "type": "integer"
-                }
-              }
+              "$ref": "#/components/schemas/ErrorMessage"
             },
             "examples": {
               "Conflict": {
@@ -9647,7 +9694,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+              "$ref": "#/components/schemas/ErrorMessage"
             },
             "examples": {
               "Conflict": {

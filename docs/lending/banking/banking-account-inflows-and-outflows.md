@@ -8,7 +8,7 @@ Please note, this feature is in beta testing. We encourage you to provide any fe
 
 This endpoint retrieves a paginated list of banking transactions for one or more connections.
 
-Refer to the [Assess reporting structure](/assess/reports/reporting-structure) page for more detail on reports in Assess.
+Refer to the [Assess reporting structure](/lending-api#/schemas/Report) page for more detail on reports in Assess.
 
 For _Banking account inflows and outflows_, these are the dimensions and measures:
 
@@ -25,7 +25,7 @@ For _Banking account inflows and outflows_, these are the dimensions and measure
 
 - Is structured based on dimension (index =“0”). i.e. Period
 
-`GET /data/companies/{companyId}/assess/banking/bankingInflowsOutflows`
+`GET /data/companies/{companyId}/lending/banking/bankingInflowsOutflows`
 
 ## Parameters
 

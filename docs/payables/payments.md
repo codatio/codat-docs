@@ -1,5 +1,5 @@
 ---
-title: Payments
+title: Reconciling payments
 description: "Reconcile payments to the SMB's accounting software"
 ---
 
@@ -15,9 +15,12 @@ A bill payment in Codat usually represents an allocation of money within any cus
 
 Depending on the bill payments which are allowed by the underlying accounting package, some of these types may be combined.
 
-## Paying a bill with a billPayment
+## Using bill payments
+
+### Paying a single bill with a billPayment
 
 If the scenario is a company making a payment to pay off a bill in full, then it should have the following properties:
+
 - A `totalAmount` indicating the amount of the bill that was paid. This is **always positive**. 
 - A lines array containing one element with the following properties:
   - An amount equal to the `totalAmount` above. 
@@ -28,15 +31,15 @@ If the scenario is a company making a payment to pay off a bill in full, then it
 
 <Tabs>
 
-<Tabitem value="Request URL" label="Request URL">
+<TabItem value="Request URL" label="Request URL">
 
-```http request title="Request URL"
+```http request title="Create bill payment"
 POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/billPayments
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="Example Bill to pay" label="Example Bill to pay">
+<TabItem value="Example Bill to pay" label="Example Bill to pay">
 
 Sample json of an outstanding bill from Xero.
 
@@ -90,9 +93,9 @@ Sample json of an outstanding bill from Xero.
 }
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="Example Bill Payment Xero" label="Example Bill Payment Xero">
+<TabItem value="Example Bill Payment Xero" label="Example Bill Payment Xero">
 
 Here is a sample payment for the Xero bill. Note that:
 
@@ -129,30 +132,30 @@ Here is a sample payment for the Xero bill. Note that:
 }
 ```
 
-</Tabitem>
+</TabItem>
 
 </Tabs>
 
 
-## Payment of multiple bills
+### Payments of multiple bills
 
 In some cases a company may make a single payment to a supplier that covers multiple invoices.
 
 <Tabs>
 
-<Tabitem value="Request URL" label="Request URL">
+<TabItem value="Request URL" label="Request URL">
 
-```http request title="Request URL"
+```http request title="Create bill payment"
 POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/billPayments
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="Example Request Bodies">
+<TabItem value="Example request bodies">
 
 <Tabs>
 
-<Tabitem value="Xero" label="Xero">
+<TabItem value="Xero" label="Xero">
 
 Here is a sample payment for multiple Xero bills from the same supplier.
 
@@ -245,9 +248,9 @@ To do this with Codat, you should leave the `supplierRef` parameter blank when c
 }
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="QuickBooks Online" label="QuickBooks Online">
+<TabItem value="QuickBooks Online" label="QuickBooks Online">
 
 
 ```json
@@ -286,13 +289,13 @@ To do this with Codat, you should leave the `supplierRef` parameter blank when c
   }
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="NetSuite" label="NetSuite">
+<TabItem value="NetSuite" label="NetSuite">
 
 :::note
 
-Note that if locations is set to mandatory in the companies NetSuite Account, the `reference` is required and should be an `id` from the [trackingCategories](/payables-api#/operations/list-tracking-categories) prefixed with location.
+Note that if locations is set to mandatory in the companies NetSuite Account, the `reference` is required and should be an `id` from the [trackingCategories](/sync-for-payables-api#/operations/list-tracking-categories) prefixed with location.
 
 :::
 
@@ -332,13 +335,13 @@ Note that if locations is set to mandatory in the companies NetSuite Account, th
 }
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="Sage Intacct" label="Sage Intacct">
+<TabItem value="Sage Intacct" label="Sage Intacct">
 
 :::note
 
-Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can be retrieved from the [options api](/payables-api#/operations/get-create-update-bills-model)
+Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can be retrieved from the [options api](/sync-for-payables-api#/operations/get-create-update-bills-model)
 
 :::
 
@@ -384,9 +387,9 @@ Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can b
 }
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="MYOB" label="MYOB">
+<TabItem value="MYOB" label="MYOB">
 
 ```json
 {
@@ -427,43 +430,43 @@ Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can b
 }
 ```
 
-</Tabitem>
+</TabItem>
 
 </Tabs>
 
-</Tabitem>
+</TabItem>
 
 
 
 </Tabs>
 
 
-## Using a bill credit note to pay a bill
+## Using a bill credit notes
 
 If a company receives a credit note from their supplier, the company could use this to offset the balance of any outstanding invoices from the same supplier. 
 
 With the billPayment API, you can partially or fully offset the balance of an invoice by adding the credit note in the `lines` array.
 
-1. The first step is to create a [`billCreditNote`](/payables-api#/operations/create-bill-credit-note)
+1. The first step is to create a [`billCreditNote`](/sync-for-payables-api#/operations/create-bill-credit-note)
 2. Once this is successfully created you can create a `billPayment` and include the `billCreditNote` and the `bill` to credit in the links array
 
 ### Creating a Credit Note
 
 <Tabs>
 
-<Tabitem value="Request Url" label="Request Url">
+<TabItem value="Request URL" label="Request URL">
 
 ```http request title="Request URL"
 POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/billCreditNotes
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="Example Request Bodies">
+<TabItem value="Example request bodies">
 
 <Tabs>
 
-<Tabitem value="Xero" label="Xero">
+<TabItem value="Xero" label="Xero">
 
 
 ```json title="Credit Note Example"
@@ -509,9 +512,9 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 ```
 
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="QuickBooks Online" label="QuickBooks Online">
+<TabItem value="QuickBooks Online" label="QuickBooks Online">
 
 ```json
 {
@@ -558,9 +561,9 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 }
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="NetSuite" label="NetSuite">
+<TabItem value="NetSuite" label="NetSuite">
 
 ```json
 
@@ -612,9 +615,9 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="Sage Intacct" label="Sage Intacct">
+<TabItem value="Sage Intacct" label="Sage Intacct">
 
 ```json title="Sage Intacct"
 
@@ -678,9 +681,9 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="MYOB" label="MYOB">
+<TabItem value="MYOB" label="MYOB">
 
 ```json
 {
@@ -720,11 +723,11 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 }
 ```
 
-</Tabitem>
+</TabItem>
 
 </Tabs>
 
-</Tabitem>
+</TabItem>
 
 </Tabs>
 
@@ -735,19 +738,19 @@ For some accounting platforms, you can also use a combination of a `billCreditNo
 ##### Allocating a Credit note against a bill
 <Tabs>
 
-<Tabitem value="Request Url" label="Request Url">
+<TabItem value="Request URL" label="Request URL">
 
 ```http request title="Request URL"
 POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/billPayments
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="Example Request Bodies">
+<TabItem value="Example request bodies">
 
 <Tabs>
 
-<Tabitem value="Xero" label="Xero">
+<TabItem value="Xero" label="Xero">
 
 :::info
 With the Xero integration its only possible to fully allocate a `billCreditNote` to a `bill` using a `billPayment`, this means that if you wish to also use a partial payment for the bill, two separate transactions should be created.
@@ -787,9 +790,9 @@ With the Xero integration its only possible to fully allocate a `billCreditNote`
 
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="QuickBooks Online" label="QuickBooks Online">
+<TabItem value="QuickBooks Online" label="QuickBooks Online">
 
 :::info
 With the QuickBooks Online integration its only possible to fully allocate a `billCreditNote` to a `bill` using a `billPayment`, this means that if you wish to also use a partial payment for the bill, two separate transactions should be created.
@@ -828,9 +831,9 @@ With the QuickBooks Online integration its only possible to fully allocate a `bi
 }
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="NetSuite" label="NetSuite">
+<TabItem value="NetSuite" label="NetSuite">
 
 The example below shows a partial billPayment and billCredit note to pay the full balance of a bill.
 
@@ -865,13 +868,13 @@ The example below shows a partial billPayment and billCredit note to pay the ful
 }
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="Sage Intacct" label="Sage Intacct">
+<TabItem value="Sage Intacct" label="Sage Intacct">
 
 :::note
 
-Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can be retrieved from the [options api](/payables-api#/operations/get-create-update-bills-model)
+Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can be retrieved from the [options api](/sync-for-payables-api#/operations/get-create-update-bills-model)
 
 :::
 
@@ -910,9 +913,9 @@ Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can b
 }
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="MYOB" label="MYOB">
+<TabItem value="MYOB" label="MYOB">
 
 :::note
 
@@ -921,11 +924,11 @@ Allocating a `billCreditNote` with a `billPayment` is **coming soon** for myob.
 :::
 
 
-</Tabitem>
+</TabItem>
 
 </Tabs>
 
-</Tabitem>
+</TabItem>
 
 </Tabs>
 

@@ -6,9 +6,9 @@ module.exports = [
     className: "back",
   },
   {
-    type: "link",
+    type: "doc",
     label: "Accounting API",
-    href: "/accounting-api/overview",
+    id: "accounting-api/overview",
     className: "header",
   },
   {
@@ -17,31 +17,31 @@ module.exports = [
     collapsed: true,
     items: [
       {
-        type: "link",
+        type: "doc",
         label: "Loan qualification",
-        href: "/guides/loan-qualification/introduction",
+        id: "lending/guides/loan-qualification/introduction",
       },
       {
-        type: "link",
+        type: "doc",
         label: "Invoice financing",
-        href: "/guides/invoice-finance/introduction",
+        id: "lending/guides/invoice-finance/introduction",
       },
       {
-        type: "link",
+        type: "doc",
         label: "Bill pay",
-        href: "/guides/bill-pay/introduction",
+        id: "payables/guides/bill-pay/introduction",
       },
     ],
   },
   {
-    type: "link",
+    type: "doc",
     label: "Accounting data model",
-    href: "/data-model/accounting/",
+    id: "accounting-api/accounting-data-types",
   },
   {
-    type: "link",
+    type: "doc",
     label: "Accounting integrations",
-    href: "/integrations/accounting/overview",
+    id: "integrations/accounting/overview",
   },
   {
     type: "link",

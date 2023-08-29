@@ -4,7 +4,7 @@ description: "Download the Enhanced Cash Flow report to Excel"
 sidebar_label: "Enhanced Cash Flow report"
 ---
 
-Our Enhanced Cash Flow Excel report gives you the same data you'd get from the [Enhanced Cash Flow](/lending/enhanced-cash-flow/overview) endpoint, but in an Excel workbook.  You can use the report to test some companies and familiarize yourself with the data before building to the equivalent API endpoint.
+Our Enhanced Cash Flow Excel report gives you the same data you'd get from the [Enhanced Cash Flow](/lending/enhanced-cash-flow/overview) endpoint but in an Excel workbook.  You can use the report to test some companies and familiarize yourself with the data before building to the equivalent API endpoint.
 
 The report contains the output of the [Enhanced Cash Flow](/lending/enhanced-cash-flow/overview) feature.
 
@@ -25,4 +25,4 @@ You can generate the Enhanced Cash Flow Excel report using the API or the Codat 
 
 The report provides information about the company's banking accounts and banking transactions. The transactions are ordered by date and contain the confidence and financial category metrics.
 
-![Enhanced Cash Flow Report](/img/assess/enhanced-cash-flow-blur.png "Enhanced Cash Flow Report")
+![Enhanced Cash Flow Report](/img/lending/enhanced-cash-flow-blur.png "Enhanced Cash Flow Report")

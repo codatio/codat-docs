@@ -20,4 +20,4 @@ We've got a host of Portal and DX improvements for you this week.
 
 #### Assess
 
-- **New:** Banking metrics are now available for all clients using Assess. https://docs.codat.io/docs/assess/portal/overview#banking
+- **New:** Banking metrics are now available for all clients using Assess. https://docs.codat.io/docs/lending/portal/overview#banking

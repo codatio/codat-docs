@@ -43,6 +43,8 @@ export default function DocItem(props: Props): JSX.Element {
     banner_text: bannerText,
     banner_icon: bannerIcon,
     banner_class: bannerClass,
+    video_url: videoUrl,
+    video_text: videoText,
   } = frontMatter;
 
   const { metadata: { editUrl } } = DocContent;
@@ -76,6 +78,8 @@ export default function DocItem(props: Props): JSX.Element {
           img={bannerImg}
           text={bannerText}
           icon={bannerIcon}
+          videoUrl={videoUrl}
+          videoText={videoText}
         />
       }
 

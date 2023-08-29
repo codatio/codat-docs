@@ -6,7 +6,7 @@ updatedAt: "2022-11-02T14:38:07.399Z"
 ---
 
 :::caution Account category versions
-This categorization of accounts only applies to our legacy [Enhanced Financials](/assess/enhanced-financials/legacy/financials). For categorization using the latest categories, explore the [revised Enhanced Financials](/assess/enhanced-financials/overview) endpoints.
+This categorization of accounts only applies to our legacy [Enhanced Financials](/lending/enhanced-financials/legacy/financials). For categorization using the latest categories, explore the [revised Enhanced Financials](/lending/enhanced-financials/overview) endpoints.
 :::
 
 The chart of accounts defines the financial structure of a company by providing a list of all accounts used in the company's general ledger.
@@ -15,7 +15,7 @@ Every account is assigned one of Codat’s 162 categories. This allows Codat to 
 
 You can obtain the latest list of Codat categories from our <a href="/assess-api#/operations/get-data-assess-accounts-categories">API reference</a> documentation by calling the following endpoint:
 
-`GET /data/assess/accounts/categories`
+`GET /data/lending/accounts/categories`
 
 # The benefits of categorizing accounts
 
@@ -33,7 +33,7 @@ Account categories have three sub-categories:
 - Account subtype - the category often used for traditional financial ratios, e.g. Current assets, Current liabilities, etc.
 - Account detail type - the most granular level of categorization, e.g. Cash, Inventory, Depreciation, etc.
 
-Categories are assigned in two ways. First, Codat automatically suggests categories for accounts. Second, you assign a category to an account. Categories can be assigned via our [Categorization of accounts API](/assess/categories/api-categorization-of-accounts) or through Codat's Portal (see [How to categorize accounts](/assess/portal/categorization-of-accounts#account-categorization)).
+Categories are assigned in two ways. First, Codat automatically suggests categories for accounts. Second, you assign a category to an account. Categories can be assigned via our [Categorization of accounts API](/lending/categories/api-categorization-of-accounts) or through Codat's Portal (see [How to categorize accounts](/lending/portal/categorization-of-accounts#account-categorization)).
 
 ## Uncategorized accounts
 

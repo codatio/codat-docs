@@ -1,53 +1,51 @@
 module.exports = [
-  {
-    type: "category",
-    label: "Guides",
-    collapsed: true,
-    items: [
-      {
-        type: "link",
-        label: "Bank reconciliation with QBO",
-        href: "/guides/bank-feeds-tutorial",
-      },
-    ],
+ {
+    type: "link",
+    href: "/",
+    label: "All Docs",
+    className: "back",
   },
   {
-    type: "category",
-    label: "Sage bank feeds",
-    collapsed: true,
-    items: [
-      "bank-feeds/sage-bank-feeds/sage-bank-feeds",
-      "bank-feeds/sage-bank-feeds/sage-bank-feeds-setup",
-      "bank-feeds/sage-bank-feeds/sage-bank-feeds-use",
-      "bank-feeds/sage-bank-feeds/sage-bank-feeds-authenticate-users-web-app",    
-    ],
+    type: "doc",
+    label: "Bank Feeds API",
+    id: "bank-feeds/overview",
+    className: "header top-level-item products product bankfeed",
   },
   {
-    type: "category",
-    label: "QBO bank feeds",
-    collapsed: true,
-    items: [
-      "bank-feeds/qbo-bank-feeds/qbo-bank-feeds",
-      "bank-feeds/qbo-bank-feeds/qbo-bank-feeds-setup",
-      "bank-feeds/qbo-bank-feeds/qbo-bank-feeds-smb-user",
-      "bank-feeds/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions",     
-    ],
+    type: "doc",
+    id: "bank-feeds/guides/bank-feeds-tutorial",
+    label: "Tutorial",
   },
   {
-    type: "category",
-    label: "Xero bank feeds",
-    collapsed: true,
-    items: [
-      "bank-feeds/xero-bank-feeds/xero-bank-feeds",
-      "bank-feeds/xero-bank-feeds/xero-bank-feeds-setup",
-      "bank-feeds/xero-bank-feeds/xero-bank-feeds-smb-user",
-      "bank-feeds/xero-bank-feeds/xero-bank-feeds-push-bank-transactions",
-      "bank-feeds/xero-bank-feeds/xero-bank-feeds-partner",
-    ],
+    type: "doc",
+    label: "QuickBooks Online",
+    customProps: {
+      hr: true,
+      section: "Bank feeds integrations",
+    },
+    id: "integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds",
+  },
+  {
+    type: "doc",
+    label: "Sage",
+    id: "integrations/bank-feeds/sage-bank-feeds/sage-bank-feeds",
+  },
+  {
+    type: "doc",
+    label: "Xero",
+    id: "integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds",
+  },
+  {
+    type: "doc",
+    id: "bank-feeds/data-types",
+    label: "Data types",
+    customProps: {
+      hr: true,
+    },
   },
   {
     type: "link",
-    href: "/bank-feeds",
+    href: "/bank-feeds-api",
     label: "API reference",
   },
 ];

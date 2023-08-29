@@ -15,7 +15,7 @@
       "name": "Codat"
     },
     "summary": "Codat's financial insights API",
-    "description": "Codat's Assess API enable you to make smarter credit decisions on your small business customers. Assess enriches your customer's accounting, commerce and banking data to surface actionable insights you didn't have before.\n\n[Read more...](https://www.codat.io/assess/)\n\n[See our OpenAPI spec](https://github.com/codatio/oas) ",
+    "description": "Check that you have enabled the [data types required by Assess](https://docs.codat.io/assess/get-started#prerequisites) for all of its features to work.  \n\n[Read more...](https://www.docs.codat.io/assess/)\n\n[See our OpenAPI spec](https://github.com/codatio/oas) ",
     "termsOfService": "https://www.codat.io/legals/"
   },
   "security": [
@@ -40,12 +40,8 @@
   },
   "tags": [
     {
-      "name": "Data integrity",
-      "description": "Data integrity is important"
-    },
-    {
       "name": "Reports",
-      "description": "Data integrity is important"
+      "description": "Enriched reports and analyses of financial data"
     },
     {
       "name": "Excel reports",
@@ -53,11 +49,15 @@
     },
     {
       "name": "Categories",
-      "description": "Categorisation"
+      "description": "Manage Codat's automatic account categorization functionality"
+    },
+    {
+      "name": "Data integrity",
+      "description": "Match mutable accounting data with immutable banking data to increase confidence in financial data"
     },
     {
       "name": "Loan transactions",
-      "description": "Loan Transactions"
+      "description": "Loan transactions"
     }
   ],
   "paths": {
@@ -94,6 +94,7 @@
           }
         },
         "operationId": "get-data-integrity-status",
+        "x-speakeasy-name-override": "status",
         "description": "Gets match status for a given company and datatype."
       }
     },
@@ -130,6 +131,7 @@
           }
         },
         "operationId": "get-data-integrity-summaries",
+        "x-speakeasy-name-override": "summary",
         "description": "Gets match summary for a given company and datatype, optionally restricted by a Codat query string.",
         "parameters": [
           {
@@ -172,6 +174,7 @@
           }
         },
         "operationId": "list-data-type-data-integrity-details",
+        "x-speakeasy-name-override": "details",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -1260,6 +1263,12 @@
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
+                          }
+                        },
+                        {
+                          "accountRef": {
+                            "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
+                            "name": "Business Current Account"
                           },
                           "id": "ab5e07a0-5578-4d91-8421-2dc72713b74f",
                           "date": "2022-11-08T00:00:00",
@@ -1267,12 +1276,23 @@
                           "amount": -6905.44,
                           "currency": "GBP",
                           "transactionCategory": {
-                            "levels": []
-                          }
+                            "confidence": 52.53,
+                            "levels": [
+                              "Expense",
+                              "Operating"
+                            ]
+                          },
+                          "platformName": "Shopify"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
+                          }
+                        },
+                        {
+                          "accountRef": {
+                            "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
+                            "name": "Business Current Account"
                           },
                           "id": "9846bbed-46d3-472c-a848-1ce8ebea7213",
                           "date": "2022-11-08T00:00:00",
@@ -1280,12 +1300,22 @@
                           "amount": 4332.84,
                           "currency": "GBP",
                           "transactionCategory": {
-                            "levels": []
-                          }
+                            "confidence": 88,
+                            "levels": [
+                              "Expense"
+                            ]
+                          },
+                          "platformName": "Amazon"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
+                          }
+                        },
+                        {
+                          "accountRef": {
+                            "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
+                            "name": "Business Undeposited Funds"
                           },
                           "id": "94b213fb-d742-435e-90f1-bfe723a076d5",
                           "date": "2022-11-08T00:00:00",
@@ -1293,12 +1323,23 @@
                           "amount": 4034.3,
                           "currency": "GBP",
                           "transactionCategory": {
-                            "levels": []
-                          }
+                            "confidence": 61.08,
+                            "levels": [
+                              "Income",
+                              "Revenue"
+                            ]
+                          },
+                          "platformName": "Shopify"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
+                          }
+                        },
+                        {
+                          "accountRef": {
+                            "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
+                            "name": "Business Current Account"
                           },
                           "id": "cfceb7ff-eaa2-45b6-aca7-fa0e0b439161",
                           "date": "2022-11-08T00:00:00",
@@ -1306,12 +1347,23 @@
                           "amount": -313.76,
                           "currency": "GBP",
                           "transactionCategory": {
-                            "levels": []
-                          }
+                            "confidence": 40.98,
+                            "levels": [
+                              "Expense",
+                              "CostOfSales"
+                            ]
+                          },
+                          "platformName": "Amazon"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
+                          }
+                        },
+                        {
+                          "accountRef": {
+                            "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
+                            "name": "Business Undeposited Funds"
                           },
                           "id": "ba814f14-0fe3-41d0-9308-57f40642ac75",
                           "date": "2022-11-08T00:00:00",
@@ -1319,12 +1371,23 @@
                           "amount": -614.4,
                           "currency": "GBP",
                           "transactionCategory": {
-                            "levels": []
-                          }
+                            "confidence": 55.84,
+                            "levels": [
+                              "Income",
+                              "Revenue"
+                            ]
+                          },
+                          "platformName": "Zettle"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
+                          }
+                        },
+                        {
+                          "accountRef": {
+                            "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
+                            "name": "Business Current Account"
                           },
                           "id": "e67cc30e-fd5c-4eea-8365-ec40dfdd3ef6",
                           "date": "2022-11-08T00:00:00",
@@ -1332,12 +1395,22 @@
                           "amount": 5199.62,
                           "currency": "GBP",
                           "transactionCategory": {
-                            "levels": []
-                          }
+                            "confidence": 57.85,
+                            "levels": [
+                              "Expense"
+                            ]
+                          },
+                          "platformName": "Amazon"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
+                          }
+                        },
+                        {
+                          "accountRef": {
+                            "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
+                            "name": "Business Current Account"
                           },
                           "id": "e0f08a0b-3575-4dde-98c4-3c854028d2d2",
                           "date": "2022-11-08T00:00:00",
@@ -1345,12 +1418,23 @@
                           "amount": -21420.94,
                           "currency": "GBP",
                           "transactionCategory": {
-                            "levels": []
-                          }
+                            "confidence": 70.58,
+                            "levels": [
+                              "Expense",
+                              "Operating"
+                            ]
+                          },
+                          "platformName": "Amazon"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
+                          }
+                        },
+                        {
+                          "accountRef": {
+                            "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
+                            "name": "Business Undeposited Funds"
                           },
                           "id": "4b70d379-8284-4f44-bb37-c7935df950cc",
                           "date": "2022-11-08T00:00:00",
@@ -1358,12 +1442,22 @@
                           "amount": -30924.22,
                           "currency": "GBP",
                           "transactionCategory": {
-                            "levels": []
-                          }
+                            "confidence": 48.26,
+                            "levels": [
+                              "Income"
+                            ]
+                          },
+                          "platformName": "DoorDash"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
+                          }
+                        },
+                        {
+                          "accountRef": {
+                            "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
+                            "name": "Business Undeposited Funds"
                           },
                           "id": "76b73373-9345-472e-8edf-5be849d797fe",
                           "date": "2022-11-08T00:00:00",
@@ -1371,12 +1465,23 @@
                           "amount": -568.78,
                           "currency": "GBP",
                           "transactionCategory": {
-                            "levels": []
-                          }
+                            "confidence": 65.21,
+                            "levels": [
+                              "Income",
+                              "Revenue"
+                            ]
+                          },
+                          "platformName": "Uber"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
+                          }
+                        },
+                        {
+                          "accountRef": {
+                            "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
+                            "name": "Business Undeposited Funds"
                           },
                           "id": "ee92fd6f-e0f7-4391-85fd-4b50921b973f",
                           "date": "2022-11-08T00:00:00",
@@ -1384,8 +1489,13 @@
                           "amount": -13050.79,
                           "currency": "GBP",
                           "transactionCategory": {
-                            "levels": []
-                          }
+                            "confidence": 92.33,
+                            "levels": [
+                              "Income",
+                              "Revenue"
+                            ]
+                          },
+                          "platformName": "DoorDash"
                         }
                       ]
                     }
@@ -1841,6 +1951,7 @@
           }
         },
         "operationId": "get-commerce-revenue-metrics",
+        "x-speakeasy-name-override": "get-commerce-revenue-metrics",
         "description": "Get the revenue and revenue growth for a specific company connection, over one or more periods of time.",
         "parameters": [
           {
@@ -1998,6 +2109,7 @@
           }
         },
         "operationId": "get-commerce-orders-metrics",
+        "x-speakeasy-name-override": "get-commerce-orders-metrics",
         "description": "Gets the order information for a specific company connection, over one or more periods of time.",
         "parameters": [
           {
@@ -2161,6 +2273,7 @@
           }
         },
         "operationId": "get-commerce-refunds-metrics",
+        "x-speakeasy-name-override": "get-commerce-refunds-metrics",
         "description": "Gets the refunds information for a specific company connection, over one or more periods of time.",
         "parameters": [
           {
@@ -2351,6 +2464,7 @@
           }
         },
         "operationId": "get-commerce-customer-retention-metrics",
+        "x-speakeasy-name-override": "get-commerce-customer-retention-metrics",
         "description": "Gets the customer retention metrics for a specific company connection, over one or more periods of time.",
         "parameters": [
           {
@@ -2469,6 +2583,7 @@
           }
         },
         "operationId": "get-commerce-lifetime-value-metrics",
+        "x-speakeasy-name-override": "get-commerce-lifetime-value-metrics",
         "description": "Gets the lifetime value metric for a specific company connection, over one or more periods of time.",
         "parameters": [
           {
@@ -2558,6 +2673,7 @@
           }
         },
         "operationId": "get-recurring-revenue-metrics",
+        "x-speakeasy-name-override": "get-recurring-revenue-metrics",
         "description": "Gets key metrics for subscription revenue."
       }
     },
@@ -2692,6 +2808,7 @@
           }
         },
         "operationId": "get-accounting-marketing-metrics",
+        "x-speakeasy-name-override": "get-accounting-marketing-metrics",
         "description": "Get the marketing metrics from an accounting source for a given company.\n\nRequest an Excel report for download.",
         "parameters": [
           {
@@ -2933,7 +3050,7 @@
     "schemas": {
       "Report": {
         "title": "Assess report",
-        "description": "Assess reports follow a consistent structure. Reports contain four sections of information:\n\n1. Report definition information such as:\n  a. The report info (e.g. enhanced_profit_and_loss).\n  b. The display name of the report (e.g. Enhanced Profit and Loss).\n2. Information about the dimension contained in the reports such as:\n  a. The type of dimension (e.g. datetime, recordRef).\n  b. The display name of the dimension (e.g. Period, Category type, Category sub type).\n  c. The details about each item within the dimension (e.g. displayName:\"Jan 2022\", start:\"...\", end:\"...\", id:\"...\", name:\"...\").\n3. Information about the measures contained in the report such as:\n  a. The display name of the measure (e.g. value of account, percentage change).\n  b. The type of the measure (e.g. currency, percentage).\n  c. The unit of the measure (e.g. %, GBP).\n4. The data for the report. When the *includeDisplayName* parameter is set to *true*, it shows the *dimensionDisplayName* and *itemDisplayName* to make the data human-readable. The default setting for *includeDisplayName* is *false*.\n\nReports can be rendered as follows (ordering is implicit rather than explicit):\n\n![A table showing an example of how a report can be rendered](https://files.readme.io/1fa20ca-Report1.png)\n\n# Data model\n\n## Dimensions",
+        "description": "## Structure\n\nAssess reports follow a consistent structure. Reports contain four sections of information:\n\n### 1. Report definition\n\nInformation such as:\n\n  1. The report info (e.g. enhanced_profit_and_loss).\n  2. The display name of the report (e.g. Enhanced Profit and Loss).\n  \n### 2. Dimension info\n\nInformation about the dimension contained in the reports such as:\n\n  1. The type of dimension (e.g. datetime, recordRef).\n  2. The display name of the dimension (e.g. Period, Category type, Category sub type).\n  3. The details about each item within the dimension (e.g. displayName:\"Jan 2022\", start:\"...\", end:\"...\", id:\"...\", name:\"...\").\n\n### 3. Measure info\n\nInformation about the measures contained in the report such as:\n\n  1. The display name of the measure (e.g. value of account, percentage change).\n  2. The type of the measure (e.g. currency, percentage).\n  3. The unit of the measure (e.g. %, GBP).\n  \n### 4. The data for the report\n\nWhen the *includeDisplayName* parameter is set to *true*, it shows the *dimensionDisplayName* and *itemDisplayName* to make the data human-readable. The default setting for *includeDisplayName* is *false*.\n\n\n## Displaying the report\n\nReports can be rendered as follows (ordering is implicit rather than explicit):\n\n![A table showing an example of how a report can be rendered](https://files.readme.io/1fa20ca-Report1.png)\n\n# Data model\n\n## Dimensions",
         "type": "object",
         "properties": {
           "reportInfo": {
@@ -3709,7 +3826,7 @@
       },
       "EnhancedCashFlowTransactions": {
         "title": "Enhanced cash flow transactions",
-        "description": "",
+        "description": "> **Categorization engine**\n>\n> The categorization engine uses machine learning and has been fully trained against Plaid and TrueLayer banking data sources. It is not fully trained against the Basiq banking data source.\n\nThe Enhanced Cash Flow Transactions endpoint provides a fully categorized list of banking transactions for a company. Accounts and transaction data are obtained from the company's banking data sources.",
         "type": "object",
         "properties": {
           "reportInfo": {
@@ -3780,6 +3897,7 @@
             "type": "object",
             "properties": {
               "sourceType": {
+                "description": "The data source type.",
                 "type": "string"
               }
             },
@@ -3789,6 +3907,33 @@
                   "value": {
                     "sourceRef": {
                       "sourceType": "Banking"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "accountRef": {
+            "title": "Account reference",
+            "description": "An account reference containing the account id and name.",
+            "type": "object",
+            "properties": {
+              "id": {
+                "description": "The id of the account.",
+                "type": "string"
+              },
+              "name": {
+                "description": "The name of the account.",
+                "type": "string"
+              }
+            },
+            "examples": [
+              {
+                "Example": {
+                  "value": {
+                    "accountRef": {
+                      "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
+                      "name": "Business Current Account"
                     }
                   }
                 }
@@ -3834,8 +3979,15 @@
                 "description": "Contains an array of category levels.",
                 "$ref": "#/components/schemas/EnhancedCashFlowTransactions/definitions/transactionCategory"
               },
+              "platformName": {
+                "description": "Returns the payment processor responsible for the transaction.",
+                "type": "string"
+              },
               "sourceRef": {
                 "$ref": "#/components/schemas/EnhancedCashFlowTransactions/definitions/sourceRef"
+              },
+              "accountRef": {
+                "$ref": "#/components/schemas/EnhancedCashFlowTransactions/definitions/accountRef"
               }
             }
           },
@@ -3844,17 +3996,35 @@
             "type": "object",
             "properties": {
               "confidence": {
-                "description": "Returns the confidence of the suggested category for the transaction.",
+                "description": "Returns the confidence of the suggested category for the transaction. The value is between 0 and 100.",
                 "type": "number"
               },
               "levels": {
-                "description": "An array of category levels against an individual transaction.",
+                "description": "The suggested category is an ordered array of category levels where each element (or level) is a subcategory of the previous element (or level).",
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
               }
-            }
+            },
+            "examples": [
+              {
+                "Example": {
+                  "value": {
+                    "transactionCategory": {
+                      "confidence": 92.7,
+                      "levels": [
+                        "Asset",
+                        "Current",
+                        "Bank",
+                        "BankTransfers",
+                        "ShareholderTransfers"
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
           }
         }
       },
@@ -4114,7 +4284,7 @@
                             "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated"
                           },
                           {
-                            "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)):\n - When the source platform does not provide modification date information,\n - For attachments, balance sheets, company information, and profit & loss reports. \n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                            "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
                           }
                         ]
                       }
@@ -4498,7 +4668,51 @@
             "type": "integer"
           },
           "_links": {
-            "$ref": "#/components/schemas/Links"
+            "$ref": "#/components/schemas/PagingInfo/definitions/links"
+          }
+        },
+        "definitions": {
+          "links": {
+            "title": "Hal Links",
+            "type": "object",
+            "required": [
+              "self",
+              "current"
+            ],
+            "properties": {
+              "self": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "current": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "next": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "previous": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              }
+            },
+            "examples": [
+              {
+                "self": {
+                  "href": "/companies/{id}/data/{dataType}"
+                },
+                "current": {
+                  "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+                }
+              }
+            ]
+          },
+          "halRef": {
+            "title": "Hypertext reference",
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string",
+                "format": "uri-reference"
+              }
+            }
           }
         },
         "required": [
@@ -4583,6 +4797,30 @@
         "type": "number",
         "nullable": true,
         "description": "Rate to convert the total amount of the payment into the base currency for the company at the time of the payment.\n\nCurrency rates in Codat are implemented as the multiple of foreign currency units to each base currency unit.  \n\nIt is not possible to perform the currency conversion with two or more non-base currencies participating in the transaction. For example, if a company's base currency is USD, and it has a bill issued in EUR, then the bill payment must happen in USD or EUR.\n\nWhere the currency rate is provided by the underlying accounting platform, it will be available from Codat with the same precision (up to a maximum of 9 decimal places). \n\nFor accounting platforms which do not provide an explicit currency rate, it is calculated as `baseCurrency / foreignCurrency` and will be returned to 9 decimal places.\n\n## Examples with base currency of GBP\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (GBP) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **USD**          | $20            | 0.781         | £15.62                     |\n| **EUR**          | €20            | 0.885         | £17.70                     |\n| **RUB**          | ₽20            | 0.011         | £0.22                      |\n\n## Examples with base currency of USD\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (USD) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **GBP**          | £20            | 1.277         | $25.54                     |\n| **EUR**          | €20            | 1.134         | $22.68                     |\n| **RUB**          | ₽20            | 0.015         | $0.30                      |"
+      },
+      "ErrorMessage": {
+        "type": "object",
+        "x-internal": true,
+        "properties": {
+          "statusCode": {
+            "type": "integer"
+          },
+          "service": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "correlationId": {
+            "type": "string"
+          },
+          "canBeRetried": {
+            "type": "string"
+          },
+          "detailedErrorCode": {
+            "type": "integer"
+          }
+        }
       }
     },
     "parameters": {
@@ -4755,7 +4993,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+              "$ref": "#/components/schemas/ErrorMessage"
             },
             "examples": {
               "Unauthorized": {
@@ -4777,7 +5015,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+              "$ref": "#/components/schemas/ErrorMessage"
             },
             "examples": {
               "Malformed query": {
@@ -4799,7 +5037,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+              "$ref": "#/components/schemas/ErrorMessage"
             },
             "examples": {
               "Data connection not found": {
@@ -4841,28 +5079,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "type": "object",
-              "x-internal": true,
-              "properties": {
-                "statusCode": {
-                  "type": "integer"
-                },
-                "service": {
-                  "type": "string"
-                },
-                "error": {
-                  "type": "string"
-                },
-                "correlationId": {
-                  "type": "string"
-                },
-                "canBeRetried": {
-                  "type": "string"
-                },
-                "detailedErrorCode": {
-                  "type": "integer"
-                }
-              }
+              "$ref": "#/components/schemas/ErrorMessage"
             },
             "examples": {
               "Conflict": {
@@ -4884,7 +5101,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+              "$ref": "#/components/schemas/ErrorMessage"
             },
             "examples": {
               "Conflict": {

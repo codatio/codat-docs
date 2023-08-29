@@ -5,7 +5,7 @@ createdAt: "2022-10-23T19:11:10.320Z"
 updatedAt: "2022-10-23T20:59:38.141Z"
 ---
 
-Similar functionality is available for [push history](/other/portal/pull-and-push-history).
+Similar functionality is available for [push history](/configure/portal/pull-and-push-history).
 
 ## Via API
 

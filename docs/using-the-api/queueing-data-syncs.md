@@ -62,7 +62,13 @@ If you try to queue a synchronization for a data type that is already in process
 ```
 :::
 
-Refreshing data can take different amounts of time depending on the integration and the amount of data being retrieved. You can use [webhooks](/introduction/webhooks/core-rules-types) to be updated when the operation completes.
+Refreshing data can take different amounts of time depending on the integration and the amount of data being retrieved. You can use [webhooks](/using-the-api/webhooks/core-rules-types) to be updated when the operation completes.
+
+### Records deleted between syncs
+
+For our [accounting data types](/accounting-api/accounting-data-types/), Codat stores records deleted by a company in the underlying accounting platform between successive data syncs to ensure better consistency in the data. If such records are not relevant for your use case, you can exclude them by [querying](/using-the-api/querying) on the `metadata.isDeleted!=true` flag. 
+
+Records that were created and deleted by a company before the first sync took place will never be pulled and stored by Codat. 
 
 ## Scheduled refresh
 

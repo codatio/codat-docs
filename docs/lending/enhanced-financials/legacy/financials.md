@@ -6,13 +6,13 @@ updatedAt: "2022-11-02T14:38:50.213Z"
 ---
 
 :::caution New version of enhanced financials
-Functionality described here has been superseded by a newer version of enhanced financials using revised accounting categories. Explore the new [Enhanced Financials](/assess/enhanced-financials/overview).
+Functionality described here has been superseded by a newer version of enhanced financials using revised accounting categories. Explore the new [Enhanced Financials](/lending/enhanced-financials/overview).
 :::
 
 Enhanced Financials consists of two endpoints for each statement: Profit and Loss, and Balance Sheet. These are fully categorized statements broken down into three levels of categories and the company's Chart of Accounts.
 
 Read more about: 
 
-- [Enhanced Proft and Loss](/assess/enhanced-financials/legacy/profit-and-loss),
-- [Enhanced Balance Sheet](/assess/enhanced-financials/legacy/balance-sheet), and
-- [Categorizing accounts](/assess/categories/api-categorization-of-accounts).
+- [Enhanced Proft and Loss](/lending/enhanced-financials/legacy/profit-and-loss),
+- [Enhanced Balance Sheet](/lending/enhanced-financials/legacy/balance-sheet), and
+- [Categorizing accounts](/lending/categories/api-categorization-of-accounts).

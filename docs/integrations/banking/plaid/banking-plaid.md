@@ -23,10 +23,10 @@ View the coverage of our Plaid integration in the <a className="external" href="
 
 The following banking data is available through the integration:
 
-- [Banking accounts](/banking-api#/schemas/banking-accounts)
-- [Banking account balances](/banking-api#/schemas/banking-account-balances)
-- [Banking transactions](/banking-api#/schemas/banking-transactions)
-- [Banking transaction categories](/banking-api#/schemas/banking-transaction-categories)
+- [Banking accounts](/banking-api#/schemas/Account)
+- [Banking account balances](/banking-api#/schemas/AccountBalance)
+- [Banking transactions](/banking-api#/schemas/Transactions)
+- [Banking transaction categories](/banking-api#/schemas/TransactionCategory)
 
 :::tip Instant Auth and Instant Match
 
@@ -41,10 +41,10 @@ The following table shows the Plaid Products required for each of Codat's bankin
 
 |Codat data type|Associated Plaid product|
 |----|----|
-|[Bank accounts](/banking-api#/schemas/banking-accounts)|Auth, Identity, Institution|
-|[Bank transactions](/banking-api#/schemas/banking-transactions)|Transactions|
-|[Bank account balances](/banking-api#/schemas/banking-account-balances)|Asset Reports|
-|[Bank Transaction Categories](/banking-api#/schemas/banking-transaction-categories)|N/A. These categories are Codat-provided categories powered by Codat's categorization model. This does not use the categories provided by Plaid.|
+|[Bank accounts](/banking-api#/schemas/Account)|Auth, Identity, Institution|
+|[Bank transactions](/banking-api#/schemas/Transactions)|Transactions|
+|[Bank account balances](/banking-api#/schemas/AccountBalance)|Asset Reports|
+|[Bank Transaction Categories](/banking-api#/schemas/TransactionCategory)|N/A. These categories are Codat-provided categories powered by Codat's categorization model. This does not use the categories provided by Plaid.|
 
 ## Sync Settings for Plaid
 
