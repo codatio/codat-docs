@@ -6,7 +6,7 @@ authors: mcclowes
 ---
 import Products from "@components/global/Products";
 
-We've changed the way we organise our products to make Codat easier than ever to use.
+We've changed the way we organize our APIs to make Codat easier than ever to use.
 
 <!--truncate-->
 
@@ -16,13 +16,13 @@ The standardized Codat Accounting, Banking, and Commerce APIs you might be famil
 
 ## What's changed?
 
-- Assess is now part of our [Lending API](/lending/overview) that enhances the existing powerful Assess features with the ability to fetch the underlying financial data.
+- Our [Lending API](/lending/overview) brings together our standardized API functionality that allows you to fetch the underlying financial data and enhances it with the existing powerful Assess features.
 - If you're [automating payables](/usecases/summary/automating-payables) (for example, paying supplier bills), then our new [Sync for Payables](/payables/overview) product has all the Accounting API features you need.
-- If you're [managing payroll](/usecases/summary/managing-payroll) (for example, reconciling payroll within a user's accounting platform), try our [Sync for Payroll](/payroll/overview) product.
+- If you're [managing payroll](/usecases/summary/managing-payroll) (for example, reconciling payroll within a user's accounting platform), we've grouped all the functionality you need in our [Sync for Payroll](/payroll/overview) product.
 
 Our existing Sync for Commerce, Sync for Expenses, and Bank Feeds API products remain unchanged.
 
-Each of these new products comes equipped with an [SDK libraries](/get-started/libraries) to get you up and running ASAP, including our brand new [C# libraries](https://github.com/codatio/client-sdk-csharp).
+Each of these new products comes equipped with [SDK libraries](/get-started/libraries) to get you up and running ASAP, including our brand new [C# libraries](https://github.com/codatio/client-sdk-csharp).
 
 ## What does this mean for you?
 
@@ -44,16 +44,13 @@ Our products can help you make the most of your customers' consented business da
 <details>
   <summary>Looking for other product documentation?</summary>
 
-The API documentation for other products you may be using is available below.
+The API documentation for other products you may be using is available below. These products are not available to new customers from September 4, 2023.
 
-#### Standardized APIs:
 - [Accounting API](/accounting-api#/)
 - [Banking API](/banking-api#/)
 - [Commerce API](/commerce-api#/)
-
-#### Alternative product versions:
 - [Assess API](/assess-api#/)
-- [Sync for Commerce (v1)](/sync-for-commerce-v1-api#/)
-- [Sync for Expenses (v1)](/sync-for-expenses-v1-api#/)
+- [Sync for Commerce](/sync-for-commerce-v1-api#/)
+- [Sync for Expenses](/sync-for-expenses-v1-api#/)
     
 </details>
