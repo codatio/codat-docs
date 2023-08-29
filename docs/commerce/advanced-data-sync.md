@@ -1,6 +1,6 @@
 ---
 title: "Advanced data synchronization features"
-sidebar_label: "Advanced data sync"
+sidebar_label: "Data synchronization"
 description: "Learn about additional data sync options available with Sync for Commerce" 
 displayed_sidebar: commerce
 ---

@@ -1,7 +1,7 @@
 ---
-title: "Advanced product features"
+title: "Advanced product configuration features"
 description: "Learn about additional configuration features available with Sync for Commerce"
-sidebar_label: "Advanced features"
+sidebar_label: "Configuration"
 displayed_sidebar: commerce
 ---
 
