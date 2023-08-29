@@ -56,7 +56,7 @@ Lending API empowers you with a host of features to help you streamline your und
     <p>
       We automatically map your SMB customers' income statement and balance
       sheet to a single standard chart of accounts. This means you can compare
-      across customers easily using{" "}
+      across customers easily using. Explore {" "}
       <a href="/lending/enhanced-financials/overview">
         Enhanced Financials
       </a>
