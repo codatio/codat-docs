@@ -1,10 +1,10 @@
 ---
-title: "Enhanced Invoices Excel Report"
+title: "Enhanced Invoices Excel report"
 description: "Download the Enhanced Invoices report to Excel"
 sidebar_label: "Enhanced Invoices report"
 ---
 
-Our Enhanced Invoices Excel report gives you the same data you'd get from the [Enhanced Invoices](/lending/enhanced-invoices/overview) endpoint, but in an Excel workbook.  You can use the report to test some companies and familiarize yourself with the data before building to the equivalent API endpoint.
+Our Enhanced Invoices Excel report gives you the same data you'd get from the [Enhanced Invoices](/lending/enhanced-invoices/overview) endpoint but in an Excel workbook.  You can use the report to test some companies and familiarize yourself with the data before building to the equivalent API endpoint.
 
 The report contains the output of the following features:
 
@@ -12,7 +12,7 @@ The report contains the output of the following features:
 
 ## Prerequisites
 
-The Enhanced Invoices Excel report requires a company to have both an accounting connection and the following data types to be synced:
+The Enhanced Invoices Excel report requires a company to have both an accounting connection and for the following data types to be synced:
 
 - Invoices
 - Payments
