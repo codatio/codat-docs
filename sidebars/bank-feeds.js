@@ -36,16 +36,11 @@ module.exports = [
     id: "integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds",
   },
   {
-    type: "doc",
-    id: "bank-feeds/data-types",
-    label: "Data types",
-    customProps: {
-      hr: true,
-    },
-  },
-  {
     type: "link",
     href: "/bank-feeds-api",
     label: "API reference",
+    customProps: {
+      hr: true,
+    },
   },
 ];

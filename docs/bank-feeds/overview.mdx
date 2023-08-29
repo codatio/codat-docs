@@ -21,23 +21,13 @@ import SocialImages from "@components/global/SocialImages";
 
 <SocialImages imgSrc="/img/old/fd21af0-codat_whitepaper_accounting-automation_diagram_B.png"/>
 
-**A bank feed is a connection between a _source bank account_—in your application—and a _target bank account_ in a supported accounting package.**
+The Bank Feeds API simplifies the setup and synchronization of bank transactions from your app into an accounting platform.
 
-The source account might be a business current account, savings account, credit card, or payments processor feed. Bank feeds allow accounting software users to easily reconcile bank transactions against accounting entries, like invoices and bills.
 
-In Codat's API, bank feeds are represented as [Bank transactions](/accounting-api#/schemas/BankTransactions), which are pushed from a source to a target bank account in chronological order. Bank feeds from the source account are then viewable in the SMB user's accounting software.
+Be it a business current account, savings account, credit card or even a payments processor feed, Bank Feeds API allows an SMB's accounting software users to easily reconcile bank transactions generated in your app against entries, such as invoices and bills in their accounting platform.
+
 
 Bank Feeds API uses standalone integrations to [popular accounting software](/bank-feeds/overview#which-integrations-support-bank-feeds-api). The connection journey for SMB users is handled by the integration and is different for each supported platform.
-
-<img
-  src="/img/old/fd21af0-codat_whitepaper_accounting-automation_diagram_B.png"
-  alt="Data flow between your application and the SMB user's accounting platform with Bank Feeds API."
-/>
-
-:::note Product feedback
-
-Tell us how you'd like to use Bank Feeds API on <a className="external" href="https://codat.productboard.com/feature-board/1378101-feature-organization/features/11073763/detail" target="_blank">Productboard</a>.
-:::
 
 ## Why use Bank Feeds API?
 
@@ -97,24 +87,21 @@ Tell us how you'd like to use Bank Feeds API on <a className="external" href="ht
   </li>
 </ul>
 
-## Which integrations support Bank Feeds API?
-
-To use Bank Feeds API, first choose an integration to a supported accounting platform.
-
+## Supported integrations
 <br/>
 
 <IntegrationsList integrations={bankfeedsIntegrations}/>
 
-For detailed setup instructions, refer to the documentation for each integration.
-
 :::note Platform requirements
 
 The setup process and platform registration requirements vary for each Bank Feeds integration.
+For detailed setup instructions, refer to the documentation for each integration.
 :::
 
 ## How Bank Feeds API works
 
 Here's a high-level overview of the setup and connection flow for Bank Feeds API.
+A bank feed is a connection between a _source bank account_—in your application—and a _target bank account_ in a supported accounting package.
 
 1. Enable the integration you want to use on the <a className="external" href="https://app.codat.io/settings/integrations/bankfeeds" target="_blank">Bank feed integrations</a> page in the Codat Portal.
 
