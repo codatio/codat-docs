@@ -49,7 +49,7 @@ module.exports = [
   },
   "lending/enhanced-cash-flow/overview",
   "lending/enhanced-invoices/overview",
-  "lending/enhanced-liabilities/loans-overview",
+  "lending/enhanced-liabilities/overview",
   {
     type: "category",
     label: "Data integrity",
@@ -60,38 +60,18 @@ module.exports = [
     },
     items: [
       "lending/data-integrity/overview",
-      "lending/data-integrity/api-data-integrity",
-      "lending/portal/data-integrity",
+      "lending/portal/data-integrity",//TODO: check this "assess/portal/data-integrity"
+      "lending/data-integrity/faqs",
     ],
   },
   {
     type: "category",
-    label: "Metrics",
+    label: "Commerce metrics",
     collapsed: true,
     items: [
-      {
-        type: "category",
-        label: "Accounting metrics",
-        collapsed: true,
-        items: [
-          "lending/metrics/accounting/overview",
-          "lending/metrics/accounting/api-financial-metrics",
-          "lending/metrics/accounting/api-marketing-metrics",
-        ],
-      },
-      {
-        type: "category",
-        label: "Commerce metrics",
-        collapsed: true,
-        items: [
-          "lending/metrics/commerce/overview",
-          "lending/metrics/commerce/api-orders",
-          "lending/metrics/commerce/api-revenue",
-          "lending/metrics/commerce/api-refunds",
-          "lending/metrics/commerce/api-lifetime-value",
-          "lending/metrics/commerce/api-customer-retention",
-        ],
-      },
+      "lending/commerce-metrics/overview",
+      "lending/commerce-metrics/reporting-structure",
+      "lending/commerce-metrics/troubleshooting",
     ],
   },
   {
@@ -100,7 +80,6 @@ module.exports = [
     collapsed: true,
     items: [
       "lending/excel/overview",
-      "lending/excel/assess-report",
       "lending/excel/audit-report",
       "lending/excel/enhanced-financials-report",
       "lending/excel/enhanced-invoices-report",
@@ -118,7 +97,7 @@ module.exports = [
   },
   {
     type: "link",
-    href: "/assess-api",
+    href: "/lending-api",
     label: "API reference",
   },
 ];

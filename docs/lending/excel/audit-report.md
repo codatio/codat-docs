@@ -1,12 +1,12 @@
 ---
-title: "Audit Report"
-description: "Identify accounting irregularities with Codat's Audit Report"
+title: "Audit report"
+description: "Identify accounting irregularities with Codat's Audit report"
 sidebar_label: "Audit report"
 ---
 
-Credit decisioning requires accurate and up-to-date data. Codat’s Audit Report identifies indicators of inaccurate or out-of-date accounts, helping you to decision with confidence.
+Credit decision-making requires accurate and up-to-date data. Codat’s Audit report identifies indicators of inaccurate or out-of-date accounts, helping you to make decisions with confidence.
 
-The report includes insight into when records were last updated, and profit and loss trends. The report displays three years of historic data from the month the report was generated.
+The report includes insight into when records were last updated, and profit and loss trends. The report displays three years of historical data from the month the report was generated.
 
 ## Prerequisites
 
@@ -14,7 +14,7 @@ The report contains data based on the data types you have enabled. If a data typ
 
 The Audit Report requires an accounting integration with at least one of the following data types enabled:
 
-- Profit and Loss
+- Profit and Loss (enabled by default when Lending API is activated for your Codat client) 
 - Credit Notes
 - Invoices
 - Payments
@@ -30,17 +30,17 @@ Data types can be enabled in the <a className="external" href="/core-concepts/da
 
 ## Generating the report
 
-The Audit Report can be generated via API or through [Codat's Portal](/lending/portal/overview#reports). The [Excel reports](/lending/excel/overview) page describes how to generate and download the report via API.
+The Audit report can be generated via API or through [Codat's Portal](/lending/portal/overview#reports). The [Excel reports](/lending/excel/overview) page describes how to generate and download the report via API.
 
 ## Understanding the report
 
-This section describes each of the sections and metrics that make up the Audit Report.
+This section describes each of the sections and metrics that make up the Audit report.
 
 ### Report Info
 
 This section provides general information about the metrics contained in this report.
 
-The image below shows the fields in the **Report Info**. Borders and styling were added to this image for clarity but is not included in the downloadable Excel file.
+The image below shows the fields in the **Report Info**. Borders and styling were added to this image for clarity but are not included in the downloadable Excel file.
 
 ![A sample Excel sheet showing Audit Report information](/img/old/aa43c22-ReportInfo2.png "A sample Excel sheet showing Audit Report information")
 
@@ -49,7 +49,7 @@ This sheet provides the following general information about the report:
 - The date the report was generated.
 - The _from_ and _to_ dates for the data contained in the report.
 - The data types that were analyzed (the `AnalyzedDataTypes` field) to produce the report.
-- The data types that were not used (the `UnAnalyzedDataTypes` field) to generate this report. To maximise the value of the Audit Report you should enable these data types.
+- The data types that were not used (the `UnAnalyzedDataTypes` field) to generate this report. To maximize the value of the Audit report, you should enable these data types.
 
 #### Processing summary
 
@@ -82,7 +82,7 @@ Borders and styling were added to this image for clarity but is not included in 
 
 This section of the Audit Report displays Gross Profit, Net Operating Profit and Net Profit metrics on a month-by-month basis with percentage change and yearly summaries. This offers insight into any extreme changes that could be indicative of abnormal growth, fraud or additional debt taken on by the company.
 
-Explore [Enhanced Profit and Loss](/lending/enhanced-financials/overview#enhanced-profit-and-loss-accounts) to see the full categorized profit and loss statement.
+Explore [Enhanced Profit and Loss](/lending/enhanced-financials/profit-and-loss-accounts) to see the full categorized profit and loss statement.
 
 #### Report structure
 
@@ -134,7 +134,7 @@ Records that have a `Draft` status are excluded from the evaluation.
 
 ### Blank Descriptions
 
-Transactions without descriptions lack context and is a sign of poor accounting practices or fraudulent behaviour. The report offers insights into what proportion of transactions have blank descriptions.
+Transactions without descriptions lack context and is a sign of poor accounting practices or fraudulent behavior. The report offers insights into what proportion of transactions have blank descriptions.
 
 #### Report structure
 
