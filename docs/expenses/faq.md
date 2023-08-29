@@ -7,7 +7,8 @@ displayed_sidebar: expenses
 
 ### Where can I see a roadmap for integration and feature support for Sync for Expenses? 
 
-You can track our future plans and initiatives, and even suggest your own, on our [public roadmap](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/51-sync-for-expenses). 
+Currently, Codat does not publish a public product road map.
+However, if you would like to learn more about upcoming product releases speak to your account manager.
 
 ### Am I able to update an attachment (i.e. receipt) when I have already synced the expense transaction? 
 
