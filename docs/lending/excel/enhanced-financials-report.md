@@ -1,10 +1,10 @@
 ---
-title: "Enhanced Financials Excel Report"
+title: "Enhanced Financials Excel report"
 description: "Download the Enhanced Financials report to Excel"
 sidebar_label: "Enhanced Financials report"
 ---
 
-Our Enhanced Financials Excel report gives you the same data you'd get from the [Enhanced Financials](/lending/enhanced-financials/overview) endpoints, but in an Excel workbook.  You can use the report to test some companies and familiarise yourself with the data before building to the equivalent API endpoints.
+Our Enhanced Financials Excel report gives you the same data you'd get from the [Enhanced Financials](/lending/enhanced-financials/overview) endpoints but in an Excel workbook.  You can use the report to test some companies and familiarise yourself with the data before building to the equivalent API endpoints.
 
 The report contains the output of the following features:
 
@@ -17,7 +17,7 @@ You can generate the Enhanced Financials Excel report using the API or the Codat
 
 ## Using the report
 
-To get the most out of the report, try creating a pivot table and grouping the data by category Level 1-5 to replicate a financial statement view.  You can also create formulas to calculate financial ratios from this data.
+To get the most out of the report, try creating a pivot table and grouping the data by category Levels 1-5 to replicate a financial statement view.  You can also create formulas to calculate financial ratios from this data.
 
 ![Enhanced Financials Report](/img/lending/enhanced-financials.png "Enhanced Financials Report")
 
@@ -29,11 +29,11 @@ We've also created a [Metrics Template Excel file](/documents/assess-metrics.xls
 
 ## Troubleshooting
 
-By default, the required data types are enabled for you when Lending API is enabled on your Codat client.
+All data types relevant to the generation of the Enhanced Financials report are activated automatically when the Lending API product is enabled for your Codat client.
 However, if you are unable to generate the lending report or the report is incomplete, check that the following data types are enabled:
 
 - Accounts
 - Profit and Loss
 - Balance Sheet
 
-If these requirements are not met an empty Excel workbook will be returned.
+If these requirements are not met, an empty Excel workbook will be returned.
