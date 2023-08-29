@@ -74,7 +74,7 @@ Lending API empowers you with a host of features to help you streamline your und
     </div>
     <p>
       We provide the pre-calculated metrics you need to assess a customer’s
-      revenue, orders and customer retention profile. Explore{" "}
+      revenue, orders and customer retention profile. <br/> Explore{" "}
       <a href="/lending/commerce-metrics/overview">
         Commerce Metrics
       </a>
