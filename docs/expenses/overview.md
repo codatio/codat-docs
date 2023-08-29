@@ -29,7 +29,7 @@ Sync for Expenses is an API and a set of supporting tools. It has been built to 
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://god.gw.postman.com/run-collection/9514766-9427cfd1-d3f9-4857-b3f1-d488fb6de5a6?action=collection%2Ffork&collection-url=entityId%3D9514766-9427cfd1-d3f9-4857-b3f1-d488fb6de5a6%26entityType%3Dcollection%26workspaceId%3Dc6d087b0-fc80-4d14-a903-a9017e1b54e0)
 
-## Compatible integrations
+## Supported integrations
 
 <br/>
 
@@ -47,7 +47,7 @@ Sync for Expenses is an API and a set of supporting tools. It has been built to 
       <h3>Standardised API</h3>
     </div>
     <p>
-      The Sync for Expenses API is completely standardised with a datamodel based on expense card providers. 
+      The Sync for Expenses API is completely standardized with a data model based on expense card providers. 
     </p>
   </li>
 
