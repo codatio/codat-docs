@@ -12,13 +12,9 @@ module.exports = [
     className: "header top-level-item products product sfc",
   },
   {
-    type: "category",
+    type: "doc",
     label: "Product setup",
-    collapsed: true,
-    items: [
-      "commerce/setup",
-      "commerce/advanced-setup",
-    ],
+    id: "commerce/setup",
   },
   {
     type: "doc",
@@ -26,11 +22,16 @@ module.exports = [
     id: "commerce/merchant-configuration",
   },
   {
-    type: "category",
+    type: "doc",
     label: "Data sync setup",
+    id: "commerce/data-synchronization",
+  },
+  {
+    type: "category",
+    label: "Advanced features",
     collapsed: true,
     items: [
-      "commerce/data-synchronization",
+      "commerce/advanced-setup",
       "commerce/advanced-data-sync",
     ],
   },
