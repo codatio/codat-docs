@@ -5,7 +5,7 @@ sidebar_label: "Overview"
 displayed_sidebar: lending
 ---
 
-Our updated version of Enhanced Financials reduces the need for highly manual, time-consuming, and repetitive interpretation of SMB account names. 
+Our latest version of Enhanced Financials reduces the need for highly manual, time-consuming, and repetitive interpretation of SMB account names. 
 
 With Codat, lenders can automate financial statement analysis using our fully standardized profit and loss statement and balance sheet.
 

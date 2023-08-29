@@ -33,7 +33,7 @@ module.exports = [
       "commerce/data-synchronization",
       "commerce/advanced-data-sync",
     ],
-  },  
+  },
   // {
   //   type: "category",
   //   label: "Concepts",
