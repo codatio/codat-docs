@@ -1,7 +1,7 @@
 ---
 title: "Troubleshooting and FAQs"
 description: "Common errors that you may encounter and frequently asked questions"
-sidebar_label: "Troubleshooting"
+sidebar_label: "Troubleshooting & FAQs"
 displayed_sidebar: commerce
 ---
 
