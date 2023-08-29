@@ -56,7 +56,7 @@ Lending API empowers you with a host of features to help you streamline your und
     <p>
       We automatically map your SMB customers' income statement and balance
       sheet to a single standard chart of accounts. This means you can compare
-      across customers easily using {" "}
+      across customers easily. Explore {" "}
       <a href="/lending/enhanced-financials/overview">
         Enhanced Financials
       </a>
@@ -73,8 +73,8 @@ Lending API empowers you with a host of features to help you streamline your und
       <h3>Commerce sales metrics</h3>
     </div>
     <p>
-      We provide the pre-calculated metrics you need to assess a customer’s
-      revenue, orders and customer retention profile. <br/> Explore{" "}
+      We provide the precalculated metrics you need to assess a customer’s
+      revenue, orders, and customer retention profile. Explore{" "}
       <a href="/lending/commerce-metrics/overview">
         Commerce Metrics
       </a>
@@ -91,7 +91,7 @@ Lending API empowers you with a host of features to help you streamline your und
       <h3>Enhanced invoices</h3>
     </div>
     <p>
-      Verify payments have been made on invoices against an immutable source. Explore{" "}
+      Verify payments that have been made on invoices against an immutable source. Explore{" "}
       <a href="/lending/enhanced-invoices/overview">
         Enhanced invoices
       </a>
@@ -126,9 +126,9 @@ Lending API empowers you with a host of features to help you streamline your und
       <h3>Enhanced cash flow</h3>
     </div>
     <p>
-      Categorized banking transactions that gives lenders the insights to accurately forecast a company's cash flow. Explore{" "}
+      Categorized banking transactions that give lenders the insights to accurately forecast a company's cash flow. Explore{" "}
       <a href="/lending/enhanced-cash-flow/overview">
-        Enhanced cashflow
+        Enhanced cash flow
       </a>
       .
     </p>
