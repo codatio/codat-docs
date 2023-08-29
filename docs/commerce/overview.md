@@ -17,7 +17,7 @@ video_text: What is Sync for Commerce?
 
 Accounting for sales is a major pain point for merchants. It usually involves them manually replicating data from Point of Sale (POS), Payment, and eCommerce platforms in their accounting software. This is often done via multiple manual bulk data downloads and data manipulation in spreadsheets and in the software.
 
-The labour-intensive nature of this work means it is typically done infrequently, leaving many merchants unable to leverage their accounting software to understand their business’s performance.
+The labor-intensive nature of this work means it is typically done infrequently, leaving many merchants unable to leverage their accounting software to understand their business’s performance.
 
 **Sync for Commerce automatically replicates and reconciles sales data from a merchant’s source PoS, Payments, and eCommerce systems into their accounting software. This eliminates manual processing by merchants and transforms their ability to run and grow their business.**
 

@@ -1,7 +1,7 @@
 ---
 title: "Troubleshooting and FAQs"
 description: "Common errors that you may encounter and frequently asked questions"
-sidebar_label: "Troubleshooting"
+sidebar_label: "Troubleshooting and FAQs"
 displayed_sidebar: commerce
 ---
 
@@ -88,7 +88,7 @@ To resolve these errors, contact your Codat representative.
 
 ## FAQs
 
-### How do you avoid creating duplicates in the accounting platforms?
+### How does Codat avoid creating duplicates in the accounting platforms?
 
 During a sync, we check the `createdDate` of individual records (orders, payments, and transactions). We compare this date with the start and end dates and times of the sync period. If the record's `createdDate` is within the sync period, it is selected for syncing. We then create a new record in the target platform (for example, a new order).
 
