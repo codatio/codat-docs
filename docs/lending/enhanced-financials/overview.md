@@ -9,7 +9,7 @@ Our latest version of Enhanced Financials reduces the need for highly manual, ti
 
 With Codat, lenders can automate financial statement analysis using our fully standardized profit and loss statement and balance sheet.
 
-The [Enhanced Profit and Loss Accounts](/lending-api#/operations/get-companies-companyId-reports-enhancedProfitAndLoss-accounts) and [Enhanced Balance Sheet Accounts](/lending-api#/operations/get-companies-companyId-reports-enhancedBalanceSheet-accounts) endpoints return a list of accounts enriched with the latest version of categorization. 
+The [Enhanced Profit and Loss Accounts](/lending-api#/operations/get-enhanced-profit-and-loss-accounts) and [Enhanced Balance Sheet Accounts](/lending-api#/operations/get-enhanced-balance-sheet-accounts) endpoints return a list of accounts enriched with the latest version of categorization. 
 
 ## Accounts and account categories
 
@@ -28,10 +28,6 @@ Each category comprises up to 5 levels. We will populate the lowest level deemed
 </details>
 
 ### Categorize accounts
-
-Our updated version of Enhanced Financials reduces the need for highly manual, time-consuming, and repetitive interpretation of SMB account names. 
-
-With Codat, lenders can automate financial statement analysis using our fully standardized profit and loss statement and balance sheet.
 
 Our _Enhanced Profit and Loss Accounts_ and _Enhanced Balance Sheet Accounts_ endpoints return a list of accounts enriched with a suggested category for each account.
 
@@ -60,27 +56,3 @@ You can view all available categories proposed for accounts and, where relevant,
 That's it! The Enhanced Profit and Loss and Enhanced Balance Sheet will return the updated category for the accounts going forward.
 
 </details>
-
----
-
-## Endpoints
-
-### Enhanced Profit and Loss Accounts
-
-`GET /companies/{companyId}/reports/enhancedProfitAndLoss/accounts`
-
-The Enhanced Profit and Loss Accounts endpoint returns a list of categorized accounts that appear on a company’s Profit and Loss. It also includes a balance per the financial statement date.
-
-Codat suggests a category for each account automatically, but you can [change it](#categorize-accounts) to a more suitable one. 
-
-Explore the _Enhanced Profit and Loss Accounts_ endpoint in our [Lending API reference](/lending-api#/operations/get-companies-companyId-reports-enhancedProfitAndLoss-accounts).
-
-### Enhanced Balance Sheet Accounts
-
-`GET /companies/{companyId}/reports/enhancedBalanceSheet/accounts`
-
-The Enhanced Balance Sheet Accounts endpoint returns a list of categorized accounts that appear on a company’s Balance Sheet along with a balance per financial statement date.
-
-Codat suggests a category for each account automatically, but you can [change it](#categorize-accounts) to a more suitable one. 
-
-Explore the _Enhanced Balance Sheet Accounts_ endpoint in our [Lending API reference](/lending-api#/operations/get-companies-companyId-reports-enhancedBalanceSheet-accounts).
