@@ -80,7 +80,7 @@ module.exports = [
     collapsed: true,
     items: [
       "lending/excel/overview",
-      "lending/excel/lending-report",//TODO: change this back to assess-report
+      "lending/excel/assess-report",
       "lending/excel/audit-report",
       "lending/excel/enhanced-financials-report",
       "lending/excel/enhanced-invoices-report",
