@@ -8,8 +8,8 @@ Our Enhanced Financials Excel report gives you the same data you'd get from the 
 
 The report contains the output of the following features:
 
-- [Enhanced profit and loss accounts](/lending/enhanced-financials/profit-and-loss-accounts)
-- [Enhanced balance sheet accounts](/lending/enhanced-financials/balance-sheet-accounts)
+- [Enhanced profit and loss accounts](/lending-api#/operations/get-accounts-for-enhanced-profit-and-loss)
+- [Enhanced balance sheet accounts](/lending-api#/operations/get-accounts-for-enhanced-balance-sheet)
 
 ## Generating the report
 
@@ -17,7 +17,7 @@ You can generate the Enhanced Financials Excel report using the API or the Codat
 
 ## Using the report
 
-To get the most out of the report, try creating a pivot table and grouping the data by category Levels 1-5 to replicate a financial statement view.  You can also create formulas to calculate financial ratios from this data.
+To get the most out of the report, try creating a pivot table and grouping the data by category levels 1-5 to replicate a financial statement view.  You can also create formulas to calculate financial ratios from this data.
 
 ![Enhanced Financials Report](/img/lending/enhanced-financials.png "Enhanced Financials Report")
 
@@ -30,6 +30,7 @@ We've also created a [Metrics Template Excel file](/documents/assess-metrics.xls
 ## Troubleshooting
 
 All data types relevant to the generation of the Enhanced Financials report are activated automatically when the Lending API product is enabled for your Codat client.
+
 However, if you are unable to generate the lending report or the report is incomplete, check that the following data types are enabled:
 
 - Accounts
