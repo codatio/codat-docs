@@ -113,7 +113,7 @@ To upload a logo, go to the <a className="external" href="https://app.codat.io/s
    POST /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts
    ```
 
-   In the request body, specify a list of bank accounts. For example, to add two credit card accounts, send the following request (all fields shown are required):
+   In the request body, specify a bank account. For example, to add a credit card account, send the following request (all fields shown are required):
 
    ```json
       {
