@@ -1,7 +1,7 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Sync for Expenses API",
+    "title": "Sync for Expenses",
     "version": "prealpha",
     "contact": {
       "name": "Codat",
@@ -34,16 +34,16 @@
   "x-codat-docs-path": "sync-for-expenses-api",
   "tags": [
     {
+      "name": "Companies",
+      "description": "Create and manage your Codat companies."
+    },
+    {
       "name": "Connections",
       "description": "Create and manage partner expense connection."
     },
     {
       "name": "Configuration",
-      "description": "Companies sync configuration."
-    },
-    {
-      "name": "Mapping options",
-      "description": "Mapping options for a companies expenses."
+      "description": "Manage mapping options and sync configuration."
     },
     {
       "name": "Sync",
@@ -58,16 +58,12 @@
       "description": "Retrieve the status of transactions within a sync."
     },
     {
-      "name": "Companies",
-      "description": "Create and manage your Codat companies."
-    },
-    {
       "name": "Refresh data",
       "description": "Asynchronously retrieve data from an integration to refresh data in Codat."
     },
     {
-      "name": "Push data",
-      "description": "View push options and get push statuses."
+      "name": "Push operations",
+      "description": "Access create, update and delete operations made to an SMB's data connection."
     },
     {
       "name": "Accounts",
@@ -88,816 +84,6 @@
     }
   ],
   "paths": {
-    "/companies/{companyId}/sync/expenses/config": {
-      "get": {
-        "tags": [
-          "Configuration"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CompanyConfiguration"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          }
-        },
-        "summary": "Get company configuration",
-        "description": "Gets a companies expense sync configuration",
-        "operationId": "get-company-configuration"
-      },
-      "post": {
-        "tags": [
-          "Configuration"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CompanyConfiguration"
-              },
-              "examples": {}
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CompanyConfiguration"
-                }
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/BadRequest"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          }
-        },
-        "summary": "Set company configuration",
-        "description": "Sets a companies expense sync configuration",
-        "operationId": "save-company-configuration"
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ]
-    },
-    "/companies/{companyId}/sync/expenses/connections/partnerExpense": {
-      "post": {
-        "tags": [
-          "Connections"
-        ],
-        "description": "Creates a Partner Expense data connection",
-        "summary": "Create Partner Expense connection",
-        "operationId": "create-partner-expense-connection",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Connection"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/BadRequest"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          }
-        }
-      }
-    },
-    "/companies/{companyId}/sync/expenses/mappingOptions": {
-      "get": {
-        "tags": [
-          "Mapping options"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MappingOptions"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          }
-        },
-        "description": "Gets the expense mapping options for a companies accounting software",
-        "summary": "Mapping options",
-        "operationId": "get-mapping-options"
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ]
-    },
-    "/companies/{companyId}/sync/expenses/syncs": {
-      "post": {
-        "tags": [
-          "Sync"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "summary": "Initiate sync",
-        "description": "Initiate sync of pending transactions.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PostSync"
-              },
-              "examples": {}
-            }
-          }
-        },
-        "responses": {
-          "202": {
-            "description": "Returns the newly created SyncId",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SyncInitiated"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "400": {
-            "description": "If model is incorrect",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CodatErrorMessage"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "If company not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CodatErrorMessage"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "If the specified company does not have a valid set of DataConnections setup",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CodatErrorMessage"
-                }
-              }
-            }
-          }
-        },
-        "operationId": "intiate-sync"
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ]
-    },
-    "/companies/{companyId}/sync/expenses/syncs/lastSuccessful/status": {
-      "get": {
-        "tags": [
-          "Sync"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CompanySyncStatus"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          }
-        },
-        "description": "Gets the status of the last successful sync",
-        "summary": "Last successful sync",
-        "operationId": "get-last-successful-sync"
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ]
-    },
-    "/companies/{companyId}/sync/expenses/syncs/latest/status": {
-      "get": {
-        "tags": [
-          "Sync"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CompanySyncStatus"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          }
-        },
-        "description": "Gets the latest sync status",
-        "summary": "Latest sync status",
-        "operationId": "get-latest-sync"
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ]
-    },
-    "/companies/{companyId}/sync/expenses/syncs/list/status": {
-      "get": {
-        "tags": [
-          "Sync"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CompanySyncStatus"
-                  }
-                },
-                "examples": {}
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          }
-        },
-        "summary": "List sync statuses",
-        "description": "Gets a list of sync statuses",
-        "operationId": "list-syncs"
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ]
-    },
-    "/companies/{companyId}/sync/expenses/syncs/{syncId}/status": {
-      "get": {
-        "tags": [
-          "Sync"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          },
-          {
-            "$ref": "#/components/parameters/syncId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CompanySyncStatus"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          }
-        },
-        "summary": "Get Sync status",
-        "description": "Get the sync status for a specified sync",
-        "operationId": "get-sync-by-id"
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/syncId"
-        }
-      ]
-    },
-    "/companies/{companyId}/sync/expenses/syncs/{syncId}/transactions": {
-      "get": {
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          },
-          {
-            "$ref": "#/components/parameters/syncId"
-          },
-          {
-            "$ref": "#/components/parameters/page"
-          },
-          {
-            "$ref": "#/components/parameters/pageSize"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TransactionMetadataList"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          }
-        },
-        "tags": [
-          "Transaction status"
-        ],
-        "summary": "Get Sync transactions",
-        "description": "Get's the transactions and status for a sync",
-        "operationId": "list-sync-transactions"
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/syncId"
-        }
-      ]
-    },
-    "/companies/{companyId}/sync/expenses/syncs/{syncId}/transactions/{transactionId}": {
-      "get": {
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          },
-          {
-            "$ref": "#/components/parameters/syncId"
-          },
-          {
-            "$ref": "#/components/parameters/transactionId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TransactionMetadata"
-                  }
-                },
-                "examples": {}
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          }
-        },
-        "tags": [
-          "Transaction status"
-        ],
-        "summary": "Get Sync Transaction",
-        "description": "Gets the status of a transaction for a sync",
-        "operationId": "get-sync-transaction"
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/syncId"
-        },
-        {
-          "$ref": "#/components/parameters/transactionId"
-        }
-      ]
-    },
-    "/companies/{companyId}/sync/expenses/data/expense-transactions": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ],
-      "post": {
-        "summary": "Create expense-transactions",
-        "operationId": "create-expense-dataset",
-        "description": "Create an expense transaction",
-        "tags": [
-          "Expenses"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "x-speakeasy-usage-example": true,
-                "schema": {
-                  "$ref": "#/components/schemas/CreateExpenseResponse"
-                },
-                "examples": {
-                  "Example 1": {
-                    "value": {
-                      "datasetId": "cd937d46-8e41-43a9-9477-a79158ffd98a"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/BadRequest"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateExpenseRequest"
-              },
-              "examples": {
-                "Payment": {
-                  "value": {
-                    "items": [
-                      {
-                        "id": "4d7c6929-7770-412b-91bb-44d3bc71d111",
-                        "type": "Payment",
-                        "issueDate": "2021-05-21T00:00:00+00:00",
-                        "currency": "GBP",
-                        "currencyRate": 1.18,
-                        "contactRef": {
-                          "id": "f5244103-5223-4b0a-857f-50566ac86c11",
-                          "type": "Supplier"
-                        },
-                        "bankAccountRef": {
-                          "id": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea"
-                        },
-                        "merchantName": "Amazon UK",
-                        "lines": [
-                          {
-                            "netAmount": 110.42,
-                            "taxAmount": 14.43,
-                            "taxRateRef": {
-                              "id": "77a32ee2-60c7-4ab9-917a-bd82e2e43a26"
-                            },
-                            "accountRef": {
-                              "id": "9aa5b894-1be9-4f97-96cd-ffde90766b3e"
-                            },
-                            "trackingRefs": [
-                              {
-                                "id": "dde5b35f-5d33-40bd-a34f-ee529f4c785c"
-                              }
-                            ]
-                          }
-                        ],
-                        "notes": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
-                      }
-                    ]
-                  }
-                },
-                "Refund": {
-                  "value": {
-                    "items": [
-                      {
-                        "id": "7008d3f2-aeb4-11ed-afa1-0242ac120002",
-                        "type": "Refund",
-                        "issueDate": "2023-02-17T00:00:00+00:00",
-                        "currency": "GBP",
-                        "bankAccountRef": {
-                          "id": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea"
-                        },
-                        "merchantName": "Amazon UK",
-                        "lines": [
-                          {
-                            "netAmount": 110.42,
-                            "taxAmount": 14.43,
-                            "taxRateRef": {
-                              "id": "23_Bills"
-                            },
-                            "accountRef": {
-                              "id": "42"
-                            },
-                            "trackingRefs": [
-                              {
-                                "id": "DEPARTMENT_6"
-                              }
-                            ]
-                          }
-                        ],
-                        "notes": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
-                      }
-                    ]
-                  }
-                },
-                "Transfer": {
-                  "value": {
-                    "items": [
-                      {
-                        "id": "979a7ee8-aeb4-11ed-afa1-0242ac120002",
-                        "type": "TransferIn",
-                        "issueDate": "2021-05-21T00:00:00+00:00",
-                        "currency": "GBP",
-                        "bankAccountRef": {
-                          "id": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea"
-                        },
-                        "merchantName": "Amazon UK",
-                        "lines": [
-                          {
-                            "netAmount": 180.93,
-                            "taxAmount": 0,
-                            "accountRef": {
-                              "id": "40e3e57c-2322-4898-966c-ca41adfd23fd"
-                            }
-                          }
-                        ],
-                        "notes": "Credit Card Payment"
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          },
-          "description": ""
-        }
-      }
-    },
-    "/companies/{companyId}/sync/expenses/expense-transactions/{transactionId}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/transactionId"
-        }
-      ],
-      "put": {
-        "summary": "Update expense-transactions",
-        "tags": [
-          "Expenses"
-        ],
-        "responses": {
-          "202": {
-            "description": "Accepted",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "syncId": {
-                      "type": "string"
-                    }
-                  },
-                  "examples": {
-                    "Example 1": {
-                      "syncId": "1ad0695c-4566-4715-918c-adbb03eac81e"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/BadRequest"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "422": {
-            "$ref": "#/components/responses/Unprocessable-Content"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          }
-        },
-        "operationId": "update-expense-dataset",
-        "description": "Update an expense transaction",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateExpenseRequest"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/companies/{companyId}/sync/expenses/syncs/{syncId}/transactions/{transactionId}/attachments": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/syncId"
-        },
-        {
-          "$ref": "#/components/parameters/transactionId"
-        }
-      ],
-      "post": {
-        "summary": "Upload attachment",
-        "operationId": "upload-attachment",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Attachment"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/BadRequest"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          }
-        },
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "string",
-                "format": "binary"
-              }
-            }
-          }
-        },
-        "tags": [
-          "Expenses"
-        ],
-        "description": "Creates an attachment in the accounting software against the given transactionId"
-      }
-    },
     "/companies": {
       "get": {
         "summary": "List companies",
@@ -1546,6 +732,816 @@
         }
       }
     },
+    "/companies/{companyId}/sync/expenses/connections/partnerExpense": {
+      "post": {
+        "tags": [
+          "Connections"
+        ],
+        "description": "Creates a Partner Expense data connection",
+        "summary": "Create Partner Expense connection",
+        "operationId": "create-partner-expense-connection",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Connection"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/sync/expenses/config": {
+      "get": {
+        "tags": [
+          "Configuration"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyConfiguration"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "summary": "Get company configuration",
+        "description": "Gets a companies expense sync configuration",
+        "operationId": "get-company-configuration"
+      },
+      "post": {
+        "tags": [
+          "Configuration"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyConfiguration"
+              },
+              "examples": {}
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyConfiguration"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "summary": "Set company configuration",
+        "description": "Sets a companies expense sync configuration",
+        "operationId": "save-company-configuration"
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ]
+    },
+    "/companies/{companyId}/sync/expenses/mappingOptions": {
+      "get": {
+        "tags": [
+          "Configuration"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MappingOptions"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "description": "Gets the expense mapping options for a companies accounting software",
+        "summary": "Mapping options",
+        "operationId": "get-mapping-options"
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ]
+    },
+    "/companies/{companyId}/sync/expenses/syncs": {
+      "post": {
+        "tags": [
+          "Sync"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "summary": "Initiate sync",
+        "description": "Initiate sync of pending transactions.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostSync"
+              },
+              "examples": {}
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Returns the newly created SyncId",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SyncInitiated"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "400": {
+            "description": "If model is incorrect",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CodatErrorMessage"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "If company not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CodatErrorMessage"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "If the specified company does not have a valid set of DataConnections setup",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CodatErrorMessage"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "intiate-sync"
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ]
+    },
+    "/companies/{companyId}/sync/expenses/syncs/lastSuccessful/status": {
+      "get": {
+        "tags": [
+          "Sync"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanySyncStatus"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "description": "Gets the status of the last successful sync",
+        "summary": "Last successful sync",
+        "operationId": "get-last-successful-sync"
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ]
+    },
+    "/companies/{companyId}/sync/expenses/syncs/latest/status": {
+      "get": {
+        "tags": [
+          "Sync"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanySyncStatus"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "description": "Gets the latest sync status",
+        "summary": "Latest sync status",
+        "operationId": "get-latest-sync"
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ]
+    },
+    "/companies/{companyId}/sync/expenses/syncs/list/status": {
+      "get": {
+        "tags": [
+          "Sync"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CompanySyncStatus"
+                  }
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "summary": "List sync statuses",
+        "description": "Gets a list of sync statuses",
+        "operationId": "list-syncs"
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ]
+    },
+    "/companies/{companyId}/sync/expenses/syncs/{syncId}/status": {
+      "get": {
+        "tags": [
+          "Sync"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/syncId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanySyncStatus"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "summary": "Get Sync status",
+        "description": "Get the sync status for a specified sync",
+        "operationId": "get-sync-by-id"
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/syncId"
+        }
+      ]
+    },
+    "/companies/{companyId}/sync/expenses/syncs/{syncId}/transactions": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/syncId"
+          },
+          {
+            "$ref": "#/components/parameters/page"
+          },
+          {
+            "$ref": "#/components/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionMetadataList"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "tags": [
+          "Transaction status"
+        ],
+        "summary": "Get Sync transactions",
+        "description": "Gets the transactions and status for a sync",
+        "operationId": "list-sync-transactions"
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/syncId"
+        }
+      ]
+    },
+    "/companies/{companyId}/sync/expenses/syncs/{syncId}/transactions/{transactionId}": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/syncId"
+          },
+          {
+            "$ref": "#/components/parameters/transactionId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TransactionMetadata"
+                  }
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "tags": [
+          "Transaction status"
+        ],
+        "summary": "Get Sync Transaction",
+        "description": "Gets the status of a transaction for a sync",
+        "operationId": "get-sync-transaction"
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/syncId"
+        },
+        {
+          "$ref": "#/components/parameters/transactionId"
+        }
+      ]
+    },
+    "/companies/{companyId}/sync/expenses/data/expense-transactions": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ],
+      "post": {
+        "summary": "Create expense-transactions",
+        "operationId": "create-expense-dataset",
+        "description": "Create an expense transaction",
+        "tags": [
+          "Expenses"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "x-speakeasy-usage-example": true,
+                "schema": {
+                  "$ref": "#/components/schemas/CreateExpenseResponse"
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "datasetId": "cd937d46-8e41-43a9-9477-a79158ffd98a"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateExpenseRequest"
+              },
+              "examples": {
+                "Payment": {
+                  "value": {
+                    "items": [
+                      {
+                        "id": "4d7c6929-7770-412b-91bb-44d3bc71d111",
+                        "type": "Payment",
+                        "issueDate": "2021-05-21T00:00:00+00:00",
+                        "currency": "GBP",
+                        "currencyRate": 1.18,
+                        "contactRef": {
+                          "id": "f5244103-5223-4b0a-857f-50566ac86c11",
+                          "type": "Supplier"
+                        },
+                        "bankAccountRef": {
+                          "id": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea"
+                        },
+                        "merchantName": "Amazon UK",
+                        "lines": [
+                          {
+                            "netAmount": 110.42,
+                            "taxAmount": 14.43,
+                            "taxRateRef": {
+                              "id": "77a32ee2-60c7-4ab9-917a-bd82e2e43a26"
+                            },
+                            "accountRef": {
+                              "id": "9aa5b894-1be9-4f97-96cd-ffde90766b3e"
+                            },
+                            "trackingRefs": [
+                              {
+                                "id": "dde5b35f-5d33-40bd-a34f-ee529f4c785c"
+                              }
+                            ]
+                          }
+                        ],
+                        "notes": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
+                      }
+                    ]
+                  }
+                },
+                "Refund": {
+                  "value": {
+                    "items": [
+                      {
+                        "id": "7008d3f2-aeb4-11ed-afa1-0242ac120002",
+                        "type": "Refund",
+                        "issueDate": "2023-02-17T00:00:00+00:00",
+                        "currency": "GBP",
+                        "bankAccountRef": {
+                          "id": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea"
+                        },
+                        "merchantName": "Amazon UK",
+                        "lines": [
+                          {
+                            "netAmount": 110.42,
+                            "taxAmount": 14.43,
+                            "taxRateRef": {
+                              "id": "23_Bills"
+                            },
+                            "accountRef": {
+                              "id": "42"
+                            },
+                            "trackingRefs": [
+                              {
+                                "id": "DEPARTMENT_6"
+                              }
+                            ]
+                          }
+                        ],
+                        "notes": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
+                      }
+                    ]
+                  }
+                },
+                "Transfer": {
+                  "value": {
+                    "items": [
+                      {
+                        "id": "979a7ee8-aeb4-11ed-afa1-0242ac120002",
+                        "type": "TransferIn",
+                        "issueDate": "2021-05-21T00:00:00+00:00",
+                        "currency": "GBP",
+                        "bankAccountRef": {
+                          "id": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea"
+                        },
+                        "merchantName": "Amazon UK",
+                        "lines": [
+                          {
+                            "netAmount": 180.93,
+                            "taxAmount": 0,
+                            "accountRef": {
+                              "id": "40e3e57c-2322-4898-966c-ca41adfd23fd"
+                            }
+                          }
+                        ],
+                        "notes": "Credit Card Payment"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "description": ""
+        }
+      }
+    },
+    "/companies/{companyId}/sync/expenses/expense-transactions/{transactionId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/transactionId"
+        }
+      ],
+      "put": {
+        "summary": "Update expense-transactions",
+        "tags": [
+          "Expenses"
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "syncId": {
+                      "type": "string"
+                    }
+                  },
+                  "examples": {
+                    "Example 1": {
+                      "syncId": "1ad0695c-4566-4715-918c-adbb03eac81e"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "422": {
+            "$ref": "#/components/responses/Unprocessable-Content"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "operationId": "update-expense-dataset",
+        "description": "Update an expense transaction",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateExpenseRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/sync/expenses/syncs/{syncId}/transactions/{transactionId}/attachments": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/syncId"
+        },
+        {
+          "$ref": "#/components/parameters/transactionId"
+        }
+      ],
+      "post": {
+        "summary": "Upload attachment",
+        "operationId": "upload-attachment",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Attachment"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Expenses"
+        ],
+        "description": "Creates an attachment in the accounting software against the given transactionId"
+      }
+    },
     "/companies/{companyId}/data/all": {
       "parameters": [
         {
@@ -1773,61 +1769,6 @@
         ]
       }
     },
-    "/companies/{companyId}/push": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ],
-      "get": {
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/page"
-          },
-          {
-            "$ref": "#/components/parameters/pageSize"
-          },
-          {
-            "$ref": "#/components/parameters/query"
-          },
-          {
-            "$ref": "#/components/parameters/orderBy"
-          }
-        ],
-        "summary": "List push operations",
-        "tags": [
-          "Push data"
-        ],
-        "operationId": "get-company-push-history",
-        "x-speakeasy-name-override": "list-operations",
-        "description": "List push operation records.",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PushHistoryResponse"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/Malformed-Query"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          }
-        }
-      }
-    },
     "/companies/{companyId}/data/history/{datasetId}": {
       "parameters": [
         {
@@ -1869,6 +1810,61 @@
         "description": "Retrieve information about a single dataset or pull operation."
       }
     },
+    "/companies/{companyId}/push": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/page"
+          },
+          {
+            "$ref": "#/components/parameters/pageSize"
+          },
+          {
+            "$ref": "#/components/parameters/query"
+          },
+          {
+            "$ref": "#/components/parameters/orderBy"
+          }
+        ],
+        "summary": "List push operations",
+        "tags": [
+          "Push operations"
+        ],
+        "operationId": "get-company-push-history",
+        "x-speakeasy-name-override": "list-operations",
+        "description": "List push operation records.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PushHistoryResponse"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Malformed-Query"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      }
+    },
     "/companies/{companyId}/push/{pushOperationKey}": {
       "parameters": [
         {
@@ -1888,7 +1884,7 @@
       "get": {
         "summary": "Get push operation",
         "tags": [
-          "Push data"
+          "Push operations"
         ],
         "operationId": "get-push-operation",
         "x-speakeasy-name-override": "get-operation",

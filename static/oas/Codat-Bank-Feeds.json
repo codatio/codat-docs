@@ -1,8 +1,5 @@
 {
   "openapi": "3.1.0",
-  "x-stoplight": {
-    "id": "j388fn92qyj2u"
-  },
   "servers": [
     {
       "description": "Production",
@@ -100,12 +97,12 @@
       "description": "Source accounts act as a bridge to bank accounts in accounting software."
     },
     {
-      "name": "Account mapping",
-      "description": "Bank feed bank account mapping."
-    },
-    {
       "name": "Transactions",
       "description": "Transactions represent debits and credits from a source account."
+    },
+    {
+      "name": "Account mapping",
+      "description": "Bank feed bank account mapping."
     }
   ],
   "paths": {
@@ -904,7 +901,7 @@
         "tags": [
           "Source accounts"
         ],
-        "summary": "delete bank feed bank account",
+        "summary": "Delete bank feed bank account",
         "description": "The *delete bank feed bank account* endpoint enables you to remove a source account.\n\nRemoving a source account will also remove any mapping between the source bank feed bank accounts and the target bankfeed bank account.",
         "operationId": "delete-bank-feed-bank-account",
         "parameters": [

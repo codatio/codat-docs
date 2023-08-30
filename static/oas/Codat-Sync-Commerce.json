@@ -10,7 +10,7 @@
     }
   ],
   "info": {
-    "title": "Sync for Commerce API",
+    "title": "Sync for Commerce",
     "version": "1.1",
     "contact": {
       "name": "Codat",
@@ -59,12 +59,8 @@
       "description": "View useful information about codat's integrations."
     },
     {
-      "name": "Connections (advanced)",
-      "description": "Create new and manage existing Sync for Commerce companies."
-    },
-    {
-      "name": "Configuration (advanced)",
-      "description": "Expressively configure preferences for any given Sync for Commerce company."
+      "name": "Advanced controls",
+      "description": "Advanced company management and sync preferences."
     }
   ],
   "paths": {
@@ -176,7 +172,7 @@
       },
       "post": {
         "tags": [
-          "Connections (advanced)"
+          "Advanced controls"
         ],
         "summary": "Create company",
         "description": "Creates a Codat company..",
@@ -211,7 +207,7 @@
     "/companies/{companyId}/connections": {
       "get": {
         "tags": [
-          "Connections (advanced)"
+          "Advanced controls"
         ],
         "summary": "List connections",
         "description": "List the connections for a company.",
@@ -249,7 +245,7 @@
       },
       "post": {
         "tags": [
-          "Connections (advanced)"
+          "Advanced controls"
         ],
         "summary": "Create connection",
         "description": "Creates a connection for the company by providing a valid platformKey.",
@@ -291,7 +287,7 @@
     "/companies/{companyId}/connections/{connectionId}": {
       "patch": {
         "tags": [
-          "Connections (advanced)"
+          "Advanced controls"
         ],
         "summary": "Update connection",
         "description": "Update a data connection",
@@ -383,11 +379,12 @@
     "/config/companies/{companyId}/sync/commerce": {
       "get": {
         "tags": [
-          "Configuration (advanced)"
+          "Advanced controls"
         ],
         "summary": "Get company configuration",
         "description": "Returns a company's commerce sync configuration'.",
         "operationId": "get-configuration",
+        "x-speakeasy-name-override": "get-configuration",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -408,11 +405,12 @@
       },
       "post": {
         "tags": [
-          "Configuration (advanced)"
+          "Advanced controls"
         ],
-        "summary": "Set configuration.",
-        "description": "Sets a company's commerce sync configuration'.",
+        "summary": "Set configuration",
+        "description": "Sets a company's commerce sync configuration.",
         "operationId": "set-configuration",
+        "x-speakeasy-name-override": "set-configuration",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -437,8 +435,8 @@
         "tags": [
           "Integrations"
         ],
-        "summary": "List information on Codat's supported integrations",
-        "description": "Retrieve a list of available integrations support by datatype and state of release.",
+        "summary": "List integrations",
+        "description": "Retrieve a list of available integrations support by data type and state of release.",
         "operationId": "list-integrations",
         "parameters": [
           {
@@ -646,9 +644,6 @@
               }
             }
           }
-        },
-        "x-stoplight": {
-          "id": "d96aeyckv9yk6"
         }
       }
     },
