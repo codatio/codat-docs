@@ -23,11 +23,11 @@ module.exports = {
       items: [
         {
           href: "/bank-feeds-api",
-          label: "Bank Feeds",
+          label: "Bank Feeds API",
         },
         {
           href: "/lending-api",
-          label: "Lending",
+          label: "Lending API",
         },
         {
           href: "/sync-for-commerce-api",
@@ -49,10 +49,6 @@ module.exports = {
           href: "/codat-api",
           label: "Platform API",
           hr: true,
-        },
-        {
-          href: "/files-api",
-          label: "Files API",
         },
         {
           href: "https://github.com/codatio/oas",

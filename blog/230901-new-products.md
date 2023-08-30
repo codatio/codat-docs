@@ -16,7 +16,7 @@ The standardized Codat Accounting, Banking, and Commerce APIs you might be famil
 
 ## What's changed?
 
-- Our [Lending API](/lending/overview) brings together our standardized API functionality that allows you to fetch the underlying financial data and enhances it with the existing powerful Assess features.
+- Our [Lending API](/lending/overview) brings together the standardized API functionality that allows you to fetch the underlying financial data and enhances it with the existing powerful Assess features.
 - If you're [automating payables](/usecases/summary/automating-payables) (for example, paying supplier bills), then our new [Sync for Payables](/payables/overview) product has all the Accounting API features you need.
 - If you're [managing payroll](/usecases/summary/managing-payroll) (for example, reconciling payroll within a user's accounting platform), we've grouped all the functionality you need in our [Sync for Payroll](/payroll/overview) product.
 
@@ -44,7 +44,7 @@ Our products can help you make the most of your customers' consented business da
 <details>
   <summary>Looking for other product documentation?</summary>
 
-The API documentation for other products you may be using is available below. These products are not available to new customers from September 4, 2023.
+The API documentation for the products you may be using is available below. These products are not available to new customers from September 4, 2023.
 
 - [Accounting API](/accounting-api#/)
 - [Banking API](/banking-api#/)

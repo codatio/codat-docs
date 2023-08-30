@@ -96,4 +96,3 @@ Everyday purchases can be pushed to the SMB's accounting platform where they are
 ### [Synchronize and map expenses with control](/expenses/sync-process/sync-process-explained)
 
 Once a categorized expense has been pushed, a sync can be initiated. The sync processes the expenses and maps them into the format required by the accounting platform.
-
