@@ -98,3 +98,8 @@ If you want to onboard a large number of new companies without needing to specif
 Using the Invite company URL will not allow your customer to view, update or add new connections against the existing Codat company which represents your customer. Therefore, you should use the Link URL to manage connections for existing customers.
 
 :::
+
+## 💡 Tips and traps
+
+- Hosted Link is not compatible with iframes. This is against our security policies and will not work. If you want to embed link inside your website, try our [Embedded Link solution](https://docs.codat.io/auth-flow/authorize-embedded-link).
+- Some users may be concerned sharing their data at a `codat.io` domain. You should consider pre-warning them that they about to visit a third party website for the authorization process, or try our [Embedded Link solution](https://docs.codat.io/auth-flow/authorize-embedded-link).
