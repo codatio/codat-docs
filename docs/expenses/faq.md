@@ -7,8 +7,7 @@ displayed_sidebar: expenses
 
 ### Where can I see a roadmap for integration and feature support for Sync for Expenses? 
 
-Currently, Codat does not publish a public product road map.
-However, if you would like to learn more about upcoming product releases speak to your account manager.
+Codat does not currently publish a public product roadmap. If you would like to learn more about upcoming product releases, speak to your account manager.
 
 ### Am I able to update an attachment (i.e. receipt) when I have already synced the expense transaction? 
 
@@ -16,7 +15,7 @@ Codat pushes attachments synchronously to the expense transactions. To update an
 
 ### How can I migrate our in-house integration to Codat?
 
-Our [token migration process](https://docs.codat.io/get-started/migration) allows you to seamlessly migrate your customers' connections without them needing to reconnect. We offer self service and managed migrations, so you can choose the option that suits your use case best. 
+Our [token migration process](https://docs.codat.io/get-started/migration) allows you to seamlessly migrate your customers' connections without them needing to reconnect. We offer self-service and managed migrations, so you can choose the option that suits your use case best. 
 
 ### How should I handle transactions in a foreign currency?
 
@@ -28,9 +27,9 @@ If a user disconnects, you can use a [webhook](/using-the-api/webhooks/core-rule
 
 ### What is the difference between effectiveTaxRate and totalTaxRate?
 
-If a transaction has multiple tax components, each component may be calculated based on the original amount separately, and then added together. 
+If a transaction has multiple tax components, each component may be calculated based on the original amount separately and then added together. 
 
-Alternatively, primary tax can be calculated on the item cost, and another tax component is added on top of that amount.This is known as compounding. In this case, the effective tax rate is the rate that results in the total amount of tax with compounding when applied to the original amount. 
+Alternatively, primary tax can be calculated on the item cost, and another tax component is added on top of that amount. This is known as compounding. In this case, the effective tax rate is the rate that results in the total amount of tax with compounding when applied to the original amount. 
 
 The `totalTaxRate` is the total, not compounded, sum of the components of a tax rate. Further details can be found in our [Codat docs](/accounting-api#/schemas/TaxRate#tax-components). 
 
@@ -45,7 +44,7 @@ Moving your existing integrations to Sync for Expenses lets you leverage the fol
 
 1. Up-to-date mapping options 
 
-Every company has their own preference on representing an individual expense in their accounting software. You can retrieve the representation mapping from our [Mapping options endpoint](/sync-for-expenses-api#/operations/get-mapping-options) and set up webhook notifications that notify when your customer creates a new expense account or tracking category. This ensures the list of tracking categories, accounts, and tax rates used to map the expense is always up to date.
+Every company has its own preference for representing an individual expense in its accounting software. You can retrieve the representation mapping from our [Mapping options endpoint](/sync-for-expenses-api#/operations/get-mapping-options) and set up webhook notifications that notify you when your customer creates a new expense account or tracking category. This ensures the list of tracking categories, accounts, and tax rates used to map the expense is always up to date.
 
 2. Standardization of expense data
 
@@ -53,7 +52,7 @@ The Sync for Expenses API is built to standardize data opinionated based on feed
 
 3. Multiple transaction support
 
-Sync for Expenses handles pushing of multiple transactions in an array to make your interactions more efficient. You can retrieve the status of these transactions from the [Transactions status endpoint](/sync-for-expenses-api#/operations/get-sync-transactions)
+Sync for Expenses handles the pushing of multiple transactions in an array to make your interactions more efficient. You can retrieve the status of these transactions from the [Transactions status endpoint](/sync-for-expenses-api#/operations/get-sync-transactions)
 
 4. Enhanced developer experience
 
@@ -70,20 +69,20 @@ Likewise, you can use `billPayments` to retrieve a list of bills from your custo
 
 ### Can I use the Sandbox account to test a sync when implementing Sync for Expenses?
 
-Currently we do not support Sandbox as a destination platform when establishing an accounting connection. This is because it is hard to see data which has been pushed and our Codat sandbox has been designed for pulling data. We recommend signing up to a free QuickBooks/Xero developer account to test syncs, which will give you sandbox access as well.
+Currently, we do not support Sandbox as a destination platform when establishing an accounting connection. This is because it is hard to see data that has been pushed and our Codat sandbox has been designed for pulling data. We recommend signing up for a free QuickBooks/Xero developer account to test syncs, which will give you sandbox access as well.
 
 For more information on how to set up your accounting platform integration take a look at the [following documentation](https://docs.codat.io/integrations/accounting/overview).
 
 ### Is the transaction ID unique to each connected company? 
 
-Each transaction id is unique to a client's company but they aren't unique across connections. We currently only support a single accounting connection per company. If a company wants to swap their accounting software or would like to link to a different entity we recommend creating a new company. 
+Each transaction Id is unique to a client's company but they aren't unique across connections. We currently only support a single accounting connection per company. If a company wants to swap their accounting software or would like to link to a different entity we recommend creating a new company. 
 
 ### What can we reuse from the Codat Bill Pay build for Sync for Expenses?
 
 You can reuse the chart of accounts, tracking categories, and tax rates from our Accounting API. However, we recommend using the [mappingOptions](https://docs.codat.io/sync-for-expenses-api#/operations/get-mapping-options) endpoint for expenses because of the transaction type support. 
-Authentication, company creation and the Accounting connection linking journeys can be reused between builds. This is because the companies can use the same Id between Codat products. 
+Authentication, company creation, and the Accounting connection linking journeys can be reused between builds. This is because the companies can use the same Id between Codat products. 
 
-### How can I resync a transaction which has previously failed once I resolve the issue with the transaction?
+### How can I resync a transaction that has previously failed once I resolve the issue with the transaction?
 
 Once you resolve the issue with the transaction, you can create a new dataset for that transaction Id. You are unable to resync the transaction with the same dataset Id as the other successfully synced transactions will trigger the validation for preventing duplicates. To avoid duplicates, Codat checks the transaction metadata to see if a transaction Id has a status of completed. If it does, it is not synced again. 
 
