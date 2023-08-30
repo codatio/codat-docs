@@ -44,7 +44,7 @@ This interface should be available only to authenticated users - those who are l
 
 ## Available integrations
 
-You can view the accounting and commerce platfors Sync for Commerce supports in the tables below. For your convenience, we also included the `platformKey`. It is a unique identifier for each integration Codat supports, and you will use it in subsequent setup steps.
+You can view the accounting and commerce platforms Sync for Commerce supports in the tables below. For your convenience, we also included the `platformKey`. It is a unique identifier for each integration Codat supports, and you will use it in subsequent setup steps.
 
 <Tabs>
 
