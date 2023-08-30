@@ -6866,34 +6866,6 @@
       "ExpenseTransaction": {
         "title": "Expense transaction",
         "type": "object",
-        "x-examples": {
-          "Payment": {
-            "id": "a44135b0-6882-489a-83fe-a0c57a4afb19",
-            "type": "Payment",
-            "issueDate": "2021-05-21T00:00:00+00:00",
-            "currency": "GBP",
-            "currencyRate": 1.18,
-            "merchantName": "Amazon UK",
-            "lines": [
-              {
-                "netAmount": 110.42,
-                "taxAmount": 14.43,
-                "taxRateRef": {
-                  "id": "7e2ccb60-de1a-4c2b-9bd9-2f98a1c6be3f"
-                },
-                "accountRef": {
-                  "id": "a505cb47-0f7d-4e8b-90aa-9f9c2308b7bc"
-                },
-                "trackingRefs": [
-                  {
-                    "id": "31a7e93c-4bb2-474c-b26d-10b2b75f7a25"
-                  }
-                ]
-              }
-            ],
-            "notes": "amazon purchase"
-          }
-        },
         "properties": {
           "id": {
             "type": "string",
@@ -6971,6 +6943,37 @@
           "type",
           "issueDate",
           "currency"
+        ],
+        "examples": [
+          {
+            "id": "a44135b0-6882-489a-83fe-a0c57a4afb19",
+            "type": "Payment",
+            "issueDate": "2021-05-21T00:00:00+00:00",
+            "currency": "GBP",
+            "currencyRate": 1.18,
+            "bankAccountRef": {
+              "id": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea"
+            },
+            "merchantName": "Amazon UK",
+            "lines": [
+              {
+                "netAmount": 110.42,
+                "taxAmount": 14.43,
+                "taxRateRef": {
+                  "id": "7e2ccb60-de1a-4c2b-9bd9-2f98a1c6be3f"
+                },
+                "accountRef": {
+                  "id": "a505cb47-0f7d-4e8b-90aa-9f9c2308b7bc"
+                },
+                "trackingRefs": [
+                  {
+                    "id": "31a7e93c-4bb2-474c-b26d-10b2b75f7a25"
+                  }
+                ]
+              }
+            ],
+            "notes": "amazon purchase"
+          }
         ]
       },
       "RecordRef": {
