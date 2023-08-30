@@ -25,7 +25,7 @@ This will include drawdowns, repayments, and remaining balance.
 The [List enhanced loan transactions](/lending-api#/operations/list-loan-transactions) endpoint returns a paged list of a company's loan transactions for the specified connection type.
 This may include drawdowns, accrued interest, capital, and interest repayments.
 
-## Prerequisites 
+## Troubleshooting 
 
 The company must have at least one accounting, banking, or commerce connection linked and fully synced with the mandatory data types listed below.
 
