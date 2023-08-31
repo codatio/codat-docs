@@ -15,6 +15,9 @@ video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
 video_text: What is Sync for Commerce?
 ---
 
+import {IntegrationsList} from '@components/global/Integrations'
+import {sfcIntegrations} from '@components/global/Integrations/integrations'
+
 Accounting for sales is a major pain point for merchants. It usually involves them manually replicating data from Point of Sale (POS), Payment, and eCommerce platforms in their accounting software. This is often done via multiple manual bulk data downloads and data manipulation in spreadsheets and in the software.
 
 The labor-intensive nature of this work means it is typically done infrequently, leaving many merchants unable to leverage their accounting software to understand their business’s performance.
@@ -92,6 +95,12 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping t
     </p>
 </li>
 </ul>
+
+## Supported integrations
+
+<br/>
+
+<IntegrationsList integrations={sfcIntegrations}/>
 
 ## How does Sync for Commerce work?
 

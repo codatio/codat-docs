@@ -38,6 +38,7 @@
     ],
     "retryConnectionErrors": true
   },
+  "x-codat-docs-path": "codat-api",
   "tags": [
     {
       "name": "Reports",
@@ -2701,10 +2702,9 @@
                 },
                 "example": [
                   {
-                    "reportInfo": {
-                      "name": "marketing_metrics",
-                      "displayName": "Marketing metrics"
-                    },
+                    "reportInfo": null,
+                    "name": "marketing_metrics",
+                    "displayName": "Marketing metrics",
                     "dimensions": [
                       {
                         "index": 0,
@@ -2944,7 +2944,7 @@
         ]
       }
     },
-    "/data/companies/{companyId}/assess/reports/enhancedLiabilities/loan/transactions": {
+    "/companies/{companyId}/reports/enhancedLiabilities/loan/transactions": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -2992,7 +2992,7 @@
         ]
       }
     },
-    "/data/companies/{companyId}/assess/reports/enhancedLiabilities/loan": {
+    "/companies/{companyId}/reports/enhancedLiabilities/loan": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -3274,7 +3274,7 @@
               "type": "object",
               "properties": {
                 "date": {
-                  "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                  "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
                   "description": "Last date of the period."
                 },
                 "balance": {
@@ -3345,7 +3345,7 @@
                 "description": "Name of the company queried."
               },
               "generatedDate": {
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
                 "description": "Returns the YYYY-MM-DD datetime of report generation."
               }
             }
@@ -3431,34 +3431,48 @@
         "title": "Excel status",
         "properties": {
           "lastGenerated": {
-            "title": "Date time",
-            "type": "string",
-            "examples": [
-              "2022-10-23T00:00:00.000Z",
-              "2022-10-23T00:00:00.000Z"
-            ],
-            "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
+            "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
+            "description": "The date and time of when the generation of the most recent report was initiated."
           },
           "inProgress": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "When true, the request was successful and the report is being generated. If false, the request was unsuccessful and the report is not being generated."
           },
           "queued": {
-            "type": "string"
+            "type": "string",
+            "description": "The date and time of when a successful request was queued for the most recent report."
           },
           "success": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "True if the requested report was successfully queued and false if the requested report was not able to be queued."
           },
           "errorMessage": {
-            "type": "string"
+            "type": "string",
+            "description": "Error details in case the report generation request was unsuccessful."
           },
           "lastInvocationId": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique ID generated for this request."
           },
           "reportType": {
-            "type": "string"
+            "$ref": "#/components/schemas/ExcelStatus/definitions/excelReportTypes"
           },
           "fileSize": {
-            "type": "integer"
+            "type": "integer",
+            "nullable": true,
+            "description": "The file size in Bytes is populated upon successful generation of the report."
+          }
+        },
+        "definitions": {
+          "excelReportTypes": {
+            "type": "string",
+            "enum": [
+              "audit",
+              "enhancedFinancials",
+              "enhancedInvoices",
+              "enhancedCashFlow"
+            ],
+            "description": "The type of the report requested in the query string."
           }
         },
         "examples": {
@@ -3507,7 +3521,7 @@
             "properties": {
               "lastMatched": {
                 "type": "string",
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
                 "description": "The date the matching algorithm last ran against the company’s data type specified.",
                 "readOnly": true
               },
@@ -3561,22 +3575,22 @@
             "description": "Only returned for transactions. For accounts, there is nothing returned.",
             "properties": {
               "minDate": {
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
                 "description": "Earliest date of transaction set.",
                 "readOnly": true
               },
               "maxDate": {
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
                 "description": "Latest date of transaction set.",
                 "readOnly": true
               },
               "minOverlappingDate": {
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
                 "description": "Earliest date where transactions exist in both accounting and banking platforms.",
                 "readOnly": true
               },
               "maxOverlappingDate": {
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
                 "description": "Latest date where transactions exist in both account and banking platforms.",
                 "readOnly": true
               }
@@ -3746,7 +3760,7 @@
             "readOnly": true
           },
           "date": {
-            "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+            "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
             "description": "The date of the transaction."
           },
           "description": {
@@ -3962,7 +3976,7 @@
               },
               "date": {
                 "description": "The date the bank transaction was posted.",
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated"
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date"
               },
               "description": {
                 "description": "The description of the bank transaction.",
@@ -4145,7 +4159,13 @@
                 "description": "ID of the invoice, which may be a GUID but it may be something else depending on the accounting platform"
               },
               "date": {
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated"
+                "title": "Date time",
+                "type": "string",
+                "examples": [
+                  "2022-10-23T00:00:00.000Z",
+                  "2022-10-23T00:00:00.000Z"
+                ],
+                "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
               },
               "paymentType": {
                 "type": "string"
@@ -4184,7 +4204,7 @@
                 "type": "string"
               },
               "date": {
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated"
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date"
               },
               "description": {
                 "type": "string"
@@ -4224,10 +4244,10 @@
                     "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/customerRef"
                   },
                   "issueDate": {
-                    "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated"
+                    "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date"
                   },
                   "dueDate": {
-                    "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated"
+                    "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date"
                   },
                   "status": {
                     "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/invoiceStatus"
@@ -4248,7 +4268,7 @@
                     }
                   },
                   "paidOnDate": {
-                    "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated"
+                    "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date"
                   }
                 }
               },
@@ -4263,7 +4283,7 @@
                       "modifiedDate": {
                         "allOf": [
                           {
-                            "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated"
+                            "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date"
                           },
                           {
                             "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
@@ -4281,7 +4301,7 @@
                       "sourceModifiedDate": {
                         "allOf": [
                           {
-                            "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated"
+                            "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date"
                           },
                           {
                             "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
@@ -4386,8 +4406,8 @@
                 "description": "Name of the company queried."
               },
               "generatedDate": {
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
-                "description": "Returns the YYYY-MM-DD datetime of report generation.  urns the YYYY-MM-DD datetime of report generation."
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
+                "description": "Returns the YYYY-MM-DD datetime of report generation."
               }
             }
           },
@@ -4439,7 +4459,7 @@
                 "description": "Contains object of reporting properties. The loan ref will reference a different object depending on the integration type."
               },
               "date": {
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
                 "description": "The date of that entry type occurred."
               },
               "amount": {
@@ -4529,7 +4549,7 @@
                 "description": "Name of the company queried."
               },
               "generatedDate": {
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
                 "description": "Returns the YYYY-MM-DD datetime of report generation.  urns the YYYY-MM-DD datetime of report generation."
               }
             }
@@ -4608,7 +4628,7 @@
                 "description": "The description of the object being referred to. E.g. the account."
               },
               "startDate": {
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
                 "description": "The date of the earliest loan transaction.",
                 "x-stoplight": {
                   "id": "v8jngp34fn5w4"
@@ -5122,7 +5142,7 @@
     "securitySchemes": {
       "auth_header": {
         "name": "Authorization",
-        "description": "The word \"Basic\" followed by a space and your API Key, base64 encoded, which can be found [here](https://app.codat.io/developers/api-keys)",
+        "description": "The word \"Basic\" followed by a space and your API key. [API keys](https://docs.codat.io/accounting-api#/schemas/apiKeys) are tokens used to control access to the API. You can get an API key via [the Codat Portal](https://app.codat.io/developers/api-keys), via [the API](https://docs.codat.io/codat-api#/api-keys/api-keys-list), or [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat.",
         "type": "apiKey",
         "in": "header",
         "x-speakeasy-example": "Basic BASE_64_ENCODED(API_KEY)"

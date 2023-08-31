@@ -101,6 +101,65 @@ export const sfeIntegrations = [
   }
 ]
 
+export const sfcIntegrations = [
+  {
+    "name": "Exact Online",
+    "to": "/integrations/accounting/exact-online/accounting-exact-online",
+    "type": "accounting",
+    "tags": ["NL", "UK"],
+    "img": "https://static.codat.io/public/officialLogos/Square/B0FF8466-1421-415B-A551-1DC3B73006F4.png"
+  },
+  {
+    "name": "FreeAgent",
+    "to": "/integrations/accounting/freeagent/accounting-freeagent",
+    "type": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/3DA57C23-A4FA-4BC8-8C02-A7A686ED8B36.png"
+  },
+  {
+    "name": "MYOB Business",
+    "to": "/integrations/accounting/myob/accounting-myob",
+    "type": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/00812DF4-8A0F-4F06-9566-16E5CA1346AE.png"
+  },
+  {
+    "name": "QuickBooks Online",
+    "to": "/integrations/accounting/quickbooksonline/accounting-quickbooksonline",
+    "type": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/19EEFA32-58A8-4097-B95A-EF150BF24FA0.png"
+  },
+  {
+    "name": "Xero",
+    "to": "/integrations/accounting/xero/accounting-xero",
+    "type": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png"
+  },
+  {
+    "name": "Clover",
+    "to": "/integrations/commerce/clover/commerce-clover",
+    "type": "commerce",
+    "img": "https://static.codat.io/public/officialLogos/Square/83A4EF46-A57D-4D2A-ACE7-39FE279F43F8.png"
+  },
+  {
+    "name": "Lightspeed Restaurant",
+    "to": "/integrations/commerce/lightspeed-k/commerce-lightspeed-k",
+    "type": "commerce",
+    "tags": ["K Series"],
+    "img": "https://static.codat.io/public/officialLogos/Square/E221662A-DDA4-45E0-8F73-5563183A875A.png"
+  },
+  {
+    "name": "Shopify",
+    "to": "/integrations/commerce/shopify/commerce-shopify",
+    "type": "commerce",
+    "img": "https://static.codat.io/public/officialLogos/Square/853B004F-3A02-4A73-A13F-3EDED3D2F361.png"
+  },
+  {
+    "name": "Zettle",
+    "to": "/integrations/commerce/zettle/commerce-zettle",
+    "type": "commerce",
+    "img": "https://static.codat.io/public/officialLogos/Square/CE91071B-51BF-4A9E-91A2-4D2ECA672A56.png"
+  }
+]
+
 const accountingIntegrations = [
   {
     "name": "Clear Books",
