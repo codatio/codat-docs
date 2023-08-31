@@ -28,7 +28,7 @@ const usecases = [
   {
     icon: "/img/logos/usecases/payroll.svg",
     title: "Managing payroll",
-    description: "Integrate your customers' payroll data from their HR and payroll platforms into their accounting platforms to support its reconciliation.",
+    description: "Sync your customers' payroll data into their accounting platforms to support reconciliation.",
     link: "/usecases/summary/managing-payroll",
     linkText: "Discover payroll management →",
     linkTextMini: "Discover payroll management →",
@@ -44,10 +44,10 @@ const usecases = [
   {
     icon: "/img/logos/usecases/pull-push.svg",
     title: "Reconciling bank transactions",
-    description: "Pushing your customers' bank transaction data into accounting platform's bank transaction ledgers for reconcilliation.",
+    description: "Push your customers' bank transaction data into accounting platform's bank transaction ledgers for reconcilliation.",
     link: "/usecases/summary/reconciling-bank-transactions",
-    linkText: "Discover bank transactions reconciliation →",
-    linkTextMini: "Discover bank transactions reconciliation →",
+    linkText: "Discover bank transaction reconciliation →",
+    linkTextMini: "Discover bank transaction reconciliation →",
   },
 ]
 

@@ -15,7 +15,7 @@ The [Enhanced Profit and Loss Accounts](/lending-api#/operations/get-enhanced-pr
 
 Our Enhanced Financials map each business's financial statements to a single standard chart of accounts, which we call account categories.
 
-Each category comprises up to 5 levels. We will populate the lowest level deemed relevant to each account.
+Each category comprises up to five levels. We will populate the lowest level deemed relevant to each account.
 
 <details>
   <summary>Supported account categories</summary>
@@ -31,12 +31,12 @@ Each category comprises up to 5 levels. We will populate the lowest level deemed
 
 Our _Enhanced Profit and Loss Accounts_ and _Enhanced Balance Sheet Accounts_ endpoints return a list of accounts enriched with a suggested category for each account.
 
-If you feel there is a more accurate category that represents an account, you can provide this feedback to us and we will incorporate this into our model training and you will see this improve in the future. 
+You can help improve the suggestions our model supplies by confirming them or providing a more applicable category. 
+
+You can view all available categories proposed for accounts and, where relevant, recategorize them in the <a href="https://app.codat.io/" target="_blank">Codat Portal</a>. 
 
 <details>
   <summary>Categorizing accounts in the Portal</summary>
-
-You can view all available categories proposed for accounts and, where relevant, recategorize them in the <a href="https://app.codat.io/" target="_blank">Codat Portal</a>. 
 
 1. Navigate to **Companies**, then click the company that requires categorization review. Select **Products > Lending** in the side menu. Finally, click **Categorize accounts**. 
 

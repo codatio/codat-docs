@@ -44,10 +44,10 @@ Sync for Expenses is an API and a set of supporting tools. It has been built to 
         src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
-      <h3>Standardized API</h3>
+      <h3>Standardized data</h3>
     </div>
     <p>
-      The Sync for Expenses API is completely standardized with a data model based on expense card providers. 
+      Sync for Expenses is completely standardized with a data model based on expense card providers. 
     </p>
   </li>
 

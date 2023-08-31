@@ -10,7 +10,7 @@ banner_title: Lending API
 banner_class: lending
 banner_icon: "/img/logos/products/logo_assess_clear.svg"
 banner_image: "/img/banners/assess.png"
-banner_text: "Lending helps you make smarter credit decisions on small businesses by enabling you to pull your customers' latest data from the systems they are already using. Use that data for automating decisions and surfacing new insights on the customer, all via one API."
+banner_text: "Our Lending API helps you make smarter credit decisions on small businesses by enabling you to pull your customers' latest data from accounting, banking, and commerce platforms they are already using. It also includes features to help providers verify the accuracy of data and process it more efficiently."
 video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
 video_text: What is Lending API?
 ---
@@ -19,13 +19,15 @@ import SocialImages from "@components/global/SocialImages";
 
 <SocialImages imgSrc="/img/old/f0c6d43-73D1AFFF-6E41-47F3-8E25-BB20DA16C754.jpeg"/>
 
-Lending API is built on top of the latest accounting, commerce, and banking data, providing you with the most important data points you need to get a full picture of SMB creditworthiness and make a comprehensive assessment of your customers.
+## What is Lending API?
+
+The Lending API is built on top of the latest accounting, commerce, and banking data, providing you with the most important data points you need to get a full picture of SMB creditworthiness and make a comprehensive assessment of your customers.
 
 ![](/img/old/f0c6d43-73D1AFFF-6E41-47F3-8E25-BB20DA16C754.jpeg "73D1AFFF-6E41-47F3-8E25-BB20DA16C754.jpeg")
 
 ## Who is Lending API for?
 
-Lending API is built for digital lenders, neobanks, corporate card providers, and commerce platforms who want to make an assessment of a small business's financial health and performance.
+The Lending API is built for digital lenders, neobanks, corporate card providers, and commerce platforms who want to make an assessment of a small business's financial health and performance.
 
 Visit our <a className="external" href="https://knowledge.codat.io/coverage/products/4e02a90f-e61c-463b-9aaf-55b0e5087792" target="_blank">Data coverage explorer</a> to view all accounting, commerce, and banking data sources that are supported in the Lending API.
 
@@ -35,10 +37,10 @@ We have done the heavy lifting for you by building integrations to the platforms
 
 ### With Lending API, you can:
 
-1. Get to market faster.
-2. Expand your product lines.
-3. Make better risk decisions.
-4. Provide the best customer experience in the market.
+1. Automate affordability assessments using categorized bank data.
+2. Assess financial strength of a company with our debt report.
+3. Streamline ratio calculation with categorized financial statements.
+4. Refresh borrower data at any time without the need for costly manual data collection.
 
 ## Features
 
