@@ -38,6 +38,45 @@ module.exports = [
   "payables/mapping",
   "payables/payments",
   {
+    type: "ref",
+    label: "Oracle NetSuite",
+    customProps: {
+      hr: true,
+      section: "Sync for Payables integrations",
+    },
+    id: "integrations/accounting/netsuite/accounting-netsuite",
+  },
+  {
+    type: "doc",
+    label: "QuickBooks Online",
+    id: "integrations/accounting/quickbooksonline/accounting-quickbooksonline"
+  },
+  {
+    type: "doc",
+    label: "QuickBooks Desktop",
+    id: "integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop"
+  },
+  {
+    type: "doc",
+    label: "Sage Intacct",
+    id: "integrations/accounting/sage-intacct/accounting-sage-intacct"
+  },
+  {
+    type: "doc",
+    label: "Xero",
+    id: "integrations/accounting/xero/accounting-xero"
+  },
+  {
+    type: "doc",
+    label: "MYOB Business",
+    id: "integrations/accounting/myob/accounting-myob"
+  },
+  {
+    type: "doc",
+    label: "Dynamics 365 Business Central",
+    id: "integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral"
+  },
+  {
     type: "doc",
     id: "payables/data-types",
     label: "Data types",

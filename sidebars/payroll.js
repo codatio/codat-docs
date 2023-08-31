@@ -22,23 +22,38 @@ module.exports = [
   "payroll/mapping",
   "payroll/sync-payroll",
   {
-    type: "doc",
-    label: "QuickBooks Online",
+    type: "ref",
+    label: "Oracle NetSuite",
     customProps: {
       hr: true,
-      section: "Bank feeds integrations",
+      section: "Payroll integrations",
     },
-    id: "integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds",
+    id: "integrations/accounting/netsuite/accounting-netsuite",
   },
   {
     type: "doc",
-    label: "Sage",
-    id: "integrations/bank-feeds/sage-bank-feeds/sage-bank-feeds",
+    label: "QuickBooks Online",
+    id: "integrations/accounting/quickbooksonline/accounting-quickbooksonline"
+  },
+  {
+    type: "doc",
+    label: "Sage Intacct",
+    id: "integrations/accounting/sage-intacct/accounting-sage-intacct"
   },
   {
     type: "doc",
     label: "Xero",
-    id: "integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds",
+    id: "integrations/accounting/xero/accounting-xero"
+  },
+  {
+    type: "doc",
+    label: "MYOB Business",
+    id: "integrations/accounting/myob/accounting-myob"
+  },
+  {
+    type: "doc",
+    label: "Dynamics 365 Business Central",
+    id: "integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral"
   },
   {
     type: "doc",

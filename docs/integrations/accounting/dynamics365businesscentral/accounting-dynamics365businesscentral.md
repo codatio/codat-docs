@@ -2,7 +2,6 @@
 title: "Dynamics 365 Business Central"
 slug: "accounting-dynamics365businesscentral"
 description: "Learn about our Dynamics 365 Business Central integration."
-sidebar_label: Overview
 ---
 
 Synchronize accounting data with <a className="external" href="https://dynamics.microsoft.com/en-us/business-central/overview/" target="_blank">Dynamics 365 Business Central</a> using our integration.
