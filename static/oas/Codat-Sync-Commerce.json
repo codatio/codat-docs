@@ -10,7 +10,7 @@
     }
   ],
   "info": {
-    "title": "Sync for Commerce API",
+    "title": "Sync for Commerce",
     "version": "1.1",
     "contact": {
       "name": "Codat",
@@ -40,6 +40,7 @@
     ],
     "retryConnectionErrors": true
   },
+  "x-codat-docs-path": "sync-for-commerce-api",
   "tags": [
     {
       "name": "Connections",
@@ -58,12 +59,8 @@
       "description": "View useful information about codat's integrations."
     },
     {
-      "name": "Connections (advanced)",
-      "description": "Create new and manage existing Sync for Commerce companies."
-    },
-    {
-      "name": "Configuration (advanced)",
-      "description": "Expressively configure preferences for any given Sync for Commerce company."
+      "name": "Advanced controls",
+      "description": "Advanced company management and sync preferences."
     }
   ],
   "paths": {
@@ -175,7 +172,7 @@
       },
       "post": {
         "tags": [
-          "Connections (advanced)"
+          "Advanced controls"
         ],
         "summary": "Create company",
         "description": "Creates a Codat company..",
@@ -210,7 +207,7 @@
     "/companies/{companyId}/connections": {
       "get": {
         "tags": [
-          "Connections (advanced)"
+          "Advanced controls"
         ],
         "summary": "List connections",
         "description": "List the connections for a company.",
@@ -248,7 +245,7 @@
       },
       "post": {
         "tags": [
-          "Connections (advanced)"
+          "Advanced controls"
         ],
         "summary": "Create connection",
         "description": "Creates a connection for the company by providing a valid platformKey.",
@@ -290,7 +287,7 @@
     "/companies/{companyId}/connections/{connectionId}": {
       "patch": {
         "tags": [
-          "Connections (advanced)"
+          "Advanced controls"
         ],
         "summary": "Update connection",
         "description": "Update a data connection",
@@ -335,14 +332,59 @@
         }
       ]
     },
+    "/companies/{companyId}/connections/{connectionId}/authorization": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        }
+      ],
+      "put": {
+        "summary": "Update authorization",
+        "operationId": "update-connection-authorization",
+        "x-speakeasy-name-override": "update-authorization",
+        "description": "Update data connection's authorization.",
+        "tags": [
+          "Connections"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Connection"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "description": ""
+        }
+      }
+    },
     "/config/companies/{companyId}/sync/commerce": {
       "get": {
         "tags": [
-          "Configuration (advanced)"
+          "Advanced controls"
         ],
         "summary": "Get company configuration",
         "description": "Returns a company's commerce sync configuration'.",
         "operationId": "get-configuration",
+        "x-speakeasy-name-override": "get-configuration",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -363,11 +405,12 @@
       },
       "post": {
         "tags": [
-          "Configuration (advanced)"
+          "Advanced controls"
         ],
-        "summary": "Set configuration.",
-        "description": "Sets a company's commerce sync configuration'.",
+        "summary": "Set configuration",
+        "description": "Sets a company's commerce sync configuration.",
         "operationId": "set-configuration",
+        "x-speakeasy-name-override": "set-configuration",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -392,8 +435,8 @@
         "tags": [
           "Integrations"
         ],
-        "summary": "List information on Codat's supported integrations",
-        "description": "Retrieve a list of available integrations support by datatype and state of release.",
+        "summary": "List integrations",
+        "description": "Retrieve a list of available integrations support by data type and state of release.",
         "operationId": "list-integrations",
         "parameters": [
           {
@@ -561,8 +604,8 @@
         }
       }
     },
-    "/sync/commerce/config/ui/accounts/platform/{commerceKey}": {
-      "patch": {
+    "/sync/commerce/config/ui/accounts/platform/{platformKey}": {
+      "post": {
         "tags": [
           "Sync flow preferences"
         ],
@@ -571,7 +614,7 @@
         "operationId": "update-visible-accounts-sync-flow",
         "parameters": [
           {
-            "name": "commerceKey",
+            "name": "platformKey",
             "in": "path",
             "required": true,
             "schema": {
@@ -848,7 +891,7 @@
       },
       "Connection": {
         "title": "Connection",
-        "description": "﻿A connection represents a [company's](https://docs.codat.io/codat-api#/schemas/Company) connection to a data source and allows you to synchronize data (pull and/or push) with that source.\n\nA company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:\n\n- [Accounting data](https://docs.codat.io/accounting-api/overview) - 1 active connection.\n- [Banking data](https://docs.codat.io/banking-api/overview) - Multiple active connections.\n- [Commerce data](https://docs.codat.io/commerce-api/overview) - Multiple active connections.\nAny combination of accounting, banking, and commerce data connections is allowed.\n\nBefore you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/auth-flow/overview).",
+        "description": "﻿A connection represents a [company's](https://docs.codat.io/DOCS_PATH#/schemas/Company) connection to a data source and allows you to synchronize data (pull and/or push) with that source.\n\nA company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:\n\n- [Accounting data](https://docs.codat.io/accounting-api/overview) - 1 active connection.\n- [Banking data](https://docs.codat.io/banking-api/overview) - Multiple active connections.\n- [Commerce data](https://docs.codat.io/commerce-api/overview) - Multiple active connections.\nAny combination of accounting, banking, and commerce data connections is allowed.\n\nBefore you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/auth-flow/overview).",
         "type": "object",
         "properties": {
           "id": {
@@ -1127,7 +1170,7 @@
       },
       "Company": {
         "title": "Company",
-        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/codat-api#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
+        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/DOCS_PATH#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
         "type": "object",
         "properties": {
           "id": {
@@ -2154,7 +2197,7 @@
     "securitySchemes": {
       "auth_header": {
         "name": "Authorization",
-        "description": "The word \"Basic\" followed by a space and your API Key, base64 encoded, which can be found [here](https://app.codat.io/developers/api-keys)",
+        "description": "The word \"Basic\" followed by a space and your API key. [API keys](https://docs.codat.io/accounting-api#/schemas/apiKeys) are tokens used to control access to the API. You can get an API key via [the Codat Portal](https://app.codat.io/developers/api-keys), via [the API](https://docs.codat.io/codat-api#/api-keys/api-keys-list), or [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat.",
         "type": "apiKey",
         "in": "header",
         "x-speakeasy-example": "Basic BASE_64_ENCODED(API_KEY)"

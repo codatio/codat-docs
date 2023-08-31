@@ -1,8 +1,5 @@
 {
   "openapi": "3.1.0",
-  "x-stoplight": {
-    "id": "j388fn92qyj2u"
-  },
   "servers": [
     {
       "description": "Production",
@@ -85,6 +82,7 @@
       "methodNameOverride": "upload-attachment"
     }
   ],
+  "x-codat-docs-path": "bank-feeds-api",
   "tags": [
     {
       "name": "Companies",
@@ -99,16 +97,82 @@
       "description": "Source accounts act as a bridge to bank accounts in accounting software."
     },
     {
-      "name": "Account mapping",
-      "description": "Bank feed bank account mapping."
-    },
-    {
       "name": "Transactions",
       "description": "Transactions represent debits and credits from a source account."
+    },
+    {
+      "name": "Account mapping",
+      "description": "Bank feed bank account mapping."
     }
   ],
   "paths": {
     "/companies": {
+      "post": {
+        "summary": "Create company",
+        "tags": [
+          "Companies"
+        ],
+        "operationId": "create-company",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "x-speakeasy-usage-example": true,
+                "schema": {
+                  "$ref": "#/components/schemas/Company"
+                },
+                "examples": {
+                  "New Company": {
+                    "value": {
+                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "name": "My First Company",
+                      "description": "",
+                      "platform": "",
+                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "dataConnections": [],
+                      "created": "2022-11-10T10:45:18.1950523Z",
+                      "createdByUserName": "Dan Tzabar"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "description": "﻿Creates a new company that can be used to assign connections to. \n\nIf forbidden characters (see `name` pattern) are present in the request, a company will be created with the forbidden characters removed. For example, `Company (Codat[1])` with be created as `Company Codat1`.\n\n",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyRequestBody"
+              },
+              "examples": {
+                "Example with no description": {
+                  "value": {
+                    "name": "Technicalium"
+                  }
+                },
+                "Example with a description": {
+                  "value": {
+                    "name": "Technicalium",
+                    "description": "Technology services, including web and app design and development"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "get": {
         "summary": "List companies",
         "tags": [
@@ -244,7 +308,7 @@
           }
         },
         "operationId": "list-companies",
-        "description": "﻿Returns a list of your companies. The company schema contains a list of [connections](https://docs.codat.io/codat-api#/schemas/Connection) related to the company.",
+        "description": "﻿Returns a list of your companies. The company schema contains a list of [connections](https://docs.codat.io/DOCS_PATH#/schemas/Connection) related to the company.",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -259,72 +323,6 @@
             "$ref": "#/components/parameters/orderBy"
           }
         ]
-      },
-      "post": {
-        "summary": "Create company",
-        "tags": [
-          "Companies"
-        ],
-        "operationId": "create-company",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "x-speakeasy-usage-example": true,
-                "schema": {
-                  "$ref": "#/components/schemas/Company"
-                },
-                "examples": {
-                  "New Company": {
-                    "value": {
-                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "name": "My First Company",
-                      "description": "",
-                      "platform": "",
-                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "dataConnections": [],
-                      "created": "2022-11-10T10:45:18.1950523Z",
-                      "createdByUserName": "Dan Tzabar"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/BadRequest"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          }
-        },
-        "description": "﻿Creates a new company that can be used to assign connections to. \n\nIf forbidden characters (see `name` pattern) are present in the request, a company will be created with the forbidden characters removed. For example, `Company (Codat[1])` with be created as `Company Codat1`.\n\n",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CompanyRequestBody"
-              },
-              "examples": {
-                "Example with no description": {
-                  "value": {
-                    "name": "Technicalium"
-                  }
-                },
-                "Example with a description": {
-                  "value": {
-                    "name": "Technicalium",
-                    "description": "Technology services, including web and app design and development"
-                  }
-                }
-              }
-            }
-          }
-        }
       }
     },
     "/companies/{companyId}": {
@@ -549,7 +547,7 @@
       },
       "post": {
         "summary": "Create connection",
-        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \n\nUse the [List Integrations](https://docs.codat.io/codat-api#/operations/list-integrations) endpoint to access valid platform keys. ",
+        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \n\nUse the [List Integrations](https://docs.codat.io/DOCS_PATH#/operations/list-integrations) endpoint to access valid platform keys. ",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -756,6 +754,96 @@
         }
       }
     },
+    "/companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts": {
+      "post": {
+        "tags": [
+          "Source accounts"
+        ],
+        "summary": "Create a bank feed bank account",
+        "description": "Post a BankFeed BankAccount for a single data source connected. to a single company.",
+        "operationId": "create-bank-feed",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BankFeedAccount"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BankFeedAccount"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Source accounts"
+        ],
+        "summary": "List bank feed bank accounts",
+        "description": "﻿The *List bank feed bank accounts* endpoint returns a list of [bank feed accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankFeedAccount) for a given company's connection.\n\n[Bank feed accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankFeedAccount) are the bank's bank account from which transactions are synced into the accounting platform.\n\n",
+        "operationId": "list-bank-feeds",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BankFeedAccount"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      }
+    },
     "/companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts/{accountId}": {
       "patch": {
         "tags": [
@@ -813,7 +901,7 @@
         "tags": [
           "Source accounts"
         ],
-        "summary": "delete bank feed bank account",
+        "summary": "Delete bank feed bank account",
         "description": "The *delete bank feed bank account* endpoint enables you to remove a source account.\n\nRemoving a source account will also remove any mapping between the source bank feed bank accounts and the target bankfeed bank account.",
         "operationId": "delete-bank-feed-bank-account",
         "parameters": [
@@ -840,52 +928,14 @@
         }
       }
     },
-    "/companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts": {
-      "get": {
-        "tags": [
-          "Source accounts"
-        ],
-        "summary": "List bank feed bank accounts",
-        "description": "﻿The *List bank feed bank accounts* endpoint returns a list of [bank feed accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankFeedAccount) for a given company's connection.\n\n[Bank feed accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankFeedAccount) are the bank's bank account from which transactions are synced into the accounting platform.\n\n",
-        "operationId": "list-bank-feeds",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          },
-          {
-            "$ref": "#/components/parameters/connectionId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BankFeedAccount"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          }
-        }
-      },
+    "/companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts/credentials": {
       "post": {
         "tags": [
           "Source accounts"
         ],
-        "summary": "Create a bank feed bank account",
-        "description": "Post a BankFeed BankAccount for a single data source connected to a single company.",
-        "operationId": "create-bank-feed",
+        "summary": "Generate source account credentials",
+        "description": "﻿The _Generate Bank Account Credentials_ endpoint can be used to generate credentials for QuickBooks Online to use for authentication of the Bank Feed in their portal, each time this is used a new set of credentials will be generated.\n\nThe old credentials will still be valid until the revoke credentials endpoint is used, which will revoke all credentials associated to the data connection.\n",
+        "operationId": "generate-source-account-credentials",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -895,12 +945,9 @@
           }
         ],
         "requestBody": {
+          "required": true,
           "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BankFeedAccount"
-              }
-            }
+            "application/json": {}
           }
         },
         "responses": {
@@ -909,20 +956,41 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BankFeedAccount"
-                },
-                "examples": {}
+                  "$ref": "#/components/schemas/BankAccountCredentials"
+                }
               }
             }
-          },
-          "400": {
-            "$ref": "#/components/responses/BadRequest"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Source accounts"
+        ],
+        "summary": "Delete all source account credentials",
+        "x-speakeasy-name-override": "delete-credentials",
+        "description": "The _Delete Bank Account Credentials_ endpoint serves as a comprehensive mechanism for revoking all existing authorization credentials that a company employs to establish its Bank Feed connection.\n\nIn cases where multiple credential sets have been generated, a single API call to this endpoint revokes all of them.",
+        "operationId": "delete-bank-feed-credentials",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
@@ -1081,48 +1149,39 @@
         }
       }
     },
-    "/companies/{companyId}/connections/{connectionId}/data/proxy": {
+    "/companies/{companyId}/push/{pushOperationKey}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": "pushOperationKey",
+          "in": "path",
+          "required": true,
+          "description": "Push operation key."
+        }
+      ],
       "get": {
+        "summary": "Get push operation",
         "tags": [
-          "Connections"
+          "Transactions"
         ],
-        "summary": "Proxy",
-        "description": "﻿The *Proxy* endpoint can be used to generate credentials from QuickBooks Online for authentication of the Bank Feed in their portal.\n\nSee the example provided for the `endpoint` query parameter when generating credentials for QuickBooks Online.",
-        "operationId": "proxy",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          },
-          {
-            "$ref": "#/components/parameters/connectionId"
-          },
-          {
-            "name": "endpoint",
-            "in": "query",
-            "required": true,
-            "description": "The endpoint and query parameters made to the underlying integration.",
-            "schema": {
-              "type": "string",
-              "example": "generatecredentials?dataconnectionid={connectionId}"
-            }
-          }
-        ],
+        "operationId": "get-push-operation",
+        "x-speakeasy-name-override": "get-operation",
+        "description": "Retrieve push operation.",
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProxyResponse"
+                  "$ref": "#/components/schemas/PushOperation"
                 },
-                "examples": {
-                  "QuickBooks Online": {
-                    "value": {
-                      "username": "b.baggins",
-                      "password": "************"
-                    }
-                  }
-                }
+                "examples": {}
               }
             }
           },
@@ -1192,61 +1251,13 @@
           }
         }
       }
-    },
-    "/companies/{companyId}/push/{pushOperationKey}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "schema": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "name": "pushOperationKey",
-          "in": "path",
-          "required": true,
-          "description": "Push operation key."
-        }
-      ],
-      "get": {
-        "summary": "Get push operation",
-        "tags": [
-          "Transactions"
-        ],
-        "operationId": "get-push-operation",
-        "x-speakeasy-name-override": "get-operation",
-        "description": "Retrieve push operation.",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PushOperation"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          }
-        }
-      }
     }
   },
   "components": {
     "schemas": {
       "Company": {
         "title": "Company",
-        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/codat-api#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
+        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/DOCS_PATH#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
         "type": "object",
         "properties": {
           "id": {
@@ -1360,7 +1371,7 @@
       },
       "Connection": {
         "title": "Connection",
-        "description": "﻿A connection represents a [company's](https://docs.codat.io/codat-api#/schemas/Company) connection to a data source and allows you to synchronize data (pull and/or push) with that source.\n\nA company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:\n\n- [Accounting data](https://docs.codat.io/accounting-api/overview) - 1 active connection.\n- [Banking data](https://docs.codat.io/banking-api/overview) - Multiple active connections.\n- [Commerce data](https://docs.codat.io/commerce-api/overview) - Multiple active connections.\nAny combination of accounting, banking, and commerce data connections is allowed.\n\nBefore you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/auth-flow/overview).",
+        "description": "﻿A connection represents a [company's](https://docs.codat.io/DOCS_PATH#/schemas/Company) connection to a data source and allows you to synchronize data (pull and/or push) with that source.\n\nA company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:\n\n- [Accounting data](https://docs.codat.io/accounting-api/overview) - 1 active connection.\n- [Banking data](https://docs.codat.io/banking-api/overview) - Multiple active connections.\n- [Commerce data](https://docs.codat.io/commerce-api/overview) - Multiple active connections.\nAny combination of accounting, banking, and commerce data connections is allowed.\n\nBefore you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/auth-flow/overview).",
         "type": "object",
         "properties": {
           "id": {
@@ -2052,9 +2063,28 @@
         ],
         "example": "invoices"
       },
-      "ProxyResponse": {
+      "BankAccountCredentials": {
+        "title": "Bank Account Credentials",
+        "description": "Result of generate credentials",
         "type": "object",
-        "additionalProperties": true
+        "properties": {
+          "username": {
+            "type": "string",
+            "example": "S0MW-TR0P-7DS0",
+            "description": "Username used by the bank feeds platform to retrieve transactions"
+          },
+          "password": {
+            "type": "string",
+            "example": "cO0ajh0uGyTN0Pwh",
+            "description": "Password to enable the bank feeds platform to securely retrieve transactions."
+          }
+        },
+        "examples": {
+          "QuickBooks Online Bank Feeds": {
+            "username": "S0MW-TR0P-7DS0",
+            "password": "cO0ajh0uGyTN0Pwh"
+          }
+        }
       },
       "DataConnectionHistory": {
         "x-internal": true,
@@ -2722,7 +2752,7 @@
     "securitySchemes": {
       "auth_header": {
         "name": "Authorization",
-        "description": "The word \"Basic\" followed by a space and your API Key, base64 encoded, which can be found [here](https://app.codat.io/developers/api-keys)",
+        "description": "The word \"Basic\" followed by a space and your API key. [API keys](https://docs.codat.io/accounting-api#/schemas/apiKeys) are tokens used to control access to the API. You can get an API key via [the Codat Portal](https://app.codat.io/developers/api-keys), via [the API](https://docs.codat.io/codat-api#/api-keys/api-keys-list), or [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat.",
         "type": "apiKey",
         "in": "header",
         "x-speakeasy-example": "Basic BASE_64_ENCODED(API_KEY)"
