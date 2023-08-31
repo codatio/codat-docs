@@ -3,7 +3,7 @@ title: "Expense transactions"
 description: Create expense-transaction datasets to represent your customers spend
 ---
 
-An [expense transaction](/sync-for-expenses-api#/operations/create-expense-dataset) represents the context behind the purchase.
+An [expense transaction](/sync-for-expenses-api#/operations/create-expense-transaction) represents the context behind the purchase.
 
 It can include details about the purchase from the mapping options, for example:
 

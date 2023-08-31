@@ -56,7 +56,7 @@ The following diagram outlines the functionality your app must provide, such as 
    :::   
 
 3. Your app [creates a company](/codat-api#/operations/create-company) to represent the merchant.
-4. Your app [creates a data connection](/codat-api#/operations/create-data-connection) to Shopify. Supply the returned `companyId` in the request path and the platform key `fztf` in the body.
+4. Your app [creates a data connection](/codat-api#/operations/create-connection) to Shopify. Supply the returned `companyId` in the request path and the platform key `fztf` in the body.
    
    A `linkUrl` value is returned.
 

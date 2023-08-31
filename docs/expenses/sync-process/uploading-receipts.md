@@ -16,7 +16,7 @@ You can add a receipt to the transaction after the sync. Note that different acc
 | **QuickBooks Online** | 100 MB    | AI, CSV, DOC, DOCX, EPS, GIF, JPEG, JPG, ODS, PAGES, PDF, PNG, RTF, TIF,   TXT, XLS, XLSX, XML                                                               |
 | **NetSuite**          | 100 MB    | BMP, CSV, XLS, XLSX, JSON, PDF, PJPG, PJPEG, PNG, TXT, SVG, TIF, TIFF,   DOC, DOCX, ZIP                                                                      |
 
-You can upload supported file types using the [Upload attachment](/sync-for-expenses-api#/operations/upload-attachment) endpoint. The request accepts the attachment as multipart form data.
+You can upload supported file types using the [Upload attachment](/sync-for-expenses-api#/operations/upload-expense-attachment) endpoint. The request accepts the attachment as multipart form data.
 
 ```http
 POST https://api.codat.io/companies/{companyId}/sync/expenses/syncs/{syncId}/transactions/{transactionId}/attachments

@@ -42,7 +42,7 @@ Before setting up the integration, make sure that:
    
    The endpoint returns a JSON response containing the company ID (`id`) and the redirect URL (`redirect`).
 
-2. Using the [POST /companies/<COMPANY_ID>/connections](/codat-api#/operations/create-data-connection) endpoint, create a data connection to Xero for the company you added. Specify the company ID in the URL path and the Xero platform key in the body:
+2. Using the [POST /companies/<COMPANY_ID>/connections](/codat-api#/operations/create-connection) endpoint, create a data connection to Xero for the company you added. Specify the company ID in the URL path and the Xero platform key in the body:
 
    ```http title="Create connection"
    POST https://api.codat.io/companies/<COMPANY_ID>/connections

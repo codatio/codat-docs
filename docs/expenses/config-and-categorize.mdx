@@ -52,7 +52,7 @@ Sync for Expenses currently supports option 2 only.
 - A supplier (`supplier.id`) is required to associate all spending against that supplier. 
     - [GET](/accounting-api#/operations/list-suppliers) a list of available suppliers in the company's accounting software. You can also add additional query parameters, e.g. `query=metadata.isDeleted=false&&supplierName=supplierName`.
     - You can [POST](/accounting-api#/operations/create-suppliers) to create a new supplier.
-- Suppliers can be set at the configuration level and also at the [transaction level](https://docs.codat.io/sync-for-expenses-api#/operations/create-expense-dataset#request-body).
+- Suppliers can be set at the configuration level and also at the [transaction level](https://docs.codat.io/sync-for-expenses-api#/operations/create-expense-transaction#request-body).
     - By setting the supplier at the transaction level you will be able to override the configuration supplier, in order to sync a more accurate representation of who the spend should be associated with in the accounting platform. 
     - If no supplier is set at the transaction level, the spend will have the config supplier set as a default against it. 
     - The currency associated with the supplier must match the currency associated with the spend.
@@ -141,7 +141,7 @@ In some cases different accounting platforms have certain ways of handling suppl
    </ul>
 </ul>
 
-You can then [post](sync-for-expenses-api#/operations/save-company-configuration) the updated configuration to Codat to store their saved preferences.
+You can then [post](sync-for-expenses-api#/operations/set-company-configuration) the updated configuration to Codat to store their saved preferences.
 
 ## Mapping Options
 

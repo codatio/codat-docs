@@ -34,7 +34,7 @@ Connections can have one of the statuses described in the following table.
 
 ## Linked data connection example
 
-Verify that a connection returns a Linked `status` using one of our [Connections](/codat-api#/operations/list-company-connections) endpoints. 
+Verify that a connection returns a Linked `status` using one of our [Connections](/codat-api#/operations/list-connections) endpoints. 
 
 In the response, note the following fields:
 
@@ -115,7 +115,7 @@ PATCH /companies/COMPANY_ID/connections/CONNECTION_ID
 
 ## Delete a data connection
 
-To delete a data connection, send a request to the <a href="/codat-api#/operations/delete-company-connection" target="_blank">DELETE /connectionId endpoint</a> and provide the `companyId` and `connectionId` as path parameters.
+To delete a data connection, send a request to the <a href="/codat-api#/operations/delete-connection" target="_blank">DELETE /connectionId endpoint</a> and provide the `companyId` and `connectionId` as path parameters.
 
 ```http
 DELETE /companies/COMPANY_ID/connections/CONNECTION_ID
@@ -135,4 +135,4 @@ If you are migrating an existing integration to use Codat, you can provide token
 ## Read next
 
 - Next concept: [Integrations](/core-concepts/integrations)
-- [`GET /connections`](/codat-api#/operations/list-company-connections) API reference
+- [`GET /connections`](/codat-api#/operations/list-connections) API reference

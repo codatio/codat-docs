@@ -114,7 +114,7 @@ Use our [Create company](/bank-feeds-api#/operations/create-company) endpoint to
    companies_response = bank_feeds_client.companies.create(req)
 ```
 
-Next, call the [Create connection](/bank-feeds-api#/operations/create-data-connection) endpoint to establish a data link to QBO Bank Feeds for the company. We pass the response from the previous endpoint in the request, and also include the platform key, which for QBO Bank Feeds is `hcws`.
+Next, call the [Create connection](/bank-feeds-api#/operations/create-connection) endpoint to establish a data link to QBO Bank Feeds for the company. We pass the response from the previous endpoint in the request, and also include the platform key, which for QBO Bank Feeds is `hcws`.
 
 ```python
    req = operations.CreateDataConnectionRequest(

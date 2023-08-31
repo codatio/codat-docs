@@ -177,7 +177,7 @@ GET /companies
 GET /companies/{companyId}/connections",
 ```
 
-This endpoint is also available in <a href="/codat-api#/operations/list-company-connections">Common API</a>.
+This endpoint is also available in <a href="/codat-api#/operations/list-connections">Common API</a>.
 
 In the request above, the `companyId` is the `companyId` that was returned to you when you created a Codat company for the user. It can also be found in the company's metadata.
 
@@ -193,7 +193,7 @@ Request body:
 "platformKey"
 ```
 
-This endpoint is also available in <a href="codat-api#/operations/create-data-connection">Common API</a>.
+This endpoint is also available in <a href="codat-api#/operations/create-connection">Common API</a>.
 
 #### Allow users to delete a connection
 
