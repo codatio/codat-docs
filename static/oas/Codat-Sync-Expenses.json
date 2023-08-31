@@ -31,6 +31,52 @@
     ],
     "retryConnectionErrors": true
   },
+  "x-speakeasy-name-override": [
+    {
+      "operationId": "^list-.*?",
+      "methodNameOverride": "list"
+    },
+    {
+      "operationId": "^list-.*?-attachments",
+      "methodNameOverride": "list-attachments"
+    },
+    {
+      "operationId": "^get-.*?",
+      "methodNameOverride": "get"
+    },
+    {
+      "operationId": "^get-create-.*?-model",
+      "methodNameOverride": "get-create-model"
+    },
+    {
+      "operationId": "^get-create-update.*?-model",
+      "methodNameOverride": "get-create-update-model"
+    },
+    {
+      "operationId": "^get-.*?-attachment",
+      "methodNameOverride": "get-attachment"
+    },
+    {
+      "operationId": "^update-.*?",
+      "methodNameOverride": "update"
+    },
+    {
+      "operationId": "^create-.*?",
+      "methodNameOverride": "create"
+    },
+    {
+      "operationId": "^delete-.*?",
+      "methodNameOverride": "delete"
+    },
+    {
+      "operationId": "^download-.*?-attachment",
+      "methodNameOverride": "download-attachment"
+    },
+    {
+      "operationId": "^upload-.*?-attachment",
+      "methodNameOverride": "upload-attachment"
+    }
+  ],
   "x-codat-docs-path": "sync-for-expenses-api",
   "tags": [
     {
@@ -58,7 +104,7 @@
       "description": "Retrieve the status of transactions within a sync."
     },
     {
-      "name": "Refresh data",
+      "name": "Manage data",
       "description": "Asynchronously retrieve data from an integration to refresh data in Codat."
     },
     {
@@ -440,7 +486,7 @@
       "get": {
         "summary": "List connections",
         "description": "﻿List the connections for a company.",
-        "operationId": "list-company-connections",
+        "operationId": "list-connections",
         "tags": [
           "Connections"
         ],
@@ -534,7 +580,7 @@
         "tags": [
           "Connections"
         ],
-        "operationId": "create-data-connection",
+        "operationId": "create-connection",
         "requestBody": {
           "content": {
             "application/json": {
@@ -591,7 +637,7 @@
     "/companies/{companyId}/connections/{connectionId}": {
       "get": {
         "summary": "Get connection",
-        "operationId": "get-company-connection",
+        "operationId": "get-connection",
         "description": "﻿Returns a specific connection for a company when valid identifiers are provided. If the identifiers are for a deleted company and/or connection, a not found response is returned.",
         "tags": [
           "Connections"
@@ -644,7 +690,7 @@
       },
       "delete": {
         "summary": "Delete connection",
-        "operationId": "delete-company-connection",
+        "operationId": "delete-connection",
         "description": "﻿Revoke and remove a connection from a company.\nThis operation is not reversible. The end user would need to reauthorize a new data connection if you wish to view new data for this company.",
         "parameters": [
           {
@@ -676,6 +722,7 @@
         "summary": "Unlink connection",
         "description": "﻿This allows you to deauthorize a connection, without deleting it from Codat. This means you can still view any data that has previously been pulled into Codat, and also lets you re-authorize in future if your customer wishes to resume sharing their data.",
         "operationId": "unlink-connection",
+        "x-speakeasy-name-override": "unlink",
         "tags": [
           "Connections"
         ],
@@ -740,6 +787,7 @@
         "description": "Creates a Partner Expense data connection",
         "summary": "Create Partner Expense connection",
         "operationId": "create-partner-expense-connection",
+        "x-speakeasy-name-override": "create-partner-expense-connection",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -853,7 +901,8 @@
         },
         "summary": "Set company configuration",
         "description": "Sets a companies expense sync configuration",
-        "operationId": "save-company-configuration"
+        "operationId": "set-company-configuration",
+        "x-speakeasy-name-override": "set"
       },
       "parameters": [
         {
@@ -895,7 +944,8 @@
         },
         "description": "Gets the expense mapping options for a companies accounting software",
         "summary": "Mapping options",
-        "operationId": "get-mapping-options"
+        "operationId": "get-mapping-options",
+        "x-speakeasy-name-override": "get-mapping-options"
       },
       "parameters": [
         {
@@ -904,22 +954,23 @@
       ]
     },
     "/companies/{companyId}/sync/expenses/syncs": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ],
       "post": {
         "tags": [
           "Sync"
         ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
         "summary": "Initiate sync",
+        "operationId": "initiate-sync",
         "description": "Initiate sync of pending transactions.",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PostSync"
+                "$ref": "#/components/schemas/InitiateSync"
               },
               "examples": {}
             }
@@ -942,7 +993,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CodatErrorMessage"
+                  "$ref": "#/components/schemas/ErrorMessage"
                 }
               }
             }
@@ -952,7 +1003,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CodatErrorMessage"
+                  "$ref": "#/components/schemas/ErrorMessage"
                 }
               }
             }
@@ -962,19 +1013,13 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CodatErrorMessage"
+                  "$ref": "#/components/schemas/ErrorMessage"
                 }
               }
             }
           }
-        },
-        "operationId": "intiate-sync"
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
         }
-      ]
+      }
     },
     "/companies/{companyId}/sync/expenses/syncs/lastSuccessful/status": {
       "get": {
@@ -1010,7 +1055,8 @@
         },
         "description": "Gets the status of the last successful sync",
         "summary": "Last successful sync",
-        "operationId": "get-last-successful-sync"
+        "operationId": "get-last-successful-sync",
+        "x-speakeasy-name-override": "get-last-successful-sync"
       },
       "parameters": [
         {
@@ -1052,7 +1098,8 @@
         },
         "description": "Gets the latest sync status",
         "summary": "Latest sync status",
-        "operationId": "get-latest-sync"
+        "operationId": "get-latest-sync",
+        "x-speakeasy-name-override": "get-latest-sync"
       },
       "parameters": [
         {
@@ -1175,7 +1222,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TransactionMetadataList"
+                  "$ref": "#/components/schemas/Transactions"
                 },
                 "examples": {}
               }
@@ -1194,7 +1241,7 @@
         "tags": [
           "Transaction status"
         ],
-        "summary": "Get Sync transactions",
+        "summary": "List sync transactions",
         "description": "Gets the transactions and status for a sync",
         "operationId": "list-sync-transactions"
       },
@@ -1228,7 +1275,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/TransactionMetadata"
+                    "$ref": "#/components/schemas/Transaction"
                   }
                 },
                 "examples": {}
@@ -1271,8 +1318,8 @@
         }
       ],
       "post": {
-        "summary": "Create expense-transactions",
-        "operationId": "create-expense-dataset",
+        "summary": "Create expense transaction",
+        "operationId": "create-expense-transaction",
         "description": "Create an expense transaction",
         "tags": [
           "Expenses"
@@ -1442,17 +1489,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "syncId": {
-                      "type": "string"
-                    }
-                  },
-                  "examples": {
-                    "Example 1": {
-                      "syncId": "1ad0695c-4566-4715-918c-adbb03eac81e"
-                    }
-                  }
+                  "$ref": "#/components/schemas/UpdateExpenseResponse"
                 }
               }
             }
@@ -1473,7 +1510,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "operationId": "update-expense-dataset",
+        "operationId": "update-expense-transaction",
         "description": "Update an expense transaction",
         "requestBody": {
           "content": {
@@ -1500,7 +1537,7 @@
       ],
       "post": {
         "summary": "Upload attachment",
-        "operationId": "upload-attachment",
+        "operationId": "upload-expense-attachment",
         "responses": {
           "200": {
             "description": "OK",
@@ -1550,8 +1587,7 @@
       ],
       "post": {
         "summary": "Refresh all data",
-        "operationId": "refresh-company-data",
-        "x-speakeasy-name-override": "all",
+        "operationId": "refresh-all-data-types",
         "responses": {
           "204": {
             "description": "No Content"
@@ -1568,7 +1604,7 @@
         },
         "description": "Refreshes all data types with `fetch on first link` set to `true` for a given company.\n\nThis is an asynchronous operation, and will bring updated data into Codat from the linked integration for you to view.\n\n[Read more](https://docs.codat.io/core-concepts/data-type-settings) about data type settings and `fetch on first link`.",
         "tags": [
-          "Refresh data"
+          "Manage data"
         ]
       }
     },
@@ -1581,9 +1617,10 @@
       "get": {
         "summary": "Get data status",
         "operationId": "get-company-data-status",
+        "x-speakeasy-name-override": "get-company-data-status",
         "description": "Get the state of each data type for a company",
         "tags": [
-          "Refresh data"
+          "Manage data"
         ],
         "responses": {
           "200": {
@@ -1640,10 +1677,9 @@
       "post": {
         "summary": "Refresh data type",
         "operationId": "refresh-data-type",
-        "x-speakeasy-name-override": "by-data-type",
         "description": "Refreshes a given data type for a given company.\n\nThis is an asynchronous operation, and will bring updated data into Codat from the linked integration for you to view.",
         "tags": [
-          "Refresh data"
+          "Manage data"
         ],
         "parameters": [
           {
@@ -1688,7 +1724,7 @@
       "get": {
         "summary": "List pull operations",
         "tags": [
-          "Refresh data"
+          "Manage data"
         ],
         "operationId": "list-pull-operations",
         "x-speakeasy-name-override": "list-pull-operations",
@@ -1698,7 +1734,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DataConnectionHistory"
+                  "$ref": "#/components/schemas/PullOperations"
                 },
                 "examples": {
                   "Example": {
@@ -1783,7 +1819,7 @@
         "operationId": "get-pull-operation",
         "x-speakeasy-name-override": "get-pull-operation",
         "tags": [
-          "Refresh data"
+          "Manage data"
         ],
         "responses": {
           "200": {
@@ -1835,8 +1871,7 @@
         "tags": [
           "Push operations"
         ],
-        "operationId": "get-company-push-history",
-        "x-speakeasy-name-override": "list-operations",
+        "operationId": "list-push-operations",
         "description": "List push operation records.",
         "responses": {
           "200": {
@@ -1844,7 +1879,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PushHistoryResponse"
+                  "$ref": "#/components/schemas/PushOperations"
                 },
                 "examples": {}
               }
@@ -1887,7 +1922,6 @@
           "Push operations"
         ],
         "operationId": "get-push-operation",
-        "x-speakeasy-name-override": "get-operation",
         "description": "Retrieve push operation.",
         "responses": {
           "200": {
@@ -6419,9 +6453,6 @@
   },
   "components": {
     "schemas": {
-      "DataConnection": {
-        "$ref": "#/components/schemas/Connection"
-      },
       "AccountMappingInfo": {
         "title": "Account mapping info",
         "type": "object",
@@ -6723,8 +6754,8 @@
           }
         }
       },
-      "TransactionMetadata": {
-        "title": "Transaction metadata",
+      "Transaction": {
+        "title": "Transaction",
         "type": "object",
         "additionalProperties": false,
         "x-examples": {
@@ -6786,7 +6817,7 @@
         "example": "expenses",
         "nullable": true
       },
-      "TransactionMetadataList": {
+      "Transactions": {
         "x-internal": true,
         "additionalProperties": false,
         "allOf": [
@@ -6796,7 +6827,7 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/TransactionMetadata"
+                  "$ref": "#/components/schemas/Transaction"
                 }
               }
             }
@@ -6856,6 +6887,19 @@
             "example": "cd937d46-8e41-43a9-9477-a79158ffd98a",
             "format": "uuid",
             "description": "Unique id of dataset created"
+          }
+        }
+      },
+      "UpdateExpenseResponse": {
+        "type": "object",
+        "properties": {
+          "syncId": {
+            "type": "string"
+          }
+        },
+        "examples": {
+          "Example 1": {
+            "syncId": "1ad0695c-4566-4715-918c-adbb03eac81e"
           }
         }
       },
@@ -7159,8 +7203,8 @@
         },
         "additionalProperties": false
       },
-      "PostSync": {
-        "title": "Post sync",
+      "InitiateSync": {
+        "title": "Initiate sync",
         "type": "object",
         "properties": {
           "datasetIds": {
@@ -7174,138 +7218,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "CodatErrorMessage": {
-        "title": "Error message",
-        "type": "object",
-        "properties": {
-          "statusCode": {
-            "type": "integer"
-          },
-          "service": {
-            "type": "string"
-          },
-          "error": {
-            "type": "string"
-          },
-          "correlationId": {
-            "type": "string"
-          },
-          "validation": {
-            "type": "object",
-            "properties": {
-              "hasErrors": {
-                "type": "boolean"
-              },
-              "hasWarnings": {
-                "type": "boolean"
-              },
-              "hasInternals": {
-                "type": "boolean"
-              },
-              "errors": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "itemId": {
-                      "type": "string"
-                    },
-                    "message": {
-                      "type": "string"
-                    },
-                    "validatorName": {
-                      "type": "string"
-                    },
-                    "ruleId": {
-                      "type": "string"
-                    }
-                  }
-                }
-              },
-              "warnings": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "itemId": {
-                      "type": "string"
-                    },
-                    "message": {
-                      "type": "string"
-                    },
-                    "validatorName": {
-                      "type": "string"
-                    },
-                    "ruleId": {
-                      "type": "string"
-                    }
-                  }
-                }
-              },
-              "internals": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "itemId": {
-                      "type": "string"
-                    },
-                    "message": {
-                      "type": "string"
-                    },
-                    "validatorName": {
-                      "type": "string"
-                    },
-                    "ruleId": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "inner": {
-            "type": "string"
-          },
-          "canBeRetried": {
-            "type": "string"
-          },
-          "detailedErrorCode": {
-            "type": "integer"
-          }
-        },
-        "x-examples": {
-          "Not Found": {
-            "statusCode": 404,
-            "service": "ExpenseSyncApi",
-            "error": "NotFound",
-            "correlationId": "",
-            "canBeRetried": "Unknown",
-            "detailedErrorCode": 0
-          },
-          "Invalid Dataset": {
-            "statusCode": 400,
-            "service": "ExpenseSyncApi",
-            "error": "There are problems with the request, see the Validation property for more detail.",
-            "correlationId": "2201579598a29055025d2e0f829fa89a",
-            "validation": {
-              "errors": [
-                {
-                  "itemId": "Items[0].Lines[0].NetAmount",
-                  "message": "The field NetAmount must be between 0 and 5000000."
-                },
-                {
-                  "itemId": "Items[0].Lines[0].TaxAmount",
-                  "message": "The field TaxAmount must be between 0 and 5000000."
-                }
-              ],
-              "warnings": []
-            },
-            "canBeRetried": "No",
-            "detailedErrorCode": 0
-          }
-        }
       },
       "PagingInfo": {
         "type": "object",
@@ -7389,17 +7301,6 @@
             }
           }
         ]
-      },
-      "HalLink": {
-        "title": "Hypertext reference",
-        "type": "object",
-        "x-internal": true,
-        "properties": {
-          "href": {
-            "type": "string",
-            "format": "uri-reference"
-          }
-        }
       },
       "UpdateExpenseRequest": {
         "title": "Updating Expense Transaction Request",
@@ -8171,7 +8072,7 @@
         ],
         "example": "invoices"
       },
-      "DataConnectionHistory": {
+      "PullOperations": {
         "x-internal": true,
         "allOf": [
           {
@@ -8190,9 +8091,74 @@
           }
         ]
       },
-      "PushOperationSummary": {
+      "PushOperation": {
         "type": "object",
         "x-internal": true,
+        "properties": {
+          "changes": {
+            "type": "array",
+            "nullable": true,
+            "description": "Contains a single entry that communicates which record has changed and the manner in which it changed. ",
+            "items": {
+              "$ref": "#/components/schemas/PushOperation/definitions/pushOperationChange"
+            }
+          },
+          "dataType": {
+            "$ref": "#/components/schemas/DataType",
+            "description": "The type of data being pushed, eg invoices, customers."
+          },
+          "companyId": {
+            "$ref": "#/components/parameters/companyId/schema"
+          },
+          "pushOperationKey": {
+            "type": "string",
+            "format": "uuid",
+            "description": "A unique identifier generated by Codat to represent this single push operation. This identifier can be used to track the status of the push, and should be persisted."
+          },
+          "dataConnectionKey": {
+            "$ref": "#/components/parameters/connectionId/schema"
+          },
+          "requestedOnUtc": {
+            "$ref": "#/components/schemas/Company/properties/created",
+            "description": "The datetime when the push was requested."
+          },
+          "completedOnUtc": {
+            "$ref": "#/components/schemas/Company/properties/created",
+            "description": "The datetime when the push was completed, null if Pending."
+          },
+          "timeoutInMinutes": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "timeoutInSeconds": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "deprecated": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/PushOperation/definitions/pushOperationStatus"
+          },
+          "errorMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "validation": {
+            "$ref": "#/components/schemas/PushOperation/definitions/validation"
+          },
+          "statusCode": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "companyId",
+          "pushOperationKey",
+          "dataConnectionKey",
+          "requestedOnUtc",
+          "status",
+          "statusCode"
+        ],
         "definitions": {
           "validation": {
             "type": "object",
@@ -8203,14 +8169,14 @@
                 "type": "array",
                 "nullable": true,
                 "items": {
-                  "$ref": "#/components/schemas/PushOperationSummary/definitions/validationItem"
+                  "$ref": "#/components/schemas/PushOperation/definitions/validationItem"
                 }
               },
               "warnings": {
                 "type": "array",
                 "nullable": true,
                 "items": {
-                  "$ref": "#/components/schemas/PushOperationSummary/definitions/validationItem"
+                  "$ref": "#/components/schemas/PushOperation/definitions/validationItem"
                 }
               }
             }
@@ -8275,10 +8241,10 @@
             "type": "object",
             "properties": {
               "type": {
-                "$ref": "#/components/schemas/PushOperationSummary/definitions/pushChangeType"
+                "$ref": "#/components/schemas/PushOperation/definitions/pushChangeType"
               },
               "recordRef": {
-                "$ref": "#/components/schemas/PushOperationSummary/definitions/pushOperationRef"
+                "$ref": "#/components/schemas/PushOperation/definitions/pushOperationRef"
               },
               "attachmentId": {
                 "type": "string",
@@ -8286,74 +8252,9 @@
               }
             }
           }
-        },
-        "properties": {
-          "changes": {
-            "type": "array",
-            "nullable": true,
-            "description": "Contains a single entry that communicates which record has changed and the manner in which it changed. ",
-            "items": {
-              "$ref": "#/components/schemas/PushOperationSummary/definitions/pushOperationChange"
-            }
-          },
-          "dataType": {
-            "$ref": "#/components/schemas/DataType",
-            "description": "The type of data being pushed, eg invoices, customers."
-          },
-          "companyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "pushOperationKey": {
-            "type": "string",
-            "format": "uuid",
-            "description": "A unique identifier generated by Codat to represent this single push operation. This identifier can be used to track the status of the push, and should be persisted."
-          },
-          "dataConnectionKey": {
-            "$ref": "#/components/parameters/connectionId/schema"
-          },
-          "requestedOnUtc": {
-            "$ref": "#/components/schemas/Company/properties/created",
-            "description": "The datetime when the push was requested."
-          },
-          "completedOnUtc": {
-            "$ref": "#/components/schemas/Company/properties/created",
-            "description": "The datetime when the push was completed, null if Pending."
-          },
-          "timeoutInMinutes": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "timeoutInSeconds": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true,
-            "deprecated": true
-          },
-          "status": {
-            "$ref": "#/components/schemas/PushOperationSummary/definitions/pushOperationStatus"
-          },
-          "errorMessage": {
-            "type": "string",
-            "nullable": true
-          },
-          "validation": {
-            "$ref": "#/components/schemas/PushOperationSummary/definitions/validation"
-          },
-          "statusCode": {
-            "type": "integer"
-          }
-        },
-        "required": [
-          "companyId",
-          "pushOperationKey",
-          "dataConnectionKey",
-          "requestedOnUtc",
-          "status",
-          "statusCode"
-        ]
+        }
       },
-      "PushHistoryResponse": {
+      "PushOperations": {
         "x-internal": true,
         "allOf": [
           {
@@ -8362,30 +8263,13 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/PushOperationSummary"
+                  "$ref": "#/components/schemas/PushOperation"
                 }
               }
             }
           },
           {
             "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
-      "PushOperation": {
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "data": {
-                "type": "object",
-                "description": "Object submitted in push operation.",
-                "additionalProperties": true
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PushOperationSummary"
           }
         ]
       },
@@ -8597,7 +8481,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperationSummary"
+            "$ref": "#/components/schemas/PushOperation"
           }
         ]
       },
@@ -8632,7 +8516,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperationSummary"
+            "$ref": "#/components/schemas/PushOperation"
           }
         ]
       },
@@ -8648,7 +8532,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperationSummary"
+            "$ref": "#/components/schemas/PushOperation"
           }
         ]
       },
@@ -8683,7 +8567,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperationSummary"
+            "$ref": "#/components/schemas/PushOperation"
           }
         ]
       },
@@ -8699,7 +8583,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperationSummary"
+            "$ref": "#/components/schemas/PushOperation"
           }
         ]
       },
