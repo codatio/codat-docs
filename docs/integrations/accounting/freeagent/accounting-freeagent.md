@@ -1,7 +1,6 @@
 ---
 title: "FreeAgent"
 description: "Learn about our FreeAgent integration."
-sidebar_label: Overview
 ---
 
 You can synchronize accounting and banking data with <a className="external" href="https://www.freeagent.com/" target="_blank">FreeAgent</a> using our FreeAgent integration.

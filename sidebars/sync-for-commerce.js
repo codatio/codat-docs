@@ -69,6 +69,35 @@ module.exports = [
   //   ],
   // },
   {
+    type: "ref",
+    label: "QuickBooks Online",
+    customProps: {
+      hr: true,
+      section: "Sync for Commerce integrations",
+    },
+    id: "integrations/accounting/quickbooksonline/accounting-quickbooksonline",
+  },
+  {
+    type: "doc",
+    label: "Xero",
+    id: "integrations/accounting/xero/accounting-xero"
+  },
+  {
+    type: "doc",
+    label: "MYOB Business",
+    id: "integrations/accounting/myob/accounting-myob"
+  },
+  {
+    type: "doc",
+    label: "FreeAgent",
+    id: "integrations/accounting/freeagent/accounting-freeagent"
+  },
+  {
+    type: "doc",
+    label: "Exact Online",
+    id: "integrations/accounting/exact-online/accounting-exact-online"
+  },
+  {
     type: "doc",
     label: "Sync schedule",
     id: "commerce/synchronization-schedule",

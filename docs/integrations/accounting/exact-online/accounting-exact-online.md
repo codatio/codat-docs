@@ -1,7 +1,6 @@
 ---
 title: "Exact Online (NL and UK)"
 description: "Learn about our Exact Online (NL and UK) integration."
-sidebar_label: Overview
 ---
 
 You can synchronize accounting and banking data with <a className="external" href="https://www.exact.com/software/exact-online" target="_blank">Exact Online</a> (Netherlands and United Kingdom only) using our Exact Online (NL and UK) integration.

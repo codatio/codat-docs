@@ -73,11 +73,6 @@ module.exports = [
   },
   {
     type: "doc",
-    label: "Dynamics 365 Business Central",
-    id: "integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral"
-  },
-  {
-    type: "doc",
     id: "payables/data-types",
     label: "Data types",
     customProps: {
