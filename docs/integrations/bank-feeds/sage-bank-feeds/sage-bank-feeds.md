@@ -6,7 +6,7 @@ description: "Learn about our Sage Bank Feeds integration"
 
 :::caution Sage Bank Feeds - Beta
 
-Our Sage Bank Feeds integration is currently in beta. You can provide feedback on the integration in <a className="external" href="https://codat.productboard.com/feature-board/1378101-feature-organization/features/11073763/detail" target="_blank">Productboard</a> or by contacting your Solutions Engineer or Account Manager.
+Our Sage Bank Feeds integration is currently in beta. 
 :::
 
 ## Overview

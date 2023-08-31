@@ -101,7 +101,7 @@ export const sfeIntegrations = [
   }
 ]
 
-export const sfcIntegrations = [
+export const sfcaccIntegrations = [
   {
     "name": "Exact Online",
     "to": "/integrations/accounting/exact-online/accounting-exact-online",
@@ -132,7 +132,10 @@ export const sfcIntegrations = [
     "to": "/integrations/accounting/xero/accounting-xero",
     "type": "accounting",
     "img": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png"
-  },
+  }
+]
+
+export const sfccommIntegrations = [
   {
     "name": "Clover",
     "to": "/integrations/commerce/clover/commerce-clover",
