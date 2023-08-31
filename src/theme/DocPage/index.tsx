@@ -29,7 +29,7 @@ import type {PropVersionMetadata} from '@docusaurus/plugin-content-docs-types';
 import ApiStatus from '@components/global/ApiStatus';
 
 import clsx from 'clsx';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 type DocPageContentProps = {
   readonly currentDocRoute: DocumentRoute;
