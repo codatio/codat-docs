@@ -1,15 +1,15 @@
 ---
 title: Managing suppliers
-description: "Create and update suppliers using the Sync for Payables API"
+description: "Create and update suppliers using Sync for Payables"
 ---
 
-In the Sync for Payables API, a [supplier](/sync-for-payables-api#/schemas/Supplier) represents a business or sole trader that provides goods or services to a company.
+In Sync for Payables, a [supplier](/sync-for-payables-api#/schemas/Supplier) represents a business or sole trader that provides goods or services to a company.
 
 Suppliers are relevant for the bill pay use case as each bill is associated with a supplier - suppliers also have important information such as addresses and contact details which could be used to notify a supplier once a payment is made.
 
 #### Retrieve a list of suppliers
 
-You can get a [list of suppliers](/sync-for-payables-api#/operations/list-suppliers) using the Sync for Payables API
+You can get a [list of suppliers](/sync-for-payables-api#/operations/list-suppliers) using Sync for Payables:
 
 ```http request title="List suppliers"
 GET https://api.codat.io/companies/{companyId}/data/suppliers?page=1&pageSize=100
@@ -21,7 +21,7 @@ Query parameters can also be used to narrow the list of suppliers e.g.
 - `supplierName=Acme` returns suppliers with a name that matches the query
 
 :::tip Supplier balances
-Currently, the Sync for Payables API does not expose supplier balances on the supplier endpoint, however, you can access these by
+Currently, Sync for Payables does not expose supplier balances on the supplier endpoint, however, you can access these by
 - Aggregating bills by supplier
 - Using the [Aged debtors](/sync-for-payables-api#/operations/get-aged-debtors-report) report
 :::

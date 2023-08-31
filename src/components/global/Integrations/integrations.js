@@ -408,12 +408,6 @@ export const integrations = [
 
 export const billpayIntegrations = [
   {
-    name: "MYOB Business",
-    to: "/integrations/accounting/myob/accounting-myob",
-    type: "accounting",
-    img: "https://static.codat.io/public/officialLogos/Square/00812DF4-8A0F-4F06-9566-16E5CA1346AE.png",
-  },
-  {
     name: "Oracle NetSuite",
     to: "/integrations/accounting/netsuite/accounting-netsuite",
     type: "accounting",
@@ -431,6 +425,13 @@ export const billpayIntegrations = [
     "to": "/integrations/accounting/quickbooksonline/accounting-quickbooksonline",
     "type": "accounting",
     "img": "https://static.codat.io/public/officialLogos/Square/19EEFA32-58A8-4097-B95A-EF150BF24FA0.png"
+  },
+  {
+    "name": "Sage Business Cloud Accounting",
+    "to": "/integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud",
+    "type": "accounting",
+    "tags": ["UK", "US", "Ireland", "Canada", "France", "Germany", "Spain"],
+    "img": "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png"
   },
   {
     name: "Sage Intacct",

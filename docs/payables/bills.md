@@ -1,11 +1,11 @@
 ---
 title: Managing bills
-description: "Create and fetch bills using the Sync for Payables API"
+description: "Create and fetch bills using Sync for Payables"
 ---
 
 In Codat's API a [Bill](/sync-for-payables-api#/schemas/Bill) represents an invoice from a [supplier](/sync-for-payables-api#/schemas/Supplier). This is an *accounts receivable* invoice.
 
-Bills can be [retrieved](/sync-for-payables-api#/operations/list-bills) from the Sync for Payables API.
+Bills can be [retrieved](/sync-for-payables-api#/operations/list-bills) using Sync for Payables.
 
 You can also create bills within your system and then [create them](https://docs.codat.io/sync-for-payables-api#/operations/create-bill) within your customers' accounting software.
 
@@ -16,7 +16,7 @@ We distinguish between invoices where the company owes money vs. is owed money. 
 
 ## Get a list of existing bills
 
-You can [get a list of bills](/sync-for-payables-api#/operations/list-bills) for a company from the Sync for Payables API
+You can [get a list of bills](/sync-for-payables-api#/operations/list-bills) for a company using Sync for Payables:
 
 ```http request title="List bills"
 GET https://api.codat.io/companies/{companyId}/data/bills?page=1&pageSize=100

@@ -12,7 +12,7 @@ const usecases = [
   {
     icon: "/img/logos/usecases/sync-expenses.svg",
     title: "Managing expenses",
-    description: "Integrate data from corporate cards and expenses management platforms into accounting platforms your customers use.",
+    description: "Integrate data from corporate cards and expense management platforms into accounting platforms your customers use.",
     link: "/usecases/summary/managing-expenses",
     linkText: "Discover expense management →",
     linkTextMini: "Discover expense management →",
@@ -20,7 +20,7 @@ const usecases = [
   {
     icon: "/img/logos/usecases/sync-commerce.svg",
     title: "Integrating commerce data",
-    description: "Integrate high-volume sales and payment data from PoS, eCommerce, and payments platforms into your SMBs' accounting platforms.",
+    description: "Sync sales and payment data from PoS, eCommerce, and payments platforms with your customers' accounting platforms.",
     link: "/usecases/summary/integrating-commerce-data",
     linkText: "Discover commerce data integration →",
     linkTextMini: "Discover commerce data integration →",
@@ -36,7 +36,7 @@ const usecases = [
   {
     icon: "/img/logos/usecases/accounts-payable.svg",
     title: "Automating payables",
-    description: "Automate your customers' accounts payable processes by reflecting bills from their business software and suppliers in their accounting platforms. ",
+    description: "Pull unpaid bills from customers' accounting software and mark them as paid to automate the accounts payable process.",
     link: "/usecases/summary/automating-payables",
     linkText: "Discover payables automation →",
     linkTextMini: "Discover payables automation →",

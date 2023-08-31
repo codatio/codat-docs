@@ -48,7 +48,7 @@ Every company has its own preference for representing an individual expense in i
 
 2. Standardization of expense data
 
-The Sync for Expenses API is built to standardize data opinionated based on feedback from customers and industry expertise. This means you don’t need to make decisions on how to handle validation differences between accounting platforms. Simply send transactions based on what they represent and let Codat handle the mapping to their best representation in the accounting software.
+Sync for Expenses is built to standardize data opinionated based on feedback from customers and industry expertise. This means you don’t need to make decisions on how to handle validation differences between accounting platforms. Simply send transactions based on what they represent and let Codat handle the mapping to their best representation in the accounting software.
 
 3. Multiple transaction support
 
@@ -62,8 +62,7 @@ Our detailed documentation aimed at developers and a variety of SDKs mean you ca
 
 You can use Sync for Expenses alongside all Codat use cases or products.
 
-
-For example, if you are issuing credit cards, using Codat’s Lending product would allow you to determine the risk associated with the company that has the same `companyId` and API key.
+For example, if you are issuing credit cards, using Codat’s [Lending API](/lending/overview) product would allow you to determine the risk associated with the company that has the same `companyId` and API key.
 
 Likewise, you can use `billPayments` to retrieve a list of bills from your customer’s accounting software and enable them to pay these and reconcile their payments.
 

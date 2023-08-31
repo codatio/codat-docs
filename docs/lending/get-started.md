@@ -1,5 +1,5 @@
 ---
-title: "Get started with Lending"
+title: "Get started with Lending API"
 sidebar_label: Get started
 description: "Instructions for getting started with Lending and tables of supported features for accounting, banking and commerce data sources"
 ---

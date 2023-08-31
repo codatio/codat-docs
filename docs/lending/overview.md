@@ -1,7 +1,7 @@
 ---
 title: "Lending API overview"
 sidebar_label: Lending API
-description: "Learn about the features that make up the Lending product"
+description: "Learn about the features that make up the Lending API product"
 displayed_sidebar: lending
 hide_title: true
 hide_description: true
