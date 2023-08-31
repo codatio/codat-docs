@@ -15,6 +15,39 @@ A bill payment in Codat usually represents an allocation of money within any cus
 
 Depending on the bill payments which are allowed by the underlying accounting package, some of these types may be combined.
 
+#### Ways to Pay a bill
+```mermaid
+
+graph TD
+    style note1 fill:#f7fafd,stroke:#333,stroke-width:2px,font-color:#ffffff;
+    style note2 fill:#f7fafd,stroke:#333,stroke-width:2px,font-color:#ffffff;
+    style note3 fill:#f7fafd,stroke:#333,stroke-width:2px,font-color:#ffffff;
+    style note4 fill:#f7fafd,stroke:#333,stroke-width:2px,font-color:#ffffff;
+    style D1 round
+    style D2 round
+    style D3 round
+    style D4 round
+
+    A1(Bill Retrieved) --> B{Type of Payment}
+    A2(Bill Created) --> B
+
+    B --> C1[Payment Against Bill]
+    B --> C2[Allocation of Supplier's Credit Note]
+
+    C1 --> D1[Single Bill Payment]
+    D1 -.- note1[Add lines array containing<br>one element indicating the<br>bill paid and its amount.]
+
+    C1 --> D2[Multiple Bills Payment]
+    D2 -.- note2[Add lines array containing<br>elements for each bill paid<br>and their respective amounts.]
+
+    C2 --> D3[Create billCreditNote]
+    D3 -.- note3[Create a billCreditNote to<br>partially or fully offset<br>the balance of an invoice.]
+
+    D3 --> D4[Create billPayment with billCreditNote]
+    D4 -.- note4[Once this is successfully created<br>you can create a billPayment and<br>include the billCreditNote and<br>the bill to credit in the links array.]
+
+```
+
 ## Using bill payments
 
 ### Paying a single bill with a billPayment
