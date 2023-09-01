@@ -1,6 +1,6 @@
 ---
-title: "Enhanced Financials"
-description: "Introduction to Enhanced Financials"
+title: "Financial statements"
+description: "Introduction to financial statements"
 sidebar_label: "Overview"
 displayed_sidebar: lending
 ---
