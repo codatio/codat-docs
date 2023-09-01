@@ -9,6 +9,7 @@ If you're an Admin, you can view the plan you're currently on in the Codat Porta
 
 | Feature                 | Free trial           | Full access       |
 | :-                      | :--             | :--            |
+| Product access          | Standardized APIs, Assess   | All products        |
 | Seats                   | Unlimited      | Unlimited        |
 | Usage                   | 50 companies<br/>5 connections/source | Unlimited        |
 | Hourly syncs            | ➖             | ✅              |
@@ -42,6 +43,8 @@ Everything from Free plus:
 <summary>Other options</summary>
 
 ## Start-up plan 
+
+You can get started with Codat with usage-based billing at £25/$30 per month per Active Connected Company (active = data pushed or pulled in a given billing period).
 
 ### Features
 
