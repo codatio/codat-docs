@@ -94,8 +94,11 @@ However, you can set a more frequent sync schedule if it is required for your us
 - If you are building your own reports or accessing Codat-generated ones that rely on multiple data types, fetch all required data types before you generate the report. Otherwise, there may be inconsistencies in the data freshness. You can check for possible inconsistencies using the data types' `lastSuccessfulSync` properties. 
 
     For example, if you calculate a company's accounts receivable (AR) position using invoices, credit notes, payments, account transactions, and customers with `lastSuccessfulSync` dates of `2023-07-10`, and compare it to the AR position on the balance sheet with the `lastSuccessfulSync` of `2023-07-11`, the results are likely to differ.
+
+- For most data types, we retrieve all available history. For financial statement data types (`balanceSheet`, `profitAndLoss`, `cashFlowStatement`), we retrieve 24 months of history. These default settings can be overriden via our API using [advanced sync settings](/knowledge-base/advanced-sync-settings).
 ---
 
 ## Read next
 
 - [Status codes and errors](/using-the-api/errors)
+- [Advanced sync settings](/knowledge-base/advanced-sync-settings)

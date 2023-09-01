@@ -77,3 +77,7 @@ In the Codat Portal, go to the <a className="external" href="https://app.codat.i
 2. You can also click **Manage** to view the integration's settings page, and then enable the integration from there.
 
 Your Zoho Books integration is now set up.
+
+:::tip Testing with Zoho Books
+Zoho Books allows you to set up a test organization and import or create test data. Register a free account with [Zoho Subscriptions](https://www.zoho.com/uk/subscriptions/?utm_source=zbooks&utm_medium=web-app&utm_content=topbar&utm_campaign=cross-sell), create a new test organization and set a default company for it. Click **Manage** next to the organization name, find the required company, then press **... -> Mark as Default**.
+:::

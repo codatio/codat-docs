@@ -87,7 +87,7 @@ Request body:
 "platformKey"",
 ```
 
-The `platformKey` is the unique key Codat uses instead of financial platform names to remove the dependence on a platform's display name. Platform keys can be found [here](doc:accounting-platform-keys) for accounting and [here](doc:commerce-platform-keys) for commerce, or retrieved from [our API](https://docs.codat.io/reference/listintegrations).
+The `platformKey` is the unique key Codat uses instead of financial platform names to remove the dependence on a platform's display name. View the list of our [accounting](/integrations/accounting/overview#platform-keys), [commerce](/integrations/commerce/overview#platform-keys), and [banking](/integrations/banking/overview#platform-keys) platform keys, or retrieve them using [our API](/codat-api#/operations/list-integrations).
 
 2. Direct your user to the `linkUrl` found in the nested `dataConnection` object for the specified integration, returned in the response. It will prompt the user to enter their credentials for the 3rd-party platform, authorizing the connection and activating it.
 
@@ -114,10 +114,10 @@ A company may link a single source of accounting data but multiple sources of ba
 ### 4. Confirm successful authorization and data synchronization
 
 1. Once the connection is complete (for guidance on how to monitor the connection, read [Set up webhooks](/auth-flow/customize/set-up-webhooks)), mark the connection as authorized and confirm to your user the successful authorization of the connection.
-2. Monitor the synchronization of data (also available in <a href="/codat-api#/operations/get-companies-companyId-dataStatus">Common API</a>):
+2. Monitor the synchronization of data (also available in <a href="/codat-api#/operations/get-company-data-status">our API</a>):
 
 ```http
-GET /dataStatus",
+GET https://api.codat.io/companies/{companyId}/dataStatus",
 ```
 
 Once the initial synchronization of data is complete, you can inform the user accordingly and continue the flow of your app.
@@ -207,7 +207,7 @@ DELETE /companies/{companyId}/connections/{connectionId}",
 
 To [boost your customers' trust](/auth-flow/optimize/privacy#show-that-your-authorization-flow-is-powered-by-codat), you can embed our "Powered by Codat logo" into your application.
 
-You can [download the logo](https://static.codat.io/public/branding/powered-by-codat.svg") or link it from our content delivery network:
+You can [download the logo](https://static.codat.io/public/branding/powered-by-codat.svg) or link it from our content delivery network:
 
 <img
   src="https://static.codat.io/public/branding/powered-by-codat.svg"

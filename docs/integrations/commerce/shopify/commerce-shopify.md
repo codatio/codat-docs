@@ -63,6 +63,12 @@ If you choose this connection method, you should be aware of Shopify's requireme
 
 To get started, see [Set up Shopify using public apps](/integrations/commerce/shopify/commerce-shopify-setup).
 
+## OAuth requirements to apps
+
+If your app is not yet installed or being reinstalled, it must direct the user to their OAuth journey. To comply with this, you need a basic mapping of the Shopify store to a Codat company, which then generates a Link URL that redirects the user either to the OAUth screen, or to your app's dashboard. 
+
+![](/img/integrations/commerce/shopify/Shopify-oauth-flow.png)
+
 ---
 
 ## Read next

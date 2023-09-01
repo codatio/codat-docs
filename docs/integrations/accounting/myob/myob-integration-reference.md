@@ -63,3 +63,31 @@ When a company data file is correctly stored online (to enable linking with the 
 ### Does the integration support multiple company data files for the same linked connection?
 
 The integration does not currently support this. This will be implemented in the future.
+
+### How do I create a customer or a supplier without an address?
+
+You may want to create or update a contact (a customer or a supplier) in MYOB without adding an address for them. Because a contact is expected to be either a billing or a shipping contact, you can alter the body of your request to add or change a contact without an address as follows: 
+
+```json
+{ 
+    "id": "customerId", 
+    "customerName": "customerName", 
+    "contactName": "contactName", /// must match contacts.name 
+    "emailAddress": "contact@contactEmail.com", /// must match contacts.email 
+    "phone": "", /// must match contacts.phone "addresses": [], 
+    "contacts": [ 
+        { 
+            "name": "contactName", /// this should match the contactName 
+            "email": "contact@contactEmail.com", /// this should match the emailAddress 
+            "phone": [], /// must match phone 
+            "address": { 
+                "type" : "Billing" /// this needs to be included as Billing 
+                } 
+        } 
+        ], 
+    "taxNumber": "taxNumber", 
+    "status": "Active", 
+    "modifiedDate": "2021-04-16T10:13:55.665Z", 
+    "sourceModifiedDate": "2021-04-16T10:13:55.665Z" 
+}
+```

@@ -11,7 +11,7 @@ In Codat, a company represents a business sharing access to their data. Each com
 
 ![An image from the static](/img/sync-for-expenses/sfe-connections.png)
 
-With Sync for Expenses each company will have two data connections:
+With Sync for Expenses, each company will have two data connections:
 
 - One will be to their accounting platform
 - The other will be to the partner expense integration

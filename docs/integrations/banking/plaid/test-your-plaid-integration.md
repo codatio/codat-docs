@@ -73,8 +73,8 @@ A message at the bottom of the screen confirms that you're in sandbox mode.
    A dialog box shows a list of available bank accounts that have sample data for testing. This is Plaid's secure link site.
 3. Select the bank account type you're interested in, or if it's not listed, search for it first.
 4. Select **Continue to** _Bank Name_.  
-   As this is the sandbox, you're taken to a Plaid authentication page. For live bank accounts, a login page is displayed.
-5. Select **Grant Access**.
+   You will either be directed to log in with [sample test credentials](https://plaid.com/docs/sandbox/test-credentials/#sandbox-simple-test-credentials) or to authenticate for the sandbox.
+5. Enter the test credentials or select **Grant Access**.
 6. Wait until a confirmation page is displayed.
 
 You're now ready to start testing.

@@ -29,7 +29,7 @@ This approach prevents duplicate transactions being created in your SMBs' accoun
       "currencyRate": 1.18,
       "contactRef":{
           "id":"08ca1f02-0374-11ed-b939-0242ac120002",
-          "type": 1
+          "type": "Supplier"
       }, 
       "merchantName": "Amazon UK",
       "lines": [

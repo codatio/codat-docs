@@ -10,6 +10,7 @@ Unlike [custom apps](/integrations/commerce/shopify/commerce-shopify-custom-apps
 
 - Your app must satisfy the [Requirements for apps in the Shopify App Store](https://shopify.dev/apps/store/requirements), as published on the Shopify Developers Platform.
 - Your app must be reviewed and approved by Shopify (this can take up to two weeks).
+- If you plan to charge for your app, you will need to integrate to [Shopify's billing API](https://shopify.dev/docs/apps/billing).
   
 :::caution Terms of Service for public apps
 

@@ -396,6 +396,10 @@ module.exports = {
       to: "/lending/guides/loan-qualification/uw-decision",
     },
     {
+      from: "/assess/categories",
+      to: "/assess/portal/categorize-accounts",
+    },
+    {
       from: "/accounting-api/guides/bill-pay/introduction",
       to: "/payables/guides/bill-pay/introduction",
     },
