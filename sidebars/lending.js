@@ -40,7 +40,7 @@ module.exports = [
   },
   {
     type: "link",
-    label: "Enhanced Financials",
+    label: "Financial statements",
     customProps: {
       hr: true,
       section: "Enhanced reports",

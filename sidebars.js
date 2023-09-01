@@ -40,7 +40,7 @@ module.exports = {
       },
       items: [
         "get-started/first-steps",
-        "get-started/first-ten-minutes",
+        //"get-started/first-ten-minutes",
         "get-started/libraries",
         "get-started/developer-resources",
         //"get-started/office-hours",
