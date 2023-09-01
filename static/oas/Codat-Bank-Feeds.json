@@ -13,7 +13,7 @@
       "email": "support@codat.io",
       "name": "Codat"
     },
-    "description": "Bank Feeds API enables your SMB users to set up bank feeds from accounts in your application to supported accounting platforms.\n\nA bank feed is a connection between a source bank account in your application and a target bank account in a supported accounting package.\n\n[Read more...](https://docs.codat.io/bank-feeds-api/overview)\n\n[See our OpenAPI spec](https://github.com/codatio/oas)",
+    "description": "Bank Feeds API enables your SMB users to set up bank feeds from accounts in your application to supported accounting platforms.\r\n\r\nA bank feed is a connection between a source bank account in your application and a target bank account in a supported accounting package.\r\n\r\n[Read more...](https://docs.codat.io/bank-feeds-api/overview)\r\n\r\n[See our OpenAPI spec](https://github.com/codatio/oas)",
     "termsOfService": "https://www.codat.io/legals/"
   },
   "security": [
@@ -149,7 +149,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "﻿Creates a new company that can be used to assign connections to. \n\nIf forbidden characters (see `name` pattern) are present in the request, a company will be created with the forbidden characters removed. For example, `Company (Codat[1])` with be created as `Company Codat1`.\n\n",
+        "description": "﻿Creates a new company that can be used to assign connections to. \r\n\r\nIf forbidden characters (see `name` pattern) are present in the request, a company will be created with the forbidden characters removed. For example, `Company (Codat[1])` with be created as `Company Codat1`.\r\n\r\n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -382,7 +382,7 @@
             "$ref": "#/components/parameters/companyId"
           }
         ],
-        "description": "﻿\nPermanently deletes a company, its connections and any cached data. This operation is irreversible. If the company ID does not exist an error is returned.",
+        "description": "﻿\r\nPermanently deletes a company, its connections and any cached data. This operation is irreversible. If the company ID does not exist an error is returned.",
         "tags": [
           "Companies"
         ],
@@ -462,7 +462,7 @@
       "get": {
         "summary": "List connections",
         "description": "﻿List the connections for a company.",
-        "operationId": "list-company-connections",
+        "operationId": "list-connections",
         "tags": [
           "Connections"
         ],
@@ -547,7 +547,7 @@
       },
       "post": {
         "summary": "Create connection",
-        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \n\nUse the [List Integrations](https://docs.codat.io/DOCS_PATH#/operations/list-integrations) endpoint to access valid platform keys. ",
+        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \r\n\r\nUse the [List Integrations](https://docs.codat.io/DOCS_PATH#/operations/list-integrations) endpoint to access valid platform keys. ",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -556,7 +556,7 @@
         "tags": [
           "Connections"
         ],
-        "operationId": "create-data-connection",
+        "operationId": "create-connection",
         "requestBody": {
           "content": {
             "application/json": {
@@ -613,7 +613,7 @@
     "/companies/{companyId}/connections/{connectionId}": {
       "get": {
         "summary": "Get connection",
-        "operationId": "get-company-connection",
+        "operationId": "get-connection",
         "description": "﻿Returns a specific connection for a company when valid identifiers are provided. If the identifiers are for a deleted company and/or connection, a not found response is returned.",
         "tags": [
           "Connections"
@@ -666,8 +666,8 @@
       },
       "delete": {
         "summary": "Delete connection",
-        "operationId": "delete-company-connection",
-        "description": "﻿Revoke and remove a connection from a company.\nThis operation is not reversible. The end user would need to reauthorize a new data connection if you wish to view new data for this company.",
+        "operationId": "delete-connection",
+        "description": "﻿Revoke and remove a connection from a company.\r\nThis operation is not reversible. The end user would need to reauthorize a new data connection if you wish to view new data for this company.",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -698,6 +698,7 @@
         "summary": "Unlink connection",
         "description": "﻿This allows you to deauthorize a connection, without deleting it from Codat. This means you can still view any data that has previously been pulled into Codat, and also lets you re-authorize in future if your customer wishes to resume sharing their data.",
         "operationId": "unlink-connection",
+        "x-speakeasy-name-override": "unlink",
         "tags": [
           "Connections"
         ],
@@ -810,7 +811,7 @@
           "Source accounts"
         ],
         "summary": "List bank feed bank accounts",
-        "description": "﻿The *List bank feed bank accounts* endpoint returns a list of [bank feed accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankFeedAccount) for a given company's connection.\n\n[Bank feed accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankFeedAccount) are the bank's bank account from which transactions are synced into the accounting platform.\n\n",
+        "description": "﻿The *List bank feed bank accounts* endpoint returns a list of [bank feed accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankFeedAccount) for a given company's connection.\r\n\r\n[Bank feed accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankFeedAccount) are the bank's bank account from which transactions are synced into the accounting platform.\r\n\r\n",
         "operationId": "list-bank-feeds",
         "parameters": [
           {
@@ -902,7 +903,7 @@
           "Source accounts"
         ],
         "summary": "Delete bank feed bank account",
-        "description": "The *delete bank feed bank account* endpoint enables you to remove a source account.\n\nRemoving a source account will also remove any mapping between the source bank feed bank accounts and the target bankfeed bank account.",
+        "description": "The *delete bank feed bank account* endpoint enables you to remove a source account.\r\n\r\nRemoving a source account will also remove any mapping between the source bank feed bank accounts and the target bankfeed bank account.",
         "operationId": "delete-bank-feed-bank-account",
         "parameters": [
           {
@@ -934,8 +935,8 @@
           "Source accounts"
         ],
         "summary": "Generate source account credentials",
-        "description": "﻿The _Generate Bank Account Credentials_ endpoint can be used to generate credentials for QuickBooks Online to use for authentication of the Bank Feed in their portal, each time this is used a new set of credentials will be generated.\n\nThe old credentials will still be valid until the revoke credentials endpoint is used, which will revoke all credentials associated to the data connection.\n",
-        "operationId": "generate-source-account-credentials",
+        "description": "﻿The _Generate Bank Account Credentials_ endpoint can be used to generate credentials for QuickBooks Online to use for authentication of the Bank Feed in their portal, each time this is used a new set of credentials will be generated.\r\n\r\nThe old credentials will still be valid until the revoke credentials endpoint is used, which will revoke all credentials associated to the data connection.\r\n",
+        "operationId": "generate-credentials",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -975,7 +976,7 @@
         ],
         "summary": "Delete all source account credentials",
         "x-speakeasy-name-override": "delete-credentials",
-        "description": "The _Delete Bank Account Credentials_ endpoint serves as a comprehensive mechanism for revoking all existing authorization credentials that a company employs to establish its Bank Feed connection.\n\nIn cases where multiple credential sets have been generated, a single API call to this endpoint revokes all of them.",
+        "description": "The _Delete Bank Account Credentials_ endpoint serves as a comprehensive mechanism for revoking all existing authorization credentials that a company employs to establish its Bank Feed connection.\r\n\r\nIn cases where multiple credential sets have been generated, a single API call to this endpoint revokes all of them.",
         "operationId": "delete-bank-feed-credentials",
         "parameters": [
           {
@@ -1012,7 +1013,7 @@
           "Account mapping"
         ],
         "summary": "List bank feed account mappings",
-        "description": "﻿The *List bank account mappings* endpoint returns information about a source bank account and any current or potential target mapping accounts.\n\nA bank feed account mapping is a specified link between the source account (provided by the Codat user) and the target account (the end users account in the underlying platform).\n\nThis endpoint is only needed if building an account management UI.",
+        "description": "﻿The *List bank account mappings* endpoint returns information about a source bank account and any current or potential target mapping accounts.\r\n\r\nA bank feed account mapping is a specified link between the source account (provided by the Codat user) and the target account (the end users account in the underlying platform).\r\n\r\nThis endpoint is only needed if building an account management UI.",
         "operationId": "get-bank-account-mapping",
         "responses": {
           "200": {
@@ -1038,7 +1039,7 @@
           "Account mapping"
         ],
         "summary": "Create bank feed bank account mapping",
-        "description": "﻿The *Create bank account mapping* endpoint creates a new mapping between a source bank account and a potential account in the accounting platform (target account).\n\nA bank feed account mapping is a specified link between the source account (provided by the Codat user) and the target account (the end users account in the underlying platform).\n\nTo find valid target account options, first call list bank feed account mappings.\n\nThis endpoint is only needed if building an account management UI.",
+        "description": "﻿The *Create bank account mapping* endpoint creates a new mapping between a source bank account and a potential account in the accounting platform (target account).\r\n\r\nA bank feed account mapping is a specified link between the source account (provided by the Codat user) and the target account (the end users account in the underlying platform).\r\n\r\nTo find valid target account options, first call list bank feed account mappings.\r\n\r\nThis endpoint is only needed if building an account management UI.",
         "operationId": "create-bank-account-mapping",
         "requestBody": {
           "content": {
@@ -1055,7 +1056,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AccountMappingResult"
+                  "$ref": "#/components/schemas/BankFeedAccountMappingResponse"
                 },
                 "examples": {}
               }
@@ -1082,7 +1083,7 @@
           "Transactions"
         ],
         "summary": "Create bank account transactions",
-        "description": "﻿The *Create bank account transactions* endpoint creates new [bank account transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) for a given company's connection.\n\n[Bank account transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) are records of monetary amounts that have moved in and out of an SMB's bank account.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create bank transaction model](https://docs.codat.io/bank-feeds-api#/operations/get-create-bankTransactions-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankTransactions) for integrations that support creating a bank account transactions.\n",
+        "description": "﻿The *Create bank account transactions* endpoint creates new [bank account transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) for a given company's connection.\r\n\r\n[Bank account transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) are records of monetary amounts that have moved in and out of an SMB's bank account.\r\n\r\n**Integration-specific behaviour**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create bank transaction model](https://docs.codat.io/bank-feeds-api#/operations/get-create-bankTransactions-model).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankTransactions) for integrations that support creating a bank account transactions.\r\n",
         "operationId": "create-bank-transactions",
         "parameters": [
           {
@@ -1166,12 +1167,12 @@
         }
       ],
       "get": {
-        "summary": "Get push operation",
+        "summary": "Get create operation",
         "tags": [
           "Transactions"
         ],
-        "operationId": "get-push-operation",
-        "x-speakeasy-name-override": "get-operation",
+        "operationId": "get-create-operation",
+        "x-speakeasy-name-override": "get-create-operation",
         "description": "Retrieve push operation.",
         "responses": {
           "200": {
@@ -1218,20 +1219,20 @@
             "$ref": "#/components/parameters/orderBy"
           }
         ],
-        "summary": "List push operations",
+        "summary": "List create operations",
         "tags": [
           "Transactions"
         ],
-        "operationId": "get-company-push-history",
-        "x-speakeasy-name-override": "list-operations",
-        "description": "List push operation records.",
+        "operationId": "list-create-operations",
+        "x-speakeasy-name-override": "list-create-operations",
+        "description": "List create operations.",
         "responses": {
           "200": {
             "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PushHistoryResponse"
+                  "$ref": "#/components/schemas/ListPushOperations"
                 },
                 "examples": {}
               }
@@ -1257,7 +1258,7 @@
     "schemas": {
       "Company": {
         "title": "Company",
-        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/DOCS_PATH#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
+        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/DOCS_PATH#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\r\n\r\nTypically each company is one of your customers.\r\n\r\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
         "type": "object",
         "properties": {
           "id": {
@@ -1346,7 +1347,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushHistoryResponse/allOf/1"
+            "$ref": "#/components/schemas/ListPushOperations/allOf/1"
           }
         ]
       },
@@ -1371,7 +1372,7 @@
       },
       "Connection": {
         "title": "Connection",
-        "description": "﻿A connection represents a [company's](https://docs.codat.io/DOCS_PATH#/schemas/Company) connection to a data source and allows you to synchronize data (pull and/or push) with that source.\n\nA company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:\n\n- [Accounting data](https://docs.codat.io/accounting-api/overview) - 1 active connection.\n- [Banking data](https://docs.codat.io/banking-api/overview) - Multiple active connections.\n- [Commerce data](https://docs.codat.io/commerce-api/overview) - Multiple active connections.\nAny combination of accounting, banking, and commerce data connections is allowed.\n\nBefore you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/auth-flow/overview).",
+        "description": "﻿A connection represents a [company's](https://docs.codat.io/DOCS_PATH#/schemas/Company) connection to a data source and allows you to synchronize data (pull and/or push) with that source.\r\n\r\nA company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:\r\n\r\n- [Accounting data](https://docs.codat.io/accounting-api/overview) - 1 active connection.\r\n- [Banking data](https://docs.codat.io/banking-api/overview) - Multiple active connections.\r\n- [Commerce data](https://docs.codat.io/commerce-api/overview) - Multiple active connections.\r\nAny combination of accounting, banking, and commerce data connections is allowed.\r\n\r\nBefore you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/auth-flow/overview).",
         "type": "object",
         "properties": {
           "id": {
@@ -1521,7 +1522,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushHistoryResponse/allOf/1"
+            "$ref": "#/components/schemas/ListPushOperations/allOf/1"
           }
         ]
       },
@@ -1615,7 +1616,7 @@
         ]
       },
       "BankFeedAccountMapping": {
-        "title": "Bank Feed Bank Account Mapping",
+        "title": "Bank feed account mapping",
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -1642,8 +1643,8 @@
           }
         ]
       },
-      "AccountMappingResult": {
-        "title": "Bank Feed Bank Account Mapping Result",
+      "BankFeedAccountMappingResponse": {
+        "title": "Bank feed account mapping response",
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -2101,7 +2102,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushHistoryResponse/allOf/1"
+            "$ref": "#/components/schemas/ListPushOperations/allOf/1"
           }
         ]
       },
@@ -2201,6 +2202,71 @@
       "PushOperation": {
         "type": "object",
         "x-internal": true,
+        "properties": {
+          "changes": {
+            "type": "array",
+            "nullable": true,
+            "description": "Contains a single entry that communicates which record has changed and the manner in which it changed. ",
+            "items": {
+              "$ref": "#/components/schemas/PushOperation/definitions/pushOperationChange"
+            }
+          },
+          "dataType": {
+            "$ref": "#/components/schemas/DataType",
+            "description": "The type of data being pushed, eg invoices, customers."
+          },
+          "companyId": {
+            "$ref": "#/components/parameters/companyId/schema"
+          },
+          "pushOperationKey": {
+            "type": "string",
+            "format": "uuid",
+            "description": "A unique identifier generated by Codat to represent this single push operation. This identifier can be used to track the status of the push, and should be persisted."
+          },
+          "dataConnectionKey": {
+            "$ref": "#/components/parameters/connectionId/schema"
+          },
+          "requestedOnUtc": {
+            "$ref": "#/components/schemas/DateTime",
+            "description": "The datetime when the push was requested."
+          },
+          "completedOnUtc": {
+            "$ref": "#/components/schemas/DateTime",
+            "description": "The datetime when the push was completed, null if Pending."
+          },
+          "timeoutInMinutes": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "timeoutInSeconds": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "deprecated": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/PushOperation/definitions/pushOperationStatus"
+          },
+          "errorMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "validation": {
+            "$ref": "#/components/schemas/PushOperation/definitions/validation"
+          },
+          "statusCode": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "companyId",
+          "pushOperationKey",
+          "dataConnectionKey",
+          "requestedOnUtc",
+          "status",
+          "statusCode"
+        ],
         "definitions": {
           "validation": {
             "type": "object",
@@ -2294,77 +2360,9 @@
               }
             }
           }
-        },
-        "properties": {
-          "changes": {
-            "type": "array",
-            "nullable": true,
-            "description": "Contains a single entry that communicates which record has changed and the manner in which it changed. ",
-            "items": {
-              "$ref": "#/components/schemas/PushOperation/definitions/pushOperationChange"
-            }
-          },
-          "dataType": {
-            "$ref": "#/components/schemas/DataType",
-            "description": "The type of data being pushed, eg invoices, customers."
-          },
-          "companyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "pushOperationKey": {
-            "type": "string",
-            "format": "uuid",
-            "description": "A unique identifier generated by Codat to represent this single push operation. This identifier can be used to track the status of the push, and should be persisted."
-          },
-          "dataConnectionKey": {
-            "$ref": "#/components/parameters/connectionId/schema"
-          },
-          "requestedOnUtc": {
-            "$ref": "#/components/schemas/DateTime",
-            "description": "The datetime when the push was requested."
-          },
-          "completedOnUtc": {
-            "$ref": "#/components/schemas/DateTime",
-            "description": "The datetime when the push was completed, null if Pending."
-          },
-          "timeoutInMinutes": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "timeoutInSeconds": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true,
-            "deprecated": true
-          },
-          "status": {
-            "$ref": "#/components/schemas/PushOperation/definitions/pushOperationStatus"
-          },
-          "errorMessage": {
-            "type": "string",
-            "nullable": true
-          },
-          "validation": {
-            "$ref": "#/components/schemas/PushOperation/definitions/validation"
-          },
-          "statusCode": {
-            "type": "integer"
-          }
-        },
-        "required": [
-          "companyId",
-          "pushOperationKey",
-          "dataConnectionKey",
-          "requestedOnUtc",
-          "status",
-          "statusCode"
-        ]
+        }
       },
-      "PushOperationSummary": {
-        "$ref": "#/components/schemas/PushOperation"
-      },
-      "PushHistoryResponse": {
+      "ListPushOperations": {
         "x-internal": true,
         "allOf": [
           {
@@ -2392,7 +2390,7 @@
                 "type": "integer"
               },
               "_links": {
-                "$ref": "#/components/schemas/PushHistoryResponse/allOf/1/definitions/links"
+                "$ref": "#/components/schemas/ListPushOperations/allOf/1/definitions/links"
               }
             },
             "definitions": {
@@ -2405,16 +2403,16 @@
                 ],
                 "properties": {
                   "self": {
-                    "$ref": "#/components/schemas/PushHistoryResponse/allOf/1/definitions/halRef"
+                    "$ref": "#/components/schemas/ListPushOperations/allOf/1/definitions/halRef"
                   },
                   "current": {
-                    "$ref": "#/components/schemas/PushHistoryResponse/allOf/1/definitions/halRef"
+                    "$ref": "#/components/schemas/ListPushOperations/allOf/1/definitions/halRef"
                   },
                   "next": {
-                    "$ref": "#/components/schemas/PushHistoryResponse/allOf/1/definitions/halRef"
+                    "$ref": "#/components/schemas/ListPushOperations/allOf/1/definitions/halRef"
                   },
                   "previous": {
-                    "$ref": "#/components/schemas/PushHistoryResponse/allOf/1/definitions/halRef"
+                    "$ref": "#/components/schemas/ListPushOperations/allOf/1/definitions/halRef"
                   }
                 },
                 "examples": [

@@ -8,7 +8,7 @@
   ],
   "info": {
     "title": "Sync for Payables",
-    "description": "The API for Sync for Payables. \n\nSync for Payables is an API and a set of supporting tools built to help integrate with your customers' accounting software, and keep their supplier information, invoices, and payments in sync.\n\n[Read More...](https://docs.codat.io/payables/overview)",
+    "description": "The API for Sync for Payables. \r\n\r\nSync for Payables is an API and a set of supporting tools built to help integrate with your customers' accounting software, and keep their supplier information, invoices, and payments in sync.\r\n\r\n[Read More...](https://docs.codat.io/payables/overview)",
     "version": "3.0.0",
     "contact": {
       "name": "Codat",
@@ -137,7 +137,7 @@
       "description": "Access create, update and delete operations made to an SMB's data connection."
     },
     {
-      "name": "Refresh data",
+      "name": "Manage data",
       "description": "Asynchronously retrieve data from an integration to refresh data in Codat."
     }
   ],
@@ -336,7 +336,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "﻿Creates a new company that can be used to assign connections to. \n\nIf forbidden characters (see `name` pattern) are present in the request, a company will be created with the forbidden characters removed. For example, `Company (Codat[1])` with be created as `Company Codat1`.\n\n",
+        "description": "﻿Creates a new company that can be used to assign connections to. \r\n\r\nIf forbidden characters (see `name` pattern) are present in the request, a company will be created with the forbidden characters removed. For example, `Company (Codat[1])` with be created as `Company Codat1`.\r\n\r\n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -426,7 +426,7 @@
             "$ref": "#/components/parameters/companyId"
           }
         ],
-        "description": "﻿\nPermanently deletes a company, its connections and any cached data. This operation is irreversible. If the company ID does not exist an error is returned.",
+        "description": "﻿\r\nPermanently deletes a company, its connections and any cached data. This operation is irreversible. If the company ID does not exist an error is returned.",
         "tags": [
           "Companies"
         ],
@@ -498,7 +498,7 @@
       "get": {
         "summary": "List connections",
         "description": "﻿List the connections for a company.",
-        "operationId": "list-company-connections",
+        "operationId": "list-connections",
         "tags": [
           "Connections"
         ],
@@ -583,7 +583,7 @@
       },
       "post": {
         "summary": "Create connection",
-        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \n\nUse the [List Integrations](https://docs.codat.io/DOCS_PATH#/operations/list-integrations) endpoint to access valid platform keys. ",
+        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \r\n\r\nUse the [List Integrations](https://docs.codat.io/DOCS_PATH#/operations/list-integrations) endpoint to access valid platform keys. ",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -592,7 +592,7 @@
         "tags": [
           "Connections"
         ],
-        "operationId": "create-data-connection",
+        "operationId": "create-connection",
         "requestBody": {
           "content": {
             "application/json": {
@@ -649,7 +649,7 @@
     "/companies/{companyId}/connections/{connectionId}": {
       "get": {
         "summary": "Get connection",
-        "operationId": "get-company-connection",
+        "operationId": "get-connection",
         "description": "﻿Returns a specific connection for a company when valid identifiers are provided. If the identifiers are for a deleted company and/or connection, a not found response is returned.",
         "tags": [
           "Connections"
@@ -702,8 +702,8 @@
       },
       "delete": {
         "summary": "Delete connection",
-        "operationId": "delete-company-connection",
-        "description": "﻿Revoke and remove a connection from a company.\nThis operation is not reversible. The end user would need to reauthorize a new data connection if you wish to view new data for this company.",
+        "operationId": "delete-connection",
+        "description": "﻿Revoke and remove a connection from a company.\r\nThis operation is not reversible. The end user would need to reauthorize a new data connection if you wish to view new data for this company.",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -734,6 +734,7 @@
         "summary": "Unlink connection",
         "description": "﻿This allows you to deauthorize a connection, without deleting it from Codat. This means you can still view any data that has previously been pulled into Codat, and also lets you re-authorize in future if your customer wishes to resume sharing their data.",
         "operationId": "unlink-connection",
+        "x-speakeasy-name-override": "unlink",
         "tags": [
           "Connections"
         ],
@@ -798,8 +799,7 @@
       ],
       "post": {
         "summary": "Refresh all data",
-        "operationId": "refresh-company-data",
-        "x-speakeasy-name-override": "all",
+        "operationId": "refresh-all-data-types",
         "responses": {
           "204": {
             "description": "No Content"
@@ -814,9 +814,9 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "Refreshes all data types with `fetch on first link` set to `true` for a given company.\n\nThis is an asynchronous operation, and will bring updated data into Codat from the linked integration for you to view.\n\n[Read more](https://docs.codat.io/core-concepts/data-type-settings) about data type settings and `fetch on first link`.",
+        "description": "Refreshes all data types with `fetch on first link` set to `true` for a given company.\r\n\r\nThis is an asynchronous operation, and will bring updated data into Codat from the linked integration for you to view.\r\n\r\n[Read more](https://docs.codat.io/core-concepts/data-type-settings) about data type settings and `fetch on first link`.",
         "tags": [
-          "Refresh data"
+          "Manage data"
         ]
       }
     },
@@ -828,10 +828,10 @@
       ],
       "get": {
         "summary": "Get data status",
-        "operationId": "get-company-data-status",
+        "operationId": "get-data-status",
         "description": "Get the state of each data type for a company",
         "tags": [
-          "Refresh data"
+          "Manage data"
         ],
         "responses": {
           "200": {
@@ -888,10 +888,9 @@
       "post": {
         "summary": "Refresh data type",
         "operationId": "refresh-data-type",
-        "x-speakeasy-name-override": "by-data-type",
-        "description": "Refreshes a given data type for a given company.\n\nThis is an asynchronous operation, and will bring updated data into Codat from the linked integration for you to view.",
+        "description": "Refreshes a given data type for a given company.\r\n\r\nThis is an asynchronous operation, and will bring updated data into Codat from the linked integration for you to view.",
         "tags": [
-          "Refresh data"
+          "Manage data"
         ],
         "parameters": [
           {
@@ -936,7 +935,7 @@
       "get": {
         "summary": "List pull operations",
         "tags": [
-          "Refresh data"
+          "Manage data"
         ],
         "operationId": "list-pull-operations",
         "x-speakeasy-name-override": "list-pull-operations",
@@ -946,7 +945,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DataConnectionHistory"
+                  "$ref": "#/components/schemas/PullOperations"
                 },
                 "examples": {
                   "Example": {
@@ -1042,8 +1041,7 @@
         "tags": [
           "Push operations"
         ],
-        "operationId": "get-company-push-history",
-        "x-speakeasy-name-override": "list-operations",
+        "operationId": "list-push-operations",
         "description": "List push operation records.",
         "responses": {
           "200": {
@@ -1051,7 +1049,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PushHistoryResponse"
+                  "$ref": "#/components/schemas/PushOperations"
                 },
                 "examples": {}
               }
@@ -1086,7 +1084,7 @@
         "operationId": "get-pull-operation",
         "x-speakeasy-name-override": "get-pull-operation",
         "tags": [
-          "Refresh data"
+          "Manage data"
         ],
         "responses": {
           "200": {
@@ -1135,7 +1133,6 @@
           "Push operations"
         ],
         "operationId": "get-push-operation",
-        "x-speakeasy-name-override": "get-operation",
         "description": "Retrieve push operation.",
         "responses": {
           "200": {
@@ -1167,7 +1164,7 @@
           "Accounts"
         ],
         "summary": "List accounts",
-        "description": "﻿The *List accounts* endpoint returns a list of [accounts](https://docs.codat.io/DOCS_PATH#/schemas/Account) for a given company's connection.\n\n[Accounts](https://docs.codat.io/DOCS_PATH#/schemas/Account) are the categories a business uses to record accounting transactions.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).",
+        "description": "﻿The *List accounts* endpoint returns a list of [accounts](https://docs.codat.io/DOCS_PATH#/schemas/Account) for a given company's connection.\r\n\r\n[Accounts](https://docs.codat.io/DOCS_PATH#/schemas/Account) are the categories a business uses to record accounting transactions.\r\n\r\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).",
         "operationId": "list-accounts",
         "parameters": [
           {
@@ -2644,7 +2641,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Get account* endpoint returns a single account for a given `accountId`.\n\n[Accounts](https://docs.codat.io/DOCS_PATH#/schemas/Account) are the categories a business uses to record accounting transactions.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support getting a specific account.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n",
+        "description": "The *Get account* endpoint returns a single account for a given `accountId`.\r\n\r\n[Accounts](https://docs.codat.io/DOCS_PATH#/schemas/Account) are the categories a business uses to record accounting transactions.\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support getting a specific account.\r\n\r\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\r\n",
         "operationId": "get-account"
       }
     },
@@ -7629,8 +7626,8 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "operationId": "get-create-chartOfAccounts-model",
-        "description": "﻿  The *Get create account model* endpoint returns the expected data for the request payload when creating an [account](https://docs.codat.io/DOCS_PATH#/schemas/Account) for a given company and integration.\n    \n    [Accounts](https://docs.codat.io/DOCS_PATH#/schemas/Account) are the categories a business uses to record accounting transactions.\n    \n    **Integration-specific behaviour**\n    \n    See the *response examples* for integration-specific indicative models.\n    \n    Check out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account.\n"
+        "operationId": "get-create-account-model",
+        "description": "﻿  The *Get create account model* endpoint returns the expected data for the request payload when creating an [account](https://docs.codat.io/DOCS_PATH#/schemas/Account) for a given company and integration.\r\n    \r\n    [Accounts](https://docs.codat.io/DOCS_PATH#/schemas/Account) are the categories a business uses to record accounting transactions.\r\n    \r\n    **Integration-specific behaviour**\r\n    \r\n    See the *response examples* for integration-specific indicative models.\r\n    \r\n    Check out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account.\r\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/accounts": {
@@ -7686,7 +7683,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Create account* endpoint creates a new [account](https://docs.codat.io/DOCS_PATH#/schemas/Account) for a given company's connection.\n\n[Accounts](https://docs.codat.io/DOCS_PATH#/schemas/Account) are the categories a business uses to record accounting transactions.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create account model](https://docs.codat.io/DOCS_PATH#/operations/get-create-chartOfAccounts-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account.\n",
+        "description": "The *Create account* endpoint creates a new [account](https://docs.codat.io/DOCS_PATH#/schemas/Account) for a given company's connection.\r\n\r\n[Accounts](https://docs.codat.io/DOCS_PATH#/schemas/Account) are the categories a business uses to record accounting transactions.\r\n\r\n**Integration-specific behaviour**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create account model](https://docs.codat.io/DOCS_PATH#/operations/get-create-chartOfAccounts-model).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account.\r\n",
         "operationId": "create-account"
       }
     },
@@ -9687,7 +9684,7 @@
             "$ref": "#/components/responses/Conflict"
           }
         },
-        "description": "The *List bill credit notes* endpoint returns a list of [bill credit notes](https://docs.codat.io/DOCS_PATH#/schemas/BillCreditNote) for a given company's connection.\n\n[Bill credit notes](https://docs.codat.io/DOCS_PATH#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    ",
+        "description": "The *List bill credit notes* endpoint returns a list of [bill credit notes](https://docs.codat.io/DOCS_PATH#/schemas/BillCreditNote) for a given company's connection.\r\n\r\n[Bill credit notes](https://docs.codat.io/DOCS_PATH#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\r\n\r\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\r\n    ",
         "operationId": "list-bill-credit-notes"
       }
     },
@@ -10596,7 +10593,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Get bill credit note* endpoint returns a single bill credit note for a given `billCreditNoteId`.\n\n[Bill credit notes](https://docs.codat.io/DOCS_PATH#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) for integrations that support getting a specific bill credit note.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n",
+        "description": "The *Get bill credit note* endpoint returns a single bill credit note for a given `billCreditNoteId`.\r\n\r\n[Bill credit notes](https://docs.codat.io/DOCS_PATH#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) for integrations that support getting a specific bill credit note.\r\n\r\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\r\n",
         "operationId": "get-bill-credit-note"
       }
     },
@@ -14571,8 +14568,8 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "operationId": "get-create-update-billCreditNotes-model",
-        "description": "The *Get create/update bill credit note model* endpoint returns the expected data for the request payload when creating and updating a [bill credit note](https://docs.codat.io/DOCS_PATH#/schemas/BillCreditNote) for a given company and integration.\n\n[Bill credit notes](https://docs.codat.io/DOCS_PATH#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) for integrations that support creating and updating a bill credit note.\n"
+        "operationId": "get-create-update-billCreditNote-model",
+        "description": "The *Get create/update bill credit note model* endpoint returns the expected data for the request payload when creating and updating a [bill credit note](https://docs.codat.io/DOCS_PATH#/schemas/BillCreditNote) for a given company and integration.\r\n\r\n[Bill credit notes](https://docs.codat.io/DOCS_PATH#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\r\n\r\n**Integration-specific behaviour**\r\n\r\nSee the *response examples* for integration-specific indicative models.\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) for integrations that support creating and updating a bill credit note.\r\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/billCreditNotes": {
@@ -14855,7 +14852,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Create bill credit note* endpoint creates a new [bill credit note](https://docs.codat.io/DOCS_PATH#/schemas/BillCreditNote) for a given company's connection.\n\n[Bill credit notes](https://docs.codat.io/DOCS_PATH#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill credit note model](https://docs.codat.io/DOCS_PATH#/operations/get-create-update-billCreditNotes-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) for integrations that support creating a bill credit note.\n",
+        "description": "The *Create bill credit note* endpoint creates a new [bill credit note](https://docs.codat.io/DOCS_PATH#/schemas/BillCreditNote) for a given company's connection.\r\n\r\n[Bill credit notes](https://docs.codat.io/DOCS_PATH#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\r\n\r\n**Integration-specific behaviour**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill credit note model](https://docs.codat.io/DOCS_PATH#/operations/get-create-update-billCreditNotes-model).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) for integrations that support creating a bill credit note.\r\n",
         "operationId": "create-bill-credit-note"
       }
     },
@@ -14923,7 +14920,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Update bill credit note* endpoint updates an existing [bill credit note](https://docs.codat.io/DOCS_PATH#/schemas/BillCreditNote) for a given company's connection.\n\n[Bill credit notes](https://docs.codat.io/DOCS_PATH#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill credit note model](https://docs.codat.io/DOCS_PATH#/operations/get-create-update-billCreditNotes-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) for integrations that support creating a bill credit note.\n",
+        "description": "The *Update bill credit note* endpoint updates an existing [bill credit note](https://docs.codat.io/DOCS_PATH#/schemas/BillCreditNote) for a given company's connection.\r\n\r\n[Bill credit notes](https://docs.codat.io/DOCS_PATH#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\r\n\r\n**Integration-specific behaviour**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill credit note model](https://docs.codat.io/DOCS_PATH#/operations/get-create-update-billCreditNotes-model).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) for integrations that support creating a bill credit note.\r\n",
         "operationId": "update-bill-credit-note"
       }
     },
@@ -16312,7 +16309,7 @@
             "$ref": "#/components/responses/Conflict"
           }
         },
-        "description": "The *List bill payments* endpoint returns a list of [bill payments](https://docs.codat.io/DOCS_PATH#/schemas/BillPayment) for a given company's connection.\n\n[Bill payments](https://docs.codat.io/DOCS_PATH#/schemas/BillPayment) are an allocation of money within any customer accounts payable account.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    ",
+        "description": "The *List bill payments* endpoint returns a list of [bill payments](https://docs.codat.io/DOCS_PATH#/schemas/BillPayment) for a given company's connection.\r\n\r\n[Bill payments](https://docs.codat.io/DOCS_PATH#/schemas/BillPayment) are an allocation of money within any customer accounts payable account.\r\n\r\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\r\n    ",
         "operationId": "list-bill-payments"
       }
     },
@@ -16917,7 +16914,7 @@
           }
         },
         "summary": "Get bill payment",
-        "description": "The *Get bill payment* endpoint returns a single bill payment for a given `billPaymentId`.\n\n[Bill payments](https://docs.codat.io/DOCS_PATH#/schemas/BillPayment) are an allocation of money within any customer accounts payable account.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billPayments) for integrations that support getting a specific bill payment.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n",
+        "description": "The *Get bill payment* endpoint returns a single bill payment for a given `billPaymentId`.\r\n\r\n[Bill payments](https://docs.codat.io/DOCS_PATH#/schemas/BillPayment) are an allocation of money within any customer accounts payable account.\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billPayments) for integrations that support getting a specific bill payment.\r\n\r\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\r\n",
         "operationId": "get-bill-payments"
       }
     },
@@ -19410,8 +19407,8 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "operationId": "get-create-billPayments-model",
-        "description": "The *Get create bill payment model* endpoint returns the expected data for the request payload when creating a [bill payment](https://docs.codat.io/DOCS_PATH#/schemas/BillPayment) for a given company and integration.\n\n[Bill payments](https://docs.codat.io/DOCS_PATH#/schemas/BillPayment) are an allocation of money within any customer accounts payable account.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billPayments) for integrations that support creating a bill payment.\n"
+        "operationId": "get-create-billPayment-model",
+        "description": "The *Get create bill payment model* endpoint returns the expected data for the request payload when creating a [bill payment](https://docs.codat.io/DOCS_PATH#/schemas/BillPayment) for a given company and integration.\r\n\r\n[Bill payments](https://docs.codat.io/DOCS_PATH#/schemas/BillPayment) are an allocation of money within any customer accounts payable account.\r\n\r\n**Integration-specific behaviour**\r\n\r\nSee the *response examples* for integration-specific indicative models.\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billPayments) for integrations that support creating a bill payment.\r\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/billPayments": {
@@ -19647,7 +19644,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Create bill payment* endpoint creates a new [bill payment](https://docs.codat.io/DOCS_PATH#/schemas/BillPayment) for a given company's connection.\n\n[Bill payments](https://docs.codat.io/DOCS_PATH#/schemas/BillPayment) are an allocation of money within any customer accounts payable account.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create bill payment model](https://docs.codat.io/DOCS_PATH#/operations/get-create-billPayments-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billPayments) for integrations that support creating a bill payment.\n",
+        "description": "The *Create bill payment* endpoint creates a new [bill payment](https://docs.codat.io/DOCS_PATH#/schemas/BillPayment) for a given company's connection.\r\n\r\n[Bill payments](https://docs.codat.io/DOCS_PATH#/schemas/BillPayment) are an allocation of money within any customer accounts payable account.\r\n\r\n**Integration-specific behaviour**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create bill payment model](https://docs.codat.io/DOCS_PATH#/operations/get-create-billPayments-model).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billPayments) for integrations that support creating a bill payment.\r\n",
         "operationId": "create-bill-payment"
       }
     },
@@ -22789,7 +22786,7 @@
             "$ref": "#/components/responses/Conflict"
           }
         },
-        "description": "The *List bills* endpoint returns a list of [bills](https://docs.codat.io/DOCS_PATH#/schemas/Bill) for a given company's connection.\n\n[Bills](https://docs.codat.io/DOCS_PATH#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    ",
+        "description": "The *List bills* endpoint returns a list of [bills](https://docs.codat.io/DOCS_PATH#/schemas/Bill) for a given company's connection.\r\n\r\n[Bills](https://docs.codat.io/DOCS_PATH#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\r\n\r\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\r\n    ",
         "operationId": "list-bills"
       }
     },
@@ -24437,7 +24434,7 @@
           }
         },
         "summary": "Get bill",
-        "description": "The *Get bill* endpoint returns a single bill for a given `billId`.\n\n[Bills](https://docs.codat.io/DOCS_PATH#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support getting a specific bill.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n",
+        "description": "The *Get bill* endpoint returns a single bill for a given `billId`.\r\n\r\n[Bills](https://docs.codat.io/DOCS_PATH#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support getting a specific bill.\r\n\r\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\r\n",
         "operationId": "get-bill"
       }
     },
@@ -28922,8 +28919,8 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "operationId": "get-create-update-bills-model",
-        "description": "﻿The *Get create/update bill model* endpoint returns the expected data for the request payload when creating and updating a [bill](https://docs.codat.io/DOCS_PATH#/schemas/Bill) for a given company and integration.\n\n[Bills](https://docs.codat.io/DOCS_PATH#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support creating and updating a bill.\n"
+        "operationId": "get-create-update-bill-model",
+        "description": "﻿The *Get create/update bill model* endpoint returns the expected data for the request payload when creating and updating a [bill](https://docs.codat.io/DOCS_PATH#/schemas/Bill) for a given company and integration.\r\n\r\n[Bills](https://docs.codat.io/DOCS_PATH#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\r\n\r\n**Integration-specific behaviour**\r\n\r\nSee the *response examples* for integration-specific indicative models.\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support creating and updating a bill.\r\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/bills": {
@@ -29233,7 +29230,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Create bill* endpoint creates a new [bill](https://docs.codat.io/DOCS_PATH#/schemas/Bill) for a given company's connection.\n\n[Bills](https://docs.codat.io/DOCS_PATH#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill model](https://docs.codat.io/DOCS_PATH#/operations/get-create-update-bills-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support creating a bill.\n",
+        "description": "The *Create bill* endpoint creates a new [bill](https://docs.codat.io/DOCS_PATH#/schemas/Bill) for a given company's connection.\r\n\r\n[Bills](https://docs.codat.io/DOCS_PATH#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\r\n\r\n**Integration-specific behaviour**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill model](https://docs.codat.io/DOCS_PATH#/operations/get-create-update-bills-model).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support creating a bill.\r\n",
         "operationId": "create-bill"
       }
     },
@@ -29296,7 +29293,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Update bill* endpoint updates an existing [bill](https://docs.codat.io/DOCS_PATH#/schemas/Bill) for a given company's connection.\n\n[Bills](https://docs.codat.io/DOCS_PATH#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill model](https://docs.codat.io/DOCS_PATH#/operations/get-create-update-bills-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support creating a bill.\n",
+        "description": "The *Update bill* endpoint updates an existing [bill](https://docs.codat.io/DOCS_PATH#/schemas/Bill) for a given company's connection.\r\n\r\n[Bills](https://docs.codat.io/DOCS_PATH#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\r\n\r\n**Integration-specific behaviour**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill model](https://docs.codat.io/DOCS_PATH#/operations/get-create-update-bills-model).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support creating a bill.\r\n",
         "operationId": "update-bill"
       }
     },
@@ -29322,7 +29319,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AttachmentsDataset"
+                  "$ref": "#/components/schemas/Attachments"
                 }
               }
             }
@@ -29339,7 +29336,7 @@
         },
         "operationId": "list-bill-attachments",
         "summary": "List bill attachments",
-        "description": "The *List bill attachments* endpoint returns a list of attachments available to download for a given `billId`.\n\n[Bills](https://docs.codat.io/DOCS_PATH#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support listing bill attachments.\n"
+        "description": "The *List bill attachments* endpoint returns a list of attachments available to download for a given `billId`.\r\n\r\n[Bills](https://docs.codat.io/DOCS_PATH#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support listing bill attachments.\r\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/bills/{billId}/attachments/{attachmentId}": {
@@ -29386,7 +29383,7 @@
           }
         },
         "summary": "Get bill attachment",
-        "description": "The *Get bill attachment* endpoint returns a specific attachment for a given `billId` and `attachmentId`.\n\n[Bills](https://docs.codat.io/DOCS_PATH#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support getting a bill attachment.\n",
+        "description": "The *Get bill attachment* endpoint returns a specific attachment for a given `billId` and `attachmentId`.\r\n\r\n[Bills](https://docs.codat.io/DOCS_PATH#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support getting a bill attachment.\r\n",
         "operationId": "get-bill-attachment"
       }
     },
@@ -29435,7 +29432,7 @@
           }
         },
         "summary": "Download bill attachment",
-        "description": "The *Download bill attachment* endpoint downloads a specific attachment for a given `billId` and `attachmentId`.\n\n[Bills](https://docs.codat.io/DOCS_PATH#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support downloading a bill attachment.\n",
+        "description": "The *Download bill attachment* endpoint downloads a specific attachment for a given `billId` and `attachmentId`.\r\n\r\n[Bills](https://docs.codat.io/DOCS_PATH#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support downloading a bill attachment.\r\n",
         "operationId": "download-bill-attachment"
       }
     },
@@ -29480,7 +29477,7 @@
           }
         },
         "summary": "Upload bill attachment",
-        "description": "The *Upload bill attachment* endpoint uploads an attachment and assigns it against a specific `billId`.\n\n[Bills](https://docs.codat.io/DOCS_PATH#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\n**Integration-specific behaviour**\n\nFor more details on supported file types by integration see [Attachments](https://docs.codat.io/DOCS_PATH#/schemas/Attachment).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support uploading a bill attachment.\n",
+        "description": "The *Upload bill attachment* endpoint uploads an attachment and assigns it against a specific `billId`.\r\n\r\n[Bills](https://docs.codat.io/DOCS_PATH#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\r\n\r\n**Integration-specific behaviour**\r\n\r\nFor more details on supported file types by integration see [Attachments](https://docs.codat.io/DOCS_PATH#/schemas/Attachment).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support uploading a bill attachment.\r\n",
         "operationId": "upload-bill-attachment"
       }
     },
@@ -30826,8 +30823,8 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "operationId": "get-create-journalEntries-model",
-        "description": "﻿The *Get create journal entry model* endpoint returns the expected data for the request payload when creating a [journal entry](https://docs.codat.io/DOCS_PATH#/schemas/JournalEntry) for a given company and integration.\n\n[Journal entries](https://docs.codat.io/DOCS_PATH#/schemas/JournalEntry) are  made in a company's general ledger, or accounts, when transactions are approved.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries) for integrations that support creating a journal entry.\n"
+        "operationId": "get-create-journalEntry-model",
+        "description": "﻿The *Get create journal entry model* endpoint returns the expected data for the request payload when creating a [journal entry](https://docs.codat.io/DOCS_PATH#/schemas/JournalEntry) for a given company and integration.\r\n\r\n[Journal entries](https://docs.codat.io/DOCS_PATH#/schemas/JournalEntry) are  made in a company's general ledger, or accounts, when transactions are approved.\r\n\r\n**Integration-specific behaviour**\r\n\r\nSee the *response examples* for integration-specific indicative models.\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries) for integrations that support creating a journal entry.\r\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/journalEntries": {
@@ -31011,7 +31008,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Create journal entry* endpoint creates a new [journal entry](https://docs.codat.io/DOCS_PATH#/schemas/JournalEntry) for a given company's connection.\n\n[Journal entries](https://docs.codat.io/DOCS_PATH#/schemas/JournalEntry) are  made in a company's general ledger, or accounts, when transactions are approved.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create journal entry model](https://docs.codat.io/DOCS_PATH#/operations/get-create-journalEntries-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries) for integrations that support creating a journal entry.\n",
+        "description": "The *Create journal entry* endpoint creates a new [journal entry](https://docs.codat.io/DOCS_PATH#/schemas/JournalEntry) for a given company's connection.\r\n\r\n[Journal entries](https://docs.codat.io/DOCS_PATH#/schemas/JournalEntry) are  made in a company's general ledger, or accounts, when transactions are approved.\r\n\r\n**Integration-specific behaviour**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create journal entry model](https://docs.codat.io/DOCS_PATH#/operations/get-create-journalEntries-model).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries) for integrations that support creating a journal entry.\r\n",
         "operationId": "create-journal-entry"
       }
     },
@@ -31295,7 +31292,7 @@
             "$ref": "#/components/responses/Conflict"
           }
         },
-        "description": "The *List journals* endpoint returns a list of [journals](https://docs.codat.io/DOCS_PATH#/schemas/Journal) for a given company's connection.\n\n[Journals](https://docs.codat.io/DOCS_PATH#/schemas/Journal) are used to record all the financial transactions of a company.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    ",
+        "description": "The *List journals* endpoint returns a list of [journals](https://docs.codat.io/DOCS_PATH#/schemas/Journal) for a given company's connection.\r\n\r\n[Journals](https://docs.codat.io/DOCS_PATH#/schemas/Journal) are used to record all the financial transactions of a company.\r\n\r\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\r\n    ",
         "operationId": "list-journals"
       }
     },
@@ -31419,7 +31416,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Get journal* endpoint returns a single journal for a given `journalId`.\n\n[Journals](https://docs.codat.io/DOCS_PATH#/schemas/Journal) are used to record all the financial transactions of a company.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journals) for integrations that support getting a specific journal.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n",
+        "description": "The *Get journal* endpoint returns a single journal for a given `journalId`.\r\n\r\n[Journals](https://docs.codat.io/DOCS_PATH#/schemas/Journal) are used to record all the financial transactions of a company.\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journals) for integrations that support getting a specific journal.\r\n\r\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\r\n",
         "operationId": "get-journal"
       }
     },
@@ -31584,8 +31581,8 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "operationId": "get-create-journals-model",
-        "description": "The *Get create journal model* endpoint returns the expected data for the request payload when creating a [journal](https://docs.codat.io/DOCS_PATH#/schemas/Journal) for a given company and integration.\n\n[Journals](https://docs.codat.io/DOCS_PATH#/schemas/Journal) are used to record all the financial transactions of a company.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journals) for integrations that support creating a journal.\n"
+        "operationId": "get-create-journal-model",
+        "description": "The *Get create journal model* endpoint returns the expected data for the request payload when creating a [journal](https://docs.codat.io/DOCS_PATH#/schemas/Journal) for a given company and integration.\r\n\r\n[Journals](https://docs.codat.io/DOCS_PATH#/schemas/Journal) are used to record all the financial transactions of a company.\r\n\r\n**Integration-specific behaviour**\r\n\r\nSee the *response examples* for integration-specific indicative models.\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journals) for integrations that support creating a journal.\r\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/journals": {
@@ -31641,7 +31638,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Create journal* endpoint creates a new [journal](https://docs.codat.io/DOCS_PATH#/schemas/Journal) for a given company's connection.\n\n[Journals](https://docs.codat.io/DOCS_PATH#/schemas/Journal) are used to record all the financial transactions of a company.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create journal model](https://docs.codat.io/DOCS_PATH#/operations/get-create-journals-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journals) for integrations that support creating a journal.\n",
+        "description": "The *Create journal* endpoint creates a new [journal](https://docs.codat.io/DOCS_PATH#/schemas/Journal) for a given company's connection.\r\n\r\n[Journals](https://docs.codat.io/DOCS_PATH#/schemas/Journal) are used to record all the financial transactions of a company.\r\n\r\n**Integration-specific behaviour**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create journal model](https://docs.codat.io/DOCS_PATH#/operations/get-create-journals-model).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journals) for integrations that support creating a journal.\r\n",
         "operationId": "create-journal"
       }
     },
@@ -31814,7 +31811,7 @@
             "$ref": "#/components/responses/Conflict"
           }
         },
-        "description": "The *List payment methods* endpoint returns a list of [payment methods](https://docs.codat.io/DOCS_PATH#/schemas/PaymentMethod) for a given company's connection.\n\n[Payment methods](https://docs.codat.io/DOCS_PATH#/schemas/PaymentMethod) are used to pay a Bill. Payment Methods are referenced on [Bill Payments](https://docs.codat.io/DOCS_PATH#/schemas/BillPayment) and [Payments](https://docs.codat.io/DOCS_PATH#/schemas/Payment).\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    ",
+        "description": "The *List payment methods* endpoint returns a list of [payment methods](https://docs.codat.io/DOCS_PATH#/schemas/PaymentMethod) for a given company's connection.\r\n\r\n[Payment methods](https://docs.codat.io/DOCS_PATH#/schemas/PaymentMethod) are used to pay a Bill. Payment Methods are referenced on [Bill Payments](https://docs.codat.io/DOCS_PATH#/schemas/BillPayment) and [Payments](https://docs.codat.io/DOCS_PATH#/schemas/Payment).\r\n\r\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\r\n    ",
         "operationId": "list-payment-methods"
       }
     },
@@ -31898,7 +31895,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Get payment method* endpoint returns a single payment method for a given `paymentMethodId`.\n\n[Payment methods](https://docs.codat.io/DOCS_PATH#/schemas/PaymentMethod) are used to pay a Bill. Payment Methods are referenced on [Bill Payments](https://docs.codat.io/DOCS_PATH#/schemas/BillPayment) and [Payments](https://docs.codat.io/DOCS_PATH#/schemas/Payment).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=paymentMethods) for integrations that support getting a specific payment method.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n",
+        "description": "The *Get payment method* endpoint returns a single payment method for a given `paymentMethodId`.\r\n\r\n[Payment methods](https://docs.codat.io/DOCS_PATH#/schemas/PaymentMethod) are used to pay a Bill. Payment Methods are referenced on [Bill Payments](https://docs.codat.io/DOCS_PATH#/schemas/BillPayment) and [Payments](https://docs.codat.io/DOCS_PATH#/schemas/Payment).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=paymentMethods) for integrations that support getting a specific payment method.\r\n\r\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\r\n",
         "operationId": "get-payment-method"
       }
     },
@@ -33012,7 +33009,7 @@
             "$ref": "#/components/responses/Conflict"
           }
         },
-        "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/DOCS_PATH#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/DOCS_PATH#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    ",
+        "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/DOCS_PATH#/schemas/Supplier) for a given company's connection.\r\n\r\n[Suppliers](https://docs.codat.io/DOCS_PATH#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\r\n\r\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\r\n    ",
         "operationId": "list-suppliers"
       }
     },
@@ -33435,7 +33432,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Get supplier* endpoint returns a single supplier for a given `supplierId`.\n\n[Suppliers](https://docs.codat.io/DOCS_PATH#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support getting a specific supplier.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n",
+        "description": "The *Get supplier* endpoint returns a single supplier for a given `supplierId`.\r\n\r\n[Suppliers](https://docs.codat.io/DOCS_PATH#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support getting a specific supplier.\r\n\r\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\r\n",
         "operationId": "get-supplier"
       }
     },
@@ -38483,8 +38480,8 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "operationId": "get-create-update-suppliers-model",
-        "description": "The *Get create/update supplier model* endpoint returns the expected data for the request payload when creating and updating a [supplier](https://docs.codat.io/DOCS_PATH#/schemas/Supplier) for a given company and integration.\n\n[Suppliers](https://docs.codat.io/DOCS_PATH#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support creating and updating a supplier.\n"
+        "operationId": "get-create-update-supplier-model",
+        "description": "The *Get create/update supplier model* endpoint returns the expected data for the request payload when creating and updating a [supplier](https://docs.codat.io/DOCS_PATH#/schemas/Supplier) for a given company and integration.\r\n\r\n[Suppliers](https://docs.codat.io/DOCS_PATH#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\r\n\r\n**Integration-specific behaviour**\r\n\r\nSee the *response examples* for integration-specific indicative models.\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support creating and updating a supplier.\r\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/suppliers": {
@@ -38550,7 +38547,7 @@
           }
         },
         "summary": "Create supplier",
-        "description": "The *Create supplier* endpoint creates a new [supplier](https://docs.codat.io/DOCS_PATH#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/DOCS_PATH#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update supplier model](https://docs.codat.io/DOCS_PATH#/operations/get-create-update-suppliers-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support creating a supplier.\n",
+        "description": "The *Create supplier* endpoint creates a new [supplier](https://docs.codat.io/DOCS_PATH#/schemas/Supplier) for a given company's connection.\r\n\r\n[Suppliers](https://docs.codat.io/DOCS_PATH#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\r\n\r\n**Integration-specific behaviour**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update supplier model](https://docs.codat.io/DOCS_PATH#/operations/get-create-update-suppliers-model).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support creating a supplier.\r\n",
         "operationId": "create-supplier"
       }
     },
@@ -38613,7 +38610,7 @@
           }
         },
         "summary": "Update supplier",
-        "description": "The *Update supplier* endpoint updates an existing [supplier](https://docs.codat.io/DOCS_PATH#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/DOCS_PATH#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update supplier model](https://docs.codat.io/DOCS_PATH#/operations/get-create-update-suppliers-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support creating a supplier.\n",
+        "description": "The *Update supplier* endpoint updates an existing [supplier](https://docs.codat.io/DOCS_PATH#/schemas/Supplier) for a given company's connection.\r\n\r\n[Suppliers](https://docs.codat.io/DOCS_PATH#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\r\n\r\n**Integration-specific behaviour**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update supplier model](https://docs.codat.io/DOCS_PATH#/operations/get-create-update-suppliers-model).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support creating a supplier.\r\n",
         "operationId": "update-supplier"
       }
     },
@@ -39792,7 +39789,7 @@
             "$ref": "#/components/responses/Conflict"
           }
         },
-        "description": "The *List tax rates* endpoint returns a list of [tax rates](https://docs.codat.io/DOCS_PATH#/schemas/TaxRate) for a given company's connection.\n\n[Tax rates](https://docs.codat.io/DOCS_PATH#/schemas/TaxRate) are a set of taxes and associated rates within the SMB's accounting package.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    ",
+        "description": "The *List tax rates* endpoint returns a list of [tax rates](https://docs.codat.io/DOCS_PATH#/schemas/TaxRate) for a given company's connection.\r\n\r\n[Tax rates](https://docs.codat.io/DOCS_PATH#/schemas/TaxRate) are a set of taxes and associated rates within the SMB's accounting package.\r\n\r\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\r\n    ",
         "operationId": "list-tax-rates"
       }
     },
@@ -40269,7 +40266,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Get tax rate* endpoint returns a single tax rate for a given `taxRateId`.\n\n[Tax rates](https://docs.codat.io/DOCS_PATH#/schemas/TaxRate) are a set of taxes and associated rates within the SMB's accounting package.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=taxRates) for integrations that support getting a specific tax rate.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n",
+        "description": "The *Get tax rate* endpoint returns a single tax rate for a given `taxRateId`.\r\n\r\n[Tax rates](https://docs.codat.io/DOCS_PATH#/schemas/TaxRate) are a set of taxes and associated rates within the SMB's accounting package.\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=taxRates) for integrations that support getting a specific tax rate.\r\n\r\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\r\n",
         "operationId": "get-tax-rate"
       }
     },
@@ -40731,7 +40728,7 @@
             "$ref": "#/components/responses/Conflict"
           }
         },
-        "description": "The *List tracking categories* endpoint returns a list of [tracking categories](https://docs.codat.io/DOCS_PATH#/schemas/TrackingCategory) for a given company's connection.\n\n[Tracking categories](https://docs.codat.io/DOCS_PATH#/schemas/TrackingCategory) are used to monitor cost centres and control budgets that sit outside the standard set of accounts.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    ",
+        "description": "The *List tracking categories* endpoint returns a list of [tracking categories](https://docs.codat.io/DOCS_PATH#/schemas/TrackingCategory) for a given company's connection.\r\n\r\n[Tracking categories](https://docs.codat.io/DOCS_PATH#/schemas/TrackingCategory) are used to monitor cost centres and control budgets that sit outside the standard set of accounts.\r\n\r\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\r\n    ",
         "operationId": "list-tracking-categories"
       }
     },
@@ -40905,7 +40902,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Get tracking category* endpoint returns a single tracking category for a given `trackingCategoryId`.\n\n[Tracking categories](https://docs.codat.io/DOCS_PATH#/schemas/TrackingCategory) are used to monitor cost centres and control budgets that sit outside the standard set of accounts.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=trackingCategories) for integrations that support getting a specific tracking category.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n",
+        "description": "The *Get tracking category* endpoint returns a single tracking category for a given `trackingCategoryId`.\r\n\r\n[Tracking categories](https://docs.codat.io/DOCS_PATH#/schemas/TrackingCategory) are used to monitor cost centres and control budgets that sit outside the standard set of accounts.\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=trackingCategories) for integrations that support getting a specific tracking category.\r\n\r\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\r\n",
         "operationId": "get-tracking-category"
       }
     }
@@ -41035,7 +41032,7 @@
       },
       "Company": {
         "title": "Company",
-        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/DOCS_PATH#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
+        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/DOCS_PATH#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\r\n\r\nTypically each company is one of your customers.\r\n\r\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
         "type": "object",
         "properties": {
           "id": {
@@ -41136,7 +41133,7 @@
       },
       "Connection": {
         "title": "Connection",
-        "description": "﻿A connection represents a [company's](https://docs.codat.io/DOCS_PATH#/schemas/Company) connection to a data source and allows you to synchronize data (pull and/or push) with that source.\n\nA company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:\n\n- [Accounting data](https://docs.codat.io/accounting-api/overview) - 1 active connection.\n- [Banking data](https://docs.codat.io/banking-api/overview) - Multiple active connections.\n- [Commerce data](https://docs.codat.io/commerce-api/overview) - Multiple active connections.\nAny combination of accounting, banking, and commerce data connections is allowed.\n\nBefore you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/auth-flow/overview).",
+        "description": "﻿A connection represents a [company's](https://docs.codat.io/DOCS_PATH#/schemas/Company) connection to a data source and allows you to synchronize data (pull and/or push) with that source.\r\n\r\nA company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:\r\n\r\n- [Accounting data](https://docs.codat.io/accounting-api/overview) - 1 active connection.\r\n- [Banking data](https://docs.codat.io/banking-api/overview) - Multiple active connections.\r\n- [Commerce data](https://docs.codat.io/commerce-api/overview) - Multiple active connections.\r\nAny combination of accounting, banking, and commerce data connections is allowed.\r\n\r\nBefore you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/auth-flow/overview).",
         "type": "object",
         "properties": {
           "id": {
@@ -41462,7 +41459,7 @@
         ],
         "example": "invoices"
       },
-      "DataConnectionHistory": {
+      "PullOperations": {
         "x-internal": true,
         "allOf": [
           {
@@ -41481,9 +41478,74 @@
           }
         ]
       },
-      "PushOperationSummary": {
+      "PushOperation": {
         "type": "object",
         "x-internal": true,
+        "properties": {
+          "changes": {
+            "type": "array",
+            "nullable": true,
+            "description": "Contains a single entry that communicates which record has changed and the manner in which it changed. ",
+            "items": {
+              "$ref": "#/components/schemas/PushOperation/definitions/pushOperationChange"
+            }
+          },
+          "dataType": {
+            "$ref": "#/components/schemas/DataType",
+            "description": "The type of data being pushed, eg invoices, customers."
+          },
+          "companyId": {
+            "$ref": "#/components/parameters/companyId/schema"
+          },
+          "pushOperationKey": {
+            "type": "string",
+            "format": "uuid",
+            "description": "A unique identifier generated by Codat to represent this single push operation. This identifier can be used to track the status of the push, and should be persisted."
+          },
+          "dataConnectionKey": {
+            "$ref": "#/components/parameters/connectionId/schema"
+          },
+          "requestedOnUtc": {
+            "$ref": "#/components/schemas/Company/properties/created",
+            "description": "The datetime when the push was requested."
+          },
+          "completedOnUtc": {
+            "$ref": "#/components/schemas/Company/properties/created",
+            "description": "The datetime when the push was completed, null if Pending."
+          },
+          "timeoutInMinutes": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "timeoutInSeconds": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "deprecated": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/PushOperation/definitions/pushOperationStatus"
+          },
+          "errorMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "validation": {
+            "$ref": "#/components/schemas/PushOperation/definitions/validation"
+          },
+          "statusCode": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "companyId",
+          "pushOperationKey",
+          "dataConnectionKey",
+          "requestedOnUtc",
+          "status",
+          "statusCode"
+        ],
         "definitions": {
           "validation": {
             "type": "object",
@@ -41494,14 +41556,14 @@
                 "type": "array",
                 "nullable": true,
                 "items": {
-                  "$ref": "#/components/schemas/PushOperationSummary/definitions/validationItem"
+                  "$ref": "#/components/schemas/PushOperation/definitions/validationItem"
                 }
               },
               "warnings": {
                 "type": "array",
                 "nullable": true,
                 "items": {
-                  "$ref": "#/components/schemas/PushOperationSummary/definitions/validationItem"
+                  "$ref": "#/components/schemas/PushOperation/definitions/validationItem"
                 }
               }
             }
@@ -41566,10 +41628,10 @@
             "type": "object",
             "properties": {
               "type": {
-                "$ref": "#/components/schemas/PushOperationSummary/definitions/pushChangeType"
+                "$ref": "#/components/schemas/PushOperation/definitions/pushChangeType"
               },
               "recordRef": {
-                "$ref": "#/components/schemas/PushOperationSummary/definitions/pushOperationRef"
+                "$ref": "#/components/schemas/PushOperation/definitions/pushOperationRef"
               },
               "attachmentId": {
                 "type": "string",
@@ -41577,74 +41639,9 @@
               }
             }
           }
-        },
-        "properties": {
-          "changes": {
-            "type": "array",
-            "nullable": true,
-            "description": "Contains a single entry that communicates which record has changed and the manner in which it changed. ",
-            "items": {
-              "$ref": "#/components/schemas/PushOperationSummary/definitions/pushOperationChange"
-            }
-          },
-          "dataType": {
-            "$ref": "#/components/schemas/DataType",
-            "description": "The type of data being pushed, eg invoices, customers."
-          },
-          "companyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "pushOperationKey": {
-            "type": "string",
-            "format": "uuid",
-            "description": "A unique identifier generated by Codat to represent this single push operation. This identifier can be used to track the status of the push, and should be persisted."
-          },
-          "dataConnectionKey": {
-            "$ref": "#/components/parameters/connectionId/schema"
-          },
-          "requestedOnUtc": {
-            "$ref": "#/components/schemas/Company/properties/created",
-            "description": "The datetime when the push was requested."
-          },
-          "completedOnUtc": {
-            "$ref": "#/components/schemas/Company/properties/created",
-            "description": "The datetime when the push was completed, null if Pending."
-          },
-          "timeoutInMinutes": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "timeoutInSeconds": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true,
-            "deprecated": true
-          },
-          "status": {
-            "$ref": "#/components/schemas/PushOperationSummary/definitions/pushOperationStatus"
-          },
-          "errorMessage": {
-            "type": "string",
-            "nullable": true
-          },
-          "validation": {
-            "$ref": "#/components/schemas/PushOperationSummary/definitions/validation"
-          },
-          "statusCode": {
-            "type": "integer"
-          }
-        },
-        "required": [
-          "companyId",
-          "pushOperationKey",
-          "dataConnectionKey",
-          "requestedOnUtc",
-          "status",
-          "statusCode"
-        ]
+        }
       },
-      "PushHistoryResponse": {
+      "PushOperations": {
         "x-internal": true,
         "allOf": [
           {
@@ -41653,30 +41650,13 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/PushOperationSummary"
+                  "$ref": "#/components/schemas/PushOperation"
                 }
               }
             }
           },
           {
             "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
-      "PushOperation": {
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "data": {
-                "type": "object",
-                "description": "Object submitted in push operation.",
-                "additionalProperties": true
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PushOperationSummary"
           }
         ]
       },
@@ -41937,7 +41917,7 @@
                 }
               },
               "metadata": {
-                "$ref": "#/components/schemas/Bill/allOf/0/properties/metadata"
+                "$ref": "#/components/schemas/Metadata"
               }
             }
           },
@@ -42021,7 +42001,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperationSummary"
+            "$ref": "#/components/schemas/PushOperation"
           }
         ]
       },
@@ -42131,7 +42111,7 @@
                 "$ref": "#/components/schemas/Bill/allOf/0/properties/supplementalData"
               },
               "metadata": {
-                "$ref": "#/components/schemas/Bill/allOf/0/properties/metadata"
+                "$ref": "#/components/schemas/Metadata"
               }
             }
           },
@@ -42446,7 +42426,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperationSummary"
+            "$ref": "#/components/schemas/PushOperation"
           }
         ]
       },
@@ -42462,7 +42442,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperationSummary"
+            "$ref": "#/components/schemas/PushOperation"
           }
         ]
       },
@@ -42530,7 +42510,37 @@
               "paymentMethodRef": {
                 "allOf": [
                   {
-                    "$ref": "#/components/schemas/PaymentMethod/definitions/paymentMethodRef"
+                    "paymentMethodRef": {
+                      "type": "object",
+                      "description": "The payment method the record is linked to in the accounting or commerce platform.",
+                      "properties": {
+                        "id": {
+                          "description": "The unique identifier of the location being referenced.",
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "Name of the location being referenced.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id"
+                      ],
+                      "example": {
+                        "id": "EILBDVJVNUAGVKRQ",
+                        "name": "AliPay"
+                      }
+                    },
+                    "paymentMethodStatus": {
+                      "type": "string",
+                      "enum": [
+                        "Active",
+                        "Archived",
+                        "Unknown"
+                      ],
+                      "description": "Status of the Payment Method",
+                      "example": "Active"
+                    }
                   },
                   {
                     "description": "The Payment Method to which the payment is linked in the accounting platform."
@@ -42551,7 +42561,7 @@
                 "description": "Additional information associated with the payment."
               },
               "metadata": {
-                "$ref": "#/components/schemas/Bill/allOf/0/properties/metadata"
+                "$ref": "#/components/schemas/Metadata"
               },
               "supplementalData": {
                 "$ref": "#/components/schemas/Bill/allOf/0/properties/supplementalData"
@@ -43000,7 +43010,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperationSummary"
+            "$ref": "#/components/schemas/PushOperation"
           }
         ]
       },
@@ -43211,15 +43221,7 @@
                 }
               },
               "metadata": {
-                "type": "object",
-                "x-internal": true,
-                "properties": {
-                  "isDeleted": {
-                    "type": "boolean",
-                    "description": "Indicates whether the record has been deleted in the third-party system this record originated from.",
-                    "nullable": true
-                  }
-                }
+                "$ref": "#/components/schemas/Metadata"
               },
               "supplementalData": {
                 "type": "object",
@@ -43354,7 +43356,6 @@
               "trackingCategoryRefs": {
                 "type": "array",
                 "nullable": true,
-                "deprecated": true,
                 "description": "Collection of categories against which this item is tracked.",
                 "items": {
                   "$ref": "#/components/schemas/TrackingCategory/definitions/trackingCategoryRef"
@@ -43405,7 +43406,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperationSummary"
+            "$ref": "#/components/schemas/PushOperation"
           }
         ]
       },
@@ -43421,11 +43422,11 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperationSummary"
+            "$ref": "#/components/schemas/PushOperation"
           }
         ]
       },
-      "AttachmentsDataset": {
+      "Attachments": {
         "x-internal": true,
         "type": "object",
         "properties": {
@@ -43544,7 +43545,7 @@
                 }
               },
               "metadata": {
-                "$ref": "#/components/schemas/Bill/allOf/0/properties/metadata"
+                "$ref": "#/components/schemas/Metadata"
               },
               "supplementalData": {
                 "$ref": "#/components/schemas/Bill/allOf/0/properties/supplementalData"
@@ -43608,7 +43609,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperationSummary"
+            "$ref": "#/components/schemas/PushOperation"
           }
         ]
       },
@@ -43656,7 +43657,7 @@
                 "$ref": "#/components/schemas/Journal/definitions/journalStatus"
               },
               "metadata": {
-                "$ref": "#/components/schemas/Bill/allOf/0/properties/metadata"
+                "$ref": "#/components/schemas/Metadata"
               }
             }
           },
@@ -43729,7 +43730,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperationSummary"
+            "$ref": "#/components/schemas/PushOperation"
           }
         ]
       },
@@ -43757,7 +43758,7 @@
                 "$ref": "#/components/schemas/PaymentMethod/definitions/paymentMethodStatus"
               },
               "metadata": {
-                "$ref": "#/components/schemas/Bill/allOf/0/properties/metadata"
+                "$ref": "#/components/schemas/Metadata"
               }
             }
           },
@@ -43766,20 +43767,6 @@
           }
         ],
         "definitions": {
-          "paymentMethodRef": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "`id` from the Payment Methods data type"
-              },
-              "name": {
-                "type": "string",
-                "nullable": true,
-                "description": "`name` from the Payment Methods data type"
-              }
-            }
-          },
           "paymentMethodType": {
             "description": "Method of payment.",
             "type": "string",
@@ -43868,7 +43855,7 @@
                   "type": "object",
                   "properties": {
                     "type": {
-                      "$ref": "#/components/schemas/Supplier/allOf/0/properties/addresses/items/definitions/addressType"
+                      "$ref": "#/components/schemas/Supplier/allOf/0/properties/addresses/items/definitions/accountingAddressType"
                     },
                     "line1": {
                       "type": "string",
@@ -43905,7 +43892,7 @@
                     "type"
                   ],
                   "definitions": {
-                    "addressType": {
+                    "accountingAddressType": {
                       "description": "The type of the address",
                       "type": "string",
                       "enum": [
@@ -43936,7 +43923,7 @@
                 "description": "Default currency the supplier's transactional data is recorded in."
               },
               "metadata": {
-                "$ref": "#/components/schemas/Bill/allOf/0/properties/metadata"
+                "$ref": "#/components/schemas/Metadata"
               },
               "supplementalData": {
                 "$ref": "#/components/schemas/Bill/allOf/0/properties/supplementalData"
@@ -44054,7 +44041,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperationSummary"
+            "$ref": "#/components/schemas/PushOperation"
           }
         ]
       },
@@ -44070,7 +44057,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperationSummary"
+            "$ref": "#/components/schemas/PushOperation"
           }
         ]
       },
@@ -44124,7 +44111,7 @@
                 }
               },
               "metadata": {
-                "$ref": "#/components/schemas/Bill/allOf/0/properties/metadata"
+                "$ref": "#/components/schemas/Metadata"
               }
             }
           },
@@ -44371,6 +44358,17 @@
           },
           "detailedErrorCode": {
             "type": "integer"
+          }
+        }
+      },
+      "Metadata": {
+        "type": "object",
+        "x-internal": true,
+        "properties": {
+          "isDeleted": {
+            "type": "boolean",
+            "description": "Indicates whether the record has been deleted in the third-party system this record originated from.",
+            "nullable": true
           }
         }
       }

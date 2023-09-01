@@ -17,7 +17,7 @@
       "url": "https://www.codat.io/",
       "email": "syncforcommerce@codat.io"
     },
-    "description": "The API for Sync for Commerce. \n\nSync for Commerce is an API and a set of supporting tools built to enable e-commerce and point of sale platforms to provide high-quality integrations with numerous accounting platform through standardized API, seamlessly transforming business sale's data into accounting artefacts.\n  \n[Read More...](https://docs.codat.io/commerce/overview)\n\n<!-- Not seeing the end points you're expecting? We've reorganized our products, and you may be using a [different version of Sync for Commerce](https://docs.codat.io/sync-for-commerce-v1-api#/). -->",
+    "description": "The API for Sync for Commerce. \r\n\r\nSync for Commerce is an API and a set of supporting tools built to enable e-commerce and point of sale platforms to provide high-quality integrations with numerous accounting platform through standardized API, seamlessly transforming business sale's data into accounting artefacts.\r\n  \r\n[Read More...](https://docs.codat.io/commerce/overview)\r\n\r\n<!-- Not seeing the end points you're expecting? We've reorganized our products, and you may be using a [different version of Sync for Commerce](https://docs.codat.io/sync-for-commerce-v1-api#/). -->",
     "termsOfService": "https://www.codat.io/legals/"
   },
   "security": [
@@ -40,6 +40,52 @@
     ],
     "retryConnectionErrors": true
   },
+  "x-speakeasy-name-override": [
+    {
+      "operationId": "^list-.*?",
+      "methodNameOverride": "list"
+    },
+    {
+      "operationId": "^list-.*?-attachments",
+      "methodNameOverride": "list-attachments"
+    },
+    {
+      "operationId": "^get-.*?",
+      "methodNameOverride": "get"
+    },
+    {
+      "operationId": "^get-create-.*?-model",
+      "methodNameOverride": "get-create-model"
+    },
+    {
+      "operationId": "^get-create-update.*?-model",
+      "methodNameOverride": "get-create-update-model"
+    },
+    {
+      "operationId": "^get-.*?-attachment",
+      "methodNameOverride": "get-attachment"
+    },
+    {
+      "operationId": "^update-.*?",
+      "methodNameOverride": "update"
+    },
+    {
+      "operationId": "^create-.*?",
+      "methodNameOverride": "create"
+    },
+    {
+      "operationId": "^delete-.*?",
+      "methodNameOverride": "delete"
+    },
+    {
+      "operationId": "^download-.*?-attachment",
+      "methodNameOverride": "download-attachment"
+    },
+    {
+      "operationId": "^upload-.*?-attachment",
+      "methodNameOverride": "upload-attachment"
+    }
+  ],
   "x-codat-docs-path": "sync-for-commerce-api",
   "tags": [
     {
@@ -138,11 +184,12 @@
     "/companies": {
       "get": {
         "tags": [
-          "Connections"
+          "Advanced controls"
         ],
         "summary": "List companies",
         "description": "Returns a list of companies.",
         "operationId": "list-companies",
+        "x-speakeasy-name-override": "list-companies",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -206,13 +253,12 @@
     },
     "/companies/{companyId}/connections": {
       "get": {
-        "tags": [
-          "Advanced controls"
-        ],
         "summary": "List connections",
-        "description": "List the connections for a company.",
+        "description": "﻿List the connections for a company.",
         "operationId": "list-connections",
-        "x-speakeasy-name-override": "list-connections",
+        "tags": [
+          "Connections"
+        ],
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -232,62 +278,154 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Connections"
+                },
+                "examples": {
+                  "Connections": {
+                    "value": {
+                      "results": [
+                        {
+                          "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                          "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                          "integrationKey": "dfxm",
+                          "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                          "platformName": "Basiq",
+                          "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                          "status": "Linked",
+                          "lastSync": "2022-10-27T10:22:43.6464237Z",
+                          "created": "2022-10-27T09:53:29Z",
+                          "sourceType": "Banking"
+                        }
+                      ],
+                      "pageNumber": 0,
+                      "pageSize": 0,
+                      "totalResults": 0,
+                      "_links": {
+                        "self": {
+                          "href": "string"
+                        },
+                        "current": {
+                          "href": "string"
+                        },
+                        "next": {
+                          "href": "string"
+                        },
+                        "previous": {
+                          "href": "string"
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
+          },
+          "400": {
+            "description": "Your `query` parameter was not correctly formed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorMessage"
+                },
+                "examples": {
+                  "Malformed query": {
+                    "value": {
+                      "statusCode": 400,
+                      "service": "ClientsApi",
+                      "error": "Error parsing query - Malformed query.",
+                      "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                      "canBeRetried": "Unknown",
+                      "detailedErrorCode": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
           }
         }
       },
       "post": {
-        "tags": [
-          "Advanced controls"
-        ],
         "summary": "Create connection",
-        "description": "Creates a connection for the company by providing a valid platformKey.",
-        "operationId": "create-connection",
-        "x-speakeasy-name-override": "create-connection",
+        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \r\n\r\nUse the [List Integrations](https://docs.codat.io/DOCS_PATH#/operations/list-integrations) endpoint to access valid platform keys. ",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
           }
         ],
+        "tags": [
+          "Connections"
+        ],
+        "operationId": "create-connection",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "type": "string"
+                "type": "object",
+                "properties": {
+                  "platformKey": {
+                    "type": "string"
+                  }
+                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Connection"
+                },
+                "examples": {
+                  "Connection": {
+                    "value": {
+                      "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                      "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                      "integrationKey": "dfxm",
+                      "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                      "platformName": "Basiq",
+                      "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                      "status": "Linked",
+                      "lastSync": "2022-10-27T10:22:43.6464237Z",
+                      "created": "2022-10-27T09:53:29Z",
+                      "sourceType": "Banking"
+                    }
+                  }
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
           }
         }
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ]
+      }
     },
     "/companies/{companyId}/connections/{connectionId}": {
       "patch": {
         "tags": [
-          "Advanced controls"
+          "Connections"
         ],
         "summary": "Update connection",
         "description": "Update a data connection",
@@ -474,6 +612,7 @@
         "summary": "Get branding for an integration",
         "description": "Retrieve Integration branding assets.",
         "operationId": "get-integration-branding",
+        "x-speakeasy-name-override": "get-branding",
         "parameters": [
           {
             "name": "platformKey",
@@ -518,6 +657,7 @@
         "summary": "Get preferences for text fields",
         "description": "Return preferences set for the text fields on sync flow.",
         "operationId": "get-config-text-sync-flow",
+        "x-speakeasy-name-override": "get-config-text-sync-flow",
         "responses": {
           "200": {
             "description": "Success",
@@ -538,6 +678,7 @@
         "summary": "Update preferences for text fields",
         "description": "Set preferences for the text fields on sync flow.",
         "operationId": "update-config-text-sync-flow",
+        "x-speakeasy-name-override": "update-config-text-sync-flow",
         "requestBody": {
           "description": "",
           "content": {
@@ -590,6 +731,7 @@
         "summary": "List visible accounts",
         "description": "Return accounts which are visible on sync flow.",
         "operationId": "get-visible-accounts",
+        "x-speakeasy-name-override": "get-visible-accounts",
         "responses": {
           "200": {
             "description": "Success",
@@ -612,6 +754,7 @@
         "summary": "Update visible accounts",
         "description": "Update which accounts are visible on sync flow.",
         "operationId": "update-visible-accounts-sync-flow",
+        "x-speakeasy-name-override": "update-visible-accounts-sync-flow",
         "parameters": [
           {
             "name": "platformKey",
@@ -655,6 +798,7 @@
         "summary": "Initiate new sync",
         "description": "Run a Commerce sync from the last successful sync up to the date provided (optional), otherwise UtcNow is used.\\r\\nIf there was no previously successful sync, the start date in the config is used.",
         "operationId": "request-sync",
+        "x-speakeasy-name-override": "request",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -698,6 +842,7 @@
         "summary": "Initiate sync for specific range",
         "description": "Initiate a sync for the specified start date to the specified finish date in the request payload.",
         "operationId": "request-sync-for-date-range",
+        "x-speakeasy-name-override": "request-for-date-range",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -735,6 +880,7 @@
         "summary": "Get sync status",
         "description": "Gets a list of sync statuses.",
         "operationId": "get-sync-status",
+        "x-speakeasy-name-override": "get-status",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -745,6 +891,185 @@
             "description": "Success"
           }
         }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ]
+    },
+    "/companies/{companyId}/sync/commerce/syncs/lastSuccessful/status": {
+      "get": {
+        "tags": [
+          "Sync"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanySyncStatus"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "description": "Gets the status of the last successful sync",
+        "summary": "Last successful sync",
+        "operationId": "get-last-successful-sync",
+        "x-speakeasy-name-override": "get-last-successful-sync"
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ]
+    },
+    "/companies/{companyId}/sync/commerce/syncs/latest/status": {
+      "get": {
+        "tags": [
+          "Sync"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanySyncStatus"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "description": "Gets the latest sync status",
+        "summary": "Latest sync status",
+        "operationId": "get-latest-sync",
+        "x-speakeasy-name-override": "get-latest-sync"
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ]
+    },
+    "/companies/{companyId}/sync/expenses/syncs/{syncId}/status": {
+      "get": {
+        "tags": [
+          "Sync"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/syncId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanySyncStatus"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "summary": "Get Sync status",
+        "description": "Get the sync status for a specified sync",
+        "operationId": "get-sync-by-id"
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/syncId"
+        }
+      ]
+    },
+    "/companies/{companyId}/sync/commerce/syncs/list/status": {
+      "get": {
+        "tags": [
+          "Sync"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CompanySyncStatus"
+                  }
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "summary": "List sync statuses",
+        "description": "Gets a list of sync statuses",
+        "operationId": "list-syncs"
       },
       "parameters": [
         {
@@ -891,7 +1216,7 @@
       },
       "Connection": {
         "title": "Connection",
-        "description": "﻿A connection represents a [company's](https://docs.codat.io/DOCS_PATH#/schemas/Company) connection to a data source and allows you to synchronize data (pull and/or push) with that source.\n\nA company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:\n\n- [Accounting data](https://docs.codat.io/accounting-api/overview) - 1 active connection.\n- [Banking data](https://docs.codat.io/banking-api/overview) - Multiple active connections.\n- [Commerce data](https://docs.codat.io/commerce-api/overview) - Multiple active connections.\nAny combination of accounting, banking, and commerce data connections is allowed.\n\nBefore you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/auth-flow/overview).",
+        "description": "﻿A connection represents a [company's](https://docs.codat.io/DOCS_PATH#/schemas/Company) connection to a data source and allows you to synchronize data (pull and/or push) with that source.\r\n\r\nA company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:\r\n\r\n- [Accounting data](https://docs.codat.io/accounting-api/overview) - 1 active connection.\r\n- [Banking data](https://docs.codat.io/banking-api/overview) - Multiple active connections.\r\n- [Commerce data](https://docs.codat.io/commerce-api/overview) - Multiple active connections.\r\nAny combination of accounting, banking, and commerce data connections is allowed.\r\n\r\nBefore you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/auth-flow/overview).",
         "type": "object",
         "properties": {
           "id": {
@@ -1022,6 +1347,25 @@
           "created": "2022-10-27T09:53:29Z",
           "sourceType": "Banking"
         }
+      },
+      "Connections": {
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Connection"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PagingInfo"
+          }
+        ]
       },
       "Companies": {
         "x-internal": true,
@@ -1170,7 +1514,7 @@
       },
       "Company": {
         "title": "Company",
-        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/DOCS_PATH#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
+        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/DOCS_PATH#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\r\n\r\nTypically each company is one of your customers.\r\n\r\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
         "type": "object",
         "properties": {
           "id": {
@@ -1350,25 +1694,6 @@
               }
             },
             "sourceId": "35b92968-9851-4095-ad60-395c95cbcba4"
-          }
-        ]
-      },
-      "Connections": {
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Connection"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
           }
         ]
       },
@@ -2120,6 +2445,166 @@
             "type": "integer"
           }
         }
+      },
+      "CompanySyncStatus": {
+        "title": "Company sync status",
+        "type": "object",
+        "additionalProperties": false,
+        "x-examples": {
+          "Success Data Pushed": {
+            "companyId": "20803807-4e9a-4cb7-b67b-9f889a3916e1",
+            "syncId": "aa4c9dfd-e945-4424-9628-9e724f14c267",
+            "syncStatusCode": 2000,
+            "syncStatus": "Complete",
+            "errorMessage": "",
+            "syncExceptionMessage": "",
+            "syncUtc": "2023-01-24T14:15:22Z",
+            "dataPushed": true
+          },
+          "Success No Data Pushed": {
+            "companyId": "20803807-4e9a-4cb7-b67b-9f889a3916e1",
+            "syncId": "aa4c9dfd-e945-4424-9628-9e724f14c267",
+            "syncStatusCode": 2040,
+            "syncStatus": "Complete",
+            "errorMessage": "",
+            "syncExceptionMessage": "",
+            "syncUtc": "2023-01-24T14:15:22Z",
+            "dataPushed": false
+          }
+        },
+        "properties": {
+          "companyId": {
+            "type": "string",
+            "description": "Unique identifier for your SMB in Codat.",
+            "example": "d4d73051-ed31-42b6-99f6-d288cd940992",
+            "nullable": true
+          },
+          "syncId": {
+            "type": "string",
+            "description": "Unique identifier of the sync.",
+            "example": "a6a22aff-a43a-411d-a910-2dae73217cce",
+            "nullable": true
+          },
+          "syncStatusCode": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Status code of the sync.",
+            "example": 2000
+          },
+          "syncStatus": {
+            "type": "string",
+            "description": "Text status of the sync.",
+            "example": "Completed",
+            "nullable": true
+          },
+          "errorMessage": {
+            "type": "string",
+            "description": "Error message of the sync.",
+            "nullable": true
+          },
+          "syncExceptionMessage": {
+            "type": "string",
+            "description": "Exception message of the sync.",
+            "nullable": true
+          },
+          "syncUtc": {
+            "$ref": "#/components/schemas/Company/properties/created",
+            "description": "Datetime of the sync.",
+            "nullable": true
+          },
+          "dataPushed": {
+            "type": "boolean",
+            "description": "Boolean of whether the sync resulted in data being pushed."
+          }
+        }
+      }
+    },
+    "responses": {
+      "Unauthorized": {
+        "description": "Your API request was not properly authorized.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Unauthorized": {
+                "value": {
+                  "statusCode": 401,
+                  "service": "PublicApi",
+                  "error": "Unauthorized",
+                  "correlationId": "7eb40d6b415d7bcd99ce658268284056",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Not-Found": {
+        "description": "One or more of the resources you referenced could not be found.\nThis might be because your company or data connection id is wrong, or was already deleted.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Data connection not found": {
+                "value": {
+                  "statusCode": 404,
+                  "service": "PublicApi",
+                  "error": "Data connection a22dd66b-564a-4832-9b37-7b3ce4aeb7de not found",
+                  "correlationId": "8fa2b5f4794970a4ee73758f612e8df0",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              },
+              "Company not found": {
+                "value": {
+                  "statusCode": 404,
+                  "service": "ClientsApi",
+                  "error": "No company was found with ID 846ed55c-974b-4392-a1f1-87b6fdbf3c5e",
+                  "correlationId": "0a40c2f31fc8f992fb88b0853e4166f3",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              },
+              "No data available": {
+                "value": {
+                  "statusCode": 404,
+                  "service": "PublicApi",
+                  "error": "No data available for accounts for ID e5889b459f544926ac5b8e6756df2s",
+                  "correlationId": "0a40c2f31fc8f992fb88b0853e4166f3",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Too-Many-Requests": {
+        "description": "Too many requests were made in a given amount of time. Wait a short period and then try again.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 429,
+                  "service": "PublicApi",
+                  "error": "You have made too many requests in a given amount of time; please retry later.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
       }
     },
     "parameters": {
@@ -2192,6 +2677,17 @@
         "x-stoplight": {
           "id": "4je9lwo02netu"
         }
+      },
+      "syncId": {
+        "name": "syncId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "example": "6fb40d5e-b13e-11ed-afa1-0242ac120002"
+        },
+        "description": "Unique identifier for a sync."
       }
     },
     "securitySchemes": {

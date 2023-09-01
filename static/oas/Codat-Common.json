@@ -13,7 +13,7 @@
     "title": "Platform API",
     "version": "3.0.0",
     "summary": "Platform API",
-    "description": "An API for the common components of all of Codat's products.\n\nThese end points cover creating and managing your companies, data connections, and integrations.\n\n[Read about the building blocks of Codat...](https://docs.codat.io/core-concepts/companies)\n\n[See our OpenAPI spec](https://github.com/codatio/oas) ",
+    "description": "An API for the common components of all of Codat's products.\r\n\r\nThese end points cover creating and managing your companies, data connections, and integrations.\r\n\r\n[Read about the building blocks of Codat...](https://docs.codat.io/core-concepts/companies)\r\n\r\n[See our OpenAPI spec](https://github.com/codatio/oas) ",
     "contact": {
       "name": "Codat",
       "email": "support@codat.io"
@@ -339,7 +339,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "﻿Creates a new company that can be used to assign connections to. \n\nIf forbidden characters (see `name` pattern) are present in the request, a company will be created with the forbidden characters removed. For example, `Company (Codat[1])` with be created as `Company Codat1`.\n\n",
+        "description": "﻿Creates a new company that can be used to assign connections to. \r\n\r\nIf forbidden characters (see `name` pattern) are present in the request, a company will be created with the forbidden characters removed. For example, `Company (Codat[1])` with be created as `Company Codat1`.\r\n\r\n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -421,7 +421,7 @@
             "$ref": "#/components/parameters/companyId"
           }
         ],
-        "description": "﻿\nPermanently deletes a company, its connections and any cached data. This operation is irreversible. If the company ID does not exist an error is returned.",
+        "description": "﻿\r\nPermanently deletes a company, its connections and any cached data. This operation is irreversible. If the company ID does not exist an error is returned.",
         "tags": [
           "Companies"
         ],
@@ -501,7 +501,7 @@
       "get": {
         "summary": "List connections",
         "description": "﻿List the connections for a company.",
-        "operationId": "list-company-connections",
+        "operationId": "list-connections",
         "tags": [
           "Connections"
         ],
@@ -586,7 +586,7 @@
       },
       "post": {
         "summary": "Create connection",
-        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \n\nUse the [List Integrations](https://docs.codat.io/DOCS_PATH#/operations/list-integrations) endpoint to access valid platform keys. ",
+        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \r\n\r\nUse the [List Integrations](https://docs.codat.io/DOCS_PATH#/operations/list-integrations) endpoint to access valid platform keys. ",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -595,7 +595,7 @@
         "tags": [
           "Connections"
         ],
-        "operationId": "create-data-connection",
+        "operationId": "create-connection",
         "requestBody": {
           "content": {
             "application/json": {
@@ -652,7 +652,7 @@
     "/companies/{companyId}/connections/{connectionId}": {
       "get": {
         "summary": "Get connection",
-        "operationId": "get-company-connection",
+        "operationId": "get-connection",
         "description": "﻿Returns a specific connection for a company when valid identifiers are provided. If the identifiers are for a deleted company and/or connection, a not found response is returned.",
         "tags": [
           "Connections"
@@ -705,8 +705,8 @@
       },
       "delete": {
         "summary": "Delete connection",
-        "operationId": "delete-company-connection",
-        "description": "﻿Revoke and remove a connection from a company.\nThis operation is not reversible. The end user would need to reauthorize a new data connection if you wish to view new data for this company.",
+        "operationId": "delete-connection",
+        "description": "﻿Revoke and remove a connection from a company.\r\nThis operation is not reversible. The end user would need to reauthorize a new data connection if you wish to view new data for this company.",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -737,6 +737,7 @@
         "summary": "Unlink connection",
         "description": "﻿This allows you to deauthorize a connection, without deleting it from Codat. This means you can still view any data that has previously been pulled into Codat, and also lets you re-authorize in future if your customer wishes to resume sharing their data.",
         "operationId": "unlink-connection",
+        "x-speakeasy-name-override": "unlink",
         "tags": [
           "Connections"
         ],
@@ -861,7 +862,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "Refreshes all data types with `fetch on first link` set to `true` for a given company.\n\nThis is an asynchronous operation, and will bring updated data into Codat from the linked integration for you to view.\n\n[Read more](https://docs.codat.io/core-concepts/data-type-settings) about data type settings and `fetch on first link`.",
+        "description": "Refreshes all data types with `fetch on first link` set to `true` for a given company.\r\n\r\nThis is an asynchronous operation, and will bring updated data into Codat from the linked integration for you to view.\r\n\r\n[Read more](https://docs.codat.io/core-concepts/data-type-settings) about data type settings and `fetch on first link`.",
         "tags": [
           "Refresh data"
         ]
@@ -880,7 +881,7 @@
         "summary": "Refresh data type",
         "operationId": "refresh-data-type",
         "x-speakeasy-name-override": "by-data-type",
-        "description": "Refreshes a given data type for a given company.\n\nThis is an asynchronous operation, and will bring updated data into Codat from the linked integration for you to view.",
+        "description": "Refreshes a given data type for a given company.\r\n\r\nThis is an asynchronous operation, and will bring updated data into Codat from the linked integration for you to view.",
         "tags": [
           "Refresh data"
         ],
@@ -1663,7 +1664,7 @@
     "/apiKeys": {
       "get": {
         "summary": "List API keys",
-        "description": "Use the *List API keys* endpoint to return a list of all API keys that currently exist for your client. This includes keys created via the Portal UI or the *Create API keys* endpoint.\n\n[API keys](https://docs.codat.io/accounting-api#/schemas/apiKeys) are tokens used to control access to the API. Include this token in the `Authorization` header parameter when making API calls, following the word \"Basic\" and a space with your API key.\n\nYou can [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat and managing API keys via the Portal UI or API.",
+        "description": "Use the *List API keys* endpoint to return a list of all API keys that currently exist for your client. This includes keys created via the Portal UI or the *Create API keys* endpoint.\r\n\r\n[API keys](https://docs.codat.io/accounting-api#/schemas/apiKeys) are tokens used to control access to the API. Include this token in the `Authorization` header parameter when making API calls, following the word \"Basic\" and a space with your API key.\r\n\r\nYou can [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat and managing API keys via the Portal UI or API.",
         "operationId": "list-api-keys",
         "x-speakeasy-name-override": "list-api-keys",
         "tags": [
@@ -1711,7 +1712,7 @@
         "summary": "Create API key",
         "operationId": "create-api-key",
         "x-speakeasy-name-override": "create-api-key",
-        "description": "Use the *Create API keys* endpoint to generate a new API key for your client.\n\n[API keys](https://docs.codat.io/DOCS_PATH#/schemas/apiKeys) are tokens used to control access to the API. Include this token in the `Authorization` header parameter when making API calls, following the word \"Basic\" and a space with your API key.\n\nYou can [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat and managing API keys via the Portal UI or API.\n\n### Tips and pitfalls\n\n* Your first API key is created for you. Access this key via [Codat's Portal](https://app.codat.io/developers/api-keys).\n* If you require multiple API keys, perform multiple calls to the *Create API keys* endpoint. \n* The number of API keys is limited to 10. If you have reached the maximum amount of keys, use the *Delete API key* endpoint to delete an unused key first.",
+        "description": "Use the *Create API keys* endpoint to generate a new API key for your client.\r\n\r\n[API keys](https://docs.codat.io/DOCS_PATH#/schemas/apiKeys) are tokens used to control access to the API. Include this token in the `Authorization` header parameter when making API calls, following the word \"Basic\" and a space with your API key.\r\n\r\nYou can [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat and managing API keys via the Portal UI or API.\r\n\r\n### Tips and pitfalls\r\n\r\n* Your first API key is created for you. Access this key via [Codat's Portal](https://app.codat.io/developers/api-keys).\r\n* If you require multiple API keys, perform multiple calls to the *Create API keys* endpoint. \r\n* The number of API keys is limited to 10. If you have reached the maximum amount of keys, use the *Delete API key* endpoint to delete an unused key first.",
         "tags": [
           "Settings"
         ],
@@ -1829,7 +1830,7 @@
             "description": "Unique identifier for api key."
           }
         ],
-        "description": "Use the *Delete API keys* endpoint to delete an existing API key, providing its valid `id` as a parameter. Note that this operation is not reversible.\n\n[API keys](https://docs.codat.io/accounting-api#/schemas/apiKeys) are tokens used to control access to the API. Include this token in the `Authorization` header parameter when making API calls, following the word \"Basic\" and a space with your API key.\n\nYou can [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat and managing API keys via the Portal UI or API.\n\n### Tips and pitfalls\n\n* It is possible to delete the last remaining API key. If this happens, a new key can be created via the [API key management page](https://app.codat.io/developers/api-keys) of the Portal.\n* It is possible to delete the API key used to authenticate the *Delete API key* request.",
+        "description": "Use the *Delete API keys* endpoint to delete an existing API key, providing its valid `id` as a parameter. Note that this operation is not reversible.\r\n\r\n[API keys](https://docs.codat.io/accounting-api#/schemas/apiKeys) are tokens used to control access to the API. Include this token in the `Authorization` header parameter when making API calls, following the word \"Basic\" and a space with your API key.\r\n\r\nYou can [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat and managing API keys via the Portal UI or API.\r\n\r\n### Tips and pitfalls\r\n\r\n* It is possible to delete the last remaining API key. If this happens, a new key can be created via the [API key management page](https://app.codat.io/developers/api-keys) of the Portal.\r\n* It is possible to delete the API key used to authenticate the *Delete API key* request.",
         "tags": [
           "Settings"
         ],
@@ -2043,7 +2044,7 @@
       ],
       "put": {
         "summary": "Configure",
-        "description": "The *Configure* endpoint allows you to maintain or change configuration required to return supplemental data for each integration and data type combination.\n\n[Supplemental data](https://docs.codat.io/using-the-api/additional-data) is additional data you can include in Codat's standard data types.\n\n**Integration-specific behaviour**\nSee the *examples* for integration-specific frequently requested properties.",
+        "description": "The *Configure* endpoint allows you to maintain or change configuration required to return supplemental data for each integration and data type combination.\r\n\r\n[Supplemental data](https://docs.codat.io/using-the-api/additional-data) is additional data you can include in Codat's standard data types.\r\n\r\n**Integration-specific behaviour**\r\nSee the *examples* for integration-specific frequently requested properties.",
         "operationId": "configure-supplemental-data",
         "x-speakeasy-name-override": "configure",
         "tags": [
@@ -2156,7 +2157,7 @@
       },
       "get": {
         "summary": "Get configuration",
-        "description": "The *Get configuration* endpoint returns supplemental data configuration previously created for each integration and data type combination.\n\n[Supplemental data](https://docs.codat.io/using-the-api/additional-data) is additional data you can include in Codat's standard data types.",
+        "description": "The *Get configuration* endpoint returns supplemental data configuration previously created for each integration and data type combination.\r\n\r\n[Supplemental data](https://docs.codat.io/using-the-api/additional-data) is additional data you can include in Codat's standard data types.",
         "operationId": "get-supplemental-data-configuration",
         "x-speakeasy-name-override": "get-configuration",
         "tags": [
@@ -2680,7 +2681,7 @@
       },
       "Company": {
         "title": "Company",
-        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/DOCS_PATH#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
+        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/DOCS_PATH#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\r\n\r\nTypically each company is one of your customers.\r\n\r\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
         "type": "object",
         "properties": {
           "id": {
@@ -2756,7 +2757,7 @@
       },
       "Connection": {
         "title": "Connection",
-        "description": "﻿A connection represents a [company's](https://docs.codat.io/DOCS_PATH#/schemas/Company) connection to a data source and allows you to synchronize data (pull and/or push) with that source.\n\nA company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:\n\n- [Accounting data](https://docs.codat.io/accounting-api/overview) - 1 active connection.\n- [Banking data](https://docs.codat.io/banking-api/overview) - Multiple active connections.\n- [Commerce data](https://docs.codat.io/commerce-api/overview) - Multiple active connections.\nAny combination of accounting, banking, and commerce data connections is allowed.\n\nBefore you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/auth-flow/overview).",
+        "description": "﻿A connection represents a [company's](https://docs.codat.io/DOCS_PATH#/schemas/Company) connection to a data source and allows you to synchronize data (pull and/or push) with that source.\r\n\r\nA company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:\r\n\r\n- [Accounting data](https://docs.codat.io/accounting-api/overview) - 1 active connection.\r\n- [Banking data](https://docs.codat.io/banking-api/overview) - Multiple active connections.\r\n- [Commerce data](https://docs.codat.io/commerce-api/overview) - Multiple active connections.\r\nAny combination of accounting, banking, and commerce data connections is allowed.\r\n\r\nBefore you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/auth-flow/overview).",
         "type": "object",
         "properties": {
           "id": {
@@ -4019,6 +4020,71 @@
       "PushOperationSummary": {
         "type": "object",
         "x-internal": true,
+        "properties": {
+          "changes": {
+            "type": "array",
+            "nullable": true,
+            "description": "Contains a single entry that communicates which record has changed and the manner in which it changed. ",
+            "items": {
+              "$ref": "#/components/schemas/PushOperationSummary/definitions/pushOperationChange"
+            }
+          },
+          "dataType": {
+            "$ref": "#/components/schemas/SyncSetting/properties/dataType",
+            "description": "The type of data being pushed, eg invoices, customers."
+          },
+          "companyId": {
+            "$ref": "#/components/parameters/companyId/schema"
+          },
+          "pushOperationKey": {
+            "type": "string",
+            "format": "uuid",
+            "description": "A unique identifier generated by Codat to represent this single push operation. This identifier can be used to track the status of the push, and should be persisted."
+          },
+          "dataConnectionKey": {
+            "$ref": "#/components/parameters/connectionId/schema"
+          },
+          "requestedOnUtc": {
+            "$ref": "#/components/schemas/DateTime",
+            "description": "The datetime when the push was requested."
+          },
+          "completedOnUtc": {
+            "$ref": "#/components/schemas/DateTime",
+            "description": "The datetime when the push was completed, null if Pending."
+          },
+          "timeoutInMinutes": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "timeoutInSeconds": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "deprecated": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/PushOperationSummary/definitions/pushOperationStatus"
+          },
+          "errorMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "validation": {
+            "$ref": "#/components/schemas/PushOperationSummary/definitions/validation"
+          },
+          "statusCode": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "companyId",
+          "pushOperationKey",
+          "dataConnectionKey",
+          "requestedOnUtc",
+          "status",
+          "statusCode"
+        ],
         "definitions": {
           "validation": {
             "type": "object",
@@ -4112,72 +4178,7 @@
               }
             }
           }
-        },
-        "properties": {
-          "changes": {
-            "type": "array",
-            "nullable": true,
-            "description": "Contains a single entry that communicates which record has changed and the manner in which it changed. ",
-            "items": {
-              "$ref": "#/components/schemas/PushOperationSummary/definitions/pushOperationChange"
-            }
-          },
-          "dataType": {
-            "$ref": "#/components/schemas/SyncSetting/properties/dataType",
-            "description": "The type of data being pushed, eg invoices, customers."
-          },
-          "companyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "pushOperationKey": {
-            "type": "string",
-            "format": "uuid",
-            "description": "A unique identifier generated by Codat to represent this single push operation. This identifier can be used to track the status of the push, and should be persisted."
-          },
-          "dataConnectionKey": {
-            "$ref": "#/components/parameters/connectionId/schema"
-          },
-          "requestedOnUtc": {
-            "$ref": "#/components/schemas/DateTime",
-            "description": "The datetime when the push was requested."
-          },
-          "completedOnUtc": {
-            "$ref": "#/components/schemas/DateTime",
-            "description": "The datetime when the push was completed, null if Pending."
-          },
-          "timeoutInMinutes": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "timeoutInSeconds": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true,
-            "deprecated": true
-          },
-          "status": {
-            "$ref": "#/components/schemas/PushOperationSummary/definitions/pushOperationStatus"
-          },
-          "errorMessage": {
-            "type": "string",
-            "nullable": true
-          },
-          "validation": {
-            "$ref": "#/components/schemas/PushOperationSummary/definitions/validation"
-          },
-          "statusCode": {
-            "type": "integer"
-          }
-        },
-        "required": [
-          "companyId",
-          "pushOperationKey",
-          "dataConnectionKey",
-          "requestedOnUtc",
-          "status",
-          "statusCode"
-        ]
+        }
       },
       "PushHistoryResponse": {
         "x-internal": true,
