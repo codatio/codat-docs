@@ -42,13 +42,13 @@ module.exports = [
   },
   {
     type: "doc",
-    label: "Xero",
-    id: "integrations/accounting/xero/accounting-xero"
+    label: "Sage Business Cloud",
+    id: "integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud"
   },
   {
     type: "doc",
-    label: "MYOB Business",
-    id: "integrations/accounting/myob/accounting-myob"
+    label: "Xero",
+    id: "integrations/accounting/xero/accounting-xero"
   },
   {
     type: "doc",

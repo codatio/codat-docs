@@ -57,12 +57,13 @@ export const payrollIntegrations = [
 		"type": "accounting",
 		"img": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png"
 	},
-	{
-		"name": "MYOB Business",
-		"to": "/integrations/accounting/myob/accounting-myob",
-		"type": "accounting",
-		"img": "https://static.codat.io/public/officialLogos/Square/00812DF4-8A0F-4F06-9566-16E5CA1346AE.png"
-	},
+  {
+    "name": "Sage Business Cloud Accounting",
+    "to": "/integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud",
+    "type": "accounting",
+    "tags": ["UK", "US", "Ireland", "Canada", "France", "Germany", "Spain"],
+    "img": "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png"
+  },
   {
     "name": "Dynamics 365 Business Central",
     "to": "/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral",

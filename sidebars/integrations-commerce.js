@@ -40,7 +40,11 @@ const integrations = [
     label: "Clover",
     collapsed: true,
     items: [
-      "integrations/commerce/clover/commerce-clover",
+      {
+        type: 'doc',
+        id: 'integrations/commerce/clover/commerce-clover',
+        label: 'Overview'
+      },
       "integrations/commerce/clover/set-up-your-clover-integration",
       "integrations/commerce/clover/test-your-clover-integration",
     ],
@@ -50,7 +54,11 @@ const integrations = [
     label: "Lightspeed Restaurant (K series)",
     collapsed: true,
     items: [
-      "integrations/commerce/lightspeed-k/commerce-lightspeed-k",
+      {
+        type: 'doc',
+        id: 'integrations/commerce/lightspeed-k/commerce-lightspeed-k',
+        label: 'Overview'
+      },
       "integrations/commerce/lightspeed-k/commerce-lightspeed-k-setup",
     ],
   },
@@ -110,7 +118,11 @@ const integrations = [
     label: "Shopify",
     collapsed: true,
     items: [
-      "integrations/commerce/shopify/commerce-shopify",
+      {
+        type: 'doc',
+        id: 'integrations/commerce/shopify/commerce-shopify',
+        label: 'Overview'
+      },
       {
         type: "category",
         label: "Setup",
@@ -169,7 +181,11 @@ const integrations = [
     label: "Zettle",
     collapsed: true,
     items: [
-      "integrations/commerce/zettle/commerce-zettle",
+      {
+        type: 'doc',
+        id: 'integrations/commerce/zettle/commerce-zettle',
+        label: 'Overview'
+      },
       "integrations/commerce/zettle/commerce-zettle-setup",
       "integrations/commerce/zettle/test-zettle",
       "integrations/commerce/zettle/zettle-integration-reference",
