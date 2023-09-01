@@ -5,7 +5,7 @@ const useZendesk = url => {
   const {siteConfig} = useDocusaurusContext();
   
   useEffect(() => {
-    if(!siteConfig.customFields.ZENDESK_KEY) { return null }
+    if(!siteConfig.customFields.ZENDESK_KEY || !!siteConfig.customFields.DEVELOPMENT) { return null }
 
     const script = document.createElement('script');
 

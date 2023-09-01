@@ -1,9 +1,6 @@
 ---
 title: "Zettle"
-sidebar_label: Overview
 description: "Learn about our Zettle integration"
-createdAt: "2021-01-20T15:39:57.772Z"
-updatedAt: "2022-10-20T13:39:53.409Z"
 ---
 
 <p><a className="external" href="https://www.zettle.com/" target="_blank">

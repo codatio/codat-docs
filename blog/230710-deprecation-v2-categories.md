@@ -9,17 +9,17 @@ On the **24th July 2023**, we will be deprecating the legacy version of  `Accoun
 
 <!--truncate-->
 
-#### On the Assess API
+#### On the Lending API
 
-- [GET /data/assess/accounts/categories](/assess-api#/operations/list-available-account-categories)
-- [GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categories](/assess-api#/operations/list-accounts-categories)
-- [GET /data/companies/{companyId}/connections/{connectionId}/assess/accounts/{accountId}/categories](/assess-api#/operations/get-account-category)
-- [PATCH /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categories](/assess-api#/operations/update-accounts-categories)
-- [PATCH /data/companies/{companyId}/connections/{connectionId}/assess/accounts/{accountId}/categories](/assess-api#/operations/update-account-category)
-- [GET /data/companies{companyId}/connections/{connectionId}/assess/enhancedBalanceSheet](/assess-api#/operations/get-enhanced-balance-sheet)
-- [GET /data/companies{companyId}/connections/{connectionId}/assess/enhancedProfitandLoss](/assess-api#/operations/get-enhanced-profit-and-loss)  
-- [GET /data/companies/{companyId}/connections/{connectionId}/assess/financialMetrics](/assess-api#/operations/get-enhanced-financial-metrics) 
-- [GET /data/companies/{companyId}/connections/{connectionId}/assess/accountingMetrics/marketing](/assess-api#/operations/get-accounting-marketing-metrics)
+- [GET /data/lending/accounts/categories](/assess-api#/operations/list-available-account-categories)
+- [GET /data/companies/{companyId}/connections/{connectionId}/lending/accounts/categories](/assess-api#/operations/list-accounts-categories)
+- [GET /data/companies/{companyId}/connections/{connectionId}/lending/accounts/{accountId}/categories](/assess-api#/operations/get-account-category)
+- [PATCH /data/companies/{companyId}/connections/{connectionId}/lending/accounts/categories](/assess-api#/operations/update-accounts-categories)
+- [PATCH /data/companies/{companyId}/connections/{connectionId}/lending/accounts/{accountId}/categories](/assess-api#/operations/update-account-category)
+- [GET /data/companies{companyId}/connections/{connectionId}/lending/enhancedBalanceSheet](/assess-api#/operations/get-enhanced-balance-sheet)
+- [GET /data/companies{companyId}/connections/{connectionId}/lending/enhancedProfitandLoss](/assess-api#/operations/get-enhanced-profit-and-loss)  
+- [GET /data/companies/{companyId}/connections/{connectionId}/lending/financialMetrics](/assess-api#/operations/get-enhanced-financial-metrics) 
+- [GET /data/companies/{companyId}/connections/{connectionId}/lending/accountingMetrics/marketing](/assess-api#/operations/get-accounting-marketing-metrics)
 
 #### Assess in the Portal
 
@@ -40,7 +40,7 @@ The following sheets only:
 
 ## Action required
 
-Explore alternative options you can use in our [Migration Guide`](/assess/guides/migration-guides/deprecation-account-categories)
+Explore alternative options you can use in our [Migration Guide`](/lending/guides/migration-guides/deprecation-account-categories)
 
 ## Expected impact if no action is taken
 

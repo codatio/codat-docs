@@ -27,129 +27,227 @@ Implementation period, covering Implementation Specialists and associated resour
 ## Products
 
 <Tabs>
-<TabItem value="assess" label="Assess">
 
-#### Functionality
+<TabItem value="commerce" label="Sync for Commerce">
 
-- Pull  
-- One time or ongoing Sync  
-- API  
-- Lending write-back
+#### Features
 
-#### Data sources
-
-- Accounting  
-- Commerce
-- Banking
-
-#### Accounting data types
-
-- Company Info  
-- Financial Statements  
-- Accounts Receivable  
-- Accounts Payable  
-- Ref Data  
-
-</TabItem>
-
-<TabItem value="sfc" label="Sync for Commerce">
-
-#### Functionality
-
-- Pull & Push ongoing Sync API
-
-#### Data sources
-
-- Accounting  
-
-#### Accounting data types
-
-- Accounts Receivable  
-- Account Transactions  
-- Ref Data  
-- At request: *Suppliers, Bills, Bill Credit Notes*  
-
-</TabItem>
-
-<TabItem value="sfe" label="Sync for Expenses">
-
-#### Functionality
-
-- Expense Sync
-- Sync Flow UI
+- Commerce to accounting synchronization
+- Client connector
+- Config UI (Sync Flow)
 - Config API
-
-#### Data sources
-
-- Accounting
 
 #### Supported integrations
 
-Xero, Quickbooks Online, NetSuite, Microsoft Dynamics 365
+[@todo: link to supported integrations doc page once available]
 
-#### Accounting data types
+Note a separate Add on is required to access ERP integrations and Desktop platforms.
 
-- Accounts
-- Customers
-- Suppliers
+#### Feature definitions
 
-</TabItem>
+**Commerce to Accounting synchronisation**
+Synchronisation of data from commerce data source(s) into accounting package(s).
 
-<TabItem value="accounting-api" label="Accounting API">
+**Client connector**
+Codat built and owned connector, which pulls Company data from and/or pushes Company data to the Client’s system, to enable Commerce to Accounting synchronization to function.
 
-#### Functionality
+**Config UI (Sync Flow)**
+White labelled user interface enabling a Company to configure Commerce to Accounting synchronization.
 
-- Pull
-- Ongoing Sync
-- API
+**Config API**
+API endpoints allowing Codat Clients to configure Commerce Sync (typically via client-built Company interface).
 
-#### Data sources
+<hr/>
 
-- Accounting  
-
-#### Data types
-
-- All
+This product will appear as **Sync for Commerce (v2)** on your order form.
 
 </TabItem>
 
-<TabItem value="banking-api" label="Banking API">
+<TabItem value="expenses" label="Sync for Expenses">
 
-#### Functionality
+#### Features
 
-- Pull
-- Ongoing Sync
-- API
+- Expense to accounting synchronisation
+- Config API
 
-#### Data sources
+#### Supported integrations
+[todo: link to supported integrations doc page once available]
 
-- Banking  
+Note a separate Add on is required to access ERP integrations and Desktop platforms.
 
-#### Data types
+<hr/>
 
-- All
+#### Feature definitions
+
+**Expense to accounting synchronisation**
+Synchronisation of expense data provided by a Codat Client into accounting package(s).
+
+**Config API**
+API endpoints allowing Codat Clients to configure Expense Sync (typically via client-built Company user interface).
+
+<hr/>
+
+This product will appear as **Sync for Expenses (v2)** on your order form.
 
 </TabItem>
 
-<TabItem value="commerce-api" label="Commerce API">
+<TabItem value="payroll" label="Sync for Payroll">
 
-#### Functionality
+#### Features
 
-- Pull
-- Ongoing Sync
-- API
+- Pull accounting data
+- Push accounting data
 
-#### Data sources
+#### Supported integrations
 
-- Commerce  
+[todo: link to supported integrations doc page once available]
 
-#### Data types
+Note a separate Add on is required to access ERP integrations and Desktop platforms.
 
-- All
+<hr/>
+
+#### Feature definitions
+
+**Pull accounting data**
+Pull the following data from connected Accounting packages: [todo: link to docs]
+
+**Push accounting data**
+Pull the following data from connected Accounting packages: [todo: link to docs]
+
+<hr/>
+
+This product will appear as **Sync for Payroll** on your order form.
+
+</TabItem>
+
+<TabItem value="payables" label="Sync for Payables">
+
+#### Features
+
+- Pull accounting data
+- Push accountant data
+- Update accounting data
+- Delete accounting data
+
+#### Supported integrations
+
+[todo: link to supported integrations doc page once available]
+
+Note a separate Add on is required to access ERP integrations and Desktop platforms.
+
+<hr/>
+
+#### Feature definitions
+
+**Pull accounting data**
+Pull the following data from connected Accounting packages: [todo: link to docs]
+
+**Push accounting data**
+Push the following data into connected Accounting packages: [todo: link to docs]
+
+**Update accounting data**
+Update the following data in connected Accounting packages: [todo: link to docs]
+
+**Delete accounting data**
+Delete the following data in connected Accounting packages: [todo: link to docs]
+
+<hr/>
+
+This product will appear as **Sync for Payables** on your order form.
+
+</TabItem>
+
+<TabItem value="bankfeeds" label="Bank Feeds API">
+
+#### Features
+
+- Push bank transactions
+- Config UI
+- Config API
+
+#### Supported integrations
+
+[todo: link to supported integrations doc page once available]
+
+Note a separate Add on is required to access ERP integrations and Desktop platforms.
+
+<hr/>
+
+#### Feature definitions
+
+**Push bank transactions**
+Push Bank Transactions into connected accounting package as a bank statement
+
+**Config UI**
+White labelled user interface enabling a Company to configure Bank Feeds (select accounting package accounts to which bank feeds should be pushed)
+
+**Config API**
+API endpoints allowing clients to configure bank feeds (typically via client-built Company user interface)
+
+<hr/>
+
+This product will appear as **Bank feeds** on your order form.
+
+</TabItem>
+
+<TabItem value="lending" label="Lending API">
+
+#### Features
+
+- Pull accounting data
+- Pull commerce data
+- Pull banking data
+- Enhanced Financials Report
+- Enhanced Cash Flow Report
+- Enhanced Invoices Report
+- Enhanced Liabilities Report
+- Accounting package writeback
+
+#### Included integrations
+
+[todo: link to supported integrations doc page once available]
+
+Note a separate Add on is required to access ERP integrations and Desktop platforms.
+
+Open banking provider access is subject to separate access requirements.
+
+<hr/>
+
+#### Feature definitions
+
+**Pull accounting data**
+Pull the following data from connected Accounting packages: [todo: link to docs]
+
+**Pull commerce data**
+Pull the following data from connected Commerce platforms: [todo: link to docs]
+
+**Pull banking data**
+Pull the following data from connected Open Banking provider: [todo: link to docs]
+
+**Enhanced Financials Report**
+Financial statements standardized to a single chart of accounts
+
+**Enhanced Cash Flow Report**
+Banking transactions from connected Open Banking aggregator enriched with financial statement categories from a Company’s Profit and Loss/Balance Sheet.
+
+**Enhanced Invoices Report**
+Invoices with matched banking transactions from connected Open Banking provider
+
+**Enhanced Liabilities Report**
+Loans and loan history information derived from connected Accounting, Open Banking and Commerce connections.
+
+**Accounting package writeback**
+Where mandated by the Accounting package, the ability to write back data pertaining to a loan or other credit facility that has been issued.
+
+<hr/>
+
+This product will appear as **Lending API** on your order form.
 
 </TabItem>
 
 </Tabs>
+
+[Product description referenced in your order form not listed above?](/configure/plans/additional-product-descriptions)
 
 ---
 

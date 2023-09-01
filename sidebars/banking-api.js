@@ -14,7 +14,7 @@ module.exports = [
   {
     type: "link",
     label: "Banking data model",
-    href: "/data-model/banking/",
+    href: "/banking-api/banking-data-types/",
   },
   {
     type: "link",

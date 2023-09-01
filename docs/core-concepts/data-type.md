@@ -22,7 +22,7 @@ In Codat, each type of data you want to create, update, or retrieve for a given 
       For example, invoices and bills from an accounting platform.
     </p>
     <p>
-      <a href="/data-model/accounting/overview">Explore accounting data types →</a>
+      <a href="/accounting-api/accounting-data-types">Explore accounting data types →</a>
     </p>    
   </li>
   <li className="card">
@@ -37,7 +37,7 @@ In Codat, each type of data you want to create, update, or retrieve for a given 
       For example, bank transactions from a bank account.
     </p>
     <p>
-      <a href="/data-model/accounting/overview">Explore banking data types →</a>
+      <a href="/accounting-api/accounting-data-types">Explore banking data types →</a>
     </p>    
   </li>
   <li className="card">
@@ -52,7 +52,7 @@ In Codat, each type of data you want to create, update, or retrieve for a given 
       For example, customers and payments from a POS system.
     </p>
     <p>
-      <a href="/data-model/accounting/overview">Explore commerce data types →</a>
+      <a href="/accounting-api/accounting-data-types">Explore commerce data types →</a>
     </p>    
   </li>
   <li className="card">
@@ -67,7 +67,7 @@ In Codat, each type of data you want to create, update, or retrieve for a given 
       For example, bank feed bank accounts.
     </p>
     <p>
-      <a href="/data-model/accounting/overview">Explore bank feed data types →</a>
+      <a href="/accounting-api/accounting-data-types">Explore bank feed data types →</a>
     </p>    
   </li>
 </ul>

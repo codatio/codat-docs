@@ -1,7 +1,6 @@
 ---
 title: "Sage Business Cloud Accounting"
 description: "Learn about our Sage Business Cloud Accounting integration."
-sidebar_label: Overview
 ---
 
 You can synchronize accounting data with <a className="external" href="https://www.sage.com/en-gb/sage-business-cloud/accounting/" target="_blank">Sage Business Cloud Accounting</a> using our Sage Business Cloud Accounting integration.

@@ -12,9 +12,9 @@ A data connection represents a [company's](/core-concepts/companies) connection 
 
 A company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:
 
-- [Accounting data](/accounting-api/overview) - 1 active connection.
-- [Banking data](/banking-api/overview) - Multiple active connections.
-- [Commerce data](/commerce-api/overview) - Multiple active connections.
+- [Accounting data](/integrations/accounting/overview) - 1 active connection.
+- [Banking data](/integrations/banking/overview) - Multiple active connections.
+- [Commerce data](/integrations/commerce/overview) - Multiple active connections.
 
 Any combination of accounting, banking, and commerce data connections is allowed.
 
@@ -34,7 +34,7 @@ Connections can have one of the statuses described in the following table.
 
 ## Linked data connection example
 
-Verify that a connection returns a Linked `status` using one of our [Connections](/codat-api#/operations/list-company-connections) endpoints. 
+Verify that a connection returns a Linked `status` using one of our [Connections](/codat-api#/operations/list-connections) endpoints. 
 
 In the response, note the following fields:
 
@@ -76,15 +76,15 @@ Only `Linked` data connections can be unlinked.
 
 <Tabs>
 
-<Tabitem value="Request URL" label="Request URL">
+<TabItem value="Request URL" label="Request URL">
 
 ```http request title="Disconnect connection"
 PATCH /companies/COMPANY_ID/connections/CONNECTION_ID
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="Request Body" label="Request Body">
+<TabItem value="Request Body" label="Request Body">
 
 ```json
 {
@@ -92,7 +92,7 @@ PATCH /companies/COMPANY_ID/connections/CONNECTION_ID
 }
 ```
 
-</Tabitem>
+</TabItem>
 
 </Tabs>
 
@@ -115,7 +115,7 @@ PATCH /companies/COMPANY_ID/connections/CONNECTION_ID
 
 ## Delete a data connection
 
-To delete a data connection, send a request to the <a href="/codat-api#/operations/delete-company-connection" target="_blank">DELETE /connectionId endpoint</a> and provide the `companyId` and `connectionId` as path parameters.
+To delete a data connection, send a request to the <a href="/codat-api#/operations/delete-connection" target="_blank">DELETE /connectionId endpoint</a> and provide the `companyId` and `connectionId` as path parameters.
 
 ```http
 DELETE /companies/COMPANY_ID/connections/CONNECTION_ID
@@ -135,4 +135,4 @@ If you are migrating an existing integration to use Codat, you can provide token
 ## Read next
 
 - Next concept: [Integrations](/core-concepts/integrations)
-- [`GET /connections`](/codat-api#/operations/list-company-connections) API reference
+- [`GET /connections`](/codat-api#/operations/list-connections) API reference

@@ -20,21 +20,21 @@ Codat's API allows you to provide tokens for a subset of our integrations which 
 
 Self service token migration is currently supported for over twenty of our integrations, with more being added in the coming months. To view an up-to-date list, check out the available integrations in the **OAuth Token Migrations** section of our <a href="https://postman.codat.io/#88a1864c-60e8-4105-bea9-e55314d6b74d" target="_blank" class="external">Postman collection</a>.
 
-Before you migrate a token, the company and data connection must be created. This is required because the `companyId` and `connectionId` are parameters in the PUT token migration URL (see below). You can create the company using a POST call to the [Create company](/codat-api#/operations/create-company) endpoint. The connection can be created using the [Create connection](/codat-api#/operations/create-data-connection) endpoint.
+Before you migrate a token, the company and data connection must be created. This is required because the `companyId` and `connectionId` are parameters in the PUT token migration URL (see below). You can create the company using a POST call to the [Create company](/codat-api#/operations/create-company) endpoint. The connection can be created using the [Create connection](/codat-api#/operations/create-connection) endpoint.
 
 To migrate, use the PUT connections endpoint. You will need to provide the integration specific information such as the organization ID and OAuth tokens that Codat should use. Because these are different for each integration, examples of the format required for the integrations available are listed in the Postman Collection linked above.
 
 <Tabs>
 
-<Tabitem value="Request URL" label="Request URL">
+<TabItem value="Request URL" label="Request URL">
 
 ```http request title="Authorize connection"
   PUT /companies/{companyId}/connections/{connectionId}/authorization
 ```
 
-</Tabitem>
+</TabItem>
 
-<Tabitem value="Request Body" label="Request Body">
+<TabItem value="Request Body" label="Request Body">
 
 ```json
 {
@@ -43,7 +43,7 @@ To migrate, use the PUT connections endpoint. You will need to provide the integ
 }
 ```
 
-</Tabitem>
+</TabItem>
 
 </Tabs>
 

@@ -1,7 +1,6 @@
 ---
 title: "MYOB Business"
 description: "Learn about our MYOB Business integration."
-sidebar_label: Overview
 ---
 
 You can synchronize accounting and banking data with <a className="external" href="https://www.myob.com/" target="_blank">MYOB Business</a> using our MYOB Business integration.

@@ -1,20 +1,20 @@
 export const bankfeedsIntegrations = [
   {
     "name": "QuickBooks Online bank feeds",
-    "to": "/bank-feeds-api/qbo-bank-feeds/",
+    "to": "/bank-feeds/qbo-bank-feeds/",
     "type": "bankfeeds",
     "img": "https://static.codat.io/public/officialLogos/Square/19EEFA32-58A8-4097-B95A-EF150BF24FA0.png",
     "tags": ["US", "Canada"],
   },
   {
     "name": "Sage bank feeds",
-    "to": "/bank-feeds-api/sage-bank-feeds/",
+    "to": "/bank-feeds/sage-bank-feeds/",
     "type": "bankfeeds",
     "img": "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png",
   },
   {
     "name": "Xero bank feeds",
-    "to": "/bank-feeds-api/xero-bank-feeds/",
+    "to": "/bank-feeds/xero-bank-feeds/",
     "type": "bankfeeds",
     "img": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png",
   },
@@ -24,6 +24,53 @@ export const bankfeedsIntegrations = [
     "type": "bankfeeds",
     "img": "https://static.codat.io/public/officialLogos/Square/3DA57C23-A4FA-4BC8-8C02-A7A686ED8B36.png",
   },
+]
+
+export const payrollIntegrations = [
+	{
+		"name": "Oracle NetSuite",
+		"to": "/integrations/accounting/netsuite/accounting-netsuite",
+		"type": "accounting",
+		"tags": [
+			"Premium"
+		],
+		"img": "https://static.codat.io/public/officialLogos/Square/9815B998-024D-4415-A40B-89903B2CAD6F.png"
+	},
+	{
+		"name": "QuickBooks Online",
+		"to": "/integrations/accounting/quickbooksonline/accounting-quickbooksonline",
+		"type": "accounting",
+		"img": "https://static.codat.io/public/officialLogos/Square/19EEFA32-58A8-4097-B95A-EF150BF24FA0.png"
+	},
+	{
+		"name": "Sage Intacct",
+		"to": "/integrations/accounting/sage-intacct/accounting-sage-intacct",
+		"type": "accounting",
+		"tags": [
+			"Premium"
+		],
+		"img": "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png"
+	},
+	{
+		"name": "Xero",
+		"to": "/integrations/accounting/xero/accounting-xero",
+		"type": "accounting",
+		"img": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png"
+	},
+  {
+    "name": "Sage Business Cloud Accounting",
+    "to": "/integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud",
+    "type": "accounting",
+    "tags": ["UK", "US", "Ireland", "Canada", "France", "Germany", "Spain"],
+    "img": "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png"
+  },
+  {
+    "name": "Dynamics 365 Business Central",
+    "to": "/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral",
+    "type": "accounting",
+    "tags": ["Premium"],
+    "img": "https://static.codat.io/public/officialLogos/Square/6B579544-0E46-4F02-B343-578CE5C3C6CC.png"
+  }
 ]
 
 export const sfeIntegrations = [
@@ -52,6 +99,68 @@ export const sfeIntegrations = [
     "type": "Sync For Expenses",
     "tags": ["Payments, Refund, Chargeback & Rewards only"],
     "img": "https://static.codat.io/public/officialLogos/Square/6B579544-0E46-4F02-B343-578CE5C3C6CC.png"
+  }
+]
+
+export const sfcaccIntegrations = [
+  {
+    "name": "Exact Online",
+    "to": "/integrations/accounting/exact-online/accounting-exact-online",
+    "type": "accounting",
+    "tags": ["NL", "UK"],
+    "img": "https://static.codat.io/public/officialLogos/Square/B0FF8466-1421-415B-A551-1DC3B73006F4.png"
+  },
+  {
+    "name": "FreeAgent",
+    "to": "/integrations/accounting/freeagent/accounting-freeagent",
+    "type": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/3DA57C23-A4FA-4BC8-8C02-A7A686ED8B36.png"
+  },
+  {
+    "name": "MYOB Business",
+    "to": "/integrations/accounting/myob/accounting-myob",
+    "type": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/00812DF4-8A0F-4F06-9566-16E5CA1346AE.png"
+  },
+  {
+    "name": "QuickBooks Online",
+    "to": "/integrations/accounting/quickbooksonline/accounting-quickbooksonline",
+    "type": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/19EEFA32-58A8-4097-B95A-EF150BF24FA0.png"
+  },
+  {
+    "name": "Xero",
+    "to": "/integrations/accounting/xero/accounting-xero",
+    "type": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png"
+  }
+]
+
+export const sfccommIntegrations = [
+  {
+    "name": "Clover",
+    "to": "/integrations/commerce/clover/commerce-clover",
+    "type": "commerce",
+    "img": "https://static.codat.io/public/officialLogos/Square/83A4EF46-A57D-4D2A-ACE7-39FE279F43F8.png"
+  },
+  {
+    "name": "Lightspeed Restaurant",
+    "to": "/integrations/commerce/lightspeed-k/commerce-lightspeed-k",
+    "type": "commerce",
+    "tags": ["K Series"],
+    "img": "https://static.codat.io/public/officialLogos/Square/E221662A-DDA4-45E0-8F73-5563183A875A.png"
+  },
+  {
+    "name": "Shopify",
+    "to": "/integrations/commerce/shopify/commerce-shopify",
+    "type": "commerce",
+    "img": "https://static.codat.io/public/officialLogos/Square/853B004F-3A02-4A73-A13F-3EDED3D2F361.png"
+  },
+  {
+    "name": "Zettle",
+    "to": "/integrations/commerce/zettle/commerce-zettle",
+    "type": "commerce",
+    "img": "https://static.codat.io/public/officialLogos/Square/CE91071B-51BF-4A9E-91A2-4D2ECA672A56.png"
   }
 ]
 
@@ -300,12 +409,6 @@ export const integrations = [
 
 export const billpayIntegrations = [
   {
-    name: "MYOB Business",
-    to: "/integrations/accounting/myob/accounting-myob",
-    type: "accounting",
-    img: "https://static.codat.io/public/officialLogos/Square/00812DF4-8A0F-4F06-9566-16E5CA1346AE.png",
-  },
-  {
     name: "Oracle NetSuite",
     to: "/integrations/accounting/netsuite/accounting-netsuite",
     type: "accounting",
@@ -323,6 +426,13 @@ export const billpayIntegrations = [
     "to": "/integrations/accounting/quickbooksonline/accounting-quickbooksonline",
     "type": "accounting",
     "img": "https://static.codat.io/public/officialLogos/Square/19EEFA32-58A8-4097-B95A-EF150BF24FA0.png"
+  },
+  {
+    "name": "Sage Business Cloud Accounting",
+    "to": "/integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud",
+    "type": "accounting",
+    "tags": ["UK", "US", "Ireland", "Canada", "France", "Germany", "Spain"],
+    "img": "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png"
   },
   {
     name: "Sage Intacct",

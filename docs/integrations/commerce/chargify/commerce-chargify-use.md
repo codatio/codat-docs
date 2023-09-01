@@ -4,7 +4,7 @@ description: "When an SMB user has linked their Maxio account, access their subs
 sidebar_label: Use the integration
 ---
 
-The Maxio integration doesn't yet expose standardized data types or provide any data visualization or metrics (for example, in Assess).
+The Maxio integration doesn't yet expose standardized data types or provide any data visualization or metrics (for example, in Lending).
 
 Instead, when an SMB customer (a company) has [linked their Maxio account](/integrations/commerce/chargify/commerce-chargify-setup), you can access their subscriptions and billing data through the `proxy` endpoint in the Codat API. Only GET requests are currently supported.
 

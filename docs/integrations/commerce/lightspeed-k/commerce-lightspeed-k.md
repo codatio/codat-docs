@@ -1,6 +1,5 @@
 ---
 title: "Lightspeed Restaurant (K Series)"
-sidebar_label: Overview
 description: "Learn about our Lightspeed K Series integration"
 ---
 

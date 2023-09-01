@@ -1,6 +1,5 @@
 ---
 title: "Shopify"
-sidebar_label: Overview
 description: "Learn about our Shopify integration"
 ---
 

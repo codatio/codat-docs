@@ -1,6 +1,5 @@
 ---
 title: "Clover"
-sidebar_label: Overview
 description: "Learn about our Clover integration"
 ---
 

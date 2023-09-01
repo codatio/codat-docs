@@ -6,46 +6,131 @@ module.exports = [
     className: "back",
   },
   {
-    type: "link",
+    type: "doc",
     label: "Sync for Commerce",
-    href: "/sfc/overview",
-    className: "header",
+    id: "commerce/overview",
+    className: "header top-level-item products product sfc",
+  },
+  {
+    type: "doc",
+    label: "Product setup",
+    id: "commerce/setup",
+  },
+  {
+    type: "doc",
+    label: "Merchant configuration",
+    id: "commerce/merchant-configuration",
+  },
+  {
+    type: "doc",
+    label: "Data sync setup",
+    id: "commerce/data-synchronization",
   },
   {
     type: "category",
-    label: "Concepts",
+    label: "Advanced features",
     collapsed: true,
     items: [
-      "sfc/sync-for-commerce-knowledge-base/initiating-a-sync",
-      "sfc/sync-for-commerce-knowledge-base/monitoring-a-sync",
-      "sfc/sync-for-commerce-knowledge-base/synchronization-schedule",
-      "sfc/sync-for-commerce-knowledge-base/sfc-journal-entry-mapping",
-      "sfc/sync-for-commerce-knowledge-base/sfc-sales-product-categories",
+      "commerce/advanced-setup",
+      "commerce/advanced-data-sync",
     ],
+  },
+  // {
+  //   type: "category",
+  //   label: "Concepts",
+  //   collapsed: true,
+  //   items: [
+  //     "commerce/learn/initiating-a-sync",
+  //     "commerce/learn/monitoring-a-sync",
+  //     "commerce/synchronization-schedule",
+  //     "commerce/learn/sfc-journal-entry-mapping",
+  //     "commerce/learn/sfc-sales-product-categories",
+  //   ],
+  // },
+  // {
+  //   type: "category",
+  //   label: "Build guide",
+  //   collapsed: true,
+  //   items: [
+  //     "commerce/build/sync-for-commerce-prerequisites",
+  //     "commerce/build/sync-platform-selection",
+  //     "commerce/build/implementing-codats-no-code-merchant-configuration",
+  //     "commerce/build/customizing-the-sync-configuration-flow",
+  //   ],
+  // },
+  // {
+  //   type: "category",
+  //   label: "Mapping specifications",
+  //   collapsed: true,
+  //   items: [
+  //     "commerce/mapping-specifications/overview",
+  //     "commerce/mapping-specifications/xero-mapping-specification",
+  //     "commerce/mapping-specifications/qbo-mapping-specification",
+  //   ],
+  // },
+  {
+    type: "ref",
+    label: "QuickBooks Online",
+    customProps: {
+      hr: true,
+      section: "Sync for Commerce integrations",
+    },
+    id: "integrations/accounting/quickbooksonline/accounting-quickbooksonline",
   },
   {
-    type: "category",
-    label: "Build guide",
-    collapsed: true,
-    items: [
-      "sfc/build-with-sync-for-commerce/sync-for-commerce-prerequisites",
-      "sfc/build-with-sync-for-commerce/sync-platform-selection",
-      "sfc/build-with-sync-for-commerce/implementing-codats-no-code-merchant-configuration",
-      "sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow",
-    ],
+    type: "doc",
+    label: "Xero",
+    id: "integrations/accounting/xero/accounting-xero"
   },
   {
-    type: "category",
-    label: "Mapping specifications",
-    collapsed: true,
-    items: [
-      "sfc/mapping-specifications/overview",
-      "sfc/mapping-specifications/xero-mapping-specification",
-      "sfc/mapping-specifications/qbo-mapping-specification",
-    ],
+    type: "doc",
+    label: "MYOB Business",
+    id: "integrations/accounting/myob/accounting-myob"
   },
-  "sfc/error-documentation",
-  "sfc/coming-soon",
+  {
+    type: "doc",
+    label: "FreeAgent",
+    id: "integrations/accounting/freeagent/accounting-freeagent"
+  },
+  {
+    type: "doc",
+    label: "Exact Online",
+    id: "integrations/accounting/exact-online/accounting-exact-online"
+  },
+  {
+    type: "doc",
+    label: "Clover",
+    id: "integrations/commerce/clover/commerce-clover"
+  },
+  {
+    type: "doc",
+    label: "Lightspeed Restaurant",
+    id: "integrations/commerce/lightspeed-k/commerce-lightspeed-k"
+  },
+  {
+    type: "doc",
+    label: "Shopify",
+    id: "integrations/commerce/shopify/commerce-shopify"
+  },
+  {
+    type: "doc",
+    label: "Zettle",
+    id: "integrations/commerce/zettle/commerce-zettle"
+  },
+  {
+    type: "doc",
+    label: "Sync schedule",
+    id: "commerce/synchronization-schedule",
+    customProps: {
+      hr: true,
+      section: "Reference",
+    },
+  },
+  {
+    type: "doc",
+    label: "FAQs",
+    id: "commerce/error-documentation",
+  },
   {
     type: "link",
     href: "/sync-for-commerce-api",

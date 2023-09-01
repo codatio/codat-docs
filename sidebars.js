@@ -1,15 +1,25 @@
-const authFlow = require("./sidebars/authFlow");
-const dataModel = require("./sidebars/dataModel");
+const authFlow = require("./sidebars/auth-flow");
+
+const useApi = require("./sidebars/use-the-api");
+
+const products = require("./sidebars/products");
+const usecases = require("./sidebars/usecases");
+
+const lending = require("./sidebars/lending");
+const bankfeeds = require("./sidebars/bank-feeds");
+const commerce = require("./sidebars/sync-for-commerce");
+const expenses = require("./sidebars/sync-for-expenses");
+const payroll = require("./sidebars/payroll");
+const payables = require("./sidebars/payables");
 
 const accountingAPI = require("./sidebars/accounting-api");
 const bankingAPI = require("./sidebars/banking-api");
 const commerceAPI = require("./sidebars/commerce-api");
-const bankfeeds = require("./sidebars/bank-feeds-api");
-const assess = require("./sidebars/assess");
-const sfc = require("./sidebars/sync-for-commerce");
-const sfe = require("./sidebars/sync-for-expenses");
 
-const integrations = require("./sidebars/integrations");
+const integrationsAccounting = require("./sidebars/integrations-accounting");
+const integrationsBanking = require("./sidebars/integrations-banking");
+const integrationsCommerce = require("./sidebars/integrations-commerce");
+const integrationsBankFeeds = require("./sidebars/integrations-bank-feeds");
 
 module.exports = {
   docs: [
@@ -23,7 +33,7 @@ module.exports = {
       type: "category",
       label: "Get started",
       collapsed: true,
-      className: "top-level-item introduction",
+      className: "top-level-item top-level-item-list get-started",
       link: {
         type: 'doc',
         id: "get-started/overview",
@@ -41,49 +51,31 @@ module.exports = {
       type: "category",
       label: "Tutorials",
       collapsed: true,
-      className: "top-level-item other",
+      className: "top-level-item top-level-item-list tutorials",
       link: {
         type: 'doc',
         id: "guides/overview",
       },
       items: [
         {
-          type: "category",
-          label: "Loan qualification",
-          collapsed: true,
-          items: [
-            "guides/loan-qualification/introduction",
-            "guides/loan-qualification/setting-up",
-            "guides/loan-qualification/process-loan",
-            "guides/loan-qualification/uw-decision",
-          ],
+          type: "ref",
+          label: "Invoice finance",
+          id: "lending/guides/invoice-finance/introduction",
         },
+        // {
+        //   type: "ref",
+        //   label: "Loan qualification",
+        //   id: "lending/guides/loan-qualification/introduction",
+        // },
         {
-          type: "category",
-          label: "Invoice financing",
-          collapsed: true,
-          items: [
-            "guides/invoice-finance/introduction",
-            "guides/invoice-finance/setting-up",
-            "guides/invoice-finance/process-invoice",
-            "guides/invoice-finance/inv-fin-decision",
-          ],
-        },
-        {
-          type: "category",
+          type: "ref",
           label: "Bill pay",
-          collapsed: true,
-          items: [
-            "guides/bill-pay/introduction",
-            "guides/bill-pay/use-bill-pay-demo-app",
-            "guides/bill-pay/run-demo-app-locally",
-            "guides/bill-pay/how-the-demo-app-works",
-          ],
+          id: "payables/guides/bill-pay/introduction",
         },
         {
-          type: "link",
-          href: "/guides/bank-feeds-tutorial",
-          label: "Bank transactions reconciliation"
+          type: "ref",
+          label: "Bank transactions reconciliation",
+          id: "bank-feeds/guides/bank-feeds-tutorial",
         },
       ],
     },
@@ -91,46 +83,12 @@ module.exports = {
       type: "category",
       label: "Use cases",
       collapsed: true,
-      className: "top-level-item usecases",
+      className: "top-level-item top-level-item-list usecases",
       link: {
         type: 'doc',
         id: "usecases/overview",
       },
-      items: [
-        "usecases/summary/lending",
-        "usecases/summary/managing-expenses",
-        "usecases/summary/dashboarding",
-        {
-          type: "category",
-          label: "Automating payables",
-          collapsed: true,
-          className: "top-level-item",
-          items: [
-            "usecases/summary/automating-payables",
-            {
-              type: "link",
-              label: "Demo app guide",
-              href: "https://docs.codat.io/guides/bill-pay/introduction",
-            },
-            {
-              type: "category",
-              label: "Implementing bill pay",
-              collapsed: true,
-              className: "top-level-item",
-              items: [
-                "usecases/bill-pay/overview",
-                "usecases/bill-pay/bills",
-                "usecases/bill-pay/mapping",
-                "usecases/bill-pay/payments",
-              ],
-            }
-          ],
-        },
-        "usecases/summary/automating-receivables",
-        "usecases/summary/integrating-commerce-data",
-        "usecases/summary/managing-payroll",
-        "usecases/summary/reconciling-bank-transactions",
-      ],
+      items: usecases,
     },
     {
       type: "category",
@@ -139,7 +97,7 @@ module.exports = {
       customProps: {
         hr: true,
       },
-      className: "top-level-item core",
+      className: "top-level-item top-level-item-list learn",
       link: {
         type: 'doc',
         id: "core-concepts/overview",
@@ -154,7 +112,7 @@ module.exports = {
           type: "link",
           href: "/codat-api",
           className: "external",
-          label: "Common API reference",
+          label: "Platform API reference",
         },
       ],
     },
@@ -162,7 +120,7 @@ module.exports = {
       type: "category",
       label: "Configure",
       collapsed: true,
-      className: "top-level-item config",
+      className: "top-level-item top-level-item-list config",
       link: {
         type: 'doc',
         id: "configure/portal/dashboard",
@@ -179,6 +137,7 @@ module.exports = {
             "configure/user-management/adding-users",
             "configure/user-management/user-roles",
             "configure/user-management/sso",
+
           ],
         },
         {
@@ -198,102 +157,18 @@ module.exports = {
       type: "category",
       label: "Use our API",
       collapsed: true,
-      className: "top-level-item api",
+      className: "top-level-item top-level-item-list api",
       link: {
         type: 'doc',
         id: "using-the-api/overview",
       },
-      items: [
-        "using-the-api/authentication",
-        {
-          type: "category",
-          label: "Manage companies",
-          collapsed: true,
-          items: [
-            "using-the-api/managing-companies",
-            "configure/portal/companies",
-            // manage connections
-          ],
-        },
-        {
-          type: "category",
-          label: "Get data",
-          collapsed: true,
-          items: [
-            "using-the-api/get-data",
-            "using-the-api/queueing-data-syncs",
-            "using-the-api/pull-history",
-            "using-the-api/querying",
-            "using-the-api/paging",
-            "using-the-api/ordering-results",
-            "using-the-api/modified-dates",
-          ],
-        },
-        {
-          type: "category",
-          label: "Modify data",
-          collapsed: true,
-          items: [
-            "using-the-api/push",
-            "configure/portal/pull-and-push-history",
-          ],
-        },
-        "using-the-api/testing",
-        {
-        type: "category",
-        label: "Webhooks",
-        collapsed: true,
-        items: [
-          "using-the-api/webhooks/core-rules-types",
-          "using-the-api/webhooks/core-rules-create",
-          "using-the-api/webhooks/core-rules-webhooks",
-          "using-the-api/webhooks/core-rules-webhooksecurity",
-          "using-the-api/webhooks/receive-webhooks-as-email",
-          ],
-        },
-        {
-          type: "category",
-          label: "Supplemental data",
-          collapsed: true,
-          items: [
-            "using-the-api/supplemental-data/overview",
-            "using-the-api/supplemental-data/usecases",
-          ],
-        },
-        {
-          type: "category",
-          label: "Best practices",
-          collapsed: true,
-          items: [
-            "using-the-api/best-practices/implementing-a-mapping-page",
-          ],
-        },
-        {
-          type: "category",
-          label: "Troubleshooting",
-          collapsed: true,
-          items: [
-            "using-the-api/errors",
-            "using-the-api/rate-limits",
-            "using-the-api/optimizing-api-calls",
-          ],
-        },
-        {
-          type: "category",
-          label: "Change management",
-          collapsed: true,
-          items: [
-            "using-the-api/change-policy",
-            "configure/portal/developers",
-          ],
-        },
-      ],
+      items: useApi,
     },
     {
       type: "category",
       label: "Auth flow",
       collapsed: true,
-      className: "top-level-item auth",
+      className: "top-level-item top-level-item-list auth",
       link: {
         type: 'doc',
         id: "auth-flow/overview",
@@ -301,63 +176,35 @@ module.exports = {
       items: authFlow,
     },
     {
-      type: "link",
+      type: "category",
       label: "Integrations",
-      className: "top-level-item integrations",
-      href: "/integrations/all-integrations",
+      collapsed: true,
+      className: "top-level-item top-level-item-list integrations",
+      items: [
+        "integrations/accounting/overview",
+        "integrations/banking/overview",
+        "integrations/commerce/overview",
+        {
+          type: "doc",
+          id: "integrations/bank-feeds/overview",
+          label: "Bank feeds",
+        },
+        "integrations/file-upload",
+      ]
     },
-    {
-      type: "link",
-      label: "Accounting API",
-      customProps: {
-        hr: true,
-      },
-      className: "top-level-item products product accounting",
-      href: "/accounting-api/overview",
-    },
-    {
-      type: "link",
-      label: "Assess",
-      className: "top-level-item products product assess",
-      href: "/assess/overview",
-    },
-    {
-      type: "link",
-      label: "Banking API",
-      className: "top-level-item products product banking",
-      href: "/banking-api/overview",
-    },
-    {
-      type: "link",
-      label: "Bank Feeds API",
-      className: "top-level-item products product bankfeed",
-      href: "/bank-feeds-api/overview",
-    },
-    {
-      type: "link",
-      label: "Commerce API",
-      className: "top-level-item products product commerce",
-      href: "/commerce-api/overview",
-    },
-    {
-      type: "link",
-      label: "Sync for Expenses",
-      className: "top-level-item products product sfe",
-      href: "/sync-for-expenses/overview",
-    },
-    {
-      type: "link",
-      label: "Sync for Commerce",
-      className: "top-level-item products product sfc",
-      href: "/sfc/overview",
-    },
+    ...products,
   ],
-  accountingAPI: accountingAPI,
-  bankingAPI: bankingAPI,
-  commerceAPI: commerceAPI,
   bankfeeds: bankfeeds,
-  sfc: sfc,
-  assess: assess,
-  sfe: sfe,
-  integrations: integrations,
+  commerce: commerce,
+  lending: lending,
+  expenses: expenses,
+  payroll: payroll,
+  payables: payables,
+  integrationsAccounting: integrationsAccounting,
+  integrationsBanking: integrationsBanking,
+  integrationsCommerce: integrationsCommerce,
+  integrationsBankFeeds: integrationsBankFeeds,
+  //accountingAPI: accountingAPI,
+  //bankingAPI: bankingAPI,
+  //commerceAPI: commerceAPI,
 };

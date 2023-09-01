@@ -6,31 +6,66 @@ module.exports = [
     className: "back",
   },
   {
-    type: "link",
+    type: "doc",
     label: "Sync for Expenses",
-    href: "/sync-for-expenses/overview",
-    className: "header",
-  },
-  "sync-for-expenses/gettingstarted",
-  "sync-for-expenses/configandcategorize",
-  {
-    type: "category",
-    label: "Pushing expenses",
-    collapsed: true,
-    items: [
-      "sync-for-expenses/sync-process/sync-process-explained",
-      "sync-for-expenses/sync-process/expense-transactions",
-      "sync-for-expenses/sync-process/syncing-expenses",
-      "sync-for-expenses/sync-process/uploading-receipts",
-      "sync-for-expenses/sync-process/updating-expenses",
-    ],
+    id: "expenses/overview",
+    className: "header  top-level-item products product sfe",
   },
   {
-    type: "link",
-    href: "/sfc/sync-for-commerce-knowledge-base/monitoring-a-sync",
-    label: "Monitoring a sync",
+    type: "doc",
+    id: "expenses/getting-started",
+    label: "Get started",
+    customProps: {
+      hr: true,
+    },
   },
-   "sync-for-expenses/sync-for-expenses-faq",
+  "expenses/config-and-categorize",
+  {
+    type: "doc",
+    id: "expenses/sync-process/sync-process-explained",
+    label: "The process",
+    customProps: {
+      hr: true,
+      section: "Pushing expenses",
+    },
+  },
+  "expenses/sync-process/expense-transactions",
+  "expenses/sync-process/syncing-expenses",
+  "expenses/sync-process/uploading-receipts",
+  "expenses/sync-process/updating-expenses",
+  "expenses/monitoring-a-sync",
+  {
+    type: "ref",
+    label: "Oracle NetSuite",
+    customProps: {
+      hr: true,
+      section: "Expense integrations",
+    },
+    id: "integrations/accounting/netsuite/accounting-netsuite",
+  },
+  {
+    type: "doc",
+    label: "QuickBooks Online",
+    id: "integrations/accounting/quickbooksonline/accounting-quickbooksonline"
+  },
+  {
+    type: "doc",
+    label: "Xero",
+    id: "integrations/accounting/xero/accounting-xero"
+  },
+  {
+    type: "doc",
+    label: "Dynamics 365 Business Central",
+    id: "integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral"
+  },
+  {
+    type: "doc",
+    id: "expenses/faq",
+    label: "FAQs",
+    customProps: {
+      hr: true,
+    },
+  },
   {
     type: "link",
     href: "/sync-for-expenses-api",

@@ -2702,10 +2702,9 @@
                 },
                 "example": [
                   {
-                    "reportInfo": {
-                      "name": "marketing_metrics",
-                      "displayName": "Marketing metrics"
-                    },
+                    "reportInfo": null,
+                    "name": "marketing_metrics",
+                    "displayName": "Marketing metrics",
                     "dimensions": [
                       {
                         "index": 0,
@@ -2945,7 +2944,7 @@
         ]
       }
     },
-    "/data/companies/{companyId}/assess/reports/enhancedLiabilities/loan/transactions": {
+    "/companies/{companyId}/reports/enhancedLiabilities/loan/transactions": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -2993,7 +2992,7 @@
         ]
       }
     },
-    "/data/companies/{companyId}/assess/reports/enhancedLiabilities/loan": {
+    "/companies/{companyId}/reports/enhancedLiabilities/loan": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -3050,7 +3049,7 @@
   "components": {
     "schemas": {
       "Report": {
-        "title": "Assess report",
+        "title": "Commerce report",
         "description": "## Structure\n\nAssess reports follow a consistent structure. Reports contain four sections of information:\n\n### 1. Report definition\n\nInformation such as:\n\n  1. The report info (e.g. enhanced_profit_and_loss).\n  2. The display name of the report (e.g. Enhanced Profit and Loss).\n  \n### 2. Dimension info\n\nInformation about the dimension contained in the reports such as:\n\n  1. The type of dimension (e.g. datetime, recordRef).\n  2. The display name of the dimension (e.g. Period, Category type, Category sub type).\n  3. The details about each item within the dimension (e.g. displayName:\"Jan 2022\", start:\"...\", end:\"...\", id:\"...\", name:\"...\").\n\n### 3. Measure info\n\nInformation about the measures contained in the report such as:\n\n  1. The display name of the measure (e.g. value of account, percentage change).\n  2. The type of the measure (e.g. currency, percentage).\n  3. The unit of the measure (e.g. %, GBP).\n  \n### 4. The data for the report\n\nWhen the *includeDisplayName* parameter is set to *true*, it shows the *dimensionDisplayName* and *itemDisplayName* to make the data human-readable. The default setting for *includeDisplayName* is *false*.\n\n\n## Displaying the report\n\nReports can be rendered as follows (ordering is implicit rather than explicit):\n\n![A table showing an example of how a report can be rendered](https://files.readme.io/1fa20ca-Report1.png)\n\n# Data model\n\n## Dimensions",
         "type": "object",
         "properties": {
@@ -3063,30 +3062,30 @@
           "dimensions": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Report/definitions/reportDimension"
+              "$ref": "#/components/schemas/Report/definitions/commerceReportDimension"
             }
           },
           "measures": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Report/definitions/reportMeasure"
+              "$ref": "#/components/schemas/Report/definitions/commerceReportMeasure"
             }
           },
           "reportData": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Report/definitions/reportComponent"
+              "$ref": "#/components/schemas/Report/definitions/commerceReportComponent"
             }
           },
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Report/definitions/reportError"
+              "$ref": "#/components/schemas/Report/definitions/commerceReportError"
             }
           }
         },
         "definitions": {
-          "reportMeasure": {
+          "commerceReportMeasure": {
             "title": "Measure",
             "type": "object",
             "properties": {
@@ -3104,7 +3103,7 @@
               }
             }
           },
-          "reportError": {
+          "commerceReportError": {
             "title": "Error",
             "type": "object",
             "properties": {
@@ -3125,7 +3124,7 @@
               }
             }
           },
-          "reportDimension": {
+          "commerceReportDimension": {
             "title": "Dimension",
             "type": "object",
             "properties": {
@@ -3151,7 +3150,7 @@
               }
             }
           },
-          "reportComponent": {
+          "commerceReportComponent": {
             "title": "Report component",
             "type": "object",
             "properties": {
@@ -3176,7 +3175,7 @@
               "components": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/Report/definitions/reportComponent"
+                  "$ref": "#/components/schemas/Report/definitions/commerceReportComponent"
                 }
               }
             }
@@ -3275,7 +3274,7 @@
               "type": "object",
               "properties": {
                 "date": {
-                  "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                  "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
                   "description": "Last date of the period."
                 },
                 "balance": {
@@ -3346,7 +3345,7 @@
                 "description": "Name of the company queried."
               },
               "generatedDate": {
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
                 "description": "Returns the YYYY-MM-DD datetime of report generation."
               }
             }
@@ -3432,34 +3431,48 @@
         "title": "Excel status",
         "properties": {
           "lastGenerated": {
-            "title": "Date time",
-            "type": "string",
-            "examples": [
-              "2022-10-23T00:00:00.000Z",
-              "2022-10-23T00:00:00.000Z"
-            ],
-            "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
+            "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
+            "description": "The date and time of when the generation of the most recent report was initiated."
           },
           "inProgress": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "When true, the request was successful and the report is being generated. If false, the request was unsuccessful and the report is not being generated."
           },
           "queued": {
-            "type": "string"
+            "type": "string",
+            "description": "The date and time of when a successful request was queued for the most recent report."
           },
           "success": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "True if the requested report was successfully queued and false if the requested report was not able to be queued."
           },
           "errorMessage": {
-            "type": "string"
+            "type": "string",
+            "description": "Error details in case the report generation request was unsuccessful."
           },
           "lastInvocationId": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique ID generated for this request."
           },
           "reportType": {
-            "type": "string"
+            "$ref": "#/components/schemas/ExcelStatus/definitions/excelReportTypes"
           },
           "fileSize": {
-            "type": "integer"
+            "type": "integer",
+            "nullable": true,
+            "description": "The file size in Bytes is populated upon successful generation of the report."
+          }
+        },
+        "definitions": {
+          "excelReportTypes": {
+            "type": "string",
+            "enum": [
+              "audit",
+              "enhancedFinancials",
+              "enhancedInvoices",
+              "enhancedCashFlow"
+            ],
+            "description": "The type of the report requested in the query string."
           }
         },
         "examples": {
@@ -3508,7 +3521,7 @@
             "properties": {
               "lastMatched": {
                 "type": "string",
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
                 "description": "The date the matching algorithm last ran against the company’s data type specified.",
                 "readOnly": true
               },
@@ -3562,22 +3575,22 @@
             "description": "Only returned for transactions. For accounts, there is nothing returned.",
             "properties": {
               "minDate": {
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
                 "description": "Earliest date of transaction set.",
                 "readOnly": true
               },
               "maxDate": {
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
                 "description": "Latest date of transaction set.",
                 "readOnly": true
               },
               "minOverlappingDate": {
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
                 "description": "Earliest date where transactions exist in both accounting and banking platforms.",
                 "readOnly": true
               },
               "maxOverlappingDate": {
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
                 "description": "Latest date where transactions exist in both account and banking platforms.",
                 "readOnly": true
               }
@@ -3729,7 +3742,7 @@
         }
       },
       "DataIntegrityDetails": {
-        "title": "Data integrity details",
+        "title": "Data integrity detail",
         "type": "object",
         "properties": {
           "id": {
@@ -3747,7 +3760,7 @@
             "readOnly": true
           },
           "date": {
-            "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+            "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
             "description": "The date of the transaction."
           },
           "description": {
@@ -3963,7 +3976,7 @@
               },
               "date": {
                 "description": "The date the bank transaction was posted.",
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated"
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date"
               },
               "description": {
                 "description": "The description of the bank transaction.",
@@ -4109,20 +4122,12 @@
           "reportItems": {
             "type": "array",
             "items": {
-              "type": "object",
-              "properties": {
-                "invoices": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/enhancedInvoiceReportItem"
-                  }
-                }
-              }
+              "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/enhancedInvoiceReportItem"
             }
           }
         },
         "definitions": {
-          "customerRef": {
+          "lendingCustomerRef": {
             "type": "object",
             "properties": {
               "id": {
@@ -4146,7 +4151,13 @@
                 "description": "ID of the invoice, which may be a GUID but it may be something else depending on the accounting platform"
               },
               "date": {
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated"
+                "title": "Date time",
+                "type": "string",
+                "examples": [
+                  "2022-10-23T00:00:00.000Z",
+                  "2022-10-23T00:00:00.000Z"
+                ],
+                "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
               },
               "paymentType": {
                 "type": "string"
@@ -4185,7 +4196,7 @@
                 "type": "string"
               },
               "date": {
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated"
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date"
               },
               "description": {
                 "type": "string"
@@ -4222,13 +4233,13 @@
                     "type": "string"
                   },
                   "customerRef": {
-                    "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/customerRef"
+                    "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/lendingCustomerRef"
                   },
                   "issueDate": {
-                    "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated"
+                    "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date"
                   },
                   "dueDate": {
-                    "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated"
+                    "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date"
                   },
                   "status": {
                     "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/invoiceStatus"
@@ -4249,7 +4260,7 @@
                     }
                   },
                   "paidOnDate": {
-                    "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated"
+                    "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date"
                   }
                 }
               },
@@ -4264,7 +4275,7 @@
                       "modifiedDate": {
                         "allOf": [
                           {
-                            "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated"
+                            "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date"
                           },
                           {
                             "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
@@ -4282,7 +4293,7 @@
                       "sourceModifiedDate": {
                         "allOf": [
                           {
-                            "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated"
+                            "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date"
                           },
                           {
                             "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
@@ -4387,8 +4398,8 @@
                 "description": "Name of the company queried."
               },
               "generatedDate": {
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
-                "description": "Returns the YYYY-MM-DD datetime of report generation.  urns the YYYY-MM-DD datetime of report generation."
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
+                "description": "Returns the YYYY-MM-DD datetime of report generation."
               }
             }
           },
@@ -4440,7 +4451,7 @@
                 "description": "Contains object of reporting properties. The loan ref will reference a different object depending on the integration type."
               },
               "date": {
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
                 "description": "The date of that entry type occurred."
               },
               "amount": {
@@ -4491,28 +4502,16 @@
       },
       "LoanSummary": {
         "title": "Loan Summary",
-        "x-stoplight": {
-          "id": "tpq5juroo1ylk"
-        },
         "type": "object",
         "properties": {
           "reportInfo": {
-            "$ref": "#/components/schemas/LoanSummary/definitions/loanSummaryReportInfo",
-            "x-stoplight": {
-              "id": "f7qjivq05pm1q"
-            }
+            "$ref": "#/components/schemas/LoanSummary/definitions/loanSummaryReportInfo"
           },
           "reportItems": {
             "type": "array",
             "description": "Returns a summary of all loan activity for that integration type",
             "items": {
-              "$ref": "#/components/schemas/LoanSummary/definitions/reportItems",
-              "x-stoplight": {
-                "id": "3o8v6y67rbrro"
-              }
-            },
-            "x-stoplight": {
-              "id": "9mupc5jphk9fa"
+              "$ref": "#/components/schemas/LoanSummary/definitions/loanSummaryReportItem"
             }
           }
         },
@@ -4530,7 +4529,7 @@
                 "description": "Name of the company queried."
               },
               "generatedDate": {
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
                 "description": "Returns the YYYY-MM-DD datetime of report generation.  urns the YYYY-MM-DD datetime of report generation."
               }
             }
@@ -4541,10 +4540,7 @@
             "properties": {
               "id": {
                 "type": "string",
-                "description": "The id of the object being referred to.",
-                "x-stoplight": {
-                  "id": "8iauxevkpnxyj"
-                }
+                "description": "The id of the object being referred to."
               },
               "dataConnectionId": {
                 "type": "string",
@@ -4555,17 +4551,11 @@
               },
               "type": {
                 "type": "string",
-                "description": "The object type data is referring to, e.g. Account.",
-                "x-stoplight": {
-                  "id": "m68yr2mpbnvvq"
-                }
+                "description": "The object type data is referring to, e.g. Account."
               }
-            },
-            "x-stoplight": {
-              "id": "pr3pywxqc6jiu"
             }
           },
-          "recordRef": {
+          "loanSummaryRecordRef": {
             "title": "Item reference",
             "type": "object",
             "properties": {
@@ -4578,42 +4568,27 @@
                 "description": "The dataConnectionId the object being referred to is associated with."
               },
               "integrationType": {
-                "type": "string",
-                "enum": [
-                  "Accounting",
-                  "Banking",
-                  "Commerce"
-                ],
-                "description": "The integration type begin referred to."
+                "$ref": "#/components/schemas/LoanSummary/definitions/loanSummaryIntegrationType"
               },
               "recordRefType": {
-                "type": "string",
-                "enum": [
-                  "accounts",
-                  "banking-accounts",
-                  "commerce-transactions"
-                ],
-                "description": "The datatype being referred to."
+                "$ref": "#/components/schemas/LoanSummary/definitions/loanSummaryRecordRefType"
               }
             }
           },
-          "reportItems": {
+          "loanSummaryReportItem": {
             "type": "object",
             "properties": {
               "recordRef": {
-                "$ref": "#/components/schemas/LoanSummary/definitions/recordRef",
-                "description": "Contains object that contains a sumamry of all loan transactions for that integration type."
+                "$ref": "#/components/schemas/LoanSummary/definitions/loanSummaryRecordRef",
+                "description": "Contains object that contains a summary of all loan transactions for that integration type."
               },
               "description": {
                 "type": "string",
                 "description": "The description of the object being referred to. E.g. the account."
               },
               "startDate": {
-                "$ref": "#/components/schemas/ExcelStatus/properties/lastGenerated",
-                "description": "The date of the earliest loan transaction.",
-                "x-stoplight": {
-                  "id": "v8jngp34fn5w4"
-                }
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
+                "description": "The date of the earliest loan transaction."
               },
               "totalDrawdowns": {
                 "type": "number",
@@ -4628,6 +4603,26 @@
                 "description": "The loan outstanding balance.  This may not equal totalDrawdowns - totalRepayments due to interest which has been accrued."
               }
             }
+          },
+          "loanSummaryIntegrationType": {
+            "title": "Integration type",
+            "type": "string",
+            "enum": [
+              "Accounting",
+              "Banking",
+              "Commerce"
+            ],
+            "description": "The integration type begin referred to."
+          },
+          "loanSummaryRecordRefType": {
+            "title": "Record reference type",
+            "type": "string",
+            "enum": [
+              "accounts",
+              "banking-accounts",
+              "commerce-transactions"
+            ],
+            "description": "The datatype being referred to."
           }
         },
         "examples": [

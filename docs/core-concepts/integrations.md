@@ -71,7 +71,7 @@ You can connect a company to a single accounting source and a single bank feeds 
       Allow accounting software users to easily reconcile bank transactions against accounting entries for our bank feeds integrations.
     </p>
     <p>
-      <a href="/integrations/bankfeeds/overview">See our Bank feeds integrations →</a>
+      <a href="/bank-feeds/data-types">See our Bank feeds integrations →</a>
     </p>    
   </li>
   <li className="card">

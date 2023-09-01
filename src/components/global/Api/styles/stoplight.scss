@@ -26,6 +26,11 @@ html[data-theme="dark"] .token.punctuation {
   display: none !important; 
 }
 
+/* Hide API overview content */
+#mosaic-provider-react-aria-0-1 > div > div > div > div.sl-overflow-y-auto.sl-flex-1.sl-w-full.sl-px-24.sl-bg-canvas > div > div > div.sl-stack.sl-stack--vertical.sl-stack--6.sl-flex.sl-flex-col.sl-items-stretch {
+  display: none !important; 
+}
+
 .sl-badge {
   margin-bottom: 5px;
 }

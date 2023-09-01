@@ -1,6 +1,8 @@
 ---
 title: "Overview"
 description: "Explore the range of platforms you can connect to through our Commerce API."
+sidebar_label: Commerce
+displayed_sidebar: integrationsCommerce
 ---
 
 Our suite of commerce integrations allow you to retrieve up-to-date ecommerce, payment, and point-of-sale data from your SMB customers' commerce platforms.

@@ -24,5 +24,5 @@ flowchart LR
 
 ## Read next
 
-- See how these core concepts work in the [Common API reference](/codat-api)
+- See how these core concepts work in the [Platform API reference](/codat-api)
 - Next concept: [Companies](/core-concepts/companies)

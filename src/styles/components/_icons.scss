@@ -4,6 +4,7 @@
   object-fit: cover;
   width: 60px;
   height: 60px;
+  min-width: 60px;
 }
 
 .mini-icon {
@@ -82,28 +83,22 @@
     animation: spin var(--timer) linear infinite;
   }
 
-  &.accounting {
+  &.accounting-api {
     --hypercard-color-1: #CCA4FF;
     --hypercard-color-2: #a97de0;
     --hypercard-color-3: #8d3df6;
   }
 
-  &.banking {
+  &.banking-api {
     --hypercard-color-1: #64F2A1;
     --hypercard-color-2: #3dcb7a;
     --hypercard-color-3: #ccf6de;
   }
 
-  &.commerce {
+  &.commerce-api {
     --hypercard-color-1: #FDD655;
     --hypercard-color-2: #c79a00;
     --hypercard-color-3: #efd57b;
-  }
-
-  &.bank-feeds {
-    --hypercard-color-1: #37F0D1;
-    --hypercard-color-2: #138975;
-    --hypercard-color-3: #86ddcf;
   }
 
   &.assess {
@@ -112,16 +107,46 @@
     --hypercard-color-3: #ffa16d;
   }
 
-  &.sfc {
+  &.bank-feeds {
+    // green - #64F2A1
+    --hypercard-color-1: #37F0D1;
+    --hypercard-color-2: #138975;
+    --hypercard-color-3: #86ddcf;
+  }
+
+  &.commerce {
+    // yellow - #FDD655
+    --hypercard-color-1: #FDD655;
+    --hypercard-color-2: #c79a00;
+    --hypercard-color-3: #efd57b;
+  }
+
+
+  &.expenses {
+    // light blue - #70C1FF
+    --hypercard-color-1: #70C1FF;
+    --hypercard-color-2: #256ea5;
+    --hypercard-color-3: #95c3e7;
+  }
+
+  &.payroll {
+    // purple - #CCA4FF
+    --hypercard-color-1: #CCA4FF;
+    --hypercard-color-2: #a97de0;
+    --hypercard-color-3: #8d3df6;
+  }
+
+  &.payables {
+    // pink - #FF99DF
     --hypercard-color-1: #FF99DF;
     --hypercard-color-2: #b63d90;
     --hypercard-color-3: #f0c0e1;
   }
 
-
-  &.sfe {
-    --hypercard-color-1: #70C1FF;
-    --hypercard-color-2: #256ea5;
-    --hypercard-color-3: #95c3e7;
+  &.lending {
+    // orange - #FF9C66
+    --hypercard-color-1: #FF9C66;
+    --hypercard-color-2: #b05b2d;
+    --hypercard-color-3: #ffa16d;
   }
 }
