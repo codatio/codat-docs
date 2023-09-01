@@ -45,7 +45,7 @@ Everything from Free plus:
 
 ### Features
 
-Everything from Free plus:
+- Access our standardized APIs and Assess
 - No monthly commitment
 - Unlimited companies
 - Unlimited seats
