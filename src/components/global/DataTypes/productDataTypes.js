@@ -23,7 +23,7 @@ const commerce = [
 ]
 
 const payables = [
-  'accounts',
+  'chartOfAccounts',
   'billCreditNotes',
   'billPayments',
   'bills',
