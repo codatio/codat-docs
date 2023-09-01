@@ -99,6 +99,26 @@ module.exports = [
   },
   {
     type: "doc",
+    label: "Clover",
+    id: "integrations/commerce/clover/commerce-clover"
+  },
+  {
+    type: "doc",
+    label: "Lightspeed Restaurant",
+    id: "integrations/commerce/lightspeed-k/commerce-lightspeed-k"
+  },
+  {
+    type: "doc",
+    label: "Shopify",
+    id: "integrations/commerce/shopify/commerce-shopify"
+  },
+  {
+    type: "doc",
+    label: "Zettle",
+    id: "integrations/commerce/zettle/commerce-zettle"
+  },
+  {
+    type: "doc",
     label: "Sync schedule",
     id: "commerce/synchronization-schedule",
     customProps: {

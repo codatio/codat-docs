@@ -1,7 +1,7 @@
 ---
 title: "Advanced product configuration features"
 description: "Learn about additional configuration features available with Sync for Commerce"
-sidebar_label: "Configuration"
+sidebar_label: "Product configuration"
 displayed_sidebar: commerce
 ---
 
@@ -59,7 +59,7 @@ To authorize on behalf of your customers, create a record of your customer withi
 
 If you would like to authorize access on behalf of your customer, please discuss this with your Solutions Engineer before deploying Codat’s connector to your API.
 
-### 1. Create a company
+### Create a company
 
 Use our [Create company](/sync-for-commerce-api#/operations/create-company) endpoint to create a record of your customer within Codat. 
 
@@ -89,7 +89,7 @@ In response, we will provide a `companyId`, returned by this endpoint as `id`. R
 }
 ```
 
-### 2. Create a connection
+### Create a connection
 
 Once you have created a company to represent your customer, you need to create a connection that represents the connectivity to your system for this customer. To do this, use our [Create connections](/sync-for-commerce-api#/operations/create-connection) endpoint:
 
@@ -122,7 +122,7 @@ In response, we will provide a `connectionId`, returned by this endpoint as `id`
 }
 ```
 
-## 3. Pass the authorization information to Codat
+### Pass the authorization information to Codat
 
 Now that you created a company and a connection, you can pass the authorization information required to access your customer’s data to Codat via our API. To do this, use our [Update authorization](/sync-for-commerce-api#/operations/update-connection-authorization) endpoint:
 
