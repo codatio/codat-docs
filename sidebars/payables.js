@@ -58,6 +58,11 @@ module.exports = [
   },
   {
     type: "doc",
+    label: "Sage Business Cloud",
+    id: "integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud"
+  },
+  {
+    type: "doc",
     label: "Sage Intacct",
     id: "integrations/accounting/sage-intacct/accounting-sage-intacct"
   },
@@ -65,11 +70,6 @@ module.exports = [
     type: "doc",
     label: "Xero",
     id: "integrations/accounting/xero/accounting-xero"
-  },
-  {
-    type: "doc",
-    label: "MYOB Business",
-    id: "integrations/accounting/myob/accounting-myob"
   },
   {
     type: "doc",

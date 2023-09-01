@@ -11,8 +11,8 @@ banner_class: commerce
 banner_icon: "/img/logos/products/logo_sfc_clear.svg"
 banner_image: "/img/banners/sfc-charts.png"
 banner_text: "Embedded accounting integrations for Point of Sale, Payment, and eCommerce platforms"
-video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
-video_text: What is Sync for Commerce?
+// video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
+// video_text: What is Sync for Commerce?
 ---
 
 import {IntegrationsList} from '@components/global/Integrations'
