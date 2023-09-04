@@ -61,12 +61,12 @@ In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>:
 
 1. In the navigation bar, click **Companies**.
 2. Click the name of a company to view the company’s data.
-4. Click **Products > Commerce API**.
+4. Click **Data > Commerce**.
 5. Use the data ype dropdown to view test data that was pulled from Mollie. For example, click **Customers** or **Transactions**.
 
 :::caution Data not appearing?
 
-Click **Data > Pull history** to check the progress of the initial sync (if configured in your sync settings). If no data has been pulled, click **Refresh data**.
+Click **Data history > Pull history** to check the progress of the initial sync (if configured in your sync settings). If no data has been pulled, click **Refresh data**.
 
 Data is only available where:
 - The data type [is supported](https://knowledge.codat.io/supported-features/commerce?view=tab-by-integration&integrationKey=dxfw)

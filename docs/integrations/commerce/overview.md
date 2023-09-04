@@ -1,6 +1,6 @@
 ---
 title: "Overview"
-description: "Explore the range of platforms you can connect to through our Commerce API."
+description: "Explore the range of commerce platforms you can connect to through our API."
 sidebar_label: Commerce
 displayed_sidebar: integrationsCommerce
 ---

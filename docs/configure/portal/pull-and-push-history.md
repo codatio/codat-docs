@@ -13,7 +13,7 @@ Coming soon!
 
 When viewing a company in the Portal, you can view **Pull history** and **Push history** to check the status of previous pull and push data syncs by data type.
 
-`Companies > Company > Data > Push history`
+`Companies > Company > Data history > Push history`
 
 When a pushed of data is initialized, items will appear here for each data type being pushed.
 

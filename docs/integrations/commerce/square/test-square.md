@@ -67,7 +67,7 @@ In the <a href="https://app.codat.io/" target="_blank">Codat Portal</a>:
 
 3. Optionally, click **Pull history** to check the progress of the initial sync (if configured in your sync settings). You can also click **Refresh data**.
 
-4. Click the **Commerce API** tab.
+4. Click **Data > Commerce** tab.
 
 5. Use the tabs to view test data that was pulled from Square. For example, click **Products** or **Orders**.
 
