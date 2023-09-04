@@ -144,7 +144,7 @@ Lending API empowers you with a host of features to help you streamline your und
     </div>
     <p>
       Automatically identify a company's loan obligations from an array of disparate data sources. Explore{" "}
-      <a href="/lending/loans/loan-transactions">
+      <a href="/lending/enhanced-liabilities/overview">
         Enhanced loan liabilities
       </a>
       .
