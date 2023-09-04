@@ -13,6 +13,25 @@ Codat offers official API libraries for different programming languages, which a
   <li className="card mini">
     <div className="card-row">
       <div className="header">
+        <a href="https://github.com/codatio/client-sdk-csharp">
+          <img
+            src="/img/libraries/csharp.svg"
+            className="icon usecase"
+          />
+        </a>
+      </div>
+      
+      <div className="content">
+        <h4>C#</h4>
+        <p>
+          <a href="https://github.com/codatio/client-sdk-csharp">Start using →</a>
+        </p>    
+      </div>
+    </div>
+  </li>
+  <li className="card mini">
+    <div className="card-row">
+      <div className="header">
         <a href="https://github.com/codatio/client-sdk-typescript">
           <img
             src="/img/libraries/typescript.svg"
@@ -63,25 +82,6 @@ Codat offers official API libraries for different programming languages, which a
         <h4>Go</h4>
         <p>
           <a href="https://github.com/codatio/client-sdk-go">Start using →</a>
-        </p>    
-      </div>
-    </div>
-  </li>
-  <li className="card mini">
-    <div className="card-row">
-      <div className="header">
-        <a href="https://github.com/codatio/client-sdk-csharp">
-          <img
-            src="/img/libraries/csharp.svg"
-            className="icon usecase"
-          />
-        </a>
-      </div>
-      
-      <div className="content">
-        <h4>C#</h4>
-        <p>
-          <a href="https://github.com/codatio/client-sdk-csharp">Start using →</a>
         </p>    
       </div>
     </div>
