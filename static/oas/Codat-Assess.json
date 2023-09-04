@@ -3049,7 +3049,7 @@
   "components": {
     "schemas": {
       "Report": {
-        "title": "Commerce report",
+        "title": "Assess report",
         "description": "## Structure\n\nAssess reports follow a consistent structure. Reports contain four sections of information:\n\n### 1. Report definition\n\nInformation such as:\n\n  1. The report info (e.g. enhanced_profit_and_loss).\n  2. The display name of the report (e.g. Enhanced Profit and Loss).\n  \n### 2. Dimension info\n\nInformation about the dimension contained in the reports such as:\n\n  1. The type of dimension (e.g. datetime, recordRef).\n  2. The display name of the dimension (e.g. Period, Category type, Category sub type).\n  3. The details about each item within the dimension (e.g. displayName:\"Jan 2022\", start:\"...\", end:\"...\", id:\"...\", name:\"...\").\n\n### 3. Measure info\n\nInformation about the measures contained in the report such as:\n\n  1. The display name of the measure (e.g. value of account, percentage change).\n  2. The type of the measure (e.g. currency, percentage).\n  3. The unit of the measure (e.g. %, GBP).\n  \n### 4. The data for the report\n\nWhen the *includeDisplayName* parameter is set to *true*, it shows the *dimensionDisplayName* and *itemDisplayName* to make the data human-readable. The default setting for *includeDisplayName* is *false*.\n\n\n## Displaying the report\n\nReports can be rendered as follows (ordering is implicit rather than explicit):\n\n![A table showing an example of how a report can be rendered](https://files.readme.io/1fa20ca-Report1.png)\n\n# Data model\n\n## Dimensions",
         "type": "object",
         "properties": {
@@ -3062,30 +3062,30 @@
           "dimensions": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Report/definitions/commerceReportDimension"
+              "$ref": "#/components/schemas/Report/definitions/reportDimension"
             }
           },
           "measures": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Report/definitions/commerceReportMeasure"
+              "$ref": "#/components/schemas/Report/definitions/reportMeasure"
             }
           },
           "reportData": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Report/definitions/commerceReportComponent"
+              "$ref": "#/components/schemas/Report/definitions/reportComponent"
             }
           },
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Report/definitions/commerceReportError"
+              "$ref": "#/components/schemas/Report/definitions/reportError"
             }
           }
         },
         "definitions": {
-          "commerceReportMeasure": {
+          "reportMeasure": {
             "title": "Measure",
             "type": "object",
             "properties": {
@@ -3103,7 +3103,7 @@
               }
             }
           },
-          "commerceReportError": {
+          "reportError": {
             "title": "Error",
             "type": "object",
             "properties": {
@@ -3124,7 +3124,7 @@
               }
             }
           },
-          "commerceReportDimension": {
+          "reportDimension": {
             "title": "Dimension",
             "type": "object",
             "properties": {
@@ -3150,7 +3150,7 @@
               }
             }
           },
-          "commerceReportComponent": {
+          "reportComponent": {
             "title": "Report component",
             "type": "object",
             "properties": {
@@ -3175,7 +3175,7 @@
               "components": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/Report/definitions/commerceReportComponent"
+                  "$ref": "#/components/schemas/Report/definitions/reportComponent"
                 }
               }
             }
@@ -3742,7 +3742,7 @@
         }
       },
       "DataIntegrityDetails": {
-        "title": "Data integrity detail",
+        "title": "Data integrity details",
         "type": "object",
         "properties": {
           "id": {
@@ -4122,12 +4122,20 @@
           "reportItems": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/enhancedInvoiceReportItem"
+              "type": "object",
+              "properties": {
+                "invoices": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/enhancedInvoiceReportItem"
+                  }
+                }
+              }
             }
           }
         },
         "definitions": {
-          "lendingCustomerRef": {
+          "customerRef": {
             "type": "object",
             "properties": {
               "id": {
@@ -4233,7 +4241,7 @@
                     "type": "string"
                   },
                   "customerRef": {
-                    "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/lendingCustomerRef"
+                    "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/customerRef"
                   },
                   "issueDate": {
                     "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date"
@@ -4502,16 +4510,28 @@
       },
       "LoanSummary": {
         "title": "Loan Summary",
+        "x-stoplight": {
+          "id": "tpq5juroo1ylk"
+        },
         "type": "object",
         "properties": {
           "reportInfo": {
-            "$ref": "#/components/schemas/LoanSummary/definitions/loanSummaryReportInfo"
+            "$ref": "#/components/schemas/LoanSummary/definitions/loanSummaryReportInfo",
+            "x-stoplight": {
+              "id": "f7qjivq05pm1q"
+            }
           },
           "reportItems": {
             "type": "array",
             "description": "Returns a summary of all loan activity for that integration type",
             "items": {
-              "$ref": "#/components/schemas/LoanSummary/definitions/loanSummaryReportItem"
+              "$ref": "#/components/schemas/LoanSummary/definitions/reportItems",
+              "x-stoplight": {
+                "id": "3o8v6y67rbrro"
+              }
+            },
+            "x-stoplight": {
+              "id": "9mupc5jphk9fa"
             }
           }
         },
@@ -4540,7 +4560,10 @@
             "properties": {
               "id": {
                 "type": "string",
-                "description": "The id of the object being referred to."
+                "description": "The id of the object being referred to.",
+                "x-stoplight": {
+                  "id": "8iauxevkpnxyj"
+                }
               },
               "dataConnectionId": {
                 "type": "string",
@@ -4551,11 +4574,17 @@
               },
               "type": {
                 "type": "string",
-                "description": "The object type data is referring to, e.g. Account."
+                "description": "The object type data is referring to, e.g. Account.",
+                "x-stoplight": {
+                  "id": "m68yr2mpbnvvq"
+                }
               }
+            },
+            "x-stoplight": {
+              "id": "pr3pywxqc6jiu"
             }
           },
-          "loanSummaryRecordRef": {
+          "recordRef": {
             "title": "Item reference",
             "type": "object",
             "properties": {
@@ -4568,19 +4597,31 @@
                 "description": "The dataConnectionId the object being referred to is associated with."
               },
               "integrationType": {
-                "$ref": "#/components/schemas/LoanSummary/definitions/loanSummaryIntegrationType"
+                "type": "string",
+                "enum": [
+                  "Accounting",
+                  "Banking",
+                  "Commerce"
+                ],
+                "description": "The integration type begin referred to."
               },
               "recordRefType": {
-                "$ref": "#/components/schemas/LoanSummary/definitions/loanSummaryRecordRefType"
+                "type": "string",
+                "enum": [
+                  "accounts",
+                  "banking-accounts",
+                  "commerce-transactions"
+                ],
+                "description": "The datatype being referred to."
               }
             }
           },
-          "loanSummaryReportItem": {
+          "reportItems": {
             "type": "object",
             "properties": {
               "recordRef": {
-                "$ref": "#/components/schemas/LoanSummary/definitions/loanSummaryRecordRef",
-                "description": "Contains object that contains a summary of all loan transactions for that integration type."
+                "$ref": "#/components/schemas/LoanSummary/definitions/recordRef",
+                "description": "Contains object that contains a sumamry of all loan transactions for that integration type."
               },
               "description": {
                 "type": "string",
@@ -4588,7 +4629,10 @@
               },
               "startDate": {
                 "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date",
-                "description": "The date of the earliest loan transaction."
+                "description": "The date of the earliest loan transaction.",
+                "x-stoplight": {
+                  "id": "v8jngp34fn5w4"
+                }
               },
               "totalDrawdowns": {
                 "type": "number",
@@ -4603,26 +4647,6 @@
                 "description": "The loan outstanding balance.  This may not equal totalDrawdowns - totalRepayments due to interest which has been accrued."
               }
             }
-          },
-          "loanSummaryIntegrationType": {
-            "title": "Integration type",
-            "type": "string",
-            "enum": [
-              "Accounting",
-              "Banking",
-              "Commerce"
-            ],
-            "description": "The integration type begin referred to."
-          },
-          "loanSummaryRecordRefType": {
-            "title": "Record reference type",
-            "type": "string",
-            "enum": [
-              "accounts",
-              "banking-accounts",
-              "commerce-transactions"
-            ],
-            "description": "The datatype being referred to."
           }
         },
         "examples": [

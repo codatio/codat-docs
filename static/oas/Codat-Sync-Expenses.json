@@ -8,7 +8,7 @@
       "url": "https://www.codat.io/",
       "email": "expenses@codat.io"
     },
-    "description": "The API for Sync for Expenses.\n\nSync for Expenses is an API and a set of supporting tools. It has been built to\nenable corporate card and expense management platforms to provide high-quality\nintegrations with multiple accounting platforms through a standardized API.\n\n[Read more...](https://docs.codat.io/sync-for-expenses/overview)\n\n[See our OpenAPI spec](https://github.com/codatio/oas)\n\n<!-- Not seeing the end points you're expecting? We've reorganized our products, and you may be using a [different version of Sync for Commerce](https://docs.codat.io/sync-for-expenses-v1-api#/). -->",
+    "description": "The API for Sync for Expenses.\n\nSync for Expenses is an API and a set of supporting tools. It has been built to\nenable corporate card and expense management platforms to provide high-quality\nintegrations with multiple accounting platforms through a standardized API.\n\n[Read more...](https://docs.codat.io/sync-for-expenses/overview)\n\n[See our OpenAPI spec](https://github.com/codatio/oas)\n\nNot seeing the end points you're expecting? We've [reorganized our products](https://docs.codat.io/updates/230901-new-products), and you may be using a [different version of Sync for Commerce](https://docs.codat.io/sync-for-expenses-v1-api#/).",
     "termsOfService": "https://www.codat.io/legals/"
   },
   "security": [
@@ -1273,7 +1273,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Transaction"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Transaction"
+                  }
                 },
                 "examples": {}
               }
@@ -1613,7 +1616,8 @@
       ],
       "get": {
         "summary": "Get data status",
-        "operationId": "get-data-status",
+        "operationId": "get-company-data-status",
+        "x-speakeasy-name-override": "get-company-data-status",
         "description": "Get the state of each data type for a company",
         "tags": [
           "Manage data"
@@ -6754,6 +6758,19 @@
         "title": "Transaction",
         "type": "object",
         "additionalProperties": false,
+        "x-examples": {
+          "Successful Transaction": {
+            "transactionId": "8fdba4ed-e327-4925-be1a-b7a2b04627f7",
+            "status": "Completed",
+            "integrationType": "expense"
+          },
+          "Unsuccessful Transaction": {
+            "transactionId": "3d694cd1-4cd9-4136-91db-32408195c6fc",
+            "status": "ValidationError",
+            "message": "The line item total -208.10((-195.01 + -1.09) + (-10.01 + -1.99)) must equal the transaction total -1.1",
+            "integrationType": "string"
+          }
+        },
         "properties": {
           "transactionId": {
             "type": "string",
@@ -6771,19 +6788,6 @@
           },
           "integrationType": {
             "$ref": "#/components/schemas/IntegrationType"
-          }
-        },
-        "x-examples": {
-          "Successful Transaction": {
-            "transactionId": "8fdba4ed-e327-4925-be1a-b7a2b04627f7",
-            "status": "Completed",
-            "integrationType": "expense"
-          },
-          "Unsuccessful Transaction": {
-            "transactionId": "3d694cd1-4cd9-4136-91db-32408195c6fc",
-            "status": "ValidationError",
-            "message": "The line item total -208.10((-195.01 + -1.09) + (-10.01 + -1.99)) must equal the transaction total -1.1",
-            "integrationType": "string"
           }
         }
       },
@@ -7926,7 +7930,7 @@
         }
       },
       "PullOperation": {
-        "title": "Pull Operation",
+        "title": "Pull operation",
         "description": "Information about a queued, in progress or completed pull operation.\n*Formally called `dataset`*",
         "x-stoplight": {
           "id": "hvk8xbvt7ekyg"
@@ -8089,6 +8093,7 @@
       },
       "PushOperation": {
         "type": "object",
+        "title": "Push operation",
         "x-internal": true,
         "properties": {
           "changes": {
