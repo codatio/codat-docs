@@ -967,7 +967,7 @@
         "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
       },
       "AccountBalance": {
-        "title": "Account Balance",
+        "title": "Account balance",
         "description": "The Banking Account Balances data type provides a list of balances for a bank account including end-of-day batch balance or running balances per transaction.\n\nResponses are paged, so you should provide `page` and `pageSize` query parameters in your request.\n\n> **How often should I pull Account Balances?**\n>\n> Because these balances are closing balances, we recommend you pull Account Balance no more frequently than daily. If you require a live intraday balance, this can be found for each account on the [Account](https://docs.codat.io/banking-api#/schemas/Account) data type.\n> \n> Whilst you can choose to sync hourly, this may incur usage charges from Plaid or TrueLayer.",
         "type": "object",
         "allOf": [

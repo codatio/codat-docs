@@ -4354,7 +4354,7 @@
         }
       },
       "LoanTransactions": {
-        "title": "Loan Transactions",
+        "title": "Loan transactions",
         "type": "object",
         "properties": {
           "reportInfo": {
@@ -4501,7 +4501,7 @@
         ]
       },
       "LoanSummary": {
-        "title": "Loan Summary",
+        "title": "Loan summary",
         "type": "object",
         "properties": {
           "reportInfo": {

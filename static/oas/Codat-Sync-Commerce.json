@@ -89,16 +89,16 @@
   "x-codat-docs-path": "sync-for-commerce-api",
   "tags": [
     {
-      "name": "Connections",
+      "name": "Companies",
       "description": "Create new and manage existing Sync for Commerce companies using the Sync flow UI."
-    },
-    {
-      "name": "Sync flow preferences",
-      "description": "Configure preferences for any given Sync for Commerce company using sync flow."
     },
     {
       "name": "Sync",
       "description": "Initiate and monitor the sync of company data into accounting software."
+    },
+    {
+      "name": "Sync flow settings",
+      "description": "Configure preferences for any given Sync for Commerce company using sync flow."
     },
     {
       "name": "Integrations",
@@ -115,8 +115,8 @@
         "tags": [
           "Connections"
         ],
-        "summary": "Retrieve sync flow url",
-        "description": "Get a URL for Sync Flow including a one time passcode.",
+        "summary": "Start new sync flow",
+        "description": "Create a new company and connections. Get a URL for Sync Flow, including a one time passcode.",
         "operationId": "get-sync-flow-url",
         "x-speakeasy-name-override": "get-sync-flow-url",
         "parameters": [
@@ -652,7 +652,7 @@
     "/sync/commerce/config/ui/text": {
       "get": {
         "tags": [
-          "Sync flow preferences"
+          "Sync flow settings"
         ],
         "summary": "Get preferences for text fields",
         "description": "Return preferences set for the text fields on sync flow.",
@@ -673,7 +673,7 @@
       },
       "patch": {
         "tags": [
-          "Sync flow preferences"
+          "Sync flow settings"
         ],
         "summary": "Update preferences for text fields",
         "description": "Set preferences for the text fields on sync flow.",
@@ -726,7 +726,7 @@
       ],
       "get": {
         "tags": [
-          "Sync flow preferences"
+          "Sync flow settings"
         ],
         "summary": "List visible accounts",
         "description": "Return accounts which are visible on sync flow.",
@@ -749,7 +749,7 @@
     "/sync/commerce/config/ui/accounts/platform/{platformKey}": {
       "post": {
         "tags": [
-          "Sync flow preferences"
+          "Sync flow settings"
         ],
         "summary": "Update visible accounts",
         "description": "Update which accounts are visible on sync flow.",
@@ -1093,8 +1093,8 @@
         }
       },
       "SyncSummary": {
-        "type": "object",
         "title": "Sync summary",
+        "type": "object",
         "properties": {
           "syncDateRangeUtc": {
             "$ref": "#/components/schemas/DateRange"
