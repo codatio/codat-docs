@@ -50,7 +50,5 @@ The API documentation for the products you may be using is available below. Thes
 - [Banking API](/banking-api#/)
 - [Commerce API](/commerce-api#/)
 - [Assess API](/assess-api#/)
-- [Sync for Commerce](/sync-for-commerce-v1-api#/)
-- [Sync for Expenses](/sync-for-expenses-v1-api#/)
     
 </details>
