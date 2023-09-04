@@ -7723,6 +7723,7 @@
         ]
       },
       "Customers": {
+        "title": "Commerce customers",
         "x-internal": true,
         "allOf": [
           {
@@ -7840,6 +7841,7 @@
         ]
       },
       "Disputes": {
+        "title": "Disputes",
         "x-internal": true,
         "allOf": [
           {
@@ -7927,6 +7929,7 @@
         ]
       },
       "Locations": {
+        "title": "Locations",
         "x-internal": true,
         "allOf": [
           {
@@ -8309,6 +8312,7 @@
         ]
       },
       "Orders": {
+        "title": "Orders",
         "x-internal": true,
         "allOf": [
           {
@@ -8499,6 +8503,7 @@
         }
       },
       "Payments": {
+        "title": "Commerce payments",
         "x-internal": true,
         "allOf": [
           {
@@ -8556,6 +8561,7 @@
         }
       },
       "PaymentMethods": {
+        "title": "Commerce payment methods",
         "x-internal": true,
         "allOf": [
           {
@@ -8816,6 +8822,7 @@
         }
       },
       "Products": {
+        "title": "Products",
         "x-internal": true,
         "allOf": [
           {
@@ -8915,6 +8922,7 @@
         ]
       },
       "ProductCategories": {
+        "title": "Product categories",
         "x-internal": true,
         "allOf": [
           {
@@ -9027,6 +9035,7 @@
         ]
       },
       "TaxComponents": {
+        "title": "Tax components",
         "x-internal": true,
         "allOf": [
           {
@@ -9180,6 +9189,7 @@
         "examples": []
       },
       "Transactions": {
+        "title": "Commerce transactions",
         "x-internal": true,
         "allOf": [
           {
@@ -9247,6 +9257,7 @@
       },
       "PagingInfo": {
         "type": "object",
+        "title": "Pagination information",
         "x-internal": true,
         "properties": {
           "pageNumber": {
@@ -9391,49 +9402,6 @@
         ],
         "description": ""
       },
-      "Links": {
-        "type": "object",
-        "x-internal": true,
-        "required": [
-          "self",
-          "current"
-        ],
-        "properties": {
-          "self": {
-            "$ref": "#/components/schemas/HRef"
-          },
-          "current": {
-            "$ref": "#/components/schemas/HRef"
-          },
-          "next": {
-            "$ref": "#/components/schemas/HRef"
-          },
-          "previous": {
-            "$ref": "#/components/schemas/HRef"
-          }
-        },
-        "examples": [
-          {
-            "self": {
-              "href": "/companies/{id}/data/{dataType}"
-            },
-            "current": {
-              "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
-            }
-          }
-        ]
-      },
-      "HRef": {
-        "title": "Hypertext reference",
-        "type": "object",
-        "x-internal": true,
-        "properties": {
-          "href": {
-            "type": "string",
-            "format": "uri-reference"
-          }
-        }
-      },
       "DateTime": {
         "title": "Date time",
         "type": "string",
@@ -9444,6 +9412,7 @@
         "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
       },
       "CreatedDate": {
+        "title": "Created date",
         "type": "object",
         "x-internal": true,
         "properties": {
@@ -9454,6 +9423,7 @@
         }
       },
       "ModifiedDates": {
+        "title": "Modified dates",
         "x-internal": true,
         "allOf": [
           {
@@ -9494,6 +9464,7 @@
         ]
       },
       "ErrorMessage": {
+        "title": "Error message",
         "type": "object",
         "x-internal": true,
         "properties": {

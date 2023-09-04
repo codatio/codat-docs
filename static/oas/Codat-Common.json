@@ -938,7 +938,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DataStatusResponse"
+                  "$ref": "#/components/schemas/DataStatuses"
                 },
                 "examples": {
                   "Example": {
@@ -994,7 +994,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DataConnectionHistory"
+                  "$ref": "#/components/schemas/PullOperations"
                 },
                 "examples": {
                   "Example": {
@@ -1135,7 +1135,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Rules"
+                  "$ref": "#/components/schemas/Webhooks"
                 },
                 "examples": {
                   "Example": {
@@ -1195,7 +1195,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Rule"
+                  "$ref": "#/components/schemas/Webhook"
                 }
               }
             }
@@ -1349,7 +1349,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Rule"
+                  "$ref": "#/components/schemas/Webhook"
                 },
                 "examples": {}
               }
@@ -1928,7 +1928,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PushHistoryResponse"
+                  "$ref": "#/components/schemas/PushOperations"
                 },
                 "examples": {}
               }
@@ -2329,6 +2329,7 @@
         "$ref": "#/components/schemas/SyncSetting/properties/dataType"
       },
       "Companies": {
+        "title": "Companies",
         "x-internal": true,
         "allOf": [
           {
@@ -2348,6 +2349,7 @@
         ]
       },
       "CompanyRequestBody": {
+        "title": "Create company request",
         "x-internal": true,
         "type": "object",
         "properties": {
@@ -2367,6 +2369,7 @@
         ]
       },
       "Connections": {
+        "title": "Connections",
         "x-internal": true,
         "allOf": [
           {
@@ -2385,27 +2388,9 @@
           }
         ]
       },
-      "DataConnectionHistory": {
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/PullOperation"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
       "PagingInfo": {
         "type": "object",
+        "title": "Pagination information",
         "x-internal": true,
         "properties": {
           "pageNumber": {
@@ -2488,6 +2473,7 @@
         ]
       },
       "ErrorMessage": {
+        "title": "Error message",
         "type": "object",
         "x-internal": true,
         "properties": {
@@ -3061,6 +3047,7 @@
         }
       },
       "Integrations": {
+        "title": "Integrations",
         "x-internal": true,
         "allOf": [
           {
@@ -3078,26 +3065,6 @@
             "$ref": "#/components/schemas/PagingInfo"
           }
         ]
-      },
-      "SyncSettings": {
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "clientId": {
-            "type": "string",
-            "format": "uuid",
-            "example": "367f7975-267b-439b-90c6-a6040ee680f3"
-          },
-          "settings": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SyncSetting"
-            }
-          },
-          "overridesDefaults": {
-            "type": "boolean"
-          }
-        }
       },
       "SyncSetting": {
         "title": "SyncSetting",
@@ -3117,6 +3084,7 @@
         "type": "object",
         "properties": {
           "dataType": {
+            "title": "Data types",
             "x-internal": true,
             "type": "string",
             "description": "Available Data types",
@@ -3202,6 +3170,27 @@
           "syncSchedule",
           "syncOrder"
         ]
+      },
+      "SyncSettings": {
+        "title": "Sync settings",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "clientId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "367f7975-267b-439b-90c6-a6040ee680f3"
+          },
+          "settings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SyncSetting"
+            }
+          },
+          "overridesDefaults": {
+            "type": "boolean"
+          }
+        }
       },
       "PullOperation": {
         "title": "Pull operation",
@@ -3296,6 +3285,26 @@
           }
         ]
       },
+      "PullOperations": {
+        "title": "Pull operations",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PullOperation"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PagingInfo"
+          }
+        ]
+      },
       "CreateRule": {
         "title": "Create webhook",
         "description": "Create an event notification to a URL or list of email addresses based on the given type or condition.",
@@ -3345,7 +3354,7 @@
           "notifiers"
         ]
       },
-      "Rule": {
+      "Webhook": {
         "title": "Webhook",
         "description": "Configuration to provide an event notification to a URL or list of email addresses based on the given type or condition.",
         "type": "object",
@@ -3379,7 +3388,8 @@
           }
         ]
       },
-      "Rules": {
+      "Webhooks": {
+        "title": "Webhooks",
         "x-internal": true,
         "allOf": [
           {
@@ -3388,7 +3398,7 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/Rule"
+                  "$ref": "#/components/schemas/Webhook"
                 }
               }
             }
@@ -3398,9 +3408,9 @@
           }
         ]
       },
-      "DataStatusResponse": {
+      "DataStatuses": {
+        "title": "Data statuses",
         "x-internal": true,
-        "title": "Data status response",
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/DataStatus"
@@ -3539,6 +3549,7 @@
           {
             "nullable": true,
             "description": "Datetime in UTC the API key was created. The created date will be null if the API key created before YYYY-MM-DD.",
+            "title": "Created date",
             "type": "object",
             "x-internal": true,
             "properties": {
@@ -3551,6 +3562,7 @@
         ]
       },
       "ApiKeys": {
+        "title": "API keys",
         "x-internal": true,
         "type": "object",
         "properties": {
@@ -3560,8 +3572,7 @@
               "$ref": "#/components/schemas/ApiKeyDetails"
             }
           }
-        },
-        "description": ""
+        }
       },
       "CreateApiKey": {
         "title": "Create API key",
@@ -4001,25 +4012,8 @@
         ]
       },
       "PushOperation": {
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "data": {
-                "type": "object",
-                "description": "Object submitted in push operation.",
-                "additionalProperties": true
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PushOperationSummary"
-          }
-        ]
-      },
-      "PushOperationSummary": {
-        "type": "object",
         "title": "Push operation",
+        "type": "object",
         "x-internal": true,
         "properties": {
           "changes": {
@@ -4027,7 +4021,7 @@
             "nullable": true,
             "description": "Contains a single entry that communicates which record has changed and the manner in which it changed. ",
             "items": {
-              "$ref": "#/components/schemas/PushOperationSummary/definitions/pushOperationChange"
+              "$ref": "#/components/schemas/PushOperation/definitions/pushOperationChange"
             }
           },
           "dataType": {
@@ -4065,14 +4059,14 @@
             "deprecated": true
           },
           "status": {
-            "$ref": "#/components/schemas/PushOperationSummary/definitions/pushOperationStatus"
+            "$ref": "#/components/schemas/PushOperation/definitions/pushOperationStatus"
           },
           "errorMessage": {
             "type": "string",
             "nullable": true
           },
           "validation": {
-            "$ref": "#/components/schemas/PushOperationSummary/definitions/validation"
+            "$ref": "#/components/schemas/PushOperation/definitions/validation"
           },
           "statusCode": {
             "type": "integer"
@@ -4096,14 +4090,14 @@
                 "type": "array",
                 "nullable": true,
                 "items": {
-                  "$ref": "#/components/schemas/PushOperationSummary/definitions/validationItem"
+                  "$ref": "#/components/schemas/PushOperation/definitions/validationItem"
                 }
               },
               "warnings": {
                 "type": "array",
                 "nullable": true,
                 "items": {
-                  "$ref": "#/components/schemas/PushOperationSummary/definitions/validationItem"
+                  "$ref": "#/components/schemas/PushOperation/definitions/validationItem"
                 }
               }
             }
@@ -4168,10 +4162,10 @@
             "type": "object",
             "properties": {
               "type": {
-                "$ref": "#/components/schemas/PushOperationSummary/definitions/pushChangeType"
+                "$ref": "#/components/schemas/PushOperation/definitions/pushChangeType"
               },
               "recordRef": {
-                "$ref": "#/components/schemas/PushOperationSummary/definitions/pushOperationRef"
+                "$ref": "#/components/schemas/PushOperation/definitions/pushOperationRef"
               },
               "attachmentId": {
                 "type": "string",
@@ -4181,7 +4175,8 @@
           }
         }
       },
-      "PushHistoryResponse": {
+      "PushOperations": {
+        "title": "Push operations",
         "x-internal": true,
         "allOf": [
           {
@@ -4190,7 +4185,7 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/PushOperationSummary"
+                  "$ref": "#/components/schemas/PushOperation"
                 }
               }
             }

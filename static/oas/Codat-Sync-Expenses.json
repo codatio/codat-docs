@@ -6788,6 +6788,7 @@
         }
       },
       "TransactionStatus": {
+        "title": "Transaction status",
         "x-internal": true,
         "type": "string",
         "description": "Status of the transaction.",
@@ -6802,6 +6803,7 @@
         "nullable": true
       },
       "IntegrationType": {
+        "title": "Integration type",
         "x-internal": true,
         "type": "string",
         "description": "Type of transaction that has been processed e.g. Expense or Bank Feed.",
@@ -6814,6 +6816,7 @@
         "nullable": true
       },
       "Transactions": {
+        "title": "Transactions",
         "x-internal": true,
         "additionalProperties": false,
         "allOf": [
@@ -6861,6 +6864,7 @@
         }
       },
       "CreateExpenseRequest": {
+        "title": "Create expense request",
         "x-internal": true,
         "type": "object",
         "properties": {
@@ -6875,6 +6879,7 @@
         }
       },
       "CreateExpenseResponse": {
+        "title": "Create expense response",
         "x-internal": true,
         "type": "object",
         "properties": {
@@ -7157,6 +7162,7 @@
         }
       },
       "BankAccount": {
+        "title": "Bank account",
         "x-internal": true,
         "type": "object",
         "properties": {
@@ -7168,6 +7174,7 @@
         }
       },
       "Supplier": {
+        "title": "Supplier",
         "x-internal": true,
         "type": "object",
         "properties": {
@@ -7179,6 +7186,7 @@
         }
       },
       "Customer": {
+        "title": "Customer",
         "x-internal": true,
         "type": "object",
         "properties": {
@@ -7218,6 +7226,7 @@
       },
       "PagingInfo": {
         "type": "object",
+        "title": "Pagination information",
         "x-internal": true,
         "properties": {
           "pageNumber": {
@@ -7603,6 +7612,7 @@
         ]
       },
       "Companies": {
+        "title": "Companies",
         "x-internal": true,
         "allOf": [
           {
@@ -7622,6 +7632,7 @@
         ]
       },
       "CompanyRequestBody": {
+        "title": "Create company request",
         "x-internal": true,
         "type": "object",
         "properties": {
@@ -7723,6 +7734,7 @@
         ]
       },
       "Connections": {
+        "title": "Connections",
         "x-internal": true,
         "allOf": [
           {
@@ -8021,6 +8033,7 @@
       },
       "DataType": {
         "x-internal": true,
+        "title": "Data types",
         "type": "string",
         "description": "Available Data types",
         "enum": [
@@ -8070,6 +8083,7 @@
         "example": "invoices"
       },
       "PullOperations": {
+        "title": "Pull operations",
         "x-internal": true,
         "allOf": [
           {
@@ -8089,8 +8103,8 @@
         ]
       },
       "PushOperation": {
-        "type": "object",
         "title": "Push operation",
+        "type": "object",
         "x-internal": true,
         "properties": {
           "changes": {
@@ -8253,6 +8267,7 @@
         }
       },
       "PushOperations": {
+        "title": "Push operations",
         "x-internal": true,
         "allOf": [
           {
@@ -8369,6 +8384,7 @@
                 }
               },
               "metadata": {
+                "title": "Metadata",
                 "type": "object",
                 "x-internal": true,
                 "properties": {
@@ -8382,6 +8398,7 @@
             }
           },
           {
+            "title": "Modified dates",
             "x-internal": true,
             "allOf": [
               {
@@ -8468,6 +8485,7 @@
         "type": "object"
       },
       "CreateAccountResponse": {
+        "title": "Create account response",
         "x-internal": true,
         "allOf": [
           {
@@ -8484,6 +8502,7 @@
         ]
       },
       "Customers": {
+        "title": "Customers",
         "x-internal": true,
         "allOf": [
           {
@@ -8503,6 +8522,7 @@
         ]
       },
       "CreateCustomerResponse": {
+        "title": "Create customer response",
         "x-internal": true,
         "allOf": [
           {
@@ -8519,6 +8539,7 @@
         ]
       },
       "UpdateCustomerResponse": {
+        "title": "Update customer response",
         "x-internal": true,
         "allOf": [
           {
@@ -8535,6 +8556,7 @@
         ]
       },
       "Suppliers": {
+        "title": "Suppliers",
         "x-internal": true,
         "allOf": [
           {
@@ -8554,6 +8576,7 @@
         ]
       },
       "CreateSupplierResponse": {
+        "title": "Create supplier response",
         "x-internal": true,
         "allOf": [
           {
@@ -8570,6 +8593,7 @@
         ]
       },
       "UpdateSupplierResponse": {
+        "title": "Update supplier response",
         "x-internal": true,
         "allOf": [
           {
@@ -8586,6 +8610,7 @@
         ]
       },
       "ErrorMessage": {
+        "title": "Error message",
         "type": "object",
         "x-internal": true,
         "properties": {

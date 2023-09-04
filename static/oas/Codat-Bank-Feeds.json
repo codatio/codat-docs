@@ -1294,7 +1294,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListPushOperations"
+                  "$ref": "#/components/schemas/PushOperations"
                 },
                 "examples": {}
               }
@@ -1395,6 +1395,7 @@
         ]
       },
       "Companies": {
+        "title": "Companies",
         "x-internal": true,
         "allOf": [
           {
@@ -1409,11 +1410,93 @@
             }
           },
           {
-            "$ref": "#/components/schemas/ListPushOperations/allOf/1"
+            "type": "object",
+            "title": "Pagination information",
+            "x-internal": true,
+            "properties": {
+              "pageNumber": {
+                "type": "integer"
+              },
+              "pageSize": {
+                "type": "integer"
+              },
+              "totalResults": {
+                "type": "integer"
+              },
+              "_links": {
+                "$ref": "#/components/schemas/Companies/allOf/1/definitions/links"
+              }
+            },
+            "definitions": {
+              "links": {
+                "title": "Hal Links",
+                "type": "object",
+                "required": [
+                  "self",
+                  "current"
+                ],
+                "properties": {
+                  "self": {
+                    "$ref": "#/components/schemas/Companies/allOf/1/definitions/halRef"
+                  },
+                  "current": {
+                    "$ref": "#/components/schemas/Companies/allOf/1/definitions/halRef"
+                  },
+                  "next": {
+                    "$ref": "#/components/schemas/Companies/allOf/1/definitions/halRef"
+                  },
+                  "previous": {
+                    "$ref": "#/components/schemas/Companies/allOf/1/definitions/halRef"
+                  }
+                },
+                "examples": [
+                  {
+                    "self": {
+                      "href": "/companies/{id}/data/{dataType}"
+                    },
+                    "current": {
+                      "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+                    }
+                  }
+                ]
+              },
+              "halRef": {
+                "title": "Hypertext reference",
+                "type": "object",
+                "properties": {
+                  "href": {
+                    "type": "string",
+                    "format": "uri-reference"
+                  }
+                }
+              }
+            },
+            "required": [
+              "pageNumber",
+              "pageSize",
+              "totalResults",
+              "_links"
+            ],
+            "examples": [
+              {
+                "_links": {
+                  "pageNumber": 1,
+                  "pageSize": 10,
+                  "totalResults": 1,
+                  "self": {
+                    "href": "/companies/{id}/data/{dataType}"
+                  },
+                  "current": {
+                    "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+                  }
+                }
+              }
+            ]
           }
         ]
       },
       "CompanyRequestBody": {
+        "title": "Create company request",
         "x-internal": true,
         "type": "object",
         "properties": {
@@ -1570,6 +1653,7 @@
         }
       },
       "Connections": {
+        "title": "Connections",
         "x-internal": true,
         "allOf": [
           {
@@ -1584,7 +1668,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/ListPushOperations/allOf/1"
+            "$ref": "#/components/schemas/Companies/allOf/1"
           }
         ]
       },
@@ -1831,6 +1915,7 @@
         ]
       },
       "SourceAccounts": {
+        "title": "Source accounts",
         "x-internal": true,
         "type": "array",
         "items": {
@@ -1838,8 +1923,7 @@
         }
       },
       "BankTransactions": {
-        "title": "Bank account transactions",
-        "description": "> To view bank account data through the Banking API, please refer to the new datatype [here](https://docs.codat.io/banking-api#/operations/list-all-banking-transactions)\n\n> View the coverage for bank transactions in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankTransactions\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nTransactional banking data for a specific company and account.\n\nBank transactions include the:\n* Amount of the transaction.\n* Current account balance.\n* Transaction type, for example, credit, debit, or transfer.",
+        "title": "Bank account transaction",
         "type": "object",
         "allOf": [
           {
@@ -1848,14 +1932,18 @@
               "id": {
                 "type": "string"
               },
-              "accountId": {
-                "type": "string",
-                "nullable": true
-              },
               "clearedOnDate": {
                 "$ref": "#/components/schemas/DateTime"
               },
               "description": {
+                "type": "string",
+                "nullable": true
+              },
+              "counterparty": {
+                "type": "string",
+                "nullable": true
+              },
+              "reference": {
                 "type": "string",
                 "nullable": true
               },
@@ -1869,11 +1957,34 @@
                 "type": "number"
               },
               "transactionType": {
-                "$ref": "#/components/schemas/BankTransactions/definitions/bankTransactionType"
+                "title": "Bank transaction type",
+                "description": "Type of transaction for the bank statement line",
+                "type": "string",
+                "enum": [
+                  "Unknown",
+                  "Credit",
+                  "Debit",
+                  "Int",
+                  "Div",
+                  "Fee",
+                  "SerChg",
+                  "Dep",
+                  "Atm",
+                  "Pos",
+                  "Xfer",
+                  "Check",
+                  "Payment",
+                  "Cash",
+                  "DirectDep",
+                  "DirectDebit",
+                  "RepeatPmt",
+                  "Other"
+                ]
               }
             }
           },
           {
+            "title": "Modified dates",
             "x-internal": true,
             "allOf": [
               {
@@ -1913,34 +2024,7 @@
               }
             ]
           }
-        ],
-        "definitions": {
-          "bankTransactionType": {
-            "title": "Bank transaction type",
-            "description": "Type of transaction for the bank statement line",
-            "type": "string",
-            "enum": [
-              "Unknown",
-              "Credit",
-              "Debit",
-              "Int",
-              "Div",
-              "Fee",
-              "SerChg",
-              "Dep",
-              "Atm",
-              "Pos",
-              "Xfer",
-              "Check",
-              "Payment",
-              "Cash",
-              "DirectDep",
-              "DirectDebit",
-              "RepeatPmt",
-              "Other"
-            ]
-          }
-        }
+        ]
       },
       "CreateBankTransactions": {
         "title": "Create bank account transactions",
@@ -1965,26 +2049,27 @@
             "type": "object",
             "properties": {
               "id": {
-                "type": "string"
+                "$ref": "#/components/schemas/BankTransactions/allOf/0/properties/id"
               },
               "amount": {
-                "type": "number"
+                "$ref": "#/components/schemas/BankTransactions/allOf/0/properties/amount"
               },
               "date": {
                 "$ref": "#/components/schemas/DateTime"
               },
               "description": {
-                "nullable": false,
-                "type": "string"
+                "$ref": "#/components/schemas/BankTransactions/allOf/0/properties/description",
+                "nullable": false
               },
               "balance": {
-                "type": "number"
+                "$ref": "#/components/schemas/BankTransactions/allOf/0/properties/balance"
               }
             }
           }
         }
       },
       "CreateBankTransactionsResponse": {
+        "title": "Create bank transaction response",
         "x-internal": true,
         "allOf": [
           {
@@ -2009,50 +2094,8 @@
         ],
         "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
       },
-      "Links": {
-        "type": "object",
-        "x-internal": true,
-        "required": [
-          "self",
-          "current"
-        ],
-        "properties": {
-          "self": {
-            "$ref": "#/components/schemas/HRef"
-          },
-          "current": {
-            "$ref": "#/components/schemas/HRef"
-          },
-          "next": {
-            "$ref": "#/components/schemas/HRef"
-          },
-          "previous": {
-            "$ref": "#/components/schemas/HRef"
-          }
-        },
-        "examples": [
-          {
-            "self": {
-              "href": "/companies/{id}/data/{dataType}"
-            },
-            "current": {
-              "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
-            }
-          }
-        ]
-      },
-      "HRef": {
-        "title": "Hypertext reference",
-        "type": "object",
-        "x-internal": true,
-        "properties": {
-          "href": {
-            "type": "string",
-            "format": "uri-reference"
-          }
-        }
-      },
       "DataType": {
+        "title": "Data types",
         "x-internal": true,
         "type": "string",
         "description": "Available Data types",
@@ -2124,25 +2167,6 @@
             "password": "cO0ajh0uGyTN0Pwh"
           }
         }
-      },
-      "DataConnectionHistory": {
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/PullOperation"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/ListPushOperations/allOf/1"
-          }
-        ]
       },
       "PullOperation": {
         "title": "Pull operation",
@@ -2237,9 +2261,29 @@
           }
         ]
       },
+      "PullOperations": {
+        "title": "Pull operations",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PullOperation"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/Companies/allOf/1"
+          }
+        ]
+      },
       "PushOperation": {
-        "type": "object",
         "title": "Push operation",
+        "type": "object",
         "x-internal": true,
         "properties": {
           "changes": {
@@ -2401,7 +2445,8 @@
           }
         }
       },
-      "ListPushOperations": {
+      "PushOperations": {
+        "title": "Push operations",
         "x-internal": true,
         "allOf": [
           {
@@ -2416,91 +2461,12 @@
             }
           },
           {
-            "type": "object",
-            "x-internal": true,
-            "properties": {
-              "pageNumber": {
-                "type": "integer"
-              },
-              "pageSize": {
-                "type": "integer"
-              },
-              "totalResults": {
-                "type": "integer"
-              },
-              "_links": {
-                "$ref": "#/components/schemas/ListPushOperations/allOf/1/definitions/links"
-              }
-            },
-            "definitions": {
-              "links": {
-                "title": "Hal Links",
-                "type": "object",
-                "required": [
-                  "self",
-                  "current"
-                ],
-                "properties": {
-                  "self": {
-                    "$ref": "#/components/schemas/ListPushOperations/allOf/1/definitions/halRef"
-                  },
-                  "current": {
-                    "$ref": "#/components/schemas/ListPushOperations/allOf/1/definitions/halRef"
-                  },
-                  "next": {
-                    "$ref": "#/components/schemas/ListPushOperations/allOf/1/definitions/halRef"
-                  },
-                  "previous": {
-                    "$ref": "#/components/schemas/ListPushOperations/allOf/1/definitions/halRef"
-                  }
-                },
-                "examples": [
-                  {
-                    "self": {
-                      "href": "/companies/{id}/data/{dataType}"
-                    },
-                    "current": {
-                      "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
-                    }
-                  }
-                ]
-              },
-              "halRef": {
-                "title": "Hypertext reference",
-                "type": "object",
-                "properties": {
-                  "href": {
-                    "type": "string",
-                    "format": "uri-reference"
-                  }
-                }
-              }
-            },
-            "required": [
-              "pageNumber",
-              "pageSize",
-              "totalResults",
-              "_links"
-            ],
-            "examples": [
-              {
-                "_links": {
-                  "pageNumber": 1,
-                  "pageSize": 10,
-                  "totalResults": 1,
-                  "self": {
-                    "href": "/companies/{id}/data/{dataType}"
-                  },
-                  "current": {
-                    "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
-                  }
-                }
-              }
-            ]
+            "$ref": "#/components/schemas/Companies/allOf/1"
           }
         ]
       },
       "ErrorMessage": {
+        "title": "Error message",
         "type": "object",
         "x-internal": true,
         "properties": {

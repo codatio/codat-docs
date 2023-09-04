@@ -1066,6 +1066,7 @@
         ]
       },
       "AccountBalances": {
+        "title": "Account balances",
         "x-internal": true,
         "allOf": [
           {
@@ -1259,6 +1260,7 @@
         ]
       },
       "Accounts": {
+        "title": "Banking accounts",
         "x-internal": true,
         "allOf": [
           {
@@ -1278,7 +1280,7 @@
         ]
       },
       "Transaction": {
-        "title": "Transaction",
+        "title": "Banking transaction",
         "description": "The Banking Transactions data type provides an immutable source of up-to-date information on income and expenditure.\n\nResponses are paged, so you should provide `page` and `pageSize` query parameters in your request.\n\nView the coverage for banking transactions in the [Data Coverage Explorer](https://knowledge.codat.io/supported-features/banking?view=tab-by-data-type&dataType=banking-transactions).",
         "type": "object",
         "allOf": [
@@ -1382,6 +1384,7 @@
         ]
       },
       "Transactions": {
+        "title": "Banking transactions",
         "x-internal": true,
         "allOf": [
           {
@@ -1484,6 +1487,7 @@
         ]
       },
       "TransactionCategories": {
+        "title": "Transaction categories",
         "x-internal": true,
         "allOf": [
           {
@@ -1503,6 +1507,7 @@
         ]
       },
       "ModifiedDates": {
+        "title": "Modified dates",
         "x-internal": true,
         "allOf": [
           {
@@ -1548,51 +1553,9 @@
           }
         }
       },
-      "Links": {
-        "type": "object",
-        "x-internal": true,
-        "required": [
-          "self",
-          "current"
-        ],
-        "properties": {
-          "self": {
-            "$ref": "#/components/schemas/HRef"
-          },
-          "current": {
-            "$ref": "#/components/schemas/HRef"
-          },
-          "next": {
-            "$ref": "#/components/schemas/HRef"
-          },
-          "previous": {
-            "$ref": "#/components/schemas/HRef"
-          }
-        },
-        "examples": [
-          {
-            "self": {
-              "href": "/companies/{id}/data/{dataType}"
-            },
-            "current": {
-              "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
-            }
-          }
-        ]
-      },
-      "HRef": {
-        "title": "Hypertext reference",
-        "type": "object",
-        "x-internal": true,
-        "properties": {
-          "href": {
-            "type": "string",
-            "format": "uri-reference"
-          }
-        }
-      },
       "PagingInfo": {
         "type": "object",
+        "title": "Pagination information",
         "x-internal": true,
         "properties": {
           "pageNumber": {
@@ -1686,6 +1649,7 @@
         "description": "The type of transactions and balances on the account.  \nFor Credit accounts, positive balances are liabilities, and positive transactions **reduce** liabilities.  \nFor Debit accounts, positive balances are assets, and positive transactions **increase** assets."
       },
       "ErrorMessage": {
+        "title": "Error message",
         "type": "object",
         "x-internal": true,
         "properties": {
