@@ -137,7 +137,7 @@
       "description": "Access create, update and delete operations made to an SMB's data connection."
     },
     {
-      "name": "Manage data",
+      "name": "Refresh data",
       "description": "Asynchronously retrieve data from an integration to refresh data in Codat."
     }
   ],
@@ -799,7 +799,8 @@
       ],
       "post": {
         "summary": "Refresh all data",
-        "operationId": "refresh-all-data-types",
+        "operationId": "refresh-company-data",
+        "x-speakeasy-name-override": "all",
         "responses": {
           "204": {
             "description": "No Content"
@@ -816,7 +817,7 @@
         },
         "description": "Refreshes all data types with `fetch on first link` set to `true` for a given company.\n\nThis is an asynchronous operation, and will bring updated data into Codat from the linked integration for you to view.\n\n[Read more](https://docs.codat.io/core-concepts/data-type-settings) about data type settings and `fetch on first link`.",
         "tags": [
-          "Manage data"
+          "Refresh data"
         ]
       }
     },
@@ -828,10 +829,10 @@
       ],
       "get": {
         "summary": "Get data status",
-        "operationId": "get-data-status",
+        "operationId": "get-company-data-status",
         "description": "Get the state of each data type for a company",
         "tags": [
-          "Manage data"
+          "Refresh data"
         ],
         "responses": {
           "200": {
@@ -888,9 +889,10 @@
       "post": {
         "summary": "Refresh data type",
         "operationId": "refresh-data-type",
+        "x-speakeasy-name-override": "by-data-type",
         "description": "Refreshes a given data type for a given company.\n\nThis is an asynchronous operation, and will bring updated data into Codat from the linked integration for you to view.",
         "tags": [
-          "Manage data"
+          "Refresh data"
         ],
         "parameters": [
           {
@@ -935,7 +937,7 @@
       "get": {
         "summary": "List pull operations",
         "tags": [
-          "Manage data"
+          "Refresh data"
         ],
         "operationId": "list-pull-operations",
         "x-speakeasy-name-override": "list-pull-operations",
@@ -945,7 +947,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PullOperations"
+                  "$ref": "#/components/schemas/DataConnectionHistory"
                 },
                 "examples": {
                   "Example": {
@@ -1041,7 +1043,8 @@
         "tags": [
           "Push operations"
         ],
-        "operationId": "list-push-operations",
+        "operationId": "get-company-push-history",
+        "x-speakeasy-name-override": "list-operations",
         "description": "List push operation records.",
         "responses": {
           "200": {
@@ -1049,7 +1052,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PushOperations"
+                  "$ref": "#/components/schemas/PushHistoryResponse"
                 },
                 "examples": {}
               }
@@ -1084,7 +1087,7 @@
         "operationId": "get-pull-operation",
         "x-speakeasy-name-override": "get-pull-operation",
         "tags": [
-          "Manage data"
+          "Refresh data"
         ],
         "responses": {
           "200": {
@@ -1133,6 +1136,7 @@
           "Push operations"
         ],
         "operationId": "get-push-operation",
+        "x-speakeasy-name-override": "get-operation",
         "description": "Retrieve push operation.",
         "responses": {
           "200": {
@@ -7626,7 +7630,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "operationId": "get-create-account-model",
+        "operationId": "get-create-chartOfAccounts-model",
         "description": "﻿  The *Get create account model* endpoint returns the expected data for the request payload when creating an [account](https://docs.codat.io/DOCS_PATH#/schemas/Account) for a given company and integration.\n    \n    [Accounts](https://docs.codat.io/DOCS_PATH#/schemas/Account) are the categories a business uses to record accounting transactions.\n    \n    **Integration-specific behaviour**\n    \n    See the *response examples* for integration-specific indicative models.\n    \n    Check out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account.\n"
       }
     },
@@ -14568,7 +14572,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "operationId": "get-create-update-billCreditNote-model",
+        "operationId": "get-create-update-billCreditNotes-model",
         "description": "The *Get create/update bill credit note model* endpoint returns the expected data for the request payload when creating and updating a [bill credit note](https://docs.codat.io/DOCS_PATH#/schemas/BillCreditNote) for a given company and integration.\n\n[Bill credit notes](https://docs.codat.io/DOCS_PATH#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) for integrations that support creating and updating a bill credit note.\n"
       }
     },
@@ -19407,7 +19411,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "operationId": "get-create-billPayment-model",
+        "operationId": "get-create-billPayments-model",
         "description": "The *Get create bill payment model* endpoint returns the expected data for the request payload when creating a [bill payment](https://docs.codat.io/DOCS_PATH#/schemas/BillPayment) for a given company and integration.\n\n[Bill payments](https://docs.codat.io/DOCS_PATH#/schemas/BillPayment) are an allocation of money within any customer accounts payable account.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billPayments) for integrations that support creating a bill payment.\n"
       }
     },
@@ -28919,7 +28923,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "operationId": "get-create-update-bill-model",
+        "operationId": "get-create-update-bills-model",
         "description": "﻿The *Get create/update bill model* endpoint returns the expected data for the request payload when creating and updating a [bill](https://docs.codat.io/DOCS_PATH#/schemas/Bill) for a given company and integration.\n\n[Bills](https://docs.codat.io/DOCS_PATH#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support creating and updating a bill.\n"
       }
     },
@@ -29319,7 +29323,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Attachments"
+                  "$ref": "#/components/schemas/AttachmentsDataset"
                 }
               }
             }
@@ -30823,7 +30827,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "operationId": "get-create-journalEntry-model",
+        "operationId": "get-create-journalEntries-model",
         "description": "﻿The *Get create journal entry model* endpoint returns the expected data for the request payload when creating a [journal entry](https://docs.codat.io/DOCS_PATH#/schemas/JournalEntry) for a given company and integration.\n\n[Journal entries](https://docs.codat.io/DOCS_PATH#/schemas/JournalEntry) are  made in a company's general ledger, or accounts, when transactions are approved.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries) for integrations that support creating a journal entry.\n"
       }
     },
@@ -31581,7 +31585,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "operationId": "get-create-journal-model",
+        "operationId": "get-create-journals-model",
         "description": "The *Get create journal model* endpoint returns the expected data for the request payload when creating a [journal](https://docs.codat.io/DOCS_PATH#/schemas/Journal) for a given company and integration.\n\n[Journals](https://docs.codat.io/DOCS_PATH#/schemas/Journal) are used to record all the financial transactions of a company.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journals) for integrations that support creating a journal.\n"
       }
     },
@@ -38480,7 +38484,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "operationId": "get-create-update-supplier-model",
+        "operationId": "get-create-update-suppliers-model",
         "description": "The *Get create/update supplier model* endpoint returns the expected data for the request payload when creating and updating a [supplier](https://docs.codat.io/DOCS_PATH#/schemas/Supplier) for a given company and integration.\n\n[Suppliers](https://docs.codat.io/DOCS_PATH#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support creating and updating a supplier.\n"
       }
     },
@@ -41317,7 +41321,7 @@
         }
       },
       "PullOperation": {
-        "title": "Pull Operation",
+        "title": "Pull operation",
         "description": "Information about a queued, in progress or completed pull operation.\n*Formally called `dataset`*",
         "x-stoplight": {
           "id": "hvk8xbvt7ekyg"
@@ -41459,7 +41463,7 @@
         ],
         "example": "invoices"
       },
-      "PullOperations": {
+      "DataConnectionHistory": {
         "x-internal": true,
         "allOf": [
           {
@@ -41478,8 +41482,9 @@
           }
         ]
       },
-      "PushOperation": {
+      "PushOperationSummary": {
         "type": "object",
+        "title": "Push operation",
         "x-internal": true,
         "properties": {
           "changes": {
@@ -41487,7 +41492,7 @@
             "nullable": true,
             "description": "Contains a single entry that communicates which record has changed and the manner in which it changed. ",
             "items": {
-              "$ref": "#/components/schemas/PushOperation/definitions/pushOperationChange"
+              "$ref": "#/components/schemas/PushOperationSummary/definitions/pushOperationChange"
             }
           },
           "dataType": {
@@ -41525,14 +41530,14 @@
             "deprecated": true
           },
           "status": {
-            "$ref": "#/components/schemas/PushOperation/definitions/pushOperationStatus"
+            "$ref": "#/components/schemas/PushOperationSummary/definitions/pushOperationStatus"
           },
           "errorMessage": {
             "type": "string",
             "nullable": true
           },
           "validation": {
-            "$ref": "#/components/schemas/PushOperation/definitions/validation"
+            "$ref": "#/components/schemas/PushOperationSummary/definitions/validation"
           },
           "statusCode": {
             "type": "integer"
@@ -41556,14 +41561,14 @@
                 "type": "array",
                 "nullable": true,
                 "items": {
-                  "$ref": "#/components/schemas/PushOperation/definitions/validationItem"
+                  "$ref": "#/components/schemas/PushOperationSummary/definitions/validationItem"
                 }
               },
               "warnings": {
                 "type": "array",
                 "nullable": true,
                 "items": {
-                  "$ref": "#/components/schemas/PushOperation/definitions/validationItem"
+                  "$ref": "#/components/schemas/PushOperationSummary/definitions/validationItem"
                 }
               }
             }
@@ -41628,10 +41633,10 @@
             "type": "object",
             "properties": {
               "type": {
-                "$ref": "#/components/schemas/PushOperation/definitions/pushChangeType"
+                "$ref": "#/components/schemas/PushOperationSummary/definitions/pushChangeType"
               },
               "recordRef": {
-                "$ref": "#/components/schemas/PushOperation/definitions/pushOperationRef"
+                "$ref": "#/components/schemas/PushOperationSummary/definitions/pushOperationRef"
               },
               "attachmentId": {
                 "type": "string",
@@ -41641,7 +41646,7 @@
           }
         }
       },
-      "PushOperations": {
+      "PushHistoryResponse": {
         "x-internal": true,
         "allOf": [
           {
@@ -41650,13 +41655,30 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/PushOperation"
+                  "$ref": "#/components/schemas/PushOperationSummary"
                 }
               }
             }
           },
           {
             "$ref": "#/components/schemas/PagingInfo"
+          }
+        ]
+      },
+      "PushOperation": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "object",
+                "description": "Object submitted in push operation.",
+                "additionalProperties": true
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PushOperationSummary"
           }
         ]
       },
@@ -41917,7 +41939,7 @@
                 }
               },
               "metadata": {
-                "$ref": "#/components/schemas/Metadata"
+                "$ref": "#/components/schemas/Bill/allOf/0/properties/metadata"
               }
             }
           },
@@ -42001,7 +42023,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperation"
+            "$ref": "#/components/schemas/PushOperationSummary"
           }
         ]
       },
@@ -42111,7 +42133,7 @@
                 "$ref": "#/components/schemas/Bill/allOf/0/properties/supplementalData"
               },
               "metadata": {
-                "$ref": "#/components/schemas/Metadata"
+                "$ref": "#/components/schemas/Bill/allOf/0/properties/metadata"
               }
             }
           },
@@ -42426,7 +42448,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperation"
+            "$ref": "#/components/schemas/PushOperationSummary"
           }
         ]
       },
@@ -42442,7 +42464,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperation"
+            "$ref": "#/components/schemas/PushOperationSummary"
           }
         ]
       },
@@ -42510,37 +42532,7 @@
               "paymentMethodRef": {
                 "allOf": [
                   {
-                    "paymentMethodRef": {
-                      "type": "object",
-                      "description": "The payment method the record is linked to in the accounting or commerce platform.",
-                      "properties": {
-                        "id": {
-                          "description": "The unique identifier of the location being referenced.",
-                          "type": "string"
-                        },
-                        "name": {
-                          "description": "Name of the location being referenced.",
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "id"
-                      ],
-                      "example": {
-                        "id": "EILBDVJVNUAGVKRQ",
-                        "name": "AliPay"
-                      }
-                    },
-                    "paymentMethodStatus": {
-                      "type": "string",
-                      "enum": [
-                        "Active",
-                        "Archived",
-                        "Unknown"
-                      ],
-                      "description": "Status of the Payment Method",
-                      "example": "Active"
-                    }
+                    "$ref": "#/components/schemas/PaymentMethod/definitions/paymentMethodRef"
                   },
                   {
                     "description": "The Payment Method to which the payment is linked in the accounting platform."
@@ -42561,7 +42553,7 @@
                 "description": "Additional information associated with the payment."
               },
               "metadata": {
-                "$ref": "#/components/schemas/Metadata"
+                "$ref": "#/components/schemas/Bill/allOf/0/properties/metadata"
               },
               "supplementalData": {
                 "$ref": "#/components/schemas/Bill/allOf/0/properties/supplementalData"
@@ -43010,7 +43002,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperation"
+            "$ref": "#/components/schemas/PushOperationSummary"
           }
         ]
       },
@@ -43221,7 +43213,15 @@
                 }
               },
               "metadata": {
-                "$ref": "#/components/schemas/Metadata"
+                "type": "object",
+                "x-internal": true,
+                "properties": {
+                  "isDeleted": {
+                    "type": "boolean",
+                    "description": "Indicates whether the record has been deleted in the third-party system this record originated from.",
+                    "nullable": true
+                  }
+                }
               },
               "supplementalData": {
                 "type": "object",
@@ -43356,6 +43356,7 @@
               "trackingCategoryRefs": {
                 "type": "array",
                 "nullable": true,
+                "deprecated": true,
                 "description": "Collection of categories against which this item is tracked.",
                 "items": {
                   "$ref": "#/components/schemas/TrackingCategory/definitions/trackingCategoryRef"
@@ -43406,7 +43407,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperation"
+            "$ref": "#/components/schemas/PushOperationSummary"
           }
         ]
       },
@@ -43422,11 +43423,11 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperation"
+            "$ref": "#/components/schemas/PushOperationSummary"
           }
         ]
       },
-      "Attachments": {
+      "AttachmentsDataset": {
         "x-internal": true,
         "type": "object",
         "properties": {
@@ -43545,7 +43546,7 @@
                 }
               },
               "metadata": {
-                "$ref": "#/components/schemas/Metadata"
+                "$ref": "#/components/schemas/Bill/allOf/0/properties/metadata"
               },
               "supplementalData": {
                 "$ref": "#/components/schemas/Bill/allOf/0/properties/supplementalData"
@@ -43609,7 +43610,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperation"
+            "$ref": "#/components/schemas/PushOperationSummary"
           }
         ]
       },
@@ -43657,7 +43658,7 @@
                 "$ref": "#/components/schemas/Journal/definitions/journalStatus"
               },
               "metadata": {
-                "$ref": "#/components/schemas/Metadata"
+                "$ref": "#/components/schemas/Bill/allOf/0/properties/metadata"
               }
             }
           },
@@ -43730,7 +43731,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperation"
+            "$ref": "#/components/schemas/PushOperationSummary"
           }
         ]
       },
@@ -43758,7 +43759,7 @@
                 "$ref": "#/components/schemas/PaymentMethod/definitions/paymentMethodStatus"
               },
               "metadata": {
-                "$ref": "#/components/schemas/Metadata"
+                "$ref": "#/components/schemas/Bill/allOf/0/properties/metadata"
               }
             }
           },
@@ -43767,6 +43768,20 @@
           }
         ],
         "definitions": {
+          "paymentMethodRef": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "`id` from the Payment Methods data type"
+              },
+              "name": {
+                "type": "string",
+                "nullable": true,
+                "description": "`name` from the Payment Methods data type"
+              }
+            }
+          },
           "paymentMethodType": {
             "description": "Method of payment.",
             "type": "string",
@@ -43855,7 +43870,7 @@
                   "type": "object",
                   "properties": {
                     "type": {
-                      "$ref": "#/components/schemas/Supplier/allOf/0/properties/addresses/items/definitions/accountingAddressType"
+                      "$ref": "#/components/schemas/Supplier/allOf/0/properties/addresses/items/definitions/addressType"
                     },
                     "line1": {
                       "type": "string",
@@ -43892,7 +43907,7 @@
                     "type"
                   ],
                   "definitions": {
-                    "accountingAddressType": {
+                    "addressType": {
                       "description": "The type of the address",
                       "type": "string",
                       "enum": [
@@ -43923,7 +43938,7 @@
                 "description": "Default currency the supplier's transactional data is recorded in."
               },
               "metadata": {
-                "$ref": "#/components/schemas/Metadata"
+                "$ref": "#/components/schemas/Bill/allOf/0/properties/metadata"
               },
               "supplementalData": {
                 "$ref": "#/components/schemas/Bill/allOf/0/properties/supplementalData"
@@ -44041,7 +44056,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperation"
+            "$ref": "#/components/schemas/PushOperationSummary"
           }
         ]
       },
@@ -44057,7 +44072,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperation"
+            "$ref": "#/components/schemas/PushOperationSummary"
           }
         ]
       },
@@ -44111,7 +44126,7 @@
                 }
               },
               "metadata": {
-                "$ref": "#/components/schemas/Metadata"
+                "$ref": "#/components/schemas/Bill/allOf/0/properties/metadata"
               }
             }
           },
@@ -44358,17 +44373,6 @@
           },
           "detailedErrorCode": {
             "type": "integer"
-          }
-        }
-      },
-      "Metadata": {
-        "type": "object",
-        "x-internal": true,
-        "properties": {
-          "isDeleted": {
-            "type": "boolean",
-            "description": "Indicates whether the record has been deleted in the third-party system this record originated from.",
-            "nullable": true
           }
         }
       }

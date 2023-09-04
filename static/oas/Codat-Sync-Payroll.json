@@ -804,7 +804,8 @@
       ],
       "get": {
         "summary": "Get data status",
-        "operationId": "get-data-status",
+        "operationId": "get-company-data-status",
+        "x-speakeasy-name-override": "get-company-data-status",
         "description": "Get the state of each data type for a company",
         "tags": [
           "Manage data"
@@ -13541,7 +13542,7 @@
         }
       },
       "PullOperation": {
-        "title": "Pull Operation",
+        "title": "Pull operation",
         "description": "Information about a queued, in progress or completed pull operation.\n*Formally called `dataset`*",
         "x-stoplight": {
           "id": "hvk8xbvt7ekyg"
@@ -13704,6 +13705,7 @@
       },
       "PushOperationSummary": {
         "type": "object",
+        "title": "Push operation",
         "x-internal": true,
         "properties": {
           "changes": {

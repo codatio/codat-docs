@@ -576,10 +576,6 @@ module.exports = {
       from: "/assess/banking/overview",
     },
     {
-      to: "/lending/categories/",
-      from: "/assess/categories/",
-    },
-    {
       to: "/lending/categories/api-categorization-of-accounts",
       from: "/assess/categories/api-categorization-of-accounts",
     },
