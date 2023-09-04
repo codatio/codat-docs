@@ -25,7 +25,7 @@ Explore the underlying [OpenAPI Spec](https://github.com/codatio/oas).
 <details>
   <summary><b>Don't see what you're looking for?</b></summary>  
   
-  We've recently [reorganized our products](/updates/230901-new-products). You can find the OpenAPI specifications you may have been using before here:
+  We've recently <a href="/updates/230901-new-products">reorganized our products</a>. You can find the OpenAPI specifications you may have been using before here:
 
   <li><a href="/sync-for-commerce-v1-api">Sync for Commerce API v1</a></li>
   <li><a href="/sync-for-expenses-v1-api">Sync for Expenses API v1</a></li>
