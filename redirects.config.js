@@ -557,6 +557,231 @@ module.exports = {
       to: "/bank-feeds/guides/bank-feeds-tutorial",
     },
 
+    // assess
+
+    {
+      to: "/lending/enhanced-financials/overview",
+      from: "/assess/categories",
+    },
+    {
+      to: "/lending/banking/banking-account-balances",
+      from: "/assess/banking/banking-account-balances",
+    },
+    {
+      to: "/lending/banking/banking-account-inflows-and-outflows",
+      from: "/assess/banking/banking-account-inflows-and-outflows",
+    },
+    {
+      to: "/lending/banking/overview",
+      from: "/assess/banking/overview",
+    },
+    {
+      to: "/lending/categories/",
+      from: "/assess/categories/",
+    },
+    {
+      to: "/lending/categories/api-categorization-of-accounts",
+      from: "/assess/categories/api-categorization-of-accounts",
+    },
+    {
+      to: "/lending/commerce-metrics/overview",
+      from: "/assess/commerce-metrics/overview",
+    },
+    {
+      to: "/lending/commerce-metrics/reporting-structure",
+      from: "/assess/commerce-metrics/reporting-structure",
+    },
+    {
+      to: "/lending/commerce-metrics/troubleshooting",
+      from: "/assess/commerce-metrics/troubleshooting",
+    },
+    {
+      to: "/lending/data-integrity/api-data-integrity",
+      from: "/assess/data-integrity/api-data-integrity",
+    },
+    {
+      to: "/lending/data-integrity/faqs",
+      from: "/assess/data-integrity/faqs",
+    },
+    {
+      to: "/lending/data-integrity/overview",
+      from: "/assess/data-integrity/overview",
+    },
+    {
+      to: "/lending/data-types",
+      from: "/assess/data-types",
+    },
+    {
+      to: "/lending/enhanced-cash-flow/overview",
+      from: "/assess/enhanced-cash-flow/overview",
+    },
+    {
+      to: "/lending/enhanced-cash-flow/transactions",
+      from: "/assess/enhanced-cash-flow/transactions",
+    },
+    {
+      to: "/lending/enhanced-financials/legacy/balance-sheet",
+      from: "/assess/enhanced-financials/legacy/balance-sheet",
+    },
+    {
+      to: "/lending/enhanced-financials/legacy/financials",
+      from: "/assess/enhanced-financials/legacy/financials",
+    },
+    {
+      to: "/lending/enhanced-financials/legacy/profit-and-loss",
+      from: "/assess/enhanced-financials/legacy/profit-and-loss",
+    },
+    {
+      to: "/lending/enhanced-financials/legacy/reporting-structure",
+      from: "/assess/enhanced-financials/legacy/reporting-structure",
+    },
+    {
+      to: "/lending/enhanced-financials/overview",
+      from: "/assess/enhanced-financials/overview",
+    },
+    {
+      to: "/lending/enhanced-invoices/overview",
+      from: "/assess/enhanced-invoices/overview",
+    },
+    {
+      to: "/lending/enhanced-liabilities/overview",
+      from: "/assess/enhanced-liabilities/overview",
+    },
+    {
+      to: "/lending/excel/audit-report",
+      from: "/assess/excel/audit-report",
+    },
+    {
+      to: "/lending/excel/enhanced-cash-flow-report",
+      from: "/assess/excel/enhanced-cash-flow-report",
+    },
+    {
+      to: "/lending/excel/enhanced-financials-report",
+      from: "/assess/excel/enhanced-financials-report",
+    },
+    {
+      to: "/lending/excel/enhanced-invoices-report",
+      from: "/assess/excel/enhanced-invoices-report",
+    },
+    {
+      to: "/lending/excel/overview",
+      from: "/assess/excel/overview",
+    },
+    {
+      to: "/lending/get-started",
+      from: "/assess/get-started",
+    },
+    {
+      to: "/lending/guides/invoice-finance/introduction",
+      from: "/assess/guides/invoice-finance/introduction",
+    },
+    {
+      to: "/lending/guides/invoice-finance/inv-fin-decision",
+      from: "/assess/guides/invoice-finance/inv-fin-decision",
+    },
+    {
+      to: "/lending/guides/invoice-finance/process-invoice",
+      from: "/assess/guides/invoice-finance/process-invoice",
+    },
+    {
+      to: "/lending/guides/invoice-finance/setting-up",
+      from: "/assess/guides/invoice-finance/setting-up",
+    },
+    {
+      to: "/lending/guides/loan-qualification/introduction",
+      from: "/assess/guides/loan-qualification/introduction",
+    },
+    {
+      to: "/lending/guides/loan-qualification/process-loan",
+      from: "/assess/guides/loan-qualification/process-loan",
+    },
+    {
+      to: "/lending/guides/loan-qualification/setting-up",
+      from: "/assess/guides/loan-qualification/setting-up",
+    },
+    {
+      to: "/lending/guides/loan-qualification/uw-decision",
+      from: "/assess/guides/loan-qualification/uw-decision",
+    },
+    {
+      to: "/lending/guides/migration-guides/deprecation-account-categories",
+      from: "/assess/guides/migration-guides/deprecation-account-categories",
+    },
+    {
+      to: "/lending/guides/migration-guides/deprecation-account-categories-api",
+      from: "/assess/guides/migration-guides/deprecation-account-categories-api",
+    },
+    {
+      to: "/lending/guides/migration-guides/deprecation-account-categories-excel",
+      from: "/assess/guides/migration-guides/deprecation-account-categories-excel",
+    },
+    {
+      to: "/lending/guides/migration-guides/deprecation-account-categories-portal",
+      from: "/assess/guides/migration-guides/deprecation-account-categories-portal",
+    },
+    {
+      to: "/lending/metrics/accounting/api-financial-metrics",
+      from: "/assess/metrics/accounting/api-financial-metrics",
+    },
+    {
+      to: "/lending/metrics/accounting/api-marketing-metrics",
+      from: "/assess/metrics/accounting/api-marketing-metrics",
+    },
+    {
+      to: "/lending/metrics/accounting/overview",
+      from: "/assess/metrics/accounting/overview",
+    },
+    {
+      to: "/lending/metrics/commerce/api-customer-retention",
+      from: "/assess/metrics/commerce/api-customer-retention",
+    },
+    {
+      to: "/lending/metrics/commerce/api-lifetime-value",
+      from: "/assess/metrics/commerce/api-lifetime-value",
+    },
+    {
+      to: "/lending/metrics/commerce/api-orders",
+      from: "/assess/metrics/commerce/api-orders",
+    },
+    {
+      to: "/lending/metrics/commerce/api-refunds",
+      from: "/assess/metrics/commerce/api-refunds",
+    },
+    {
+      to: "/lending/metrics/commerce/api-revenue",
+      from: "/assess/metrics/commerce/api-revenue",
+    },
+    {
+      to: "/lending/metrics/commerce/overview",
+      from: "/assess/metrics/commerce/overview",
+    },
+    {
+      to: "/lending/overview",
+      from: "/assess/overview",
+    },
+    {
+      to: "/lending/portal/categorization-of-accounts",
+      from: "/assess/portal/categorization-of-accounts",
+    },
+    {
+      to: "/lending/portal/categorize-accounts",
+      from: "/assess/portal/categorize-accounts",
+    },
+    {
+      to: "/lending/portal/data-integrity",
+      from: "/assess/portal/data-integrity",
+    },
+    {
+      to: "/lending/portal/overview",
+      from: "/assess/portal/overview",
+    },
+    {
+      to: "/lending/troubleshooting",
+      from: "/assess/troubleshooting",
+    },
+
+    // integrations
+
     ...mapIntegrationRedirects(acc, "accounting"),
     ...mapIntegrationRedirects(bank, "banking"),
     ...mapIntegrationRedirects(comm, "commerce"),
