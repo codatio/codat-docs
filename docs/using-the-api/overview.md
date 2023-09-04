@@ -23,7 +23,7 @@ Explore the underlying [OpenAPI Spec](https://github.com/codatio/oas).
 
 
 <details>
-  <summary><b>Don't see what you're looking for?</b></summary>
+  <summary><b>Don't see what you're looking for?</b></summary>  
   
   We've recently [reorganized our products](/updates/230901-new-products). You can find the OpenAPI specifications you may have been using before here:
 
