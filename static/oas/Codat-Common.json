@@ -3204,7 +3204,7 @@
         ]
       },
       "PullOperation": {
-        "title": "Pull Operation",
+        "title": "Pull operation",
         "description": "Information about a queued, in progress or completed pull operation.\n*Formally called `dataset`*",
         "x-stoplight": {
           "id": "hvk8xbvt7ekyg"
@@ -4019,6 +4019,7 @@
       },
       "PushOperationSummary": {
         "type": "object",
+        "title": "Push operation",
         "x-internal": true,
         "properties": {
           "changes": {
