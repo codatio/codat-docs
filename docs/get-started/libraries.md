@@ -79,7 +79,7 @@ Codat offers official API libraries for different programming languages, which a
       </div>
       
       <div className="content">
-        <h4>COMING SOON! C#</h4>
+        <h4>C#</h4>
         <p>
           <a href="https://github.com/codatio/client-sdk-csharp">Start using →</a>
         </p>    
