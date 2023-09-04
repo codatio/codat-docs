@@ -97,12 +97,12 @@
       "description": "Source accounts act as a bridge to bank accounts in accounting software."
     },
     {
-      "name": "Transactions",
-      "description": "Transactions represent debits and credits from a source account."
-    },
-    {
       "name": "Account mapping",
       "description": "Bank feed bank account mapping."
+    },
+    {
+      "name": "Transactions",
+      "description": "Transactions represent debits and credits from a source account."
     }
   ],
   "paths": {
@@ -760,9 +760,9 @@
         "tags": [
           "Source accounts"
         ],
-        "summary": "Create a bank feed bank account",
-        "description": "Post a BankFeed BankAccount for a single data source connected. to a single company.",
-        "operationId": "create-bank-feed",
+        "summary": "Create source account",
+        "description": "The _Create Source Account_ endpoint allows you to create a representation of a bank account within Codat's domain. This source account can later be mapped to a target account in your accounting software.\n\n#### Account Mapping Variability\n\nThe method of mapping this source account to your target account varies depending on the accounting package you use.\n\n#### Mapping Options:\n\n1. **API Mapping**: Integrate the mapping journey directly into your application for a seamless user experience.\n2. **Codat UI Mapping**: If you prefer a quicker setup, you can utilize Codat's provided user interface for mapping.\n3. **Accounting Platform Mapping**: For some accounting software, the mapping process must be conducted within the software itself.\n\n### Integration specific behaviour\n\n| Bank Feed Integration | API Mapping | Codat UI Mapping | Accounting Platform Mapping |\n| --------------------- | ----------- | ---------------- | --------------------------- |\n| Xero                  | ✅          | ✅               |                             |\n| FreeAgent             | ✅          | ✅               |                             |\n| QuickBooks Online     |             |                  | ✅                          |\n| Sage                  |             |                  | ✅                          |\n",
+        "operationId": "create-source-account",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -775,7 +775,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/BankFeedAccount"
+                "$ref": "#/components/schemas/SourceAccount"
               }
             }
           }
@@ -786,7 +786,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BankFeedAccount"
+                  "$ref": "#/components/schemas/SourceAccount"
                 },
                 "examples": {}
               }
@@ -810,9 +810,9 @@
         "tags": [
           "Source accounts"
         ],
-        "summary": "List bank feed bank accounts",
-        "description": "﻿The *List bank feed bank accounts* endpoint returns a list of [bank feed accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankFeedAccount) for a given company's connection.\n\n[Bank feed accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankFeedAccount) are the bank's bank account from which transactions are synced into the accounting platform.\n\n",
-        "operationId": "list-bank-feeds",
+        "summary": "List source accounts",
+        "description": "﻿The _List source accounts_ endpoint returns a list of [source accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankFeedAccount) for a given company's connection.\n\n[source accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankFeedAccount) are the bank's bank account within Codat's domain from which transactions are synced into the accounting platform.\n",
+        "operationId": "list-source-accounts",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -827,7 +827,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BankFeedAccount"
+                  "$ref": "#/components/schemas/SourceAccount"
                 },
                 "examples": {}
               }
@@ -850,9 +850,9 @@
         "tags": [
           "Source accounts"
         ],
-        "summary": "Update bank feed bank account",
-        "description": "﻿The *Update bank feed bank account* endpoint updates a single bank feed bank account for a single data source connected to a single company.",
-        "operationId": "update-bank-feed",
+        "summary": "Update source account",
+        "description": "﻿The _Update source account_ endpoint updates a single source account for a single data connection connected to a single company.\n",
+        "operationId": "update-source-account",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -868,7 +868,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/BankFeedAccount"
+                "$ref": "#/components/schemas/SourceAccount"
               },
               "examples": {}
             }
@@ -881,7 +881,7 @@
               "application/json": {
                 "x-speakeasy-usage-example": true,
                 "schema": {
-                  "$ref": "#/components/schemas/BankFeedAccount"
+                  "$ref": "#/components/schemas/SourceAccount"
                 },
                 "examples": {}
               }
@@ -902,9 +902,9 @@
         "tags": [
           "Source accounts"
         ],
-        "summary": "Delete bank feed bank account",
-        "description": "The *delete bank feed bank account* endpoint enables you to remove a source account.\n\nRemoving a source account will also remove any mapping between the source bank feed bank accounts and the target bankfeed bank account.",
-        "operationId": "delete-bank-feed-bank-account",
+        "summary": "Delete source account",
+        "description": "The _Delete source account_ endpoint enables you to remove a source account.\n\nRemoving a source account will also remove any mapping between the source bank feed bank accounts and the target bankfeed bank account.\n",
+        "operationId": "delete-source-account",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -1038,7 +1038,7 @@
         "tags": [
           "Account mapping"
         ],
-        "summary": "Create bank feed bank account mapping",
+        "summary": "Create bank feed account mapping",
         "description": "﻿The *Create bank account mapping* endpoint creates a new mapping between a source bank account and a potential account in the accounting platform (target account).\n\nA bank feed account mapping is a specified link between the source account (provided by the Codat user) and the target account (the end users account in the underlying platform).\n\nTo find valid target account options, first call list bank feed account mappings.\n\nThis endpoint is only needed if building an account management UI.",
         "operationId": "create-bank-account-mapping",
         "requestBody": {
@@ -1082,8 +1082,8 @@
         "tags": [
           "Transactions"
         ],
-        "summary": "Create bank account transactions",
-        "description": "﻿The *Create bank account transactions* endpoint creates new [bank account transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) for a given company's connection.\n\n[Bank account transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) are records of monetary amounts that have moved in and out of an SMB's bank account.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create bank transaction model](https://docs.codat.io/bank-feeds-api#/operations/get-create-bankTransactions-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankTransactions) for integrations that support creating a bank account transactions.\n",
+        "summary": "Create bank transactions",
+        "description": "﻿The *Create bank transactions* endpoint creates new [bank transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) for a given company's connection.\n\n[Bank transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) are records of monetary amounts that have moved in and out of an SMB's bank account.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create bank transaction model](https://docs.codat.io/bank-feeds-api#/operations/get-create-bankTransactions-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankTransactions) for integrations that support creating a bank account transactions.\n",
         "operationId": "create-bank-transactions",
         "parameters": [
           {
@@ -1122,7 +1122,43 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateBankTransactions"
+                "title": "Create bank account transactions",
+                "type": "object",
+                "properties": {
+                  "accountId": {
+                    "$ref": "#/components/schemas/CreateBankTransactions/properties/accountId"
+                  },
+                  "transactions": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1push~1bankAccounts~1%7BaccountId%7D~1bankTransactions/post/requestBody/content/application~1json/schema/definitions/CreateBankAccountTransaction"
+                    }
+                  }
+                },
+                "definitions": {
+                  "CreateBankAccountTransaction": {
+                    "title": "bank account transaction",
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "amount": {
+                        "type": "number"
+                      },
+                      "date": {
+                        "$ref": "#/components/schemas/DateTime"
+                      },
+                      "description": {
+                        "nullable": false,
+                        "type": "string"
+                      },
+                      "balance": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -1526,14 +1562,14 @@
           }
         ]
       },
-      "BankFeedAccount": {
-        "title": "Bank feed account",
+      "SourceAccount": {
+        "title": "Source Account",
         "type": "object",
         "additionalProperties": false,
         "properties": {
           "id": {
             "type": "string",
-            "description": "Unique ID for the bank feed account"
+            "description": "Unique ID for the bank account"
           },
           "accountName": {
             "type": "string",
@@ -1631,7 +1667,8 @@
           },
           "feedStartDate": {
             "$ref": "#/components/schemas/DateTime",
-            "nullable": true
+            "nullable": true,
+            "description": "Date to start importing transactions from"
           }
         },
         "description": "A bank feed connection between a source account and a target account.",
@@ -1700,7 +1737,7 @@
             "description": "Balance for the source account."
           },
           "sourceCurrency": {
-            "$ref": "#/components/schemas/BankFeedAccount/properties/currency"
+            "$ref": "#/components/schemas/SourceAccount/properties/currency"
           },
           "targetAccountId": {
             "type": "string",
@@ -1792,11 +1829,11 @@
           }
         ]
       },
-      "BankFeedAccounts": {
+      "SourceAccounts": {
         "x-internal": true,
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/BankFeedAccount"
+          "$ref": "#/components/schemas/SourceAccount"
         }
       },
       "BankTransactions": {
