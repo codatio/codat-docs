@@ -21,26 +21,34 @@ import SocialImages from "@components/global/SocialImages";
 
 <SocialImages imgSrc="/img/old/fd21af0-codat_whitepaper_accounting-automation_diagram_B.png"/>
 
-The Bank Feeds API simplifies the setup and synchronization of bank transactions from your app into an accounting platform.
+<div className="card">
+  <h3>✨ Enterprise</h3>
 
-Be it a business current account, savings account, credit card, currency wallet or a payments processor feed, Bank Feeds API allows an SMB's accounting software users to easily reconcile bank transactions generated in your app against entries in their accounting platform, such as invoices and bills.
+  <p>This product is only available on our <a href="/configure/create-account">enterprise plans</a>.</p>
 
-Bank Feeds API uses standalone integrations to [popular accounting software](/bank-feeds/overview#supported-integrations). The connection journey for SMB users is handled by the integration and is different for each supported platform.
+</div>
+
+<br/>
+
+The [Bank Feeds API](/bank-feeds-api#/) empowers developers to automate the integration of bank transactions into accounting software for small and medium-sized businesses (SMBs). This removes the cumbersome step of manual uploads each month, giving businesses a more timely view of their finances. A recent survey revealed that [71% of Xero partners](https://www.xero.com/blog/2019/01/new-bank-feeds-process/) identify bank feeds and reconciliation as their most valued features.
+
+By leveraging this API, you can meet this demand; it offers compatibility with multiple popular accounting platforms through a standardized set of endpoints. 
+
+The end result is a simplified financial management process for SMBs, which not only streamlines their accounting but it also elevates their overall experience with your application.
 
 ## Why use Bank Feeds API?
 
-<ul className="card-container col-2">
+<ul className="card-container col-3">
   <li className="card">
     <div class="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
-      <h3>Fast, easy reconciliation</h3>
+      <h3>Reduce Churn</h3>
     </div>
     <p>
-      Send transactions to your SMB customers' accounting
-      platforms&mdash;leading to faster and easier reconciliation.
+      When your services integrate effortlessly into your customer's tools and processes, they're less likely to switch to a competitor.
     </p>
   </li>
   <li className="card">
@@ -49,92 +57,53 @@ Bank Feeds API uses standalone integrations to [popular accounting software](/ba
         src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
-      <h3>Standardization</h3>
+      <h3>Improve accuracy</h3>
     </div>
     <p>
-      We map and standardize banking and card transactions to different
-      accounting platforms via dedicated Bank Feed integrations. You can focus
-      on app development.
+      We help your customers close their books faster and with fewer manual errors.
     </p>
   </li>
-  <li className="card">
+    <li className="card">
     <div class="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
-      <h3>High-quality robust integrations</h3>
+      <h3>Up-to date balance</h3>
     </div>
     <p>
-      Provide your customers with the standard of accounting integrations they
-      expect, whether you're a startup or a global bank.
+      near real-time balances enable your customers to manage their finances more effectively and empower them to make the right choices.
     </p>
-  </li>
-  <li className="card">
-    <div class="header">
-      <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
-      />
-      <h3>Reduce manual errors</h3>
-    </div>
-    <p>
-      We help your customers close their books faster and with fewer manual
-      errors.
-    </p>
-  </li>
+  </li> 
 </ul>
 
-## Supported integrations
-<br/>
+## How it works
 
-<IntegrationsList integrations={bankfeedsIntegrations}/>
+![Bank Feeds API](/img/old/fd21af0-codat_whitepaper_accounting-automation_diagram_B.png)
+
+### Creating source accounts
+A bank feed is a connection between a _source bank account_ — and a _target bank account_ in a supported accounting package. 
+
+To begin with, you should create a 'source account' in Codat, this serves as replica of an actual financial account, savings account, or credit card, in Codat. This account can later be mapped to a target account in your customers accounting software.
+
+### Connecting and mapping accounts
+The method of connecting and mapping this source account to your target account varies depending on the accounting package your customer is using, typically there are three methods of mapping the source account to a target account:
+- **API Mapping:** Integrate the mapping journey directly into your application for a seamless user experience.
+- **Codat UI Mapping:** If you prefer a quicker setup, you can utilize Codat's provided user interface for mapping.
+- **Accounting Platform Mapping:** For some accounting softwares, the mapping process must be conducted within the software itself.
 
 :::note Platform requirements
 
 The setup process and platform registration requirements vary for each Bank Feeds integration. For detailed instructions, refer to the documentation for each integration.
 :::
 
-## How Bank Feeds API works
+### Pushing transactions
+Once the SMB user has completed the authorization and account mapping process, you are set to begin pushing transactions into the target bank account on the accounting platform. 
 
-Here's a high-level overview of the setup and connection flow for Bank Feeds API.
+## Supported integrations
+<br/>
 
-A **bank feed** is a connection between a _source bank account_ — an account in your application — and a _target bank account_ in a supported accounting package.
-
-1. Enable the integration you want to use on the <a className="external" href="https://app.codat.io/settings/integrations/bankfeeds" target="_blank">Bank feed integrations</a> page in the Codat Portal.
-
-2. Enter your platform credentials, if required, and customize the integration's authorization UI.
-
-3. Create the following objects using Codat's Accounting API:
-
-   - A [company](/core-concepts/companies) that represents your SMB customer.
-   - A [data connection](/core-concepts/connections) that specifies the platform key of the Bank Feeds integration you want to use.
-
-4. Provide a list of source bank accounts. These accounts will be displayed to the SMB user in the integration's authorization UI.
-
-   You use the <a href="/bank-feeds-api#/operations/create-bank-feed" target="_blank">POST /connectionInfo/bankFeedAccounts</a> endpoint to do this.
-
-5. Initiate the SMB user connection journey, when the user chooses a source bank account to connect to their accounting platform. This process varies by integration:
-
-   - For QBO Bank Feeds and Xero Bank Feeds, you redirect the user to the `linkUrl` returned in the data connection response to load a Codat-provided UI.
-   - For Sage Bank Feeds, you surface the ID of the data connection you created in your application. The SMB user must then enter this ID in the integration's authorization UI.
-
-6. The SMB user follows the instructions in the UI. They choose which source bank account they want to connect to their accounting platform.
-
-   You can add more source bank accounts, or update existing accounts as needed.
-
-When the SMB user is authorized, you can begin to create bank transactions in the target account in the accounting platform. You use the [POST /bankTransactions](/accounting-api#/operations/create-bank-transactions) endpoint to do this.
-
-:::caution Pulling bank transaction data
-
-Bank Feeds integrations support only support create and update operations, so you can't use them to pull bank transaction data from Codat's API. Your users must reconcile bank transactions using the features of their accounting software. 
-
-If you want to fetch banking data, our [Lending API](/lending/overview) enables you to do that.
-:::
+<IntegrationsList integrations={bankfeedsIntegrations}/>
 
 
-<div className="card">
-  <h3>✨ Enterprise</h3>
 
-  <p>This product is only available on our <a href="/configure/create-account">enterprise plans</a>.</p>
-</div>
