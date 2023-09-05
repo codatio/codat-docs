@@ -47,5 +47,5 @@ To make sure that commerce data has been pulled successfully into the Codat Port
 
 1. Go to the Codat Portal where you've enabled your integration.
 2. In the navigation bar, select **Companies**, and then select the test company that you created.
-3. Select **Commerce API** to see data for all Commerce data types.
+3. Select **Data > Commerce** to see data for all Commerce data types.
 4. If no data is displayed, click **Refresh data**. You can also view **Pull history** to check the status of previous data syncs.

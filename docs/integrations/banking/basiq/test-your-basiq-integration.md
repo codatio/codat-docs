@@ -33,4 +33,4 @@ When you've [set up and enabled Basiq](/integrations/banking/basiq/banking-basiq
 
 Once you have completed linking to Basiq's test bank, you will be able to view data in the Codat portal.
 
-Click on the company you created in step 4 above, and choose "Banking API" from the left hand menu to explore the data.
+Click on the company you created in step 4 above, and choose "Data > Banking" from the left hand menu to explore the data.

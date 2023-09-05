@@ -107,7 +107,7 @@ To perform a quick check in the Codat Portal:
 
 1. On the navigation bar, select **Companies**, and search for the test company that you created.
 1. Click on the company name.
-1. Select **Banking API** in the side navigation menu.
+1. Select **Data > Banking** in the side navigation menu.
 1. In the **Data type** dropdown, select **New** to show the new banking data types.
 1. Click **Banking - Accounts** to view accounts and related transaction data.
 

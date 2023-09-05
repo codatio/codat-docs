@@ -72,7 +72,7 @@ When the Link flow is complete, your Development Store opens and your custom app
 In the Codat Portal, pull sample commerce data from Shopify to your test company:
 
 1. Click **Companies** then select the test company you created in the preceding task.
-1. Click **Commerce API** in the side navigation menu.
+1. Click **Data > Commerce** in the side navigation menu.
 1. View the sample commerce data from your Shopify Development Store.
 
    If no data is displayed, click **Queue sync**.
