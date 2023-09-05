@@ -102,7 +102,7 @@
         ],
         "summary": "List customers",
         "operationId": "list-customers",
-        "description": "The *List customers* endpoint returns a list of [customers](https://docs.codat.io/commerce-api#/schemas/Customer) for a given company's connection.\n\n[Customers](https://docs.codat.io/commerce-api#/schemas/Customer) are people or organizations that place orders, make payments and recieve goods and/or services from the SMB.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    ",
+        "description": "The *List customers* endpoint returns a list of [customers](https://docs.codat.io/commerce-api#/schemas/Customer) for a given company's connection.\n\n[Customers](https://docs.codat.io/commerce-api#/schemas/Customer) are people or organizations that place orders, make payments and recieve goods and/or services from the SMB.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    ",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -653,7 +653,7 @@
         ],
         "summary": "Get customer",
         "operationId": "get-customer",
-        "description": "The *Get customer* endpoint returns a single customer for a given customerId.\n\n[Customers](https://docs.codat.io/commerce-api#/schemas/Customer) are people or organizations that place orders, make payments and receive goods and/or services from the SMB.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-customers) for integrations that support getting a specific customer.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n",
+        "description": "The *Get customer* endpoint returns a single customer for a given customerId.\n\n[Customers](https://docs.codat.io/commerce-api#/schemas/Customer) are people or organizations that place orders, make payments and receive goods and/or services from the SMB.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-customers) for integrations that support getting a specific customer.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n",
         "responses": {
           "200": {
             "description": "OK",
@@ -1017,7 +1017,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *List disputes* endpoint returns a list of [disputes](https://docs.codat.io/commerce-api#/schemas/Dispute) for a given company's connection.\n\n[Disputes](https://docs.codat.io/commerce-api#/schemas/Dispute) are created when a customer is unsatisfied with their purchase or believe they have been charged incorrectly.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    "
+        "description": "The *List disputes* endpoint returns a list of [disputes](https://docs.codat.io/commerce-api#/schemas/Dispute) for a given company's connection.\n\n[Disputes](https://docs.codat.io/commerce-api#/schemas/Dispute) are created when a customer is unsatisfied with their purchase or believe they have been charged incorrectly.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    "
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-disputes/{disputeId}": {
@@ -1110,7 +1110,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Get dispute* endpoint returns a single dispute for a given disputeId.\n\n[Disputes](https://docs.codat.io/commerce-api#/schemas/Dispute) are created when a customer is unsatisfied with their purchase or believe they have been charged incorrectly.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-disputes) for integrations that support getting a specific dispute.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n"
+        "description": "The *Get dispute* endpoint returns a single dispute for a given disputeId.\n\n[Disputes](https://docs.codat.io/commerce-api#/schemas/Dispute) are created when a customer is unsatisfied with their purchase or believe they have been charged incorrectly.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-disputes) for integrations that support getting a specific dispute.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-info": {
@@ -1383,7 +1383,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *List locations* endpoint returns a list of [locations](https://docs.codat.io/commerce-api#/schemas/Location) for a given company's connection.\n\n[Locations](https://docs.codat.io/commerce-api#/schemas/Location) hold information on the geographic location at which stocks of [products](https://docs.codat.io/commerce-api#/schemas/Product) may be held or where [orders](https://docs.codat.io/commerce-api#/schemas/Order) were placed.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    "
+        "description": "The *List locations* endpoint returns a list of [locations](https://docs.codat.io/commerce-api#/schemas/Location) for a given company's connection.\n\n[Locations](https://docs.codat.io/commerce-api#/schemas/Location) hold information on the geographic location at which stocks of [products](https://docs.codat.io/commerce-api#/schemas/Product) may be held or where [orders](https://docs.codat.io/commerce-api#/schemas/Order) were placed.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    "
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-locations/{locationId}": {
@@ -1497,7 +1497,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Get location* endpoint returns a single location for a given locationId.\n\n[Locations](https://docs.codat.io/commerce-api#/schemas/Location) hold information on the geographic location at which stocks of [products](https://docs.codat.io/commerce-api#/schemas/Product) may be held or where [orders](https://docs.codat.io/commerce-api#/schemas/Order) were placed.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-locations) for integrations that support getting a specific location.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n"
+        "description": "The *Get location* endpoint returns a single location for a given locationId.\n\n[Locations](https://docs.codat.io/commerce-api#/schemas/Location) hold information on the geographic location at which stocks of [products](https://docs.codat.io/commerce-api#/schemas/Product) may be held or where [orders](https://docs.codat.io/commerce-api#/schemas/Order) were placed.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-locations) for integrations that support getting a specific location.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-orders": {
@@ -2893,7 +2893,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *List orders* endpoint returns a list of [orders](https://docs.codat.io/commerce-api#/schemas/Order) for a given company's connection.\n\n[Orders](https://docs.codat.io/commerce-api#/schemas/Order) contain the transaction details for all products sold by the company.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    ",
+        "description": "The *List orders* endpoint returns a list of [orders](https://docs.codat.io/commerce-api#/schemas/Order) for a given company's connection.\n\n[Orders](https://docs.codat.io/commerce-api#/schemas/Order) contain the transaction details for all products sold by the company.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    ",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -3675,7 +3675,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Get order* endpoint returns a single order for a given orderId.\n\n[Orders](https://docs.codat.io/commerce-api#/schemas/Order) contain the transaction details for all products sold by the company.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-orders) for integrations that support getting a specific order.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n"
+        "description": "The *Get order* endpoint returns a single order for a given orderId.\n\n[Orders](https://docs.codat.io/commerce-api#/schemas/Order) contain the transaction details for all products sold by the company.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-orders) for integrations that support getting a specific order.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-payments": {
@@ -4111,7 +4111,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *List payments* endpoint returns a list of [payments](https://docs.codat.io/commerce-api#/schemas/Payment) for a given company's connection.\n\n[Payments](https://docs.codat.io/commerce-api#/schemas/Payment) contain details of all payments made by customers to the company.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    ",
+        "description": "The *List payments* endpoint returns a list of [payments](https://docs.codat.io/commerce-api#/schemas/Payment) for a given company's connection.\n\n[Payments](https://docs.codat.io/commerce-api#/schemas/Payment) contain details of all payments made by customers to the company.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    ",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -4303,7 +4303,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Get payment* endpoint returns a single payment for a given paymentId.\n\n[Payments](https://docs.codat.io/commerce-api#/schemas/Payment) contain details of all payments made by customers to the company.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-payments) for integrations that support getting a specific payment.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n"
+        "description": "The *Get payment* endpoint returns a single payment for a given paymentId.\n\n[Payments](https://docs.codat.io/commerce-api#/schemas/Payment) contain details of all payments made by customers to the company.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-payments) for integrations that support getting a specific payment.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-paymentMethods": {
@@ -4604,7 +4604,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *List payment methods* endpoint returns a list of [payment methods](https://docs.codat.io/commerce-api#/schemas/PaymentMethod) for a given company's connection.\n\n[Payment methods](https://docs.codat.io/commerce-api#/schemas/PaymentMethod) represent the payment method(s) used to make payments.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    ",
+        "description": "The *List payment methods* endpoint returns a list of [payment methods](https://docs.codat.io/commerce-api#/schemas/PaymentMethod) for a given company's connection.\n\n[Payment methods](https://docs.codat.io/commerce-api#/schemas/PaymentMethod) represent the payment method(s) used to make payments.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    ",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -4739,7 +4739,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Get payment method* endpoint returns a single payment method for a given paymentMethodId.\n\n[Payment methods](https://docs.codat.io/commerce-api#/schemas/PaymentMethod) represent the payment method(s) used to make payments.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-paymentMethods) for integrations that support getting a specific payment method.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n"
+        "description": "The *Get payment method* endpoint returns a single payment method for a given paymentMethodId.\n\n[Payment methods](https://docs.codat.io/commerce-api#/schemas/PaymentMethod) represent the payment method(s) used to make payments.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-paymentMethods) for integrations that support getting a specific payment method.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-products": {
@@ -5965,7 +5965,7 @@
             "$ref": "#/components/parameters/orderBy"
           }
         ],
-        "description": "The *List products* endpoint returns a list of [products](https://docs.codat.io/commerce-api#/schemas/Product) for a given company's connection.\n\n[Products](https://docs.codat.io/commerce-api#/schemas/Product) are items in the company's inventory that are available for sale.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    "
+        "description": "The *List products* endpoint returns a list of [products](https://docs.codat.io/commerce-api#/schemas/Product) for a given company's connection.\n\n[Products](https://docs.codat.io/commerce-api#/schemas/Product) are items in the company's inventory that are available for sale.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    "
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-products/{productId}": {
@@ -6575,7 +6575,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Get product* endpoint returns a single product for a given productId.\n\n[Products](https://docs.codat.io/commerce-api#/schemas/Product) are items in the company's inventory that are available for sale.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-products) for integrations that support getting a specific product.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n"
+        "description": "The *Get product* endpoint returns a single product for a given productId.\n\n[Products](https://docs.codat.io/commerce-api#/schemas/Product) are items in the company's inventory that are available for sale.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-products) for integrations that support getting a specific product.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-transactions": {
@@ -6874,7 +6874,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *List transactions* endpoint returns a list of [transactions](https://docs.codat.io/commerce-api#/schemas/Transaction) for a given company's connection.\n\n[Transactions](https://docs.codat.io/commerce-api#/schemas/Transaction) detail all financial affairs recorded in the commerce or point of sale system.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    ",
+        "description": "The *List transactions* endpoint returns a list of [transactions](https://docs.codat.io/commerce-api#/schemas/Transaction) for a given company's connection.\n\n[Transactions](https://docs.codat.io/commerce-api#/schemas/Transaction) detail all financial affairs recorded in the commerce or point of sale system.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    ",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -7022,7 +7022,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Get transaction* endpoint returns a single transaction for a given transactionId.\n\n[Transactions](https://docs.codat.io/commerce-api#/schemas/Transaction) detail all financial affairs recorded in the commerce or point of sale system.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-transactions) for integrations that support getting a specific transaction.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n"
+        "description": "The *Get transaction* endpoint returns a single transaction for a given transactionId.\n\n[Transactions](https://docs.codat.io/commerce-api#/schemas/Transaction) detail all financial affairs recorded in the commerce or point of sale system.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-transactions) for integrations that support getting a specific transaction.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-productCategories": {
@@ -7118,7 +7118,7 @@
             "$ref": "#/components/parameters/orderBy"
           }
         ],
-        "description": "The *List product categories* endpoint returns a list of [product categories](https://docs.codat.io/commerce-api#/schemas/ProductCategory) for a given company's connection.\n\n[Product categories](https://docs.codat.io/commerce-api#/schemas/ProductCategory) are used to classify a group of products together, either by type (e.g. \"Furniture\"), or sometimes by tax profile.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    "
+        "description": "The *List product categories* endpoint returns a list of [product categories](https://docs.codat.io/commerce-api#/schemas/ProductCategory) for a given company's connection.\n\n[Product categories](https://docs.codat.io/commerce-api#/schemas/ProductCategory) are used to classify a group of products together, either by type (e.g. \"Furniture\"), or sometimes by tax profile.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    "
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-productCategories/{productId}": {
@@ -7175,7 +7175,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Get product* endpoint returns a single product for a given productId.\n\n[Product categories](https://docs.codat.io/commerce-api#/schemas/ProductCategory) are used to classify a group of products together, either by type (e.g. \"Furniture\"), or sometimes by tax profile.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-productCategories) for integrations that support getting a specific product.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n"
+        "description": "The *Get product* endpoint returns a single product for a given productId.\n\n[Product categories](https://docs.codat.io/commerce-api#/schemas/ProductCategory) are used to classify a group of products together, either by type (e.g. \"Furniture\"), or sometimes by tax profile.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-productCategories) for integrations that support getting a specific product.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-taxComponents": {
@@ -7328,7 +7328,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *List tax components* endpoint returns a list of [tax components](https://docs.codat.io/commerce-api#/schemas/TaxComponent) for a given company's connection.\n\n[Tax components](https://docs.codat.io/commerce-api#/schemas/TaxComponent) are tax rates from the commerce platform, including tax rate's name and value.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    "
+        "description": "The *List tax components* endpoint returns a list of [tax components](https://docs.codat.io/commerce-api#/schemas/TaxComponent) for a given company's connection.\n\n[Tax components](https://docs.codat.io/commerce-api#/schemas/TaxComponent) are tax rates from the commerce platform, including tax rate's name and value.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    "
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-taxComponents/{taxId}": {
@@ -7411,7 +7411,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Get tax* endpoint returns a single tax for a given taxId.\n\n[Tax components](https://docs.codat.io/commerce-api#/schemas/TaxComponent) are tax rates from the commerce platform, including tax rate's name and value.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-taxComponents) for integrations that support getting a specific tax.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n"
+        "description": "The *Get tax* endpoint returns a single tax for a given taxId.\n\n[Tax components](https://docs.codat.io/commerce-api#/schemas/TaxComponent) are tax rates from the commerce platform, including tax rate's name and value.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-taxComponents) for integrations that support getting a specific tax.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
       }
     }
   },
@@ -7537,7 +7537,6 @@
               },
               "reserved": {
                 "description": "Funds reserved as holdings",
-                "type": "number",
                 "format": "decimal"
               },
               "currency": {
@@ -7607,7 +7606,7 @@
           }
         ],
         "definitions": {
-          "customerRef": {
+          "commerceCustomerRef": {
             "type": "object",
             "description": "Reference to the customer that placed the order.",
             "properties": {
@@ -7723,6 +7722,7 @@
         ]
       },
       "Customers": {
+        "title": "Commerce customers",
         "x-internal": true,
         "allOf": [
           {
@@ -7764,7 +7764,7 @@
               },
               "totalAmount": {
                 "description": "Total transaction amount that is under dispute.",
-                "type": "number",
+                "format": "decimal",
                 "examples": [
                   194.12,
                   -283.56,
@@ -7840,6 +7840,7 @@
         ]
       },
       "Disputes": {
+        "title": "Disputes",
         "x-internal": true,
         "allOf": [
           {
@@ -7927,6 +7928,7 @@
         ]
       },
       "Locations": {
+        "title": "Locations",
         "x-internal": true,
         "allOf": [
           {
@@ -7984,7 +7986,7 @@
                 "description": "Friendly reference for the order in the commerce or point of sale platform."
               },
               "country": {
-                "description": "The Codat country property is returned as it was provided in the underlying platform by the company without any formatting on our part.\n\nDepending on the platform the value of this property will either be an <a href=\"https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes\" target=\"_blank\">ISO 3166</a> code (2-alpha or 3-alpha) or free-form text returned as a string name in our model. \n\nFor POST operations against platforms that demand a specific format for the country code, we have documented accepted values in the [options](https://docs.codat.io/DOCS_PATH#/operations/get-companies-companyId-connections-connectionId-push) endpoint.",
+                "description": "The Codat country property is returned as it was provided in the underlying platform by the company without any formatting on our part.\n\nDepending on the platform the value of this property will either be an <a href=\"https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes\" target=\"_blank\">ISO 3166</a> code (2-alpha or 3-alpha) or free-form text returned as a string name in our model. \n\nFor POST operations against platforms that demand a specific format for the country code, we have documented accepted values in the [options](https://docs.codat.io/codat-api#/operations/get-companies-companyId-connections-connectionId-push) endpoint.",
                 "type": "string",
                 "format": "ISO3166 Alpha-3",
                 "examples": [
@@ -8009,23 +8011,28 @@
               },
               "totalAmount": {
                 "description": "Total amount of the order, including tax, net of any discounts and refunds.",
-                "type": "number"
+                "type": "number",
+                "format": "decimal"
               },
               "totalRefund": {
                 "description": "Total amount refunded issued by a merchant on an order (always a negative value).",
-                "type": "number"
+                "type": "number",
+                "format": "decimal"
               },
               "totalTaxAmount": {
                 "description": "Total amount of tax applied to the order.",
-                "type": "number"
+                "type": "number",
+                "format": "decimal"
               },
               "totalDiscount": {
                 "description": "Total amount of discount applied to the order.",
-                "type": "number"
+                "type": "number",
+                "format": "decimal"
               },
               "totalGratuity": {
                 "description": "Extra amount added to a bill.",
-                "type": "number"
+                "type": "number",
+                "format": "decimal"
               },
               "orderLineItems": {
                 "type": "array",
@@ -8049,7 +8056,7 @@
                 "$ref": "#/components/schemas/Location/definitions/locationRef"
               },
               "customerRef": {
-                "$ref": "#/components/schemas/Customer/definitions/customerRef"
+                "$ref": "#/components/schemas/Customer/definitions/commerceCustomerRef"
               },
               "supplementalData": {
                 "type": "object",
@@ -8086,10 +8093,12 @@
                 "properties": {
                   "quantity": {
                     "type": "number",
+                    "format": "decimal",
                     "description": "Number of units of the product sold.\nFor refunds, quantity is a negative value.\n"
                   },
                   "taxPercentage": {
                     "type": "number",
+                    "format": "decimal",
                     "description": "Percentage rate (from 0 to 100) of any sale tax applied to the unit amount.",
                     "examples": [
                       0,
@@ -8099,14 +8108,17 @@
                   },
                   "totalAmount": {
                     "type": "number",
+                    "format": "decimal",
                     "description": "Total price of the line item, including discounts, tax and minus any refunds."
                   },
                   "totalTaxAmount": {
                     "type": "number",
+                    "format": "decimal",
                     "description": "Total amount of tax applied to the line item."
                   },
                   "unitPrice": {
                     "type": "number",
+                    "format": "decimal",
                     "description": "Price per unit of goods or service."
                   },
                   "taxes": {
@@ -8144,6 +8156,7 @@
               "totalAmount": {
                 "description": "Total service charge, including taxes.",
                 "type": "number",
+                "format": "decimal",
                 "examples": [
                   0,
                   12.5,
@@ -8153,6 +8166,7 @@
               "taxPercentage": {
                 "description": "Percentage rate (from 0 to 100) of any tax applied to the service charge.",
                 "type": "number",
+                "format": "decimal",
                 "examples": [
                   0,
                   12.5,
@@ -8162,6 +8176,7 @@
               "taxAmount": {
                 "description": "Amount of the service charge that is tax.",
                 "type": "number",
+                "format": "decimal",
                 "examples": [
                   0,
                   12.5,
@@ -8212,6 +8227,7 @@
               },
               "totalAmount": {
                 "type": "number",
+                "format": "decimal",
                 "description": "Total amount of discount applied.",
                 "example": 15.25
               }
@@ -8309,6 +8325,7 @@
         ]
       },
       "Orders": {
+        "title": "Orders",
         "x-internal": true,
         "allOf": [
           {
@@ -8340,6 +8357,7 @@
             "properties": {
               "amount": {
                 "type": "number",
+                "format": "decimal",
                 "description": "Payment Amount (including gratuity)",
                 "examples": [
                   194.12,
@@ -8352,7 +8370,37 @@
                 "description": "Currency in which the payment was made"
               },
               "paymentMethodRef": {
-                "$ref": "#/components/schemas/PaymentMethod/definitions/paymentMethodRef"
+                "paymentMethodRef": {
+                  "type": "object",
+                  "description": "The payment method the record is linked to in the accounting or commerce platform.",
+                  "properties": {
+                    "id": {
+                      "description": "The unique identifier of the location being referenced.",
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Name of the location being referenced.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ],
+                  "example": {
+                    "id": "EILBDVJVNUAGVKRQ",
+                    "name": "AliPay"
+                  }
+                },
+                "paymentMethodStatus": {
+                  "type": "string",
+                  "enum": [
+                    "Active",
+                    "Archived",
+                    "Unknown"
+                  ],
+                  "description": "Status of the Payment Method",
+                  "example": "Active"
+                }
               },
               "status": {
                 "$ref": "#/components/schemas/Payment/definitions/paymentStatus"
@@ -8425,6 +8473,7 @@
                 "properties": {
                   "amount": {
                     "type": "number",
+                    "format": "decimal",
                     "nullable": true,
                     "description": "Payment Amount (including gratuity).",
                     "examples": [
@@ -8469,6 +8518,7 @@
         }
       },
       "Payments": {
+        "title": "Commerce payments",
         "x-internal": true,
         "allOf": [
           {
@@ -8513,27 +8563,6 @@
           }
         ],
         "definitions": {
-          "paymentMethodRef": {
-            "type": "object",
-            "description": "The payment method the payment is linked to in the commerce platform.",
-            "properties": {
-              "id": {
-                "description": "The unique identitifer of the location being referenced.",
-                "type": "string"
-              },
-              "name": {
-                "description": "Name of the location being referenced.",
-                "type": "string"
-              }
-            },
-            "required": [
-              "id"
-            ],
-            "example": {
-              "id": "EILBDVJVNUAGVKRQ",
-              "name": "AliPay"
-            }
-          },
           "paymentMethodStatus": {
             "type": "string",
             "enum": [
@@ -8547,6 +8576,7 @@
         }
       },
       "PaymentMethods": {
+        "title": "Commerce payment methods",
         "x-internal": true,
         "allOf": [
           {
@@ -8692,6 +8722,7 @@
                   },
                   "vatPercentage": {
                     "type": "number",
+                    "format": "decimal",
                     "examples": [
                       12.5,
                       0,
@@ -8760,7 +8791,8 @@
                 "nullable": true
               },
               "unitPrice": {
-                "type": "number"
+                "type": "number",
+                "format": "decimal"
               }
             }
           },
@@ -8772,6 +8804,7 @@
             "properties": {
               "totalQuantity": {
                 "type": "number",
+                "format": "decimal",
                 "nullable": true
               },
               "locations": {
@@ -8788,7 +8821,8 @@
             "type": "object",
             "properties": {
               "quantity": {
-                "type": "number"
+                "type": "number",
+                "format": "decimal"
               },
               "locationRef": {
                 "$ref": "#/components/schemas/Location/definitions/locationRef"
@@ -8807,6 +8841,7 @@
         }
       },
       "Products": {
+        "title": "Products",
         "x-internal": true,
         "allOf": [
           {
@@ -8906,6 +8941,7 @@
         ]
       },
       "ProductCategories": {
+        "title": "Product categories",
         "x-internal": true,
         "allOf": [
           {
@@ -8943,7 +8979,7 @@
               "rate": {
                 "description": "Rate of taxation represented as a fraction of the net price (typically in the range 0.00 - 1.00).",
                 "type": "number",
-                "format": "float",
+                "format": "decimal",
                 "examples": [
                   0.15,
                   0.2
@@ -8977,6 +9013,7 @@
               "rate": {
                 "description": "Tax amount on order line sale as available from source commerce platform.",
                 "type": "number",
+                "format": "decimal",
                 "nullable": true
               }
             }
@@ -9018,6 +9055,7 @@
         ]
       },
       "TaxComponents": {
+        "title": "Tax components",
         "x-internal": true,
         "allOf": [
           {
@@ -9050,6 +9088,7 @@
               "totalAmount": {
                 "description": "The total transaction amount",
                 "type": "number",
+                "format": "decimal",
                 "examples": [
                   194.12,
                   -283.56,
@@ -9171,6 +9210,7 @@
         "examples": []
       },
       "Transactions": {
+        "title": "Commerce transactions",
         "x-internal": true,
         "allOf": [
           {
@@ -9195,7 +9235,7 @@
         "type": "object",
         "properties": {
           "type": {
-            "$ref": "#/components/schemas/Address/definitions/addressType"
+            "$ref": "#/components/schemas/Address/definitions/commerceAddressType"
           },
           "line1": {
             "description": "The first line of the address",
@@ -9223,7 +9263,7 @@
           }
         },
         "definitions": {
-          "addressType": {
+          "commerceAddressType": {
             "description": "The type of the address",
             "type": "string",
             "enum": [
@@ -9238,6 +9278,7 @@
       },
       "PagingInfo": {
         "type": "object",
+        "title": "Pagination information",
         "x-internal": true,
         "properties": {
           "pageNumber": {
@@ -9382,49 +9423,6 @@
         ],
         "description": ""
       },
-      "Links": {
-        "type": "object",
-        "x-internal": true,
-        "required": [
-          "self",
-          "current"
-        ],
-        "properties": {
-          "self": {
-            "$ref": "#/components/schemas/HRef"
-          },
-          "current": {
-            "$ref": "#/components/schemas/HRef"
-          },
-          "next": {
-            "$ref": "#/components/schemas/HRef"
-          },
-          "previous": {
-            "$ref": "#/components/schemas/HRef"
-          }
-        },
-        "examples": [
-          {
-            "self": {
-              "href": "/companies/{id}/data/{dataType}"
-            },
-            "current": {
-              "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
-            }
-          }
-        ]
-      },
-      "HRef": {
-        "title": "Hypertext reference",
-        "type": "object",
-        "x-internal": true,
-        "properties": {
-          "href": {
-            "type": "string",
-            "format": "uri-reference"
-          }
-        }
-      },
       "DateTime": {
         "title": "Date time",
         "type": "string",
@@ -9435,6 +9433,7 @@
         "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
       },
       "CreatedDate": {
+        "title": "Created date",
         "type": "object",
         "x-internal": true,
         "properties": {
@@ -9445,6 +9444,7 @@
         }
       },
       "ModifiedDates": {
+        "title": "Modified dates",
         "x-internal": true,
         "allOf": [
           {
@@ -9485,6 +9485,7 @@
         ]
       },
       "ErrorMessage": {
+        "title": "Error message",
         "type": "object",
         "x-internal": true,
         "properties": {

@@ -212,33 +212,10 @@
         "additionalProperties": false
       },
       "Files": {
+        "title": "Files",
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/File"
-        }
-      },
-      "ErrorMessage": {
-        "type": "object",
-        "x-internal": true,
-        "properties": {
-          "statusCode": {
-            "type": "integer"
-          },
-          "service": {
-            "type": "string"
-          },
-          "error": {
-            "type": "string"
-          },
-          "correlationId": {
-            "type": "string"
-          },
-          "canBeRetried": {
-            "type": "string"
-          },
-          "detailedErrorCode": {
-            "type": "integer"
-          }
         }
       }
     },
@@ -272,7 +249,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ErrorMessage"
+              "$ref": "#/components/responses/Not-Found/content/application~1json/schema"
             },
             "examples": {
               "Malformed query": {
@@ -294,7 +271,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ErrorMessage"
+              "$ref": "#/components/responses/Not-Found/content/application~1json/schema"
             },
             "examples": {
               "Unauthorized": {
@@ -316,7 +293,29 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ErrorMessage"
+              "title": "Error message",
+              "type": "object",
+              "x-internal": true,
+              "properties": {
+                "statusCode": {
+                  "type": "integer"
+                },
+                "service": {
+                  "type": "string"
+                },
+                "error": {
+                  "type": "string"
+                },
+                "correlationId": {
+                  "type": "string"
+                },
+                "canBeRetried": {
+                  "type": "string"
+                },
+                "detailedErrorCode": {
+                  "type": "integer"
+                }
+              }
             },
             "examples": {
               "Data connection not found": {
@@ -358,7 +357,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ErrorMessage"
+              "$ref": "#/components/responses/Not-Found/content/application~1json/schema"
             },
             "examples": {
               "Conflict": {
