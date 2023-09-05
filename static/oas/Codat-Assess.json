@@ -3190,7 +3190,8 @@
                 "type": "string"
               },
               "value": {
-                "type": "number"
+                "type": "number",
+                "format": "decimal"
               }
             }
           }
@@ -3279,6 +3280,7 @@
                 },
                 "balance": {
                   "type": "number",
+                  "format": "decimal",
                   "description": "Balance of the account as reported on the profit and loss or Balance sheet."
                 },
                 "accountName": {
@@ -3325,6 +3327,7 @@
               },
               "confidence": {
                 "type": "number",
+                "format": "decimal",
                 "description": "Confidence level of the category. This will only be populated where `status` is `Suggested`."
               }
             }
@@ -3559,10 +3562,12 @@
             "properties": {
               "min": {
                 "type": "number",
+                "format": "decimal",
                 "description": "Lowest value of transaction set."
               },
               "max": {
                 "type": "number",
+                "format": "decimal",
                 "description": "Highest value of transaction set."
               },
               "currency": {
@@ -3687,18 +3692,22 @@
             "properties": {
               "matchPercentage": {
                 "type": "number",
+                "format": "decimal",
                 "description": "The percentage of the absolute value of transactions of the type specified in the route which have a match."
               },
               "unmatched": {
                 "type": "number",
+                "format": "decimal",
                 "description": "The sum of the absolute value of transactions of the type specified in the route which don't have a match."
               },
               "matched": {
                 "type": "number",
+                "format": "decimal",
                 "description": "The sum of the absolute value of transactions of the type specified in the route which have a match."
               },
               "total": {
                 "type": "number",
+                "format": "decimal",
                 "description": "The total of unmatched and matched."
               },
               "currency": {
@@ -3712,18 +3721,22 @@
             "properties": {
               "matchPercentage": {
                 "type": "number",
+                "format": "decimal",
                 "description": "The percentage of records of the type specified in the route which have a match."
               },
               "unmatched": {
                 "type": "number",
+                "format": "decimal",
                 "description": "The number of records of the type specified in the route which don't have a match."
               },
               "matched": {
                 "type": "number",
+                "format": "decimal",
                 "description": "The number of records of the type specified in the route which do have a match."
               },
               "total": {
                 "type": "number",
+                "format": "decimal",
                 "description": "The total of unmatched and matched."
               }
             }
@@ -3771,6 +3784,7 @@
           },
           "amount": {
             "type": "number",
+            "format": "decimal",
             "description": "The transaction value."
           },
           "currency": {
@@ -3904,7 +3918,8 @@
               },
               "currentBalance": {
                 "description": "The balance of the bank account.",
-                "type": "number"
+                "type": "number",
+                "format": "decimal"
               }
             }
           },
@@ -3987,7 +4002,8 @@
               },
               "amount": {
                 "description": "The bank transaction amount.",
-                "type": "number"
+                "type": "number",
+                "format": "decimal"
               },
               "currency": {
                 "type": "string"
@@ -4014,7 +4030,8 @@
             "properties": {
               "confidence": {
                 "description": "Returns the confidence of the suggested category for the transaction. The value is between 0 and 100.",
-                "type": "number"
+                "type": "number",
+                "format": "decimal"
               },
               "levels": {
                 "description": "The suggested category is an ordered array of category levels where each element (or level) is a subcategory of the previous element (or level).",
@@ -4166,7 +4183,8 @@
                 "type": "string"
               },
               "amount": {
-                "type": "number"
+                "type": "number",
+                "format": "decimal"
               },
               "currency": {
                 "$ref": "#/components/schemas/Currency"
@@ -4205,7 +4223,8 @@
                 "type": "string"
               },
               "amount": {
-                "type": "number"
+                "type": "number",
+                "format": "decimal"
               }
             }
           },
@@ -4251,10 +4270,12 @@
                     "$ref": "#/components/schemas/Currency"
                   },
                   "totalAmount": {
-                    "type": "number"
+                    "type": "number",
+                    "format": "decimal"
                   },
                   "amountDue": {
-                    "type": "number"
+                    "type": "number",
+                    "format": "decimal"
                   },
                   "payments": {
                     "type": "array",
@@ -4460,6 +4481,7 @@
               },
               "amount": {
                 "type": "number",
+                "format": "decimal",
                 "description": "The loan transaction amount."
               },
               "loanTransactionType": {
@@ -4596,14 +4618,17 @@
               },
               "totalDrawdowns": {
                 "type": "number",
+                "format": "decimal",
                 "description": "The total loan drawdowns."
               },
               "totalRepayments": {
                 "type": "number",
+                "format": "decimal",
                 "description": "The total loan repayments which includes capital plus any interest."
               },
               "balance": {
                 "type": "number",
+                "format": "decimal",
                 "description": "The loan outstanding balance.  This may not equal totalDrawdowns - totalRepayments due to interest which has been accrued."
               }
             }
@@ -4753,6 +4778,7 @@
       "CurrencyRate": {
         "title": "Currency rate",
         "type": "number",
+        "format": "decimal",
         "nullable": true,
         "description": "Rate to convert the total amount of the payment into the base currency for the company at the time of the payment.\n\nCurrency rates in Codat are implemented as the multiple of foreign currency units to each base currency unit.  \n\nIt is not possible to perform the currency conversion with two or more non-base currencies participating in the transaction. For example, if a company's base currency is USD, and it has a bill issued in EUR, then the bill payment must happen in USD or EUR.\n\nWhere the currency rate is provided by the underlying accounting platform, it will be available from Codat with the same precision (up to a maximum of 9 decimal places). \n\nFor accounting platforms which do not provide an explicit currency rate, it is calculated as `baseCurrency / foreignCurrency` and will be returned to 9 decimal places.\n\n## Examples with base currency of GBP\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (GBP) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **USD**          | $20            | 0.781         | £15.62                     |\n| **EUR**          | €20            | 0.885         | £17.70                     |\n| **RUB**          | ₽20            | 0.011         | £0.22                      |\n\n## Examples with base currency of USD\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (USD) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **GBP**          | £20            | 1.277         | $25.54                     |\n| **EUR**          | €20            | 1.134         | $22.68                     |\n| **RUB**          | ₽20            | 0.015         | $0.30                      |"
       },

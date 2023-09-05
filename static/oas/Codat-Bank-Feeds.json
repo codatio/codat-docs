@@ -1170,7 +1170,8 @@
                         "type": "string"
                       },
                       "amount": {
-                        "type": "number"
+                        "type": "number",
+                        "format": "decimal"
                       },
                       "date": {
                         "$ref": "#/components/schemas/DateTime"
@@ -1180,7 +1181,8 @@
                         "type": "string"
                       },
                       "balance": {
-                        "type": "number"
+                        "type": "number",
+                        "format": "decimal"
                       }
                     }
                   }
@@ -1715,6 +1717,7 @@
           },
           "balance": {
             "type": "number",
+            "format": "decimal",
             "nullable": true,
             "description": "The latest balance for the bank account"
           },
@@ -1867,6 +1870,7 @@
               },
               "balance": {
                 "type": "number",
+                "format": "decimal",
                 "nullable": true,
                 "description": "The balance of the account."
               },
@@ -1951,10 +1955,12 @@
                 "type": "boolean"
               },
               "amount": {
-                "type": "number"
+                "type": "number",
+                "format": "decimal"
               },
               "balance": {
-                "type": "number"
+                "type": "number",
+                "format": "decimal"
               },
               "transactionType": {
                 "title": "Bank transaction type",
