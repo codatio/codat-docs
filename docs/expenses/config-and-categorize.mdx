@@ -9,8 +9,8 @@ Once your SMB user has authorized a connection to their accounting platform and 
 
 ## Push configuration
 
-The [configuration endpoint](/sync-for-expenses-api#/operations/get-company-configuration) enables you to set up how your customers expenses will be pushed. 
-You can check the config at any time to confirm your companies' configuration.
+The [configuration endpoint](/sync-for-expenses-api#/operations/get-company-configuration) enables you to set up how your customers' expenses will be pushed. 
+You can check the config anytime to confirm your company's configuration.
 
 ```http title="Company Config"
 GET https://api.codat.io/companies/{companyId}/sync/expenses/config
@@ -34,15 +34,15 @@ GET https://api.codat.io/companies/{companyId}/sync/expenses/config
     - For **credit cards**, you can use an additional query parameter, e.g. `query=metadata.isDeleted=false&&isBankAccount=true&&type=liability`.
     - You can [POST](/accounting-api#/operations/post-account) to the Accounting API to **create** a new account.
 
-:::info Foreign Exchange 💱
+:::info Foreign exchange 💱
 
 There are two ways to handle transactions in a foreign currency:
 
-1. Each Foreign Exchange currency has its own bank account
+1. Each foreign exchange currency has its own bank account.
 
 2. Each transaction is converted back to the currency of the bank account.
 
-Sync for Expenses supports both of the above options.
+Sync for Expenses supports both of these options.
 :::
 
 ### Supplier
