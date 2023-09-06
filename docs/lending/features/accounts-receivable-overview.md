@@ -38,7 +38,7 @@ The invoice verification element of this feature streamlines the often tedious a
 
 A quick and easy test is to filter for invoices which have a status of ‘Paid’ but do not have a matching bank transaction. 
 
-You must have have both an accounting and a banking source connected to use this feature. 
+You must have have both an accounting and a banking source connected to use this feature component. 
 
 
 ## Supported outputs
