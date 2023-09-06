@@ -109,10 +109,6 @@
       "description": "Tracking categories"
     },
     {
-      "name": "Push operations",
-      "description": "Access create, update and delete operations made to an SMB's data connection."
-    },
-    {
       "name": "Manage data",
       "description": "Asynchronously retrieve data from an integration to refresh data in Codat."
     }
@@ -254,7 +250,7 @@
           }
         },
         "operationId": "list-companies",
-        "description": "﻿Returns a list of your companies. The company schema contains a list of [connections](https://docs.codat.io/DOCS_PATH#/schemas/Connection) related to the company.",
+        "description": "﻿Returns a list of your companies. The company schema contains a list of [connections](https://docs.codat.io/sync-for-payroll-api#/schemas/Connection) related to the company.",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -559,7 +555,7 @@
       },
       "post": {
         "summary": "Create connection",
-        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \n\nUse the [List Integrations](https://docs.codat.io/DOCS_PATH#/operations/list-integrations) endpoint to access valid platform keys. ",
+        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \n\nUse the [List Integrations](https://docs.codat.io/sync-for-payroll-api#/operations/list-integrations) endpoint to access valid platform keys. ",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -804,8 +800,8 @@
       ],
       "get": {
         "summary": "Get data status",
-        "operationId": "get-company-data-status",
-        "x-speakeasy-name-override": "get-company-data-status",
+        "operationId": "get-data-status",
+        "x-speakeasy-name-override": "get-data-status",
         "description": "Get the state of each data type for a company",
         "tags": [
           "Manage data"
@@ -922,7 +918,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DataConnectionHistory"
+                  "$ref": "#/components/schemas/PullOperations"
                 },
                 "examples": {
                   "Example": {
@@ -1016,7 +1012,7 @@
         ],
         "summary": "List push operations",
         "tags": [
-          "Push operations"
+          "Manage data"
         ],
         "operationId": "list-push-operations",
         "description": "List push operation records.",
@@ -1026,7 +1022,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PushHistoryResponse"
+                  "$ref": "#/components/schemas/PushOperations"
                 },
                 "examples": {}
               }
@@ -1107,9 +1103,10 @@
       "get": {
         "summary": "Get push operation",
         "tags": [
-          "Push operations"
+          "Manage data"
         ],
         "operationId": "get-push-operation",
+        "x-speakeasy-name-override": "get-push-operation",
         "description": "Retrieve push operation.",
         "responses": {
           "200": {
@@ -1141,7 +1138,7 @@
           "Accounts"
         ],
         "summary": "List accounts",
-        "description": "﻿The *List accounts* endpoint returns a list of [accounts](https://docs.codat.io/DOCS_PATH#/schemas/Account) for a given company's connection.\n\n[Accounts](https://docs.codat.io/DOCS_PATH#/schemas/Account) are the categories a business uses to record accounting transactions.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).",
+        "description": "﻿The *List accounts* endpoint returns a list of [accounts](https://docs.codat.io/sync-for-payroll-api#/schemas/Account) for a given company's connection.\n\n[Accounts](https://docs.codat.io/sync-for-payroll-api#/schemas/Account) are the categories a business uses to record accounting transactions.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payroll-api#/operations/refresh-company-data).",
         "operationId": "list-accounts",
         "parameters": [
           {
@@ -2618,7 +2615,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Get account* endpoint returns a single account for a given `accountId`.\n\n[Accounts](https://docs.codat.io/DOCS_PATH#/schemas/Account) are the categories a business uses to record accounting transactions.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support getting a specific account.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n",
+        "description": "The *Get account* endpoint returns a single account for a given `accountId`.\n\n[Accounts](https://docs.codat.io/sync-for-payroll-api#/schemas/Account) are the categories a business uses to record accounting transactions.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support getting a specific account.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payroll-api#/operations/refresh-company-data).\n",
         "operationId": "get-account"
       }
     },
@@ -7604,7 +7601,7 @@
           }
         },
         "operationId": "get-create-accounts-model",
-        "description": "﻿  The *Get create account model* endpoint returns the expected data for the request payload when creating an [account](https://docs.codat.io/DOCS_PATH#/schemas/Account) for a given company and integration.\n    \n    [Accounts](https://docs.codat.io/DOCS_PATH#/schemas/Account) are the categories a business uses to record accounting transactions.\n    \n    **Integration-specific behaviour**\n    \n    See the *response examples* for integration-specific indicative models.\n    \n    Check out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account.\n"
+        "description": "﻿  The *Get create account model* endpoint returns the expected data for the request payload when creating an [account](https://docs.codat.io/sync-for-payroll-api#/schemas/Account) for a given company and integration.\n    \n    [Accounts](https://docs.codat.io/sync-for-payroll-api#/schemas/Account) are the categories a business uses to record accounting transactions.\n    \n    **Integration-specific behaviour**\n    \n    See the *response examples* for integration-specific indicative models.\n    \n    Check out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account.\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/accounts": {
@@ -7660,7 +7657,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Create account* endpoint creates a new [account](https://docs.codat.io/DOCS_PATH#/schemas/Account) for a given company's connection.\n\n[Accounts](https://docs.codat.io/DOCS_PATH#/schemas/Account) are the categories a business uses to record accounting transactions.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create account model](https://docs.codat.io/DOCS_PATH#/operations/get-create-chartOfAccounts-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account.\n",
+        "description": "The *Create account* endpoint creates a new [account](https://docs.codat.io/sync-for-payroll-api#/schemas/Account) for a given company's connection.\n\n[Accounts](https://docs.codat.io/sync-for-payroll-api#/schemas/Account) are the categories a business uses to record accounting transactions.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create account model](https://docs.codat.io/sync-for-payroll-api#/operations/get-create-chartOfAccounts-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account.\n",
         "operationId": "create-account"
       }
     },
@@ -9495,7 +9492,7 @@
             "$ref": "#/components/responses/Conflict"
           }
         },
-        "description": "The *List journal entries* endpoint returns a list of [journal entries](https://docs.codat.io/DOCS_PATH#/schemas/JournalEntry) for a given company's connection.\n\n[Journal entries](https://docs.codat.io/DOCS_PATH#/schemas/JournalEntry) are  made in a company's general ledger, or accounts, when transactions are approved.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    ",
+        "description": "The *List journal entries* endpoint returns a list of [journal entries](https://docs.codat.io/sync-for-payroll-api#/schemas/JournalEntry) for a given company's connection.\n\n[Journal entries](https://docs.codat.io/sync-for-payroll-api#/schemas/JournalEntry) are  made in a company's general ledger, or accounts, when transactions are approved.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payroll-api#/operations/refresh-company-data).\n    ",
         "operationId": "list-journal-entries"
       }
     },
@@ -10330,8 +10327,48 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Get journal entry* endpoint returns a single journal entry for a given `journalEntryId`.\n\n[Journal entries](https://docs.codat.io/DOCS_PATH#/schemas/JournalEntry) are  made in a company's general ledger, or accounts, when transactions are approved.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries) for integrations that support getting a specific journal entry.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n",
+        "description": "The *Get journal entry* endpoint returns a single journal entry for a given `journalEntryId`.\n\n[Journal entries](https://docs.codat.io/sync-for-payroll-api#/schemas/JournalEntry) are  made in a company's general ledger, or accounts, when transactions are approved.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries) for integrations that support getting a specific journal entry.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payroll-api#/operations/refresh-company-data).\n",
         "operationId": "get-journal-entry"
+      },
+      "delete": {
+        "summary": "Delete journal entry",
+        "operationId": "delete-journal-entry",
+        "parameters": [
+          {
+            "name": "journalEntryId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PushOperation"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "description": "﻿> **Use with caution**\n>\n>Because journal entries underpin every transaction in an accounting platform, deleting a journal entry can affect every transaction for a given company.\n> \n> **Before you proceed, make sure you understand the implications of deleting journal entries from an accounting perspective.**\n\nThe *Delete journal entry* endpoint allows you to delete a specified journal entry from an accounting platform.\n\n[Journal entries](https://docs.codat.io/sync-for-payroll-api#/schemas/JournalEntry) are made in a company's general ledger, or accounts, when transactions are approved.\n\n### Process\n1. Pass the `{journalEntryId}` to the *Delete journal entry* endpoint and store the `pushOperationKey` returned.\n2. Check the status of the delete by checking the status of push operation either via\n   1. [Push operation webhook](https://docs.codat.io/introduction/webhooks/core-rules-types#push-operation-status-has-changed) (advised),\n   2. [Push operation status endpoint](https://docs.codat.io/sync-for-payroll-api#/operations/get-push-operation). \n   \n   A `Success` status indicates that the journal entry object was deleted from the accounting platform.\n3. (Optional) Check that the journal entry was deleted from the accounting platform.\n\n### Effect on related objects\n\nBe aware that deleting a journal entry from an accounting platform might cause related objects to be modified. For example, if you delete the journal entry for a paid invoice in QuickBooks Online, the invoice is deleted but the payment against that invoice is not. The payment is converted to a payment on account.\n\n## Integration specifics\nIntegrations that support soft delete do not permanently delete the object in the accounting platform.\n\n| Integration | Soft Deleted | \n|-------------|--------------|\n| QuickBooks Online | Yes    |       \n",
+        "tags": [
+          "Journal entries"
+        ]
       }
     },
     "/companies/{companyId}/connections/{connectionId}/options/journalEntries": {
@@ -11677,7 +11714,7 @@
           }
         },
         "operationId": "get-create-journalEntry-model",
-        "description": "﻿The *Get create journal entry model* endpoint returns the expected data for the request payload when creating a [journal entry](https://docs.codat.io/DOCS_PATH#/schemas/JournalEntry) for a given company and integration.\n\n[Journal entries](https://docs.codat.io/DOCS_PATH#/schemas/JournalEntry) are  made in a company's general ledger, or accounts, when transactions are approved.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries) for integrations that support creating a journal entry.\n"
+        "description": "﻿The *Get create journal entry model* endpoint returns the expected data for the request payload when creating a [journal entry](https://docs.codat.io/sync-for-payroll-api#/schemas/JournalEntry) for a given company and integration.\n\n[Journal entries](https://docs.codat.io/sync-for-payroll-api#/schemas/JournalEntry) are  made in a company's general ledger, or accounts, when transactions are approved.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries) for integrations that support creating a journal entry.\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/journalEntries": {
@@ -11861,7 +11898,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Create journal entry* endpoint creates a new [journal entry](https://docs.codat.io/DOCS_PATH#/schemas/JournalEntry) for a given company's connection.\n\n[Journal entries](https://docs.codat.io/DOCS_PATH#/schemas/JournalEntry) are  made in a company's general ledger, or accounts, when transactions are approved.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create journal entry model](https://docs.codat.io/DOCS_PATH#/operations/get-create-journalEntries-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries) for integrations that support creating a journal entry.\n",
+        "description": "The *Create journal entry* endpoint creates a new [journal entry](https://docs.codat.io/sync-for-payroll-api#/schemas/JournalEntry) for a given company's connection.\n\n[Journal entries](https://docs.codat.io/sync-for-payroll-api#/schemas/JournalEntry) are  made in a company's general ledger, or accounts, when transactions are approved.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create journal entry model](https://docs.codat.io/sync-for-payroll-api#/operations/get-create-journalEntries-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries) for integrations that support creating a journal entry.\n",
         "operationId": "create-journal-entry"
       }
     },
@@ -12145,7 +12182,7 @@
             "$ref": "#/components/responses/Conflict"
           }
         },
-        "description": "The *List journals* endpoint returns a list of [journals](https://docs.codat.io/DOCS_PATH#/schemas/Journal) for a given company's connection.\n\n[Journals](https://docs.codat.io/DOCS_PATH#/schemas/Journal) are used to record all the financial transactions of a company.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    ",
+        "description": "The *List journals* endpoint returns a list of [journals](https://docs.codat.io/sync-for-payroll-api#/schemas/Journal) for a given company's connection.\n\n[Journals](https://docs.codat.io/sync-for-payroll-api#/schemas/Journal) are used to record all the financial transactions of a company.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payroll-api#/operations/refresh-company-data).\n    ",
         "operationId": "list-journals"
       }
     },
@@ -12269,7 +12306,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Get journal* endpoint returns a single journal for a given `journalId`.\n\n[Journals](https://docs.codat.io/DOCS_PATH#/schemas/Journal) are used to record all the financial transactions of a company.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journals) for integrations that support getting a specific journal.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n",
+        "description": "The *Get journal* endpoint returns a single journal for a given `journalId`.\n\n[Journals](https://docs.codat.io/sync-for-payroll-api#/schemas/Journal) are used to record all the financial transactions of a company.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journals) for integrations that support getting a specific journal.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payroll-api#/operations/refresh-company-data).\n",
         "operationId": "get-journal"
       }
     },
@@ -12435,7 +12472,7 @@
           }
         },
         "operationId": "get-create-journal-model",
-        "description": "The *Get create journal model* endpoint returns the expected data for the request payload when creating a [journal](https://docs.codat.io/DOCS_PATH#/schemas/Journal) for a given company and integration.\n\n[Journals](https://docs.codat.io/DOCS_PATH#/schemas/Journal) are used to record all the financial transactions of a company.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journals) for integrations that support creating a journal.\n"
+        "description": "The *Get create journal model* endpoint returns the expected data for the request payload when creating a [journal](https://docs.codat.io/sync-for-payroll-api#/schemas/Journal) for a given company and integration.\n\n[Journals](https://docs.codat.io/sync-for-payroll-api#/schemas/Journal) are used to record all the financial transactions of a company.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journals) for integrations that support creating a journal.\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/journals": {
@@ -12491,7 +12528,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Create journal* endpoint creates a new [journal](https://docs.codat.io/DOCS_PATH#/schemas/Journal) for a given company's connection.\n\n[Journals](https://docs.codat.io/DOCS_PATH#/schemas/Journal) are used to record all the financial transactions of a company.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create journal model](https://docs.codat.io/DOCS_PATH#/operations/get-create-journals-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journals) for integrations that support creating a journal.\n",
+        "description": "The *Create journal* endpoint creates a new [journal](https://docs.codat.io/sync-for-payroll-api#/schemas/Journal) for a given company's connection.\n\n[Journals](https://docs.codat.io/sync-for-payroll-api#/schemas/Journal) are used to record all the financial transactions of a company.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create journal model](https://docs.codat.io/sync-for-payroll-api#/operations/get-create-journals-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journals) for integrations that support creating a journal.\n",
         "operationId": "create-journal"
       }
     },
@@ -12953,7 +12990,7 @@
             "$ref": "#/components/responses/Conflict"
           }
         },
-        "description": "The *List tracking categories* endpoint returns a list of [tracking categories](https://docs.codat.io/DOCS_PATH#/schemas/TrackingCategory) for a given company's connection.\n\n[Tracking categories](https://docs.codat.io/DOCS_PATH#/schemas/TrackingCategory) are used to monitor cost centres and control budgets that sit outside the standard set of accounts.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n    ",
+        "description": "The *List tracking categories* endpoint returns a list of [tracking categories](https://docs.codat.io/sync-for-payroll-api#/schemas/TrackingCategory) for a given company's connection.\n\n[Tracking categories](https://docs.codat.io/sync-for-payroll-api#/schemas/TrackingCategory) are used to monitor cost centres and control budgets that sit outside the standard set of accounts.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payroll-api#/operations/refresh-company-data).\n    ",
         "operationId": "list-tracking-categories"
       }
     },
@@ -13127,7 +13164,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Get tracking category* endpoint returns a single tracking category for a given `trackingCategoryId`.\n\n[Tracking categories](https://docs.codat.io/DOCS_PATH#/schemas/TrackingCategory) are used to monitor cost centres and control budgets that sit outside the standard set of accounts.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=trackingCategories) for integrations that support getting a specific tracking category.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/DOCS_PATH#/operations/refresh-company-data).\n",
+        "description": "The *Get tracking category* endpoint returns a single tracking category for a given `trackingCategoryId`.\n\n[Tracking categories](https://docs.codat.io/sync-for-payroll-api#/schemas/TrackingCategory) are used to monitor cost centres and control budgets that sit outside the standard set of accounts.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=trackingCategories) for integrations that support getting a specific tracking category.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payroll-api#/operations/refresh-company-data).\n",
         "operationId": "get-tracking-category"
       }
     }
@@ -13136,6 +13173,7 @@
     "schemas": {
       "PagingInfo": {
         "type": "object",
+        "title": "Pagination information",
         "x-internal": true,
         "properties": {
           "pageNumber": {
@@ -13218,6 +13256,7 @@
         ]
       },
       "Companies": {
+        "title": "Companies",
         "x-internal": true,
         "allOf": [
           {
@@ -13237,6 +13276,7 @@
         ]
       },
       "CompanyRequestBody": {
+        "title": "Create company request",
         "x-internal": true,
         "type": "object",
         "properties": {
@@ -13257,7 +13297,7 @@
       },
       "Company": {
         "title": "Company",
-        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/DOCS_PATH#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
+        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/sync-for-payroll-api#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
         "type": "object",
         "properties": {
           "id": {
@@ -13338,6 +13378,7 @@
         ]
       },
       "Connections": {
+        "title": "Connections",
         "x-internal": true,
         "allOf": [
           {
@@ -13358,7 +13399,7 @@
       },
       "Connection": {
         "title": "Connection",
-        "description": "﻿A connection represents a [company's](https://docs.codat.io/DOCS_PATH#/schemas/Company) connection to a data source and allows you to synchronize data (pull and/or push) with that source.\n\nA company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:\n\n- [Accounting data](https://docs.codat.io/accounting-api/overview) - 1 active connection.\n- [Banking data](https://docs.codat.io/banking-api/overview) - Multiple active connections.\n- [Commerce data](https://docs.codat.io/commerce-api/overview) - Multiple active connections.\nAny combination of accounting, banking, and commerce data connections is allowed.\n\nBefore you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/auth-flow/overview).",
+        "description": "﻿A connection represents a [company's](https://docs.codat.io/sync-for-payroll-api#/schemas/Company) connection to a data source and allows you to synchronize data (pull and/or push) with that source.\n\nA company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:\n\n- [Accounting data](https://docs.codat.io/accounting-api/overview) - 1 active connection.\n- [Banking data](https://docs.codat.io/banking-api/overview) - Multiple active connections.\n- [Commerce data](https://docs.codat.io/commerce-api/overview) - Multiple active connections.\nAny combination of accounting, banking, and commerce data connections is allowed.\n\nBefore you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/auth-flow/overview).",
         "type": "object",
         "properties": {
           "id": {
@@ -13494,7 +13535,7 @@
         }
       },
       "DataStatus": {
-        "title": "Data Status",
+        "title": "Data status",
         "description": "Describes the state of data in the Codat cache for a company and data type",
         "type": "object",
         "required": [
@@ -13634,8 +13675,29 @@
           }
         ]
       },
+      "PullOperations": {
+        "title": "Pull operations",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PullOperation"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PagingInfo"
+          }
+        ]
+      },
       "DataType": {
         "x-internal": true,
+        "title": "Data types",
         "type": "string",
         "description": "Available Data types",
         "enum": [
@@ -13684,28 +13746,9 @@
         ],
         "example": "invoices"
       },
-      "DataConnectionHistory": {
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/PullOperation"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
-      "PushOperationSummary": {
-        "type": "object",
+      "PushOperation": {
         "title": "Push operation",
+        "type": "object",
         "x-internal": true,
         "properties": {
           "changes": {
@@ -13713,7 +13756,7 @@
             "nullable": true,
             "description": "Contains a single entry that communicates which record has changed and the manner in which it changed. ",
             "items": {
-              "$ref": "#/components/schemas/PushOperationSummary/definitions/pushOperationChange"
+              "$ref": "#/components/schemas/PushOperation/definitions/pushOperationChange"
             }
           },
           "dataType": {
@@ -13751,14 +13794,14 @@
             "deprecated": true
           },
           "status": {
-            "$ref": "#/components/schemas/PushOperationSummary/definitions/pushOperationStatus"
+            "$ref": "#/components/schemas/PushOperation/definitions/pushOperationStatus"
           },
           "errorMessage": {
             "type": "string",
             "nullable": true
           },
           "validation": {
-            "$ref": "#/components/schemas/PushOperationSummary/definitions/validation"
+            "$ref": "#/components/schemas/PushOperation/definitions/validation"
           },
           "statusCode": {
             "type": "integer"
@@ -13782,14 +13825,14 @@
                 "type": "array",
                 "nullable": true,
                 "items": {
-                  "$ref": "#/components/schemas/PushOperationSummary/definitions/validationItem"
+                  "$ref": "#/components/schemas/PushOperation/definitions/validationItem"
                 }
               },
               "warnings": {
                 "type": "array",
                 "nullable": true,
                 "items": {
-                  "$ref": "#/components/schemas/PushOperationSummary/definitions/validationItem"
+                  "$ref": "#/components/schemas/PushOperation/definitions/validationItem"
                 }
               }
             }
@@ -13854,10 +13897,10 @@
             "type": "object",
             "properties": {
               "type": {
-                "$ref": "#/components/schemas/PushOperationSummary/definitions/pushChangeType"
+                "$ref": "#/components/schemas/PushOperation/definitions/pushChangeType"
               },
               "recordRef": {
-                "$ref": "#/components/schemas/PushOperationSummary/definitions/pushOperationRef"
+                "$ref": "#/components/schemas/PushOperation/definitions/pushOperationRef"
               },
               "attachmentId": {
                 "type": "string",
@@ -13867,7 +13910,8 @@
           }
         }
       },
-      "PushHistoryResponse": {
+      "PushOperations": {
+        "title": "Push operations",
         "x-internal": true,
         "allOf": [
           {
@@ -13876,30 +13920,13 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/PushOperationSummary"
+                  "$ref": "#/components/schemas/PushOperation"
                 }
               }
             }
           },
           {
             "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
-      "PushOperation": {
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "data": {
-                "type": "object",
-                "description": "Object submitted in push operation.",
-                "additionalProperties": true
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PushOperationSummary"
           }
         ]
       },
@@ -14129,6 +14156,7 @@
               },
               "currentBalance": {
                 "type": "number",
+                "format": "decimal",
                 "nullable": true,
                 "description": "Current balance in the account.",
                 "example": 0
@@ -14169,6 +14197,7 @@
                 }
               },
               "metadata": {
+                "title": "Metadata",
                 "type": "object",
                 "x-internal": true,
                 "properties": {
@@ -14182,6 +14211,7 @@
             }
           },
           {
+            "title": "Modified dates",
             "x-internal": true,
             "allOf": [
               {
@@ -14268,6 +14298,7 @@
         "type": "object"
       },
       "Accounts": {
+        "title": "Accounts",
         "x-internal": true,
         "allOf": [
           {
@@ -14287,6 +14318,7 @@
         ]
       },
       "CreateAccountResponse": {
+        "title": "Create account response",
         "x-internal": true,
         "allOf": [
           {
@@ -14298,7 +14330,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperationSummary"
+            "$ref": "#/components/schemas/PushOperation"
           }
         ]
       },
@@ -14368,7 +14400,7 @@
               },
               "supplementalData": {
                 "type": "object",
-                "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting platform. [Learn more](https://docs.codat.io/using-the-api/additional-data) about supplemental data.",
+                "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting platform. [Learn more](https://docs.codat.io/using-the-api/supplemental-data/overview) about supplemental data.",
                 "properties": {
                   "content": {
                     "type": "object",
@@ -14398,6 +14430,7 @@
               },
               "netAmount": {
                 "type": "number",
+                "format": "decimal",
                 "description": "Amount for the journal line. Debit entries are considered positive, and credit entries are considered negative."
               },
               "currency": {
@@ -14429,6 +14462,7 @@
         }
       },
       "JournalEntries": {
+        "title": "Journal entries",
         "x-internal": true,
         "allOf": [
           {
@@ -14448,6 +14482,7 @@
         ]
       },
       "CreateJournalEntryResponse": {
+        "title": "Create journal entry response",
         "x-internal": true,
         "allOf": [
           {
@@ -14459,7 +14494,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperationSummary"
+            "$ref": "#/components/schemas/PushOperation"
           }
         ]
       },
@@ -14550,6 +14585,7 @@
         }
       },
       "Journals": {
+        "title": "Journals",
         "x-internal": true,
         "allOf": [
           {
@@ -14569,6 +14605,7 @@
         ]
       },
       "CreateJournalResponse": {
+        "title": "Create journal response",
         "x-internal": true,
         "allOf": [
           {
@@ -14580,7 +14617,7 @@
             }
           },
           {
-            "$ref": "#/components/schemas/PushOperationSummary"
+            "$ref": "#/components/schemas/PushOperation"
           }
         ]
       },
@@ -14663,6 +14700,7 @@
         ]
       },
       "TrackingCategories": {
+        "title": "Tracking categories",
         "x-internal": true,
         "allOf": [
           {
@@ -14727,6 +14765,7 @@
         ]
       },
       "ErrorMessage": {
+        "title": "Error message",
         "type": "object",
         "x-internal": true,
         "properties": {
