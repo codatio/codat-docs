@@ -19,8 +19,8 @@ const prodRework = [
   to: "/bank-feeds/overview"
 },
 {
-  from: "/bank-feeds-api/qbo-bank-feeds/",
-  to: "/integrations/bank-feeds/qbo-bank-feeds/"
+  from: "/bank-feeds-api/qbo-bank-feeds",
+  to: "/integrations/bank-feeds/qbo-bank-feeds"
 },
 {
   from: "/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions",
@@ -35,7 +35,7 @@ const prodRework = [
   to: "/integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-smb-user"
 },
 {
-  from: "/bank-feeds-api/sage-bank-feeds/",
+  from: "/bank-feeds-api/sage-bank-feeds",
   to: "/integrations/bank-feeds/sage-bank-feeds/"
 },
 {
@@ -51,7 +51,7 @@ const prodRework = [
   to: "/integrations/bank-feeds/sage-bank-feeds/sage-bank-feeds-use"
 },
 {
-  from: "/bank-feeds-api/xero-bank-feeds/",
+  from: "/bank-feeds-api/xero-bank-feeds",
   to: "/integrations/bank-feeds/xero-bank-feeds/"
 },
 {
@@ -79,19 +79,19 @@ const prodRework = [
   to: "/using-the-api/overview"
 },
 {
-  from: "/data-model/accounting/",
+  from: "/data-model/accounting",
   to: "/lending/data-types"
 },
 {
-  from: "/data-model/bank-feeds/",
+  from: "/data-model/bank-feeds",
   to: "/bank-feeds-api#/"
 },
 {
-  from: "/data-model/banking/",
+  from: "/data-model/banking",
   to: "/lending/data-types"
 },
 {
-  from: "/data-model/commerce/",
+  from: "/data-model/commerce",
   to: "/lending/data-types"
 },
 {
