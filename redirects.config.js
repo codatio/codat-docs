@@ -83,10 +83,6 @@ const prodRework = [
   to: "/lending/data-types"
 },
 {
-  from: "/data-model/bank-feeds",
-  to: "/bank-feeds-api#"
-},
-{
   from: "/data-model/banking",
   to: "/lending/data-types"
 },
@@ -160,7 +156,7 @@ const prodRework = [
 },
 {
   from: "/sfc/build-with-sync-for-commerce/sync-for-commerce-prerequisites",
-  to: "/commerce/overview#how-does-sync-for-commerce-work"
+  to: "/commerce/overview"
 },
 {
   from: "/sfc/build-with-sync-for-commerce/sync-platform-selection",
@@ -180,11 +176,11 @@ const prodRework = [
 },
 {
   from: "/sfc/mapping-specifications/qbo-mapping-specification",
-  to: "/commerce/merchant-configuration#mapping-sales-payments-and-fees"
+  to: "/commerce/merchant-configuration"
 },
 {
   from: "/sfc/mapping-specifications/xero-mapping-specification",
-  to: "/commerce/merchant-configuration#mapping-sales-payments-and-fees"
+  to: "/commerce/merchant-configuration"
 },
 {
   from: "/sfc/overview",
@@ -192,19 +188,19 @@ const prodRework = [
 },
 {
   from: "/sfc/sync-for-commerce-knowledge-base/initiating-a-sync",
-  to: "/commerce/advanced-data-sync#initiating-a-sync"
+  to: "/commerce/advanced-data-sync"
 },
 {
   from: "/sfc/sync-for-commerce-knowledge-base/monitoring-a-sync",
-  to: "/commerce/advanced-data-sync#get-sync-status"
+  to: "/commerce/advanced-data-sync"
 },
 {
   from: "/sfc/sync-for-commerce-knowledge-base/sfc-journal-entry-mapping",
-  to: "/commerce/merchant-configuration#merchant-configuration"
+  to: "/commerce/merchant-configuration"
 },
 {
   from: "/sfc/sync-for-commerce-knowledge-base/sfc-sales-product-categories",
-  to: "/commerce/merchant-configuration#merchant-configuration"
+  to: "/commerce/merchant-configuration"
 },
 {
   from: "/sfc/sync-for-commerce-knowledge-base/synchronization-schedule",
