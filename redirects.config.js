@@ -36,7 +36,7 @@ const prodRework = [
 },
 {
   from: "/bank-feeds-api/sage-bank-feeds",
-  to: "/integrations/bank-feeds/sage-bank-feeds/"
+  to: "/integrations/bank-feeds/sage-bank-feeds"
 },
 {
   from: "/bank-feeds-api/sage-bank-feeds/sage-bank-feeds-authenticate-users-web-app",
@@ -52,7 +52,7 @@ const prodRework = [
 },
 {
   from: "/bank-feeds-api/xero-bank-feeds",
-  to: "/integrations/bank-feeds/xero-bank-feeds/"
+  to: "/integrations/bank-feeds/xero-bank-feeds"
 },
 {
   from: "/bank-feeds-api/xero-bank-feeds/xero-bank-feeds-partner",
@@ -84,7 +84,7 @@ const prodRework = [
 },
 {
   from: "/data-model/bank-feeds",
-  to: "/bank-feeds-api#/"
+  to: "/bank-feeds-api#"
 },
 {
   from: "/data-model/banking",
