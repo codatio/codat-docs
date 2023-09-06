@@ -117,12 +117,6 @@ module.exports = {
           target: "_blank",
           rel: null,
         },
-        {
-          href: "/get-started/office-hours",
-          label: "Office hours",
-          target: "_blank",
-          rel: null,
-        },
       ],
       className: "navbar__link--support",
     },
