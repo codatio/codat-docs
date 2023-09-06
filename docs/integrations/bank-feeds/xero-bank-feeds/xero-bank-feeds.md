@@ -4,10 +4,6 @@ displayed_sidebar: integrationsBankFeeds
 description: "Learn about our Xero Bank Feeds integration"
 ---
 
-:::caution Xero Bank Feeds - Beta
-Our new Xero Bank Feeds integration is currently in beta. You can provide feedback on the integration in <a href="https://codat.productboard.com/feature-board/1378101-feature-organization/features/15391330/detail" target="_blank">Productboard</a> or by contacting your Solutions Engineer or Account Manager.
-:::
-
 Our Xero Bank Feeds integration allows you to set up a bank feed from a bank account in your application (the source bank account) to an account within Xero (the target bank account). After a feed connection is established, you can push bank transactions from the source account to the target account.
 
 ![xero-bank-feeds-flowchart](/img/bank-feeds/xero-bank-feeds/xero-bank-feeds-flow-amended.png "Flowchart showing bank transactions pushed from your application to Xero")
