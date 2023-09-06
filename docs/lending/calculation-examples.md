@@ -4,11 +4,10 @@ title: Examples
 
 
 ### Amount Due
-Invoices
-The outstanding amount due on the invoice.
-```
 
-### Customer view
+`Invoices`
+
+The outstanding amount due on the invoice.
 
 ```
 invoices.amountDue
@@ -16,7 +15,9 @@ Filter: invoices.totalAmount > 0
 ```
 
 ### Amount Due
-Bills
+
+`Bills`
+
 The outstanding amount due on the bill.
 
 Supplier view
@@ -80,7 +81,9 @@ Total Revenue for Filter range - SUM(total revenue for top 5/ Count of invoices)
 ```
 
 ### Avg. Payment Days
-Customers
+
+`Customers`
+
 The weighted average number of days it takes a customer to pay an invoice, over the period selected.
 
 Company summary
