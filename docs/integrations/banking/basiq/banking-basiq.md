@@ -3,12 +3,12 @@ title: "Basiq"
 description: "Learn about our Basiq integration"
 sidebar_label: Overview
 ---
-
+<p>
 <a class="external" href="https://basiq.io/" target="_blank">
   Basiq
 </a> is a third-party provider of Open Banking services with connections to bank
 accounts at over 130 financial institutions, covering the Australian and New Zealand
-markets.
+markets.</p>
 
 Our banking integration with Basiq lets you securely connect to and retrieve your SMB customers' banking data in a standardized format.
 
