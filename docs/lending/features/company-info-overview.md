@@ -5,7 +5,7 @@ description: "Identify the business you are underwriting"
 displayed_sidebar: "lending"
 ---
 
-The **Company info** feature provides lenders with essential information about borrower companies. It serves as a cornerstone for comprehensive lending decisions by offering insights into a company's identity including address, phone number and registration numbers.
+The **company info** feature provides lenders with essential information about borrower companies. It serves as a cornerstone for comprehensive lending decisions by offering insights into a company's identity including address, phone number and registration numbers.
 
 ## Supported feature components
 
@@ -17,7 +17,7 @@ The **Company info** feature provides lenders with essential information about b
 
 ## Supported outputs
 
-You can retrieve the data pulled by the feature by calling the **Company info** [endpoints of our API](/lending-api#/).
+You can retrieve the data pulled by the feature by calling the **company info** [endpoints of our API](/lending-api#/).
 
 ---
 ## Read next

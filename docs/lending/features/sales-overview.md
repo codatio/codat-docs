@@ -8,13 +8,13 @@ import Products from "@components/global/Products";
 import { IntegrationsList } from "@components/global/Integrations";
 import { commerceIntegrations } from "@components/global/Integrations/integrations";
 
-The **sales** feature offers data sourced from a linked company's commerce connections, allowing you to access valuable insights through aggregated metrics and a comprehensive breakdown of sales transactions from prominent eCommerce, POS, and payment platforms.
+Our **sales** feature offers data sourced from a linked company's commerce connections, allowing you to access valuable insights through aggregated metrics and a comprehensive breakdown of sales transactions from prominent eCommerce, POS, and payment platforms.
 
 ## Use cases
 
 The primary use case for this feature is **revenue analysis**. Evaluate historical revenue streams with real-time transactions, order and payouts information. Lenders use these data points to evaluate the stability, growth patterns and sustainability of the borrower's income. 
 
-## Supported feature components
+## Feature components
 
 <iframe
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=250863128&amp;single=true&amp;widget=true&amp;headers=false"
@@ -52,11 +52,11 @@ Our metrics include a set of pre-calculated ratios and metrics focused on commer
 
 ## Supported outputs
 
-You can retrieve the data pulled and enriched by the feature by calling the the **Sales** [endpoints of our API](/lending-api#/).
+You can retrieve the data pulled and enriched by the feature by calling the **sales** [endpoints of our API](/lending-api#/).
 
 ## Get started
 
-Once you have the Lending API enabled, configure your instance to work with the sales feature. 
+Once you have the Lending API enabled, configure your instance to work with our sales feature. 
 
 #### Configure data sources
 
@@ -81,7 +81,19 @@ See how to [enable data types](/core-concepts/data-type-settings#override-the-de
 - Product categories `commerce-productCategories`
 - Transactions `commerce-transactions`
 
-Configure the solution to refresh data when you need it by [setting a synchronization frequency](/core-concepts/data-type-settings#choose-a-synchronization-frequency). We recommend setting it to a daily or monthly sync.
+Configure the solution to refresh data when you need it by [setting a synchronization frequency](/core-concepts/data-type-settings#choose-a-synchronization-frequency). We recommend setting it to a daily or a monthly sync.
+
+#### Configure webhooks
+
+We recommend you configure the following [webhooks](/using-the-api/webhooks/core-rules-types) to manage your data pipelines. These webhooks send a notification for each `dataType` separately.
+
+- [Dataset status has changed to an error state](/using-the-api/webhooks/core-rules-types#dataset-status-has-changed-to-an-error-state)  
+
+  If you receive a notification from this webhook, it means an issue occured when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
+ 
+- [Dataset data changed](/using-the-api/webhooks/core-rules-types#dataset-data-changed)  
+
+  If you receive a notification from this webhook, it means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform.
 
 ---
 
