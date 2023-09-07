@@ -34,3 +34,26 @@
   padding: 1em;
   max-width: 1000px;
 } 
+
+.devFlag {
+  width: 100%;
+  text-align: center;
+  padding: 4px 8px;
+  color: black;
+  background-color: orange;
+}
+
+.newFlagPositive {
+  width: 100%;
+  text-align: center;
+  padding: 4px 8px;
+  background-color: var(--button-primary-bg);
+  transition: 0.5s;
+
+  --ifm-link-color: white;
+  --ifm-link-hover-color: white;
+
+  &:hover a {
+    opacity: 0.7;
+  }
+}
