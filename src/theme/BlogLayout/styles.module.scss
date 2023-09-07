@@ -1,0 +1,36 @@
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.updatesHeader {
+  padding: 0 1em;
+}
+
+.articlesGrid {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1em;
+
+  > *:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 996px) {
+  .articlesGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1196px) {
+  .articlesGrid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.article {
+  padding: 1em;
+  max-width: 1000px;
+} 
