@@ -39,7 +39,7 @@ Implementation period, covering Implementation Specialists and associated resour
 
 #### Supported integrations
 
-[@todo: link to supported integrations doc page once available]
+[See supported intergrations in our documentation](https://docs.codat.io/commerce/setup#available-integrations).
 
 Note a separate Add on is required to access ERP integrations and Desktop platforms.
 
@@ -71,7 +71,8 @@ This product will appear as **Sync for Commerce (v2)** on your order form.
 - Config API
 
 #### Supported integrations
-[todo: link to supported integrations doc page once available]
+
+[See supported intergrations in our documentation](https://docs.codat.io/expenses/overview#supported-integrations).
 
 Note a separate Add on is required to access ERP integrations and Desktop platforms.
 
@@ -100,7 +101,7 @@ This product will appear as **Sync for Expenses (v2)** on your order form.
 
 #### Supported integrations
 
-[todo: link to supported integrations doc page once available]
+[See supported intergrations in our documentation](https://docs.codat.io/payroll/overview#compatible-integrations).
 
 Note a separate Add on is required to access ERP integrations and Desktop platforms.
 
@@ -131,7 +132,7 @@ This product will appear as **Sync for Payroll** on your order form.
 
 #### Supported integrations
 
-[todo: link to supported integrations doc page once available]
+[See supported intergrations in our documentation](https://docs.codat.io/payables/overview#compatible-integrations).
 
 Note a separate Add on is required to access ERP integrations and Desktop platforms.
 
@@ -167,7 +168,7 @@ This product will appear as **Sync for Payables** on your order form.
 
 #### Supported integrations
 
-[todo: link to supported integrations doc page once available]
+[See supported intergrations in our documentation](https://docs.codat.io/bank-feeds/overview#supported-integrations).
 
 Note a separate Add on is required to access ERP integrations and Desktop platforms.
 
@@ -205,7 +206,7 @@ This product will appear as **Bank feeds** on your order form.
 
 #### Included integrations
 
-[todo: link to supported integrations doc page once available]
+See our [Lending API documentation](https://docs.codat.io/lending/overview) for our supported integrations.
 
 Note a separate Add on is required to access ERP integrations and Desktop platforms.
 
