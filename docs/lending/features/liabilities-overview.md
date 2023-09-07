@@ -8,21 +8,21 @@ import Products from "@components/global/Products";
 import { IntegrationsList } from "@components/global/Integrations";
 import { accountingIntegrations, bankingIntegrations, commerceIntegrations } from "@components/global/Integrations/integrations";
 
-The **Liabilities** feature simplifies the evaluation of a borrower's financial obligations. Machine learning models automatically identify loans from connected sources and provide lenders with a clear overview of a borrower's outstanding loans and their repayment history.
+Our **liabilities** feature simplifies the evaluation of a borrower's financial obligations. Machine learning models automatically identify loans from connected sources and provide lenders with a clear overview of a borrower's outstanding loans and their repayment history.
 
 ## Use cases
 
-Common uses of the Liabilities feature include:
+Common uses of our liabilities feature include:
 
-- **Risk assessment:** Helps assess the borrower's risk profile and repayment reliability.
+- **Risk assessment:** helps assess the borrower's risk profile and repayment reliability.
 
-- **Debt capacity:** Evaluates if the business can handle more debt without financial strain.
+- **Debt capacity:** evaluates if the business can handle more debt without financial strain.
 
-- **Repayment behaviour:** Indicates if the borrower makes payments on time or defaults.
+- **Repayment behaviour:** indicates if the borrower makes payments on time or defaults.
 
-- **Loan structuring:** Tailors new loan terms to fit the borrower's financial situation.
+- **Loan structuring:** tailors new loan terms to fit the borrower's financial situation.
 
-## Supported feature components
+## Feature components
 
 <iframe
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=554962936&amp;single=true&amp;widget=true&amp;headers=false"
@@ -32,11 +32,11 @@ Common uses of the Liabilities feature include:
 
 ## Supported outputs
 
-You can retrieve the data pulled by the feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **Liabilities** [endpoints of our API](/lending-api#/).
+You can retrieve the data pulled by the feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **liabilities** [endpoints of our API](/lending-api#/).
 
 ## Get started
 
-Once you have the Lending API enabled, configure your instance to work with the Liabilities feature. 
+Once you have the Lending API enabled, configure your instance to work with our liabilities feature. 
 
 #### Configure data sources
 
@@ -46,11 +46,6 @@ Follow the respective guides to set up and enable at least one accounting, banki
 <br />
 
 <IntegrationsList integrations={accountingIntegrations} />
-
-##### Banking
-<br />
-
-<IntegrationsList integrations={bankingIntegrations} />
 
 ##### Commerce
 <br />
@@ -69,7 +64,19 @@ See how to [enable data types](/core-concepts/data-type-settings#override-the-de
 - Transactions `banking-transactions`
 - Transactions `commerce-transactions`
 
-Configure the solution to refresh data when you need it by [setting a synchronization frequency](/core-concepts/data-type-settings#choose-a-synchronization-frequency). We recommend setting it to a daily or monthly sync.
+Configure the solution to refresh data when you need it by [setting a synchronization frequency](/core-concepts/data-type-settings#choose-a-synchronization-frequency). We recommend setting it to a daily or a monthly sync.
+
+#### Configure webhooks
+
+We recommend you configure the following [webhooks](/using-the-api/webhooks/core-rules-types) to manage your data pipelines. These webhooks send a notification for each `dataType` separately.
+
+- [Dataset status has changed to an error state](/using-the-api/webhooks/core-rules-types#dataset-status-has-changed-to-an-error-state)  
+
+  If you receive a notification from this webhook, it means an issue occured when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
+ 
+- [Dataset data changed](/using-the-api/webhooks/core-rules-types#dataset-data-changed)  
+
+  If you receive a notification from this webhook, it means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform.
 
 ---
 

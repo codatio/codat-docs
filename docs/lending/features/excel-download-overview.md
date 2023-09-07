@@ -4,11 +4,19 @@ sidebar_label: "Excel download"
 description: "Download the Lending API reports to Excel"
 ---
 
-The **Excel download** reports will show you what data is available from our API without you writing any code upfront. You can use this to inform testing within your credit models.
+Our **Excel download reports** will show you what data is available from our API without you writing any code upfront. You can use this to inform testing within your credit models.
 
-## Supported feature components
+## Feature components
 
-Table with coverage goes here
+Our Excel download feature consists of the following component reports:
+
+- **Data export** provides an output of data from our accounting data sources.
+
+- **Enhanced financial statements** provide an output of the categorized profit and loss and balance sheet statements.
+
+- **Enhanced cash flows** provides an output of the categorized bank transactions.
+
+- **Enhanced invoices** provides an output of reconciled invoices.
 
 ## Supported outputs
 
@@ -37,6 +45,8 @@ You can also generate and download a report in an Excel format via the [Portal](
 3. Click the **Generate report** button next to the desired report to produce a new report. The **Last generated** field will be updated to the date and time you initiated the generation. It will keep this timestamp until the next time you generate the report.
 
 4. When the report successfully generates, the report name (which is also the file name) with the file size and latest timestamp will be available for download. Click the **Download** button to save the Excel report to your local machine.
+
+You can also generate and download the **data export** report by clicking the **Export data** button on any of the Lending screens of the Portal.
 
 ---
 
