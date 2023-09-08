@@ -888,7 +888,58 @@
         ],
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SyncStatus"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/BadRequest"
+                },
+                "examples": {
+                  "Bad request": {
+                    "value": {
+                      "statusCode": "400,",
+                      "service": "Commerce",
+                      "error": "Company does not have a linked accounting data connection.",
+                      "correlationId": "df56cdcd-3d13-4223-b96a-5c3777cbca06",
+                      "canBeRetried": "No",
+                      "detailedErrorCode": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/Not-Found"
+                },
+                "examples": {
+                  "Not found": {
+                    "value": {
+                      "statusCode": "404,",
+                      "service": "Commerce",
+                      "error": "No syncs for company d30ba2b9-ae37-409d-971e-d5a747141905 were found.",
+                      "correlationId": "d789a0f6-d7bc-4d9d-ad2f-d4efcbd64eb2",
+                      "canBeRetried": "No",
+                      "detailedErrorCode": 0
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -900,6 +951,10 @@
     },
     "/companies/{companyId}/sync/commerce/syncs/lastSuccessful/status": {
       "get": {
+        "description": "Gets the status of the last successful sync",
+        "summary": "Last successful sync",
+        "operationId": "get-last-successful-sync",
+        "x-speakeasy-name-override": "get-last-successful-sync",
         "tags": [
           "Sync"
         ],
@@ -929,11 +984,7 @@
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
           }
-        },
-        "description": "Gets the status of the last successful sync",
-        "summary": "Last successful sync",
-        "operationId": "get-last-successful-sync",
-        "x-speakeasy-name-override": "get-last-successful-sync"
+        }
       },
       "parameters": [
         {
@@ -943,58 +994,16 @@
     },
     "/companies/{companyId}/sync/commerce/syncs/latest/status": {
       "get": {
-        "tags": [
-          "Sync"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CompanySyncStatus"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          }
-        },
         "description": "Gets the latest sync status",
         "summary": "Latest sync status",
         "operationId": "get-latest-sync",
-        "x-speakeasy-name-override": "get-latest-sync"
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ]
-    },
-    "/companies/{companyId}/sync/expenses/syncs/{syncId}/status": {
-      "get": {
+        "x-speakeasy-name-override": "get-latest-sync",
         "tags": [
           "Sync"
         ],
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
-          },
-          {
-            "$ref": "#/components/parameters/syncId"
           }
         ],
         "responses": {
@@ -1018,22 +1027,19 @@
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
           }
-        },
-        "summary": "Get Sync status",
-        "description": "Get the sync status for a specified sync",
-        "operationId": "get-sync-by-id"
+        }
       },
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/syncId"
         }
       ]
     },
     "/companies/{companyId}/sync/commerce/syncs/list/status": {
       "get": {
+        "summary": "List sync statuses",
+        "description": "Gets a list of sync statuses",
+        "operationId": "list-syncs",
         "tags": [
           "Sync"
         ],
@@ -1066,10 +1072,7 @@
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
           }
-        },
-        "summary": "List sync statuses",
-        "description": "Gets a list of sync statuses",
-        "operationId": "list-syncs"
+        }
       },
       "parameters": [
         {
@@ -1092,12 +1095,131 @@
           }
         }
       },
+      "SyncStatus": {
+        "title": "Sync status",
+        "description": "The status of syncing for a company and its connections.",
+        "type": "object",
+        "x-examples": {
+          "4200": {
+            "companyId": "782575ae-c4f8-4a0b-8041-4ffa193aaab7",
+            "commerceSyncId": "78ab9424-bb29-47d2-b808-4c6e651efd6d",
+            "syncId": "afe076de-4d1b-44d8-8b4a-717463af00c5",
+            "syncStatusCode": "4200,",
+            "syncStatus": "MapCoreError",
+            "errorMessage": "Cannot match the tax id '23vwUg7OhGIZvEUHdee7fw' to a mapped account on the accounting platform for journal entry.",
+            "syncExceptionMessage": "Cannot match the tax id '23vwUg7OhGIZvEUHdee7fw' to a mapped account on the accounting platform for journal entry.",
+            "syncUtc": "2023-04-12T10:52:54.5359678Z",
+            "dataPushed": false,
+            "dataConnections": [
+              {
+                "id": "9bd6cb3b-06b3-4944-91e6-7dffbf5846a2",
+                "integrationId": "3485371f-930d-4614-997a-5dfa2cec546c",
+                "integrationKey": "lqai",
+                "sourceId": "c4f9fa2d-cb83-4a3f-9b36-45b4af190e81",
+                "platformName": "Partner Commerce",
+                "linkUrl": "https://link-api.codat.io/companies/0bfd6552-7712-45bb-8c67-c4eabd7ec78e/connections/248f3e4e-8b71-44a1-b091-69ac25b86e6c/start",
+                "status": "Linked",
+                "lastSync": "2023-06-14T11:58:52.2695708Z",
+                "created": "2023-06-14T11:39:00Z",
+                "sourceType": "Commerce",
+                "dataConnectionErrors": []
+              },
+              {
+                "id": "ff8f694d-1a8f-4b00-99d7-26173aff34eb",
+                "integrationId": "adeb7fe9-4c64-4848-9e0d-175317876b6f",
+                "integrationKey": "qhyg",
+                "sourceId": "afe268b1-289e-4496-b890-3d65e9ce1acb",
+                "platformName": "QuickBooks Online",
+                "linkUrl": "https://link-api.codat.io/companies/0bfd6552-7712-45bb-8c67-c4eabd7ec78e/connections/1486b3db-f752-467a-9d56-66dd57cc754d/start",
+                "status": "Linked",
+                "lastSync": "2023-08-10T17:50:14.0900922Z",
+                "created": "2023-06-14T11:39:00Z",
+                "sourceType": "Accounting",
+                "dataConnectionErrors": []
+              }
+            ]
+          }
+        },
+        "properties": {
+          "companyId": [
+            {
+              "$ref": "#/components/parameters/companyId"
+            }
+          ],
+          "commerceSyncId": {
+            "type": "string",
+            "format": "guid",
+            "description": "Unique identifier for the sync in Codat.",
+            "example": "8d0a044e-b683-4fc9-bd0d-bfb2ca5731b7"
+          },
+          "syncId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "730dcf2e-3afc-4d83-bb90-9f4b95dddf68",
+            "description": "Unique identifier for the sync in Codat."
+          },
+          "syncStatusCode": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Numerical status code sync of the company data.",
+            "example": 4000
+          },
+          "syncStatus": {
+            "type": "string",
+            "nullable": true,
+            "description": "Status of the sync of the company data. This is linked to status code.",
+            "example": "ValidateError, Pending"
+          },
+          "errorMessage": {
+            "type": "string",
+            "nullable": true,
+            "description": "Friendly error message for the sync operation.",
+            "example": "Customer 3b9bf2ed-a618-4af2-80f2-f2b57fddc748 is not in an Active state. (Archived)"
+          },
+          "syncExceptionMessage": {
+            "type": "string",
+            "nullable": true,
+            "description": "Exception message for the sync operation.",
+            "example": "Customer 3b9bf2ed-a618-4af2-80f2-f2b57fddc748 is not in an Active state. (Archived)"
+          },
+          "syncUtc": {
+            "$ref": "#/components/schemas/Company/properties/created",
+            "description": "UTC DateTime for the Sync.",
+            "nullable": true
+          },
+          "dataPushed": {
+            "type": "boolean",
+            "description": "Boolean indicator for data being pushed during a sync operation.",
+            "example": true
+          },
+          "dataConnections": {
+            "type": "array",
+            "description": "Array of containing objects data connection information for the company.",
+            "items": {
+              "$ref": "#/components/schemas/Connection"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "SyncSummary": {
         "title": "Sync summary",
         "type": "object",
         "properties": {
           "syncDateRangeUtc": {
-            "$ref": "#/components/schemas/DateRange"
+            "type": "object",
+            "properties": {
+              "start": {
+                "$ref": "#/components/schemas/Company/properties/created",
+                "description": "Start date of the Sync."
+              },
+              "finish": {
+                "$ref": "#/components/schemas/Company/properties/created",
+                "description": "Finish date of the Sync."
+              }
+            },
+            "additionalProperties": false
           },
           "companyId": {
             "type": "string",
@@ -1152,22 +1274,6 @@
             "type": "boolean",
             "description": "Boolean indicator for data being pushed during a sync operation.",
             "example": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "DateRange": {
-        "x-internal": true,
-        "title": "Data range",
-        "type": "object",
-        "properties": {
-          "start": {
-            "$ref": "#/components/schemas/Company/properties/created",
-            "description": "Start date of the Sync."
-          },
-          "finish": {
-            "$ref": "#/components/schemas/Company/properties/created",
-            "description": "Finish date of the Sync."
           }
         },
         "additionalProperties": false
@@ -2496,6 +2602,28 @@
       }
     },
     "responses": {
+      "BadRequest": {
+        "description": "The request made is not valid.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Malformed query": {
+                "value": {
+                  "statusCode": 400,
+                  "service": "PublicApi",
+                  "error": "Error processing request - not valid.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
       "Unauthorized": {
         "description": "Your API request was not properly authorized.",
         "content": {
