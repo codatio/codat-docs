@@ -1,11 +1,9 @@
 ---
-title: "Retrieve financial data"
+title: "Supported data types"
 description: "Lending API lets you explore the financial data underpinning the enhanced reports."
 ---
 
 import DataTypes from '@components/global/DataTypes'
-
-
 
 ## Supported data types
 

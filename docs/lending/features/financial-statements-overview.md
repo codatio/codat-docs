@@ -1,7 +1,7 @@
 ---
 title: "Financial statements overview"
 sidebar_label: "Financial statements"
-description: "Automate financial statement & ratio analysis with a fully standardised profit & loss and balance sheet"
+description: "Automate financial statement and ratio analysis with a fully standardized profit and loss and balance sheet"
 ---
 
 import Products from "@components/global/Products";
