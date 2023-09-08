@@ -16,8 +16,7 @@ banner_text: "Embedded accounting integrations for Point of Sale, Payment, and e
 ---
 
 import {IntegrationsList} from '@components/global/Integrations'
-import {sfcaccIntegrations} from '@components/global/Integrations/integrations'
-import {sfccommIntegrations} from '@components/global/Integrations/integrations'
+import {integrationsFilterCommerceAcc, integrationsFilterCommerceComm} from '@components/global/Integrations/integrations'
 
 Accounting for sales is a major pain point for merchants. It usually involves them manually replicating data from Point of Sale (POS), Payment, and eCommerce platforms in their accounting software. This is often done via multiple manual bulk data downloads and data manipulation in spreadsheets and in the software.
 
@@ -101,15 +100,11 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping t
 
 ### Accounting systems
 
-<br/>
-
-<IntegrationsList integrations={sfcaccIntegrations}/>
+<IntegrationsList filter={integrationsFilterCommerceAcc}/>
 
 ### Commerce platforms
 
-<br/>
-
-<IntegrationsList integrations={sfccommIntegrations}/>
+<IntegrationsList filter={integrationsFilterCommerceComm}/>
 
 ## How does Sync for Commerce work?
 

@@ -17,7 +17,7 @@ banner_text: "Embedded accounting automation that supplies everything payroll pr
 
 import Products from "@components/global/Products";
 import { IntegrationsList } from "@components/global/Integrations";
-import { payrollIntegrations } from "@components/global/Integrations/integrations";
+import { integrationsFilterPayroll } from "@components/global/Integrations/integrations";
 
 Use Codat to integrate your customers' payroll data from their HR and payroll platforms into their accounting platforms and to support its reconciliation.
 
@@ -61,8 +61,7 @@ Each business may need to reconcile payroll costs, pensions, and taxes to differ
 ### [Sync payruns with your customers accounting software](sync-payroll)
 
 Use Codat's create and update functionality to post a journal showing the correct amounts against each account. These transactions can easily be reconciled against the business's bank feed.
+
 ## Compatible integrations
 
-<br />
-
-<IntegrationsList integrations={payrollIntegrations} />
+<IntegrationsList filter={integrationsFilterPayroll} />

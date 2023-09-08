@@ -17,7 +17,7 @@ banner_text: "Embedded accounting integrations for corporate card providers."
 ---
 
 import {IntegrationsList} from '@components/global/Integrations'
-import {sfeIntegrations} from '@components/global/Integrations/integrations'
+import {integrationsFilterExpenses} from '@components/global/Integrations/integrations'
 
 import SocialImages from "@components/global/SocialImages";
 
@@ -29,9 +29,7 @@ Sync for Expenses is an API and a set of supporting tools. It has been built to 
 
 ## Supported integrations
 
-<br/>
-
-<IntegrationsList integrations={sfeIntegrations}/>
+<IntegrationsList filter={integrationsFilterExpenses}/>
 
 ## Features
 
