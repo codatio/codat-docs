@@ -26,9 +26,9 @@ For more information, see [Extension installation process](/integrations/account
 
 ## Prerequisites
 
-A Dynamics 365 Business Central license is required to use our integration. At a minimum, you'll need a Dynamics 365 Business Central Essentials license.
+A Dynamics 365 Business Central license is required to use our integration. At a minimum, you'll need a Dynamics 365 Business Central Essentials license. <p>For more information, see the Business Central <a href="https://dynamics.microsoft.com/en-us/business-central/pricing/" taret="_blank">pricing page</a> for your region.</p>
 
-<p>For more information, see the Business Central <a href="https://dynamics.microsoft.com/en-us/business-central/pricing/" taret="_blank">pricing page</a> for your region.</p>
+We also assume that your organization already has its Microsoft account configured, and the domain name in your account email has been [DNS-verified](https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/domains-admin-takeover#internal-admin-takeover). If you are creating an account for the very first time, you may need to [create a tenant for your organization](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/create-new-tenant#create-a-new-tenant-for-your-organization) and [verify the domain](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/add-custom-domain). 
 
 ## Register your application
 

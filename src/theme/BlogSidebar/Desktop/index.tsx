@@ -56,7 +56,7 @@ export default function BlogSidebarDesktop({ sidebar }: Props): JSX.Element {
         <a href="/updates/tags/deprecation">See all...</a>
 
         <br />
-        <br />
+        <hr />
 
         <div className={clsx(styles.sidebarItemTitle, "margin-bottom--md")}>
           {sidebar.title}

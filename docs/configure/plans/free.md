@@ -23,12 +23,18 @@ When you're finished testing your Codat solution or your trial finishes, you can
 
 You can use Codat for free for 30 days. 
 
+#### Usage
+
 Once signed up, you can:
 
 - Create up to 50 companies.
 - Create unlimited connections to Sandbox data.
 - Create up to five connections at a time to each of our accounting, commerce, and banking integrations.
 - Schedule data syncs to refresh data daily, weekly, or monthly (but not hourly).
+
+#### Products
+
+While you can enable all our products on the free trial our Bank Feeds API requires some setup on our end - talk to us first if you're looking to try out this product.
 
 ---
 

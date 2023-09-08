@@ -17,7 +17,7 @@ banner_text: "Embedded accounting integrations for accounts payable automation."
 
 import Products from "@components/global/Products";
 import { IntegrationsList } from "@components/global/Integrations";
-import { billpayIntegrations } from "@components/global/Integrations/integrations";
+import { integrationsFilterPayables } from "@components/global/Integrations/integrations";
 
 This automation streamlines your customers' accounts payable workflow, replacing manual tasks and eliminates duplication of effort, leading to increased payment volumes as a result.
 
@@ -102,7 +102,7 @@ Once the transaction is completed, a bill payment can then be pushed to the cust
 
 <br />
 
-<IntegrationsList integrations={billpayIntegrations} />
+<IntegrationsList filter={integrationsFilterPayables} />
 
 ### Start building
 

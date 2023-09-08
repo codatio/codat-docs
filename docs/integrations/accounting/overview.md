@@ -1,6 +1,6 @@
 ---
 title: "Overview"
-description: "Explore the accounting platforms you can connect to through our Accounting API."
+description: "Explore the accounting platforms you can connect to through our API."
 sidebar_label: Accounting
 displayed_sidebar: integrationsAccounting
 ---
