@@ -7,7 +7,7 @@ displayed_sidebar: "lending"
 
 The **company info** feature provides lenders with essential information about borrower companies. It serves as a cornerstone for comprehensive lending decisions by offering insights into a company's identity including address, phone number and registration numbers.
 
-## Supported feature components
+## Feature components
 
 <iframe
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=303232670&amp;single=true&amp;widget=true&amp;headers=false"

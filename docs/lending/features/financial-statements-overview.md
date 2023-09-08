@@ -81,8 +81,6 @@ Once you have the Lending API enabled, configure your instance to work with our 
 
 Follow the respective guides to set up and enable accounting integrations that will serve as a data source for the feature:
 
-<br />
-
 <IntegrationsList integrations={accountingIntegrations} />
 
 #### Enable data types and sync schedule

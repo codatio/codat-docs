@@ -44,12 +44,11 @@ Follow the respective guides to set up and enable at least one accounting, banki
 
 ##### Accounting
 
-<IntegrationsList integrations={accountingIntegrations} />
+<IntegrationsList filter={['Dynamics 365 Business Central', 'Exact Online', 'FreshBooks', 'MYOB Business', 'Oracle NetSuite', 'QuickBooks Online', 'QuickBooks Desktop', 'Sage 50', 'Sage Business Cloud Accounting', 'Xero']} />
 
 ##### Commerce
-<br />
 
-<IntegrationsList integrations={commerceIntegrations} />
+<IntegrationsList filter={['Stripe', 'Zettle']} />
 
 #### Enable data types and sync schedule
 
