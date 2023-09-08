@@ -66,7 +66,7 @@ export const bankfeedsIntegrations = [
   },
 ]
 
-const accountingIntegrations = [
+export const accountingIntegrations = [
   {
     "name": "Clear Books",
     "to": "/integrations/accounting/clearbooks/accounting-clearbooks",
@@ -184,7 +184,7 @@ const accountingIntegrations = [
   },
 ]
 
-const bankingIntegrations = [
+export const bankingIntegrations = [
   {
     "name": "Plaid",
     "to": "/integrations/banking/plaid/banking-plaid",
@@ -206,7 +206,7 @@ const bankingIntegrations = [
   },
 ]
 
-const commerceIntegrations = [
+export const commerceIntegrations = [
   {
     "name": "Amazon Seller Central",
     "to": "/integrations/commerce/amazon-seller-central/commerce-amazon-seller-central",
