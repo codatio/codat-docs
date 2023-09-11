@@ -1,6 +1,6 @@
 ---
-title: "Banking overview"
-sidebar_label: "Banking"
+title: "Bank statements overview"
+sidebar_label: "Bank statements"
 description: "Underwrite with accurate, real-time cash flows powered by bank transaction categorization"
 ---
 
@@ -8,11 +8,11 @@ import Products from "@components/global/Products";
 import { IntegrationsList } from "@components/global/Integrations";
 import { bankingIntegrations } from "@components/global/Integrations/integrations";
 
-Our **banking** feature provides data from a linked company’s banking connections. Transactions are enriched with financial category and payment provider information.
+Our **bank statements** feature provides data from a linked company’s banking connections. Transactions are enriched with financial category and payment provider information.
 
 ## Use cases
 
-Common uses of our banking feature include:
+Common uses of our bank statements feature include:
 
 1. **Liquidity assessment:** determine the borrower's ability to cover short-term expenses and financial obligations.
 
@@ -74,11 +74,11 @@ Businesses often sell across multiple channels, for example, brick and mortar, o
 
 ## Supported outputs
 
-You can retrieve the data pulled and enriched by the feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **banking** [endpoints of our API](/lending-api#/).
+You can retrieve the data pulled and enriched by the feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **bank statements** [endpoints of our API](/lending-api#/).
 
 ## Get started
 
-Once you have the Lending API enabled, configure your instance to work with our banking feature. 
+Once you have the Lending API enabled, configure your instance to work with our bank statements feature. 
 
 #### Configure data sources
 

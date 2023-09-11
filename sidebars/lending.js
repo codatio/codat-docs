@@ -40,19 +40,19 @@ module.exports = [
   //},
   {
     type: "link",
-    label: "Company info",
+    label: "Bank statements",
     customProps: {
       hr: true,
       section: "Features",
     },
-    href: "/lending/features/company-info-overview",
+    href: "/lending/features/bank-statements-overview",
   },
-  "lending/features/banking-overview",
   "lending/features/sales-overview",
   "lending/features/financial-statements-overview",
   "lending/features/liabilities-overview",
   "lending/features/accounts-receivable-overview",
   "lending/features/accounts-payable-overview",
+  "lending/features/company-info-overview",
   "lending/features/excel-download-overview",
 //  {
 //    type: "category",

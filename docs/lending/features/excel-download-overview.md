@@ -18,6 +18,12 @@ Our Excel download feature consists of the following component reports:
 
 - **Enhanced invoices** provides an output of reconciled invoices.
 
+### Metrics template
+
+We've also created a [Metrics template Excel file](/documents/assess-metrics.xlsx). You can paste data into this file from the Enhanced financial statements Excel report to calculate key financial metrics and ratios.
+
+[![Metrics Template](/img/lending/metrics-template.png "Metrics Template")](/documents/assess-metrics.xlsx)
+
 ## Supported outputs
 
 Reports in Excel format that are available to download can be generated via the [Portal](https://app.codat.io) or by calling the **Excel reports** [endpoints of our API](/lending-api#/).
