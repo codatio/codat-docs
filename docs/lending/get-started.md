@@ -6,6 +6,10 @@ description: "Learn how to perform the initial setup for the Lending API product
 import { IntegrationsList } from "@components/global/Integrations";
 import { accountingIntegrations, bankingIntegrations, commerceIntegrations } from "@components/global/Integrations/integrations";
 
+import SocialImages from "@components/global/SocialImages";
+
+<SocialImages imgSrc="/img/banners/social/lending.png"/>
+
 ## Enable Lending API
 
 1. Open the <a href="https://app.codat.io" target="_blank">Codat Portal</a> and sign in.

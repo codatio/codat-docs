@@ -5,6 +5,10 @@ description: "Lending API lets you explore the financial data underpinning the e
 
 import DataTypes from '@components/global/DataTypes'
 
+import SocialImages from "@components/global/SocialImages";
+
+<SocialImages imgSrc="/img/banners/social/lending.png"/>
+
 ## Supported data types
 
 <DataTypes product="lending" urlPrefix="/lending-api#"/>

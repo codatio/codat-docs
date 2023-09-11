@@ -458,7 +458,7 @@ html[data-theme="light"] {
     }
 
     &.product.bankfeed {
-      --icon-url: url("/img/sidebar/bank-note.svg");
+      --icon-url: url("/img/sidebar/bank.svg");
       //--icon-url: url("/img/sidebar/icon_bankfeeds.svg");
     }
 
@@ -537,7 +537,7 @@ html[data-theme="dark"] {
 
     &.product.bankfeed  {
       //--icon-url: url("/img/sidebar-dark/icon_bankfeeds_light.svg");
-      --icon-url: url("/img/sidebar-dark/bank-note_light.svg");
+      --icon-url: url("/img/sidebar-dark/bank_light.svg");
     }
 
     &.product.commerce {

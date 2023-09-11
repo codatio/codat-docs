@@ -4,6 +4,10 @@ description: "Resolve common errors"
 displayed_sidebar: lending
 ---
 
+import SocialImages from "@components/global/SocialImages";
+
+<SocialImages imgSrc="/img/banners/social/lending.png"/>
+
 ## Lending API error codes
 
 | Error code | Description | 
