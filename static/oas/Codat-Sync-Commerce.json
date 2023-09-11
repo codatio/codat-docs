@@ -1057,6 +1057,54 @@
         }
       ]
     },
+    "/companies/{companyId}/sync/commerce/syncs/{syncId}/status": {
+      "get": {
+        "tags": [
+          "Sync"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/syncId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanySyncStatus"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "summary": "Get sync status",
+        "description": "Get the sync status for a specified sync",
+        "operationId": "get-sync-by-id"
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/syncId"
+        }
+      ]
+    },
     "/companies/{companyId}/sync/commerce/syncs/list/status": {
       "get": {
         "summary": "List sync statuses",
