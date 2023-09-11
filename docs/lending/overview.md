@@ -52,7 +52,7 @@ Our Lending API empowers you with a host of features to help you streamline your
         src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
-      <h3>Banking</h3>
+      <h3>Bank statements</h3>
     </div>
     <p>
       Underwrite with accurate, real-time cash flows powered by bank transaction categorization.
