@@ -83,6 +83,19 @@
     }
   ],
   "x-codat-docs-path": "sync-for-payroll-api",
+  "x-codat-speakeasy-pagination": {
+    "type": "offsetLimit",
+    "inputs": [
+      {
+        "name": "page",
+        "in": "parameters",
+        "type": "page"
+      }
+    ],
+    "outputs": {
+      "results": "$.results"
+    }
+  },
   "tags": [
     {
       "name": "Companies",
@@ -264,7 +277,10 @@
           {
             "$ref": "#/components/parameters/orderBy"
           }
-        ]
+        ],
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
+        }
       },
       "post": {
         "summary": "Create company",
@@ -551,6 +567,9 @@
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
           }
+        },
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
         }
       },
       "post": {
@@ -986,7 +1005,10 @@
           {
             "$ref": "#/components/parameters/orderBy"
           }
-        ]
+        ],
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
+        }
       }
     },
     "/companies/{companyId}/push": {
@@ -1040,6 +1062,9 @@
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
           }
+        },
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
         }
       }
     },
@@ -2227,6 +2252,9 @@
           "409": {
             "$ref": "#/components/responses/Conflict"
           }
+        },
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
         }
       }
     },
@@ -9493,7 +9521,10 @@
           }
         },
         "description": "The *List journal entries* endpoint returns a list of [journal entries](https://docs.codat.io/sync-for-payroll-api#/schemas/JournalEntry) for a given company's connection.\n\n[Journal entries](https://docs.codat.io/sync-for-payroll-api#/schemas/JournalEntry) are  made in a company's general ledger, or accounts, when transactions are approved.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payroll-api#/operations/refresh-company-data).\n    ",
-        "operationId": "list-journal-entries"
+        "operationId": "list-journal-entries",
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
+        }
       }
     },
     "/companies/{companyId}/data/journalEntries/{journalEntryId}": {
@@ -12183,7 +12214,10 @@
           }
         },
         "description": "The *List journals* endpoint returns a list of [journals](https://docs.codat.io/sync-for-payroll-api#/schemas/Journal) for a given company's connection.\n\n[Journals](https://docs.codat.io/sync-for-payroll-api#/schemas/Journal) are used to record all the financial transactions of a company.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payroll-api#/operations/refresh-company-data).\n    ",
-        "operationId": "list-journals"
+        "operationId": "list-journals",
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
+        }
       }
     },
     "/companies/{companyId}/data/journals/{journalId}": {
@@ -12991,7 +13025,10 @@
           }
         },
         "description": "The *List tracking categories* endpoint returns a list of [tracking categories](https://docs.codat.io/sync-for-payroll-api#/schemas/TrackingCategory) for a given company's connection.\n\n[Tracking categories](https://docs.codat.io/sync-for-payroll-api#/schemas/TrackingCategory) are used to monitor cost centres and control budgets that sit outside the standard set of accounts.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payroll-api#/operations/refresh-company-data).\n    ",
-        "operationId": "list-tracking-categories"
+        "operationId": "list-tracking-categories",
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
+        }
       }
     },
     "/companies/{companyId}/data/trackingCategories/{trackingCategoryId}": {

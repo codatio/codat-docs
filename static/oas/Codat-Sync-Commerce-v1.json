@@ -41,6 +41,19 @@
     "retryConnectionErrors": true
   },
   "x-codat-docs-path": "sync-for-commerce-v1-api",
+  "x-codat-speakeasy-pagination": {
+    "type": "offsetLimit",
+    "inputs": [
+      {
+        "name": "page",
+        "in": "parameters",
+        "type": "page"
+      }
+    ],
+    "outputs": {
+      "results": "$.results"
+    }
+  },
   "tags": [
     {
       "name": "Company management",
@@ -177,6 +190,9 @@
               }
             }
           }
+        },
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
         }
       }
     },
@@ -250,6 +266,9 @@
               }
             }
           }
+        },
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
         }
       },
       "post": {
@@ -377,6 +396,9 @@
               }
             }
           }
+        },
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
         }
       }
     },
@@ -1288,7 +1310,10 @@
           {
             "$ref": "#/components/parameters/orderBy"
           }
-        ]
+        ],
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
+        }
       }
     },
     "/companies/{companyId}/push": {
@@ -1343,6 +1368,9 @@
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
           }
+        },
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
         }
       }
     },
@@ -2530,6 +2558,9 @@
           "409": {
             "$ref": "#/components/responses/Conflict"
           }
+        },
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
         }
       }
     },
@@ -5143,7 +5174,10 @@
           }
         },
         "description": "The *List bank accounts* endpoint returns a list of [bank accounts](https://docs.codat.io/accounting-api#/schemas/BankAccount) for a given company's connection.\n\n[Bank accounts](https://docs.codat.io/accounting-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-commerce-v1-api#/operations/refresh-company-data).\n    ",
-        "operationId": "list-accounting-bank-accounts"
+        "operationId": "list-accounting-bank-accounts",
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
+        }
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/bankAccounts/{accountId}": {
@@ -5914,6 +5948,9 @@
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
           }
+        },
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
         }
       }
     },
@@ -6417,7 +6454,10 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *List locations* endpoint returns a list of [locations](https://docs.codat.io/commerce-api#/schemas/Location) for a given company's connection.\n\n[Locations](https://docs.codat.io/commerce-api#/schemas/Location) hold information on the geographic location at which stocks of [products](https://docs.codat.io/commerce-api#/schemas/Product) may be held or where [orders](https://docs.codat.io/commerce-api#/schemas/Order) were placed.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-commerce-v1-api#/operations/refresh-company-data).\n    "
+        "description": "The *List locations* endpoint returns a list of [locations](https://docs.codat.io/commerce-api#/schemas/Location) for a given company's connection.\n\n[Locations](https://docs.codat.io/commerce-api#/schemas/Location) hold information on the geographic location at which stocks of [products](https://docs.codat.io/commerce-api#/schemas/Product) may be held or where [orders](https://docs.codat.io/commerce-api#/schemas/Order) were placed.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-commerce-v1-api#/operations/refresh-company-data).\n    ",
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
+        }
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-locations/{locationId}": {
@@ -7941,7 +7981,10 @@
           {
             "$ref": "#/components/parameters/orderBy"
           }
-        ]
+        ],
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
+        }
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-orders/{orderId}": {
@@ -9024,7 +9067,10 @@
           {
             "$ref": "#/components/parameters/orderBy"
           }
-        ]
+        ],
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
+        }
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-paymentMethods/{paymentMethodId}": {
@@ -9595,7 +9641,10 @@
           {
             "$ref": "#/components/parameters/orderBy"
           }
-        ]
+        ],
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
+        }
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-payments/{paymentId}": {
@@ -10999,7 +11048,10 @@
             "$ref": "#/components/parameters/orderBy"
           }
         ],
-        "description": "The *List products* endpoint returns a list of [products](https://docs.codat.io/commerce-api#/schemas/Product) for a given company's connection.\n\n[Products](https://docs.codat.io/commerce-api#/schemas/Product) are items in the company's inventory that are available for sale.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-commerce-v1-api#/operations/refresh-company-data).\n    "
+        "description": "The *List products* endpoint returns a list of [products](https://docs.codat.io/commerce-api#/schemas/Product) for a given company's connection.\n\n[Products](https://docs.codat.io/commerce-api#/schemas/Product) are items in the company's inventory that are available for sale.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-commerce-v1-api#/operations/refresh-company-data).\n    ",
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
+        }
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-products/{productId}": {
@@ -11922,7 +11974,10 @@
           {
             "$ref": "#/components/parameters/orderBy"
           }
-        ]
+        ],
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
+        }
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-transactions/{transactionId}": {

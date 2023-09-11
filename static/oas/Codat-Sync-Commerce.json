@@ -87,6 +87,19 @@
     }
   ],
   "x-codat-docs-path": "sync-for-commerce-api",
+  "x-codat-speakeasy-pagination": {
+    "type": "offsetLimit",
+    "inputs": [
+      {
+        "name": "page",
+        "in": "parameters",
+        "type": "page"
+      }
+    ],
+    "outputs": {
+      "results": "$.results"
+    }
+  },
   "tags": [
     {
       "name": "Companies",
@@ -215,6 +228,9 @@
               }
             }
           }
+        },
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
         }
       },
       "post": {
@@ -355,6 +371,9 @@
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
           }
+        },
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
         }
       },
       "post": {
@@ -601,6 +620,9 @@
               }
             }
           }
+        },
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
         }
       }
     },

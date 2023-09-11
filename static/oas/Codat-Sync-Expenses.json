@@ -78,6 +78,19 @@
     }
   ],
   "x-codat-docs-path": "sync-for-expenses-api",
+  "x-codat-speakeasy-pagination": {
+    "type": "offsetLimit",
+    "inputs": [
+      {
+        "name": "page",
+        "in": "parameters",
+        "type": "page"
+      }
+    ],
+    "outputs": {
+      "results": "$.results"
+    }
+  },
   "tags": [
     {
       "name": "Companies",
@@ -280,7 +293,10 @@
           {
             "$ref": "#/components/parameters/orderBy"
           }
-        ]
+        ],
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
+        }
       },
       "post": {
         "summary": "Create company",
@@ -567,6 +583,9 @@
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
           }
+        },
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
         }
       },
       "post": {
@@ -1243,7 +1262,10 @@
         ],
         "summary": "List sync transactions",
         "description": "Gets the transactions and status for a sync",
-        "operationId": "list-sync-transactions"
+        "operationId": "list-sync-transactions",
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
+        }
       },
       "parameters": [
         {
@@ -1724,6 +1746,9 @@
         ],
         "operationId": "list-pull-operations",
         "x-speakeasy-name-override": "list-pull-operations",
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
+        },
         "responses": {
           "200": {
             "description": "OK",
@@ -1893,6 +1918,9 @@
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
           }
+        },
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
         }
       }
     },
@@ -3823,7 +3851,10 @@
           }
         },
         "description": "The *List customers* endpoint returns a list of [customers](https://docs.codat.io/accounting-api#/schemas/Customer) for a given company's connection.\n\n[Customers](https://docs.codat.io/accounting-api#/schemas/Customer) are people or organizations that buy goods or services from the SMB.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-expenses-api#/operations/refresh-company-data).\n    ",
-        "operationId": "list-customers"
+        "operationId": "list-customers",
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
+        }
       }
     },
     "/companies/{companyId}/data/customers/{customerId}": {
@@ -5831,7 +5862,10 @@
           }
         },
         "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/accounting-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/accounting-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-expenses-api#/operations/refresh-company-data).\n    ",
-        "operationId": "list-suppliers"
+        "operationId": "list-suppliers",
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
+        }
       }
     },
     "/companies/{companyId}/data/suppliers/{supplierId}": {

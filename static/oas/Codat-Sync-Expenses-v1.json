@@ -32,6 +32,19 @@
     "retryConnectionErrors": true
   },
   "x-codat-docs-path": "sync-for-expenses-v1-api",
+  "x-codat-speakeasy-pagination": {
+    "type": "offsetLimit",
+    "inputs": [
+      {
+        "name": "page",
+        "in": "parameters",
+        "type": "page"
+      }
+    ],
+    "outputs": {
+      "results": "$.results"
+    }
+  },
   "tags": [
     {
       "name": "Connections",
@@ -308,7 +321,7 @@
             }
           }
         },
-        "operationId": "intiate-sync"
+        "operationId": "initiate-sync"
       },
       "parameters": [
         {
@@ -545,7 +558,10 @@
         {
           "$ref": "#/components/parameters/syncId"
         }
-      ]
+      ],
+      "x-speakeasy-pagination": {
+        "$ref": "#/x-codat-speakeasy-pagination"
+      }
     },
     "/companies/{companyId}/sync/expenses/syncs/{syncId}/transactions/{transactionId}": {
       "get": {
@@ -1022,7 +1038,10 @@
           {
             "$ref": "#/components/parameters/orderBy"
           }
-        ]
+        ],
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
+        }
       },
       "post": {
         "summary": "Create company",
@@ -1309,6 +1328,9 @@
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
           }
+        },
+        "x-speakeasy-pagination": {
+          "$ref": "#/x-codat-speakeasy-pagination"
         }
       },
       "post": {
