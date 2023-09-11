@@ -2,6 +2,7 @@
 title: "Bank statements overview"
 sidebar_label: "Bank statements"
 description: "Underwrite with accurate, real-time cash flows powered by bank transaction categorization"
+displayed_sidebar: "lending"
 ---
 
 import Products from "@components/global/Products";
