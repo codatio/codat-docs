@@ -66,4 +66,4 @@ We recommend you configure the following [webhooks](/using-the-api/webhooks/core
 ---
 
 ## Read next
-- [Excel download](/lending/features/excel-download-overview)
+- [Company info](/lending/features/company-info-overview)

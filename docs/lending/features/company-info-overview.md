@@ -21,4 +21,4 @@ You can retrieve the data pulled by the feature by calling the **company info** 
 
 ---
 ## Read next
-- [Banking](/lending/features/banking-overview)
+- [Excel download](/lending/features/excel-download-overview)

@@ -100,7 +100,7 @@ In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate
 
 Explore the features that make up our Lending API:
 
-- [Banking](/lending/features/banking-overview)
+- [Bank statements](/lending/features/bank-statements-overview)
 - [Sales](/lending/features/sales-overview)
 - [Financial statements](/lending/features/financial-statements-overview)
 - [Liabilities](/lending/features/liabilities-overview)
