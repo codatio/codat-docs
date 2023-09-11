@@ -22,19 +22,19 @@ import { accountingIntegrations, bankingIntegrations, commerceIntegrations } fro
 
 <SocialImages imgSrc="/img/old/f0c6d43-73D1AFFF-6E41-47F3-8E25-BB20DA16C754.jpeg"/>
 
-## What is Lending API?
+## What is it?
 
 Our Lending API is built on top of the latest accounting, commerce, and banking data, providing you with the most important data points you need to get a full picture of SMB creditworthiness and make a comprehensive assessment of your customers.
 
-## Who is Lending API for?
+## Who is it for?
 
 Our Lending API is best for digital lenders, neobanks, corporate card providers, and commerce platforms who want to make an assessment of a small business's financial health and performance.
 
-## Why use Lending API?
+## Why use it?
 
 We have done the heavy lifting for you by building integrations to the platforms your customers already use and handling the complexity of standardization. We also provide pre-calculated accounting and commerce metrics and easily digestible insights that you didn’t have before, helping you automate and make smarter risk assessments.
 
-#### With Lending API, you can:
+#### With our Lending API, you can:
 
 1. Automate affordability assessments using categorized bank data.
 2. Assess financial strength of a company with our debt report.

@@ -20,7 +20,7 @@ Our Excel download feature consists of the following component reports:
 
 ### Metrics template
 
-We've also created a [Metrics template Excel file](/documents/assess-metrics.xlsx). You can paste data into this file from the Enhanced financial statements Excel report to calculate key financial metrics and ratios.
+We've also created a [metrics template Excel file](/documents/assess-metrics.xlsx). You can paste data into this file from the Enhanced financial statements Excel report to calculate key financial metrics and ratios.
 
 [![Metrics Template](/img/lending/metrics-template.png "Metrics Template")](/documents/assess-metrics.xlsx)
 
