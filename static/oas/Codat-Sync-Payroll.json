@@ -122,6 +122,10 @@
       "description": "Tracking categories"
     },
     {
+      "name": "Company info",
+      "description": "View company information fetched from the source platform."
+    },
+    {
       "name": "Manage data",
       "description": "Asynchronously retrieve data from an integration to refresh data in Codat."
     }
@@ -13203,6 +13207,336 @@
         },
         "description": "The *Get tracking category* endpoint returns a single tracking category for a given `trackingCategoryId`.\n\n[Tracking categories](https://docs.codat.io/sync-for-payroll-api#/schemas/TrackingCategory) are used to monitor cost centres and control budgets that sit outside the standard set of accounts.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=trackingCategories) for integrations that support getting a specific tracking category.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payroll-api#/operations/refresh-company-data).\n",
         "operationId": "get-tracking-category"
+      }
+    },
+    "/companies/{companyId}/data/info": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ],
+      "get": {
+        "summary": "Get company accounting profile",
+        "description": "Gets the latest basic info for a company.",
+        "operationId": "get-accounting-profile",
+        "x-speakeasy-name-override": "get-accounting-profile",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Company information",
+                  "description": "> View the coverage for company info in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=cashFlowStatement\" target=\"_blank\">Data coverage explorer</a>.\n\nCompany info provides standard details about a linked company such as their address, phone number, and company registration.\n\n> **Company information or companies?**\n> \n> Company information is standard information that is held in the accounting platform about a company. `Companies` is an endpoint that lists businesses in the Codat system that have linked and shared their data sources.",
+                  "type": "object",
+                  "properties": {
+                    "companyName": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Name of the linked company."
+                    },
+                    "accountingPlatformRef": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Identifier or reference for the company in the accounting platform."
+                    },
+                    "companyLegalName": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Registered legal name of the linked company."
+                    },
+                    "addresses": {
+                      "type": "array",
+                      "nullable": true,
+                      "description": "An array of Addresses.",
+                      "items": {
+                        "title": "Accounting address",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1info/get/responses/200/content/application~1json/schema/properties/addresses/items/definitions/accountingAddressType"
+                          },
+                          "line1": {
+                            "type": "string",
+                            "nullable": true,
+                            "description": "Line 1 of the customer address."
+                          },
+                          "line2": {
+                            "type": "string",
+                            "nullable": true,
+                            "description": "Line 2 of the customer address."
+                          },
+                          "city": {
+                            "type": "string",
+                            "nullable": true,
+                            "description": "City of the customer address."
+                          },
+                          "region": {
+                            "type": "string",
+                            "nullable": true,
+                            "description": "Region of the customer address."
+                          },
+                          "country": {
+                            "type": "string",
+                            "nullable": true,
+                            "description": "Country of the customer address."
+                          },
+                          "postalCode": {
+                            "type": "string",
+                            "nullable": true,
+                            "description": "Postal code or zip code."
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ],
+                        "definitions": {
+                          "accountingAddressType": {
+                            "description": "The type of the address",
+                            "type": "string",
+                            "enum": [
+                              "Unknown",
+                              "Billing",
+                              "Delivery"
+                            ]
+                          }
+                        }
+                      }
+                    },
+                    "phoneNumbers": {
+                      "type": "array",
+                      "nullable": true,
+                      "description": "An array of phone numbers.",
+                      "items": {
+                        "title": "Phone",
+                        "type": "object",
+                        "x-internal": true,
+                        "properties": {
+                          "number": {
+                            "type": "string",
+                            "nullable": true,
+                            "examples": [
+                              "+44 25691 154789",
+                              "(877) 492-8687",
+                              "01224 658 999"
+                            ],
+                            "description": "A phone number."
+                          },
+                          "type": {
+                            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1data~1info/get/responses/200/content/application~1json/schema/properties/phoneNumbers/items/definitions/phoneNumberType"
+                          }
+                        },
+                        "required": [
+                          "number",
+                          "type"
+                        ],
+                        "definitions": {
+                          "phoneNumberType": {
+                            "description": "The type of phone number",
+                            "type": "string",
+                            "enum": [
+                              "Primary",
+                              "Landline",
+                              "Mobile",
+                              "Fax",
+                              "Unknown"
+                            ]
+                          }
+                        }
+                      }
+                    },
+                    "webLinks": {
+                      "type": "array",
+                      "nullable": true,
+                      "description": "An array of weblinks.",
+                      "items": {
+                        "title": "Weblink",
+                        "description": "Weblink associated with the company.",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "description": "The type of the weblink.",
+                            "type": "string",
+                            "enum": [
+                              "Website",
+                              "Social",
+                              "Unknown"
+                            ]
+                          },
+                          "url": {
+                            "description": "The full URL for the weblink.",
+                            "type": "string",
+                            "format": "url"
+                          }
+                        },
+                        "example": {
+                          "type": "Website",
+                          "url": "https://codat.io"
+                        }
+                      }
+                    },
+                    "ledgerLockDate": {
+                      "$ref": "#/components/schemas/Company/properties/created",
+                      "description": "If set in the accounting platform, the date (in the ISO 8601 date/time format) after which accounting transactions cannot be edited. Commonly used when books are closed at year-end."
+                    },
+                    "registrationNumber": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Registration number given to the linked company by the companies authority in the country of origin. In the UK this is Companies House."
+                    },
+                    "taxNumber": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Company tax number."
+                    },
+                    "financialYearStartDate": {
+                      "$ref": "#/components/schemas/Company/properties/created",
+                      "description": "Start date of the financial year for the company."
+                    },
+                    "baseCurrency": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Currency set in the accounting platform of the linked company. Used by the currency rate."
+                    },
+                    "sourceUrls": {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "nullable": true,
+                      "description": "URL addresses for the accounting source.\n\nFor example, for Xero integrations two URLs are returned. These have many potential use cases, such as [deep linking](https://developer.xero.com/documentation/api-guides/deep-link-xero)."
+                    },
+                    "createdDate": {
+                      "$ref": "#/components/schemas/Company/properties/created",
+                      "description": "Date the linked company was created in the accounting platform."
+                    }
+                  },
+                  "examples": [
+                    {
+                      "companyName": "ACME Corporation",
+                      "accountingPlatformRef": "4444e827-401b-4925-92cb-d79086bf3b6b",
+                      "companyLegalName": "ACME Corporation Ltd.",
+                      "addresses": [
+                        {
+                          "type": "Billing",
+                          "line1": "Warner House",
+                          "line2": "98 Theobald's Road",
+                          "city": "London",
+                          "region": "",
+                          "country": "United Kingdom",
+                          "postalcode": "WC1X 8WB"
+                        },
+                        {
+                          "type": "Unknown",
+                          "line1": "123 Sierra Way",
+                          "line2": "",
+                          "city": "San Pablo",
+                          "region": "CA",
+                          "country": "",
+                          "postalCode": "87999"
+                        }
+                      ],
+                      "phoneNumbers": [
+                        {
+                          "number": "010 1234 5678",
+                          "type": "Landline"
+                        }
+                      ],
+                      "webLinks": [
+                        {
+                          "type": "Website",
+                          "url": "https://www.wbsl.com/"
+                        }
+                      ],
+                      "ledgerLockDate": "2019-03-04T12:08:01.881Z",
+                      "registrationNumber": "1234567890",
+                      "taxNumber": "GB 123456789",
+                      "financialYearStartDate": "2019-04-01T00:00:00Z",
+                      "baseCurrency": "USD",
+                      "sourceUrls": {
+                        "url1": "https://go.xero.com/organisationlogin/default.aspx?shortcode=!rxs0Q",
+                        "url2": "https://reporting.xero.com/!rxs0Q"
+                      },
+                      "createdDate": "2020-02-03T16:42:02Z"
+                    }
+                  ]
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "companyName": "Codat",
+                      "accountingPlatformRef": "1700060034_ETD",
+                      "companyLegalName": "Codat Ltd",
+                      "addresses": [
+                        {
+                          "type": "Billing",
+                          "line1": "301 Ink Rooms",
+                          "line2": "28 Easton Street",
+                          "city": "London",
+                          "region": "England",
+                          "country": "United Kingdom",
+                          "postalCode": "WC1X 0BE"
+                        },
+                        {
+                          "type": "Delivery",
+                          "line1": "28 Easton Street",
+                          "city": "London",
+                          "country": "UK",
+                          "postalCode": "WC1X 0BE"
+                        }
+                      ],
+                      "phoneNumbers": [
+                        {
+                          "number": "02012 345678",
+                          "type": "Landline"
+                        },
+                        {
+                          "number": "07123 456789",
+                          "type": "Mobile"
+                        },
+                        {
+                          "number": "02012 345678",
+                          "type": "Fax"
+                        }
+                      ],
+                      "webLinks": [
+                        {
+                          "type": "Website",
+                          "url": "https://www.codat.io/"
+                        },
+                        {
+                          "type": "Social",
+                          "url": "https://www.linkedin.com/company/codat-limited/"
+                        }
+                      ],
+                      "registrationNumber": "5590111724",
+                      "taxNumber": "74111622555799035846",
+                      "financialYearStartDate": "2023-04-01T00:00:00",
+                      "baseCurrency": "GBP",
+                      "sourceUrls": {
+                        "Api": "https://api.codat.io"
+                      },
+                      "createdDate": "2020-03-09T15:19:26"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        }
       }
     }
   },
