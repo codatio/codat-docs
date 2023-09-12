@@ -794,12 +794,17 @@
           "content": {
             "application/json": {
               "schema": {
+                "title": "Update connection",
+                "x-internal": true,
                 "type": "object",
                 "properties": {
                   "status": {
-                    "type": "string"
+                    "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus",
+                    "description": "The current authorization status of the data connection.",
+                    "nullable": true
                   }
-                }
+                },
+                "additionalProperties": false
               },
               "examples": {
                 "Example": {
@@ -41032,6 +41037,9 @@
         "description": "Gets the latest basic info for a company.",
         "operationId": "get-accounting-profile",
         "x-speakeasy-name-override": "get-accounting-profile",
+        "tags": [
+          "Company info"
+        ],
         "responses": {
           "200": {
             "description": "Success",
