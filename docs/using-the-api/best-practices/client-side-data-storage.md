@@ -1,24 +1,40 @@
 ---
-
-title: "Implementing client side data storage"
-description: "Tips and advice on consuming and working with Codat data"
-sidebar_label: "Client Side Data Storage"
+title: "Implementing client-side data storage"
+description: "Tips and advice on storing, working with, and consuming Codat data"
+sidebar_label: "Client-side data storage"
 
 ---
-There are many different ways that JSON data retrieved from the Codat API can be stored. Some of the options are briefly described here but the right choice will depend on your requirements as well as the tools and skills at your disposal.
-If you have any further questions or specifics based on your use case please reach out to your Account Manager or Implementation Specialist.
+You can store JSON data retrieved from the Codat API in many different ways. We have described some of the options for you, but the right choice depends on your requirements and the tools and skillset you have available.
 
-It is much slower to retrieve data from the Codat API than it is to retrieve it from local storage so we advise storing any data retrieved from the API locally for faster retrieval in the future. 
+:::tip Data storage support
+If you have specific questions based on your use case, please reach out to your contact at Codat.
+:::
 
-Some of the different ways that Codat data can be stored are;
-* Relational Database: In a relational database, such as SQL Server or MySQL, you can store JSON data by extracting its fields and storing them in separate tables with predefined columns. This approach supports sophisticated querying but requires you to define a rigid schema for the data and create relationships between tables. 
-* NoSQL Database: NoSQL databases, such as MongoDB or CouchDB, are designed to store and query unstructured or semi-structured data like JSON. They can store JSON documents as-is without requiring a predefined schema. Each document can have its own structure, and the database can index fields within the documents to enable efficient querying.
-* File-based Storage: You can store JSON data in files on disk. This approach supports very limited querying but is useful when you want a simple and portable solution, or when you need to exchange data with other systems that expect JSON files.
+## Data storage options
 
-Data retrieval frequency should reflect the sync settings configured for the datatype. For example, if Codat syncs invoice data weekly there is no point retrieving the data from the Codat API daily. Learn more about how [data type settings](/core-concepts/data-type-settings) are configured. 
+We advise storing data retrieved from the API locally because it is much faster to fetch it from local storage than the Codat API. You can use one of the following options for storage.
 
-The date and time that data is retrieved from the Codat API should be stored so that subsequent retrieval can be limited to creates/changes/deletes done since the previous one. Learn more about how you can use [modified dates](/using-the-api/modified-dates) to control retrieval.
+**1. Relational database**
 
-Codat stores most data in a relational shape, but it may not be necessary to follow all the relational paths. For example, if you need invoice data, but not the associated customer details, you do not need to retrieve them separately because invoices contain a `customerId` already.
+   In a relational database, such as SQL Server or MySQL, you can store data fields extracted from the JSON in separate tables with predefined columns. This allows for sophisticated querying but means you need to define a rigid schema for the data and create relationships between tables. 
 
-All data should be correctly identified when stored locally so it can be easily associated to the source data in Codat. The Codat Data Model includes the identifier (also referred to as the key) for each data type. It’s important to note the scope of the identifier, for example, the identifier for an invoice is the `Id` property within the scope of a company, so an invoice should be stored with a `companyId`+`invoiceId` identifier.
+**2. NoSQL database**
+
+   NoSQL databases, such as MongoDB or CouchDB, can store JSON documents as-is without requiring a predefined schema. Each document can have its own structure, and the database can index fields within the documents to enable efficient querying.
+
+**3. File-based storage**
+   
+   You can store JSON data in files on disk. This approach supports very limited querying but is useful when you want a simple and portable solution, or when you need to exchange data with other systems that expect JSON files.
+
+## 💡 Tips and traps
+
+* Consider the [sync settings](/core-concepts/data-type-settings) configured for a specific data type when determining the data retrieval frequency. For example, if Codat syncs invoice data weekly, there is no point in fetching that data from the Codat API daily. 
+
+* Store the date and time of when you fetch the data from the Codat API. You limit subsequent retrievals only to data changed since the preious fetch using [modified dates](/using-the-api/modified-dates) to control retrieval.
+
+* Codat stores most data in a relational shape, but it may not be necessary to follow all the relational paths. For example, if you need invoice data, but not the associated customer details, you don't need to retrieve them separately because invoices contain a `customerId` already.
+
+* Use the identifier (also referred to as the key) included into our data types to identify the data correctly when storing it locally. This will help easily associate this data to the source records in Codat. 
+
+* Check the scope of the identifier. For example, the identifier for an invoice is the `id` property within the scope of an individual company, so an invoice should be stored with a `companyId` + `invoiceId` identifier.
+
