@@ -34,7 +34,7 @@ Connections can have one of the statuses described in the following table.
 
 ## Linked data connection example
 
-Verify that a connection returns a Linked `status` using one of our [Connections](/codat-api#/operations/list-connections) endpoints. 
+Verify that a connection returns a Linked `status` using one of our [Connections](/platform-api#/operations/list-connections) endpoints. 
 
 In the response, note the following fields:
 
@@ -57,7 +57,7 @@ In the response, note the following fields:
 
 ## Disconnect a data connection to revoke your access to a data source
 
-You can disconnect a data connection using the <a href="/codat-api#/operations/unlink-connection" target="_blank">Unlink connection</a> endpoint. This revokes your access to synchronize data with the linked company and sets the data connection's status to `Unlinked`.
+You can disconnect a data connection using the <a href="/platform-api#/operations/unlink-connection" target="_blank">Unlink connection</a> endpoint. This revokes your access to synchronize data with the linked company and sets the data connection's status to `Unlinked`.
 
 To disconnect a data connection, you'll need to provide:
 
@@ -76,26 +76,135 @@ Only `Linked` data connections can be unlinked.
 
 <Tabs>
 
-<TabItem value="Request URL" label="Request URL">
+<TabItem value="curl" label="Unix Bash">
 
-```http request title="Disconnect connection"
-PATCH /companies/COMPANY_ID/connections/CONNECTION_ID
+```bash
+curl --request PATCH \
+      --url "https://api.codat.io/companies/{companyId}/connections/{connectionId}" \
+      --header "Authorization: {codatAuthHeader}" \
+      --header "accept: application/json" \
+      --header "content-type: application/json" \
+      --data '{
+        "status": "Unlinked"
+      }'
 ```
 
 </TabItem>
 
-<TabItem value="Request Body" label="Request Body">
+<TabItem value="python" label="Python">
 
-```json
-{
-  "status": "Unlinked"
+```python
+import codatplatform
+from codatplatform.models import operations, shared
+
+codat_platform = codatplatform.CodatPlatform(
+    security=shared.Security(
+        auth_header='{codatAuthHeader}',
+    ),
+)
+
+req = operations.UnlinkConnectionRequest(
+    update_connection=shared.UpdateConnection(
+        status=shared.DataConnectionStatus.UNLINKED,
+    ),
+    company_id='{companyId}',
+    connection_id='{connectionId}',
+)
+
+res = codat_platform.connections.unlink(req)
+```
+</TabItem>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+import { CodatPlatform } from "@codat/platform";
+import { UnlinkConnectionResponse } from "@codat/platform/dist/sdk/models/operations";
+import { DataConnectionStatus } from "@codat/platform/dist/sdk/models/shared";
+
+const codatPlatform = new CodatPlatform({
+  security: {
+    authHeader: "",
+  },
+});
+
+codatPlatform.connections.unlink({
+  updateConnection: {
+    status: DataConnectionStatus.Unlinked,
+  },
+  companyId: "{companyId}",
+  connectionId: "{connectionId}",
+}).then((res: UnlinkConnectionResponse) => {
+  if (res.statusCode == 200) {
+    // handle response
+  }
+});
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import(
+	"context"
+	"log"
+	"github.com/codatio/client-sdk-go/platform"
+	"github.com/codatio/client-sdk-go/platform/pkg/models/shared"
+	"github.com/codatio/client-sdk-go/platform/pkg/models/operations"
+)
+
+func main() {
+    codatPlatform := codatplatform.New(
+        codatplatform.WithSecurity(shared.Security{
+            AuthHeader: "{codatAuthHeader}",
+        }),
+    )
+
+    ctx := context.Background()
+    res, err := codatPlatform.Connections.Unlink(ctx, operations.UnlinkConnectionRequest{
+        UpdateConnection: &shared.UpdateConnection{
+            Status: shared.DataConnectionStatusUnlinked.ToPointer(),
+        },
+        CompanyID: "{companyId}",
+        ConnectionID: "{connectionId}",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    if res.Connection != nil {
+        // handle response
+    }
 }
 ```
+</TabItem>
 
+<TabItem value="csharp" label="C#">
+
+```c#
+using CodatPlatform;
+using CodatPlatform.Models.Shared;
+using CodatPlatform.Models.Operations;
+
+var codatPlatform = new CodatPlatformSDK(
+    security: new Security() {
+        AuthHeader = "{codatAuthHeader}",
+    }
+);
+
+var res = await codatPlatform.Connections.UnlinkAsync(new UnlinkConnectionRequest() {
+    UpdateConnection = new UpdateConnection() {
+        Status = DataConnectionStatus.Unlinked,
+    },
+    CompanyId = "{companyId}",
+    ConnectionId = "{connectionId}",
+});
+```
 </TabItem>
 
 </Tabs>
-
 
 #### Sample response to `Unlinked` request
 
@@ -115,11 +224,127 @@ PATCH /companies/COMPANY_ID/connections/CONNECTION_ID
 
 ## Delete a data connection
 
-To delete a data connection, send a request to the <a href="/codat-api#/operations/delete-connection" target="_blank">DELETE /connectionId endpoint</a> and provide the `companyId` and `connectionId` as path parameters.
+To delete a data connection, send a request to the <a href="/platform-api#/operations/delete-connection" target="_blank">DELETE /connectionId endpoint</a> and provide the `companyId` and `connectionId` as path parameters.
 
-```http
-DELETE /companies/COMPANY_ID/connections/CONNECTION_ID
-```
+<Tabs>
+  <TabItem value="curl" label="Unix Bash">
+
+  ```bash
+  curl --request DELETE \
+        --url "https://api.codat.io/companies/{companyId}/connections/{connectionId}" \
+        --header "Authorization: {codatAuthHeader}" \
+  ```
+  </TabItem>
+
+  <TabItem value="python" label="Python">
+
+  ```python
+
+  import codatplatform
+  from codatplatform.models import operations, shared
+
+  codat_platform = codatplatform.CodatPlatform(
+      security=shared.Security(
+          auth_header="{codatAuthHeader}",
+      ),
+  )
+
+  codat_platform.connections.delete(
+    operations.DeleteConnectionRequest(
+      company_id='{companyId}',
+      connection_id='{connectionId}',
+    )
+  )
+
+  if res.status_code == 200:
+    print('Connection deleted successfully')
+  ```
+  </TabItem>
+
+  <TabItem value="nodejs" label="TypeScript">
+
+  ```javascript
+  import { CodatPlatform } from "@codat/platform";
+  import { DeleteConnectionResponse } from "@codat/platform/dist/sdk/models/operations";
+
+  const codatPlatform = new CodatPlatform({
+    security: {
+      authHeader: "{codatAuthHeader}",
+    },
+  });
+
+  codatPlatform.connections.delete({
+    companyId: "{companyId}",
+    connectionId: "{connectionId}",
+  }).then((res: DeleteConnectionResponse) => {
+    if (res.statusCode == 200) {
+      console.log('Connection deleted successfully')
+    }
+  });
+  ```
+  </TabItem>
+
+  <TabItem value="go" label="Go">
+
+  ```go
+  package main
+
+  import(
+    "context"
+    "log"
+    "github.com/codatio/client-sdk-go/platform"
+    "github.com/codatio/client-sdk-go/platform/pkg/models/shared"
+    "github.com/codatio/client-sdk-go/platform/pkg/models/operations"
+  )
+
+  func main() {
+      codatPlatform := codatplatform.New(
+          codatplatform.WithSecurity(shared.Security{
+              AuthHeader: "{codatAuthHeader}",
+          }),
+      )
+
+      ctx := context.Background()
+      res, err := codatPlatform.Connections.Delete(ctx, operations.DeleteConnectionRequest{
+          CompanyID: "{companyId}",
+          ConnectionID: "{connectionId}",
+      })
+      if err != nil {
+          log.Fatal(err)
+      }
+
+      if res.StatusCode == http.StatusOK {
+          log.Print("Connection deleted successfully")
+      }
+  }
+  ```
+  </TabItem>
+
+  <TabItem value="csharp" label="C#">
+
+  ```c#
+  using CodatPlatform;
+  using CodatPlatform.Models.Shared;
+  using CodatPlatform.Models.Operations;
+
+  var codatPlatform = new CodatPlatformSDK(
+      security: new Security() {
+          AuthHeader = "{codatAuthHeader}",
+      }
+  );
+
+  var res = await codatPlatform.Connections.DeleteAsync(new DeleteConnectionRequest() {
+      CompanyId = "{companyId}",
+      ConnectionId = "{connectionId}",
+  });
+
+  if(res.StatusCode == 200){
+    Console.WriteLine("Connection deleted successfully");
+  }
+  ```
+  </TabItem>
+
+</Tabs>
 
 When you delete a data connection:
 
@@ -135,4 +360,4 @@ If you are migrating an existing integration to use Codat, you can provide token
 ## Read next
 
 - Next concept: [Integrations](/core-concepts/integrations)
-- [`GET /connections`](/codat-api#/operations/list-connections) API reference
+- [`GET /connections`](/platform-api#/operations/list-connections) API reference

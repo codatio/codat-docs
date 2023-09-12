@@ -42,6 +42,122 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
+<TabItem value="csharp" label="C#">
+
+```c
+using CodatPlatform;
+using CodatPlatform.Models.Shared;
+using CodatPlatform.Models.Operations;
+
+var codatPlatform = new CodatPlatformSDK(
+    security: new Security() {
+        AuthHeader = "Basic BASE_64_ENCODED(API_KEY)",
+    }
+);
+
+var res = await codatPlatform.Companies.ListAsync(new ListCompaniesRequest() {
+    Page = 5,
+    PageSize = 20,
+});
+
+// handle response
+```
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python
+import codatplatform
+from codatplatform.models import operations, shared
+
+codat_platform = codatplatform.CodatPlatform(
+    security=shared.Security(
+        auth_header="Basic BASE_64_ENCODED(API_KEY)",
+    ),
+)
+
+res = codat_platform.companies.list(operations.ListCompaniesRequest(
+    page = 5,
+    page_size = 20,
+))
+
+if res.companies is not None:
+    # handle response
+```
+</TabItem>
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+import { CodatPlatform } from "@codat/platform";
+import { ListCompaniesResponse } from "@codat/platform/dist/sdk/models/operations";
+
+const codatPlatform = new CodatPlatform({
+  security: {
+    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  },
+});
+
+codatPlatform.companies.list({
+  page = 5,
+  pageSize = 20,
+}).then((res: ListCompaniesResponse) => {
+  if (res.statusCode == 200) {
+    // handle response
+  }
+});
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import(
+	"context"
+	"log"
+	"github.com/codatio/client-sdk-go/platform"
+	"github.com/codatio/client-sdk-go/platform/pkg/models/shared"
+	"github.com/codatio/client-sdk-go/platform/pkg/models/operations"
+)
+
+func main() {
+    codatPlatform := codatplatform.New(
+        codatplatform.WithSecurity(shared.Security{
+            AuthHeader: "Basic BASE_64_ENCODED(API_KEY)",
+        }),
+    )
+
+    ctx := context.Background()
+    res, err := codatPlatform.Companies.List(ctx, operations.ListCompaniesRequest{
+      Page: codatplatform.Int(5),
+      PageSize: codatplatform.Int(20),
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    if res.Companies != nil {
+        // handle response
+    }
+}
+```
+</TabItem>
+<TabItem value="http" label="HTTP">
+
+```http
+GET /companies?page=5&pageSize=20
+```
+</TabItem>
+</Tabs>
+
+
+
+
+
+
+
+
+<Tabs>
 <TabItem value="http" label="HTTP">
 
 ```http
