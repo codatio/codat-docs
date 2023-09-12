@@ -11,6 +11,9 @@ module.exports = [
     id: "bank-feeds/overview",
     className: "header top-level-item products product bankfeed",
   },
+  "bank-feeds/setup",
+  "bank-feeds/mapping",
+  "bank-feeds/pushing-transactions",
   {
     type: "doc",
     id: "bank-feeds/guides/bank-feeds-tutorial",
