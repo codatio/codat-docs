@@ -14,7 +14,7 @@ Our **accounts receivable** feature offers a thorough breakdown of a borrower's 
 
 Common uses of our accounts receivable feature include:
 
-- **Digital data collection:** get a ongoing feed of customer invoices.
+- **Digital data collection:** get an ongoing feed of customer invoices.
 
 - **Debtor risk analysis:** gain insights into a debtor's history, including customer details and comprehensive relationship history spanning invoices, payments, and credit notes.
 
@@ -34,15 +34,15 @@ Common uses of our accounts receivable feature include:
 
 #### Reconciled invoices
 
-The **reconciled invoices** component of this feature streamlines the often tedious and error-prone process of matching invoice payments with bank transactions. By automating this crucial task, it ensures that lenders can confidently validate the accuracy and authenticity of invoice payments in real-time, minimizing the risk of errors and fraud. 
+The **reconciled invoices** component of this feature streamlines the often tedious and error-prone process of matching invoice payments with bank transactions. By automating this crucial task, it ensures that lenders can confidently validate the accuracy and authenticity of invoice payments in real time, minimizing the risk of errors and fraud. 
 
-A quick and easy test is to filter for invoices which have a status of ‘Paid’ but do not have a matching bank transaction. 
+A quick and easy test is to filter for invoices that have a status of ‘Paid’ but do not have a matching bank transaction. 
 
-Call our [Get reconciled invoices](/lending-api#/operations/get-reconciled-invoices) endpoint to use this feature component. You must have have both an accounting and a banking source connected. 
+Call our [List reconciled invoices](/lending-api#/operations/list-reconciled-invoices) endpoint to use this feature component. You must have both an accounting and a banking source connected. 
 
 ## Supported outputs
 
-You can retrieve the data pulled and enriched by the feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or or calling the the **accounts receivable** [endpoints of our API](/lending-api#/).
+You can retrieve the data pulled and enriched by the feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **accounts receivable** [endpoints of our API](/lending-api#/).
 
 ## Get started
 
@@ -83,11 +83,11 @@ We recommend you configure the following [webhooks](/using-the-api/webhooks/core
 
 - [Dataset status has changed to an error state](/using-the-api/webhooks/core-rules-types#dataset-status-has-changed-to-an-error-state)  
 
-  If you receive a notification from this webhook, it means an issue occured when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
+  If you receive a notification from this webhook, it means an issue has occurred when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
  
 - [Dataset data changed](/using-the-api/webhooks/core-rules-types#dataset-data-changed)  
 
-  If you receive a notification from this webhook, it means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform.
+  If you receive a notification from this webhook, it means data has been updated for the specified data type. This can include new, updated, or deleted data. You should then refresh the data in your platform.
 
 ---
 
