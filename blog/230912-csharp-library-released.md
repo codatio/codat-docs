@@ -1,6 +1,6 @@
 ---
 title: "2023-09-12: C# client libraries now available"
-date: "2020-01-01"
+date: "2023-09-12"
 tags: ["Product", "Update"]
 authors: dcoplowe
 ---
@@ -20,3 +20,5 @@ These libraries aim to help speed up development time and reduce your maintenanc
 - [Sync for Payables]​(https://github.com/codatio/client-sdk-csharp/tree/main/sync-for-payables)
 - [Sync for Payroll]​(https://github.com/codatio/client-sdk-csharp/tree/main/sync-for-payroll)
 - [Platform]​(https://github.com/codatio/client-sdk-csharp/tree/main/platform)
+
+[Click here](/get-started/libraries) for more information on client libraries and other supported languages.
