@@ -1,7 +1,7 @@
 ---
 title: "Accounts payable overview"
 sidebar_label: "Accounts payable"
-description: "Enhance underwriting precision with streamlined accounts payable insights"
+description: "Get a detailed, real-time view of your customers' supplier invoices to assess creditor risk"
 ---
 
 import Products from "@components/global/Products";
