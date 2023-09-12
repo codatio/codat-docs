@@ -7,9 +7,9 @@ authors: dcoplowe
 
 We are excited to announce the release of C# client libraries for our new product suite.
 
-<!--truncate-->  
+<!--truncate-->
 
-These libraries aim to help speed up your development time and reduce maintenance costs.  
+These libraries aim to help speed up your development time and reduce maintenance costs.
 
 ## Available libraries    
 
