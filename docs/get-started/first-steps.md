@@ -145,15 +145,6 @@ Then, replace `{basicAuthHeader}` in the code snippets below.
     )
   ```
   </TabItem>
-  
-  <TabItem value="bash" label="Unix Bash">  
-
-  ```bash
-    // Create a variable to hold your authorization header value
-    // In this guide, we use:
-    CODAT_AUTH_HEADER='{basicAuthHeader}'
-  ```
-  </TabItem>
 </Tabs>
 
 You can read more about <a href="/using-the-api/authentication" target="_blank">authentication at Codat</a>, or proceed to create your first company.
@@ -251,7 +242,7 @@ To create a company in Codat, use the `POST /companies` endpoint with a request 
   ```
   </TabItem>
 
-  <TabItem value="curl" label="Unix Bash">  
+  <TabItem value="curl" label="cURL">  
 
   ```bash
     curl --request POST \
@@ -381,7 +372,7 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
   ```
   </TabItem>
 
-  <TabItem value="bash" label="Unix Bash">  
+  <TabItem value="curl" label="cURL">  
 
   ```bash
     curl --request GET \
@@ -572,7 +563,7 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
   ```
   </TabItem>
 
-  <TabItem value="curl" label="Unix Bash">  
+  <TabItem value="curl" label="cURL">  
 
   ```bash
     curl --request GET \

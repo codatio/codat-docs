@@ -76,7 +76,7 @@ Only `Linked` data connections can be unlinked.
 
 <Tabs>
 
-<TabItem value="curl" label="Unix Bash">
+<TabItem value="curl" label="cURL">
 
 ```bash
 curl --request PATCH \
@@ -227,7 +227,7 @@ var res = await codatPlatform.Connections.UnlinkAsync(new UnlinkConnectionReques
 To delete a data connection, send a request to the <a href="/platform-api#/operations/delete-connection" target="_blank">DELETE /connectionId endpoint</a> and provide the `companyId` and `connectionId` as path parameters.
 
 <Tabs>
-  <TabItem value="curl" label="Unix Bash">
+  <TabItem value="curl" label="cURL">
 
   ```bash
   curl --request DELETE \
