@@ -1,7 +1,7 @@
 ---
 title: "Accounts payable overview"
 sidebar_label: "Accounts payable"
-description: "Get a detailed, real-time view of supplier invoices to assess creditor risk"
+description: "Get a detailed, real-time view of your customers' supplier invoices to assess creditor risk"
 ---
 
 import Products from "@components/global/Products";
