@@ -32,9 +32,9 @@ Our Lending API is best for digital lenders, neobanks, corporate card providers,
 
 ## Why use it?
 
-We have done the heavy lifting for you by building integrations to the platforms your customers already use and handling the complexity of standardization. We also provide pre-calculated accounting and commerce metrics and easily digestible insights that you didn’t have before, helping you automate and make smarter risk assessments.
+We have done the heavy lifting for you by building integrations to the platforms your customers already use and handling the complexity of standardization. Our Lending API comes with a range of features that make customer data easier to collect and process, and gives you insights you didn’t have before on the accuracy of the data shared.
 
-#### With our Lending API, you can:
+#### With the Lending API, you can:
 
 1. Automate affordability assessments using categorized bank data.
 2. Assess financial strength of a company with our debt report.
@@ -55,7 +55,7 @@ Our Lending API empowers you with a host of features to help you streamline your
       <h3>Bank statements</h3>
     </div>
     <p>
-      Underwrite with accurate, real-time cash flows powered by bank transaction categorization.
+      Underwrite with accurate, real-time cash flows enriched with spend and income categories.
     </p>
   </li>
   
