@@ -8,7 +8,7 @@
   ],
   "info": {
     "title": "Sync for Payroll",
-    "description": "The API for Sync for Payroll. \n\nSync for Payroll is an API and a set of supporting tools built to help integrate your customers' payroll data from their HR and payroll platforms into their accounting platforms and to support its reconciliation.\n\n[Read More...](https://docs.codat.io/payroll/overview)",
+    "description": "The API for Sync for Payroll. \n\nSync for Payroll is an API and a set of supporting tools built to help integrate your customers' payroll data from their HR and payroll platforms into their accounting platforms and to support its reconciliation.\n\n[Explore product](https://docs.codat.io/payroll/overview) | [See OpenAPI spec](https://github.com/codatio/oas)\n\n---\n\n## Endpoints\n\n| Endpoints            | Description                                                                                                |\n|:---------------------|:-----------------------------------------------------------------------------------------------------------|\n| Companies            | Create and manage your SMB users' companies.                                                               |\n| Connections          | Create new and manage existing data connections for a company.                                             |\n| Accounts             | Get, create, and update Accounts.                                                           |\n| Journal entries      | Get, create, and update Journal entries.                                                           |\n| Journals             | Get, create, and update Journals.                                                           |\n| Tracking categories  | Get, create, and update Tracking Categories for additional categorization of payroll components.                                                           |\n| Company info         | View company profile from the source platform.                                                             |\n| Manage data          | Control how data is retrieved from an integration.                                                         |",
     "version": "3.0.0",
     "contact": {
       "name": "Codat",
@@ -766,12 +766,17 @@
           "content": {
             "application/json": {
               "schema": {
+                "title": "Update connection",
+                "x-internal": true,
                 "type": "object",
                 "properties": {
                   "status": {
-                    "type": "string"
+                    "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus",
+                    "description": "The current authorization status of the data connection.",
+                    "nullable": true
                   }
-                }
+                },
+                "additionalProperties": false
               },
               "examples": {
                 "Example": {
@@ -13220,6 +13225,9 @@
         "description": "Gets the latest basic info for a company.",
         "operationId": "get-accounting-profile",
         "x-speakeasy-name-override": "get-accounting-profile",
+        "tags": [
+          "Company info"
+        ],
         "responses": {
           "200": {
             "description": "Success",
