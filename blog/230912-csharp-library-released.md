@@ -1,5 +1,5 @@
 ---
-title: "2023-09-12: C# client libraries now available"
+title: "C# client libraries now available"
 date: "2023-09-12"
 tags: ["Product", "Update"]
 authors: dcoplowe
@@ -9,9 +9,9 @@ We are excited to announce the release of C# client libraries for our new produc
 
 <!--truncate-->
 
-These libraries aim to help speed up development time and reduce your maintenance costs. 
+These libraries aim to help speed up your development time and reduce maintenance costs. 
 
-## Available libraries
+## Available libraries  
 
 - [Bank Feeds API]​(https://github.com/codatio/client-sdk-csharp/tree/main/bank-feeds)
 - [Lending API]​(https://github.com/codatio/client-sdk-csharp/tree/main/lending)
