@@ -5,7 +5,6 @@ sidebar_label: Setup
 displayed_sidebar: bankfeeds
 hide_title: true
 hide_description: true
-hide_table_of_contents: true
 ---
 
 import Tabs from "@theme/Tabs";
@@ -80,8 +79,9 @@ Using the [Create a data connection](/bank-feeds-api#/operations/create-connecti
 
    In the request body specify one of the following as the `platformKey`
 
-| accounting platform | platformKey |
-| ------------------- | ----------- |
+
+| Accounting platform | platformKey |
+| ---  | ---  |
 | Quickbooks Online Bankfeeds | `hcws` |
 | Xero | `gbol` |
 | FreeAgent | `fbrh` |

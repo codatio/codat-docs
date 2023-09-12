@@ -5,7 +5,6 @@ sidebar_label: Pushing Transactions
 displayed_sidebar: bankfeeds
 hide_title: true
 hide_description: true
-hide_table_of_contents: true
 ---
 
 import Tabs from "@theme/Tabs";
