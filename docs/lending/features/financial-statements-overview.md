@@ -8,7 +8,7 @@ import Products from "@components/global/Products";
 import { IntegrationsList } from "@components/global/Integrations";
 import { accountingIntegrations } from "@components/global/Integrations/integrations";
 
-Our **financial statements** feature provides lenders with with a comprehensive view of a borrower's comprehensive financial data, including profit and loss, balance sheet, and operating cash flow statements. Statements are categorized to a single chart of accounts allowing ratio analysis to be automated.
+Our **financial statements** feature provides lenders with with a comprehensive view of a borrower's financial data, including profit and loss, balance sheet, and operating cash flow statements. Statements are categorized to a single chart of accounts allowing ratio analysis to be automated.
 
 ## Use cases
 
