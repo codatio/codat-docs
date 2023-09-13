@@ -78,11 +78,11 @@ Borders and styling were added to this image for clarity but is not included in 
 - HasRecords: Outlines if the data type has any records.
 - Days: The days since the account was last updated compared against the `to date` for the data contained in the report.
 
-### Profit and Loss Trends
+### Profit and loss trends
 
 This section of the Audit Report displays Gross Profit, Net Operating Profit and Net Profit metrics on a month-by-month basis with percentage change and yearly summaries. This offers insight into any extreme changes that could be indicative of abnormal growth, fraud or additional debt taken on by the company.
 
-Explore [Enhanced Profit and Loss](/lending/enhanced-financials/profit-and-loss-accounts) to see the full categorized profit and loss statement.
+Explore [categorized profit and loss statement](/lending-api#/operations/get-categorized-profit-and-loss-statement) to see the full report.
 
 #### Report structure
 
