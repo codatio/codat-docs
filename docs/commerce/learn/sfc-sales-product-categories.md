@@ -1,6 +1,7 @@
 ---
 title: "Sales with product categories"
 description: "Review the product category mapping functionality, its setup, and maintenance"
+image: "/img/banners/social/commerce.png"
 ---
 
 :::caution Enabling the feature

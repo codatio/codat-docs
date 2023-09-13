@@ -1,8 +1,7 @@
 ---
 title: "Synchronization schedule"
 description: "Gain a better understanding of how our Sync scheduler works with the settings provided via the Sync Flow."
-createdAt: "2022-09-23T15:49:23.153Z"
-updatedAt: "2022-09-26T19:45:47.306Z"
+image: "/img/banners/social/commerce.png"
 ---
 
 ## Synchronization schedule configuration

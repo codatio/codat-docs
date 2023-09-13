@@ -1,8 +1,7 @@
 ---
 title: "Initiating a Sync"
 description: "Learn how to manually trigger a sync for a specified date range"
-createdAt: "2022-11-10T15:24:18.952Z"
-updatedAt: "2022-12-08T16:27:57.276Z"
+image: "/img/banners/social/commerce.png"
 ---
 
 You may need to perform a manual Commerce sync for a company from the date of its last successful sync to a specified date. To do so, make a call to the Latest Sync endpoint:

@@ -1,8 +1,7 @@
 ---
 title: "Monitoring a Sync"
 description: "Learn how to monitor a sync's progress, review detailed logs, and retry failed items"
-createdAt: "2023-01-11T05:58:45.089Z"
-updatedAt: "2023-01-16T17:26:16.794Z"
+image: "/img/banners/social/commerce.png"
 ---
 
 Use the Sync Health page in the Codat Portal to monitor the status of your syncs, review detailed logs and error messages, and view and retry pushing failed items. This helps your support team to resolve common issues with the customer's settings or actions.

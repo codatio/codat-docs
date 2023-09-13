@@ -2,8 +2,11 @@
 title: "QuickBooks Online mapping specification"
 sidebar_label: QuickBooks Online
 description: "Guidelines for data mapping configuration from a commerce platform to QuickBooks Online (QBO)"
+image: "/img/banners/social/commerce.png"
 ---
+
 :::note Automatic sales tax support
+
 Sync for Commerce supports automatic sales tax (AST) on invoices for US merchants in QuickBooks Online.
 :::
 
