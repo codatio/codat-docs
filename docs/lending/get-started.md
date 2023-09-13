@@ -34,6 +34,18 @@ Data source coverage varies by feature, so be sure to review the coverage for th
 
 <IntegrationsList integrations={commerceIntegrations} />
 
+### Authorization flow
+
+As part of using the Lending API, you will need your customers to authorize your access to their data. To do so, use Link - our pre-built, conversion-optimized, and white-labelled authorization journey. 
+
+You can fully embed Link in your experience by using our [Embedded Link](/auth-flow/authorize-embedded-link) component in your front-end code or choose our out-of-the-box [Hosted Link](/auth-flow/authorize-hosted-link) authorization flow to get up and running as quick as possible. 
+
+The solution lets you tailor the authorization journey to your business needs. You can:
+
+* [Customize Link settings](/auth-flow/customize/customize-link)
+* [Set up company branding](/auth-flow/customize/branding)
+* [Set up redirects](/auth-flow/customize/set-up-redirects)
+
 ### Data types
 
 Enable the minimum set of [data types](/core-concepts/data-type-settings#override-the-default-sync-settings) required for the Lending API. Each feature may also have additional data type requirements, so be sure to review these for the feature you want to use.
