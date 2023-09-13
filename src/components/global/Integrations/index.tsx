@@ -23,13 +23,11 @@ const Integration = ({integration}) => {
 
 export const IntegrationsList = (props) => {
   const { sourceType, filter, searchString, integrations=allIntegrations } = props
-  console.log(props)
+
   const validIntegrations = integrations
     .filter(integration => !searchString || integration.name.toLowerCase().includes(searchString.toLowerCase()))
     .filter(integration => !sourceType || integration.sourceType === sourceType)
     .filter(integration => !filter || filter.find(intName => integration.name === intName))
-
-  console.log(validIntegrations)
 
   if (validIntegrations?.length >= 1) {
     return (

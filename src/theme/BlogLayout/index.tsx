@@ -28,8 +28,6 @@ export default function BlogLayout(props: Props): JSX.Element {
 
   const isUpdatesPage = location?.pathname === "/updates" || location?.pathname.includes("/updates/page")
 
-  console.log(isUpdatesPage, location, props)
-
   return (
     <Layout {...layoutProps}>
       {
