@@ -102,8 +102,8 @@
   },
   "tags": [
     {
-      "name": "Companies",
-      "description": "Create new and manage existing Sync for Commerce companies using the Sync flow UI."
+      "name": "Connections",
+      "description": "Create new and manage existing Sync for Commerce connections using the Sync flow UI."
     },
     {
       "name": "Sync",
@@ -126,7 +126,7 @@
     "/config/sync/commerce/{commerceKey}/{accountingKey}/start": {
       "get": {
         "tags": [
-          "Companies"
+          "Connections"
         ],
         "summary": "Start new sync flow",
         "description": "Create a new company and connections. Get a URL for Sync Flow, including a one time passcode.",
@@ -444,7 +444,7 @@
     "/companies/{companyId}/connections/{connectionId}": {
       "patch": {
         "tags": [
-          "Companies"
+          "Connections"
         ],
         "summary": "Update connection",
         "description": "Update a data connection",
@@ -504,7 +504,7 @@
         "x-speakeasy-name-override": "update-authorization",
         "description": "Update data connection's authorization.",
         "tags": [
-          "Companies"
+          "Connections"
         ],
         "responses": {
           "200": {
