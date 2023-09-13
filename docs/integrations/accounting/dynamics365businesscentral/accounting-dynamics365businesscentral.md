@@ -23,7 +23,7 @@ For more details about the supported data types and operations, see [Dynamics 36
 
 ## Version support
 
-The integration supports all versions of Dynamics 365 Business Central released after April 2022 (versions 20 and later). For information about how to check your current version, see <a className="external" href="https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/update-rollout-timeline" target="_blank">Major Updates and Minor Updates for Business Central Online</a> in the Dynamics 365 documentation.
+The integration supports all versions of Dynamics 365 Business Central released after April 2023 (versions 22 and later). For information about how to check your current version, see <a className="external" href="https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/update-rollout-timeline" target="_blank">Major Updates and Minor Updates for Business Central Online</a> in the Dynamics 365 documentation.
 
 ## Set up the integration
 
