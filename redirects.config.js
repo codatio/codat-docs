@@ -147,20 +147,8 @@ const prodRework = [
   to: "/integrations/bank-feeds/overview"
 },
 {
-  from: "/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow",
-  to: "/commerce/merchant-configuration"
-},
-{
-  from: "/sfc/build-with-sync-for-commerce/implementing-codats-no-code-merchant-configuration",
-  to: "/commerce/merchant-configuration"
-},
-{
   from: "/sfc/build-with-sync-for-commerce/sync-for-commerce-prerequisites",
   to: "/commerce/overview"
-},
-{
-  from: "/sfc/build-with-sync-for-commerce/sync-platform-selection",
-  to: "/commerce/setup"
 },
 {
   from: "/sfc/coming-soon",
@@ -685,19 +673,6 @@ module.exports = {
       from: "/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow",
       to: "/commerce/setup",
     },
-    {
-      from: "/sfc/mapping-specifications/overview",
-      to: "/commerce/overview",
-    },
-    {
-      from: "/sfc/mapping-specifications/xero-mapping-specification",
-      to: "/commerce/overview",
-    },
-    {
-      from: "/sfc/mapping-specifications/qbo-mapping-specification",
-      to: "/commerce/overview",
-    },
-
 
     // expenses
     {
@@ -711,11 +686,6 @@ module.exports = {
     {
       from: "/sync-for-expenses/faq",
       to: "/expenses/faq",
-    },
-
-    {
-      from: "/bank-feeds/guides/bank-feeds-tutorial",
-      to: "/bank-feeds/guides/bank-feeds-tutorial",
     },
 
     // assess
