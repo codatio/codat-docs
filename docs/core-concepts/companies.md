@@ -15,7 +15,7 @@ When you create a company, you can specify a `name` and we will automatically ge
 
 Companies can be created in one of two ways:
 
-1. Using the [POST /companies](/codat-api#/operations/create-company)
+1. Using the [POST /companies](/platform-api#/operations/create-company)
 
 2. Using the [Codat portal](/configure/portal/companies#add-a-new-company)
 
@@ -38,5 +38,5 @@ You have two options for managing companies:
 ## Read next
 
 - Next concept: [Connections](/core-concepts/connections)
-- [`GET /companies`](/codat-api#/operations/list-companies) API reference
+- [`GET /companies`](/platform-api#/operations/list-companies) API reference
 

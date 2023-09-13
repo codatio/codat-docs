@@ -2755,7 +2755,7 @@
     "securitySchemes": {
       "auth_header": {
         "name": "Authorization",
-        "description": "The word \"Basic\" followed by a space and your API key. [API keys](https://docs.codat.io/accounting-api#/schemas/apiKeys) are tokens used to control access to the API. You can get an API key via [the Codat Portal](https://app.codat.io/developers/api-keys), via [the API](https://docs.codat.io/codat-api#/api-keys/api-keys-list), or [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat.",
+        "description": "The word \"Basic\" followed by a space and your API key. [API keys](https://docs.codat.io/accounting-api#/schemas/apiKeys) are tokens used to control access to the API. You can get an API key via [the Codat Portal](https://app.codat.io/developers/api-keys), via [the API](https://docs.codat.io/platform-api#/api-keys/api-keys-list), or [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat.",
         "type": "apiKey",
         "in": "header",
         "x-speakeasy-example": "Basic BASE_64_ENCODED(API_KEY)"

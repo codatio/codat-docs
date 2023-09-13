@@ -5,7 +5,7 @@ const URL = "/oas/Codat-Platform.json"
 
 const CodatApi = () => {
   return (
-    <Api url={URL} title="Common API reference"/>
+    <Api url={URL} title="Platform API reference"/>
   );
 }
 

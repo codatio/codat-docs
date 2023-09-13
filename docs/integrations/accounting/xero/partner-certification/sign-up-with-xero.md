@@ -70,7 +70,7 @@ You can also use the Codat API and `companyId` to pull additional information of
 
 When the **Sign Up with Xero URL** is triggered and a Codat company is created, it has a name that follows the `Xero-YYYY-MM-DD-THHMMSS` convention. This is because we do not have any identifying information for the user at that point.
 
-If you have specific requirements for company naming, you can update the name via the API using our [Update company](/codat-api#/operations/update-company) endpoint. Use the `companyId` returned as part of the Xero OpenID data. 
+If you have specific requirements for company naming, you can update the name via the API using our [Update company](/platform-api#/operations/update-company) endpoint. Use the `companyId` returned as part of the Xero OpenID data. 
 
 ### Manage user cancellation
 

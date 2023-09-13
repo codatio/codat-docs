@@ -32,11 +32,11 @@ While Codat handles the initial connection to Xero via the Codat Link UI, Xero r
 | Requirement | Recommendations |
 | :-- | :-- |
 | Display the name of the tenant that has been connected | This can be retrieved from our [Get company info](/accounting-api#/operations/get-company-info) endpoint. |
-| Display the current status of the connection. If disconnected, provide a button to reconnect to Xero | Use our [Get connection](/codat-api#/operations/get-company-connection) endpoint to check the `status` of the connection and use the `linkUrl` to reconnect|
-| Provide a button to terminate the connection | When a user clicks on the button, use our [Unlink connection](/codat-api#/operations/unlink-connection) endpoint to disconnect from Xero. |
+| Display the current status of the connection. If disconnected, provide a button to reconnect to Xero | Use our [Get connection](/platform-api#/operations/get-company-connection) endpoint to check the `status` of the connection and use the `linkUrl` to reconnect|
+| Provide a button to terminate the connection | When a user clicks on the button, use our [Unlink connection](/platform-api#/operations/unlink-connection) endpoint to disconnect from Xero. |
 | Handle a disconnect from Xero's side | Use our [Data connection status changed](/using-the-api/webhooks/core-rules-types#company-data-connection-status-changed) webhook to identify when a disconnect happens. When the alert is triggered, change the connection status in your UI and display a "Reconnect" or "Connect" button.|
 | Support one-to-one or multi-organizational connection | Codat allows your customers to select their Xero organization using the native Xero UI. You can enable them to connect to multiple organizations within Xero by creating a separate Codat company per organization. |
-| Provide a disconnection process for off-boarding | Use our [Unlink connection](/codat-api#/operations/unlink-connection) endpoint to prevent further syncs or the [Delete connection](/codat-api#/operations/delete-company-connection) endpoint to prevent further syncs and querying of historically synced data. |
+| Provide a disconnection process for off-boarding | Use our [Unlink connection](/platform-api#/operations/unlink-connection) endpoint to prevent further syncs or the [Delete connection](/platform-api#/operations/delete-company-connection) endpoint to prevent further syncs and querying of historically synced data. |
 
 ### 4. Error handling
 
@@ -106,7 +106,7 @@ If you plan to create, update or delete data in Xero, you need to create an acco
 
 This checkpoint is only relevant if your app deals with multiple currencies. 
 
-Before creating or updating transactional data, such as a payment in another currency, use our [Get push options](/codat-api#/operations/get-create-update-model-options-by-data-type) endpoint to see which currencies have been set up by your customer in Xero. Then, proceed with creating or updating that transactional data.
+Before creating or updating transactional data, such as a payment in another currency, use our [Get push options](/platform-api#/operations/get-create-update-model-options-by-data-type) endpoint to see which currencies have been set up by your customer in Xero. Then, proceed with creating or updating that transactional data.
 
 You can also read more about [creating, updating or deleting data](/using-the-api/push) with Codat.
 
@@ -135,7 +135,7 @@ We do not currently support the creation of new tax rates, so you can only use e
 
 **Action required: significant**
 
-Use our [Get push options](/codat-api#/operations/get-create-update-model-options-by-data-type) endpoint to fetch and show options available for payment account mapping when building a mapping inteface for your users (as described in [Checkpoint 12](/integrations/accounting/xero/partner-certification/checkpoints-app-store#12-account-mapping)).
+Use our [Get push options](/platform-api#/operations/get-create-update-model-options-by-data-type) endpoint to fetch and show options available for payment account mapping when building a mapping inteface for your users (as described in [Checkpoint 12](/integrations/accounting/xero/partner-certification/checkpoints-app-store#12-account-mapping)).
 
 You can also read more about [creating, updating or deleting data](/using-the-api/push) with Codat.
 

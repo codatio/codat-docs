@@ -37,7 +37,7 @@ You can perform each step in the Codat Portal or using our API.
 
 ## Developer prerequisites
 
-If you are a developer and want to work with Codat using our <a className="external" href="/codat-api#/">API reference</a> or by making calls to our API in code, you first need to authenticate.
+If you are a developer and want to work with Codat using our <a className="external" href="/platform-api#/">API reference</a> or by making calls to our API in code, you first need to authenticate.
 
 <details>
   <summary><b>Authenticate with Codat's API</b></summary>
@@ -234,7 +234,7 @@ The endpoint returns a JSON response, confirming the unique `id` of the company 
 
 Retain the `id` and `redirect` URL for use in the next steps.
 
-You can also use the <a href="/codat-api#/operations/create-company" target="_blank"><i>Create company</i></a> endpoint in our API reference to try this out.
+You can also use the <a href="/platform-api#/operations/create-company" target="_blank"><i>Create company</i></a> endpoint in our API reference to try this out.
 
 </details>
 
@@ -269,7 +269,7 @@ Pick up the `redirect` URL returned in the response body of the company creation
 
 Follow the flow to connect to the Codat Sandbox as your source of accounting, commerce, and banking data. You don't need to enter any credentials.
 
-Once the flow is complete, you can verify the company's status under the <a href="/codat-api#/operations/get-companies-companyId" target="_blank"><i>View a single company</i></a> endpoint.
+Once the flow is complete, you can verify the company's status under the <a href="/platform-api#/operations/get-companies-companyId" target="_blank"><i>View a single company</i></a> endpoint.
 
 Remember to replace `{companyId}` with your company `id` obtained previously.
 
@@ -341,7 +341,7 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
 
 In the JSON response, you can see that the the `status` of data connections changed to **linked**.
 
-On first connection, Codat pulls data from the data source immediately. You can also use the <a href="/codat-api#/operations/get-companies-companyId-dataStatus" target="_blank"><i>Get company data status</i></a> endpoint to confirm the sync was successful.
+On first connection, Codat pulls data from the data source immediately. You can also use the <a href="/platform-api#/operations/get-companies-companyId-dataStatus" target="_blank"><i>Get company data status</i></a> endpoint to confirm the sync was successful.
 
 </details>
 

@@ -45,7 +45,7 @@ When you’re pulling data for the first time, use this endpoint to check if the
 
 ## Refresh data
 
-There are [two POST endpoints in the API](/codat-api#/operations/create--many-pull-operations) for queuing a refresh of data:
+There are [two POST endpoints in the API](/platform-api#/operations/create--many-pull-operations) for queuing a refresh of data:
 
 1. `/companies/{companyId}/data/all`
    - Will queue a dataset for each of the data types marked as _Fetch on first link_ in your [data type settings](/core-concepts/data-type-settings), where that data type is supported by the company's linked data connections

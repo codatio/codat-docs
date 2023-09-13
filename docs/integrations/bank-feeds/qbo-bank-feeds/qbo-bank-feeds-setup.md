@@ -55,7 +55,7 @@ See the next procedure for details on the functionality to provide.
 
 ## Create a company and data connection, then add bank accounts
 
-1. When the SMB user clicks the button or link you added, create a company for them using the [Create company](/codat-api#/operations/create-company) endpoint:
+1. When the SMB user clicks the button or link you added, create a company for them using the [Create company](/platform-api#/operations/create-company) endpoint:
 
    ```http
    POST https://api.codat.io/companies
@@ -69,7 +69,7 @@ See the next procedure for details on the functionality to provide.
 
    The endpoint returns a JSON response containing the company `id` and the `redirect` URL.
 
-2. Using the [Create a data connection](/codat-api#/operations/create-connection) endpoint, create a data connection to QBO Bank Feeds for the company.
+2. Using the [Create a data connection](/platform-api#/operations/create-connection) endpoint, create a data connection to QBO Bank Feeds for the company.
 
    ```http
    POST https://api.codat.io/companies/COMPANY_ID/connections
@@ -120,7 +120,7 @@ See the next procedure for details on the functionality to provide.
 
    The endpoint returns a `200` response and the list of created bank accounts.
 
-4. Redirect the SMB user to the `linkUrl` returned in the response from the [Create a data connection](/codat-api#/operations/create-connection) endpoint (see step 2).
+4. Redirect the SMB user to the `linkUrl` returned in the response from the [Create a data connection](/platform-api#/operations/create-connection) endpoint (see step 2).
 
    :::caution Link URL expiry
 
@@ -197,7 +197,7 @@ You can add new source bank accounts to an existing company and data connection.
   ]
    ```
 
-2. The original `linkURL` for the company and data connection contained an `otp` with a one hour expiration window. If this has passed, you'll need to generate a new `linkUrl`. To do this, call the [List connections](/codat-api#/operations/list-connections) endpoint to obtain a new `linkUrl` for the specified company and data connection.
+2. The original `linkURL` for the company and data connection contained an `otp` with a one hour expiration window. If this has passed, you'll need to generate a new `linkUrl`. To do this, call the [List connections](/platform-api#/operations/list-connections) endpoint to obtain a new `linkUrl` for the specified company and data connection.
 
 3. Redirect the SMB user to the new `linkUrl` to enable them to connect the new bank account to QBO.
 

@@ -20,7 +20,7 @@ You can configure the following advanced settings:
 
 ## Configuration
 
-Use our [Update all sync settings](/codat-api#/operations/update-profile-syncSettings) endpoint to configure advanced sync settings. These settings are configured per data type and apply to all companies. The endpoint does not provide any error messages if the settings are not supported.
+Use our [Update all sync settings](/platform-api#/operations/update-profile-syncSettings) endpoint to configure advanced sync settings. These settings are configured per data type and apply to all companies. The endpoint does not provide any error messages if the settings are not supported.
 
 For example, to configure advanced settings for our `invoices` data type, send the following request to the endpoint:
 
