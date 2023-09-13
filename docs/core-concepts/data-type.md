@@ -7,7 +7,9 @@ tags:
 
 In Codat, each type of data you want to create, update, or retrieve for a given company from a data source is represented by a data type. It has a defined schema with known properties and validation rules.
 
-## Data type categories
+The data types you use will depend on the Codat product you use. For reference, our [Lending API](/lending/data-types) offers the broadest range of data types.
+
+## Data types based on source
 
 <ul className="card-container">
   <li className="card">
@@ -16,14 +18,11 @@ In Codat, each type of data you want to create, update, or retrieve for a given 
         src="/img/wp-icons/Calculator.png"
         className="mini-icon"
       />
-      <h3>Accounting</h3>
+      <h3>Accounting platforms</h3>
     </div>
     <p>
       For example, invoices and bills from an accounting platform.
     </p>
-    <p>
-      <a href="/accounting-api/accounting-data-types">Explore accounting data types →</a>
-    </p>    
   </li>
   <li className="card">
     <div className="header">
@@ -31,14 +30,11 @@ In Codat, each type of data you want to create, update, or retrieve for a given 
         src="/img/wp-icons/Bank.png"
         className="mini-icon"
       />
-      <h3>Banking</h3>
+      <h3>Bank accounts</h3>
     </div>
     <p>
       For example, bank transactions from a bank account.
-    </p>
-    <p>
-      <a href="/accounting-api/accounting-data-types">Explore banking data types →</a>
-    </p>    
+    </p> 
   </li>
   <li className="card">
     <div className="header">
@@ -46,14 +42,11 @@ In Codat, each type of data you want to create, update, or retrieve for a given 
         src="/img/wp-icons/Storefront.png"
         className="mini-icon"
       />
-      <h3>Commerce</h3>
+      <h3>Commerce platforms</h3>
     </div>
     <p>
       For example, customers and payments from a POS system.
     </p>
-    <p>
-      <a href="/accounting-api/accounting-data-types">Explore commerce data types →</a>
-    </p>    
   </li>
   <li className="card">
     <div className="header">
@@ -65,10 +58,7 @@ In Codat, each type of data you want to create, update, or retrieve for a given 
     </div>
     <p>
       For example, bank feed bank accounts.
-    </p>
-    <p>
-      <a href="/accounting-api/accounting-data-types">Explore bank feed data types →</a>
-    </p>    
+    </p>  
   </li>
 </ul>
 
