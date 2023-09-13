@@ -9,6 +9,18 @@ We are excited to announce the release of C# client libraries for our new produc
 
 <!--truncate-->
 
+```csharp
+using Codat.Lending;
+
+var company = await codatClient.Companies.CreateAsync(new(){
+    Name = "Bank of Dave"
+});
+
+logger.LogInformation("{Id}: {Name}, company.Id, company.Name);
+
+```
+---
+
 Our suite of C# client libraries simplifies integration, saves time, and provides well-documented code bases for easy use across multiple services.
 Each library includes robust error handling, stays updated with the latest features, and enhances the reliability, productivity, and flexibility of your development projects.
 
@@ -22,4 +34,5 @@ Each library includes robust error handling, stays updated with the latest featu
 - [Sync for Payroll](https://github.com/codatio/client-sdk-csharp/tree/main/sync-for-payroll)
 - [Platform](https://github.com/codatio/client-sdk-csharp/tree/main/platform)
 
+--- 
 [Click here](/get-started/libraries) for more information on client libraries and other supported languages.
