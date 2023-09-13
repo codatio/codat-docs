@@ -68,6 +68,13 @@ Our `GET /{dataType}` endpoints typically return an array of items of that given
 Query: `amountDue > 0`
 
 <Tabs>
+<TabItem value="http" label="HTTP">
+
+```http
+GET /companies/{companyId}/data/invoices?query=amountDue%3e0
+```
+</TabItem>
+
 <TabItem value="csharp" label="C#">
 
 ```c
@@ -87,27 +94,7 @@ var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccou
 });
 ```
 </TabItem>
-<TabItem value="python" label="Python">
 
-```python
-import codatlending
-from codatlending.models import operations, shared
-
-codat_lending = codatlending.CodatLending(
-    security=shared.Security(
-        auth_header="Basic BASE_64_ENCODED(API_KEY)",
-    ),
-)
-
-res = codat_lending.accounts_receivable.invoices.list(operations.ListAccountingInvoicesRequest(
-    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
-    query='amountDue>0',
-))
-
-if res.accounting_invoices is not None:
-    # handle response
-```
-</TabItem>
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
@@ -128,6 +115,28 @@ codatLending.accountsReceivable.invoices.list({
     // handle response
   }
 });
+```
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+import codatlending
+from codatlending.models import operations, shared
+
+codat_lending = codatlending.CodatLending(
+    security=shared.Security(
+        auth_header="Basic BASE_64_ENCODED(API_KEY)",
+    ),
+)
+
+res = codat_lending.accounts_receivable.invoices.list(operations.ListAccountingInvoicesRequest(
+    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
+    query='amountDue>0',
+))
+
+if res.accounting_invoices is not None:
+    # handle response
 ```
 </TabItem>
 
@@ -166,12 +175,7 @@ func main() {
 }
 ```
 </TabItem>
-<TabItem value="http" label="HTTP">
 
-```http
-GET /companies/{companyId}/data/invoices?query=amountDue%3e0
-```
-</TabItem>
 </Tabs>
 
 ### Invoices in GBP
@@ -179,6 +183,14 @@ GET /companies/{companyId}/data/invoices?query=amountDue%3e0
 Query: `currency = GBP`
 
 <Tabs>
+
+<TabItem value="http" label="HTTP">
+
+```http
+GET /companies/{companyId}/data/invoices?query=currency%3dGBP
+```
+</TabItem>
+
 <TabItem value="csharp" label="C#">
 
 ```c
@@ -198,27 +210,7 @@ var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccou
 });
 ```
 </TabItem>
-<TabItem value="python" label="Python">
 
-```python
-import codatlending
-from codatlending.models import operations, shared
-
-codat_lending = codatlending.CodatLending(
-    security=shared.Security(
-        auth_header="Basic BASE_64_ENCODED(API_KEY)",
-    ),
-)
-
-res = codat_lending.accounts_receivable.invoices.list(operations.ListAccountingInvoicesRequest(
-    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
-    query='currency=GBP',
-))
-
-if res.accounting_invoices is not None:
-    # handle response
-```
-</TabItem>
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
@@ -239,6 +231,28 @@ codatLending.accountsReceivable.invoices.list({
     // handle response
   }
 });
+```
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+import codatlending
+from codatlending.models import operations, shared
+
+codat_lending = codatlending.CodatLending(
+    security=shared.Security(
+        auth_header="Basic BASE_64_ENCODED(API_KEY)",
+    ),
+)
+
+res = codat_lending.accounts_receivable.invoices.list(operations.ListAccountingInvoicesRequest(
+    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
+    query='currency=GBP',
+))
+
+if res.accounting_invoices is not None:
+    # handle response
 ```
 </TabItem>
 
@@ -277,12 +291,7 @@ func main() {
 }
 ```
 </TabItem>
-<TabItem value="http" label="HTTP">
 
-```http
-GET /companies/{companyId}/data/invoices?query=currency%3dGBP
-```
-</TabItem>
 </Tabs>
 
 ### Invoices for a specific customer
@@ -290,6 +299,14 @@ GET /companies/{companyId}/data/invoices?query=currency%3dGBP
 Query: `customerRef.id = 61`
 
 <Tabs>
+
+<TabItem value="http" label="HTTP">
+
+```http
+GET /companies/{companyId}/data/invoices?query=customerRef.id%3d61
+```
+</TabItem>
+
 <TabItem value="csharp" label="C#">
 
 ```c
@@ -309,27 +326,7 @@ var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccou
 });
 ```
 </TabItem>
-<TabItem value="python" label="Python">
 
-```python
-import codatlending
-from codatlending.models import operations, shared
-
-codat_lending = codatlending.CodatLending(
-    security=shared.Security(
-        auth_header="Basic BASE_64_ENCODED(API_KEY)",
-    ),
-)
-
-res = codat_lending.accounts_receivable.invoices.list(operations.ListAccountingInvoicesRequest(
-    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
-    query='customerRef.id=61',
-))
-
-if res.accounting_invoices is not None:
-    # handle response
-```
-</TabItem>
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
@@ -350,6 +347,28 @@ codatLending.accountsReceivable.invoices.list({
     // handle response
   }
 });
+```
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+import codatlending
+from codatlending.models import operations, shared
+
+codat_lending = codatlending.CodatLending(
+    security=shared.Security(
+        auth_header="Basic BASE_64_ENCODED(API_KEY)",
+    ),
+)
+
+res = codat_lending.accounts_receivable.invoices.list(operations.ListAccountingInvoicesRequest(
+    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
+    query='customerRef.id=61',
+))
+
+if res.accounting_invoices is not None:
+    # handle response
 ```
 </TabItem>
 
@@ -388,12 +407,7 @@ func main() {
 }
 ```
 </TabItem>
-<TabItem value="http" label="HTTP">
 
-```http
-GET /companies/{companyId}/data/invoices?query=customerRef.id%3d61
-```
-</TabItem>
 </Tabs>
 
 ### Outstanding Invoices worth less than 1000
@@ -401,6 +415,14 @@ GET /companies/{companyId}/data/invoices?query=customerRef.id%3d61
 Query: `amountDue > 0 && totalAmount < 1000`
 
 <Tabs>
+
+<TabItem value="http" label="HTTP">
+
+```http
+GET /companies/{companyId}/data/invoices?query=amountDue%3e0%26%26totalAmount%3c1000
+```
+</TabItem>
+
 <TabItem value="csharp" label="C#">
 
 ```c
@@ -420,27 +442,7 @@ var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccou
 });
 ```
 </TabItem>
-<TabItem value="python" label="Python">
 
-```python
-import codatlending
-from codatlending.models import operations, shared
-
-codat_lending = codatlending.CodatLending(
-    security=shared.Security(
-        auth_header="Basic BASE_64_ENCODED(API_KEY)",
-    ),
-)
-
-res = codat_lending.accounts_receivable.invoices.list(operations.ListAccountingInvoicesRequest(
-    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
-    query='amountDue>0&&totalAmount<1000',
-))
-
-if res.accounting_invoices is not None:
-    # handle response
-```
-</TabItem>
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
@@ -461,6 +463,28 @@ codatLending.accountsReceivable.invoices.list({
     // handle response
   }
 });
+```
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+import codatlending
+from codatlending.models import operations, shared
+
+codat_lending = codatlending.CodatLending(
+    security=shared.Security(
+        auth_header="Basic BASE_64_ENCODED(API_KEY)",
+    ),
+)
+
+res = codat_lending.accounts_receivable.invoices.list(operations.ListAccountingInvoicesRequest(
+    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
+    query='amountDue>0&&totalAmount<1000',
+))
+
+if res.accounting_invoices is not None:
+    # handle response
 ```
 </TabItem>
 
@@ -499,12 +523,7 @@ func main() {
 }
 ```
 </TabItem>
-<TabItem value="http" label="HTTP">
 
-```http
-GET /companies/{companyId}/data/invoices?query=amountDue%3e0%26%26totalAmount%3c1000
-```
-</TabItem>
 </Tabs>
 
 ### Invoices that are due after a certain date 
@@ -514,6 +533,14 @@ e.g. "2021-01-28" (YYYY-MM-DD format)
 Query: `dueDate > 2021-01-28`
   
 <Tabs>
+
+<TabItem value="http" label="HTTP">
+
+```http
+GET /companies/{companyId}/data/invoices?query=dueDate%3E2021-01-28
+```
+</TabItem>
+
 <TabItem value="csharp" label="C#">
 
 ```c
@@ -533,27 +560,7 @@ var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccou
 });
 ```
 </TabItem>
-<TabItem value="python" label="Python">
 
-```python
-import codatlending
-from codatlending.models import operations, shared
-
-codat_lending = codatlending.CodatLending(
-    security=shared.Security(
-        auth_header="Basic BASE_64_ENCODED(API_KEY)",
-    ),
-)
-
-res = codat_lending.accounts_receivable.invoices.list(operations.ListAccountingInvoicesRequest(
-    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
-    query='dueDate>2021-01-28',
-))
-
-if res.accounting_invoices is not None:
-    # handle response
-```
-</TabItem>
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
@@ -574,6 +581,28 @@ codatLending.accountsReceivable.invoices.list({
     // handle response
   }
 });
+```
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+import codatlending
+from codatlending.models import operations, shared
+
+codat_lending = codatlending.CodatLending(
+    security=shared.Security(
+        auth_header="Basic BASE_64_ENCODED(API_KEY)",
+    ),
+)
+
+res = codat_lending.accounts_receivable.invoices.list(operations.ListAccountingInvoicesRequest(
+    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
+    query='dueDate>2021-01-28',
+))
+
+if res.accounting_invoices is not None:
+    # handle response
 ```
 </TabItem>
 
@@ -612,12 +641,7 @@ func main() {
 }
 ```
 </TabItem>
-<TabItem value="http" label="HTTP">
 
-```http
-GET /companies/{companyId}/data/invoices?query=dueDate%3E2021-01-28
-```
-</TabItem>
 </Tabs>
 
 ### Invoices deleted in the source platform
@@ -627,6 +651,14 @@ Query: `metadata.isDeleted!=true`
 Codat identifies records that have been deleted in the source accounting platform between successive data syncs using the `isDeleted` flag. You may need to exclude these records from the results.
 
 <Tabs>
+
+<TabItem value="http" label="HTTP">
+
+```http
+GET /companies/{companyId}/data/invoices?query=metadata.isDeleted%21%3dtrue
+```
+</TabItem>
+
 <TabItem value="csharp" label="C#">
 
 ```c
@@ -646,27 +678,7 @@ var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccou
 });
 ```
 </TabItem>
-<TabItem value="python" label="Python">
 
-```python
-import codatlending
-from codatlending.models import operations, shared
-
-codat_lending = codatlending.CodatLending(
-    security=shared.Security(
-        auth_header="Basic BASE_64_ENCODED(API_KEY)",
-    ),
-)
-
-res = codat_lending.accounts_receivable.invoices.list(operations.ListAccountingInvoicesRequest(
-    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
-    query='metadata.isDeleted!=true',
-))
-
-if res.accounting_invoices is not None:
-    # handle response
-```
-</TabItem>
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
@@ -687,6 +699,28 @@ codatLending.accountsReceivable.invoices.list({
     // handle response
   }
 });
+```
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+import codatlending
+from codatlending.models import operations, shared
+
+codat_lending = codatlending.CodatLending(
+    security=shared.Security(
+        auth_header="Basic BASE_64_ENCODED(API_KEY)",
+    ),
+)
+
+res = codat_lending.accounts_receivable.invoices.list(operations.ListAccountingInvoicesRequest(
+    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
+    query='metadata.isDeleted!=true',
+))
+
+if res.accounting_invoices is not None:
+    # handle response
 ```
 </TabItem>
 
@@ -725,12 +759,7 @@ func main() {
 }
 ```
 </TabItem>
-<TabItem value="http" label="HTTP">
 
-```http
-GET /companies/{companyId}/data/invoices?query=metadata.isDeleted%21%3dtrue
-```
-</TabItem>
 </Tabs>
 
 ### Companies with "Pending" status connections
@@ -741,6 +770,7 @@ _Note_: the page size value is obligatory for querying.
 
 
 <Tabs>
+
 <TabItem value="csharp" label="C#">
 
 ```c
@@ -761,26 +791,14 @@ var res = await sdk.Companies.ListAsync(new ListCompaniesRequest() {
 // handle response
 ```
 </TabItem>
-<TabItem value="python" label="Python">
 
-```python
-import codatplatform
-from codatplatform.models import operations, shared
+<TabItem value="http" label="HTTP">
 
-codat_platform = codatplatform.CodatPlatform(
-    security=shared.Security(
-        auth_header="Basic BASE_64_ENCODED(API_KEY)",
-    ),
-)
-
-res = codat_platform.companies.list(operations.ListCompaniesRequest(
-    query='dataConnections.status=PendingAuth',
-))
-
-if res.companies is not None:
-    # handle response
+```http
+GET /companies?query=dataConnections.status=PendingAuth
 ```
 </TabItem>
+
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
@@ -800,6 +818,27 @@ codatPlatform.companies.list({
     // handle response
   }
 });
+```
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+import codatplatform
+from codatplatform.models import operations, shared
+
+codat_platform = codatplatform.CodatPlatform(
+    security=shared.Security(
+        auth_header="Basic BASE_64_ENCODED(API_KEY)",
+    ),
+)
+
+res = codat_platform.companies.list(operations.ListCompaniesRequest(
+    query='dataConnections.status=PendingAuth',
+))
+
+if res.companies is not None:
+    # handle response
 ```
 </TabItem>
 
@@ -837,12 +876,7 @@ func main() {
 }
 ```
 </TabItem>
-<TabItem value="http" label="HTTP">
 
-```http
-GET /companies?query=dataConnections.status=PendingAuth
-```
-</TabItem>
 </Tabs>
   
 ## Queries that won't work
