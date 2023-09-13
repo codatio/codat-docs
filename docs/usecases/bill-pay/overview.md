@@ -5,7 +5,7 @@ description: "Make it easier for SMBs to manage and pay suppliers from a single 
 ---
 
 import { IntegrationsList } from "@components/global/Integrations";
-import { billpayIntegrations } from "@components/global/Integrations/integrations";
+import { integrationsFilterPayables } from "@components/global/Integrations/integrations";
 
 ![An image from the static](/img/use-cases/billpay/billPay.png)
 
@@ -85,7 +85,7 @@ Once the transaction is completed, a bill payment can then be pushed to the cust
 
 <br />
 
-<IntegrationsList integrations={billpayIntegrations} />
+<IntegrationsList filter={integrationsFilterPayables} />
 
 ---
 
