@@ -1,5 +1,6 @@
 ---
 title: "Banking account inflows and outflows"
+image: "/img/banners/social/lending.png"
 ---
 
 :::caution Banking account inflows and outflows - Beta testing

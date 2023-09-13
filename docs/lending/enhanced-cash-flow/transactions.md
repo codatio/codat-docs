@@ -2,8 +2,7 @@
 title: "Enhanced Cash Flow Transactions"
 description: "Reference document for the Enhanced Cash Flow Transactions endpoint"
 sidebar_label: "Enhanced cash flow transactions"
-createdAt: "2022-11-03T17:07:23.438Z"
-updatedAt: "2022-12-19T09:48:25.358Z"
+image: "/img/banners/social/lending.png"
 ---
 
 :::info Categorization engine

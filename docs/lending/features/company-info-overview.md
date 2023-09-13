@@ -3,6 +3,7 @@ title: "Company info overview"
 sidebar_label: "Company info"
 description: "Identify the business you are underwriting"
 displayed_sidebar: "lending"
+image: "/img/banners/social/lending.png"
 ---
 
 The **company info** feature provides lenders with essential information about borrower companies. It serves as a cornerstone for comprehensive lending decisions by offering insights into a company's identity including address, phone number and registration numbers.

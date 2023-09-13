@@ -1,5 +1,6 @@
 ---
 title: Examples
+image: "/img/banners/social/lending.png"
 ---
 
 

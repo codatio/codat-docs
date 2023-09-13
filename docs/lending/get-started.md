@@ -2,13 +2,11 @@
 title: "Get started with Lending API"
 sidebar_label: Get started
 description: "Learn how to perform the initial setup for the Lending API product"
+image: "/img/banners/social/lending.png"
 ---
+
 import { IntegrationsList } from "@components/global/Integrations";
 import { accountingIntegrations, bankingIntegrations, commerceIntegrations } from "@components/global/Integrations/integrations";
-
-import SocialImages from "@components/global/SocialImages";
-
-<SocialImages imgSrc="/img/banners/social/lending.png"/>
 
 ## Enable Lending API
 

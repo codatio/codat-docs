@@ -2,6 +2,7 @@
 title: "Sales overview"
 sidebar_label: "Sales"
 description: "Underwrite with real-time data from SMB's payments and shopping platforms"
+image: "/img/banners/social/lending.png"
 ---
 
 import Products from "@components/global/Products";

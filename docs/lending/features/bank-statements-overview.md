@@ -3,6 +3,7 @@ title: "Bank statements overview"
 sidebar_label: "Bank statements"
 description: "Underwrite with accurate, real-time cash flows enriched with detailed spend and income transaction categories"
 displayed_sidebar: "lending"
+image: "/img/banners/social/lending.png"
 ---
 
 import Products from "@components/global/Products";

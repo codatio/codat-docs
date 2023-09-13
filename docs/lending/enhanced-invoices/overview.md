@@ -2,6 +2,7 @@
 title: "Invoices"
 description: "Introduction to Enhanced Invoices"
 sidebar_label: "Invoices"
+image: "/img/banners/social/lending.png"
 ---
 
 This feature solves a key problem associated with underwriting invoices - verifying payments against historical invoices. The feature performs the verification by matching invoice payments to immutable banking transactions, showing you the original transaction details found on the bank statement.

@@ -2,6 +2,7 @@
 title: "Audit report"
 description: "Identify accounting irregularities with Codat's Audit report"
 sidebar_label: "Audit report"
+image: "/img/banners/social/lending.png"
 ---
 
 Credit decision-making requires accurate and up-to-date data. Codat’s Audit report identifies indicators of inaccurate or out-of-date accounts, helping you to make decisions with confidence.

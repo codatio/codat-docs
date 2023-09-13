@@ -2,6 +2,7 @@
 title: "Accounts receivable overview"
 sidebar_label: "Accounts receivable"
 description: "Assessing debtor risk in real time with accounts receivable insights"
+image: "/img/banners/social/lending.png"
 ---
 
 import Products from "@components/global/Products";

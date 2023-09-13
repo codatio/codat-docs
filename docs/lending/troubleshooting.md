@@ -2,11 +2,8 @@
 title: "Troubleshooting"
 description: "Resolve common errors"
 displayed_sidebar: lending
+image: "/img/banners/social/lending.png"
 ---
-
-import SocialImages from "@components/global/SocialImages";
-
-<SocialImages imgSrc="/img/banners/social/lending.png"/>
 
 ## Lending API error codes
 

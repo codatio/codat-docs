@@ -2,8 +2,7 @@
 title: "Data integrity FAQs"
 description: "Frequently asked questions on data integrity"
 sidebar_label: "FAQs"
-createdAt: "2022-01-18T14:55:56.434Z"
-updatedAt: "2022-11-02T14:46:09.812Z"
+image: "/img/banners/social/lending.png"
 ---
 
 ### Overlapping dates
