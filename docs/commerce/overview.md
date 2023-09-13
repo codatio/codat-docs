@@ -1,6 +1,7 @@
 ---
 title: "Sync for Commerce overview"
 description: "Embedded accounting integrations for PoS and eCommerce platforms"
+image: "/img/banners/social/commerce.png"
 sidebar_label: Sync for Commerce
 displayed_sidebar: commerce
 hide_title: true

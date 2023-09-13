@@ -2,6 +2,7 @@
 title: "Merchant configuration"
 description: "Enable merchants to connect their systems and specify how they want their sales data to be synchronized into their accounting package"
 displayed_sidebar: commerce
+image: "/img/banners/social/commerce.png"
 ---
 
 import Tabs from "@theme/Tabs";

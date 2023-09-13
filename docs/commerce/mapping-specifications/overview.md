@@ -2,6 +2,7 @@
 title: "Mapping specifications"
 sidebar_label: Overview
 description: "Guides for data mapping configuration from a commerce platform to the supported accounting platforms (Xero, QuickBooks online)"
+image: "/img/banners/social/commerce.png"
 ---
 
 This section provides guidelines for data mapping configuration from a commerce platform to the supported accounting platforms (Xero, QuickBooks online).
