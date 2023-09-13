@@ -271,7 +271,7 @@ You will receive the following response from the _Push operation status has chan
  }
 ```
 
-You can also use our endpoints to monitor the status of your create, update, or delete operation. List all operations for a company using the [List push operations](/codat-api#/operations/get-company-push-history) endpoint, or list a single operation via the [Get push operation](/codat-api#/operations/get-push-operation). This is useful when you want to include summary information to your customers outlining the status of their CUD history.
+You can also use our endpoints to monitor the status of your create, update, or delete operation. List all operations for a company using the [List push operations](/platform-api#/operations/get-company-push-history) endpoint, or list a single operation via the [Get push operation](/platform-api#/operations/get-push-operation). This is useful when you want to include summary information to your customers outlining the status of their CUD history.
 
 ### Timeouts
 

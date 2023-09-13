@@ -110,7 +110,7 @@ module.exports = {
         "core-concepts/status", // @tooo: move into using api?
         {
           type: "link",
-          href: "/codat-api",
+          href: "/platform-api",
           className: "external",
           label: "Platform API reference",
         },

@@ -30,7 +30,7 @@ When an API request causes an account limit to be exceeded, you'll receive a 402
 
 ### 50-company limit
 
-Error response from [POST /companies](/codat-api#/operations/create-company) when you have exceeded the 50-company limit that applies to the Free plan.
+Error response from [POST /companies](/platform-api#/operations/create-company) when you have exceeded the 50-company limit that applies to the Free plan.
 
 For example:
 

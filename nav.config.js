@@ -46,7 +46,7 @@ module.exports = {
           label: "Sync for Payroll",
         },
         {
-          href: "/codat-api",
+          href: "/platform-api",
           label: "Platform API",
           hr: true,
         },

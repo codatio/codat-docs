@@ -33,7 +33,7 @@ For _Banking account inflows and outflows_, these are the dimensions and measure
 |----|----|----|----|
 |**query**|_string_, See [Querying](/using-the-api/querying)|Codat query string. It can be empty. If empty, it returns data for all bank accounts for a specific company.|Optional|
 |**displayCurrency**|_string_|The currency, in ISO 4217 format, the results are converted to. Default is "GBP".|Required|
-|**reportDate**|_string_, See [Date](/codat-api#/schemas/DateTime)|YYYY-MM-DD, Users can specify a specific date, however the response will be provided for the full month.|Required|
+|**reportDate**|_string_, See [Date](/platform-api#/schemas/DateTime)|YYYY-MM-DD, Users can specify a specific date, however the response will be provided for the full month.|Required|
 |Period unit|_string_|"day", "week", "month", "year". Default is "month".|Required|
 |**periodLength**|_integer_|The number of months per period. E.g. 2 = 2 months per period.|Required|
 |**numberOfPeriods**|_integer_|The number of periods to return. There will be no pagination as a query parameter, however Codat will limit the number of periods to request to 12 periods.|Required|
@@ -69,8 +69,8 @@ The Assess _Banking account inflows and outflows_ consists of one dimension: Per
 |Field|Type|Description|
 |----|----|----|
 |**displayName**|_string_|"Period n"|
-|**start**|_string_, See [Date](/codat-api#/schemas/DateTime)|YYYY-MM-DD, Date in which the period begins (inclusive).|
-|**end**|_string_, See [Date](/codat-api#/schemas/DateTime)|YYYY-MM-DD, Date in which the period ends (inclusive).|
+|**start**|_string_, See [Date](/platform-api#/schemas/DateTime)|YYYY-MM-DD, Date in which the period begins (inclusive).|
+|**end**|_string_, See [Date](/platform-api#/schemas/DateTime)|YYYY-MM-DD, Date in which the period ends (inclusive).|
 
 
 ## Measures

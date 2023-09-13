@@ -27,7 +27,7 @@ You can add email addresses while creating a new rule, or update the email and n
 
 ## Set up email notifications using the API
 
-1. Use Codat's [Create rule](/codat-api#/operations/post-rules) endpoint and complete the following parameters:
+1. Use Codat's [Create rule](/platform-api#/operations/post-rules) endpoint and complete the following parameters:
    - `companyId` to specify the company you want to monitor or omit this to apply the rule to all companies,
    - `type` of rule that you would like to set up using its [exact naming](/using-the-api/webhooks/core-rules-create#manage-rules-from-the-codat-api),
    - Complete the `emails` notifier with an array of email addresses that will receive notifications.

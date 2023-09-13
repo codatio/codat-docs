@@ -48,11 +48,11 @@ This checkpoint assumes that your borrowers are able to manage their data connec
 | Requirement | Recommendations |
 | :-- | :-- |
 | Display the name of the tenant that has been connected | This can be retrieved from our [Get company info](/accounting-api#/operations/get-company-info) endpoint. |
-| Display the current status of the connection. If disconnected, provide a button to reconnect to Xero | Use our [Get connection](/codat-api#/operations/get-company-connection) endpoint to check the `status` of the connection and use the `linkUrl` to reconnect|
-| Provide a button to terminate the connection | When a user clicks on the button, use our [Unlink connection](/codat-api#/operations/unlink-connection) endpoint to disconnect from Xero. |
+| Display the current status of the connection. If disconnected, provide a button to reconnect to Xero | Use our [Get connection](/platform-api#/operations/get-company-connection) endpoint to check the `status` of the connection and use the `linkUrl` to reconnect|
+| Provide a button to terminate the connection | When a user clicks on the button, use our [Unlink connection](/platform-api#/operations/unlink-connection) endpoint to disconnect from Xero. |
 | Handle a disconnect from Xero's side | Use our [Data connection status changed](/using-the-api/webhooks/core-rules-types#company-data-connection-status-changed) webhook to identify when a disconnect happens. When the alert is triggered, change the connection status in your UI and display a "Reconnect" or "Connect" button.|
 | Support one-to-one or multi-organizational connection | Codat allows your customers to select their Xero organization using the native Xero UI. You can enable them to connect to multiple organizations within Xero by creating a separate Codat company per organization. |
-| Provide a disconnection process for off-boarding | Use our [Unlink connection](/codat-api#/operations/unlink-connection) endpoint to prevent further syncs or the [Delete connection](/codat-api#/operations/delete-company-connection) endpoint to prevent further syncs and querying of historically synced data. |
+| Provide a disconnection process for off-boarding | Use our [Unlink connection](/platform-api#/operations/unlink-connection) endpoint to prevent further syncs or the [Delete connection](/platform-api#/operations/delete-company-connection) endpoint to prevent further syncs and querying of historically synced data. |
 
 ### 4. Error handling
 

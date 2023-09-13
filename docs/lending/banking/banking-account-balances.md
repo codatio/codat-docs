@@ -34,7 +34,7 @@ For _Banking account balances_, these are the dimensions and measures:
 |----|----|----|----|
 |**query**|*string*, See [Querying](/using-the-api/querying)|Codat query string. It can be empty. If empty, it returns data for all bank accounts for a specific company.|Optional|
 |**displayCurrency**|*string*|The currency, in ISO 4217 format, the results are converted to. Default is "GBP".|Required|
-|**reportDate**|*string*, See [Date](/codat-api#/schemas/DateTime)|YYYY-MM-DD, Users can specify a specific date, however the response will be provided for the full month.|Required|
+|**reportDate**|*string*, See [Date](/platform-api#/schemas/DateTime)|YYYY-MM-DD, Users can specify a specific date, however the response will be provided for the full month.|Required|
 |Period unit|*string*|"day","week", "month", "year", Default is "month".|Required|
 |**periodLength**|*integer*|The number of months per period. E.g. 2 = 2 months per period.|Required|
 |**numberOfPeriods**|*integer*|The number of periods to return. There will be no pagination as a query parameter, however Codat will limit the number of periods to request to 12 periods.|Required|
@@ -67,8 +67,8 @@ The Lending *Banking account balances* consists of one dimension: Period.
 |Field|Type|Description|
 |----|----|----|
 |**displayName**|*string*|"Period n"|
-|**start**|*string*, See [Date](/codat-api#/schemas/DateTime)|YYYY-MM-DD, Date in which the period begins (inclusive).|
-|**end**|*string*, See [Date](/codat-api#/schemas/DateTime)|YYYY-MM-DD, Date in which the period ends (inclusive).|
+|**start**|*string*, See [Date](/platform-api#/schemas/DateTime)|YYYY-MM-DD, Date in which the period begins (inclusive).|
+|**end**|*string*, See [Date](/platform-api#/schemas/DateTime)|YYYY-MM-DD, Date in which the period ends (inclusive).|
 
 ## Measures
 

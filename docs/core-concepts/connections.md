@@ -34,7 +34,7 @@ Connections can have one of the statuses described in the following table.
 
 ## Linked data connection example
 
-Verify that a connection returns a Linked `status` using one of our [Connections](/codat-api#/operations/list-connections) endpoints. 
+Verify that a connection returns a Linked `status` using one of our [Connections](/platform-api#/operations/list-connections) endpoints. 
 
 In the response, note the following fields:
 
@@ -57,7 +57,7 @@ In the response, note the following fields:
 
 ## Disconnect a data connection to revoke your access to a data source
 
-You can disconnect a data connection using the <a href="/codat-api#/operations/unlink-connection" target="_blank">Unlink connection</a> endpoint. This revokes your access to synchronize data with the linked company and sets the data connection's status to `Unlinked`.
+You can disconnect a data connection using the <a href="/platform-api#/operations/unlink-connection" target="_blank">Unlink connection</a> endpoint. This revokes your access to synchronize data with the linked company and sets the data connection's status to `Unlinked`.
 
 To disconnect a data connection, you'll need to provide:
 
@@ -115,7 +115,7 @@ PATCH /companies/COMPANY_ID/connections/CONNECTION_ID
 
 ## Delete a data connection
 
-To delete a data connection, send a request to the <a href="/codat-api#/operations/delete-connection" target="_blank">DELETE /connectionId endpoint</a> and provide the `companyId` and `connectionId` as path parameters.
+To delete a data connection, send a request to the <a href="/platform-api#/operations/delete-connection" target="_blank">DELETE /connectionId endpoint</a> and provide the `companyId` and `connectionId` as path parameters.
 
 ```http
 DELETE /companies/COMPANY_ID/connections/CONNECTION_ID
@@ -135,4 +135,4 @@ If you are migrating an existing integration to use Codat, you can provide token
 ## Read next
 
 - Next concept: [Integrations](/core-concepts/integrations)
-- [`GET /connections`](/codat-api#/operations/list-connections) API reference
+- [`GET /connections`](/platform-api#/operations/list-connections) API reference

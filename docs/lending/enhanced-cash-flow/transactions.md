@@ -35,7 +35,7 @@ The response structure is split into three areas: Report info, Data sources and 
 |----|----|----|
 |**reportName**|_string_|"Cash transactions report"|
 |**companyName**|_string_|The name of the company being queried.|
-|**generatedDate**|_string_, See [Date](/codat-api#/schemas/DateTime)|YYYY-MM-DDT00:00:00Z. The date the cash flow report was generated.|
+|**generatedDate**|_string_, See [Date](/platform-api#/schemas/DateTime)|YYYY-MM-DDT00:00:00Z. The date the cash flow report was generated.|
 |**pageNumber**|_number_|The number of the page queried.|
 |**pageSize**|_number_|The number of transactions returned per page.|
 |**totalResults**|_number_|The total number of transactions available for a company for the period specified in the query string.|
@@ -72,7 +72,7 @@ The response structure is split into three areas: Report info, Data sources and 
 |----|----|----|
 |**sourceRef**|_enum_|A source reference object containing `sourceType` object "Banking".|
 |**id**|_string_|The unique identifier of the bank transaction.|
-|**date**|_string_, See [Date](/codat-api#/schemas/DateTime)|YYYY-MM-DD, The date the bank transaction was posted.|
+|**date**|_string_, See [Date](/platform-api#/schemas/DateTime)|YYYY-MM-DD, The date the bank transaction was posted.|
 |**description**|_string_|The description of the bank transaction.|
 |**amount**|_decimal_|The bank transaction amount.|
 |**currency**|_string_|The currency code for the account.|

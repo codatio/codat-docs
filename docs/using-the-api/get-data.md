@@ -14,7 +14,7 @@ Once company is onboarded, you can start retrieving their financial data.
 
 If there are datasets which are not as up-to-date as you require, you can queue a data sync as described [here](/using-the-api/queueing-data-syncs).
 
-Once you've queued the sync, you can poll the [GET /companies/{companyId}/dataStatus](/codat-api#/operations/get-company-data-status) endpoint (as described above) to [monitor progress of the sync](/core-concepts/status).
+Once you've queued the sync, you can poll the [GET /companies/{companyId}/dataStatus](/platform-api#/operations/get-company-data-status) endpoint (as described above) to [monitor progress of the sync](/core-concepts/status).
 
 :::note Configuring the sync schedule
 
