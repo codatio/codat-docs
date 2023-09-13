@@ -2,6 +2,7 @@
 title: Loan Liabilities
 description: "Learn how to identify a company's loans to better understand its financial health"
 sidebar_label: "Liabilities"
+image: "/img/banners/social/lending.png"
 ---
 
 Our Loan Liabilities feature removes the arduous task of manually identifying loan liabilities. Instead, it automatically analyzes data from accounting, banking, and commerce data sources for you.

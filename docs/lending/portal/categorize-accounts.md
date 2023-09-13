@@ -1,7 +1,9 @@
 ---
 title: "Categorize accounts in Portal"
 description: "Learn how to view and change automatically proposed categories for enhanced balance sheet and profit and loss statements"
+image: "/img/banners/social/lending.png"
 ---
+
 With Enhanced Financials, Codat automatically suggests a category for each account that appears in the enhanced Profit and Loss and Balance Sheet. 
 
 Every account is assigned one of Codat’s 270+ categories.  If you disagree with the suggested category, you can change it to a more suitable one. This only impacts the category field in Lending and does not lead to any changes in the underlying accounting platform.

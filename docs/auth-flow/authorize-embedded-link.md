@@ -2,14 +2,11 @@
 title: "Authorize with Embedded Link"
 sidebar_label: Overview
 description: "Embed our auth flow in your application with our low-code component"
+image: "/img/auth-flow/embedded-link-selection.png"
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-
-import SocialImages from "@components/global/SocialImages";
-
-<SocialImages imgSrc="img/auth-flow/embedded-link-selection.png"/>
 
 ![](/img/auth-flow/embedded-link-selection.png)
 

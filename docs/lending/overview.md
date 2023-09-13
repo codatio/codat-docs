@@ -3,6 +3,7 @@ title: "Lending API overview"
 sidebar_label: Lending API
 description: "Learn about the features that make up the Lending API product"
 displayed_sidebar: lending
+image: "/img/banners/social/lending.png"
 hide_title: true
 hide_description: true
 hide_table_of_contents: true
@@ -15,12 +16,9 @@ banner_text: "Our Lending API helps you make smarter credit decisions on small b
 // video_text: What is Lending API?
 ---
 
-import SocialImages from "@components/global/SocialImages";
 import Products from "@components/global/Products";
 import { IntegrationsList } from "@components/global/Integrations";
 import { accountingIntegrations, bankingIntegrations, commerceIntegrations } from "@components/global/Integrations/integrations";
-
-<SocialImages imgSrc="/img/banners/social/lending.png"/>
 
 ## What is it?
 

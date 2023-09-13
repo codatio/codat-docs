@@ -11,7 +11,7 @@ You may need to perform a manual Commerce sync for a company from the date of it
 
 You need to specify the `companyId`, which is a required parameter.
 
-The lower limit of the sync date range is determined as the date of the last successful sync. If there were no previous successful syncs, the sync start date configured in the [Synchronization schedule](/commerce/learn/synchronization-schedule) is used.
+The lower limit of the sync date range is determined as the date of the last successful sync. If there were no previous successful syncs, the sync start date configured in the [Synchronization schedule](/commerce/synchronization-schedule) is used.
 
 For the higher limit of the sync date range, you can include a `syncTo` date in the request body. If no date is provided, the current time `UtcNow` is used.
 

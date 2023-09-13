@@ -2,6 +2,7 @@
 title: "Financial statements overview"
 sidebar_label: "Financial statements"
 description: "Automate financial statement and ratio calculation with a fully standardized profit and loss and balance sheet"
+image: "/img/banners/social/lending.png"
 ---
 
 import Products from "@components/global/Products";

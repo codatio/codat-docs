@@ -2,6 +2,7 @@
 title: "Accounts payable overview"
 sidebar_label: "Accounts payable"
 description: "Get a detailed, real-time view of your customers' supplier invoices to assess creditor risk"
+image: "/img/banners/social/lending.png"
 ---
 
 import Products from "@components/global/Products";

@@ -3,6 +3,7 @@ title: "Bank statements overview"
 sidebar_label: "Bank statements"
 description: "Underwrite with accurate, real-time cash flows enriched with detailed spend and income transaction categories"
 displayed_sidebar: "lending"
+image: "/img/banners/social/lending.png"
 ---
 
 import Products from "@components/global/Products";
@@ -21,19 +22,19 @@ Common uses of our bank statements feature include:
 
 3. **Cash flow trend analysis:** identify patterns and fluctuations in the borrower's cash flow to predict their future financial health.
 
-4. **Revenue analysis:** identify all revenue channels of a business using the [payment provider enrichment](/lending/features/banking-overview#feature-enrichments).
+4. **Revenue analysis:** identify all revenue channels of a business using the payment provider enrichment.
 
 ## Feature components
 
 Our banking feature consists of the following components, supported across a number of banking data sources.
 
-1. **[Accounts:](https://docs.codat.io/lending-api#/operations/list-banking-accounts)** detailed information on a business’ bank accounts including balances, account numbers, and institutions holding the accounts
+1. **[Accounts:](/lending-api#/operations/list-banking-accounts)** detailed information on a business’ bank accounts including balances, account numbers, and institutions holding the accounts
 
-2. **[Transactions:](https://docs.codat.io/lending-api#/operations/list-banking-transactions)** transactions incurred by the bank account
+2. **[Transactions:](/lending-api#/operations/list-banking-transactions)** transactions incurred by the bank account
 
-3. **[Account balances:](https://docs.codat.io/lending-api#/operations/list-banking-account-balances)** balances for a bank account, including the end-of-day batch balance or running balances per transaction
+3. **[Account balances:](/lending-api#/operations/list-banking-account-balances)** balances for a bank account, including the end-of-day batch balance or running balances per transaction
 
-4. **[Categorized bank statements:](https://docs.codat.io/lending-api#/operations/get-categorized-bank-statement)** all connected bank accounts and transactions with enrichments in a single endpoint.
+4. **[Categorized bank statements:](/lending-api#/operations/get-categorized-bank-statement)** all connected bank accounts and transactions with enrichments in a single endpoint.
 
 <iframe
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=1760315404&amp;single=true&amp;widget=true&amp;headers=false"

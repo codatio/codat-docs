@@ -2,6 +2,7 @@
 title: "Liabilities overview"
 sidebar_label: "Liabilities"
 description: "Comprehensive loan insights and credit history analysis"
+image: "/img/banners/social/lending.png"
 ---
 
 import Products from "@components/global/Products";

@@ -2,6 +2,7 @@
 title: "Excel download overview"
 sidebar_label: "Excel download"
 description: "Download the Lending API reports to Excel"
+image: "/img/banners/social/lending.png"
 ---
 
 Our **Excel download reports** will show you what data is available from our API without you writing any code upfront. You can use this to inform testing within your credit models.

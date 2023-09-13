@@ -1,5 +1,6 @@
 ---
 title: "Banking account balances"
+image: "/img/banners/social/lending.png"
 ---
 
 :::caution Banking account balances - Beta testing
