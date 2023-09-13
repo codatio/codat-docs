@@ -16,18 +16,6 @@ import { accountingIntegrations, bankingIntegrations, commerceIntegrations } fro
 
 ## Configure Lending API
 
-### Authorization flow
-
-Before you can pull your customers' data using Lending API, they must authorize your access to it. To do so, use Link - our pre-built, conversion-optimized, and white-labelled authorization journey. 
-
-You can fully embed Link in your experience by using our [Embedded Link](/auth-flow/authorize-embedded-link) component in your front-end code or choose our out-of-the-box [Hosted Link](/auth-flow/authorize-hosted-link) authorization flow to get up and running as quick as possible. 
-
-The solution lets you tailor the authorization journey to your business needs as follows:
-
-* [Customize Link settings](/auth-flow/customize/customize-link)
-* [Set up company branding](/auth-flow/customize/branding)
-* [Set up redirects](/auth-flow/customize/set-up-redirects)
-
 ### Data sources
 
 In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** to enable and set up the integrations that will serve as a data source for the product. Follow the respective guides for integration-specific instructions. 
@@ -45,6 +33,18 @@ Data source coverage varies by feature, so be sure to review the coverage for th
 #### Commerce
 
 <IntegrationsList integrations={commerceIntegrations} />
+
+### Authorization flow
+
+As part of using the Lending API, you will need your customers to authorize your access to their data. To do so, use Link - our pre-built, conversion-optimized, and white-labelled authorization journey. 
+
+You can fully embed Link in your experience by using our [Embedded Link](/auth-flow/authorize-embedded-link) component in your front-end code or choose our out-of-the-box [Hosted Link](/auth-flow/authorize-hosted-link) authorization flow to get up and running as quick as possible. 
+
+The solution lets you tailor the authorization journey to your business needs. You can:
+
+* [Customize Link settings](/auth-flow/customize/customize-link)
+* [Set up company branding](/auth-flow/customize/branding)
+* [Set up redirects](/auth-flow/customize/set-up-redirects)
 
 ### Data types
 
