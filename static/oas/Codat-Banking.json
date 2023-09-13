@@ -205,9 +205,6 @@
           "409": {
             "$ref": "#/components/responses/Conflict"
           }
-        },
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
         }
       }
     },
@@ -391,9 +388,6 @@
           "409": {
             "$ref": "#/components/responses/Conflict"
           }
-        },
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
         }
       }
     },
@@ -624,10 +618,7 @@
             "$ref": "#/components/responses/Conflict"
           }
         },
-        "description": "The *List transaction categories* endpoint returns a list of [transaction categories](https://docs.codat.io/banking-api#/schemas/TransactionCategory) for a given company's connection.\n\n[Transaction categories](https://docs.codat.io/banking-api#/schemas/TransactionCategory) are associated with a transaction to provide greater contextual meaning to transaction activity.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    ",
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
-        }
+        "description": "The *List transaction categories* endpoint returns a list of [transaction categories](https://docs.codat.io/banking-api#/schemas/TransactionCategory) for a given company's connection.\n\n[Transaction categories](https://docs.codat.io/banking-api#/schemas/TransactionCategory) are associated with a transaction to provide greater contextual meaning to transaction activity.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    "
       },
       "parameters": [
         {
@@ -719,9 +710,6 @@
             "$ref": "#/components/parameters/orderBy"
           }
         ],
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -889,9 +877,6 @@
             "$ref": "#/components/parameters/orderBy"
           }
         ],
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
-        },
         "responses": {
           "200": {
             "description": "Success",

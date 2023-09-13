@@ -335,10 +335,7 @@
           {
             "$ref": "#/components/parameters/orderBy"
           }
-        ],
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
-        }
+        ]
       }
     },
     "/companies/{companyId}": {
@@ -559,9 +556,6 @@
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
           }
-        },
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
         }
       },
       "post": {
@@ -1300,9 +1294,6 @@
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
           }
-        },
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
         }
       }
     }

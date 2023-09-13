@@ -558,10 +558,7 @@
         {
           "$ref": "#/components/parameters/syncId"
         }
-      ],
-      "x-speakeasy-pagination": {
-        "$ref": "#/x-codat-speakeasy-pagination"
-      }
+      ]
     },
     "/companies/{companyId}/sync/expenses/syncs/{syncId}/transactions/{transactionId}": {
       "get": {
@@ -1038,10 +1035,7 @@
           {
             "$ref": "#/components/parameters/orderBy"
           }
-        ],
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
-        }
+        ]
       },
       "post": {
         "summary": "Create company",
@@ -1328,9 +1322,6 @@
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
           }
-        },
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
         }
       },
       "post": {

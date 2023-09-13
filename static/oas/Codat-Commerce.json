@@ -636,9 +636,6 @@
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
           }
-        },
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
         }
       }
     },
@@ -1033,10 +1030,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *List disputes* endpoint returns a list of [disputes](https://docs.codat.io/commerce-api#/schemas/Dispute) for a given company's connection.\n\n[Disputes](https://docs.codat.io/commerce-api#/schemas/Dispute) are created when a customer is unsatisfied with their purchase or believe they have been charged incorrectly.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    ",
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
-        }
+        "description": "The *List disputes* endpoint returns a list of [disputes](https://docs.codat.io/commerce-api#/schemas/Dispute) for a given company's connection.\n\n[Disputes](https://docs.codat.io/commerce-api#/schemas/Dispute) are created when a customer is unsatisfied with their purchase or believe they have been charged incorrectly.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    "
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-disputes/{disputeId}": {
@@ -1402,10 +1396,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *List locations* endpoint returns a list of [locations](https://docs.codat.io/commerce-api#/schemas/Location) for a given company's connection.\n\n[Locations](https://docs.codat.io/commerce-api#/schemas/Location) hold information on the geographic location at which stocks of [products](https://docs.codat.io/commerce-api#/schemas/Product) may be held or where [orders](https://docs.codat.io/commerce-api#/schemas/Order) were placed.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    ",
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
-        }
+        "description": "The *List locations* endpoint returns a list of [locations](https://docs.codat.io/commerce-api#/schemas/Location) for a given company's connection.\n\n[Locations](https://docs.codat.io/commerce-api#/schemas/Location) hold information on the geographic location at which stocks of [products](https://docs.codat.io/commerce-api#/schemas/Product) may be held or where [orders](https://docs.codat.io/commerce-api#/schemas/Order) were placed.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    "
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-locations/{locationId}": {
@@ -2929,10 +2920,7 @@
           {
             "$ref": "#/components/parameters/orderBy"
           }
-        ],
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
-        }
+        ]
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-orders/{orderId}": {
@@ -4150,10 +4138,7 @@
           {
             "$ref": "#/components/parameters/orderBy"
           }
-        ],
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
-        }
+        ]
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-payments/{paymentId}": {
@@ -4646,10 +4631,7 @@
           {
             "$ref": "#/components/parameters/orderBy"
           }
-        ],
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
-        }
+        ]
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-paymentMethods/{paymentMethodId}": {
@@ -5996,10 +5978,7 @@
             "$ref": "#/components/parameters/orderBy"
           }
         ],
-        "description": "The *List products* endpoint returns a list of [products](https://docs.codat.io/commerce-api#/schemas/Product) for a given company's connection.\n\n[Products](https://docs.codat.io/commerce-api#/schemas/Product) are items in the company's inventory that are available for sale.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    ",
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
-        }
+        "description": "The *List products* endpoint returns a list of [products](https://docs.codat.io/commerce-api#/schemas/Product) for a given company's connection.\n\n[Products](https://docs.codat.io/commerce-api#/schemas/Product) are items in the company's inventory that are available for sale.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    "
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-products/{productId}": {
@@ -6922,10 +6901,7 @@
           {
             "$ref": "#/components/parameters/orderBy"
           }
-        ],
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
-        }
+        ]
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-transactions/{transactionId}": {
@@ -7155,10 +7131,7 @@
             "$ref": "#/components/parameters/orderBy"
           }
         ],
-        "description": "The *List product categories* endpoint returns a list of [product categories](https://docs.codat.io/commerce-api#/schemas/ProductCategory) for a given company's connection.\n\n[Product categories](https://docs.codat.io/commerce-api#/schemas/ProductCategory) are used to classify a group of products together, either by type (e.g. \"Furniture\"), or sometimes by tax profile.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    ",
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
-        }
+        "description": "The *List product categories* endpoint returns a list of [product categories](https://docs.codat.io/commerce-api#/schemas/ProductCategory) for a given company's connection.\n\n[Product categories](https://docs.codat.io/commerce-api#/schemas/ProductCategory) are used to classify a group of products together, either by type (e.g. \"Furniture\"), or sometimes by tax profile.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    "
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-productCategories/{productId}": {
@@ -7368,10 +7341,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *List tax components* endpoint returns a list of [tax components](https://docs.codat.io/commerce-api#/schemas/TaxComponent) for a given company's connection.\n\n[Tax components](https://docs.codat.io/commerce-api#/schemas/TaxComponent) are tax rates from the commerce platform, including tax rate's name and value.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    ",
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
-        }
+        "description": "The *List tax components* endpoint returns a list of [tax components](https://docs.codat.io/commerce-api#/schemas/TaxComponent) for a given company's connection.\n\n[Tax components](https://docs.codat.io/commerce-api#/schemas/TaxComponent) are tax rates from the commerce platform, including tax rate's name and value.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    "
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-taxComponents/{taxId}": {
