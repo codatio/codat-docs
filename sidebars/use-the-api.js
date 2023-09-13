@@ -61,6 +61,7 @@ module.exports = [
     collapsed: true,
     items: [
       "using-the-api/best-practices/implementing-a-mapping-page",
+      "using-the-api/best-practices/client-side-data-storage",
     ],
   },
   {
