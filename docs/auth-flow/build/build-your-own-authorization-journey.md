@@ -87,7 +87,7 @@ Request body:
 "platformKey"",
 ```
 
-The `platformKey` is the unique key Codat uses instead of financial platform names to remove the dependence on a platform's display name. View the list of our [accounting](/integrations/accounting/overview#platform-keys), [commerce](/integrations/commerce/overview#platform-keys), and [banking](/integrations/banking/overview#platform-keys) platform keys, or retrieve them using [our API](/codat-api#/operations/list-integrations).
+The `platformKey` is the unique key Codat uses instead of financial platform names to remove the dependence on a platform's display name. View the list of our [accounting](/integrations/accounting/overview#platform-keys), [commerce](/integrations/commerce/overview#platform-keys), and [banking](/integrations/banking/overview#platform-keys) platform keys, or retrieve them using [our API](/platform-api#/operations/list-integrations).
 
 2. Direct your user to the `linkUrl` found in the nested `dataConnection` object for the specified integration, returned in the response. It will prompt the user to enter their credentials for the 3rd-party platform, authorizing the connection and activating it.
 
@@ -114,7 +114,7 @@ A company may link a single source of accounting data but multiple sources of ba
 ### 4. Confirm successful authorization and data synchronization
 
 1. Once the connection is complete (for guidance on how to monitor the connection, read [Set up webhooks](/auth-flow/customize/set-up-webhooks)), mark the connection as authorized and confirm to your user the successful authorization of the connection.
-2. Monitor the synchronization of data (also available in <a href="/codat-api#/operations/get-company-data-status">our API</a>):
+2. Monitor the synchronization of data (also available in <a href="/platform-api#/operations/get-company-data-status">our API</a>):
 
 ```http
 GET https://api.codat.io/companies/{companyId}/dataStatus",
@@ -177,7 +177,7 @@ GET /companies
 GET /companies/{companyId}/connections",
 ```
 
-This endpoint is also available in <a href="/codat-api#/operations/list-connections">Common API</a>.
+This endpoint is also available in <a href="/platform-api#/operations/list-connections">Common API</a>.
 
 In the request above, the `companyId` is the `companyId` that was returned to you when you created a Codat company for the user. It can also be found in the company's metadata.
 
@@ -193,7 +193,7 @@ Request body:
 "platformKey"
 ```
 
-This endpoint is also available in <a href="codat-api#/operations/create-connection">Common API</a>.
+This endpoint is also available in <a href="platform-api#/operations/create-connection">Common API</a>.
 
 #### Allow users to delete a connection
 
