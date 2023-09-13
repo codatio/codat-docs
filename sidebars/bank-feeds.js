@@ -11,9 +11,27 @@ module.exports = [
     id: "bank-feeds/overview",
     className: "header top-level-item products product bankfeed",
   },
-  "bank-feeds/setup",
-  "bank-feeds/mapping",
-  "bank-feeds/pushing-transactions",
+  {
+    type: "doc",
+    label: "Product setup",
+    id: "bank-feeds/setup",
+  },
+  {
+    type: "category",
+    label: "Mapping",
+    items: [
+      "bank-feeds/mapping",
+      "bank-feeds/mapping/codat-ui",
+      "bank-feeds/mapping/api-mapping",
+      "bank-feeds/mapping/qbo-mapping",
+      "bank-feeds/mapping/sage-mapping",
+    ],
+  },
+  {
+    type: "doc",
+    label: "Pushing transactions",
+    id: "bank-feeds/pushing-transactions",
+  },
   {
     type: "doc",
     id: "bank-feeds/guides/bank-feeds-tutorial",

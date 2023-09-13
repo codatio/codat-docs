@@ -170,14 +170,16 @@ Codat categorizes bank accounts into either credit or debit types for standardiz
 
 Below is a list that matches Open Banking's AccountSubType with Codat's standardized accountType:
 
-- `ChargeCard` → `Credit`
-- `CreditCard` → `Credit`
-- `CurrentAccount` → `Debit`
-- `EMoney` → `Debit`
-- `Loan` → `Credit`
-- `Mortgage` → `Credit`
-- `PrePaidCard` → `Debit`
-- `Savings` → `Debit`
+| AccountSubType   | accountType (Codat) | 
+| ---------------- | ------------------- |
+| `ChargeCard`     | `Credit`            |
+| `CreditCard`     | `Credit`            |
+| `CurrentAccount` | `Debit`             |
+| `EMoney`         | `Debit`             |
+| `Loan`           | `Credit`            |
+| `Mortgage`       | `Credit`            |
+| `PrePaidCard`    | `Debit`             |
+| `Savings`        | `Debit`             |
 
 
 <Tabs>
