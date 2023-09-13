@@ -183,30 +183,6 @@ const prodRework = [
   to: "/commerce/merchant-configuration"
 },
 {
-  from: "/sfc/overview",
-  to: "/commerce/overview"
-},
-{
-  from: "/sfc/sync-for-commerce-knowledge-base/initiating-a-sync",
-  to: "/commerce/advanced-data-sync"
-},
-{
-  from: "/sfc/sync-for-commerce-knowledge-base/monitoring-a-sync",
-  to: "/commerce/advanced-data-sync"
-},
-{
-  from: "/sfc/sync-for-commerce-knowledge-base/sfc-journal-entry-mapping",
-  to: "/commerce/merchant-configuration"
-},
-{
-  from: "/sfc/sync-for-commerce-knowledge-base/sfc-sales-product-categories",
-  to: "/commerce/merchant-configuration"
-},
-{
-  from: "/sfc/sync-for-commerce-knowledge-base/synchronization-schedule",
-  to: "/commerce/synchronization-schedule"
-},
-{
   from: "/sync-for-expenses/configandcategorize",
   to: "/expenses/config-and-categorize"
 },
@@ -613,23 +589,6 @@ module.exports = {
       from: "/integrations/accounting/myob/faq-myob-accountright-live",
       to: "/integrations/accounting/myob/myob-integration-reference", 
     },
-    // --- delete soon
-    {
-      from: "/guides/loan-qualification/introduction",
-      to: "/lending/guides/loan-qualification/introduction",
-    },
-    {
-      from: "/guides/loan-qualification/setting-up",
-      to: "/lending/guides/loan-qualification/setting-up",
-    },
-    {
-      from: "/guides/loan-qualification/process-loan",
-      to: "/lending/guides/loan-qualification/process-loan",
-    },
-    {
-      from: "/guides/loan-qualification/uw-decision",
-      to: "/lending/guides/loan-qualification/uw-decision",
-    },
     {
       from: "/accounting-api/guides/bill-pay/introduction",
       to: "/payables/guides/bill-pay/introduction",
@@ -738,22 +697,9 @@ module.exports = {
       from: "/sfc/mapping-specifications/qbo-mapping-specification",
       to: "/commerce/overview",
     },
-    {
-      from: "/sfc/error-documentation",
-      to: "/commerce/error-documentation",
-    },
-    {
-      from: "/sfc/coming-soon",
-      to: "/commerce/coming-soon",
-    },
 
 
     // expenses
-
-    {
-      from: "/sync-for-expenses/overview",
-      to: "/expenses/overview",
-    },
     {
       from: "/sync-for-expenses/getting-started",
       to: "/expenses/getting-started",
@@ -761,26 +707,6 @@ module.exports = {
     {
       from: "/sync-for-expenses/config-and-categorize",
       to: "/expenses/config-and-categorize",
-    },
-    {
-      from: "/sync-for-expenses/sync-process/sync-process-explained",
-      to: "/expenses/sync-process/sync-process-explained",
-    },
-    {
-      from: "/sync-for-expenses/sync-process/expense-transactions",
-      to: "/expenses/sync-process/expense-transactions",
-    },
-    {
-      from: "/sync-for-expenses/sync-process/syncing-expenses",
-      to: "/expenses/sync-process/syncing-expenses",
-    },
-    {
-      from: "/sync-for-expenses/sync-process/uploading-receipts",
-      to: "/expenses/sync-process/uploading-receipts",
-    },
-    {
-      from: "/sync-for-expenses/sync-process/updating-expenses",
-      to: "/expenses/sync-process/updating-expenses",
     },
     {
       from: "/sync-for-expenses/faq",
