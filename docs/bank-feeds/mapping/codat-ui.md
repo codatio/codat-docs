@@ -12,7 +12,7 @@ import TabItem from "@theme/TabItem";
 import {IntegrationsList} from '@components/global/Integrations'
 import {bankfeedsExternalMappingIntegrations} from '@components/global/Integrations/integrations'
 
-## Codat Mapping User Interface
+# Codat Mapping User Interface
 
 <br/>
 

@@ -13,7 +13,7 @@ import {IntegrationsList} from '@components/global/Integrations'
 import {bankfeedsExternalMappingIntegrations} from '@components/global/Integrations/integrations'
 
 
-## Build your own user interface
+# Build your own user interface
 
 <br/>
 

@@ -62,7 +62,7 @@ Within the bank feeds api, a company represents a business that wishes to export
 
 You can create a company by using the [Create company](/bank-feeds-api#/operations/create-company) endpoint:
 
-```json title="Request"
+```json
 POST /companies
 
 {
@@ -76,7 +76,7 @@ POST /companies
 
 The endpoint returns a JSON response containing the company `id` which you should use to create the data connection and specify which integration the company wishes to establish a bankfeed.
 
-```json title=Response
+```json
 {
     "id": "77921ff9-2491-4dfe-b23b-ff28f3e31e4f",
     "name": "Sawayn Group",
