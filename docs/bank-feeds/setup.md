@@ -12,26 +12,44 @@ import TabItem from "@theme/TabItem"
 
 # Bank feeds Setup
 
+## Overview
+
 ```mermaid
 graph LR;
 
+    style codatCompany fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
+    style codatDataConnection fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
+    style codatSourceAccount fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
+    style targetAccount fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
+    style Mapping fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
+
     subgraph Codat
     direction TB;
-        Company -.- dataconnection[Data Connection]
-        dataconnection -.- sourceAccount[Source Account]
+        codatCompany[<u style='color:#522ce7'>Company</u><br><small>The company represents an organization or SMB that <br> wishes to carry out bank reconciliation in their accounting <br> software, typically each company is one of your customers.</small>]  -.- codatDataConnection[<u style='color:#522ce7'>Data Connection</u><br><small>The data connection establishes a link between <br> a company that exists in Codat and their <br> selected accounting software</small>]
+        click codatCompany "/bank-feeds/setup#creating-a-company" "Companies"
+        codatDataConnection -.- codatSourceAccount[<u style='color:#522ce7'>Source Account</u><br><small>serves as replica of an actual financial account,<br> savings account, or credit card, in Codat</small>]
+        click codatDataConnection "/bank-feeds/setup#creating-a-data-connection" "Data Connections"
+        click codatSourceAccount "/bank-feeds/setup#creating-a-source-account" "Source Accounts"
     end
 
-    subgraph Mapping
+    style Codat fill:#f1f4fa,stroke:#666,stroke-width:0px;
+
+    subgraph Mapping[<u style='color:#522ce7'>Mapping</u><br><small>Is the process the SMB undertakes to authorize<br> and map the source account to a target account in their<br> accounting software to establish a bank feed</small>]
 
     end
     
     subgraph AccountingSoftware[Accounting Software]
     direction TB;
-        targetAccount[Target Account]
+        targetAccount[<style='color:#2a2d3d'>Target Account<br><small>The target account is where transactions <br> are posted to, this enables <br> the company to carry out bank reconciliation</small>] 
     end
 
+    style AccountingSoftware stroke-width:0px;
+
     Codat -.-> Mapping
+          click Mapping "/bank-feeds/mapping" "Mapping"
     Mapping -.-> AccountingSoftware
+
+
 ```
 
 ### Creating a Company
@@ -274,3 +292,11 @@ DELETE /companies/:companyId/connections/:connectionId/connectionInfo/bankFeedAc
 
 
 </details>
+
+
+---
+
+## Read next
+
+[Authorization and mapping](/integrations/bank-feeds/mapping).
+

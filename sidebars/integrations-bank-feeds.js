@@ -60,13 +60,5 @@ module.exports = [
       "integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds-push-bank-transactions",
       "integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds-partner",
     ],
-  },
-  {
-    type: "doc",
-    id: "integrations/bank-feeds/proxy",
-    customProps: {
-      hr: true,
-      section: "Advanced features",
-    },
   }
 ]

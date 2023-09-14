@@ -148,3 +148,9 @@ To allow your SMB users to view and manage their existing bank feed connections,
 ![xero-bank-feeds_account-mapping-ui-manage-feed-connections](/img/bank-feeds/xero-bank-feeds/xero-bank-feeds_account-mapping-ui-manage-feed-connections.png "Codat-provided account mapping UI showing several connected accounts in the bottom panel.")
 
 To disconnect a source bank account, the SMB user hovers over the **connected** status icon and selects **Disconnect**. This immediately disables the bank feed connection. The disconnected account will display in the source bank account dropdown menu when the user next refreshes the page.
+
+
+---
+## Read next
+
+[Pushing transactions](/integrations/bank-feeds/pushing-transactions).

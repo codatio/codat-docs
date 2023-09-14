@@ -87,3 +87,7 @@ Additionally, they select a start date for the bank feed.
 QuickBooks online only supports retrieval of transactions **up to 90 days old**, any transactions prior to this date will be excluded irrespective of what date the user selects.
 :::
 
+---
+## Read next
+
+[Pushing transactions](/integrations/bank-feeds/pushing-transactions).

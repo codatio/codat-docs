@@ -345,3 +345,9 @@ GET /companies/:companyId/connections/:connectionId/bankFeedAccounts/mapping
   </TabItem >
 
 </Tabs>
+
+
+---
+## Read next
+
+[Pushing transactions](/integrations/bank-feeds/pushing-transactions).
