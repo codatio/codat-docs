@@ -2,6 +2,7 @@
 title: "Enhanced Financials Excel report"
 description: "Download the Enhanced Financials report to Excel"
 sidebar_label: "Enhanced Financials report"
+image: "/img/banners/social/lending.png"
 ---
 
 Our Enhanced Financials Excel report gives you the same data you'd get from the [Enhanced Financials](/lending/enhanced-financials/overview) endpoints but in an Excel workbook.  You can use the report to test some companies and familiarise yourself with the data before building to the equivalent API endpoints.

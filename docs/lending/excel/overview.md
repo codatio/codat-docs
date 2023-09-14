@@ -2,6 +2,7 @@
 title: "Lending reports in Excel"
 description: "Describes the process required to generate and download lending reports in Excel format"
 sidebar_label: "Overview"
+image: "/img/banners/social/lending.png"
 ---
 
 The Excel reports endpoints are used to produce and download Excel reports. For more information on available reports, see the [report types](#available-report-types) section.

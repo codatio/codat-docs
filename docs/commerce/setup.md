@@ -2,6 +2,7 @@
 title: "Product setup"
 description: "Learn how to perform the initial setup for the Sync for Commerce product"
 displayed_sidebar: commerce
+image: "/img/banners/social/commerce.png"
 ---
 
 import Tabs from "@theme/Tabs";

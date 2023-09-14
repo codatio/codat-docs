@@ -1,108 +1,115 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import styles from './styles.module.scss';
 
-import { ModalController } from "@components/global/Modal";
-
-const categories = [
+const defaultComponents = [
   {
-    name: "Bonuses",
-    components: [
-      {
-        id: "bonus-perf",
-        name: "Performance bonus",
-      }
-    ],
+    id: "bonus-perf",
+    name: "Performance bonus",
+    category: "bonuses",
   },
   {
-    name: "Benefits",
-    components: [
-      {
-        id: "insurance-health",
-        name: "Health insurance",
-      },
-      {
-        id: "pension",
-        name: "Pension",
-      }
-    ],
+    id: "insurance-health",
+    name: "Health insurance",
+    category: "benefits",
   },
   {
-    name: "Allowances",
-    components: [
-      {
-        id: "learning",
-        name: "Learning & development",
-      }
-    ],
+    id: "pension",
+    name: "Pension",
+    category: "benefits",
+  },
+  {
+    id: "learning",
+    name: "Learning & development",
+    category: "allowances",
+  },
+];
+
+const getAccountsResponse = [
+  {
+    id: "83a6bc48-4adf-4088-b075-032d0676c167",
+    name: "Checking",
+    nominalCode: "35",
+  },
+  {
+    id: "c163f200-b671-470d-9af9-f1b968ff3d4f",
+    name: "Payroll Wage Expenses",
+    nominalCode: "92",
+  },
+  {
+    id: "d3b94f5f-8629-4360-9583-9a9a44ec6970",
+    name: "Payroll Tax Payable",
+    nominalCode: "96",
+  },
+  {
+    id: "402a1cba-b226-4431-9325-9ae2aad62763",
+    name: "Payroll Expenses 401k",
+    nominalCode: "97",
   },
 ]
 
-const PrototypePayroll = () => {
-  return <div className="prototype">
-    <h4>Example mapping UI</h4>
-    <p>Map your payroll components to a relevant account.</p>
+const ComponentInput = ({component, onClick}) => {
+  if (component.mappedAccount) {
+    return <div className={styles.confirmed}>✅ {component.name} → {component.mappedAccount.name}</div>
+  }
 
-    {
-      categories.map(category => {
-        return <div class="input-group">
-          <h5>{category.name}</h5>
-          {category.components.map(component => {
-            return  <div class="input-row">
-              <label for={`account-${component.id}`}>{component.name}</label>
-              <input list="accounts" id={`account-${component.id}`} name={`account-${component.id}`} />
-            </div>
-          })}
-        </div>
-      })
-    }
+  return (
+    <div className="input-row" key={component.id}>
+      <label for={`account-${component.id}`}>
+        {component.name}
+      </label>
 
-    <datalist id="accounts">
-      <option value="Checking">35</option>
-      <option value="Payroll Wage Expenses">92</option>
-      <option value="Payroll Tax Payable">96</option>
-      <option value="Payroll Expenses 401k">97</option>
-    </datalist>
-    
-    <br/>
-    <br/>
-
-    <ModalController text="See underlying accounts data" variant="dark">
-      <code>
-      <pre>
-        {
-          `
-    {
-      "id": "1b6266d1-1e44-46c5-8eb5-a8f98e03124e",
-      "nominalCode": "35",
-      "name": "Checking",
-      "description": "Some description",
-      ...
-    },
-    {
-      "id": "c7e42905-330a-4e4d-b318-0831258bfe10",
-      "nominalCode": "35",
-      "name": "Payroll Wage Expenses",
-      "description": "Some description",
-      ...
-    },
-    {
-      "id": "997552f0-7f9e-4e0d-94a8-3ea20de98c4f",
-      "nominalCode": "35",
-      "name": "Payroll Tax Payable",
-      "description": "Some description",
-      ...
-    },
-    {
-      "id": "6d01fb8f-899c-4e5a-b2c3-8b7e93102da1",
-      "nominalCode": "35",
-      "name": "Payroll Expenses 401k",
-      "description": "Some description",
-      ...
-    },
-          `
-        }</pre>
-      </code>
-    </ModalController>
-  </div>
+      <input
+        list="accounts"
+        id={`account-${component.id}`}
+        name={`account-${component.id}`}
+        onChange={onClick}
+      />
+    </div>
+  );
 }
 
-export default PrototypePayroll
+const PrototypePayroll = () => {
+  const [ components, setComponents ] = useState(defaultComponents)
+
+  const setComponentMapping = component => value => {
+    const newComponents = components
+    const match = getAccountsResponse.find(account => value === account.name)
+    if (!match) return 
+
+    const targetIndex = components.findIndex(targetComponent => targetComponent.id === component)
+    newComponents[targetIndex].mappedAccount = match
+
+    setComponents([...newComponents])
+  }
+
+  const categories = Array.from(new Set(components.map(component => component.category)))
+
+  return (
+    <div className="prototype">
+      <h4>Example mapping UI</h4>
+
+
+      <p>Map your payroll components to a relevant account.</p>
+
+      { categories.map(category => {
+        return (
+          <div className={`input-group ${styles.card}`} key={category}>
+            <h5 className={styles.category}>{category}</h5>
+
+            {components
+              .filter(component => component.category === category)
+              .map((component) => <ComponentInput onClick={e => setComponentMapping(component.id)(e.target.value)} component={component}/>)
+            }
+          </div>
+        )
+      })}
+
+      <datalist id="accounts">
+        {
+          getAccountsResponse.map(account => <option value={account.name}>{account.nominalCode}</option>)
+        }
+      </datalist>
+    </div>
+  );
+};
+export default PrototypePayroll;

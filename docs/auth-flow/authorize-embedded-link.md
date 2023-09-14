@@ -2,14 +2,11 @@
 title: "Authorize with Embedded Link"
 sidebar_label: Overview
 description: "Embed our auth flow in your application with our low-code component"
+image: "/img/auth-flow/embedded-link-selection.png"
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-
-import SocialImages from "@components/global/SocialImages";
-
-<SocialImages imgSrc="img/auth-flow/embedded-link-selection.png"/>
 
 ![](/img/auth-flow/embedded-link-selection.png)
 
@@ -42,13 +39,6 @@ We built Embedded Link to be flexible so that you can integrate and initialize i
 * **React and non-React** JavaScript compatible
 * **Fast implementation** with a pre-built code component
 * **Dynamic imports** meaning your auth flow will never fall behind our API
-
-:::caution Embedded Link is in beta
-
-Embedded Link is in beta, with more enhancements coming soon. You can report any issues with the component by contacting [Codat Support](mailto:support@codat.io).
-
-If you have general feedback on the component, get in touch at [embedded-link@codat.io](mailto:embedded-link@codat.io) or use our <a href="https://portal.productboard.com/codat/12-public-devex-roadmap/c/485-embed-a-pre-built-auth-flow-in-your-website-or-app" target="_blank">public roadmap</a> to request new features and enhancements.
-:::
 
 :::note Dynamic imports
 

@@ -26,7 +26,7 @@ Before you start, decide which type of banking source you want to test. This pro
 Retrieve the platform `key` of the `Demo Bank` data source, or an alternative banking source, and then generate a Link URL.
 
 1. Log in to the [Codat Portal](https://app.codat.io).
-2. Open the [GET integrations](/codat-api#/operations/list-integrations) endpoint in Swagger.
+2. Open the [GET integrations](/platform-api#/operations/list-integrations) endpoint in Swagger.
 3. Send a GET request to return a list of all integrations.
 4. Search for `Demo Bank`, or the alternative banking source you want to use. All banking integrations have a **sourceType** of `Banking`. For example:
 
@@ -44,7 +44,7 @@ Retrieve the platform `key` of the `Demo Bank` data source, or an alternative ba
 
 Use these details to create a company; this returns the Link URL you need for testing. 
 
-5. Open the <a href="/codat-api#/operations/create-company" target="blank">POST companies</a> endpoint. 
+5. Open the <a href="/platform-api#/operations/create-company" target="blank">POST companies</a> endpoint. 
 6. Enter a name for your test company and add the platform `key` for your chosen banking source:
 
 ```
@@ -107,7 +107,7 @@ To perform a quick check in the Codat Portal:
 
 1. On the navigation bar, select **Companies**, and search for the test company that you created.
 1. Click on the company name.
-1. Select **Banking API** in the side navigation menu.
+1. Select **Data > Banking** in the side navigation menu.
 1. In the **Data type** dropdown, select **New** to show the new banking data types.
 1. Click **Banking - Accounts** to view accounts and related transaction data.
 

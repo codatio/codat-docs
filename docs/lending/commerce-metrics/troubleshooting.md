@@ -2,8 +2,7 @@
 title: "Troubleshooting commerce metrics"
 sidebar_label: Troubleshooting
 description: "Quickly resolve common issues related to the generation of commerce metrics"
-createdAt: "2022-04-04T07:04:34.727Z"
-updatedAt: "2022-11-30T14:38:23.838Z"
+image: "/img/banners/social/lending.png"
 ---
 
 ## Required data types

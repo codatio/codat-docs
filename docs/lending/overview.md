@@ -3,6 +3,7 @@ title: "Lending API overview"
 sidebar_label: Lending API
 description: "Learn about the features that make up the Lending API product"
 displayed_sidebar: lending
+image: "/img/banners/social/lending.png"
 hide_title: true
 hide_description: true
 hide_table_of_contents: true
@@ -15,25 +16,23 @@ banner_text: "Our Lending API helps you make smarter credit decisions on small b
 // video_text: What is Lending API?
 ---
 
-import SocialImages from "@components/global/SocialImages";
+import Products from "@components/global/Products";
+import { IntegrationsList } from "@components/global/Integrations";
+import { accountingIntegrations, bankingIntegrations, commerceIntegrations } from "@components/global/Integrations/integrations";
 
-<SocialImages imgSrc="/img/old/f0c6d43-73D1AFFF-6E41-47F3-8E25-BB20DA16C754.jpeg"/>
+## What is it?
 
-## What is Lending API?
+Our Lending API is built on top of the latest accounting, commerce, and banking data, providing you with the most important data points you need to get a full picture of SMB creditworthiness and make a comprehensive assessment of your customers.
 
-The Lending API is built on top of the latest accounting, commerce, and banking data, providing you with the most important data points you need to get a full picture of SMB creditworthiness and make a comprehensive assessment of your customers.
+## Who is it for?
 
-## Who is Lending API for?
+Our Lending API is best for digital lenders, neobanks, corporate card providers, and commerce platforms who want to make an assessment of a small business's financial health and performance.
 
-The Lending API is built for digital lenders, neobanks, corporate card providers, and commerce platforms who want to make an assessment of a small business's financial health and performance.
+## Why use it?
 
-Visit our <a className="external" href="https://knowledge.codat.io/coverage/products/4e02a90f-e61c-463b-9aaf-55b0e5087792" target="_blank">Data coverage explorer</a> to view all accounting, commerce, and banking data sources that are supported in the Lending API.
+We have done the heavy lifting for you by building integrations to the platforms your customers already use and handling the complexity of standardization. Our Lending API comes with a range of features that make customer data easier to collect and process, and gives you insights you didn’t have before on the accuracy of the data shared.
 
-## Why use Lending API?
-
-We have done the heavy lifting for you by building integrations to the platforms your customers already use and handling the complexity of standardization. We also provide pre-calculated accounting and commerce metrics and easily digestible insights that you didn’t have before, helping you automate and make smarter risk assessments.
-
-### With Lending API, you can:
+#### With the Lending API, you can:
 
 1. Automate affordability assessments using categorized bank data.
 2. Assess financial strength of a company with our debt report.
@@ -42,25 +41,19 @@ We have done the heavy lifting for you by building integrations to the platforms
 
 ## Features
 
-Lending API empowers you with a host of features to help you streamline your underwriting process:
+Our Lending API empowers you with a host of features to help you streamline your underwriting process:
 
-<ul className="card-container col-2">
+<ul className="card-container col-3">
   <li className="card">
     <div class="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
-      <h3>Enhanced financials</h3>
+      <h3>Bank statements</h3>
     </div>
     <p>
-      We automatically map your SMB customers' income statement and balance
-      sheet to a single standard chart of accounts. This means you can compare
-      across customers easily. Explore {" "}
-      <a href="/lending/enhanced-financials/overview">
-        Enhanced Financials
-      </a>
-      .
+      Underwrite with accurate, real-time cash flows enriched with spend and income categories.
     </p>
   </li>
   
@@ -70,15 +63,10 @@ Lending API empowers you with a host of features to help you streamline your und
         src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
-      <h3>Commerce sales metrics</h3>
+      <h3>Sales</h3>
     </div>
     <p>
-      We provide the precalculated metrics you need to assess a customer’s
-      revenue, orders, and customer retention profile. Explore{" "}
-      <a href="/lending/commerce-metrics/overview">
-        Commerce Metrics
-      </a>
-      .
+      Underwrite with real-time data from SMB's payments and shopping platforms.
     </p>
   </li>
 
@@ -88,14 +76,10 @@ Lending API empowers you with a host of features to help you streamline your und
         src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
-      <h3>Enhanced invoices</h3>
+      <h3>Financial statements</h3>
     </div>
     <p>
-      Verify payments that have been made on invoices against an immutable source. Explore{" "}
-      <a href="/lending/enhanced-invoices/overview">
-        Enhanced invoices
-      </a>
-      .
+      Automate financial statement and ratio analysis with a fully standardized profit and loss and balance sheet.
     </p>
   </li>
 
@@ -105,15 +89,10 @@ Lending API empowers you with a host of features to help you streamline your und
         src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
-      <h3>Data integrity</h3>
+      <h3>Liabilities</h3>
     </div>
     <p>
-      We cross-reference accounting data with banking data to verify data
-      accuracy. Explore{" "}
-      <a href="/lending/data-integrity/overview">
-        Data Integrity
-      </a>
-      .
+      Comprehensive loan insights and credit history analysis.
     </p>
   </li>
 
@@ -123,14 +102,10 @@ Lending API empowers you with a host of features to help you streamline your und
         src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
-      <h3>Enhanced cash flow</h3>
+      <h3>Accounts receivable</h3>
     </div>
     <p>
-      Categorized banking transactions that give lenders the insights to accurately forecast a company's cash flow. Explore{" "}
-      <a href="/lending/enhanced-cash-flow/overview">
-        Enhanced cash flow
-      </a>
-      .
+      Assess debtor risk in real time with accounts receivable insights.
     </p>
   </li>
 
@@ -140,15 +115,30 @@ Lending API empowers you with a host of features to help you streamline your und
         src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
-      <h3>Enhanced loan liabilities</h3>
+      <h3>Accounts payable</h3>
     </div>
     <p>
-      Automatically identify a company's loan obligations from an array of disparate data sources. Explore{" "}
-      <a href="/lending/enhanced-liabilities/overview">
-        Enhanced loan liabilities
-      </a>
-      .
+      Enhance underwriting precision with streamlined accounts payable insights.
     </p>
   </li>
 
 </ul>
+
+## Supported integrations
+
+#### Accounting
+
+<IntegrationsList integrations={accountingIntegrations} />
+
+#### Banking
+
+<IntegrationsList integrations={bankingIntegrations} />
+
+#### Commerce
+
+<IntegrationsList integrations={commerceIntegrations} />  
+
+---
+## Read next
+
+* [Get started](/lending/get-started) building with our Lending API

@@ -1,10 +1,11 @@
 ---
 title: "Categorization of accounts"
 description: "Reference document for the Account Categorization endpoints"
-createdAt: "2022-02-21T12:45:33.573Z"
-updatedAt: "2022-11-02T14:38:29.977Z"
+image: "/img/banners/social/lending.png"
 ---
+
 :::caution Account category versions
+
 This categorization of accounts via only applies to our legacy [Enhanced Financials](/lending/enhanced-financials/legacy/financials). For categorization using the latest categories, explore the [revised Enhanced Financials](/lending/enhanced-financials/overview).
 :::
 
@@ -115,7 +116,7 @@ GET /data/companies/{companyId}/connections/{connectionId}/lending/accounts/cate
 | type          |  _string_   | The suggested account type.                                                 |
 | subtype       |  _string_   | The suggested account subtype.                                              |
 | detailType    |  _string_   | The suggested account detail type.                                          |
-| modifiedDate  | See [Date](/codat-api#/schemas/DateTime)    | The date the category was suggested for the account, YYYY-MM-DDT00:00:00Z.  |
+| modifiedDate  | See [Date](/platform-api#/schemas/DateTime)    | The date the category was suggested for the account, YYYY-MM-DDT00:00:00Z.  |
 
 # Confirmed
 | Field         | Type        | Description                                                         |
@@ -123,7 +124,7 @@ GET /data/companies/{companyId}/connections/{connectionId}/lending/accounts/cate
 | type          |  _string_   | The confirmed account type.                                         |
 | subtype       |  _string_   | The confirmed account subtype.                                      |
 | detailType    |  _string_   | The confirmed account detail type.                                  |
-| modifiedDate  | See [Date](/codat-api#/schemas/DateTime)   | The date the account category was confirmed, YYYY-MM-DDT00:00:00Z.  |
+| modifiedDate  | See [Date](/platform-api#/schemas/DateTime)   | The date the account category was confirmed, YYYY-MM-DDT00:00:00Z.  |
 
 ```
 {

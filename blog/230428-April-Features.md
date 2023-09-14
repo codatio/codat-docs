@@ -9,9 +9,9 @@ import Loom from '@components/global/Loom'
 
 This month, our product and engineering teams have been working on expanding coverage across our existing integrations as well as introducing some exciting new features.
 
-In the following videos, Codat engineers demonstrate some of this new functionality.
-
 <!--truncate-->
+
+In the following videos, Codat engineers demonstrate some of this new functionality.
 
 ## Assess: Enhanced Invoices Report
 

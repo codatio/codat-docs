@@ -5,7 +5,7 @@ tags: ["Survey"]
 authors: jasond-s
 ---
 
-**We want to understand the technologies you're using so we can support you.**
+We want to understand the technologies you're using so we can support you.
 
 <!--truncate-->
 

@@ -32,7 +32,7 @@ We currently cover the following integrations and data types:
 
 ## Configure supplemental data
 
-You'll need to specify what supplemental data should be passed in the response for each integration and data type pair you require. To do so, use the [Configure supplemental data](/codat-api#/operations/configure-supplemental-data) endpoint.
+You'll need to specify what supplemental data should be passed in the response for each integration and data type pair you require. To do so, use the [Configure supplemental data](/platform-api#/operations/configure-supplemental-data) endpoint.
 
 ```http
 /integrations/{platformKey}/datatypes/{datatype}/supplementalDataConfig
@@ -73,7 +73,7 @@ You can use dot notation to retrieve nested properties from within the supplemen
 }
 ```
 
-Once set, you can retrieve an existing supplemental data configuration by using the [Get supplemental data configuration](/codat-api#/operations/get-supplemental-data-configuration) endpoint:
+Once set, you can retrieve an existing supplemental data configuration by using the [Get supplemental data configuration](/platform-api#/operations/get-supplemental-data-configuration) endpoint:
 
 ```http
 GET /integrations​/{platformKey}/datatypes/{datatype}/supplementalDataConfig

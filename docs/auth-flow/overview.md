@@ -3,8 +3,6 @@ title: "Authorization flow"
 description: "Explore how your customers can authorize access to their data"
 ---
 
-![Conceptual drawing of a lock and key](/img/old/b80d96c-19B0071C-0CCD-4423-8903-A979A32DD225.jpeg)
-
 Authorization is a key part of any Codat solution - every Company must authorize access to their data before you can pull that data. A frictionless and reassuring auth flow is essential for accessing your SMB customers' data.
 
 ## Building your auth flow

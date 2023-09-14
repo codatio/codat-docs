@@ -1,5 +1,6 @@
 ---
 title: "Coming soon!"
+image: "/img/banners/social/commerce.png"
 ---
 
 As Sync for Commerce is in beta, we're constantly working on improving the experience and adding new features.

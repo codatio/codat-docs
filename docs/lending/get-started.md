@@ -1,97 +1,122 @@
 ---
 title: "Get started with Lending API"
 sidebar_label: Get started
-description: "Instructions for getting started with Lending and tables of supported features for accounting, banking and commerce data sources"
+description: "Learn how to perform the initial setup for the Lending API product"
+image: "/img/banners/social/lending.png"
 ---
 
-This document helps you get started with Lending, and covers both the API and the no-code option available in the Portal.
+import { IntegrationsList } from "@components/global/Integrations";
+import { accountingIntegrations, bankingIntegrations, commerceIntegrations } from "@components/global/Integrations/integrations";
 
-## Enable Lending
+## Enable Lending API
 
 1. Open the <a href="https://app.codat.io" target="_blank">Codat Portal</a> and sign in.
-2. Click on **Company**.
-3. In the left hand navigation, click _Lending_.
+2. Click on **Settings > Organizational settings > Products**.
+3. In the list of products, find _Lending API_ and click **Enable**. Then, follow the on-screen prompt.
 
-![Lending Profit and Loss page](/img/old/cdf1e35-Banner_1.png)
+## Configure Lending API
 
-4. If you have Lending enabled, you will be taken to the **Lending Profit and Loss** page. For more information, visit the [Lending in the Portal](/lending/portal/overview) documentation.
-5. If you don't have Lending access, you can enable it by following the onscreen prompt.
+### Data sources
 
-## Prerequisites
+In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** to enable and set up the integrations that will serve as a data source for the product. Follow the respective guides for integration-specific instructions. 
 
-Configure your data type settings. Click on the **Settings** tab in the top menu and then _Data types_. Ensure you have the following data types enabled:
+Data source coverage varies by feature, so be sure to review the coverage for the features you want to use. 
 
-- Company
-- Chart of Accounts
-- Balance Sheet
-- Profit and Loss
-- Bank Accounts
-- Bank Transactions
-- Banking - Accounts
-- Banking - Transactions
-- Banking - Transaction Categories
-- Banking - Account Balances
-- Commerce - Company Info
-- Commerce - Customers
-- Commerce - Orders
+#### Accounting
 
-If you don't have all of these enabled, some features of Lending will not work.
+<IntegrationsList integrations={accountingIntegrations} />
 
-Configure your _Link settings_. Click on the **Settings** tab in the top menu and then navigate to _Auth flow > Link_. Scroll down to _Integration categories_ and ensure _Accounting_, _Commerce_ and _Banking_ data types are enabled.
+#### Banking
 
-## Features
+<IntegrationsList integrations={bankingIntegrations} />
 
-<iframe
-  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=1429551319&amp;single=false&amp;widget=true&amp;headers=false"
-  frameborder="0"
-  style={{ top: 0, left: 0, width: "100%", height: "660px" }}
-></iframe>
+#### Commerce
 
-**Categories**
+<IntegrationsList integrations={commerceIntegrations} />
 
-The chart of accounts defines the financial structure of a company by providing a list of all accounts used in the company's general ledger. The Categories feature lets you and your customers categorize transactions into one of the account types, such as Assets, Liabilities, Income, Expenses. There are 162 account categories defined that businesses can use.
+### Authorization flow
 
-Other features of Lending leverages the Categories feature and are reliant on complete and accurate categorizations to produce meaningful results. See our categories documentation:
+As part of using the Lending API, you will need your customers to authorize your access to their data. To do so, use Link - our pre-built, conversion-optimized, and white-labelled authorization journey. 
 
-- Portal: Categorization of accounts
-- API: Categorization of accounts
+You can fully embed Link in your experience by using our [Embedded Link](/auth-flow/authorize-embedded-link) component in your front-end code or choose our out-of-the-box [Hosted Link](/auth-flow/authorize-hosted-link) authorization flow to get up and running as quick as possible. 
 
-**Enhanced Financials**
+The solution lets you tailor the authorization journey to your business needs. You can:
 
-These are fully categorized profit and loss, and balance sheet statements broken down by three levels of categories and the company's Chart of Accounts.
+* [Customize Link settings](/auth-flow/customize/customize-link)
+* [Set up company branding](/auth-flow/customize/branding)
+* [Set up redirects](/auth-flow/customize/set-up-redirects)
 
-**Accounting Financial Metrics**
+### Data types
 
-This feature provides a set of pre-calculated accounting ratios and metrics used to assess company financial performance.
+Enable the minimum set of [data types](/core-concepts/data-type-settings#override-the-default-sync-settings) required for the Lending API. Each feature may also have additional data type requirements, so be sure to review these for the feature you want to use.
 
-**Data integrity**
+In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations > Data types**. As a minimum, you need the following data types enabled:
 
-The Data Integrity feature matches bank accounts and transactions reported in an accounting package against bank accounts and transactions reported in banking sources.
+|  Data source          | Accounting                                                                                                                                                                                            | Banking                                                                                                                                                                             | Commerce                                                                                                     |
+|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| Data types | `company`<br/>`chartOfAccounts`<br/>`balanceSheet`<br/>`profitAndLoss`<br/>`bankAccounts`<br/>`bankTransactions` | `banking-accounts`<br/>`banking-transactions`<br/>`banking-transactionCategories`<br/>`banking-accountBalances` | `commerce-companyInfo`<br/>`commerce-customers`<br/>`commerce-orders` |
 
-**Commerce Metrics**
+Configure the solution to refresh data when you need it by [setting a synchronization frequency](/core-concepts/data-type-settings#choose-a-synchronization-frequency) on the same screen. We recommend setting it to a daily or a monthly sync.
 
-This feature provides a set of pre-calculated commerce ratios and metrics used to assess company financial performance.
+### Webhooks
 
-We only produce commerce metrics for platforms that support the following data types:
+Codat supports a range of [webhooks](/using-the-api/webhooks/core-rules-types) to help you manage your data pipelines. Many of these webhooks send a notification for each `dataType` separately.
 
-- Commerce - Company Info
-- Commerce - Customers
-- Commerce - Orders
+In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Rules** and click **Create new rule** to set up the following webhooks and get the most out of Lending API:
 
-## How can you use it
+- [Dataset status has changed to an error state](/using-the-api/webhooks/core-rules-types#dataset-status-has-changed-to-an-error-state)  
 
-Lending is available as a no-code product in the Portal or as APIs to incorporate in your own solutions.
+  If you receive a notification from this webhook, it means an issue occured when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
+ 
+- [Dataset data changed](/using-the-api/webhooks/core-rules-types#dataset-data-changed)  
 
-### Portal
+  If you receive a notification from this webhook, it means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform.
 
-Visit our [Lending in the Portal](/lending/portal/overview) documentation.
+- [Account categories updated](/using-the-api/webhooks/core-rules-types#account-categories-updated)
 
-### API
+  If you receive a notification from this webhook, it means categories associated with accounts have been updated for the [categorized profit and loss statement](https://docs.codat.io/lending-api#/operations/get-enhanced-profit-and-loss-accounts) and the [categorized balance sheet statement](https://docs.codat.io/lending-api#/operations/get-enhanced-balance-sheet-accounts) components. 
+  
 
-Explore the features that make up Lending:
+## Use Lending API
 
-- [Categories](/lending/categories)
-- [Enhanced Financials](/lending/enhanced-financials/overview)
-- [Accounting Metrics](/lending/metrics/accounting/api-financial-metrics)
-- [Commerce Metrics](/lending/metrics/commerce/overview)
-- [Data Integrity](/lending/data-integrity/overview)
+<ul className="card-container col-2">
+  <li className="card">
+    <div class="header">
+      <img
+        src="/img/wp-icons/copy-feature-bullet.svg"
+        class="mini-icon"
+      />
+      <h3>Underwriters</h3>
+    </div>
+    <p>
+      Make use of our <a href="/lending/features/excel-download-overview">Excel export reports</a> to audit source data and perform underwriting with confidence.
+    </p>
+  </li>
+  
+  <li className="card">
+    <div class="header">
+      <img
+        src="/img/wp-icons/copy-feature-bullet.svg"
+        class="mini-icon"
+      />
+      <h3>Developers</h3>
+    </div>
+    <p>
+      Interact with our <a href="/lending/features/excel-download-overview">Lending API reference</a> to understand required body parameters, responses, and errors. Use our <a href="/get-started/libraries">client SDKs</a> to simplify your implementation journey.
+    </p>
+  </li>
+
+  </ul>
+
+--- 
+
+## Read next
+
+Explore the features that make up our Lending API:
+
+- [Bank statements](/lending/features/bank-statements-overview)
+- [Sales](/lending/features/sales-overview)
+- [Financial statements](/lending/features/financial-statements-overview)
+- [Liabilities](/lending/features/liabilities-overview)
+- [Accounts receivable](/lending/features/accounts-receivable-overview)
+- [Accounts payable](/lending/features/accounts-payable-overview)

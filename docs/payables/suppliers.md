@@ -1,6 +1,7 @@
 ---
 title: Managing suppliers
 description: "Create and update suppliers using Sync for Payables"
+image: "/img/banners/social/payables.png"
 ---
 
 In Sync for Payables, a [supplier](/sync-for-payables-api#/schemas/Supplier) represents a business or sole trader that provides goods or services to a company.

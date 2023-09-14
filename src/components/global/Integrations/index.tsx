@@ -1,7 +1,7 @@
 import React, { useState, Suspense } from "react";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import styles from "./styles.module.scss";
-import { integrations } from "./integrations";
+import { allIntegrations } from "./integrations";
 
 const Integration = ({integration}) => {
   return (
@@ -21,12 +21,19 @@ const Integration = ({integration}) => {
   )
 }
 
-export const IntegrationsList = ({integrations}) => {
-  if (integrations.length && integrations.length >= 1) {
+export const IntegrationsList = (props) => {
+  const { sourceType, filter, searchString, integrations=allIntegrations } = props
+
+  const validIntegrations = integrations
+    .filter(integration => !searchString || integration.name.toLowerCase().includes(searchString.toLowerCase()))
+    .filter(integration => !sourceType || integration.sourceType === sourceType)
+    .filter(integration => !filter || filter.find(intName => integration.name === intName))
+
+  if (validIntegrations?.length >= 1) {
     return (
       <div className={styles.integrationsList}>
         {
-          integrations.map((integration, i) => {
+          validIntegrations.map((integration, i) => {
             return <Integration key={i} integration={integration}/>
           })
         }
@@ -39,7 +46,9 @@ export const IntegrationsList = ({integrations}) => {
   )
 }
 
-const Integrations = ({type, search=true}) => {
+const Integrations = (props) => {
+  const { sourceType, filter, search=true, integrations=allIntegrations } = props
+  
   const [searchValue, setSearchValue] = useState('');
 
   const handleOnChange = event => {
@@ -47,54 +56,43 @@ const Integrations = ({type, search=true}) => {
     setSearchValue(value);
   };
 
-  const relevantIntegrations = type ? integrations.filter(integration => integration.type === type) : integrations
-
-  const filteredIntegrations = searchValue === ""
-    ? relevantIntegrations
-    : relevantIntegrations.filter(integration => integration.name.toLowerCase().includes(searchValue.toLowerCase()))
-
-  const accountingIntegrations = filteredIntegrations.filter(integration => integration.type === "accounting")
-  const bankingIntegrations = filteredIntegrations.filter(integration => integration.type === "banking")
-  const commerceIntegrations = filteredIntegrations.filter(integration => integration.type === "commerce")
-  const bankFeedsIntegrations = filteredIntegrations.filter(integration => integration.type === "bankfeeds")
-
   return (
     <div>
       { search && <input className={styles.search} value={searchValue} onChange={handleOnChange} type="text" placeholder="Enter an integration name..." /> }
 
       {
-        accountingIntegrations.length > 0 &&
+        integrations?.length > 0 &&
         <>
           <h2 className={styles.header}>Accounting</h2>
 
-          <IntegrationsList integrations={accountingIntegrations}/>
+          <IntegrationsList sourceType="accounting"/>
         </>
       }
 
       {
-        bankingIntegrations.length > 0 &&
+        integrations?.length > 0 &&
         <>
           <h2 className={styles.header}>Banking</h2>
 
-          <IntegrationsList integrations={bankingIntegrations}/>
+          <IntegrationsList sourceType="banking"/>
         </>
       }
 
       {
-        commerceIntegrations.length > 0 &&
+        integrations?.length > 0 &&
         <>
           <h2 className={styles.header}>Commerce</h2>
 
-          <IntegrationsList integrations={commerceIntegrations}/>
+          <IntegrationsList sourceType="commerce"/>
         </>
       }
 
       {
-        bankFeedsIntegrations.length > 0 &&
+        integrations?.length > 0 &&
         <>
           <h2 className={styles.header}>Bank feeds</h2>
 
-          <IntegrationsList integrations={bankFeedsIntegrations}/>
+          <IntegrationsList sourceType="bankfeeds"/>
         </>
       }
     </div>

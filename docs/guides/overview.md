@@ -12,26 +12,6 @@ Our current guides and tutorials:
   <li className="card mini">
     <div className="card-row">
       <div className="header">
-        <a href="/lending/guides/loan-qualification/introduction">
-          <img
-            src="/img/logos/usecases/company-info.svg"
-            className="icon usecase"
-          />
-        </a>
-      </div>
-      
-      <div className="content">
-        <h4>Loan qualification</h4>
-        <p>
-          <a href="/lending/guides/loan-qualification/introduction">See the tutorial →</a>
-        </p>    
-      </div>
-    </div>
-    <p>Lend with Codat and our Lending product</p>
-  </li>
-  <li className="card mini">
-    <div className="card-row">
-      <div className="header">
         <a href="/lending/guides/invoice-finance/introduction">
           <img
             src="/img/logos/usecases/lending.svg"

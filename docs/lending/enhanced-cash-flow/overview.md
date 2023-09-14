@@ -2,6 +2,7 @@
 title: "Cash flow"
 description: "Introduction to the Enhanced Cash Flow Transactions report"
 sidebar_label: "Cash flow"
+image: "/img/banners/social/lending.png"
 ---
 
 The **Get enhanced cash flow transactions** endpoint returns a fully categorized list of banking transactions for a company, giving lenders the insights to accurately forecast a company's cash flow. Refer to our [API reference](/lending-api#/operations/get-enhanced-cash-flow-transactions) to try it out, or use the following path:

@@ -3,6 +3,7 @@ title: "Advanced product configuration features"
 description: "Learn about additional configuration features available with Sync for Commerce"
 sidebar_label: "Product configuration"
 displayed_sidebar: commerce
+image: "/img/banners/social/commerce.png"
 ---
 
 Once you have understood and performed the initial setup of our Sync for Commerce product, you can use its advanced features to enhance your merchant's experience of syncing sales data. 

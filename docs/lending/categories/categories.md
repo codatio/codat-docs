@@ -1,11 +1,11 @@
 ---
 title: "Account categorization"
 description: "Categorization standardizes financial statements which are used to produce insights about your customers' financial health"
-createdAt: "2022-02-21T13:57:52.224Z"
-updatedAt: "2022-11-02T14:38:07.399Z"
+image: "/img/banners/social/lending.png"
 ---
 
 :::caution Account category versions
+
 This categorization of accounts only applies to our legacy [Enhanced Financials](/lending/enhanced-financials/legacy/financials). For categorization using the latest categories, explore the [revised Enhanced Financials](/lending/enhanced-financials/overview) endpoints.
 :::
 

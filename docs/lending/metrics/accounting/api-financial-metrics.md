@@ -34,7 +34,7 @@ This endpoint retrieves all the available financial performance metrics held aga
 
 |                          Parameter                           |    Type    | Description | Required |
 | :----------------------------------------------------------- | :--------- | :---------- | :--------|
-|                        **reportDate**                        |  _string_ <br/> See [Date](/codat-api#/schemas/DateTime)  | YYYY-MM-DD <br/> The date in which the report is created up to. Users must specify a specific date, however the response will be provided for the full month.| Required |
+|                        **reportDate**                        |  _string_ <br/> See [Date](/platform-api#/schemas/DateTime)  | YYYY-MM-DD <br/> The date in which the report is created up to. Users must specify a specific date, however the response will be provided for the full month.| Required |
 | **periodLength** | _integer_ | The number of months per period. E.g. 2 = 2 months per period. | Required |
 | **numberOfPeriods** | _integer_ | The number of periods to return. <br/> There will be no pagination as a query parameter, however Codat will limit the number of periods to request to 12 periods.| Required |
 | **showMetricInputs** | _boolean_| If set to True, then the system includes the input values within the response. <br/> Default to False. | Optional |
@@ -53,8 +53,8 @@ This endpoint retrieves all the available financial performance metrics held aga
 
 |                            Field                             |                  Type                  | Description |
 | :----------------------------------------------------------- | :------------------------------------- | :---------- |
-|                         **fromDate**                         |                _string_                | See [Date](/codat-api#/schemas/DateTime) <br/> The date from which the report starts. <br/> YYYY-MM-DD | 
-| **toDate** | _string_ | See [Date](/codat-api#/schemas/DateTime) <br/> The date on which the report ends (inclusive of day). <br/> YYYY-MM-DD |
+|                         **fromDate**                         |                _string_                | See [Date](/platform-api#/schemas/DateTime) <br/> The date from which the report starts. <br/> YYYY-MM-DD | 
+| **toDate** | _string_ | See [Date](/platform-api#/schemas/DateTime) <br/> The date on which the report ends (inclusive of day). <br/> YYYY-MM-DD |
 | **value**  | _number_ | The top level metric value that is calculated for the specified period. <br/> If the system cannot calculate for that period, the value will be null. <br/> The system will still show the metric inputs.|
 | **inputs** | _array_  | See [Inputs](#inputs) <br/> Array of input values that feed into the metric calculation. <br/> By default, this array is not returned (see Parameters section) → “Show metric inputs”. <br/> If the query parameter `showMetricInputs = true`, then this array gets returned in the response. |
 

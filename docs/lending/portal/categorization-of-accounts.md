@@ -1,8 +1,7 @@
 ---
 title: "Legacy categorization of accounts"
 description: "Categorization of accounts standardizes financial statements which are used to produce insights about your customers' financial health"
-createdAt: "2022-04-13T12:10:47.847Z"
-updatedAt: "2022-11-02T14:49:04.132Z"
+image: "/img/banners/social/lending.png"
 ---
 
 :::caution Account categorization versions - legacy

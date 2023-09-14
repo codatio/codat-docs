@@ -168,4 +168,4 @@ In sections below, you will find some integration-specific properties commonly u
 ---
 ## Read next
 
-- Experiment with supplemental data endpoints in our [API reference](https://docs.codat.io/codat-api#/operations/configure-supplemental-data).
+- Experiment with supplemental data endpoints in our [API reference](https://docs.codat.io/platform-api#/operations/configure-supplemental-data).

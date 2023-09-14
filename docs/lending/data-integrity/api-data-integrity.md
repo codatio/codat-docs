@@ -1,8 +1,7 @@
 ---
 title: "Data Integrity"
 description: "Reference document for the data integrity endpoints"
-createdAt: "2022-01-13T14:46:31.445Z"
-updatedAt: "2022-11-22T16:18:03.295Z"
+image: "/img/banners/social/lending.png"
 ---
 
 The Data Integrity API consists of the following endpoints:
@@ -71,7 +70,7 @@ The endpoint is available in our <a href="/assess-api#/operations/get-dataIntegr
 #### Status info
 | **Field** | Type | Description |
 |---|---|---|
-| **lastMatched** | _string_, See [Date](/codat-api#/schemas/DateTime) | The date the matching algorithm last ran against the company’s bank transactions. |
+| **lastMatched** | _string_, See [Date](/platform-api#/schemas/DateTime) | The date the matching algorithm last ran against the company’s bank transactions. |
 | **currentStatus** | _string_ | One of the following: <br/> `Unknown`, <br/> `DoesNotExist` - have never attempted a match run for this company as do not have datasets required, <br/> `Error` - something went wrong upon matching, <br/> `Processing`, <br/> `Complete`  |
 | **statusMessage** | _string_ | Detailed explanation supporting the status value. |
 
@@ -93,10 +92,10 @@ The endpoint is available in our <a href="/assess-api#/operations/get-dataIntegr
 #### Dates
 | **Field**              | Type                                         | Description                                                                      |
 |------------------------|----------------------------------------------|----------------------------------------------------------------------------------|
-| **minDate**            | _string_, See [Date](/codat-api#/schemas/DateTime) | Earliest date of transaction set.                                                |
-| **maxDate**            | _string_, See [Date](/codat-api#/schemas/DateTime) | Latest date of transaction set.                                                  |
-| **minOverlappingDate** | _string_, See [Date](/codat-api#/schemas/DateTime) | Earliest date where transactions exist in both accounting and banking platforms. |
-| **maxOverlappingDate** | _string_, See [Date](/codat-api#/schemas/DateTime) | Latest date where transactions exist in both account and banking platforms.      |
+| **minDate**            | _string_, See [Date](/platform-api#/schemas/DateTime) | Earliest date of transaction set.                                                |
+| **maxDate**            | _string_, See [Date](/platform-api#/schemas/DateTime) | Latest date of transaction set.                                                  |
+| **minOverlappingDate** | _string_, See [Date](/platform-api#/schemas/DateTime) | Earliest date where transactions exist in both accounting and banking platforms. |
+| **maxOverlappingDate** | _string_, See [Date](/platform-api#/schemas/DateTime) | Latest date where transactions exist in both account and banking platforms.      |
 
 
 ### Sample response
@@ -316,7 +315,7 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 | **type** | _string_ | The data type of the record.  |
 | **connectionId** | _string_ | ID GUID representing the connection of the accounting or banking platform.  |
 | **id** | _string_ | ID GUID of the transaction. This is unique to data integrity.|
-| **date** | _date_, See [Date](/codat-api#/schemas/DateTime) | The date of the transaction.  |
+| **date** | _date_, See [Date](/platform-api#/schemas/DateTime) | The date of the transaction.  |
 | **description** | _string_ | The transaction description.  |
 | **amount** | _number_ | The transaction value.  |
 | **currency** | _string_ | The currency of the transaction.  |
@@ -330,7 +329,7 @@ This outlines the transaction(s) in which the original transaction has matched w
 | **type** | _string_ | The data type which the data type in the URL has been matched against. <br/> For example, if you've matched _accountTransactions_ and _banking-transactions_, and you call this endpoint with _accountTransactions_ in the URL, this property would be _banking-transactions_. |
 | **connectionId** | _string_ | ID GUID representing the connection of the accounting or banking platform. |
 | **id** | _string_ | ID GUID of the transaction. This is unique to data integrity.|
-| **date** | _date_, See [Date](/codat-api#/schemas/DateTime) | The date of the transaction.  |
+| **date** | _date_, See [Date](/platform-api#/schemas/DateTime) | The date of the transaction.  |
 | **description** | _string_ | The transaction description.  |
 | **amount** | _number_ | The transaction value.  |
 | **currency** | _string_ | The currency of the transaction.  |
