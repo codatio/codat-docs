@@ -144,7 +144,7 @@ For example:
 
 ![Sage account selection screen](/img/old/f73be1e-redirect_screen.PNG "Sage dialog listing the available source bank accounts")
 
-The dataConnection status will then change to linked, and which point you will be able to [push bankTransactions](/bank-feeds/bank-transactions).
+The dataConnection status will then change to linked, and which point you will be able to [push bankTransactions](/bank-feeds/pushing-transactions).
 
 
 ---
