@@ -293,10 +293,7 @@
           {
             "$ref": "#/components/parameters/orderBy"
           }
-        ],
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
-        }
+        ]
       },
       "post": {
         "summary": "Create company",
@@ -583,9 +580,6 @@
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
           }
-        },
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
         }
       },
       "post": {
@@ -1267,10 +1261,7 @@
         ],
         "summary": "List sync transactions",
         "description": "Gets the transactions and status for a sync",
-        "operationId": "list-sync-transactions",
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
-        }
+        "operationId": "list-sync-transactions"
       },
       "parameters": [
         {
@@ -1751,9 +1742,6 @@
         ],
         "operationId": "list-pull-operations",
         "x-speakeasy-name-override": "list-pull-operations",
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
-        },
         "responses": {
           "200": {
             "description": "OK",
@@ -1923,9 +1911,6 @@
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
           }
-        },
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
         }
       }
     },
@@ -3856,10 +3841,7 @@
           }
         },
         "description": "The *List customers* endpoint returns a list of [customers](https://docs.codat.io/accounting-api#/schemas/Customer) for a given company's connection.\n\n[Customers](https://docs.codat.io/accounting-api#/schemas/Customer) are people or organizations that buy goods or services from the SMB.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-expenses-api#/operations/refresh-company-data).\n    ",
-        "operationId": "list-customers",
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
-        }
+        "operationId": "list-customers"
       }
     },
     "/companies/{companyId}/data/customers/{customerId}": {
@@ -5867,10 +5849,7 @@
           }
         },
         "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/accounting-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/accounting-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-expenses-api#/operations/refresh-company-data).\n    ",
-        "operationId": "list-suppliers",
-        "x-speakeasy-pagination": {
-          "$ref": "#/x-codat-speakeasy-pagination"
-        }
+        "operationId": "list-suppliers"
       }
     },
     "/companies/{companyId}/data/suppliers/{supplierId}": {
@@ -7219,25 +7198,395 @@
       },
       "Supplier": {
         "title": "Supplier",
-        "x-internal": true,
+        "description": "> View the coverage for suppliers in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nFrom the **Suppliers** endpoints, you can retrieve a list of [all the suppliers for a company](https://docs.codat.io/accounting-api#/operations/list-suppliers). Suppliers' data links to accounts payable [bills](https://docs.codat.io/accounting-api#/schemas/Bill).",
         "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "id of the supplier for all purchases to be associated to",
-            "example": "124"
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Identifier for the supplier, unique to the company in the accounting platform."
+              },
+              "supplierName": {
+                "type": "string",
+                "nullable": true,
+                "description": "Name of the supplier as recorded in the accounting system, typically the company name."
+              },
+              "contactName": {
+                "type": "string",
+                "nullable": true,
+                "description": "Name of the main contact for the supplier."
+              },
+              "emailAddress": {
+                "type": "string",
+                "nullable": true,
+                "description": "Email address that the supplier may be contacted on."
+              },
+              "phone": {
+                "type": "string",
+                "nullable": true,
+                "description": "Phone number that the supplier may be contacted on.",
+                "examples": [
+                  "+44 25691 154789",
+                  "(877) 492-8687",
+                  "01224 658 999"
+                ]
+              },
+              "addresses": {
+                "type": "array",
+                "nullable": true,
+                "description": "An array of Addresses.",
+                "items": {
+                  "title": "Accounting address",
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "$ref": "#/components/schemas/Supplier/allOf/0/properties/addresses/items/definitions/accountingAddressType"
+                    },
+                    "line1": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Line 1 of the customer address."
+                    },
+                    "line2": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Line 2 of the customer address."
+                    },
+                    "city": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "City of the customer address."
+                    },
+                    "region": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Region of the customer address."
+                    },
+                    "country": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Country of the customer address."
+                    },
+                    "postalCode": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Postal code or zip code."
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "definitions": {
+                    "accountingAddressType": {
+                      "description": "The type of the address",
+                      "type": "string",
+                      "enum": [
+                        "Unknown",
+                        "Billing",
+                        "Delivery"
+                      ]
+                    }
+                  }
+                }
+              },
+              "registrationNumber": {
+                "type": "string",
+                "nullable": true,
+                "description": "Company number of the supplier. In the UK, this is typically the company registration number issued by Companies House."
+              },
+              "taxNumber": {
+                "type": "string",
+                "nullable": true,
+                "description": "Supplier's company tax number."
+              },
+              "status": {
+                "$ref": "#/components/schemas/Supplier/definitions/supplierStatus"
+              },
+              "defaultCurrency": {
+                "type": "string",
+                "nullable": true,
+                "description": "Default currency the supplier's transactional data is recorded in."
+              },
+              "metadata": {
+                "$ref": "#/components/schemas/Account/allOf/0/properties/metadata"
+              },
+              "supplementalData": {
+                "type": "object",
+                "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting platform. [Learn more](https://docs.codat.io/using-the-api/supplemental-data/overview) about supplemental data.",
+                "properties": {
+                  "content": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "object",
+                      "additionalProperties": {}
+                    },
+                    "nullable": true
+                  }
+                },
+                "title": "Supplemental data"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/Account/allOf/1"
           }
-        }
+        ],
+        "required": [
+          "status"
+        ],
+        "definitions": {
+          "supplierRef": {
+            "title": "Supplier reference",
+            "description": "Reference to the supplier the record relates to.",
+            "type": "object",
+            "properties": {
+              "id": {
+                "minLength": 1,
+                "type": "string",
+                "description": "The supplier's unique ID"
+              },
+              "supplierName": {
+                "type": "string",
+                "nullable": true,
+                "description": "The supplier's name"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          "supplierStatus": {
+            "description": "Status of the supplier.",
+            "type": "string",
+            "enum": [
+              "Unknown",
+              "Active",
+              "Archived"
+            ]
+          }
+        },
+        "examples": [
+          {
+            "id": "C520FFD4-F6F6-4FC2-A6D2-5D7088B2B14F",
+            "supplierName": "Kelly's Industrial Supplies",
+            "contactName": "Kelly's Industrial Supplies",
+            "emailAddress": "sales@kellysupplies.com",
+            "phone": "07999 999999",
+            "addresses": [
+              {
+                "type": "Billing",
+                "line1": "Unit 51",
+                "line2": "Bakersfield Industrial Estate",
+                "city": "Bakersfield",
+                "region": "California",
+                "country": "USA",
+                "postalcode": "93308"
+              }
+            ],
+            "registrationNumber": "string",
+            "taxNumber": "string",
+            "status": "Unknown",
+            "defaultCurrency": "string",
+            "metadata": {
+              "isDeleted": true
+            },
+            "supplementalData": {
+              "content": {
+                "property1": {
+                  "property1": null,
+                  "property2": null
+                },
+                "property2": {
+                  "property1": null,
+                  "property2": null
+                }
+              }
+            },
+            "modifiedDate": "2022-10-23T00:00:00Z",
+            "sourceModifiedDate": "2022-10-23T00:00:00Z"
+          }
+        ]
       },
       "Customer": {
         "title": "Customer",
-        "x-internal": true,
+        "description": "> View the coverage for customers in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=customers\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nA customer is a person or organisation that buys goods or services. From the Customers endpoints, you can retrieve a [list of all the customers of a company](https://api.codat.io/swagger/index.html#/Customers/get_companies__companyId__data_customers).\n\nCustomers' data links to accounts receivable [invoices](https://docs.codat.io/accounting-api#/schemas/Invoice).\n",
         "type": "object",
-        "properties": {
-          "id": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Identifier for the customer, unique to the company in the accounting platform."
+              },
+              "customerName": {
+                "type": "string",
+                "nullable": true,
+                "description": "Name of the customer as recorded in the accounting system, typically the company name."
+              },
+              "contactName": {
+                "type": "string",
+                "nullable": true,
+                "description": "Name of the main contact for the identified customer."
+              },
+              "emailAddress": {
+                "type": "string",
+                "nullable": true,
+                "description": "Email address the customer can be contacted by."
+              },
+              "defaultCurrency": {
+                "$ref": "#/components/schemas/Account/allOf/0/properties/currency",
+                "description": "Default currency the transactional data of the customer is recorded in."
+              },
+              "phone": {
+                "type": "string",
+                "nullable": true,
+                "description": "Phone number the customer can be contacted by."
+              },
+              "addresses": {
+                "type": "array",
+                "nullable": true,
+                "description": "An array of Addresses.",
+                "items": {
+                  "$ref": "#/components/schemas/Supplier/allOf/0/properties/addresses/items"
+                }
+              },
+              "contacts": {
+                "type": "array",
+                "nullable": true,
+                "description": "An array of Contacts.",
+                "items": {
+                  "$ref": "#/components/schemas/Customer/definitions/contact"
+                }
+              },
+              "registrationNumber": {
+                "type": "string",
+                "nullable": true,
+                "description": "Company number. In the UK, this is typically the Companies House company registration number."
+              },
+              "taxNumber": {
+                "type": "string",
+                "nullable": true,
+                "description": "Company tax number."
+              },
+              "status": {
+                "$ref": "#/components/schemas/Customer/definitions/customerStatus",
+                "description": "Current state of the customer."
+              },
+              "metadata": {
+                "$ref": "#/components/schemas/Account/allOf/0/properties/metadata"
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/Supplier/allOf/0/properties/supplementalData"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/Account/allOf/1"
+          }
+        ],
+        "required": [
+          "status"
+        ],
+        "definitions": {
+          "accountingCustomerRef": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "minLength": 1,
+                "type": "string",
+                "description": "`id` from the Customers data type"
+              },
+              "companyName": {
+                "type": "string",
+                "nullable": true,
+                "description": "`customerName` from the Customer data type"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          "customerStatus": {
+            "description": "Status of customer.",
             "type": "string",
-            "description": "id of the customer for all income related activities to be associated to.",
-            "example": "142"
+            "enum": [
+              "Unknown",
+              "Active",
+              "Archived"
+            ]
+          },
+          "contact": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "nullable": true,
+                "description": "Name of a contact for a customer."
+              },
+              "email": {
+                "type": "string",
+                "nullable": true,
+                "description": "Email of a contact for a customer."
+              },
+              "phone": {
+                "type": "array",
+                "nullable": true,
+                "description": "An array of Phone numbers.",
+                "items": {
+                  "title": "Phone",
+                  "type": "object",
+                  "x-internal": true,
+                  "properties": {
+                    "number": {
+                      "type": "string",
+                      "nullable": true,
+                      "examples": [
+                        "+44 25691 154789",
+                        "(877) 492-8687",
+                        "01224 658 999"
+                      ],
+                      "description": "A phone number."
+                    },
+                    "type": {
+                      "$ref": "#/components/schemas/Customer/definitions/contact/properties/phone/items/definitions/phoneNumberType"
+                    }
+                  },
+                  "required": [
+                    "number",
+                    "type"
+                  ],
+                  "definitions": {
+                    "phoneNumberType": {
+                      "description": "The type of phone number",
+                      "type": "string",
+                      "enum": [
+                        "Primary",
+                        "Landline",
+                        "Mobile",
+                        "Fax",
+                        "Unknown"
+                      ]
+                    }
+                  }
+                }
+              },
+              "address": {
+                "$ref": "#/components/schemas/Supplier/allOf/0/properties/addresses/items",
+                "description": "An object of Address information."
+              },
+              "status": {
+                "$ref": "#/components/schemas/Customer/definitions/customerStatus"
+              },
+              "modifiedDate": {
+                "$ref": "#/components/schemas/Company/properties/created"
+              }
+            },
+            "required": [
+              "status"
+            ]
           }
         }
       },
@@ -9008,7 +9357,7 @@
     "securitySchemes": {
       "auth_header": {
         "name": "Authorization",
-        "description": "The word \"Basic\" followed by a space and your API key. [API keys](https://docs.codat.io/accounting-api#/schemas/apiKeys) are tokens used to control access to the API. You can get an API key via [the Codat Portal](https://app.codat.io/developers/api-keys), via [the API](https://docs.codat.io/platform-api#/api-keys/api-keys-list), or [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat.",
+        "description": "The word \"Basic\" followed by a space and your API key. [API keys](https://docs.codat.io/accounting-api#/schemas/apiKeys) are tokens used to control access to the API. You can get an API key via [the Codat Portal](https://app.codat.io/developers/api-keys), via [the API](https://docs.codat.io/codat-api#/api-keys/api-keys-list), or [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat.",
         "type": "apiKey",
         "in": "header",
         "x-speakeasy-example": "Basic BASE_64_ENCODED(API_KEY)"
