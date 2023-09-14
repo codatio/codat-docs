@@ -90,4 +90,4 @@ QuickBooks online only supports retrieval of transactions **up to 90 days old**,
 ---
 ## Read next
 
-[Pushing transactions](/integrations/bank-feeds/pushing-transactions).
+[Pushing transactions](/bank-feeds/pushing-transactions).

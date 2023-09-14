@@ -150,4 +150,4 @@ The dataConnection status will then change to linked, and which point you will b
 ---
 ## Read next
 
-[Pushing transactions](/integrations/bank-feeds/pushing-transactions).
+[Pushing transactions](/bank-feeds/pushing-transactions).

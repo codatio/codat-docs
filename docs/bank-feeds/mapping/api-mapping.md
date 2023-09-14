@@ -350,4 +350,4 @@ GET /companies/:companyId/connections/:connectionId/bankFeedAccounts/mapping
 ---
 ## Read next
 
-[Pushing transactions](/integrations/bank-feeds/pushing-transactions).
+[Pushing transactions](/bank-feeds/pushing-transactions).

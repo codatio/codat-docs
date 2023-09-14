@@ -298,5 +298,5 @@ DELETE /companies/:companyId/connections/:connectionId/connectionInfo/bankFeedAc
 
 ## Read next
 
-[Authorization and mapping](/integrations/bank-feeds/mapping).
+[Authorization and mapping](/bank-feeds/mapping).
 

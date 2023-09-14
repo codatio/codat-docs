@@ -153,4 +153,4 @@ To disconnect a source bank account, the SMB user hovers over the **connected** 
 ---
 ## Read next
 
-[Pushing transactions](/integrations/bank-feeds/pushing-transactions).
+[Pushing transactions](/bank-feeds/pushing-transactions).
