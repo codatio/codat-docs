@@ -189,6 +189,13 @@ module.exports = {
         anonymizeIP: true,
       },
     ],
+    ['@grnet/docusaurus-terminology', {
+      termsDir: './docs/terms',
+      docsDir: './docs/',
+      glossaryFilepath: './docs/glossary.md',
+      glossaryComponentPath: '@components/global/Glossary/Glossary.js',
+      termPreviewComponentPath: '@components/global/Glossary/TermPreview.js',
+    }],
   ],
   themes: [
     [
