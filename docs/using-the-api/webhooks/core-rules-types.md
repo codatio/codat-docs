@@ -32,7 +32,7 @@ In line with industry standard security practices, we have removed personally id
 
 ### Company data connection status changed
 
-**Type**: DataConnectionStatusChanged  
+**Type**: `DataConnectionStatusChanged`  
 **Trigger:** A data connection's status changes.  
 **Additional data:** `dataConnectionId`, `platformKey`, `newStatus`, `oldStatus`.
 
@@ -54,7 +54,7 @@ In line with industry standard security practices, we have removed personally id
 
 ### New company synchronized
 
-**Type**: New company synchronised  
+**Type**: `New company synchronised`  
 **Trigger:** Initial syncs are complete for all data types queued for a newly connected company, and at least one of those syncs is successful.   
 **Legacy behavior:** After the first `dataType` is successfully synced for a new company. [See deprecation](https://docs.codat.io/updates/231010-deprecation-webhooks-new-company-synchronized) for more information about this change.
 
@@ -71,7 +71,7 @@ In line with industry standard security practices, we have removed personally id
 
 ### Data sync completed
 
-**Type**: Data sync completed  
+**Type**: `Data sync completed`  
 **Trigger:** Data synchronization is successfully completed in full for a specific data type.  
 Notification is sent for each `dataType` separately when the data type's individual sync is successfully complete.  
 **Additional data:** `dataType`, `datasetId`.
@@ -95,7 +95,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 
 ### Dataset data changed
 
-**Type**: Dataset data changed  
+**Type**: `Dataset data changed`  
 **Trigger:** A dataset synchronization has completed, which resulted in updates within Codat's data cache through the creation of new records or a change to existing records.  
 Notification is sent for each `dataType` separately when the data type's individual sync is successfully complete.  
 **Additional data:** `dataType`, `datasetId`.
@@ -116,7 +116,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 
 ### Dataset status has changed to an error state
 
-**Type**: Data Sync Status Changed To Error  
+**Type**: `Data Sync Status Changed To Error`  
 **Trigger:** The synchronization of a dataset fails.  
 **Additional data:** `dataType`, `datasetStatus`, `datasetId`.
 
@@ -137,7 +137,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 
 ### Push operation status has changed
 
-**Type**: Push Operation Status Changed   
+**Type**: `Push Operation Status Changed()`   
 **Trigger:** A push operation's status changes.  
 **Additional data:** `dataType`, `status`, `pushOperationKey`.
 
@@ -145,7 +145,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 {
  "CompanyId":"f6bc5f14-87fb-438f-8d2d-db6a0964aef1",
  "RuleId":"c40791fe-b6fd-45c3-9bf7-0a16abf1b8fd",
- "Type":"Push Operation Status Changed",
+ "Type":"Push Operation Status Changed()",
  "AlertId":"a62bfb38-d73c-4aab-9bb6-d8014bba5f29",
  "Message":"invoices triggered notification for PushOperationStatusChanged at 2019-05-22T18:19:42.742Z",
  "Data":{
@@ -158,7 +158,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 
 ### Push operation has timed out
 
-**Type**: Push Operation Timed Out  
+**Type**: `Push Operation Timed Out`  
 **Trigger:** A push operation times out.  
 **Additional data:** `dataType`, `pushOperationGuid`.
 
@@ -178,7 +178,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 
 ### Account categories updated
 
-**Type**: Account Categories Updated  
+**Type**: `Account Categories Updated`  
 **Trigger:** Any time that Codat updates the `suggested` fields or a user updates the `confirmed` fields.  
 **Additional data:** `modifiedDate`.
 
@@ -200,7 +200,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 
 ### Sync Connection Deleted
 
-**Type**:  Sync Connection Deleted   
+**Type**:  `Sync Connection Deleted`   
 **Trigger:** A Sync for Commerce connection is deleted.  
 **Note:** This rule is specific to Sync for Commerce and cannot be used for other products.
 
@@ -220,7 +220,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 
 ### Expense sync completed
 
-**Type**: Sync Completed  
+**Type**: `Sync Completed`  
 **Trigger:** An expense sync has completed without any failures.  
 **Additional data:** `syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`.  
 **Note:** This rule is specific to Sync for Expenses and cannot be used for other products.
@@ -245,7 +245,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 
 ### Expense sync failed
 
-**Type**: Sync Failed  
+**Type**: `Sync Failed`  
 **Trigger:** A failure occurred during an expense sync.  
 **Additional data:** `syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`, `FailureStage`.  
 **Note:** This rule is specific to Sync for Expenses and cannot be used for other products.
@@ -271,7 +271,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 
 ### Client rate limit reached
 
-**Type**: Rate Limit Reached  
+**Type**: `Rate Limit Reached`  
 **Trigger:** The number of requests to the API from this client has exceeded the current quota. Rate limits apply to a client as a whole, so this rule cannot be filtered by company and does not include a `companyId`.  
 **Additional data:** `dailyQuota`, `expiresUtc`
 
@@ -292,7 +292,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 
 ### Client rate limit reset
 
-**Type**: Rate Limit Reset  
+**Type**: `Rate Limit Reset`  
 **Trigger:** The rate limit quota has reset and more requests are available. Rate limits apply to a client as a whole, so this rule cannot be filtered by company and does not include a `companyId`.  
 **Additional data:** `quotaRemaining`, `resetReason`, `dailyQuota` 
 
