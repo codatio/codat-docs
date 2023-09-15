@@ -19,14 +19,7 @@ banner_text: "Push bank transaction data into your customers' accounting platfor
 import {IntegrationsList} from '@components/global/Integrations'
 import {bankfeedsIntegrations} from '@components/global/Integrations/integrations'
 
-<div className="card">
-  <h3>✨ Enterprise</h3>
 
-  <p>This product is only available on our <a href="/configure/create-account">enterprise plans</a>.</p>
-
-</div>
-
-<br/>
 
 The [Bank Feeds API](/bank-feeds-api#/) empowers developers to automate the integration of bank transactions into accounting software for small and medium-sized businesses (SMBs). This removes the cumbersome step of manual uploads each month, giving businesses a more timely view of their finances. A recent survey revealed that [71% of Xero partners](https://www.xero.com/blog/2019/01/new-bank-feeds-process/) identify bank feeds and reconciliation as their most valued features.
 
@@ -103,5 +96,10 @@ Once the SMB user has completed the authorization and account mapping process, y
 
 <IntegrationsList integrations={bankfeedsIntegrations}/>
 
+<div className="card">
+  <h3>✨ Enterprise</h3>
 
+  <p>This product is only available on our <a href="/configure/create-account">enterprise plans</a>.</p>
+
+</div>
 
