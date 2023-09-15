@@ -13,8 +13,33 @@ module.exports = [
   },
   {
     type: "doc",
-    id: "bank-feeds/guides/bank-feeds-tutorial",
-    label: "Tutorial",
+    label: "Get started",
+    id: "bank-feeds/setup",
+  },
+  {
+    type: "doc",
+    label: "Create account",
+    id: "bank-feeds/create-account",
+    customProps: {
+      hr: true,
+      section: "Configure and build",
+    },
+  },
+  {
+    type: "category",
+    label: "Map accounts",
+    items: [
+      "bank-feeds/mapping",
+      "bank-feeds/mapping/codat-ui",
+      "bank-feeds/mapping/api-mapping",
+      "bank-feeds/mapping/qbo-mapping",
+      "bank-feeds/mapping/sage-mapping",
+    ],
+  },
+  {
+    type: "doc",
+    label: "Push transactions",
+    id: "bank-feeds/pushing-transactions",
   },
   {
     type: "doc",
@@ -36,11 +61,16 @@ module.exports = [
     id: "integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds",
   },
   {
-    type: "link",
-    href: "/bank-feeds-api",
-    label: "API reference",
+    type: "doc",
+    id: "bank-feeds/guides/bank-feeds-tutorial",
+    label: "Tutorial",
     customProps: {
       hr: true,
     },
+  },
+  {
+    type: "link",
+    href: "/bank-feeds-api",
+    label: "API reference",
   },
 ];
