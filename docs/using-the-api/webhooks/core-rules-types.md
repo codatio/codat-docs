@@ -280,7 +280,6 @@ Notification is sent for each `dataType` separately when the data type's individ
   "AlertId": "72c1103b-7f17-4a3a-8db5-67c2d360a516",
   "ClientId": "30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e",
   "ClientName": "Peach",
-  "CompanyId": "1f9559e7-8368-48c9-bdf4-f158e16b8b85",
   "Data": {
     "dailyQuota": 1000,
     "expiresUtc": "2023-05-03T00:00:00Z"
