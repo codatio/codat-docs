@@ -17,12 +17,17 @@ module.exports = [
     id: "bank-feeds/setup",
   },
   {
-    type: "category",
-    label: "Map accounts",
+    type: "doc",
+    label: "Create account",
+    id: "bank-feeds/create-account",
     customProps: {
       hr: true,
       section: "Configure and build",
     },
+  },
+  {
+    type: "category",
+    label: "Map accounts",
     items: [
       "bank-feeds/mapping",
       "bank-feeds/mapping/codat-ui",
@@ -33,7 +38,7 @@ module.exports = [
   },
   {
     type: "doc",
-    label: "Pushing transactions",
+    label: "Push transactions",
     id: "bank-feeds/pushing-transactions",
   },
   {
