@@ -1,7 +1,7 @@
 ---
-title: "Pushing Transactions"
+title: "Push transactions"
 description: "Push bank transaction data into your customers' accounting platforms with an automated feed."
-sidebar_label: Pushing Transactions
+sidebar_label: Push transactions
 displayed_sidebar: bankfeeds
 hide_title: true
 hide_description: true
@@ -10,7 +10,7 @@ hide_description: true
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
 
-# Bank Transactions
+# Bank transactions
 Once a company has mapped their source account to a target account, you can begin pushing transactions to their bankfeed.
 
 ## Generate bankTransactions object
@@ -33,7 +33,7 @@ Each transaction within the `transactions` array should include the following:
 Make sure the transaction `amount` signs align with the `transactionType`. Codat issues a warning for inconsistencies, such as a `Debit` transaction with a positive amount.
 :::
 
-## Pushing bank transactions
+## Push bank transactions
 
 Steps:
 - [Creating bankTransactions](pushing-transactions#creating-banktransactions)
@@ -55,7 +55,7 @@ sequenceDiagram
 
 ```
 
-### Creating bankTransactions
+### Create bankTransactions
 
 Regularly uploading transactions throughout the day ensures that your customers' bank feed balances are close to real-time. This enhanced accuracy aids companies with increased accuracy for their planning and forecasting.
 
@@ -245,7 +245,7 @@ Users can manually sync from the QBO interface, and QBO will also automatically 
 :::
 
 
-### Monitoring the status of the request
+### Monitor the status of the request
 After your request has been accepted, it will have a status of `Pending`. You should use the [Push Operation Status Changed](../using-the-api/webhooks/core-rules-types#push-operation-status-has-changed) webhooks to track when the status of your pushOperation changes to `Success` or `Failed`.
 
 If the request is successful, you will receive a webhook like this:

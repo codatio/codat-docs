@@ -1,7 +1,7 @@
 ---
 title: "Build your own mapping interface"
 description: "Push bank transaction data into your customers' accounting platforms with an automated feed."
-sidebar_label: API mapping
+sidebar_label: Map via API
 displayed_sidebar: bankfeeds
 hide_title: true
 hide_description: true

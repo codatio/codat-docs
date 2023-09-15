@@ -18,7 +18,7 @@ module.exports = [
   },
   {
     type: "category",
-    label: "Mapping",
+    label: "Map accounts",
     customProps: {
       hr: true,
       section: "Configure and build",
