@@ -1,7 +1,7 @@
 ---
 title: "Sage Bank feeds mapping"
 description: "Push bank transaction data into your customers' accounting platforms with an automated feed."
-sidebar_label: Sage Online Mapping
+sidebar_label: Sage mapping
 displayed_sidebar: bankfeeds
 hide_title: true
 hide_description: true
@@ -11,7 +11,7 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import Loom from '@components/global/Loom'
 
-# Sage Bank Feeds Mapping
+# Sage Bank Feeds mapping
 
 <Loom source="https://www.loom.com/embed/48972835b6e74d199448b794f41b9997" />
 
@@ -70,7 +70,7 @@ sequenceDiagram
 
 ```
 
-## Sage Redirect
+## Sage redirect
 When your customer attempts to establish their bankfeed from Sage, they will be redirected to your hosted page through a link that is constructed as follows:
 
    ```http
@@ -95,7 +95,7 @@ To ensure a seamless identity verification experience for the company when they 
 - **Post-Authentication Redirect:** Once the user successfully authenticates, redirect them to the `redirectUri` initially provided by Sage.
 
 
-### Connecting the company 
+### Connect the company 
 
 Once you have verified who the Company is, you should then create the company, dataConnection and source accounts in Codat, you can follow the same steps outlined in [setup](/bank-feeds/setup).
 
@@ -136,7 +136,7 @@ If your request responds with a `200` response status code, the next step is to 
 redirect_uri=https://snd01eu.Sagebankdrive.com/api/v1/indirectredirect/11111-22222-33333-88888-9999?state=1122-3344-5566-7788
 ```
 
-### Establishing the bank feed
+### Establish the bank feed
 
 Once the connection is successfully set up, Sage will show a dialog box featuring a list of available source bank accounts that can be linked to initiate bank feeds.
 
@@ -150,4 +150,4 @@ The dataConnection status will then change to linked, and which point you will b
 ---
 ## Read next
 
-[Pushing transactions](/bank-feeds/pushing-transactions).
+* [Pushing transactions](/bank-feeds/pushing-transactions)

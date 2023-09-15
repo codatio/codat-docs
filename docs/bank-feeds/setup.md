@@ -1,7 +1,7 @@
 ---
-title: "Company setup"
-description: "Push bank transaction data into your customers' accounting platforms with an automated feed."
-sidebar_label: Setup
+title: "Bank feeds setup"
+description: "Push bank transaction data into your customers' accounting platforms with an automated feed"
+sidebar_label: Get started
 displayed_sidebar: bankfeeds
 hide_title: true
 hide_description: true
@@ -10,7 +10,7 @@ hide_description: true
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
 
-# Bank feeds Setup
+# Bank feeds setup
 
 ## Overview
 
@@ -52,7 +52,7 @@ graph LR;
 
 ```
 
-### Creating a Company
+### Creating a company
 
 Within the bank feeds api, a company represents a business that wishes to export their transactions from your application to their accounting software, the first step of the process is to create a company in Codat:
 
@@ -91,7 +91,7 @@ The endpoint returns a JSON response containing the company `id` which you shoul
 
 </Tabs>
 
-### Creating a Data Connection
+### Creating a data connection
 
 Using the [Create a data connection](/bank-feeds-api#/operations/create-connection) endpoint, create a data connection to the chosen accounting package for the company.
 
@@ -169,7 +169,7 @@ GET /companies/:companyId/connections/:connectionId
 
 </details>
 
-## Creating a Source Account
+## Creating a source account
 
 To establish a bank feed with your customer's accounting software, you'll first need to [set up source accounts](/bank-feeds-api#/operations/create-source-account). These accounts serve as representations of the company's financial accounts within the Codat platform. 
 
@@ -298,5 +298,5 @@ DELETE /companies/:companyId/connections/:connectionId/connectionInfo/bankFeedAc
 
 ## Read next
 
-[Authorization and mapping](/bank-feeds/mapping).
+* [Authorization and mapping](/bank-feeds/mapping)
 

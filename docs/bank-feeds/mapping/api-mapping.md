@@ -1,7 +1,7 @@
 ---
 title: "Build your own mapping interface"
 description: "Push bank transaction data into your customers' accounting platforms with an automated feed."
-sidebar_label: API Mapping
+sidebar_label: API mapping
 displayed_sidebar: bankfeeds
 hide_title: true
 hide_description: true
@@ -23,7 +23,7 @@ This can be achieved by utilizing the account mapping endpoints. These endpoints
  
 However, be sure to meet all partner requirements to maintain compliance.
 
-### Supported Integrations
+### Supported integrations
 
 <IntegrationsList integrations={bankfeedsExternalMappingIntegrations}/>
 
@@ -350,4 +350,4 @@ GET /companies/:companyId/connections/:connectionId/bankFeedAccounts/mapping
 ---
 ## Read next
 
-[Pushing transactions](/bank-feeds/pushing-transactions).
+* [Pushing transactions](/bank-feeds/pushing-transactions)

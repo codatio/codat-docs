@@ -12,7 +12,7 @@ import TabItem from "@theme/TabItem";
 import {IntegrationsList} from '@components/global/Integrations'
 import {bankfeedsExternalMappingIntegrations} from '@components/global/Integrations/integrations'
 
-# Codat Mapping User Interface
+# Codat mapping user interface
 
 <br/>
 
@@ -20,7 +20,7 @@ import {bankfeedsExternalMappingIntegrations} from '@components/global/Integrati
 
 The bank feeds mapping interface allows for customization with your own logo and primary color scheme. Designed to meet all third-party requirements, it enables a seamless launch of your bank feeds product, ensuring an outstanding experience for your customers with minimal development effort.
 
-### Supported Integrations
+### Supported integrations
 
 <IntegrationsList integrations={bankfeedsExternalMappingIntegrations}/>
 
@@ -153,4 +153,4 @@ To disconnect a source bank account, the SMB user hovers over the **connected** 
 ---
 ## Read next
 
-[Pushing transactions](/bank-feeds/pushing-transactions).
+* [Pushing transactions](/bank-feeds/pushing-transactions

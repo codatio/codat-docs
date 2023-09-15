@@ -1,6 +1,6 @@
 ---
-title: "Bank Feeds"
-description: "Push bank transaction data into your customers' accounting platforms with an automated feed."
+title: "Bank Feeds API"
+description: "Push bank transaction data into your customers' accounting platforms with an automated feed"
 sidebar_label: Bank Feeds API
 displayed_sidebar: bankfeeds
 image: "/img/banners/social/bankfeeds.png"
@@ -11,23 +11,23 @@ banner_title: Bank Feeds API
 banner_class: bank-feeds
 banner_icon: "/img/logos/products/logo_bankfeeds_clear.svg"
 banner_image: "/img/banners/bank-feeds.png"
-banner_text: "Push bank transaction data into your customers' accounting platforms with an automated feed."
+banner_text: "Push bank transaction data into your customers' accounting platforms with an automated feed"
 // video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
 // video_text: What is Bank Feeds API?
 ---
 
 import {IntegrationsList} from '@components/global/Integrations'
-import {bankfeedsIntegrations} from '@components/global/Integrations/integrations'
+import {bankfeedsIntegrations} from '@components/global/Integrations/integrations'  
 
+## What is it?
 
+Our Bank Feeds API empowers developers to automate the integration of bank transactions into accounting software for small and medium-sized businesses (SMBs). This removes the cumbersome step of manual uploads each month, giving businesses a more timely view of their finances. 
 
-The [Bank Feeds API](/bank-feeds-api#/) empowers developers to automate the integration of bank transactions into accounting software for small and medium-sized businesses (SMBs). This removes the cumbersome step of manual uploads each month, giving businesses a more timely view of their finances. A recent survey revealed that [71% of Xero partners](https://www.xero.com/blog/2019/01/new-bank-feeds-process/) identify bank feeds and reconciliation as their most valued features.
+A recent survey revealed that [71% of Xero partners](https://www.xero.com/blog/2019/01/new-bank-feeds-process/) identify bank feeds and reconciliation as their most valued features. By leveraging the Bank Feeds API you can meet this demand. It offers compatibility with multiple popular accounting platforms through a standardized set of endpoints. 
 
-By leveraging this API, you can meet this demand; it offers compatibility with multiple popular accounting platforms through a standardized set of endpoints. 
+The end result is a simplified financial management process for SMBs, which not only streamlines their accounting, but also elevates their overall experience with your application.
 
-The end result is a simplified financial management process for SMBs, which not only streamlines their accounting but it also elevates their overall experience with your application.
-
-## Why use Bank Feeds API?
+## Why use it?
 
 <ul className="card-container col-3">
   <li className="card">
@@ -36,7 +36,7 @@ The end result is a simplified financial management process for SMBs, which not 
         src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
-      <h3>Reduce Churn</h3>
+      <h3>Reduce churn</h3>
     </div>
     <p>
       When your services integrate effortlessly into your customer's tools and processes, they're less likely to switch to a competitor.
@@ -60,35 +60,36 @@ The end result is a simplified financial management process for SMBs, which not 
         src="/img/wp-icons/copy-feature-bullet.svg"
         class="mini-icon"
       />
-      <h3>Up-to date balance</h3>
+      <h3>Up-to-date balance</h3>
     </div>
     <p>
-      near real-time balances enable your customers to manage their finances more effectively and empower them to make the right choices.
+      Near real-time balances enable your customers to manage their finances more effectively and empower them to make the right choices.
     </p>
   </li> 
 </ul>
 
-## How it works
+## How does it work?
 
 ![Bank Feeds API](/img/old/fd21af0-codat_whitepaper_accounting-automation_diagram_B.png)
 
-### [Creating source accounts](/bank-feeds/setup)
-A bank feed is a connection between a _source bank account_ — and a _target bank account_ in a supported accounting package. 
+### [Create source accounts](/bank-feeds/setup)
+A bank feed is a connection between a _source bank account_ and a _target bank account_ in a supported accounting package. 
 
-To begin with, you should create a 'source account' in Codat, this serves as replica of an actual financial account, savings account, or credit card, in Codat. This account can later be mapped to a target account in your customers accounting software.
+First, you should create a 'source account' in Codat that serves as replica of an actual financial account, savings account or credit card. This account can later be mapped to a target account in your customers' accounting software.
 
-### [Connecting and mapping accounts](/bank-feeds/mapping)
-The method of connecting and mapping this source account to your target account varies depending on the accounting package your customer is using, typically there are three methods of mapping the source account to a target account:
-- **API Mapping:** Integrate the mapping journey directly into your application for a seamless user experience.
-- **Codat UI Mapping:** If you prefer a quicker setup, you can utilize Codat's provided user interface for mapping.
-- **Accounting Platform Mapping:** For some accounting softwares, the mapping process must be conducted within the software itself.
+### [Connect and map accounts](/bank-feeds/mapping)
+The method of connecting and mapping this source account to your target account varies depending on the accounting package your customer is using. Typically there are three methods of mapping the source account to a target account:
+
+- **API mapping:** integrate the mapping journey directly into your application for a seamless user experience.
+- **Codat UI mapping:** if you prefer a quicker setup, you can utilize Codat's provided user interface for mapping.
+- **Accounting platform mapping:** for some accounting softwares, the mapping process must be conducted within the software itself.
 
 :::note Platform requirements
 
-The setup process and platform registration requirements vary for each Bank Feeds integration. For detailed instructions, refer to the documentation for each integration.
+The setup process and platform registration requirements vary for each Bank Feeds API integration. For detailed instructions, refer to the documentation for each integration.
 :::
 
-### [Pushing transactions](/bank-feeds/pushing-transactions)
+### [Push transactions](/bank-feeds/pushing-transactions)
 Once the SMB user has completed the authorization and account mapping process, you are set to begin pushing transactions into the target bank account on the accounting platform. 
 
 ## Supported integrations
