@@ -2,6 +2,7 @@
 title: "Loan writeback for general lending"
 description: "Simplify your implementation with our loan writeback best practices guide and correctly account for a loan programmatically"
 sidebar_label: "Loan writeback"
+draft: true
 ---
 
 ## What is it?
