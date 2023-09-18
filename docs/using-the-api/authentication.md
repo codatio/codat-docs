@@ -9,18 +9,18 @@ API keys are tokens used to control access to the API. Codat expects the API key
 Authorization: Basic YOUR_ENCODED_API_KEY // Replace *YOUR_ENCODED_API_KEY* with your API key, Base64 encoded
 ```
 
-:::caution Permissions
-Authorization headers and API keys can only be created, viewed, copied, and deleted by Administrator or Developer users.
-:::
+When using API keys in your application, you can either store the raw API key and encode it yourself, or just store the pre-encoded authroization header we expose.
 
-## Managing keys in the Portal
+## Managing keys
 
-To create, view, and delete API keys and authorization headers in the Codat Portal:
+You can view API keys and their authorization headers in the Codat Portal. By default, your client will come with one API key pre-provisioned.
 
 1. Click **Developers > API keys** to navigate to the [API keys](https://app.codat.io/developers/api-keys) page.
-2. Copy your API key or authorization header from the relevant table column. 
+2. Copy your API key or authorization header from the relevant table column.
 
-## Managing keys via the API
+You can also revoke (delete) existing API keys, and create new keys. When creating new keys, you'll be asked to name them - this will help you track what a given key is being used for, which is helpful when revoking keys later.
+
+### Managing keys via the API
 
 To manage API keys by making API calls, use the following endpoints:
 
@@ -29,6 +29,12 @@ To manage API keys by making API calls, use the following endpoints:
 3. [Delete API keys](https://docs.codat.io/platform-api#/operations/delete-api-key)
 
 You can only view API keys, and not the corresponding authorization headers, via the API.
+
+
+:::caution Permissions
+
+Authorization headers and API keys can only be created, viewed, copied, and deleted by Administrator or Developer users.
+:::
 
 ## 💡 Tips and traps
 
