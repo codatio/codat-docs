@@ -25,7 +25,7 @@ Here is a simple example of an account mapping user interface implemented using 
 
 Build your account mapping process to use the Codat API as follows:
 
-1. Enable the Chart of Accounts data type and set it to fetch on first link. Navigate to **Settings > Integrations > Data types** to manage [Data type settings](https://app.codat.io/settings/data-types) in the Portal or [use the API](https://docs.codat.io/codat-api#/operations/update-profile-syncSettings) instead. 
+1. Enable the Chart of Accounts data type and set it to fetch on first link. Navigate to **Settings > Integrations > Data types** to manage [Data type settings](https://app.codat.io/settings/data-types) in the Portal or [use the API](https://docs.codat.io/platform-api#/operations/update-profile-syncSettings) instead. 
 
     You can also read more about [data type settings](/core-concepts/data-type-settings).
 

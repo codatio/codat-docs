@@ -45,7 +45,7 @@ When you’re pulling data for the first time, use this endpoint to check if the
 
 ## Refresh data
 
-There are [two POST endpoints in the API](/codat-api#/operations/create--many-pull-operations) for queuing a refresh of data:
+There are [two POST endpoints in the API](/platform-api#/operations/create--many-pull-operations) for queuing a refresh of data:
 
 1. `/companies/{companyId}/data/all`
    - Will queue a dataset for each of the data types marked as _Fetch on first link_ in your [data type settings](/core-concepts/data-type-settings), where that data type is supported by the company's linked data connections
@@ -66,7 +66,7 @@ Refreshing data can take different amounts of time depending on the integration 
 
 ### Records deleted between syncs
 
-For our [accounting data types](/accounting-api/accounting-data-types/), Codat stores records deleted by a company in the underlying accounting platform between successive data syncs to ensure better consistency in the data. If such records are not relevant for your use case, you can exclude them by [querying](/using-the-api/querying) on the `metadata.isDeleted!=true` flag. 
+For our accounting source data types, Codat stores records deleted by a company in the underlying accounting platform between successive data syncs to ensure better consistency in the data. If such records are not relevant for your use case, you can exclude them by [querying](/using-the-api/querying) on the `metadata.isDeleted!=true` flag. 
 
 Records that were created and deleted by a company before the first sync took place will never be pulled and stored by Codat. 
 

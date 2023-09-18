@@ -27,10 +27,6 @@ Syncs are independent of creating datasets, so you can continue to create new da
 
 Sync for Expenses provides two webhooks that you can subscribe to.
 
-:::caution Multiple syncs
-Codat can't accept any requests to initiate another sync while a sync is ongoing.
-:::
-
 **Sync Failed**
 
 The `Sync Failed` webhook is triggered if any failures occurred during the sync process.

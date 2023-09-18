@@ -56,7 +56,7 @@ To upload a logo, go to the <a className="external" href="https://app.codat.io/s
 
 ## Create a company and data connection, then add bank accounts
 
-1. Using [POST /companies](/codat-api#/operations/create-company), create a Company to represent your SMB user:
+1. Using [POST /companies](/platform-api#/operations/create-company), create a Company to represent your SMB user:
 
    ```http
    POST https://api.codat.io/companies
@@ -72,7 +72,7 @@ To upload a logo, go to the <a className="external" href="https://app.codat.io/s
 
    The endpoint returns a JSON response containing the company `id` and the `redirect` URL.
 
-2. Using [POST /companies/{companyId}/connections](/codat-api#/operations/create-connection), create a data connection to Sage Bank Feeds for the Company you added. Specify the `companyId` in the URL path:
+2. Using [POST /companies/{companyId}/connections](/platform-api#/operations/create-connection), create a data connection to Sage Bank Feeds for the Company you added. Specify the `companyId` in the URL path:
 
    ```http
    POST https://api.codat.io/companies/{companyId}/connections

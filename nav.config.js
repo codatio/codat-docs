@@ -46,7 +46,7 @@ module.exports = {
           label: "Sync for Payroll",
         },
         {
-          href: "/codat-api",
+          href: "/platform-api",
           label: "Platform API",
           hr: true,
         },
@@ -114,12 +114,6 @@ module.exports = {
         {
           href: "https://github.com/codatio/codat-docs/issues/new",
           label: "Issue with the docs?",
-          target: "_blank",
-          rel: null,
-        },
-        {
-          href: "/get-started/office-hours",
-          label: "Office hours",
           target: "_blank",
           rel: null,
         },

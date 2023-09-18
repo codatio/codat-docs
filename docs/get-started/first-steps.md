@@ -37,7 +37,7 @@ You can perform each step in the Codat Portal or using our API.
 
 ## Developer prerequisites
 
-If you are a developer and want to work with Codat using our <a className="external" href="/codat-api#/">API reference</a> or by making calls to our API in code, you first need to authenticate.
+If you are a developer and want to work with Codat using our <a className="external" href="/platform-api#/">API reference</a> or by making calls to our API in code, you first need to authenticate.
 
 <details>
   <summary><b>Authenticate with Codat's API</b></summary>
@@ -51,55 +51,46 @@ Codat uses API keys, Base64 encoded within an authorization header, to control a
 Then, replace `{basicAuthHeader}` in the code snippets below.
 
 <Tabs>
-  <TabItem value="bash" label="Unix Bash">  
-
-  ```bash
-    // Create a variable to hold your authorization header value
-    // In this guide, we use:
-    CODAT_AUTH_HEADER='{basicAuthHeader}'
-  ```
-  </TabItem>
-
-  <TabItem value="python" label="Python">
+  <TabItem value="csharp" label="C#">  
 
   ##### Installation
   
   ```bash
-    pip install codat-common
+    dotnet add package Codat.Platform
   ```
 
   ##### Authentication
 
-  ```python
-    import codatcommon
-    from codatcommon.models import shared
+  ```c
+    using CodatPlatform;
+    using CodatPlatform.Models.Shared;
 
-    codat_common = codatcommon.CodatCommon(
-      security=shared.Security(
-          auth_header='{basicAuthHeader}',
-      ),
-    )
-  ```  
+    var codatPlatform = new CodatPlatformSDK(
+        security: new Security() {
+            AuthHeader = "{basicAuthHeader}",
+        }
+    );
+  ```
   </TabItem>
-
+  
   <TabItem value="nodejs" label="TypeScript">  
 
   ##### Installation
   
   ```bash
-    npm add @codat/common
+    npm add @codat/platform
   ```
   or
   ```bash
-    yarn add @codat/common
+    yarn add @codat/platform
   ```
 
   ##### Authentication
 
   ```javascript
-    import { CodatCommon } from "@codat/common";
+    import { CodatPlatform } from "@codat/platform";
 
-    const codatCommon = new CodatCommon({
+    const codatCommon = new CodatPlatform({
       security: {
         authHeader: '{basicAuthHeader}',
       },
@@ -108,12 +99,34 @@ Then, replace `{basicAuthHeader}` in the code snippets below.
   ```
   </TabItem>
 
+  <TabItem value="python" label="Python">
+
+  ##### Installation
+  
+  ```bash
+    pip install codat-platform
+  ```
+
+  ##### Authentication
+
+  ```python
+    import codatplatform
+    from codatplatform.models import shared
+
+    codat_platform = codatplatform.CodatPlatform(
+      security=shared.Security(
+          auth_header='{basicAuthHeader}',
+      ),
+    )
+  ```  
+  </TabItem>
+
   <TabItem value="go" label="Go">  
 
   ##### Installation
   
   ```bash
-    go get github.com/codatio/client-sdk-go/common
+    go get github.com/codatio/client-sdk-go/platform
   ```
 
   ##### Authentication
@@ -122,11 +135,11 @@ Then, replace `{basicAuthHeader}` in the code snippets below.
     import(
       "context"
       "log"
-      "github.com/codatio/client-sdk-go/common"
+      "github.com/codatio/client-sdk-go/platform"
     )
 
-    codatCommon := codatcommon.New(
-        codatcommon.WithSecurity(shared.Security{
+    codatPlatform := codatplatform.New(
+        codatplatform.WithSecurity(shared.Security{
             AuthHeader: "{basicAuthHeader}",
         }),
     )
@@ -157,43 +170,28 @@ Copy this URL for use in the next step. Note that this URL can be accessed again
 To create a company in Codat, use the `POST /companies` endpoint with a request body containing the `name` of the company. It does not have to be unique and serves to identify your customer in Codat.
 
 <Tabs>
-  <TabItem value="curl" label="Unix Bash">  
+  <TabItem value="csharp" label="C#">  
 
-  ```bash
-    curl --request POST \
-        --url "https://api.codat.io/companies" \
-        --header "Authorization: $CODAT_AUTH_HEADER" \
-        --header "accept: application/json" \
-        --header "content-type: application/json" \
-        --data '
-        {
-                "name": "SMB company name",
-                "description": "Any additional information about the company"
-        }
-  ```    
-  </TabItem>
+  ```c
+  using CodatPlatform.Models.Shared;
 
-  <TabItem value="python" label="Python">  
+  var res = await codatPlatform.Companies.CreateAsync(new CompanyRequestBody() {
+      Description = "Requested early access to the new financing scheme.",
+      Name = "Bank of Dave",
+  });
 
-  ```python
-    req = shared.CompanyRequestBody(
-      description='Requested early access to the new financing scheme.',
-      name='Bank of Dave',
-    )
-
-    res = codat_common.companies.create(req)
-
-    if res.company is not None:
-      print(res.company.id, res.company.name)
-  ```  
+  if(res.Company != null) {
+    logger.LogInformation('{CompanyId} {CompanyName}', res.Company.Id, res.Company.Name)
+  }
+  ```
   </TabItem>
 
   <TabItem value="nodejs" label="TypeScript">  
 
   ```javascript
-    import { CreateCompanyResponse } from "@codat/common/dist/sdk/models/operations";
+    import { CreateCompanyResponse } from "@codat/platform/dist/sdk/models/operations";
     
-    codatCommon.companies.create({
+    codatPlatform.companies.create({
       description: "Requested early access to the new financing scheme.",
       name: "Bank of Dave",
     }).then((res: CreateCompanyResponse) => {
@@ -204,18 +202,33 @@ To create a company in Codat, use the `POST /companies` endpoint with a request 
   ```
   </TabItem>
 
+  <TabItem value="python" label="Python">  
+
+  ```python
+    req = shared.CompanyRequestBody(
+      description='Requested early access to the new financing scheme.',
+      name='Bank of Dave',
+    )
+
+    res = codat_platform.companies.create(req)
+
+    if res.company is not None:
+      print(res.company.id, res.company.name)
+  ```  
+  </TabItem>
+
   <TabItem value="go" label="Go">  
 
   ```go
   import(
-    "github.com/codatio/client-sdk-go/common/pkg/models/shared"
+    "github.com/codatio/client-sdk-go/platform/pkg/models/shared"
     "fmt"
   )
 
   ctx := context.Background()
   
-  res, err := s.Companies.Create(ctx, shared.CompanyRequestBody{
-    Description: codatcommon.String("Requested early access to the new financing scheme."),
+  res, err := codatPlatform.Companies.Create(ctx, shared.CompanyRequestBody{
+    Description: codatplatform.String("Requested early access to the new financing scheme."),
     Name: "Bank of Dave",
   })
 
@@ -228,13 +241,28 @@ To create a company in Codat, use the `POST /companies` endpoint with a request 
   }
   ```
   </TabItem>
+
+  <TabItem value="curl" label="cURL">  
+
+  ```bash
+    curl --request POST \
+        --url "https://api.codat.io/companies" \
+        --header "Authorization: $CODAT_AUTH_HEADER" \
+        --header "accept: application/json" \
+        --header "content-type: application/json" \
+        --data '{
+                "name": "SMB company name",
+                "description": "Any additional information about the company"
+        }
+  ```    
+  </TabItem>
 </Tabs>
 
 The endpoint returns a JSON response, confirming the unique `id` of the company and a `redirect` URL used to establish a connection with a data source.
 
 Retain the `id` and `redirect` URL for use in the next steps.
 
-You can also use the <a href="/codat-api#/operations/create-company" target="_blank"><i>Create company</i></a> endpoint in our API reference to try this out.
+You can also use the <a href="/platform-api#/operations/create-company" target="_blank"><i>Create company</i></a> endpoint in our API reference to try this out.
 
 </details>
 
@@ -269,34 +297,26 @@ Pick up the `redirect` URL returned in the response body of the company creation
 
 Follow the flow to connect to the Codat Sandbox as your source of accounting, commerce, and banking data. You don't need to enter any credentials.
 
-Once the flow is complete, you can verify the company's status under the <a href="/codat-api#/operations/get-companies-companyId" target="_blank"><i>View a single company</i></a> endpoint.
+Once the flow is complete, you can verify the company's status under the <a href="/platform-api#/operations/get-companies-companyId" target="_blank"><i>View a single company</i></a> endpoint.
 
 Remember to replace `{companyId}` with your company `id` obtained previously.
 
 <Tabs>
-  <TabItem value="bash" label="Unix Bash">  
+  <TabItem value="csharp" label="C#">  
 
-  ```bash
-    curl --request GET \
-        --url "https://api.codat.io/companies/{companyId}" \
-        --header "Authorization: $CODAT_AUTH_HEADER" \
-        --header "accept: application/json"
+  ```c
+  using CodatPlatform.Models.Shared;
+  using CodatPlatform.Models.Operations;
+  using System.Net;
+
+  var res = await sdk.Companies.GetAsync(new GetCompanyRequest() {
+    CompanyId = "{companyId}",
+  });
+
+  if res.statusCode == (int)HttpStatusCode.OK {
+    logger.LogInformation("{Redirect}", res.Company.Redirect)
+  }
   ```
-
-  </TabItem>
-
-  <TabItem value="python" label="Python">  
-
-  ```python
-    req = operations.GetCompanyRequest(
-      company_id='{companyId}',
-    )
-
-    res = codat_common.companies.get(req)
-
-    if res.company is not None:
-      print(res.company.redirect)
-  ```  
   </TabItem>
 
   <TabItem value="nodejs" label="TypeScript">  
@@ -312,6 +332,20 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
       }
     });
   ```
+  </TabItem>
+
+  <TabItem value="python" label="Python">  
+
+  ```python
+    req = operations.GetCompanyRequest(
+      company_id='{companyId}',
+    )
+
+    res = codat_common.companies.get(req)
+
+    if res.company is not None:
+      print(res.company.redirect)
+  ```  
   </TabItem>
 
   <TabItem value="go" label="Go">  
@@ -337,11 +371,21 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
   }
   ```
   </TabItem>
+
+  <TabItem value="curl" label="cURL">  
+
+  ```bash
+    curl --request GET \
+        --url "https://api.codat.io/companies/{companyId}" \
+        --header "Authorization: $CODAT_AUTH_HEADER" \
+        --header "accept: application/json"
+  ```
+  </TabItem>
 </Tabs>
 
 In the JSON response, you can see that the the `status` of data connections changed to **linked**.
 
-On first connection, Codat pulls data from the data source immediately. You can also use the <a href="/codat-api#/operations/get-companies-companyId-dataStatus" target="_blank"><i>Get company data status</i></a> endpoint to confirm the sync was successful.
+On first connection, Codat pulls data from the data source immediately. You can also use the <a href="/platform-api#/operations/get-companies-companyId-dataStatus" target="_blank"><i>Get company data status</i></a> endpoint to confirm the sync was successful.
 
 </details>
 
@@ -377,48 +421,40 @@ Developers can also use the Portal to review how Codat polled for a specific dat
 
 Codat provides various endpoints for you to query each of the supported data types easily.
 
-For example, to query invoices, use the <a href="/accounting-api#/operations/list-invoices" target="_blank"><i>All invoices</i></a> endpoint. You can perform filtering on the response data using querying. In this guide, we are using `page` and `pageSize` parameters to pull ten invoices for the company we created earlier.
+For example, to query invoices, use the <a href="/lending-api#/operations/list-invoices" target="_blank"><i>All invoices</i></a> endpoint. You can perform filtering on the response data using querying. In this guide, we are using `page` and `pageSize` parameters to pull ten invoices for the company we created earlier.
 
 Remember to replace `{companyId}` with your company `id` obtained previously.
 
 <Tabs>
-  <TabItem value="curl" label="Unix Bash">  
-
-  ```bash
-    curl --request GET \
-        --url "https://api.codat.io/companies/{companyId}/data/invoices?page=1&pageSize=10" \
-        --header "Authorization: $CODAT_AUTH_HEADER" \
-        --header "accept: application/json"
-  ```
-
-  </TabItem>
-
-  <TabItem value="python" label="Python">  
+  <TabItem value="csharp" label="C#">  
 
   ##### Installation
+  
   ```bash
-    pip install codat-accounting
+    dotnet add package Codat.Lending
   ```
 
   ##### Usage
 
-  ```python
-    import codataccounting
-    from codataccounting.models import operations
+  ```c
+  using CodatLending;
+  using CodatLending.Models.Shared;
+  using CodatLending.Models.Operations;
 
-    codat_accounting = codataccounting.CodatAccounting(
-        security=shared.Security(
-            auth_header="{basicAuthHeader}",
-        ),
-    )
+  var codatLending = new CodatLendingSDK(
+    security: new Security() {
+          AuthHeader = "{basicAuthHeader}",
+      }
+  );
 
-    req = operations.ListInvoicesRequest(company_id='{companyId}')
+  var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccountingInvoicesRequest() {
+      CompanyId = "8a210b68-6988-11ed-a1eb-0242ac120002",
+  });
 
-    res = s.invoices.list(req)
-
-    if res.invoices is not None:
-      print(res.invoices.results)
-  ```  
+  if(res.StatusCode == (int)HttpStatusCode.OK){
+    logger.LogInformation(res.invoices.results[0].Id)
+  }
+  ```
   </TabItem>
 
   <TabItem value="nodejs" label="TypeScript">  
@@ -426,32 +462,60 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
   ##### Installation
   
   ```bash
-    npm add @codat/accounting
+    npm add @codat/lending
   ```
   or
   ```bash
-    yarn add @codat/accounting
+    yarn add @codat/lending
   ```
 
   ##### Usage
 
   ```javascript
-    import { CodatAccounting } from "@codat/accounting";
-    import { ListInvoicesResponse } from "@codat/accounting/dist/sdk/models/operations";
+    import { CodatLending } from "@codat/lending";
+    import { ListInvoicesResponse } from "@codat/lending/dist/sdk/models/operations";
     
-    const codatAccounting = new CodatAccounting({
+    const codatLending = new CodatLending({
       security: {
         authHeader: "{basicAuthHeader}",
       },
     });
 
-    codatAccounting.invoices.list({
+    codatLending.accountsReceivable.invoices.list({
       companyId: "{companyId}"
     }).then((res: ListInvoicesResponse) => {
       if (res.statusCode == 200) {
-        console.log(res.invoices.results)
+        console.log(res.accounting_invoices.results[0].id)
       }
     });
+  ```
+  </TabItem>
+
+  <TabItem value="python" label="Python">  
+
+  ##### Installation
+  ```bash
+    pip install codat-lending
+  ```
+
+  ##### Usage
+
+  ```python
+    import codatlending
+    from codatlending.models import operations
+
+    codat_lending = codatlending.CodatLending(
+        security=shared.Security(
+            auth_header="{basicAuthHeader}",
+        ),
+    )
+
+    req = operations.ListInvoicesRequest(company_id='{companyId}')
+
+    res = codat_lending.accounts_receivable.invoices.list(req)
+
+    if res.invoices is not None:
+      print(res.accounting_invoices.results[0].id)
   ```
   </TabItem>
 
@@ -460,7 +524,7 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
   ##### Installation
   
   ```bash
-    go get github.com/codatio/client-sdk-go/accounting
+    go get github.com/codatio/client-sdk-go/lending
   ```
 
   ##### Usage
@@ -471,20 +535,20 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
   import(
     "context"
     "log"
-    "github.com/codatio/client-sdk-go/accounting"
-    "github.com/codatio/client-sdk-go/accounting/pkg/models/operations"
+    "github.com/codatio/client-sdk-go/lending"
+    "github.com/codatio/client-sdk-go/lending/pkg/models/operations"
     "fmt"
   )
 
   func main() {
-      codatAccounting := codataccounting.New(
-          codataccounting.WithSecurity(shared.Security{
+      codatLending := codatlending.New(
+          codatlending.WithSecurity(shared.Security{
               AuthHeader: "{basicAuthHeader}",
           }),
       )
 
       ctx := context.Background()
-      res, err := codatAccounting.Invoices.List(ctx, operations.ListInvoicesRequest{
+      res, err := codatLending.AccountsReceivable.Invoices.List(ctx, operations.ListInvoicesRequest{
           CompanyID: "{companyId}"
       })
 
@@ -493,9 +557,19 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
       }
 
       if res.Invoices != nil {
-        fmt.Println("%s ",res.Invoices.Results[0].id)
+        fmt.Println("%s ",res.AccountingInvoices.Results[0].id)
       }
   }
+  ```
+  </TabItem>
+
+  <TabItem value="curl" label="cURL">  
+
+  ```bash
+    curl --request GET \
+        --url "https://api.codat.io/companies/{companyId}/data/invoices?page=1&pageSize=10" \
+        --header "Authorization: {basicAuthHeader}" \
+        --header "accept: application/json"
   ```
   </TabItem>
 </Tabs>  

@@ -3,6 +3,7 @@ title: "Financial statements"
 description: "Introduction to financial statements"
 sidebar_label: "Overview"
 displayed_sidebar: lending
+image: "/img/banners/social/lending.png"
 ---
 
 Our latest version of Enhanced Financials reduces the need for highly manual, time-consuming, and repetitive interpretation of SMB account names. 

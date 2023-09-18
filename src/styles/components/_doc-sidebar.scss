@@ -124,6 +124,10 @@ html[data-theme="dark"] {
       padding-left: 1rem;
     }
 
+    .menu__link--sublist-caret:after {
+      filter: none;
+    }
+
     //.menu__list-item-collapsible--active {
     .menu__list-item-collapsible {
       a[aria-expanded="true"] + button.menu__caret {
@@ -216,8 +220,7 @@ html[data-theme="dark"] {
   }
 
   .menu__link--sublist,
-  .menu__list-item.product > .menu__link,
-  .menu__list-item.integrations > .menu__link {
+  .menu__list-item.product > .menu__link {
     padding-inline-start: 0;
     padding-inline-end: 0;
 
@@ -313,8 +316,7 @@ html[data-theme="dark"] {
     }
   }
 
-  .menu__list-item.product,
-  .menu__list-item.integrations {
+  .menu__list-item.product {
     position: relative;
 
     > .menu__link {
@@ -361,8 +363,7 @@ html[data-theme="dark"] {
   }
 
   .theme-doc-sidebar-item-category-level-1,
-  .theme-doc-sidebar-item-link-level-1.product,
-  .theme-doc-sidebar-item-link-level-1.integrations {
+  .theme-doc-sidebar-item-link-level-1.product {
     > .menu__link {
       color: var(--sidebar-category-c);
       line-height: 100%;
@@ -443,10 +444,6 @@ html[data-theme="light"] {
       --icon-url: url("/img/sidebar/products.svg");
     }
 
-    &.product {
-      --icon-url: url("/img/sidebar/products.svg");
-    }
-
     &.product.accounting {
       --icon-url: url("/img/sidebar/coins.svg");
     }
@@ -461,7 +458,7 @@ html[data-theme="light"] {
     }
 
     &.product.bankfeed {
-      --icon-url: url("/img/sidebar/bank-note.svg");
+      --icon-url: url("/img/sidebar/bank.svg");
       //--icon-url: url("/img/sidebar/icon_bankfeeds.svg");
     }
 
@@ -540,7 +537,7 @@ html[data-theme="dark"] {
 
     &.product.bankfeed  {
       //--icon-url: url("/img/sidebar-dark/icon_bankfeeds_light.svg");
-      --icon-url: url("/img/sidebar-dark/bank-note_light.svg");
+      --icon-url: url("/img/sidebar-dark/bank_light.svg");
     }
 
     &.product.commerce {

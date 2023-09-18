@@ -2,6 +2,7 @@
 title: "Data synchronization"
 description: "Understand the principles of daily data syncs and error handling in Sync for Commerce"
 displayed_sidebar: commerce
+image: "/img/banners/social/commerce.png"
 ---
 
 ## Data synchronization mechanism

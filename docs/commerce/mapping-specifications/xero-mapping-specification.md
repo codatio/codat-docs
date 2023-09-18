@@ -2,6 +2,7 @@
 title: "Xero mapping specification"
 sidebar_label: Xero
 description: "Guidelines for data mapping configuration from a commerce platform to Xero."
+image: "/img/banners/social/commerce.png"
 ---
 
 ## Overview

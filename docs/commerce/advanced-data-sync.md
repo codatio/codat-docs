@@ -3,6 +3,7 @@ title: "Advanced data synchronization features"
 sidebar_label: "Data synchronization"
 description: "Learn about additional data sync options available with Sync for Commerce" 
 displayed_sidebar: commerce
+image: "/img/banners/social/commerce.png"
 ---
 
 Data synchronization is an automated daily process. A merchant can view the status of the recent sync operations in the Sync configuration UI, and your support team can check it on the Sync Health page of our [Portal](https://app.codat.io/). 

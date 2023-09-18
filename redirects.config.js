@@ -9,6 +9,205 @@ const mapIntegrationRedirects = (items, category) => {
   return items.map(item => mapIntegrationRedirect(item, category))
 }
 
+const prodRework = [
+  {
+  from: "/accounting-api/overview",
+  to: "/using-the-api/overview"
+},
+{
+  from: "/bank-feeds-api/overview",
+  to: "/bank-feeds/overview"
+},
+{
+  from: "/bank-feeds-api/qbo-bank-feeds",
+  to: "/integrations/bank-feeds/qbo-bank-feeds"
+},
+{
+  from: "/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions",
+  to: "/integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions"
+},
+{
+  from: "/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-setup",
+  to: "/integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-setup"
+},
+{
+  from: "/bank-feeds-api/qbo-bank-feeds/qbo-bank-feeds-smb-user",
+  to: "/integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-smb-user"
+},
+{
+  from: "/bank-feeds-api/sage-bank-feeds",
+  to: "/integrations/bank-feeds/sage-bank-feeds"
+},
+{
+  from: "/bank-feeds-api/sage-bank-feeds/sage-bank-feeds-authenticate-users-web-app",
+  to: "/integrations/bank-feeds/sage-bank-feeds/sage-bank-feeds-authenticate-users-web-app"
+},
+{
+  from: "/bank-feeds-api/sage-bank-feeds/sage-bank-feeds-setup",
+  to: "/integrations/bank-feeds/sage-bank-feeds/sage-bank-feeds-setup"
+},
+{
+  from: "/bank-feeds-api/sage-bank-feeds/sage-bank-feeds-use",
+  to: "/integrations/bank-feeds/sage-bank-feeds/sage-bank-feeds-use"
+},
+{
+  from: "/bank-feeds-api/xero-bank-feeds",
+  to: "/integrations/bank-feeds/xero-bank-feeds"
+},
+{
+  from: "/bank-feeds-api/xero-bank-feeds/xero-bank-feeds-partner",
+  to: "/integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds-partner"
+},
+{
+  from: "/bank-feeds-api/xero-bank-feeds/xero-bank-feeds-push-bank-transactions",
+  to: "/integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds-push-bank-transactions"
+},
+{
+  from: "/bank-feeds-api/xero-bank-feeds/xero-bank-feeds-setup",
+  to: "/integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds-setup"
+},
+{
+  from: "/bank-feeds-api/xero-bank-feeds/xero-bank-feeds-smb-user",
+  to: "/integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds-smb-user"
+},
+{
+  from: "/banking-api/overview",
+  to: "/using-the-api/overview"
+},
+{
+  from: "/commerce-api/overview",
+  to: "/using-the-api/overview"
+},
+{
+  from: "/data-model/accounting",
+  to: "/lending/data-types"
+},
+{
+  from: "/data-model/banking",
+  to: "/lending/data-types"
+},
+{
+  from: "/data-model/commerce",
+  to: "/lending/data-types"
+},
+{
+  from: "/guides/bank-feeds-tutorial",
+  to: "/bank-feeds/guides/bank-feeds-tutorial"
+},
+{
+  from: "/guides/bill-pay/how-the-demo-app-works",
+  to: "/payables/guides/bill-pay/how-the-demo-app-works"
+},
+{
+  from: "/guides/bill-pay/introduction",
+  to: "/payables/guides/bill-pay/introduction"
+},
+{
+  from: "/guides/bill-pay/run-demo-app-locally",
+  to: "/payables/guides/bill-pay/run-demo-app-locally"
+},
+{
+  from: "/guides/bill-pay/use-bill-pay-demo-app",
+  to: "/payables/guides/bill-pay/use-bill-pay-demo-app"
+},
+{
+  from: "/guides/invoice-finance/introduction",
+  to: "/lending/guides/invoice-finance/introduction"
+},
+{
+  from: "/guides/invoice-finance/inv-fin-decision",
+  to: "/lending/guides/invoice-finance/inv-fin-decision"
+},
+{
+  from: "/guides/invoice-finance/process-invoice",
+  to: "/lending/guides/invoice-finance/process-invoice"
+},
+{
+  from: "/guides/invoice-finance/setting-up",
+  to: "/lending/guides/invoice-finance/setting-up"
+},
+{
+  from: "/guides/loan-qualification/introduction",
+  to: "/lending/guides/loan-qualification/introduction"
+},
+{
+  from: "/guides/loan-qualification/process-loan",
+  to: "/lending/guides/loan-qualification/process-loan"
+},
+{
+  from: "/guides/loan-qualification/setting-up",
+  to: "/lending/guides/loan-qualification/setting-up"
+},
+{
+  from: "/guides/loan-qualification/uw-decision",
+  to: "/lending/guides/loan-qualification/uw-decision"
+},
+{
+  from: "/integrations/bankfeeds/overview",
+  to: "/integrations/bank-feeds/overview"
+},
+{
+  from: "/sfc/build-with-sync-for-commerce/sync-for-commerce-prerequisites",
+  to: "/commerce/overview"
+},
+{
+  from: "/sfc/coming-soon",
+  to: "/commerce/overview"
+},
+{
+  from: "/sfc/error-documentation",
+  to: "/commerce/error-documentation"
+},
+{
+  from: "/sfc/mapping-specifications/overview",
+  to: "/commerce/overview"
+},
+{
+  from: "/sfc/mapping-specifications/qbo-mapping-specification",
+  to: "/commerce/merchant-configuration"
+},
+{
+  from: "/sfc/mapping-specifications/xero-mapping-specification",
+  to: "/commerce/merchant-configuration"
+},
+{
+  from: "/sync-for-expenses/configandcategorize",
+  to: "/expenses/config-and-categorize"
+},
+{
+  from: "/sync-for-expenses/gettingstarted",
+  to: "/expenses/getting-started"
+},
+{
+  from: "/sync-for-expenses/overview",
+  to: "/expenses/overview"
+},
+{
+  from: "/sync-for-expenses/sync-for-expenses-faq",
+  to: "/expenses/faq"
+},
+{
+  from: "/sync-for-expenses/sync-process/expense-transactions",
+  to: "/expenses/sync-process/expense-transactions"
+},
+{
+  from: "/sync-for-expenses/sync-process/sync-process-explained",
+  to: "/expenses/sync-process/sync-process-explained"
+},
+{
+  from: "/sync-for-expenses/sync-process/syncing-expenses",
+  to: "/expenses/sync-process/syncing-expenses"
+},
+{
+  from: "/sync-for-expenses/sync-process/updating-expenses",
+  to: "/expenses/sync-process/updating-expenses"
+},
+{
+  from: "/sync-for-expenses/sync-process/uploading-receipts",
+  to: "/expenses/sync-process/uploading-receipts"
+}
+]
+
 const acc = [
   {
     integration: "Clear Books",
@@ -378,23 +577,6 @@ module.exports = {
       from: "/integrations/accounting/myob/faq-myob-accountright-live",
       to: "/integrations/accounting/myob/myob-integration-reference", 
     },
-    // --- delete soon
-    {
-      from: "/guides/loan-qualification/introduction",
-      to: "/lending/guides/loan-qualification/introduction",
-    },
-    {
-      from: "/guides/loan-qualification/setting-up",
-      to: "/lending/guides/loan-qualification/setting-up",
-    },
-    {
-      from: "/guides/loan-qualification/process-loan",
-      to: "/lending/guides/loan-qualification/process-loan",
-    },
-    {
-      from: "/guides/loan-qualification/uw-decision",
-      to: "/lending/guides/loan-qualification/uw-decision",
-    },
     {
       from: "/accounting-api/guides/bill-pay/introduction",
       to: "/payables/guides/bill-pay/introduction",
@@ -491,34 +673,8 @@ module.exports = {
       from: "/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow",
       to: "/commerce/setup",
     },
-    {
-      from: "/sfc/mapping-specifications/overview",
-      to: "/commerce/overview",
-    },
-    {
-      from: "/sfc/mapping-specifications/xero-mapping-specification",
-      to: "/commerce/overview",
-    },
-    {
-      from: "/sfc/mapping-specifications/qbo-mapping-specification",
-      to: "/commerce/overview",
-    },
-    {
-      from: "/sfc/error-documentation",
-      to: "/commerce/error-documentation",
-    },
-    {
-      from: "/sfc/coming-soon",
-      to: "/commerce/coming-soon",
-    },
-
 
     // expenses
-
-    {
-      from: "/sync-for-expenses/overview",
-      to: "/expenses/overview",
-    },
     {
       from: "/sync-for-expenses/getting-started",
       to: "/expenses/getting-started",
@@ -528,33 +684,8 @@ module.exports = {
       to: "/expenses/config-and-categorize",
     },
     {
-      from: "/sync-for-expenses/sync-process/sync-process-explained",
-      to: "/expenses/sync-process/sync-process-explained",
-    },
-    {
-      from: "/sync-for-expenses/sync-process/expense-transactions",
-      to: "/expenses/sync-process/expense-transactions",
-    },
-    {
-      from: "/sync-for-expenses/sync-process/syncing-expenses",
-      to: "/expenses/sync-process/syncing-expenses",
-    },
-    {
-      from: "/sync-for-expenses/sync-process/uploading-receipts",
-      to: "/expenses/sync-process/uploading-receipts",
-    },
-    {
-      from: "/sync-for-expenses/sync-process/updating-expenses",
-      to: "/expenses/sync-process/updating-expenses",
-    },
-    {
       from: "/sync-for-expenses/faq",
       to: "/expenses/faq",
-    },
-
-    {
-      from: "/bank-feeds/guides/bank-feeds-tutorial",
-      to: "/bank-feeds/guides/bank-feeds-tutorial",
     },
 
     // assess
@@ -776,6 +907,7 @@ module.exports = {
       from: "/assess/troubleshooting",
     },
 
+    ...prodRework,
     // integrations
 
     ...mapIntegrationRedirects(acc, "accounting"),

@@ -1,6 +1,7 @@
 ---
 title: Payment method mapping
 description: "Enable SMBs to choose how to make payments"
+image: "/img/banners/social/payables.png"
 ---
 
 import Tabs from "@theme/Tabs";
