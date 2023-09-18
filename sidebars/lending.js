@@ -92,7 +92,7 @@ module.exports = [
 //  },
 {
     type: "doc",
-    id: "lending/guides/loan-writeback",
+    id: "lending/guides/general-loan-writeback",
     label: "Loan writeback",
     customProps: {
       hr: true,
