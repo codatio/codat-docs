@@ -7177,10 +7177,30 @@
             "$ref": "#/components/schemas/BankAccount"
           },
           "supplier": {
-            "$ref": "#/components/schemas/Supplier"
+            "$ref": "#/components/schemas/CompanyConfiguration/definitions/SupplierDetails"
           },
           "customer": {
-            "$ref": "#/components/schemas/Customer"
+            "$ref": "#/components/schemas/CompanyConfiguration/definitions/CustomerDetails"
+          }
+        },
+        "definitions": {
+          "SupplierDetails": {
+            "title": "Supplier details",
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/schemas/Supplier/allOf/0/properties/id"
+              }
+            }
+          },
+          "CustomerDetails": {
+            "title": "Customer details",
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/schemas/Customer/allOf/0/properties/id"
+              }
+            }
           }
         }
       },
