@@ -91,14 +91,14 @@ module.exports = [
 //    ],
 //  },
 {
-    type: "doc",
-    id: "lending/guides/general-loan-writeback",
-    label: "Loan writeback",
-    customProps: {
-      hr: true,
-      section: "Guides",
-    },
-}, 
+  type: "doc",
+  label: "Loan writeback",
+  customProps: {
+    hr: true,
+    section: "Guides",
+  },
+  id: "lending/guides/general-loan-writeback",
+},
 {
     type: "link",
     href: '/lending/troubleshooting',
