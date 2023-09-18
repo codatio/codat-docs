@@ -91,20 +91,22 @@ module.exports = [
 //    ],
 //  },
 {
-  type: "category",
-  label: "Guides",
-  collapsed: true,
-  customProps: {
-    hr: true,
-  },
-  items: [
-        "lending/guides/general-loan-writeback",
-      ],
-},  
+    type: "doc",
+    id: "lending/guides/loan-writeback",
+    label: "Loan writeback",
+    customProps: {
+      hr: true,
+      section: "Guides",
+    },
+}, 
 {
     type: "link",
     href: '/lending/troubleshooting',
     label: "Troubleshooting",
+    customProps: {
+      hr: true,
+      section: "Reference",
+    },
   },
   "lending/data-types",
   {
