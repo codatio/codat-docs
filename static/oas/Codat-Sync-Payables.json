@@ -41271,6 +41271,46 @@
       }
     }
   },
+  "webhooks": {
+    "Client rate limit reached": {
+      "post": {
+        "requestBody": {
+          "description": "Triggered when your Codat client's rate limit is reached.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "Client rate limit reset": {
+      "post": {
+        "requestBody": {
+          "description": "Triggered when your Codat client's rate limit is reset.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientRateLimitResetWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    }
+  },
   "components": {
     "schemas": {
       "PagingInfo": {
@@ -41993,7 +42033,7 @@
               "Success",
               "TimedOut"
             ],
-            "description": "The status of the push operation."
+            "description": "The current status of the push operation."
           },
           "pushOperationChange": {
             "type": "object",
@@ -44804,6 +44844,147 @@
             "nullable": true
           }
         }
+      },
+      "ClientRateLimitReachedWebhook": {
+        "title": "Client rate limit reached webhook",
+        "x-internal": true,
+        "description": "Webhook request body for a client that has reached their rate limit.",
+        "type": "object",
+        "properties": {
+          "ClientId": {
+            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/ClientId"
+          },
+          "ClientName": {
+            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/ClientName"
+          },
+          "RuleId": {
+            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/RuleId"
+          },
+          "RuleType": {
+            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/RuleType"
+          },
+          "AlertId": {
+            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/AlertId"
+          },
+          "Message": {
+            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/Message"
+          },
+          "Data": {
+            "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData"
+          }
+        },
+        "definitions": {
+          "ClientRateLimitReachedWebhookData": {
+            "type": "object",
+            "title": "Client rate limit reached webhook data",
+            "properties": {
+              "DailyQuota": {
+                "type": "integer",
+                "description": "The number of available requests per day."
+              },
+              "ExpiresUtc": {
+                "$ref": "#/components/schemas/Company/properties/created",
+                "description": "The date time in UTC that your daily quota is reset."
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "RuleType": "Rate Limit Reached",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "The current daily rate limit quota of 1000 requests for bae71d36-ff47-420a-b4a6-f8c9ddf41140 has been reached.",
+            "Data": {
+              "DailyQuota": 1000,
+              "ExpiresUtc": "2023-05-03T00:00:00Z"
+            }
+          }
+        ]
+      },
+      "ClientRateLimitResetWebhook": {
+        "title": "Client rate limit reset webhook",
+        "x-internal": true,
+        "description": "Webhook request body for a client that has had their rate limit reset.",
+        "type": "object",
+        "properties": {
+          "ClientId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for your client in Codat."
+          },
+          "ClientName": {
+            "type": "string",
+            "description": "Name of your client in Codat."
+          },
+          "RuleId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for the rule."
+          },
+          "RuleType": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "34d52a089f08a"
+            },
+            "description": "The type of rule."
+          },
+          "AlertId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier of the webhook event."
+          },
+          "Message": {
+            "type": "string",
+            "description": "A human readable message about the webhook."
+          },
+          "Data": {
+            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/definitions/ClientRateLimitResetWebhookData"
+          }
+        },
+        "definitions": {
+          "ClientRateLimitResetWebhookData": {
+            "type": "object",
+            "title": "Client rate limit reset webhook data",
+            "properties": {
+              "QuotaRemaining": {
+                "type": "integer",
+                "description": "Total number of request remaining for your client.",
+                "nullable": true
+              },
+              "ResetReason": {
+                "type": "string",
+                "description": "The reason for your rate limit quota being reset."
+              },
+              "DailyQuota": {
+                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData/properties/DailyQuota",
+                "nullable": true
+              },
+              "ExpiresUtc": {
+                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData/properties/ExpiresUtc",
+                "nullable": true
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "RuleType": "Rate Limit Reset",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "The current daily rate limit quota for client 30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e has been reset to 1000 requests.",
+            "Data": {
+              "QuotaRemaining": 1000,
+              "ResetReason": "The quota was reset because it is a new day.",
+              "DailyQuota": 1000,
+              "ExpiresUtc": "2023-05-03T00:00:00Z"
+            }
+          }
+        ]
       }
     },
     "parameters": {
