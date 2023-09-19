@@ -1,5 +1,6 @@
 ---
 title: "Importing Data from the API into Excel"
+draft: true
 ---
 
 Codat provides an Excel file which contains a summary of all of the key available datatypes, this can be downloaded from the portal:

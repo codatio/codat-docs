@@ -1,5 +1,6 @@
 ---
 title: "GDPR"
+draft: true
 ---
 
 ## What do these FAQs cover?

@@ -1,5 +1,6 @@
 ---
 title: "Authorisation using the Codat API"
+draft: true
 ---
 
 Integrating with the Codat API allows you to develop your own user journey within your application, to your exact specification, powered by Codat API.

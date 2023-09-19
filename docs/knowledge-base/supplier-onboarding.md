@@ -1,5 +1,6 @@
 ---
 title: "Onboarding to Codat"
+draft: true
 ---
 Introduction
 

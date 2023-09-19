@@ -1,5 +1,6 @@
 ---
 title: "Common customer questions"
+draft: true
 ---
 
 Customers may have some common questions about why they should link their accounts, the below is not an exhaustive list, but making these FAQ's available during your link process may increase the success rate of sharing information through their applications.

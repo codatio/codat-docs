@@ -1,5 +1,6 @@
 ---
 title: "Xero | Invoice Finance"
+draft: true
 ---
 Introduction
 Selective Invoice Financing

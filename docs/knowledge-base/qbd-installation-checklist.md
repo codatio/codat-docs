@@ -1,5 +1,6 @@
 ---
 title: "QuickBooks Desktop Installation Checklist"
+draft: true
 ---
 
 If a user wants to install the QuickBooks Desktop connector on their computer, there are a few tasks that the user should first complete.

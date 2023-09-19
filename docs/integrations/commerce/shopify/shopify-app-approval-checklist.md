@@ -1,5 +1,6 @@
 ---
 title: "App approval checklist"
+draft: true
 ---
 
 In order to access Shopify data you must meet the [requirements in the Shopify App Store](https://shopify.dev/apps/store/review).

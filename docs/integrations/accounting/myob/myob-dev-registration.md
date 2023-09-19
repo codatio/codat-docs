@@ -1,5 +1,6 @@
 ---
 title: "Endpoints for MYOB Developer Partner Registration"
+draft: true
 ---
 
 Before you can use Codat to access accounting data from customers using MYOB AccountRight and Essentials, you will need to register for a developer account with MYOB. The MYOB developer registration document asks which of their API endpoints you want to use.
