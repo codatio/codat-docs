@@ -5,7 +5,7 @@ tags: ["Deprecation", "Link"]
 authors: dcoplowe
 ---
 
-On the **10th December, 2023**, we will be deprecating [@codat/link-sdk](https://www.npmjs.com/package/@codat/link-sdk).
+On the **10th January, 2023**, we will be deprecating [@codat/link-sdk](https://www.npmjs.com/package/@codat/link-sdk).
 
 <!--truncate-->
 
