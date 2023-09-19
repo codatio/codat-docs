@@ -13,7 +13,7 @@ On the **10th January, 2023**, we will be deprecating [@codat/link-sdk](https://
 
 The @codat/link-sdk has been replaced by a new version of [Embedded Link](https://docs.codat.io/auth-flow/authorize-embedded-link) - a pre-built JavaScript component that works with *all* major JavaScript frameworks, including vanilla JavaScript, Angular, and Vue as well as React.
 
-We've made switching over to Embedded Link simple thanks to our example applications written in
+We've provided sample projects to make made switching to Embedded Link simple, no matter what your technology choice:```
 
 - [React](https://github.com/codatio/sdk-link/tree/main/examples/react)
 - [Next](https://github.com/codatio/sdk-link/tree/main/examples/next)
