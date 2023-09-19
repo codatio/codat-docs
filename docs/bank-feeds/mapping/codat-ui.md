@@ -40,7 +40,7 @@ When a user has successfully linked their account, they will be redirected to yo
   Mapping options request url:
 
 ```http
-GET /companies/:companyId/connections/:connectionId/bankFeedAccounts/mapping
+GET /companies/{companyId}/connections/{connectionId}/bankFeedAccounts/mapping
 ```
     
   </TabItem >
