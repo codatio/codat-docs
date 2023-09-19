@@ -3,7 +3,7 @@ title: "Push history"
 description: "See the history of data being pushed from the Codat system"
 ---
 
-Similar functionality is available for [push history](/using-the-api/pull-history).
+Similar functionality is available for [pull history](/using-the-api/pull-history).
 
 ## Via API
 
