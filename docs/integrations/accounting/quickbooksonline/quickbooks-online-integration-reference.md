@@ -1,6 +1,6 @@
 ---
 title: "QuickBooks Online integration reference"
-description: "Things to know when synchronizing data with QuickBooks Online."
+description: "Things to know when synchronizing data with QuickBooks Online"
 sidebar_label: Reference
 ---
 
@@ -14,7 +14,7 @@ When pushing Direct Incomes to QuickBooks Online, you must enter Sales Receipts 
 
 ## Direct Costs
 
-When pushing Direct Costs to QuickBooks Online; for GB, FR, IE and AU locales, if there is a Tax Amount specified on the line item, this will push the expense as `Tax Exclusive`. This is also the case for Canada, however if there are no Tax Amounts specified on any line items OR all line items have a Tax Amount of 0, the expense will be pushed as `Out Of Scope Of Tax`.
+When creating direct costs in QuickBooks Online for GB, FR, IE, CA, and AU locales, records with a tax amount specified on the line item will be classified as `Tax Exclusive`. Specifically for CA, if there are no tax amounts specified on any line items or all line items have a tax amount of zero, the expense will be pushed as `Out Of Scope Of Tax`.
 
 ## Invoice Line Items
 
