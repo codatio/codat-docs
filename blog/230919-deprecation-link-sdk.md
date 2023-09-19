@@ -25,7 +25,7 @@ We've provided sample projects to make made switching to Embedded Link simple, n
 
 ## Expected impact if no action is taken
 
-We will stop supporting this package meaning that bugs will not be resolved and security updates will not be provided.
+We will stop supporting this package meaning that we're not actively addressing security updates and bugs, and support will not be provided. The package itself will continue to work, despite being deprecated.
 
 :::note Get ahead
 
