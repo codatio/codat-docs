@@ -4065,11 +4065,9 @@
       "AccountCategoriesUpdatedWebhook": {
         "title": "Account categories updated webhook",
         "description": "Webhook request body for account categories updated.",
+        "x-internal": true,
         "type": "object",
         "properties": {
-          "CompanyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
           "ClientId": {
             "type": "string",
             "format": "uuid",
@@ -4079,6 +4077,9 @@
             "type": "string",
             "description": "Name of your client in Codat."
           },
+          "CompanyId": {
+            "$ref": "#/components/parameters/companyId/schema"
+          },
           "DataConnectionId": {
             "$ref": "#/components/parameters/connectionId/schema"
           },
@@ -4087,7 +4088,7 @@
             "format": "uuid",
             "description": "Unique identifier for the rule."
           },
-          "Type": {
+          "RuleType": {
             "type": "string",
             "x-stoplight": {
               "id": "34d52a089f08a"
@@ -4104,7 +4105,13 @@
             "description": "A human readable message about the webhook."
           },
           "Data": {
+            "$ref": "#/components/schemas/AccountCategoriesUpdatedWebhook/definitions/AccountCategoriesUpdatedWebhookData"
+          }
+        },
+        "definitions": {
+          "AccountCategoriesUpdatedWebhookData": {
             "type": "object",
+            "title": "Account categories updated webhook data",
             "properties": {
               "modifiedDate": {
                 "description": "The date on which this account categories were last modified in Codat.",
@@ -4117,15 +4124,15 @@
         },
         "examples": [
           {
-            "companyId": "f1c35bdc-1546-41b9-baf4-3f31135af968",
-            "clientId": "5e505642-9024-474d-9434-e5a44f505cc5",
-            "clientName": "Peach Inc.",
-            "dataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-            "ruleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "type": "Account Categories Updated",
-            "alertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "message": "Account categories updated for company f1c35bdc-1546-41b9-baf4-3f31135af968.",
-            "data": {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
+            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "RuleType": "Account Categories Updated",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "Account categories updated for company f1c35bdc-1546-41b9-baf4-3f31135af968.",
+            "Data": {
               "modifiedDate": "2019-08-24T14:15:22Z"
             }
           }

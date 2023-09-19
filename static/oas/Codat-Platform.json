@@ -2203,7 +2203,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CompanyDataConnectionStatusChangedWebhook"
+                "$ref": "#/components/schemas/ConnectionStatusChangedWebhook"
               }
             }
           }
@@ -2318,6 +2318,44 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/PushOperationTimedOutWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "Client rate limit reached": {
+      "post": {
+        "requestBody": {
+          "description": "Triggered when your Codat client's rate limit is reached.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "Client rate limit reset": {
+      "post": {
+        "requestBody": {
+          "description": "Triggered when your Codat client's rate limit is reset.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientRateLimitResetWebhook"
               }
             }
           }
@@ -3705,20 +3743,29 @@
         ],
         "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
       },
-      "CompanyDataConnectionStatusChangedWebhook": {
-        "title": "Company data connection status changed webhook",
+      "ConnectionStatusChangedWebhook": {
+        "title": "Connection status changed webhook",
         "x-internal": true,
         "description": "Webhook request body for a company's data connection status changed.",
         "type": "object",
         "properties": {
+          "ClientId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientId"
+          },
+          "ClientName": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
+          },
           "CompanyId": {
             "$ref": "#/components/parameters/companyId/schema"
+          },
+          "DataConnectionId": {
+            "$ref": "#/components/parameters/connectionId/schema"
           },
           "RuleId": {
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
           },
-          "Type": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Type"
+          "RuleType": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
           },
           "AlertId": {
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
@@ -3727,7 +3774,13 @@
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
           },
           "Data": {
+            "$ref": "#/components/schemas/ConnectionStatusChangedWebhook/definitions/ConnectionStatusChangedWebhookData"
+          }
+        },
+        "definitions": {
+          "ConnectionStatusChangedWebhookData": {
             "type": "object",
+            "title": "Connection status changed webhook data",
             "properties": {
               "dataConnectionId": {
                 "$ref": "#/components/parameters/connectionId/schema"
@@ -3746,9 +3799,12 @@
         },
         "examples": [
           {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
             "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
             "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "Type": "DataConnectionStatusChanged",
+            "RuleType": "DataConnectionStatusChanged",
             "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
             "Message": "Data connection for SandBox status changed from PendingAuth to Linked",
             "Data": {
@@ -3761,14 +3817,11 @@
         ]
       },
       "DataSyncCompletedWebhook": {
-        "title": "Data sync complete webhook",
+        "title": "Data sync completed webhook",
         "x-internal": true,
         "description": "Webhook request body to notify the completion of a data sync.",
         "type": "object",
         "properties": {
-          "CompanyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
           "ClientId": {
             "type": "string",
             "format": "uuid",
@@ -3778,6 +3831,9 @@
             "type": "string",
             "description": "Name of your client in Codat."
           },
+          "CompanyId": {
+            "$ref": "#/components/parameters/companyId/schema"
+          },
           "DataConnectionId": {
             "$ref": "#/components/parameters/connectionId/schema"
           },
@@ -3786,7 +3842,7 @@
             "format": "uuid",
             "description": "Unique identifier for the rule."
           },
-          "Type": {
+          "RuleType": {
             "type": "string",
             "x-stoplight": {
               "id": "34d52a089f08a"
@@ -3803,33 +3859,37 @@
             "description": "A human readable message about the webhook."
           },
           "Data": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/definitions/DataSyncCompletedWebhookData"
+          }
+        },
+        "definitions": {
+          "DataSyncCompletedWebhookData": {
             "type": "object",
+            "title": "Data sync completed webhook data",
             "properties": {
               "dataType": {
-                "type": "string",
-                "description": "Data type the sync completed for."
+                "$ref": "#/components/schemas/SyncSetting/properties/dataType",
+                "nullable": true
               },
               "datasetId": {
-                "type": "string",
-                "format": "uuid",
-                "description": "Unique identifier for the dataset that completed its sync."
+                "$ref": "#/components/schemas/DatasetStatusChangedErrorWebhook/definitions/DatasetStatusChangedErrorWebhookData/properties/datasetId"
               }
             }
           }
         },
         "examples": [
           {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
             "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "ClientId": "5e505642-9024-474d-9434-e5a44f505cc5",
-            "ClientName": "string",
             "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
             "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "Type": "Data sync completed",
+            "RuleType": "Data sync completed",
             "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "Data sync of type creditNotes completed for company 5e505642-9024-474d-9434-e5a44f505cc5",
+            "Message": "Data sync of type creditNotes completed for company 7626befb-0c7d-49a4-9366-bc4c81b4e4b7",
             "Data": {
               "dataType": "creditNotes",
-              "datasetId": "6586f21b-ad4d-4d06-a309-712af47184a2"
+              "datasetId": "1541a5ee-0d84-4b6e-a7f7-c07c1f216333"
             }
           }
         ]
@@ -3840,14 +3900,23 @@
         "description": "Webhook request body to notify that a data synchronization has completed.",
         "type": "object",
         "properties": {
+          "ClientId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientId"
+          },
+          "ClientName": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
+          },
           "CompanyId": {
             "$ref": "#/components/parameters/companyId/schema"
+          },
+          "DataConnectionId": {
+            "$ref": "#/components/parameters/connectionId/schema"
           },
           "RuleId": {
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
           },
-          "Type": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Type"
+          "RuleType": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
           },
           "AlertId": {
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
@@ -3856,11 +3925,80 @@
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
           },
           "Data": {
+            "title": "Dataset data changed webhook data",
             "type": "object",
             "properties": {
               "dataType": {
+                "$ref": "#/components/schemas/SyncSetting/properties/dataType"
+              },
+              "datasetId": {
+                "$ref": "#/components/schemas/DatasetStatusChangedErrorWebhook/definitions/DatasetStatusChangedErrorWebhookData/properties/datasetId"
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
+            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "RuleType": "Dataset data changed",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "Data has changed for dataset type invoices, company 8a210b68-6988-11ed-a1eb-0242ac120002",
+            "Data": {
+              "dataType": "invoices",
+              "datasetId": "6586f21b-ad4d-4d06-a309-712af47184a2"
+            }
+          }
+        ]
+      },
+      "DatasetStatusChangedErrorWebhook": {
+        "title": "Dataset status changed to error webhook",
+        "x-internal": true,
+        "description": "Webhook request body to notify that a data synchronization has completed.",
+        "type": "object",
+        "properties": {
+          "ClientId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientId"
+          },
+          "ClientName": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
+          },
+          "CompanyId": {
+            "$ref": "#/components/parameters/companyId/schema"
+          },
+          "DataConnectionId": {
+            "$ref": "#/components/parameters/connectionId/schema"
+          },
+          "RuleId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
+          },
+          "RuleType": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
+          },
+          "AlertId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
+          },
+          "Message": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
+          },
+          "Data": {
+            "$ref": "#/components/schemas/DatasetStatusChangedErrorWebhook/definitions/DatasetStatusChangedErrorWebhookData"
+          }
+        },
+        "definitions": {
+          "DatasetStatusChangedErrorWebhookData": {
+            "type": "object",
+            "title": "Dataset status changed to error webhook data",
+            "properties": {
+              "dataType": {
+                "$ref": "#/components/schemas/SyncSetting/properties/dataType"
+              },
+              "datasetStatus": {
                 "type": "string",
-                "description": "Data type the sync completed for."
+                "description": "The current status of the dataset's sync."
               },
               "datasetId": {
                 "type": "string",
@@ -3872,13 +4010,17 @@
         },
         "examples": [
           {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
             "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
             "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "Type": "Dataset data changed",
+            "RuleType": "Data Sync Status Changed To Error",
             "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "Data has changed for dataset type invoices, company 8a210b68-6988-11ed-a1eb-0242ac120002",
+            "Message": "ERROR: syncing payments triggered a ProcessingError notification at 2020-04-21T12:12:57.4250446Z.",
             "Data": {
               "dataType": "invoices",
+              "datasetStatus": "ProcessingError",
               "datasetId": "6586f21b-ad4d-4d06-a309-712af47184a2"
             }
           }
@@ -3890,29 +4032,63 @@
         "description": "Webhook request body to notify that a new company has successfully synchronized at least one dataType for the first time.",
         "type": "object",
         "properties": {
+          "ClientId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientId"
+          },
+          "ClientName": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
+          },
           "CompanyId": {
             "$ref": "#/components/parameters/companyId/schema"
+          },
+          "DataConnectionId": {
+            "$ref": "#/components/parameters/connectionId/schema"
           },
           "RuleId": {
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
           },
-          "Type": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Type"
+          "RuleType": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
           },
           "AlertId": {
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
           },
           "Message": {
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
+          },
+          "Data": {
+            "$ref": "#/components/schemas/NewCompanySynchronizedWebhook/definitions/NewCompanySynchronizedWebhookData"
+          }
+        },
+        "definitions": {
+          "NewCompanySynchronizedWebhookData": {
+            "type": "object",
+            "title": "New company synchronized webhook data",
+            "companyName": {
+              "nullable": true,
+              "type": "string",
+              "description": "Name of company whose connection has changed."
+            },
+            "sourceType": {
+              "$ref": "#/components/schemas/SourceType",
+              "nullable": true
+            }
           }
         },
         "examples": [
           {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
             "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
             "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "Type": "New company synchronised",
+            "RuleType": "New company synchronised",
             "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "Company 8a210b68-6988-11ed-a1eb-0242ac120002 synced for the first time"
+            "Message": "Company 8a210b68-6988-11ed-a1eb-0242ac120002 synced for the first time",
+            "Data": {
+              "companyName": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+              "sourceType": "Accounting"
+            }
           }
         ]
       },
@@ -3922,14 +4098,23 @@
         "description": "Webhook request body for a push operation status change.",
         "type": "object",
         "properties": {
+          "ClientId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientId"
+          },
+          "ClientName": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
+          },
           "CompanyId": {
             "$ref": "#/components/parameters/companyId/schema"
+          },
+          "DataConnectionId": {
+            "$ref": "#/components/parameters/connectionId/schema"
           },
           "RuleId": {
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
           },
-          "Type": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Type"
+          "RuleType": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
           },
           "AlertId": {
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
@@ -3938,34 +4123,40 @@
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
           },
           "Data": {
+            "$ref": "#/components/schemas/PushOperationStatusChangedWebhook/definitions/PushOperationStatusChangedWebhookData"
+          }
+        },
+        "definitions": {
+          "PushOperationStatusChangedWebhookData": {
             "type": "object",
+            "title": "Push operation status changed webhook data",
             "properties": {
               "dataType": {
-                "type": "string",
-                "description": "Data type used in the push operation."
+                "$ref": "#/components/schemas/SyncSetting/properties/dataType"
               },
               "status": {
-                "type": "string",
-                "description": "The current status of the push operation."
+                "$ref": "#/components/schemas/PushOperation/definitions/pushOperationStatus"
               },
               "pushOperationKey": {
-                "type": "string",
-                "format": "uuid",
-                "description": "Unique identifier for the push operation."
+                "$ref": "#/components/schemas/PushOperation/properties/pushOperationKey"
               }
             }
           }
         },
         "examples": [
           {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
             "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
             "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "Type": "Push Operation Status Changed",
-            "AMessage": "invoices triggered notification for PushOperationStatusChanged at 2019-05-22T18:19:42.742Z",
+            "RuleType": "Push Operation Status Changed()",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "invoices triggered notification for PushOperationStatusChanged at 2019-05-22T18:19:42.742Z",
             "Data": {
-              "DataType": "invoices",
-              "Status": "Success",
-              "PushOperationKey": "c2f8847d-3047-4619-a157-6d947d8e4a73"
+              "dataType": "invoices",
+              "status": "Success",
+              "pushOperationKey": "c2f8847d-3047-4619-a157-6d947d8e4a73"
             }
           }
         ]
@@ -3976,14 +4167,23 @@
         "description": "Webhook request body notifying that a push push operation has timed out.",
         "type": "object",
         "properties": {
+          "ClientId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientId"
+          },
+          "ClientName": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
+          },
           "CompanyId": {
             "$ref": "#/components/parameters/companyId/schema"
+          },
+          "DataConnectionId": {
+            "$ref": "#/components/parameters/connectionId/schema"
           },
           "RuleId": {
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
           },
-          "Type": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Type"
+          "RuleType": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
           },
           "AlertId": {
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
@@ -3992,30 +4192,171 @@
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
           },
           "Data": {
+            "$ref": "#/components/schemas/PushOperationTimedOutWebhook/definitions/PushOperationTimedOutWebhookData"
+          }
+        },
+        "definitions": {
+          "PushOperationTimedOutWebhookData": {
             "type": "object",
+            "title": "Push operation timed out webhook data",
             "properties": {
               "dataType": {
-                "type": "string",
-                "description": "Data type used in the push operation."
+                "$ref": "#/components/schemas/SyncSetting/properties/dataType"
               },
               "pushOperationKey": {
-                "type": "string",
-                "format": "uuid",
-                "description": "Unique identifier for the push operation."
+                "$ref": "#/components/schemas/PushOperation/properties/pushOperationKey"
+              },
+              "pushOperationGuid": {
+                "$ref": "#/components/schemas/PushOperation/properties/pushOperationKey",
+                "deprecated": true,
+                "x-speakeasy-deprecation-replacement": "pushOperationKey"
               }
             }
           }
         },
         "examples": [
           {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
             "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
             "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "Type": "Push Operation Timed Out",
+            "RuleType": "Push Operation Timed Out",
             "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
             "Message": "ERROR: pushing invoices never finished in time, timing out at 2020-09-07T08:42:13",
             "Data": {
               "dataType": "invoices",
-              "pushOperationKey": "c2f8847d-3047-4619-a157-6d947d8e4a73"
+              "pushOperationKey": "c2f8847d-3047-4619-a157-6d947d8e4a73",
+              "pushOperationGuid": "c2f8847d-3047-4619-a157-6d947d8e4a73"
+            }
+          }
+        ]
+      },
+      "ClientRateLimitReachedWebhook": {
+        "title": "Client rate limit reached webhook",
+        "x-internal": true,
+        "description": "Webhook request body for a client that has reached their rate limit.",
+        "type": "object",
+        "properties": {
+          "ClientId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientId"
+          },
+          "ClientName": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
+          },
+          "RuleId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
+          },
+          "RuleType": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
+          },
+          "AlertId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
+          },
+          "Message": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
+          },
+          "Data": {
+            "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData"
+          }
+        },
+        "definitions": {
+          "ClientRateLimitReachedWebhookData": {
+            "type": "object",
+            "title": "Client rate limit reached webhook data",
+            "properties": {
+              "DailyQuota": {
+                "type": "integer",
+                "description": "The number of available requests per day."
+              },
+              "ExpiresUtc": {
+                "$ref": "#/components/schemas/DateTime",
+                "description": "The date time in UTC that your daily quota is reset."
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "RuleType": "Rate Limit Reached",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "The current daily rate limit quota of 1000 requests for bae71d36-ff47-420a-b4a6-f8c9ddf41140 has been reached.",
+            "Data": {
+              "DailyQuota": 1000,
+              "ExpiresUtc": "2023-05-03T00:00:00Z"
+            }
+          }
+        ]
+      },
+      "ClientRateLimitResetWebhook": {
+        "title": "Client rate limit reset webhook",
+        "x-internal": true,
+        "description": "Webhook request body for a client that has had their rate limit reset.",
+        "type": "object",
+        "properties": {
+          "ClientId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientId"
+          },
+          "ClientName": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
+          },
+          "RuleId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
+          },
+          "RuleType": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
+          },
+          "AlertId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
+          },
+          "Message": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
+          },
+          "Data": {
+            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/definitions/ClientRateLimitResetWebhookData"
+          }
+        },
+        "definitions": {
+          "ClientRateLimitResetWebhookData": {
+            "type": "object",
+            "title": "Client rate limit reset webhook data",
+            "properties": {
+              "QuotaRemaining": {
+                "type": "integer",
+                "description": "Total number of request remaining for your client.",
+                "nullable": true
+              },
+              "ResetReason": {
+                "type": "string",
+                "description": "The reason for your rate limit quota being reset."
+              },
+              "DailyQuota": {
+                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData/properties/DailyQuota",
+                "nullable": true
+              },
+              "ExpiresUtc": {
+                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData/properties/ExpiresUtc",
+                "nullable": true
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "RuleType": "Rate Limit Reset",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "The current daily rate limit quota for client 30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e has been reset to 1000 requests.",
+            "Data": {
+              "QuotaRemaining": 1000,
+              "ResetReason": "The quota was reset because it is a new day.",
+              "DailyQuota": 1000,
+              "ExpiresUtc": "2023-05-03T00:00:00Z"
             }
           }
         ]
@@ -4165,7 +4506,7 @@
               "Success",
               "TimedOut"
             ],
-            "description": "The status of the push operation."
+            "description": "The current status of the push operation."
           },
           "pushOperationChange": {
             "type": "object",
@@ -4201,59 +4542,6 @@
           },
           {
             "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
-      "DatasetStatusChangedErrorWebhook": {
-        "title": "Dataset data error webhook",
-        "x-internal": true,
-        "description": "Webhook request body to notify that a data synchronization has completed.",
-        "type": "object",
-        "properties": {
-          "CompanyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
-          },
-          "Type": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Type"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
-          },
-          "Data": {
-            "type": "object",
-            "properties": {
-              "dataType": {
-                "type": "string",
-                "description": "Data type the sync completed for."
-              },
-              "datasetStatus": {
-                "type": "string",
-                "description": "The current status of the dataset's sync."
-              },
-              "datasetId": {
-                "$ref": "#/components/schemas/DatasetDataChangedWebhook/properties/Data/properties/datasetId"
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "Type": "Data Sync Status Changed To Error",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "ERROR: syncing payments triggered a ProcessingError notification at 2020-04-21T12:12:57.4250446Z.",
-            "Data": {
-              "dataType": "payments",
-              "datasetStatus": "ProcessingError",
-              "datasetId": "6586f21b-ad4d-4d06-a309-712af47184a2"
-            }
           }
         ]
       },

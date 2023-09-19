@@ -2549,16 +2549,16 @@
             "type": "object",
             "properties": {
               "syncId": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/properties/Data/properties/syncId"
+                "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData/properties/syncId"
               },
               "syncType": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/properties/Data/properties/syncType"
+                "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData/properties/syncType"
               },
               "SyncDateRangeStartUtc": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/properties/Data/properties/SyncDateRangeStartUtc"
+                "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData/properties/SyncDateRangeStartUtc"
               },
               "SyncDateRangeFinishUtc": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/properties/Data/properties/SyncDateRangeFinishUtc"
+                "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData/properties/SyncDateRangeFinishUtc"
               }
             }
           }
@@ -2621,7 +2621,13 @@
             "description": "A human readable message about the webhook."
           },
           "Data": {
+            "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData"
+          }
+        },
+        "definitions": {
+          "SyncFailedWebhookData": {
             "type": "object",
+            "title": "Sync failed webhook data",
             "properties": {
               "syncId": {
                 "type": "string",
@@ -2694,19 +2700,25 @@
             "$ref": "#/components/schemas/SyncFailedWebhook/properties/Message"
           },
           "Data": {
+            "$ref": "#/components/schemas/SyncCompleteWebhook/definitions/SyncCompleteWebhookData"
+          }
+        },
+        "definitions": {
+          "SyncCompleteWebhookData": {
             "type": "object",
+            "title": "Sync complete webhook data",
             "properties": {
               "syncId": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/properties/Data/properties/syncId"
+                "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData/properties/syncId"
               },
               "syncType": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/properties/Data/properties/syncType"
+                "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData/properties/syncType"
               },
               "SyncDateRangeStartUtc": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/properties/Data/properties/SyncDateRangeStartUtc"
+                "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData/properties/SyncDateRangeStartUtc"
               },
               "SyncDateRangeFinishUtc": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/properties/Data/properties/SyncDateRangeFinishUtc"
+                "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData/properties/SyncDateRangeFinishUtc"
               }
             }
           }
