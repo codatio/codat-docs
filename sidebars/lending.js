@@ -90,12 +90,22 @@ module.exports = [
 //      "lending/excel/enhanced-cash-flow-report",
 //    ],
 //  },
-  {
+{
+  type: "doc",
+  label: "Loan writeback",
+  customProps: {
+    hr: true,
+    section: "Guides",
+  },
+  id: "lending/guides/general-loan-writeback",
+},
+{
     type: "link",
     href: '/lending/troubleshooting',
     label: "Troubleshooting",
     customProps: {
       hr: true,
+      section: "Reference",
     },
   },
   "lending/data-types",

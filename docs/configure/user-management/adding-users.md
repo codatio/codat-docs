@@ -1,8 +1,6 @@
 ---
 title: "Managing users"
 description: "Learn how to manage new and existing user records"
-createdAt: "2019-02-20T11:15:23.776Z"
-updatedAt: "2022-10-04T14:18:11.628Z"
 ---
 
 ## Invite a new user

@@ -1,5 +1,6 @@
 ---
 title: "Various troubleshooting"
+draft: true
 ---
 
 
