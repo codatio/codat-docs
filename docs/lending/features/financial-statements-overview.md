@@ -9,7 +9,7 @@ import Products from "@components/global/Products";
 import { IntegrationsList } from "@components/global/Integrations";
 import { accountingIntegrations } from "@components/global/Integrations/integrations";
 
-Our **financial statements** feature provides lenders with with a comprehensive view of a borrower's financial data, including profit and loss, balance sheet, and operating cash flow statements. Statements are categorized to a single chart of accounts allowing ratio analysis to be automated.
+Our **financial statements** feature provides lenders with a comprehensive view of a borrower's financial data, including profit and loss, balance sheet, and operating cash flow statements. Statements are categorized to a single chart of accounts allowing ratio analysis to be automated.
 
 ## Use cases
 
@@ -101,7 +101,7 @@ We recommend you configure the following [webhooks](/using-the-api/webhooks/core
 
 - [Dataset status has changed to an error state](/using-the-api/webhooks/core-rules-types#dataset-status-has-changed-to-an-error-state)  
 
-  If you receive a notification from this webhook, it means an issue occured when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
+  If you receive a notification from this webhook, it means an issue occurred when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
  
 - [Dataset data changed](/using-the-api/webhooks/core-rules-types#dataset-data-changed)  
 
