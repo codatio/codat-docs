@@ -22,7 +22,6 @@ We've provided sample projects to make made switching to Embedded Link simple, n
 - [Vue](https://github.com/codatio/sdk-link/tree/main/examples/vue)
 - [Svelte](https://github.com/codatio/sdk-link/tree/main/examples/svelte)
 
-that show you how to implement Embedded Link in your application.
 
 ## Expected impact if no action is taken
 
