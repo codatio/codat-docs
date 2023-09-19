@@ -14,8 +14,8 @@ Codat's Bank Feeds product handles most of Xero's requirements for you but there
 **Action required: minimal**
 
 You may not think of your bank feed as an ‘app’. This is simply Xero’s terminology for any connection to the Xero API. 
-•	Your ‘app’ name is visible to end users at multiple points in the customer journey and it must reflect the go-to-market name of your company or product. It cannot include the word Xero. You can edit your app's name in the My Apps section of your Xero Developer Portal.
-•	Your App email address should be a generic email address (eg: developers@companyname.com) so you will continue to receive important notifications from us, even if a staff member leaves.
+-	Your ‘app’ name is visible to end users at multiple points in the customer journey and it must reflect the go-to-market name of your company or product. It cannot include the word Xero. You can edit your app's name in the My Apps section of your Xero Developer Portal.
+-	Your App email address should be a generic email address (eg: developers@companyname.com) so you will continue to receive important notifications from us, even if a staff member leaves.
 
 ### 2. Branding
 
@@ -66,9 +66,11 @@ This is fully handled by Codat.
 This is a shared responsibility between you and Codat. We will work with you to ensure your Bank Feed implementation is compliant. 
 
 Xero checks:
-•	Is your brand correctly represented in Xero?
-•	Are you setting an appropriate name for the accounts you create and is your logo showing correctly?
-•	Are you setting the account number so that it displays correctly in Xero?
+-	Is your brand correctly represented in Xero?
+-	Are you setting an appropriate name for the accounts you create and is your logo showing correctly?
+-	Are you setting the account number so that it displays correctly in Xero?
+
+This is relevant when you set up your branding within Codat and when you share your branding details with Xero at the end of the certification process. 
 
 ### 10. Scheduled refresh
 
@@ -78,13 +80,13 @@ This is fully handled by Codat.
 
 ### 11. Missed / Rejected statements
 
-**Action required: some**
+**Action required: moderate**
 
 This is a shared responsibility between you and Codat. We will work with you to ensure your Bank Feed implementation is compliant. 
 
 Xero checks:
-•	What happens when a statement gets rejected / missed
-•	What do you do to make up a missed statement? (Re-added to the next queue / Dedicated call)
-•	Will the user be notified if a statement gets rejected / missed?
+-	What happens when a statement gets rejected / missed
+-	What do you do to make up a missed statement? (Re-added to the next queue / Dedicated call)
+-	Will the user be notified if a statement gets rejected / missed?
 
-Missed statements will be caught and prevented by Codat. If a statement is rejected, Codat communicates this to you. We will work with you to ensure you are able to reflect this appropriately to your users. 
+Codat will communicate to you if a statement is missed/rejected. You need to ensure you have logic on your side to handle this as you see fit.
