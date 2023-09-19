@@ -12,6 +12,10 @@ Direct Incomes includes Sales Receipts and Refund Receipts from QuickBooks Onlin
 
 When pushing Direct Incomes to QuickBooks Online, you must enter Sales Receipts as positive amounts and Refund Receipts as negative amounts.
 
+## Direct Costs
+
+When pushing Direct Costs to QuickBooks Online; for GB, FR, IE and AU locales, if there is a Tax Amount specified on the line item, this will push the expense as `Tax Exclusive`. This is also the case for Canada, however if there are no Tax Amounts specified on any line items OR all line items have a Tax Amount of 0, the expense will be pushed as `Out Of Scope Of Tax`.
+
 ## Invoice Line Items
 
 When pushing an Invoice to QBO, you can create line items without referring to existing items in QBO. However, if you do not specify an existing item with an existing `itemID` for the invoice line item, Codat uses the _Default Item_ that is set for the company. This will also use the default `AccountRef` associated with the Default Item.
