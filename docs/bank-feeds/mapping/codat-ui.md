@@ -16,7 +16,7 @@ import {bankfeedsExternalMappingIntegrations} from '@components/global/Integrati
 
 <br/>
 
-![Codat-bank-feeds_account-mapping-ui](/img/bank-feeds/mappingUi.png "Codat-provided account mapping UI")
+<Loom source="https://www.loom.com/embed/48972835b6e74d199448b794f41b9997" />
 
 The bank feeds mapping interface allows for customization with your own logo and primary color scheme. Designed to meet all third-party requirements, it enables a seamless launch of your bank feeds product, ensuring an outstanding experience for your customers with minimal development effort.
 
