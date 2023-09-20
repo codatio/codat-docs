@@ -32,7 +32,7 @@ We advise storing data retrieved from the API locally because it is much faster 
 
   For example, if Codat syncs invoice data weekly, there is no point in fetching that data from the Codat API daily. 
 
-* Store the date and time of when you fetch the data from the Codat API. You limit subsequent retrievals only to data changed since the preious fetch using [modified dates](/using-the-api/modified-dates) to control retrieval.
+* Store the date and time of when you fetch the data from the Codat API. You limit subsequent retrievals only to data changed since the previous fetch using [modified dates](/using-the-api/modified-dates) to control retrieval.
 
 * Codat stores most data in a relational shape, but it may not be necessary to follow all the relational paths. 
 
