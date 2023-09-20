@@ -3,12 +3,16 @@ title: "Additional product descriptions"
 description: "A breakdown of functionality and data type access by product."
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 ## Product variants
+
 The product variants listed here are earlier implementations of a current product, applicable only to clients who onboarded and implemented with Codat on or before August 31st 2023.
 
 <Tabs>
 
-<TabItem value="sfc" label="Sync for Commerce">
+<TabItem value="sfc" label="Sync for Commerce v1">
 
 #### Functionality
 
@@ -27,7 +31,7 @@ The product variants listed here are earlier implementations of a current produc
 
 </TabItem>
 
-<TabItem value="sfe" label="Sync for Expenses">
+<TabItem value="sfe" label="Sync for Expenses v1">
 
 #### Functionality
 
@@ -139,5 +143,3 @@ Xero, Quickbooks Online, NetSuite, Microsoft Dynamics 365
 </TabItem>
 
 </Tabs>
-
----

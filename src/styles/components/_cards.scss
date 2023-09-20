@@ -78,6 +78,10 @@ html[data-theme="dark"] {
   border-radius: 8px;
   font-size: 0.9em !important;
 
+  h3 + p {
+    margin-top: 0;
+  }
+
   p {
     font-size: 14px;
     
