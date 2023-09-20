@@ -9,7 +9,7 @@ To receive an Bank Feeds Partner certification, all apps connecting to Xero must
 
 Codat handles many of the certification checkpoints for you. For those that require you to take action, we prepared this companion guide that helps you understand the steps you need to take. We also recommend that you work closely with your Codat account team during your implementation.
 
-### 1. App name/Portal settings
+### 1. App name and portal settings
 
 **Action required: minimal**
 
