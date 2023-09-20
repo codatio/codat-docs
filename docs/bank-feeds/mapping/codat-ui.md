@@ -11,6 +11,7 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import {IntegrationsList} from '@components/global/Integrations'
 import {bankfeedsExternalMappingIntegrations} from '@components/global/Integrations/integrations'
+import Loom from '@components/global/Loom'
 
 # Codat mapping user interface
 
