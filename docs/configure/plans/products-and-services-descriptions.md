@@ -37,24 +37,28 @@ Implementation period, covering Implementation Specialists and associated resour
 - Config UI (Sync Flow)
 - Config API
 
+<hr/>
+
 #### Supported integrations
 
 [See supported intergrations in our documentation](https://docs.codat.io/commerce/setup#available-integrations).
 
-Note a separate Add on is required to access ERP integrations and Desktop platforms.
+**Note:** A separate Add on is required to access ERP integrations and Desktop platforms.
+
+<hr/>
 
 #### Feature definitions
 
-**Commerce to Accounting synchronisation**
+**Commerce to Accounting synchronisation**  
 Synchronisation of data from commerce data source(s) into accounting package(s).
 
-**Client connector**
+**Client connector**  
 Codat built and owned connector, which pulls Company data from and/or pushes Company data to the Client’s system, to enable Commerce to Accounting synchronization to function.
 
-**Config UI (Sync Flow)**
+**Config UI (Sync Flow)**  
 White labelled user interface enabling a Company to configure Commerce to Accounting synchronization.
 
-**Config API**
+**Config API**  
 API endpoints allowing Codat Clients to configure Commerce Sync (typically via client-built Company interface).
 
 <hr/>
@@ -70,20 +74,22 @@ This product will appear as **Sync for Commerce (v2)** on your order form.
 - Expense to accounting synchronisation
 - Config API
 
+<hr/>
+
 #### Supported integrations
 
 [See supported intergrations in our documentation](https://docs.codat.io/expenses/overview#supported-integrations).
 
-Note a separate Add on is required to access ERP integrations and Desktop platforms.
+**Note:** A separate Add on is required to access ERP integrations and Desktop platforms.
 
 <hr/>
 
 #### Feature definitions
 
-**Expense to accounting synchronisation**
+**Expense to accounting synchronisation**  
 Synchronisation of expense data provided by a Codat Client into accounting package(s).
 
-**Config API**
+**Config API**  
 API endpoints allowing Codat Clients to configure Expense Sync (typically via client-built Company user interface).
 
 <hr/>
@@ -99,21 +105,26 @@ This product will appear as **Sync for Expenses (v2)** on your order form.
 - Pull accounting data
 - Push accounting data
 
+<hr/>
+
 #### Supported integrations
 
 [See supported intergrations in our documentation](https://docs.codat.io/payroll/overview#compatible-integrations).
 
-Note a separate Add on is required to access ERP integrations and Desktop platforms.
+**Note:** A separate Add on is required to access ERP integrations and Desktop platforms.
 
 <hr/>
 
 #### Feature definitions
 
-**Pull accounting data**
-Pull the following data from connected Accounting packages: [todo: link to docs]
+**Pull accounting data**  
+Pull data from connected Accounting packages.
 
-**Push accounting data**
-Pull the following data from connected Accounting packages: [todo: link to docs]
+**Push accounting data**  
+Pull data from connected Accounting packages.
+
+**Supported data types**  
+[See the documentation for a list of supported data types](/payroll/data-types)
 
 <hr/>
 
@@ -130,27 +141,31 @@ This product will appear as **Sync for Payroll** on your order form.
 - Update accounting data
 - Delete accounting data
 
+<hr/>
+
 #### Supported integrations
 
 [See supported intergrations in our documentation](https://docs.codat.io/payables/overview#compatible-integrations).
 
-Note a separate Add on is required to access ERP integrations and Desktop platforms.
+**Note:** A separate Add on is required to access ERP integrations and Desktop platforms.
 
 <hr/>
 
 #### Feature definitions
 
-**Pull accounting data**
-Pull the following data from connected Accounting packages: [todo: link to docs]
+**Pull accounting data**  
+Get data from connected Accounting packages.
 
-**Push accounting data**
-Push the following data into connected Accounting packages: [todo: link to docs]
+**Push accounting data**  
+Create data in connected Accounting packages.
 
-**Update accounting data**
-Update the following data in connected Accounting packages: [todo: link to docs]
+**Update accounting data**  
+Update data in connected Accounting packages.
 
-**Delete accounting data**
-Delete the following data in connected Accounting packages: [todo: link to docs]
+**Delete accounting data**  
+Delete data in connected Accounting packages.
+
+[See the documentation for a list of supported data types](/payables/data-types)
 
 <hr/>
 
@@ -166,23 +181,25 @@ This product will appear as **Sync for Payables** on your order form.
 - Config UI
 - Config API
 
+<hr/>
+
 #### Supported integrations
 
 [See supported intergrations in our documentation](https://docs.codat.io/bank-feeds/overview#supported-integrations).
 
-Note a separate Add on is required to access ERP integrations and Desktop platforms.
+**Note:** A separate Add on is required to access ERP integrations and Desktop platforms.
 
 <hr/>
 
 #### Feature definitions
 
-**Push bank transactions**
+**Push bank transactions**  
 Push Bank Transactions into connected accounting package as a bank statement
 
-**Config UI**
+**Config UI**  
 White labelled user interface enabling a Company to configure Bank Feeds (select accounting package accounts to which bank feeds should be pushed)
 
-**Config API**
+**Config API**  
 API endpoints allowing clients to configure bank feeds (typically via client-built Company user interface)
 
 <hr/>
@@ -204,11 +221,13 @@ This product will appear as **Bank feeds** on your order form.
 - Enhanced Liabilities Report
 - Accounting package writeback
 
-#### Included integrations
+<hr/>
+
+#### Supported integrations
 
 See our [Lending API documentation](https://docs.codat.io/lending/overview) for our supported integrations.
 
-Note a separate Add on is required to access ERP integrations and Desktop platforms.
+**Note:** A separate Add on is required to access ERP integrations and Desktop platforms.
 
 Open banking provider access is subject to separate access requirements.
 
@@ -216,28 +235,28 @@ Open banking provider access is subject to separate access requirements.
 
 #### Feature definitions
 
-**Pull accounting data**
+**Pull accounting data**  
 Pull the following data from connected Accounting packages: [todo: link to docs]
 
-**Pull commerce data**
+**Pull commerce data**  
 Pull the following data from connected Commerce platforms: [todo: link to docs]
 
-**Pull banking data**
+**Pull banking data**  
 Pull the following data from connected Open Banking provider: [todo: link to docs]
 
-**Enhanced Financials Report**
+**Enhanced Financials Report**  
 Financial statements standardized to a single chart of accounts
 
-**Enhanced Cash Flow Report**
+**Enhanced Cash Flow Report**  
 Banking transactions from connected Open Banking aggregator enriched with financial statement categories from a Company’s Profit and Loss/Balance Sheet.
 
-**Enhanced Invoices Report**
+**Enhanced Invoices Report**  
 Invoices with matched banking transactions from connected Open Banking provider
 
-**Enhanced Liabilities Report**
+**Enhanced Liabilities Report**  
 Loans and loan history information derived from connected Accounting, Open Banking and Commerce connections.
 
-**Accounting package writeback**
+**Accounting package writeback**  
 Where mandated by the Accounting package, the ability to write back data pertaining to a loan or other credit facility that has been issued.
 
 <hr/>
@@ -248,33 +267,50 @@ This product will appear as **Lending API** on your order form.
 
 </Tabs>
 
+
+<br/>
+
 [Product description referenced in your order form not listed above?](/configure/plans/additional-product-descriptions)
 
 ---
 
 ## Add-ons
 
-### ERP integrations
-This is required for access to NetSuite, Sage Intacct or Microsoft Dynamics 365 
+<ul className="card-container">
+  <li className="card">
+    <h3>ERP integrations</h3>
+    <p>This is required for access to NetSuite, Sage Intacct or Microsoft Dynamics 365</p>
+  </li>
 
-### Desktop platforms
-This is required for access to Quickbooks Desktop and Sage 50 (UK & Ireland)
+   <li className="card">
+    <h3>Desktop platforms</h3>
+    <p>This is required for access to Quickbooks Desktop and Sage 50 (UK & Ireland)</p>
+  </li>
 
-### Enterprise security
-Security features relevant for larger enterprises
+   <li className="card">
+    <h3>Enterprise security</h3>
+    <p>Security features relevant for larger enterprises</p>
+    <ul>
+    	<li>Enterprise SSO</li>
+		<li>Mutual TLS</li>
+		<li>IP Filtering</li>
+	</ul>
+  </li>
+</ul>
 
-- Enterprise SSO
-- Mutual TLS
-- IP Filtering
 
 ---
 
 ## Additional services
 
-### Enhanced support
+<ul className="card-container">
+  <li className="card">
+    <h3>Enhanced support</h3>
+    <p>Enhanced Support SLAs</p>
+  </li>
 
-Enhanced Support SLAs
-
-### Professional Services
-
-Statement of work based resourcing to deliver defined projects. Includes dedicated Codat engineering and implementation resources.
+   <li className="card">
+    <h3>Professional Services</h3>
+    <p>Statement of work based resourcing to deliver defined projects. Includes dedicated Codat engineering and implementation resources.</p>
+  </li>
+</ul>

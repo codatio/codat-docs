@@ -15,6 +15,7 @@ const expenses = [
 const payroll = [
   'chartOfAccounts',
   'journals',
+  'journalEntries',
   'trackingCategories',
 ]
 

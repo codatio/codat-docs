@@ -27,12 +27,16 @@ html[data-theme="dark"] {
 
   > ul + div {
     border-radius: 4px;
-    padding: 0.5em;
+    padding: 1em;
     border: 1px solid #eee;
   }
 
   .tabs-container {
     margin-top: 0;
+  }
+
+  hr {
+    margin: 1.5em 0 !important;
   }
 }
 
