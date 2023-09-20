@@ -87,6 +87,6 @@ Codat will communicate to you if a bank statement is missed or rejected. Include
 
 Your Codat team will then work with you to ensure your Bank Feed implementation complies with the following Xero checks:
 
-* Your app's management of rejected and missed statements. 
+* Your app can handle rejected and missed statements. 
 * How your app compensates for a missed statement (for example, adds it to the next queue or performs a dedicated call).
-* User notification in case of missed or rejected statements.
+* Your user is notified in case of missed or rejected statements.
