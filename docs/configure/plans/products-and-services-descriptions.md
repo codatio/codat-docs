@@ -122,8 +122,7 @@ Pull data from connected Accounting packages.
 
 **Push accounting data**  
 Pull data from connected Accounting packages.
-
-**Supported data types**  
+ 
 [See the documentation for a list of supported data types](/payroll/data-types)
 
 <hr/>
