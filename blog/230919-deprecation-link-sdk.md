@@ -1,11 +1,11 @@
 ---
-title: "2023-10-05: Deprecation of legacy @codat/link-sdk"
-date: "2023-09-19"
+title: "2024-01-10: Deprecation of legacy @codat/link-sdk"
+date: "2023-09-20"
 tags: ["Deprecation", "Link"]
 authors: dcoplowe
 ---
 
-On **January 10, 2023**, we will deprecate the [@codat/link-sdk](https://www.npmjs.com/package/@codat/link-sdk) in favor of our new alternative.
+On **January 10, 2024**, we will deprecate the [@codat/link-sdk](https://www.npmjs.com/package/@codat/link-sdk) in favor of our new alternative.
 
 <!--truncate-->
 
