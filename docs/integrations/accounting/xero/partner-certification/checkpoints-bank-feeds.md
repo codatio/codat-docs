@@ -5,8 +5,6 @@ description: "A guide to getting Xero's Bank Feeds Partner certification with Co
 
 To receive an Bank Feeds Partner certification, all apps connecting to Xero must comply with a list of technical certification checkpoints. Bank Feeds Partner checkpoints differ from Xero’s [standard checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/) and are not available online. Codat can provide you with Xero's Bank Feeds App Review form that documents them in full.
 
-Codat handles most of the certification checkpoints for you. For those that require you to take action, we prepared this companion guide that helps you understand the steps you need to take. We also recommend that you work closely with your Codat account team during your implementation.
-
 ## Certification checkpoints
 
 Codat handles many of the certification checkpoints for you. For those that require you to take action, we prepared this companion guide that helps you understand the steps you need to take. We also recommend that you work closely with your Codat account team during your implementation.
