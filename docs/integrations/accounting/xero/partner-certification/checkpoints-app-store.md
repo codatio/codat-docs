@@ -1,5 +1,5 @@
 ---
-title: "Xero's certification checkpoints"
+title: "Xero's App Store Partner certification checkpoints"
 description: "A guide to getting Xero's App Store Partner certification with Codat"
 ---
 
