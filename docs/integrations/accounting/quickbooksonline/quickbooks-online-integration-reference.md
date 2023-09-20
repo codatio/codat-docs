@@ -1,6 +1,6 @@
 ---
 title: "QuickBooks Online integration reference"
-description: "Things to know when synchronizing data with QuickBooks Online."
+description: "Things to know when synchronizing data with QuickBooks Online"
 sidebar_label: Reference
 ---
 
@@ -11,6 +11,10 @@ Note the following information when building your application using our QuickBoo
 Direct Incomes includes Sales Receipts and Refund Receipts from QuickBooks Online.
 
 When pushing Direct Incomes to QuickBooks Online, you must enter Sales Receipts as positive amounts and Refund Receipts as negative amounts.
+
+## Direct Costs
+
+When creating direct costs in QuickBooks Online for GB, FR, IE, CA, and AU locales, records with a tax amount specified on the line item will be classified as `Tax Exclusive`. Specifically for CA, if there are no tax amounts specified on any line items or all line items have a tax amount of zero, the expense will be pushed as `Out Of Scope Of Tax`.
 
 ## Invoice Line Items
 

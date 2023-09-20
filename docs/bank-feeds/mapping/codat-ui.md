@@ -41,7 +41,7 @@ When a user has successfully linked their account, they will be redirected to yo
   Mapping options request url:
 
 ```http
-GET /companies/:companyId/connections/:connectionId/bankFeedAccounts/mapping
+GET /companies/{companyId}/connections/{connectionId}/bankFeedAccounts/mapping
 ```
     
   </TabItem >
@@ -144,14 +144,15 @@ GET /companies/:companyId/connections/:connectionId/bankFeedAccounts/mapping
 </Tabs>
 
 ### Connection management
+
 To allow your SMB users to view and manage their existing bank feed connections, you can direct them to a newly-generated `linkUrl`. When they open this URL and revisit the account mapping UI, their existing connections are displayed in the **Manage your connected accounts** panel:
 
 ![xero-bank-feeds_account-mapping-ui-manage-feed-connections](/img/bank-feeds/xero-bank-feeds/xero-bank-feeds_account-mapping-ui-manage-feed-connections.png "Codat-provided account mapping UI showing several connected accounts in the bottom panel.")
 
 To disconnect a source bank account, the SMB user hovers over the **connected** status icon and selects **Disconnect**. This immediately disables the bank feed connection. The disconnected account will display in the source bank account dropdown menu when the user next refreshes the page.
 
-
 ---
+
 ## Read next
 
 * [Pushing transactions](/bank-feeds/pushing-transactions)
