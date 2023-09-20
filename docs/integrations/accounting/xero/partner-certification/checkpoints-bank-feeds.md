@@ -1,21 +1,25 @@
 ---
-title: "Xero's certification checkpoints"
+title: "Xero's Bank Feeds Partner certification checkpoints"
 description: "A guide to getting Xero's Bank Feeds Partner certification with Codat"
 ---
 
-Before you can go live with Xero Bank Feeds you must go through Xero’s partner certification process. To achieve Xero certification, you must comply with a set of technical requirements called certification checkpoints. Xero's Bank Feeds checkpoints are different from the standard checkpoints documented on [Xero’s website](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/). Xero's Bank Feeds checkpoints are not available online but your Codat account team can provide you with a template version of Xero's Bank Feeds App Review form that documents them in full. 
+To receive an Bank Feeds Partner certification, all apps connecting to Xero must comply with a list of technical certification checkpoints. Bank Feeds Partner checkpoints differ from Xero’s [standard checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/) and are not available online. Codat can provide you with Xero's Bank Feeds App Review form that documents them in full.
 
-Codat's Bank Feeds product handles most of Xero's requirements for you but there are a few areas where you need verify you are compliant. This guide exists to explain which of Xero's requirements you need to take action to address before you can attain certification. 
+Codat handles most of the certification checkpoints for you. For those that require you to take action, we prepared this companion guide that helps you understand the steps you need to take. We also recommend that you work closely with your Codat account team during your implementation.
 
-## Xero Bank Feeds certification checkpoints
+## Certification checkpoints
 
-### 1. App Name/Portal Settings
+Codat handles many of the certification checkpoints for you. For those that require you to take action, we prepared this companion guide that helps you understand the steps you need to take. We also recommend that you work closely with your Codat account team during your implementation.
+
+### 1. App name/Portal settings
 
 **Action required: minimal**
 
-You may not think of your bank feed as an ‘app’. This is simply Xero’s terminology for any connection to the Xero API. 
--	Your ‘app’ name is visible to end users at multiple points in the customer journey and it must reflect the go-to-market name of your company or product. It cannot include the word Xero. You can edit your app's name in the My Apps section of your Xero Developer Portal.
--	Your App email address should be a generic email address (eg: developers@companyname.com) so you will continue to receive important notifications from us, even if a staff member leaves.
+Xero calls any connections to the Xero API "apps", even if you may not think of your bank feed as an application. Your app will need to comply with two requirements:
+
+* Your app's name is visible to end users at multiple points in the customer journey and it must reflect the go-to-market name of your app or product. It cannot include the word `Xero`. You can edit your app's name in the **My Apps** section of your Xero Developer Portal.
+
+* Your app's email address should be generic (for example, `developers@companyname.com`) and not be a specific employee's address. This will ensure you continue to receive important notifications even if a staff member leaves.
 
 ### 2. Branding
 
@@ -27,66 +31,64 @@ You must be compliant with Xero's guidance wherever you mention your Xero Partne
 
 **Action required: none**
 
-This is fully handled by Codat. 
+Our Xero integration covers the requirements of this checkpoint in full.
   
 ### 4. Error handling
 
 **Action required: none**
 
-This is fully handled by Codat. 
+Our Xero integration covers the requirements of this checkpoint in full.
   
 ### 5. Offline access
 
 **Action required: none**
 
-This is fully handled by Codat. 
+Our Xero integration covers the requirements of this checkpoint in full.
   
 ### 6. Rate limit hit management
 
 **Action required: none**
 
-This is fully handled by Codat. 
+Our Xero integration covers the requirements of this checkpoint in full. 
   
 ### 7. Scopes
 
 **Action required: none**
 
-This is fully handled by Codat. 
+Our Xero integration covers the requirements of this checkpoint in full. 
   
 ### 8. Account mapping
 
 **Action required: none**
 
-This is fully handled by Codat. 
+Our Xero integration covers the requirements of this checkpoint in full. 
   
-### 9. Bank name/logos/account number
+### 9. Bank name, logos, and account number
 
 **Action required: some**
 
-This is a shared responsibility between you and Codat. We will work with you to ensure your Bank Feed implementation is compliant. 
+This checkpoint is relevant when you set up your branding within Codat and again when you share your branding details with Xero at the end of the certification process.
 
-Xero checks:
--	Is your brand correctly represented in Xero?
--	Are you setting an appropriate name for the accounts you create and is your logo showing correctly?
--	Are you setting the account number so that it displays correctly in Xero?
+Your Codat team will work with you to ensure your Bank Feed implementation complies with the following Xero checks: 
 
-This is relevant when you set up your branding within Codat and when you share your branding details with Xero at the end of the certification process. 
+* Your brand is correctly represented in Xero.
+* You set appropriate names for the accounts you create. 
+* Your logo and account number are displayed correctly. 
 
 ### 10. Scheduled refresh
 
 **Action required: none**
 
-This is fully handled by Codat.
+Our Xero integration covers the requirements of this checkpoint in full.
 
-### 11. Missed / Rejected statements
+### 11. Missed and rejected statements
 
 **Action required: moderate**
 
-This is a shared responsibility between you and Codat. We will work with you to ensure your Bank Feed implementation is compliant. 
+Codat will communicate to you if a bank statement is missed or rejected. Include appropriate logic in your app to handle this outcome as you see fit. 
 
-Xero checks:
--	What happens when a statement gets rejected / missed
--	What do you do to make up a missed statement? (Re-added to the next queue / Dedicated call)
--	Will the user be notified if a statement gets rejected / missed?
+Your Codat team will then work with you to ensure your Bank Feed implementation complies with the following Xero checks:
 
-Codat will communicate to you if a statement is missed/rejected. You need to ensure you have logic on your side to handle this as you see fit.
+* Your app's management of rejected and missed statements. 
+* How your app compensates for a missed statement (for example, adds it to the next queue or performs a dedicated call).
+* User notification in case of missed or rejected statements.

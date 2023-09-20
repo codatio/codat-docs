@@ -1,19 +1,19 @@
 ---
-title: "Xero's certification checkpoints"
+title: "Xero's Lending Partnership certification checkpoints"
 description: "A guide to getting Xero's Lending Partnership certification with Codat"
 ---
 
 For lenders that want to become Xero Partners, Xero stipulates two technical requirements to comply with: 
 
 - Xero's [certification checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/) that apply to all apps connecting to Xero.
-- [Lending write-back](https://developer.xero.com/documentation/guides/how-to-guides/general-lending-integration-guide/), which is a lender-specific requirement.
+- [Lending writeback](https://developer.xero.com/documentation/guides/how-to-guides/general-lending-integration-guide/), which is a lender-specific requirement.
 
-## Lending write-back
+## Lending writeback
 
-The purpose of the lending write-back is to accurately maintain the financial position of a customer in Xero at any point of the lending cycle. This is typically done by recording the loan liability, any interest, fees, and repayments, and facilitating the reconciliation of the bank account. Codat offers the following guides on implementing lending write-back: 
+The purpose of the lending writeback is to accurately maintain the financial position of a customer in Xero at any point of the lending cycle. This is typically done by recording the loan liability, any interest, fees, and repayments, and facilitating the reconciliation of the bank account. Codat offers the following guides on implementing lending write-back: 
 
-  * [General lending write-back](https://codat.zendesk.com/hc/en-gb/articles/4402368734225-Xero-General-Lending)
-  * [Invoice finance write-back](https://codat.zendesk.com/hc/en-gb/articles/360019976977-Xero-Invoice-Finance)
+  * [General lending writeback](https://codat.zendesk.com/hc/en-gb/articles/4402368734225-Xero-General-Lending)
+  * [Invoice finance writeback](https://codat.zendesk.com/hc/en-gb/articles/360019976977-Xero-Invoice-Finance)
 
 ## Certification checkpoints
 
