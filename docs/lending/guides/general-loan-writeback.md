@@ -8,6 +8,8 @@ sidebar_label: "Loan writeback"
 
 Loan writeback (also known as lending writeback) is the process of continuously updating an accounting platform with information on a loan. It helps maintain an accurate position of the loan during the entire lending cycle by recording the loan liability, any interest, fees, or repayments, and facilitating the reconciliation of bank transactions. 
 
+This guide covers the loan writeback procedure for general lending, such as terms loans, but it is not suitable for invoice finance.
+
 :::info Mandatory loan writeback
 
 Certain accounting platforms **require** lenders to continuously update their books with money lent to SMBs. For example, **Xero** obligates lenders going through the [App Partner certification](/integrations/accounting/xero/xero-app-partner-program) process to handle the writeback process. 
@@ -72,7 +74,7 @@ sequenceDiagram
     backend ->> codat: Create record (data type)
     codat -->> backend: Push operation key
 
-    codat -->> backend: Push operation status
+    codat -->> backend: Push operation status webhook
 
     alt Status is successful
         backend ->> codat: Get push operation
@@ -90,12 +92,12 @@ sequenceDiagram
 
 First, your SMB customer will use your UI to configure loan writeback accounts so that the accounting entries are reflected correctly in their accounting platform. They will create or select existing, and subsequently map, the following elements:
 
-* SMB bank account
-* Lender bank account 
-* Expense account
-* Supplier record
+* SMB bank account, the borrower's business account where the loan is deposited.
+* Lender bank account, a virtual account that contains the lender's transactions.
+* Expense account, an account to record incurred fees and interest.
+* Supplier record, a record to identify you, the lender, in future transactions.
 
-Let's go through that in detail. 
+Let's go through that in detail. On the diagram below, you can see the configuration sequence covering the display and selection of a bank account, an expense account, and a supplier record. Alternative steps are also provided in case a new account and a new supplier need to be created. 
 
 ```mermaid
 sequenceDiagram
@@ -137,18 +139,19 @@ sequenceDiagram
 
 ### Bank account
 
-Loan writeback process operates with two bank accounts: a borrower's business bank account, where the lent money is deposited, and a lender's bank account, which is a virtual account in the accounting platform that acts as a container for lender transactions. 
+Loan writeback process operates with two bank accounts: a borrower's business bank account, where the money lent is deposited, and a lender's bank account, which is a virtual bank account in the accounting platform that acts as a container for lender transactions. 
 
-Your customer can choose to map their existing accounts to these concepts, or request to create a new one. First, use our [List accounts](/lending-api#/operations/list-banking-accounts) endpoint to retrieve the customer's existing bank accounts. 
+First, your customer needs to choose one of their existing bank accounts. This account will be used to depost the loan. Call our [List accounts](/lending-api#/operations/list-banking-accounts) endpoint to retrieve the customer's existing bank accounts. 
 
 ```http
 GET https://api.codat.io/companies/{companyId}/connections/{connectionId}/data/banking-accounts
 ```
-Display the response to the customer and allow them to select the account their payments will be transferred to. Store the returned `id` and use it as the borrower account Id in future operations. 
 
-Repeat this process to list and select a lender bank account.
+Display the response to the customer and allow them to select the account. Store the returned `id` and use it as the borrower account Id in future operations. 
 
-If the customer wants to nominate a new account for the purposes of loan writeback, enable them to provide account details, such as name (AND SOMETHING ELSE I ASSUME?). Then, use our Create bank account(THIS ENDPOINT DOES NOT SEEM TO BE IN LENDING API? NO CREATE BANK ACCOUNT ONES THERE) endpoint to create the new account in the accounting platform.
+Next, enable your customer to create a new bank account. This will be the lender's - your - virtual bank account, used to track transactions associated with your lending activity. 
+
+Use our [Get create/update bank account model](/lending-api#/operations/get-create-update-bankAccounts-model) to get the expected data for the bank account creation request payload. Then, use the Create bank account(/lending-api#/operations/create-bank-account) endpoint to create the new account in the accounting platform.
 
 ```http
 POST blabla
@@ -157,15 +160,17 @@ In response, you will receive account creation details which you can display to 
 
 ### Supplier
 
-In order to create a spend money transaction, Codat requires suppler details that represent the lender. You can let your customer choose an existing supplier to serve as a lender in their accounting system. Use our [List suppliers](/lending-api#/operations/list-accounting-suppliers) endpoint to fetch the list of existing suppliers. 
+In order to create a spend money transaction, Codat requires suppler details that represent you, the lender, in your SMB's accounting system. 
+
+Let your customer check if your record already exists in their accounts. Use our [List suppliers](/lending-api#/operations/list-accounting-suppliers) endpoint to fetch the list of existing suppliers. 
 
 ```http
 GET https://api.codat.io/companies/{companyId}/data/suppliers
 ```
 
-Display the response to the customer and allow them to select the suppliers that represents their lender. Store the `id` and use it as supplier Id in future transactions.
+Display the response to the customer and allow them to find and select your lender record in their supplier list. Store the `id` and use it as supplier Id in future transactions.
 
-Alternatively, you can create a new lender in Codat using our Create supplier(THIS IS ALSO MISSING?) endpoint.
+If this is the first time you have lent to this SMB customer, you may need to create yourself as a new supplier in their accounting platform. First, use our [Get create/update supplier model](/lending-api#/operations/get-create-update-suppliers-model) to get the expected data for the supplier creation request payload. Next, use that payload and call our [Create supplier](/lending-api#/operations/create-supplier) endpoint.
 
 ```http
 create supplier
@@ -175,14 +180,14 @@ Similarly, store the `id` and use it in future transactions.
 
 ### Expense account
 
-Finally, use our [List accounts](/lending-api#/operations/list-accounting-accounts) endpoint to retrieve the customer's existing expense accounts. You can even filter them by `type = Expense`. This account will be used to record fees and interest. 
+Finally, use our [List accounts](/lending-api#/operations/list-accounting-accounts) endpoint filtered by `type = Expense` to retrieve the customer's existing expense accounts. Let them choose one that will be used to record fees and interest. 
 
 ```http
-GET https://api.codat.io/companies/{companyId}/data/accounts
+GET https://api.codat.io/companies/{companyId}/data/accounts?query=type%3e0Expense
 ```
 Display the response to the customer and allow them to select the desired expense account. Store the `id` and use it as the expense account Id in future operations. 
 
-If the customer wants to create a new nominal expense account for this purpose, use our Create account(THIS ALSO DOESNT EXIST?) endpoint to enable that. 
+If the customer wants to create a new nominal expense account for this purpose, use our [Get create account model](//lending-api#/operations/get-create-chartOfAccounts-model) to figure out what payload is required for account creation. Next, call the [Create account](/lending-api#/operations/create-account) endpoint to create the new account. 
 
 ```http
 POST blabla
@@ -195,8 +200,6 @@ In response, you will receive account creation details which you can display to 
 Once you receive the configuration information, you are ready to deposit funds into the borrower's bank account. This is also known as *loan drawdown*, and it is a two-step process.  
 
 For each drawdown, [create a bank transaction](/lending/guides/general-loan-writeback#create-bank-transaction) depositing the amount into the lender's bank account to make the funds available for drawdown. Then, [create a transfer](/lending/guides/general-loan-writeback#create-transfer) from the lender's bank account to the borrower's bank account. 
-
-(WHY IS THIS THE SEQUENCE? SURELY YOU NEED TO DO A BAN TRANSACTION FIRST TO HAVE THE FUND AVAILABLE, AND THEN THE TRANSFER TO MVOE THEM?)
 
 ```mermaid
     sequenceDiagram
@@ -212,7 +215,7 @@ For each drawdown, [create a bank transaction](/lending/guides/general-loan-writ
 
 ### Create bank transaction
 
-Use our Create bank transactions(THIS IS NOT IN LENDING API) to deposit the amount into the lender's bank account with the following information included:
+Use our [Get create bank account transactions model](/lending-api#/operations/get-create-bank-transactions-model) endpoint first to determine the parameters required for transaction creation. Then, use the [Create bank account transactions](/lending-api#/operations/create-bank-transactions) to deposit the amount into the lender's bank account with at least the following information included:
 
 ```http
 post trasaction
@@ -231,7 +234,9 @@ post trasaction
 
 ### Create transfer
 
-Next, transfer the money from the lender's bank account to the borrower's bank account using our Create transfer(THIS ALSO DOES NOT EXIST???). Note that you are performing a transfer *from* the lender's account Id *to* the borrower's account Id.
+Following Codat's async record creation process, use the [Get create transfer model](/lending-api#/operations/get-create-transfers-model) endpoint to determine the transfer request parameters. 
+
+Next, call the [Create transfer](/lending-api#/operations/create-transfer) endpoint to transfer the money from the lender's bank account to the borrower's bank account. Note that you are performing a transfer *from* the lender's account Id *to* the borrower's account Id.
 
 ```http
 post transfer
@@ -240,7 +245,7 @@ post transfer
 
 Based on the loan's terms and conditions, the borrower will preiodically repay the lender the loan amount and any associated fees. 
 
-For each repayment, [create a transfer](/lending/guides/general-loan-writeback#create-transfer) from the borrower's bank account to the lender's. To record interest or fees, [create a direct cost](/lending/guides/general-loan-writeback#create-direct-cost). Finally, to follow the accepted accounting principles, [create bank transactions](/lending/guides/general-loan-writeback#create-bank-transaction) to deposit the repayment into the lender's account. Repeat these steps every time a repayment is made.
+For each repayment, [create a transfer](/lending/guides/general-loan-writeback#create-transfer-1) from the borrower's bank account to the lender's. To record interest or fees, [create a direct cost](/lending/guides/general-loan-writeback#create-direct-cost). Finally, to follow the accepted accounting principles, [create bank transactions](/lending/guides/general-loan-writeback#create-bank-transaction-1) to deposit the repayment into the lender's account. Repeat these steps every time a repayment is made.
 
 For example, if the borrower took out a loan of £1000 and agreed on a loan charge of 20%, the total amount due comes to £1200. With a 3-month equal instalment repayment plan, the borrower would pay back £400 each month. This means a transfer of £320 to represent the payment, a direct cost of £80 to record the fees, and a bank transaction of £400 to reduce the liability to the lender.
 
@@ -265,14 +270,14 @@ For example, if the borrower took out a loan of £1000 and agreed on a loan char
 
 ### Create bank transaction
 
-Use the Create bank transactions(WHERE IS THIS ISH) endpoint to deposit the total amount (including the repayment, fees, and any interest) into the lender's bank account.
+Use the [Create bank account transactions](/lending-api#/operations/create-bank-transactions) endpoint again to deposit the total amount (including the repayment, fees, and any interest) into the lender's bank account.
 
 ```http
 post trasaction
 ```
 ### Create transfer
 
-Next, transfer the money from the borrower's bank account to the lenders's bank account using the Create transfer(THIS ALSO DOES NOT EXIST???) endpoint to record the loan repayment amount. Note that you are performing a transfer *from* the borrower's account Id *to* the lender's account Id.
+Next, use the [Create transfer](/lending-api#/operations/create-transfer) endpoint again - this time to record the loan repayment amount. Note that you are performing a transfer *from* the borrower's account Id *to* the lender's account Id.
 
 ```http
 post transfer
@@ -280,13 +285,13 @@ post transfer
 
 ### Create direct cost
 
-Finally, use the Create direct cost(GUESS WHAT, THIS ALSO DOESNT EXIST) endpoint to capture the amount of fees or interest incurred by the borrower.
+Finally, check the [Get create direct cost model](/lending-api#/operations/get-create-directCosts-model), then use the [Create direct cost](/lending-api#/operations/create-direct-cost) endpoint to capture the amount of fees or interest incurred by the borrower.
 
 ```http
 POST push it baby
 ```
 
-Make sure to populate the following information:
+Make sure to populate at least the following information:
 
 ```json
 {
