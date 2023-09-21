@@ -8,7 +8,7 @@ sidebar_label: "Loan writeback"
 
 Loan writeback (also known as lending writeback) is the process of continuously updating an accounting platform with information on a loan. It helps maintain an accurate position of the loan during the entire lending cycle by recording the loan liability, any interest, fees, or repayments, and facilitating the reconciliation of bank transactions. 
 
-This guide covers the loan writeback procedure for general lending, such as terms loans, but it is not suitable for invoice finance.
+This guide covers the loan writeback procedure for general lending, such as term loans, but does not cover requirements specific to invoice finance.
 
 :::info Mandatory loan writeback
 
