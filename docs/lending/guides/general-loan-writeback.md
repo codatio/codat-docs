@@ -6,29 +6,29 @@ sidebar_label: "Loan writeback"
 
 ## What is it?
 
-Loan writeback (also known as lending writeback) is the process of continuously updating an accounting platform with information on a loan. It helps maintain an accurate position of the loan during the entire lending cycle by recording the loan liability, any interest, fees, or repayments, and facilitating the reconciliation of bank accounts. 
+Loan writeback (also known as lending writeback) is the process of continuously updating an accounting platform with information on a loan. It helps maintain an accurate position of the loan during the entire lending cycle by recording the loan liability, any interest, fees, or repayments, and facilitating the reconciliation of bank transactions. 
 
 :::info Mandatory loan writeback
 
-Certain accounting platforms **require** lenders to continuously update their books with money lent to SMBs. For example, Xero obligates lenders going through the [App Partner certification](/integrations/accounting/xero/xero-app-partner-program) process to handle the writeback process. 
+Certain accounting platforms **require** lenders to continuously update their books with money lent to SMBs. For example, **Xero** obligates lenders going through the [App Partner certification](/integrations/accounting/xero/xero-app-partner-program) process to handle the writeback process. 
 
 :::
 
 ## Why use it?
 
-A bookkeeper can account for a loan in numerous ways in an accounting platform. For example, some bookkeepers may erroneously register a loan as a direct income or even an invoice. This results in loans being improperly recorded as revenue and repayments as operating costs. At the end of the reporting period, this can make it hard for the bookkeeper to close their books. 
+A bookkeeper can account for a loan in numerous ways in an accounting platform. For example, some bookkeepers may erroneously register a loan as a direct income or even a sales invoice. This results in loans being improperly recorded as revenue and repayments as operating costs. At the end of the reporting period, this can make it hard for the bookkeeper to close their books. 
 
 By implementing loan writeback functionality in your application, you can make sure loan bookeeping is done regularly, correctly, and quickly, and always see an up-to-date state of the borrower's accounts.
 
 ## What's the process?
 
-The process of loan writeback involves recording loan withdrawals, repayments, and interest in the SMB's accounting platform. It can be split into three steps: 
+The process of loan writeback involves recording loan withdrawals, repayments, and interest in the SMB's accounting platform. It can be split into three stages, as shown on the diagram below: 
 
 1. **Configure** loan writeback for your SMB customer.  
 
 2. **Deposit** funds into your SMB's accounting platform.
 
-3. **Repay** money owed to the lender in your SMB's' accounting platform.
+3. **Repay** money owed to you, the lender, in your SMB's accounting platform.
 
 ```mermaid
 sequenceDiagram
@@ -60,9 +60,9 @@ sequenceDiagram
 
 ## Prerequisites
 
-* Create a Codat company that represents your SMB customer and link it to an accounting platform. If you are using Codat for lending, you would have already connected an SMB company. 
+* Check that you have [created a Codat company](/configure/portal/companies#add-a-new-company) that represents your SMB customer and linked it to an accounting platform. If you are using Codat for lending, it's likely you have already done this. You can also create and connect a test company to use while you build your solution.
 
-* Familiarize yourself with Codat's approach of [creating and updating data](/using-the-api/push), which can be summarized as follows:
+* Familiarize yourself with Codat's approach of asynchronously [creating and updating data](/using-the-api/push), which can be summarized as follows:
 
 ```mermaid
   sequenceDiagram
@@ -80,7 +80,7 @@ sequenceDiagram
     end
 ```
 
-* If you are implementing loan writeback for Xero, make sure that Xero have enabled the *Xero Bank Feeds API* for your registered app. 
+* If you are implementing loan writeback for Xero, make sure that Xero have enabled the *Xero Bank Feeds API* for your registered app. In order to create and update bank transactions, your application must be approved by [Xero's certification program](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/app-partner-steps/).
 
 * Provide the customer with a user interface that gives the option to enable the loan writeback process flow and configure or update their account mapping, for example: 
 
@@ -190,7 +190,7 @@ POST blabla
 
 In response, you will receive account creation details which you can display to your customer. Similarly, store the `id` and use it in future transactions. 
 
-## Deposit
+## Deposit the loan
 
 Once you receive the configuration information, you are ready to deposit funds into the borrower's bank account. This is also known as *loan drawdown*, and it is a two-step process.  
 
@@ -202,12 +202,12 @@ For each drawdown, [create a bank transaction](/lending/guides/general-loan-writ
     sequenceDiagram
         participant backend as Your application 
         participant codat as Codat
+
+        backend ->> codat: Create bank transaction (deposit to lender's account)
+        codat -->> backend: bank transaction
         
         backend ->> codat: Create transfer (loan drawdown, lender -> bank account)
         codat -->> backend:  transfer
-        
-        backend ->> codat: Create bank transaction (deposit to lender's account)
-        codat -->> backend: bank transaction
 ```
 
 ### Create bank transaction
@@ -223,7 +223,7 @@ post trasaction
   "transactions": [{
     "id": transactionId, // some unique identifier of the bank transaction
     "amount": amount, // amount to pay
-    "date": date time now,
+    "date": date / time of the transfer,
     "description": description
   }]
 }
@@ -236,7 +236,7 @@ Next, transfer the money from the lender's bank account to the borrower's bank a
 ```http
 post transfer
 ```
-## Repay
+## Repay the loan
 
 Based on the loan's terms and conditions, the borrower will preiodically repay the lender the loan amount and any associated fees. 
 
