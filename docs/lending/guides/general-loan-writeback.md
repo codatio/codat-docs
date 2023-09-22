@@ -4,6 +4,9 @@ description: "Simplify your implementation with our loan writeback best practice
 sidebar_label: "Loan writeback"
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## What is it?
 
 Loan writeback (also known as lending writeback) is the process of continuously updating an accounting platform with information on a loan. It helps maintain an accurate position of the loan during the entire lending cycle by recording the loan liability, any interest, fees, or repayments, and facilitating the reconciliation of bank transactions. 
@@ -206,7 +209,7 @@ Display the response to the customer and allow them to select the account. Store
 
 Next, enable your customer to create a new bank account. This will be the lender's - your - virtual bank account, used to track transactions associated with your lending activity. 
 
-Use our [Get create/update bank account model](/lending-api#/operations/get-create-update-bankAccounts-model) to get the expected data for the bank account creation request payload. Then, use the Create bank account(/lending-api#/operations/create-bank-account) endpoint to create the new account in the accounting platform.
+Use our [Get create/update bank account model](/lending-api#/operations/get-create-update-bankAccounts-model) to get the expected data for the bank account creation request payload. Then, use the [Create bank account](/lending-api#/operations/create-bank-account) endpoint to create the new account in the accounting platform.
 
 <Tabs>
 <TabItem value="nodejs" label="TypeScript">
