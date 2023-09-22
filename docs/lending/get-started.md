@@ -8,6 +8,12 @@ image: "/img/banners/social/lending.png"
 import { IntegrationsList } from "@components/global/Integrations";
 import { accountingIntegrations, bankingIntegrations, commerceIntegrations } from "@components/global/Integrations/integrations";
 
+:::tip Your lending journey
+
+Our Lending API supports the data collection step of your lending journey, which starts in your own web application. Enable Lending API and configure it, then utilize our authorization component in your app. Determine where the collected data will be stored and handle the subsequent steps of the lending process in your app. 
+
+:::
+
 ## Enable Lending API
 
 1. Open the <a href="https://app.codat.io" target="_blank">Codat Portal</a> and sign in.
@@ -78,6 +84,19 @@ In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate
   
 
 ## Use Lending API
+
+As a prerequisite for data collection, you need to create a Codat company and connect it to a data source (for example, an accounting platform). The company represents your SMB customer's business that is sharing access to their data. 
+
+You can create a company:
+
+* In the [Codat Portal](https://app.codat.io) by navigating to **Companies > Create company**
+* By calling the [Create company](/lending-api#/operations/create-company) endpoint of our API
+
+Remember to [authenticate](/using-the-api/authentication) if you are making calls to our API. Navigate to **Developers > API keys** in the Portal to pick up your authorization header.
+
+To establish a connection to a data source and sync business data, your customer must grant you access. They can do so using our [Link auth flow](/auth-flow/overview) solution, which we recommend you [use in your app](/lending/get-started#authorization-flow).
+
+Once the connection is established, Codat will perform the initial syncs for the data types you have previously enabled. You can use the `New company synchronised` [webhook](/using-the-api/webhooks/core-rules-types#new-company-synchronized) to get notified once these initial syncs are complete, and at least one of them is successful.
 
 <ul className="card-container col-2">
   <li className="card">
