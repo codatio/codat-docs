@@ -78,6 +78,10 @@
       "methodNameOverride": "delete"
     },
     {
+      "operationId": "^delete-.*?-attachment",
+      "methodNameOverride": "delete-attachment"
+    },
+    {
       "operationId": "^download-.*?-attachment",
       "methodNameOverride": "download-attachment"
     },

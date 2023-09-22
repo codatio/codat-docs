@@ -74,6 +74,10 @@
       "methodNameOverride": "delete"
     },
     {
+      "operationId": "^delete-.*?-attachment",
+      "methodNameOverride": "delete-attachment"
+    },
+    {
       "operationId": "^download-.*?-attachment",
       "methodNameOverride": "download-attachment"
     },
@@ -29466,6 +29470,51 @@
         "summary": "Get bill attachment",
         "description": "The *Get bill attachment* endpoint returns a specific attachment for a given `billId` and `attachmentId`.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support getting a bill attachment.\n",
         "operationId": "get-bill-attachment"
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/push/bills/{billId}/attachments/{attachmentId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        },
+        {
+          "$ref": "#/components/parameters/billId"
+        },
+        {
+          "$ref": "#/components/parameters/attachmentId"
+        }
+      ],
+      "delete": {
+        "summary": "Delete bill attachment",
+        "tags": [
+          "Bills"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PushOperation"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          }
+        },
+        "operationId": "delete-bill-attachment",
+        "description": "The *Delete bill attachment* endpoint allows you to delete a specified bill attachment from an accounting platform.  \n\n[Bills](https://docs.codat.io/accounting-api#/schemas/Bill) are invoices\nthat represent the SMB's financial obligations to their supplier for a\npurchase of goods or services. \n\n### Process  \n\n1. Pass the `{billId}` and `{attachmentId}` to the *Delete bill attachment* endpoint and store the `pushOperationKey` returned. \n\n2. Check the status of the delete operation by checking the status of push operation either via \n\n1. [Push operation webhook](https://docs.codat.io/introduction/webhookscore-rules-types#push-operation-status-has-changed) (advised), \n\n2. [Push operation status endpoint](https://docs.codat.io/sync-for-payables-api#/operations/get-push-operation). A `Success` status indicates that the bill attachment object was deleted from the accounting platform. \n\n3. (Optional) Check that the bill attachment was deleted from the accounting platform. \n\n>**Supported Integrations**\n>\n>This functionality is currently only supported for our QuickBooks Online integration. "
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/bills/{billId}/attachments/{attachmentId}/download": {
