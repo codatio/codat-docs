@@ -880,14 +880,14 @@ codatLending.loanWriteback.transfers.create({
         date: date time now,
         from: {
             accountRef: {
-                id: sourceAccountId,
+                id: lendersBankAccount.Id,
             },
             amount: amount,
             currency: "GBP",
         },
         to: {
             accountRef: {
-                id: destinationAccountId,
+                id: borrowersBankAccountId,
             },
             amount: amount,
             currency: "GBP",
@@ -911,14 +911,14 @@ transfers_create_request = operations.CreateTransferRequest(
         date_=date time now,
         from_=shared.TransferAccount(
             account_ref=shared.AccountRef(
-                id=source_account_id',
+                id=lenders_bank_account.id,
             ),
             amount=Decimal(amount),
             currency='GBP',
         ),
         to=shared.TransferAccount(
             account_ref=shared.AccountRef(
-                id=destination_account_id,
+                id=borrowers_bank_account_id,
             ),
             amount=Decimal(amount),
             currency='GBP',
@@ -940,14 +940,14 @@ var transfersCreateResponse = await codatLending.LoanWriteback.Transfers.CreateA
         Date = date time now,
         From = new TransferAccount() {
             AccountRef = new AccountRef() {
-                Id = sourceAccountId,
+                Id = lendersBankAccount.Id,
             },
             Amount = amount,
             Currency = "GBP",
         },
         To = new TransferAccount() {
             AccountRef = new AccountRef() {
-                Id = destinationAccountId,
+                Id = borrowersBankAccountId,
             },
             Amount = amount,
             Currency = "GBP",
@@ -968,14 +968,14 @@ transfersCreateResponse, err := codatLending.LoanWriteback.Transfers.Create(ctx,
         Date: lending.String(date time now),
         From: &shared.TransferAccount{
             AccountRef: &shared.AccountRef{
-                ID: lending.String(sourceAccountID),
+                ID: lending.String(lendersBankAccount.ID),
             },
             Amount: types.MustNewDecimalFromString(amount),
             Currency: lending.String("GBP"),
         },
         To: &shared.TransferAccount{
             AccountRef: &shared.AccountRef{
-                ID: lending.String(destinationAccountID),
+                ID: lending.String(borrowersBankAccountID),
             },
             Amount: types.MustNewDecimalFromString(amount),
             Currency: lending.String("GBP"),
@@ -1000,14 +1000,14 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
     "date": "date time now",
     "from": {
         "accountRef": {
-            "id": "sourceAccountId",
+            "id": "lendersBankAccount.Id",
         },
         "account": amount,
         "currency": "GBP",
     },
     "to": {
         "accountRef": {
-            "id": "destinationAccountId",
+            "id": "borrowersBankAccountId",
         },
         "account": amount,
         "currency": "GBP",
@@ -1056,7 +1056,7 @@ Use the [Create bank account transactions](/lending-api#/operations/create-bank-
 ```javascript
 codatLending.loanWriteback.bankTransactions.create({
     accountingCreateBankTransactions: {
-        accountId: lendersBankAccount.Id, // lender's virtual bank account id you would have stored from the configuration step
+        accountId: lendersBankAccount.id, // lender's virtual bank account id you would have stored from the configuration step
         transactions: [
         {
             id: transactionId, // some unique identifier of the bank transaction
@@ -1182,14 +1182,14 @@ codatLending.loanWriteback.transfers.create({
         date: date time now,
         from: {
             accountRef: {
-                id: sourceAccountId,
+                id: borrowersBankAccountId,
             },
             amount: amount,
             currency: "GBP",
         },
         to: {
             accountRef: {
-                id: destinationAccountId,
+                id: lendersBankAccount.id,
             },
             amount: amount,
             currency: "GBP",
@@ -1213,14 +1213,14 @@ transfers_create_request = operations.CreateTransferRequest(
         date_=date time now,
         from_=shared.TransferAccount(
             account_ref=shared.AccountRef(
-                id=source_account_id,
+                id=borrowers_bank_account_id,
             ),
             amount=Decimal(amount),
             currency='GBP',
         ),
         to=shared.TransferAccount(
             account_ref=shared.AccountRef(
-                id=destination_account_id,
+                id=lenders_bank_account.id,
             ),
             amount=Decimal(amount),
             currency='GBP',
@@ -1242,14 +1242,14 @@ var transfersCreateResponse = await codatLending.LoanWriteback.Transfers.CreateA
         Date = date time now,
         From = new TransferAccount() {
             AccountRef = new AccountRef() {
-                Id = sourceAccountId,
+                Id = borrowersBankAccountId,
             },
             Amount = amount,
             Currency = "GBP",
         },
         To = new TransferAccount() {
             AccountRef = new AccountRef() {
-                Id = destinationAccountId,
+                Id = lendersBankAccount.Id,
             },
             Amount = amount,
             Currency = "GBP",
@@ -1270,14 +1270,14 @@ transfersCreateResponse, err := codatLending.LoanWriteback.Transfers.Create(ctx,
         Date: lending.String(date time now),
         From: &shared.TransferAccount{
             AccountRef: &shared.AccountRef{
-                ID: lending.String(sourceAccountID),
+                ID: lending.String(borrowersBankAccountID),
             },
             Amount: types.MustNewDecimalFromString(amount),
             Currency: lending.String("GBP"),
         },
         To: &shared.TransferAccount{
             AccountRef: &shared.AccountRef{
-                ID: lending.String(destinationAccountID),
+                ID: lending.String(lendersBankAccount.ID),
             },
             Amount: types.MustNewDecimalFromString(amount),
             Currency: lending.String("GBP"),
@@ -1302,14 +1302,14 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
     "date": "date time now",
     "from": {
         "accountRef": {
-            "id": "sourceAccountId",
+            "id": "borrowersBankAccountId",
         },
         "account": amount,
         "currency": "GBP",
     },
     "to": {
         "accountRef": {
-            "id": "destinationAccountId",
+            "id": "lendersBankAccount.Id",
         },
         "account": amount,
         "currency": "GBP",
