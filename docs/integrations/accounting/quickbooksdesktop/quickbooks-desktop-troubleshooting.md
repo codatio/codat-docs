@@ -1,5 +1,6 @@
 ---
 title: "Troubleshooting"
+description: Common issues with QuickBooks Desktop
 ---
 
 ## Accessing logs
