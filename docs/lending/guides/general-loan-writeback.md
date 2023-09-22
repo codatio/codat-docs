@@ -144,7 +144,7 @@ sequenceDiagram
 
 Loan writeback process operates with two bank accounts: a borrower's business bank account, where the money lent is deposited, and a lender's bank account, which is a virtual bank account in the accounting platform that acts as a container for lender transactions. 
 
-First, your customer needs to choose one of their existing bank accounts. This account will be used to depost the loan. Call our [List accounts](/lending-api#/operations/list-accounting-bank-accounts) endpoint to retrieve the customer's existing bank accounts. 
+First, your customer needs to choose one of their existing bank accounts. This account will be used to depost the loan. Call our [List bank accounts](/lending-api#/operations/list-accounting-bank-accounts) endpoint to retrieve the customer's existing bank accounts. 
 
 <Tabs>
 <TabItem value="nodejs" label="TypeScript">
@@ -205,9 +205,9 @@ GET https://api.codat.io/companies/{companyId}/connections/{connectionId}/data/b
 
 </Tabs>
 
-Display the response to the customer and allow them to select the account. Store the returned `id` and use it as the borrower account Id in future operations. 
+Display the response to the customer and allow them to select the account. Store the returned `id` and use it as the borrower's account Id in future operations. 
 
-Next, enable your customer to create a new bank account. This will be the lender's - your - virtual bank account, used to track transactions associated with your lending activity. 
+Next, you need to create a new bank account in the borrower's accounting system. This will be the lender's - your - virtual bank account, used to track transactions associated with your lending activity. 
 
 Use our [Get create/update bank account model](/lending-api#/operations/get-create-update-bankAccounts-model) to get the expected data for the bank account creation request payload. Then, use the [Create bank account](/lending-api#/operations/create-bank-account) endpoint to create the new account in the accounting platform.
 
@@ -541,7 +541,7 @@ Similarly, store the `id` and use it in future transactions.
 
 ### Expense account
 
-Finally, use our [List accounts](/lending-api#/operations/list-accounting-accounts) endpoint filtered by `type = Expense` to retrieve the customer's existing expense accounts. Let them choose one that will be used to record fees and interest. 
+Finally, use our [List accounts](/lending-api#/operations/list-accounting-accounts) endpoint filtered by `type=Expense` to retrieve the customer's existing expense accounts. Let them choose one that will be used to record fees and interest. 
 
 <Tabs>
 <TabItem value="nodejs" label="TypeScript">
@@ -679,7 +679,7 @@ var accountsCreateResponse = await codatLending.LoanWriteback.Accounts.CreateAsy
 
 ```go
 ctx := context.Background()
-accountsCreateResponse, err := s.LoanWriteback.Accounts.Create(ctx, operations.CreateAccountRequest{
+accountsCreateResponse, err := codatLending.LoanWriteback.Accounts.Create(ctx, operations.CreateAccountRequest{
     AccountingAccount: &shared.AccountingAccount{
         Currency: lending.String("USD"),
         CurrentBalance: types.MustNewDecimalFromString("0"),
