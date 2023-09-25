@@ -8,7 +8,8 @@ hide_description: true
 banner_title: Bank transactions reconciliation with QBO Bank Feeds
 banner_image: "/img/banners/bank-feeds.png"
 banner_text: "Example-based tutorial on reconciling bank transactions with QuickBooks Online using Codat's Bank Feeds"
----
+---  
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
