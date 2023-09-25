@@ -1,0 +1,47 @@
+.rc-tooltip-placement-top .rc-tooltip-arrow, .rc-tooltip-placement-topLeft .rc-tooltip-arrow, .rc-tooltip-placement-topRight .rc-tooltip-arrow  {
+  border-top-color: rgba(255, 0, 0, 0);
+}
+
+.rc-tooltip-inner {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.rc-tooltip {
+  opacity: 1;
+  border-radius: 8px;
+}
+
+.mytooltip {
+  font: inherit;
+  transition: 0.5s;
+  padding: 8px;
+  border-radius: 8px;
+  border: 2px solid #efefef;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0px 5px 13px #00000026;
+  
+  >*:last-child {
+    margin-bottom: 0;
+  }
+
+  h4 {
+    color:#121212;
+    margin-bottom: 10px;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  &.dark {
+    background: rgba(18, 18, 18, 0.9);          
+    color: #AAAAAA;
+    box-shadow: 0px 5px 13px #00000080;
+    
+    h4 {
+      color: #FFFFFF;
+    }
+  }
+}

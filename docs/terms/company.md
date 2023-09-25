@@ -1,14 +1,10 @@
 ---
 title: Company
-hoverText: Companies are x y z
+hoverText: Companies represent your SMB customers within the Codat system.
 ---
 
-This is a more detailed explanation for the term. The `hoverText` metadata provides a preview of the explanation.
+In Codat, a company represents a business sharing access to their data. Each company can have multiple connections to different data sources such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts and a connection to Zettle for POS data.
 
-This is a more detailed explanation for the term. The `hoverText` metadata provides a preview of the explanation.
+Typically each company is one of your customers.
 
-This is a more detailed explanation for the term. The `hoverText` metadata provides a preview of the explanation.
-
-This is a more detailed explanation for the term. The `hoverText` metadata provides a preview of the explanation.
-
-This is a more detailed explanation for the term. The `hoverText` metadata provides a preview of the explanation.
+When you create a company, you can specify a name and we will automatically generate a unique id for the company. You can also add a description to store any additional information about the company.

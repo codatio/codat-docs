@@ -34,7 +34,6 @@ const Glossary = () => {
       {() =>
         <div>{content ?
           <>
-          sdhuihaifhisahfiuas
             {
               Object.keys(content).map(key => {
                 return (

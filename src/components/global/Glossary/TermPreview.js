@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import RcTooltip from "rc-tooltip";
+
 import "rc-tooltip/assets/bootstrap_white.css";
-import "./tooltip-styles.css";
+import "./tooltip-styles.scss";
 
 const link = {
   textDecoration: "underline",

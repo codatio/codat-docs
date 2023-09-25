@@ -3,4 +3,4 @@ id: glossary
 title: Glossary
 ---
 
-This is my glossary file, I expect this to remain unaltered, and just append text below this line.
+You can use our glossary as a quick reference for key terms used throughout our documentation.

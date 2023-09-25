@@ -3,6 +3,7 @@ title: "First steps with Codat"
 sidebar_label: First steps
 description: "A practical introduction to Codat's Portal and API"
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -16,7 +17,7 @@ You need an account and its API key to start with Codat. You can <a href="https:
 
 With Codat, you can more easily build integrated financial products for SMBs.
 
-Set up your customers by adding them as companies in Codat. Then, establish authorized connections to the customers' accounting, banking, or commerce platforms using one of our integrations.
+Set up your customers by adding them as [companies](../terms/company) in Codat. Then, establish authorized connections to the customers' accounting, banking, or commerce platforms using one of our integrations.
 
 Finally, review and analyze the data relevant to your use case, which Codat pulls from your SMB customers' data sources.
 
@@ -24,7 +25,7 @@ This guide is aimed at developers and non-developers alike. In three easy steps,
 
 :::info Want to view data even faster? 🚀
 
-Your free account comes equipped with a demo company. Navigate to **Companies** in the <a href="https://app.codat.io/companies?userflow=41dae845-29a6-4dd9-b886-4cb6c3464b1d" target="_blank">Codat Portal</a> and click the demo company to examine data relevant for your use case.
+Your free account comes equipped with an example company. Navigate to **Companies** in the <a href="https://app.codat.io/companies?userflow=41dae845-29a6-4dd9-b886-4cb6c3464b1d" target="_blank">Codat Portal</a> and click the demo company to examine data relevant for your use case.
 
 :::
 
