@@ -1,6 +1,7 @@
 ---
 title: "Set up the demo app"
 description: "Prepare your Codat instance and local environment to run the demo app"
+sidebar_label: "Demo app setup"
 ---
 
 import Tabs from "@theme/Tabs";
@@ -25,7 +26,7 @@ On the **Settings > Auth Flow > Link** [settings](https://app.codat.io/settings/
 
 ### <input type="checkbox" unchecked /> Listen for webhooks
 
-The app uses several webhooks to track the completion of an accounting data connection and the completion of data syncs for the Invoice and Customer data types.
+The app uses several webhooks to track the completion of an accounting data connection and the completion of data syncs for the `invoice` and `customer` data types.
 
 We will use [ngrok](https://ngrok.com/) to listen for Codat's webhooks. 
 
