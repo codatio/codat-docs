@@ -8,7 +8,9 @@ Testing is a key component of any software development process, both during the 
 
 ## Using a test instance
 
-We recommend you use an additional instance of Codat for testing purposes. Upgrade to our **Start-up** plan, and we will automatically clone your existing client to create a test instance for you. We copy the following details and settings: 
+We recommend you use an additional instance of Codat for testing purposes. 
+
+For those on a **Start-up** plan, we automatically clone your existing client to create a test instance for you (if you upgraded after June 2023). We copy the following details and settings: 
 
 * All users with access to the existing client
 * Client settings and feature overrides
@@ -53,6 +55,7 @@ We recommend using **Codat Sandbox** integrations that contain sample data gener
 You can also sign up and test with **Xero** and **QuickBooks Online**, both of which offer demo or sandbox companies equipped with sample data. Other integrations also provide free trials in order to test the connections, but may not provide sample data.
 
 :::info Testing in production instance
+
 In your production instance, active companies that are connected only to Codat Sandbox or QuickBooks Online Sandbox are excluded from billing.
 :::
 
