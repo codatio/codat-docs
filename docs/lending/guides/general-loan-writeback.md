@@ -6,6 +6,7 @@ sidebar_label: "Loan writeback"
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import WritebackMapping from "@components/global/Prototypes/WritebackMapping";
 
 ## What is it?
 
@@ -90,6 +91,8 @@ sequenceDiagram
 * Provide the customer with a user interface that gives the option to enable the loan writeback process flow and configure or update their account mapping, for example: 
 
 ![](/img/integrations/accounting/xero/xero-general-lending-1.PNG)
+
+<WritebackMapping/>
 
 ## Configure loan writeback
 
