@@ -1,4 +1,6 @@
-.rc-tooltip-placement-top .rc-tooltip-arrow, .rc-tooltip-placement-topLeft .rc-tooltip-arrow, .rc-tooltip-placement-topRight .rc-tooltip-arrow  {
+.rc-tooltip-placement-top .rc-tooltip-arrow, 
+.rc-tooltip-placement-topLeft .rc-tooltip-arrow, 
+.rc-tooltip-placement-topRight .rc-tooltip-arrow  {
   border-top-color: rgba(255, 0, 0, 0);
 }
 
@@ -11,6 +13,10 @@
 .rc-tooltip {
   opacity: 1;
   border-radius: 8px;
+}
+
+.rc-tooltip-hidden {
+  display: none !important;
 }
 
 .mytooltip {
