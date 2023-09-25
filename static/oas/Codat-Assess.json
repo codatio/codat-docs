@@ -4533,6 +4533,10 @@
                   "Interest",
                   "AccuredInterest"
                 ]
+              },
+              "lenderName": {
+                "type": "string",
+                "description": "The name of lender providing the loan."
               }
             }
           }
@@ -4561,7 +4565,8 @@
                 },
                 "date": "2020-08-02",
                 "amount": -455,
-                "transactionType": "Repayment"
+                "transactionType": "Repayment",
+                "lenderName": "Barclays Bank"
               }
             ]
           }
@@ -4671,6 +4676,10 @@
                 "type": "number",
                 "format": "decimal",
                 "description": "The loan outstanding balance.  This may not equal totalDrawdowns - totalRepayments due to interest which has been accrued."
+              },
+              "lenderName": {
+                "type": "string",
+                "description": "The name of lender providing the loan."
               }
             }
           },
@@ -4714,7 +4723,8 @@
                 "startDate": "2021-01-01",
                 "totalInvestments": 100000,
                 "totalRepayments": 83481.72,
-                "balance": 42513.18
+                "balance": 42513.18,
+                "lenderName": "Barclays Bank"
               }
             ]
           }
