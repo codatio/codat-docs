@@ -10,7 +10,7 @@ import { accountingIntegrations, bankingIntegrations, commerceIntegrations } fro
 
 :::tip Your lending journey
 
-Our Lending API supports the data collection step of your lending journey, which starts in your own web application. Enable Lending API and configure it, then utilize our authorization component in your app. Determine where the collected data will be stored and handle the subsequent steps of the lending process in your app. 
+Our Lending API supports the data collection step of your lending journey, which starts in your own web application. Enable Lending API and configure it, then embed our [Link SDK](/auth-flow/authorize-embedded-link) in your app to handle the auth flow. Determine where the collected data will be stored and manage the subsequent steps of the lending process in your app. 
 
 :::
 
@@ -42,9 +42,9 @@ Data source coverage varies by feature, so be sure to review the coverage for th
 
 ### Authorization flow
 
-As part of using the Lending API, you will need your customers to authorize your access to their data. To do so, use Link - our pre-built, conversion-optimized, and white-labelled authorization journey. 
+As part of using the Lending API, you will need your customers to authorize your access to their data. To do so, use Link - our pre-built, conversion-optimized, and white-labelled authorization flow. 
 
-You can fully embed Link in your experience by using our [Embedded Link](/auth-flow/authorize-embedded-link) component in your front-end code or choose our out-of-the-box [Hosted Link](/auth-flow/authorize-hosted-link) authorization flow to get up and running as quick as possible. 
+We recommend you fully embed the Link auth flow in your experience by using our [Embedded Link](/auth-flow/authorize-embedded-link) SDK in your front-end code. You can also choose our out-of-the-box [Hosted Link](/auth-flow/authorize-hosted-link) auth flow option to get up and running as quick as possible. 
 
 The solution lets you tailor the authorization journey to your business needs. You can:
 
@@ -54,7 +54,7 @@ The solution lets you tailor the authorization journey to your business needs. Y
 
 ### Data types
 
-Enable the minimum set of [data types](/core-concepts/data-type-settings#override-the-default-sync-settings) required for the Lending API. Each feature may also have additional data type requirements, so be sure to review these for the feature you want to use.
+Set the minimum set of [data types](/core-concepts/data-type-settings#override-the-default-sync-settings) required for the Lending API to `fetch on first link`. Each feature may also have additional data type requirements, so be sure to review these for the feature you want to use.
 
 In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations > Data types**. As a minimum, you need the following data types enabled:
 
@@ -85,18 +85,16 @@ In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate
 
 ## Use Lending API
 
-As a prerequisite for data collection, you need to create a Codat company and connect it to a data source (for example, an accounting platform). The company represents your SMB customer's business that is sharing access to their data. 
-
-You can create a company:
+Before you can collect your SMB customer's data, you need to create a Codat [company](./terms/company) and connect it to a data source (for example, an accounting platform). You can do that in two ways:
 
 * In the [Codat Portal](https://app.codat.io) by navigating to **Companies > Create company**
 * By calling the [Create company](/lending-api#/operations/create-company) endpoint of our API
 
 Remember to [authenticate](/using-the-api/authentication) if you are making calls to our API. Navigate to **Developers > API keys** in the Portal to pick up your authorization header.
 
-To establish a connection to a data source and sync business data, your customer must grant you access. They can do so using our [Link auth flow](/auth-flow/overview) solution, which we recommend you [use in your app](/lending/get-started#authorization-flow).
+To establish a connection to a data source and sync business data, your customer must grant you access. They can do so using our [Link auth flow](/auth-flow/overview) solution, which we recommend you use in your app.
 
-Once the connection is established, Codat will perform the initial syncs for the data types you have previously enabled. You can use the `New company synchronised` [webhook](/using-the-api/webhooks/core-rules-types#new-company-synchronized) to get notified once these initial syncs are complete, and at least one of them is successful.
+Once the connection is established, Codat will retrieve data for the data types you have previously set up to fetch on first link. You can use the `New company synchronised` [webhook](/using-the-api/webhooks/core-rules-types#new-company-synchronized) to get notified once these initial syncs are complete, and at least one of them is successful.
 
 <ul className="card-container col-2">
   <li className="card">
