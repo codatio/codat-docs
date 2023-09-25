@@ -393,7 +393,7 @@
                 "type": "object",
                 "properties": {
                   "platformKey": {
-                    "type": "string"
+                    "$ref": "#/components/parameters/platformKey/schema"
                   }
                 }
               }
@@ -632,13 +632,7 @@
         "x-speakeasy-name-override": "get-branding",
         "parameters": [
           {
-            "name": "platformKey",
-            "in": "path",
-            "description": "PlatformKey",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/platformKey"
           }
         ],
         "responses": {
@@ -723,22 +717,10 @@
     "/clients/{clientId}/config/ui/accounts/platform/{platformKey}": {
       "parameters": [
         {
-          "name": "clientId",
-          "in": "path",
-          "required": true,
-          "schema": {
-            "type": "string",
-            "format": "uuid"
-          }
+          "$ref": "#/components/parameters/clientId"
         },
         {
-          "name": "platformKey",
-          "in": "path",
-          "required": true,
-          "schema": {
-            "type": "string",
-            "format": "uuid"
-          }
+          "$ref": "#/components/parameters/platformKey"
         }
       ],
       "get": {
@@ -774,13 +756,7 @@
         "x-speakeasy-name-override": "update-visible-accounts-sync-flow",
         "parameters": [
           {
-            "name": "platformKey",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
+            "$ref": "#/components/parameters/platformKey"
           }
         ],
         "requestBody": {
@@ -1447,11 +1423,13 @@
             "example": "Accounting"
           },
           "platformName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of integration connected to company."
           },
           "linkUrl": {
             "type": "string",
             "format": "uri",
+            "description": "The link URL your customers can use to authorize access to their business application.",
             "example": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/2e2eb431-c1fa-4dc9-93fa-d29781c12bcd/start"
           },
           "status": {
@@ -1505,13 +1483,16 @@
             "type": "object",
             "properties": {
               "statusCode": {
-                "type": "string"
+                "type": "string",
+                "description": "The HTTP status code returned by the error."
               },
               "statusText": {
-                "type": "string"
+                "type": "string",
+                "description": "A non-numeric status code/text."
               },
               "errorMessage": {
-                "type": "string"
+                "type": "string",
+                "description": "A brief message about the error."
               },
               "erroredOnUtc": {
                 "$ref": "#/components/schemas/Company/properties/created"
@@ -1591,13 +1572,17 @@
         "x-internal": true,
         "properties": {
           "pageNumber": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Current page number."
           },
           "pageSize": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Number of items to return in results array.",
+            "maximum": 2000
           },
           "totalResults": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Total number of items."
           },
           "_links": {
             "$ref": "#/components/schemas/PagingInfo/definitions/links"
@@ -1642,7 +1627,8 @@
             "properties": {
               "href": {
                 "type": "string",
-                "format": "uri-reference"
+                "format": "uri-reference",
+                "description": "Uri hypertext reference."
               }
             }
           }
@@ -1690,7 +1676,8 @@
           "platform": {
             "type": "string",
             "deprecated": true,
-            "example": "Xero"
+            "example": "Xero",
+            "description": "`platformKeys` name used when creating the company."
           },
           "redirect": {
             "type": "string",
@@ -1711,7 +1698,8 @@
             "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
           },
           "createdByUserName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of user that created the company in Codat."
           },
           "dataConnections": {
             "type": "array",
@@ -1885,24 +1873,21 @@
         "type": "object",
         "properties": {
           "key": {
-            "type": "string",
-            "minLength": 4,
-            "maxLength": 4,
-            "pattern": "[a-z]{4}",
-            "example": "gbol",
-            "description": "A unique 4-letter key to represent a platform in each integration. View [accounting](https://docs.codat.io/integrations/accounting/accounting-platform-keys), [banking](https://docs.codat.io/integrations/banking/banking-platform-keys), and [commerce](https://docs.codat.io/integrations/commerce/commerce-platform-keys) platform keys. "
+            "$ref": "#/components/parameters/platformKey/schema"
           },
           "logoUrl": {
             "type": "string",
-            "format": "uri"
+            "format": "uri",
+            "description": "Static url for integration's logo."
           },
           "name": {
             "type": "string",
-            "example": "Xero"
+            "example": "Xero",
+            "description": "Name of integration."
           },
           "enabled": {
             "type": "boolean",
-            "description": "Whether this integration is enabled for your customers to use"
+            "description": "Whether this integration is enabled for your customers to use."
           },
           "sourceId": {
             "$ref": "#/components/schemas/Branding/properties/sourceId"
@@ -1914,13 +1899,16 @@
             "$ref": "#/components/schemas/Connection/properties/integrationId"
           },
           "isOfflineConnector": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "`True` if the integration is to an application installed and run locally on an SMBs computer."
           },
           "isBeta": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "`True` if the integration is currently in beta release."
           },
           "dataProvidedBy": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the data provider."
           },
           "datatypeFeatures": {
             "type": "array",
@@ -2035,6 +2023,7 @@
             "title": "Feature state",
             "type": "string",
             "example": "Release",
+            "description": "The current release state of the feature.",
             "enum": [
               "Release",
               "Alpha",
@@ -2047,6 +2036,7 @@
           "featureType": {
             "type": "string",
             "x-internal": true,
+            "description": "The type of feature.",
             "enum": [
               "Get",
               "Post",
@@ -2553,7 +2543,8 @@
             "nullable": true
           },
           "required": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "`True` if required."
           }
         }
       },
@@ -2595,22 +2586,28 @@
         "x-internal": true,
         "properties": {
           "statusCode": {
-            "type": "integer"
+            "type": "integer",
+            "description": "The HTTP status code returned by the error."
           },
           "service": {
-            "type": "string"
+            "type": "string",
+            "description": "Codat's service the returned the error."
           },
           "error": {
-            "type": "string"
+            "type": "string",
+            "description": "A brief description of the error."
           },
           "correlationId": {
-            "type": "string"
+            "type": "string",
+            "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
           },
           "canBeRetried": {
-            "type": "string"
+            "type": "string",
+            "description": "`True` if the error occurred transiently and can be retried."
           },
           "detailedErrorCode": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Machine readable error code used to automate processes based on the code returned."
           }
         }
       },
@@ -2693,9 +2690,7 @@
         "type": "object",
         "properties": {
           "ClientId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier for your client in Codat."
+            "$ref": "#/components/parameters/clientId/schema"
           },
           "ClientName": {
             "type": "string",
@@ -2859,6 +2854,17 @@
       }
     },
     "parameters": {
+      "clientId": {
+        "name": "clientId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "description": "Unique identifier for your client in Codat."
+        },
+        "description": "Unique identifier for your client in Codat."
+      },
       "companyId": {
         "name": "companyId",
         "in": "path",
@@ -2868,7 +2874,8 @@
           "format": "uuid",
           "example": "8a210b68-6988-11ed-a1eb-0242ac120002",
           "description": "Unique identifier for your SMB in Codat."
-        }
+        },
+        "description": "Unique identifier for a company."
       },
       "connectionId": {
         "name": "connectionId",
@@ -2879,7 +2886,8 @@
           "format": "uuid",
           "example": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
           "description": "Unique identifier for a company's data connection."
-        }
+        },
+        "description": "Unique identifier for a connection."
       },
       "page": {
         "name": "page",
@@ -2924,10 +2932,7 @@
           "type": "string",
           "example": "-modifiedDate"
         },
-        "description": "Field to order results by. [Read more](https://docs.codat.io/using-the-api/ordering-results).",
-        "x-stoplight": {
-          "id": "4je9lwo02netu"
-        }
+        "description": "Field to order results by. [Read more](https://docs.codat.io/using-the-api/ordering-results)."
       },
       "syncId": {
         "name": "syncId",
@@ -2939,6 +2944,20 @@
           "example": "6fb40d5e-b13e-11ed-afa1-0242ac120002"
         },
         "description": "Unique identifier for a sync."
+      },
+      "platformKey": {
+        "name": "platformKey",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "minLength": 4,
+          "maxLength": 4,
+          "pattern": "[a-z]{4}",
+          "example": "gbol",
+          "description": "A unique 4-letter key to represent a platform in each integration. View [accounting](https://docs.codat.io/integrations/accounting/overview#platform-keys), [banking](https://docs.codat.io/integrations/banking/overview#platform-keys), and [commerce](https://docs.codat.io/integrations/commerce/overview#platform-keys) platform keys."
+        },
+        "description": "A unique 4-letter key to represent a platform in each integration. View [accounting](https://docs.codat.io/integrations/accounting/overview#platform-keys), [banking](https://docs.codat.io/integrations/banking/overview#platform-keys), and [commerce](https://docs.codat.io/integrations/commerce/overview#platform-keys) platform keys."
       }
     },
     "securitySchemes": {

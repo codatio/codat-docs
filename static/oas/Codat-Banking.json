@@ -419,7 +419,7 @@
                 "EILBDVJVNUAGVKRQ"
               ]
             },
-            "description": "Unique identifier for an account"
+            "description": "Unique identifier for an account."
           }
         ],
         "responses": {
@@ -1102,7 +1102,7 @@
         ]
       },
       "Account": {
-        "title": "Account",
+        "title": "Banking bank account",
         "description": "This data type provides a list of all the SMB's bank accounts, with rich data like balances, account numbers, and institutions holding the accounts.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/banking?view=tab-by-data-type&dataType=banking-accounts).\n\nResponses are paged, so you should provide `page` and `pageSize` query parameters in your request.",
         "type": "object",
         "allOf": [
@@ -1276,7 +1276,7 @@
         ]
       },
       "Accounts": {
-        "title": "Banking accounts",
+        "title": "Banking bank accounts",
         "x-internal": true,
         "allOf": [
           {
@@ -1484,6 +1484,7 @@
           },
           "transactionCategoryStatus": {
             "type": "string",
+            "description": "The status of the transaction category.",
             "x-internal": true,
             "enum": [
               "Unknown",
@@ -1576,13 +1577,17 @@
         "x-internal": true,
         "properties": {
           "pageNumber": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Current page number."
           },
           "pageSize": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Number of items to return in results array.",
+            "maximum": 2000
           },
           "totalResults": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Total number of items."
           },
           "_links": {
             "$ref": "#/components/schemas/PagingInfo/definitions/links"
@@ -1627,7 +1632,8 @@
             "properties": {
               "href": {
                 "type": "string",
-                "format": "uri-reference"
+                "format": "uri-reference",
+                "description": "Uri hypertext reference."
               }
             }
           }
@@ -1671,22 +1677,28 @@
         "x-internal": true,
         "properties": {
           "statusCode": {
-            "type": "integer"
+            "type": "integer",
+            "description": "The HTTP status code returned by the error."
           },
           "service": {
-            "type": "string"
+            "type": "string",
+            "description": "Codat's service the returned the error."
           },
           "error": {
-            "type": "string"
+            "type": "string",
+            "description": "A brief description of the error."
           },
           "correlationId": {
-            "type": "string"
+            "type": "string",
+            "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
           },
           "canBeRetried": {
-            "type": "string"
+            "type": "string",
+            "description": "`True` if the error occurred transiently and can be retried."
           },
           "detailedErrorCode": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Machine readable error code used to automate processes based on the code returned."
           }
         }
       }
@@ -1701,7 +1713,8 @@
           "format": "uuid",
           "example": "8a210b68-6988-11ed-a1eb-0242ac120002",
           "description": "Unique identifier for your SMB in Codat."
-        }
+        },
+        "description": "Unique identifier for a company."
       },
       "connectionId": {
         "name": "connectionId",
@@ -1712,7 +1725,8 @@
           "format": "uuid",
           "example": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
           "description": "Unique identifier for a company's data connection."
-        }
+        },
+        "description": "Unique identifier for a connection."
       },
       "page": {
         "name": "page",
@@ -1757,10 +1771,7 @@
           "type": "string",
           "example": "-modifiedDate"
         },
-        "description": "Field to order results by. [Read more](https://docs.codat.io/using-the-api/ordering-results).",
-        "x-stoplight": {
-          "id": "4je9lwo02netu"
-        }
+        "description": "Field to order results by. [Read more](https://docs.codat.io/using-the-api/ordering-results)."
       }
     },
     "responses": {
