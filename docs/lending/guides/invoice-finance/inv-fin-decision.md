@@ -1,6 +1,7 @@
 ---
 title: "How the decisioning works"
 description: "Reference page with details on our decisioning logic, fetching data, and coming to a decision"
+sidebar_label: "App's decisioning logic"
 ---
 
 ### 🚀 In this section, you will...
@@ -13,13 +14,13 @@ description: "Reference page with details on our decisioning logic, fetching dat
 
 After the app is notified by the webhook that invoice and customer syncs are complete, it fetches a filtered invoice list that we could potentially lend against. 
 
-In our demo, we focus on unpaid and partially paid invoices valued between 50 and 1000 USD, using the `query` parameter on our [List invoices](/accounting-api#/operations/list-invoices) endpoint:
+In our demo, we focus on unpaid and partially paid invoices valued between 50 and 1000 USD, using the `query` parameter on our [List invoices](/lending-api#/operations/list-accounting-invoices) endpoint:
 
 ```
 query = {status=submitted||status=partiallyPaid}&&currency=USD&&{amountDue>50&&amountDue<=1000}
 ```
 
-From this data set, we pick up a list of unique customer Ids (`customerRef.id`) for the unpaid invoices, and then the associated customer details using the [Get customers](/accounting-api#/operations/get-customers) endpoint. 
+From this data set, we pick up a list of unique customer Ids (`customerRef.id`) for the unpaid invoices, and then the associated customer details using the [Get customer](/lending-api#/operations/get-accounting-customer) endpoint. 
 
 Finally, we fetch all paid invoices for each of these customers to assess their previous payment behavior. After this, we are ready to perform the risk assessment.
 
@@ -40,7 +41,7 @@ In our demo, we also exclude any customers that fit the criteria below, meaning 
 - Concentration is more than the threshold of 5%,
 - Customer `country` is not `US`, thus excluding foreign business customers,
 - Customer `registrationNo` is null, thus excluding sole traders, and
-- Number of paid invoices is less than 2, thus lowering the risk based on past behaviour.
+- Number of paid invoices is less than 2, thus lowering the risk based on past behavior.
 
 ### <input type="checkbox" unchecked/> Assess risk for each invoice
 
@@ -79,9 +80,9 @@ Finally, we are ready to return a decision array to the applicant. It shows them
 
 ### <input type="checkbox" unchecked/> Access additional resources
 
-🗝️ You may want to enhance this simple working guide with some UI elements - why not use [Embedded Link](https://docs.codat.io/auth-flow/authorize-embedded-link) to seamlessly include our authorization journey into your app?
+🗝️ You may want to enhance this simple working guide with some UI elements - why not use [Embedded Link](/auth-flow/authorize-embedded-link) to seamlessly include our authorization journey into your app?
 
-🛍️ Take your digital lending solution one step further by using our [Assess](/lending/overview) product and its [Enhanced Invoices](/lending/enhanced-invoices/overview) endpoint. 
+🛍️ Take your digital lending solution one step further by using Lending API's [Reconciled invoices](/lending/features/accounts-receivable-overview#reconciled-invoices) feature enrichment. 
 
 📈 If you want to understand the growth potential of the invoice financing services, you can read through [Credit Connect's blog](https://www.credit-connect.co.uk/news/demand-for-invoice-finance-predicted-to-grow/).
 
@@ -91,4 +92,4 @@ Finally, we are ready to return a decision array to the applicant. It shows them
 
 In this reference section, you have learned and understood in detail the checks we performed during our invoice finance decisioning process, how we fetched and filtered the data, and how all of this influenced the decision on the loan made automatically. 
 
-Next, you can find out more about [Accounting API](/accounting-api/overview), or [explore other use cases](https://docs.codat.io/usecases/overview).
+Next, you can find out more about [Lending API](/lending/overview), or [explore other use cases](/usecases/overview).

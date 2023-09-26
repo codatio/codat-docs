@@ -23,21 +23,6 @@ module.exports = [
   //     "lending/guides/loan-qualification/uw-decision",
   //   ],
   // },
-  //{
-  //  type: "category",
-  //  label: "Invoice finance guide",
-  //  collapsed: true,
-  //  items: [
-  //    {
-  //      type: "doc",
-  //      id: "lending/guides/invoice-finance/introduction",
-  //      label: "Introduction",
-  //    },
-  //    "lending/guides/invoice-finance/setting-up",
-  //    "lending/guides/invoice-finance/process-invoice",
-  //    "lending/guides/invoice-finance/inv-fin-decision",
-  //  ],
-  //},
   {
     type: "link",
     label: "Bank statements",
@@ -98,6 +83,21 @@ module.exports = [
     section: "Guides",
   },
   id: "lending/guides/general-loan-writeback",
+},
+{
+    type: "category",
+    label: "Invoice finance",
+    collapsed: true,
+    items: [
+      {
+        type: "doc",
+        id: "lending/guides/invoice-finance/introduction",
+        label: "Introduction",
+      },
+      "lending/guides/invoice-finance/setting-up",
+      "lending/guides/invoice-finance/process-invoice",
+      "lending/guides/invoice-finance/inv-fin-decision",
+    ],
 },
 {
     type: "link",
