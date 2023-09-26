@@ -41,7 +41,7 @@ In our demo, we also exclude any customers that fit the criteria below, meaning 
 - Concentration is more than the threshold of 5%,
 - Customer `country` is not `US`, thus excluding foreign business customers,
 - Customer `registrationNo` is null, thus excluding sole traders, and
-- Number of paid invoices is less than 2, thus lowering the risk based on past behaviour.
+- Number of paid invoices is less than 2, thus lowering the risk based on past behavior.
 
 ### <input type="checkbox" unchecked/> Assess risk for each invoice
 
