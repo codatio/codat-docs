@@ -8,11 +8,21 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import WritebackMapping from "@components/global/Prototypes/WritebackMapping";
 
-## What is it?
+## Concept overview
+
+:::tip In this guide...
+
+This guide takes you through the steps needed to implement and run the loan writeback procedure in your lending business. 
+
+
+
+You will learn how to configure Codat in support of loan writeback and create transactions that represent the deposit and repayment of the loan in your customers' accoungting platforms. 
+
+covers the loan writeback procedure for general lending, such as term loans, but does not cover requirements specific to invoice finance.
+
+### What is loan writeback?
 
 Loan writeback (also known as lending writeback) is the process of continuously updating an accounting platform with information on a loan. It helps maintain an accurate position of the loan during the entire lending cycle by recording the loan liability, any interest, fees, or repayments, and facilitating the reconciliation of bank transactions. 
-
-This guide covers the loan writeback procedure for general lending, such as term loans, but does not cover requirements specific to invoice finance.
 
 :::info Mandatory loan writeback
 
@@ -20,13 +30,13 @@ Certain accounting platforms **require** lenders to continuously update their bo
 
 :::
 
-## Why use it?
+### Why use it?
 
 A bookkeeper can account for a loan in numerous ways in an accounting platform. For example, some bookkeepers may erroneously register a loan as a direct income or even a sales invoice. This results in loans being improperly recorded as revenue and repayments as operating costs. At the end of the reporting period, this can make it hard for the bookkeeper to close their books. 
 
 By implementing loan writeback functionality in your application, you can make sure loan bookeeping is done regularly, correctly, and quickly, and always see an up-to-date state of the borrower's accounts.
 
-## What's the process?
+### What's the process?
 
 The process of loan writeback involves recording loan withdrawals, repayments, and interest in the SMB's accounting platform. It can be split into three stages, as shown on the diagram below: 
 
@@ -56,7 +66,6 @@ sequenceDiagram
     
     loop For each repayment
         frontend ->> backend: Repayment
-       
         rect rgb(255, 215, 0)
             backend ->> codat: Reconcile repayment
             codat ->> backend: Reconciled repayment data
@@ -66,7 +75,9 @@ sequenceDiagram
 
 ## Prerequisites
 
-* Check that you have [created a Codat company](/configure/portal/companies#add-a-new-company) that represents your SMB customer and linked it to an accounting platform. If you are using Codat for lending, it's likely you have already done this. You can also create and connect a test company to use while you build your solution.
+* Check that you have [created a Codat company](/configure/portal/companies#add-a-new-company) that represents your SMB customer and linked it to an accounting platform. If you are already using Codat for lending, it's likely you have previously created some companies. 
+
+You should also create and connect a test company to use while building your solution.
 
 * Familiarize yourself with Codat's approach of asynchronously [creating and updating data](/using-the-api/push), which can be summarized as follows:
 
@@ -86,11 +97,9 @@ sequenceDiagram
     end
 ```
 
-* If you are implementing loan writeback for Xero, make sure that Xero have enabled the *Xero Bank Feeds API* for your registered app. In order to create and update bank transactions, your application must be approved by [Xero's certification program](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/app-partner-steps/).
+* If you are implementing loan writeback for Xero, *Xero Bank Feeds API* needs to be enabled for your registered app. Xero usually does this during the certification process for lenders' apps so that you can test your solution before completing the certification.
 
 * Provide the customer with a user interface that gives the option to enable the loan writeback process flow and configure or update their account mapping, for example: 
-
-![](/img/integrations/accounting/xero/xero-general-lending-1.PNG)
 
 <WritebackMapping/>
 
@@ -208,11 +217,12 @@ GET https://api.codat.io/companies/{companyId}/connections/{connectionId}/data/b
 
 </Tabs>
 
-Display the response to the customer and allow them to select the account. Store the returned `id` and use it as the borrower's account Id in future operations. 
+Display the response to the customer and allow them to select the account. Store the returned `id` and use it as the borrower's `accountId` in future operations. 
 
-Next, you need to create a new bank account in the borrower's accounting system. This will be the lender's - your - virtual bank account, used to track transactions associated with your lending activity. 
+Next, create a new bank account that will act as a virtual bank account for your lending activity:
 
-Use our [Get create/update bank account model](/lending-api#/operations/get-create-update-bankAccounts-model) to get the expected data for the bank account creation request payload. Then, use the [Create bank account](/lending-api#/operations/create-bank-account) endpoint to create the new account in the accounting platform.
+1. Use our [Get create/update bank account model](/lending-api#/operations/get-create-update-bankAccounts-model) to get the expected data for the bank account creation request payload. The data required can vary depending on the platform.
+2. Use the [Create bank account](/lending-api#/operations/create-bank-account) endpoint to create the new account in the accounting platform.
 
 <Tabs>
 <TabItem value="nodejs" label="TypeScript">
@@ -324,11 +334,11 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 </Tabs>
 
-In response, you will receive account creation details which you can display to your customer. Similarly, store the `id` and use it in future transactions. 
+In response, you will receive account creation details which you can display to your customer. Just as you did with the `accountId`, store the `id` and use it as `lenderBankAccountId` in future transactions. 
 
 ### Supplier
 
-In order to create a spend money transaction, Codat requires suppler details that represent you, the lender, in your SMB's accounting system. 
+In order to create a *spend money* transaction, Codat requires you, the lender, to be represented as a [supplier](./terms/supplier) in your SMB's accounting system. 
 
 Let your customer check if your record already exists in their accounts. Use our [List suppliers](/lending-api#/operations/list-accounting-suppliers) endpoint to fetch the list of existing suppliers. 
 
@@ -729,9 +739,11 @@ In response, you will receive account creation details which you can display to 
 
 ## Deposit the loan
 
-Once you receive the configuration information, you are ready to deposit funds into the borrower's bank account. This is also known as *loan drawdown*, and it is a two-step process.  
+Once you receive the configuration information, you are ready to deposit funds into the borrower's bank account. This is also known as *loan drawdown*, and it is a two-step process:
 
-For each drawdown, [create a bank transaction](/lending/guides/general-loan-writeback#create-bank-transaction) depositing the amount into the lender's bank account to make the funds available for drawdown. Then, [create a transfer](/lending/guides/general-loan-writeback#create-transfer) from the lender's bank account to the borrower's bank account. 
+1. [Create a bank transaction](/lending/guides/general-loan-writeback#create-bank-transaction) depositing the amount into the lender's bank account to make the funds available for drawdown. 
+
+2. [Create a transfer](/lending/guides/general-loan-writeback#create-transfer) from the lender's bank account to the borrower's bank account. 
 
 ```mermaid
     sequenceDiagram
@@ -747,7 +759,13 @@ For each drawdown, [create a bank transaction](/lending/guides/general-loan-writ
 
 ### Create bank transaction
 
-Use our [Get create bank account transactions model](/lending-api#/operations/get-create-bank-transactions-model) endpoint first to determine the parameters required for transaction creation. Then, use the [Create bank account transactions](/lending-api#/operations/create-bank-transactions) to deposit the amount into the lender's bank account with at least the following information included:
+To record the loan deposit into the lender's bank account: 
+
+1. Get the [create bank account transactions model](/lending-api#/operations/get-create-bank-transactions-model) to determine the parameters required for transaction creation. 
+
+2. [Create bank account transactions](/lending-api#/operations/create-bank-transactions) to deposit the amount into the lender's bank account.
+
+We provided example bank transaction creation payloads in the snippets below:
 
 <Tabs>
 <TabItem value="nodejs" label="TypeScript">
@@ -1024,11 +1042,15 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 ## Repay the loan
 
-Based on the loan's terms and conditions, the borrower will preiodically repay the lender the loan amount and any associated fees. 
+Based on the loan's terms and conditions, the borrower will preiodically repay the lender the loan amount and any associated fees. To reflect that programmatically:
 
-For each repayment, [create a transfer](/lending/guides/general-loan-writeback#create-transfer-1) from the borrower's bank account to the lender's. To record interest or fees, [create a direct cost](/lending/guides/general-loan-writeback#create-direct-cost). Finally, to follow the accepted accounting principles, [create bank transactions](/lending/guides/general-loan-writeback#create-bank-transaction-1) to deposit the repayment into the lender's account. Repeat these steps every time a repayment is made.
+1. For each repayment, [create a transfer](/lending/guides/general-loan-writeback#create-transfer-1) from the borrower's bank account to the lender's. 
 
-For example, if the borrower took out a loan of £1000 and agreed on a loan charge of 20%, the total amount due comes to £1200. With a 3-month equal instalment repayment plan, the borrower would pay back £400 each month. This means a transfer of £320 to represent the payment, a direct cost of £80 to record the fees, and a bank transaction of £400 to reduce the liability to the lender.
+2. To record interest or fees, [create a direct cost](/lending/guides/general-loan-writeback#create-direct-cost). 
+
+3. [Create bank transactions](/lending/guides/general-loan-writeback#create-bank-transaction-1) to deposit the repayment into the lender's account. 
+
+Repeat these steps every time a repayment is made. For example, if the borrower took out a loan of £1000 and agreed on a loan charge of 20%, the total amount due comes to £1200. With a 3-month equal instalment repayment plan, the borrower would pay back £400 each month. This means a transfer of £320 to represent the payment, a direct cost of £80 to record the fees, and a bank transaction of £400 to reduce the liability to the lender.
 
 ```mermaid
     sequenceDiagram
