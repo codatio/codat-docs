@@ -43,7 +43,7 @@ Our current guides and tutorials:
       <div className="content">
         <h4>Bill pay</h4>
         <p>
-          <a href="payables/guides/bill-pay/introduction">See the tutorial →</a>
+          <a href="/payables/guides/bill-pay/introduction">See the tutorial →</a>
         </p>    
       </div>
     </div>
