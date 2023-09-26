@@ -11,12 +11,13 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import {IntegrationsList} from '@components/global/Integrations'
 import {bankfeedsExternalMappingIntegrations} from '@components/global/Integrations/integrations'
+import Loom from '@components/global/Loom'
 
 # Codat mapping user interface
 
 <br/>
 
-![Codat-bank-feeds_account-mapping-ui](/img/bank-feeds/mappingUi.png "Codat-provided account mapping UI")
+<Loom source="https://www.loom.com/embed/48972835b6e74d199448b794f41b9997" />
 
 The bank feeds mapping interface allows for customization with your own logo and primary color scheme. Designed to meet all third-party requirements, it enables a seamless launch of your bank feeds product, ensuring an outstanding experience for your customers with minimal development effort.
 
@@ -143,14 +144,15 @@ GET /companies/{companyId}/connections/{connectionId}/bankFeedAccounts/mapping
 </Tabs>
 
 ### Connection management
+
 To allow your SMB users to view and manage their existing bank feed connections, you can direct them to a newly-generated `linkUrl`. When they open this URL and revisit the account mapping UI, their existing connections are displayed in the **Manage your connected accounts** panel:
 
 ![xero-bank-feeds_account-mapping-ui-manage-feed-connections](/img/bank-feeds/xero-bank-feeds/xero-bank-feeds_account-mapping-ui-manage-feed-connections.png "Codat-provided account mapping UI showing several connected accounts in the bottom panel.")
 
 To disconnect a source bank account, the SMB user hovers over the **connected** status icon and selects **Disconnect**. This immediately disables the bank feed connection. The disconnected account will display in the source bank account dropdown menu when the user next refreshes the page.
 
-
 ---
+
 ## Read next
 
 * [Pushing transactions](/bank-feeds/pushing-transactions)
