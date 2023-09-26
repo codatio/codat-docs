@@ -2952,6 +2952,7 @@
       ],
       "get": {
         "summary": "List enhanced loan transactions",
+        "description": "Returns a list of transactions identified as relating to a loan.",
         "tags": [
           "Reports"
         ],
@@ -3000,6 +3001,7 @@
       ],
       "get": {
         "summary": "Get enhanced loan summaries",
+        "description": "Returns a summary of loan transactions identified for the SMB.",
         "tags": [
           "Reports"
         ],
@@ -3090,16 +3092,20 @@
             "type": "object",
             "properties": {
               "displayName": {
+                "description": "The measure's display name.",
                 "type": "string"
               },
               "units": {
-                "type": "string"
+                "type": "string",
+                "description": "The measure's units e.g. percentage (%)."
               },
               "index": {
-                "type": "integer"
+                "type": "integer",
+                "description": "The measure's index."
               },
               "type": {
-                "type": "string"
+                "type": "string",
+                "description": "The measure's type."
               }
             }
           },
@@ -3108,12 +3114,15 @@
             "type": "object",
             "properties": {
               "message": {
-                "type": "string"
+                "type": "string",
+                "description": "Message returned by error."
               },
               "type": {
-                "type": "string"
+                "type": "string",
+                "description": "The type of error."
               },
               "details": {
+                "description": "Additional details on the error.",
                 "type": "object",
                 "additionalProperties": {
                   "type": "array",
@@ -3129,13 +3138,16 @@
             "type": "object",
             "properties": {
               "index": {
-                "type": "integer"
+                "type": "integer",
+                "description": "The dimension's index."
               },
               "displayName": {
-                "type": "string"
+                "type": "string",
+                "description": "The dimension's display name."
               },
               "type": {
-                "type": "string"
+                "type": "string",
+                "description": "The dimension's type."
               },
               "items": {
                 "type": "array",
@@ -3143,7 +3155,8 @@
                   "type": "object",
                   "properties": {
                     "index": {
-                      "type": "integer"
+                      "type": "integer",
+                      "description": "The dimension's items index."
                     }
                   }
                 }
@@ -3155,16 +3168,20 @@
             "type": "object",
             "properties": {
               "dimension": {
-                "type": "integer"
+                "type": "integer",
+                "description": "The component's dimension."
               },
               "dimensionDisplayName": {
-                "type": "string"
+                "type": "string",
+                "description": "The component's display name."
               },
               "item": {
-                "type": "integer"
+                "type": "integer",
+                "description": "The component's item number."
               },
               "itemDisplayName": {
-                "type": "string"
+                "type": "string",
+                "description": "The component's item display name."
               },
               "measures": {
                 "type": "array",
@@ -3182,16 +3199,20 @@
           },
           "reportComponentMeasure": {
             "type": "object",
+            "title": "Report component measure",
             "properties": {
               "index": {
-                "type": "integer"
+                "type": "integer",
+                "description": "The measure's index."
               },
               "measureDisplayName": {
-                "type": "string"
+                "type": "string",
+                "description": "The measure's display name."
               },
               "value": {
                 "type": "number",
-                "format": "decimal"
+                "format": "decimal",
+                "description": "The measure's value."
               }
             }
           }
@@ -4006,7 +4027,8 @@
                 "format": "decimal"
               },
               "currency": {
-                "type": "string"
+                "$ref": "#/components/schemas/Currency",
+                "description": "The currency code for bank transaction."
               },
               "transactionCategory": {
                 "description": "Contains an array of category levels.",
@@ -4160,12 +4182,12 @@
               "id": {
                 "minLength": 1,
                 "type": "string",
-                "description": "`id` from the Customers data type"
+                "description": "`id` from the Customers data type."
               },
               "customerName": {
                 "type": "string",
                 "nullable": true,
-                "description": "`customerName` from the Customer data type"
+                "description": "`customerName` from the Customer data type."
               }
             }
           },
@@ -4175,7 +4197,7 @@
             "properties": {
               "id": {
                 "type": "string",
-                "description": "ID of the invoice, which may be a GUID but it may be something else depending on the accounting platform"
+                "description": "ID of the invoice, which may be a GUID but it may be something else depending on the accounting platform."
               },
               "date": {
                 "title": "Date time",
@@ -4187,11 +4209,13 @@
                 "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
               },
               "paymentType": {
-                "type": "string"
+                "type": "string",
+                "description": "The type of payment."
               },
               "amount": {
                 "type": "number",
-                "format": "decimal"
+                "format": "decimal",
+                "description": "Payment amount."
               },
               "currency": {
                 "$ref": "#/components/schemas/Currency"
@@ -4212,25 +4236,31 @@
             "type": "object",
             "properties": {
               "id": {
-                "type": "string"
+                "type": "string",
+                "description": "Unique identifier for the bank transaction."
               },
               "dataConnectionId": {
-                "type": "string"
+                "type": "string",
+                "description": "Unique identifier of the bank transaction's connection."
               },
               "accountId": {
-                "type": "string"
+                "type": "string",
+                "description": "Unique identifier of the bank transaction's account."
               },
               "accountName": {
-                "type": "string"
+                "type": "string",
+                "description": "Name given to account."
               },
               "date": {
                 "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date"
               },
               "description": {
-                "type": "string"
+                "type": "string",
+                "description": "Description given to bank transaction."
               },
               "amount": {
                 "type": "number",
+                "description": "Bank transaction amount.",
                 "format": "decimal"
               }
             }
@@ -4256,10 +4286,11 @@
                 "properties": {
                   "id": {
                     "type": "string",
-                    "description": "ID of the invoice, which may be a GUID but it may be something else depending on the accounting platdform"
+                    "description": "ID of the invoice, which may be a GUID but it may be something else depending on the accounting platform."
                   },
                   "invoiceNumber": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Invoice number."
                   },
                   "customerRef": {
                     "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/lendingCustomerRef"
@@ -4278,11 +4309,13 @@
                   },
                   "totalAmount": {
                     "type": "number",
-                    "format": "decimal"
+                    "format": "decimal",
+                    "description": "Invoice's total amount."
                   },
                   "amountDue": {
                     "type": "number",
-                    "format": "decimal"
+                    "format": "decimal",
+                    "description": "Invoice's total amount due."
                   },
                   "payments": {
                     "type": "array",
@@ -4341,7 +4374,7 @@
           "reportInfo": {
             "title": "Report information",
             "type": "object",
-            "description": "Report additional information, which is specific to Assess reports",
+            "description": "Report additional information, which is specific to Lending API reports.",
             "properties": {
               "pageNumber": {
                 "type": "integer",
@@ -4357,7 +4390,7 @@
               },
               "reportName": {
                 "type": "string",
-                "description": "Name of the report"
+                "description": "Name of the report."
               },
               "companyName": {
                 "type": "string",
@@ -4365,7 +4398,7 @@
               },
               "generatedDate": {
                 "type": "string",
-                "description": "Date the report was generated"
+                "description": "Date the report was generated."
               }
             },
             "examples": [
@@ -4492,6 +4525,7 @@
                 "description": "The loan transaction amount."
               },
               "loanTransactionType": {
+                "description": "The type of loan transaction.",
                 "type": "string",
                 "enum": [
                   "Investment",
@@ -4499,6 +4533,10 @@
                   "Interest",
                   "AccuredInterest"
                 ]
+              },
+              "lenderName": {
+                "type": "string",
+                "description": "The name of lender providing the loan."
               }
             }
           }
@@ -4527,7 +4565,8 @@
                 },
                 "date": "2020-08-02",
                 "amount": -455,
-                "transactionType": "Repayment"
+                "transactionType": "Repayment",
+                "lenderName": "Barclays Bank"
               }
             ]
           }
@@ -4637,6 +4676,10 @@
                 "type": "number",
                 "format": "decimal",
                 "description": "The loan outstanding balance.  This may not equal totalDrawdowns - totalRepayments due to interest which has been accrued."
+              },
+              "lenderName": {
+                "type": "string",
+                "description": "The name of lender providing the loan."
               }
             }
           },
@@ -4680,7 +4723,8 @@
                 "startDate": "2021-01-01",
                 "totalInvestments": 100000,
                 "totalRepayments": 83481.72,
-                "balance": 42513.18
+                "balance": 42513.18,
+                "lenderName": "Barclays Bank"
               }
             ]
           }
@@ -4692,13 +4736,17 @@
         "x-internal": true,
         "properties": {
           "pageNumber": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Current page number."
           },
           "pageSize": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Number of items to return in results array.",
+            "maximum": 2000
           },
           "totalResults": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Total number of items."
           },
           "_links": {
             "$ref": "#/components/schemas/PagingInfo/definitions/links"
@@ -4743,7 +4791,8 @@
             "properties": {
               "href": {
                 "type": "string",
-                "format": "uri-reference"
+                "format": "uri-reference",
+                "description": "Uri hypertext reference."
               }
             }
           }
@@ -4795,22 +4844,28 @@
         "x-internal": true,
         "properties": {
           "statusCode": {
-            "type": "integer"
+            "type": "integer",
+            "description": "The HTTP status code returned by the error."
           },
           "service": {
-            "type": "string"
+            "type": "string",
+            "description": "Codat's service the returned the error."
           },
           "error": {
-            "type": "string"
+            "type": "string",
+            "description": "A brief description of the error."
           },
           "correlationId": {
-            "type": "string"
+            "type": "string",
+            "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
           },
           "canBeRetried": {
-            "type": "string"
+            "type": "string",
+            "description": "`True` if the error occurred transiently and can be retried."
           },
           "detailedErrorCode": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Machine readable error code used to automate processes based on the code returned."
           }
         }
       }
@@ -4825,7 +4880,8 @@
           "format": "uuid",
           "example": "8a210b68-6988-11ed-a1eb-0242ac120002",
           "description": "Unique identifier for your SMB in Codat."
-        }
+        },
+        "description": "Unique identifier for a company."
       },
       "connectionId": {
         "name": "connectionId",
@@ -4836,7 +4892,8 @@
           "format": "uuid",
           "example": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
           "description": "Unique identifier for a company's data connection."
-        }
+        },
+        "description": "Unique identifier for a connection."
       },
       "page": {
         "name": "page",
@@ -4881,10 +4938,7 @@
           "type": "string",
           "example": "-modifiedDate"
         },
-        "description": "Field to order results by. [Read more](https://docs.codat.io/using-the-api/ordering-results).",
-        "x-stoplight": {
-          "id": "4je9lwo02netu"
-        }
+        "description": "Field to order results by. [Read more](https://docs.codat.io/using-the-api/ordering-results)."
       },
       "dataIntegrityDataType": {
         "name": "dataType",

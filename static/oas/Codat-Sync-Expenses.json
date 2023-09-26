@@ -82,6 +82,7 @@
     }
   ],
   "x-codat-docs-path": "sync-for-expenses-api",
+  "x-codat-keep-docs-paths-local": true,
   "x-codat-speakeasy-pagination": {
     "type": "offsetLimit",
     "inputs": [
@@ -605,7 +606,12 @@
                 "type": "object",
                 "properties": {
                   "platformKey": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 4,
+                    "maxLength": 4,
+                    "pattern": "[a-z]{4}",
+                    "example": "gbol",
+                    "description": "A unique 4-letter key to represent a platform in each integration. View [accounting](https://docs.codat.io/integrations/accounting/overview#platform-keys), [banking](https://docs.codat.io/integrations/banking/overview#platform-keys), and [commerce](https://docs.codat.io/integrations/commerce/overview#platform-keys) platform keys."
                   }
                 }
               }
@@ -806,8 +812,8 @@
         "tags": [
           "Connections"
         ],
-        "description": "Creates a Partner Expense data connection",
-        "summary": "Create Partner Expense connection",
+        "description": "Creates a partner expense data connection",
+        "summary": "Create partner expense connection",
         "operationId": "create-partner-expense-connection",
         "x-speakeasy-name-override": "create-partner-expense-connection",
         "parameters": [
@@ -1209,7 +1215,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "summary": "Get Sync status",
+        "summary": "Get sync status",
         "description": "Get the sync status for a specified sync",
         "operationId": "get-sync-by-id"
       },
@@ -1314,7 +1320,7 @@
         "tags": [
           "Transaction status"
         ],
-        "summary": "Get Sync Transaction",
+        "summary": "Get sync transaction",
         "description": "Gets the status of a transaction for a sync",
         "operationId": "get-sync-transaction"
       },
@@ -1982,6 +1988,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/timeoutInMinutes"
+          },
+          {
+            "$ref": "#/components/parameters/allowSyncOnPushComplete"
           }
         ],
         "requestBody": {
@@ -2018,7 +2027,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Create account* endpoint creates a new [account](https://docs.codat.io/accounting-api#/schemas/Account) for a given company's connection.\n\n[Accounts](https://docs.codat.io/accounting-api#/schemas/Account) are the categories a business uses to record accounting transactions.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create account model](https://docs.codat.io/accounting-api#/operations/get-create-chartOfAccounts-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account.\n",
+        "description": "The *Create account* endpoint creates a new [account](https://docs.codat.io/sync-for-expenses-api#/schemas/Account) for a given company's connection.\n\n[Accounts](https://docs.codat.io/sync-for-expenses-api#/schemas/Account) are the categories a business uses to record accounting transactions.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create account model](https://docs.codat.io/sync-for-expenses-api#/operations/get-create-chartOfAccounts-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account.\n",
         "operationId": "create-account"
       }
     },
@@ -3844,7 +3853,7 @@
             "$ref": "#/components/responses/Conflict"
           }
         },
-        "description": "The *List customers* endpoint returns a list of [customers](https://docs.codat.io/accounting-api#/schemas/Customer) for a given company's connection.\n\n[Customers](https://docs.codat.io/accounting-api#/schemas/Customer) are people or organizations that buy goods or services from the SMB.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-expenses-api#/operations/refresh-company-data).\n    ",
+        "description": "The *List customers* endpoint returns a list of [customers](https://docs.codat.io/sync-for-expenses-api#/schemas/Customer) for a given company's connection.\n\n[Customers](https://docs.codat.io/sync-for-expenses-api#/schemas/Customer) are people or organizations that buy goods or services from the SMB.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-expenses-api#/operations/refresh-company-data).\n    ",
         "operationId": "list-customers"
       }
     },
@@ -3854,12 +3863,7 @@
           "$ref": "#/components/parameters/companyId"
         },
         {
-          "name": "customerId",
-          "in": "path",
-          "required": true,
-          "schema": {
-            "type": "string"
-          }
+          "$ref": "#/components/parameters/customerId"
         }
       ],
       "get": {
@@ -4613,7 +4617,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Get customer* endpoint returns a single customer for a given customerId.\n\n[Customers](https://docs.codat.io/accounting-api#/schemas/Customer) are people or organizations that buy goods or services from the SMB.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=customers) for integrations that support getting a specific customer.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-expenses-api#/operations/refresh-company-data).\n",
+        "description": "The *Get customer* endpoint returns a single customer for a given customerId.\n\n[Customers](https://docs.codat.io/sync-for-expenses-api#/schemas/Customer) are people or organizations that buy goods or services from the SMB.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=customers) for integrations that support getting a specific customer.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-expenses-api#/operations/refresh-company-data).\n",
         "operationId": "get-customer"
       }
     },
@@ -4634,6 +4638,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/timeoutInMinutes"
+          },
+          {
+            "$ref": "#/components/parameters/allowSyncOnPushComplete"
           }
         ],
         "requestBody": {
@@ -4671,7 +4678,7 @@
           }
         },
         "operationId": "create-customer",
-        "description": "The *Create customer* endpoint creates a new [customer](https://docs.codat.io/accounting-api#/schemas/Customer) for a given company's connection.\n\n[Customers](https://docs.codat.io/accounting-api#/schemas/Customer) are people or organizations that buy goods or services from the SMB.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update customer model](https://docs.codat.io/accounting-api#/operations/get-create-update-customers-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=customers) for integrations that support creating an account.\n"
+        "description": "The *Create customer* endpoint creates a new [customer](https://docs.codat.io/sync-for-expenses-api#/schemas/Customer) for a given company's connection.\n\n[Customers](https://docs.codat.io/sync-for-expenses-api#/schemas/Customer) are people or organizations that buy goods or services from the SMB.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update customer model](https://docs.codat.io/sync-for-expenses-api#/operations/get-create-update-customers-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=customers) for integrations that support creating an account.\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/customers/{customerId}": {
@@ -4683,12 +4690,7 @@
           "$ref": "#/components/parameters/connectionId"
         },
         {
-          "name": "customerId",
-          "in": "path",
-          "required": true,
-          "schema": {
-            "type": "string"
-          }
+          "$ref": "#/components/parameters/customerId"
         }
       ],
       "put": {
@@ -4699,6 +4701,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/timeoutInMinutes"
+          },
+          {
+            "$ref": "#/components/parameters/allowSyncOnPushComplete"
           },
           {
             "$ref": "#/components/parameters/forceUpdate"
@@ -4738,7 +4743,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Update customer* endpoint updates an existing [customer](https://docs.codat.io/accounting-api#/schemas/Customer) for a given company's connection.\n\n[Customers](https://docs.codat.io/accounting-api#/schemas/Customer) are people or organizations that buy goods or services from the SMB.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update customer model](https://docs.codat.io/accounting-api#/operations/get-create-update-customers-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=customers) for integrations that support creating an account.\n",
+        "description": "The *Update customer* endpoint updates an existing [customer](https://docs.codat.io/sync-for-expenses-api#/schemas/Customer) for a given company's connection.\n\n[Customers](https://docs.codat.io/sync-for-expenses-api#/schemas/Customer) are people or organizations that buy goods or services from the SMB.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update customer model](https://docs.codat.io/sync-for-expenses-api#/operations/get-create-update-customers-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=customers) for integrations that support creating an account.\n",
         "operationId": "update-customer"
       }
     },
@@ -5852,7 +5857,7 @@
             "$ref": "#/components/responses/Conflict"
           }
         },
-        "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/accounting-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/accounting-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-expenses-api#/operations/refresh-company-data).\n    ",
+        "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/sync-for-expenses-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/sync-for-expenses-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-expenses-api#/operations/refresh-company-data).\n    ",
         "operationId": "list-suppliers"
       }
     },
@@ -6275,7 +6280,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "The *Get supplier* endpoint returns a single supplier for a given supplierId.\n\n[Suppliers](https://docs.codat.io/accounting-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support getting a specific supplier.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-expenses-api#/operations/refresh-company-data).\n",
+        "description": "The *Get supplier* endpoint returns a single supplier for a given supplierId.\n\n[Suppliers](https://docs.codat.io/sync-for-expenses-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support getting a specific supplier.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-expenses-api#/operations/refresh-company-data).\n",
         "operationId": "get-supplier"
       }
     },
@@ -6295,6 +6300,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/timeoutInMinutes"
+          },
+          {
+            "$ref": "#/components/parameters/allowSyncOnPushComplete"
           }
         ],
         "requestBody": {
@@ -6342,7 +6350,7 @@
           }
         },
         "summary": "Create supplier",
-        "description": "The *Create supplier* endpoint creates a new [supplier](https://docs.codat.io/accounting-api#/schemas/Supplier) for a given company's connection.\r\n\r\n[Suppliers](https://docs.codat.io/accounting-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\r\n\r\n**Integration-specific behaviour**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update supplier model](https://docs.codat.io/accounting-api#/operations/get-create-update-suppliers-model).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support creating an account.\r\n",
+        "description": "The *Create supplier* endpoint creates a new [supplier](https://docs.codat.io/sync-for-expenses-api#/schemas/Supplier) for a given company's connection.\r\n\r\n[Suppliers](https://docs.codat.io/sync-for-expenses-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\r\n\r\n**Integration-specific behaviour**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update supplier model](https://docs.codat.io/sync-for-expenses-api#/operations/get-create-update-suppliers-model).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support creating an account.\r\n",
         "operationId": "create-supplier"
       }
     },
@@ -6365,6 +6373,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/timeoutInMinutes"
+          },
+          {
+            "$ref": "#/components/parameters/allowSyncOnPushComplete"
           },
           {
             "$ref": "#/components/parameters/forceUpdate"
@@ -6405,7 +6416,7 @@
           }
         },
         "summary": "Update supplier",
-        "description": "The *Update supplier* endpoint updates an existing [supplier](https://docs.codat.io/accounting-api#/schemas/Supplier) for a given company's connection.\r\n\r\n[Suppliers](https://docs.codat.io/accounting-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\r\n\r\n**Integration-specific behaviour**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update supplier model](https://docs.codat.io/accounting-api#/operations/get-create-update-suppliers-model).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support creating an account.\r\n",
+        "description": "The *Update supplier* endpoint updates an existing [supplier](https://docs.codat.io/sync-for-expenses-api#/schemas/Supplier) for a given company's connection.\r\n\r\n[Suppliers](https://docs.codat.io/sync-for-expenses-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\r\n\r\n**Integration-specific behaviour**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update supplier model](https://docs.codat.io/sync-for-expenses-api#/operations/get-create-update-suppliers-model).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support creating an account.\r\n",
         "operationId": "update-supplier"
       }
     }
@@ -6958,7 +6969,8 @@
         "type": "object",
         "properties": {
           "syncId": {
-            "type": "string"
+            "type": "string",
+            "description": "Unique identifier for the update expense sync."
           }
         },
         "examples": {
@@ -7260,7 +7272,7 @@
       },
       "Supplier": {
         "title": "Supplier",
-        "description": "> View the coverage for suppliers in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nFrom the **Suppliers** endpoints, you can retrieve a list of [all the suppliers for a company](https://docs.codat.io/accounting-api#/operations/list-suppliers). Suppliers' data links to accounts payable [bills](https://docs.codat.io/accounting-api#/schemas/Bill).",
+        "description": "> View the coverage for suppliers in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nFrom the **Suppliers** endpoints, you can retrieve a list of [all the suppliers for a company](https://docs.codat.io/sync-for-expenses-api#/operations/list-suppliers). Suppliers' data links to accounts payable [bills](https://docs.codat.io/sync-for-expenses-api#/schemas/Bill).",
         "type": "object",
         "allOf": [
           {
@@ -7474,7 +7486,7 @@
       },
       "Customer": {
         "title": "Customer",
-        "description": "> View the coverage for customers in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=customers\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nA customer is a person or organisation that buys goods or services. From the Customers endpoints, you can retrieve a [list of all the customers of a company](https://api.codat.io/swagger/index.html#/Customers/get_companies__companyId__data_customers).\n\nCustomers' data links to accounts receivable [invoices](https://docs.codat.io/accounting-api#/schemas/Invoice).\n",
+        "description": "> View the coverage for customers in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=customers\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nA customer is a person or organisation that buys goods or services. From the Customers endpoints, you can retrieve a [list of all the customers of a company](https://api.codat.io/swagger/index.html#/Customers/get_companies__companyId__data_customers).\n\nCustomers' data links to accounts receivable [invoices](https://docs.codat.io/sync-for-expenses-api#/schemas/Invoice).\n",
         "type": "object",
         "allOf": [
           {
@@ -7659,7 +7671,8 @@
         "properties": {
           "syncId": {
             "type": "string",
-            "format": "uuid"
+            "format": "uuid",
+            "description": "Unique identifier for the sync initiated."
           }
         },
         "additionalProperties": false
@@ -7686,13 +7699,17 @@
         "x-internal": true,
         "properties": {
           "pageNumber": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Current page number."
           },
           "pageSize": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Number of items to return in results array.",
+            "maximum": 2000
           },
           "totalResults": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Total number of items."
           },
           "_links": {
             "$ref": "#/components/schemas/PagingInfo/definitions/links"
@@ -7737,7 +7754,8 @@
             "properties": {
               "href": {
                 "type": "string",
-                "format": "uri-reference"
+                "format": "uri-reference",
+                "description": "Uri hypertext reference."
               }
             }
           }
@@ -7917,7 +7935,8 @@
           "platform": {
             "type": "string",
             "deprecated": true,
-            "example": "Xero"
+            "example": "Xero",
+            "description": "`platformKeys` name used when creating the company."
           },
           "redirect": {
             "type": "string",
@@ -7938,7 +7957,8 @@
             "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
           },
           "createdByUserName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of user that created the company in Codat."
           },
           "dataConnections": {
             "type": "array",
@@ -8037,11 +8057,13 @@
             "example": "Accounting"
           },
           "platformName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of integration connected to company."
           },
           "linkUrl": {
             "type": "string",
             "format": "uri",
+            "description": "The link URL your customers can use to authorize access to their business application.",
             "example": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/2e2eb431-c1fa-4dc9-93fa-d29781c12bcd/start"
           },
           "status": {
@@ -8095,13 +8117,16 @@
             "type": "object",
             "properties": {
               "statusCode": {
-                "type": "string"
+                "type": "string",
+                "description": "The HTTP status code returned by the error."
               },
               "statusText": {
-                "type": "string"
+                "type": "string",
+                "description": "A non-numeric status code/text."
               },
               "errorMessage": {
-                "type": "string"
+                "type": "string",
+                "description": "A brief message about the error."
               },
               "erroredOnUtc": {
                 "$ref": "#/components/schemas/Company/properties/created"
@@ -8146,21 +8171,72 @@
         ],
         "properties": {
           "dataType": {
-            "type": "string"
+            "title": "Data types",
+            "x-internal": true,
+            "type": "string",
+            "description": "Available Data types",
+            "enum": [
+              "accountTransactions",
+              "balanceSheet",
+              "bankAccounts",
+              "bankTransactions",
+              "billCreditNotes",
+              "billPayments",
+              "bills",
+              "cashFlowStatement",
+              "chartOfAccounts",
+              "company",
+              "creditNotes",
+              "customers",
+              "directCosts",
+              "directIncomes",
+              "invoices",
+              "items",
+              "journalEntries",
+              "journals",
+              "paymentMethods",
+              "payments",
+              "profitAndLoss",
+              "purchaseOrders",
+              "salesOrders",
+              "suppliers",
+              "taxRates",
+              "trackingCategories",
+              "transfers",
+              "banking-accountBalances",
+              "banking-accounts",
+              "banking-transactionCategories",
+              "banking-transactions",
+              "commerce-companyInfo",
+              "commerce-customers",
+              "commerce-disputes",
+              "commerce-locations",
+              "commerce-orders",
+              "commerce-paymentMethods",
+              "commerce-payments",
+              "commerce-productCategories",
+              "commerce-products",
+              "commerce-taxComponents",
+              "commerce-transactions"
+            ],
+            "example": "invoices"
           },
           "lastSuccessfulSync": {
             "$ref": "#/components/schemas/Company/properties/created"
           },
           "currentStatus": {
-            "type": "string"
+            "type": "string",
+            "description": "The current status of the dataset in Codat's cache."
           },
           "latestSyncId": {
             "type": "string",
+            "description": "Unique identifier for most recent sync of data type.",
             "format": "uuid",
             "example": "ad474a37-2003-478e-baee-9af9f1ec2fe3"
           },
           "latestSuccessfulSyncId": {
             "type": "string",
+            "description": "Unique identifier for the most recent successful sync of data type.",
             "format": "uuid",
             "example": "8220fc90-55b6-47bc-9417-48ac6ea93101"
           }
@@ -8186,31 +8262,32 @@
       "PullOperation": {
         "title": "Pull operation",
         "description": "Information about a queued, in progress or completed pull operation.\n*Formally called `dataset`*",
-        "x-stoplight": {
-          "id": "hvk8xbvt7ekyg"
-        },
         "type": "object",
         "properties": {
           "id": {
             "type": "string",
             "format": "uuid",
+            "description": "Unique identifier of the pull operation.",
             "example": "943accd0-4247-42d8-865b-363c8629e1da"
           },
           "companyId": {
             "type": "string",
             "format": "uuid",
+            "description": "Unique identifier of the company associated to this pull operation.",
             "example": "22ece347-e5f6-4896-95e0-35a4c7f17023"
           },
           "connectionId": {
             "type": "string",
             "format": "uuid",
+            "description": "Unique identifier of the connection associated to this pull operation.",
             "example": "50830828-7d39-4367-b0eb-5ddb2de5faa5"
           },
           "dataType": {
-            "type": "string"
+            "$ref": "#/components/schemas/DataStatus/properties/dataType"
           },
           "status": {
             "type": "string",
+            "description": "The current status of the pull operation.",
             "enum": [
               "Initial",
               "Queued",
@@ -8242,13 +8319,16 @@
             "$ref": "#/components/schemas/Company/properties/created"
           },
           "progress": {
-            "type": "integer"
+            "type": "integer",
+            "description": "An integer signifying the progress of the pull operation."
           },
           "isCompleted": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "`True` if the pull operation completed successfully."
           },
           "isErrored": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "`True` if the pull operation entered an error state."
           }
         },
         "required": [
@@ -8278,54 +8358,7 @@
       },
       "DataType": {
         "x-internal": true,
-        "title": "Data types",
-        "type": "string",
-        "description": "Available Data types",
-        "enum": [
-          "accountTransactions",
-          "balanceSheet",
-          "bankAccounts",
-          "bankTransactions",
-          "billCreditNotes",
-          "billPayments",
-          "bills",
-          "cashFlowStatement",
-          "chartOfAccounts",
-          "company",
-          "creditNotes",
-          "customers",
-          "directCosts",
-          "directIncomes",
-          "invoices",
-          "items",
-          "journalEntries",
-          "journals",
-          "paymentMethods",
-          "payments",
-          "profitAndLoss",
-          "purchaseOrders",
-          "salesOrders",
-          "suppliers",
-          "taxRates",
-          "trackingCategories",
-          "transfers",
-          "banking-accountBalances",
-          "banking-accounts",
-          "banking-transactionCategories",
-          "banking-transactions",
-          "commerce-companyInfo",
-          "commerce-customers",
-          "commerce-disputes",
-          "commerce-locations",
-          "commerce-orders",
-          "commerce-paymentMethods",
-          "commerce-payments",
-          "commerce-productCategories",
-          "commerce-products",
-          "commerce-taxComponents",
-          "commerce-transactions"
-        ],
-        "example": "invoices"
+        "$ref": "#/components/schemas/DataStatus/properties/dataType"
       },
       "PullOperations": {
         "title": "Pull operations",
@@ -8361,7 +8394,7 @@
             }
           },
           "dataType": {
-            "$ref": "#/components/schemas/DataType",
+            "$ref": "#/components/schemas/DataStatus/properties/dataType",
             "description": "The type of data being pushed, eg invoices, customers."
           },
           "companyId": {
@@ -8386,26 +8419,30 @@
           "timeoutInMinutes": {
             "type": "integer",
             "format": "int32",
-            "nullable": true
+            "nullable": true,
+            "description": "Number of minutes the push operation must complete within before it times out."
           },
           "timeoutInSeconds": {
             "type": "integer",
             "format": "int32",
             "nullable": true,
-            "deprecated": true
+            "deprecated": true,
+            "description": "Number of seconds the push operation must complete within before it times out."
           },
           "status": {
             "$ref": "#/components/schemas/PushOperation/definitions/pushOperationStatus"
           },
           "errorMessage": {
             "type": "string",
-            "nullable": true
+            "nullable": true,
+            "description": "A message about the error."
           },
           "validation": {
             "$ref": "#/components/schemas/PushOperation/definitions/validation"
           },
           "statusCode": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Push status code."
           }
         },
         "required": [
@@ -8444,21 +8481,25 @@
             "properties": {
               "itemId": {
                 "type": "string",
-                "nullable": true
+                "nullable": true,
+                "description": "Unique identifier for a validation item."
               },
               "message": {
                 "type": "string",
-                "nullable": true
+                "nullable": true,
+                "description": "A message outlining validation item's issue."
               },
               "validatorName": {
                 "type": "string",
-                "nullable": true
+                "nullable": true,
+                "description": "Name of validator."
               }
             },
             "additionalProperties": false
           },
           "pushChangeType": {
             "title": "Push change type",
+            "description": "Type of change being applied to record in third party platform.",
             "type": "string",
             "enum": [
               "Unknown",
@@ -8474,10 +8515,11 @@
             "type": "object",
             "properties": {
               "id": {
-                "type": "string"
+                "type": "string",
+                "description": "Unique identifier for a push operation."
               },
               "dataType": {
-                "$ref": "#/components/schemas/DataType",
+                "$ref": "#/components/schemas/DataStatus/properties/dataType",
                 "nullable": true
               }
             },
@@ -8505,6 +8547,7 @@
               },
               "attachmentId": {
                 "type": "string",
+                "description": "Unique identifier for the attachment created otherwise null.",
                 "nullable": true
               }
             }
@@ -8533,7 +8576,7 @@
       },
       "Account": {
         "title": "Account",
-        "description": "> **Language tip:** Accounts are also referred to as **chart of accounts**, **nominal accounts**, and **general ledger**.\n\nView the coverage for accounts in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nAccounts are the categories a business uses to record accounting transactions. From the Accounts endpoints, you can retrieve a list of all accounts for a specified company. \n\nThe categories for an account include:\n  * Asset\n  * Expense\n  * Income\n  * Liability\n  * Equity.\n\nThe same account may have a different category based on the integration it is used in. For example, a current account (known as checking in the US) should be categorized as `Asset.Current` for Xero, and `Asset.Bank.Checking` for QuickBooks Online. \n\nAt the same time, each integration may have its own requirements to the categories. For example, a Paypal account in Xero is of the `Asset.Bank` category and therefore requires additional properties to be provided. \n\nTo determine the list of allowed categories for a specific integration, you can: \n- Follow our [Create, update, delete data](https://docs.codat.io/using-the-api/push) guide and use the [Get create account model](https://docs.codat.io/accounting-api#/operations/get-create-chartOfAccounts-model).\n- Refer to the integration's own documentation. \n\n> **Accounts with no category**\n> \n> If an account is pulled from the chart of accounts and its nominal code does not lie within the category layout for the company's accounts, then the **type** is `Unknown`. The **fullyQualifiedCategory** and **fullyQualifiedName** fields return `null`.\n> \n> This approach gives a true representation of the company's accounts whilst preventing distorting financials such as a company's profit and loss and balance sheet reports.",
+        "description": "> **Language tip:** Accounts are also referred to as **chart of accounts**, **nominal accounts**, and **general ledger**.\n\nView the coverage for accounts in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nAccounts are the categories a business uses to record accounting transactions. From the Accounts endpoints, you can retrieve a list of all accounts for a specified company. \n\nThe categories for an account include:\n  * Asset\n  * Expense\n  * Income\n  * Liability\n  * Equity.\n\nThe same account may have a different category based on the integration it is used in. For example, a current account (known as checking in the US) should be categorized as `Asset.Current` for Xero, and `Asset.Bank.Checking` for QuickBooks Online. \n\nAt the same time, each integration may have its own requirements to the categories. For example, a Paypal account in Xero is of the `Asset.Bank` category and therefore requires additional properties to be provided. \n\nTo determine the list of allowed categories for a specific integration, you can: \n- Follow our [Create, update, delete data](https://docs.codat.io/using-the-api/push) guide and use the [Get create account model](https://docs.codat.io/sync-for-expenses-api#/operations/get-create-chartOfAccounts-model).\n- Refer to the integration's own documentation. \n\n> **Accounts with no category**\n> \n> If an account is pulled from the chart of accounts and its nominal code does not lie within the category layout for the company's accounts, then the **type** is `Unknown`. The **fullyQualifiedCategory** and **fullyQualifiedName** fields return `null`.\n> \n> This approach gives a true representation of the company's accounts whilst preventing distorting financials such as a company's profit and loss and balance sheet reports.",
         "allOf": [
           {
             "properties": {
@@ -8607,7 +8650,7 @@
               "validDatatypeLinks": {
                 "type": "array",
                 "nullable": true,
-                "description": "The validDatatypeLinks can be used to determine whether an account can be correctly mapped to another object; for example, accounts with a `type` of `income` might only support being used on an Invoice and Direct Income. For more information, see [Valid Data Type Links](/accounting-api#/schemas/ValidDataTypeLinks).",
+                "description": "The validDatatypeLinks can be used to determine whether an account can be correctly mapped to another object; for example, accounts with a `type` of `income` might only support being used on an Invoice and Direct Income. For more information, see [Valid Data Type Links](/sync-for-expenses-api#/schemas/ValidDataTypeLinks).",
                 "items": {
                   "title": "Valid data type links",
                   "description": "When querying Codat's data model, some data types return `validDatatypeLinks` metadata in the JSON response. This indicates where that object can be used as a reference—a _valid link_—when creating or updating other data.\n\nFor example, `validDatatypeLinks` might indicate the following references:\n\n- Which tax rates are valid to use on the line item of a bill.\n- Which items can be used when creating an invoice. \n\nYou can use `validDatatypeLinks` to present your SMB customers with only valid choices when selecting objects from a list, for example.\n\n## `validDatatypeLinks` example\n\nThe following example uses the `Accounting.Accounts` data type. It shows that, on the linked integration, this account is valid as the account on a payment or bill payment; and as the account referenced on the line item of a direct income or direct cost. Because there is no valid link to Invoices or Bills, using this account on those data types will result in an error.\n\n```json validDatatypeLinks for an account\n{\n            \"id\": \"bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4\",\n            \"nominalCode\": \"090\",\n            \"name\": \"Business Bank Account\",\n            #...\n            \"validDatatypeLinks\": [\n                {\n                    \"property\": \"Id\",\n                    \"links\": [\n                        \"Payment.AccountRef.Id\",\n                        \"BillPayment.AccountRef.Id\",\n                        \"DirectIncome.LineItems.AccountRef.Id\",\n                        \"DirectCost.LineItems.AccountRef.Id\"\n                    ]\n                }\n            ]\n        }\n```\n\n\n\n## Support for `validDatatypeLinks`\n\nCodat currently supports `validDatatypeLinks` for some data types on our Xero, QuickBooks Online, QuickBooks Desktop, Exact (NL), and Sage Business Cloud integrations. \n\nIf you'd like us to extend support to more data types or integrations, suggest or vote for this on our <a href=\"https://portal.productboard.com/codat/5-product-roadmap\">Product Roadmap</a>.",
@@ -8861,22 +8904,28 @@
         "x-internal": true,
         "properties": {
           "statusCode": {
-            "type": "integer"
+            "type": "integer",
+            "description": "The HTTP status code returned by the error."
           },
           "service": {
-            "type": "string"
+            "type": "string",
+            "description": "Codat's service the returned the error."
           },
           "error": {
-            "type": "string"
+            "type": "string",
+            "description": "A brief description of the error."
           },
           "correlationId": {
-            "type": "string"
+            "type": "string",
+            "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
           },
           "canBeRetried": {
-            "type": "string"
+            "type": "string",
+            "description": "`True` if the error occurred transiently and can be retried."
           },
           "detailedErrorCode": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Machine readable error code used to automate processes based on the code returned."
           }
         }
       },
@@ -8994,7 +9043,8 @@
               "syncId": {
                 "type": "string",
                 "format": "uuid",
-                "example": "a9367074-b5c3-42c4-9be4-be129f43577e"
+                "example": "a9367074-b5c3-42c4-9be4-be129f43577e",
+                "description": "Unique identifier for the failed sync."
               },
               "syncType": {
                 "type": "string",
@@ -9299,10 +9349,7 @@
           "type": "string",
           "example": "-modifiedDate"
         },
-        "description": "Field to order results by. [Read more](https://docs.codat.io/using-the-api/ordering-results).",
-        "x-stoplight": {
-          "id": "4je9lwo02netu"
-        }
+        "description": "Field to order results by. [Read more](https://docs.codat.io/using-the-api/ordering-results)."
       },
       "companyId": {
         "name": "companyId",
@@ -9313,7 +9360,8 @@
           "format": "uuid",
           "example": "8a210b68-6988-11ed-a1eb-0242ac120002",
           "description": "Unique identifier for your SMB in Codat."
-        }
+        },
+        "description": "Unique identifier for a company."
       },
       "connectionId": {
         "name": "connectionId",
@@ -9324,7 +9372,8 @@
           "format": "uuid",
           "example": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
           "description": "Unique identifier for a company's data connection."
-        }
+        },
+        "description": "Unique identifier for a connection."
       },
       "dataType": {
         "name": "dataType",
@@ -9342,29 +9391,9 @@
         "schema": {
           "type": "string",
           "format": "uuid",
-          "example": "eaed9f0f-e77b-4bc9-a58f-ab8b4b99ab18"
+          "description": "Unique identifier for the dataset that completed its sync."
         },
-        "description": "Unique ID of a dataset or pull operation."
-      },
-      "timeoutInMinutes": {
-        "x-stoplight": {
-          "id": "irz50qjbs3yef"
-        },
-        "name": "timeoutInMinutes",
-        "in": "query",
-        "schema": {
-          "type": "integer",
-          "format": "int32"
-        }
-      },
-      "forceUpdate": {
-        "name": "forceUpdate",
-        "in": "query",
-        "schema": {
-          "type": "boolean",
-          "default": false
-        },
-        "description": "When updating data in the destination platform Codat checks the `sourceModifiedDate` against the `lastupdated` date from the accounting platform, if they're different Codat will return an error suggesting you should initiate another pull of the data. If this is set to `true` then the update will override this check."
+        "description": "Unique identifier for the dataset that completed its sync."
       },
       "supplierId": {
         "name": "supplierId",
@@ -9379,7 +9408,46 @@
             "EILBDVJVNUAGVKRQ"
           ]
         },
-        "description": "Unique identifier for a supplier"
+        "description": "Unique identifier for a supplier."
+      },
+      "customerId": {
+        "name": "customerId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "examples": {
+            "$ref": "#/components/parameters/supplierId/schema/examples"
+          }
+        },
+        "description": "Unique identifier for a customer."
+      },
+      "timeoutInMinutes": {
+        "name": "timeoutInMinutes",
+        "in": "query",
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "description": "Time limit for the push operation to complete before it is timed out."
+      },
+      "allowSyncOnPushComplete": {
+        "name": "allowSyncOnPushComplete",
+        "in": "query",
+        "schema": {
+          "type": "boolean",
+          "default": true
+        },
+        "description": "Allow a sync upon push completion."
+      },
+      "forceUpdate": {
+        "name": "forceUpdate",
+        "in": "query",
+        "schema": {
+          "type": "boolean",
+          "default": false
+        },
+        "description": "When updating data in the destination platform Codat checks the `sourceModifiedDate` against the `lastupdated` date from the accounting platform, if they're different Codat will return an error suggesting you should initiate another pull of the data. If this is set to `true` then the update will override this check."
       }
     },
     "responses": {
@@ -9561,7 +9629,7 @@
     "securitySchemes": {
       "auth_header": {
         "name": "Authorization",
-        "description": "The word \"Basic\" followed by a space and your API key. [API keys](https://docs.codat.io/accounting-api#/schemas/apiKeys) are tokens used to control access to the API. You can get an API key via [the Codat Portal](https://app.codat.io/developers/api-keys), via [the API](https://docs.codat.io/codat-api#/api-keys/api-keys-list), or [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat.",
+        "description": "The word \"Basic\" followed by a space and your API key. [API keys](https://docs.codat.io/sync-for-expenses-api#/schemas/apiKeys) are tokens used to control access to the API. You can get an API key via [the Codat Portal](https://app.codat.io/developers/api-keys), via [the API](https://docs.codat.io/codat-api#/api-keys/api-keys-list), or [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat.",
         "type": "apiKey",
         "in": "header",
         "x-speakeasy-example": "Basic BASE_64_ENCODED(API_KEY)"

@@ -90,7 +90,8 @@
       "methodNameOverride": "upload-attachment"
     }
   ],
-  "x-codat-docs-path": "codat-api",
+  "x-codat-docs-path": "platform-api",
+  "x-codat-keep-docs-paths-local": true,
   "x-codat-speakeasy-pagination": {
     "type": "offsetLimit",
     "inputs": [
@@ -279,7 +280,7 @@
           }
         },
         "operationId": "list-companies",
-        "description": "﻿Returns a list of your companies. The company schema contains a list of [connections](https://docs.codat.io/codat-api#/schemas/Connection) related to the company.",
+        "description": "﻿Returns a list of your companies. The company schema contains a list of [connections](https://docs.codat.io/platform-api#/schemas/Connection) related to the company.",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -603,7 +604,7 @@
       },
       "post": {
         "summary": "Create connection",
-        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \n\nUse the [List Integrations](https://docs.codat.io/codat-api#/operations/list-integrations) endpoint to access valid platform keys. ",
+        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \n\nUse the [List Integrations](https://docs.codat.io/platform-api#/operations/list-integrations) endpoint to access valid platform keys. ",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -620,7 +621,7 @@
                 "type": "object",
                 "properties": {
                   "platformKey": {
-                    "type": "string"
+                    "$ref": "#/components/parameters/platformKey/schema"
                   }
                 }
               }
@@ -1576,7 +1577,7 @@
         ],
         "operationId": "get-profile-syncSettings",
         "x-speakeasy-name-override": "get-sync-settings",
-        "description": "Retrieve the sync settings for your client. This includes how often data types should be queued to be updated, and how much history should be fetched.",
+        "description": "Retrieve the [sync settings](https://docs.codat.io/knowledge-base/advanced-sync-settings) for your client. This includes how often data types should be queued to be updated, and how much history should be fetched.",
         "responses": {
           "200": {
             "description": "OK",
@@ -1645,7 +1646,7 @@
                       "clientId": {
                         "type": "string",
                         "format": "uuid",
-                        "example": "367f7975-267b-439b-90c6-a6040ee680f3"
+                        "description": "Unique identifier for your client in Codat."
                       },
                       "settings": {
                         "type": "array",
@@ -1655,7 +1656,8 @@
                       },
                       "overridesDefaults": {
                         "type": "boolean",
-                        "default": true
+                        "default": true,
+                        "description": "Set to `True` if you want to override default [sync settings](https://docs.codat.io/knowledge-base/advanced-sync-settings)."
                       }
                     },
                     "required": [
@@ -1676,7 +1678,7 @@
     "/apiKeys": {
       "get": {
         "summary": "List API keys",
-        "description": "Use the *List API keys* endpoint to return a list of all API keys that currently exist for your client. This includes keys created via the Portal UI or the *Create API keys* endpoint.\n\n[API keys](https://docs.codat.io/accounting-api#/schemas/apiKeys) are tokens used to control access to the API. Include this token in the `Authorization` header parameter when making API calls, following the word \"Basic\" and a space with your API key.\n\nYou can [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat and managing API keys via the Portal UI or API.",
+        "description": "Use the *List API keys* endpoint to return a list of all API keys that currently exist for your client. This includes keys created via the Portal UI or the *Create API keys* endpoint.\n\n[API keys](https://docs.codat.io/platform-api#/schemas/apiKeys) are tokens used to control access to the API. Include this token in the `Authorization` header parameter when making API calls, following the word \"Basic\" and a space with your API key.\n\nYou can [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat and managing API keys via the Portal UI or API.",
         "operationId": "list-api-keys",
         "x-speakeasy-name-override": "list-api-keys",
         "tags": [
@@ -1724,7 +1726,7 @@
         "summary": "Create API key",
         "operationId": "create-api-key",
         "x-speakeasy-name-override": "create-api-key",
-        "description": "Use the *Create API keys* endpoint to generate a new API key for your client.\n\n[API keys](https://docs.codat.io/codat-api#/schemas/apiKeys) are tokens used to control access to the API. Include this token in the `Authorization` header parameter when making API calls, following the word \"Basic\" and a space with your API key.\n\nYou can [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat and managing API keys via the Portal UI or API.\n\n### Tips and pitfalls\n\n* Your first API key is created for you. Access this key via [Codat's Portal](https://app.codat.io/developers/api-keys).\n* If you require multiple API keys, perform multiple calls to the *Create API keys* endpoint. \n* The number of API keys is limited to 10. If you have reached the maximum amount of keys, use the *Delete API key* endpoint to delete an unused key first.",
+        "description": "Use the *Create API keys* endpoint to generate a new API key for your client.\n\n[API keys](https://docs.codat.io/platform-api#/schemas/apiKeys) are tokens used to control access to the API. Include this token in the `Authorization` header parameter when making API calls, following the word \"Basic\" and a space with your API key.\n\nYou can [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat and managing API keys via the Portal UI or API.\n\n### Tips and pitfalls\n\n* Your first API key is created for you. Access this key via [Codat's Portal](https://app.codat.io/developers/api-keys).\n* If you require multiple API keys, perform multiple calls to the *Create API keys* endpoint. \n* The number of API keys is limited to 10. If you have reached the maximum amount of keys, use the *Delete API key* endpoint to delete an unused key first.",
         "tags": [
           "Settings"
         ],
@@ -1842,7 +1844,7 @@
             "description": "Unique identifier for api key."
           }
         ],
-        "description": "Use the *Delete API keys* endpoint to delete an existing API key, providing its valid `id` as a parameter. Note that this operation is not reversible.\n\n[API keys](https://docs.codat.io/accounting-api#/schemas/apiKeys) are tokens used to control access to the API. Include this token in the `Authorization` header parameter when making API calls, following the word \"Basic\" and a space with your API key.\n\nYou can [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat and managing API keys via the Portal UI or API.\n\n### Tips and pitfalls\n\n* It is possible to delete the last remaining API key. If this happens, a new key can be created via the [API key management page](https://app.codat.io/developers/api-keys) of the Portal.\n* It is possible to delete the API key used to authenticate the *Delete API key* request.",
+        "description": "Use the *Delete API keys* endpoint to delete an existing API key, providing its valid `id` as a parameter. Note that this operation is not reversible.\n\n[API keys](https://docs.codat.io/platform-api#/schemas/apiKeys) are tokens used to control access to the API. Include this token in the `Authorization` header parameter when making API calls, following the word \"Basic\" and a space with your API key.\n\nYou can [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat and managing API keys via the Portal UI or API.\n\n### Tips and pitfalls\n\n* It is possible to delete the last remaining API key. If this happens, a new key can be created via the [API key management page](https://app.codat.io/developers/api-keys) of the Portal.\n* It is possible to delete the API key used to authenticate the *Delete API key* request.",
         "tags": [
           "Settings"
         ],
@@ -2012,17 +2014,13 @@
     "/integrations/{platformKey}/datatypes/{dataType}/supplementalDataConfig": {
       "parameters": [
         {
-          "schema": {
-            "type": "string"
-          },
-          "name": "platformKey",
-          "in": "path",
-          "required": true
+          "$ref": "#/components/parameters/platformKey"
         },
         {
           "name": "dataType",
           "in": "path",
           "required": true,
+          "description": "Supported supplemental data data type.",
           "schema": {
             "x-internal": true,
             "type": "string",
@@ -2376,7 +2374,7 @@
     "schemas": {
       "DataType": {
         "x-internal": true,
-        "$ref": "#/components/schemas/SyncSetting/properties/dataType"
+        "$ref": "#/components/schemas/DataStatus/properties/dataType"
       },
       "Companies": {
         "title": "Companies",
@@ -2457,13 +2455,17 @@
         "x-internal": true,
         "properties": {
           "pageNumber": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Current page number."
           },
           "pageSize": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Number of items to return in results array.",
+            "maximum": 2000
           },
           "totalResults": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Total number of items."
           },
           "_links": {
             "$ref": "#/components/schemas/PagingInfo/definitions/links"
@@ -2508,7 +2510,8 @@
             "properties": {
               "href": {
                 "type": "string",
-                "format": "uri-reference"
+                "format": "uri-reference",
+                "description": "Uri hypertext reference."
               }
             }
           }
@@ -2541,22 +2544,28 @@
         "x-internal": true,
         "properties": {
           "statusCode": {
-            "type": "integer"
+            "type": "integer",
+            "description": "The HTTP status code returned by the error."
           },
           "service": {
-            "type": "string"
+            "type": "string",
+            "description": "Codat's service the returned the error."
           },
           "error": {
-            "type": "string"
+            "type": "string",
+            "description": "A brief description of the error."
           },
           "correlationId": {
-            "type": "string"
+            "type": "string",
+            "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
           },
           "canBeRetried": {
-            "type": "string"
+            "type": "string",
+            "description": "`True` if the error occurred transiently and can be retried."
           },
           "detailedErrorCode": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Machine readable error code used to automate processes based on the code returned."
           }
         }
       },
@@ -2574,11 +2583,13 @@
             "$ref": "#/components/schemas/PushOption/definitions/pushOptionType"
           },
           "displayName": {
-            "minLength": 1,
-            "type": "string"
+            "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/displayName"
           },
           "description": {
-            "type": "string"
+            "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/description"
+          },
+          "required": {
+            "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/required"
           },
           "properties": {
             "type": "object",
@@ -2586,9 +2597,6 @@
               "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty"
             },
             "nullable": true
-          },
-          "required": {
-            "type": "boolean"
           },
           "options": {
             "type": "array",
@@ -2618,11 +2626,16 @@
               },
               "displayName": {
                 "minLength": 1,
-                "type": "string"
+                "type": "string",
+                "description": "The property's display name."
               },
               "description": {
-                "minLength": 1,
-                "type": "string"
+                "type": "string",
+                "description": "A description of the property."
+              },
+              "required": {
+                "type": "boolean",
+                "description": "The property is required if `True`."
               },
               "properties": {
                 "type": "object",
@@ -2637,9 +2650,6 @@
                   "$ref": "#/components/schemas/PushOption/definitions/pushOptionChoice"
                 },
                 "nullable": true
-              },
-              "required": {
-                "type": "boolean"
               },
               "validation": {
                 "$ref": "#/components/schemas/PushOption/definitions/pushValidationInfo"
@@ -2675,22 +2685,26 @@
             "type": "object",
             "properties": {
               "field": {
-                "type": "string"
+                "type": "string",
+                "description": "Field name that resulted in the validation issue."
               },
               "details": {
                 "minLength": 1,
-                "type": "string"
+                "type": "string",
+                "description": "Details on the validation issue."
               },
               "ref": {
                 "type": "string",
                 "format": "uri",
-                "nullable": true
+                "nullable": true,
+                "description": "Unique reference identifier for the validation issue."
               }
             },
             "additionalProperties": false
           },
           "pushOptionType": {
             "title": "Option Type",
+            "description": "The option type.",
             "enum": [
               "Array",
               "Object",
@@ -2716,13 +2730,13 @@
                 "$ref": "#/components/schemas/PushOption/definitions/pushOptionType"
               },
               "displayName": {
-                "type": "string"
+                "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/displayName"
               },
               "description": {
-                "type": "string"
+                "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/description"
               },
               "required": {
-                "type": "boolean"
+                "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/required"
               }
             }
           }
@@ -2730,7 +2744,7 @@
       },
       "Company": {
         "title": "Company",
-        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/codat-api#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
+        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/platform-api#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
         "type": "object",
         "properties": {
           "id": {
@@ -2749,7 +2763,8 @@
           "platform": {
             "type": "string",
             "deprecated": true,
-            "example": "Xero"
+            "example": "Xero",
+            "description": "`platformKeys` name used when creating the company."
           },
           "redirect": {
             "type": "string",
@@ -2764,7 +2779,8 @@
             "$ref": "#/components/schemas/DateTime"
           },
           "createdByUserName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of user that created the company in Codat."
           },
           "dataConnections": {
             "type": "array",
@@ -2806,7 +2822,7 @@
       },
       "Connection": {
         "title": "Connection",
-        "description": "﻿A connection represents a [company's](https://docs.codat.io/codat-api#/schemas/Company) connection to a data source and allows you to synchronize data (pull and/or push) with that source.\n\nA company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:\n\n- [Accounting data](https://docs.codat.io/accounting-api/overview) - 1 active connection.\n- [Banking data](https://docs.codat.io/banking-api/overview) - Multiple active connections.\n- [Commerce data](https://docs.codat.io/commerce-api/overview) - Multiple active connections.\nAny combination of accounting, banking, and commerce data connections is allowed.\n\nBefore you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/auth-flow/overview).",
+        "description": "﻿A connection represents a [company's](https://docs.codat.io/platform-api#/schemas/Company) connection to a data source and allows you to synchronize data (pull and/or push) with that source.\n\nA company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:\n\n- [Accounting data](https://docs.codat.io/accounting-api/overview) - 1 active connection.\n- [Banking data](https://docs.codat.io/banking-api/overview) - Multiple active connections.\n- [Commerce data](https://docs.codat.io/commerce-api/overview) - Multiple active connections.\nAny combination of accounting, banking, and commerce data connections is allowed.\n\nBefore you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/auth-flow/overview).",
         "type": "object",
         "properties": {
           "id": {
@@ -2829,11 +2845,13 @@
             "$ref": "#/components/schemas/SourceType"
           },
           "platformName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of integration connected to company."
           },
           "linkUrl": {
             "type": "string",
             "format": "uri",
+            "description": "The link URL your customers can use to authorize access to their business application.",
             "example": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/2e2eb431-c1fa-4dc9-93fa-d29781c12bcd/start"
           },
           "status": {
@@ -2887,13 +2905,16 @@
             "type": "object",
             "properties": {
               "statusCode": {
-                "type": "string"
+                "type": "string",
+                "description": "The HTTP status code returned by the error."
               },
               "statusText": {
-                "type": "string"
+                "type": "string",
+                "description": "A non-numeric status code/text."
               },
               "errorMessage": {
-                "type": "string"
+                "type": "string",
+                "description": "A brief message about the error."
               },
               "erroredOnUtc": {
                 "$ref": "#/components/schemas/DateTime"
@@ -2976,15 +2997,17 @@
           },
           "logoUrl": {
             "type": "string",
-            "format": "uri"
+            "format": "uri",
+            "description": "Static url for integration's logo."
           },
           "name": {
             "type": "string",
-            "example": "Xero"
+            "example": "Xero",
+            "description": "Name of integration."
           },
           "enabled": {
             "type": "boolean",
-            "description": "Whether this integration is enabled for your customers to use"
+            "description": "Whether this integration is enabled for your customers to use."
           },
           "sourceId": {
             "$ref": "#/components/schemas/Branding/properties/sourceId"
@@ -2996,13 +3019,16 @@
             "$ref": "#/components/schemas/Connection/properties/integrationId"
           },
           "isOfflineConnector": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "`True` if the integration is to an application installed and run locally on an SMBs computer."
           },
           "isBeta": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "`True` if the integration is currently in beta release."
           },
           "dataProvidedBy": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the data provider."
           },
           "datatypeFeatures": {
             "type": "array",
@@ -3024,7 +3050,7 @@
             "type": "object",
             "properties": {
               "dataType": {
-                "$ref": "#/components/schemas/SyncSetting/properties/dataType"
+                "$ref": "#/components/schemas/DataStatus/properties/dataType"
               },
               "supportedFeatures": {
                 "type": "array",
@@ -3069,6 +3095,7 @@
             "title": "Feature state",
             "type": "string",
             "example": "Release",
+            "description": "The current release state of the feature.",
             "enum": [
               "Release",
               "Alpha",
@@ -3081,6 +3108,7 @@
           "featureType": {
             "type": "string",
             "x-internal": true,
+            "description": "The type of feature.",
             "enum": [
               "Get",
               "Post",
@@ -3135,55 +3163,7 @@
         "type": "object",
         "properties": {
           "dataType": {
-            "title": "Data types",
-            "x-internal": true,
-            "type": "string",
-            "description": "Available Data types",
-            "enum": [
-              "accountTransactions",
-              "balanceSheet",
-              "bankAccounts",
-              "bankTransactions",
-              "billCreditNotes",
-              "billPayments",
-              "bills",
-              "cashFlowStatement",
-              "chartOfAccounts",
-              "company",
-              "creditNotes",
-              "customers",
-              "directCosts",
-              "directIncomes",
-              "invoices",
-              "items",
-              "journalEntries",
-              "journals",
-              "paymentMethods",
-              "payments",
-              "profitAndLoss",
-              "purchaseOrders",
-              "salesOrders",
-              "suppliers",
-              "taxRates",
-              "trackingCategories",
-              "transfers",
-              "banking-accountBalances",
-              "banking-accounts",
-              "banking-transactionCategories",
-              "banking-transactions",
-              "commerce-companyInfo",
-              "commerce-customers",
-              "commerce-disputes",
-              "commerce-locations",
-              "commerce-orders",
-              "commerce-paymentMethods",
-              "commerce-payments",
-              "commerce-productCategories",
-              "commerce-products",
-              "commerce-taxComponents",
-              "commerce-transactions"
-            ],
-            "example": "invoices"
+            "$ref": "#/components/schemas/DataStatus/properties/dataType"
           },
           "fetchOnFirstLink": {
             "type": "boolean",
@@ -3195,16 +3175,17 @@
             "description": "Number of hours after which this data type should be refreshed."
           },
           "syncOrder": {
-            "type": "integer"
+            "type": "integer",
+            "description": "The sync in which data types are queued for a sync."
           },
           "syncFromUtc": {
             "$ref": "#/components/schemas/DateTime",
-            "description": "Date from which data should be fetched. Set this *or* `syncFromWindow`"
+            "description": "Date from which data should be fetched. Set this *or* `syncFromWindow`."
           },
           "syncFromWindow": {
             "type": "integer",
             "example": 24,
-            "description": "Number of months of data to be fetched. Set this *or* `syncFromUTC`"
+            "description": "Number of months of data to be fetched. Set this *or* `syncFromUTC`."
           },
           "monthsToSync": {
             "type": "integer",
@@ -3212,7 +3193,8 @@
             "description": "Months of data to fetch, for report data types (`balanceSheet` & `profitAndLoss`) only."
           },
           "isLocked": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "`True` if the [sync setting](https://docs.codat.io/knowledge-base/advanced-sync-settings) is locked."
           }
         },
         "required": [
@@ -3228,9 +3210,7 @@
         "type": "object",
         "properties": {
           "clientId": {
-            "type": "string",
-            "format": "uuid",
-            "example": "367f7975-267b-439b-90c6-a6040ee680f3"
+            "$ref": "#/paths/~1profile~1syncSettings/post/requestBody/content/application~1json/schema/allOf/0/properties/clientId"
           },
           "settings": {
             "type": "array",
@@ -3239,38 +3219,40 @@
             }
           },
           "overridesDefaults": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `True` if you want to override the default [sync settings](https://docs.codat.io/knowledge-base/advanced-sync-settings)."
           }
         }
       },
       "PullOperation": {
         "title": "Pull operation",
         "description": "Information about a queued, in progress or completed pull operation.\n*Formally called `dataset`*",
-        "x-stoplight": {
-          "id": "hvk8xbvt7ekyg"
-        },
         "type": "object",
         "properties": {
           "id": {
             "type": "string",
             "format": "uuid",
+            "description": "Unique identifier of the pull operation.",
             "example": "943accd0-4247-42d8-865b-363c8629e1da"
           },
           "companyId": {
             "type": "string",
             "format": "uuid",
+            "description": "Unique identifier of the company associated to this pull operation.",
             "example": "22ece347-e5f6-4896-95e0-35a4c7f17023"
           },
           "connectionId": {
             "type": "string",
             "format": "uuid",
+            "description": "Unique identifier of the connection associated to this pull operation.",
             "example": "50830828-7d39-4367-b0eb-5ddb2de5faa5"
           },
           "dataType": {
-            "type": "string"
+            "$ref": "#/components/schemas/DataStatus/properties/dataType"
           },
           "status": {
             "type": "string",
+            "description": "The current status of the pull operation.",
             "enum": [
               "Initial",
               "Queued",
@@ -3302,13 +3284,16 @@
             "$ref": "#/components/schemas/DateTime"
           },
           "progress": {
-            "type": "integer"
+            "type": "integer",
+            "description": "An integer signifying the progress of the pull operation."
           },
           "isCompleted": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "`True` if the pull operation completed successfully."
           },
           "isErrored": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "`True` if the pull operation entered an error state."
           }
         },
         "required": [
@@ -3360,29 +3345,37 @@
         "title": "Create webhook",
         "description": "Create an event notification to a URL or list of email addresses based on the given type or condition.",
         "type": "object",
+        "x-internal": true,
         "properties": {
           "type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of webhook."
           },
           "companyId": {
-            "type": "string",
-            "format": "uuid",
-            "example": "39b73b17-cc2e-429e-915d-71654e9dcd1e"
+            "$ref": "#/components/parameters/companyId/schema"
           },
           "notifiers": {
+            "$ref": "#/components/schemas/CreateRule/definitions/webhookNotifier"
+          }
+        },
+        "definitions": {
+          "webhookNotifier": {
             "type": "object",
+            "title": "Webhook notifiers",
             "properties": {
               "emails": {
                 "type": "array",
                 "items": {
                   "type": "string",
                   "format": "email",
+                  "description": "Receiver's email address.",
                   "example": "info@client.com"
                 }
               },
               "webhook": {
                 "type": "string",
                 "format": "uri",
+                "description": "The URI the webhook service will POST events.",
                 "example": "https://webhook.client.com"
               }
             }
@@ -3417,6 +3410,7 @@
                 "type": "string",
                 "format": "uuid",
                 "nullable": false,
+                "description": "Unique identifier for the configured notification.",
                 "example": "ff89c50e-a719-4ef5-a182-9917e53927b6"
               }
             }
@@ -3478,21 +3472,72 @@
         ],
         "properties": {
           "dataType": {
-            "type": "string"
+            "title": "Data types",
+            "x-internal": true,
+            "type": "string",
+            "description": "Available Data types",
+            "enum": [
+              "accountTransactions",
+              "balanceSheet",
+              "bankAccounts",
+              "bankTransactions",
+              "billCreditNotes",
+              "billPayments",
+              "bills",
+              "cashFlowStatement",
+              "chartOfAccounts",
+              "company",
+              "creditNotes",
+              "customers",
+              "directCosts",
+              "directIncomes",
+              "invoices",
+              "items",
+              "journalEntries",
+              "journals",
+              "paymentMethods",
+              "payments",
+              "profitAndLoss",
+              "purchaseOrders",
+              "salesOrders",
+              "suppliers",
+              "taxRates",
+              "trackingCategories",
+              "transfers",
+              "banking-accountBalances",
+              "banking-accounts",
+              "banking-transactionCategories",
+              "banking-transactions",
+              "commerce-companyInfo",
+              "commerce-customers",
+              "commerce-disputes",
+              "commerce-locations",
+              "commerce-orders",
+              "commerce-paymentMethods",
+              "commerce-payments",
+              "commerce-productCategories",
+              "commerce-products",
+              "commerce-taxComponents",
+              "commerce-transactions"
+            ],
+            "example": "invoices"
           },
           "lastSuccessfulSync": {
             "$ref": "#/components/schemas/DateTime"
           },
           "currentStatus": {
-            "type": "string"
+            "type": "string",
+            "description": "The current status of the dataset in Codat's cache."
           },
           "latestSyncId": {
             "type": "string",
+            "description": "Unique identifier for most recent sync of data type.",
             "format": "uuid",
             "example": "ad474a37-2003-478e-baee-9af9f1ec2fe3"
           },
           "latestSuccessfulSyncId": {
             "type": "string",
+            "description": "Unique identifier for the most recent successful sync of data type.",
             "format": "uuid",
             "example": "8220fc90-55b6-47bc-9417-48ac6ea93101"
           }
@@ -3527,40 +3572,49 @@
         "properties": {
           "name": {
             "type": "string",
-            "example": "Bob's Burgers"
+            "example": "Bob's Burgers",
+            "description": "The name given to the instance."
           },
           "logoUrl": {
             "type": "string",
+            "description": "Static url to your organization's logo.",
             "example": "https://client-images.codat.io/logo/042399f5-d104-4f38-9ce8-cac3524f4e88_5806cb1f-7342-4c0e-a0a8-99bfbc47b0ff.png"
           },
           "iconUrl": {
             "type": "string",
+            "description": "Static url to your organization's icon.",
             "example": "https://client-images.codat.io/icon/042399f5-d104-4f38-9ce8-cac3524f4e88_3f5623af-d992-4c22-bc08-e58c520a8526.ico"
           },
           "redirectUrl": {
             "type": "string",
-            "example": "https://bobs-burgers.{countrySuffix}/{companyId}"
+            "example": "https://bobs-burgers.{countrySuffix}/{companyId}",
+            "description": "The redirect URL pasted on to the SMB once Codat's [Hosted Link](https://docs.codat.io/auth-flow/authorize-hosted-link) has been completed by the SMB."
           },
           "whiteListUrls": {
             "type": "array",
+            "description": "A list of urls that are allowed to communicate with Codat. If empty any url is allowed to communicate with Codat.",
             "items": {
               "type": "string",
               "format": "uri",
-              "example": "https://bobs-burgers.com"
+              "example": "https://bobs-burgers.com",
+              "description": "A url that is allowed to communicate with Codat."
             }
           },
           "apiKey": {
             "type": "string",
             "deprecated": true,
-            "example": "sartANTjHAkLdbyDfaynoTQb7pkmj6hXHmnQKMrB"
+            "example": "sartANTjHAkLdbyDfaynoTQb7pkmj6hXHmnQKMrB",
+            "description": "The API key for this Codat instance."
           },
           "alertAuthHeader": {
             "type": "string",
-            "example": "Bearer tXEiHiRK7XCtI8TNHbpGs1LI1pumdb4Cl1QIo7B2"
+            "example": "Bearer tXEiHiRK7XCtI8TNHbpGs1LI1pumdb4Cl1QIo7B2",
+            "description": "Alert or webhooks authorization header."
           },
           "confirmCompanyName": {
             "type": "boolean",
-            "deprecated": true
+            "deprecated": true,
+            "description": "`True` if the company name has been confirmed."
           }
         },
         "required": [
@@ -3627,7 +3681,8 @@
       },
       "CreateApiKey": {
         "title": "Create API key",
-        "description": "Details of the API key.",
+        "description": "Details about the newly created API key.",
+        "x-internal": true,
         "type": "object",
         "properties": {
           "name": {
@@ -3754,7 +3809,7 @@
         "type": "object",
         "properties": {
           "ClientId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientId"
+            "$ref": "#/paths/~1profile~1syncSettings/post/requestBody/content/application~1json/schema/allOf/0/properties/clientId"
           },
           "ClientName": {
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
@@ -3827,9 +3882,7 @@
         "type": "object",
         "properties": {
           "ClientId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier for your client in Codat."
+            "$ref": "#/paths/~1profile~1syncSettings/post/requestBody/content/application~1json/schema/allOf/0/properties/clientId"
           },
           "ClientName": {
             "type": "string",
@@ -3872,11 +3925,11 @@
             "title": "Data sync completed webhook data",
             "properties": {
               "dataType": {
-                "$ref": "#/components/schemas/SyncSetting/properties/dataType",
+                "$ref": "#/components/schemas/DataStatus/properties/dataType",
                 "nullable": true
               },
               "datasetId": {
-                "$ref": "#/components/schemas/DatasetStatusChangedErrorWebhook/definitions/DatasetStatusChangedErrorWebhookData/properties/datasetId"
+                "$ref": "#/components/parameters/datasetId/schema"
               }
             }
           }
@@ -3905,7 +3958,7 @@
         "type": "object",
         "properties": {
           "ClientId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientId"
+            "$ref": "#/paths/~1profile~1syncSettings/post/requestBody/content/application~1json/schema/allOf/0/properties/clientId"
           },
           "ClientName": {
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
@@ -3933,10 +3986,10 @@
             "type": "object",
             "properties": {
               "dataType": {
-                "$ref": "#/components/schemas/SyncSetting/properties/dataType"
+                "$ref": "#/components/schemas/DataStatus/properties/dataType"
               },
               "datasetId": {
-                "$ref": "#/components/schemas/DatasetStatusChangedErrorWebhook/definitions/DatasetStatusChangedErrorWebhookData/properties/datasetId"
+                "$ref": "#/components/parameters/datasetId/schema"
               }
             }
           }
@@ -3965,7 +4018,7 @@
         "type": "object",
         "properties": {
           "ClientId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientId"
+            "$ref": "#/paths/~1profile~1syncSettings/post/requestBody/content/application~1json/schema/allOf/0/properties/clientId"
           },
           "ClientName": {
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
@@ -3998,16 +4051,14 @@
             "title": "Dataset status changed to error webhook data",
             "properties": {
               "dataType": {
-                "$ref": "#/components/schemas/SyncSetting/properties/dataType"
+                "$ref": "#/components/schemas/DataStatus/properties/dataType"
               },
               "datasetStatus": {
                 "type": "string",
                 "description": "The current status of the dataset's sync."
               },
               "datasetId": {
-                "type": "string",
-                "format": "uuid",
-                "description": "Unique identifier for the dataset that completed its sync."
+                "$ref": "#/components/parameters/datasetId/schema"
               }
             }
           }
@@ -4037,7 +4088,7 @@
         "type": "object",
         "properties": {
           "ClientId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientId"
+            "$ref": "#/paths/~1profile~1syncSettings/post/requestBody/content/application~1json/schema/allOf/0/properties/clientId"
           },
           "ClientName": {
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
@@ -4103,7 +4154,7 @@
         "type": "object",
         "properties": {
           "ClientId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientId"
+            "$ref": "#/paths/~1profile~1syncSettings/post/requestBody/content/application~1json/schema/allOf/0/properties/clientId"
           },
           "ClientName": {
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
@@ -4136,7 +4187,7 @@
             "title": "Push operation status changed webhook data",
             "properties": {
               "dataType": {
-                "$ref": "#/components/schemas/SyncSetting/properties/dataType"
+                "$ref": "#/components/schemas/DataStatus/properties/dataType"
               },
               "status": {
                 "$ref": "#/components/schemas/PushOperation/definitions/pushOperationStatus"
@@ -4172,7 +4223,7 @@
         "type": "object",
         "properties": {
           "ClientId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientId"
+            "$ref": "#/paths/~1profile~1syncSettings/post/requestBody/content/application~1json/schema/allOf/0/properties/clientId"
           },
           "ClientName": {
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
@@ -4205,7 +4256,7 @@
             "title": "Push operation timed out webhook data",
             "properties": {
               "dataType": {
-                "$ref": "#/components/schemas/SyncSetting/properties/dataType"
+                "$ref": "#/components/schemas/DataStatus/properties/dataType"
               },
               "pushOperationKey": {
                 "$ref": "#/components/schemas/PushOperation/properties/pushOperationKey"
@@ -4243,7 +4294,7 @@
         "type": "object",
         "properties": {
           "ClientId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientId"
+            "$ref": "#/paths/~1profile~1syncSettings/post/requestBody/content/application~1json/schema/allOf/0/properties/clientId"
           },
           "ClientName": {
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
@@ -4302,7 +4353,7 @@
         "type": "object",
         "properties": {
           "ClientId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientId"
+            "$ref": "#/paths/~1profile~1syncSettings/post/requestBody/content/application~1json/schema/allOf/0/properties/clientId"
           },
           "ClientName": {
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
@@ -4379,7 +4430,7 @@
             }
           },
           "dataType": {
-            "$ref": "#/components/schemas/SyncSetting/properties/dataType",
+            "$ref": "#/components/schemas/DataStatus/properties/dataType",
             "description": "The type of data being pushed, eg invoices, customers."
           },
           "companyId": {
@@ -4404,26 +4455,30 @@
           "timeoutInMinutes": {
             "type": "integer",
             "format": "int32",
-            "nullable": true
+            "nullable": true,
+            "description": "Number of minutes the push operation must complete within before it times out."
           },
           "timeoutInSeconds": {
             "type": "integer",
             "format": "int32",
             "nullable": true,
-            "deprecated": true
+            "deprecated": true,
+            "description": "Number of seconds the push operation must complete within before it times out."
           },
           "status": {
             "$ref": "#/components/schemas/PushOperation/definitions/pushOperationStatus"
           },
           "errorMessage": {
             "type": "string",
-            "nullable": true
+            "nullable": true,
+            "description": "A message about the error."
           },
           "validation": {
             "$ref": "#/components/schemas/PushOperation/definitions/validation"
           },
           "statusCode": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Push status code."
           }
         },
         "required": [
@@ -4462,21 +4517,25 @@
             "properties": {
               "itemId": {
                 "type": "string",
-                "nullable": true
+                "nullable": true,
+                "description": "Unique identifier for a validation item."
               },
               "message": {
                 "type": "string",
-                "nullable": true
+                "nullable": true,
+                "description": "A message outlining validation item's issue."
               },
               "validatorName": {
                 "type": "string",
-                "nullable": true
+                "nullable": true,
+                "description": "Name of validator."
               }
             },
             "additionalProperties": false
           },
           "pushChangeType": {
             "title": "Push change type",
+            "description": "Type of change being applied to record in third party platform.",
             "type": "string",
             "enum": [
               "Unknown",
@@ -4492,10 +4551,11 @@
             "type": "object",
             "properties": {
               "id": {
-                "type": "string"
+                "type": "string",
+                "description": "Unique identifier for a push operation."
               },
               "dataType": {
-                "$ref": "#/components/schemas/SyncSetting/properties/dataType",
+                "$ref": "#/components/schemas/DataStatus/properties/dataType",
                 "nullable": true
               }
             },
@@ -4523,6 +4583,7 @@
               },
               "attachmentId": {
                 "type": "string",
+                "description": "Unique identifier for the attachment created otherwise null.",
                 "nullable": true
               }
             }
@@ -4722,7 +4783,8 @@
           "format": "uuid",
           "example": "8a210b68-6988-11ed-a1eb-0242ac120002",
           "description": "Unique identifier for your SMB in Codat."
-        }
+        },
+        "description": "Unique identifier for a company."
       },
       "connectionId": {
         "name": "connectionId",
@@ -4733,7 +4795,8 @@
           "format": "uuid",
           "example": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
           "description": "Unique identifier for a company's data connection."
-        }
+        },
+        "description": "Unique identifier for a connection."
       },
       "page": {
         "name": "page",
@@ -4778,10 +4841,7 @@
           "type": "string",
           "example": "-modifiedDate"
         },
-        "description": "Field to order results by. [Read more](https://docs.codat.io/using-the-api/ordering-results).",
-        "x-stoplight": {
-          "id": "4je9lwo02netu"
-        }
+        "description": "Field to order results by. [Read more](https://docs.codat.io/using-the-api/ordering-results)."
       },
       "dataType": {
         "name": "dataType",
@@ -4810,9 +4870,9 @@
         "schema": {
           "type": "string",
           "format": "uuid",
-          "example": "eaed9f0f-e77b-4bc9-a58f-ab8b4b99ab18"
+          "description": "Unique identifier for the dataset that completed its sync."
         },
-        "description": "Unique ID of a dataset or pull operation."
+        "description": "Unique identifier for the dataset that completed its sync."
       },
       "platformKey": {
         "name": "platformKey",
@@ -4824,8 +4884,9 @@
           "maxLength": 4,
           "pattern": "[a-z]{4}",
           "example": "gbol",
-          "description": "A unique 4-letter key to represent a platform in each integration. View [accounting](https://docs.codat.io/integrations/accounting/accounting-platform-keys), [banking](https://docs.codat.io/integrations/banking/banking-platform-keys), and [commerce](https://docs.codat.io/integrations/commerce/commerce-platform-keys) platform keys. "
-        }
+          "description": "A unique 4-letter key to represent a platform in each integration. View [accounting](https://docs.codat.io/integrations/accounting/overview#platform-keys), [banking](https://docs.codat.io/integrations/banking/overview#platform-keys), and [commerce](https://docs.codat.io/integrations/commerce/overview#platform-keys) platform keys."
+        },
+        "description": "A unique 4-letter key to represent a platform in each integration. View [accounting](https://docs.codat.io/integrations/accounting/overview#platform-keys), [banking](https://docs.codat.io/integrations/banking/overview#platform-keys), and [commerce](https://docs.codat.io/integrations/commerce/overview#platform-keys) platform keys."
       }
     },
     "securitySchemes": {

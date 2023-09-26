@@ -195,15 +195,18 @@
         "properties": {
           "fileName": {
             "type": "string",
-            "nullable": true
+            "nullable": true,
+            "description": "The file's name."
           },
           "displayName": {
             "type": "string",
-            "nullable": true
+            "nullable": true,
+            "description": "An optional display name for the file."
           },
           "sourceType": {
             "type": "string",
-            "nullable": true
+            "nullable": true,
+            "description": "The source of the file uploaded."
           },
           "uploaded": {
             "$ref": "#/components/schemas/DateTime"
@@ -229,7 +232,8 @@
           "format": "uuid",
           "example": "8a210b68-6988-11ed-a1eb-0242ac120002",
           "description": "Unique identifier for your SMB in Codat."
-        }
+        },
+        "description": "Unique identifier for a company."
       },
       "connectionId": {
         "name": "connectionId",
@@ -240,7 +244,8 @@
           "format": "uuid",
           "example": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
           "description": "Unique identifier for a company's data connection."
-        }
+        },
+        "description": "Unique identifier for a connection."
       }
     },
     "responses": {
@@ -298,22 +303,28 @@
               "x-internal": true,
               "properties": {
                 "statusCode": {
-                  "type": "integer"
+                  "type": "integer",
+                  "description": "The HTTP status code returned by the error."
                 },
                 "service": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Codat's service the returned the error."
                 },
                 "error": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "A brief description of the error."
                 },
                 "correlationId": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
                 },
                 "canBeRetried": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "`True` if the error occurred transiently and can be retried."
                 },
                 "detailedErrorCode": {
-                  "type": "integer"
+                  "type": "integer",
+                  "description": "Machine readable error code used to automate processes based on the code returned."
                 }
               }
             },

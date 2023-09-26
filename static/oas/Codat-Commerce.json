@@ -8639,7 +8639,7 @@
               },
               "categorization": {
                 "type": "string",
-                "description": "Retail category that the product is assigned to",
+                "description": "Retail category that the product is assigned to e.g. `Hardware`.",
                 "examples": [
                   "Hardware",
                   "Software",
@@ -8648,7 +8648,7 @@
               },
               "isGiftCard": {
                 "type": "boolean",
-                "description": "Whether the product represents a gift card or voucher that\ncan be redeemed in the commerce or POS platform\n"
+                "description": "Whether the product represents a gift card or voucher that\ncan be redeemed in the commerce or POS platform.\n"
               },
               "variants": {
                 "type": "array",
@@ -8665,7 +8665,7 @@
             "description": "Reference that links the line item to the correct product details.",
             "properties": {
               "id": {
-                "description": "The unique identitifer of the product being referenced.",
+                "description": "The unique identifier of the product being referenced.",
                 "type": "string",
                 "examples": [
                   "13d946f0-c5d5-42bc-b092-97ece17923ab",
@@ -8771,12 +8771,12 @@
             ]
           },
           "productVariantRef": {
-            "title": "Product Variant Ref",
+            "title": "Product variant reference",
             "type": "object",
             "description": "Reference that links the line item to the specific version of product that has been ordered.",
             "properties": {
               "id": {
-                "description": "The unique identitifer of the product variant being referenced.",
+                "description": "The unique identifier of the product variant being referenced.",
                 "type": "string",
                 "examples": [
                   "13d946f0-c5d5-42bc-b092-97ece17923ab",
@@ -8805,7 +8805,8 @@
               },
               "unitPrice": {
                 "type": "number",
-                "format": "decimal"
+                "format": "decimal",
+                "description": "The product variant's unit price."
               }
             }
           },
@@ -8818,7 +8819,8 @@
               "totalQuantity": {
                 "type": "number",
                 "format": "decimal",
-                "nullable": true
+                "nullable": true,
+                "description": "The total quantity of stock remaining across locations."
               },
               "locations": {
                 "type": "array",
@@ -8835,7 +8837,8 @@
             "properties": {
               "quantity": {
                 "type": "number",
-                "format": "decimal"
+                "format": "decimal",
+                "description": "The quantity of stock remaining at location."
               },
               "locationRef": {
                 "$ref": "#/components/schemas/Location/definitions/locationRef"
@@ -8845,6 +8848,7 @@
           "productVariantStatus": {
             "x-internal": true,
             "type": "string",
+            "description": "The status of the product variant.",
             "enum": [
               "Unknown",
               "Published",
@@ -9196,6 +9200,7 @@
           "transactionSourceType": {
             "x-internal": true,
             "type": "string",
+            "description": "The type of source the transaction arose.",
             "enum": [
               "Fee",
               "Order",
@@ -9295,13 +9300,17 @@
         "x-internal": true,
         "properties": {
           "pageNumber": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Current page number."
           },
           "pageSize": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Number of items to return in results array.",
+            "maximum": 2000
           },
           "totalResults": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Total number of items."
           },
           "_links": {
             "$ref": "#/components/schemas/PagingInfo/definitions/links"
@@ -9346,7 +9355,8 @@
             "properties": {
               "href": {
                 "type": "string",
-                "format": "uri-reference"
+                "format": "uri-reference",
+                "description": "Uri hypertext reference."
               }
             }
           }
@@ -9503,22 +9513,28 @@
         "x-internal": true,
         "properties": {
           "statusCode": {
-            "type": "integer"
+            "type": "integer",
+            "description": "The HTTP status code returned by the error."
           },
           "service": {
-            "type": "string"
+            "type": "string",
+            "description": "Codat's service the returned the error."
           },
           "error": {
-            "type": "string"
+            "type": "string",
+            "description": "A brief description of the error."
           },
           "correlationId": {
-            "type": "string"
+            "type": "string",
+            "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
           },
           "canBeRetried": {
-            "type": "string"
+            "type": "string",
+            "description": "`True` if the error occurred transiently and can be retried."
           },
           "detailedErrorCode": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Machine readable error code used to automate processes based on the code returned."
           }
         }
       }
@@ -9533,7 +9549,8 @@
           "format": "uuid",
           "example": "8a210b68-6988-11ed-a1eb-0242ac120002",
           "description": "Unique identifier for your SMB in Codat."
-        }
+        },
+        "description": "Unique identifier for a company."
       },
       "connectionId": {
         "name": "connectionId",
@@ -9544,7 +9561,8 @@
           "format": "uuid",
           "example": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
           "description": "Unique identifier for a company's data connection."
-        }
+        },
+        "description": "Unique identifier for a connection."
       },
       "page": {
         "name": "page",
@@ -9589,10 +9607,7 @@
           "type": "string",
           "example": "-modifiedDate"
         },
-        "description": "Field to order results by. [Read more](https://docs.codat.io/using-the-api/ordering-results).",
-        "x-stoplight": {
-          "id": "4je9lwo02netu"
-        }
+        "description": "Field to order results by. [Read more](https://docs.codat.io/using-the-api/ordering-results)."
       }
     },
     "responses": {
