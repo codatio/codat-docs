@@ -7633,7 +7633,7 @@
           }
         },
         "operationId": "get-create-accounts-model",
-        "description": "﻿  The *Get create account model* endpoint returns the expected data for the request payload when creating an [account](https://docs.codat.io/sync-for-payroll-api#/schemas/Account) for a given company and integration.\n    \n    [Accounts](https://docs.codat.io/sync-for-payroll-api#/schemas/Account) are the categories a business uses to record accounting transactions.\n    \n    **Integration-specific behaviour**\n    \n    See the *response examples* for integration-specific indicative models.\n    \n    Check out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account.\n"
+        "description": "The *Get create account model* endpoint returns the expected data for the request payload when creating an [account](https://docs.codat.io/sync-for-payroll-api#/schemas/Account) for a given company and integration.\n    \n[Accounts](https://docs.codat.io/sync-for-payroll-api#/schemas/Account) are the categories a business uses to record accounting transactions.\n    \n**Integration-specific behaviour**\n    \nSee the *response examples* for integration-specific indicative models.\n    \nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account.\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/accounts": {
