@@ -10,15 +10,9 @@ import WritebackMapping from "@components/global/Prototypes/WritebackMapping";
 
 ## Concept overview
 
-:::tip In this guide...
+This guide takes you through the steps needed to implement and run the loan writeback procedure in your lending business using Codat. You will learn how to configure Codat and use it to create transactions that represent the deposit and repayment of the loan in your customers' accounting platforms. 
 
-This guide takes you through the steps needed to implement and run the loan writeback procedure in your lending business. 
-
-
-
-You will learn how to configure Codat in support of loan writeback and create transactions that represent the deposit and repayment of the loan in your customers' accoungting platforms. 
-
-covers the loan writeback procedure for general lending, such as term loans, but does not cover requirements specific to invoice finance.
+This solution supports loan writeback procedure for general lending, such as term loans, but does not cover requirements specific to invoice finance.
 
 ### What is loan writeback?
 
