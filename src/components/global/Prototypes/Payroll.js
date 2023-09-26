@@ -106,7 +106,7 @@ const PrototypePayroll = () => {
 
       <datalist id="accounts">
         {
-          getAccountsResponse.map(account => <option value={account.name}>{account.nominalCode}</option>)
+          getAccountsResponse.map((account, i) => <option key={i} value={account.name}>{account.nominalCode}</option>)
         }
       </datalist>
     </div>
