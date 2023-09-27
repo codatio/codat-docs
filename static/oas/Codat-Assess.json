@@ -2944,15 +2944,49 @@
         ]
       }
     },
-    "/companies/{companyId}/reports/enhancedLiabilities/loan/transactions": {
+    "/companies/{companyId}/reports/liabilities/loans/transactions": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "schema": {
+            "type": "string",
+            "enum": [
+              "banking",
+              "commerce",
+              "accounting"
+            ]
+          },
+          "in": "query",
+          "name": "sourceType",
+          "description": "Data source type",
+          "required": true
         }
       ],
+      "post": {
+        "summary": "Generate loan transactions report",
+        "description": "The _Generate loan transactions_ endpoint requests the generation of the Loan Transactions report.\n\nLearn more about Codat's liabilities feature [here](https://docs.codat.io/lending/features/liabilities-overview).\n\nMake sure you have [synced a company](https://docs.codat.io/codat-api#/operations/refresh-company-data) recently before calling the endpoint.\n",
+        "tags": [
+          "Reports"
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          }
+        },
+        "operationId": "generate-loan-transactions",
+        "x-speakeasy-name-override": "generate-loan-transactions"
+      },
       "get": {
-        "summary": "List enhanced loan transactions",
-        "description": "Returns a list of transactions identified as relating to a loan.",
+        "summary": "List loan transactions",
+        "description": "The *List loan transactions* endpoint returns all [loan transactions](https://docs.codat.io/codat-api#/schemas/LoanTransactions) identified from a company's accounting, banking, and commerce integrations.\n\nThis detail gives analysts a better idea of the loan obligations a company may have.\n\nMake sure you have [synced a company](https://docs.codat.io/codat-api#/operations/refresh-company-data) recently before calling the endpoint.\n",
         "tags": [
           "Reports"
         ],
@@ -2975,33 +3009,52 @@
           }
         },
         "operationId": "list-loan-transactions",
-        "parameters": [
-          {
-            "schema": {
-              "type": "string",
-              "enum": [
-                "banking",
-                "commerce",
-                "accounting"
-              ]
-            },
-            "in": "query",
-            "name": "sourceType",
-            "description": "Data source type",
-            "required": true
-          }
-        ]
+        "x-speakeasy-name-override": "list-loan-transactions"
       }
     },
-    "/companies/{companyId}/reports/enhancedLiabilities/loan": {
+    "/companies/{companyId}/reports/liabilities/loans": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "schema": {
+            "type": "string",
+            "enum": [
+              "banking",
+              "commerce",
+              "accounting"
+            ]
+          },
+          "in": "query",
+          "name": "sourceType",
+          "description": "Data source type.",
+          "required": true
         }
       ],
+      "post": {
+        "summary": "Generate loan summaries report",
+        "description": "The _Generate loan summaries_ endpoint requests the generation of the Loan Summaries report.\n\nLearn more about Codat's liabilities feature [here](https://docs.codat.io/lending/features/liabilities-overview).\n\nMake sure you have [synced a company](https://docs.codat.io/codat-api#/operations/refresh-company-data) recently before calling the endpoint.\n",
+        "tags": [
+          "Reports"
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          }
+        },
+        "operationId": "generate-loan-summary",
+        "x-speakeasy-name-override": "generate-loan-summary"
+      },
       "get": {
-        "summary": "Get enhanced loan summaries",
-        "description": "Returns a summary of loan transactions identified for the SMB.",
+        "summary": "Get loan summaries",
+        "description": "The *Get loan summaries* endpoint returns a summary by integration type of all loans identified from a company's accounting, banking, and commerce integrations.\n\nThe endpoint returns a list of a company's [loan summaries](https://docs.codat.io/codat-api#/schemas/LoanSummary) for each valid data connection.\n\nMake sure you have [synced a company](https://docs.codat.io/codat-api#/operations/refresh-company-data) recently before calling the endpoint.\n",
         "tags": [
           "Reports"
         ],
@@ -3023,7 +3076,8 @@
             "$ref": "#/components/responses/Not-Found"
           }
         },
-        "operationId": "get-loan-summary"
+        "operationId": "get-loan-summary",
+        "x-speakeasy-name-override": "get-loan-summary"
       }
     }
   },
