@@ -1,0 +1,28 @@
+.search {
+  background-color: var(--token-primary-bg-c);
+  border: 2px solid var(--token-secondary-bg-c-alt);
+  box-shadow: none;
+  padding: 1.5em;
+  border-radius: 8px;
+  font-size: 0.9em !important;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+.header {
+  cursor: pointer;
+  line-height: 1.6em;
+}
+
+.question {
+  border: 2px solid var(--token-secondary-bg-c-alt);
+  padding: 1em;
+  border-radius: 8px;
+  margin-bottom: 0.5em;
+}
+
+.answer {
+  margin-top: 1em;
+  line-height: 1.2em;
+}
