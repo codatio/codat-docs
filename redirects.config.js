@@ -555,7 +555,7 @@ module.exports = {
     //
     {
       from: "/guides/underwriting/introduction",
-      to: "/lending/guides/loan-qualification/introduction",
+      to: "/lending/overview",
     },
     {
       from: "/usecases/summary/underwriting",
