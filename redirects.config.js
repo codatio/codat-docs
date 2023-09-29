@@ -128,19 +128,19 @@ const prodRework = [
 },
 {
   from: "/guides/loan-qualification/introduction",
-  to: "/lending/guides/loan-qualification/introduction"
+  to: "/lending/overview"
 },
 {
   from: "/guides/loan-qualification/process-loan",
-  to: "/lending/guides/loan-qualification/process-loan"
+  to: "/lending/overview"
 },
 {
   from: "/guides/loan-qualification/setting-up",
-  to: "/lending/guides/loan-qualification/setting-up"
+  to: "/lending/overview"
 },
 {
   from: "/guides/loan-qualification/uw-decision",
-  to: "/lending/guides/loan-qualification/uw-decision"
+  to: "/lending/overview"
 },
 {
   from: "/integrations/bankfeeds/overview",
@@ -815,19 +815,19 @@ module.exports = {
       from: "/assess/guides/invoice-finance/setting-up",
     },
     {
-      to: "/lending/guides/loan-qualification/introduction",
+      to: "/lending/overview",
       from: "/assess/guides/loan-qualification/introduction",
     },
     {
-      to: "/lending/guides/loan-qualification/process-loan",
+      to: "/lending/overview",
       from: "/assess/guides/loan-qualification/process-loan",
     },
     {
-      to: "/lending/guides/loan-qualification/setting-up",
+      to: "/lending/overview",
       from: "/assess/guides/loan-qualification/setting-up",
     },
     {
-      to: "/lending/guides/loan-qualification/uw-decision",
+      to: "/lending/overview",
       from: "/assess/guides/loan-qualification/uw-decision",
     },
     {
