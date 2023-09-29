@@ -1,6 +1,7 @@
 ---
 title: "Make a lending decision"
 description: "Follow the loan qualification demo app end-to-end to start an application, analyze it, and make a decision on the loan request"
+draft: true
 ---
 
 import Tabs from '@theme/Tabs';

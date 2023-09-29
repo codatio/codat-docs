@@ -1,6 +1,7 @@
 ---
 title: "How the decisioning works"
 description: "Reference page with details on our decisioning logic, fetching data, and coming to a decision"
+draft: true
 ---
 
 ### 🚀 In this section, you will...

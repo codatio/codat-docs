@@ -1,6 +1,7 @@
 ---
 title: "Set up the demo app"
 description: "Prepare your Codat instance and local environment to run the demo app"
+draft: true
 ---
 
 import Tabs from "@theme/Tabs";
