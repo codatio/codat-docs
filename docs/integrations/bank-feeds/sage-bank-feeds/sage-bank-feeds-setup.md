@@ -127,7 +127,7 @@ To upload a logo, go to the <a className="external" href="https://app.codat.io/s
      }
    ```
 
-4. The endpoint returns a `200` code and the list of created bank accounts.
+4. The endpoint returns a `200` code and the created bank account.
 
 ## Surface the data connection ID to the user
 
