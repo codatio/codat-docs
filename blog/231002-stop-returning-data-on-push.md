@@ -9,7 +9,8 @@ On **January 10, 2024**, we will deprecate the data field that is currently retu
 
 <!--truncate-->
 <details>
-<summary> Before change</summary>
+<summary> Before change</summary>  
+  
 ```json
 {
   "changes": [
@@ -54,7 +55,8 @@ On **January 10, 2024**, we will deprecate the data field that is currently retu
 </details>
 
 <details>
-<summary> After change</summary>
+<summary> After change</summary>  
+  
 ```json
 {
   "changes": [
