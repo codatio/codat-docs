@@ -11,7 +11,8 @@ On **January 10, 2024**, we will deprecate the `data` field that is currently re
 <details>
 <summary> Before change</summary>  
   
-```json
+```json  
+
 {
   "changes": [
     {
@@ -57,7 +58,8 @@ On **January 10, 2024**, we will deprecate the `data` field that is currently re
 <details>
 <summary> After change</summary>  
   
-```json
+```json  
+
 {
   "changes": [
     {
