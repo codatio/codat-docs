@@ -5,7 +5,7 @@ tags: ["Deprecation"]
 authors: dharries
 ---
 
-On **January 10, 2024**, we will deprecate the data field that is currently returned on all push operation responses. Pushed data will also no longer be stored and so a sync will be required to be able to pull any new or updated records you have pushed.
+On **January 10, 2024**, we will deprecate the `data` field that is currently returned on all push operation responses. Pushed data will also no longer be stored, so a sync will be required to be able to pull any new or updated records you have pushed.
 
 <!--truncate-->
 <details>
@@ -101,14 +101,14 @@ On **January 10, 2024**, we will deprecate the data field that is currently retu
 
 ## Action required​
 
-If you currently make use of any properties in the data object of the push operation response, you will need to use the changes.recordRef object instead.
+If you currently make use of any properties in the `data` object of the push operation response, you will need to use the `changes.recordRef` object instead.
 
-1. Use changes.recordRef to retrieve the record datatype and id.
+1. Use `changes.recordRef` to retrieve the record `datatype` and `id`.
 2. Initiate a sync for the given data type or wait until the next scheduled sync.
-3. After the sync is complete, make a GET call to the relevant endpoint to retrieve the full record if needed.
+3. After the sync is complete, make a `GET` call to the relevant endpoint to retrieve the full record if needed.
 
 ## Expected impact if no action is taken​
 
-As of January 10, 2024, you will no longer be able to use the data object on the push operation responses.
+As of January 10, 2024, you will no longer be able to use the `data` object on the push operation responses.
 
-You will not be able to use the returned id to pull data you have pushed until a subsequent sync is completed for the given data type.
+You will not be able to use the returned `id` to pull data you have pushed until a subsequent sync is completed for the given data type.
