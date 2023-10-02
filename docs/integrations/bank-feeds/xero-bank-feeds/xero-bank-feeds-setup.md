@@ -78,35 +78,25 @@ Before setting up the integration, make sure that:
    
    For the `<CONNECTION_ID>`, use the connection `id` you received in the response from `POST /connection` request.
    
-   In the request body, specify a list of source bank accounts to make available to the SMB user. For example, to add two credit card accounts send the following request:
+   In the request body, specify a source bank account to make available to the SMB user. For example, to add a credit card account send the following request:
 
    ```json title="Request body (all fields are required)"
-   [
-     {
-       "id": "acc-002", // set to desired unique ID
-       "accountName": "account-081",
-       "sortCode": "123456",
-       "accountType": "Debit",
-       "accountNumber": "12345670",
-       "currency": "GBP",
-       "balance": 99.99 // can be 0
-     },
-     {
-       "id": "acc-003",
-       "accountName": "account-095",
-       "sortCode": "123456",
-       "accountType": "Debit",
-       "accountNumber": "12345671",
-       "currency": "GBP",
-       "balance": 100.09
-     }
-   ]
+   
+   {
+     "id": "acc-002", // set to desired unique ID
+     "accountName": "account-081",
+     "sortCode": "123456",
+     "accountType": "Debit",
+     "accountNumber": "12345670",
+     "currency": "GBP",
+     "balance": 99.99 // can be 0
+   }
    ```
    :::caution Specific account types
    Xero approves Bank Feeds applications only for "BANK" or "CREDITCARD" account types (in Xero's terminology). Therefore, it's important to use the correct `accountType` value when setting up source bank accounts, namely "Debit" for type "BANK" and "Credit" for type "CREDITCARD".
    :::
 
-4. The endpoint returns a `200` code and the list of created bank accounts.
+4. The endpoint returns a `200` code and the created bank account.
 
 ## Read next
 
