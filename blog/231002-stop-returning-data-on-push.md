@@ -10,60 +10,57 @@ On **January 10, 2024**, we will deprecate the `data` field that is currently re
 <!--truncate-->
 
 <details>
-
-  <summary>Push operation response before change</summary>
+  <summary>Push operation response before change</summary>  
   
-```json
+  ```json
   
-  {
-    "changes": [
+{
+  "changes": [
+    {
+      "type": "Unknown",
+      "recordRef": {
+        "id": "string",
+        "dataType": "string"
+      },
+      "attachmentId": "string"
+    }
+  ],
+  "data": "string",
+  "dataType": "string",
+  "companyId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "pushOperationKey": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "dataConnectionKey": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "requestedOnUtc": "2023-06-26T07:48:36.066Z",
+  "completedOnUtc": "2023-06-26T07:48:36.066Z",
+  "timeoutInMinutes": 0,
+  "status": "string",
+  "errorMessage": "string",
+  "validation": {
+    "errors": [
       {
-        "type": "Unknown",
-        "recordRef": {
-          "id": "string",
-          "dataType": "string"
-        },
-        "attachmentId": "string"
+        "itemId": "string",
+        "message": "string",
+        "validatorName": "string"
       }
     ],
-    "data": "string",
-    "dataType": "string",
-    "companyId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    "pushOperationKey": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    "dataConnectionKey": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    "requestedOnUtc": "2023-06-26T07:48:36.066Z",
-    "completedOnUtc": "2023-06-26T07:48:36.066Z",
-    "timeoutInMinutes": 0,
-    "status": "string",
-    "errorMessage": "string",
-    "validation": {
-      "errors": [
-        {
-          "itemId": "string",
-          "message": "string",
-          "validatorName": "string"
-        }
-      ],
-      "warnings": [
-        {
-          "itemId": "string",
-          "message": "string",
-          "validatorName": "string"
-        }
-      ]
-    },
-    "statusCode": 0
-  }
+    "warnings": [
+      {
+        "itemId": "string",
+        "message": "string",
+        "validatorName": "string"
+      }
+    ]
+  },
+  "statusCode": 0
+}
 
 ```
-
 </details>
 
 <details>
-  
-  <summary> Push operation response after change</summary>
-  
-```json  
+  <summary> Push operation response after change</summary>  
+
+  ```json
 
   {
     "changes": [
@@ -103,7 +100,7 @@ On **January 10, 2024**, we will deprecate the `data` field that is currently re
     },
     "statusCode": 0
   }
-```
+  ```
 
 </details>
 
