@@ -1,6 +1,6 @@
 ---
 title: "2024-01-10: Changes to how deleted data in accounting platforms is handled"
-date: "2020-01-01"
+date: "2023-10-03"
 tags: ["Deprecation", "Accounting integrations", "Delete" ]
 authors: dcoplowe
 ---
