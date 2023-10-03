@@ -12269,7 +12269,7 @@
             "example": "40e3e57c-2322-4898-966c-ca41adfd23fd",
             "description": "Identifier of supplier or customer."
           },
-          "contactType": {
+          "type": {
             "description": "The type of contact.",
             "type": "string",
             "example": "Supplier",
