@@ -13,47 +13,48 @@ On **January 10, 2024**, we will deprecate the `data` field that is currently re
   <summary>Push operation response before change</summary>  
   
 ```json  
-
-{
-  "changes": [
-    {
-      "type": "Unknown",
-      "recordRef": {
-        "id": "string",
-        "dataType": "string"
-      },
-      "attachmentId": "string"
-    }
-  ],
-  "data": "string",
-  "dataType": "string",
-  "companyId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "pushOperationKey": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "dataConnectionKey": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "requestedOnUtc": "2023-06-26T07:48:36.066Z",
-  "completedOnUtc": "2023-06-26T07:48:36.066Z",
-  "timeoutInMinutes": 0,
-  "status": "string",
-  "errorMessage": "string",
-  "validation": {
-    "errors": [
+  
+  {
+    "changes": [
       {
-        "itemId": "string",
-        "message": "string",
-        "validatorName": "string"
+        "type": "Unknown",
+        "recordRef": {
+          "id": "string",
+          "dataType": "string"
+        },
+        "attachmentId": "string"
       }
     ],
-    "warnings": [
-      {
-        "itemId": "string",
-        "message": "string",
-        "validatorName": "string"
-      }
-    ]
-  },
-  "statusCode": 0
-}
-```  
+    "data": "string",
+    "dataType": "string",
+    "companyId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "pushOperationKey": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "dataConnectionKey": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "requestedOnUtc": "2023-06-26T07:48:36.066Z",
+    "completedOnUtc": "2023-06-26T07:48:36.066Z",
+    "timeoutInMinutes": 0,
+    "status": "string",
+    "errorMessage": "string",
+    "validation": {
+      "errors": [
+        {
+          "itemId": "string",
+          "message": "string",
+          "validatorName": "string"
+        }
+      ],
+      "warnings": [
+        {
+          "itemId": "string",
+          "message": "string",
+          "validatorName": "string"
+        }
+      ]
+    },
+    "statusCode": 0
+  }
+
+``` 
 </details>
 
 <details>
@@ -61,44 +62,45 @@ On **January 10, 2024**, we will deprecate the `data` field that is currently re
   
 ```json  
 
-{
-  "changes": [
-    {
-      "type": "Unknown",
-      "recordRef": {
-        "id": "string",
-        "dataType": "string"
-      },
-      "attachmentId": "string"
-    }
-  ],
-  "dataType": "string",
-  "companyId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "pushOperationKey": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "dataConnectionKey": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "requestedOnUtc": "2023-06-26T07:48:36.066Z",
-  "completedOnUtc": "2023-06-26T07:48:36.066Z",
-  "timeoutInMinutes": 0,
-  "status": "string",
-  "errorMessage": "string",
-  "validation": {
-    "errors": [
+  {
+    "changes": [
       {
-        "itemId": "string",
-        "message": "string",
-        "validatorName": "string"
+        "type": "Unknown",
+        "recordRef": {
+          "id": "string",
+          "dataType": "string"
+        },
+        "attachmentId": "string"
       }
     ],
-    "warnings": [
-      {
-        "itemId": "string",
-        "message": "string",
-        "validatorName": "string"
-      }
-    ]
-  },
-  "statusCode": 0
-}
+    "dataType": "string",
+    "companyId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "pushOperationKey": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "dataConnectionKey": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "requestedOnUtc": "2023-06-26T07:48:36.066Z",
+    "completedOnUtc": "2023-06-26T07:48:36.066Z",
+    "timeoutInMinutes": 0,
+    "status": "string",
+    "errorMessage": "string",
+    "validation": {
+      "errors": [
+        {
+          "itemId": "string",
+          "message": "string",
+          "validatorName": "string"
+        }
+      ],
+      "warnings": [
+        {
+          "itemId": "string",
+          "message": "string",
+          "validatorName": "string"
+        }
+      ]
+    },
+    "statusCode": 0
+  }
+
 ```
 </details>
 
