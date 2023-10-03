@@ -148,7 +148,9 @@ sequenceDiagram
 
 ### Bank account
 
-Loan writeback process operates with two bank accounts: a borrower's business bank account, where the money lent is deposited, and a lender's bank account, which is a virtual bank account in the accounting platform that acts as a container for lender transactions. 
+Loan writeback process operates with two bank accounts: 
+- A borrower's business bank account where the money lent is deposited.
+- A lender's bank account, which is a virtual bank account in the accounting platform that acts as a container for lender transactions. 
 
 First, your customer needs to choose one of their existing bank accounts. This account will be used to depost the loan. Call our [List bank accounts](/lending-api#/operations/list-accounting-bank-accounts) endpoint to retrieve the customer's existing bank accounts. 
 
