@@ -10,9 +10,10 @@ On **January 10, 2024**, we will deprecate the `data` field that is currently re
 <!--truncate-->
 
 <details>
-  <summary>Push operation response before change</summary>  
+
+  <summary>Push operation response before change</summary>
   
-```json  
+```json
   
   {
     "changes": [
@@ -54,11 +55,13 @@ On **January 10, 2024**, we will deprecate the `data` field that is currently re
     "statusCode": 0
   }
 
-``` 
+```
+
 </details>
 
 <details>
-  <summary> Push operation response after change</summary>  
+  
+  <summary> Push operation response after change</summary>
   
 ```json  
 
@@ -100,8 +103,8 @@ On **January 10, 2024**, we will deprecate the `data` field that is currently re
     },
     "statusCode": 0
   }
-
 ```
+
 </details>
 
 ## Action required​
