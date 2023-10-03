@@ -1,15 +1,16 @@
 ---
-title: "2024-01-10: Deprecation of returned data object on push"
-date: "2023-10-02"
+title: "2024-01-10: Deprecation of `data` object returned on push"
+date: "2023-10-03"
 tags: ["Deprecation"]
 authors: dharries
 ---
 
-On **January 10, 2024**, we will deprecate the `data` field that is currently returned on all push operation responses. Pushed data will also no longer be stored, so a sync will be required to be able to pull any new or updated records you have pushed.
+On **January 10, 2024**, we will deprecate the `data` field that is currently returned on all push operation responses. Pushed data will also no longer be stored, so a sync will be required to be able to pull any new or updated records.
 
 <!--truncate-->
+
 <details>
-<summary> Before change</summary>  
+  <summary>Push operation response before change</summary>  
   
 ```json  
 
@@ -52,11 +53,11 @@ On **January 10, 2024**, we will deprecate the `data` field that is currently re
   },
   "statusCode": 0
 }
-```
+```  
 </details>
 
 <details>
-<summary> After change</summary>  
+  <summary> Push operation response after change</summary>  
   
 ```json  
 
