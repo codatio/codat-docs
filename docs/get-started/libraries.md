@@ -88,6 +88,8 @@ Codat offers official SDK client libraries for different programming languages, 
   </li>
 </ul>
 
+Looking for a language that's not here? [Request support for a new language](https://forms.gle/jEWjV1EDhiB5KEGP9).
+
 ## Community libraries
 
 Codat's awesome community has self-published a number of libraries themselves!
