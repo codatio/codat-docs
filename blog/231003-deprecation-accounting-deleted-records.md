@@ -1,26 +1,25 @@
 ---
 title: "2024-01-10: Changes to how deleted data in accounting platforms is handled"
-date: "2023-10-03"
+date: "2023-10-04"
 tags: ["Deprecation", "Accounting integrations", "Delete" ]
 authors: dcoplowe
 ---
 
-On **January 10, 2024**, we will be making changes to how data deleted by users in accounting platforms is handled by Codat.
+On **January 10, 2024**, we will change how we handle data deleted by users in accounting platforms.
 
 <!--truncate-->
 
-Currently, if data is deleted by a user in the SMB's accounting platform between two successive data pulls, Codat sets the `metaData.isDeleted` property to `True`. 
-This ensures there is consistency in records returned between successive data pulls, whilst also clearly identifying records deleted by a user.
+Currently, if data is deleted by a user in the SMB's accounting platform between two successive data pulls, Codat sets the `metaData.isDeleted` property to `true`. This ensures there is consistency in records returned between successive data pulls and clearly identifies records deleted by a user.
 
-For some data types, Codat also updates the `status` property of the deleted record. For example, invoices deleted between successive data pulls have the `status` property set to `Void` once pulled. 
+For some data types, Codat also updates the `status` property of the deleted record. For example, invoices deleted between successive data pulls have the `status` property set to `void` once pulled. 
 
-From January 10, 2024, we will no longer update the `status` property of deleted records therefore preserving the last known `status` before the record was deleted by the user.
+From January 10, 2024, we will no longer update the `status` property of deleted records. Instead, we will preserve the last known `status` before the record was deleted by the user.
 
-See [Data types impacted](#data-types-impacted) for full details of relevant data types and associated statuses.
+See [Impacted data types](#impacted-data-types) for full details of relevant data types and associated statuses we will no longer update.
 
 ## Action required
 
-Ensure that any workflows handling deleted records make use of the `metaData.isDeleted` property, rather than relying on the `status` property.
+Ensure that any workflows handling deleted records use the `metaData.isDeleted` property instead of the `status` property.
 
 ## Expected impact if no action is taken
 
