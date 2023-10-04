@@ -44525,6 +44525,9 @@
               "hasChildren": {
                 "type": "boolean",
                 "description": "Boolean value indicating whether this category has SubCategories."
+              },
+              "metadata": {
+                "$ref": "#/components/schemas/Metadata"
               }
             }
           },
@@ -44633,6 +44636,9 @@
                 "items": {
                   "$ref": "#/components/schemas/TrackingCategoryTree"
                 }
+              },
+              "metadata": {
+                "$ref": "#/components/schemas/Metadata"
               }
             }
           },

@@ -15042,6 +15042,9 @@
               "hasChildren": {
                 "type": "boolean",
                 "description": "Boolean value indicating whether this category has SubCategories."
+              },
+              "metadata": {
+                "$ref": "#/components/schemas/Account/allOf/0/properties/metadata"
               }
             }
           },
@@ -15150,6 +15153,9 @@
                 "items": {
                   "$ref": "#/components/schemas/TrackingCategoryTree"
                 }
+              },
+              "metadata": {
+                "$ref": "#/components/schemas/Account/allOf/0/properties/metadata"
               }
             }
           },
