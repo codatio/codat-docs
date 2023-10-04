@@ -13470,7 +13470,15 @@
             ],
             "example": "Complete"
           },
+          "errorMessage": {
+            "type": "string",
+            "nullable": true,
+            "description": "A message about a transient or persistent error."
+          },
           "requested": {
+            "$ref": "#/components/schemas/Company/properties/created"
+          },
+          "completed": {
             "$ref": "#/components/schemas/Company/properties/created"
           },
           "progress": {
