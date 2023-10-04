@@ -27,7 +27,7 @@ Any workflows relying on the data type's `status` property to identify and handl
 
 --- 
 
-### Data types impacted
+### Impacted data types
 
 | Data type | Status (representing deleted records) |
 |-----------|---------------------------------------|
