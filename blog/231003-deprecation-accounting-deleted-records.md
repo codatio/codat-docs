@@ -36,12 +36,13 @@ Any workflows relying on the data type's `status` property to identify and handl
 | Bill credit notes     | Void |
 | Invoices     | Void |
 | Credit notes     | Void |
-| Customers     | Void |
-| Item     | Void |
-| Journals     | Void |
-| Purchase order     | Void |
-| Sales order     | Void |
-| Tax rates     | Void |
-| Tracking categories     | Void |
-| Tracking category trees     | Void |
+| Customers     | Archived |
+| Suppliers | Archived |
+| Items     | Archived |
+| Journals     | Archived |
+| Purchase orders     | Void |
+| Sales orders     | Void |
+| Tax rates     | Archived |
+| Tracking categories     | Archived |
+| Tracking category trees     | Archived |
 
