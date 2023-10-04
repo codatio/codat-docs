@@ -12270,10 +12270,12 @@
             "description": "Identifier of supplier or customer."
           },
           "type": {
-            "description": "The type of contact.",
             "type": "string",
+            "description": "The type of contact.",
             "example": "Supplier",
+            "default": "Supplier",
             "enum": [
+              "Supplier",
               "Supplier"
             ]
           }
