@@ -2051,177 +2051,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "Push option",
-                  "x-internal": true,
-                  "required": [
-                    "displayName",
-                    "required",
-                    "type"
-                  ],
-                  "type": "object",
-                  "properties": {
-                    "type": {
-                      "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1options~1chartOfAccounts/get/responses/200/content/application~1json/schema/definitions/pushOptionType"
-                    },
-                    "displayName": {
-                      "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1options~1chartOfAccounts/get/responses/200/content/application~1json/schema/definitions/pushOptionProperty/properties/displayName"
-                    },
-                    "description": {
-                      "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1options~1chartOfAccounts/get/responses/200/content/application~1json/schema/definitions/pushOptionProperty/properties/description"
-                    },
-                    "required": {
-                      "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1options~1chartOfAccounts/get/responses/200/content/application~1json/schema/definitions/pushOptionProperty/properties/required"
-                    },
-                    "properties": {
-                      "type": "object",
-                      "additionalProperties": {
-                        "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1options~1chartOfAccounts/get/responses/200/content/application~1json/schema/definitions/pushOptionProperty"
-                      },
-                      "nullable": true
-                    },
-                    "options": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1options~1chartOfAccounts/get/responses/200/content/application~1json/schema/definitions/pushOptionChoice"
-                      },
-                      "nullable": true
-                    },
-                    "validation": {
-                      "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1options~1chartOfAccounts/get/responses/200/content/application~1json/schema/definitions/pushValidationInfo",
-                      "nullable": true
-                    }
-                  },
-                  "definitions": {
-                    "pushOptionProperty": {
-                      "title": "Push Option Property",
-                      "required": [
-                        "description",
-                        "displayName",
-                        "required",
-                        "type"
-                      ],
-                      "type": "object",
-                      "properties": {
-                        "type": {
-                          "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1options~1chartOfAccounts/get/responses/200/content/application~1json/schema/definitions/pushOptionType"
-                        },
-                        "displayName": {
-                          "minLength": 1,
-                          "type": "string",
-                          "description": "The property's display name."
-                        },
-                        "description": {
-                          "type": "string",
-                          "description": "A description of the property."
-                        },
-                        "required": {
-                          "type": "boolean",
-                          "description": "The property is required if `True`."
-                        },
-                        "properties": {
-                          "type": "object",
-                          "additionalProperties": {
-                            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1options~1chartOfAccounts/get/responses/200/content/application~1json/schema/definitions/pushOptionProperty"
-                          },
-                          "nullable": true
-                        },
-                        "options": {
-                          "type": "array",
-                          "items": {
-                            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1options~1chartOfAccounts/get/responses/200/content/application~1json/schema/definitions/pushOptionChoice"
-                          },
-                          "nullable": true
-                        },
-                        "validation": {
-                          "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1options~1chartOfAccounts/get/responses/200/content/application~1json/schema/definitions/pushValidationInfo"
-                        }
-                      }
-                    },
-                    "pushValidationInfo": {
-                      "title": "Push validation info",
-                      "type": "object",
-                      "properties": {
-                        "warnings": {
-                          "type": "array",
-                          "items": {
-                            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1options~1chartOfAccounts/get/responses/200/content/application~1json/schema/definitions/pushFieldValidation"
-                          },
-                          "nullable": true
-                        },
-                        "information": {
-                          "type": "array",
-                          "items": {
-                            "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1options~1chartOfAccounts/get/responses/200/content/application~1json/schema/definitions/pushFieldValidation"
-                          },
-                          "nullable": true
-                        }
-                      },
-                      "additionalProperties": false
-                    },
-                    "pushFieldValidation": {
-                      "title": "Push field validation",
-                      "required": [
-                        "details"
-                      ],
-                      "type": "object",
-                      "properties": {
-                        "field": {
-                          "type": "string",
-                          "description": "Field name that resulted in the validation issue."
-                        },
-                        "details": {
-                          "minLength": 1,
-                          "type": "string",
-                          "description": "Details on the validation issue."
-                        },
-                        "ref": {
-                          "type": "string",
-                          "format": "uri",
-                          "nullable": true,
-                          "description": "Unique reference identifier for the validation issue."
-                        }
-                      },
-                      "additionalProperties": false
-                    },
-                    "pushOptionType": {
-                      "title": "Option Type",
-                      "description": "The option type.",
-                      "enum": [
-                        "Array",
-                        "Object",
-                        "String",
-                        "Number",
-                        "Boolean",
-                        "DateTime",
-                        "File",
-                        "MultiPart"
-                      ],
-                      "type": "string"
-                    },
-                    "pushOptionChoice": {
-                      "title": "Push Option Choice",
-                      "type": "object",
-                      "properties": {
-                        "value": {
-                          "type": "string",
-                          "minLength": 1,
-                          "description": "Allowed value for field."
-                        },
-                        "type": {
-                          "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1options~1chartOfAccounts/get/responses/200/content/application~1json/schema/definitions/pushOptionType"
-                        },
-                        "displayName": {
-                          "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1options~1chartOfAccounts/get/responses/200/content/application~1json/schema/definitions/pushOptionProperty/properties/displayName"
-                        },
-                        "description": {
-                          "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1options~1chartOfAccounts/get/responses/200/content/application~1json/schema/definitions/pushOptionProperty/properties/description"
-                        },
-                        "required": {
-                          "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1options~1chartOfAccounts/get/responses/200/content/application~1json/schema/definitions/pushOptionProperty/properties/required"
-                        }
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/PushOption"
                 },
                 "examples": {
                   "Exact (Netherlands)": {
@@ -13738,6 +13568,179 @@
             "$ref": "#/components/schemas/PagingInfo"
           }
         ]
+      },
+      "PushOption": {
+        "title": "Push option",
+        "x-internal": true,
+        "required": [
+          "displayName",
+          "required",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/PushOption/definitions/pushOptionType"
+          },
+          "displayName": {
+            "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/displayName"
+          },
+          "description": {
+            "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/description"
+          },
+          "required": {
+            "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/required"
+          },
+          "properties": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty"
+            },
+            "nullable": true
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PushOption/definitions/pushOptionChoice"
+            },
+            "nullable": true
+          },
+          "validation": {
+            "$ref": "#/components/schemas/PushOption/definitions/pushValidationInfo",
+            "nullable": true
+          }
+        },
+        "definitions": {
+          "pushOptionProperty": {
+            "title": "Push Option Property",
+            "required": [
+              "description",
+              "displayName",
+              "required",
+              "type"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/PushOption/definitions/pushOptionType"
+              },
+              "displayName": {
+                "minLength": 1,
+                "type": "string",
+                "description": "The property's display name."
+              },
+              "description": {
+                "type": "string",
+                "description": "A description of the property."
+              },
+              "required": {
+                "type": "boolean",
+                "description": "The property is required if `True`."
+              },
+              "properties": {
+                "type": "object",
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty"
+                },
+                "nullable": true
+              },
+              "options": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PushOption/definitions/pushOptionChoice"
+                },
+                "nullable": true
+              },
+              "validation": {
+                "$ref": "#/components/schemas/PushOption/definitions/pushValidationInfo"
+              }
+            }
+          },
+          "pushValidationInfo": {
+            "title": "Push validation info",
+            "type": "object",
+            "properties": {
+              "warnings": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PushOption/definitions/pushFieldValidation"
+                },
+                "nullable": true
+              },
+              "information": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PushOption/definitions/pushFieldValidation"
+                },
+                "nullable": true
+              }
+            },
+            "additionalProperties": false
+          },
+          "pushFieldValidation": {
+            "title": "Push field validation",
+            "required": [
+              "details"
+            ],
+            "type": "object",
+            "properties": {
+              "field": {
+                "type": "string",
+                "description": "Field name that resulted in the validation issue."
+              },
+              "details": {
+                "minLength": 1,
+                "type": "string",
+                "description": "Details on the validation issue."
+              },
+              "ref": {
+                "type": "string",
+                "format": "uri",
+                "nullable": true,
+                "description": "Unique reference identifier for the validation issue."
+              }
+            },
+            "additionalProperties": false
+          },
+          "pushOptionType": {
+            "title": "Option Type",
+            "description": "The option type.",
+            "enum": [
+              "Array",
+              "Object",
+              "String",
+              "Number",
+              "Boolean",
+              "DateTime",
+              "File",
+              "MultiPart"
+            ],
+            "type": "string"
+          },
+          "pushOptionChoice": {
+            "title": "Push Option Choice",
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Allowed value for field."
+              },
+              "type": {
+                "$ref": "#/components/schemas/PushOption/definitions/pushOptionType"
+              },
+              "displayName": {
+                "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/displayName"
+              },
+              "description": {
+                "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/description"
+              },
+              "required": {
+                "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/required"
+              }
+            }
+          }
+        }
       },
       "Account": {
         "title": "Account",
