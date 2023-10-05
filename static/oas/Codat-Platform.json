@@ -3280,7 +3280,15 @@
             ],
             "example": "Complete"
           },
+          "errorMessage": {
+            "type": "string",
+            "nullable": true,
+            "description": "A message about a transient or persistent error."
+          },
           "requested": {
+            "$ref": "#/components/schemas/DateTime"
+          },
+          "completed": {
             "$ref": "#/components/schemas/DateTime"
           },
           "progress": {
