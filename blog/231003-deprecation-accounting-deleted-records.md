@@ -14,9 +14,9 @@ When data is deleted by a user in the SMB's accounting platform between two succ
 **Today, for some data types, Codat also updates the `status` property of the deleted record. **
 
 For example:
-- Codat retrieves a invoice from Xero with a status of `Submitted`
-- The invoice is then manually deleted from within Xero
-- Codat retrieves data from Xero a second time, and reconciles the fact that the invoice has been deleted by changing the status of the invoice within Codat to `void` 
+- Codat retrieves a invoice from Xero with a status of `Submitted`.
+- The invoice is then manually deleted from within Xero.
+- Codat retrieves data from Xero a second time, and reconciles the fact that the invoice has been deleted by changing the status of the invoice within Codat to `void`.
 
 ## New behavior
 
