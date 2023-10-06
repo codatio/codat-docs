@@ -9,11 +9,18 @@ On **January 10, 2024**, we will change how we handle data deleted by users in a
 
 <!--truncate-->
 
-Currently, if data is deleted by a user in the SMB's accounting platform between two successive data pulls, Codat sets the `metaData.isDeleted` property to `true`. This ensures there is consistency in records returned between successive data pulls and clearly identifies records deleted by a user.
+When data is deleted by a user in the SMB's accounting platform between two successive data pulls, Codat sets the `metaData.isDeleted` property to `true`. This ensures there is consistency in records returned between successive data pulls and clearly identifies records deleted by a user.
 
-For some data types, Codat also updates the `status` property of the deleted record. For example, invoices deleted between successive data pulls have the `status` property set to `void` once pulled. 
+**Today, for some data types, Codat also updates the `status` property of the deleted record. **
 
-From January 10, 2024, we will no longer update the `status` property of deleted records. Instead, we will preserve the last known `status` before the record was deleted by the user.
+For example:
+- Codat retrieves a invoice from Xero with a status of `Submitted`.
+- The invoice is then manually deleted from within Xero.
+- Codat retrieves data from Xero a second time, and reconciles the fact that the invoice has been deleted by changing the status of the invoice within Codat to `void`.
+
+## New behavior
+
+From January 10, 2024, **we will no longer update the `status` property of deleted records** and change it to `void`. Instead, we will preserve the last known `status` before the record was deleted by the user.
 
 See [Impacted data types](#impacted-data-types) for full details of relevant data types and associated statuses we will no longer update.
 
