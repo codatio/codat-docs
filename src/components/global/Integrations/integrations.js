@@ -68,7 +68,7 @@ export const bankfeedsIntegrations = [
     "img": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png",
   },
   {
-    "name": "FreeAgent",
+    "name": "FreeAgent bank feeds",
     "to": "/integrations/accounting/freeagent/accounting-freeagent",
     "sourceType": "bankfeeds",
     "img": "https://static.codat.io/public/officialLogos/Square/3DA57C23-A4FA-4BC8-8C02-A7A686ED8B36.png",
@@ -83,7 +83,7 @@ export const bankfeedsExternalMappingIntegrations = [
     "img": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png",
   },
   {
-    "name": "FreeAgent",
+    "name": "FreeAgent bank feeds",
     "to": "/integrations/accounting/freeagent/accounting-freeagent",
     "type": "bankfeeds",
     "img": "https://static.codat.io/public/officialLogos/Square/3DA57C23-A4FA-4BC8-8C02-A7A686ED8B36.png",

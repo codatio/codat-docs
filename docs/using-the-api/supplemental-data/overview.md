@@ -8,17 +8,22 @@ description: "Customize data types with additional properties not included in Co
 
 Codat's supported data types include standardized properties. Some data sources (e.g. Xero) may contain properties not common across other sources, and so are not covered by our out-of-the-box data model. You can use supplemental data to extend our data types to fetch, create, or update such properties alongside our standard ones. 
 
-
 Consider our Xero integration. Xero's [Contact](https://developer.xero.com/documentation/api/accounting/contacts) schema maps to Codat's `supplier` data type. Some of its properties (like `TaxNumber`) *are* mapped, whereas others (like `BankAccountDetails`) are not. If you configure supplemental data for this Xero property, `suppliers` data from Xero could additionally include `BankAccountDetails`.
 
 
-## Common uses of supplemental data
+## Common uses
 
 Integration-specific properties not included in our standard data models may still provide you with additional benefits, enriching the data relevant for your use case. For example, you can enhance our `invoices` data type with an invoice `URL`, a Xero-specific field that directs the user to a source document for an invoice hosted outside of Xero. For QBO, the `invoices` data type can be supplemented with `SalesTermRef`, providing you with sales terms associated with an invoice.
 
 We have compiled a list of properties commonly used by our customers to enrich our standard data types. You can [review these in detail](/using-the-api/supplemental-data/usecases) to see how you can use supplemental data to your advantage.
 
-## Support for supplemental data
+:::tip Supplemental or custom data?
+
+Are you looking to fetch additional _data types_ using endpoints that are not included in Codat's standardized data model? You might need to use [custom data](/using-the-api/custom-data) instead.
+
+:::
+
+## Supported integrations
 
 We are rapidly expanding coverage across integrations and data types according to client demand. We currently cover the following integrations and data types:
  
