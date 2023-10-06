@@ -1,0 +1,46 @@
+// reset
+.diff-checker {
+  table,
+  thead,
+  tbody,
+  tfoot,
+  tr,
+  th,
+  td {
+    //display: block;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-collapse: inherit;
+    border-spacing: 0;
+    border-color: inherit;
+    vertical-align: inherit;
+    text-align: left;
+    font-weight: inherit;
+    -webkit-border-horizontal-spacing: 0;
+    -webkit-border-vertical-spacing: 0;
+  }
+}
+
+.diff-checker {
+  pre {
+    padding: 1px;
+    font-size: 0.75em;
+
+    &[class*="line-number"] {
+      text-align: center;
+    }
+  }
+
+  tr {
+    &:hover {
+      background-color: var(--color-interface-5);
+    }
+  }
+
+  table {
+    overflow: hidden;
+  }
+}
