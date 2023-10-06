@@ -5,16 +5,17 @@ tags: ["Deprecation"]
 authors: dharries
 ---
 
+import Diff from "@components/global/Diff"
+
 On **January 10, 2024**, we will deprecate the `data` field that is currently returned in the response when creating or updating entities. Pushed data will also no longer be stored, so a refresh of data will be required for Codat to reflect any new or updated records.
 
 <!--truncate-->
 
-<details>
-  <summary>Push operation response before change</summary>  
+You can see a before and after examples of responses below:
 
-```json
-  
-{
+<Diff
+  showDiffOnly={false}
+  oldCode={`{
   "changes": [
     {
       "type": "Unknown",
@@ -52,19 +53,8 @@ On **January 10, 2024**, we will deprecate the `data` field that is currently re
     ]
   },
   "statusCode": 0
-}
-
-```
-</details>
-
-Compare this to the response body after the deprecation takes place.
-
-<details>
-  <summary> Push operation response after change</summary>  
-
-```json
-
-{
+}`}
+  newCode={`{
   "changes": [
     {
       "type": "Unknown",
@@ -101,10 +91,8 @@ Compare this to the response body after the deprecation takes place.
     ]
   },
   "statusCode": 0
-}
-```
-
-</details>
+}`}
+/>
 
 ## Action required​
 
