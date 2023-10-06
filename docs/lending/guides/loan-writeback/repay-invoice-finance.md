@@ -19,7 +19,7 @@ Given the above, I think we should split this guide section into:
 ├── guides
 |     ├── loan writeback -- this page contains high-level stuff: what, why, etc
 |     |         ├── Configure
-|     |         ├── Deposit -- CTA to either repay loan or achinvoice payment
+|     |         ├── Deposit -- CTA to either repay loan or invoice payment
 |     |         ├── Repay: general lending
 |     |         ├── Repay: invoice finance
 ```
