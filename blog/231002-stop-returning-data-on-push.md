@@ -1,11 +1,11 @@
 ---
-title: "2024-01-10: Deprecation of `data` object returned on push"
+title: "2024-01-10: Deprecation of `data` object returned when creating or updating records"
 date: "2023-10-03"
 tags: ["Deprecation"]
 authors: dharries
 ---
 
-On **January 10, 2024**, we will deprecate the `data` field that is currently returned on all push operation responses. Pushed data will also no longer be stored, so a sync will be required to be able to pull any new or updated records.
+On **January 10, 2024**, we will deprecate the `data` field that is currently returned in the response when creating or updating entities. Pushed data will also no longer be stored, so a refresh of data will be required for Codat to reflect any new or updated records.
 
 <!--truncate-->
 

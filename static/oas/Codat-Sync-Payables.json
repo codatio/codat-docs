@@ -41682,7 +41682,15 @@
             ],
             "example": "Complete"
           },
+          "errorMessage": {
+            "type": "string",
+            "nullable": true,
+            "description": "A message about a transient or persistent error."
+          },
           "requested": {
+            "$ref": "#/components/schemas/Company/properties/created"
+          },
+          "completed": {
             "$ref": "#/components/schemas/Company/properties/created"
           },
           "progress": {
@@ -44525,6 +44533,9 @@
               "hasChildren": {
                 "type": "boolean",
                 "description": "Boolean value indicating whether this category has SubCategories."
+              },
+              "metadata": {
+                "$ref": "#/components/schemas/Metadata"
               }
             }
           },
@@ -44633,6 +44644,9 @@
                 "items": {
                   "$ref": "#/components/schemas/TrackingCategoryTree"
                 }
+              },
+              "metadata": {
+                "$ref": "#/components/schemas/Metadata"
               }
             }
           },
