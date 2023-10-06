@@ -26,7 +26,7 @@ You can see a before and after examples of responses below:
       "attachmentId": "string"
     }
   ],
-  "data": "string",
+  "data": { data type object being created or updated },
   "dataType": "string",
   "companyId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
   "pushOperationKey": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
