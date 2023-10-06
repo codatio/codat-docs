@@ -1,6 +1,6 @@
 ---
 title: "Authorize with Embedded Link"
-sidebar_label: Overview
+sidebar_label: Embedded Link
 description: "Embed our auth flow in your application with our low-code component"
 image: "/img/auth-flow/embedded-link-selection.png"
 ---
@@ -11,16 +11,21 @@ import TabItem from "@theme/TabItem";
 ![](/img/auth-flow/embedded-link-selection.png)
 
 <details>
-<summary><b>What's new in the latest release?</b></summary>
+<summary><b>What's new</b></summary>
 
-The June 2023 release of Embedded Link brings the following enhancements:
+October 2023:
+- **Support for non-modal views** - You can now [embed the component in non-modal views](/auth-flow/authorize-embedded-link#non-modal-styling) with our new `options` prop
+- **Reduced latency after auth** - We now poll every second to check whether the user has authed, meaning connection is confirmed faster.
+- **Bugs**:
+  + Fixed an issue where 'Landing page' settings were not reflected.
+
+June 2023:
 - **Support for non-React JavaScript apps** - Without a dependency on React, you can use Embedded Link with all JavaScript frameworks or even vanilla JavaScript.
 - **Increased display control** - You now need to specify the dimensions of the Embedded Link component, which will expand to fit the given container size. Previously the component used a fixed width and height.
 - **Navigation improvements** - Source types (accounting, commerce, banking, and file upload) can now be connected in any order you choose.
 - **Performance improvements** - Link loads more quickly and can be loaded only when required.
-- **Connection status** - The connection status (success or error) is now shown during the Embedded Link flow. The SMB user can skip errors without interrupting the rest of the Link flow, for example:
+- **Connection status** - The connection status (success or error) is now shown during the Embedded Link flow. The SMB user can skip errors without interrupting the rest of the Link flow.
 
-![link-sdk_connection-status-error](/img/auth-flow/link-sdk_connection-status-error.png "Embedded Link SDK: Connection error dialog shown for the Codat Banking Sandbox integration.")
 </details>
 
 ## Embedded Link overview
@@ -56,7 +61,7 @@ We've provided a [repo with examples on GitHub](https://github.com/codatio/sdk-l
 ## Prerequisites
 
 - **Customized auth flow settings** - If you haven't already done so, customize Link on the <a href="https://app.codat.io/settings/link-settings" target="_blank">**Link settings**</a> page in the Codat Portal. For example, add UI copy, set file upload options, choose to make steps optional, or disable steps. The settings apply to both Embedded Link and Hosted Link.
-- **Your application** - You'll need a JavaScript application to render the component in (e.g. React, Angular). It should take care of creating and retrieving the `companyId` of any company you want to authorize.
+- **Your application** - You'll need a JavaScript application to render the component in (e.g. React, Angular). It should take care of creating companies programmatically and retrieving the `companyId` of any company you want to authorize.
 
 ## Get started
 
@@ -81,11 +86,11 @@ For an example of the component in action, [see our demo app](https://github.com
     const [modalOpen, setModalOpen] = useState(false);
 
     const onConnection = (connection: ConnectionCallbackArgs) => 
-    alert(`On connection callback - ${connection.connectionId}`);
+      alert(`On connection callback - ${connection.connectionId}`);
     const onClose = () => setModalOpen(false);
     const onFinish = () => alert("On finish callback");
     const onError = (error: ErrorCallbackArgs) => 
-    alert(`On error callback - ${error.message}`);
+      alert(`On error callback - ${error.message}`);
 
     return (
       <div>
@@ -111,10 +116,10 @@ For an example of the component in action, [see our demo app](https://github.com
   };
   ```
    
-4. **Conditional steps**
-    - **Extend your type declarations with our types (if using TS).** Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
-    - **Update CSP headers.** If you're using content security policy (CSP) headers, you must edit the headers:
-       * Add `*.codat.io` to all of `(script-src, style-src, font-src, connect-src, img-src)`, or to `default-src`.
+3. **Conditional steps**
+    - **If you're using TypeScript** extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
+    - **If you're using content security policy (CSP) headers** you'll need to edit these headers:
+       * Allow-list Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
        * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
  
 </TabItem>
@@ -150,11 +155,11 @@ In the example below, you'll see that we make use of webpack's [magic comments](
     const [modalOpen, setModalOpen] = useState(false);
 
     const onConnection = (connection: ConnectionCallbackArgs) => 
-    alert(`On connection callback - ${connection.connectionId}`);
+      alert(`On connection callback - ${connection.connectionId}`);
     const onClose = () => setModalOpen(false);
     const onFinish = () => alert("On finish callback");
     const onError = (error: ErrorCallbackArgs) => 
-    alert(`On error callback - ${error.message}`);
+      alert(`On error callback - ${error.message}`);
   
     return (
       <main className={styles.main}>
@@ -176,9 +181,9 @@ In the example below, you'll see that we make use of webpack's [magic comments](
   ```
    
 1. **Conditional steps**
-    - **Extend your type declarations with our types (if using TS).** Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
-    - **Update CSP headers.** If you're using content security policy (CSP) headers, you must edit the headers:
-       * Add `*.codat.io` to all of `(script-src, style-src, font-src, connect-src, img-src)`, or to `default-src`.
+    - **If you're using TypeScript** extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
+    - **If you're using content security policy (CSP) headers** you'll need to edit these headers:
+       * Allow-list Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
        * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
  
 </TabItem>
@@ -237,10 +242,10 @@ For an example of the component in action, [see our demo app](https://github.com
   };
   ```
 4. **Conditional steps**  
-    - **Extend your type declarations with our types (if using TS).** Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.    
-   - **Update CSP headers.** If you're using content security policy (CSP) headers, you must edit the headers:
-      * Add `*.codat.io` to all of `(script-src, style-src, font-src, connect-src, img-src)`, or to `default-src`.
-      * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
+  - **If you're using TypeScript** extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.    
+ - **If you're using content security policy (CSP) headers** you'll need to edit these headers:
+    * Allow-list Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
+    * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
 
 </TabItem>
 
@@ -308,9 +313,9 @@ In the example below, you'll see that we make use of webpack's [magic comments](
 
 ```
 4. **Conditional steps**
-   - **Extend your type declarations with our types (if using TS).** Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
-   -  **Update CSP headers.** If you're using content security policy (CSP) headers, you must edit the headers:
-      * Add `*.codat.io` to all of `(script-src, style-src, font-src, connect-src, img-src)`, or to `default-src`.
+   - **If you're using TypeScript** extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
+   -  **If you're using content security policy (CSP) headers** you'll need to edit these headers:
+      * Allow-list Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
       * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
  
 </TabItem>
@@ -358,9 +363,9 @@ For an example of the component in action, [see our demo app](https://github.com
   ```
    
 4. **Conditional steps**
-    - **Extend your type declarations with our types (if using TS).** Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
-    - **Update CSP headers.** If you're using content security policy (CSP) headers, you must edit the headers:
-       * Add `*.codat.io` to all of `(script-src, style-src, font-src, connect-src, img-src)`, or to `default-src`.
+    - **If you're using TypeScript** extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
+    - **If you're using content security policy (CSP) headers** you'll need to edit these headers:
+       * Allow-list Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
        * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
  
 </TabItem>
@@ -410,16 +415,38 @@ For an example of the component in action, [see our demo app](https://github.com
   ```
    
 4. **Conditional steps**
-    - **Extend your type declarations with our types (if using TS).** Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
-    - **Update CSP headers.** If you're using content security policy (CSP) headers, you must edit the headers:
-       * Add `*.codat.io` to all of `(script-src, style-src, font-src, connect-src, img-src)`, or to `default-src`.
+    - **If you're using TypeScript** extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
+    - **If you're using content security policy (CSP) headers** you'll need to edit these headers:
+       * Allow-list Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
        * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
  
 </TabItem>
 
 </Tabs>
 
+## Options
 
-## Getting help
+Most auth flow config is currently managed within the Codat Portal. If you haven't already done so, customize Link on the <a href="https://app.codat.io/settings/link-settings" target="_blank">**Link settings**</a> page in the Codat Portal. For example, add UI copy, set file upload options, choose to make steps optional, or disable steps. The settings apply to both Embedded Link and Hosted Link.
 
-To report any issues with this library, you can [get in touch](mailto:support@codat.io) with support.
+We have begun to add programmatic control via the new `options` component prop.
+
+### Non-modal styling
+
+As default, the component is designed to be presented in a modal. However, you can override this with a new `nonModal` options setting.
+
+This visually:
+- Hides the close icon
+- Removes the modal-styled border and padding
+
+```
+<CodatLink
+  companyId={companyId}
+  onConnection={onConnection}
+  onError={onError}
+  onClose={onClose}
+  onFinish={onFinish}
+  options={{nonModal: true}}
+/>
+```
+
+You can see an [example on GitHub](https://github.com/codatio/sdk-link/tree/main/examples/non-modal).
