@@ -20,9 +20,7 @@ We have compiled a list of properties commonly used by our customers to enrich o
 
 ## Support for supplemental data
 
-We are rapidly expanding coverage across integrations and data types according to client demand. You can help us prioritize by leaving feedback on our [public roadmap](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/46-accounting-api/submit-idea).
-
-We currently cover the following integrations and data types:
+We are rapidly expanding coverage across integrations and data types according to client demand. We currently cover the following integrations and data types:
  
 <iframe
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vToBP6lQMT_MrB8L5e_61w2LrmpoJPAVhxCVqCuoSpWgb6ga2hUXZHlLSdCr9jY_He1b-uYaDAnH6DV/pubhtml?widget=true&amp;headers=false"

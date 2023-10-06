@@ -1,3 +1,12 @@
+export const integrationsFilterCustomData = [
+	"BigCommerce",
+  "FreeAgent",
+  "MYOB",
+  "QuickBooks Online",
+  "Sage Intacct",
+  "Xero",
+]
+
 export const integrationsFilterPayroll = [
 	"Oracle NetSuite",
   "QuickBooks Online",
