@@ -65,7 +65,7 @@
     "rehype-katex": "^6.0.3",
     "remark-html": "^15.0.1",
     "remark-math": "^3.0.1",
-    "remark-parse": "^10.0.2",
+    "remark-parse": "^11.0.0",
     "sass": "^1.68.0",
     "semver": "^7.5.4",
     "url": "^0.11.0"
