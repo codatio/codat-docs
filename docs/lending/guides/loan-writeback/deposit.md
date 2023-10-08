@@ -4,23 +4,193 @@ description: "Deposit funds into your SMB's accounting platform."
 sidebar_label: "Deposit"
 ---
 
-Once you receive the configuration information, you are ready to deposit funds into the borrower's bank account. This is also known as *loan drawdown*, and it is a two-step process:
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-1. [Create a bank transaction](/lending/guides/general-loan-writeback#create-bank-transaction) depositing the amount into the lender's bank account to make the funds available for drawdown. 
+Once you receive the configuration information, you are ready to deposit funds into the borrower's bank account. In general lending, this is also known as *loan drawdown*, and an advance in invoice finance.
+To do this is a two-step process:
 
-2. [Create a transfer](/lending/guides/general-loan-writeback#create-transfer) from the lender's bank account to the borrower's bank account. 
+1. [Create a transfer](/lending/guides/deposit#create-transfer) from the lender's bank account to the borrower's bank account. 
+
+2. [Create a bank transaction](/lending/guides/c#create-bank-transaction) depositing the amount into the lender's bank account to make the funds available for drawdown. 
+
 
 ```mermaid
     sequenceDiagram
         participant backend as Your application 
         participant codat as Codat
 
-        backend ->> codat: Create bank transaction (deposit to lender's account)
-        codat -->> backend: bank transaction
-        
         backend ->> codat: Create transfer (loan drawdown, lender -> bank account)
         codat -->> backend:  transfer
+
+        backend ->> codat: Create bank transaction (deposit to lender's account)
+        codat -->> backend: bank transaction
 ```
+
+This part of your application must have access to the following configuration properties
+
+- Lender's [`lendersBankAccount.id`](/lending-api#/AccountingBankAccount)
+- SMB's [`borrowersBankAccount.id`](/lending-api#/AccountingBankAccount) and `currency`
+
+and you must provide 
+
+- `depositDate` - the date the funding was deposited into the borrowers bank account
+- `depositAmount` - the funding amount you provided the SMB. For selective invoice finance this is the advance
+
+### Create transfer
+
+Following Codat's async record creation process, use the [Get create transfer model](/lending-api#/operations/get-create-transfers-model) endpoint to determine the transfer request parameters. 
+
+Next, call the [Create transfer](/lending-api#/operations/create-transfer) endpoint to transfer the money from the lender's bank account to the borrower's bank account. Note that you are performing a transfer *from* the lender's account Id *to* the borrower's account Id.
+
+<Tabs>
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+codatLending.loanWriteback.transfers.create({
+    accountingTransfer: {
+        date: depositDate,
+        from: {
+            accountRef: {
+                id: lendersBankAccount.id,
+            },
+            amount: depositAmount,
+            currency: borrowersBankAccount.currency,
+        },
+        to: {
+            accountRef: {
+                id: borrowersBankAccount.id,
+            },
+            amount: depositAmount,
+            currency: borrowersBankAccount.currency,
+        },
+    },
+    companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
+    connectionId: "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+    }).then((res: CreateTransferResponse) => {
+    if (res.statusCode == 200) {
+        // handle response
+    }
+});
+```
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+transfers_create_request = operations.CreateTransferRequest(
+    accounting_transfer=shared.AccountingTransfer(
+        date_=deposit_date,
+        from_=shared.TransferAccount(
+            account_ref=shared.AccountRef(
+                id=lenders_bank_account.id,
+            ),
+            amount=Decimal(deposit_amount),
+            currency=borrowers_bank_account.currency,
+        ),
+        to=shared.TransferAccount(
+            account_ref=shared.AccountRef(
+                id=borrowers_bank_account_id,
+            ),
+            amount=Decimal(deposit_amount),
+            currency=borrowers_bank_account.currency,
+        ),
+    ),
+    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
+    connection_id='2e9d2c44-f675-40ba-8049-353bfcb5e171',
+)
+
+transfers_create_response = codat_lending.loan_writeback.transfers.create(transfers_create_request)
+```
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var transfersCreateResponse = await codatLending.LoanWriteback.Transfers.CreateAsync(new CreateTransferRequest() {
+    AccountingTransfer = new AccountingTransfer() {
+        Date = depositDate,
+        From = new TransferAccount() {
+            AccountRef = new AccountRef() {
+                Id = lendersBankAccount.Id,
+            },
+            Amount = depositAmount,
+            Currency = borrowersBankAccount.currency,
+        },
+        To = new TransferAccount() {
+            AccountRef = new AccountRef() {
+                Id = borrowersBankAccountId,
+            },
+            Amount = depositAmount,
+            Currency = borrowersBankAccount.currency,
+        },
+    },
+    CompanyId = "8a210b68-6988-11ed-a1eb-0242ac120002",
+    ConnectionId = "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+});
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+transfersCreateResponse, err := codatLending.LoanWriteback.Transfers.Create(ctx, operations.CreateTransferRequest{
+    AccountingTransfer: &shared.AccountingTransfer{
+        Date: lending.String(depositDate),
+        From: &shared.TransferAccount{
+            AccountRef: &shared.AccountRef{
+                ID: lending.String(lendersBankAccount.ID),
+            },
+            Amount: types.MustNewDecimalFromString(depositAmount),
+            Currency: lending.String(borrowersBankAccount.currency),
+        },
+        To: &shared.TransferAccount{
+            AccountRef: &shared.AccountRef{
+                ID: lending.String(borrowersBankAccountID),
+            },
+            Amount: types.MustNewDecimalFromString(depositAmount),
+            Currency: lending.String(borrowersBankAccount.currency),
+        },
+    },
+    CompanyID: "8a210b68-6988-11ed-a1eb-0242ac120002",
+    ConnectionID: "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+})
+```
+</TabItem>
+
+<TabItem value="http" label="HTTP">
+
+```http
+POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/transfers
+```
+
+#### Request body
+
+```json
+{
+    "date": depositDate,
+    "from": {
+        "accountRef": {
+            "id": lendersBankAccount.id,
+        },
+        "account": depositAmount,
+        "currency": borrowersBankAccount.currency,
+    },
+    "to": {
+        "accountRef": {
+            "id": borrowersBankAccount.id,
+        },
+        "account": depositAmount,
+        "currency": borrowersBankAccount.currency,
+    }
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 
 ### Create bank transaction
 
@@ -38,13 +208,13 @@ We provided example bank transaction creation payloads in the snippets below:
 ```javascript
 codatLending.loanWriteback.bankTransactions.create({
     accountingCreateBankTransactions: {
-        accountId: lendersBankAccount.Id, // lender's virtual bank account id you would have stored from the configuration step
+        accountId: lendersBankAccount.id,
         transactions: [
         {
-            id: transactionId, // some unique identifier of the bank transaction
-            amount: amount, // amount to pay
-            date: date time now,
-            description: description,
+            id: transactionId, // Unique identifier for this bank transaction
+            amount: depositAmount,
+            date: depositDate,
+            description: description, // Include a reference to the transfer, the loan and you, the lender
         },
         ],
     },
@@ -64,13 +234,13 @@ if (res.statusCode == 200) {
 ```python
 bank_transactions_create_request = operations.CreateBankTransactionsRequest(
     accounting_create_bank_transactions=shared.AccountingCreateBankTransactions(
-        account_id=lenders_bank_account.id, # lender's virtual bank account id you would have stored from the configuration step
+        account_id=lenders_bank_account.id,
         transactions=[
             shared.CreateBankAccountTransaction(
-                id=transaction_id, # some unique identifier of the bank transaction
-                amount=Decimal(amount), # amount to pay
-                date_=date time now,
-                description=description,
+                id=transaction_id, # Unique identifier for this bank transaction
+                amount=Decimal(deposit_amount),
+                date_=deposit_Date,
+                description=description, # Include a reference to the transfer, the loan and you, the lender
             ),
         ],
     ),
@@ -88,13 +258,13 @@ bank_transactions_create_response = codat_lending.loan_writeback.bank_transactio
 ```csharp
 var bankTransactionsCreateResponse = await codatLending.LoanWriteback.BankTransactions.CreateAsync(new CreateBankTransactionsRequest() {
     AccountingCreateBankTransactions = new AccountingCreateBankTransactions() {
-        AccountId = lendersBankAccount.Id, // lender's virtual bank account id you would have stored from the configuration step
+        AccountId = lendersBankAccount.Id,
         Transactions = new List<CreateBankAccountTransaction>() {
             new CreateBankAccountTransaction() {
-                Id = transactionId, // some unique identifier of the bank transaction
-                Amount = amount, // amount to pay
-                Date = date time now,
-                Description = description,
+                Id = transactionId, // Unique identifier for this bank transaction
+                Amount = depositAmount,
+                Date = depositDate,
+                Description = description, // Include a reference to the transfer, the loan and you, the lender
             },
         },
     },
@@ -111,13 +281,13 @@ var bankTransactionsCreateResponse = await codatLending.LoanWriteback.BankTransa
 ctx := context.Background()
 bankTransactionsCreateRequest, err := codatLending.LoanWriteback.BankTransactions.Create(ctx, operations.CreateBankTransactionsRequest{
     AccountingCreateBankTransactions: &shared.AccountingCreateBankTransactions{
-        AccountID: lending.String(lendersBankAccount.ID), // lender's virtual bank account id you would have stored from the configuration step
+        AccountID: lending.String(lendersBankAccount.ID),
         Transactions: []shared.CreateBankAccountTransaction{ 
             shared.CreateBankAccountTransaction{
-                ID: lending.String(transactionID), // some unique identifier of the bank transaction
-                Amount: types.MustNewDecimalFromString(amount), // amount to pay
-                Date: lending.String(date time now),
-                Description: lending.String(description),
+                ID: lending.String(transactionID), // Unique identifier for this bank transaction
+                Amount: types.MustNewDecimalFromString(depositAmount),
+                Date: lending.String(depositDate),
+                Description: lending.String(description), // Include a reference to the transfer, the loan and you, the lender
             },
         },
     },
@@ -138,12 +308,12 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 ```json
 {
-  "accountId": lendersBankAccount.Id, // lender's bank account id you would have stored from the configuration step
+  "accountId": lendersBankAccount.id,
   "transactions": [{
-    "id": transactionId, // some unique identifier of the bank transaction
-    "amount": amount, // amount to pay
-    "date": date time now,
-    "description": description
+    "id": transactionId, // Unique identifier for this bank transaction
+    "amount": depositAmount,
+    "date": depositDate,
+    "description": description // Include a reference to the transfer, the loan and you, the lender
   }]
 }
 ```
@@ -151,156 +321,9 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 </Tabs>
 
-### Create transfer
+---
 
-Following Codat's async record creation process, use the [Get create transfer model](/lending-api#/operations/get-create-transfers-model) endpoint to determine the transfer request parameters. 
+## Read next
 
-Next, call the [Create transfer](/lending-api#/operations/create-transfer) endpoint to transfer the money from the lender's bank account to the borrower's bank account. Note that you are performing a transfer *from* the lender's account Id *to* the borrower's account Id.
-
-<Tabs>
-<TabItem value="nodejs" label="TypeScript">
-
-```javascript
-codatLending.loanWriteback.transfers.create({
-    accountingTransfer: {
-        date: date time now,
-        from: {
-            accountRef: {
-                id: lendersBankAccount.Id,
-            },
-            amount: amount,
-            currency: "GBP",
-        },
-        to: {
-            accountRef: {
-                id: borrowersBankAccountId,
-            },
-            amount: amount,
-            currency: "GBP",
-        },
-    },
-    companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
-    connectionId: "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-    }).then((res: CreateTransferResponse) => {
-    if (res.statusCode == 200) {
-        // handle response
-    }
-});
-```
-</TabItem>
-
-<TabItem value="python" label="Python">
-
-```python
-transfers_create_request = operations.CreateTransferRequest(
-    accounting_transfer=shared.AccountingTransfer(
-        date_=date time now,
-        from_=shared.TransferAccount(
-            account_ref=shared.AccountRef(
-                id=lenders_bank_account.id,
-            ),
-            amount=Decimal(amount),
-            currency='GBP',
-        ),
-        to=shared.TransferAccount(
-            account_ref=shared.AccountRef(
-                id=borrowers_bank_account_id,
-            ),
-            amount=Decimal(amount),
-            currency='GBP',
-        ),
-    ),
-    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
-    connection_id='2e9d2c44-f675-40ba-8049-353bfcb5e171',
-)
-
-transfers_create_response = codat_lending.loan_writeback.transfers.create(transfers_create_request)
-```
-</TabItem>
-
-<TabItem value="csharp" label="C#">
-
-```csharp
-var transfersCreateResponse = await codatLending.LoanWriteback.Transfers.CreateAsync(new CreateTransferRequest() {
-    AccountingTransfer = new AccountingTransfer() {
-        Date = date time now,
-        From = new TransferAccount() {
-            AccountRef = new AccountRef() {
-                Id = lendersBankAccount.Id,
-            },
-            Amount = amount,
-            Currency = "GBP",
-        },
-        To = new TransferAccount() {
-            AccountRef = new AccountRef() {
-                Id = borrowersBankAccountId,
-            },
-            Amount = amount,
-            Currency = "GBP",
-        },
-    },
-    CompanyId = "8a210b68-6988-11ed-a1eb-0242ac120002",
-    ConnectionId = "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-});
-```
-</TabItem>
-
-<TabItem value="go" label="Go">
-
-```go
-ctx := context.Background()
-transfersCreateResponse, err := codatLending.LoanWriteback.Transfers.Create(ctx, operations.CreateTransferRequest{
-    AccountingTransfer: &shared.AccountingTransfer{
-        Date: lending.String(date time now),
-        From: &shared.TransferAccount{
-            AccountRef: &shared.AccountRef{
-                ID: lending.String(lendersBankAccount.ID),
-            },
-            Amount: types.MustNewDecimalFromString(amount),
-            Currency: lending.String("GBP"),
-        },
-        To: &shared.TransferAccount{
-            AccountRef: &shared.AccountRef{
-                ID: lending.String(borrowersBankAccountID),
-            },
-            Amount: types.MustNewDecimalFromString(amount),
-            Currency: lending.String("GBP"),
-        },
-    },
-    CompanyID: "8a210b68-6988-11ed-a1eb-0242ac120002",
-    ConnectionID: "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-})
-```
-</TabItem>
-
-<TabItem value="http" label="HTTP">
-
-```http
-POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/transfers
-```
-
-#### Request body
-
-```json
-{
-    "date": "date time now",
-    "from": {
-        "accountRef": {
-            "id": "lendersBankAccount.Id",
-        },
-        "account": amount,
-        "currency": "GBP",
-    },
-    "to": {
-        "accountRef": {
-            "id": "borrowersBankAccountId",
-        },
-        "account": amount,
-        "currency": "GBP",
-    }
-}
-```
-
-</TabItem>
-
-</Tabs>
+* Learn how to repay a [general loan](/lending/guides/loan-writeback/repay-general-loan)
+* Learn how to repay in [invoice finance](/lending/guides/loan-writeback/repay-invoice-finance)

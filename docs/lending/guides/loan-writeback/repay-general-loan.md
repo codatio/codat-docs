@@ -1,164 +1,58 @@
 ---
-title: "Repay - general lending"
+title: "Repay for general loans"
 description: "Repay money owed to you, the lender, in your SMB's accounting platform."
-sidebar_label: "Repay - general lending"
+sidebar_label: "Repay for standard loans"
 ---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 Based on the loan's terms and conditions, the borrower will periodically repay the lender the loan amount and any associated fees. To reflect that programmatically:
 
-1. For each repayment, [create a transfer](/lending/guides/general-loan-writeback#create-transfer-1) from the borrower's bank account to the lender's. 
+1. For each repayment, [create a transfer](/lending/guides/general-loan-writeback#create-transfer) from the borrower's bank account to the lender's. 
 
 2. To record interest or fees, [create a direct cost](/lending/guides/general-loan-writeback#create-direct-cost). 
 
-3. [Create bank transactions](/lending/guides/general-loan-writeback#create-bank-transaction-1) to deposit the repayment into the lender's account. 
+3. [Create bank transactions](/lending/guides/general-loan-writeback#create-bank-transaction) to deposit the repayment into the lender's account. 
 
 Repeat these steps every time a repayment is made. For example, if the borrower took out a loan of £1000 and agreed on a loan charge of 20%, the total amount due comes to £1200. With a 3-month equal instalment repayment plan, the borrower would pay back £400 each month. This means a transfer of £320 to represent the payment, a direct cost of £80 to record the fees, and a bank transaction of £400 to reduce the liability to the lender.
 
 ```mermaid
-    sequenceDiagram
-        participant backend as Your application 
-        participant codat as Codat
-        
-        backend ->> codat: Create bank transactions (deposit in lender's account)
-        codat -->> backend: bank transactions
-        
-        alt repaying loan amount
-            backend ->> codat: Create transfer (bank account -> lender)
-            codat -->> backend:  transfer
-        end
-        
-        alt paying interest and/or fees
-            backend ->> codat: Create direct cost
-            codat -->> backend: direct cost
-        end
+sequenceDiagram
+    participant application as Your application 
+    participant codat as Codat
+    
+    alt repaying loan amount
+        application ->> codat: Create transfer (bank account -> lender)
+        codat -->> application:  transfer
+    end
+    
+    alt paying interest and/or fees
+        application ->> codat: Create direct cost
+        codat -->> application: direct cost
+    end
+
+    application ->> codat: Create bank transactions (deposit in lender's account)
+    codat -->> application: bank transactions
 ```
 
-### Create bank transaction
+This part of your application must have access to the following configuration properties
 
-Use the [Create bank account transactions](/lending-api#/operations/create-bank-transactions) endpoint again to deposit the total amount (including the repayment, fees, and any interest) into the lender's bank account.
+- Lender's [`supplier.id`](/lending-api#/schemas/AccountingSupplier)
+- Lender's [`lendersBankAccount.id`](/lending-api#/AccountingBankAccount)
+- SMB's [`expenseAccount.id`](/lending-api#/schemas/AccountingAccount)
+- SMB's [`borrowersBankAccount.id`](/lending-api#/AccountingBankAccount) and `currency`
 
-<Tabs>
-<TabItem value="nodejs" label="TypeScript">
+and you must provide 
 
-```javascript
-codatLending.loanWriteback.bankTransactions.create({
-    accountingCreateBankTransactions: {
-        accountId: lendersBankAccount.id, // lender's virtual bank account id you would have stored from the configuration step
-        transactions: [
-        {
-            id: transactionId, // some unique identifier of the bank transaction
-            amount: amount, // amount to pay
-            date: date time now,
-            description: description,
-        },
-        ],
-    },
-    accountId: lendersBankAccount.Id,
-    companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
-    connectionId: "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-}).then((res: CreateBankTransactionsResponse) => {
-if (res.statusCode == 200) {
-    // handle response
-}
-});
-```
-</TabItem>
-
-<TabItem value="python" label="Python">
-
-```python
-bank_transactions_create_request = operations.CreateBankTransactionsRequest(
-    accounting_create_bank_transactions=shared.AccountingCreateBankTransactions(
-        account_id=lenders_bank_account.id, # lender's virtual bank account id you would have stored from the configuration step
-        transactions=[
-            shared.CreateBankAccountTransaction(
-                id=transaction_id, # some unique identifier of the bank transaction
-                amount=Decimal(amount), # amount to pay
-                date_=date time now,
-                description=description,
-            ),
-        ],
-    ),
-    account_id=lenders_bank_account.id,
-    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
-    connection_id='2e9d2c44-f675-40ba-8049-353bfcb5e171',
-)
-
-bank_transactions_create_response = codat_lending.loan_writeback.bank_transactions.create(bank_transactions_create_request)
-```
-</TabItem>
-
-<TabItem value="csharp" label="C#">
-
-```csharp
-var bankTransactionsCreateResponse = await codatLending.LoanWriteback.BankTransactions.CreateAsync(new CreateBankTransactionsRequest() {
-    AccountingCreateBankTransactions = new AccountingCreateBankTransactions() {
-        AccountId = lendersBankAccount.Id, // lender's virtual bank account id you would have stored from the configuration step
-        Transactions = new List<CreateBankAccountTransaction>() {
-            new CreateBankAccountTransaction() {
-                Id = transactionId, // some unique identifier of the bank transaction
-                Amount = amount, // amount to pay
-                Date = date time now,
-                Description = description,
-            },
-        },
-    },
-    AccountId = lendersBankAccount.Id,
-    CompanyId = "8a210b68-6988-11ed-a1eb-0242ac120002",
-    ConnectionId = "2e9d2c44-f675-40ba-8049-353bfcb5e171"
-});
-```
-</TabItem>
-
-<TabItem value="go" label="Go">
-
-```go
-ctx := context.Background()
-bankTransactionsCreateRequest, err := codatLending.LoanWriteback.BankTransactions.Create(ctx, operations.CreateBankTransactionsRequest{
-    AccountingCreateBankTransactions: &shared.AccountingCreateBankTransactions{
-        AccountID: lending.String(lendersBankAccount.ID), // lender's virtual bank account id you would have stored from the configuration step
-        Transactions: []shared.CreateBankAccountTransaction{ 
-            shared.CreateBankAccountTransaction{
-                ID: lending.String(transactionID), // some unique identifier of the bank transaction
-                Amount: types.MustNewDecimalFromString(amount), // amount to pay
-                Date: lending.String(date time now),
-                Description: lending.String(description),
-            },
-        },
-    },
-    AccountID: lendersBankAccount.ID,
-    CompanyID: "8a210b68-6988-11ed-a1eb-0242ac120002",
-    ConnectionID: "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-    })
-```
-</TabItem>
-
-<TabItem value="http" label="HTTP">
-
-```http
-POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/bankAccounts/{accountId}/bankTransactions
-```
-
-#### Request body
-
-```json
-{
-  "accountId": lendersBankAccount.Id, // lender's bank account id you would have stored from the configuration step
-  "transactions": [{
-    "id": transactionId, // some unique identifier of the bank transaction
-    "amount": amount, // amount to pay
-    "date": date time now,
-    "description": description
-  }]
-}
-```
-</TabItem>
-
-</Tabs>
+- `repaymentDate` - the amount repaying the loan amount
+- `repaymentAmount` - the amount repaying the loan amount
+- `interestAndFeesAmount` - the amount paying for interest and fees
+- `totalRepaymentAmount` where `totalRepaymentAmount = repaymentAmount + interestAndFeesAmount`
 
 ### Create transfer
 
-Next, use the [Create transfer](/lending-api#/operations/create-transfer) endpoint again - this time to record the loan repayment amount. Note that you are performing a transfer *from* the borrower's account Id *to* the lender's account Id.
+First, use the [Create transfer](/lending-api#/operations/create-transfer) endpoint again - this time to record the loan repayment amount. Note that you are performing a transfer *from* the borrower's account Id *to* the lender's account Id.
 
 <Tabs>
 <TabItem value="nodejs" label="TypeScript">
@@ -166,20 +60,20 @@ Next, use the [Create transfer](/lending-api#/operations/create-transfer) endpoi
 ```javascript
 codatLending.loanWriteback.transfers.create({
     accountingTransfer: {
-        date: date time now,
+        date: repaymentDate,
         from: {
             accountRef: {
-                id: borrowersBankAccountId,
+                id: borrowersBankAccount.id,
             },
-            amount: amount,
-            currency: "GBP",
+            amount: repaymentAmount,
+            currency: borrowersBankAccount.currency,
         },
         to: {
             accountRef: {
                 id: lendersBankAccount.id,
             },
-            amount: amount,
-            currency: "GBP",
+            amount: repaymentAmount,
+            currency: borrowersBankAccount.currency,
         },
     },
     companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
@@ -197,20 +91,20 @@ codatLending.loanWriteback.transfers.create({
 ```python
 transfers_create_request = operations.CreateTransferRequest(
     accounting_transfer=shared.AccountingTransfer(
-        date_=date time now,
+        date_=repaymentDate,
         from_=shared.TransferAccount(
             account_ref=shared.AccountRef(
-                id=borrowers_bank_account_id,
+                id=borrowers_bank_account.id,
             ),
-            amount=Decimal(amount),
-            currency='GBP',
+            amount=Decimal(repayment_amount),
+            currency=borrowers_bank_account.currency,
         ),
         to=shared.TransferAccount(
             account_ref=shared.AccountRef(
                 id=lenders_bank_account.id,
             ),
-            amount=Decimal(amount),
-            currency='GBP',
+            amount=Decimal(repayment_amount),
+            currency=borrowers_bank_account.currency,
         ),
     ),
     company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
@@ -226,20 +120,20 @@ transfers_create_response = codat_lending.loan_writeback.transfers.create(transf
 ```csharp
 var transfersCreateResponse = await codatLending.LoanWriteback.Transfers.CreateAsync(new CreateTransferRequest() {
     AccountingTransfer = new AccountingTransfer() {
-        Date = date time now,
+        Date = repaymentDate,
         From = new TransferAccount() {
             AccountRef = new AccountRef() {
-                Id = borrowersBankAccountId,
+                Id = borrowersBankAccount.Id,
             },
-            Amount = amount,
-            Currency = "GBP",
+            Amount = repaymentAmount,
+            Currency = borrowersBankAccount.Currency,
         },
         To = new TransferAccount() {
             AccountRef = new AccountRef() {
                 Id = lendersBankAccount.Id,
             },
-            Amount = amount,
-            Currency = "GBP",
+            Amount = repaymentAmount,
+            Currency = borrowersBankAccount.Currency,
         },
     },
     CompanyId = "8a210b68-6988-11ed-a1eb-0242ac120002",
@@ -254,20 +148,20 @@ var transfersCreateResponse = await codatLending.LoanWriteback.Transfers.CreateA
 ctx := context.Background()
 transfersCreateResponse, err := codatLending.LoanWriteback.Transfers.Create(ctx, operations.CreateTransferRequest{
     AccountingTransfer: &shared.AccountingTransfer{
-        Date: lending.String(date time now),
+        Date: lending.String(repaymentDate),
         From: &shared.TransferAccount{
             AccountRef: &shared.AccountRef{
                 ID: lending.String(borrowersBankAccountID),
             },
-            Amount: types.MustNewDecimalFromString(amount),
-            Currency: lending.String("GBP"),
+            Amount: types.MustNewDecimalFromString(repaymentAmount),
+            Currency: lending.String(borrowersBankAccount.Currency),
         },
         To: &shared.TransferAccount{
             AccountRef: &shared.AccountRef{
                 ID: lending.String(lendersBankAccount.ID),
             },
-            Amount: types.MustNewDecimalFromString(amount),
-            Currency: lending.String("GBP"),
+            Amount: types.MustNewDecimalFromString(repaymentAmount),
+            Currency: lending.String(borrowersBankAccount.Currency),
         },
     },
     CompanyID: "8a210b68-6988-11ed-a1eb-0242ac120002",
@@ -286,20 +180,20 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 ```json
 {
-    "date": "date time now",
+    "date": repaymentDate,
     "from": {
         "accountRef": {
-            "id": "borrowersBankAccountId",
+            "id": borrowersBankAccount.id,
         },
-        "account": amount,
-        "currency": "GBP",
+        "account": repaymentAmount,
+        "currency": borrowersBankAccount.currency,
     },
     "to": {
         "accountRef": {
-            "id": "lendersBankAccount.Id",
+            "id": lendersBankAccount.id,
         },
-        "account": amount,
-        "currency": "GBP",
+        "account": repaymentAmount,
+        "currency": borrowersBankAccount.currency,
     }
 }
 ```
@@ -320,10 +214,10 @@ codatLending.loanWriteback.directCosts.create({
     accountingDirectCost: {
         contactRef: {
             dataType: "suppliers",
-            id: supplier.Id,
+            id: supplier.id,
         },
-        currency: "GBP",
-        issueDate: date time now,
+        currency: borrowersBankAccount.currency,
+        issueDate: repaymentDate,
         lineItems: [
         {
             accountRef: {
@@ -332,23 +226,23 @@ codatLending.loanWriteback.directCosts.create({
             description: "Fees and/or interest",
             quantity: 1,
             taxAmount: 0,
-            unitAmount: directCostAmount,
+            unitAmount: interestAndFeesAmount,
         },
         ],
         paymentAllocations: [
         {
             allocation: {
-                totalAmount: directCostAmount,
+                totalAmount: interestAndFeesAmount,
             },
             payment: {
                 accountRef: {
-                    id: depositBankAccountId,
+                    id: borrowersBankAccount.id,
                 },
             },
         },
         ],
         taxAmount: 0.0,
-        totalAmount: directCostAmount,
+        totalAmount: interestAndFeesAmount,
     },
     companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
     connectionId: "2e9d2c44-f675-40ba-8049-353bfcb5e171",
@@ -369,8 +263,8 @@ direct_costs_create_request = operations.CreateDirectCostRequest(
             data_type='suppliers',
             id=supplier.id,
         ),
-        currency='GBP',
-        issue_date=date time now,
+        currency=borrowersBankAccount.currency,
+        issue_date=repaymentDate,
         line_items=[
             shared.DirectCostLineItem(
                 account_ref=shared.AccountRef(
@@ -379,23 +273,23 @@ direct_costs_create_request = operations.CreateDirectCostRequest(
                 description='Fees and/or interest',
                 quantity=Decimal('1'),
                 tax_amount=Decimal('0'),
-                unit_amount=Decimal(direct_cost_amount),
+                unit_amount=Decimal(interest_and_fees_amount),
             ),
         ],
         payment_allocations=[
             shared.AccountingPaymentAllocation(
                 allocation=shared.AccountingPaymentAllocationAllocation(
-                    total_amount=Decimal(direct_cost_amount),
+                    total_amount=Decimal(interest_and_fees_amount),
                 ),
                 payment=shared.PaymentAllocationPayment(
                     account_ref=shared.AccountRef(
-                        id=deposit_bank_account_id,
+                        id=borrowers_bank_account.id,
                     ),
                 ),
             ),
         ],
         tax_amount=Decimal('0'),
-        total_amount=Decimal(direct_cost_amount),
+        total_amount=Decimal(interest_and_fees_amount),
     ),
     company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
     connection_id='2e9d2c44-f675-40ba-8049-353bfcb5e171',
@@ -414,8 +308,8 @@ var redirectCostsCreateResponse = await codatLending.LoanWriteback.DirectCosts.C
             DataType = "suppliers",
             Id = supplier.id,
         },
-        Currency = "GBP",
-        IssueDate = date time now,
+        Currency = borrowersBankAccount.Currency,
+        IssueDate = repaymentDate,
         LineItems = new List<DirectCostLineItem>() {
             new DirectCostLineItem() {
                 AccountRef = new AccountRef() {
@@ -424,23 +318,23 @@ var redirectCostsCreateResponse = await codatLending.LoanWriteback.DirectCosts.C
                 Description = "Fees and/or interest",
                 Quantity = 1M,
                 TaxAmount = 0M,
-                UnitAmount = directCostAmount,
+                UnitAmount = interestAndFeesAmount,
             },
         },
         PaymentAllocations = new List<AccountingPaymentAllocation>() {
             new AccountingPaymentAllocation() {
                 Allocation = new AccountingPaymentAllocationAllocation() {
-                    TotalAmount = directCostAmount,
+                    TotalAmount = interestAndFeesAmount,
                 },
                 Payment = new PaymentAllocationPayment() {
                     AccountRef = new AccountRef() {
-                        Id = depositBankAccountId,
+                        Id = borrowersBankAccount.Id,
                     },
                 },
             },
         },
         TaxAmount = 0M,
-        TotalAmount = directCostAmount,
+        TotalAmount = interestAndFeesAmount,
     },
     CompanyId = "8a210b68-6988-11ed-a1eb-0242ac120002",
     ConnectionId = "2e9d2c44-f675-40ba-8049-353bfcb5e171",
@@ -458,8 +352,8 @@ res, err := s.LoanWriteback.DirectCosts.Create(ctx, operations.CreateDirectCostR
             DataType: lending.String("suppliers"),
             ID: supplier.ID,
         },
-        Currency: "GBP",
-        IssueDate: date time now,
+        Currency: borrowersBankAccount.Currency,
+        IssueDate: repaymentDate,
         LineItems: []shared.DirectCostLineItem{
             shared.DirectCostLineItem{
                 AccountRef: &shared.AccountRef{
@@ -468,23 +362,23 @@ res, err := s.LoanWriteback.DirectCosts.Create(ctx, operations.CreateDirectCostR
                 Description: lending.String("Fees and/or interest"),
                 Quantity: types.MustNewDecimalFromString("1"),
                 TaxAmount: types.MustNewDecimalFromString("0"),
-                UnitAmount: types.MustNewDecimalFromString(directCostAmount),
+                UnitAmount: types.MustNewDecimalFromString(interestAndFeesAmount),
             },
         },
         PaymentAllocations: []shared.AccountingPaymentAllocation{
             shared.AccountingPaymentAllocation{
                 Allocation: shared.AccountingPaymentAllocationAllocation{
-                    TotalAmount: types.MustNewDecimalFromString(directCostAmount),
+                    TotalAmount: types.MustNewDecimalFromString(interestAndFeesAmount),
                 },
                 Payment: shared.PaymentAllocationPayment{
                     AccountRef: &shared.AccountRef{
-                        ID: lending.String(depositBankAccountID),
+                        ID: lending.String(borrowersBankAccount.ID),
                     },
                 },
             },
         },
         TaxAmount: types.MustNewDecimalFromString("0"),
-        TotalAmount: types.MustNewDecimalFromString(directCostAmount),
+        TotalAmount: types.MustNewDecimalFromString(interestAndFeesAmount),
     },
     CompanyID: "8a210b68-6988-11ed-a1eb-0242ac120002",
     ConnectionID: "2e9d2c44-f675-40ba-8049-353bfcb5e171",
@@ -502,31 +396,31 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 ```json
 {
-	"issueDate": current date time,
-	"currency": Base currency of accounting platform,
+	"issueDate": repaymentDate,
+	"currency": borrowersBankAccount.currency,
 	"taxAmount": 0.0,
-	"totalAmount": direct cost amount,
+	"totalAmount": interestAndFeesAmount,
 	"contactRef": {
-		"id": supplier.id, // supplier id you would have previouly stored
+		"id": supplier.id,
 		"dataType": "suppliers"
 	},
 	"paymentAllocations": [{
 		"payment": {
 			"accountRef": {
-				"id": depositBankAccountId // lender's bank account id
+				"id": borrowersBankAccount.id
 			}
 		},
 		"allocation": {
-			"totalAmount": direct cost amount
+			"totalAmount": interestAndFeesAmount
 		}
 	}],
 	"lineItems": [{
 		"description": Fees and/or interest,
 		"quantity": 1,
-		"unitAmount": directCostAmount,
+		"unitAmount": interestAndFeesAmount,
 		"taxAmount": 0,
 		"accountRef": {
-			"id": expenseAccount.id // selected expense account id
+			"id": expenseAccount.id
 		}
 	}]
 }
@@ -544,9 +438,133 @@ In this guide, you have learned:
 * How to perform the necessary postings using Codat's endpoints.
 :::
 
+
+### Create bank transaction
+
+Use the [Create bank account transactions](/lending-api#/operations/create-bank-transactions) endpoint again to deposit the total amount (including the repayment, fees, and any interest) into the lender's bank account.
+
+<Tabs>
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+codatLending.loanWriteback.bankTransactions.create({
+    accountingCreateBankTransactions: {
+        accountId: lendersBankAccount.id,
+        transactions: [
+        {
+            id: transactionId, // Unique identifier for this bank transaction
+            amount: totalRepaymentAmount,
+            date: repaymentDate,
+            description: description, // Include a reference to the direct cost, the loan and you, the lender
+        },
+        ],
+    },
+    accountId: lendersBankAccount.Id,
+    companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
+    connectionId: "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+}).then((res: CreateBankTransactionsResponse) => {
+if (res.statusCode == 200) {
+    // handle response
+}
+});
+```
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+bank_transactions_create_request = operations.CreateBankTransactionsRequest(
+    accounting_create_bank_transactions=shared.AccountingCreateBankTransactions(
+        account_id=lenders_bank_account.id,
+        transactions=[
+            shared.CreateBankAccountTransaction(
+                id=transaction_id, # Unique identifier for this bank transaction
+                amount=Decimal(total_repayment_amount),
+                date_=repayment_date,
+                description=description, # Include a reference to the direct cost, the loan and you, the lender
+            ),
+        ],
+    ),
+    account_id=lenders_bank_account.id,
+    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
+    connection_id='2e9d2c44-f675-40ba-8049-353bfcb5e171',
+)
+
+bank_transactions_create_response = codat_lending.loan_writeback.bank_transactions.create(bank_transactions_create_request)
+```
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var bankTransactionsCreateResponse = await codatLending.LoanWriteback.BankTransactions.CreateAsync(new CreateBankTransactionsRequest() {
+    AccountingCreateBankTransactions = new AccountingCreateBankTransactions() {
+        AccountId = lendersBankAccount.Id,
+        Transactions = new List<CreateBankAccountTransaction>() {
+            new CreateBankAccountTransaction() {
+                Id = transactionId, // Unique identifier for this bank transaction
+                Amount = totalRepaymentAmount,
+                Date = repaymentDate,
+                Description = description, // Include a reference to the direct cost, the loan and you, the lender
+            },
+        },
+    },
+    AccountId = lendersBankAccount.Id,
+    CompanyId = "8a210b68-6988-11ed-a1eb-0242ac120002",
+    ConnectionId = "2e9d2c44-f675-40ba-8049-353bfcb5e171"
+});
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+bankTransactionsCreateRequest, err := codatLending.LoanWriteback.BankTransactions.Create(ctx, operations.CreateBankTransactionsRequest{
+    AccountingCreateBankTransactions: &shared.AccountingCreateBankTransactions{
+        AccountID: lending.String(lendersBankAccount.ID),
+        Transactions: []shared.CreateBankAccountTransaction{ 
+            shared.CreateBankAccountTransaction{
+                ID: lending.String(transactionID), // Unique identifier for this bank transaction
+                Amount: types.MustNewDecimalFromString(totalRepaymentAmount),
+                Date: lending.String(repaymentDate),
+                Description: lending.String(description), // Include a reference to the direct cost, the loan and you, the lender
+            },
+        },
+    },
+    AccountID: lendersBankAccount.ID,
+    CompanyID: "8a210b68-6988-11ed-a1eb-0242ac120002",
+    ConnectionID: "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+    })
+```
+</TabItem>
+
+<TabItem value="http" label="HTTP">
+
+```http
+POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/bankAccounts/{accountId}/bankTransactions
+```
+
+#### Request body
+
+```json
+{
+  "accountId": lendersBankAccount.Id,
+  "transactions": [{
+    "id": transactionId, // Unique identifier for this bank transaction
+    "amount": totalRepaymentAmount,
+    "date": repaymentDate,
+    "description": description // Include a reference to the direct cost, the loan and you, the lender
+  }]
+}
+```
+</TabItem>
+
+</Tabs>
+
 ---
 
 ## Read next
 
-* Looking to implement loan writeback for Xero? Don't forget to view Xero's [own documentation](https://developer.xero.com/documentation/guides/how-to-guides/general-lending-integration-guide/).
-* Review other features of the [Lending API](/lending/overview).
+* Looking to implement loan writeback for Xero? Don't forget to view Xero's [own documentation](https://developer.xero.com/documentation/guides/how-to-guides/general-lending-integration-guide/)
+* Review other features of the [Lending API](/lending/overview)

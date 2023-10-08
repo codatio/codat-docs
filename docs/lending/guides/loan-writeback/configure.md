@@ -4,6 +4,15 @@ description: "Configure loan writeback for your SMB customer."
 sidebar_label: "Configure"
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import WritebackMapping from "@components/global/Prototypes/WritebackMapping";
+
+Once your SMB customer's loan has been approved they need to be able to configure loan writeback in your application.
+This requires a user interface that provides the option to enable the loan writeback process flow and configure or update their account mapping, for example:
+
+<WritebackMapping/>
+
 First, your SMB customer will use your UI to configure loan writeback accounts so that the accounting entries are reflected correctly in their accounting platform. They will create or select existing, and subsequently map, the following elements:
 
 * SMB bank account, the borrower's business account where the loan is deposited.
@@ -118,7 +127,7 @@ GET https://api.codat.io/companies/{companyId}/connections/{connectionId}/data/b
 
 </Tabs>
 
-Display the response to the customer and allow them to select the account. Store the returned `id` and use it as the borrower's `accountId` in future operations. 
+Display the response to the customer and allow them to select the account. Store the returned bank account as `borrowersBankAccount` and use it to access properties on the borrower's bank account in future operations. 
 
 Next, create a new bank account that will act as a virtual bank account for your lending activity:
 
@@ -134,13 +143,13 @@ codatLending.loanWriteback.bankAccounts.create({
         accountName: "saepe",
         accountNumber: "fuga",
         accountType: AccountingBankAccountType.Credit,
-        availableBalance: 3595.08,
-        balance: 6130.64,
+        availableBalance: 0.0,
+        balance: 0.0,
         currency: "USD",
         iBan: "saepe",
         institution: "commodi",
         nominalCode: "molestiae",
-        overdraftLimit: 2444.25,
+        overdraftLimit: 10000.00,
         sortCode: "error",
     },
     companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
@@ -235,7 +244,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 </Tabs>
 
-In response, you will receive account creation details which you can display to your customer. Just as you did with the `accountId`, store the `id` and use it as `lenderBankAccountId` in future transactions. 
+In response, you will receive account creation details which you can display to your customer. Just as you did with the `borrowersBankAccount`, store the `lendersBankAccount` for use later on. 
 
 ### Supplier
 
@@ -296,7 +305,7 @@ GET https://api.codat.io/companies/{companyId}/data/suppliers
 
 </Tabs>
 
-Display the response to the customer and allow them to find and select your lender record in their supplier list. Store the `id` and use it as supplier Id in future transactions.
+Display the response to the customer and allow them to find and select your lender record in their supplier list. Store the supplier as `supplier` and use it as the supplier in future transactions.
 
 If this is the first time you have lent to this SMB customer, you may need to create yourself as a new supplier in their accounting platform. First, use our [Get create/update supplier model](/lending-api#/operations/get-create-update-suppliers-model) to get the expected data for the supplier creation request payload. Next, use that payload and call our [Create supplier](/lending-api#/operations/create-supplier) endpoint.
 
@@ -514,7 +523,7 @@ GET https://api.codat.io/companies/{companyId}/data/accounts?query=type%3e0Expen
 
 </Tabs>
 
-Display the response to the customer and allow them to select the desired expense account. Store the `id` and use it as the expense account Id in future operations. 
+Display the response to the customer and allow them to select the desired expense account. Store the account as `expenseAccount` and use it as the expense account in future operations. 
 
 If the customer wants to create a new nominal expense account for this purpose, use our [Get create account model](//lending-api#/operations/get-create-chartOfAccounts-model) to figure out what payload is required for account creation. Next, call the [Create account](/lending-api#/operations/create-account) endpoint to create the new account. 
 
@@ -636,4 +645,10 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 </Tabs>
 
-In response, you will receive account creation details which you can display to your customer. Similarly, store the `id` and use it in future transactions. 
+In response, you will receive account creation details which you can display to your customer. Similarly, store the account as `expenseAccount` for use in future transactions.
+
+---
+
+## Read next
+
+* Learn how to [deposit](/lending/guides/loan-writeback/deposit)
