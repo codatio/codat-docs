@@ -1,4 +1,4 @@
 ---
-title: "Data Types"
+title: "Data types"
 description: "Enterprise pages"
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Security and Data Protection"
+title: "Security and data protection"
 description: "Enterprise pages"
 ---
 

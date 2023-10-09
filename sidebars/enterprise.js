@@ -29,8 +29,15 @@ module.exports = [
                 "enterprise/tech-overview/architecture/webhooks",
             ]
           },
+          {
+            type: "category",
+            label: "Security Features",
+            items: [
+                "enterprise/tech-overview/security/sso",
+                "enterprise/tech-overview/security/mTLS",
+            ]
+          },
         "enterprise/tech-overview/security-and-data",
-        "enterprise/tech-overview/security-features"
       ],
       label: "Technology Overview"
     },

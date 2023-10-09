@@ -1,5 +1,5 @@
 ---
-title: "Syncing Data"
+title: "Syncing data"
 description: "Enterprise pages"
 ---
 
