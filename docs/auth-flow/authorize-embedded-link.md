@@ -78,7 +78,10 @@ For an example of the component in action, [see our demo app](https://github.com
   ```js
   // AuthFlow.tsx
 
-  import {ConnectionCallbackArgs, ErrorCallbackArgs,} from "https://link-sdk.codat.io"
+  import {
+    ConnectionCallbackArgs,
+    ErrorCallbackArgs,
+  } from "https://link-sdk.codat.io"
   import { useState } from "react";
   import { CodatLink } from "./components/CodatLink";
 
