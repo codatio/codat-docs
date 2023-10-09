@@ -190,7 +190,7 @@ In the example below, you'll see that we make use of webpack's [magic comments](
 
 <TabItem value="javascript" label="JavaScript">
 
-### Get started JavaScript
+### Get started with JavaScript
 
 For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-link/tree/main/examples/javascript).
 
