@@ -42828,37 +42828,7 @@
               "paymentMethodRef": {
                 "allOf": [
                   {
-                    "paymentMethodRef": {
-                      "type": "object",
-                      "description": "The payment method the record is linked to in the accounting or commerce platform.",
-                      "properties": {
-                        "id": {
-                          "description": "The unique identifier of the location being referenced.",
-                          "type": "string"
-                        },
-                        "name": {
-                          "description": "Name of the location being referenced.",
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "id"
-                      ],
-                      "example": {
-                        "id": "EILBDVJVNUAGVKRQ",
-                        "name": "AliPay"
-                      }
-                    },
-                    "paymentMethodStatus": {
-                      "type": "string",
-                      "enum": [
-                        "Active",
-                        "Archived",
-                        "Unknown"
-                      ],
-                      "description": "Status of the Payment Method",
-                      "example": "Active"
-                    }
+                    "$ref": "#/components/schemas/PaymentMethodRef"
                   },
                   {
                     "description": "The Payment Method to which the payment is linked in the accounting platform."
@@ -43764,6 +43734,28 @@
           }
         ]
       },
+      "PaymentMethodRef": {
+        "type": "object",
+        "title": "Payment method reference",
+        "description": "The payment method the record is linked to in the accounting or commerce platform.",
+        "properties": {
+          "id": {
+            "description": "The unique identifier of the location being referenced.",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the location being referenced.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "example": {
+          "id": "EILBDVJVNUAGVKRQ",
+          "name": "AliPay"
+        }
+      },
       "CreateBillResponse": {
         "title": "Create bill response",
         "x-internal": true,
@@ -44131,7 +44123,14 @@
                 "$ref": "#/components/schemas/PaymentMethod/definitions/paymentMethodType"
               },
               "status": {
-                "$ref": "#/components/schemas/PaymentMethod/definitions/paymentMethodStatus"
+                "description": "Status of the Payment Method.",
+                "x-internal": true,
+                "type": "string",
+                "enum": [
+                  "Unknown",
+                  "Active",
+                  "Archived"
+                ]
               },
               "metadata": {
                 "$ref": "#/components/schemas/Metadata"
@@ -44154,15 +44153,6 @@
               "DebitCard",
               "BankTransfer",
               "Other"
-            ]
-          },
-          "paymentMethodStatus": {
-            "description": "Status of the Payment Method.",
-            "type": "string",
-            "enum": [
-              "Unknown",
-              "Active",
-              "Archived"
             ]
           }
         }
