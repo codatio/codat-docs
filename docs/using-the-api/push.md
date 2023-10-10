@@ -2,8 +2,6 @@
 title: "Create, update, and delete data"
 description: "Understand how to add, modify, and delete data in Codat's integrated platforms"
 ---
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
 
 :::note Data coverage
 
