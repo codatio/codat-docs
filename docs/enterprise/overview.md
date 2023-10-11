@@ -47,7 +47,7 @@ banner_text: "Codat solves challenges for developers building the next generatio
     </div>
     <p>
       View our API endpoints in our {" "}
-      <a href="https://github.com/codatio/oas">OAS specification</a>.
+      <a href="https://github.com/codatio/oas">Open API Specification</a>.
     </p>
   </li>
     <li className="card">
