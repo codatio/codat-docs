@@ -49,6 +49,6 @@ module.exports = [
           "enterprise/tech-implementation/syncing-data",
           "enterprise/tech-implementation/data-types"
         ],
-        label: "Technical Implementation"
+        label: "Technical Implementation",
       },
   ]
