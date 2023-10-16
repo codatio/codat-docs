@@ -2119,7 +2119,7 @@
                   "description": "Identifier for the bank account transaction, unique for the company in the accounting platform.",
                   "example": "716422529"
                 },
-                "clearedOnDate": {
+                "date": {
                   "$ref": "#/components/schemas/DateTime"
                 },
                 "description": {
