@@ -20,6 +20,7 @@ const integrationsAccounting = require("./sidebars/integrations-accounting");
 const integrationsBanking = require("./sidebars/integrations-banking");
 const integrationsCommerce = require("./sidebars/integrations-commerce");
 const integrationsBankFeeds = require("./sidebars/integrations-bank-feeds");
+const enterprise = require("./sidebars/enterprise");
 
 module.exports = {
   docs: [
@@ -205,6 +206,7 @@ module.exports = {
   integrationsBanking: integrationsBanking,
   integrationsCommerce: integrationsCommerce,
   integrationsBankFeeds: integrationsBankFeeds,
+  enterprise: enterprise,
   //accountingAPI: accountingAPI,
   //bankingAPI: bankingAPI,
   //commerceAPI: commerceAPI,
