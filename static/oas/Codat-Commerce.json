@@ -8072,19 +8072,7 @@
                 "$ref": "#/components/schemas/Customer/definitions/commerceCustomerRef"
               },
               "supplementalData": {
-                "type": "object",
-                "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting platform. [Learn more](https://docs.codat.io/using-the-api/supplemental-data/overview) about supplemental data.",
-                "properties": {
-                  "content": {
-                    "type": "object",
-                    "additionalProperties": {
-                      "type": "object",
-                      "additionalProperties": {}
-                    },
-                    "nullable": true
-                  }
-                },
-                "title": "Supplemental data"
+                "$ref": "#/components/schemas/SupplementalData"
               }
             }
           },
@@ -8400,6 +8388,9 @@
               "dueDate": {
                 "description": "Date by which payment must be made",
                 "$ref": "#/components/schemas/DateTime"
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/SupplementalData"
               }
             }
           },
@@ -8642,6 +8633,9 @@
                 "items": {
                   "$ref": "#/components/schemas/Product/definitions/productVariant"
                 }
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/SupplementalData"
               }
             }
           }
@@ -9129,6 +9123,9 @@
                     "$ref": "#/components/schemas/Transaction/definitions/transactionSourceRef"
                   }
                 ]
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/SupplementalData"
               }
             }
           },
@@ -9522,6 +9519,22 @@
           "detailedErrorCode": {
             "type": "integer",
             "description": "Machine readable error code used to automate processes based on the code returned."
+          }
+        }
+      },
+      "SupplementalData": {
+        "title": "Supplemental data",
+        "type": "object",
+        "x-internal": true,
+        "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting platform. [Learn more](https://docs.codat.io/using-the-api/supplemental-data/overview) about supplemental data.",
+        "properties": {
+          "content": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": true
+            },
+            "nullable": true
           }
         }
       }
