@@ -1,6 +1,6 @@
 ---
 title: Bank feed
-hoverText: A bank feed is a digital connection between a bank (or another financial institution) and a software application, which allows for the automatic and regular transfer of financial data from the bank account into the software. 
+hoverText: A bank feed is a digital connection between a bank (or another financial institution) and a software application, which allows for the automatic and regular transfer of financial statements from the bank account into the software. 
 ---
 
 This technology has become an essential feature in modern accounting and personal finance software. Here's a breakdown of its key characteristics and uses:
