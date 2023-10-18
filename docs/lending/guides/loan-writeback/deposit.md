@@ -1,18 +1,17 @@
 ---
-title: "Deposit"
-description: "Deposit funds into your SMB's accounting platform."
-sidebar_label: "Deposit"
+title: "Deposit lent funds"
+description: "Deposit the loan and reflect it in the SMB's accounting platform"
+sidebar_label: "Deposit loan"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Once you receive the configuration information, you are ready to deposit funds into the borrower's bank account. In general lending, this is also known as *loan drawdown*, and an advance in invoice finance.
-To do this is a two-step process:
+Once you receive the configuration information, you are ready to deposit funds into the borrower's bank account. This is known as *loan drawdown* general lending, and an *advance* in invoice finance. You will need to: 
 
-1. [Create a transfer](/lending/guides/deposit#create-transfer) from the lender's bank account to the borrower's bank account. 
+1. [Create a transfer](/lending/guides/loan-writeback/deposit#create-transfer) from the lender's bank account to the borrower's bank account. 
 
-2. [Create a bank transaction](/lending/guides/c#create-bank-transaction) depositing the amount into the lender's bank account to make the funds available for drawdown. 
+2. [Create a bank transaction](/lending/guides/loan-writeback/deposit#create-bank-transaction) depositing the amount into the lender's bank account to make the funds available for drawdown. 
 
 
 ```mermaid
@@ -27,21 +26,20 @@ To do this is a two-step process:
         codat -->> backend: bank transaction
 ```
 
-This part of your application must have access to the following configuration properties
+To perform these operations, you will need the following properties:
 
 - Lender's [`lendersBankAccount.id`](/lending-api#/AccountingBankAccount)
 - SMB's [`borrowersBankAccount.id`](/lending-api#/AccountingBankAccount) and `currency`
-
-and you must provide 
-
-- `depositDate` - the date the funding was deposited into the borrowers bank account
-- `depositAmount` - the funding amount you provided the SMB. For selective invoice finance this is the advance
+- `depositDate` - the date the funding was deposited into the borrower's bank account
+- `depositAmount` - the funding amount or advance provided to the SMB
 
 ### Create transfer
 
-Following Codat's async record creation process, use the [Get create transfer model](/lending-api#/operations/get-create-transfers-model) endpoint to determine the transfer request parameters. 
+To record the transfer of money from the lender's bank account to the borrower's bank account:
 
-Next, call the [Create transfer](/lending-api#/operations/create-transfer) endpoint to transfer the money from the lender's bank account to the borrower's bank account. Note that you are performing a transfer *from* the lender's account Id *to* the borrower's account Id.
+1. Use the [Get create transfer model](/lending-api#/operations/get-create-transfers-model) endpoint to determine the transfer request parameters.
+
+2. Call the [Create transfer](/lending-api#/operations/create-transfer) endpoint to perform the transfer of money. Note that you are performing a transfer *from* `lendersBankAccount.id` *to* `borrowersBankAccount.id`.
 
 <Tabs>
 <TabItem value="nodejs" label="TypeScript">
@@ -325,5 +323,5 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 ## Read next
 
-* Learn how to repay a [general loan](/lending/guides/loan-writeback/repay-general-loan)
-* Learn how to repay in [invoice finance](/lending/guides/loan-writeback/repay-invoice-finance)
+* Record the repayment of a [general loan](/lending/guides/loan-writeback/repay-general-loan)
+* Record the repayment of an [invoice finance](/lending/guides/loan-writeback/repay-invoice-finance) loan

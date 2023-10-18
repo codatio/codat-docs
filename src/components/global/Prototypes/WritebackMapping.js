@@ -99,7 +99,7 @@ const PrototypeWritebackMapping = () => {
       <h4>Example mapping UI</h4>
 
 
-      <p>Map your payroll components to a relevant account.</p>
+      <p>Map your loan writeback components to a relevant account.</p>
 
       <ComponentMapper 
         arr={getBankAccountsResponse}
@@ -128,9 +128,9 @@ const PrototypeWritebackMapping = () => {
       <div className={`input-group ${styles.card}`}>
         <h5 className={styles.category}>Lender account</h5>
         
-        <p><b>We'll also create new bank account in your accounting platform</b></p>
+        <p><b>We'll also create a new bank account in your accounting platform</b></p>
 
-        <p>This account acts as the lenders virtual account and is used for double-entry accounting purposes.</p>
+        <p>This account acts as the lender's virtual account and is used for double-entry accounting purposes.</p>
       </div>
     </div>
   );

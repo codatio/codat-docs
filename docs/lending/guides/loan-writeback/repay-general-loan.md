@@ -1,21 +1,23 @@
 ---
-title: "Repay for general loans"
-description: "Repay money owed to you, the lender, in your SMB's accounting platform."
-sidebar_label: "Repay for standard loans"
+title: "Record general loan repayments"
+description: "Record the repayment of money owed to the lender for a general loan in the SMB's accounting platform"
+sidebar_label: "Record: general loans"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Based on the loan's terms and conditions, the borrower will periodically repay the lender the loan amount and any associated fees. To reflect that programmatically:
+Based on the loan's terms and conditions, the borrower will periodically repay the lender the loan amount and any associated fees. To reflect that programmatically, perform these steps every time a repayment is made:
 
-1. For each repayment, [create a transfer](/lending/guides/general-loan-writeback#create-transfer) from the borrower's bank account to the lender's. 
+1. [Create a transfer](/lending/guides/loan-writeback/repay-general-loan#create-transfer) from the borrower's bank account to the lender's for each repayment.
 
-2. To record interest or fees, [create a direct cost](/lending/guides/general-loan-writeback#create-direct-cost). 
+2. [Create a direct cost](/lending/guides/loan-writeback/repay-general-loan#create-direct-cost) to record interest or fees.
 
-3. [Create bank transactions](/lending/guides/general-loan-writeback#create-bank-transaction) to deposit the repayment into the lender's account. 
+3. [Create bank transactions](/lending/guides/loan-writeback/repay-general-loan#create-bank-transaction) to deposit the repayment into the lender's account. 
 
-Repeat these steps every time a repayment is made. For example, if the borrower took out a loan of £1000 and agreed on a loan charge of 20%, the total amount due comes to £1200. With a 3-month equal instalment repayment plan, the borrower would pay back £400 each month. This means a transfer of £320 to represent the payment, a direct cost of £80 to record the fees, and a bank transaction of £400 to reduce the liability to the lender.
+For example, if the borrower took out a loan of £1000 with a loan charge of 20%, the total amount due comes to £1200. With a 3-month equal instalment repayment plan, the borrower pays back £400 each month. 
+
+This means you need to create a transfer of £320 to represent the payment, a direct cost of £80 to record the fees, and a bank transaction of £400 to reduce the liability to the lender.
 
 ```mermaid
 sequenceDiagram
@@ -35,24 +37,18 @@ sequenceDiagram
     application ->> codat: Create bank transactions (deposit in lender's account)
     codat -->> application: bank transactions
 ```
+To perform these operations, you will need the following properties:
 
-This part of your application must have access to the following configuration properties
-
-- Lender's [`supplier.id`](/lending-api#/schemas/AccountingSupplier)
-- Lender's [`lendersBankAccount.id`](/lending-api#/AccountingBankAccount)
-- SMB's [`expenseAccount.id`](/lending-api#/schemas/AccountingAccount)
-- SMB's [`borrowersBankAccount.id`](/lending-api#/AccountingBankAccount) and `currency`
-
-and you must provide 
-
-- `repaymentDate` - the amount repaying the loan amount
+- Lender's [`supplier.id`](/lending-api#/schemas/AccountingSupplier) and [`lendersBankAccount.id`](/lending-api#/AccountingBankAccount)
+- SMB's [`expenseAccount.id`](/lending-api#/schemas/AccountingAccount), [`borrowersBankAccount.id`](/lending-api#/AccountingBankAccount), and `currency`
+- `repaymentDate` - the date of the repayment
 - `repaymentAmount` - the amount repaying the loan amount
 - `interestAndFeesAmount` - the amount paying for interest and fees
-- `totalRepaymentAmount` where `totalRepaymentAmount = repaymentAmount + interestAndFeesAmount`
+- `totalRepaymentAmount`, where `totalRepaymentAmount = repaymentAmount + interestAndFeesAmount`
 
 ### Create transfer
 
-First, use the [Create transfer](/lending-api#/operations/create-transfer) endpoint again - this time to record the loan repayment amount. Note that you are performing a transfer *from* the borrower's account Id *to* the lender's account Id.
+Use the [Create transfer](/lending-api#/operations/create-transfer) endpoint again, this time to record the loan repayment amount. Note that you are performing a transfer *from* `borrowersBankAccount.id` *to* `lendersBankAccount.id`.
 
 <Tabs>
 <TabItem value="nodejs" label="TypeScript">
@@ -204,7 +200,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 ### Create direct cost
 
-Finally, check the [Get create direct cost model](/lending-api#/operations/get-create-directCosts-model), then use the [Create direct cost](/lending-api#/operations/create-direct-cost) endpoint to capture the amount of fees or interest incurred by the borrower.
+Check the [Get create direct cost model](/lending-api#/operations/get-create-directCosts-model), then use the [Create direct cost](/lending-api#/operations/create-direct-cost) endpoint to capture the amount of fees or interest incurred by the borrower.
 
 <Tabs>
 <TabItem value="nodejs" label="TypeScript">
@@ -429,19 +425,9 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 </Tabs>
 
-As a result of this process, your borrower will have the loan writeback reflected correctly in their accounting platform, saving their time on reconciliation and making sure they (and you!) have clarity on the state of the loan.
-
-:::tip Recap
-In this guide, you have learned:
-* What is loan writeback and what it's used for.
-* How to map and configure the loan writeback solution.
-* How to perform the necessary postings using Codat's endpoints.
-:::
-
-
 ### Create bank transaction
 
-Use the [Create bank account transactions](/lending-api#/operations/create-bank-transactions) endpoint again to deposit the total amount (including the repayment, fees, and any interest) into the lender's bank account.
+Use the [Create bank account transactions](/lending-api#/operations/create-bank-transactions) endpoint to deposit the total amount (including the repayment, fees, and any interest) into the lender's bank account.
 
 <Tabs>
 <TabItem value="nodejs" label="TypeScript">
@@ -562,9 +548,18 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 </Tabs>
 
+At the end of this 3-stage process, your borrower will have the loan writeback reflected correctly in their accounting platform. This saves them time on reconciliation and makes sure they (and you!) have clarity on the state of the loan.
+
+:::tip Recap
+In this guide, you have learned:
+* What is loan writeback and what it's used for.
+* How to map and configure the loan writeback solution.
+* How to perform the necessary postings using Codat's endpoints.
+:::
+
 ---
 
 ## Read next
 
-* Looking to implement loan writeback for Xero? Don't forget to view Xero's [own documentation](https://developer.xero.com/documentation/guides/how-to-guides/general-lending-integration-guide/)
+* Looking to implement loan writeback for Xero? View Xero's [own documentation](https://developer.xero.com/documentation/guides/how-to-guides/general-lending-integration-guide/)
 * Review other features of the [Lending API](/lending/overview)

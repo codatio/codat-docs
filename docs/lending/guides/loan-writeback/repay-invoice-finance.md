@@ -1,23 +1,23 @@
 ---
-title: "Repay selective invoice financing"
-description: "Simplify your implementation with our selective invoice loan writeback best practices guide and correctly account for a loan programmatically"
-sidebar_label: "Repay for invoice financiers"
+title: "Record invoice finance repayments"
+description: "Record the repayment of money owed to the lender for an invoice financing loan in the SMB's accounting platform"
+sidebar_label: "Record: invoice finance"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import WritebackMapping from "@components/global/Prototypes/WritebackMapping";
 
-Once the borrower's customer has paid for the goods/services the financed invoice is ready to be reconciled in the accounting platform.  
-To reflect that programmatically:
+Once the borrower's customer has paid for the goods or services they purchased, the financed invoice is ready to be reconciled in the accounting platform.  
+To reflect that programmatically, perform these steps:
 
-1. Account outstanding amount less fees, [create a transfer](/lending/guides/selective-invoice-finance-loan-writeback#create-transfer) from the lender's bank account to the borrower's
+1. [Create a transfer](/lending/guides/loan-writeback/repay-inoice-finance#create-transfer) from the lender's bank account to the borrower's to account for the oustanding amount less fees.
 
-2. To record interest or fees, [create a direct cost](/lending/guides/selective-invoice-finance-loan-writeback#create-direct-cost) against the lender's bank account 
+2. To record interest or fees, [create a direct cost](/lending/guides/loan-writeback/repay-inoice-finance#create-direct-cost) against the lender's bank account.
 
-3. To update the invoice as paid, [create a payment](/lending/guides/selective-invoice-finance-loan-writeback#create-payment) in the lender's bank account
+3. To update the invoice as paid, [create a payment](/lending/guides/loan-writeback/repay-inoice-finance#create-payment) in the lender's bank account.
 
-4. [Create bank transactions](/lending/guides/selective-invoice-finance-loan-writeback#create-bank-transactions) to keep the lender's bank account transactions in sync
+4. [Create bank transactions](/lending/guides/loan-writeback/repay-inoice-finance#create-bank-transactions) to keep the lender's bank account transactions in sync.
 
 ```mermaid
 sequenceDiagram
@@ -37,26 +37,177 @@ sequenceDiagram
         codat -->> backend: bank transactions
 ```
 
-This part of your application must have access to the following configuration properties
+To perform these operations, you will need the following properties:
 
-- Lender's `supplier.id`
-- Lender's `lendersBankAccount.id`
-- SMB's expense `expenseAccount.id`
-- SMB's [`borrowersBankAccount.id`](/lending-api#/AccountingBankAccount) and `currency`
+- Lender's [`supplier.id`](/lending-api#/schemas/AccountingSupplier) and [`lendersBankAccount.id`](/lending-api#/AccountingBankAccount)
+- SMB's [`expenseAccount.id`](/lending-api#/schemas/AccountingAccount), [`borrowersBankAccount.id`](/lending-api#/AccountingBankAccount), and `currency`
+- Interest and fee amounts
+- [Invoice](/lending-api#/AccountingInvoice) properties of `id`, `totalAmount, and `customerRef.id`
 
-and you must provide 
+### Create transfer
 
-- Your interest and fees
-- [Invoice](/lending-api#/AccountingInvoice) ID do access the following invoice properties
-    - `id`
-    - `totalAmount`
-    - `customerRef.id`
+Once the SMB's customer pays the invoice, use the [Create transfer](/lending-api#/operations/create-transfer) endpoint to record the outstanding amount not covered by the loan. Note that you are performing a transfer *from* `lendersBankAccount.id` *to* `borrowersBankAccount.id`.
+
+The amount outstanding is calculated as:
+
+```
+outstandingAmount = invoiceAmount - advanceAmount - feeAndInterestAmount
+```
+Store `outstandingAmount` and `outstandingAmountTransferDate` in your application for use later on.
+
+<Tabs>
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+codatLending.loanWriteback.transfers.create({
+    accountingTransfer: {
+        date: outstandingAmountTransferDate,
+        from: {
+            accountRef: {
+                id: lendersBankAccount.id,
+            },
+            amount: outstandingAmount,
+            currency: borrowersBankAccount.currency,
+        },
+        to: {
+            accountRef: {
+                id: borrowersBankAccount.id,
+            },
+            amount: outstandingAmount,
+            currency: borrowersBankAccount.currency,
+        },
+    },
+    companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
+    connectionId: "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+    }).then((res: CreateTransferResponse) => {
+    if (res.statusCode == 200) {
+        // handle response
+    }
+});
+```
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+transfers_create_request = operations.CreateTransferRequest(
+    accounting_transfer=shared.AccountingTransfer(
+        date_=outstanding_amount_transfer_date,
+        from_=shared.TransferAccount(
+            account_ref=shared.AccountRef(
+                id=lenders_bank_account.id,
+            ),
+            amount=Decimal(outstanding_amount),
+            currency=borrowers_bank_account.currency,
+        ),
+        to=shared.TransferAccount(
+            account_ref=shared.AccountRef(
+                id=borrowers_bank_account.id,
+            ),
+            amount=Decimal(outstanding_amount),
+            currency=borrowers_bank_account.currency,
+        ),
+    ),
+    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
+    connection_id='2e9d2c44-f675-40ba-8049-353bfcb5e171',
+)
+
+transfers_create_response = codat_lending.loan_writeback.transfers.create(transfers_create_request)
+```
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var transfersCreateResponse = await codatLending.LoanWriteback.Transfers.CreateAsync(new CreateTransferRequest() {
+    AccountingTransfer = new AccountingTransfer() {
+        Date = outstandingAmountTransferDate,
+        From = new TransferAccount() {
+            AccountRef = new AccountRef() {
+                Id = lendersBankAccount.Id,
+            },
+            Amount = outstandingAmount,
+            Currency = borrowersBankAccount.Currency,
+        },
+        To = new TransferAccount() {
+            AccountRef = new AccountRef() {
+                Id = borrowersBankAccount.Id,
+            },
+            Amount = outstandingAmount,
+            Currency = borrowersBankAccount.Currency,
+        },
+    },
+    CompanyId = "8a210b68-6988-11ed-a1eb-0242ac120002",
+    ConnectionId = "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+});
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+transfersCreateResponse, err := codatLending.LoanWriteback.Transfers.Create(ctx, operations.CreateTransferRequest{
+    AccountingTransfer: &shared.AccountingTransfer{
+        Date: lending.String(outstandingAmountTransferDate),
+        From: &shared.TransferAccount{
+            AccountRef: &shared.AccountRef{
+                ID: lending.String(lendersBankAccount.ID),
+            },
+            Amount: types.MustNewDecimalFromString(outstandingAmount),
+            Currency: lending.String(borrowersBankAccount.Currency),
+        },
+        To: &shared.TransferAccount{
+            AccountRef: &shared.AccountRef{
+                ID: lending.String(borrowersBankAccount.ID),
+            },
+            Amount: types.MustNewDecimalFromString(outstandingAmount),
+            Currency: lending.String(borrowersBankAccount.Currency),
+        },
+    },
+    CompanyID: "8a210b68-6988-11ed-a1eb-0242ac120002",
+    ConnectionID: "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+})
+```
+</TabItem>
+
+<TabItem value="http" label="HTTP">
+
+```http
+POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/transfers
+```
+
+#### Request body
+
+```json
+{
+    "date": outstandingAmountTransferDate,
+    "from": {
+        "accountRef": {
+            "id": lendersBankAccount.id,
+        },
+        "account": outstandingAmount,
+        "currency": borrowersBankAccount.currency,
+    },
+    "to": {
+        "accountRef": {
+            "id": borrowersBankAccount.id,
+        },
+        "account": outstandingAmount,
+        "currency": borrowersBankAccount.currency,
+    }
+}
+```
+
+</TabItem>
+
+</Tabs>
 
 ### Create direct cost
 
-Next, check the [Get create direct cost model](/lending-api#/operations/get-create-directCosts-model), then use the [Create direct cost](/lending-api#/operations/create-direct-cost) endpoint to capture the amount of fees or interest (`feeAndInterestAmount`) incurred by the borrower.
+Check the [Get create direct cost model](/lending-api#/operations/get-create-directCosts-model), then use the [Create direct cost](/lending-api#/operations/create-direct-cost) endpoint to capture the amount of fees or interest (`feeAndInterestAmount`) incurred by the borrower.
 
-Make sure to store the `feeAndInterestAmount` and direct cost's [issueDate](/lending-api#/schemas/AccountingDirectCost) for use later on in your application.
+Store the `feeAndInterestAmount` and the direct cost's `issueDate` for use later on in your application.
 
 <Tabs>
 <TabItem value="nodejs" label="TypeScript">
@@ -281,171 +432,9 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 </Tabs>
 
-### Create transfer
-
-Use the [Create transfer](/lending-api#/operations/create-transfer) endpoint again - this time to record the amount outstanding. Note that you are performing a transfer *from* the lender's account ID *to* the borrower's account ID.
-
-The amount outstanding is calculated as 
-
-```
-outstandingAmount = invoiceAmount - advanceAmount - feeAndInterestAmount
-```
-Make sure to store `outstandingAmount` and transfer date (`outstandingAmountTransferDate`) in your application for use later on.
-
-<Tabs>
-<TabItem value="nodejs" label="TypeScript">
-
-```javascript
-codatLending.loanWriteback.transfers.create({
-    accountingTransfer: {
-        date: outstandingAmountTransferDate,
-        from: {
-            accountRef: {
-                id: lendersBankAccount.id,
-            },
-            amount: outstandingAmount,
-            currency: borrowersBankAccount.currency,
-        },
-        to: {
-            accountRef: {
-                id: borrowersBankAccount.id,
-            },
-            amount: outstandingAmount,
-            currency: borrowersBankAccount.currency,
-        },
-    },
-    companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
-    connectionId: "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-    }).then((res: CreateTransferResponse) => {
-    if (res.statusCode == 200) {
-        // handle response
-    }
-});
-```
-</TabItem>
-
-<TabItem value="python" label="Python">
-
-```python
-transfers_create_request = operations.CreateTransferRequest(
-    accounting_transfer=shared.AccountingTransfer(
-        date_=outstanding_amount_transfer_date,
-        from_=shared.TransferAccount(
-            account_ref=shared.AccountRef(
-                id=lenders_bank_account.id,
-            ),
-            amount=Decimal(outstanding_amount),
-            currency=borrowers_bank_account.currency,
-        ),
-        to=shared.TransferAccount(
-            account_ref=shared.AccountRef(
-                id=borrowers_bank_account.id,
-            ),
-            amount=Decimal(outstanding_amount),
-            currency=borrowers_bank_account.currency,
-        ),
-    ),
-    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
-    connection_id='2e9d2c44-f675-40ba-8049-353bfcb5e171',
-)
-
-transfers_create_response = codat_lending.loan_writeback.transfers.create(transfers_create_request)
-```
-</TabItem>
-
-<TabItem value="csharp" label="C#">
-
-```csharp
-var transfersCreateResponse = await codatLending.LoanWriteback.Transfers.CreateAsync(new CreateTransferRequest() {
-    AccountingTransfer = new AccountingTransfer() {
-        Date = outstandingAmountTransferDate,
-        From = new TransferAccount() {
-            AccountRef = new AccountRef() {
-                Id = lendersBankAccount.Id,
-            },
-            Amount = outstandingAmount,
-            Currency = borrowersBankAccount.Currency,
-        },
-        To = new TransferAccount() {
-            AccountRef = new AccountRef() {
-                Id = borrowersBankAccount.Id,
-            },
-            Amount = outstandingAmount,
-            Currency = borrowersBankAccount.Currency,
-        },
-    },
-    CompanyId = "8a210b68-6988-11ed-a1eb-0242ac120002",
-    ConnectionId = "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-});
-```
-</TabItem>
-
-<TabItem value="go" label="Go">
-
-```go
-ctx := context.Background()
-transfersCreateResponse, err := codatLending.LoanWriteback.Transfers.Create(ctx, operations.CreateTransferRequest{
-    AccountingTransfer: &shared.AccountingTransfer{
-        Date: lending.String(outstandingAmountTransferDate),
-        From: &shared.TransferAccount{
-            AccountRef: &shared.AccountRef{
-                ID: lending.String(lendersBankAccount.ID),
-            },
-            Amount: types.MustNewDecimalFromString(outstandingAmount),
-            Currency: lending.String(borrowersBankAccount.Currency),
-        },
-        To: &shared.TransferAccount{
-            AccountRef: &shared.AccountRef{
-                ID: lending.String(borrowersBankAccount.ID),
-            },
-            Amount: types.MustNewDecimalFromString(outstandingAmount),
-            Currency: lending.String(borrowersBankAccount.Currency),
-        },
-    },
-    CompanyID: "8a210b68-6988-11ed-a1eb-0242ac120002",
-    ConnectionID: "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-})
-```
-</TabItem>
-
-<TabItem value="http" label="HTTP">
-
-```http
-POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/transfers
-```
-
-#### Request body
-
-```json
-{
-    "date": outstandingAmountTransferDate,
-    "from": {
-        "accountRef": {
-            "id": lendersBankAccount.id,
-        },
-        "account": outstandingAmount,
-        "currency": borrowersBankAccount.currency,
-    },
-    "to": {
-        "accountRef": {
-            "id": borrowersBankAccount.id,
-        },
-        "account": outstandingAmount,
-        "currency": borrowersBankAccount.currency,
-    }
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-
 ### Create payment
 
-Next, use the [Create payment](/lending-api#/operations/create-payment) endpoint to acknowledge payment has been received for the invoice.
-
-Make sure to store the payment's [date](/lending-api#/schemas/AccountingPayment) (`invoicePaymentDate`) for use later on in your application.
+Next, use the [Create payment](/lending-api#/operations/create-payment) endpoint to acknowledge payment has been received for the invoice. Store the `invoicePaymentDate` for use later on in your application.
 
 <Tabs>
 <TabItem value="nodejs" label="TypeScript">
@@ -820,7 +809,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 </Tabs>
 
-As a result of this process, your borrower will have the loan writeback reflected correctly in their accounting platform, saving their time on reconciliation and making sure they (and you!) have clarity on the state of the loan.
+At the end of this 3-stage process, your borrower will have the loan writeback reflected correctly in their accounting platform. This saves them time on reconciliation and makes sure they (and you!) have clarity on the state of the loan.
 
 :::tip Recap
 In this guide, you have learned:
@@ -833,5 +822,5 @@ In this guide, you have learned:
 
 ## Read next
 
-* Checkout our [invoice finance guide](/lending/guides/invoice-finance/introduction) for automated decisions on selected invoice 
+* Check out our [invoice finance guide](/lending/guides/invoice-finance/introduction) to see how you can make automated decisions on selected invoices
 * Review other features of the [Lending API](/lending/overview)

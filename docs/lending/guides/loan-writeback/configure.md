@@ -1,26 +1,26 @@
 ---
-title: "Configure"
-description: "Configure loan writeback for your SMB customer."
-sidebar_label: "Configure"
+title: "Configure your solution"
+description: "Create key elements of loan writeback in Codat's domain and enable your SMB customer to map them"
+sidebar_label: "Configure solution"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import WritebackMapping from "@components/global/Prototypes/WritebackMapping";
 
-Once your SMB customer's loan has been approved they need to be able to configure loan writeback in your application.
-This requires a user interface that provides the option to enable the loan writeback process flow and configure or update their account mapping, for example:
+Once your SMB customer's loan has been approved, provide them with a user interface that lets them enable the loan writeback and configure loan writeback accounts so that the accounting entries are reflected correctly in their accounting platform. They will create or select existing, and subsequently map, the following elements:
+
+* **SMB bank account**, the borrower's business account where the loan is deposited.
+* **Expense account**, an account to record incurred fees and interest.
+* **Supplier record**, a record to identify you, the lender, in future transactions.
+
+Your solution also needs a **lender bank account**, a virtual account that contains the lender's transactions. You would have created this source account when implementing [bank feeds](/bank-feeds/overview). Now, map it to a target account in your SMB customer's accounting platform. You can define it as 'lendersBankAccount` in your solution.
+
+For example, your user interface might look something like this:
 
 <WritebackMapping/>
 
-First, your SMB customer will use your UI to configure loan writeback accounts so that the accounting entries are reflected correctly in their accounting platform. They will create or select existing, and subsequently map, the following elements:
-
-* SMB bank account, the borrower's business account where the loan is deposited.
-* Lender bank account, a virtual account that contains the lender's transactions.
-* Expense account, an account to record incurred fees and interest.
-* Supplier record, a record to identify you, the lender, in future transactions.
-
-Let's go through that in detail. On the diagram below, you can see the configuration sequence covering the display and selection of a bank account, an expense account, and a supplier record. Alternative steps are also provided in case a new account and a new supplier need to be created. 
+Let's go through this process in detail. On the diagram below, you can see the configuration sequence covering the display and selection of a bank account, an expense account, and a supplier record. Alternative steps are also provided in case a new account and a new supplier need to be created. 
 
 ```mermaid
 sequenceDiagram
@@ -43,9 +43,6 @@ sequenceDiagram
     backend -->> frontend: Configuration options
     
     frontend ->> backend: Submits options
-    
-    backend ->> codat: Create (lender's virtual) bank account
-    codat -->> backend: bank account
     
     alt create expense account
         backend ->> codat: Create nominal account
@@ -129,126 +126,9 @@ GET https://api.codat.io/companies/{companyId}/connections/{connectionId}/data/b
 
 Display the response to the customer and allow them to select the account. Store the returned bank account as `borrowersBankAccount` and use it to access properties on the borrower's bank account in future operations. 
 
-Next, create a new bank account that will act as a virtual bank account for your lending activity:
-
-1. Use our [Get create/update bank account model](/lending-api#/operations/get-create-update-bankAccounts-model) to get the expected data for the bank account creation request payload. The data required can vary depending on the platform.
-2. Use the [Create bank account](/lending-api#/operations/create-bank-account) endpoint to create the new account in the accounting platform.
-
-<Tabs>
-<TabItem value="nodejs" label="TypeScript">
-
-```javascript
-codatLending.loanWriteback.bankAccounts.create({
-    accountingBankAccount: {
-        accountName: "saepe",
-        accountNumber: "fuga",
-        accountType: AccountingBankAccountType.Credit,
-        availableBalance: 0.0,
-        balance: 0.0,
-        currency: "USD",
-        iBan: "saepe",
-        institution: "commodi",
-        nominalCode: "molestiae",
-        overdraftLimit: 10000.00,
-        sortCode: "error",
-    },
-    companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
-    connectionId: "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-}).then((res: CreateBankAccountResponse) => {
-if (res.statusCode == 200) {
-    // handle response
-}
-});
-```
-</TabItem>
-
-<TabItem value="python" label="Python">
-
-```python
-create_bank_account_request = operations.CreateBankAccountRequest(
-    accounting_bank_account=shared.AccountingBankAccount(
-        account_name='saepe',
-        account_number='fuga',
-        account_type=shared.AccountingBankAccountType.CREDIT,
-        available_balance=Decimal('3595.08'),
-        balance=Decimal('6130.64'),
-        currency='USD',
-        i_ban='saepe',
-        institution='commodi',
-        nominal_code='molestiae',
-        overdraft_limit=Decimal('2444.25'),
-        sort_code='error',
-    ),
-    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
-    connection_id='2e9d2c44-f675-40ba-8049-353bfcb5e171'
-)
-
-create_bank_account_response = codat_lending.loan_writeback.bank_accounts.create(create_bank_account_request)
-```
-</TabItem>
-
-<TabItem value="csharp" label="C#">
-
-```csharp
-var createBankAccountResponse = await codatLending.LoanWriteback.BankAccounts.CreateAsync(
-    new CreateBankAccountRequest() {
-        AccountingBankAccount = new AccountingBankAccount() {
-            AccountName = "saepe",
-            AccountNumber = "fuga",
-            AccountType = CodatLending.Models.Shared.AccountingBankAccountType.Credit,
-            AvailableBalance = 3595.08M,
-            Balance = 6130.64M,
-            Currency = "USD",
-            IBan = "saepe",
-            Institution = "commodi",
-            NominalCode = "molestiae",
-            OverdraftLimit = 2444.25M,
-            SortCode = "error",
-        },
-        CompanyId = "8a210b68-6988-11ed-a1eb-0242ac120002",
-        ConnectionId = "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-});
-```
-</TabItem>
-
-<TabItem value="go" label="Go">
-
-```go
-ctx := context.Background()
-createBankAccountResponse, err := codatLending.LoanWriteback.BankAccounts.Create(ctx, operations.CreateBankAccountRequest{
-    AccountingBankAccount: &shared.AccountingBankAccount{
-        AccountName: lending.String("saepe"),
-        AccountNumber: lending.String("fuga"),
-        AccountType: shared.AccountingBankAccountTypeCredit.ToPointer(),
-        AvailableBalance: types.MustNewDecimalFromString("3595.08"),
-        Balance: types.MustNewDecimalFromString("6130.64"),
-        Currency: lending.String("USD"),
-        IBan: lending.String("saepe"),
-        Institution: lending.String("commodi"),
-        NominalCode: lending.String("molestiae"),
-        OverdraftLimit: types.MustNewDecimalFromString("2444.25"),
-        SortCode: lending.String("error"),
-    },
-    CompanyID: "8a210b68-6988-11ed-a1eb-0242ac120002",
-    ConnectionID: "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-})
-```
-</TabItem>
-
-<TabItem value="http" label="HTTP">
-
-```http
-POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/bankAccounts
-```
-</TabItem>
-
-</Tabs>
-
-In response, you will receive account creation details which you can display to your customer. Just as you did with the `borrowersBankAccount`, store the `lendersBankAccount` for use later on. 
-
 ### Supplier
 
-In order to create a *spend money* transaction, Codat requires you, the lender, to be represented as a [supplier](./terms/supplier) in your SMB's accounting system. 
+In order to create a *spend money* transaction, Codat requires you, the lender, to be represented as a [supplier](../terms/supplier) in your SMB's accounting system. 
 
 Let your customer check if your record already exists in their accounts. Use our [List suppliers](/lending-api#/operations/list-accounting-suppliers) endpoint to fetch the list of existing suppliers. 
 
@@ -305,9 +185,12 @@ GET https://api.codat.io/companies/{companyId}/data/suppliers
 
 </Tabs>
 
-Display the response to the customer and allow them to find and select your lender record in their supplier list. Store the supplier as `supplier` and use it as the supplier in future transactions.
+Display the response to the customer and allow them to find and select your lender record in their supplier list. Store the supplier `id` as `supplier` and use it in future transactions.
 
-If this is the first time you have lent to this SMB customer, you may need to create yourself as a new supplier in their accounting platform. First, use our [Get create/update supplier model](/lending-api#/operations/get-create-update-suppliers-model) to get the expected data for the supplier creation request payload. Next, use that payload and call our [Create supplier](/lending-api#/operations/create-supplier) endpoint.
+If this is the first time you have lent to this SMB customer, you may need to create yourself as a new supplier in their accounting platform. 
+
+1. Use our [Get create/update supplier model](/lending-api#/operations/get-create-update-suppliers-model) to get the expected data for the supplier creation request payload. The data required can vary depending on the platform.
+2. Use that payload to call the [Create supplier](/lending-api#/operations/create-supplier) endpoint to create the new supplier record in the accounting platform.
 
 <Tabs>
 <TabItem value="nodejs" label="TypeScript">
@@ -460,7 +343,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 </Tabs>
 
-Similarly, store the `id` and use it in future transactions.
+Similarly, store the `supplier` and use it in future transactions.
 
 ### Expense account
 
@@ -525,7 +408,9 @@ GET https://api.codat.io/companies/{companyId}/data/accounts?query=type%3e0Expen
 
 Display the response to the customer and allow them to select the desired expense account. Store the account as `expenseAccount` and use it as the expense account in future operations. 
 
-If the customer wants to create a new nominal expense account for this purpose, use our [Get create account model](//lending-api#/operations/get-create-chartOfAccounts-model) to figure out what payload is required for account creation. Next, call the [Create account](/lending-api#/operations/create-account) endpoint to create the new account. 
+If the customer wants to create a new nominal expense account for this purpose, use our [Get create account model](//lending-api#/operations/get-create-chartOfAccounts-model) to figure out what payload is required for account creation. 
+
+Next, call the [Create account](/lending-api#/operations/create-account) endpoint to create the new account. 
 
 <Tabs>
 <TabItem value="nodejs" label="TypeScript">
@@ -651,4 +536,4 @@ In response, you will receive account creation details which you can display to 
 
 ## Read next
 
-* Learn how to [deposit](/lending/guides/loan-writeback/deposit)
+* Learn how to [deposit](/lending/guides/loan-writeback/deposit) the lent funds into your SMB's accounting platform.
