@@ -3,6 +3,7 @@ title: "Validation of new sign-in methods"
 date: "2023-10-18"
 tags: ["Product", "Update"]
 authors: mcclowes
+image: "/img/updates/security-signin-1.png"
 ---
 
 We've rolled out a new security feature on sign-in to keep your account safer than ever.
