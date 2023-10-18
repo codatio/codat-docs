@@ -13846,6 +13846,9 @@
                     "nullable": true
                   }
                 }
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/SupplementalData"
               }
             }
           },
@@ -14046,7 +14049,7 @@
                 "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/metadata"
               },
               "supplementalData": {
-                "$ref": "#/components/schemas/CommerceOrder/allOf/1/properties/supplementalData"
+                "$ref": "#/components/schemas/SupplementalData"
               }
             }
           },
@@ -14357,7 +14360,7 @@
                 "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/metadata"
               },
               "supplementalData": {
-                "$ref": "#/components/schemas/CommerceOrder/allOf/1/properties/supplementalData"
+                "$ref": "#/components/schemas/SupplementalData"
               }
             }
           },
@@ -14534,7 +14537,7 @@
                 "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/metadata"
               },
               "supplementalData": {
-                "$ref": "#/components/schemas/CommerceOrder/allOf/1/properties/supplementalData"
+                "$ref": "#/components/schemas/SupplementalData"
               }
             }
           },
@@ -14880,6 +14883,9 @@
           "createdDate": {
             "$ref": "#/components/schemas/Company/properties/created",
             "description": "Date the linked company was created in the accounting platform."
+          },
+          "supplementalData": {
+            "$ref": "#/components/schemas/SupplementalData"
           }
         },
         "examples": [
@@ -15305,7 +15311,7 @@
                 "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/metadata"
               },
               "supplementalData": {
-                "$ref": "#/components/schemas/CommerceOrder/allOf/1/properties/supplementalData"
+                "$ref": "#/components/schemas/SupplementalData"
               }
             }
           },
@@ -15518,7 +15524,7 @@
                 "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/metadata"
               },
               "supplementalData": {
-                "$ref": "#/components/schemas/CommerceOrder/allOf/1/properties/supplementalData"
+                "$ref": "#/components/schemas/SupplementalData"
               }
             }
           },
@@ -15647,7 +15653,7 @@
                 "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/metadata"
               },
               "supplementalData": {
-                "$ref": "#/components/schemas/CommerceOrder/allOf/1/properties/supplementalData"
+                "$ref": "#/components/schemas/SupplementalData"
               }
             }
           },
@@ -15827,6 +15833,9 @@
               },
               "metadata": {
                 "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/metadata"
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/SupplementalData"
               }
             }
           },
@@ -16309,7 +16318,6 @@
       "CommerceOrder": {
         "title": "Commerce order",
         "description": "Orders contain the transaction details for all products sold by the company, and include details of any payments, service charges, or refunds related to each order. You can use data from the Orders endpoints to calculate key metrics, such as gross sales values and monthly recurring revenue (MRR).\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-orders) for this data type.\n",
-        "type": "object",
         "allOf": [
           {
             "type": "object",
@@ -16338,7 +16346,6 @@
             }
           },
           {
-            "type": "object",
             "properties": {
               "orderNumber": {
                 "type": "string",
@@ -16365,16 +16372,16 @@
                 ]
               },
               "closedDate": {
-                "description": "Date on which order was closed after the product was shipped, paid for, and any refund period had elapsed.",
-                "$ref": "#/components/schemas/Company/properties/created"
+                "$ref": "#/components/schemas/Company/properties/created",
+                "description": "Date on which order was closed after the product was shipped, paid for, and any refund period had elapsed."
               },
               "totalAmount": {
-                "description": "Total amount of the order, including tax, net of any discounts and refunds.",
+                "description": "Total amount of the order, including discounts, refunds, and tax, but excluding gratuities.",
                 "type": "number",
                 "format": "decimal"
               },
               "totalRefund": {
-                "description": "Total amount refunded issued by a merchant on an order (always a negative value).",
+                "description": "Total amount of any refunds issued on the order, including discounts and tax, but excluding gratuities. This is always negative.",
                 "type": "number",
                 "format": "decimal"
               },
@@ -16384,12 +16391,12 @@
                 "format": "decimal"
               },
               "totalDiscount": {
-                "description": "Total amount of discount applied to the order.",
+                "description": "Total amount of any discounts applied to the order, excluding tax. This is typically positive (for discounts which decrease the amount of the order), but can also be negative (for discounts which increase the amount of the order).",
                 "type": "number",
                 "format": "decimal"
               },
               "totalGratuity": {
-                "description": "Extra amount added to a bill.",
+                "description": "Extra amount added to the order.",
                 "type": "number",
                 "format": "decimal"
               },
@@ -16418,19 +16425,7 @@
                 "$ref": "#/components/schemas/CommerceCustomer/definitions/commerceCustomerRef"
               },
               "supplementalData": {
-                "type": "object",
-                "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting platform. [Learn more](https://docs.codat.io/using-the-api/supplemental-data/overview) about supplemental data.",
-                "properties": {
-                  "content": {
-                    "type": "object",
-                    "additionalProperties": {
-                      "type": "object",
-                      "additionalProperties": {}
-                    },
-                    "nullable": true
-                  }
-                },
-                "title": "Supplemental data"
+                "$ref": "#/components/schemas/SupplementalData"
               }
             }
           },
@@ -16499,12 +16494,12 @@
                   "quantity": {
                     "type": "number",
                     "format": "decimal",
-                    "description": "Number of units of the product sold.\nFor refunds, quantity is a negative value.\n"
+                    "description": "Number of units of the product sold.\nFor refunds, quantity is negative.\n"
                   },
                   "taxPercentage": {
                     "type": "number",
                     "format": "decimal",
-                    "description": "Percentage rate (from 0 to 100) of any sale tax applied to the unit amount.",
+                    "description": "Percentage rate (from 0 to 100) of any sales tax applied to the unit price.",
                     "examples": [
                       0,
                       12.5,
@@ -16514,17 +16509,17 @@
                   "totalAmount": {
                     "type": "number",
                     "format": "decimal",
-                    "description": "Total price of the line item, including discounts, tax and minus any refunds."
+                    "description": "Total amount of the line item, including discounts and tax."
                   },
                   "totalTaxAmount": {
                     "type": "number",
                     "format": "decimal",
-                    "description": "Total amount of tax applied to the line item."
+                    "description": "Total amount of tax applied to the line item, factoring in any discounts."
                   },
                   "unitPrice": {
                     "type": "number",
                     "format": "decimal",
-                    "description": "Price per unit of goods or service."
+                    "description": "Price per unit of goods or services, excluding discounts and tax."
                   },
                   "taxes": {
                     "type": "array",
@@ -16551,7 +16546,6 @@
           },
           "serviceCharge": {
             "type": "object",
-            "x-internal": null,
             "properties": {
               "description": {
                 "description": "Service charges for this order.",
@@ -16559,7 +16553,7 @@
                 "example": "A service charge"
               },
               "totalAmount": {
-                "description": "Total service charge, including taxes.",
+                "description": "Total amount of the service charge, including tax.",
                 "type": "number",
                 "format": "decimal",
                 "examples": [
@@ -16643,7 +16637,6 @@
             }
           },
           "serviceChargeType": {
-            "x-internal": true,
             "description": "The type of the service charge.",
             "type": "string",
             "enum": [
@@ -16656,7 +16649,6 @@
           },
           "orderDiscountAllocation": {
             "type": "object",
-            "x-internal": true,
             "properties": {
               "name": {
                 "type": "string",
@@ -16666,7 +16658,7 @@
               "totalAmount": {
                 "type": "number",
                 "format": "decimal",
-                "description": "Total amount of discount applied.",
+                "description": "Total amount of discount applied, excluding tax. This is typically positive (for discounts which decrease the amount of the order line), but can also be negative (for discounts which increase the amount of the order line).",
                 "example": 15.25
               }
             }
@@ -16760,7 +16752,8 @@
             "modifiedDate": "2022-02-02T11:02:45Z",
             "sourceModifiedDate": "2021-03-28T03:00:14"
           }
-        ]
+        ],
+        "type": "object"
       },
       "CommerceOrders": {
         "title": "Orders",
@@ -16878,6 +16871,9 @@
               "dueDate": {
                 "description": "Date by which payment must be made",
                 "$ref": "#/components/schemas/Company/properties/created"
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/SupplementalData"
               }
             }
           },
@@ -17045,6 +17041,9 @@
                 "items": {
                   "$ref": "#/components/schemas/CommerceProduct/definitions/productVariant"
                 }
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/SupplementalData"
               }
             }
           }
@@ -17309,6 +17308,9 @@
                     "$ref": "#/components/schemas/CommerceTransaction/definitions/transactionSourceRef"
                   }
                 ]
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/SupplementalData"
               }
             }
           },
@@ -17465,6 +17467,22 @@
           "detailedErrorCode": {
             "type": "integer",
             "description": "Machine readable error code used to automate processes based on the code returned."
+          }
+        }
+      },
+      "SupplementalData": {
+        "title": "Supplemental data",
+        "type": "object",
+        "x-internal": true,
+        "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting platform. [Learn more](https://docs.codat.io/using-the-api/supplemental-data/overview) about supplemental data.",
+        "properties": {
+          "content": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": true
+            },
+            "nullable": true
           }
         }
       }
