@@ -323,5 +323,5 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 ## Read next
 
-* Record the repayment of a [general loan](/lending/guides/loan-writeback/repay-general-loan)
-* Record the repayment of an [invoice finance](/lending/guides/loan-writeback/repay-invoice-finance) loan
+* Record the repayment of a [general loan](/lending/guides/loan-writeback/repay-general-loan).
+* Record the repayment of an [invoice finance](/lending/guides/loan-writeback/repay-invoice-finance) loan.

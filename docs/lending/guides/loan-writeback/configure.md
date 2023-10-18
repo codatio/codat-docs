@@ -14,7 +14,7 @@ Once your SMB customer's loan has been approved, provide them with a user interf
 * **Expense account**, an account to record incurred fees and interest.
 * **Supplier record**, a record to identify you, the lender, in future transactions.
 
-Your solution also needs a **lender bank account**, a virtual account that contains the lender's transactions. You would have created this source account when implementing [bank feeds](/bank-feeds/overview). Now, map it to a target account in your SMB customer's accounting platform. You can define it as 'lendersBankAccount` in your solution.
+Your solution also needs a **lender bank account**, a virtual account that contains the lender's transactions. You would have created this source account when implementing [bank feeds](/bank-feeds/overview). Now, map it to a target account in your SMB customer's accounting platform. You can define it as `lendersBankAccount` in your solution.
 
 For example, your user interface might look something like this:
 
@@ -63,7 +63,7 @@ Loan writeback process operates with two bank accounts:
 - A borrower's business bank account where the money lent is deposited.
 - A lender's bank account, which is a virtual bank account in the accounting platform that acts as a container for lender transactions. 
 
-First, your customer needs to choose one of their existing bank accounts. This account will be used to depost the loan. Call our [List bank accounts](/lending-api#/operations/list-accounting-bank-accounts) endpoint to retrieve the customer's existing bank accounts. 
+First, your customer needs to choose one of their existing business bank accounts. This account will be used to depost the loan. Call our [List bank accounts](/lending-api#/operations/list-accounting-bank-accounts) endpoint to retrieve the customer's existing bank accounts. 
 
 <Tabs>
 <TabItem value="nodejs" label="TypeScript">
@@ -125,6 +125,8 @@ GET https://api.codat.io/companies/{companyId}/connections/{connectionId}/data/b
 </Tabs>
 
 Display the response to the customer and allow them to select the account. Store the returned bank account as `borrowersBankAccount` and use it to access properties on the borrower's bank account in future operations. 
+
+For the lender's bank account, use the `lendersBankAccount` value you would have created when implementing [bank feeds](../terms/bank-feed).
 
 ### Supplier
 

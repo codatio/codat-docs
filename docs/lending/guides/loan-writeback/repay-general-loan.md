@@ -7,7 +7,9 @@ sidebar_label: "Record: general loans"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Based on the loan's terms and conditions, the borrower will periodically repay the lender the loan amount and any associated fees. To reflect that programmatically, perform these steps every time a repayment is made:
+Based on the loan's terms and conditions, the borrower will periodically repay the lender the loan amount and any associated fees. 
+
+To reflect that programmatically, perform these steps every time a repayment is made:
 
 1. [Create a transfer](/lending/guides/loan-writeback/repay-general-loan#create-transfer) from the borrower's bank account to the lender's for each repayment.
 
@@ -561,5 +563,5 @@ In this guide, you have learned:
 
 ## Read next
 
-* Looking to implement loan writeback for Xero? View Xero's [own documentation](https://developer.xero.com/documentation/guides/how-to-guides/general-lending-integration-guide/)
-* Review other features of the [Lending API](/lending/overview)
+* Looking to implement loan writeback for Xero? View Xero's [own documentation](https://developer.xero.com/documentation/guides/how-to-guides/general-lending-integration-guide/).
+* Review other features of the [Lending API](/lending/overview).

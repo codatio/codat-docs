@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 import WritebackMapping from "@components/global/Prototypes/WritebackMapping";
 
 Once the borrower's customer has paid for the goods or services they purchased, the financed invoice is ready to be reconciled in the accounting platform.  
+
 To reflect that programmatically, perform these steps:
 
 1. [Create a transfer](/lending/guides/loan-writeback/repay-inoice-finance#create-transfer) from the lender's bank account to the borrower's to account for the oustanding amount less fees.
@@ -626,7 +627,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 ### Create bank transactions
 
-Finally, use the [Create bank account transactions](/lending-api#/operations/create-bank-transactions) endpoint again to deposit the total amount (including the repayment, fees, and any interest) into the lender's bank account.
+Finally, use the [Create bank account transactions](/lending-api#/operations/create-bank-transactions) endpoint again to deposit the total amount (including the repayment, fees, and any interest) into the lender's bank account. You will need the previously stored values for this operation.
 
 <Tabs>
 <TabItem value="nodejs" label="TypeScript">
@@ -822,5 +823,5 @@ In this guide, you have learned:
 
 ## Read next
 
-* Check out our [invoice finance guide](/lending/guides/invoice-finance/introduction) to see how you can make automated decisions on selected invoices
-* Review other features of the [Lending API](/lending/overview)
+* Check out our [invoice finance guide](/lending/guides/invoice-finance/introduction) to see how you can make automated decisions on selected invoices.
+* Review other features of the [Lending API](/lending/overview).
