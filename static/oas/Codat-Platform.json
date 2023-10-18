@@ -1525,9 +1525,7 @@
         },
         "operationId": "get-profile",
         "x-speakeasy-name-override": "get-profile",
-        "description": "Fetch your Codat profile.",
-        "deprecated": true,
-        "x-internal": true
+        "description": "Fetch your Codat profile."
       },
       "put": {
         "summary": "Update profile",
