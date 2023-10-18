@@ -22,18 +22,15 @@ module.exports = [
     id: "bank-feeds/create-account",
     customProps: {
       hr: true,
-      section: "Configure and build",
+      section: "Build your solution",
     },
   },
   {
     type: "category",
     label: "Map accounts",
     items: [
-      "bank-feeds/mapping",
       "bank-feeds/mapping/codat-ui",
       "bank-feeds/mapping/api-mapping",
-      "bank-feeds/mapping/qbo-mapping",
-      "bank-feeds/mapping/sage-mapping",
     ],
   },
   {
@@ -42,35 +39,47 @@ module.exports = [
     id: "bank-feeds/pushing-transactions",
   },
   {
-    type: "doc",
+    type: "category",
     label: "QuickBooks Online",
+    items: [
+      "bank-feeds/integrations/qbo/quickbooksonline",
+      "bank-feeds/integrations/qbo/qbo-mapping",
+    ],
     customProps: {
       hr: true,
-      section: "Bank feeds integrations",
+      section: "Manage integrations",
     },
-    id: "integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds",
   },
   {
-    type: "doc",
+    type: "category",
     label: "Sage",
-    id: "integrations/bank-feeds/sage-bank-feeds/sage-bank-feeds",
+    items: [
+      "bank-feeds/integrations/sage/sage",
+      "bank-feeds/integrations/sage/sage-mapping",
+    ],
   },
   {
-    type: "doc",
+    type: "category",
     label: "Xero",
-    id: "integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds",
+    items: [
+      "bank-feeds/integrations/xero/xero",
+    ],
   },
   {
     type: "doc",
     id: "bank-feeds/guides/bank-feeds-tutorial",
-    label: "Tutorial",
+    label: "Bank Feeds API for QBO reconciliation",
     customProps: {
       hr: true,
+      section: "Guides",
     },
   },
   {
     type: "link",
     href: "/bank-feeds-api",
     label: "API reference",
+    customProps: {
+      hr: true,
+    },
   },
 ];
