@@ -5,7 +5,7 @@ tags: ["Product", "Update"]
 authors: mcclowes
 ---
 
-We're rolled out a new security feature on sign-in to keep your account safer than ever.
+We've rolled out a new security feature on sign-in to keep your account safer than ever.
 
 <!--truncate-->
 
