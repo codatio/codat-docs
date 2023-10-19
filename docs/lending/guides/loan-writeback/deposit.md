@@ -23,7 +23,7 @@ Once you receive the configuration information, you are ready to deposit funds i
         codat -->> backend:  transfer
 
         backend ->> codat: Create bank feed transaction (deposit to lender's account)
-        codat -->> backend: bank transaction
+        codat -->> backend: bank feed transaction
 ```
 
 To perform these operations, you will need the following properties:
