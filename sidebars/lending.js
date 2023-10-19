@@ -91,8 +91,8 @@ module.exports = [
     },
     "lending/guides/loan-writeback/configure",
     "lending/guides/loan-writeback/deposit",
-    "lending/guides/loan-writeback/repay-general-loan",
-    "lending/guides/loan-writeback/repay-invoice-finance",
+    "lending/guides/loan-writeback/record-general-loan",
+    "lending/guides/loan-writeback/record-invoice-finance",
   ],
 },
 {
