@@ -130,7 +130,7 @@ For the lender's bank account, use the `lendersBankAccount` value you would have
 
 ### Supplier
 
-In order to create a *spend money* transaction, Codat requires you, the lender, to be represented as a [supplier](../terms/supplier) in your SMB's accounting system. 
+In order to create a *spend money* transaction, Codat requires you, the lender, to be represented as a [supplier](../../../terms/supplier) in your SMB's accounting system. 
 
 Let your customer check if your record already exists in their accounts. Use our [List suppliers](/lending-api#/operations/list-accounting-suppliers) endpoint to fetch the list of existing suppliers. 
 
