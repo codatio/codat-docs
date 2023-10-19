@@ -64,6 +64,11 @@ module.exports = {
           label: "Invoice finance",
           id: "lending/guides/invoice-finance/introduction",
         },
+        {
+          type: "ref",
+          label: "Loan writeback",
+          id: "lending/guides/loan-writeback/introduction",
+        },
         // {
         //   type: "ref",
         //   label: "Loan qualification",
