@@ -126,7 +126,7 @@ GET https://api.codat.io/companies/{companyId}/connections/{connectionId}/data/b
 
 Display the response to the customer and allow them to select the account. Store the returned bank account as `borrowersBankAccount` and use it to access properties on the borrower's bank account in future operations. 
 
-For the lender's bank account, use the `lendersBankAccount` value you would have created when implementing [bank feeds](../terms/bank-feed).
+For the lender's bank account, use the `lendersBankAccount` value you would have created when implementing [bank feeds](../../../terms/bank-feed).
 
 ### Supplier
 
