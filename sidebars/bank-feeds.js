@@ -68,7 +68,6 @@ module.exports = [
   {
     type: "doc",
     id: "bank-feeds/guides/bank-feeds-tutorial",
-    label: "Bank Feeds API for QBO reconciliation",
     customProps: {
       hr: true,
       section: "Guides",
@@ -76,10 +75,16 @@ module.exports = [
   },
   {
     type: "link",
-    href: "/bank-feeds-api",
-    label: "API reference",
+    href: "/bank-feeds/troubleshooting",
+    label: "Troubleshooting and FAQ",
     customProps: {
       hr: true,
+      section: "Reference",
     },
+  },
+  {
+    type: "link",
+    href: "/bank-feeds-api",
+    label: "API reference",
   },
 ];

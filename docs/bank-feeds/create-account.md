@@ -11,6 +11,58 @@ import TabItem from "@theme/TabItem"
 
 # Bank feeds setup
 
+
+
+```mermaid
+graph LR;
+
+    style codatCompany fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
+    style codatDataConnection fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
+    style codatSourceAccount fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
+    style targetAccount fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
+    style Mapping fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
+
+    subgraph Codat
+    direction TB;
+        codatCompany[<u style='color:#522ce7'>Company</u><br><br>A representation of your SMB customer <br> that wishes to perform bank reconciliation.]  -.- codatDataConnection[<u style='color:#522ce7'>Data connection</u><br><br>A link between a Codat company and their <br> selected accounting software.]
+        click codatCompany "/bank-feeds/setup#creating-a-company" "Companies"
+        codatDataConnection -.- codatSourceAccount[<u style='color:#522ce7'>Source account</u><br><br>A representation of an actual business bank <br> account, savings account, or credit card.]
+        click codatDataConnection "/bank-feeds/setup#creating-a-data-connection" "Data Connections"
+        click codatSourceAccount "/bank-feeds/setup#creating-a-source-account" "Source Accounts"
+    end
+
+    style Codat fill:#f1f4fa,stroke:#666,stroke-width:0px;
+
+    subgraph Mapping[<u style='color:#522ce7'>Mapping</u><br><br>The authorization and mapping process performed <br> by the SMB customer to establish a bank feed <br> between a source account and a target account.]
+
+    end
+    
+    subgraph AccountingSoftware[Accounting software]
+    direction TB;
+        targetAccount[<style='color:#2a2d3d'>Target account<br><br>The account where bank transactions <br> are posted by the bank feed to be <br> subsequently reconciled by the SMB customer.] 
+    end
+
+    style AccountingSoftware stroke-width:0px;
+
+    Codat -.-> Mapping
+          click Mapping "/bank-feeds/mapping" "Mapping"
+    Mapping -.-> AccountingSoftware
+
+
+```
+
+
+then you also need to create the infrastructure required 
+
+Before you can collect your SMB customer's data, you need to create a Codat [company](./terms/company) and connect it to a data source (for example, an accounting platform). You can do that in two ways:
+
+* In the [Codat Portal](https://app.codat.io) by navigating to **Companies > Create company**
+* By calling the [Create company](/lending-api#/operations/create-company) endpoint of our API
+
+Remember to [authenticate](/using-the-api/authentication) if you are making calls to our API. Navigate to **Developers > API keys** in the Portal to pick up your authorization header.
+
+To establish a connection to a data source and sync business data, your customer must grant you access. They can do so using our [Link auth flow](/auth-flow/overview) solution, which we recommend you use in your app.
+
 ## Overview
 
 
