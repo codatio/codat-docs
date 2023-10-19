@@ -236,7 +236,7 @@ bank_transactions_create_request = operations.CreateBankTransactionsRequest(
         transactions=[
             shared.CreateBankAccountTransaction(
                 id=transaction_id, # Unique identifier for this bank transaction
-                amount=Decimal(deposit_amount),
+                amount=Decimal(-deposit_amount),
                 date_=deposit_Date,
                 description=description, # Include a reference to the transfer, the loan and you, the lender
             ),
