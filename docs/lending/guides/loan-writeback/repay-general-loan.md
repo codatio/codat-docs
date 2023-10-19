@@ -15,7 +15,7 @@ To reflect that programmatically, perform these steps every time a repayment is 
 
 2. [Create a direct cost](/lending/guides/loan-writeback/repay-general-loan#create-direct-cost) to record interest or fees.
 
-3. [Create bank transactions](/lending/guides/loan-writeback/repay-general-loan#create-bank-transaction) to deposit the repayment into the lender's account. 
+3. [Create bank feed transactions](/lending/guides/loan-writeback/repay-general-loan#create-bank-feed-transactions) to represent the transfer and direct cost in the lender's bank account.
 
 For example, if the borrower took out a loan of £1000 with a loan charge of 20%, the total amount due comes to £1200. With a 3-month equal instalment repayment plan, the borrower pays back £400 each month. 
 
