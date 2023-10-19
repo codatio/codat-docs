@@ -12,13 +12,13 @@ Once the borrower's customer has paid for the goods or services they purchased, 
 
 To reflect that programmatically, perform these steps:
 
-1. [Create a transfer](/lending/guides/loan-writeback/repay-invoice-finance#create-transfer) from the lender's bank account to the borrower's to account for the oustanding amount less fees.
+1. [Create a transfer](/lending/guides/loan-writeback/record-invoice-finance#create-transfer) from the lender's bank account to the borrower's to account for the oustanding amount less fees.
 
-2. To record interest or fees, [create a direct cost](/lending/guides/loan-writeback/repay-invoice-finance#create-direct-cost) against the lender's bank account.
+2. To record interest or fees, [create a direct cost](/lending/guides/loan-writeback/record-invoice-finance#create-direct-cost) against the lender's bank account.
 
-3. To update the invoice as paid, [create a payment](/lending/guides/loan-writeback/repay-invoice-finance#create-payment) in the lender's bank account.
+3. To update the invoice as paid, [create a payment](/lending/guides/loan-writeback/record-invoice-finance#create-payment) in the lender's bank account.
 
-4. [Create bank feed transactions](/lending/guides/loan-writeback/repay-invoice-finance#create-bank-feed-transactions) to represent the transfer, direct cost and invoice payment in the lender's bank account.
+4. [Create bank feed transactions](/lending/guides/loan-writeback/record-invoice-finance#create-bank-feed-transactions) to represent the transfer, direct cost and invoice payment in the lender's bank account.
 
 ```mermaid
 sequenceDiagram
