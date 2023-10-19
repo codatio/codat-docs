@@ -22,7 +22,7 @@ Once you receive the configuration information, you are ready to deposit funds i
         backend ->> codat: Create transfer (loan drawdown, lender -> bank account)
         codat -->> backend:  transfer
 
-        backend ->> codat: Create bank transaction (deposit to lender's account)
+        backend ->> codat: Create bank feed transaction (deposit to lender's account)
         codat -->> backend: bank transaction
 ```
 
