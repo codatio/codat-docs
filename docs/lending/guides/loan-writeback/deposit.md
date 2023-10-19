@@ -190,7 +190,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 </Tabs>
 
 
-### Create bank transaction
+### Create bank feed transaction
 
 To record the loan deposit into the lender's bank account: 
 
@@ -210,7 +210,7 @@ codatLending.loanWriteback.bankTransactions.create({
         transactions: [
         {
             id: transactionId, // Unique identifier for this bank transaction
-            amount: depositAmount,
+            amount: -depositAmount,
             date: depositDate,
             description: description, // Include a reference to the transfer, the loan and you, the lender
         },
@@ -260,7 +260,7 @@ var bankTransactionsCreateResponse = await codatLending.LoanWriteback.BankTransa
         Transactions = new List<CreateBankAccountTransaction>() {
             new CreateBankAccountTransaction() {
                 Id = transactionId, // Unique identifier for this bank transaction
-                Amount = depositAmount,
+                Amount = -depositAmount,
                 Date = depositDate,
                 Description = description, // Include a reference to the transfer, the loan and you, the lender
             },
@@ -283,7 +283,7 @@ bankTransactionsCreateRequest, err := codatLending.LoanWriteback.BankTransaction
         Transactions: []shared.CreateBankAccountTransaction{ 
             shared.CreateBankAccountTransaction{
                 ID: lending.String(transactionID), // Unique identifier for this bank transaction
-                Amount: types.MustNewDecimalFromString(depositAmount),
+                Amount: types.MustNewDecimalFromString(-depositAmount),
                 Date: lending.String(depositDate),
                 Description: lending.String(description), // Include a reference to the transfer, the loan and you, the lender
             },
@@ -309,7 +309,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
   "accountId": lendersBankAccount.id,
   "transactions": [{
     "id": transactionId, // Unique identifier for this bank transaction
-    "amount": depositAmount,
+    "amount": -depositAmount,
     "date": depositDate,
     "description": description // Include a reference to the transfer, the loan and you, the lender
   }]
