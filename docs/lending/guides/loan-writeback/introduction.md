@@ -1,7 +1,6 @@
 ---
 title: "Introduction to loan writeback"
 description: "Simplify your implementation with our loan writeback best practices guide and correctly account for a loan programmatically"
-sidebar_label: "Introduction"
 displayed_sidebar: "lending"
 hide_title: true
 hide_description: true
