@@ -69,4 +69,25 @@ Our current guides and tutorials:
     </div>
     <p>Save your customers' time by automating bank transaction reconciliation</p>
   </li>
+    <li className="card mini">
+    <div className="card-row">
+      <div className="header">
+        <a href="/lending/guides/loan-writeback/introduction">
+          <img
+            src="/img/logos/usecases/lending.svg"
+            className="icon usecase"
+          />
+        </a>
+      </div>
+      
+      <div className="content">
+        <h4>Loan writeback</h4>
+        <p>
+          <a href="/lending/guides/loan-writeback/introduction">See the tutorial →</a>
+        </p>    
+      </div>
+    </div>
+    <p>Follow our best practices to correctly account for a loan programmatically</p>
+  </li>
 </ul>
+

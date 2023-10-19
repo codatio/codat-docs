@@ -76,13 +76,24 @@ module.exports = [
 //    ],
 //  },
 {
-  type: "doc",
+  type: "category",
   label: "Loan writeback",
   customProps: {
     hr: true,
     section: "Guides",
   },
-  id: "lending/guides/general-loan-writeback",
+  collapsed: true,
+  items: [
+    {
+      type: "doc",
+      id: "lending/guides/loan-writeback/introduction",
+      label: "Introduction",
+    },
+    "lending/guides/loan-writeback/configure",
+    "lending/guides/loan-writeback/deposit",
+    "lending/guides/loan-writeback/record-general-loan",
+    "lending/guides/loan-writeback/record-invoice-finance",
+  ],
 },
 {
     type: "category",

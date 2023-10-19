@@ -10,6 +10,7 @@ updatedAt: "2022-10-19T21:11:21.969Z"
 - **[Invoice finance](/lending/guides/invoice-finance/introduction)** - Go through the invoice financing process flow, from establishing a connection with a borrower's accounting platform to issuing a decision on selected invoices.
 - **[Bill pay](/payables/guides/bill-pay/introduction)** - Streamline and automate the Accounts Payable (AP) process for your SMB customers.
 - **[Bank transactions reconcilliation](/bank-feeds/guides/bank-feeds-tutorial)** - Reconciling bank transactions with QuickBooks Online using Codat's Bank Feeds API.
+- **[Loan writeback](/lending/guides/loan-writeback/introduction)** - Simplify your implementation with our loan writeback best practices guide and correctly account for a loan programmatically.
 
 ## Demo apps
 
