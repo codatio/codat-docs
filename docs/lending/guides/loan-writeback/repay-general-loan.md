@@ -36,8 +36,8 @@ sequenceDiagram
         codat -->> application: direct cost
     end
 
-    application ->> codat: Create bank transactions (deposit in lender's account)
-    codat -->> application: bank transactions
+    application ->> codat: Create bank feed transactions (deposit in lender's account)
+    codat -->> application: bank feed transactions
 ```
 To perform these operations, you will need the following properties:
 
