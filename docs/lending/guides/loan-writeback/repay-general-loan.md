@@ -427,7 +427,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 </Tabs>
 
-### Create bank transaction
+### Create bank feed transactions
 
 Use the [Create bank account transactions](/lending-api#/operations/create-bank-transactions) endpoint to deposit the total amount (including the repayment, fees, and any interest) into the lender's bank account.
 
