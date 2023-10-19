@@ -14,11 +14,11 @@ To reflect that programmatically, perform these steps:
 
 1. [Create a transfer](/lending/guides/loan-writeback/repay-invoice-finance#create-transfer) from the lender's bank account to the borrower's to account for the oustanding amount less fees.
 
-2. To record interest or fees, [create a direct cost](/lending/guides/loan-writeback/repay-inoice-finance#create-direct-cost) against the lender's bank account.
+2. To record interest or fees, [create a direct cost](/lending/guides/loan-writeback/repay-invoice-finance#create-direct-cost) against the lender's bank account.
 
-3. To update the invoice as paid, [create a payment](/lending/guides/loan-writeback/repay-inoice-finance#create-payment) in the lender's bank account.
+3. To update the invoice as paid, [create a payment](/lending/guides/loan-writeback/repay-invoice-finance#create-payment) in the lender's bank account.
 
-4. [Create bank transactions](/lending/guides/loan-writeback/repay-inoice-finance#create-bank-transactions) to keep the lender's bank account transactions in sync.
+4. [Create bank feed transactions](/lending/guides/loan-writeback/repay-invoice-finance#create-bank-feed-transactions) to represent the transfer, direct cost and invoice payment in the lender's bank account.
 
 ```mermaid
 sequenceDiagram
@@ -34,8 +34,8 @@ sequenceDiagram
         backend ->> codat: Create payment (on invoice)
         codat -->> backend: payment
         
-        backend ->> codat: Create bank transactions (transfer, direct cost and invoice payment amounts)
-        codat -->> backend: bank transactions
+        backend ->> codat: Create bank feed transactions (transfer, direct cost and invoice payment amounts)
+        codat -->> backend: bank feed transactions
 ```
 
 To perform these operations, you will need the following properties:
@@ -625,7 +625,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 </Tabs>
 
-### Create bank transactions
+### Create bank feed transactions
 
 Finally, use the [Create bank account transactions](/lending-api#/operations/create-bank-transactions) endpoint again to deposit the total amount (including the repayment, fees, and any interest) into the lender's bank account. You will need the previously stored values for this operation.
 
