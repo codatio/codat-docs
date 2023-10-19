@@ -11,7 +11,7 @@ Once you receive the configuration information, you are ready to deposit funds i
 
 1. [Create a transfer](/lending/guides/loan-writeback/deposit#create-transfer) from the lender's bank account to the borrower's bank account. 
 
-2. [Create a bank transaction](/lending/guides/loan-writeback/deposit#create-bank-transaction) depositing the amount into the lender's bank account to make the funds available for drawdown. 
+2. [Create a bank feed transaction](/lending/guides/loan-writeback/deposit#create-bank-feed-transaction) to represent the account transfer in the lenders bank account. 
 
 
 ```mermaid
