@@ -1266,7 +1266,7 @@
             "$ref": "#/components/responses/Too-Many-Requests"
           }
         },
-        "description": "Gets the pull operation history (datasets) for a given company.",
+        "description": "﻿The *List pull operations* endpoint returns a list of [pull operations](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/PullOperation) made by your client.\n\nA [pull operation](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/PullOperation) is a request to retrieve a specific data type from an integration.\n\n### Tips and traps\n\n- The *List pull operations* endpoint does not support querying the `isCompleted` property. You can filter failed pull operations by querying `status!=Complete&&status!=NotSupported` instead.\n\n",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -13465,7 +13465,7 @@
           },
           "isCompleted": {
             "type": "boolean",
-            "description": "`True` if the pull operation completed successfully."
+            "description": "`True` if the pull operation is completed successfully. The `isCompleted` property is not queryable. To filter failed pull operations, query by `status!=Complete&&status!=NotSupported` instead."
           },
           "isErrored": {
             "type": "boolean",
@@ -17659,6 +17659,16 @@
                   "service": "ClientsApi",
                   "error": "Error parsing query - Malformed query.",
                   "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              },
+              "Unresolved property": {
+                "value": {
+                  "statusCode": 400,
+                  "service": "PullApi",
+                  "error": "Error parsing query - Could not resolve property isCompleted on Dataset",
+                  "correlationId": "98457fb9956b7f9b4b2fd4f6e23bb5c8",
                   "canBeRetried": "Unknown",
                   "detailedErrorCode": 0
                 }
