@@ -60,7 +60,7 @@ You can also refer to our new (work in progress) [glossary](/glossary) for a qui
       <p><i>Martin Kleppman</i></p>
     </div>
     <p>
-      I’m a computer scientist, and I think of stuff in graphs all the time. If only someone had explained it like that in the first place! It would have saved me so much confusion. 
+      Martin Kleppman explains accounting via concepts computer scientists are familiar with.
     </p>
     <p><a href="https://martin.kleppmann.com/2011/03/07/accounting-for-computer-scientists.html" target="_blank" rel="noreferrer">Read article →</a></p>
   </li>
