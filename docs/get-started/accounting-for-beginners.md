@@ -1,11 +1,11 @@
 ---
 title: "Accounting for beginners"
-description: "Getting to grips with Accounting terminology and principles"
+description: "Getting to grips with accounting terminology and principles"
 ---
 
-Throughout our documentation you'll see various terms that you may be unfamiliar with and accounting-specific principles. While we try to keep things as simple as possible, some understanding of accounting will definitely help you out. We've collated a number of third party resources that might help get you started below.
+Throughout our documentation, you may see unfamiliar terms and accounting-specific principles. While we try to keep things as simple as possible, some understanding of accounting will definitely help you out. We've collated a number of third-party resources that might help get you started below.
 
-You can also refer to our new (work in progress) [glossary](/glossary) for a quick run down of terms.
+You can also refer to our new (work in progress) [glossary](/glossary) for a quick rundown of terms we use in our docs.
 
 <ul className="card-container col-1">
   <li className="card animation-pulse">
@@ -46,7 +46,7 @@ You can also refer to our new (work in progress) [glossary](/glossary) for a qui
       <p><i>Modern Treasury</i></p>
     </div>
     <p>
-      In this second part of our two-part series, <b>Modern Treasury</b> build a ledger for a Venmo clone by applying the accounting principles we learned in Part I.
+      In this second part of a two-part series, <b>Modern Treasury</b> build a ledger for a Venmo clone by applying the accounting principles covered in Part I.
     </p>
     <p><a href="https://www.moderntreasury.com/journal/accounting-for-developers-part-ii" target="_blank" rel="noreferrer">Read article →</a></p>
   </li>
@@ -60,7 +60,7 @@ You can also refer to our new (work in progress) [glossary](/glossary) for a qui
       <p><i>Martin Kleppman</i></p>
     </div>
     <p>
-      Martin Kleppman explains accounting via concepts computer scientists are familiar with.
+      Martin Kleppman explains basic principles of accounting using graphs, prividing enough background to understand the financial statements for a small company.
     </p>
     <p><a href="https://martin.kleppmann.com/2011/03/07/accounting-for-computer-scientists.html" target="_blank" rel="noreferrer">Read article →</a></p>
   </li>
