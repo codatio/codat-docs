@@ -60,7 +60,7 @@ You can also refer to our new (work in progress) [glossary](/glossary) for a qui
       <p><i>Martin Kleppman</i></p>
     </div>
     <p>
-      Martin Kleppman explains basic principles of accounting using graphs, prividing enough background to understand the financial statements for a small company.
+      Martin Kleppman explains basic principles of accounting using graphs, providing the background needed to understand the financial statements for a small company.
     </p>
     <p><a href="https://martin.kleppmann.com/2011/03/07/accounting-for-computer-scientists.html" target="_blank" rel="noreferrer">Read article →</a></p>
   </li>
