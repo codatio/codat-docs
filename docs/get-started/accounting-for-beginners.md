@@ -18,7 +18,7 @@ You can also refer to our new (work in progress) [glossary](/glossary) for a qui
       <p><i>FreeAgent</i></p>
     </div>
     <p>
-      <b>FreeAgent's</b> Chief Accountant, Emily Coltman FCA, gives you the plain English definitions for everyday accounting terms so you can confidently discuss your business finances.
+      FreeAgent's Chief Accountant, Emily Coltman FCA, gives you the plain English definitions for everyday accounting terms so you can confidently discuss your business finances.
     </p>
     <p><a href="https://www.freeagent.com/small-businesses/recordings/accounting-terms-in-plain-english/" target="_blank" rel="noreferrer">Watch video →</a></p>
   </li>
@@ -32,7 +32,7 @@ You can also refer to our new (work in progress) [glossary](/glossary) for a qui
       <p><i>Modern Treasury</i></p>
     </div>
     <p>
-      In this first part of a two-part series, <b>Modern Treasury</b> walk through basic accounting principles for anyone building products that move and track money.
+      In this first part of a two-part series, Modern Treasury walk through basic accounting principles for anyone building products that move and track money.
     </p>
     <p><a href="https://www.moderntreasury.com/journal/accounting-for-developers-part-i" target="_blank" rel="noreferrer">Read article →</a></p>
   </li>
@@ -46,7 +46,7 @@ You can also refer to our new (work in progress) [glossary](/glossary) for a qui
       <p><i>Modern Treasury</i></p>
     </div>
     <p>
-      In this second part of a two-part series, <b>Modern Treasury</b> build a ledger for a Venmo clone by applying the accounting principles covered in Part I.
+      In this second part of a two-part series, Modern Treasury build a ledger for a Venmo clone by applying the accounting principles covered in Part I.
     </p>
     <p><a href="https://www.moderntreasury.com/journal/accounting-for-developers-part-ii" target="_blank" rel="noreferrer">Read article →</a></p>
   </li>
