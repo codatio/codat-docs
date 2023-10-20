@@ -47,6 +47,7 @@ module.exports = {
         //"get-started/office-hours",
         "glossary",
         "get-started/migration",
+        "get-started/accounting-for-beginners",
       ],
     },
     {
