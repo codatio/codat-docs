@@ -94,78 +94,7 @@ The lender deposits £10,000 into the SMB's nominated bank account. Next month, 
 
 In the example, you can also see that each bank feed transaction matches a bank account transaction in the accounting platform. This helps the borrower to reconcile both bank accounts.
 
-<table>
-<tbody>
-  <tr>
-    <td colspan="2"><b>Lender's account</b></td>
-    <td></td>
-    <td colspan="2"><b>Borrower's account</b></td>
-  </tr>
-  <tr>
-    <td>Bank feed</td>
-    <td>Bank account</td>
-    <td></td>
-    <td>Bank feed</td>
-    <td>Bank account</td>
-  </tr>
-  <tr>
-    <td>0</td>
-    <td>0</td>
-    <td></td>
-    <td>0</td>
-    <td>0</td>
-  </tr>
-  <tr>
-    <td>-10,000</td>
-    <td>-10,000</td>
-    <td style={{'text-align': 'center'}}>&#10145;&#65039; deposit (+10k) &#10145;&#65039;</td>
-    <td>10,000</td>
-    <td>10,000</td>
-  </tr>
-  <tr>
-    <td>-5,000</td>
-    <td>-5,000</td>
-    <td style={{'text-align': 'center'}}>&#11013;&#65039; loan repayment (-5k) &#11013;&#65039;</td>
-    <td>5,000</td>
-    <td>5,000</td>
-  </tr>
-  <tr>
-    <td>-4,900</td>
-    <td>-4,900</td>
-    <td style={{'text-align': 'center'}}>&#11013;&#65039; fees (-0.1k) &#11013;&#65039;</td>
-    <td>4,900</td>
-    <td>4,900</td>
-  </tr>
-  <tr>
-    <td>100</td>
-    <td>100</td>
-    <td style={{'text-align': 'center'}}>&#11013;&#65039; loan repayment (-5k) &#11013;&#65039;</td>
-    <td>-100</td>
-    <td>-100</td>
-  </tr>
-  <tr>
-    <td>200</td>
-    <td>200</td>
-    <td style={{'text-align': 'center'}}>&#11013;&#65039; fees (-0.1k) &#11013;&#65039;</td>
-    <td>-200</td>
-    <td>-200</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td style={{'text-align': 'center'}}>&#10145;&#65039; total 10k &#10145;&#65039;</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td style={{'text-align': 'center'}}>&#11013;&#65039; total 10.2k &#11013;&#65039;</td>
-    <td></td>
-    <td></td>
-  </tr>
-</tbody>
-</table>
+![A GIF showing the money flow of a general loan writeback](/img/lending/loan-writeback-general-example.gif)
 
 </TabItem>
 
