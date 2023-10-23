@@ -199,18 +199,6 @@ For GBP bank accounts, `sortCode` is also a required field.
 
 Codat categorizes bank accounts into either credit or debit types for standardization. 
 
-Below is a list that matches Open Banking's AccountSubType with Codat's standardized accountType:
-
-| AccountSubType   | accountType (Codat) | 
-| ---------------- | ------------------- |
-| `ChargeCard`     | `Credit`            |
-| `CreditCard`     | `Credit`            |
-| `CurrentAccount` | `Debit`             |
-| `EMoney`         | `Debit`             |
-| `Loan`           | `Credit`            |
-| `Mortgage`       | `Credit`            |
-| `PrePaidCard`    | `Debit`             |
-| `Savings`        | `Debit`             |
 
 
 <Tabs>

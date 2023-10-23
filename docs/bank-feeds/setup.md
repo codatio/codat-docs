@@ -12,57 +12,60 @@ import {bankfeedsExternalMappingIntegrations, bankfeedsIntegrations} from '@comp
 
 ## Journey overview
 
-blabla
+The diagram below represents the overall activity flow when using Bank Feeds API, including your SMB customer and their accounting platform. It assumes are using Codat's mapping interface to let the user select the accounts used for pushing bank statements.
 
-diagram of steps without codat but with the user
-
-beofre you can do that, you need to set up codat in the following ways. 
+If you choose one of the [other mapping UI options](/bank-feeds/setup#), you can visualize the flow by simply changing the actor of the mapping operation from `Codat` to `Your application` or `Accounting platform`.
 
 ```mermaid
 
 sequenceDiagram
-    Alice->>+John: Hello John, [how are you](../terms/company)?
-    Alice->>+John: John, can you hear me?
-    John-->>-Alice: Hi Alice, I can hear you!
-    John-->>-Alice: I feel great!
+    participant smb as SMB customer
+    participant app as Your application 
+    participant codat as Codat
+    participant acctg as Accounting platform
+    
+    smb ->> app: Logs into application
+    smb ->> app: Initiates connection to accounting software
+
+    app ->> codat: Passes company and connection details
+    app ->> codat: Initiates auth flow
+    codat -->> smb: Displays auth flow
+    smb -->> codat: Authorizes connection
+    codat ->> acctg: Establishes connection
+    
+    codat ->> smb: Displays mapping options
+    smb -->> codat: Confirms mapping selections
+    
+    loop Load bank statements
+        smb ->> app: Spends money from bank account
+        app ->> codat: Pushes bank transaction details
+        codat ->> acctg: Creates bank transactions
+        acctg ->> smb: Displays loaded bank statement ready for reconciliation
+    end
 
 ```
 
-As a prerequisite to providing this process to your customers, you need to:
-* Configure Codat accordingly.
-* Prepare an account mapping interface. 
+## Configure Bank Feeds API
 
-Let's go through these requirements in detail. 
+Once you decide to build this flow with Bank Feeds API, you need to configure Codat accordingly. Let's go through these requirements in detail.
 
-## Configure Bank Feeds API in Codat
-
-:::tip Your lending journey
-
-Our Lending API supports the data collection step of your lending journey, which starts in your own web application. Enable Lending API and configure it, then embed our [Link SDK](/auth-flow/authorize-embedded-link) in your app to handle the auth flow. Determine where the collected data will be stored and manage the subsequent steps of the lending process in your app. 
-
-:::
-
-## Enable Lending API
+### Enable the product
 
 1. Open the <a href="https://app.codat.io" target="_blank">Codat Portal</a> and sign in.
 2. Click on **Settings > Organizational settings > Products**.
-3. In the list of products, find _Lending API_ and click **Enable**. Then, follow the on-screen prompt.
+3. In the list of products, find _Bank Feeds API_ and click **Enable**. Then, follow the on-screen prompt.
 
+### Manage data sources
 
-
-### Data sources
-
-In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** to enable and set up the integrations that will serve as a data source for the product. 
-
-Follow the respective guides for integration-specific instructions. 
-
-These integrations also require some enhanced setup specifically for bank feeds. We talk you through these in "Manage integrations". 
+In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** and click **Manage integrations**. Next, click **Manage** next to the specific integration you want to enable and set it up to serve as a data source for the product. 
 
 <IntegrationsList integrations={bankfeedsIntegrations}/>
 
+Some of these integrations may require enhanced setup specific to bank feeds. We walk you through these in our integration-specific instructions in the _Manage integrations_ section of our documentation. 
+
 ### Authorization flow
 
-As part of using the Lending API, you will need your customers to authorize your access to their data. To do so, use Link - our pre-built, conversion-optimized, and white-labelled authorization flow. 
+As part of using Bank Feeds API, you will need your customers to authorize your access to their data. To do so, use Link - our pre-built, conversion-optimized, and white-labelled authorization flow. 
 
 We recommend you fully embed the Link auth flow in your experience by using our [Embedded Link](/auth-flow/authorize-embedded-link) SDK in your front-end code. You can also choose our out-of-the-box [Hosted Link](/auth-flow/authorize-hosted-link) auth flow option to get up and running as quick as possible. 
 
@@ -72,46 +75,19 @@ The solution lets you tailor the authorization journey to your business needs. Y
 * [Set up company branding](/auth-flow/customize/branding)
 * [Set up redirects](/auth-flow/customize/set-up-redirects)
 
+### Webhooks
 
-## Use Lending API
+Codat supports a range of [webhooks](/using-the-api/webhooks/core-rules-types) to help you manage your data pipelines. In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Rules** and click **Create new rule** to set up the following webhook and get the most out of Bank Feeds API:
 
-```mermaid
-graph LR;
+- [Push operation status has changed](/using-the-api/webhooks/core-rules-types#push-operation-status-has-changed)  
 
-    style codatCompany fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
-    style codatDataConnection fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
-    style codatSourceAccount fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
-    style targetAccount fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
-    style Mapping fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
+  Use this webhook to track the completion of the operation to create bank transactions in the target platform. When you receive a notification from this webhook, check the `status` value in the body. A `Success` status means the `transactions` array has been successfully pushed to the accounting software.
 
-    subgraph Codat
-    direction TB;
-        codatCompany[<u style='color:#522ce7'>Company</u><br><br>A representation of your SMB customer <br> that wishes to perform bank reconciliation.]  -.- codatDataConnection[<u style='color:#522ce7'>Data connection</u><br><br>A link between a Codat company and their <br> selected accounting software.]
-        click codatCompany "/bank-feeds/setup#creating-a-company" "Companies"
-        codatDataConnection -.- codatSourceAccount[<u style='color:#522ce7'>Source account</u><br><br>A representation of an actual business bank <br> account, savings account, or credit card.]
-        click codatDataConnection "/bank-feeds/setup#creating-a-data-connection" "Data Connections"
-        click codatSourceAccount "/bank-feeds/setup#creating-a-source-account" "Source Accounts"
-    end
-
-    style Codat fill:#f1f4fa,stroke:#666,stroke-width:0px;
-
-    subgraph Mapping[<u style='color:#522ce7'>Mapping</u><br><br>The authorization and mapping process performed <br> by the SMB customer to establish a bank feed <br> between a source account and a target account.]
-
-    end
-    
-    subgraph AccountingSoftware[Accounting software]
-    direction TB;
-        targetAccount[<style='color:#2a2d3d'>Target account<br><br>The account where bank transactions <br> are posted by the bank feed to be <br> subsequently reconciled by the SMB customer.] 
-    end
-
-    style AccountingSoftware stroke-width:0px;
-
-    Codat -.-> Mapping
-          click Mapping "/bank-feeds/mapping" "Mapping"
-    Mapping -.-> AccountingSoftware
+This completes the initial setup of Bank Feeds API. Next, you will need to create a Codat [company](../terms/company), establish its [connection]
 
 
-```
+so the banktransactions is an array and then when you push one array you get 1 pushoperation key and then 1 webhook, but this could be for 1 or many transactions
+
 
 
 then you also need to create the infrastructure required 
@@ -133,64 +109,6 @@ To establish a connection to a data source and sync business data, your customer
 
 
 
-
-## Mapping
-
-# Authorization and mapping
-
-The method of connecting and mapping this source account to your target account varies depending on the accounting package your customer is using, typically there are three methods of mapping the source account to a target account.
-
-## Internal Mapping
-
-#### Supported integrations
-<IntegrationsList integrations={bankfeedsExternalMappingIntegrations}/>
-
-### Codat User Interface
-
-The bank feeds mapping interface allows for customization with your own logo and primary color scheme. Designed to meet all third-party requirements, it enables a seamless launch of your bank feeds product, ensuring an outstanding experience for your customers with minimal development effort.
-
-![Codat-bank-feeds_account-mapping-ui](/img/bank-feeds/mappingUi.png "Codat-provided account mapping UI")
-
-
-##### Learn more [here](/bank-feeds/mapping/codat-ui)
-
----
-
-### API
-
-Should you desire a more integrated user experience, you have the option to allow users to map their accounts directly within your own application.
-
-This can be achieved by utilizing the account mapping endpoints. These endpoints also drive the functionality of the white-labeled user interface. 
-
-
-##### Learn more [here](/bank-feeds/mapping/api-mapping)
-
----
-
-## External Mapping
-
-### QuickBooks Online Bank Feeds
-
-<IntegrationsList filter={['QuickBooks Online bank feeds']} />
-
-For Bank Feeds in QuickBooks Online, the account mapping is conducted within the QuickBooks platform itself. Codat produces a secure username and password against a dataConnection which can be entered into QuickBooks, facilitating the account and transaction verification process.
-
-There are two ways you can share credentials with a Company - either via a hosted and customizable Codat credentials page, or alternatively through the generate-credentials endpoint.
-
-
-##### Learn more [here](/bank-feeds/mapping/qbo-mapping)
-
----
-
-### Sage Bank Feeds
-
-<IntegrationsList filter={['Sage bank feeds']} />
-
-Codat's Sage Bank Feeds integration requires an authorization UI to authenticate an SMB user prior to creating source accounts within Codat.
-
-After source accounts have been created, the user can then map these to existing or new accounts within Sage.
-
-##### Learn more [here](/bank-feeds/mapping/sage-mapping)
 
 
 
