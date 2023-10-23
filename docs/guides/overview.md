@@ -1,6 +1,5 @@
 ---
 title: "Tutorials"
-sidebar_label: Overview
 description: "Discover streamlined, opinionated tutorials and build guides with demo apps to fast-track your proficiency in Codat's diverse use cases"
 ---
 
@@ -21,9 +20,29 @@ Our current guides and tutorials:
       </div>
       
       <div className="content">
+        <h4>Building a prototype dashboard with Retool</h4>
+        <p>
+          <a href="/guides/retool-dashboard">Watch video →</a>
+        </p>    
+      </div>
+    </div>
+    <p>Ingest and visualize Codat data in a custom Retool dashboard in 10 minutes</p>
+  </li>
+  <li className="card mini">
+    <div className="card-row">
+      <div className="header">
+        <a href="/lending/guides/invoice-finance/introduction">
+          <img
+            src="/img/logos/usecases/lending.svg"
+            className="icon usecase"
+          />
+        </a>
+      </div>
+      
+      <div className="content">
         <h4>Invoice financing</h4>
         <p>
-          <a href="/lending/guides/invoice-finance/introduction">See the tutorial →</a>
+          <a href="/lending/guides/invoice-finance/introduction">Follow the guide →</a>
         </p>    
       </div>
     </div>
@@ -43,7 +62,7 @@ Our current guides and tutorials:
       <div className="content">
         <h4>Bill pay</h4>
         <p>
-          <a href="/payables/guides/bill-pay/introduction">See the tutorial →</a>
+          <a href="/payables/guides/bill-pay/introduction">Follow the guide →</a>
         </p>    
       </div>
     </div>
@@ -63,7 +82,7 @@ Our current guides and tutorials:
       <div className="content">
         <h4>Bank feeds reconciliation with QuickBooks Online</h4>
         <p>
-          <a href="/bank-feeds/guides/bank-feeds-tutorial">See the tutorial →</a>
+          <a href="/bank-feeds/guides/bank-feeds-tutorial">Follow the guide →</a>
         </p>    
       </div>
     </div>
@@ -83,7 +102,7 @@ Our current guides and tutorials:
       <div className="content">
         <h4>Loan writeback</h4>
         <p>
-          <a href="/lending/guides/loan-writeback/introduction">See the tutorial →</a>
+          <a href="/lending/guides/loan-writeback/introduction">Follow the guide →</a>
         </p>    
       </div>
     </div>

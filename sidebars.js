@@ -51,41 +51,10 @@ module.exports = {
       ],
     },
     {
-      type: "category",
+      type: "doc",
       label: "Tutorials",
-      collapsed: true,
-      className: "top-level-item top-level-item-list tutorials",
-      link: {
-        type: 'doc',
-        id: "guides/overview",
-      },
-      items: [
-        {
-          type: "ref",
-          label: "Invoice finance",
-          id: "lending/guides/invoice-finance/introduction",
-        },
-        {
-          type: "ref",
-          label: "Loan writeback",
-          id: "lending/guides/loan-writeback/introduction",
-        },
-        // {
-        //   type: "ref",
-        //   label: "Loan qualification",
-        //   id: "lending/guides/loan-qualification/introduction",
-        // },
-        {
-          type: "ref",
-          label: "Bill pay",
-          id: "payables/guides/bill-pay/introduction",
-        },
-        {
-          type: "ref",
-          label: "Bank transactions reconciliation",
-          id: "bank-feeds/guides/bank-feeds-tutorial",
-        },
-      ],
+      className: "top-level-item top-level-item-single tutorials",
+      id: "guides/overview",
     },
     {
       type: "category",
