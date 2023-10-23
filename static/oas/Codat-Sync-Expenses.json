@@ -11991,6 +11991,208 @@
   },
   "components": {
     "schemas": {
+      "Account": {
+        "title": "Account",
+        "description": "> **Language tip:** Accounts are also referred to as **chart of accounts**, **nominal accounts**, and **general ledger**.\n\nView the coverage for accounts in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nAccounts are the categories a business uses to record accounting transactions. From the Accounts endpoints, you can retrieve a list of all accounts for a specified company. \n\nThe categories for an account include:\n  * Asset\n  * Expense\n  * Income\n  * Liability\n  * Equity.\n\nThe same account may have a different category based on the integration it is used in. For example, a current account (known as checking in the US) should be categorized as `Asset.Current` for Xero, and `Asset.Bank.Checking` for QuickBooks Online. \n\nAt the same time, each integration may have its own requirements to the categories. For example, a Paypal account in Xero is of the `Asset.Bank` category and therefore requires additional properties to be provided. \n\nTo determine the list of allowed categories for a specific integration, you can: \n- Follow our [Create, update, delete data](https://docs.codat.io/using-the-api/push) guide and use the [Get create account model](https://docs.codat.io/sync-for-expenses-api#/operations/get-create-chartOfAccounts-model).\n- Refer to the integration's own documentation. \n\n> **Accounts with no category**\n> \n> If an account is pulled from the chart of accounts and its nominal code does not lie within the category layout for the company's accounts, then the **type** is `Unknown`. The **fullyQualifiedCategory** and **fullyQualifiedName** fields return `null`.\n> \n> This approach gives a true representation of the company's accounts whilst preventing distorting financials such as a company's profit and loss and balance sheet reports.",
+        "allOf": [
+          {
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Identifier for the account, unique for the company.",
+                "example": "1b6266d1-1e44-46c5-8eb5-a8f98e03124e"
+              },
+              "nominalCode": {
+                "type": "string",
+                "nullable": true,
+                "description": "Reference given to each nominal account for a business. It ensures money is allocated to the correct account. This code isn't a unique identifier in the Codat system.",
+                "example": "610"
+              },
+              "name": {
+                "type": "string",
+                "nullable": true,
+                "description": "Name of the account.",
+                "example": "Accounts Receivable"
+              },
+              "description": {
+                "type": "string",
+                "nullable": true,
+                "description": "Description for the account.",
+                "example": "Invoices the business has issued but has not yet collected payment on."
+              },
+              "fullyQualifiedCategory": {
+                "type": "string",
+                "nullable": true,
+                "description": "Full category of the account. \r\n\r\nFor example, `Liability.Current` or `Income.Revenue`. To determine a list of possible categories for each integration, see our examples, follow our [Create, update, delete data](https://docs.codat.io/using-the-api/push) guide, or refer to the integration's own documentation.",
+                "example": "Asset.Current"
+              },
+              "fullyQualifiedName": {
+                "type": "string",
+                "nullable": true,
+                "description": "Full name of the account, for example:\n- `Cash On Hand`\n- `Rents Held In Trust`\n- `Fixed Asset`",
+                "examples": [
+                  "Cash On Hand",
+                  "Fixed Asset"
+                ]
+              },
+              "currency": {
+                "title": "Currency",
+                "x-internal": true,
+                "type": "string",
+                "description": "The currency data type in Codat is the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code, e.g. _GBP_.\n\n## Unknown currencies\n\nIn line with the ISO 4217 specification, the code _XXX_ is used when the data source does not return a currency for a transaction. \n\nThere are only a very small number of edge cases where this currency code is returned by the Codat system.",
+                "format": "ISO4217",
+                "examples": [
+                  "GBP",
+                  "USD",
+                  "EUR"
+                ]
+              },
+              "currentBalance": {
+                "type": "number",
+                "format": "decimal",
+                "nullable": true,
+                "description": "Current balance in the account.",
+                "example": 0
+              },
+              "type": {
+                "$ref": "#/components/schemas/Account/definitions/accountType"
+              },
+              "status": {
+                "$ref": "#/components/schemas/Account/definitions/accountStatus"
+              },
+              "isBankAccount": {
+                "type": "boolean",
+                "description": "Confirms whether the account is a bank account or not."
+              },
+              "validDatatypeLinks": {
+                "type": "array",
+                "nullable": true,
+                "description": "The validDatatypeLinks can be used to determine whether an account can be correctly mapped to another object; for example, accounts with a `type` of `income` might only support being used on an Invoice and Direct Income. For more information, see [Valid Data Type Links](/sync-for-expenses-api#/schemas/ValidDataTypeLinks).",
+                "items": {
+                  "title": "Valid data type links",
+                  "description": "When querying Codat's data model, some data types return `validDatatypeLinks` metadata in the JSON response. This indicates where that object can be used as a reference—a _valid link_—when creating or updating other data.\n\nFor example, `validDatatypeLinks` might indicate the following references:\n\n- Which tax rates are valid to use on the line item of a bill.\n- Which items can be used when creating an invoice. \n\nYou can use `validDatatypeLinks` to present your SMB customers with only valid choices when selecting objects from a list, for example.\n\n## `validDatatypeLinks` example\n\nThe following example uses the `Accounting.Accounts` data type. It shows that, on the linked integration, this account is valid as the account on a payment or bill payment; and as the account referenced on the line item of a direct income or direct cost. Because there is no valid link to Invoices or Bills, using this account on those data types will result in an error.\n\n```json validDatatypeLinks for an account\n{\n            \"id\": \"bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4\",\n            \"nominalCode\": \"090\",\n            \"name\": \"Business Bank Account\",\n            #...\n            \"validDatatypeLinks\": [\n                {\n                    \"property\": \"Id\",\n                    \"links\": [\n                        \"Payment.AccountRef.Id\",\n                        \"BillPayment.AccountRef.Id\",\n                        \"DirectIncome.LineItems.AccountRef.Id\",\n                        \"DirectCost.LineItems.AccountRef.Id\"\n                    ]\n                }\n            ]\n        }\n```\n\n\n\n## Support for `validDatatypeLinks`\n\nCodat currently supports `validDatatypeLinks` for some data types on our Xero, QuickBooks Online, QuickBooks Desktop, Exact (NL), and Sage Business Cloud integrations. \n\nIf you'd like us to extend support to more data types or integrations, suggest or vote for this on our <a href=\"https://portal.productboard.com/codat/5-product-roadmap\">Product Roadmap</a>.",
+                  "type": "object",
+                  "properties": {
+                    "property": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "The property from the account that can be linked."
+                    },
+                    "links": {
+                      "type": "array",
+                      "nullable": true,
+                      "description": "Supported `dataTypes` that the record can be linked to.",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "metadata": {
+                "title": "Metadata",
+                "type": "object",
+                "x-internal": true,
+                "properties": {
+                  "isDeleted": {
+                    "type": "boolean",
+                    "description": "Indicates whether the record has been deleted in the third-party system this record originated from.",
+                    "nullable": true
+                  }
+                }
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/SupplementalData"
+              }
+            }
+          },
+          {
+            "title": "Modified dates",
+            "x-internal": true,
+            "allOf": [
+              {
+                "title": "ModifiedDate",
+                "x-internal": true,
+                "type": "object",
+                "properties": {
+                  "modifiedDate": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Company/properties/created"
+                      },
+                      {
+                        "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "title": "Source Modified Date",
+                "x-internal": true,
+                "type": "object",
+                "nullable": true,
+                "properties": {
+                  "sourceModifiedDate": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Company/properties/created"
+                      },
+                      {
+                        "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "definitions": {
+          "accountRef": {
+            "title": "Account reference",
+            "type": "object",
+            "description": "Data types that reference an account, for example bill and invoice line items, use an accountRef that includes the ID and name of the linked account.",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "'id' from the Accounts data type."
+              },
+              "name": {
+                "type": "string",
+                "description": "'name' from the Accounts data type."
+              }
+            }
+          },
+          "accountType": {
+            "title": "Account type",
+            "enum": [
+              "Unknown",
+              "Asset",
+              "Expense",
+              "Income",
+              "Liability",
+              "Equity"
+            ],
+            "type": "string",
+            "description": "Type of account",
+            "example": "Asset"
+          },
+          "accountStatus": {
+            "title": "Account status",
+            "enum": [
+              "Unknown",
+              "Active",
+              "Archived",
+              "Pending"
+            ],
+            "type": "string",
+            "description": "Status of the account",
+            "example": "Active"
+          }
+        },
+        "type": "object"
+      },
       "AccountMappingInfo": {
         "title": "Account mapping info",
         "type": "object",
@@ -12064,594 +12266,6 @@
           }
         }
       },
-      "CompanySyncStatus": {
-        "title": "Company sync status",
-        "type": "object",
-        "additionalProperties": false,
-        "x-examples": {
-          "Success Data Pushed": {
-            "companyId": "20803807-4e9a-4cb7-b67b-9f889a3916e1",
-            "syncId": "aa4c9dfd-e945-4424-9628-9e724f14c267",
-            "syncStatusCode": 2000,
-            "syncStatus": "Complete",
-            "errorMessage": "",
-            "syncExceptionMessage": "",
-            "syncUtc": "2023-01-24T14:15:22Z",
-            "dataPushed": true
-          },
-          "Success No Data Pushed": {
-            "companyId": "20803807-4e9a-4cb7-b67b-9f889a3916e1",
-            "syncId": "aa4c9dfd-e945-4424-9628-9e724f14c267",
-            "syncStatusCode": 2040,
-            "syncStatus": "Complete",
-            "errorMessage": "",
-            "syncExceptionMessage": "",
-            "syncUtc": "2023-01-24T14:15:22Z",
-            "dataPushed": false
-          }
-        },
-        "properties": {
-          "companyId": {
-            "type": "string",
-            "description": "Unique identifier for your SMB in Codat.",
-            "example": "d4d73051-ed31-42b6-99f6-d288cd940992",
-            "nullable": true
-          },
-          "syncId": {
-            "type": "string",
-            "description": "Unique identifier of the sync.",
-            "example": "a6a22aff-a43a-411d-a910-2dae73217cce",
-            "nullable": true
-          },
-          "syncStatusCode": {
-            "type": "integer",
-            "format": "int32",
-            "description": "Status code of the sync.",
-            "example": 2000
-          },
-          "syncStatus": {
-            "type": "string",
-            "description": "Text status of the sync.",
-            "example": "Completed",
-            "nullable": true
-          },
-          "errorMessage": {
-            "type": "string",
-            "description": "Error message of the sync.",
-            "nullable": true
-          },
-          "syncExceptionMessage": {
-            "type": "string",
-            "description": "Exception message of the sync.",
-            "nullable": true
-          },
-          "syncUtc": {
-            "$ref": "#/components/schemas/Company/properties/created",
-            "description": "Datetime of the sync.",
-            "nullable": true
-          },
-          "dataPushed": {
-            "type": "boolean",
-            "description": "Boolean of whether the sync resulted in data being pushed."
-          }
-        }
-      },
-      "MappingOptions": {
-        "title": "Mapping options",
-        "type": "object",
-        "additionalProperties": false,
-        "x-examples": {},
-        "properties": {
-          "expenseProvider": {
-            "type": "string",
-            "description": "Name of the expense integration.",
-            "example": "Partner Expense",
-            "nullable": true
-          },
-          "accounts": {
-            "type": "array",
-            "description": "Array of available accounts for mapping.",
-            "nullable": true,
-            "items": {
-              "$ref": "#/components/schemas/AccountMappingInfo"
-            }
-          },
-          "trackingCategories": {
-            "type": "array",
-            "description": "Array of available tracking categories for mapping.",
-            "nullable": true,
-            "items": {
-              "$ref": "#/components/schemas/TrackingCategoryMappingInfo"
-            }
-          },
-          "taxRates": {
-            "type": "array",
-            "description": "Array of available tax rates for mapping.",
-            "nullable": true,
-            "items": {
-              "$ref": "#/components/schemas/TaxRateMappingInfo"
-            }
-          }
-        }
-      },
-      "TaxRateMappingInfo": {
-        "title": "Tax rate mapping info",
-        "type": "object",
-        "additionalProperties": false,
-        "x-examples": {
-          "UK Tax Rate": {
-            "id": "59_Bills",
-            "name": "UK Standard Rate (Bills) Bills",
-            "code": "UK Standard Rate (Bills)",
-            "effectiveTaxRate": 20,
-            "totalTaxRate": 20,
-            "validTransactionTypes": [
-              "Payment",
-              "Reward"
-            ]
-          }
-        },
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "Unique identifier of tax rate.",
-            "example": "59_Bills",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the tax rate in the accounting platform.",
-            "example": "UK Standard Rate (Bills) Bills",
-            "nullable": true
-          },
-          "code": {
-            "type": "string",
-            "description": "Code for the tax rate from the accounting platform.",
-            "example": "UK Standard Rate (Bills)",
-            "nullable": true
-          },
-          "effectiveTaxRate": {
-            "type": "number",
-            "format": "decimal",
-            "description": "Effective tax rate.",
-            "example": 20
-          },
-          "totalTaxRate": {
-            "type": "number",
-            "format": "decimal",
-            "description": "Total (not compounded) sum of the components of a tax rate.",
-            "example": 20
-          },
-          "validTransactionTypes": {
-            "type": "array",
-            "description": "Supported transaction types for the account.",
-            "minItems": 0,
-            "maxItems": 8,
-            "nullable": true,
-            "items": {
-              "type": "string",
-              "enum": [
-                "Payment",
-                "Refund",
-                "Reward",
-                "Chargeback",
-                "TransferIn",
-                "TransferOut",
-                "AdjustmentIn",
-                "AdjustmentOut"
-              ],
-              "example": "Payment"
-            }
-          }
-        }
-      },
-      "TrackingCategoryMappingInfo": {
-        "title": "Tracking category mapping info",
-        "type": "object",
-        "additionalProperties": false,
-        "x-examples": {
-          "Tracking Category with parentId": {
-            "id": "DEPARTMENT_1",
-            "modifiedDate": "2023-02-09T11:42:41Z",
-            "name": "TestLocation",
-            "hasChildren": false,
-            "parentId": "DEPARTMENTS"
-          },
-          "Parent Tracking Category": {
-            "id": "DEPARTMENTS",
-            "modifiedDate": "2023-02-09T11:42:41Z",
-            "name": "Departments",
-            "hasChildren": true
-          }
-        },
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "Unique identifier of the tracking category.",
-            "example": "DEPARTMENT_2",
-            "nullable": true
-          },
-          "modifiedDate": {
-            "$ref": "#/components/schemas/Company/properties/created",
-            "description": "Datetime when the tracking category was last modified.",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the tracking category as it appears in the accounting software.",
-            "example": "New York",
-            "nullable": true
-          },
-          "hasChildren": {
-            "type": "boolean",
-            "description": "Boolean of whether the tracking category has child categories."
-          },
-          "parentId": {
-            "type": "string",
-            "description": "ID of the parent tracking category",
-            "example": "DEPARTMENTS",
-            "nullable": true
-          }
-        }
-      },
-      "Transaction": {
-        "title": "Transaction",
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "transactionId": {
-            "type": "string",
-            "description": "Your unique idenfier of the transaction.",
-            "example": "aa02271d-ed5f-47f5-be76-778d5905225a",
-            "nullable": true
-          },
-          "status": {
-            "$ref": "#/components/schemas/TransactionStatus"
-          },
-          "message": {
-            "type": "string",
-            "description": "Metadata such as validation errors or the resulting record created in the accounting software.",
-            "nullable": true
-          },
-          "integrationType": {
-            "$ref": "#/components/schemas/IntegrationType"
-          }
-        },
-        "x-examples": {
-          "Successful Transaction": {
-            "transactionId": "8fdba4ed-e327-4925-be1a-b7a2b04627f7",
-            "status": "Completed",
-            "integrationType": "expense"
-          },
-          "Unsuccessful Transaction": {
-            "transactionId": "3d694cd1-4cd9-4136-91db-32408195c6fc",
-            "status": "ValidationError",
-            "message": "The line item total -208.10((-195.01 + -1.09) + (-10.01 + -1.99)) must equal the transaction total -1.1",
-            "integrationType": "string"
-          }
-        }
-      },
-      "TransactionStatus": {
-        "title": "Transaction status",
-        "x-internal": true,
-        "type": "string",
-        "description": "Status of the transaction.",
-        "enum": [
-          "Unknown",
-          "Pending",
-          "ValidationError",
-          "Completed",
-          "PushError"
-        ],
-        "example": "Completed",
-        "nullable": true
-      },
-      "IntegrationType": {
-        "title": "Integration type",
-        "x-internal": true,
-        "type": "string",
-        "description": "Type of transaction that has been processed e.g. Expense or Bank Feed.",
-        "enum": [
-          "expenses",
-          "bankfeeds"
-        ],
-        "default": "expenses",
-        "example": "expenses",
-        "nullable": true
-      },
-      "Transactions": {
-        "title": "Transactions",
-        "x-internal": true,
-        "additionalProperties": false,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Transaction"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
-          }
-        ],
-        "x-examples": {
-          "Example 1": {
-            "results": [
-              {
-                "transactionId": "aa02271d-ed5f-47f5-be76-778d5905225a",
-                "status": "Completed",
-                "integrationType": "expenses"
-              },
-              {
-                "transactionId": "730177a2-8505-410a-9ebc-c2dd52e4bea9",
-                "status": "Completed",
-                "integrationType": "expenses"
-              }
-            ],
-            "pageNumber": 1,
-            "pageSize": 100,
-            "totalResults": 2,
-            "links": {
-              "self": {
-                "href": "string"
-              },
-              "current": {
-                "href": "string"
-              }
-            }
-          }
-        }
-      },
-      "CreateExpenseRequest": {
-        "title": "Create expense request",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "items": {
-            "type": "array",
-            "minItems": 1,
-            "maxItems": 50,
-            "items": {
-              "$ref": "#/components/schemas/ExpenseTransaction"
-            }
-          }
-        }
-      },
-      "CreateExpenseResponse": {
-        "title": "Create expense response",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "datasetId": {
-            "type": "string",
-            "example": "cd937d46-8e41-43a9-9477-a79158ffd98a",
-            "format": "uuid",
-            "description": "Unique id of dataset created"
-          }
-        }
-      },
-      "UpdateExpenseResponse": {
-        "title": "Update expense response",
-        "type": "object",
-        "properties": {
-          "syncId": {
-            "type": "string",
-            "description": "Unique identifier for the update expense sync."
-          }
-        },
-        "examples": {
-          "Example 1": {
-            "syncId": "1ad0695c-4566-4715-918c-adbb03eac81e"
-          }
-        }
-      },
-      "ExpenseTransaction": {
-        "title": "Expense transaction",
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "example": "4d7c6929-7770-412b-91bb-44d3bc71d111",
-            "format": "uuid",
-            "description": "Your unique identifier for the transaction."
-          },
-          "type": {
-            "type": "string",
-            "example": "Payment",
-            "description": "The type of transaction.",
-            "enum": [
-              "Payment",
-              "Refund",
-              "Reward",
-              "Chargeback",
-              "TransferIn",
-              "TransferOut",
-              "AdjustmentIn",
-              "AdjustmentOut"
-            ]
-          },
-          "issueDate": {
-            "$ref": "#/components/schemas/Company/properties/created",
-            "description": "Date of the transaction was recorded."
-          },
-          "currency": {
-            "type": "string",
-            "example": "GBP",
-            "description": "Currency the transaction was recorded in."
-          },
-          "currencyRate": {
-            "title": "Currency rate",
-            "type": "number",
-            "format": "decimal",
-            "nullable": true,
-            "description": "Rate to convert the total amount of the payment into the base currency for the company at the time of the payment.\n\nCurrency rates in Codat are implemented as the multiple of foreign currency units to each base currency unit.  \n\nIt is not possible to perform the currency conversion with two or more non-base currencies participating in the transaction. For example, if a company's base currency is USD, and it has a bill issued in EUR, then the bill payment must happen in USD or EUR.\n\nWhere the currency rate is provided by the underlying accounting platform, it will be available from Codat with the same precision (up to a maximum of 9 decimal places). \n\nFor accounting platforms which do not provide an explicit currency rate, it is calculated as `baseCurrency / foreignCurrency` and will be returned to 9 decimal places.\n\n## Examples with base currency of GBP\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (GBP) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **USD**          | $20            | 0.781         | £15.62                     |\n| **EUR**          | €20            | 0.885         | £17.70                     |\n| **RUB**          | ₽20            | 0.011         | £0.22                      |\n\n## Examples with base currency of USD\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (USD) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **GBP**          | £20            | 1.277         | $25.54                     |\n| **EUR**          | €20            | 1.134         | $22.68                     |\n| **RUB**          | ₽20            | 0.015         | $0.30                      |"
-          },
-          "contactRef": {
-            "description": "Supplier or customer for the purchase to be associated to.",
-            "$ref": "#/components/schemas/ContactRef"
-          },
-          "bankAccountRef": {
-            "type": "object",
-            "title": "Bank account reference",
-            "properties": {
-              "id": {
-                "type": "string",
-                "example": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea",
-                "description": "Identifier of the bank account."
-              }
-            }
-          },
-          "merchantName": {
-            "type": "string",
-            "example": "Amazon UK",
-            "description": "Name of the merchant where the purchase took place"
-          },
-          "lines": {
-            "type": "array",
-            "description": "Array of transaction lines.",
-            "minItems": 1,
-            "maxItems": 100,
-            "items": {
-              "$ref": "#/components/schemas/ExpenseTransactionLine"
-            }
-          },
-          "notes": {
-            "type": "string",
-            "description": "Any private, company notes about the transaction.",
-            "example": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
-          }
-        },
-        "required": [
-          "id",
-          "type",
-          "issueDate",
-          "currency"
-        ],
-        "examples": [
-          {
-            "id": "a44135b0-6882-489a-83fe-a0c57a4afb19",
-            "type": "Payment",
-            "issueDate": "2021-05-21T00:00:00+00:00",
-            "currency": "GBP",
-            "currencyRate": 1.18,
-            "bankAccountRef": {
-              "id": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea"
-            },
-            "merchantName": "Amazon UK",
-            "lines": [
-              {
-                "netAmount": 110.42,
-                "taxAmount": 14.43,
-                "taxRateRef": {
-                  "id": "7e2ccb60-de1a-4c2b-9bd9-2f98a1c6be3f"
-                },
-                "accountRef": {
-                  "id": "a505cb47-0f7d-4e8b-90aa-9f9c2308b7bc"
-                },
-                "trackingRefs": [
-                  {
-                    "id": "31a7e93c-4bb2-474c-b26d-10b2b75f7a25"
-                  }
-                ]
-              }
-            ],
-            "notes": "amazon purchase"
-          }
-        ]
-      },
-      "RecordRef": {
-        "x-internal": true,
-        "type": "object",
-        "title": "Record reference",
-        "properties": {
-          "id": {
-            "type": "string",
-            "example": "40e3e57c-2322-4898-966c-ca41adfd23fd",
-            "description": "identifier of linked reference from mapping options."
-          }
-        }
-      },
-      "ContactRef": {
-        "type": "object",
-        "title": "Supplier/customer reference",
-        "properties": {
-          "id": {
-            "type": "string",
-            "example": "40e3e57c-2322-4898-966c-ca41adfd23fd",
-            "description": "Identifier of supplier or customer."
-          },
-          "type": {
-            "type": "string",
-            "description": "The type of contact.",
-            "example": "Supplier",
-            "default": "Supplier",
-            "enum": [
-              "Supplier",
-              "Supplier"
-            ]
-          }
-        }
-      },
-      "ExpenseTransactionLine": {
-        "x-internal": true,
-        "title": "Expense transaction line",
-        "type": "object",
-        "x-examples": {
-          "ExpenseTransactionLine": {
-            "netAmount": 110.42,
-            "taxAmount": 14.43,
-            "taxRateRef": {
-              "id": "08d37c46-8d5d-441b-8bad-76286c43047e"
-            },
-            "accountRef": {
-              "id": "16989b16-96d4-401a-9054-f5c620c655a6"
-            },
-            "trackingRefs": [
-              {
-                "id": "e9a1b63d-9ff0-40e7-8038-016354b987e6"
-              }
-            ]
-          }
-        },
-        "properties": {
-          "netAmount": {
-            "type": "number",
-            "format": "decimal",
-            "example": 110.42,
-            "description": "Amount of the line, exclusive of tax."
-          },
-          "taxAmount": {
-            "type": "number",
-            "format": "decimal",
-            "example": 14.43,
-            "description": "Amount of tax for the line."
-          },
-          "taxRateRef": {
-            "$ref": "#/components/schemas/RecordRef"
-          },
-          "accountRef": {
-            "$ref": "#/components/schemas/RecordRef"
-          },
-          "trackingRefs": {
-            "type": "array",
-            "minItems": 1,
-            "maxItems": 10,
-            "items": {
-              "$ref": "#/components/schemas/RecordRef"
-            }
-          }
-        },
-        "required": [
-          "netAmount",
-          "taxAmount",
-          "accountRef"
-        ]
-      },
       "Attachment": {
         "title": "Attachment",
         "type": "object",
@@ -12678,59 +12292,6 @@
           }
         }
       },
-      "CompanyConfiguration": {
-        "required": [
-          "bankAccount",
-          "supplier",
-          "customer"
-        ],
-        "title": "Company configuration",
-        "type": "object",
-        "x-examples": {
-          "Config Example": {
-            "bankAccount": {
-              "id": "89"
-            },
-            "supplier": {
-              "id": "124"
-            },
-            "customer": {
-              "id": "140"
-            }
-          }
-        },
-        "properties": {
-          "bankAccount": {
-            "$ref": "#/components/schemas/BankAccount"
-          },
-          "supplier": {
-            "$ref": "#/components/schemas/CompanyConfiguration/definitions/SupplierDetails"
-          },
-          "customer": {
-            "$ref": "#/components/schemas/CompanyConfiguration/definitions/CustomerDetails"
-          }
-        },
-        "definitions": {
-          "SupplierDetails": {
-            "title": "Supplier details",
-            "type": "object",
-            "properties": {
-              "id": {
-                "$ref": "#/components/schemas/Supplier/allOf/0/properties/id"
-              }
-            }
-          },
-          "CustomerDetails": {
-            "title": "Customer details",
-            "type": "object",
-            "properties": {
-              "id": {
-                "$ref": "#/components/schemas/Customer/allOf/0/properties/id"
-              }
-            }
-          }
-        }
-      },
       "BankAccount": {
         "title": "Bank account",
         "x-internal": true,
@@ -12743,596 +12304,133 @@
           }
         }
       },
-      "Supplier": {
-        "title": "Supplier",
-        "description": "> View the coverage for suppliers in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nFrom the **Suppliers** endpoints, you can retrieve a list of [all the suppliers for a company](https://docs.codat.io/sync-for-expenses-api#/operations/list-suppliers). Suppliers' data links to accounts payable [bills](https://docs.codat.io/sync-for-expenses-api#/schemas/Bill).",
-        "type": "object",
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "Identifier for the supplier, unique to the company in the accounting platform."
-              },
-              "supplierName": {
-                "type": "string",
-                "nullable": true,
-                "description": "Name of the supplier as recorded in the accounting system, typically the company name."
-              },
-              "contactName": {
-                "type": "string",
-                "nullable": true,
-                "description": "Name of the main contact for the supplier."
-              },
-              "emailAddress": {
-                "type": "string",
-                "nullable": true,
-                "description": "Email address that the supplier may be contacted on."
-              },
-              "phone": {
-                "type": "string",
-                "nullable": true,
-                "description": "Phone number that the supplier may be contacted on.",
-                "examples": [
-                  "+44 25691 154789",
-                  "(877) 492-8687",
-                  "01224 658 999"
-                ]
-              },
-              "addresses": {
-                "type": "array",
-                "nullable": true,
-                "description": "An array of Addresses.",
-                "items": {
-                  "title": "Accounting address",
-                  "x-internal": true,
-                  "type": "object",
-                  "properties": {
-                    "type": {
-                      "$ref": "#/components/schemas/Supplier/allOf/0/properties/addresses/items/definitions/accountingAddressType"
-                    },
-                    "line1": {
-                      "type": "string",
-                      "nullable": true,
-                      "description": "Line 1 of the customer address."
-                    },
-                    "line2": {
-                      "type": "string",
-                      "nullable": true,
-                      "description": "Line 2 of the customer address."
-                    },
-                    "city": {
-                      "type": "string",
-                      "nullable": true,
-                      "description": "City of the customer address."
-                    },
-                    "region": {
-                      "type": "string",
-                      "nullable": true,
-                      "description": "Region of the customer address."
-                    },
-                    "country": {
-                      "type": "string",
-                      "nullable": true,
-                      "description": "Country of the customer address."
-                    },
-                    "postalCode": {
-                      "type": "string",
-                      "nullable": true,
-                      "description": "Postal code or zip code."
-                    }
-                  },
-                  "required": [
-                    "type"
-                  ],
-                  "definitions": {
-                    "accountingAddressType": {
-                      "description": "The type of the address",
-                      "type": "string",
-                      "enum": [
-                        "Unknown",
-                        "Billing",
-                        "Delivery"
-                      ]
-                    }
-                  }
-                }
-              },
-              "registrationNumber": {
-                "type": "string",
-                "nullable": true,
-                "description": "Company number of the supplier. In the UK, this is typically the company registration number issued by Companies House."
-              },
-              "taxNumber": {
-                "type": "string",
-                "nullable": true,
-                "description": "Supplier's company tax number."
-              },
-              "status": {
-                "$ref": "#/components/schemas/Supplier/definitions/supplierStatus"
-              },
-              "defaultCurrency": {
-                "type": "string",
-                "nullable": true,
-                "description": "Default currency the supplier's transactional data is recorded in."
-              },
-              "metadata": {
-                "$ref": "#/components/schemas/Account/allOf/0/properties/metadata"
-              },
-              "supplementalData": {
-                "$ref": "#/components/schemas/SupplementalData"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/Account/allOf/1"
-          }
-        ],
-        "required": [
-          "status"
-        ],
-        "definitions": {
-          "supplierRef": {
-            "title": "Supplier reference",
-            "description": "Reference to the supplier the record relates to.",
-            "type": "object",
-            "properties": {
-              "id": {
-                "minLength": 1,
-                "type": "string",
-                "description": "The supplier's unique ID"
-              },
-              "supplierName": {
-                "type": "string",
-                "nullable": true,
-                "description": "The supplier's name"
-              }
-            },
-            "required": [
-              "id"
-            ]
-          },
-          "supplierStatus": {
-            "description": "Status of the supplier.",
-            "type": "string",
-            "enum": [
-              "Unknown",
-              "Active",
-              "Archived"
-            ]
-          }
-        },
-        "examples": [
-          {
-            "id": "C520FFD4-F6F6-4FC2-A6D2-5D7088B2B14F",
-            "supplierName": "Kelly's Industrial Supplies",
-            "contactName": "Kelly's Industrial Supplies",
-            "emailAddress": "sales@kellysupplies.com",
-            "phone": "07999 999999",
-            "addresses": [
-              {
-                "type": "Billing",
-                "line1": "Unit 51",
-                "line2": "Bakersfield Industrial Estate",
-                "city": "Bakersfield",
-                "region": "California",
-                "country": "USA",
-                "postalcode": "93308"
-              }
-            ],
-            "registrationNumber": "string",
-            "taxNumber": "string",
-            "status": "Unknown",
-            "defaultCurrency": "string",
-            "metadata": {
-              "isDeleted": true
-            },
-            "supplementalData": {
-              "content": {
-                "property1": {
-                  "property1": null,
-                  "property2": null
-                },
-                "property2": {
-                  "property1": null,
-                  "property2": null
-                }
-              }
-            },
-            "modifiedDate": "2022-10-23T00:00:00Z",
-            "sourceModifiedDate": "2022-10-23T00:00:00Z"
-          }
-        ]
-      },
-      "Customer": {
-        "title": "Customer",
-        "description": "> View the coverage for customers in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=customers\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nA customer is a person or organisation that buys goods or services. From the Customers endpoints, you can retrieve a [list of all the customers of a company](https://api.codat.io/swagger/index.html#/Customers/get_companies__companyId__data_customers).\n\nCustomers' data links to accounts receivable [invoices](https://docs.codat.io/sync-for-expenses-api#/schemas/Invoice).\n",
-        "type": "object",
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "Identifier for the customer, unique to the company in the accounting platform."
-              },
-              "customerName": {
-                "type": "string",
-                "nullable": true,
-                "description": "Name of the customer as recorded in the accounting system, typically the company name."
-              },
-              "contactName": {
-                "type": "string",
-                "nullable": true,
-                "description": "Name of the main contact for the identified customer."
-              },
-              "emailAddress": {
-                "type": "string",
-                "nullable": true,
-                "description": "Email address the customer can be contacted by."
-              },
-              "defaultCurrency": {
-                "$ref": "#/components/schemas/Account/allOf/0/properties/currency",
-                "description": "Default currency the transactional data of the customer is recorded in."
-              },
-              "phone": {
-                "type": "string",
-                "nullable": true,
-                "description": "Phone number the customer can be contacted by."
-              },
-              "addresses": {
-                "type": "array",
-                "nullable": true,
-                "description": "An array of Addresses.",
-                "items": {
-                  "$ref": "#/components/schemas/Supplier/allOf/0/properties/addresses/items"
-                }
-              },
-              "contacts": {
-                "type": "array",
-                "nullable": true,
-                "description": "An array of Contacts.",
-                "items": {
-                  "$ref": "#/components/schemas/Customer/definitions/contact"
-                }
-              },
-              "registrationNumber": {
-                "type": "string",
-                "nullable": true,
-                "description": "Company number. In the UK, this is typically the Companies House company registration number."
-              },
-              "taxNumber": {
-                "type": "string",
-                "nullable": true,
-                "description": "Company tax number."
-              },
-              "status": {
-                "$ref": "#/components/schemas/Customer/definitions/customerStatus",
-                "description": "Current state of the customer."
-              },
-              "metadata": {
-                "$ref": "#/components/schemas/Account/allOf/0/properties/metadata"
-              },
-              "supplementalData": {
-                "$ref": "#/components/schemas/SupplementalData"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/Account/allOf/1"
-          }
-        ],
-        "required": [
-          "status"
-        ],
-        "definitions": {
-          "accountingCustomerRef": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "minLength": 1,
-                "type": "string",
-                "description": "`id` from the Customers data type"
-              },
-              "companyName": {
-                "type": "string",
-                "nullable": true,
-                "description": "`customerName` from the Customer data type"
-              }
-            },
-            "required": [
-              "id"
-            ]
-          },
-          "customerStatus": {
-            "description": "Status of customer.",
-            "type": "string",
-            "enum": [
-              "Unknown",
-              "Active",
-              "Archived"
-            ]
-          },
-          "contact": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string",
-                "nullable": true,
-                "description": "Name of a contact for a customer."
-              },
-              "email": {
-                "type": "string",
-                "nullable": true,
-                "description": "Email of a contact for a customer."
-              },
-              "phone": {
-                "type": "array",
-                "nullable": true,
-                "description": "An array of Phone numbers.",
-                "items": {
-                  "title": "Phone",
-                  "type": "object",
-                  "x-internal": true,
-                  "properties": {
-                    "number": {
-                      "type": "string",
-                      "nullable": true,
-                      "examples": [
-                        "+44 25691 154789",
-                        "(877) 492-8687",
-                        "01224 658 999"
-                      ],
-                      "description": "A phone number."
-                    },
-                    "type": {
-                      "$ref": "#/components/schemas/Customer/definitions/contact/properties/phone/items/definitions/phoneNumberType"
-                    }
-                  },
-                  "required": [
-                    "number",
-                    "type"
-                  ],
-                  "definitions": {
-                    "phoneNumberType": {
-                      "description": "The type of phone number",
-                      "type": "string",
-                      "enum": [
-                        "Primary",
-                        "Landline",
-                        "Mobile",
-                        "Fax",
-                        "Unknown"
-                      ]
-                    }
-                  }
-                }
-              },
-              "address": {
-                "$ref": "#/components/schemas/Supplier/allOf/0/properties/addresses/items",
-                "description": "An object of Address information."
-              },
-              "status": {
-                "$ref": "#/components/schemas/Customer/definitions/customerStatus"
-              },
-              "modifiedDate": {
-                "$ref": "#/components/schemas/Company/properties/created"
-              }
-            },
-            "required": [
-              "status"
-            ]
-          }
-        }
-      },
-      "SyncInitiated": {
-        "title": "Sync initiated",
-        "type": "object",
-        "properties": {
-          "syncId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier for the sync initiated."
-          }
-        },
-        "additionalProperties": false
-      },
-      "InitiateSync": {
-        "title": "Initiate sync",
-        "type": "object",
-        "properties": {
-          "datasetIds": {
-            "minItems": 1,
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "PagingInfo": {
-        "type": "object",
-        "title": "Pagination information",
+      "ClientRateLimitReachedWebhook": {
+        "title": "Client rate limit reached webhook",
         "x-internal": true,
+        "description": "Webhook request body for a client that has reached their rate limit.",
+        "type": "object",
         "properties": {
-          "pageNumber": {
-            "type": "integer",
-            "description": "Current page number."
+          "ClientId": {
+            "$ref": "#/components/schemas/SyncFailedWebhook/properties/ClientId"
           },
-          "pageSize": {
-            "type": "integer",
-            "description": "Number of items to return in results array.",
-            "maximum": 2000
+          "ClientName": {
+            "$ref": "#/components/schemas/SyncFailedWebhook/properties/ClientName"
           },
-          "totalResults": {
-            "type": "integer",
-            "description": "Total number of items."
+          "RuleId": {
+            "$ref": "#/components/schemas/SyncFailedWebhook/properties/RuleId"
           },
-          "_links": {
-            "$ref": "#/components/schemas/PagingInfo/definitions/links"
+          "RuleType": {
+            "$ref": "#/components/schemas/SyncFailedWebhook/properties/RuleType"
+          },
+          "AlertId": {
+            "$ref": "#/components/schemas/SyncFailedWebhook/properties/AlertId"
+          },
+          "Message": {
+            "$ref": "#/components/schemas/SyncFailedWebhook/properties/Message"
+          },
+          "Data": {
+            "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData"
           }
         },
         "definitions": {
-          "links": {
-            "title": "Hal Links",
+          "ClientRateLimitReachedWebhookData": {
             "type": "object",
-            "required": [
-              "self",
-              "current"
-            ],
+            "title": "Client rate limit reached webhook data",
             "properties": {
-              "self": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              "DailyQuota": {
+                "type": "integer",
+                "description": "The number of available requests per day."
               },
-              "current": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              },
-              "next": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              },
-              "previous": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              }
-            },
-            "examples": [
-              {
-                "self": {
-                  "href": "/companies/{id}/data/{dataType}"
-                },
-                "current": {
-                  "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
-                }
-              }
-            ]
-          },
-          "halRef": {
-            "title": "Hypertext reference",
-            "type": "object",
-            "properties": {
-              "href": {
-                "type": "string",
-                "format": "uri-reference",
-                "description": "Uri hypertext reference."
+              "ExpiresUtc": {
+                "$ref": "#/components/schemas/Company/properties/created",
+                "description": "The date time in UTC that your daily quota is reset."
               }
             }
           }
         },
-        "required": [
-          "pageNumber",
-          "pageSize",
-          "totalResults",
-          "_links"
-        ],
         "examples": [
           {
-            "_links": {
-              "pageNumber": 1,
-              "pageSize": 10,
-              "totalResults": 1,
-              "self": {
-                "href": "/companies/{id}/data/{dataType}"
-              },
-              "current": {
-                "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
-              }
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "RuleType": "Rate Limit Reached",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "The current daily rate limit quota of 1000 requests for bae71d36-ff47-420a-b4a6-f8c9ddf41140 has been reached.",
+            "Data": {
+              "DailyQuota": 1000,
+              "ExpiresUtc": "2023-05-03T00:00:00Z"
             }
           }
         ]
       },
-      "UpdateExpenseRequest": {
-        "title": "Updating expense transaction request",
+      "ClientRateLimitResetWebhook": {
+        "title": "Client rate limit reset webhook",
+        "x-internal": true,
+        "description": "Webhook request body for a client that has had their rate limit reset.",
         "type": "object",
-        "examples": {
-          "Payment": {
-            "value": {
-              "type": "Payment",
-              "issueDate": "2023-05-22T00:00:00+00:00",
-              "currency": "GBP",
-              "currencyRate": 1.18,
-              "notes": "New notes",
-              "contactRef": {
-                "id": "f5244103-5223-4b0a-857f-50566ac86c11",
-                "type": "Supplier"
-              },
-              "bankAccountRef": {
-                "id": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea"
-              },
-              "merchantName": "My Merchant"
-            }
-          }
-        },
         "properties": {
-          "type": "#/definitions/expenseType",
-          "issueDate": {
-            "type": "string",
-            "description": "Date the transaction was recorded.",
-            "example": "2022-06-28T00:00:00.000Z"
+          "ClientId": {
+            "$ref": "#/components/schemas/SyncFailedWebhook/properties/ClientId"
           },
-          "currency": {
-            "type": "string",
-            "example": "GBP",
-            "description": "Currency the transaction was recorded in."
+          "ClientName": {
+            "$ref": "#/components/schemas/SyncFailedWebhook/properties/ClientName"
           },
-          "currencyRate": {
-            "$ref": "#/components/schemas/ExpenseTransaction/properties/currencyRate"
+          "RuleId": {
+            "$ref": "#/components/schemas/SyncFailedWebhook/properties/RuleId"
           },
-          "contactRef": {
-            "description": "Supplier or Customer for the purchase to be associated to.",
-            "$ref": "#/components/schemas/ContactRef"
+          "RuleType": {
+            "$ref": "#/components/schemas/SyncFailedWebhook/properties/RuleType"
           },
-          "bankAccountRef": {
-            "type": "object",
-            "title": "Bank account reference",
-            "properties": {
-              "id": {
-                "type": "string",
-                "example": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea",
-                "description": "Identifier of the bank account."
-              }
-            }
+          "AlertId": {
+            "$ref": "#/components/schemas/SyncFailedWebhook/properties/AlertId"
           },
-          "merchantName": {
-            "type": "string",
-            "description": "Name of the merchant where the purchase took place",
-            "example": "Amazon UK"
+          "Message": {
+            "$ref": "#/components/schemas/SyncFailedWebhook/properties/Message"
           },
-          "lines": {
-            "type": "array",
-            "description": "Array of transaction lines.",
-            "items": {
-              "$ref": "#/components/schemas/ExpenseTransactionLine"
-            }
-          },
-          "notes": {
-            "type": "string",
-            "description": "Any private, company notes about the transaction.",
-            "example": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
+          "Data": {
+            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/definitions/ClientRateLimitResetWebhookData"
           }
         },
         "definitions": {
-          "expenseType": {
-            "description": "The type of transaction.",
-            "type": "string",
-            "example": "Payment",
-            "enum": [
-              "Payment",
-              "Refund",
-              "Reward",
-              "Chargeback",
-              "TransferIn",
-              "TransferOut",
-              "AdjustmentIn",
-              "AdjustmentOut"
-            ]
+          "ClientRateLimitResetWebhookData": {
+            "type": "object",
+            "title": "Client rate limit reset webhook data",
+            "properties": {
+              "QuotaRemaining": {
+                "type": "integer",
+                "description": "Total number of request remaining for your client.",
+                "nullable": true
+              },
+              "ResetReason": {
+                "type": "string",
+                "description": "The reason for your rate limit quota being reset."
+              },
+              "DailyQuota": {
+                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData/properties/DailyQuota",
+                "nullable": true
+              },
+              "ExpiresUtc": {
+                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData/properties/ExpiresUtc",
+                "nullable": true
+              }
+            }
           }
         },
-        "required": [
-          "type",
-          "issueDate"
+        "examples": [
+          {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "RuleType": "Rate Limit Reset",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "The current daily rate limit quota for client 30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e has been reset to 1000 requests.",
+            "Data": {
+              "QuotaRemaining": 1000,
+              "ResetReason": "The quota was reset because it is a new day.",
+              "DailyQuota": 1000,
+              "ExpiresUtc": "2023-05-03T00:00:00Z"
+            }
+          }
         ]
       },
       "Companies": {
@@ -13353,26 +12451,6 @@
           {
             "$ref": "#/components/schemas/PagingInfo"
           }
-        ]
-      },
-      "CompanyRequestBody": {
-        "title": "Create company request",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Name of company being connected.",
-            "pattern": "^[A-Za-z0-9\\s\\-',&@.,?!\\s]+$",
-            "minLength": 1,
-            "example": "Bank of Dave"
-          },
-          "description": {
-            "$ref": "#/components/schemas/Company/properties/description"
-          }
-        },
-        "required": [
-          "name"
         ]
       },
       "Company": {
@@ -13459,25 +12537,150 @@
           }
         ]
       },
-      "Connections": {
-        "title": "Connections",
-        "x-internal": true,
-        "allOf": [
-          {
+      "CompanyConfiguration": {
+        "required": [
+          "bankAccount",
+          "supplier",
+          "customer"
+        ],
+        "title": "Company configuration",
+        "type": "object",
+        "x-examples": {
+          "Config Example": {
+            "bankAccount": {
+              "id": "89"
+            },
+            "supplier": {
+              "id": "124"
+            },
+            "customer": {
+              "id": "140"
+            }
+          }
+        },
+        "properties": {
+          "bankAccount": {
+            "$ref": "#/components/schemas/BankAccount"
+          },
+          "supplier": {
+            "$ref": "#/components/schemas/CompanyConfiguration/definitions/SupplierDetails"
+          },
+          "customer": {
+            "$ref": "#/components/schemas/CompanyConfiguration/definitions/CustomerDetails"
+          }
+        },
+        "definitions": {
+          "SupplierDetails": {
+            "title": "Supplier details",
             "type": "object",
             "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Connection"
-                }
+              "id": {
+                "$ref": "#/components/schemas/Supplier/allOf/0/properties/id"
               }
             }
           },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
+          "CustomerDetails": {
+            "title": "Customer details",
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/schemas/Customer/allOf/0/properties/id"
+              }
+            }
           }
+        }
+      },
+      "CompanyRequestBody": {
+        "title": "Create company request",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of company being connected.",
+            "pattern": "^[A-Za-z0-9\\s\\-',&@.,?!\\s]+$",
+            "minLength": 1,
+            "example": "Bank of Dave"
+          },
+          "description": {
+            "$ref": "#/components/schemas/Company/properties/description"
+          }
+        },
+        "required": [
+          "name"
         ]
+      },
+      "CompanySyncStatus": {
+        "title": "Company sync status",
+        "type": "object",
+        "additionalProperties": false,
+        "x-examples": {
+          "Success Data Pushed": {
+            "companyId": "20803807-4e9a-4cb7-b67b-9f889a3916e1",
+            "syncId": "aa4c9dfd-e945-4424-9628-9e724f14c267",
+            "syncStatusCode": 2000,
+            "syncStatus": "Complete",
+            "errorMessage": "",
+            "syncExceptionMessage": "",
+            "syncUtc": "2023-01-24T14:15:22Z",
+            "dataPushed": true
+          },
+          "Success No Data Pushed": {
+            "companyId": "20803807-4e9a-4cb7-b67b-9f889a3916e1",
+            "syncId": "aa4c9dfd-e945-4424-9628-9e724f14c267",
+            "syncStatusCode": 2040,
+            "syncStatus": "Complete",
+            "errorMessage": "",
+            "syncExceptionMessage": "",
+            "syncUtc": "2023-01-24T14:15:22Z",
+            "dataPushed": false
+          }
+        },
+        "properties": {
+          "companyId": {
+            "type": "string",
+            "description": "Unique identifier for your SMB in Codat.",
+            "example": "d4d73051-ed31-42b6-99f6-d288cd940992",
+            "nullable": true
+          },
+          "syncId": {
+            "type": "string",
+            "description": "Unique identifier of the sync.",
+            "example": "a6a22aff-a43a-411d-a910-2dae73217cce",
+            "nullable": true
+          },
+          "syncStatusCode": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Status code of the sync.",
+            "example": 2000
+          },
+          "syncStatus": {
+            "type": "string",
+            "description": "Text status of the sync.",
+            "example": "Completed",
+            "nullable": true
+          },
+          "errorMessage": {
+            "type": "string",
+            "description": "Error message of the sync.",
+            "nullable": true
+          },
+          "syncExceptionMessage": {
+            "type": "string",
+            "description": "Exception message of the sync.",
+            "nullable": true
+          },
+          "syncUtc": {
+            "$ref": "#/components/schemas/Company/properties/created",
+            "description": "Datetime of the sync.",
+            "nullable": true
+          },
+          "dataPushed": {
+            "type": "boolean",
+            "description": "Boolean of whether the sync resulted in data being pushed."
+          }
+        }
       },
       "Connection": {
         "title": "Connection",
@@ -13621,6 +12824,378 @@
           "sourceType": "Banking"
         }
       },
+      "Connections": {
+        "title": "Connections",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Connection"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PagingInfo"
+          }
+        ]
+      },
+      "ContactRef": {
+        "type": "object",
+        "title": "Supplier/customer reference",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "40e3e57c-2322-4898-966c-ca41adfd23fd",
+            "description": "Identifier of supplier or customer."
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of contact.",
+            "example": "Supplier",
+            "default": "Supplier",
+            "enum": [
+              "Supplier",
+              "Supplier"
+            ]
+          }
+        }
+      },
+      "CreateAccountResponse": {
+        "title": "Create account response",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "data": {
+                "$ref": "#/components/schemas/Account"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PushOperation"
+          }
+        ]
+      },
+      "CreateCustomerResponse": {
+        "title": "Create customer response",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "data": {
+                "$ref": "#/components/schemas/Customer"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PushOperation"
+          }
+        ]
+      },
+      "CreateExpenseRequest": {
+        "title": "Create expense request",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 50,
+            "items": {
+              "$ref": "#/components/schemas/ExpenseTransaction"
+            }
+          }
+        }
+      },
+      "CreateExpenseResponse": {
+        "title": "Create expense response",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "datasetId": {
+            "type": "string",
+            "example": "cd937d46-8e41-43a9-9477-a79158ffd98a",
+            "format": "uuid",
+            "description": "Unique id of dataset created"
+          }
+        }
+      },
+      "CreateSupplierResponse": {
+        "title": "Create supplier response",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "data": {
+                "$ref": "#/components/schemas/Supplier"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PushOperation"
+          }
+        ]
+      },
+      "Customer": {
+        "title": "Customer",
+        "description": "> View the coverage for customers in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=customers\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nA customer is a person or organisation that buys goods or services. From the Customers endpoints, you can retrieve a [list of all the customers of a company](https://api.codat.io/swagger/index.html#/Customers/get_companies__companyId__data_customers).\n\nCustomers' data links to accounts receivable [invoices](https://docs.codat.io/sync-for-expenses-api#/schemas/Invoice).\n",
+        "type": "object",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Identifier for the customer, unique to the company in the accounting platform."
+              },
+              "customerName": {
+                "type": "string",
+                "nullable": true,
+                "description": "Name of the customer as recorded in the accounting system, typically the company name."
+              },
+              "contactName": {
+                "type": "string",
+                "nullable": true,
+                "description": "Name of the main contact for the identified customer."
+              },
+              "emailAddress": {
+                "type": "string",
+                "nullable": true,
+                "description": "Email address the customer can be contacted by."
+              },
+              "defaultCurrency": {
+                "$ref": "#/components/schemas/Account/allOf/0/properties/currency",
+                "description": "Default currency the transactional data of the customer is recorded in."
+              },
+              "phone": {
+                "type": "string",
+                "nullable": true,
+                "description": "Phone number the customer can be contacted by."
+              },
+              "addresses": {
+                "type": "array",
+                "nullable": true,
+                "description": "An array of Addresses.",
+                "items": {
+                  "title": "Accounting address",
+                  "x-internal": true,
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "$ref": "#/components/schemas/Customer/allOf/0/properties/addresses/items/definitions/accountingAddressType"
+                    },
+                    "line1": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Line 1 of the customer address."
+                    },
+                    "line2": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Line 2 of the customer address."
+                    },
+                    "city": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "City of the customer address."
+                    },
+                    "region": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Region of the customer address."
+                    },
+                    "country": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Country of the customer address."
+                    },
+                    "postalCode": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Postal code or zip code."
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "definitions": {
+                    "accountingAddressType": {
+                      "description": "The type of the address",
+                      "type": "string",
+                      "enum": [
+                        "Unknown",
+                        "Billing",
+                        "Delivery"
+                      ]
+                    }
+                  }
+                }
+              },
+              "contacts": {
+                "type": "array",
+                "nullable": true,
+                "description": "An array of Contacts.",
+                "items": {
+                  "$ref": "#/components/schemas/Customer/definitions/contact"
+                }
+              },
+              "registrationNumber": {
+                "type": "string",
+                "nullable": true,
+                "description": "Company number. In the UK, this is typically the Companies House company registration number."
+              },
+              "taxNumber": {
+                "type": "string",
+                "nullable": true,
+                "description": "Company tax number."
+              },
+              "status": {
+                "$ref": "#/components/schemas/Customer/definitions/customerStatus",
+                "description": "Current state of the customer."
+              },
+              "metadata": {
+                "$ref": "#/components/schemas/Account/allOf/0/properties/metadata"
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/SupplementalData"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/Account/allOf/1"
+          }
+        ],
+        "required": [
+          "status"
+        ],
+        "definitions": {
+          "accountingCustomerRef": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "minLength": 1,
+                "type": "string",
+                "description": "`id` from the Customers data type"
+              },
+              "companyName": {
+                "type": "string",
+                "nullable": true,
+                "description": "`customerName` from the Customer data type"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          "customerStatus": {
+            "description": "Status of customer.",
+            "type": "string",
+            "enum": [
+              "Unknown",
+              "Active",
+              "Archived"
+            ]
+          },
+          "contact": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "nullable": true,
+                "description": "Name of a contact for a customer."
+              },
+              "email": {
+                "type": "string",
+                "nullable": true,
+                "description": "Email of a contact for a customer."
+              },
+              "phone": {
+                "type": "array",
+                "nullable": true,
+                "description": "An array of Phone numbers.",
+                "items": {
+                  "title": "Phone",
+                  "type": "object",
+                  "x-internal": true,
+                  "properties": {
+                    "number": {
+                      "type": "string",
+                      "nullable": true,
+                      "examples": [
+                        "+44 25691 154789",
+                        "(877) 492-8687",
+                        "01224 658 999"
+                      ],
+                      "description": "A phone number."
+                    },
+                    "type": {
+                      "$ref": "#/components/schemas/Customer/definitions/contact/properties/phone/items/definitions/phoneNumberType"
+                    }
+                  },
+                  "required": [
+                    "number",
+                    "type"
+                  ],
+                  "definitions": {
+                    "phoneNumberType": {
+                      "description": "The type of phone number",
+                      "type": "string",
+                      "enum": [
+                        "Primary",
+                        "Landline",
+                        "Mobile",
+                        "Fax",
+                        "Unknown"
+                      ]
+                    }
+                  }
+                }
+              },
+              "address": {
+                "$ref": "#/components/schemas/Customer/allOf/0/properties/addresses/items",
+                "description": "An object of Address information."
+              },
+              "status": {
+                "$ref": "#/components/schemas/Customer/definitions/customerStatus"
+              },
+              "modifiedDate": {
+                "$ref": "#/components/schemas/Company/properties/created"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          }
+        }
+      },
+      "Customers": {
+        "title": "Customers",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Customer"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PagingInfo"
+          }
+        ]
+      },
       "DataStatus": {
         "title": "Data status",
         "description": "Describes the state of data in the Codat cache for a company and data type",
@@ -13719,6 +13294,366 @@
         "additionalProperties": {
           "$ref": "#/components/schemas/DataStatus"
         }
+      },
+      "DataType": {
+        "x-internal": true,
+        "$ref": "#/components/schemas/DataStatus/properties/dataType"
+      },
+      "ErrorMessage": {
+        "title": "Error message",
+        "type": "object",
+        "x-internal": true,
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "description": "The HTTP status code returned by the error."
+          },
+          "service": {
+            "type": "string",
+            "description": "Codat's service the returned the error."
+          },
+          "error": {
+            "type": "string",
+            "description": "A brief description of the error."
+          },
+          "correlationId": {
+            "type": "string",
+            "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
+          },
+          "canBeRetried": {
+            "type": "string",
+            "description": "`True` if the error occurred transiently and can be retried."
+          },
+          "detailedErrorCode": {
+            "type": "integer",
+            "description": "Machine readable error code used to automate processes based on the code returned."
+          }
+        }
+      },
+      "ExpenseTransaction": {
+        "title": "Expense transaction",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "4d7c6929-7770-412b-91bb-44d3bc71d111",
+            "format": "uuid",
+            "description": "Your unique identifier for the transaction."
+          },
+          "type": {
+            "type": "string",
+            "example": "Payment",
+            "description": "The type of transaction.",
+            "enum": [
+              "Payment",
+              "Refund",
+              "Reward",
+              "Chargeback",
+              "TransferIn",
+              "TransferOut",
+              "AdjustmentIn",
+              "AdjustmentOut"
+            ]
+          },
+          "issueDate": {
+            "$ref": "#/components/schemas/Company/properties/created",
+            "description": "Date of the transaction was recorded."
+          },
+          "currency": {
+            "type": "string",
+            "example": "GBP",
+            "description": "Currency the transaction was recorded in."
+          },
+          "currencyRate": {
+            "title": "Currency rate",
+            "type": "number",
+            "format": "decimal",
+            "nullable": true,
+            "description": "Rate to convert the total amount of the payment into the base currency for the company at the time of the payment.\n\nCurrency rates in Codat are implemented as the multiple of foreign currency units to each base currency unit.  \n\nIt is not possible to perform the currency conversion with two or more non-base currencies participating in the transaction. For example, if a company's base currency is USD, and it has a bill issued in EUR, then the bill payment must happen in USD or EUR.\n\nWhere the currency rate is provided by the underlying accounting platform, it will be available from Codat with the same precision (up to a maximum of 9 decimal places). \n\nFor accounting platforms which do not provide an explicit currency rate, it is calculated as `baseCurrency / foreignCurrency` and will be returned to 9 decimal places.\n\n## Examples with base currency of GBP\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (GBP) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **USD**          | $20            | 0.781         | £15.62                     |\n| **EUR**          | €20            | 0.885         | £17.70                     |\n| **RUB**          | ₽20            | 0.011         | £0.22                      |\n\n## Examples with base currency of USD\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (USD) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **GBP**          | £20            | 1.277         | $25.54                     |\n| **EUR**          | €20            | 1.134         | $22.68                     |\n| **RUB**          | ₽20            | 0.015         | $0.30                      |"
+          },
+          "contactRef": {
+            "description": "Supplier or customer for the purchase to be associated to.",
+            "$ref": "#/components/schemas/ContactRef"
+          },
+          "bankAccountRef": {
+            "type": "object",
+            "title": "Bank account reference",
+            "properties": {
+              "id": {
+                "type": "string",
+                "example": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea",
+                "description": "Identifier of the bank account."
+              }
+            }
+          },
+          "merchantName": {
+            "type": "string",
+            "example": "Amazon UK",
+            "description": "Name of the merchant where the purchase took place"
+          },
+          "lines": {
+            "type": "array",
+            "description": "Array of transaction lines.",
+            "minItems": 1,
+            "maxItems": 100,
+            "items": {
+              "$ref": "#/components/schemas/ExpenseTransactionLine"
+            }
+          },
+          "notes": {
+            "type": "string",
+            "description": "Any private, company notes about the transaction.",
+            "example": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "issueDate",
+          "currency"
+        ],
+        "examples": [
+          {
+            "id": "a44135b0-6882-489a-83fe-a0c57a4afb19",
+            "type": "Payment",
+            "issueDate": "2021-05-21T00:00:00+00:00",
+            "currency": "GBP",
+            "currencyRate": 1.18,
+            "bankAccountRef": {
+              "id": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea"
+            },
+            "merchantName": "Amazon UK",
+            "lines": [
+              {
+                "netAmount": 110.42,
+                "taxAmount": 14.43,
+                "taxRateRef": {
+                  "id": "7e2ccb60-de1a-4c2b-9bd9-2f98a1c6be3f"
+                },
+                "accountRef": {
+                  "id": "a505cb47-0f7d-4e8b-90aa-9f9c2308b7bc"
+                },
+                "trackingRefs": [
+                  {
+                    "id": "31a7e93c-4bb2-474c-b26d-10b2b75f7a25"
+                  }
+                ]
+              }
+            ],
+            "notes": "amazon purchase"
+          }
+        ]
+      },
+      "ExpenseTransactionLine": {
+        "x-internal": true,
+        "title": "Expense transaction line",
+        "type": "object",
+        "x-examples": {
+          "ExpenseTransactionLine": {
+            "netAmount": 110.42,
+            "taxAmount": 14.43,
+            "taxRateRef": {
+              "id": "08d37c46-8d5d-441b-8bad-76286c43047e"
+            },
+            "accountRef": {
+              "id": "16989b16-96d4-401a-9054-f5c620c655a6"
+            },
+            "trackingRefs": [
+              {
+                "id": "e9a1b63d-9ff0-40e7-8038-016354b987e6"
+              }
+            ]
+          }
+        },
+        "properties": {
+          "netAmount": {
+            "type": "number",
+            "format": "decimal",
+            "example": 110.42,
+            "description": "Amount of the line, exclusive of tax."
+          },
+          "taxAmount": {
+            "type": "number",
+            "format": "decimal",
+            "example": 14.43,
+            "description": "Amount of tax for the line."
+          },
+          "taxRateRef": {
+            "$ref": "#/components/schemas/RecordRef"
+          },
+          "accountRef": {
+            "$ref": "#/components/schemas/RecordRef"
+          },
+          "trackingRefs": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 10,
+            "items": {
+              "$ref": "#/components/schemas/RecordRef"
+            }
+          }
+        },
+        "required": [
+          "netAmount",
+          "taxAmount",
+          "accountRef"
+        ]
+      },
+      "InitiateSync": {
+        "title": "Initiate sync",
+        "type": "object",
+        "properties": {
+          "datasetIds": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IntegrationType": {
+        "title": "Integration type",
+        "x-internal": true,
+        "type": "string",
+        "description": "Type of transaction that has been processed e.g. Expense or Bank Feed.",
+        "enum": [
+          "expenses",
+          "bankfeeds"
+        ],
+        "default": "expenses",
+        "example": "expenses",
+        "nullable": true
+      },
+      "MappingOptions": {
+        "title": "Mapping options",
+        "type": "object",
+        "additionalProperties": false,
+        "x-examples": {},
+        "properties": {
+          "expenseProvider": {
+            "type": "string",
+            "description": "Name of the expense integration.",
+            "example": "Partner Expense",
+            "nullable": true
+          },
+          "accounts": {
+            "type": "array",
+            "description": "Array of available accounts for mapping.",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/AccountMappingInfo"
+            }
+          },
+          "trackingCategories": {
+            "type": "array",
+            "description": "Array of available tracking categories for mapping.",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/TrackingCategoryMappingInfo"
+            }
+          },
+          "taxRates": {
+            "type": "array",
+            "description": "Array of available tax rates for mapping.",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/TaxRateMappingInfo"
+            }
+          }
+        }
+      },
+      "PagingInfo": {
+        "type": "object",
+        "title": "Pagination information",
+        "x-internal": true,
+        "properties": {
+          "pageNumber": {
+            "type": "integer",
+            "description": "Current page number."
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "Number of items to return in results array.",
+            "maximum": 2000
+          },
+          "totalResults": {
+            "type": "integer",
+            "description": "Total number of items."
+          },
+          "_links": {
+            "$ref": "#/components/schemas/PagingInfo/definitions/links"
+          }
+        },
+        "definitions": {
+          "links": {
+            "title": "Hal Links",
+            "type": "object",
+            "required": [
+              "self",
+              "current"
+            ],
+            "properties": {
+              "self": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "current": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "next": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "previous": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              }
+            },
+            "examples": [
+              {
+                "self": {
+                  "href": "/companies/{id}/data/{dataType}"
+                },
+                "current": {
+                  "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+                }
+              }
+            ]
+          },
+          "halRef": {
+            "title": "Hypertext reference",
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string",
+                "format": "uri-reference",
+                "description": "Uri hypertext reference."
+              }
+            }
+          }
+        },
+        "required": [
+          "pageNumber",
+          "pageSize",
+          "totalResults",
+          "_links"
+        ],
+        "examples": [
+          {
+            "_links": {
+              "pageNumber": 1,
+              "pageSize": 10,
+              "totalResults": 1,
+              "self": {
+                "href": "/companies/{id}/data/{dataType}"
+              },
+              "current": {
+                "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+              }
+            }
+          }
+        ]
       },
       "PullOperation": {
         "title": "Pull operation",
@@ -13824,10 +13759,6 @@
             "isErrored": false
           }
         ]
-      },
-      "DataType": {
-        "x-internal": true,
-        "$ref": "#/components/schemas/DataStatus/properties/dataType"
       },
       "PullOperations": {
         "title": "Pull operations",
@@ -14216,115 +14147,99 @@
           }
         }
       },
-      "Account": {
-        "title": "Account",
-        "description": "> **Language tip:** Accounts are also referred to as **chart of accounts**, **nominal accounts**, and **general ledger**.\n\nView the coverage for accounts in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nAccounts are the categories a business uses to record accounting transactions. From the Accounts endpoints, you can retrieve a list of all accounts for a specified company. \n\nThe categories for an account include:\n  * Asset\n  * Expense\n  * Income\n  * Liability\n  * Equity.\n\nThe same account may have a different category based on the integration it is used in. For example, a current account (known as checking in the US) should be categorized as `Asset.Current` for Xero, and `Asset.Bank.Checking` for QuickBooks Online. \n\nAt the same time, each integration may have its own requirements to the categories. For example, a Paypal account in Xero is of the `Asset.Bank` category and therefore requires additional properties to be provided. \n\nTo determine the list of allowed categories for a specific integration, you can: \n- Follow our [Create, update, delete data](https://docs.codat.io/using-the-api/push) guide and use the [Get create account model](https://docs.codat.io/sync-for-expenses-api#/operations/get-create-chartOfAccounts-model).\n- Refer to the integration's own documentation. \n\n> **Accounts with no category**\n> \n> If an account is pulled from the chart of accounts and its nominal code does not lie within the category layout for the company's accounts, then the **type** is `Unknown`. The **fullyQualifiedCategory** and **fullyQualifiedName** fields return `null`.\n> \n> This approach gives a true representation of the company's accounts whilst preventing distorting financials such as a company's profit and loss and balance sheet reports.",
+      "RecordRef": {
+        "x-internal": true,
+        "type": "object",
+        "title": "Record reference",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "40e3e57c-2322-4898-966c-ca41adfd23fd",
+            "description": "identifier of linked reference from mapping options."
+          }
+        }
+      },
+      "SupplementalData": {
+        "title": "Supplemental data",
+        "type": "object",
+        "x-internal": true,
+        "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting platform. [Learn more](https://docs.codat.io/using-the-api/supplemental-data/overview) about supplemental data.",
+        "properties": {
+          "content": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": true
+            },
+            "nullable": true
+          }
+        }
+      },
+      "Supplier": {
+        "title": "Supplier",
+        "description": "> View the coverage for suppliers in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nFrom the **Suppliers** endpoints, you can retrieve a list of [all the suppliers for a company](https://docs.codat.io/sync-for-expenses-api#/operations/list-suppliers). Suppliers' data links to accounts payable [bills](https://docs.codat.io/sync-for-expenses-api#/schemas/Bill).",
+        "type": "object",
         "allOf": [
           {
+            "type": "object",
             "properties": {
               "id": {
                 "type": "string",
-                "description": "Identifier for the account, unique for the company.",
-                "example": "1b6266d1-1e44-46c5-8eb5-a8f98e03124e"
+                "description": "Identifier for the supplier, unique to the company in the accounting platform."
               },
-              "nominalCode": {
+              "supplierName": {
                 "type": "string",
                 "nullable": true,
-                "description": "Reference given to each nominal account for a business. It ensures money is allocated to the correct account. This code isn't a unique identifier in the Codat system.",
-                "example": "610"
+                "description": "Name of the supplier as recorded in the accounting system, typically the company name."
               },
-              "name": {
+              "contactName": {
                 "type": "string",
                 "nullable": true,
-                "description": "Name of the account.",
-                "example": "Accounts Receivable"
+                "description": "Name of the main contact for the supplier."
               },
-              "description": {
+              "emailAddress": {
                 "type": "string",
                 "nullable": true,
-                "description": "Description for the account.",
-                "example": "Invoices the business has issued but has not yet collected payment on."
+                "description": "Email address that the supplier may be contacted on."
               },
-              "fullyQualifiedCategory": {
+              "phone": {
                 "type": "string",
                 "nullable": true,
-                "description": "Full category of the account. \r\n\r\nFor example, `Liability.Current` or `Income.Revenue`. To determine a list of possible categories for each integration, see our examples, follow our [Create, update, delete data](https://docs.codat.io/using-the-api/push) guide, or refer to the integration's own documentation.",
-                "example": "Asset.Current"
-              },
-              "fullyQualifiedName": {
-                "type": "string",
-                "nullable": true,
-                "description": "Full name of the account, for example:\n- `Cash On Hand`\n- `Rents Held In Trust`\n- `Fixed Asset`",
+                "description": "Phone number that the supplier may be contacted on.",
                 "examples": [
-                  "Cash On Hand",
-                  "Fixed Asset"
+                  "+44 25691 154789",
+                  "(877) 492-8687",
+                  "01224 658 999"
                 ]
               },
-              "currency": {
-                "title": "Currency",
-                "x-internal": true,
-                "type": "string",
-                "description": "The currency data type in Codat is the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code, e.g. _GBP_.\n\n## Unknown currencies\n\nIn line with the ISO 4217 specification, the code _XXX_ is used when the data source does not return a currency for a transaction. \n\nThere are only a very small number of edge cases where this currency code is returned by the Codat system.",
-                "format": "ISO4217",
-                "examples": [
-                  "GBP",
-                  "USD",
-                  "EUR"
-                ]
-              },
-              "currentBalance": {
-                "type": "number",
-                "format": "decimal",
-                "nullable": true,
-                "description": "Current balance in the account.",
-                "example": 0
-              },
-              "type": {
-                "$ref": "#/components/schemas/Account/definitions/accountType"
-              },
-              "status": {
-                "$ref": "#/components/schemas/Account/definitions/accountStatus"
-              },
-              "isBankAccount": {
-                "type": "boolean",
-                "description": "Confirms whether the account is a bank account or not."
-              },
-              "validDatatypeLinks": {
+              "addresses": {
                 "type": "array",
                 "nullable": true,
-                "description": "The validDatatypeLinks can be used to determine whether an account can be correctly mapped to another object; for example, accounts with a `type` of `income` might only support being used on an Invoice and Direct Income. For more information, see [Valid Data Type Links](/sync-for-expenses-api#/schemas/ValidDataTypeLinks).",
+                "description": "An array of Addresses.",
                 "items": {
-                  "title": "Valid data type links",
-                  "description": "When querying Codat's data model, some data types return `validDatatypeLinks` metadata in the JSON response. This indicates where that object can be used as a reference—a _valid link_—when creating or updating other data.\n\nFor example, `validDatatypeLinks` might indicate the following references:\n\n- Which tax rates are valid to use on the line item of a bill.\n- Which items can be used when creating an invoice. \n\nYou can use `validDatatypeLinks` to present your SMB customers with only valid choices when selecting objects from a list, for example.\n\n## `validDatatypeLinks` example\n\nThe following example uses the `Accounting.Accounts` data type. It shows that, on the linked integration, this account is valid as the account on a payment or bill payment; and as the account referenced on the line item of a direct income or direct cost. Because there is no valid link to Invoices or Bills, using this account on those data types will result in an error.\n\n```json validDatatypeLinks for an account\n{\n            \"id\": \"bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4\",\n            \"nominalCode\": \"090\",\n            \"name\": \"Business Bank Account\",\n            #...\n            \"validDatatypeLinks\": [\n                {\n                    \"property\": \"Id\",\n                    \"links\": [\n                        \"Payment.AccountRef.Id\",\n                        \"BillPayment.AccountRef.Id\",\n                        \"DirectIncome.LineItems.AccountRef.Id\",\n                        \"DirectCost.LineItems.AccountRef.Id\"\n                    ]\n                }\n            ]\n        }\n```\n\n\n\n## Support for `validDatatypeLinks`\n\nCodat currently supports `validDatatypeLinks` for some data types on our Xero, QuickBooks Online, QuickBooks Desktop, Exact (NL), and Sage Business Cloud integrations. \n\nIf you'd like us to extend support to more data types or integrations, suggest or vote for this on our <a href=\"https://portal.productboard.com/codat/5-product-roadmap\">Product Roadmap</a>.",
-                  "type": "object",
-                  "properties": {
-                    "property": {
-                      "type": "string",
-                      "nullable": true,
-                      "description": "The property from the account that can be linked."
-                    },
-                    "links": {
-                      "type": "array",
-                      "nullable": true,
-                      "description": "Supported `dataTypes` that the record can be linked to.",
-                      "items": {
-                        "type": "string"
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/Customer/allOf/0/properties/addresses/items"
                 }
               },
+              "registrationNumber": {
+                "type": "string",
+                "nullable": true,
+                "description": "Company number of the supplier. In the UK, this is typically the company registration number issued by Companies House."
+              },
+              "taxNumber": {
+                "type": "string",
+                "nullable": true,
+                "description": "Supplier's company tax number."
+              },
+              "status": {
+                "$ref": "#/components/schemas/Supplier/definitions/supplierStatus"
+              },
+              "defaultCurrency": {
+                "type": "string",
+                "nullable": true,
+                "description": "Default currency the supplier's transactional data is recorded in."
+              },
               "metadata": {
-                "title": "Metadata",
-                "type": "object",
-                "x-internal": true,
-                "properties": {
-                  "isDeleted": {
-                    "type": "boolean",
-                    "description": "Indicates whether the record has been deleted in the third-party system this record originated from.",
-                    "nullable": true
-                  }
-                }
+                "$ref": "#/components/schemas/Account/allOf/0/properties/metadata"
               },
               "supplementalData": {
                 "$ref": "#/components/schemas/SupplementalData"
@@ -14332,160 +14247,82 @@
             }
           },
           {
-            "title": "Modified dates",
-            "x-internal": true,
-            "allOf": [
-              {
-                "title": "ModifiedDate",
-                "x-internal": true,
-                "type": "object",
-                "properties": {
-                  "modifiedDate": {
-                    "allOf": [
-                      {
-                        "$ref": "#/components/schemas/Company/properties/created"
-                      },
-                      {
-                        "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
-                      }
-                    ]
-                  }
-                }
-              },
-              {
-                "title": "Source Modified Date",
-                "x-internal": true,
-                "type": "object",
-                "nullable": true,
-                "properties": {
-                  "sourceModifiedDate": {
-                    "allOf": [
-                      {
-                        "$ref": "#/components/schemas/Company/properties/created"
-                      },
-                      {
-                        "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
-                      }
-                    ]
-                  }
-                }
-              }
-            ]
+            "$ref": "#/components/schemas/Account/allOf/1"
           }
         ],
+        "required": [
+          "status"
+        ],
         "definitions": {
-          "accountRef": {
-            "title": "Account reference",
+          "supplierRef": {
+            "title": "Supplier reference",
+            "description": "Reference to the supplier the record relates to.",
             "type": "object",
-            "description": "Data types that reference an account, for example bill and invoice line items, use an accountRef that includes the ID and name of the linked account.",
             "properties": {
               "id": {
+                "minLength": 1,
                 "type": "string",
-                "description": "'id' from the Accounts data type."
+                "description": "The supplier's unique ID"
               },
-              "name": {
+              "supplierName": {
                 "type": "string",
-                "description": "'name' from the Accounts data type."
+                "nullable": true,
+                "description": "The supplier's name"
               }
-            }
+            },
+            "required": [
+              "id"
+            ]
           },
-          "accountType": {
-            "title": "Account type",
-            "enum": [
-              "Unknown",
-              "Asset",
-              "Expense",
-              "Income",
-              "Liability",
-              "Equity"
-            ],
+          "supplierStatus": {
+            "description": "Status of the supplier.",
             "type": "string",
-            "description": "Type of account",
-            "example": "Asset"
-          },
-          "accountStatus": {
-            "title": "Account status",
             "enum": [
               "Unknown",
               "Active",
-              "Archived",
-              "Pending"
-            ],
-            "type": "string",
-            "description": "Status of the account",
-            "example": "Active"
+              "Archived"
+            ]
           }
         },
-        "type": "object"
-      },
-      "CreateAccountResponse": {
-        "title": "Create account response",
-        "x-internal": true,
-        "allOf": [
+        "examples": [
           {
-            "type": "object",
-            "properties": {
-              "data": {
-                "$ref": "#/components/schemas/Account"
+            "id": "C520FFD4-F6F6-4FC2-A6D2-5D7088B2B14F",
+            "supplierName": "Kelly's Industrial Supplies",
+            "contactName": "Kelly's Industrial Supplies",
+            "emailAddress": "sales@kellysupplies.com",
+            "phone": "07999 999999",
+            "addresses": [
+              {
+                "type": "Billing",
+                "line1": "Unit 51",
+                "line2": "Bakersfield Industrial Estate",
+                "city": "Bakersfield",
+                "region": "California",
+                "country": "USA",
+                "postalcode": "93308"
               }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PushOperation"
-          }
-        ]
-      },
-      "Customers": {
-        "title": "Customers",
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Customer"
+            ],
+            "registrationNumber": "string",
+            "taxNumber": "string",
+            "status": "Unknown",
+            "defaultCurrency": "string",
+            "metadata": {
+              "isDeleted": true
+            },
+            "supplementalData": {
+              "content": {
+                "property1": {
+                  "property1": null,
+                  "property2": null
+                },
+                "property2": {
+                  "property1": null,
+                  "property2": null
                 }
               }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
-      "CreateCustomerResponse": {
-        "title": "Create customer response",
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "data": {
-                "$ref": "#/components/schemas/Customer"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PushOperation"
-          }
-        ]
-      },
-      "UpdateCustomerResponse": {
-        "title": "Update customer response",
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "data": {
-                "$ref": "#/components/schemas/Customer"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PushOperation"
+            },
+            "modifiedDate": "2022-10-23T00:00:00Z",
+            "sourceModifiedDate": "2022-10-23T00:00:00Z"
           }
         ]
       },
@@ -14509,75 +14346,10 @@
           }
         ]
       },
-      "CreateSupplierResponse": {
-        "title": "Create supplier response",
+      "SyncCompleteWebhook": {
+        "title": "Sync complete webhook",
         "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "data": {
-                "$ref": "#/components/schemas/Supplier"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PushOperation"
-          }
-        ]
-      },
-      "UpdateSupplierResponse": {
-        "title": "Update supplier response",
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "data": {
-                "$ref": "#/components/schemas/Supplier"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PushOperation"
-          }
-        ]
-      },
-      "ErrorMessage": {
-        "title": "Error message",
-        "type": "object",
-        "x-internal": true,
-        "properties": {
-          "statusCode": {
-            "type": "integer",
-            "description": "The HTTP status code returned by the error."
-          },
-          "service": {
-            "type": "string",
-            "description": "Codat's service the returned the error."
-          },
-          "error": {
-            "type": "string",
-            "description": "A brief description of the error."
-          },
-          "correlationId": {
-            "type": "string",
-            "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
-          },
-          "canBeRetried": {
-            "type": "string",
-            "description": "`True` if the error occurred transiently and can be retried."
-          },
-          "detailedErrorCode": {
-            "type": "integer",
-            "description": "Machine readable error code used to automate processes based on the code returned."
-          }
-        }
-      },
-      "SyncStartedWebhook": {
-        "title": "Sync started webhook",
-        "x-internal": true,
-        "description": "Webhook request body used to notify that a sync has started.",
+        "description": "Webhook request body used to notify that a sync has completed.",
         "type": "object",
         "properties": {
           "ClientId": {
@@ -14602,7 +14374,13 @@
             "$ref": "#/components/schemas/SyncFailedWebhook/properties/Message"
           },
           "Data": {
+            "$ref": "#/components/schemas/SyncCompleteWebhook/definitions/SyncCompleteWebhookData"
+          }
+        },
+        "definitions": {
+          "SyncCompleteWebhookData": {
             "type": "object",
+            "title": "Sync complete webhook data",
             "properties": {
               "syncId": {
                 "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData/properties/syncId"
@@ -14626,8 +14404,8 @@
             "CompanyId": "1f9559e7-8368-48c9-bdf4-f158e16b8b85",
             "AlertId": "33a4f8e9-09ae-4334-9b00-7bbe83024672",
             "RuleId": "5c27631d-3b63-4b50-8228-ee502fd113eb",
-            "RuleType": "Sync Started",
-            "Message": "Sync 321363b4-efa9-4fbc-b71c-0b58d62f3248 for company 1f9559e7-8368-48c9-bdf4-f158e16b8b85 of type Expense has started.",
+            "RuleType": "Sync Completed",
+            "Message": "Sync 321363b4-efa9-4fbc-b71c-0b58d62f3248 for company 1f9559e7-8368-48c9-bdf4-f158e16b8b85 of type Expense completed successfully.",
             "Data": {
               "syncId": "321363b4-efa9-4fbc-b71c-0b58d62f3248",
               "syncType": "Expense",
@@ -14730,10 +14508,22 @@
           }
         ]
       },
-      "SyncCompleteWebhook": {
-        "title": "Sync complete webhook",
+      "SyncInitiated": {
+        "title": "Sync initiated",
+        "type": "object",
+        "properties": {
+          "syncId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for the sync initiated."
+          }
+        },
+        "additionalProperties": false
+      },
+      "SyncStartedWebhook": {
+        "title": "Sync started webhook",
         "x-internal": true,
-        "description": "Webhook request body used to notify that a sync has completed.",
+        "description": "Webhook request body used to notify that a sync has started.",
         "type": "object",
         "properties": {
           "ClientId": {
@@ -14758,13 +14548,7 @@
             "$ref": "#/components/schemas/SyncFailedWebhook/properties/Message"
           },
           "Data": {
-            "$ref": "#/components/schemas/SyncCompleteWebhook/definitions/SyncCompleteWebhookData"
-          }
-        },
-        "definitions": {
-          "SyncCompleteWebhookData": {
             "type": "object",
-            "title": "Sync complete webhook data",
             "properties": {
               "syncId": {
                 "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData/properties/syncId"
@@ -14788,8 +14572,8 @@
             "CompanyId": "1f9559e7-8368-48c9-bdf4-f158e16b8b85",
             "AlertId": "33a4f8e9-09ae-4334-9b00-7bbe83024672",
             "RuleId": "5c27631d-3b63-4b50-8228-ee502fd113eb",
-            "RuleType": "Sync Completed",
-            "Message": "Sync 321363b4-efa9-4fbc-b71c-0b58d62f3248 for company 1f9559e7-8368-48c9-bdf4-f158e16b8b85 of type Expense completed successfully.",
+            "RuleType": "Sync Started",
+            "Message": "Sync 321363b4-efa9-4fbc-b71c-0b58d62f3248 for company 1f9559e7-8368-48c9-bdf4-f158e16b8b85 of type Expense has started.",
             "Data": {
               "syncId": "321363b4-efa9-4fbc-b71c-0b58d62f3248",
               "syncType": "Expense",
@@ -14799,150 +14583,366 @@
           }
         ]
       },
-      "ClientRateLimitReachedWebhook": {
-        "title": "Client rate limit reached webhook",
-        "x-internal": true,
-        "description": "Webhook request body for a client that has reached their rate limit.",
+      "TaxRateMappingInfo": {
+        "title": "Tax rate mapping info",
         "type": "object",
+        "additionalProperties": false,
+        "x-examples": {
+          "UK Tax Rate": {
+            "id": "59_Bills",
+            "name": "UK Standard Rate (Bills) Bills",
+            "code": "UK Standard Rate (Bills)",
+            "effectiveTaxRate": 20,
+            "totalTaxRate": 20,
+            "validTransactionTypes": [
+              "Payment",
+              "Reward"
+            ]
+          }
+        },
         "properties": {
-          "ClientId": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/ClientId"
+          "id": {
+            "type": "string",
+            "description": "Unique identifier of tax rate.",
+            "example": "59_Bills",
+            "nullable": true
           },
-          "ClientName": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/ClientName"
+          "name": {
+            "type": "string",
+            "description": "Name of the tax rate in the accounting platform.",
+            "example": "UK Standard Rate (Bills) Bills",
+            "nullable": true
           },
-          "RuleId": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/RuleId"
+          "code": {
+            "type": "string",
+            "description": "Code for the tax rate from the accounting platform.",
+            "example": "UK Standard Rate (Bills)",
+            "nullable": true
           },
-          "RuleType": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/RuleType"
+          "effectiveTaxRate": {
+            "type": "number",
+            "format": "decimal",
+            "description": "Effective tax rate.",
+            "example": 20
           },
-          "AlertId": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/AlertId"
+          "totalTaxRate": {
+            "type": "number",
+            "format": "decimal",
+            "description": "Total (not compounded) sum of the components of a tax rate.",
+            "example": 20
           },
-          "Message": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/Message"
-          },
-          "Data": {
-            "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData"
-          }
-        },
-        "definitions": {
-          "ClientRateLimitReachedWebhookData": {
-            "type": "object",
-            "title": "Client rate limit reached webhook data",
-            "properties": {
-              "DailyQuota": {
-                "type": "integer",
-                "description": "The number of available requests per day."
-              },
-              "ExpiresUtc": {
-                "$ref": "#/components/schemas/Company/properties/created",
-                "description": "The date time in UTC that your daily quota is reset."
-              }
+          "validTransactionTypes": {
+            "type": "array",
+            "description": "Supported transaction types for the account.",
+            "minItems": 0,
+            "maxItems": 8,
+            "nullable": true,
+            "items": {
+              "type": "string",
+              "enum": [
+                "Payment",
+                "Refund",
+                "Reward",
+                "Chargeback",
+                "TransferIn",
+                "TransferOut",
+                "AdjustmentIn",
+                "AdjustmentOut"
+              ],
+              "example": "Payment"
             }
           }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Rate Limit Reached",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "The current daily rate limit quota of 1000 requests for bae71d36-ff47-420a-b4a6-f8c9ddf41140 has been reached.",
-            "Data": {
-              "DailyQuota": 1000,
-              "ExpiresUtc": "2023-05-03T00:00:00Z"
-            }
-          }
-        ]
+        }
       },
-      "ClientRateLimitResetWebhook": {
-        "title": "Client rate limit reset webhook",
-        "x-internal": true,
-        "description": "Webhook request body for a client that has had their rate limit reset.",
+      "TrackingCategoryMappingInfo": {
+        "title": "Tracking category mapping info",
         "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/ClientId"
+        "additionalProperties": false,
+        "x-examples": {
+          "Tracking Category with parentId": {
+            "id": "DEPARTMENT_1",
+            "modifiedDate": "2023-02-09T11:42:41Z",
+            "name": "TestLocation",
+            "hasChildren": false,
+            "parentId": "DEPARTMENTS"
           },
-          "ClientName": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/ClientName"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/RuleId"
-          },
-          "RuleType": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/RuleType"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/Message"
-          },
-          "Data": {
-            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/definitions/ClientRateLimitResetWebhookData"
+          "Parent Tracking Category": {
+            "id": "DEPARTMENTS",
+            "modifiedDate": "2023-02-09T11:42:41Z",
+            "name": "Departments",
+            "hasChildren": true
           }
         },
-        "definitions": {
-          "ClientRateLimitResetWebhookData": {
-            "type": "object",
-            "title": "Client rate limit reset webhook data",
-            "properties": {
-              "QuotaRemaining": {
-                "type": "integer",
-                "description": "Total number of request remaining for your client.",
-                "nullable": true
-              },
-              "ResetReason": {
-                "type": "string",
-                "description": "The reason for your rate limit quota being reset."
-              },
-              "DailyQuota": {
-                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData/properties/DailyQuota",
-                "nullable": true
-              },
-              "ExpiresUtc": {
-                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData/properties/ExpiresUtc",
-                "nullable": true
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Rate Limit Reset",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "The current daily rate limit quota for client 30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e has been reset to 1000 requests.",
-            "Data": {
-              "QuotaRemaining": 1000,
-              "ResetReason": "The quota was reset because it is a new day.",
-              "DailyQuota": 1000,
-              "ExpiresUtc": "2023-05-03T00:00:00Z"
-            }
-          }
-        ]
-      },
-      "SupplementalData": {
-        "title": "Supplemental data",
-        "type": "object",
-        "x-internal": true,
-        "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting platform. [Learn more](https://docs.codat.io/using-the-api/supplemental-data/overview) about supplemental data.",
         "properties": {
-          "content": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "object",
-              "additionalProperties": true
-            },
+          "id": {
+            "type": "string",
+            "description": "Unique identifier of the tracking category.",
+            "example": "DEPARTMENT_2",
+            "nullable": true
+          },
+          "modifiedDate": {
+            "$ref": "#/components/schemas/Company/properties/created",
+            "description": "Datetime when the tracking category was last modified.",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the tracking category as it appears in the accounting software.",
+            "example": "New York",
+            "nullable": true
+          },
+          "hasChildren": {
+            "type": "boolean",
+            "description": "Boolean of whether the tracking category has child categories."
+          },
+          "parentId": {
+            "type": "string",
+            "description": "ID of the parent tracking category",
+            "example": "DEPARTMENTS",
             "nullable": true
           }
         }
+      },
+      "Transaction": {
+        "title": "Transaction",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "transactionId": {
+            "type": "string",
+            "description": "Your unique idenfier of the transaction.",
+            "example": "aa02271d-ed5f-47f5-be76-778d5905225a",
+            "nullable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/TransactionStatus"
+          },
+          "message": {
+            "type": "string",
+            "description": "Metadata such as validation errors or the resulting record created in the accounting software.",
+            "nullable": true
+          },
+          "integrationType": {
+            "$ref": "#/components/schemas/IntegrationType"
+          }
+        },
+        "x-examples": {
+          "Successful Transaction": {
+            "transactionId": "8fdba4ed-e327-4925-be1a-b7a2b04627f7",
+            "status": "Completed",
+            "integrationType": "expense"
+          },
+          "Unsuccessful Transaction": {
+            "transactionId": "3d694cd1-4cd9-4136-91db-32408195c6fc",
+            "status": "ValidationError",
+            "message": "The line item total -208.10((-195.01 + -1.09) + (-10.01 + -1.99)) must equal the transaction total -1.1",
+            "integrationType": "string"
+          }
+        }
+      },
+      "Transactions": {
+        "title": "Transactions",
+        "x-internal": true,
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Transaction"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PagingInfo"
+          }
+        ],
+        "x-examples": {
+          "Example 1": {
+            "results": [
+              {
+                "transactionId": "aa02271d-ed5f-47f5-be76-778d5905225a",
+                "status": "Completed",
+                "integrationType": "expenses"
+              },
+              {
+                "transactionId": "730177a2-8505-410a-9ebc-c2dd52e4bea9",
+                "status": "Completed",
+                "integrationType": "expenses"
+              }
+            ],
+            "pageNumber": 1,
+            "pageSize": 100,
+            "totalResults": 2,
+            "links": {
+              "self": {
+                "href": "string"
+              },
+              "current": {
+                "href": "string"
+              }
+            }
+          }
+        }
+      },
+      "TransactionStatus": {
+        "title": "Transaction status",
+        "x-internal": true,
+        "type": "string",
+        "description": "Status of the transaction.",
+        "enum": [
+          "Unknown",
+          "Pending",
+          "ValidationError",
+          "Completed",
+          "PushError"
+        ],
+        "example": "Completed",
+        "nullable": true
+      },
+      "UpdateCustomerResponse": {
+        "title": "Update customer response",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "data": {
+                "$ref": "#/components/schemas/Customer"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PushOperation"
+          }
+        ]
+      },
+      "UpdateExpenseRequest": {
+        "title": "Updating expense transaction request",
+        "type": "object",
+        "examples": {
+          "Payment": {
+            "value": {
+              "type": "Payment",
+              "issueDate": "2023-05-22T00:00:00+00:00",
+              "currency": "GBP",
+              "currencyRate": 1.18,
+              "notes": "New notes",
+              "contactRef": {
+                "id": "f5244103-5223-4b0a-857f-50566ac86c11",
+                "type": "Supplier"
+              },
+              "bankAccountRef": {
+                "id": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea"
+              },
+              "merchantName": "My Merchant"
+            }
+          }
+        },
+        "properties": {
+          "type": "#/definitions/expenseType",
+          "issueDate": {
+            "type": "string",
+            "description": "Date the transaction was recorded.",
+            "example": "2022-06-28T00:00:00.000Z"
+          },
+          "currency": {
+            "type": "string",
+            "example": "GBP",
+            "description": "Currency the transaction was recorded in."
+          },
+          "currencyRate": {
+            "$ref": "#/components/schemas/ExpenseTransaction/properties/currencyRate"
+          },
+          "contactRef": {
+            "description": "Supplier or Customer for the purchase to be associated to.",
+            "$ref": "#/components/schemas/ContactRef"
+          },
+          "bankAccountRef": {
+            "type": "object",
+            "title": "Bank account reference",
+            "properties": {
+              "id": {
+                "type": "string",
+                "example": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea",
+                "description": "Identifier of the bank account."
+              }
+            }
+          },
+          "merchantName": {
+            "type": "string",
+            "description": "Name of the merchant where the purchase took place",
+            "example": "Amazon UK"
+          },
+          "lines": {
+            "type": "array",
+            "description": "Array of transaction lines.",
+            "items": {
+              "$ref": "#/components/schemas/ExpenseTransactionLine"
+            }
+          },
+          "notes": {
+            "type": "string",
+            "description": "Any private, company notes about the transaction.",
+            "example": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
+          }
+        },
+        "definitions": {
+          "expenseType": {
+            "description": "The type of transaction.",
+            "type": "string",
+            "example": "Payment",
+            "enum": [
+              "Payment",
+              "Refund",
+              "Reward",
+              "Chargeback",
+              "TransferIn",
+              "TransferOut",
+              "AdjustmentIn",
+              "AdjustmentOut"
+            ]
+          }
+        },
+        "required": [
+          "type",
+          "issueDate"
+        ]
+      },
+      "UpdateExpenseResponse": {
+        "title": "Update expense response",
+        "type": "object",
+        "properties": {
+          "syncId": {
+            "type": "string",
+            "description": "Unique identifier for the update expense sync."
+          }
+        },
+        "examples": {
+          "Example 1": {
+            "syncId": "1ad0695c-4566-4715-918c-adbb03eac81e"
+          }
+        }
+      },
+      "UpdateSupplierResponse": {
+        "title": "Update supplier response",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "data": {
+                "$ref": "#/components/schemas/Supplier"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PushOperation"
+          }
+        ]
       }
     },
     "parameters": {
