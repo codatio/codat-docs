@@ -1,5 +1,5 @@
 ---
-title: Managing bills
+title: Manage bills
 description: "Create and fetch bills using Sync for Payables"
 image: "/img/banners/social/payables.png"
 ---

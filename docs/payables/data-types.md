@@ -1,6 +1,6 @@
 ---
-title: "Payables data types"
-sidebar_label: Data types
+title: "Supported payables data types"
+sidebar_label: Supported data types
 displayed_sidebar: payables
 image: "/img/banners/social/payables.png"
 ---

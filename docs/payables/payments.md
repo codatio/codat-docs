@@ -1,5 +1,5 @@
 ---
-title: Reconciling payments
+title: Reconcile payments
 description: "Reconcile payments to the SMB's accounting software"
 image: "/img/banners/social/payables.png"
 ---

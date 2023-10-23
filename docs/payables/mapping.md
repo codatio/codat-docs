@@ -1,5 +1,5 @@
 ---
-title: Payment method mapping
+title: Map payment methods
 description: "Enable SMBs to choose how to make payments"
 image: "/img/banners/social/payables.png"
 ---

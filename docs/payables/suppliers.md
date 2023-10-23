@@ -1,5 +1,5 @@
 ---
-title: Managing suppliers
+title: Manage suppliers
 description: "Create and update suppliers using Sync for Payables"
 image: "/img/banners/social/payables.png"
 ---

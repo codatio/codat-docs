@@ -12,26 +12,16 @@ module.exports = [
     className: "header  top-level-item products product sfpayables",
   },
   {
-    type: "category",
-    label: "Tutorial",
-    collapsed: true,
-    items: [
-      {
-        type: "doc",
-        id: "payables/guides/bill-pay/introduction",
-        label: "Introduction",
-      },
-      "payables/guides/bill-pay/use-bill-pay-demo-app",
-      "payables/guides/bill-pay/run-demo-app-locally",
-      "payables/guides/bill-pay/how-the-demo-app-works",
-    ],
+    type: "doc",
+    label: "Get started",
+    id: "payables/get-started",
   },
   {
     type: "doc",
     id: "payables/suppliers",
     customProps: {
       hr: true,
-      section: "Use",
+      section: "Build your solution",
     },
   },
   "payables/bills",
@@ -42,7 +32,7 @@ module.exports = [
     label: "Oracle NetSuite",
     customProps: {
       hr: true,
-      section: "Sync for Payables integrations",
+      section: "Manage integrations",
     },
     id: "integrations/accounting/netsuite/accounting-netsuite",
   },
@@ -72,9 +62,28 @@ module.exports = [
     id: "integrations/accounting/xero/accounting-xero"
   },
   {
+    type: "category",
+    label: "Accounts payable automation",
+    customProps: {
+      hr: true,
+      section: "Guides",
+    },
+    collapsed: true,
+    items: [
+      {
+        type: "doc",
+        id: "payables/guides/bill-pay/introduction",
+        label: "Introduction",
+      },
+      "payables/guides/bill-pay/use-bill-pay-demo-app",
+      "payables/guides/bill-pay/run-demo-app-locally",
+      "payables/guides/bill-pay/how-the-demo-app-works",
+    ],
+  },
+  {
     type: "doc",
     id: "payables/data-types",
-    label: "Data types",
+    label: "Supported data types",
     customProps: {
       hr: true,
       section: "Reference",
