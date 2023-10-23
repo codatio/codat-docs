@@ -6,7 +6,7 @@ image: "/img/banners/social/payables.png"
 ---
 
 import { IntegrationsList } from "@components/global/Integrations";
-import { accountingIntegrations, bankingIntegrations, commerceIntegrations } from "@components/global/Integrations/integrations";
+import { bankfeedsIntegrations } from "@components/global/Integrations/integrations";
 
 ## Journey overview
 
