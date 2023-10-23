@@ -63,7 +63,7 @@ module.exports = [
   },
   {
     type: "category",
-    label: "Accounts payable automation",
+    label: "Automate bill payment",
     customProps: {
       hr: true,
       section: "Guides",
