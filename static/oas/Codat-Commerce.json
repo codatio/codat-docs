@@ -7669,6 +7669,53 @@
   },
   "components": {
     "schemas": {
+      "Address": {
+        "title": "Address",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/Address/definitions/commerceAddressType"
+          },
+          "line1": {
+            "description": "The first line of the address",
+            "type": "string"
+          },
+          "line2": {
+            "description": "The second line of the address",
+            "type": "string"
+          },
+          "city": {
+            "description": "The third line of the address, or city",
+            "type": "string"
+          },
+          "region": {
+            "description": "The fourth line of the address, or region",
+            "type": "string"
+          },
+          "country": {
+            "description": "The country for the address",
+            "type": "string"
+          },
+          "postalCode": {
+            "description": "The postal (or zip) code for the address",
+            "type": "string"
+          }
+        },
+        "definitions": {
+          "commerceAddressType": {
+            "description": "The type of the address",
+            "type": "string",
+            "enum": [
+              "Billing",
+              "Delivery",
+              "Order",
+              "Inventory",
+              "Unknown"
+            ]
+          }
+        }
+      },
       "CompanyInfo": {
         "title": "Commerce company info",
         "description": "In the Codat system, company information includes standard commercial details about \na linked company, such as their address, phone number, and company registration.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=companyInfo) for this data type.\n",
@@ -7800,6 +7847,17 @@
                 ]
               }
             }
+          }
+        }
+      },
+      "CreatedDate": {
+        "title": "Created date",
+        "type": "object",
+        "x-internal": true,
+        "properties": {
+          "createdDate": {
+            "$ref": "#/components/schemas/DateTime",
+            "description": "The date the entity was created."
           }
         }
       },
@@ -7993,6 +8051,15 @@
           }
         ]
       },
+      "DateTime": {
+        "title": "Date time",
+        "type": "string",
+        "examples": [
+          "2022-10-23T00:00:00.000Z",
+          "2022-10-23T00:00:00.000Z"
+        ],
+        "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
+      },
       "Dispute": {
         "title": "Commerce dispute",
         "description": "A customer may file a payment dispute with their bank or other card issuer when they're unsatisfied with their purchase or believe they have been charged incorrectly. For example:  \n- They didn't receive an order.  \n- The product they received was different to the commerce store's description.  \n- They've been the victim of online fraud.  \n\nYou can use data from the Disputes endpoints to calculate key metrics, such as the number of chargebacks.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-disputes) for this data type.",
@@ -8111,6 +8178,37 @@
           }
         ]
       },
+      "ErrorMessage": {
+        "title": "Error message",
+        "type": "object",
+        "x-internal": true,
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "description": "The HTTP status code returned by the error."
+          },
+          "service": {
+            "type": "string",
+            "description": "Codat's service the returned the error."
+          },
+          "error": {
+            "type": "string",
+            "description": "A brief description of the error."
+          },
+          "correlationId": {
+            "type": "string",
+            "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
+          },
+          "canBeRetried": {
+            "type": "string",
+            "description": "`True` if the error occurred transiently and can be retried."
+          },
+          "detailedErrorCode": {
+            "type": "integer",
+            "description": "Machine readable error code used to automate processes based on the code returned."
+          }
+        }
+      },
       "Location": {
         "title": "Commerce location",
         "type": "object",
@@ -8196,6 +8294,47 @@
           },
           {
             "$ref": "#/components/schemas/PagingInfo"
+          }
+        ]
+      },
+      "ModifiedDates": {
+        "title": "Modified dates",
+        "x-internal": true,
+        "allOf": [
+          {
+            "title": "ModifiedDate",
+            "x-internal": true,
+            "type": "object",
+            "properties": {
+              "modifiedDate": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/DateTime"
+                  },
+                  {
+                    "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "title": "Source Modified Date",
+            "x-internal": true,
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "sourceModifiedDate": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/DateTime"
+                  },
+                  {
+                    "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                  }
+                ]
+              }
+            }
           }
         ]
       },
@@ -8580,6 +8719,95 @@
           }
         ]
       },
+      "PagingInfo": {
+        "type": "object",
+        "title": "Pagination information",
+        "x-internal": true,
+        "properties": {
+          "pageNumber": {
+            "type": "integer",
+            "description": "Current page number."
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "Number of items to return in results array.",
+            "maximum": 2000
+          },
+          "totalResults": {
+            "type": "integer",
+            "description": "Total number of items."
+          },
+          "_links": {
+            "$ref": "#/components/schemas/PagingInfo/definitions/links"
+          }
+        },
+        "definitions": {
+          "links": {
+            "title": "Hal Links",
+            "type": "object",
+            "required": [
+              "self",
+              "current"
+            ],
+            "properties": {
+              "self": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "current": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "next": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "previous": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              }
+            },
+            "examples": [
+              {
+                "self": {
+                  "href": "/companies/{id}/data/{dataType}"
+                },
+                "current": {
+                  "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+                }
+              }
+            ]
+          },
+          "halRef": {
+            "title": "Hypertext reference",
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string",
+                "format": "uri-reference",
+                "description": "Uri hypertext reference."
+              }
+            }
+          }
+        },
+        "required": [
+          "pageNumber",
+          "pageSize",
+          "totalResults",
+          "_links"
+        ],
+        "examples": [
+          {
+            "_links": {
+              "pageNumber": 1,
+              "pageSize": 10,
+              "totalResults": 1,
+              "self": {
+                "href": "/companies/{id}/data/{dataType}"
+              },
+              "current": {
+                "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+              }
+            }
+          }
+        ]
+      },
       "Payment": {
         "title": "Commerce payment",
         "description": "Payments contain details of all payments made by customers to a company, including: amounts, currency used, payment method, payment provider, and payment status.\n\nRefunds are recorded as separate, negative payments. Note that a refund can only occur in relation to a payment that has been completed (i.e. has a status of `Paid`). When a customer cancels an order _before_ a payment has been completed, the payment shows as `Cancelled`.\n\nYou can use data from the Payments endpoints to calculate key metrics, such as gross sales and monthly recurring revenue (MRR).\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-payments) for this data type.",
@@ -8726,26 +8954,6 @@
           }
         }
       },
-      "Payments": {
-        "title": "Commerce payments",
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Payment"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
       "PaymentMethod": {
         "title": "Commerce payment method",
         "description": "A Payment Method represents the payment method(s) used to make payments.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-paymentMethods) for this data type.",
@@ -8779,26 +8987,6 @@
           }
         ]
       },
-      "PaymentMethods": {
-        "title": "Commerce payment methods",
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/PaymentMethod"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
       "PaymentMethodRef": {
         "type": "object",
         "title": "Payment method reference",
@@ -8819,6 +9007,83 @@
         "example": {
           "id": "EILBDVJVNUAGVKRQ",
           "name": "AliPay"
+        }
+      },
+      "PaymentMethods": {
+        "title": "Commerce payment methods",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PaymentMethod"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PagingInfo"
+          }
+        ]
+      },
+      "Payments": {
+        "title": "Commerce payments",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Payment"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PagingInfo"
+          }
+        ]
+      },
+      "PhoneNumber": {
+        "title": "Phone",
+        "type": "object",
+        "x-internal": true,
+        "properties": {
+          "number": {
+            "type": "string",
+            "nullable": true,
+            "examples": [
+              "+44 25691 154789",
+              "(877) 492-8687",
+              "01224 658 999"
+            ],
+            "description": "A phone number."
+          },
+          "type": {
+            "$ref": "#/components/schemas/PhoneNumber/definitions/phoneNumberType"
+          }
+        },
+        "required": [
+          "number",
+          "type"
+        ],
+        "definitions": {
+          "phoneNumberType": {
+            "description": "The type of phone number",
+            "type": "string",
+            "enum": [
+              "Primary",
+              "Landline",
+              "Mobile",
+              "Fax",
+              "Unknown"
+            ]
+          }
         }
       },
       "Product": {
@@ -9073,8 +9338,8 @@
           }
         }
       },
-      "Products": {
-        "title": "Products",
+      "ProductCategories": {
+        "title": "Product categories",
         "x-internal": true,
         "allOf": [
           {
@@ -9083,7 +9348,7 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/Product"
+                  "$ref": "#/components/schemas/ProductCategory"
                 }
               }
             }
@@ -9173,8 +9438,8 @@
           }
         ]
       },
-      "ProductCategories": {
-        "title": "Product categories",
+      "Products": {
+        "title": "Products",
         "x-internal": true,
         "allOf": [
           {
@@ -9183,7 +9448,7 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/ProductCategory"
+                  "$ref": "#/components/schemas/Product"
                 }
               }
             }
@@ -9192,6 +9457,48 @@
             "$ref": "#/components/schemas/PagingInfo"
           }
         ]
+      },
+      "RecordRef": {
+        "title": "Record Ref",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "The unique identitifer of the record being referenced",
+            "type": "string",
+            "examples": [
+              "13d946f0-c5d5-42bc-b092-97ece17923ab",
+              "9wg4lep4ush5cxs79pl8sozmsndbaukll3ind4g7buqbm1h2",
+              7110701885,
+              "EILBDVJVNUAGVKRQ"
+            ]
+          },
+          "type": {
+            "description": "The type of record being referenced.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "type"
+        ],
+        "description": ""
+      },
+      "SupplementalData": {
+        "title": "Supplemental data",
+        "type": "object",
+        "x-internal": true,
+        "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting platform. [Learn more](https://docs.codat.io/using-the-api/supplemental-data/overview) about supplemental data.",
+        "properties": {
+          "content": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": true
+            },
+            "nullable": true
+          }
+        }
       },
       "TaxComponent": {
         "title": "Commerce tax component",
@@ -9465,313 +9772,6 @@
             "$ref": "#/components/schemas/PagingInfo"
           }
         ]
-      },
-      "Address": {
-        "title": "Address",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/Address/definitions/commerceAddressType"
-          },
-          "line1": {
-            "description": "The first line of the address",
-            "type": "string"
-          },
-          "line2": {
-            "description": "The second line of the address",
-            "type": "string"
-          },
-          "city": {
-            "description": "The third line of the address, or city",
-            "type": "string"
-          },
-          "region": {
-            "description": "The fourth line of the address, or region",
-            "type": "string"
-          },
-          "country": {
-            "description": "The country for the address",
-            "type": "string"
-          },
-          "postalCode": {
-            "description": "The postal (or zip) code for the address",
-            "type": "string"
-          }
-        },
-        "definitions": {
-          "commerceAddressType": {
-            "description": "The type of the address",
-            "type": "string",
-            "enum": [
-              "Billing",
-              "Delivery",
-              "Order",
-              "Inventory",
-              "Unknown"
-            ]
-          }
-        }
-      },
-      "PagingInfo": {
-        "type": "object",
-        "title": "Pagination information",
-        "x-internal": true,
-        "properties": {
-          "pageNumber": {
-            "type": "integer",
-            "description": "Current page number."
-          },
-          "pageSize": {
-            "type": "integer",
-            "description": "Number of items to return in results array.",
-            "maximum": 2000
-          },
-          "totalResults": {
-            "type": "integer",
-            "description": "Total number of items."
-          },
-          "_links": {
-            "$ref": "#/components/schemas/PagingInfo/definitions/links"
-          }
-        },
-        "definitions": {
-          "links": {
-            "title": "Hal Links",
-            "type": "object",
-            "required": [
-              "self",
-              "current"
-            ],
-            "properties": {
-              "self": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              },
-              "current": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              },
-              "next": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              },
-              "previous": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              }
-            },
-            "examples": [
-              {
-                "self": {
-                  "href": "/companies/{id}/data/{dataType}"
-                },
-                "current": {
-                  "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
-                }
-              }
-            ]
-          },
-          "halRef": {
-            "title": "Hypertext reference",
-            "type": "object",
-            "properties": {
-              "href": {
-                "type": "string",
-                "format": "uri-reference",
-                "description": "Uri hypertext reference."
-              }
-            }
-          }
-        },
-        "required": [
-          "pageNumber",
-          "pageSize",
-          "totalResults",
-          "_links"
-        ],
-        "examples": [
-          {
-            "_links": {
-              "pageNumber": 1,
-              "pageSize": 10,
-              "totalResults": 1,
-              "self": {
-                "href": "/companies/{id}/data/{dataType}"
-              },
-              "current": {
-                "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
-              }
-            }
-          }
-        ]
-      },
-      "PhoneNumber": {
-        "title": "Phone",
-        "type": "object",
-        "x-internal": true,
-        "properties": {
-          "number": {
-            "type": "string",
-            "nullable": true,
-            "examples": [
-              "+44 25691 154789",
-              "(877) 492-8687",
-              "01224 658 999"
-            ],
-            "description": "A phone number."
-          },
-          "type": {
-            "$ref": "#/components/schemas/PhoneNumber/definitions/phoneNumberType"
-          }
-        },
-        "required": [
-          "number",
-          "type"
-        ],
-        "definitions": {
-          "phoneNumberType": {
-            "description": "The type of phone number",
-            "type": "string",
-            "enum": [
-              "Primary",
-              "Landline",
-              "Mobile",
-              "Fax",
-              "Unknown"
-            ]
-          }
-        }
-      },
-      "RecordRef": {
-        "title": "Record Ref",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "id": {
-            "description": "The unique identitifer of the record being referenced",
-            "type": "string",
-            "examples": [
-              "13d946f0-c5d5-42bc-b092-97ece17923ab",
-              "9wg4lep4ush5cxs79pl8sozmsndbaukll3ind4g7buqbm1h2",
-              7110701885,
-              "EILBDVJVNUAGVKRQ"
-            ]
-          },
-          "type": {
-            "description": "The type of record being referenced.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "type"
-        ],
-        "description": ""
-      },
-      "DateTime": {
-        "title": "Date time",
-        "type": "string",
-        "examples": [
-          "2022-10-23T00:00:00.000Z",
-          "2022-10-23T00:00:00.000Z"
-        ],
-        "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
-      },
-      "CreatedDate": {
-        "title": "Created date",
-        "type": "object",
-        "x-internal": true,
-        "properties": {
-          "createdDate": {
-            "$ref": "#/components/schemas/DateTime",
-            "description": "The date the entity was created."
-          }
-        }
-      },
-      "ModifiedDates": {
-        "title": "Modified dates",
-        "x-internal": true,
-        "allOf": [
-          {
-            "title": "ModifiedDate",
-            "x-internal": true,
-            "type": "object",
-            "properties": {
-              "modifiedDate": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/DateTime"
-                  },
-                  {
-                    "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
-                  }
-                ]
-              }
-            }
-          },
-          {
-            "title": "Source Modified Date",
-            "x-internal": true,
-            "type": "object",
-            "nullable": true,
-            "properties": {
-              "sourceModifiedDate": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/DateTime"
-                  },
-                  {
-                    "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      "ErrorMessage": {
-        "title": "Error message",
-        "type": "object",
-        "x-internal": true,
-        "properties": {
-          "statusCode": {
-            "type": "integer",
-            "description": "The HTTP status code returned by the error."
-          },
-          "service": {
-            "type": "string",
-            "description": "Codat's service the returned the error."
-          },
-          "error": {
-            "type": "string",
-            "description": "A brief description of the error."
-          },
-          "correlationId": {
-            "type": "string",
-            "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
-          },
-          "canBeRetried": {
-            "type": "string",
-            "description": "`True` if the error occurred transiently and can be retried."
-          },
-          "detailedErrorCode": {
-            "type": "integer",
-            "description": "Machine readable error code used to automate processes based on the code returned."
-          }
-        }
-      },
-      "SupplementalData": {
-        "title": "Supplemental data",
-        "type": "object",
-        "x-internal": true,
-        "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting platform. [Learn more](https://docs.codat.io/using-the-api/supplemental-data/overview) about supplemental data.",
-        "properties": {
-          "content": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "object",
-              "additionalProperties": true
-            },
-            "nullable": true
-          }
-        }
       }
     },
     "parameters": {
