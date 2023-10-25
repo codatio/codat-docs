@@ -70,10 +70,10 @@ We've provided a [repo with examples on GitHub](https://github.com/codatio/sdk-l
 
 ### Get started with React
 
-For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-link/tree/main/examples/react/).
+For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-link/tree/main/examples/languages/react/).
 
-1. **Create a component that mounts the SDK.** You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/react/src/components/CodatLink.tsx" target="_blank">`CodatLink.tsx`</a> file to an appropriate location in your React or TypeScript app. We recommend setting `width: 460px; height: 840px` for this component.
-2. **Use the component.** We suggest wrapping the `CodatLink` component in a modal to [adjust its positioning](https://github.com/codatio/sdk-link/blob/main/examples/react/src/App.css). The component can also take care of such logic as when to [display the component](https://github.com/codatio/sdk-link/blob/main/examples/react/src/App.tsx), passing in the relevant company ID and callbacks.
+1. **Create a component that mounts the SDK.** You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/react/src/components/CodatLink.tsx" target="_blank">`CodatLink.tsx`</a> file to an appropriate location in your React or TypeScript app. We recommend setting `width: 460px; height: 840px` for this component.
+2. **Use the component.** We suggest wrapping the `CodatLink` component in a modal to [adjust its positioning](https://github.com/codatio/sdk-link/blob/main/examples/languages/react/src/App.css). The component can also take care of such logic as when to [display the component](https://github.com/codatio/sdk-link/blob/main/examples/languages/react/src/App.tsx), passing in the relevant company ID and callbacks.
 
   ```js
   // AuthFlow.tsx
@@ -131,7 +131,7 @@ For an example of the component in action, [see our demo app](https://github.com
 
 ### Get started with NextJS
 
-For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-link/tree/main/examples/next/).
+For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-link/tree/main/examples/languages/next/).
 
 :::note NextJS and urlImports
 
@@ -140,8 +140,8 @@ NextJS is opinionated about the import strategy we're suggesting, and has an exp
 In the example below, you'll see that we make use of webpack's [magic comments](https://webpack.js.org/api/module-methods/#magic-comments) feature to avoid NextJS's caching and use normal [import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) behaviour.
 :::
 
-1. **Create a component that mounts the SDK.** You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/next/src/app/components/CodatLink.tsx" target="_blank">`CodatLink.tsx`</a> file to an appropriate location in your app. We recommend setting `width: 460px; height: 840px` for this component. Note that [`"use client"`](https://nextjs.org/docs/getting-started/react-essentials#the-use-client-directive) is used in the script to define this as client-side code, and the import is ignored in webpack to avoid NextJS caching (as above). 
-2. **Use the component.** We suggest wrapping the `CodatLink` component in a modal to [adjust its positioning](https://github.com/codatio/sdk-link/blob/main/examples/next/src/app/page.module.css). The component can also take care of such logic as when to [display the component](https://github.com/codatio/sdk-link/blob/main/examples/next/src/app/page.tsx), passing in the relevant company ID and callbacks.
+1. **Create a component that mounts the SDK.** You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/next/src/app/components/CodatLink.tsx" target="_blank">`CodatLink.tsx`</a> file to an appropriate location in your app. We recommend setting `width: 460px; height: 840px` for this component. Note that [`"use client"`](https://nextjs.org/docs/getting-started/react-essentials#the-use-client-directive) is used in the script to define this as client-side code, and the import is ignored in webpack to avoid NextJS caching (as above). 
+2. **Use the component.** We suggest wrapping the `CodatLink` component in a modal to [adjust its positioning](https://github.com/codatio/sdk-link/blob/main/examples/languages/next/src/app/page.module.css). The component can also take care of such logic as when to [display the component](https://github.com/codatio/sdk-link/blob/main/examples/languages/next/src/app/page.tsx), passing in the relevant company ID and callbacks.
 
   ```js
   // page.tsx
@@ -195,7 +195,7 @@ In the example below, you'll see that we make use of webpack's [magic comments](
 
 ### Get started with JavaScript
 
-For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-link/tree/main/examples/javascript).
+For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-link/tree/main/examples/languages/javascript).
 
 1. **Create a target `div` for the `CodatLink` component.** The CodatLink component will be mounted within this div. We recommend setting `width: 460px; height: 840px` for this element.
 
@@ -256,14 +256,14 @@ For an example of the component in action, [see our demo app](https://github.com
 
 ### Get started with Angular
 
-For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-link/tree/main/examples/angular).
+For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-link/tree/main/examples/languages/angular).
 
 :::note Angular and urlImports
 
 In the example below, you'll see that we make use of webpack's [magic comments](https://webpack.js.org/api/module-methods/#magic-comments) feature to avoid Angular's caching and use normal [import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) behaviour.
 :::
 
-1. **Create a component that mounts the SDK.** See the <a href="https://github.com/codatio/sdk-link/blob/main/examples/angular/src/app/codat-link/" target="_blank">`codat-link folder`</a> for an example module.
+1. **Create a component that mounts the SDK.** See the <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/angular/src/app/codat-link/" target="_blank">`codat-link folder`</a> for an example module.
 
 2. **Define company ID and callbacks.** 
 
@@ -327,10 +327,10 @@ In the example below, you'll see that we make use of webpack's [magic comments](
 
 ### Get started with Vue
 
-For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-link/tree/main/examples/vue).
+For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-link/tree/main/examples/languages/vue).
 
-1. **Create a component that mounts the SDK.** You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/vue/src/components/CodatLink.vue" target="_blank">`CodatLink.vue`</a> file to an appropriate location in your Vue app. We recommend setting `width: 460px; height: 840px` for this component.
-2. **Use this component.** We suggest wrapping the `CodatLink` component in a modal to [adjust its positioning](https://github.com/codatio/sdk-link/blob/main/examples/vue/src/App.vue). The component can also take care of such logic as when to [display the component](https://github.com/codatio/sdk-link/blob/main/examples/vue/src/App.vue), passing in the relevant company ID and callbacks.
+1. **Create a component that mounts the SDK.** You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/vue/src/components/CodatLink.vue" target="_blank">`CodatLink.vue`</a> file to an appropriate location in your Vue app. We recommend setting `width: 460px; height: 840px` for this component.
+2. **Use this component.** We suggest wrapping the `CodatLink` component in a modal to [adjust its positioning](https://github.com/codatio/sdk-link/blob/main/examples/languages/vue/src/App.vue). The component can also take care of such logic as when to [display the component](https://github.com/codatio/sdk-link/blob/main/examples/languages/vue/src/App.vue), passing in the relevant company ID and callbacks.
 
   ```js
 
@@ -377,10 +377,10 @@ For an example of the component in action, [see our demo app](https://github.com
 
 ### Get started with Svelte
 
-For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-link/tree/main/examples/svelte).
+For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-link/tree/main/examples/languages/svelte).
 
-1. **Create a component that mounts the SDK.** You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/svelte/src/lib/CodatLink.svelte" target="_blank">`CodatLink.svelte`</a> file to an appropriate location in your Svelte app. We recommend setting `width: 460px; height: 840px` for this component.
-2. **Use the component.**  We suggest wrapping the `CodatLink` component in a modal to [adjust its positioning](https://github.com/codatio/sdk-link/blob/main/examples/svelte/src/App.svelte). The component can also take care of such logic as when to [display the component](https://github.com/codatio/sdk-link/blob/main/examples/svelte/src/App.svelte), passing in the relevant company ID and callbacks.
+1. **Create a component that mounts the SDK.** You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/svelte/src/lib/CodatLink.svelte" target="_blank">`CodatLink.svelte`</a> file to an appropriate location in your Svelte app. We recommend setting `width: 460px; height: 840px` for this component.
+2. **Use the component.**  We suggest wrapping the `CodatLink` component in a modal to [adjust its positioning](https://github.com/codatio/sdk-link/blob/main/examples/languages/svelte/src/App.svelte). The component can also take care of such logic as when to [display the component](https://github.com/codatio/sdk-link/blob/main/examples/languages/svelte/src/App.svelte), passing in the relevant company ID and callbacks.
 
   ```js
 
