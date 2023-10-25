@@ -12,9 +12,9 @@ import {bankfeedsExternalMappingIntegrations, bankfeedsIntegrations} from '@comp
 
 ## Journey overview
 
-The diagram below represents the overall activity flow when using Bank Feeds API, including your SMB customer and their accounting platform. It assumes are using Codat's mapping interface to let the user select the accounts used for pushing bank statements.
+The diagram below represents the overall activity flow when using Bank Feeds API, including your SMB customer and their accounting platform. It assumes you are using Codat's mapping interface to let the user select the accounts used for pushing bank statements.
 
-If you choose one of the [other mapping UI options](/bank-feeds/setup#), you can visualize the flow by simply changing the actor of the mapping operation from `Codat` to `Your application` or `Accounting platform`.
+If you choose one of the [other mapping UI options](/bank-feeds/mapping/overview), you can visualize the flow by simply changing the actor of the mapping operation from `Codat` to `Your application` or `Accounting platform`.
 
 ```mermaid
 
@@ -61,7 +61,7 @@ In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate
 
 <IntegrationsList integrations={bankfeedsIntegrations}/>
 
-Some of these integrations may require enhanced setup specific to bank feeds. We walk you through these in our integration-specific instructions in the _Manage integrations_ section of our documentation. 
+Some of these integrations may require enhanced setup specific to bank feeds. We walk you through these in our integration-specific instructions in the _Manage integrations_ section of our Bank Feeds API documentation. 
 
 ### Authorization flow
 
@@ -71,9 +71,9 @@ We recommend you fully embed the Link auth flow in your experience by using our 
 
 The solution lets you tailor the authorization journey to your business needs. You can:
 
-* [Customize Link settings](/auth-flow/customize/customize-link)
-* [Set up company branding](/auth-flow/customize/branding)
-* [Set up redirects](/auth-flow/customize/set-up-redirects)
+* [Customize Link settings](/auth-flow/customize/customize-link).
+* [Set up company branding](/auth-flow/customize/branding).
+* [Set up redirects](/auth-flow/customize/set-up-redirects).
 
 ### Webhooks
 
@@ -81,41 +81,18 @@ Codat supports a range of [webhooks](/using-the-api/webhooks/core-rules-types) t
 
 - [Push operation status has changed](/using-the-api/webhooks/core-rules-types#push-operation-status-has-changed)  
 
-  Use this webhook to track the completion of the operation to create bank transactions in the target platform. When you receive a notification from this webhook, check the `status` value in the body. A `Success` status means the `transactions` array has been successfully pushed to the accounting software.
+  Use this webhook to track the completion of the operation to create bank transactions in the target platform. When you receive a notification from this webhook, check the `status` value in the body. A `Success` status means the `transactions` array has been successfully pushed to the accounting software. In case of errors, resolve the issue and resend the payload.
 
-This completes the initial setup of Bank Feeds API. Next, you will need to create a Codat [company](../terms/company), establish its [connection]
+:::tip Recap
 
+You have enabled Bank Feeds API, set up the relevant integrations, configured auth flow parameters, and noted the recommended webhook. This completes the initial setup of the product. 
 
-so the banktransactions is an array and then when you push one array you get 1 pushoperation key and then 1 webhook, but this could be for 1 or many transactions
-
-
-
-then you also need to create the infrastructure required 
-
-Before you can collect your SMB customer's data, you need to create a Codat [company](./terms/company) and connect it to a data source (for example, an accounting platform). You can do that in two ways:
-
-* In the [Codat Portal](https://app.codat.io) by navigating to **Companies > Create company**
-* By calling the [Create company](/lending-api#/operations/create-company) endpoint of our API
-
-Remember to [authenticate](/using-the-api/authentication) if you are making calls to our API. Navigate to **Developers > API keys** in the Portal to pick up your authorization header.
-
-To establish a connection to a data source and sync business data, your customer must grant you access. They can do so using our [Link auth flow](/auth-flow/overview) solution, which we recommend you use in your app.
-
-
-
-
-
-
-
-
-
-
-
-
+Next, you will create a Codat [company](../terms/company), its [connection](../terms/connection), and a source bank account to build out the core infrastructure required to establish a bank feed.
+  
+:::
 
 ---
 
 ## Read next
 
-* [Create a source account](/bank-feeds/create-account)
-
+* [Create the key elements](/bank-feeds/create-account) of the Codat infrastructure required to establish a bank feed.

@@ -1,14 +1,14 @@
 ---
 title: "User interface for bank account mapping"
 description: "Push bank transaction data into your customers' accounting platforms with an automated feed."
-sidebar_label: Map in UI
+sidebar_label: Use our UI
 displayed_sidebar: bankfeeds
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import {IntegrationsList} from '@components/global/Integrations'
-import {bankfeedsExternalMappingIntegrations} from '@components/global/Integrations/integrations'
+import {bankfeedsInternalMappingIntegrations} from '@components/global/Integrations/integrations'
 import Loom from '@components/global/Loom'
 
 # Codat mapping user interface
@@ -21,10 +21,12 @@ The bank feeds mapping interface allows for customization with your own logo and
 
 ### Supported integrations
 
-<IntegrationsList integrations={bankfeedsExternalMappingIntegrations}/>
+<IntegrationsList integrations={bankfeedsInternalMappingIntegrations}/>
 
 
 ## Using the mapping UI
+
+![Codat-bank-feeds_account-mapping-ui](/img/bank-feeds/mappingUi.png "Codat-provided account mapping UI")
 ### Mapping an account
 
 To utilize the mapping UI, direct your company's users to the `linkUrl` provided in the [dataConnection](/bank-feeds/setup#creating-a-data-connection) response. After they've authorized their accounting software, they'll be guided to an interface for mapping their source account to either an existing or a new target account within their accounting platform.

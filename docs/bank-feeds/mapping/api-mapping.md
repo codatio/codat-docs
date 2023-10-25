@@ -10,7 +10,7 @@ hide_description: true
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import {IntegrationsList} from '@components/global/Integrations'
-import {bankfeedsExternalMappingIntegrations} from '@components/global/Integrations/integrations'
+import {bankfeedsInternalMappingIntegrations} from '@components/global/Integrations/integrations'
 
 
 # Build your own user interface
@@ -25,7 +25,7 @@ However, be sure to meet all partner requirements to maintain compliance.
 
 ### Supported integrations
 
-<IntegrationsList integrations={bankfeedsExternalMappingIntegrations}/>
+<IntegrationsList integrations={bankfeedsInternalMappingIntegrations}/>
 
 ## Using the mapping API
 To utilize the mapping UI, direct your company's users to the `linkUrl` provided in the [dataConnection](/bank-feeds/setup#creating-a-data-connection) response. After they've authorized their accounting software, they'll be redirected to your application based on any pre-configured [redirect parameters](/auth-flow/customize/set-up-redirects).  

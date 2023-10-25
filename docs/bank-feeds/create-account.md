@@ -1,17 +1,18 @@
 ---
-title: "Create source account"
-description: "Push bank transaction data into your customers' accounting platforms with an automated feed"
-sidebar_label: Create core elements
+title: "Create Codat's key elements"
+description: "Create a company, its connection, and a source account that form the structure required to establish a bank feed"
+sidebar_label: Create key objects
 displayed_sidebar: bankfeeds
-hide_description: true
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
 
-# Bank feeds setup
+## Overview
 
+When implementing your bank feed solution, you need to create several key objects required by Codat's Bank Feeds API: a [company](../terms/company), its connection to a data source, and a source account. 
 
+You can see how these elements fit together and where they sit in the overall bank feeds process on the diagram below.
 
 ```mermaid
 graph LR;
@@ -24,11 +25,11 @@ graph LR;
 
     subgraph Codat
     direction TB;
-        codatCompany[<u style='color:#522ce7'>Company</u><br><br>A representation of your SMB customer <br> that wishes to perform bank reconciliation.]  -.- codatDataConnection[<u style='color:#522ce7'>Data connection</u><br><br>A link between a Codat company and their <br> selected accounting software.]
-        click codatCompany "/bank-feeds/setup#creating-a-company" "Companies"
+        codatCompany[<u style='color:#522ce7'>Company</u><br><br>A representation of your SMB customer <br> that wishes to establish a bank feed.]  -.- codatDataConnection[<u style='color:#522ce7'>Connection</u><br><br>A link between a Codat company and their <br> selected accounting software.]
+        click codatCompany "/bank-feeds/setup#create-a-company" "Companies"
         codatDataConnection -.- codatSourceAccount[<u style='color:#522ce7'>Source account</u><br><br>A representation of an actual business bank <br> account, savings account, or credit card.]
-        click codatDataConnection "/bank-feeds/setup#creating-a-data-connection" "Data Connections"
-        click codatSourceAccount "/bank-feeds/setup#creating-a-source-account" "Source Accounts"
+        click codatDataConnection "/bank-feeds/setup#create-a-connection" "Data Connections"
+        click codatSourceAccount "/bank-feeds/setup#create-a-source-account" "Source Accounts"
     end
 
     style Codat fill:#f1f4fa,stroke:#666,stroke-width:0px;
@@ -39,43 +40,35 @@ graph LR;
     
     subgraph AccountingSoftware[Accounting software]
     direction TB;
-        targetAccount[<style='color:#2a2d3d'>Target account<br><br>The account where bank transactions <br> are posted by the bank feed to be <br> subsequently reconciled by the SMB customer.] 
+        targetAccount[<style='color:#2a2d3d'>Target account<br><br>The account where bank transactions are <br> posted by the bank feed to be later <br> reconciled by the SMB customer.] 
     end
 
     style AccountingSoftware stroke-width:0px;
 
     Codat -.-> Mapping
-          click Mapping "/bank-feeds/mapping" "Mapping"
+          click Mapping "/bank-feeds/mapping-overview" "Mapping"
     Mapping -.-> AccountingSoftware
 
 
 ```
 
+:::tip Authorize your API calls
 
-then you also need to create the infrastructure required 
+Remember to [authenticate](/using-the-api/authentication) when making calls to our API. Navigate to **Developers > API keys** in the Portal to pick up your authorization header.
 
-Before you can collect your SMB customer's data, you need to create a Codat [company](./terms/company) and connect it to a data source (for example, an accounting platform). You can do that in two ways:
+:::
 
-* In the [Codat Portal](https://app.codat.io) by navigating to **Companies > Create company**
-* By calling the [Create company](/lending-api#/operations/create-company) endpoint of our API
+## Create a company
 
-Remember to [authenticate](/using-the-api/authentication) if you are making calls to our API. Navigate to **Developers > API keys** in the Portal to pick up your authorization header.
+Within Bank Feeds API, a company represents your SMB customer that wishes to export their transactions from your application to their accounting software. 
 
-To establish a connection to a data source and sync business data, your customer must grant you access. They can do so using our [Link auth flow](/auth-flow/overview) solution, which we recommend you use in your app.
-
-## Overview
-
-
-
-### Creating a company
-
-Within the bank feeds api, a company represents a business that wishes to export their transactions from your application to their accounting software, the first step of the process is to create a company in Codat:
+To create it, use our [Create company](/bank-feeds-api#/operations/create-company) endpoint. It returns a JSON response containing the company `id`. You will use this `id` to establish a connection to an accounting platform. 
 
 <Tabs>
 
-<TabItem value="Request URL" label="Request URL">
+<TabItem value="HTTP" label="HTTP">
 
-You can create a company by using the [Create company](/bank-feeds-api#/operations/create-company) endpoint:
+#### Request
 
 ```json
 POST /companies
@@ -85,11 +78,7 @@ POST /companies
 }
 ```
 
-</TabItem >
-
-<TabItem value="Response" label="Response">
-
-The endpoint returns a JSON response containing the company `id` which you should use to create the data connection and specify which integration the company wishes to establish a bankfeed.
+#### Response
 
 ```json
 {
@@ -106,12 +95,11 @@ The endpoint returns a JSON response containing the company `id` which you shoul
 
 </Tabs>
 
-### Creating a data connection
+## Create a connection
 
-Using the [Create a data connection](/bank-feeds-api#/operations/create-connection) endpoint, create a data connection to the chosen accounting package for the company.
+Next, use the [Create connection](/bank-feeds-api#/operations/create-connection) endpoint to connect the company to an accounting data source via one of our integrations. This will allow you to synchronize data with that source. 
 
-   In the request body specify one of the following as the `platformKey`
-
+In the request body, specify a `platformKey` of the accounting platform you're looking to connect.
 
 | Accounting platform | platformKey |
 | ---  | ---  |
@@ -120,184 +108,162 @@ Using the [Create a data connection](/bank-feeds-api#/operations/create-connecti
 | FreeAgent | `fbrh` |
 | Sage Bank Feeds | `olpr` |
 
+As an example, let's create a QuickBooks Online (QBO) connection. In response, the endpoint returns a `dataConnection` object with a `PendingAuth` status and a `linkUrl`. Direct your customer to the `linkUrl` to initiate our [Link auth flow](/auth-flow/overview) and enable them to authorize this connection.
 
 <Tabs>
 
-<TabItem value="dataconnection-request" label="Request">
+<TabItem value="HTTP" label="HTTP">
 
-Sample request to create a QuickBooks Online Data Connection for a company.
-   
+#### Request
+
 ```json
 
-POST /companies/:companyId/connections
+POST /companies/{companyId}/connections
 {
     "platformKey": "hcws"
 }
 
 ```
 
-</TabItem >
+#### Response
 
-<TabItem value="dataconnection-response" label="Response">
-
-The endpoint returns a `200` response. The body contains a `dataConnection` object in `PendingAuth` status and a `linkUrl`, you should cache the `linkUrl` as it will be required later to enable the company to link their accounting package.
-
-   ```json
-
-   {
-     "id": "7baba7cc-4ae0-48fd-a617-98d55a6fc008",
-     "integrationId": "6b113e06-e818-45d7-977b-8e6bb3d01269",
-     "sourceId": "56e6575a-3f1f-4918-b009-f7535555f0d6",
-     "platformName": "QuickBooks Online Bank Feeds",
-     "linkUrl": "https://link-api.codat.io/companies/COMPANY_ID/connections/CONNECTION_ID/start?otp=742271", 
-     "status": "PendingAuth",
-     "created": "2022-09-01T10:21:57.0807447Z",
-     "sourceType": "BankFeed"
-   }
-
-   ```
-
-  **QuickBooks Online Bank Feeds**
-
-   For QuickBooks Online Bankfeeds, The `linkUrl` contains a one time password (OTP) which expires after one hour. If the OTP has expired, your customer will receive a 401 error when loading the page and you should generate a new OTP by a GET request to:
+```json
+ {
+  "id": "7baba7cc-4ae0-48fd-a617-98d55a6fc008",
+  "integrationId": "6b113e06-e818-45d7-977b-8e6bb3d01269",
+  "sourceId": "56e6575a-3f1f-4918-b009-f7535555f0d6",
+  "platformName": "QuickBooks Online Bank Feeds",
+  "linkUrl": "https://link-api.codat.io/companies/COMPANY_ID/connections/CONNECTION_ID/start?otp=742271", 
+  "status": "PendingAuth",
+  "created": "2022-09-01T10:21:57.0807447Z",
+  "sourceType": "BankFeed"
+}
 ```
-GET /companies/:companyId/connections/:connectionId
-```
-    
 </TabItem >
 
 </Tabs>
 
-<details>
-  <summary>Deauthorizing a dataConnection</summary>
+:::info One-time password for QBO
 
-  If the company wishes to revoke the connection to their accounting package, you can do so using the [unlink-connection](/bank-feeds-api#/operations/unlink-connection) endpoint.
-
-  ```json
-  PATCH /companies/:companyId/connections/:connectionId
-  {
-  "status": "Unlinked"
-  }
-
-  
-  ```
-
-</details>
-
-To establish a bank feed with your customer's accounting software, you'll first need to [set up source accounts](/bank-feeds-api#/operations/create-source-account). These accounts serve as representations of the company's financial accounts within the Codat platform. 
-
-During the subsequent mapping process, these source accounts can be linked to corresponding accounts in the customer's accounting software.
-
-
-:::note UK specific requirements
-
-For GBP bank accounts, `sortCode` is also a required field. 
-
-
-
+For QBO, the `linkUrl` contains a one-time password (OTP) that expires after one hour. If the OTP has expired, your customer will receive a `401` error when loading the page. Generate a new OTP by sending a `GET` request:
+```
+GET /companies/{companyId}/connections/{connectionId}
+```
 :::
 
-Codat categorizes bank accounts into either credit or debit types for standardization. 
+### Deauthorize a connection
 
+If your customer wants to revoke their approval and sever the connection to their accounting package, use the [Unlink connection](/bank-feeds-api#/operations/unlink-connection) endpoint.
 
+```json
+PATCH /companies/:companyId/connections/{connectionId}
+ {
+ "status": "Unlinked"
+ }
+```
+
+## Create a source account
+
+Finally, create a source account using our [Create source account](/bank-feeds-api#/operations/create-source-account) endpoint. It represents the company's actual financial account, savings account or credit card within Codat. We categorize accounts as a credit or a debit account type for standardization. 
+
+As an example, let's create a debit account. If the source account passes validation, you will receive a **synchronous response** with a `200` status code indicating a successful operation.
+
+:::note UK-specific requirements
+
+For bank accounts in GBP, `sortCode` is also a required field. 
+
+:::
 
 <Tabs>
 
-  <TabItem value="source-request" label="Request">
+<TabItem value="HTTP" label="HTTP">
 
-Example request body for creating a debit account:
-
+#### Request
 
 ```json 
-POST /companies/:companyId/connections/:connectionId/connectionInfo/bankFeedAccounts
+POST /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts
 {
-    "id": "ac-001",
-    "accountName": "Checking Account",
-    "accountType": "Debit",
-    "accountNumber": "12345670",
-    "currency": "GBP",
-    "balance": 4002
+  "id": "ac-001",
+  "accountName": "Checking Account",
+  "accountType": "Debit",
+  "accountNumber": "12345670",
+  "currency": "GBP",
+  "balance": 4002
 }
- ```
-
-  </TabItem >
-
-  <TabItem value="source-response" label="Response">
-
-Example of a response for a credit card received upon source account creation: 
+```
+#### Response
 
 ```json
 {
-    "id": "a3f28138-e2b9-4daa-92e1-5a99fb29ac42",
-    "accountName": "Checking Account",
-    "accountType": "credit",
-    "accountNumber": "4243",
-    "currency": "GBP",
-    "balance": 100.00,
-    "status": "pending",
-    "modifiedDate": "2023-09-06T09:13:40.2266667"
+  "id": "a3f28138-e2b9-4daa-92e1-5a99fb29ac42",
+  "accountName": "Checking Account",
+  "accountType": "Debit",
+  "accountNumber": "12345670",
+  "currency": "GBP",
+  "balance": 4002.00,
+  "status": "pending",
+  "modifiedDate": "2023-09-06T09:13:40.2266667"
 }   
 ```
-
-Note that this is a **synchronous response** - assuming the sourceAccount passes validation, you should expect a `200` status code indicating a successful operation.
-   
-  </TabItem >
+</TabItem >
 
 </Tabs>
 
-The account status will stay as `pending` until the company associates the source account with a corresponding target account in their accounting software. 
+Once the source account is successfully created, guide your customer through the **mapping process** to associate it with a corresponding target account in their accounting software. The account will stay in a `pending` status until that happens, and it must change to `linked` before you can successfully transmit any bank transactions.
 
-You must wait for the status to change to `linked` before you can successfully transmit any bank transactions.
+### Multi-currency accounts
 
-Once the source account is successfully created you can then guide the company through the **mapping process**.
+You can create multiple accounts in different currencies using the same [Create source account](/bank-feeds-api#/operations/create-source-account) endpoint for the company and the connection. If the user has not enabled multi-currency in their accounting software, you will receive an error message which you can display to the user.
 
-:::tip Adding multi currency accounts 💱
+### Update a source account
 
-You can create multiple accounts in different currencies using the same POST endpoint for the company and data connection.
+You may need to modify a source account before the mapping is finalized. For example, your customer might want a bank account name to appear in their accounting software. To do that, use the [Update source account](/bank-feeds-api#/operations/update-source-account) endpoint.
 
-If the user has not enabled multi-currency in their accounting software you will get an error message which you can display to the user.
+<Tabs>
 
-:::
-
-
-<details>
-  <summary>Updating a source account</summary>
-
-In certain situations, you might wish to modify a source account prior to its mapping. This could occur if the user at the company has a preference for a specific bank account name to appear in their accounting software.
-
-To achieve this, you can use the [update-source-accounts](/bank-feeds-api#/operations/update-source-account) endpoint.
+<TabItem value="HTTP" label="HTTP">
 
 ```json
-PUT /companies/:companyId/connections/:connectionId/connectionInfo/bankFeedAccounts/:accountId
+PUT /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts/{accountId}
+
 {
-    "id": "ac-001",
-    "accountName": "Bank of X Checking Account",
-    "accountType": "Debit",
-    "accountNumber": "12345670",
-    "currency": "GBP",
-    "balance": 4002
+  "id": "ac-001",
+  "accountName": "Bank of X Checking Account",
+  "accountType": "Debit",
+  "accountNumber": "12345670",
+  "currency": "GBP",
+  "balance": 4002
 }
-
 ```
+</TabItem >
 
-</details>
+</Tabs>
 
-<details>
-  <summary>Removing a source account</summary>
+### Remove a source account
 
-If your customer decides to close their account, you can also [remove it from Codat](/bank-feeds-api#/operations/delete-source-account) . Doing so will not delete the account from their accounting software, but it will disable the bank feed, preventing any new transactions from appearing.
+If your customer decides to close their account, you can also remove it from Codat using the [Delete source account](/bank-feeds-api#/operations/delete-source-account) endpoint. This will not delete the account from your customer's accounting software, but it will disable the bank feed, preventing any new transactions from appearing.
+
+<Tabs>
+
+<TabItem value="HTTP" label="HTTP">
 
 ```json
-DELETE /companies/:companyId/connections/:connectionId/connectionInfo/bankFeedAccounts/:accountId
+DELETE /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts/{accountId}
 ```
+</TabItem >
 
+</Tabs>
 
-</details>
+:::tip Recap
 
+You have created the structure of key objects required by Codat's Bank Feeds API: a company, its connection to an accounting data source, and a source account. 
+
+Next, provide your customer with a **mapping** process interface so they can associate the source account with a target account in their accounting software.
+:::
 
 ---
 
 ## Read next
 
-* [Authorization and mapping](/bank-feeds/mapping)
+* Enable your customer to map accounts to their accounting platform via a [mapping UI](/bank-feeds/mapping-overview).
 

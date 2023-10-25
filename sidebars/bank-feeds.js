@@ -28,6 +28,11 @@ module.exports = [
   {
     type: "category",
     label: "Map accounts",
+    collapsed: true,
+    link: {
+      type: 'doc',
+      id: "bank-feeds/mapping/overview",
+    },
     items: [
       "bank-feeds/mapping/codat-ui",
       "bank-feeds/mapping/api-mapping",

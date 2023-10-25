@@ -66,7 +66,7 @@ export const bankfeedsIntegrations = [
   },
 ]
 
-export const bankfeedsExternalMappingIntegrations = [
+export const bankfeedsInternalMappingIntegrations = [
   {
     "name": "Xero",
     "to": "/integrations/bank-feeds/xero-bank-feeds/",
