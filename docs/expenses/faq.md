@@ -49,7 +49,7 @@ Every company has its own preference for representing an individual expense in i
 
 2. Standardization of expense data
 
-Sync for Expenses is built to standardize data opinionated based on feedback from customers and industry expertise. This means you don’t need to make decisions on how to handle validation differences between accounting platforms. Simply send transactions based on what they represent and let Codat handle the mapping to their best representation in the accounting software.
+Sync for Expenses is built to standardize transasation data, using an opinionated model, based on feedback from customers and industry expertise. This means you don’t need to make decisions on how to handle validation differences between accounting platforms. Simply send transactions based on what they represent and let Codat handle the mapping to their best representation in the accounting software.
 
 3. Multiple transaction support
 
