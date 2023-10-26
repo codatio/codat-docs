@@ -1,5 +1,5 @@
 ---
-title: "New NetSuite bundle version released"
+title: "NetSuite: attachments now support all date formats"
 date: "2023-10-26"
 tags: ["NetSuite", "Update"]
 authors: todorlizhev
@@ -9,7 +9,7 @@ We have released a new version of our NetSuite bundle that supports the `M/DD/YY
 
 <!--truncate-->
 
-Previously, users may have experienced an issue where attachments using a `M/DD/YYYY h:mm tt` datetime format weren't displaying their `createdDate` and `modifiedDate`. The new v1.23.0 version of the bundle converts all possible datetimes to a `YYYY-MM-DD HH24:MI:SS` format, so all attachments now display the `createdDate` and `modifiedDate`.
+Previously, users may have experienced an issue when viewing attachments that use a `M/DD/YYYY h:mm tt` datetime format for their `createdDate` and `modifiedDate`. Version v1.23.0 of the bundle provides improved support by handling all possible datetime formats, so users  can view the `createdDate` and `modifiedDate` for all attachments.
 
 ## Action required
 
