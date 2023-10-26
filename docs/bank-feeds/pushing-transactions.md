@@ -1,43 +1,30 @@
 ---
-title: "Push transactions"
-description: "Push bank transaction data into your customers' accounting platforms with an automated feed."
+title: "Create bank transactions"
+description: "Learn how to create bank transaction data in your customer's accounting platform"
 sidebar_label: Push transactions
 displayed_sidebar: bankfeeds
-hide_title: true
-hide_description: true
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
 
-# Bank transactions
-Once a company has mapped their source account to a target account, you can begin pushing transactions to their bankfeed.
+Once a company has mapped their source account to a target account, you can begin creating bank transactions in their accounting platform using the established [bank feed](../terms/bank-feed).
 
-## Generate bankTransactions object
+## Generate transactions
 
-Before you can record the companies bankTransactions in their accounting platform, you'll need to generate a `transactions` object for each transaction that has been made from their account.
+Before you can record your customer's bank transactions in their accounting platform, you need to generate a `transactions` object for each transaction that has been made from their account. 
 
-The bankTransaction object must **only contain transactions that have cleared** and should not include any pending or upcoming transactions.
+Collect transaction data within your own application and map it to Codat's [Bank transactions](/bank-feeds-api#/schemas/BankTransactions) schema. Add this to [Create bank transactions](/bank-feeds-api#/schemas/CreateBankTransactions), including the `sourceAccount` id that the transactions should be associated with at the top level. 
 
-At the top level of the bankTransactions object, you should include the `sourceAccount` id of for the transactions to be associated with. 
-
-Each transaction within the `transactions` array should include the following:
-- `id` this is a string and should be your unique identifier for a given transaction.
-- `amount` the amount of the transaction, if its spending money (`Debit`) then the signage should be negative (e.g. -42.00).
-- `balance` the balance of the account in the given currency after the given transaction, **often platforms use this to represent the balance of the account.**
-- `date` the date the transaction took place, all transactions in the object should be ordered oldest to newest.
-- `description` a short description of the transaction, this could include details such as the merchant or the exchange rate if its in a foreign currency.
-- `transactionType` supports `Debit` to show money leaving the account and `Credit` to represent money coming into the account.
-
-:::caution Transaction Signs
+:::caution Transaction signs
 Make sure the transaction `amount` signs align with the `transactionType`. Codat issues a warning for inconsistencies, such as a `Debit` transaction with a positive amount.
 :::
 
 ## Push bank transactions
 
-Steps:
-- [Creating bankTransactions](pushing-transactions#creating-banktransactions)
-- [Monitoring the status of the request](pushing-transactions#monitoring-the-status-of-the-request)
+In Codat, creating a bank transaction is a two-step process (learn more about it [here](/using-the-api/push)). It requires you to check the data model of the data type you want to create first to ensure all required properties are included in your request. 
+
+Next, you are ready to create the bank transaction. You will receive `pushOperation` key in return. You can then use it to monitor the status of the operation, or display its results.
 
 ```mermaid
 
@@ -55,27 +42,21 @@ sequenceDiagram
 
 ```
 
-### Create bankTransactions
+### Create bank transactions
 
-Regularly uploading transactions throughout the day ensures that your customers' bank feed balances are close to real-time. This enhanced accuracy aids companies with increased accuracy for their planning and forecasting.
+We recommend regularly uploading transactions throughout the day so that your customers' bank feed balances are close to real-time. This enhanced accuracy helps companies with their planning and forecasting.
+
+Use our [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions) to create bank transactions. In response, you will receive a `pushOperation` object with a `Pending` status.
 
 <Tabs>
 
-  <TabItem value="request-url" label="Request URL">
+<TabItem value="HTTP" label="HTTP">
 
-  Use the [create-bank-transactions](/bank-feeds-api#/operations/create-bank-transactions) endpoint
-
-  ```http
-  POST /companies/:companyId/connections/:connectionId/push/bankAccounts/:accountId/bankTransactions
-  ```
-
-  </TabItem>
-
-  <TabItem value="request-body" label="Request Body">
-
-  Sample request body with `debit` and `credit` transactions
+#### Request with `debit` and `credit` transactions
 
 ```json
+POST /companies/{companyId}/connections/{connectionId}/push/bankAccounts/{accountId}/bankTransactions
+
 {
     "accountId": "sourceAccountId",
     "transactions": [
@@ -131,13 +112,9 @@ Regularly uploading transactions throughout the day ensures that your customers'
 }
 ```
 
-  </TabItem >
+#### Response
 
-  <TabItem value="response" label="Response">
-
-  Example response:
-
-  ```json
+```json
 {
     "changes": [
         {
@@ -218,35 +195,23 @@ Regularly uploading transactions throughout the day ensures that your customers'
     },
     "statusCode": 202
 }
-  ```
-
-  </TabItem >
+```
+</TabItem >
 
 </Tabs>
 
-When you make the request, you will receive a pushOperation response with a `Pending` status and `202` statusCode, the pushOperation object will include the following information:
+:::caution QuickBooks Online bank feeds syncing info
 
-- **pushOperationKey**: a unique idempotent identifier generated by Codat to represent this single pushOperation that can be used to track its status
-- **dataType**: the type of data being created, in this case, `bankTransaction`
-- **status**: the status of the create operation, which can be `Pending`, `Failed`, `Success` or `TimedOut` 
-- **requestedOnUtc**: the datetime (in UTC) when the operation was requested 
-- **completedOnUtc**: the datetime (in UTC) when the operaion was completed, null if `Pending`
-- **validation**: a human-readable object that contains validation details, including errors, encountered during the operation.
-- **changes**: an array that communicates which record has changed (`recordRef` property) and the manner in which it changed (`type` property that can be `Unknown`, `Created`, `Modified`, or `Deleted`)
+Transactions pushed to QuickBooks Online bank feeds will show a `Success` status when they validated and saved by Codat. However, they will only become available in their accounting software after synchronization between QBO and Codat.
 
-:::caution QuickBooks Online Bank Feeds Syncing Info
-
-Transactions pushed to QuickBooks Online bank feeds will show a 'Success' status once validated and saved by Codat. 
-
-These transactions will only become available to the user in their accounting software after synchronization between QBO and Codat.
-
-Users can manually sync from the QBO interface, and QBO will also automatically poll Codat daily for updates.
+QBO automatically polls Codat daily for updates, and users can also manually trigger that sync from the QBO interface.
 
 :::
 
 
-### Monitor the status of the request
-After your request has been accepted, it will have a status of `Pending`. You should use the [Push Operation Status Changed](../using-the-api/webhooks/core-rules-types#push-operation-status-has-changed) webhooks to track when the status of your pushOperation changes to `Success` or `Failed`.
+### Monitor request status
+
+After you submit your request to create bank transactions to our API, it will have a status of `Pending`. Use the [Push Operation Status Changed](/bank-feeds/setup#webhooks) webhook to track when the status of your push operation changes to `Success` or `Failed`.
 
 If the request is successful, you will receive a webhook like this:
 
@@ -265,4 +230,4 @@ If the request is successful, you will receive a webhook like this:
 }
 ```
 
-If you want to see a history of all pushOperations for your company, you can retrieve these from the [list-push-operations](/bank-feeds-api#/operations/list-create-operations) endpoint.
+If you want to see a history of all push operations for a specific company, retrieve these by calling the [List create operations](/bank-feeds-api#/operations/list-create-operations) endpoint.

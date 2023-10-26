@@ -1,6 +1,6 @@
 ---
 title: "Account mapping options"
-description: "Review the mapping user interface options you can provide to your SMB customer"
+description: "Review and select the options available to you to provide an account mapping interface to your SMB customer"
 sidebar_label: Map accounts
 displayed_sidebar: bankfeeds
 ---
@@ -8,125 +8,35 @@ displayed_sidebar: bankfeeds
 import {IntegrationsList} from '@components/global/Integrations';
 import {bankfeedsInternalMappingIntegrations, bankfeedsIntegrations} from '@components/global/Integrations/integrations'
 
-Once you have created the source account and other key elements of Codat's infrastructure, provide your user with a UI so they can select the target accounts in their accounting platform. This will tell us where exactly to create bank transactions.
+Once you have created the source account, provide your customer with a user interface (UI) so they can select the target accounts in their accounting platform. This will tell us where exactly a bank feed should be established. You can use one of the following options to provide the mapping UI:
 
-Depending on your customer's accounting software, there are three methods you can use to provide the mapping UI:
+### Map using our interface
+##### [Learn more →](/bank-feeds/mapping/codat-ui)
 
-- **API mapping:** integrate the mapping journey into your application for a seamless user experience.
-- **Codat UI mapping:** utilize Codat's provided mapping user interface for a quicker start.
-- **Accounting platform mapping:** use the platform's own mapping interface when the process must be conducted within the software itself.
+Use our pre-built mapping interface to launch your app with minimal development effort. It is designed to meet all third-party requirements and supports logo and primary color scheme customization. 
 
-:::info
 <IntegrationsList integrations={bankfeedsInternalMappingIntegrations}/>
-:::
 
-<ul className="card-container mini">
-  <li className="card mini">
-    <div className="card-row">
-      <div className="header">
-        <a href="/lending/guides/invoice-finance/introduction">
-          <img
-            src="/img/wp-icons/copy-feature-bullet.svg"
-            className="icon usecase"
-          />
-        </a>
-      </div>
-      
-      <div className="content">
-        <h4>Codat user interface</h4>
-        <p>
-          <a href="/lending/guides/invoice-finance/introduction">See the tutorial →</a>
-        </p>    
-      </div>
-    </div>
-    <p>The bank feeds mapping interface allows for customization with your own logo and primary color scheme. Designed to meet all third-party requirements, it enables a seamless launch of your bank feeds product, ensuring an outstanding experience for your customers with minimal development effort.</p>
-  </li>
-  <li className="card mini">
-    <div className="card-row">
-      <div className="header">
-        <a href="payables/guides/bill-pay/introduction">
-          <img
-            src="/img/logos/usecases/payments.svg"
-            className="icon usecase"
-          />
-        </a>
-      </div>
-      
-      <div className="content">
-        <h4>Build with API</h4>
-        <p>
-          <a href="payables/guides/bill-pay/introduction">See the tutorial →</a>
-        </p>    
-      </div>
-    </div>
-    <p>Should you desire a more integrated user experience, you have the option to allow users to map their accounts directly within your own application. This can be achieved by utilizing the account mapping endpoints. These endpoints also drive the functionality of the white-labeled user interface. 
-</p>
-  </li>
-</ul>
-<br/>
+---
+### Map using our API
+##### [Learn more →](/bank-feeds/mapping/api-mapping)
 
-The bank feeds mapping interface allows for customization with your own logo and primary color scheme. Designed to meet all third-party requirements, it enables a seamless launch of your bank feeds product, ensuring an outstanding experience for your customers with minimal development effort.
+For a more integrated user experience, you can build your own interface using our API's account mapping endpoints so that your users can map their accounts directly within your application. 
 
-
-
-
-##### Learn more [here](/bank-feeds/mapping/codat-ui)
+<IntegrationsList integrations={bankfeedsInternalMappingIntegrations}/>
 
 ---
 
+### Platform-specific mapping
 
-Should you desire a more integrated user experience, you have the option to allow users to map their accounts directly within your own application. This can be achieved by utilizing the account mapping endpoints. These endpoints also drive the functionality of the white-labeled user interface. 
+Integrations listed in this section require that the account mapping is conducted within the accounting platform itself. Follow our integration-specific bank feed guides to learn more about their prerequisites, functionality, and implementation details.
 
-
-##### Learn more [here](/bank-feeds/mapping/api-mapping)
-
----
-
-
-<ul className="card-container col-2">
-  <li className="card">
-    <div class="header">
-      <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
-      />
-      <h3>QuickBooks Online</h3>
-    </div>
-    <p>
-      When your services integrate effortlessly into your customer's tools and processes, they're less likely to switch to a competitor.
-    </p>
-  </li>
-  <li className="card">
-    <div class="header">
-      <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
-      />
-      <h3>Improve accuracy</h3>
-    </div>
-    <p>
-      We help your customers close their books faster and with fewer manual errors.
-    </p>
-  </li>
-</ul>
-
-
-<IntegrationsList filter={['QuickBooks Online']} />
-
-For Bank Feeds in QuickBooks Online, the account mapping is conducted within the QuickBooks platform itself. Codat produces a secure username and password against a dataConnection which can be entered into QuickBooks, facilitating the account and transaction verification process.
-
-There are two ways you can share credentials with a Company - either via a hosted and customizable Codat credentials page, or alternatively through the generate-credentials endpoint.
-
-
-##### Learn more [here](/bank-feeds/mapping/qbo-mapping)
+<IntegrationsList filter={['QuickBooks Online bank feeds','Sage bank feeds']} />
 
 ---
 
-
-<IntegrationsList filter={['Sage']} />
-
-Codat's Sage Bank Feeds integration requires an authorization UI to authenticate an SMB user prior to creating source accounts within Codat.
-
-After source accounts have been created, the user can then map these to existing or new accounts within Sage.
-
-##### Learn more [here](/bank-feeds/mapping/sage-mapping)
+## Read next
+  
+* [Codat's pre-built interface](/bank-feeds/mapping/codat-ui)
+* [Build your own interface with our API](/bank-feeds/mapping/api-mapping)
+* [QuickBooks Online](/bank-feeds/integrations/qbo/qbo-mapping) and [Sage](/bank-feeds/integrations/sage/sage-mapping)'s own interfaces
