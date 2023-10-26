@@ -7,6 +7,7 @@ hide_description: true
 banner_title: Loan qualification
 banner_image: "/img/banners/risk-cropped.png"
 banner_text: "Lend with Codat and our Lending product"
+draft: true
 ---
 
 :::tip Who is this guide for?

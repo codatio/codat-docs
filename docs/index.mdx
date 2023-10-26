@@ -32,6 +32,7 @@ banner_text: "Codat solves challenges for developers building the next generatio
 import Welcome from "@components/global/Welcome";
 import Usecases from "@components/global/Usecases";
 import Products from "@components/global/Products";
+import Clients from '@components/global/Clients'
 
 <Welcome />
 
@@ -121,3 +122,37 @@ Codat's product range supports a variety of use cases, helping you simplify and 
 Our products can help you make the most of your customers' consented business data. [See more...](/products/overview)
 
 <Products mini={true} verbose={true}/>
+
+
+<Clients
+  clients={[
+    {
+        name: "Zettle",
+        path: "/img/clients/zettle.png",
+    },
+    {
+        name: "Lightspeed",
+        path: "/img/clients/lightspeed.png",
+    },
+    {
+        name: "Capchase",
+        path: "/img/clients/capchase.png",
+    },
+    {
+        name: "Virgin Money",
+        path: "/img/clients/virginmoney.png",
+    },
+    {
+        name: "Capital on Tap",
+        path: "/img/clients/capitalontap.png",
+    },
+    {
+        name: "Judo Bank",
+        path: "/img/clients/judobank.png",
+    },
+    {
+        name: "Brex",
+        path: "/img/clients/brex.png",
+    },
+  ]}
+/>

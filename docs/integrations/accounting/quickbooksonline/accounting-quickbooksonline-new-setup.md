@@ -117,7 +117,7 @@ You'll need to provide the following information:
 
 - **Host domain:** URL of the domain host of your website or app.
 - **Launch URL:** Initial URL for your app's authorization flow. If using no-code Link, provide the generic Link URL, which you can access in the Codat Portal.
-- **Disconnect URL:** Link to the process for deauthorizing your app's access to QuickBooks Online. You can provide the URL of the [Disconnect a data source from a company](ref:patch_companies-companyid-connections-connectionid) endpoint. If you don't have a disconnect URL, provide a link to your website or app instead.
+- **Disconnect URL:** Link to the process for deauthorizing your app's access to QuickBooks Online. You can provide the URL of the [Disconnect a data source from a company](/platform-api#/operations/unlink-connection) endpoint. If you don't have a disconnect URL, provide a link to your website or app instead.
 
 For app hosting details, see <a className="external" href="https://codat.zendesk.com/hc/en-gb/articles/4463989520669-QBO-app-hosting" target="_blank">QBO app hosting</a> in the Codat Support Portal.
 :::

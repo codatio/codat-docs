@@ -32,7 +32,6 @@ Everything from Free plus:
 - Unlimited seats
 - Volume-based pricing
 - Implementation support
-- SAML SSO
 - Hourly syncing
 
 ### Billing

@@ -26,7 +26,7 @@ Before you start, decide which type of banking source you want to test. This pro
 Retrieve the platform `key` of the `Demo Bank` data source, or an alternative banking source, and then generate a Link URL.
 
 1. Log in to the [Codat Portal](https://app.codat.io).
-2. Open the [GET integrations](/platform-api#/operations/list-integrations) endpoint in Swagger.
+2. Open the [GET integrations](/platform-api#/operations/list-integrations) endpoint.
 3. Send a GET request to return a list of all integrations.
 4. Search for `Demo Bank`, or the alternative banking source you want to use. All banking integrations have a **sourceType** of `Banking`. For example:
 

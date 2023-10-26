@@ -199,11 +199,26 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "409": {
             "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -382,11 +397,26 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "409": {
             "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -498,6 +528,30 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -611,11 +665,26 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "409": {
             "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *List transaction categories* endpoint returns a list of [transaction categories](https://docs.codat.io/banking-api#/schemas/TransactionCategory) for a given company's connection.\n\n[Transaction categories](https://docs.codat.io/banking-api#/schemas/TransactionCategory) are associated with a transaction to provide greater contextual meaning to transaction activity.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    "
@@ -667,6 +736,30 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -830,11 +923,26 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "409": {
             "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -888,6 +996,33 @@
                 "examples": {}
               }
             }
+          },
+          "400": {
+            "$ref": "#/components/responses/Malformed-Query"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -944,6 +1079,30 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *Get transaction* endpoint returns a single transaction for a given transactionId.\n\n[Transactions](https://docs.codat.io/banking-api#/schemas/Transaction) provide an immutable source of up-to-date information on income and expenditure.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/banking?view=tab-by-data-type&dataType=banking-transactions) for integrations that support getting a specific transaction.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n",
@@ -970,137 +1129,6 @@
   },
   "components": {
     "schemas": {
-      "DateTime": {
-        "title": "Date time",
-        "type": "string",
-        "examples": [
-          "2022-10-23T00:00:00.000Z",
-          "2022-10-23T00:00:00.000Z"
-        ],
-        "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
-      },
-      "AccountBalance": {
-        "title": "Account balance",
-        "description": "The Banking Account Balances data type provides a list of balances for a bank account including end-of-day batch balance or running balances per transaction.\n\nResponses are paged, so you should provide `page` and `pageSize` query parameters in your request.\n\n> **How often should I pull Account Balances?**\n>\n> Because these balances are closing balances, we recommend you pull Account Balance no more frequently than daily. If you require a live intraday balance, this can be found for each account on the [Account](https://docs.codat.io/banking-api#/schemas/Account) data type.\n> \n> Whilst you can choose to sync hourly, this may incur usage charges from Plaid or TrueLayer.",
-        "type": "object",
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "accountId": {
-                "minLength": 1,
-                "type": "string",
-                "description": "The unique identifier of the account."
-              },
-              "balance": {
-                "$ref": "#/components/schemas/AccountBalance/definitions/accountBalanceAmounts"
-              },
-              "date": {
-                "$ref": "#/components/schemas/DateTime",
-                "description": "Date of the balance."
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/ModifiedDates"
-          }
-        ],
-        "required": [
-          "accountId",
-          "balance",
-          "date"
-        ],
-        "definitions": {
-          "accountBalanceAmounts": {
-            "title": "Account Balance Amounts",
-            "x-internal": true,
-            "type": "object",
-            "properties": {
-              "available": {
-                "type": "number",
-                "format": "decimal",
-                "nullable": true,
-                "description": "The balance available in the account, including any pending transactions. This doesn't include additional funds available from any overdrafts."
-              },
-              "current": {
-                "type": "number",
-                "format": "decimal",
-                "description": "The balance of the account only including cleared transactions."
-              },
-              "limit": {
-                "type": "number",
-                "format": "decimal",
-                "nullable": true,
-                "description": "The minimum allowed balance for the account. For example, a $100.00 overdraft would show as a limit of `-100.00`."
-              }
-            },
-            "additionalProperties": false,
-            "description": "Depending on the data provided by the underlying bank, not all balances are always available."
-          }
-        },
-        "examples": [
-          {
-            "accountBalances": [
-              {
-                "accountId": "cce404db-27f7-4286-95db-622b53596cf4",
-                "balance": {
-                  "available": 714374.48,
-                  "current": 714374.57,
-                  "limit": 5000
-                },
-                "date": "2021-03-18T00:00:00"
-              },
-              {
-                "accountId": "cce404db-27f7-4286-95db-622b53596cf4",
-                "balance": {
-                  "available": 714374.48,
-                  "current": 714374.57,
-                  "limit": 5000
-                },
-                "date": "2021-03-19T00:00:00"
-              },
-              {
-                "accountId": "cce404db-27f7-4286-95db-622b53596cf4",
-                "balance": {
-                  "available": 714195.66,
-                  "current": 714204.39,
-                  "limit": 5000
-                },
-                "date": "2021-03-22T00:00:00"
-              },
-              {
-                "accountId": "2f593774-1075-4805-a552-84eecc7eb264",
-                "balance": {
-                  "available": -644945.42,
-                  "current": -644925.84,
-                  "limit": 0
-                },
-                "date": "2022-03-09T00:00:00"
-              }
-            ]
-          }
-        ]
-      },
-      "AccountBalances": {
-        "title": "Account balances",
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/AccountBalance"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
       "Account": {
         "title": "Banking bank account",
         "description": "This data type provides a list of all the SMB's bank accounts, with rich data like balances, account numbers, and institutions holding the accounts.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/banking?view=tab-by-data-type&dataType=banking-accounts).\n\nResponses are paged, so you should provide `page` and `pageSize` query parameters in your request.",
@@ -1275,6 +1303,128 @@
           }
         ]
       },
+      "AccountBalance": {
+        "title": "Account balance",
+        "description": "The Banking Account Balances data type provides a list of balances for a bank account including end-of-day batch balance or running balances per transaction.\n\nResponses are paged, so you should provide `page` and `pageSize` query parameters in your request.\n\n> **How often should I pull Account Balances?**\n>\n> Because these balances are closing balances, we recommend you pull Account Balance no more frequently than daily. If you require a live intraday balance, this can be found for each account on the [Account](https://docs.codat.io/banking-api#/schemas/Account) data type.\n> \n> Whilst you can choose to sync hourly, this may incur usage charges from Plaid or TrueLayer.",
+        "type": "object",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "accountId": {
+                "minLength": 1,
+                "type": "string",
+                "description": "The unique identifier of the account."
+              },
+              "balance": {
+                "$ref": "#/components/schemas/AccountBalance/definitions/accountBalanceAmounts"
+              },
+              "date": {
+                "$ref": "#/components/schemas/DateTime",
+                "description": "Date of the balance."
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/ModifiedDates"
+          }
+        ],
+        "required": [
+          "accountId",
+          "balance",
+          "date"
+        ],
+        "definitions": {
+          "accountBalanceAmounts": {
+            "title": "Account Balance Amounts",
+            "x-internal": true,
+            "type": "object",
+            "properties": {
+              "available": {
+                "type": "number",
+                "format": "decimal",
+                "nullable": true,
+                "description": "The balance available in the account, including any pending transactions. This doesn't include additional funds available from any overdrafts."
+              },
+              "current": {
+                "type": "number",
+                "format": "decimal",
+                "description": "The balance of the account only including cleared transactions."
+              },
+              "limit": {
+                "type": "number",
+                "format": "decimal",
+                "nullable": true,
+                "description": "The minimum allowed balance for the account. For example, a $100.00 overdraft would show as a limit of `-100.00`."
+              }
+            },
+            "additionalProperties": false,
+            "description": "Depending on the data provided by the underlying bank, not all balances are always available."
+          }
+        },
+        "examples": [
+          {
+            "accountBalances": [
+              {
+                "accountId": "cce404db-27f7-4286-95db-622b53596cf4",
+                "balance": {
+                  "available": 714374.48,
+                  "current": 714374.57,
+                  "limit": 5000
+                },
+                "date": "2021-03-18T00:00:00"
+              },
+              {
+                "accountId": "cce404db-27f7-4286-95db-622b53596cf4",
+                "balance": {
+                  "available": 714374.48,
+                  "current": 714374.57,
+                  "limit": 5000
+                },
+                "date": "2021-03-19T00:00:00"
+              },
+              {
+                "accountId": "cce404db-27f7-4286-95db-622b53596cf4",
+                "balance": {
+                  "available": 714195.66,
+                  "current": 714204.39,
+                  "limit": 5000
+                },
+                "date": "2021-03-22T00:00:00"
+              },
+              {
+                "accountId": "2f593774-1075-4805-a552-84eecc7eb264",
+                "balance": {
+                  "available": -644945.42,
+                  "current": -644925.84,
+                  "limit": 0
+                },
+                "date": "2022-03-09T00:00:00"
+              }
+            ]
+          }
+        ]
+      },
+      "AccountBalances": {
+        "title": "Account balances",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AccountBalance"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PagingInfo"
+          }
+        ]
+      },
       "Accounts": {
         "title": "Banking bank accounts",
         "x-internal": true,
@@ -1294,6 +1444,193 @@
             "$ref": "#/components/schemas/PagingInfo"
           }
         ]
+      },
+      "AccountType": {
+        "title": "Bank Account Type",
+        "x-internal": true,
+        "enum": [
+          "Unknown",
+          "Credit",
+          "Debit"
+        ],
+        "type": "string",
+        "description": "The type of transactions and balances on the account.  \nFor Credit accounts, positive balances are liabilities, and positive transactions **reduce** liabilities.  \nFor Debit accounts, positive balances are assets, and positive transactions **increase** assets."
+      },
+      "DateTime": {
+        "title": "Date time",
+        "type": "string",
+        "examples": [
+          "2022-10-23T00:00:00.000Z",
+          "2022-10-23T00:00:00.000Z"
+        ],
+        "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
+      },
+      "ErrorMessage": {
+        "title": "Error message",
+        "type": "object",
+        "x-internal": true,
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "description": "The HTTP status code returned by the error."
+          },
+          "service": {
+            "type": "string",
+            "description": "Codat's service the returned the error."
+          },
+          "error": {
+            "type": "string",
+            "description": "A brief description of the error."
+          },
+          "correlationId": {
+            "type": "string",
+            "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
+          },
+          "canBeRetried": {
+            "type": "string",
+            "description": "`True` if the error occurred transiently and can be retried."
+          },
+          "detailedErrorCode": {
+            "type": "integer",
+            "description": "Machine readable error code used to automate processes based on the code returned."
+          }
+        }
+      },
+      "ModifiedDate": {
+        "title": "ModifiedDate",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "modifiedDate": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DateTime"
+              },
+              {
+                "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+              }
+            ]
+          }
+        }
+      },
+      "ModifiedDates": {
+        "title": "Modified dates",
+        "x-internal": true,
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ModifiedDate"
+          },
+          {
+            "$ref": "#/components/schemas/SourceModifiedDate"
+          }
+        ]
+      },
+      "PagingInfo": {
+        "type": "object",
+        "title": "Pagination information",
+        "x-internal": true,
+        "properties": {
+          "pageNumber": {
+            "type": "integer",
+            "description": "Current page number."
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "Number of items to return in results array.",
+            "maximum": 2000
+          },
+          "totalResults": {
+            "type": "integer",
+            "description": "Total number of items."
+          },
+          "_links": {
+            "$ref": "#/components/schemas/PagingInfo/definitions/links"
+          }
+        },
+        "definitions": {
+          "links": {
+            "title": "Hal Links",
+            "type": "object",
+            "required": [
+              "self",
+              "current"
+            ],
+            "properties": {
+              "self": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "current": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "next": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "previous": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              }
+            },
+            "examples": [
+              {
+                "self": {
+                  "href": "/companies/{id}/data/{dataType}"
+                },
+                "current": {
+                  "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+                }
+              }
+            ]
+          },
+          "halRef": {
+            "title": "Hypertext reference",
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string",
+                "format": "uri-reference",
+                "description": "Uri hypertext reference."
+              }
+            }
+          }
+        },
+        "required": [
+          "pageNumber",
+          "pageSize",
+          "totalResults",
+          "_links"
+        ],
+        "examples": [
+          {
+            "_links": {
+              "pageNumber": 1,
+              "pageSize": 10,
+              "totalResults": 1,
+              "self": {
+                "href": "/companies/{id}/data/{dataType}"
+              },
+              "current": {
+                "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+              }
+            }
+          }
+        ]
+      },
+      "SourceModifiedDate": {
+        "title": "Source Modified Date",
+        "x-internal": true,
+        "type": "object",
+        "nullable": true,
+        "properties": {
+          "sourceModifiedDate": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DateTime"
+              },
+              {
+                "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+              }
+            ]
+          }
+        }
       },
       "Transaction": {
         "title": "Banking transaction",
@@ -1400,8 +1737,8 @@
           }
         ]
       },
-      "Transactions": {
-        "title": "Banking transactions",
+      "TransactionCategories": {
+        "title": "Transaction categories",
         "x-internal": true,
         "allOf": [
           {
@@ -1410,7 +1747,7 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/Transaction"
+                  "$ref": "#/components/schemas/TransactionCategory"
                 }
               }
             }
@@ -1504,8 +1841,8 @@
           }
         ]
       },
-      "TransactionCategories": {
-        "title": "Transaction categories",
+      "Transactions": {
+        "title": "Banking transactions",
         "x-internal": true,
         "allOf": [
           {
@@ -1514,7 +1851,7 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/TransactionCategory"
+                  "$ref": "#/components/schemas/Transaction"
                 }
               }
             }
@@ -1523,184 +1860,6 @@
             "$ref": "#/components/schemas/PagingInfo"
           }
         ]
-      },
-      "ModifiedDates": {
-        "title": "Modified dates",
-        "x-internal": true,
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/ModifiedDate"
-          },
-          {
-            "$ref": "#/components/schemas/SourceModifiedDate"
-          }
-        ]
-      },
-      "ModifiedDate": {
-        "title": "ModifiedDate",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "modifiedDate": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/DateTime"
-              },
-              {
-                "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
-              }
-            ]
-          }
-        }
-      },
-      "SourceModifiedDate": {
-        "title": "Source Modified Date",
-        "x-internal": true,
-        "type": "object",
-        "nullable": true,
-        "properties": {
-          "sourceModifiedDate": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/DateTime"
-              },
-              {
-                "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
-              }
-            ]
-          }
-        }
-      },
-      "PagingInfo": {
-        "type": "object",
-        "title": "Pagination information",
-        "x-internal": true,
-        "properties": {
-          "pageNumber": {
-            "type": "integer",
-            "description": "Current page number."
-          },
-          "pageSize": {
-            "type": "integer",
-            "description": "Number of items to return in results array.",
-            "maximum": 2000
-          },
-          "totalResults": {
-            "type": "integer",
-            "description": "Total number of items."
-          },
-          "_links": {
-            "$ref": "#/components/schemas/PagingInfo/definitions/links"
-          }
-        },
-        "definitions": {
-          "links": {
-            "title": "Hal Links",
-            "type": "object",
-            "required": [
-              "self",
-              "current"
-            ],
-            "properties": {
-              "self": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              },
-              "current": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              },
-              "next": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              },
-              "previous": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              }
-            },
-            "examples": [
-              {
-                "self": {
-                  "href": "/companies/{id}/data/{dataType}"
-                },
-                "current": {
-                  "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
-                }
-              }
-            ]
-          },
-          "halRef": {
-            "title": "Hypertext reference",
-            "type": "object",
-            "properties": {
-              "href": {
-                "type": "string",
-                "format": "uri-reference",
-                "description": "Uri hypertext reference."
-              }
-            }
-          }
-        },
-        "required": [
-          "pageNumber",
-          "pageSize",
-          "totalResults",
-          "_links"
-        ],
-        "examples": [
-          {
-            "_links": {
-              "pageNumber": 1,
-              "pageSize": 10,
-              "totalResults": 1,
-              "self": {
-                "href": "/companies/{id}/data/{dataType}"
-              },
-              "current": {
-                "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
-              }
-            }
-          }
-        ]
-      },
-      "AccountType": {
-        "title": "Bank Account Type",
-        "x-internal": true,
-        "enum": [
-          "Unknown",
-          "Credit",
-          "Debit"
-        ],
-        "type": "string",
-        "description": "The type of transactions and balances on the account.  \nFor Credit accounts, positive balances are liabilities, and positive transactions **reduce** liabilities.  \nFor Debit accounts, positive balances are assets, and positive transactions **increase** assets."
-      },
-      "ErrorMessage": {
-        "title": "Error message",
-        "type": "object",
-        "x-internal": true,
-        "properties": {
-          "statusCode": {
-            "type": "integer",
-            "description": "The HTTP status code returned by the error."
-          },
-          "service": {
-            "type": "string",
-            "description": "Codat's service the returned the error."
-          },
-          "error": {
-            "type": "string",
-            "description": "A brief description of the error."
-          },
-          "correlationId": {
-            "type": "string",
-            "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
-          },
-          "canBeRetried": {
-            "type": "string",
-            "description": "`True` if the error occurred transiently and can be retried."
-          },
-          "detailedErrorCode": {
-            "type": "integer",
-            "description": "Machine readable error code used to automate processes based on the code returned."
-          }
-        }
       }
     },
     "parameters": {
@@ -1775,6 +1934,38 @@
       }
     },
     "responses": {
+      "Malformed-Query": {
+        "description": "Your `query` parameter was not correctly formed",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Malformed query": {
+                "value": {
+                  "statusCode": 400,
+                  "service": "ClientsApi",
+                  "error": "Error parsing query - Malformed query.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              },
+              "Unresolved property": {
+                "value": {
+                  "statusCode": 400,
+                  "service": "PullApi",
+                  "error": "Error parsing query - Could not resolve property isCompleted on Dataset",
+                  "correlationId": "98457fb9956b7f9b4b2fd4f6e23bb5c8",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
       "Unauthorized": {
         "description": "Your API request was not properly authorized.",
         "content": {
@@ -1797,19 +1988,41 @@
           }
         }
       },
-      "Malformed-Query": {
-        "description": "Your `query` parameter was not correctly formed",
+      "Payment-Required": {
+        "description": "An account limit has been exceeded. The type of limit is described in the error property:\n\n- You have exceeded the 50-company limit that applies to a Free plan. Delete any companies you no longer need and retry the request.\n- The requested sync schedule is not allowed. You requested an hourly sync schedule but this functionality is not included in the Free plan.\n- Your Free account is older than 365 days and has expired. Contact support@codat.io.\n",
         "content": {
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/ErrorMessage"
             },
             "examples": {
-              "Malformed query": {
+              "Conflict": {
                 "value": {
-                  "statusCode": 400,
-                  "service": "ClientsApi",
-                  "error": "Error parsing query - Malformed query.",
+                  "statusCode": 429,
+                  "service": "PublicApi",
+                  "error": "You have exceeded the 50-company limit that applies to a Free plan. We recommend that you delete any companies you no longer need and retry the request.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "You are using an outdated API key or a key not associated with that resource.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 403,
+                  "service": "PublicApi",
+                  "error": "You are using an outdated API key or a key not associated with that resource.",
                   "correlationId": "bc997528a9d7abb9161ef45f05d38599",
                   "canBeRetried": "Unknown",
                   "detailedErrorCode": 0
@@ -1874,6 +2087,72 @@
                   "statusCode": 409,
                   "service": "PublicApi",
                   "error": "The data set has not been requested.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Too-Many-Requests": {
+        "description": "Too many requests were made in a given amount of time. Wait a short period and then try again.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 429,
+                  "service": "PublicApi",
+                  "error": "You have made too many requests in a given amount of time; please retry later.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Internal-Server-Error": {
+        "description": "There is a problem with our server. Please try again later.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 500,
+                  "service": "PublicApi",
+                  "error": "There is a problem with our server. Please try again later.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Service-Unavailable": {
+        "description": "The Codat API is temporarily offline for maintenance. Please try again later.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 500,
+                  "service": "PublicApi",
+                  "error": "The Codat API is temporarily offline for maintenance. Please try again later.",
                   "correlationId": "bc997528a9d7abb9161ef45f05d38599",
                   "canBeRetried": "Unknown",
                   "detailedErrorCode": 0

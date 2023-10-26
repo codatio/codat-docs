@@ -106,7 +106,7 @@ module.exports = {
           rel: null,
         },
         {
-          href: "https://bit.ly/codatstatus",
+          href: "https://status.codat.io/",
           label: "API status",
           target: "_blank",
           rel: null,

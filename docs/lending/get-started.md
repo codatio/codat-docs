@@ -85,7 +85,7 @@ In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate
 
 ## Use Lending API
 
-Before you can collect your SMB customer's data, you need to create a Codat [company](./terms/company) and connect it to a data source (for example, an accounting platform). You can do that in two ways:
+Before you can collect your SMB customer's data, you need to create a Codat [company](../terms/company) and connect it to a data source (for example, an accounting platform). You can do that in two ways:
 
 * In the [Codat Portal](https://app.codat.io) by navigating to **Companies > Create company**
 * By calling the [Create company](/lending-api#/operations/create-company) endpoint of our API
