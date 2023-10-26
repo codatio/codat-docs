@@ -12,7 +12,7 @@ dcoplowe:
 
 pzaichkina:
   name: Polina Zaichkina
-  title: Technical writer
+  title: Technical Writer
   url: https://github.com/pzaichkina
   image_url: https://github.com/pzaichkina.png
 
@@ -69,3 +69,9 @@ d-laing:
   title: Technical writer
   url: https://github.com/d-laing
   image_url: https://github.com/d-laing.png
+
+todorlizhev:
+  name: Todor Lizhev
+  title: Software Engineer
+  url: https://github.com/todorlizhev
+  image_url: https://github.com/todorlizhev.png
