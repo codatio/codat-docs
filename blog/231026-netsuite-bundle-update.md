@@ -13,4 +13,4 @@ Previously, users may have experienced an issue where attachments using a `M/DD/
 
 ## Action required
 
-If you use our NetSuite integration and have experienced the issue described above, update your bundle to the newest v1.23.0 version.
+Update to the latest version (>= v.1.23.0) of our NetSuite bundle.
