@@ -90,6 +90,20 @@ Codat offers official SDK client libraries for different programming languages, 
 
 Looking for a language that's not here? [Request support for a new language](https://forms.gle/jEWjV1EDhiB5KEGP9).
 
+### Library versions
+
+Codat's client library version policy is based on [semantic versioning](https://semver.org/spec/v2.0.0.html).
+For example, a library version 4.2.0 defines the _major_ version as 4, _minor_ as 2, and the _patch_ 0.
+Every new library release will increment one of the version components depending on the feature or bug fix.
+
+- **Major** component is incremented when the release contains a breaking change that is incompatible with the latest version.
+This would include a change to a property, type, method or parameter.
+For example, adding an value to existing enum. 
+- **Minor** component is incremented when the release contains a new feature that is backwards compatible with the latest version. 
+This would include a new property, type, method or parameter. For example, adding an optional parameter.
+- **Patch** component is incremented when the release contains backwards compatible bug fixes.
+This would include any internal code changes to the library that does not change any properties, types, methods or parameters.
+
 ## Community libraries
 
 Codat's awesome community has self-published a number of libraries themselves!
