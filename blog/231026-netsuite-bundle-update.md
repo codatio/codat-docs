@@ -5,7 +5,7 @@ tags: ["NetSuite", "Update"]
 authors: todorlizhev
 ---
 
-We have released a new version of our NetSuite bundle that contains fixes to the display of attachments. 
+We have released a new version of our NetSuite bundle that supports the American date format, `month/day/year`, when displaying attachments. 
 
 <!--truncate-->
 
