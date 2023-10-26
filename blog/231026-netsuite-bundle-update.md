@@ -13,4 +13,4 @@ Previously, users may have experienced an issue where attachments using a `M/DD/
 
 ## Action required
 
-You can update your NetSuite bundle to its latest version `v1.23.0` to take advantage of the `M/DD/YYYY h:mm tt` datetime format support.
+You can update your NetSuite bundle to its latest version (`v1.23.0` or above) to take advantage of the `M/DD/YYYY h:mm tt` datetime format support.
