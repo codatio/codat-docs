@@ -47,8 +47,7 @@ module.exports = [
     type: "category",
     label: "QuickBooks Online",
     items: [
-      "bank-feeds/integrations/qbo/quickbooksonline",
-      "bank-feeds/integrations/qbo/qbo-mapping",
+      "bank-feeds/integrations/qbo/mapping",
     ],
     customProps: {
       hr: true,
@@ -59,17 +58,16 @@ module.exports = [
     type: "category",
     label: "Sage",
     items: [
-      "bank-feeds/integrations/sage/sage",
-      "bank-feeds/integrations/sage/sage-mapping",
+      "bank-feeds/integrations/sage/mapping",
     ],
   },
-  {
-    type: "category",
-    label: "Xero",
-    items: [
-      "bank-feeds/integrations/xero/xero",
-    ],
-  },
+//  {
+//    type: "category",
+//    label: "Xero",
+//    items: [
+//      "bank-feeds/integrations/xero/xero",
+//    ],
+//  },
   {
     type: "doc",
     id: "bank-feeds/guides/bank-feeds-tutorial",
