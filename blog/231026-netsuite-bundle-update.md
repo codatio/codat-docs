@@ -5,7 +5,7 @@ tags: ["NetSuite", "Update"]
 authors: todorlizhev
 ---
 
-We have released a new version of our NetSuite bundle that supports the American date format, `month/day/year`, when displaying attachments. 
+We have released a new version of our NetSuite bundle that supports the `M/DD/YYYY h:mm tt` datetime format when displaying attachments.
 
 <!--truncate-->
 
@@ -13,4 +13,4 @@ Previously, users may have experienced an issue where attachments using a `M/DD/
 
 ## Action required
 
-Update to the latest version (>= v.1.23.0) of our NetSuite bundle.
+You can update your NetSuite bundle to its latest version `v1.23.0` to take advantage of the `M/DD/YYYY h:mm tt` datetime format support.
