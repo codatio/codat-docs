@@ -22,18 +22,20 @@ module.exports = [
     id: "bank-feeds/create-account",
     customProps: {
       hr: true,
-      section: "Configure and build",
+      section: "Build your solution",
     },
   },
   {
     type: "category",
-    label: "Map accounts",
+    label: "Establish bank feed",
+    collapsed: true,
+    link: {
+      type: 'doc',
+      id: "bank-feeds/mapping/overview",
+    },
     items: [
-      "bank-feeds/mapping",
       "bank-feeds/mapping/codat-ui",
       "bank-feeds/mapping/api-mapping",
-      "bank-feeds/mapping/qbo-mapping",
-      "bank-feeds/mapping/sage-mapping",
     ],
   },
   {
@@ -42,30 +44,45 @@ module.exports = [
     id: "bank-feeds/pushing-transactions",
   },
   {
-    type: "doc",
+    type: "category",
     label: "QuickBooks Online",
+    items: [
+      "bank-feeds/integrations/qbo/mapping",
+    ],
     customProps: {
       hr: true,
-      section: "Bank feeds integrations",
+      section: "Manage integrations",
     },
-    id: "integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds",
   },
   {
-    type: "doc",
+    type: "category",
     label: "Sage",
-    id: "integrations/bank-feeds/sage-bank-feeds/sage-bank-feeds",
+    items: [
+      "bank-feeds/integrations/sage/mapping",
+    ],
   },
-  {
-    type: "doc",
-    label: "Xero",
-    id: "integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds",
-  },
+//  {
+//    type: "category",
+//    label: "Xero",
+//    items: [
+//      "bank-feeds/integrations/xero/xero",
+//    ],
+//  },
   {
     type: "doc",
     id: "bank-feeds/guides/bank-feeds-tutorial",
-    label: "Tutorial",
     customProps: {
       hr: true,
+      section: "Guides",
+    },
+  },
+  {
+    type: "link",
+    href: "/bank-feeds/troubleshooting",
+    label: "Troubleshooting and FAQ",
+    customProps: {
+      hr: true,
+      section: "Reference",
     },
   },
   {
