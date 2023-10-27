@@ -41924,7 +41924,7 @@
   "components": {
     "schemas": {
       "Account": {
-        "title": "Account",
+        "title": "Accounting: Account",
         "description": "﻿> **Language tip:** Accounts are also referred to as **chart of accounts**, **nominal accounts**, and **general ledger**.\n\nView the coverage for accounts in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nAccounts are the categories a business uses to record accounting transactions. From the Accounts endpoints, you can retrieve a list of all accounts for a specified company.\n\nThe categories for an account include:\n* Asset\n* Expense\n* Income\n* Liability\n* Equity.\n\nThe same account may have a different category based on the integration it is used in. For example, a current account (known as checking in the US) should be categorized as `Asset.Current` for Xero, and `Asset.Bank.Checking` for QuickBooks Online.\n\nAt the same time, each integration may have its own requirements to the categories. For example, a Paypal account in Xero is of the `Asset.Bank` category and therefore requires additional properties to be provided.\n\nTo determine the list of allowed categories for a specific integration, you can:\n- Follow our [Create, update, delete data](https://docs.codat.io/using-the-api/push) guide and use the [Get create account model](https://docs.codat.io/sync-for-payables-api#/operations/get-create-chartOfAccounts-model).\n- Refer to the integration's own documentation.\n\n> **Accounts with no category**\n>\n> If an account is pulled from the chart of accounts and its nominal code does not lie within the category layout for the company's accounts, then the **type** is `Unknown`. The **fullyQualifiedCategory** and **fullyQualifiedName** fields return `null`.\n>\n> This approach gives a true representation of the company's accounts whilst preventing distorting financials such as a company's profit and loss and balance sheet reports.",
         "allOf": [
           {
@@ -42070,7 +42070,7 @@
         "type": "object"
       },
       "Accounts": {
-        "title": "Accounts",
+        "title": "Accounting: Accounts",
         "x-internal": true,
         "allOf": [
           {
@@ -42090,7 +42090,7 @@
         ]
       },
       "Address": {
-        "title": "Accounting address",
+        "title": "Accounting: Address",
         "x-internal": true,
         "type": "object",
         "properties": {
@@ -42144,7 +42144,7 @@
         }
       },
       "Attachment": {
-        "title": "Attachment",
+        "title": "Accounting: Attachment",
         "description": "The Codat API supports pulling and pushing of file attachments for invoices, bills, direct costs, and direct incomes.\n\n> **Retrieving attachments**\n> \n> If a company is authorized, you can query the Codat API to read, download, and upload attachments without requiring a fresh sync of data.\n\nUnlike other data types, Codat doesn't support [sync settings](https://docs.codat.io/knowledge-base/advanced-sync-settings) for attachments.\n\nNote that different integrations have different requirements to file size and extension of attachments.\n\n| Integration       | File size | File extension                                                                                                                                               |\n|-------------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| Xero              | 4 MB      | 7Z, BMP, CSV, DOC, DOCX, EML, GIF, JPEG, JPG, KEYNOTE, MSG, NUMBERS, ODF,   ODS, ODT, PAGES, PDF, PNG, PPT, PPTX, RAR, RTF, TIF, TIFF, TXT, XLS, XLSX,   ZIP |\n| QuickBooks Online | 100 MB    | AI, CSV, DOC, DOCX, EPS, GIF, JPEG, JPG, ODS, PAGES, PDF, PNG, RTF, TIF,   TXT, XLS, XLSX, XML                                                               |\n| NetSuite          | 100 MB    | BMP, CSV, XLS, XLSX, JSON, PDF, PJPG, PJPEG, PNG, TXT, SVG, TIF, TIFF,   DOC, DOCX, ZIP                                                                      |\n\nView the coverage for accounts in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts\" target=\"_blank\">Data coverage explorer</a>.\n",
         "type": "object",
         "allOf": [
@@ -42201,7 +42201,7 @@
         "title": "Attachments"
       },
       "Bill": {
-        "title": "Bill",
+        "title": "Accounting: Bill",
         "description": "> **Invoices or bills?**\n>\n> We distinguish between invoices where the company *owes money* vs. *is owed money*. If the company has received an invoice, and owes money to someone else (accounts payable) we call this a Bill.\n>\n> See [Invoices](https://docs.codat.io/sync-for-payables-api#/schemas/Invoice) for the accounts receivable equivalent of bills.\n\nView the coverage for bills in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nIn Codat, a bill contains details of:\n* When the bill was recorded in the accounting system.\n* How much the bill is for and the currency of the amount.\n* Who the bill was received from — the *supplier*.\n* What the bill is for — the *line items*.\n\nSome accounting platforms give a separate name to purchases where the payment is made immediately, such as something bought with a credit card or online payment. One example of this would be QuickBooks Online's *expenses*.\n\nYou can find these types of transactions in our [Direct costs](https://docs.codat.io/sync-for-payables-api#/schemas/DirectCost) data model.",
         "type": "object",
         "allOf": [
@@ -42340,7 +42340,7 @@
                 "nullable": true,
                 "description": "An array of payment allocations.",
                 "items": {
-                  "title": "Payment allocation",
+                  "title": "Accounting: Payment allocation",
                   "type": "object",
                   "properties": {
                     "payment": {
@@ -42553,6 +42553,7 @@
               "purchaseOrderLineRef": {
                 "description": "Reference to the purchase order line this line was generated from.",
                 "type": "object",
+                "x-internal": true,
                 "title": "Record line reference",
                 "properties": {
                   "id": {
@@ -42596,7 +42597,7 @@
         }
       },
       "BillCreditNote": {
-        "title": "Bill credit note",
+        "title": "Accounting: Bill credit note",
         "description": "> **Bill credit notes or credit notes?**\n> \n> In Codat, bill credit notes represent accounts payable only. For accounts receivable, see [Credit notes](https://docs.codat.io/sync-for-payables-api#/schemas/CreditNote).\n\nView the coverage for bill credit notes in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nA bill credit note is issued by a supplier for the purpose of recording credit. For example, if a supplier was unable to fulfil an order that was placed by a business, or delivered damaged goods, they would issue a bill credit note. A bill credit note reduces the amount a business owes to the supplier. It can be refunded to the business or used to pay off future bills.\n\nIn the Codat API, a bill credit note is an accounts payable record issued by a [supplier](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier). \n\nA bill credit note includes details of:\n* The original and remaining credit.\n* Any allocations of the credit against other records, such as [bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill).\n* The supplier that issued the bill credit note.",
         "type": "object",
         "allOf": [
@@ -42822,6 +42823,7 @@
               },
               "tracking": {
                 "title": "Tracking",
+                "x-internal": true,
                 "type": "object",
                 "description": "Categories, and a project and customer, against which the item is tracked.",
                 "properties": {
@@ -42850,7 +42852,7 @@
                     ]
                   },
                   "projectRef": {
-                    "title": "Project reference",
+                    "title": "Accounting: Project reference",
                     "x-internal": true,
                     "required": [
                       "id"
@@ -43003,7 +43005,7 @@
         ]
       },
       "BillCreditNotes": {
-        "title": "Bill credit notes",
+        "title": "Accounting: Bill credit notes",
         "x-internal": true,
         "allOf": [
           {
@@ -43023,7 +43025,7 @@
         ]
       },
       "BillPayment": {
-        "title": "Bill payment",
+        "title": "Accounting: Bill payment",
         "description": "> **Bill payments or payments?**  \n> \n> We distinguish between transactions where the company received money vs. paid money. If the transaction represents a company spending money (accounts payable) we call this a Bill payment.\n>\n> See [payments](https://docs.codat.io/sync-for-payables-api#/schemas/Payment) for the accounts receivable equivalent of Bill payments, which covers [invoices](https://docs.codat.io/sync-for-payables-api#/schemas/Invoice) and [credit notes](https://docs.codat.io/sync-for-payables-api#/schemas/CreditNote).\n\n> View the coverage for bill payments in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billPayments\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nBill payments include all accounts payable transaction data ([bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) and [credit notes against bills](https://docs.codat.io/sync-for-payables-api#/schemas/BillCreditNote)).\n\nA bill payment in Codat usually represents an allocation of money within any customer accounts payable account. This includes, but is not strictly limited to:\n\n- A payment made against a bill — for example, a credit card payment, cheque payment, or cash payment.\n- An allocation of a supplier's credit note to a bill or perhaps a refund.\n- A bill payment made directly to an accounts payable account. This could be an overpayment or a prepayment, or a refund of a payment made directly to an accounts payable account.\n\nDepending on the bill payments which are allowed by the underlying accounting package, some of these types may be combined. Please see the example data section for samples of what these cases look like.\n\nIn Codat, a bill payment contains details of:\n\n- When the bill payment was recorded in the accounting system.\n- How much it is for and in the currency.\n- Who the payment has been paid to, the _supplier_.\n- The types of bill payments, the _line items_.  \n\nSome accounting platforms give a separate name to purchases where the payment is made immediately, such as something bought with a credit card or online payment. One example of this would be QuickBooks Online's _expenses_. You can find these types of transactions in our [Direct costs](https://docs.codat.io/sync-for-payables-api#/schemas/DirectCost) data model.\n\nBill payments is a child data type of [account transactions](https://docs.codat.io/sync-for-payables-api#/schemas/AccountTransaction).\n\n---\n\n## Bill payment types\n\n### Payment of a bill\n\nA payment paying a single bill should have the following properties:\n\n- A `totalAmount` indicating the amount of the bill that was paid. This is always positive.\n- A `lines` array containing one element with the following properties:\n  - An `amount` equal to the `totalAmount` above.\n  - A `links` array containing one element with the following properties:\n    - A `type` indicating the type of link, in this case a `Bill`.\n    - An `id` containing the ID of the bill that was paid.\n    - An amount of `-totalAmount` (negative `totalAmount`), indicating that the entirety of the paid amount is allocated to the bill.\n\n### Payment of multiple bills\n\nIt is possible for one payment to pay multiple bills. This can be represented using two possible formats, depending on how the supplier keeps their books:\n\n1. The payment has multiple entries in its **lines** array, one for each bill that is paid. Each line will follow the above example for paying a bill, and the rules detailed in the data model.\n2. The payment has a line with multiple links to each bill. This occurs when the proportion of the original payment allocated to each bill is not available.\n\nEach line is the same as those described above, with the **amount** indicating how much of the payment is allocated to the bill. The **amount** on the lines sum to the **totalAmount** on the payment.\n\n> Pushing batch payments to Xero\n> \n> When pushing a single bill payment to Xero to pay multiple bills, only the first format is supported—multiple entries in the payment **lines** array.\n\n### Payments and refunds on account\n\nA payment on account, that is a payment that doesn’t pay a specific bill, has one entry in its lines array.\n\nThe line has the following properties:\n\n- A **totalAmount** indicating the amount paid by a supplier or refunded to them by a company. A payment to the supplier is always negative. A refund is always positive.\n- A **links** array containing one element with the following properties:\n  - A **type** indicating the type of link. For a payment this is `PaymentOnAccount`. For a refund this is `Refund`.\n  - The **id** containing the ID of the supplier.\n  - An amount for the link is `0` **totalAmount** or the amount of the payment or refund.\n\nIt is possible to have a payment that is part on account and part allocated to a bill. Each line should follow the examples above.\n\n### Using a credit note to pay a bill\n\nThe payment of a bill using a credit note has one entry in its `lines` array. This **line** has the following properties:\n\n- An **amount** indicating the amount of money moved, which in this case is `0`, as the credit note and bill allocation must balance each other.\n- A **links** array containing two elements:\n  - The first link has:\n    - A **type** indicating the type of link, in this case a `Bill`.\n    - An **id** containing the ID of the bill that was paid.\n  - The second link has:\n    - A **type** indicating the type of link, in this case a `CreditNote`.\n    - An **id** containing the ID of the credit note used by this payment.\n\nThe **amount** field on the **line** equals the **totalAmount** on the payment.\n\n### Refunding a credit note\n\nA bill payment refunding a credit note has one entry in its **lines** array. This line has the following properties:\n\n- An **amount** indicating the amount of the credit note that was refunded. This is always negative, indicating that it is a refund.\n- A **links** array containing one element with the following properties:\n  - A **type** indicating the type of `link`, in this case a `CreditNote`.\n  - An **id** containing the ID of the credit note that was refunded.\n\nThe **totalAmount** field on the payment equals the line's **amount** field. These are both negative, as this is money leaving accounts payable.\n\n### Refunding a payment\n\nIf a payment is refunded, for example, when a company overpaid a bill and the overpayment is returned, there are two payment records: \n\n- One for the incoming overpayment.\n- Another for the outgoing refund.\n\nThe payment issuing the refund is identified by the fact that the **totalAmount** is negative. This payment has one entry in its lines array that have the following properties:\n\n- An **amount** indicating the amount that was refunded. This is always negative.\n- A **links** array containing one element with the following properties:\n  - A **type** indicating the type of a the link, in this case a `BillPayment`.\n  - An **id** containing the ID of the payment that was refunded.\n\nThe **amount** field on the line equals the **totalAmount** on the payment and is negative as this is money leaving accounts payable.\n\nThe payment that was refunded can be identified as it has a line where the `amount` on its `line` is positive and the type of the link is `Refund`. This payment may have several entries in its **lines** array if it was partly used to pay an bill. For example, a £1,050 payment paying a £1,000 bill with a refund of £50 has two lines: \n\n- One for £1,000 linked to the bill that was paid\n- Another for £50 linked to the payment that refunded the over payment. This link is of type `Refund` but the ID corresponds to a bill payment.\n\nThe line linked to the bill payment has the following properties:\n\n- An **amount** indicating the amount that was refunded. This is positive as its money that was added to accounts payable, but is balanced out by the negative amount of the refund.\n- A **links** array containing one element with the following properties:\n  - A **type** indicating the type of the link, in this case a `Refund`.\n  - An **id** containing the ID of the payment that refunded this line.\n\n> Linked payments\n> \n> Not all accounting packages support linked payments in this way. In these platforms you may see a payment on account and a refund on account.\n\n## Foreign currencies\n\nThere are two types of currency rate that are detailed in the bill payments data type: \n\nPayment currency rate: \n\n- Base currency of the accounts payable account.\n- Foreign currency of the bill payment.\n\nPayment line link currency rate: \n\n- Base currency of the item that the link represents.\n- Foreign currency of the payment.\n\nThese two rates allow the calculation of currency loss or gain for any of the transactions affected by the payment lines. The second rate is used when a bill payment is applied to an item in a currency that does not match either:\n\n- The base currency for the accounts payable account. \n- The currency of the item.\n",
         "type": "object",
         "allOf": [
@@ -43530,7 +43532,7 @@
         ]
       },
       "BillPayments": {
-        "title": "Bill payments",
+        "title": "Accounting: Bill payments",
         "x-internal": true,
         "allOf": [
           {
@@ -43550,7 +43552,7 @@
         ]
       },
       "Bills": {
-        "title": "Bills",
+        "title": "Accounting: Bills",
         "x-internal": true,
         "allOf": [
           {
@@ -43816,8 +43818,8 @@
         ]
       },
       "CompanyInfo": {
-        "title": "Company information",
-        "description": "> View the coverage for company info in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=cashFlowStatement\" target=\"_blank\">Data coverage explorer</a>.\n\nCompany info provides standard details about a linked company such as their address, phone number, and company registration.\n\n> **Company information or companies?**\n> \n> Company information is standard information that is held in the accounting platform about a company. `Companies` is an endpoint that lists businesses in the Codat system that have linked and shared their data sources.",
+        "title": "Accounting: Company profile",
+        "description": "> View the coverage for company profile in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=cashFlowStatement\" target=\"_blank\">Data coverage explorer</a>.\n\nCompany info provides standard details about a linked company such as their address, phone number, and company registration.\n\n> **Company information or companies?**\n> \n> Company profile is standard information that is held in the accounting platform about a company. `Companies` is an endpoint that lists businesses in the Codat system that have linked and shared their data sources.",
         "type": "object",
         "properties": {
           "companyName": {
@@ -44132,7 +44134,7 @@
         ]
       },
       "CreateAccountResponse": {
-        "title": "Create account response",
+        "title": "Accounting: Create account response",
         "x-internal": true,
         "allOf": [
           {
@@ -44149,7 +44151,7 @@
         ]
       },
       "CreateBillCreditNoteResponse": {
-        "title": "Create bill credit note response",
+        "title": "Accounting: Create bill credit note response",
         "x-internal": true,
         "allOf": [
           {
@@ -44166,7 +44168,7 @@
         ]
       },
       "CreateBillPaymentResponse": {
-        "title": "Create bill payment response",
+        "title": "Accounting: Create bill payment response",
         "x-internal": true,
         "allOf": [
           {
@@ -44183,7 +44185,7 @@
         ]
       },
       "CreateBillResponse": {
-        "title": "Create bill response",
+        "title": "Accounting: Create bill response",
         "x-internal": true,
         "allOf": [
           {
@@ -44200,7 +44202,7 @@
         ]
       },
       "CreateJournalEntryResponse": {
-        "title": "Create journal entry response",
+        "title": "Accounting: Create journal entry response",
         "x-internal": true,
         "allOf": [
           {
@@ -44217,7 +44219,7 @@
         ]
       },
       "CreateJournalResponse": {
-        "title": "Create journal response",
+        "title": "Accounting: Create journal response",
         "x-internal": true,
         "allOf": [
           {
@@ -44234,7 +44236,7 @@
         ]
       },
       "CreateSupplierResponse": {
-        "title": "Create supplier response",
+        "title": "Accounting: Create supplier response",
         "x-internal": true,
         "allOf": [
           {
@@ -44385,7 +44387,7 @@
         }
       },
       "Journal": {
-        "title": "Journal",
+        "title": "Accounting: Journal",
         "description": "> **Language tip:** For line items, or individual transactions, of a company's financial documents, refer to the [Journal entries](https://docs.codat.io/sync-for-payables-api#/schemas/JournalEntry) data type\n\n> View the coverage for journals in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journals\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nIn accounting software, journals are used to record all the financial transactions of a company. Each transaction in a journal is represented by a separate [journal entry](https://docs.codat.io/sync-for-payables-api#/schemas/JournalEntry). These entries are used to create the general ledger, which is then used to create the financial statements of a business.\n\nWhen a company records all their transactions in a single journal, it can become large and difficult to maintain and track. This is why large companies often use multiple journals (also known as subjournals) to categorize and manage journal entries.\n\nSuch journals can be divided into two categories:\n\n- Special journals: journals used to record specific types of transactions; for example, a purchases journal, a sales journal, or a cash management journal.\n- General journals: journals used to record transactions that fall outside the scope of the special journals.\n\nMultiple journals or subjournals are used in the following Codat integrations:\n\n- [Sage Intacct](https://docs.codat.io/integrations/accounting/sage-intacct/accounting-sage-intacct)  (mandatory)\n- [Exact Online](https://docs.codat.io/integrations/accounting/exact-online/accounting-exact-online)  (mandatory)\n- [Oracle NetSuite](https://docs.codat.io/integrations/accounting/netsuite/accounting-netsuite) (optional)\n\n> When pushing journal entries to an accounting platform that doesn’t support multiple journals (multi-book accounting), the entries will be linked to the platform-generic journal. The Journals data type will only include one object.\n",
         "type": "object",
         "allOf": [
@@ -44471,7 +44473,7 @@
         }
       },
       "JournalEntry": {
-        "title": "Journal entry",
+        "title": "Accounting: Journal entry",
         "description": "> **Language tip:** For the top-level record of a company's financial transactions, refer to the [Journals](https://docs.codat.io/sync-for-payables-api#/schemas/Journal) data type\n\n> View the coverage for journal entries in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nA journal entry report shows the entries made in a company's general ledger, or [accounts](https://docs.codat.io/sync-for-payables-api#/schemas/Account), when transactions are approved. The journal line items for each journal entry should balance.\n\nA journal entry line item is a single transaction line on the journal entry. For example: \n\n- When a journal entry is recording a receipt of cash, the credit to accounts receivable and the debit to cash are separate line items. \n- When a company needs to recognise revenue from an annual contract on a monthly basis, on receipt of cash for month one, they make a debit to deferred income and a credit to revenue.\n\nIn Codat a journal entry contains details of:\n\n- The date on which the entry was created and posted.\n- Itemised lines, including amounts and currency.\n- A reference to the associated accounts.\n- A reference to the underlying record. For example, the invoice, bill, or other data type that triggered the posting of the journal entry to the general ledger. \n\n> **Pushing journal entries**  \n> Codat only supports journal entries in the base currency of the company that are pushed into accounts denominated in the same base currency.",
         "type": "object",
         "allOf": [
@@ -44512,6 +44514,7 @@
               },
               "recordRef": {
                 "type": "object",
+                "x-internal": true,
                 "title": "Record reference",
                 "description": "Links the current record to the underlying record or data type that created it. \n\nFor example, if a journal entry is generated based on an invoice, this property allows you to connect the journal entry to the underlying invoice in our data model. ",
                 "properties": {
@@ -44586,7 +44589,7 @@
         }
       },
       "Journals": {
-        "title": "Journals",
+        "title": "Accounting: Journals",
         "x-internal": true,
         "allOf": [
           {
@@ -44707,7 +44710,7 @@
         ]
       },
       "PaymentMethod": {
-        "title": "Payment method",
+        "title": "Accounting: Payment method",
         "description": "> View the coverage for payment methods in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=paymentMethods\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nA Payment Method represents the payment method(s) used to pay a Bill. Payment Methods are referenced on [Bill Payments](https://docs.codat.io/sync-for-payables-api#/schemas/BillPayment) and [Payments](https://docs.codat.io/sync-for-payables-api#/schemas/Payment).",
         "type": "object",
         "allOf": [
@@ -44784,7 +44787,7 @@
         }
       },
       "PaymentMethods": {
-        "title": "Payment methods",
+        "title": "Accounting: Payment methods",
         "x-internal": true,
         "allOf": [
           {
@@ -45349,7 +45352,7 @@
         }
       },
       "Supplier": {
-        "title": "Supplier",
+        "title": "Accounting: Supplier",
         "description": "> View the coverage for suppliers in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nFrom the **Suppliers** endpoints, you can retrieve a list of [all the suppliers for a company](https://docs.codat.io/sync-for-payables-api#/operations/list-suppliers). Suppliers' data links to accounts payable [bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill).",
         "type": "object",
         "allOf": [
@@ -45520,7 +45523,7 @@
         ]
       },
       "TaxRate": {
-        "title": "Tax rate",
+        "title": "Accounting: Tax rate",
         "description": "> View the coverage for tax rates in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=taxRates\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nAccounting systems typically store a set of taxes and associated rates within the accounting package. This means that users don't have to look up or remember the rates for each type of tax. For example, applying the tax \"UK sales VAT\" to line items of an invoice adds the correct rate of 20%. \n\n### Tax components\n\nIn some cases, a tax is made up of multiple sub taxes, often called _components_ of the tax.  For example, you may have an item that is charged a tax rate called \"City import tax (8%)\" that has two components: \n\n- A city tax of 5%  \n- An import tax of 3%\n\n> **Effective tax rates**  \n> - Where there are multiple components of a tax, each component may be calculated on the original amount and added together. Alternatively, one tax may be calculated on the sub-total of the original amount plus another tax, which is referred to as _compounding_. When there is compounding, the effective tax rate is the rate that, if applied to the original amount, would result in the total amount of tax with compounding.  \n>\n> **Example:**  \n> A tax has two components. Both components have a rate of 10%, and one component is compound. In this case, there is a total tax rate of 20% but an effective tax rate of 21%.\n>\n> - For QuickBooks Online, Codat doesn't use compound rates. Instead, the calculated effective tax rate for each component is shown. This means that the effective and total rates are the same because the total tax rate is a sum of the component rates.",
         "type": "object",
         "allOf": [
@@ -45642,7 +45645,7 @@
         }
       },
       "TaxRates": {
-        "title": "Tax rates",
+        "title": "Accounting: Tax rates",
         "x-internal": true,
         "allOf": [
           {
@@ -45662,7 +45665,7 @@
         ]
       },
       "TrackingCategories": {
-        "title": "Tracking categories",
+        "title": "Accounting: Tracking categories",
         "x-internal": true,
         "allOf": [
           {
@@ -45682,7 +45685,7 @@
         ]
       },
       "TrackingCategory": {
-        "title": "Tracking category",
+        "title": "Accounting: Tracking category",
         "description": "Details of a category used for tracking transactions.\n\n> Language tip\n>\n> Parameters used to track types of spend in various parts of an organization can be called  **dimensions**, **projects**, **classes**, or **locations** in different accounting platforms. In Codat, we refer to these as tracking categories.\n\nView the coverage for tracking categories in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=trackingCategories\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nTracking categories are used to monitor cost centres and control budgets that sit outside the standard chart of accounts. Customers may use tracking categories to group together and track the income and costs of specific departments, projects, locations or customers.\n\nFrom their accounting system, customers can: \n\n- Create and maintain tracking categories and tracking category types.\n- View all tracking categories that are available for use.\n- View the relationships between the categories.\n- Assign invoices, bills, credit notes, or bill credit notes to one or more categories.\n- View the categories that a transaction belongs to.\n- View all transactions in a tracking category.\n\n### Tracking categories per platform\n\nReview the platform-specific tracking categories that Codat supports, and the level they are assigned to in the source platform. \n\n<table>\n<thead>\n  <tr>\n    <th>Platform</th>\n    <th>Tracking category</th>\n    <th>Tracking level</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td><b>Dynamics 365</b></td>\n    <td>Dimensions</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td><b>Freshbooks</b></td>\n    <td>Expense&nbsp;categories</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td><b>MYOB</b></td>\n    <td>Categories</td>\n    <td>Transaction</td>\n  </tr>\n  <tr>\n    <td rowspan=4><b>Netsuite</b></td>\n    <td>Classes</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td>Locations</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td>Departments</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td>Custom&nbsp;segments</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td rowspan=2><b>QuickBooks Desktop</b></td>\n    <td>Classes</td>\n    <td>Line item or transaction level</td>\n  </tr>\n  <tr>\n    <td>Locations</td>\n    <td>Transaction</td>\n  </tr>\n  <tr>\n    <td rowspan=2><b>QuickBooks Online</b></td>\n    <td>Classes</td>\n    <td>Line item or transaction level</td>\n  </tr>\n  <tr>\n    <td>Locations</td>\n    <td>Transaction</td>\n  </tr>\n  <tr>\n    <td rowspan=3><b>Sage 200</b></td>\n    <td>Cost&nbsp;centers</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n      <td>Departments</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td>Analysis&nbsp;codes</td>\n    <td>Transaction</td>\n  </tr>\n  <tr>\n    <td rowspan=3><b>Sage 50</b></td>\n    <td>Departments</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n     <td>Costcodes</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td>Projects</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td><b>Sage Intacct</b></td>\n    <td>Dimensions</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td><b>Xero</b></td>\n    <td>Tracking&nbsp;categories</td>\n    <td>Line item</td>\n  </tr>\n</tbody>\n</table>\n\n> **Example use case**\n>\n> Monitor the budget for your annual conference using a tracking category called 'AnnualConference2020' with the **type** set to **Costing**.\n\nIf a tracking category has a parent category, the ID of that parent category is displayed. There is also a `hasChildren` field that shows whether there are child subcategories nested beneath. ",
         "type": "object",
         "allOf": [
@@ -45765,7 +45768,7 @@
         ]
       },
       "TrackingCategoryTree": {
-        "title": "Tracking category tree",
+        "title": "Accounting: Tracking category tree",
         "description": "The full structure of a specific tracking category including any child or subcategories.",
         "type": "object",
         "allOf": [
@@ -45813,7 +45816,7 @@
         ]
       },
       "UpdateBillCreditNoteResponse": {
-        "title": "Update bill credit note response",
+        "title": "Accounting: Update bill credit note response",
         "x-internal": true,
         "allOf": [
           {
@@ -45830,7 +45833,7 @@
         ]
       },
       "UpdateBillResponse": {
-        "title": "Update bill response",
+        "title": "Accounting: Update bill response",
         "x-internal": true,
         "allOf": [
           {
@@ -45847,7 +45850,7 @@
         ]
       },
       "UpdateSupplierResponse": {
-        "title": "Update supplier response",
+        "title": "Accounting: Update supplier response",
         "x-internal": true,
         "allOf": [
           {

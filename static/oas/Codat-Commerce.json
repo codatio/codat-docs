@@ -7670,7 +7670,7 @@
   "components": {
     "schemas": {
       "Address": {
-        "title": "Address",
+        "title": "Commerce: Address",
         "x-internal": true,
         "type": "object",
         "properties": {
@@ -7717,8 +7717,8 @@
         }
       },
       "CompanyInfo": {
-        "title": "Commerce company info",
-        "description": "In the Codat system, company information includes standard commercial details about \na linked company, such as their address, phone number, and company registration.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=companyInfo) for this data type.\n",
+        "title": "Commerce: Company profile",
+        "description": "In the Codat system, company profile includes standard commercial details about \na linked company, such as their address, phone number, and company registration.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=companyInfo) for this data type.\n",
         "type": "object",
         "allOf": [
           {
@@ -7862,7 +7862,7 @@
         }
       },
       "Customer": {
-        "title": "Commerce customer",
+        "title": "Commerce: Customer",
         "description": "When a customer places an order with the connected commerce store their details are added to the Customers dataset. You can use the data from the Customers endpoints to calculate key metrics, such as customer churn.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-customers) for this data type.",
         "type": "object",
         "allOf": [
@@ -8032,7 +8032,7 @@
         ]
       },
       "Customers": {
-        "title": "Commerce customers",
+        "title": "Commerce: Customers",
         "x-internal": true,
         "allOf": [
           {
@@ -8061,7 +8061,7 @@
         "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
       },
       "Dispute": {
-        "title": "Commerce dispute",
+        "title": "Commerce: Dispute",
         "description": "A customer may file a payment dispute with their bank or other card issuer when they're unsatisfied with their purchase or believe they have been charged incorrectly. For example:  \n- They didn't receive an order.  \n- The product they received was different to the commerce store's description.  \n- They've been the victim of online fraud.  \n\nYou can use data from the Disputes endpoints to calculate key metrics, such as the number of chargebacks.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-disputes) for this data type.",
         "type": "object",
         "allOf": [
@@ -8159,7 +8159,7 @@
         ]
       },
       "Disputes": {
-        "title": "Disputes",
+        "title": "Commerce: Disputes",
         "x-internal": true,
         "allOf": [
           {
@@ -8210,7 +8210,7 @@
         }
       },
       "Location": {
-        "title": "Commerce location",
+        "title": "Commerce: Location",
         "type": "object",
         "description": "The Location datatype holds information on the geographic location at which stocks of products may be held, as referenced in the Products data type.\n\nA Location also holds information on geographic locations where orders were placed, as referenced in the Orders data type.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-locations) for this data type.",
         "allOf": [
@@ -8278,7 +8278,7 @@
         ]
       },
       "Locations": {
-        "title": "Locations",
+        "title": "Commerce: Locations",
         "x-internal": true,
         "allOf": [
           {
@@ -8339,7 +8339,7 @@
         ]
       },
       "Order": {
-        "title": "Commerce order",
+        "title": "Commerce: Order",
         "description": "Orders contain the transaction details for all products sold by the company, and include details of any payments, service charges, or refunds related to each order. You can use data from the Orders endpoints to calculate key metrics, such as gross sales values and monthly recurring revenue (MRR).\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-orders) for this data type.\n",
         "allOf": [
           {
@@ -8700,7 +8700,7 @@
         "type": "object"
       },
       "Orders": {
-        "title": "Orders",
+        "title": "Commerce: Orders",
         "x-internal": true,
         "allOf": [
           {
@@ -8809,7 +8809,7 @@
         ]
       },
       "Payment": {
-        "title": "Commerce payment",
+        "title": "Commerce: Payment",
         "description": "Payments contain details of all payments made by customers to a company, including: amounts, currency used, payment method, payment provider, and payment status.\n\nRefunds are recorded as separate, negative payments. Note that a refund can only occur in relation to a payment that has been completed (i.e. has a status of `Paid`). When a customer cancels an order _before_ a payment has been completed, the payment shows as `Cancelled`.\n\nYou can use data from the Payments endpoints to calculate key metrics, such as gross sales and monthly recurring revenue (MRR).\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-payments) for this data type.",
         "type": "object",
         "allOf": [
@@ -8955,7 +8955,7 @@
         }
       },
       "PaymentMethod": {
-        "title": "Commerce payment method",
+        "title": "Commerce: Payment method",
         "description": "A Payment Method represents the payment method(s) used to make payments.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-paymentMethods) for this data type.",
         "type": "object",
         "allOf": [
@@ -9010,7 +9010,7 @@
         }
       },
       "PaymentMethods": {
-        "title": "Commerce payment methods",
+        "title": "Commerce: Payment methods",
         "x-internal": true,
         "allOf": [
           {
@@ -9030,7 +9030,7 @@
         ]
       },
       "Payments": {
-        "title": "Commerce payments",
+        "title": "Commerce: Payments",
         "x-internal": true,
         "allOf": [
           {
@@ -9087,7 +9087,7 @@
         }
       },
       "Product": {
-        "title": "Commerce product",
+        "title": "Commerce: Product",
         "description": "A Product is an item in the company's inventory, and includes information about the price and quantity of all products, and variants thereof, available for sale.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-products) for this data type.\n",
         "type": "object",
         "allOf": [
@@ -9339,7 +9339,7 @@
         }
       },
       "ProductCategories": {
-        "title": "Product categories",
+        "title": "Commerce: Product categories",
         "x-internal": true,
         "allOf": [
           {
@@ -9359,7 +9359,7 @@
         ]
       },
       "ProductCategory": {
-        "title": "Commerce product category",
+        "title": "Commerce: Product category",
         "description": "Product categories are used to classify a group of products together, either by type (e.g. \"Furniture\"), or sometimes by tax profile.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-productCategories) for this data type.",
         "type": "object",
         "allOf": [
@@ -9439,7 +9439,7 @@
         ]
       },
       "Products": {
-        "title": "Products",
+        "title": "Commerce: Products",
         "x-internal": true,
         "allOf": [
           {
@@ -9501,7 +9501,7 @@
         }
       },
       "TaxComponent": {
-        "title": "Commerce tax component",
+        "title": "Commerce: Tax component",
         "description": "The Tax Components endpoints return tax rates data from the commerce platform, including tax rate names and values. This is to support the mapping of tax rates from the commerce platform to those in the accounting platform.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-disputes) for this data type.",
         "type": "object",
         "allOf": [
@@ -9595,7 +9595,7 @@
         ]
       },
       "TaxComponents": {
-        "title": "Tax components",
+        "title": "Commerce: Tax components",
         "x-internal": true,
         "allOf": [
           {
@@ -9615,7 +9615,7 @@
         ]
       },
       "Transaction": {
-        "title": "Commerce transaction",
+        "title": "Commerce: Transaction",
         "description": "Details of all financial transactions recorded in the commerce or point of sale system are added to the Transactions data type. For example, payments, service charges, and fees.\n\nYou can use data from the Transactions endpoints to calculate key metrics, such as:  \n- Transaction volumes  \n- Average transaction volume  \n- Average transaction value  \n- Returns  \n- Payouts\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-transactions) for this data type.",
         "type": "object",
         "allOf": [
@@ -9754,7 +9754,7 @@
         "examples": []
       },
       "Transactions": {
-        "title": "Commerce transactions",
+        "title": "Commerce: Transactions",
         "x-internal": true,
         "allOf": [
           {
