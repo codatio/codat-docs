@@ -8,13 +8,20 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import WritebackMapping from "@components/global/Prototypes/WritebackMapping";
 
-Once your SMB customer's loan has been approved, provide them with a user interface that lets them enable the loan writeback and configure loan writeback accounts so that the accounting entries are reflected correctly in their accounting platform. They will create or select existing, and subsequently map, the following elements:
+Once your SMB customer's loan has been approved, provide them with a user interface that lets them optionally enable the loan writeback and configure loan writeback accounts so that the accounting entries are reflected correctly in their accounting platform. They will create or select existing, and subsequently map, the following elements:
 
 * **SMB bank account**, the borrower's business account where the loan is deposited.
 * **Expense account**, an account to record incurred fees and interest.
 * **Supplier record**, a record to identify you, the lender, in future transactions.
 
 Your solution also needs a **lender bank account**, a virtual account that contains the lender's transactions. You would have created this source account when implementing [bank feeds](/bank-feeds/overview). Now, map it to a target account in your SMB customer's accounting platform. You can define it as `lendersBankAccount` in your solution.
+
+:::info Let your customers take control
+
+In some cases, the SMB's bookkeeper will want to manage their accounts themselves. To do this, make sure to offer your customers the option to disable loan writeback for manual reconciliation.
+
+:::
+
 
 For example, your user interface might look something like this:
 
