@@ -1,7 +1,7 @@
 ---
-title: "Create Codat's key elements"
+title: "Configure customer in Codat"
 description: "Create a company, its connection, and a source account that form the structure required to establish a bank feed"
-sidebar_label: Create key objects
+sidebar_label: Configure customer
 displayed_sidebar: bankfeeds
 ---
 
@@ -10,7 +10,7 @@ import TabItem from "@theme/TabItem"
 
 ## Overview
 
-When implementing your bank feed solution, you need to create several key objects required by Codat's Bank Feeds API: a [company](../terms/company), its connection to a data source, and a source account. 
+When implementing your bank feed solution, you need to create your customer as a [company](../terms/company) in Codat before registering their accounting platform as a connection and creating a source account to represent the company's actual bank account.
 
 You can see how these elements fit together and where they sit in the overall bank feeds process on the diagram below.
 

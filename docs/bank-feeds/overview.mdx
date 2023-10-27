@@ -29,13 +29,13 @@ Leverage our **Bank Feeds API** to simplify the deployment of bank feeds in your
 
 Our Bank Feeds API makes it easy for banks, neobanks, corporate card issuers, and payment providers to ensure customers can access their bank transaction data within their accounting software. 
 
-As a result, your customers enjoy a more complete and simplified accounting automation experience, save time closing their books,  and further reduce manual error without requiring third-party middleware or manual file uploads.
+As a result, your customers enjoy a more complete and simplified accounting experience, save time closing their books, and further reduce manual error without requiring third-party middleware or manual file uploads.
 
 ## Why use it?
 
-A recent survey revealed that [71% of Xero partners](https://www.xero.com/blog/2019/01/new-bank-feeds-process/) identify [bank feeds](../terms/bank-feed) and bank transaction reconciliation as their most valued features. With Bank Feeds API. you can easily meet this demand.
+A recent survey revealed that [71% of Xero partners](https://www.xero.com/blog/2019/01/new-bank-feeds-process/) identify [bank feeds](../terms/bank-feed) and bank transaction reconciliation as their most valued features. With Bank Feeds API, you can easily meet this demand.
 
-Leverage our coverage of multiple popular accounting platforms and remove barriers to product adoption, increasing customer retention and elevating their experience with your app as a result. 
+Leverage our coverage of the most popular accounting platforms and remove barriers to product adoption, increasing customer retention and elevating their experience with your app as a result. 
 
 #### With Bank Feeds API, you can: 
 
@@ -84,24 +84,24 @@ Bank Feeds API supports your build through all the key stages of establishing a 
 
 ![Bank Feeds API](/img/old/fd21af0-codat_whitepaper_accounting-automation_diagram_B.png)
 
-### [Create core elements](/bank-feeds/create-account)
+### [Configure customer](/bank-feeds/create-account)
 
-To establish a [bank feed](../terms/bank-feed) between a financial institution and an accounting software, you will create a _source account_ in Codat that serves as replica of an actual financial account, savings account or credit card. This account can later be mapped to a _target account_ in your customers' accounting software.
+To establish a [bank feed](../terms/bank-feed) between a financial institution and an accounting software, you will create a _source account_ in Codat that serves as replica of an actual financial account, savings account or credit card. This account can later be mapped to a _target account_ in your customer's accounting software.
 
 At the same time, you will also create additional Codat infrastructure elements, such as a [company](../terms/company) and a [connection](../terms/connection).
 
-### [Connect and map accounts](/bank-feeds/mapping/overview)
+### [Establish bank feed](/bank-feeds/mapping/overview)
 
 Next, you will enable your SMB customer to let you connect to their accounting platform. They will authorize that connection via our [auth flow](/auth-flow/overview), which you will implement when building with Bank Feeds API. 
 
-Then, provide your user with a UI so they can select the target accounts in that platform. This will tell Codat where exactly to push bank transactions. Depending on your customer's software, there are [three methods](/bank-feeds/mapping/mapping-overview) you can use for mapping: Codat's UI, your own UI, or the integration's UI.
+Then, provide your user with a UI so they can select the target accounts in that platform. This will tell Codat where exactly to establish a bank feed. Depending on your customer's software, there are [three methods](/bank-feeds/mapping/mapping-overview) you can use for mapping: Codat's UI, your own UI, or the integration's UI.
 
 :::note Platform requirements
 
 The setup process and platform registration requirements vary for each Bank Feeds API integration. For detailed instructions, refer to the documentation we provide for each integration.
 :::
 
-### [Create transactions](/bank-feeds/pushing-transactions)
+### [Import transactions](/bank-feeds/pushing-transactions)
 
 Once your SMB customer completes the authorization and account mapping process, you can begin the automatic upload of bank statements by pushing transactions into the target bank account on the accounting platform.
 

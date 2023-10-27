@@ -14,7 +14,7 @@ import {bankfeedsExternalMappingIntegrations, bankfeedsIntegrations} from '@comp
 
 The diagram below represents the overall activity flow when using Bank Feeds API, including your SMB customer and their accounting platform. It assumes you are using Codat's mapping interface to let the user select the accounts used for pushing bank statements.
 
-If you choose one of the [other mapping UI options](/bank-feeds/mapping/overview), you can visualize the flow by simply changing the actor of the mapping operation from `Codat` to `Your application` or `Accounting platform`.
+If you are using one of the [other mapping UI options](/bank-feeds/mapping/overview), you can visualize the flow by simply changing the actor of the mapping operation from `Codat` to `Your application` or `Accounting platform`.
 
 ```mermaid
 
@@ -29,12 +29,12 @@ sequenceDiagram
 
     app ->> codat: Passes company and connection details
     app ->> codat: Initiates auth flow
-    codat -->> smb: Displays auth flow
-    smb -->> codat: Authorizes connection
+    codat ->> smb: Displays auth flow
+    smb ->> codat: Authorizes connection
     codat ->> acctg: Establishes connection
     
     codat ->> smb: Displays mapping options
-    smb -->> codat: Confirms mapping selections
+    smb ->> codat: Confirms mapping selections
     
     loop Load bank statements
         smb ->> app: Spends money from bank account
@@ -45,29 +45,25 @@ sequenceDiagram
 
 ```
 
-## Configure Bank Feeds API
-
 Once you decide to build this flow with Bank Feeds API, you need to configure Codat accordingly. Let's go through these requirements in detail.
 
-### Enable the product
+## Enable Bank Feeds API
 
 1. Open the <a href="https://app.codat.io" target="_blank">Codat Portal</a> and sign in.
 2. Click on **Settings > Organizational settings > Products**.
 3. In the list of products, find _Bank Feeds API_ and click **Enable**. Then, follow the on-screen prompt.
 
-### Manage data sources
+## Manage data sources
 
 In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** and click **Manage integrations**. Next, click **Manage** next to the specific integration you want to enable and set it up to serve as a data source for the product. 
 
 <IntegrationsList integrations={bankfeedsIntegrations}/>
 
-Some of these integrations may require enhanced setup specific to bank feeds. We walk you through these in our integration-specific instructions in the _Manage integrations_ section of our Bank Feeds API documentation. 
+Some of these integrations require additional setup specific to bank feeds. We walk you through these in our integration-specific instructions in the _Manage integrations_ section of our Bank Feeds API documentation. 
 
-### Authorization flow
+## Authorization flow
 
-As part of using Bank Feeds API, you will need your customers to authorize your access to their data. To do so, use Link - our pre-built, conversion-optimized, and white-labelled authorization flow. 
-
-We recommend you fully embed the Link auth flow in your experience by using our [Embedded Link](/auth-flow/authorize-embedded-link) SDK in your front-end code. You can also choose our out-of-the-box [Hosted Link](/auth-flow/authorize-hosted-link) auth flow option to get up and running as quick as possible. 
+As part of using Bank Feeds API, you will need your customers to authorize your access to their data. To do so, use [Embedded Link](/auth-flow/authorize-embedded-link) - our pre-built, embeddable, conversion-optimized, and white-labeled authorization flow. 
 
 The solution lets you tailor the authorization journey to your business needs. You can:
 
@@ -75,7 +71,7 @@ The solution lets you tailor the authorization journey to your business needs. Y
 * [Set up company branding](/auth-flow/customize/branding).
 * [Set up redirects](/auth-flow/customize/set-up-redirects).
 
-### Webhooks
+## Webhooks
 
 Codat supports a range of [webhooks](/using-the-api/webhooks/core-rules-types) to help you manage your data pipelines. In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Rules** and click **Create new rule** to set up the following webhook and get the most out of Bank Feeds API:
 

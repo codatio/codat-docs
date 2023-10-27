@@ -27,7 +27,7 @@ module.exports = [
   },
   {
     type: "category",
-    label: "Map accounts",
+    label: "Establish bank feed",
     collapsed: true,
     link: {
       type: 'doc',

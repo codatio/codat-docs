@@ -1,7 +1,7 @@
 ---
-title: "Create bank transactions"
-description: "Learn how to create bank transaction data in your customer's accounting platform"
-sidebar_label: Push transactions
+title: "Import bank transactions"
+description: "Learn how to import bank transaction data from your application to your customer's accounting platform"
+sidebar_label: Import transactions
 displayed_sidebar: bankfeeds
 ---
 

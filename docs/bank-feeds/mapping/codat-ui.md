@@ -11,19 +11,15 @@ import {IntegrationsList} from '@components/global/Integrations'
 import {bankfeedsInternalMappingIntegrations} from '@components/global/Integrations/integrations'
 import Loom from '@components/global/Loom'
 
-<Loom source="https://www.loom.com/embed/48972835b6e74d199448b794f41b9997" />
-
-<br/>
-
 Quickly provide an outstanding mapping experience for your customers with minimal development effort by using our pre-built mapping user interface. It is designed to meet all third-party requirements and can be customized to match your logo and primary color scheme. 
 
 ## Map an account
 
-Direct your customer to the `linkUrl` returned in the [Create a connection](/bank-feeds/create-account#create-a-connection) response. After they've authorized your access to their accounting software in the resulting flow, they'll be guided to an interface where they can map their source account to an existing or a new target account within their accounting platform.
-
-The target accounts listed in the UI are filtered based on the parameters of the source account. For example, if the source account is a credit card in a USD currency, only USD credit accounts will appear in the "Target options" dropdown list.
+Direct your customer to the `linkUrl` returned in the [Create a connection](/bank-feeds/create-account#create-a-connection) response. After they've authorized your access to their accounting software, hey'll be taken to Codat's mapping UI (as seen on the screenshot below) where they will map their source account to an existing or a new target account within their accounting platform. 
 
 ![Codat-bank-feeds_account-mapping-ui](/img/bank-feeds/mappingUi.png "Codat-provided account mapping UI")
+
+The target accounts listed in the UI are filtered based on the parameters of the source account. For example, if the source account is a credit card in a USD currency, only USD credit accounts will appear in the "Target options" dropdown list.
 
 When a user has successfully mapped and linked their account, they will be redirected to your application based on the [redirect parameters](/auth-flow/customize/set-up-redirects) you configured. 
 
