@@ -265,5 +265,5 @@ Next, provide your customer with a **mapping** process interface so they can ass
 
 ## Read next
 
-* Enable your customer to map accounts to their accounting platform via a [mapping UI](/bank-feeds/mapping-overview).
+* Enable your customer to map accounts to their accounting platform via a [mapping UI](/bank-feeds/mapping/overview).
 
