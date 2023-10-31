@@ -246,7 +246,7 @@ All dropdown list options are shown to your merchants by default, but you can ch
 You can get a full list of dropdown items by calling the [List visible accounts](/sync-for-commerce-api#/operations/get-visible-accounts) endpoint:
 
 ```http
-GET clients/{clientId}/config/ui/accounts/platform/{platformKey}
+GET sync/commerce/config/ui/accounts/platform/{platformKey}
 ```
 
 This will return all dropdown items, identified by their `account-key`.
