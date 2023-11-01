@@ -53,9 +53,7 @@ graph LR;
 ```
 
 :::tip Authorize your API calls
-
 Remember to [authenticate](/using-the-api/authentication) when making calls to our API. Navigate to **Developers > API keys** in the Portal to pick up your authorization header.
-
 :::
 
 ## Create a company
