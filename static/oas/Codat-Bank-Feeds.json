@@ -2709,6 +2709,12 @@
             ],
             "example": "Complete"
           },
+          "statusDescription": {
+            "type": "string",
+            "nullable": true,
+            "description": "Additional information about the dataset status.",
+            "example": "Paused until 2022-10-23T00:00:00.000Z"
+          },
           "errorMessage": {
             "type": "string",
             "nullable": true,
@@ -2751,6 +2757,7 @@
             "connectionId": "51baa045-4836-4317-a42e-3542e991e581",
             "dataType": "invoices",
             "status": "Initial",
+            "statusDescription": "Paused until 2022-10-23T00:00:00.000Z",
             "requested": "2022-11-14T11:18:37.2798351Z",
             "progress": 10,
             "isCompleted": false,
