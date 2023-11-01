@@ -14,7 +14,7 @@ Once a company has mapped their source account to a target account, you can begi
 
 Before you can record your customer's bank transactions in their accounting platform, you need to generate a `transactions` object for each transaction that has been made from their account. 
 
-Collect transaction data within your own application and map it to Codat's [Bank transactions](/bank-feeds-api#/schemas/BankTransactions) schema. Add this to [Create bank transactions](/bank-feeds-api#/schemas/CreateBankTransactions), including the `sourceAccount` id that the transactions should be associated with at the top level. 
+Collect transaction data within your own application and map it to Codat's [Bank transactions](/bank-feeds-api#/schemas/BankTransactions) schema. Add this to [Create bank transactions](/bank-feeds-api#/schemas/CreateBankTransactions), including the `sourceAccount` id that the transactions should be associated with at the top level.  
 
 :::caution Transaction signs
 Make sure the transaction `amount` signs align with the `transactionType`. Codat issues a warning for inconsistencies, such as a `Debit` transaction with a positive amount.
