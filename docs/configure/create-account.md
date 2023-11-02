@@ -1,5 +1,5 @@
 ---
-title: "Paid plans"
+title: "Paid plan"
 description: "Upgrade to a payment plan that suits your needs"
 ---
 
@@ -23,9 +23,9 @@ If you're an Admin, you can view the plan you're currently on in the Codat Porta
 | Mutual TLS              | ➖             | ☑️ Add-on              |
 | Rate limits             | 500 req/day     | 1000 req/day    |
 
-## Full access
+### Full access
 
-### Features
+#### Features
 
 Everything from Free plus:
 - Unlimited companies
@@ -34,25 +34,25 @@ Everything from Free plus:
 - Implementation support
 - Hourly syncing
 
-### Billing
+#### Billing
 
 [Contact our sales team](https://www.codat.io/plans/#get-in-touch) to discuss enterprise pricing options.
 
 <details>
 <summary>Other options</summary>
 
-## Start-up plan 
+### Start-up plan 
 
 You can get started with Codat with usage-based billing at £25/$30 per month per Active Connected Company (active = data pushed or pulled in a given billing period).
 
-### Features
+#### Features
 
 - Access our standardized APIs and Assess
 - No monthly commitment
 - Unlimited companies
 - Unlimited seats
 
-### Billing
+#### Billing
 
 When using our start-up plan, you do not pay any monthly commitment fees. Instead, you will be charged for **each active company**. 
 
