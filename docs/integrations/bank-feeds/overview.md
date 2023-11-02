@@ -19,4 +19,4 @@ Read more about our [Bank Feeds API](/bank-feeds/overview) product.
 
 ## Relevant products
 
-<Products mini={true} products={["Bank Feeds API", "Sync for Payroll"]}/>
+<Products mini={true} products={["Bank Feeds API"]}/>
