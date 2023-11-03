@@ -480,6 +480,10 @@ module.exports = {
       to: "/using-the-api/change-policy",
     },
     {
+      from: "/reference/authentication",
+      to: "/using-the-api/overview",
+    },
+    {
       from: "/introduction/create-account",
       to: "/configure/create-account",
     },
