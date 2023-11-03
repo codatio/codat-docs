@@ -14,7 +14,7 @@ When implementing your bank feed solution, you need to create your customer as a
 
 You can see how these elements fit together and where they sit in the overall bank feeds process on the diagram below.
 
-![A diagram demonstrating the relationship between various Codat concepts and subsequent steps of the Bank Feeds API process](codatio/codat-docs/static/img/bank-feeds/bankfeeds-concept-flow.png)
+![A diagram demonstrating the relationship between various Codat concepts and subsequent steps of the Bank Feeds API process](/img/bank-feeds/bankfeeds-concept-flow.png)
 
 :::tip Authorize your API calls
 Remember to [authenticate](/using-the-api/authentication) when making calls to our API. Navigate to **Developers > API keys** in the Portal to pick up your authorization header.
