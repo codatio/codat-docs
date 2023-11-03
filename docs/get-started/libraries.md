@@ -96,8 +96,8 @@ Codat's client library version policy uses [semantic versioning](https://semver.
 
 Every new library release will increment one of the version components depending on the type of update:
 
-- **Major** component is incremented when the release contains a breaking change that is incompatible with the latest version. This includes a change to a property, type, method or parameter (for example, adding a value to an existing `enum`). 
-- **Minor** component is incremented when the release contains a new feature that is backwards-compatible with the latest version. This includes a new property, type, method or parameter (for example, adding an optional parameter).
+- **Major** component is incremented when the release contains a breaking change that is incompatible with the previous version. This includes a change to a property, type, method or parameter (for example, adding a value to an existing `enum`). 
+- **Minor** component is incremented when the release contains a new feature that is backwards-compatible with the latest version. This includes a new property, type, method or parameter.
 - **Patch** component is incremented when the release contains backwards-compatible bug fixes. This includes internal code changes to the library that do not change any properties, types, methods or parameters.
 
 ## Community libraries
