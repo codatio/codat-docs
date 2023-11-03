@@ -14,43 +14,7 @@ When implementing your bank feed solution, you need to create your customer as a
 
 You can see how these elements fit together and where they sit in the overall bank feeds process on the diagram below.
 
-```mermaid
-graph LR;
-
-    style codatCompany fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
-    style codatDataConnection fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
-    style codatSourceAccount fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
-    style targetAccount fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
-    style Mapping fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
-
-    subgraph Codat
-    direction TB;
-        codatCompany[<u style='color:#522ce7'>Company</u><br><br>A representation of your SMB customer <br> that wishes to establish a bank feed.]  -.- codatDataConnection[<u style='color:#522ce7'>Connection</u><br><br>A link between a Codat company and their <br> selected accounting software.]
-        click codatCompany "/bank-feeds/setup#create-a-company" "Companies"
-        codatDataConnection -.- codatSourceAccount[<u style='color:#522ce7'>Source account</u><br><br>A representation of an actual business bank <br> account, savings account, or credit card.]
-        click codatDataConnection "/bank-feeds/setup#create-a-connection" "Data Connections"
-        click codatSourceAccount "/bank-feeds/setup#create-a-source-account" "Source Accounts"
-    end
-
-    style Codat fill:#f1f4fa,stroke:#666,stroke-width:0px;
-
-    subgraph Mapping[<u style='color:#522ce7'>Mapping</u><br><br>The authorization and mapping process performed <br> by the SMB customer to establish a bank feed <br> between a source account and a target account.]
-
-    end
-    
-    subgraph AccountingSoftware[Accounting software]
-    direction TB;
-        targetAccount[<style='color:#2a2d3d'>Target account<br><br>The account where bank transactions are <br> posted by the bank feed to be later <br> reconciled by the SMB customer.] 
-    end
-
-    style AccountingSoftware stroke-width:0px;
-
-    Codat -.-> Mapping
-          click Mapping "/bank-feeds/mapping-overview" "Mapping"
-    Mapping -.-> AccountingSoftware
-
-
-```
+![A diagram demonstrating the relationship between various Codat concepts and subsequent steps of the Bank Feeds API process](codatio/codat-docs/static/img/bank-feeds/bankfeeds-concept-flow.png)
 
 :::tip Authorize your API calls
 Remember to [authenticate](/using-the-api/authentication) when making calls to our API. Navigate to **Developers > API keys** in the Portal to pick up your authorization header.
