@@ -10,7 +10,7 @@ If you're an Admin, you can view the plan you're currently on in the Codat Porta
 
 | Feature                 | Free trial           | Full access       |
 | :-                      | :--             | :--            |
-| Product access          | Standardized APIs, Assess   | All products        |
+| Product access          | All products   | All products        |
 | Seats                   | Unlimited      | Unlimited        |
 | Usage                   | 50 companies<br/>5 connections/source | Unlimited        |
 | Hourly syncs            | ➖             | ✅              |
