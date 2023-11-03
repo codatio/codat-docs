@@ -1,6 +1,7 @@
 ---
 title: "Paid plan"
 description: "Upgrade to a payment plan that suits your needs"
+hide_table_of_contents: true
 ---
 
 When you're ready to move to a paid plan, you can [contact our sales team](https://www.codat.io/plans/#get-in-touch) to discuss pricing options.
