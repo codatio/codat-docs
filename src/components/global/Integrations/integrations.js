@@ -1,9 +1,10 @@
 export const integrationsFilterCustomData = [
-	"BigCommerce",
-  "FreeAgent",
-  "MYOB",
+//	"BigCommerce",
+//  "FreeAgent",
+  "MYOB Business",
+  "Oracle NetSuite",
   "QuickBooks Online",
-  "Sage Intacct",
+//  "Sage Intacct",
   "Xero",
 ]
 

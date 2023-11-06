@@ -46,7 +46,6 @@ module.exports = [
       "using-the-api/webhooks/receive-webhooks-as-email",
     ],
   },
-  "using-the-api/custom-data",
   {
     type: "category",
     label: "Supplemental data",

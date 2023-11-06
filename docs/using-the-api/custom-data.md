@@ -1,21 +1,68 @@
 ---
-title: "Custom data"
-sidebar_label: "Custom data"
+title: "Custom data types"
+sidebar_label: "Custom data types"
 description: "Leverage existing integrations to fetch data types not included in Codat's out-of-the box data model"
 ---
 
 import {IntegrationsList} from '@components/global/Integrations'
 import {integrationsFilterCustomData} from '@components/global/Integrations/integrations'
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-## What is custom data?
+:::caution Advanced feature
+Request guidance from your Codat contact if you want to implement this advanced feature of our API.
+:::
 
-We relied on our extensive industry experience and knowledge to identify and standardize a multitude of data types that best support your business, and included them in Codat's data model. 
+## What are custom data types?
 
-However, these data types are only a subset of what is available in the source platforms we integrate with. For example, we do not currently fetch any data from Xero's [Payroll](https://developer.xero.com/documentation/api/payrolluk/overview) and NetSuite's [Expense Reports](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_N908140.html#Expense-Reports) endpoints.
+Codat's standard data models leverage our extensive industry experience and knowledge, which we used to identify and standardize a multitude of data types that best support your business. 
 
-With custom data, we made it possible for you to fetch new, non-standardized data types that are not included in our out-of-the box data model for the integrations we support.
+However, your use case may require additional data types from the platforms we integrate with that are excluded from our standard model. For example, we do not currently fetch any data from Xero's [Payroll](https://developer.xero.com/documentation/api/payrolluk/overview) and NetSuite's [Expense Reports](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_N908140.html#Expense-Reports) endpoints.
 
-Custom data is only available to consume via our API.
+With custom data, you can fetch new, non-standardized data types that are not included in our out-of-the box data model for the integrations we support. You will need to configure and request these custom data types using our API endpoints. 
+
+Here is how a request and response for a custom `employee` data type might look like:
+
+```json
+GET /companies/{companyId}/data/custom/employees
+
+{
+  "id": "aldc55a8-4132-03c0-671c-2be7e0549770", 
+  "providerName": "Example Provider",
+  "dateTimeUTC": "2017-09-05T04:05:18.4O09114", 
+  "httpStatusCode": "OK",
+  "pagination": {
+    "page": 1,
+    "pageSize": 100,
+    "pageCount": 1,
+    "itemCount": 4
+  },
+  "problem": null,
+  "employees": [
+    {
+    "employeeID": "d90457c4-flbe-4f2e-b4e3-f766390a7e30",
+    "firstName": "Jack",
+    "lastName": "Allan",
+    "dateOfBirth": "1985-03-24T00:00:00", 
+    "gender": "M",
+    "email": "jack.allan@email.com", 
+    "phoneNumber": "0401789123",
+    "startDate": "2012-03-19T00:00:00",
+    "isOffPayrollWorker": false,
+    "address": {
+      "addressLinel": "171 Midsummer Boulevard",
+      "addressLine2": "Block A",
+      "city": "Milton Keynes",
+      "county": "Buckinghamshire",
+      "postCode": "MK9 1EB"
+    },
+  "payrollCalendarlD": "d6cle0b8-8bl5-4769- bce0-63cel7917616",
+  "updatedDateUTC": "2017-06-27T04:56:03", 
+  "createdDateUTC": "2017-05-12T10:00:24", 
+  "endDate": null
+    },
+  ...
+```
 
 :::tip Custom or supplemental data?
 
@@ -25,53 +72,85 @@ Are you looking to fetch, create, or update additional _properties_ in data type
 
 ## Supported integrations
 
-<IntegrationsList filter={integrationsFilterCustomData}/>
-
-Custom data does not extend to all underlying API endpoints for Xero and Sage Intacct. To learn more about the limitations of custom data for these integrations, request coverage of unsupported endpoints, or discover integration-specific behaviors, please speak to your Codat contact. 
+<iframe 
+  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZhBnE0b69-_VZ107d-i-I4pjgGFgMBGL0rVq7yxdUJZoKSsvcHY4wX-p9YZyA0zX-gU6-2e1eBkhI/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
+  frameborder="0"
+  style={{ top: 0, left: 0, width: "100%", height: "400px" }}
+></iframe>
 
 ## Configure custom data
 
-You need to specify the new data type and its associated data source for each integration you require. We advise you to make your custom configuration as similar as possible to our standard data types so you can interact with them in exactly the same way. 
+### Create new custom data type
 
-To do so, use the Configure custom data (OAS LINK) endpoint.
+Use our Configure custom data (OAS LINK) endpoint to create a new data type and its associated data source for each integration you require. Make your custom configuration as similar as possible to our standard data types so you can interact with them in exactly the same way. Note the following:
 
-```http
-PUT /integrations​/{platformKey}/datatypes/custom/{customDataIdentifier}
-```
-
-Keep the following guidance in mind when creating your configuration: 
-
-- Only a single data source is allowed for each custom data type. 
-- It is not possible to change the `customDataIdentifier` once you created the configuration, but you can update the content of it using the same endpoint (I ASSUME THIS IS CORRECT?). 
+- You can only indicate a single data source for each custom data type. 
 - It is not possible to specify nested objects or arrays within the `requiredData` property.
+- You can query the underlying platform's API by specifying the query as part of the `dataSource` property.
 
-```json title="Example request body for myExpenseData custom data type"
+<Tabs>
+  <TabItem value="request" label="Request">  
+
+```json
+
+PUT /integrations​/{platformKey}/datatypes/custom/{customDataIdentifier}
+
+<b>Request body</b>
 {
-    "dataSource": "/expenses",
+    "dataSource": "{endpointFromUnderlyingPlatform}",//required
     "requiredData": {
-      "myExpenseId": "$.expenseId",
-      "myExpenseDetails": "$.expenseDetails.notes",
+      "{nameYourField}": "$.{fieldNameFromUnderlyingPlatform}",
+      "{nameYourField}": "$.{fieldNameFromUnderlyingPlatform}"
     },
-    "keyBy": ["$.expenseId", "$.accountId"], 
-    "sourceModifiedDate": ["$.modifiedDate", "$.createdDate", "$.lines[*].modifiedDate"]  
+    "keyBy": [“$.{fieldNameFromUnderlyingPlatform}”],//required
+    "sourceModifiedDate": ["{fieldNameFromUnderlyingPlatform}"]  
 }
+
 ```  
+  </TabItem>
+  <TabItem value="example" label="Example">  
+
+Here is an example request to configure a custom data type using QuickBooks Online's CashFlow endpoint.
+
+```json 
+
+PUT /integrations/qhyg/datatypes/custom/qbo-cashflow-report
+
+{
+    "dataSource": "/reports/CashFlow",
+    "requiredData": {
+        "Heads": "$.Header.EndPeriod",
+        "Header": "$.Header",
+        "Rows": "$.Rows",
+        "Columns": "$.Columns"
+    },
+    "keyBy": ["$.Header.ReportName"],
+    "sourceModifiedDate": ["$.Header.Time"]
+}
+```
+  </TabItem>
+</Tabs>
+
 :::caution Check your configuration values!
 
-Codat does not validate any of the values you enter in the configuration request. 
+Codat does not validate any of the values you enter in the configuration request. For example, if you misspell values or don't specify the full API routes, you will receive a fetch error in response when trying to pull the custom data type later. 
 
-For example, if you misspell the `requiredData` or the `dataSource` values when you create the configuration, you will receive a fetch error in response when trying to pull it later. 
-
-You must also specify the `dataSource` including any additional routes associated with it. For example, FreeAgent's [Estimates API](https://dev.freeagent.com/docs/estimates) must be specified as `"dataSource": "/v2/estimates"`, not `"dataSource": "/estimates"`.
+Refer to the integrations' own API documentation to make sure you are using the correct endpoint, route, and field names.
 
 :::
 
-### Manage existing configuration
+### Update existing configuration
+
+Once you created the configuration for a custom data type, you can't change its `customDataIdentifier`. You can update its content using the our Configure custom data (OAS LINK) endpoint. 
+
+### View existing configuration
 
 You can view previously created configurations for a specific platform using the following endpoints: 
 
-* `GET /integrations​/{platformKey}/datatypes/custom/` (OAS LINK) returns **all** configured custom data for the platform you indicate. 
-* `GET /integrations​/{platformKey}/datatypes/custom/{customDataIdentifier}` (OAS LINK) returns the configuration of the specified custom data for the platform you indicate.
+* `GET /integrations​/{platformKey}/datatypes/custom/` (OAS LINK) returns **all** configured custom data types for the platform you indicate in `platformKey`. 
+* `GET /integrations​/{platformKey}/datatypes/custom/{customDataIdentifier}` (OAS LINK) returns the configuration of the specified custom data type for the platform you indicate in `platformKey`.
+
+### Delete existing configuration
 
 You can also delete configuration for a specific custom data you created using the following endpoint:
 
@@ -79,15 +158,13 @@ You can also delete configuration for a specific custom data you created using t
 
 You will not receive a response to this request. Once the configuration is deleted, you will not be able to view it using the `GET` endpoints listed above. You can still view the data you have previously synced for this custom data type.
 
-:::tip Test custom data
+### Test your configuration
 
-It's not possible to test custom data in the Codat Sandbox. Instead, create a test company with a data connection to an integration and trial different configuration options.
+It's not possible to test custom data types in the Codat Sandbox. Instead, create a test company with a data connection to an integration and trial different configuration options.
 
-:::
+## Sync and view custom data types
 
-## Sync and view custom data
-
-Custom data configuration is created for a specific platform, so you can only queue a custom data sync for data connections that use that platform as a source. Use the ENDPOINT NAME (OAS LINK) to do so:
+Custom data configuration is created for a specific platform, so you can only queue a custom data type sync for connections that use that platform as a source. Use the ENDPOINT NAME (OAS LINK) to do so:
 
 `POST /companies/{companyId}/connections/{connectionId}/data/queue/custom/{customDataIdentifier}`
 
@@ -102,18 +179,18 @@ To view synced custom data, use the ENDPOINT NAME (OAS LINK). You must specify a
 
 `GET /companies/{companyId}/connections/{connectionId}/data/custom/{customDataIdentifier}?page=1`
 
+To view the pull history for your custom data types, use the following endpoints. In the response, `dataType` property will reflect the custom data type as `custom/{customDataIdentifier}`:
+
+- `GET /companies/{companyId}/data/history`
+- `GET /companies/{companyId}/data/history/{datasetId}`
+
+
 ## 💡 Tips and traps
 
 - Custom data is available at record and line item level, but only supports fetch operations. 
 
-- Our [querying](/using-the-api/querying) functionality doesn't support custom data, but you can include required URL parameters in the `dataSource` of your custom data configuration (ANDY PLEASE CHECK IF I UNDERSTOOD THIS RIGHT).
+- Custom data supports ony JSON responses from the integrations' APIs.
 
-- Our [Fetch on first link](/core-concepts/data-type-settings#use-fetch-on-first-link) functionality doesn't support custom data. [Advanced sync functionalities](/knowledge-base/advanced-sync-settings) like `Sync from UTC` are available where the integration already supports it.
+- Codat's [querying](/using-the-api/querying) functionality doesn't support custom data, but you can include URL parameters that are accepted by the underlying platform in the `dataSource` of your custom data configuration.
 
-DO WE MENTION THE FETCH HISTORY ENDPOINTS?
-
----
-
-## Read next
-
-See if [supplemental data](/using-the-api/supplemental-data/overview) is right for you
+- Codat's [Fetch on first link](/core-concepts/data-type-settings#use-fetch-on-first-link) functionality doesn't support custom data.
