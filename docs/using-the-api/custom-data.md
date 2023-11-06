@@ -10,14 +10,14 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 :::caution Advanced feature
-Request guidance from your Codat contact if you want to implement this advanced feature of our API.
+Request guidance from your Codat contact if you want to implement this feature of our API.
 :::
 
 ## What are custom data types?
 
 Codat's standard data models leverage our extensive industry experience and knowledge, which we used to identify and standardize a multitude of data types that best support your business. 
 
-However, your use case may require additional data types from the platforms we integrate with that are excluded from our standard model. For example, we do not currently fetch any data from Xero's [Payroll](https://developer.xero.com/documentation/api/payrolluk/overview) and NetSuite's [Expense Reports](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_N908140.html#Expense-Reports) endpoints.
+However, your use case may require additional data types from our integrations that are excluded from our standard model. For example, we do not currently fetch any data from Xero's [Payroll](https://developer.xero.com/documentation/api/payrolluk/overview) and NetSuite's [Expense Reports](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_N908140.html#Expense-Reports) endpoints.
 
 With custom data, you can fetch new, non-standardized data types that are not included in our out-of-the box data model for the integrations we support. You will need to configure and request these custom data types using our API endpoints. 
 
@@ -75,18 +75,20 @@ Are you looking to fetch, create, or update additional _properties_ in data type
 <iframe 
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZhBnE0b69-_VZ107d-i-I4pjgGFgMBGL0rVq7yxdUJZoKSsvcHY4wX-p9YZyA0zX-gU6-2e1eBkhI/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
   frameborder="0"
-  style={{ top: 0, left: 0, width: "100%", height: "400px" }}
+  style={{ top: 0, left: 0, width: "100%", height: "250px" }}
 ></iframe>
 
 ## Configure custom data
 
-### Create new custom data type
+#### Create new custom data type
 
-Use our Configure custom data (OAS LINK) endpoint to create a new data type and its associated data source for each integration you require. Make your custom configuration as similar as possible to our standard data types so you can interact with them in exactly the same way. Note the following:
+Use our Configure custom data (OAS LINK) endpoint to create a new data type for each integration you require. Keep in mind these guidelines:
 
 - You can only indicate a single data source for each custom data type. 
 - It is not possible to specify nested objects or arrays within the `requiredData` property.
 - You can query the underlying platform's API by specifying the query as part of the `dataSource` property.
+
+We advise you make your custom configuration as similar as possible to our standard data types so you can interact with them in exactly the same way. 
 
 <Tabs>
   <TabItem value="request" label="Request">  
@@ -95,7 +97,6 @@ Use our Configure custom data (OAS LINK) endpoint to create a new data type and 
 
 PUT /integrations​/{platformKey}/datatypes/custom/{customDataIdentifier}
 
-<b>Request body</b>
 {
     "dataSource": "{endpointFromUnderlyingPlatform}",//required
     "requiredData": {
@@ -110,9 +111,7 @@ PUT /integrations​/{platformKey}/datatypes/custom/{customDataIdentifier}
   </TabItem>
   <TabItem value="example" label="Example">  
 
-Here is an example request to configure a custom data type using QuickBooks Online's CashFlow endpoint.
-
-```json 
+```json title="Example request using QuickBooks Online's CashFlow endpoint"
 
 PUT /integrations/qhyg/datatypes/custom/qbo-cashflow-report
 
@@ -133,24 +132,24 @@ PUT /integrations/qhyg/datatypes/custom/qbo-cashflow-report
 
 :::caution Check your configuration values!
 
-Codat does not validate any of the values you enter in the configuration request. For example, if you misspell values or don't specify the full API routes, you will receive a fetch error in response when trying to pull the custom data type later. 
+Codat does not validate any of the values you enter in the configuration request. If you misspell values or don't specify the full API routes, you will receive a fetch error when trying to pull the custom data type later. 
 
-Refer to the integrations' own API documentation to make sure you are using the correct endpoint, route, and field names.
+Refer to the platform's own API documentation to make sure you are using the correct endpoint, route, and field names.
 
 :::
 
-### Update existing configuration
+#### Update existing configuration
 
-Once you created the configuration for a custom data type, you can't change its `customDataIdentifier`. You can update its content using the our Configure custom data (OAS LINK) endpoint. 
+Once you configured a custom data type, you can't change its `customDataIdentifier`. However, you can update the data type's content using the Configure custom data (OAS LINK) endpoint. 
 
-### View existing configuration
+#### View existing configuration
 
 You can view previously created configurations for a specific platform using the following endpoints: 
 
 * `GET /integrations​/{platformKey}/datatypes/custom/` (OAS LINK) returns **all** configured custom data types for the platform you indicate in `platformKey`. 
 * `GET /integrations​/{platformKey}/datatypes/custom/{customDataIdentifier}` (OAS LINK) returns the configuration of the specified custom data type for the platform you indicate in `platformKey`.
 
-### Delete existing configuration
+#### Delete existing configuration
 
 You can also delete configuration for a specific custom data you created using the following endpoint:
 
@@ -158,11 +157,11 @@ You can also delete configuration for a specific custom data you created using t
 
 You will not receive a response to this request. Once the configuration is deleted, you will not be able to view it using the `GET` endpoints listed above. You can still view the data you have previously synced for this custom data type.
 
-### Test your configuration
+#### Test your configuration
 
 It's not possible to test custom data types in the Codat Sandbox. Instead, create a test company with a data connection to an integration and trial different configuration options.
 
-## Sync and view custom data types
+## Sync and view custom data
 
 Custom data configuration is created for a specific platform, so you can only queue a custom data type sync for connections that use that platform as a source. Use the ENDPOINT NAME (OAS LINK) to do so:
 
