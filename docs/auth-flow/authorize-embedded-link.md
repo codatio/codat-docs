@@ -68,7 +68,7 @@ We've provided a [repo with examples on GitHub](https://github.com/codatio/sdk-l
 <Tabs>
 <TabItem value="react" label="React">
 
-### Get started with React
+#### Get started with React
 
 For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-link/tree/main/examples/languages/react/).
 
@@ -129,7 +129,7 @@ For an example of the component in action, [see our demo app](https://github.com
 
 <TabItem value="nextjs" label="NextJS">
 
-### Get started with NextJS
+#### Get started with NextJS
 
 For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-link/tree/main/examples/languages/next/).
 
@@ -193,7 +193,7 @@ In the example below, you'll see that we make use of webpack's [magic comments](
 
 <TabItem value="javascript" label="JavaScript">
 
-### Get started with JavaScript
+#### Get started with JavaScript
 
 For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-link/tree/main/examples/languages/javascript).
 
@@ -254,7 +254,7 @@ For an example of the component in action, [see our demo app](https://github.com
 
 <TabItem value="angular" label="Angular">
 
-### Get started with Angular
+#### Get started with Angular
 
 For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-link/tree/main/examples/languages/angular).
 
@@ -325,7 +325,7 @@ In the example below, you'll see that we make use of webpack's [magic comments](
 
 <TabItem value="vue" label="Vue">
 
-### Get started with Vue
+#### Get started with Vue
 
 For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-link/tree/main/examples/languages/vue).
 
@@ -375,7 +375,7 @@ For an example of the component in action, [see our demo app](https://github.com
 
 <TabItem value="svelte" label="Svelte">
 
-### Get started with Svelte
+#### Get started with Svelte
 
 For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-link/tree/main/examples/languages/svelte).
 
