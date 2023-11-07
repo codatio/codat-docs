@@ -12898,7 +12898,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Journal"
+                "$ref": "#/components/schemas/Journal/definitions/journalPrototype"
               }
             }
           }
@@ -14803,7 +14803,27 @@
               "id": {
                 "type": "string",
                 "description": "Journal ID."
-              },
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/Journal/definitions/journalPrototype"
+          },
+          {
+            "properties": {
+              "metadata": {
+                "$ref": "#/components/schemas/Account/allOf/2/properties/metadata"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/Account/allOf/3"
+          }
+        ],
+        "definitions": {
+          "journalPrototype": {
+            "type": "object",
+            "properties": {
               "journalCode": {
                 "type": "string",
                 "nullable": true,
@@ -14834,17 +14854,9 @@
               },
               "status": {
                 "$ref": "#/components/schemas/Journal/definitions/journalStatus"
-              },
-              "metadata": {
-                "$ref": "#/components/schemas/Account/allOf/2/properties/metadata"
               }
             }
           },
-          {
-            "$ref": "#/components/schemas/Account/allOf/3"
-          }
-        ],
-        "definitions": {
           "journalRef": {
             "title": "Journal reference",
             "type": "object",
