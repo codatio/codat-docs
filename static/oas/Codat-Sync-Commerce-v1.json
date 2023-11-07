@@ -3512,7 +3512,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AccountingAccount"
+                "$ref": "#/components/schemas/AccountingAccount/definitions/accountPrototype"
               }
             }
           }
@@ -12951,7 +12951,37 @@
                 "type": "string",
                 "description": "Identifier for the account, unique for the company.",
                 "example": "1b6266d1-1e44-46c5-8eb5-a8f98e03124e"
-              },
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/AccountingAccount/definitions/accountPrototype"
+          },
+          {
+            "properties": {
+              "metadata": {
+                "title": "Metadata",
+                "type": "object",
+                "x-internal": true,
+                "properties": {
+                  "isDeleted": {
+                    "type": "boolean",
+                    "description": "Indicates whether the record has been deleted in the third-party system this record originated from.",
+                    "nullable": true
+                  }
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/CommerceOrder/allOf/3"
+          }
+        ],
+        "definitions": {
+          "accountPrototype": {
+            "title": "Account prototype",
+            "type": "object",
+            "properties": {
               "nominalCode": {
                 "type": "string",
                 "nullable": true,
@@ -13039,28 +13069,11 @@
                   }
                 }
               },
-              "metadata": {
-                "title": "Metadata",
-                "type": "object",
-                "x-internal": true,
-                "properties": {
-                  "isDeleted": {
-                    "type": "boolean",
-                    "description": "Indicates whether the record has been deleted in the third-party system this record originated from.",
-                    "nullable": true
-                  }
-                }
-              },
               "supplementalData": {
                 "$ref": "#/components/schemas/SupplementalData"
               }
             }
           },
-          {
-            "$ref": "#/components/schemas/CommerceOrder/allOf/3"
-          }
-        ],
-        "definitions": {
           "accountRef": {
             "title": "Account reference",
             "type": "object",
@@ -13174,7 +13187,7 @@
                 "description": "International bank account number of the account. Often used when making or receiving international payments."
               },
               "currency": {
-                "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/currency",
+                "$ref": "#/components/schemas/AccountingAccount/definitions/accountPrototype/properties/currency",
                 "description": "Base currency of the bank account."
               },
               "balance": {
@@ -13201,7 +13214,7 @@
                 "description": "Pre-arranged overdraft limit of the account.\n\nThe value is always positive. For example, an overdraftLimit of `1000` means that the balance of the account can go down to `-1000`."
               },
               "metadata": {
-                "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/metadata"
+                "$ref": "#/components/schemas/AccountingAccount/allOf/2/properties/metadata"
               },
               "supplementalData": {
                 "$ref": "#/components/schemas/SupplementalData"
@@ -13691,7 +13704,7 @@
                 "description": "Date on which the credit note was fully allocated."
               },
               "currency": {
-                "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/currency",
+                "$ref": "#/components/schemas/AccountingAccount/definitions/accountPrototype/properties/currency",
                 "description": "Currency of the credit note."
               },
               "currencyRate": {
@@ -13718,7 +13731,7 @@
                 "description": "Any additional information about the credit note. Where possible, Codat links to a data field in the accounting platform that is publicly available. This means that the contents of the note field are included when a credit note is emailed from the accounting platform to the customer."
               },
               "metadata": {
-                "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/metadata"
+                "$ref": "#/components/schemas/AccountingAccount/allOf/2/properties/metadata"
               },
               "supplementalData": {
                 "$ref": "#/components/schemas/SupplementalData"
@@ -13974,7 +13987,7 @@
                 "description": "Email address the customer can be contacted by."
               },
               "defaultCurrency": {
-                "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/currency",
+                "$ref": "#/components/schemas/AccountingAccount/definitions/accountPrototype/properties/currency",
                 "description": "Default currency the transactional data of the customer is recorded in."
               },
               "phone": {
@@ -14013,7 +14026,7 @@
                 "description": "Current state of the customer."
               },
               "metadata": {
-                "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/metadata"
+                "$ref": "#/components/schemas/AccountingAccount/allOf/2/properties/metadata"
               },
               "supplementalData": {
                 "$ref": "#/components/schemas/SupplementalData"
@@ -14138,7 +14151,7 @@
                 "description": "The date of the direct income as recorded in the accounting platform."
               },
               "currency": {
-                "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/currency",
+                "$ref": "#/components/schemas/AccountingAccount/definitions/accountPrototype/properties/currency",
                 "description": "The currency of the direct income."
               },
               "currencyRate": {
@@ -14173,7 +14186,7 @@
                 "description": "The amount of the direct incomes, inclusive of tax."
               },
               "metadata": {
-                "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/metadata"
+                "$ref": "#/components/schemas/AccountingAccount/allOf/2/properties/metadata"
               },
               "supplementalData": {
                 "$ref": "#/components/schemas/SupplementalData"
@@ -14371,7 +14384,7 @@
                 "description": "Date the invoice was marked as paid in the accounting system. If this field is not available from the accounting software, it is calculated by Codat using associated payments."
               },
               "currency": {
-                "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/currency",
+                "$ref": "#/components/schemas/AccountingAccount/definitions/accountPrototype/properties/currency",
                 "description": "Currency of the invoice."
               },
               "currencyRate": {
@@ -14400,7 +14413,7 @@
                       "type": "object",
                       "properties": {
                         "currency": {
-                          "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/currency",
+                          "$ref": "#/components/schemas/AccountingAccount/definitions/accountPrototype/properties/currency",
                           "description": "The currency of the transaction."
                         },
                         "currencyRate": {
@@ -14445,7 +14458,7 @@
                           "description": "The account that the allocated payment is made from or to."
                         },
                         "currency": {
-                          "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/currency",
+                          "$ref": "#/components/schemas/AccountingAccount/definitions/accountPrototype/properties/currency",
                           "description": "Currency the payment has been made in."
                         },
                         "currencyRate": {
@@ -14540,7 +14553,7 @@
                 "description": "Any additional information about the invoice. Where possible, Codat links to a data field in the accounting platform that is publicly available. This means that the contents of the note field are included when an invoice is emailed from the accounting platform to the customer."
               },
               "metadata": {
-                "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/metadata"
+                "$ref": "#/components/schemas/AccountingAccount/allOf/2/properties/metadata"
               },
               "supplementalData": {
                 "$ref": "#/components/schemas/SupplementalData"
@@ -14737,7 +14750,7 @@
                 }
               },
               "metadata": {
-                "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/metadata"
+                "$ref": "#/components/schemas/AccountingAccount/allOf/2/properties/metadata"
               },
               "supplementalData": {
                 "$ref": "#/components/schemas/SupplementalData"
@@ -14792,7 +14805,7 @@
       },
       "AccountingPayment": {
         "title": "Accounting: Payment",
-        "description": "> **Payments or bill payments?**  \n> \n>  In Codat, payments represent accounts receivable only. For accounts payable, see [bill payments](https://docs.codat.io/accounting-api#/schemas/BillPayment). These include [bills](https://docs.codat.io/accounting-api#/schemas/Bill) and credit notes against bills.\n\n> View the coverage for payments in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=payments\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nPayments include all accounts receivable transaction data. This includes [invoices](https://docs.codat.io/accounting-api#/schemas/Invoice) and [credit notes](https://docs.codat.io/accounting-api#/schemas/CreditNote).\n\nA payment in Codat usually represents an allocation of money within any customer accounts receivable account. This includes, but is not strictly limited to: \n\n- A payment made against an invoice, like a credit card, cheque, or cash payment.\n- An allocation of a customer's credit note, either to an invoice or maybe a refund.\n- A payment made directly to that accounts receivable account. This might be an overpayment or a prepayment. It might also be the refund of a payment made directly to an accounts receivable account.\n\nDepending on the payments allowed by the underlying accounting package, some payment types may be combined. Please see the example for more details.\n\nIn Codat, a payment contains details of:\n\n- When the payment was recorded in the accounting system.\n- How much it is for and in what currency that amount is in.\n- Who the payment was _paid by_ – the _customer_.\n- The payment method used.\n- The breakdown of the types of payments – the _line items_.\n\nPayments is a child data type of [account transactions](https://docs.codat.io/accounting-api#/schemas/AccountTransaction).\n\n## Payment types\n\n## Payment of an invoice\n\nA payment paying a single invoice has one entry in its `lines` array. This **line** has the following properties:\n\n- An _amount_ that indicates the amount of the invoice that was paid. This is always positive.\n- A **links** array containing one element with the following properties:\n  - A **type** that indicates the type of **link**, in this case an `Invoice`.\n  - An **id** that contains the ID of the invoice that was paid.\n  - An **amount** for the link. The sum of the **line.amount** and the **links.amount** must equal `0`.\n\nThe **amount** field on the **line** equals the **totalAmount** on the payment.\n\n## Payment of multiple invoices\n\nA single payment can pay multiple invoices. This can be represented in one of two formats depending on how the customer keeps their books:\n\n- The payment has multiple entries in its **lines** array, one for each invoice that is paid. Each line follows the example and rules described in [Payment of an invoice](#payment-of-an-invoice).\n- The payment has a line with multiple links to each invoice. This occurs when the proportion of the original payment allocated to each invoice is not available.\n\nEach **line** has the same properties as those described in [Payment of an invoice](#payment-of-an-invoice), with the **amount** indicating how much of the payment was allocated to the invoice. The sum of line amounts equals the **totalAmount** on the payment.\n\n## Payments and refunds on account\n\nA payment on account, that is a payment that doesn’t pay a specific invoice, has one entry in its lines array. The **line** has the following properties:\n\n- A **totalAmount** that indicates the amount paid by a customer or refunded to them by a company. A payment to the customer is always negative. A refund is always positive.\n- A **links** array containing one element with the following properties:\n- A **type** that indicates the type of link. For a payment this is `PaymentOnAccount`. For a refund this is `Refund`.\n- The **id** containing the ID of the customer.\n- The **amount** for the link is `0` – the **totalAmount** _or_ the amount of the payment or refund.\n\nIt is possible to have a payment that is part _on account_ and part _allocated_ to an invoice. Each line should follow the examples above.\n\n## Using a credit note to pay an invoice\n\nThe payment of an invoice using a credit note has one entry in its **lines** array. This **line** has the following properties:\n\n- An **amount** that indicates the amount of money moved, which in this case is `0`, as the credit note and invoice allocation must balance each other.\n- A **links** array containing two elements:\n  - The first **link** has:\n    - A **type** that indicates the type of **link**, in this case an `Invoice`.\n    - An **id** that contains the ID of the invoice that was paid.\n  - The second **link** has:\n    - A **type** that indicates the type of **link**, in this case a `CreditNote`.\n    - An **id** that contains the ID of the credit note used by this payment.\n\nThe **amount** field on the **line** equals the **totalAmount** on the payment.\n\n## Refunding a credit note\n\nA payment refunding a credit note has one entry in its **lines** array. This **line** has the following properties:\n\n- An **amount** that indicates the amount of the credit note that was refunded. This is always negative for a refund.\n- A **links** array that contains one element with the following properties:\n  - A **type** that indicates the type of **link**, in this case a `CreditNote`.\n  - An **id** that contains the ID of the credit note that was refunded.\n\nThe **totalAmount** field on the payment equals the **amount** field of the **line**. These are both negative, as this is money leaving accounts receivable.\n\n## Refunding a payment\n\nIf a payment is refunded, for example, if a customer overpaid an invoice and the overpayment is returned to the customer, there are two payment records: \n\n- One for the incoming over payment.\n- Another for the outgoing refund.\n\nThe payment issuing the refund has a negative **totalAmount**. This payment also has one entry in its lines array with the following properties:\n\n- An **amount** that indicates the amount that was refunded. This is always negative.\n- A **links** array that contains one element with the following properties:\n  - A **type** that indicates the type of **link**, in this case a `Payment`.\n  - An **id** that contains the ID of the payment that was refunded.\n\nThe **amount** field on the **line** equals the **totalAmount** on the payment and is negative, as this is money leaving accounts receivable.\n\nThe payment that was refunded has a line where the **amount** is positive and the type of the link is `Refund`. This payment may have several entries in its **lines** array if it was used to partly pay an invoice. \n\nFor example: A £1,050 payment on a £1,000 invoice with a refund of £50 has two lines: \n\n- One for £1,000 linked to the invoice that was paid.\n- Another for £50 linked to the payment that refunded the overpayment with a** type** of `Refund` and an ID that corresponds to the payment.\n\nThe **line** linked to the payment has the following properties:\n\n- An **amount** that indicates the amount that was refunded. This is positive as its money that was added to accounts receivable. It's balanced out by the negative amount of the refund.\n- A **links** array containing one element with the following properties:\n  - A **type** that indicates the type of **link**, in this case a `Refund`.\n  - An **id** that contains the ID of the payment that refunded this line.\n\n> **Support for linked payments**\n> \n> Not all accounting packages support linking payments in this way. In some platforms, you may see a payment on account and a refund on account.\n\n## Foreign currencies\n\nThere are two types of currency rate that are included in the payments data type: \n\nPayment currency rate: \n\n- Base currency of the accounts receivable account.\n- Foreign currency of the payment.\n\nPayment line link currency rate: \n\n- Base currency of the item the link represents.\n- Foreign currency of the payment.\n\nThese two rates allow the calculation of currency loss or gain for any of the transactions affected by the payment lines. The second rate is used when a payment is applied to an item in a currency that doesn't match either:\n\n- The base currency for the accounts receivable account. \n- The currency of the item.\n\n```json title=\"Currency rate example\"\n{\n    \"id\": \"123\",\n    \"note\": \"\"\n    \"totalAmount\": 99.99,\n    \"currency\": \"GBP\",\n    \"lines\": [\n        {\n            \"amount\": 99.99,\n            \"links\": [\n                {\n                    \"type\": \"Invoice\",\n                    \"id\": \"178\",\n                    \"amount\": -50,\n                    \"currencyRate\":  1.9998,\n                }\n            ]\n        }\n    ]\n}\n```\n\n\n\n## Example data\n\n> **Object properties**\n> \n> For the sake of brevity, the examples here may omit properties from objects. For the full object definition, see [Payments](https://api.codat.io/swagger/index.html#/Payments).\n\n## Simple examples\n\n```json title=\"Payment for invoice\"\n{\n    \"totalAmount\": 1000,\n    \"lines\": [\n        {\n            \"amount\" : 1000,\n            \"links\" : [\n                {\n                    \"type\" : \"Invoice\",\n                    \"id\" : \"x\",\n                    \"amount\" : -1000\n                }\n            ]\n        }\n    ]\n}\n```\n\n\n\n```json title=\"Allocation of credit note\"\n{\n    \"totalAmount\": 0,\n    \"lines\": [\n        {\n            \"amount\" : 0,\n            \"links\" : [\n                {\n                    \"type\" : \"Invoice\",\n                    \"id\" : \"x\",\n                    \"amount\" : -1000\n                },\n                {\n                    \"type\" : \"CreditNote\",\n                    \"id\" : \"y\",\n                    \"amount\" : 1000\n                }\n            ]\n        }\n    ]\n}\n```\n\n\n\n```json title=\"Payment of invoice and payment on account\"\n{\n    \"totalAmount\": 2000,\n    \"lines\": [\n        {\n            \"amount\" : 1000,\n            \"links\" : [\n                {\n                    \"type\" : \"Invoice\",\n                    \"id\" : \"x\",\n                    \"amount\" : -1000\n                }\n            ]\n        },\n        {\n            \"amount\" : 1000,\n            \"links\" : [\n                {\n                    \"type\" : \"PaymentOnAccount\",\n                    \"id\" : \"y\",\n                    \"amount\" : -1000\n                }\n            ]\n        }\n    ]\n}\n```\n\n\n\n```json title=\"Refund of credit note\"\n{\n    \"totalAmount\": -1000,\n    \"lines\": [\n        {\n            \"amount\" : -1000,\n            \"links\" : [\n                {\n                    \"type\" : \"CreditNote\",\n                    \"id\" : \"y\",\n                    \"amount\" : 1000\n                }\n            ]\n        }\n    ]\n}\n```\n\n\n\n```json title=\"Refund on accounts receivable account\"\n{\n    \"totalAmount\": -1000,\n    \"lines\": [\n        {\n            \"amount\" : -1000,\n            \"links\" : [\n                {\n                    \"type\" : \"PaymentOnAccount\",\n                    \"id\" : \"y\",\n                    \"amount\" : 1000\n                }\n            ]\n        }\n    ]\n}\n```\n\n\n\n```json title=\"Linked refund on accounts receivable account\"\n{\n    \"id\" : \"payment-001\",\n    \"totalAmount\": 1000,\n    \"lines\": [\n        {\n            \"amount\" : 1000,\n            \"links\" : [\n                {\n                    \"type\" : \"Refund\",\n                    \"id\" : \"refund-001\",\n                    \"amount\" : -1000\n                }\n            ]\n        }\n    ]\n}\n{\n    \"id\" : \"refund-001\",\n    \"totalAmount\": -1000,\n    \"lines\": [\n        {\n            \"amount\" : -1000,\n            \"links\" : [\n                {\n                    \"type\" : \"Payment\",\n                    \"id\" : \"payment-001\",\n                    \"amount\" : 1000\n                }\n            ]\n        }\n    ]\n}\n```\n\n\n\n```json title=\"Using a credit note and cash to pay an invoice\"\n{\n    \"totalAmount\": 250,\n    \"lines\": [\n        {\n            \"amount\": 0,\n            \"links\": [\n                {\n                    \"type\": \"Invoice\",\n                    \"id\": \"x\",\n                    \"amount\": -750\n                }, \n                {\n                    \"type\": \"CreditNote\",\n                    \"id\": \"y\",\n                    \"amount\": 750\n                }\n            ]\n        },\n        {\n            \"amount\": 250,\n            \"links\": [\n                {\n                    \"type\": \"Invoice\",\n                    \"id\": \"x\",\n                    \"amount\": -250\n                }\n            ]\n        }\n    ]\n}\n```\n\n\n\n## Complex examples\n\n```json title=\"Use two credit notes and 1000 in to \"bank\" (cash, cheque etc.) to pay invoice\"\n{\n    \"totalAmount\": 1000,\n    \"lines\": [\n        {\n            \"amount\" : 0,\n            \"links\" : [\n                {\n                    \"type\" : \"Invoice\",\n                    \"id\" : \"x\",\n                    \"amount\" : -1000\n                },\n                {\n                    \"type\" : \"CreditNote\",\n                    \"id\" : \"y\",\n                    \"amount\" : 1000\n                }\n            ]\n        },\n        {\n            \"amount\" : 0,\n            \"links\" : [\n                {\n                    \"type\" : \"Invoice\",\n                    \"id\" : \"x\",\n                    \"amount\" : -1000\n                },\n                {\n                    \"type\" : \"CreditNote\",\n                    \"id\" : \"z\",\n                    \"amount\" : 1000\n                }\n            ]\n        },\n        {\n            \"amount\" : 1000,\n            \"links\" : [\n                {\n                    \"type\" : \"Invoice\",\n                    \"id\" : \"x\",\n                    \"amount\" : -1000\n                }\n            ]\n        }\n    ]\n}\n```\n\n\n\n```json title=\"Pay an invoice with two credit notes and cash, with 1000 left 'on account'\"\n{\n    \"totalAmount\": 2000,\n    \"lines\": [\n        {\n            \"amount\" : 0,\n            \"links\" : [\n                {\n                    \"type\" : \"Invoice\",\n                    \"id\" : \"x\",\n                    \"amount\" : -1000\n                },\n                {\n                    \"type\" : \"CreditNote\",\n                    \"id\" : \"y\",\n                    \"amount\" : 1000\n                }\n            ]\n        },\n        {\n            \"amount\" : 0,\n            \"links\" : [\n                {\n                    \"type\" : \"Invoice\",\n                    \"id\" : \"x\",\n                    \"amount\" : -1000\n                },\n                {\n                    \"type\" : \"CreditNote\",\n                    \"id\" : \"z\",\n                    \"amount\" : 1000\n                }\n            ]\n        },\n        {\n            \"amount\" : 1000,\n            \"links\" : [\n                {\n                    \"type\" : \"Invoice\",\n                    \"id\" : \"x\",\n                    \"amount\" : -1000\n                }\n            ]\n        },\n        {\n            \"amount\" : 1000,\n            \"links\" : [\n                {\n                    \"type\" : \"PaymentOnAccount\",\n                    \"id\" : \"customer-001\",\n                    \"amount\" : -1000\n                }\n            ]\n        }\n    ]\n}\n```\n\n\n\n```json title=\"Two credit notes pay two invoices with no allocation amount specified\"\n{\n    \"totalAmount\": 0,\n    \"lines\": [\n        {\n            \"amount\" : 0,\n            \"links\" : [\n                {\n                    \"type\" : \"Invoice\",\n                    \"id\" : \"w\",\n                    \"amount\" : -1000\n                },\n                {\n                    \"type\" : \"Invoice\",\n                    \"id\" : \"x\",\n                    \"amount\" : -1000\n                },\n                {\n                    \"type\" : \"CreditNote\",\n                    \"id\" : \"y\",\n                    \"amount\" : 1000\n                },\n                {\n                    \"type\" : \"CreditNote\",\n                    \"id\" : \"z\",\n                    \"amount\" : 1000\n                }\n            ]\n        }\n    ]\n}\n```\n\n\n\n```json title=\"Two credit notes and cash pay three invoices with no allocation amount specified, and refund cash\"\n{\n    \"totalAmount\": 2000,\n    \"lines\": [\n        {\n            \"amount\" : 1000,\n            \"links\" : [\n                {\n                    \"type\" : \"Invoice\",\n                    \"id\" : \"w\",\n                    \"amount\" : -1000\n                },\n                {\n                    \"type\" : \"Invoice\",\n                    \"id\" : \"x\",\n                    \"amount\" : -1000\n                },\n                {\n                    \"type\" : \"Invoice\",\n                    \"id\" : \"u\",\n                    \"amount\" : -1000\n                },\n                {\n                    \"type\" : \"CreditNote\",\n                    \"id\" : \"y\",\n                    \"amount\" : 1000\n                },\n                {\n                    \"type\" : \"CreditNote\",\n                    \"id\" : \"z\",\n                    \"amount\" : 1000\n                }\n            ]\n        },\n        {\n            \"amount\" : 1000,\n            \"links\" : [\n                {\n                    \"type\" : \"Refund\",\n                    \"id\" : \"refund-001\",\n                    \"amount\" : -1000\n                }\n            ]\n        }\n    ]\n}\n{\n    \"id\" : \"refund-001\",\n    \"totalAmount\": -1000,\n    \"lines\": [\n        {\n            \"amount\" : -1000,\n            \"links\" : [\n                {\n                    \"type\" : \"Payment\",\n                    \"id\" : \"payment-001\",\n                    \"amount\" : 1000\n                }\n            ]\n        }\n    ]\n}\n```\n\n\n\nIn this example, a payment on account is used to pay the same invoice in January and again in February.\n\n```json title=\"January\"\n{\n    \"id\": \"001\",\n    \"totalAmount\": 5000,\n    \"date\" : \"1901-01-01\",\n    \"lines\": [\n        {\n            \"amount\" : 1000,\n            \"links\" : [\n                {\n                    \"type\" : \"Invoice\",\n                    \"id\" : \"Invoice-x\",\n                    \"amount\" : -1000\n                }\n            ]\n        },\n        {\n            \"amount\" : 4000,\n            \"links\" : [\n                {\n                    \"type\" : \"PaymentOnAccount\",\n                    \"id\" : \"PaymentOnAccount-y\",\n                    \"amount\" : -4000\n                }\n            ]\n        }\n    ]\n}\n```\n\n\n\n```json title=\"February\"\n{\n    \"id\": \"001\",\n    \"totalAmount\": 5000,\n    \"date\" : \"1901-02-01\",\n    \"lines\": [\n        {\n            \"amount\" : 1000,\n            \"links\" : [\n                {\n                    \"type\" : \"Invoice\",\n                    \"id\" : \"Invoice-x\",\n                    \"amount\" : -1000\n                }\n            ]\n        },\n        {\n            \"amount\" : 1000,\n            \"links\" : [\n                {\n                    \"type\" : \"Invoice\",\n                    \"id\" : \"Invoice-y\",\n                    \"amount\" : -1000\n                }\n            ]\n        },\n        {\n            \"amount\" : 3000,\n            \"links\" : [\n                {\n                    \"type\" : \"PaymentOnAccount\",\n                    \"id\" : \"PaymentOnAccount-y\",\n                    \"amount\" : -3000\n                }\n            ]\n        }\n    ]\n}\n```\n\n\n\n```json title=\"Two credit notes and some cash pay two invoices with no allocations specified\"\n{\n    \"totalAmount\": 500,\n    \"lines\": [\n        {\n            \"amount\": 500,\n            \"links\": [{\n                    \"type\": \"Invoice\",\n                    \"id\": \"a\",\n                    \"amount\": -1000\n                }, {\n                    \"type\": \"Invoice\",\n                    \"id\": \"b\",\n                    \"amount\": -1000\n                }, {\n                    \"type\": \"CreditNote\",\n                    \"id\": \"y\",\n                    \"amount\": 750\n                },{\n                    \"type\": \"CreditNote\",\n                    \"id\": \"z\",\n                    \"amount\": 750\n                }\n            ]\n        }\n    ]\n}\n```",
+        "description": "﻿> **Payments or bill payments?**\n>\n>  In Codat, payments represent accounts receivable only. For accounts payable, see [bill payments](https://docs.codat.io/accounting-api#/schemas/BillPayment). These include [bills](https://docs.codat.io/accounting-api#/schemas/Bill) and credit notes against bills.\n\n> View the coverage for payments in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=payments\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nPayments include all accounts receivable transaction data. This includes [invoices](https://docs.codat.io/accounting-api#/schemas/Invoice) and [credit notes](https://docs.codat.io/accounting-api#/schemas/CreditNote).\n\nA payment in Codat usually represents an allocation of money within any customer accounts receivable account. This includes, but is not strictly limited to:\n\n- A payment made against an invoice, like a credit card, cheque, or cash payment.\n- An allocation of a customer's credit note, either to an invoice or maybe a refund.\n- A payment made directly to that accounts receivable account. This might be an overpayment or a prepayment. It might also be the refund of a payment made directly to an accounts receivable account.\n\nDepending on the payments allowed by the underlying accounting package, some payment types may be combined. Please see the example for more details.\n\nIn Codat, a payment contains details of:\n\n- When the payment was recorded in the accounting system.\n- How much it is for and in what currency that amount is in.\n- Who the payment was _paid by_ – the _customer_.\n- The payment method used.\n- The breakdown of the types of payments – the _line items_.\n\nPayments is a child data type of [account transactions](https://docs.codat.io/accounting-api#/schemas/AccountTransaction).\n\n## Payment types\n\n## Payment of an invoice\n\nA payment paying a single invoice has one entry in its `lines` array. This **line** has the following properties:\n\n- An _amount_ that indicates the amount of the invoice that was paid. This is always positive.\n- A **links** array containing one element with the following properties:\n    - A **type** that indicates the type of **link**, in this case an `Invoice`.\n    - An **id** that contains the ID of the invoice that was paid.\n    - An **amount** for the link. The sum of the **line.amount** and the **links.amount** must equal `0`.\n\nThe **amount** field on the **line** equals the **totalAmount** on the payment.\n\n## Payment of multiple invoices\n\nA single payment can pay multiple invoices. This can be represented in one of two formats depending on how the customer keeps their books:\n\n- The payment has multiple entries in its **lines** array, one for each invoice that is paid. Each line follows the example and rules described in [Payment of an invoice](#payment-of-an-invoice).\n- The payment has a line with multiple links to each invoice. This occurs when the proportion of the original payment allocated to each invoice is not available.\n\nEach **line** has the same properties as those described in [Payment of an invoice](#payment-of-an-invoice), with the **amount** indicating how much of the payment was allocated to the invoice. The sum of line amounts equals the **totalAmount** on the payment.\n\n## Payments and refunds on account\n\nA payment on account, that is a payment that doesn’t pay a specific invoice, has one entry in its lines array. The **line** has the following properties:\n\n- A **totalAmount** that indicates the amount paid by a customer or refunded to them by a company. A payment to the customer is always negative. A refund is always positive.\n- A **links** array containing one element with the following properties:\n- A **type** that indicates the type of link. For a payment this is `PaymentOnAccount`. For a refund this is `Refund`.\n- The **id** containing the ID of the customer.\n- The **amount** for the link is `0` – the **totalAmount** _or_ the amount of the payment or refund.\n\nIt is possible to have a payment that is part _on account_ and part _allocated_ to an invoice. Each line should follow the examples above.\n\n## Using a credit note to pay an invoice\n\nThe payment of an invoice using a credit note has one entry in its **lines** array. This **line** has the following properties:\n\n- An **amount** that indicates the amount of money moved, which in this case is `0`, as the credit note and invoice allocation must balance each other.\n- A **links** array containing two elements:\n    - The first **link** has:\n        - A **type** that indicates the type of **link**, in this case an `Invoice`.\n        - An **id** that contains the ID of the invoice that was paid.\n    - The second **link** has:\n        - A **type** that indicates the type of **link**, in this case a `CreditNote`.\n        - An **id** that contains the ID of the credit note used by this payment.\n\nThe **amount** field on the **line** equals the **totalAmount** on the payment.\n\n## Refunding a credit note\n\nA payment refunding a credit note has one entry in its **lines** array. This **line** has the following properties:\n\n- An **amount** that indicates the amount of the credit note that was refunded. This is always negative for a refund.\n- A **links** array that contains one element with the following properties:\n    - A **type** that indicates the type of **link**, in this case a `CreditNote`.\n    - An **id** that contains the ID of the credit note that was refunded.\n\nThe **totalAmount** field on the payment equals the **amount** field of the **line**. These are both negative, as this is money leaving accounts receivable.\n\n## Refunding a payment\n\nIf a payment is refunded, for example, if a customer overpaid an invoice and the overpayment is returned to the customer, there are two payment records:\n\n- One for the incoming over payment.\n- Another for the outgoing refund.\n\nThe payment issuing the refund has a negative **totalAmount**. This payment also has one entry in its lines array with the following properties:\n\n- An **amount** that indicates the amount that was refunded. This is always negative.\n- A **links** array that contains one element with the following properties:\n    - A **type** that indicates the type of **link**, in this case a `Payment`.\n    - An **id** that contains the ID of the payment that was refunded.\n\nThe **amount** field on the **line** equals the **totalAmount** on the payment and is negative, as this is money leaving accounts receivable.\n\nThe payment that was refunded has a line where the **amount** is positive and the type of the link is `Refund`. This payment may have several entries in its **lines** array if it was used to partly pay an invoice.\n\nFor example: A £1,050 payment on a £1,000 invoice with a refund of £50 has two lines:\n\n- One for £1,000 linked to the invoice that was paid.\n- Another for £50 linked to the payment that refunded the overpayment with a** type** of `Refund` and an ID that corresponds to the payment.\n\nThe **line** linked to the payment has the following properties:\n\n- An **amount** that indicates the amount that was refunded. This is positive as its money that was added to accounts receivable. It's balanced out by the negative amount of the refund.\n- A **links** array containing one element with the following properties:\n    - A **type** that indicates the type of **link**, in this case a `Refund`.\n    - An **id** that contains the ID of the payment that refunded this line.\n\n> **Support for linked payments**\n>\n> Not all accounting packages support linking payments in this way. In some platforms, you may see a payment on account and a refund on account.\n\n## Foreign currencies\n\nThere are two types of currency rate that are included in the payments data type:\n\nPayment currency rate:\n\n- Base currency of the accounts receivable account.\n- Foreign currency of the payment.\n\nPayment line link currency rate:\n\n- Base currency of the item the link represents.\n- Foreign currency of the payment.\n\nThese two rates allow the calculation of currency loss or gain for any of the transactions affected by the payment lines. The second rate is used when a payment is applied to an item in a currency that doesn't match either:\n\n- The base currency for the accounts receivable account.\n- The currency of the item.\n\n  ```json title=\"Currency rate example\"\n  {\n      \"id\": \"123\",\n      \"note\": \"\",\n      \"totalAmount\": 99.99,\n      \"currency\": \"GBP\",\n      \"lines\": [\n          {\n              \"amount\": 99.99,\n              \"links\": [\n                  {\n                      \"type\": \"Invoice\",\n                      \"id\": \"178\",\n                      \"amount\": -50,\n                      \"currencyRate\":  1.9998\n                  }\n              ]\n          }\n      ]\n  }\n  ```\n\n\n\n## Example data\n\n> **Object properties**\n>\n> For the sake of brevity, the examples here may omit properties from objects. For the full object definition, see [Payments](https://api.codat.io/swagger/index.html#/Payments).\n\n## Simple examples\n\n  ```json title=\"Payment for invoice\"\n  {\n      \"totalAmount\": 1000,\n      \"lines\": [\n          {\n              \"amount\" : 1000,\n              \"links\" : [\n                  {\n                      \"type\" : \"Invoice\",\n                      \"id\" : \"x\",\n                      \"amount\" : -1000\n                  }\n              ]\n          }\n      ]\n  }\n  ```\n\n\n\n  ```json title=\"Allocation of credit note\"\n  {\n      \"totalAmount\": 0,\n      \"lines\": [\n          {\n              \"amount\" : 0,\n              \"links\" : [\n                  {\n                      \"type\" : \"Invoice\",\n                      \"id\" : \"x\",\n                      \"amount\" : -1000\n                  },\n                  {\n                      \"type\" : \"CreditNote\",\n                      \"id\" : \"y\",\n                      \"amount\" : 1000\n                  }\n              ]\n          }\n      ]\n  }\n  ```\n\n\n\n  ```json title=\"Payment of invoice and payment on account\"\n  {\n      \"totalAmount\": 2000,\n      \"lines\": [\n          {\n              \"amount\" : 1000,\n              \"links\" : [\n                  {\n                      \"type\" : \"Invoice\",\n                      \"id\" : \"x\",\n                      \"amount\" : -1000\n                  }\n              ]\n          },\n          {\n              \"amount\" : 1000,\n              \"links\" : [\n                  {\n                      \"type\" : \"PaymentOnAccount\",\n                      \"id\" : \"y\",\n                      \"amount\" : -1000\n                  }\n              ]\n          }\n      ]\n  }\n  ```\n\n\n\n  ```json title=\"Refund of credit note\"\n  {\n      \"totalAmount\": -1000,\n      \"lines\": [\n          {\n              \"amount\" : -1000,\n              \"links\" : [\n                  {\n                      \"type\" : \"CreditNote\",\n                      \"id\" : \"y\",\n                      \"amount\" : 1000\n                  }\n              ]\n          }\n      ]\n  }\n  ```\n\n\n\n  ```json title=\"Refund on accounts receivable account\"\n  {\n      \"totalAmount\": -1000,\n      \"lines\": [\n          {\n              \"amount\" : -1000,\n              \"links\" : [\n                  {\n                      \"type\" : \"PaymentOnAccount\",\n                      \"id\" : \"y\",\n                      \"amount\" : 1000\n                  }\n              ]\n          }\n      ]\n  }\n  ```\n\n\n\n  ```json title=\"Linked refund on accounts receivable account\"\n  {\n      \"id\" : \"payment-001\",\n      \"totalAmount\": 1000,\n      \"lines\": [\n          {\n              \"amount\" : 1000,\n              \"links\" : [\n                  {\n                      \"type\" : \"Refund\",\n                      \"id\" : \"refund-001\",\n                      \"amount\" : -1000\n                  }\n              ]\n          }\n      ]\n  }\n  {\n      \"id\" : \"refund-001\",\n      \"totalAmount\": -1000,\n      \"lines\": [\n          {\n              \"amount\" : -1000,\n              \"links\" : [\n                  {\n                      \"type\" : \"Payment\",\n                      \"id\" : \"payment-001\",\n                      \"amount\" : 1000\n                  }\n              ]\n          }\n      ]\n  }\n  ```\n\n\n\n  ```json title=\"Using a credit note and cash to pay an invoice\"\n  {\n      \"totalAmount\": 250,\n      \"lines\": [\n          {\n              \"amount\": 0,\n              \"links\": [\n                  {\n                      \"type\": \"Invoice\",\n                      \"id\": \"x\",\n                      \"amount\": -750\n                  }, \n                  {\n                      \"type\": \"CreditNote\",\n                      \"id\": \"y\",\n                      \"amount\": 750\n                  }\n              ]\n          },\n          {\n              \"amount\": 250,\n              \"links\": [\n                  {\n                      \"type\": \"Invoice\",\n                      \"id\": \"x\",\n                      \"amount\": -250\n                  }\n              ]\n          }\n      ]\n  }\n  ```\n\n\n\n## Complex examples\n\n  ```json title=\"Use two credit notes and 1000 in to \"bank\" (cash, cheque etc.) to pay invoice\"\n  {\n      \"totalAmount\": 1000,\n      \"lines\": [\n          {\n              \"amount\" : 0,\n              \"links\" : [\n                  {\n                      \"type\" : \"Invoice\",\n                      \"id\" : \"x\",\n                      \"amount\" : -1000\n                  },\n                  {\n                      \"type\" : \"CreditNote\",\n                      \"id\" : \"y\",\n                      \"amount\" : 1000\n                  }\n              ]\n          },\n          {\n              \"amount\" : 0,\n              \"links\" : [\n                  {\n                      \"type\" : \"Invoice\",\n                      \"id\" : \"x\",\n                      \"amount\" : -1000\n                  },\n                  {\n                      \"type\" : \"CreditNote\",\n                      \"id\" : \"z\",\n                      \"amount\" : 1000\n                  }\n              ]\n          },\n          {\n              \"amount\" : 1000,\n              \"links\" : [\n                  {\n                      \"type\" : \"Invoice\",\n                      \"id\" : \"x\",\n                      \"amount\" : -1000\n                  }\n              ]\n          }\n      ]\n  }\n  ```\n\n\n\n  ```json title=\"Pay an invoice with two credit notes and cash, with 1000 left 'on account'\"\n  {\n      \"totalAmount\": 2000,\n      \"lines\": [\n          {\n              \"amount\" : 0,\n              \"links\" : [\n                  {\n                      \"type\" : \"Invoice\",\n                      \"id\" : \"x\",\n                      \"amount\" : -1000\n                  },\n                  {\n                      \"type\" : \"CreditNote\",\n                      \"id\" : \"y\",\n                      \"amount\" : 1000\n                  }\n              ]\n          },\n          {\n              \"amount\" : 0,\n              \"links\" : [\n                  {\n                      \"type\" : \"Invoice\",\n                      \"id\" : \"x\",\n                      \"amount\" : -1000\n                  },\n                  {\n                      \"type\" : \"CreditNote\",\n                      \"id\" : \"z\",\n                      \"amount\" : 1000\n                  }\n              ]\n          },\n          {\n              \"amount\" : 1000,\n              \"links\" : [\n                  {\n                      \"type\" : \"Invoice\",\n                      \"id\" : \"x\",\n                      \"amount\" : -1000\n                  }\n              ]\n          },\n          {\n              \"amount\" : 1000,\n              \"links\" : [\n                  {\n                      \"type\" : \"PaymentOnAccount\",\n                      \"id\" : \"customer-001\",\n                      \"amount\" : -1000\n                  }\n              ]\n          }\n      ]\n  }\n  ```\n\n\n\n  ```json title=\"Two credit notes pay two invoices with no allocation amount specified\"\n  {\n      \"totalAmount\": 0,\n      \"lines\": [\n          {\n              \"amount\" : 0,\n              \"links\" : [\n                  {\n                      \"type\" : \"Invoice\",\n                      \"id\" : \"w\",\n                      \"amount\" : -1000\n                  },\n                  {\n                      \"type\" : \"Invoice\",\n                      \"id\" : \"x\",\n                      \"amount\" : -1000\n                  },\n                  {\n                      \"type\" : \"CreditNote\",\n                      \"id\" : \"y\",\n                      \"amount\" : 1000\n                  },\n                  {\n                      \"type\" : \"CreditNote\",\n                      \"id\" : \"z\",\n                      \"amount\" : 1000\n                  }\n              ]\n          }\n      ]\n  }\n  ```\n\n\n\n  ```json title=\"Two credit notes and cash pay three invoices with no allocation amount specified, and refund cash\"\n  {\n      \"totalAmount\": 2000,\n      \"lines\": [\n          {\n              \"amount\" : 1000,\n              \"links\" : [\n                  {\n                      \"type\" : \"Invoice\",\n                      \"id\" : \"w\",\n                      \"amount\" : -1000\n                  },\n                  {\n                      \"type\" : \"Invoice\",\n                      \"id\" : \"x\",\n                      \"amount\" : -1000\n                  },\n                  {\n                      \"type\" : \"Invoice\",\n                      \"id\" : \"u\",\n                      \"amount\" : -1000\n                  },\n                  {\n                      \"type\" : \"CreditNote\",\n                      \"id\" : \"y\",\n                      \"amount\" : 1000\n                  },\n                  {\n                      \"type\" : \"CreditNote\",\n                      \"id\" : \"z\",\n                      \"amount\" : 1000\n                  }\n              ]\n          },\n          {\n              \"amount\" : 1000,\n              \"links\" : [\n                  {\n                      \"type\" : \"Refund\",\n                      \"id\" : \"refund-001\",\n                      \"amount\" : -1000\n                  }\n              ]\n          }\n      ]\n  }\n  {\n      \"id\" : \"refund-001\",\n      \"totalAmount\": -1000,\n      \"lines\": [\n          {\n              \"amount\" : -1000,\n              \"links\" : [\n                  {\n                      \"type\" : \"Payment\",\n                      \"id\" : \"payment-001\",\n                      \"amount\" : 1000\n                  }\n              ]\n          }\n      ]\n  }\n  ```\n\n\n\nIn this example, a payment on account is used to pay the same invoice in January and again in February.\n\n  ```json title=\"January\"\n  {\n      \"id\": \"001\",\n      \"totalAmount\": 5000,\n      \"date\" : \"1901-01-01\",\n      \"lines\": [\n          {\n              \"amount\" : 1000,\n              \"links\" : [\n                  {\n                      \"type\" : \"Invoice\",\n                      \"id\" : \"Invoice-x\",\n                      \"amount\" : -1000\n                  }\n              ]\n          },\n          {\n              \"amount\" : 4000,\n              \"links\" : [\n                  {\n                      \"type\" : \"PaymentOnAccount\",\n                      \"id\" : \"PaymentOnAccount-y\",\n                      \"amount\" : -4000\n                  }\n              ]\n          }\n      ]\n  }\n  ```\n\n\n\n  ```json title=\"February\"\n  {\n      \"id\": \"001\",\n      \"totalAmount\": 5000,\n      \"date\" : \"1901-02-01\",\n      \"lines\": [\n          {\n              \"amount\" : 1000,\n              \"links\" : [\n                  {\n                      \"type\" : \"Invoice\",\n                      \"id\" : \"Invoice-x\",\n                      \"amount\" : -1000\n                  }\n              ]\n          },\n          {\n              \"amount\" : 1000,\n              \"links\" : [\n                  {\n                      \"type\" : \"Invoice\",\n                      \"id\" : \"Invoice-y\",\n                      \"amount\" : -1000\n                  }\n              ]\n          },\n          {\n              \"amount\" : 3000,\n              \"links\" : [\n                  {\n                      \"type\" : \"PaymentOnAccount\",\n                      \"id\" : \"PaymentOnAccount-y\",\n                      \"amount\" : -3000\n                  }\n              ]\n          }\n      ]\n  }\n  ```\n\n\n\n  ```json title=\"Two credit notes and some cash pay two invoices with no allocations specified\"\n  {\n      \"totalAmount\": 500,\n      \"lines\": [\n          {\n              \"amount\": 500,\n              \"links\": [{\n                      \"type\": \"Invoice\",\n                      \"id\": \"a\",\n                      \"amount\": -1000\n                  }, {\n                      \"type\": \"Invoice\",\n                      \"id\": \"b\",\n                      \"amount\": -1000\n                  }, {\n                      \"type\": \"CreditNote\",\n                      \"id\": \"y\",\n                      \"amount\": 750\n                  },{\n                      \"type\": \"CreditNote\",\n                      \"id\": \"z\",\n                      \"amount\": 750\n                  }\n              ]\n          }\n      ]\n  }\n  ```",
         "type": "object",
         "allOf": [
           {
@@ -14820,7 +14833,7 @@
                 "description": "Amount of the payment in the payment currency. This value should never change and represents the amount of money paid into the customer's account."
               },
               "currency": {
-                "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/currency",
+                "$ref": "#/components/schemas/AccountingAccount/definitions/accountPrototype/properties/currency",
                 "description": "ISO currency code recorded for the payment in the accounting platform."
               },
               "currencyRate": {
@@ -14849,7 +14862,7 @@
                 "description": "Friendly reference for the payment."
               },
               "metadata": {
-                "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/metadata"
+                "$ref": "#/components/schemas/AccountingAccount/allOf/2/properties/metadata"
               },
               "supplementalData": {
                 "$ref": "#/components/schemas/SupplementalData"
@@ -15120,7 +15133,7 @@
                 ]
               },
               "baseCurrency": {
-                "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/currency"
+                "$ref": "#/components/schemas/AccountingAccount/definitions/accountPrototype/properties/currency"
               },
               "accountBalances": {
                 "description": "The available and current cash balances for the company's accounts",
@@ -15173,7 +15186,7 @@
                 "description": "The currency of the account",
                 "allOf": [
                   {
-                    "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/currency"
+                    "$ref": "#/components/schemas/AccountingAccount/definitions/accountPrototype/properties/currency"
                   }
                 ]
               }
@@ -15211,7 +15224,7 @@
                     "description": "Default currency of any transactional data for the customer, \nfor example, orders or payments\n"
                   },
                   {
-                    "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/currency"
+                    "$ref": "#/components/schemas/AccountingAccount/definitions/accountPrototype/properties/currency"
                   }
                 ]
               },
@@ -15552,7 +15565,7 @@
               "currency": {
                 "allOf": [
                   {
-                    "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/currency"
+                    "$ref": "#/components/schemas/AccountingAccount/definitions/accountPrototype/properties/currency"
                   },
                   {
                     "description": "Currency in which the order was placed."
@@ -15985,7 +15998,7 @@
                 ]
               },
               "currency": {
-                "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/currency",
+                "$ref": "#/components/schemas/AccountingAccount/definitions/accountPrototype/properties/currency",
                 "description": "Currency in which the payment was made"
               },
               "paymentMethodRef": {
@@ -16075,7 +16088,7 @@
                     ]
                   },
                   "currency": {
-                    "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/currency",
+                    "$ref": "#/components/schemas/AccountingAccount/definitions/accountPrototype/properties/currency",
                     "description": "Currency in which the payment was made."
                   },
                   "type": {
@@ -16377,7 +16390,7 @@
             "type": "object",
             "properties": {
               "currency": {
-                "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/currency",
+                "$ref": "#/components/schemas/AccountingAccount/definitions/accountPrototype/properties/currency",
                 "nullable": true
               },
               "unitPrice": {
@@ -16476,7 +16489,7 @@
                 ]
               },
               "currency": {
-                "$ref": "#/components/schemas/AccountingAccount/allOf/0/properties/currency"
+                "$ref": "#/components/schemas/AccountingAccount/definitions/accountPrototype/properties/currency"
               },
               "type": {
                 "$ref": "#/components/schemas/CommerceTransaction/definitions/transactionType"
