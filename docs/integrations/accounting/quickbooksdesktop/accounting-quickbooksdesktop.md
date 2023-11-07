@@ -5,7 +5,7 @@ description: "Learn about our QuickBooks Desktop on-premise connector."
 
 Our QuickBooks Desktop on-premise connector enables SMBs who use QuickBooks Desktop to share their consented accounting data through the Codat platform.
 
-The connector is a Windows application that runs on the SMB user's local machine.
+The connector utilizes the Intuit Web Connector, a Windows application that runs on the SMB user's local machine.
 
 <div className="card">
   <h3>✨ Premium</h3>
@@ -88,19 +88,13 @@ Before your SMB users can download and install the on-premise connector, you'll 
 
 ### 1. Add your branding
 
-Add your company branding: this is used in the link flow and in the connector app.
+Add your company branding: this is used in the link flow.
 
-From the SMB user's perspective, they'll see the connector app as being owned and branded by you, rather than by Codat.
+From the SMB user's perspective, they'll see the connector app as being owned and branded by Intuit.
 
 ### 2. Configure the link flow
 
-You can choose to configure the built-in Codat link flow for the connector. This will create a download link for the connector and provide the unique company ID (used as the license key) for each of your SMB users.
-
-Here's how that looks to your users:
-
-![](/img/old/c266e47-qbd-connector_download-page-end-of-link-flow.png)
-
-Alternatively, you can choose to build this functionality yourself using the Codat API. This involves calling the QuickBooks Desktop connector download endpoint (provided in the data connection response) and the customer ID. This allows you to maintain the look and feel of your company's brand, or to implement a specific workflow.
+You must configure the built-in Codat link flow for the connector. This will create a download link for the connector and provide the unique company ID (used as the license key) for each of your SMB users.
 
 ### 3. Enable the connector
 
@@ -114,11 +108,11 @@ Enable the QuickBooks Desktop connector in the <a className="external" href="htt
 
 Here's how your SMB users interact with the QBD connector.
 
-- The SMB user downloads the connector as part of the link flow.
-- The user needs administrator privileges (admin rights) to run the connector installer. Alternatively, a different administrator can approve the installation and run the connector.
-- The SMB user completes some simple steps to complete the installation (as described in [Install the QuickBooks Desktop connector](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector)). In summary, they'll need to:
-  - Enter their unique license number (their Codat Company ID), which is provided during the link flow.
-  - Complete some steps to point the connector at the correct accounting package data file on their local machine.
+- The SMB user downloads the connector as part of the link flow (unless the user is using Right Networks or QBD enterprise cloud, in which case they will skip this step)
+  - The user needs to download and run the connector installer, this requires administrator privileges (admin rights) to run. Alternatively, a different administrator can approve the installation and run the connector.
+- The SMB user then needs to download and run the configuration file (as described in [Install the QuickBooks Desktop connector](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector)). In summary, they'll need to:
+  - Authorise the connector to access the QuickBooks Desktop company.
+  - Enter the password into the connector, which is provided during the link flow.
 
 When installed, the QBD connector doesn’t require any further interaction by the SMB user, and administrator privileges are no longer required.
 
