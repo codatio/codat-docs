@@ -21,6 +21,7 @@ The user's local antivirus or firewall settings may prevent the download and run
 
 To install the QuickBooks Desktop connector, the user who is connecting their company data must complete the following tasks:
 
+CHANGE THESE
 1. [Download the connector](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector#1-download-the-connector)
 
 2. [Launch the connector and enter the licence key](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector#2-launch-the-connector-and-enter-the-licence-key)
@@ -38,40 +39,36 @@ The QuickBooks Desktop connector must be run on the same computer as the QuickBo
 
 Before they start the linking process, the user must open QuickBooks Desktop and log in to the company they want to link. 
 
-If the user works with a hosted instance of QuickBooks Desktop (e.g. Right Networks), they must first be approved by Right Networks before proceeding. Please review our [prerequisites documentation](/integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks).
-
 :::
 
 
-## 1. Download the connector
+## 1. Download and install the connector
 
-First, the user downloads the connector from a Codat Link URL.
+First, the user downloads the connector from a Codat Link URL. The user will only be directed to do this if they have selected "QuickBooks Desktop app" on the intial Link screen.
+
+If the user selected "QuickBooks Enterprise cloud" or "Right Networks" they proceed immediately to ADD STEP LINK as these hosted environments already have the web connector installed.
 
 :::info Connector download file
 
-The QuickBooks Desktop connector is packaged as a .exe file. To increase your client's trust in the download, the filename is prefixed with your company name (the name of the company the user is connecting their data to). For example: `YourCompanyName-quickbooksDesktop-connector.exe`. Symbols in the filename are replaced with dashes.
+The QuickBooks Desktop connector is packaged and named "QuickBooksDesktopConnector.exe".
 
-Additionally, the file is signed with an Extended Validation Code Signing Digital Certificate issued by GlobalSign.
+Additionally, the file is signed with an Extended Validation Code Signing Digital Certificate issued by GlobalSign. IS IT??
 
 :::
-
-If you're using the Codat Link flow, the user can download the connector after they've selected QuickBooks Desktop as their accounting package.
-
-If you've built your own Link flow, the **linkUrl** field on the company's QuickBooks data connection will initiate the installer download.
 
 **Administrator privileges (admin rights) are required to run the connector.** When you add a new company, a user with admin rights needs to run the installer, which will display the following dialog:
 
 <img src="/img/old/420dc1e-QBDLinkNew.JPG" />
 
-The user copies their license key (the same as their _CompanyId_ in Codat) to use in the next step.
+Running the "QuickBooksDesktopConnector.exe" will launch the "QBWebConnector - InstallShield Wizard", taking the user through the installation steps. This will either be a fresh install or if the QB web connector is already present, will present an option to "Modify", ensuring the web connector is updated to the latest version.
 
 :::info What if the SMB user isn't a Windows admin?
 If the SMB user isn't a Windows administrator on their own system, a different administrator must approve the installation and run Quickbooks Desktop using the **Run as Administrator** option, both during the initial link and when adding companies to an existing connector. When installed in this way, the connector is only able to sync data while Quickbooks Desktop is closed.
 :::
 
-## 2. Launch the connector and enter the licence key
+## 2. Download and run the configuration file
 
-Next, the user runs the downloaded file to start the connector. They're prompted to enter their licence key, which is the same as their _CompanyId_ in Codat.
+Next, the user downloads the configuration file, and runs it to create a connection to the QBD company via the web connector. GOT TO HERE  They're prompted to enter their licence key, which is the same as their _CompanyId_ in Codat.
 
 :::info Link flows and licence keys
 
@@ -81,18 +78,6 @@ The licence key is only shown to the customer automatically if you're using the 
 <img src="/img/old/2442911-Entering_License_key.png" />
 
 They should paste the licence key copied in the previous task into the **Licence Key** box, and then click **Install**.
-
-## 3. Verify files, select a region and initiate link
-
-Next, the user needs to verify their data and selects their geographical region – either Canada, UK, or US – and then clicks **Link with [company name]**.
-
-<img src="/img/old/6658970-QBD_Connector.png" />
-
-<img src="/img/old/3404367-QB_region_selection.png" />
-
-The connector initiates the connection with QuickBooks Desktop and the user is prompted to grant access.
-
-<img src="/img/old/1afe318-QBDConfirm.PNG" />
 
 :::info Open one copy of QuickBooks
 An error is displayed if Quickbooks Desktop is not open, or multiple instances of Quickbook Desktop are running on the same machine.
