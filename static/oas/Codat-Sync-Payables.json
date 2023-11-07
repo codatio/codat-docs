@@ -7933,7 +7933,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Account"
+                "$ref": "#/components/schemas/Account/definitions/accountPrototype"
               }
             }
           }
@@ -41933,7 +41933,28 @@
                 "type": "string",
                 "description": "Identifier for the account, unique for the company.",
                 "example": "1b6266d1-1e44-46c5-8eb5-a8f98e03124e"
-              },
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/Account/definitions/accountPrototype"
+          },
+          {
+            "properties": {
+              "metadata": {
+                "$ref": "#/components/schemas/Metadata"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/Bill/allOf/1"
+          }
+        ],
+        "definitions": {
+          "accountPrototype": {
+            "title": "Account prototype",
+            "type": "object",
+            "properties": {
               "nominalCode": {
                 "type": "string",
                 "nullable": true,
@@ -41968,7 +41989,16 @@
                 ]
               },
               "currency": {
-                "$ref": "#/components/schemas/Bill/allOf/0/properties/currency"
+                "title": "Currency",
+                "x-internal": true,
+                "type": "string",
+                "description": "The currency data type in Codat is the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code, e.g. _GBP_.\n\n## Unknown currencies\n\nIn line with the ISO 4217 specification, the code _XXX_ is used when the data source does not return a currency for a transaction. \n\nThere are only a very small number of edge cases where this currency code is returned by the Codat system.",
+                "format": "ISO4217",
+                "examples": [
+                  "GBP",
+                  "USD",
+                  "EUR"
+                ]
               },
               "currentBalance": {
                 "type": "number",
@@ -42012,19 +42042,11 @@
                   }
                 }
               },
-              "metadata": {
-                "$ref": "#/components/schemas/Metadata"
-              },
               "supplementalData": {
                 "$ref": "#/components/schemas/SupplementalData"
               }
             }
           },
-          {
-            "$ref": "#/components/schemas/Bill/allOf/1"
-          }
-        ],
-        "definitions": {
           "accountRef": {
             "title": "Account reference",
             "type": "object",
@@ -42261,16 +42283,7 @@
                 ]
               },
               "currency": {
-                "title": "Currency",
-                "x-internal": true,
-                "type": "string",
-                "description": "The currency data type in Codat is the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code, e.g. _GBP_.\n\n## Unknown currencies\n\nIn line with the ISO 4217 specification, the code _XXX_ is used when the data source does not return a currency for a transaction. \n\nThere are only a very small number of edge cases where this currency code is returned by the Codat system.",
-                "format": "ISO4217",
-                "examples": [
-                  "GBP",
-                  "USD",
-                  "EUR"
-                ]
+                "$ref": "#/components/schemas/Account/definitions/accountPrototype/properties/currency"
               },
               "currencyRate": {
                 "$ref": "#/components/schemas/BillPayment/definitions/billPaymentLineLink/properties/currencyRate"
@@ -42350,7 +42363,7 @@
                       "type": "object",
                       "properties": {
                         "currency": {
-                          "$ref": "#/components/schemas/Bill/allOf/0/properties/currency",
+                          "$ref": "#/components/schemas/Account/definitions/accountPrototype/properties/currency",
                           "description": "The currency of the transaction."
                         },
                         "currencyRate": {
@@ -42395,7 +42408,7 @@
                           "description": "The account that the allocated payment is made from or to."
                         },
                         "currency": {
-                          "$ref": "#/components/schemas/Bill/allOf/0/properties/currency",
+                          "$ref": "#/components/schemas/Account/definitions/accountPrototype/properties/currency",
                           "description": "Currency the payment has been made in."
                         },
                         "currencyRate": {
@@ -42676,7 +42689,7 @@
                 "example": "2022-09-15T16:35:00"
               },
               "currency": {
-                "$ref": "#/components/schemas/Bill/allOf/0/properties/currency",
+                "$ref": "#/components/schemas/Account/definitions/accountPrototype/properties/currency",
                 "description": "Currency of the bill credit note."
               },
               "currencyRate": {
@@ -43060,7 +43073,7 @@
               "currency": {
                 "allOf": [
                   {
-                    "$ref": "#/components/schemas/Bill/allOf/0/properties/currency"
+                    "$ref": "#/components/schemas/Account/definitions/accountPrototype/properties/currency"
                   },
                   {
                     "description": "ISO currency code in which the bill payment is recorded in the accounting platform."
@@ -45531,7 +45544,7 @@
       },
       "TaxRate": {
         "title": "Accounting: Tax rate",
-        "description": "> View the coverage for tax rates in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=taxRates\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nAccounting systems typically store a set of taxes and associated rates within the accounting package. This means that users don't have to look up or remember the rates for each type of tax. For example, applying the tax \"UK sales VAT\" to line items of an invoice adds the correct rate of 20%. \n\n### Tax components\n\nIn some cases, a tax is made up of multiple sub taxes, often called _components_ of the tax.  For example, you may have an item that is charged a tax rate called \"City import tax (8%)\" that has two components: \n\n- A city tax of 5%  \n- An import tax of 3%\n\n> **Effective tax rates**  \n> - Where there are multiple components of a tax, each component may be calculated on the original amount and added together. Alternatively, one tax may be calculated on the sub-total of the original amount plus another tax, which is referred to as _compounding_. When there is compounding, the effective tax rate is the rate that, if applied to the original amount, would result in the total amount of tax with compounding.  \n>\n> **Example:**  \n> A tax has two components. Both components have a rate of 10%, and one component is compound. In this case, there is a total tax rate of 20% but an effective tax rate of 21%.\n>\n> - For QuickBooks Online, Codat doesn't use compound rates. Instead, the calculated effective tax rate for each component is shown. This means that the effective and total rates are the same because the total tax rate is a sum of the component rates.",
+        "description": "﻿> View the coverage for tax rates in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=taxRates\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nAccounting systems typically store a set of taxes and associated rates within the accounting package. This means that users don't have to look up or remember the rates for each type of tax. For example, applying the tax \"UK sales VAT\" to line items of an invoice adds the correct rate of 20%.\n\n### Tax components\n\nIn some cases, a tax is made up of multiple sub taxes, often called _components_ of the tax.  For example, you may have an item that is charged a tax rate called \"City import tax (8%)\" that has two components:\n\n- A city tax of 5%\n- An import tax of 3%\n\n> **Effective tax rates**\n> - Where there are multiple components of a tax, each component may be calculated on the original amount and added together. Alternatively, one tax may be calculated on the sub-total of the original amount plus another tax, which is referred to as _compounding_. When there is compounding, the effective tax rate is the rate that, if applied to the original amount, would result in the total amount of tax with compounding.\n>\n> **Example:**  \n> A tax has two components. Both components have a rate of 10%, and one component is compound. In this case, there is a total tax rate of 20% but an effective tax rate of 21%.\n>\n> - For QuickBooks Online, Codat doesn't use compound rates. Instead, the calculated effective tax rate for each component is shown. This means that the effective and total rates are the same because the total tax rate is a sum of the component rates.",
         "type": "object",
         "allOf": [
           {
@@ -45577,7 +45590,7 @@
                 "type": "array",
                 "nullable": true,
                 "items": {
-                  "$ref": "#/components/schemas/Account/allOf/0/properties/validDatatypeLinks/items"
+                  "$ref": "#/components/schemas/Account/definitions/accountPrototype/properties/validDatatypeLinks/items"
                 }
               },
               "metadata": {
