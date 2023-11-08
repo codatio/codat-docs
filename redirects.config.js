@@ -695,6 +695,18 @@ module.exports = {
     // assess
 
     {
+      to: "/lending/overview",
+      from: "/lending/metrics/accounting/api-financial-metrics",
+    },
+    {
+      to: "/lending/overview",
+      from: "/lending/metrics/accounting/overview",
+    },
+    {
+      to: "/lending/overview",
+      from: "/lending/metrics/accounting/api-marketing-metrics",
+    },
+    {
       to: "/lending/enhanced-financials/overview",
       from: "/assess/categories",
     },
