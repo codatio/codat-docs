@@ -863,15 +863,15 @@ module.exports = {
       from: "/assess/guides/migration-guides/deprecation-account-categories-portal",
     },
     {
-      to: "/lending/metrics/accounting/api-financial-metrics",
+      to: "/lending/overview",
       from: "/assess/metrics/accounting/api-financial-metrics",
     },
     {
-      to: "/lending/metrics/accounting/api-marketing-metrics",
+      to: "/lending/overview",
       from: "/assess/metrics/accounting/api-marketing-metrics",
     },
     {
-      to: "/lending/metrics/accounting/overview",
+      to: "/lending/overview",
       from: "/assess/metrics/accounting/overview",
     },
     {
