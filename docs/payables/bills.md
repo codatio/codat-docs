@@ -4,7 +4,7 @@ description: "Create and fetch bills using Sync for Payables"
 image: "/img/banners/social/payables.png"
 ---
 
-In Codat's API a [Bill](/sync-for-payables-api#/schemas/Bill) represents an invoice from a [supplier](/sync-for-payables-api#/schemas/Supplier). This is an *accounts receivable* invoice.
+In Codat's API a [Bill](/sync-for-payables-api#/schemas/Bill) represents an invoice from a [supplier](/sync-for-payables-api#/schemas/Supplier). This is an *accounts payable* invoice.
 
 Bills can be [retrieved](/sync-for-payables-api#/operations/list-bills) using Sync for Payables.
 
