@@ -58,7 +58,7 @@ Enjoy the benefits of individual solutions tailored to your needs, volume-based 
 - Unlimited company and seat creation
 - Enhanced usage options with hourly syncs and superior rate limits
 - Implementation assistance and premium technical support
-- Access to add-ons, including enterprise integrations, security features, and more
+- Access to add-ons, including desktop and ERP integrations, security features, and more
 
 ### Billing
 
