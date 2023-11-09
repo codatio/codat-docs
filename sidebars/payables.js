@@ -18,48 +18,55 @@ module.exports = [
   },
   {
     type: "doc",
-    id: "payables/suppliers",
+    id: "payables/configure-customer",
     customProps: {
       hr: true,
       section: "Build your solution",
     },
   },
+  "payables/suppliers",
   "payables/bills",
   "payables/mapping",
   "payables/payments",
   {
-    type: "ref",
-    label: "Oracle NetSuite",
+    type: "category",
+    label: "Manage integrations",
     customProps: {
       hr: true,
-      section: "Manage integrations",
     },
-    id: "integrations/accounting/netsuite/accounting-netsuite",
-  },
-  {
-    type: "doc",
-    label: "QuickBooks Online",
-    id: "integrations/accounting/quickbooksonline/accounting-quickbooksonline"
-  },
-  {
-    type: "doc",
-    label: "QuickBooks Desktop",
-    id: "integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop"
-  },
-  {
-    type: "doc",
-    label: "Sage Business Cloud",
-    id: "integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud"
-  },
-  {
-    type: "doc",
-    label: "Sage Intacct",
-    id: "integrations/accounting/sage-intacct/accounting-sage-intacct"
-  },
-  {
-    type: "doc",
-    label: "Xero",
-    id: "integrations/accounting/xero/accounting-xero"
+    collapsed: true,
+    items: [
+      {
+        type: "doc",
+        id: "integrations/accounting/netsuite/accounting-netsuite",
+        label: "Oracle NetSuite",
+      },
+      {
+        type: "doc",
+        id: "integrations/accounting/quickbooksonline/accounting-quickbooksonline",
+        label: "QuickBooks Online",
+      },
+      {
+        type: "doc",
+        id: "integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop",
+        label: "QuickBooks Desktop",
+      },
+      {
+        type: "doc",
+        id: "integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud",
+        label: "Sage Business Cloud",
+      },
+      {
+        type: "doc",
+        id: "integrations/accounting/sage-intacct/accounting-sage-intacct",
+        label: "Sage Intacct",
+      },
+      {
+        type: "doc",
+        id: "integrations/accounting/xero/accounting-xero",
+        label: "Xero",
+      },
+    ],
   },
   {
     type: "category",

@@ -1,12 +1,12 @@
 ---
 title: Manage suppliers
-description: "Create and update suppliers using Sync for Payables"
+description: "View, create, and update suppliers using Sync for Payables"
 image: "/img/banners/social/payables.png"
 ---
 
-In Sync for Payables, a [supplier](/sync-for-payables-api#/schemas/Supplier) represents a business or sole trader that provides goods or services to a company.
+In Sync for Payables, a [supplier](/sync-for-payables-api#/schemas/Supplier) represents a business or a sole trader that provides goods or services to your SMB customer.
 
-Suppliers are relevant for the bill pay use case as each bill is associated with a supplier - suppliers also have important information such as addresses and contact details which could be used to notify a supplier once a payment is made.
+In accounts payable, each bill is associated with a supplier - suppliers also have important information such as addresses and contact details which could be used to notify a supplier once a payment is made.
 
 #### Retrieve a list of suppliers
 

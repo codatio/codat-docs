@@ -10,9 +10,7 @@ import { bankfeedsIntegrations } from "@components/global/Integrations/integrati
 
 ## Journey overview
 
-The diagram below represents the overall activity flow when using Bank Feeds API, including your SMB customer and their accounting platform. It assumes are using Codat's mapping interface to let the user select the accounts used for pushing bank statements.
-
-If you choose one of the [other mapping UI options](/bank-feeds/setup#), you can visualize the flow by simply changing the actor of the mapping operation from `Codat` to `Your application` or `Accounting platform`.
+The diagram below represents the overall activity flow when using Sync for Payables. You can manage bills, suppliers, and payment methods in different ways and order, so we chose to represent these options as alternative scenarios. Consider them elements you can use to build the flow that suits you and your customers best.
 
 ```mermaid
 
@@ -25,22 +23,84 @@ sequenceDiagram
     smb ->> app: Logs into application
     smb ->> app: Initiates connection to accounting software
 
-    app ->> codat: Passes company and connection details
-    app ->> codat: Initiates auth flow
-    codat -->> smb: Displays auth flow
-    smb -->> codat: Authorizes connection
-    codat ->> acctg: Establishes connection
-    
-    codat ->> smb: Displays mapping options
-    smb -->> codat: Confirms mapping selections
-    
-    loop Load bank statements
-        smb ->> app: Spends money from bank account
-        app ->> codat: Pushes bank transaction details
-        codat ->> acctg: Creates bank transactions
-        acctg ->> smb: Displays loaded bank statement ready for reconciliation
+    rect rgb(191, 223, 255)
+      app ->> codat: Passes company and connection details
+      app ->> codat: Initiates auth flow
+      codat -->> smb: Displays auth flow
+      smb -->> codat: Authorizes connection
+      codat ->> acctg: Establishes connection
     end
 
+    rect rgb(236, 215, 245)
+    alt Retrieve suppliers
+      app ->> codat: Requests details of existing suppliers
+      codat ->> acctg: Fetches suppliers
+      acctg -->> codat: Returns suppliers
+      codat ->> app: Returns suppliers
+      app -> smb: Displays suppliers
+      smb -> app: Selects supplier
+    else Create supplier
+      smb ->> app: Provides supplier details
+      app ->> codat: Creates supplier
+      codat ->> acctg: Creates supplier record
+    end
+    end
+
+    rect rgb(215, 236, 245)
+    alt Retrieve bills
+      codat ->> acctg: Fetches existing bills
+      acctg -->> codat: Returns existing bills
+      codat ->> app: Returns existing bills
+      app ->> smb: Displays existing bills
+    else Create bill
+      app ->> codat: Creates bill
+      codat ->> acctg: Creates bill
+    end
+    end
+
+    rect rgb(231, 218, 237)
+    alt Retrieve bank accounts
+      codat ->> acctg: Fetches existing bank accounts
+      acctg -->> codat: Returns existing bank accounts
+      codat ->> app: Returns existing bank accounts
+      app ->> smb: Displays existing bank accounts
+    else Create bank account
+      app ->> codat: Creates bank account
+      codat ->> acctg: Creates bank account
+    end
+    app ->> smb: Displays payment method mapping
+    smb ->> app: Maps payment methods
+    end
+
+    rect rgb(237, 218, 231)
+      smb ->> app: Pays a bill
+      app ->> codat: Records bill payment
+      codat ->> acctg: Reconciles bill payment
+      acctg ->> smb: Displays paid bill
+    end
+
+```
+
+```mermaid
+
+graph TD
+
+    A(Create company) --> B(Create connection)
+    B --> C(Authorize connection)
+
+    C --> D1(Retrieve supplier)
+    C --> D2(Create supplier)
+    C --> E2(Retrieve bill)
+
+    D1 --> E1(Create bill)
+    D2 --> E1
+
+    E1 --> F(Map payment methods)
+    E2 --> F
+
+    F --> G(Pay bill)
+
+    G --> H(Reconcile payments)
 ```
 
 ## Configure Sync for Payables
@@ -64,6 +124,16 @@ In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate
 | Data types | `company`<br/>`chartOfAccounts`<br/>`balanceSheet`<br/>`profitAndLoss`<br/>`bankAccounts`<br/>`bankTransactions` | `banking-accounts`<br/>`banking-transactions`<br/>`banking-transactionCategories`<br/>`banking-accountBalances` | `commerce-companyInfo`<br/>`commerce-customers`<br/>`commerce-orders` |
 
 Configure the solution to refresh data when you need it by [setting a synchronization frequency](/core-concepts/data-type-settings#choose-a-synchronization-frequency) on the same screen. We recommend setting it to a daily or a monthly sync.
+
+bills
+billpayments
+accounts
+bankaccounts
+suppliers
+billcreditnotes
+paymentmethods
+tracking categories
+taxrates
 
 ### Manage data sources
 
@@ -93,6 +163,10 @@ Codat supports a range of [webhooks](/using-the-api/webhooks/core-rules-types) t
 
   Use this webhook to track the completion of the operation to create bank transactions in the target platform. When you receive a notification from this webhook, check the `status` value in the body. A `Success` status means the `transactions` array has been successfully pushed to the accounting software.
 
+
+
 --- 
 
 ## Read next
+
+SDK

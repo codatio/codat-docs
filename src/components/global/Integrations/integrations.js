@@ -30,6 +30,7 @@ export const integrationsFilterCommerceComm = [
 ]
 
 export const integrationsFilterPayables = [
+  "MYOB Business",
   "Oracle NetSuite",
   "QuickBooks Desktop",
   "QuickBooks Online",
