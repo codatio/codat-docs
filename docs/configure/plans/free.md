@@ -1,7 +1,7 @@
 ---
 title: "Discover Codat"
-sidebar_label: Free trail
-description: "Sign up and explore whether Codat suits your needs"
+sidebar_label: Free trial
+description: "Sign up to our free trial and explore whether Codat suits your needs"
 ---
 
 Test all Codat’s products and integrations on our free trial.
