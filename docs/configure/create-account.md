@@ -37,32 +37,6 @@ Everything from Free plus:
 
 #### Billing
 
-[Contact our sales team](https://www.codat.io/plans/#get-in-touch) to discuss enterprise pricing options.
+- [Contact our sales team](https://www.codat.io/plans/#get-in-touch) to discuss enterprise pricing options.
 
-<details>
-<summary>Other options</summary>
-
-### Start-up plan 
-
-You can get started with Codat with usage-based billing at £25/$30 per month per Active Connected Company (active = data pushed or pulled in a given billing period).
-
-#### Features
-
-- Access our standardized APIs and Assess
-- No monthly commitment
-- Unlimited companies
-- Unlimited seats
-
-#### Billing
-
-When using our start-up plan, you do not pay any monthly commitment fees. Instead, you will be charged for **each active company**. 
-
-:::tip Active companies
-
-Active companies represent your customer connections where you have successfully pulled or pushed data within your billing period. The first time you pull or push data for a company with and active connection in a given billing period, it will count as an active company.
-
-This excludes *Codat Sandbox* and *QuickBooks Online Sandbox*.
-:::
-
-You can use our Billing [dashboard](https://app.codat.io/settings/billing/usage) to track your usage and stay in control of your bills. 
-</details>
+- For existing clients on the start up plan use our Billing [dashboard](https://app.codat.io/settings/billing/usage) to track your usage and stay in control of your bills.

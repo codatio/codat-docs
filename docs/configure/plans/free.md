@@ -1,6 +1,6 @@
 ---
 title: "Discover Codat"
-sidebar_label: Free plan
+sidebar_label: Free trail
 description: "Sign up and explore whether Codat suits your needs"
 ---
 
@@ -21,7 +21,7 @@ When you're finished testing your Codat solution or your trial finishes, you can
 
 ### Free trial limitations
 
-You can use Codat for free for 30 days. 
+You can use Codat for free for 30 days.
 
 #### Usage
 
