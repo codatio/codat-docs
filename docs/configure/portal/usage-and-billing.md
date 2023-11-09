@@ -1,6 +1,7 @@
 ---
 title: "Usage and billing"
 sidebar_label: Usage and billing
+draft: true
 description: "Monitor your Codat usage and the corresponding billing figures to stay in control of your expenses"
 ---
 
