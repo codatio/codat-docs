@@ -39,4 +39,4 @@ Everything from Free plus:
 
 - [Contact our sales team](https://www.codat.io/plans/#get-in-touch) to discuss enterprise pricing options.
 
-- For existing clients on the start up plan use our Billing [dashboard](https://app.codat.io/settings/billing/usage) to track your usage and stay in control of your bills.
+- For existing clients on the Start Up plan use our Billing [dashboard](https://app.codat.io/settings/billing/usage) to track your usage and stay in control of your bills.
