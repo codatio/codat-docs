@@ -5,7 +5,8 @@ description: "Details of our legacy Start-up plan"
 
 :::danger Legacy plan
 
-This page contains details of our legacy Start-up plan that is no longer available. Refer to our [Plans](/configure/create-account) page for the most up-to-date options.
+This page contains details of our legacy Start-up plan that is not available for new customers. Refer to our [Plans](/configure/create-account) page for the most up-to-date options.
+
 
 :::
 
@@ -24,7 +25,8 @@ When using our start-up plan, you do not pay any monthly commitment fees. Instea
 
 :::tip Active companies
 
-Active companies represent your customer connections where you have successfully pulled or pushed data within your billing period. The first time you pull or push data for a company with and active connection in a given billing period, it will count as an active company.
+Active companies represent your customer connections where you have successfully pulled or pushed data within your billing period. The first time you pull or push data for a company with an active connection in a given billing period, it will count as an active company.
+
 
 Active companies that are connected only to Codat Sandbox or QuickBooks Online Sandbox are excluded from billing.
 :::

@@ -54,7 +54,7 @@ Enjoy the benefits of individual solutions tailored to your needs, volume-based 
 
 #### Features
 
-- Unlimited access to all of Codat's products and integrations
+- Unlimited access to all of Codat's products and cloud-based integrations
 - Unlimited company and seat creation
 - Enhanced usage options with hourly syncs and superior rate limits
 - Implementation assistance and premium technical support
@@ -64,7 +64,7 @@ Enjoy the benefits of individual solutions tailored to your needs, volume-based 
 
 [Contact our sales team](https://www.codat.io/plans/#get-in-touch) to discuss Full access pricing options.
 
-If you are an existing client using our legacy Start Up plan, use our Billing [dashboard](https://app.codat.io/settings/billing/usage) to track your usage and stay in control of your bills.
+If you are an existing client using our Start Up plan, use our Billing [dashboard](https://app.codat.io/settings/billing/usage) to track your usage and stay in control of your bills.
 
 Use the dashboard on the Portal's [home page](https://app.codat.io/) for a real-time, high-level view of the following details:
 - Overall number of created companies
