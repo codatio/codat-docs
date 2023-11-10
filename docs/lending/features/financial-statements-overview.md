@@ -68,9 +68,9 @@ You can help improve the suggestions our model supplies by confirming them or pr
 
 That's it! Financial statements will return the updated category for the accounts going forward.
 
-:::information Impact
+:::info Impact
 
-Impact is defined as the current account balance multiplied by one minus the confidence.  Where an account is confirmed the confidence is 100% and therefore the impact will be zero.
+Impact is defined as the current account balance multiplied by one minus the confidence, and it relates to the uncertainty of the individual account.  Where an account is confirmed the confidence becomes 100% and therefore the resulting impact will be zero.
 
 Impact = Balance * (1-Confidence)
 
