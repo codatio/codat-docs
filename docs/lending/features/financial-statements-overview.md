@@ -68,6 +68,14 @@ You can help improve the suggestions our model supplies by confirming them or pr
 
 That's it! Financial statements will return the updated category for the accounts going forward.
 
+:::information Impact
+
+Impact is defined as the current account balance multiplied by one minus the confidence.  Where an account is confirmed the confidence is 100% and therefore the impact will be zero.
+
+Impact = Balance * (1-Confidence)
+
+:::
+
 </details>
 
 ## Supported outputs
@@ -102,7 +110,7 @@ We recommend you configure the following [webhooks](/using-the-api/webhooks/core
 - [Dataset status has changed to an error state](/using-the-api/webhooks/core-rules-types#dataset-status-has-changed-to-an-error-state)  
 
   If you receive a notification from this webhook, it means an issue occurred when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
- 
+
 - [Dataset data changed](/using-the-api/webhooks/core-rules-types#dataset-data-changed)  
 
   If you receive a notification from this webhook, it means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform.
