@@ -66,6 +66,7 @@ In the request body, specify a `platformKey` of the accounting platform you're l
 | Accounting platform | platformKey |
 | ---  | ---  |
 | Quickbooks Online Bankfeeds | `hcws` |
+| Netsuite | `akxx` |
 | Xero | `gbol` |
 | FreeAgent | `fbrh` |
 | Sage Bank Feeds | `olpr` |
