@@ -58,23 +58,23 @@ You can help improve the suggestions our model supplies by confirming them or pr
 
   These are ordered by _impact_ by default, which is determined by the current account balance and our confidence in our automatic categorization. 
 
+  :::info Impact
+
+  Impact represents the effect of uncertainty associated with each individual account. It is defined as the current account balance multiplied by one minus the confidence. Where an account is confirmed, the confidence becomes 100% and the resulting impact therefore      will be zero.
+
+  `Impact = Balance * (1-Confidence)`
+
+  :::
+
   ![An image of the Lending Categorization view in the Portal](/img/lending/acct-categorization-v3-2.png)
 
 2. To change the category of an account, select the accounts using the checkbox and click **Recategorize**. 
 
    Choose an appropriate category from the proposed five levels and click **Recategorize**.  This saves the newly assigned category. 
 
-![An image of the Lending Categorization view in the Portal with an account in process of recategorizing](/img/lending/acct-categorization-v3-3.png)
+  ![An image of the Lending Categorization view in the Portal with an account in process of recategorizing](/img/lending/acct-categorization-v3-3.png)
 
 That's it! Financial statements will return the updated category for the accounts going forward.
-
-:::info Impact
-
-Impact is defined as the current account balance multiplied by one minus the confidence, and it relates to the uncertainty of the individual account.  Where an account is confirmed the confidence becomes 100% and therefore the resulting impact will be zero.
-
-Impact = Balance * (1-Confidence)
-
-:::
 
 </details>
 
