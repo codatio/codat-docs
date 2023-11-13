@@ -66,55 +66,42 @@ Running the "QuickBooksDesktopConnector.exe" will launch the "QBWebConnector - I
 If the SMB user isn't a Windows administrator on their own system, a different administrator must approve the installation and run Quickbooks Desktop using the **Run as Administrator** option, both during the initial link and when adding companies to an existing connector. When installed in this way, the connector is only able to sync data while Quickbooks Desktop is closed.
 :::
 
-## 2. Download and run the configuration file
+## 2. Download and run the configuration file to authorize the connector to access QuickBooks
 
-Next, the user downloads the configuration file, and runs it to create a connection to the QBD company via the web connector. GOT TO HERE  They're prompted to enter their licence key, which is the same as their _CompanyId_ in Codat.
-
-:::info Link flows and licence keys
-
-The licence key is only shown to the customer automatically if you're using the Codat Link flow rather than building your own Link flow.
-:::
-
-<img src="/img/old/2442911-Entering_License_key.png" />
-
-They should paste the licence key copied in the previous task into the **Licence Key** box, and then click **Install**.
-
-:::info Open one copy of QuickBooks
-An error is displayed if Quickbooks Desktop is not open, or multiple instances of Quickbook Desktop are running on the same machine.
-:::
-
-## 4. Authorize the connector to access QuickBooks
-
-In QuickBooks Desktop, the user is prompted to allow the application to read and modify the QuickBooks company file. Any of the **Yes** options will allow the connector to work. However, for the best user experience, we recommend choosing **Yes, always** to allow access even if QuickBooks Desktop is not running.
+Next, the user downloads the configuration file, and runs it to create a connection to the QBD company via the web connector. The configuration file will detect and link to the open QBD company, prompting QuickBooks Desktop to display a prompt to allow the application to read and modify the QuickBooks company file.
 
 Options might vary between QuickBooks versions but are similar to:
 
 - **No**
-- **Yes, prompt each time**
-- **Yes, whenever this QuickBooks company file is open**
-- **Yes, always; allow access even if QuickBooks is not running**.
+- **Yes, always; allow access even if QuickBooks is not running**
 
-In all cases, we recommend choosing the option that allows the most access to QuickBooks so that you can sync data as easily as possible.
+The user will need to select "Yes, always; allow access even if QuickBooks is not running" to enable the connector to work.
 
-<img src="/img/old/c650d8d-QBD-Auth.png" />
+<img src="/img/old/c650d8d-QBD-Auth.png" />   NEED A NEW IMG OF APP CERTIFICATE SCREEN
 
 Check the details in the **Access Confirmation** dialog, and then click **Done**.
 
 <img src="/img/old/7db6c59-Access_Confirmation.png" />
 
-## 5. Wait for the connector to complete first link
+## 3. Authenticate the connector
 
-Once access to QuickBooks has been granted, the connector will process the datasets you have chosen to _fetch on first link_ (see [Data Sync Settings](/core-concepts/data-type-settings)). Upon completion of the first link, a message will be shown to the user confirming that their data has been synchronized.
+Having allowed the connector access to the open QuickBooks Desktop company, the user will see a new connection appear in the QB web connector. The user must then authenticate the connector by entering the password, supplied in the link flow UI, into the QB web connector connection row "Password" field.
 
-If you have chosen to have your connectors perform a one-time synchronization, the connector will uninstall itself and set the company status to _deauthorised_.
+Once entered the password must be saved by selecting "Select All", then click "Update Selected".
+
+## 4. Wait for the connector to complete first link
+
+Once the password is saved, access to QuickBooks will be granted and the connector will process the datasets you have chosen to _fetch on first link_ (see [Data Sync Settings](/core-concepts/data-type-settings)).
+
+If you have chosen to have your connectors perform a one-time synchronization, your company connection status will change to _deauthorised_ after initial sync.
 
 If you have chosen to install your connectors for ongoing synchronizations, the connector will periodically process any dataset syncs or pushes you have queued using the Codat portal or API. The connector will also be set to automatically start when the system reboots.
 
-<img src="/img/old/e435017-Linked_Succesfully.png" />
+<img src="/img/old/e435017-Linked_Succesfully.png" />  NEED AN IMG of QBWC
 
 ## Installation path
 
-The QuickBooks Desktop connector is installed in Program Files inside a directory named with your client name in Codat.
+The QuickBooks Desktop connector is installed in Program Files inside a directory named with your client name in Codat. WHAT IS THE FILE DIRECTORY?
 
 ```
   C:\\Program Files (x86)\\<Client Name>\\QuickBooks-connector
@@ -122,23 +109,20 @@ The QuickBooks Desktop connector is installed in Program Files inside a director
 
 For example:
 
-<img src="/img/old/8fa7d87-qbd-connector-installation-path-border.png" />
+<img src="/img/old/8fa7d87-qbd-connector-installation-path-border.png" /> NEED NEW IMG OF FILE LOCATION
 
 
 ## Uninstalling
 
 If your user wants to remove the QuickBooks Desktop connector and disconnect the service, there are two ways they achieve this on their computer.
 
-### System Tray
-
-The connector can be deleted from the system tray by selecting the up arrow on the Windows taskbar this will reveal any hidden icons, and the user will be able to select the connector if they use the secondary mouse button (left click) a pop up with dialog will appear.
-From this menu, the user would be able to click on Uninstall QuickBooks Connector, this launches a pop up where the user can confirm they wish to uninstall the connector.
-
 ### System Settings
 
-The other way users can uninstall the connector is to go to Windows Settings > Apps & features from the menu and then search for the connector in the filter form
+The web connector can be deleted by going to Windows Settings > Apps & features from the menu and then search for "Web Connector" in the filter form.
 
 The QuickBooks Connector will then show as a result in the list, and the user can select Uninstall to remove the connector.
+
+The user will also need to navigate to ADD FILE DIRECTORY and delete the QBWebConnector file.
 
 ### Removing the App Certificate
 
