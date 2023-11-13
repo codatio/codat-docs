@@ -48,7 +48,7 @@ export const bankfeedsIntegrations = [
   },
   {
     "name": "Oracle NetSuite bank feeds",
-    "to": "/integrations/bank-feeds/netsuite-bank-feeds/",
+    "to": "/integrations/bank-feeds/netsuite-bank-feeds/netsuite-bank-feeds-setup",
     "sourceType": "bankfeeds",
     "img": "https://static.codat.io/public/officialLogos/Square/9815B998-024D-4415-A40B-89903B2CAD6F.png"
   },
