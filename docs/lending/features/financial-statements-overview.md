@@ -58,9 +58,9 @@ You can help improve the suggestions our model supplies by confirming them or pr
 
   These are ordered by _impact_ by default, which is determined by the current account balance and our confidence in our automatic categorization. 
 
-  :::info Impact
+  :::tip Impact
 
-  Impact represents the effect of uncertainty associated with each individual account. It is defined as the current account balance multiplied by one minus the confidence. Where an account is confirmed, the confidence becomes 100% and the resulting impact therefore      will be zero.
+  Impact represents the effect of uncertainty associated with each individual account. It is defined as the current account balance multiplied by one minus the confidence. Where an account is confirmed, the confidence becomes 100% and the resulting impact therefore will be zero.
 
   `Impact = Balance * (1-Confidence)`
 
