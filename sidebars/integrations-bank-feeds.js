@@ -12,13 +12,18 @@ module.exports = [
     className: "header",
   },
   {
-    type: "category",
-    label: "QuickBooks Online",
-    collapsed: true,
+    type: "doc",
+    label: "NetSuite",
+    id: "integrations/bank-feeds/netsuite-bank-feeds/netsuite-bank-feeds-setup",
     customProps: {
       hr: true,
       section: "Bank feeds integrations",
     },
+  },
+  {
+    type: "category",
+    label: "QuickBooks Online",
+    collapsed: true,
     items: [
       {
         type: "doc",

@@ -46,13 +46,13 @@ module.exports = [
   {
     type: "category",
     label: "QuickBooks Online",
-    items: [
-      "bank-feeds/integrations/qbo/mapping",
-    ],
     customProps: {
       hr: true,
       section: "Manage integrations",
     },
+    items: [
+      "bank-feeds/integrations/qbo/mapping",
+    ],
   },
   {
     type: "category",

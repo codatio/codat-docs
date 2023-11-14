@@ -47,6 +47,12 @@ export const bankfeedsIntegrations = [
     "tags": ["US", "Canada"],
   },
   {
+    "name": "Oracle NetSuite bank feeds",
+    "to": "/integrations/bank-feeds/netsuite-bank-feeds/netsuite-bank-feeds-setup",
+    "sourceType": "bankfeeds",
+    "img": "https://static.codat.io/public/officialLogos/Square/9815B998-024D-4415-A40B-89903B2CAD6F.png"
+  },
+  {
     "name": "Sage bank feeds",
     "to": "/integrations/bank-feeds/sage-bank-feeds/",
     "sourceType": "bankfeeds",
@@ -67,6 +73,12 @@ export const bankfeedsIntegrations = [
 ]
 
 export const bankfeedsInternalMappingIntegrations = [
+  {
+    "name": "Oracle NetSuite bank feeds",
+    "to": "/integrations/bank-feeds/netsuite-bank-feeds/",
+    "sourceType": "bankfeeds",
+    "img": "https://static.codat.io/public/officialLogos/Square/9815B998-024D-4415-A40B-89903B2CAD6F.png"
+  },
   {
     "name": "Xero bank feeds",
     "to": "/integrations/bank-feeds/xero-bank-feeds/",

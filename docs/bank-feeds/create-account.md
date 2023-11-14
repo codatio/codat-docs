@@ -66,9 +66,10 @@ In the request body, specify a `platformKey` of the accounting platform you're l
 | Accounting platform | platformKey |
 | ---  | ---  |
 | Quickbooks Online Bankfeeds | `hcws` |
+| Oracle NetSuite | `akxx` |
 | Xero | `gbol` |
 | FreeAgent | `fbrh` |
-| Sage Bank Feeds | `olpr` |
+| Sage bank feeds | `olpr` |
 
 As an example, let's create a QuickBooks Online (QBO) connection. In response, the endpoint returns a `dataConnection` object with a `PendingAuth` status and a `linkUrl`. Direct your customer to the `linkUrl` to initiate our [Link auth flow](/auth-flow/overview) and enable them to authorize this connection.
 
