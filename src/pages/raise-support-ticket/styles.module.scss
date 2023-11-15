@@ -1,0 +1,26 @@
+.apiStatusWrapper {
+  background: #ffd6a0;
+  position: fixed;
+  z-index: 1;
+  bottom: 1em;
+  left: 1em;
+  border-radius: 4px;
+  padding: 0.5em;
+  border: 2px solid #754300;
+
+  a {
+    color: black !important;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+input, textarea, select{
+  width: 60%;
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid #ededed;
+  border-radius: 5px;
+}
