@@ -541,7 +541,7 @@ module.exports = {
     },
     {
       from: "/other/portal/usage-and-billing",
-      to: "/configure/portal/usage-and-billing",
+      to: "/configure/create-account",
     },
     {
       from: "/other/user-management/adding-users",
@@ -554,6 +554,14 @@ module.exports = {
     {
       from: "/other/user-management/user-roles",
       to: "/configure/user-management/user-roles",
+    },
+    {
+      from: "/configure/plans/free",
+      to: "/configure/create-account",
+    },
+    {
+      from: "/configure/portal/usage-and-billing",
+      to: "/configure/create-account",
     },
 
     //
