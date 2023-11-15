@@ -14,7 +14,7 @@ Codat recommends that each customer grants access to all data during their 1st i
 
 This allows Codat to have access to all data from the 1st connection, but will only pull relevant data based on the specific use-case.
 
-E.g. I connect my Xero via a Dashboard customer journey. I grant access to all data within my Xero account - but TD Bank only pulls data-types that are relevant for the Dashboard product as that is all the user has provided consent for.
+E.g. I connect my Xero via a Dashboard customer journey. I grant access to all data within my Xero account - but you only pull data-types that are relevant for the Dashboard product as that is all the user has provided consent for.
 #### An existing customer wants to add integration package(s) for existing product
 
 Customers can use the Strategic Consent Journey UI to add additional integration packages for a specific product. E.g. “Click here to connect more packages.
@@ -26,7 +26,7 @@ The UI will offer options for customers to make changes, like signing up for add
 
 A customer has already connected their Xero account into a dashboard product, and now wants to provide data for a lending origination use-case.
 
-As the customer has already granted access to all their Xero data, TD Bank technically has access to pull additional data-types that they haven’t pulled before. E.g. Financial Statements.
+As the customer has already granted access to all their Xero data, you technically have access to pull additional data-types that they haven’t pulled before. E.g. Financial Statements.
 
 The customer will be presented with a UI screen that confirms they are happy to share additional data-sets. This UI is a simple “Confirm I’m happy to share additional data”, and does not require the customer to re-auth or re-login to any accounting package.
 

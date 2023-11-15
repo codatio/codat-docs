@@ -8,7 +8,7 @@ description: "View the different ways to build a consent journey"
 | Area | Description | Owner |
 | :- | :- | :-|
 | UI | Front-end Customer UI | Client |
-| Onboarding Journey | Ability to connect Accounting, Banking and Commerce platforms |  Embedded Link = Codat SDK <br /> API = TD Bank (via Codat’s API)  |
+| Onboarding Journey | Ability to connect Accounting, Banking and Commerce platforms |  Embedded Link = Codat SDK <br /> API = TClient (via Codat’s API)  |
 | Manage Connections | Ability to add, disconnect, or manage connections | Client (via Codat’s API) |
 
 

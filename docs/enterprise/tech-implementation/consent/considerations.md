@@ -9,7 +9,7 @@ description: "Things to take into consideration when building and deploying a co
 
 In our agreement with you, Codat acts as the Processor of your customers data, you will remain the controller. This relationship allows you to maintain full control over your customers data, including when deciding when to delete your customers data. 
 
-You will likely want to provide the customer with an overview of TD Banks Security & Data Privacy policies within your strategic consent journey.
+You will likely want to provide the customer with an overview of your Security & Data Privacy policies within your strategic consent journey.
 
 #### **Manage Connections UI**
 
@@ -57,4 +57,4 @@ This question should be added into a wider set of FAQs that are surfaced within 
 
 #### **GDPR**
 
-Codat acts as the Processor of TD Banks client data, whilst the Bank remains the controller. This relationship allows the Bank to maintain full control over the client’s data, including when deciding when to delete it.  There are links to the Bank’s Security & Data Privacy Policy within this consent journey.
+Codat acts as the Processor of your client data, whilst the you remains the controller. This relationship allows the you to maintain full control over the client’s data, including when deciding when to delete it.  There are links to the your Security & Data Privacy Policy within this consent journey.
