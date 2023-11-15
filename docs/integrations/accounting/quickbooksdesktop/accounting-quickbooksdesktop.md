@@ -105,11 +105,7 @@ Add your company branding: this is used in the Link flow.
 
 From the SMB user's perspective, they'll see the connector app as being owned and branded by Intuit.
 
-### 2. Configure the Link flow
-
-You must configure the built-in Codat Link flow for the connector. This will create a download link for the connector and provide the unique company Id (used as the license key) for each of your SMB users.
-
-### 3. Enable the connector
+### 2. Enable the connector
 
 Enable the QuickBooks Desktop connector in the <a className="external" href="https://app.codat.io/" target="_blank">Codat Portal</a>.
 
@@ -129,7 +125,7 @@ Here's how your SMB users interact with the QBD connector.
 
 When installed, the QBD connector doesn’t require any further interaction by the SMB user, and administrator privileges are no longer required.
 
-The connector has a UI that is accessible from the system tray. Your SMB users do not usually need to interact with this, but there is functionality available for advanced users, such as adding connections to multiple companies, pausing syncs, and manually starting syncs.
+The connector has a UI that is accessible from the system tray and the Start menu. Your SMB users do not usually need to interact with this, but there is functionality available for advanced users, such as adding connections to multiple companies, pausing syncs, and manually starting syncs.
 
 ## System requirements
 
@@ -138,9 +134,3 @@ See [QuickBooks Desktop requirements](/integrations/accounting/quickbooksdesktop
 ## Install the connector
 
 See [Install the QuickBooks Desktop connector](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector) to learn how to set up and enable the connector.
-
-:::info Installation in hosted environments
-
-[Installation on Right Networks hosted instances](/integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks) is currently available in beta.
-
-:::
