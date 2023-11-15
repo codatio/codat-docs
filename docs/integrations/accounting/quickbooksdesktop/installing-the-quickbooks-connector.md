@@ -1,4 +1,4 @@
-<img width="1057" alt="image" src="https://github.com/codatio/codat-docs/assets/149416859/15f32147-432f-4756-a0ee-cb2bbde337c7">---
+---
 title: "Install the QuickBooks Desktop connector"
 description: "Guide for SMB users to install our QuickBooks Desktop on-premise connector."
 sidebar_label: Install the connector
