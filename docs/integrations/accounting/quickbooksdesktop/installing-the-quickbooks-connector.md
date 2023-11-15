@@ -72,11 +72,11 @@ Options might vary between QuickBooks versions, but are similar to:
 
 The user should select **Yes, always; allow access even if QuickBooks is not running** to enable the connector to work.
 
-<img src="/img/integrations/accounting/quickbooksdesktop/NewQBD-AccessConf.png" />
+<img src="/img/integrations/accounting/quickbooksdesktop/NewQBD-AppCertificate.png" />
 
 They should check the details in the **Access Confirmation** dialog, and then click **Done**.
 
-<img src="/img/integrations/accounting/quickbooksdesktop/NewQBD-DownloadInstaller.png" />
+<img src="/img/integrations/accounting/quickbooksdesktop/NewQBD-AccessConf.png" />
 
 ## 3. Authenticate the connector
 
