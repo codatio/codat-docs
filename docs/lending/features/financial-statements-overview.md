@@ -40,11 +40,12 @@ Each account category consists of up to five levels, with the most relevant leve
 <details>
   <summary>Supported account categories</summary>
 
-  <iframe
-    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRkvocA0AjDFFHTyQ-ivddggN996pn2_FOhzE3iThrFje_RGnAvw1QqvaLKGhWNXHCOpgtekuFqb7xt/pubhtml?widget=true&amp;headers=false"
-    frameborder="0"
-    style={{ top: 0, left: 0, width: "100%", height: "660px" }}
-  ></iframe>
+<iframe
+  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=340133827&amp;single=true&amp;widget=true&amp;headers=false"
+  frameborder="0"
+  style={{ top: 0, left: 0, width: "100%", height: "450px" }}
+></iframe>
+  
 </details>
 
 #### Recategorizing accounts

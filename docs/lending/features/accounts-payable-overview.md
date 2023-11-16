@@ -19,7 +19,7 @@ Common uses of our accounts payable feature include:
 
 - **Supplier risk analysis:** gain insights into the borrower's relationship with the supplier including a fully history of bills, payment behaviour, and discounts provided on previous bills. 
 
-## Supported feature components
+## Feature components
 
 <iframe
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=1075181493&amp;single=true&amp;widget=true&amp;headers=false"
