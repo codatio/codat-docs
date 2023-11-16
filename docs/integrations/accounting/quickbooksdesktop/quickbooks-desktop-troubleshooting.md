@@ -11,13 +11,9 @@ The connector logs can assist when diagnosing issues for QuickBooks Desktop. The
 
 The logs files created by the connector itself are located in:
 
-```C:\Program Files (x86)\<CLIENT NAME>\QuickBooks-connector\logs\connector.log```
+```C:\ProgramData\Intuit\QBWebConnector\log\QWCLog.txt```
 
-It can also be useful to get the link.json file which is located in:
-
-```C:\Program Files (x86)\<CLIENT NAME>\QuickBooks-connector\link.json```
-
-You can also check the log files location by signing in to the Codat Portal, then navigating to Monitor (1) > Health > Offline connectors (2) then selecting searching for and selecting the company. On the System Tab (3) and you will be able to see the connector location in the Computer information (3) section.
+You can also view the log file by selecting "View Log" button in the web connector.
 
 #### QuickBooks Logs
 
