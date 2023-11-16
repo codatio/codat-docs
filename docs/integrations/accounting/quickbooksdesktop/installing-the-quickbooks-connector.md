@@ -46,7 +46,7 @@ If they select "QuickBooks Enterprise Cloud" or "Right Networks", they will imme
 
 :::info Connector download file
 
-The QuickBooks Desktop web connector is packaged as `QuickBooksDesktopConnector.exe`.
+We package Intuit's web connector with our auto-run tool in a `QuickBooksDesktopConnector.exe` file. This bundle is signed using an extended validation certificate.
 
 :::
 
