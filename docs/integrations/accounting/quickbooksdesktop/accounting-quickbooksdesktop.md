@@ -16,7 +16,11 @@ This documentation describes the use of our new QuickBooks Desktop web connector
 
 :::
 
-Our QuickBooks Desktop connector enables SMBs who use QuickBooks Desktop to share their consented accounting data through the Codat platform.
+Our QuickBooks Desktop connector enables SMBs who use QuickBooks Desktop to share their consented accounting data through the Codat platform, supporting the following ways of connecting to QBD:
+
+- QuickBooks Desktop app
+- QuickBooks Enterprise Cloud
+- Right Networks
 
 The connector utilizes the Intuit Web Connector, a Windows application that runs on the SMB user's local machine.
 
