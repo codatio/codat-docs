@@ -45,7 +45,7 @@ If they select "QuickBooks Enterprise Cloud" or "Right Networks", they will imme
 
 :::info Connector download file
 
-The QuickBooks Desktop web connector is packaged as `QuickBooksDesktopConnector.exe`. The file is signed with an Extended Validation Code Signing Digital Certificate issued by GlobalSign. 
+The QuickBooks Desktop web connector is packaged as `QuickBooksDesktopConnector.exe`.
 
 :::
 
