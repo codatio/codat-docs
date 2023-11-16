@@ -1,10 +1,8 @@
 ---
 title: "FAQs"
-description: "Frequently asked questions about our QuickBooks Desktop on-premise connector."
+description: "Frequently asked questions about our QuickBooks Desktop on-premise connector"
 sidebar_label: FAQs
 ---
-
-Frequently asked questions about the [QuickBooks Desktop](/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop) (QBD) connector.
 
 ## Do I need to run the QBD connector on the same machine where QuickBooks is installed?
 
