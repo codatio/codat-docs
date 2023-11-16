@@ -642,6 +642,10 @@ module.exports = {
       from: "/integrations/commerce/commerce-platform-keys",
       to: "/integrations/commerce/overview",
     },
+    {
+      from: "/integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks",
+      to: "/integrations/accounting/quickbooksdesktop/legacy/install-qbd-connector-right-networks",
+    },
 
     // sfc
 
