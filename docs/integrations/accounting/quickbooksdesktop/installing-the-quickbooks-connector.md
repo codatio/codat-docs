@@ -3,6 +3,7 @@ title: "Install the QuickBooks Desktop connector"
 description: "Guide for SMB users to install our QuickBooks Desktop on-premise connector."
 sidebar_label: Install the connector
 ---
+
 :::info QuickBooks Desktop installation checklist
 
 <input type="checkbox" unchecked/> <b>Check version is supported</b>
