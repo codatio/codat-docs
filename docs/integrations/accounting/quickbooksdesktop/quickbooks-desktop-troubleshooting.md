@@ -46,16 +46,15 @@ The same Company ID must be used when re-completing the linking process.
 
 ## Reinstalling the Application Certificate
 
-In Order for the connector to link to the QuickBooks desktop datafile, the user needs to have accepted a QuickBooks Application Certificate.
+In order for the connector to link to the QuickBooks desktop datafile, the user needs to have accepted a QuickBooks Application Certificate. Typically, this pops up as a prompt the first time the user downloads the connector. Options might vary between QuickBooks versions, but are similar to:
 
-Typically this will pop up as a prompt the first time the user downloads the connector and looks like this -
+- **No**
+- **Yes, always; allow access even if QuickBooks is not running**
 
-The user must select "Yes, always; allow access even if QuickBooks is not running", as this will allow the Connector to communicate with the QuickBooks file even when the users QuickBooks session is not active.
+The user should select **Yes, always; allow access even if QuickBooks is not running** to enable the connector to work.
 
-To get back to the certificate settings within QuickBooks go to:
+<img src="/img/integrations/accounting/quickbooksdesktop/NewQBD-AppCertificate.png" />
 
-Edit > Preferences > Integrated Applications > Company Preferences
+To return to the certificate settings within QuickBooks, navigate to **Edit > Preferences > Integrated Applications > Company Preferences**. You will then need to select the application named 'QuickBooks Connector' and click **Remove**.
 
-You will then need to select the application named 'QuickBooks Connector' and click remove.
-
-Once you have removed the certificate, you can then re-run the installation process for the connector. You can either run the downloaded file (this might be in the downloads folder and will be named `QuickBooksDesktopConnector.exe`) or revisit the connector download page. During the installation process, you will  receive a prompt asking for permission from the application certificate.
+Once you have removed the certificate, you can then re-run the installation process for the connector. You can either run the downloaded file (this might be in the downloads folder and will be named `QuickBooksDesktopConnector.exe`) or revisit the connector download page. During the installation process, you will receive a prompt asking for permission from the application certificate.
