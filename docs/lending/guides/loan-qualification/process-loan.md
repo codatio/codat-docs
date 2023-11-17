@@ -1,7 +1,7 @@
 ---
 title: "Make a lending decision"
 description: "Follow the loan qualification demo app end-to-end to start an application, analyze it, and make a decision on the loan request"
-draft: true
+sidebar_label: "Financing decision process"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -86,21 +86,23 @@ Select the **Codat Sandbox** as the source of accounting data.
 
 ![](/img/use-cases/loan-qualification/sandbox-credentials-modal.png)
 
-### <input type="checkbox" unchecked /> Manually categorize accounts 
+### <input type="checkbox" unchecked /> Check categorized accounts 
 
 💰 This step is normally performed by the lender.
 
 The demo app makes use of the categorization feature of [Lending](/lending/overview). When fetching financial data, Codat’s Lending product analyses the full list of a company's accounts and assigns a category to each account. While it is able to automatically categorize most of the source accounts, it is not always possible, and manual intervention may be required. 
 
-In our demo, one account remains without a specified category. You need to assign a category to it before the demo application is ready for loan qualification. This is because the Profit and Loss, and Balance Sheet data types in Lending depend on fully categorized accounts.
+In our demo, all accounts are successfully categorized. However, your underwriter may want to review the suggested categories before continuing on with the assessment.
 
-To do that, click on the **Companies** tab in the top menu in the [Codat Portal](https://app.codat.io/). Next, click on the company you are performing loan qualification for, and navigate to **Products > Lending**. Click the red **Categorization required** button to the right of the company name. 
+They can do this by navigating to the [companies page](https://app.codat.io/companies) of the portal.
+Next, click on the company you are performing loan qualification for, and navigate to **Lending > Categorize accounts**.
 
-![](/img/use-cases/loan-qualification/0000-acct-categorization-modal-06-03-2023.png)
+![Example account categorization view](/img/use-cases/loan-qualification/account-categorization-view.png)
 
-This takes you to the **Account categorization** page which displays the uncategorized account. **Account type** and **Account subtype** are pre-filled for you. **Categories version** should be set to _Version 2_. Select _Accounts Payable_ as **Account detail** in the drop-down and **Save** the categorization. 
+This takes you to the **Account categorization** page which displays the categorized accounts.
+Take a look and check that you are happy with Codat's suggestions or override a suggestion by selecting the tick box and re-categorize.
 
-![](/img/use-cases/loan-qualification/0000-categorization-screen.png)
+![Example account re-categorization](/img/use-cases/loan-qualification/account-categorization-recategorization.png)
 
 ### <input type="checkbox" unchecked /> Make the decision on the loan 
 
@@ -126,7 +128,7 @@ Try these suggestions to make the most of your experience with the demo app:
   Take the demo one step further and use real credentials to access existing financial data in an accounting platform. Set up the [integration](/integrations/accounting/overview) you plan to use, and connect to it while following the auth flow. Then, review how the app makes a decision based on your company's real data. 
 
 - **Inspect the loan qualification logic**  
-  We provide [detailed information](/guides/loan-qualification/uw-decision) about the loan qualification logic we included in our demo app, and how exactly the financial data is fetched. 
+  We provide [detailed information](/lending/guides/loan-qualification/uw-decision) about the loan qualification logic we included in our demo app, and how exactly the financial data is fetched. 
   
 
 ### Recap

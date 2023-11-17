@@ -1,7 +1,7 @@
 ---
 title: "Set up the demo app"
 description: "Prepare your Codat instance and local environment to run the demo app"
-draft: true
+sidebar_label: "Demo app setup"
 ---
 
 import Tabs from "@theme/Tabs";
@@ -10,20 +10,20 @@ import TabItem from "@theme/TabItem";
 ### 🚀 In this section, you will...
 
 * Create your Codat account
-* Enable the Lending product
+* Enable the Lending API
 * Configure webhooks
 * Set up your local environment
 * Run the demo app
 
 ### <input type="checkbox" unchecked/> Create a Codat account 
 
-We provide a [free account](https://signup.codat.io/) that lets you explore and test our APIs and other products, including Lending. It also comes equipped with a sample company. When you start working on your own loan qualification solution, you may want to explore our other [plans](https://www.codat.io/plans/).
+We provide a [free trial](https://signup.codat.io/) that lets you explore and discover our APIs and other products, including Lending. It also comes equipped with a sample company. When you start working on your own loan qualification solution, you may want to explore our other [plans](https://www.codat.io/plans/).
 
 ### <input type="checkbox" unchecked /> Enable the Lending product 
 
-In the **Settings > Organization settings > [Products](https://app.codat.io/settings/products)** section of the Codat Portal, find **Lending** in the list of products and enable it. This also enables the data types required by this product. For example, `balanceSheet` and `profitandLoss`, which are used by the demo app, will be enabled.
+In the **Settings > Organization settings > [Products](https://app.codat.io/settings/products)** section of the Codat Portal, find **Lending API** in the list of products and enable it. This also enables the data types required by this product. For example, `balanceSheet` and `profitandLoss`, which are used by the demo app, will be enabled.
 
-We use Lending's [categorization](https://docs.codat.io/lending/portal/categorize-accounts) feature. It allows you to perform automated decisioning based on the categorized accounts. 
+We use Lending API's [categorization](https://docs.codat.io/lending/portal/categorize-accounts) feature. It allows you to perform automated decisioning based on the categorized accounts. 
 
 ### <input type="checkbox" unchecked /> Update your auth flow settings
 
@@ -86,7 +86,7 @@ Clone our demo repo on [GitHub](https://github.com/codatio/demo-loan-qualificati
 
 The main file directory for the demo app is `Codat.Demos.Underwriting.Api`. Key logic components of the app are located in `Controllers`, `Orchestrator`, and `Services` folders.
 
-Note that the other directory in the repository, `Codat.Demos.Underwriting.Api.Tests`, contains a series of unit tests for the demo app and is not needed for you to run the demo project. 
+Note that the other directory in the repository, `Codat.Demos.Underwriting.Api.Tests`, contains a series of unit and integration tests for the demo app and is not needed for you to run the demo project. 
 
 ```sh title="Codat.Demos.Underwriting.Api directory"
    ├──BindingModule.cs
@@ -99,16 +99,13 @@ Note that the other directory in the repository, `Codat.Demos.Underwriting.Api.T
    |    ├──UnderwritingController.cs // Front-end endpoint controller
    |    └──WebhooksController.cs     // Back-end endpoint controller
    |       
-   ├──DataClients // A service to make API calls to Codat
-   |    └──CodatDataClient.cs
-   |       
    ├──Exceptions // Definitions for managing error events 
    |    ├──...
    |       
    ├──Extensions // Used to extend classes in C#
    |    └──CollectionExtensions.cs
    |       
-   ├──Models // Represent the shape of data that will be returned to the user
+   ├──Models // Represent the schemas used in this solution
    |    ├──...
    |       
    ├──Orchestrators // Manages the six methods that relate to endpoints used in the app
