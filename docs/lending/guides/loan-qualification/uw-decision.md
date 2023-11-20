@@ -66,8 +66,6 @@ Only if all the thresholds are met or surpassed by the applicant, the app update
 
 📊 If you are interested in loan qualification models used by lenders in the industry, you can read through [Bigfoot Capital's blog](https://www.bigfootcap.com/revenue-based-financing/) on revenue-based finance or [Workweek's article](https://workweek.com/2023/03/02/unlocking-lending-innovation) on unlocking loan qualification innovation.
 
-💸 Lenders also use Lending to understand a business' liquidity via the [enhanced cash flow report](/lending/enhanced-cash-flow/overview), or whether a business's accounts are accurate using both [data integrity](/lending/data-integrity/overview) and the [audit report](/lending/excel/audit-report).
-
 🧠 See what else [Codat recommends](https://www.codat.io/blog/how-to-underwrite-ecommerce-merchants-effectively/) to build your loan qualification process effectively. 
 
 🗣️ Anything unclear in this guide? Got feedback? We're working on a whole host of new content for you, so [let us know](https://github.com/orgs/codatio/discussions/new?category=general).
