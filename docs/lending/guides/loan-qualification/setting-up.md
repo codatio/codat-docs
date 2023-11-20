@@ -17,13 +17,13 @@ import TabItem from "@theme/TabItem";
 
 ### <input type="checkbox" unchecked/> Create a Codat account 
 
-We provide a [free trial](https://signup.codat.io/) that lets you explore and discover our APIs and other products, including Lending. It also comes equipped with a sample company. When you start working on your own loan qualification solution, you may want to explore our other [plans](https://www.codat.io/plans/).
+We provide a [free trial](https://signup.codat.io/) that lets you discover our APIs and other products, including Lending. It also comes equipped with a sample company. When you start working on your own loan qualification solution, you may want to explore our other [plans](https://www.codat.io/plans/).
 
 ### <input type="checkbox" unchecked /> Enable the Lending product 
 
 In the **Settings > Organization settings > [Products](https://app.codat.io/settings/products)** section of the Codat Portal, find **Lending API** in the list of products and enable it. This also enables the data types required by this product. For example, `balanceSheet` and `profitandLoss`, which are used by the demo app, will be enabled.
 
-We use Lending API's [categorization](https://docs.codat.io/lending/portal/categorize-accounts) feature. It allows you to perform automated decisioning based on the categorized accounts. 
+We use Lending API's [categorization](/lending/features/financial-statements-overview#categorized-financial-accounts) feature. It allows you to perform automated decisioning based on the categorized accounts. 
 
 ### <input type="checkbox" unchecked /> Update your auth flow settings
 
@@ -162,4 +162,4 @@ You have now set up your Codat instance and your local environment in preparatio
 
 ### Read next
 
-- [Use the app to underwrite a loan](/guides/loan-qualification/process-loan).
+- [Use the app to underwrite a loan](/lending/guides/loan-qualification/process-loan).
