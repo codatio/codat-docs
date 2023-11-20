@@ -37,7 +37,7 @@
     "@docusaurus/plugin-sitemap": "^2.4.1",
     "@docusaurus/preset-classic": "^2.4.1",
     "@docusaurus/theme-classic": "^2.4.1",
-    "@docusaurus/theme-mermaid": "^2.4.1",
+    "@docusaurus/theme-mermaid": "^2.4.3",
     "@docusaurus/theme-search-algolia": "^2.4.1",
     "@grnet/docusaurus-terminology": "^1.0.0",
     "@mdx-js/react": "^1.6.22",
