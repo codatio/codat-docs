@@ -44,7 +44,7 @@ The app's codebase is available via our [GitHub repo](https://github.com/codatio
 
 The codebase uses Codat and its [Lending API](/lending/overview) to make a lending decision. We will walk you through the setup in the Portal and the code [next](/guides/loan-qualification/setting-up).
 
-### Why we use _Lending_
+### Why we use _Lending API_
 
 The demo app makes use of the categorization feature of [Lending API](/lending/overview). This feature analyses the full list of a company's accounts and assigns a category to each account. This solves the problem of bookkeepers giving different names to the same accounting category. 
 
@@ -57,4 +57,4 @@ This standardizes the data irrespective of its source and helps you make a compr
 ### Read next
 
 Now that you know the focus and purpose of our demo app and its guide:
-* [Set up Codat and your local environment](/guides/loan-qualification/setting-up).
+* [Set up Codat and your local environment](/lending/guides/loan-qualification/setting-up).
