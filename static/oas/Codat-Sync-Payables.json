@@ -42564,27 +42564,34 @@
                 "description": "Reference to the product, service type, or inventory item to which the line item is linked."
               },
               "purchaseOrderLineRef": {
-                "description": "Reference to the purchase order line this line was generated from.",
-                "type": "object",
-                "x-internal": true,
-                "title": "Record line reference",
-                "properties": {
-                  "id": {
-                    "type": "string",
-                    "description": "'id' of the underlying record."
+                "allOf": [
+                  {
+                    "type": "object",
+                    "x-internal": true,
+                    "title": "Record line reference",
+                    "description": "Links the current record line to the underlying record line that created it. \n\nFor example, if a bill is generated from a purchase order, this property allows you to connect the bill line item to the purchase order line item in our data model. ",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "'id' of the underlying record."
+                      },
+                      "dataType": {
+                        "type": "string",
+                        "description": "Allowed name of the 'dataType'.",
+                        "enum": [
+                          "purchaseOrders"
+                        ]
+                      },
+                      "lineNumber": {
+                        "type": "string",
+                        "description": "Line number of the underlying record."
+                      }
+                    }
                   },
-                  "dataType": {
-                    "type": "string",
-                    "description": "Allowed name of the 'dataType'.",
-                    "enum": [
-                      "purchaseOrders"
-                    ]
-                  },
-                  "lineNumber": {
-                    "type": "string",
-                    "description": "Line number of the underlying record."
+                  {
+                    "description": "Reference to the purchase order line this line was generated from."
                   }
-                }
+                ]
               },
               "trackingCategoryRefs": {
                 "type": "array",
