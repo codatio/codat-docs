@@ -34,7 +34,7 @@ export const integrationsFilterPayables = [
   "Oracle NetSuite",
   "QuickBooks Desktop",
   "QuickBooks Online",
-  "Sage Business Cloud Accounting",
+//  "Sage Business Cloud Accounting",
   "Sage Intacct",
   "Xero",
 ];

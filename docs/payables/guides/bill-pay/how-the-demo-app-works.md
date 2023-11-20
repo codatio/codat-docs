@@ -4,17 +4,20 @@ sidebar_label: "How it works"
 description: "A closer look at the functionality of the bill pay demo app"
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem"
+
 Now you're ready to explore the functionality of the bill pay demo app in more depth. The user flow diagrams describe the demo app's functionality at a high level, while the example API calls show the exchange of data with the Codat API.
 
-## Understand the authorization flow
+## Understand the auth flow
 
-The company creation feature and [authorization flow](/payables/guides/bill-pay/use-bill-pay-demo-app#connect-the-demo-app-to-quickbooks-online) were built using the Platform API and Hosted Link. For a seamless user experience, we customized the Hosted Link flow with the same branding and colors as the demo app UI - see [Customize Link](/auth-flow/customize/customize-link) for more details.
+The company creation feature and authorization flow were built using the [Platform API](/platform-api#/) and [Hosted Link](/auth-flow/authorize-hosted-link). For a seamless user experience, we customized the Hosted Link flow with the same branding and colors as the demo app UI - see [Customize Link](/auth-flow/customize/customize-link) for more details.
 
-The main features are:
+Its main features are:
 
 - Creating a company to represent the user using the [Create company](/sync-for-payables-api#/operations/create-company) endpoint. This returns a unique company ID and Link URL.
-- Redirecting the user to their chosen accounting platform (in this case, QuickBooks Online) via the Link URL. This opens the OAuth login window for the accounting platform, where the user can authenticate and authorize access to their accounting data. 
-- Creating a data connection to the accounting platform using the [Create connection](/sync-for-payables-api#/operations/create-data-connection) endpoint.
+- Redirecting the user to their chosen accounting platform via the Link URL. This opens the OAuth login window for the accounting platform, where the user can authenticate and authorize access to their accounting data. 
+- Creating a data connection to the accounting platform using the [Create connection](/sync-for-payables-api#/operations/create-connection) endpoint.
 - When the company is successfully connected, redirecting the user to the demo app's redirect URL, as defined in the [Link settings](/auth-flow/customize/customize-link).
 
 ## View bills
@@ -26,31 +29,39 @@ The following diagram illustrates the user flow for viewing bills in the demo ap
 ```mermaid
 sequenceDiagram
     participant user as User
-    participant backend as Demo App 
+    participant backend as Demo app 
     participant codat as Codat API
     
     user ->> backend: View bills
     Note over user,backend: Launch Bills Portal
-    backend ->> codat: Fetch Bills
+    backend ->> codat: Fetch bills
     codat -->> backend: Bills
-    backend ->> codat: Fetch Accounts
+    backend ->> codat: Fetch accounts
     codat -->> backend: Accounts (banking only)
     backend ->> user: View paid/unpaid bills
     
 ```
 :::
 
-### Fetch Bills (API call: List bills)
+### Fetch bills
 
-When launched, the demo app [retrieves a list of all bills](/sync-for-payables-api#/operations/list-bills) from your sandbox QuickBooks Online company, in descending order of issue date.
+When launched, the demo app retrieves a list of all bills from your sandbox QuickBooks Online company, in descending order of issue date, using the [List bills](/sync-for-payables-api#/operations/list-bills) endpoint.
 
 Here is an example request:
 
-```http title="List bills"
+<Tabs>
+
+<TabItem value="HTTP" label="HTTP">
+
+#### Request
+
+```http
 GET https://api.codat.io/companies/<COMPANY_ID>/data/bills?page=1&pageSize=100&orderBy=-issueDate
 ```
 
-```json title="Example response for List bills (200)"
+#### Example response
+
+```json
 {
     "results": [
       {
@@ -98,21 +109,33 @@ GET https://api.codat.io/companies/<COMPANY_ID>/data/bills?page=1&pageSize=100&o
   }
 ```
 
+</TabItem>
+
+</Tabs>
+
 :::info View unpaid bills query
-When the **View unpaid bills only toggle** is selected in the UI, the `&query=status=Open` query is appended to the request URL as a [Codat query string](/using-the-api/querying). This returns only unpaid bills.
+When the **View unpaid bills only** toggle is selected in the UI, the `&query=status=Open` query is appended to the request URL as a [Codat query string](/using-the-api/querying). This returns only unpaid bills.
 :::
 
-### Fetch Accounts (API call: List accounts)
+### Fetch accounts
 
-When launched, the demo app [fetches the company's latest accounts](/sync-for-payables-api#/operations/list-accounts). The account name is displayed against its respective bill in the **Reference** column of the bills table.
+When launched, the demo app uses the [List accounts](/sync-for-payables-api#/operations/list-accounts) endpoint to fetch the company's latest accounts. The account name is displayed against its respective bill in the **Reference** column of the bills table.
 
 Here is an example request:
 
-```http title="List accounts"
+<Tabs>
+
+<TabItem value="HTTP" label="HTTP">
+
+#### Request
+
+```http
 GET https://codat.io/companies/<COMPANY_ID>/data/accounts
 ```
 
-```json title="Example response for List accounts (200)"
+#### Example response
+
+```json
 {
     "results": [
       {
@@ -153,6 +176,10 @@ GET https://codat.io/companies/<COMPANY_ID>/data/accounts
   }
 ```
 
+</TabItem>
+
+</Tabs>
+
 ## Pay a bill
 
 The following diagram illustrates the user flow for selecting and paying a bill in the demo app UI.
@@ -162,15 +189,15 @@ The following diagram illustrates the user flow for selecting and paying a bill 
 ```mermaid
 sequenceDiagram
     participant user as User
-    participant backend as Demo App 
+    participant backend as Demo app 
     participant codat as Codat API    
               
     user ->> backend: Select a bill to pay
-    backend ->> user: Bill Payment view
+    backend ->> user: Bill payment view
     user ->> backend: Select account to assign bill payment to
     user ->> backend: Pay bill & submit bill payment
 
-    backend ->> codat: Create Bill payment
+    backend ->> codat: Create bill payment
     codat -->> backend: Push operation
     Note over codat,backend: Poll the push operation endpoint
     loop status != success
@@ -188,19 +215,26 @@ The bill remains in a `pending` status during the polling process.
 
 When selecting an account in the **Bill Payment** dialog, the **Account name** dropdown only displays banking accounts in the same currency as the bill. The account type is determined using a query parameter for `isBankAccount=true`. 
 
-The Bill payment will be assigned to the selected account in your sandbox QuickBooks Online company.
+The bill payment will be assigned to the selected account in your sandbox QuickBooks Online company.
 
-### Pay a bill (API call: Create bill payments)
+#### Pay a bill
 
-When you pay a bill, the demo app [creates a Bill payment](/sync-for-payables-api#/operations/create-bill-payment) in QuickBooks Online for the total amount due. This process reconciles the payment against the outstanding bill.
+When you pay a bill, the demo app uses the [Create bill payment](/sync-for-payables-api#/operations/create-bill-payment) endpoint to create the payment in QuickBooks Online for the total amount due. This process reconciles the payment against the outstanding bill.
 
 Here is an example request:
 
-```http title="Create Bill payments"
+<Tabs>
+
+<TabItem value="HTTP" label="HTTP">
+
+#### Request
+
+```http
 POST https://api.codat.io/companies/<COMPANY_ID>/connections/<CONNECTION_ID>/push/billPayments
 ```
+#### Example request body
 
-```json title="Example request body"
+```json
 {
     "supplierRef": {
         "id": "<SUPPLIER_ID>" // ID of the supplier to reconcile payment against
@@ -225,6 +259,9 @@ POST https://api.codat.io/companies/<COMPANY_ID>/connections/<CONNECTION_ID>/pus
     ]
   }
 ```
+</TabItem>
+
+</Tabs>
 
 ## 💪 Ready for more?
 
@@ -237,6 +274,4 @@ Try these suggestions to make the most of your experience with the demo app:
   Go one step further and develop other features that make the Accounts Payable process simpler for your customers. For example, you could provide the ability to pay a bill using a credit note or create a new bill from within your application.
 
 - **Further reading**  
-  Explore accounting automation topics in the [Codat Blog](https://www.codat.io/blog/category/accounting-automation/). 
-
-Find out more about [Sync for Payables](/payables/overview) or explore our other [use cases](/usecases/overview).
+  Explore accounting automation topics in the [Codat Blog](https://www.codat.io/blog/category/accounting-automation/), find out more about [Sync for Payables](/payables/overview) or explore our other [use cases](/usecases/overview).

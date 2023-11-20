@@ -1,60 +1,170 @@
 ---
 title: Manage bills
-description: "Create and fetch bills using Sync for Payables"
-image: "/img/banners/social/payables.png"
+description: "View and create bills using Sync for Payables"
 ---
 
-In Codat's API a [Bill](/sync-for-payables-api#/schemas/Bill) represents an invoice from a [supplier](/sync-for-payables-api#/schemas/Supplier). This is an *accounts receivable* invoice.
-
-Bills can be [retrieved](/sync-for-payables-api#/operations/list-bills) using Sync for Payables.
-
-You can also create bills within your system and then [create them](https://docs.codat.io/sync-for-payables-api#/operations/create-bill) within your customers' accounting software.
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem"
 
 :::tip Invoices or bills?
 
-We distinguish between invoices where the company owes money vs. is owed money. If the company has received an invoice, and owes money to someone else (accounts payable) we call this a Bill.
+We distinguish between invoices where the company *owes* money and those where the company *is owed* money. 
+
+If the company receives an invoice and owes money as a result, we call this a **bill**.
 :::
 
-## Get a list of existing bills
+## Overview
 
-You can [get a list of bills](/sync-for-payables-api#/operations/list-bills) for a company using Sync for Payables:
+In Codat, a [bill](../terms/bill) represents an *accounts payable* invoice issued to an SMB by their [supplier](../terms/supplier). With Sync for Payables, you can:
 
-```http request title="List bills"
+- Retrieve and update your customer's existing bills.
+- Create new bills in your system and reflect them in your customer's accounting software.  
+
+We have highlighted this alternative sequence of steps in our detailed process diagram below. 
+
+<details>
+<summary><b>Detailed process diagram</b></summary>
+
+```mermaid
+
+  sequenceDiagram
+      participant smb as SMB customer
+      participant app as Your application 
+      participant codat as Codat
+      participant acctg as Accounting platform
+      
+      smb ->> app: Logs into application
+      smb ->> app: Initiates connection to accounting software
+
+      app ->> codat: Passes company and connection details
+      app ->> codat: Initiates auth flow
+      codat -->> smb: Displays auth flow
+      smb -->> codat: Authorizes connection
+      codat ->> acctg: Establishes connection
+
+      alt Retrieve suppliers
+        app ->> codat: Requests details of existing suppliers
+        codat ->> acctg: Fetches suppliers
+        acctg -->> codat: Returns suppliers
+        codat ->> app: Returns suppliers
+        app ->> smb: Displays suppliers
+        smb ->> app: Selects supplier
+      else Create supplier
+        smb ->> app: Provides supplier details
+        app ->> codat: Creates supplier
+        codat ->> acctg: Creates supplier record
+      end
+
+      rect rgb(242, 230, 247)      
+      alt Retrieve bills
+        codat ->> acctg: Fetches existing bills
+        acctg -->> codat: Returns existing bills
+        codat ->> app: Returns existing bills
+        app ->> smb: Displays existing bills
+      else Create bill
+        app ->> codat: Creates bill
+        codat ->> acctg: Creates bill
+      end
+      end
+
+      alt Retrieve bank accounts
+        codat ->> acctg: Fetches existing bank accounts
+        acctg -->> codat: Returns existing bank accounts
+        codat ->> app: Returns existing bank accounts
+        app ->> smb: Displays existing bank accounts
+      else Create bank account
+        app ->> codat: Creates bank account
+        codat ->> acctg: Creates bank account
+      end
+      app ->> smb: Displays payment method mapping
+      smb ->> app: Maps payment methods
+
+      smb ->> app: Pays a bill
+      app ->> codat: Records bill payment
+      codat ->> acctg: Reconciles bill payment
+      acctg ->> smb: Displays paid bill
+```
+
+</details>
+
+## Retrieve bills
+
+Call our [List bills](/sync-for-payables-api#/operations/list-bills) endpoint to retrieve the full list of a company's existing bills. You can use [query parameters](/using-the-api/querying) to narrow down the list of results, for example:
+
+- `supplierRef.supplierName=acme` returns bills associated with the specified supplier.
+- `dueDate>2023-06-01&&dueDate<2023-06-30` returns bills due for payment between 1 and 30 June.
+- `amountDue>0` returns outstanding bills with non-zero due amounts.
+
+You can also retrieve [attachments](/sync-for-payables-api#/operations/download-bill-attachment) associated with a given bill, such as a PDF copy of the accounts payable invoice issued by the supplier.
+
+<Tabs>
+
+<TabItem value="HTTP" label="HTTP">
+
+```http
 GET https://api.codat.io/companies/{companyId}/data/bills?page=1&pageSize=100
 ```
+</TabItem >
 
-Query parameters can be used to filter and narrow the returned results:
+</Tabs>
 
-- `supplierRef.supplierName=acme inc` returns only bills associated to the specified supplier
-- `dueDate>2023-06-01&&dueDate<2023-06-30` returns only bills due for payment between June 1st and June 30th
-- `amountDue>0` returns only outstanding bills with due amounts
+## Update bill
 
-You can also retrieve any associated [attachments](/sync-for-payables-api#/operations/download-bill-attachment) for a given bill such as a pdf copy of the invoice issued by the supplier.
+In some cases, your SMB customer may want to update their existing bill - for example, to change a tax rate, change a nominal code for a line item, or associate it to a different supplier. 
 
-## Create a new bill
+Use our [Update bill](/sync-for-payables-api#/operations/update-bill) endpoint to perform this operation.
 
-:::tip The corresponding supplier
+<Tabs>
 
-Bills should correspond to a supplier. You'll need to ensure the corresponding supplier exists before creating a new bill.
+<TabItem value="HTTP" label="HTTP">
+
+```http
+PUT https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/bills/{billId}
+```
+</TabItem >
+
+</Tabs>
+
+## Create bill
+
+:::tip Corresponding supplier
+
+Bills should always correspond to a supplier that issued them. Ensure the relevant supplier exists before creating a new bill.
 
 :::
 
-You can also [create a new bill](/sync-for-payables-api#/operations/create-bill) in your company's accounting software to represent goods or services purchased from a supplier.
+Use the [Create bill](/sync-for-payables-api#/operations/create-bill) endpoint to create a new bill in your SMB customer's accounting software that represents the outstanding payment for goods or services purchased from a supplier.
 
-```http request title="Create bill"
+<Tabs>
+
+<TabItem value="HTTP" label="HTTP">
+
+```http
 POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/bills
 ```
+</TabItem>
 
-### Upload a copy of the invoice
+</Tabs>
 
-In some cases where a bill is being created in your application, the company may also want to save a copy of the pdf invoice against the bill in their accounting software. This can be supported via the [bill attachments endpoint](/sync-for-payables-api#/operations/upload-bill-attachments)
+## Upload attachment
 
-```http request title="Upload bill attachment"
+When creating a new bill, your SMB customer may want to save a copy of the PDF invoice issued by their supplier against the bill in their accounting software. Use the [Upload bill attachment](/sync-for-payables-api#/operations/upload-bill-attachments) to support this action. 
+
+Different accounting software supports different file formats and sizes. View the [attachment schema](/sync-for-payables-api#/schemas/Attachment) for integration-specific guidance or check the platform's own documentation. 
+
+<Tabs>
+
+<TabItem value="HTTP" label="HTTP">
+
+```http
 POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/bills/{billId}/attachments
 ```
+</TabItem>
+
+</Tabs>
 
 ---
 
 ## Read next
 
-- [Payment mapping](/usecases/bill-pay/mapping) - Enable SMBs to choose how to make payments
+- [Manage your customers' payment methods](/payables/mapping) so they can choose how to make payments.

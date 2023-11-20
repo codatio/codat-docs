@@ -1,85 +1,18 @@
 ---
 title: "Get started with Sync for Payables"
 sidebar_label: Get started
-description: "Learn how to perform the initial setup for Sync for Payables"
+description: "View the core steps required to perform the initial setup for Sync for Payables"
 image: "/img/banners/social/payables.png"
 ---
 
 import { IntegrationsList } from "@components/global/Integrations";
-import { bankfeedsIntegrations } from "@components/global/Integrations/integrations";
+import { integrationsFilterPayables } from "@components/global/Integrations/integrations";
 
 ## Journey overview
 
-The diagram below represents the overall activity flow when using Sync for Payables. You can manage bills, suppliers, and payment methods in different ways and order, so we chose to represent these options as alternative scenarios. Consider them elements you can use to build the flow that suits you and your customers best.
+The diagram below represents the overall activity flow when using Sync for Payables. You can manage bills, suppliers, and payment methods in different ways and order. 
 
-```mermaid
-
-sequenceDiagram
-    participant smb as SMB customer
-    participant app as Your application 
-    participant codat as Codat
-    participant acctg as Accounting platform
-    
-    smb ->> app: Logs into application
-    smb ->> app: Initiates connection to accounting software
-
-    rect rgb(191, 223, 255)
-      app ->> codat: Passes company and connection details
-      app ->> codat: Initiates auth flow
-      codat -->> smb: Displays auth flow
-      smb -->> codat: Authorizes connection
-      codat ->> acctg: Establishes connection
-    end
-
-    rect rgb(236, 215, 245)
-    alt Retrieve suppliers
-      app ->> codat: Requests details of existing suppliers
-      codat ->> acctg: Fetches suppliers
-      acctg -->> codat: Returns suppliers
-      codat ->> app: Returns suppliers
-      app -> smb: Displays suppliers
-      smb -> app: Selects supplier
-    else Create supplier
-      smb ->> app: Provides supplier details
-      app ->> codat: Creates supplier
-      codat ->> acctg: Creates supplier record
-    end
-    end
-
-    rect rgb(215, 236, 245)
-    alt Retrieve bills
-      codat ->> acctg: Fetches existing bills
-      acctg -->> codat: Returns existing bills
-      codat ->> app: Returns existing bills
-      app ->> smb: Displays existing bills
-    else Create bill
-      app ->> codat: Creates bill
-      codat ->> acctg: Creates bill
-    end
-    end
-
-    rect rgb(231, 218, 237)
-    alt Retrieve bank accounts
-      codat ->> acctg: Fetches existing bank accounts
-      acctg -->> codat: Returns existing bank accounts
-      codat ->> app: Returns existing bank accounts
-      app ->> smb: Displays existing bank accounts
-    else Create bank account
-      app ->> codat: Creates bank account
-      codat ->> acctg: Creates bank account
-    end
-    app ->> smb: Displays payment method mapping
-    smb ->> app: Maps payment methods
-    end
-
-    rect rgb(237, 218, 231)
-      smb ->> app: Pays a bill
-      app ->> codat: Records bill payment
-      codat ->> acctg: Reconciles bill payment
-      acctg ->> smb: Displays paid bill
-    end
-
-```
+We will take you through each of these elements so that you can build the flow that suits you and your customers best.
 
 ```mermaid
 
@@ -105,7 +38,7 @@ graph TD
 
 ## Configure Sync for Payables
 
-Once you decide to build this flow with Sync for Payables, you need to configure Codat accordingly. Let's go through these requirements in detail.
+Once you decide to build with Sync for Payables, you need to configure Codat accordingly. Let's go through these requirements in detail.
 
 ### Enable the product
 
@@ -115,58 +48,63 @@ Once you decide to build this flow with Sync for Payables, you need to configure
 
 ### Data types
 
-Set the minimum set of [data types](/core-concepts/data-type-settings#override-the-default-sync-settings) required for the Lending API to `fetch on first link`. Each feature may also have additional data type requirements, so be sure to review these for the feature you want to use.
+In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations > Data types**. Enable the [data types](/core-concepts/data-type-settings#override-the-default-sync-settings) required for Sync for Payables and set them to `fetch on first link`: 
 
-In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations > Data types**. As a minimum, you need the following data types enabled:
-
-|  Data source          | Accounting                                                                                                                                                                                            | Banking                                                                                                                                                                             | Commerce                                                                                                     |
-|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| Data types | `company`<br/>`chartOfAccounts`<br/>`balanceSheet`<br/>`profitAndLoss`<br/>`bankAccounts`<br/>`bankTransactions` | `banking-accounts`<br/>`banking-transactions`<br/>`banking-transactionCategories`<br/>`banking-accountBalances` | `commerce-companyInfo`<br/>`commerce-customers`<br/>`commerce-orders` |
+| Data source | Accounting                                                                                                                                                                     |
+|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Data types  | `bankAccounts`<br/> `bills`<br/> `billCreditNotes`<br/> `billPayments`<br/> `chartOfAccounts`<br/> `paymentMethods`<br/> `suppliers`<br/> `taxRates`<br/> `trackingCategories` |
 
 Configure the solution to refresh data when you need it by [setting a synchronization frequency](/core-concepts/data-type-settings#choose-a-synchronization-frequency) on the same screen. We recommend setting it to a daily or a monthly sync.
-
-bills
-billpayments
-accounts
-bankaccounts
-suppliers
-billcreditnotes
-paymentmethods
-tracking categories
-taxrates
 
 ### Manage data sources
 
 In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** and click **Manage integrations**. Next, click **Manage** next to the specific integration you want to enable and set it up to serve as a data source for the product. 
 
-<IntegrationsList integrations={bankfeedsIntegrations}/>
+You can also view detailed configuration instructions by clicking on the relevant tile:
 
-Some of these integrations may require enhanced setup specific to bank feeds. We walk you through these in our integration-specific instructions in the _Manage integrations_ section of our documentation. 
+<IntegrationsList filter={integrationsFilterPayables} />
 
 ### Authorization flow
 
-As part of using Sync for Payables, you will need your customers to authorize your access to their data. To do so, use Link - our pre-built, conversion-optimized, and white-labelled authorization flow. 
-
-We recommend you fully embed the Link auth flow in your experience by using our [Embedded Link](/auth-flow/authorize-embedded-link) SDK in your front-end code. You can also choose our out-of-the-box [Hosted Link](/auth-flow/authorize-hosted-link) auth flow option to get up and running as quick as possible. 
+As part of using Sync for Payables, you will need your customers to authorize your access to their data. To do so, use [Embedded Link](/auth-flow/authorize-embedded-link) - our pre-built, embeddable, conversion-optimized, and white-labeled authorization flow.
 
 The solution lets you tailor the authorization journey to your business needs. You can:
 
-* [Customize Link settings](/auth-flow/customize/customize-link)
-* [Set up company branding](/auth-flow/customize/branding)
-* [Set up redirects](/auth-flow/customize/set-up-redirects)
+* [Customize Link settings](/auth-flow/customize/customize-link).
+* [Set up company branding](/auth-flow/customize/branding).
+* [Set up redirects](/auth-flow/customize/set-up-redirects).
 
 ### Webhooks
 
-Codat supports a range of [webhooks](/using-the-api/webhooks/core-rules-types) to help you manage your data pipelines. In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Rules** and click **Create new rule** to set up the following webhook and get the most out of Bank Feeds API:
+Codat supports a range of [webhooks](/using-the-api/webhooks/core-rules-types) to help you manage your data pipelines. In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Rules** and click **Create new rule** to set up the following webhooks and get the most out of Sync for Payables:
+
+- [New company synchronized](/using-the-api/webhooks/core-rules-types#new-company-synchronized)
+
+  Use this webhook to track the completion of all enabled data type syncs for a newly connected company. When you receive a notification from this webhook, you can proceed to the next steps of the bill pay process. 
+
+- [Data sync completed](/using-the-api/webhooks/core-rules-types#data-sync-completed)
+
+  This webhook indicates that a data sync is successfully completed for a specific data type. You can use this webhook to track retrieval of suppliers, bills or bank accounts as part of the accounts payable process.
+
+- [Dataset data changed](/using-the-api/webhooks/core-rules-types#dataset-data-changed)
+
+  If you receive a notification from this webhook, it means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform.
 
 - [Push operation status has changed](/using-the-api/webhooks/core-rules-types#push-operation-status-has-changed)  
 
-  Use this webhook to track the completion of the operation to create bank transactions in the target platform. When you receive a notification from this webhook, check the `status` value in the body. A `Success` status means the `transactions` array has been successfully pushed to the accounting software.
+  Use this webhook to track the completion of the operation to pay bills in the SMB's accounting platform. When you receive a notification from this webhook, check the `status` value in the body. A `Success` status means the bill payment or the bill credit note has been successfully pushed to the accounting software.
 
+:::tip Recap
 
+You have enabled Sync for Payables, set up the relevant integrations, configured auth flow parameters, and noted the recommended webhook. This completes the initial setup of the product.
+
+Next, you will create a company and its connection to build out the core infrastructure required to manage accounts payable with Codat.
+
+:::
 
 --- 
 
 ## Read next
 
-SDK
+* Check out our [client libraries](/get-started/libraries) to kick start your Sync for Payables build.
+* [Configure customer](/payables/configure-customer) to continue building your accounts payable management process.
