@@ -47,39 +47,14 @@ module.exports = {
         //"get-started/office-hours",
         "glossary",
         "get-started/migration",
+        "get-started/accounting-for-beginners",
       ],
     },
     {
-      type: "category",
+      type: "doc",
       label: "Tutorials",
-      collapsed: true,
-      className: "top-level-item top-level-item-list tutorials",
-      link: {
-        type: 'doc',
-        id: "guides/overview",
-      },
-      items: [
-        {
-          type: "ref",
-          label: "Invoice finance",
-          id: "lending/guides/invoice-finance/introduction",
-        },
-        // {
-        //   type: "ref",
-        //   label: "Loan qualification",
-        //   id: "lending/guides/loan-qualification/introduction",
-        // },
-        {
-          type: "ref",
-          label: "Bill pay",
-          id: "payables/guides/bill-pay/introduction",
-        },
-        {
-          type: "ref",
-          label: "Bank transactions reconciliation",
-          id: "bank-feeds/guides/bank-feeds-tutorial",
-        },
-      ],
+      className: "top-level-item top-level-item-single tutorials",
+      id: "guides/overview",
     },
     {
       type: "category",
@@ -142,16 +117,17 @@ module.exports = {
 
           ],
         },
-        {
-          type: "category",
-          label: "Plans",
-          collapsed: true,
-          items: [
-            "configure/plans/free",
-            "configure/create-account",
-            "configure/portal/usage-and-billing",
-          ],
-        },
+       // {
+       //   type: "category",
+       //   label: "Plans",
+       //   collapsed: true,
+       //   items: [
+       //     "configure/plans/free",
+       //     "configure/create-account",
+       //     "configure/portal/usage-and-billing",
+       //   ],
+       // },
+        "configure/create-account",
         "configure/portal/account-management",
       ],
     },

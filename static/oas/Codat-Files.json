@@ -67,11 +67,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "requestBody": {
@@ -114,11 +126,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "﻿The *List files* endpoint returns a list of all files uploaded to Codat by the SMB. ",
@@ -166,11 +190,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *Download files* endpoint downloads all files that have  been uploaded by to SMB to Codat. A `date` may be specified to download any files uploaded on the date provided.",
@@ -254,7 +290,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/responses/Not-Found/content/application~1json/schema"
+              "$ref": "#/components/responses/Forbidden/content/application~1json/schema"
             },
             "examples": {
               "Malformed query": {
@@ -276,7 +312,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/responses/Not-Found/content/application~1json/schema"
+              "$ref": "#/components/responses/Forbidden/content/application~1json/schema"
             },
             "examples": {
               "Unauthorized": {
@@ -293,8 +329,30 @@
           }
         }
       },
-      "Not-Found": {
-        "description": "One or more of the resources you referenced could not be found.\nThis might be because your company or data connection id is wrong, or was already deleted.",
+      "Payment-Required": {
+        "description": "An account limit has been exceeded. The type of limit is described in the error property:\n\n- You have exceeded the 50-company limit that applies to a Free plan. Delete any companies you no longer need and retry the request.\n- The requested sync schedule is not allowed. You requested an hourly sync schedule but this functionality is not included in the Free plan.\n- Your Free account is older than 365 days and has expired. Contact support@codat.io.\n",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Forbidden/content/application~1json/schema"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 429,
+                  "service": "PublicApi",
+                  "error": "You have exceeded the 50-company limit that applies to a Free plan. We recommend that you delete any companies you no longer need and retry the request.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "You are using an outdated API key or a key not associated with that resource.",
         "content": {
           "application/json": {
             "schema": {
@@ -327,6 +385,28 @@
                   "description": "Machine readable error code used to automate processes based on the code returned."
                 }
               }
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 403,
+                  "service": "PublicApi",
+                  "error": "You are using an outdated API key or a key not associated with that resource.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Not-Found": {
+        "description": "One or more of the resources you referenced could not be found.\nThis might be because your company or data connection id is wrong, or was already deleted.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Forbidden/content/application~1json/schema"
             },
             "examples": {
               "Data connection not found": {
@@ -368,7 +448,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/responses/Not-Found/content/application~1json/schema"
+              "$ref": "#/components/responses/Forbidden/content/application~1json/schema"
             },
             "examples": {
               "Conflict": {
@@ -376,6 +456,50 @@
                   "statusCode": 429,
                   "service": "PublicApi",
                   "error": "You have made too many requests in a given amount of time; please retry later.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Internal-Server-Error": {
+        "description": "There is a problem with our server. Please try again later.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Forbidden/content/application~1json/schema"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 500,
+                  "service": "PublicApi",
+                  "error": "There is a problem with our server. Please try again later.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Service-Unavailable": {
+        "description": "The Codat API is temporarily offline for maintenance. Please try again later.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Forbidden/content/application~1json/schema"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 500,
+                  "service": "PublicApi",
+                  "error": "The Codat API is temporarily offline for maintenance. Please try again later.",
                   "correlationId": "bc997528a9d7abb9161ef45f05d38599",
                   "canBeRetried": "Unknown",
                   "detailedErrorCode": 0

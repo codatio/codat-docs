@@ -45,7 +45,7 @@ _Note_: The possibility to restart the linking process for commerce and banking 
 Let your users know that some integrations are not optimized or will not connect via mobile when accessing the connection journey on mobile.
 
 #### Powered by Codat
-Toggle whether the _Powered by Codat_ logo is shown on your authorization flow. This toggle is always on when using our free plan.
+Toggle whether the _Powered by Codat_ logo is shown on your authorization flow. This toggle is always on when using our Free trial.
 
 #### Landing page  
 If enabled, an extra page will appear at the start of Link. The page's content is customizable, which is an excellent opportunity to explain the value of linking. You can customize the header and the body of the message.

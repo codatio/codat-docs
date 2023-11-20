@@ -267,8 +267,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "operationId": "list-companies",
@@ -326,8 +341,20 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "﻿Creates a new company that can be used to assign connections to. \n\nIf forbidden characters (see `name` pattern) are present in the request, a company will be created with the forbidden characters removed. For example, `Company (Codat[1])` with be created as `Company Codat1`.\n\n",
@@ -382,11 +409,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "requestBody": {
@@ -431,11 +470,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -479,11 +530,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -567,11 +630,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -636,11 +711,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -691,11 +778,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -721,11 +820,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -759,11 +870,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "requestBody": {
@@ -811,11 +934,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "Refreshes all data types with `fetch on first link` set to `true` for a given company.\n\nThis is an asynchronous operation, and will bring updated data into Codat from the linked integration for you to view.\n\n[Read more](https://docs.codat.io/core-concepts/data-type-settings) about data type settings and `fetch on first link`.",
@@ -844,7 +979,12 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DataStatusResponse"
+                  "title": "Data statuses",
+                  "x-internal": true,
+                  "type": "object",
+                  "additionalProperties": {
+                    "$ref": "#/components/schemas/DataStatus"
+                  }
                 },
                 "examples": {
                   "Example": {
@@ -872,11 +1012,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -922,11 +1074,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -969,17 +1133,14 @@
                         }
                       ],
                       "_links": {
-                        "self": {
-                          "href": "../dictionary"
-                        },
                         "current": {
-                          "href": "../dictionary"
+                          "href": "/companies/17129e41-5389-4f10-ac06-e0a37e47d177/data/history?page=1&pageSize=2"
+                        },
+                        "self": {
+                          "href": "/companies/17129e41-5389-4f10-ac06-e0a37e47d177/data/history"
                         },
                         "next": {
-                          "href": "../dictionary"
-                        },
-                        "previous": {
-                          "href": "../dictionary"
+                          "href": "/companies/17129e41-5389-4f10-ac06-e0a37e47d177/data/history?page=2&pageSize=2"
                         }
                       },
                       "pageNumber": 0,
@@ -997,11 +1158,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "Gets the pull operation history (datasets) for a given company.",
@@ -1066,11 +1239,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -1106,11 +1291,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "Retrieve information about a single dataset or pull operation."
@@ -1155,11 +1352,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -2253,11 +2462,26 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "409": {
             "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -2637,6 +2861,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -2645,6 +2875,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *Get account* endpoint returns a single account for a given `accountId`.\n\n[Accounts](https://docs.codat.io/sync-for-payroll-api#/schemas/Account) are the categories a business uses to record accounting transactions.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support getting a specific account.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payroll-api#/operations/refresh-company-data).\n",
@@ -7625,11 +7861,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "operationId": "get-create-accounts-model",
@@ -7662,7 +7910,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Account"
+                "$ref": "#/components/schemas/Account/definitions/accountPrototype"
               }
             }
           }
@@ -7685,11 +7933,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *Create account* endpoint creates a new [account](https://docs.codat.io/sync-for-payroll-api#/schemas/Account) for a given company's connection.\n\n[Accounts](https://docs.codat.io/sync-for-payroll-api#/schemas/Account) are the categories a business uses to record accounting transactions.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create account model](https://docs.codat.io/sync-for-payroll-api#/operations/get-create-chartOfAccounts-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account.\n",
@@ -9520,11 +9780,26 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "409": {
             "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *List journal entries* endpoint returns a list of [journal entries](https://docs.codat.io/sync-for-payroll-api#/schemas/JournalEntry) for a given company's connection.\n\n[Journal entries](https://docs.codat.io/sync-for-payroll-api#/schemas/JournalEntry) are  made in a company's general ledger, or accounts, when transactions are approved.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payroll-api#/operations/refresh-company-data).\n    ",
@@ -10345,6 +10620,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -10353,6 +10634,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *Get journal entry* endpoint returns a single journal entry for a given `journalEntryId`.\n\n[Journal entries](https://docs.codat.io/sync-for-payroll-api#/schemas/JournalEntry) are  made in a company's general ledger, or accounts, when transactions are approved.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries) for integrations that support getting a specific journal entry.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payroll-api#/operations/refresh-company-data).\n",
@@ -10397,11 +10684,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "﻿> **Use with caution**\n>\n>Because journal entries underpin every transaction in an accounting platform, deleting a journal entry can affect every transaction for a given company.\n> \n> **Before you proceed, make sure you understand the implications of deleting journal entries from an accounting perspective.**\n\nThe *Delete journal entry* endpoint allows you to delete a specified journal entry from an accounting platform.\n\n[Journal entries](https://docs.codat.io/sync-for-payroll-api#/schemas/JournalEntry) are made in a company's general ledger, or accounts, when transactions are approved.\n\n### Process\n1. Pass the `{journalEntryId}` to the *Delete journal entry* endpoint and store the `pushOperationKey` returned.\n2. Check the status of the delete by checking the status of push operation either via\n   1. [Push operation webhook](https://docs.codat.io/introduction/webhooks/core-rules-types#push-operation-status-has-changed) (advised),\n   2. [Push operation status endpoint](https://docs.codat.io/sync-for-payroll-api#/operations/get-push-operation). \n   \n   A `Success` status indicates that the journal entry object was deleted from the accounting platform.\n3. (Optional) Check that the journal entry was deleted from the accounting platform.\n\n### Effect on related objects\n\nBe aware that deleting a journal entry from an accounting platform might cause related objects to be modified. For example, if you delete the journal entry for a paid invoice in QuickBooks Online, the invoice is deleted but the payment against that invoice is not. The payment is converted to a payment on account.\n\n## Integration specifics\nIntegrations that support soft delete do not permanently delete the object in the accounting platform.\n\n| Integration | Soft Deleted | \n|-------------|--------------|\n| QuickBooks Online | Yes    |       \n",
@@ -11745,11 +12044,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "operationId": "get-create-journalEntry-model",
@@ -11933,11 +12244,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *Create journal entry* endpoint creates a new [journal entry](https://docs.codat.io/sync-for-payroll-api#/schemas/JournalEntry) for a given company's connection.\n\n[Journal entries](https://docs.codat.io/sync-for-payroll-api#/schemas/JournalEntry) are  made in a company's general ledger, or accounts, when transactions are approved.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create journal entry model](https://docs.codat.io/sync-for-payroll-api#/operations/get-create-journalEntries-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries) for integrations that support creating a journal entry.\n",
@@ -12217,11 +12540,26 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "409": {
             "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *List journals* endpoint returns a list of [journals](https://docs.codat.io/sync-for-payroll-api#/schemas/Journal) for a given company's connection.\n\n[Journals](https://docs.codat.io/sync-for-payroll-api#/schemas/Journal) are used to record all the financial transactions of a company.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payroll-api#/operations/refresh-company-data).\n    ",
@@ -12331,6 +12669,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -12339,6 +12683,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *Get journal* endpoint returns a single journal for a given `journalId`.\n\n[Journals](https://docs.codat.io/sync-for-payroll-api#/schemas/Journal) are used to record all the financial transactions of a company.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journals) for integrations that support getting a specific journal.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payroll-api#/operations/refresh-company-data).\n",
@@ -12499,11 +12849,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "operationId": "get-create-journal-model",
@@ -12536,7 +12898,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Journal"
+                "$ref": "#/components/schemas/Journal/definitions/journalPrototype"
               }
             }
           }
@@ -12559,11 +12921,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *Create journal* endpoint creates a new [journal](https://docs.codat.io/sync-for-payroll-api#/schemas/Journal) for a given company's connection.\n\n[Journals](https://docs.codat.io/sync-for-payroll-api#/schemas/Journal) are used to record all the financial transactions of a company.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create journal model](https://docs.codat.io/sync-for-payroll-api#/operations/get-create-journals-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journals) for integrations that support creating a journal.\n",
@@ -13021,11 +13395,26 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "409": {
             "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *List tracking categories* endpoint returns a list of [tracking categories](https://docs.codat.io/sync-for-payroll-api#/schemas/TrackingCategory) for a given company's connection.\n\n[Tracking categories](https://docs.codat.io/sync-for-payroll-api#/schemas/TrackingCategory) are used to monitor cost centres and control budgets that sit outside the standard set of accounts.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payroll-api#/operations/refresh-company-data).\n    ",
@@ -13187,6 +13576,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -13195,6 +13590,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *Get tracking category* endpoint returns a single tracking category for a given `trackingCategoryId`.\n\n[Tracking categories](https://docs.codat.io/sync-for-payroll-api#/schemas/TrackingCategory) are used to monitor cost centres and control budgets that sit outside the standard set of accounts.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=trackingCategories) for integrations that support getting a specific tracking category.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payroll-api#/operations/refresh-company-data).\n",
@@ -13288,6 +13689,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -13296,6 +13703,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -13343,91 +13756,433 @@
   },
   "components": {
     "schemas": {
-      "PagingInfo": {
-        "type": "object",
-        "title": "Pagination information",
-        "x-internal": true,
-        "properties": {
-          "pageNumber": {
-            "type": "integer",
-            "description": "Current page number."
-          },
-          "pageSize": {
-            "type": "integer",
-            "description": "Number of items to return in results array.",
-            "maximum": 2000
-          },
-          "totalResults": {
-            "type": "integer",
-            "description": "Total number of items."
-          },
-          "_links": {
-            "$ref": "#/components/schemas/PagingInfo/definitions/links"
-          }
-        },
-        "definitions": {
-          "links": {
-            "title": "Hal Links",
-            "type": "object",
-            "required": [
-              "self",
-              "current"
-            ],
+      "Account": {
+        "title": "Accounting: Account",
+        "description": "﻿> **Language tip:** Accounts are also referred to as **chart of accounts**, **nominal accounts**, and **general ledger**.\n\nView the coverage for accounts in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nAccounts are the categories a business uses to record accounting transactions. From the Accounts endpoints, you can retrieve a list of all accounts for a specified company.\n\nThe categories for an account include:\n* Asset\n* Expense\n* Income\n* Liability\n* Equity.\n\nThe same account may have a different category based on the integration it is used in. For example, a current account (known as checking in the US) should be categorized as `Asset.Current` for Xero, and `Asset.Bank.Checking` for QuickBooks Online.\n\nAt the same time, each integration may have its own requirements to the categories. For example, a Paypal account in Xero is of the `Asset.Bank` category and therefore requires additional properties to be provided.\n\nTo determine the list of allowed categories for a specific integration, you can:\n- Follow our [Create, update, delete data](https://docs.codat.io/using-the-api/push) guide and use the [Get create account model](https://docs.codat.io/sync-for-payroll-api#/operations/get-create-chartOfAccounts-model).\n- Refer to the integration's own documentation.\n\n> **Accounts with no category**\n>\n> If an account is pulled from the chart of accounts and its nominal code does not lie within the category layout for the company's accounts, then the **type** is `Unknown`. The **fullyQualifiedCategory** and **fullyQualifiedName** fields return `null`.\n>\n> This approach gives a true representation of the company's accounts whilst preventing distorting financials such as a company's profit and loss and balance sheet reports.",
+        "allOf": [
+          {
             "properties": {
-              "self": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              },
-              "current": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              },
-              "next": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              },
-              "previous": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              "id": {
+                "type": "string",
+                "description": "Identifier for the account, unique for the company.",
+                "example": "1b6266d1-1e44-46c5-8eb5-a8f98e03124e"
               }
-            },
-            "examples": [
+            }
+          },
+          {
+            "$ref": "#/components/schemas/Account/definitions/accountPrototype"
+          },
+          {
+            "properties": {
+              "metadata": {
+                "title": "Metadata",
+                "type": "object",
+                "x-internal": true,
+                "properties": {
+                  "isDeleted": {
+                    "type": "boolean",
+                    "description": "Indicates whether the record has been deleted in the third-party system this record originated from.",
+                    "nullable": true
+                  }
+                }
+              }
+            }
+          },
+          {
+            "title": "Modified dates",
+            "x-internal": true,
+            "allOf": [
               {
-                "self": {
-                  "href": "/companies/{id}/data/{dataType}"
-                },
-                "current": {
-                  "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+                "title": "ModifiedDate",
+                "x-internal": true,
+                "type": "object",
+                "properties": {
+                  "modifiedDate": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Company/properties/created"
+                      },
+                      {
+                        "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "title": "Source Modified Date",
+                "x-internal": true,
+                "type": "object",
+                "nullable": true,
+                "properties": {
+                  "sourceModifiedDate": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Company/properties/created"
+                      },
+                      {
+                        "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                      }
+                    ]
+                  }
                 }
               }
             ]
-          },
-          "halRef": {
-            "title": "Hypertext reference",
+          }
+        ],
+        "definitions": {
+          "accountPrototype": {
+            "title": "Account prototype",
             "type": "object",
             "properties": {
-              "href": {
+              "nominalCode": {
                 "type": "string",
-                "format": "uri-reference",
-                "description": "Uri hypertext reference."
+                "nullable": true,
+                "description": "Reference given to each nominal account for a business. It ensures money is allocated to the correct account. This code isn't a unique identifier in the Codat system.",
+                "example": "610"
+              },
+              "name": {
+                "type": "string",
+                "nullable": true,
+                "description": "Name of the account.",
+                "example": "Accounts Receivable"
+              },
+              "description": {
+                "type": "string",
+                "nullable": true,
+                "description": "Description for the account.",
+                "example": "Invoices the business has issued but has not yet collected payment on."
+              },
+              "fullyQualifiedCategory": {
+                "type": "string",
+                "nullable": true,
+                "description": "Full category of the account. \r\n\r\nFor example, `Liability.Current` or `Income.Revenue`. To determine a list of possible categories for each integration, see our examples, follow our [Create, update, delete data](https://docs.codat.io/using-the-api/push) guide, or refer to the integration's own documentation.",
+                "example": "Asset.Current"
+              },
+              "fullyQualifiedName": {
+                "type": "string",
+                "nullable": true,
+                "description": "Full name of the account, for example:\n- `Cash On Hand`\n- `Rents Held In Trust`\n- `Fixed Asset`",
+                "examples": [
+                  "Cash On Hand",
+                  "Fixed Asset"
+                ]
+              },
+              "currency": {
+                "title": "Currency",
+                "x-internal": true,
+                "type": "string",
+                "description": "The currency data type in Codat is the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code, e.g. _GBP_.\n\n## Unknown currencies\n\nIn line with the ISO 4217 specification, the code _XXX_ is used when the data source does not return a currency for a transaction. \n\nThere are only a very small number of edge cases where this currency code is returned by the Codat system.",
+                "format": "ISO4217",
+                "examples": [
+                  "GBP",
+                  "USD",
+                  "EUR"
+                ]
+              },
+              "currentBalance": {
+                "type": "number",
+                "format": "decimal",
+                "nullable": true,
+                "description": "Current balance in the account.",
+                "example": 0
+              },
+              "type": {
+                "$ref": "#/components/schemas/Account/definitions/accountType"
+              },
+              "status": {
+                "$ref": "#/components/schemas/Account/definitions/accountStatus"
+              },
+              "isBankAccount": {
+                "type": "boolean",
+                "description": "Confirms whether the account is a bank account or not."
+              },
+              "validDatatypeLinks": {
+                "type": "array",
+                "nullable": true,
+                "description": "The validDatatypeLinks can be used to determine whether an account can be correctly mapped to another object; for example, accounts with a `type` of `income` might only support being used on an Invoice and Direct Income. For more information, see [Valid Data Type Links](/sync-for-payroll-api#/schemas/ValidDataTypeLinks).",
+                "items": {
+                  "title": "Valid data type links",
+                  "description": "When querying Codat's data model, some data types return `validDatatypeLinks` metadata in the JSON response. This indicates where that object can be used as a reference—a _valid link_—when creating or updating other data.\n\nFor example, `validDatatypeLinks` might indicate the following references:\n\n- Which tax rates are valid to use on the line item of a bill.\n- Which items can be used when creating an invoice. \n\nYou can use `validDatatypeLinks` to present your SMB customers with only valid choices when selecting objects from a list, for example.\n\n## `validDatatypeLinks` example\n\nThe following example uses the `Accounting.Accounts` data type. It shows that, on the linked integration, this account is valid as the account on a payment or bill payment; and as the account referenced on the line item of a direct income or direct cost. Because there is no valid link to Invoices or Bills, using this account on those data types will result in an error.\n\n```json validDatatypeLinks for an account\n{\n            \"id\": \"bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4\",\n            \"nominalCode\": \"090\",\n            \"name\": \"Business Bank Account\",\n            #...\n            \"validDatatypeLinks\": [\n                {\n                    \"property\": \"Id\",\n                    \"links\": [\n                        \"Payment.AccountRef.Id\",\n                        \"BillPayment.AccountRef.Id\",\n                        \"DirectIncome.LineItems.AccountRef.Id\",\n                        \"DirectCost.LineItems.AccountRef.Id\"\n                    ]\n                }\n            ]\n        }\n```\n\n\n\n## Support for `validDatatypeLinks`\n\nCodat currently supports `validDatatypeLinks` for some data types on our Xero, QuickBooks Online, QuickBooks Desktop, Exact (NL), and Sage Business Cloud integrations. \n\nIf you'd like us to extend support to more data types or integrations, suggest or vote for this on our <a href=\"https://portal.productboard.com/codat/5-product-roadmap\">Product Roadmap</a>.",
+                  "type": "object",
+                  "properties": {
+                    "property": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "The property from the account that can be linked."
+                    },
+                    "links": {
+                      "type": "array",
+                      "nullable": true,
+                      "description": "Supported `dataTypes` that the record can be linked to.",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/SupplementalData"
+              }
+            }
+          },
+          "accountRef": {
+            "title": "Account reference",
+            "type": "object",
+            "description": "Data types that reference an account, for example bill and invoice line items, use an accountRef that includes the ID and name of the linked account.",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "'id' from the Accounts data type."
+              },
+              "name": {
+                "type": "string",
+                "description": "'name' from the Accounts data type."
+              }
+            }
+          },
+          "accountType": {
+            "title": "Account type",
+            "enum": [
+              "Unknown",
+              "Asset",
+              "Expense",
+              "Income",
+              "Liability",
+              "Equity"
+            ],
+            "type": "string",
+            "description": "Type of account",
+            "example": "Asset"
+          },
+          "accountStatus": {
+            "title": "Account status",
+            "enum": [
+              "Unknown",
+              "Active",
+              "Archived",
+              "Pending"
+            ],
+            "type": "string",
+            "description": "Status of the account",
+            "example": "Active"
+          }
+        },
+        "type": "object"
+      },
+      "Accounts": {
+        "title": "Accounting: Accounts",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Account"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PagingInfo"
+          }
+        ]
+      },
+      "Address": {
+        "title": "Accounting: Address",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/Address/definitions/accountingAddressType"
+          },
+          "line1": {
+            "type": "string",
+            "nullable": true,
+            "description": "Line 1 of the customer address."
+          },
+          "line2": {
+            "type": "string",
+            "nullable": true,
+            "description": "Line 2 of the customer address."
+          },
+          "city": {
+            "type": "string",
+            "nullable": true,
+            "description": "City of the customer address."
+          },
+          "region": {
+            "type": "string",
+            "nullable": true,
+            "description": "Region of the customer address."
+          },
+          "country": {
+            "type": "string",
+            "nullable": true,
+            "description": "Country of the customer address."
+          },
+          "postalCode": {
+            "type": "string",
+            "nullable": true,
+            "description": "Postal code or zip code."
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "definitions": {
+          "accountingAddressType": {
+            "description": "The type of the address",
+            "type": "string",
+            "enum": [
+              "Unknown",
+              "Billing",
+              "Delivery"
+            ]
+          }
+        }
+      },
+      "ClientRateLimitReachedWebhook": {
+        "title": "Client rate limit reached webhook",
+        "x-internal": true,
+        "description": "Webhook request body for a client that has reached their rate limit.",
+        "type": "object",
+        "properties": {
+          "ClientId": {
+            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/ClientId"
+          },
+          "ClientName": {
+            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/ClientName"
+          },
+          "RuleId": {
+            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/RuleId"
+          },
+          "RuleType": {
+            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/RuleType"
+          },
+          "AlertId": {
+            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/AlertId"
+          },
+          "Message": {
+            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/Message"
+          },
+          "Data": {
+            "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData"
+          }
+        },
+        "definitions": {
+          "ClientRateLimitReachedWebhookData": {
+            "type": "object",
+            "title": "Client rate limit reached webhook data",
+            "properties": {
+              "DailyQuota": {
+                "type": "integer",
+                "description": "The number of available requests per day."
+              },
+              "ExpiresUtc": {
+                "$ref": "#/components/schemas/Company/properties/created",
+                "description": "The date time in UTC that your daily quota is reset."
               }
             }
           }
         },
-        "required": [
-          "pageNumber",
-          "pageSize",
-          "totalResults",
-          "_links"
-        ],
         "examples": [
           {
-            "_links": {
-              "pageNumber": 1,
-              "pageSize": 10,
-              "totalResults": 1,
-              "self": {
-                "href": "/companies/{id}/data/{dataType}"
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "RuleType": "Rate Limit Reached",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "The current daily rate limit quota of 1000 requests for bae71d36-ff47-420a-b4a6-f8c9ddf41140 has been reached.",
+            "Data": {
+              "DailyQuota": 1000,
+              "ExpiresUtc": "2023-05-03T00:00:00Z"
+            }
+          }
+        ]
+      },
+      "ClientRateLimitResetWebhook": {
+        "title": "Client rate limit reset webhook",
+        "x-internal": true,
+        "description": "Webhook request body for a client that has had their rate limit reset.",
+        "type": "object",
+        "properties": {
+          "ClientId": {
+            "title": "Client ID",
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for your client in Codat."
+          },
+          "ClientName": {
+            "type": "string",
+            "description": "Name of your client in Codat."
+          },
+          "RuleId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for the rule."
+          },
+          "RuleType": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "34d52a089f08a"
+            },
+            "description": "The type of rule."
+          },
+          "AlertId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier of the webhook event."
+          },
+          "Message": {
+            "type": "string",
+            "description": "A human readable message about the webhook."
+          },
+          "Data": {
+            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/definitions/ClientRateLimitResetWebhookData"
+          }
+        },
+        "definitions": {
+          "ClientRateLimitResetWebhookData": {
+            "type": "object",
+            "title": "Client rate limit reset webhook data",
+            "properties": {
+              "QuotaRemaining": {
+                "type": "integer",
+                "description": "Total number of request remaining for your client.",
+                "nullable": true
               },
-              "current": {
-                "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+              "ResetReason": {
+                "type": "string",
+                "description": "The reason for your rate limit quota being reset."
+              },
+              "DailyQuota": {
+                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData/properties/DailyQuota",
+                "nullable": true
+              },
+              "ExpiresUtc": {
+                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData/properties/ExpiresUtc",
+                "nullable": true
               }
+            }
+          }
+        },
+        "examples": [
+          {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "RuleType": "Rate Limit Reset",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "The current daily rate limit quota for client 30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e has been reset to 1000 requests.",
+            "Data": {
+              "QuotaRemaining": 1000,
+              "ResetReason": "The quota was reset because it is a new day.",
+              "DailyQuota": 1000,
+              "ExpiresUtc": "2023-05-03T00:00:00Z"
             }
           }
         ]
@@ -13450,26 +14205,6 @@
           {
             "$ref": "#/components/schemas/PagingInfo"
           }
-        ]
-      },
-      "CompanyRequestBody": {
-        "title": "Create company request",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Name of company being connected.",
-            "pattern": "^[A-Za-z0-9\\s\\-',&@.,?!\\s]+$",
-            "minLength": 1,
-            "example": "Bank of Dave"
-          },
-          "description": {
-            "$ref": "#/components/schemas/Company/properties/description"
-          }
-        },
-        "required": [
-          "name"
         ]
       },
       "Company": {
@@ -13556,24 +14291,158 @@
           }
         ]
       },
-      "Connections": {
-        "title": "Connections",
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Connection"
-                }
-              }
+      "CompanyInfo": {
+        "title": "Accounting: Company profile",
+        "description": "> View the coverage for company profile in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=cashFlowStatement\" target=\"_blank\">Data coverage explorer</a>.\n\nCompany info provides standard details about a linked company such as their address, phone number, and company registration.\n\n> **Company information or companies?**\n> \n> Company profile is standard information that is held in the accounting platform about a company. `Companies` is an endpoint that lists businesses in the Codat system that have linked and shared their data sources.",
+        "type": "object",
+        "properties": {
+          "companyName": {
+            "type": "string",
+            "nullable": true,
+            "description": "Name of the linked company."
+          },
+          "accountingPlatformRef": {
+            "type": "string",
+            "nullable": true,
+            "description": "Identifier or reference for the company in the accounting platform."
+          },
+          "companyLegalName": {
+            "type": "string",
+            "nullable": true,
+            "description": "Registered legal name of the linked company."
+          },
+          "addresses": {
+            "type": "array",
+            "nullable": true,
+            "description": "An array of Addresses.",
+            "items": {
+              "$ref": "#/components/schemas/Address"
             }
           },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
+          "phoneNumbers": {
+            "type": "array",
+            "nullable": true,
+            "description": "An array of phone numbers.",
+            "items": {
+              "$ref": "#/components/schemas/PhoneNumber"
+            }
+          },
+          "webLinks": {
+            "type": "array",
+            "nullable": true,
+            "description": "An array of weblinks.",
+            "items": {
+              "$ref": "#/components/schemas/WebLink"
+            }
+          },
+          "ledgerLockDate": {
+            "$ref": "#/components/schemas/Company/properties/created",
+            "description": "If set in the accounting platform, the date (in the ISO 8601 date/time format) after which accounting transactions cannot be edited. Commonly used when books are closed at year-end."
+          },
+          "registrationNumber": {
+            "type": "string",
+            "nullable": true,
+            "description": "Registration number given to the linked company by the companies authority in the country of origin. In the UK this is Companies House."
+          },
+          "taxNumber": {
+            "type": "string",
+            "nullable": true,
+            "description": "Company tax number."
+          },
+          "financialYearStartDate": {
+            "$ref": "#/components/schemas/Company/properties/created",
+            "description": "Start date of the financial year for the company."
+          },
+          "baseCurrency": {
+            "type": "string",
+            "nullable": true,
+            "description": "Currency set in the accounting platform of the linked company. Used by the currency rate."
+          },
+          "sourceUrls": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true,
+            "description": "URL addresses for the accounting source.\n\nFor example, for Xero integrations two URLs are returned. These have many potential use cases, such as [deep linking](https://developer.xero.com/documentation/api-guides/deep-link-xero)."
+          },
+          "createdDate": {
+            "$ref": "#/components/schemas/Company/properties/created",
+            "description": "Date the linked company was created in the accounting platform."
+          },
+          "supplementalData": {
+            "$ref": "#/components/schemas/SupplementalData"
           }
+        },
+        "examples": [
+          {
+            "companyName": "ACME Corporation",
+            "accountingPlatformRef": "4444e827-401b-4925-92cb-d79086bf3b6b",
+            "companyLegalName": "ACME Corporation Ltd.",
+            "addresses": [
+              {
+                "type": "Billing",
+                "line1": "Warner House",
+                "line2": "98 Theobald's Road",
+                "city": "London",
+                "region": "",
+                "country": "United Kingdom",
+                "postalcode": "WC1X 8WB"
+              },
+              {
+                "type": "Unknown",
+                "line1": "123 Sierra Way",
+                "line2": "",
+                "city": "San Pablo",
+                "region": "CA",
+                "country": "",
+                "postalCode": "87999"
+              }
+            ],
+            "phoneNumbers": [
+              {
+                "number": "010 1234 5678",
+                "type": "Landline"
+              }
+            ],
+            "webLinks": [
+              {
+                "type": "Website",
+                "url": "https://www.wbsl.com/"
+              }
+            ],
+            "ledgerLockDate": "2019-03-04T12:08:01.881Z",
+            "registrationNumber": "1234567890",
+            "taxNumber": "GB 123456789",
+            "financialYearStartDate": "2019-04-01T00:00:00Z",
+            "baseCurrency": "USD",
+            "sourceUrls": {
+              "url1": "https://go.xero.com/organisationlogin/default.aspx?shortcode=!rxs0Q",
+              "url2": "https://reporting.xero.com/!rxs0Q"
+            },
+            "createdDate": "2020-02-03T16:42:02Z"
+          }
+        ]
+      },
+      "CompanyRequestBody": {
+        "title": "Create company request",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of company being connected.",
+            "pattern": "^[A-Za-z0-9\\s\\-',&@.,?!\\s]+$",
+            "minLength": 1,
+            "example": "Bank of Dave"
+          },
+          "description": {
+            "$ref": "#/components/schemas/Company/properties/description"
+          }
+        },
+        "required": [
+          "name"
         ]
       },
       "Connection": {
@@ -13718,6 +14587,77 @@
           "sourceType": "Banking"
         }
       },
+      "Connections": {
+        "title": "Connections",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Connection"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PagingInfo"
+          }
+        ]
+      },
+      "CreateAccountResponse": {
+        "title": "Accounting: Create account response",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "data": {
+                "$ref": "#/components/schemas/Account"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PushOperation"
+          }
+        ]
+      },
+      "CreateJournalEntryResponse": {
+        "title": "Accounting: Create journal entry response",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "data": {
+                "$ref": "#/components/schemas/JournalEntry"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PushOperation"
+          }
+        ]
+      },
+      "CreateJournalResponse": {
+        "title": "Accounting: Create journal response",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "data": {
+                "$ref": "#/components/schemas/Journal"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PushOperation"
+          }
+        ]
+      },
       "DataStatus": {
         "title": "Data status",
         "description": "Describes the state of data in the Codat cache for a company and data type",
@@ -13817,6 +14757,421 @@
           "$ref": "#/components/schemas/DataStatus"
         }
       },
+      "DataType": {
+        "x-internal": true,
+        "$ref": "#/components/schemas/DataStatus/properties/dataType"
+      },
+      "ErrorMessage": {
+        "title": "Error message",
+        "type": "object",
+        "x-internal": true,
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "description": "The HTTP status code returned by the error."
+          },
+          "service": {
+            "type": "string",
+            "description": "Codat's service the returned the error."
+          },
+          "error": {
+            "type": "string",
+            "description": "A brief description of the error."
+          },
+          "correlationId": {
+            "type": "string",
+            "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
+          },
+          "canBeRetried": {
+            "type": "string",
+            "description": "`True` if the error occurred transiently and can be retried."
+          },
+          "detailedErrorCode": {
+            "type": "integer",
+            "description": "Machine readable error code used to automate processes based on the code returned."
+          }
+        }
+      },
+      "Journal": {
+        "title": "Accounting: Journal",
+        "description": "> **Language tip:** For line items, or individual transactions, of a company's financial documents, refer to the [Journal entries](https://docs.codat.io/sync-for-payroll-api#/schemas/JournalEntry) data type\n\n> View the coverage for journals in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journals\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nIn accounting software, journals are used to record all the financial transactions of a company. Each transaction in a journal is represented by a separate [journal entry](https://docs.codat.io/sync-for-payroll-api#/schemas/JournalEntry). These entries are used to create the general ledger, which is then used to create the financial statements of a business.\n\nWhen a company records all their transactions in a single journal, it can become large and difficult to maintain and track. This is why large companies often use multiple journals (also known as subjournals) to categorize and manage journal entries.\n\nSuch journals can be divided into two categories:\n\n- Special journals: journals used to record specific types of transactions; for example, a purchases journal, a sales journal, or a cash management journal.\n- General journals: journals used to record transactions that fall outside the scope of the special journals.\n\nMultiple journals or subjournals are used in the following Codat integrations:\n\n- [Sage Intacct](https://docs.codat.io/integrations/accounting/sage-intacct/accounting-sage-intacct)  (mandatory)\n- [Exact Online](https://docs.codat.io/integrations/accounting/exact-online/accounting-exact-online)  (mandatory)\n- [Oracle NetSuite](https://docs.codat.io/integrations/accounting/netsuite/accounting-netsuite) (optional)\n\n> When pushing journal entries to an accounting platform that doesn’t support multiple journals (multi-book accounting), the entries will be linked to the platform-generic journal. The Journals data type will only include one object.\n",
+        "type": "object",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Journal ID."
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/Journal/definitions/journalPrototype"
+          },
+          {
+            "properties": {
+              "metadata": {
+                "$ref": "#/components/schemas/Account/allOf/2/properties/metadata"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/Account/allOf/3"
+          }
+        ],
+        "definitions": {
+          "journalPrototype": {
+            "type": "object",
+            "properties": {
+              "journalCode": {
+                "type": "string",
+                "nullable": true,
+                "description": "Native journal number or code."
+              },
+              "name": {
+                "type": "string",
+                "nullable": true,
+                "description": "Journal name.\nThe maximum length for a journal name is 256 characters. All characters above that number will be truncated."
+              },
+              "type": {
+                "type": "string",
+                "nullable": true,
+                "description": "The type of the journal."
+              },
+              "parentId": {
+                "type": "string",
+                "nullable": true,
+                "description": "Parent journal ID.\nIf the journal is a parent journal, this value is not present."
+              },
+              "hasChildren": {
+                "type": "boolean",
+                "description": "If the journal has child journals, this value is true. If it doesn’t, it is false."
+              },
+              "createdOn": {
+                "$ref": "#/components/schemas/Company/properties/created",
+                "description": "Journal creation date."
+              },
+              "status": {
+                "$ref": "#/components/schemas/Journal/definitions/journalStatus"
+              }
+            }
+          },
+          "journalRef": {
+            "title": "Journal reference",
+            "type": "object",
+            "additionalProperties": false,
+            "description": "Links journal entries to the relevant journal in accounting integrations that use multi-book accounting (multiple journals).",
+            "properties": {
+              "id": {
+                "minLength": 1,
+                "type": "string",
+                "description": "GUID of the underlying journal."
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 256,
+                "nullable": true,
+                "description": "Name of journal"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          "journalStatus": {
+            "type": "string",
+            "description": "Current journal status.",
+            "enum": [
+              "Unknown",
+              "Active",
+              "Archived"
+            ]
+          }
+        }
+      },
+      "JournalEntries": {
+        "title": "Accounting: Journal entries",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/JournalEntry"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PagingInfo"
+          }
+        ]
+      },
+      "JournalEntry": {
+        "title": "Accounting: Journal entry",
+        "description": "> **Language tip:** For the top-level record of a company's financial transactions, refer to the [Journals](https://docs.codat.io/sync-for-payroll-api#/schemas/Journal) data type\n\n> View the coverage for journal entries in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nA journal entry report shows the entries made in a company's general ledger, or [accounts](https://docs.codat.io/sync-for-payroll-api#/schemas/Account), when transactions are approved. The journal line items for each journal entry should balance.\n\nA journal entry line item is a single transaction line on the journal entry. For example: \n\n- When a journal entry is recording a receipt of cash, the credit to accounts receivable and the debit to cash are separate line items. \n- When a company needs to recognise revenue from an annual contract on a monthly basis, on receipt of cash for month one, they make a debit to deferred income and a credit to revenue.\n\nIn Codat a journal entry contains details of:\n\n- The date on which the entry was created and posted.\n- Itemised lines, including amounts and currency.\n- A reference to the associated accounts.\n- A reference to the underlying record. For example, the invoice, bill, or other data type that triggered the posting of the journal entry to the general ledger. \n\n> **Pushing journal entries**  \n> Codat only supports journal entries in the base currency of the company that are pushed into accounts denominated in the same base currency.",
+        "type": "object",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique identifier of the journal entry for the company in the accounting platform."
+              },
+              "description": {
+                "type": "string",
+                "nullable": true,
+                "description": "Optional description of the journal entry."
+              },
+              "postedOn": {
+                "$ref": "#/components/schemas/Company/properties/created",
+                "description": "Date on which the journal entry was posted to the accounting platform, and had an impact on the general ledger. This may be different from the creation date.\n\nFor example, a user creates a journal entry on Monday and saves it as draft, which has no impact on the general ledger. On Thursday, they return to the entry and post it.\n\nThe **createdOn** date shows as Monday.\nThe **postedOn** date shows as Thursday.\nJournal entries can also be backdated, so the **postedOn** date may be earlier than the **createdOn** date."
+              },
+              "createdOn": {
+                "$ref": "#/components/schemas/Company/properties/created",
+                "description": "Date on which the journal was created in the accounting platform."
+              },
+              "updatedOn": {
+                "$ref": "#/components/schemas/Company/properties/created",
+                "description": "Date on which the journal was last updated in the accounting platform."
+              },
+              "journalRef": {
+                "$ref": "#/components/schemas/Journal/definitions/journalRef"
+              },
+              "journalLines": {
+                "type": "array",
+                "nullable": true,
+                "description": "An array of journal lines.",
+                "items": {
+                  "$ref": "#/components/schemas/JournalEntry/definitions/journalLine"
+                }
+              },
+              "recordRef": {
+                "type": "object",
+                "x-internal": true,
+                "title": "Record reference",
+                "description": "Links the current record to the underlying record or data type that created it. \n\nFor example, if a journal entry is generated based on an invoice, this property allows you to connect the journal entry to the underlying invoice in our data model. ",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "'id' of the underlying record or data type."
+                  },
+                  "dataType": {
+                    "type": "string",
+                    "description": "Allowed name of the 'dataType'.",
+                    "examples": [
+                      "journalEntry",
+                      "invoice",
+                      "accountTransaction",
+                      "transfer"
+                    ]
+                  }
+                }
+              },
+              "metadata": {
+                "$ref": "#/components/schemas/Account/allOf/2/properties/metadata"
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/SupplementalData"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/Account/allOf/3"
+          }
+        ],
+        "definitions": {
+          "journalLine": {
+            "type": "object",
+            "properties": {
+              "description": {
+                "type": "string",
+                "nullable": true,
+                "description": "Description of the journal line item."
+              },
+              "netAmount": {
+                "type": "number",
+                "format": "decimal",
+                "description": "Amount for the journal line. Debit entries are considered positive, and credit entries are considered negative."
+              },
+              "currency": {
+                "type": "string",
+                "nullable": true,
+                "description": "Currency for the journal line item."
+              },
+              "accountRef": {
+                "$ref": "#/components/schemas/Account/definitions/accountRef"
+              },
+              "tracking": {
+                "description": "List of record refs associated with the tracking information for the line (eg to a Tracking Category, or customer etc.)",
+                "type": "object",
+                "properties": {
+                  "recordRefs": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/JournalEntry/allOf/0/properties/recordRef"
+                    },
+                    "nullable": true
+                  }
+                }
+              }
+            },
+            "required": [
+              "netAmount"
+            ]
+          }
+        }
+      },
+      "Journals": {
+        "title": "Accounting: Journals",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Journal"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PagingInfo"
+          }
+        ]
+      },
+      "PagingInfo": {
+        "type": "object",
+        "title": "Pagination information",
+        "x-internal": true,
+        "properties": {
+          "pageNumber": {
+            "type": "integer",
+            "description": "Current page number."
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "Number of items to return in results array.",
+            "maximum": 2000
+          },
+          "totalResults": {
+            "type": "integer",
+            "description": "Total number of items."
+          },
+          "_links": {
+            "$ref": "#/components/schemas/PagingInfo/definitions/links"
+          }
+        },
+        "definitions": {
+          "links": {
+            "title": "Hal Links",
+            "type": "object",
+            "required": [
+              "self",
+              "current"
+            ],
+            "properties": {
+              "self": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "current": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "next": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "previous": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              }
+            },
+            "examples": [
+              {
+                "self": {
+                  "href": "/companies/{id}/data/{dataType}"
+                },
+                "current": {
+                  "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+                }
+              }
+            ]
+          },
+          "halRef": {
+            "title": "Hypertext reference",
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string",
+                "format": "uri-reference",
+                "description": "Uri hypertext reference."
+              }
+            }
+          }
+        },
+        "required": [
+          "pageNumber",
+          "pageSize",
+          "totalResults",
+          "_links"
+        ],
+        "examples": [
+          {
+            "_links": {
+              "pageNumber": 1,
+              "pageSize": 10,
+              "totalResults": 1,
+              "self": {
+                "href": "/companies/{id}/data/{dataType}"
+              },
+              "current": {
+                "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+              }
+            }
+          }
+        ]
+      },
+      "PhoneNumber": {
+        "title": "Phone",
+        "type": "object",
+        "x-internal": true,
+        "properties": {
+          "number": {
+            "type": "string",
+            "nullable": true,
+            "examples": [
+              "+44 25691 154789",
+              "(877) 492-8687",
+              "01224 658 999"
+            ],
+            "description": "A phone number."
+          },
+          "type": {
+            "$ref": "#/components/schemas/PhoneNumber/definitions/phoneNumberType"
+          }
+        },
+        "required": [
+          "number",
+          "type"
+        ],
+        "definitions": {
+          "phoneNumberType": {
+            "description": "The type of phone number",
+            "type": "string",
+            "enum": [
+              "Primary",
+              "Landline",
+              "Mobile",
+              "Fax",
+              "Unknown"
+            ]
+          }
+        }
+      },
       "PullOperation": {
         "title": "Pull operation",
         "description": "Information about a queued, in progress or completed pull operation.\n*Formally called `dataset`*",
@@ -13873,6 +15228,12 @@
             ],
             "example": "Complete"
           },
+          "statusDescription": {
+            "type": "string",
+            "nullable": true,
+            "description": "Additional information about the dataset status.",
+            "example": "Paused until 2022-10-23T00:00:00.000Z"
+          },
           "errorMessage": {
             "type": "string",
             "nullable": true,
@@ -13890,7 +15251,7 @@
           },
           "isCompleted": {
             "type": "boolean",
-            "description": "`True` if the pull operation completed successfully."
+            "description": "`True` if the pull operation is completed successfully. The `isCompleted` property is not queryable. To filter failed pull operations, query by `status!=Complete&&status!=NotSupported` instead."
           },
           "isErrored": {
             "type": "boolean",
@@ -13915,6 +15276,7 @@
             "connectionId": "51baa045-4836-4317-a42e-3542e991e581",
             "dataType": "invoices",
             "status": "Initial",
+            "statusDescription": "Paused until 2022-10-23T00:00:00.000Z",
             "requested": "2022-11-14T11:18:37.2798351Z",
             "progress": 10,
             "isCompleted": false,
@@ -13941,198 +15303,6 @@
             "$ref": "#/components/schemas/PagingInfo"
           }
         ]
-      },
-      "Address": {
-        "title": "Accounting address",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/Address/definitions/accountingAddressType"
-          },
-          "line1": {
-            "type": "string",
-            "nullable": true,
-            "description": "Line 1 of the customer address."
-          },
-          "line2": {
-            "type": "string",
-            "nullable": true,
-            "description": "Line 2 of the customer address."
-          },
-          "city": {
-            "type": "string",
-            "nullable": true,
-            "description": "City of the customer address."
-          },
-          "region": {
-            "type": "string",
-            "nullable": true,
-            "description": "Region of the customer address."
-          },
-          "country": {
-            "type": "string",
-            "nullable": true,
-            "description": "Country of the customer address."
-          },
-          "postalCode": {
-            "type": "string",
-            "nullable": true,
-            "description": "Postal code or zip code."
-          }
-        },
-        "required": [
-          "type"
-        ],
-        "definitions": {
-          "accountingAddressType": {
-            "description": "The type of the address",
-            "type": "string",
-            "enum": [
-              "Unknown",
-              "Billing",
-              "Delivery"
-            ]
-          }
-        }
-      },
-      "CompanyInfo": {
-        "title": "Company information",
-        "description": "> View the coverage for company info in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=cashFlowStatement\" target=\"_blank\">Data coverage explorer</a>.\n\nCompany info provides standard details about a linked company such as their address, phone number, and company registration.\n\n> **Company information or companies?**\n> \n> Company information is standard information that is held in the accounting platform about a company. `Companies` is an endpoint that lists businesses in the Codat system that have linked and shared their data sources.",
-        "type": "object",
-        "properties": {
-          "companyName": {
-            "type": "string",
-            "nullable": true,
-            "description": "Name of the linked company."
-          },
-          "accountingPlatformRef": {
-            "type": "string",
-            "nullable": true,
-            "description": "Identifier or reference for the company in the accounting platform."
-          },
-          "companyLegalName": {
-            "type": "string",
-            "nullable": true,
-            "description": "Registered legal name of the linked company."
-          },
-          "addresses": {
-            "type": "array",
-            "nullable": true,
-            "description": "An array of Addresses.",
-            "items": {
-              "$ref": "#/components/schemas/Address"
-            }
-          },
-          "phoneNumbers": {
-            "type": "array",
-            "nullable": true,
-            "description": "An array of phone numbers.",
-            "items": {
-              "$ref": "#/components/schemas/PhoneNumber"
-            }
-          },
-          "webLinks": {
-            "type": "array",
-            "nullable": true,
-            "description": "An array of weblinks.",
-            "items": {
-              "$ref": "#/components/schemas/WebLink"
-            }
-          },
-          "ledgerLockDate": {
-            "$ref": "#/components/schemas/Company/properties/created",
-            "description": "If set in the accounting platform, the date (in the ISO 8601 date/time format) after which accounting transactions cannot be edited. Commonly used when books are closed at year-end."
-          },
-          "registrationNumber": {
-            "type": "string",
-            "nullable": true,
-            "description": "Registration number given to the linked company by the companies authority in the country of origin. In the UK this is Companies House."
-          },
-          "taxNumber": {
-            "type": "string",
-            "nullable": true,
-            "description": "Company tax number."
-          },
-          "financialYearStartDate": {
-            "$ref": "#/components/schemas/Company/properties/created",
-            "description": "Start date of the financial year for the company."
-          },
-          "baseCurrency": {
-            "type": "string",
-            "nullable": true,
-            "description": "Currency set in the accounting platform of the linked company. Used by the currency rate."
-          },
-          "sourceUrls": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string",
-              "nullable": true
-            },
-            "nullable": true,
-            "description": "URL addresses for the accounting source.\n\nFor example, for Xero integrations two URLs are returned. These have many potential use cases, such as [deep linking](https://developer.xero.com/documentation/api-guides/deep-link-xero)."
-          },
-          "createdDate": {
-            "$ref": "#/components/schemas/Company/properties/created",
-            "description": "Date the linked company was created in the accounting platform."
-          },
-          "supplementalData": {
-            "$ref": "#/components/schemas/SupplementalData"
-          }
-        },
-        "examples": [
-          {
-            "companyName": "ACME Corporation",
-            "accountingPlatformRef": "4444e827-401b-4925-92cb-d79086bf3b6b",
-            "companyLegalName": "ACME Corporation Ltd.",
-            "addresses": [
-              {
-                "type": "Billing",
-                "line1": "Warner House",
-                "line2": "98 Theobald's Road",
-                "city": "London",
-                "region": "",
-                "country": "United Kingdom",
-                "postalcode": "WC1X 8WB"
-              },
-              {
-                "type": "Unknown",
-                "line1": "123 Sierra Way",
-                "line2": "",
-                "city": "San Pablo",
-                "region": "CA",
-                "country": "",
-                "postalCode": "87999"
-              }
-            ],
-            "phoneNumbers": [
-              {
-                "number": "010 1234 5678",
-                "type": "Landline"
-              }
-            ],
-            "webLinks": [
-              {
-                "type": "Website",
-                "url": "https://www.wbsl.com/"
-              }
-            ],
-            "ledgerLockDate": "2019-03-04T12:08:01.881Z",
-            "registrationNumber": "1234567890",
-            "taxNumber": "GB 123456789",
-            "financialYearStartDate": "2019-04-01T00:00:00Z",
-            "baseCurrency": "USD",
-            "sourceUrls": {
-              "url1": "https://go.xero.com/organisationlogin/default.aspx?shortcode=!rxs0Q",
-              "url2": "https://reporting.xero.com/!rxs0Q"
-            },
-            "createdDate": "2020-02-03T16:42:02Z"
-          }
-        ]
-      },
-      "DataType": {
-        "x-internal": true,
-        "$ref": "#/components/schemas/DataStatus/properties/dataType"
       },
       "PushOperation": {
         "title": "Push operation",
@@ -14501,362 +15671,24 @@
           }
         }
       },
-      "Account": {
-        "title": "Account",
-        "description": "> **Language tip:** Accounts are also referred to as **chart of accounts**, **nominal accounts**, and **general ledger**.\n\nView the coverage for accounts in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nAccounts are the categories a business uses to record accounting transactions. From the Accounts endpoints, you can retrieve a list of all accounts for a specified company. \n\nThe categories for an account include:\n  * Asset\n  * Expense\n  * Income\n  * Liability\n  * Equity.\n\nThe same account may have a different category based on the integration it is used in. For example, a current account (known as checking in the US) should be categorized as `Asset.Current` for Xero, and `Asset.Bank.Checking` for QuickBooks Online. \n\nAt the same time, each integration may have its own requirements to the categories. For example, a Paypal account in Xero is of the `Asset.Bank` category and therefore requires additional properties to be provided. \n\nTo determine the list of allowed categories for a specific integration, you can: \n- Follow our [Create, update, delete data](https://docs.codat.io/using-the-api/push) guide and use the [Get create account model](https://docs.codat.io/sync-for-payroll-api#/operations/get-create-chartOfAccounts-model).\n- Refer to the integration's own documentation. \n\n> **Accounts with no category**\n> \n> If an account is pulled from the chart of accounts and its nominal code does not lie within the category layout for the company's accounts, then the **type** is `Unknown`. The **fullyQualifiedCategory** and **fullyQualifiedName** fields return `null`.\n> \n> This approach gives a true representation of the company's accounts whilst preventing distorting financials such as a company's profit and loss and balance sheet reports.",
-        "allOf": [
-          {
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "Identifier for the account, unique for the company.",
-                "example": "1b6266d1-1e44-46c5-8eb5-a8f98e03124e"
-              },
-              "nominalCode": {
-                "type": "string",
-                "nullable": true,
-                "description": "Reference given to each nominal account for a business. It ensures money is allocated to the correct account. This code isn't a unique identifier in the Codat system.",
-                "example": "610"
-              },
-              "name": {
-                "type": "string",
-                "nullable": true,
-                "description": "Name of the account.",
-                "example": "Accounts Receivable"
-              },
-              "description": {
-                "type": "string",
-                "nullable": true,
-                "description": "Description for the account.",
-                "example": "Invoices the business has issued but has not yet collected payment on."
-              },
-              "fullyQualifiedCategory": {
-                "type": "string",
-                "nullable": true,
-                "description": "Full category of the account. \r\n\r\nFor example, `Liability.Current` or `Income.Revenue`. To determine a list of possible categories for each integration, see our examples, follow our [Create, update, delete data](https://docs.codat.io/using-the-api/push) guide, or refer to the integration's own documentation.",
-                "example": "Asset.Current"
-              },
-              "fullyQualifiedName": {
-                "type": "string",
-                "nullable": true,
-                "description": "Full name of the account, for example:\n- `Cash On Hand`\n- `Rents Held In Trust`\n- `Fixed Asset`",
-                "examples": [
-                  "Cash On Hand",
-                  "Fixed Asset"
-                ]
-              },
-              "currency": {
-                "title": "Currency",
-                "x-internal": true,
-                "type": "string",
-                "description": "The currency data type in Codat is the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code, e.g. _GBP_.\n\n## Unknown currencies\n\nIn line with the ISO 4217 specification, the code _XXX_ is used when the data source does not return a currency for a transaction. \n\nThere are only a very small number of edge cases where this currency code is returned by the Codat system.",
-                "format": "ISO4217",
-                "examples": [
-                  "GBP",
-                  "USD",
-                  "EUR"
-                ]
-              },
-              "currentBalance": {
-                "type": "number",
-                "format": "decimal",
-                "nullable": true,
-                "description": "Current balance in the account.",
-                "example": 0
-              },
-              "type": {
-                "$ref": "#/components/schemas/Account/definitions/accountType"
-              },
-              "status": {
-                "$ref": "#/components/schemas/Account/definitions/accountStatus"
-              },
-              "isBankAccount": {
-                "type": "boolean",
-                "description": "Confirms whether the account is a bank account or not."
-              },
-              "validDatatypeLinks": {
-                "type": "array",
-                "nullable": true,
-                "description": "The validDatatypeLinks can be used to determine whether an account can be correctly mapped to another object; for example, accounts with a `type` of `income` might only support being used on an Invoice and Direct Income. For more information, see [Valid Data Type Links](/sync-for-payroll-api#/schemas/ValidDataTypeLinks).",
-                "items": {
-                  "title": "Valid data type links",
-                  "description": "When querying Codat's data model, some data types return `validDatatypeLinks` metadata in the JSON response. This indicates where that object can be used as a reference—a _valid link_—when creating or updating other data.\n\nFor example, `validDatatypeLinks` might indicate the following references:\n\n- Which tax rates are valid to use on the line item of a bill.\n- Which items can be used when creating an invoice. \n\nYou can use `validDatatypeLinks` to present your SMB customers with only valid choices when selecting objects from a list, for example.\n\n## `validDatatypeLinks` example\n\nThe following example uses the `Accounting.Accounts` data type. It shows that, on the linked integration, this account is valid as the account on a payment or bill payment; and as the account referenced on the line item of a direct income or direct cost. Because there is no valid link to Invoices or Bills, using this account on those data types will result in an error.\n\n```json validDatatypeLinks for an account\n{\n            \"id\": \"bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4\",\n            \"nominalCode\": \"090\",\n            \"name\": \"Business Bank Account\",\n            #...\n            \"validDatatypeLinks\": [\n                {\n                    \"property\": \"Id\",\n                    \"links\": [\n                        \"Payment.AccountRef.Id\",\n                        \"BillPayment.AccountRef.Id\",\n                        \"DirectIncome.LineItems.AccountRef.Id\",\n                        \"DirectCost.LineItems.AccountRef.Id\"\n                    ]\n                }\n            ]\n        }\n```\n\n\n\n## Support for `validDatatypeLinks`\n\nCodat currently supports `validDatatypeLinks` for some data types on our Xero, QuickBooks Online, QuickBooks Desktop, Exact (NL), and Sage Business Cloud integrations. \n\nIf you'd like us to extend support to more data types or integrations, suggest or vote for this on our <a href=\"https://portal.productboard.com/codat/5-product-roadmap\">Product Roadmap</a>.",
-                  "type": "object",
-                  "properties": {
-                    "property": {
-                      "type": "string",
-                      "nullable": true,
-                      "description": "The property from the account that can be linked."
-                    },
-                    "links": {
-                      "type": "array",
-                      "nullable": true,
-                      "description": "Supported `dataTypes` that the record can be linked to.",
-                      "items": {
-                        "type": "string"
-                      }
-                    }
-                  }
-                }
-              },
-              "metadata": {
-                "title": "Metadata",
-                "type": "object",
-                "x-internal": true,
-                "properties": {
-                  "isDeleted": {
-                    "type": "boolean",
-                    "description": "Indicates whether the record has been deleted in the third-party system this record originated from.",
-                    "nullable": true
-                  }
-                }
-              },
-              "supplementalData": {
-                "$ref": "#/components/schemas/SupplementalData"
-              }
-            }
-          },
-          {
-            "title": "Modified dates",
-            "x-internal": true,
-            "allOf": [
-              {
-                "title": "ModifiedDate",
-                "x-internal": true,
-                "type": "object",
-                "properties": {
-                  "modifiedDate": {
-                    "allOf": [
-                      {
-                        "$ref": "#/components/schemas/Company/properties/created"
-                      },
-                      {
-                        "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
-                      }
-                    ]
-                  }
-                }
-              },
-              {
-                "title": "Source Modified Date",
-                "x-internal": true,
-                "type": "object",
-                "nullable": true,
-                "properties": {
-                  "sourceModifiedDate": {
-                    "allOf": [
-                      {
-                        "$ref": "#/components/schemas/Company/properties/created"
-                      },
-                      {
-                        "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
-                      }
-                    ]
-                  }
-                }
-              }
-            ]
-          }
-        ],
-        "definitions": {
-          "accountRef": {
-            "title": "Account reference",
-            "type": "object",
-            "description": "Data types that reference an account, for example bill and invoice line items, use an accountRef that includes the ID and name of the linked account.",
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "'id' from the Accounts data type."
-              },
-              "name": {
-                "type": "string",
-                "description": "'name' from the Accounts data type."
-              }
-            }
-          },
-          "accountType": {
-            "title": "Account type",
-            "enum": [
-              "Unknown",
-              "Asset",
-              "Expense",
-              "Income",
-              "Liability",
-              "Equity"
-            ],
-            "type": "string",
-            "description": "Type of account",
-            "example": "Asset"
-          },
-          "accountStatus": {
-            "title": "Account status",
-            "enum": [
-              "Unknown",
-              "Active",
-              "Archived",
-              "Pending"
-            ],
-            "type": "string",
-            "description": "Status of the account",
-            "example": "Active"
-          }
-        },
-        "type": "object"
-      },
-      "Accounts": {
-        "title": "Accounts",
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Account"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
-      "CreateAccountResponse": {
-        "title": "Create account response",
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "data": {
-                "$ref": "#/components/schemas/Account"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PushOperation"
-          }
-        ]
-      },
-      "JournalEntry": {
-        "title": "Journal entry",
-        "description": "> **Language tip:** For the top-level record of a company's financial transactions, refer to the [Journals](https://docs.codat.io/sync-for-payroll-api#/schemas/Journal) data type\n\n> View the coverage for journal entries in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nA journal entry report shows the entries made in a company's general ledger, or [accounts](https://docs.codat.io/sync-for-payroll-api#/schemas/Account), when transactions are approved. The journal line items for each journal entry should balance.\n\nA journal entry line item is a single transaction line on the journal entry. For example: \n\n- When a journal entry is recording a receipt of cash, the credit to accounts receivable and the debit to cash are separate line items. \n- When a company needs to recognise revenue from an annual contract on a monthly basis, on receipt of cash for month one, they make a debit to deferred income and a credit to revenue.\n\nIn Codat a journal entry contains details of:\n\n- The date on which the entry was created and posted.\n- Itemised lines, including amounts and currency.\n- A reference to the associated accounts.\n- A reference to the underlying record. For example, the invoice, bill, or other data type that triggered the posting of the journal entry to the general ledger. \n\n> **Pushing journal entries**  \n> Codat only supports journal entries in the base currency of the company that are pushed into accounts denominated in the same base currency.",
+      "SupplementalData": {
+        "title": "Supplemental data",
         "type": "object",
-        "allOf": [
-          {
+        "x-internal": true,
+        "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting platform. [Learn more](https://docs.codat.io/using-the-api/supplemental-data/overview) about supplemental data.",
+        "properties": {
+          "content": {
             "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "Unique identifier of the journal entry for the company in the accounting platform."
-              },
-              "description": {
-                "type": "string",
-                "nullable": true,
-                "description": "Optional description of the journal entry."
-              },
-              "postedOn": {
-                "$ref": "#/components/schemas/Company/properties/created",
-                "description": "Date on which the journal entry was posted to the accounting platform, and had an impact on the general ledger. This may be different from the creation date.\n\nFor example, a user creates a journal entry on Monday and saves it as draft, which has no impact on the general ledger. On Thursday, they return to the entry and post it.\n\nThe **createdOn** date shows as Monday.\nThe **postedOn** date shows as Thursday.\nJournal entries can also be backdated, so the **postedOn** date may be earlier than the **createdOn** date."
-              },
-              "createdOn": {
-                "$ref": "#/components/schemas/Company/properties/created",
-                "description": "Date on which the journal was created in the accounting platform."
-              },
-              "updatedOn": {
-                "$ref": "#/components/schemas/Company/properties/created",
-                "description": "Date on which the journal was last updated in the accounting platform."
-              },
-              "journalRef": {
-                "$ref": "#/components/schemas/Journal/definitions/journalRef"
-              },
-              "journalLines": {
-                "type": "array",
-                "nullable": true,
-                "description": "An array of journal lines.",
-                "items": {
-                  "$ref": "#/components/schemas/JournalEntry/definitions/journalLine"
-                }
-              },
-              "recordRef": {
-                "type": "object",
-                "title": "Record reference",
-                "description": "Links the current record to the underlying record or data type that created it. \n\nFor example, if a journal entry is generated based on an invoice, this property allows you to connect the journal entry to the underlying invoice in our data model. ",
-                "properties": {
-                  "id": {
-                    "type": "string",
-                    "description": "'id' of the underlying record or data type."
-                  },
-                  "dataType": {
-                    "type": "string",
-                    "description": "Allowed name of the 'dataType'.",
-                    "examples": [
-                      "journalEntry",
-                      "invoice",
-                      "accountTransaction",
-                      "transfer"
-                    ]
-                  }
-                }
-              },
-              "metadata": {
-                "$ref": "#/components/schemas/Account/allOf/0/properties/metadata"
-              },
-              "supplementalData": {
-                "$ref": "#/components/schemas/SupplementalData"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/Account/allOf/1"
-          }
-        ],
-        "definitions": {
-          "journalLine": {
-            "type": "object",
-            "properties": {
-              "description": {
-                "type": "string",
-                "nullable": true,
-                "description": "Description of the journal line item."
-              },
-              "netAmount": {
-                "type": "number",
-                "format": "decimal",
-                "description": "Amount for the journal line. Debit entries are considered positive, and credit entries are considered negative."
-              },
-              "currency": {
-                "type": "string",
-                "nullable": true,
-                "description": "Currency for the journal line item."
-              },
-              "accountRef": {
-                "$ref": "#/components/schemas/Account/definitions/accountRef"
-              },
-              "tracking": {
-                "description": "List of record refs associated with the tracking information for the line (eg to a Tracking Category, or customer etc.)",
-                "type": "object",
-                "properties": {
-                  "recordRefs": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/JournalEntry/allOf/0/properties/recordRef"
-                    },
-                    "nullable": true
-                  }
-                }
-              }
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": true
             },
-            "required": [
-              "netAmount"
-            ]
+            "nullable": true
           }
         }
       },
-      "JournalEntries": {
-        "title": "Journal entries",
+      "TrackingCategories": {
+        "title": "Accounting: Tracking categories",
         "x-internal": true,
         "allOf": [
           {
@@ -14865,158 +15697,18 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/JournalEntry"
+                  "$ref": "#/components/schemas/TrackingCategory"
                 }
               }
             }
           },
           {
             "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
-      "CreateJournalEntryResponse": {
-        "title": "Create journal entry response",
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "data": {
-                "$ref": "#/components/schemas/JournalEntry"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PushOperation"
-          }
-        ]
-      },
-      "Journal": {
-        "title": "Journal",
-        "description": "> **Language tip:** For line items, or individual transactions, of a company's financial documents, refer to the [Journal entries](https://docs.codat.io/sync-for-payroll-api#/schemas/JournalEntry) data type\n\n> View the coverage for journals in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journals\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nIn accounting software, journals are used to record all the financial transactions of a company. Each transaction in a journal is represented by a separate [journal entry](https://docs.codat.io/sync-for-payroll-api#/schemas/JournalEntry). These entries are used to create the general ledger, which is then used to create the financial statements of a business.\n\nWhen a company records all their transactions in a single journal, it can become large and difficult to maintain and track. This is why large companies often use multiple journals (also known as subjournals) to categorize and manage journal entries.\n\nSuch journals can be divided into two categories:\n\n- Special journals: journals used to record specific types of transactions; for example, a purchases journal, a sales journal, or a cash management journal.\n- General journals: journals used to record transactions that fall outside the scope of the special journals.\n\nMultiple journals or subjournals are used in the following Codat integrations:\n\n- [Sage Intacct](https://docs.codat.io/integrations/accounting/sage-intacct/accounting-sage-intacct)  (mandatory)\n- [Exact Online](https://docs.codat.io/integrations/accounting/exact-online/accounting-exact-online)  (mandatory)\n- [Oracle NetSuite](https://docs.codat.io/integrations/accounting/netsuite/accounting-netsuite) (optional)\n\n> When pushing journal entries to an accounting platform that doesn’t support multiple journals (multi-book accounting), the entries will be linked to the platform-generic journal. The Journals data type will only include one object.\n",
-        "type": "object",
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "Journal ID."
-              },
-              "journalCode": {
-                "type": "string",
-                "nullable": true,
-                "description": "Native journal number or code."
-              },
-              "name": {
-                "type": "string",
-                "nullable": true,
-                "description": "Journal name.\nThe maximum length for a journal name is 256 characters. All characters above that number will be truncated."
-              },
-              "type": {
-                "type": "string",
-                "nullable": true,
-                "description": "The type of the journal."
-              },
-              "parentId": {
-                "type": "string",
-                "nullable": true,
-                "description": "Parent journal ID.\nIf the journal is a parent journal, this value is not present."
-              },
-              "hasChildren": {
-                "type": "boolean",
-                "description": "If the journal has child journals, this value is true. If it doesn’t, it is false."
-              },
-              "createdOn": {
-                "$ref": "#/components/schemas/Company/properties/created",
-                "description": "Journal creation date."
-              },
-              "status": {
-                "$ref": "#/components/schemas/Journal/definitions/journalStatus"
-              },
-              "metadata": {
-                "$ref": "#/components/schemas/Account/allOf/0/properties/metadata"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/Account/allOf/1"
-          }
-        ],
-        "definitions": {
-          "journalRef": {
-            "title": "Journal reference",
-            "type": "object",
-            "additionalProperties": false,
-            "description": "Links journal entries to the relevant journal in accounting integrations that use multi-book accounting (multiple journals).",
-            "properties": {
-              "id": {
-                "minLength": 1,
-                "type": "string",
-                "description": "GUID of the underlying journal."
-              },
-              "name": {
-                "type": "string",
-                "maxLength": 256,
-                "nullable": true,
-                "description": "Name of journal"
-              }
-            },
-            "required": [
-              "id"
-            ]
-          },
-          "journalStatus": {
-            "type": "string",
-            "description": "Current journal status.",
-            "enum": [
-              "Unknown",
-              "Active",
-              "Archived"
-            ]
-          }
-        }
-      },
-      "Journals": {
-        "title": "Journals",
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Journal"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
-      "CreateJournalResponse": {
-        "title": "Create journal response",
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "data": {
-                "$ref": "#/components/schemas/Journal"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PushOperation"
           }
         ]
       },
       "TrackingCategory": {
-        "title": "Tracking category",
+        "title": "Accounting: Tracking category",
         "description": "Details of a category used for tracking transactions.\n\n> Language tip\n>\n> Parameters used to track types of spend in various parts of an organization can be called  **dimensions**, **projects**, **classes**, or **locations** in different accounting platforms. In Codat, we refer to these as tracking categories.\n\nView the coverage for tracking categories in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=trackingCategories\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nTracking categories are used to monitor cost centres and control budgets that sit outside the standard chart of accounts. Customers may use tracking categories to group together and track the income and costs of specific departments, projects, locations or customers.\n\nFrom their accounting system, customers can: \n\n- Create and maintain tracking categories and tracking category types.\n- View all tracking categories that are available for use.\n- View the relationships between the categories.\n- Assign invoices, bills, credit notes, or bill credit notes to one or more categories.\n- View the categories that a transaction belongs to.\n- View all transactions in a tracking category.\n\n### Tracking categories per platform\n\nReview the platform-specific tracking categories that Codat supports, and the level they are assigned to in the source platform. \n\n<table>\n<thead>\n  <tr>\n    <th>Platform</th>\n    <th>Tracking category</th>\n    <th>Tracking level</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td><b>Dynamics 365</b></td>\n    <td>Dimensions</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td><b>Freshbooks</b></td>\n    <td>Expense&nbsp;categories</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td><b>MYOB</b></td>\n    <td>Categories</td>\n    <td>Transaction</td>\n  </tr>\n  <tr>\n    <td rowspan=4><b>Netsuite</b></td>\n    <td>Classes</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td>Locations</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td>Departments</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td>Custom&nbsp;segments</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td rowspan=2><b>QuickBooks Desktop</b></td>\n    <td>Classes</td>\n    <td>Line item or transaction level</td>\n  </tr>\n  <tr>\n    <td>Locations</td>\n    <td>Transaction</td>\n  </tr>\n  <tr>\n    <td rowspan=2><b>QuickBooks Online</b></td>\n    <td>Classes</td>\n    <td>Line item or transaction level</td>\n  </tr>\n  <tr>\n    <td>Locations</td>\n    <td>Transaction</td>\n  </tr>\n  <tr>\n    <td rowspan=3><b>Sage 200</b></td>\n    <td>Cost&nbsp;centers</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n      <td>Departments</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td>Analysis&nbsp;codes</td>\n    <td>Transaction</td>\n  </tr>\n  <tr>\n    <td rowspan=3><b>Sage 50</b></td>\n    <td>Departments</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n     <td>Costcodes</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td>Projects</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td><b>Sage Intacct</b></td>\n    <td>Dimensions</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td><b>Xero</b></td>\n    <td>Tracking&nbsp;categories</td>\n    <td>Line item</td>\n  </tr>\n</tbody>\n</table>\n\n> **Example use case**\n>\n> Monitor the budget for your annual conference using a tracking category called 'AnnualConference2020' with the **type** set to **Costing**.\n\nIf a tracking category has a parent category, the ID of that parent category is displayed. There is also a `hasChildren` field that shows whether there are child subcategories nested beneath. ",
         "type": "object",
         "allOf": [
@@ -15046,12 +15738,12 @@
                 "description": "Boolean value indicating whether this category has SubCategories."
               },
               "metadata": {
-                "$ref": "#/components/schemas/Account/allOf/0/properties/metadata"
+                "$ref": "#/components/schemas/Account/allOf/2/properties/metadata"
               }
             }
           },
           {
-            "$ref": "#/components/schemas/Account/allOf/1"
+            "$ref": "#/components/schemas/Account/allOf/3"
           }
         ],
         "definitions": {
@@ -15098,28 +15790,8 @@
           }
         ]
       },
-      "TrackingCategories": {
-        "title": "Tracking categories",
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/TrackingCategory"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
       "TrackingCategoryTree": {
-        "title": "Tracking category tree",
+        "title": "Accounting: Tracking category tree",
         "description": "The full structure of a specific tracking category including any child or subcategories.",
         "type": "object",
         "allOf": [
@@ -15157,82 +15829,14 @@
                 }
               },
               "metadata": {
-                "$ref": "#/components/schemas/Account/allOf/0/properties/metadata"
+                "$ref": "#/components/schemas/Account/allOf/2/properties/metadata"
               }
             }
           },
           {
-            "$ref": "#/components/schemas/Account/allOf/1"
+            "$ref": "#/components/schemas/Account/allOf/3"
           }
         ]
-      },
-      "ErrorMessage": {
-        "title": "Error message",
-        "type": "object",
-        "x-internal": true,
-        "properties": {
-          "statusCode": {
-            "type": "integer",
-            "description": "The HTTP status code returned by the error."
-          },
-          "service": {
-            "type": "string",
-            "description": "Codat's service the returned the error."
-          },
-          "error": {
-            "type": "string",
-            "description": "A brief description of the error."
-          },
-          "correlationId": {
-            "type": "string",
-            "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
-          },
-          "canBeRetried": {
-            "type": "string",
-            "description": "`True` if the error occurred transiently and can be retried."
-          },
-          "detailedErrorCode": {
-            "type": "integer",
-            "description": "Machine readable error code used to automate processes based on the code returned."
-          }
-        }
-      },
-      "PhoneNumber": {
-        "title": "Phone",
-        "type": "object",
-        "x-internal": true,
-        "properties": {
-          "number": {
-            "type": "string",
-            "nullable": true,
-            "examples": [
-              "+44 25691 154789",
-              "(877) 492-8687",
-              "01224 658 999"
-            ],
-            "description": "A phone number."
-          },
-          "type": {
-            "$ref": "#/components/schemas/PhoneNumber/definitions/phoneNumberType"
-          }
-        },
-        "required": [
-          "number",
-          "type"
-        ],
-        "definitions": {
-          "phoneNumberType": {
-            "description": "The type of phone number",
-            "type": "string",
-            "enum": [
-              "Primary",
-              "Landline",
-              "Mobile",
-              "Fax",
-              "Unknown"
-            ]
-          }
-        }
       },
       "WebLink": {
         "title": "Weblink",
@@ -15257,163 +15861,6 @@
         "example": {
           "type": "Website",
           "url": "https://codat.io"
-        }
-      },
-      "ClientRateLimitReachedWebhook": {
-        "title": "Client rate limit reached webhook",
-        "x-internal": true,
-        "description": "Webhook request body for a client that has reached their rate limit.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/ClientId"
-          },
-          "ClientName": {
-            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/ClientName"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/RuleId"
-          },
-          "RuleType": {
-            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/RuleType"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/Message"
-          },
-          "Data": {
-            "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData"
-          }
-        },
-        "definitions": {
-          "ClientRateLimitReachedWebhookData": {
-            "type": "object",
-            "title": "Client rate limit reached webhook data",
-            "properties": {
-              "DailyQuota": {
-                "type": "integer",
-                "description": "The number of available requests per day."
-              },
-              "ExpiresUtc": {
-                "$ref": "#/components/schemas/Company/properties/created",
-                "description": "The date time in UTC that your daily quota is reset."
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Rate Limit Reached",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "The current daily rate limit quota of 1000 requests for bae71d36-ff47-420a-b4a6-f8c9ddf41140 has been reached.",
-            "Data": {
-              "DailyQuota": 1000,
-              "ExpiresUtc": "2023-05-03T00:00:00Z"
-            }
-          }
-        ]
-      },
-      "ClientRateLimitResetWebhook": {
-        "title": "Client rate limit reset webhook",
-        "x-internal": true,
-        "description": "Webhook request body for a client that has had their rate limit reset.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier for your client in Codat."
-          },
-          "ClientName": {
-            "type": "string",
-            "description": "Name of your client in Codat."
-          },
-          "RuleId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier for the rule."
-          },
-          "RuleType": {
-            "type": "string",
-            "x-stoplight": {
-              "id": "34d52a089f08a"
-            },
-            "description": "The type of rule."
-          },
-          "AlertId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier of the webhook event."
-          },
-          "Message": {
-            "type": "string",
-            "description": "A human readable message about the webhook."
-          },
-          "Data": {
-            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/definitions/ClientRateLimitResetWebhookData"
-          }
-        },
-        "definitions": {
-          "ClientRateLimitResetWebhookData": {
-            "type": "object",
-            "title": "Client rate limit reset webhook data",
-            "properties": {
-              "QuotaRemaining": {
-                "type": "integer",
-                "description": "Total number of request remaining for your client.",
-                "nullable": true
-              },
-              "ResetReason": {
-                "type": "string",
-                "description": "The reason for your rate limit quota being reset."
-              },
-              "DailyQuota": {
-                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData/properties/DailyQuota",
-                "nullable": true
-              },
-              "ExpiresUtc": {
-                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData/properties/ExpiresUtc",
-                "nullable": true
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Rate Limit Reset",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "The current daily rate limit quota for client 30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e has been reset to 1000 requests.",
-            "Data": {
-              "QuotaRemaining": 1000,
-              "ResetReason": "The quota was reset because it is a new day.",
-              "DailyQuota": 1000,
-              "ExpiresUtc": "2023-05-03T00:00:00Z"
-            }
-          }
-        ]
-      },
-      "SupplementalData": {
-        "title": "Supplemental data",
-        "type": "object",
-        "x-internal": true,
-        "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting platform. [Learn more](https://docs.codat.io/using-the-api/supplemental-data/overview) about supplemental data.",
-        "properties": {
-          "content": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "object",
-              "additionalProperties": true
-            },
-            "nullable": true
-          }
         }
       }
     },
@@ -15625,6 +16072,50 @@
           }
         }
       },
+      "Payment-Required": {
+        "description": "An account limit has been exceeded. The type of limit is described in the error property:\n\n- You have exceeded the 50-company limit that applies to a Free plan. Delete any companies you no longer need and retry the request.\n- The requested sync schedule is not allowed. You requested an hourly sync schedule but this functionality is not included in the Free plan.\n- Your Free account is older than 365 days and has expired. Contact support@codat.io.\n",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 429,
+                  "service": "PublicApi",
+                  "error": "You have exceeded the 50-company limit that applies to a Free plan. We recommend that you delete any companies you no longer need and retry the request.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "You are using an outdated API key or a key not associated with that resource.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 403,
+                  "service": "PublicApi",
+                  "error": "You are using an outdated API key or a key not associated with that resource.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
       "Not-Found": {
         "description": "One or more of the resources you referenced could not be found.\nThis might be because your company or data connection id is wrong, or was already deleted.",
         "content": {
@@ -15706,6 +16197,16 @@
                   "canBeRetried": "Unknown",
                   "detailedErrorCode": 0
                 }
+              },
+              "Unresolved property": {
+                "value": {
+                  "statusCode": 400,
+                  "service": "PullApi",
+                  "error": "Error parsing query - Could not resolve property isCompleted on Dataset",
+                  "correlationId": "98457fb9956b7f9b4b2fd4f6e23bb5c8",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
               }
             }
           }
@@ -15724,6 +16225,50 @@
                   "statusCode": 409,
                   "service": "PublicApi",
                   "error": "The data set has not been requested.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Internal-Server-Error": {
+        "description": "There is a problem with our server. Please try again later.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 500,
+                  "service": "PublicApi",
+                  "error": "There is a problem with our server. Please try again later.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Service-Unavailable": {
+        "description": "The Codat API is temporarily offline for maintenance. Please try again later.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 500,
+                  "service": "PublicApi",
+                  "error": "The Codat API is temporarily offline for maintenance. Please try again later.",
                   "correlationId": "bc997528a9d7abb9161ef45f05d38599",
                   "canBeRetried": "Unknown",
                   "detailedErrorCode": 0

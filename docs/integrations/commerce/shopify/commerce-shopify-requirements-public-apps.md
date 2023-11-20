@@ -64,7 +64,7 @@ The following diagram outlines the functionality your app must provide, such as 
 5. Your app appends the `Shop` value (stored in step two) to the `linkUrl` as a query parameter to form a store-specific Link URL.
 
    ```
-   https://link.codat.io/company/<companyId>?<shop-value>
+   https://link-api.codat.io/companies/{companyId}/connections/{connectionId}/start?shop={Shop}
    ```
 
 6. Your app redirects the merchant to the store-specific Link URL, including the `Shop` query parameter.

@@ -48,6 +48,12 @@ export const bankfeedsIntegrations = [
     "tags": ["US", "Canada"],
   },
   {
+    "name": "Oracle NetSuite bank feeds",
+    "to": "/integrations/bank-feeds/netsuite-bank-feeds/netsuite-bank-feeds-setup",
+    "sourceType": "bankfeeds",
+    "img": "https://static.codat.io/public/officialLogos/Square/9815B998-024D-4415-A40B-89903B2CAD6F.png"
+  },
+  {
     "name": "Sage bank feeds",
     "to": "/integrations/bank-feeds/sage-bank-feeds/",
     "sourceType": "bankfeeds",
@@ -60,22 +66,28 @@ export const bankfeedsIntegrations = [
     "img": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png",
   },
   {
-    "name": "FreeAgent",
+    "name": "FreeAgent bank feeds",
     "to": "/integrations/accounting/freeagent/accounting-freeagent",
     "sourceType": "bankfeeds",
     "img": "https://static.codat.io/public/officialLogos/Square/3DA57C23-A4FA-4BC8-8C02-A7A686ED8B36.png",
   },
 ]
 
-export const bankfeedsExternalMappingIntegrations = [
+export const bankfeedsInternalMappingIntegrations = [
   {
-    "name": "Xero",
+    "name": "Oracle NetSuite bank feeds",
+    "to": "/integrations/bank-feeds/netsuite-bank-feeds/netsuite-bank-feeds-setup",
+    "sourceType": "bankfeeds",
+    "img": "https://static.codat.io/public/officialLogos/Square/9815B998-024D-4415-A40B-89903B2CAD6F.png"
+  },
+  {
+    "name": "Xero bank feeds",
     "to": "/integrations/bank-feeds/xero-bank-feeds/",
     "type": "bankfeeds",
     "img": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png",
   },
   {
-    "name": "FreeAgent",
+    "name": "FreeAgent bank feeds",
     "to": "/integrations/accounting/freeagent/accounting-freeagent",
     "type": "bankfeeds",
     "img": "https://static.codat.io/public/officialLogos/Square/3DA57C23-A4FA-4BC8-8C02-A7A686ED8B36.png",

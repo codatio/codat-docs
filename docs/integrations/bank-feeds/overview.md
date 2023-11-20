@@ -16,7 +16,8 @@ Read more about our [Bank Feeds API](/bank-feeds/overview) product.
 - [QuickBooks Online Bank Feeds](/integrations/bank-feeds/qbo-bank-feeds/) (US and Canada only)
 - [Sage Bank Feeds](/integrations/bank-feeds/sage-bank-feeds/)
 - [Xero](/integrations/bank-feeds/xero-bank-feeds/)
+- [NetSuite](/integrations/bank-feeds/netsuite-bank-feeds/netsuite-bank-feeds-setup)
 
 ## Relevant products
 
-<Products mini={true} products={["Bank Feeds API", "Sync for Payroll"]}/>
+<Products mini={true} products={["Bank Feeds API"]}/>

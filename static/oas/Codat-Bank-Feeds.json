@@ -163,8 +163,20 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "﻿Creates a new company that can be used to assign connections to. \n\nIf forbidden characters (see `name` pattern) are present in the request, a company will be created with the forbidden characters removed. For example, `Company (Codat[1])` with be created as `Company Codat1`.\n\n",
@@ -321,8 +333,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "operationId": "list-companies",
@@ -384,11 +411,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -411,11 +450,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -445,11 +496,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "requestBody": {
@@ -555,11 +618,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -624,11 +699,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -679,11 +766,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -709,11 +808,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -747,11 +858,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "requestBody": {
@@ -784,6 +907,14 @@
       }
     },
     "/companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        }
+      ],
       "post": {
         "tags": [
           "Source accounts"
@@ -791,14 +922,6 @@
         "summary": "Create source account",
         "description": "The _Create Source Account_ endpoint allows you to create a representation of a bank account within Codat's domain. The company can then map the source account to an existing or new target account in their accounting software.\n\n#### Account Mapping Variability\n\nThe method of mapping the source account to the target account varies depending on the accounting package your company uses.\n\n#### Mapping Options:\n\n1. **API Mapping**: Integrate the mapping journey directly into your application for a seamless user experience.\n2. **Codat UI Mapping**: If you prefer a quicker setup, you can utilize Codat's provided user interface for mapping.\n3. **Accounting Platform Mapping**: For some accounting software, the mapping process must be conducted within the software itself.\n\n### Integration specific behaviour\n\n| Bank Feed Integration | API Mapping | Codat UI Mapping | Accounting Platform Mapping |\n| --------------------- | ----------- | ---------------- | --------------------------- |\n| Xero                  | ✅          | ✅               |                             |\n| FreeAgent             | ✅          | ✅               |                             |\n| QuickBooks Online     |             |                  | ✅                          |\n| Sage                  |             |                  | ✅                          |\n",
         "operationId": "create-source-account",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          },
-          {
-            "$ref": "#/components/parameters/connectionId"
-          }
-        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -826,11 +949,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -841,14 +976,6 @@
         "summary": "List source accounts",
         "description": "﻿The _List source accounts_ endpoint returns a list of [source accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankFeedAccount) for a given company's connection.\n\n[source accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankFeedAccount) are the bank's bank account within Codat's domain from which transactions are synced into the accounting platform.\n",
         "operationId": "list-source-accounts",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          },
-          {
-            "$ref": "#/components/parameters/connectionId"
-          }
-        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -864,11 +991,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -915,14 +1054,29 @@
               }
             }
           },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
           },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -951,8 +1105,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -993,8 +1162,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -1021,8 +1205,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -1057,8 +1256,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -1073,33 +1287,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "title": "Bank feed account mapping",
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                  "sourceAccountId": {
-                    "type": "string",
-                    "description": "Unique ID for the source account"
-                  },
-                  "targetAccountId": {
-                    "type": "string",
-                    "nullable": true,
-                    "description": "Unique ID for the target account"
-                  },
-                  "feedStartDate": {
-                    "$ref": "#/components/schemas/DateTime",
-                    "nullable": true,
-                    "description": "Date to start importing transactions from"
-                  }
-                },
-                "description": "A bank feed connection between a source account and a target account.",
-                "examples": [
-                  {
-                    "sourceAccountId": "acc-002",
-                    "targetAccountId": "account-081",
-                    "feedStartDate": "2023-01-09T14:14:14.1057478Z"
-                  }
-                ]
+                "$ref": "#/components/schemas/BankFeedAccountMapping/allOf/0"
               }
             }
           }
@@ -1122,11 +1310,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -1326,14 +1526,29 @@
               }
             }
           },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
           },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -1377,11 +1592,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -1432,11 +1659,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -1484,81 +1723,440 @@
   },
   "components": {
     "schemas": {
-      "Company": {
-        "title": "Company",
-        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/bank-feeds-api#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
+      "BankAccountCredentials": {
+        "title": "Bank Account Credentials",
+        "description": "Result of generate credentials",
         "type": "object",
         "properties": {
-          "id": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "name": {
+          "username": {
             "type": "string",
-            "description": "The name of the company",
-            "example": "Codat Ltd."
+            "example": "S0MW-TR0P-7DS0",
+            "description": "Username used by the bank feeds platform to retrieve transactions"
           },
-          "description": {
+          "password": {
             "type": "string",
-            "example": "Requested early access to the new financing scheme.",
-            "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
+            "example": "cO0ajh0uGyTN0Pwh",
+            "description": "Password to enable the bank feeds platform to securely retrieve transactions."
+          }
+        },
+        "examples": {
+          "QuickBooks Online Bank Feeds": {
+            "username": "S0MW-TR0P-7DS0",
+            "password": "cO0ajh0uGyTN0Pwh"
+          }
+        }
+      },
+      "BankFeedAccountMapping": {
+        "title": "Bank feed account mapping",
+        "allOf": [
+          {
+            "title": "Bank feed account mapping",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "sourceAccountId": {
+                "type": "string",
+                "description": "Unique ID for the source account"
+              },
+              "targetAccountId": {
+                "type": "string",
+                "nullable": true,
+                "description": "Unique ID for the target account"
+              },
+              "feedStartDate": {
+                "$ref": "#/components/schemas/DateTime",
+                "nullable": true,
+                "description": "Date to start importing transactions from"
+              }
+            },
+            "description": "A bank feed connection between a source account and a target account.",
+            "examples": [
+              {
+                "sourceAccountId": "acc-002",
+                "targetAccountId": "account-081",
+                "feedStartDate": "2023-01-09T14:14:14.1057478Z"
+              }
+            ]
           },
-          "platform": {
+          {
+            "x-internal": true
+          }
+        ]
+      },
+      "BankFeedAccountMappingResponse": {
+        "title": "Bank feed account mapping response",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "sourceAccountId": {
             "type": "string",
-            "deprecated": true,
-            "example": "Xero",
-            "description": "`platformKeys` name used when creating the company."
+            "description": "Unique ID for the source account."
           },
-          "redirect": {
+          "targetAccountId": {
             "type": "string",
-            "format": "uri",
-            "description": "The `redirect` [Link URL](https://docs.codat.io/auth-flow/authorize-hosted-link) enabling the customer to start their auth flow journey for the company.",
-            "example": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739"
+            "nullable": true,
+            "description": "Unique ID for the target account."
           },
-          "lastSync": {
-            "$ref": "#/components/schemas/DateTime"
-          },
-          "created": {
-            "$ref": "#/components/schemas/DateTime"
-          },
-          "createdByUserName": {
+          "Status": {
             "type": "string",
-            "description": "Name of user that created the company in Codat."
+            "nullable": true,
+            "description": "Status of the POST request."
           },
-          "dataConnections": {
+          "Error": {
+            "type": "string",
+            "nullable": true,
+            "description": "Error returned during the post request"
+          }
+        },
+        "description": "The result from POSTing a Bank Account mapping.",
+        "examples": [
+          {
+            "sourceAccountId": "acc-002",
+            "targetAccountId": "account-081",
+            "Status": "Failed",
+            "Error": "A feed connection already exists to this account"
+          }
+        ]
+      },
+      "BankFeedMapping": {
+        "title": "Bank feed mapping",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "sourceAccountId": {
+            "type": "string",
+            "description": "Unique ID for the source account."
+          },
+          "sourceAccountName": {
+            "type": "string",
+            "description": "Name for the source account."
+          },
+          "sourceAccountNumber": {
+            "type": "string",
+            "description": "Account number for the source account."
+          },
+          "sourceBalance": {
+            "type": "string",
+            "description": "Balance for the source account."
+          },
+          "sourceCurrency": {
+            "$ref": "#/components/schemas/SourceAccount/properties/currency"
+          },
+          "targetAccountId": {
+            "type": "string",
+            "nullable": true,
+            "description": "Unique ID for the target account in the accounting platform."
+          },
+          "targetAccountName": {
+            "type": "string",
+            "description": "Name for the target account in the accounting platform."
+          },
+          "status": {
+            "type": "string",
+            "description": "The status."
+          },
+          "targetAccountOptions": {
             "type": "array",
+            "nullable": true,
+            "description": "An array of potential target accounts.",
             "items": {
-              "$ref": "#/components/schemas/Connection"
+              "$ref": "#/components/schemas/BankFeedMapping/definitions/targetAccountOption"
+            }
+          },
+          "feedStartDate": {
+            "$ref": "#/components/schemas/DateTime",
+            "nullable": true,
+            "description": "The date from which bank transactions can be provided to the platform."
+          }
+        },
+        "description": "A bank feed connection between a source account and a target account, including potential target accounts.",
+        "definitions": {
+          "targetAccountOption": {
+            "title": "Target Account Option",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Id of the target account."
+              },
+              "name": {
+                "type": "string",
+                "nullable": true,
+                "description": "Name of the target account."
+              },
+              "balance": {
+                "type": "number",
+                "format": "decimal",
+                "nullable": true,
+                "description": "The balance of the account."
+              },
+              "sortCode": {
+                "type": "string",
+                "nullable": true,
+                "description": "The sort code of the account."
+              },
+              "accountNumber": {
+                "type": "string",
+                "nullable": true,
+                "description": "The account number of the account."
+              }
             }
           }
         },
-        "required": [
-          "id",
-          "name",
-          "redirect"
-        ],
         "examples": [
           {
-            "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
-            "name": "string",
-            "platform": "string",
-            "redirect": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739",
-            "lastSync": "2022-01-01T12:00:00.000Z",
-            "created": "2022-01-01T12:00:00.000Z",
-            "createdByUserName": "string",
-            "dataConnections": [
+            "sourceAccountId": "acc-002",
+            "targetAccountId": "account-081",
+            "sourceCurrency": "USD",
+            "status": "Success",
+            "feedStartDate": "2023-01-09T14:14:14.1057478Z",
+            "sourceAccountName": "ACME Bank",
+            "sourceAccountNumber": "1234-5678",
+            "sourceBalance": 500,
+            "targetAccountName": "ACME Bank"
+          },
+          {
+            "sourceAccountId": "c53fd75a-dddb-4493-839a-5090b008f625",
+            "status": "pending",
+            "targetAccountOptions": [
               {
-                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
-                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
-                "integrationKey": "dfxm",
-                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
-                "platformName": "Basiq",
-                "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
-                "status": "Linked",
-                "lastSync": "2022-10-27T10:22:43.6464237Z",
-                "created": "2022-10-27T09:53:29Z",
-                "sourceType": "Banking"
+                "name": "account-081",
+                "id": "044096a7-1478-4554-8820-f478caad1b00",
+                "balance": 100.99,
+                "sortCode": "602336",
+                "accountNumber": "23203"
               }
-            ]
+            ],
+            "sourceAccountName": "bank name here",
+            "sourceAccountNumber": "5670",
+            "sourceBalance": 1550,
+            "sourceCurrency": "GBP"
+          }
+        ]
+      },
+      "BankTransactions": {
+        "title": "Bank transactions",
+        "type": "array",
+        "maxItems": 2000,
+        "items": {
+          "title": "Bank transaction",
+          "type": "object",
+          "allOf": [
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Identifier for the bank account transaction, unique for the company in the accounting platform.",
+                  "example": "716422529"
+                },
+                "date": {
+                  "$ref": "#/components/schemas/DateTime"
+                },
+                "description": {
+                  "type": "string",
+                  "nullable": true,
+                  "description": "Description of the bank transaction.",
+                  "example": "Debit for Payment Id sdp-1-57379a43-c4b8-49f5-bd7c-699189ee7a60"
+                },
+                "counterparty": {
+                  "type": "string",
+                  "nullable": true,
+                  "description": "The giving or receiving party such as a person or organization.",
+                  "example": "ACME INC"
+                },
+                "reference": {
+                  "type": "string",
+                  "nullable": true,
+                  "description": "An optional reference to the bank transaction.",
+                  "example": "reference for transaction"
+                },
+                "reconciled": {
+                  "type": "boolean",
+                  "description": "`True` if the bank transaction has been [reconciled](https://www.xero.com/uk/guides/what-is-bank-reconciliation/) in the accounting platform.",
+                  "example": false
+                },
+                "amount": {
+                  "type": "number",
+                  "format": "decimal",
+                  "description": "The amount transacted in the bank transaction.",
+                  "example": 999.99
+                },
+                "balance": {
+                  "type": "number",
+                  "format": "decimal",
+                  "description": "The remaining balance in the account with ID `accountId`.",
+                  "example": -999.99
+                },
+                "transactionType": {
+                  "title": "Bank transaction type",
+                  "description": "Type of transaction for the bank statement line.",
+                  "type": "string",
+                  "enum": [
+                    "Unknown",
+                    "Credit",
+                    "Debit",
+                    "Int",
+                    "Div",
+                    "Fee",
+                    "SerChg",
+                    "Dep",
+                    "Atm",
+                    "Pos",
+                    "Xfer",
+                    "Check",
+                    "Payment",
+                    "Cash",
+                    "DirectDep",
+                    "DirectDebit",
+                    "RepeatPmt",
+                    "Other"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "ClientRateLimitReachedWebhook": {
+        "title": "Client rate limit reached webhook",
+        "x-internal": true,
+        "description": "Webhook request body for a client that has reached their rate limit.",
+        "type": "object",
+        "properties": {
+          "ClientId": {
+            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/ClientId"
+          },
+          "ClientName": {
+            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/ClientName"
+          },
+          "RuleId": {
+            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/RuleId"
+          },
+          "RuleType": {
+            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/RuleType"
+          },
+          "AlertId": {
+            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/AlertId"
+          },
+          "Message": {
+            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/Message"
+          },
+          "Data": {
+            "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData"
+          }
+        },
+        "definitions": {
+          "ClientRateLimitReachedWebhookData": {
+            "type": "object",
+            "title": "Client rate limit reached webhook data",
+            "properties": {
+              "DailyQuota": {
+                "type": "integer",
+                "description": "The number of available requests per day."
+              },
+              "ExpiresUtc": {
+                "$ref": "#/components/schemas/DateTime",
+                "description": "The date time in UTC that your daily quota is reset."
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "RuleType": "Rate Limit Reached",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "The current daily rate limit quota of 1000 requests for bae71d36-ff47-420a-b4a6-f8c9ddf41140 has been reached.",
+            "Data": {
+              "DailyQuota": 1000,
+              "ExpiresUtc": "2023-05-03T00:00:00Z"
+            }
+          }
+        ]
+      },
+      "ClientRateLimitResetWebhook": {
+        "title": "Client rate limit reset webhook",
+        "x-internal": true,
+        "description": "Webhook request body for a client that has had their rate limit reset.",
+        "type": "object",
+        "properties": {
+          "ClientId": {
+            "title": "Client ID",
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for your client in Codat."
+          },
+          "ClientName": {
+            "type": "string",
+            "description": "Name of your client in Codat."
+          },
+          "RuleId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for the rule."
+          },
+          "RuleType": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "34d52a089f08a"
+            },
+            "description": "The type of rule."
+          },
+          "AlertId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier of the webhook event."
+          },
+          "Message": {
+            "type": "string",
+            "description": "A human readable message about the webhook."
+          },
+          "Data": {
+            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/definitions/ClientRateLimitResetWebhookData"
+          }
+        },
+        "definitions": {
+          "ClientRateLimitResetWebhookData": {
+            "type": "object",
+            "title": "Client rate limit reset webhook data",
+            "properties": {
+              "QuotaRemaining": {
+                "type": "integer",
+                "description": "Total number of request remaining for your client.",
+                "nullable": true
+              },
+              "ResetReason": {
+                "type": "string",
+                "description": "The reason for your rate limit quota being reset."
+              },
+              "DailyQuota": {
+                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData/properties/DailyQuota",
+                "nullable": true
+              },
+              "ExpiresUtc": {
+                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData/properties/ExpiresUtc",
+                "nullable": true
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "RuleType": "Rate Limit Reset",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "The current daily rate limit quota for client 30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e has been reset to 1000 requests.",
+            "Data": {
+              "QuotaRemaining": 1000,
+              "ResetReason": "The quota was reset because it is a new day.",
+              "DailyQuota": 1000,
+              "ExpiresUtc": "2023-05-03T00:00:00Z"
+            }
           }
         ]
       },
@@ -1663,6 +2261,84 @@
                     "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
                   }
                 }
+              }
+            ]
+          }
+        ]
+      },
+      "Company": {
+        "title": "Company",
+        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/bank-feeds-api#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/parameters/companyId/schema"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the company",
+            "example": "Codat Ltd."
+          },
+          "description": {
+            "type": "string",
+            "example": "Requested early access to the new financing scheme.",
+            "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
+          },
+          "platform": {
+            "type": "string",
+            "deprecated": true,
+            "example": "Xero",
+            "description": "`platformKeys` name used when creating the company."
+          },
+          "redirect": {
+            "type": "string",
+            "format": "uri",
+            "description": "The `redirect` [Link URL](https://docs.codat.io/auth-flow/authorize-hosted-link) enabling the customer to start their auth flow journey for the company.",
+            "example": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739"
+          },
+          "lastSync": {
+            "$ref": "#/components/schemas/DateTime"
+          },
+          "created": {
+            "$ref": "#/components/schemas/DateTime"
+          },
+          "createdByUserName": {
+            "type": "string",
+            "description": "Name of user that created the company in Codat."
+          },
+          "dataConnections": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Connection"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "redirect"
+        ],
+        "examples": [
+          {
+            "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+            "name": "string",
+            "platform": "string",
+            "redirect": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739",
+            "lastSync": "2022-01-01T12:00:00.000Z",
+            "created": "2022-01-01T12:00:00.000Z",
+            "createdByUserName": "string",
+            "dataConnections": [
+              {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Linked",
+                "lastSync": "2022-10-27T10:22:43.6464237Z",
+                "created": "2022-10-27T09:53:29Z",
+                "sourceType": "Banking"
               }
             ]
           }
@@ -1850,343 +2526,6 @@
           }
         ]
       },
-      "SourceAccount": {
-        "title": "Source Account",
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "Unique ID for the bank account."
-          },
-          "accountName": {
-            "type": "string",
-            "nullable": true,
-            "description": "The bank account name."
-          },
-          "accountType": {
-            "type": "string",
-            "nullable": true,
-            "description": "The type of bank account e.g. Credit."
-          },
-          "accountNumber": {
-            "type": "string",
-            "nullable": true,
-            "description": "The account number."
-          },
-          "sortCode": {
-            "type": "string",
-            "nullable": true,
-            "description": "The sort code."
-          },
-          "currency": {
-            "title": "Currency",
-            "x-internal": true,
-            "type": "string",
-            "description": "The currency data type in Codat is the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code, e.g. _GBP_.\n\n## Unknown currencies\n\nIn line with the ISO 4217 specification, the code _XXX_ is used when the data source does not return a currency for a transaction. \n\nThere are only a very small number of edge cases where this currency code is returned by the Codat system.",
-            "format": "ISO4217",
-            "examples": [
-              "GBP",
-              "USD",
-              "EUR"
-            ]
-          },
-          "balance": {
-            "type": "number",
-            "format": "decimal",
-            "nullable": true,
-            "description": "The latest balance for the bank account."
-          },
-          "modifiedDate": {
-            "$ref": "#/components/schemas/DateTime",
-            "nullable": true,
-            "description": "The last date the bank account was modified."
-          },
-          "status": {
-            "type": "string",
-            "nullable": true,
-            "description": "Status of the source account."
-          },
-          "feedStartDate": {
-            "$ref": "#/components/schemas/DateTime",
-            "nullable": true
-          }
-        },
-        "required": [
-          "id"
-        ],
-        "description": "The target bank account in a supported accounting package for ingestion into a bank feed.",
-        "examples": [
-          {
-            "id": "acc-002",
-            "accountName": "account-081",
-            "sortCode": "123456",
-            "accountType": "Credit",
-            "accountNumber": "12345670",
-            "currency": "GBP",
-            "balance": 99.99,
-            "modifiedDate": "2023-01-09T14:14:14.1057478Z",
-            "status": "pending"
-          },
-          {
-            "id": "acc-003",
-            "accountName": "account-095",
-            "sortCode": "123456",
-            "accountType": "Credit",
-            "accountNumber": "12345671",
-            "currency": "USD",
-            "balance": 0,
-            "modifiedDate": "2023-01-09T14:14:14.1057478Z",
-            "status": "pending"
-          }
-        ]
-      },
-      "BankFeedAccountMapping": {
-        "x-internal": true,
-        "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1bankFeedAccounts~1mapping/post/requestBody/content/application~1json/schema"
-      },
-      "BankFeedAccountMappingResponse": {
-        "title": "Bank feed account mapping response",
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "sourceAccountId": {
-            "type": "string",
-            "description": "Unique ID for the source account."
-          },
-          "targetAccountId": {
-            "type": "string",
-            "nullable": true,
-            "description": "Unique ID for the target account."
-          },
-          "Status": {
-            "type": "string",
-            "nullable": true,
-            "description": "Status of the POST request."
-          },
-          "Error": {
-            "type": "string",
-            "nullable": true,
-            "description": "Error returned during the post request"
-          }
-        },
-        "description": "The result from POSTing a Bank Account mapping.",
-        "examples": [
-          {
-            "sourceAccountId": "acc-002",
-            "targetAccountId": "account-081",
-            "Status": "Failed",
-            "Error": "A feed connection already exists to this account"
-          }
-        ]
-      },
-      "BankFeedMapping": {
-        "title": "Bank feed mapping",
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "sourceAccountId": {
-            "type": "string",
-            "description": "Unique ID for the source account."
-          },
-          "sourceAccountName": {
-            "type": "string",
-            "description": "Name for the source account."
-          },
-          "sourceAccountNumber": {
-            "type": "string",
-            "description": "Account number for the source account."
-          },
-          "sourceBalance": {
-            "type": "string",
-            "description": "Balance for the source account."
-          },
-          "sourceCurrency": {
-            "$ref": "#/components/schemas/SourceAccount/properties/currency"
-          },
-          "targetAccountId": {
-            "type": "string",
-            "nullable": true,
-            "description": "Unique ID for the target account in the accounting platform."
-          },
-          "targetAccountName": {
-            "type": "string",
-            "description": "Name for the target account in the accounting platform."
-          },
-          "status": {
-            "type": "string",
-            "description": "The status."
-          },
-          "targetAccountOptions": {
-            "type": "array",
-            "nullable": true,
-            "description": "An array of potential target accounts.",
-            "items": {
-              "$ref": "#/components/schemas/BankFeedMapping/definitions/targetAccountOption"
-            }
-          },
-          "feedStartDate": {
-            "$ref": "#/components/schemas/DateTime",
-            "nullable": true,
-            "description": "The date from which bank transactions can be provided to the platform."
-          }
-        },
-        "description": "A bank feed connection between a source account and a target account, including potential target accounts.",
-        "definitions": {
-          "targetAccountOption": {
-            "title": "Target Account Option",
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "Id of the target account."
-              },
-              "name": {
-                "type": "string",
-                "nullable": true,
-                "description": "Name of the target account."
-              },
-              "balance": {
-                "type": "number",
-                "format": "decimal",
-                "nullable": true,
-                "description": "The balance of the account."
-              },
-              "sortCode": {
-                "type": "string",
-                "nullable": true,
-                "description": "The sort code of the account."
-              },
-              "accountNumber": {
-                "type": "string",
-                "nullable": true,
-                "description": "The account number of the account."
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "sourceAccountId": "acc-002",
-            "targetAccountId": "account-081",
-            "sourceCurrency": "USD",
-            "status": "Success",
-            "feedStartDate": "2023-01-09T14:14:14.1057478Z",
-            "sourceAccountName": "ACME Bank",
-            "sourceAccountNumber": "1234-5678",
-            "sourceBalance": 500,
-            "targetAccountName": "ACME Bank"
-          },
-          {
-            "sourceAccountId": "c53fd75a-dddb-4493-839a-5090b008f625",
-            "status": "pending",
-            "targetAccountOptions": [
-              {
-                "name": "account-081",
-                "id": "044096a7-1478-4554-8820-f478caad1b00",
-                "balance": 100.99,
-                "sortCode": "602336",
-                "accountNumber": "23203"
-              }
-            ],
-            "sourceAccountName": "bank name here",
-            "sourceAccountNumber": "5670",
-            "sourceBalance": 1550,
-            "sourceCurrency": "GBP"
-          }
-        ]
-      },
-      "SourceAccounts": {
-        "title": "Source accounts",
-        "x-internal": true,
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SourceAccount"
-        }
-      },
-      "BankTransactions": {
-        "title": "Bank transactions",
-        "type": "array",
-        "items": {
-          "title": "Bank transaction",
-          "type": "object",
-          "allOf": [
-            {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string",
-                  "description": "Identifier for the bank account transaction, unique for the company in the accounting platform.",
-                  "example": "716422529"
-                },
-                "date": {
-                  "$ref": "#/components/schemas/DateTime"
-                },
-                "description": {
-                  "type": "string",
-                  "nullable": true,
-                  "description": "Description of the bank transaction.",
-                  "example": "Debit for Payment Id sdp-1-57379a43-c4b8-49f5-bd7c-699189ee7a60"
-                },
-                "counterparty": {
-                  "type": "string",
-                  "nullable": true,
-                  "description": "The giving or receiving party such as a person or organization.",
-                  "example": "ACME INC"
-                },
-                "reference": {
-                  "type": "string",
-                  "nullable": true,
-                  "description": "An optional reference to the bank transaction.",
-                  "example": "reference for transaction"
-                },
-                "reconciled": {
-                  "type": "boolean",
-                  "description": "`True` if the bank transaction has been [reconciled](https://www.xero.com/uk/guides/what-is-bank-reconciliation/) in the accounting platform.",
-                  "example": false
-                },
-                "amount": {
-                  "type": "number",
-                  "format": "decimal",
-                  "description": "The amount transacted in the bank transaction.",
-                  "example": 999.99
-                },
-                "balance": {
-                  "type": "number",
-                  "format": "decimal",
-                  "description": "The remaining balance in the account with ID `accountId`.",
-                  "example": -999.99
-                },
-                "transactionType": {
-                  "title": "Bank transaction type",
-                  "description": "Type of transaction for the bank statement line.",
-                  "type": "string",
-                  "enum": [
-                    "Unknown",
-                    "Credit",
-                    "Debit",
-                    "Int",
-                    "Div",
-                    "Fee",
-                    "SerChg",
-                    "Dep",
-                    "Atm",
-                    "Pos",
-                    "Xfer",
-                    "Check",
-                    "Payment",
-                    "Cash",
-                    "DirectDep",
-                    "DirectDebit",
-                    "RepeatPmt",
-                    "Other"
-                  ]
-                }
-              }
-            }
-          ]
-        }
-      },
       "CreateBankTransactions": {
         "title": "Create bank transactions",
         "type": "object",
@@ -2223,15 +2562,6 @@
             "$ref": "#/components/schemas/PushOperation"
           }
         ]
-      },
-      "DateTime": {
-        "title": "Date time",
-        "type": "string",
-        "examples": [
-          "2022-10-23T00:00:00.000Z",
-          "2022-10-23T00:00:00.000Z"
-        ],
-        "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
       },
       "DataType": {
         "title": "Data types",
@@ -2284,26 +2614,43 @@
         ],
         "example": "invoices"
       },
-      "BankAccountCredentials": {
-        "title": "Bank Account Credentials",
-        "description": "Result of generate credentials",
+      "DateTime": {
+        "title": "Date time",
+        "type": "string",
+        "examples": [
+          "2022-10-23T00:00:00.000Z",
+          "2022-10-23T00:00:00.000Z"
+        ],
+        "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
+      },
+      "ErrorMessage": {
+        "title": "Error message",
         "type": "object",
+        "x-internal": true,
         "properties": {
-          "username": {
-            "type": "string",
-            "example": "S0MW-TR0P-7DS0",
-            "description": "Username used by the bank feeds platform to retrieve transactions"
+          "statusCode": {
+            "type": "integer",
+            "description": "The HTTP status code returned by the error."
           },
-          "password": {
+          "service": {
             "type": "string",
-            "example": "cO0ajh0uGyTN0Pwh",
-            "description": "Password to enable the bank feeds platform to securely retrieve transactions."
-          }
-        },
-        "examples": {
-          "QuickBooks Online Bank Feeds": {
-            "username": "S0MW-TR0P-7DS0",
-            "password": "cO0ajh0uGyTN0Pwh"
+            "description": "Codat's service the returned the error."
+          },
+          "error": {
+            "type": "string",
+            "description": "A brief description of the error."
+          },
+          "correlationId": {
+            "type": "string",
+            "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
+          },
+          "canBeRetried": {
+            "type": "string",
+            "description": "`True` if the error occurred transiently and can be retried."
+          },
+          "detailedErrorCode": {
+            "type": "integer",
+            "description": "Machine readable error code used to automate processes based on the code returned."
           }
         }
       },
@@ -2363,6 +2710,12 @@
             ],
             "example": "Complete"
           },
+          "statusDescription": {
+            "type": "string",
+            "nullable": true,
+            "description": "Additional information about the dataset status.",
+            "example": "Paused until 2022-10-23T00:00:00.000Z"
+          },
           "errorMessage": {
             "type": "string",
             "nullable": true,
@@ -2380,7 +2733,7 @@
           },
           "isCompleted": {
             "type": "boolean",
-            "description": "`True` if the pull operation completed successfully."
+            "description": "`True` if the pull operation is completed successfully. The `isCompleted` property is not queryable. To filter failed pull operations, query by `status!=Complete&&status!=NotSupported` instead."
           },
           "isErrored": {
             "type": "boolean",
@@ -2405,6 +2758,7 @@
             "connectionId": "51baa045-4836-4317-a42e-3542e991e581",
             "dataType": "invoices",
             "status": "Initial",
+            "statusDescription": "Paused until 2022-10-23T00:00:00.000Z",
             "requested": "2022-11-14T11:18:37.2798351Z",
             "progress": 10,
             "isCompleted": false,
@@ -2626,177 +2980,104 @@
           }
         ]
       },
-      "ErrorMessage": {
-        "title": "Error message",
+      "SourceAccount": {
+        "title": "Source Account",
         "type": "object",
-        "x-internal": true,
+        "additionalProperties": false,
         "properties": {
-          "statusCode": {
-            "type": "integer",
-            "description": "The HTTP status code returned by the error."
-          },
-          "service": {
+          "id": {
             "type": "string",
-            "description": "Codat's service the returned the error."
+            "description": "Unique ID for the bank account."
           },
-          "error": {
+          "accountName": {
             "type": "string",
-            "description": "A brief description of the error."
+            "nullable": true,
+            "description": "The bank account name."
           },
-          "correlationId": {
+          "accountType": {
             "type": "string",
-            "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
+            "nullable": true,
+            "description": "The type of bank account e.g. Credit."
           },
-          "canBeRetried": {
+          "accountNumber": {
             "type": "string",
-            "description": "`True` if the error occurred transiently and can be retried."
+            "nullable": true,
+            "description": "The account number."
           },
-          "detailedErrorCode": {
-            "type": "integer",
-            "description": "Machine readable error code used to automate processes based on the code returned."
+          "sortCode": {
+            "type": "string",
+            "nullable": true,
+            "description": "The sort code."
+          },
+          "currency": {
+            "title": "Currency",
+            "x-internal": true,
+            "type": "string",
+            "description": "The currency data type in Codat is the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code, e.g. _GBP_.\n\n## Unknown currencies\n\nIn line with the ISO 4217 specification, the code _XXX_ is used when the data source does not return a currency for a transaction. \n\nThere are only a very small number of edge cases where this currency code is returned by the Codat system.",
+            "format": "ISO4217",
+            "examples": [
+              "GBP",
+              "USD",
+              "EUR"
+            ]
+          },
+          "balance": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true,
+            "description": "The latest balance for the bank account."
+          },
+          "modifiedDate": {
+            "$ref": "#/components/schemas/DateTime",
+            "nullable": true,
+            "description": "The last date the bank account was modified."
+          },
+          "status": {
+            "type": "string",
+            "nullable": true,
+            "description": "Status of the source account."
+          },
+          "feedStartDate": {
+            "$ref": "#/components/schemas/DateTime",
+            "nullable": true
           }
+        },
+        "required": [
+          "id"
+        ],
+        "description": "The target bank account in a supported accounting package for ingestion into a bank feed.",
+        "examples": [
+          {
+            "id": "acc-002",
+            "accountName": "account-081",
+            "sortCode": "123456",
+            "accountType": "Credit",
+            "accountNumber": "12345670",
+            "currency": "GBP",
+            "balance": 99.99,
+            "modifiedDate": "2023-01-09T14:14:14.1057478Z",
+            "status": "pending"
+          },
+          {
+            "id": "acc-003",
+            "accountName": "account-095",
+            "sortCode": "123456",
+            "accountType": "Credit",
+            "accountNumber": "12345671",
+            "currency": "USD",
+            "balance": 0,
+            "modifiedDate": "2023-01-09T14:14:14.1057478Z",
+            "status": "pending"
+          }
+        ]
+      },
+      "SourceAccounts": {
+        "title": "Source accounts",
+        "x-internal": true,
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/SourceAccount"
         }
-      },
-      "ClientRateLimitReachedWebhook": {
-        "title": "Client rate limit reached webhook",
-        "x-internal": true,
-        "description": "Webhook request body for a client that has reached their rate limit.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/ClientId"
-          },
-          "ClientName": {
-            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/ClientName"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/RuleId"
-          },
-          "RuleType": {
-            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/RuleType"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/Message"
-          },
-          "Data": {
-            "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData"
-          }
-        },
-        "definitions": {
-          "ClientRateLimitReachedWebhookData": {
-            "type": "object",
-            "title": "Client rate limit reached webhook data",
-            "properties": {
-              "DailyQuota": {
-                "type": "integer",
-                "description": "The number of available requests per day."
-              },
-              "ExpiresUtc": {
-                "$ref": "#/components/schemas/DateTime",
-                "description": "The date time in UTC that your daily quota is reset."
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Rate Limit Reached",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "The current daily rate limit quota of 1000 requests for bae71d36-ff47-420a-b4a6-f8c9ddf41140 has been reached.",
-            "Data": {
-              "DailyQuota": 1000,
-              "ExpiresUtc": "2023-05-03T00:00:00Z"
-            }
-          }
-        ]
-      },
-      "ClientRateLimitResetWebhook": {
-        "title": "Client rate limit reset webhook",
-        "x-internal": true,
-        "description": "Webhook request body for a client that has had their rate limit reset.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier for your client in Codat."
-          },
-          "ClientName": {
-            "type": "string",
-            "description": "Name of your client in Codat."
-          },
-          "RuleId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier for the rule."
-          },
-          "RuleType": {
-            "type": "string",
-            "x-stoplight": {
-              "id": "34d52a089f08a"
-            },
-            "description": "The type of rule."
-          },
-          "AlertId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier of the webhook event."
-          },
-          "Message": {
-            "type": "string",
-            "description": "A human readable message about the webhook."
-          },
-          "Data": {
-            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/definitions/ClientRateLimitResetWebhookData"
-          }
-        },
-        "definitions": {
-          "ClientRateLimitResetWebhookData": {
-            "type": "object",
-            "title": "Client rate limit reset webhook data",
-            "properties": {
-              "QuotaRemaining": {
-                "type": "integer",
-                "description": "Total number of request remaining for your client.",
-                "nullable": true
-              },
-              "ResetReason": {
-                "type": "string",
-                "description": "The reason for your rate limit quota being reset."
-              },
-              "DailyQuota": {
-                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData/properties/DailyQuota",
-                "nullable": true
-              },
-              "ExpiresUtc": {
-                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData/properties/ExpiresUtc",
-                "nullable": true
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Rate Limit Reset",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "The current daily rate limit quota for client 30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e has been reset to 1000 requests.",
-            "Data": {
-              "QuotaRemaining": 1000,
-              "ResetReason": "The quota was reset because it is a new day.",
-              "DailyQuota": 1000,
-              "ExpiresUtc": "2023-05-03T00:00:00Z"
-            }
-          }
-        ]
       }
     },
     "parameters": {
@@ -2928,6 +3209,38 @@
           }
         }
       },
+      "Malformed-Query": {
+        "description": "Your `query` parameter was not correctly formed",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Malformed query": {
+                "value": {
+                  "statusCode": 400,
+                  "service": "ClientsApi",
+                  "error": "Error parsing query - Malformed query.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              },
+              "Unresolved property": {
+                "value": {
+                  "statusCode": 400,
+                  "service": "PullApi",
+                  "error": "Error parsing query - Could not resolve property isCompleted on Dataset",
+                  "correlationId": "98457fb9956b7f9b4b2fd4f6e23bb5c8",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
       "Unauthorized": {
         "description": "Your API request was not properly authorized.",
         "content": {
@@ -2950,19 +3263,41 @@
           }
         }
       },
-      "Malformed-Query": {
-        "description": "Your `query` parameter was not correctly formed",
+      "Payment-Required": {
+        "description": "An account limit has been exceeded. The type of limit is described in the error property:\n\n- You have exceeded the 50-company limit that applies to a Free plan. Delete any companies you no longer need and retry the request.\n- The requested sync schedule is not allowed. You requested an hourly sync schedule but this functionality is not included in the Free plan.\n- Your Free account is older than 365 days and has expired. Contact support@codat.io.\n",
         "content": {
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/ErrorMessage"
             },
             "examples": {
-              "Malformed query": {
+              "Conflict": {
                 "value": {
-                  "statusCode": 400,
-                  "service": "ClientsApi",
-                  "error": "Error parsing query - Malformed query.",
+                  "statusCode": 429,
+                  "service": "PublicApi",
+                  "error": "You have exceeded the 50-company limit that applies to a Free plan. We recommend that you delete any companies you no longer need and retry the request.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "You are using an outdated API key or a key not associated with that resource.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 403,
+                  "service": "PublicApi",
+                  "error": "You are using an outdated API key or a key not associated with that resource.",
                   "correlationId": "bc997528a9d7abb9161ef45f05d38599",
                   "canBeRetried": "Unknown",
                   "detailedErrorCode": 0
@@ -3049,6 +3384,50 @@
                   "statusCode": 429,
                   "service": "PublicApi",
                   "error": "You have made too many requests in a given amount of time; please retry later.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Internal-Server-Error": {
+        "description": "There is a problem with our server. Please try again later.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 500,
+                  "service": "PublicApi",
+                  "error": "There is a problem with our server. Please try again later.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Service-Unavailable": {
+        "description": "The Codat API is temporarily offline for maintenance. Please try again later.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 500,
+                  "service": "PublicApi",
+                  "error": "The Codat API is temporarily offline for maintenance. Please try again later.",
                   "correlationId": "bc997528a9d7abb9161ef45f05d38599",
                   "canBeRetried": "Unknown",
                   "detailedErrorCode": 0

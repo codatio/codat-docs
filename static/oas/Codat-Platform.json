@@ -115,10 +115,6 @@
       "description": "Manage your companies' data connections."
     },
     {
-      "name": "Migrations",
-      "description": "Migrate existing connections into Codat."
-    },
-    {
       "name": "Webhooks",
       "description": "Manage webhooks, rules, and events."
     },
@@ -275,8 +271,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "operationId": "list-companies",
@@ -353,8 +364,20 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "﻿Creates a new company that can be used to assign connections to. \n\nIf forbidden characters (see `name` pattern) are present in the request, a company will be created with the forbidden characters removed. For example, `Company (Codat[1])` with be created as `Company Codat1`.\n\n",
@@ -423,11 +446,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -450,11 +485,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -484,11 +531,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "requestBody": {
@@ -594,11 +653,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -658,11 +729,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -713,11 +796,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -743,11 +838,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -781,11 +888,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "requestBody": {
@@ -834,6 +953,27 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "requestBody": {
@@ -868,11 +1008,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "Refreshes all data types with `fetch on first link` set to `true` for a given company.\n\nThis is an asynchronous operation, and will bring updated data into Codat from the linked integration for you to view.\n\n[Read more](https://docs.codat.io/core-concepts/data-type-settings) about data type settings and `fetch on first link`.",
@@ -923,11 +1075,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -979,11 +1143,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -1026,17 +1202,14 @@
                         }
                       ],
                       "_links": {
-                        "self": {
-                          "href": "../dictionary"
-                        },
                         "current": {
-                          "href": "../dictionary"
+                          "href": "/companies/17129e41-5389-4f10-ac06-e0a37e47d177/data/history?page=1&pageSize=2"
+                        },
+                        "self": {
+                          "href": "/companies/17129e41-5389-4f10-ac06-e0a37e47d177/data/history"
                         },
                         "next": {
-                          "href": "../dictionary"
-                        },
-                        "previous": {
-                          "href": "../dictionary"
+                          "href": "/companies/17129e41-5389-4f10-ac06-e0a37e47d177/data/history?page=2&pageSize=2"
                         }
                       },
                       "pageNumber": 0,
@@ -1054,11 +1227,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "Gets the pull operation history (datasets) for a given company.",
@@ -1109,11 +1294,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "Retrieve information about a single dataset or pull operation."
@@ -1186,11 +1383,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -1216,8 +1425,20 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "requestBody": {
@@ -1371,11 +1592,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -1405,8 +1638,20 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "parameters": [
@@ -1452,11 +1697,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -1489,11 +1746,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -1519,15 +1788,25 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "operationId": "get-profile",
         "x-speakeasy-name-override": "get-profile",
-        "description": "Fetch your Codat profile.",
-        "deprecated": true,
-        "x-internal": true
+        "description": "Fetch your Codat profile."
       },
       "put": {
         "summary": "Update profile",
@@ -1548,8 +1827,20 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "tags": [
@@ -1612,8 +1903,20 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -1632,8 +1935,20 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "requestBody": {
@@ -1644,9 +1959,7 @@
                   {
                     "properties": {
                       "clientId": {
-                        "type": "string",
-                        "format": "uuid",
-                        "description": "Unique identifier for your client in Codat."
+                        "$ref": "#/components/schemas/ClientId"
                       },
                       "settings": {
                         "type": "array",
@@ -1717,8 +2030,20 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -1799,6 +2124,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "409": {
             "description": "Conflict",
             "content": {
@@ -1823,6 +2154,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -1850,16 +2187,29 @@
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "description": "No Content",
+            "$ref": "#/components/responses/Too-Many-Requests"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
           },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -1898,11 +2248,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "This is the generic documentation for creation and updating of data. See the equivalent endpoint for a given data type for more specific information. \n\nBefore pushing data into accounting software, it is often necessary to collect some details from the user as to how they would like the data to be inserted. This includes names and amounts on transactional entities, but also factors such as categorisation of entities, which is often handled differently between different accounting packages. A good example of this is specifying where on the balance sheet/profit and loss reports the user would like a newly-created nominal account to appear.\n\nCodat tries not to limit users to pushing to a very limited number of standard categories, so we have implemented \"options\" endpoints, which allow us to expose to our clients the fields which are required to be pushed for a specific linked company, and the options which may be selected for each field.\n\n\n> **Supported Integrations**\n> \n> Check out our [coverage explorer](https://knowledge.codat.io/) for integrations that support push (POST/PUT methods)."
@@ -1954,11 +2316,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -2002,11 +2376,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -2067,11 +2453,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "requestBody": {
@@ -2187,11 +2585,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -2372,9 +2782,297 @@
   },
   "components": {
     "schemas": {
-      "DataType": {
+      "ApiKeyDetails": {
+        "title": "API key details",
+        "description": "Details of the API key.",
+        "type": "object",
+        "allOf": [
+          {
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique identifier for the API key.",
+                "example": "e288a972-b402-4b21-93f9-b5335ae5679c"
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 50,
+                "nullable": true,
+                "description": "A meaningful name assigned to the API key.",
+                "example": "azure-invoice-finance-processor"
+              },
+              "apiKey": {
+                "type": "string",
+                "description": "The API key value used to make authenticated http requests.",
+                "example": "ztHQGvnC4XN2CgUhaDWEG4ySLUJqWjp7zkbZkGHd"
+              }
+            }
+          },
+          {
+            "nullable": true,
+            "description": "Datetime in UTC the API key was created. The created date will be null if the API key created before YYYY-MM-DD.",
+            "title": "Created date",
+            "type": "object",
+            "x-internal": true,
+            "properties": {
+              "createdDate": {
+                "$ref": "#/components/schemas/DateTime",
+                "description": "The date the entity was created."
+              }
+            }
+          }
+        ]
+      },
+      "ApiKeys": {
+        "title": "API keys",
         "x-internal": true,
-        "$ref": "#/components/schemas/DataStatus/properties/dataType"
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiKeyDetails"
+            }
+          }
+        }
+      },
+      "Branding": {
+        "title": "Branding",
+        "type": "object",
+        "properties": {
+          "logo": {
+            "$ref": "#/components/schemas/Branding/definitions/brandingLogo"
+          },
+          "button": {
+            "$ref": "#/components/schemas/Branding/definitions/brandingButton"
+          },
+          "sourceId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "35b92968-9851-4095-ad60-395c95cbcba4",
+            "description": "A source-specific ID used to distinguish between different sources originating from the same data connection. In general, a data connection is a single data source. However, for TrueLayer, `sourceId` is associated with a specific bank and has a many-to-one relationship with the `integrationId`."
+          }
+        },
+        "definitions": {
+          "brandingLogo": {
+            "description": "Logo branding references.",
+            "type": "object",
+            "properties": {
+              "full": {
+                "$ref": "#/components/schemas/Branding/definitions/brandingImage"
+              },
+              "square": {
+                "$ref": "#/components/schemas/Branding/definitions/brandingImage"
+              }
+            }
+          },
+          "brandingButton": {
+            "type": "object",
+            "description": "Button branding references.",
+            "properties": {
+              "default": {
+                "$ref": "#/components/schemas/Branding/definitions/brandingImage"
+              },
+              "hover": {
+                "$ref": "#/components/schemas/Branding/definitions/brandingImage"
+              }
+            }
+          },
+          "brandingImage": {
+            "title": "Branding Image",
+            "type": "object",
+            "properties": {
+              "image": {
+                "$ref": "#/components/schemas/Branding/definitions/imageReference"
+              }
+            },
+            "examples": []
+          },
+          "imageReference": {
+            "type": "object",
+            "title": "Image Reference",
+            "description": "Image reference.",
+            "properties": {
+              "src": {
+                "type": "string",
+                "format": "uri",
+                "description": "Source URL for image."
+              },
+              "alt": {
+                "type": "string",
+                "description": "Alternative text when image is not available."
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "logo": {
+              "full": {
+                "image": {
+                  "src": "https://static.codat.io/public/officialLogos/Full/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png",
+                  "alt": "xero full icon"
+                }
+              },
+              "square": {
+                "image": {
+                  "src": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B2W3607.png",
+                  "alt": "xero square icon"
+                }
+              }
+            },
+            "button": {
+              "default": {
+                "image": {
+                  "src": "https://static.codat.io/public/officialButtons/Full/8A156A5A-39CB-4F9D-856E-76EF9Q7A9607.png",
+                  "alt": "xero default button icon"
+                }
+              },
+              "hover": {
+                "image": {
+                  "src": "https://static.codat.io/public/officialLogos/Full/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png",
+                  "alt": "xero hover button icon"
+                }
+              }
+            },
+            "sourceId": "35b92968-9851-4095-ad60-395c95cbcba4"
+          }
+        ]
+      },
+      "ClientId": {
+        "title": "Client ID",
+        "type": "string",
+        "format": "uuid",
+        "description": "Unique identifier for your client in Codat."
+      },
+      "ClientRateLimitReachedWebhook": {
+        "title": "Client rate limit reached webhook",
+        "x-internal": true,
+        "description": "Webhook request body for a client that has reached their rate limit.",
+        "type": "object",
+        "properties": {
+          "ClientId": {
+            "$ref": "#/components/schemas/ClientId"
+          },
+          "ClientName": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
+          },
+          "RuleId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
+          },
+          "RuleType": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
+          },
+          "AlertId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
+          },
+          "Message": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
+          },
+          "Data": {
+            "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData"
+          }
+        },
+        "definitions": {
+          "ClientRateLimitReachedWebhookData": {
+            "type": "object",
+            "title": "Client rate limit reached webhook data",
+            "properties": {
+              "DailyQuota": {
+                "type": "integer",
+                "description": "The number of available requests per day."
+              },
+              "ExpiresUtc": {
+                "$ref": "#/components/schemas/DateTime",
+                "description": "The date time in UTC that your daily quota is reset."
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "RuleType": "Rate Limit Reached",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "The current daily rate limit quota of 1000 requests for bae71d36-ff47-420a-b4a6-f8c9ddf41140 has been reached.",
+            "Data": {
+              "DailyQuota": 1000,
+              "ExpiresUtc": "2023-05-03T00:00:00Z"
+            }
+          }
+        ]
+      },
+      "ClientRateLimitResetWebhook": {
+        "title": "Client rate limit reset webhook",
+        "x-internal": true,
+        "description": "Webhook request body for a client that has had their rate limit reset.",
+        "type": "object",
+        "properties": {
+          "ClientId": {
+            "$ref": "#/components/schemas/ClientId"
+          },
+          "ClientName": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
+          },
+          "RuleId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
+          },
+          "RuleType": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
+          },
+          "AlertId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
+          },
+          "Message": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
+          },
+          "Data": {
+            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/definitions/ClientRateLimitResetWebhookData"
+          }
+        },
+        "definitions": {
+          "ClientRateLimitResetWebhookData": {
+            "type": "object",
+            "title": "Client rate limit reset webhook data",
+            "properties": {
+              "QuotaRemaining": {
+                "type": "integer",
+                "description": "Total number of request remaining for your client.",
+                "nullable": true
+              },
+              "ResetReason": {
+                "type": "string",
+                "description": "The reason for your rate limit quota being reset."
+              },
+              "DailyQuota": {
+                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData/properties/DailyQuota",
+                "nullable": true
+              },
+              "ExpiresUtc": {
+                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData/properties/ExpiresUtc",
+                "nullable": true
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "RuleType": "Rate Limit Reset",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "The current daily rate limit quota for client 30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e has been reset to 1000 requests.",
+            "Data": {
+              "QuotaRemaining": 1000,
+              "ResetReason": "The quota was reset because it is a new day.",
+              "DailyQuota": 1000,
+              "ExpiresUtc": "2023-05-03T00:00:00Z"
+            }
+          }
+        ]
       },
       "Companies": {
         "title": "Companies",
@@ -2395,352 +3093,6 @@
             "$ref": "#/components/schemas/PagingInfo"
           }
         ]
-      },
-      "CompanyRequestBody": {
-        "title": "Create company request",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Name of company being connected.",
-            "pattern": "^[A-Za-z0-9\\s\\-',&@.,?!\\s]+$",
-            "minLength": 1,
-            "example": "Bank of Dave"
-          },
-          "description": {
-            "$ref": "#/components/schemas/Company/properties/description"
-          }
-        },
-        "required": [
-          "name"
-        ]
-      },
-      "Connections": {
-        "title": "Connections",
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Connection"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
-      "UpdateConnectionStatus": {
-        "title": "Update connection",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus",
-            "description": "The current authorization status of the data connection.",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "PagingInfo": {
-        "type": "object",
-        "title": "Pagination information",
-        "x-internal": true,
-        "properties": {
-          "pageNumber": {
-            "type": "integer",
-            "description": "Current page number."
-          },
-          "pageSize": {
-            "type": "integer",
-            "description": "Number of items to return in results array.",
-            "maximum": 2000
-          },
-          "totalResults": {
-            "type": "integer",
-            "description": "Total number of items."
-          },
-          "_links": {
-            "$ref": "#/components/schemas/PagingInfo/definitions/links"
-          }
-        },
-        "definitions": {
-          "links": {
-            "title": "Hal Links",
-            "type": "object",
-            "required": [
-              "self",
-              "current"
-            ],
-            "properties": {
-              "self": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              },
-              "current": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              },
-              "next": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              },
-              "previous": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              }
-            },
-            "examples": [
-              {
-                "self": {
-                  "href": "/companies/{id}/data/{dataType}"
-                },
-                "current": {
-                  "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
-                }
-              }
-            ]
-          },
-          "halRef": {
-            "title": "Hypertext reference",
-            "type": "object",
-            "properties": {
-              "href": {
-                "type": "string",
-                "format": "uri-reference",
-                "description": "Uri hypertext reference."
-              }
-            }
-          }
-        },
-        "required": [
-          "pageNumber",
-          "pageSize",
-          "totalResults",
-          "_links"
-        ],
-        "examples": [
-          {
-            "_links": {
-              "pageNumber": 1,
-              "pageSize": 10,
-              "totalResults": 1,
-              "self": {
-                "href": "/companies/{id}/data/{dataType}"
-              },
-              "current": {
-                "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
-              }
-            }
-          }
-        ]
-      },
-      "ErrorMessage": {
-        "title": "Error message",
-        "type": "object",
-        "x-internal": true,
-        "properties": {
-          "statusCode": {
-            "type": "integer",
-            "description": "The HTTP status code returned by the error."
-          },
-          "service": {
-            "type": "string",
-            "description": "Codat's service the returned the error."
-          },
-          "error": {
-            "type": "string",
-            "description": "A brief description of the error."
-          },
-          "correlationId": {
-            "type": "string",
-            "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
-          },
-          "canBeRetried": {
-            "type": "string",
-            "description": "`True` if the error occurred transiently and can be retried."
-          },
-          "detailedErrorCode": {
-            "type": "integer",
-            "description": "Machine readable error code used to automate processes based on the code returned."
-          }
-        }
-      },
-      "PushOption": {
-        "title": "Push option",
-        "x-internal": true,
-        "required": [
-          "displayName",
-          "required",
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/PushOption/definitions/pushOptionType"
-          },
-          "displayName": {
-            "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/displayName"
-          },
-          "description": {
-            "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/description"
-          },
-          "required": {
-            "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/required"
-          },
-          "properties": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty"
-            },
-            "nullable": true
-          },
-          "options": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PushOption/definitions/pushOptionChoice"
-            },
-            "nullable": true
-          },
-          "validation": {
-            "$ref": "#/components/schemas/PushOption/definitions/pushValidationInfo",
-            "nullable": true
-          }
-        },
-        "definitions": {
-          "pushOptionProperty": {
-            "title": "Push Option Property",
-            "required": [
-              "description",
-              "displayName",
-              "required",
-              "type"
-            ],
-            "type": "object",
-            "properties": {
-              "type": {
-                "$ref": "#/components/schemas/PushOption/definitions/pushOptionType"
-              },
-              "displayName": {
-                "minLength": 1,
-                "type": "string",
-                "description": "The property's display name."
-              },
-              "description": {
-                "type": "string",
-                "description": "A description of the property."
-              },
-              "required": {
-                "type": "boolean",
-                "description": "The property is required if `True`."
-              },
-              "properties": {
-                "type": "object",
-                "additionalProperties": {
-                  "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty"
-                },
-                "nullable": true
-              },
-              "options": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/PushOption/definitions/pushOptionChoice"
-                },
-                "nullable": true
-              },
-              "validation": {
-                "$ref": "#/components/schemas/PushOption/definitions/pushValidationInfo"
-              }
-            }
-          },
-          "pushValidationInfo": {
-            "title": "Push validation info",
-            "type": "object",
-            "properties": {
-              "warnings": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/PushOption/definitions/pushFieldValidation"
-                },
-                "nullable": true
-              },
-              "information": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/PushOption/definitions/pushFieldValidation"
-                },
-                "nullable": true
-              }
-            },
-            "additionalProperties": false
-          },
-          "pushFieldValidation": {
-            "title": "Push field validation",
-            "required": [
-              "details"
-            ],
-            "type": "object",
-            "properties": {
-              "field": {
-                "type": "string",
-                "description": "Field name that resulted in the validation issue."
-              },
-              "details": {
-                "minLength": 1,
-                "type": "string",
-                "description": "Details on the validation issue."
-              },
-              "ref": {
-                "type": "string",
-                "format": "uri",
-                "nullable": true,
-                "description": "Unique reference identifier for the validation issue."
-              }
-            },
-            "additionalProperties": false
-          },
-          "pushOptionType": {
-            "title": "Option Type",
-            "description": "The option type.",
-            "enum": [
-              "Array",
-              "Object",
-              "String",
-              "Number",
-              "Boolean",
-              "DateTime",
-              "File",
-              "MultiPart"
-            ],
-            "type": "string"
-          },
-          "pushOptionChoice": {
-            "title": "Push Option Choice",
-            "type": "object",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1,
-                "description": "Allowed value for field."
-              },
-              "type": {
-                "$ref": "#/components/schemas/PushOption/definitions/pushOptionType"
-              },
-              "displayName": {
-                "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/displayName"
-              },
-              "description": {
-                "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/description"
-              },
-              "required": {
-                "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/required"
-              }
-            }
-          }
-        }
       },
       "Company": {
         "title": "Company",
@@ -2818,6 +3170,26 @@
               }
             ]
           }
+        ]
+      },
+      "CompanyRequestBody": {
+        "title": "Create company request",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of company being connected.",
+            "pattern": "^[A-Za-z0-9\\s\\-',&@.,?!\\s]+$",
+            "minLength": 1,
+            "example": "Bank of Dave"
+          },
+          "description": {
+            "$ref": "#/components/schemas/Company/properties/description"
+          }
+        },
+        "required": [
+          "name"
         ]
       },
       "Connection": {
@@ -2948,19 +3320,515 @@
           "sourceType": "Banking"
         }
       },
-      "SourceType": {
-        "title": "Source Type",
+      "Connections": {
+        "title": "Connections",
         "x-internal": true,
-        "description": "The type of platform of the connection.",
-        "type": "string",
-        "enum": [
-          "Accounting",
-          "Banking",
-          "Commerce",
-          "Other",
-          "Unknown"
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Connection"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PagingInfo"
+          }
+        ]
+      },
+      "ConnectionStatusChangedWebhook": {
+        "title": "Connection status changed webhook",
+        "x-internal": true,
+        "description": "Webhook request body for a company's data connection status changed.",
+        "type": "object",
+        "properties": {
+          "ClientId": {
+            "$ref": "#/components/schemas/ClientId"
+          },
+          "ClientName": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
+          },
+          "CompanyId": {
+            "$ref": "#/components/parameters/companyId/schema"
+          },
+          "DataConnectionId": {
+            "$ref": "#/components/parameters/connectionId/schema"
+          },
+          "RuleId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
+          },
+          "RuleType": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
+          },
+          "AlertId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
+          },
+          "Message": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
+          },
+          "Data": {
+            "$ref": "#/components/schemas/ConnectionStatusChangedWebhook/definitions/ConnectionStatusChangedWebhookData"
+          }
+        },
+        "definitions": {
+          "ConnectionStatusChangedWebhookData": {
+            "type": "object",
+            "title": "Connection status changed webhook data",
+            "properties": {
+              "dataConnectionId": {
+                "$ref": "#/components/parameters/connectionId/schema"
+              },
+              "newStatus": {
+                "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
+              },
+              "oldStatus": {
+                "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
+              },
+              "platformKey": {
+                "$ref": "#/components/parameters/platformKey/schema"
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
+            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "RuleType": "DataConnectionStatusChanged",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "Data connection for SandBox status changed from PendingAuth to Linked",
+            "Data": {
+              "dataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+              "newStatus": "Linked",
+              "oldStatus": "PendingAuth",
+              "platformKey": "gbol"
+            }
+          }
+        ]
+      },
+      "CreateApiKey": {
+        "title": "Create API key",
+        "description": "Details about the newly created API key.",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/ApiKeyDetails/allOf/0/properties/name"
+          }
+        }
+      },
+      "CreateRule": {
+        "title": "Create webhook",
+        "description": "Create an event notification to a URL or list of email addresses based on the given type or condition.",
+        "type": "object",
+        "x-internal": true,
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The type of webhook."
+          },
+          "companyId": {
+            "$ref": "#/components/parameters/companyId/schema"
+          },
+          "notifiers": {
+            "$ref": "#/components/schemas/CreateRule/definitions/webhookNotifier"
+          }
+        },
+        "definitions": {
+          "webhookNotifier": {
+            "type": "object",
+            "title": "Webhook notifiers",
+            "properties": {
+              "emails": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "email",
+                  "description": "Receiver's email address.",
+                  "example": "info@client.com"
+                }
+              },
+              "webhook": {
+                "type": "string",
+                "format": "uri",
+                "description": "The URI the webhook service will POST events.",
+                "example": "https://webhook.client.com"
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "type": "DataConnectionStatusChanged",
+            "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
+            "notifiers": {
+              "emails": [
+                "info@client.com"
+              ],
+              "webhook": "https://webhook.client.com"
+            }
+          }
         ],
-        "example": "Accounting"
+        "required": [
+          "type",
+          "notifiers"
+        ]
+      },
+      "DatasetDataChangedWebhook": {
+        "title": "Dataset data changed webhook",
+        "x-internal": true,
+        "description": "Webhook request body to notify that a data synchronization has completed.",
+        "type": "object",
+        "properties": {
+          "ClientId": {
+            "$ref": "#/components/schemas/ClientId"
+          },
+          "ClientName": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
+          },
+          "CompanyId": {
+            "$ref": "#/components/parameters/companyId/schema"
+          },
+          "DataConnectionId": {
+            "$ref": "#/components/parameters/connectionId/schema"
+          },
+          "RuleId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
+          },
+          "RuleType": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
+          },
+          "AlertId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
+          },
+          "Message": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
+          },
+          "Data": {
+            "title": "Dataset data changed webhook data",
+            "type": "object",
+            "properties": {
+              "dataType": {
+                "$ref": "#/components/schemas/DataStatus/properties/dataType"
+              },
+              "datasetId": {
+                "$ref": "#/components/parameters/datasetId/schema"
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
+            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "RuleType": "Dataset data changed",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "Data has changed for dataset type invoices, company 8a210b68-6988-11ed-a1eb-0242ac120002",
+            "Data": {
+              "dataType": "invoices",
+              "datasetId": "6586f21b-ad4d-4d06-a309-712af47184a2"
+            }
+          }
+        ]
+      },
+      "DatasetStatusChangedErrorWebhook": {
+        "title": "Dataset status changed to error webhook",
+        "x-internal": true,
+        "description": "Webhook request body to notify that a data synchronization has completed.",
+        "type": "object",
+        "properties": {
+          "ClientId": {
+            "$ref": "#/components/schemas/ClientId"
+          },
+          "ClientName": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
+          },
+          "CompanyId": {
+            "$ref": "#/components/parameters/companyId/schema"
+          },
+          "DataConnectionId": {
+            "$ref": "#/components/parameters/connectionId/schema"
+          },
+          "RuleId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
+          },
+          "RuleType": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
+          },
+          "AlertId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
+          },
+          "Message": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
+          },
+          "Data": {
+            "$ref": "#/components/schemas/DatasetStatusChangedErrorWebhook/definitions/DatasetStatusChangedErrorWebhookData"
+          }
+        },
+        "definitions": {
+          "DatasetStatusChangedErrorWebhookData": {
+            "type": "object",
+            "title": "Dataset status changed to error webhook data",
+            "properties": {
+              "dataType": {
+                "$ref": "#/components/schemas/DataStatus/properties/dataType"
+              },
+              "datasetStatus": {
+                "type": "string",
+                "description": "The current status of the dataset's sync."
+              },
+              "datasetId": {
+                "$ref": "#/components/parameters/datasetId/schema"
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
+            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "RuleType": "Data Sync Status Changed To Error",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "ERROR: syncing payments triggered a ProcessingError notification at 2020-04-21T12:12:57.4250446Z.",
+            "Data": {
+              "dataType": "invoices",
+              "datasetStatus": "ProcessingError",
+              "datasetId": "6586f21b-ad4d-4d06-a309-712af47184a2"
+            }
+          }
+        ]
+      },
+      "DataStatus": {
+        "title": "Data status",
+        "description": "Describes the state of data in the Codat cache for a company and data type",
+        "type": "object",
+        "required": [
+          "dataType",
+          "lastSuccessfulSync",
+          "currentStatus"
+        ],
+        "properties": {
+          "dataType": {
+            "title": "Data types",
+            "x-internal": true,
+            "type": "string",
+            "description": "Available Data types",
+            "enum": [
+              "accountTransactions",
+              "balanceSheet",
+              "bankAccounts",
+              "bankTransactions",
+              "billCreditNotes",
+              "billPayments",
+              "bills",
+              "cashFlowStatement",
+              "chartOfAccounts",
+              "company",
+              "creditNotes",
+              "customers",
+              "directCosts",
+              "directIncomes",
+              "invoices",
+              "items",
+              "journalEntries",
+              "journals",
+              "paymentMethods",
+              "payments",
+              "profitAndLoss",
+              "purchaseOrders",
+              "salesOrders",
+              "suppliers",
+              "taxRates",
+              "trackingCategories",
+              "transfers",
+              "banking-accountBalances",
+              "banking-accounts",
+              "banking-transactionCategories",
+              "banking-transactions",
+              "commerce-companyInfo",
+              "commerce-customers",
+              "commerce-disputes",
+              "commerce-locations",
+              "commerce-orders",
+              "commerce-paymentMethods",
+              "commerce-payments",
+              "commerce-productCategories",
+              "commerce-products",
+              "commerce-taxComponents",
+              "commerce-transactions"
+            ],
+            "example": "invoices"
+          },
+          "lastSuccessfulSync": {
+            "$ref": "#/components/schemas/DateTime"
+          },
+          "currentStatus": {
+            "type": "string",
+            "description": "The current status of the dataset in Codat's cache."
+          },
+          "latestSyncId": {
+            "type": "string",
+            "description": "Unique identifier for most recent sync of data type.",
+            "format": "uuid",
+            "example": "ad474a37-2003-478e-baee-9af9f1ec2fe3"
+          },
+          "latestSuccessfulSyncId": {
+            "type": "string",
+            "description": "Unique identifier for the most recent successful sync of data type.",
+            "format": "uuid",
+            "example": "8220fc90-55b6-47bc-9417-48ac6ea93101"
+          }
+        },
+        "examples": [
+          {
+            "dataType": "string",
+            "lastSuccessfulSync": "2022-01-01T13:00:00.000Z",
+            "currentStatus": "string",
+            "latestSyncId": "ad474a37-2003-478e-baee-9af9f1ec2fe3",
+            "latestSuccessfulSyncId": "8220fc90-55b6-47bc-9417-48ac6ea93101"
+          }
+        ]
+      },
+      "DataStatuses": {
+        "title": "Data statuses",
+        "x-internal": true,
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/DataStatus"
+        }
+      },
+      "DataSyncCompletedWebhook": {
+        "title": "Data sync completed webhook",
+        "x-internal": true,
+        "description": "Webhook request body to notify the completion of a data sync.",
+        "type": "object",
+        "properties": {
+          "ClientId": {
+            "$ref": "#/components/schemas/ClientId"
+          },
+          "ClientName": {
+            "type": "string",
+            "description": "Name of your client in Codat."
+          },
+          "CompanyId": {
+            "$ref": "#/components/parameters/companyId/schema"
+          },
+          "DataConnectionId": {
+            "$ref": "#/components/parameters/connectionId/schema"
+          },
+          "RuleId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for the rule."
+          },
+          "RuleType": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "34d52a089f08a"
+            },
+            "description": "The type of rule."
+          },
+          "AlertId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier of the webhook event."
+          },
+          "Message": {
+            "type": "string",
+            "description": "A human readable message about the webhook."
+          },
+          "Data": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/definitions/DataSyncCompletedWebhookData"
+          }
+        },
+        "definitions": {
+          "DataSyncCompletedWebhookData": {
+            "type": "object",
+            "title": "Data sync completed webhook data",
+            "properties": {
+              "dataType": {
+                "$ref": "#/components/schemas/DataStatus/properties/dataType",
+                "nullable": true
+              },
+              "datasetId": {
+                "$ref": "#/components/parameters/datasetId/schema"
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
+            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "RuleType": "Data sync completed",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "Data sync of type creditNotes completed for company 7626befb-0c7d-49a4-9366-bc4c81b4e4b7",
+            "Data": {
+              "dataType": "creditNotes",
+              "datasetId": "1541a5ee-0d84-4b6e-a7f7-c07c1f216333"
+            }
+          }
+        ]
+      },
+      "DataType": {
+        "x-internal": true,
+        "$ref": "#/components/schemas/DataStatus/properties/dataType"
+      },
+      "DateTime": {
+        "title": "Date time",
+        "type": "string",
+        "examples": [
+          "2022-10-23T00:00:00.000Z",
+          "2022-10-23T00:00:00.000Z"
+        ],
+        "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
+      },
+      "ErrorMessage": {
+        "title": "Error message",
+        "type": "object",
+        "x-internal": true,
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "description": "The HTTP status code returned by the error."
+          },
+          "service": {
+            "type": "string",
+            "description": "Codat's service the returned the error."
+          },
+          "error": {
+            "type": "string",
+            "description": "A brief description of the error."
+          },
+          "correlationId": {
+            "type": "string",
+            "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
+          },
+          "canBeRetried": {
+            "type": "string",
+            "description": "`True` if the error occurred transiently and can be retried."
+          },
+          "detailedErrorCode": {
+            "type": "integer",
+            "description": "Machine readable error code used to automate processes based on the code returned."
+          }
+        }
       },
       "Integration": {
         "title": "Integration",
@@ -3145,418 +4013,158 @@
           }
         ]
       },
-      "SyncSetting": {
-        "title": "SyncSetting",
-        "description": "Describes how often, and how much history, should be fetched for the given data type when a pull operation is queued.",
-        "examples": [
-          {
-            "dataType": "invoices",
-            "fetchOnFirstLink": true,
-            "syncSchedule": 24,
-            "syncOrder": 0,
-            "syncFromUtc": "2020-01-01T12:00:00.000Z",
-            "syncFromWindow": 24,
-            "monthsToSync": 24,
-            "isLocked": true
-          }
-        ],
-        "type": "object",
-        "properties": {
-          "dataType": {
-            "$ref": "#/components/schemas/DataStatus/properties/dataType"
-          },
-          "fetchOnFirstLink": {
-            "type": "boolean",
-            "description": "Whether this data type should be queued after a company has authorized a connection."
-          },
-          "syncSchedule": {
-            "type": "integer",
-            "example": 24,
-            "description": "Number of hours after which this data type should be refreshed."
-          },
-          "syncOrder": {
-            "type": "integer",
-            "description": "The sync in which data types are queued for a sync."
-          },
-          "syncFromUtc": {
-            "$ref": "#/components/schemas/DateTime",
-            "description": "Date from which data should be fetched. Set this *or* `syncFromWindow`."
-          },
-          "syncFromWindow": {
-            "type": "integer",
-            "example": 24,
-            "description": "Number of months of data to be fetched. Set this *or* `syncFromUTC`."
-          },
-          "monthsToSync": {
-            "type": "integer",
-            "example": 24,
-            "description": "Months of data to fetch, for report data types (`balanceSheet` & `profitAndLoss`) only."
-          },
-          "isLocked": {
-            "type": "boolean",
-            "description": "`True` if the [sync setting](https://docs.codat.io/knowledge-base/advanced-sync-settings) is locked."
-          }
-        },
-        "required": [
-          "dataType",
-          "fetchOnFirstLink",
-          "syncSchedule",
-          "syncOrder"
-        ]
-      },
-      "SyncSettings": {
-        "title": "Sync settings",
+      "NewCompanySynchronizedWebhook": {
+        "title": "New company synchronized webhook",
         "x-internal": true,
+        "description": "Webhook request body to notify that a new company has successfully synchronized at least one dataType for the first time.",
         "type": "object",
         "properties": {
-          "clientId": {
-            "$ref": "#/paths/~1profile~1syncSettings/post/requestBody/content/application~1json/schema/allOf/0/properties/clientId"
+          "ClientId": {
+            "$ref": "#/components/schemas/ClientId"
           },
-          "settings": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SyncSetting"
-            }
+          "ClientName": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
           },
-          "overridesDefaults": {
-            "type": "boolean",
-            "description": "Set to `True` if you want to override the default [sync settings](https://docs.codat.io/knowledge-base/advanced-sync-settings)."
-          }
-        }
-      },
-      "PullOperation": {
-        "title": "Pull operation",
-        "description": "Information about a queued, in progress or completed pull operation.\n*Formally called `dataset`*",
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier of the pull operation.",
-            "example": "943accd0-4247-42d8-865b-363c8629e1da"
-          },
-          "companyId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier of the company associated to this pull operation.",
-            "example": "22ece347-e5f6-4896-95e0-35a4c7f17023"
-          },
-          "connectionId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier of the connection associated to this pull operation.",
-            "example": "50830828-7d39-4367-b0eb-5ddb2de5faa5"
-          },
-          "dataType": {
-            "$ref": "#/components/schemas/DataStatus/properties/dataType"
-          },
-          "status": {
-            "type": "string",
-            "description": "The current status of the pull operation.",
-            "enum": [
-              "Initial",
-              "Queued",
-              "Fetching",
-              "MapQueued",
-              "Mapping",
-              "Complete",
-              "FetchError",
-              "MapError",
-              "InternalError",
-              "ProcessingQueued",
-              "Processing",
-              "ProcessingError",
-              "ValidationQueued",
-              "Validating",
-              "ValidationError",
-              "AuthError",
-              "Cancelled",
-              "Routing",
-              "RoutingError",
-              "NotSupported",
-              "RateLimitError",
-              "PermissionsError",
-              "PrerequisiteNotMet"
-            ],
-            "example": "Complete"
-          },
-          "errorMessage": {
-            "type": "string",
-            "nullable": true,
-            "description": "A message about a transient or persistent error."
-          },
-          "requested": {
-            "$ref": "#/components/schemas/DateTime"
-          },
-          "completed": {
-            "$ref": "#/components/schemas/DateTime"
-          },
-          "progress": {
-            "type": "integer",
-            "description": "An integer signifying the progress of the pull operation."
-          },
-          "isCompleted": {
-            "type": "boolean",
-            "description": "`True` if the pull operation completed successfully."
-          },
-          "isErrored": {
-            "type": "boolean",
-            "description": "`True` if the pull operation entered an error state."
-          }
-        },
-        "required": [
-          "id",
-          "companyId",
-          "connectionId",
-          "dataType",
-          "status",
-          "requested",
-          "progress",
-          "isCompleted",
-          "isErrored"
-        ],
-        "examples": [
-          {
-            "id": "97d60846-f07a-4d42-b5a0-0bdcc6ebf56b",
-            "companyId": "4645bd78-8988-45bc-ac9e-67ba5df6e4e5",
-            "connectionId": "51baa045-4836-4317-a42e-3542e991e581",
-            "dataType": "invoices",
-            "status": "Initial",
-            "requested": "2022-11-14T11:18:37.2798351Z",
-            "progress": 10,
-            "isCompleted": false,
-            "isErrored": false
-          }
-        ]
-      },
-      "PullOperations": {
-        "title": "Pull operations",
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/PullOperation"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
-      "CreateRule": {
-        "title": "Create webhook",
-        "description": "Create an event notification to a URL or list of email addresses based on the given type or condition.",
-        "type": "object",
-        "x-internal": true,
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "The type of webhook."
-          },
-          "companyId": {
+          "CompanyId": {
             "$ref": "#/components/parameters/companyId/schema"
           },
-          "notifiers": {
-            "$ref": "#/components/schemas/CreateRule/definitions/webhookNotifier"
+          "DataConnectionId": {
+            "$ref": "#/components/parameters/connectionId/schema"
+          },
+          "RuleId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
+          },
+          "RuleType": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
+          },
+          "AlertId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
+          },
+          "Message": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
+          },
+          "Data": {
+            "$ref": "#/components/schemas/NewCompanySynchronizedWebhook/definitions/NewCompanySynchronizedWebhookData"
           }
         },
         "definitions": {
-          "webhookNotifier": {
+          "NewCompanySynchronizedWebhookData": {
             "type": "object",
-            "title": "Webhook notifiers",
-            "properties": {
-              "emails": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "email",
-                  "description": "Receiver's email address.",
-                  "example": "info@client.com"
-                }
-              },
-              "webhook": {
-                "type": "string",
-                "format": "uri",
-                "description": "The URI the webhook service will POST events.",
-                "example": "https://webhook.client.com"
-              }
+            "title": "New company synchronized webhook data",
+            "companyName": {
+              "nullable": true,
+              "type": "string",
+              "description": "Name of company whose connection has changed."
+            },
+            "sourceType": {
+              "$ref": "#/components/schemas/SourceType",
+              "nullable": true
             }
           }
         },
         "examples": [
           {
-            "type": "DataConnectionStatusChanged",
-            "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
-            "notifiers": {
-              "emails": [
-                "info@client.com"
-              ],
-              "webhook": "https://webhook.client.com"
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
+            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "RuleType": "New company synchronised",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "Company 8a210b68-6988-11ed-a1eb-0242ac120002 synced for the first time",
+            "Data": {
+              "companyName": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+              "sourceType": "Accounting"
             }
           }
-        ],
-        "required": [
-          "type",
-          "notifiers"
         ]
       },
-      "Webhook": {
-        "title": "Webhook",
-        "description": "Configuration to provide an event notification to a URL or list of email addresses based on the given type or condition.",
+      "PagingInfo": {
         "type": "object",
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "format": "uuid",
-                "nullable": false,
-                "description": "Unique identifier for the configured notification.",
-                "example": "ff89c50e-a719-4ef5-a182-9917e53927b6"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/CreateRule"
-          }
-        ],
-        "examples": [
-          {
-            "id": "ff89c50e-a719-4ef5-a182-9917e53927b6",
-            "type": "DataConnectionStatusChanged",
-            "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
-            "notifiers": {
-              "emails": [
-                "info@client.com"
-              ],
-              "webhook": "https://webhook.client.com"
-            }
-          }
-        ]
-      },
-      "Webhooks": {
-        "title": "Webhooks",
+        "title": "Pagination information",
         "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Webhook"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
-      "DataStatuses": {
-        "title": "Data statuses",
-        "x-internal": true,
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/DataStatus"
-        }
-      },
-      "DataStatus": {
-        "title": "Data status",
-        "description": "Describes the state of data in the Codat cache for a company and data type",
-        "type": "object",
-        "required": [
-          "dataType",
-          "lastSuccessfulSync",
-          "currentStatus"
-        ],
         "properties": {
-          "dataType": {
-            "title": "Data types",
-            "x-internal": true,
-            "type": "string",
-            "description": "Available Data types",
-            "enum": [
-              "accountTransactions",
-              "balanceSheet",
-              "bankAccounts",
-              "bankTransactions",
-              "billCreditNotes",
-              "billPayments",
-              "bills",
-              "cashFlowStatement",
-              "chartOfAccounts",
-              "company",
-              "creditNotes",
-              "customers",
-              "directCosts",
-              "directIncomes",
-              "invoices",
-              "items",
-              "journalEntries",
-              "journals",
-              "paymentMethods",
-              "payments",
-              "profitAndLoss",
-              "purchaseOrders",
-              "salesOrders",
-              "suppliers",
-              "taxRates",
-              "trackingCategories",
-              "transfers",
-              "banking-accountBalances",
-              "banking-accounts",
-              "banking-transactionCategories",
-              "banking-transactions",
-              "commerce-companyInfo",
-              "commerce-customers",
-              "commerce-disputes",
-              "commerce-locations",
-              "commerce-orders",
-              "commerce-paymentMethods",
-              "commerce-payments",
-              "commerce-productCategories",
-              "commerce-products",
-              "commerce-taxComponents",
-              "commerce-transactions"
-            ],
-            "example": "invoices"
+          "pageNumber": {
+            "type": "integer",
+            "description": "Current page number."
           },
-          "lastSuccessfulSync": {
-            "$ref": "#/components/schemas/DateTime"
+          "pageSize": {
+            "type": "integer",
+            "description": "Number of items to return in results array.",
+            "maximum": 2000
           },
-          "currentStatus": {
-            "type": "string",
-            "description": "The current status of the dataset in Codat's cache."
+          "totalResults": {
+            "type": "integer",
+            "description": "Total number of items."
           },
-          "latestSyncId": {
-            "type": "string",
-            "description": "Unique identifier for most recent sync of data type.",
-            "format": "uuid",
-            "example": "ad474a37-2003-478e-baee-9af9f1ec2fe3"
-          },
-          "latestSuccessfulSyncId": {
-            "type": "string",
-            "description": "Unique identifier for the most recent successful sync of data type.",
-            "format": "uuid",
-            "example": "8220fc90-55b6-47bc-9417-48ac6ea93101"
+          "_links": {
+            "$ref": "#/components/schemas/PagingInfo/definitions/links"
           }
         },
+        "definitions": {
+          "links": {
+            "title": "Hal Links",
+            "type": "object",
+            "required": [
+              "self",
+              "current"
+            ],
+            "properties": {
+              "self": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "current": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "next": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "previous": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              }
+            },
+            "examples": [
+              {
+                "self": {
+                  "href": "/companies/{id}/data/{dataType}"
+                },
+                "current": {
+                  "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+                }
+              }
+            ]
+          },
+          "halRef": {
+            "title": "Hypertext reference",
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string",
+                "format": "uri-reference",
+                "description": "Uri hypertext reference."
+              }
+            }
+          }
+        },
+        "required": [
+          "pageNumber",
+          "pageSize",
+          "totalResults",
+          "_links"
+        ],
         "examples": [
           {
-            "dataType": "string",
-            "lastSuccessfulSync": "2022-01-01T13:00:00.000Z",
-            "currentStatus": "string",
-            "latestSyncId": "ad474a37-2003-478e-baee-9af9f1ec2fe3",
-            "latestSuccessfulSyncId": "8220fc90-55b6-47bc-9417-48ac6ea93101"
+            "_links": {
+              "pageNumber": 1,
+              "pageSize": 10,
+              "totalResults": 1,
+              "self": {
+                "href": "/companies/{id}/data/{dataType}"
+              },
+              "current": {
+                "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+              }
+            }
           }
         ]
       },
@@ -3633,794 +4241,135 @@
           "id": "b1fyq05edangf"
         }
       },
-      "ApiKeyDetails": {
-        "title": "API key details",
-        "description": "Details of the API key.",
+      "PullOperation": {
+        "title": "Pull operation",
+        "description": "Information about a queued, in progress or completed pull operation.\n*Formally called `dataset`*",
         "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier of the pull operation.",
+            "example": "943accd0-4247-42d8-865b-363c8629e1da"
+          },
+          "companyId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier of the company associated to this pull operation.",
+            "example": "22ece347-e5f6-4896-95e0-35a4c7f17023"
+          },
+          "connectionId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier of the connection associated to this pull operation.",
+            "example": "50830828-7d39-4367-b0eb-5ddb2de5faa5"
+          },
+          "dataType": {
+            "$ref": "#/components/schemas/DataStatus/properties/dataType"
+          },
+          "status": {
+            "type": "string",
+            "description": "The current status of the pull operation.",
+            "enum": [
+              "Initial",
+              "Queued",
+              "Fetching",
+              "MapQueued",
+              "Mapping",
+              "Complete",
+              "FetchError",
+              "MapError",
+              "InternalError",
+              "ProcessingQueued",
+              "Processing",
+              "ProcessingError",
+              "ValidationQueued",
+              "Validating",
+              "ValidationError",
+              "AuthError",
+              "Cancelled",
+              "Routing",
+              "RoutingError",
+              "NotSupported",
+              "RateLimitError",
+              "PermissionsError",
+              "PrerequisiteNotMet"
+            ],
+            "example": "Complete"
+          },
+          "statusDescription": {
+            "type": "string",
+            "nullable": true,
+            "description": "Additional information about the dataset status.",
+            "example": "Paused until 2022-10-23T00:00:00.000Z"
+          },
+          "errorMessage": {
+            "type": "string",
+            "nullable": true,
+            "description": "A message about a transient or persistent error."
+          },
+          "requested": {
+            "$ref": "#/components/schemas/DateTime"
+          },
+          "completed": {
+            "$ref": "#/components/schemas/DateTime"
+          },
+          "progress": {
+            "type": "integer",
+            "description": "An integer signifying the progress of the pull operation."
+          },
+          "isCompleted": {
+            "type": "boolean",
+            "description": "`True` if the pull operation is completed successfully. The `isCompleted` property is not queryable. To filter failed pull operations, query by `status!=Complete&&status!=NotSupported` instead."
+          },
+          "isErrored": {
+            "type": "boolean",
+            "description": "`True` if the pull operation entered an error state."
+          }
+        },
+        "required": [
+          "id",
+          "companyId",
+          "connectionId",
+          "dataType",
+          "status",
+          "requested",
+          "progress",
+          "isCompleted",
+          "isErrored"
+        ],
+        "examples": [
+          {
+            "id": "97d60846-f07a-4d42-b5a0-0bdcc6ebf56b",
+            "companyId": "4645bd78-8988-45bc-ac9e-67ba5df6e4e5",
+            "connectionId": "51baa045-4836-4317-a42e-3542e991e581",
+            "dataType": "invoices",
+            "status": "Initial",
+            "statusDescription": "Paused until 2022-10-23T00:00:00.000Z",
+            "requested": "2022-11-14T11:18:37.2798351Z",
+            "progress": 10,
+            "isCompleted": false,
+            "isErrored": false
+          }
+        ]
+      },
+      "PullOperations": {
+        "title": "Pull operations",
+        "x-internal": true,
         "allOf": [
           {
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "Unique identifier for the API key.",
-                "example": "e288a972-b402-4b21-93f9-b5335ae5679c"
-              },
-              "name": {
-                "type": "string",
-                "maxLength": 50,
-                "nullable": true,
-                "description": "A meaningful name assigned to the API key.",
-                "example": "azure-invoice-finance-processor"
-              },
-              "apiKey": {
-                "type": "string",
-                "description": "The API key value used to make authenticated http requests.",
-                "example": "ztHQGvnC4XN2CgUhaDWEG4ySLUJqWjp7zkbZkGHd"
-              }
-            }
-          },
-          {
-            "nullable": true,
-            "description": "Datetime in UTC the API key was created. The created date will be null if the API key created before YYYY-MM-DD.",
-            "title": "Created date",
-            "type": "object",
-            "x-internal": true,
-            "properties": {
-              "createdDate": {
-                "$ref": "#/components/schemas/DateTime",
-                "description": "The date the entity was created."
-              }
-            }
-          }
-        ]
-      },
-      "ApiKeys": {
-        "title": "API keys",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ApiKeyDetails"
-            }
-          }
-        }
-      },
-      "CreateApiKey": {
-        "title": "Create API key",
-        "description": "Details about the newly created API key.",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "name": {
-            "$ref": "#/components/schemas/ApiKeyDetails/allOf/0/properties/name"
-          }
-        }
-      },
-      "Branding": {
-        "title": "Branding",
-        "type": "object",
-        "properties": {
-          "logo": {
-            "$ref": "#/components/schemas/Branding/definitions/brandingLogo"
-          },
-          "button": {
-            "$ref": "#/components/schemas/Branding/definitions/brandingButton"
-          },
-          "sourceId": {
-            "type": "string",
-            "format": "uuid",
-            "example": "35b92968-9851-4095-ad60-395c95cbcba4",
-            "description": "A source-specific ID used to distinguish between different sources originating from the same data connection. In general, a data connection is a single data source. However, for TrueLayer, `sourceId` is associated with a specific bank and has a many-to-one relationship with the `integrationId`."
-          }
-        },
-        "definitions": {
-          "brandingLogo": {
-            "description": "Logo branding references.",
             "type": "object",
             "properties": {
-              "full": {
-                "$ref": "#/components/schemas/Branding/definitions/brandingImage"
-              },
-              "square": {
-                "$ref": "#/components/schemas/Branding/definitions/brandingImage"
-              }
-            }
-          },
-          "brandingButton": {
-            "type": "object",
-            "description": "Button branding references.",
-            "properties": {
-              "default": {
-                "$ref": "#/components/schemas/Branding/definitions/brandingImage"
-              },
-              "hover": {
-                "$ref": "#/components/schemas/Branding/definitions/brandingImage"
-              }
-            }
-          },
-          "brandingImage": {
-            "title": "Branding Image",
-            "type": "object",
-            "properties": {
-              "image": {
-                "$ref": "#/components/schemas/Branding/definitions/imageReference"
-              }
-            },
-            "examples": []
-          },
-          "imageReference": {
-            "type": "object",
-            "title": "Image Reference",
-            "description": "Image reference.",
-            "properties": {
-              "src": {
-                "type": "string",
-                "format": "uri",
-                "description": "Source URL for image."
-              },
-              "alt": {
-                "type": "string",
-                "description": "Alternative text when image is not available."
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "logo": {
-              "full": {
-                "image": {
-                  "src": "https://static.codat.io/public/officialLogos/Full/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png",
-                  "alt": "xero full icon"
-                }
-              },
-              "square": {
-                "image": {
-                  "src": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B2W3607.png",
-                  "alt": "xero square icon"
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PullOperation"
                 }
               }
-            },
-            "button": {
-              "default": {
-                "image": {
-                  "src": "https://static.codat.io/public/officialButtons/Full/8A156A5A-39CB-4F9D-856E-76EF9Q7A9607.png",
-                  "alt": "xero default button icon"
-                }
-              },
-              "hover": {
-                "image": {
-                  "src": "https://static.codat.io/public/officialLogos/Full/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png",
-                  "alt": "xero hover button icon"
-                }
-              }
-            },
-            "sourceId": "35b92968-9851-4095-ad60-395c95cbcba4"
-          }
-        ]
-      },
-      "DateTime": {
-        "title": "Date time",
-        "type": "string",
-        "examples": [
-          "2022-10-23T00:00:00.000Z",
-          "2022-10-23T00:00:00.000Z"
-        ],
-        "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
-      },
-      "ConnectionStatusChangedWebhook": {
-        "title": "Connection status changed webhook",
-        "x-internal": true,
-        "description": "Webhook request body for a company's data connection status changed.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/paths/~1profile~1syncSettings/post/requestBody/content/application~1json/schema/allOf/0/properties/clientId"
-          },
-          "ClientName": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
-          },
-          "CompanyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "DataConnectionId": {
-            "$ref": "#/components/parameters/connectionId/schema"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
-          },
-          "RuleType": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
-          },
-          "Data": {
-            "$ref": "#/components/schemas/ConnectionStatusChangedWebhook/definitions/ConnectionStatusChangedWebhookData"
-          }
-        },
-        "definitions": {
-          "ConnectionStatusChangedWebhookData": {
-            "type": "object",
-            "title": "Connection status changed webhook data",
-            "properties": {
-              "dataConnectionId": {
-                "$ref": "#/components/parameters/connectionId/schema"
-              },
-              "newStatus": {
-                "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
-              },
-              "oldStatus": {
-                "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
-              },
-              "platformKey": {
-                "$ref": "#/components/parameters/platformKey/schema"
-              }
             }
-          }
-        },
-        "examples": [
+          },
           {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "DataConnectionStatusChanged",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "Data connection for SandBox status changed from PendingAuth to Linked",
-            "Data": {
-              "dataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-              "newStatus": "Linked",
-              "oldStatus": "PendingAuth",
-              "platformKey": "gbol"
-            }
-          }
-        ]
-      },
-      "DataSyncCompletedWebhook": {
-        "title": "Data sync completed webhook",
-        "x-internal": true,
-        "description": "Webhook request body to notify the completion of a data sync.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/paths/~1profile~1syncSettings/post/requestBody/content/application~1json/schema/allOf/0/properties/clientId"
-          },
-          "ClientName": {
-            "type": "string",
-            "description": "Name of your client in Codat."
-          },
-          "CompanyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "DataConnectionId": {
-            "$ref": "#/components/parameters/connectionId/schema"
-          },
-          "RuleId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier for the rule."
-          },
-          "RuleType": {
-            "type": "string",
-            "x-stoplight": {
-              "id": "34d52a089f08a"
-            },
-            "description": "The type of rule."
-          },
-          "AlertId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier of the webhook event."
-          },
-          "Message": {
-            "type": "string",
-            "description": "A human readable message about the webhook."
-          },
-          "Data": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/definitions/DataSyncCompletedWebhookData"
-          }
-        },
-        "definitions": {
-          "DataSyncCompletedWebhookData": {
-            "type": "object",
-            "title": "Data sync completed webhook data",
-            "properties": {
-              "dataType": {
-                "$ref": "#/components/schemas/DataStatus/properties/dataType",
-                "nullable": true
-              },
-              "datasetId": {
-                "$ref": "#/components/parameters/datasetId/schema"
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Data sync completed",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "Data sync of type creditNotes completed for company 7626befb-0c7d-49a4-9366-bc4c81b4e4b7",
-            "Data": {
-              "dataType": "creditNotes",
-              "datasetId": "1541a5ee-0d84-4b6e-a7f7-c07c1f216333"
-            }
-          }
-        ]
-      },
-      "DatasetDataChangedWebhook": {
-        "title": "Dataset data changed webhook",
-        "x-internal": true,
-        "description": "Webhook request body to notify that a data synchronization has completed.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/paths/~1profile~1syncSettings/post/requestBody/content/application~1json/schema/allOf/0/properties/clientId"
-          },
-          "ClientName": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
-          },
-          "CompanyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "DataConnectionId": {
-            "$ref": "#/components/parameters/connectionId/schema"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
-          },
-          "RuleType": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
-          },
-          "Data": {
-            "title": "Dataset data changed webhook data",
-            "type": "object",
-            "properties": {
-              "dataType": {
-                "$ref": "#/components/schemas/DataStatus/properties/dataType"
-              },
-              "datasetId": {
-                "$ref": "#/components/parameters/datasetId/schema"
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Dataset data changed",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "Data has changed for dataset type invoices, company 8a210b68-6988-11ed-a1eb-0242ac120002",
-            "Data": {
-              "dataType": "invoices",
-              "datasetId": "6586f21b-ad4d-4d06-a309-712af47184a2"
-            }
-          }
-        ]
-      },
-      "DatasetStatusChangedErrorWebhook": {
-        "title": "Dataset status changed to error webhook",
-        "x-internal": true,
-        "description": "Webhook request body to notify that a data synchronization has completed.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/paths/~1profile~1syncSettings/post/requestBody/content/application~1json/schema/allOf/0/properties/clientId"
-          },
-          "ClientName": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
-          },
-          "CompanyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "DataConnectionId": {
-            "$ref": "#/components/parameters/connectionId/schema"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
-          },
-          "RuleType": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
-          },
-          "Data": {
-            "$ref": "#/components/schemas/DatasetStatusChangedErrorWebhook/definitions/DatasetStatusChangedErrorWebhookData"
-          }
-        },
-        "definitions": {
-          "DatasetStatusChangedErrorWebhookData": {
-            "type": "object",
-            "title": "Dataset status changed to error webhook data",
-            "properties": {
-              "dataType": {
-                "$ref": "#/components/schemas/DataStatus/properties/dataType"
-              },
-              "datasetStatus": {
-                "type": "string",
-                "description": "The current status of the dataset's sync."
-              },
-              "datasetId": {
-                "$ref": "#/components/parameters/datasetId/schema"
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Data Sync Status Changed To Error",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "ERROR: syncing payments triggered a ProcessingError notification at 2020-04-21T12:12:57.4250446Z.",
-            "Data": {
-              "dataType": "invoices",
-              "datasetStatus": "ProcessingError",
-              "datasetId": "6586f21b-ad4d-4d06-a309-712af47184a2"
-            }
-          }
-        ]
-      },
-      "NewCompanySynchronizedWebhook": {
-        "title": "New company synchronized webhook",
-        "x-internal": true,
-        "description": "Webhook request body to notify that a new company has successfully synchronized at least one dataType for the first time.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/paths/~1profile~1syncSettings/post/requestBody/content/application~1json/schema/allOf/0/properties/clientId"
-          },
-          "ClientName": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
-          },
-          "CompanyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "DataConnectionId": {
-            "$ref": "#/components/parameters/connectionId/schema"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
-          },
-          "RuleType": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
-          },
-          "Data": {
-            "$ref": "#/components/schemas/NewCompanySynchronizedWebhook/definitions/NewCompanySynchronizedWebhookData"
-          }
-        },
-        "definitions": {
-          "NewCompanySynchronizedWebhookData": {
-            "type": "object",
-            "title": "New company synchronized webhook data",
-            "companyName": {
-              "nullable": true,
-              "type": "string",
-              "description": "Name of company whose connection has changed."
-            },
-            "sourceType": {
-              "$ref": "#/components/schemas/SourceType",
-              "nullable": true
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "New company synchronised",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "Company 8a210b68-6988-11ed-a1eb-0242ac120002 synced for the first time",
-            "Data": {
-              "companyName": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-              "sourceType": "Accounting"
-            }
-          }
-        ]
-      },
-      "PushOperationStatusChangedWebhook": {
-        "title": "Push operation status changed webhook",
-        "x-internal": true,
-        "description": "Webhook request body for a push operation status change.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/paths/~1profile~1syncSettings/post/requestBody/content/application~1json/schema/allOf/0/properties/clientId"
-          },
-          "ClientName": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
-          },
-          "CompanyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "DataConnectionId": {
-            "$ref": "#/components/parameters/connectionId/schema"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
-          },
-          "RuleType": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
-          },
-          "Data": {
-            "$ref": "#/components/schemas/PushOperationStatusChangedWebhook/definitions/PushOperationStatusChangedWebhookData"
-          }
-        },
-        "definitions": {
-          "PushOperationStatusChangedWebhookData": {
-            "type": "object",
-            "title": "Push operation status changed webhook data",
-            "properties": {
-              "dataType": {
-                "$ref": "#/components/schemas/DataStatus/properties/dataType"
-              },
-              "status": {
-                "$ref": "#/components/schemas/PushOperation/definitions/pushOperationStatus"
-              },
-              "pushOperationKey": {
-                "$ref": "#/components/schemas/PushOperation/properties/pushOperationKey"
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Push Operation Status Changed()",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "invoices triggered notification for PushOperationStatusChanged at 2019-05-22T18:19:42.742Z",
-            "Data": {
-              "dataType": "invoices",
-              "status": "Success",
-              "pushOperationKey": "c2f8847d-3047-4619-a157-6d947d8e4a73"
-            }
-          }
-        ]
-      },
-      "PushOperationTimedOutWebhook": {
-        "title": "Push operation timed out webhook",
-        "x-internal": true,
-        "description": "Webhook request body notifying that a push push operation has timed out.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/paths/~1profile~1syncSettings/post/requestBody/content/application~1json/schema/allOf/0/properties/clientId"
-          },
-          "ClientName": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
-          },
-          "CompanyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "DataConnectionId": {
-            "$ref": "#/components/parameters/connectionId/schema"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
-          },
-          "RuleType": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
-          },
-          "Data": {
-            "$ref": "#/components/schemas/PushOperationTimedOutWebhook/definitions/PushOperationTimedOutWebhookData"
-          }
-        },
-        "definitions": {
-          "PushOperationTimedOutWebhookData": {
-            "type": "object",
-            "title": "Push operation timed out webhook data",
-            "properties": {
-              "dataType": {
-                "$ref": "#/components/schemas/DataStatus/properties/dataType"
-              },
-              "pushOperationKey": {
-                "$ref": "#/components/schemas/PushOperation/properties/pushOperationKey"
-              },
-              "pushOperationGuid": {
-                "$ref": "#/components/schemas/PushOperation/properties/pushOperationKey",
-                "deprecated": true,
-                "x-speakeasy-deprecation-replacement": "pushOperationKey"
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Push Operation Timed Out",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "ERROR: pushing invoices never finished in time, timing out at 2020-09-07T08:42:13",
-            "Data": {
-              "dataType": "invoices",
-              "pushOperationKey": "c2f8847d-3047-4619-a157-6d947d8e4a73",
-              "pushOperationGuid": "c2f8847d-3047-4619-a157-6d947d8e4a73"
-            }
-          }
-        ]
-      },
-      "ClientRateLimitReachedWebhook": {
-        "title": "Client rate limit reached webhook",
-        "x-internal": true,
-        "description": "Webhook request body for a client that has reached their rate limit.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/paths/~1profile~1syncSettings/post/requestBody/content/application~1json/schema/allOf/0/properties/clientId"
-          },
-          "ClientName": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
-          },
-          "RuleType": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
-          },
-          "Data": {
-            "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData"
-          }
-        },
-        "definitions": {
-          "ClientRateLimitReachedWebhookData": {
-            "type": "object",
-            "title": "Client rate limit reached webhook data",
-            "properties": {
-              "DailyQuota": {
-                "type": "integer",
-                "description": "The number of available requests per day."
-              },
-              "ExpiresUtc": {
-                "$ref": "#/components/schemas/DateTime",
-                "description": "The date time in UTC that your daily quota is reset."
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Rate Limit Reached",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "The current daily rate limit quota of 1000 requests for bae71d36-ff47-420a-b4a6-f8c9ddf41140 has been reached.",
-            "Data": {
-              "DailyQuota": 1000,
-              "ExpiresUtc": "2023-05-03T00:00:00Z"
-            }
-          }
-        ]
-      },
-      "ClientRateLimitResetWebhook": {
-        "title": "Client rate limit reset webhook",
-        "x-internal": true,
-        "description": "Webhook request body for a client that has had their rate limit reset.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/paths/~1profile~1syncSettings/post/requestBody/content/application~1json/schema/allOf/0/properties/clientId"
-          },
-          "ClientName": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
-          },
-          "RuleType": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
-          },
-          "Data": {
-            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/definitions/ClientRateLimitResetWebhookData"
-          }
-        },
-        "definitions": {
-          "ClientRateLimitResetWebhookData": {
-            "type": "object",
-            "title": "Client rate limit reset webhook data",
-            "properties": {
-              "QuotaRemaining": {
-                "type": "integer",
-                "description": "Total number of request remaining for your client.",
-                "nullable": true
-              },
-              "ResetReason": {
-                "type": "string",
-                "description": "The reason for your rate limit quota being reset."
-              },
-              "DailyQuota": {
-                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData/properties/DailyQuota",
-                "nullable": true
-              },
-              "ExpiresUtc": {
-                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData/properties/ExpiresUtc",
-                "nullable": true
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Rate Limit Reset",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "The current daily rate limit quota for client 30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e has been reset to 1000 requests.",
-            "Data": {
-              "QuotaRemaining": 1000,
-              "ResetReason": "The quota was reset because it is a new day.",
-              "DailyQuota": 1000,
-              "ExpiresUtc": "2023-05-03T00:00:00Z"
-            }
+            "$ref": "#/components/schemas/PagingInfo"
           }
         ]
       },
@@ -4618,6 +4567,333 @@
           }
         ]
       },
+      "PushOperationStatusChangedWebhook": {
+        "title": "Push operation status changed webhook",
+        "x-internal": true,
+        "description": "Webhook request body for a push operation status change.",
+        "type": "object",
+        "properties": {
+          "ClientId": {
+            "$ref": "#/components/schemas/ClientId"
+          },
+          "ClientName": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
+          },
+          "CompanyId": {
+            "$ref": "#/components/parameters/companyId/schema"
+          },
+          "DataConnectionId": {
+            "$ref": "#/components/parameters/connectionId/schema"
+          },
+          "RuleId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
+          },
+          "RuleType": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
+          },
+          "AlertId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
+          },
+          "Message": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
+          },
+          "Data": {
+            "$ref": "#/components/schemas/PushOperationStatusChangedWebhook/definitions/PushOperationStatusChangedWebhookData"
+          }
+        },
+        "definitions": {
+          "PushOperationStatusChangedWebhookData": {
+            "type": "object",
+            "title": "Push operation status changed webhook data",
+            "properties": {
+              "dataType": {
+                "$ref": "#/components/schemas/DataStatus/properties/dataType"
+              },
+              "status": {
+                "$ref": "#/components/schemas/PushOperation/definitions/pushOperationStatus"
+              },
+              "pushOperationKey": {
+                "$ref": "#/components/schemas/PushOperation/properties/pushOperationKey"
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
+            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "RuleType": "Push Operation Status Changed()",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "invoices triggered notification for PushOperationStatusChanged at 2019-05-22T18:19:42.742Z",
+            "Data": {
+              "dataType": "invoices",
+              "status": "Success",
+              "pushOperationKey": "c2f8847d-3047-4619-a157-6d947d8e4a73"
+            }
+          }
+        ]
+      },
+      "PushOperationTimedOutWebhook": {
+        "title": "Push operation timed out webhook",
+        "x-internal": true,
+        "description": "Webhook request body notifying that a push push operation has timed out.",
+        "type": "object",
+        "properties": {
+          "ClientId": {
+            "$ref": "#/components/schemas/ClientId"
+          },
+          "ClientName": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
+          },
+          "CompanyId": {
+            "$ref": "#/components/parameters/companyId/schema"
+          },
+          "DataConnectionId": {
+            "$ref": "#/components/parameters/connectionId/schema"
+          },
+          "RuleId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
+          },
+          "RuleType": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
+          },
+          "AlertId": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
+          },
+          "Message": {
+            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
+          },
+          "Data": {
+            "$ref": "#/components/schemas/PushOperationTimedOutWebhook/definitions/PushOperationTimedOutWebhookData"
+          }
+        },
+        "definitions": {
+          "PushOperationTimedOutWebhookData": {
+            "type": "object",
+            "title": "Push operation timed out webhook data",
+            "properties": {
+              "dataType": {
+                "$ref": "#/components/schemas/DataStatus/properties/dataType"
+              },
+              "pushOperationKey": {
+                "$ref": "#/components/schemas/PushOperation/properties/pushOperationKey"
+              },
+              "pushOperationGuid": {
+                "$ref": "#/components/schemas/PushOperation/properties/pushOperationKey",
+                "deprecated": true,
+                "x-speakeasy-deprecation-replacement": "pushOperationKey"
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
+            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "RuleType": "Push Operation Timed Out",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "ERROR: pushing invoices never finished in time, timing out at 2020-09-07T08:42:13",
+            "Data": {
+              "dataType": "invoices",
+              "pushOperationKey": "c2f8847d-3047-4619-a157-6d947d8e4a73",
+              "pushOperationGuid": "c2f8847d-3047-4619-a157-6d947d8e4a73"
+            }
+          }
+        ]
+      },
+      "PushOption": {
+        "title": "Push option",
+        "x-internal": true,
+        "required": [
+          "displayName",
+          "required",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/PushOption/definitions/pushOptionType"
+          },
+          "displayName": {
+            "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/displayName"
+          },
+          "description": {
+            "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/description"
+          },
+          "required": {
+            "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/required"
+          },
+          "properties": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty"
+            },
+            "nullable": true
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PushOption/definitions/pushOptionChoice"
+            },
+            "nullable": true
+          },
+          "validation": {
+            "$ref": "#/components/schemas/PushOption/definitions/pushValidationInfo",
+            "nullable": true
+          }
+        },
+        "definitions": {
+          "pushOptionProperty": {
+            "title": "Push Option Property",
+            "required": [
+              "description",
+              "displayName",
+              "required",
+              "type"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/PushOption/definitions/pushOptionType"
+              },
+              "displayName": {
+                "minLength": 1,
+                "type": "string",
+                "description": "The property's display name."
+              },
+              "description": {
+                "type": "string",
+                "description": "A description of the property."
+              },
+              "required": {
+                "type": "boolean",
+                "description": "The property is required if `True`."
+              },
+              "properties": {
+                "type": "object",
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty"
+                },
+                "nullable": true
+              },
+              "options": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PushOption/definitions/pushOptionChoice"
+                },
+                "nullable": true
+              },
+              "validation": {
+                "$ref": "#/components/schemas/PushOption/definitions/pushValidationInfo"
+              }
+            }
+          },
+          "pushValidationInfo": {
+            "title": "Push validation info",
+            "type": "object",
+            "properties": {
+              "warnings": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PushOption/definitions/pushFieldValidation"
+                },
+                "nullable": true
+              },
+              "information": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PushOption/definitions/pushFieldValidation"
+                },
+                "nullable": true
+              }
+            },
+            "additionalProperties": false
+          },
+          "pushFieldValidation": {
+            "title": "Push field validation",
+            "required": [
+              "details"
+            ],
+            "type": "object",
+            "properties": {
+              "field": {
+                "type": "string",
+                "description": "Field name that resulted in the validation issue."
+              },
+              "details": {
+                "minLength": 1,
+                "type": "string",
+                "description": "Details on the validation issue."
+              },
+              "ref": {
+                "type": "string",
+                "format": "uri",
+                "nullable": true,
+                "description": "Unique reference identifier for the validation issue."
+              }
+            },
+            "additionalProperties": false
+          },
+          "pushOptionType": {
+            "title": "Option Type",
+            "description": "The option type.",
+            "enum": [
+              "Array",
+              "Object",
+              "String",
+              "Number",
+              "Boolean",
+              "DateTime",
+              "File",
+              "MultiPart"
+            ],
+            "type": "string"
+          },
+          "pushOptionChoice": {
+            "title": "Push Option Choice",
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Allowed value for field."
+              },
+              "type": {
+                "$ref": "#/components/schemas/PushOption/definitions/pushOptionType"
+              },
+              "displayName": {
+                "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/displayName"
+              },
+              "description": {
+                "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/description"
+              },
+              "required": {
+                "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/required"
+              }
+            }
+          }
+        }
+      },
+      "SourceType": {
+        "title": "Source Type",
+        "x-internal": true,
+        "description": "The type of platform of the connection.",
+        "type": "string",
+        "enum": [
+          "Accounting",
+          "Banking",
+          "Commerce",
+          "Other",
+          "Unknown"
+        ],
+        "example": "Accounting"
+      },
       "SupplementalDataConfiguration": {
         "description": "",
         "title": "Supplemental data configuration",
@@ -4669,6 +4945,153 @@
             }
           }
         ]
+      },
+      "SyncSetting": {
+        "title": "SyncSetting",
+        "description": "Describes how often, and how much history, should be fetched for the given data type when a pull operation is queued.",
+        "examples": [
+          {
+            "dataType": "invoices",
+            "fetchOnFirstLink": true,
+            "syncSchedule": 24,
+            "syncOrder": 0,
+            "syncFromUtc": "2020-01-01T12:00:00.000Z",
+            "syncFromWindow": 24,
+            "monthsToSync": 24,
+            "isLocked": true
+          }
+        ],
+        "type": "object",
+        "properties": {
+          "dataType": {
+            "$ref": "#/components/schemas/DataStatus/properties/dataType"
+          },
+          "fetchOnFirstLink": {
+            "type": "boolean",
+            "description": "Whether this data type should be queued after a company has authorized a connection."
+          },
+          "syncSchedule": {
+            "type": "integer",
+            "example": 24,
+            "description": "Number of hours after which this data type should be refreshed."
+          },
+          "syncOrder": {
+            "type": "integer",
+            "description": "The sync in which data types are queued for a sync."
+          },
+          "syncFromUtc": {
+            "$ref": "#/components/schemas/DateTime",
+            "description": "Date from which data should be fetched. Set this *or* `syncFromWindow`."
+          },
+          "syncFromWindow": {
+            "type": "integer",
+            "example": 24,
+            "description": "Number of months of data to be fetched. Set this *or* `syncFromUTC`."
+          },
+          "monthsToSync": {
+            "type": "integer",
+            "example": 24,
+            "description": "Months of data to fetch, for report data types (`balanceSheet` & `profitAndLoss`) only."
+          },
+          "isLocked": {
+            "type": "boolean",
+            "description": "`True` if the [sync setting](https://docs.codat.io/knowledge-base/advanced-sync-settings) is locked."
+          }
+        },
+        "required": [
+          "dataType",
+          "fetchOnFirstLink",
+          "syncSchedule",
+          "syncOrder"
+        ]
+      },
+      "SyncSettings": {
+        "title": "Sync settings",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "clientId": {
+            "$ref": "#/components/schemas/ClientId"
+          },
+          "settings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SyncSetting"
+            }
+          },
+          "overridesDefaults": {
+            "type": "boolean",
+            "description": "Set to `True` if you want to override the default [sync settings](https://docs.codat.io/knowledge-base/advanced-sync-settings)."
+          }
+        }
+      },
+      "UpdateConnectionStatus": {
+        "title": "Update connection",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus",
+            "description": "The current authorization status of the data connection.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Webhook": {
+        "title": "Webhook",
+        "description": "Configuration to provide an event notification to a URL or list of email addresses based on the given type or condition.",
+        "type": "object",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "nullable": false,
+                "description": "Unique identifier for the configured notification.",
+                "example": "ff89c50e-a719-4ef5-a182-9917e53927b6"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/CreateRule"
+          }
+        ],
+        "examples": [
+          {
+            "id": "ff89c50e-a719-4ef5-a182-9917e53927b6",
+            "type": "DataConnectionStatusChanged",
+            "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
+            "notifiers": {
+              "emails": [
+                "info@client.com"
+              ],
+              "webhook": "https://webhook.client.com"
+            }
+          }
+        ]
+      },
+      "Webhooks": {
+        "title": "Webhooks",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Webhook"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PagingInfo"
+          }
+        ]
       }
     },
     "responses": {
@@ -4686,6 +5109,16 @@
                   "service": "ClientsApi",
                   "error": "Error parsing query - Malformed query.",
                   "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              },
+              "Unresolved property": {
+                "value": {
+                  "statusCode": 400,
+                  "service": "PullApi",
+                  "error": "Error parsing query - Could not resolve property isCompleted on Dataset",
+                  "correlationId": "98457fb9956b7f9b4b2fd4f6e23bb5c8",
                   "canBeRetried": "Unknown",
                   "detailedErrorCode": 0
                 }
@@ -4708,6 +5141,50 @@
                   "service": "PublicApi",
                   "error": "Unauthorized",
                   "correlationId": "7eb40d6b415d7bcd99ce658268284056",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Payment-Required": {
+        "description": "An account limit has been exceeded. The type of limit is described in the error property:\n\n- You have exceeded the 50-company limit that applies to a Free plan. Delete any companies you no longer need and retry the request.\n- The requested sync schedule is not allowed. You requested an hourly sync schedule but this functionality is not included in the Free plan.\n- Your Free account is older than 365 days and has expired. Contact support@codat.io.\n",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 429,
+                  "service": "PublicApi",
+                  "error": "You have exceeded the 50-company limit that applies to a Free plan. We recommend that you delete any companies you no longer need and retry the request.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "You are using an outdated API key or a key not associated with that resource.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 403,
+                  "service": "PublicApi",
+                  "error": "You are using an outdated API key or a key not associated with that resource.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
                   "canBeRetried": "Unknown",
                   "detailedErrorCode": 0
                 }
@@ -4771,6 +5248,50 @@
                   "statusCode": 429,
                   "service": "PublicApi",
                   "error": "You have made too many requests in a given amount of time; please retry later.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Internal-Server-Error": {
+        "description": "There is a problem with our server. Please try again later.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 500,
+                  "service": "PublicApi",
+                  "error": "There is a problem with our server. Please try again later.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Service-Unavailable": {
+        "description": "The Codat API is temporarily offline for maintenance. Please try again later.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 500,
+                  "service": "PublicApi",
+                  "error": "The Codat API is temporarily offline for maintenance. Please try again later.",
                   "correlationId": "bc997528a9d7abb9161ef45f05d38599",
                   "canBeRetried": "Unknown",
                   "detailedErrorCode": 0

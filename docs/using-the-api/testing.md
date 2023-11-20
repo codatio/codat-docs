@@ -8,9 +8,7 @@ Testing is a key component of any software development process, both during the 
 
 ## Using a test instance
 
-We recommend you use an additional instance of Codat for testing purposes. 
-
-For those on a **Start-up** plan, we automatically clone your existing client to create a test instance for you (if you upgraded after June 2023). We copy the following details and settings: 
+We recommend you use an additional instance of Codat for testing purposes. We work directly with our **Full access** clients to arrange test instance creation and copy the following details and settings: 
 
 * All users with access to the existing client
 * Client settings and feature overrides
@@ -20,11 +18,7 @@ For those on a **Start-up** plan, we automatically clone your existing client to
 * Webhook rules and settings
 * Auth flow settings
 
-We work directly with our **Enterprise** clients to arrange test instance creation. 
-
 Users can switch between the production client and the test client by using the client dropdown in the [Codat Portal](https://app.codat.io/). 
-
-![](/img/introduction/0026-client-selection.png)
 
 ### Tips and pitfalls
 
@@ -53,11 +47,6 @@ When testing your integrations throughout the implementation, it is important to
 We recommend using **Codat Sandbox** integrations that contain sample data generated as a tool for developer testing. When you link to these integrations, you can choose from a number of different datasets that provide varying levels of detail. These integrations are enabled by default and do not require any credentials to authorize.
 
 You can also sign up and test with **Xero** and **QuickBooks Online**, both of which offer demo or sandbox companies equipped with sample data. Other integrations also provide free trials in order to test the connections, but may not provide sample data.
-
-:::info Testing in production instance
-
-In your production instance, active companies that are connected only to Codat Sandbox or QuickBooks Online Sandbox are excluded from billing.
-:::
 
 ### Overview of integrations' test accounts
 

@@ -52,8 +52,6 @@ If QuickBooks Desktop is open on the SMB user's machine, the open QuickBooks com
 
 Only one instance of QBD can be open on a user's machine at a time.
 
-If QuickBooks Desktop is closed on the user's machine, syncing will only occur if the relevant option is selected when you [authorize the connector to access QuickBooks](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector#4-authorize-the-connector-to-access-quickbooks).
-
 ## Supported operating systems
 
 The Codat QuickBooks Desktop Connector is supported for QuickBooks running on Windows 10 or Windows 11 with the latest service pack(s) installed.

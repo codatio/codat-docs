@@ -12,7 +12,7 @@
 
 .rc-tooltip {
   opacity: 1;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .rc-tooltip-hidden {
@@ -22,11 +22,12 @@
 .mytooltip {
   font: inherit;
   transition: 0.5s;
-  padding: 8px;
-  border-radius: 8px;
+  padding: 1em;
+  border-radius: 4px;
   border: 2px solid #efefef;
   background: rgba(255, 255, 255, 0.98);
   box-shadow: 0px 5px 13px #00000026;
+  max-width: min(500px, 95vw);
   
   >*:last-child {
     margin-bottom: 0;

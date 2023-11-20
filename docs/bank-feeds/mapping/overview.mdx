@@ -1,0 +1,42 @@
+---
+title: "Map accounts and establish a bank feed"
+description: "Review and select the options available to you to provide an account mapping interface to your SMB customer and establish a bank feed"
+sidebar_label: Map accounts
+displayed_sidebar: bankfeeds
+---
+
+import {IntegrationsList} from '@components/global/Integrations';
+import {bankfeedsInternalMappingIntegrations, bankfeedsIntegrations} from '@components/global/Integrations/integrations'
+
+Once you have created the source account, provide your customer with a user interface (UI) so they can select the target accounts in their accounting platform. This will tell us where exactly a bank feed should be established. You can use one of the following options to provide the mapping UI:
+
+### Map using our interface
+##### [Learn more →](/bank-feeds/mapping/codat-ui)
+
+Use our pre-built mapping interface to launch your app with minimal development effort. It is designed to meet all third-party requirements and supports logo and primary color scheme customization. 
+
+<IntegrationsList integrations={bankfeedsInternalMappingIntegrations}/>
+
+---
+### Map using our API
+##### [Learn more →](/bank-feeds/mapping/api-mapping)
+
+For a more integrated user experience, you can build your own interface using our API's account mapping endpoints so that your users can map their accounts directly within your application. 
+
+<IntegrationsList integrations={bankfeedsInternalMappingIntegrations}/>
+
+---
+
+### Platform-specific mapping
+
+Integrations listed in this section require that the account mapping is conducted within the accounting platform itself. Follow our integration-specific bank feed guides to learn more about their prerequisites, functionality, and implementation details.
+
+<IntegrationsList filter={['QuickBooks Online bank feeds','Sage bank feeds']} />
+
+---
+
+## Read next
+  
+* [Codat's pre-built interface](/bank-feeds/mapping/codat-ui)
+* [Build your own interface with our API](/bank-feeds/mapping/api-mapping)
+* [QuickBooks Online](/bank-feeds/integrations/qbo/qbo-mapping) and [Sage](/bank-feeds/integrations/sage/sage-mapping)'s own interfaces
