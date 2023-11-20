@@ -11,7 +11,7 @@ Our current guides and tutorials:
   <li className="card mini">
     <div className="card-row">
       <div className="header">
-        <a href="/lending/guides/invoice-finance/introduction">
+        <a href="/guides/retool-dashboard">
           <img
             src="/img/logos/usecases/lending.svg"
             className="icon usecase"
