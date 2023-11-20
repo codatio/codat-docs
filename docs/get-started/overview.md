@@ -165,4 +165,24 @@ description: "Take your first steps through the information and support availabl
     </div>
     <p>Save your customers' time by automating bank transaction reconciliation</p>
   </li>
+    <li className="card mini">
+    <div className="card-row">
+      <div className="header">
+        <a href="/lending/guides/loan-qualification/introduction">
+          <img
+            src="/img/logos/usecases/lending.svg"
+            className="icon usecase"
+          />
+        </a>
+      </div>
+      
+      <div className="content">
+        <h4>Loan qualification</h4>
+        <p>
+          <a href="/lending/guides/loan-qualification/introduction">Follow the guide →</a>
+        </p>    
+      </div>
+    </div>
+    <p>See how Codat helps check a loan applicant’s finances and automate decision-making</p>
+  </li>
 </ul>
