@@ -90,7 +90,7 @@ Select the **Codat Sandbox** as the source of accounting data.
 
 💰 This step is normally performed by the lender.
 
-The demo app makes use of the categorization feature of [Lending](/lending/overview). When fetching financial data, Codat’s Lending product analyses the full list of a company's accounts and assigns a category to each account. While it is able to automatically categorize most of the source accounts, it is not always possible, and manual intervention may be required. 
+The demo app makes use of the categorization feature of [Lending API](/lending/overview). When fetching financial data, Codat’s Lending product analyses the full list of a company's accounts and assigns a category to each account. While it is able to automatically categorize most of the source accounts, it is not always possible, and manual intervention may be required. 
 
 In our demo, all accounts are successfully categorized. However, your underwriter may want to review the suggested categories before continuing on with the assessment. This can be done on the [Companies page](https://app.codat.io/companies) of the Portal. Click on the company you are performing loan qualification for, and navigate to **Lending > Categorize accounts**.
 
@@ -111,7 +111,7 @@ The demo app now has all the components that it needs to produce a loan qualific
 
 Try these suggestions to make the most of your experience with the demo app:
 
-- **View Lending in the Portal**  
+- **View Lending API in the Portal**  
   Navigate to **Products > Lending** in the [Portal](https://app.codat.io/) to view a visual representation of the financial data pulled by our endpoints, including `balanceSheet` and `profitAndLoss`.
   
 - **Play around with thresholds**  
