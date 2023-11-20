@@ -92,15 +92,11 @@ Select the **Codat Sandbox** as the source of accounting data.
 
 The demo app makes use of the categorization feature of [Lending](/lending/overview). When fetching financial data, Codat’s Lending product analyses the full list of a company's accounts and assigns a category to each account. While it is able to automatically categorize most of the source accounts, it is not always possible, and manual intervention may be required. 
 
-In our demo, all accounts are successfully categorized. However, your underwriter may want to review the suggested categories before continuing on with the assessment.
-
-They can do this by navigating to the [companies page](https://app.codat.io/companies) of the portal.
-Next, click on the company you are performing loan qualification for, and navigate to **Lending > Categorize accounts**.
+In our demo, all accounts are successfully categorized. However, your underwriter may want to review the suggested categories before continuing on with the assessment. This can be done on the [Companies page](https://app.codat.io/companies) of the Portal. Click on the company you are performing loan qualification for, and navigate to **Lending > Categorize accounts**.
 
 ![Example account categorization view](/img/use-cases/loan-qualification/account-categorization-view.png)
 
-This takes you to the **Account categorization** page which displays the categorized accounts.
-Take a look and check that you are happy with Codat's suggestions or override a suggestion by selecting the tick box and re-categorize.
+This takes you to the **Account categorization** page which displays the categorized accounts. Check that you are happy with Codat's suggestions or override a suggestion by selecting the account's checkbox and clicking **Recategorize**.
 
 ![Example account re-categorization](/img/use-cases/loan-qualification/account-categorization-recategorization.png)
 
