@@ -138,6 +138,10 @@ Our Lending API empowers you with a host of features to help you streamline your
 
 <IntegrationsList integrations={commerceIntegrations} />  
 
+## Build with client libraries
+
+Use our [comprehensive SDKs](/get-started/libraries) to kick-start and simplify your developers' journey automating the collection of your customers' financial data and making an assessment of a small business's financial health and performance. The SDKs come in multiple languages and provide sample requests and responses for the full range of lending and underwriting scenarios.
+
 ---
 ## Read next
 
