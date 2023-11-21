@@ -17,7 +17,9 @@ banner_text: "Easily deploy an automated bank statement feed into your applicati
 ---
 
 import {IntegrationsList} from '@components/global/Integrations'
-import {bankfeedsIntegrations} from '@components/global/Integrations/integrations'  
+import {bankfeedsIntegrations} from '@components/global/Integrations/integrations'
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem"
 
 ## What is it?
 
@@ -119,6 +121,51 @@ Once your SMB customer completes the authorization and account mapping process, 
 </div>
 
 ---
+
+## Build with client libraries
+
+Use our comprehensive [Bank Feeds library](/get-started/libraries) to kick-start and simplify your build.
+Simply install the library in any of the supported lanaguages.
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+##### NPM
+```sh
+npm add @codat/bank-feeds
+```
+
+##### Yarn
+```sh
+yarn add @codat/bank-feeds
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```sh
+pip install codat-bankfeeds
+```
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```sh
+dotnet add package Codat.BankFeeds
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```sh
+go get github.com/codatio/client-sdk-go/bank-feeds
+```
+</TabItem>
+
+</Tabs>
+
 
 ## Read next
 

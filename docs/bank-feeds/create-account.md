@@ -24,7 +24,8 @@ Remember to [authenticate](/using-the-api/authentication) when making calls to o
 
 Within Bank Feeds API, a company represents your SMB customer that wishes to export their transactions from your application to their accounting software. 
 
-To create it, use our [Create company](/bank-feeds-api#/operations/create-company) endpoint. It returns a JSON response containing the company `id`. You will use this `id` to establish a connection to an accounting platform. 
+Use the [Create company](/bank-feeds-api#/operations/create-company) endpoint to represent your customer in Codat.
+Make sure to store the company ID as you will use it to establish a connection to an accounting platform. 
 
 <Tabs>
 
