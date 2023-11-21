@@ -10,7 +10,7 @@ import TabItem from "@theme/TabItem"
 
 ## Overview
 
-Once the mapping is complete, your SMB customer will make a payment from your application, which you should then record and reconcile back to the SMB's accounting platform. 
+Once the mapping is complete, your SMB customer will make a payment from your application, which you should then record and reconcile back to the SMB's accounting platform. A **bill payment** represents an allocation of money within any of your customer's accounts payable (AP) accounts.
 
 You can see how this flow completes on our detailed process diagram below. 
 
@@ -25,61 +25,15 @@ You can see how this flow completes on our detailed process diagram below.
       participant codat as Codat
       participant acctg as Accounting platform
       
-      smb ->> app: Logs into application
-      smb ->> app: Initiates connection to accounting software
-
-      app ->> codat: Passes company and connection details
-      app ->> codat: Initiates auth flow
-      codat -->> smb: Displays auth flow
-      smb -->> codat: Authorizes connection
-      codat ->> acctg: Establishes connection
-
-      alt Retrieve suppliers
-        app ->> codat: Requests details of existing suppliers
-        codat ->> acctg: Fetches suppliers
-        acctg -->> codat: Returns suppliers
-        codat ->> app: Returns suppliers
-        app ->> smb: Displays suppliers
-        smb ->> app: Selects supplier
-      else Create supplier
-        smb ->> app: Provides supplier details
-        app ->> codat: Creates supplier
-        codat ->> acctg: Creates supplier record
-      end
-     
-      alt Retrieve bills
-        codat ->> acctg: Fetches existing bills
-        acctg -->> codat: Returns existing bills
-        codat ->> app: Returns existing bills
-        app ->> smb: Displays existing bills
-      else Create bill
-        app ->> codat: Creates bill
-        codat ->> acctg: Creates bill
-      end
-
-      alt Retrieve bank accounts
-        codat ->> acctg: Fetches existing bank accounts
-        acctg -->> codat: Returns existing bank accounts
-        codat ->> app: Returns existing bank accounts
-        app ->> smb: Displays existing bank accounts
-      else Create bank account
-        app ->> codat: Creates bank account
-        codat ->> acctg: Creates bank account
-      end
-      app ->> smb: Displays payment method mapping
-      smb ->> app: Maps payment methods
-
-      rect rgb(242, 230, 247) 
       smb ->> app: Pays a bill
-      app ->> codat: Records bill payment
-      codat ->> acctg: Reconciles bill payment
+      app ->> codat: Creates bill payment
+      codat ->> acctg: Records bill payment
       acctg ->> smb: Displays paid bill
-      end
 ```
 
 </details>
 
-A **bill payment** in Codat represents an allocation of money within any of your customer's accounts payable (AP) accounts. We built Sync for Payables to handle various bill pay scenarios, for example:
+We built Sync for Payables to handle various bill pay scenarios, for example:
 
 - A payment made against a bill, e.g. a credit card payment, cheque payment, or cash payment
 - An allocation of a supplier's credit note to a bill or a refund

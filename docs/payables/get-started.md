@@ -36,15 +36,15 @@ graph TD
     G --> H(Reconcile payments)
 ```
 
-## Configure Sync for Payables
-
 Once you decide to build with Sync for Payables, you need to configure Codat accordingly. Let's go through these requirements in detail.
 
-### Enable the product
+## Enable Sync for Payables
 
 1. Open the <a href="https://app.codat.io" target="_blank">Codat Portal</a> and sign in.
 2. Click on **Settings > Organizational settings > Products**.
 3. In the list of products, find _Sync for Payables_ and click **Enable**. Then, follow the on-screen prompt.
+
+## Configure Sync for Payables
 
 ### Data types
 

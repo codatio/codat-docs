@@ -28,53 +28,12 @@ We have highlighted this sequence of steps in our detailed process diagram below
       smb ->> app: Logs into application
       smb ->> app: Initiates connection to accounting software
 
-      rect rgb(242, 230, 247)
         app ->> codat: Passes company and connection details
+        codat ->> codat: Creates company and connection
         app ->> codat: Initiates auth flow
         codat -->> smb: Displays auth flow
         smb -->> codat: Authorizes connection
         codat ->> acctg: Establishes connection
-      end
-
-      alt Retrieve suppliers
-        app ->> codat: Requests details of existing suppliers
-        codat ->> acctg: Fetches suppliers
-        acctg -->> codat: Returns suppliers
-        codat ->> app: Returns suppliers
-        app ->> smb: Displays suppliers
-        smb ->> app: Selects supplier
-      else Create supplier
-        smb ->> app: Provides supplier details
-        app ->> codat: Creates supplier
-        codat ->> acctg: Creates supplier record
-      end
-
-      alt Retrieve bills
-        codat ->> acctg: Fetches existing bills
-        acctg -->> codat: Returns existing bills
-        codat ->> app: Returns existing bills
-        app ->> smb: Displays existing bills
-      else Create bill
-        app ->> codat: Creates bill
-        codat ->> acctg: Creates bill
-      end
-
-      alt Retrieve bank accounts
-        codat ->> acctg: Fetches existing bank accounts
-        acctg -->> codat: Returns existing bank accounts
-        codat ->> app: Returns existing bank accounts
-        app ->> smb: Displays existing bank accounts
-      else Create bank account
-        app ->> codat: Creates bank account
-        codat ->> acctg: Creates bank account
-      end
-      app ->> smb: Displays payment method mapping
-      smb ->> app: Maps payment methods
-
-      smb ->> app: Pays a bill
-      app ->> codat: Records bill payment
-      codat ->> acctg: Reconciles bill payment
-      acctg ->> smb: Displays paid bill
 ```
 
 </details>  
@@ -97,7 +56,7 @@ Within Sync for Payables, a company represents your SMB customer that pays and m
 POST /companies
 
 {
-    "name": "{CompanyName}"
+    "name": "{companyName}"
 }
 ```
 
@@ -158,7 +117,7 @@ POST /companies/{companyId}/connections
   "integrationId": "6b113e06-e818-45d7-977b-8e6bb3d01269",
   "sourceId": "56e6575a-3f1f-4918-b009-f7535555f0d6",
   "platformName": "QuickBooks Online",
-  "linkUrl": "https://link-api.codat.io/companies/COMPANY_ID/connections/CONNECTION_ID/start?otp=742271", 
+  "linkUrl": "https://link-api.codat.io/companies/{companyId}/connections/{connectionId}/start?otp=742271",  
   "status": "PendingAuth",
   "created": "2022-09-01T10:21:57.0807447Z",
   "sourceType": "Accounting"

@@ -34,9 +34,9 @@ sequenceDiagram
     
     user ->> backend: View bills
     Note over user,backend: Launch Bills Portal
-    backend ->> codat: Fetch bills
+    backend ->> codat: Get/list bills
     codat -->> backend: Bills
-    backend ->> codat: Fetch accounts
+    backend ->> codat: Get/list accounts
     codat -->> backend: Accounts (banking only)
     backend ->> user: View paid/unpaid bills
     

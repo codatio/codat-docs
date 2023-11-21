@@ -5,7 +5,7 @@ description: "Use this guide and the accompanying demo app to streamline your cu
 
 :::tip Who is this guide for?
 
-This guide is for developers building a bill payment solution or other applications using Accounts Payable data. The app is intended for demo use only.
+This guide is for developers building a bill payment solution or other applications using Accounts Payable data. The app demonstrates an example solution you could build.
 
 :::
 

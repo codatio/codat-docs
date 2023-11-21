@@ -32,30 +32,7 @@ We have highlighted this alternative sequence of steps in our detailed process d
       participant app as Your application 
       participant codat as Codat
       participant acctg as Accounting platform
-      
-      smb ->> app: Logs into application
-      smb ->> app: Initiates connection to accounting software
-
-      app ->> codat: Passes company and connection details
-      app ->> codat: Initiates auth flow
-      codat -->> smb: Displays auth flow
-      smb -->> codat: Authorizes connection
-      codat ->> acctg: Establishes connection
-
-      alt Retrieve suppliers
-        app ->> codat: Requests details of existing suppliers
-        codat ->> acctg: Fetches suppliers
-        acctg -->> codat: Returns suppliers
-        codat ->> app: Returns suppliers
-        app ->> smb: Displays suppliers
-        smb ->> app: Selects supplier
-      else Create supplier
-        smb ->> app: Provides supplier details
-        app ->> codat: Creates supplier
-        codat ->> acctg: Creates supplier record
-      end
-
-      rect rgb(242, 230, 247)      
+         
       alt Retrieve bills
         codat ->> acctg: Fetches existing bills
         acctg -->> codat: Returns existing bills
@@ -65,24 +42,6 @@ We have highlighted this alternative sequence of steps in our detailed process d
         app ->> codat: Creates bill
         codat ->> acctg: Creates bill
       end
-      end
-
-      alt Retrieve bank accounts
-        codat ->> acctg: Fetches existing bank accounts
-        acctg -->> codat: Returns existing bank accounts
-        codat ->> app: Returns existing bank accounts
-        app ->> smb: Displays existing bank accounts
-      else Create bank account
-        app ->> codat: Creates bank account
-        codat ->> acctg: Creates bank account
-      end
-      app ->> smb: Displays payment method mapping
-      smb ->> app: Maps payment methods
-
-      smb ->> app: Pays a bill
-      app ->> codat: Records bill payment
-      codat ->> acctg: Reconciles bill payment
-      acctg ->> smb: Displays paid bill
 ```
 
 </details>
