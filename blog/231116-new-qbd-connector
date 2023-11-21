@@ -27,11 +27,22 @@ If you have existing QBD connections share the existing link url with your SMB c
 :::tip Link URL
 
 To find an existing connections link url either:
+
+##Via Portal
+
 - Navigate to "Companies" tab in the Codat Portal and find the required company
+
 - Select the connections button
+
+// ![](/img/somewhere/QBD-Company-Connection.png)
+
 - Select the "Manage" button, this will reveal the link url
 
-- 
+// ![](/img/somewhere/QBD-Company-Connection-URL.png)
+
+##Via API
+
+- Calling [List connections](https://docs.codat.io/platform-api#/operations/list-connections) will return your connections, including the `linkUrl` value within each connection object.
 
 :::
 
