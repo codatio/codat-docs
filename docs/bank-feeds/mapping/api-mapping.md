@@ -14,7 +14,7 @@ You can enable your users to map their accounts directly within your own applica
 
 ## List account options
 
-In preparation, set up your [redirect parameters](/auth-flow/customize/set-up-redirects) to refer to the mapping page of your application. Then, direct your customer to the `linkUrl` returned in the [Create a connection](/bank-feeds/create-account#create-a-connection) response. After they authorize your access to their accounting software, they'll be guided your application.
+In preparation, set up your [redirect parameters](/auth-flow/customize/set-up-redirects) to refer to the mapping page of your application. Then, direct your customer to the `linkUrl` returned in the [Create a connection](/bank-feeds/create-account#create-a-connection) response. After they authorize your access to their accounting software, they'll be guided to your application.
 
 Use the [List bank feed account mappings](/bank-feeds-api#/operations/get-bank-account-mapping) endpoint to retrieve a list of valid target accounts available to map the company's source account and display these to your user. 
 
@@ -22,109 +22,83 @@ These options are filtered based on the currency and the type of the source acco
 
 <Tabs>
 
-<TabItem value="HTTP" label="HTTP">
+<TabItem value="nodejs" label="TypeScript">
 
-#### Request
-
-```http
-GET /companies/{companyId}/connections/{connectionId}/bankFeedAccounts/mapping
+```javascript
+const mappingResponse = bankFeedsClient.accountMapping.get({
+    companyId: companyResponse.company.id,
+    connectionId: connectionResponse.connection.id
+  });
 ```
-    
-#### Response
 
-Example Xero mapping response body:
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+mapping_request = operations.GetBankAccountMappingRequest(
+    company_id=company_response.company.id,
+    connection_id=connection_response.connection.id
+)
+
+mapping_response = s.account_mapping.get(mapping_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var mappingResponse = await sdk.AccountMapping.GetAsync(new() {
+	CompanyId = companyResponse.Company.Id,
+    ConnectionId = connectionResponse.Connection.Id
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+mappingResponse, err := s.AccountMapping.Get(ctx, operations.GetBankAccountMappingRequest{
+    CompanyID: companyResponse.Company.ID,
+    ConnectionID: connectionResponse.Connection.ID
+})
+```
+</TabItem>
+
+</Tabs>
+
+#### Example Xero Response
 
 ```json
-  [
+[
 	{
-	"sourceAccountId": "39aaec5d-f3c1-4d15-a8d8-73c27d7fdef8",
-	"targetAccountId": "a0aa9c9c-8a76-44a8-9991-7ae8103a40d7",
-	"feedStartDate": "2023-09-12T00:00:00",
-	"status": "connected",
-	"targetAccountOptions": [
-		{
-			"name": "SavingsBankPro",
-			"id": "a0aa9c9c-8a76-44a8-9991-7ae8103a40d7",
-			"accountNumber": "4243"
-		},
-		{
-			"name": "WaveCrestFinance",
-			"id": "57ab0173-3381-4be8-afd5-dfa48b3b0bb6",
-			"accountNumber": "77"
-		},
-		{
-			"name": "ZenithBanking",
-			"id": "195e6138-79ac-4ad4-8724-b7c9a1f90f9f",
-			"accountNumber": "1234"
-		},
-		{
-			"name": "CosmicCreditUnion",
-			"id": "2254eaa8-ddf0-4b2f-ba52-efb3bf7f338f",
-			"accountNumber": "5670"
-		},
-		{
-			"name": "VertexCapital",
-			"id": "0d62ba1a-b62a-4d4e-b3a2-2fccb0345523",
-			"accountNumber": "5678"
-		},
-		{
-			"name": "VertexCapital#Gold",
-			"id": "aa635648-99cf-4ab0-bfba-2a1128f7b521",
-			"accountNumber": "5679"
-		}
-	],
-	"sourceAccountName": "source-account-1",
-	"sourceAccountNumber": "4243",
-	"sourceBalance": 100,
-	"sourceCurrency": "GBP",
-	"targetAccountName": "SavingsBankPro",
-	"targetAccountNumber": "4243"
-    },
-	{
-	"sourceAccountId": "e7569bca-85a1-4b9f-9006-219a486e9cc3",
-	"status": "pending",
-	"targetAccountOptions": [
-		{
-			"name": "SavingsBankPro",
-			"id": "a0aa9c9c-8a76-44a8-9991-7ae8103a40d7",
-			"accountNumber": "4243"
-		},
-		{
-			"name": "WaveCrestFinance",
-			"id": "57ab0173-3381-4be8-afd5-dfa48b3b0bb6",
-			"accountNumber": "77"
-		},
-		{
-			"name": "ZenithBanking",
-			"id": "195e6138-79ac-4ad4-8724-b7c9a1f90f9f",
-			"accountNumber": "1234"
-		},
-		{
-			"name": "CosmicCreditUnion",
-			"id": "2254eaa8-ddf0-4b2f-ba52-efb3bf7f338f",
-			"accountNumber": "5670"
-		},
-		{
-			"name": "VertexCapital",
-			"id": "0d62ba1a-b62a-4d4e-b3a2-2fccb0345523",
-			"accountNumber": "5678"
-		},
-		{
-			"name": "VertexCapital#Gold",
-			"id": "aa635648-99cf-4ab0-bfba-2a1128f7b521",
-			"accountNumber": "5679"
-		}
+		"sourceAccountId": "39aaec5d-f3c1-4d15-a8d8-73c27d7fdef8",
+		"sourceAccountNumber": "4243",
+		"sourceAccountName": "source-account-1",
+		"sourceBalance": 100,
+		"sourceCurrency": "GBP",
+		"targetAccountId": "a0aa9c9c-8a76-44a8-9991-7ae8103a40d7",
+		"targetAccountName": "SavingsBankPro",
+		"status": "connected",
+		"targetAccountOptions": [
+			{
+				"name": "SavingsBankPro",
+				"id": "a0aa9c9c-8a76-44a8-9991-7ae8103a40d7",
+				"accountNumber": "4243"
+			},
+			{
+				"name": "WaveCrestFinance",
+				"id": "57ab0173-3381-4be8-afd5-dfa48b3b0bb6",
+				"accountNumber": "77"
+			}
 		],
-	"sourceAccountName": "source-account-2",
-	"sourceAccountNumber": "4243",
-	"sourceBalance": 100,
-	"sourceCurrency": "GBP"
+		"feedStartDate": "2023-09-12T00:00:00",
 	}
 ]
 ```
-</TabItem >
-
-</Tabs>
 
 ## Save account mapping
 
@@ -201,110 +175,82 @@ POST /companies/{companyId}/connections/{connectionId}/bankFeedAccounts/mapping
 
 Sometimes the mapping isn't immediately saved to the underlying accounting platform and its status in the request remains `pending`. 
 
-Query the [List bank feed account mappings](/bank-feeds-api#/operations/get-bank-account-mapping) endpoint repeatedly until the status changes to `connected`. You can then proceed to create bank transactions in the target account.
+Poll the [List bank feed account mappings](/bank-feeds-api#/operations/get-bank-account-mapping) endpoint until the status changes to `connected`. You can then proceed to create bank transactions in the target account.
 
 <Tabs>
 
-<TabItem value="HTTP" label="HTTP">
+<TabItem value="nodejs" label="TypeScript">
 
-#### Request
+```javascript
+const status = ""
+while(status !== "connected"){
+	const mappingResponse = bankFeedsClient.accountMapping.get({
+		companyId: companyResponse.company.id,
+		connectionId: connectionResponse.connection.id
+	});
 
-```http
-GET /companies/{companyId}/connections/{connectionId}/bankFeedAccounts/mapping
-```
-#### Response
-
-In this example Xero mapping response body, you can see that the source account `39aaec5d-f3c1-4d15-a8d8-73c27d7fdef8` has been successfully mapped.
-
-```json
-  [
-	{
-	"sourceAccountId": "39aaec5d-f3c1-4d15-a8d8-73c27d7fdef8",
-	"targetAccountId": "a0aa9c9c-8a76-44a8-9991-7ae8103a40d7",
-	"feedStartDate": "2023-09-12T00:00:00",
-	"status": "connected",
-	"targetAccountOptions": [
-		{
-			"name": "SavingsBankPro",
-			"id": "a0aa9c9c-8a76-44a8-9991-7ae8103a40d7",
-			"accountNumber": "4243"
-		},
-		{
-			"name": "WaveCrestFinance",
-			"id": "57ab0173-3381-4be8-afd5-dfa48b3b0bb6",
-			"accountNumber": "77"
-		},
-		{
-			"name": "ZenithBanking",
-			"id": "195e6138-79ac-4ad4-8724-b7c9a1f90f9f",
-			"accountNumber": "1234"
-		},
-		{
-			"name": "CosmicCreditUnion",
-			"id": "2254eaa8-ddf0-4b2f-ba52-efb3bf7f338f",
-			"accountNumber": "5670"
-		},
-		{
-			"name": "VertexCapital",
-			"id": "0d62ba1a-b62a-4d4e-b3a2-2fccb0345523",
-			"accountNumber": "5678"
-		},
-		{
-			"name": "VertexCapital#Gold",
-			"id": "aa635648-99cf-4ab0-bfba-2a1128f7b521",
-			"accountNumber": "5679"
-		}
-		],
-	"sourceAccountName": "source-account-1",
-	"sourceAccountNumber": "4243",
-	"sourceBalance": 100,
-	"sourceCurrency": "GBP",
-	"targetAccountName": "SavingsBankPro",
-	"targetAccountNumber": "4243"
-	},
-	{
-	"sourceAccountId": "e7569bca-85a1-4b9f-9006-219a486e9cc3",
-	"status": "pending",
-	"targetAccountOptions": [
-		{
-			"name": "SavingsBankPro",
-			"id": "a0aa9c9c-8a76-44a8-9991-7ae8103a40d7",
-			"accountNumber": "4243"
-		},
-		{
-			"name": "WaveCrestFinance",
-			"id": "57ab0173-3381-4be8-afd5-dfa48b3b0bb6",
-			"accountNumber": "77"
-		},
-		{
-			"name": "ZenithBanking",
-			"id": "195e6138-79ac-4ad4-8724-b7c9a1f90f9f",
-			"accountNumber": "1234"
-		},
-		{
-			"name": "CosmicCreditUnion",
-			"id": "2254eaa8-ddf0-4b2f-ba52-efb3bf7f338f",
-			"accountNumber": "5670"
-		},
-		{
-			"name": "VertexCapital",
-			"id": "0d62ba1a-b62a-4d4e-b3a2-2fccb0345523",
-			"accountNumber": "5678"
-		},
-		{
-			"name": "VertexCapital#Gold",
-			"id": "aa635648-99cf-4ab0-bfba-2a1128f7b521",
-			"accountNumber": "5679"
-		}
-	],
-	"sourceAccountName": "source-account-2",
-	"sourceAccountNumber": "4243",
-	"sourceBalance": 100,
-	"sourceCurrency": "GBP"
+	if(mappingResponse.statusCode == 200){
+		status = mappingResponse.bankFeedMapping.status
 	}
-]
+}
 ```
-</TabItem >
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+mapping_request = operations.GetBankAccountMappingRequest(
+    company_id=company_response.company.id,
+    connection_id=connection_response.connection.id
+)
+
+status = ''
+while status != 'connected':
+	mapping_response = bank_feeds_client.account_mapping.get(mapping_request)
+	
+	if mapping_response.status_code == 200:
+		status = mapping_response.bankFeedMapping.status
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var status = "";
+while (!status.Equals("connected"))
+{
+	var mappingResponse = await bankFeedsClient.AccountMapping.GetAsync(new() {
+		CompanyId = companyResponse.Company.Id,
+		ConnectionId = connectionResponse.Connection.Id
+	});
+
+	if(mappingResponse.StatusCode == 200){
+		status = mappingResponse.BankFeedMapping.Status;
+	}
+}
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+status := ""
+for status != "connected" {
+	ctx := context.Background()
+	mappingResponse, err := bankFeedsClient.AccountMapping.Get(ctx, operations.GetBankAccountMappingRequest{
+		CompanyID: companyResponse.Company.ID,
+    	ConnectionID: connectionResponse.Connection.ID
+	})
+
+	if mappingResponse.StatusCode == 200 {
+		status = mappingResponse.BankFeedMapping.Status
+	}
+}
+```
+</TabItem>
 
 </Tabs>
 
