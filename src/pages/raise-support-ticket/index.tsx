@@ -5,7 +5,6 @@ import Logo from "@theme/Logo";
 import { useState } from "react";
 import axios from "axios";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import formConfig from "./formconfig";
 
 import styles from "../../components/global/Api/styles.module.scss";
 import localstyles from "./styles.module.scss";
@@ -21,7 +20,26 @@ const RaiseSupportTicket = () => {
     useCase: "",
   });
 
-  const customFields = formConfig();
+  const useCaseField = {
+    name: "Use case",
+    id: "12609122281501",
+    options: [
+      { display: "", tag: "" },
+      { display: "Automating Payables", tag: "automating_payable" },
+      { display: "Bank feeds", tag: "bank_feeds" },
+    ],
+  };
+  const affectedCompaniesField = {
+    name: "Companies affected",
+    id: "12609266963485",
+    options: [
+      { display: "", tag: "" },
+      { display: "1", tag: "1_affected_companies" },
+      { display: "2-10", tag: "2-10_affected_companies" },
+      { display: "11-50", tag: "11-50_affected_companies" },
+      { display: "50+", tag: "50_and_up_affected_companies" },
+    ],
+  };
 
   const handleChange = (event) => {
     setForm({
@@ -47,18 +65,18 @@ const RaiseSupportTicket = () => {
         },
         subject: form.subject,
         comment: { body: form.description },
-        ticket_form_id: customFields.formId,
+        ticket_form_id: 12605573765661,
         custom_fields: [
           {
-            id: customFields.companyId.id,
+            id: 9776596471197,
             value: form.companyId,
           },
           {
-            id: customFields.affectedCompanies.id,
+            id: affectedCompaniesField.id,
             value: `${form.affectedCompanies}`,
           },
           {
-            id: customFields.useCase.id,
+            id: useCaseField.id,
             value: `${form.useCase}`,
           },
         ],
@@ -136,7 +154,7 @@ const RaiseSupportTicket = () => {
                 value={form.affectedCompanies}
                 onChange={handleChange}
               >
-                {customFields.affectedCompanies.options.map((opt) => (
+                {affectedCompaniesField.options.map((opt) => (
                   <option key={opt.tag} value={opt.tag}>
                     {opt.display}
                   </option>
@@ -152,7 +170,7 @@ const RaiseSupportTicket = () => {
                 value={form.useCase}
                 onChange={handleChange}
               >
-                {customFields.useCase.options.map((opt) => (
+                {useCaseField.options.map((opt) => (
                   <option key={opt.tag} value={opt.tag}>
                     {opt.display}
                   </option>
