@@ -79,7 +79,7 @@ const RaiseSupportTicket = () => {
               >
                 contact our sales team
               </a>{" "}
-              to schedule a demo and learn about Enterprise Pricing
+              to schedule a demo and learn about Enterprise pricing
               opportunities.
             </p>
           </li>
