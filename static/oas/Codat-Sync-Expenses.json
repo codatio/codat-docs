@@ -13240,6 +13240,7 @@
               "directCosts",
               "directIncomes",
               "invoices",
+              "itemReceipts",
               "items",
               "journalEntries",
               "journals",
