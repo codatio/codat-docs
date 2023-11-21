@@ -7,27 +7,32 @@ authors: ajacksoncodat
 
 We've released a new QuickBooks Desktop integration utilizing Intuit's Web Connector for a simpler and faster SMB link journey.
 
-As of xxx date all new connectors will use this new flow.
+As of xxx date all new connections to QBD will use this new flow.
 
 <!--truncate-->
 
 ## What's changed?
 
-- Replaced old bespoke app with new blah
-- Reduced the number of installation steps for SMB users in the link flow, now performing the installation via a web browser
-- Simplified the processes to connect to QuickBooks Desktop on Right Networks or QuickBooks Enterprise for cloud, now you no longer need to go through the RN application process.
-- Better diagnostics to triage connector issues
+- Replaced the existing bespoke Codat connector application used in the link flow with Intuit's QuickBooks Web Connector.
+- Reduced the number of installation steps for SMB users in the link flow and moved this to a web browser.
+- Simplified the process to connect to a QuickBooks Desktop instance on hosted environments Right Networks and QuickBooks Enterprise for cloud, now you no longer need to go through the RN application process.
+- Better diagnostics to triage connector issues.
 
-Read more about this in xxx
+More details can be found in [QuickBooks Desktop (on-premise)](https://docs.codat.io/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop)
 
 ## What does this mean for you?
 
-If you have existing QBD connections share the existing link url (screenshot) with your SMB customers to trigger the new flow. This will initiate the new flow, completition of which will establish the new connector.
+If you have existing QBD connections share the existing link url with your SMB customers, this will initiate the new flow, completition of which will establish the new connector.
 
 :::tip Link URL
 
-To locate existing link urls do this...
+To find an existing connections link url either:
+- Navigate to "Companies" tab in the Codat Portal and find the required company
+- Select the connections button
+- Select the "Manage" button, this will reveal the link url
+
+- 
 
 :::
 
-Any new connections, as of xxx date this will automatically be via the new link flow using the new connector.
+For new connections, as of xxx date they will automatically be via the new link flow which uses the new connector.
