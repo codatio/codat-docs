@@ -5,16 +5,9 @@ description: "Software, hardware, environment and network requirements and confi
 sidebar_label: Requirements
 ---
 
-:::note Supported Sage 50 accounts and versions
-
-Codat supports Sage 50 accounts (UK & Ireland) for versions from 2018 onwards (v24+). This is in line with <a className="external" href="https://gb-kb.sage.com/portal/app/portlets/results/viewsolution.jsp?solutionid=200427112228593" target="_blank">Sage's software lifecycle policy</a>.
-
-See a full list of supported Sage 50 versions below. We aim for this list to be as comprehensive and current as possible. If you experience issues with the supported versions or would like to register your interest in an unsupported version, please contact [support@codat.io](mailto:support@codat.io).
-:::
-
 ## Supported versions
 
-Codat support versions 25, 26, 27, 28, and 29 of Sage 50c Accounts Standard & Professional.
+Codat support versions 25, 26, 27, 28, and 29 of Sage 50c Accounts Standard & Professional. This is in line with <a className="external" href="https://gb-kb.sage.com/portal/app/portlets/results/viewsolution.jsp?solutionid=200427112228593" target="_blank">Sage's software lifecycle policy</a>. If you experience issues with the supported versions please contact [support@codat.io](mailto:support@codat.io). If you would like to register your interest in an unsupported version, pleaes contact your account manager.
 
 ## Unsupported versions
 
