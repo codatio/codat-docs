@@ -1,7 +1,7 @@
 ---
 title: Sync for Payables overview
 sidebar_label: Sync for Payables
-description: Integrate with your customers' accounting software, and keep their supplier information, invoices, and payments in sync
+description: Handle your customers' most complex accounts payable workflows across all major accounting platforms with our fully-featured bill pay solution
 image: "/img/banners/social/payables.png"
 displayed_sidebar: payables
 hide_title: true
@@ -11,7 +11,7 @@ banner_title: Sync for Payables
 banner_class: payables
 banner_icon: "/img/logos/products/logo_payables_clear.svg"
 banner_image: "/img/banners/payables.png"
-banner_text: "Embedded accounting integrations for accounts payable automation."
+banner_text: "Handle your customers' most complex accounts payable workflows across all major accounting platforms with our fully-featured bill pay solution"
 // video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
 // video_text: What is Sync for Payables?
 ---
@@ -20,15 +20,17 @@ import Products from "@components/global/Products";
 import { IntegrationsList } from "@components/global/Integrations";
 import { integrationsFilterPayables } from "@components/global/Integrations/integrations";
 
-This automation streamlines your customers' accounts payable workflow, replacing manual tasks and eliminates duplication of effort, leading to increased payment volumes as a result.
+## What is it?
 
-### How Codat can help
+**Sync for Payables** is the hassle-free way to integrate your [bill](../terms/bill) pay product with your customers' accounting software so you can keep their supplier information, invoices, and payments in sync. 
 
-Codat supports neobanks and spend management and B2B payment providers with their integration requirements by leveraging the [Sync for Payables](/sync-for-payables-api) product. 
+We designed Sync for Payables to handle even the most complex accounts payable workflows with ease, including scenarios that manage credit notes, refunds, partial payments, and bulk payments. Embed it into your application to automate and streamline your customers' [bill](../terms/bill) payments and reconcile them across all major accounting platforms.
 
-It enables small and medium sized businesses to track and manage their spend with their chosen application and ensure that their financial reports are kept up to date.
+## Who is it for?
 
-## Why use Sync for Payables?
+We designed and built **Sync for Payables** for neobanks, expense management providers, and B2B payment providers. Use this solution kit in your application and automate your customers' bill payments, eliminating duplication of effort, so you can enjoy increased payment volumes as a result. 
+
+## Why use it?
 
 <ul className="card-container col-2">
 <li className="card">
@@ -46,7 +48,7 @@ It enables small and medium sized businesses to track and manage their spend wit
     <div class="header">
         <img src="/img/wp-icons/copy-feature-bullet.svg"
             class="mini-icon"/>
-        <h3>Expand addressable market</h3>
+        <h3>Get to market faster</h3>
     </div>
     <p>
        Make your accounts payable solution compatible with all of the major accounting and ERP systems.
@@ -77,59 +79,48 @@ It enables small and medium sized businesses to track and manage their spend wit
 
 </ul>
 
-## How it works
+## How does it work?
 
-![An image from the static](/img/use-cases/summary-pages/d0c6b0b7-automating-payables.png)
+With Sync for Payables, you can build a solution that covers all the key steps of bill management and payment, catering even to the most complex scenarios.
 
-### [Connect to your SMB's accounting platform](/auth-flow/overview)
+![Accounts payable workflow supported by Codat](/img/use-cases/summary-pages/d0c6b0b7-automating-payables.png)
 
-Codat handles authorization and linking to your SMB's accounting platform and takes into account intricate details such as rate limits.
+### [Configure customer](/payables/configure-customer)
 
-### [Retrieve accounts payable invoices](bills)
+Start by creating a [company](../terms/company) to represent your SMB customer in Codat. Then, establish its [connection](/core-concepts/connections) to the customer's accounting platform. We will handle the authorization and linking to that platform - all we need is for your SMB to approve this access via our [auth flow](/auth-flow/overview).
 
-A list of unpaid [bills](/accounting-api#/schemas/Bill) (accounts payable invoices) can be retrieved from the accounting platform, in the Accounting API a bill is an itemised record of goods purchased from or services provided by a supplier.
-Alternatively, Bills can also be created within your application and then synchronised to the accounting platform.
+### [Get customer's bills](/payables/bills)
 
-### [Payment account mapping](mapping)
+Next, let your customer choose the [bills](../terms/bill) - Codat's term for accounts payable invoices - they want to pay. Get a list of their existing unpaid bills and display them in your application, and enable them to create new bills. 
 
-Once Authorised, you can use the bank accounts endpoint to retrieve a list of accounts which can be mapped enabling the user to dictate which account their payments should be reconciled to.
+Help your customer manage reference data in preparation to paying these bills: 
+* [Display their suppliers](/payables/suppliers) and create new supplier records for them when needed. 
+* [Display their bank accounts](/payables/mapping) so they can choose the account to pay bills from and allow them to create a new account when needed.
 
-### [Payment reconciliation](payments)
+### [Record payments](/payables/payments)
 
-Once the transaction is completed, a bill payment can then be pushed to the customers accounting platform and reconciled against the bill marking it as paid.
+When your customer completes a bill payment using your application, send the payment details to Codat. We will reflect this transaction in your customer's accounting platform and reconcile it against the original bill, handling the complexities and marking it as paid. 
 
+You can then display the updated list of bills to your customer so they can keep track of their spend and outstanding bills through your application.
 
-## Compatible integrations
+## Supported integrations
 
 <br />
 
 <IntegrationsList filter={integrationsFilterPayables} />
 
-### Start building
+## Build with client libraries
 
-Codat provides you with demo guides, where you can see our products in action. View our demo built specifically for the bill payments use case:
-
-<ul className="card-container">
-  <li className="card">
-    <div className="header">
-      <img
-        src="/img/wp-icons/Binoculars.png"
-        className="mini-icon"
-      />
-      <h3>Demo app guide</h3>
-    </div>
-    <p>
-      Follow the demo guide to see how to implement your own bill payment solution using Codat's API, from connecting to your customer's accounting platform, to paying and reconciling bills.
-    </p>
-    <p>
-      <a href="/payables/guides/bill-pay/introduction">Read more →</a>
-    </p>
-  </li>
-</ul>
+Use our [comprehensive SDKs](/get-started/libraries) to kick-start and simplify your developers' journey automating accounts payable. The SDKs come in multiple languages and provide sample requests and responses for the full range of accounts payable workflows.
 
 ---
 
-### Read next
+## Read next
 
-- [Accounts payable](/payables/bills) - Retrieve and create bills using Sync for Payables.
-- [Payments](/payables/payments) - Reconcile payments to the SMB's accounting software.
+Set up the components of your accounts payable solution:
+
+- [Configure customer](/payables/configure-customer)
+- [Manage suppliers](/payables/suppliers)
+- [Manage bills](/payables/bills)
+- [Manage payment methods](/payables/mapping)
+- [Record and reconcile payments](/payables/payments)
