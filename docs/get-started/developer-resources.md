@@ -11,6 +11,8 @@ updatedAt: "2022-10-19T21:11:21.969Z"
 - **[Bill pay](/payables/guides/bill-pay/introduction)** - Streamline and automate the Accounts Payable (AP) process for your SMB customers.
 - **[Bank transactions reconcilliation](/bank-feeds/guides/bank-feeds-tutorial)** - Reconciling bank transactions with QuickBooks Online using Codat's Bank Feeds API.
 - **[Loan writeback](/lending/guides/loan-writeback/introduction)** - Simplify your implementation with our loan writeback best practices guide and correctly account for a loan programmatically.
+- **[Loan qualification](/lending/guides/loan-qualification/introduction)** - See how Codat helps check a loan applicant’s finances and automate decision-making.
+- **[Prototype dashboard with Retool](/guides/retool-dashboard)** - Ingest and visualize Codat data in a custom Retool dashboard in 10 minutes.
 
 ## Demo apps
 
