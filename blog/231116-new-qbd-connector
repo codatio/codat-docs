@@ -7,13 +7,14 @@ authors: ajacksoncodat
 
 We've improved our QuickBooks Desktop integration utilizing Intuit's Web Connector for a simpler and faster SMB link journey.
 
-**We've repackaged all the functionality you're using today into a new, clearer set of products aligned to your use case.**
+//**Any headline to call out?**
 
 ## What's changed?
 
-- 
-
-
+- We have reduced the number of steps for SMB users in the link flow
+- We have removed the prerequisite steps to run the connector on Right Networks or QuickBooks Enterprise for cloud
+- We have improved maintainability and observability of the link flow
 
 ## What does this mean for you?
 
+An all round better client and SMB user experience connecting to QuickBooks Desktop
