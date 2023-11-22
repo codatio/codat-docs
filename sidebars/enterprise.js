@@ -47,7 +47,7 @@ module.exports = [
           "enterprise/tech-implementation/getting-started",
           {
             type: "category",
-            label: "Consent Journey",
+            label: "Consent journey",
             items: [
                 "enterprise/tech-implementation/consent/overview",
                 "enterprise/tech-implementation/consent/build",

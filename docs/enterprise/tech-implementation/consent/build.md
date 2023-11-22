@@ -3,7 +3,7 @@ title: "Build options"
 description: "View the different ways to build a consent journey"
 ---
 
-## Delivery break down
+## Delivery breakdown
 
 | Area | Description | Owner |
 | :- | :- | :-|
@@ -14,7 +14,22 @@ description: "View the different ways to build a consent journey"
 
 ## Onboarding
 
-### Option 1
+### Option 1 - Low-code
+
+Embedded Link is a pre-built JavaScript component that neatly sits in your front-end code, and can be deployed in a matter of minutes. 
+Use it to benefit from our extensive experience in building authorization flows melded with best practices, while seamlessly embedding it into your webpage or front-end application.
+
+#### Relevant resources
+
+* [Embedded Link docs](https://docs.codat.io/auth-flow/authorize-embedded-link)
+* [Sample code](https://github.com/codatio/sdk-link/tree/main/examples)
+
+#### Limitations
+* **UI**: The UI is customizable with colors, but can’t be fully customized.
+
+![](/img/auth-flow/embedded-link-selection.png)
+
+### Option 2 - Build your own
 
 Codat Action ‘Company’ & ‘Connection’ end-points to allow Financial Service Providers to build & own the UI, while interacting with Codat to set up connections to individual integration partners.
 
@@ -35,19 +50,3 @@ Codat Action ‘Company’ & ‘Connection’ end-points to allow Financial Serv
 
 
 [View our full auth Postman Collection](https://postman.codat.io/#bf371ef9-5d2c-4755-8f45-01c9a6fc467f)
-
-
-### Option 2
-
-Embedded Link is a pre-built JavaScript component that neatly sits in your front-end code, and can be deployed in a matter of minutes. 
-Use it to benefit from our extensive experience in building authorization flows melded with best practices, while seamlessly embedding it into your webpage or front-end application.
-
-**Links:**
-
-* https://docs.codat.io/auth-flow/authorize-embedded-link
-* https://github.com/codatio/sdk-link/tree/main/examples
-
-**Considerations:**
-* **UI**: The UI is customizable with colors, but can’t be fully customized.
-
-![](/img/auth-flow/embedded-link-selection.png)

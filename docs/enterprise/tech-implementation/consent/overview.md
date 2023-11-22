@@ -3,9 +3,9 @@ title: "Overview"
 description: "Explore how to build a consent journey for your customers"
 ---
 
-:::tip
+:::tip Auth flow docs
 
-See the full docs on our customer authorization here https://docs.codat.io/auth-flow/overview
+See the full docs on our [customer authorization here](https://docs.codat.io/auth-flow/overview).
 :::
 
 
@@ -16,21 +16,25 @@ This solution's primary purpose is to streamline customer consent processes, spe
 
 ## Overview
 
-View full steps and endpoints required [here](https://docs.codat.io/auth-flow/build/build-your-own-authorization-journey)
+View full steps and endpoints required [here](https://docs.codat.io/auth-flow/build/build-your-own-authorization-journey).
 
 ![](/img/enterprise/implementation/consent/authjourney.png)
 
 ### There are two options to onboard new customers onto packages:
 
+These options are broken down further on the [build options page](/enterprise/tech-implementation/consent/build)
+
 #### **Option 1:**
+Codat has built an SDK, which can be deployed within a front-end UI.
+
+The component works with all major JavaScript frameworks, including React, and also with vanilla JavaScript. You can choose to implement the component in TypeScript.
+
+#### **Option 2:**
 Codat provides a series of API end-points that allow financial service providers to fully embed the authentication journey within your digital application journeys. 
 
 These APIs can be called to set up a customer within Codat’s instance, and set up the connection to the applicable integration(s).
 
-#### **Option 2:**
-Codat has built an SDK, which can be deployed within a front-end UI.
 
-The component works with all major JavaScript frameworks, including React, and also with vanilla JavaScript. You can choose to implement the component in TypeScript.
 
 <details>
 <summary><b>FAQ</b></summary>

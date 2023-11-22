@@ -1,6 +1,6 @@
 ---
 title: "Customer lifecycle"
-description: "Recommendations for managaing the customer consent lifecyle"
+description: "Recommendations for managing the customer consent lifecycle"
 ---
 
 **Codat’s authentication API will be used at multiple stages of the customer lifecycle. There are some scenarios & considerations listed below.**
@@ -12,7 +12,7 @@ A customer hasn't granted access to integrations before, they will authenticate 
 
 Codat recommends that each customer grants access to all data during their 1st integration setup, but only relevant data will be pulled into Codat based on the use-case.
 
-This allows Codat to have access to all data from the 1st connection, but will only pull relevant data based on the specific use-case.
+This means Codat will initially only pull relevant data for that first use-case, but can later pull data for a second use-cases without requiring the customer to re-authenticate.
 
 E.g. I connect my Xero via a Dashboard customer journey. I grant access to all data within my Xero account - but you only pull data-types that are relevant for the Dashboard product as that is all the user has provided consent for.
 #### An existing customer wants to add integration package(s) for existing product
@@ -35,7 +35,7 @@ This consent should be stored and always adhered to with the ability to be revok
 
 Customers should have the option to revoke access to integrations through the product's UI. It's important to inform customers about potential impacts when removing access. I.e. Impacting other products.
 
-Also, it's important to consider data retention processes when a customer disconnects. If the customer has granted access for their data to be used in multiple products, keep in mind that access might still be needed for another product. 
+It is also important to consider data retention processes when a customer disconnects. If the customer has granted access for their data to be used in multiple products, keep in mind that access might still be needed for another product. 
 
 Codat provides the capability to remove/delete historical data via a specific endpoint.
 
