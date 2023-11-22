@@ -21409,6 +21409,7 @@
                             {
                               "unitAmount": 120,
                               "quantity": 1,
+                              "unitOfMeasurement": "litre",
                               "subTotal": 120,
                               "totalAmount": 120,
                               "accountRef": {
@@ -23955,6 +23956,7 @@
                         {
                           "unitAmount": 120,
                           "quantity": 1,
+                          "unitOfMeasurement": "litre",
                           "subTotal": 120,
                           "totalAmount": 120,
                           "accountRef": {
@@ -42499,6 +42501,7 @@
             ]
           },
           "billLineItem": {
+            "title": "Bill line item",
             "type": "object",
             "properties": {
               "lineNumber": {
@@ -42520,6 +42523,11 @@
                 "type": "number",
                 "format": "decimal",
                 "description": "Number of units of goods or services received."
+              },
+              "unitOfMeasurement": {
+                "type": "string",
+                "nullable": true,
+                "description": "The measurement which defines a unit for this item (e.g. 'kilogram', 'litre')."
               },
               "discountAmount": {
                 "type": "number",
