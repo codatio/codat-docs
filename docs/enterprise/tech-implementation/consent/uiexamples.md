@@ -1,7 +1,6 @@
 ---
 title: "UI screens"
 description: "Sample screens for a product agnostic consent journey"
-draft: true
 ---
 
 This is an example flow for a consent journey which powers a business insights dashboard.
