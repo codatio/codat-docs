@@ -10,24 +10,6 @@ import TabItem from "@theme/TabItem";
 
 ![](/img/auth-flow/embedded-link-selection.png)
 
-<details>
-<summary><b>What's new</b></summary>
-
-October 2023:
-- **Support for non-modal views** - You can now [embed the component in non-modal views](/auth-flow/authorize-embedded-link#non-modal-styling) with our new `options` prop
-- **Reduced latency after auth** - We now poll every second to check whether the user has authed, meaning connection is confirmed faster.
-- **Bugs**:
-  + Fixed an issue where 'Landing page' settings were not reflected.
-
-June 2023:
-- **Support for non-React JavaScript apps** - Without a dependency on React, you can use Embedded Link with all JavaScript frameworks or even vanilla JavaScript.
-- **Increased display control** - You now need to specify the dimensions of the Embedded Link component, which will expand to fit the given container size. Previously the component used a fixed width and height.
-- **Navigation improvements** - Source types (accounting, commerce, banking, and file upload) can now be connected in any order you choose.
-- **Performance improvements** - Link loads more quickly and can be loaded only when required.
-- **Connection status** - The connection status (success or error) is now shown during the Embedded Link flow. The SMB user can skip errors without interrupting the rest of the Link flow.
-
-</details>
-
 ## Embedded Link overview
 
 Embedded Link is a pre-built JavaScript component that neatly sits in your front-end code, and can be deployed in a matter of minutes. Use it to benefit from our extensive experience in building authorization flows melded with best practices, while seamlessly embedding it into your webpage or front-end application.
@@ -81,7 +63,7 @@ For an example of the component in action, [see our demo app](https://github.com
   import {
     ConnectionCallbackArgs,
     ErrorCallbackArgs,
-  } from "https://link-sdk.codat.io"
+  } from "@codat/sdk-link-types"
   import { useState } from "react";
   import { CodatLink } from "./components/CodatLink";
 
@@ -120,7 +102,8 @@ For an example of the component in action, [see our demo app](https://github.com
   ```
    
 3. **Conditional steps**
-    - **If you're using TypeScript** extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
+    - **If you're using TypeScript** extend your type declarations with our types by installing the types package - `npm install --save-dev @codat/sdk-link-types`.
+       * If you're not using TypeScript, just delete the type related code in the snippets.
     - **If you're using content security policy (CSP) headers** you'll need to edit these headers:
        * Allow-list Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
        * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
@@ -148,6 +131,10 @@ In the example below, you'll see that we make use of webpack's [magic comments](
 
   "use client";
 
+  import {
+    ConnectionCallbackArgs,
+    ErrorCallbackArgs,
+  } from "@codat/sdk-link-types"
   import { CodatLink } from "./components/CodatLink";
   import Image from "next/image";
   import styles from "./page.module.css";
@@ -183,8 +170,9 @@ In the example below, you'll see that we make use of webpack's [magic comments](
   };
   ```
    
-1. **Conditional steps**
-    - **If you're using TypeScript** extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
+3. **Conditional steps**
+    - **If you're using TypeScript** extend your type declarations with our types by installing the types package - `npm install --save-dev @codat/sdk-link-types`.
+       * If you're not using TypeScript, just delete the type related code in the snippets.
     - **If you're using content security policy (CSP) headers** you'll need to edit these headers:
        * Allow-list Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
        * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
@@ -488,3 +476,22 @@ The `text` property can be used to override text within the UI. It accepts markd
 - `commerce.dataAccess.dataTypes` - This is the list of data types displayed on the final page before connecting a commerce platform.
 
 One use of this is to detect which language the user speaks and set text according to their locale. You can see a [simple example of this on GitHub](https://github.com/codatio/sdk-link/tree/main/examples/locales).
+
+# Changelog
+
+#### November 2023
+- **Options prop** - This new prop gives you programmatic control over link settings.
+- **Released @codat/sdk-link-types package** - Our new [NPM package](https://www.npmjs.com/package/@codat/sdk-link-types) means you don't have to manually import and maintain the type definitions.
+
+#### October 2023
+- **Support for non-modal views** - You can now [embed the component in non-modal views](/auth-flow/authorize-embedded-link#non-modal-styling) with our new `options` prop
+- **Reduced latency after auth** - We now poll every second to check whether the user has authed, meaning connection is confirmed faster.
+- **Bugs**:
+  + Fixed an issue where 'Landing page' settings were not reflected.
+
+#### June 2023
+- **Support for non-React JavaScript apps** - Without a dependency on React, you can use Embedded Link with all JavaScript frameworks or even vanilla JavaScript.
+- **Increased display control** - You now need to specify the dimensions of the Embedded Link component, which will expand to fit the given container size. Previously the component used a fixed width and height.
+- **Navigation improvements** - Source types (accounting, commerce, banking, and file upload) can now be connected in any order you choose.
+- **Performance improvements** - Link loads more quickly and can be loaded only when required.
+- **Connection status** - The connection status (success or error) is now shown during the Embedded Link flow. The SMB user can skip errors without interrupting the rest of the Link flow.
