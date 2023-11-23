@@ -1,6 +1,7 @@
 name: Linkinator CI
 
 on:
+  pull_request:
   schedule:
     - cron: '0 0 * * 0'  # Runs every Sunday at midnight
   workflow_dispatch: # Allows manual triggering from the GitHub UI
@@ -22,4 +23,4 @@ jobs:
         run: npm install -g linkinator
 
       - name: Run linkinator
-        run: npx linkinator https://docs.codat.io --recurse --retry
+        run: npx linkinator https://docs.codat.io --recurse --retry --skit *github*
