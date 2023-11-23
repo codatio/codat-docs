@@ -427,11 +427,25 @@ For an example of the component in action, [see our demo app](https://github.com
 
 </Tabs>
 
-## Options
+## Advanced options
 
 Most auth flow config is currently managed within the Codat Portal. If you haven't already done so, customize Link on the <a href="https://app.codat.io/settings/link-settings" target="_blank">**Link settings**</a> page in the Codat Portal. For example, add UI copy, set file upload options, choose to make steps optional, or disable steps. The settings apply to both Embedded Link and Hosted Link.
 
-We have begun to add programmatic control via the new `options` component prop.
+Where you need more control based on application-specific logic, or need to vary the UI conditionally, we offer programmatic control via a new `options` prop. These override any link settings set in the Portal.
+
+:::warning Advanced functionality
+
+As the options object overrides your link settings in the Portal, this can lead to internal confusion about the source of truth for what users are seeing. Ensure you document and communicate your use of the options prop internally.
+:::
+
+The options prop is optional, and accepts an object containing the following optional properties:
+
+- `nonModal` - Set whether to style the UI as a modal (default true).
+- `showLandingPage` - Override whether to show the landing.
+- `showSandboxIntegrations` - Override whether sandbox integrations should be shown.
+- `theme` - Override the primary color..
+- `sourceTypes` - Override which of steps to show, including Accounting, Banking, Commerce, and Business Document.
+- `text` - Override custom text within the UI. Accepts markdown.
 
 ### Non-modal styling
 
@@ -453,3 +467,24 @@ This visually:
 ```
 
 You can see an [example on GitHub](https://github.com/codatio/sdk-link/tree/main/examples/non-modal).
+
+## Custom text
+
+The `text` property can be used to override text within the UI. It accepts markdown, meaning you can add links, lists, tables, and more.
+
+- `companyName` - Your company name that is displayed on the final page of the flow before connecting an integration.
+- `landing.title` - The title displayed on the first page the user sees. To use this, you must enable the landing page either by setting {@link CodatLinkOptions.showLandingPage} to true or configuring it at {@link https://app.codat.io/settings/link-settings/onboarding}.
+- `landing.subtitle` - The subtitle displayed on the first page the user sees. To use this, you must enable the landing page either by setting {@link CodatLinkOptions.showLandingPage} to true or configuring it at {@link https://app.codat.io/settings/link-settings/onboarding}.
+- `main.title` - The title displayed on the page where the user selects what source types to connect.
+- `main.subtitle` - The subtitle displayed on the page where the user selects what source types to connect.
+- `accounting.fileUpload.subtitle` - The subtitle displayed on the page where the user can upload accounting files. To use this, you must enable the accounting file upload either by setting {@link CodatLinkOptions.sourceTypes.accounting.enableFileUpload} to true or by configuring it at {@link https://app.codat.io/settings/integrations/other}
+- `banking.fileUpload.subtitle` - The subtitle displayed on the page where the user can upload banking files. To use this, you must enable the banking file upload either by setting {@link CodatLinkOptions.sourceTypes.banking.enableFileUpload} to true or by configuring it at {@link https://app.codat.io/settings/integrations/other}
+- `businessDocuments.fileUpload.subtitle` - The subtitle displayed on the page where the user can upload business documents. To use this, you must enable the business documents file upload either by setting {@link CodatLinkOptions.sourceTypes.businessDocuments.enableFileUpload} to true or by configuring it at {@link https://app.codat.io/settings/integrations/other}
+- `accounting.dataAccess.consent` - This text is displayed on the final page before connecting an accounting platform, underneath the list of data types. If you would like to display a terms and conditions link, add it here using markdown.
+- `banking.dataAccess.consent` - This text is displayed on the final page before connecting a bank account, underneath the list of data types. If you would like to display a terms and conditions link, add it here here using markdown.
+- `commerce.dataAccess.consent` - This text is displayed on the final page before connecting a commerce platform underneath the list of data types. If you would like to display a terms and conditions link, add it here using markdown.
+- `accounting.dataAccess.dataTypes` - This is the list of data types displayed on the final page before connecting an accounting platform.
+- `banking.dataAccess.dataTypes` - This is the list of data types displayed on the final page before connecting a bank account.
+- `commerce.dataAccess.dataTypes` - This is the list of data types displayed on the final page before connecting a commerce platform.
+
+One use of this is to detect which language the user speaks and set text according to their locale. You can see a [simple example of this on GitHub](https://github.com/codatio/sdk-link/tree/main/examples/locales).
