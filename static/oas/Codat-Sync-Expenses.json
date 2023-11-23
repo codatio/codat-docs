@@ -1672,7 +1672,8 @@
                             ]
                           }
                         ],
-                        "notes": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
+                        "notes": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590",
+                        "postAsDraft": true
                       }
                     ]
                   }
@@ -13418,6 +13419,11 @@
             "type": "string",
             "description": "Any private, company notes about the transaction.",
             "example": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
+          },
+          "postAsDraft": {
+            "type": "boolean",
+            "nullable": true,
+            "description": "For supported accouting platforms, setting this optional property to true will post the transaction to a drafted state rather than posted state. Accounting platforms currently supported: Dynamics 365 Business Central."
           }
         },
         "required": [
@@ -13454,7 +13460,8 @@
                 ]
               }
             ],
-            "notes": "amazon purchase"
+            "notes": "amazon purchase",
+            "postAsDraft": true
           }
         ]
       },
