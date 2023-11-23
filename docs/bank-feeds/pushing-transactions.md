@@ -46,157 +46,143 @@ sequenceDiagram
 
 We recommend regularly uploading transactions throughout the day so that your customers' bank feed balances are close to real-time. This enhanced accuracy helps companies with their planning and forecasting.
 
-Use our [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions) to create bank transactions. In response, you will receive a `pushOperation` object with a `Pending` status.
+Use our [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions) endpoint to create bank transactions. In response, you will receive a `pushOperation` object with a `Pending` status.
 
 <Tabs>
 
-<TabItem value="HTTP" label="HTTP">
+<TabItem value="nodejs" label="TypeScript">
 
-#### Request with `debit` and `credit` transactions
-
-```json
-POST /companies/{companyId}/connections/{connectionId}/push/bankAccounts/{accountId}/bankTransactions
-
-{
-    "accountId": "sourceAccountId",
-    "transactions": [
+```javascript
+const transactionsResponse = bankFeedsClient.transactions.create({
+    createBankTransactions: {
+      accountId: sourceAccountResponse.sourceAccount.id,
+      transactions: [
         {
-            "id": "63e2b848-951a-4657-a889-ded00f0e616a",
-            "amount": 100.0,
-            "balance": 100.0,
-            "date": "2023-08-22T10:21:00.000Z",
-            "description": "Repayment of Credit Card",
-            "transactionType": "Credit"
+            id: "63e2b848-951a-4657-a889-ded00f0e616a",
+            amount: 100.0,
+            balance: 100.0,
+            date: "2023-08-22T10:21:00.000Z",
+            description: "Repayment of Credit Card",
+            transactionType: BankTransactionType.Credit
         },
         {
-            "id": "710ed9f9-feb6-4ab7-9055-05a26d31718c",
-            "amount": -100.0,
-            "balance": 0.00,
-            "date": "2023-08-22T10:22:00.000Z",
-            "description": "Amazon US | $1.25 | PXDFGSDTR | c2dddf4c-eece-4a9b-a392-8c8e65b59e47",
-            "transactionType": "Debit"
-        },
-        {
-            "id": "d9b04a83-1fd7-4a5e-bd7d-8433828749f4",
-            "amount": -60.0,
-            "balance": -60.0,
-            "date": "2023-08-22T10:23:00.000Z",
-            "description": "Office Supplies from Office Mart",
-            "transactionType": "Debit"
-        },
-        {
-            "id": "f5e8f94c-5f72-4f64-aa26-344d1fbb3aa7",
-            "amount": -17.54,
-            "balance": -77.54,
-            "date": "2023-08-22T10:24:00.000Z",
-            "description": "Tech book from Amazon",
-            "transactionType": "Debit"
-        },
-        {
-            "id": "c3e59033-8aa1-4f11-8f08-46f5b0da3f2c",
-            "amount": -180.0,
-            "balance": -257.54,
-            "date": "2023-08-22T10:25:00.000Z",
-            "description": "Client Dinner from Fine Dining Restaurant",
-            "transactionType": "Debit"
-        },
-        {
-            "id": "9d1b4a39-5e89-47dd-8df7-02a2426658d4",
-            "amount": -1200.0,
-            "balance": -1457.54,
-            "date": "2023-08-22T10:26:00.000Z",
-            "description": "Marketing Campaign from Advertising Agency",
-            "transactionType": "Debit"
+            id: "710ed9f9-feb6-4ab7-9055-05a26d31718c",
+            amount: -75.0,
+            balance: 25.00,
+            date: "2023-08-22T10:22:00.000Z",
+            description: "Amazon US | $1.25 | PXDFGSDTR | c2dddf4c-eece-4a9b-a392-8c8e65b59e47",
+            transactionType: BankTransactionType.Debit
         }
-    ]
-}
+      ],
+    },
+    accountId: sourceAccountResponse.sourceAccount.id,
+    companyId: companyResponse.company.id,
+    connectionId: connectionResponse.connection.id
+});
 ```
 
-#### Response
+</TabItem>
 
-```json
-{
-    "changes": [
-        {
-            "type": "Created",
-            "recordRef": {
-                "dataType": "bankTransactions"
-            }
-        }
-    ],
-    "data": {
-        "accountId": "a3f28138-e2b9-4daa-92e1-5a99fb29ac42",
-        "transactions": [
-            {
-                "id": "63e2b848-951a-4657-a889-ded00f0e616a",
-                "date": "2023-08-22T10:21:00Z",
-                "description": "Repayment of Credit Card",
-                "reconciled": false,
-                "amount": 100.0,
-                "balance": 100.0,
-                "transactionType": "Credit"
-            },
-            {
-                "id": "710ed9f9-feb6-4ab7-9055-05a26d31718c",
-                "date": "2023-08-22T10:22:00Z",
-                "description": "Amazon US | $1.25 | PXDFGSDTR | c2dddf4c-eece-4a9b-a392-8c8e65b59e47",
-                "reconciled": false,
-                "amount": -100.0,
-                "balance": 0.0,
-                "transactionType": "Debit"
-            },
-            {
-                "id": "d9b04a83-1fd7-4a5e-bd7d-8433828749f4",
-                "date": "2023-08-22T10:23:00Z",
-                "description": "Office Supplies from Office Mart",
-                "reconciled": false,
-                "amount": -60.0,
-                "balance": -60.0,
-                "transactionType": "Debit"
-            },
-            {
-                "id": "f5e8f94c-5f72-4f64-aa26-344d1fbb3aa7",
-                "date": "2023-08-22T10:24:00Z",
-                "description": "Tech book from Amazon",
-                "reconciled": false,
-                "amount": -17.54,
-                "balance": -77.54,
-                "transactionType": "Debit"
-            },
-            {
-                "id": "c3e59033-8aa1-4f11-8f08-46f5b0da3f2c",
-                "date": "2023-08-22T10:25:00Z",
-                "description": "Client Dinner from Fine Dining Restaurant",
-                "reconciled": false,
-                "amount": -180.0,
-                "balance": -257.54,
-                "transactionType": "Debit"
-            },
-            {
-                "id": "9d1b4a39-5e89-47dd-8df7-02a2426658d4",
-                "date": "2023-08-22T10:26:00Z",
-                "description": "Marketing Campaign from Advertising Agency",
-                "reconciled": false,
-                "amount": -1200.0,
-                "balance": -1457.54,
-                "transactionType": "Debit"
-            }
-        ]
-    },
-    "dataType": "bankTransactions",
-    "companyId": "77921ff9-2491-4dfe-b23b-ff28f3e31e4f",
-    "pushOperationKey": "af72f845-1e59-47b4-94ce-65feedc6f119",
-    "dataConnectionKey": "0e47da62-c3c0-401b-a593-3543824d2a6d",
-    "requestedOnUtc": "2023-09-12T12:58:39.5065472Z",
-    "status": "Pending",
-    "validation": {
-        "errors": [],
-        "warnings": []
-    },
-    "statusCode": 202
-}
+<TabItem value="python" label="Python">
+
+```python
+transactions_request = operations.CreateBankTransactionsRequest(
+    create_bank_transactions=shared.CreateBankTransactions(
+        account_id=source_account_response.source_account.id,
+        transactions=[
+            shared.BankTransactions(
+                id='63e2b848-951a-4657-a889-ded00f0e616a',
+                amount=Decimal('100.0'),
+                balance=Decimal('100.0'),
+                date_='2023-08-22T10:21:00.000Z',
+                description='Repayment of Credit Card',
+                transaction_type=shared.BankTransactionType.CREDIT
+            ),
+            shared.BankTransactions(
+                id='710ed9f9-feb6-4ab7-9055-05a26d31718c',
+                amount=Decimal('-75.0'),
+                balance=Decimal('25.0'),
+                date_='2023-08-22T10:22:00.000Z',
+                description='Amazon US | $1.25 | PXDFGSDTR | c2dddf4c-eece-4a9b-a392-8c8e65b59e47',
+                transaction_type=shared.BankTransactionType.DEBIT
+            ),
+        ],
+    ),
+    account_id=source_account_response.source_account.id,
+    company_id=company_response.company.id,
+    connection_id=connection_response.connection.id
+)
+
+transactions_response = bank_feeds_client.transactions.create(transactions_request)
 ```
-</TabItem >
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var transactionsResponse = await bankFeedsClient.Transactions.CreateAsync(new() {
+    CreateBankTransactions = new CreateBankTransactions() {
+        AccountId = sourceAccountResponse.SourceAccount.Id,
+        Transactions = new List<BankTransactions>() {
+            new BankTransactions() {
+                Id = "63e2b848-951a-4657-a889-ded00f0e616a",
+                Amount = 100.0M,
+                Balance = 100.0M,
+                Date = "2023-08-22T10:21:00.000Z",
+                Description = "Repayment of Credit Card",
+                TransactionType = BankTransactionType.Credit
+            },
+            new BankTransactions() {
+                Id = "710ed9f9-feb6-4ab7-9055-05a26d31718c",
+                Amount = -75.0M,
+                Balance = 25.0M,
+                Date = "2023-08-22T10:22:00.000Z",
+                Description = "Amazon US | $1.25 | PXDFGSDTR | c2dddf4c-eece-4a9b-a392-8c8e65b59e47",
+                TransactionType = BankTransactionType.Dedit
+            },
+        },
+    },
+    AccountId = sourceAccountResponse.SourceAccount.Id,
+    CompanyId = companyResponse.Company.Id,
+    ConnectionId = connectionResponse.Connection.Id
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+transactionsResponse, err := s.Transactions.Create(ctx, operations.CreateBankTransactionsRequest{
+    CreateBankTransactions: &shared.CreateBankTransactions{
+        AccountID: sourceAccountResponse.SourceAccount.ID,
+        Transactions: []shared.BankTransactions{
+            shared.BankTransactions{
+                ID: bankfeeds.String("63e2b848-951a-4657-a889-ded00f0e616a"),
+                Amount: types.MustNewDecimalFromString("100.0"),
+                Balance: types.MustNewDecimalFromString("100.0"),
+                Date: bankfeeds.String("2023-08-22T10:21:00.000Z"),
+                Description: bankfeeds.String("Repayment of Credit Card"),
+                TransactionType: BankTransactionTypeCredit
+            },
+            shared.BankTransactions{
+                ID: bankfeeds.String("710ed9f9-feb6-4ab7-9055-05a26d31718c"),
+                Amount: types.MustNewDecimalFromString("-75.0"),
+                Balance: types.MustNewDecimalFromString("25.0"),
+                Date: bankfeeds.String("2023-08-22T10:22:00.000Z"),
+                Description: bankfeeds.String("Amazon US | $1.25 | PXDFGSDTR | c2dddf4c-eece-4a9b-a392-8c8e65b59e47"),
+                TransactionType: BankTransactionTypeDebit
+            },
+        },
+    },
+    AccountID: sourceAccountResponse.SourceAccount.ID,
+    CompanyID: companyResponse.Company.ID,
+    ConnectionID: connectionResponse.Connection.ID
+})
+```
+</TabItem>
 
 </Tabs>
 
