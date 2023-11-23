@@ -35,6 +35,13 @@ Make sure to store the company ID as you will use it to establish a connection t
 const companyResponse = bankFeedsClient.companies.create({
     name: companyName,
 });
+
+if(companyResponse.statusCode == 200){
+  throw new Error("Could not create company")
+}
+
+const companyId = companyResponse.company.id
+console.log(companyId)
 ```
 
 </TabItem>
@@ -47,6 +54,12 @@ company_request = shared.CompanyRequestBody(
 )
 
 company_response = bank_feeds_client.companies.create(company_request)
+
+if company_response.status_code != 200:
+  raise Exception('Could not create company')
+
+company_id = company_response.company.id
+print(company_id)
 ```
 
 </TabItem>
@@ -57,6 +70,13 @@ company_response = bank_feeds_client.companies.create(company_request)
 var companyResponse = await sdk.Companies.CreateAsync(new() {
     Name = companyName,
 });
+
+if(companyResponse.StatusCode != 200){
+  throw new Exception("Could not create company");
+}
+
+var companyId = companyResponse.Company.Id;
+console.log(companyId)
 ```
 
 </TabItem>
@@ -68,6 +88,11 @@ ctx := context.Background()
 companyResponse, err := bankFeedsClient.Companies.Create(ctx, &shared.CompanyRequestBody{
   Name: companyName,
 	})
+
+if companyResponse.StatusCode == 200 {
+  companyID := companyResponse.Company.ID
+  fmt.Println("%s", companyID)
+}
 ```
 </TabItem>
 
