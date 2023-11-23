@@ -456,7 +456,7 @@ This visually:
 
 You can see an [example on GitHub](https://github.com/codatio/sdk-link/tree/main/examples/non-modal).
 
-## Custom text
+### Custom text
 
 The `text` property can be used to override text within the UI. It accepts markdown, meaning you can add links, lists, tables, and more.
 
