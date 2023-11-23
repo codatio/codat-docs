@@ -1,7 +1,7 @@
 name: Linkinator CI
 
 on:
-  pull_request:
+  #pull_request:
   schedule:
     - cron: '0 0 * * 0'  # Runs every Sunday at midnight
   workflow_dispatch: # Allows manual triggering from the GitHub UI
@@ -23,4 +23,4 @@ jobs:
         run: npm install -g linkinator
 
       - name: Run linkinator
-        run: npx linkinator "**/*.md?(x)" --recurse --retry --verbosity error --skip .*github.*
+        run: npx linkinator https://docs.codat.io --recurse --retry --verbosity error --skip .*github.*
