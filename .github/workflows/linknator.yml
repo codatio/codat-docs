@@ -23,4 +23,4 @@ jobs:
         run: npm install -g linkinator
 
       - name: Run linkinator
-        run: npx linkinator https://docs.codat.io --recurse --retry --verbosity error --skip *github*
+        run: npx linkinator https://docs.codat.io --recurse --retry --verbosity error --skip .*github.*
