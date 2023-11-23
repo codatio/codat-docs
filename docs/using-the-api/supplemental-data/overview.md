@@ -11,6 +11,7 @@ Codat's supported data types include standardized properties. Some data sources 
 
 Consider our Xero integration. Xero's [Contact](https://developer.xero.com/documentation/api/accounting/contacts) schema maps to Codat's `supplier` data type. Some of its properties (like `TaxNumber`) *are* mapped, whereas others (like `BankAccountDetails`) are not. If you configure supplemental data for this Xero property, `suppliers` data from Xero could additionally include `BankAccountDetails`.
 
+![A diagram demonstrating supplemental properties within the standard response of the suppliers data type](/img/use-the-api/supplemental-data.png)
 
 ## Common uses of supplemental data
 
