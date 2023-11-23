@@ -21,48 +21,7 @@ However, your use case may require additional data types from our integrations t
 
 With custom data, you can fetch new, non-standardized data types that are not included in our out-of-the box data model for the integrations we support. You will need to configure and request these custom data types using our API endpoints. 
 
-Here is how a request and response for a custom `employee` data type might look like:
-
-```json
-GET /companies/{companyId}/data/custom/employees
-
-{
-  "id": "aldc55a8-4132-03c0-671c-2be7e0549770", 
-  "providerName": "Example Provider",
-  "dateTimeUTC": "2017-09-05T04:05:18.4O09114", 
-  "httpStatusCode": "OK",
-  "pagination": {
-    "page": 1,
-    "pageSize": 100,
-    "pageCount": 1,
-    "itemCount": 4
-  },
-  "problem": null,
-  "employees": [
-    {
-    "employeeID": "d90457c4-flbe-4f2e-b4e3-f766390a7e30",
-    "firstName": "Jack",
-    "lastName": "Allan",
-    "dateOfBirth": "1985-03-24T00:00:00", 
-    "gender": "M",
-    "email": "jack.allan@email.com", 
-    "phoneNumber": "0401789123",
-    "startDate": "2012-03-19T00:00:00",
-    "isOffPayrollWorker": false,
-    "address": {
-      "addressLinel": "171 Midsummer Boulevard",
-      "addressLine2": "Block A",
-      "city": "Milton Keynes",
-      "county": "Buckinghamshire",
-      "postCode": "MK9 1EB"
-    },
-  "payrollCalendarlD": "d6cle0b8-8bl5-4769- bce0-63cel7917616",
-  "updatedDateUTC": "2017-06-27T04:56:03", 
-  "createdDateUTC": "2017-05-12T10:00:24", 
-  "endDate": null
-    },
-  ...
-```
+![A diagram that compares standard data types at Codat with custom data types](/img/use-the-api/custom-data.png)
 
 :::tip Custom or supplemental data?
 
@@ -82,7 +41,7 @@ Are you looking to fetch, create, or update additional _properties_ in data type
 
 #### Create new custom data type
 
-Use our Configure custom data (OAS LINK) endpoint to create a new data type for each integration you require. Keep in mind these guidelines:
+Use our Configure custom data (OAS LINK) endpoint to create a new data type for each integration you require. Keep these guidelines in mind:
 
 - You can only indicate a single data source for each custom data type. 
 - It is not possible to specify nested objects or arrays within the `requiredData` property.
