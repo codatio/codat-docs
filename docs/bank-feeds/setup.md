@@ -82,7 +82,7 @@ Codat supports a range of [webhooks](/using-the-api/webhooks/core-rules-types) t
 
 ## Client library
 
-Use our comprehensive [Bank Feeds library](/get-started/libraries) to kick-start and simplify your build.
+Use our comprehensive [Bank Feeds API library](/get-started/libraries) to kick-start and simplify your build. Simply install the library in one of the supported languages and pass your base64-encoded API key to the constructor.
 
 Simply install the library in one of the supported languages and pass your base64 encoded API key to the constructor.
 
