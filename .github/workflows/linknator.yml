@@ -23,4 +23,4 @@ jobs:
         run: npm install -g linkinator
 
       - name: Run linkinator
-        run: npx linkinator ./docs --recurse --recurse --retry --verbosity error --skip .*github.*
+        run: npx linkinator "**/*.md?(x)" --recurse --retry --verbosity error --skip .*github.*
