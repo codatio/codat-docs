@@ -435,6 +435,8 @@ The options prop is optional, and accepts an object containing the following opt
 - `sourceTypes` - Override which of steps to show, including Accounting, Banking, Commerce, and Business Document.
 - `text` - Override custom text within the UI. Accepts markdown.
 
+The object is applied as the CodatLink component is mounted and it doesn't support reloading. Make sure to modify the options before mounting the component.
+
 ### Non-modal styling
 
 As default, the component is designed to be presented in a modal. However, you can override this with a new `nonModal` options setting.
@@ -481,6 +483,7 @@ One use of this is to detect which language the user speaks and set text accordi
 
 #### November 2023
 - **Options prop** - This new prop gives you programmatic control over link settings.
+- **Markdown support** - Text fields now accept markdown (embedded link only), giving you more control over styling and formatting.
 - **Released @codat/sdk-link-types package** - Our new [NPM package](https://www.npmjs.com/package/@codat/sdk-link-types) means you don't have to manually import and maintain the type definitions.
 
 #### October 2023
