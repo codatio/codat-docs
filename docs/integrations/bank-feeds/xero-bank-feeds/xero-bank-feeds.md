@@ -30,11 +30,7 @@ Bank feeds are pushed to Xero immediately, not on a schedule.
 
 3. Your SMB users set up their bank feeds. They can start this process directly from your app's UI, or use the "Add bank account" feature in Xero to search for the name of your institution and then launch your UI. See [SMB user account connection](/integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds-smb-user).
 
-4. After authenticating with Xero, SMB users create account mappings and feed connections using the Codat-provided _account mapping UI_.
-
-   :::info Coming soon: Build your own UI
-   In a future release, you'll be able to build your own UI for account mapping and feed management for Xero Bank Feeds.
-   :::
+4. After authenticating with Xero, SMB users create account mappings and feed connections using the Codat-provided _account mapping UI_ or via your own mapping UI.
 
 5. Using the [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions) endpoint, you push bank transactions to Codat for authenticated users. See [Push bank transactions to Xero](/integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds-push-bank-transactions).
 
