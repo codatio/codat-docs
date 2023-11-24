@@ -10,7 +10,7 @@ import TabItem from "@theme/TabItem";
 
 ![](/img/auth-flow/embedded-link-selection.png)
 
-## Embedded Link overview
+## Overview
 
 Embedded Link is a pre-built JavaScript component that neatly sits in your front-end code and can be deployed in a matter of minutes. Use it to benefit from our extensive experience in building authorization flows melded with best practices, while seamlessly embedding it into your webpage or front-end application.
 
