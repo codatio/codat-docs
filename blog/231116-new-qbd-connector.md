@@ -18,7 +18,7 @@ With this release, we have:
 - Replaced our existing bespoke connector with Intuit's native integration.
 - Migrated to our next-generation architecture that provides resilient data acquisition.
 - Simplified the SMB's Link journey, reducing its complexity and improving user experience.
-- Streamlined the connectivity to hosted QuickBooks environments (Right Networks and QuickBooks Enterprise Cloud).
+- Streamlined the connectivity to hosted QuickBooks environments (Right Networks and QuickBooks Enterprise Cloud no longer require connector installation, certification or minimum client commitment).
 
 You can read more about the changes in our [QuickBooks Desktop (on-premise) documentation](https://docs.codat.io/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop).
 
