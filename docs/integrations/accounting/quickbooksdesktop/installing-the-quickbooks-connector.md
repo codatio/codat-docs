@@ -52,7 +52,7 @@ We package Intuit's web connector with our auto-run tool in a `QuickBooksDesktop
 
 **Administrator privileges (admin rights) are required to run the connector.** When you add a new company, a user with admin rights needs to run the installer, which will display the following dialog:
 
-<img src="/img/integrations/accounting/quickbooksdesktop/qbd-flow-download-connector" />
+<img src="/img/integrations/accounting/quickbooksdesktop/qbd-flow-download-connector.png" />
 
 When your user runs the `QuickBooksDesktopConnector.exe`, it will launch the "QBWebConnector - InstallShield Wizard" to take them through the installation steps. It will be a fresh install or an update to the latest version if the web connector is already present on the machine.
 
