@@ -52,7 +52,7 @@ We package Intuit's web connector with our auto-run tool in a `QuickBooksDesktop
 
 **Administrator privileges (admin rights) are required to run the connector.** When you add a new company, a user with admin rights needs to run the installer, which will display the following dialog:
 
-<img src="/img/integrations/accounting/quickbooksdesktop/NewQBD-DownloadInstaller.png" />
+<img src="/img/integrations/accounting/quickbooksdesktop/qbd-flow-download-connector.png" />
 
 When your user runs the `QuickBooksDesktopConnector.exe`, it will launch the "QBWebConnector - InstallShield Wizard" to take them through the installation steps. It will be a fresh install or an update to the latest version if the web connector is already present on the machine.
 
@@ -73,21 +73,23 @@ Options might vary between QuickBooks versions, but are similar to:
 
 The user should select **Yes, always; allow access even if QuickBooks is not running** to enable the connector to work.
 
-<img src="/img/integrations/accounting/quickbooksdesktop/NewQBD-AppCertificate.png" />
+<img src="/img/integrations/accounting/quickbooksdesktop/qbd-flow-app-certificate.png" />
 
 They should check the details in the **Access Confirmation** dialog, and then click **Done**.
 
-<img src="/img/integrations/accounting/quickbooksdesktop/NewQBD-AccessConf.png" />
+<img src="/img/integrations/accounting/quickbooksdesktop/qbd-flow-access-confirmation.png" />
 
 ## 3. Authenticate the connector
 
-Once the user allows the connector access to the open QuickBooks Desktop company, they will see a new connection appear in the web connector. The user must then enter the password supplied in the Link flow UI into the relevant connection row's **Password** field.
+Once the user allows the connector access to the open QuickBooks Desktop company, they will see a new connection appear in the web connector. The user must then select the connection using the checkbox. 
 
-<img src="/img/integrations/accounting/quickbooksdesktop/NewQBD-Password.png" />
+A password pop-up appears. They should enter the copied password in the pop-up, click **OK** and confirm to save when prompted. 
 
-Next, the user should click away from the field and respond **Yes** to the pop-up asking to save the password, use the checkbox to select their company file entry, then click **Update Selected**.
+<img src="/img/integrations/accounting/quickbooksdesktop/qbd-flow-copy-enter-password.png" />
 
-<img src="/img/integrations/accounting/quickbooksdesktop/NewQBD-UpdateSelected.png" />
+Next, the user should click **Update Selected**.
+
+<img src="/img/integrations/accounting/quickbooksdesktop/qbd-flow-update-selected.png" />
 
 ## 4. Wait for the connector to complete first link
 
@@ -96,8 +98,6 @@ Once the password is saved, access to QuickBooks will be granted and the connect
 If you have chosen to have your connectors perform a one-time synchronization, your company connection status will change to _deauthorized_ after the initial sync.
 
 If you have chosen to install your connectors for ongoing synchronizations, the connector will periodically process any dataset syncs or pushes you have queued using the Codat Portal or API. The connector will also start automatically when the system reboots.
-
-<img src="/img/integrations/accounting/quickbooksdesktop/NewQBD-SuccessfulConnection.png" />
 
 ## Installation path
 
@@ -109,7 +109,7 @@ The QuickBooks Desktop web connector is installed in Program Files.
 
 For example:
 
-<img src="/img/integrations/accounting/quickbooksdesktop/NEWQBD-FileLocation.png" />
+<img src="/img/integrations/accounting/quickbooksdesktop/qbd-flow-file-location.png" />
 
 
 ## Uninstall the connector
