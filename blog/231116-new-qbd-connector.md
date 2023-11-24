@@ -5,7 +5,7 @@ tags: ["Update", "QBD"]
 authors: ajacksoncodat
 ---
 
-We've released a new version of our QuickBooks Desktop connector. It uses Intuit's native web connector and provides an improved user journey and best-in-class linking experience.
+We've released a new QuickBooks Desktop connector that provides an improved user journey and best-in-class linking experience.
 
 From **December X, 2023**, all new connections to QBD will follow the new flow and use the updated connector.
 
