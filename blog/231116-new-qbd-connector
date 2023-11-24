@@ -1,50 +1,50 @@
 ---
-title: "Introducing our new QuickBooks Desktop Connector"
+title: "QuickBooks Desktop: new connector released"
 date: "2023-11-XX"
 tags: ["Update", "QBD"]
 authors: ajacksoncodat
 ---
 
-We've released a new QuickBooks Desktop integration which brings with it a much improved user journey and best in class link experience.
+We've released a new version of our QuickBooks Desktop connector. It uses Intuit's native web connector and provides an improved user journey and best-in-class linking experience.
 
-As of xxx date all new connections to QBD will use this new flow.
+From **December X, 2023**, all new connections to QBD will follow the new flow and use the updated connector.
 
 <!--truncate-->
 
 ## What's changed?
 
-- Replaced the existing legacy solution with Inuit's native integration.
-- Migrated to our next generation architecture bringing about resilient data acquisition.
-- Simplified SMB link journey by reducing complexity and improving user experience.
-- Streamlined connectivity to host QuickBooks environments. Right Networks and QuickBooks Enterprise for cloud no longer require a certification process or minimum client commitment.
-- Improved internal profiling to aid and support observability.
+With this release, we have:
 
-More details can be found in [QuickBooks Desktop (on-premise)](https://docs.codat.io/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop)
+- Replaced our existing bespoke connector with Intuit's native integration.
+- Migrated to our next-generation architecture that provides resilient data acquisition.
+- Simplified the SMB's Link journey, reducing its complexity and improving user experience.
+- Streamlined the connectivity to hosted QuickBooks environments (Right Networks and QuickBooks Enterprise Cloud).
+
+You can read more about the changes in our [QuickBooks Desktop (on-premise) documentation](https://docs.codat.io/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop).
 
 ## What does this mean for you?
 
-For new connections, as of xxx date they will automatically be mandated to be via the new link flow which uses the new connector.
+From **December X, 2023**, all new connections will automatically follow the updated Link flow which utilizes the new connector. 
 
-If you have existing QBD connections share the existing link url with your SMB customers, this will initiate the new flow, completition of which will establish the new connector.
+To enable SMB customers with existing QBD connections to use the new connector, re-share their existing Link URL with them. Following this link will initiate the new flow which will establish the new connector as a result.
 
-:::tip Link URL
+<details>
+<summary>Locating the Link URL</summary>
 
-To find an existing connections link url either:
+You can find your SMB customers' existing Link URL: 
 
-##Via Portal
+#### In the Portal
 
-- Navigate to "Companies" tab in the Codat Portal and find the required company
+1. Navigate to the **Companies** tab and find the entry for the required company. Click the **Connections** button.
 
-- Select the connections button
+    ![](/img/updates/QBD-Company-Connection.png)
 
-// ![](/img/somewhere/QBD-Company-Connection.png)
+2. Click the **Manage** button to reveal and copy the Link URL.
 
-- Select the "Manage" button, this will reveal the link url
+    ![](/img/updates/QBD-Company-Connection-URL.png)
 
-// ![](/img/somewhere/QBD-Company-Connection-URL.png)
+#### Using the API
 
-##Via API
+Use the [List connections](https://docs.codat.io/platform-api#/operations/list-connections) endpoint that will return a list of your customer's connections, including the `linkUrl` value within each connection object.
 
-- Calling [List connections](https://docs.codat.io/platform-api#/operations/list-connections) will return your connections, including the `linkUrl` value within each connection object.
-
-:::
+</details>
