@@ -8,7 +8,7 @@
       "url": "https://www.codat.io/",
       "email": "expenses@codat.io"
     },
-    "description": "The API for Sync for Expenses.\n\nSync for Expenses is an API and a set of supporting tools. It has been built to\nenable corporate card and expense management platforms to provide high-quality\nintegrations with multiple accounting platforms through a standardized API.\n\n[Read more...](https://docs.codat.io/sync-for-expenses/overview)\n\n[See our OpenAPI spec](https://github.com/codatio/oas)\n\nNot seeing the endpoints you're expecting? We've [reorganized our products](https://docs.codat.io/updates/230901-new-products), and you may be using a [different version of Sync for Commerce](https://docs.codat.io/sync-for-expenses-v1-api#/).",
+    "description": "The API for Sync for Expenses.\n\nSync for Expenses is an API and a set of supporting tools. It has been built to\nenable corporate card and expense management platforms to provide high-quality\nintegrations with multiple accounting platforms through a standardized API.\n\n[Read more...](https://docs.codat.io/sync-for-expenses/overview)\n\n[See our OpenAPI spec](https://github.com/codatio/oas)\n\nNot seeing the endpoints you're expecting? We've [reorganized our products](https://docs.codat.io/updates/230901-new-products), and you may be using a [different version of Sync for Expenses](https://docs.codat.io/sync-for-expenses-v1-api#/).",
     "termsOfService": "https://www.codat.io/legals/"
   },
   "security": [
@@ -1583,7 +1583,7 @@
       "post": {
         "summary": "Create expense transaction",
         "operationId": "create-expense-transaction",
-        "description": "Create an expense transaction",
+        "description": "The *Create expense* endpoint creates an [expense transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) in the accounting platform for a given company's connection. \n\n[Expense transactions](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) represent transactions made with a company debit or credit card. \n\n\n**Integration-specific behaviour**\n\nSome accounting platforms support the option of pushing transactions to a draft state. This can be done by setting the postAsDraft property on the transaction to true. For platforms without this feature, the postAsDraft property should be ignored or set to false.\n\n| Integration | Draft State | Details                                                                                                      |  \n|-------------|-------------|--------------------------------------------------------------------------------------------------------------|\n| Dynamics 365 Business Central | Yes   | Setting postAsDraft to true will push the transactions to a drafted state rather than posting directly to the ledger. For transactions in a draft state, they can then be approved and posted within the accounting platform. |\n| Quickbooks Online | No | -  |\n| Xero | No | - |\n| NetSuite | No | - |",
         "tags": [
           "Expenses"
         ],
@@ -1799,7 +1799,7 @@
           }
         },
         "operationId": "update-expense-transaction",
-        "description": "Update an expense transaction",
+        "description": "The *Update expense* endpoint updates an existing [expense transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) in the accounting platform for a given company's connection. \n\n[Expense transactions](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) represent transactions made with a company debit or credit card. \n\n\n**Integration-specific behaviour**\n\nAt the moment you can update expenses only for Xero ([Payment](https://docs.codat.io/expenses/sync-process/expense-transactions#transaction-types) transaction type only).",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1876,7 +1876,7 @@
         "tags": [
           "Expenses"
         ],
-        "description": "Creates an attachment in the accounting software against the given transactionId"
+        "description": "The *Upload attachment* endpoint uploads an attachment in the accounting software against the given transactionId. \n\n[Expense transactions](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) represent transactions made with a company debit or credit card. \n\n**Integration-specific behaviour**\n\nEach accounting software supports different file formats and sizes.\n\n| Integration | File Size | File Extension                                                                                                      |  \n|-------------|-------------|--------------------------------------------------------------------------------------------------------------|\n| Xero | 4MB  | 7Z, BMP, CSV, DOC, DOCX, EML, GIF, JPEG, JPG, KEYNOTE, MSG, NUMBERS, ODF, ODS, ODT, PAGES, PDF, PNG, PPT, PPTX, RAR, RTF, TIF, TIFF, TXT, XLS, XLSX, ZIP |\n| QuickBooks Online | 100MB | AI, CSV, DOC, DOCX, EPS, GIF, JPEG, JPG, ODS, PAGES, PDF, PNG, RTF, TIF, TXT, XLS, XLSX, XML  |\n| NetSuite | 100MB | BMP, CSV, XLS, XLSX, JSON, PDF, PJPG, PJPEG, PNG, TXT, SVG, TIF, TIFF, DOC, DOCX, ZIP |"
       }
     },
     "/companies/{companyId}/data/all": {
@@ -13423,7 +13423,7 @@
           "postAsDraft": {
             "type": "boolean",
             "nullable": true,
-            "description": "For supported accouting platforms, setting this optional property to true will post the transaction to a drafted state rather than posted state. Accounting platforms currently supported: Dynamics 365 Business Central."
+            "description": "For supported accouting platforms, setting this optional property to true will post the transaction to a drafted state."
           }
         },
         "required": [
