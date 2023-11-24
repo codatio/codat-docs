@@ -1,6 +1,6 @@
 ---
 title: "QuickBooks Desktop: new connector released"
-date: "2023-11-XX"
+date: "2023-11-25"
 tags: ["Update", "QBD"]
 authors: ajacksoncodat
 ---
