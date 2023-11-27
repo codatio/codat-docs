@@ -59,10 +59,14 @@ graph TD
     A1(Bill retrieved) --> B{Type of payment}
     A2(Bill created) --> B
 
+    A1 --> F1(Delete bill)
+    A2 --> F1
+
     B --> C1[Payment against bill]
     B --> C2[Allocation of supplier's credit note]
 
     C1 --> D1[Single bill payment]
+    C1 --> E4[Delete payment]
     D1 --> E1[Full payment]
     D1 --> E2[Partial payment]
     E1 -.- note1[Add lines array containing<br>one element indicating the<br>bill paid and the amount.]
@@ -78,6 +82,7 @@ graph TD
     D3 -.- note3[Create a bill credit note to<br>partially or fully offset<br>the balance of a bill.]
 
     D3 --> E3[Create bill payment <br>with credit note]
+    E3 --> E4
     E3 -.- note4[Create a bill payment and<br>include the bill credit note and<br>the bill to credit in the links array.]
 
 ```
@@ -986,6 +991,12 @@ Credit note allocations are coming soon for MYOB.
 </TabItem>
 
 </Tabs>
+
+### Delete bills and payments
+
+In certain scenarios, your SMB customer may want to delete an existing bill or a bill payment - for example, if they made a mistake or no longer want to process the bill. 
+
+Use the [Delete bill](/sync-for-payables-api#/operations/delete-bill) and [Delete bill payment](/sync-for-payables-api#/operations/delete-billPayment) endpoints to support these requirements, and check them in our OAS for the most up-to-date integration coverage. 
 
 :::tip Recap
 
