@@ -33,7 +33,7 @@ GET https://api.codat.io/companies/{companyId}/sync/expenses/config
 - You can either choose to create a new account or retrieve a list of exisiting accounts from your customers accounting software. 
     
     - [GET](/accounting-api#/operations/get-account) a list of available accounts. Use this request to retrieve a list of relevant accounts from your customers' accounting software. You should also add additional query parameters, e.g. `query=metadata.isDeleted=false&&isBankAccount=true`. For **credit cards**, you can use an additional query parameter, e.g. `query=metadata.isDeleted=false&&isBankAccount=true&&type=liability`.
-    - To **create** a new bank acocunt you can use the following [POST](/accounting-api#/operations/bankAccounts) endpoint. Please note that you should trigger a [GET](/accounting-api#/operations/bankAccounts) if a new bank account has been created prior to syncing transactions. 
+    - To **create** a new bank acocunt you can use the following [POST](/accounting-api#/operations/create-bank-accounts) endpoint. Please note that you should trigger a data refresh [GET](/accounting-api#/operations/bankAccounts) if a new bank account has been created prior to syncing transactions. 
 
 :::info Foreign exchange 💱
 
