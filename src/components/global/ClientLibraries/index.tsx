@@ -37,7 +37,7 @@ const ClientLibraries = ({productName}) => {
                         <li key={i} className="card mini">
                             <div className="card-row">
                                 <div className="header">
-                                    <a href={repoBaseUrl + language.name + productUrl}>
+                                    <a href={repoBaseUrl + language.name + productUrl} target="_blank">
                                     <img
                                         src={language.icon}
                                         className="icon usecase"
@@ -48,7 +48,7 @@ const ClientLibraries = ({productName}) => {
                                 <div className="content">
                                     <h4>{language.namePretty}</h4>
                                     <p>
-                                    <a href={repoBaseUrl + language.name + productUrl}>Start using →</a>
+                                    <a href={repoBaseUrl + language.name + productUrl} target="_blank">Start using →</a>
                                     </p>    
                                 </div>
                             </div>

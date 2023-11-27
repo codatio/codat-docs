@@ -80,10 +80,10 @@ Codat supports a range of [webhooks](/using-the-api/webhooks/core-rules-types) t
   Use this webhook to track the completion of the operation to create bank transactions in the target platform. When you receive a notification from this webhook, check the `status` value in the body. A `Success` status means the `transactions` array has been successfully pushed to the accounting software. In case of errors, resolve the issue and resend the payload.
 
 
-## Client library
+## Client libraries
 
-Use our comprehensive [Bank Feeds API library](/get-started/libraries) to kick-start and simplify your build. Simply install the library in one of the supported languages and pass your base64-encoded API key to the constructor.
-Simply install the library in one of the supported languages and pass your base64 encoded API key to the constructor.
+Use our comprehensive [Bank Feeds API library](/get-started/libraries) to kick-start and simplify your build. 
+Simply install the library in one of the supported languages and pass your base64-encoded API key to the constructor.
 
 <Tabs>
 

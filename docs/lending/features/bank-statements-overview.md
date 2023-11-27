@@ -9,6 +9,8 @@ image: "/img/banners/social/lending.png"
 import Products from "@components/global/Products";
 import { IntegrationsList } from "@components/global/Integrations";
 import { bankingIntegrations } from "@components/global/Integrations/integrations";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem"
 
 Our **bank statements** feature provides data from a linked company’s banking connections. Transactions are enriched with financial category and payment provider information.
 
@@ -76,7 +78,121 @@ Businesses often sell across multiple channels, for example, brick and mortar, o
 
 ## Supported outputs
 
-You can retrieve the data pulled and enriched by the feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **bank statements** [endpoints of our API](/lending-api#/).
+You can retrieve the data pulled and enriched by the feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **bank statements** [endpoints of our API](/lending-api#/operations/get-categorized-bank-statement).
+For example, use [Get categorized bank statement](/lending-api#/operations/get-categorized-bank-statement) endpoint to list enriched transactions.
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+type Transaction {
+  category: string;
+  amount: number;
+}
+
+const statementResponse = await lendingClient.banking.categorizedStatement.get({
+    companyId: companyId
+});
+
+if (statementResponse.statusCode != 200) {
+  throw new Error("Could not get categorized bank statement")
+}
+
+const transactions: Transaction[] = statementResponse.enhancedCashFlowTransactions.reportItems.transactions.map(x => ({
+  category: x.transactionCategory.levels.join('.'),
+  amount: x.amount
+}));
+
+const loansPayable = transactions.filter(x => x.category
+  .startsWith('Liability.Current.Debt.LoansPayable'))
+  .reduce((sum, current) => sum + current.total, 0);
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+@dataclass
+class Transaction:
+  category: string;
+  amount: number;
+
+statement_request = operations.GetCategorizedBankStatementRequest(
+    company_id=company_id,
+)
+
+statement_response = lending_client.banking.categorized_statement.get(statement_request)
+
+if statement_response != 200:
+  raise Exception('Could not get categorized bank statement')
+
+transactions = []
+for x in statement_response.enhanced_cash_flow_transactions.report_items.transactions:
+  transactions.append(Transaction(category='.'.join(x.transaction_category.levels), amount=x.amount))
+
+loans_payable = sum(transaction.amount for transaction in transactions \\
+    if transaction.category.startswith('Liability.Current.Debt.LoansPayable'))
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+
+```csharp
+public record Transaction(string Category, decimal Amount);
+
+var statementResponse = await lendingClient.Banking.CategorizedStatement.GetAsync(new() {
+    CompanyId = companyId
+});
+
+if (statementResponse.StatusCode != 200) {
+  throw new Exception("Could not get categorized bank statement");
+}
+
+var transactions = statementResponse.EnhancedCashFlowTransactions.ReportItems.Transactions
+  .Select(x => new Transaction(
+    Category = string.Join(".", x.TransactionCategory.Levels),
+    Amount = x.Amount
+  ));
+
+var loansPayable = transactions.Sum(x => 
+  x.category.startsWith('Liability.Current.Debt.LoansPayable'));
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+type Transaction struct {
+  Category string 
+  Amount float64
+}
+
+ctx := context.Background()
+statementResponse, err := lendingClient.Banking.CategorizedStatement.Get(ctx, operations.GetCategorizedBankStatementRequest{
+    CompanyID: companyID,
+})
+
+if err != nil && statementResponse.StatusCode == 200 {
+  transactions = statementResponse.EnhancedCashFlowTransactions.ReportItems.Transactions
+
+
+  .Select(x => new Transaction(
+    Category: string.Join(".", x.TransactionCategory.Levels),
+    Amount: x.Amount
+  ));
+
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 
 ## Get started
 
