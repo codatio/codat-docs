@@ -14,8 +14,7 @@ Most importantly, each connection to an external data source is a separate servi
 
 Load on instances is proactively monitored by Azure, and the engineering team is alerted in the event of unexpected spikes.
 
-
-IMG??
+![](/img/enterprise/architecture/architecture.png)
 
 # Hosting and Data Storage
 
