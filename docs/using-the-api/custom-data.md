@@ -19,7 +19,7 @@ Codat's standard data models leverage our extensive industry experience and know
 
 However, your use case may require additional data types from our integrations that are excluded from our standard model. For example, we do not currently fetch any data from Xero's [Payroll](https://developer.xero.com/documentation/api/payrolluk/overview) and NetSuite's [Expense Reports](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_N908140.html#Expense-Reports) endpoints.
 
-With custom data, you can fetch new, non-standardized data types that are not included in our out-of-the box data model for the integrations we support. You will need to configure and request these custom data types using our API endpoints. 
+With custom data, you can fetch new, non-standardized data types that are not included in our out-of-the-box data model for the integrations we support. You will need to configure and request these custom data types using our API endpoints. 
 
 ![A diagram that compares standard data types at Codat with custom data types](/img/use-the-api/custom-data.png)
 
