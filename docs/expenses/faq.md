@@ -19,10 +19,6 @@ Codat pushes attachments synchronously to the expense transactions. To update an
 
 Our [token migration process](https://docs.codat.io/get-started/migration) allows you to seamlessly migrate your customers' connections without them needing to reconnect. We offer self-service and managed migrations, so you can choose the option that suits your use case best. 
 
-### How should I handle transactions in a foreign currency?
-
-Sync for Expenses only handles foreign currencies if each transaction is converted back to the currency of the bank account where the transaction is recorded. It does not support separate bank accounts for each foreign exchange currency. 
-
 ### How do I reconnect a company? 
 
 If a user disconnects, you can use a [webhook](/using-the-api/webhooks/core-rules-types#company-data-connection-status-changed) and redirect your user to the `linkUrl` of the accounting connection to re-authenticate. If a company changes accounting platforms, it is better to remove the accounting connection completely and create a new one. 
