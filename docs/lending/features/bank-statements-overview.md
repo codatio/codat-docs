@@ -79,7 +79,7 @@ Businesses often sell across multiple channels, for example, brick and mortar, o
 ## Supported outputs
 
 You can retrieve the data pulled and enriched by the feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **bank statements** [endpoints of our API](/lending-api#/operations/get-categorized-bank-statement).
-For example, use [Get categorized bank statement](/lending-api#/operations/get-categorized-bank-statement) endpoint to list enriched transactions.
+For example, use [Get categorized bank statement](/lending-api#/operations/get-categorized-bank-statement) endpoint to precisely calculate the current extent of the company's outstanding loans.
 
 <Tabs>
 
@@ -116,8 +116,8 @@ const loansPayable = transactions.filter(x => x.category
 ```python
 @dataclass
 class Transaction:
-  category: string;
-  amount: number;
+  category: str
+  amount: Decimal
 
 statement_request = operations.GetCategorizedBankStatementRequest(
     company_id=company_id,
@@ -125,14 +125,14 @@ statement_request = operations.GetCategorizedBankStatementRequest(
 
 statement_response = lending_client.banking.categorized_statement.get(statement_request)
 
-if statement_response != 200:
+if statement_response.status_code != 200:
   raise Exception('Could not get categorized bank statement')
 
 transactions = []
 for x in statement_response.enhanced_cash_flow_transactions.report_items.transactions:
   transactions.append(Transaction(category='.'.join(x.transaction_category.levels), amount=x.amount))
 
-loans_payable = sum(transaction.amount for transaction in transactions \\
+loans_payable = sum(transaction.amount for transaction in transactions \
     if transaction.category.startswith('Liability.Current.Debt.LoansPayable'))
 ```
 
@@ -168,7 +168,7 @@ var loansPayable = transactions.Sum(x =>
 
 ```go
 type Transaction struct {
-  Category string 
+  Category string
   Amount float64
 }
 
@@ -178,14 +178,22 @@ statementResponse, err := lendingClient.Banking.CategorizedStatement.Get(ctx, op
 })
 
 if err != nil && statementResponse.StatusCode == 200 {
-  transactions = statementResponse.EnhancedCashFlowTransactions.ReportItems.Transactions
+  transactions := []Transaction{}
 
+  for _, transaction := range statementResponse.EnhancedCashFlowTransactions.ReportItems.Transactions {
+    category := strings.Join(transaction.TransactionCategory.Levels, ".")
+    amount, _ := transaction.Amount.Float64()
+		transactions = append(transactions, Transaction{category, amount})
+	}
 
-  .Select(x => new Transaction(
-    Category: string.Join(".", x.TransactionCategory.Levels),
-    Amount: x.Amount
-  ));
+  loansPayable := 0.0
+  for _, transaction := range transactions {
+    if strings.HasPrefix(transaction.Category, "Liability.Current.Debt.LoansPayable") {
+      loansPayable += transaction.Amount
+    }
+  }
 
+  fmt.Println(loansPayable)
 }
 ```
 
