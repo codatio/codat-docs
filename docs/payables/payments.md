@@ -987,6 +987,12 @@ Credit note allocations are coming soon for MYOB.
 
 </Tabs>
 
+### Delete bills and payments
+
+In certain scenarios, your SMB customer may want to delete an existing bill or a bill payment - for example, if they made a mistake or no longer want to process the bill. 
+
+Use the [Delete bill](/sync-for-payables-api#/operations/delete-bill) and [Delete bill payment](/sync-for-payables-api#/operations/delete-billPayment) endpoints to support these requirements, and check them in our OAS for the most up-to-date integration coverage. 
+
 :::tip Recap
 
 This concludes the bill pay process supported by Sync for Payables. You have provided your customer with their suppliers, bills, and bank accounts and enabled them to choose relevant payment methods. You have reflected the bill payments in their accounting system. 
