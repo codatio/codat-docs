@@ -1937,7 +1937,7 @@
       "BankTransactions": {
         "title": "Bank transactions",
         "type": "array",
-        "maxItems": 2000,
+        "maxItems": 1000,
         "items": {
           "title": "Bank transaction",
           "type": "object",
