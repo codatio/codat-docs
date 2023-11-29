@@ -48,6 +48,10 @@ We recommend regularly uploading transactions throughout the day so that your cu
 
 Use our [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions) endpoint to create bank transactions. In response, you will receive a `pushOperation` object with a `Pending` status.
 
+:::caution Quantity limit
+A maximum of 1000 bank transactions can be pushed at a time.
+:::
+
 <Tabs>
 
 <TabItem value="nodejs" label="TypeScript">
