@@ -137,6 +137,10 @@
     {
       "name": "Supplemental data",
       "description": "View and configure supplemental data for supported data types."
+    },
+    {
+      "name": "Custom data type",
+      "description": "View and configure custom data types for supported integrations."
     }
   ],
   "paths": {
@@ -340,26 +344,7 @@
             }
           },
           "400": {
-            "description": "The request made is not valid.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorMessage"
-                },
-                "examples": {
-                  "Malformed query": {
-                    "value": {
-                      "statusCode": 400,
-                      "service": "PublicApi",
-                      "error": "Error processing request - not valid.",
-                      "correlationId": "bc997528a9d7abb9161ef45f05d38599",
-                      "canBeRetried": "Unknown",
-                      "detailedErrorCode": 0
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/Bad-Request"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -2397,7 +2382,7 @@
         }
       }
     },
-    "/integrations/{platformKey}/datatypes/{dataType}/supplementalDataConfig": {
+    "/integrations/{platformKey}/dataTypes/{dataType}/supplementalDataConfig": {
       "parameters": [
         {
           "$ref": "#/components/parameters/platformKey"
@@ -2596,6 +2581,372 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/integrations/{platformKey}/dataTypes/custom/{customDataIdentifier}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/platformKey"
+        },
+        {
+          "$ref": "#/components/parameters/customDataIdentifier"
+        }
+      ],
+      "put": {
+        "summary": "Configure custom data type",
+        "description": "The *Configure custom data type* endpoint allows you to maintain or change the configuration required to return a custom data type for a specific integration. \n\nA [custom data type](https://docs.codat.io/using-the-api/custom-data) is an additional data type you can create that is not included in Codat's standardized data model.\n\n### Tips and traps\n\n- You can only configure a single custom data type for a single platform at a time. Use the endpoint multiple times if you need to configure it for multiple platforms. \n\n- You can only indicate a single data source for each customer data type. \n\n- Make your custom configuration as similar as possible to our standard data types so you can interact with them in exactly the same way.",
+        "operationId": "configure-custom-data-type",
+        "x-speakeasy-name-override": "configure",
+        "tags": [
+          "Custom data type"
+        ],
+        "requestBody": {
+          "description": "Custom data type configuration for the specified platform.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomDataTypeConfiguration"
+              },
+              "examples": {
+                "Dynamics 365 Business Central": {
+                  "value": {
+                    "dataSource": "api/purchaseOrders",
+                    "requiredData": {
+                      "currency": "$[*].currencyCode",
+                      "number": "$[*].number",
+                      "date": "$[*].orderDate",
+                      "totalexvat": "$[*].totalAmountExcludingTax",
+                      "totaltax": "$[*].totalTaxAmount",
+                      "vendor": "$[*].number"
+                    },
+                    "keyBy": [
+                      "$[*].id"
+                    ],
+                    "sourceModifiedDate": [
+                      "$[*].lastModifiedDateTime"
+                    ]
+                  }
+                },
+                "Xero Simple Record": {
+                  "value": {
+                    "dataSource": "/api.xro/2.0/Accounts",
+                    "requiredData": {
+                      "code": "$.Code",
+                      "accountId": "$.AccountID",
+                      "type": "$.Type",
+                      "SysAcc": "$.SystemAccount"
+                    },
+                    "keyBy": [
+                      "$.AccountID"
+                    ]
+                  }
+                },
+                "Xero Mapping Arrays": {
+                  "value": {
+                    "dataSource": "/api.xro/2.0/Invoices",
+                    "requiredData": {
+                      "invNumber": "$.InvoiceNumber",
+                      "type": "$.Type",
+                      "InvoiceID": "$.InvoiceID",
+                      "lines": "$.LineItems[*]"
+                    },
+                    "keyBy": [
+                      "$.InvoiceID"
+                    ],
+                    "sourceModifiedDate": [
+                      "$.UpdatedDateUTC"
+                    ]
+                  }
+                },
+                "QuickBooks Online": {
+                  "value": {
+                    "dataSource": "/query?query=select * from Account",
+                    "requiredData": {
+                      "id": "$.Id",
+                      "Currentbal": "$.CurrentBalance",
+                      "SubAcc": "$.SubAccount"
+                    },
+                    "keyBy": [
+                      "$.Id"
+                    ],
+                    "sourceModifiedDate": [
+                      "$.time"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomDataTypeConfiguration"
+                },
+                "examples": {
+                  "Dynamics 365 Business Central": {
+                    "value": {
+                      "dataSource": "api/purchaseOrders",
+                      "requiredData": {
+                        "currency": "$[*].currencyCode",
+                        "number": "$[*].number",
+                        "date": "$[*].orderDate",
+                        "totalexvat": "$[*].totalAmountExcludingTax",
+                        "totaltax": "$[*].totalTaxAmount",
+                        "vendor": "$[*].number"
+                      },
+                      "keyBy": [
+                        "$[*].id"
+                      ],
+                      "sourceModifiedDate": [
+                        "$[*].lastModifiedDateTime"
+                      ]
+                    }
+                  },
+                  "Xero Simple Record": {
+                    "value": {
+                      "dataSource": "/api.xro/2.0/Accounts",
+                      "requiredData": {
+                        "code": "$.Code",
+                        "accountId": "$.AccountID",
+                        "type": "$.Type",
+                        "SysAcc": "$.SystemAccount"
+                      },
+                      "keyBy": [
+                        "$.AccountID"
+                      ]
+                    }
+                  },
+                  "Xero Mapping Arrays": {
+                    "value": {
+                      "dataSource": "/api.xro/2.0/Invoices",
+                      "requiredData": {
+                        "invNumber": "$.InvoiceNumber",
+                        "type": "$.Type",
+                        "InvoiceID": "$.InvoiceID",
+                        "lines": "$.LineItems[*]"
+                      },
+                      "keyBy": [
+                        "$.InvoiceID"
+                      ],
+                      "sourceModifiedDate": [
+                        "$.UpdatedDateUTC"
+                      ]
+                    }
+                  },
+                  "QuickBooks Online": {
+                    "value": {
+                      "dataSource": "/query?query=select * from Account",
+                      "requiredData": {
+                        "id": "$.Id",
+                        "Currentbal": "$.CurrentBalance",
+                        "SubAcc": "$.SubAccount"
+                      },
+                      "keyBy": [
+                        "$.Id"
+                      ],
+                      "sourceModifiedDate": [
+                        "$.time"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get custom data configuration",
+        "description": "The *Get custom data configuration* endpoint returns existing configuration details for the specified custom data type and integration pair you previously configured.\n\nA [custom data type](https://docs.codat.io/using-the-api/custom-data) is an additional data type you can create that is not included in Codat's standardized data model.",
+        "operationId": "get-custom-data-type-configuration",
+        "x-speakeasy-name-override": "get-configuration",
+        "tags": [
+          "Custom data type"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomDataTypeRecords"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/data/queue/custom/{customDataIdentifier}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        },
+        {
+          "$ref": "#/components/parameters/customDataIdentifier"
+        }
+      ],
+      "post": {
+        "summary": "Refresh custom data type",
+        "description": "The *Refresh custom data type* endpoint refreshes the specified custom data type for a given company. This is an asynchronous operation that will sync updated data from the linked integration into Codat for you to view.",
+        "operationId": "refresh-custom-data-type",
+        "x-speakeasy-name-override": "refresh",
+        "tags": [
+          "Custom data type"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PullOperation"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "451": {
+            "$ref": "#/components/responses/Legal-Reasons"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/data/custom/{customDataIdentifier}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        },
+        {
+          "$ref": "#/components/parameters/customDataIdentifier"
+        }
+      ],
+      "get": {
+        "summary": "List custom data type records",
+        "description": "The *List custom data type records* endpoint returns a paginated list of records pulled for the specified custom data type you previously configured.\n\nA [custom data type](https://docs.codat.io/using-the-api/custom-data) is an additional data type you can create that is not included in Codat's standardized data model.s endpoint returns a paginated list of records whose schema is defined [Configure custom data type](https://docs.codat.io/platform-api#/operations/configure-custom-data-type)",
+        "operationId": "list-custom-data-type-records",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/page"
+          },
+          {
+            "$ref": "#/components/parameters/pageSize"
+          }
+        ],
+        "tags": [
+          "Custom data type"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomDataTypeRecords"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Bad-Request"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "451": {
+            "$ref": "#/components/responses/Legal-Reasons"
           },
           "500": {
             "$ref": "#/components/responses/Internal-Server-Error"
@@ -3481,6 +3832,120 @@
           "notifiers"
         ]
       },
+      "CustomDataTypeConfiguration": {
+        "title": "Custom data type configuration",
+        "type": "object",
+        "description": "Client's configuration details for a specific custom data type and platform pair.",
+        "properties": {
+          "dataSource": {
+            "type": "string",
+            "description": "Underlying endpoint of the source platform that will serve as a data source for the custom data type. This value is not validated by Codat."
+          },
+          "requiredData": {
+            "type": "object",
+            "description": "Properties required to be fetched from the underlying platform for the custom data type that is being configured. This value is not validated by Codat.",
+            "additionalProperties": {
+              "type": "string",
+              "description": "The client's defined name for the property with the value being the source system's property name which the mapping is targeting."
+            }
+          },
+          "keyBy": {
+            "type": "array",
+            "description": "An array of properties from the source system that can be used to uniquely identify the records returned for the custom data type. This value is not validated by Codat.",
+            "items": {
+              "type": "string"
+            },
+            "minLength": 1
+          },
+          "sourceModifiedDate": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "string"
+            },
+            "description": "Property in the source platform nominated by the client that defines the date when a record was last modified there. This value is not validated by Codat."
+          }
+        },
+        "examples": [
+          {
+            "dataSource": "api/purchaseOrders?$filter=currencyCode eq 'NOK'",
+            "requiredData": {
+              "currencyCode": "$[*].currencyCode",
+              "id": "$[*].id",
+              "number": "$[*].number",
+              "orderDate": "$[*].orderDate",
+              "totalAmountExcludingTax": "$[*].totalAmountExcludingTax",
+              "totalTaxAmount": "$[*].totalTaxAmount",
+              "vendorName": "$[*].number"
+            },
+            "keyBy": [
+              "$[*].id"
+            ],
+            "sourceModifiedDate": [
+              "$[*].lastModifiedDateTime"
+            ]
+          }
+        ]
+      },
+      "CustomDataTypeRecords": {
+        "title": "Custom data type records",
+        "type": "object",
+        "description": "Resulting records pulled from the source platform for a specific custom data type.",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomDataTypeRecords/definitions/customDataTypeRecord"
+            }
+          },
+          "pageNumber": {
+            "$ref": "#/components/schemas/PagingInfo/properties/pageNumber"
+          },
+          "pageSize": {
+            "$ref": "#/components/schemas/PagingInfo/properties/pageSize"
+          },
+          "totalResults": {
+            "$ref": "#/components/schemas/PagingInfo/properties/totalResults"
+          }
+        },
+        "definitions": {
+          "customDataTypeRecord": {
+            "title": "Custom data type record",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "nullable": false,
+                "description": "Unique identifier of the record."
+              },
+              "content": {
+                "type": "object",
+                "description": "Values from the source system for the properties defined in the custom data type configuration.",
+                "additionalProperties": {
+                  "type": "object"
+                }
+              },
+              "modifiedDate": {
+                "title": "ModifiedDate",
+                "x-internal": true,
+                "type": "object",
+                "properties": {
+                  "modifiedDate": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/DateTime"
+                      },
+                      {
+                        "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "DatasetDataChangedWebhook": {
         "title": "Dataset data changed webhook",
         "x-internal": true,
@@ -4266,7 +4731,10 @@
             "example": "50830828-7d39-4367-b0eb-5ddb2de5faa5"
           },
           "dataType": {
-            "$ref": "#/components/schemas/DataStatus/properties/dataType"
+            "title": "Data types",
+            "x-internal": true,
+            "type": "string",
+            "description": "The data type you are requesting in a pull operation."
           },
           "status": {
             "type": "string",
@@ -5096,6 +5564,28 @@
       }
     },
     "responses": {
+      "Bad-Request": {
+        "description": "The request made is not valid.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Malformed query": {
+                "value": {
+                  "statusCode": 400,
+                  "service": "PublicApi",
+                  "error": "Error processing request - not valid.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
       "Malformed-Query": {
         "description": "Your `query` parameter was not correctly formed",
         "content": {
@@ -5258,6 +5748,28 @@
           }
         }
       },
+      "Legal-Reasons": {
+        "description": "Not currently available due to compliance limitations. Reach out to your Codat contact for further assistance.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 451,
+                  "service": "StdznCustomData",
+                  "error": "Platform 'qudb' is not currently available for compliance purposes.",
+                  "correlationId": "f63017dabb9b87865573bea95a51e55d",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
       "Internal-Server-Error": {
         "description": "There is a problem with our server. Please try again later.",
         "content": {
@@ -5327,6 +5839,16 @@
           "description": "Unique identifier for a company's data connection."
         },
         "description": "Unique identifier for a connection."
+      },
+      "customDataIdentifier": {
+        "name": "customDataIdentifier",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": "DynamicsPurchaseOrders"
+        },
+        "description": "Unique identifier for a custom data type."
       },
       "page": {
         "name": "page",

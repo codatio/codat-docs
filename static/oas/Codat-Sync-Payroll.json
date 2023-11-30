@@ -15197,7 +15197,10 @@
             "example": "50830828-7d39-4367-b0eb-5ddb2de5faa5"
           },
           "dataType": {
-            "$ref": "#/components/schemas/DataStatus/properties/dataType"
+            "title": "Data types",
+            "x-internal": true,
+            "type": "string",
+            "description": "The data type you are requesting in a pull operation."
           },
           "status": {
             "type": "string",
