@@ -65,51 +65,50 @@ For example, if you offer the option to make payments from a credit card, the co
 
 <Tabs>
 
-<TabItem value="HTTP" label="HTTP">
+<TabItem value="nodejs" label="TypeScript">
 
-#### Request
-
-```http
-GET https://api.codat.io/companies/{companyId}/connections/{connectionId}/data/bankAccounts
+```javascript
+const accountsResponse = await payablesClient.accounts.list({
+    companyId: companyId,
+    query: 'isBankAccount=true'
+  });
 ```
 
-#### Response
+</TabItem>
 
-```json
-{
-	"results": [
-		{
-			"id": "164",
-			"accountName": "BillPay Debit Card",
-			"accountType": "Debit",
-			"nominalCode": "123456788",
-			"currency": "USD",
-			"balance": 0,
-			"availableBalance": 0,
-			"modifiedDate": "2023-04-14T09:31:24Z",
-			"sourceModifiedDate": "2023-04-14T09:31:23Z",
-			"metadata": {
-				"isDeleted": false
-			}
-		},
-		{
-			"id": "163",
-			"accountName": "BillPay Credit Card",
-			"accountType": "Credit",
-			"nominalCode": "123456789",
-			"currency": "USD",
-			"balance": 0,
-			"availableBalance": 0,
-			"modifiedDate": "2023-04-14T09:30:03Z",
-			"sourceModifiedDate": "2023-04-14T09:30:02Z",
-			"metadata": {
-				"isDeleted": false
-			}
-		}
-	]
-}
+<TabItem value="python" label="Python">
+
+```python
+accounts_request = operations.ListAccountsRequest(
+    company_id=company_id,
+    query='isBankAccount=true'
+)
+
+accounts_response = s.accounts.list(accounts_request)
 ```
 
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var accountsResponse = await payablesClient.Accounts.ListAsync(new ListAccountsRequest() {
+    CompanyId = companyId,
+    Query = "isBankAccount=true"
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+accountsResponse, err := payablesClient.Accounts.List(ctx, operations.ListAccountsRequest{
+    CompanyID: companyID,
+    Query: "isBankAccount=true"
+})
+```
 </TabItem>
 
 </Tabs>
@@ -119,6 +118,88 @@ GET https://api.codat.io/companies/{companyId}/connections/{connectionId}/data/b
 If the SMB customer plans to make payments from a new payment method or account that you provide, use the [Create account](/operations/create-account) endpoint to reflect that account in their accounting software. It will contain their transactions, making the SMB's payment reconciliation workflows easier. 
 
 You can also use the [Get create account model](/sync-for-payables-api#/operations/get-create-chartOfAccounts-model) endpoint first to check integration-specific requirements for account creation, or [read more](/using-the-api/push) about creating data with Codat.
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const accountCreateResponse = await payablesClient.accounts.create({
+	account: {
+		accountName: "BillPay Debit Account",
+		accountType: AccountType.Debit,
+		accountNumber: "80088008",
+		currency: "USD",
+		balance: 0,
+		availableBalance: 0,
+	},
+    companyId: companyId,
+	connectionId: connectionId
+  });
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+account_create_request = operations.CreateAccountsRequest(
+	account=shared.Account(
+		account_name="BillPay Debit Account",
+		account_type=shared.AccountType.DEBIT,
+		account_number="80088008",
+		currency="USD",
+		balance=0,
+		available_balance=0,
+	)
+    company_id=company_id,
+	connection_id=connection_id
+)
+
+account_create_response = payables_client.accounts.create(account_create_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var accountCreateResponse = await payablesClient.Accounts.CreateAsync(new CreateAccountRequest() {
+	Account=new Account(){
+		AccountName = "BillPay Debit Account",
+		AccountType = AccountType.Debit,
+		AccountNumber = "80088008",
+		Currency = "USD",
+		Balance = 0,
+		AvailableBalance = 0,
+	}
+    CompanyId = companyId,
+	ConnectionId = connectionId
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+accountsResponse, err := payablesClient.Accounts.Create(ctx, operations.CreateAccountRequest{
+	Account: &shared.Account{
+		AccountName: syncforpayables.String("BillPay Debit Account"),
+		AccountType: AccountType.Debit,
+		AccountNumber: "80088008",
+		Currency: syncforpayables.String("USD"),
+		Balance: 0,
+		AvailableBalance: 0,
+	},
+    CompanyID: companyID,
+    ConnectionID: connectionID,
+})
+```
+</TabItem>
+
+</Tabs>
 
 <Tabs>
 

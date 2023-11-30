@@ -7,6 +7,8 @@ image: "/img/banners/social/payables.png"
 
 import { IntegrationsList } from "@components/global/Integrations";
 import { integrationsFilterPayables } from "@components/global/Integrations/integrations";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem"
 
 ## Journey overview
 
@@ -93,6 +95,116 @@ Codat supports a range of [webhooks](/using-the-api/webhooks/core-rules-types) t
 - [Push operation status has changed](/using-the-api/webhooks/core-rules-types#push-operation-status-has-changed)  
 
   Use this webhook to track the completion of the operation to pay bills in the SMB's accounting platform. When you receive a notification from this webhook, check the `status` value in the body. A `Success` status means the bill payment or the bill credit note has been successfully pushed to the accounting software.
+
+### Client libraries
+Use our comprehensive [Sync for Payables library](/get-started/libraries) to kick-start and simplify your build. Simply install the library in one of the supported languages and pass your base64-encoded API key to the constructor. Simply install the library in one of the supported languages and pass your base64 encoded API key to the constructor.
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+#### Install
+
+##### NPM
+```sh
+npm add @codat/sync-for-payables
+```
+
+##### Yarn
+```sh
+yarn add @codat/sync-for-payables
+```
+
+#### Initialize
+
+```javascript
+import { CodatSyncPayables } from "@codat/sync-for-payables";
+
+const payablesClient = new CodatSyncPayables({
+        security: {
+            authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+        },
+    });
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+#### Install
+
+```sh
+pip install codat-sync-for-payables
+```
+
+#### Initialize
+
+```python
+import codatsyncpayables
+from codatsyncpayables.models import operations, shared
+
+payables_client = codatsyncpayables.CodatSyncPayables(
+    security=shared.Security(
+        auth_header="Basic BASE_64_ENCODED(API_KEY)",
+    ),
+)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+#### Install
+
+```sh
+dotnet add package Codat.Sync.Payables
+```
+
+#### Initialize
+
+```csharp
+using Codat.Sync.Payables;
+using Codat.Sync.Payables.Models.Shared;
+using Codat.Sync.Payables.Models.Operations;
+
+var payablesClient = new CodatSyncPayables(
+    security: new Security() {
+        AuthHeader = "Basic BASE_64_ENCODED(API_KEY)",
+    }
+);
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+#### Install
+
+```sh
+go get github.com/codatio/client-sdk-go/sync-for-payables
+```
+
+#### Initialize
+
+```go
+import (
+	"context"
+	syncforpayables "github.com/codatio/client-sdk-go/sync-for-payables/v2"
+	"github.com/codatio/client-sdk-go/sync-for-payables/v2/pkg/models/shared"
+)
+
+func main() {
+	payablesClient := syncforpayables.New(
+		syncforpayables.WithSecurity(shared.Security{
+			AuthHeader: "Basic BASE_64_ENCODED(API_KEY)",
+		}),
+	)
+}
+```
+
+</TabItem>
+
+</Tabs>
 
 :::tip Recap
 

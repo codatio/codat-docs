@@ -58,12 +58,51 @@ You can also retrieve [attachments](/sync-for-payables-api#/operations/download-
 
 <Tabs>
 
-<TabItem value="HTTP" label="HTTP">
+<TabItem value="nodejs" label="TypeScript">
 
-```http
-GET https://api.codat.io/companies/{companyId}/data/bills?page=1&pageSize=100
+```javascript
+const billsResponse = await payablesClient.bills.list({
+    companyId: companyId,
+    query: 'supplierRef.supplierName=acme'
+  });
 ```
-</TabItem >
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+bills_request = operations.ListBillsRequest(
+    company_id=company_id,
+    query='supplierRef.supplierName=acme'
+)
+
+bills_response = s.bills.list(bills_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var billsResponse = await payablesClient.Bills.ListAsync(new ListBillsRequest() {
+    CompanyId = companyId,
+    Query = "supplierRef.supplierName=acme"
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+billsResponse, err := payablesClient.Bills.List(ctx, operations.ListBillsRequest{
+    CompanyID: companyID,
+    Query: "supplierRef.supplierName=acme"
+})
+```
+</TabItem>
 
 </Tabs>
 
@@ -75,12 +114,138 @@ Use our [Update bill](/sync-for-payables-api#/operations/update-bill) endpoint t
 
 <Tabs>
 
-<TabItem value="HTTP" label="HTTP">
+<TabItem value="nodejs" label="TypeScript">
 
-```http
-PUT https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/bills/{billId}
+```javascript
+const billUpdateResponse = await payablesClient.bills.update({
+    bill: {
+      supplierRef: {
+        id: "1262c350-fe0f-40ec-aeff-41c95b4a45af",
+        supplierName: "DIISR - Small Business Services"
+      },
+      issueDate: "2023-04-23T00:00:00",
+      dueDate: "2023-06-23T00:00:00",
+      lineItems: [
+        {
+          "description": "Half day training - Microsoft Paint",
+          "unitAmount": 1000.00,
+          "quantity": 1,
+          "totalAmount": 1000.00,
+        }
+      ],
+      status: BillStatus.Open,
+      subTotal: 1000.00,
+      taxAmount: 200.00,
+      totalAmount: 1200.00,
+      amountDue: 1200.00
+    },
+    companyId: companyId,
+    connectionId: connectionId,
+    billId: billId,
+  });
 ```
-</TabItem >
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+bill_update_request = operations.UpdateBillRequest(
+    bill=shared.Bill(
+      supplierRef: shared.SupplierRef(
+        id="1262c350-fe0f-40ec-aeff-41c95b4a45af",
+        supplierName="DIISR - Small Business Services"
+      ),
+      issueDate="2023-04-23T00:00:00",
+      dueDate="2023-06-23T00:00:00",
+      lineItems=[
+        shared.BillLineItem(
+          description="Half day training - Microsoft Paint",
+          unitAmount=1000.00,
+          quantity=1,
+          totalAmount=1000.00,
+        )
+      ],
+      status=shared.BillStatus.OPEN,
+      subTotal=1000.00,
+      taxAmount=200.00,
+      totalAmount=1200.00,
+      amountDue=1200.00
+    ),
+    company_id=company_id,
+    connection_id=connection_id,
+    bill_id=bill_id,
+)
+
+bill_update_response = payables_client.bills.update(bill_update_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var billUpdateResponse = await payablesClient.Bills.UpdateAsync(new UpdateBillRequest() {
+    Bill = new Bill() {
+      SupplierRef = new SupplierRef(){
+        Id = "1262c350-fe0f-40ec-aeff-41c95b4a45af",
+        SupplierName = "DIISR - Small Business Services"
+      },
+      IssueDate = "2023-04-23T00:00:00",
+      DueDate = "2023-06-23T00:00:00",
+      LineItems = new List<BillLinItem>(){
+        new(){
+          Description = "Half day training - Microsoft Paint",
+          UnitAmount = 1000.00,
+          Quantity = 1,
+          TotalAmount = 1000.00,
+        }
+      },
+      Status: BillStatus.Open,
+      SubTotal: 1000.00,
+      TaxAmount: 200.00,
+      TotalAmount: 1200.00,
+      AmountDue: 1200.00
+    },
+    CompanyId = companyId,
+    ConnectionId = connectionId,
+    BillId = billId
+});
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+billUpdateResponse, err := payablesClient.Bills.Update(ctx, operations.UpdateBillRequest{
+    Bill: &shared.Bill{
+      SupplierRef: &shared.SupplierRef{
+          ID: "1262c350-fe0f-40ec-aeff-41c95b4a45af",
+          SupplierName: "DIISR - Small Business Services"
+      },
+      IssueDate: "2023-04-23T00:00:00",
+      DueDate: "2023-06-23T00:00:00",
+      LineItems: []shared.BillLineItem{
+          shared.BillLineItem{
+            Description: "Half day training - Microsoft Paint",
+            Quantity: types.MustNewDecimalFromString("1"),
+            UnitAmount: types.MustNewDecimalFromString("1000.00"),
+            TotalAmount: types.MustNewDecimalFromString("1000.00"),
+          }
+      },
+      Status: shared.BillStatusOpen,
+      SubTotal: types.MustNewDecimalFromString("1000.00"),
+      TaxAmount: types.MustNewDecimalFromString("200.00"),
+      TotalAmount: types.MustNewDecimalFromString("1200.00"),
+      AmountDue: types.MustNewDecimalFromString("1200.00"),
+    },
+    CompanyID: companyID,
+    ConnectionID: connectionID,
+    BillID: billID,
+})
+```
+</TabItem>
 
 </Tabs>
 
@@ -96,10 +261,132 @@ Use the [Create bill](/sync-for-payables-api#/operations/create-bill) endpoint t
 
 <Tabs>
 
-<TabItem value="HTTP" label="HTTP">
+<TabItem value="nodejs" label="TypeScript">
 
-```http
-POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/bills
+```javascript
+const billCreateResponse = await payablesClient.bills.create({
+    bill: {
+      supplierRef: {
+        id: "1262c350-fe0f-40ec-aeff-41c95b4a45af",
+        supplierName: "DIISR - Small Business Services"
+      },
+      issueDate: "2023-04-23T00:00:00",
+      dueDate: "2023-10-23T00:00:00",
+      lineItems: [
+        {
+          "description": "Half day training - Microsoft Paint",
+          "unitAmount": 1000.00,
+          "quantity": 1,
+          "totalAmount": 1000.00,
+        }
+      ],
+      status: BillStatus.Open,
+      subTotal: 1000.00,
+      taxAmount: 200.00,
+      totalAmount: 1200.00,
+      amountDue: 1200.00
+    },
+    companyId: companyId,
+    connectionId: connectionId,
+  });
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+bill_create_request = operations.CreateBillRequest(
+    bill=shared.Bill(
+      supplierRef: shared.SupplierRef(
+        id="1262c350-fe0f-40ec-aeff-41c95b4a45af",
+        supplierName="DIISR - Small Business Services"
+      ),
+      issueDate="2023-04-23T00:00:00",
+      dueDate="2023-10-23T00:00:00",
+      lineItems=[
+        shared.BillLineItem(
+          description="Half day training - Microsoft Paint",
+          unitAmount=1000.00,
+          quantity=1,
+          totalAmount=1000.00,
+        )
+      ],
+      status=shared.BillStatus.OPEN,
+      subTotal=1000.00,
+      taxAmount=200.00,
+      totalAmount=1200.00,
+      amountDue=1200.00
+    ),
+    company_id=company_id,
+    connection_id=connection_id,
+)
+
+bill_create_response = payables_client.bills.create(bill_create_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var billCreateResponse = await payablesClient.Bills.CreateAsync(new CreateBillRequest() {
+    Bill = new Bill() {
+      SupplierRef = new SupplierRef(){
+        Id = "1262c350-fe0f-40ec-aeff-41c95b4a45af",
+        SupplierName = "DIISR - Small Business Services"
+      },
+      IssueDate = "2023-04-23T00:00:00",
+      DueDate = "2023-10-23T00:00:00",
+      LineItems = new List<BillLinItem>(){
+        new(){
+          Description = "Half day training - Microsoft Paint",
+          UnitAmount = 1000.00,
+          Quantity = 1,
+          TotalAmount = 1000.00,
+        }
+      },
+      Status: BillStatus.Open,
+      SubTotal: 1000.00,
+      TaxAmount: 200.00,
+      TotalAmount: 1200.00,
+      AmountDue: 1200.00
+    },
+    CompanyId = companyId,
+    ConnectionId = connectionId,
+});
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+billCreateResponse, err := payablesClient.Bills.Create(ctx, operations.CreateBillRequest{
+    Bill: &shared.Bill{
+      SupplierRef: &shared.SupplierRef{
+          ID: "1262c350-fe0f-40ec-aeff-41c95b4a45af",
+          SupplierName: "DIISR - Small Business Services"
+      },
+      IssueDate: "2023-04-23T00:00:00",
+      DueDate: "2023-06-23T00:00:00",
+      LineItems: []shared.BillLineItem{
+          shared.BillLineItem{
+            Description: "Half day training - Microsoft Paint",
+            Quantity: types.MustNewDecimalFromString("1"),
+            UnitAmount: types.MustNewDecimalFromString("1000.00"),
+            TotalAmount: types.MustNewDecimalFromString("1000.00"),
+          }
+      },
+      Status: shared.BillStatusOpen,
+      SubTotal: types.MustNewDecimalFromString("1000.00"),
+      TaxAmount: types.MustNewDecimalFromString("200.00"),
+      TotalAmount: types.MustNewDecimalFromString("1200.00"),
+      AmountDue: types.MustNewDecimalFromString("1200.00"),
+    },
+    CompanyID: companyID,
+    ConnectionID: connectionID,
+})
 ```
 </TabItem>
 
@@ -107,7 +394,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 ## Upload attachment
 
-When creating a new bill, your SMB customer may want to save a copy of the PDF invoice issued by their supplier against the bill in their accounting software. Use the [Upload bill attachment](/sync-for-payables-api#/operations/upload-bill-attachments) to support this action. 
+When creating a new bill, your SMB customer may want to save a copy of the PDF invoice issued by their supplier against the bill in their accounting software. Use the [Upload bill attachment](/sync-for-payables-api#/operations/upload-bill-attachments) endpoint to support this action. 
 
 Different accounting software supports different file formats and sizes. View the [attachment schema](/sync-for-payables-api#/schemas/Attachment) for integration-specific guidance or check the platform's own documentation. 
 
