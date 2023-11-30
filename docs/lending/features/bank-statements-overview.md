@@ -10,7 +10,7 @@ import Products from "@components/global/Products";
 import { IntegrationsList } from "@components/global/Integrations";
 import { bankingIntegrations } from "@components/global/Integrations/integrations";
 import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem"
+import TabItem from "@theme/TabItem";
 
 Our **bank statements** feature provides data from a linked company’s banking connections. Transactions are enriched with financial category and payment provider information.
 
@@ -106,7 +106,7 @@ const transactions: Transaction[] = statementResponse.enhancedCashFlowTransactio
 
 const loansPayable = transactions.filter(x => x.category
   .startsWith('Liability.Current.Debt.LoansPayable'))
-  .reduce((sum, current) => sum + current.total, 0);
+  .reduce((sum, current) => sum + current.amount, 0);
 ```
 
 </TabItem>
@@ -153,10 +153,10 @@ if (statementResponse.StatusCode != 200) {
 }
 
 var transactions = statementResponse.EnhancedCashFlowTransactions.ReportItems.Transactions
-  .Select(x => new Transaction(
+  .Select(x => new Transaction(){
     Category = string.Join(".", x.TransactionCategory.Levels),
     Amount = x.Amount
-  ));
+  });
 
 var loansPayable = transactions.Sum(x => 
   x.category.startsWith('Liability.Current.Debt.LoansPayable'));
@@ -177,7 +177,7 @@ statementResponse, err := lendingClient.Banking.CategorizedStatement.Get(ctx, op
     CompanyID: companyID,
 })
 
-if err != nil && statementResponse.StatusCode == 200 {
+if err == nil && statementResponse.StatusCode == 200 {
   transactions := []Transaction{}
 
   for _, transaction := range statementResponse.EnhancedCashFlowTransactions.ReportItems.Transactions {

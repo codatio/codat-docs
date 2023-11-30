@@ -8,6 +8,8 @@ image: "/img/banners/social/lending.png"
 import Products from "@components/global/Products";
 import { IntegrationsList } from "@components/global/Integrations";
 import { accountingIntegrations, bankingIntegrations, commerceIntegrations } from "@components/global/Integrations/integrations";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 Our **liabilities** feature simplifies the evaluation of a borrower's financial obligations. Machine learning models automatically identify loans from connected sources and provide lenders with a clear overview of a borrower's outstanding loans and their repayment history.
 
@@ -33,7 +35,185 @@ Common uses of our liabilities feature include:
 
 ## Supported outputs
 
-You can retrieve the data pulled by the feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **liabilities** [endpoints of our API](/lending-api#/).
+You can retrieve the data pulled by the feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **liabilities** [endpoints of our API](/lending-api#/operations/generate-loan-transactions).
+For example, to review a company's loan repayment history use the [Get loan summaries](/lending-api#/operations/get-loan-summary) endpoint to determine the drawdown to repayment ratio.
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+type LoanSummary {
+  totalDrawdowns: number;
+  totalRepayments: number;
+}
+
+const sourceType = GenerateLoanSummarySourceType.Accounting
+
+// Request the generation of the report. This can take some time so 
+// make sure to poll the get endpoint to check the status of the process.
+const generateResponse = await lendingClient.liabilities.generateLoanSummary({
+    companyId: companyId,
+    sourceType: sourceType,
+  });
+
+if(generateResponse.statusCode != 202){
+  throw new Error("Unable to generate loan summary report")
+}
+
+// Wrap get call in function to poll endpoint
+const getLoanSummary = async (lendingClient, companyId, sourceType) => {
+  const reportResponse = await lendingClient..liabilities.getLoanSummary({
+    companyId: companyId,
+    sourceType: sourceType,
+  });
+
+  if (reportResponse.statusCode != 200) {
+    return getLoanSummary(companyId, sourceType)
+  }
+  else {
+    return reportResponse
+  }
+}
+
+const loanSummaryResponse = await getLoanSummary(lendingClient, companyId, formattedDate)
+
+const summaries: LoanSummary[] = loanSummaryResponse.loanSummary.reportItems.map(x => {
+  totalDrawdowns: x.totalDrawdowns,
+  totalRepayments: x.totalRepayments
+})
+
+const totalDrawdowns = summaries.reduce((sum, current) => sum + current.totalDrawdowns, 0)
+const totalRepayments = summaries.reduce((sum, current) => sum + current.totalRepayments, 0)
+
+const repaymentRatio = totalRepayments / totalDrawdowns
+console.log(repaymentRatio)
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+@dataclass
+class LoanSummary:
+  total_drawdowns: Decimal
+  total_repayments: Decimal
+
+source_type = operations.GenerateLoanSummarySourceType.ACCOUNTING
+
+loan_summary_request = operations.GenerateLoanSummaryRequest(
+    company_id=company_id,
+    source_type=source_type,
+)
+
+loan_summary_response = lending_client.liabilities.generate_loan_summary(loan_summary_request)
+
+if loan_summary_response.status_code != 202:
+  raise Exception('Unable to generate loan summary report')
+
+
+
+summaries = []
+for x in report_response.enhanced_financial_report.report_items:
+  summaries.append(Account(category='.'.join([y.level_name for y in x.transaction_category.levels]), balance=x.balance))
+
+total_assets = sum(account.amount for accounts in accounts if account.category.startswith('Asset'))
+total_debts = sum(account.amount for accounts in accounts if account.category.startswith('Liability.NonCurrent.LoansPayable'))
+
+gearing_ratio = total_debts / total_assets
+print(gearing_ratio)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+
+```csharp
+public record Account(string Category, decimal Balance);
+
+// Convert date to dd-mm-yyyy format
+var formattedDate = DateTime.UtcNow.ToString("dd-MM-yyyy");
+
+// Last 12 months is returned by default
+var reportResponse = await lendingClient.FinancialStatements.BalanceSheet.GetCategorizedAccountsAsync(new() {
+    CompanyId = companyId,
+    ReportDate = formattedDate,
+});
+
+if (reportResponse.StatusCode != 200) {
+  throw new Exception("Could not get categorized balance sheet accounts");
+}
+
+var accounts = reportResponse.EnhancedFinancialReport.ReportItems.Select(x => new Account(){
+  Category = string.Join(".", x.AccountCategory.Levels.Select(y => y.LevelName)),
+  Balance = x.Balance
+});
+
+// Calculate gearing ratio
+var totalAssets = accounts.Sum(x => x.Category.StartsWith("Asset"));
+var totalDebts = accounts.Sum(x => x.Category.StartsWith("Liability.NonCurrent.LoansPayable"));
+
+var gearingRatio = totalDebts / totalAssets;
+Console.WriteLine(gearingRatio);
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+type Account struct {
+  Category string
+  Balance float64
+}
+
+// Convert date to dd-mm-yyyy format
+now := time.Now().UTC()
+formattedDate := now.Format("28-11-2023")
+
+ctx := context.Background()
+reportResponse, err := lendingClient.FinancialStatements.BalanceSheet.GetCategorizedAccounts(ctx, 
+  operations.GetCategorizedBalanceSheetStatementRequest{
+    CompanyID: companyID,
+    ReportDate: formattedDate,
+})
+
+if err == nil && reportResponse.StatusCode == 200 {
+  accounts := []Account{}
+
+  for _, account := range reportResponse.EnhancedFinancialReport.ReportItems {
+    levelNames := []string{}
+    for _, level := range account.AccountCategory.Levels {
+      levelNames = append(levelNames, level.LevelName)
+    }
+    category := strings.Join(levelNames, ".")
+    balance, _ := transaction.Amount.Float64()
+		accounts = append(accounts, Account{category, balance})
+	}
+
+  totalAssets := 0.0
+  totalDebts := 0.0
+  for _, account := range accounts {
+    if strings.HasPrefix(account.Category, "Assets") {
+      totalAssets += transaction.Balance
+    }
+
+    if strings.HasPrefix(account.Category, "Liability.NonCurrent.LoansPayable") {
+      totalDebts += transaction.Balance
+    }
+  }
+
+  gearingRatio := totalDebts / totalAssets
+
+  fmt.Println(gearingRatio)
+}
+```
+
+</TabItem>
+
+</Tabs>
 
 ## Get started
 
