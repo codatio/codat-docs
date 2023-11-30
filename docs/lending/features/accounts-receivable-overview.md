@@ -8,6 +8,8 @@ image: "/img/banners/social/lending.png"
 import Products from "@components/global/Products";
 import { IntegrationsList } from "@components/global/Integrations";
 import { accountingIntegrations, bankingIntegrations } from "@components/global/Integrations/integrations";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 Our **accounts receivable** feature offers a thorough breakdown of a borrower's debtors ledger sourced from their accounting platform. You can examine the ledger in its entirety or delve into specific customer histories, enabling full automation of the receivables financing process.
 
@@ -43,7 +45,132 @@ Call our [List reconciled invoices](/lending-api#/operations/list-reconciled-inv
 
 ## Supported outputs
 
-You can retrieve the data pulled and enriched by the feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **accounts receivable** [endpoints of our API](/lending-api#/).
+You can retrieve the data pulled and enriched by the feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **accounts receivable** [endpoints of our API](/lending-api#/operations/list-reconciled-invoices).
+For example, invoice finance providers wanting to reduce their risk appetite should use the [List reconciled invoices](/lending-api#/operations/list-reconciled-invoices) endpoint to evaluate an SMB's customers ability to repay.
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+type CustomerDetails {
+  id: string;
+  name: string;
+}
+
+const invoicesResponse = await lendingClient.accountsReceivable.invoices.listReconciled({
+    companyId: companyId,
+    query: 'status=Paid'
+  });
+
+if(invoicesResponse.statusCode != 200){
+  throw new Error("Could not get reconciled invoices")
+}
+
+// Get all fully reconciled invoices
+const reconciledInvoices = invoicesResponse.enhancedInvoicesReport.reportItems.filter(x => {
+  reconciledTotal = x.payments.reduce((sum, current) => sum + current.amount, 0);
+  return x.totalAmount === reconciledTotal;
+})
+
+// Get customer details:
+const customers: CustomerDetails[] = reconciledInvoices.map(x => {
+  id: x.customerRef.id,
+  name: x.customerRef.customerName
+});
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+@dataclass
+class CustomerDetails:
+  id: str
+  name: str
+
+# Get all fully reconciled invoices
+invoices_request = operations.ListReconciledInvoicesRequest(
+    company_id=company_id,
+    query='status=Paid'
+)
+invoices_response = lending_client.accounts_receivable.invoices.list_reconciled(invoices_request)
+
+if invoices_response.status_code != 200:
+  raise Exception('Could not get reconciled invoices')
+
+# Get customer details for fully reconciled invoices:
+customers = []
+for invoice in invoices_response.enhanced_invoices_report.report_items:
+  reconciled_total = sum(x for x in invoice.payments)
+
+  if invoice.total_amount == reconciled_total:
+    customers.append(CustomerDetails(
+      id=invoice.customer_ref.id,
+      name=invoice.customer_ref.customer_ame
+    ))
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+public record CustomerDetails(string Id, string Name);
+
+var invoicesResponse = await lendingClient.AccountsReceivable.Invoices.ListReconciledAsync(new() {
+    CompanyId = companyId,
+    Query = "status=Paid"
+});
+
+if(invoicesResponse.StatusCode != 200){
+  throw new Exception("Could not get reconciled invoices");
+}
+
+// Get customer details for fully reconciled invoices:
+var customers = invoicesResponse.EnhancedInvoicesReport.ReportItems.Where(x =>
+  x.payments.Sum(y => y.Amount) == x.TotalAmount)
+  .Select(x => new CustomerDetails(x.CustomerRef.Id, x.CustomerRef.CustomerName);
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+type CustomerDetails struct {
+  Id string
+  Name string
+}
+
+ctx := context.Background()
+invoicesResponse, err := lendingClient.AccountsReceivable.Invoices.ListReconciled(
+    ctx,
+    operations.ListReconciledInvoicesRequest{
+      CompanyID: companyID,
+      Query: "status=Paid"
+  })
+
+if invoicesResponse.StatusCode == 200 {
+  // Get customer details for fully reconciled invoices:
+  customers = []CustomerDetails{}
+  for _, invoice := invoicesResponse.EnhancedInvoicesReport.ReportItems {
+    reconciledTotal := 0.0
+    for _, payment := invoice.payments {
+      reconciledTotal += payment.Amount
+    }
+
+    if reconciledTotal == invoice.TotalAmount {
+      customers = append(customers, CustomerDetails{})
+    }
+  }
+}
+```
+
+</TabItem>
+
+</Tabs>
 
 ## Get started
 

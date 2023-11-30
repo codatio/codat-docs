@@ -201,8 +201,8 @@ formattedDate := now.Format("28-11-2023")
 ctx := context.Background()
 revenueResponse, err := lendingClient.Sales.Metrics.GetRevenue(ctx, 
   operations.GetCommerceRevenueMetricsRequest{
-    CompanyID: companyId,
-    ConnectionID: connectionId,
+    CompanyID: companyID,
+    ConnectionID: connectionID,
     NumberOfPeriods: 12,
     PeriodLength: 1,
     PeriodUnit: shared.PeriodUnitMonth,

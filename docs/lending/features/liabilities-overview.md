@@ -43,7 +43,7 @@ For example, to review a company's loan repayment history use the [Get loan summ
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
-type LoanSummary {
+type LoanData {
   totalDrawdowns: number;
   totalRepayments: number;
 }
@@ -63,7 +63,7 @@ if(generateResponse.statusCode != 202){
 
 // Wrap get call in function to poll endpoint
 const getLoanSummary = async (lendingClient, companyId, sourceType) => {
-  const reportResponse = await lendingClient..liabilities.getLoanSummary({
+  const reportResponse = await lendingClient.liabilities.getLoanSummary({
     companyId: companyId,
     sourceType: sourceType,
   });
@@ -76,9 +76,9 @@ const getLoanSummary = async (lendingClient, companyId, sourceType) => {
   }
 }
 
-const loanSummaryResponse = await getLoanSummary(lendingClient, companyId, formattedDate)
+const summaryResponse = await getLoanSummary(lendingClient, companyId, formattedDate)
 
-const summaries: LoanSummary[] = loanSummaryResponse.loanSummary.reportItems.map(x => {
+const summaries: LoanData[] = summaryResponse.loanSummary.reportItems.map(x => {
   totalDrawdowns: x.totalDrawdowns,
   totalRepayments: x.totalRepayments
 })
@@ -87,7 +87,10 @@ const totalDrawdowns = summaries.reduce((sum, current) => sum + current.totalDra
 const totalRepayments = summaries.reduce((sum, current) => sum + current.totalRepayments, 0)
 
 const repaymentRatio = totalRepayments / totalDrawdowns
-console.log(repaymentRatio)
+
+if(repaymentRatio < repaymentRatioThreshold){
+  console.log('Company does repayment ratio does not pass threshold')
+}
 ```
 
 </TabItem>
@@ -96,33 +99,46 @@ console.log(repaymentRatio)
 
 ```python
 @dataclass
-class LoanSummary:
+class LoanData:
   total_drawdowns: Decimal
   total_repayments: Decimal
 
 source_type = operations.GenerateLoanSummarySourceType.ACCOUNTING
 
-loan_summary_request = operations.GenerateLoanSummaryRequest(
+generate_request = operations.GenerateLoanSummaryRequest(
     company_id=company_id,
     source_type=source_type,
 )
 
-loan_summary_response = lending_client.liabilities.generate_loan_summary(loan_summary_request)
+generate_response = lending_client.liabilities.generate_loan_summary(generate_request)
 
-if loan_summary_response.status_code != 202:
+if generate_response.status_code != 202:
   raise Exception('Unable to generate loan summary report')
 
+loan_summaries_request = operations.GetLoanSummaryRequest(
+  company_id=company_id,
+  source_type=source_type,
+)
 
+loan_summary = None
+while True:
+  loan_summaries_response = lending_client.liabilities.get_loan_summary(loan_summaries_request)
+
+  if loan_summaries_response.status_code == 200:
+    loan_summary = loan_summaries_response.loan_summary
+    break
 
 summaries = []
-for x in report_response.enhanced_financial_report.report_items:
-  summaries.append(Account(category='.'.join([y.level_name for y in x.transaction_category.levels]), balance=x.balance))
+for x in loan_summary.report_items:
+  summaries.append(LoanData(total_drawdowns=x.total_repayments, total_repayments=x.total_repayments))
 
-total_assets = sum(account.amount for accounts in accounts if account.category.startswith('Asset'))
-total_debts = sum(account.amount for accounts in accounts if account.category.startswith('Liability.NonCurrent.LoansPayable'))
+total_drawdowns = sum(account.total_drawdowns for account in accounts)
+total_repayments = sum(account.total_repayments for account in accounts)
 
-gearing_ratio = total_debts / total_assets
-print(gearing_ratio)
+repayment_ratio = total_repayments / total_drawdowns
+
+if repayment_ratio < repayment_ratio_threshold:
+  print('Company does repayment ratio does not pass threshold')
 ```
 
 </TabItem>
@@ -131,32 +147,45 @@ print(gearing_ratio)
 
 
 ```csharp
-public record Account(string Category, decimal Balance);
+public record LoanData(decimal TotalDrawdowns, decimal TotalRepayments);
 
-// Convert date to dd-mm-yyyy format
-var formattedDate = DateTime.UtcNow.ToString("dd-MM-yyyy");
+var sourceType = GenerateLoanSummarySourceType.Accounting;
 
-// Last 12 months is returned by default
-var reportResponse = await lendingClient.FinancialStatements.BalanceSheet.GetCategorizedAccountsAsync(new() {
+var generateSummaryResponse = await lendingClient.Liabilities.GenerateLoanSummaryAsync(new() {
     CompanyId = companyId,
-    ReportDate = formattedDate,
+    SourceType = sourceType,
 });
 
-if (reportResponse.StatusCode != 200) {
-  throw new Exception("Could not get categorized balance sheet accounts");
+if (generateSummaryResponse.StatusCode != 202) {
+  throw new Exception("Unable to generate loan summary report");
 }
 
-var accounts = reportResponse.EnhancedFinancialReport.ReportItems.Select(x => new Account(){
-  Category = string.Join(".", x.AccountCategory.Levels.Select(y => y.LevelName)),
-  Balance = x.Balance
+LoanSummary summary = null;
+while(true){
+  var summaryResponse = await lendingClient.Liabilities.GetLoanSummaryAsync(new() {
+      CompanyId = companyId,
+      SourceType = sourceType,
+  });
+
+  if(summaryResponse.StatusCode == 200){
+    summary = summaryResponse.LoanSummary;
+    break;
+  }
+}
+
+var summaries = summary.ReportItems.Select(x => new LoanData(){
+  TotalDrawdowns = x.TotalDrawdowns,
+  TotalRepayments = x.TotalRepayments
 });
 
-// Calculate gearing ratio
-var totalAssets = accounts.Sum(x => x.Category.StartsWith("Asset"));
-var totalDebts = accounts.Sum(x => x.Category.StartsWith("Liability.NonCurrent.LoansPayable"));
+var totalDrawdowns = summaries.Sum(x => x.TotalDrawdowns);
+var totalRepayments = summaries.Sum(x => x.TotalRepayments);
 
-var gearingRatio = totalDebts / totalAssets;
-Console.WriteLine(gearingRatio);
+var repaymentRatio = totalRepayments / totalDrawdowns;
+
+if(repaymentRatio < repaymentRatioThreshold){
+  Console.WriteLine("Company does repayment ratio does not pass threshold");
+}
 ```
 
 </TabItem>
@@ -164,50 +193,52 @@ Console.WriteLine(gearingRatio);
 <TabItem value="go" label="Go">
 
 ```go
-type Account struct {
-  Category string
-  Balance float64
+type LoanData struct {
+  TotalDrawdowns float64
+  TotalRepayments float64
 }
 
-// Convert date to dd-mm-yyyy format
-now := time.Now().UTC()
-formattedDate := now.Format("28-11-2023")
-
+sourceType := operations.GenerateLoanSummarySourceTypeAccounting
 ctx := context.Background()
-reportResponse, err := lendingClient.FinancialStatements.BalanceSheet.GetCategorizedAccounts(ctx, 
-  operations.GetCategorizedBalanceSheetStatementRequest{
+
+generateSummaryResponse, err := s.Liabilities.GenerateLoanSummary(ctx, operations.GenerateLoanSummaryRequest{
     CompanyID: companyID,
-    ReportDate: formattedDate,
+    SourceType: sourceType,
 })
 
-if err == nil && reportResponse.StatusCode == 200 {
-  accounts := []Account{}
-
-  for _, account := range reportResponse.EnhancedFinancialReport.ReportItems {
-    levelNames := []string{}
-    for _, level := range account.AccountCategory.Levels {
-      levelNames = append(levelNames, level.LevelName)
-    }
-    category := strings.Join(levelNames, ".")
-    balance, _ := transaction.Amount.Float64()
-		accounts = append(accounts, Account{category, balance})
-	}
-
-  totalAssets := 0.0
-  totalDebts := 0.0
-  for _, account := range accounts {
-    if strings.HasPrefix(account.Category, "Assets") {
-      totalAssets += transaction.Balance
-    }
-
-    if strings.HasPrefix(account.Category, "Liability.NonCurrent.LoansPayable") {
-      totalDebts += transaction.Balance
+var LoanSummary summary
+if generateSummaryResponse.StatusCode == 202 {
+  for {
+    var summaryResponse = await lendingClient.Liabilities.GetLoanSummary(ctx, operations.GetLoanSummaryRequest{
+        CompanyID: companyID,
+        SourceType: sourceType
+    })
+    
+    if(summaryResponse.StatusCode == 200){
+      summary = summaryResponse.LoanData;
+      break;
     }
   }
 
-  gearingRatio := totalDebts / totalAssets
+  summaries = []LoanData{}
+  for _, data := summary.ReportItems {
+    totalDrawdowns, _ = data.TotalDrawdowns.Float64()
+    totalRepayments, _ = data.TotalRepayments.Float64()
+    summaries = append(summaries, LoanData{totalDrawdowns, totalRepayments})
+  }
 
-  fmt.Println(gearingRatio)
+  totalDrawdowns := 0.0
+  totalRepayments := 0.0
+  for _, data, := summaries {
+    totalDrawdowns += data.TotalDrawdowns
+    totalRepayments += data.TotalRepayments
+  }
+
+  var repaymentRatio = totalRepayments / totalDrawdowns
+
+  if repaymentRatio < repaymentRatioThreshold {
+    fmt.Println("Company does repayment ratio does not pass threshold");
+  }
 }
 ```
 
