@@ -56,6 +56,7 @@ Our metrics include a set of pre-calculated ratios and metrics focused on commer
 ## Supported outputs
 
 You can retrieve the data pulled and enriched by the feature by calling the **sales** [endpoints of our API](/lending-api#/).
+
 For example, recurring revenue-based lenders seeking to evaluate month-on-month growth can utilize the [Get commerce revenue metrics](/lending-api#/operations/get-commerce-revenue-metrics) endpoint.
 
 <Tabs>

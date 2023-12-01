@@ -32,6 +32,7 @@ Common uses of our accounts payable feature include:
 ## Supported outputs
 
 You can retrieve the data pulled and enriched by the feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **accounts payable** [endpoints of our API](/lending-api#/operations/list-accounting-bill-credit-notes).
+
 For example, use the [List suppliers](/lending-api#/operations/list-accounting-suppliers) endpoint to access the company's current suppliers for further assessment.
 
 <Tabs>

@@ -75,7 +75,9 @@ That's it! Financial statements will return the updated category for the account
 
 ## Supported outputs
 
-You can retrieve the data pulled and enriched by this feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **financial statements** [endpoints of our API](/lending-api#/operations/get-categorized-profit-and-loss-statement). For example, a company's gearing ratio can be calculated using data returned by the [Get categorized balance sheet statement](/lending-api#/operations/get-categorized-balance-sheet-statement) endpoint. Check out our [loan qualification demo app](https://github.com/codatio/demo-loan-qualification/tree/main#demo-loan-qualification) written in C# to learn how to calculate other ratios. 
+You can retrieve the data pulled and enriched by this feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **financial statements** [endpoints of our API](/lending-api#/operations/get-categorized-profit-and-loss-statement). 
+
+For example, a company's gearing ratio can be calculated using data returned by the [Get categorized balance sheet statement](/lending-api#/operations/get-categorized-balance-sheet-statement) endpoint. Check out our [loan qualification demo app](https://github.com/codatio/demo-loan-qualification/tree/main#demo-loan-qualification) written in C# to learn how to calculate other ratios. 
 
 <Tabs>
 

@@ -46,7 +46,8 @@ Call our [List reconciled invoices](/lending-api#/operations/list-reconciled-inv
 ## Supported outputs
 
 You can retrieve the data pulled and enriched by the feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **accounts receivable** [endpoints of our API](/lending-api#/operations/list-reconciled-invoices).
-For example, invoice finance providers wanting to reduce their risk appetite should use the [List reconciled invoices](/lending-api#/operations/list-reconciled-invoices) endpoint to evaluate an SMB's customers ability to repay.
+
+For example, invoice finance providers looking to reduce their risk can use the [List reconciled invoices](/lending-api#/operations/list-reconciled-invoices) endpoint to evaluate an SMB's customers ability to repay.
 
 <Tabs>
 

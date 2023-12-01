@@ -79,7 +79,8 @@ Businesses often sell across multiple channels, for example, brick and mortar, o
 ## Supported outputs
 
 You can retrieve the data pulled and enriched by the feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **bank statements** [endpoints of our API](/lending-api#/operations/get-categorized-bank-statement).
-For example, use [Get categorized bank statement](/lending-api#/operations/get-categorized-bank-statement) endpoint to precisely calculate the current extent of the company's outstanding loans.
+
+For example, use the [Get categorized bank statement](/lending-api#/operations/get-categorized-bank-statement) endpoint to precisely calculate the current position of the company's outstanding loans.
 
 <Tabs>
 
