@@ -72,6 +72,8 @@ Similarly, to remove a user, remove them from the group in your IdP.
 
 ### FAQ
 
+What are the SAML configuration urls?
+
 | SAML configuration | Format |
 | :- | :- |
 | Identifier (Entity ID) | 	Client-specific urn, such as <br />`urn:auth0:codat:[client-name]-[instance-name]-saml-connection`   |
