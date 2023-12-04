@@ -77,7 +77,7 @@ bills_request = operations.ListBillsRequest(
     query='supplierRef.supplierName=acme'
 )
 
-bills_response = s.bills.list(bills_request)
+bills_response = payables_client.bills.list(bills_request)
 ```
 
 </TabItem>

@@ -84,7 +84,7 @@ graph TD
 
 ### Single bill payment
 
-If your SMB customer is making a payment to pay off a bill in full, use the [Create bill payments](/sync-for-payables-api#/operations/create-bill-payment) endpoint and include the following parameters in the request body:
+If your SMB customer is making a payment to pay off a bill in full, use the [Create bill payments](/sync-for-payables-api#/operations/create-bill-payment) endpoint and include the following properties in the request:
 
 - A `totalAmount` value (**always positive**) that indicates the amount of the bill that was paid. 
 - A `lines` array that contains one element with the following properties:
@@ -96,19 +96,15 @@ If your SMB customer is making a payment to pay off a bill in full, use the [Cre
 
 In case of **partial payments**, use the same endpoint and adjust the `amount` values according to the amount of the partial payment.
 
-<Tabs>
+It is important to note that when paying a bill the
 
-<TabItem value="Request URL" label="Request URL">
+- `supplierRef.id` is the same `id` as the `supplierRef.id` on the bill.
+- `accountRef.id` is the account the payment is made from as indicated during mapping.
+- `totalAmount` is the same as the `amountDue` on the bill.
+- `date` is the date that the payment is made to the supplier.
 
-```http
-POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/billPayments
-```
-
-</TabItem>
-
-<TabItem value="Example bill to pay" label="Xero: example bill">
-
-This is a sample `json` of an outstanding bill from Xero.
+<details>
+<summary><b>Bill mapped from Xero</b></summary>
 
 ```json
 {
@@ -159,6 +155,185 @@ This is a sample `json` of an outstanding bill from Xero.
   }
 }
 ```
+</details>
+
+For example, the bill mapped from Xero can be paid for using the [Create bill payments](/sync-for-payables-api#/operations/create-bill-payment) as follows
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const billPaymentResponse = await payablesClient.billPayments.create({
+  billPayment: {
+    supplierRef: {
+      id: "dec56ceb-65e9-43b3-ac98-7fe09eb37e31"
+    },
+    accountRef: {
+      id: "bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4"
+    },
+    totalAmount: 135.85,
+    currency: "GBP",
+    currencyRate: 1,
+    date: "2023-04-17T00:00:00",
+    lines: [
+      {
+        amount: 135.85,
+        links: [
+          {
+            id: "59978bef-af2f-4a7e-9728-4997597c0980",
+            type: BillPaymentLineLinkType.Bill,
+            amount: -135.85,
+            currencyRate: 1,
+          },
+        ],
+      },
+    ]
+  },
+  companyId: companyId,
+  connectionId: connectionId,
+});
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+bill_payment_request = operations.CreateBillPaymentRequest(
+    bill_payment=shared.BillPayment(
+      supplier_ref=shared.SupplierRef(
+        id='dec56ceb-65e9-43b3-ac98-7fe09eb37e31',
+      ),
+      account_ref=shared.AccountRef(
+        id='bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4'
+      ),
+      total_amount=Decimal('135.85'),
+      currency='GBP',
+      currency_rate=1,
+      date='2023-04-17T00:00:00',
+      lines=[
+        shared.BillPaymentLine(
+          amount=Decimal('135.85'),
+          links=[
+            shared.BillPaymentLineLink(
+              id='59978bef-af2f-4a7e-9728-4997597c0980',
+              type=shared.BillPaymentLineLinkType.BILL,
+              amount=Decimal('-135.85'),
+              currency_rate=Decimal('1'),
+            )
+          ],
+        ),
+      ]
+    ),
+    company_id=company_id,
+    connection_id=connection_id,
+)
+
+bill_payment_response = payables_client.bill_payments.create(bill_payment_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var billsResponse = await payablesClient.Bills.ListAsync(new ListBillsRequest() {
+    CompanyId = companyId,
+    Query = "supplierRef.supplierName=acme"
+});
+
+var billPaymentResponse = await sdk.BillPayments.CreateAsync(new() {
+  BillPayment = new BillPayment() {
+      SupplierRef = new SupplierRef() {
+          Id = "dec56ceb-65e9-43b3-ac98-7fe09eb37e31",
+      },
+      AccountRef = new AccountRef() {
+        Id = "bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4"
+      },
+      TotalAmount = 135.85M,
+      Currency = "USD",
+      CurrencyRate = 1M,
+      Date = "2023-04-17T00:00:00",
+      Lines = new List<BillPaymentLine>() {
+          new BillPaymentLine() {
+              Amount = 135.85M,
+              Links = new List<BillPaymentLineLink>() {
+                  new BillPaymentLineLink() {
+                    Id = "59978bef-af2f-4a7e-9728-4997597c0980",
+                    Type = BillPaymentLineLinkType.Bill,
+                    Amount = -135.85M,
+                    CurrencyRate = 1M
+                  },
+              },
+          },
+      },
+  },
+  CompanyId = companyId,
+  ConnectionId = connectionId,
+});
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+billsResponse, err := payablesClient.Bills.List(ctx, operations.ListBillsRequest{
+    CompanyID: companyID,
+    Query: "supplierRef.supplierName=acme"
+})
+
+ctx := context.Background()
+billPaymentResponse, err := payablesClient.BillPayments.Create(ctx, 
+  operations.CreateBillPaymentRequest{
+    BillPayment: &shared.BillPayment{
+      SupplierRef: &shared.SupplierRef{
+          ID: "dec56ceb-65e9-43b3-ac98-7fe09eb37e31",
+      },
+      AccountRef: &shared.AccountRef{
+        ID: "bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4"
+      },
+      TotalAmount: types.MustNewDecimalFromString("135.85"),
+      Currency: syncforpayables.String("USD"),
+      CurrencyRate: types.MustNewDecimalFromString("1"),
+      Date: "2023-04-17T00:00:00",
+      Lines: []shared.BillPaymentLine{
+        shared.BillPaymentLine{
+          Amount: types.MustNewDecimalFromString("135.85"),
+          Links: []shared.BillPaymentLineLink{
+            shared.BillPaymentLineLink{
+              Id: "59978bef-af2f-4a7e-9728-4997597c0980",
+              Type: shared.BillPaymentLineLinkTypeBill,
+              Amount = types.MustNewDecimalFromString("-135.85M"),
+              CurrencyRate = types.MustNewDecimalFromString("1")
+            },
+          },
+        },
+      },
+    },
+    CompanyID: companyId,
+    ConnectionID: connectionID,
+})
+```
+</TabItem>
+
+</Tabs>
+
+
+<Tabs>
+
+<TabItem value="Request URL" label="Request URL">
+
+```http
+POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/billPayments
+```
+
+</TabItem>
+
+<TabItem value="Example bill to pay" label="Xero: example bill">
+
+This is a sample `json` of an outstanding bill from Xero.
 
 </TabItem>
 
@@ -166,10 +341,6 @@ This is a sample `json` of an outstanding bill from Xero.
 
 This is a sample full payment for the Xero bill. Note that:
 
-- `supplierRef.id` is the same `id` as the `supplierRef.id` on the bill.
-- `accountRef.id` is the account the payment is made from as indicated during mapping.
-- `totalAmount` is the same as the `amountDue` on the bill.
-- `date` is the date that the payment is made to the supplier.
 
 ```json
 {
