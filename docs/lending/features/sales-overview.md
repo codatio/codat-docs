@@ -8,6 +8,8 @@ image: "/img/banners/social/lending.png"
 import Products from "@components/global/Products";
 import { IntegrationsList } from "@components/global/Integrations";
 import { commerceIntegrations } from "@components/global/Integrations/integrations";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem"
 
 Our **sales** feature offers data sourced from a linked company's commerce connections, allowing you to access valuable insights through aggregated metrics and a comprehensive breakdown of sales transactions from prominent eCommerce, POS, and payment platforms.
 
@@ -54,6 +56,188 @@ Our metrics include a set of pre-calculated ratios and metrics focused on commer
 ## Supported outputs
 
 You can retrieve the data pulled and enriched by the feature by calling the **sales** [endpoints of our API](/lending-api#/).
+
+For example, recurring revenue-based lenders seeking to evaluate month-on-month growth can utilize the [Get commerce revenue metrics](/lending-api#/operations/get-commerce-revenue-metrics) endpoint.
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+type RevenueGrowth {
+  month: string;
+  growthRate: number;
+}
+
+const now = new Date();
+// Convert date to dd-mm-yyyy format
+let formattedDate = `${now.getUTCDate().toString().padStart(2, '0')}-`;
+formattedDate += `${(now.getUTCMonth() + 1).toString().padStart(2, '0')}-`;
+formattedDate += `${now.getUTCFullYear()}`;
+
+const revenueResponse = await lendingClient.sales.metrics.getRevenue({
+    companyId: companyId,
+    connectionId: connectionId,
+    numberOfPeriods: 12,
+    periodLength: 1,
+    periodUnit: PeriodUnit.Month,
+    reportDate: formattedDate,
+    includeDisplayNames: true // Make accessing data easier
+  });
+
+if (revenueResponse.statusCode != 200) {
+  throw new Error("Could not get revenue report")
+}
+
+// Revenue metrics contain two components: zeroth element is revenue and 
+// the first element is growth percentage compared to previous period. 
+const growthMonthOnMonth: RevenueGrowth[] = revenueResponse.commerceReport.reportData.map(x => ({
+  month: x.itemDisplayName,
+  growthRate: x.components[1].measures[0].value
+}));
+
+const growthRateAverage = growthMonthOnMonth.reduce((total, next) => total + next.growthRate) / growthMonthOnMonth.length;
+
+if(growthRateAverage < growthRateThreshold){
+  console.log('Prospective borrower does not qualify for a loan')
+}
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+@dataclass
+class RevenueGrowth:
+  month: str
+  growth_rate: Decimal
+
+# Convert date to dd-mm-yyyy format
+formatted_date = datetime.utcnow().strftime("%d-%m-%Y")
+
+revenue_request = operations.GetCommerceRevenueMetricsRequest(
+    company_id=company_id,
+    connection_id=connection_id,
+    number_of_periods=12,
+    period_length=1,
+    period_unit=shared.PeriodUnit.MONTH,
+    report_date=formatted_date,
+    include_display_names=True # Make accessing data easier
+)
+
+revenue_response = lending_client.sales.metrics.get_revenue(revenue_request)
+
+if revenue_response.status_code != 200:
+  raise Exception('Could not get revenue report')
+
+# Revenue metrics contain two components: zeroth element is revenue and 
+# the first element is growth percentage compared to previous period. 
+
+growth_month_on_month = []
+for x in revenue_response.commerce_report.report_data:
+  growth_month_on_month.append(RevenueGrowth(
+    month=x.item_display_name,
+    growth_rate=x.components[1].measures[0].value
+  ))
+
+growth_rate_average = sum(x.growth_rate for x in growth_month_on_month) / len(growth_month_on_month)
+
+if growth_rate_average < growth_rate_threshold:
+  print('Prospective borrower does not qualify for a loan')
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+
+```csharp
+public record RevenueGrowth(string Month, decimal GrowthRate);
+
+// Convert date to dd-mm-yyyy format
+var formattedDate = DateTime.UtcNow.ToString("dd-MM-yyyy");
+
+var revenueResponse = await lendingClient.Sales.Metrics.GetRevenueAsync(new() {
+    CompanyId = companyId,
+    ConnectionId = connectionId,
+    NumberOfPeriods = 12,
+    PeriodLength = 1,
+    PeriodUnit = PeriodUnit.Month,
+    ReportDate = formattedDate,
+    IncludeDisplayNames: true // Make accessing data easier
+});
+
+if (revenueResponse.StatusCode != 200) {
+  throw new Exception("Could not get revenue report");
+}
+
+// Revenue metrics contain two components: zeroth element is revenue and 
+// the first element is growth percentage compared to previous period. 
+var growthMonthOnMonth = revenueResponse.CommerceReport.ReportData.Select(x => new RevenueGrowth(){
+  Month = x.ItemDisplayName,
+  GrowthRate = x.Components[1].Measures[0].Value
+});
+
+const growthRateAverage = growthMonthOnMonth.Average(x => x.GrowthRate);
+if(growthRateAverage < growthRateThreshold){
+  Console.WriteLine('Prospective borrower does not qualify for a loan');
+}
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+type RevenueGrowth struct {
+  Month string
+  GrowthRate float64
+}
+
+// Convert date to dd-mm-yyyy format
+now := time.Now().UTC()
+formattedDate := now.Format("28-11-2023")
+
+ctx := context.Background()
+revenueResponse, err := lendingClient.Sales.Metrics.GetRevenue(ctx, 
+  operations.GetCommerceRevenueMetricsRequest{
+    CompanyID: companyID,
+    ConnectionID: connectionID,
+    NumberOfPeriods: 12,
+    PeriodLength: 1,
+    PeriodUnit: shared.PeriodUnitMonth,
+    ReportDate: formattedDate,
+    IncludeDisplayNames: true // Make accessing data easier
+})
+
+if err == nil && revenueResponse.StatusCode == 200 {
+  growthMonthOnMonth := []RevenueGrowth{}
+
+  // Revenue metrics contain two components: zeroth element is revenue and 
+  // the first element is growth percentage compared to previous period. 
+  for _, period := range revenueResponse.CommerceReport.ReportData {
+    month := period.ItemDisplayName
+    growthRate, _ := period.Components[1].Measures[0].Value.Float64()
+		growthMonthOnMonth = append(growthMonthOnMonth, RevenueGrowth{month, growthRate})
+  }
+
+  growthRateSum := 0.0
+  for _, period := range growthMonthOnMonth {
+    growthRateSum += period.GrowthRate
+  }
+
+  growthRateAverage := growthRateSum / float64(len(growthMonthOnMonth));
+  if growthRateAverage < growthRateThreshold {
+    fmt.Println("Prospective borrower does not qualify for a loan")
+  }
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 
 ## Get started
 
