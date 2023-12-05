@@ -30109,8 +30109,7 @@
           "content": {
             "multipart/form-data": {
               "schema": {
-                "type": "string",
-                "format": "binary"
+                "$ref": "#/components/schemas/AttachmentUpload"
               }
             }
           }
@@ -42223,6 +42222,25 @@
           }
         },
         "title": "Attachments"
+      },
+      "AttachmentUpload": {
+        "title": "Attachment upload",
+        "type": "object",
+        "required": [
+          "file"
+        ],
+        "properties": {
+          "file": {
+            "$ref": "#/components/schemas/AttachmentUpload/definitions/codatFile"
+          }
+        },
+        "definitions": {
+          "codatFile": {
+            "type": "string",
+            "description": "The file to be uploaded as an attachment.",
+            "format": "binary"
+          }
+        }
       },
       "Bill": {
         "title": "Accounting: Bill",
