@@ -784,6 +784,17 @@
         "summary": "Retrieve preferences for text fields on sync flow",
         "description": "To enable retrieval of preferences set for the text fields on Sync Flow.",
         "operationId": "get-config-text-sync-flow",
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "en-us"
+            },
+            "description": "Localisation identifier. Supported values are: `en-us` English (US), `fr-fr` French"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -822,6 +833,17 @@
         "summary": "Update preferences for text fields on sync flow",
         "description": "To enable update of preferences set for the text fields on sync flow.",
         "operationId": "update-config-text-sync-flow",
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "en-us"
+            },
+            "description": "Localisation identifier. Supported values are: `en-us` English (US), `fr-fr` French"
+          }
+        ],
         "requestBody": {
           "description": "",
           "content": {
