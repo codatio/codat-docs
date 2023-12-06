@@ -25,6 +25,12 @@ Every new library release will increment one of the version components depending
 - **Minor** component is incremented when the release contains a new feature that is backwards-compatible with the latest version. This includes a new property, type, method or parameter.
 - **Patch** component is incremented when the release contains backwards-compatible bug fixes. This includes internal code changes to the library that do not change any properties, types, methods or parameters.
 
+### Support
+
+If you encounter any challenges while utilizing our SDKs, please don't hesitate to reach out for assistance. 
+You can raise any issues by contacting your dedicated Codat representative or reaching out to our [support team](mailto:support@codat.io).
+We're here to help ensure a smooth experience for you.
+
 ## Community libraries
 
 Codat's awesome community has self-published a number of libraries themselves!
