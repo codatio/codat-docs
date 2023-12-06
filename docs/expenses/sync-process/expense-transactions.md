@@ -25,12 +25,12 @@ Some accounting platforms allow users to push their transactions into a drafted 
   "items": [
     {
       "id": "08ca1f02-0374-11ed-b939-0242ac120002",
-      "type": "payment",
-      "issueDate": "2021-05-21T00:00:00+00:00",
+      "type": "Payment",
+      "issueDate": "2023-12-13T00:00:00+00:00",
       "currency": "GBP",
-      "currencyRate": 1.18,
+      "currencyRate": 1.26,
       "contactRef":{
-          "id":"08ca1f02-0374-11ed-b939-0242ac120002",
+          "id":"an-id-to-a-suppliers-record",
           "type": "Supplier"
       },
       "postAsDraft": false,
@@ -40,16 +40,20 @@ Some accounting platforms allow users to push their transactions into a drafted 
           "netAmount": 110.42,
           "taxAmount": 14.43,
           "taxRateRef": {
-            "id": "08ca1c6e-0374-11ed-b939-0242ac120002"
+            "id": "an-id-to-a-taxRates-record"
           },
           "accountRef": {
-            "id": "08ca1c6e-0374-11ed-b939-0242ac120002"
+            "id": "id-of-the-expense-nominal-account"
           },
           "trackingRefs": [
             {
-              "id": "08ca1c6e-0374-11ed-b939-0242ac120002"
+              "id": "an-id-to-a-trackingCategories-record"
             }
-          ]
+          ],
+          "invoiceTo": {
+              "id": "an-id-to-a-customers-record",
+              "dataType": "customers"
+          }
         }
       ],
       "notes": "Amazon UK | Online Purchase | Order 123XX45"
@@ -66,7 +70,7 @@ The way Codat handles, maps and processes a transaction is based on the specifie
 <ul className="card-container col-2">
   <li className="card">
     <div class="header">
-      <h3>payment</h3>
+      <h3>Payment</h3>
     </div>
     <p>
       Is used to represent any spend that takes place on the account and interest on credit purchases. 
@@ -75,7 +79,7 @@ The way Codat handles, maps and processes a transaction is based on the specifie
 
   <li className="card">
     <div class="header">
-      <h3>refund</h3>
+      <h3>Refund</h3>
     </div>
     <p>
       Can be used to represent any refunds and returns on an original transaction.
@@ -84,7 +88,7 @@ The way Codat handles, maps and processes a transaction is based on the specifie
 
   <li className="card">
     <div class="header">
-      <h3>reward</h3>
+      <h3>Reward</h3>
     </div>
     <p>
       Can be used to represent reward redemptions such as cashback.
@@ -92,7 +96,7 @@ The way Codat handles, maps and processes a transaction is based on the specifie
   </li>
 <li className="card">
     <div class="header">
-      <h3>chargeback</h3>
+      <h3>Chargeback</h3>
     </div>
     <p>
       Is similar to a refund in behavior and represents a return of transaction or payment sum which may have been disputed.
@@ -101,7 +105,7 @@ The way Codat handles, maps and processes a transaction is based on the specifie
 
   <li className="card">
     <div class="header">
-      <h3>transferIn</h3>
+      <h3>TransferIn</h3>
     </div>
     <p>
       A transfer that decreases the balance of the credit card account or increases the balance of a bank account. </p>
@@ -111,7 +115,7 @@ The way Codat handles, maps and processes a transaction is based on the specifie
 
   <li className="card">
     <div class="header">
-      <h3>transferOut</h3>
+      <h3>TransferOut</h3>
     </div>
     <p>
       A transfer that increases the balance of the credit account or decreases the balance of a bank account.</p>
@@ -120,7 +124,7 @@ The way Codat handles, maps and processes a transaction is based on the specifie
   </li>
   <li className="card">
     <div class="header">
-      <h3>adjustmentIn</h3>
+      <h3>AdjustmentIn</h3>
     </div>
     <p>
       An adjustment that decreases the balance of the credit account or increases the balance of a bank account. </p>
@@ -130,7 +134,7 @@ The way Codat handles, maps and processes a transaction is based on the specifie
 
   <li className="card">
     <div class="header">
-      <h3>adjustmentOut</h3>
+      <h3>AdjustmentOut</h3>
     </div>
     <p>
       An adjustment that increases the balance of the credit account or decreases the balance of a bank account. </p>
