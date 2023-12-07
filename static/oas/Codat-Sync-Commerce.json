@@ -882,9 +882,13 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "en-us"
+              "example": "en-us",
+              "enum": [
+                "en-us",
+                "fr-fr"
+              ]
             },
-            "description": "Localisation identifier. Supported values are: `en-us` English (US), `fr-fr` French"
+            "description": "Localisation identifier for English (US) or French"
           }
         ],
         "responses": {
@@ -932,9 +936,13 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "en-us"
+              "example": "en-us",
+              "enum": [
+                "en-us",
+                "fr-fr"
+              ]
             },
-            "description": "Localisation identifier. Supported values are: `en-us` English (US), `fr-fr` French"
+            "description": "Localisation identifier for English (US) or French"
           }
         ],
         "requestBody": {
