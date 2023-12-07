@@ -30109,8 +30109,7 @@
           "content": {
             "multipart/form-data": {
               "schema": {
-                "type": "string",
-                "format": "binary"
+                "$ref": "#/components/schemas/AttachmentUpload"
               }
             }
           }
@@ -42169,7 +42168,7 @@
       },
       "Attachment": {
         "title": "Accounting: Attachment",
-        "description": "The Codat API supports pulling and pushing of file attachments for invoices, bills, direct costs, and direct incomes.\n\n> **Retrieving attachments**\n> \n> If a company is authorized, you can query the Codat API to read, download, and upload attachments without requiring a fresh sync of data.\n\nUnlike other data types, Codat doesn't support [sync settings](https://docs.codat.io/knowledge-base/advanced-sync-settings) for attachments.\n\nNote that different integrations have different requirements to file size and extension of attachments.\n\n| Integration       | File size | File extension                                                                                                                                               |\n|-------------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| Xero              | 4 MB      | 7Z, BMP, CSV, DOC, DOCX, EML, GIF, JPEG, JPG, KEYNOTE, MSG, NUMBERS, ODF,   ODS, ODT, PAGES, PDF, PNG, PPT, PPTX, RAR, RTF, TIF, TIFF, TXT, XLS, XLSX,   ZIP |\n| QuickBooks Online | 100 MB    | AI, CSV, DOC, DOCX, EPS, GIF, JPEG, JPG, ODS, PAGES, PDF, PNG, RTF, TIF,   TXT, XLS, XLSX, XML                                                               |\n| NetSuite          | 100 MB    | BMP, CSV, XLS, XLSX, JSON, PDF, PJPG, PJPEG, PNG, TXT, SVG, TIF, TIFF,   DOC, DOCX, ZIP                                                                      |\n\nView the coverage for accounts in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts\" target=\"_blank\">Data coverage explorer</a>.\n",
+        "description": "The Codat API supports pulling and pushing of file attachments for invoices, bills, direct costs, and direct incomes.\n\n> **Retrieving attachments**\n> \n> If a company is authorized, you can query the Codat API to read, download, and upload attachments without requiring a fresh sync of data.\n\nUnlike other data types, Codat doesn't support [sync settings](https://docs.codat.io/knowledge-base/advanced-sync-settings) for attachments.\n\nNote that different integrations have different requirements to file size and extension of attachments.\n\n| Integration       | File size | File extension                                                                                                                                               |\n|-------------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| Xero              | 4 MB      | 7Z, BMP, CSV, DOC, DOCX, EML, GIF, JPEG, JPG, KEYNOTE, MSG, NUMBERS, ODF,   ODS, ODT, PAGES, PDF, PNG, PPT, PPTX, RAR, RTF, TIF, TIFF, TXT, XLS, XLSX,   ZIP |\n| QuickBooks Online | 100 MB    | AI, CSV, DOC, DOCX, EPS, GIF, JPEG, JPG, ODS, PAGES, PDF, PNG, RTF, TIF,   TXT, XLS, XLSX, XML                                                               |\n| NetSuite          | 100 MB    | BMP, CSV, XLS, XLSX, JSON, PDF, PJPG, PJPEG, PNG, TXT, SVG, TIF, TIFF,   DOC, DOCX, ZIP                                                                      |\n| Dynamics 365 Business Central          | 350 MB    | Dynamics do not explicitly outline which file types are supported but they do state <a className=\"external\" href=\"https://learn.microsoft.com/en-gb/dynamics365/business-central/ui-how-add-link-to-record#to-attach-a-file-to-a-purchase-invoice\" target=\"_blank\">here</a> that \"You can attach any type of file, such as text, image, or video files\".                                                                   |\n\nView the coverage for each integration in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting\" target=\"_blank\">Data coverage explorer</a>.\n",
         "type": "object",
         "allOf": [
           {
@@ -42223,6 +42222,25 @@
           }
         },
         "title": "Attachments"
+      },
+      "AttachmentUpload": {
+        "title": "Attachment upload",
+        "type": "object",
+        "required": [
+          "file"
+        ],
+        "properties": {
+          "file": {
+            "$ref": "#/components/schemas/AttachmentUpload/definitions/codatFile"
+          }
+        },
+        "definitions": {
+          "codatFile": {
+            "type": "string",
+            "description": "The file to be uploaded as an attachment.",
+            "format": "binary"
+          }
+        }
       },
       "Bill": {
         "title": "Accounting: Bill",

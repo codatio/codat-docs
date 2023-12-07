@@ -1867,8 +1867,7 @@
           "content": {
             "multipart/form-data": {
               "schema": {
-                "type": "string",
-                "format": "binary"
+                "$ref": "#/components/schemas/AttachmentUpload"
               }
             }
           }
@@ -1876,7 +1875,7 @@
         "tags": [
           "Expenses"
         ],
-        "description": "The *Upload attachment* endpoint uploads an attachment in the accounting software against the given transactionId. \n\n[Expense transactions](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) represent transactions made with a company debit or credit card. \n\n**Integration-specific behaviour**\n\nEach accounting software supports different file formats and sizes.\n\n| Integration | File Size | File Extension                                                                                                      |  \n|-------------|-------------|--------------------------------------------------------------------------------------------------------------|\n| Xero | 4MB  | 7Z, BMP, CSV, DOC, DOCX, EML, GIF, JPEG, JPG, KEYNOTE, MSG, NUMBERS, ODF, ODS, ODT, PAGES, PDF, PNG, PPT, PPTX, RAR, RTF, TIF, TIFF, TXT, XLS, XLSX, ZIP |\n| QuickBooks Online | 100MB | AI, CSV, DOC, DOCX, EPS, GIF, JPEG, JPG, ODS, PAGES, PDF, PNG, RTF, TIF, TXT, XLS, XLSX, XML  |\n| NetSuite | 100MB | BMP, CSV, XLS, XLSX, JSON, PDF, PJPG, PJPEG, PNG, TXT, SVG, TIF, TIFF, DOC, DOCX, ZIP |"
+        "description": "The *Upload attachment* endpoint uploads an attachment in the accounting software against the given transactionId. \n\n[Expense transactions](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) represent transactions made with a company debit or credit card. \n\n**Integration-specific behaviour**\n\nEach accounting software supports different file formats and sizes.\n\n| Integration | File Size | File Extension                                                                                                      |  \n|-------------|-------------|--------------------------------------------------------------------------------------------------------------|\n| Xero | 4MB  | 7Z, BMP, CSV, DOC, DOCX, EML, GIF, JPEG, JPG, KEYNOTE, MSG, NUMBERS, ODF, ODS, ODT, PAGES, PDF, PNG, PPT, PPTX, RAR, RTF, TIF, TIFF, TXT, XLS, XLSX, ZIP |\n| QuickBooks Online | 100MB | AI, CSV, DOC, DOCX, EPS, GIF, JPEG, JPG, ODS, PAGES, PDF, PNG, RTF, TIF, TXT, XLS, XLSX, XML  |\n| NetSuite | 100MB | BMP, CSV, XLS, XLSX, JSON, PDF, PJPG, PJPEG, PNG, TXT, SVG, TIF, TIFF, DOC, DOCX, ZIP |\n| Dynamics 365 Business Central | 350 MB | Dynamics do not explicitly outline which file types are supported but they do state <a className=\"external\" href=\"https://learn.microsoft.com/en-gb/dynamics365/business-central/ui-how-add-link-to-record#to-attach-a-file-to-a-purchase-invoice\" target=\"_blank\">here</a> that \"You can attach any type of file, such as text, image, or video files\". |"
       }
     },
     "/companies/{companyId}/data/all": {
@@ -12306,6 +12305,25 @@
           }
         }
       },
+      "AttachmentUpload": {
+        "title": "Attachment upload",
+        "type": "object",
+        "required": [
+          "file"
+        ],
+        "properties": {
+          "file": {
+            "$ref": "#/components/schemas/AttachmentUpload/definitions/codatFile"
+          }
+        },
+        "definitions": {
+          "codatFile": {
+            "type": "string",
+            "description": "The file to be uploaded as an attachment.",
+            "format": "binary"
+          }
+        }
+      },
       "BankAccount": {
         "title": "Bank account",
         "x-internal": true,
@@ -12873,7 +12891,6 @@
             "example": "Supplier",
             "default": "Supplier",
             "enum": [
-              "Supplier",
               "Supplier"
             ]
           }
