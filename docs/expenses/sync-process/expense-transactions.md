@@ -47,7 +47,8 @@ Some accounting platforms allow users to push their transactions into a drafted 
           },
           "trackingRefs": [
             {
-              "id": "an-id-to-a-trackingCategories-record"
+              "id": "an-id-to-a-trackingCategories-record",
+              "dataType": "trackingCategories"
             }
           ],
           "invoiceTo": {
