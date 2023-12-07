@@ -56,7 +56,9 @@ You can configure your branding options in the [Branding settings](https://app.c
 ### Text content customization
 
 Updating the text fields helps ensure that your users clearly understand how to correctly configure their sales data synchronization and how exactly that data will be synced.
+
 The text can be customised separately for English (US) and French. Your users an select which language they see from within the configuration UI.
+
 A set of defaults are provided for English (US) and French.
 
 #### UI element customization
@@ -82,6 +84,7 @@ Each customizable element is identified by its `data-textkey`. You can customize
 - Dropdown labels for sales, fees, and payments configuration (stages 3, 4, and 5)
 
 You can also call the [Get preferences for text fields](/sync-for-commerce-api#/operations/get-config-text-sync-flow) endpoint to retrieve the full list of customizable elements.
+
 Append a `locale` query parameter to select the language.
 Valid options are:
 - `en-us` (English US)
@@ -103,6 +106,7 @@ This returns all customizable UI elements with the current text configured for e
 ```
 
 To update the text values via our API, use the [Update preferences for text fields](/sync-for-commerce-api#/operations/update-config-text-sync-flow) endpoint and include the desired text strings in the request body for each `data-textkey`.
+
 The text values can be updated with different values for each language, determined by the `locale` query parameter.
 Valid options are:
 - `en-us` (English US)
