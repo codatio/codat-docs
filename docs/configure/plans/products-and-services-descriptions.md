@@ -235,13 +235,13 @@ Open banking provider access is subject to separate access requirements.
 #### Feature definitions
 
 **Pull accounting data**  
-Pull the following data from connected Accounting packages: [todo: link to docs]
+Pull the following data from connected Accounting packages: [Supported data types](https://docs.codat.io/lending/data-types#supported-data-types)
 
 **Pull commerce data**  
-Pull the following data from connected Commerce platforms: [todo: link to docs]
+Pull the following data from connected Commerce platforms: [Supported data types](https://docs.codat.io/lending/data-types#supported-data-types)
 
 **Pull banking data**  
-Pull the following data from connected Open Banking provider: [todo: link to docs]
+Pull the following data from connected Open Banking provider: [Supported data types](https://docs.codat.io/lending/data-types#supported-data-types)
 
 **Enhanced Financials Report**  
 Financial statements standardized to a single chart of accounts
