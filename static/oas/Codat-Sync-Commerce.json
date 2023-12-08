@@ -876,6 +876,11 @@
         "description": "Return preferences set for the text fields on sync flow.",
         "operationId": "get-config-text-sync-flow",
         "x-speakeasy-name-override": "get-config-text-sync-flow",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/locale"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -915,6 +920,11 @@
         "description": "Set preferences for the text fields on sync flow.",
         "operationId": "update-config-text-sync-flow",
         "x-speakeasy-name-override": "update-config-text-sync-flow",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/locale"
+          }
+        ],
         "requestBody": {
           "description": "",
           "content": {
@@ -3466,6 +3476,20 @@
           "description": "A unique 4-letter key to represent a platform in each integration. View [accounting](https://docs.codat.io/integrations/accounting/overview#platform-keys), [banking](https://docs.codat.io/integrations/banking/overview#platform-keys), and [commerce](https://docs.codat.io/integrations/commerce/overview#platform-keys) platform keys."
         },
         "description": "A unique 4-letter key to represent a platform in each integration. View [accounting](https://docs.codat.io/integrations/accounting/overview#platform-keys), [banking](https://docs.codat.io/integrations/banking/overview#platform-keys), and [commerce](https://docs.codat.io/integrations/commerce/overview#platform-keys) platform keys."
+      },
+      "locale": {
+        "name": "locale",
+        "in": "query",
+        "required": true,
+        "example": "en-us",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "en-us",
+            "fr-fr"
+          ]
+        },
+        "description": "Localization identifier for English (US) or French."
       }
     },
     "securitySchemes": {
