@@ -876,21 +876,6 @@
         "description": "Return preferences set for the text fields on sync flow.",
         "operationId": "get-config-text-sync-flow",
         "x-speakeasy-name-override": "get-config-text-sync-flow",
-        "parameters": [
-          {
-            "name": "locale",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "example": "en-us",
-              "enum": [
-                "en-us",
-                "fr-fr"
-              ]
-            },
-            "description": "Localisation identifier for English (US) or French"
-          }
-        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -930,21 +915,6 @@
         "description": "Set preferences for the text fields on sync flow.",
         "operationId": "update-config-text-sync-flow",
         "x-speakeasy-name-override": "update-config-text-sync-flow",
-        "parameters": [
-          {
-            "name": "locale",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "example": "en-us",
-              "enum": [
-                "en-us",
-                "fr-fr"
-              ]
-            },
-            "description": "Localisation identifier for English (US) or French"
-          }
-        ],
         "requestBody": {
           "description": "",
           "content": {
