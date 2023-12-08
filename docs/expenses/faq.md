@@ -121,7 +121,11 @@ Codat pushes attachments synchronously to the expense transactions. To update an
 
 ### How should I handle transactions in a foreign currency?
 
-Sync for Expenses only handles foreign currencies if each transaction is converted back to the currency of the bank account where the transaction is recorded. It does not support separate bank accounts for each foreign exchange currency. 
+For multicurrency transactions, you have to consider the currency of the transaction, the currency of the card, and the base currency of the company in the accounting platform. Depending on the platform, only specific multicurrency scenarios may be supported. Codat provides built-in validations that protect against multicurrency scenarios that aren't supported by specific accounting platforms. 
+
+If the currency of the transaction or the card differs from the base currency, you must specify the exchange rate that will be used to convert the amount into the base currency. Indicate it in the `currencyRate` field. This is mandatory for all accounting platforms because all transactions must be expressed in the base currency for accounting and financial reporting purposes.
+
+It is not possible to perform the currency conversion with two or more non-base currencies participating in the transaction. For example, if a company's base currency is USD, and the transaction currency (supplier currency) is GBP, then the bank account used must be USD or GBP.
 
 ### What is the difference between effectiveTaxRate and totalTaxRate?
 
