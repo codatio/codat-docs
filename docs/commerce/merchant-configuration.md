@@ -57,7 +57,8 @@ You can configure your branding options in the [Branding settings](https://app.c
 
 Updating the text fields helps ensure that your users clearly understand how to correctly configure their sales data synchronization and how exactly that data will be synced.
 
-The text can be customised separately for English (US) and French. Your users can select which language they see from within the configuration UI.
+The text can be customized separately for English (US) and French. Your users can select which language they see from within the configuration UI.
+
 
 A set of defaults are provided for English (US) and French.
 
