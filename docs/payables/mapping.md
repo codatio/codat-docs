@@ -59,16 +59,16 @@ Use the [Get create account model](/sync-for-payables-api#/operations/get-create
 
 ## Retrieve bank accounts
 
-If your SMB customer is making payments from a pre-existing bank account, retrieve a list of their accounts and allow them to map payment methods against each one. Use the [List accounts](/sync-for-payables-api#/operations/list-accounts) endpoint to do that.
+If your SMB customer is making payments from a pre-existing bank account, retrieve a list of their accounts and allow them to map payment methods against each one. Use the [List accounts](/sync-for-payables-api#/operations/list-accounts) endpoint and filter by `isBankAccount=true` to return a list of valid bank accounts.
 
-For example, if you offer the option to make payments from a credit card, the company's bill payments should be mapped and reconciled to a credit account.
+<!-- For example, if you offer the option to make payments from a credit card, the company's bill payments should be mapped and reconciled to a credit account. -->
 
 <Tabs>
 
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
-const accountsResponse = await payablesClient.accounts.list({
+const accountsListResponse = await payablesClient.accounts.list({
     companyId: companyId,
     query: 'isBankAccount=true'
   });
@@ -79,12 +79,12 @@ const accountsResponse = await payablesClient.accounts.list({
 <TabItem value="python" label="Python">
 
 ```python
-accounts_request = operations.ListAccountsRequest(
+accounts_list_request = operations.ListAccountsRequest(
     company_id=company_id,
     query='isBankAccount=true'
 )
 
-accounts_response = s.accounts.list(accounts_request)
+accounts_list_response = payables_client.accounts.list(accounts_list_request)
 ```
 
 </TabItem>
@@ -92,7 +92,7 @@ accounts_response = s.accounts.list(accounts_request)
 <TabItem value="csharp" label="C#">
 
 ```csharp
-var accountsResponse = await payablesClient.Accounts.ListAsync(new ListAccountsRequest() {
+var accountsListResponse = await payablesClient.Accounts.ListAsync(new ListAccountsRequest() {
     CompanyId = companyId,
     Query = "isBankAccount=true"
 });
@@ -104,7 +104,7 @@ var accountsResponse = await payablesClient.Accounts.ListAsync(new ListAccountsR
 
 ```go
 ctx := context.Background()
-accountsResponse, err := payablesClient.Accounts.List(ctx, operations.ListAccountsRequest{
+accountsListResponse, err := payablesClient.Accounts.List(ctx, operations.ListAccountsRequest{
     CompanyID: companyID,
     Query: "isBankAccount=true"
 })
@@ -115,9 +115,9 @@ accountsResponse, err := payablesClient.Accounts.List(ctx, operations.ListAccoun
 
 ## Create new account
 
-If the SMB customer plans to make payments from a new payment method or account that you provide, use the [Create account](/operations/create-account) endpoint to reflect that account in their accounting software. It will contain their transactions, making the SMB's payment reconciliation workflows easier. 
+If the SMB customer plans to make payments from a new payment method or account that you provide, a new account must be created. The account will contain their transactions, making the SMB's payment reconciliation workflows easier. The endpoint to use depends on the underlying integration.
 
-You can also use the [Get create account model](/sync-for-payables-api#/operations/get-create-chartOfAccounts-model) endpoint first to check integration-specific requirements for account creation, or [read more](/using-the-api/push) about creating data with Codat.
+For Xero, QuickBooks Online and Oracle NetSuite use the [Create bank account](/sync-for-payables-api#/operations/create-bank-account) endpoint.
 
 <Tabs>
 
@@ -200,6 +200,102 @@ accountsResponse, err := payablesClient.Accounts.Create(ctx, operations.CreateAc
 </TabItem>
 
 </Tabs>
+
+Note that Xero does not support creating credit accounts.
+
+For Sage Intacct, use the [Create account](/sync-for-payables-api#/operations/create-account) endpoint to reflect that account in their accounting software. 
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const accountCreateResponse = await payablesClient.accounts.create({
+	accountPrototype: {
+    name: "BillPay Debit Account"
+		fullyQualifiedName: "BillPay Debit Account",
+    fullyQualifiedCategory: "Asset.Current",
+		nominalCode: "610",
+		currency: "USD",
+    status: AccountStatus.Active,
+    type: AccountType.Asset,
+		currentBalance: 0,
+	},
+  companyId: companyId,
+	connectionId: connectionId
+  });
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+account_create_request = operations.CreateAccountRequest(
+	account_prototype=shared.AccountPrototype(
+		name='BillPay Debit Account',
+		fully_qualified_name='BillPay Debit Account',
+    fully_qualified_category='Asset.Current',
+    nominal_code='610',
+		currency='USD',
+    status=shared.AccountStatus.ACTIVE,
+    type=shared.AccountType.ASSET,
+		current_balance=0,
+	),
+  company_id=company_id,
+	connection_id=connection_id
+)
+
+account_create_response = payables_client.accounts.create(account_create_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var accountCreateResponse = await payablesClient.Accounts.CreateAsync(new CreateAccountRequest() {
+  Account = new AccountPrototype(){
+    Name = "BillPay Debit Account",
+		FullyQualifiedName = "BillPay Debit Account",
+    FullyQualifiedCategory = "Asset.Current",
+    NominalCode = "610",
+		Currency = "USD",
+    Status = AccountStatus.Active,
+    Type = AccountType.Asset,
+		CurrentBalance = 0,
+	},
+  CompanyId = companyId,
+	ConnectionId = connectionId
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+accountCreateResponse, err := payablesClient.Accounts.Create(ctx, operations.CreateAccountRequest{
+	AccountPrototype: &shared.AccountPrototype{
+    Name: syncforpayables.String("BillPay Debit Account"),
+		FullyQualifiedName: syncforpayables.String("BillPay Debit Account"),
+    FullyQualifiedCategory: syncforpayables.String("Asset.Current"),
+    NominalCode: syncforpayables.String("610"),
+		Currency: syncforpayables.String("USD"),
+    Status: shared.AccountStatusActive.ToPointer(),
+    Type: shared.AccountTypeAsset.ToPointer(),
+		CurrentBalance: 0
+	},
+    CompanyID: companyID,
+    ConnectionID: connectionID,
+})
+```
+</TabItem>
+
+</Tabs>
+
+You can also use the [Get create bank account model](/sync-for-payables-api#/operations/get-create-bankAccounts-model) or [Get create account model](/sync-for-payables-api#/operations/get-create-chartOfAccounts-model) endpoints first to check integration-specific requirements for account creation, or [read more](/using-the-api/push) about creating data with Codat.
 
 <Tabs>
 

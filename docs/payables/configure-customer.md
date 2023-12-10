@@ -231,7 +231,7 @@ unlink_request = operations.UnlinkConnectionRequest(
     connection_id=connection_response.connection.id,
 )
 
-unlink_response = payables_client.connections.unlink(req)
+unlink_response = payables_client.connections.unlink(unlink_request)
 
 ```
 

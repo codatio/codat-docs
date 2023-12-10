@@ -120,8 +120,8 @@ Use our [Update bill](/sync-for-payables-api#/operations/update-bill) endpoint t
 const billUpdateResponse = await payablesClient.bills.update({
     bill: {
       supplierRef: {
-        id: "1262c350-fe0f-40ec-aeff-41c95b4a45af",
-        supplierName: "DIISR - Small Business Services"
+        id: supplierCreateResponse.supplier.id,
+        supplierName: supplierCreateResponse.supplier.supplierName
       },
       issueDate: "2023-04-23T00:00:00",
       dueDate: "2023-06-23T00:00:00",
@@ -153,8 +153,8 @@ const billUpdateResponse = await payablesClient.bills.update({
 bill_update_request = operations.UpdateBillRequest(
     bill=shared.Bill(
       supplierRef: shared.SupplierRef(
-        id="1262c350-fe0f-40ec-aeff-41c95b4a45af",
-        supplierName="DIISR - Small Business Services"
+        id=supplier_create_response.supplier.id,
+        supplier_name=supplier_create_response.supplier.supplier_name
       ),
       issueDate="2023-04-23T00:00:00",
       dueDate="2023-06-23T00:00:00",
@@ -188,8 +188,8 @@ bill_update_response = payables_client.bills.update(bill_update_request)
 var billUpdateResponse = await payablesClient.Bills.UpdateAsync(new UpdateBillRequest() {
     Bill = new Bill() {
       SupplierRef = new SupplierRef(){
-        Id = "1262c350-fe0f-40ec-aeff-41c95b4a45af",
-        SupplierName = "DIISR - Small Business Services"
+        Id = supplierCreateResponse.Supplier.Id,
+        SupplierName = supplierCreateResponse.Supplier.SupplierName
       },
       IssueDate = "2023-04-23T00:00:00",
       DueDate = "2023-06-23T00:00:00",
@@ -221,8 +221,8 @@ ctx := context.Background()
 billUpdateResponse, err := payablesClient.Bills.Update(ctx, operations.UpdateBillRequest{
     Bill: &shared.Bill{
       SupplierRef: &shared.SupplierRef{
-          ID: "1262c350-fe0f-40ec-aeff-41c95b4a45af",
-          SupplierName: "DIISR - Small Business Services"
+          ID: supplierCreateResponse.Supplier.ID,
+          SupplierName: supplierCreateResponse.Supplier.SupplierName
       },
       IssueDate: "2023-04-23T00:00:00",
       DueDate: "2023-06-23T00:00:00",
@@ -267,8 +267,8 @@ Use the [Create bill](/sync-for-payables-api#/operations/create-bill) endpoint t
 const billCreateResponse = await payablesClient.bills.create({
     bill: {
       supplierRef: {
-        id: "1262c350-fe0f-40ec-aeff-41c95b4a45af",
-        supplierName: "DIISR - Small Business Services"
+        id: supplierCreateResponse.supplier.id,
+        supplierName: supplierCreateResponse.supplier.supplierName
       },
       issueDate: "2023-04-23T00:00:00",
       dueDate: "2023-10-23T00:00:00",
@@ -299,8 +299,8 @@ const billCreateResponse = await payablesClient.bills.create({
 bill_create_request = operations.CreateBillRequest(
     bill=shared.Bill(
       supplierRef: shared.SupplierRef(
-        id="1262c350-fe0f-40ec-aeff-41c95b4a45af",
-        supplierName="DIISR - Small Business Services"
+        id=supplier_create_response.supplier.id,
+        supplier_name=supplier_create_response.supplier.supplier_name
       ),
       issueDate="2023-04-23T00:00:00",
       dueDate="2023-10-23T00:00:00",
@@ -333,8 +333,8 @@ bill_create_response = payables_client.bills.create(bill_create_request)
 var billCreateResponse = await payablesClient.Bills.CreateAsync(new CreateBillRequest() {
     Bill = new Bill() {
       SupplierRef = new SupplierRef(){
-        Id = "1262c350-fe0f-40ec-aeff-41c95b4a45af",
-        SupplierName = "DIISR - Small Business Services"
+        Id = supplierCreateResponse.Supplier.Id,
+        SupplierName = supplierCreateResponse.Supplier.SupplierName
       },
       IssueDate = "2023-04-23T00:00:00",
       DueDate = "2023-10-23T00:00:00",
@@ -365,8 +365,8 @@ ctx := context.Background()
 billCreateResponse, err := payablesClient.Bills.Create(ctx, operations.CreateBillRequest{
     Bill: &shared.Bill{
       SupplierRef: &shared.SupplierRef{
-          ID: "1262c350-fe0f-40ec-aeff-41c95b4a45af",
-          SupplierName: "DIISR - Small Business Services"
+          ID: supplierCreateResponse.Supplier.ID,
+          SupplierName: supplierCreateResponse.Supplier.SupplierName
       },
       IssueDate: "2023-04-23T00:00:00",
       DueDate: "2023-06-23T00:00:00",
@@ -400,10 +400,91 @@ Different accounting software supports different file formats and sizes. View th
 
 <Tabs>
 
-<TabItem value="HTTP" label="HTTP">
+<TabItem value="nodejs" label="TypeScript">
 
-```http
-POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/bills/{billId}/attachments
+```javascript
+const fileName = 'bill-receipt.pdf';
+var fs = require('fs');
+var fileBuffer = fs.readFileSync(fileName, null).buffer;
+var fileArray = new Uint16Array( fileBuffer.slice(266,(sizeofArray*sizeOfArrayElement));
+
+const attachmentUploadResponse = await payablesClient.bills.uploadAttachment({
+    attachmentUpload: {
+      file: {
+        content: fileArray,
+        fileName: fileName,
+      },
+    },
+    billId: billId,
+    companyId: companyId,
+    connectionId: connectionId,
+  });
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+file_name = 'bill-receipt.pdf'
+with open(file_name, mode='rb') as file:
+    contents = file.read()
+    attachment_upload_request = operations.UploadBillAttachmentRequest(
+        attachment_upload=shared.AttachmentUpload(
+            file=shared.CodatFile(
+                content=contents,
+                file_name=file_name,
+            ),
+        ),
+        bill_id=bill_id,
+        company_id=company_id,
+        connection_id=connection_id,
+    )
+    attachment_upload_response = payablesClient.bills.upload_attachment(attachment_upload_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var fileName = "bill-receipt.pdf";
+var file = File.ReadAllBytes(fileName);
+
+var attachmentUploadResponse = await payablesClient.Bills.UploadAttachmentAsync(new() {
+    AttachmentUpload = new AttachmentUpload() {
+        File = new CodatFile() {
+            Content = file,
+            FileName = fileName,
+        },
+    },
+    BillId = billId,
+    CompanyId = companyId,
+    ConnectionId = connectionId,
+};);
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+fileName := "bill-receipt.pdf"
+content, err := os.ReadFile(fileName)
+
+ctx := context.Background()
+attachmentUploadResponse, err := payablesClient.Bills.UploadAttachment(ctx, 
+  operations.UploadBillAttachmentRequest{
+    AttachmentUpload: &shared.AttachmentUpload{
+      File: shared.CodatFile{
+        Content: content,
+        FileName: fileName,
+      },
+    },
+    BillID: billID,
+    CompanyID: companyID,
+    ConnectionID: connectionID,
+  }
+)
 ```
 </TabItem>
 
