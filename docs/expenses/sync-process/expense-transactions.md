@@ -60,11 +60,12 @@ This approach prevents duplicate transactions being created in your SMBs' accoun
   ]
 }
 ```
-### Drafted state transactions
-Some accounting platforms allow users to push their transactions into a drafted state. This state means users can review the transaction in the accounting platform before the expense is posted into a more final state prior to reconcilaton. By using the `postedAsDraft` item you can choose if the expense should either by pass the posted state or go into the drafted state. This functionality is currently only supported by Dynamics 365 Business Central. 
+### Draft state transactions
 
-### taxRateRef default values
-In some cases you may wish to remove an associated tax rate from an expense. For each accounting platform there is a default value to use so it has no impact on the expense:
+Some accounting platforms allow users to create their transactions in a draft state. This means users can review the transaction in the accounting platform before the expense is finalized and posted prior to reconciliation. Use the `postedAsDraft` item to choose whether the expense should be created in a draft or final posted state. This functionality is currently only supported by Dynamics 365 Business Central. 
+
+### Tax rate reference default values
+In some cases, you may wish to remove an associated tax rate from an expense. For each accounting platform there is a default value to use so it has no impact on the expense:
 - QBO: `NON`
 - Xero: `NONE`
 - Netsuite: `-7`
