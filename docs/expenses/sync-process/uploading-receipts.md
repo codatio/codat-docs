@@ -19,6 +19,8 @@ You can add a receipt to the transaction after the sync. Note that different acc
 | **NetSuite**          | 100 MB    | BMP, CSV, XLS, XLSX, JSON, PDF, PJPG, PJPEG, PNG, TXT, SVG, TIF, TIFF,   DOC, DOCX, ZIP                                                                      |
 | **Dynamics 365 Business Central** | 350 MB | [No explicit requirements outlined](https://learn.microsoft.com/en-gb/dynamics365/business-central/ui-how-add-link-to-record#to-attach-a-file-to-a-purchase-invoice) for text, image, and video files. |
 
+Codat pushes attachments synchronously to the expense transactions. To update any of these documents, you need to remove the attachment from the accounting platform. Next, you need to upload the correct document either directly to the accounting platform or using Sync for Expenses.
+
 You can upload supported file types using the [Upload attachment](/sync-for-expenses-api#/operations/upload-expense-attachment) endpoint. The request accepts the attachment as multipart form data.
 
 ```http
