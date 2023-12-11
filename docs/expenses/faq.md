@@ -11,10 +11,6 @@ displayed_sidebar: expenses
 
 Codat does not currently publish a public product roadmap. If you would like to learn more about upcoming product releases, speak to your account manager.
 
-### Am I able to update an attachment (i.e. receipt) when I have already synced the expense transaction? 
-
-Codat pushes attachments synchronously to the expense transactions. To update any of these documents, you need to remove the attachment from the accounting platform. Next, you need to upload the correct document either directly to the accounting platform or using Sync for Expenses. When using Sync for Expenses, you benefit from its support for multiple attachments.   
-
 ### How can I migrate our in-house integration to Codat?
 
 Our [token migration process](https://docs.codat.io/get-started/migration) allows you to seamlessly migrate your customers' connections without them needing to reconnect. We offer self-service and managed migrations, so you can choose the option that suits your use case best. 
