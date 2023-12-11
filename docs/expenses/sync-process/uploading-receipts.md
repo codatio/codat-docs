@@ -8,6 +8,8 @@ import TabItem from "@theme/TabItem"
 
 ## Upload receipts
 
+When using Sync for Expenses, you are able to provide multiple attachments per transaction.   
+
 You can add a receipt to the transaction after the sync. Note that different accounting software supports different file formats and sizes.
 
 | Integration       | File size | File extension                                                                                                                                               |
