@@ -68,6 +68,7 @@ In some cases you may wish to remove an associated tax rate from an expense. For
 - QBO: `NON`
 - Xero: `NONE`
 - Netsuite: `-7`
+- Dynamics: we recommend to set up a 0% tax rate and apply it against the expense transaction. 
 
 ## Transaction types
 
