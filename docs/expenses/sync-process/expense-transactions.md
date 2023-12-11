@@ -18,8 +18,6 @@ It can include details about the purchase from the mapping options, for example:
 When pushing expenses, use your transaction `id` so that it can serve as an idempotency key. Codat validates `id`'s to ensure that every `id` is unique to a company. 
 This approach prevents duplicate transactions being created in your SMBs' accounting software.
 
-Some accounting platforms allow users to push their transactions into a drafted state. This state means users can review the transaction in the accounting platform before the expense is posted into a more final state prior to reconcilaton. By using the `postedAsDraft` item you can choose if the expense should either by pass the posted state or go into the drafted state. This functionality is currently only supported by Dynamics 365 Business Central. 
-
 ```json title="Expense transaction"
 {
   "items": [
@@ -62,6 +60,14 @@ Some accounting platforms allow users to push their transactions into a drafted 
   ]
 }
 ```
+### Drafted state transactions
+Some accounting platforms allow users to push their transactions into a drafted state. This state means users can review the transaction in the accounting platform before the expense is posted into a more final state prior to reconcilaton. By using the `postedAsDraft` item you can choose if the expense should either by pass the posted state or go into the drafted state. This functionality is currently only supported by Dynamics 365 Business Central. 
+
+### taxRateRef default values
+In some cases you may wish to remove an associated tax rate from an expense. For each accounting platform there is a default value to use so it has no impact on the expense:
+- QBO: `NON`
+- Xero: `NONE`
+- Netsuite: `-7`
 
 ## Transaction types
 
