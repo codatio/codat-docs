@@ -50,7 +50,7 @@ We've provided a [repo with examples on GitHub](https://github.com/codatio/sdk-l
 
 :::tip Install the npm package
 
-Take advantage of our npm package so you don't have to manually import and maintain type definitions. You will benefit from it the most if you are using Typescript, so our examples are prepared with that assumption.
+Take advantage of our [npm package](https://www.npmjs.com/package/@codat/sdk-link-types) so you don't have to manually import and maintain type definitions. You will benefit from it the most if you are using Typescript, so our examples are prepared with that assumption.
 
 `$ npm i -S @codat/sdk-link-types`
 :::
