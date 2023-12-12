@@ -76,7 +76,7 @@ module.exports = [
   {
     type: "link",
     href: "/integrations/accounting/exact-online/accounting-exact-online",
-    label: "Exact (NL)",
+    label: "Exact Online (NL)",
   },
   {
     type: "link",
