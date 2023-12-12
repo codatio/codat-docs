@@ -81,6 +81,11 @@ export const bankfeedsIntegrations = [
     "sourceType": "bankfeeds",
     "img": "https://static.codat.io/public/officialLogos/Square/3DA57C23-A4FA-4BC8-8C02-A7A686ED8B36.png",
   },
+  {
+    "name": "Exact NL bank feeds",
+    "sourceType": "bankfeeds",
+    "img": "https://static.codat.io/public/officialLogos/Square/BF8A9736-7133-4F03-BBDE-D328714887C8.png",
+  }
 ]
 
 export const bankfeedsInternalMappingIntegrations = [
@@ -102,6 +107,11 @@ export const bankfeedsInternalMappingIntegrations = [
     "type": "bankfeeds",
     "img": "https://static.codat.io/public/officialLogos/Square/3DA57C23-A4FA-4BC8-8C02-A7A686ED8B36.png",
   },
+  {
+  "name": "Exact NL bank feeds",
+  "sourceType": "bankfeeds",
+  "img": "https://static.codat.io/public/officialLogos/Square/BF8A9736-7133-4F03-BBDE-D328714887C8.png",
+  }
 ]
 
 
