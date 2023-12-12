@@ -51,7 +51,7 @@ module.exports = [
       section: "Manage integrations",
     },
     items: [
-      "integrations/bank-feeds/qbo-bank-feeds",
+      "integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds",
       "bank-feeds/integrations/qbo/mapping",
     ],
   },
@@ -59,13 +59,13 @@ module.exports = [
     type: "category",
     label: "Sage",
     items: [
-      "integrations/bank-feeds/sage-bank-feeds/",
+      "integrations/bank-feeds/sage-bank-feeds/sage-bank-feeds",
       "bank-feeds/integrations/sage/mapping",
     ],
   },
   {
     type: "link",
-    href: "/integrations/bank-feeds/xero-bank-feeds/",
+    href: "/integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds",
     label: "Xero",
   },
   {
