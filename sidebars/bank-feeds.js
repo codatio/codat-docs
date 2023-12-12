@@ -51,6 +51,7 @@ module.exports = [
       section: "Manage integrations",
     },
     items: [
+      "integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds",
       "bank-feeds/integrations/qbo/mapping",
     ],
   },
@@ -58,16 +59,30 @@ module.exports = [
     type: "category",
     label: "Sage",
     items: [
+      "integrations/bank-feeds/sage-bank-feeds/sage-bank-feeds",
       "bank-feeds/integrations/sage/mapping",
     ],
   },
-//  {
-//    type: "category",
-//    label: "Xero",
-//    items: [
-//      "bank-feeds/integrations/xero/xero",
-//    ],
-//  },
+  {
+    type: "link",
+    href: "/integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds",
+    label: "Xero",
+  },
+  {
+    type: "link",
+    href: "/integrations/bank-feeds/netsuite-bank-feeds/netsuite-bank-feeds-setup",
+    label: "Oracle NetSuite",
+  },
+  {
+    type: "link",
+    href: "/integrations/accounting/exact-online/accounting-exact-online",
+    label: "Exact Online (NL)",
+  },
+  {
+    type: "link",
+    href: "/integrations/accounting/freeagent/accounting-freeagent",
+    label: "FreeAgent",
+  },
   {
     type: "doc",
     id: "bank-feeds/guides/bank-feeds-tutorial",
