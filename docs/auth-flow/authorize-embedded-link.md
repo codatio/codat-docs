@@ -52,7 +52,7 @@ We've provided a [repo with examples on GitHub](https://github.com/codatio/sdk-l
 
 Take advantage of our [npm package](https://www.npmjs.com/package/@codat/sdk-link-types) so you don't have to manually import and maintain type definitions. You will benefit from it the most if you are using Typescript, so our examples are prepared with that assumption.
 
-`$ npm i -S @codat/sdk-link-types`
+`npm install @codat/sdk-link-types`
 :::
 
 <Tabs>
@@ -440,7 +440,7 @@ If you need more control over the UI based on application-specific logic or want
 />
 ```
 
-:::warning Advanced functionality
+:::caution Advanced functionality
 
 As the `options` object overrides the Link settings set in the Portal, this may result in confusion about the source of truth for what users are seeing. Ensure you document and communicate your use of the `options` prop internally.
 :::
