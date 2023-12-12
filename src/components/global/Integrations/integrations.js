@@ -83,6 +83,7 @@ export const bankfeedsIntegrations = [
   },
   {
     "name": "Exact NL bank feeds",
+    "to": "/integrations/accounting/exact-online/accounting-exact-online",
     "sourceType": "bankfeeds",
     "img": "https://static.codat.io/public/officialLogos/Square/BF8A9736-7133-4F03-BBDE-D328714887C8.png",
   }
@@ -109,6 +110,7 @@ export const bankfeedsInternalMappingIntegrations = [
   },
   {
   "name": "Exact NL bank feeds",
+  "to": "/integrations/accounting/exact-online/accounting-exact-online",
   "sourceType": "bankfeeds",
   "img": "https://static.codat.io/public/officialLogos/Square/BF8A9736-7133-4F03-BBDE-D328714887C8.png",
   }

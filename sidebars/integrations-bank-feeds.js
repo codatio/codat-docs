@@ -66,4 +66,14 @@ module.exports = [
       "integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds-partner",
     ],
   }
+  {
+    type: "link",
+    href: "/integrations/accounting/exact-online/accounting-exact-online",
+    label: "Exact (NL)",
+  },
+  {
+    type: "link",
+    href: "/integrations/accounting/freeagent/accounting-freeagent",
+    label: "FreeAgent",
+  },
 ]
