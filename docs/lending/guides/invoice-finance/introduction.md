@@ -35,6 +35,7 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 - Building any application form or dashboard UIs
 - Carrying out due diligence checks on the borrower
 - Instructions on how to build your own invoice financing product
+- Details on how to perform [Loan Writeback](/lending/guides/loan-writeback/introduction) for Invoice Financing [(see also: Record invoice finance repayments)](/lending/guides/loan-writeback/record-invoice-finance) 
 
 ### About the demo app
 
