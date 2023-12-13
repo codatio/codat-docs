@@ -403,7 +403,7 @@ Your SMB customer may want pay multiple bills from a single supplier using one p
 
 <TabItem value="NetSuite" label="NetSuite">
 
-:::note Considerations
+:::info Considerations
 
 If locations are set to mandatory in the company's NetSuite account, the `reference` is required and should be an `id` from the [tracking categories](/sync-for-payables-api#/operations/list-tracking-categories) prefixed with location.
 
@@ -449,7 +449,7 @@ If locations are set to mandatory in the company's NetSuite account, the `refere
 
 <TabItem value="Sage Intacct" label="Sage Intacct">
 
-:::note Considerations
+:::info Considerations
 
 Sage Intacct uses a `paymentMethodRef`. You can retrieve the payment methods for a company using the [Get create/update bill model](/sync-for-payables-api#/operations/get-create-update-bills-model) endpoint.
 
@@ -1535,7 +1535,7 @@ This example shows a partial bill payment and bill credit note used to pay the f
 
 This example shows the payment of a bill with credit and partial payment.
 
-:::note Considerations
+:::info Considerations
 
 Sage Intacct uses a `paymentMethodRef`. You can retrieve the payment methods for a company using the [Get create/update bill model](/sync-for-payables-api#/operations/get-create-update-bills-model) endpoint.
 
