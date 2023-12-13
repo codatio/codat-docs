@@ -255,7 +255,7 @@ account_create_response = payables_client.accounts.create(account_create_request
 
 ```csharp
 var accountCreateResponse = await payablesClient.Accounts.CreateAsync(new CreateAccountRequest() {
-  Account = new AccountPrototype(){
+  AccountPrototype = new AccountPrototype(){
     Name = "BillPay Debit Account",
 		FullyQualifiedName = "BillPay Debit Account",
     FullyQualifiedCategory = "Asset.Current",
@@ -296,34 +296,6 @@ accountCreateResponse, err := payablesClient.Accounts.Create(ctx, operations.Cre
 </Tabs>
 
 You can also use the [Get create bank account model](/sync-for-payables-api#/operations/get-create-bankAccounts-model) or [Get create account model](/sync-for-payables-api#/operations/get-create-chartOfAccounts-model) endpoints first to check integration-specific requirements for account creation, or [read more](/using-the-api/push) about creating data with Codat.
-
-<Tabs>
-
-<TabItem value="HTTP" label="HTTP">
-
-#### Request
-
-```http
-POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/bankAccounts
-```
-
-#### Example request body
-
-```json
-{
-    "accountName": "BillPay Debit Account",
-    "accountType": "Debit",
-    "accountNumber": "123456789",
-    "currency": "USD",
-    "balance": 0,
-    "availableBalance": 0,
-    "modifiedDate": "2023-04-14T09:25:10Z"
-}
-```
-
-</TabItem >
-
-</Tabs>  
 
 ### Pre-pay account
 
