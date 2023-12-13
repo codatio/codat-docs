@@ -103,6 +103,8 @@ It is important to note that when paying a bill the
 - `totalAmount` is the same as the `amountDue` on the bill.
 - `date` is the date that the payment is made to the supplier.
 
+For example, review the bill mapped from Xero in the dropdown below and see how it can be paid using the [Create bill payments](/sync-for-payables-api#/operations/create-bill-payment) in the subsequent code snippets.
+
 <details>
 <summary><b>Bill mapped from Xero</b></summary>
 
@@ -156,8 +158,6 @@ It is important to note that when paying a bill the
 }
 ```
 </details>
-
-For example, the bill mapped from Xero can be paid for using the [Create bill payments](/sync-for-payables-api#/operations/create-bill-payment) as follows
 
 <Tabs>
 
