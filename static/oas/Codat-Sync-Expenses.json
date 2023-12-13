@@ -13590,7 +13590,6 @@
       },
       "InvoiceTo": {
         "title": "Billable customer reference",
-        "x-internal": true,
         "type": "object",
         "nullable": true,
         "description": "Unique identifier of the customer the expense is billable to. The invoiceTo object is currently only supported for QBO.",
