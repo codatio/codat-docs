@@ -67,7 +67,7 @@ print(company_id)
 <TabItem value="csharp" label="C#">
 
 ```csharp
-var companyResponse = await sdk.Companies.CreateAsync(new() {
+var companyResponse = await bankFeedsClient.Companies.CreateAsync(new() {
     Name = companyName,
 });
 
@@ -167,7 +167,7 @@ Console.WriteLine(connectionResponse.Connection.LinkUrl)
 
 ```go
 ctx := context.Background()
-connectionResponse, err := s.Connections.Create(ctx, operations.CreateConnectionRequest{
+connectionResponse, err := bankFeedsClient.Connections.Create(ctx, operations.CreateConnectionRequest{
     RequestBody: &operations.CreateConnectionRequestBody{
         PlatformKey: bankfeeds.String("hcws"),
     },
@@ -234,7 +234,7 @@ Console.WriteLine(connectionOtpResponse.Connection.LinkUrl)
 
 ```go
 ctx := context.Background()
-connectionOtpResponse, err := s.Connections.Get(ctx, operations.GetConnectionRequest{
+connectionOtpResponse, err := bankFeedsClient.Connections.Get(ctx, operations.GetConnectionRequest{
     CompanyID: companyResponse.Company.ID,
     ConnectionID: connectionResponse.Connection.ID,
 })
@@ -304,7 +304,7 @@ var unlinkResponse = await bankFeedsClient.Connections.UnlinkAsync(new() {
 
 ```go
 ctx := context.Background()
-unlinkResponse, err := s.Connections.Unlink(ctx, operations.UnlinkConnectionRequest{
+unlinkResponse, err := bankFeedsClient.Connections.Unlink(ctx, operations.UnlinkConnectionRequest{
     RequestBody: &operations.UnlinkConnectionUpdateConnection{
       Status: shared.DataConnectionStatusUnlinked
     },

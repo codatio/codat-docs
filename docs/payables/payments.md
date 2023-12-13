@@ -84,7 +84,7 @@ graph TD
 
 ### Single bill payment
 
-If your SMB customer is making a payment to pay off a bill in full, use the [Create bill payments](/sync-for-payables-api#/operations/create-bill-payment) endpoint and include the following parameters in the request body:
+If your SMB customer is making a payment to pay off a bill in full, use the [Create bill payments](/sync-for-payables-api#/operations/create-bill-payment) endpoint and include the following properties in the request:
 
 - A `totalAmount` value (**always positive**) that indicates the amount of the bill that was paid. 
 - A `lines` array that contains one element with the following properties:
@@ -96,19 +96,17 @@ If your SMB customer is making a payment to pay off a bill in full, use the [Cre
 
 In case of **partial payments**, use the same endpoint and adjust the `amount` values according to the amount of the partial payment.
 
-<Tabs>
+When paying a bill, pay attention to the following:
 
-<TabItem value="Request URL" label="Request URL">
+- `supplierRef.id` is the same `id` as the `supplierRef.id` on the bill.
+- `accountRef.id` is the account the payment is made from as indicated during mapping.
+- `totalAmount` is the same as the `amountDue` on the bill.
+- `date` is the date that the payment is made to the supplier.
 
-```http
-POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/billPayments
-```
+For example, review the bill mapped from Xero in the dropdown below and see how it can be paid using the [Create bill payments](/sync-for-payables-api#/operations/create-bill-payment) in the subsequent code snippets.
 
-</TabItem>
-
-<TabItem value="Example bill to pay" label="Xero: example bill">
-
-This is a sample `json` of an outstanding bill from Xero.
+<details>
+<summary><b>Bill mapped from Xero</b></summary>
 
 ```json
 {
@@ -159,72 +157,170 @@ This is a sample `json` of an outstanding bill from Xero.
   }
 }
 ```
+</details>
 
-</TabItem>
+<Tabs>
 
-<TabItem value="Example Bill Payment Xero" label="Xero: example bill payment">
+<TabItem value="nodejs" label="TypeScript">
 
-This is a sample full payment for the Xero bill. Note that:
-
-- `supplierRef.id` is the same `id` as the `supplierRef.id` on the bill.
-- `accountRef.id` is the account the payment is made from as indicated during mapping.
-- `totalAmount` is the same as the `amountDue` on the bill.
-- `date` is the date that the payment is made to the supplier.
-
-```json
-{
-	"supplierRef": {
-		"id": "dec56ceb-65e9-43b3-ac98-7fe09eb37e31"
-	},
-	"accountRef": {
-		"id": "bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4"
-	},
-	"totalAmount": 135.85,
-	"currency": "GBP",
-	"currencyRate": 1,
-	"date": "2023-04-17T00:00:00",
-	"lines": [
-		{
-			"amount": 135.85,
-			"links": [
-				{
-					"type": "Bill",
-					"id": "59978bef-af2f-4a7e-9728-4997597c0980",
-					"amount": -135.85,
-					"currencyRate": 1
-				}
-			]
-		}
-	]
-}
+```javascript
+const billPaymentResponse = await payablesClient.billPayments.create({
+  billPayment: {
+    supplierRef: {
+      id: "dec56ceb-65e9-43b3-ac98-7fe09eb37e31"
+    },
+    accountRef: {
+      id: "bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4"
+    },
+    totalAmount: 135.85,
+    currency: "GBP",
+    currencyRate: 1,
+    date: "2023-04-17T00:00:00",
+    lines: [
+      {
+        amount: 135.85,
+        links: [
+          {
+            id: "59978bef-af2f-4a7e-9728-4997597c0980",
+            type: BillPaymentLineLinkType.Bill,
+            amount: -135.85,
+            currencyRate: 1,
+          },
+        ],
+      },
+    ]
+  },
+  companyId: companyId,
+  connectionId: connectionId,
+});
 ```
 
 </TabItem>
 
-</Tabs>
+<TabItem value="python" label="Python">
 
+```python
+bill_payment_request = operations.CreateBillPaymentRequest(
+    bill_payment=shared.BillPayment(
+      supplier_ref=shared.SupplierRef(
+        id='dec56ceb-65e9-43b3-ac98-7fe09eb37e31',
+      ),
+      account_ref=shared.AccountRef(
+        id='bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4'
+      ),
+      total_amount=Decimal('135.85'),
+      currency='GBP',
+      currency_rate=1,
+      date='2023-04-17T00:00:00',
+      lines=[
+        shared.BillPaymentLine(
+          amount=Decimal('135.85'),
+          links=[
+            shared.BillPaymentLineLink(
+              id='59978bef-af2f-4a7e-9728-4997597c0980',
+              type=shared.BillPaymentLineLinkType.BILL,
+              amount=Decimal('-135.85'),
+              currency_rate=Decimal('1'),
+            )
+          ],
+        ),
+      ]
+    ),
+    company_id=company_id,
+    connection_id=connection_id,
+)
+
+bill_payment_response = payables_client.bill_payments.create(bill_payment_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var billPaymentResponse = await payablesClient.BillPayments.CreateAsync(new() {
+  BillPayment = new BillPayment() {
+    SupplierRef = new SupplierRef() {
+        Id = "dec56ceb-65e9-43b3-ac98-7fe09eb37e31",
+    },
+    AccountRef = new AccountRef() {
+      Id = "bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4"
+    },
+    TotalAmount = 135.85M,
+    Currency = "USD",
+    CurrencyRate = 1M,
+    Date = "2023-04-17T00:00:00",
+    Lines = new List<BillPaymentLine>() {
+      new BillPaymentLine() {
+        Amount = 135.85M,
+        Links = new List<BillPaymentLineLink>() {
+          new BillPaymentLineLink() {
+            Id = "59978bef-af2f-4a7e-9728-4997597c0980",
+            Type = BillPaymentLineLinkType.Bill,
+            Amount = -135.85M,
+            CurrencyRate = 1M
+          },
+        },
+      },
+    },
+  },
+  CompanyId = companyId,
+  ConnectionId = connectionId,
+});
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+billPaymentResponse, err := payablesClient.BillPayments.Create(ctx, 
+  operations.CreateBillPaymentRequest{
+    BillPayment: &shared.BillPayment{
+      SupplierRef: &shared.SupplierRef{
+          ID: "dec56ceb-65e9-43b3-ac98-7fe09eb37e31",
+      },
+      AccountRef: &shared.AccountRef{
+        ID: "bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4"
+      },
+      TotalAmount: types.MustNewDecimalFromString("135.85"),
+      Currency: syncforpayables.String("USD"),
+      CurrencyRate: types.MustNewDecimalFromString("1"),
+      Date: "2023-04-17T00:00:00",
+      Lines: []shared.BillPaymentLine{
+        shared.BillPaymentLine{
+          Amount: types.MustNewDecimalFromString("135.85"),
+          Links: []shared.BillPaymentLineLink{
+            shared.BillPaymentLineLink{
+              Id: "59978bef-af2f-4a7e-9728-4997597c0980",
+              Type: shared.BillPaymentLineLinkTypeBill,
+              Amount = types.MustNewDecimalFromString("-135.85"),
+              CurrencyRate = types.MustNewDecimalFromString("1")
+            },
+          },
+        },
+      },
+    },
+    CompanyID: companyId,
+    ConnectionID: connectionID
+})
+```
+</TabItem>
+
+</Tabs>
 
 ### Multiple bill payment
 
 Your SMB customer may want pay multiple bills from a single supplier using one payment. Use the [Create bill payments](/sync-for-payables-api#/operations/create-bill-payment) endpoint to do so and include a `lines` array with multiple elements for each bill and its respective amount.
 
-<Tabs>
-
-<TabItem value="Request URL" label="Request URL">
-
-```http
-POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/billPayments
-```
-
-</TabItem>
-
-<TabItem value="Example request bodies">
+<details>
+<summary><b>Integration-specific examples</b></summary>
 
 <Tabs>
 
 <TabItem value="Xero" label="Xero">
 
-```json title="Bill payment for same supplier"
+```json
 {
   "supplierRef": {
     "id": "dec56ceb-65e9-43b3-ac98-7fe09eb37e31"
@@ -307,7 +403,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 <TabItem value="NetSuite" label="NetSuite">
 
-:::note Considerations
+:::info Considerations
 
 If locations are set to mandatory in the company's NetSuite account, the `reference` is required and should be an `id` from the [tracking categories](/sync-for-payables-api#/operations/list-tracking-categories) prefixed with location.
 
@@ -353,7 +449,7 @@ If locations are set to mandatory in the company's NetSuite account, the `refere
 
 <TabItem value="Sage Intacct" label="Sage Intacct">
 
-:::note Considerations
+:::info Considerations
 
 Sage Intacct uses a `paymentMethodRef`. You can retrieve the payment methods for a company using the [Get create/update bill model](/sync-for-payables-api#/operations/get-create-update-bills-model) endpoint.
 
@@ -447,10 +543,7 @@ Sage Intacct uses a `paymentMethodRef`. You can retrieve the payment methods for
 
 </Tabs>
 
-</TabItem>
-
-</Tabs>
-
+</details>
 
 ### Batch bill payment
 
@@ -458,47 +551,211 @@ In some accounting platforms (for example, Xero) your SMB customer can make a ba
 
 To do this with Sync for Payables, use the [Create bill payments](/sync-for-payables-api#/operations/create-bill-payment) endpoint and leave the `supplierRef` parameter blank.
 
-```json
-{
-	"accountRef": {
-		"id": "d96ffd74-2394-4666-81c4-eebb76e51e21"
-	},
-	"totalAmount": 6,
-	"date": "2022-09-06T00:00:00",
-	"lines": [
-		{
-			"amount": 1,
-			"links": [
-				{
-					"type": "Bill",
-					"id": "0394819c-b784-454d-991c-c4711b9aca12",
-					"amount": -1
-				}
-			]
-		},
-		{
-			"amount": 2,
-			"links": [
-				{
-					"type": "Bill",
-					"id": "428e3e38-e8fb-4c56-91b5-dd09dc2e6505",
-					"amount": -2
-				}
-			]
-		},
-		{
-			"amount": 3,
-			"links": [
-				{
-					"type": "Bill",
-					"id": "76129542-2b2f-482f-b2b3-e612d9c1ba08",
-					"amount": -3
-				}
-			]
-		}
-	]
-}
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const billPaymentResponse = await payablesClient.billPayments.create({
+  billPayment: {
+    accountRef: {
+      id: "d96ffd74-2394-4666-81c4-eebb76e51e21"
+    },
+    totalAmount: 6,
+    date: "2022-09-06T00:00:00",
+    lines: [
+      {
+        amount: 1,
+        links: [
+          {
+            id: "0394819c-b784-454d-991c-c4711b9aca12",
+            type: BillPaymentLineLinkType.Bill,
+            amount: -1,
+          },
+        ],
+      },
+      {
+        amount: 2,
+        links: [
+          {
+            id: "428e3e38-e8fb-4c56-91b5-dd09dc2e6505",
+            type: BillPaymentLineLinkType.Bill,
+            amount: -2,
+          },
+        ],
+      },
+      {
+        amount: 3,
+        links: [
+          {
+            id: "76129542-2b2f-482f-b2b3-e612d9c1ba08",
+            type: BillPaymentLineLinkType.Bill,
+            amount: -3,
+          },
+        ],
+      },
+    ]
+  },
+  companyId: companyId,
+  connectionId: connectionId,
+});
 ```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+bill_payment_request = operations.CreateBillPaymentRequest(
+    bill_payment=shared.BillPayment(
+      account_ref=shared.AccountRef(
+        id='d96ffd74-2394-4666-81c4-eebb76e51e21'
+      ),
+      total_amount=Decimal('6'),
+      date='2022-09-06T00:00:00',
+      lines=[
+        shared.BillPaymentLine(
+          amount=Decimal('1'),
+          links=[
+            shared.BillPaymentLineLink(
+              id='0394819c-b784-454d-991c-c4711b9aca12',
+              type=shared.BillPaymentLineLinkType.BILL,
+              amount=Decimal('-1'),
+            )
+          ],
+        ),
+        shared.BillPaymentLine(
+          amount=Decimal('2'),
+          links=[
+            shared.BillPaymentLineLink(
+              id='428e3e38-e8fb-4c56-91b5-dd09dc2e6505',
+              type=shared.BillPaymentLineLinkType.BILL,
+              amount=Decimal('-2'),
+            )
+          ],
+        ),
+        shared.BillPaymentLine(
+          amount=Decimal('3'),
+          links=[
+            shared.BillPaymentLineLink(
+              id='76129542-2b2f-482f-b2b3-e612d9c1ba08',
+              type=shared.BillPaymentLineLinkType.BILL,
+              amount=Decimal('-3'),
+            )
+          ],
+        ),
+      ]
+    ),
+    company_id=company_id,
+    connection_id=connection_id,
+)
+
+bill_payment_response = payables_client.bill_payments.create(bill_payment_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var billPaymentResponse = await payablesClient.BillPayments.CreateAsync(new() {
+  BillPayment = new BillPayment() {
+      AccountRef = new AccountRef() {
+        Id = "d96ffd74-2394-4666-81c4-eebb76e51e21"
+      },
+      TotalAmount = 6M,
+      Date = "2022-09-06T00:00:00",
+      Lines = new List<BillPaymentLine>() {
+          new BillPaymentLine() {
+              Amount = 1M,
+              Links = new List<BillPaymentLineLink>() {
+                  new BillPaymentLineLink() {
+                    Id = "0394819c-b784-454d-991c-c4711b9aca12",
+                    Type = BillPaymentLineLinkType.Bill,
+                    Amount = -1M,
+                  },
+              },
+          },
+          new BillPaymentLine() {
+              Amount = 2M,
+              Links = new List<BillPaymentLineLink>() {
+                  new BillPaymentLineLink() {
+                    Id = "428e3e38-e8fb-4c56-91b5-dd09dc2e6505",
+                    Type = BillPaymentLineLinkType.Bill,
+                    Amount = -2M,
+                  },
+              },
+          },
+          new BillPaymentLine() {
+              Amount = 3M,
+              Links = new List<BillPaymentLineLink>() {
+                  new BillPaymentLineLink() {
+                    Id = "76129542-2b2f-482f-b2b3-e612d9c1ba08",
+                    Type = BillPaymentLineLinkType.Bill,
+                    Amount = -3M,
+                  },
+              },
+          },
+      },
+  },
+  CompanyId = companyId,
+  ConnectionId = connectionId,
+});
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+billPaymentResponse, err := payablesClient.BillPayments.Create(ctx, 
+  operations.CreateBillPaymentRequest{
+    BillPayment: &shared.BillPayment{
+      AccountRef: &shared.AccountRef{
+        ID: "d96ffd74-2394-4666-81c4-eebb76e51e21"
+      },
+      TotalAmount: types.MustNewDecimalFromString("6"),
+      Date: "2022-09-06T00:00:00",
+      Lines: []shared.BillPaymentLine{
+        shared.BillPaymentLine{
+          Amount: types.MustNewDecimalFromString("1"),
+          Links: []shared.BillPaymentLineLink{
+            shared.BillPaymentLineLink{
+              Id: "0394819c-b784-454d-991c-c4711b9aca12",
+              Type: shared.BillPaymentLineLinkTypeBill,
+              Amount = types.MustNewDecimalFromString("-1"),
+            },
+          },
+        },
+        shared.BillPaymentLine{
+          Amount: types.MustNewDecimalFromString("2"),
+          Links: []shared.BillPaymentLineLink{
+            shared.BillPaymentLineLink{
+              Id: "428e3e38-e8fb-4c56-91b5-dd09dc2e6505",
+              Type: shared.BillPaymentLineLinkTypeBill,
+              Amount = types.MustNewDecimalFromString("-2"),
+            },
+          },
+        },
+        shared.BillPaymentLine{
+          Amount: types.MustNewDecimalFromString("3"),
+          Links: []shared.BillPaymentLineLink{
+            shared.BillPaymentLineLink{
+              Id: "76129542-2b2f-482f-b2b3-e612d9c1ba08",
+              Type: shared.BillPaymentLineLinkTypeBill,
+              Amount = types.MustNewDecimalFromString("-3"),
+            },
+          },
+        },
+      },
+    },
+    CompanyID: companyID,
+    ConnectionID: connectionID
+})
+```
+</TabItem>
+
+</Tabs>
 
 ### Bill credit note
 
@@ -515,20 +772,217 @@ Start by creating a credit note using our [Create bill credit note](/operations/
 
 <Tabs>
 
-<TabItem value="Request URL" label="Request URL">
+<TabItem value="nodejs" label="TypeScript">
 
-```http
-POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/billCreditNotes
+```javascript
+const billCreditNoteCreateResponse = await payablesClient.billCreditNotes.create({
+    billCreditNote: {
+      billCreditNoteNumber: "JMY-1987",
+      supplierRef: {
+        id: "3a0d40a2-2698-4cf5-b7b2-30133c632ab6",
+        supplierName: "Swanston Security"
+      },
+      withholdingTax: [],
+      totalAmount: 25.44,
+      totalDiscount: 0,
+      subTotal: 25.44,
+      totalTaxAmount: 4.24,
+      discountPercentage: 0,
+      remainingCredit: 0,
+      status: BillCreditNoteStatus.Submitted,
+      issueDate: "2023-02-09T00:00:00",
+      currency: "GBP",
+      currencyRate: 1,
+      lineItems: [
+        {
+          description: "Refund as agreed due to window break when guard absent",
+          unitAmount: 21.2,
+          quantity: 1,
+          discountAmount: 0,
+          subTotal: 21.2,
+          taxAmount: 4.24,
+          totalAmount: 25.44,
+          accountRef: {
+            id: "f96c9458-d724-47bf-8f74-a9d5726465ce"
+          },
+          discountPercentage: 0,
+          taxRateRef: {
+            id: "INPUT2",
+            name: "20% (VAT on Expenses)",
+            effectiveTaxRate: 20
+          },
+          trackingCategoryRefs: []
+        }
+      ]
+    },
+    companyId: companyId,
+    connectionId: connectionId,
+  });
 ```
 
 </TabItem>
 
-<TabItem value="Example request bodies">
+<TabItem value="python" label="Python">
+
+```python
+bill_credit_note_create_request = operations.CreateBillCreditNoteRequest(
+  bill_credit_note=shared.BillCreditNote(
+    bill_credit_note_number='JMY-1987',
+    supplier_ref=shared.SupplierRef(
+      id='3a0d40a2-2698-4cf5-b7b2-30133c632ab6',
+      supplier_name='Swanston Security'
+    ),
+    withholding_tax=[],
+    total_amount=Decimal('25.44'),
+    total_discount=Decimal('0'),
+    sub_total=Decimal('25.44'),
+    total_tax_amount=Decimal('4.24'),
+    discount_percentage=Decimal('0'),
+    remaining_credit=Decimal('0'),
+    status=shared.BillCreditNoteStatus.SUBMITTED,
+    issue_date='2023-02-09T00:00:00',
+    currency='GBP',
+    currency_rate=Decimal('1'),
+    line_items=[
+      shared.BillCreditNoteLineItem(
+        description="Refund as agreed due to window break when guard absent",
+        unit_amount=Decimal('21.2'),
+        quantity=Decimal('1'),
+        discount_amount=Decimal('0'),
+        sub_total=Decimal('21.2'),
+        tax_amount=Decimal('4.24'),
+        total_amount=Decimal('25.44'),
+        account_ref=shared.AccountRef(
+          id='f96c9458-d724-47bf-8f74-a9d5726465ce'
+        ),
+        discount_percentage=Decimal('0'),
+        tax_rate_ref=shared.TaxRateRef(
+          id='INPUT2',
+          name='20% (VAT on Expenses)',
+          effective_tax_rate=Decimal('20')
+        ),
+        tracking_category_refs=[]
+      )
+    ]
+  ),
+  company_id=company_id,
+  connection_id=connection_id,
+)
+
+bill_credit_note_create_response = payablesClient.bill_credit_notes.create(bill_credit_note_create_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var billCreditNoteCreateResponse = await payablesClient.BillCreditNotes.CreateAsync(new(){
+  BillCreditNote = new BillCreditNote(){
+    BillCreditNoteNumber = "JMY-1987",
+    SupplierRef = new SupplierRef {
+      Id = "3a0d40a2-2698-4cf5-b7b2-30133c632ab6",
+      SupplierName = "Swanston Security"
+    },
+    WithholdingTax = new List<WithholdingTaxItems>(),
+    TotalAmount = 25.44M,
+    TotalDiscount = 0M,
+    SubTotal = 25.44M,
+    TotalTaxAmount = 4.24M,
+    DiscountPercentage = 0M,
+    RemainingCredit = 0M,
+    Status = BillCreditNoteStatus.Submitted,
+    IssueDate = "2023-02-09T00:00:00",
+    Currency = "GBP",
+    CurrencyRate = 1M,
+    LineItems = new List<BillCreditNoteLineItem>(){
+      new BillCreditNoteLineItem(){
+        Description = "Refund as agreed due to window break when guard absent",
+        UnitAmount = 21.2M,
+        Quantity = 1M,
+        DiscountAmount = 0M,
+        SubTotal = 21.2M,
+        TaxAmount = 4.24M,
+        TotalAmount = 25.44M,
+        AccountRef = new AccountRef(){
+          Id = "f96c9458-d724-47bf-8f74-a9d5726465ce"
+        },
+        DiscountPercentage = 0M,
+        TaxRateRef = new TaxRateRef(){
+          Id = "INPUT2",
+          Name = "20% (VAT on Expenses)",
+          EffectiveTaxRate = 20M
+        },
+        TrackingCategoryRefs = new List<TrackingCategoryRef>()
+      }
+    }
+  },
+  CompanyId = companyId,
+  ConnectionId = connectionId
+});
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+billCreditNoteCreateResponse, err := payablesClient.BillCreditNotes.Create(ctx,
+  operations.CreateBillCreditNoteRequest{
+    BillCreditNote: &shared.BillCreditNote{
+      BillCreditNoteNumber: syncforpayables.String("JMY-1987"),
+      SupplierRef: new SupplierRef {
+        ID: syncforpayables.String("3a0d40a2-2698-4cf5-b7b2-30133c632ab6"),
+        SupplierName: syncforpayables.String("Swanston Security")
+      },
+      WithholdingTax: []shared.WithholdingTaxItems{},
+      TotalAmount: types.MustNewDecimalFromString("25.44"),
+      TotalDiscount: types.MustNewDecimalFromString("0"),
+      SubTotal: types.MustNewDecimalFromString("25.44"),
+      TotalTaxAmount: types.MustNewDecimalFromString("4.24"),
+      DiscountPercentage: types.MustNewDecimalFromString("0"),
+      RemainingCredit: types.MustNewDecimalFromString("0"),
+      Status: BillCreditNoteStatus.Submitted,
+      IssueDate: syncforpayables.String("2023-02-09T00:00:00"),
+      Currency: syncforpayables.String("GBP"),
+      CurrencyRate: types.MustNewDecimalFromString("1"),
+      LineItems: []shared.BillCreditNoteLineItem{
+        shared.BillCreditNoteLineItem{
+          Description: syncforpayables.String("Refund as agreed due to window break when guard absent"),
+          UnitAmount: types.MustNewDecimalFromString("21.2"),
+          Quantity: types.MustNewDecimalFromString("1"),
+          DiscountAmount: types.MustNewDecimalFromString("0"),
+          SubTotal: types.MustNewDecimalFromString("21.2"),
+          TaxAmount: types.MustNewDecimalFromString("4.24"),
+          TotalAmount: types.MustNewDecimalFromString("25.44"),
+          AccountRef: &shared.AccountRef{
+            ID: syncforpayables.String("f96c9458-d724-47bf-8f74-a9d5726465ce")
+          },
+          DiscountPercentage: types.MustNewDecimalFromString("0"),
+          TaxRateRef: &shared.TaxRateRef(){
+            ID: syncforpayables.String("INPUT2"),
+            Name: syncforpayables.String("20% (VAT on Expenses)"),
+            EffectiveTaxRate: types.MustNewDecimalFromString("20")
+          },
+          TrackingCategoryRefs: []shared.TrackingCategoryRef{}
+        }
+      }
+    },
+    CompanyID: companyID,
+    ConnectionID: connectionID,
+  }
+)
+```
+</TabItem>
+
+</Tabs>
+
+<details>
+<summary><b>Integration-specific examples</b></summary>
 
 <Tabs>
 
 <TabItem value="Xero" label="Xero">
-
 
 ```json
 {
@@ -785,9 +1239,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 </Tabs>
 
-</TabItem>
-
-</Tabs>
+</details>
 
 #### Allocate credit note to a bill
 
@@ -797,15 +1249,169 @@ In some accounting platforms, you can combine a credit note and a partial paymen
 
 <Tabs>
 
-<TabItem value="Request URL" label="Request URL">
+<TabItem value="nodejs" label="TypeScript">
 
-```http
-POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/billPayments
+```javascript
+const billPaymentResponse = await payablesClient.billPayments.create({
+  billPayment: {
+    supplierRef: {
+      id: "3a0d40a2-2698-4cf5-b7b2-30133c632ab6"
+    },
+    accountRef: {
+      id: "94b02f61-f95f-4873-b5b7-651ff9707325"
+    },
+    totalAmount: 0.00,
+    currency: "GBP",
+    currencyRate: 1,
+    date: "2023-05-09T00:00:00",
+    lines: [
+      {
+        amount: 45.00,
+        links: [
+          {
+            id: "59978bef-af2f-4a7e-9728-4997597c0980",
+            type: BillPaymentLineLinkType.Bill,
+            amount: -25.44,
+          },
+          {
+            id: "ee8bec08-2be8-40ba-acd0-d53d5df11235",
+            type: BillPaymentLineLinkType.CreditNote,
+            amount: 25.44,
+          },
+        ],
+      },
+    ]
+  },
+  companyId: companyId,
+  connectionId: connectionId,
+});
 ```
 
 </TabItem>
 
-<TabItem value="Example request bodies">
+<TabItem value="python" label="Python">
+
+```python
+bill_payment_request = operations.CreateBillPaymentRequest(
+    bill_payment=shared.BillPayment(
+      supplier_ref=shared.SupplierRef(
+        id='3a0d40a2-2698-4cf5-b7b2-30133c632ab6',
+      ),
+      account_ref=shared.AccountRef(
+        id='94b02f61-f95f-4873-b5b7-651ff9707325'
+      ),
+      total_amount=Decimal('0.00'),
+      currency='GBP',
+      date='2023-05-09T00:00:00',
+      lines=[
+        shared.BillPaymentLine(
+          amount=Decimal('45.00'),
+          links=[
+            shared.BillPaymentLineLink(
+              id='59978bef-af2f-4a7e-9728-4997597c0980',
+              type=shared.BillPaymentLineLinkType.BILL,
+              amount=Decimal('-25.44'),
+            ),
+            shared.BillPaymentLineLink(
+              id='ee8bec08-2be8-40ba-acd0-d53d5df11235',
+              type=shared.BillPaymentLineLinkType.CREDIT_NOTE,
+              amount=Decimal('25.44'),
+            )
+          ],
+        ),
+      ]
+    ),
+    company_id=company_id,
+    connection_id=connection_id,
+)
+
+bill_payment_response = payables_client.bill_payments.create(bill_payment_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var billPaymentResponse = await payablesClient.BillPayments.CreateAsync(new() {
+  BillPayment = new BillPayment() {
+    SupplierRef = new SupplierRef() {
+        Id = "3a0d40a2-2698-4cf5-b7b2-30133c632ab6",
+    },
+    AccountRef = new AccountRef() {
+      Id = "94b02f61-f95f-4873-b5b7-651ff9707325"
+    },
+    TotalAmount = 0M,
+    Currency = "GBP",
+    Date = "2023-05-09T00:00:00",
+    Lines = new List<BillPaymentLine>() {
+      new BillPaymentLine() {
+        Amount = 45.00M,
+        Links = new List<BillPaymentLineLink>() {
+          new BillPaymentLineLink() {
+            Id = "59978bef-af2f-4a7e-9728-4997597c0980",
+            Type = BillPaymentLineLinkType.Bill,
+            Amount = -25.44M,
+          },
+          new BillPaymentLineLink() {
+            Id = "ee8bec08-2be8-40ba-acd0-d53d5df11235",
+            Type = BillPaymentLineLinkType.CreditNote,
+            Amount = 25.44M,
+          },
+        },
+      },
+    },
+  },
+  CompanyId = companyId,
+  ConnectionId = connectionId,
+});
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+billPaymentResponse, err := payablesClient.BillPayments.Create(ctx, 
+  operations.CreateBillPaymentRequest{
+    BillPayment: &shared.BillPayment{
+      SupplierRef: &shared.SupplierRef{
+          ID: "3a0d40a2-2698-4cf5-b7b2-30133c632ab6",
+      },
+      AccountRef: &shared.AccountRef{
+        ID: "94b02f61-f95f-4873-b5b7-651ff9707325"
+      },
+      TotalAmount: types.MustNewDecimalFromString("0.00"),
+      Currency: syncforpayables.String("GBP"),
+      Date: "2023-05-09T00:00:00",
+      Lines: []shared.BillPaymentLine{
+        shared.BillPaymentLine{
+          Amount: types.MustNewDecimalFromString("45.00"),
+          Links: []shared.BillPaymentLineLink{
+            shared.BillPaymentLineLink{
+              ID: "59978bef-af2f-4a7e-9728-4997597c0980",
+              Type: shared.BillPaymentLineLinkTypeBill,
+              Amount = types.MustNewDecimalFromString("-25.44"),
+            },
+            shared.BillPaymentLineLink{
+              ID: "ee8bec08-2be8-40ba-acd0-d53d5df11235",
+              Type: shared.BillPaymentLineLinkTypeCreditNote,
+              Amount = types.MustNewDecimalFromString("25.44"),
+            },
+          },
+        },
+      },
+    },
+    CompanyID: companyID,
+    ConnectionID: connectionID
+})
+```
+</TabItem>
+
+</Tabs>
+
+<details>
+<summary><b>Integration-specific examples</b></summary>
 
 <Tabs>
 
@@ -844,7 +1450,6 @@ With Xero, you can only fully allocate a `billCreditNote` to a `bill` using a `b
     }
   ]
 }
-
 ```
 
 </TabItem>
@@ -928,13 +1533,15 @@ This example shows a partial bill payment and bill credit note used to pay the f
 
 <TabItem value="Sage Intacct" label="Sage Intacct">
 
-:::note Considerations
+This example shows the payment of a bill with credit and partial payment.
+
+:::info Considerations
 
 Sage Intacct uses a `paymentMethodRef`. You can retrieve the payment methods for a company using the [Get create/update bill model](/sync-for-payables-api#/operations/get-create-update-bills-model) endpoint.
 
 :::
 
-```json title="Payment of a bill with credit and partial payment"
+```json
 {
   "supplierRef": {
     "id": "3"
@@ -983,15 +1590,125 @@ Credit note allocations are coming soon for MYOB.
 
 </Tabs>
 
-</TabItem>
-
-</Tabs>
+</details>
 
 ### Delete bills and payments
 
 In certain scenarios, your SMB customer may want to delete an existing bill or a bill payment - for example, if they made a mistake or no longer want to process the bill. 
 
 Use the [Delete bill](/sync-for-payables-api#/operations/delete-bill) and [Delete bill payment](/sync-for-payables-api#/operations/delete-billPayment) endpoints to support these requirements, and check them in our OAS for the most up-to-date integration coverage. 
+
+#### Delete bills
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const billDeleteResponse = await payablesClient.bills.delete({
+  companyId: companyId,
+  connectionId: connectionId,
+  billId: billId,
+});
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+bill_delete_request = operations.DeleteBillRequest(
+  company_id=company_id,
+  connection_id=connection_id,
+  bill_id=bill_id,
+)
+
+bill_delete_response = payables_client.bills.delete(bill_delete_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var res = await payablesClient.Bills.DeleteAsync(new() {
+    CompanyId = companyId,
+    ConnectionId = connectionId,
+    BillId = billId,
+};);
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+billDeleteResponse, err := payablesClient.Bills.Delete(ctx, operations.DeleteBillRequest{
+  CompanyID: companyID,
+  ConnectionID: connectionID,
+  BillID: billID,
+})
+```
+</TabItem>
+
+</Tabs>
+
+#### Delete bill payments
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const billPaymentDeleteResponse = await payablesClient.billPayments.delete({
+  companyId: companyId,
+  connectionId: connectionId,
+  billPaymentId: billPaymentId,
+});
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+bill_payment_delete_request = operations.DeleteBillPaymentRequest(
+  company_id=company_id,
+  connection_id=connection_id,
+  bill_payment_id=bill_payment_id,
+)
+
+bill_payment_delete_response = payables_client.bills.delete(bill_payment_delete_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var billPaymentDeleteResponse = await payablesClient.BillPayments.DeleteAsync(new() {
+    CompanyId = companyId,
+    ConnectionId = connectionId,
+    BillPaymentId = billPaymentId,
+});
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+billPaymentDeleteResponse, err := payablesClient.BillPayments.Delete(ctx, 
+  operations.DeleteBillPaymentRequest{
+    CompanyID: companyID,
+    ConnectionID: connectionID,
+    BillPaymentID: billPaymentID,
+  }
+)
+```
+</TabItem>
+
+</Tabs>
 
 :::tip Recap
 
