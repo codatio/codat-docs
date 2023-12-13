@@ -206,7 +206,7 @@ supplierCreateResponse, err := payablesClient.Suppliers.Create(ctx, operations.C
 
 </Tabs>
 
-### Update supplier
+## Update supplier
 
 If your customer's existing supplier changes address or business name, you can reflect this change in their accounting software using the [Update supplier](/sync-for-payables-api#/operations/put-supplier) endpoint.
 
@@ -299,7 +299,7 @@ Next, you can choose to manage your supplier's bills or payment methods prior to
 :::
 
 ---
-### Read next
+## Read next
 
 * [Manage your customer's bills](/payables/bills)
 * [Manage your customer's payment methods](/payables/mapping)
