@@ -97,7 +97,7 @@ Codat supports a range of [webhooks](/using-the-api/webhooks/core-rules-types) t
   Use this webhook to track the completion of the operation to pay bills in the SMB's accounting platform. When you receive a notification from this webhook, check the `status` value in the body. A `Success` status means the bill payment or the bill credit note has been successfully pushed to the accounting software.
 
 ### Client libraries
-Use our comprehensive [Sync for Payables library](/get-started/libraries) to kick-start and simplify your build. Simply install the library in one of the supported languages and pass your base64-encoded API key to the constructor. Simply install the library in one of the supported languages and pass your base64 encoded API key to the constructor.
+Use our comprehensive [Sync for Payables library](/get-started/libraries) to kick-start and simplify your build. Simply install the library in one of the supported languages and pass your base64-encoded API key to the constructor.
 
 <Tabs>
 

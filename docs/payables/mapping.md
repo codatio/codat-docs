@@ -115,9 +115,9 @@ accountsListResponse, err := payablesClient.Accounts.List(ctx, operations.ListAc
 
 ## Create new account
 
-If the SMB customer plans to make payments from a new payment method or account that you provide, a new account must be created. The account will contain their transactions, making the SMB's payment reconciliation workflows easier. The endpoint to use depends on the underlying integration.
+If the SMB customer plans to make payments from a new payment method or account that you provide, a new account must be created in their accounting software. The account will contain their transactions, making the SMB's payment reconciliation workflows easier. 
 
-For Xero, QuickBooks Online and Oracle NetSuite use the [Create bank account](/sync-for-payables-api#/operations/create-bank-account) endpoint.
+For Xero, QuickBooks Online, and Oracle NetSuite, use the [Create bank account](/sync-for-payables-api#/operations/create-bank-account) endpoint.
 
 <Tabs>
 
@@ -203,7 +203,7 @@ accountsResponse, err := payablesClient.Accounts.Create(ctx, operations.CreateAc
 
 Note that Xero does not support creating credit accounts.
 
-For Sage Intacct, use the [Create account](/sync-for-payables-api#/operations/create-account) endpoint to reflect that account in their accounting software. 
+For Sage Intacct, use the [Create account](/sync-for-payables-api#/operations/create-account) endpoint to reflect that account in the customer's accounting software. 
 
 <Tabs>
 

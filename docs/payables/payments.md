@@ -96,7 +96,7 @@ If your SMB customer is making a payment to pay off a bill in full, use the [Cre
 
 In case of **partial payments**, use the same endpoint and adjust the `amount` values according to the amount of the partial payment.
 
-It is important to note that when paying a bill the
+When paying a bill, pay attention to the following:
 
 - `supplierRef.id` is the same `id` as the `supplierRef.id` on the bill.
 - `accountRef.id` is the account the payment is made from as indicated during mapping.
@@ -314,7 +314,7 @@ billPaymentResponse, err := payablesClient.BillPayments.Create(ctx,
 Your SMB customer may want pay multiple bills from a single supplier using one payment. Use the [Create bill payments](/sync-for-payables-api#/operations/create-bill-payment) endpoint to do so and include a `lines` array with multiple elements for each bill and its respective amount.
 
 <details>
-<summary><b>Integration specific examples</b></summary>
+<summary><b>Integration-specific examples</b></summary>
 
 <Tabs>
 
@@ -978,7 +978,7 @@ billCreditNoteCreateResponse, err := payablesClient.BillCreditNotes.Create(ctx,
 </Tabs>
 
 <details>
-<summary><b>Integration specific examples</b></summary>
+<summary><b>Integration-specific examples</b></summary>
 
 <Tabs>
 
@@ -1411,7 +1411,7 @@ billPaymentResponse, err := payablesClient.BillPayments.Create(ctx,
 </Tabs>
 
 <details>
-<summary><b>Integration specific examples</b></summary>
+<summary><b>Integration-specific examples</b></summary>
 
 <Tabs>
 
