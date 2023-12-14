@@ -115,6 +115,10 @@
       "description": "Accounts"
     },
     {
+      "name": "Bank accounts",
+      "description": "Bank accounts"
+    },
+    {
       "name": "Bills",
       "description": "Bills"
     },
@@ -7977,6 +7981,1323 @@
         },
         "description": "The *Create account* endpoint creates a new [account](https://docs.codat.io/sync-for-payables-api#/schemas/Account) for a given company's connection.\n\n[Accounts](https://docs.codat.io/sync-for-payables-api#/schemas/Account) are the categories a business uses to record accounting transactions.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create account model](https://docs.codat.io/sync-for-payables-api#/operations/get-create-chartOfAccounts-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account.\n",
         "operationId": "create-account"
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/options/bankAccounts": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        }
+      ],
+      "get": {
+        "summary": "Get create/update bank account model",
+        "tags": [
+          "Bank accounts"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PushOption"
+                },
+                "examples": {
+                  "Dynamics 365 Business Central": {
+                    "value": {
+                      "type": "Object",
+                      "displayName": "Bank Account",
+                      "description": "An account that bank transactions may be recorded against",
+                      "properties": {
+                        "accountName": {
+                          "type": "String",
+                          "displayName": "Name",
+                          "description": "The name of the bank account in the originating system",
+                          "required": true,
+                          "validation": {
+                            "warnings": [],
+                            "information": [
+                              {
+                                "field": "AccountName",
+                                "details": "Needs to be of the format '{No.}-{Name}'"
+                              }
+                            ]
+                          }
+                        },
+                        "currency": {
+                          "type": "String",
+                          "displayName": "Currency",
+                          "description": "The currency of the bank account",
+                          "required": true
+                        },
+                        "accountNumber": {
+                          "type": "String",
+                          "displayName": "Account Number",
+                          "description": "The account number for the bank account",
+                          "required": false
+                        },
+                        "nominalCode": {
+                          "type": "String",
+                          "displayName": "Nominal Code",
+                          "description": "The external reference given to each nominal account for a business",
+                          "required": false,
+                          "validation": {
+                            "warnings": [],
+                            "information": [
+                              {
+                                "field": "NominalCode",
+                                "details": "Bank Account Posting Group with Nominal Account must exist"
+                              }
+                            ]
+                          }
+                        },
+                        "sortCode": {
+                          "type": "String",
+                          "displayName": "Sort Code",
+                          "description": "The sort code for the bank account",
+                          "required": false,
+                          "validation": {
+                            "warnings": [],
+                            "information": [
+                              {
+                                "field": "SortCode",
+                                "details": "Must have a length between 0 and 20 characters"
+                              }
+                            ]
+                          }
+                        },
+                        "iBan": {
+                          "type": "String",
+                          "displayName": "IBAN",
+                          "description": "The international bank account number of the account. Often used when making or receiving international payments",
+                          "required": false
+                        },
+                        "overdraftLimit": {
+                          "type": "Number",
+                          "displayName": "Overdraft Limit",
+                          "description": "The pre-arranged overdraft limit of the account",
+                          "required": false,
+                          "validation": {
+                            "warnings": [],
+                            "information": [
+                              {
+                                "field": "OverdraftLimit",
+                                "details": "Default value is 0"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "required": true
+                    }
+                  },
+                  "Exact (Netherlands)": {
+                    "value": {
+                      "type": "Object",
+                      "displayName": "Bank Account",
+                      "description": "An account that bank transactions may be recorded against",
+                      "properties": {
+                        "accountName": {
+                          "type": "String",
+                          "displayName": "Name",
+                          "description": "The name of the bank account in the originating system",
+                          "required": true
+                        },
+                        "accountNumber": {
+                          "type": "String",
+                          "displayName": "Account Number",
+                          "description": "The account number for the bank account",
+                          "required": true,
+                          "validation": {
+                            "warnings": [
+                              {
+                                "field": "AccountNumber",
+                                "details": "Should not exceed the maximum length of 14 characters if the specified currency is GBP."
+                              }
+                            ],
+                            "information": []
+                          }
+                        },
+                        "sortCode": {
+                          "type": "String",
+                          "displayName": "Sort Code",
+                          "description": "The sort code for the bank account",
+                          "required": false,
+                          "validation": {
+                            "warnings": [
+                              {
+                                "field": "SortCode",
+                                "details": "Must be 6 characters long if the specified currency is GBP."
+                              },
+                              {
+                                "field": "SortCode",
+                                "details": "Must be provided if the specified currency is GBP."
+                              }
+                            ],
+                            "information": []
+                          }
+                        },
+                        "currency": {
+                          "type": "String",
+                          "displayName": "Currency",
+                          "description": "The currency of the bank account",
+                          "required": false
+                        },
+                        "nominalCode": {
+                          "type": "String",
+                          "displayName": "Nominal Code",
+                          "description": "The external reference given to each nominal account for a business",
+                          "required": false
+                        }
+                      },
+                      "required": true
+                    }
+                  },
+                  "Exact (UK)": {
+                    "value": {
+                      "type": "Object",
+                      "displayName": "Bank Account",
+                      "description": "An account that bank transactions may be recorded against",
+                      "properties": {
+                        "accountName": {
+                          "type": "String",
+                          "displayName": "Name",
+                          "description": "The name of the bank account in the originating system",
+                          "required": true
+                        },
+                        "accountNumber": {
+                          "type": "String",
+                          "displayName": "Account Number",
+                          "description": "The account number for the bank account",
+                          "required": true,
+                          "validation": {
+                            "warnings": [
+                              {
+                                "field": "AccountNumber",
+                                "details": "Should not exceed the maximum length of 14 characters if the specified currency is GBP."
+                              }
+                            ],
+                            "information": []
+                          }
+                        },
+                        "sortCode": {
+                          "type": "String",
+                          "displayName": "Sort Code",
+                          "description": "The sort code for the bank account",
+                          "required": false,
+                          "validation": {
+                            "warnings": [
+                              {
+                                "field": "SortCode",
+                                "details": "Must be 6 characters long if the specified currency is GBP."
+                              },
+                              {
+                                "field": "SortCode",
+                                "details": "Must be provided if the specified currency is GBP."
+                              }
+                            ],
+                            "information": []
+                          }
+                        },
+                        "currency": {
+                          "type": "String",
+                          "displayName": "Currency",
+                          "description": "The currency of the bank account",
+                          "required": false
+                        },
+                        "nominalCode": {
+                          "type": "String",
+                          "displayName": "Nominal Code",
+                          "description": "The external reference given to each nominal account for a business",
+                          "required": false
+                        }
+                      },
+                      "required": true
+                    }
+                  },
+                  "FreeAgent": {
+                    "value": {
+                      "type": "Object",
+                      "displayName": "Bank Account",
+                      "description": "An account that bank transactions may be recorded against",
+                      "properties": {
+                        "accountName": {
+                          "type": "String",
+                          "displayName": "Name",
+                          "description": "The name of the bank account in the originating system",
+                          "required": true
+                        },
+                        "sortCode": {
+                          "type": "String",
+                          "displayName": "Sort Code",
+                          "description": "The sort code for the bank account",
+                          "required": false,
+                          "validation": {
+                            "warnings": [
+                              {
+                                "field": "SortCode",
+                                "details": "Must have a length between 0 and 8 characters"
+                              }
+                            ],
+                            "information": []
+                          }
+                        },
+                        "accountNumber": {
+                          "type": "String",
+                          "displayName": "Account Number",
+                          "description": "The account number for the bank account",
+                          "required": false
+                        },
+                        "iBan": {
+                          "type": "String",
+                          "displayName": "IBAN",
+                          "description": "The international bank account number of the account. Often used when making or receiving international payments",
+                          "required": false
+                        },
+                        "currency": {
+                          "type": "String",
+                          "displayName": "Currency",
+                          "description": "The currency of the bank account",
+                          "options": [
+                            {
+                              "value": "AED",
+                              "type": "String",
+                              "displayName": "AED",
+                              "required": false
+                            },
+                            {
+                              "value": "AMD",
+                              "type": "String",
+                              "displayName": "AMD",
+                              "required": false
+                            },
+                            {
+                              "value": "AOA",
+                              "type": "String",
+                              "displayName": "AOA",
+                              "required": false
+                            },
+                            {
+                              "value": "ARS",
+                              "type": "String",
+                              "displayName": "ARS",
+                              "required": false
+                            },
+                            {
+                              "value": "AUD",
+                              "type": "String",
+                              "displayName": "AUD",
+                              "required": false
+                            },
+                            {
+                              "value": "AWG",
+                              "type": "String",
+                              "displayName": "AWG",
+                              "required": false
+                            },
+                            {
+                              "value": "AZN",
+                              "type": "String",
+                              "displayName": "AZN",
+                              "required": false
+                            },
+                            {
+                              "value": "BBD",
+                              "type": "String",
+                              "displayName": "BBD",
+                              "required": false
+                            },
+                            {
+                              "value": "BDT",
+                              "type": "String",
+                              "displayName": "BDT",
+                              "required": false
+                            },
+                            {
+                              "value": "BGN",
+                              "type": "String",
+                              "displayName": "BGN",
+                              "required": false
+                            },
+                            {
+                              "value": "BRL",
+                              "type": "String",
+                              "displayName": "BRL",
+                              "required": false
+                            },
+                            {
+                              "value": "BWP",
+                              "type": "String",
+                              "displayName": "BWP",
+                              "required": false
+                            },
+                            {
+                              "value": "CAD",
+                              "type": "String",
+                              "displayName": "CAD",
+                              "required": false
+                            },
+                            {
+                              "value": "CHF",
+                              "type": "String",
+                              "displayName": "CHF",
+                              "required": false
+                            },
+                            {
+                              "value": "CLP",
+                              "type": "String",
+                              "displayName": "CLP",
+                              "required": false
+                            },
+                            {
+                              "value": "CNY",
+                              "type": "String",
+                              "displayName": "CNY",
+                              "required": false
+                            },
+                            {
+                              "value": "COP",
+                              "type": "String",
+                              "displayName": "COP",
+                              "required": false
+                            },
+                            {
+                              "value": "CRC",
+                              "type": "String",
+                              "displayName": "CRC",
+                              "required": false
+                            },
+                            {
+                              "value": "CUC",
+                              "type": "String",
+                              "displayName": "CUC",
+                              "required": false
+                            },
+                            {
+                              "value": "CUP",
+                              "type": "String",
+                              "displayName": "CUP",
+                              "required": false
+                            },
+                            {
+                              "value": "CZK",
+                              "type": "String",
+                              "displayName": "CZK",
+                              "required": false
+                            },
+                            {
+                              "value": "DKK",
+                              "type": "String",
+                              "displayName": "DKK",
+                              "required": false
+                            },
+                            {
+                              "value": "DOP",
+                              "type": "String",
+                              "displayName": "DOP",
+                              "required": false
+                            },
+                            {
+                              "value": "EGP",
+                              "type": "String",
+                              "displayName": "EGP",
+                              "required": false
+                            },
+                            {
+                              "value": "EUR",
+                              "type": "String",
+                              "displayName": "EUR",
+                              "required": false
+                            },
+                            {
+                              "value": "FJD",
+                              "type": "String",
+                              "displayName": "FJD",
+                              "required": false
+                            },
+                            {
+                              "value": "GBP",
+                              "type": "String",
+                              "displayName": "GBP",
+                              "required": false
+                            },
+                            {
+                              "value": "GEL",
+                              "type": "String",
+                              "displayName": "GEL",
+                              "required": false
+                            },
+                            {
+                              "value": "GHS",
+                              "type": "String",
+                              "displayName": "GHS",
+                              "required": false
+                            },
+                            {
+                              "value": "GTQ",
+                              "type": "String",
+                              "displayName": "GTQ",
+                              "required": false
+                            },
+                            {
+                              "value": "GYD",
+                              "type": "String",
+                              "displayName": "GYD",
+                              "required": false
+                            },
+                            {
+                              "value": "HKD",
+                              "type": "String",
+                              "displayName": "HKD",
+                              "required": false
+                            },
+                            {
+                              "value": "HNL",
+                              "type": "String",
+                              "displayName": "HNL",
+                              "required": false
+                            },
+                            {
+                              "value": "HRK",
+                              "type": "String",
+                              "displayName": "HRK",
+                              "required": false
+                            },
+                            {
+                              "value": "HUF",
+                              "type": "String",
+                              "displayName": "HUF",
+                              "required": false
+                            },
+                            {
+                              "value": "IDR",
+                              "type": "String",
+                              "displayName": "IDR",
+                              "required": false
+                            },
+                            {
+                              "value": "ILS",
+                              "type": "String",
+                              "displayName": "ILS",
+                              "required": false
+                            },
+                            {
+                              "value": "INR",
+                              "type": "String",
+                              "displayName": "INR",
+                              "required": false
+                            },
+                            {
+                              "value": "ISK",
+                              "type": "String",
+                              "displayName": "ISK",
+                              "required": false
+                            },
+                            {
+                              "value": "JMD",
+                              "type": "String",
+                              "displayName": "JMD",
+                              "required": false
+                            },
+                            {
+                              "value": "JPY",
+                              "type": "String",
+                              "displayName": "JPY",
+                              "required": false
+                            },
+                            {
+                              "value": "KES",
+                              "type": "String",
+                              "displayName": "KES",
+                              "required": false
+                            },
+                            {
+                              "value": "KRW",
+                              "type": "String",
+                              "displayName": "KRW",
+                              "required": false
+                            },
+                            {
+                              "value": "KWD",
+                              "type": "String",
+                              "displayName": "KWD",
+                              "required": false
+                            },
+                            {
+                              "value": "KYD",
+                              "type": "String",
+                              "displayName": "KYD",
+                              "required": false
+                            },
+                            {
+                              "value": "KZT",
+                              "type": "String",
+                              "displayName": "KZT",
+                              "required": false
+                            },
+                            {
+                              "value": "LAK",
+                              "type": "String",
+                              "displayName": "LAK",
+                              "required": false
+                            },
+                            {
+                              "value": "LBP",
+                              "type": "String",
+                              "displayName": "LBP",
+                              "required": false
+                            },
+                            {
+                              "value": "LKR",
+                              "type": "String",
+                              "displayName": "LKR",
+                              "required": false
+                            },
+                            {
+                              "value": "LTL",
+                              "type": "String",
+                              "displayName": "LTL",
+                              "required": false
+                            },
+                            {
+                              "value": "LVL",
+                              "type": "String",
+                              "displayName": "LVL",
+                              "required": false
+                            },
+                            {
+                              "value": "MAD",
+                              "type": "String",
+                              "displayName": "MAD",
+                              "required": false
+                            },
+                            {
+                              "value": "MDL",
+                              "type": "String",
+                              "displayName": "MDL",
+                              "required": false
+                            },
+                            {
+                              "value": "MGA",
+                              "type": "String",
+                              "displayName": "MGA",
+                              "required": false
+                            },
+                            {
+                              "value": "MUR",
+                              "type": "String",
+                              "displayName": "MUR",
+                              "required": false
+                            },
+                            {
+                              "value": "MVR",
+                              "type": "String",
+                              "displayName": "MVR",
+                              "required": false
+                            },
+                            {
+                              "value": "MWK",
+                              "type": "String",
+                              "displayName": "MWK",
+                              "required": false
+                            },
+                            {
+                              "value": "MXN",
+                              "type": "String",
+                              "displayName": "MXN",
+                              "required": false
+                            },
+                            {
+                              "value": "MYR",
+                              "type": "String",
+                              "displayName": "MYR",
+                              "required": false
+                            },
+                            {
+                              "value": "MZN",
+                              "type": "String",
+                              "displayName": "MZN",
+                              "required": false
+                            },
+                            {
+                              "value": "NAD",
+                              "type": "String",
+                              "displayName": "NAD",
+                              "required": false
+                            },
+                            {
+                              "value": "NGN",
+                              "type": "String",
+                              "displayName": "NGN",
+                              "required": false
+                            },
+                            {
+                              "value": "NOK",
+                              "type": "String",
+                              "displayName": "NOK",
+                              "required": false
+                            },
+                            {
+                              "value": "NPR",
+                              "type": "String",
+                              "displayName": "NPR",
+                              "required": false
+                            },
+                            {
+                              "value": "NZD",
+                              "type": "String",
+                              "displayName": "NZD",
+                              "required": false
+                            },
+                            {
+                              "value": "OMR",
+                              "type": "String",
+                              "displayName": "OMR",
+                              "required": false
+                            },
+                            {
+                              "value": "PEN",
+                              "type": "String",
+                              "displayName": "PEN",
+                              "required": false
+                            },
+                            {
+                              "value": "PHP",
+                              "type": "String",
+                              "displayName": "PHP",
+                              "required": false
+                            },
+                            {
+                              "value": "PKR",
+                              "type": "String",
+                              "displayName": "PKR",
+                              "required": false
+                            },
+                            {
+                              "value": "PLN",
+                              "type": "String",
+                              "displayName": "PLN",
+                              "required": false
+                            },
+                            {
+                              "value": "QAR",
+                              "type": "String",
+                              "displayName": "QAR",
+                              "required": false
+                            },
+                            {
+                              "value": "RON",
+                              "type": "String",
+                              "displayName": "RON",
+                              "required": false
+                            },
+                            {
+                              "value": "RSD",
+                              "type": "String",
+                              "displayName": "RSD",
+                              "required": false
+                            },
+                            {
+                              "value": "RUB",
+                              "type": "String",
+                              "displayName": "RUB",
+                              "required": false
+                            },
+                            {
+                              "value": "RWF",
+                              "type": "String",
+                              "displayName": "RWF",
+                              "required": false
+                            },
+                            {
+                              "value": "SAR",
+                              "type": "String",
+                              "displayName": "SAR",
+                              "required": false
+                            },
+                            {
+                              "value": "SCR",
+                              "type": "String",
+                              "displayName": "SCR",
+                              "required": false
+                            },
+                            {
+                              "value": "SEK",
+                              "type": "String",
+                              "displayName": "SEK",
+                              "required": false
+                            },
+                            {
+                              "value": "SGD",
+                              "type": "String",
+                              "displayName": "SGD",
+                              "required": false
+                            },
+                            {
+                              "value": "THB",
+                              "type": "String",
+                              "displayName": "THB",
+                              "required": false
+                            },
+                            {
+                              "value": "TND",
+                              "type": "String",
+                              "displayName": "TND",
+                              "required": false
+                            },
+                            {
+                              "value": "TRY",
+                              "type": "String",
+                              "displayName": "TRY",
+                              "required": false
+                            },
+                            {
+                              "value": "TTD",
+                              "type": "String",
+                              "displayName": "TTD",
+                              "required": false
+                            },
+                            {
+                              "value": "TWD",
+                              "type": "String",
+                              "displayName": "TWD",
+                              "required": false
+                            },
+                            {
+                              "value": "TZS",
+                              "type": "String",
+                              "displayName": "TZS",
+                              "required": false
+                            },
+                            {
+                              "value": "UAH",
+                              "type": "String",
+                              "displayName": "UAH",
+                              "required": false
+                            },
+                            {
+                              "value": "UGX",
+                              "type": "String",
+                              "displayName": "UGX",
+                              "required": false
+                            },
+                            {
+                              "value": "USD",
+                              "type": "String",
+                              "displayName": "USD",
+                              "required": false
+                            },
+                            {
+                              "value": "UYU",
+                              "type": "String",
+                              "displayName": "UYU",
+                              "required": false
+                            },
+                            {
+                              "value": "VEF",
+                              "type": "String",
+                              "displayName": "VEF",
+                              "required": false
+                            },
+                            {
+                              "value": "VND",
+                              "type": "String",
+                              "displayName": "VND",
+                              "required": false
+                            },
+                            {
+                              "value": "VUV",
+                              "type": "String",
+                              "displayName": "VUV",
+                              "required": false
+                            },
+                            {
+                              "value": "XAF",
+                              "type": "String",
+                              "displayName": "XAF",
+                              "required": false
+                            },
+                            {
+                              "value": "XCD",
+                              "type": "String",
+                              "displayName": "XCD",
+                              "required": false
+                            },
+                            {
+                              "value": "XOF",
+                              "type": "String",
+                              "displayName": "XOF",
+                              "required": false
+                            },
+                            {
+                              "value": "ZAR",
+                              "type": "String",
+                              "displayName": "ZAR",
+                              "required": false
+                            },
+                            {
+                              "value": "ZMK",
+                              "type": "String",
+                              "displayName": "ZMK",
+                              "required": false
+                            }
+                          ],
+                          "required": true
+                        },
+                        "balance": {
+                          "type": "Number",
+                          "displayName": "Balance",
+                          "description": "The balance of the bank account",
+                          "required": false,
+                          "validation": {
+                            "warnings": [],
+                            "information": [
+                              {
+                                "field": "Balance",
+                                "details": "The opening balance, in the account currency"
+                              }
+                            ]
+                          }
+                        },
+                        "institution": {
+                          "type": "String",
+                          "displayName": "Institution",
+                          "description": "The institution of the bank account",
+                          "required": false
+                        }
+                      },
+                      "required": true
+                    }
+                  },
+                  "KashFlow": {
+                    "value": {
+                      "type": "Object",
+                      "displayName": "Bank Account",
+                      "description": "An account that bank transactions may be recorded against",
+                      "properties": {
+                        "accountName": {
+                          "type": "String",
+                          "displayName": "Account Name",
+                          "description": "Name of the bank account as it appears in Kashflow.",
+                          "required": true
+                        },
+                        "balance": {
+                          "type": "Number",
+                          "displayName": "Balance",
+                          "description": "The opening balance, in the account currency.",
+                          "required": false
+                        },
+                        "currency": {
+                          "type": "String",
+                          "displayName": "Currency",
+                          "description": "The currency of the bank account.",
+                          "required": true
+                        }
+                      },
+                      "required": true
+                    }
+                  },
+                  "QuickBooks Desktop": {
+                    "value": {
+                      "type": "Object",
+                      "displayName": "Bank Account",
+                      "description": "An account that bank transactions may be recorded against",
+                      "properties": {
+                        "nominalCode": {
+                          "type": "String",
+                          "displayName": "Nominal Code",
+                          "description": "The external reference given to each nominal account for a business",
+                          "required": true,
+                          "validation": {
+                            "warnings": [
+                              {
+                                "field": "NominalCode",
+                                "details": "Max length of 7 characters."
+                              }
+                            ],
+                            "information": []
+                          }
+                        },
+                        "accountName": {
+                          "type": "String",
+                          "displayName": "Name",
+                          "description": "The name of the bank account in the originating system",
+                          "required": true,
+                          "validation": {
+                            "warnings": [
+                              {
+                                "field": "AccountName",
+                                "details": "Max length of 31 characters."
+                              }
+                            ],
+                            "information": []
+                          }
+                        },
+                        "currency": {
+                          "type": "String",
+                          "displayName": "Currency",
+                          "description": "The currency of the bank account",
+                          "required": false,
+                          "validation": {
+                            "warnings": [
+                              {
+                                "field": "Currency",
+                                "details": "The currency must match the base currency of the QuickBooks Desktop company unless the FullyQualifiedCategory is 'Asset.AccountsReceivable','Liability.AccountsPayable' or 'Liability.CreditCard'"
+                              },
+                              {
+                                "field": "Currency",
+                                "details": "Must be a three letter ISO code that matches an existing active currency in the QuickBooks Desktop company"
+                              },
+                              {
+                                "field": "Currency",
+                                "details": "Can only be set if the Quickbooks Desktop company has Multicurrency enabled."
+                              }
+                            ],
+                            "information": [
+                              {
+                                "field": "Currency",
+                                "details": "If not set, will default to the base currency of the QuickBooks Desktop company"
+                              }
+                            ]
+                          }
+                        },
+                        "balance": {
+                          "type": "Number",
+                          "displayName": "Balance",
+                          "description": "The balance of the bank account",
+                          "required": false
+                        }
+                      },
+                      "required": true
+                    }
+                  },
+                  "QuickBooks Online Sandbox": {
+                    "value": {
+                      "type": "Object",
+                      "displayName": "Bank Account",
+                      "description": "An account that bank transactions may be recorded against",
+                      "properties": {
+                        "accountName": {
+                          "type": "String",
+                          "displayName": "Account Name",
+                          "description": "Name of account as it appears in the chart of accounts or general ledger.",
+                          "required": true
+                        },
+                        "accountNumber": {
+                          "type": "String",
+                          "displayName": "Account Number",
+                          "description": "User-defined account number to help the user in identifying the account within the chart-of-accounts and in deciding what should be posted to the account.",
+                          "required": true
+                        },
+                        "currency": {
+                          "type": "String",
+                          "displayName": "Currency",
+                          "description": "Currency of the bank account.",
+                          "required": true
+                        }
+                      },
+                      "required": true
+                    }
+                  },
+                  "Sage Business Cloud Accounting": {
+                    "value": {
+                      "type": "Object",
+                      "displayName": "Bank Account",
+                      "description": "An account that bank transactions may be recorded against",
+                      "properties": {
+                        "accountName": {
+                          "type": "String",
+                          "displayName": "Name",
+                          "description": "The name of the bank account in the originating system",
+                          "required": true,
+                          "validation": {
+                            "warnings": [],
+                            "information": [
+                              {
+                                "field": "AccountName",
+                                "details": "Must be provided."
+                              },
+                              {
+                                "field": "AccountName",
+                                "details": "Should not be longer than 50 characters."
+                              }
+                            ]
+                          }
+                        },
+                        "currency": {
+                          "type": "String",
+                          "displayName": "Currency",
+                          "description": "The currency of the bank account",
+                          "required": true,
+                          "validation": {
+                            "warnings": [],
+                            "information": [
+                              {
+                                "field": "Currency",
+                                "details": "Must be provided."
+                              },
+                              {
+                                "field": "Currency",
+                                "details": "Must match the company's base currency."
+                              }
+                            ]
+                          }
+                        },
+                        "sortCode": {
+                          "type": "String",
+                          "displayName": "Sort Code",
+                          "description": "The sort code for the bank account",
+                          "required": false,
+                          "validation": {
+                            "warnings": [],
+                            "information": [
+                              {
+                                "field": "SortCode",
+                                "details": "Should be a 6 digit number."
+                              }
+                            ]
+                          }
+                        },
+                        "accountNumber": {
+                          "type": "String",
+                          "displayName": "Account Number",
+                          "description": "The account number for the bank account",
+                          "required": false,
+                          "validation": {
+                            "warnings": [],
+                            "information": [
+                              {
+                                "field": "AccountNumber",
+                                "details": "Should not be longer than 25 characters."
+                              }
+                            ]
+                          }
+                        },
+                        "iBan": {
+                          "type": "String",
+                          "displayName": "IBAN",
+                          "description": "The international bank account number of the account. Often used when making or receiving international payments",
+                          "required": false,
+                          "validation": {
+                            "warnings": [],
+                            "information": [
+                              {
+                                "field": "IBan",
+                                "details": "Should be in the international bank account number format."
+                              }
+                            ]
+                          }
+                        },
+                        "nominalCode": {
+                          "type": "String",
+                          "displayName": "Nominal Code",
+                          "description": "The external reference given to each nominal account for a business",
+                          "required": false,
+                          "validation": {
+                            "warnings": [],
+                            "information": [
+                              {
+                                "field": "NominalCode",
+                                "details": "Should be a number between 1 and 99999999."
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "required": true
+                    }
+                  },
+                  "Sandbox": {
+                    "value": {
+                      "type": "Object",
+                      "displayName": "Bank Account",
+                      "description": "An account that bank transactions may be recorded against",
+                      "properties": {
+                        "accountName": {
+                          "type": "String",
+                          "displayName": "Name",
+                          "description": "The name of the bank account in the originating system",
+                          "required": true
+                        },
+                        "accountType": {
+                          "type": "String",
+                          "displayName": "Account Type",
+                          "description": "The type of account",
+                          "required": true
+                        },
+                        "nominalCode": {
+                          "type": "String",
+                          "displayName": "Nominal Code",
+                          "description": "The external reference given to each nominal account for a business",
+                          "required": true
+                        },
+                        "sortCode": {
+                          "type": "String",
+                          "displayName": "Sort Code",
+                          "description": "The sort code for the bank account",
+                          "required": true
+                        },
+                        "accountNumber": {
+                          "type": "String",
+                          "displayName": "Account Number",
+                          "description": "The account number for the bank account",
+                          "required": true
+                        },
+                        "iBan": {
+                          "type": "String",
+                          "displayName": "IBAN",
+                          "description": "The international bank account number of the account. Often used when making or receiving international payments",
+                          "required": true
+                        },
+                        "currency": {
+                          "type": "String",
+                          "displayName": "Currency",
+                          "description": "The currency of the bank account",
+                          "required": true
+                        },
+                        "balance": {
+                          "type": "Number",
+                          "displayName": "Balance",
+                          "description": "The balance of the bank account",
+                          "required": true
+                        },
+                        "availableBalance": {
+                          "type": "Number",
+                          "displayName": "Available Balance",
+                          "description": "The available balance of the bank account",
+                          "required": true
+                        },
+                        "overdraftLimit": {
+                          "type": "Number",
+                          "displayName": "Overdraft Limit",
+                          "description": "The pre-arranged overdraft limit of the account",
+                          "required": true
+                        },
+                        "institution": {
+                          "type": "String",
+                          "displayName": "Institution",
+                          "description": "The institution of the bank account",
+                          "required": true
+                        },
+                        "metadata": {
+                          "type": "Object",
+                          "displayName": "Metadata",
+                          "description": "Miscellaneous data about the item",
+                          "properties": {
+                            "isDeleted": {
+                              "type": "Boolean",
+                              "displayName": "IsDeleted",
+                              "description": "A boolean to indicate whether the object has been deleted",
+                              "required": true
+                            }
+                          },
+                          "required": true
+                        }
+                      },
+                      "required": true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        },
+        "operationId": "get-create-bankAccounts-model",
+        "description": "The *Get create/update bank account model* endpoint returns the expected data for the request payload when creating and updating a [bank account](https://docs.codat.io/sync-for-payables-api#/schemas/BankAccount) for a given company and integration.\r\n\r\n[Bank accounts](https://docs.codat.io/sync-for-payables-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.\r\n\r\n**Integration-specific behaviour**\r\n\r\nSee the *response examples* for integration-specific indicative models.\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankAccounts) for integrations that support creating and updating a bank account.\r\n"
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/push/bankAccounts": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        }
+      ],
+      "post": {
+        "tags": [
+          "Bank accounts"
+        ],
+        "summary": "Create bank account",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/timeoutInMinutes"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BankAccount/definitions/bankAccountPrototype"
+              },
+              "examples": {}
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BankAccount/definitions/bankAccountCreateResponse"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        },
+        "description": "The *Create bank account* endpoint creates a new [bank account](https://docs.codat.io/sync-for-payables-api#/schemas/BankAccount) for a given company's connection.\r\n\r\n[Bank accounts](https://docs.codat.io/sync-for-payables-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.\r\n\r\n**Integration-specific behaviour**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update bank account model](https://docs.codat.io/sync-for-payables-api#/operations/get-create-update-bankAccounts-model).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankAccounts) for integrations that support creating an account.",
+        "operationId": "create-bank-account"
       }
     },
     "/companies/{companyId}/data/billCreditNotes": {
@@ -42239,6 +43560,157 @@
             "type": "string",
             "description": "The file to be uploaded as an attachment.",
             "format": "binary"
+          }
+        }
+      },
+      "BankAccount": {
+        "title": "Accounting: Bank account",
+        "description": "> **Accessing Bank Accounts through Banking API**\n> \n> This datatype was originally used for accessing bank account data both in accounting integrations and open banking aggregators. \n> \n> To view bank account data through the Banking API, please refer to the new datatype [here](https://docs.codat.io/sync-for-payables-api#/schemas/Account)\n\n> View the coverage for bank accounts in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankAccounts\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nA list of bank accounts associated with a company and a specific data connection.\n\nBank accounts data includes:\n* The name and ID of the account in the accounting platform.\n* The currency and balance of the account.\n* The sort code and account number.",
+        "type": "object",
+        "allOf": [
+          {
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Identifier for the account, unique for the company in the accounting platform."
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/BankAccount/definitions/bankAccountPrototype"
+          },
+          {
+            "properties": {
+              "metadata": {
+                "$ref": "#/components/schemas/Metadata"
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/SupplementalData"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/Bill/allOf/1"
+          }
+        ],
+        "definitions": {
+          "bankAccountPrototype": {
+            "title": "Bank account prototype",
+            "type": "object",
+            "properties": {
+              "accountName": {
+                "type": "string",
+                "nullable": true,
+                "description": "Name of the bank account in the accounting platform."
+              },
+              "accountType": {
+                "title": "Bank Account Type",
+                "x-internal": true,
+                "enum": [
+                  "Unknown",
+                  "Credit",
+                  "Debit"
+                ],
+                "type": "string",
+                "description": "The type of transactions and balances on the account.  \nFor Credit accounts, positive balances are liabilities, and positive transactions **reduce** liabilities.  \nFor Debit accounts, positive balances are assets, and positive transactions **increase** assets."
+              },
+              "nominalCode": {
+                "type": "string",
+                "nullable": true,
+                "description": "Code used to identify each nominal account for a business."
+              },
+              "sortCode": {
+                "type": "string",
+                "nullable": true,
+                "description": "Sort code for the bank account.\n\nXero integrations\nThe sort code is only displayed when the currency = GBP and the sort code and account number sum to 14 digits. For non-GBP accounts, this field is not populated."
+              },
+              "accountNumber": {
+                "type": "string",
+                "nullable": true,
+                "description": "Account number for the bank account.\n\nXero integrations\nOnly a UK account number shows for bank accounts with GBP currency and a combined total of sort code and account number that equals 14 digits, For non-GBP accounts, the full bank account number is populated.\n\nFreeAgent integrations\nFor Credit accounts, only the last four digits are required. For other types, the field is optional."
+              },
+              "iBan": {
+                "type": "string",
+                "nullable": true,
+                "description": "International bank account number of the account. Often used when making or receiving international payments."
+              },
+              "currency": {
+                "$ref": "#/components/schemas/Account/definitions/accountPrototype/properties/currency",
+                "description": "Base currency of the bank account."
+              },
+              "balance": {
+                "type": "number",
+                "format": "decimal",
+                "nullable": true,
+                "description": "Balance of the bank account."
+              },
+              "institution": {
+                "type": "string",
+                "nullable": true,
+                "description": "The institution of the bank account."
+              },
+              "availableBalance": {
+                "type": "number",
+                "format": "decimal",
+                "nullable": true,
+                "description": "Total available balance of the bank account as reported by the underlying data source. This may take into account overdrafts or pending transactions for example."
+              },
+              "overdraftLimit": {
+                "type": "number",
+                "format": "decimal",
+                "nullable": true,
+                "description": "Pre-arranged overdraft limit of the account.\n\nThe value is always positive. For example, an overdraftLimit of `1000` means that the balance of the account can go down to `-1000`."
+              }
+            }
+          },
+          "bankAccountCreateResponse": {
+            "title": "Create bank account response",
+            "allOf": [
+              {
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/BankAccount"
+                  }
+                }
+              },
+              {
+                "$ref": "#/components/schemas/PushOperation"
+              }
+            ]
+          },
+          "bankAccountRef": {
+            "title": "Bank account reference",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Bank account 'id' for the account transaction."
+              },
+              "name": {
+                "type": "string",
+                "description": "bank account 'name' for the account transaction."
+              }
+            },
+            "description": "Links to the Account transactions data type."
+          },
+          "bankAccounts": {
+            "title": "Accounting: Bank accounts",
+            "allOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "results": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/BankAccount"
+                    }
+                  }
+                }
+              },
+              {
+                "$ref": "#/components/schemas/PagingInfo"
+              }
+            ]
           }
         }
       },

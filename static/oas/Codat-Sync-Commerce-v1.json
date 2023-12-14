@@ -13154,12 +13154,35 @@
         "type": "object",
         "allOf": [
           {
-            "type": "object",
             "properties": {
               "id": {
                 "type": "string",
                 "description": "Identifier for the account, unique for the company in the accounting platform."
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/AccountingBankAccount/definitions/bankAccountPrototype"
+          },
+          {
+            "properties": {
+              "metadata": {
+                "$ref": "#/components/schemas/AccountingAccount/allOf/2/properties/metadata"
               },
+              "supplementalData": {
+                "$ref": "#/components/schemas/SupplementalData"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/CommerceOrder/allOf/3"
+          }
+        ],
+        "definitions": {
+          "bankAccountPrototype": {
+            "title": "Bank account prototype",
+            "type": "object",
+            "properties": {
               "accountName": {
                 "type": "string",
                 "nullable": true,
@@ -13222,20 +13245,24 @@
                 "format": "decimal",
                 "nullable": true,
                 "description": "Pre-arranged overdraft limit of the account.\n\nThe value is always positive. For example, an overdraftLimit of `1000` means that the balance of the account can go down to `-1000`."
-              },
-              "metadata": {
-                "$ref": "#/components/schemas/AccountingAccount/allOf/2/properties/metadata"
-              },
-              "supplementalData": {
-                "$ref": "#/components/schemas/SupplementalData"
               }
             }
           },
-          {
-            "$ref": "#/components/schemas/CommerceOrder/allOf/3"
-          }
-        ],
-        "definitions": {
+          "bankAccountCreateResponse": {
+            "title": "Create bank account response",
+            "allOf": [
+              {
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/AccountingBankAccount"
+                  }
+                }
+              },
+              {
+                "$ref": "#/components/schemas/PushOperation"
+              }
+            ]
+          },
           "bankAccountRef": {
             "title": "Bank account reference",
             "type": "object",
@@ -13250,6 +13277,25 @@
               }
             },
             "description": "Links to the Account transactions data type."
+          },
+          "bankAccounts": {
+            "title": "Accounting: Bank accounts",
+            "allOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "results": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/AccountingBankAccount"
+                    }
+                  }
+                }
+              },
+              {
+                "$ref": "#/components/schemas/PagingInfo"
+              }
+            ]
           }
         }
       },
