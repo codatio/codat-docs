@@ -35,9 +35,9 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 
 ### ❌ This guide does not cover...
 
-- Building any application form and dashboard UIs,
+- Building any application form and dashboard UIs.
 - Details or recommendations of various financial data points used in different lending models.
-- Details on how to perform [Loan Writeback](/lending/guides/loan-writeback/introduction) for general lending [(see also: Recording General Loan Payments)](/lending/guides/loan-writeback/record-general-loan) 
+- Details on how to perform [loan writeback](/lending/guides/loan-writeback/introduction) for general lending [(see also: Recording general loan payments)](/lending/guides/loan-writeback/record-general-loan).
 
 ### About the demo app
 
