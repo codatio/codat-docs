@@ -768,7 +768,7 @@ With Sync for Payables, you can do that using the following steps:
 
 #### Create a credit note
 
-Start by creating a credit note using our [Create bill credit note](/operations/create-bill-credit-note) endpoint. 
+Start by creating a credit note using our [Create bill credit note](/sync-for-payables-api#/operations/create-bill-credit-note) endpoint. 
 
 <Tabs>
 
