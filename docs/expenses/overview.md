@@ -28,6 +28,18 @@ Sync for Expenses is an API and a set of supporting tools. It has been built to 
 
 <IntegrationsList filter={integrationsFilterExpenses}/>
 
+<details>
+<summary>Transaction types supported per integration</summary>
+
+| Transaction type                    | Payment | Refund | Reward | Chargeback | Transfer in | Transfer out | Adjustment in | Adjustment out |
+|---------------------|---------|--------|--------|------------|-------------|--------------|---------------|----------------|
+| Xero                | ✔️       | ✔️      | ✔️      | ✔️          | ✔️           | ✔️            | ✔️             | ✔️              |
+| QuickBooks   Online | ✔️       | ✔️      | ✔️      | ✔️          | ✔️           | ✔️            | ✔️             | ✔️              |
+| Dynamics   365      | ✔️       | ✔️      | ✔️      | ✔️          |             |              |               |                |
+| Oracle   NetSuite   | ✔️       | ✔️      |        |            |             |              |               |                |
+
+</details>
+
 ## Features
 
 <ul className="card-container col-3">
