@@ -17,8 +17,8 @@ The following rules can be configured in the Codat Portal to trigger webhook eve
 | [Account categories updated](/using-the-api/webhooks/core-rules-types#account-categories-updated)              |`Account Categories Updated`| Anytime that Codat updates the `suggested` fields or a user updates the `confirmed` fields. | `modifiedDate` |
 | [Sync Connection Deleted](/using-the-api/webhooks/core-rules-types#sync-connection-deleted)                 |`Sync Connection Deleted`| A Sync for Commerce connection is deleted. <br/> **Note:** Sync for Commerce only. |  |
 | [Expense sync started](/using-the-api/webhooks/core-rules-types#expense-sync-started)                 |`Sync Started`| An expense sync has started. <br/> **Note:** Sync for Expenses only. |`syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`|
-| [Expense sync completed](/using-the-api/webhooks/core-rules-types#expense-sync-completed)                 |`Sync Completed`| An expense sync has completed without any failures. <br/> **Note:** Sync for Expenses only. |`syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`|
-| [Expense sync failed](/using-the-api/webhooks/core-rules-types#expense-sync-failed)                 |`Sync Failed`| A failure occurred during an expense sync. <br/> **Note:** Sync for Expenses only. |`syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`, `FailureStage`|
+| [Expenses sync completed](/using-the-api/webhooks/core-rules-types#expenses-sync-completed)                 |`Sync Completed`| An expense sync has completed without any failures. <br/> **Note:** Sync for Expenses only. |`syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`|
+| [Expenses sync failed](/using-the-api/webhooks/core-rules-types#expenses-sync-failed)                 |`Sync Failed`| A failure occurred during an expense sync. <br/> **Note:** Sync for Expenses only. |`syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`, `FailureStage`|
 | [Client rate limit exceeded](/using-the-api/webhooks/core-rules-types#client-rate-limit-reached)                 |`Rate Limit Reached`| The number of requests to the API from a client has exceeded the current quota. |`dailyQuota`, `expiresUtc`|
 | [Client Rate Limit Reset](/using-the-api/webhooks/core-rules-types#client-rate-limit-reset)                 |`Rate Limit Reset`| The client rate limit quota has reset and more requests are available. |`quotaRemaining`, `resetReason`, `dailyQuota`|
 ---
@@ -264,7 +264,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 }
 ```
 
-### Expense sync completed
+### Expenses sync completed
 
 **Type**: `Sync Completed`  
 **Trigger:** An expense sync has completed without any failures.  
@@ -289,7 +289,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 }
 ```
 
-### Expense sync failed
+### Expenses sync failed
 
 **Type**: `Sync Failed`  
 **Trigger:** A failure occurred during an expense sync.  
