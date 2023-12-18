@@ -16,27 +16,7 @@ The diagram below represents the overall activity flow when using Sync for Payab
 
 We will take you through each of these elements so that you can build the flow that suits you and your customers best.
 
-```mermaid
-
-graph TD
-
-    A(Create company) --> B(Create connection)
-    B --> C(Authorize connection)
-
-    C --> D1(Retrieve supplier)
-    C --> D2(Create supplier)
-    C --> E2(Retrieve bill)
-
-    D1 --> E1(Create bill)
-    D2 --> E1
-
-    E1 --> F(Map payment methods)
-    E2 --> F
-
-    F --> G(Pay bill)
-
-    G --> H(Reconcile payments)
-```
+![Accounts payable process flow including customer steps](/img/payables/payables-process-flow.png)
 
 Once you decide to build with Sync for Payables, you need to configure Codat accordingly. Let's go through these requirements in detail.
 
