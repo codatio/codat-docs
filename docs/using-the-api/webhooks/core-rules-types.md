@@ -16,7 +16,6 @@ The following rules can be configured in the Codat Portal to trigger webhook eve
 | [Push operation has timed out](/using-the-api/webhooks/core-rules-types#push-operation-has-timed-out)            |`Push Operation Timed Out`| A push operation times out. |  `dataType`, `pushOperationGuid` |
 | [Account categories updated](/using-the-api/webhooks/core-rules-types#account-categories-updated)              |`Account Categories Updated`| Anytime that Codat updates the `suggested` fields or a user updates the `confirmed` fields. | `modifiedDate` |
 | [Sync Connection Deleted](/using-the-api/webhooks/core-rules-types#sync-connection-deleted)                 |`Sync Connection Deleted`| A Sync for Commerce connection is deleted. <br/> **Note:** Sync for Commerce only. |  |
-| [Expense sync started](/using-the-api/webhooks/core-rules-types#expense-sync-started)                 |`Sync Started`| An expense sync has started. <br/> **Note:** Sync for Expenses only. |`syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`|
 | [Expenses sync completed](/using-the-api/webhooks/core-rules-types#expenses-sync-completed)                 |`Sync Completed`| An expense sync has completed without any failures. <br/> **Note:** Sync for Expenses only. |`syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`|
 | [Expenses sync failed](/using-the-api/webhooks/core-rules-types#expenses-sync-failed)                 |`Sync Failed`| A failure occurred during an expense sync. <br/> **Note:** Sync for Expenses only. |`syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`, `FailureStage`|
 | [Client rate limit exceeded](/using-the-api/webhooks/core-rules-types#client-rate-limit-reached)                 |`Rate Limit Reached`| The number of requests to the API from a client has exceeded the current quota. |`dailyQuota`, `expiresUtc`|
@@ -236,31 +235,6 @@ Notification is sent for each `dataType` separately when the data type's individ
   "RuleType": "Sync Connection Deleted",
   "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
   "Message": "Sync connection for company 8a210b68-6988-11ed-a1eb-0242ac120002 deleted"
-}
-```
-
-### Expense sync started
-
-**Type**: `Sync Started`  
-**Trigger:** An expense sync has started.  
-**Additional data:** `syncId`, `syncType`, `SyncDateRangeStartUtc`, `SyncDateRangeFinishUtc`.  
-**Note:** This rule is specific to Sync for Expenses and cannot be used for other products.
-
-```json
-{
-  "ClientId": "30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e",
-  "ClientName": "Expense Sync",
-  "CompanyId": "1f9559e7-8368-48c9-bdf4-f158e16b8b85",
-  "AlertId": "33a4f8e9-09ae-4334-9b00-7bbe83024672",
-  "RuleId": "5c27631d-3b63-4b50-8228-ee502fd113eb",
-  "RuleType": "Sync Started",
-  "Message": "Sync 321363b4-efa9-4fbc-b71c-0b58d62f3248 for company 1f9559e7-8368-48c9-bdf4-f158e16b8b85 of type Expense has started.",
-  "Data": {
-    "syncId": "321363b4-efa9-4fbc-b71c-0b58d62f3248",
-    "syncType": "Expense",
-    "SyncDateRangeStartUtc": "2023-05-03T09:56:17.4357111Z",
-    "SyncDateRangeFinishUtc": "2023-05-03T09:56:18.4357111Z"
-  }
 }
 ```
 
