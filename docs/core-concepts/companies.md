@@ -37,6 +37,11 @@ Company names may only contain letters, numbers, spaces, and the following symbo
 Any forbidden characters will be removed from your company name. For example: `Example Company (Codat[1])` will be created as `Example Company Codat1`.
 :::
 
+## If you have multiple use cases...
+
+Codat supports assigning companies to one or more groups.
+A group can be used to manage who internally can access data from that a set of companies as well as identify what use case or product a company is using.
+
 ---
 
 ## Read next

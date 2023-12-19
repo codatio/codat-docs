@@ -4,6 +4,9 @@ sidebar_label: Via API
 description: "Learn about creating and managing companies, their connections, and their data via API"
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Onboarding your users
 
 Your users or customers are [companies](/core-concepts/companies). To access their data you'll need to onboard them.
@@ -20,26 +23,74 @@ You can either onboard users:
 
 ### Create a company
 
-To create a new company, use the `POST /companies` endpoint and provide a name you want to attribute to it in the request body. Parameter `name` is a required parameter to execute this request. You can also provide a `description` to store additional information about the company.
+To create a new company, use the [Create company](/platform-api#/operations/create-company) endpoint and provide a name you want to attribute to it in the request body. Parameter `name` is a required parameter to execute this request. You can also provide a `description` to store additional information about the company.
 
-`POST /companies`
+<Tabs>
 
-```json title="Sample request body"
-{
-  "name": "Platypus Properties",
-  "description": "Platypuses are venomous mammals"
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+platformClient.companies.create({
+    name: "Platypus Properties",
+    description: "Platypuses are venomous mammals"
+}).then((companyCreatedRes: CreateCompanyResponse) => {
+    if (companyCreatedRes.statusCode == 200) {
+        console.log(companyCreatedRes.company.id, companyCreatedRes.company.name)
+    }
+});
+```
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+req = shared.CompanyRequestBody(
+    name='Platypus Properties',
+    description='Platypuses are venomous mammals'
+    )
+
+company_created_res = platform_client.companies.create(req)
+print(company_created_res.company.id, company_created_res.company.name)
+```
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```c#
+var companyCreatedRes = await platformClient.Companies.CreateAsync(new CompanyRequestBody() {
+    Name = "Platypus Properties",
+    Description = "Platypuses are venomous mammals"
+  });
+
+if(companyCreatedRes.Company != null) {
+    var company = companyCreatedRes.Company;
+    logger.LogInformation('{CompanyId} {CompanyName}', company.Id, company.Name);
 }
 ```
+</TabItem>
 
-```json title="Sample response"
-{
-  "id": "8f74269c-6cbf-4c5e-9b93-599965a7fd49",
-  "name": "Platypus Properties",
-  "description": "Platypuses are venomous mammals",
-  "redirect": "https://link.codat.io/company/8f74269c-6cbf-4c5e-9b93-599965a7fd49",
-  "dataConnections": []
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+
+companyCreatedRes, err := platformClient.Companies.Create(ctx, shared.CompanyRequestBody{
+    Name: "Platypus Properties",
+    Description: "Platypuses are venomous mammals"
+})
+
+if err != nil {
+    log.Fatal(err)
+}
+
+if companyCreatedRes.Company != nil {
+    fmt.Println("%s %s", companyCreatedRes.Company.Id, companyCreatedRes.Company.Name)
 }
 ```
+</TabItem>
+
+</Tabs>
+
 :::caution Retain the company ID
 
 The `id` property that you receive in the response is the unique Codat identifier for this company. **We recommend that you retain it for future reference.**
@@ -86,11 +137,244 @@ Once the user finishes the Link flow, they will be redirected back to the Redire
 
 ## Deleting companies
 
-You can delete companies in the Portal in the table in **Companies**.
+You can delete a company and its data using the [Delete company](/platform-api#/operations/create-company) endpoint.
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const companyDeleteResponse = await platformClient.companies.delete({
+    companyId: companyCreatedRes.company.id,
+  }); 
+```
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+company_delete_response = platform_client.companies.delete(
+  operations.DeleteCompanyRequest(
+    company_id=company_created_res.company.id,
+  )
+)
+```
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```c#
+var companyDeleteResponse = await platformClient.Companies.DeleteAsync(new(){
+    CompanyId = companyCreatedRes.Company.Id,
+});
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+companyDeleteResponse, err := s.Companies.Delete(ctx, operations.DeleteCompanyRequest{
+    CompanyID: companyCreatedRes.Company.ID,
+})
+```
+</TabItem>
+
+</Tabs>
+
+## Assign companies to a group
+
+Codat supports grouping companies together to simplify the management of companies and their use cases.
+
+If you are grouping companies together for the first time you will need to start by creating a group.
+A group can be created using the [Create group](/platform-api#/operations/create-group) endpoint.
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+Create group code snippet
+```
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+Create group code snippet
+```
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```c#
+Create group code snippet
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+Create group code snippet
+```
+</TabItem>
+
+</Tabs>
+
+:::caution Create new groups with care
+
+Codat does not support the updating or deletion of groups so make sure to double check the name is correct.
+:::
+
+Once you have created a group a company can be assigned to it in twos ways: either at point of company creation or after it is created.
+Use the [Create company](/platform-api#/operations/create-company) endpoint and pass the `groupId` you want to register the company against.
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+platformClient.companies.create({
+    name: "Platypus Properties",
+    groups: [{ id: groupId }]
+}).then((companyCreatedRes: CreateCompanyResponse) => {
+    if (companyCreatedRes.statusCode == 200) {
+      const company = companyCreatedRes.company
+      console.log(company.id, company.name, company.groups[0].id)
+    }
+});
+```
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+req = shared.CompanyRequestBody(
+    name='Platypus Properties',
+    groups=[shared.GroupRef(id=groupId)]
+    )
+
+company_created_res = platform_client.companies.create(req)
+company = company_created_res.company
+print(company.id, company.name, company.groups[0].id)
+```
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```c#
+var companyCreatedRes = await platformClient.Companies.CreateAsync(new CompanyRequestBody() {
+    Name = "Platypus Properties",
+    Groups = new List<GroupRef>(){
+      new(){ Id = groupId }
+    }
+  });
+
+if(companyCreatedRes.Company != null) {
+    var company = companyCreatedRes.Company;
+    logger.LogInformation('{CompanyId} {CompanyName} {GroupId}', company.Id, company.Name, company.Groups[0].Id);
+}
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+companyCreatedRes, err := platformClient.Companies.Create(ctx, shared.CompanyRequestBody{
+    Name: "Platypus Properties",
+    Groups: []shared.GroupRef{
+      shared.GroupRef{ ID: groupID }
+    }
+})
+
+if err != nil {
+    log.Fatal(err)
+}
+
+if companyCreatedRes.Company != nil {
+  company := companyCreatedRes.Company
+  fmt.Println("%s %s %s", company.Id, company.Name, company.Groups[0].ID)
+}
+```
+</TabItem>
+
+</Tabs>
+
+If you need to add a company to a group use the [Add company to group](/platform-api#/operations/add-company-to-group) endpoint.
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+Add company to group code snippet
+```
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+Add company to group code snippet
+```
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```c#
+Add company to group code snippet
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+Add company to group code snippet
+```
+</TabItem>
+
+</Tabs>
+
+To remove a company from a group use the [Remove company from group](/platform-api#/operations/remove-company-from-group) endpoint.
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+Remove company from group code snippet
+```
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+Remove company from group code snippet
+```
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```c#
+Remove company from group code snippet
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+Remove company from group code snippet
+```
+</TabItem>
+
+</Tabs>
+
+
+
 
 :::tip Recap
 You've learned:
-- How to create a company and authroize access to their data
+- How to create a company and authorize access to their data
 - The basics of pulling data
 - Managing companies
 :::
@@ -99,4 +383,5 @@ You've learned:
 
 ## Read next
 
-- [Managing companies](/using-the-api/querying)
+- [Get data](/using-the-api/get-data)
+- [Create, update and delete data](/using-the-api/push)
