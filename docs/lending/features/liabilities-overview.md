@@ -35,8 +35,7 @@ Common uses of our liabilities feature include:
 
 ## Supported outputs
 
-You can retrieve the data pulled by the feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **liabilities** [endpoints of our API](/lending-api#/operations/generate-loan-transactions).
-For example, use the [Get loan summaries](/lending-api#/operations/get-loan-summary) endpoint to review a company's loan repayment history and determine their drawdown to repayment ratio.
+You can retrieve the data pulled by the feature by calling the **liabilities** [endpoints of our API](/lending-api#/operations/generate-loan-transactions). For example, use the [Get loan summaries](/lending-api#/operations/get-loan-summary) endpoint to review a company's loan repayment history and determine their drawdown to repayment ratio.
 
 <Tabs>
 
