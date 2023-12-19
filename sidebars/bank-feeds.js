@@ -65,7 +65,7 @@ module.exports = [
   },
   {
     type: "link",
-    href: "/integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds",
+    href: "/integrations/bank-feeds/xero-bank-feeds",
     label: "Xero",
   },
   {
