@@ -22,6 +22,8 @@ Our Excel download feature consists of the following component reports:
 
 - **Enhanced invoices** provides an output of reconciled invoices.
 
+- **Audit** helps you identify possible irregularities in a company's financial data.
+
 ### Metrics template
 
 We've also created a [metrics template Excel file](/documents/assess-metrics.xlsx). You can paste data into this file from the Enhanced financial statements Excel report to calculate key financial metrics and ratios.
