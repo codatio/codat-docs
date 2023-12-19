@@ -13593,22 +13593,19 @@
         "type": "object",
         "nullable": true,
         "description": "Unique identifier of the customer the expense is billable to. The invoiceTo object is currently only supported for QBO.",
-        "items": {
-          "type": "object",
-          "properties": {
-            "id": {
-              "type": "string",
-              "example": "80000002-1674552702",
-              "description": "identifier of customer."
-            },
-            "dataType": {
-              "type": "string",
-              "example": "customers",
-              "description": "The type of contact.",
-              "enum": [
-                "customers"
-              ]
-            }
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "80000002-1674552702",
+            "description": "identifier of customer."
+          },
+          "dataType": {
+            "type": "string",
+            "example": "customers",
+            "description": "The type of contact.",
+            "enum": [
+              "customers"
+            ]
           }
         }
       },
