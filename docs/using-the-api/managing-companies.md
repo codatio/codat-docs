@@ -225,7 +225,7 @@ Create group code snippet
 It's not possible to update or delete existing groups, so double-check that the group's name is correct when creating it.
 :::
 
-Once you have created a group a company can be assigned to it in twos ways: either at point of company creation or after it is created.
+Once you have created a group, you can assign a company to it in two ways: either at the point of company creation or after it has been created.
 Use the [Create company](/platform-api#/operations/create-company) endpoint and pass the `groupId` you want to register the company against.
 
 <Tabs>
