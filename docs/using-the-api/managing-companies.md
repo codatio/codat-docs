@@ -226,7 +226,7 @@ It's not possible to update or delete existing groups, so double-check that the 
 :::
 
 Once you have created a group, you can assign a company to it in two ways: either at the point of company creation or after it has been created.
-Use the [Create company](/platform-api#/operations/create-company) endpoint and pass the `groupId` you want to register the company against.
+For example, use the [Create company](/platform-api#/operations/create-company) endpoint and pass the `groupId` that you want to add the company to.
 
 <Tabs>
 
