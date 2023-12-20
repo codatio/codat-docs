@@ -222,7 +222,7 @@ Create group code snippet
 
 :::caution Create new groups with care
 
-Codat does not support the updating or deletion of groups so make sure to double check the name is correct.
+It's not possible to update or delete existing groups, so double-check that the group's name is correct when creating it.
 :::
 
 Once you have created a group a company can be assigned to it in twos ways: either at point of company creation or after it is created.
