@@ -39,8 +39,7 @@ Any forbidden characters will be removed from your company name. For example: `E
 
 ## If you have multiple use cases...
 
-You can assign a company to one or more groups.
-A group can be used to manage who can access data from that group's set of companies and identify the use case or product a company is using.
+You can assign a company to one or more groups. A group can be used to manage who can access data from that group's set of companies and identify the use case or product a company is using. Learn how to do that [here](/using-the-api/managing-companies#assign-companies-to-a-group).
 
 ---
 
