@@ -300,7 +300,7 @@ if companyCreatedRes.Company != nil {
 
 </Tabs>
 
-If you need to add a company to a group use the [Add company to group](/platform-api#/operations/add-company-to-group) endpoint.
+If you need to add an existing company to a group, use the [Add company to group](/platform-api#/operations/add-company-to-group) endpoint.
 
 <Tabs>
 
