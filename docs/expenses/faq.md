@@ -47,11 +47,11 @@ Moving your existing integrations to Sync for Expenses lets you leverage the fol
 
 <li>Adjacency to Codat’s product range</li>
 
-<p>You can use Sync for Expenses alongside all Codat use cases or products.
+<p>You can use Sync for Expenses alongside all Codat use cases or products.</p>
 
-For example, if you are issuing credit cards, using Codat’s <a href="https://docs.codat.io/lending/overview">Lending API</a> product would allow you to determine the risk associated with the company that has the same `companyId` and API key.
+<p>For example, if you are issuing credit cards, using Codat’s <a href="https://docs.codat.io/lending/overview">Lending API</a> product would allow you to determine the risk associated with the company that has the same `companyId` and API key.</p>
 
-Likewise, you can use `billPayments` to retrieve a list of bills from your customer’s accounting software and enable them to pay these and reconcile their payments.</p>
+<p>Likewise, you can use `billPayments` to retrieve a list of bills from your customer’s accounting software and enable them to pay these and reconcile their payments.</p>
 
 </ol>
 		`}
@@ -59,9 +59,8 @@ Likewise, you can use `billPayments` to retrieve a list of bills from your custo
 	<Question
 		question="What can we reuse from the Codat Bill Pay build for Sync for Expenses?"
 		answer={`
-You can reuse the chart of accounts, tracking categories, and tax rates from our Accounting API. However, we recommend using the <a href="https://docs.codat.io/sync-for-expenses-api#/operations/get-mapping-options">Mapping options endpoint</a> endpoint for expenses because of the transaction type support. 
-
-Authentication, company creation and the Accounting connection linking journeys can be reused between builds. This is because the companies can use the same Id between Codat products.
+		<p>You can reuse the chart of accounts, tracking categories, and tax rates from our Accounting API. However, we recommend using the <a href="https://docs.codat.io/sync-for-expenses-api#/operations/get-mapping-options">Mapping options endpoint</a> endpoint for expenses because of the transaction type support.</p>
+		<p>Authentication, company creation and the Accounting connection linking journeys can be reused between builds. This is because the companies can use the same Id between Codat products.</p>
 		`}
 	/>
 </Questions>
