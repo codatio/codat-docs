@@ -23,7 +23,7 @@ You can either onboard users:
 
 ### Create a company
 
-To create a new company, use the [Create company](/platform-api#/operations/create-company) endpoint and provide a name you want to attribute to it in the request body. Parameter `name` is a required parameter to execute this request. You can also provide a `description` to store additional information about the company.
+To create a new company, use the [Create company](/platform-api#/operations/create-company) endpoint and provide a name for the company in the request body.  The `name` parameter is mandatory to execute this request. You can also provide a `description` to store additional information about the company.
 
 <Tabs>
 
