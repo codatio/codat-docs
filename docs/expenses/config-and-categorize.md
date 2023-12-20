@@ -1,13 +1,13 @@
 ---
-title: "Configuration and categorizing expenses"
+title: "Map customer settings"
 description: Set up, map, and enable the Sync for Expenses solution
-sidebar_label: Configuration
+sidebar_label: Map settings
 tags: [syncforexpense, mappingOptions, Config]
 ---
 
 Once your SMB user has authorized a connection to their accounting platform and you have created a data connection, you can then configure and enable Sync for Expenses.
 
-## Push configuration
+## Create configuration
 
 The [configuration endpoint](/sync-for-expenses-api#/operations/get-company-configuration) enables you to set up how your customers' expenses will be pushed. 
 You can check the config anytime to confirm your company's configuration.

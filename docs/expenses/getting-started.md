@@ -1,9 +1,53 @@
 ---
-title: "Getting started"
-description: Learn how to start syncing expenses
+title: "Get started with Sync for Expenses"
+sidebar_label: "Get started"
+description: View the core steps required to perform the initial setup for Sync for Expenses
 tags: [syncforexpense, gettingstarted, prerequisites, platformsupport]
 displayed_sidebar: expenses
 ---
+
+import { IntegrationsList } from "@components/global/Integrations";
+import { integrationsFilterExpenses } from "@components/global/Integrations/integrations";
+
+## Journey overview
+
+The diagram below represents the overall activity flow when using Sync for Payables. You can manage bills, suppliers, and payment methods in different ways and order. 
+
+We will take you through each of these elements so that you can build the flow that suits you and your customers best.
+
+
+```mermaid
+
+sequenceDiagram
+    participant smb as SMB customer
+    participant app as Your application 
+    participant codat as Codat
+    participant acctg as Accounting platform
+    
+    smb ->> app: Logs into application
+    smb ->> app: Initiates connection to accounting software
+
+    app ->> codat: Passes company and connection details
+    app ->> codat: Initiates auth flow
+    codat ->> smb: Displays auth flow
+    smb ->> codat: Authorizes connection
+    codat ->> acctg: Establishes connection
+    
+    codat ->> smb: Displays mapping options
+    smb ->> codat: Confirms mapping selections
+    
+    loop Load bank statements
+        smb ->> app: Spends money from bank account
+        app ->> codat: Pushes bank transaction details
+        codat ->> acctg: Creates bank transactions
+        acctg ->> smb: Displays loaded bank statement ready for reconciliation
+    end
+
+```
+
+Once you decide to build with Sync for Payables, you need to configure Codat accordingly. Let's go through these requirements in detail.
+
+
 
 ## Connect to an SMB’s accounting platform
 
@@ -68,3 +112,20 @@ You can also choose to enable additional data types that may enhance your Sync f
 | Journal Entries     | `journalEntries`     | Journal entries are used when an accounting platform does not support a representation of direct costs. They are also used to represent transfers, such as topping up or paying down an expense card.   |
 | Transfers           | `transfers`          | A record of an expense transaction between two bank accounts, such as topping up or paying down the expense card.        |
 </details>
+
+
+
+
+### Webhook events
+
+Sync for Expenses provides two webhooks that you can subscribe to.
+
+**Sync Failed**
+
+The `Sync Failed` webhook is triggered if any failures occurred during the sync process.
+
+
+**Sync Completed**
+
+The `Sync Completed` webhook is triggered when a sync completes without any failures.
+

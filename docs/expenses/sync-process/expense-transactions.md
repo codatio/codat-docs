@@ -1,24 +1,54 @@
 ---
-title: "Expense transactions"
-description: Create expense-transaction datasets to represent your customers spend
+title: "Record and update expenses"
+sidebar_label: "Create expenses"
+description: Create and update expense transactions that represent your customers' spend
 ---
 
-An [expense transaction](/sync-for-expenses-api#/operations/create-expense-transaction) represents the context behind the purchase.
+## Overview
 
-It can include details about the purchase from the mapping options, for example:
+An [expense](/sync-for-expenses-api#/operations/create-expense-transaction) is a transaction that represents the purchase made by your customer and the context behind that purchase. It usually includes the following details:
 
-- The type of transaction, e.g. a payment or refund
+- Transaction type, e.g. whether it's a payment or a refund
+- General ledger account the transaction should be reconciled to
+- Associated tax rates
+- Applicable tracking categories
 
-- Which account in the general ledger the transaction should be reconciled to `accountRef`
+With Sync for Expenses, you need to create the expense transactions first and push that dataset to Codat. We will describe options available to you on this page. 
 
-- The associated tax rates `taxRateRef`
+Then, you need to [sync expenses](/expenses/sync-process/syncing-expenses) to reflect these in your customer's accounting platform. Finally, once these transactions have been synced, you can [upload attachments](/expenses/sync-process/uploading-receipts) to associate receipts with the transaction.
 
-- Any applicable tracking categories `trackingRefs`
+This process is summarized on the diagram below.
 
-When pushing expenses, use your transaction `id` so that it can serve as an idempotency key. Codat validates `id`'s to ensure that every `id` is unique to a company. 
-This approach prevents duplicate transactions being created in your SMBs' accounting software.
+``` mermaid
+sequenceDiagram
+  User->>+You: Approve expenses with receipt
+  You-)+Codat: POST expense-transaction
+  Codat-->>-You: datasetId
+  You-)+Codat: Initiate sync
+  Note over You,Codat: Specify datasetIds to sync
+  Codat --> Codat: Sync request added to queue
+  Codat-->>You: syncId
+  Codat-)Accounting: Sync expense-transaction from queue
+  Codat->>-You: Sync Complete webhook event
+  You->>Codat: Check transactions
+  Codat-->>You: 
+  par Each succesful reconciliation
+    You->>+Codat: POST attachment
+    Codat->>Accounting: Upload attachment
+    Codat-->>-You: Success
+  end
+  You->>-User: Expense marked as uploaded
+```
 
-```json title="Expense transaction"
+## Create expenses
+
+To create a new expense transaction in Codat, use the [Create expense transaction](/sync-for-expenses-api#/operations/create-expense-transaction) endpoint. 
+
+In the request, make sure that the transaction's `id` is unique as it serves as an idempotence key. Codat validates the `id` to ensure that it's unique to a company, preventing the creation of duplicate transactions in your SMB's accounting software. 
+
+Next, you need to follow up with an expense sync to reflect this item of spend in the customer's accounting platform. We cover this in detail in [Sync expenses](/expenses/sync-process/syncing-expenses).
+
+```json title="Expense transaction request body"
 {
   "items": [
     {
@@ -60,96 +90,66 @@ This approach prevents duplicate transactions being created in your SMBs' accoun
   ]
 }
 ```
-### Draft state transactions
+### Draft transactions
 
-Some accounting platforms allow users to create their transactions in a draft state. This means users can review the transaction in the accounting platform before the expense is finalized and posted prior to reconciliation. Use the `postedAsDraft` item to choose whether the expense should be created in a draft or final posted state. This functionality is currently only supported by Dynamics 365 Business Central. 
+:::info Compatible integrations
 
-### Tax rate reference default values
-In some cases, you may wish to remove an associated tax rate from an expense. For each accounting platform there is a default value to use so it has no impact on the expense:
-- QBO: `NON`
-- Xero: `NONE`
-- Netsuite: `-7`
-- Dynamics: we recommend to set up a 0% tax rate and apply it against the expense transaction. 
+Check our [API reference](/sync-for-expenses-api#/operations/create-expense-transaction) for an up-to-date list of integrations that support this functionality.
 
-## Transaction types
+:::
 
-The way Codat handles, maps and processes a transaction is based on the specified `type` of the transaction.
+Some accounting platforms allow expense transactions to be created in a draft state. This means the user can review the expense in the software before finalizing and posting it prior to reconciliation. 
 
+In the request body, use the `postAsDraft` flag to define whether the expense should be posted in its draft or final state. When set to `true`, the expense is posted as a draft. 
 
-<ul className="card-container col-2">
-  <li className="card">
-    <div class="header">
-      <h3>Payment</h3>
-    </div>
-    <p>
-      Is used to represent any spend that takes place on the account and interest on credit purchases. 
-    </p>
-  </li>
+### Default tax rates
 
-  <li className="card">
-    <div class="header">
-      <h3>Refund</h3>
-    </div>
-    <p>
-      Can be used to represent any refunds and returns on an original transaction.
-    </p>
-  </li>
+If you need to remove an associated tax rate from an expense, use one of the following default values that have no impact on the expense:
 
-  <li className="card">
-    <div class="header">
-      <h3>Reward</h3>
-    </div>
-    <p>
-      Can be used to represent reward redemptions such as cashback.
-    </p>
-  </li>
-<li className="card">
-    <div class="header">
-      <h3>Chargeback</h3>
-    </div>
-    <p>
-      Is similar to a refund in behavior and represents a return of transaction or payment sum which may have been disputed.
-    </p>
-  </li>
+| Platform          | Default tax rate                 |
+|-------------------|----------------------------------|
+| QuickBooks Online | `NON`                            |
+| Xero              | `NONE`                           |
+| Oracle NetSuite   | `-7`                             |
+| Dynamics 365      | Set up and apply a `0%` tax rate | 
 
-  <li className="card">
-    <div class="header">
-      <h3>TransferIn</h3>
-    </div>
-    <p>
-      A transfer that decreases the balance of the credit card account or increases the balance of a bank account. </p>
-<p>Can be used to represent a top up of debit card account, a pay down of a credit card account or a balance transfer to another credit card.</p>
-    
-  </li>
+### Transaction types
 
-  <li className="card">
-    <div class="header">
-      <h3>TransferOut</h3>
-    </div>
-    <p>
-      A transfer that increases the balance of the credit account or decreases the balance of a bank account.</p>
-<p> Can be used to represent cash withdrawals or balance transfer to another credit card.</p>
-    
-  </li>
-  <li className="card">
-    <div class="header">
-      <h3>AdjustmentIn</h3>
-    </div>
-    <p>
-      An adjustment that decreases the balance of the credit account or increases the balance of a bank account. </p>
-      <p>Can be used to represent write-offs & transaction adjustments such as foreign exchange adjustments. 
-    </p>
-  </li>
+Sync for Expenses maps and processes expense transactions based on the following transaction types:
 
-  <li className="card">
-    <div class="header">
-      <h3>AdjustmentOut</h3>
-    </div>
-    <p>
-      An adjustment that increases the balance of the credit account or decreases the balance of a bank account. </p>
-<p>Can be used to represent write-offs & transaction adjustments such as foreign exchange adjustments. 
-    </p>
-  </li>
+| Transaction type | Description                                                                                                                                                                                                                                               |
+|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `payment`        | Represents any   spend that takes place on the account and interest on credit purchases.                                                                                                                                                                  |
+| `refund`         | Represents any refunds and returns on an original transaction.                                                                                                                                                                                            |
+| `reward`         | Represents reward redemptions, such as cashback.                                                                                                                                                                                                          |
+| `chargeback`     | Similarly to a refund, represents a return of a transaction or a payment   sum which may have been disputed.                                                                                                                                              |
+| `transferIn`     | A transfer that decreases the   balance of the credit card account or increases the balance of a bank   account. <br/>  Represents a   top-up of debit card account, a pay-down of a credit card account, or a   balance transfer to another credit card. |
+| `transferOut`    | A transfer that increases the   balance of the credit account or decreases the balance of a bank account.   <br/>  Represents cash   withdrawals or a balance transfer to another credit card.                                                            |
+| `adjustmentIn`   | An adjustment that decreases the   balance of the credit account or increases the balance of a bank account.   <br/> Represents write-offs and transaction adjustments, such as   foreign exchange adjustments.                                           |
+| `adjustmentOut`  | An adjustment that increases the   balance of the credit account or decreases the balance of a bank account.   <br/> Represents write-offs and transaction adjustments, such as   foreign exchange adjustments.                                           |
 
-</ul>
+## Update expenses
 
+:::info Compatible integrations
+
+Check our [API reference](/sync-for-expenses-api#/operations/update-expense-transaction) for an up-to-date list of integrations that support this functionality.
+
+:::
+
+In some cases, your customer may want to update an expense transaction that was previously synced to their accounting platform. Use our [Update expense transactions](/sync-for-expenses-api#/operations/update-expense-transaction) endpoint to edit the following parameters and reflect the change in the SMB's accounting software: 
+
+- Net expense amount 
+- Tax amount of the spend
+- Tax rate reference associated with the spend
+- Expense bank account reference
+- Tracking category objects
+- Description and notes
+
+```http title="Update an expense transaction"
+PUT  https://api.codat.io/companies/{companyId}/sync/expenses/expense-transactions
+```
+
+---
+## Read next
+
+- [Sync the expenses](/expenses/sync-process/syncing-expenses) to reflect the spend in the accounting platform and monitor the progress of the synchronization.

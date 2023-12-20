@@ -1,20 +1,19 @@
 ---
-title: "Syncing expenses"
-description: "Syncing expense-transaction datasets to your customer's accounting software"
+title: "Sync expense transactions"
+sidebar_label: "Sync expenses"
+description: "Record expense transactions in your customer's accounting software and monitor the progress of dataset syncs"
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-Once you have pushed data to Codat and created datasets you can then initiate the sync process.
+## Sync transactions
 
-The sync process includes fetching the transactional datasets from the data cache, validating and mapping the data, and then pushing it to the accounting platform.
+Once you have pushed your customer's expense transaction data to Codat, you need to initiate the sync process that records the expenses in the customer's accounting software. 
 
-:::tip Datasets
+Use the [Initiate sync](/sync-for-expenses-api#/operations/initiate-sync) endpoint to trigger a transaction sync. The process fetches the datasets from Codat's cache, validates and maps the data, and then pushes it to the target platform. 
 
-Syncs are independent of creating datasets, so you can continue to create new datasets while a sync is ongoing.
-
-:::
+You can continue pushing new expenses to Codat while a sync is ongoing. 
 
 ```http title="Sync datasets"
  POST https://api.codat.io/companies/{companyId}/sync/expenses/syncs
@@ -23,58 +22,34 @@ Syncs are independent of creating datasets, so you can continue to create new da
     }
 ```
 
-### Webhook events
+## Check sync status
 
-Sync for Expenses provides two webhooks that you can subscribe to.
+Once you have initiated the sync, check whether the sync was completed successfully and view the details of any errors that may have occurred. Use any of the following endpoints:
 
-**Sync Failed**
+* [Latest sync status](/sync-for-expenses-api#/operations/get-latest-sync) to check the status of the last initiated sync.
+* [Last successful sync](/sync-for-expenses-api#/operations/get-last-successful-sync) to view the most recent sync that completed successfully.
+* [List sync statuses](/sync-for-expenses-api#/operations/list-syncs) to display status details of all syncs for a specified company.
+* [Get sync status](/sync-for-expenses-api#/operations/get-sync-by-id) to check the status details of a specified sync.
 
-The `Sync Failed` webhook is triggered if any failures occurred during the sync process.
+<details>
+  <summary>Sync status codes</summary>
 
-```json title="Sync Failed webhook"
-{
-  "CompanyId": "1f9559e7-8368-48c9-bdf4-f158e16b8b85",
-  "ClientId": "30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e",
-  "ClientName": "Expense Sync",
-  "RuleId": "289c80dc-2aee-4b71-afff-9acd8d051080",
-  "RuleType": "Sync Failed",
-  "AlertId": "72c1103b-7f17-4a3a-8db5-67c2d360a516",
-  "Message": "Sync 3bead2a1-1b3d-4d90-8077-cddc5ca68b01 for company 1f9559e7-8368-48c9-bdf4-f158e16b8b85 of type Expense has failed at step Pushing.",
-  "Data": {
-    "syncId": "3bead2a1-1b3d-4d90-8077-cddc5ca68b01",
-    "syncType": "Expense",
-    "SyncDateRangeStartUtc": "2023-05-03T12:57:58.7576091Z",
-    "SyncDateRangeFinishUtc": "2023-05-03T12:57:59.7576091Z",
-    "FailureStage": "Pushing"
-  }
-}
-```
+| Code | Reason                                        |
+| :--- | :-------------------------------------------- |
+| 1000 | In progress                                   |
+| 1010 | In progress (Long running - over ten minutes) |
+| 2000 | Success (Data pushed)                         |
+| 2040 | Success (No data pushed)                      |
+| 4000 | Configuration error                           |
+| 4040 | Company deleted/de-authorized                 |
+| 4220 | Company deleted/de-authorized                 |
+| 4260 | Accounting platform billing expiry            |
+| 5000 | Generic server error                          |
+| 5080 | Duplication protection                        |
+| 5120 | Data processing error                         |
+| 5130 | Data push error                               |
 
-**Sync Completed**
-
-The `Sync Completed` webhook is triggered when a sync completes without any failures.
-
-```json title="Sync Completed webhook"
-{
-  "AlertId": "33a4f8e9-09ae-4334-9b00-7bbe83024672",
-  "ClientId": "30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e",
-  "ClientName": "Expense Sync",
-  "CompanyId": "1f9559e7-8368-48c9-bdf4-f158e16b8b85",
-  "Data": {
-    "syncId": "321363b4-efa9-4fbc-b71c-0b58d62f3248",
-    "syncType": "Expense",
-    "SyncDateRangeStartUtc": "2023-05-03T09:56:17.4357111Z",
-    "SyncDateRangeFinishUtc": "2023-05-03T09:56:18.4357111Z"
-  },
-  "Message": "Sync 321363b4-efa9-4fbc-b71c-0b58d62f3248 for company 1f9559e7-8368-48c9-bdf4-f158e16b8b85 of type Expense completed successfully.",
-  "RuleId": "5c27631d-3b63-4b50-8228-ee502fd113eb",
-  "RuleType": "Sync Completed"
-}
-```
-
-### Sync status
-
-Once you have pushed data to Codat, you can use the sync status endpoints to check whether the sync was completed successfully and see the details of any errors that may have occurred.
+</details>
 
 <Tabs>
 
@@ -122,14 +97,20 @@ GET https://api.codat.io/companies/{companyId}/sync/expenses/syncs/syncId/status
 
 </Tabs>
 
+### Webhook events
 
-### Transactions status
+If you prefer to use webhooks to track the sync status, navigate to **Settings > Webhooks > Rules** in the [Codat Portal](https://app.codat.io/settings/webhooks/rules) and click **Create new rule** to set up the following webhooks:
 
-In addition to sync status endpoints, Codat provides a transactions endpoint where you can see the status of individual transactions.
+* **Expenses sync failed** webhook of `Sync Failed` type is triggered if any failures occurred during the sync process.
+* **Expenses sync completed** webhook of `Sync Completed` type is triggered when a sync completes without any failures.
 
-This enables you to see if the transaction has synced successfully, or details or the errors associated to the transaction if it was unsuccessful.
+You can [read more](/using-the-api/webhooks/core-rules-types) about webhooks at Codat and various trigger events we offer to monitor.
 
+### Transaction status
 
+If you want to check the status of individual transactions, use the [Get sync transaction](/sync-for-expenses-api#/operations/get-sync-transaction) endpoint. It also returns errors associated with the transaction if it was unsuccessful.
+
+Alternatively, use the [List sync transactions](/sync-for-expenses-api#/operations/list-sync-transactions) endpoint to view statuses for all transactions in a specified sync.
 
 <Tabs>
 
@@ -214,3 +195,48 @@ GET https://api.codat.io/companies/{companyId}/sync/expenses/syncs/{syncId}/tran
 </TabItem>
 
 </Tabs>
+
+## Monitor sync health
+
+Use the Sync for Expenses product menu in the [Codat Portal](https://app.codat.io/) to navigate to [Sync Health](/products/sync-for-expenses) and monitor the status of your syncs, review detailed logs and error messages, and view and retry pushing failed items. This helps your support team to resolve common issues with the customer's settings or actions.
+
+<img
+  src="/img/sync-for-commerce/0006-sync-health-ui.png"
+  alt="Sync Health page view with numbered annotations on the key page elements: the dashboard, filters, status filter, and the main data table"
+/>
+
+- Check the **dashboard** (1) for a visual summary of sync totals.
+- Use the **search bar** (2) to narrow down the records by sync ID or company ID. 
+- Display the sync history for a specific period by indicating a **date range** (3). 
+- Review the possible statuses of the syncs and filter the records by their **status code** (4). 
+- Use the **menu** (6) to sort and amend the **sync history** (5) table as needed.
+
+#### View detailed records
+
+To view more detailed information about a record, click on an item in your **sync history**. The information appears in the **Sync Details** window and provides sync start and end times, and sync source and target platforms. 
+
+It also displays client-friendly notes and error messages in case of sync failures. 
+
+You can also navigate to the **Config** tab to view and download the customer's sync configuration, which helps establish root causes for any errors that ocurred. 
+
+#### View push items
+
+In the same detailed record view, select the **Push items** tab to access a list of **push items**. The list contains an item for each accounting data type that was produced in the selected sync. 
+
+Here, you can view each item's status, search the items by their core ID or data type, or filter them by status.  
+
+#### Retry push items
+
+On the **Push items** tab, you can also retry the push items in failed status. Click the **Retry failed items** button to trigger another attempt to push the data of all failed push items into the accounting platform. The button is only enabled if there are failed items to retry.
+
+#### 💡 Tips and traps
+
+- Syncs are shown as failed if any of the included items fail to push. Therefore, if a sync contains a mix of failed and successfully pushed records, it will still be marked as failed. 
+- Sync history does not display the date range for data pulled from the platform that is used in the sync.
+
+---
+
+## Read next
+
+* Review our [FAQ](/expenses/faq) to find out more about Sync for Expenses
+* Try Sync for Expenses in our interactive [API reference](/sync-for-expenses-api#/)

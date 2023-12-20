@@ -192,7 +192,7 @@ const prodRework = [
 },
 {
   from: "/sync-for-expenses/sync-process/sync-process-explained",
-  to: "/expenses/sync-process/sync-process-explained"
+  to: "/expenses/getting-started"
 },
 {
   from: "/sync-for-expenses/sync-process/syncing-expenses",
@@ -200,7 +200,7 @@ const prodRework = [
 },
 {
   from: "/sync-for-expenses/sync-process/updating-expenses",
-  to: "/expenses/sync-process/updating-expenses"
+  to: "/expenses/sync-process/expense-transactions"
 },
 {
   from: "/sync-for-expenses/sync-process/uploading-receipts",
@@ -702,6 +702,22 @@ module.exports = {
     {
       from: "/sync-for-expenses/faq",
       to: "/expenses/faq",
+    },
+    {
+      from: "/expenses/sync-process/updating-expenses",
+      to: "/expenses/sync-process/expense-transactions",
+    },
+//    {
+//      from: "/expenses/sync-process/uploading-receipts",
+//      to: "/expenses/sync-process/expense-transactions",
+//    },
+    {
+      from: "/expenses/sync-process/sync-process-explained",
+      to: "/expenses/getting-started",
+    },
+    {
+      from: "/expenses/sync-process/monitoring-a-sync",
+      to: "/expenses/sync-process/syncing-expenses",
     },
 
     // assess
