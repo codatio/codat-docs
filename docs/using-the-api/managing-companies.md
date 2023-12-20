@@ -184,7 +184,7 @@ companyDeleteResponse, err := s.Companies.Delete(ctx, operations.DeleteCompanyRe
 
 ## Assign companies to a group
 
-Codat supports grouping companies together to simplify the management of companies and their use cases.
+You can group several companies to simplify the management of these companies and their use cases.
 
 If you are grouping companies together for the first time you will need to start by creating a group.
 A group can be created using the [Create group](/platform-api#/operations/create-group) endpoint.
