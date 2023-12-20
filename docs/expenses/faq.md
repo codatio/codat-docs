@@ -7,13 +7,11 @@ displayed_sidebar: expenses
 
 import Questions, { Question } from '@components/global/Questions';
 
-## Product overview
-
 <Questions>
 	<Question
 		question="Where can I see a roadmap for integration and feature support for Sync for Expenses?"
 		answer={`
-Codat does not currently publish a public product roadmap. If you would like to learn more about upcoming product releases, speak to your account manager.
+Codat does not currently publish a public product roadmap. If you would like to learn more about upcoming product releases, speak to your Codat contact.
 		`}
 	/>
 	<Question
@@ -29,25 +27,25 @@ Moving your existing integrations to Sync for Expenses lets you leverage the fol
 
 <ol>
 
-<li>Up-to-date mapping options</li>
+<li><b>Up-to-date mapping options</b></li>
 
-<p>Every company has its own preference for representing an individual expense in its accounting software. You can retrieve the representation mapping from our <a href="https://docs.codat.io/sync-for-expenses-api#/operations/get-mapping-options">Mapping options endpoint</a> and set up webhook notifications that notify you when your customer creates a new expense account or tracking category. This ensures the list of tracking categories, accounts, and tax rates used to map the expense is always up to date.</p>
+<p>Every company has its own preference for representing an individual expense in its accounting software. With Codat, you can retrieve the account mapping and set up webhook notifications to notify you when your customer creates a new expense account or tracking category. This keeps the list of tracking categories, accounts, and tax rates used to map the expense up to date.</p>
 
-<li>Standardization of expense data</li>
+<li><b>Standardization of expense data</b></li>
 
-<p>Sync for Expenses is built to standardize transaction data using an opinionated model that is based on feedback from customers and industry expertise. This means you don’t need to make decisions on how to handle validation differences between accounting platforms. Simply send transactions based on what they represent and let Codat handle the mapping to their best representation in the accounting software.</p>
+<p>Sync for Expenses standardizes transaction data using an opinionated model that is based on feedback from our customers and industry expertise. This means you don’t need to make decisions on how to handle validation differences between accounting platforms. Simply send transactions based on what they represent and let Codat handle the mapping to their best representation in the accounting software.</p>
 
-<li>Multiple transaction support</li>
+<li><b>Multiple transaction support</b></li>
 
-<p>Sync for Expenses handles the pushing of multiple transactions in an array to make your interactions more efficient. You can retrieve the status of these transactions from the <a href="https://docs.codat.io/sync-for-expenses-api#/operations/get-sync-transactions">Transactions status endpoint</a>.</p>
+<p>Sync for Expenses handles the pushing of multiple transactions in an array to make your interactions more efficient. You can retrieve the status of these transactions from the <a href="https://docs.codat.io/sync-for-expenses-api#/operations/get-sync-transaction">Get sync transaction</a> endpoint.</p>
 
-<li>Enhanced developer experience</li>
+<li><b>Enhanced developer experience</b></li>
 
-<p>Our detailed documentation aimed at developers and a variety of SDKs mean you can get up and running with the Sync for Expense API quickly.</p>
+<p>Our detailed documentation aimed at developers and a variety of <a href="/get-started/libraries">client libraries</a> in multiple languages mean you can get up and running with Sync for Expenses quickly.</p>
 
-<li>Adjacency to Codat’s product range</li>
+<li><b>Adjacency to Codat’s product range</b></li>
 
-<p>You can use Sync for Expenses alongside all Codat use cases or products. For example, if you are issuing credit cards, using Codat's <a href="https://docs.codat.io/lending/overview" target="_blank">Lending API</a> product would allow you to determine the risk associated with the company that has the same <code>companyId</code> and API key.</p>
+<p>You can use Sync for Expenses alongside all Codat products. For example, if you are issuing credit cards, Codat's <a href="https://docs.codat.io/lending/overview" target="_blank">Lending API</a> product would allow you to determine the risk associated with the company that has the same <code>companyId</code> and API key.</p>
 
 <p>Likewise, you can use our <code>billPayments</code> data type to retrieve a list of bills from your customer's accounting software and enable them to pay these and reconcile their payments.</p>
 
@@ -55,17 +53,12 @@ Moving your existing integrations to Sync for Expenses lets you leverage the fol
 		`}
 	/>
 	<Question
-		question="What can we reuse from the Codat Bill Pay build for Sync for Expenses?"
+		question="What can we reuse from our existing Codat build for Sync for Expenses?"
 		answer={`
-<p>You can reuse the chart of accounts, tracking categories, and tax rates from our Accounting API. However, we recommend using the <a href="https://docs.codat.io/sync-for-expenses-api#/operations/get-mapping-options">Mapping options endpoint</a> endpoint for expenses because of the transaction type support.</p>
-<p>Authentication, company creation and the Accounting connection linking journeys can be reused between builds. This is because the companies can use the same Id between Codat products.</p>
+<p>You can reuse the chart of accounts, tracking categories, and tax rates settings. However, we recommend using the <a href="https://docs.codat.io/sync-for-expenses-api#/operations/get-mapping-options">Mapping options</a> endpoint for expenses because of the transaction type support.</p>
+<p>Authentication, company creation and connection linking journeys can be reused between builds. This is because the companies can use the same Id between Codat products.</p>
 		`}
 	/>
-</Questions>
-
-## Configuration and setup
-
-<Questions>
 	<Question
 		question="How do I reconnect a company?"
 		answer={`
@@ -81,59 +74,53 @@ If you want to use the accounting platform logos in your user interface, you can
 	<Question
 		question="Can I use the Sandbox account to test a sync when implementing Sync for Expenses?"
 		answer={`
-<p>Currently, we do not support Sandbox as a destination platform when establishing an accounting connection. This is because it is hard to see data that has been pushed and our Codat sandbox has been designed for pulling data. We recommend signing up for a free QuickBooks or Xero developer account to test syncs, which will give you sandbox access as well.</p>
-<p>For more information on how to set up your accounting platform integration, take a look at the <a href="https://docs.codat.io/integrations/accounting/overview">following documentation</a>.</p>
+<p>Sync for Expenses does not support Sandbox as a destination platform to sync transactions because it has been designed specifically for pulling, not pushing, data. We recommend signing up for a free QuickBooks or Xero developer account to test syncs, which will give you sandbox access as well.</p>
+<p>For more information on how to set up your accounting platform integration, take a look at the <a href="https://docs.codat.io/integrations/accounting/overview">integration-specific documentation</a>.</p>
 		`}
-	/>		
-</Questions>
-
-## Syncing expenses
-
-<Questions>
+	/>
 	<Question
-		question="How can I resync a transaction which has previously failed once I resolve the issue with the transaction?"
+		question="How can I resync a failed transaction when I resolve the issue with the transaction?"
 		answer={`
-<p>Once you resolve the issue with the transaction, you can create a new dataset for that transaction Id. You are unable to resync the transaction with the same dataset Id as the other successfully synced transactions will trigger the validation for preventing duplicates. To avoid duplicates, Codat checks the transaction metadata to see if a transaction Id has a status of completed. If it does, it is not synced again.</p>
-<p>The following error will appear if a transaction has been previously synced: <code>error: One or more transactions have previously been processed: 46dd5a8a-d74f-46f0-adf8-4f74ffe5e7c8</code><p> 
+<p>Once you resolve the issue with the transaction, you can create a new dataset for that transaction Id. You can't resync the transaction with the same dataset because Codat checks the transaction metadata to avoid duplicates. If a transaction Id has a status of completed, it is not synced again.</p>
+<p>The following error will appear if a transaction has been previously synced: <code>error: One or more transactions have previously been processed: {Transaction Id}}</code><p> 
 		`}
 	/>
 	<Question
 		question="How can I detect if an expense account has been deactivated?"
 		answer={`
-You can create a webhook in the Codat portal to inform you when the Chart of Accounts has been changed. By querying the Chart of Accounts and using the <code>isDeleted</code> flag, you can identify which accounts have been deleted before a sync occurs. For more information, please refer to the <a href="https://docs.codat.io/using-the-api/webhooks/core-rules-types">documentation</a> on creating and updating rules.
+You can create a webhook in the Codat portal to inform you when the chart of accounts has been changed. By querying the Chart of Accounts data type and using the <code>isDeleted</code> flag, you can identify which accounts have been deleted before a sync occurs. For more information, please refer to the <a href="https://docs.codat.io/using-the-api/webhooks/core-rules-types">documentation</a> on creating and updating webhook rules.
 		`}
 	/>
-</Questions>
-
-## Expense transactions
-
-<Questions>
 	<Question
-		question="Am I able to update an attachment (i.e. receipt) when I have already synced the expense transaction?"
+		question="Am I able to update an attachment when I have already synced the expense transaction?"
 		answer={`
-Codat pushes attachments synchronously to the expense transactions. To update any of these documents, you need to remove the attachment from the accounting platform. Next, you need to upload the correct document either directly to the accounting platform or using Sync for Expenses. When using Sync for Expenses, you benefit from its support for multiple attachments. 
+Codat pushes attachments synchronously to the expense transactions. To update any of these documents, you need to remove the attachment directly from the accounting platform. Next, you need to upload the correct document either directly to the accounting platform or using Sync for Expenses. When using Sync for Expenses, you benefit from its support for multiple attachments. 
 		`}
 	/>  
 	<Question
 		question="How should I handle transactions in a foreign currency?"
 		answer={`
-<p>For multicurrency transactions, you have to consider the currency of the transaction, the currency of the card, and the base currency of the company in the accounting platform. Depending on the platform, only specific multicurrency scenarios may be supported. Codat provides built-in validations that protect against multicurrency scenarios that aren't supported by specific accounting platforms.</p>
+<p>For multicurrency transactions, you have to consider the currency of the transaction, the currency of the card, and the base currency of the company in the accounting platform. Depending on the platform, only specific multicurrency scenarios may be supported. Codat provides built-in validations that protect against scenarios that aren't supported by specific accounting platforms.</p>
 <p>If the currency of the transaction or the card differs from the base currency, you must specify the exchange rate that will be used to convert the amount into the base currency. Indicate it in the <code>currencyRate</code> field. This is mandatory for all accounting platforms because all transactions must be expressed in the base currency for accounting and financial reporting purposes.</p>
-<p>It is not possible to perform the currency conversion with two or more non-base currencies participating in the transaction. For example, if a company's base currency is USD, and the transaction currency (supplier currency) is GBP, then the bank account used must be USD or GBP.</p>
+<p>It is not possible to perform the currency conversion when two or more non-base currencies participate in the transaction. For example, if a company's base currency is USD and the transaction currency (supplier currency) is GBP, then the bank account used must be USD or GBP.</p>
 		`}
 	/> 
 	<Question
-		question="What is the difference between effectiveTaxRate and totalTaxRate?"
+		question="What is the difference between <code>effectiveTaxRate</code> and <code>totalTaxRate</code>?"
 		answer={`
 <p>If a transaction has multiple tax components, each component may be calculated based on the original amount separately, and then added together.</p>
 <p>Alternatively, primary tax can be calculated on the item cost, and another tax component is added on top of that amount.This is known as compounding. In this case, the effective tax rate is the rate that results in the total amount of tax with compounding when applied to the original amount.</p>
-<p>The <code>totalTaxRate</code> is the total, not compounded, sum of the components of a tax rate. Further details can be found in our <a href="https://docs.codat.ioaccounting-api#/schemas/TaxRate#tax-components">Codat docs</a>.</p>
+<p>The <code>totalTaxRate</code> is the total, not compounded, sum of the components of a tax rate. You can read more about this in our <a href="https://docs.codat.ioaccounting-api#/schemas/TaxRate#tax-components">API documentation covering tax rates</a>.</p>
 		`}
 	/> 
 	<Question
-		question="Is the transaction ID unique to each connected company? "
+		question="Is the transaction Id unique to each connected company?"
 		answer={`
-Each transaction id is unique to a client's company but they aren't unique across connections. We currently only support a single accounting connection per company. If a company wants to swap their accounting software or would like to link to a different entity we recommend creating a new company.
+Each transaction Id is unique to a client's company but they aren't unique across connections. In Codat, it's only possible to have a single accounting connection per company. If a company wants to swap their accounting software or would like to link to a different entity, we recommend creating a new company.
 		`}
 	/>
 </Questions>
+
+## Read next
+
+* Try Sync for Expenses in our interactive [API reference](/sync-for-expenses-api#/)
