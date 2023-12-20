@@ -6,10 +6,6 @@ description: "Learn how your SMB users can connect their bank accounts to Xero"
 
 After setting up a company, data connection, and one or more source bank accounts, redirect your SMB user to the `linkUrl` (returned from `POST /companies/<COMPANY_ID>/connections`).
 
-:::info Link URL expiry
-For security reasons, the `linkUrl` will expire one hour after it was generated.
-:::
-
 ## Account mapping UI
 
 After authenticating with their Xero account, the SMB user is redirected to a generic account-mapping UI provided by Codat. This lets them map and connect their source bank accounts to Xero, creating _bank feed connections_.

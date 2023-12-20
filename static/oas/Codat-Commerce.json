@@ -627,6 +627,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -635,6 +641,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -857,6 +869,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -865,6 +883,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -1020,6 +1044,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -1028,6 +1058,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *List disputes* endpoint returns a list of [disputes](https://docs.codat.io/commerce-api#/schemas/Dispute) for a given company's connection.\n\n[Disputes](https://docs.codat.io/commerce-api#/schemas/Dispute) are created when a customer is unsatisfied with their purchase or believe they have been charged incorrectly.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    "
@@ -1113,6 +1149,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -1121,6 +1163,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *Get dispute* endpoint returns a single dispute for a given disputeId.\n\n[Disputes](https://docs.codat.io/commerce-api#/schemas/Dispute) are created when a customer is unsatisfied with their purchase or believe they have been charged incorrectly.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-disputes) for integrations that support getting a specific dispute.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
@@ -1221,6 +1269,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -1229,6 +1283,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "Retrieve information about the company, as seen in the commerce platform.\n\nThis may include information like addresses, tax registration details and social media or website information."
@@ -1380,11 +1440,14 @@
               }
             }
           },
-          "400": {
-            "$ref": "#/components/responses/Malformed-Query"
-          },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
           },
           "404": {
             "$ref": "#/components/responses/Not-Found"
@@ -1394,6 +1457,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *List locations* endpoint returns a list of [locations](https://docs.codat.io/commerce-api#/schemas/Location) for a given company's connection.\n\n[Locations](https://docs.codat.io/commerce-api#/schemas/Location) hold information on the geographic location at which stocks of [products](https://docs.codat.io/commerce-api#/schemas/Product) may be held or where [orders](https://docs.codat.io/commerce-api#/schemas/Order) were placed.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    "
@@ -1500,6 +1569,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -1508,6 +1583,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *Get location* endpoint returns a single location for a given locationId.\n\n[Locations](https://docs.codat.io/commerce-api#/schemas/Location) hold information on the geographic location at which stocks of [products](https://docs.codat.io/commerce-api#/schemas/Product) may be held or where [orders](https://docs.codat.io/commerce-api#/schemas/Order) were placed.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-locations) for integrations that support getting a specific location.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
@@ -2896,6 +2977,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -2904,6 +2991,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *List orders* endpoint returns a list of [orders](https://docs.codat.io/commerce-api#/schemas/Order) for a given company's connection.\n\n[Orders](https://docs.codat.io/commerce-api#/schemas/Order) contain the transaction details for all products sold by the company.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    ",
@@ -3678,6 +3771,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -3686,6 +3785,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *Get order* endpoint returns a single order for a given orderId.\n\n[Orders](https://docs.codat.io/commerce-api#/schemas/Order) contain the transaction details for all products sold by the company.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-orders) for integrations that support getting a specific order.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
@@ -4114,6 +4219,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -4122,6 +4233,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *List payments* endpoint returns a list of [payments](https://docs.codat.io/commerce-api#/schemas/Payment) for a given company's connection.\n\n[Payments](https://docs.codat.io/commerce-api#/schemas/Payment) contain details of all payments made by customers to the company.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    ",
@@ -4306,6 +4423,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -4314,6 +4437,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *Get payment* endpoint returns a single payment for a given paymentId.\n\n[Payments](https://docs.codat.io/commerce-api#/schemas/Payment) contain details of all payments made by customers to the company.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-payments) for integrations that support getting a specific payment.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
@@ -4607,6 +4736,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -4615,6 +4750,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *List payment methods* endpoint returns a list of [payment methods](https://docs.codat.io/commerce-api#/schemas/PaymentMethod) for a given company's connection.\n\n[Payment methods](https://docs.codat.io/commerce-api#/schemas/PaymentMethod) represent the payment method(s) used to make payments.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    ",
@@ -4742,6 +4883,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -4750,6 +4897,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *Get payment method* endpoint returns a single payment method for a given paymentMethodId.\n\n[Payment methods](https://docs.codat.io/commerce-api#/schemas/PaymentMethod) represent the payment method(s) used to make payments.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-paymentMethods) for integrations that support getting a specific payment method.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
@@ -5954,6 +6107,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -5962,6 +6121,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "parameters": [
@@ -5990,16 +6155,7 @@
           "$ref": "#/components/parameters/connectionId"
         },
         {
-          "name": "productId",
-          "in": "path",
-          "required": true,
-          "schema": {
-            "type": "string",
-            "examples": {
-              "$ref": "#/components/schemas/Order/allOf/0/properties/id/examples"
-            }
-          },
-          "description": "Unique identifier for a product."
+          "$ref": "#/components/parameters/productId"
         }
       ],
       "get": {
@@ -6578,6 +6734,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -6586,9 +6748,14 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
-        },
-        "description": "The *Get product* endpoint returns a single product for a given productId.\n\n[Products](https://docs.codat.io/commerce-api#/schemas/Product) are items in the company's inventory that are available for sale.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-products) for integrations that support getting a specific product.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
+        }
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-transactions": {
@@ -6877,6 +7044,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -6885,6 +7058,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *List transactions* endpoint returns a list of [transactions](https://docs.codat.io/commerce-api#/schemas/Transaction) for a given company's connection.\n\n[Transactions](https://docs.codat.io/commerce-api#/schemas/Transaction) detail all financial affairs recorded in the commerce or point of sale system.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    ",
@@ -7025,6 +7204,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -7033,6 +7218,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *Get transaction* endpoint returns a single transaction for a given transactionId.\n\n[Transactions](https://docs.codat.io/commerce-api#/schemas/Transaction) detail all financial affairs recorded in the commerce or point of sale system.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-transactions) for integrations that support getting a specific transaction.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
@@ -7107,6 +7298,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -7115,6 +7312,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "parameters": [
@@ -7143,7 +7346,7 @@
           "$ref": "#/components/parameters/connectionId"
         },
         {
-          "$ref": "#/paths/~1companies~1%7BcompanyId%7D~1connections~1%7BconnectionId%7D~1data~1commerce-products~1%7BproductId%7D/parameters/2"
+          "$ref": "#/components/parameters/productId"
         }
       ],
       "get": {
@@ -7178,6 +7381,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -7186,6 +7395,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *Get product* endpoint returns a single product for a given productId.\n\n[Product categories](https://docs.codat.io/commerce-api#/schemas/ProductCategory) are used to classify a group of products together, either by type (e.g. \"Furniture\"), or sometimes by tax profile.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-productCategories) for integrations that support getting a specific product.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
@@ -7331,6 +7546,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -7339,6 +7560,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *List tax components* endpoint returns a list of [tax components](https://docs.codat.io/commerce-api#/schemas/TaxComponent) for a given company's connection.\n\n[Tax components](https://docs.codat.io/commerce-api#/schemas/TaxComponent) are tax rates from the commerce platform, including tax rate's name and value.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    "
@@ -7414,6 +7641,12 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
@@ -7422,6 +7655,12 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "description": "The *Get tax* endpoint returns a single tax for a given taxId.\n\n[Tax components](https://docs.codat.io/commerce-api#/schemas/TaxComponent) are tax rates from the commerce platform, including tax rate's name and value.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-taxComponents) for integrations that support getting a specific tax.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
@@ -7430,9 +7669,56 @@
   },
   "components": {
     "schemas": {
+      "Address": {
+        "title": "Commerce: Address",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/Address/definitions/commerceAddressType"
+          },
+          "line1": {
+            "description": "The first line of the address",
+            "type": "string"
+          },
+          "line2": {
+            "description": "The second line of the address",
+            "type": "string"
+          },
+          "city": {
+            "description": "The third line of the address, or city",
+            "type": "string"
+          },
+          "region": {
+            "description": "The fourth line of the address, or region",
+            "type": "string"
+          },
+          "country": {
+            "description": "The country for the address",
+            "type": "string"
+          },
+          "postalCode": {
+            "description": "The postal (or zip) code for the address",
+            "type": "string"
+          }
+        },
+        "definitions": {
+          "commerceAddressType": {
+            "description": "The type of the address",
+            "type": "string",
+            "enum": [
+              "Billing",
+              "Delivery",
+              "Order",
+              "Inventory",
+              "Unknown"
+            ]
+          }
+        }
+      },
       "CompanyInfo": {
-        "title": "Commerce company info",
-        "description": "In the Codat system, company information includes standard commercial details about \na linked company, such as their address, phone number, and company registration.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=companyInfo) for this data type.\n",
+        "title": "Commerce: Company profile",
+        "description": "In the Codat system, company profile includes standard commercial details about \na linked company, such as their address, phone number, and company registration.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=companyInfo) for this data type.\n",
         "type": "object",
         "allOf": [
           {
@@ -7564,8 +7850,19 @@
           }
         }
       },
+      "CreatedDate": {
+        "title": "Created date",
+        "type": "object",
+        "x-internal": true,
+        "properties": {
+          "createdDate": {
+            "$ref": "#/components/schemas/DateTime",
+            "description": "The date the entity was created."
+          }
+        }
+      },
       "Customer": {
-        "title": "Commerce customer",
+        "title": "Commerce: Customer",
         "description": "When a customer places an order with the connected commerce store their details are added to the Customers dataset. You can use the data from the Customers endpoints to calculate key metrics, such as customer churn.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-customers) for this data type.",
         "type": "object",
         "allOf": [
@@ -7735,7 +8032,7 @@
         ]
       },
       "Customers": {
-        "title": "Commerce customers",
+        "title": "Commerce: Customers",
         "x-internal": true,
         "allOf": [
           {
@@ -7754,8 +8051,17 @@
           }
         ]
       },
+      "DateTime": {
+        "title": "Date time",
+        "type": "string",
+        "examples": [
+          "2022-10-23T00:00:00.000Z",
+          "2022-10-23T00:00:00.000Z"
+        ],
+        "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
+      },
       "Dispute": {
-        "title": "Commerce dispute",
+        "title": "Commerce: Dispute",
         "description": "A customer may file a payment dispute with their bank or other card issuer when they're unsatisfied with their purchase or believe they have been charged incorrectly. For example:  \n- They didn't receive an order.  \n- The product they received was different to the commerce store's description.  \n- They've been the victim of online fraud.  \n\nYou can use data from the Disputes endpoints to calculate key metrics, such as the number of chargebacks.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-disputes) for this data type.",
         "type": "object",
         "allOf": [
@@ -7853,7 +8159,7 @@
         ]
       },
       "Disputes": {
-        "title": "Disputes",
+        "title": "Commerce: Disputes",
         "x-internal": true,
         "allOf": [
           {
@@ -7872,8 +8178,39 @@
           }
         ]
       },
+      "ErrorMessage": {
+        "title": "Error message",
+        "type": "object",
+        "x-internal": true,
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "description": "The HTTP status code returned by the error."
+          },
+          "service": {
+            "type": "string",
+            "description": "Codat's service the returned the error."
+          },
+          "error": {
+            "type": "string",
+            "description": "A brief description of the error."
+          },
+          "correlationId": {
+            "type": "string",
+            "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
+          },
+          "canBeRetried": {
+            "type": "string",
+            "description": "`True` if the error occurred transiently and can be retried."
+          },
+          "detailedErrorCode": {
+            "type": "integer",
+            "description": "Machine readable error code used to automate processes based on the code returned."
+          }
+        }
+      },
       "Location": {
-        "title": "Commerce location",
+        "title": "Commerce: Location",
         "type": "object",
         "description": "The Location datatype holds information on the geographic location at which stocks of products may be held, as referenced in the Products data type.\n\nA Location also holds information on geographic locations where orders were placed, as referenced in the Orders data type.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-locations) for this data type.",
         "allOf": [
@@ -7941,7 +8278,7 @@
         ]
       },
       "Locations": {
-        "title": "Locations",
+        "title": "Commerce: Locations",
         "x-internal": true,
         "allOf": [
           {
@@ -7960,10 +8297,50 @@
           }
         ]
       },
+      "ModifiedDates": {
+        "title": "Modified dates",
+        "x-internal": true,
+        "allOf": [
+          {
+            "title": "ModifiedDate",
+            "x-internal": true,
+            "type": "object",
+            "properties": {
+              "modifiedDate": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/DateTime"
+                  },
+                  {
+                    "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "title": "Source Modified Date",
+            "x-internal": true,
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "sourceModifiedDate": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/DateTime"
+                  },
+                  {
+                    "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
       "Order": {
-        "title": "Commerce order",
+        "title": "Commerce: Order",
         "description": "Orders contain the transaction details for all products sold by the company, and include details of any payments, service charges, or refunds related to each order. You can use data from the Orders endpoints to calculate key metrics, such as gross sales values and monthly recurring revenue (MRR).\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-orders) for this data type.\n",
-        "type": "object",
         "allOf": [
           {
             "type": "object",
@@ -7992,7 +8369,6 @@
             }
           },
           {
-            "type": "object",
             "properties": {
               "orderNumber": {
                 "type": "string",
@@ -8019,16 +8395,16 @@
                 ]
               },
               "closedDate": {
-                "description": "Date on which order was closed after the product was shipped, paid for, and any refund period had elapsed.",
-                "$ref": "#/components/schemas/DateTime"
+                "$ref": "#/components/schemas/DateTime",
+                "description": "Date on which order was closed after the product was shipped, paid for, and any refund period had elapsed."
               },
               "totalAmount": {
-                "description": "Total amount of the order, including tax, net of any discounts and refunds.",
+                "description": "Total amount of the order, including discounts, refunds, and tax, but excluding gratuities.",
                 "type": "number",
                 "format": "decimal"
               },
               "totalRefund": {
-                "description": "Total amount refunded issued by a merchant on an order (always a negative value).",
+                "description": "Total amount of any refunds issued on the order, including discounts and tax, but excluding gratuities. This is always negative.",
                 "type": "number",
                 "format": "decimal"
               },
@@ -8038,12 +8414,12 @@
                 "format": "decimal"
               },
               "totalDiscount": {
-                "description": "Total amount of discount applied to the order.",
+                "description": "Total amount of any discounts applied to the order, excluding tax. This is typically positive (for discounts which decrease the amount of the order), but can also be negative (for discounts which increase the amount of the order).",
                 "type": "number",
                 "format": "decimal"
               },
               "totalGratuity": {
-                "description": "Extra amount added to a bill.",
+                "description": "Extra amount added to the order.",
                 "type": "number",
                 "format": "decimal"
               },
@@ -8072,19 +8448,7 @@
                 "$ref": "#/components/schemas/Customer/definitions/commerceCustomerRef"
               },
               "supplementalData": {
-                "type": "object",
-                "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting platform. [Learn more](https://docs.codat.io/using-the-api/supplemental-data/overview) about supplemental data.",
-                "properties": {
-                  "content": {
-                    "type": "object",
-                    "additionalProperties": {
-                      "type": "object",
-                      "additionalProperties": {}
-                    },
-                    "nullable": true
-                  }
-                },
-                "title": "Supplemental data"
+                "$ref": "#/components/schemas/SupplementalData"
               }
             }
           },
@@ -8107,12 +8471,12 @@
                   "quantity": {
                     "type": "number",
                     "format": "decimal",
-                    "description": "Number of units of the product sold.\nFor refunds, quantity is a negative value.\n"
+                    "description": "Number of units of the product sold.\nFor refunds, quantity is negative.\n"
                   },
                   "taxPercentage": {
                     "type": "number",
                     "format": "decimal",
-                    "description": "Percentage rate (from 0 to 100) of any sale tax applied to the unit amount.",
+                    "description": "Percentage rate (from 0 to 100) of any sales tax applied to the unit price.",
                     "examples": [
                       0,
                       12.5,
@@ -8122,17 +8486,17 @@
                   "totalAmount": {
                     "type": "number",
                     "format": "decimal",
-                    "description": "Total price of the line item, including discounts, tax and minus any refunds."
+                    "description": "Total amount of the line item, including discounts and tax."
                   },
                   "totalTaxAmount": {
                     "type": "number",
                     "format": "decimal",
-                    "description": "Total amount of tax applied to the line item."
+                    "description": "Total amount of tax applied to the line item, factoring in any discounts."
                   },
                   "unitPrice": {
                     "type": "number",
                     "format": "decimal",
-                    "description": "Price per unit of goods or service."
+                    "description": "Price per unit of goods or services, excluding discounts and tax."
                   },
                   "taxes": {
                     "type": "array",
@@ -8159,7 +8523,6 @@
           },
           "serviceCharge": {
             "type": "object",
-            "x-internal": null,
             "properties": {
               "description": {
                 "description": "Service charges for this order.",
@@ -8167,7 +8530,7 @@
                 "example": "A service charge"
               },
               "totalAmount": {
-                "description": "Total service charge, including taxes.",
+                "description": "Total amount of the service charge, including tax.",
                 "type": "number",
                 "format": "decimal",
                 "examples": [
@@ -8218,7 +8581,6 @@
             }
           },
           "serviceChargeType": {
-            "x-internal": true,
             "description": "The type of the service charge.",
             "type": "string",
             "enum": [
@@ -8231,7 +8593,6 @@
           },
           "orderDiscountAllocation": {
             "type": "object",
-            "x-internal": true,
             "properties": {
               "name": {
                 "type": "string",
@@ -8241,7 +8602,7 @@
               "totalAmount": {
                 "type": "number",
                 "format": "decimal",
-                "description": "Total amount of discount applied.",
+                "description": "Total amount of discount applied, excluding tax. This is typically positive (for discounts which decrease the amount of the order line), but can also be negative (for discounts which increase the amount of the order line).",
                 "example": 15.25
               }
             }
@@ -8335,10 +8696,11 @@
             "modifiedDate": "2022-02-02T11:02:45Z",
             "sourceModifiedDate": "2021-03-28T03:00:14"
           }
-        ]
+        ],
+        "type": "object"
       },
       "Orders": {
-        "title": "Orders",
+        "title": "Commerce: Orders",
         "x-internal": true,
         "allOf": [
           {
@@ -8357,8 +8719,97 @@
           }
         ]
       },
+      "PagingInfo": {
+        "type": "object",
+        "title": "Pagination information",
+        "x-internal": true,
+        "properties": {
+          "pageNumber": {
+            "type": "integer",
+            "description": "Current page number."
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "Number of items to return in results array.",
+            "maximum": 2000
+          },
+          "totalResults": {
+            "type": "integer",
+            "description": "Total number of items."
+          },
+          "_links": {
+            "$ref": "#/components/schemas/PagingInfo/definitions/links"
+          }
+        },
+        "definitions": {
+          "links": {
+            "title": "Hal Links",
+            "type": "object",
+            "required": [
+              "self",
+              "current"
+            ],
+            "properties": {
+              "self": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "current": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "next": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "previous": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              }
+            },
+            "examples": [
+              {
+                "self": {
+                  "href": "/companies/{id}/data/{dataType}"
+                },
+                "current": {
+                  "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+                }
+              }
+            ]
+          },
+          "halRef": {
+            "title": "Hypertext reference",
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string",
+                "format": "uri-reference",
+                "description": "Uri hypertext reference."
+              }
+            }
+          }
+        },
+        "required": [
+          "pageNumber",
+          "pageSize",
+          "totalResults",
+          "_links"
+        ],
+        "examples": [
+          {
+            "_links": {
+              "pageNumber": 1,
+              "pageSize": 10,
+              "totalResults": 1,
+              "self": {
+                "href": "/companies/{id}/data/{dataType}"
+              },
+              "current": {
+                "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+              }
+            }
+          }
+        ]
+      },
       "Payment": {
-        "title": "Commerce payment",
+        "title": "Commerce: Payment",
         "description": "Payments contain details of all payments made by customers to a company, including: amounts, currency used, payment method, payment provider, and payment status.\n\nRefunds are recorded as separate, negative payments. Note that a refund can only occur in relation to a payment that has been completed (i.e. has a status of `Paid`). When a customer cancels an order _before_ a payment has been completed, the payment shows as `Cancelled`.\n\nYou can use data from the Payments endpoints to calculate key metrics, such as gross sales and monthly recurring revenue (MRR).\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-payments) for this data type.",
         "type": "object",
         "allOf": [
@@ -8383,37 +8834,7 @@
                 "description": "Currency in which the payment was made"
               },
               "paymentMethodRef": {
-                "paymentMethodRef": {
-                  "type": "object",
-                  "description": "The payment method the record is linked to in the accounting or commerce platform.",
-                  "properties": {
-                    "id": {
-                      "description": "The unique identifier of the location being referenced.",
-                      "type": "string"
-                    },
-                    "name": {
-                      "description": "Name of the location being referenced.",
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "id"
-                  ],
-                  "example": {
-                    "id": "EILBDVJVNUAGVKRQ",
-                    "name": "AliPay"
-                  }
-                },
-                "paymentMethodStatus": {
-                  "type": "string",
-                  "enum": [
-                    "Active",
-                    "Archived",
-                    "Unknown"
-                  ],
-                  "description": "Status of the Payment Method",
-                  "example": "Active"
-                }
+                "$ref": "#/components/schemas/PaymentMethodRef"
               },
               "status": {
                 "$ref": "#/components/schemas/Payment/definitions/paymentStatus"
@@ -8430,6 +8851,9 @@
               "dueDate": {
                 "description": "Date by which payment must be made",
                 "$ref": "#/components/schemas/DateTime"
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/SupplementalData"
               }
             }
           },
@@ -8530,28 +8954,8 @@
           }
         }
       },
-      "Payments": {
-        "title": "Commerce payments",
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Payment"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
       "PaymentMethod": {
-        "title": "Commerce payment method",
+        "title": "Commerce: Payment method",
         "description": "A Payment Method represents the payment method(s) used to make payments.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-paymentMethods) for this data type.",
         "type": "object",
         "allOf": [
@@ -8567,29 +8971,46 @@
                 "example": "Alipay"
               },
               "status": {
-                "$ref": "#/components/schemas/PaymentMethod/definitions/paymentMethodStatus"
+                "description": "Status of the Payment Method.",
+                "x-internal": true,
+                "type": "string",
+                "enum": [
+                  "Unknown",
+                  "Active",
+                  "Archived"
+                ]
               }
             }
           },
           {
             "$ref": "#/components/schemas/ModifiedDates"
           }
-        ],
-        "definitions": {
-          "paymentMethodStatus": {
-            "type": "string",
-            "enum": [
-              "Active",
-              "Archived",
-              "Unknown"
-            ],
-            "description": "Status of the Payment Method",
-            "example": "Active"
+        ]
+      },
+      "PaymentMethodRef": {
+        "type": "object",
+        "title": "Payment method reference",
+        "description": "The payment method the record is linked to in the accounting or commerce platform.",
+        "properties": {
+          "id": {
+            "description": "The unique identifier of the location being referenced.",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the location being referenced.",
+            "type": "string"
           }
+        },
+        "required": [
+          "id"
+        ],
+        "example": {
+          "id": "EILBDVJVNUAGVKRQ",
+          "name": "AliPay"
         }
       },
       "PaymentMethods": {
-        "title": "Commerce payment methods",
+        "title": "Commerce: Payment methods",
         "x-internal": true,
         "allOf": [
           {
@@ -8608,8 +9029,65 @@
           }
         ]
       },
+      "Payments": {
+        "title": "Commerce: Payments",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Payment"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PagingInfo"
+          }
+        ]
+      },
+      "PhoneNumber": {
+        "title": "Phone",
+        "type": "object",
+        "x-internal": true,
+        "properties": {
+          "number": {
+            "type": "string",
+            "nullable": true,
+            "examples": [
+              "+44 25691 154789",
+              "(877) 492-8687",
+              "01224 658 999"
+            ],
+            "description": "A phone number."
+          },
+          "type": {
+            "$ref": "#/components/schemas/PhoneNumber/definitions/phoneNumberType"
+          }
+        },
+        "required": [
+          "number",
+          "type"
+        ],
+        "definitions": {
+          "phoneNumberType": {
+            "description": "The type of phone number",
+            "type": "string",
+            "enum": [
+              "Primary",
+              "Landline",
+              "Mobile",
+              "Fax",
+              "Unknown"
+            ]
+          }
+        }
+      },
       "Product": {
-        "title": "Commerce product",
+        "title": "Commerce: Product",
         "description": "A Product is an item in the company's inventory, and includes information about the price and quantity of all products, and variants thereof, available for sale.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-products) for this data type.\n",
         "type": "object",
         "allOf": [
@@ -8655,6 +9133,9 @@
                 "items": {
                   "$ref": "#/components/schemas/Product/definitions/productVariant"
                 }
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/SupplementalData"
               }
             }
           }
@@ -8857,8 +9338,8 @@
           }
         }
       },
-      "Products": {
-        "title": "Products",
+      "ProductCategories": {
+        "title": "Commerce: Product categories",
         "x-internal": true,
         "allOf": [
           {
@@ -8867,7 +9348,7 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/Product"
+                  "$ref": "#/components/schemas/ProductCategory"
                 }
               }
             }
@@ -8878,7 +9359,7 @@
         ]
       },
       "ProductCategory": {
-        "title": "Commerce product category",
+        "title": "Commerce: Product category",
         "description": "Product categories are used to classify a group of products together, either by type (e.g. \"Furniture\"), or sometimes by tax profile.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-productCategories) for this data type.",
         "type": "object",
         "allOf": [
@@ -8957,8 +9438,8 @@
           }
         ]
       },
-      "ProductCategories": {
-        "title": "Product categories",
+      "Products": {
+        "title": "Commerce: Products",
         "x-internal": true,
         "allOf": [
           {
@@ -8967,7 +9448,7 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/ProductCategory"
+                  "$ref": "#/components/schemas/Product"
                 }
               }
             }
@@ -8977,8 +9458,50 @@
           }
         ]
       },
+      "RecordRef": {
+        "title": "Record Ref",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "The unique identitifer of the record being referenced",
+            "type": "string",
+            "examples": [
+              "13d946f0-c5d5-42bc-b092-97ece17923ab",
+              "9wg4lep4ush5cxs79pl8sozmsndbaukll3ind4g7buqbm1h2",
+              7110701885,
+              "EILBDVJVNUAGVKRQ"
+            ]
+          },
+          "type": {
+            "description": "The type of record being referenced.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "type"
+        ],
+        "description": ""
+      },
+      "SupplementalData": {
+        "title": "Supplemental data",
+        "type": "object",
+        "x-internal": true,
+        "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting platform. [Learn more](https://docs.codat.io/using-the-api/supplemental-data/overview) about supplemental data.",
+        "properties": {
+          "content": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": true
+            },
+            "nullable": true
+          }
+        }
+      },
       "TaxComponent": {
-        "title": "Commerce tax component",
+        "title": "Commerce: Tax component",
         "description": "The Tax Components endpoints return tax rates data from the commerce platform, including tax rate names and values. This is to support the mapping of tax rates from the commerce platform to those in the accounting platform.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-disputes) for this data type.",
         "type": "object",
         "allOf": [
@@ -9072,7 +9595,7 @@
         ]
       },
       "TaxComponents": {
-        "title": "Tax components",
+        "title": "Commerce: Tax components",
         "x-internal": true,
         "allOf": [
           {
@@ -9092,7 +9615,7 @@
         ]
       },
       "Transaction": {
-        "title": "Commerce transaction",
+        "title": "Commerce: Transaction",
         "description": "Details of all financial transactions recorded in the commerce or point of sale system are added to the Transactions data type. For example, payments, service charges, and fees.\n\nYou can use data from the Transactions endpoints to calculate key metrics, such as:  \n- Transaction volumes  \n- Average transaction volume  \n- Average transaction value  \n- Returns  \n- Payouts\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-transactions) for this data type.",
         "type": "object",
         "allOf": [
@@ -9142,6 +9665,9 @@
                     "$ref": "#/components/schemas/Transaction/definitions/transactionSourceRef"
                   }
                 ]
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/SupplementalData"
               }
             }
           },
@@ -9228,7 +9754,7 @@
         "examples": []
       },
       "Transactions": {
-        "title": "Commerce transactions",
+        "title": "Commerce: Transactions",
         "x-internal": true,
         "allOf": [
           {
@@ -9246,297 +9772,6 @@
             "$ref": "#/components/schemas/PagingInfo"
           }
         ]
-      },
-      "Address": {
-        "title": "Address",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/Address/definitions/commerceAddressType"
-          },
-          "line1": {
-            "description": "The first line of the address",
-            "type": "string"
-          },
-          "line2": {
-            "description": "The second line of the address",
-            "type": "string"
-          },
-          "city": {
-            "description": "The third line of the address, or city",
-            "type": "string"
-          },
-          "region": {
-            "description": "The fourth line of the address, or region",
-            "type": "string"
-          },
-          "country": {
-            "description": "The country for the address",
-            "type": "string"
-          },
-          "postalCode": {
-            "description": "The postal (or zip) code for the address",
-            "type": "string"
-          }
-        },
-        "definitions": {
-          "commerceAddressType": {
-            "description": "The type of the address",
-            "type": "string",
-            "enum": [
-              "Billing",
-              "Delivery",
-              "Order",
-              "Inventory",
-              "Unknown"
-            ]
-          }
-        }
-      },
-      "PagingInfo": {
-        "type": "object",
-        "title": "Pagination information",
-        "x-internal": true,
-        "properties": {
-          "pageNumber": {
-            "type": "integer",
-            "description": "Current page number."
-          },
-          "pageSize": {
-            "type": "integer",
-            "description": "Number of items to return in results array.",
-            "maximum": 2000
-          },
-          "totalResults": {
-            "type": "integer",
-            "description": "Total number of items."
-          },
-          "_links": {
-            "$ref": "#/components/schemas/PagingInfo/definitions/links"
-          }
-        },
-        "definitions": {
-          "links": {
-            "title": "Hal Links",
-            "type": "object",
-            "required": [
-              "self",
-              "current"
-            ],
-            "properties": {
-              "self": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              },
-              "current": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              },
-              "next": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              },
-              "previous": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              }
-            },
-            "examples": [
-              {
-                "self": {
-                  "href": "/companies/{id}/data/{dataType}"
-                },
-                "current": {
-                  "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
-                }
-              }
-            ]
-          },
-          "halRef": {
-            "title": "Hypertext reference",
-            "type": "object",
-            "properties": {
-              "href": {
-                "type": "string",
-                "format": "uri-reference",
-                "description": "Uri hypertext reference."
-              }
-            }
-          }
-        },
-        "required": [
-          "pageNumber",
-          "pageSize",
-          "totalResults",
-          "_links"
-        ],
-        "examples": [
-          {
-            "_links": {
-              "pageNumber": 1,
-              "pageSize": 10,
-              "totalResults": 1,
-              "self": {
-                "href": "/companies/{id}/data/{dataType}"
-              },
-              "current": {
-                "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
-              }
-            }
-          }
-        ]
-      },
-      "PhoneNumber": {
-        "title": "Phone",
-        "type": "object",
-        "x-internal": true,
-        "properties": {
-          "number": {
-            "type": "string",
-            "nullable": true,
-            "examples": [
-              "+44 25691 154789",
-              "(877) 492-8687",
-              "01224 658 999"
-            ],
-            "description": "A phone number."
-          },
-          "type": {
-            "$ref": "#/components/schemas/PhoneNumber/definitions/phoneNumberType"
-          }
-        },
-        "required": [
-          "number",
-          "type"
-        ],
-        "definitions": {
-          "phoneNumberType": {
-            "description": "The type of phone number",
-            "type": "string",
-            "enum": [
-              "Primary",
-              "Landline",
-              "Mobile",
-              "Fax",
-              "Unknown"
-            ]
-          }
-        }
-      },
-      "RecordRef": {
-        "title": "Record Ref",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "id": {
-            "description": "The unique identitifer of the record being referenced",
-            "type": "string",
-            "examples": [
-              "13d946f0-c5d5-42bc-b092-97ece17923ab",
-              "9wg4lep4ush5cxs79pl8sozmsndbaukll3ind4g7buqbm1h2",
-              7110701885,
-              "EILBDVJVNUAGVKRQ"
-            ]
-          },
-          "type": {
-            "description": "The type of record being referenced.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "type"
-        ],
-        "description": ""
-      },
-      "DateTime": {
-        "title": "Date time",
-        "type": "string",
-        "examples": [
-          "2022-10-23T00:00:00.000Z",
-          "2022-10-23T00:00:00.000Z"
-        ],
-        "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
-      },
-      "CreatedDate": {
-        "title": "Created date",
-        "type": "object",
-        "x-internal": true,
-        "properties": {
-          "createdDate": {
-            "$ref": "#/components/schemas/DateTime",
-            "description": "The date the entity was created."
-          }
-        }
-      },
-      "ModifiedDates": {
-        "title": "Modified dates",
-        "x-internal": true,
-        "allOf": [
-          {
-            "title": "ModifiedDate",
-            "x-internal": true,
-            "type": "object",
-            "properties": {
-              "modifiedDate": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/DateTime"
-                  },
-                  {
-                    "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
-                  }
-                ]
-              }
-            }
-          },
-          {
-            "title": "Source Modified Date",
-            "x-internal": true,
-            "type": "object",
-            "nullable": true,
-            "properties": {
-              "sourceModifiedDate": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/DateTime"
-                  },
-                  {
-                    "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      "ErrorMessage": {
-        "title": "Error message",
-        "type": "object",
-        "x-internal": true,
-        "properties": {
-          "statusCode": {
-            "type": "integer",
-            "description": "The HTTP status code returned by the error."
-          },
-          "service": {
-            "type": "string",
-            "description": "Codat's service the returned the error."
-          },
-          "error": {
-            "type": "string",
-            "description": "A brief description of the error."
-          },
-          "correlationId": {
-            "type": "string",
-            "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
-          },
-          "canBeRetried": {
-            "type": "string",
-            "description": "`True` if the error occurred transiently and can be retried."
-          },
-          "detailedErrorCode": {
-            "type": "integer",
-            "description": "Machine readable error code used to automate processes based on the code returned."
-          }
-        }
       }
     },
     "parameters": {
@@ -9589,6 +9824,18 @@
         },
         "description": "Number of records to return in a page. [Read more](https://docs.codat.io/using-the-api/paging)."
       },
+      "productId": {
+        "name": "productId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "examples": {
+            "$ref": "#/components/schemas/Order/allOf/0/properties/id/examples"
+          }
+        },
+        "description": "Unique identifier for a product."
+      },
       "query": {
         "name": "query",
         "in": "query",
@@ -9611,6 +9858,38 @@
       }
     },
     "responses": {
+      "Malformed-Query": {
+        "description": "Your `query` parameter was not correctly formed",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Malformed query": {
+                "value": {
+                  "statusCode": 400,
+                  "service": "ClientsApi",
+                  "error": "Error parsing query - Malformed query.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              },
+              "Unresolved property": {
+                "value": {
+                  "statusCode": 400,
+                  "service": "PullApi",
+                  "error": "Error parsing query - Could not resolve property isCompleted on Dataset",
+                  "correlationId": "98457fb9956b7f9b4b2fd4f6e23bb5c8",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
       "Unauthorized": {
         "description": "Your API request was not properly authorized.",
         "content": {
@@ -9633,19 +9912,41 @@
           }
         }
       },
-      "Malformed-Query": {
-        "description": "Your `query` parameter was not correctly formed",
+      "Payment-Required": {
+        "description": "An account limit has been exceeded. The type of limit is described in the error property:\n\n- You have exceeded the 50-company limit that applies to a Free plan. Delete any companies you no longer need and retry the request.\n- The requested sync schedule is not allowed. You requested an hourly sync schedule but this functionality is not included in the Free plan.\n- Your Free account is older than 365 days and has expired. Contact support@codat.io.\n",
         "content": {
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/ErrorMessage"
             },
             "examples": {
-              "Malformed query": {
+              "Conflict": {
                 "value": {
-                  "statusCode": 400,
-                  "service": "ClientsApi",
-                  "error": "Error parsing query - Malformed query.",
+                  "statusCode": 429,
+                  "service": "PublicApi",
+                  "error": "You have exceeded the 50-company limit that applies to a Free plan. We recommend that you delete any companies you no longer need and retry the request.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "You are using an outdated API key or a key not associated with that resource.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 403,
+                  "service": "PublicApi",
+                  "error": "You are using an outdated API key or a key not associated with that resource.",
                   "correlationId": "bc997528a9d7abb9161ef45f05d38599",
                   "canBeRetried": "Unknown",
                   "detailedErrorCode": 0
@@ -9732,6 +10033,50 @@
                   "statusCode": 429,
                   "service": "PublicApi",
                   "error": "You have made too many requests in a given amount of time; please retry later.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Internal-Server-Error": {
+        "description": "There is a problem with our server. Please try again later.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 500,
+                  "service": "PublicApi",
+                  "error": "There is a problem with our server. Please try again later.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Service-Unavailable": {
+        "description": "The Codat API is temporarily offline for maintenance. Please try again later.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 500,
+                  "service": "PublicApi",
+                  "error": "The Codat API is temporarily offline for maintenance. Please try again later.",
                   "correlationId": "bc997528a9d7abb9161ef45f05d38599",
                   "canBeRetried": "Unknown",
                   "detailedErrorCode": 0

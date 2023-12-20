@@ -1,177 +1,209 @@
 ---
-title: "Bank feeds setup"
-description: "Push bank transaction data into your customers' accounting platforms with an automated feed"
+title: "Get started with Bank Feeds API"
+description: "Understand the basics of using Bank Feeds API and learn how to perform the initial setup for the product"
 sidebar_label: Get started
 displayed_sidebar: bankfeeds
-hide_title: true
-hide_description: true
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
+import {IntegrationsList} from '@components/global/Integrations'
+import {bankfeedsExternalMappingIntegrations, bankfeedsIntegrations} from '@components/global/Integrations/integrations'
 
-# Bank feeds setup
+## Journey overview
 
-## Overview
+The diagram below represents the overall activity flow when using Bank Feeds API, including your SMB customer and their accounting platform. It assumes you are using Codat's mapping interface to let the user select the accounts used for pushing bank statements.
+
+If you are using one of the [other mapping UI options](/bank-feeds/mapping/overview), you can visualize the flow by simply changing the actor of the mapping operation from `Codat` to `Your application` or `Accounting platform`.
 
 ```mermaid
-graph LR;
 
-    style codatCompany fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
-    style codatDataConnection fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
-    style codatSourceAccount fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
-    style targetAccount fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
-    style Mapping fill:#fff,stroke:#333,stroke-width:2px,stroke-dasharray: 0, border-radius: 12px;
-
-    subgraph Codat
-    direction TB;
-        codatCompany[<u style='color:#522ce7'>Company</u><br><small>The company represents an organization or SMB that <br> wishes to carry out bank reconciliation in their accounting <br> software, typically each company is one of your customers.</small>]  -.- codatDataConnection[<u style='color:#522ce7'>Data Connection</u><br><small>The data connection establishes a link between <br> a company that exists in Codat and their <br> selected accounting software</small>]
-        click codatCompany "/bank-feeds/setup#creating-a-company" "Companies"
-        codatDataConnection -.- codatSourceAccount[<u style='color:#522ce7'>Source Account</u><br><small>serves as replica of an actual financial account,<br> savings account, or credit card, in Codat</small>]
-        click codatDataConnection "/bank-feeds/setup#creating-a-data-connection" "Data Connections"
-        click codatSourceAccount "/bank-feeds/setup#creating-a-source-account" "Source Accounts"
-    end
-
-    style Codat fill:#f1f4fa,stroke:#666,stroke-width:0px;
-
-    subgraph Mapping[<u style='color:#522ce7'>Mapping</u><br><small>Is the process the SMB undertakes to authorize<br> and map the source account to a target account in their<br> accounting software to establish a bank feed</small>]
-
-    end
+sequenceDiagram
+    participant smb as SMB customer
+    participant app as Your application 
+    participant codat as Codat
+    participant acctg as Accounting platform
     
-    subgraph AccountingSoftware[Accounting Software]
-    direction TB;
-        targetAccount[<style='color:#2a2d3d'>Target Account<br><small>The target account is where transactions <br> are posted to, this enables <br> the company to carry out bank reconciliation</small>] 
+    smb ->> app: Logs into application
+    smb ->> app: Initiates connection to accounting software
+
+    app ->> codat: Passes company and connection details
+    app ->> codat: Initiates auth flow
+    codat ->> smb: Displays auth flow
+    smb ->> codat: Authorizes connection
+    codat ->> acctg: Establishes connection
+    
+    codat ->> smb: Displays mapping options
+    smb ->> codat: Confirms mapping selections
+    
+    loop Load bank statements
+        smb ->> app: Spends money from bank account
+        app ->> codat: Pushes bank transaction details
+        codat ->> acctg: Creates bank transactions
+        acctg ->> smb: Displays loaded bank statement ready for reconciliation
     end
-
-    style AccountingSoftware stroke-width:0px;
-
-    Codat -.-> Mapping
-          click Mapping "/bank-feeds/mapping" "Mapping"
-    Mapping -.-> AccountingSoftware
-
 
 ```
 
-### Creating a company
+Once you decide to build this flow with Bank Feeds API, you need to configure Codat accordingly. Let's go through these requirements in detail.
 
-Within the bank feeds api, a company represents a business that wishes to export their transactions from your application to their accounting software, the first step of the process is to create a company in Codat:
+## Enable Bank Feeds API
+
+1. Open the <a href="https://app.codat.io" target="_blank">Codat Portal</a> and sign in.
+2. Click on **Settings > Organizational settings > Products**.
+3. In the list of products, find _Bank Feeds API_ and click **Enable**. Then, follow the on-screen prompt.
+
+## Manage data sources
+
+In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** and click **Manage integrations**. Next, click **Manage** next to the specific integration you want to enable and set it up to serve as a data source for the product. 
+
+<IntegrationsList integrations={bankfeedsIntegrations}/>
+
+Some of these integrations require additional setup specific to bank feeds. We walk you through these in our integration-specific instructions in the _Manage integrations_ section of our Bank Feeds API documentation. 
+
+## Authorization flow
+
+As part of using Bank Feeds API, you will need your customers to authorize your access to their data. To do so, use [Embedded Link](/auth-flow/authorize-embedded-link) - our pre-built, embeddable, conversion-optimized, and white-labeled authorization flow. 
+
+The solution lets you tailor the authorization journey to your business needs. You can:
+
+* [Customize Link settings](/auth-flow/customize/customize-link).
+* [Set up company branding](/auth-flow/customize/branding).
+* [Set up redirects](/auth-flow/customize/set-up-redirects).
+
+## Webhooks
+
+Codat supports a range of [webhooks](/using-the-api/webhooks/core-rules-types) to help you manage your data pipelines. In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Rules** and click **Create new rule** to set up the following webhook and get the most out of Bank Feeds API:
+
+- [Push operation status has changed](/using-the-api/webhooks/core-rules-types#push-operation-status-has-changed)  
+
+  Use this webhook to track the completion of the operation to create bank transactions in the target platform. When you receive a notification from this webhook, check the `status` value in the body. A `Success` status means the `transactions` array has been successfully pushed to the accounting software. In case of errors, resolve the issue and resend the payload.
+
+
+## Client libraries
+
+Use our comprehensive [Bank Feeds API library](/get-started/libraries) to kick-start and simplify your build. 
+Simply install the library in one of the supported languages and pass your base64-encoded API key to the constructor.
 
 <Tabs>
 
-<TabItem value="Request URL" label="Request URL">
+<TabItem value="nodejs" label="TypeScript">
 
-You can create a company by using the [Create company](/bank-feeds-api#/operations/create-company) endpoint:
+#### Install
 
-```json
-POST /companies
-
-{
-    "name": "{CompanyName}"
-}
+##### NPM
+```sh
+npm add @codat/bank-feeds
 ```
 
-</TabItem >
-
-<TabItem value="Response" label="Response">
-
-The endpoint returns a JSON response containing the company `id` which you should use to create the data connection and specify which integration the company wishes to establish a bankfeed.
-
-```json
-{
-    "id": "77921ff9-2491-4dfe-b23b-ff28f3e31e4f",
-    "name": "Sawayn Group",
-    "platform": "",
-    "redirect": "https://link.codat.io/company/77921ff9-2491-4dfe-b23b-ff28f3e31e4f",
-    "dataConnections": [],
-    "created": "2023-09-06T09:13:35.8188152Z"
-}
+##### Yarn
+```sh
+yarn add @codat/bank-feeds
 ```
 
-</TabItem >
+#### Initialize
+
+```javascript
+import { CodatBankFeeds } from "@codat/bank-feeds";
+
+const bankFeedsClient = new CodatBankFeeds({
+        security: {
+            authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+        },
+    });
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+#### Install
+
+```sh
+pip install codat-bankfeeds
+```
+
+#### Initialize
+
+```python
+import codatbankfeeds
+from codatbankfeeds.models import shared
+
+bank_feeds_client = codatbankfeeds.CodatBankFeeds(
+    security=shared.Security(
+        auth_header="Basic BASE_64_ENCODED(API_KEY)",
+    ),
+)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+#### Install
+
+```sh
+dotnet add package Codat.BankFeeds
+```
+
+#### Initialize
+
+```csharp
+using Codat.BankFeeds;
+using Codat.BankFeeds.Models.Shared;
+
+var bankFeedsClient = new CodatBankFeeds(
+    security: new Security() {
+        AuthHeader = "Basic BASE_64_ENCODED(API_KEY)",
+    }
+);
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+#### Install
+
+```sh
+go get github.com/codatio/client-sdk-go/bank-feeds
+```
+
+#### Initialize
+
+```go
+import (
+	"context"
+	bankfeeds "github.com/codatio/client-sdk-go/bank-feeds/v4"
+	"github.com/codatio/client-sdk-go/bank-feeds/v4/pkg/models/shared"
+	"log"
+)
+
+func main() {
+  bankfeedsClient := bankfeeds.New(
+      bankfeeds.WithSecurity(shared.Security{
+        AuthHeader: "Basic BASE_64_ENCODED(API_KEY)",
+      }),
+    )
+}
+
+```
+
+</TabItem>
 
 </Tabs>
 
-### Creating a data connection
 
-Using the [Create a data connection](/bank-feeds-api#/operations/create-connection) endpoint, create a data connection to the chosen accounting package for the company.
+:::tip Recap
 
-   In the request body specify one of the following as the `platformKey`
+You have enabled Bank Feeds API, set up the relevant integrations, configured auth flow parameters, and noted the recommended webhook. This completes the initial setup of the product. 
 
-
-| Accounting platform | platformKey |
-| ---  | ---  |
-| Quickbooks Online Bankfeeds | `hcws` |
-| Xero | `gbol` |
-| FreeAgent | `fbrh` |
-| Sage Bank Feeds | `olpr` |
-
-
-<Tabs>
-
-<TabItem value="dataconnection-request" label="Request">
-
-Sample request to create a QuickBooks Online Data Connection for a company.
-   
-```json
-
-POST /companies/:companyId/connections
-{
-    "platformKey": "hcws"
-}
-
-```
-
-</TabItem >
-
-<TabItem value="dataconnection-response" label="Response">
-
-The endpoint returns a `200` response. The body contains a `dataConnection` object in `PendingAuth` status and a `linkUrl`, you should cache the `linkUrl` as it will be required later to enable the company to link their accounting package.
-
-   ```json
-
-   {
-     "id": "7baba7cc-4ae0-48fd-a617-98d55a6fc008",
-     "integrationId": "6b113e06-e818-45d7-977b-8e6bb3d01269",
-     "sourceId": "56e6575a-3f1f-4918-b009-f7535555f0d6",
-     "platformName": "QuickBooks Online Bank Feeds",
-     "linkUrl": "https://link-api.codat.io/companies/COMPANY_ID/connections/CONNECTION_ID/start?otp=742271", 
-     "status": "PendingAuth",
-     "created": "2022-09-01T10:21:57.0807447Z",
-     "sourceType": "BankFeed"
-   }
-
-   ```
-
-  **QuickBooks Online Bank Feeds**
-
-   For QuickBooks Online Bankfeeds, The `linkUrl` contains a one time password (OTP) which expires after one hour. If the OTP has expired, your customer will receive a 401 error when loading the page and you should generate a new OTP by a GET request to:
-```
-GET /companies/:companyId/connections/:connectionId
-```
-    
-</TabItem >
-
-</Tabs>
-
-<details>
-  <summary>Deauthorizing a dataConnection</summary>
-
-  If the company wishes to revoke the connection to their accounting package, you can do so using the [unlink-connection](/bank-feeds-api#/operations/unlink-connection) endpoint.
-
-  ```json
-  PATCH /companies/:companyId/connections/:connectionId
-  {
-  "status": "Unlinked"
-  }
-
+Next, you will create a Codat [company](../terms/company), its [connection](../terms/connection), and a source bank account to build out the core infrastructure required to establish a bank feed.
   
-  ```
-
-</details>
+:::
 
 ---
 
 ## Read next
 
-* [Create a source account](/bank-feeds/create-account)
-
+* [Create the key elements](/bank-feeds/create-account) of the Codat infrastructure required to establish a bank feed.

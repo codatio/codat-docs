@@ -175,6 +175,30 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -232,6 +256,30 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/components/responses/Malformed-Query"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -240,7 +288,7 @@
           "Advanced controls"
         ],
         "summary": "Create company",
-        "description": "Creates a Codat company..",
+        "description": "Creates a Codat company",
         "operationId": "create-company",
         "x-speakeasy-name-override": "create-company",
         "requestBody": {
@@ -265,6 +313,27 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -343,35 +412,28 @@
             }
           },
           "400": {
-            "description": "Your `query` parameter was not correctly formed",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorMessage"
-                },
-                "examples": {
-                  "Malformed query": {
-                    "value": {
-                      "statusCode": 400,
-                      "service": "ClientsApi",
-                      "error": "Error parsing query - Malformed query.",
-                      "correlationId": "bc997528a9d7abb9161ef45f05d38599",
-                      "canBeRetried": "Unknown",
-                      "detailedErrorCode": 0
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/Malformed-Query"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
           },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -431,11 +493,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -476,6 +550,27 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -515,6 +610,27 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "requestBody": {
@@ -556,6 +672,27 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -582,6 +719,33 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -618,6 +782,27 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/components/responses/Malformed-Query"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -646,6 +831,27 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -670,6 +876,11 @@
         "description": "Return preferences set for the text fields on sync flow.",
         "operationId": "get-config-text-sync-flow",
         "x-speakeasy-name-override": "get-config-text-sync-flow",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/locale"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -680,6 +891,24 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -691,6 +920,11 @@
         "description": "Set preferences for the text fields on sync flow.",
         "operationId": "update-config-text-sync-flow",
         "x-speakeasy-name-override": "update-config-text-sync-flow",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/locale"
+          }
+        ],
         "requestBody": {
           "description": "",
           "content": {
@@ -711,6 +945,27 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -742,6 +997,27 @@
                 }
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -780,6 +1056,30 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -819,6 +1119,30 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -862,6 +1186,30 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -891,49 +1239,26 @@
               }
             }
           },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/responses/BadRequest"
-                },
-                "examples": {
-                  "Bad request": {
-                    "value": {
-                      "statusCode": "400,",
-                      "service": "Commerce",
-                      "error": "Company does not have a linked accounting data connection.",
-                      "correlationId": "df56cdcd-3d13-4223-b96a-5c3777cbca06",
-                      "canBeRetried": "No",
-                      "detailedErrorCode": 0
-                    }
-                  }
-                }
-              }
-            }
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
           },
           "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/responses/Not-Found"
-                },
-                "examples": {
-                  "Not found": {
-                    "value": {
-                      "statusCode": "404,",
-                      "service": "Commerce",
-                      "error": "No syncs for company d30ba2b9-ae37-409d-971e-d5a747141905 were found.",
-                      "correlationId": "d789a0f6-d7bc-4d9d-ad2f-d4efcbd64eb2",
-                      "canBeRetried": "No",
-                      "detailedErrorCode": 0
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -944,6 +1269,11 @@
       ]
     },
     "/companies/{companyId}/sync/commerce/syncs/lastSuccessful/status": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ],
       "get": {
         "description": "Gets the status of the last successful sync",
         "summary": "Last successful sync",
@@ -972,19 +1302,26 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ]
+      }
     },
     "/companies/{companyId}/sync/commerce/syncs/latest/status": {
       "get": {
@@ -1015,11 +1352,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -1057,11 +1406,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         },
         "summary": "Get sync status",
@@ -1108,11 +1469,23 @@
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       },
@@ -1146,15 +1519,1337 @@
   },
   "components": {
     "schemas": {
-      "SyncToLatestArgs": {
-        "title": "Sync To Latest Args",
+      "AccountOption": {
+        "x-internal": true,
+        "title": "Account option",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "description": "Name of the account."
+          },
+          "id": {
+            "type": "string",
+            "description": "Identifier for the account, unique for the company."
+          },
+          "nominalCode": {
+            "type": "string",
+            "nullable": true,
+            "description": "Reference given to each nominal account for a business. It ensures money is allocated to the correct account. This code isn't a unique identifier in the Codat system."
+          },
+          "classification": {
+            "type": "string",
+            "nullable": true,
+            "description": "Classification of the type of G/L account.",
+            "example": "Bank Nominal"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Branding": {
+        "title": "Branding",
+        "type": "object",
+        "properties": {
+          "logo": {
+            "$ref": "#/components/schemas/Branding/definitions/brandingLogo"
+          },
+          "button": {
+            "$ref": "#/components/schemas/Branding/definitions/brandingButton"
+          },
+          "sourceId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "35b92968-9851-4095-ad60-395c95cbcba4",
+            "description": "A source-specific ID used to distinguish between different sources originating from the same data connection. In general, a data connection is a single data source. However, for TrueLayer, `sourceId` is associated with a specific bank and has a many-to-one relationship with the `integrationId`."
+          }
+        },
+        "definitions": {
+          "brandingLogo": {
+            "description": "Logo branding references.",
+            "type": "object",
+            "properties": {
+              "full": {
+                "$ref": "#/components/schemas/Branding/definitions/brandingImage"
+              },
+              "square": {
+                "$ref": "#/components/schemas/Branding/definitions/brandingImage"
+              }
+            }
+          },
+          "brandingButton": {
+            "type": "object",
+            "description": "Button branding references.",
+            "properties": {
+              "default": {
+                "$ref": "#/components/schemas/Branding/definitions/brandingImage"
+              },
+              "hover": {
+                "$ref": "#/components/schemas/Branding/definitions/brandingImage"
+              }
+            }
+          },
+          "brandingImage": {
+            "title": "Branding Image",
+            "type": "object",
+            "properties": {
+              "image": {
+                "$ref": "#/components/schemas/Branding/definitions/imageReference"
+              }
+            },
+            "examples": []
+          },
+          "imageReference": {
+            "type": "object",
+            "title": "Image Reference",
+            "description": "Image reference.",
+            "properties": {
+              "src": {
+                "type": "string",
+                "format": "uri",
+                "description": "Source URL for image."
+              },
+              "alt": {
+                "type": "string",
+                "description": "Alternative text when image is not available."
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "logo": {
+              "full": {
+                "image": {
+                  "src": "https://static.codat.io/public/officialLogos/Full/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png",
+                  "alt": "xero full icon"
+                }
+              },
+              "square": {
+                "image": {
+                  "src": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B2W3607.png",
+                  "alt": "xero square icon"
+                }
+              }
+            },
+            "button": {
+              "default": {
+                "image": {
+                  "src": "https://static.codat.io/public/officialButtons/Full/8A156A5A-39CB-4F9D-856E-76EF9Q7A9607.png",
+                  "alt": "xero default button icon"
+                }
+              },
+              "hover": {
+                "image": {
+                  "src": "https://static.codat.io/public/officialLogos/Full/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png",
+                  "alt": "xero hover button icon"
+                }
+              }
+            },
+            "sourceId": "35b92968-9851-4095-ad60-395c95cbcba4"
+          }
+        ]
+      },
+      "Companies": {
+        "title": "Companies",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Company"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PagingInfo"
+          }
+        ]
+      },
+      "Company": {
+        "title": "Company",
+        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/sync-for-sync-for-commerce-api#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/parameters/companyId/schema"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the company",
+            "example": "Codat Ltd."
+          },
+          "description": {
+            "type": "string",
+            "example": "Requested early access to the new financing scheme.",
+            "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
+          },
+          "platform": {
+            "type": "string",
+            "deprecated": true,
+            "example": "Xero",
+            "description": "`platformKeys` name used when creating the company."
+          },
+          "redirect": {
+            "type": "string",
+            "format": "uri",
+            "description": "The `redirect` [Link URL](https://docs.codat.io/auth-flow/authorize-hosted-link) enabling the customer to start their auth flow journey for the company.",
+            "example": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739"
+          },
+          "lastSync": {
+            "$ref": "#/components/schemas/Company/properties/created"
+          },
+          "created": {
+            "title": "Date time",
+            "type": "string",
+            "examples": [
+              "2022-10-23T00:00:00.000Z",
+              "2022-10-23T00:00:00.000Z"
+            ],
+            "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
+          },
+          "createdByUserName": {
+            "type": "string",
+            "description": "Name of user that created the company in Codat."
+          },
+          "dataConnections": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Connection"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "redirect"
+        ],
+        "examples": [
+          {
+            "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+            "name": "string",
+            "platform": "string",
+            "redirect": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739",
+            "lastSync": "2022-01-01T12:00:00.000Z",
+            "created": "2022-01-01T12:00:00.000Z",
+            "createdByUserName": "string",
+            "dataConnections": [
+              {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Linked",
+                "lastSync": "2022-10-27T10:22:43.6464237Z",
+                "created": "2022-10-27T09:53:29Z",
+                "sourceType": "Banking"
+              }
+            ]
+          }
+        ]
+      },
+      "CompanySyncStatus": {
+        "title": "Company sync status",
+        "type": "object",
+        "additionalProperties": false,
+        "x-examples": {
+          "Success Data Pushed": {
+            "companyId": "20803807-4e9a-4cb7-b67b-9f889a3916e1",
+            "syncId": "aa4c9dfd-e945-4424-9628-9e724f14c267",
+            "syncStatusCode": 2000,
+            "syncStatus": "Complete",
+            "errorMessage": "",
+            "syncExceptionMessage": "",
+            "syncUtc": "2023-01-24T14:15:22Z",
+            "dataPushed": true
+          },
+          "Success No Data Pushed": {
+            "companyId": "20803807-4e9a-4cb7-b67b-9f889a3916e1",
+            "syncId": "aa4c9dfd-e945-4424-9628-9e724f14c267",
+            "syncStatusCode": 2040,
+            "syncStatus": "Complete",
+            "errorMessage": "",
+            "syncExceptionMessage": "",
+            "syncUtc": "2023-01-24T14:15:22Z",
+            "dataPushed": false
+          }
+        },
+        "properties": {
+          "companyId": {
+            "type": "string",
+            "description": "Unique identifier for your SMB in Codat.",
+            "example": "d4d73051-ed31-42b6-99f6-d288cd940992",
+            "nullable": true
+          },
+          "syncId": {
+            "type": "string",
+            "description": "Unique identifier of the sync.",
+            "example": "a6a22aff-a43a-411d-a910-2dae73217cce",
+            "nullable": true
+          },
+          "syncStatusCode": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Status code of the sync.",
+            "example": 2000
+          },
+          "syncStatus": {
+            "type": "string",
+            "description": "Text status of the sync.",
+            "example": "Completed",
+            "nullable": true
+          },
+          "errorMessage": {
+            "type": "string",
+            "description": "Error message of the sync.",
+            "nullable": true
+          },
+          "syncExceptionMessage": {
+            "type": "string",
+            "description": "Exception message of the sync.",
+            "nullable": true
+          },
+          "syncUtc": {
+            "$ref": "#/components/schemas/Company/properties/created",
+            "description": "Datetime of the sync.",
+            "nullable": true
+          },
+          "dataPushed": {
+            "type": "boolean",
+            "description": "Boolean of whether the sync resulted in data being pushed."
+          }
+        }
+      },
+      "ConfigAccount": {
+        "x-internal": true,
+        "title": "Account configuration",
+        "type": "object",
+        "description": "G/L account object for configuration.",
+        "properties": {
+          "labelText": {
+            "type": "string",
+            "nullable": true,
+            "description": "Label text for sales configuration section."
+          },
+          "descriptionText": {
+            "type": "string",
+            "nullable": true,
+            "description": "Descriprtive text for sales configuration section."
+          },
+          "selectedAccountId": {
+            "type": "string",
+            "nullable": true,
+            "description": "Selected account id from the list of available accounts."
+          },
+          "required": {
+            "type": "boolean",
+            "description": "Required section to be configured for sync."
+          },
+          "accountOptions": {
+            "type": "array",
+            "description": "Object containing account options.",
+            "items": {
+              "$ref": "#/components/schemas/AccountOption"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Configuration": {
+        "title": "Configuration",
+        "type": "object",
+        "properties": {
+          "sales": {
+            "$ref": "#/components/schemas/Sales"
+          },
+          "payments": {
+            "$ref": "#/components/schemas/Payments"
+          },
+          "newPayments": {
+            "$ref": "#/components/schemas/NewPayments"
+          },
+          "fees": {
+            "$ref": "#/components/schemas/Fees"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Connection": {
+        "title": "Connection",
+        "description": "﻿A connection represents a [company's](https://docs.codat.io/sync-for-sync-for-commerce-api#/schemas/Company) connection to a data source and allows you to synchronize data (pull and/or push) with that source.\n\nA company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:\n\n- [Accounting data](https://docs.codat.io/accounting-api/overview) - 1 active connection.\n- [Banking data](https://docs.codat.io/banking-api/overview) - Multiple active connections.\n- [Commerce data](https://docs.codat.io/commerce-api/overview) - Multiple active connections.\nAny combination of accounting, banking, and commerce data connections is allowed.\n\nBefore you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/auth-flow/overview).",
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/parameters/connectionId/schema"
+          },
+          "integrationId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "fd321cb6-7963-4506-b873-e99593a45e30",
+            "description": "A Codat ID representing the integration."
+          },
+          "integrationKey": {
+            "type": "string",
+            "description": "A unique four-character ID that identifies the platform of the company's data connection. This ensures continuity if the platform changes its name in the future."
+          },
+          "sourceId": {
+            "$ref": "#/components/schemas/Branding/properties/sourceId"
+          },
+          "sourceType": {
+            "title": "Source Type",
+            "x-internal": true,
+            "description": "The type of platform of the connection.",
+            "type": "string",
+            "enum": [
+              "Accounting",
+              "Banking",
+              "Commerce",
+              "Other",
+              "Unknown"
+            ],
+            "example": "Accounting"
+          },
+          "platformName": {
+            "type": "string",
+            "description": "Name of integration connected to company."
+          },
+          "linkUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "The link URL your customers can use to authorize access to their business application.",
+            "example": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/2e2eb431-c1fa-4dc9-93fa-d29781c12bcd/start"
+          },
+          "status": {
+            "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
+          },
+          "lastSync": {
+            "$ref": "#/components/schemas/Company/properties/created"
+          },
+          "created": {
+            "$ref": "#/components/schemas/Company/properties/created"
+          },
+          "dataConnectionErrors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Connection/definitions/dataConnectionError"
+            }
+          },
+          "connectionInfo": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "required": [
+          "id",
+          "integrationId",
+          "integrationKey",
+          "sourceId",
+          "platformName",
+          "linkUrl",
+          "status",
+          "created",
+          "sourceType"
+        ],
+        "definitions": {
+          "dataConnectionStatus": {
+            "title": "Data connection status",
+            "description": "The current authorization status of the data connection.",
+            "type": "string",
+            "enum": [
+              "PendingAuth",
+              "Linked",
+              "Unlinked",
+              "Deauthorized"
+            ]
+          },
+          "dataConnectionError": {
+            "title": "Data connection error",
+            "type": "object",
+            "properties": {
+              "statusCode": {
+                "type": "string",
+                "description": "The HTTP status code returned by the error."
+              },
+              "statusText": {
+                "type": "string",
+                "description": "A non-numeric status code/text."
+              },
+              "errorMessage": {
+                "type": "string",
+                "description": "A brief message about the error."
+              },
+              "erroredOnUtc": {
+                "$ref": "#/components/schemas/Company/properties/created"
+              }
+            }
+          },
+          "dataConnectionSourceType": {
+            "title": "Source Type",
+            "description": "The type of platform of the connection.",
+            "type": "string",
+            "enum": [
+              "Accounting",
+              "Banking",
+              "Commerce",
+              "Other",
+              "Unknown"
+            ],
+            "example": "Accounting"
+          }
+        },
+        "example": {
+          "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+          "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+          "integrationKey": "dfxm",
+          "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+          "platformName": "Basiq",
+          "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+          "status": "Linked",
+          "lastSync": "2022-10-27T10:22:43.6464237Z",
+          "created": "2022-10-27T09:53:29Z",
+          "sourceType": "Banking"
+        }
+      },
+      "Connections": {
+        "title": "Connections",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Connection"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PagingInfo"
+          }
+        ]
+      },
+      "CreateCompany": {
+        "title": "Create company request",
         "x-internal": true,
         "type": "object",
         "properties": {
-          "syncTo": {
-            "$ref": "#/components/schemas/Company/properties/created",
-            "description": "The DateTime, upto which Sync will run up to starting from the previous successful sync",
+          "name": {
+            "type": "string",
+            "description": "Name of company being connected.",
+            "pattern": "^[A-Za-z0-9\\s\\-',&@.,?!\\s]+$",
+            "minLength": 1,
+            "example": "Bank of Dave"
+          },
+          "description": {
+            "$ref": "#/components/schemas/Company/properties/description"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "Customer": {
+        "title": "Customer",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "selectedCustomerId": {
+            "type": "string",
+            "nullable": true,
+            "description": "Selected customer id from the list of customer records on the accounting software."
+          },
+          "customerOptions": {
+            "type": "array",
+            "description": "List of customer options from the list of customer records on the accounting software.",
+            "items": {
+              "$ref": "#/components/schemas/Option"
+            },
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ErrorMessage": {
+        "title": "Error message",
+        "type": "object",
+        "x-internal": true,
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "description": "The HTTP status code returned by the error."
+          },
+          "service": {
+            "type": "string",
+            "description": "Codat's service the returned the error."
+          },
+          "error": {
+            "type": "string",
+            "description": "A brief description of the error."
+          },
+          "correlationId": {
+            "type": "string",
+            "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
+          },
+          "canBeRetried": {
+            "type": "string",
+            "description": "`True` if the error occurred transiently and can be retried."
+          },
+          "detailedErrorCode": {
+            "type": "integer",
+            "description": "Machine readable error code used to automate processes based on the code returned."
+          }
+        }
+      },
+      "Fees": {
+        "title": "Fees",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "feesSupplier": {
+            "$ref": "#/components/schemas/FeesSupplier"
+          },
+          "syncFees": {
+            "type": "boolean",
+            "description": "Boolean indicator to enable syncing fees."
+          },
+          "accounts": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ConfigAccount"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FeesSupplier": {
+        "x-internal": true,
+        "title": "Supplier fees",
+        "type": "object",
+        "properties": {
+          "selectedSupplierId": {
+            "type": "string",
+            "nullable": true,
+            "description": "Selected supplier id from the list of supplier records on the accounting software."
+          },
+          "supplierOptions": {
+            "type": "array",
+            "description": "List of supplier options from the list of supplier records on the accounting software.",
+            "items": {
+              "$ref": "#/components/schemas/Option"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Grouping": {
+        "title": "Grouping",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "groupingPeriod": {
+            "$ref": "#/components/schemas/GroupingPeriod"
+          },
+          "groupingLevels": {
+            "$ref": "#/components/schemas/GroupingLevels"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GroupingLevels": {
+        "x-internal": true,
+        "title": "Grouping levels",
+        "type": "object",
+        "properties": {
+          "invoiceLevel": {
+            "$ref": "#/components/schemas/InvoiceLevelSelection"
+          },
+          "invoiceLineLevel": {
+            "$ref": "#/components/schemas/InvoiceLineLevelSelection"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GroupingPeriod": {
+        "x-internal": true,
+        "title": "Grouping period",
+        "type": "object",
+        "properties": {
+          "selectedGroupingPeriod": {
+            "type": "string",
+            "nullable": true,
+            "description": "Grouping period i.e. Daily sales."
+          },
+          "groupingPeriodOptions": {
+            "type": "array",
+            "description": "Array of grouping period options.",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Integration": {
+        "title": "Integration",
+        "description": "An integration that Codat supports",
+        "examples": [
+          {
+            "key": "gbol",
+            "logoUrl": "http://example.com",
+            "name": "Xero",
+            "enabled": true,
+            "sourceId": "accounting",
+            "sourceType": "8193a927-ab7a-45a3-9dc2-d357a4932dfe",
+            "integrationId": "497a18ca-284e-40c0-985d-f72be35d468e",
+            "isOfflineConnector": true,
+            "isBeta": true,
+            "dataProvidedBy": "string",
+            "datatypeFeatures": [
+              {
+                "datatype": "invoices",
+                "supportedFeatures": [
+                  {
+                    "featureType": "get",
+                    "featureState": "release"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "$ref": "#/components/parameters/platformKey/schema"
+          },
+          "logoUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "Static url for integration's logo."
+          },
+          "name": {
+            "type": "string",
+            "example": "Xero",
+            "description": "Name of integration."
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether this integration is enabled for your customers to use."
+          },
+          "sourceId": {
+            "$ref": "#/components/schemas/Branding/properties/sourceId"
+          },
+          "sourceType": {
+            "$ref": "#/components/schemas/Connection/properties/sourceType"
+          },
+          "integrationId": {
+            "$ref": "#/components/schemas/Connection/properties/integrationId"
+          },
+          "isOfflineConnector": {
+            "type": "boolean",
+            "description": "`True` if the integration is to an application installed and run locally on an SMBs computer."
+          },
+          "isBeta": {
+            "type": "boolean",
+            "description": "`True` if the integration is currently in beta release."
+          },
+          "dataProvidedBy": {
+            "type": "string",
+            "description": "The name of the data provider."
+          },
+          "datatypeFeatures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Integration/definitions/dataTypeFeature"
+            }
+          }
+        },
+        "required": [
+          "key",
+          "logoUrl",
+          "name",
+          "enabled"
+        ],
+        "definitions": {
+          "dataTypeFeature": {
+            "title": "Data type feature",
+            "description": "Describes support for a given datatype and associated operations",
+            "type": "object",
+            "properties": {
+              "dataType": {
+                "title": "Data types",
+                "x-internal": true,
+                "type": "string",
+                "description": "Available Data types",
+                "enum": [
+                  "accountTransactions",
+                  "balanceSheet",
+                  "bankAccounts",
+                  "bankTransactions",
+                  "billCreditNotes",
+                  "billPayments",
+                  "bills",
+                  "cashFlowStatement",
+                  "chartOfAccounts",
+                  "company",
+                  "creditNotes",
+                  "customers",
+                  "directCosts",
+                  "directIncomes",
+                  "invoices",
+                  "itemReceipts",
+                  "items",
+                  "journalEntries",
+                  "journals",
+                  "paymentMethods",
+                  "payments",
+                  "profitAndLoss",
+                  "purchaseOrders",
+                  "salesOrders",
+                  "suppliers",
+                  "taxRates",
+                  "trackingCategories",
+                  "transfers",
+                  "banking-accountBalances",
+                  "banking-accounts",
+                  "banking-transactionCategories",
+                  "banking-transactions",
+                  "commerce-companyInfo",
+                  "commerce-customers",
+                  "commerce-disputes",
+                  "commerce-locations",
+                  "commerce-orders",
+                  "commerce-paymentMethods",
+                  "commerce-payments",
+                  "commerce-productCategories",
+                  "commerce-products",
+                  "commerce-taxComponents",
+                  "commerce-transactions"
+                ],
+                "example": "invoices"
+              },
+              "supportedFeatures": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Integration/definitions/supportedFeature"
+                }
+              }
+            },
+            "required": [
+              "datatype",
+              "supportedFeatures"
+            ],
+            "examples": [
+              {
+                "datatype": "invoices",
+                "supportedFeatures": [
+                  {
+                    "featureType": "Get",
+                    "featureState": "Release"
+                  }
+                ]
+              }
+            ]
+          },
+          "supportedFeature": {
+            "type": "object",
+            "x-internal": true,
+            "properties": {
+              "featureType": {
+                "$ref": "#/components/schemas/Integration/definitions/featureType"
+              },
+              "featureState": {
+                "$ref": "#/components/schemas/Integration/definitions/featureState"
+              }
+            },
+            "required": [
+              "featureType",
+              "featureState"
+            ]
+          },
+          "featureState": {
+            "title": "Feature state",
+            "type": "string",
+            "example": "Release",
+            "description": "The current release state of the feature.",
+            "enum": [
+              "Release",
+              "Alpha",
+              "Beta",
+              "Deprecated",
+              "NotSupported",
+              "NotImplemented"
+            ]
+          },
+          "featureType": {
+            "type": "string",
+            "x-internal": true,
+            "description": "The type of feature.",
+            "enum": [
+              "Get",
+              "Post",
+              "Categorization",
+              "Delete",
+              "Put",
+              "GetAsPdf",
+              "DownloadAttachment",
+              "GetAttachment",
+              "GetAttachments",
+              "UploadAttachment"
+            ],
+            "example": "Get"
+          }
+        }
+      },
+      "Integrations": {
+        "title": "Integrations",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Integration"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PagingInfo"
+          }
+        ]
+      },
+      "InvoiceLevelSelection": {
+        "x-internal": true,
+        "title": "Invoice level selection",
+        "type": "object",
+        "properties": {
+          "selectedGroupByOptions": {
+            "type": "array",
+            "description": "Selected array of grouping options.",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "groupByOptions": {
+            "type": "array",
+            "description": "Options for grouping sales.",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InvoiceLineLevelSelection": {
+        "x-internal": true,
+        "title": "Invoice line level selection",
+        "type": "object",
+        "properties": {
+          "selectedGroupByOptions": {
+            "type": "array",
+            "description": "Invoice line level selection.",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "groupByOptions": {
+            "type": "array",
+            "description": "Options for grouping on invoice lines.",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InvoiceStatus": {
+        "x-internal": true,
+        "title": "Invoice status",
+        "type": "object",
+        "properties": {
+          "selectedInvoiceStatus": {
+            "type": "string",
+            "nullable": true,
+            "description": "Selected option for invoice status for invoice to be synced.",
+            "example": "Submitted"
+          },
+          "invoiceStatusOptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "description": "Options for invoice statuses."
+          }
+        },
+        "additionalProperties": false
+      },
+      "Localization": {
+        "title": "Localization",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Value of the property.",
+            "nullable": true
+          },
+          "required": {
+            "type": "boolean",
+            "description": "`True` if required."
+          }
+        }
+      },
+      "LocalizationInfo": {
+        "title": "Localization info",
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/Localization"
+        }
+      },
+      "NewPayments": {
+        "x-internal": true,
+        "title": "New payments",
+        "type": "object",
+        "properties": {
+          "syncPayments": {
+            "type": "boolean",
+            "description": "Boolean indicator for syncing payments."
+          },
+          "accounts": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ConfigAccount"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "NewTaxRates": {
+        "x-internal": true,
+        "title": "New tax rates",
+        "type": "object",
+        "properties": {
+          "accountingTaxRateOptions": {
+            "type": "array",
+            "description": "Array of accounting tax rate options.",
+            "items": {
+              "$ref": "#/components/schemas/Option"
+            },
+            "nullable": true
+          },
+          "commerceTaxRateOptions": {
+            "type": "array",
+            "description": "Array of tax component options.",
+            "items": {
+              "$ref": "#/components/schemas/Option"
+            },
+            "nullable": true
+          },
+          "taxRateMappings": {
+            "type": "array",
+            "description": "Array of tax component to rate mapppings.",
+            "items": {
+              "$ref": "#/components/schemas/TaxRateMapping"
+            },
+            "nullable": true
+          },
+          "selectedDefaultZeroTaxRateId": {
+            "type": "string",
+            "description": "Default tax rate selected for sync.",
+            "nullable": true
+          },
+          "defaultZeroTaxRateOptions": {
+            "type": "array",
+            "description": "Default zero tax rate selected for sync.",
+            "items": {
+              "$ref": "#/components/schemas/Option"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Option": {
+        "title": "Option",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name value of the option.",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the option."
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagingInfo": {
+        "type": "object",
+        "title": "Pagination information",
+        "x-internal": true,
+        "properties": {
+          "pageNumber": {
+            "type": "integer",
+            "description": "Current page number."
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "Number of items to return in results array.",
+            "maximum": 2000
+          },
+          "totalResults": {
+            "type": "integer",
+            "description": "Total number of items."
+          },
+          "_links": {
+            "$ref": "#/components/schemas/PagingInfo/definitions/links"
+          }
+        },
+        "definitions": {
+          "links": {
+            "title": "Hal Links",
+            "type": "object",
+            "required": [
+              "self",
+              "current"
+            ],
+            "properties": {
+              "self": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "current": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "next": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              },
+              "previous": {
+                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
+              }
+            },
+            "examples": [
+              {
+                "self": {
+                  "href": "/companies/{id}/data/{dataType}"
+                },
+                "current": {
+                  "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+                }
+              }
+            ]
+          },
+          "halRef": {
+            "title": "Hypertext reference",
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string",
+                "format": "uri-reference",
+                "description": "Uri hypertext reference."
+              }
+            }
+          }
+        },
+        "required": [
+          "pageNumber",
+          "pageSize",
+          "totalResults",
+          "_links"
+        ],
+        "examples": [
+          {
+            "_links": {
+              "pageNumber": 1,
+              "pageSize": 10,
+              "totalResults": 1,
+              "self": {
+                "href": "/companies/{id}/data/{dataType}"
+              },
+              "current": {
+                "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+              }
+            }
+          }
+        ]
+      },
+      "Payments": {
+        "title": "Payments",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "syncPayments": {
+            "type": "boolean",
+            "description": "Boolean indicator for syncing sales."
+          },
+          "accounts": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ConfigAccount"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Sales": {
+        "title": "Sales",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "syncSales": {
+            "type": "boolean",
+            "description": "Boolean indicator for syncing sales."
+          },
+          "accounts": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ConfigAccount"
+            },
+            "nullable": true
+          },
+          "invoiceStatus": {
+            "$ref": "#/components/schemas/InvoiceStatus"
+          },
+          "salesCustomer": {
+            "$ref": "#/components/schemas/Customer"
+          },
+          "taxRates": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/TaxRateAmount"
+            },
+            "nullable": true
+          },
+          "newTaxRates": {
+            "$ref": "#/components/schemas/NewTaxRates"
+          },
+          "grouping": {
+            "$ref": "#/components/schemas/Grouping"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SyncConnectionDeletedWebhook": {
+        "title": "Sync connection deleted webhook",
+        "description": "A Sync for Commerce connection is deleted.",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "ClientId": {
+            "$ref": "#/components/parameters/clientId/schema"
+          },
+          "ClientName": {
+            "type": "string",
+            "description": "Name of your client in Codat."
+          },
+          "CompanyId": {
+            "$ref": "#/components/parameters/companyId/schema"
+          },
+          "RuleId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for the rule."
+          },
+          "RuleType": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "34d52a089f08a"
+            },
+            "description": "The type of rule."
+          },
+          "AlertId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier of the webhook event."
+          },
+          "Message": {
+            "type": "string",
+            "description": "A human readable message about the webhook."
+          }
+        },
+        "examples": [
+          {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
+            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "RuleType": "Sync Connection Deleted",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "Sync connection for company 8a210b68-6988-11ed-a1eb-0242ac120002 deleted"
+          },
+          {
+            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "ClientName": "Bank of Dave",
+            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+            "RuleType": "Sync Connection Deleted",
+            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+            "Message": "Sync connection for company Tesco (8a210b68-6988-11ed-a1eb-0242ac120002) deleted"
+          }
+        ]
+      },
+      "SyncFlowUrl": {
+        "title": "Sync flow url",
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "Sync flow URL.",
+            "example": "https://sync-flow-integration.codat.io/57b6fad9-e3ca-447b-89db-e4ffa21e6ef3/aiwb/mqjo/start?otp=836415"
+          }
+        }
+      },
+      "SyncRange": {
+        "x-internal": true,
+        "title": "Data range",
+        "type": "object",
+        "required": [
+          "dateRange"
+        ],
+        "properties": {
+          "dateRange": {
+            "type": "object",
+            "properties": {
+              "start": {
+                "$ref": "#/components/schemas/Company/properties/created",
+                "description": "Start date of the Sync."
+              },
+              "finish": {
+                "$ref": "#/components/schemas/Company/properties/created",
+                "description": "Finish date of the Sync."
+              }
+            },
+            "required": [
+              "start",
+              "finish"
+            ]
           }
         }
       },
@@ -1341,1155 +3036,17 @@
         },
         "additionalProperties": false
       },
-      "SyncRange": {
+      "SyncToLatestArgs": {
+        "title": "Sync To Latest Args",
         "x-internal": true,
-        "title": "Data range",
         "type": "object",
-        "required": [
-          "dateRange"
-        ],
         "properties": {
-          "dateRange": {
-            "type": "object",
-            "properties": {
-              "start": {
-                "$ref": "#/components/schemas/Company/properties/created",
-                "description": "Start date of the Sync."
-              },
-              "finish": {
-                "$ref": "#/components/schemas/Company/properties/created",
-                "description": "Finish date of the Sync."
-              }
-            },
-            "required": [
-              "start",
-              "finish"
-            ]
+          "syncTo": {
+            "$ref": "#/components/schemas/Company/properties/created",
+            "description": "The DateTime, upto which Sync will run up to starting from the previous successful sync",
+            "nullable": true
           }
         }
-      },
-      "CreateCompany": {
-        "title": "Create company request",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Name of company being connected.",
-            "pattern": "^[A-Za-z0-9\\s\\-',&@.,?!\\s]+$",
-            "minLength": 1,
-            "example": "Bank of Dave"
-          },
-          "description": {
-            "$ref": "#/components/schemas/Company/properties/description"
-          }
-        },
-        "required": [
-          "name"
-        ]
-      },
-      "Connection": {
-        "title": "Connection",
-        "description": "﻿A connection represents a [company's](https://docs.codat.io/sync-for-sync-for-commerce-api#/schemas/Company) connection to a data source and allows you to synchronize data (pull and/or push) with that source.\n\nA company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:\n\n- [Accounting data](https://docs.codat.io/accounting-api/overview) - 1 active connection.\n- [Banking data](https://docs.codat.io/banking-api/overview) - Multiple active connections.\n- [Commerce data](https://docs.codat.io/commerce-api/overview) - Multiple active connections.\nAny combination of accounting, banking, and commerce data connections is allowed.\n\nBefore you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/auth-flow/overview).",
-        "type": "object",
-        "properties": {
-          "id": {
-            "$ref": "#/components/parameters/connectionId/schema"
-          },
-          "integrationId": {
-            "type": "string",
-            "format": "uuid",
-            "example": "fd321cb6-7963-4506-b873-e99593a45e30",
-            "description": "A Codat ID representing the integration."
-          },
-          "integrationKey": {
-            "type": "string",
-            "description": "A unique four-character ID that identifies the platform of the company's data connection. This ensures continuity if the platform changes its name in the future."
-          },
-          "sourceId": {
-            "$ref": "#/components/schemas/Branding/properties/sourceId"
-          },
-          "sourceType": {
-            "title": "Source Type",
-            "x-internal": true,
-            "description": "The type of platform of the connection.",
-            "type": "string",
-            "enum": [
-              "Accounting",
-              "Banking",
-              "Commerce",
-              "Other",
-              "Unknown"
-            ],
-            "example": "Accounting"
-          },
-          "platformName": {
-            "type": "string",
-            "description": "Name of integration connected to company."
-          },
-          "linkUrl": {
-            "type": "string",
-            "format": "uri",
-            "description": "The link URL your customers can use to authorize access to their business application.",
-            "example": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/2e2eb431-c1fa-4dc9-93fa-d29781c12bcd/start"
-          },
-          "status": {
-            "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
-          },
-          "lastSync": {
-            "$ref": "#/components/schemas/Company/properties/created"
-          },
-          "created": {
-            "$ref": "#/components/schemas/Company/properties/created"
-          },
-          "dataConnectionErrors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Connection/definitions/dataConnectionError"
-            }
-          },
-          "connectionInfo": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        },
-        "required": [
-          "id",
-          "integrationId",
-          "integrationKey",
-          "sourceId",
-          "platformName",
-          "linkUrl",
-          "status",
-          "created",
-          "sourceType"
-        ],
-        "definitions": {
-          "dataConnectionStatus": {
-            "title": "Data connection status",
-            "description": "The current authorization status of the data connection.",
-            "type": "string",
-            "enum": [
-              "PendingAuth",
-              "Linked",
-              "Unlinked",
-              "Deauthorized"
-            ]
-          },
-          "dataConnectionError": {
-            "title": "Data connection error",
-            "type": "object",
-            "properties": {
-              "statusCode": {
-                "type": "string",
-                "description": "The HTTP status code returned by the error."
-              },
-              "statusText": {
-                "type": "string",
-                "description": "A non-numeric status code/text."
-              },
-              "errorMessage": {
-                "type": "string",
-                "description": "A brief message about the error."
-              },
-              "erroredOnUtc": {
-                "$ref": "#/components/schemas/Company/properties/created"
-              }
-            }
-          },
-          "dataConnectionSourceType": {
-            "title": "Source Type",
-            "description": "The type of platform of the connection.",
-            "type": "string",
-            "enum": [
-              "Accounting",
-              "Banking",
-              "Commerce",
-              "Other",
-              "Unknown"
-            ],
-            "example": "Accounting"
-          }
-        },
-        "example": {
-          "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
-          "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
-          "integrationKey": "dfxm",
-          "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
-          "platformName": "Basiq",
-          "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
-          "status": "Linked",
-          "lastSync": "2022-10-27T10:22:43.6464237Z",
-          "created": "2022-10-27T09:53:29Z",
-          "sourceType": "Banking"
-        }
-      },
-      "Connections": {
-        "title": "Connections",
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Connection"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
-      "Companies": {
-        "title": "Companies",
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Company"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
-      "PagingInfo": {
-        "type": "object",
-        "title": "Pagination information",
-        "x-internal": true,
-        "properties": {
-          "pageNumber": {
-            "type": "integer",
-            "description": "Current page number."
-          },
-          "pageSize": {
-            "type": "integer",
-            "description": "Number of items to return in results array.",
-            "maximum": 2000
-          },
-          "totalResults": {
-            "type": "integer",
-            "description": "Total number of items."
-          },
-          "_links": {
-            "$ref": "#/components/schemas/PagingInfo/definitions/links"
-          }
-        },
-        "definitions": {
-          "links": {
-            "title": "Hal Links",
-            "type": "object",
-            "required": [
-              "self",
-              "current"
-            ],
-            "properties": {
-              "self": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              },
-              "current": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              },
-              "next": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              },
-              "previous": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              }
-            },
-            "examples": [
-              {
-                "self": {
-                  "href": "/companies/{id}/data/{dataType}"
-                },
-                "current": {
-                  "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
-                }
-              }
-            ]
-          },
-          "halRef": {
-            "title": "Hypertext reference",
-            "type": "object",
-            "properties": {
-              "href": {
-                "type": "string",
-                "format": "uri-reference",
-                "description": "Uri hypertext reference."
-              }
-            }
-          }
-        },
-        "required": [
-          "pageNumber",
-          "pageSize",
-          "totalResults",
-          "_links"
-        ],
-        "examples": [
-          {
-            "_links": {
-              "pageNumber": 1,
-              "pageSize": 10,
-              "totalResults": 1,
-              "self": {
-                "href": "/companies/{id}/data/{dataType}"
-              },
-              "current": {
-                "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
-              }
-            }
-          }
-        ]
-      },
-      "Company": {
-        "title": "Company",
-        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/sync-for-sync-for-commerce-api#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
-        "type": "object",
-        "properties": {
-          "id": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "name": {
-            "type": "string",
-            "description": "The name of the company",
-            "example": "Codat Ltd."
-          },
-          "description": {
-            "type": "string",
-            "example": "Requested early access to the new financing scheme.",
-            "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
-          },
-          "platform": {
-            "type": "string",
-            "deprecated": true,
-            "example": "Xero",
-            "description": "`platformKeys` name used when creating the company."
-          },
-          "redirect": {
-            "type": "string",
-            "format": "uri",
-            "description": "The `redirect` [Link URL](https://docs.codat.io/auth-flow/authorize-hosted-link) enabling the customer to start their auth flow journey for the company.",
-            "example": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739"
-          },
-          "lastSync": {
-            "$ref": "#/components/schemas/Company/properties/created"
-          },
-          "created": {
-            "title": "Date time",
-            "type": "string",
-            "examples": [
-              "2022-10-23T00:00:00.000Z",
-              "2022-10-23T00:00:00.000Z"
-            ],
-            "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
-          },
-          "createdByUserName": {
-            "type": "string",
-            "description": "Name of user that created the company in Codat."
-          },
-          "dataConnections": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Connection"
-            }
-          }
-        },
-        "required": [
-          "id",
-          "name",
-          "redirect"
-        ],
-        "examples": [
-          {
-            "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
-            "name": "string",
-            "platform": "string",
-            "redirect": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739",
-            "lastSync": "2022-01-01T12:00:00.000Z",
-            "created": "2022-01-01T12:00:00.000Z",
-            "createdByUserName": "string",
-            "dataConnections": [
-              {
-                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
-                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
-                "integrationKey": "dfxm",
-                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
-                "platformName": "Basiq",
-                "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
-                "status": "Linked",
-                "lastSync": "2022-10-27T10:22:43.6464237Z",
-                "created": "2022-10-27T09:53:29Z",
-                "sourceType": "Banking"
-              }
-            ]
-          }
-        ]
-      },
-      "Branding": {
-        "title": "Branding",
-        "type": "object",
-        "properties": {
-          "logo": {
-            "$ref": "#/components/schemas/Branding/definitions/brandingLogo"
-          },
-          "button": {
-            "$ref": "#/components/schemas/Branding/definitions/brandingButton"
-          },
-          "sourceId": {
-            "type": "string",
-            "format": "uuid",
-            "example": "35b92968-9851-4095-ad60-395c95cbcba4",
-            "description": "A source-specific ID used to distinguish between different sources originating from the same data connection. In general, a data connection is a single data source. However, for TrueLayer, `sourceId` is associated with a specific bank and has a many-to-one relationship with the `integrationId`."
-          }
-        },
-        "definitions": {
-          "brandingLogo": {
-            "description": "Logo branding references.",
-            "type": "object",
-            "properties": {
-              "full": {
-                "$ref": "#/components/schemas/Branding/definitions/brandingImage"
-              },
-              "square": {
-                "$ref": "#/components/schemas/Branding/definitions/brandingImage"
-              }
-            }
-          },
-          "brandingButton": {
-            "type": "object",
-            "description": "Button branding references.",
-            "properties": {
-              "default": {
-                "$ref": "#/components/schemas/Branding/definitions/brandingImage"
-              },
-              "hover": {
-                "$ref": "#/components/schemas/Branding/definitions/brandingImage"
-              }
-            }
-          },
-          "brandingImage": {
-            "title": "Branding Image",
-            "type": "object",
-            "properties": {
-              "image": {
-                "$ref": "#/components/schemas/Branding/definitions/imageReference"
-              }
-            },
-            "examples": []
-          },
-          "imageReference": {
-            "type": "object",
-            "title": "Image Reference",
-            "description": "Image reference.",
-            "properties": {
-              "src": {
-                "type": "string",
-                "format": "uri",
-                "description": "Source URL for image."
-              },
-              "alt": {
-                "type": "string",
-                "description": "Alternative text when image is not available."
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "logo": {
-              "full": {
-                "image": {
-                  "src": "https://static.codat.io/public/officialLogos/Full/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png",
-                  "alt": "xero full icon"
-                }
-              },
-              "square": {
-                "image": {
-                  "src": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B2W3607.png",
-                  "alt": "xero square icon"
-                }
-              }
-            },
-            "button": {
-              "default": {
-                "image": {
-                  "src": "https://static.codat.io/public/officialButtons/Full/8A156A5A-39CB-4F9D-856E-76EF9Q7A9607.png",
-                  "alt": "xero default button icon"
-                }
-              },
-              "hover": {
-                "image": {
-                  "src": "https://static.codat.io/public/officialLogos/Full/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png",
-                  "alt": "xero hover button icon"
-                }
-              }
-            },
-            "sourceId": "35b92968-9851-4095-ad60-395c95cbcba4"
-          }
-        ]
-      },
-      "Integration": {
-        "title": "Integration",
-        "description": "An integration that Codat supports",
-        "examples": [
-          {
-            "key": "gbol",
-            "logoUrl": "http://example.com",
-            "name": "Xero",
-            "enabled": true,
-            "sourceId": "accounting",
-            "sourceType": "8193a927-ab7a-45a3-9dc2-d357a4932dfe",
-            "integrationId": "497a18ca-284e-40c0-985d-f72be35d468e",
-            "isOfflineConnector": true,
-            "isBeta": true,
-            "dataProvidedBy": "string",
-            "datatypeFeatures": [
-              {
-                "datatype": "invoices",
-                "supportedFeatures": [
-                  {
-                    "featureType": "get",
-                    "featureState": "release"
-                  }
-                ]
-              }
-            ]
-          }
-        ],
-        "type": "object",
-        "properties": {
-          "key": {
-            "$ref": "#/components/parameters/platformKey/schema"
-          },
-          "logoUrl": {
-            "type": "string",
-            "format": "uri",
-            "description": "Static url for integration's logo."
-          },
-          "name": {
-            "type": "string",
-            "example": "Xero",
-            "description": "Name of integration."
-          },
-          "enabled": {
-            "type": "boolean",
-            "description": "Whether this integration is enabled for your customers to use."
-          },
-          "sourceId": {
-            "$ref": "#/components/schemas/Branding/properties/sourceId"
-          },
-          "sourceType": {
-            "$ref": "#/components/schemas/Connection/properties/sourceType"
-          },
-          "integrationId": {
-            "$ref": "#/components/schemas/Connection/properties/integrationId"
-          },
-          "isOfflineConnector": {
-            "type": "boolean",
-            "description": "`True` if the integration is to an application installed and run locally on an SMBs computer."
-          },
-          "isBeta": {
-            "type": "boolean",
-            "description": "`True` if the integration is currently in beta release."
-          },
-          "dataProvidedBy": {
-            "type": "string",
-            "description": "The name of the data provider."
-          },
-          "datatypeFeatures": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Integration/definitions/dataTypeFeature"
-            }
-          }
-        },
-        "required": [
-          "key",
-          "logoUrl",
-          "name",
-          "enabled"
-        ],
-        "definitions": {
-          "dataTypeFeature": {
-            "title": "Data type feature",
-            "description": "Describes support for a given datatype and associated operations",
-            "type": "object",
-            "properties": {
-              "dataType": {
-                "title": "Data types",
-                "x-internal": true,
-                "type": "string",
-                "description": "Available Data types",
-                "enum": [
-                  "accountTransactions",
-                  "balanceSheet",
-                  "bankAccounts",
-                  "bankTransactions",
-                  "billCreditNotes",
-                  "billPayments",
-                  "bills",
-                  "cashFlowStatement",
-                  "chartOfAccounts",
-                  "company",
-                  "creditNotes",
-                  "customers",
-                  "directCosts",
-                  "directIncomes",
-                  "invoices",
-                  "items",
-                  "journalEntries",
-                  "journals",
-                  "paymentMethods",
-                  "payments",
-                  "profitAndLoss",
-                  "purchaseOrders",
-                  "salesOrders",
-                  "suppliers",
-                  "taxRates",
-                  "trackingCategories",
-                  "transfers",
-                  "banking-accountBalances",
-                  "banking-accounts",
-                  "banking-transactionCategories",
-                  "banking-transactions",
-                  "commerce-companyInfo",
-                  "commerce-customers",
-                  "commerce-disputes",
-                  "commerce-locations",
-                  "commerce-orders",
-                  "commerce-paymentMethods",
-                  "commerce-payments",
-                  "commerce-productCategories",
-                  "commerce-products",
-                  "commerce-taxComponents",
-                  "commerce-transactions"
-                ],
-                "example": "invoices"
-              },
-              "supportedFeatures": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Integration/definitions/supportedFeature"
-                }
-              }
-            },
-            "required": [
-              "datatype",
-              "supportedFeatures"
-            ],
-            "examples": [
-              {
-                "datatype": "invoices",
-                "supportedFeatures": [
-                  {
-                    "featureType": "Get",
-                    "featureState": "Release"
-                  }
-                ]
-              }
-            ]
-          },
-          "supportedFeature": {
-            "type": "object",
-            "x-internal": true,
-            "properties": {
-              "featureType": {
-                "$ref": "#/components/schemas/Integration/definitions/featureType"
-              },
-              "featureState": {
-                "$ref": "#/components/schemas/Integration/definitions/featureState"
-              }
-            },
-            "required": [
-              "featureType",
-              "featureState"
-            ]
-          },
-          "featureState": {
-            "title": "Feature state",
-            "type": "string",
-            "example": "Release",
-            "description": "The current release state of the feature.",
-            "enum": [
-              "Release",
-              "Alpha",
-              "Beta",
-              "Deprecated",
-              "NotSupported",
-              "NotImplemented"
-            ]
-          },
-          "featureType": {
-            "type": "string",
-            "x-internal": true,
-            "description": "The type of feature.",
-            "enum": [
-              "Get",
-              "Post",
-              "Categorization",
-              "Delete",
-              "Put",
-              "GetAsPdf",
-              "DownloadAttachment",
-              "GetAttachment",
-              "GetAttachments",
-              "UploadAttachment"
-            ],
-            "example": "Get"
-          }
-        }
-      },
-      "Integrations": {
-        "title": "Integrations",
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Integration"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
-      "UpdateConnection": {
-        "title": "Update connection",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus",
-            "description": "The current authorization status of the data connection.",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "AccountOption": {
-        "x-internal": true,
-        "title": "Account option",
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "description": "Name of the account."
-          },
-          "id": {
-            "type": "string",
-            "description": "Identifier for the account, unique for the company."
-          },
-          "nominalCode": {
-            "type": "string",
-            "nullable": true,
-            "description": "Reference given to each nominal account for a business. It ensures money is allocated to the correct account. This code isn't a unique identifier in the Codat system."
-          },
-          "classification": {
-            "type": "string",
-            "nullable": true,
-            "description": "Classification of the type of G/L account.",
-            "example": "Bank Nominal"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ConfigAccount": {
-        "x-internal": true,
-        "title": "Account configuration",
-        "type": "object",
-        "description": "G/L account object for configuration.",
-        "properties": {
-          "labelText": {
-            "type": "string",
-            "nullable": true,
-            "description": "Label text for sales configuration section."
-          },
-          "descriptionText": {
-            "type": "string",
-            "nullable": true,
-            "description": "Descriprtive text for sales configuration section."
-          },
-          "selectedAccountId": {
-            "type": "string",
-            "nullable": true,
-            "description": "Selected account id from the list of available accounts."
-          },
-          "required": {
-            "type": "boolean",
-            "description": "Required section to be configured for sync."
-          },
-          "accountOptions": {
-            "type": "array",
-            "description": "Object containing account options.",
-            "items": {
-              "$ref": "#/components/schemas/AccountOption"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Configuration": {
-        "title": "Configuration",
-        "type": "object",
-        "properties": {
-          "sales": {
-            "$ref": "#/components/schemas/Sales"
-          },
-          "payments": {
-            "$ref": "#/components/schemas/Payments"
-          },
-          "newPayments": {
-            "$ref": "#/components/schemas/NewPayments"
-          },
-          "fees": {
-            "$ref": "#/components/schemas/Fees"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Fees": {
-        "title": "Fees",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "feesSupplier": {
-            "$ref": "#/components/schemas/FeesSupplier"
-          },
-          "syncFees": {
-            "type": "boolean",
-            "description": "Boolean indicator to enable syncing fees."
-          },
-          "accounts": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/ConfigAccount"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "FeesSupplier": {
-        "x-internal": true,
-        "title": "Supplier fees",
-        "type": "object",
-        "properties": {
-          "selectedSupplierId": {
-            "type": "string",
-            "nullable": true,
-            "description": "Selected supplier id from the list of supplier records on the accounting software."
-          },
-          "supplierOptions": {
-            "type": "array",
-            "description": "List of supplier options from the list of supplier records on the accounting software.",
-            "items": {
-              "$ref": "#/components/schemas/Option"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Grouping": {
-        "title": "Grouping",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "groupingPeriod": {
-            "$ref": "#/components/schemas/GroupingPeriod"
-          },
-          "groupingLevels": {
-            "$ref": "#/components/schemas/GroupingLevels"
-          }
-        },
-        "additionalProperties": false
-      },
-      "GroupingLevels": {
-        "x-internal": true,
-        "title": "Grouping levels",
-        "type": "object",
-        "properties": {
-          "invoiceLevel": {
-            "$ref": "#/components/schemas/InvoiceLevelSelection"
-          },
-          "invoiceLineLevel": {
-            "$ref": "#/components/schemas/InvoiceLineLevelSelection"
-          }
-        },
-        "additionalProperties": false
-      },
-      "GroupingPeriod": {
-        "x-internal": true,
-        "title": "Grouping period",
-        "type": "object",
-        "properties": {
-          "selectedGroupingPeriod": {
-            "type": "string",
-            "nullable": true,
-            "description": "Grouping period i.e. Daily sales."
-          },
-          "groupingPeriodOptions": {
-            "type": "array",
-            "description": "Array of grouping period options.",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "InvoiceLevelSelection": {
-        "x-internal": true,
-        "title": "Invoice level selection",
-        "type": "object",
-        "properties": {
-          "selectedGroupByOptions": {
-            "type": "array",
-            "description": "Selected array of grouping options.",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
-          },
-          "groupByOptions": {
-            "type": "array",
-            "description": "Options for grouping sales.",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "InvoiceLineLevelSelection": {
-        "x-internal": true,
-        "title": "Invoice line level selection",
-        "type": "object",
-        "properties": {
-          "selectedGroupByOptions": {
-            "type": "array",
-            "description": "Invoice line level selection.",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
-          },
-          "groupByOptions": {
-            "type": "array",
-            "description": "Options for grouping on invoice lines.",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "InvoiceStatus": {
-        "x-internal": true,
-        "title": "Invoice status",
-        "type": "object",
-        "properties": {
-          "selectedInvoiceStatus": {
-            "type": "string",
-            "nullable": true,
-            "description": "Selected option for invoice status for invoice to be synced.",
-            "example": "Submitted"
-          },
-          "invoiceStatusOptions": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true,
-            "description": "Options for invoice statuses."
-          }
-        },
-        "additionalProperties": false
-      },
-      "NewPayments": {
-        "x-internal": true,
-        "title": "New payments",
-        "type": "object",
-        "properties": {
-          "syncPayments": {
-            "type": "boolean",
-            "description": "Boolean indicator for syncing payments."
-          },
-          "accounts": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/ConfigAccount"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "NewTaxRates": {
-        "x-internal": true,
-        "title": "New tax rates",
-        "type": "object",
-        "properties": {
-          "accountingTaxRateOptions": {
-            "type": "array",
-            "description": "Array of accounting tax rate options.",
-            "items": {
-              "$ref": "#/components/schemas/Option"
-            },
-            "nullable": true
-          },
-          "commerceTaxRateOptions": {
-            "type": "array",
-            "description": "Array of tax component options.",
-            "items": {
-              "$ref": "#/components/schemas/Option"
-            },
-            "nullable": true
-          },
-          "taxRateMappings": {
-            "type": "array",
-            "description": "Array of tax component to rate mapppings.",
-            "items": {
-              "$ref": "#/components/schemas/TaxRateMapping"
-            },
-            "nullable": true
-          },
-          "selectedDefaultZeroTaxRateId": {
-            "type": "string",
-            "description": "Default tax rate selected for sync.",
-            "nullable": true
-          },
-          "defaultZeroTaxRateOptions": {
-            "type": "array",
-            "description": "Default zero tax rate selected for sync.",
-            "items": {
-              "$ref": "#/components/schemas/Option"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Option": {
-        "title": "Option",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Name value of the option.",
-            "nullable": true
-          },
-          "id": {
-            "type": "string",
-            "description": "Unique identifier for the option."
-          }
-        },
-        "additionalProperties": false
-      },
-      "Payments": {
-        "title": "Payments",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "syncPayments": {
-            "type": "boolean",
-            "description": "Boolean indicator for syncing sales."
-          },
-          "accounts": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/ConfigAccount"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Sales": {
-        "title": "Sales",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "syncSales": {
-            "type": "boolean",
-            "description": "Boolean indicator for syncing sales."
-          },
-          "accounts": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/ConfigAccount"
-            },
-            "nullable": true
-          },
-          "invoiceStatus": {
-            "$ref": "#/components/schemas/InvoiceStatus"
-          },
-          "salesCustomer": {
-            "$ref": "#/components/schemas/Customer"
-          },
-          "taxRates": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/TaxRateAmount"
-            },
-            "nullable": true
-          },
-          "newTaxRates": {
-            "$ref": "#/components/schemas/NewTaxRates"
-          },
-          "grouping": {
-            "$ref": "#/components/schemas/Grouping"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Customer": {
-        "title": "Customer",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "selectedCustomerId": {
-            "type": "string",
-            "nullable": true,
-            "description": "Selected customer id from the list of customer records on the accounting software."
-          },
-          "customerOptions": {
-            "type": "array",
-            "description": "List of customer options from the list of customer records on the accounting software.",
-            "items": {
-              "$ref": "#/components/schemas/Option"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
       },
       "TaxRateAmount": {
         "x-internal": true,
@@ -2533,28 +3090,18 @@
         },
         "additionalProperties": false
       },
-      "Localization": {
-        "title": "Localization",
+      "UpdateConnection": {
+        "title": "Update connection",
         "x-internal": true,
         "type": "object",
         "properties": {
-          "text": {
-            "type": "string",
-            "description": "Value of the property.",
+          "status": {
+            "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus",
+            "description": "The current authorization status of the data connection.",
             "nullable": true
-          },
-          "required": {
-            "type": "boolean",
-            "description": "`True` if required."
           }
-        }
-      },
-      "LocalizationInfo": {
-        "title": "Localization info",
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Localization"
-        }
+        },
+        "additionalProperties": false
       },
       "VisibleAccounts": {
         "title": "Visible accounts",
@@ -2569,179 +3116,6 @@
             "nullable": true
           }
         }
-      },
-      "SyncFlowUrl": {
-        "title": "Sync flow url",
-        "type": "object",
-        "properties": {
-          "url": {
-            "type": "string",
-            "description": "Sync flow URL.",
-            "example": "https://sync-flow-integration.codat.io/57b6fad9-e3ca-447b-89db-e4ffa21e6ef3/aiwb/mqjo/start?otp=836415"
-          }
-        }
-      },
-      "ErrorMessage": {
-        "title": "Error message",
-        "type": "object",
-        "x-internal": true,
-        "properties": {
-          "statusCode": {
-            "type": "integer",
-            "description": "The HTTP status code returned by the error."
-          },
-          "service": {
-            "type": "string",
-            "description": "Codat's service the returned the error."
-          },
-          "error": {
-            "type": "string",
-            "description": "A brief description of the error."
-          },
-          "correlationId": {
-            "type": "string",
-            "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
-          },
-          "canBeRetried": {
-            "type": "string",
-            "description": "`True` if the error occurred transiently and can be retried."
-          },
-          "detailedErrorCode": {
-            "type": "integer",
-            "description": "Machine readable error code used to automate processes based on the code returned."
-          }
-        }
-      },
-      "CompanySyncStatus": {
-        "title": "Company sync status",
-        "type": "object",
-        "additionalProperties": false,
-        "x-examples": {
-          "Success Data Pushed": {
-            "companyId": "20803807-4e9a-4cb7-b67b-9f889a3916e1",
-            "syncId": "aa4c9dfd-e945-4424-9628-9e724f14c267",
-            "syncStatusCode": 2000,
-            "syncStatus": "Complete",
-            "errorMessage": "",
-            "syncExceptionMessage": "",
-            "syncUtc": "2023-01-24T14:15:22Z",
-            "dataPushed": true
-          },
-          "Success No Data Pushed": {
-            "companyId": "20803807-4e9a-4cb7-b67b-9f889a3916e1",
-            "syncId": "aa4c9dfd-e945-4424-9628-9e724f14c267",
-            "syncStatusCode": 2040,
-            "syncStatus": "Complete",
-            "errorMessage": "",
-            "syncExceptionMessage": "",
-            "syncUtc": "2023-01-24T14:15:22Z",
-            "dataPushed": false
-          }
-        },
-        "properties": {
-          "companyId": {
-            "type": "string",
-            "description": "Unique identifier for your SMB in Codat.",
-            "example": "d4d73051-ed31-42b6-99f6-d288cd940992",
-            "nullable": true
-          },
-          "syncId": {
-            "type": "string",
-            "description": "Unique identifier of the sync.",
-            "example": "a6a22aff-a43a-411d-a910-2dae73217cce",
-            "nullable": true
-          },
-          "syncStatusCode": {
-            "type": "integer",
-            "format": "int32",
-            "description": "Status code of the sync.",
-            "example": 2000
-          },
-          "syncStatus": {
-            "type": "string",
-            "description": "Text status of the sync.",
-            "example": "Completed",
-            "nullable": true
-          },
-          "errorMessage": {
-            "type": "string",
-            "description": "Error message of the sync.",
-            "nullable": true
-          },
-          "syncExceptionMessage": {
-            "type": "string",
-            "description": "Exception message of the sync.",
-            "nullable": true
-          },
-          "syncUtc": {
-            "$ref": "#/components/schemas/Company/properties/created",
-            "description": "Datetime of the sync.",
-            "nullable": true
-          },
-          "dataPushed": {
-            "type": "boolean",
-            "description": "Boolean of whether the sync resulted in data being pushed."
-          }
-        }
-      },
-      "SyncConnectionDeletedWebhook": {
-        "title": "Sync connection deleted webhook",
-        "description": "A Sync for Commerce connection is deleted.",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/components/parameters/clientId/schema"
-          },
-          "ClientName": {
-            "type": "string",
-            "description": "Name of your client in Codat."
-          },
-          "CompanyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "RuleId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier for the rule."
-          },
-          "RuleType": {
-            "type": "string",
-            "x-stoplight": {
-              "id": "34d52a089f08a"
-            },
-            "description": "The type of rule."
-          },
-          "AlertId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier of the webhook event."
-          },
-          "Message": {
-            "type": "string",
-            "description": "A human readable message about the webhook."
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Sync Connection Deleted",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "Sync connection for company 8a210b68-6988-11ed-a1eb-0242ac120002 deleted"
-          },
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Sync Connection Deleted",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "Sync connection for company Tesco (8a210b68-6988-11ed-a1eb-0242ac120002) deleted"
-          }
-        ]
       }
     },
     "responses": {
@@ -2767,6 +3141,38 @@
           }
         }
       },
+      "Malformed-Query": {
+        "description": "Your `query` parameter was not correctly formed",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Malformed query": {
+                "value": {
+                  "statusCode": 400,
+                  "service": "ClientsApi",
+                  "error": "Error parsing query - Malformed query.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              },
+              "Unresolved property": {
+                "value": {
+                  "statusCode": 400,
+                  "service": "PullApi",
+                  "error": "Error parsing query - Could not resolve property isCompleted on Dataset",
+                  "correlationId": "98457fb9956b7f9b4b2fd4f6e23bb5c8",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
       "Unauthorized": {
         "description": "Your API request was not properly authorized.",
         "content": {
@@ -2781,6 +3187,50 @@
                   "service": "PublicApi",
                   "error": "Unauthorized",
                   "correlationId": "7eb40d6b415d7bcd99ce658268284056",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Payment-Required": {
+        "description": "An account limit has been exceeded. The type of limit is described in the error property:\n\n- You have exceeded the 50-company limit that applies to a Free plan. Delete any companies you no longer need and retry the request.\n- The requested sync schedule is not allowed. You requested an hourly sync schedule but this functionality is not included in the Free plan.\n- Your Free account is older than 365 days and has expired. Contact support@codat.io.\n",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 429,
+                  "service": "PublicApi",
+                  "error": "You have exceeded the 50-company limit that applies to a Free plan. We recommend that you delete any companies you no longer need and retry the request.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "You are using an outdated API key or a key not associated with that resource.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 403,
+                  "service": "PublicApi",
+                  "error": "You are using an outdated API key or a key not associated with that resource.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
                   "canBeRetried": "Unknown",
                   "detailedErrorCode": 0
                 }
@@ -2831,6 +3281,28 @@
           }
         }
       },
+      "Conflict": {
+        "description": "The data type's dataset has not been requested or is still syncing.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 409,
+                  "service": "PublicApi",
+                  "error": "The data set has not been requested.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
       "Too-Many-Requests": {
         "description": "Too many requests were made in a given amount of time. Wait a short period and then try again.",
         "content": {
@@ -2852,6 +3324,50 @@
             }
           }
         }
+      },
+      "Internal-Server-Error": {
+        "description": "There is a problem with our server. Please try again later.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 500,
+                  "service": "PublicApi",
+                  "error": "There is a problem with our server. Please try again later.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Service-Unavailable": {
+        "description": "The Codat API is temporarily offline for maintenance. Please try again later.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 500,
+                  "service": "PublicApi",
+                  "error": "The Codat API is temporarily offline for maintenance. Please try again later.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
       }
     },
     "parameters": {
@@ -2860,6 +3376,7 @@
         "in": "path",
         "required": true,
         "schema": {
+          "title": "Client ID",
           "type": "string",
           "format": "uuid",
           "description": "Unique identifier for your client in Codat."
@@ -2959,6 +3476,20 @@
           "description": "A unique 4-letter key to represent a platform in each integration. View [accounting](https://docs.codat.io/integrations/accounting/overview#platform-keys), [banking](https://docs.codat.io/integrations/banking/overview#platform-keys), and [commerce](https://docs.codat.io/integrations/commerce/overview#platform-keys) platform keys."
         },
         "description": "A unique 4-letter key to represent a platform in each integration. View [accounting](https://docs.codat.io/integrations/accounting/overview#platform-keys), [banking](https://docs.codat.io/integrations/banking/overview#platform-keys), and [commerce](https://docs.codat.io/integrations/commerce/overview#platform-keys) platform keys."
+      },
+      "locale": {
+        "name": "locale",
+        "in": "query",
+        "required": true,
+        "example": "en-us",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "en-us",
+            "fr-fr"
+          ]
+        },
+        "description": "Localization identifier for English (US) or French."
       }
     },
     "securitySchemes": {

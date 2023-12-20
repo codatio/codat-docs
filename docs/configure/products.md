@@ -6,8 +6,6 @@ description: "Enable the products you need for your usecase"
 
 import Products from "@components/global/Products";
 
-Codat's function
-
 ## Enabling products
 
 When signing up for a Codat account, you'll have to select and enable a product you're interested in using (you can always enable other products later). 

@@ -3,6 +3,7 @@ title: "Make an invoice financing decision"
 description: "Follow the invoice finance demo app end-to-end to start an application, analyze it, and make a decision on the request"
 sidebar_label: "Financing decision process"
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

@@ -32,6 +32,7 @@ banner_text: "Codat solves challenges for developers building the next generatio
 import Welcome from "@components/global/Welcome";
 import Usecases from "@components/global/Usecases";
 import Products from "@components/global/Products";
+import Clients from '@components/global/Clients'
 
 <Welcome />
 
@@ -93,15 +94,15 @@ Take your first steps through the information and support available to you.
         src="/img/wp-icons/Coins.png"
         className="mini-icon"
       />
-      <h3>Free plan</h3>
+      <h3>Free trial</h3>
     </div>
     <p>
       Click{" "}
       <a href="https://signup.codat.io/" target="_blank">
         here
       </a>{" "}
-      to sign up for your free plan, or <a href="https://www.codat.io/plans/#get-in-touch" target="_blank">contact our sales team</a> to schedule a
-      demo and learn about Enterprise Pricing opportunities.
+      to sign up for your free trial, or <a href="https://www.codat.io/plans/#get-in-touch" target="_blank">contact our sales team</a> to schedule a
+      demo and learn about Full access pricing opportunities.
     </p>
   </li>
 </ul>
@@ -121,3 +122,37 @@ Codat's product range supports a variety of use cases, helping you simplify and 
 Our products can help you make the most of your customers' consented business data. [See more...](/products/overview)
 
 <Products mini={true} verbose={true}/>
+
+
+<Clients
+  clients={[
+    {
+        name: "Zettle",
+        path: "/img/clients/zettle.png",
+    },
+    {
+        name: "Lightspeed",
+        path: "/img/clients/lightspeed.png",
+    },
+    {
+        name: "Capchase",
+        path: "/img/clients/capchase.png",
+    },
+    {
+        name: "Virgin Money",
+        path: "/img/clients/virginmoney.png",
+    },
+    {
+        name: "Capital on Tap",
+        path: "/img/clients/capitalontap.png",
+    },
+    {
+        name: "Judo Bank",
+        path: "/img/clients/judobank.png",
+    },
+    {
+        name: "Brex",
+        path: "/img/clients/brex.png",
+    },
+  ]}
+/>

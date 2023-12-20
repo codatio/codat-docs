@@ -36,14 +36,12 @@ Review the parameters in the example response to creating a new company:
 
 ```json
 {
-  //CompanyId - retain this value
+  // companyId - retain this
   "id": "1126743b-113d-4d72-b14f-36d6742df487",
-  //End of CompanyId
   "name": "Superapp",
   "platform": "",
-  //Redirect - use this value to direct your customer to Link
-  "redirect": "https://link.codat.io/company/1126743b-113d-4d72-b14f-36d6742df487",
-  //End of redirect
+  // redirect - use to redirect your customer to Hosted Link
+  "redirect": "https://link.codat.io/company/1126743b-113d-4d72-b14f-36d6742df487", 
   "dataConnections": [],
   "created": "2022-05-16T14:55:21.6076495Z"
 }

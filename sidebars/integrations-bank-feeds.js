@@ -12,13 +12,18 @@ module.exports = [
     className: "header",
   },
   {
-    type: "category",
-    label: "QuickBooks Online",
-    collapsed: true,
+    type: "doc",
+    label: "NetSuite",
+    id: "integrations/bank-feeds/netsuite-bank-feeds/netsuite-bank-feeds-setup",
     customProps: {
       hr: true,
       section: "Bank feeds integrations",
     },
+  },
+  {
+    type: "category",
+    label: "QuickBooks Online",
+    collapsed: true,
     items: [
       {
         type: "doc",
@@ -60,5 +65,15 @@ module.exports = [
       "integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds-push-bank-transactions",
       "integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds-partner",
     ],
-  }
+  },
+  {
+    type: "link",
+    href: "/integrations/accounting/exact-online/accounting-exact-online",
+    label: "Exact Online (NL)",
+  },
+  {
+    type: "link",
+    href: "/integrations/accounting/freeagent/accounting-freeagent",
+    label: "FreeAgent",
+  },
 ]

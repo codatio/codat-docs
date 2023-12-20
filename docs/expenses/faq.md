@@ -37,11 +37,7 @@ Codat pushes attachments synchronously to the expense transactions. To update an
 
 Our [token migration process](https://docs.codat.io/get-started/migration) allows you to seamlessly migrate your customers' connections without them needing to reconnect. We offer self-service and managed migrations, so you can choose the option that suits your use case best. 
 
-#### How should I handle transactions in a foreign currency?
-
-Sync for Expenses only handles foreign currencies if each transaction is converted back to the currency of the bank account where the transaction is recorded. It does not support separate bank accounts for each foreign exchange currency. 
-
-#### How do I reconnect a company? 
+### How do I reconnect a company? 
 
 If a user disconnects, you can use a [webhook](/using-the-api/webhooks/core-rules-types#company-data-connection-status-changed) and redirect your user to the `linkUrl` of the accounting connection to re-authenticate. If a company changes accounting platforms, it is better to remove the accounting connection completely and create a new one. 
 
@@ -67,7 +63,7 @@ Every company has its own preference for representing an individual expense in i
 
 2. Standardization of expense data
 
-Sync for Expenses is built to standardize data opinionated based on feedback from customers and industry expertise. This means you don’t need to make decisions on how to handle validation differences between accounting platforms. Simply send transactions based on what they represent and let Codat handle the mapping to their best representation in the accounting software.
+Sync for Expenses is built to standardize transaction data using an opinionated model that is based on feedback from customers and industry expertise. This means you don’t need to make decisions on how to handle validation differences between accounting platforms. Simply send transactions based on what they represent and let Codat handle the mapping to their best representation in the accounting software.
 
 3. Multiple transaction support
 
@@ -114,9 +110,8 @@ Each transaction Id is unique to a client's company but they aren't unique acros
 You can reuse the chart of accounts, tracking categories, and tax rates from our Accounting API. However, we recommend using the [mappingOptions](https://docs.codat.io/sync-for-expenses-api#/operations/get-mapping-options) endpoint for expenses because of the transaction type support. 
 Authentication, company creation, and the Accounting connection linking journeys can be reused between builds. This is because the companies can use the same Id between Codat products. 
 
-#### How can I resync a transaction that has previously failed once I resolve the issue with the transaction?
+### How can I detect if an expense account has been deactivated?
 
-#### How can I detect if an expense account has been deactivated?
 You can create a webhook in the Codat portal to inform you when the Chart of Accounts has been changed. By querying the Chart of Accounts and using the `isDeleted` flag, you can identify which accounts have been deleted before a sync occurs. 
 For more information, please refer to the [documentation](https://docs.codat.io/using-the-api/webhooks/core-rules-types) on creating and updating rules.
 
@@ -145,7 +140,11 @@ Codat pushes attachments synchronously to the expense transactions. To update an
 
 #### How should I handle transactions in a foreign currency?
 
-Sync for Expenses only handles foreign currencies if each transaction is converted back to the currency of the bank account where the transaction is recorded. It does not support separate bank accounts for each foreign exchange currency. 
+For multicurrency transactions, you have to consider the currency of the transaction, the currency of the card, and the base currency of the company in the accounting platform. Depending on the platform, only specific multicurrency scenarios may be supported. Codat provides built-in validations that protect against multicurrency scenarios that aren't supported by specific accounting platforms. 
+
+If the currency of the transaction or the card differs from the base currency, you must specify the exchange rate that will be used to convert the amount into the base currency. Indicate it in the `currencyRate` field. This is mandatory for all accounting platforms because all transactions must be expressed in the base currency for accounting and financial reporting purposes.
+
+It is not possible to perform the currency conversion with two or more non-base currencies participating in the transaction. For example, if a company's base currency is USD, and the transaction currency (supplier currency) is GBP, then the bank account used must be USD or GBP.
 
 #### What is the difference between effectiveTaxRate and totalTaxRate?
 

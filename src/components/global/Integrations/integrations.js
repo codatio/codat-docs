@@ -1,3 +1,13 @@
+export const integrationsFilterCustomData = [
+//	"BigCommerce",
+//  "FreeAgent",
+  "MYOB Business",
+  "Oracle NetSuite",
+  "QuickBooks Online",
+//  "Sage Intacct",
+  "Xero",
+]
+
 export const integrationsFilterPayroll = [
 	"Oracle NetSuite",
   "QuickBooks Online",
@@ -30,10 +40,11 @@ export const integrationsFilterCommerceComm = [
 ]
 
 export const integrationsFilterPayables = [
+  "MYOB Business",
   "Oracle NetSuite",
   "QuickBooks Desktop",
   "QuickBooks Online",
-  "Sage Business Cloud Accounting",
+//  "Sage Business Cloud Accounting",
   "Sage Intacct",
   "Xero",
 ];
@@ -45,6 +56,12 @@ export const bankfeedsIntegrations = [
     "sourceType": "bankfeeds",
     "img": "https://static.codat.io/public/officialLogos/Square/19EEFA32-58A8-4097-B95A-EF150BF24FA0.png",
     "tags": ["US", "Canada"],
+  },
+  {
+    "name": "Oracle NetSuite bank feeds",
+    "to": "/integrations/bank-feeds/netsuite-bank-feeds/netsuite-bank-feeds-setup",
+    "sourceType": "bankfeeds",
+    "img": "https://static.codat.io/public/officialLogos/Square/9815B998-024D-4415-A40B-89903B2CAD6F.png"
   },
   {
     "name": "Sage bank feeds",
@@ -59,26 +76,44 @@ export const bankfeedsIntegrations = [
     "img": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png",
   },
   {
-    "name": "FreeAgent",
+    "name": "FreeAgent bank feeds",
     "to": "/integrations/accounting/freeagent/accounting-freeagent",
     "sourceType": "bankfeeds",
     "img": "https://static.codat.io/public/officialLogos/Square/3DA57C23-A4FA-4BC8-8C02-A7A686ED8B36.png",
   },
+  {
+    "name": "Exact Online (NL) bank feeds",
+    "to": "/integrations/accounting/exact-online/accounting-exact-online",
+    "sourceType": "bankfeeds",
+    "img": "https://static.codat.io/public/officialLogos/Square/BF8A9736-7133-4F03-BBDE-D328714887C8.png",
+  }
 ]
 
-export const bankfeedsExternalMappingIntegrations = [
+export const bankfeedsInternalMappingIntegrations = [
   {
-    "name": "Xero",
+    "name": "Oracle NetSuite bank feeds",
+    "to": "/integrations/bank-feeds/netsuite-bank-feeds/netsuite-bank-feeds-setup",
+    "sourceType": "bankfeeds",
+    "img": "https://static.codat.io/public/officialLogos/Square/9815B998-024D-4415-A40B-89903B2CAD6F.png"
+  },
+  {
+    "name": "Xero bank feeds",
     "to": "/integrations/bank-feeds/xero-bank-feeds/",
     "type": "bankfeeds",
     "img": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png",
   },
   {
-    "name": "FreeAgent",
+    "name": "FreeAgent bank feeds",
     "to": "/integrations/accounting/freeagent/accounting-freeagent",
     "type": "bankfeeds",
     "img": "https://static.codat.io/public/officialLogos/Square/3DA57C23-A4FA-4BC8-8C02-A7A686ED8B36.png",
   },
+  {
+  "name": "Exact Online (NL) bank feeds",
+  "to": "/integrations/accounting/exact-online/accounting-exact-online",
+  "sourceType": "bankfeeds",
+  "img": "https://static.codat.io/public/officialLogos/Square/BF8A9736-7133-4F03-BBDE-D328714887C8.png",
+  }
 ]
 
 

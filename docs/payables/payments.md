@@ -1,22 +1,48 @@
 ---
-title: Reconciling payments
-description: "Reconcile payments to the SMB's accounting software"
+title: Record and reconcile bill payments
+sidebar_label: Record payments
+description: "Record and reconcile bill payments in the SMB's accounting software"
 image: "/img/banners/social/payables.png"
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
 
-When the user has completed their mapping and makes a payment from your application, this can then be reconciled back to the users accounting platform. 
-A bill payment in Codat usually represents an allocation of money within any customer accounts payable account. This includes, but is not strictly limited to:
+## Overview
 
-- A payment made against a bill — for example, a credit card payment, cheque payment, or cash payment.
-- An allocation of a supplier's credit note to a bill or perhaps a refund.
-- A bill payment made directly to an accounts payable account. This could be an overpayment or a prepayment, or a refund of a payment made directly to an accounts payable account.
+Once the mapping is complete, your SMB customer will make a payment from your application, which you should then record and reconcile back to the SMB's accounting platform. A **bill payment** represents an allocation of money within any of your customer's accounts payable (AP) accounts.
 
-Depending on the bill payments which are allowed by the underlying accounting package, some of these types may be combined.
+You can see how this flow completes on our detailed process diagram below. 
 
-#### Ways to Pay a bill
+<details>
+<summary><b>Detailed process diagram</b></summary>
+
+```mermaid
+
+  sequenceDiagram
+      participant smb as SMB customer
+      participant app as Your application 
+      participant codat as Codat
+      participant acctg as Accounting platform
+      
+      smb ->> app: Pays a bill
+      app ->> codat: Creates bill payment
+      codat ->> acctg: Records bill payment
+      acctg ->> smb: Displays paid bill
+```
+
+</details>
+
+We built Sync for Payables to handle various bill pay scenarios, for example:
+
+- A payment made against a bill, e.g. a credit card payment, cheque payment, or cash payment
+- An allocation of a supplier's credit note to a bill or a refund
+- A bill payment made directly to an AP account, e.g. an overpayment or a prepayment
+
+## Ways to pay a bill
+
+In this diagram, we have summarized approaches to bill payments and reconciliation that are available to you via Sync for Payables. Next, we will go through those options in detail. 
+
 ```mermaid
 
 graph TD
@@ -24,58 +50,65 @@ graph TD
     style note2 fill:#f7fafd,stroke:#333,stroke-width:2px,font-color:#ffffff;
     style note3 fill:#f7fafd,stroke:#333,stroke-width:2px,font-color:#ffffff;
     style note4 fill:#f7fafd,stroke:#333,stroke-width:2px,font-color:#ffffff;
+    style note5 fill:#f7fafd,stroke:#333,stroke-width:2px,font-color:#ffffff;
     style D1 round
     style D2 round
     style D3 round
     style D4 round
 
-    A1(Bill Retrieved) --> B{Type of Payment}
-    A2(Bill Created) --> B
+    A1(Bill retrieved) --> B{Type of payment}
+    A2(Bill created) --> B
 
-    B --> C1[Payment Against Bill]
-    B --> C2[Allocation of Supplier's Credit Note]
+    B --> C1[Payment against bill]
+    B --> C2[Allocation of supplier's credit note]
 
-    C1 --> D1[Single Bill Payment]
-    D1 -.- note1[Add lines array containing<br>one element indicating the<br>bill paid and its amount.]
+    C1 --> D1[Single bill payment]
+    D1 --> E1[Full payment]
+    D1 --> E2[Partial payment]
+    E1 -.- note1[Add lines array containing<br>one element indicating the<br>bill paid and the amount.]
+    E2 -.- note1
 
-    C1 --> D2[Multiple Bills Payment]
+    C1 --> D2[Multiple bill payment]
     D2 -.- note2[Add lines array containing<br>elements for each bill paid<br>and their respective amounts.]
 
-    C2 --> D3[Create billCreditNote]
-    D3 -.- note3[Create a billCreditNote to<br>partially or fully offset<br>the balance of an invoice.]
+    C1 --> D4[Batch bill payment]
+    D4 -.- note5[Leave supplier reference<br> blank when creating <br>the bill payment.]
 
-    D3 --> D4[Create billPayment with billCreditNote]
-    D4 -.- note4[Once this is successfully created<br>you can create a billPayment and<br>include the billCreditNote and<br>the bill to credit in the links array.]
+    C2 --> D3[Create bill credit note]
+    D3 -.- note3[Create a bill credit note to<br>partially or fully offset<br>the balance of a bill.]
+
+    D3 --> E3[Create bill payment <br>with credit note]
+    E3 -.- note4[Create a bill payment and<br>include the bill credit note and<br>the bill to credit in the links array.]
 
 ```
 
-## Using bill payments
+### Single bill payment
 
-### Paying a single bill with a billPayment
+If your SMB customer is making a payment to pay off a bill in full, use the [Create bill payments](/sync-for-payables-api#/operations/create-bill-payment) endpoint and include the following parameters in the request body:
 
-If the scenario is a company making a payment to pay off a bill in full, then it should have the following properties:
+- A `totalAmount` value (**always positive**) that indicates the amount of the bill that was paid. 
+- A `lines` array that contains one element with the following properties:
+  - An `amount` equal to the `totalAmount` above
+  - A `links` array that contains one element with the following properties:
+    - A `type` of link, in this case a `Bill`
+    - An `id` of the bill that was paid
+    - An `amount` with value of **`-totalAmount`** to indicate the full amount is allocated to the bill.
 
-- A `totalAmount` indicating the amount of the bill that was paid. This is **always positive**. 
-- A lines array containing one element with the following properties:
-  - An amount equal to the `totalAmount` above. 
-  - A links array containing one element with the following properties:
-    - A `type` indicating the type of link, in this case a Bill. 
-    - An `id` containing the ID of the bill that was paid. 
-    - An `amount` of **-**totalAmount (negative `totalAmount`), indicating that the entirety of the paid amount is allocated to the bill.
+In case of **partial payments**, use the same endpoint and adjust the `amount` values according to the amount of the partial payment.
 
 <Tabs>
 
 <TabItem value="Request URL" label="Request URL">
 
-```http request title="Create bill payment"
+```http
 POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/billPayments
 ```
 
 </TabItem>
 
-<TabItem value="Example Bill to pay" label="Example Bill to pay">
+<TabItem value="Example bill to pay" label="Xero: example bill">
 
-Sample json of an outstanding bill from Xero.
+This is a sample `json` of an outstanding bill from Xero.
 
 ```json
 {
@@ -129,14 +162,14 @@ Sample json of an outstanding bill from Xero.
 
 </TabItem>
 
-<TabItem value="Example Bill Payment Xero" label="Example Bill Payment Xero">
+<TabItem value="Example Bill Payment Xero" label="Xero: example bill payment">
 
-Here is a sample payment for the Xero bill. Note that:
+This is a sample full payment for the Xero bill. Note that:
 
-- the `supplierRef.id` should be the same id as the `supplierRef.id` on the bill
-- the `accountRef.id` should be the account the payment is made from as selected in the [mapping](/payables/mapping.md)
-- the `totalAmount` is the same as the `amountDue` on the bill
-- the `date` is the date that the payment is made to the supplier
+- `supplierRef.id` is the same `id` as the `supplierRef.id` on the bill.
+- `accountRef.id` is the account the payment is made from as indicated during mapping.
+- `totalAmount` is the same as the `amountDue` on the bill.
+- `date` is the date that the payment is made to the supplier.
 
 ```json
 {
@@ -171,15 +204,15 @@ Here is a sample payment for the Xero bill. Note that:
 </Tabs>
 
 
-### Payments of multiple bills
+### Multiple bill payment
 
-In some cases a company may make a single payment to a supplier that covers multiple invoices.
+Your SMB customer may want pay multiple bills from a single supplier using one payment. Use the [Create bill payments](/sync-for-payables-api#/operations/create-bill-payment) endpoint to do so and include a `lines` array with multiple elements for each bill and its respective amount.
 
 <Tabs>
 
 <TabItem value="Request URL" label="Request URL">
 
-```http request title="Create bill payment"
+```http
 POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/billPayments
 ```
 
@@ -191,9 +224,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 <TabItem value="Xero" label="Xero">
 
-Here is a sample payment for multiple Xero bills from the same supplier.
-
-```json title="Bill Payment for same Supplier"
+```json title="Bill payment for same supplier"
 {
   "supplierRef": {
     "id": "dec56ceb-65e9-43b3-ac98-7fe09eb37e31"
@@ -232,60 +263,9 @@ Here is a sample payment for multiple Xero bills from the same supplier.
 }
 ```
 
-:::tip Batch Payments
-
-In Xero you can make a batch payment which allows you to pay multiple invoices from multiple suppliers with a single payment.
-
-To do this with Codat, you should leave the `supplierRef` parameter blank when creating the billPayment.
-
-:::
-
-```json title="Batch Payment for multiple suppliers"
-{
-	"accountRef": {
-		"id": "d96ffd74-2394-4666-81c4-eebb76e51e21"
-	},
-	"totalAmount": 6,
-	"date": "2022-09-06T00:00:00",
-	"lines": [
-		{
-			"amount": 1,
-			"links": [
-				{
-					"type": "Bill",
-					"id": "0394819c-b784-454d-991c-c4711b9aca12",
-					"amount": -1
-				}
-			]
-		},
-		{
-			"amount": 2,
-			"links": [
-				{
-					"type": "Bill",
-					"id": "428e3e38-e8fb-4c56-91b5-dd09dc2e6505",
-					"amount": -2
-				}
-			]
-		},
-		{
-			"amount": 3,
-			"links": [
-				{
-					"type": "Bill",
-					"id": "76129542-2b2f-482f-b2b3-e612d9c1ba08",
-					"amount": -3
-				}
-			]
-		}
-	]
-}
-```
-
 </TabItem>
 
 <TabItem value="QuickBooks Online" label="QuickBooks Online">
-
 
 ```json
 {
@@ -327,9 +307,9 @@ To do this with Codat, you should leave the `supplierRef` parameter blank when c
 
 <TabItem value="NetSuite" label="NetSuite">
 
-:::note
+:::note Considerations
 
-Note that if locations is set to mandatory in the companies NetSuite Account, the `reference` is required and should be an `id` from the [trackingCategories](/sync-for-payables-api#/operations/list-tracking-categories) prefixed with location.
+If locations are set to mandatory in the company's NetSuite account, the `reference` is required and should be an `id` from the [tracking categories](/sync-for-payables-api#/operations/list-tracking-categories) prefixed with location.
 
 :::
 
@@ -373,9 +353,9 @@ Note that if locations is set to mandatory in the companies NetSuite Account, th
 
 <TabItem value="Sage Intacct" label="Sage Intacct">
 
-:::note
+:::note Considerations
 
-Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can be retrieved from the [options api](/sync-for-payables-api#/operations/get-create-update-bills-model)
+Sage Intacct uses a `paymentMethodRef`. You can retrieve the payment methods for a company using the [Get create/update bill model](/sync-for-payables-api#/operations/get-create-update-bills-model) endpoint.
 
 :::
 
@@ -463,34 +443,81 @@ Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can b
   ]
 }
 ```
-
 </TabItem>
 
 </Tabs>
 
 </TabItem>
 
-
-
 </Tabs>
 
 
-## Using a bill credit notes
+### Batch bill payment
 
-If a company receives a credit note from their supplier, the company could use this to offset the balance of any outstanding invoices from the same supplier. 
+In some accounting platforms (for example, Xero) your SMB customer can make a batch payment. It allows them to pay multiple bills from multiple suppliers in a single payment.
 
-With the billPayment API, you can partially or fully offset the balance of an invoice by adding the credit note in the `lines` array.
+To do this with Sync for Payables, use the [Create bill payments](/sync-for-payables-api#/operations/create-bill-payment) endpoint and leave the `supplierRef` parameter blank.
 
-1. The first step is to create a [`billCreditNote`](/sync-for-payables-api#/operations/create-bill-credit-note)
-2. Once this is successfully created you can create a `billPayment` and include the `billCreditNote` and the `bill` to credit in the links array
+```json
+{
+	"accountRef": {
+		"id": "d96ffd74-2394-4666-81c4-eebb76e51e21"
+	},
+	"totalAmount": 6,
+	"date": "2022-09-06T00:00:00",
+	"lines": [
+		{
+			"amount": 1,
+			"links": [
+				{
+					"type": "Bill",
+					"id": "0394819c-b784-454d-991c-c4711b9aca12",
+					"amount": -1
+				}
+			]
+		},
+		{
+			"amount": 2,
+			"links": [
+				{
+					"type": "Bill",
+					"id": "428e3e38-e8fb-4c56-91b5-dd09dc2e6505",
+					"amount": -2
+				}
+			]
+		},
+		{
+			"amount": 3,
+			"links": [
+				{
+					"type": "Bill",
+					"id": "76129542-2b2f-482f-b2b3-e612d9c1ba08",
+					"amount": -3
+				}
+			]
+		}
+	]
+}
+```
 
-### Creating a Credit Note
+### Bill credit note
+
+If a company receives a credit note from their supplier, the company could use it to partially or fully offset the balance of any outstanding bills from the same supplier. 
+
+With Sync for Payables, you can do that using the following steps:
+
+1. Create a bill credit note.
+2. Allocate the credit note to a bill.
+
+#### Create a credit note
+
+Start by creating a credit note using our [Create bill credit note](/operations/create-bill-credit-note) endpoint. 
 
 <Tabs>
 
 <TabItem value="Request URL" label="Request URL">
 
-```http request title="Request URL"
+```http
 POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/billCreditNotes
 ```
 
@@ -503,7 +530,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 <TabItem value="Xero" label="Xero">
 
 
-```json title="Credit Note Example"
+```json
 {
 	"billCreditNoteNumber": "JMY-1987",
 	"supplierRef": {
@@ -544,7 +571,6 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 	]
 }
 ```
-
 
 </TabItem>
 
@@ -600,7 +626,6 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 <TabItem value="NetSuite" label="NetSuite">
 
 ```json
-
 {
   "billCreditNoteNumber": "VENDCRED1987",
   "supplierRef": {
@@ -653,8 +678,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 <TabItem value="Sage Intacct" label="Sage Intacct">
 
-```json title="Sage Intacct"
-
+```json
 {
   "supplierRef": {
     "id": "3"
@@ -765,16 +789,17 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 </Tabs>
 
-Once the credit note has been created, you can offset the balance of the credit note against any outstanding invoices by creating a billPayment.
+#### Allocate credit note to a bill
 
-For some accounting platforms, you can also use a combination of a `billCreditNote` and partial payment to pay off the full balance of a `bill`.
+Now that you have the credit note, offset its balance against outstanding bills. [Create a bill payment](/payables/payments#single-bill-payment) and include the credit note in the `links` array.
 
-##### Allocating a Credit note against a bill
+In some accounting platforms, you can combine a credit note and a partial payment to pay off the full balance of a bill.
+
 <Tabs>
 
 <TabItem value="Request URL" label="Request URL">
 
-```http request title="Request URL"
+```http
 POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/billPayments
 ```
 
@@ -786,13 +811,11 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 <TabItem value="Xero" label="Xero">
 
-:::info
-With the Xero integration its only possible to fully allocate a `billCreditNote` to a `bill` using a `billPayment`, this means that if you wish to also use a partial payment for the bill, two separate transactions should be created.
-
+:::info Considerations
+With Xero, you can only fully allocate a `billCreditNote` to a `bill` using a `billPayment`. If you want to also use a partial payment, two separate transactions should be created.
 :::
 
 ```json
-
 {
   "supplierRef": {
     "id": "3a0d40a2-2698-4cf5-b7b2-30133c632ab6"
@@ -828,9 +851,8 @@ With the Xero integration its only possible to fully allocate a `billCreditNote`
 
 <TabItem value="QuickBooks Online" label="QuickBooks Online">
 
-:::info
-With the QuickBooks Online integration its only possible to fully allocate a `billCreditNote` to a `bill` using a `billPayment`, this means that if you wish to also use a partial payment for the bill, two separate transactions should be created.
-
+:::info Considerations
+With QBO, you can only fully allocate a `billCreditNote` to a `bill` using a `billPayment`. If you want to also use a partial payment, two separate transactions should be created.
 :::
 
 ```json
@@ -869,7 +891,7 @@ With the QuickBooks Online integration its only possible to fully allocate a `bi
 
 <TabItem value="NetSuite" label="NetSuite">
 
-The example below shows a partial billPayment and billCredit note to pay the full balance of a bill.
+This example shows a partial bill payment and bill credit note used to pay the full balance of a bill.
 
 ```json
 {
@@ -906,9 +928,9 @@ The example below shows a partial billPayment and billCredit note to pay the ful
 
 <TabItem value="Sage Intacct" label="Sage Intacct">
 
-:::note
+:::note Considerations
 
-Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can be retrieved from the [options api](/sync-for-payables-api#/operations/get-create-update-bills-model)
+Sage Intacct uses a `paymentMethodRef`. You can retrieve the payment methods for a company using the [Get create/update bill model](/sync-for-payables-api#/operations/get-create-update-bills-model) endpoint.
 
 :::
 
@@ -951,13 +973,12 @@ Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can b
 
 <TabItem value="MYOB" label="MYOB">
 
-:::note
+:::note Coming soon
 
-Allocating a `billCreditNote` with a `billPayment` is **coming soon** for myob.
+Credit note allocations are coming soon for MYOB.
 
 :::
 
-
 </TabItem>
 
 </Tabs>
@@ -966,9 +987,19 @@ Allocating a `billCreditNote` with a `billPayment` is **coming soon** for myob.
 
 </Tabs>
 
+### Delete bills and payments
 
+In certain scenarios, your SMB customer may want to delete an existing bill or a bill payment - for example, if they made a mistake or no longer want to process the bill. 
 
+Use the [Delete bill](/sync-for-payables-api#/operations/delete-bill) and [Delete bill payment](/sync-for-payables-api#/operations/delete-billPayment) endpoints to support these requirements, and check them in our OAS for the most up-to-date integration coverage. 
 
+:::tip Recap
+
+This concludes the bill pay process supported by Sync for Payables. You have provided your customer with their suppliers, bills, and bank accounts and enabled them to choose relevant payment methods. You have reflected the bill payments in their accounting system. 
+
+As a result, the customer will see these bills marked as paid in their software and their accounts payable liability and supplier balances reduced.
+
+:::
 
 
 

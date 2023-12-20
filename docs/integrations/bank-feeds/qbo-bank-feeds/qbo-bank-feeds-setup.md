@@ -104,9 +104,9 @@ See the next procedure for details on the functionality to provide.
    POST /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts
    ```
 
-   In the request body, specify a list of bank accounts (all fields shown are required):
+   In the request body, specify a bank account (all fields shown are required):
 
-   ```json title="Example request body: add two checking accounts"
+   ```json title="Example request body: add a checking account"
      {
        "id": "ac-001",
        "accountName": "account-001",
@@ -118,7 +118,7 @@ See the next procedure for details on the functionality to provide.
      }
    ```
 
-   The endpoint returns a `200` response and the list of created bank accounts.
+   The endpoint returns a `200` response and the created bank account.
 
 4. Redirect the SMB user to the `linkUrl` returned in the response from the [Create a data connection](/platform-api#/operations/create-connection) endpoint (see step 2).
 

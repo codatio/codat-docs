@@ -1,6 +1,7 @@
 ---
 title: "How the decisioning works"
 description: "Reference page with details on our decisioning logic, fetching data, and coming to a decision"
+sidebar_label: "App's decisioning logic"
 ---
 
 ### 🚀 In this section, you will...
@@ -39,26 +40,13 @@ Its threshold is maintained as `RevenueThreshold` in `appsettings.json`. In the 
 
 <TabItem value="grat" label="Gearing ratio">
 
-The gearing ratio used in the example model is the **debt ratio**, calculated by dividing total debt by total assets. It uses the [`balanceSheet`](https://docs.codat.io/assess-api#/operations/get-enhanced-balance-sheet) endpoint and its `Asset` and `Liability.NonCurrent.LoansPayable` values. Having too much debt may indicate a higher financial risk associated with the company. 
+The gearing ratio used in the example model is the **debt ratio**, calculated by dividing total debt by total assets. It uses the [`balanceSheet`](https://docs.codat.io/assess-api#/operations/get-enhanced-balance-sheet) endpoint and its `Asset` and `Liability.NonCurrent.LoansPayable` values. Having too much debt may indicate a higher financial risk associated with the company. 
 
 Its threshold is maintained as `MaxGearingRatio` in `appsettings.json`. In the demo app, the value is set to 0.5.
 
 </TabItem>
 
 </Tabs>
-
-### <input type="checkbox" unchecked/> See how we fetch financial data
-
-Codat supports automatic loan decision-making by providing the data required to calculate the ratios described previously. To fetch the required data, we use Lending's [Enhanced Profit and Loss](https://docs.codat.io/assess-api#/operations/get-enhanced-profit-and-loss) and [Enhanced Balance Sheet](https://docs.codat.io/assess-api#/operations/get-enhanced-balance-sheet) endpoints for analysis. The `{companyId}` used in the endpoint call is the same `id` as previously returned by the `/applications/start` endpoint. 
-
-```html
-GET https://api.codat.io/data/companies/{companyId}/connections/{connectionId}/lending/enhancedProfitAndLoss
-GET https://api.codat.io/data/companies/{companyId}/connections/{connectionId}/lending/enhancedBalanceSheet
-```
-
-Both endpoints require a `reportDate`, `periodLength`, and `numberOfPeriods` as query parameters. The loan application's `createdDate` is used where the year and previous month are set as the `reportDate`. This ensures that a full year of financial data is returned by Codat. In addition, `includeDisplayNames` parameter is set to `true` in the request because it allows accounts to be accessed via Codat's standardized taxonomy display names.
-
-Once both enhanced data types have been fetched, they are passed to the [LoanUnderwriter](https://github.com/codatio/demo-loan-qualification/blob/main/Codat.Demos.Underwriting.Api/Services/LoanUnderwriter.cs) service together with the application's loan amount and term length. This is to perform an assessment of the prospective borrower's creditworthiness and make a decision on their application.
 
 ### <input type="checkbox" unchecked/> Understand how we generate an automatic decision
 
@@ -78,8 +66,6 @@ Only if all the thresholds are met or surpassed by the applicant, the app update
 
 📊 If you are interested in loan qualification models used by lenders in the industry, you can read through [Bigfoot Capital's blog](https://www.bigfootcap.com/revenue-based-financing/) on revenue-based finance or [Workweek's article](https://workweek.com/2023/03/02/unlocking-lending-innovation) on unlocking loan qualification innovation.
 
-💸 Lenders also use Lending to understand a business' liquidity via the [enhanced cash flow report](/lending/enhanced-cash-flow/overview), or whether a business's accounts are accurate using both [data integrity](/lending/data-integrity/overview) and the [audit report](/lending/excel/audit-report).
-
 🧠 See what else [Codat recommends](https://www.codat.io/blog/how-to-underwrite-ecommerce-merchants-effectively/) to build your loan qualification process effectively. 
 
 🗣️ Anything unclear in this guide? Got feedback? We're working on a whole host of new content for you, so [let us know](https://github.com/orgs/codatio/discussions/new?category=general).
@@ -88,4 +74,4 @@ Only if all the thresholds are met or surpassed by the applicant, the app update
 
 In this reference section, you have learned and understood in detail the data points we chose for our loan qualification model, how we fetched the data used in the calculation of these data points, and how all of this influenced the decision on the loan made automatically. 
 
-Next, you can find out more about [Lending](/lending/overview), or explore other use cases.
+Next, you can find out more about [Lending API](/lending/overview), or explore other use cases.

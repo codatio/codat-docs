@@ -55,6 +55,7 @@ module.exports = [
       "using-the-api/supplemental-data/usecases",
     ],
   },
+  "using-the-api/custom-data",
   {
     type: "category",
     label: "Best practices",

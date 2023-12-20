@@ -7,6 +7,8 @@ image: "/img/banners/social/lending.png"
 
 import { IntegrationsList } from "@components/global/Integrations";
 import { accountingIntegrations, bankingIntegrations, commerceIntegrations } from "@components/global/Integrations/integrations";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem"
 
 :::tip Your lending journey
 
@@ -85,7 +87,7 @@ In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate
 
 ## Use Lending API
 
-Before you can collect your SMB customer's data, you need to create a Codat [company](./terms/company) and connect it to a data source (for example, an accounting platform). You can do that in two ways:
+Before you can collect your SMB customer's data, you need to create a Codat [company](../terms/company) and connect it to a data source (for example, an accounting platform). You can do that in two ways:
 
 * In the [Codat Portal](https://app.codat.io) by navigating to **Companies > Create company**
 * By calling the [Create company](/lending-api#/operations/create-company) endpoint of our API
@@ -119,11 +121,124 @@ Once the connection is established, Codat will retrieve data for the data types 
       <h3>Developers</h3>
     </div>
     <p>
-      Interact with our <a href="/lending/features/excel-download-overview">Lending API reference</a> to understand required body parameters, responses, and errors. Use our <a href="/get-started/libraries">client SDKs</a> to simplify your implementation journey.
+      Interact with our <a href="/lending-api">Lending API reference</a> to understand required body parameters, responses, and errors. Use our <a href="/get-started/libraries">client SDKs</a> to simplify your implementation journey.
     </p>
   </li>
 
   </ul>
+
+### Client libraries
+
+Use our comprehensive [Lending API library](/get-started/libraries) to kick-start and simplify your build.
+Simply install the library in one of the supported languages and pass your base64-encoded API key to the constructor.
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+#### Install
+
+##### NPM
+```sh
+npm add @codat/lending
+```
+
+##### Yarn
+```sh
+yarn add @codat/lending
+```
+
+#### Initialize
+
+```javascript
+import { CodatBankFeeds } from "@codat/lending";
+
+const lendingClient = new CodatLending({
+        security: {
+            authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+        },
+    });
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+#### Install
+
+```sh
+pip install codat-lending
+```
+
+#### Initialize
+
+```python
+import codatlending
+from codatlending.models import shared
+
+lending_client = codatlending.CodatLending(
+    security=shared.Security(
+        auth_header="Basic BASE_64_ENCODED(API_KEY)",
+    ),
+)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+#### Install
+
+```sh
+dotnet add package Codat.Lending
+```
+
+#### Initialize
+
+```csharp
+using Codat.Lending;
+using Codat.Lending.Models.Shared;
+
+var lendingClient = new CodatLending(
+    security: new Security() {
+        AuthHeader = "Basic BASE_64_ENCODED(API_KEY)",
+    }
+);
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+#### Install
+
+```sh
+go get github.com/codatio/client-sdk-go/lending
+```
+
+#### Initialize
+
+```go
+import (
+	"context"
+	lending "github.com/codatio/client-sdk-go/lending/v4"
+	"github.com/codatio/client-sdk-go/lending/v4/pkg/models/operations"
+	"github.com/codatio/client-sdk-go/lending/v4/pkg/models/shared"
+	"log"
+)
+
+func main() {
+	lendingClient := lending.New(
+		lending.WithSecurity(shared.Security{
+			AuthHeader: "Basic BASE_64_ENCODED(API_KEY)",
+		}),
+	)
+}
+```
+
+</TabItem>
+
+</Tabs>
 
 --- 
 

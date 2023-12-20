@@ -12,13 +12,14 @@ banner_class: lending
 banner_icon: "/img/logos/products/logo_assess_clear.svg"
 banner_image: "/img/banners/assess.png"
 banner_text: "Our Lending API helps you make smarter credit decisions on small businesses by enabling you to pull your customers' latest data from accounting, banking, and commerce platforms they are already using. It also includes features to help providers verify the accuracy of data and process it more efficiently."
-// video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
-// video_text: What is Lending API?
+video_url: "https://www.youtube.com/embed/UgtbRe-j0Jo?si=KMRaVzgKCnW7E7tr"
+video_text: What is Lending API?
 ---
 
 import Products from "@components/global/Products";
 import { IntegrationsList } from "@components/global/Integrations";
 import { accountingIntegrations, bankingIntegrations, commerceIntegrations } from "@components/global/Integrations/integrations";
+import ClientLibraries from "@components/global/ClientLibraries";
 
 ## What is it?
 
@@ -137,6 +138,12 @@ Our Lending API empowers you with a host of features to help you streamline your
 #### Commerce
 
 <IntegrationsList integrations={commerceIntegrations} />  
+
+## Build with client libraries
+
+Use our [comprehensive SDKs](/get-started/libraries) to kick-start and simplify your developers' journey automating the collection of your customers' financial data and making an assessment of a small business's financial health and performance. The SDKs come in multiple languages and provide sample requests and responses for the full range of lending and underwriting scenarios.
+
+<ClientLibraries productName={"lending"} />
 
 ---
 ## Read next

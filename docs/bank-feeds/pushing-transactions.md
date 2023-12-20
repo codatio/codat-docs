@@ -1,43 +1,30 @@
 ---
-title: "Push transactions"
-description: "Push bank transaction data into your customers' accounting platforms with an automated feed."
-sidebar_label: Push transactions
+title: "Import bank transactions"
+description: "Learn how to import bank transaction data from your application to your customer's accounting platform"
+sidebar_label: Import transactions
 displayed_sidebar: bankfeeds
-hide_title: true
-hide_description: true
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
 
-# Bank transactions
-Once a company has mapped their source account to a target account, you can begin pushing transactions to their bankfeed.
+Once a company has mapped their source account to a target account, you can begin creating bank transactions in their accounting platform using the established [bank feed](../terms/bank-feed).
 
-## Generate bankTransactions object
+## Generate transactions
 
-Before you can record the companies bankTransactions in their accounting platform, you'll need to generate a `transactions` object for each transaction that has been made from their account.
+Before you can record your customer's bank transactions in their accounting platform, you need to generate a `transactions` object for each transaction that has been made from their account. 
 
-The bankTransaction object must **only contain transactions that have cleared** and should not include any pending or upcoming transactions.
+Collect transaction data within your own application and map it to Codat's [Bank transactions](/bank-feeds-api#/schemas/BankTransactions) schema. Add this to [Create bank transactions](/bank-feeds-api#/schemas/CreateBankTransactions), including the `sourceAccount` id that the transactions should be associated with at the top level.  
 
-At the top level of the bankTransactions object, you should include the `sourceAccount` id of for the transactions to be associated with. 
-
-Each transaction within the `transactions` array should include the following:
-- `id` this is a string and should be your unique identifier for a given transaction.
-- `amount` the amount of the transaction, if its spending money (`Debit`) then the signage should be negative (e.g. -42.00).
-- `balance` the balance of the account in the given currency after the given transaction, **often platforms use this to represent the balance of the account.**
-- `date` the date the transaction took place, all transactions in the object should be ordered oldest to newest.
-- `description` a short description of the transaction, this could include details such as the merchant or the exchange rate if its in a foreign currency.
-- `transactionType` supports `Debit` to show money leaving the account and `Credit` to represent money coming into the account.
-
-:::caution Transaction Signs
+:::caution Transaction signs
 Make sure the transaction `amount` signs align with the `transactionType`. Codat issues a warning for inconsistencies, such as a `Debit` transaction with a positive amount.
 :::
 
 ## Push bank transactions
 
-Steps:
-- [Creating bankTransactions](pushing-transactions#creating-banktransactions)
-- [Monitoring the status of the request](pushing-transactions#monitoring-the-status-of-the-request)
+In Codat, creating a bank transaction is a two-step process (learn more about it [here](/using-the-api/push)). It requires you to check the data model of the data type you want to create first to ensure all required properties are included in your request. 
+
+Next, you are ready to create the bank transaction. You will receive `pushOperation` key in return. You can then use it to monitor the status of the operation, or display its results.
 
 ```mermaid
 
@@ -55,198 +42,166 @@ sequenceDiagram
 
 ```
 
-### Create bankTransactions
+### Create bank transactions
 
-Regularly uploading transactions throughout the day ensures that your customers' bank feed balances are close to real-time. This enhanced accuracy aids companies with increased accuracy for their planning and forecasting.
+We recommend regularly uploading transactions throughout the day so that your customers' bank feed balances are close to real-time. This enhanced accuracy helps companies with their planning and forecasting.
+
+Use our [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions) endpoint to create bank transactions. In response, you will receive a `pushOperation` object with a `Pending` status.
+
+:::caution Quantity limit
+A maximum of 1000 bank transactions can be pushed at a time.
+:::
 
 <Tabs>
 
-  <TabItem value="request-url" label="Request URL">
+<TabItem value="nodejs" label="TypeScript">
 
-  Use the [create-bank-transactions](/bank-feeds-api#/operations/create-bank-transactions) endpoint
-
-  ```http
-  POST /companies/:companyId/connections/:connectionId/push/bankAccounts/:accountId/bankTransactions
-  ```
-
-  </TabItem>
-
-  <TabItem value="request-body" label="Request Body">
-
-  Sample request body with `debit` and `credit` transactions
-
-```json
-{
-    "accountId": "sourceAccountId",
-    "transactions": [
+```javascript
+const transactionsResponse = bankFeedsClient.transactions.create({
+    createBankTransactions: {
+      accountId: sourceAccountResponse.sourceAccount.id,
+      transactions: [
         {
-            "id": "63e2b848-951a-4657-a889-ded00f0e616a",
-            "amount": 100.0,
-            "balance": 100.0,
-            "date": "2023-08-22T10:21:00.000Z",
-            "description": "Repayment of Credit Card",
-            "transactionType": "Credit"
+            id: "63e2b848-951a-4657-a889-ded00f0e616a",
+            amount: 100.0,
+            balance: 100.0,
+            date: "2023-08-22T10:21:00.000Z",
+            description: "Repayment of Credit Card",
+            transactionType: BankTransactionType.Credit
         },
         {
-            "id": "710ed9f9-feb6-4ab7-9055-05a26d31718c",
-            "amount": -100.0,
-            "balance": 0.00,
-            "date": "2023-08-22T10:22:00.000Z",
-            "description": "Amazon US | $1.25 | PXDFGSDTR | c2dddf4c-eece-4a9b-a392-8c8e65b59e47",
-            "transactionType": "Debit"
-        },
-        {
-            "id": "d9b04a83-1fd7-4a5e-bd7d-8433828749f4",
-            "amount": -60.0,
-            "balance": -60.0,
-            "date": "2023-08-22T10:23:00.000Z",
-            "description": "Office Supplies from Office Mart",
-            "transactionType": "Debit"
-        },
-        {
-            "id": "f5e8f94c-5f72-4f64-aa26-344d1fbb3aa7",
-            "amount": -17.54,
-            "balance": -77.54,
-            "date": "2023-08-22T10:24:00.000Z",
-            "description": "Tech book from Amazon",
-            "transactionType": "Debit"
-        },
-        {
-            "id": "c3e59033-8aa1-4f11-8f08-46f5b0da3f2c",
-            "amount": -180.0,
-            "balance": -257.54,
-            "date": "2023-08-22T10:25:00.000Z",
-            "description": "Client Dinner from Fine Dining Restaurant",
-            "transactionType": "Debit"
-        },
-        {
-            "id": "9d1b4a39-5e89-47dd-8df7-02a2426658d4",
-            "amount": -1200.0,
-            "balance": -1457.54,
-            "date": "2023-08-22T10:26:00.000Z",
-            "description": "Marketing Campaign from Advertising Agency",
-            "transactionType": "Debit"
+            id: "710ed9f9-feb6-4ab7-9055-05a26d31718c",
+            amount: -75.0,
+            balance: 25.00,
+            date: "2023-08-22T10:22:00.000Z",
+            description: "Amazon US | $1.25 | PXDFGSDTR | c2dddf4c-eece-4a9b-a392-8c8e65b59e47",
+            transactionType: BankTransactionType.Debit
         }
-    ]
-}
+      ],
+    },
+    accountId: sourceAccountResponse.sourceAccount.id,
+    companyId: companyResponse.company.id,
+    connectionId: connectionResponse.connection.id
+});
 ```
 
-  </TabItem >
+</TabItem>
 
-  <TabItem value="response" label="Response">
+<TabItem value="python" label="Python">
 
-  Example response:
+```python
+transactions_request = operations.CreateBankTransactionsRequest(
+    create_bank_transactions=shared.CreateBankTransactions(
+        account_id=source_account_response.source_account.id,
+        transactions=[
+            shared.BankTransactions(
+                id='63e2b848-951a-4657-a889-ded00f0e616a',
+                amount=Decimal('100.0'),
+                balance=Decimal('100.0'),
+                date_='2023-08-22T10:21:00.000Z',
+                description='Repayment of Credit Card',
+                transaction_type=shared.BankTransactionType.CREDIT
+            ),
+            shared.BankTransactions(
+                id='710ed9f9-feb6-4ab7-9055-05a26d31718c',
+                amount=Decimal('-75.0'),
+                balance=Decimal('25.0'),
+                date_='2023-08-22T10:22:00.000Z',
+                description='Amazon US | $1.25 | PXDFGSDTR | c2dddf4c-eece-4a9b-a392-8c8e65b59e47',
+                transaction_type=shared.BankTransactionType.DEBIT
+            ),
+        ],
+    ),
+    account_id=source_account_response.source_account.id,
+    company_id=company_response.company.id,
+    connection_id=connection_response.connection.id
+)
 
-  ```json
-{
-    "changes": [
-        {
-            "type": "Created",
-            "recordRef": {
-                "dataType": "bankTransactions"
-            }
-        }
-    ],
-    "data": {
-        "accountId": "a3f28138-e2b9-4daa-92e1-5a99fb29ac42",
-        "transactions": [
-            {
-                "id": "63e2b848-951a-4657-a889-ded00f0e616a",
-                "date": "2023-08-22T10:21:00Z",
-                "description": "Repayment of Credit Card",
-                "reconciled": false,
-                "amount": 100.0,
-                "balance": 100.0,
-                "transactionType": "Credit"
+transactions_response = bank_feeds_client.transactions.create(transactions_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var transactionsResponse = await bankFeedsClient.Transactions.CreateAsync(new() {
+    CreateBankTransactions = new CreateBankTransactions() {
+        AccountId = sourceAccountResponse.SourceAccount.Id,
+        Transactions = new List<BankTransactions>() {
+            new BankTransactions() {
+                Id = "63e2b848-951a-4657-a889-ded00f0e616a",
+                Amount = 100.0M,
+                Balance = 100.0M,
+                Date = "2023-08-22T10:21:00.000Z",
+                Description = "Repayment of Credit Card",
+                TransactionType = BankTransactionType.Credit
             },
-            {
-                "id": "710ed9f9-feb6-4ab7-9055-05a26d31718c",
-                "date": "2023-08-22T10:22:00Z",
-                "description": "Amazon US | $1.25 | PXDFGSDTR | c2dddf4c-eece-4a9b-a392-8c8e65b59e47",
-                "reconciled": false,
-                "amount": -100.0,
-                "balance": 0.0,
-                "transactionType": "Debit"
+            new BankTransactions() {
+                Id = "710ed9f9-feb6-4ab7-9055-05a26d31718c",
+                Amount = -75.0M,
+                Balance = 25.0M,
+                Date = "2023-08-22T10:22:00.000Z",
+                Description = "Amazon US | $1.25 | PXDFGSDTR | c2dddf4c-eece-4a9b-a392-8c8e65b59e47",
+                TransactionType = BankTransactionType.Dedit
             },
-            {
-                "id": "d9b04a83-1fd7-4a5e-bd7d-8433828749f4",
-                "date": "2023-08-22T10:23:00Z",
-                "description": "Office Supplies from Office Mart",
-                "reconciled": false,
-                "amount": -60.0,
-                "balance": -60.0,
-                "transactionType": "Debit"
-            },
-            {
-                "id": "f5e8f94c-5f72-4f64-aa26-344d1fbb3aa7",
-                "date": "2023-08-22T10:24:00Z",
-                "description": "Tech book from Amazon",
-                "reconciled": false,
-                "amount": -17.54,
-                "balance": -77.54,
-                "transactionType": "Debit"
-            },
-            {
-                "id": "c3e59033-8aa1-4f11-8f08-46f5b0da3f2c",
-                "date": "2023-08-22T10:25:00Z",
-                "description": "Client Dinner from Fine Dining Restaurant",
-                "reconciled": false,
-                "amount": -180.0,
-                "balance": -257.54,
-                "transactionType": "Debit"
-            },
-            {
-                "id": "9d1b4a39-5e89-47dd-8df7-02a2426658d4",
-                "date": "2023-08-22T10:26:00Z",
-                "description": "Marketing Campaign from Advertising Agency",
-                "reconciled": false,
-                "amount": -1200.0,
-                "balance": -1457.54,
-                "transactionType": "Debit"
-            }
-        ]
+        },
     },
-    "dataType": "bankTransactions",
-    "companyId": "77921ff9-2491-4dfe-b23b-ff28f3e31e4f",
-    "pushOperationKey": "af72f845-1e59-47b4-94ce-65feedc6f119",
-    "dataConnectionKey": "0e47da62-c3c0-401b-a593-3543824d2a6d",
-    "requestedOnUtc": "2023-09-12T12:58:39.5065472Z",
-    "status": "Pending",
-    "validation": {
-        "errors": [],
-        "warnings": []
-    },
-    "statusCode": 202
-}
-  ```
+    AccountId = sourceAccountResponse.SourceAccount.Id,
+    CompanyId = companyResponse.Company.Id,
+    ConnectionId = connectionResponse.Connection.Id
+});
+```
 
-  </TabItem >
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+transactionsResponse, err := s.Transactions.Create(ctx, operations.CreateBankTransactionsRequest{
+    CreateBankTransactions: &shared.CreateBankTransactions{
+        AccountID: sourceAccountResponse.SourceAccount.ID,
+        Transactions: []shared.BankTransactions{
+            shared.BankTransactions{
+                ID: bankfeeds.String("63e2b848-951a-4657-a889-ded00f0e616a"),
+                Amount: types.MustNewDecimalFromString("100.0"),
+                Balance: types.MustNewDecimalFromString("100.0"),
+                Date: bankfeeds.String("2023-08-22T10:21:00.000Z"),
+                Description: bankfeeds.String("Repayment of Credit Card"),
+                TransactionType: BankTransactionTypeCredit
+            },
+            shared.BankTransactions{
+                ID: bankfeeds.String("710ed9f9-feb6-4ab7-9055-05a26d31718c"),
+                Amount: types.MustNewDecimalFromString("-75.0"),
+                Balance: types.MustNewDecimalFromString("25.0"),
+                Date: bankfeeds.String("2023-08-22T10:22:00.000Z"),
+                Description: bankfeeds.String("Amazon US | $1.25 | PXDFGSDTR | c2dddf4c-eece-4a9b-a392-8c8e65b59e47"),
+                TransactionType: BankTransactionTypeDebit
+            },
+        },
+    },
+    AccountID: sourceAccountResponse.SourceAccount.ID,
+    CompanyID: companyResponse.Company.ID,
+    ConnectionID: connectionResponse.Connection.ID
+})
+```
+</TabItem>
 
 </Tabs>
 
-When you make the request, you will receive a pushOperation response with a `Pending` status and `202` statusCode, the pushOperation object will include the following information:
+:::caution QuickBooks Online bank feeds syncing info
 
-- **pushOperationKey**: a unique idempotent identifier generated by Codat to represent this single pushOperation that can be used to track its status
-- **dataType**: the type of data being created, in this case, `bankTransaction`
-- **status**: the status of the create operation, which can be `Pending`, `Failed`, `Success` or `TimedOut` 
-- **requestedOnUtc**: the datetime (in UTC) when the operation was requested 
-- **completedOnUtc**: the datetime (in UTC) when the operaion was completed, null if `Pending`
-- **validation**: a human-readable object that contains validation details, including errors, encountered during the operation.
-- **changes**: an array that communicates which record has changed (`recordRef` property) and the manner in which it changed (`type` property that can be `Unknown`, `Created`, `Modified`, or `Deleted`)
+Transactions pushed to QuickBooks Online bank feeds will show a `Success` status when they validated and saved by Codat. However, they will only become available in their accounting software after synchronization between QBO and Codat.
 
-:::caution QuickBooks Online Bank Feeds Syncing Info
-
-Transactions pushed to QuickBooks Online bank feeds will show a 'Success' status once validated and saved by Codat. 
-
-These transactions will only become available to the user in their accounting software after synchronization between QBO and Codat.
-
-Users can manually sync from the QBO interface, and QBO will also automatically poll Codat daily for updates.
+QBO automatically polls Codat daily for updates, and users can also manually trigger that sync from the QBO interface.
 
 :::
 
 
-### Monitor the status of the request
-After your request has been accepted, it will have a status of `Pending`. You should use the [Push Operation Status Changed](../using-the-api/webhooks/core-rules-types#push-operation-status-has-changed) webhooks to track when the status of your pushOperation changes to `Success` or `Failed`.
+### Monitor request status
+
+After you submit your request to create bank transactions to our API, it will have a status of `Pending`. Use the [Push Operation Status Changed](/bank-feeds/setup#webhooks) webhook to track when the status of your push operation changes to `Success` or `Failed`.
 
 If the request is successful, you will receive a webhook like this:
 
@@ -265,4 +220,4 @@ If the request is successful, you will receive a webhook like this:
 }
 ```
 
-If you want to see a history of all pushOperations for your company, you can retrieve these from the [list-push-operations](/bank-feeds-api#/operations/list-create-operations) endpoint.
+If you want to see a history of all push operations for a specific company, retrieve these by calling the [List create operations](/bank-feeds-api#/operations/list-create-operations) endpoint.

@@ -1,6 +1,6 @@
 ---
 title: "Cochat"
-description: "Cochat is an innovative tool powered by GPT 3.5, designed to assist Codat customers in navigating the Codat documentation and marketing website"
+description: "Cochat is an innovative tool powered by GPT 4, designed to assist Codat customers in navigating the Codat documentation and marketing website"
 ---
 
 :::note Note
@@ -10,14 +10,14 @@ This page was written by ChatGPT.
 
 :::caution Beta
 
-Cochat is in beta and we're still refining it's training data.
+Cochat is in beta and we're still refining its training data.
 :::
 
 ![A screenshot of cochat](/img/cochat/screenshot.png)
 
 ## What is Cochat?
 
-Cochat is an advanced natural language processing (NLP) tool developed to enhance the user experience of Codat customers. By leveraging the power of GPT 3.5, Cochat provides an interactive and conversational interface to help users make sense of the Codat documentation and better understand how to leverage its capabilities for building integrations.
+Cochat is an advanced natural language processing (NLP) tool developed to enhance the user experience of Codat customers. By leveraging the power of GPT 4, Cochat provides an interactive and conversational interface to help users make sense of the Codat documentation and better understand how to leverage its capabilities for building integrations.
 
 <li className="card dark">
   <div className="header">
@@ -41,7 +41,7 @@ Cochat is an advanced natural language processing (NLP) tool developed to enhanc
 
 1. **Improved documentation understanding**
 
-  Cochat serves as a reliable companion for Codat customers, providing contextual guidance and clarification while navigating the documentation. By utilizing GPT 3.5's language capabilities, Cochat can interpret complex queries, provide detailed explanations, and offer examples to help users comprehend the technical concepts and functionalities offered by Codat.
+  Cochat serves as a reliable companion for Codat customers, providing contextual guidance and clarification while navigating the documentation. By utilizing GPT 4's language capabilities, Cochat can interpret complex queries, provide detailed explanations, and offer examples to help users comprehend the technical concepts and functionalities offered by Codat.
 
 2. **Efficient development support**
 
@@ -53,7 +53,7 @@ Cochat is an advanced natural language processing (NLP) tool developed to enhanc
 
 ## Inherent variability of results
 
-It's important to acknowledge that, as an AI-powered tool, Cochat utilizes GPT 3.5, which introduces inherent variability in its responses. While Cochat is trained on the Codat documentation and marketing website, the generated results may vary based on the input phrasing, context, and other factors. This variability arises due to the nature of language models and should be taken into consideration when interpreting Cochat's responses.
+It's important to acknowledge that, as an AI-powered tool, Cochat utilizes GPT 4, which introduces inherent variability in its responses. While Cochat is trained on the Codat documentation and marketing website, the generated results may vary based on the input phrasing, context, and other factors. This variability arises due to the nature of language models and should be taken into consideration when interpreting Cochat's responses.
 
 To minimize variability and enhance accuracy, Cochat has been extensively trained and fine-tuned using large-scale datasets. However, it's essential to understand that occasional incorrect or unexpected responses may still occur. Codat recommends reviewing the Cochat responses critically and validating them against the official Codat documentation when in doubt.
 
