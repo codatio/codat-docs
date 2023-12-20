@@ -1572,7 +1572,6 @@
       "post": {
         "summary": "Create group",
         "operationId": "create-group",
-        "x-speakeasy-name-override": "create-group",
         "description": "﻿Use the *Create group* endpoint to generate a new group that you can assign your companies to.\n\n[Groups](https://docs.codat.io/platform-api#/schemas/Group) define a set of companies that are organized based on a chosen characteristic and can be managed in the same way.\n\n### Tips and traps\n\n* The maximum length for the group name is 50 characters.\n* It's possible to create up to 20 groups per client.",
         "tags": [
           "Groups"
