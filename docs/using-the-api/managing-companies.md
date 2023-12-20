@@ -174,7 +174,7 @@ var companyDeleteResponse = await platformClient.Companies.DeleteAsync(new(){
 
 ```go
 ctx := context.Background()
-companyDeleteResponse, err := s.Companies.Delete(ctx, operations.DeleteCompanyRequest{
+companyDeleteResponse, err := platformClient.Companies.Delete(ctx, operations.DeleteCompanyRequest{
     CompanyID: companyCreatedRes.Company.ID,
 })
 ```
@@ -186,34 +186,68 @@ companyDeleteResponse, err := s.Companies.Delete(ctx, operations.DeleteCompanyRe
 
 You can group several companies to simplify the management of these companies and their use cases.
 If you are grouping companies for the first time, you need to create a group first using the [Create group](/platform-api#/operations/create-group) endpoint.
+You will only have to do this operation once per group so make sure to persist the `groupId` for reuse within your application.
+If you have an existing set of groups the [List groups](/platform-api#/operations/list-groups) endpoint.
 
 <Tabs>
 
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
-Create group code snippet
+const groupCreateResponse = await platformClient.groups.create({
+  name: "Invoice finance team",
+});
+
+if (groupCreateResponse.statusCode == 200) {
+  //Assign to global param:
+  groupId = groupCreateResponse.group.id
+  console.log(groupId)
+}
 ```
 </TabItem>
 
 <TabItem value="python" label="Python">
 
 ```python
-Create group code snippet
+group_create_response = platform_client.groups.create(
+  shared.GroupPrototype(
+    name='Invoice finance team',
+))
+
+if group_create_response.group is not None:
+  # Assign to global param:
+  group_id = group_create_response.group.id
+  print(group_id)
 ```
 </TabItem>
 
 <TabItem value="csharp" label="C#">
 
 ```c#
-Create group code snippet
+var groupCreateResponse = await platformClient.Groups.CreateAsync(new(){
+  Name = "Invoice finance team",
+});
+
+if(groupCreateResponse.Group != null){
+  //Assign to global param:
+  groupId = groupCreateResponse.group.Id;
+  Console.WriteLine(groupId);
+}
 ```
 </TabItem>
 
 <TabItem value="go" label="Go">
 
 ```go
-Create group code snippet
+ctx := context.Background()
+groupCreateResponse, err := s.Groups.Create(ctx, &shared.GroupPrototype{
+    Name: platform.String("Invoice finance team"),
+})
+if err != nil {
+  //Assign to global param:
+  groupID = groupCreateResponse.Group.ID
+  fmt.Println(groupID)
+}
 ```
 </TabItem>
 
@@ -247,12 +281,12 @@ platformClient.companies.create({
 <TabItem value="python" label="Python">
 
 ```python
-req = shared.CompanyRequestBody(
-    name='Platypus Properties',
-    groups=[shared.GroupRef(id=groupId)]
-    )
+company_created_req = shared.CompanyRequestBody(
+  name='Platypus Properties',
+  groups=[shared.GroupRef(id=group_id)]
+)
 
-company_created_res = platform_client.companies.create(req)
+company_created_res = platform_client.companies.create(company_created_req)
 company = company_created_res.company
 print(company.id, company.name, company.groups[0].id)
 ```
@@ -261,7 +295,7 @@ print(company.id, company.name, company.groups[0].id)
 <TabItem value="csharp" label="C#">
 
 ```c#
-var companyCreatedRes = await platformClient.Companies.CreateAsync(new CompanyRequestBody() {
+var companyCreatedRes = await platformClient.Companies.CreateAsync(new() {
     Name = "Platypus Properties",
     Groups = new List<GroupRef>(){
       new(){ Id = groupId }
@@ -270,7 +304,7 @@ var companyCreatedRes = await platformClient.Companies.CreateAsync(new CompanyRe
 
 if(companyCreatedRes.Company != null) {
     var company = companyCreatedRes.Company;
-    logger.LogInformation('{CompanyId} {CompanyName} {GroupId}', company.Id, company.Name, company.Groups[0].Id);
+    logger.LogInformation("{CompanyId} {CompanyName} {GroupId}", company.Id, company.Name, company.Groups[0].Id);
 }
 ```
 </TabItem>
@@ -292,7 +326,7 @@ if err != nil {
 
 if companyCreatedRes.Company != nil {
   company := companyCreatedRes.Company
-  fmt.Println("%s %s %s", company.Id, company.Name, company.Groups[0].ID)
+  fmt.Println("%s %s %s", company.ID, company.Name, company.Groups[0].ID)
 }
 ```
 </TabItem>
@@ -306,28 +340,51 @@ If you need to add an existing company to a group, use the [Add company to group
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
-Add company to group code snippet
+const companyAddRes = await sdk.groups.addCompany({
+  companyGroupAssignment: {
+    groupId: groupId,
+  },
+  companyId: company.id,
+});
 ```
 </TabItem>
 
 <TabItem value="python" label="Python">
 
 ```python
-Add company to group code snippet
+company_add_req = operations.AddCompanyToGroupRequest(
+  company_group_assignment=shared.CompanyGroupAssignment(
+    group_id=group_id,
+  ),
+  company_id=company.id,
+)
+
+company_add_res = platform_client.groups.add_company(company_add_req)
 ```
 </TabItem>
 
 <TabItem value="csharp" label="C#">
 
 ```c#
-Add company to group code snippet
+var companyAddRes = await platformClient.Groups.AddCompanyAsync(new() {
+  CompanyGroupAssignment = new CompanyGroupAssignment() {
+    GroupId = groupId,
+  },
+  CompanyId = company.Id,
+});
 ```
 </TabItem>
 
 <TabItem value="go" label="Go">
 
 ```go
-Add company to group code snippet
+ctx := context.Background()
+companyAddRes, err := platformClient.Groups.AddCompany(ctx, operations.AddCompanyToGroupRequest{
+  CompanyGroupAssignment: &shared.CompanyGroupAssignment{
+    GroupID: platform.String(groupID),
+  },
+  CompanyID: company.ID,
+})
 ```
 </TabItem>
 
@@ -340,35 +397,47 @@ To remove a company from a group, use the [Remove company from group](/platform-
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
-Remove company from group code snippet
+const companyRemoveRes = await platformClient.groups.removeCompany({
+  companyId: company.id,
+  groupId: groupId,
+});
 ```
 </TabItem>
 
 <TabItem value="python" label="Python">
 
 ```python
-Remove company from group code snippet
+company_remove_req = operations.RemoveCompanyFromGroupRequest(
+  company_id=company.id,
+  group_id=group_id,
+)
+
+company_remove_res = platform_client.groups.remove_company(company_remove_req)
 ```
 </TabItem>
 
 <TabItem value="csharp" label="C#">
 
 ```c#
-Remove company from group code snippet
+var companyRemoveRes = await platformClient.Groups.RemoveCompanyAsync(new() {
+  CompanyId = company.Id,
+  GroupId = groupId,
+});
 ```
 </TabItem>
 
 <TabItem value="go" label="Go">
 
 ```go
-Remove company from group code snippet
+ctx := context.Background()
+companyRemoveRes, err := s.Groups.RemoveCompany(ctx, operations.RemoveCompanyFromGroupRequest{
+  CompanyID: company.ID,
+  GroupID: groupID,
+})
 ```
 </TabItem>
 
 </Tabs>
-
-
-
 
 :::tip Recap
 You've learned:
