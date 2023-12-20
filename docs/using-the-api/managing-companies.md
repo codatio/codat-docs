@@ -185,8 +185,9 @@ companyDeleteResponse, err := platformClient.Companies.Delete(ctx, operations.De
 ## Assign companies to a group
 
 You can group several companies to simplify the management of these companies and their use cases.
-If you are grouping companies for the first time, you need to create a group first using the [Create group](/platform-api#/operations/create-group) endpoint.
-You only need to do this operation once per group, so retain the `groupId` to reuse it within your application.
+
+If you are grouping companies for the first time, you need to create a group first using the [Create group](/platform-api#/operations/create-group) endpoint. You only need to do this operation once per group, so retain the `groupId` to reuse it within your application.
+
 If you have an existing set of groups, use the [List groups](/platform-api#/operations/list-groups) endpoint to display them.
 
 <Tabs>
@@ -258,8 +259,7 @@ if err != nil {
 It's not possible to update or delete existing groups, so double-check that the group's name is correct when creating it.
 :::
 
-Once you have created a group, you can assign a company to it in two ways: either at the point of company creation or after it has been created.
-For example, use the [Create company](/platform-api#/operations/create-company) endpoint and pass the `groupId` that you want to add the company to.
+Once you have created a group, you can assign a company to it in two ways: either at the point of company creation or after it has been created. For a new company, use the [Create company](/platform-api#/operations/create-company) endpoint and pass the `groupId` that you want to add the company to.
 
 <Tabs>
 
@@ -443,7 +443,8 @@ companyRemoveRes, err := s.Groups.RemoveCompany(ctx, operations.RemoveCompanyFro
 You've learned:
 - How to create a company and authorize access to their data
 - The basics of pulling data
-- Managing companies
+- Manage companies
+- Manage groups
 :::
 
 ---
