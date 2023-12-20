@@ -5,17 +5,35 @@ description: "Frequently asked questions about Sync for Expenses"
 displayed_sidebar: expenses
 ---
 
+import Questions, { Question } from '@components/global/Questions';
+
 ## Product overview
 
-### Where can I see a roadmap for integration and feature support for Sync for Expenses? 
+<Questions>
+	<Question
+		question="Where can I see a roadmap for integration and feature support for Sync for Expenses?"
+		answer={`
+Codat does not currently publish a public product roadmap. If you would like to learn more about upcoming product releases, speak to your account manager.
+		`}
+	/>
+	<Question
+		question="Am I able to update an attachment (i.e. receipt) when I have already synced the expense transaction?"
+		answer={`
+Codat pushes attachments synchronously to the expense transactions. To update any of these documents, you need to remove the attachment from the accounting platform. Next, you need to upload the correct document either directly to the accounting platform or using Sync for Expenses. When using Sync for Expenses, you benefit from its support for multiple attachments. 
+		`}
+	/>
+</Questions>
+
+
+#### Where can I see a roadmap for integration and feature support for Sync for Expenses? 
 
 Codat does not currently publish a public product roadmap. If you would like to learn more about upcoming product releases, speak to your account manager.
 
-### Am I able to update an attachment (i.e. receipt) when I have already synced the expense transaction? 
+#### Am I able to update an attachment (i.e. receipt) when I have already synced the expense transaction? 
 
 Codat pushes attachments synchronously to the expense transactions. To update any of these documents, you need to remove the attachment from the accounting platform. Next, you need to upload the correct document either directly to the accounting platform or using Sync for Expenses. When using Sync for Expenses, you benefit from its support for multiple attachments.   
 
-### How can I migrate our in-house integration to Codat?
+#### How can I migrate our in-house integration to Codat?
 
 Our [token migration process](https://docs.codat.io/get-started/migration) allows you to seamlessly migrate your customers' connections without them needing to reconnect. We offer self-service and managed migrations, so you can choose the option that suits your use case best. 
 
@@ -23,7 +41,7 @@ Our [token migration process](https://docs.codat.io/get-started/migration) allow
 
 If a user disconnects, you can use a [webhook](/using-the-api/webhooks/core-rules-types#company-data-connection-status-changed) and redirect your user to the `linkUrl` of the accounting connection to re-authenticate. If a company changes accounting platforms, it is better to remove the accounting connection completely and create a new one. 
 
-### What is the difference between effectiveTaxRate and totalTaxRate?
+#### What is the difference between effectiveTaxRate and totalTaxRate?
 
 If a transaction has multiple tax components, each component may be calculated based on the original amount separately and then added together. 
 
@@ -31,11 +49,11 @@ Alternatively, primary tax can be calculated on the item cost, and another tax c
 
 The `totalTaxRate` is the total, not compounded, sum of the components of a tax rate. Further details can be found in our [Codat docs](/accounting-api#/schemas/TaxRate#tax-components). 
 
-### Where can I find logo files for the accounting platforms supported by Sync for Expenses?
+#### Where can I find logo files for the accounting platforms supported by Sync for Expenses?
 
 If you want to use the accounting platform logos in your user interface, you can get these via our `GET /integrations` endpoint. 
 
-### Why should I move our existing accounting integrations to Sync for Expenses?
+#### Why should I move our existing accounting integrations to Sync for Expenses?
 
 Moving your existing integrations to Sync for Expenses lets you leverage the following benefits:
 
@@ -63,42 +81,43 @@ For example, if you are issuing credit cards, using Codat’s [Lending API](/len
 
 Likewise, you can use `billPayments` to retrieve a list of bills from your customer’s accounting software and enable them to pay these and reconcile their payments.
 
-### What can we reuse from the Codat Bill Pay build for Sync for Expenses?
+#### What can we reuse from the Codat Bill Pay build for Sync for Expenses?
 You can reuse the chart of accounts, tracking categories, and tax rates from our Accounting API. However, we recommend using the [mappingOptions](https://docs.codat.io/sync-for-expenses-api#/operations/get-mapping-options) endpoint for expenses because of the transaction type support. 
 Authentication, company creation and the Accounting connection linking journeys can be reused between builds. This is because the companies can use the same Id between Codat products. 
 
 ## Configuration and setup
 
-### How do I reconnect a company?
+#### How do I reconnect a company?
 
 If a user disconnects, you can use a [webhook](/using-the-api/webhooks/core-rules-types#company-data-connection-status-changed) and redirect your user to the `linkUrl` of the accounting connection to re-authenticate. If a company changes accounting platforms, it is better to remove the accounting connection completely and create a new one. 
 
-### Where can I find logo files for the accounting platforms supported by Sync for Expenses?
+#### Where can I find logo files for the accounting platforms supported by Sync for Expenses?
 
 If you want to use the accounting platform logos in your user interface, you can get these via our `GET /integrations` endpoint. 
 
-### Can I use the Sandbox account to test a sync when implementing Sync for Expenses?
+#### Can I use the Sandbox account to test a sync when implementing Sync for Expenses?
 
 Currently, we do not support Sandbox as a destination platform when establishing an accounting connection. This is because it is hard to see data that has been pushed and our Codat sandbox has been designed for pulling data. We recommend signing up for a free QuickBooks/Xero developer account to test syncs, which will give you sandbox access as well.
 
 For more information on how to set up your accounting platform integration take a look at the [following documentation](https://docs.codat.io/integrations/accounting/overview).
 
-### Is the transaction ID unique to each connected company? 
+#### Is the transaction ID unique to each connected company? 
 
 Each transaction Id is unique to a client's company but they aren't unique across connections. We currently only support a single accounting connection per company. If a company wants to swap their accounting software or would like to link to a different entity we recommend creating a new company. 
 
-### What can we reuse from the Codat Bill Pay build for Sync for Expenses?
+#### What can we reuse from the Codat Bill Pay build for Sync for Expenses?
 
 You can reuse the chart of accounts, tracking categories, and tax rates from our Accounting API. However, we recommend using the [mappingOptions](https://docs.codat.io/sync-for-expenses-api#/operations/get-mapping-options) endpoint for expenses because of the transaction type support. 
 Authentication, company creation, and the Accounting connection linking journeys can be reused between builds. This is because the companies can use the same Id between Codat products. 
 
 ### How can I detect if an expense account has been deactivated?
+
 You can create a webhook in the Codat portal to inform you when the Chart of Accounts has been changed. By querying the Chart of Accounts and using the `isDeleted` flag, you can identify which accounts have been deleted before a sync occurs. 
 For more information, please refer to the [documentation](https://docs.codat.io/using-the-api/webhooks/core-rules-types) on creating and updating rules.
 
 ## Syncing expenses
 
-### How can I resync a transaction which has previously failed once I resolve the issue with the transaction?
+#### How can I resync a transaction which has previously failed once I resolve the issue with the transaction?
 
 Once you resolve the issue with the transaction, you can create a new dataset for that transaction Id. You are unable to resync the transaction with the same dataset Id as the other successfully synced transactions will trigger the validation for preventing duplicates. To avoid duplicates, Codat checks the transaction metadata to see if a transaction Id has a status of completed. If it does, it is not synced again. 
 
@@ -108,18 +127,18 @@ The following error will appear if a transaction has been previously synced:
 error: One or more transactions have previously been processed: 46dd5a8a-d74f-46f0-adf8-4f74ffe5e7c8
 ```
 
-### How can I detect if an expense account has been deactivated?
+#### How can I detect if an expense account has been deactivated?
 
 You can create a webhook in the Codat portal to inform you when the Chart of Accounts has been changed. By querying the Chart of Accounts and using the `isDeleted` flag, you can identify which accounts have been deleted before a sync occurs. 
 For more information, please refer to the [documentation](https://docs.codat.io/using-the-api/webhooks/core-rules-types) on creating and updating rules.
 
 ## Expense transactions
 
-### Am I able to update an attachment (i.e. receipt) when I have already synced the expense transaction?
+#### Am I able to update an attachment (i.e. receipt) when I have already synced the expense transaction?
 
 Codat pushes attachments synchronously to the expense transactions. To update any of these documents, you need to remove the attachment from the accounting platform. Next, you need to upload the correct document either directly to the accounting platform or using Sync for Expenses. When using Sync for Expenses, you benefit from its support for multiple attachments.   
 
-### How should I handle transactions in a foreign currency?
+#### How should I handle transactions in a foreign currency?
 
 For multicurrency transactions, you have to consider the currency of the transaction, the currency of the card, and the base currency of the company in the accounting platform. Depending on the platform, only specific multicurrency scenarios may be supported. Codat provides built-in validations that protect against multicurrency scenarios that aren't supported by specific accounting platforms. 
 
@@ -127,7 +146,7 @@ If the currency of the transaction or the card differs from the base currency, y
 
 It is not possible to perform the currency conversion with two or more non-base currencies participating in the transaction. For example, if a company's base currency is USD, and the transaction currency (supplier currency) is GBP, then the bank account used must be USD or GBP.
 
-### What is the difference between effectiveTaxRate and totalTaxRate?
+#### What is the difference between effectiveTaxRate and totalTaxRate?
 
 If a transaction has multiple tax components, each component may be calculated based on the original amount separately, and then added together. 
 
@@ -135,5 +154,5 @@ Alternatively, primary tax can be calculated on the item cost, and another tax c
 
 The `totalTaxRate` is the total, not compounded, sum of the components of a tax rate. Further details can be found in our [Codat docs](/accounting-api#/schemas/TaxRate#tax-components). 
 
-### Is the transaction ID unique to each connected company? 
+#### Is the transaction ID unique to each connected company? 
 Each transaction id is unique to a client's company but they aren't unique across connections. We currently only support a single accounting connection per company. If a company wants to swap their accounting software or would like to link to a different entity we recommend creating a new company. 
