@@ -334,7 +334,7 @@ Add company to group code snippet
 
 </Tabs>
 
-To remove a company from a group use the [Remove company from group](/platform-api#/operations/remove-company-from-group) endpoint.
+To remove a company from a group, use the [Remove company from group](/platform-api#/operations/remove-company-from-group) endpoint.
 
 <Tabs>
 
