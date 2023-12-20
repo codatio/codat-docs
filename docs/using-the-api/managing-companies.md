@@ -186,8 +186,8 @@ companyDeleteResponse, err := platformClient.Companies.Delete(ctx, operations.De
 
 You can group several companies to simplify the management of these companies and their use cases.
 If you are grouping companies for the first time, you need to create a group first using the [Create group](/platform-api#/operations/create-group) endpoint.
-You will only have to do this operation once per group so make sure to persist the `groupId` for reuse within your application.
-If you have an existing set of groups the [List groups](/platform-api#/operations/list-groups) endpoint.
+You only need to do this operation once per group, so retain the `groupId` to reuse it within your application.
+If you have an existing set of groups, use the [List groups](/platform-api#/operations/list-groups) endpoint to display them.
 
 <Tabs>
 
