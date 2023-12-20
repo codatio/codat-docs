@@ -39,7 +39,7 @@ Any forbidden characters will be removed from your company name. For example: `E
 
 ## If you have multiple use cases...
 
-Codat supports assigning companies to one or more groups.
+You can assign a company to one or more groups.
 A group can be used to manage who internally can access data from that a set of companies as well as identify what use case or product a company is using.
 
 ---
