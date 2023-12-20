@@ -27,29 +27,33 @@ Our <a href="https://docs.codat.io/get-started/migration">token migration proces
 		answer={`
 Moving your existing integrations to Sync for Expenses lets you leverage the following benefits:
 
-1. Up-to-date mapping options 
+<ol>
 
-Every company has its own preference for representing an individual expense in its accounting software. You can retrieve the representation mapping from our <a href="https://docs.codat.io/sync-for-expenses-api#/operations/get-mapping-options">Mapping options endpoint</a> and set up webhook notifications that notify you when your customer creates a new expense account or tracking category. This ensures the list of tracking categories, accounts, and tax rates used to map the expense is always up to date.
+<li>Up-to-date mapping options</li>
 
-2. Standardization of expense data
+<p>Every company has its own preference for representing an individual expense in its accounting software. You can retrieve the representation mapping from our <a href="https://docs.codat.io/sync-for-expenses-api#/operations/get-mapping-options">Mapping options endpoint</a> and set up webhook notifications that notify you when your customer creates a new expense account or tracking category. This ensures the list of tracking categories, accounts, and tax rates used to map the expense is always up to date.</p>
 
-Sync for Expenses is built to standardize transaction data using an opinionated model that is based on feedback from customers and industry expertise. This means you don’t need to make decisions on how to handle validation differences between accounting platforms. Simply send transactions based on what they represent and let Codat handle the mapping to their best representation in the accounting software.
+<li>Standardization of expense data</li>
 
-3. Multiple transaction support
+<p>Sync for Expenses is built to standardize transaction data using an opinionated model that is based on feedback from customers and industry expertise. This means you don’t need to make decisions on how to handle validation differences between accounting platforms. Simply send transactions based on what they represent and let Codat handle the mapping to their best representation in the accounting software.</p>
 
-Sync for Expenses handles the pushing of multiple transactions in an array to make your interactions more efficient. You can retrieve the status of these transactions from the <a href="https://docs.codat.io/sync-for-expenses-api#/operations/get-sync-transactions">Transactions status endpoint</a>.
+<li>Multiple transaction support</li>
 
-4. Enhanced developer experience
+<p>Sync for Expenses handles the pushing of multiple transactions in an array to make your interactions more efficient. You can retrieve the status of these transactions from the <a href="https://docs.codat.io/sync-for-expenses-api#/operations/get-sync-transactions">Transactions status endpoint</a>.</p>
 
-Our detailed documentation aimed at developers and a variety of SDKs mean you can get up and running with the Sync for Expense API quickly.
+<li>Enhanced developer experience</li>
 
-5. Adjacency to Codat’s product range
+<p>Our detailed documentation aimed at developers and a variety of SDKs mean you can get up and running with the Sync for Expense API quickly.</p>
 
-You can use Sync for Expenses alongside all Codat use cases or products.
+<li>Adjacency to Codat’s product range</li>
+
+<p>You can use Sync for Expenses alongside all Codat use cases or products.
 
 For example, if you are issuing credit cards, using Codat’s <a href="https://docs.codat.io/lending/overview">Lending API</a> product would allow you to determine the risk associated with the company that has the same `companyId` and API key.
 
-Likewise, you can use `billPayments` to retrieve a list of bills from your customer’s accounting software and enable them to pay these and reconcile their payments.
+Likewise, you can use `billPayments` to retrieve a list of bills from your customer’s accounting software and enable them to pay these and reconcile their payments.</p>
+
+</ol>
 		`}
 	/>
 	<Question
