@@ -14584,8 +14584,9 @@
             "enum": [
               "Accounting",
               "Banking",
-              "Commerce",
               "BankFeed",
+              "Commerce",
+              "Expense",
               "Other",
               "Unknown"
             ],
