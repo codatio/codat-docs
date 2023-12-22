@@ -1,8 +1,11 @@
 ---
-title: "Record and update expenses"
+title: "Create and update expenses"
 sidebar_label: "Create expenses"
-description: Create and update expense transactions that represent your customers' spend
+description: Record and update expense transactions that represent your customers' spend
 ---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem"
 
 ## Overview
 
@@ -22,18 +25,18 @@ This process is summarized on the diagram below.
 ``` mermaid
 sequenceDiagram
   User->>+You: Approve expenses with receipt
-  You-)+Codat: POST expense-transaction
+  You-)+Codat: Post expense transaction
   Codat-->>-You: datasetId
   You-)+Codat: Initiate sync
   Note over You,Codat: Specify datasetIds to sync
   Codat --> Codat: Sync request added to queue
   Codat-->>You: syncId
-  Codat-)Accounting: Sync expense-transaction from queue
+  Codat-)Accounting: Sync expense transaction from queue
   Codat->>-You: Sync Complete webhook event
   You->>Codat: Check transactions
   Codat-->>You: 
-  par Each succesful reconciliation
-    You->>+Codat: POST attachment
+  par Each successful reconciliation
+    You->>+Codat: Post attachment
     Codat->>Accounting: Upload attachment
     Codat-->>-You: Success
   end

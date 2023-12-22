@@ -106,7 +106,7 @@ Codat pushes attachments synchronously to the expense transactions. To update an
 		`}
 	/> 
 	<Question
-		question="What is the difference between <code>effectiveTaxRate</code> and <code>totalTaxRate</code>?"
+		question="What is the difference between effectiveTaxRate and totalTaxRate?"
 		answer={`
 <p>If a transaction has multiple tax components, each component may be calculated based on the original amount separately, and then added together.</p>
 <p>Alternatively, primary tax can be calculated on the item cost, and another tax component is added on top of that amount.This is known as compounding. In this case, the effective tax rate is the rate that results in the total amount of tax with compounding when applied to the original amount.</p>
