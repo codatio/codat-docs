@@ -8,7 +8,9 @@ tags: [syncforexpense, mappingOptions, Config]
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
 
-Once your SMB user has authorized a connection to their accounting platform and you have created a data connection, you are ready to create expense configuration for their company. You also need to provide them with an opportunity (via your application's user interface) to choose the accounts, tracking categories, and tax rates that their expenses will be mapped to. 
+Once your SMB user has authorized a connection to their accounting platform and you have created a data connection, you are ready to create expense configuration for their company. Ask your customer for the default bank account, customer, and supplier to be used with their expenses. 
+
+You also need to provide them with an opportunity (via your application's user interface) to choose the default accounts, tracking categories, and tax rates that their expenses will be mapped to. 
 
 ## Create configuration
 
@@ -66,7 +68,7 @@ The currency associated with the supplier must match the currency associated wit
 
 ### Customer
 
-Choose the customer (`customer.id ) that any income-related activities, such as cashback, should be associated with. You can create a new supplier or retrieve a list of existing suppliers from your customer's accounting software. 
+Choose the customer (`customer.id`) that any income-related activities, such as cashback, should be associated with. You can create a new supplier or retrieve a list of existing suppliers from your customer's accounting software. 
 
 * To create a new customer, use the [Create customer](/sync-for-expenses-api#/operations/create-customer) endpoint. 
 
@@ -146,9 +148,9 @@ In some scenarios, different accounting platforms assign customers and suppliers
 
 ### Override settings
 
-You can set the suppliers and bank accounts that will be associated with expense transactions at the [configuration level](/expenses/config-and-categorize#create-configuration) or at the [transaction level](/sync-for-expenses-api#/operations/create-expense-transaction#request-body) when creating an item of spend.
+Your customer would have previous set the default suppliers and bank accounts that will be associated with expense transactions at the [configuration level](/expenses/config-and-categorize#create-configuration).
 
-Setting these at the transaction level means you can sync a more accurate representation of who or where the spend should be associated with in the accounting platform. 
+You should also enable your customer to override the default settings at the [transaction level](/sync-for-expenses-api#/operations/create-expense-transaction#request-body) when creating an item of spend. Setting these at the transaction level means you can sync a more accurate representation of who or where the spend should be associated with in the accounting platform. 
 
 If no override is set at the transaction level, the spend item will be associated with the supplier or bank account configured for the company.
 

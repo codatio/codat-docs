@@ -59,7 +59,7 @@ sequenceDiagram
 ## Configure Sync for Expenses
 ### Data types
 
-By default, the data types required for Sync for Expenses will be activated automatically when Sync for Expenses is enabled for your Codat instance. If you need to manage the data types, navigate to **Settings > Integrations > Data types** in the <a href="https://app.codat.io" target="_blank">Codat Portal</a>
+By default, the data types required for Sync for Expenses will be activated automatically when Sync for Expenses is enabled for your Codat instance. If you need to manage the data types, navigate to **Settings > Integrations > Data types** in the <a href="https://app.codat.io" target="_blank">Codat Portal</a>.
 
 Enable the [data types](/core-concepts/data-type-settings#override-the-default-sync-settings) required for Sync for Expenses with the following settings: 
 
@@ -73,14 +73,20 @@ Enable the [data types](/core-concepts/data-type-settings#override-the-default-s
 | Tax rates           | `taxRates`           | Tax rates enable companies to track expenses against the relevant tax code, helping them to make the expense billable or track taxes that can be reclaimed.                                | ✅                  | Daily          |
 | Tracking categories | `trackingCategories` | Tracking categories provide an additional means of categorizing and tagging an expense (e.g. locations, departments).                                            | ✅                  | Daily          |
 
+#### Additional data types
+
 You can also choose to enable additional data types that may enhance your Sync for Expenses experience. With these, you can choose the [synchronization frequency](/core-concepts/data-type-settings#choose-a-synchronization-frequency) and first link fetch based on your requirements. We recommend setting it to a daily or a monthly sync.
 
-| Data type name | `dataType` | Use case |
+<details>
+  <summary>Additional data types</summary>
+
+| Data type name | `dataType` | Solution enhancement |
 | :- | :- | :- | 
 | Direct costs        | `directCosts`        | Sync for Expenses uses direct cost to represent the expense transaction within the accounting platform.        |
 | Direct incomes      | `directIncomes`      | Direct incomes are used to represent any income-generating transaction type, such as cashback rewards.    |
 | Journal entries     | `journalEntries`     | Journal entries are used when an accounting platform does not support a representation of direct costs. They are also used to represent transfers, such as topping up or paying down an expense card.   |
 | Transfers           | `transfers`          | A record of an expense transaction between two bank accounts, such as topping up or paying down the expense card.        |
+</details>
 
 ### Manage data sources
 

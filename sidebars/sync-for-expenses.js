@@ -58,6 +58,7 @@ module.exports = [
     label: "FAQs",
     customProps: {
       hr: true,
+      section: "Reference",
     },
   },
   {

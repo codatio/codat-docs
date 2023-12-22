@@ -26,7 +26,7 @@ import Products from "@components/global/Products";
 
 **Sync for Expenses** is a standardized API-based product that makes it easy to build and maintain accounting integrations and an end-to-end expense management process that customers love. 
 
-With 58% of small businesses saying they choose one spending solution over another based on quality of their accounting integrations, **Sync for Expenses** enables you to push categorized expenses and attachments to your customers' accounting software via our high-quality accounting integrations. 
+With **58% of small businesses** saying they choose one spending solution over another based on **quality of their accounting integrations**, Sync for Expenses enables you to push categorized expenses and attachments to your customers' accounting software via our high-quality accounting integrations. 
 
 It includes built-in logic so you can easily handle all of the complexities of expense reconciliation, such as refunds, accounting for multiple currencies, and allowing users to correct errors.
 
@@ -46,7 +46,7 @@ With Sync for Expenses, corporate card providers, expense management providers, 
       <h3>Increase share of wallet</h3>
     </div>
     <p>
-      Make your card your customers' favorite way to spend through high quality accounting integrations that save them time on tedious financial admin.
+      Make your card your customers' favorite way to spend through hassle-free accounting integrations that save them time on tedious financial admin.
     </p>
   </li>
 
@@ -163,7 +163,7 @@ When creating an expense transaction, allow your SMB customer to save a copy of 
 
 Use our [comprehensive SDKs](/get-started/libraries) to kick-start and simplify your developers' journey automating the expense management process for your customers. The SDKs come in multiple languages and provide sample requests and responses for the full range of spend management scenarios.
 
-<ClientLibraries productName={"expenses"} />
+<ClientLibraries productName={"sync-for-expenses"} />
 
 ---
 

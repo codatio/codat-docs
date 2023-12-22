@@ -238,5 +238,6 @@ On the **Push items** tab, you can also retry the push items in failed status. C
 
 ## Read next
 
+* Attach receipts to the expense transaction using [attachment upload](/expenses/sync-process/uploading-receipts)
 * Review our [FAQ](/expenses/faq) to find out more about Sync for Expenses
 * Try Sync for Expenses in our interactive [API reference](/sync-for-expenses-api#/)
