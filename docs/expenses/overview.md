@@ -1,7 +1,7 @@
 ---
 title: Sync for Expenses overview
 sidebar_label: Sync for Expenses
-description: Embedded accounting integrations for corporate card providers
+description: Push categorized expenses and attachments to all major accounting platforms, handling the complexities of expense reconciliation
 displayed_sidebar: expenses
 image: "/img/sync-for-expenses/sfe-banner.png"
 hide_title: true
@@ -12,17 +12,136 @@ banner_title: Sync for Expenses
 banner_class: expenses
 banner_icon: "/img/logos/products/logo_expenses_clear.svg"
 banner_image: "/img/banners/sfe-flow.png"
-banner_text: "Embedded accounting integrations for corporate card providers."
+banner_text: "Push categorized expenses and attachments to all major accounting platforms, handling the complexities of expense reconciliation"
 // video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
 // video_text: What is Sync for Expenses?
 ---
 
 import {IntegrationsList} from '@components/global/Integrations'
 import {integrationsFilterExpenses} from '@components/global/Integrations/integrations'
+import ClientLibraries from "@components/global/ClientLibraries";
+import Products from "@components/global/Products";
 
-Sync for Expenses is an API and a set of supporting tools. It has been built to enable corporate card and expense management platforms to provide high-quality integrations with multiple accounting platforms through a standardized API.
+## What is it?
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://god.gw.postman.com/run-collection/9514766-9427cfd1-d3f9-4857-b3f1-d488fb6de5a6?action=collection%2Ffork&collection-url=entityId%3D9514766-9427cfd1-d3f9-4857-b3f1-d488fb6de5a6%26entityType%3Dcollection%26workspaceId%3Dc6d087b0-fc80-4d14-a903-a9017e1b54e0)
+**Sync for Expenses** is a standardized API-based product that makes it easy to build and maintain accounting integrations and an end-to-end expense management process that customers love. 
+
+With **58% of small businesses** saying they choose one spending solution over another based on **quality of their accounting integrations**, Sync for Expenses enables you to push categorized expenses and attachments to your customers' accounting software via our high-quality accounting integrations. 
+
+It includes built-in logic so you can easily handle all of the complexities of expense reconciliation, such as refunds, accounting for multiple currencies, and allowing users to correct errors.
+
+## Who is it for?
+
+With Sync for Expenses, corporate card providers, expense management providers, and neobanks can easily embed accounting automation features in their solution that would otherwise take months or even years to design, build, and maintain from scratch. 
+
+## Why use it?
+
+<ul className="card-container col-2">
+  <li className="card">
+    <div class="header">
+      <img
+        src="/img/wp-icons/copy-feature-bullet.svg"
+        class="mini-icon"
+      />
+      <h3>Increase share of wallet</h3>
+    </div>
+    <p>
+      Make your card your customers' favorite way to spend through hassle-free accounting integrations that save them time on tedious financial admin.
+    </p>
+  </li>
+
+  <li className="card">
+    <div class="header">
+      <img
+        src="/img/wp-icons/copy-feature-bullet.svg"
+        class="mini-icon"
+      />
+      <h3>Go to market quickly</h3>
+    </div>
+    <p>
+      Ship robust expense management integrations with leading accounting platforms six times faster via our single, streamlined API.
+    </p>
+  </li>
+
+  <li className="card">
+    <div class="header">
+      <img
+        src="/img/wp-icons/copy-feature-bullet.svg"
+        class="mini-icon"
+      />
+      <h3>Free up development resources</h3>
+    </div>
+    <p>
+      Run your accounting integrations on our infrastructure proven at scale without the hassle of ongoing API maintenance and optimization.
+    </p>
+  </li>
+
+  <li className="card">
+    <div class="header">
+      <img
+        src="/img/wp-icons/copy-feature-bullet.svg"
+        class="mini-icon"
+      />
+      <h3>Get standardized data</h3>
+    </div>
+    <p>
+      Sync for Expenses is completely standardized with a data model based on the experience of expense card providers. 
+    </p>
+  </li>
+
+  <li className="card">
+    <div class="header">
+      <img
+        src="/img/wp-icons/copy-feature-bullet.svg"
+        class="mini-icon"
+      />
+      <h3>Capture receipts</h3>
+    </div>
+    <p>
+      Easily upload receipts against an expense, providing your SMB customer with a full audit trail for each transaction.
+    </p>
+  </li>
+
+  <li className="card">
+    <div class="header">
+      <img
+        src="/img/wp-icons/copy-feature-bullet.svg"
+        class="mini-icon"
+      />
+      <h3>Two-way sync</h3>
+    </div>
+    <p>
+      Sync for Expenses stays in touch with the SMB customer’s general ledger so that your integrations are more robust and reliable.
+    </p>
+  </li>
+
+</ul>
+
+## How does it work?
+
+With Sync for Expenses, you can build a solution that covers all the key steps of expense management.
+
+### [Configure customer](/expenses/configure-customer)
+
+Start by creating a [company](../terms/company) to represent your SMB customer in Codat. Then, establish its [connection](/core-concepts/connections) to the customer's accounting platform. We will handle the authorization and linking to that platform - all we need is for your SMB to approve this access via our [auth flow](/auth-flow/overview).
+
+### [Map customer expenses](/expenses/config-and-categorize)
+
+Create expense configuration for your customer's company so that Sync for Expenses can attribute their spend to the correct accounts, suppliers, and customers. 
+
+Expenses can also be categorized according to your SMB's bookkeeping. Provide your customer with the opportunity to choose the accounts, tracking categories, and tax rates that their expenses will be mapped to. 
+
+### [Create and update expenses](/expenses/sync-process/expense-transactions)
+
+Once the customer has categorized their expenses using the mapping options, use Sync for Expenses to push their everyday purchases to the SMB's accounting platform. Sync for Expenses also enables SMB customers to push attachments for a complete audit trail.
+
+### [Sync expense transactions](/expenses/sync-process/syncing-expenses)
+
+Once you create a categorized expense transaction, you can initiate a sync of a set of these transactions. The sync processes the expenses you created, maps them into the format required by the accounting platform, and records them in that platform. 
+
+### [Upload attachments](/expenses/sync-process/uploading-receipts)
+
+When creating an expense transaction, allow your SMB customer to save a copy of the associated receipt in their accounting platform. 
 
 ## Supported integrations
 
@@ -40,64 +159,14 @@ Sync for Expenses is an API and a set of supporting tools. It has been built to 
 
 </details>
 
-## Features
+## Build with client libraries
 
-<ul className="card-container col-3">
-  <li className="card">
-    <div class="header">
-      <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
-      />
-      <h3>Standardized data</h3>
-    </div>
-    <p>
-      Sync for Expenses is completely standardized with a data model based on expense card providers. 
-    </p>
-  </li>
+Use our [comprehensive SDKs](/get-started/libraries) to kick-start and simplify your developers' journey automating the expense management process for your customers. The SDKs come in multiple languages and provide sample requests and responses for the full range of spend management scenarios.
 
-  <li className="card">
-    <div class="header">
-      <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
-      />
-      <h3>Receipt capture</h3>
-    </div>
-    <p>
-      Easily upload receipts against an expense, enabling full auditability for your SMB customer.
-    </p>
-  </li>
+<ClientLibraries productName={"sync-for-expenses"} />
 
-  <li className="card">
-    <div class="header">
-      <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
-      />
-      <h3>Two-way sync</h3>
-    </div>
-    <p>
-      Sync for Expenses stays in touch with the SMB’s general ledger so your integrations are more robust and reliable.
-    </p>
-  </li>
+---
 
-</ul>
+## Read next
 
-### [Connect to your SMB's accounting platform](/expenses/getting-started)
-
-Codat handles authorization and linking to your SMB's accounting platform and takes into account intricate details such as rate limits.
-
-### [Categorize and tag expenses](/expenses/config-and-categorize)
-
-Expenses can be categorized according to your SMB's bookkeeping.
-
-Sync for Expenses attributes the spend to the correct chart of accounts and enables further categorization via tracking categories which can represent departments and locations.
-
-### [Push any expenses easily](/expenses/sync-process/expense-transactions)
-
-Everyday purchases can be pushed to the SMB's accounting platform where they are represented with an expense. Sync for Expenses also enables SMB users to push attachments for complete auditability.
-
-### [Synchronize and map expenses with control](/expenses/sync-process/sync-process-explained)
-
-Once a categorized expense has been pushed, a sync can be initiated. The sync processes the expenses and maps them into the format required by the accounting platform.
+* [Start building](/expenses/getting-started) with Sync for Expenses
