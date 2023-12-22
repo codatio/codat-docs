@@ -146,7 +146,7 @@ When creating an expense transaction, allow your SMB customer to save a copy of 
 ## Supported integrations
 
 <IntegrationsList filter={integrationsFilterExpenses}/>
-
+<br/>
 <details>
 <summary>Transaction types supported per integration</summary>
 
