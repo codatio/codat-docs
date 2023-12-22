@@ -24,12 +24,16 @@ You can continue pushing new expenses to Codat while a sync is ongoing.
 
 ## Check sync status
 
-Once you have initiated the sync, check whether the sync was completed successfully and view the details of any errors that may have occurred. Use any of the following endpoints:
+Once you have initiated the sync, you may want to check whether the sync was completed successfully and view the details of any errors that may have occurred.
 
-* [Latest sync status](/sync-for-expenses-api#/operations/get-latest-sync) to check the status of the last initiated sync.
-* [Last successful sync](/sync-for-expenses-api#/operations/get-last-successful-sync) to view the most recent sync that completed successfully.
-* [List sync statuses](/sync-for-expenses-api#/operations/list-syncs) to display status details of all syncs for a specified company.
-* [Get sync status](/sync-for-expenses-api#/operations/get-sync-by-id) to check the status details of a specified sync.
+### Webhook events
+
+We recommend you use webhooks to track the sync status, navigate to **Settings > Webhooks > Rules** in the [Codat Portal](https://app.codat.io/settings/webhooks/rules) and click **Create new rule** to set up the following webhooks:
+
+* **Expenses sync failed** webhook of `Sync Failed` type is triggered if any failures occurred during the sync process.
+* **Expenses sync completed** webhook of `Sync Completed` type is triggered when a sync completes without any failures.
+
+You can [read more](/using-the-api/webhooks/core-rules-types) about webhooks at Codat and various trigger events we offer to monitor.
 
 <details>
   <summary>Sync status codes</summary>
@@ -50,6 +54,15 @@ Once you have initiated the sync, check whether the sync was completed successfu
 | 5130 | Data push error                               |
 
 </details>
+
+### Sync status via API
+
+Alternatively, you can check the sync status via our API using any of the following endpoints:
+
+* [Latest sync status](/sync-for-expenses-api#/operations/get-latest-sync) to check the status of the last initiated sync.
+* [Last successful sync](/sync-for-expenses-api#/operations/get-last-successful-sync) to view the most recent sync that completed successfully.
+* [List sync statuses](/sync-for-expenses-api#/operations/list-syncs) to display status details of all syncs for a specified company.
+* [Get sync status](/sync-for-expenses-api#/operations/get-sync-by-id) to check the status details of a specified sync.
 
 <Tabs>
 
@@ -96,15 +109,6 @@ GET https://api.codat.io/companies/{companyId}/sync/expenses/syncs/syncId/status
 </TabItem>
 
 </Tabs>
-
-### Webhook events
-
-If you prefer to use webhooks to track the sync status, navigate to **Settings > Webhooks > Rules** in the [Codat Portal](https://app.codat.io/settings/webhooks/rules) and click **Create new rule** to set up the following webhooks:
-
-* **Expenses sync failed** webhook of `Sync Failed` type is triggered if any failures occurred during the sync process.
-* **Expenses sync completed** webhook of `Sync Completed` type is triggered when a sync completes without any failures.
-
-You can [read more](/using-the-api/webhooks/core-rules-types) about webhooks at Codat and various trigger events we offer to monitor.
 
 ### Transaction status
 
