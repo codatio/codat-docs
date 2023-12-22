@@ -26,7 +26,9 @@ import Products from "@components/global/Products";
 
 **Sync for Expenses** is a standardized API-based product that makes it easy to build and maintain accounting integrations and an end-to-end expense management process that customers love. 
 
-With 58% of small businesses saying they choose one spending solution over another based on quality of their accounting integrations, **Sync for Expenses** enables you to push categorized expenses and attachments to your customers' accounting software via our high-quality accounting integrations. It includes built-in logic so you can easily handle all of the complexities of expense reconciliation, such as refunds, accounting for multiple currencies, and allowing users to correct errors.
+With 58% of small businesses saying they choose one spending solution over another based on quality of their accounting integrations, **Sync for Expenses** enables you to push categorized expenses and attachments to your customers' accounting software via our high-quality accounting integrations. 
+
+It includes built-in logic so you can easily handle all of the complexities of expense reconciliation, such as refunds, accounting for multiple currencies, and allowing users to correct errors.
 
 ## Who is it for?
 
@@ -159,7 +161,7 @@ When creating an expense transaction, allow your SMB customer to save a copy of 
 
 ## Build with client libraries
 
-Use our [comprehensive SDKs](/get-started/libraries) to kick-start and simplify your developers' journey automating the collection of your customers' financial data and making an assessment of a small business's financial health and performance. The SDKs come in multiple languages and provide sample requests and responses for the full range of lending and underwriting scenarios.
+Use our [comprehensive SDKs](/get-started/libraries) to kick-start and simplify your developers' journey automating the expense management process for your customers. The SDKs come in multiple languages and provide sample requests and responses for the full range of spend management scenarios.
 
 <ClientLibraries productName={"expenses"} />
 

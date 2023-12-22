@@ -66,11 +66,12 @@ The currency associated with the supplier must match the currency associated wit
 
 ### Customer
 
-- Choose which customer (<code>customer.id</code>) any income-related activities, such as cashback, should be associated with.  
-  - <a href="/accounting-api#/operations/get-customers">GET</a> A list of available customers, you can add additional query parameters e.g. <code>query=metadata.isDeleted=false&&customerName=name</code>
-  - You can <a href="/accounting-api#/operations/post-customers">POST</a> to the accounting API to create a new customer.
+Choose the customer (`customer.id ) that any income-related activities, such as cashback, should be associated with. You can create a new supplier or retrieve a list of existing suppliers from your customer's accounting software. 
 
-You can then [post](sync-for-expenses-api#/operations/set-company-configuration) the updated configuration to Codat to store their saved preferences.
+* To create a new customer, use the [Create customer](/sync-for-expenses-api#/operations/create-customer) endpoint. 
+
+* Use the [List customers](/sync-for-expenses-api#/operations/list-customers) endpoint to fetch a list of your SMB's existing customers from their accounting software and display these to them.
+  You can also use [query parameters](/using-the-api/querying) to narrow down the list of results. For example, `query=metadata.isDeleted=false&&customerName=name` returns existing customers that match the specified name.
 
 ### Supplier and customer handling
 
@@ -147,7 +148,9 @@ In some scenarios, different accounting platforms assign customers and suppliers
 
 You can set the suppliers and bank accounts that will be associated with expense transactions at the [configuration level](/expenses/config-and-categorize#create-configuration) or at the [transaction level](/sync-for-expenses-api#/operations/create-expense-transaction#request-body) when creating an item of spend.
 
-Setting these at the transaction level means you can sync a more accurate representation of who or where the spend should be associated with in the accounting platform. If no override is set at the transaction level, the spend item will be associated with the supplier or bank account configured for the company.
+Setting these at the transaction level means you can sync a more accurate representation of who or where the spend should be associated with in the accounting platform. 
+
+If no override is set at the transaction level, the spend item will be associated with the supplier or bank account configured for the company.
 
 :::caution Overriding customer settings
 
@@ -228,7 +231,7 @@ When pushing an expense reconciliation, you can include a tracking category to f
 
 ### Tax rates
 
-[Tax rates](/sync-for-expenses-api#/schemas/TaxRateMappingInfo) enable your SMB customers to accurately track taxes against purchases and, depending on the locale, allow them to recoup the tax. Assigning a tax rate to a transaction is mandatory, unless the transaction is a `transferIn` or `transferOut` (see [Transaction types](/expenses/sync-process/expense-transactions#transaction-types). 
+[Tax rates](/sync-for-expenses-api#/schemas/TaxRateMappingInfo) enable your SMB customers to accurately track taxes against purchases and, depending on the locale, allow them to recoup the tax. Assigning a tax rate to a transaction is mandatory, unless the transaction is a `transferIn` or `transferOut`. 
 
 Accounting systems typically store a set of taxes and associated rates within the accounting package. This means users don't have to look up or remember the rate for each type of tax. For example, applying the tax "UK sales VAT" to the line items of an invoice in an accounting platform will add the correct tax rate of 20%. 
 
