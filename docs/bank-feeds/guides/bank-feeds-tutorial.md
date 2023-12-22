@@ -251,7 +251,7 @@ if err != nil {
 }
 
 if companyCreatedRes.Company != nil {
-    fmt.Println("%s %s", companyCreatedRes.Company.Id, companyCreatedRes.Company.Name)
+    fmt.Println("%s %s", companyCreatedRes.Company.ID, companyCreatedRes.Company.Name)
 }
 ```
 </TabItem>

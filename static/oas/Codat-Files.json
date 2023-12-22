@@ -90,8 +90,7 @@
           "content": {
             "multipart/form-data": {
               "schema": {
-                "type": "string",
-                "format": "binary"
+                "$ref": "#/components/schemas/FileUpload"
               }
             }
           }
@@ -255,6 +254,25 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/File"
+        }
+      },
+      "FileUpload": {
+        "title": "Attachment upload",
+        "type": "object",
+        "required": [
+          "file"
+        ],
+        "properties": {
+          "file": {
+            "$ref": "#/components/schemas/FileUpload/definitions/codatFile"
+          }
+        },
+        "definitions": {
+          "codatFile": {
+            "type": "string",
+            "description": "The file to be uploaded as an attachment.",
+            "format": "binary"
+          }
         }
       }
     },

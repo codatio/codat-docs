@@ -115,6 +115,10 @@
       "description": "Manage your companies' data connections."
     },
     {
+      "name": "Groups",
+      "description": "Create groups and link them to your Codat companies."
+    },
+    {
       "name": "Webhooks",
       "description": "Manage webhooks, rules, and events."
     },
@@ -184,7 +188,12 @@
                             }
                           ],
                           "created": "2022-01-01T11:30:00Z",
-                          "createdByUserName": "Mike Smith"
+                          "createdByUserName": "Mike Smith",
+                          "groups": [
+                            {
+                              "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
+                            }
+                          ]
                         }
                       ],
                       "pageNumber": 1,
@@ -295,7 +304,7 @@
           }
         },
         "operationId": "list-companies",
-        "description": "﻿Returns a list of your companies. The company schema contains a list of [connections](https://docs.codat.io/platform-api#/schemas/Connection) related to the company.",
+        "description": "﻿The *List companies* endpoint returns a list of [companies] associated to your instances.\n\nA [company](https://docs.codat.io/platform-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/platform-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -327,16 +336,45 @@
                   "$ref": "#/components/schemas/Company"
                 },
                 "examples": {
-                  "New Company": {
+                  "With no description": {
                     "value": {
                       "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "name": "My First Company",
+                      "name": "Technicalium",
                       "description": "",
                       "platform": "",
                       "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18.1950523Z",
                       "createdByUserName": "Dan Tzabar"
+                    }
+                  },
+                  "With a description": {
+                    "value": {
+                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "name": "Technicalium",
+                      "description": "Technology services, including web and app design and development",
+                      "platform": "",
+                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "dataConnections": [],
+                      "created": "2022-11-10T10:45:18.1950523Z",
+                      "createdByUserName": "Dan Tzabar"
+                    }
+                  },
+                  "With a group": {
+                    "value": {
+                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "name": "Technicalium",
+                      "description": "",
+                      "platform": "",
+                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "dataConnections": [],
+                      "created": "2022-11-10T10:45:18.1950523Z",
+                      "createdByUserName": "Dan Tzabar",
+                      "groups": [
+                        {
+                          "id": "f8a6f6ed-9812-4d1e-ba48-4346348403c8"
+                        }
+                      ]
                     }
                   }
                 }
@@ -365,7 +403,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "﻿Creates a new company that can be used to assign connections to. \n\nIf forbidden characters (see `name` pattern) are present in the request, a company will be created with the forbidden characters removed. For example, `Company (Codat[1])` with be created as `Company Codat1`.\n\n",
+        "description": "﻿Use the *Create company* endpoint to create a new [company](https://docs.codat.io/platform-api#/schemas/Company) that represents your customer in Codat. \n\nA [company](https://docs.codat.io/platform-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/platform-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.\n\nIf forbidden characters (see `name` pattern) are present in the request, a company will be created with the forbidden characters removed. For example, `Company (Codat[1])` with be created as `Company Codat1`.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -373,15 +411,25 @@
                 "$ref": "#/components/schemas/CompanyRequestBody"
               },
               "examples": {
-                "Example with no description": {
+                "With no description": {
                   "value": {
                     "name": "Technicalium"
                   }
                 },
-                "Example with a description": {
+                "With a description": {
                   "value": {
                     "name": "Technicalium",
                     "description": "Technology services, including web and app design and development"
+                  }
+                },
+                "With a group": {
+                  "value": {
+                    "name": "Technicalium",
+                    "groups": [
+                      {
+                        "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
+                      }
+                    ]
                   }
                 }
               }
@@ -394,7 +442,7 @@
       "get": {
         "summary": "Get company",
         "operationId": "get-company",
-        "description": "﻿Returns the company for a valid identifier. If the identifier is for a deleted company, a not found response is returned.",
+        "description": "﻿The *Get company* endpoint returns a single company for a given `companyId`.\n\nA [company](https://docs.codat.io/platform-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/platform-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.\n",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -412,7 +460,7 @@
                   "$ref": "#/components/schemas/Company"
                 },
                 "examples": {
-                  "Example": {
+                  "Simple company": {
                     "value": {
                       "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
                       "name": "My First Company",
@@ -422,6 +470,23 @@
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18Z",
                       "createdByUserName": "Dan Tzabar"
+                    }
+                  },
+                  "With groups": {
+                    "value": {
+                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "name": "My First Company",
+                      "description": "",
+                      "platform": "",
+                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "dataConnections": [],
+                      "created": "2022-11-10T10:45:18Z",
+                      "createdByUserName": "Dan Tzabar",
+                      "groups": [
+                        {
+                          "id": "f8a6f6ed-9812-4d1e-ba48-4346348403c8"
+                        }
+                      ]
                     }
                   }
                 }
@@ -459,7 +524,7 @@
             "$ref": "#/components/parameters/companyId"
           }
         ],
-        "description": "﻿\nPermanently deletes a company, its connections and any cached data. This operation is irreversible. If the company ID does not exist an error is returned.",
+        "description": "﻿The *Delete company* endpoint permanently deletes a [company](https://docs.codat.io/platform-api#/schemas/Company), its [connections](https://docs.codat.io/platform-api#/schemas/Connection) and any cached data. This operation is irreversible.\n\nA [company](https://docs.codat.io/platform-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/platform-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.\n",
         "tags": [
           "Companies"
         ],
@@ -492,7 +557,7 @@
       },
       "put": {
         "summary": "Update company",
-        "description": "﻿Updates both the name and description of the company.",
+        "description": "﻿Use the *Update company* endpoint to update both the name and description of the company. \nIf you use [groups](https://docs.codat.io/platform-api#/schemas/Group) to manage a set of companies, use the [Add company](https://docs.codat.io/platform-api#/operations/add-company-to-group) or [Remove company](https://docs.codat.io/platform-api#/operations/remove-company-from-group) endpoints to add or remove a company from a group.\n\nA [company](https://docs.codat.io/platform-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/platform-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
         "operationId": "update-company",
         "parameters": [
           {
@@ -1299,6 +1364,313 @@
           }
         },
         "description": "Retrieve information about a single dataset or pull operation."
+      }
+    },
+    "/companies/{companyId}/groups": {
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "summary": "Add company",
+        "operationId": "add-company-to-group",
+        "x-speakeasy-name-override": "add-company",
+        "description": "﻿Use the *Add company* endpoint to assign a company to a group. A company can belong to multiple groups, but can only be added to one group at a time.\n\n[Groups](https://docs.codat.io/platform-api#/schemas/Group) define a set of companies that are organized based on a chosen characteristic and can be managed in the same way.",
+        "tags": [
+          "Groups"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Company/definitions/companyGroupAssignment"
+              },
+              "examples": {
+                "Example": {
+                  "value": {
+                    "groupId": "d7a6c4b4-dc87-45f6-b803-62f466398680"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Company"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                      "name": "string",
+                      "platform": "string",
+                      "redirect": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739",
+                      "lastSync": "2022-01-01T12:00:00.000Z",
+                      "created": "2022-01-01T12:00:00.000Z",
+                      "createdByUserName": "string",
+                      "dataConnections": [
+                        {
+                          "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                          "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                          "integrationKey": "dfxm",
+                          "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                          "platformName": "Basiq",
+                          "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                          "status": "Linked",
+                          "lastSync": "2022-10-27T10:22:43.6464237Z",
+                          "created": "2022-10-27T09:53:29Z",
+                          "sourceType": "Banking"
+                        }
+                      ],
+                      "groups": [
+                        {
+                          "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/groups/{groupId}": {
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "name": "groupId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Group/properties/id"
+            },
+            "description": "Unique identifier for the group."
+          }
+        ],
+        "summary": "Remove company",
+        "operationId": "remove-company-from-group",
+        "x-speakeasy-name-override": "remove-company",
+        "description": "﻿Use the *Remove company* endpoint to remove a company from a group.\n\n[Groups](https://docs.codat.io/platform-api#/schemas/Group) define a set of companies that are organized based on a chosen characteristic and can be managed in the same way.",
+        "tags": [
+          "Groups"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/groups": {
+      "get": {
+        "summary": "List groups",
+        "operationId": "list-groups",
+        "description": "Use the *List group* endpoint to return a list of all groups that currently exist for your client.\n\n[Groups](https://docs.codat.io/platform-api#/schemas/Group) define a set of companies that are organized based on a chosen characteristic and can be managed in the same way.",
+        "tags": [
+          "Groups"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Group/definitions/groups"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "results": [
+                        {
+                          "id": "d7a6c4b4-dc87-45f6-b803-62f466398680",
+                          "name": "Corporate cards department"
+                        },
+                        {
+                          "id": "e4498145-3b04-42bb-927c-d35726560a5b",
+                          "name": "Invoice finance team"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create group",
+        "operationId": "create-group",
+        "description": "﻿Use the *Create group* endpoint to generate a new group that you can assign your companies to.\n\n[Groups](https://docs.codat.io/platform-api#/schemas/Group) define a set of companies that are organized based on a chosen characteristic and can be managed in the same way.\n\n### Tips and traps\n\n* The maximum length for the group name is 50 characters.\n* It's possible to create up to 20 groups per client.",
+        "tags": [
+          "Groups"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Group/definitions/groupPrototype"
+              },
+              "examples": {
+                "Example": {
+                  "value": {
+                    "name": "Corporate cards department"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Group"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "id": "d7a6c4b4-dc87-45f6-b803-62f466398680",
+                      "name": "Corporate cards department"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "description": "Groups are not enabled for client.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorMessage"
+                },
+                "examples": {
+                  "Groups are not enabled for client": {
+                    "value": {
+                      "statusCode": 403,
+                      "service": "PublicApi",
+                      "error": "Groups are not enabled for your client. Reach out to your Codat contact if this is not expected.",
+                      "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                      "canBeRetried": "Unknown",
+                      "detailedErrorCode": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Client has reached the maximum number of groups allowed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorMessage"
+                },
+                "examples": {
+                  "Max number of allowed groups reached": {
+                    "value": {
+                      "statusCode": 409,
+                      "service": "PublicApi",
+                      "error": "Maximum number of groups reached.",
+                      "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                      "canBeRetried": "Unknown",
+                      "detailedErrorCode": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
       }
     },
     "/rules": {
@@ -3490,6 +3862,13 @@
             "items": {
               "$ref": "#/components/schemas/Connection"
             }
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Group/definitions/groupRef"
+            },
+            "description": "An array of groups the company has been assigned to."
           }
         },
         "required": [
@@ -3497,6 +3876,24 @@
           "name",
           "redirect"
         ],
+        "definitions": {
+          "companyGroupAssignment": {
+            "title": "Group assignment",
+            "type": "object",
+            "properties": {
+              "groupId": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Group/properties/id"
+                  },
+                  {
+                    "description": "Unique identifier of the group you want to assign the company to."
+                  }
+                ]
+              }
+            }
+          }
+        },
         "examples": [
           {
             "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
@@ -3519,6 +3916,11 @@
                 "created": "2022-10-27T09:53:29Z",
                 "sourceType": "Banking"
               }
+            ],
+            "groups": [
+              {
+                "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
+              }
             ]
           }
         ]
@@ -3537,6 +3939,13 @@
           },
           "description": {
             "$ref": "#/components/schemas/Company/properties/description"
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Group/definitions/groupRef"
+            },
+            "description": "Reference to the groups that the company is assigned to."
           }
         },
         "required": [
@@ -4293,6 +4702,57 @@
           "detailedErrorCode": {
             "type": "integer",
             "description": "Machine readable error code used to automate processes based on the code returned."
+          }
+        }
+      },
+      "Group": {
+        "title": "Group",
+        "description": "A container you can use to organize companies together according to a shared characteristic of your choice.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "60d2fa12-8a04-11ee-b9d1-0242ac120002",
+            "description": "Unique identifier for the group."
+          },
+          "name": {
+            "type": "string",
+            "description": "Descriptive name of the group.",
+            "example": "Invoice finance team"
+          }
+        },
+        "definitions": {
+          "groupPrototype": {
+            "title": "Group prototype",
+            "description": "The group template used to create a group.",
+            "type": "object",
+            "properties": {
+              "name": {
+                "$ref": "#/components/schemas/Group/properties/name"
+              }
+            }
+          },
+          "groups": {
+            "title": "Groups",
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Group"
+                }
+              }
+            }
+          },
+          "groupRef": {
+            "title": "Group reference",
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/schemas/Group/properties/id"
+              }
+            }
           }
         }
       },
@@ -5357,7 +5817,9 @@
         "enum": [
           "Accounting",
           "Banking",
+          "BankFeed",
           "Commerce",
+          "Expense",
           "Other",
           "Unknown"
         ],

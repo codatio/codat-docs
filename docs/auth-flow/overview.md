@@ -13,16 +13,6 @@ Link is a pre-built, conversion-optimized, and white-labelled authorization jour
 
 You can fully embed our auth flow into your user journey and [use our Embedded Link component](/auth-flow/authorize-embedded-link) in your front-end code.
 
-```
-<CodatLink
-  companyId={companyId}
-  onConnection={onConnection}
-  onError={onError}
-  onClose={onClose}
-  onFinish={onFinish}
-/>
-```
-
 With our [rich examples](/auth-flow/authorize-embedded-link#get-started), you can have Link embedded in your application in minutes.
 
 ### Link's values

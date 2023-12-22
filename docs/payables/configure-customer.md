@@ -44,36 +44,76 @@ Remember to [authenticate](/using-the-api/authentication) when making calls to o
 
 ## Create a company
 
-Within Sync for Payables, a company represents your SMB customer that pays and manages their bills using your application. To create it, use our [Create company](/sync-for-payables-api#/operations/create-company) endpoint. It returns a JSON response containing the company `id`. You will use this `id` to establish a connection to an accounting platform. 
+Within Sync for Payables, a company represents your SMB customer that pays and manages their bills using your application. To create it, use our [Create company](/sync-for-payables-api#/operations/create-company) endpoint. It returns the company schema containing the ID that you will use to establish a connection to an accounting platform. 
 
 <Tabs>
 
-<TabItem value="HTTP" label="HTTP">
+<TabItem value="nodejs" label="TypeScript">
 
-#### Request
+```javascript
+const companyResponse = payablesClient.companies.create({
+    name: companyName,
+});
 
-```json
-POST /companies
-
-{
-    "name": "{companyName}"
+if(companyResponse.statusCode == 200){
+  throw new Error("Could not create company")
 }
+
+const companyId = companyResponse.company.id
+console.log(companyId)
 ```
 
-#### Response
+</TabItem>
 
-```json
-{
-    "id": "77921ff9-2491-4dfe-b23b-ff28f3e31e4f",
-    "name": "Sawayn Group",
-    "platform": "",
-    "redirect": "https://link.codat.io/company/77921ff9-2491-4dfe-b23b-ff28f3e31e4f",
-    "dataConnections": [],
-    "created": "2023-09-06T09:13:35.8188152Z"
-}
+<TabItem value="python" label="Python">
+
+```python
+company_request = shared.CompanyRequestBody(
+    name=company_name,
+)
+
+company_response = payables_client.companies.create(company_request)
+
+if company_response.status_code != 200:
+  raise Exception('Could not create company')
+
+company_id = company_response.company.id
+print(company_id)
 ```
 
-</TabItem >
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var companyResponse = await payablesClient.Companies.CreateAsync(new() {
+    Name = companyName,
+});
+
+if(companyResponse.StatusCode != 200){
+  throw new Exception("Could not create company");
+}
+
+var companyId = companyResponse.Company.Id;
+console.log(companyId)
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+companyResponse, err := payablesClient.Companies.Create(ctx, &shared.CompanyRequestBody{
+  Name: companyName,
+	})
+
+if companyResponse.StatusCode == 200 {
+  companyID := companyResponse.Company.ID
+  fmt.Println("%s", companyID)
+}
+```
+</TabItem>
 
 </Tabs>
 
@@ -96,34 +136,67 @@ As an example, let's create a QuickBooks Online (QBO) connection. In response, t
 
 <Tabs>
 
-<TabItem value="HTTP" label="HTTP">
+<TabItem value="nodejs" label="TypeScript">
 
-#### Request
+```javascript
+const connectionResponse = payablesClient.connections.create({
+    requestBody: {
+      platformKey: "qhyg",
+    },
+    companyId: companyResponse.company.id,
+  });
 
-```json
-
-POST /companies/{companyId}/connections
-{
-    "platformKey": "qhyg"
-}
-
+console.log(connectionResponse.connection.linkUrl)
 ```
 
-#### Response
+</TabItem>
 
-```json
- {
-  "id": "7baba7cc-4ae0-48fd-a617-98d55a6fc008",
-  "integrationId": "6b113e06-e818-45d7-977b-8e6bb3d01269",
-  "sourceId": "56e6575a-3f1f-4918-b009-f7535555f0d6",
-  "platformName": "QuickBooks Online",
-  "linkUrl": "https://link-api.codat.io/companies/{companyId}/connections/{connectionId}/start?otp=742271",  
-  "status": "PendingAuth",
-  "created": "2022-09-01T10:21:57.0807447Z",
-  "sourceType": "Accounting"
-}
+<TabItem value="python" label="Python">
+
+```python
+connection_request = operations.CreateConnectionRequest(
+    request_body=operations.CreateConnectionRequestBody(
+        platform_key='qhyg',
+    ),
+    company_id=company_response.company.id,
+)
+
+connection_response = payables_client.connections.create(connection_request)
+
+console.log(connection_response.connection.link_url)
 ```
-</TabItem >
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var connectionResponse = await payablesClient.Connections.CreateAsync(new() {
+    RequestBody = new CreateConnectionRequestBody() {
+        PlatformKey = "qhyg",
+    },
+    CompanyId = companyResponse.Company.Id,
+});
+
+Console.WriteLine(connectionResponse.Connection.LinkUrl)
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+connectionResponse, err := payablesClient.Connections.Create(ctx, operations.CreateConnectionRequest{
+    RequestBody: &operations.CreateConnectionRequestBody{
+        PlatformKey: syncforpayables.String("qhyg"),
+    },
+    CompanyID: companyResponse.Company.ID,
+})
+
+fmt.Println(connectionResponse.Connection.LinkUrl)
+```
+</TabItem>
 
 </Tabs>
 
@@ -131,12 +204,68 @@ POST /companies/{companyId}/connections
 
 If your customer wants to revoke their approval and sever the connection to their accounting package, use the [Unlink connection](/sync-for-payables-api#/operations/unlink-connection) endpoint.
 
-```json
-PATCH /companies/:companyId/connections/{connectionId}
- {
- "status": "Unlinked"
- }
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const unlinkResponse = payablesClient.connections.unlink({
+    requestBody: {
+      status: DataConnectionStatus.Unlinked
+    },
+    companyId: companyResponse.company.id,
+    connectionId: connectionResponse.connection.id,
+  });
 ```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+unlink_request = operations.UnlinkConnectionRequest(
+    request_body=operations.UnlinkConnectionUpdateConnection(
+      status=shared.DataConnectionStatus.UNLINKED
+    ),
+    company_id=company_response.company.id,
+    connection_id=connection_response.connection.id,
+)
+
+unlink_response = payables_client.connections.unlink(unlink_request)
+
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var unlinkResponse = await payablesClient.Connections.UnlinkAsync(new() {
+    RequestBody = new UnlinkConnectionUpdateConnection() {
+      Status = DataConnectionStatus.Unlinked
+    },
+    CompanyId = companyResponse.Company.Id,
+    ConnectionId = connectionResponse.Connection.Id,
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+unlinkResponse, err := payablesClient.Connections.Unlink(ctx, operations.UnlinkConnectionRequest{
+    RequestBody: &operations.UnlinkConnectionUpdateConnection{
+      Status: shared.DataConnectionStatusUnlinked
+    },
+    CompanyID: companyResponse.Company.ID,
+    ConnectionID: connectionResponse.Connection.ID,
+})
+```
+</TabItem>
+
+</Tabs>
 
 :::tip Recap
 

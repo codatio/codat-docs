@@ -12,8 +12,8 @@ For lenders that want to become Xero Partners, Xero stipulates two technical req
 
 The purpose of the lending writeback is to accurately maintain the financial position of a customer in Xero at any point of the lending cycle. This is typically done by recording the loan liability, any interest, fees, and repayments, and facilitating the reconciliation of the bank account. Codat offers the following guides on implementing lending write-back: 
 
-  * [General lending writeback](https://codat.zendesk.com/hc/en-gb/articles/4402368734225-Xero-General-Lending)
-  * [Invoice finance writeback](https://codat.zendesk.com/hc/en-gb/articles/360019976977-Xero-Invoice-Finance)
+  * [General lending writeback](https://docs.codat.io/lending/guides/general-loan-writeback)
+  * [Invoice finance writeback](https://docs.codat.io/lending/guides/invoice-finance/introduction)
 
 ## Certification checkpoints
 
