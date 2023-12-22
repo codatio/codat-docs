@@ -1186,7 +1186,7 @@
     "/companies/{companyId}": {
       "put": {
         "summary": "Update company",
-        "description": "﻿Updates both the name and description of the company.",
+        "description": "﻿Use the *Update company* endpoint to update both the name and description of the company. \nIf you use [groups](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Group) to manage a set of companies, use the [Add company](https://docs.codat.io/sync-for-commerce-v1-api#/operations/add-company-to-group) or [Remove company](https://docs.codat.io/sync-for-commerce-v1-api#/operations/remove-company-from-group) endpoints to add or remove a company from a group.\n\nA [company](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
         "operationId": "update-company",
         "parameters": [
           {
@@ -1260,7 +1260,7 @@
             "$ref": "#/components/parameters/companyId"
           }
         ],
-        "description": "﻿\nPermanently deletes a company, its connections and any cached data. This operation is irreversible. If the company ID does not exist an error is returned.",
+        "description": "﻿The *Delete company* endpoint permanently deletes a [company](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Company), its [connections](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Connection) and any cached data. This operation is irreversible.\n\nA [company](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.\n",
         "tags": [
           "Companies"
         ],
@@ -1294,7 +1294,7 @@
       "get": {
         "summary": "Get company",
         "operationId": "get-company",
-        "description": "﻿Returns the company for a valid identifier. If the identifier is for a deleted company, a not found response is returned.",
+        "description": "﻿The *Get company* endpoint returns a single company for a given `companyId`.\n\nA [company](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.\n",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -1312,7 +1312,7 @@
                   "$ref": "#/components/schemas/Company"
                 },
                 "examples": {
-                  "Example": {
+                  "Simple company": {
                     "value": {
                       "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
                       "name": "My First Company",
@@ -1322,6 +1322,23 @@
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18Z",
                       "createdByUserName": "Dan Tzabar"
+                    }
+                  },
+                  "With groups": {
+                    "value": {
+                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "name": "My First Company",
+                      "description": "",
+                      "platform": "",
+                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "dataConnections": [],
+                      "created": "2022-11-10T10:45:18Z",
+                      "createdByUserName": "Dan Tzabar",
+                      "groups": [
+                        {
+                          "id": "f8a6f6ed-9812-4d1e-ba48-4346348403c8"
+                        }
+                      ]
                     }
                   }
                 }
@@ -13154,12 +13171,35 @@
         "type": "object",
         "allOf": [
           {
-            "type": "object",
             "properties": {
               "id": {
                 "type": "string",
                 "description": "Identifier for the account, unique for the company in the accounting platform."
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/AccountingBankAccount/definitions/bankAccountPrototype"
+          },
+          {
+            "properties": {
+              "metadata": {
+                "$ref": "#/components/schemas/AccountingAccount/allOf/2/properties/metadata"
               },
+              "supplementalData": {
+                "$ref": "#/components/schemas/SupplementalData"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/CommerceOrder/allOf/3"
+          }
+        ],
+        "definitions": {
+          "bankAccountPrototype": {
+            "title": "Bank account prototype",
+            "type": "object",
+            "properties": {
               "accountName": {
                 "type": "string",
                 "nullable": true,
@@ -13222,20 +13262,24 @@
                 "format": "decimal",
                 "nullable": true,
                 "description": "Pre-arranged overdraft limit of the account.\n\nThe value is always positive. For example, an overdraftLimit of `1000` means that the balance of the account can go down to `-1000`."
-              },
-              "metadata": {
-                "$ref": "#/components/schemas/AccountingAccount/allOf/2/properties/metadata"
-              },
-              "supplementalData": {
-                "$ref": "#/components/schemas/SupplementalData"
               }
             }
           },
-          {
-            "$ref": "#/components/schemas/CommerceOrder/allOf/3"
-          }
-        ],
-        "definitions": {
+          "bankAccountCreateResponse": {
+            "title": "Create bank account response",
+            "allOf": [
+              {
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/AccountingBankAccount"
+                  }
+                }
+              },
+              {
+                "$ref": "#/components/schemas/PushOperation"
+              }
+            ]
+          },
           "bankAccountRef": {
             "title": "Bank account reference",
             "type": "object",
@@ -13250,6 +13294,25 @@
               }
             },
             "description": "Links to the Account transactions data type."
+          },
+          "bankAccounts": {
+            "title": "Accounting: Bank accounts",
+            "allOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "results": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/AccountingBankAccount"
+                    }
+                  }
+                }
+              },
+              {
+                "$ref": "#/components/schemas/PagingInfo"
+              }
+            ]
           }
         }
       },
@@ -16721,6 +16784,19 @@
             "items": {
               "$ref": "#/components/schemas/Connection"
             }
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "title": "Group reference",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "$ref": "#/components/schemas/Company/definitions/companyGroupAssignment/properties/groupId/allOf/0"
+                }
+              }
+            },
+            "description": "An array of groups the company has been assigned to."
           }
         },
         "required": [
@@ -16728,6 +16804,27 @@
           "name",
           "redirect"
         ],
+        "definitions": {
+          "companyGroupAssignment": {
+            "title": "Group assignment",
+            "type": "object",
+            "properties": {
+              "groupId": {
+                "allOf": [
+                  {
+                    "type": "string",
+                    "format": "uuid",
+                    "example": "60d2fa12-8a04-11ee-b9d1-0242ac120002",
+                    "description": "Unique identifier for the group."
+                  },
+                  {
+                    "description": "Unique identifier of the group you want to assign the company to."
+                  }
+                ]
+              }
+            }
+          }
+        },
         "examples": [
           {
             "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
@@ -16749,6 +16846,11 @@
                 "lastSync": "2022-10-27T10:22:43.6464237Z",
                 "created": "2022-10-27T09:53:29Z",
                 "sourceType": "Banking"
+              }
+            ],
+            "groups": [
+              {
+                "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
               }
             ]
           }
@@ -16841,7 +16943,9 @@
             "enum": [
               "Accounting",
               "Banking",
+              "BankFeed",
               "Commerce",
+              "Expense",
               "Other",
               "Unknown"
             ],
@@ -16985,6 +17089,13 @@
           },
           "description": {
             "$ref": "#/components/schemas/Company/properties/description"
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Company/properties/groups/items"
+            },
+            "description": "Reference to the groups that the company is assigned to."
           }
         },
         "required": [
