@@ -26,9 +26,7 @@ import Products from "@components/global/Products";
 
 **Sync for Expenses** is a standardized API-based product that makes it easy to build and maintain accounting integrations and an end-to-end expense management process that customers love. 
 
-Our standardized expenses model allows you push data in the same format to all major accounting and ERP systems, and includes built-in logic so you can easily handle all of the complexities of expense reconciliation, such as refunds, accounting for multiple currencies, and allowing users to correct errors.
-
-With 58% of small businesses saying they choose one spending solution over another based on quality of their accounting integrations, **Sync for Expenses** enables you to push categorized expenses and attachments to your customers' accounting software via our high-quality accounting integrations, ready for reconciliation against the bank feed. 
+With 58% of small businesses saying they choose one spending solution over another based on quality of their accounting integrations, **Sync for Expenses** enables you to push categorized expenses and attachments to your customers' accounting software via our high-quality accounting integrations. It includes built-in logic so you can easily handle all of the complexities of expense reconciliation, such as refunds, accounting for multiple currencies, and allowing users to correct errors.
 
 ## Who is it for?
 
