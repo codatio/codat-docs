@@ -50,7 +50,7 @@ sequenceDiagram
     app ->> smb: Marks expense as uploaded
 ```
 
-## Enable Sync for Payables
+## Enable Sync for Expenses
 
 1. Open the <a href="https://app.codat.io" target="_blank">Codat Portal</a> and sign in.
 2. Click on **Settings > Organizational settings > Products**.
