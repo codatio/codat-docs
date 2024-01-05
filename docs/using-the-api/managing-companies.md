@@ -7,7 +7,7 @@ description: "Learn about creating and managing companies, their connections, an
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Onboarding your users
+## Onboard your users
 
 Your users or customers are [companies](/core-concepts/companies). To access their data you'll need to onboard them.
 
@@ -116,7 +116,7 @@ For more information on setting your redirect URL, refer to [this document](/aut
 
 Once your user is redirected to the redirect URL page, they'll be able to authorize access to their data. Once this is successful, the linking process is complete and their data can be pulled.
 
-## Re-authorizing access
+## Re-authorize access
 
 Occasionally the Data Connections of a Codat company will go into a _deauthorized_ state. This indicates that Codat’s link to the platform is no longer valid, and you will not be able to queue any further data syncs for that connection. You will still be able to query data previously retrieved from the platform.
 
@@ -135,7 +135,7 @@ Get a `redirect` URL for the company by following the process [here](/auth-flow/
 
 Once the user finishes the Link flow, they will be redirected back to the Redirect URL, as described [earlier in this guide](/using-the-api/managing-companies#redirect-the-user). At this point the re-authorization process is complete and their data has begun synchronizing again.
 
-## Deleting companies
+## Delete companies
 
 You can delete a company and its data using the [Delete company](/platform-api#/operations/create-company) endpoint.
 
@@ -182,7 +182,7 @@ companyDeleteResponse, err := platformClient.Companies.Delete(ctx, operations.De
 
 </Tabs>
 
-## Managing groups of companies 
+## Manage groups of companies 
 
 You can group several companies to simplify the management of these companies and their use cases.
 
