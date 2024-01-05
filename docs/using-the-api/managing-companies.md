@@ -182,7 +182,7 @@ companyDeleteResponse, err := platformClient.Companies.Delete(ctx, operations.De
 
 </Tabs>
 
-## Assign companies to a group
+## Managing groups of companies 
 
 You can group several companies to simplify the management of these companies and their use cases.
 
