@@ -37,7 +37,7 @@ Company names may only contain letters, numbers, spaces, and the following symbo
 Any forbidden characters will be removed from your company name. For example: `Example Company (Codat[1])` will be created as `Example Company Codat1`.
 :::
 
-## If you're supporting different types of customer...
+## If you're supporting different types of customers...
 
 You can use our *groups* feature and assign a company to one or more groups. You might choose to group companies based on the different products and services you provide, your internal team structures, different geographies, and more.
 
