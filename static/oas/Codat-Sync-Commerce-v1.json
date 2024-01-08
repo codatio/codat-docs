@@ -4448,12 +4448,7 @@
                       "id": "80000002-1674552702",
                       "companyName": "Test Customer 1"
                     },
-                    "salesOrderRefs": [
-                      {
-                        "id": "string",
-                        "dataType": "customers"
-                      }
-                    ],
+                    "salesOrderRefs": [],
                     "issueDate": "2023-04-18T11:09:01.438Z",
                     "dueDate": "2023-05-24T11:09:01.438Z",
                     "modifiedDate": "2023-02-14T11:09:01.438Z",
@@ -4541,8 +4536,8 @@
                     },
                     "salesOrderRefs": [
                       {
-                        "id": "string",
-                        "dataType": "bills"
+                        "id": "SO001",
+                        "dataType": "salesOrders"
                       }
                     ],
                     "issueDate": "2022-03-22T12:58:21.273Z",
@@ -4650,8 +4645,8 @@
                     },
                     "salesOrderRefs": [
                       {
-                        "id": "string",
-                        "dataType": "customers"
+                        "id": "104045",
+                        "dataType": "salesOrders"
                       }
                     ],
                     "issueDate": "2022-04-06T12:58:21.273Z",
@@ -4843,7 +4838,7 @@
                           "recordRefs": [
                             {
                               "id": "80000001-1674553252",
-                              "dataType": "string"
+                              "dataType": "customers"
                             }
                           ]
                         }
@@ -4867,8 +4862,8 @@
                       }
                     ],
                     "recordRef": {
-                      "id": "string",
-                      "dataType": "string"
+                      "id": "80000002-6722155312",
+                      "dataType": "bills"
                     },
                     "metadata": {
                       "isDeleted": true
@@ -13949,7 +13944,26 @@
                     "$ref": "#/components/schemas/AccountingCreditNote/definitions/creditNoteLineItem/properties/tracking/definitions/billedToType"
                   },
                   "recordRef": {
-                    "$ref": "#/components/schemas/AccountingJournalEntry/allOf/0/properties/recordRef"
+                    "type": "object",
+                    "x-internal": true,
+                    "title": "Record reference",
+                    "description": "Links the current record to the underlying record or data type that created it. \n\nFor example, if a journal entry is generated based on an invoice, this property allows you to connect the journal entry to the underlying invoice in our data model. ",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "'id' of the underlying record or data type."
+                      },
+                      "dataType": {
+                        "type": "string",
+                        "description": "Allowed name of the 'dataType'.",
+                        "examples": [
+                          "journalEntry",
+                          "invoice",
+                          "accountTransaction",
+                          "transfer"
+                        ]
+                      }
+                    }
                   }
                 },
                 "required": [
@@ -14203,9 +14217,7 @@
               },
               "contactRef": {
                 "description": "A customer or supplier associated with the direct income.",
-                "required": [
-                  "id"
-                ],
+                "title": "Contact reference",
                 "type": "object",
                 "properties": {
                   "id": {
@@ -14214,10 +14226,18 @@
                     "description": "Unique identifier for a customer or supplier."
                   },
                   "dataType": {
-                    "$ref": "#/components/schemas/Dataset/properties/dataType",
-                    "nullable": true
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Allowed name of the 'dataType'.",
+                    "enum": [
+                      "customers",
+                      "suppliers"
+                    ]
                   }
-                }
+                },
+                "required": [
+                  "id"
+                ]
               },
               "issueDate": {
                 "$ref": "#/components/schemas/Company/properties/created",
@@ -14439,7 +14459,11 @@
                       "description": "Unique identifier to a record in `dataType`."
                     },
                     "dataType": {
-                      "$ref": "#/components/schemas/Dataset/properties/dataType"
+                      "type": "string",
+                      "description": "The underlying data type associated to the reference `id`.",
+                      "enum": [
+                        "salesOrders"
+                      ]
                     }
                   }
                 }
@@ -14801,26 +14825,7 @@
                 }
               },
               "recordRef": {
-                "type": "object",
-                "x-internal": true,
-                "title": "Record reference",
-                "description": "Links the current record to the underlying record or data type that created it. \n\nFor example, if a journal entry is generated based on an invoice, this property allows you to connect the journal entry to the underlying invoice in our data model. ",
-                "properties": {
-                  "id": {
-                    "type": "string",
-                    "description": "'id' of the underlying record or data type."
-                  },
-                  "dataType": {
-                    "type": "string",
-                    "description": "Allowed name of the 'dataType'.",
-                    "examples": [
-                      "journalEntry",
-                      "invoice",
-                      "accountTransaction",
-                      "transfer"
-                    ]
-                  }
-                }
+                "$ref": "#/components/schemas/AccountingJournalEntry/definitions/journalEntryRecordRef"
               },
               "metadata": {
                 "$ref": "#/components/schemas/AccountingAccount/allOf/2/properties/metadata"
@@ -14858,14 +14863,38 @@
               },
               "tracking": {
                 "description": "List of record refs associated with the tracking information for the line (eg to a Tracking Category, or customer etc.)",
+                "title": "Tracking",
                 "type": "object",
                 "properties": {
                   "recordRefs": {
                     "type": "array",
                     "items": {
-                      "$ref": "#/components/schemas/AccountingJournalEntry/allOf/0/properties/recordRef"
+                      "$ref": "#/components/schemas/AccountingJournalEntry/definitions/journalLine/properties/tracking/definitions/trackingRecordRef"
                     },
                     "nullable": true
+                  }
+                },
+                "definitions": {
+                  "trackingRecordRef": {
+                    "type": "object",
+                    "title": "Record reference",
+                    "description": "Links to the customer or tracking category.",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "'id' of the underlying record or data type."
+                      },
+                      "dataType": {
+                        "type": "string",
+                        "description": "Name of underlying data type.",
+                        "enum": [
+                          "customers",
+                          "suppliers",
+                          "trackingCategories"
+                        ],
+                        "example": "trackingCategories"
+                      }
+                    }
                   }
                 }
               }
@@ -14873,6 +14902,35 @@
             "required": [
               "netAmount"
             ]
+          },
+          "journalEntryRecordRef": {
+            "type": "object",
+            "title": "Record reference",
+            "description": "Links a journal entry to the underlying record that created it.",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "'id' of the underlying record or data type."
+              },
+              "dataType": {
+                "type": "string",
+                "description": "Name of underlying data type.",
+                "enum": [
+                  "bankTransactions",
+                  "billCreditNotes",
+                  "billPayments",
+                  "bills",
+                  "creditNotes",
+                  "directCosts",
+                  "directIncomes",
+                  "invoices",
+                  "journalEntries",
+                  "payments",
+                  "transfers"
+                ],
+                "example": "transfers"
+              }
+            }
           }
         }
       },
