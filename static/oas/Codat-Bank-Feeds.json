@@ -1043,7 +1043,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SourceAccount"
+                  "$ref": "#/components/schemas/SourceAccount/definitions/sourceAccounts"
                 },
                 "examples": {}
               }
@@ -3096,6 +3096,7 @@
       "SourceAccount": {
         "title": "Source Account",
         "type": "object",
+        "description": "The target bank account in a supported accounting package for ingestion into a bank feed.",
         "additionalProperties": false,
         "properties": {
           "id": {
@@ -3158,7 +3159,15 @@
         "required": [
           "id"
         ],
-        "description": "The target bank account in a supported accounting package for ingestion into a bank feed.",
+        "definitions": {
+          "sourceAccounts": {
+            "title": "Source accounts",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SourceAccount"
+            }
+          }
+        },
         "examples": [
           {
             "id": "acc-002",
@@ -3183,14 +3192,6 @@
             "status": "pending"
           }
         ]
-      },
-      "SourceAccounts": {
-        "title": "Source accounts",
-        "x-internal": true,
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SourceAccount"
-        }
       }
     },
     "parameters": {
