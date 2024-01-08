@@ -41,7 +41,7 @@ Any forbidden characters will be removed from your company name. For example: `E
 
 You can use our *groups* feature and assign a company to one or more groups. You might choose to group companies based on the different products and services you provide, your internal team structures, different geographies, and more.
 
-A group can be used to manage who can access data from that group's set of companies and identify the use case or product a company is using. Learn how to do that [here](/using-the-api/managing-companies#assign-companies-to-a-group).
+A group can be used to manage who can access data from that group's set of companies and identify the use case or product a company is using. Learn how to do that [here](/using-the-api/managing-companies#manage-groups-of-companies).
 
 ---
 
