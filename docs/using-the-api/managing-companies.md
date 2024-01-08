@@ -184,11 +184,11 @@ companyDeleteResponse, err := platformClient.Companies.Delete(ctx, operations.De
 
 ## Manage groups of companies 
 
-You can group several companies to simplify the management of these companies and their use cases.
+You can use our *groups* feature and assign a company to one or more groups. You might choose to group companies based on the different products and services you provide, your internal team structures, different geographies, and more.
 
-If you are grouping companies for the first time, you need to create a group first using the [Create group](/platform-api#/operations/create-group) endpoint. You only need to do this operation once per group, so retain the `groupId` to reuse it within your application.
+If you're grouping companies for the first time, you need to create a group first using the [Create group](/platform-api#/operations/create-group) endpoint. You only need to do this operation once per group, so retain the `groupId` to reuse it within your application.
 
-If you have an existing set of groups, use the [List groups](/platform-api#/operations/list-groups) endpoint to display them.
+You can see any groups you've already created using the [List groups](/platform-api#/operations/list-groups) endpoint.
 
 <Tabs>
 
