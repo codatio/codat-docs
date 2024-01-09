@@ -24,16 +24,6 @@ You can also explore the data types supported by each integration in the interac
 
 <IntegrationsList sourceType="accounting"/>
 
-### Accounting platforms per region
-
-Most popular accounting platforms per reigion are as follows: 
-
-- US: QuickBooks Online, QuickBooks Desktop, Sage Intacct, NetSuite, FreshBooks, Xero
-- UK: Xero, QuickBooks Online, Sage 50, Sage Accounting, FreeAgent, NetSuite
-- AUS: Xero, MYOB, QuickBooks Online, NetSuite
-
-We can sometimes facilitate introductions to accounting platform providers, particularly in the case of Xero, Sage, and MYOB. Please ask your Solutions Engineer, Implementation Specialist or Account Manager for more details.
-
 ## Platform keys
 
 Each integration has a unique 4-character key that identifies it in our APIs. For reference, a list of all accounting integration platform keys can be found below:
@@ -69,3 +59,13 @@ Some integrations have more complex requirements in terms of registrationg and p
 | Wave                                    | Easy                      | ❌                           | ❌                       | Registrations completed before July 2022 need to request partner status via wave@codat.io to access profit & loss and balance sheet report. The reports are enabled by default for registrations completed after July 2022.                                                                  |
 | Xero                                    | Easy                      | ✅                           | ✅                       | You must certify your integration and partner with Xero to connect more than 25 companies. This involves extra technical requirements and, in some cases, additional charges. Use cases such as financial brokering, insurance, FX hending, and lending (in some regions) are not permitted. |
 | ZohoBooks                               | Easy                      | ✅                           | ❌                       |                                                                                                                                                                                                                                                                                              |
+
+### Accounting platforms per region
+
+Most popular accounting platforms per reigion are as follows: 
+
+- __US:__ QuickBooks Online, QuickBooks Desktop, Sage Intacct, NetSuite, FreshBooks, Xero
+- __UK:__ Xero, QuickBooks Online, Sage 50, Sage Accounting, FreeAgent, NetSuite
+- __AUS:__ Xero, MYOB, QuickBooks Online, NetSuite
+
+We can sometimes facilitate introductions to accounting platform providers, particularly in the case of Xero, Sage, and MYOB. Please ask your Solutions Engineer, Implementation Specialist or Account Manager for more details.
