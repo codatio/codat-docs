@@ -31,6 +31,10 @@ If you encounter any challenges while utilizing our SDKs, please don't hesitate 
 You can raise any issues by contacting your dedicated Codat representative or reaching out to our [support team](mailto:support@codat.io).
 We're here to help ensure a smooth experience for you.
 
+### Change management
+
+To stay up to date with Codat's product updates, we suggest using a tool such as [Dependabot](https://github.com/dependabot), which will automatically create pull requests for you whenever a new version of each library is published.
+
 ## Community libraries
 
 Codat's awesome community has self-published a number of libraries themselves!
