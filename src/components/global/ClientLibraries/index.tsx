@@ -24,6 +24,11 @@ const languages = [
         namePretty: "Go",
         icon: "/img/libraries/go.svg",
     },
+    {
+        name: "java",
+        namePretty: "Java - Coming soon",
+        icon: "/img/libraries/java.svg",
+    },
 ]
 
 const ClientLibraries = ({productName}) => {
