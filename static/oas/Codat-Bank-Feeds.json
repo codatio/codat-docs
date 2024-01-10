@@ -111,6 +111,14 @@
       "description": "Manage your companies' data connections."
     },
     {
+      "name": "Configuration",
+      "description": "Configure bank feeds for a company."
+    },
+    {
+      "name": "Bank accounts",
+      "description": "Access bank accounts in an SMBs accounting platform."
+    },
+    {
       "name": "Source accounts",
       "description": "Source accounts act as a bridge to bank accounts in accounting software."
     },
@@ -967,6 +975,741 @@
         }
       }
     },
+    "/companies/{companyId}/sync/banking/config": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ],
+      "get": {
+        "summary": "Get configuration",
+        "operationId": "get-configuration",
+        "x-internal": true,
+        "tags": [
+          "Configuration"
+        ],
+        "description": "﻿The *Get configuration* endpoint returns the current configuration for a given company ID.",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Configuration"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      },
+      "post": {
+        "summary": "Set configuration",
+        "operationId": "set-configuration",
+        "x-speakeasy-name-override": "set",
+        "x-internal": true,
+        "tags": [
+          "Configuration"
+        ],
+        "description": "﻿Use *Set configuration* endpoint to configure a given company ID.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Configuration"
+              },
+              "examples": {}
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Configuration"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/data/bankAccounts": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        }
+      ],
+      "get": {
+        "x-internal": true,
+        "tags": [
+          "Bank accounts"
+        ],
+        "summary": "List bank accounts",
+        "operationId": "list-bank-accounts",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/page"
+          },
+          {
+            "$ref": "#/components/parameters/pageSize"
+          },
+          {
+            "$ref": "#/components/parameters/query"
+          },
+          {
+            "$ref": "#/components/parameters/orderBy"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BankAccounts"
+                },
+                "examples": {
+                  "Dynamics 365 Business Central": {
+                    "value": {
+                      "results": [
+                        {
+                          "id": "c9a41bc7-6e5b-ed11-8c34-0022481b8b5b",
+                          "accountName": "55",
+                          "accountType": "Unknown",
+                          "nominalCode": "10500",
+                          "sortCode": "",
+                          "accountNumber": "",
+                          "iBan": "",
+                          "currency": "GBP",
+                          "balance": -352.03,
+                          "modifiedDate": "2023-03-27T14:21:10Z",
+                          "sourceModifiedDate": "2023-02-07T00:00:00",
+                          "overdraftLimit": 0,
+                          "metadata": {
+                            "isDeleted": false
+                          }
+                        },
+                        {
+                          "id": "47020f80-60e6-ec11-82f8-0022481a77f0",
+                          "accountName": "555",
+                          "accountType": "Unknown",
+                          "nominalCode": "40300",
+                          "sortCode": "",
+                          "accountNumber": "",
+                          "iBan": "",
+                          "currency": "PLN",
+                          "balance": 661.79,
+                          "modifiedDate": "2023-03-27T14:21:10Z",
+                          "sourceModifiedDate": "2022-06-07T00:00:00",
+                          "overdraftLimit": 0,
+                          "metadata": {
+                            "isDeleted": false
+                          }
+                        }
+                      ],
+                      "pageNumber": 1,
+                      "pageSize": 2,
+                      "totalResults": 28,
+                      "_links": {
+                        "current": {
+                          "href": "/companies/d6849caf-c146-41be-8335-b73346e3bd84/connections/60acb117-5cf5-4745-b069-491551da4066/data/bankAccounts?page=1&pageSize=2"
+                        },
+                        "self": {
+                          "href": "/companies/d6849caf-c146-41be-8335-b73346e3bd84/connections/60acb117-5cf5-4745-b069-491551da4066/data/bankAccounts"
+                        },
+                        "next": {
+                          "href": "/companies/d6849caf-c146-41be-8335-b73346e3bd84/connections/60acb117-5cf5-4745-b069-491551da4066/data/bankAccounts?page=2&pageSize=2"
+                        }
+                      }
+                    }
+                  },
+                  "FreeAgent": {
+                    "value": {
+                      "results": [
+                        {
+                          "id": "738783",
+                          "accountName": "\\w3fw",
+                          "accountType": "Debit",
+                          "sortCode": "236972",
+                          "accountNumber": "A06268209",
+                          "currency": "GBP",
+                          "balance": -10484.65,
+                          "availableBalance": -10484.65,
+                          "modifiedDate": "2023-04-25T14:19:12Z",
+                          "metadata": {
+                            "isDeleted": false
+                          }
+                        },
+                        {
+                          "id": "738778",
+                          "accountName": "2e2bna45hy\\",
+                          "accountType": "Debit",
+                          "sortCode": "236972",
+                          "accountNumber": "D01825250",
+                          "currency": "GBP",
+                          "balance": -114.4,
+                          "availableBalance": -114.4,
+                          "modifiedDate": "2023-04-25T14:19:12Z",
+                          "metadata": {
+                            "isDeleted": false
+                          }
+                        }
+                      ],
+                      "pageNumber": 1,
+                      "pageSize": 2,
+                      "totalResults": 82,
+                      "_links": {
+                        "current": {
+                          "href": "/companies/071ad738-68f3-4561-afd0-69bab9df0803/connections/4fd7c69f-ecc1-45f5-83f2-42ed3391e386/data/bankAccounts?page=1&pageSize=2"
+                        },
+                        "self": {
+                          "href": "/companies/071ad738-68f3-4561-afd0-69bab9df0803/connections/4fd7c69f-ecc1-45f5-83f2-42ed3391e386/data/bankAccounts"
+                        },
+                        "next": {
+                          "href": "/companies/071ad738-68f3-4561-afd0-69bab9df0803/connections/4fd7c69f-ecc1-45f5-83f2-42ed3391e386/data/bankAccounts?page=2&pageSize=2"
+                        }
+                      }
+                    }
+                  },
+                  "KashFlow": {
+                    "value": {
+                      "results": [
+                        {
+                          "id": "765768",
+                          "accountName": "16th Account",
+                          "accountType": "Unknown",
+                          "nominalCode": "70700",
+                          "currency": "GBP",
+                          "balance": 326,
+                          "availableBalance": 326,
+                          "modifiedDate": "2022-09-30T10:29:16Z"
+                        },
+                        {
+                          "id": "765766",
+                          "accountName": "1a1a",
+                          "accountType": "Unknown",
+                          "nominalCode": "70600",
+                          "currency": "GBP",
+                          "balance": 0,
+                          "availableBalance": 0,
+                          "modifiedDate": "2022-09-30T10:29:16Z"
+                        }
+                      ],
+                      "pageNumber": 1,
+                      "pageSize": 2,
+                      "totalResults": 56,
+                      "_links": {
+                        "current": {
+                          "href": "/companies/3a707a99-89da-4b16-a5d6-595333a16352/connections/ecab4f64-1a04-4c53-a343-bfd879f41f67/data/bankAccounts?page=1&pageSize=2"
+                        },
+                        "self": {
+                          "href": "/companies/3a707a99-89da-4b16-a5d6-595333a16352/connections/ecab4f64-1a04-4c53-a343-bfd879f41f67/data/bankAccounts"
+                        },
+                        "next": {
+                          "href": "/companies/3a707a99-89da-4b16-a5d6-595333a16352/connections/ecab4f64-1a04-4c53-a343-bfd879f41f67/data/bankAccounts?page=2&pageSize=2"
+                        }
+                      }
+                    }
+                  },
+                  "Oracle NetSuite": {
+                    "value": {
+                      "results": [
+                        {
+                          "id": "825",
+                          "accountName": "Codat Europe Bank",
+                          "accountType": "Debit",
+                          "nominalCode": "111111122222111",
+                          "currency": "GBP",
+                          "balance": 558.22,
+                          "modifiedDate": "2023-05-02T13:24:36Z",
+                          "sourceModifiedDate": "2022-07-15T11:34:02",
+                          "metadata": {
+                            "isDeleted": false
+                          }
+                        },
+                        {
+                          "id": "826",
+                          "accountName": "Codat Europe Bank USD",
+                          "accountType": "Debit",
+                          "nominalCode": "1133221133",
+                          "currency": "USD",
+                          "modifiedDate": "2023-05-02T13:24:36Z",
+                          "sourceModifiedDate": "2021-03-26T10:31:40",
+                          "metadata": {
+                            "isDeleted": false
+                          }
+                        }
+                      ],
+                      "pageNumber": 1,
+                      "pageSize": 2,
+                      "totalResults": 4,
+                      "_links": {
+                        "current": {
+                          "href": "/companies/d5074b08-6a34-4b06-a742-236edf5dc4f1/connections/79f8313e-210a-4dc8-b69f-ba7e5004dda7/data/bankAccounts?page=1&pageSize=2"
+                        },
+                        "self": {
+                          "href": "/companies/d5074b08-6a34-4b06-a742-236edf5dc4f1/connections/79f8313e-210a-4dc8-b69f-ba7e5004dda7/data/bankAccounts"
+                        },
+                        "next": {
+                          "href": "/companies/d5074b08-6a34-4b06-a742-236edf5dc4f1/connections/79f8313e-210a-4dc8-b69f-ba7e5004dda7/data/bankAccounts?page=2&pageSize=2"
+                        }
+                      }
+                    }
+                  },
+                  "QuickBooks Desktop": {
+                    "value": {
+                      "results": [
+                        {
+                          "id": "20000-933270541",
+                          "accountName": "Checking",
+                          "accountType": "Unknown",
+                          "nominalCode": "10100",
+                          "currency": "GBP",
+                          "balance": 46954.1,
+                          "availableBalance": 46954.1,
+                          "modifiedDate": "2023-04-26T09:12:37Z",
+                          "sourceModifiedDate": "2023-12-16T05:06:45",
+                          "metadata": {
+                            "isDeleted": false
+                          }
+                        },
+                        {
+                          "id": "550001-1071509830",
+                          "accountName": "Petty Cash",
+                          "accountType": "Unknown",
+                          "nominalCode": "10400",
+                          "currency": "GBP",
+                          "balance": 500,
+                          "availableBalance": 500,
+                          "modifiedDate": "2023-04-26T09:12:37Z",
+                          "sourceModifiedDate": "2023-12-16T05:06:45",
+                          "metadata": {
+                            "isDeleted": false
+                          }
+                        }
+                      ],
+                      "pageNumber": 1,
+                      "pageSize": 2,
+                      "totalResults": 3,
+                      "_links": {
+                        "current": {
+                          "href": "/companies/fc72ba08-af13-4474-b28a-01dcfa6cfb51/connections/2c26b4da-97d4-4ba9-baad-1e18b49b96ac/data/bankAccounts?page=1&pageSize=2"
+                        },
+                        "self": {
+                          "href": "/companies/fc72ba08-af13-4474-b28a-01dcfa6cfb51/connections/2c26b4da-97d4-4ba9-baad-1e18b49b96ac/data/bankAccounts"
+                        },
+                        "next": {
+                          "href": "/companies/fc72ba08-af13-4474-b28a-01dcfa6cfb51/connections/2c26b4da-97d4-4ba9-baad-1e18b49b96ac/data/bankAccounts?page=2&pageSize=2"
+                        }
+                      }
+                    }
+                  },
+                  "QuickBooks Online Sandbox": {
+                    "value": {
+                      "results": [
+                        {
+                          "id": "164",
+                          "accountName": "00",
+                          "accountType": "Debit",
+                          "nominalCode": "123567",
+                          "currency": "GBP",
+                          "balance": 0,
+                          "availableBalance": 0,
+                          "modifiedDate": "2023-04-26T09:35:57Z",
+                          "sourceModifiedDate": "2022-07-20T14:11:28Z",
+                          "metadata": {
+                            "isDeleted": false
+                          }
+                        },
+                        {
+                          "id": "163",
+                          "accountName": "11",
+                          "accountType": "Debit",
+                          "currency": "GBP",
+                          "balance": 0,
+                          "availableBalance": 0,
+                          "modifiedDate": "2023-04-26T09:35:57Z",
+                          "sourceModifiedDate": "2022-07-20T14:11:28Z",
+                          "metadata": {
+                            "isDeleted": false
+                          }
+                        }
+                      ],
+                      "pageNumber": 1,
+                      "pageSize": 2,
+                      "totalResults": 57,
+                      "_links": {
+                        "current": {
+                          "href": "/companies/5a7f3597-36e1-4216-86fe-289ad36088a6/connections/1f9f6013-f8a5-4278-8a47-3ab7fdb6c24c/data/bankAccounts?page=1&pageSize=2"
+                        },
+                        "self": {
+                          "href": "/companies/5a7f3597-36e1-4216-86fe-289ad36088a6/connections/1f9f6013-f8a5-4278-8a47-3ab7fdb6c24c/data/bankAccounts"
+                        },
+                        "next": {
+                          "href": "/companies/5a7f3597-36e1-4216-86fe-289ad36088a6/connections/1f9f6013-f8a5-4278-8a47-3ab7fdb6c24c/data/bankAccounts?page=2&pageSize=2"
+                        }
+                      }
+                    }
+                  },
+                  "QuickBooks Online": {
+                    "value": {
+                      "results": [
+                        {
+                          "id": "202",
+                          "accountName": "\\aa",
+                          "accountType": "Debit",
+                          "currency": "GBP",
+                          "balance": 123,
+                          "availableBalance": 123,
+                          "modifiedDate": "2023-01-18T11:02:37Z",
+                          "sourceModifiedDate": "2022-11-11T14:15:13Z"
+                        },
+                        {
+                          "id": "193",
+                          "accountName": "1 year ago",
+                          "accountType": "Debit",
+                          "currency": "GBP",
+                          "balance": 5300.02,
+                          "availableBalance": 5300.02,
+                          "modifiedDate": "2023-01-18T11:02:37Z",
+                          "sourceModifiedDate": "2023-01-18T06:05:12Z"
+                        }
+                      ],
+                      "pageNumber": 1,
+                      "pageSize": 2,
+                      "totalResults": 140,
+                      "_links": {
+                        "current": {
+                          "href": "/companies/10818b5e-6e6a-4ed4-a1c5-3e3efe626e87/connections/9e28a776-f4be-425b-8a3d-ad49956de2c9/data/bankAccounts?page=1&pageSize=2"
+                        },
+                        "self": {
+                          "href": "/companies/10818b5e-6e6a-4ed4-a1c5-3e3efe626e87/connections/9e28a776-f4be-425b-8a3d-ad49956de2c9/data/bankAccounts"
+                        },
+                        "next": {
+                          "href": "/companies/10818b5e-6e6a-4ed4-a1c5-3e3efe626e87/connections/9e28a776-f4be-425b-8a3d-ad49956de2c9/data/bankAccounts?page=2&pageSize=2"
+                        }
+                      }
+                    }
+                  },
+                  "Sage 50 (UK)": {
+                    "value": {
+                      "results": [
+                        {
+                          "id": "1200",
+                          "accountName": "Bank Current Account",
+                          "accountType": "Unknown",
+                          "nominalCode": "1200",
+                          "sortCode": "23-34-34",
+                          "accountNumber": "003234234",
+                          "iBan": "",
+                          "currency": "GBP",
+                          "balance": -20091.04,
+                          "availableBalance": -20091.04,
+                          "modifiedDate": "2023-03-30T14:42:37Z",
+                          "sourceModifiedDate": "2022-11-25T09:25:48",
+                          "overdraftLimit": 120000,
+                          "institution": "Lloyds Bank PLC",
+                          "metadata": {
+                            "isDeleted": false
+                          }
+                        },
+                        {
+                          "id": "1210",
+                          "accountName": "Bank Deposit Account",
+                          "accountType": "Unknown",
+                          "nominalCode": "1210",
+                          "sortCode": "45-45-45",
+                          "accountNumber": "9/00474345",
+                          "iBan": "",
+                          "currency": "GBP",
+                          "balance": 3510,
+                          "availableBalance": 3510,
+                          "modifiedDate": "2023-03-30T14:42:37Z",
+                          "sourceModifiedDate": "2022-11-25T09:25:48",
+                          "overdraftLimit": 0,
+                          "institution": "Halifax Building Society",
+                          "metadata": {
+                            "isDeleted": false
+                          }
+                        }
+                      ],
+                      "pageNumber": 1,
+                      "pageSize": 2,
+                      "totalResults": 6,
+                      "_links": {
+                        "current": {
+                          "href": "/companies/cf5f2a47-2990-4221-bae6-0c19c86ac304/connections/8ee4910f-4fc1-47e6-89b1-5931fb33d8f7/data/bankAccounts?page=1&pageSize=2"
+                        },
+                        "self": {
+                          "href": "/companies/cf5f2a47-2990-4221-bae6-0c19c86ac304/connections/8ee4910f-4fc1-47e6-89b1-5931fb33d8f7/data/bankAccounts"
+                        },
+                        "next": {
+                          "href": "/companies/cf5f2a47-2990-4221-bae6-0c19c86ac304/connections/8ee4910f-4fc1-47e6-89b1-5931fb33d8f7/data/bankAccounts?page=2&pageSize=2"
+                        }
+                      }
+                    }
+                  },
+                  "Sage Business Cloud Accounting": {
+                    "value": {
+                      "results": [
+                        {
+                          "id": "154d05abe9f24c4babe0f6a741dec1b9",
+                          "accountName": "Abdi Internet Bank",
+                          "accountType": "Unknown",
+                          "nominalCode": "1560",
+                          "sortCode": "010101",
+                          "accountNumber": "11111",
+                          "currency": "GBP",
+                          "balance": 49.61,
+                          "availableBalance": 49.61,
+                          "modifiedDate": "2022-10-24T14:52:53Z",
+                          "sourceModifiedDate": "2020-01-27T10:53:26Z"
+                        },
+                        {
+                          "id": "565ce07212bc492c8c2d04f43f9f67e3",
+                          "accountName": "Abdi Live Test",
+                          "accountType": "Unknown",
+                          "nominalCode": "147852",
+                          "sortCode": "123456",
+                          "accountNumber": "1234567",
+                          "currency": "GBP",
+                          "balance": -225830.75,
+                          "availableBalance": -225830.75,
+                          "modifiedDate": "2022-10-24T14:52:53Z",
+                          "sourceModifiedDate": "2020-01-28T14:00:20Z"
+                        }
+                      ],
+                      "pageNumber": 1,
+                      "pageSize": 2,
+                      "totalResults": 45,
+                      "_links": {
+                        "current": {
+                          "href": "/companies/390083e2-351b-407c-a3be-55081c36c182/connections/37916fb7-b4b8-4a78-8872-1751e20ee0cd/data/bankAccounts?page=1&pageSize=2"
+                        },
+                        "self": {
+                          "href": "/companies/390083e2-351b-407c-a3be-55081c36c182/connections/37916fb7-b4b8-4a78-8872-1751e20ee0cd/data/bankAccounts"
+                        },
+                        "next": {
+                          "href": "/companies/390083e2-351b-407c-a3be-55081c36c182/connections/37916fb7-b4b8-4a78-8872-1751e20ee0cd/data/bankAccounts?page=2&pageSize=2"
+                        }
+                      }
+                    }
+                  },
+                  "Sage Intacct": {
+                    "value": {
+                      "results": [
+                        {
+                          "id": "CREDITCARD:55",
+                          "accountName": "CoT Credit Card",
+                          "accountType": "Credit",
+                          "nominalCode": "10021",
+                          "currency": "GBP",
+                          "modifiedDate": "2023-04-04T16:31:46Z",
+                          "sourceModifiedDate": "2023-03-27T14:11:48",
+                          "metadata": {
+                            "isDeleted": false
+                          }
+                        },
+                        {
+                          "id": "CREDITCARD:58",
+                          "accountName": "Cot Credit Card 2",
+                          "accountType": "Credit",
+                          "nominalCode": "11112",
+                          "currency": "GBP",
+                          "modifiedDate": "2023-04-04T16:31:46Z",
+                          "sourceModifiedDate": "2023-03-27T14:15:11",
+                          "metadata": {
+                            "isDeleted": false
+                          }
+                        }
+                      ],
+                      "pageNumber": 1,
+                      "pageSize": 2,
+                      "totalResults": 14,
+                      "_links": {
+                        "current": {
+                          "href": "/companies/df02b289-cb16-4964-ac4d-9fd60b04538e/connections/8f457d9c-1142-4241-a07e-71d1ee2e3052/data/bankAccounts?page=1&pageSize=2"
+                        },
+                        "self": {
+                          "href": "/companies/df02b289-cb16-4964-ac4d-9fd60b04538e/connections/8f457d9c-1142-4241-a07e-71d1ee2e3052/data/bankAccounts"
+                        },
+                        "next": {
+                          "href": "/companies/df02b289-cb16-4964-ac4d-9fd60b04538e/connections/8f457d9c-1142-4241-a07e-71d1ee2e3052/data/bankAccounts?page=2&pageSize=2"
+                        }
+                      }
+                    }
+                  },
+                  "Xero": {
+                    "value": {
+                      "results": [
+                        {
+                          "id": "bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4",
+                          "accountName": "Business Bank Account",
+                          "accountType": "Debit",
+                          "sortCode": "990404",
+                          "accountNumber": "987654321",
+                          "currency": "GBP",
+                          "balance": 6681.79,
+                          "modifiedDate": "2023-03-15T20:36:09Z",
+                          "sourceModifiedDate": "2023-03-15T20:35:07",
+                          "metadata": {
+                            "isDeleted": false
+                          }
+                        },
+                        {
+                          "id": "a8d6fb1a-8c5d-4683-90ce-bf9d28fc62ba",
+                          "accountName": "Business Savings Account",
+                          "accountType": "Debit",
+                          "sortCode": "890303",
+                          "accountNumber": "876543210",
+                          "currency": "GBP",
+                          "balance": 0,
+                          "modifiedDate": "2023-03-15T20:36:09Z",
+                          "sourceModifiedDate": "2023-03-15T20:36:06",
+                          "metadata": {
+                            "isDeleted": false
+                          }
+                        }
+                      ],
+                      "pageNumber": 1,
+                      "pageSize": 2,
+                      "totalResults": 2,
+                      "_links": {
+                        "current": {
+                          "href": "/companies/5ced9667-a310-443a-a711-958d36377141/connections/6a4bcf97-e46a-465c-abf6-c42cec8e48c0/data/bankAccounts?page=1&pageSize=2"
+                        },
+                        "self": {
+                          "href": "/companies/5ced9667-a310-443a-a711-958d36377141/connections/6a4bcf97-e46a-465c-abf6-c42cec8e48c0/data/bankAccounts"
+                        }
+                      }
+                    }
+                  },
+                  "Zoho Books": {
+                    "value": {
+                      "results": [
+                        {
+                          "id": "104957000000060010",
+                          "accountName": "Abdi Test",
+                          "accountType": "Unknown",
+                          "sortCode": "112233",
+                          "accountNumber": "xxxx5678",
+                          "currency": "GBP",
+                          "balance": 69858.44,
+                          "modifiedDate": "2022-10-03T08:40:38Z",
+                          "institution": "Test Bank"
+                        },
+                        {
+                          "id": "104957000000065002",
+                          "accountName": "Abdi Test 2",
+                          "accountType": "Unknown",
+                          "sortCode": "",
+                          "accountNumber": "",
+                          "currency": "AED",
+                          "balance": 98.03,
+                          "modifiedDate": "2022-10-03T08:40:38Z",
+                          "institution": ""
+                        }
+                      ],
+                      "pageNumber": 1,
+                      "pageSize": 2,
+                      "totalResults": 4,
+                      "_links": {
+                        "current": {
+                          "href": "/companies/d0b68840-db50-4bc3-b88c-96e225333fea/connections/a2324b8e-60e9-451d-8eb1-0fdc8e8224df/data/bankAccounts?page=1&pageSize=2"
+                        },
+                        "self": {
+                          "href": "/companies/d0b68840-db50-4bc3-b88c-96e225333fea/connections/a2324b8e-60e9-451d-8eb1-0fdc8e8224df/data/bankAccounts"
+                        },
+                        "next": {
+                          "href": "/companies/d0b68840-db50-4bc3-b88c-96e225333fea/connections/a2324b8e-60e9-451d-8eb1-0fdc8e8224df/data/bankAccounts?page=2&pageSize=2"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Malformed-Query"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        },
+        "description": "The *List bank accounts* endpoint returns a list of [bank accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) for a given company's connection.\n\n[Bank accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/bank-feeds-api#/operations/refresh-company-data).\n    "
+      }
+    },
     "/companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts": {
       "parameters": [
         {
@@ -1807,6 +2550,234 @@
           }
         }
       },
+      "BankAccounts": {
+        "x-internal": true,
+        "title": "Accounting: Bank accounts",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "title": "Accounting: Bank account",
+                  "description": "> **Accessing Bank Accounts through Banking API**\n> \n> This datatype was originally used for accessing bank account data both in accounting integrations and open banking aggregators. \n> \n> To view bank account data through the Banking API, please refer to the new datatype [here](https://docs.codat.io/bank-feeds-api#/schemas/Account)\n\n> View the coverage for bank accounts in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankAccounts\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nA list of bank accounts associated with a company and a specific data connection.\n\nBank accounts data includes:\n* The name and ID of the account in the accounting platform.\n* The currency and balance of the account.\n* The sort code and account number.",
+                  "type": "object",
+                  "allOf": [
+                    {
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Identifier for the account, unique for the company in the accounting platform."
+                        }
+                      }
+                    },
+                    {
+                      "$ref": "#/components/schemas/BankAccounts/allOf/0/properties/results/items/definitions/bankAccountPrototype"
+                    },
+                    {
+                      "properties": {
+                        "metadata": {
+                          "title": "Metadata",
+                          "type": "object",
+                          "x-internal": true,
+                          "properties": {
+                            "isDeleted": {
+                              "type": "boolean",
+                              "description": "Indicates whether the record has been deleted in the third-party system this record originated from.",
+                              "nullable": true
+                            }
+                          }
+                        },
+                        "supplementalData": {
+                          "title": "Supplemental data",
+                          "type": "object",
+                          "x-internal": true,
+                          "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting platform. [Learn more](https://docs.codat.io/using-the-api/supplemental-data/overview) about supplemental data.",
+                          "properties": {
+                            "content": {
+                              "type": "object",
+                              "additionalProperties": {
+                                "type": "object",
+                                "additionalProperties": true
+                              },
+                              "nullable": true
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "title": "Modified dates",
+                      "x-internal": true,
+                      "allOf": [
+                        {
+                          "title": "ModifiedDate",
+                          "x-internal": true,
+                          "type": "object",
+                          "properties": {
+                            "modifiedDate": {
+                              "allOf": [
+                                {
+                                  "$ref": "#/components/schemas/DateTime"
+                                },
+                                {
+                                  "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        {
+                          "title": "Source Modified Date",
+                          "x-internal": true,
+                          "type": "object",
+                          "nullable": true,
+                          "properties": {
+                            "sourceModifiedDate": {
+                              "allOf": [
+                                {
+                                  "$ref": "#/components/schemas/DateTime"
+                                },
+                                {
+                                  "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "definitions": {
+                    "bankAccountPrototype": {
+                      "title": "Bank account prototype",
+                      "type": "object",
+                      "properties": {
+                        "accountName": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "Name of the bank account in the accounting platform."
+                        },
+                        "accountType": {
+                          "title": "Bank Account Type",
+                          "x-internal": true,
+                          "enum": [
+                            "Unknown",
+                            "Credit",
+                            "Debit"
+                          ],
+                          "type": "string",
+                          "description": "The type of transactions and balances on the account.  \nFor Credit accounts, positive balances are liabilities, and positive transactions **reduce** liabilities.  \nFor Debit accounts, positive balances are assets, and positive transactions **increase** assets."
+                        },
+                        "nominalCode": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "Code used to identify each nominal account for a business."
+                        },
+                        "sortCode": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "Sort code for the bank account.\n\nXero integrations\nThe sort code is only displayed when the currency = GBP and the sort code and account number sum to 14 digits. For non-GBP accounts, this field is not populated."
+                        },
+                        "accountNumber": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "Account number for the bank account.\n\nXero integrations\nOnly a UK account number shows for bank accounts with GBP currency and a combined total of sort code and account number that equals 14 digits, For non-GBP accounts, the full bank account number is populated.\n\nFreeAgent integrations\nFor Credit accounts, only the last four digits are required. For other types, the field is optional."
+                        },
+                        "iBan": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "International bank account number of the account. Often used when making or receiving international payments."
+                        },
+                        "currency": {
+                          "$ref": "#/components/schemas/SourceAccount/properties/currency",
+                          "description": "Base currency of the bank account."
+                        },
+                        "balance": {
+                          "type": "number",
+                          "format": "decimal",
+                          "nullable": true,
+                          "description": "Balance of the bank account."
+                        },
+                        "institution": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The institution of the bank account."
+                        },
+                        "availableBalance": {
+                          "type": "number",
+                          "format": "decimal",
+                          "nullable": true,
+                          "description": "Total available balance of the bank account as reported by the underlying data source. This may take into account overdrafts or pending transactions for example."
+                        },
+                        "overdraftLimit": {
+                          "type": "number",
+                          "format": "decimal",
+                          "nullable": true,
+                          "description": "Pre-arranged overdraft limit of the account.\n\nThe value is always positive. For example, an overdraftLimit of `1000` means that the balance of the account can go down to `-1000`."
+                        }
+                      }
+                    },
+                    "bankAccountCreateResponse": {
+                      "title": "Create bank account response",
+                      "allOf": [
+                        {
+                          "properties": {
+                            "data": {
+                              "$ref": "#/components/schemas/BankAccounts/allOf/0/properties/results/items"
+                            }
+                          }
+                        },
+                        {
+                          "$ref": "#/components/schemas/PushOperation"
+                        }
+                      ]
+                    },
+                    "bankAccountRef": {
+                      "title": "Bank account reference",
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Bank account 'id' for the account transaction."
+                        },
+                        "name": {
+                          "type": "string",
+                          "description": "bank account 'name' for the account transaction."
+                        }
+                      },
+                      "description": "Links to the Account transactions data type."
+                    },
+                    "bankAccounts": {
+                      "title": "Accounting: Bank accounts",
+                      "allOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "results": {
+                              "type": "array",
+                              "items": {
+                                "$ref": "#/components/schemas/BankAccounts/allOf/0/properties/results/items"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "$ref": "#/components/schemas/Companies/allOf/1"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/Companies/allOf/1"
+          }
+        ]
+      },
       "BankFeedAccountMapping": {
         "title": "Bank feed account mapping",
         "allOf": [
@@ -2470,6 +3441,187 @@
         "required": [
           "name"
         ]
+      },
+      "Configuration": {
+        "title": "Configuration",
+        "type": "object",
+        "x-internal": true,
+        "properties": {
+          "companyId": {
+            "$ref": "#/components/parameters/companyId/schema"
+          },
+          "accountingSoftwareCompanyName": {
+            "type": "string",
+            "description": "The company name defined in the accounting platform."
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Enabled or disable bank feeds."
+          },
+          "configured": {
+            "type": "boolean",
+            "description": "True if the company has been configured."
+          },
+          "schedule": {
+            "$ref": "#/components/schemas/Configuration/definitions/configurationSchedule"
+          },
+          "configuration": {
+            "$ref": "#/components/schemas/Configuration/definitions/syncConfiguration"
+          }
+        },
+        "definitions": {
+          "configurationSchedule": {
+            "title": "Configuration schedule",
+            "type": "object",
+            "properties": {
+              "selectedFrequency": {
+                "type": "string",
+                "description": "The sync frequency."
+              },
+              "frequencyOptions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "The available sync frequencies."
+              },
+              "startDate": {
+                "type": "string",
+                "description": "The datetime in UTC you want to start syncing from."
+              },
+              "syncHourUtc": {
+                "type": "integer",
+                "description": "The hour in which the sync is initiated."
+              },
+              "timeZoneIanaId": {
+                "type": "string",
+                "description": "The [IANA](https://www.iana.org/time-zones) time zone ID."
+              }
+            }
+          },
+          "syncConfiguration": {
+            "title": "Sync configuration",
+            "type": "object",
+            "properties": {
+              "syncAsBankFeeds": {
+                "$ref": "#/components/schemas/Configuration/definitions/syncAsBankFeeds"
+              },
+              "syncAsExpenses": {
+                "$ref": "#/components/schemas/Configuration/definitions/syncAsExpenses"
+              }
+            }
+          },
+          "syncAsBankFeeds": {
+            "title": "Sync as bank feed",
+            "type": "object",
+            "properties": {
+              "enableSync": {
+                "type": "boolean",
+                "description": "True if bank feeds sync is enabled."
+              },
+              "selectedBankAccountId": {
+                "type": "string",
+                "description": "The bank account ID being synced."
+              },
+              "bankAccountOptions": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Configuration/definitions/bankAccountOption"
+                }
+              }
+            }
+          },
+          "syncAsExpenses": {
+            "title": "Sync as expenses",
+            "type": "object",
+            "properties": {
+              "enableSync": {
+                "type": "boolean",
+                "description": "True if expense sync is enabled."
+              },
+              "supplier": {
+                "$ref": "#/components/schemas/Configuration/definitions/configurationSupplier"
+              },
+              "customer": {
+                "$ref": "#/components/schemas/Configuration/definitions/configurationCustomer"
+              },
+              "selectedBankAccountId": {
+                "type": "string",
+                "description": "The bank account ID being synced."
+              },
+              "bankAccountOptions": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Configuration/definitions/bankAccountOption"
+                }
+              }
+            }
+          },
+          "bankAccountOption": {
+            "title": "Bank account option",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique identifier for the bank account."
+              },
+              "name": {
+                "type": "string",
+                "description": "Name of bank account."
+              },
+              "accountType": {
+                "type": "string",
+                "description": "The type of account."
+              }
+            }
+          },
+          "configurationSupplier": {
+            "title": "Supplier configuration",
+            "type": "object",
+            "properties": {
+              "selectedSupplierId": {
+                "type": "string",
+                "description": "Unique identifier for the supplier."
+              },
+              "supplierOptions": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Configuration/definitions/configurationContactRef"
+                }
+              }
+            }
+          },
+          "configurationCustomer": {
+            "title": "Customer configuration",
+            "type": "object",
+            "properties": {
+              "selectedCustomerId": {
+                "type": "string",
+                "description": "Unique identifier for the customer."
+              },
+              "customerOptions": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Configuration/definitions/configurationContactRef"
+                }
+              }
+            }
+          },
+          "configurationContactRef": {
+            "title": "Supplier/customer reference",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique identifier for the supplier/customer."
+              },
+              "name": {
+                "type": "string",
+                "description": "The supplier/customer's name."
+              }
+            }
+          }
+        }
       },
       "Connection": {
         "title": "Connection",
