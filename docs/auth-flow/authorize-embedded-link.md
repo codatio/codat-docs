@@ -494,20 +494,45 @@ The property accepts Markdown, meaning you can add links, lists, tables, and mor
 
 | Option                                  | Description                                                                                                                                                                                                                                                                                                              |
 |-----------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `companyName`                           | Your company name displayed on the final page of the flow before   connecting an integration                                                                                                                                                                                                                             |
-| `landing.title`                         | Landing page title displayed on the first page the user sees. <br/>   To use this, enable the landing page by setting  `CodatLinkOptions.showLandingPage` to   `true` or configuring it in [Link settings](https://app.codat.io/settings/link-settings/onboarding).                                                      |
-| `landing.subtitle`                      | Landing page subtitle displayed on the first page the user sees.   <br/> To use this, enable the landing page by setting  `CodatLinkOptions.showLandingPage` to   `true` or configuring it in [Link settings](https://app.codat.io/settings/link-settings/onboarding).                                                   |
-| `main.title`                            | Title displayed on the page where the user selects what source types to   connect                                                                                                                                                                                                                                        |
-| `main.subtitle`                         | Subtitle displayed on the page where the user selects what source types   to connect.                                                                                                                                                                                                                                    |
-| `accounting.fileUpload.subtitle`        | Subtitle displayed on the accounting file upload page. <br/> To use   this, enable the accounting file upload by setting the `sourceTypes.accounting.enableFileUpload` option to `true` or by   configuring it in [Other integrations](https://app.codat.io/settings/integrations/other).                        |
-| `banking.fileUpload.subtitle`           | Subtitle displayed on the banking file upload page. <br/> To use   this, enable the banking file upload by setting the `sourceTypes.banking.enableFileUpload` option to `true` or by   configuring it in [Other integrations](https://app.codat.io/settings/integrations/other).                                 |
-| `businessDocuments.fileUpload.subtitle` | Subtitle displayed on the business documents file upload page.   <br/> To use this, enable the business documents file upload by setting the `sourceTypes.businessDocuments.enableFileUpload` option to `true`   or by configuring it in [Other integrations](https://app.codat.io/settings/integrations/other). |
-| `accounting.dataAccess.consent`         | Text displayed on the final flow page before connecting an accounting   platform, underneath the list of data types. If you want to display a terms   and conditions link, add it here using Markdown.                                                                                                                   |
-| `banking.dataAccess.consent`            | Text displayed on the final flow page before connecting a bank account,   underneath the list of data types. If you want to display a terms and   conditions link, add it here using Markdown.                                                                                                                           |
-| `commerce.dataAccess.consent`           | Text displayed on the final flow page before connecting a commerce   platform, underneath the list of data types. If you want to display a terms   and conditions link, add it here using Markdown.                                                                                                                      |
-| `accounting.dataAccess.dataTypes`       | List of requested data types displayed on the final flow page before   connecting an accounting platform.                                                                                                                                                                                                                |
-| `banking.dataAccess.dataTypes`          | List of requested data types displayed on the final flow page before   connecting a bank account.                                                                                                                                                                                                                        |
-| `commerce.dataAccess.dataTypes`         | List of requested data types displayed on the final flow page before   connecting a commerce platform.                                                                                                                                                                                                                   |
+| `companyName`                           | Your company name displayed on the final page of the flow before   connecting an integration. <br/> This property is a `string`.|
+| `landing.title`                         | Landing page title displayed on the first page the user sees. <br/>   To use this, enable the landing page by setting  `CodatLinkOptions.showLandingPage` to   `true` or configuring it in [Link settings](https://app.codat.io/settings/link-settings/onboarding). <br/> This property is a `string`.|
+| `landing.subtitle`                      | Landing page subtitle displayed on the first page the user sees.   <br/> To use this, enable the landing page by setting  `CodatLinkOptions.showLandingPage` to   `true` or configuring it in [Link settings](https://app.codat.io/settings/link-settings/onboarding). <br/> This property is a `string`.|
+| `main.title`                            | Title displayed on the page where the user selects what source types to   connect. <br/> This property is a `string`.|
+| `main.subtitle`                         | Subtitle displayed on the page where the user selects what source types   to connect. <br/> This property is a `string`.|
+| `accounting.fileUpload.subtitle`        | Subtitle displayed on the accounting file upload page. <br/> To use   this, enable the accounting file upload by setting the `sourceTypes.accounting.enableFileUpload` option to `true` or by   configuring it in [Other integrations](https://app.codat.io/settings/integrations/other). <br/> This property is a `string`.|
+| `banking.fileUpload.subtitle`           | Subtitle displayed on the banking file upload page. <br/> To use   this, enable the banking file upload by setting the `sourceTypes.banking.enableFileUpload` option to `true` or by   configuring it in [Other integrations](https://app.codat.io/settings/integrations/other). <br/> This property is a `string`.                                 |
+| `businessDocuments.fileUpload.subtitle` | Subtitle displayed on the business documents file upload page.   <br/> To use this, enable the business documents file upload by setting the `sourceTypes.businessDocuments.enableFileUpload` option to `true`   or by configuring it in [Other integrations](https://app.codat.io/settings/integrations/other). <br/> This property is a `string`.|
+| `accounting.dataAccess.consent`         | Text displayed on the final flow page before connecting an accounting   platform, underneath the list of data types. If you want to display a terms   and conditions link, add it here using Markdown. <br/> This property is a `string`.|
+| `banking.dataAccess.consent`            | Text displayed on the final flow page before connecting a bank account,   underneath the list of data types. If you want to display a terms and   conditions link, add it here using Markdown. <br/> This property is a `string`.|
+| `commerce.dataAccess.consent`           | Text displayed on the final flow page before connecting a commerce   platform, underneath the list of data types. If you want to display a terms   and conditions link, add it here using Markdown. <br/> This property is a `string`.|
+| `accounting.dataAccess.dataTypes`       | List of requested data types displayed on the final flow page before   connecting an accounting platform. <br/> This property is an `array` of `string` values.|
+| `banking.dataAccess.dataTypes`          | List of requested data types displayed on the final flow page before   connecting a bank account. <br/> This property is an `array` of `string` values.|
+| `commerce.dataAccess.dataTypes`         | List of requested data types displayed on the final flow page before   connecting a commerce platform. <br/> This property is an `array` of `string` values.|
+
+:::tip Arrays of string values
+
+Properties `accounting.dataAccess.dataTypes`, `banking.dataAccess.dataTypes`, and `commerce.dataAccess.dataTypes` are arrays because they control the bullet points displayed on the data access consent page of the Link flow. 
+
+Each item of the array is rendered as a separate bullet point and details the data types your customer is agreeing to let you access.
+
+For example, if using Javascript, you can set these values as follows: 
+
+```javascript
+// Set when initializing the object
+const text : CodatTextOptions = {
+  "companyName": "Polly's Profiteroles",
+  "accounting.dataAccess.dataTypes": ["Accounts receivable information", "Accounts payable information", "Financial summary information"],
+}
+
+// Or set after initializing the object 
+text["accounting.dataAccess.dataTypes"] = ["Accounts receivable information", "Accounts payable information", "Financial summary information"];
+```
+
+In the Link flow, this will then be rendered as follows:
+
+![A snippet of Codat's Link flow that reflects the values set in the code example as bullet points](/img/auth-flow/link-sdk-datatypes-array.png)
+
+:::
 
 # Changelog
 
