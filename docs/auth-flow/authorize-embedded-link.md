@@ -508,8 +508,8 @@ The property accepts Markdown, meaning you can add links, lists, tables, and mor
 | `banking.dataAccess.dataTypes`         |`array[string]` <br/><br/>List of requested data types displayed on the final flow page before   connecting a bank account.|
 | `commerce.dataAccess.consent`          |`string` <br/><br/>Text displayed on the final flow page before connecting a commerce   platform, underneath the list of data types. If you want to display a terms   and conditions link, add it here using Markdown.|
 | `commerce.dataAccess.dataTypes`        |`array[string]` <br/><br/>List of requested data types displayed on the final flow page before   connecting a commerce platform.|
-
-:::tip Arrays of string values
+<details>
+  <summary><b>Learn more about array custom text properties</b></summary>
 
 Properties `accounting.dataAccess.dataTypes`, `banking.dataAccess.dataTypes`, and `commerce.dataAccess.dataTypes` are arrays because they control the bullet points displayed on the data access consent page of the Link flow. 
 
@@ -527,12 +527,10 @@ const text : CodatTextOptions = {
 // Or set after initializing the object 
 text["accounting.dataAccess.dataTypes"] = ["Accounts receivable information", "Accounts payable information", "Financial summary information"];
 ```
-
 In the Link flow, this will then be rendered as follows:
 
 ![A snippet of Codat's Link flow that reflects the values set in the code example as bullet points](/img/auth-flow/link-sdk-datatypes-array.png)
-
-:::
+</details>
 
 # Changelog
 
