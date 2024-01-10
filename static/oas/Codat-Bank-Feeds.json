@@ -1027,6 +1027,7 @@
       "post": {
         "summary": "Set configuration",
         "operationId": "set-configuration",
+        "x-speakeasy-name-override": "set",
         "x-internal": true,
         "tags": [
           "Configuration"
