@@ -1,4 +1,4 @@
-name: Linkinator CI
+name: Broken links
 
 on:
   #pull_request:
