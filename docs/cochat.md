@@ -18,7 +18,7 @@ Cochat is in beta and we're still refining its training data.
 ## What is Cochat?
 
 Cochat is an advanced natural language processing (NLP) tool developed to enhance the user experience of Codat customers. By leveraging the power of GPT 4, Cochat provides an interactive and conversational interface to help users make sense of the Codat documentation and better understand how to leverage its capabilities for building integrations.
-
+  
 <li className="card dark">
   <div className="header">
     <img
