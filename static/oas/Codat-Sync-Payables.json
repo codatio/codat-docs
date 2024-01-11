@@ -43730,7 +43730,14 @@
               {
                 "properties": {
                   "data": {
-                    "$ref": "#/components/schemas/BankAccount"
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/BankAccount"
+                      },
+                      {
+                        "deprecated": true
+                      }
+                    ]
                   }
                 }
               },
@@ -45768,7 +45775,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/Account"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Account"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -45785,7 +45799,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/BillCreditNote"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/BillCreditNote"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -45802,7 +45823,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/BillPayment"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/BillPayment"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -45819,7 +45847,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/Bill"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Bill"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -45836,7 +45871,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/JournalEntry"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/JournalEntry"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -45853,7 +45895,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/Journal"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Journal"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -45870,7 +45919,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/Supplier"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Supplier"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -47507,7 +47563,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/BillCreditNote"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/BillCreditNote"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -47524,7 +47587,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/Bill"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Bill"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -47541,7 +47611,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/Supplier"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Supplier"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
