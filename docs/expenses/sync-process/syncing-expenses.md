@@ -31,7 +31,7 @@ Once you have initiated the sync, you may want to check whether the sync was com
 We recommend you use webhooks to track the sync status, navigate to **Settings > Webhooks > Rules** in the [Codat Portal](https://app.codat.io/settings/webhooks/rules) and click **Create new rule** to set up the following webhooks:
 
 * **Expenses sync failed** webhook of `Sync Failed` type is triggered if any failures occurred during the sync process.
-* **Expenses sync completed** webhook of `Sync Completed` type is triggered when a sync completes without any failures.
+* **Expenses sync completed** webhook of `Sync Completed` type is triggered when a sync completes.
 
 You can [read more](/using-the-api/webhooks/core-rules-types) about webhooks at Codat and various trigger events we offer to monitor.
 
