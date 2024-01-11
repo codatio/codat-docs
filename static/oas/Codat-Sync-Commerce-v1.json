@@ -13266,7 +13266,14 @@
               {
                 "properties": {
                   "data": {
-                    "$ref": "#/components/schemas/AccountingBankAccount"
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/AccountingBankAccount"
+                      },
+                      {
+                        "deprecated": true
+                      }
+                    ]
                   }
                 }
               },
@@ -13580,7 +13587,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/AccountingAccount"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountingAccount"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -13597,7 +13611,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/AccountingCreditNote"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountingCreditNote"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -13614,7 +13635,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/AccountingCustomer"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountingCustomer"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -13631,7 +13659,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/AccountingDirectIncome"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountingDirectIncome"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -13648,7 +13683,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/AccountingInvoice"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountingInvoice"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -13665,7 +13707,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/AccountingJournalEntry"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountingJournalEntry"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -13682,7 +13731,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/AccountingPayment"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountingPayment"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },

@@ -13020,7 +13020,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/Account"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Account"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -13037,7 +13044,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/Customer"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Customer"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -13082,7 +13096,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/Supplier"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Supplier"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -15032,7 +15053,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/Customer"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Customer"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -15156,7 +15184,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/Supplier"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Supplier"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
