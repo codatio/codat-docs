@@ -436,7 +436,18 @@ If you need more control over the UI based on application-specific logic or want
   onError={onError}
   onClose={onClose}
   onFinish={onFinish}
-  options={{nonModal: true ...}}
+  options={{
+    nonModal: true ...
+    showLandingPage: true,
+    showSandboxIntegrations: true,
+    theme: {...},
+    sourceTypes: {
+      accounting: {...},
+      banking: {...},
+      commerce: {...},
+    },
+    text: {...},
+  }}
 />
 ```
 
