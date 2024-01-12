@@ -82,7 +82,7 @@ If you want to use the accounting platform logos in your user interface, you can
 		question="How can I resync a failed transaction when I resolve the issue with the transaction?"
 		answer={`
 <p>Once you resolve the issue with the transaction, you can create a new dataset for that transaction Id. You can't resync the transaction with the same dataset because Codat checks the transaction metadata to avoid duplicates. If a transaction Id has a status of completed, it is not synced again.</p>
-<p>The following error will appear if a transaction has been previously synced: <code>error: One or more transactions have previously been processed: {Transaction Id}}</code><p> 
+<p>The following error will appear if a transaction has been previously synced: <code>error: One or more transactions have previously been processed: {Transaction Id}</code><p> 
 		`}
 	/>
 	<Question
