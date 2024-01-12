@@ -7,10 +7,11 @@ displayed_sidebar: integrationsAccounting
 ---
 
 import { IntegrationsList } from "@components/global/Integrations";
+import DataTypes from '@components/global/DataTypes';
 
 ![](/img/old/2b27c1b-info_banner.png "info_banner.png")
 
-Codat’s accounting integrations allow you to pull up-to-date accounting data from your customers' accounting software as well as push data to their software. Please see our [Accounting data model](/accounting-api/accounting-data-types/) for details on the types of data you can pull and push.
+Codat’s accounting integrations allow you to pull up-to-date accounting data from your customers' accounting software as well as push data to their software. Please see our [Accounting data model](/integrations/accounting/overview#supported-data-types) for details on the types of data you can pull and push.
 
 You can use [Codat's Sandbox integration](/integrations/accounting/sandbox/accounting-sandbox) to start exploring the data you can work with, without any set up (other than enabling the integration).
 
@@ -23,6 +24,12 @@ Codat's integrations are able to connect to the following accounting software. Y
 You can also explore the data types supported by each integration in the interactive <a className="external" href="https://knowledge.codat.io/supported-features/accounting" target="_blank">Data coverage explorer</a>.
 
 <IntegrationsList sourceType="accounting"/>
+
+## Supported data types
+
+<DataTypes product="accounting" urlPrefix="/accounting-api#"/>
+
+<br/>
 
 ## Platform keys
 
