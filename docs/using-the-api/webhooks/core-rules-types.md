@@ -59,7 +59,6 @@ In line with industry standard security practices, we have removed personally id
 
 **Type**: `New company synchronised`  
 **Trigger:** Initial syncs are complete for all data types queued for a newly connected company, and at least one of those syncs is successful.   
-**Legacy behavior:** After the first `dataType` is successfully synced for a new company. [See deprecation](https://docs.codat.io/updates/231010-deprecation-webhooks-new-company-synchronized) for more information about this change.
 
 ```json
 {
