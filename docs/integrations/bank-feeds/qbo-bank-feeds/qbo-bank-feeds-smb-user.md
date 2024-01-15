@@ -26,16 +26,13 @@ To connect their bank accounts to QBO, the SMB user performs the following steps
 
 3. On the **Set up QuickBooks** page, they click **Get credentials** to generate their unique one-time username and password for connecting an account to QBO (see step six in the next procedure). The **Revoke credentials** button appears immediately after their credentials are generated &mdash; see [Revoke credentials](#revoke-credentials) to learn more.
 
-   ![Image](/img/bank-feeds/qbo-bank-feeds/400590b-qbo-bank-feeds_smb-customer-steps-revised.png "The Set up QuickBooks page that allows your SMB user to get their credentials.")
+   ![Image](/img/bank-feeds/qbo-bank-feeds/QBO-bankfeeds-credentials-page-updated.png "The Set up QuickBooks page that allows your SMB user to get their credentials.")
 
 4. They follow the instructions displayed in the UI. These are summarized in the next procedure.
 
 ### Enter one-time credentials in QuickBooks
 
-1. The SMB user signs in to QBO.
-
-   - If in Accounting View, they select **Banking**.
-   - If in Business View, they go to **Bookkeeping >Bank Transactions**.
+1. The SMB user signs in to QBO and goes to **Transactions > Bank Transactions**.
 
 2. They click the **Link account** button.
 
