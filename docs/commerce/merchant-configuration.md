@@ -1,7 +1,8 @@
 ---
-title: "Merchant configuration"
+title: "Configure merchant"
 description: "Enable merchants to connect their systems and specify how they want their sales data to be synchronized into their accounting package"
 displayed_sidebar: commerce
+sidebar_label: "Configure merchant"
 image: "/img/banners/social/commerce.png"
 ---
 

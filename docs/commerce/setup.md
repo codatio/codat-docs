@@ -1,7 +1,8 @@
 ---
-title: "Product setup"
+title: "Configure product"
 description: "Learn how to perform the initial setup for the Sync for Commerce product"
 displayed_sidebar: commerce
+sidebar_label: "Configure product"
 image: "/img/banners/social/commerce.png"
 ---
 

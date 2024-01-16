@@ -1,7 +1,8 @@
 ---
-title: "Synchronization schedule"
+title: "Understand sync scheduler"
 description: "Gain a better understanding of how our Sync scheduler works with the settings provided via the Sync Flow."
 image: "/img/banners/social/commerce.png"
+sidebar_label: "Sync scheduler"
 ---
 
 ## Synchronization schedule configuration

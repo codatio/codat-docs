@@ -13,67 +13,32 @@ module.exports = [
   },
   {
     type: "doc",
-    label: "Product setup",
-    id: "commerce/setup",
+    id: "commerce/get-started",
   },
   {
     type: "doc",
-    label: "Merchant configuration",
+    id: "commerce/setup",
+    customProps: {
+      hr: true,
+      section: "Build your solution",
+    },
+  },
+  {
+    type: "doc",
     id: "commerce/merchant-configuration",
   },
   {
     type: "doc",
-    label: "Data sync setup",
     id: "commerce/data-synchronization",
   },
-  {
-    type: "category",
-    label: "Advanced features",
-    collapsed: true,
-    items: [
-      "commerce/advanced-setup",
-      "commerce/advanced-data-sync",
-    ],
-  },
-  // {
-  //   type: "category",
-  //   label: "Concepts",
-  //   collapsed: true,
-  //   items: [
-  //     "commerce/learn/initiating-a-sync",
-  //     "commerce/learn/monitoring-a-sync",
-  //     "commerce/synchronization-schedule",
-  //     "commerce/learn/sfc-journal-entry-mapping",
-  //     "commerce/learn/sfc-sales-product-categories",
-  //   ],
-  // },
-  // {
-  //   type: "category",
-  //   label: "Build guide",
-  //   collapsed: true,
-  //   items: [
-  //     "commerce/build/sync-for-commerce-prerequisites",
-  //     "commerce/build/sync-platform-selection",
-  //     "commerce/build/implementing-codats-no-code-merchant-configuration",
-  //     "commerce/build/customizing-the-sync-configuration-flow",
-  //   ],
-  // },
-  // {
-  //   type: "category",
-  //   label: "Mapping specifications",
-  //   collapsed: true,
-  //   items: [
-  //     "commerce/mapping-specifications/overview",
-  //     "commerce/mapping-specifications/xero-mapping-specification",
-  //     "commerce/mapping-specifications/qbo-mapping-specification",
-  //   ],
-  // },
+  "commerce/advanced-setup",
+  "commerce/advanced-data-sync",
   {
     type: "ref",
     label: "QuickBooks Online",
     customProps: {
       hr: true,
-      section: "Sync for Commerce integrations",
+      section: "Supported integrations",
     },
     id: "integrations/accounting/quickbooksonline/accounting-quickbooksonline",
   },
@@ -128,7 +93,7 @@ module.exports = [
   },
   {
     type: "doc",
-    label: "FAQs",
+    label: "Troubleshooting and FAQs",
     id: "commerce/error-documentation",
   },
   {
