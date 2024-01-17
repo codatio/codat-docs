@@ -57,11 +57,11 @@ Enjoy the benefits of individual solutions tailored to your needs, volume-based 
 
 #### Features
 
-- Unlimited access to all of Codat's products and cloud-based integrations
+- Unlimited access to all of Codat's products
 - Unlimited company and seat creation
 - Enhanced usage options with hourly syncs and superior rate limits
 - Implementation assistance and premium technical support
-- Access to add-ons, including desktop and ERP integrations, security features, and more
+- Access to paid add-ons, including desktop and ERP integrations, security features, and more
 
 ### Billing
 
