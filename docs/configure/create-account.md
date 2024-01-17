@@ -26,7 +26,8 @@ Here is how they compare to each other:
 
 If you're an [Admin](/configure/user-management/user-roles#administrator), you can view the plan you're currently on in the Codat Portal. 
 
-### Free trial
+---
+## Free trial
 
 [Sign up](https://signup.codat.io/) to start building your solution and test Codat's product offering for free. When you're ready to move to our paid plan, [contact our sales team](https://www.codat.io/plans/#get-in-touch) to discuss pricing options.
 
@@ -48,7 +49,9 @@ Once signed up, you can:
 
 While you can enable all our [products](/products/overview) on the free trial, our Bank Feeds API requires some setup on our end - talk to us first if you're looking to try out this product.
 
-### Full access
+---
+
+## Full access
 
 Enjoy the benefits of individual solutions tailored to your needs, volume-based pricing, and dedicated support with our Full access plan.
 
