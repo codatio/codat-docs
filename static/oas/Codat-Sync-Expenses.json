@@ -1728,9 +1728,7 @@
                             },
                             "trackingRefs": [
                               {
-                                "id": "dde5b35f-5d33-40bd-a34f-ee529f4c785c"
-                              },
-                              {
+                                "id": "dde5b35f-5d33-40bd-a34f-ee529f4c785c",
                                 "dataType": "trackingCategories"
                               }
                             ],

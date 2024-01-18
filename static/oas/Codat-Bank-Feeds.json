@@ -1721,6 +1721,7 @@
       ],
       "get": {
         "summary": "Get create/update bank account model",
+        "x-internal": true,
         "tags": [
           "Bank accounts"
         ],
