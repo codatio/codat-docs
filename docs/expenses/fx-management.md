@@ -234,19 +234,15 @@ Let's see how these are supported by the accounting platforms Sync for Expenses 
 
 ## Transfers
 
-IN a transfer scenario - for example, this can be...
-
-there is a different set of inputs that needs to be considered. 
-
-Transfers - Represents bank withdrawals, a top up of debit card account, a pay down of a credit card account etc.
-
-A transfer transaction between 2 sub-accounts - where the sub-accounts are currency pots.
+A transfer represents the movement of money between two bank accounts, for example, a bank withdrawal, a top-up of a debit card account, or a pay-down of a credit card account. As a result, different variables participate in the possible currency combinations: the company's base currency, and the currencies of the sender and receiver bank accounts. 
 
 | Currency variables       | Option 1 | Option 2 | Option 3 | Option 4 | Option 5 |
 |--------------------------|------------|------------|------------|------------|------------|
 | Base | GBP        | GBP        | GBP        | GBP        | GBP        |
 | Bank account (from)            | GBP        | USD        | USD        | GBP        | USD        |
 | Bank account (to)              | GBP        | USD        | GBP        | USD        | EUR        |
+
+Let's see how these are supported by the accounting platforms Sync for Expenses integrates with. 
 
 | Integration       | Option 1 | Option 2 | Option 3 | Option 4 | Option 5 |
 |-------------------|----------|----------|----------|----------|----------|
@@ -255,5 +251,8 @@ A transfer transaction between 2 sub-accounts - where the sub-accounts are curre
 
 ---
 ## Read next
+
+- [API reference](/sync-for-commerce-api#/)
+- [Sync for Expenses overview](/expenses/overview)
 
 
