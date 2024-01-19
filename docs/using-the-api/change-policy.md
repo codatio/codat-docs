@@ -19,8 +19,6 @@ The following changes are normally considered as backwards-compatible.
     - a new optional parameter to an API endpoint
 - Front end changes that do not materially alter the functionality available or the way that functionality is accessed
 
-See our <a href="https://portal.productboard.com/codat/5-product-roadmap" target="_blank">Product Roadmap</a> to see the new functionality we're planning, working on, or have recently released.
-
 ## Breaking changes
 
 Breaking changes are changes that are not possible to make backwards-compatible. When deprecating these, we try to follow the <a href="https://martinfowler.com/bliki/ParallelChange.html" target="_blank">parallel change pattern</a> (also called the expand and contract pattern).
