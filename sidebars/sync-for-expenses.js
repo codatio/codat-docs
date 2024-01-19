@@ -54,12 +54,17 @@ module.exports = [
   },
   {
     type: "doc",
-    id: "expenses/faq",
-    label: "FAQs",
+    id: "expenses/fx-management",
+    label: "Expenses in foreign currency",
     customProps: {
       hr: true,
       section: "Reference",
     },
+  },
+  {
+    type: "link",
+    label: "FAQs",
+    href: "/expenses/faq",
   },
   {
     type: "link",
