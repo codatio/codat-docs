@@ -126,7 +126,7 @@ When pushing Bill payments to Oracle NetSuite:
 - Applying NetSuite Vendor Prepayments to open bills from vendors is not supported.
 
 ## Customers
-When pulling Customers from NetSuite we map CustomerName from CustomerID.
+When pulling Customers from NetSuite we map _CustomerName_ from _CustomerID_.
 
 ## Direct costs and direct incomes
 
