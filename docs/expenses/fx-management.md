@@ -258,7 +258,7 @@ We validate the multicurrency transactions you push to Sync for Expenses to ensu
 ---
 ## Read next
 
-- [API reference](/sync-for-commerce-api#/)
+- [API reference](/sync-for-expenses-api#/)
 - [Sync for Expenses overview](/expenses/overview)
 - [Expense transaction types](/expenses/sync-process/expense-transactions#transaction-types)
 
