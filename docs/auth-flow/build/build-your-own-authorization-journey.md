@@ -93,11 +93,11 @@ The `platformKey` is the unique key Codat uses instead of financial platform nam
 
 :::info Platform-specific pages
 
-For some integrations, the authorization flow will include additional setup instructions or steps. For example:
+For some integrations, the authorization flow may include additional setup instructions or steps. For example:
 
 - Sage Intacct and NetSuite require complex user permissions
 - Microsoft Dynamics 365 Business Central requires your users to install a package on their machine
-- Xero requires the company to confirm their name before redirecting to Xero to connect
+- Xero requires your customer to confirm the company they want to link after authorizing access to their organization
 :::
 
 3. Once the user has successfully authenticated in their platform and thus authorized a data connection, redirect them back to your app. Ensure you handle all possible redirect status codes and error messages so that your users understand when something has gone wrong. Read [Redirect URLs](/auth-flow/customize/set-up-redirects) to learn more about how redirect URLs are used with Codat's products.
