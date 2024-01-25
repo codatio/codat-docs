@@ -49,9 +49,7 @@ Once you decide to build this flow with Bank Feeds API, you need to configure Co
 
 ## Enable Bank Feeds API
 
-1. Open the <a href="https://app.codat.io" target="_blank">Codat Portal</a> and sign in.
-2. Click on **Settings > Organizational settings > Products**.
-3. In the list of products, find _Bank Feeds API_ and click **Enable**. Then, follow the on-screen prompt.
+Reach out to your Codat account manager to enable Bank Feeds API for your client. 
 
 ## Manage data sources
 

@@ -320,6 +320,8 @@ unlinkResponse, err := bankFeedsClient.Connections.Unlink(ctx, operations.Unlink
 
 Finally, create a source account using our [Create source account](/bank-feeds-api#/operations/create-source-account) endpoint. It represents the company's actual financial account, savings account or credit card within Codat. We categorize accounts as a credit or a debit account type for standardization. 
 
+If you require several source bank accounts, simply use the same endpoint to create additional accounts for the existing accounting connection. 
+
 As an example, let's create a debit account. If the source account passes validation, you will receive a **synchronous response** with a `200` status code indicating a successful operation.
 
 :::note UK-specific requirements
