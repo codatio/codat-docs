@@ -105,6 +105,10 @@ Some accounting platforms allow expense transactions to be created in a draft st
 
 In the request body, use the `postAsDraft` flag to define whether the expense should be posted in its draft or final state. When set to `true`, the expense is posted as a draft. 
 
+### Multicurrency transactions
+
+Sync for Expenses validates each expense transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting platform as a valid expense. You can read more about [expenses in foreign currency](/expenses/fx-management) and platform support for different transaction types.
+ 
 ### Default tax rates
 
 If you need to remove an associated tax rate from an expense, use one of the following default values that have no impact on the expense:

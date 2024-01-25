@@ -42,15 +42,6 @@ A bank account (`bankAccount.id`) is required to show where purchases have been 
     - `query=metadata.isDeleted=false&&isBankAccount=true` returns existing bank accounts. 
     -  `query=metadata.isDeleted=false&&isBankAccount=true&&type=liability` returns existing liability bank accounts, which are used for credit cards.
 
-:::info Transactions in foreign currency
-
-With Sync for Expenses, you can handle transactions in a foreign currency in two ways:
-
-1. Each foreign exchange currency has its own bank account.
-2. Each transaction is converted back to the currency of the bank account.
-
-:::
-
 ### Supplier
 
 A supplier (`supplier.id`) is required so that the relevant spending can be associated with that that supplier record. You can choose to create a new supplier or retrieve a list of existing suppliers from your customer's accounting software. 
@@ -83,7 +74,7 @@ In some scenarios, different accounting platforms assign customers and suppliers
   <thead></thead>
   <tbody>
     <tr>
-      <td style={{ textAlign: 'center' }} colspan="6"><b>Supported Platforms</b></td>
+      <td style={{ textAlign: 'center' }} colspan="6"><b>Supported platforms</b></td>
     </tr>
     <tr>
       <td></td>
@@ -94,7 +85,7 @@ In some scenarios, different accounting platforms assign customers and suppliers
       <td><b>Microsoft Dynamics</b></td>
     </tr>
     <tr>
-      <td rowspan="8"><i>Transaction Types</i></td>
+      <td rowspan="8"><i>Transaction types</i></td>
       <td>Payments</td>
       <td>Supplier</td>
       <td>Supplier</td>

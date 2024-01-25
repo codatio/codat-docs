@@ -98,11 +98,9 @@ Codat pushes attachments synchronously to the expense transactions. To update an
 		`}
 	/>  
 	<Question
-		question="How should I handle transactions in a foreign currency?"
+		question="How do you handle transactions in foreign currency?"
 		answer={`
-<p>For multicurrency transactions, you have to consider the currency of the transaction, the currency of the card, and the base currency of the company in the accounting platform. Depending on the platform, only specific multicurrency scenarios may be supported. Codat provides built-in validations that protect against scenarios that aren't supported by specific accounting platforms.</p>
-<p>If the currency of the transaction or the card differs from the base currency, you must specify the exchange rate that will be used to convert the amount into the base currency. Indicate it in the <code>currencyRate</code> field. This is mandatory for all accounting platforms because all transactions must be expressed in the base currency for accounting and financial reporting purposes.</p>
-<p>It is not possible to perform the currency conversion when two or more non-base currencies participate in the transaction. For example, if a company's base currency is USD and the transaction currency (supplier currency) is GBP, then the bank account used must be USD or GBP.</p>
+Sync for Expenses validates each expense transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting platform as a valid expense. You can read more about <a href="https://docs.codat.io/expenses/fx-management">expenses in foreign currency</a> and platform support for different transaction types. 
 		`}
 	/> 
 	<Question
@@ -110,7 +108,7 @@ Codat pushes attachments synchronously to the expense transactions. To update an
 		answer={`
 <p>If a transaction has multiple tax components, each component may be calculated based on the original amount separately, and then added together.</p>
 <p>Alternatively, primary tax can be calculated on the item cost, and another tax component is added on top of that amount.This is known as compounding. In this case, the effective tax rate is the rate that results in the total amount of tax with compounding when applied to the original amount.</p>
-<p>The <code>totalTaxRate</code> is the total, not compounded, sum of the components of a tax rate. You can read more about this in our <a href="https://docs.codat.ioaccounting-api#/schemas/TaxRate#tax-components">API documentation covering tax rates</a>.</p>
+<p>The <code>totalTaxRate</code> is the total, not compounded, sum of the components of a tax rate. You can read more about this in our <a href="https://docs.codat.io/accounting-api#/schemas/TaxRate#tax-components">API documentation covering tax rates</a>.</p>
 		`}
 	/> 
 	<Question
