@@ -25,7 +25,7 @@ For multicurrency transactions, you have to consider the following variables:
 
 Certain combinations of the above may not be supported by the accounting platform your customer uses or not relevant for a specific transaction type. We will go through this in detail in subsequent sections. 
 
-Sync for Expenses includes built-in validations against such scenarios. Your customer's transactions will be checked to ensure the transaction sync is successful.
+Sync for Expenses includes built-in validations against such scenarios for every platform we support. Your customer's multicurrency transactions will be checked to ensure the transaction sync is successful.
 
 ### Tips and traps
 
@@ -35,7 +35,9 @@ Sync for Expenses includes built-in validations against such scenarios. Your cus
 
 ## Payments
 
-Payments represent regular spend that takes place on an account. In multicurrency scenarios, there are five possible combinations of currencies that participate in a payment:
+Payments are a transaction type that represents regular spend taking place on an account. You can [read more](/expenses/sync-process/expense-transactions#transaction-types) about transaction types used in Sync for Expenses. 
+
+In multicurrency scenarios, there are five possible combinations of currencies that participate in a payment:
 
 | Currency variables       | Option 1 | Option 2 | Option 3 | Option 4 | Option 5 |
 |--------------------------|------------|------------|------------|------------|------------|
@@ -49,7 +51,7 @@ When recording transactions in foreign currency, Xero does not take transaction 
 
 :::
 
-Let's see how these are supported by the accounting platforms Sync for Expenses integrates with. 
+We validate the multicurrency transactions you push to Sync for Expenses to ensure the currency combination will be accepted by the target accounting platform as a valid expense.
 
 <table>
 <thead>
@@ -131,7 +133,9 @@ Let's see how these are supported by the accounting platforms Sync for Expenses 
 
 ## Refunds
 
-Refund transactions represent any refunds and returns on an original transaction. In multicurrency scenarios, there are five possible combinations of currencies that participate in a refund:
+Refunds are a transaction type that represents any refunds and returns on an original transaction. You can [read more](/expenses/sync-process/expense-transactions#transaction-types) about transaction types used in Sync for Expenses. 
+
+In multicurrency scenarios, there are five possible combinations of currencies that participate in a refund:
 
 | Currency variables       | Option 1 | Option 2 | Option 3 | Option 4 | Option 5 |
 |--------------------------|------------|------------|------------|------------|------------|
@@ -145,7 +149,7 @@ When recording transactions in foreign currency, Xero does not take transaction 
 
 :::
 
-Let's see how these are supported by the accounting platforms Sync for Expenses integrates with. 
+We validate the multicurrency transactions you push to Sync for Expenses to ensure the currency combination will be accepted by the target accounting platform as a valid expense.
 
 <table>
 <thead>
@@ -234,7 +238,9 @@ Let's see how these are supported by the accounting platforms Sync for Expenses 
 
 ## Transfers
 
-A transfer represents the movement of money between two bank accounts, for example, a bank withdrawal, a top-up of a debit card account, or a pay-down of a credit card account. As a result, different variables participate in the possible currency combinations: the company's base currency, and the currencies of the sender and receiver bank accounts. 
+A transfer is a transaction type that represents the movement of money between two bank accounts. This can be a bank withdrawal, a top-up of a debit card account, or a pay-down of a credit card account. As a result, different variables participate in the possible currency combinations: the company's base currency, and the currencies of the sender and receiver bank accounts. 
+
+You can [read more](/expenses/sync-process/expense-transactions#transaction-types) about transaction types used in Sync for Expenses. 
 
 | Currency variables       | Option 1 | Option 2 | Option 3 | Option 4 | Option 5 |
 |--------------------------|------------|------------|------------|------------|------------|
@@ -242,7 +248,7 @@ A transfer represents the movement of money between two bank accounts, for examp
 | Bank account (from)            | GBP        | USD        | USD        | GBP        | USD        |
 | Bank account (to)              | GBP        | USD        | GBP        | USD        | EUR        |
 
-Let's see how these are supported by the accounting platforms Sync for Expenses integrates with. 
+We validate the multicurrency transactions you push to Sync for Expenses to ensure the currency combination will be accepted by the target accounting platform as a valid expense. 
 
 | Integration       | Option 1 | Option 2 | Option 3 | Option 4 | Option 5 |
 |-------------------|----------|----------|----------|----------|----------|
@@ -254,5 +260,5 @@ Let's see how these are supported by the accounting platforms Sync for Expenses 
 
 - [API reference](/sync-for-commerce-api#/)
 - [Sync for Expenses overview](/expenses/overview)
-
+- [Expense transaction types](/expenses/sync-process/expense-transactions#transaction-types)
 
