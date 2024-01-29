@@ -490,7 +490,7 @@ The `sourceTypes` option controls the source types the user can connect via the 
 
 Use the `text` property to override text displayed within the Link UI. For example, you can detect the language the user speaks and set the displayed text according to their locale. You can see a [simple example of this on GitHub](https://github.com/codatio/sdk-link/tree/main/examples/locales).
 
-The property accepts Markdown, meaning you can add links, lists, tables, and more to all the text options,excluding `companyName` . You can override the following text options:
+The property accepts Markdown, meaning you can add links, lists, tables, and more to all the text options, excluding `companyName` . You can override the following text options:
 
 | Option                                  |Type and description                                                                                                                                                                                                                                                                                                              |
 |-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
