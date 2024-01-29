@@ -11,9 +11,7 @@ Handling rate limits is a challenging aspect of building financial integrations.
 
 ## Codat rate limits
 
-:::caution Rate limits enforced from 1<sup>st</sup> October 2023
-From October 1, 2023, rate limits listed on this page will be enforced by `api.codat.io`, and it will not be possible to make API calls that exceed the quota.
-:::
+Rate limits listed on this page are enforced by `api.codat.io`, and it is not possible to make API calls that exceed the quota.
 
 Codat will return a `429` status code for all requests to the API that are received while rate limiting is active. The body of the response will look like any other [error that gets returned by Codat](/using-the-api/errors).
 
