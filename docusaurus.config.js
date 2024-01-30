@@ -114,6 +114,8 @@ module.exports = {
       {
         routeBasePath: "/",
         sidebarPath: require.resolve("./sidebars.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
         editUrl: `https://github.com/codatio/codat-docs/edit/${process.env?.BRANCH || 'main'}/`,
         exclude: ["README.md"],
         lastVersion: "current",
