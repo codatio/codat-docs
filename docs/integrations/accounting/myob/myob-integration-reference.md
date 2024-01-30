@@ -46,6 +46,10 @@ MYOB AccountRight supports multiple currencies, but still operates with base cur
 
 MYOB does not supply time information when the `issueDate` field is pulled by Codat. As such, the date field value is always `yyyy-mm-ddT00:00:00`.
 
+### Performance
+
+MYOB recommend that company files in their system are kept below 2GB. If a company has a large amount of data, some timeouts will be expected when consuming their service. If Codat encounters a timeout error when fetching data from MYOB, we will retry the operation a number of times. This may lead to some datasets taking longer than expected to complete, but it can also lead to fetch errors. For further reading, please see [this article](https://apisupport.myob.com/hc/en-us/articles/6366818637583-504-Gateway-Time-out-errors) from their support knowledge base. 
+
 ## FAQs
 
 ### Where must company data be stored?
