@@ -3974,7 +3974,7 @@
             "$ref": "#/components/schemas/Branding/properties/sourceId"
           },
           "sourceType": {
-            "$ref": "#/components/schemas/SourceType"
+            "$ref": "#/components/schemas/Integration/definitions/sourceType"
           },
           "platformName": {
             "type": "string",
@@ -4060,7 +4060,9 @@
             "enum": [
               "Accounting",
               "Banking",
+              "BankFeed",
               "Commerce",
+              "Expense",
               "Other",
               "Unknown"
             ],
@@ -4807,7 +4809,7 @@
             "$ref": "#/components/schemas/Branding/properties/sourceId"
           },
           "sourceType": {
-            "$ref": "#/components/schemas/SourceType"
+            "$ref": "#/components/schemas/Integration/definitions/sourceType"
           },
           "integrationId": {
             "$ref": "#/components/schemas/Connection/properties/integrationId"
@@ -4838,6 +4840,21 @@
           "enabled"
         ],
         "definitions": {
+          "sourceType": {
+            "title": "Source Type",
+            "description": "The type of platform of the connection.",
+            "type": "string",
+            "enum": [
+              "Accounting",
+              "Banking",
+              "BankFeed",
+              "Commerce",
+              "Expense",
+              "Other",
+              "Unknown"
+            ],
+            "example": "Accounting"
+          },
           "dataTypeFeature": {
             "title": "Data type feature",
             "description": "Describes support for a given datatype and associated operations",
@@ -4983,7 +5000,7 @@
               "description": "Name of company whose connection has changed."
             },
             "sourceType": {
-              "$ref": "#/components/schemas/SourceType",
+              "$ref": "#/components/schemas/Integration/definitions/sourceType",
               "nullable": true
             }
           }
@@ -5808,22 +5825,6 @@
             }
           }
         }
-      },
-      "SourceType": {
-        "title": "Source Type",
-        "x-internal": true,
-        "description": "The type of platform of the connection.",
-        "type": "string",
-        "enum": [
-          "Accounting",
-          "Banking",
-          "BankFeed",
-          "Commerce",
-          "Expense",
-          "Other",
-          "Unknown"
-        ],
-        "example": "Accounting"
       },
       "SupplementalDataConfiguration": {
         "description": "",

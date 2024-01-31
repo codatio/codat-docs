@@ -45629,7 +45629,6 @@
           },
           "sourceType": {
             "title": "Source Type",
-            "x-internal": true,
             "description": "The type of platform of the connection.",
             "type": "string",
             "enum": [
@@ -45727,7 +45726,9 @@
             "enum": [
               "Accounting",
               "Banking",
+              "BankFeed",
               "Commerce",
+              "Expense",
               "Other",
               "Unknown"
             ],
