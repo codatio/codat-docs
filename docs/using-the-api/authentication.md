@@ -1,7 +1,7 @@
 ---
 title: "Authenticate"
 description: "Use your auth header or API key to authenticate with Codat's APIs"
-aidebar_label: "API keys"
+sidebar_label: "API keys"
 ---
 
 API keys are tokens used to control access to the API. Codat expects the API key to be included in all requests to the server, Base64 encoded within an 'Authorization' header:
