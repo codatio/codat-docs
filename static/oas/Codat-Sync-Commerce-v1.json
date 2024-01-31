@@ -14788,7 +14788,6 @@
               "trackingCategoryRefs": {
                 "type": "array",
                 "nullable": true,
-                "deprecated": true,
                 "description": "Reference to the tracking categories to which the line item is linked.",
                 "items": {
                   "$ref": "#/components/schemas/AccountingDirectIncome/definitions/directIncomeLineItem/properties/trackingCategoryRefs/items"
