@@ -1,7 +1,7 @@
 ---
 title: "Implementing an account mapping user interface"
 description: "Tips and advice on managing inconsistent accounts across your user base"
-sidebar_label: "Account mapping user interface"
+sidebar_label: "Mapping interface"
 ---
 
 Accounting platforms that your customers use normally offer them a default set of accounts (also known as chart of accounts), pre-defined to match accounting best practices. Your customers then have the ability to rename and renumber these accounts, or create new ones, to match their business needs. 

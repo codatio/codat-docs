@@ -1,8 +1,7 @@
 ---
 title: "Enable deprecations"
 description: "Get ahead of upcoming deprecations in the Portal"
-createdAt: "2022-09-05T15:58:36.027Z"
-updatedAt: "2022-12-09T13:03:30.599Z"
+sidebar_label: "Early deprecations"
 ---
 
 :::note Access to Codat Developers
