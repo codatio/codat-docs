@@ -18,13 +18,6 @@ module.exports = [
       "using-the-api/get-data",
       "using-the-api/queueing-data-syncs",
       "using-the-api/pull-history",
-    ],
-  },
-  {
-    type: "category",
-    label: "Refine data",
-    collapsed: true,
-    items: [
       "using-the-api/querying",
       "using-the-api/paging",
       "using-the-api/ordering-results",
