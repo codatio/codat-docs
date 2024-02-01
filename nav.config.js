@@ -94,16 +94,8 @@ module.exports = {
       position: "left",
       items: [
         {
-          href: "https://github.com/orgs/codatio/discussions/new?category=q-a",
-          label: "Ask the community",
-          target: "_blank",
-          rel: null,
-        },
-        {
-          href: "https://cochat.codat.io/",
-          label: "Ask Cochat AI",
-          target: "_blank",
-          rel: null,
+          href: "/support/get-help",
+          label: "Get help"
         },
         {
           href: "https://status.codat.io/",
