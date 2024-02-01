@@ -104,7 +104,7 @@ POST /companies/{companyId}/connections
 
 Once your customer has authorized access to their accounting platform, you need to create another connection for their company for the partner expense integration. 
 
-Use our [Create partner expense connection](/sync-for-expenses-api#/operations/create-partner-expense-connection) to link the company to your application. This connection is created with the `Linked` status, so you don't need to do anything else to authorize this connection.
+Use our [Create partner expense connection](/sync-for-expenses-api#/operations/create-partner-expense-connection) to link the company to your application. This connection is created with the `Linked` status, so you don't need to do anything else to authorize it.
 
 ## Deauthorize a connection
 
