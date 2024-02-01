@@ -22,6 +22,16 @@ module.exports = [
       "using-the-api/paging",
       "using-the-api/ordering-results",
       "using-the-api/modified-dates",
+      {
+        type: "category",
+        label: "Supplemental data",
+        collapsed: true,
+        items: [
+          "using-the-api/supplemental-data/overview",
+          "using-the-api/supplemental-data/usecases",
+        ],
+      },
+      "using-the-api/custom-data",
     ],
   },
   {
@@ -33,7 +43,6 @@ module.exports = [
       "configure/portal/pull-and-push-history",
     ],
   },
-  "using-the-api/testing",
   {
     type: "category",
     label: "Webhooks",
@@ -48,33 +57,17 @@ module.exports = [
   },
   {
     type: "category",
-    label: "Supplemental data",
+    label: "Tips and guidance",
     collapsed: true,
     items: [
-      "using-the-api/supplemental-data/overview",
-      "using-the-api/supplemental-data/usecases",
-    ],
-  },
-  "using-the-api/custom-data",
-  {
-    type: "category",
-    label: "Best practices",
-    collapsed: true,
-    items: [
+      "using-the-api/rate-limits",
+      "using-the-api/optimizing-api-calls",
+      "using-the-api/testing",
       "using-the-api/best-practices/implementing-a-mapping-page",
       "using-the-api/best-practices/client-side-data-storage",
     ],
   },
-  {
-    type: "category",
-    label: "Troubleshooting",
-    collapsed: true,
-    items: [
-      "using-the-api/errors",
-      "using-the-api/rate-limits",
-      "using-the-api/optimizing-api-calls",
-    ],
-  },
+  "using-the-api/errors",
   {
     type: "category",
     label: "Change management",
