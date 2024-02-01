@@ -15,7 +15,7 @@ import TabItem from "@theme/TabItem";
 * Set up your local environment
 * Run the demo app
 
-### <input type="checkbox" unchecked/> Create a Codat account 
+### Create a Codat account 
 
 We provide a [free trial](https://signup.codat.io/) that lets you discover our APIs and other products, including Lending. It also comes equipped with a sample company. When you start working on your own loan qualification solution, you may want to explore our other [plans](https://www.codat.io/plans/).
 
@@ -118,11 +118,11 @@ Note that the other directory in the repository, `Codat.Demos.Underwriting.Api.T
       ├──ApplicationStore.cs // Handles creating and storing the loan application in-memory
       └──LoanUnderwriter.cs  // Decision process method for the underwriting model used in the demo
 ```
-### <input type="checkbox" unchecked/> Set your API key
+### Set your API key
 
 In the [Developers](https://app.codat.io/developers/api-keys) section of the Codat Portal, copy your API key from the **API key** column **(not the auth header)**. You can click **Create another API key** if one wasn't automatically generated for you. In the `Codat.Demos.Underwriting.Api\` directory, edit the `appsettings.json` file and enter the API key you just copied as the `CodatApiKey`.
 
-### <input type="checkbox" unchecked/> Run the app
+### Run the app
 
 <Tabs>
 <TabItem value="cmd" label="Command line">
