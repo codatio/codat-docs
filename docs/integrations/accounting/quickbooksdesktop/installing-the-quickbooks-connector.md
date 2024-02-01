@@ -6,15 +6,15 @@ sidebar_label: Install the connector
 
 :::info QuickBooks Desktop installation checklist
 
-<input type="checkbox" unchecked/> <b>Check version is supported</b>
+ <b>Check version is supported</b>
 
 Your customer needs to be running a supported version of QuickBooks Desktop Pro, Enterprise or Professional. QuickBooks for Mac is not supported. 
 
-<input type="checkbox" unchecked/> <b>Check operating system requirements</b>
+ <b>Check operating system requirements</b>
 
 The connector works on Windows 10, Windows 11, and Windows Server 2019, and may not work correctly on earlier versions of Windows. Your customer will need administrator permissions on your computer to complete the installation.
 
-<input type="checkbox" unchecked/> <b>Consider antivirus and firewall</b>
+ <b>Consider antivirus and firewall</b>
 
 The user's local antivirus or firewall settings may prevent the download and running of the connector. To resolve, you need to allowlist the connector.
 

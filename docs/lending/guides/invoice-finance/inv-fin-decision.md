@@ -10,7 +10,7 @@ sidebar_label: "App's decisioning logic"
 * Review how we assess the risk associated with customers and invoices,
 * See how the app makes a decision based on that data. 
 
-### <input type="checkbox" unchecked/> Fetch unpaid invoices and associated data
+### Fetch unpaid invoices and associated data
 
 After the app is notified by the webhook that invoice and customer syncs are complete, it fetches a filtered invoice list that we could potentially lend against. 
 
@@ -24,7 +24,7 @@ From this data set, we pick up a list of unique customer Ids (`customerRef.id`) 
 
 Finally, we fetch all paid invoices for each of these customers to assess their previous payment behavior. After this, we are ready to perform the risk assessment.
 
-### <input type="checkbox" unchecked/> Assess risk for each customer
+### Assess risk for each customer
 
 To perform the risk assessment of customers, we calculate the measure of **customer concentration**. This is the percentage of the applicant's revenue that comes from a single customer. 
 
@@ -43,7 +43,7 @@ In our demo, we also exclude any customers that fit the criteria below, meaning 
 - Customer `registrationNo` is null, thus excluding sole traders, and
 - Number of paid invoices is less than 2, thus lowering the risk based on past behavior.
 
-### <input type="checkbox" unchecked/> Assess risk for each invoice
+### Assess risk for each invoice
 
 For each remaining invoice, we calculate the following: 
 
@@ -59,7 +59,7 @@ Charge rate = 5 - (4 * Ratio), where Ratio is the Time left to pay rate between 
 
 :::
 
-### <input type="checkbox" unchecked/> Return a decision array
+### Return a decision array
 
 Finally, we are ready to return a decision array to the applicant. It shows them which invoices we agree to lend against, and under what terms and conditions. The array can be obtained by calling the `GET applications/{applicationId}` endpoint. 
 
@@ -78,7 +78,7 @@ Finally, we are ready to return a decision array to the applicant. It shows them
   }
 ```
 
-### <input type="checkbox" unchecked/> Access additional resources
+### Access additional resources
 
 🗝️ You may want to enhance this simple working guide with some UI elements - why not use [Embedded Link](/auth-flow/authorize-embedded-link) to seamlessly include our authorization journey into your app?
 
