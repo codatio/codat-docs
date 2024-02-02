@@ -1,7 +1,7 @@
 import React from "react";
 import Api from '../../components/global/Api'
 
-const URL = "/oas/Codat-Sync-Payables-v1.json"
+const URL = "/oas/Codat-Sync-Payables.json"
 
 const PayablesApi = () => {
   return (
