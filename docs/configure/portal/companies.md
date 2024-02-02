@@ -10,11 +10,12 @@ In the Codat Portal, click **Companies** in the navigation bar to view a list of
 
 From here you can:
 
-- [Add a new company](/configure/portal/companies#add-a-new-company)
-- Copy your [Link URL](/auth-flow/authorize-hosted-link#use-the-hosted-link-url) to allow your customers to share their data through Link
-- [Retrieve Link URLs for existing companies](/auth-flow/authorize-hosted-link#use-the-hosted-link-url) to allow them to authorize additional data connections, or re-authorize unlinked connections where required
-- View details and show the status of existing companies
-- Search for a previously created company by clicking on the search icon
+- [Add a new company](/configure/portal/companies#add-a-new-company).
+- Copy your [Link URL](/auth-flow/authorize-hosted-link#use-the-hosted-link-url) to allow your customers to share their data through Link.
+- [Retrieve Link URLs for existing companies](/auth-flow/authorize-hosted-link#use-the-hosted-link-url) to allow them to authorize additional data connections, or re-authorize unlinked connections where required.
+- View details and show the status of existing companies.
+- Search for a previously created company by clicking on the search icon.
+- Manage the company's existing [connections](/core-concepts/connections).
 - [Delete companies](/configure/portal/companies#delete-a-company).
 
 ## Add a company
@@ -78,5 +79,6 @@ Clicking on a data connection allows you to manage the connection and see any li
 
 Click on a company to access information pertaining to it:
 
-- A brief **Summary** that includes the company's revenue, operating profit, and equity, as well as an activity log
-- Company's **Data**, including the [history of dataset pulls and their statuses](/core-concepts/status), and uploaded files
+- A brief **Summary** that includes the company's revenue, operating profit, and equity, as well as an activity log.
+- The **Manage connections** menu that lets you copy the LInk URL and unlink or delete an existing connection.
+- Company's **Data** and **Data history**, including the [history of dataset pulls and their statuses](/core-concepts/status), and uploaded files.
