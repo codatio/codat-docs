@@ -1,7 +1,7 @@
 ---
-title: "Implementing client-side data storage"
+title: "Implementing local data storage"
 description: "Tips and advice on storing, working with, and consuming Codat data"
-sidebar_label: "Client-side data storage"
+sidebar_label: "Local data storage"
 
 ---
 You can store JSON data retrieved from the Codat API in many different ways. We have described some of the options for you, but the right choice depends on your requirements and the tools and skillset you have available.

@@ -10,7 +10,7 @@ sidebar_label: "App's decisioning logic"
 * Understand how we fetch the required data, 
 * See how the app makes a decision based on that data. 
 
-### <input type="checkbox" unchecked/> Review the app's decisioning logic
+### Review the app's decisioning logic
 
 Each lender usually has their own set of data points they use to review an application. 
 
@@ -48,7 +48,7 @@ Its threshold is maintained as `MaxGearingRatio` in `appsettings.json`. In the d
 
 </Tabs>
 
-### <input type="checkbox" unchecked/> Understand how we generate an automatic decision
+### Understand how we generate an automatic decision
 
 Once the demo app fetches the data, it uses the results to calculate the data points we use in our loan qualification model: gross profit margin, revenue, and gearing ratio. In the loan qualification industry, there are other models and data points that can be used to make a decision. The selection depends on the needs of your business. 
 
@@ -60,7 +60,7 @@ The [LoanUnderwriter](https://github.com/codatio/demo-loan-qualification/blob/ma
 
 Only if all the thresholds are met or surpassed by the applicant, the app updates the loan request automatically with an _Accepted_ status. Otherwise, the application is updated with a _Rejected_ status. The app also caters for a scenario of programmatic errors that means a decision could not be made with a _UnderwritingFailure_ status.
 
-### <input type="checkbox" unchecked/> Access additional resources
+### Access additional resources
 
 🗝️ You may want to enhance this simple working guide with some UI elements - why not use [Embedded Link](https://docs.codat.io/auth-flow/authorize-embedded-link) to seamlessly include our authorization journey into your app?
 

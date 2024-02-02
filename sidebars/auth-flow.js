@@ -5,11 +5,12 @@ module.exports = [
     label: "Try it",
     href: "https://sdk-link.vercel.app/",
   },
-   {
+  {
     type: "link",
     label: "See examples",
     href: "https://github.com/codatio/sdk-link/tree/main/examples",
   },
+  "auth-flow/optimize/connection-management",
   {
     type: "category",
     label: "Optimize",
@@ -21,7 +22,6 @@ module.exports = [
       "auth-flow/optimize/value-exchange",
       "auth-flow/optimize/privacy",
       "auth-flow/optimize/platform-selection",
-      "auth-flow/optimize/connection-management",
     ],
   },
   {
