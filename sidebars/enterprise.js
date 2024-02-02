@@ -45,7 +45,17 @@ module.exports = [
         type: "category",
         items: [
           "enterprise/tech-implementation/getting-started",
-          "enterprise/tech-implementation/consent",
+          {
+            type: "category",
+            label: "Consent journey",
+            items: [
+                "enterprise/tech-implementation/consent/overview",
+                "enterprise/tech-implementation/consent/build",
+                "enterprise/tech-implementation/consent/considerations",
+                "enterprise/tech-implementation/consent/lifecyle",
+                "enterprise/tech-implementation/consent/uiexamples",
+            ]
+          },
           "enterprise/tech-implementation/syncing-data",
           "enterprise/tech-implementation/data-types"
         ],

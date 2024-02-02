@@ -115,6 +115,10 @@
       "description": "Manage your companies' data connections."
     },
     {
+      "name": "Groups",
+      "description": "Create groups and link them to your Codat companies."
+    },
+    {
       "name": "Webhooks",
       "description": "Manage webhooks, rules, and events."
     },
@@ -137,6 +141,10 @@
     {
       "name": "Supplemental data",
       "description": "View and configure supplemental data for supported data types."
+    },
+    {
+      "name": "Custom data type",
+      "description": "View and configure custom data types for supported integrations."
     }
   ],
   "paths": {
@@ -180,7 +188,12 @@
                             }
                           ],
                           "created": "2022-01-01T11:30:00Z",
-                          "createdByUserName": "Mike Smith"
+                          "createdByUserName": "Mike Smith",
+                          "groups": [
+                            {
+                              "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
+                            }
+                          ]
                         }
                       ],
                       "pageNumber": 1,
@@ -291,7 +304,7 @@
           }
         },
         "operationId": "list-companies",
-        "description": "﻿Returns a list of your companies. The company schema contains a list of [connections](https://docs.codat.io/platform-api#/schemas/Connection) related to the company.",
+        "description": "﻿The *List companies* endpoint returns a list of [companies] associated to your instances.\n\nA [company](https://docs.codat.io/platform-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/platform-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -323,10 +336,10 @@
                   "$ref": "#/components/schemas/Company"
                 },
                 "examples": {
-                  "New Company": {
+                  "With no description": {
                     "value": {
                       "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "name": "My First Company",
+                      "name": "Technicalium",
                       "description": "",
                       "platform": "",
                       "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
@@ -334,32 +347,42 @@
                       "created": "2022-11-10T10:45:18.1950523Z",
                       "createdByUserName": "Dan Tzabar"
                     }
+                  },
+                  "With a description": {
+                    "value": {
+                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "name": "Technicalium",
+                      "description": "Technology services, including web and app design and development",
+                      "platform": "",
+                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "dataConnections": [],
+                      "created": "2022-11-10T10:45:18.1950523Z",
+                      "createdByUserName": "Dan Tzabar"
+                    }
+                  },
+                  "With a group": {
+                    "value": {
+                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "name": "Technicalium",
+                      "description": "",
+                      "platform": "",
+                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "dataConnections": [],
+                      "created": "2022-11-10T10:45:18.1950523Z",
+                      "createdByUserName": "Dan Tzabar",
+                      "groups": [
+                        {
+                          "id": "f8a6f6ed-9812-4d1e-ba48-4346348403c8"
+                        }
+                      ]
+                    }
                   }
                 }
               }
             }
           },
           "400": {
-            "description": "The request made is not valid.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorMessage"
-                },
-                "examples": {
-                  "Malformed query": {
-                    "value": {
-                      "statusCode": 400,
-                      "service": "PublicApi",
-                      "error": "Error processing request - not valid.",
-                      "correlationId": "bc997528a9d7abb9161ef45f05d38599",
-                      "canBeRetried": "Unknown",
-                      "detailedErrorCode": 0
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/Bad-Request"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -380,7 +403,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "﻿Creates a new company that can be used to assign connections to. \n\nIf forbidden characters (see `name` pattern) are present in the request, a company will be created with the forbidden characters removed. For example, `Company (Codat[1])` with be created as `Company Codat1`.\n\n",
+        "description": "﻿Use the *Create company* endpoint to create a new [company](https://docs.codat.io/platform-api#/schemas/Company) that represents your customer in Codat. \n\nA [company](https://docs.codat.io/platform-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/platform-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.\n\nIf forbidden characters (see `name` pattern) are present in the request, a company will be created with the forbidden characters removed. For example, `Company (Codat[1])` with be created as `Company Codat1`.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -388,15 +411,25 @@
                 "$ref": "#/components/schemas/CompanyRequestBody"
               },
               "examples": {
-                "Example with no description": {
+                "With no description": {
                   "value": {
                     "name": "Technicalium"
                   }
                 },
-                "Example with a description": {
+                "With a description": {
                   "value": {
                     "name": "Technicalium",
                     "description": "Technology services, including web and app design and development"
+                  }
+                },
+                "With a group": {
+                  "value": {
+                    "name": "Technicalium",
+                    "groups": [
+                      {
+                        "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
+                      }
+                    ]
                   }
                 }
               }
@@ -409,7 +442,7 @@
       "get": {
         "summary": "Get company",
         "operationId": "get-company",
-        "description": "﻿Returns the company for a valid identifier. If the identifier is for a deleted company, a not found response is returned.",
+        "description": "﻿The *Get company* endpoint returns a single company for a given `companyId`.\n\nA [company](https://docs.codat.io/platform-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/platform-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.\n",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -427,7 +460,7 @@
                   "$ref": "#/components/schemas/Company"
                 },
                 "examples": {
-                  "Example": {
+                  "Simple company": {
                     "value": {
                       "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
                       "name": "My First Company",
@@ -437,6 +470,23 @@
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18Z",
                       "createdByUserName": "Dan Tzabar"
+                    }
+                  },
+                  "With groups": {
+                    "value": {
+                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "name": "My First Company",
+                      "description": "",
+                      "platform": "",
+                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "dataConnections": [],
+                      "created": "2022-11-10T10:45:18Z",
+                      "createdByUserName": "Dan Tzabar",
+                      "groups": [
+                        {
+                          "id": "f8a6f6ed-9812-4d1e-ba48-4346348403c8"
+                        }
+                      ]
                     }
                   }
                 }
@@ -474,7 +524,7 @@
             "$ref": "#/components/parameters/companyId"
           }
         ],
-        "description": "﻿\nPermanently deletes a company, its connections and any cached data. This operation is irreversible. If the company ID does not exist an error is returned.",
+        "description": "﻿The *Delete company* endpoint permanently deletes a [company](https://docs.codat.io/platform-api#/schemas/Company), its [connections](https://docs.codat.io/platform-api#/schemas/Connection) and any cached data. This operation is irreversible.\n\nA [company](https://docs.codat.io/platform-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/platform-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.\n",
         "tags": [
           "Companies"
         ],
@@ -507,7 +557,7 @@
       },
       "put": {
         "summary": "Update company",
-        "description": "﻿Updates both the name and description of the company.",
+        "description": "﻿Use the *Update company* endpoint to update both the name and description of the company. \nIf you use [groups](https://docs.codat.io/platform-api#/schemas/Group) to manage a set of companies, use the [Add company](https://docs.codat.io/platform-api#/operations/add-company-to-group) or [Remove company](https://docs.codat.io/platform-api#/operations/remove-company-from-group) endpoints to add or remove a company from a group.\n\nA [company](https://docs.codat.io/platform-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/platform-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
         "operationId": "update-company",
         "parameters": [
           {
@@ -1314,6 +1364,313 @@
           }
         },
         "description": "Retrieve information about a single dataset or pull operation."
+      }
+    },
+    "/companies/{companyId}/groups": {
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "summary": "Add company",
+        "operationId": "add-company-to-group",
+        "x-speakeasy-name-override": "add-company",
+        "description": "﻿Use the *Add company* endpoint to assign a company to a group. A company can belong to multiple groups, but can only be added to one group at a time.\n\n[Groups](https://docs.codat.io/platform-api#/schemas/Group) define a set of companies that are organized based on a chosen characteristic and can be managed in the same way.",
+        "tags": [
+          "Groups"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Company/definitions/companyGroupAssignment"
+              },
+              "examples": {
+                "Example": {
+                  "value": {
+                    "groupId": "d7a6c4b4-dc87-45f6-b803-62f466398680"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Company"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                      "name": "string",
+                      "platform": "string",
+                      "redirect": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739",
+                      "lastSync": "2022-01-01T12:00:00.000Z",
+                      "created": "2022-01-01T12:00:00.000Z",
+                      "createdByUserName": "string",
+                      "dataConnections": [
+                        {
+                          "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                          "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                          "integrationKey": "dfxm",
+                          "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                          "platformName": "Basiq",
+                          "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                          "status": "Linked",
+                          "lastSync": "2022-10-27T10:22:43.6464237Z",
+                          "created": "2022-10-27T09:53:29Z",
+                          "sourceType": "Banking"
+                        }
+                      ],
+                      "groups": [
+                        {
+                          "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/groups/{groupId}": {
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "name": "groupId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Group/properties/id"
+            },
+            "description": "Unique identifier for the group."
+          }
+        ],
+        "summary": "Remove company",
+        "operationId": "remove-company-from-group",
+        "x-speakeasy-name-override": "remove-company",
+        "description": "﻿Use the *Remove company* endpoint to remove a company from a group.\n\n[Groups](https://docs.codat.io/platform-api#/schemas/Group) define a set of companies that are organized based on a chosen characteristic and can be managed in the same way.",
+        "tags": [
+          "Groups"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/groups": {
+      "get": {
+        "summary": "List groups",
+        "operationId": "list-groups",
+        "description": "Use the *List group* endpoint to return a list of all groups that currently exist for your client.\n\n[Groups](https://docs.codat.io/platform-api#/schemas/Group) define a set of companies that are organized based on a chosen characteristic and can be managed in the same way.",
+        "tags": [
+          "Groups"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Group/definitions/groups"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "results": [
+                        {
+                          "id": "d7a6c4b4-dc87-45f6-b803-62f466398680",
+                          "name": "Corporate cards department"
+                        },
+                        {
+                          "id": "e4498145-3b04-42bb-927c-d35726560a5b",
+                          "name": "Invoice finance team"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create group",
+        "operationId": "create-group",
+        "description": "﻿Use the *Create group* endpoint to generate a new group that you can assign your companies to.\n\n[Groups](https://docs.codat.io/platform-api#/schemas/Group) define a set of companies that are organized based on a chosen characteristic and can be managed in the same way.\n\n### Tips and traps\n\n* The maximum length for the group name is 50 characters.\n* It's possible to create up to 20 groups per client.",
+        "tags": [
+          "Groups"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Group/definitions/groupPrototype"
+              },
+              "examples": {
+                "Example": {
+                  "value": {
+                    "name": "Corporate cards department"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Group"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "id": "d7a6c4b4-dc87-45f6-b803-62f466398680",
+                      "name": "Corporate cards department"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "description": "Groups are not enabled for client.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorMessage"
+                },
+                "examples": {
+                  "Groups are not enabled for client": {
+                    "value": {
+                      "statusCode": 403,
+                      "service": "PublicApi",
+                      "error": "Groups are not enabled for your client. Reach out to your Codat contact if this is not expected.",
+                      "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                      "canBeRetried": "Unknown",
+                      "detailedErrorCode": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Client has reached the maximum number of groups allowed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorMessage"
+                },
+                "examples": {
+                  "Max number of allowed groups reached": {
+                    "value": {
+                      "statusCode": 409,
+                      "service": "PublicApi",
+                      "error": "Maximum number of groups reached.",
+                      "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                      "canBeRetried": "Unknown",
+                      "detailedErrorCode": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
       }
     },
     "/rules": {
@@ -2397,7 +2754,7 @@
         }
       }
     },
-    "/integrations/{platformKey}/datatypes/{dataType}/supplementalDataConfig": {
+    "/integrations/{platformKey}/dataTypes/{dataType}/supplementalDataConfig": {
       "parameters": [
         {
           "$ref": "#/components/parameters/platformKey"
@@ -2596,6 +2953,372 @@
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/integrations/{platformKey}/dataTypes/custom/{customDataIdentifier}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/platformKey"
+        },
+        {
+          "$ref": "#/components/parameters/customDataIdentifier"
+        }
+      ],
+      "put": {
+        "summary": "Configure custom data type",
+        "description": "The *Configure custom data type* endpoint allows you to maintain or change the configuration required to return a custom data type for a specific integration. \n\nA [custom data type](https://docs.codat.io/using-the-api/custom-data) is an additional data type you can create that is not included in Codat's standardized data model.\n\n### Tips and traps\n\n- You can only configure a single custom data type for a single platform at a time. Use the endpoint multiple times if you need to configure it for multiple platforms. \n\n- You can only indicate a single data source for each customer data type. \n\n- Make your custom configuration as similar as possible to our standard data types so you can interact with them in exactly the same way.",
+        "operationId": "configure-custom-data-type",
+        "x-speakeasy-name-override": "configure",
+        "tags": [
+          "Custom data type"
+        ],
+        "requestBody": {
+          "description": "Custom data type configuration for the specified platform.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomDataTypeConfiguration"
+              },
+              "examples": {
+                "Dynamics 365 Business Central": {
+                  "value": {
+                    "dataSource": "api/purchaseOrders",
+                    "requiredData": {
+                      "currency": "$[*].currencyCode",
+                      "number": "$[*].number",
+                      "date": "$[*].orderDate",
+                      "totalexvat": "$[*].totalAmountExcludingTax",
+                      "totaltax": "$[*].totalTaxAmount",
+                      "vendor": "$[*].number"
+                    },
+                    "keyBy": [
+                      "$[*].id"
+                    ],
+                    "sourceModifiedDate": [
+                      "$[*].lastModifiedDateTime"
+                    ]
+                  }
+                },
+                "Xero Simple Record": {
+                  "value": {
+                    "dataSource": "/api.xro/2.0/Accounts",
+                    "requiredData": {
+                      "code": "$.Code",
+                      "accountId": "$.AccountID",
+                      "type": "$.Type",
+                      "SysAcc": "$.SystemAccount"
+                    },
+                    "keyBy": [
+                      "$.AccountID"
+                    ]
+                  }
+                },
+                "Xero Mapping Arrays": {
+                  "value": {
+                    "dataSource": "/api.xro/2.0/Invoices",
+                    "requiredData": {
+                      "invNumber": "$.InvoiceNumber",
+                      "type": "$.Type",
+                      "InvoiceID": "$.InvoiceID",
+                      "lines": "$.LineItems[*]"
+                    },
+                    "keyBy": [
+                      "$.InvoiceID"
+                    ],
+                    "sourceModifiedDate": [
+                      "$.UpdatedDateUTC"
+                    ]
+                  }
+                },
+                "QuickBooks Online": {
+                  "value": {
+                    "dataSource": "/query?query=select * from Account",
+                    "requiredData": {
+                      "id": "$.Id",
+                      "Currentbal": "$.CurrentBalance",
+                      "SubAcc": "$.SubAccount"
+                    },
+                    "keyBy": [
+                      "$.Id"
+                    ],
+                    "sourceModifiedDate": [
+                      "$.time"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomDataTypeConfiguration"
+                },
+                "examples": {
+                  "Dynamics 365 Business Central": {
+                    "value": {
+                      "dataSource": "api/purchaseOrders",
+                      "requiredData": {
+                        "currency": "$[*].currencyCode",
+                        "number": "$[*].number",
+                        "date": "$[*].orderDate",
+                        "totalexvat": "$[*].totalAmountExcludingTax",
+                        "totaltax": "$[*].totalTaxAmount",
+                        "vendor": "$[*].number"
+                      },
+                      "keyBy": [
+                        "$[*].id"
+                      ],
+                      "sourceModifiedDate": [
+                        "$[*].lastModifiedDateTime"
+                      ]
+                    }
+                  },
+                  "Xero Simple Record": {
+                    "value": {
+                      "dataSource": "/api.xro/2.0/Accounts",
+                      "requiredData": {
+                        "code": "$.Code",
+                        "accountId": "$.AccountID",
+                        "type": "$.Type",
+                        "SysAcc": "$.SystemAccount"
+                      },
+                      "keyBy": [
+                        "$.AccountID"
+                      ]
+                    }
+                  },
+                  "Xero Mapping Arrays": {
+                    "value": {
+                      "dataSource": "/api.xro/2.0/Invoices",
+                      "requiredData": {
+                        "invNumber": "$.InvoiceNumber",
+                        "type": "$.Type",
+                        "InvoiceID": "$.InvoiceID",
+                        "lines": "$.LineItems[*]"
+                      },
+                      "keyBy": [
+                        "$.InvoiceID"
+                      ],
+                      "sourceModifiedDate": [
+                        "$.UpdatedDateUTC"
+                      ]
+                    }
+                  },
+                  "QuickBooks Online": {
+                    "value": {
+                      "dataSource": "/query?query=select * from Account",
+                      "requiredData": {
+                        "id": "$.Id",
+                        "Currentbal": "$.CurrentBalance",
+                        "SubAcc": "$.SubAccount"
+                      },
+                      "keyBy": [
+                        "$.Id"
+                      ],
+                      "sourceModifiedDate": [
+                        "$.time"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get custom data configuration",
+        "description": "The *Get custom data configuration* endpoint returns existing configuration details for the specified custom data type and integration pair you previously configured.\n\nA [custom data type](https://docs.codat.io/using-the-api/custom-data) is an additional data type you can create that is not included in Codat's standardized data model.",
+        "operationId": "get-custom-data-type-configuration",
+        "x-speakeasy-name-override": "get-configuration",
+        "tags": [
+          "Custom data type"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomDataTypeRecords"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/data/queue/custom/{customDataIdentifier}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        },
+        {
+          "$ref": "#/components/parameters/customDataIdentifier"
+        }
+      ],
+      "post": {
+        "summary": "Refresh custom data type",
+        "description": "The *Refresh custom data type* endpoint refreshes the specified custom data type for a given company. This is an asynchronous operation that will sync updated data from the linked integration into Codat for you to view.",
+        "operationId": "refresh-custom-data-type",
+        "x-speakeasy-name-override": "refresh",
+        "tags": [
+          "Custom data type"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PullOperation"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "451": {
+            "$ref": "#/components/responses/Legal-Reasons"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/data/custom/{customDataIdentifier}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        },
+        {
+          "$ref": "#/components/parameters/customDataIdentifier"
+        }
+      ],
+      "get": {
+        "summary": "List custom data type records",
+        "description": "The *List custom data type records* endpoint returns a paginated list of records pulled for the specified custom data type you previously configured.\n\nA [custom data type](https://docs.codat.io/using-the-api/custom-data) is an additional data type you can create that is not included in Codat's standardized data model.s endpoint returns a paginated list of records whose schema is defined [Configure custom data type](https://docs.codat.io/platform-api#/operations/configure-custom-data-type)",
+        "operationId": "list-custom-data-type-records",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/page"
+          },
+          {
+            "$ref": "#/components/parameters/pageSize"
+          }
+        ],
+        "tags": [
+          "Custom data type"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomDataTypeRecords"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Bad-Request"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "451": {
+            "$ref": "#/components/responses/Legal-Reasons"
           },
           "500": {
             "$ref": "#/components/responses/Internal-Server-Error"
@@ -3139,6 +3862,13 @@
             "items": {
               "$ref": "#/components/schemas/Connection"
             }
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Group/definitions/groupRef"
+            },
+            "description": "An array of groups the company has been assigned to."
           }
         },
         "required": [
@@ -3146,6 +3876,24 @@
           "name",
           "redirect"
         ],
+        "definitions": {
+          "companyGroupAssignment": {
+            "title": "Group assignment",
+            "type": "object",
+            "properties": {
+              "groupId": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Group/properties/id"
+                  },
+                  {
+                    "description": "Unique identifier of the group you want to assign the company to."
+                  }
+                ]
+              }
+            }
+          }
+        },
         "examples": [
           {
             "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
@@ -3168,6 +3916,11 @@
                 "created": "2022-10-27T09:53:29Z",
                 "sourceType": "Banking"
               }
+            ],
+            "groups": [
+              {
+                "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
+              }
             ]
           }
         ]
@@ -3186,6 +3939,13 @@
           },
           "description": {
             "$ref": "#/components/schemas/Company/properties/description"
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Group/definitions/groupRef"
+            },
+            "description": "Reference to the groups that the company is assigned to."
           }
         },
         "required": [
@@ -3214,7 +3974,7 @@
             "$ref": "#/components/schemas/Branding/properties/sourceId"
           },
           "sourceType": {
-            "$ref": "#/components/schemas/SourceType"
+            "$ref": "#/components/schemas/Integration/definitions/sourceType"
           },
           "platformName": {
             "type": "string",
@@ -3300,7 +4060,9 @@
             "enum": [
               "Accounting",
               "Banking",
+              "BankFeed",
               "Commerce",
+              "Expense",
               "Other",
               "Unknown"
             ],
@@ -3481,6 +4243,120 @@
           "notifiers"
         ]
       },
+      "CustomDataTypeConfiguration": {
+        "title": "Custom data type configuration",
+        "type": "object",
+        "description": "Client's configuration details for a specific custom data type and platform pair.",
+        "properties": {
+          "dataSource": {
+            "type": "string",
+            "description": "Underlying endpoint of the source platform that will serve as a data source for the custom data type. This value is not validated by Codat."
+          },
+          "requiredData": {
+            "type": "object",
+            "description": "Properties required to be fetched from the underlying platform for the custom data type that is being configured. This value is not validated by Codat.",
+            "additionalProperties": {
+              "type": "string",
+              "description": "The client's defined name for the property with the value being the source system's property name which the mapping is targeting."
+            }
+          },
+          "keyBy": {
+            "type": "array",
+            "description": "An array of properties from the source system that can be used to uniquely identify the records returned for the custom data type. This value is not validated by Codat.",
+            "items": {
+              "type": "string"
+            },
+            "minLength": 1
+          },
+          "sourceModifiedDate": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "string"
+            },
+            "description": "Property in the source platform nominated by the client that defines the date when a record was last modified there. This value is not validated by Codat."
+          }
+        },
+        "examples": [
+          {
+            "dataSource": "api/purchaseOrders?$filter=currencyCode eq 'NOK'",
+            "requiredData": {
+              "currencyCode": "$[*].currencyCode",
+              "id": "$[*].id",
+              "number": "$[*].number",
+              "orderDate": "$[*].orderDate",
+              "totalAmountExcludingTax": "$[*].totalAmountExcludingTax",
+              "totalTaxAmount": "$[*].totalTaxAmount",
+              "vendorName": "$[*].number"
+            },
+            "keyBy": [
+              "$[*].id"
+            ],
+            "sourceModifiedDate": [
+              "$[*].lastModifiedDateTime"
+            ]
+          }
+        ]
+      },
+      "CustomDataTypeRecords": {
+        "title": "Custom data type records",
+        "type": "object",
+        "description": "Resulting records pulled from the source platform for a specific custom data type.",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomDataTypeRecords/definitions/customDataTypeRecord"
+            }
+          },
+          "pageNumber": {
+            "$ref": "#/components/schemas/PagingInfo/properties/pageNumber"
+          },
+          "pageSize": {
+            "$ref": "#/components/schemas/PagingInfo/properties/pageSize"
+          },
+          "totalResults": {
+            "$ref": "#/components/schemas/PagingInfo/properties/totalResults"
+          }
+        },
+        "definitions": {
+          "customDataTypeRecord": {
+            "title": "Custom data type record",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "nullable": false,
+                "description": "Unique identifier of the record."
+              },
+              "content": {
+                "type": "object",
+                "description": "Values from the source system for the properties defined in the custom data type configuration.",
+                "additionalProperties": {
+                  "type": "object"
+                }
+              },
+              "modifiedDate": {
+                "title": "ModifiedDate",
+                "x-internal": true,
+                "type": "object",
+                "properties": {
+                  "modifiedDate": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/DateTime"
+                      },
+                      {
+                        "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "DatasetDataChangedWebhook": {
         "title": "Dataset data changed webhook",
         "x-internal": true,
@@ -3642,6 +4518,7 @@
               "directCosts",
               "directIncomes",
               "invoices",
+              "itemReceipts",
               "items",
               "journalEntries",
               "journals",
@@ -3830,6 +4707,57 @@
           }
         }
       },
+      "Group": {
+        "title": "Group",
+        "description": "A container you can use to organize companies together according to a shared characteristic of your choice.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "60d2fa12-8a04-11ee-b9d1-0242ac120002",
+            "description": "Unique identifier for the group."
+          },
+          "name": {
+            "type": "string",
+            "description": "Descriptive name of the group.",
+            "example": "Invoice finance team"
+          }
+        },
+        "definitions": {
+          "groupPrototype": {
+            "title": "Group prototype",
+            "description": "The group template used to create a group.",
+            "type": "object",
+            "properties": {
+              "name": {
+                "$ref": "#/components/schemas/Group/properties/name"
+              }
+            }
+          },
+          "groups": {
+            "title": "Groups",
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Group"
+                }
+              }
+            }
+          },
+          "groupRef": {
+            "title": "Group reference",
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/schemas/Group/properties/id"
+              }
+            }
+          }
+        }
+      },
       "Integration": {
         "title": "Integration",
         "description": "An integration that Codat supports",
@@ -3881,7 +4809,7 @@
             "$ref": "#/components/schemas/Branding/properties/sourceId"
           },
           "sourceType": {
-            "$ref": "#/components/schemas/SourceType"
+            "$ref": "#/components/schemas/Integration/definitions/sourceType"
           },
           "integrationId": {
             "$ref": "#/components/schemas/Connection/properties/integrationId"
@@ -3912,6 +4840,21 @@
           "enabled"
         ],
         "definitions": {
+          "sourceType": {
+            "title": "Source Type",
+            "description": "The type of platform of the connection.",
+            "type": "string",
+            "enum": [
+              "Accounting",
+              "Banking",
+              "BankFeed",
+              "Commerce",
+              "Expense",
+              "Other",
+              "Unknown"
+            ],
+            "example": "Accounting"
+          },
           "dataTypeFeature": {
             "title": "Data type feature",
             "description": "Describes support for a given datatype and associated operations",
@@ -4057,7 +5000,7 @@
               "description": "Name of company whose connection has changed."
             },
             "sourceType": {
-              "$ref": "#/components/schemas/SourceType",
+              "$ref": "#/components/schemas/Integration/definitions/sourceType",
               "nullable": true
             }
           }
@@ -4265,7 +5208,10 @@
             "example": "50830828-7d39-4367-b0eb-5ddb2de5faa5"
           },
           "dataType": {
-            "$ref": "#/components/schemas/DataStatus/properties/dataType"
+            "title": "Data types",
+            "x-internal": true,
+            "type": "string",
+            "description": "The data type you are requesting in a pull operation."
           },
           "status": {
             "type": "string",
@@ -4880,20 +5826,6 @@
           }
         }
       },
-      "SourceType": {
-        "title": "Source Type",
-        "x-internal": true,
-        "description": "The type of platform of the connection.",
-        "type": "string",
-        "enum": [
-          "Accounting",
-          "Banking",
-          "Commerce",
-          "Other",
-          "Unknown"
-        ],
-        "example": "Accounting"
-      },
       "SupplementalDataConfiguration": {
         "description": "",
         "title": "Supplemental data configuration",
@@ -5095,6 +6027,28 @@
       }
     },
     "responses": {
+      "Bad-Request": {
+        "description": "The request made is not valid.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Malformed query": {
+                "value": {
+                  "statusCode": 400,
+                  "service": "PublicApi",
+                  "error": "Error processing request - not valid.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
       "Malformed-Query": {
         "description": "Your `query` parameter was not correctly formed",
         "content": {
@@ -5257,6 +6211,28 @@
           }
         }
       },
+      "Legal-Reasons": {
+        "description": "Not currently available due to compliance limitations. Reach out to your Codat contact for further assistance.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorMessage"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 451,
+                  "service": "StdznCustomData",
+                  "error": "Platform 'qudb' is not currently available for compliance purposes.",
+                  "correlationId": "f63017dabb9b87865573bea95a51e55d",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
       "Internal-Server-Error": {
         "description": "There is a problem with our server. Please try again later.",
         "content": {
@@ -5326,6 +6302,16 @@
           "description": "Unique identifier for a company's data connection."
         },
         "description": "Unique identifier for a connection."
+      },
+      "customDataIdentifier": {
+        "name": "customDataIdentifier",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": "DynamicsPurchaseOrders"
+        },
+        "description": "Unique identifier for a custom data type."
       },
       "page": {
         "name": "page",

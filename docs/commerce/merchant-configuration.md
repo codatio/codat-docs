@@ -57,6 +57,11 @@ You can configure your branding options in the [Branding settings](https://app.c
 
 Updating the text fields helps ensure that your users clearly understand how to correctly configure their sales data synchronization and how exactly that data will be synced.
 
+The text can be customized separately for English (US) and French. Your users can select which language they see from within the configuration UI.
+
+
+A set of defaults are provided for English (US) and French.
+
 #### UI element customization
 
 The Sync configuration UI is organised in 6 stages, each with customizable text elements:
@@ -79,10 +84,15 @@ Each customizable element is identified by its `data-textkey`. You can customize
 - Subsection titles and descriptions within each stage
 - Dropdown labels for sales, fees, and payments configuration (stages 3, 4, and 5)
 
-You can also call the [Get preferences for text fields](/sync-for-commerce-api#/operations/get-config-text-sync-flow) endpoint to retrieve the full list of customizable elements:
+You can also call the [Get preferences for text fields](/sync-for-commerce-api#/operations/get-config-text-sync-flow) endpoint to retrieve the full list of customizable elements.
+
+Append a `locale` query parameter to select the language.
+Valid options are:
+- `en-us` (English US)
+- `fr-fr` (French)
 
 ```http
-GET sync/commerce/config/ui/text
+GET sync/commerce/config/ui/text?locale=en-us
 ```
 
 This returns all customizable UI elements with the current text configured for each. You can also find the full list of elements and their default values in the [Summary of `data-textkeys` and default values](/commerce/merchant-configuration#summary-of-text-elements-and-default-values) section below.
@@ -95,10 +105,16 @@ This returns all customizable UI elements with the current text configured for e
   ... // etc.
 }
 ```
-To update the text values via our API, use the [Update preferences for text fields](/sync-for-commerce-api#/operations/update-config-text-sync-flow) endpoint and include the desired text strings in the request body for each `data-textkey`:
+
+To update the text values via our API, use the [Update preferences for text fields](/sync-for-commerce-api#/operations/update-config-text-sync-flow) endpoint and include the desired text strings in the request body for each `data-textkey`.
+
+The text values can be updated with different values for each language, determined by the `locale` query parameter.
+Valid options are:
+- `en-us` (English US)
+- `fr-fr` (French)
 
 ```http
-PATCH sync/commerce/config/ui/text
+PATCH sync/commerce/config/ui/text?locale=en-us
 ```
 
 Example request body:
@@ -106,7 +122,7 @@ Example request body:
 ```json
 // Update the text value to the specified string
 {
-"data-textkey": "A new value"
+   "data-textkey": "A new value"
 }
 
 // Display an empty string

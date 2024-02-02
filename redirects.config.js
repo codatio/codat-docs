@@ -192,7 +192,7 @@ const prodRework = [
 },
 {
   from: "/sync-for-expenses/sync-process/sync-process-explained",
-  to: "/expenses/sync-process/sync-process-explained"
+  to: "/expenses/getting-started"
 },
 {
   from: "/sync-for-expenses/sync-process/syncing-expenses",
@@ -200,7 +200,7 @@ const prodRework = [
 },
 {
   from: "/sync-for-expenses/sync-process/updating-expenses",
-  to: "/expenses/sync-process/updating-expenses"
+  to: "/expenses/sync-process/expense-transactions"
 },
 {
   from: "/sync-for-expenses/sync-process/uploading-receipts",
@@ -541,7 +541,7 @@ module.exports = {
     },
     {
       from: "/other/portal/usage-and-billing",
-      to: "/configure/portal/usage-and-billing",
+      to: "/configure/create-account",
     },
     {
       from: "/other/user-management/adding-users",
@@ -554,6 +554,14 @@ module.exports = {
     {
       from: "/other/user-management/user-roles",
       to: "/configure/user-management/user-roles",
+    },
+    {
+      from: "/configure/plans/free",
+      to: "/configure/create-account",
+    },
+    {
+      from: "/configure/portal/usage-and-billing",
+      to: "/configure/create-account",
     },
 
     //
@@ -634,6 +642,10 @@ module.exports = {
       from: "/integrations/commerce/commerce-platform-keys",
       to: "/integrations/commerce/overview",
     },
+    {
+      from: "/integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks",
+      to: "/integrations/accounting/quickbooksdesktop/legacy/install-qbd-connector-right-networks",
+    },
 
     // sfc
 
@@ -690,6 +702,22 @@ module.exports = {
     {
       from: "/sync-for-expenses/faq",
       to: "/expenses/faq",
+    },
+    {
+      from: "/expenses/sync-process/updating-expenses",
+      to: "/expenses/sync-process/expense-transactions",
+    },
+//    {
+//      from: "/expenses/sync-process/uploading-receipts",
+//      to: "/expenses/sync-process/expense-transactions",
+//    },
+    {
+      from: "/expenses/sync-process/sync-process-explained",
+      to: "/expenses/getting-started",
+    },
+    {
+      from: "/expenses/sync-process/monitoring-a-sync",
+      to: "/expenses/sync-process/syncing-expenses",
     },
 
     // assess

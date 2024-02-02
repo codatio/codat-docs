@@ -876,6 +876,11 @@
         "description": "Return preferences set for the text fields on sync flow.",
         "operationId": "get-config-text-sync-flow",
         "x-speakeasy-name-override": "get-config-text-sync-flow",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/locale"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -915,6 +920,11 @@
         "description": "Set preferences for the text fields on sync flow.",
         "operationId": "update-config-text-sync-flow",
         "x-speakeasy-name-override": "update-config-text-sync-flow",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/locale"
+          }
+        ],
         "requestBody": {
           "description": "",
           "content": {
@@ -1711,6 +1721,19 @@
             "items": {
               "$ref": "#/components/schemas/Connection"
             }
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "title": "Group reference",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "$ref": "#/components/schemas/Company/definitions/companyGroupAssignment/properties/groupId/allOf/0"
+                }
+              }
+            },
+            "description": "An array of groups the company has been assigned to."
           }
         },
         "required": [
@@ -1718,6 +1741,27 @@
           "name",
           "redirect"
         ],
+        "definitions": {
+          "companyGroupAssignment": {
+            "title": "Group assignment",
+            "type": "object",
+            "properties": {
+              "groupId": {
+                "allOf": [
+                  {
+                    "type": "string",
+                    "format": "uuid",
+                    "example": "60d2fa12-8a04-11ee-b9d1-0242ac120002",
+                    "description": "Unique identifier for the group."
+                  },
+                  {
+                    "description": "Unique identifier of the group you want to assign the company to."
+                  }
+                ]
+              }
+            }
+          }
+        },
         "examples": [
           {
             "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
@@ -1739,6 +1783,11 @@
                 "lastSync": "2022-10-27T10:22:43.6464237Z",
                 "created": "2022-10-27T09:53:29Z",
                 "sourceType": "Banking"
+              }
+            ],
+            "groups": [
+              {
+                "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
               }
             ]
           }
@@ -1893,18 +1942,7 @@
             "$ref": "#/components/schemas/Branding/properties/sourceId"
           },
           "sourceType": {
-            "title": "Source Type",
-            "x-internal": true,
-            "description": "The type of platform of the connection.",
-            "type": "string",
-            "enum": [
-              "Accounting",
-              "Banking",
-              "Commerce",
-              "Other",
-              "Unknown"
-            ],
-            "example": "Accounting"
+            "$ref": "#/components/schemas/Integration/definitions/sourceType"
           },
           "platformName": {
             "type": "string",
@@ -1990,7 +2028,9 @@
             "enum": [
               "Accounting",
               "Banking",
+              "BankFeed",
               "Commerce",
+              "Expense",
               "Other",
               "Unknown"
             ],
@@ -2044,6 +2084,13 @@
           },
           "description": {
             "$ref": "#/components/schemas/Company/properties/description"
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Company/properties/groups/items"
+            },
+            "description": "Reference to the groups that the company is assigned to."
           }
         },
         "required": [
@@ -2245,7 +2292,7 @@
             "$ref": "#/components/schemas/Branding/properties/sourceId"
           },
           "sourceType": {
-            "$ref": "#/components/schemas/Connection/properties/sourceType"
+            "$ref": "#/components/schemas/Integration/definitions/sourceType"
           },
           "integrationId": {
             "$ref": "#/components/schemas/Connection/properties/integrationId"
@@ -2276,6 +2323,21 @@
           "enabled"
         ],
         "definitions": {
+          "sourceType": {
+            "title": "Source Type",
+            "description": "The type of platform of the connection.",
+            "type": "string",
+            "enum": [
+              "Accounting",
+              "Banking",
+              "BankFeed",
+              "Commerce",
+              "Expense",
+              "Other",
+              "Unknown"
+            ],
+            "example": "Accounting"
+          },
           "dataTypeFeature": {
             "title": "Data type feature",
             "description": "Describes support for a given datatype and associated operations",
@@ -2302,6 +2364,7 @@
                   "directCosts",
                   "directIncomes",
                   "invoices",
+                  "itemReceipts",
                   "items",
                   "journalEntries",
                   "journals",
@@ -3465,6 +3528,20 @@
           "description": "A unique 4-letter key to represent a platform in each integration. View [accounting](https://docs.codat.io/integrations/accounting/overview#platform-keys), [banking](https://docs.codat.io/integrations/banking/overview#platform-keys), and [commerce](https://docs.codat.io/integrations/commerce/overview#platform-keys) platform keys."
         },
         "description": "A unique 4-letter key to represent a platform in each integration. View [accounting](https://docs.codat.io/integrations/accounting/overview#platform-keys), [banking](https://docs.codat.io/integrations/banking/overview#platform-keys), and [commerce](https://docs.codat.io/integrations/commerce/overview#platform-keys) platform keys."
+      },
+      "locale": {
+        "name": "locale",
+        "in": "query",
+        "required": true,
+        "example": "en-us",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "en-us",
+            "fr-fr"
+          ]
+        },
+        "description": "Localization identifier for English (US) or French."
       }
     },
     "securitySchemes": {

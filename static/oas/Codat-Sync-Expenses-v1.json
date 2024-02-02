@@ -8,7 +8,7 @@
       "url": "https://www.codat.io/",
       "email": "expenses@codat.io"
     },
-    "description": "The API for Sync for Expenses.\n\nSync for Expenses is an API and a set of supporting tools. It has been built to\nenable corporate card and expense management platforms to provide high-quality\nintegrations with multiple accounting platforms through a standardized API.\n\n[Read more...](https://docs.codat.io/sync-for-expenses/overview)\n\n[See our OpenAPI spec](https://github.com/codatio/oas)\n\nNot seeing what you expect? [See the main Sync for Commerce API](https://docs.codat.io/sync-for-commerce-api).",
+    "description": "The API for Sync for Expenses.\n\nSync for Expenses is an API and a set of supporting tools. It has been built to\nenable corporate card and expense management platforms to provide high-quality\nintegrations with multiple accounting platforms through a standardized API.\n\n[Read more...](https://docs.codat.io/sync-for-expenses/overview)\n\n[See our OpenAPI spec](https://github.com/codatio/oas)\n\nNot seeing what you expect? [See the main Sync for Expenses API](https://docs.codat.io/sync-for-expenses-api).",
     "termsOfService": "https://www.codat.io/legals/"
   },
   "security": [
@@ -978,6 +978,19 @@
       "post": {
         "summary": "Upload attachment",
         "operationId": "upload-attachment",
+        "tags": [
+          "Expenses"
+        ],
+        "description": "Creates an attachment in the accounting software against the given transactionId",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/AttachmentUpload"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK",
@@ -1014,21 +1027,7 @@
           "503": {
             "$ref": "#/components/responses/Service-Unavailable"
           }
-        },
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "string",
-                "format": "binary"
-              }
-            }
-          }
-        },
-        "tags": [
-          "Expenses"
-        ],
-        "description": "Creates an attachment in the accounting software against the given transactionId"
+        }
       }
     },
     "/companies": {
@@ -1071,7 +1070,12 @@
                             }
                           ],
                           "created": "2022-01-01T11:30:00Z",
-                          "createdByUserName": "Mike Smith"
+                          "createdByUserName": "Mike Smith",
+                          "groups": [
+                            {
+                              "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
+                            }
+                          ]
                         }
                       ],
                       "pageNumber": 1,
@@ -1182,7 +1186,7 @@
           }
         },
         "operationId": "list-companies",
-        "description": "﻿Returns a list of your companies. The company schema contains a list of [connections](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Connection) related to the company.",
+        "description": "﻿The *List companies* endpoint returns a list of [companies] associated to your instances.\n\nA [company](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -1214,16 +1218,45 @@
                   "$ref": "#/components/schemas/Company"
                 },
                 "examples": {
-                  "New Company": {
+                  "With no description": {
                     "value": {
                       "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "name": "My First Company",
+                      "name": "Technicalium",
                       "description": "",
                       "platform": "",
                       "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18.1950523Z",
                       "createdByUserName": "Dan Tzabar"
+                    }
+                  },
+                  "With a description": {
+                    "value": {
+                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "name": "Technicalium",
+                      "description": "Technology services, including web and app design and development",
+                      "platform": "",
+                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "dataConnections": [],
+                      "created": "2022-11-10T10:45:18.1950523Z",
+                      "createdByUserName": "Dan Tzabar"
+                    }
+                  },
+                  "With a group": {
+                    "value": {
+                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "name": "Technicalium",
+                      "description": "",
+                      "platform": "",
+                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "dataConnections": [],
+                      "created": "2022-11-10T10:45:18.1950523Z",
+                      "createdByUserName": "Dan Tzabar",
+                      "groups": [
+                        {
+                          "id": "f8a6f6ed-9812-4d1e-ba48-4346348403c8"
+                        }
+                      ]
                     }
                   }
                 }
@@ -1252,7 +1285,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "﻿Creates a new company that can be used to assign connections to. \n\nIf forbidden characters (see `name` pattern) are present in the request, a company will be created with the forbidden characters removed. For example, `Company (Codat[1])` with be created as `Company Codat1`.\n\n",
+        "description": "﻿Use the *Create company* endpoint to create a new [company](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Company) that represents your customer in Codat. \n\nA [company](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.\n\nIf forbidden characters (see `name` pattern) are present in the request, a company will be created with the forbidden characters removed. For example, `Company (Codat[1])` with be created as `Company Codat1`.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1260,15 +1293,25 @@
                 "$ref": "#/components/schemas/CompanyRequestBody"
               },
               "examples": {
-                "Example with no description": {
+                "With no description": {
                   "value": {
                     "name": "Technicalium"
                   }
                 },
-                "Example with a description": {
+                "With a description": {
                   "value": {
                     "name": "Technicalium",
                     "description": "Technology services, including web and app design and development"
+                  }
+                },
+                "With a group": {
+                  "value": {
+                    "name": "Technicalium",
+                    "groups": [
+                      {
+                        "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
+                      }
+                    ]
                   }
                 }
               }
@@ -1280,7 +1323,7 @@
     "/companies/{companyId}": {
       "put": {
         "summary": "Update company",
-        "description": "﻿Updates both the name and description of the company.",
+        "description": "﻿Use the *Update company* endpoint to update both the name and description of the company. \nIf you use [groups](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Group) to manage a set of companies, use the [Add company](https://docs.codat.io/sync-for-expenses-v1-api#/operations/add-company-to-group) or [Remove company](https://docs.codat.io/sync-for-expenses-v1-api#/operations/remove-company-from-group) endpoints to add or remove a company from a group.\n\nA [company](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
         "operationId": "update-company",
         "parameters": [
           {
@@ -1354,7 +1397,7 @@
             "$ref": "#/components/parameters/companyId"
           }
         ],
-        "description": "﻿\nPermanently deletes a company, its connections and any cached data. This operation is irreversible. If the company ID does not exist an error is returned.",
+        "description": "﻿The *Delete company* endpoint permanently deletes a [company](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Company), its [connections](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Connection) and any cached data. This operation is irreversible.\n\nA [company](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.\n",
         "tags": [
           "Companies"
         ],
@@ -1388,7 +1431,7 @@
       "get": {
         "summary": "Get company",
         "operationId": "get-company",
-        "description": "﻿Returns the company for a valid identifier. If the identifier is for a deleted company, a not found response is returned.",
+        "description": "﻿The *Get company* endpoint returns a single company for a given `companyId`.\n\nA [company](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.\n",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -1406,7 +1449,7 @@
                   "$ref": "#/components/schemas/Company"
                 },
                 "examples": {
-                  "Example": {
+                  "Simple company": {
                     "value": {
                       "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
                       "name": "My First Company",
@@ -1416,6 +1459,23 @@
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18Z",
                       "createdByUserName": "Dan Tzabar"
+                    }
+                  },
+                  "With groups": {
+                    "value": {
+                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "name": "My First Company",
+                      "description": "",
+                      "platform": "",
+                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "dataConnections": [],
+                      "created": "2022-11-10T10:45:18Z",
+                      "createdByUserName": "Dan Tzabar",
+                      "groups": [
+                        {
+                          "id": "f8a6f6ed-9812-4d1e-ba48-4346348403c8"
+                        }
+                      ]
                     }
                   }
                 }
@@ -1974,6 +2034,25 @@
           }
         }
       },
+      "AttachmentUpload": {
+        "title": "Attachment upload",
+        "type": "object",
+        "required": [
+          "file"
+        ],
+        "properties": {
+          "file": {
+            "$ref": "#/components/schemas/AttachmentUpload/definitions/codatFile"
+          }
+        },
+        "definitions": {
+          "codatFile": {
+            "type": "string",
+            "description": "The file to be uploaded as an attachment.",
+            "format": "binary"
+          }
+        }
+      },
       "BankAccount": {
         "title": "Bank account",
         "x-internal": true,
@@ -2057,6 +2136,19 @@
             "items": {
               "$ref": "#/components/schemas/Connection"
             }
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "title": "Group reference",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "$ref": "#/components/schemas/Company/definitions/companyGroupAssignment/properties/groupId/allOf/0"
+                }
+              }
+            },
+            "description": "An array of groups the company has been assigned to."
           }
         },
         "required": [
@@ -2064,6 +2156,27 @@
           "name",
           "redirect"
         ],
+        "definitions": {
+          "companyGroupAssignment": {
+            "title": "Group assignment",
+            "type": "object",
+            "properties": {
+              "groupId": {
+                "allOf": [
+                  {
+                    "type": "string",
+                    "format": "uuid",
+                    "example": "60d2fa12-8a04-11ee-b9d1-0242ac120002",
+                    "description": "Unique identifier for the group."
+                  },
+                  {
+                    "description": "Unique identifier of the group you want to assign the company to."
+                  }
+                ]
+              }
+            }
+          }
+        },
         "examples": [
           {
             "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
@@ -2085,6 +2198,11 @@
                 "lastSync": "2022-10-27T10:22:43.6464237Z",
                 "created": "2022-10-27T09:53:29Z",
                 "sourceType": "Banking"
+              }
+            ],
+            "groups": [
+              {
+                "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
               }
             ]
           }
@@ -2137,6 +2255,13 @@
           },
           "description": {
             "$ref": "#/components/schemas/Company/properties/description"
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Company/properties/groups/items"
+            },
+            "description": "Reference to the groups that the company is assigned to."
           }
         },
         "required": [
@@ -2241,13 +2366,14 @@
           },
           "sourceType": {
             "title": "Source Type",
-            "x-internal": true,
             "description": "The type of platform of the connection.",
             "type": "string",
             "enum": [
               "Accounting",
               "Banking",
+              "BankFeed",
               "Commerce",
+              "Expense",
               "Other",
               "Unknown"
             ],
@@ -2337,7 +2463,9 @@
             "enum": [
               "Accounting",
               "Banking",
+              "BankFeed",
               "Commerce",
+              "Expense",
               "Other",
               "Unknown"
             ],
@@ -2537,7 +2665,7 @@
             "type": "number",
             "format": "decimal",
             "nullable": true,
-            "description": "Rate to convert the total amount of the payment into the base currency for the company at the time of the payment.\n\nCurrency rates in Codat are implemented as the multiple of foreign currency units to each base currency unit.  \n\nIt is not possible to perform the currency conversion with two or more non-base currencies participating in the transaction. For example, if a company's base currency is USD, and it has a bill issued in EUR, then the bill payment must happen in USD or EUR.\n\nWhere the currency rate is provided by the underlying accounting platform, it will be available from Codat with the same precision (up to a maximum of 9 decimal places). \n\nFor accounting platforms which do not provide an explicit currency rate, it is calculated as `baseCurrency / foreignCurrency` and will be returned to 9 decimal places.\n\n## Examples with base currency of GBP\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (GBP) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **USD**          | $20            | 0.781         | £15.62                     |\n| **EUR**          | €20            | 0.885         | £17.70                     |\n| **RUB**          | ₽20            | 0.011         | £0.22                      |\n\n## Examples with base currency of USD\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (USD) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **GBP**          | £20            | 1.277         | $25.54                     |\n| **EUR**          | €20            | 1.134         | $22.68                     |\n| **RUB**          | ₽20            | 0.015         | $0.30                      |"
+            "description": "Rate to convert the total amount of the payment into the base currency for the company at the time of the payment.\n\nCurrency rates in Codat are implemented as the multiple of foreign currency units to each base currency unit.  \n\nIt is not possible to perform the currency conversion with two or more non-base currencies participating in the transaction. For example, if a company's base currency is USD, and it has a bill issued in EUR, then the bill payment must happen in USD or EUR.\n\nWhere the currency rate is provided by the underlying accounting platform, it will be available from Codat with the same precision (up to a maximum of 9 decimal places). \n\nFor accounting platforms which do not provide an explicit currency rate, it is calculated as `baseCurrency / foreignCurrency` and will be returned to 9 decimal places.\n\n## Examples with base currency of GBP\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (GBP) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **USD**          | $20            | 0.781         | £15.62                     |\n| **EUR**          | €20            | 0.885         | £17.70                     |\n| **RUB**          | ₽20            | 0.011         | £0.22                      |\n\n## Examples with base currency of USD\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (USD) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **GBP**          | £20            | 1.277         | $25.54                     |\n| **EUR**          | €20            | 1.134         | $22.68                     |\n| **RUB**          | ₽20            | 0.015         | $0.30                      |\n\n\n### Integration-specific details\n\n| Integration       | Scenario                                        | System behavior                                                                                                                                                      |\n|-------------------|-------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| QuickBooks Online | Transaction currency differs from base currency | If currency rate value is left `null`, a rate of 1 will be used by QBO by default. To override this, include the required currency rate in the expense transaction.  |"
           },
           "contactRef": {
             "description": "Supplier or customer for the purchase to be associated to.",
@@ -2846,12 +2974,6 @@
               },
               "syncType": {
                 "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData/properties/syncType"
-              },
-              "SyncDateRangeStartUtc": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData/properties/SyncDateRangeStartUtc"
-              },
-              "SyncDateRangeFinishUtc": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData/properties/SyncDateRangeFinishUtc"
               }
             }
           }
@@ -2867,9 +2989,7 @@
             "Message": "Sync 321363b4-efa9-4fbc-b71c-0b58d62f3248 for company 1f9559e7-8368-48c9-bdf4-f158e16b8b85 of type Expense completed successfully.",
             "Data": {
               "syncId": "321363b4-efa9-4fbc-b71c-0b58d62f3248",
-              "syncType": "Expense",
-              "SyncDateRangeStartUtc": "2023-05-03T09:56:17.4357111Z",
-              "SyncDateRangeFinishUtc": "2023-05-03T09:56:18.4357111Z"
+              "syncType": "Expense"
             }
           }
         ]
@@ -2933,14 +3053,6 @@
                 "type": "string",
                 "description": "The type of sync being performed."
               },
-              "SyncDateRangeStartUtc": {
-                "$ref": "#/components/schemas/Company/properties/created",
-                "description": "The start datetime data will be synced from."
-              },
-              "SyncDateRangeFinishUtc": {
-                "$ref": "#/components/schemas/Company/properties/created",
-                "description": "The end datetime data will be synced to."
-              },
               "FailureStage": {
                 "type": "string",
                 "description": "The stage of the job the sync failed."
@@ -2960,8 +3072,6 @@
             "Data": {
               "syncId": "3bead2a1-1b3d-4d90-8077-cddc5ca68b01",
               "syncType": "Expense",
-              "SyncDateRangeStartUtc": "2023-05-03T12:57:58.757Z",
-              "SyncDateRangeFinishUtc": "2023-05-03T12:57:59.757Z",
               "FailureStage": "Pushing"
             }
           }
@@ -3014,12 +3124,6 @@
               },
               "syncType": {
                 "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData/properties/syncType"
-              },
-              "SyncDateRangeStartUtc": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData/properties/SyncDateRangeStartUtc"
-              },
-              "SyncDateRangeFinishUtc": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData/properties/SyncDateRangeFinishUtc"
               }
             }
           }
@@ -3035,9 +3139,7 @@
             "Message": "Sync 321363b4-efa9-4fbc-b71c-0b58d62f3248 for company 1f9559e7-8368-48c9-bdf4-f158e16b8b85 of type Expense has started.",
             "Data": {
               "syncId": "321363b4-efa9-4fbc-b71c-0b58d62f3248",
-              "syncType": "Expense",
-              "SyncDateRangeStartUtc": "2023-05-03T09:56:17.4357111Z",
-              "SyncDateRangeFinishUtc": "2023-05-03T09:56:18.4357111Z"
+              "syncType": "Expense"
             }
           }
         ]

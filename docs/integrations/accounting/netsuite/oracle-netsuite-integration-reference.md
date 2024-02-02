@@ -125,6 +125,10 @@ When pushing Bill payments to Oracle NetSuite:
 - The supported use cases are paying off a bill with cash and applying a bill credit note to a bill.
 - Applying NetSuite Vendor Prepayments to open bills from vendors is not supported.
 
+## Customers
+
+Customers are mapped from _CustomerName_ in _CustomerID_ from Oracle NetSuite.
+
 ## Direct costs and direct incomes
 
 :::note Type not supported

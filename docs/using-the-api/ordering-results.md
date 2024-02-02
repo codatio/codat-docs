@@ -1,8 +1,6 @@
 ---
-title: "Ordering results"
+title: "Order results"
 description: "Basics and examples of ordering in Codat's APIs"
-createdAt: "2020-02-27T01:32:43.041Z"
-updatedAt: "2022-11-07T20:00:50.251Z"
 ---
 
 In addition to [queries](/using-the-api/querying), you can limit response data using the `orderBy` parameter to specify the ordering of records in the response.

@@ -1,5 +1,5 @@
 ---
-title: "Optimizing API calls"
+title: "Optimize API calls"
 description: "Learn how to use our APIs efficiently and ensure you are not reaching our rate limits"
 ---
 

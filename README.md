@@ -5,7 +5,8 @@ The official [Codat](https://codat.io) documentation.
 - [Browse the docs](https://docs.codat.io/)
 - [Contributing Guide](./CONTRIBUTING.md)
 - [OpenAPI Spec](https://github.com/codatio/oas)
-- [Product roadmap](https://bit.ly/codatpbroadmap1) | [DX roadmap](https://bit.ly/devexroadmap)
+
+[![Linkinator CI](https://github.com/codatio/codat-docs/actions/workflows/linknator.yml/badge.svg)](https://github.com/codatio/codat-docs/actions/workflows/linknator.yml)
 
 ---
 

@@ -1,0 +1,26 @@
+name: Broken links
+
+on:
+  #pull_request:
+  schedule:
+    - cron: '0 0 * * 0'  # Runs every Sunday at midnight
+  workflow_dispatch: # Allows manual triggering from the GitHub UI
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18' # Specify the Node.js version
+
+      - name: Install linkinator
+        run: npm install -g linkinator
+
+      - name: Run linkinator
+        run: npx linkinator https://docs.codat.io --recurse --retry --verbosity error --skip .*github.*

@@ -7,7 +7,9 @@ authors: dharries
 
 import Diff from "@components/global/Diff"
 
-On **January 10, 2024**, we will deprecate the `data` field that is currently returned in the response when creating or updating entities. Pushed data will also no longer be stored, so a refresh of data will be required for Codat to reflect any new or updated records.
+On **January 10, 2024**, we will deprecate the `data` field that is currently returned in the response and `/push` endpoints when creating or updating entities. 
+
+Pushed data will also no longer be stored within Codat, and a refresh of data will be required for Codat to reflect new or updated records.
 
 <!--truncate-->
 
@@ -107,6 +109,6 @@ If you currently make use of any properties in the `data` object of the push ope
 
 ## Expected impact if no action is taken​
 
-As of January 10, 2024, you will no longer be able to use the `data` object on the push operation responses.
+As of January 10, 2024, you will no longer be able to use the `data` object on the push operation responses or `/push` endpoints.
 
-You will not be able to use the returned `id` to pull data you have pushed until a subsequent sync is completed for the given data type.
+You will not be able to use the returned `id` to access the records you have pushed within Codat until you've (refreshed that company's data](/using-the-api/queueing-data-syncs) for the given data type.

@@ -12,22 +12,25 @@ banner_class: bank-feeds
 banner_icon: "/img/logos/products/logo_bankfeeds_clear.svg"
 banner_image: "/img/banners/bank-feeds.png"
 banner_text: "Easily deploy an automated bank statement feed into your application to push bank transaction data into your customers' accounting platforms"
-// video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
-// video_text: What is Bank Feeds API?
+video_url: "https://www.youtube.com/embed/QrPiwn3DRJs"
+video_text: What is Bank Feeds API?
 ---
 
 import {IntegrationsList} from '@components/global/Integrations'
-import {bankfeedsIntegrations} from '@components/global/Integrations/integrations'  
+import {bankfeedsIntegrations} from '@components/global/Integrations/integrations'
+import ClientLibraries from '@components/global/ClientLibraries'
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem"
 
-## What is it?
+## What is Bank Feeds API?
 
-In short, a [bank feed](../terms/bank-feed) is a digital connection between a financial institution and an accounting software that performs an automatic regular transfer of bank statements into the software.
+**A [bank feed](../terms/bank-feed) is a digital connection between a financial institution and an accounting software that performs an automatic regular transfer of bank statements into the software.**
 
-Leverage our **Bank Feeds API** to simplify the deployment of bank feeds in your application. It creates the associated infrastructure for you and automates the upload of bank statements into accounting platforms used by your small and medium-sized business (SMB) customers. 
+Leverage our **Bank Feeds API** to simplify the deployment of bank feeds in your application. It creates the associated infrastructure for you and automates the upload of bank statements into accounting platforms used by your small and medium-sized business (SMB) customers.
 
 ## Who is it for?
 
-Our Bank Feeds API makes it easy for banks, neobanks, corporate card issuers, and payment providers to ensure customers can access their bank transaction data within their accounting software. 
+Our Bank Feeds API makes it easy for banks, neobanks, corporate card issuers, and payment providers to ensure customers can access their bank transaction data within their accounting software.
 
 As a result, your customers enjoy a more complete and simplified accounting experience, save time closing their books, and further reduce manual error without requiring third-party middleware or manual file uploads.
 
@@ -35,9 +38,9 @@ As a result, your customers enjoy a more complete and simplified accounting expe
 
 A recent survey revealed that [71% of Xero partners](https://www.xero.com/blog/2019/01/new-bank-feeds-process/) identify [bank feeds](../terms/bank-feed) and bank transaction reconciliation as their most valued features. With Bank Feeds API, you can easily meet this demand.
 
-Leverage our coverage of the most popular accounting platforms and remove barriers to product adoption, increasing customer retention and elevating their experience with your app as a result. 
+Leverage our coverage of the most popular accounting platforms and remove barriers to product adoption, increasing customer retention and elevating their experience with your app as a result.
 
-#### With Bank Feeds API, you can: 
+#### With Bank Feeds API, you can:
 
 <ul className="card-container col-3">
   <li className="card">
@@ -75,7 +78,7 @@ Leverage our coverage of the most popular accounting platforms and remove barrie
     <p>
       Near real-time balances help your customers manage their finances more effectively and make the right choices.
     </p>
-  </li> 
+  </li>
 </ul>
 
 ## How does it work?
@@ -92,9 +95,9 @@ At the same time, you will also create additional Codat infrastructure elements,
 
 ### [Establish bank feed](/bank-feeds/mapping/overview)
 
-Next, you will enable your SMB customer to let you connect to their accounting platform. They will authorize that connection via our [auth flow](/auth-flow/overview), which you will implement when building with Bank Feeds API. 
+Next, you will enable your SMB customer to let you connect to their accounting platform. They will authorize that connection via our [auth flow](/auth-flow/overview), which you will implement when building with Bank Feeds API.
 
-Then, provide your user with a UI so they can select the target accounts in that platform. This will tell Codat where exactly to establish a bank feed. Depending on your customer's software, there are [three methods](/bank-feeds/mapping/mapping-overview) you can use for mapping: Codat's UI, your own UI, or the integration's UI.  
+Then, provide your user with a UI so they can select the target accounts in that platform. This will tell Codat where exactly to establish a bank feed. Depending on your customer's software, there are [three methods](/bank-feeds/mapping/overview) you can use for mapping: Codat's UI, your own UI, or the integration's UI.
 
 :::note Platform requirements
 The setup process and platform registration requirements vary for each Bank Feeds API integration. For detailed instructions, refer to the documentation we provide for each integration.
@@ -117,6 +120,13 @@ Once your SMB customer completes the authorization and account mapping process, 
   <p>This product is only available on our <a href="/configure/create-account">full access plans</a>.</p>
 
 </div>
+
+## Build with client libraries
+
+Use our [comprehensive SDKs](/get-started/libraries) to kick-start and simplify your developers' journey deploying bank feeds in your application.
+The SDKs come in multiple languages and provide sample requests and responses for the full range of bank statement automation scenarios.
+
+<ClientLibraries productName={"bank-feeds"} />
 
 ---
 

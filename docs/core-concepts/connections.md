@@ -57,9 +57,11 @@ In the response, note the following fields:
 
 ## Disconnect a data connection to revoke your access to a data source
 
-You can disconnect a data connection using the <a href="/platform-api#/operations/unlink-connection" target="_blank">Unlink connection</a> endpoint. This revokes your access to synchronize data with the linked company and sets the data connection's status to `Unlinked`.
+You can disconnect a data connection using the [Codat Portal](https://app.codat.io/). Navigate to **Companies**, choose the company you want to manage connections for, then select **Manage connections** and use the three-dot menu to unlink the connection. 
 
-To disconnect a data connection, you'll need to provide:
+This revokes your access to synchronize data with the linked company and sets the data connection's status to `Unlinked`.
+
+Alternatively, you can use our <a href="/platform-api#/operations/unlink-connection" target="_blank">Unlink connection</a> endpoint. To disconnect a data connection, you'll need to provide:
 
 - The `companyId` of the linked company as a path parameter.
 - The `connectionId` of the data connection to disconnect as a path parameter.
@@ -224,7 +226,9 @@ var res = await codatPlatform.Connections.UnlinkAsync(new UnlinkConnectionReques
 
 ## Delete a data connection
 
-To delete a data connection, send a request to the <a href="/platform-api#/operations/delete-connection" target="_blank">DELETE /connectionId endpoint</a> and provide the `companyId` and `connectionId` as path parameters.
+You can delete a data connection using the [Codat Portal](https://app.codat.io/). Navigate to **Companies**, choose the company you want to manage connections for, then select **Manage connections** and use the three-dot menu to delete the connection.
+
+Alternatively, you can send a request to the <a href="/platform-api#/operations/delete-connection" target="_blank">DELETE /connectionId endpoint</a> and provide the `companyId` and `connectionId` as path parameters.
 
 <Tabs>
   <TabItem value="curl" label="cURL">

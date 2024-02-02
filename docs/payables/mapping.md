@@ -1,168 +1,321 @@
 ---
-title: Payment method mapping
-description: "Enable SMBs to choose how to make payments"
-image: "/img/banners/social/payables.png"
+title: Map payment methods
+description: "Provide your SMBs with the ability to choose how to make payments"
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
 
-Users may have multiple bank accounts from which they might pay for a bill.
+## Overview
 
-To enable users to select which bank account a payment should originate from, you can retrieve a list of these from the accounting platform you also have the option to create a new one should the account not exist in their platform. 
+Your SMB customers may have multiple bank accounts they can use to pay for a bill. In your application, you should enable them to select the account the payment should originate from.
 
-In some cases your platform may support multiple payment methods and each method can be mapped to an account. 
-You should store the mapping of the relevant `accountId` as this will be needed when creating the [billPayment](/payables/payments).
+Retrieve the list of existing bank accounts from the SMB's accounting platform and display the available mapping options to them in a UI, or allow them to create a new account when needed.
 
-:::tip Foreign exchange payments 💱
+We have highlighted this alternative sequence of steps in our detailed process diagram below. 
 
-If you are facilitating payments in a foreign currency, then the payment should either be converted to the currency of the account, or you can create a new account with the import currency.
+<details>
+<summary><b>Detailed process diagram</b></summary>
 
-The [create account model](/sync-for-payables-api#/operations/get-create-chartOfAccounts-model) provides a list of the companies enabled currencies, this will return:
+```mermaid
 
-- *A single value*: base currency, where only the base currency is supported (e.g. USD for a company based in the United States)
-- *Multiple values*: reflecting values selected/enabled by a user within the package
-- *No values* (empty array): where all/any currencies can be selected
+  sequenceDiagram
+      participant smb as SMB customer
+      participant app as Your application 
+      participant codat as Codat
+      participant acctg as Accounting platform
+      
+      alt Retrieve bank accounts
+        codat ->> acctg: Fetches existing bank accounts
+        acctg -->> codat: Returns existing bank accounts
+        codat ->> app: Returns existing bank accounts
+        app ->> smb: Displays existing bank accounts
+      else Create bank account
+        app ->> codat: Creates bank account
+        codat ->> acctg: Creates bank account
+      end
+      app ->> smb: Displays payment method mapping
+      smb ->> app: Maps payment methods
+
+```
+
+</details>
+
+If your platform supports multiple payment methods that can be mapped to a separate account, store the mapping of the relevant `accountId` - you will need this to create the [bill payment](/payables/payments) later.
+
+### Foreign currency payments
+
+:::tip Foreign currency payments
+
+If you facilitate payments in a foreign currency, you should convert the payment to the currency of the account or create a new account in that currency.
+
+Use the [Get create account model](/sync-for-payables-api#/operations/get-create-chartOfAccounts-model) endpoint to view the list of the company's currently enabled currencies. It can return:
+
+- *Single value*: the account's base currency in platforms that only support the base currency
+- *Multiple values*: several currencies enabled by the SMB user in their accounting platform
+- *No values*: empty array for platforms where any and all currencies can be selected
 
 :::
 
-### Retrieve a list of existing bank accounts
+## Retrieve bank accounts
 
-If the company is making payments from a pre-existing account, then you can retrieve a list of accounts and enable them to map payment methods against each one. For example, you might offer  the ability to make payments from a credit card, in which case the companies `billPayments` should be reconciled to a credit account.
+If your SMB customer is making payments from a pre-existing bank account, retrieve a list of their accounts and allow them to map payment methods against each one. Use the [List accounts](/sync-for-payables-api#/operations/list-accounts) endpoint and filter by `isBankAccount=true` to return a list of valid bank accounts.
+
+<!-- For example, if you offer the option to make payments from a credit card, the company's bill payments should be mapped and reconciled to a credit account. -->
 
 <Tabs>
 
-<TabItem value="Request URL" label="Request URL">
+<TabItem value="nodejs" label="TypeScript">
 
-```http request title="List bank accounts"
-GET https://api.codat.io/companies/{companyId}/connections/{connectionId}/data/bankAccounts
+```javascript
+const accountsListResponse = await payablesClient.accounts.list({
+    companyId: companyId,
+    query: 'isBankAccount=true'
+  });
 ```
 
 </TabItem>
 
-<TabItem value="Response Body" label="Response Body">
+<TabItem value="python" label="Python">
 
-```json request title="QuickBooks Example"
-{
-	"results": [
-		{
-			"id": "164",
-			"accountName": "BillPay Debit Card",
-			"accountType": "Debit",
-			"nominalCode": "123456788",
-			"currency": "USD",
-			"balance": 0,
-			"availableBalance": 0,
-			"modifiedDate": "2023-04-14T09:31:24Z",
-			"sourceModifiedDate": "2023-04-14T09:31:23Z",
-			"metadata": {
-				"isDeleted": false
-			}
-		},
-		{
-			"id": "163",
-			"accountName": "BillPay Credit Card",
-			"accountType": "Credit",
-			"nominalCode": "123456789",
-			"currency": "USD",
-			"balance": 0,
-			"availableBalance": 0,
-			"modifiedDate": "2023-04-14T09:30:03Z",
-			"sourceModifiedDate": "2023-04-14T09:30:02Z",
-			"metadata": {
-				"isDeleted": false
-			}
-		}
-	]
-}
+```python
+accounts_list_request = operations.ListAccountsRequest(
+    company_id=company_id,
+    query='isBankAccount=true'
+)
+
+accounts_list_response = payables_client.accounts.list(accounts_list_request)
 ```
 
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var accountsListResponse = await payablesClient.Accounts.ListAsync(new ListAccountsRequest() {
+    CompanyId = companyId,
+    Query = "isBankAccount=true"
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+accountsListResponse, err := payablesClient.Accounts.List(ctx, operations.ListAccountsRequest{
+    CompanyID: companyID,
+    Query: "isBankAccount=true"
+})
+```
 </TabItem>
 
 </Tabs>
 
-### Create a new account
+## Create new account
 
-If the company is making payments from a payment method or account that you provide, then you should create a new account to represent this in their accounting software. This will make the companies payment reconciliation workflows in their accounting software easier.
+If the SMB customer plans to make payments from a new payment method or account that you provide, a new account must be created in their accounting software. The account will contain their transactions, making the SMB's payment reconciliation workflows easier. 
 
-#### Pre-pay account
+For Xero, QuickBooks Online, and Oracle NetSuite, use the [Create bank account](/sync-for-payables-api#/operations/create-bank-account) endpoint.
 
-Typically if the payment method is one of the following:
+<Tabs>
 
-- Automated clearing house (ACH) or Real Time Payments (RTP)
-- Cheque / Check
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const accountCreateResponse = await payablesClient.accounts.create({
+	account: {
+		accountName: "BillPay Debit Account",
+		accountType: AccountType.Debit,
+		accountNumber: "80088008",
+		currency: "USD",
+		balance: 0,
+		availableBalance: 0,
+	},
+    companyId: companyId,
+	connectionId: connectionId
+  });
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+account_create_request = operations.CreateAccountsRequest(
+	account=shared.Account(
+		account_name="BillPay Debit Account",
+		account_type=shared.AccountType.DEBIT,
+		account_number="80088008",
+		currency="USD",
+		balance=0,
+		available_balance=0,
+	)
+    company_id=company_id,
+	connection_id=connection_id
+)
+
+account_create_response = payables_client.accounts.create(account_create_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var accountCreateResponse = await payablesClient.Accounts.CreateAsync(new CreateAccountRequest() {
+	Account=new Account(){
+		AccountName = "BillPay Debit Account",
+		AccountType = AccountType.Debit,
+		AccountNumber = "80088008",
+		Currency = "USD",
+		Balance = 0,
+		AvailableBalance = 0,
+	}
+    CompanyId = companyId,
+	ConnectionId = connectionId
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+accountsResponse, err := payablesClient.Accounts.Create(ctx, operations.CreateAccountRequest{
+	Account: &shared.Account{
+		AccountName: syncforpayables.String("BillPay Debit Account"),
+		AccountType: AccountType.Debit,
+		AccountNumber: "80088008",
+		Currency: syncforpayables.String("USD"),
+		Balance: 0,
+		AvailableBalance: 0,
+	},
+    CompanyID: companyID,
+    ConnectionID: connectionID,
+})
+```
+</TabItem>
+
+</Tabs>
+
+Note that Xero does not support creating credit accounts.
+
+For Sage Intacct, use the [Create account](/sync-for-payables-api#/operations/create-account) endpoint to reflect that account in the customer's accounting software. 
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const accountCreateResponse = await payablesClient.accounts.create({
+	accountPrototype: {
+    name: "BillPay Debit Account"
+		fullyQualifiedName: "BillPay Debit Account",
+    fullyQualifiedCategory: "Asset.Current",
+		nominalCode: "610",
+		currency: "USD",
+    status: AccountStatus.Active,
+    type: AccountType.Asset,
+		currentBalance: 0,
+	},
+  companyId: companyId,
+	connectionId: connectionId
+  });
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+account_create_request = operations.CreateAccountRequest(
+	account_prototype=shared.AccountPrototype(
+		name='BillPay Debit Account',
+		fully_qualified_name='BillPay Debit Account',
+    fully_qualified_category='Asset.Current',
+    nominal_code='610',
+		currency='USD',
+    status=shared.AccountStatus.ACTIVE,
+    type=shared.AccountType.ASSET,
+		current_balance=0,
+	),
+  company_id=company_id,
+	connection_id=connection_id
+)
+
+account_create_response = payables_client.accounts.create(account_create_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var accountCreateResponse = await payablesClient.Accounts.CreateAsync(new CreateAccountRequest() {
+  AccountPrototype = new AccountPrototype(){
+    Name = "BillPay Debit Account",
+		FullyQualifiedName = "BillPay Debit Account",
+    FullyQualifiedCategory = "Asset.Current",
+    NominalCode = "610",
+		Currency = "USD",
+    Status = AccountStatus.Active,
+    Type = AccountType.Asset,
+		CurrentBalance = 0,
+	},
+  CompanyId = companyId,
+	ConnectionId = connectionId
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+accountCreateResponse, err := payablesClient.Accounts.Create(ctx, operations.CreateAccountRequest{
+	AccountPrototype: &shared.AccountPrototype{
+    Name: syncforpayables.String("BillPay Debit Account"),
+		FullyQualifiedName: syncforpayables.String("BillPay Debit Account"),
+    FullyQualifiedCategory: syncforpayables.String("Asset.Current"),
+    NominalCode: syncforpayables.String("610"),
+		Currency: syncforpayables.String("USD"),
+    Status: shared.AccountStatusActive.ToPointer(),
+    Type: shared.AccountTypeAsset.ToPointer(),
+		CurrentBalance: 0
+	},
+    CompanyID: companyID,
+    ConnectionID: connectionID,
+})
+```
+</TabItem>
+
+</Tabs>
+
+You can also use the [Get create bank account model](/sync-for-payables-api#/operations/get-create-bankAccounts-model) or [Get create account model](/sync-for-payables-api#/operations/get-create-chartOfAccounts-model) endpoints first to check integration-specific requirements for account creation, or [read more](/using-the-api/push) about creating data with Codat.
+
+### Pre-pay account
+
+Create a bank account with an `accountType` of `Debit` if you need to represent the following payment methods: 
+
+- Automated Clearing House (ACH) or Real-Time Payments (RTP) networks
+- Cheque/check payments
 - Electronic bank transfer
 - BACS (Bankers' Automated Clearing System)
 
-Then you should [create a bank account](/sync-for-payables-api#/operations/create-bank-account) with an `accountType` of `Debit` to represent the account the payments are being made from:
 
-<Tabs>
+### Credit account
 
-<TabItem value="Request URL" label="Request URL">
+Create a bank account with an `accountType` of `Credit` if you are providing a credit facility for the payment, such as:
 
-```http request title="Create Bank Account"
-POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/bankAccounts
-```
-
-</TabItem>
-
-<TabItem value="Request Body" label="Request Body">
-
-```json request title="QuickBooks Example"
-{
-    "accountName": "BillPay Debit Account",
-    "accountType": "Debit",
-    "accountNumber": "123456789",
-    "currency": "USD",
-    "balance": 0,
-    "availableBalance": 0,
-    "modifiedDate": "2023-04-14T09:25:10Z"
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-
-#### Credit account
-
-If you are providing a credit facility for the payment e.g.
-- Commercial Credit Card
-- BNPL (Buy now pay later)
-
-Then you should create a bank account with an `accountType` of `Credit` to represent the account the payments are being made from:
-
-<Tabs>
-
-<TabItem value="Request URL" label="Request URL">
-
-```http request title="Create Credit Account"
-POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/bankAccounts
-```
-
-</TabItem>
-
-<TabItem value="Request Body" label="Request Body">
-
-```json request title="QuickBooks Example"
-{
-    "accountName": "BillPay Credit Card",
-    "accountType": "Credit",
-    "accountNumber": "123456789",
-    "currency": "USD",
-    "balance": 0,
-    "availableBalance": 0,
-    "modifiedDate": "2023-04-14T09:25:10Z"
-}
-```
-
-</TabItem>
-
-</Tabs>
+- Commercial/business credit card
+- BNPL (Buy Now, Pay Later)
 
 ---
 
 ## Read next
 
-- [Payments](/payables/payments) - Reconcile payments to the SMB's accounting software
+- [Reflect and reconcile bill payments](/payables/payments) in the SMB's accounting software

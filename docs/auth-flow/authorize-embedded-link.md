@@ -1,7 +1,7 @@
 ---
 title: "Authorize with Embedded Link"
 sidebar_label: Embedded Link
-description: "Embed our auth flow in your application with our low-code component"
+description: "Swiftly embed our auth flow in your application UI using our low-code component"
 image: "/img/auth-flow/embedded-link-selection.png"
 ---
 
@@ -10,27 +10,9 @@ import TabItem from "@theme/TabItem";
 
 ![](/img/auth-flow/embedded-link-selection.png)
 
-<details>
-<summary><b>What's new</b></summary>
+## Overview
 
-October 2023:
-- **Support for non-modal views** - You can now [embed the component in non-modal views](/auth-flow/authorize-embedded-link#non-modal-styling) with our new `options` prop
-- **Reduced latency after auth** - We now poll every second to check whether the user has authed, meaning connection is confirmed faster.
-- **Bugs**:
-  + Fixed an issue where 'Landing page' settings were not reflected.
-
-June 2023:
-- **Support for non-React JavaScript apps** - Without a dependency on React, you can use Embedded Link with all JavaScript frameworks or even vanilla JavaScript.
-- **Increased display control** - You now need to specify the dimensions of the Embedded Link component, which will expand to fit the given container size. Previously the component used a fixed width and height.
-- **Navigation improvements** - Source types (accounting, commerce, banking, and file upload) can now be connected in any order you choose.
-- **Performance improvements** - Link loads more quickly and can be loaded only when required.
-- **Connection status** - The connection status (success or error) is now shown during the Embedded Link flow. The SMB user can skip errors without interrupting the rest of the Link flow.
-
-</details>
-
-## Embedded Link overview
-
-Embedded Link is a pre-built JavaScript component that neatly sits in your front-end code, and can be deployed in a matter of minutes. Use it to benefit from our extensive experience in building authorization flows melded with best practices, while seamlessly embedding it into your webpage or front-end application.
+Embedded Link is a pre-built JavaScript component that neatly sits in your front-end code and can be deployed in a matter of minutes. Use it to benefit from our extensive experience in building authorization flows melded with best practices, while seamlessly embedding it into your webpage or front-end application.
 
 The component works with all major JavaScript frameworks, including React, and also with vanilla JavaScript. You can choose to implement the component in TypeScript.
 
@@ -38,12 +20,11 @@ We built Embedded Link to be flexible so that you can integrate and initialize i
 
 ## Features
 
-* **Intuitive UI** based on our expertise and learned best practices, ensuring a high-converting auth flow
+* **Intuitive UI** based on our expertise and learned best practices ensures a high-converting auth flow
 * **Authentication** in line with OAuth 2.0 standards
-* **[Customizable](/auth-flow/customize/customize-link) UI** that reflects your [company branding](/auth-flow/customize/branding)
-* **React and non-React** JavaScript compatible
-* **Fast implementation** with a pre-built code component
-* **Dynamic imports** meaning your auth flow will never fall behind our API
+* **Customizable UI** that reflects your [company branding](/auth-flow/customize/branding)
+* **React and non-React** JavaScript compatible pre-built component for fast implementation
+* **Dynamic imports** mean your auth flow will never fall behind our API
 
 :::note Dynamic imports
 
@@ -60,10 +41,19 @@ We've provided a [repo with examples on GitHub](https://github.com/codatio/sdk-l
 
 ## Prerequisites
 
-- **Customized auth flow settings** - If you haven't already done so, customize Link on the <a href="https://app.codat.io/settings/link-settings" target="_blank">**Link settings**</a> page in the Codat Portal. For example, add UI copy, set file upload options, choose to make steps optional, or disable steps. The settings apply to both Embedded Link and Hosted Link.
-- **Your application** - You'll need a JavaScript application to render the component in (e.g. React, Angular). It should take care of creating companies programmatically and retrieving the `companyId` of any company you want to authorize.
+- **Customized auth flow settings**
+  If you haven't already done so, customize Link on the <a href="https://app.codat.io/settings/link-settings" target="_blank">**Link settings**</a> page in the Codat Portal. For example, add UI copy, set file upload options, choose to make steps optional, or disable steps. The settings apply to both Embedded Link and Hosted Link.
+- **Your application**
+  You'll need a JavaScript application to render the component in (e.g. React, Angular). It should take care of creating companies programmatically and retrieving the `companyId` of any company you want to authorize.
 
 ## Get started
+
+:::tip Install the npm package
+
+Take advantage of our [npm package](https://www.npmjs.com/package/@codat/sdk-link-types) so you don't have to manually import and maintain type definitions. You will benefit from it the most if you are using Typescript, so our examples are prepared with that assumption.
+
+`npm install @codat/sdk-link-types`
+:::
 
 <Tabs>
 <TabItem value="react" label="React">
@@ -81,7 +71,7 @@ For an example of the component in action, [see our demo app](https://github.com
   import {
     ConnectionCallbackArgs,
     ErrorCallbackArgs,
-  } from "https://link-sdk.codat.io"
+  } from "@codat/sdk-link-types"
   import { useState } from "react";
   import { CodatLink } from "./components/CodatLink";
 
@@ -120,7 +110,8 @@ For an example of the component in action, [see our demo app](https://github.com
   ```
    
 3. **Conditional steps**
-    - **If you're using TypeScript** extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
+    - **If you're using TypeScript** extend your type declarations with our types by installing the types package - `npm install --save-dev @codat/sdk-link-types`.
+       * If you're not using TypeScript, just delete the type related code in the snippets.
     - **If you're using content security policy (CSP) headers** you'll need to edit these headers:
        * Allow-list Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
        * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
@@ -148,6 +139,10 @@ In the example below, you'll see that we make use of webpack's [magic comments](
 
   "use client";
 
+  import {
+    ConnectionCallbackArgs,
+    ErrorCallbackArgs,
+  } from "@codat/sdk-link-types"
   import { CodatLink } from "./components/CodatLink";
   import Image from "next/image";
   import styles from "./page.module.css";
@@ -183,8 +178,9 @@ In the example below, you'll see that we make use of webpack's [magic comments](
   };
   ```
    
-1. **Conditional steps**
-    - **If you're using TypeScript** extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
+3. **Conditional steps**
+    - **If you're using TypeScript** extend your type declarations with our types by installing the types package - `npm install --save-dev @codat/sdk-link-types`.
+       * If you're not using TypeScript, just delete the type related code in the snippets.
     - **If you're using content security policy (CSP) headers** you'll need to edit these headers:
        * Allow-list Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
        * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
@@ -427,19 +423,11 @@ For an example of the component in action, [see our demo app](https://github.com
 
 </Tabs>
 
-## Options
+## Advanced options
 
-Most auth flow config is currently managed within the Codat Portal. If you haven't already done so, customize Link on the <a href="https://app.codat.io/settings/link-settings" target="_blank">**Link settings**</a> page in the Codat Portal. For example, add UI copy, set file upload options, choose to make steps optional, or disable steps. The settings apply to both Embedded Link and Hosted Link.
+Most of the configuration for the auth flow is currently managed in <a href="https://app.codat.io/settings/link-settings" target="_blank">**Link settings**</a> page in the Codat Portal. 
 
-We have begun to add programmatic control via the new `options` component prop.
-
-### Non-modal styling
-
-As default, the component is designed to be presented in a modal. However, you can override this with a new `nonModal` options setting.
-
-This visually:
-- Hides the close icon
-- Removes the modal-styled border and padding
+If you need more control over the UI based on application-specific logic or want to vary it conditionally, we offer programmatic control via a new `options` property that overrides the Link settings set in the Portal.
 
 ```
 <CodatLink
@@ -448,8 +436,129 @@ This visually:
   onError={onError}
   onClose={onClose}
   onFinish={onFinish}
-  options={{nonModal: true}}
+  options={{
+    nonModal: true ...
+    showLandingPage: true,
+    showSandboxIntegrations: true,
+    theme: {...},
+    sourceTypes: {
+      accounting: {...},
+      banking: {...},
+      commerce: {...},
+    },
+    text: {...},
+  }}
 />
 ```
 
-You can see an [example on GitHub](https://github.com/codatio/sdk-link/tree/main/examples/non-modal).
+:::caution Advanced functionality
+
+As the `options` object overrides the Link settings set in the Portal, this may result in confusion about the source of truth for what users are seeing. Ensure you document and communicate your use of the `options` prop internally.
+:::
+
+The `options` prop is optional and accepts an object containing the following optional properties:
+
+| Property                  | Description                                                                                                                        |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| `nonModal`                | Determines whether Link is initialized with non-modal styling (no border   and no close button).                                   |
+| `showLandingPage`         | Determines whether an extra landing page is displayed to the user at the   start of Link.                                          |
+| `showSandboxIntegrations` | Controls whether integrations that only connect Sandbox data are   displayed for selection.                                        |
+| `theme`                   | Contains options that control the visual appearance of the Link flow.                                                              |
+| `sourceTypes`             | Controls the data source types (Accounting, Commerce, Banking, and Business Documents) the user can connect or upload files for. |
+| `text`                    | Contains options that control what text is displayed to the user. Markdown is supported.                                        |
+
+The object is applied as the `CodatLink` component is mounted and doesn't support reloading. Make sure to modify the options before mounting the component.
+
+### Non-modal styling
+
+By default, the Link component is designed to be presented in a modal. To override this, you can use the `nonModal` options setting. When set to `true`, it will:
+
+- Hide the close icon.
+- Remove the modal-styled border and padding.
+
+You can see an [example of this on GitHub](https://github.com/codatio/sdk-link/tree/main/examples/non-modal).
+
+### Landing page
+
+When `showLandingPage` property is set to `true`, an extra page is displayed to the user at the start of the Link flow. When set to `false`, the user is directed straigt to the navigation page. 
+
+### Sandbox integrations
+
+The `showSandboxIntegrations` property controls whether Sanbox integrations are displayed for selection. This should be set to `true` for test environments and `false` for live environments.
+
+### Theme
+
+Use the `colors` property of the `theme` option to set the hex value for the `primary` color for buttons, links, and loading animations. 
+
+### Source types
+
+The `sourceTypes` option controls the source types the user can connect via the Link flow. Use the `accounting`, `banking`, `commerce`, and `businessDocuments` properties to indicate the desired source type. If you want a source type to be displayed, you must also provide its following properties: 
+- `optional`: when set to `true`, the user can complete the flow without connecting an integration of the specified type or uploading relevant files.
+- `enableIntegrations`: when set to `true`, it enables the user to connect to an integration of the specified type.
+- `enableFileUpload`: when set to `true`, it allows the user to upload relevant documents. You must also enable the relevant file upload integrations in [Other integrations](https://app.codat.io/settings/integrations/other).
+
+### Custom text
+
+Use the `text` property to override text displayed within the Link UI. For example, you can detect the language the user speaks and set the displayed text according to their locale. You can see a [simple example of this on GitHub](https://github.com/codatio/sdk-link/tree/main/examples/locales).
+
+The property accepts Markdown, meaning you can add links, lists, tables, and more to all the text options, excluding `companyName` . You can override the following text options:
+
+| Option                                  |Type and description                                                                                                                                                                                                                                                                                                              |
+|-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `companyName`                          |`string` <br/><br/> Your company name displayed on the final page of the flow before   connecting an integration.|
+| `landing.title`                        |`string` _(accepts Markdown)_ <br/><br/>Landing page title displayed on the first page the user sees. <br/>   Enable the landing page by setting  `showLandingPage` to   `true` or configuring it in [Link settings](https://app.codat.io/settings/link-settings/onboarding).|
+| `landing.subtitle`                     |`string` _(accepts Markdown)_ <br/><br/>Landing page subtitle displayed on the first page the user sees.   <br/> Enable the landing page by setting  `showLandingPage` to   `true` or configuring it in [Link settings](https://app.codat.io/settings/link-settings/onboarding).|
+| `main.title`                           |`string` _(accepts Markdown)_ <br/><br/>Title displayed on the page where the user selects what source types to   connect.|
+| `main.subtitle`                        |`string` _(accepts Markdown)_ <br/><br/>Subtitle displayed on the page where the user selects what source types   to connect.|
+| `accounting.fileUpload.subtitle`       |`string` _(accepts Markdown)_ <br/><br/>Subtitle displayed on the accounting file upload page. <br/> To use   this, enable the accounting file upload by setting the `sourceTypes.accounting.enableFileUpload` option to `true` or by   configuring it in [Other integrations](https://app.codat.io/settings/integrations/other).|
+| `banking.fileUpload.subtitle`          |`string` _(accepts Markdown)_ <br/><br/>Subtitle displayed on the banking file upload page. <br/> To use   this, enable the banking file upload by setting the `sourceTypes.banking.enableFileUpload` option to `true` or by   configuring it in [Other integrations](https://app.codat.io/settings/integrations/other).|
+| `businessDocuments.fileUpload.subtitle`|`string` _(accepts Markdown)_ <br/><br/>Subtitle displayed on the business documents file upload page.   <br/> To use this, enable the business documents file upload by setting the `sourceTypes.businessDocuments.enableFileUpload` option to `true`   or by configuring it in [Other integrations](https://app.codat.io/settings/integrations/other).|
+| `accounting.dataAccess.consent`        |`string` _(accepts Markdown)_ <br/><br/>Text displayed on the final flow page before connecting an accounting   platform, underneath the list of data types. If you want to display a terms   and conditions link, add it here using Markdown.|
+| `accounting.dataAccess.dataTypes`      |`array[string]` _(accepts Markdown)_ <br/><br/>List of requested data types displayed on the final flow page before   connecting an accounting platform.|
+| `banking.dataAccess.consent`           |`string` _(accepts Markdown)_ <br/><br/>Text displayed on the final flow page before connecting a bank account,   underneath the list of data types. If you want to display a terms and   conditions link, add it here using Markdown.|
+| `banking.dataAccess.dataTypes`         |`array[string]` _(accepts Markdown)_ <br/><br/>List of requested data types displayed on the final flow page before   connecting a bank account.|
+| `commerce.dataAccess.consent`          |`string` _(accepts Markdown)_ <br/><br/>Text displayed on the final flow page before connecting a commerce   platform, underneath the list of data types. If you want to display a terms   and conditions link, add it here using Markdown.|
+| `commerce.dataAccess.dataTypes`        |`array[string]` _(accepts Markdown)_ <br/><br/>List of requested data types displayed on the final flow page before   connecting a commerce platform.|
+<details>
+  <summary><b>Learn more about array custom text properties</b></summary>
+
+Properties `accounting.dataAccess.dataTypes`, `banking.dataAccess.dataTypes`, and `commerce.dataAccess.dataTypes` are arrays because they control the bullet points displayed on the data access consent page of the Link flow. 
+
+Each item of the array is rendered as a separate bullet point and details the data types your customer is agreeing to let you access.
+
+For example, if using Javascript, you can set these values as follows: 
+
+```javascript
+// Set when initializing the object
+const text : CodatTextOptions = {
+  "companyName": "Polly's Profiteroles",
+  "accounting.dataAccess.dataTypes": ["Accounts receivable information", "Accounts payable information", "Financial summary information"],
+}
+
+// Or set after initializing the object 
+text["accounting.dataAccess.dataTypes"] = ["Accounts receivable information", "Accounts payable information", "Financial summary information"];
+```
+In the Link flow, this will then be rendered as follows:
+
+![A snippet of Codat's Link flow that reflects the values set in the code example as bullet points](/img/auth-flow/link-sdk-datatypes-array.png)
+</details>
+
+# Changelog
+
+#### November 2023
+- **Options property**: we introduced a new prop that gives you programmatic control over Link settings.
+- **Markdown support**: text fields now accept Markdown, giving you more control over styling and formatting. This is available via the `text` property for Embedded Link only.
+- **@codat/sdk-link-types package released**: our new [NPM package](https://www.npmjs.com/package/@codat/sdk-link-types) means you don't have to manually import and maintain the type definitions.
+
+#### October 2023
+- **Support for non-modal views**: you can now [embed the component in non-modal views](/auth-flow/authorize-embedded-link#non-modal-styling) with our new `options` prop.
+- **Reduced latency after auth**: we now poll every second to check whether the user has authed, meaning connection is confirmed faster.
+- **Bugs**:
+  + Fixed an issue where 'Landing page' settings were not reflected.
+
+#### June 2023
+- **Support for non-React JavaScript apps**: without a dependency on React, you can use Embedded Link with all JavaScript frameworks or even vanilla JavaScript.
+- **Increased display control**: you now need to specify the dimensions of the Embedded Link component, which will expand to fit the given container size. Previously the component used a fixed width and height.
+- **Navigation improvements**: source types (accounting, commerce, banking, and file upload) can now be connected in any order you choose.
+- **Performance improvements**: Link loads quicker and can be loaded only when required.
+- **Connection status**: the connection status (success or error) is now shown during the Embedded Link flow. The SMB user can skip errors without interrupting the rest of the Link flow.

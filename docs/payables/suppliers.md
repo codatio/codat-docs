@@ -1,44 +1,305 @@
 ---
-title: Managing suppliers
-description: "Create and update suppliers using Sync for Payables"
-image: "/img/banners/social/payables.png"
+title: Manage suppliers
+description: "View, create, and update suppliers using Sync for Payables"
 ---
 
-In Sync for Payables, a [supplier](/sync-for-payables-api#/schemas/Supplier) represents a business or sole trader that provides goods or services to a company.
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem"
 
-Suppliers are relevant for the bill pay use case as each bill is associated with a supplier - suppliers also have important information such as addresses and contact details which could be used to notify a supplier once a payment is made.
+## Overview
 
-#### Retrieve a list of suppliers
+In accounts payable, each bill is associated with a [supplier](/sync-for-payables-api#/schemas/Supplier). The supplier represents a business or a sole trader that provides goods or services to your SMB customer. 
 
-You can get a [list of suppliers](/sync-for-payables-api#/operations/list-suppliers) using Sync for Payables:
+Their records also contain key information, such as contact details, that can be used to notify the supplier once a payment is made.
 
-```http request title="List suppliers"
-GET https://api.codat.io/companies/{companyId}/data/suppliers?page=1&pageSize=100
+To pay a bill in Sync for Payables, you can use your customer's existing supplier or create a new one. We have highlighted this alternative sequence of steps in our detailed process diagram below. 
+
+<details>
+<summary><b>Detailed process diagram</b></summary>
+
+```mermaid
+
+  sequenceDiagram
+      participant smb as SMB customer
+      participant app as Your application 
+      participant codat as Codat
+      participant acctg as Accounting platform
+      
+      alt Retrieve suppliers
+        app ->> codat: Requests details of existing suppliers
+        codat ->> acctg: Fetches suppliers
+        acctg -->> codat: Returns suppliers
+        codat ->> app: Returns suppliers
+        app ->> smb: Displays suppliers
+        smb ->> app: Selects supplier
+      else Create supplier
+        smb ->> app: Provides supplier details
+        app ->> codat: Creates supplier
+        codat ->> acctg: Creates supplier record
+      end
 ```
 
-Query parameters can also be used to narrow the list of suppliers e.g.
-- `status=Active` returns only active suppliers
-- `defaultCurrency=USD` returns suppliers that provide goods or services in dollars
-- `supplierName=Acme` returns suppliers with a name that matches the query
+</details>
+
+## Retrieve supplier
+
+Call our [List suppliers](/sync-for-payables-api#/operations/list-suppliers) endpoint to retrieve the full list of your customer's existing suppliers. You can also use [query parameters](/using-the-api/querying) to narrow down the list of results, for example:
+
+- `status=Active` returns only active suppliers.
+- `defaultCurrency=USD` returns suppliers that provide goods or services in dollars.
+- `supplierName=Acme` returns suppliers with a name that matches the query.
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const suppliersResponse = await payablesClient.suppliers.list({
+    companyId: companyId,
+    query: 'status=Active&&defaultCurrency=USD'
+  });
+
+if(suppliersResponse.statusCode != 200){
+  throw new Error("Could not get current suppliers")
+}
+
+console.log(suppliersResponse.suppliers[0].supplierName)
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+suppliers_request = operations.ListSuppliersRequest(
+    company_id=company_id,
+    query='status=Active&&defaultCurrency=USD'
+)
+
+suppliers_response = payables_client.suppliers.list(suppliers_request)
+
+if suppliers_response.status_code != 200:
+  raise Exception('Could not get current suppliers')
+
+print(suppliers_response.suppliers[0].supplier_name)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+
+var suppliersResponse = await payablesClient.Suppliers.ListAsync(new() {
+    CompanyId = companyId,
+    Query = "status=Active&&defaultCurrency=USD"
+});
+
+if(suppliersResponse.StatusCode != 200){
+  throw new Exception("Could not get current suppliers");
+}
+
+Console.WriteLine(suppliersResponse.Suppliers[0].SupplierName);
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+suppliersResponse, err := payablesClient.Suppliers.List(ctx, 
+  operations.ListSuppliersRequest{
+    CompanyID: companyID,
+    Query: "status=Active&&defaultCurrency=USD",
+})
+
+if suppliersResponse.StatusCode == 200 {
+  fmt.Println(suppliersResponse.Suppliers[0].SupplierName)
+}
+```
+
+</TabItem>
+
+</Tabs>
 
 :::tip Supplier balances
-Currently, Sync for Payables does not expose supplier balances on the supplier endpoint, however, you can access these by
-- Aggregating bills by supplier
-- Using the [Aged debtors](/sync-for-payables-api#/operations/get-aged-debtors-report) report
+
+Sync for Payables does not expose supplier balances on the supplier endpoints. Instead, you can:
+- Aggregate bills by supplier
+- Use the [Aged debtors](/sync-for-payables-api#/operations/get-aged-debtors-report) report
 :::
 
-### Creating a new supplier
+## Create supplier
 
-In some cases, a company may do business with a new supplier for the first time, when this happens you should [create the supplier](/sync-for-payables-api#/operations/create-supplier) first before creating a bill against the supplier.
+When your customer's company does business with a new supplier for the first time, you will need to create a supplier before creating a bill against that supplier. Use the [Create supplier](/sync-for-payables-api#/operations/create-supplier) endpoint to do that.
 
-```http request title="Create supplier"
-POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/suppliers
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const supplierCreateResponse = await payablesClient.suppliers.create({
+    supplier: {
+      supplierName: "Kelly's Industrial Supplies",
+      contactName: "Kelly's Industrial Supplies",
+      emailAddress: "sales@kellysupplies.com",
+      status: SupplierStatus.Active,
+    },
+    companyId: companyId,
+    connectionId: connectionId,
+  });
 ```
 
-### Updating an existing supplier
+</TabItem>
 
-If a supplier changes address or business name, you may want to reflect this change in the company's accounting software by [updating the supplier](/sync-for-payables-api#/operations/put-supplier).
+<TabItem value="python" label="Python">
 
-```http request title="Update supplier"
-PUT https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/suppliers/{supplierId}
+```python
+supplier_create_request = operations.CreateSupplierRequest(
+    supplier=shared.Supplier(
+        supplier_name="Kelly's Industrial Supplies",
+        contact_name="Kelly's Industrial Supplies",
+        status=shared.SupplierStatus.ACTIVE,
+    ),
+    company_id=company_id,
+    connection_id=connection_id,
+)
+
+supplier_create_response = payables_client.suppliers.create(req)
 ```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var supplierCreateResponse = await payablesClient.Suppliers.CreateAsync(new() {
+    Supplier = new Supplier() {
+        SupplierName = "Kelly's Industrial Supplies",
+        ContactName = "Kelly's Industrial Supplies",
+        Status = SupplierStatus.Active,
+    },
+    CompanyId = companyId,
+    ConnectionId = connectionId,
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+supplierCreateResponse, err := payablesClient.Suppliers.Create(ctx, operations.CreateSupplierRequest{
+    Supplier: &shared.Supplier{
+        SupplierName: syncforpayables.String("Kelly's Industrial Supplies"),
+        ContactName: syncforpayables.String("Kelly's Industrial Supplies"),
+        Status: shared.SupplierStatusActive,
+    },
+    CompanyID: companyID,
+    ConnectionID: connectionID,
+})
+```
+
+</TabItem>
+
+</Tabs>
+
+## Update supplier
+
+If your customer's existing supplier changes address or business name, you can reflect this change in their accounting software using the [Update supplier](/sync-for-payables-api#/operations/put-supplier) endpoint.
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const supplierUpdateResponse = await payablesClient.suppliers.update({
+    supplier: {
+      supplierName: "Kelly's Industrial Supplies",
+      contactName: "Kelly's Industrial Supplies",
+      emailAddress: "sales@kellysupplies.com",
+      phone: "(877) 492-8687"
+      status: SupplierStatus.Active,
+    },
+    companyId: companyId,
+    connectionId: connectionId,
+    supplierId: supplierCreateResponse.supplier.id
+  });
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+supplier_update_request = operations.UpdateSupplierRequest(
+    supplier=shared.Supplier(
+        supplier_name="Kelly's Industrial Supplies",
+        contact_name="Kelly's Industrial Supplies",
+        phone="(877) 492-8687",
+        status=shared.SupplierStatus.ACTIVE,
+    ),
+    company_id=company_id,
+    connection_id=connection_id,
+    supplier_id=supplier_create_response.supplier.id
+)
+
+supplier_update_response = payables_client.suppliers.update(supplier_update_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var supplierUpdateResponse = await payablesClient.Suppliers.UpdateAsync(new() {
+    Supplier = new Supplier() {
+        SupplierName = "Kelly's Industrial Supplies",
+        ContactName = "Kelly's Industrial Supplies",
+        Phone = "(877) 492-8687",
+        Status = SupplierStatus.Active,
+    },
+    CompanyId = companyId,
+    ConnectionId = connectionId,
+    SupplierId = supplierCreateResponse.Supplier.Id
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+supplierCreateResponse, err := payablesClient.Suppliers.Create(ctx, operations.CreateSupplierRequest{
+    Supplier: &shared.Supplier{
+        SupplierName: syncforpayables.String("Kelly's Industrial Supplies"),
+        ContactName: syncforpayables.String("Kelly's Industrial Supplies"),
+        Phone = syncforpayables.String("(877) 492-8687"),
+        Status: shared.SupplierStatusActive,
+    },
+    CompanyID: companyID,
+    ConnectionID: connectionID,
+    SupplierID = supplierCreateResponse.Supplier.ID
+})
+```
+
+</TabItem>
+
+</Tabs>
+
+:::tip Recap
+
+You have learnt how to view, create, and update your customer's suppliers who provide them with goods and services. 
+
+Next, you can choose to manage your supplier's bills or payment methods prior to paying those bills.
+
+:::
+
+---
+## Read next
+
+* [Manage your customer's bills](/payables/bills)
+* [Manage your customer's payment methods](/payables/mapping)

@@ -24,36 +24,77 @@ Remember to [authenticate](/using-the-api/authentication) when making calls to o
 
 Within Bank Feeds API, a company represents your SMB customer that wishes to export their transactions from your application to their accounting software. 
 
-To create it, use our [Create company](/bank-feeds-api#/operations/create-company) endpoint. It returns a JSON response containing the company `id`. You will use this `id` to establish a connection to an accounting platform. 
+Use the [Create company](/bank-feeds-api#/operations/create-company) endpoint to represent your customer in Codat.
+Make sure to store the company ID as you will use it to establish a connection to an accounting platform. 
 
 <Tabs>
 
-<TabItem value="HTTP" label="HTTP">
+<TabItem value="nodejs" label="TypeScript">
 
-#### Request
+```javascript
+const companyResponse = bankFeedsClient.companies.create({
+    name: companyName,
+});
 
-```json
-POST /companies
-
-{
-    "name": "{CompanyName}"
+if(companyResponse.statusCode == 200){
+  throw new Error("Could not create company")
 }
+
+const companyId = companyResponse.company.id
+console.log(companyId)
 ```
 
-#### Response
+</TabItem>
 
-```json
-{
-    "id": "77921ff9-2491-4dfe-b23b-ff28f3e31e4f",
-    "name": "Sawayn Group",
-    "platform": "",
-    "redirect": "https://link.codat.io/company/77921ff9-2491-4dfe-b23b-ff28f3e31e4f",
-    "dataConnections": [],
-    "created": "2023-09-06T09:13:35.8188152Z"
-}
+<TabItem value="python" label="Python">
+
+```python
+company_request = shared.CompanyRequestBody(
+    name=company_name,
+)
+
+company_response = bank_feeds_client.companies.create(company_request)
+
+if company_response.status_code != 200:
+  raise Exception('Could not create company')
+
+company_id = company_response.company.id
+print(company_id)
 ```
 
-</TabItem >
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var companyResponse = await bankFeedsClient.Companies.CreateAsync(new() {
+    Name = companyName,
+});
+
+if(companyResponse.StatusCode != 200){
+  throw new Exception("Could not create company");
+}
+
+var companyId = companyResponse.Company.Id;
+console.log(companyId)
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+companyResponse, err := bankFeedsClient.Companies.Create(ctx, &shared.CompanyRequestBody{
+  Name: companyName,
+	})
+
+if companyResponse.StatusCode == 200 {
+  companyID := companyResponse.Company.ID
+  fmt.Println("%s", companyID)
+}
+```
+</TabItem>
 
 </Tabs>
 
@@ -66,67 +107,222 @@ In the request body, specify a `platformKey` of the accounting platform you're l
 | Accounting platform | platformKey |
 | ---  | ---  |
 | Quickbooks Online Bankfeeds | `hcws` |
+| Oracle NetSuite | `akxx` |
 | Xero | `gbol` |
 | FreeAgent | `fbrh` |
-| Sage Bank Feeds | `olpr` |
+| Sage bank feeds | `olpr` |
 
 As an example, let's create a QuickBooks Online (QBO) connection. In response, the endpoint returns a `dataConnection` object with a `PendingAuth` status and a `linkUrl`. Direct your customer to the `linkUrl` to initiate our [Link auth flow](/auth-flow/overview) and enable them to authorize this connection.
 
 <Tabs>
 
-<TabItem value="HTTP" label="HTTP">
+<TabItem value="nodejs" label="TypeScript">
 
-#### Request
+```javascript
+const connectionResponse = bankFeedsClient.connections.create({
+    requestBody: {
+      platformKey: "hcws",
+    },
+    companyId: companyResponse.company.id,
+  });
 
-```json
-
-POST /companies/{companyId}/connections
-{
-    "platformKey": "hcws"
-}
-
+console.log(connectionResponse.connection.linkUrl)
 ```
 
-#### Response
+</TabItem>
 
-```json
- {
-  "id": "7baba7cc-4ae0-48fd-a617-98d55a6fc008",
-  "integrationId": "6b113e06-e818-45d7-977b-8e6bb3d01269",
-  "sourceId": "56e6575a-3f1f-4918-b009-f7535555f0d6",
-  "platformName": "QuickBooks Online Bank Feeds",
-  "linkUrl": "https://link-api.codat.io/companies/COMPANY_ID/connections/CONNECTION_ID/start?otp=742271", 
-  "status": "PendingAuth",
-  "created": "2022-09-01T10:21:57.0807447Z",
-  "sourceType": "BankFeed"
-}
+<TabItem value="python" label="Python">
+
+```python
+connection_request = operations.CreateConnectionRequest(
+    request_body=operations.CreateConnectionRequestBody(
+        platform_key='hcws',
+    ),
+    company_id=company_response.company.id,
+)
+
+connection_response = bank_feeds_client.connections.create(connection_request)
+
+console.log(connection_response.connection.link_url)
 ```
-</TabItem >
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var connectionResponse = await bankFeedsClient.Connections.CreateAsync(new() {
+    RequestBody = new CreateConnectionRequestBody() {
+        PlatformKey = "hcws",
+    },
+    CompanyId = companyResponse.Company.Id,
+});
+
+Console.WriteLine(connectionResponse.Connection.LinkUrl)
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+connectionResponse, err := bankFeedsClient.Connections.Create(ctx, operations.CreateConnectionRequest{
+    RequestBody: &operations.CreateConnectionRequestBody{
+        PlatformKey: bankfeeds.String("hcws"),
+    },
+    CompanyID: companyResponse.Company.ID,
+})
+
+fmt.Println(connectionResponse.Connection.LinkUrl)
+```
+</TabItem>
 
 </Tabs>
 
 :::info One-time password for QBO
 
-For QBO, the `linkUrl` contains a one-time password (OTP) that expires after one hour. If the OTP has expired, your customer will receive a `401` error when loading the page. Generate a new OTP by sending a `GET` request:
+For QBO, the `linkUrl` contains a one-time password (OTP) that expires after one hour. If the OTP has expired, your customer will receive a `401` error when loading the page. Generate a new OTP by calling the [Get connection](/bank-feeds-api#/operations/get-connection) endpoint.
+
+<details>
+  <summary><b>View code snippets</b></summary>
+
+<Tabs>
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const connectionOtpResponse = bankFeedsClient.connections.get({
+    companyId: companyResponse.company.id,
+    connectionId: connectionResponse.connection.id,
+  });
+
+console.log(connectionOtpResponse.connection.linkUrl)
 ```
-GET /companies/{companyId}/connections/{connectionId}
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+
+connection_otp_request = operations.GetConnectionRequest(
+    company_id=company_response.company.id,
+    connection_id=connection_response.connection.id,
+)
+
+connection_otp_response = bank_feeds_client.connections.get(connection_otp_request)
+
+console.log(connection_otp_response.connection.link_url)
 ```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var connectionOtpResponse = await bankFeedsClient.Connections.GetAsync(new() {
+    CompanyId = companyResponse.Company.Id,
+    ConnectionId = connectionResponse.Connection.Id,
+});
+
+Console.WriteLine(connectionOtpResponse.Connection.LinkUrl)
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+connectionOtpResponse, err := bankFeedsClient.Connections.Get(ctx, operations.GetConnectionRequest{
+    CompanyID: companyResponse.Company.ID,
+    ConnectionID: connectionResponse.Connection.ID,
+})
+
+fmt.Println(connectionOtpResponse.Connection.LinkUrl)
+```
+</TabItem>
+
+</Tabs>
+
+</details>
+
 :::
 
 ### Deauthorize a connection
 
 If your customer wants to revoke their approval and sever the connection to their accounting package, use the [Unlink connection](/bank-feeds-api#/operations/unlink-connection) endpoint.
 
-```json
-PATCH /companies/:companyId/connections/{connectionId}
- {
- "status": "Unlinked"
- }
+You can [learn more](/auth-flow/optimize/connection-management) about connection management best practices and see how you can provide this functionality in your app's UI. 
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const unlinkResponse = bankFeedsClient.connections.unlink({
+    requestBody: {
+      status: DataConnectionStatus.Unlinked
+    },
+    companyId: companyResponse.company.id,
+    connectionId: connectionResponse.connection.id,
+  });
 ```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+unlink_request = operations.UnlinkConnectionRequest(
+    request_body=operations.UnlinkConnectionUpdateConnection(
+      status=shared.DataConnectionStatus.UNLINKED
+    ),
+    company_id=company_response.company.id,
+    connection_id=connection_response.connection.id,
+)
+
+unlink_response = bank_feeds_client.connections.unlink(req)
+
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var unlinkResponse = await bankFeedsClient.Connections.UnlinkAsync(new() {
+    RequestBody = new UnlinkConnectionUpdateConnection() {
+      Status = DataConnectionStatus.Unlinked
+    },
+    CompanyId = companyResponse.Company.Id,
+    ConnectionId = connectionResponse.Connection.Id,
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+unlinkResponse, err := bankFeedsClient.Connections.Unlink(ctx, operations.UnlinkConnectionRequest{
+    RequestBody: &operations.UnlinkConnectionUpdateConnection{
+      Status: shared.DataConnectionStatusUnlinked
+    },
+    CompanyID: companyResponse.Company.ID,
+    ConnectionID: connectionResponse.Connection.ID,
+})
+```
+</TabItem>
+
+</Tabs>
 
 ## Create a source account
 
 Finally, create a source account using our [Create source account](/bank-feeds-api#/operations/create-source-account) endpoint. It represents the company's actual financial account, savings account or credit card within Codat. We categorize accounts as a credit or a debit account type for standardization. 
+
+If you require several source bank accounts, simply use the same endpoint to create additional accounts for the existing accounting connection. 
 
 As an example, let's create a debit account. If the source account passes validation, you will receive a **synchronous response** with a `200` status code indicating a successful operation.
 
@@ -138,36 +334,83 @@ For bank accounts in GBP, `sortCode` is also a required field.
 
 <Tabs>
 
-<TabItem value="HTTP" label="HTTP">
+<TabItem value="nodejs" label="TypeScript">
 
-#### Request
-
-```json 
-POST /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts
-{
-  "id": "ac-001",
-  "accountName": "Checking Account",
-  "accountType": "Debit",
-  "accountNumber": "12345670",
-  "currency": "GBP",
-  "balance": 4002
-}
+```javascript
+const sourceAccountResponse = bankFeedsClient.sourceAccounts.create({
+    sourceAccount: {
+      id: "ac-001",
+      accountName: "Checking Account",
+      accountType: "Debit",
+      accountNumber: "01120912",
+      currency: "USD",
+      balance: 4002
+    },
+    companyId: companyResponse.company.id,
+    connectionId: connectionResponse.connection.id
+  });
 ```
-#### Response
 
-```json
-{
-  "id": "a3f28138-e2b9-4daa-92e1-5a99fb29ac42",
-  "accountName": "Checking Account",
-  "accountType": "Debit",
-  "accountNumber": "12345670",
-  "currency": "GBP",
-  "balance": 4002.00,
-  "status": "pending",
-  "modifiedDate": "2023-09-06T09:13:40.2266667"
-}   
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+source_account_request = operations.CreateSourceAccountRequest(
+    id="ac-001",
+    accountName="Checking Account",
+    accountType="Debit",
+    accountNumber="01120912",
+    currency="USD",
+    balance=4002
+  ),
+  company_id=company_response.company.id,
+  connection_id=connection_response.connection.id
+)
+
+source_account_response = bank_feeds_client.source_accounts.create(req)
 ```
-</TabItem >
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var sourceAccountResponse = await bankFeedsClient.SourceAccounts.CreateAsync(new() {
+    SourceAccount = new SourceAccount() {
+      Id = "ac-001",
+      AccountName = "Checking Account",
+      AccountType = "Debit",
+      AccountNumber = "01120912",
+      Currency = "USD",
+      Balance = 4002
+    },
+    CompanyId = companyResponse.Company.Id,
+    ConnectionId = connectionResponse.Connection.Id
+});
+
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+sourceAccountResponse, err := bankFeedsClient.SourceAccounts.Create(ctx, operations.CreateSourceAccountRequest{
+    SourceAccount: &shared.SourceAccount{
+      ID: bankfeeds.String("ac-001"),
+      AccountName: bankfeeds.String("Checking Account"),
+      AccountType: bankfeeds.String("Debit"),
+      AccountNumber: bankfeeds.String("01120912"),
+      Currency: bankfeeds.String("USD"),
+      Balance: 4002
+    },
+    CompanyID: companyResponse.Company.ID,
+    ConnectionID: connectionResponse.Connection.ID
+})
+```
+</TabItem>
 
 </Tabs>
 
@@ -183,21 +426,88 @@ You may need to modify a source account before the mapping is finalized. For exa
 
 <Tabs>
 
-<TabItem value="HTTP" label="HTTP">
+<TabItem value="nodejs" label="TypeScript">
 
-```json
-PUT /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts/{accountId}
-
-{
-  "id": "ac-001",
-  "accountName": "Bank of X Checking Account",
-  "accountType": "Debit",
-  "accountNumber": "12345670",
-  "currency": "GBP",
-  "balance": 4002
-}
+```javascript
+const sourceAccountUpdateResponse = bankFeedsClient.sourceAccounts.update({
+  sourceAccount: {
+    id: "ac-001",
+    accountName: "Bank of Dave Checking Account",
+    accountType: "Debit",
+    accountNumber: "01120912",
+    currency: "USD",
+    balance: 4002
+  },
+  accountId: sourceAccountResponse.sourceAccount.id,
+  companyId: companyResponse.company.id,
+  connectionId: connectionResponse.connection.id
+});
 ```
-</TabItem >
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+
+source_account_update_request = operations.UpdateSourceAccountRequest(
+  source_account=shared.SourceAccount(
+    id="ac-001",
+    accountName="Bank of Dave Checking Account",
+    accountType="Debit",
+    accountNumber="01120912",
+    currency="USD",
+    balance=4002
+  ),
+  account_id=source_account_response.source_account.id,
+  company_id=company_response.company.id,
+  connection_id=connection_response.connection.id
+)
+
+res = bank_feeds_client.source_accounts.update(source_account_update_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var sourceAccountUpdateResponse = await sdk.SourceAccounts.UpdateAsync(new() {
+    SourceAccount = new SourceAccount() {
+        Id = "ac-001",
+        AccountName = "Checking Account",
+        AccountType = "Debit",
+        AccountNumber = "01120912",
+        Currency = "USD",
+        Balance = 4002
+    },
+    AccountId = sourceAccountResponse.SourceAccount.Id,
+    CompanyId = companyResponse.Company.Id,
+    ConnectionId = connectionResponse.Connection.Id
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+res, err := bankFeedsClient.SourceAccounts.Update(ctx, operations.UpdateSourceAccountRequest{
+    SourceAccount: &shared.SourceAccount{
+        ID: bankfeeds.String("ac-001"),
+        AccountName: bankfeeds.String("Checking Account"),
+        AccountType: bankfeeds.String("Debit"),
+        AccountNumber: bankfeeds.String("01120912"),
+        Currency: bankfeeds.String("USD"),
+        Balance: 4002
+    },
+    AccountID: sourceAccountResponse.SourceAccount.ID,
+    CompanyID: companyResponse.Company.ID,
+    ConnectionID: connectionResponse.Connection.ID
+})
+```
+</TabItem>
 
 </Tabs>
 
@@ -207,12 +517,55 @@ If your customer decides to close their account, you can also remove it from Cod
 
 <Tabs>
 
-<TabItem value="HTTP" label="HTTP">
+<TabItem value="nodejs" label="TypeScript">
 
-```json
-DELETE /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts/{accountId}
+```javascript
+const sourceAccountDeleteResponse = bankFeedsClient.sourceAccounts.delete({
+  accountId: sourceAccountResponse.sourceAccount.id,
+  companyId: companyResponse.company.id,
+  connectionId: connectionResponse.connection.id
+});
 ```
-</TabItem >
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+source_account_delete_request = operations.DeleteSourceAccountRequest(
+  account_id=source_account_response.source_account.id,
+  company_id=company_response.company.id,
+  connection_id=connection_response.connection.id
+)
+
+res = bank_feeds_client.source_accounts.delete(source_account_delete_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var res = await bankFeedsClient.SourceAccounts.DeleteAsync(new() {
+    AccountId = sourceAccountResponse.SourceAccount.Id,
+    CompanyId = companyResponse.Company.Id,
+    ConnectionId = connectionResponse.Connection.Id
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+res, err := bankFeedsClient.SourceAccounts.Delete(ctx, operations.DeleteSourceAccountRequest{
+    AccountID: sourceAccountResponse.SourceAccount.ID,
+    CompanyID: companyResponse.Company.ID,
+    ConnectionID: connectionResponse.Connection.ID
+})
+```
+</TabItem>
 
 </Tabs>
 

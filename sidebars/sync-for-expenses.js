@@ -15,25 +15,19 @@ module.exports = [
     type: "doc",
     id: "expenses/getting-started",
     label: "Get started",
+  },
+  {
+    type: "doc",
+    id: "expenses/configure-customer",
     customProps: {
       hr: true,
+      section: "Build your solution",
     },
   },
   "expenses/config-and-categorize",
-  {
-    type: "doc",
-    id: "expenses/sync-process/sync-process-explained",
-    label: "The process",
-    customProps: {
-      hr: true,
-      section: "Pushing expenses",
-    },
-  },
   "expenses/sync-process/expense-transactions",
   "expenses/sync-process/syncing-expenses",
   "expenses/sync-process/uploading-receipts",
-  "expenses/sync-process/updating-expenses",
-  "expenses/monitoring-a-sync",
   {
     type: "ref",
     label: "Oracle NetSuite",
@@ -60,15 +54,26 @@ module.exports = [
   },
   {
     type: "doc",
-    id: "expenses/faq",
-    label: "FAQs",
+    id: "expenses/fx-management",
+    label: "Expenses in foreign currency",
     customProps: {
       hr: true,
+      section: "Reference",
     },
   },
   {
     type: "link",
-    href: "/sync-for-expenses-api",
+    label: "FAQs",
+    href: "/expenses/faq",
+  },
+  {
+    type: "link",
+    label: "Supported data types",
+    href: "/expenses/data-types",
+  },
+  {
+    type: "link",
+    href: "/sync-for-expenses-api#",
     label: "API reference",
   },
 ];

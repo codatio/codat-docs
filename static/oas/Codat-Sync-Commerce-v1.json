@@ -784,6 +784,11 @@
         "summary": "Retrieve preferences for text fields on sync flow",
         "description": "To enable retrieval of preferences set for the text fields on Sync Flow.",
         "operationId": "get-config-text-sync-flow",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/locale"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -822,6 +827,11 @@
         "summary": "Update preferences for text fields on sync flow",
         "description": "To enable update of preferences set for the text fields on sync flow.",
         "operationId": "update-config-text-sync-flow",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/locale"
+          }
+        ],
         "requestBody": {
           "description": "",
           "content": {
@@ -1176,7 +1186,7 @@
     "/companies/{companyId}": {
       "put": {
         "summary": "Update company",
-        "description": "﻿Updates both the name and description of the company.",
+        "description": "﻿Use the *Update company* endpoint to update both the name and description of the company. \nIf you use [groups](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Group) to manage a set of companies, use the [Add company](https://docs.codat.io/sync-for-commerce-v1-api#/operations/add-company-to-group) or [Remove company](https://docs.codat.io/sync-for-commerce-v1-api#/operations/remove-company-from-group) endpoints to add or remove a company from a group.\n\nA [company](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
         "operationId": "update-company",
         "parameters": [
           {
@@ -1250,7 +1260,7 @@
             "$ref": "#/components/parameters/companyId"
           }
         ],
-        "description": "﻿\nPermanently deletes a company, its connections and any cached data. This operation is irreversible. If the company ID does not exist an error is returned.",
+        "description": "﻿The *Delete company* endpoint permanently deletes a [company](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Company), its [connections](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Connection) and any cached data. This operation is irreversible.\n\nA [company](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.\n",
         "tags": [
           "Companies"
         ],
@@ -1284,7 +1294,7 @@
       "get": {
         "summary": "Get company",
         "operationId": "get-company",
-        "description": "﻿Returns the company for a valid identifier. If the identifier is for a deleted company, a not found response is returned.",
+        "description": "﻿The *Get company* endpoint returns a single company for a given `companyId`.\n\nA [company](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.\n",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -1302,7 +1312,7 @@
                   "$ref": "#/components/schemas/Company"
                 },
                 "examples": {
-                  "Example": {
+                  "Simple company": {
                     "value": {
                       "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
                       "name": "My First Company",
@@ -1312,6 +1322,23 @@
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18Z",
                       "createdByUserName": "Dan Tzabar"
+                    }
+                  },
+                  "With groups": {
+                    "value": {
+                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "name": "My First Company",
+                      "description": "",
+                      "platform": "",
+                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "dataConnections": [],
+                      "created": "2022-11-10T10:45:18Z",
+                      "createdByUserName": "Dan Tzabar",
+                      "groups": [
+                        {
+                          "id": "f8a6f6ed-9812-4d1e-ba48-4346348403c8"
+                        }
+                      ]
                     }
                   }
                 }
@@ -4421,12 +4448,7 @@
                       "id": "80000002-1674552702",
                       "companyName": "Test Customer 1"
                     },
-                    "salesOrderRefs": [
-                      {
-                        "id": "string",
-                        "dataType": "customers"
-                      }
-                    ],
+                    "salesOrderRefs": [],
                     "issueDate": "2023-04-18T11:09:01.438Z",
                     "dueDate": "2023-05-24T11:09:01.438Z",
                     "modifiedDate": "2023-02-14T11:09:01.438Z",
@@ -4514,8 +4536,8 @@
                     },
                     "salesOrderRefs": [
                       {
-                        "id": "string",
-                        "dataType": "bills"
+                        "id": "SO001",
+                        "dataType": "salesOrders"
                       }
                     ],
                     "issueDate": "2022-03-22T12:58:21.273Z",
@@ -4623,8 +4645,8 @@
                     },
                     "salesOrderRefs": [
                       {
-                        "id": "string",
-                        "dataType": "customers"
+                        "id": "104045",
+                        "dataType": "salesOrders"
                       }
                     ],
                     "issueDate": "2022-04-06T12:58:21.273Z",
@@ -4816,7 +4838,7 @@
                           "recordRefs": [
                             {
                               "id": "80000001-1674553252",
-                              "dataType": "string"
+                              "dataType": "customers"
                             }
                           ]
                         }
@@ -4840,8 +4862,8 @@
                       }
                     ],
                     "recordRef": {
-                      "id": "string",
-                      "dataType": "string"
+                      "id": "80000002-6722155312",
+                      "dataType": "bills"
                     },
                     "metadata": {
                       "isDeleted": true
@@ -13144,12 +13166,35 @@
         "type": "object",
         "allOf": [
           {
-            "type": "object",
             "properties": {
               "id": {
                 "type": "string",
                 "description": "Identifier for the account, unique for the company in the accounting platform."
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/AccountingBankAccount/definitions/bankAccountPrototype"
+          },
+          {
+            "properties": {
+              "metadata": {
+                "$ref": "#/components/schemas/AccountingAccount/allOf/2/properties/metadata"
               },
+              "supplementalData": {
+                "$ref": "#/components/schemas/SupplementalData"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/CommerceOrder/allOf/3"
+          }
+        ],
+        "definitions": {
+          "bankAccountPrototype": {
+            "title": "Bank account prototype",
+            "type": "object",
+            "properties": {
               "accountName": {
                 "type": "string",
                 "nullable": true,
@@ -13212,20 +13257,31 @@
                 "format": "decimal",
                 "nullable": true,
                 "description": "Pre-arranged overdraft limit of the account.\n\nThe value is always positive. For example, an overdraftLimit of `1000` means that the balance of the account can go down to `-1000`."
-              },
-              "metadata": {
-                "$ref": "#/components/schemas/AccountingAccount/allOf/2/properties/metadata"
-              },
-              "supplementalData": {
-                "$ref": "#/components/schemas/SupplementalData"
               }
             }
           },
-          {
-            "$ref": "#/components/schemas/CommerceOrder/allOf/3"
-          }
-        ],
-        "definitions": {
+          "bankAccountCreateResponse": {
+            "title": "Create bank account response",
+            "allOf": [
+              {
+                "properties": {
+                  "data": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/AccountingBankAccount"
+                      },
+                      {
+                        "deprecated": true
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "#/components/schemas/PushOperation"
+              }
+            ]
+          },
           "bankAccountRef": {
             "title": "Bank account reference",
             "type": "object",
@@ -13240,6 +13296,25 @@
               }
             },
             "description": "Links to the Account transactions data type."
+          },
+          "bankAccounts": {
+            "title": "Accounting: Bank accounts",
+            "allOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "results": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/AccountingBankAccount"
+                    }
+                  }
+                }
+              },
+              {
+                "$ref": "#/components/schemas/PagingInfo"
+              }
+            ]
           }
         }
       },
@@ -13512,7 +13587,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/AccountingAccount"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountingAccount"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -13529,7 +13611,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/AccountingCreditNote"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountingCreditNote"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -13546,7 +13635,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/AccountingCustomer"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountingCustomer"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -13563,7 +13659,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/AccountingDirectIncome"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountingDirectIncome"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -13580,7 +13683,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/AccountingInvoice"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountingInvoice"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -13597,7 +13707,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/AccountingJournalEntry"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountingJournalEntry"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -13614,7 +13731,14 @@
             "type": "object",
             "properties": {
               "data": {
-                "$ref": "#/components/schemas/AccountingPayment"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountingPayment"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
               }
             }
           },
@@ -13876,7 +14000,26 @@
                     "$ref": "#/components/schemas/AccountingCreditNote/definitions/creditNoteLineItem/properties/tracking/definitions/billedToType"
                   },
                   "recordRef": {
-                    "$ref": "#/components/schemas/AccountingJournalEntry/allOf/0/properties/recordRef"
+                    "type": "object",
+                    "x-internal": true,
+                    "title": "Record reference",
+                    "description": "Links the current record to the underlying record or data type that created it. \n\nFor example, if a journal entry is generated based on an invoice, this property allows you to connect the journal entry to the underlying invoice in our data model. ",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "'id' of the underlying record or data type."
+                      },
+                      "dataType": {
+                        "type": "string",
+                        "description": "Allowed name of the 'dataType'.",
+                        "examples": [
+                          "journalEntry",
+                          "invoice",
+                          "accountTransaction",
+                          "transfer"
+                        ]
+                      }
+                    }
                   }
                 },
                 "required": [
@@ -14130,9 +14273,7 @@
               },
               "contactRef": {
                 "description": "A customer or supplier associated with the direct income.",
-                "required": [
-                  "id"
-                ],
+                "title": "Contact reference",
                 "type": "object",
                 "properties": {
                   "id": {
@@ -14141,10 +14282,18 @@
                     "description": "Unique identifier for a customer or supplier."
                   },
                   "dataType": {
-                    "$ref": "#/components/schemas/Dataset/properties/dataType",
-                    "nullable": true
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Allowed name of the 'dataType'.",
+                    "enum": [
+                      "customers",
+                      "suppliers"
+                    ]
                   }
-                }
+                },
+                "required": [
+                  "id"
+                ]
               },
               "issueDate": {
                 "$ref": "#/components/schemas/Company/properties/created",
@@ -14366,7 +14515,11 @@
                       "description": "Unique identifier to a record in `dataType`."
                     },
                     "dataType": {
-                      "$ref": "#/components/schemas/Dataset/properties/dataType"
+                      "type": "string",
+                      "description": "The underlying data type associated to the reference `id`.",
+                      "enum": [
+                        "salesOrders"
+                      ]
                     }
                   }
                 }
@@ -14635,7 +14788,6 @@
               "trackingCategoryRefs": {
                 "type": "array",
                 "nullable": true,
-                "deprecated": true,
                 "description": "Reference to the tracking categories to which the line item is linked.",
                 "items": {
                   "$ref": "#/components/schemas/AccountingDirectIncome/definitions/directIncomeLineItem/properties/trackingCategoryRefs/items"
@@ -14728,26 +14880,7 @@
                 }
               },
               "recordRef": {
-                "type": "object",
-                "x-internal": true,
-                "title": "Record reference",
-                "description": "Links the current record to the underlying record or data type that created it. \n\nFor example, if a journal entry is generated based on an invoice, this property allows you to connect the journal entry to the underlying invoice in our data model. ",
-                "properties": {
-                  "id": {
-                    "type": "string",
-                    "description": "'id' of the underlying record or data type."
-                  },
-                  "dataType": {
-                    "type": "string",
-                    "description": "Allowed name of the 'dataType'.",
-                    "examples": [
-                      "journalEntry",
-                      "invoice",
-                      "accountTransaction",
-                      "transfer"
-                    ]
-                  }
-                }
+                "$ref": "#/components/schemas/AccountingJournalEntry/definitions/journalEntryRecordRef"
               },
               "metadata": {
                 "$ref": "#/components/schemas/AccountingAccount/allOf/2/properties/metadata"
@@ -14785,14 +14918,38 @@
               },
               "tracking": {
                 "description": "List of record refs associated with the tracking information for the line (eg to a Tracking Category, or customer etc.)",
+                "title": "Tracking",
                 "type": "object",
                 "properties": {
                   "recordRefs": {
                     "type": "array",
                     "items": {
-                      "$ref": "#/components/schemas/AccountingJournalEntry/allOf/0/properties/recordRef"
+                      "$ref": "#/components/schemas/AccountingJournalEntry/definitions/journalLine/properties/tracking/definitions/trackingRecordRef"
                     },
                     "nullable": true
+                  }
+                },
+                "definitions": {
+                  "trackingRecordRef": {
+                    "type": "object",
+                    "title": "Record reference",
+                    "description": "Links to the customer or tracking category.",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "'id' of the underlying record or data type."
+                      },
+                      "dataType": {
+                        "type": "string",
+                        "description": "Name of underlying data type.",
+                        "enum": [
+                          "customers",
+                          "suppliers",
+                          "trackingCategories"
+                        ],
+                        "example": "trackingCategories"
+                      }
+                    }
                   }
                 }
               }
@@ -14800,6 +14957,35 @@
             "required": [
               "netAmount"
             ]
+          },
+          "journalEntryRecordRef": {
+            "type": "object",
+            "title": "Record reference",
+            "description": "Links a journal entry to the underlying record that created it.",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "'id' of the underlying record or data type."
+              },
+              "dataType": {
+                "type": "string",
+                "description": "Name of underlying data type.",
+                "enum": [
+                  "bankTransactions",
+                  "billCreditNotes",
+                  "billPayments",
+                  "bills",
+                  "creditNotes",
+                  "directCosts",
+                  "directIncomes",
+                  "invoices",
+                  "journalEntries",
+                  "payments",
+                  "transfers"
+                ],
+                "example": "transfers"
+              }
+            }
           }
         }
       },
@@ -14925,7 +15111,7 @@
                 "type": "number",
                 "format": "decimal",
                 "nullable": true,
-                "description": "Rate to convert the total amount of the payment into the base currency for the company at the time of the payment.\n\nCurrency rates in Codat are implemented as the multiple of foreign currency units to each base currency unit.  \n\nIt is not possible to perform the currency conversion with two or more non-base currencies participating in the transaction. For example, if a company's base currency is USD, and it has a bill issued in EUR, then the bill payment must happen in USD or EUR.\n\nWhere the currency rate is provided by the underlying accounting platform, it will be available from Codat with the same precision (up to a maximum of 9 decimal places). \n\nFor accounting platforms which do not provide an explicit currency rate, it is calculated as `baseCurrency / foreignCurrency` and will be returned to 9 decimal places.\n\n## Examples with base currency of GBP\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (GBP) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **USD**          | $20            | 0.781         | £15.62                     |\n| **EUR**          | €20            | 0.885         | £17.70                     |\n| **RUB**          | ₽20            | 0.011         | £0.22                      |\n\n## Examples with base currency of USD\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (USD) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **GBP**          | £20            | 1.277         | $25.54                     |\n| **EUR**          | €20            | 1.134         | $22.68                     |\n| **RUB**          | ₽20            | 0.015         | $0.30                      |"
+                "description": "Rate to convert the total amount of the payment into the base currency for the company at the time of the payment.\n\nCurrency rates in Codat are implemented as the multiple of foreign currency units to each base currency unit.  \n\nIt is not possible to perform the currency conversion with two or more non-base currencies participating in the transaction. For example, if a company's base currency is USD, and it has a bill issued in EUR, then the bill payment must happen in USD or EUR.\n\nWhere the currency rate is provided by the underlying accounting platform, it will be available from Codat with the same precision (up to a maximum of 9 decimal places). \n\nFor accounting platforms which do not provide an explicit currency rate, it is calculated as `baseCurrency / foreignCurrency` and will be returned to 9 decimal places.\n\n## Examples with base currency of GBP\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (GBP) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **USD**          | $20            | 0.781         | £15.62                     |\n| **EUR**          | €20            | 0.885         | £17.70                     |\n| **RUB**          | ₽20            | 0.011         | £0.22                      |\n\n## Examples with base currency of USD\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (USD) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **GBP**          | £20            | 1.277         | $25.54                     |\n| **EUR**          | €20            | 1.134         | $22.68                     |\n| **RUB**          | ₽20            | 0.015         | $0.30                      |\n\n\n### Integration-specific details\n\n| Integration       | Scenario                                        | System behavior                                                                                                                                                      |\n|-------------------|-------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| QuickBooks Online | Transaction currency differs from base currency | If currency rate value is left `null`, a rate of 1 will be used by QBO by default. To override this, include the required currency rate in the expense transaction.  |"
               }
             },
             "required": [
@@ -16711,6 +16897,19 @@
             "items": {
               "$ref": "#/components/schemas/Connection"
             }
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "title": "Group reference",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "$ref": "#/components/schemas/Company/definitions/companyGroupAssignment/properties/groupId/allOf/0"
+                }
+              }
+            },
+            "description": "An array of groups the company has been assigned to."
           }
         },
         "required": [
@@ -16718,6 +16917,27 @@
           "name",
           "redirect"
         ],
+        "definitions": {
+          "companyGroupAssignment": {
+            "title": "Group assignment",
+            "type": "object",
+            "properties": {
+              "groupId": {
+                "allOf": [
+                  {
+                    "type": "string",
+                    "format": "uuid",
+                    "example": "60d2fa12-8a04-11ee-b9d1-0242ac120002",
+                    "description": "Unique identifier for the group."
+                  },
+                  {
+                    "description": "Unique identifier of the group you want to assign the company to."
+                  }
+                ]
+              }
+            }
+          }
+        },
         "examples": [
           {
             "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
@@ -16739,6 +16959,11 @@
                 "lastSync": "2022-10-27T10:22:43.6464237Z",
                 "created": "2022-10-27T09:53:29Z",
                 "sourceType": "Banking"
+              }
+            ],
+            "groups": [
+              {
+                "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
               }
             ]
           }
@@ -16824,18 +17049,7 @@
             "$ref": "#/components/schemas/Branding/properties/sourceId"
           },
           "sourceType": {
-            "title": "Source Type",
-            "x-internal": true,
-            "description": "The type of platform of the connection.",
-            "type": "string",
-            "enum": [
-              "Accounting",
-              "Banking",
-              "Commerce",
-              "Other",
-              "Unknown"
-            ],
-            "example": "Accounting"
+            "$ref": "#/components/schemas/Integration/definitions/sourceType"
           },
           "platformName": {
             "type": "string",
@@ -16921,7 +17135,9 @@
             "enum": [
               "Accounting",
               "Banking",
+              "BankFeed",
               "Commerce",
+              "Expense",
               "Other",
               "Unknown"
             ],
@@ -16975,6 +17191,13 @@
           },
           "description": {
             "$ref": "#/components/schemas/Company/properties/description"
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Company/properties/groups/items"
+            },
+            "description": "Reference to the groups that the company is assigned to."
           }
         },
         "required": [
@@ -17055,6 +17278,7 @@
               "directCosts",
               "directIncomes",
               "invoices",
+              "itemReceipts",
               "items",
               "journalEntries",
               "journals",
@@ -17396,7 +17620,7 @@
             "$ref": "#/components/schemas/Branding/properties/sourceId"
           },
           "sourceType": {
-            "$ref": "#/components/schemas/Connection/properties/sourceType"
+            "$ref": "#/components/schemas/Integration/definitions/sourceType"
           },
           "integrationId": {
             "$ref": "#/components/schemas/Connection/properties/integrationId"
@@ -17427,6 +17651,21 @@
           "enabled"
         ],
         "definitions": {
+          "sourceType": {
+            "title": "Source Type",
+            "description": "The type of platform of the connection.",
+            "type": "string",
+            "enum": [
+              "Accounting",
+              "Banking",
+              "BankFeed",
+              "Commerce",
+              "Expense",
+              "Other",
+              "Unknown"
+            ],
+            "example": "Accounting"
+          },
           "dataTypeFeature": {
             "title": "Data type feature",
             "description": "Describes support for a given datatype and associated operations",
@@ -17856,7 +18095,10 @@
             "example": "50830828-7d39-4367-b0eb-5ddb2de5faa5"
           },
           "dataType": {
-            "$ref": "#/components/schemas/Dataset/properties/dataType"
+            "title": "Data types",
+            "x-internal": true,
+            "type": "string",
+            "description": "The data type you are requesting in a pull operation."
           },
           "status": {
             "type": "string",
@@ -18520,6 +18762,20 @@
           "description": "A unique 4-letter key to represent a platform in each integration. View [accounting](https://docs.codat.io/integrations/accounting/overview#platform-keys), [banking](https://docs.codat.io/integrations/banking/overview#platform-keys), and [commerce](https://docs.codat.io/integrations/commerce/overview#platform-keys) platform keys."
         },
         "description": "A unique 4-letter key to represent a platform in each integration. View [accounting](https://docs.codat.io/integrations/accounting/overview#platform-keys), [banking](https://docs.codat.io/integrations/banking/overview#platform-keys), and [commerce](https://docs.codat.io/integrations/commerce/overview#platform-keys) platform keys."
+      },
+      "locale": {
+        "name": "locale",
+        "in": "query",
+        "required": true,
+        "example": "en-us",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "en-us",
+            "fr-fr"
+          ]
+        },
+        "description": "Localization identifier for English (US) or French."
       }
     },
     "securitySchemes": {

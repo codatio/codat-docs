@@ -5,6 +5,9 @@ description: "Download the Lending API reports to Excel"
 image: "/img/banners/social/lending.png"
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 Our **Excel download reports** will show you what data is available from our API without you writing any code upfront. You can use this to inform testing within your credit models.
 
 ## Feature components
@@ -18,6 +21,8 @@ Our Excel download feature consists of the following component reports:
 - **Enhanced cash flows** provides an output of the categorized bank transactions.
 
 - **Enhanced invoices** provides an output of reconciled invoices.
+
+- **Audit** helps you identify possible irregularities in a company's financial data.
 
 ### Metrics template
 
@@ -34,8 +39,164 @@ Reports in Excel format that are available to download can be generated via the 
 The process to download an Excel report via the API is as follows:
 
 1. [Request](/lending-api#/operations/generate-excel-report) an Excel report for download.
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const response = await lendingClient.excelReports.generate({
+    companyId: companyId,
+    reportType: ExcelReportTypes.EnhancedInvoices
+});
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+request = operations.GenerateExcelReportRequest(
+    company_id=company_id,
+    report_type=shared.ExcelReportTypes.ENHANCED_INVOICES,
+)
+
+response = lending_client.excel_reports.generate(req)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var response = await lendingClient.ExcelReports.GenerateAsync(new() {
+    CompanyId = companyId,
+    ReportType = ExcelReportTypes.EnhancedInvoices,
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+response, err := lendingClient.ExcelReports.Generate(ctx, 
+    operations.GenerateExcelReportRequest{
+        CompanyID: companyID,
+        ReportType: shared.ExcelReportTypesEnhancedInvoices,
+})
+```
+
+</TabItem>
+
+</Tabs>
+
 2. [Check the progress status](/lending-api#/operations/get-excel-report-generation-status) of the latest report requested (optional).
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const response = await lendingClient.excelReports.getStatus({
+    companyId: companyId,
+    reportType: ExcelReportTypes.EnhancedInvoices,
+});
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+request = operations.GetExcelReportGenerationStatusRequest(
+    company_id=company_id,
+    report_type=shared.ExcelReportTypes.ENHANCED_INVOICES,
+)
+
+response = lending_client.excel_reports.get_status(req)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var response = await lendingClient.ExcelReports.GetStatusAsync(new() {
+    CompanyId = companyId,
+    ReportType = ExcelReportTypes.EnhancedInvoices,
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+response, err := lendingClient.ExcelReports.GetStatus(ctx, operations.GetExcelReportGenerationStatusRequest{
+    CompanyID: companyID,
+    ReportType: shared.ExcelReportTypesEnhancedInvoices,
+})
+```
+
+</TabItem>
+
+</Tabs>
+
 3. [Download](/lending-api#/operations/download-excel-report) the latest Excel report.
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const response = await lendingClient.excelReports.download({
+    companyId: companyId,
+    reportType: ExcelReportTypes.EnhancedInvoices,
+});
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+request = operations.DownloadExcelReportRequest(
+    company_id=company_id,
+    report_type=shared.ExcelReportTypes.ENHANCED_INVOICES,
+)
+
+response = lending_client.excel_reports.download(request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var response = await lendingClient.ExcelReports.DownloadAsync(new() {
+    CompanyId = companyId,
+    ReportType = ExcelReportTypes.EnhancedInvoices,
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+response, err := lendingClient.ExcelReports.Download(ctx, operations.DownloadExcelReportRequest{
+    CompanyID: companyID,
+    ReportType: shared.ExcelReportTypesEnhancedInvoices,
+})
+```
+
+</TabItem>
+
+</Tabs>
 
 Only one request will be processed at a time per SMB company and per report type. The generated report is kept in blob storage and gets replaced when a new one is generated.
 

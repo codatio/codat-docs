@@ -2164,12 +2164,6 @@
               },
               "syncType": {
                 "$ref": "#/components/schemas/SyncFailedWebhook/properties/Data/properties/syncType"
-              },
-              "SyncDateRangeStartUtc": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/properties/Data/properties/SyncDateRangeStartUtc"
-              },
-              "SyncDateRangeFinishUtc": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/properties/Data/properties/SyncDateRangeFinishUtc"
               }
             }
           }
@@ -2185,9 +2179,7 @@
             "Message": "Sync 321363b4-efa9-4fbc-b71c-0b58d62f3248 for company 1f9559e7-8368-48c9-bdf4-f158e16b8b85 of type Expense has started.",
             "Data": {
               "syncId": "321363b4-efa9-4fbc-b71c-0b58d62f3248",
-              "syncType": "Expense",
-              "SyncDateRangeStartUtc": "2023-05-03T09:56:17.4357111Z",
-              "SyncDateRangeFinishUtc": "2023-05-03T09:56:18.4357111Z"
+              "syncType": "Expense"
             }
           }
         ]
@@ -2246,14 +2238,6 @@
                 "type": "string",
                 "description": "The type of sync being performed."
               },
-              "SyncDateRangeStartUtc": {
-                "$ref": "#/components/schemas/DataConnection/properties/created",
-                "description": "The start datetime data will be synced from."
-              },
-              "SyncDateRangeFinishUtc": {
-                "$ref": "#/components/schemas/DataConnection/properties/created",
-                "description": "The end datetime data will be synced to."
-              },
               "FailureStage": {
                 "type": "string",
                 "description": "The stage of the job the sync failed."
@@ -2273,8 +2257,6 @@
             "Data": {
               "syncId": "3bead2a1-1b3d-4d90-8077-cddc5ca68b01",
               "syncType": "Expense",
-              "SyncDateRangeStartUtc": "2023-05-03T12:57:58.757Z",
-              "SyncDateRangeFinishUtc": "2023-05-03T12:57:59.757Z",
               "FailureStage": "Pushing"
             }
           }
@@ -2315,12 +2297,6 @@
               },
               "syncType": {
                 "$ref": "#/components/schemas/SyncFailedWebhook/properties/Data/properties/syncType"
-              },
-              "SyncDateRangeStartUtc": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/properties/Data/properties/SyncDateRangeStartUtc"
-              },
-              "SyncDateRangeFinishUtc": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/properties/Data/properties/SyncDateRangeFinishUtc"
               }
             }
           }
@@ -2333,12 +2309,10 @@
             "AlertId": "33a4f8e9-09ae-4334-9b00-7bbe83024672",
             "RuleId": "5c27631d-3b63-4b50-8228-ee502fd113eb",
             "RuleType": "Sync Completed",
-            "Message": "Sync 321363b4-efa9-4fbc-b71c-0b58d62f3248 for company 1f9559e7-8368-48c9-bdf4-f158e16b8b85 of type Expense completed successfully.",
+            "Message": "Sync 321363b4-efa9-4fbc-b71c-0b58d62f3248 for company 1f9559e7-8368-48c9-bdf4-f158e16b8b85 of type Expense completed.",
             "Data": {
               "syncId": "321363b4-efa9-4fbc-b71c-0b58d62f3248",
-              "syncType": "Expense",
-              "SyncDateRangeStartUtc": "2023-05-03T09:56:17.4357111Z",
-              "SyncDateRangeFinishUtc": "2023-05-03T09:56:18.4357111Z"
+              "syncType": "Expense"
             }
           }
         ]

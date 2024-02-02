@@ -878,7 +878,8 @@ func main() {
 </TabItem>
 
 </Tabs>
-  
+
+
 ## Queries that won't work
 
 Although you can query properties of objects, you can't query arrays.  

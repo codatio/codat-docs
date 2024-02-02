@@ -15,12 +15,12 @@ The following page describes the status codes and standard error responses used 
 | 202 	| **Accepted** (pending) 	|
 | 400 	| **Bad Request:** The server can't process the request because of an apparent client-side error. 	|
 | 401 	| **Unauthorized:** The supplied Codat API key is incorrect. 	|
-| 402 	| **Payment Required:** An account limit has been reached. The type of account limit is described in the `error` property:  <br/>- `Company limit exceeded`: You have exceeded the 50-company limit that applies to a Free plan. We recommend that you delete any companies you no longer need and retry the request.  <br/>- `SyncSettingsValidationException: Sync schedule not allowed`: You have requested an _hourly_ sync schedule; this functionality is not included in the Free plan.  <br/>- `Payment Required`: Your Free account is older than 365 days and has expired. Please contact our [solutions team](mailto:solutions@codat.io) to upgrade your plan.  <br/>For example responses, see [Example account limit errors](doc:status-codes#example-account-limit-errors). 	|
-| 403 	| **Forbidden:** This error is returned in the following scenarios:  <br/>You're using an outdated API key or a key not associated with that resource.<br/>- The requested endpoint is for administrators only.  <br/>- A downstream endpoint can't be accessed. 	|
+| 402 	| **Payment Required:** An account limit has been reached. The type of account limit is described in the `error` property:  <br/>- `Company limit exceeded`: You have exceeded the 50-company limit that applies to a Free trial. We recommend that you delete any companies you no longer need and retry the request.  <br/>- `SyncSettingsValidationException: Sync schedule not allowed`: You have requested an _hourly_ sync schedule; this functionality is not included in the Free trial.  <br/>- `Payment Required`: Your Free account is older than 365 days and has expired. Please contact our [solutions team](mailto:solutions@codat.io) to upgrade your plan.  <br/>For example responses, see [Example account limit errors](doc:status-codes#example-account-limit-errors). 	|
+| 403 	| **Forbidden:** This error is returned in the following scenarios:  <br/>You're using an outdated API key or a key not associated with that resource. <br/>- A downstream endpoint can't be accessed. <br/>- You're attempting to access an endpoint you are not authorized for. 	|
 | 404 	| **Not Found:** This error is returned in the following scenarios:  <br/>- The requested resource could not be found.  <br/>- The data type is not supported by the underlying platform.  <br/>    In this case, the error message is: "Datatype [name] not supported by platform(s) [name]". 	|
 | 405 	| **Method Not Allowed:** You are attempting to use an unauthorized method. 	|
-| 409 	| **Conflict:** The resource is not ready.  <br/>If syncing a data set, this could mean that either:  <br/>- The data set has not been requested.  <br/>- The syncing of data set has not been completed. 	|
-| 429 	| **Too Many Requests:** You have made too many requests in a given amount of time; please retry later. 	|
+| 409 	| **Conflict:** The resource is not ready.  <br/>If syncing a data set, this could mean that either:  <br/>- The data set has not been requested.  <br/>- The syncing of data set has not been completed. <br/>- The request exceeds the permitted number of values (e.g. creates more than 10 API keys).	|
+| 429 	| **Too Many Requests:** You have made too many requests in a given amount of time; please retry later. <br/> Review our [rate limits](/using-the-api/rate-limits) for full details of exceeded requests.	|
 | 500 	| **Internal Server Error:** There is a problem with our server. Please try again later. 	|
 | 503 	| **Service Unavailable:** The Codat API is temporarily offline for maintenance. Please try again later. 	|
 
@@ -30,7 +30,7 @@ When an API request causes an account limit to be exceeded, you'll receive a 402
 
 ### 50-company limit
 
-Error response from [POST /companies](/platform-api#/operations/create-company) when you have exceeded the 50-company limit that applies to the Free plan.
+Error response from [POST /companies](/platform-api#/operations/create-company) when you have exceeded the 50-company limit that applies to the Free trial.
 
 For example:
 
@@ -90,7 +90,7 @@ The content of an error response includes a more detailed error message and a `c
 
 Status codes for push operations created in the Codat API might be different from the status codes returned in the responses from the service providers.
 
-When a push operation is created in the API, some service providers may use a `202 Accepted` code, which implies that the request has been accepted for processing, but the processing has not completed. However, the push API may return a 200 Success code for the push operation successfully created in the Codat API.
+When a push operation is created in the API, some service providers may use a `202 Accepted` code, which implies that the request has been accepted for processing, but the processing has not completed. However, the push API may return a `200 Success code` for the push operation successfully created in the Codat API.
 
 :::tip Recap
 You've learned about error codes you might encounter while using the API.
