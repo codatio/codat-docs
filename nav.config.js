@@ -94,8 +94,9 @@ module.exports = {
       position: "left",
       items: [
         {
-          href: "/support/get-help",
-          label: "Get help"
+          to: "support/get-help",
+          label: "Get help",
+          activeBasePage: "support",
         },
         {
           href: "https://status.codat.io/",
