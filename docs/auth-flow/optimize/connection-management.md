@@ -1,12 +1,12 @@
 ---
 title: "Connection management"
-description: "Review our guidance on the best practice of providing your clients with control over their existing connections"
+description: "Increase trust and product adoption and achieve compliance by putting your customers in control of their data"
 hide_table_of_contents: true
 ---
 
 Your customer's journey with us starts when they authorize your access to their data using our auth flow. We then complete the connection to their accounting, banking, or commerce platform. 
 
-Going forward, your customer should have control over the data they've given you the permission to access. This is key from a regulatory perspective and builds trust between you and your customer. 
+Going forward, your customer must have control over the data they've given you the permission to access. This is key from a regulatory perspective and builds trust between you and your customer. 
 
 To achieve that, provide them with a user interface that lets them manage their ongoing data connections. It could look similar to this:
 
@@ -14,7 +14,7 @@ To achieve that, provide them with a user interface that lets them manage their 
 
 :::tip Codat's connection management component
 
-Codat is releasing a low-code embeddable UI component for connection management. Please let us know [here](https://forms.gle/d1zuh2iHBLJCNCsj9) if you are interested in using it.
+Codat is releasing a low-code embeddable UI component for connection management. Please [let us know](https://forms.gle/d1zuh2iHBLJCNCsj9) if you are interested in using it.
 
 :::
 
