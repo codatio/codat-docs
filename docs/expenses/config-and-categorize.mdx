@@ -1,0 +1,834 @@
+---
+title: "Map customer expenses"
+description: Map accounts, suppliers, and customers to create expenses using the Sync for Expenses product
+sidebar_label: Map expenses
+tags: [syncforexpense, mappingOptions, Config]
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem"
+
+Once your SMB user has authorized a connection to their accounting platform and you have created a data connection, you are ready to create expense configuration for their company. Ask your customer for the default bank account, customer, and supplier to be used with their expenses. 
+
+You also need to provide them with an opportunity (via your application's user interface) to choose the default accounts, tracking categories, and tax rates that their expenses will be mapped to. 
+
+## Create configuration
+
+Use our [Set company configuration](/sync-for-expenses-api#/operations/set-company-configuration) to set up how your customers' expenses will be pushed. You can check the configuration anytime to confirm or display the company's configuration using the [Get company configuration](/sync-for-expenses-api#/operations/get-company-configuration) endpoint.
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const configurationSetResponse = await expensesClient.configuration.set({
+    companyConfiguration: {
+      bankAccount: {
+        id: selected.bankAccountId,
+      },
+      customer: {
+        id: selected.customerId
+      },
+      supplier: {
+        id: selected.supplierId
+      },
+    },
+    companyId: companyResponse.company.id,
+  });
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+configuration_set_request = operations.SetCompanyConfigurationRequest(
+    company_configuration=shared.CompanyConfiguration(
+        bank_account=shared.BankAccount(
+            id=selected.bank_account_id,
+        ),
+        customer=shared.CustomerDetails(
+            id=selected.customer_id
+        ),
+        supplier=shared.SupplierDetails(
+            id=selected.supplier_id
+        ),
+    ),
+    company_id=company_response.company.id,
+)
+
+configuration_set_response = expenses_client.configuration.set(configuration_set_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var configurationResponse = await expensesClient.Configuration.SetAsync(new() {
+    CompanyConfiguration = new CompanyConfiguration() {
+        BankAccount = new BankAccount() {
+            Id = selected.BankAccountId,
+        },
+        Customer = new CustomerDetails() {
+            Id = selected.CustomerId,
+        },
+        Supplier = new SupplierDetails() {
+            Id = selected.SupplierId,
+        },
+    },
+    CompanyId = companyResponse.Company.Id,
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+configurationResponse, err := expensesClient.Configuration.Set(ctx, 
+  operations.SetCompanyConfigurationRequest{
+    CompanyConfiguration: &shared.CompanyConfiguration{
+        BankAccount: shared.BankAccount{
+            ID: selected.BankAccountID,
+        },
+        Customer: shared.CustomerDetails{
+            ID: selected.CustomerID,
+        },
+        Supplier: shared.SupplierDetails{
+            ID: selected.SupplierID,
+        },
+    },
+    CompanyID: companyResponse.Company.ID,
+})
+```
+</TabItem>
+
+<TabItem value="java" label="Java">
+
+```java
+SetCompanyConfigurationRequest configurationRequest = SetCompanyConfigurationRequest.builder()
+    .companyId(connectionResponse.connection().get().id)
+    .companyConfiguration(CompanyConfiguration.builder()
+        .bankAccount(BankAccount.builder()
+                .id(selected.bankAccountId)
+                .build())
+        .customer(CustomerDetails.builder()
+                .id(selected.customerId)
+                .build())
+        .supplier(SupplierDetails.builder()
+                .id(selected.supplierId)
+                .build())
+        .build())
+    .build();
+
+SetCompanyConfigurationResponse configurationResponse = expensesClient.configuration()
+    .setCompanyConfiguration()
+    .request(configurationRequest)
+    .call();
+```
+</TabItem>
+
+</Tabs>
+
+### Bank account
+
+A bank account (`bankAccount.id`) is required to show where purchases have been made from. This can either a credit or debit account. You can choose to create a new account or retrieve a list of existing accounts from your customer's accounting software. 
+
+* To create a new bank account, use the [Create bank account](/sync-for-expenses-api#/operations/create-account) endpoint. You should trigger a data refresh if a new bank account has been created prior to syncing transactions. 
+
+* Use the [List accounts](/accounting-api#/operations/get-account) endpoint to fetch a list of your customer's existing accounts from their accounting software and display these to them.
+  You can also use [query parameters](/using-the-api/querying) to narrow down the list of results, for example:
+    - `query=metadata.isDeleted=false&&isBankAccount=true` returns existing bank accounts. 
+    -  `query=metadata.isDeleted=false&&isBankAccount=true&&type=liability` returns existing liability bank accounts, which are used for credit cards.
+
+### Supplier
+
+A supplier (`supplier.id`) is required so that the relevant spending can be associated with that that supplier record. You can choose to create a new supplier or retrieve a list of existing suppliers from your customer's accounting software. 
+
+
+##### To create a new supplier
+Use the [Create supplier](/sync-for-expenses-api#/operations/create-supplier) endpoint. 
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const supplierCreateResponse = await expensesClient.suppliers.create({
+    supplier: {
+      supplierName: "Kelly's Industrial Supplies",
+      contactName: "Kelly's Industrial Supplies",
+      emailAddress: "sales@kellysupplies.com",
+      status: SupplierStatus.Active,
+    },
+    companyId: companyResponse.company.id,
+    connectionId: connectionResponse.connection.id,
+  });
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+supplier_create_request = operations.CreateSupplierRequest(
+    supplier=shared.Supplier(
+        supplier_name="Kelly's Industrial Supplies",
+        contact_name="Kelly's Industrial Supplies",
+        status=shared.SupplierStatus.ACTIVE,
+    ),
+    company_id=company_response.company.id,
+    connection_id=connection_response.connection.id,
+)
+
+supplier_create_response = expenses_client.suppliers.create(req)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var supplierCreateResponse = await expensesClient.Suppliers.CreateAsync(new() {
+    Supplier = new Supplier() {
+        SupplierName = "Kelly's Industrial Supplies",
+        ContactName = "Kelly's Industrial Supplies",
+        Status = SupplierStatus.Active,
+    },
+    CompanyId = companyResponse.Company.Id,
+    ConnectionId = connectionResponse.Connection.Id,
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+supplierCreateResponse, err := expensesClient.Suppliers.Create(ctx, operations.CreateSupplierRequest{
+    Supplier: &shared.Supplier{
+        SupplierName: syncforexpenses.String("Kelly's Industrial Supplies"),
+        ContactName: syncforexpenses.String("Kelly's Industrial Supplies"),
+        Status: shared.SupplierStatusActive,
+    },
+    CompanyID: companyResponse.Company.ID,
+    ConnectionID: connectionResponse.Connection.ID,
+})
+```
+
+</TabItem>
+
+<TabItem value="java" label="Java">
+
+```java
+CreateSupplierRequest supplierCreateRequest = CreateSupplierRequest.builder()
+    .companyId(companyResponse.company().get().id)
+    .connectionId(connectionResponse.connection().get().id)
+    .supplier(Supplier.builder()
+        .supplierName("Kelly's Industrial Supplies")
+        .contactName("Kelly's Industrial Supplies")
+        .status(SupplierStatus.ACTIVE)
+        .build())
+    .build();
+
+CreateSupplierResponse supplierCreateResponse = expensesClient.suppliers().create()
+    .request(supplierCreateRequest)
+    .call();
+```
+
+</TabItem>
+
+</Tabs>
+
+##### To select an existing supplier 
+Use the [List suppliers](/sync-for-expenses-api#/operations/list-suppliers) endpoint to fetch a list of your customer's existing suppliers from their accounting software and display these to them.
+You can also use [query parameters](/using-the-api/querying) to narrow down the list of results. For example, `query=metadata.isDeleted=false&&supplierName=supplierName` returns existing suppliers that match the specified name.
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const suppliersResponse = await expensesClient.suppliers.list({
+    companyId: companyResponse.company.Id,
+    query: 'metadata.isDeleted=false&&supplierName=' + supplierName
+  });
+
+if(suppliersResponse.statusCode != 200){
+  throw new Error("Could not get current suppliers")
+}
+
+console.log(suppliersResponse.suppliers[0].supplierName)
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+suppliers_request = operations.ListSuppliersRequest(
+    company_id=company_response.company.id,
+    query='metadata.isDeleted=false&&supplierName=' + supplier_name
+)
+
+suppliers_response = expenses_client.suppliers.list(suppliers_request)
+
+if suppliers_response.status_code != 200:
+  raise Exception('Could not get current suppliers')
+
+print(suppliers_response.suppliers[0].supplier_name)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+
+var suppliersResponse = await expensesClient.Suppliers.ListAsync(new() {
+    CompanyId = companyResponse.Company.Id,
+    Query = "metadata.isDeleted=false&&supplierName=" + supplierName
+});
+
+if(suppliersResponse.StatusCode != 200){
+  throw new Exception("Could not get current suppliers");
+}
+
+Console.WriteLine(suppliersResponse.Suppliers[0].SupplierName);
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+suppliersResponse, err := expensesClient.Suppliers.List(ctx, 
+  operations.ListSuppliersRequest{
+    CompanyID: companyResponse.Company.ID,
+    Query: fmt.Sprintf("metadata.isDeleted=false&&supplierName=%s", supplierName)
+})
+
+if suppliersResponse.StatusCode == 200 {
+  fmt.Println(suppliersResponse.Suppliers[0].SupplierName)
+}
+```
+
+</TabItem>
+
+<TabItem value="java" label="Java">
+
+```java
+ListSuppliersRequest customersRequest = ListSuppliersRequest.builder()
+    .companyId(companyResponse.company().get().id)
+    .query("metadata.isDeleted=false&&supplierName=" + supplierName)
+    .build();
+
+ListSuppliersResponse customersResponse = expensesClient.suppliers().list()
+    .request(customersRequest)
+    .call();
+```
+
+</TabItem>
+
+</Tabs>
+
+:::info Supplier currency considerations
+
+The currency associated with the supplier must match the currency associated with the relevant spend. Codat validates the match for suppliers with a single set currency, but not for suppliers that work with multiple currencies.
+
+:::
+
+### Customer
+
+Choose the customer (`customer.id`) that any income-related activities, such as cashback, should be associated with. You can create a new supplier or retrieve a list of existing suppliers from your customer's accounting software. 
+
+##### To create a new customer
+
+Use the [Create customer](/sync-for-expenses-api#/operations/create-customer) endpoint. 
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const customerCreateResponse = await expensesClient.customers.create({
+    customer: {
+      customerName: "Greggs",
+      contactName: "Greggs",
+      status: CustomerStatus.Active,
+    },
+    companyId: companyResponse.company.id,
+    connectionId: connectionResponse.connection.id,
+  });
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+customer_create_request = operations.CreateCustomerRequest(
+    customer=shared.Customer(
+        customer_name="Greggs",
+        contact_name="Greggs",
+        status=shared.CustomerStatus.ACTIVE,
+    ),
+    company_id=company_response.company.id,
+    connection_id=connection_response.connection.id,
+)
+
+customer_create_response = expenses_client.customers.create(req)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var customerCreateResponse = await expensesClient.Customers.CreateAsync(new() {
+    Customer = new Customer() {
+        CustomerName = "Greggs",
+        ContactName = "Greggs",
+        Status = CustomerStatus.Active,
+    },
+    CompanyId = companyResponse.Company.Id,
+    ConnectionId = connectionResponse.Connection.Id,
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+customerCreateResponse, err := expensesClient.Customers.Create(ctx, operations.CreateCustomerRequest{
+    Customer: &shared.Customer{
+        CustomerName: syncforexpenses.String("Greggs"),
+        ContactName: syncforexpenses.String("Greggs"),
+        Status: shared.CustomerStatusActive,
+    },
+    CompanyID: companyResponse.Company.ID,
+    ConnectionID: connectionResponse.Connection.ID,
+})
+```
+
+</TabItem>
+
+<TabItem value="java" label="Java">
+
+```java
+CreateCustomerRequest customerCreateRequest = CreateCustomerRequest.builder()
+    .companyId(companyResponse.company().get().id)
+    .connectionId(connectionResponse.connection().get().id)
+    .customer(Customer.builder()
+        .customerName("Greggs")
+        .contactName("Greggs")
+        .status(CustomerStatus.ACTIVE)
+        .build())
+    .build();
+
+CreateCustomerResponse customerCreateResponse = expensesClient.customers().create()
+    .request(customerCreateRequest)
+    .call();
+```
+
+</TabItem>
+
+</Tabs>
+
+##### To select an existing customer 
+
+Use the [List customers](/sync-for-expenses-api#/operations/list-customers) endpoint to fetch a list of your SMB's existing customers from their accounting software and display these to them.
+You can also use [query parameters](/using-the-api/querying) to narrow down the list of results. For example, `query=metadata.isDeleted=false&&customerName=name` returns existing customers that match the specified name.
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const customersResponse = await expensesClient.customers.list({
+    companyId: companyResponse.company.Id,
+    query: 'metadata.isDeleted=false&&customerName=' + customerName
+  });
+
+if(customersResponse.statusCode != 200){
+  throw new Error("Could not get current customers")
+}
+
+console.log(customersResponse.customers[0].customerName)
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+customers_request = operations.ListCustomersRequest(
+    company_id=companyResponse.company.id,
+    query='metadata.isDeleted=false&&customerName=' + customer_name
+)
+
+customers_response = expenses_client.customers.list(customers_request)
+
+if customers_response.status_code != 200:
+  raise Exception('Could not get current customers')
+
+print(customers_response.customers[0].customer_name)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+
+var customersResponse = await expensesClient.Customers.ListAsync(new() {
+    CompanyId = companyResponse.Company.Id,
+    Query = "metadata.isDeleted=false&&customerName=" + customerName
+});
+
+if(customersResponse.StatusCode != 200){
+  throw new Exception("Could not get current customers");
+}
+
+Console.WriteLine(customersResponse.Customers[0].CustomerName);
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+customersResponse, err := expensesClient.Customers.List(ctx, 
+  operations.ListCustomersRequest{
+    CompanyID: companyResponse.Company.ID,
+    Query: fmt.Sprintf("metadata.isDeleted=false&&customerName=%s", customerName)
+})
+
+if customersResponse.StatusCode == 200 {
+  fmt.Println(customersResponse.Customers[0].CustomerName)
+}
+```
+
+</TabItem>
+
+<TabItem value="java" label="Java">
+
+```java
+ListCustomersRequest customersRequest = ListCustomersRequest.builder()
+    .companyId(companyResponse.company().get().id)
+    .query("metadata.isDeleted=false&&customerName=" + customerName)
+    .build();
+
+ListCustomersResponse customersResponse = expensesClient.customers().list()
+    .request(customersRequest)
+    .call();
+```
+
+</TabItem>
+
+</Tabs>
+
+
+### Supplier and customer handling
+
+In some scenarios, different accounting platforms assign customers and suppliers to a transaction based on the expense's [transaction types](/expenses/sync-process/expense-transactions#transaction-types): 
+
+<table>
+  <thead></thead>
+  <tbody>
+    <tr>
+      <td style={{ textAlign: 'center' }} colspan="6"><b>Supported platforms</b></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td><b>Xero</b></td>
+      <td><b>QBO</b></td>
+      <td><b>Netsuite</b></td>
+      <td><b>Microsoft Dynamics</b></td>
+    </tr>
+    <tr>
+      <td rowspan="8"><i>Transaction types</i></td>
+      <td>Payments</td>
+      <td>Supplier</td>
+      <td>Supplier</td>
+      <td>Supplier</td>
+      <td rowspan="8">Supplier is not associated with expense transactions due to a Dynamics platform limitation.</td>
+    </tr>
+    <tr>
+      <td>Refund</td>
+      <td>Customer</td>
+      <td>Supplier</td>
+      <td>Supplier</td>
+    </tr>
+    <tr>
+      <td>Rewards</td>
+      <td>Customer</td>
+      <td>Supplier</td>
+      <td>NA</td>
+    </tr>
+    <tr>
+      <td>Chargeback</td>
+      <td>Customer</td>
+      <td>Supplier</td>
+      <td>NA</td>
+    </tr>
+    <tr>
+      <td>Transfer in</td>
+      <td>Customer</td>
+      <td>Supplier</td>
+      <td>NA</td>
+    </tr>
+    <tr>
+      <td>Transfer out</td>
+      <td>Supplier</td>
+      <td>Supplier</td>
+      <td>NA</td>
+    </tr>
+    <tr>
+      <td>Adjustment in</td>
+      <td>If the expense account is a bank account, then supplier is used. If not, customer is used.</td>
+      <td>Customer</td>
+      <td>NA</td>
+    </tr>
+    <tr>
+      <td>Adjustment out</td>
+      <td>Supplier</td>
+      <td>Customer</td>
+      <td>NA</td>
+    </tr>
+  </tbody>
+</table>
+
+### Override settings
+
+Your customer would have previous set the default suppliers and bank accounts that will be associated with expense transactions at the [configuration level](/expenses/config-and-categorize#create-configuration).
+
+You should also enable your customer to override the default settings at the [transaction level](/sync-for-expenses-api#/operations/create-expense-transaction#request-body) when creating an item of spend. Setting these at the transaction level means you can sync a more accurate representation of who or where the spend should be associated with in the accounting platform. 
+
+If no override is set at the transaction level, the spend item will be associated with the supplier or bank account configured for the company.
+
+:::caution Overriding customer settings
+
+This functionality is not supported for customers.
+
+:::
+
+``` http title="Bank Account override on the expense transaction"
+      "bankAccountRef":{
+          "id":"08ca1f02-0374-11ed-b939-0242ac120002",
+```
+``` http title="Supplier override on the expense transaction"
+     "contactRef":{
+          "id":"08ca1f02-0374-11ed-b939-0242ac120002",
+          "type": "Supplier"
+```  
+
+## Mapping options
+
+Every SMB customer has its own preference on how an individual expense should be represented in their accounting software. You can retrieve these options using the [Mapping options](/sync-for-expenses-api#/operations/get-mapping-options) endpoint. 
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const mappingOptions = await expensesClient.configuration.getMappingOptions({
+  companyId: companyResponse.company.id,
+});
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+mapping_options_request = operations.GetMappingOptionsRequest(
+    company_id=company_response.company.id,
+)
+
+mapping_options = expenses_client.configuration.get_mapping_options(mapping_options_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var mappingOptions = await expensesClient.Configuration.GetMappingOptionsAsync(new() {
+    CompanyId = companyResponse.Company.Id,
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+mappingOptions, err := expensesClient.Configuration.GetMappingOptions(ctx,
+  operations.GetMappingOptionsRequest{
+    CompanyID: companyResponse.Company.ID,
+})
+```
+
+</TabItem>
+
+<TabItem value="java" label="Java">
+
+```java
+GetMappingOptionsResponse mappingOptions = expensesClient.configuration().getMappingOptions()
+  .request(GetMappingOptionsRequest.builder()
+    .companyId(companyResponse.company().get().id)
+    .build())
+  .call();
+```
+
+</TabItem>
+
+</Tabs>
+
+The response can then be cached and displayed to the customer when they are finalizing their expenses. You will normally see the name of the connected expense provider in the `expenseProvider` property.
+
+<details>
+<summary><b>Sample mappingOptions response</b></summary>
+
+```json
+{
+    "expenseProvider": "Partner Expense",
+    "accounts": [
+        {
+            "id": "c5194f9d-b443-4630-b2d4-339bd57d313c",
+            "name": "Interest Earned",
+            "currency": "GBP",
+            "accountType": "Asset",
+            "validTransactionTypes": [
+                "Reward",
+                "Adjustment",
+                "Transfer"
+            ]
+        }
+        ...
+    ],
+    "trackingCategories": [
+        {
+            "id": "dba3d4da-f9ed-4eee-8e0b-452d11fdb1fa",
+            "modifiedDate": "2022-08-03T12:04:40.067Z",
+            "name": "Sales and Marketing",
+            "hasChildren": false,
+            "parentId": "DEPARTMENT"
+        }
+        ...
+    ],
+    "taxRates": [
+        {
+            "id": "INPUT2",
+            "name": "20% (VAT on Expenses)",
+            "code": "INPUT2",
+            "effectiveTaxRate": 20,
+            "totalTaxRate": 20
+        }
+        ...
+    ]
+}
+```
+
+</details> 
+
+### Accounts
+
+The `accounts` array includes the [general ledger accounts](/sync-for-expenses-api#/schemas/Account) which have been pulled from the SMB customer's accounting software. 
+
+* The `name` is what they labelled the account in the software, so you can display this to your end user.
+* `validTransactionTypes` tells you which transaction types are accepted by the account. This prevents validation issues, such as a customer accidentally trying to reconcile an expense to an income account.
+
+You can also create additional accounts with our [Create account](/sync-for-expenses-api#/operations/create-account) endpoint, for example if a company has a new category for representing expenses.
+
+### Tracking categories
+
+[Tracking categories](/sync-for-expenses-api#/schemas/TrackingCategoryMappingInfo) are used to monitor specific cost centers and control budgets that sit outside of the standard chart of accounts. Your customers may use tracking categories to group and track the income and costs of specific departments (e.g. Sales and marketing), projects, locations, or customers.
+
+When pushing an expense reconciliation, you can include a tracking category to further categorize this expense.
+
+### Tax rates
+
+[Tax rates](/sync-for-expenses-api#/schemas/TaxRateMappingInfo) enable your SMB customers to accurately track taxes against purchases and, depending on the locale, allow them to recoup the tax. Assigning a tax rate to a transaction is mandatory, unless the transaction is a `transferIn` or `transferOut`. 
+
+Accounting systems typically store a set of taxes and associated rates within the accounting package. This means users don't have to look up or remember the rate for each type of tax. For example, applying the tax "UK sales VAT" to the line items of an invoice in an accounting platform will add the correct tax rate of 20%. 
+
+In some cases, your customers might not need to track tax on expenses. We recommend assigning a default tax code for 0% from the accounting package for those transactions.
+
+### Refresh mapping options
+
+The default [sync settings](/expenses/getting-started#data-types) set for Sync for Expenses' data types will refresh the mapping options on an daily basis, however, you can also refresh the options manually by making a request to the [Refresh all data](/sync-for-expenses-api#/operations/refresh-all-data-types) endpoint.
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const refreshAllData = await sdk.manageData.refreshAllDataTypes({
+    companyId: companyResponse.company.id,
+});
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+refresh_all_data = expenses_client.manage_data.refresh_all_data_types(
+  operations.RefreshAllDataTypesRequest(
+    company_id=company_response.company.id,
+))
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var refreshAllData = await expensesClient.ManageData.RefreshAllDataTypesAsync(new() {
+  CompanyId = companyResponse.Company.Id,
+};);
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+refreshAllData, err := expensesClient.ManageData.RefreshAllDataTypes(ctx,
+  operations.RefreshAllDataTypesRequest{
+    CompanyID: companyResponse.Company.ID,
+})
+```
+
+</TabItem>
+
+<TabItem value="java" label="Java">
+
+```java
+GetMappingOptionsResponse refreshAllData = expensesClient.manageData().refreshAllDataTypes()
+  .request(RefreshAllDataTypesRequest.builder()
+    .companyId(companyResponse.company().get().id)
+    .build())
+  .call();
+```
+
+</TabItem>
+
+</Tabs>
+
+---
+## Read next
+
+* [Learn how to create datasets that contain expense transactions](/expenses/sync-process/expense-transactions)

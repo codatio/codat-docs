@@ -126,6 +126,137 @@ Codat supports a range of [webhooks](/using-the-api/webhooks/core-rules-types) t
 
 Use our comprehensive [Sync for Expenses library](/get-started/libraries) to kick-start and simplify your build. Simply install the library in one of the supported languages and pass your base64-encoded API key to the constructor.
 
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+#### Install
+
+##### NPM
+```sh
+npm add @codat/sync-for-expenses
+```
+
+##### Yarn
+```sh
+yarn add @codat/sync-for-expenses
+```
+
+#### Initialize
+
+```javascript
+import { CodatSyncExpenses } from "@codat/sync-for-expenses";
+
+const expensesClient = new CodatSyncExpenses({
+        security: {
+            authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+        },
+    });
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+#### Install
+
+```sh
+pip install codat-sync-for-expenses
+```
+
+#### Initialize
+
+```python
+import codatsyncexpenses
+from codatsyncexpenses.models import operations, shared
+
+expenses_client = codatsyncexpenses.CodatSyncExpenses(
+    security=shared.Security(
+        auth_header="Basic BASE_64_ENCODED(API_KEY)",
+    ),
+)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+#### Install
+
+```sh
+dotnet add package Codat.Sync.Expenses
+```
+
+#### Initialize
+
+```csharp
+using Codat.Sync.Expenses;
+using Codat.Sync.Expenses.Models.Shared;
+using Codat.Sync.Expenses.Models.Operations;
+
+var expensesClient = new CodatSyncExpenses(
+    security: new Security() {
+        AuthHeader = "Basic BASE_64_ENCODED(API_KEY)",
+    }
+);
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+#### Install
+
+```sh
+go get github.com/codatio/client-sdk-go/sync-for-expenses
+```
+
+#### Initialize
+
+```go
+import (
+	"context"
+	syncforexpenses "github.com/codatio/client-sdk-go/sync-for-expenses/v2"
+	"github.com/codatio/client-sdk-go/sync-for-expenses/v2/pkg/models/shared"
+)
+
+func main() {
+	expensesClient := syncforexpenses.New(
+		syncforexpenses.WithSecurity(shared.Security{
+			AuthHeader: "Basic BASE_64_ENCODED(API_KEY)",
+		}),
+	)
+}
+```
+
+</TabItem>
+
+<TabItem value="java" label="Java">
+
+#### Install
+
+##### NPM
+```sh
+implementation 'io.codat.sync_for_expenses:openapi:0.1.0'
+```
+
+#### Initialize
+
+```java
+import io.codat.sync_for_expenses.CodatSyncExpenses;
+import io.codat.sync_for_expenses.models.shared.Security;
+...
+CodatSyncExpenses expensesClient = CodatSyncExpenses.builder()
+  .security(Security.builder()
+      .authHeader("Basic BASE_64_ENCODED(API_KEY)")
+      .build())
+  .build();
+```
+
+</TabItem>
+
+</Tabs>
+
 :::tip Recap
 
 You have enabled Sync for Expenses, set up the relevant integrations, configured auth flow parameters, and noted the recommended webhook. This completes the initial setup of the product.

@@ -1,0 +1,465 @@
+---
+title: "Create and update expenses"
+sidebar_label: "Create expenses"
+description: Record and update expense transactions that represent your customers' spend
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem"
+
+## Overview
+
+An [expense](/sync-for-expenses-api#/operations/create-expense-transaction) is a transaction that represents the purchase made by your customer and the context behind that purchase. It usually includes the following details:
+
+- Transaction type, e.g. whether it's a payment or a refund
+- General ledger account the transaction should be reconciled to
+- Associated tax rates
+- Applicable tracking categories
+
+With Sync for Expenses, you need to create the expense transactions first and push that dataset to Codat. We will describe options available to you on this page. 
+
+Then, you need to [sync expenses](/expenses/sync-process/syncing-expenses) to reflect these in your customer's accounting platform. Finally, once these transactions have been synced, you can [upload attachments](/expenses/sync-process/uploading-receipts) to associate receipts with the transaction.
+
+This process is summarized on the diagram below.
+
+``` mermaid
+sequenceDiagram
+  User->>+You: Approve expenses with receipt
+  You-)+Codat: Post expense transaction
+  Codat-->>-You: datasetId
+  You-)+Codat: Initiate sync
+  Note over You,Codat: Specify datasetIds to sync
+  Codat --> Codat: Sync request added to queue
+  Codat-->>You: syncId
+  Codat-)Accounting: Sync expense transaction from queue
+  Codat->>-You: Sync Complete webhook event
+  You->>Codat: Check transactions
+  Codat-->>You: 
+  par Each successful reconciliation
+    You->>+Codat: Post attachment
+    Codat->>Accounting: Upload attachment
+    Codat-->>-You: Success
+  end
+  You->>-User: Expense marked as uploaded
+```
+
+## Create expenses
+
+To create a new expense transaction in Codat, use the [Create expense transaction](/sync-for-expenses-api#/operations/create-expense-transaction) endpoint. 
+
+In the request, make sure that the transaction's `id` is unique as it serves as an idempotence key. Codat validates the `id` to ensure that it's unique to a company, preventing the creation of duplicate transactions in your SMB's accounting software. 
+
+Next, you need to follow up with an expense sync to reflect this item of spend in the customer's accounting platform. We cover this in detail in [Sync expenses](/expenses/sync-process/syncing-expenses).
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const createExpenseResponse = await expensesClient.expenses.create({
+  companyId: companyResponse.company.id,
+  createExpenseRequest: {
+    items: expenses.map((expense) =>
+    {
+      id: expense.yourUniqueId,
+      type: ExpenseTransactionType.Payment,
+      issueDate: expense.issueDate,
+      currency: expense.currency,
+      currencyRate: expense.currencyRate,
+      contactRef: {
+          id: expense.supplierId,
+          type: TypeT.Supplier
+      },
+      postAsDraft: false,
+      merchantName: expense.merchantName,
+      lines: expense.lines.map((line) => {
+        netAmount: line.netAmount,
+        taxAmount: line.taxAmount,
+        taxRateRef: {
+          id: line.taxRateId
+        },
+        accountRef: {
+          id: line.accountRefId
+        },
+        trackingRefs: line.trackingCategories.map((tracking) => {
+          id: tracking.id,
+          dataType: TrackingRefDataType.TrackingCategories
+        }),
+        invoiceTo: {
+          id: line.invoiceToId,
+          dataType: InvoiceToDataType.Customers
+        }
+      }),
+      notes: expense.notes
+    })
+  }
+});
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+create_expense_request = operations.CreateExpenseTransactionRequest(
+  company_id=company_response.company.id,
+  create_expense_request=shared.CreateExpenseRequest(
+    items=[ # For a single expense
+      shared.ExpenseTransaction(
+        id=expense.your_unique_id,
+        type=shared.ExpenseTransactionType.PAYMENT,
+        issue_date=expense.issue_date,
+        currency=expense.currency,
+        currency_rate=expense.currency_rate,
+        contact_ref=shared.ContactRef(
+          id=expense.supplier_id,
+          type=shared.Type.SUPPLIER,
+        ),
+        post_as_draft=False,
+        merchant_name=expense.merchant_name,
+        lines=[ # For a single line
+          shared.ExpenseTransactionLine(
+            net_amount=expense.lines[0].net_amount,
+            tax_amount=expense.lines[0].tax_amount,
+            tax_rate_ref=shared.RecordRef(
+                id=expense.lines[0].tax_rate_id,
+              ),
+            account_ref=shared.RecordRef(
+              id=expense.lines[0].account_ref_i_d,
+            ),
+            tracking_refs=[
+              shared.TrackingRef(
+                id=expense.lines[0]tracking_categories[0].id,
+                data_type=shared.TrackingRefDataType.TRACKING_CATEGORIES,
+              ),
+            ],
+            invoice_to=shared.InvoiceTo(
+                id=expense.lines[0].invoice_to_id,
+                data_type=shared.InvoiceToDataType.CUSTOMERS,
+            )
+          )
+        ],
+        notes: expense.notes
+      ),
+    ],
+  )
+)
+
+create_expense_response = expenses_client.expenses.create(create_expense_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var createExpenseResponse = await expensesClient.Expenses.CreateAsync(new() {
+  CreateExpenseRequest = new CreateExpenseRequest() {
+    Items = expenses.Select(expense => new ExpenseTransaction() {
+      CompanyId = companyResponse.Company.Id,
+      Id = expense.YourUniqueId,
+      Type = ExpenseTransactionType.Payment,
+      IssueDate = expense.IssueDate,
+      Currency = expense.Currency,
+      CurrencyRate = expense.CurrencyRate,
+      ContactRef = new ContactRef() {
+        Id = expense.SupplierId,
+        Type = Type.Supplier,
+      },
+      PostAsDraft = false,
+      MerchantName = expense.MerchantName,
+      Lines = expense.Select(line => new ExpenseTransactionLine() {
+        NetAmount = line.NetAmount,
+        TaxAmount = line.TaxAmount,
+        TaxRateRef = new RecordRef() {
+          Id = line.TaxRateId,
+        },
+        AccountRef = new RecordRef() {
+          Id = line.AccountRefId,
+        },
+        TrackingRefs = line.TrackingCategories.Select(tracking => new TrackingRef() {
+          Id = tracking.Id,
+          DataType = TrackingRefDataType.TrackingCategories,
+        }).ToList(),
+        InvoiceTo = new InvoiceTo() {
+            Id = line.InvoiceToId,
+            DataType = InvoiceToDataType.Customers,
+          },
+        }).ToList(),
+        Notes = expense.Notes
+      }).ToList(),
+  }
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+createExpenseResponse, err := expensesClient.Expenses.Create(ctx, 
+  operations.CreateExpenseTransactionRequest{
+    CompanyId: companyResponse.Company.ID,
+    CreateExpenseRequest: &shared.CreateExpenseRequest{
+      Items: []shared.ExpenseTransaction{ // For a single expense
+        shared.ExpenseTransaction{
+          Id: expense.YourUniqueID,
+          Type: shared.ExpenseTransactionTypePayment,
+          IssueDate: expense.IssueDate,
+          Currency: expense.Currency,
+          CurrencyRate: expense.CurrencyRate,
+          ContactRef: &shared.ContactRef{
+            ID: expense.SupplierID,
+            Type: shared.TypeSupplier.ToPointer(),
+          },
+          PostAsDraft: false,
+          MerchantName: expense.MerchantName,
+          Lines: []shared.ExpenseTransactionLine{ // For a single line
+            shared.ExpenseTransactionLine{
+              NetAmount: line.NetAmount,
+              TaxAmount: line.TaxAmount,
+              TaxRateRef: &shared.RecordRef{
+                ID: line.TaxRateID,
+              },
+              AccountRef: &shared.RecordRef{
+                ID: line.AccountRefID,
+              },
+              TrackingRefs: []shared.TrackingRef{
+                shared.TrackingRef{ // For a single tracking reference
+                  ID: line.TrackingCategories[0].ID,
+                  DataType: shared.TrackingRefDataTypeTrackingCategories.ToPointer(),
+                },
+              },
+              InvoiceTo: &shared.InvoiceTo{
+                ID: line.InvoiceToId,
+                DataType: shared.InvoiceToDataTypeCustomers.ToPointer(),
+              },
+            }
+          }
+          Notes: expense.Notes
+        }
+      },
+    }
+  }
+)
+```
+
+</TabItem>
+
+<TabItem value="java" label="Java">
+
+```java
+CreateExpenseTransactionResponse createExpenseResponse = expensesClient.expenses()
+  .createExpenseTransaction()
+  .request(CreateExpenseTransactionRequest.builder()
+    .companyId(companyResponse.company().get().id)
+    .createExpenseRequest(CreateExpenseRequest.builder()
+      .items(java.util.List.of( // For a single expense
+        ExpenseTransaction.builder()
+          .id(expense.id)
+          .type(ExpenseTransactionType.PAYMENT)
+          .issueDate(expense.issueDate)
+          .currency(expense.currency)
+          .currencyRate(expense.currencyRate)
+          .contactRef(ContactRef.builder()
+            .id(expense.supplierId)
+            .type(Type.SUPPLIER)
+            .build())
+          .postedAsDraft(false)
+          .merchantName(expense.merchantName)
+          .lines(java.util.List.of( // For a single line
+            ExpenseTransactionLine.builder()
+              .netAmount(expense.lines[0].netAmount)
+              .taxAmount(expense.lines[0].taxAmount)
+              .taxRateRef(RecordRef.builder()
+                .id(expense.lines[0].taxRateId)
+                .build())
+              .accountRef(RecordRef.builder()
+                .id(expense.lines[0].accountId)
+                .build())
+              .trackingRefs(java.util.List.of(
+                TrackingRef.builder()
+                  .id(expense.lines[0].trackingCategories[0].id) // For a single tracking category
+                  .dataType(TrackingRefDataType.TRACKING_CATEGORIES)
+                  .build()))
+              .invoiceTo(InvoiceTo.builder()
+                .dataType(InvoiceToDataType.CUSTOMERS)
+                .id(expense.lines[0].invoiceToId)
+                .build()))
+              .notes(expense.notes).build()))))
+  .call();
+```
+
+</TabItem>
+
+</Tabs>
+
+### Draft transactions
+
+:::info Compatible integrations
+
+Check our [API reference](/sync-for-expenses-api#/operations/create-expense-transaction) for an up-to-date list of integrations that support this functionality.
+
+:::
+
+Some accounting platforms allow expense transactions to be created in a draft state. This means the user can review the expense in the software before finalizing and posting it prior to reconciliation. 
+
+In the request body, use the `postAsDraft` flag to define whether the expense should be posted in its draft or final state. When set to `true`, the expense is posted as a draft. 
+
+### Multicurrency transactions
+
+Sync for Expenses validates each expense transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting platform as a valid expense. You can read more about [expenses in foreign currency](/expenses/fx-management) and platform support for different transaction types.
+ 
+### Default tax rates
+
+If you need to remove an associated tax rate from an expense, use one of the following default values that have no impact on the expense:
+
+| Platform          | Default tax rate                 |
+|-------------------|----------------------------------|
+| QuickBooks Online | `NON`                            |
+| Xero              | `NONE`                           |
+| Oracle NetSuite   | `-7`                             |
+| Dynamics 365      | Set up and apply a `0%` tax rate | 
+
+### Transaction types
+
+Sync for Expenses maps and processes expense transactions based on the following transaction types:
+
+| Transaction type | Description                                                                                                                                                                                                                                               |
+|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `payment`        | Represents any   spend that takes place on the account and interest on credit purchases.                                                                                                                                                                  |
+| `refund`         | Represents any refunds and returns on an original transaction.                                                                                                                                                                                            |
+| `reward`         | Represents reward redemptions, such as cashback.                                                                                                                                                                                                          |
+| `chargeback`     | Similarly to a refund, represents a return of a transaction or a payment   sum which may have been disputed.                                                                                                                                              |
+| `transferIn`     | A transfer that decreases the   balance of the credit card account or increases the balance of a bank   account. <br/>  Represents a   top-up of debit card account, a pay-down of a credit card account, or a   balance transfer to another credit card. |
+| `transferOut`    | A transfer that increases the   balance of the credit account or decreases the balance of a bank account.   <br/>  Represents cash   withdrawals or a balance transfer to another credit card.                                                            |
+| `adjustmentIn`   | An adjustment that decreases the   balance of the credit account or increases the balance of a bank account.   <br/> Represents write-offs and transaction adjustments, such as   foreign exchange adjustments.                                           |
+| `adjustmentOut`  | An adjustment that increases the   balance of the credit account or decreases the balance of a bank account.   <br/> Represents write-offs and transaction adjustments, such as   foreign exchange adjustments.                                           |
+
+## Update expenses
+
+:::info Compatible integrations
+
+Check our [API reference](/sync-for-expenses-api#/operations/update-expense-transaction) for an up-to-date list of integrations that support this functionality.
+
+:::
+
+In some cases, your customer may want to update an expense transaction that was previously synced to their accounting platform. 
+
+- Net expense amount 
+- Tax amount of the spend
+- Tax rate reference associated with the spend
+- Expense bank account reference
+- Tracking category objects
+- Description and notes
+
+Use our [Update expense transactions](/sync-for-expenses-api#/operations/update-expense-transaction) endpoint to edit the following parameters and reflect the change in the SMB's accounting software: 
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const updateExpenseResponse = await expensesClient.expenses.update({
+  companyId: companyResponse.company.id,
+  transactionId: expensestransactionId,
+  updateExpenseRequest: {
+    items: expenses.map((expense) =>
+    {
+      id: expense.yourUniqueId,
+      notes: expense.notes
+    })
+  }
+});
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+update_expense_request = operations.UpdateExpenseTransactionRequest(
+  company_id=company_response.company.id,
+  transaction_id=expenses_transaction_id,
+  update_expense_request=shared.UpdateExpenseRequest(
+    items=[ # For a single expense
+      shared.ExpenseTransaction(
+        id=expense.your_unique_id,
+        notes=expense.notes
+      ),
+    ],
+  )
+)
+
+update_expense_response = expenses_client.expenses.update(update_expense_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var updateExpenseResponse = await expensesClient.Expenses.UpdateAsync(new() {
+  UpdateExpenseRequest = new UpdateExpenseRequest() {
+    CompanyId = companyResponse.Company.Id,
+    TransactionId: expensesTransactionId,
+    Items = expenses.Select(expense => new ExpenseTransaction() {
+      Id = expense.YourUniqueId,
+      Notes = expense.Notes
+      }).ToList(),
+  }
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+updateExpenseResponse, err := expensesClient.Expenses.Update(ctx, 
+  operations.UpdateExpenseTransactionRequest{
+    CompanyID: companyResponse.Company.ID,
+    TransactionID: expensesTransactionID,
+    UpdateExpenseRequest: &shared.UpdateExpenseRequest{
+      Items: []shared.ExpenseTransaction{ // For a single expense
+        shared.ExpenseTransaction{
+          Id: expense.YourUniqueID,
+          Notes: expense.Notes
+        }
+      },
+    }
+  }
+)
+```
+
+</TabItem>
+
+<TabItem value="java" label="Java">
+
+```java
+UpdateExpenseTransactionResponse updateExpenseResponse = expensesClient.expenses()
+  .update()
+  .request(CreateExpenseTransactionRequest.builder()
+    .companyId(companyResponse.company().get().id)
+    .transactionId(expensesTransactionId)
+    .updateExpenseRequest(CreateExpenseRequest.builder()
+      .items(java.util.List.of( // For a single expense
+        ExpenseTransaction.builder()
+          .id(expense.id)
+          .notes(expense.notes)
+          .build()
+      )))
+  )
+  .call();
+```
+
+</TabItem>
+
+</Tabs>
+
+---
+## Read next
+
+- [Sync the expenses](/expenses/sync-process/syncing-expenses) to reflect the spend in the accounting platform and monitor the progress of the synchronization.
