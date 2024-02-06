@@ -1447,6 +1447,7 @@
       "get": {
         "summary": "Get mapping options",
         "x-internal": true,
+        "x-speakeasy-ignore": true,
         "description": "﻿Use the *Get mapping options* endpoint to return a list of available [mapping options](https://docs.codat.io/sync-for-payables-api#/schemas/MappingOptions) for a given company's connection ID.\n\n[Mapping options](https://docs.codat.io/sync-for-payables-api#/schemas/MappingOptions) are a set of accounts, bank accounts and tax rates used to configure the SMBs payables integration.",
         "operationId": "get-mapping-options",
         "tags": [
@@ -1532,7 +1533,7 @@
       ],
       "get": {
         "summary": "List bills",
-        "description": "The *List bills* endpoint returns a list of [bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) for a given company's connection.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payables-api#/operations/refresh-company-data).\n    ",
+        "description": "The *List bills* endpoint returns a list of [bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) for a given company's connection.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n    ",
         "operationId": "list-bills",
         "tags": [
           "Bills"
@@ -1743,6 +1744,7 @@
       "post": {
         "summary": "Create bill",
         "x-internal": true,
+        "x-speakeasy-ignore": true,
         "description": "The *Create bill* endpoint creates a new [bill](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) for a given company's connection.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill model](https://docs.codat.io/sync-for-payables-api#/operations/get-create-update-bills-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support creating a bill.\n",
         "operationId": "create-bill",
         "tags": [
@@ -1953,6 +1955,7 @@
       "post": {
         "summary": "Upload bill attachment",
         "x-internal": true,
+        "x-speakeasy-ignore": true,
         "description": "The *Upload bill attachment* endpoint uploads an attachment and assigns it against a specific `billId`.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\n**Integration-specific behaviour**\n\nFor more details on supported file types by integration see [Attachments](https://docs.codat.io/sync-for-payables-api#/schemas/Attachment).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support uploading a bill attachment.\n",
         "operationId": "upload-bill-attachment",
         "tags": [
@@ -2015,6 +2018,7 @@
       ],
       "get": {
         "x-internal": true,
+        "x-speakeasy-ignore": true,
         "summary": "Download bill attachment",
         "description": "The *Download bill attachment* endpoint downloads a specific attachment for a given `billId` and `attachmentId`.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support downloading a bill attachment.\n",
         "operationId": "download-bill-attachment",
@@ -2081,6 +2085,7 @@
       "post": {
         "summary": "Create bill payment",
         "x-internal": true,
+        "x-speakeasy-ignore": true,
         "description": "The *Create bill payment* endpoint creates a new [bill payment](https://docs.codat.io/sync-for-payables-api#/schemas/BillPayment) for a given company's connection.\n\n[Bill payments](https://docs.codat.io/sync-for-payables-api#/schemas/BillPayment) are an allocation of money within any customer accounts payable account.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create bill payment model](https://docs.codat.io/sync-for-payables-api#/operations/get-create-billPayments-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billPayments) for integrations that support creating a bill payment.\n",
         "operationId": "create-bill-payment",
         "tags": [
@@ -2199,11 +2204,12 @@
         }
       ],
       "get": {
-        "x-internal": true,
         "tags": [
           "Suppliers"
         ],
         "summary": "List suppliers",
+        "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.",
+        "operationId": "list-suppliers",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -2312,9 +2318,7 @@
           "503": {
             "$ref": "#/components/responses/Service-Unavailable"
           }
-        },
-        "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) for a given company's connection.\n\nYou will also be able to query this endpoint to retireve only suppliers which are associated with unpaid bills (Status = Open).\n\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payables-api#/operations/refresh-company-data).\n    ",
-        "operationId": "list-suppliers"
+        }
       }
     }
   },
@@ -2490,17 +2494,6 @@
               "status": {
                 "$ref": "#/components/schemas/Bill/definitions/billStatus"
               },
-              "unitAmount": {
-                "type": "number",
-                "format": "decimal",
-                "description": "Price of each unit of goods or services."
-              },
-              "taxAmount": {
-                "type": "number",
-                "format": "decimal",
-                "nullable": true,
-                "description": "Amount of tax for the line."
-              },
               "totalAmount": {
                 "type": "number",
                 "format": "decimal",
@@ -2511,77 +2504,26 @@
                 "format": "decimal",
                 "nullable": true,
                 "description": "Amount outstanding on the bill."
-              },
-              "metadata": {
-                "title": "Metadata",
-                "type": "object",
-                "x-internal": true,
-                "properties": {
-                  "isDeleted": {
-                    "type": "boolean",
-                    "description": "Indicates whether the record has been deleted in the third-party system this record originated from.",
-                    "nullable": true
-                  }
-                }
-              },
-              "supplementalData": {
-                "title": "Supplemental data",
-                "type": "object",
-                "x-internal": true,
-                "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting platform. [Learn more](https://docs.codat.io/using-the-api/supplemental-data/overview) about supplemental data.",
-                "properties": {
-                  "content": {
-                    "type": "object",
-                    "additionalProperties": {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    "nullable": true
-                  }
-                }
               }
             }
           },
           {
-            "title": "Modified dates",
+            "title": "Source Modified Date",
             "x-internal": true,
-            "allOf": [
-              {
-                "title": "ModifiedDate",
-                "x-internal": true,
-                "type": "object",
-                "properties": {
-                  "modifiedDate": {
-                    "allOf": [
-                      {
-                        "$ref": "#/components/schemas/Company/properties/created"
-                      },
-                      {
-                        "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
-                      }
-                    ]
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "sourceModifiedDate": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Company/properties/created"
+                  },
+                  {
+                    "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
                   }
-                }
-              },
-              {
-                "title": "Source Modified Date",
-                "x-internal": true,
-                "type": "object",
-                "nullable": true,
-                "properties": {
-                  "sourceModifiedDate": {
-                    "allOf": [
-                      {
-                        "$ref": "#/components/schemas/Company/properties/created"
-                      },
-                      {
-                        "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
-                      }
-                    ]
-                  }
-                }
+                ]
               }
-            ]
+            }
           }
         ],
         "definitions": {
@@ -2615,12 +2557,6 @@
               },
               "amountDue": {
                 "$ref": "#/components/schemas/Bill/allOf/0/properties/amountDue"
-              },
-              "metadata": {
-                "$ref": "#/components/schemas/Bill/allOf/0/properties/metadata"
-              },
-              "supplementalData": {
-                "$ref": "#/components/schemas/Bill/allOf/0/properties/supplementalData"
               }
             },
             "required": [
@@ -2650,16 +2586,15 @@
                 "nullable": true,
                 "description": "Friendly name of the goods or services received."
               },
-              "quantity": {
+              "unitAmount": {
                 "type": "number",
                 "format": "decimal",
-                "description": "Number of units of goods or services received."
+                "description": "Unit price of the goods or service."
               },
-              "totalAmount": {
+              "taxAmount": {
                 "type": "number",
                 "format": "decimal",
-                "nullable": true,
-                "description": "Total amount of the line, including tax."
+                "description": "Amount of tax applied to the line item."
               },
               "accountRef": {
                 "description": "Reference to the account to which the line item is linked.",
@@ -2695,6 +2630,17 @@
                     "description": "Applicable tax rate."
                   }
                 }
+              },
+              "quantity": {
+                "type": "number",
+                "format": "decimal",
+                "description": "Number of units of goods or services received."
+              },
+              "totalAmount": {
+                "type": "number",
+                "format": "decimal",
+                "nullable": true,
+                "description": "Total amount of the line, including tax."
               }
             },
             "required": [
@@ -2736,6 +2682,13 @@
             "type": "string",
             "description": "Type of webhook event.",
             "example": "payables.bill.created"
+          },
+          "createdDate": {
+            "type": "string",
+            "description": "The datetime in UTC of when the webhook event was produced by Codat.",
+            "examples": [
+              "2022-10-23T11:03:35.000Z"
+            ]
           },
           "payload": {
             "$ref": "#/components/schemas/BillEventWebhook/definitions/billEventPayload"
@@ -4079,15 +4032,60 @@
                 "description": "Default currency the supplier's transactional data is recorded in."
               },
               "metadata": {
-                "$ref": "#/components/schemas/Bill/allOf/0/properties/metadata"
+                "title": "Metadata",
+                "type": "object",
+                "x-internal": true,
+                "properties": {
+                  "isDeleted": {
+                    "type": "boolean",
+                    "description": "Indicates whether the record has been deleted in the third-party system this record originated from.",
+                    "nullable": true
+                  }
+                }
               },
               "supplementalData": {
-                "$ref": "#/components/schemas/Bill/allOf/0/properties/supplementalData"
+                "title": "Supplemental data",
+                "type": "object",
+                "x-internal": true,
+                "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting platform. [Learn more](https://docs.codat.io/using-the-api/supplemental-data/overview) about supplemental data.",
+                "properties": {
+                  "content": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "object",
+                      "additionalProperties": true
+                    },
+                    "nullable": true
+                  }
+                }
               }
             }
           },
           {
-            "$ref": "#/components/schemas/Bill/allOf/1"
+            "title": "Modified dates",
+            "x-internal": true,
+            "allOf": [
+              {
+                "title": "ModifiedDate",
+                "x-internal": true,
+                "type": "object",
+                "properties": {
+                  "modifiedDate": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Company/properties/created"
+                      },
+                      {
+                        "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "#/components/schemas/Bill/allOf/1"
+              }
+            ]
           }
         ],
         "required": [
