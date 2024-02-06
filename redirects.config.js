@@ -563,6 +563,10 @@ module.exports = {
       from: "/configure/portal/usage-and-billing",
       to: "/configure/create-account",
     },
+    {
+      from: "/auth-flow/customize/set-up-webhooks",
+      to: "/using-the-api/webhooks/core-rules-types",
+    },
 
     //
     {

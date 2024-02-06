@@ -2,6 +2,7 @@
 title: "Auth flow FAQs"
 slug: "faqs"
 excerpt: "Hints, tips and answers on improving your bespoke auth flow experience"
+unlisted: true
 draft: true
 ---
 
@@ -24,7 +25,7 @@ This data is also stored forever (until revoked) in our central data database. T
 
 Often your customer or user doesn't themselves have the sign in credentials to the platforms you need to access. For example, perhaps their accountant is the only stakeholder in their business that actually goes into their accounting platform.
 
-If you're using our Hosted Link solution, your customer can just forward that stakeholder the hosted Link URL. However, for Embedded Link or a custom built auth flow, your authorization flow is likely only accessible when logged in, which means sharing around password and logins - not ideal!
+If you're using our Hosted Link solution, your customer can just forward that stakeholder the hosted Link URL. However, for our Link SDK or a custom built auth flow, your authorization flow is likely only accessible when logged in, which means sharing around password and logins - not ideal!
 
 Just because you're not using Link as your primary auth flow, it doesn't mean you can't benefit from it.
 

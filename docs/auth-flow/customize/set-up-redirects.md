@@ -12,9 +12,9 @@ There are a few ways you can redirect your customers:
 - [Redirect with custom query parameters](#redirect-with-custom-query-parameters)
 - [Redirect with reserved query parameters](#redirect-with-reserved-query-parameters)
 
-:::note Redirect URLs in Embedded Link
+:::note Redirect URLs in Link
 
-Your redirects will only apply to Hosted Link. For Embedded Link, build out the required redirect configuration within your application.
+Your redirects will only apply to Hosted Link. For the Link SDK, build out the required redirect configuration within your application.
 :::
 
 :::note See an example

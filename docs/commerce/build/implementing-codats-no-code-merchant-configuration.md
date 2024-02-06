@@ -70,7 +70,7 @@ Once successful, they will have created a valid Connection, and will be redirect
 
 :::note Using Codat's Link solution
 
-If you used our Embedded Link or Hosted Link solutions for platform selection, this step will be skipped automatically.
+If you used our Link or Hosted Link solutions for platform selection, this step will be skipped automatically.
 :::
 
 ### 3. Configuration

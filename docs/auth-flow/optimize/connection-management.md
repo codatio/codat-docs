@@ -1,5 +1,6 @@
 ---
 title: "Connection management"
+sidebar_label: "Manage connections"
 description: "Learn how to enhance the customer journey when a persistent connection is required"
 ---
 

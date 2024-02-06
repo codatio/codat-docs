@@ -48,7 +48,7 @@ You can also view detailed configuration instructions by clicking on the relevan
 
 ### Authorization flow
 
-As part of using Sync for Payables, you will need your customers to authorize your access to their data. To do so, use [Embedded Link](/auth-flow/authorize-embedded-link) - our pre-built, embeddable, conversion-optimized, and white-labeled authorization flow.
+As part of using Sync for Payables, you will need your customers to authorize your access to their data. To do so, use [Link](/auth-flow/authorize-embedded-link) - our pre-built, embeddable, conversion-optimized, and white-labeled authorization flow.
 
 The solution lets you tailor the authorization journey to your business needs. You can:
 

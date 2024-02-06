@@ -1,6 +1,6 @@
 ---
-title: "Authorize with Embedded Link"
-sidebar_label: Embedded Link
+title: "Authorize with Link"
+sidebar_label: Embed Link auth flow
 description: "Swiftly embed our auth flow in your application UI using our low-code component"
 image: "/img/auth-flow/embedded-link-selection.png"
 ---
@@ -12,11 +12,11 @@ import TabItem from "@theme/TabItem";
 
 ## Overview
 
-Embedded Link is a pre-built JavaScript component that neatly sits in your front-end code and can be deployed in a matter of minutes. Use it to benefit from our extensive experience in building authorization flows melded with best practices, while seamlessly embedding it into your webpage or front-end application.
+Our Link SDK is a pre-built JavaScript component that neatly sits in your front-end code and can be deployed in a matter of minutes. Use it to benefit from our extensive experience in building authorization flows melded with best practices, while seamlessly embedding it into your webpage or front-end application.
 
 The component works with all major JavaScript frameworks, including React, and also with vanilla JavaScript. You can choose to implement the component in TypeScript.
 
-We built Embedded Link to be flexible so that you can integrate and initialize it in any way you want, and provide the user with a native feel of your authorization journey.
+We built Link to be flexible so that you can integrate and initialize it in any way you want, and provide the user with a native feel of your authorization journey.
 
 ## Features
 
@@ -37,12 +37,12 @@ As with all Codat products, Link SDK is still subject to [our change management 
 
 ## Resources
 
-We've provided a [repo with examples on GitHub](https://github.com/codatio/sdk-link/tree/main/examples) that illustrate how to add the Embedded Link component to your project.
+We've provided a [repo with examples on GitHub](https://github.com/codatio/sdk-link/tree/main/examples) that illustrate how to add the Link component to your project.
 
 ## Prerequisites
 
 - **Customized auth flow settings**
-  If you haven't already done so, customize Link on the <a href="https://app.codat.io/settings/link-settings" target="_blank">**Link settings**</a> page in the Codat Portal. For example, add UI copy, set file upload options, choose to make steps optional, or disable steps. The settings apply to both Embedded Link and Hosted Link.
+  If you haven't already done so, customize Link on the <a href="https://app.codat.io/settings/link-settings" target="_blank">**Link settings**</a> page in the Codat Portal. For example, add UI copy, set file upload options, choose to make steps optional, or disable steps. You can also do this using Link's [advanced options](/auth-flow/authorize-embedded-link#advanced-options).
 - **Your application**
   You'll need a JavaScript application to render the component in (e.g. React, Angular). It should take care of creating companies programmatically and retrieving the `companyId` of any company you want to authorize.
 
@@ -256,7 +256,7 @@ For an example of the component in action, [see our demo app](https://github.com
 
 :::note Angular and urlImports
 
-In the example below, you'll see that we make use of webpack's [magic comments](https://webpack.js.org/api/module-methods/#magic-comments) feature to avoid Angular's caching and use normal [import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) behaviour.
+In the example below, you'll see that we make use of webpack's [magic comments](https://webpack.js.org/api/module-methods/#magic-comments) feature to avoid Angular's caching and use normal [import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) behavior.
 :::
 
 1. **Create a component that mounts the SDK.** See the <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/angular/src/app/codat-link/" target="_blank">`codat-link folder`</a> for an example module.
@@ -547,7 +547,7 @@ In the Link flow, this will then be rendered as follows:
 
 #### November 2023
 - **Options property**: we introduced a new prop that gives you programmatic control over Link settings.
-- **Markdown support**: text fields now accept Markdown, giving you more control over styling and formatting. This is available via the `text` property for Embedded Link only.
+- **Markdown support**: text fields now accept Markdown, giving you more control over styling and formatting. This is available via the `text` property of the Link SDK only.
 - **@codat/sdk-link-types package released**: our new [NPM package](https://www.npmjs.com/package/@codat/sdk-link-types) means you don't have to manually import and maintain the type definitions.
 
 #### October 2023
@@ -557,8 +557,8 @@ In the Link flow, this will then be rendered as follows:
   + Fixed an issue where 'Landing page' settings were not reflected.
 
 #### June 2023
-- **Support for non-React JavaScript apps**: without a dependency on React, you can use Embedded Link with all JavaScript frameworks or even vanilla JavaScript.
-- **Increased display control**: you now need to specify the dimensions of the Embedded Link component, which will expand to fit the given container size. Previously the component used a fixed width and height.
+- **Support for non-React JavaScript apps**: without a dependency on React, you can use Link with all JavaScript frameworks or even vanilla JavaScript.
+- **Increased display control**: you now need to specify the dimensions of the Link component, which will expand to fit the given container size. Previously the component used a fixed width and height.
 - **Navigation improvements**: source types (accounting, commerce, banking, and file upload) can now be connected in any order you choose.
 - **Performance improvements**: Link loads quicker and can be loaded only when required.
-- **Connection status**: the connection status (success or error) is now shown during the Embedded Link flow. The SMB user can skip errors without interrupting the rest of the Link flow.
+- **Connection status**: the connection status (success or error) is now shown during the Link flow. The SMB user can skip errors without interrupting the rest of the Link flow.

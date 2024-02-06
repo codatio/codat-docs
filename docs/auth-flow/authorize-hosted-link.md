@@ -2,13 +2,18 @@
 title: "Authorize with Hosted Link"
 sidebar_label: Overview
 description: "Choose how to integrate Hosted Link into your authorization flow"
+unlisted: true
 ---
 
 <head>
   <meta property="og:image" content="/img/link/link-banner.png"/>
 </head>
 
-![](/img/link/link-banner.png)
+:::tip Codat recommends Link SDK
+
+Instead of Hosted Link, Codat recommends using the [Link SDK](/auth-flow/authorize-embedded-link) to fully embed our flexible, white-labeled auth flow in your application. You will benefit from our extensive experience combined with authorization best practices, providing your users with a native feel of the auth flow.
+
+:::
 
 With Hosted Link, you can choose how you want your customers to start their authorization journey while benefitting from an out-of-the-box solution built, provided, and hosted by Codat.
 
@@ -16,6 +21,8 @@ To connect your customers' financial software, you can:
 
 - integrate the Hosted Link auth flow into the user interface of your existing app, or
 - initiate the authorization journey by sharing your Hosted Link URL.
+
+![](/img/link/link-banner.png)
 
 ## Integrate the Hosted Link flow into your app
 
@@ -99,5 +106,5 @@ Using the Invite company URL will not allow your customer to view, update or add
 
 ## 💡 Tips and traps
 
-- Hosted Link is not compatible with iframes. This is against our security policies and will not work. If you want to embed link inside your website, try our [Embedded Link solution](https://docs.codat.io/auth-flow/authorize-embedded-link).
-- Some users may be concerned sharing their data at a `codat.io` domain. You should consider pre-warning them that they about to visit a third party website for the authorization process, or try our [Embedded Link solution](https://docs.codat.io/auth-flow/authorize-embedded-link).
+- Hosted Link is not compatible with iframes. This is against our security policies and will not work. If you want to embed Link inside your website, try our [Link SDK solution](https://docs.codat.io/auth-flow/authorize-embedded-link).
+- Some users may be concerned sharing their data at a `codat.io` domain. You should consider pre-warning them that they about to visit a third party website for the authorization process, or try our [Link SDK solution](https://docs.codat.io/auth-flow/authorize-embedded-link).

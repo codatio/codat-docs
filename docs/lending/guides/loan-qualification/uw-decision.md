@@ -62,7 +62,7 @@ Only if all the thresholds are met or surpassed by the applicant, the app update
 
 ### Access additional resources
 
-🗝️ You may want to enhance this simple working guide with some UI elements - why not use [Embedded Link](https://docs.codat.io/auth-flow/authorize-embedded-link) to seamlessly include our authorization journey into your app?
+🗝️ You may want to enhance this simple working guide with some UI elements - why not use [Link](https://docs.codat.io/auth-flow/authorize-embedded-link) to seamlessly include our authorization journey into your app?
 
 📊 If you are interested in loan qualification models used by lenders in the industry, you can read through [Bigfoot Capital's blog](https://www.bigfootcap.com/revenue-based-financing/) on revenue-based finance or [Workweek's article](https://workweek.com/2023/03/02/unlocking-lending-innovation) on unlocking loan qualification innovation.
 

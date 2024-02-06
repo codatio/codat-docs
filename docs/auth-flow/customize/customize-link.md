@@ -4,7 +4,7 @@ sidebar_label: Link settings
 description: "Explore the available settings to tailor Link to your authorization journey's needs"
 ---
 
-Our Link settings allow you to configure the authorization process based on your data needs and white-label Hosted & Embedded Link to suit your brand. You can customize these settings in the [Codat Portal](https://app.codat.io/) in [Settings > Auth flow > Link](https://app.codat.io/settings/link-settings).
+Our Link settings allow you to configure the authorization process based on your data needs and white-label Link and Hosted Link to suit your brand. You can customize these settings in the [Codat Portal](https://app.codat.io/) in [Settings > Auth flow > Link](https://app.codat.io/settings/link-settings).
 
 ## Data connections
 
@@ -31,7 +31,7 @@ For the Business documents integration type, you need to enable it in **Settings
 
 :::tip Banking integrations in the auth flow
 
-You should only enable one of the banking integrations at a time. This ensures optimal use of Hosted or Embedded Link, as each banking integration is [represented differently](/integrations/banking/overview#banking-integrations-in-the-authorization-flow) in the auth flow.
+You should only enable one of the banking integrations at a time. This ensures optimal use of Link or Hosted Link, as each banking integration is [represented differently](/integrations/banking/overview#banking-integrations-in-the-authorization-flow) in the auth flow.
 :::
 
 ### Retries  

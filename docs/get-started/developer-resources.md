@@ -26,7 +26,7 @@ Examples of user experiences you can build with Codat. Inspiration only - this i
 
 Tools you can use within your code.
 
-- **[Link SDK](https://www.npmjs.com/package/@codat/link-sdk):** a React SDK to allow you to [authorize with Embedded Link](/auth-flow/authorize-embedded-link) within your app
+- **[Link SDK](https://www.npmjs.com/package/@codat/link-sdk):** a React SDK to allow you to [authorize with Link](/auth-flow/authorize-embedded-link) within your app
 - **[Client libraries](/get-started/libraries):** save time building to our APIs using our client libraries
 
 ## Sample projects

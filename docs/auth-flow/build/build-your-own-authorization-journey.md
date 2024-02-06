@@ -1,9 +1,15 @@
 ---
 title: "Build your own auth flow"
 sidebar_label: Overview
-excerpt: "Explore how to create your own journey to connect your customers' financial platforms"
-hidden: false
+description: "Explore how to create your own journey to connect your customers' financial platforms"
+unlisted: true
 ---
+
+:::tip Codat recommends Link SDK
+
+Instead of building your own solution, Codat recommends using the [Link SDK](/auth-flow/authorize-embedded-link) to fully embed our flexible, white-labeled auth flow component in your application. You will benefit from our extensive experience combined with authorization best practices, providing your users with a native feel of the auth flow.
+
+:::
 
 Codat provides a series of endpoints that allow you to build the journey for your business customers to connect their financial platforms.
 
