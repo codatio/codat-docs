@@ -1,11 +1,11 @@
 module.exports = [
   "auth-flow/authorize-embedded-link",
-  "auth-flow/optimize/connection-management",
   {
     type: "category",
     label: "Configure",
     collapsed: true,
     items: [
+      "auth-flow/customize/sdk-advanced-options",
       "auth-flow/customize/customize-link",
       "auth-flow/customize/branding",
       "auth-flow/customize/set-up-redirects",
@@ -13,6 +13,7 @@ module.exports = [
       "auth-flow/customize/use-openid-connect",
     ],
   },
+  "auth-flow/optimize/connection-management",
   {
     type: "category",
     label: "Optimize",

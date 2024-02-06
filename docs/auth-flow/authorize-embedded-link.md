@@ -1,7 +1,7 @@
 ---
-title: "Authorize with Link"
-sidebar_label: Embed Link auth flow
-description: "Swiftly embed our auth flow in your application UI using our low-code component"
+title: "Authorize with Link flow embed Link SDK"
+sidebar_label: Authorize with Link
+description: "Embed our auth flow in your application UI using our low-code component"
 image: "/img/auth-flow/embedded-link-selection.png"
 ---
 
@@ -12,7 +12,9 @@ import TabItem from "@theme/TabItem";
 
 ## Overview
 
-Our Link SDK is a pre-built JavaScript component that neatly sits in your front-end code and can be deployed in a matter of minutes. Use it to benefit from our extensive experience in building authorization flows melded with best practices, while seamlessly embedding it into your webpage or front-end application.
+Our Link SDK is a pre-built JavaScript component that neatly sits in your front-end code and can be deployed in a matter of minutes. 
+
+Use it to benefit from our extensive experience in building authorization flows melded with best practices, while seamlessly embedding it into your webpage or front-end application.
 
 The component works with all major JavaScript frameworks, including React, and also with vanilla JavaScript. You can choose to implement the component in TypeScript.
 
@@ -42,7 +44,7 @@ We've provided a [repo with examples on GitHub](https://github.com/codatio/sdk-l
 ## Prerequisites
 
 - **Customized auth flow settings**
-  If you haven't already done so, customize Link on the <a href="https://app.codat.io/settings/link-settings" target="_blank">**Link settings**</a> page in the Codat Portal. For example, add UI copy, set file upload options, choose to make steps optional, or disable steps. You can also do this using Link's [advanced options](/auth-flow/authorize-embedded-link#advanced-options).
+  If you haven't already done so, customize Link on the <a href="https://app.codat.io/settings/link-settings" target="_blank">**Link settings**</a> page in the Codat Portal. For example, add UI copy, set file upload options, choose to make steps optional, or disable steps. You can also do this using the SDK's [advanced options](/auth-flow/authorize-embedded-link#advanced-options).
 - **Your application**
   You'll need a JavaScript application to render the component in (e.g. React, Angular). It should take care of creating companies programmatically and retrieving the `companyId` of any company you want to authorize.
 
@@ -422,6 +424,8 @@ For an example of the component in action, [see our demo app](https://github.com
 </TabItem>
 
 </Tabs>
+
+## Customize Link interface
 
 ## Advanced options
 
