@@ -1,5 +1,5 @@
 ---
-title: "Create or update rules"
+title: "Manage events"
 description: "Managing new and existing rules via Codat Portal"
 createdAt: "2019-02-20T11:20:32.835Z"
 updatedAt: "2022-11-16T12:54:20.055Z"
