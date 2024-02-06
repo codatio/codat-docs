@@ -1,5 +1,5 @@
 ---
-title: "Rule types"
+title: "Event types"
 description: "Use webhooks to build responsive and resilient applications on Codat data."
 ---
 
