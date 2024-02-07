@@ -29,7 +29,7 @@ You must be compliant with Xero's guidance wherever you mention your Xero Partne
 
 **Action required: none or significant**
 
-If you use Codat's Bank Feeds UI your bank feed will satisfy these requirements. If you create your own bank feed UI, you must ensure you meet these requirements:
+If you use Codat's Bank Feeds UI, your bank feed will satisfy these requirements. If you create your own bank feed UI, you must meet the following requirements:
 
 | Requirement | Recommendations |
 | :-- | :-- |
