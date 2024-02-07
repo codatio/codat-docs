@@ -5,15 +5,14 @@ description: "A guide to getting Xero's Lending Partnership certification with C
 
 For lenders that want to become Xero Partners, Xero stipulates two technical requirements to comply with: 
 
-- Xero's [certification checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/) that apply to all apps connecting to Xero.
 - [Lending writeback](https://developer.xero.com/documentation/guides/how-to-guides/general-lending-integration-guide/), which is a lender-specific requirement.
+- Xero's [certification checkpoints](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/), not all of which apply to lenders.
 
 ## Lending writeback
 
-The purpose of the lending writeback is to accurately maintain the financial position of a customer in Xero at any point of the lending cycle. This is typically done by recording the loan liability, any interest, fees, and repayments, and facilitating the reconciliation of the bank account. Codat offers the following guides on implementing lending write-back: 
+The purpose of the lending writeback is to accurately maintain the financial position of a customer in Xero at any point of the lending cycle. This is typically done by recording the loan liability, any interest, fees, and repayments, and facilitating the reconciliation of the bank account. 
 
-  * [General lending writeback](https://docs.codat.io/lending/guides/general-loan-writeback)
-  * [Invoice finance writeback](https://docs.codat.io/lending/guides/invoice-finance/introduction)
+Codat offers [this guide on implementing lending write-back](https://docs.codat.io/lending/guides/loan-writeback/introduction)
 
 ## Certification checkpoints
 
