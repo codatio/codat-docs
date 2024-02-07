@@ -15,13 +15,20 @@ Say goodbye to complex development processes and hello to streamlined efficiency
 
 📝 **Detailed Event Logging**: Gain deep insights into every aspect of your webhook events. With detailed event logging, you'll have a comprehensive overview of delivery attempts, allowing you to resolve any issues as well as view webhook event payloads.
 
-🔄 **Event Replay**: Need to reprocess past events or simulate real-time scenarios? Our Event Replay feature makes it a breeze to replay events, enabling you to test, debug, and refine your integrations with ease.
+🔄 **Event Replay**: Need to reprocess past events or retry failed event? Our Event Replay feature makes it a breeze to replay both successful and unsuccessful events deliveries, enabling you to recover from any system failures your end.
 
-🧪 **Mocked Events**: Simplify testing and development with our Mocked Events functionality. Mocked Events makes it a breeze to test, debug, and refine your webhook consumer with ease.
-Generate simulated events to validate your webhook integrations, ensuring seamless performance before deploying to production.
+🧪 **Mocked Events**: Simplify testing and development with our mocked events functionality. Mocked events makes it a breeze to test, debug, and refine your webhook consumer with ease. Simply select the event type you want to trigger and we'll deliver it to your application.
 
 🛡️ **Improved Stability**: Trust in a robust and reliable solution that prioritizes stability. Our Webhooks Service is engineered for resilience, delivering unmatched performance and uptime to support your mission-critical operations.
 
-Whether you're a seasoned developer or just getting started, our Webhooks Service empowers you to accelerate development cycles, enhance reliability, and unlock new possibilities for your applications.
+#### How can I migrate to our new service?
 
-Ready to supercharge your development process? Get started with our Webhooks Service today and experience the future of webhook integration! 💻✨
+Checkout out our [migration guide](/using-the-api/webhooks/migration) to see if you can move over and how to request this.
+
+#### Planned deprecations
+
+As part of this change we have had to make two deprecations. 
+Learn more about how these deprecations may impact you and any actions required for
+
+- [Email notifications](/updates/240216-deprecation-email-notifications)
+- [Rules alerts endpoint](/updates/240216-deprecation-rules-alerts)
