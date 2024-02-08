@@ -53,7 +53,7 @@ You can also sign up and test with **Xero** and **QuickBooks Online**, both of w
 | Platform 	| Integration type 	| Account type 	| Notes 	|
 |---	|---	|---	|---	|
 | Codat Sandbox 	| Sandbox integration 	| Demo company 	| Active companies connected only to Codat Sandbox are excluded from billing in your production instance. <br/> [Read more](/integrations/accounting/sandbox/accounting-sandbox) about testing this integration.	|
-| [ClearBooks](https://www.clearbooks.co.uk/) 	| Live integration 	| Free trial 	|  	|
+| [Clear Books](https://www.clearbooks.co.uk/) 	| Live integration 	| Free trial 	|  	|
 | [Exact](https://www.exact.com/try) 	| Live integration 	| Free trial 	|  	|
 | [FreeAgent](https://signup.sandbox.freeagent.com/signup) 	| Live integration 	| Free trial 	| Temporary free account at the [FreeAgent   Sandbox](https://dev.freeagent.com/docs/quick_start). 	|
 | [FreshBooks](https://www.freshbooks.com/blog/freshbooks-trial) 	| Live integration 	| Free trial 	|  	|
