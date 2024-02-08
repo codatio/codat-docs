@@ -59,7 +59,7 @@ Some integrations have more complex requirements in terms of registration and pa
 | [Xero](https://www.xero.com/)                                    | Easy                      | ✅                           | ✅                       | You must certify your integration and partner with Xero to connect more than 25 companies. This involves extra technical requirements and, in some cases, additional charges. Use cases such as financial brokering, insurance, FX hending, and lending (in some regions) are not permitted. |
 | [ZohoBooks](https://www.zoho.com/uk/books/)                               | Easy                      | ✅                           | ❌                       |                                                                                                                                                                                                                                                                                              |
 
-### Accounting platforms per region
+## Accounting platforms per region
 
 Most popular accounting platforms per reigion are as follows: 
 
