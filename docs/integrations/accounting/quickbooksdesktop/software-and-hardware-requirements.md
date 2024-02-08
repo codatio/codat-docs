@@ -35,8 +35,11 @@ Codat does not fix issues related to older versions of the software. Please upgr
 
 If you experience compatibility issues with companies using older versions of the software, Codat support will advise you to upgrade to a supported version.
 
-> [!CAUTION] 
-> Codat does not currently support Intuit QuickBooks for Mac OS. Only the QuickBooks Desktop for Windows versions listed above are supported.
+:::caution QuickBooks Desktop for Mac
+
+Codat does not currently support Intuit QuickBooks for Mac OS. Only the QuickBooks Desktop for Windows versions listed above are supported.
+
+:::
 
 ## Supported QBD modes
 
@@ -50,6 +53,13 @@ If QuickBooks Desktop is open on the SMB user's machine, the open QuickBooks com
 
 Only one instance of QBD can be open on a user's machine at a time.
 
+:::note Supported environments
+
+Our QuickBooks Desktop Connector is verified to work in single-tenant environments only, where a single Windows user is logged on to the computer used to access QuickBooks Desktop. Outside of the Rightworks solution, we cannot guarantee the behavior of the connector in multi-tenanted or hosted environments.
+
+[Installation on Rightworks-hosted instances](/integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks) is currently in beta.
+:::
+
 ## Supported operating systems
 
 The Codat QuickBooks Desktop Connector is supported for QuickBooks running on Windows 10 or Windows 11 with the latest service pack(s) installed.
@@ -57,10 +67,6 @@ The Codat QuickBooks Desktop Connector is supported for QuickBooks running on Wi
 Users have successfully run the connector on older versions of Windows; however, we do not officially support this due to Microsoft's withdrawal of support for these operating systems.
 
 The connector will not run on Mac OS.
-
-> [!NOTE] 
-> Our QuickBooks Desktop Connector is verified to work in single-tenant environments only, where one Windows user, at a time, logs on to the same computer that they use to access QuickBooks Desktop. Outside of our partner > Rightworks solution, we cannot guarantee the expected behaviour of the connector in multi-tenanted or hosted environments.
-> [Installation on Rightworks hosted instances](/integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks) is currently in beta.
 
 ## Hardware requirements
 
