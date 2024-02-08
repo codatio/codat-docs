@@ -1533,7 +1533,7 @@
       ],
       "get": {
         "summary": "List bills",
-        "description": "The *List bills* endpoint returns a list of [bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) for a given company's connection.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n    ",
+        "description": "The *List bills* endpoint returns a list of [bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) for a given company's connection.\n\nBy default, the endpoint will return all bills irrespective of payment status. To filter outstanding bills use the `outstandingBills=true` query parameter to return all unpaid and partially paid bills. \n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n    ",
         "operationId": "list-bills",
         "tags": [
           "Bills"
