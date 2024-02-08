@@ -1571,19 +1571,14 @@
                             "id": "4",
                             "supplierName": "BILLy elliot"
                           },
-                          "purchaseOrderRefs": [],
                           "issueDate": "2019-05-13T00:00:00",
                           "dueDate": "2019-05-13T00:00:00",
                           "currency": "GBP",
-                          "currencyRate": 1,
                           "lineItems": [
                             {
+                              "description": "Dance shoes",
                               "unitAmount": 5,
-                              "quantity": 1,
-                              "discountAmount": 0,
-                              "subTotal": 5,
                               "taxAmount": 0,
-                              "totalAmount": 5,
                               "accountRef": {
                                 "id": "16",
                                 "name": "Advertising"
@@ -1593,39 +1588,14 @@
                                 "name": "NON",
                                 "effectiveTaxRate": 0
                               },
-                              "trackingCategoryRefs": [],
-                              "tracking": {
-                                "categoryRefs": [],
-                                "isBilledTo": "Unknown",
-                                "isRebilledTo": "NotApplicable"
-                              },
-                              "isDirectCost": false
+                              "quantity": 1,
+                              "totalAmount": 5
                             }
                           ],
-                          "withholdingTax": [],
-                          "status": "Paid",
-                          "subTotal": 5,
-                          "taxAmount": 0,
+                          "status": "Unpaid",
                           "totalAmount": 5,
                           "amountDue": 0,
-                          "modifiedDate": "2023-01-18T11:02:41Z",
-                          "sourceModifiedDate": "2022-05-26T10:34:10Z",
-                          "paymentAllocations": [
-                            {
-                              "payment": {
-                                "id": "20",
-                                "currency": "GBP",
-                                "currencyRate": 1,
-                                "paidOnDate": "2019-05-13T00:00:00",
-                                "totalAmount": 0
-                              },
-                              "allocation": {
-                                "currency": "GBP",
-                                "currencyRate": 1,
-                                "totalAmount": -5
-                              }
-                            }
-                          ]
+                          "sourceModifiedDate": "2022-05-26T10:34:10Z"
                         },
                         {
                           "id": "22",
@@ -1634,19 +1604,14 @@
                             "id": "4",
                             "supplierName": "BILLy elliot"
                           },
-                          "purchaseOrderRefs": [],
                           "issueDate": "2019-05-13T00:00:00",
                           "dueDate": "2019-05-13T00:00:00",
                           "currency": "GBP",
-                          "currencyRate": 1,
                           "lineItems": [
                             {
+                              "description": "Dance shoes",
                               "unitAmount": 5,
-                              "quantity": 1,
-                              "discountAmount": 0,
-                              "subTotal": 5,
                               "taxAmount": 0,
-                              "totalAmount": 5,
                               "accountRef": {
                                 "id": "16",
                                 "name": "Advertising"
@@ -1656,40 +1621,14 @@
                                 "name": "NON",
                                 "effectiveTaxRate": 0
                               },
-                              "trackingCategoryRefs": [],
-                              "tracking": {
-                                "categoryRefs": [],
-                                "isBilledTo": "Unknown",
-                                "isRebilledTo": "NotApplicable"
-                              },
-                              "isDirectCost": false
+                              "quantity": 1,
+                              "totalAmount": 5
                             }
                           ],
-                          "withholdingTax": [],
                           "status": "Paid",
-                          "subTotal": 5,
-                          "taxAmount": 0,
                           "totalAmount": 5,
                           "amountDue": 0,
-                          "modifiedDate": "2023-01-18T11:02:41Z",
-                          "sourceModifiedDate": "2020-03-23T10:44:06Z",
-                          "paymentAllocations": [
-                            {
-                              "payment": {
-                                "id": "678",
-                                "note": "payment note test",
-                                "currency": "GBP",
-                                "currencyRate": 1,
-                                "paidOnDate": "2020-03-23T00:00:00",
-                                "totalAmount": 0
-                              },
-                              "allocation": {
-                                "currency": "GBP",
-                                "currencyRate": 1,
-                                "totalAmount": -5
-                              }
-                            }
-                          ]
+                          "sourceModifiedDate": "2022-05-26T10:34:10Z"
                         }
                       ],
                       "pageNumber": 1,
