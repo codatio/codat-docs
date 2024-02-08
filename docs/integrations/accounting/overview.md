@@ -36,7 +36,7 @@ Each integration has a unique 4-character key that identifies it in our APIs. Fo
 
 ## Integration registration and partnerships
 
-Some integrations have more complex requirements in terms of registration and partnership agreements. You can find an overview beneath, and see a full documentation for that integration.
+Some integrations have more complex requirements in terms of registration and partnership agreements. You can find an overview beneath, and see full documentation for that integration.
 
 
 | Platform                                | Registration complexity   | Marketplace partner program | Connection restrictions | Additional information                                                                                                                                                                                                                                                                       |
