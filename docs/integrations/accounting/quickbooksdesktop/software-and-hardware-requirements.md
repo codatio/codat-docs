@@ -46,13 +46,13 @@ The QBD connector works with QBD running in single-user or multi-user mode. In Q
 
 ## Limitations
 
-The following limitations apply when using the connector with QBD running in either single-user or multi-user mode.
+The following limitations apply when using the connector with QBD running in either single-user or multi-user mode: 
 
-If QuickBooks Desktop is open on the SMB user's machine, the open QuickBooks company file must be the same as the company file that's configured for the connector.
+- If QuickBooks Desktop is open on the SMB user's machine, the open QuickBooks company file must be the same as the company file that's configured for the connector.
 
-Only one instance of QBD can be open on a user's machine at a time.
+- Only one instance of QBD can be open on a user's machine at a time.
 
-Also note, that while syncing, the performance of QBD can vary. You cannot open an instance of QBD while a program is syncing and there are other impacts while using QBD such as drop down menus closing unexpectedly.
+- QBD performance may vary during the syncs. You cannot open an instance of QBD while a program is syncing, and its interface may behave unexpectedly.
 
 ## Supported operating systems
 
@@ -64,17 +64,16 @@ The connector will not run on Mac OS.
 
 ## Supported environments
 
-Our QuickBooks Desktop Connector is designed to work in single-tenant environments only, where one Windows user logs on to the same computer they use to access QuickBooks Desktop.
+Our QuickBooks Desktop Connector is verified to work in single-tenant environments only, where a single Windows user is logged on to the computer used to access QuickBooks Desktop. 
 
-Due to limitations when syncing with QuickBooks Desktop, some complications can occur when attempting to sync in different environments.
+Due to limitations of syncing with QBD, complications can occur when attempting to sync in multi-tenant environments. For example, if your company files are hosted on a different server to the one where you run and use QBD, you may see performance impact. To avoid this, you can install the web connector on this server, but you will need to install QBD there as well. 
 
-For example, if you're company files are hosted on a separate server to where you run & use QBD, you may see performance impacts. One way to counter this is to install the web connector on the server itself although this also requires a full installation of QBD.
+You may also encounter issues in a hosted environment where multiple users log in and use QBD simultaneously, although this depends on the exact setup. This does not apply to Rightworks hosted instances.
 
-Another scenario you may encounter is with hosted environments with many users logging in and using QBD at the same time. While this can cause issues it is very dependant on the exact setup. This does not apply to Rightworks hosted instances.
+:::note Rightworks hosted instances
 
-:::note Rightworks Hosted instances
+Rightworks hosted instances already have the web connector installed and support our integration as a result.  Outside of the Rightworks solution, we cannot guarantee the behavior of the connector in multi-tenanted or hosted environments.
 
-Rightworks hosted instances come with the web connector pre-installed and so natively support our integration
 :::
 
 ## Hardware requirements
