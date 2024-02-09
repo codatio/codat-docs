@@ -70,6 +70,20 @@ Users have successfully run the connector on older versions of Windows; however,
 
 The connector will not run on Mac OS.
 
+## Supported environments
+
+Our QuickBooks Desktop Connector is verified to work in single-tenant environments only, where a single Windows user is logged on to the computer used to access QuickBooks Desktop. 
+
+Due to limitations of syncing with QBD, complications can occur when attempting to sync in multi-tenant environments. For example, if your company files are hosted on a different server to the one where you run and use QBD, you may see performance impact. To avoid this, you can install the web connector on this server, but you need to install QBD there as well. 
+
+You may also encounter issues in a hosted environment where multiple users log in and use QBD simultaneously, although this depends on the exact setup. This does not apply to Rightworks hosted instances.
+
+:::note Rightworks hosted instances
+
+Rightworks hosted instances already have the web connector installed and support our integration as a result.  Outside of the Rightworks solution, we cannot guarantee the behavior of the connector in multi-tenant or hosted environments.
+
+:::
+
 ## Hardware requirements
 
 You will need to ensure that the host machine meets <a href="https://quickbooks.intuit.com/learn-support/en-us/help-article/install-products/system-requirements-quickbooks-desktop-2022/L9664spDA_US_en_US" class="external" target="_blank">Intuit's recommended specification</a> for running QuickBooks Desktop.
