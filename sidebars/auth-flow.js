@@ -2,17 +2,16 @@ module.exports = [
   "auth-flow/authorize-embedded-link",
   {
     type: "category",
-    label: "Configure",
+    label: "Customize",
     collapsed: true,
     items: [
-      "auth-flow/customize/sdk-advanced-options",
+      "auth-flow/customize/sdk-customize-code",
       "auth-flow/customize/customize-link",
       "auth-flow/customize/branding",
       "auth-flow/customize/set-up-redirects",
-      "auth-flow/customize/set-up-webhooks",
-      "auth-flow/customize/use-openid-connect",
     ],
   },
+  "auth-flow/customize/use-openid-connect",
   "auth-flow/optimize/connection-management",
   {
     type: "category",
@@ -29,7 +28,7 @@ module.exports = [
   },
   {
     type: "link",
-    label: "Try it",
+    label: "Try our auth flow",
     href: "https://sdk-link.vercel.app/",
   },
   {

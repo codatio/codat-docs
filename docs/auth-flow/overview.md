@@ -17,9 +17,15 @@ Embed this best-in-class auth flow into your user journey with our [Link SDK com
 
 With our [rich examples](/auth-flow/authorize-embedded-link#get-started) and an <a href="https://links.codat.io/client/873ff19e-6fe0-47b0-a4e1-e19f344c78f6?user=8ee6c557-949c-40a8-b31d-e1fa02ef7fbc" target="_blank">interactive demo</a>, we have made it easy for you to get started. You can have the flow up and running in your front-end code with just a few lines of code.
 
-## Our values
+### Features
 
-We built Link with these values in mind:
+* **Intuitive UI** based on our expertise and learned best practices ensures a high-converting auth flow
+* **Authentication** in line with OAuth 2.0 standards
+* **Customizable UI** that reflects your company branding
+* **React and non-React** JavaScript compatible pre-built component for fast implementation
+* **Dynamic imports** mean your auth flow will never fall behind our API
+
+### Benefits
 
 <ul className="card-container col-1">
   <li className="card">
@@ -64,66 +70,14 @@ We built Link with these values in mind:
 
 ## Compatibility
 
-### Device compatibility
+Link is compatible with our entire [product range](/using-the-api/overview#apis) except [Sync for Commerce](/commerce/overview). To set up your Sync for Commerce authorization flow, follow the instructions in our [dedicated documentation](/commerce/overview).
 
-- Browser and mobile compatibility of Link varies for different integrations:
+Browser and mobile compatibility of Link varies for different integrations:
 
   - Some integrations are **desktop-only**, e.g. [Sage 50](/integrations/accounting/sage50/accounting-sage50), [QuickBooks Desktop](/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop).
   - Others require **downloading a desktop package**, e.g. [Oracle NetSuite](/integrations/accounting/netsuite/accounting-netsuite), [Microsoft Dynamics 365 Business Central](/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral).
   - Other integrations require switching to complex flows on **non mobile-optimized websites** due to the complexity of the third-party platform, e.g. [Sage 200cloud](/integrations/accounting/sage200/accounting-sage200), [Sage Intacct](/integrations/accounting/sage-intacct/accounting-sage-intacct).
 
-### Technology compatibility
-
-
-- Link is compatible with our entire [product range](/using-the-api/overview#apis) except for [Sync for Commerce](/commerce/overview). To set up your Sync for Commerce authorization flow, follow the instructions in our [dedicated documentation](/commerce/overview).
-
-- You should not iframe Link. Link is not compatible with iframes and will not work for security reasons (CORS). 
-
-<details>
-<summary>Other build options</summary>
-
-<ul className="card-container col-2">
-  <li className="card">
-    <p>No-code</p>
-    <div class="header">
-      <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
-      />
-      <h3>Hosted Link</h3>
-    </div>
-    <p>
-      Get up and running in minutes without any developer resource with our out-of-the-box option.
-    </p>
-    <p>
-      <a href="/auth-flow/authorize-hosted-link">
-        Read more...
-      </a>
-      .
-    </p>
-  </li>
-
-  <li className="card">
-    <p>More code</p>
-    <div class="header">
-      <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
-      />
-      <h3>Link API</h3>
-    </div>
-    <p>Leverage our API to build and control your own fully customized bespoke user journey.</p>
-    <p>
-      <a href="/auth-flow/build/build-your-own-authorization-journey">
-        Read more...
-      </a>
-      .
-    </p>
-  </li>
-</ul>
-
-</details>
-
 ---
 ## Read next
-- [Use the Link SDK](/auth-flow/authorize-embedded-link) to embed the auth journey in your app
+- [Get started](/auth-flow/authorize-embedded-link) with the Link SDK to embed the auth journey in your app

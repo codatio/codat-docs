@@ -1,10 +1,12 @@
 ---
-title: "Customize Link"
-sidebar_label: Link settings
-description: "Explore the available settings to tailor Link to your authorization journey's needs"
+title: "Customize Link settings in the Portal"
+sidebar_label: Link settings in Portal
+description: "Settings available to you to tailor Link to your authorization journey's needs"
 ---
 
-Our Link settings allow you to configure the authorization process based on your data needs and white-label Link and Hosted Link to suit your brand. You can customize these settings in the [Codat Portal](https://app.codat.io/) in [Settings > Auth flow > Link](https://app.codat.io/settings/link-settings).
+## Overview
+
+Our Link settings allow you to configure the authorization process based on your data needs and white-label Link to suit your brand. You can customize these settings in the [Codat Portal](https://app.codat.io/) in **[Settings > Auth flow > Link](https://app.codat.io/settings/link-settings)**.
 
 ## Data connections
 
@@ -31,13 +33,13 @@ For the Business documents integration type, you need to enable it in **Settings
 
 :::tip Banking integrations in the auth flow
 
-You should only enable one of the banking integrations at a time. This ensures optimal use of Link or Hosted Link, as each banking integration is [represented differently](/integrations/banking/overview#banking-integrations-in-the-authorization-flow) in the auth flow.
+You should only enable one of the banking integrations at a time. This ensures optimal use of Link, as each banking integration is [represented differently](/integrations/banking/overview#banking-integrations-in-the-authorization-flow) in the auth flow.
 :::
 
 ### Retries  
 Allow your customers to restart the linking process for accounting platforms in case their first connection attempt fails. The "Try again" button will appear on the error page.
 
-_Note_: The possibility to restart the linking process for commerce and banking platforms is available by default.
+The possibility to restart the linking process for commerce and banking platforms is available by default.
 
 ## Onboarding
 
@@ -45,7 +47,7 @@ _Note_: The possibility to restart the linking process for commerce and banking 
 Let your users know that some integrations are not optimized or will not connect via mobile when accessing the connection journey on mobile.
 
 #### Powered by Codat
-Toggle whether the _Powered by Codat_ logo is shown on your authorization flow. This toggle is always on when using our Free trial.
+Toggle whether the _Powered by Codat_ logo is shown on your authorization flow. This toggle is always on when using our [Free trial](/configure/create-account).
 
 #### Landing page  
 If enabled, an extra page will appear at the start of Link. The page's content is customizable, which is an excellent opportunity to explain the value of linking. You can customize the header and the body of the message.
@@ -59,11 +61,11 @@ This is a mandatory field where you need to specify the message you want to disp
 Optionally, you can add a message and a URL for terms and conditions you'd like your clients to read before they share their data with you.
 
 #### Data type information  
-List the data you're going to collect for each of the integration categories (accounting, banking, or commerce). This is displayed in the auth flow to inform the user which data types Codat will use after linking the data source. 
+List the data you're going to collect for each of the integration categories (accounting, banking, or commerce). This informs the user which data types Codat will use after linking the data source. 
 
 :::tip Data types with Plaid
 
-If you enabled Plaid as your banking integration, the data type information from this section will not be shown in Link. This is because Plaid provides their own list of data types within their auth flow.
+If you enabled Plaid as your banking integration, the information from this section will not be shown in Link. This is because Plaid provides their own list of data types within their auth flow.
 :::
 
 **Exit confirmation dialog**  
