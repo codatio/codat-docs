@@ -52,6 +52,8 @@ If QuickBooks Desktop is open on the SMB user's machine, the open QuickBooks com
 
 Only one instance of QBD can be open on a user's machine at a time.
 
+Also note, that while syncing, the performance of QBD can vary. You cannot open an instance of QBD while a program is syncing and there are other impacts while using QBD such as drop down menus closing unexpectedly.
+
 ## Supported operating systems
 
 The Codat QuickBooks Desktop Connector is supported for QuickBooks running on Windows 10 or Windows 11 with the latest service pack(s) installed.
@@ -60,11 +62,19 @@ Users have successfully run the connector on older versions of Windows; however,
 
 The connector will not run on Mac OS.
 
-:::note Supported environments
+## Supported environments
 
 Our QuickBooks Desktop Connector is designed to work in single-tenant environments only, where one Windows user logs on to the same computer they use to access QuickBooks Desktop.
 
-[Installation on Right Networks hosted instances](/integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks) is currently in beta.
+Due to limitations when syncing with QuickBooks Desktop, some complications can occur when attempting to sync in different environments.
+
+For example, if you're company files are hosted on a separate server to where you run & use QBD, you may see performance impacts. One way to counter this is to install the web connector on the server itself although this also requires a full installation of QBD.
+
+Another scenario you may encounter is with hosted environments with many users logging in and using QBD at the same time. While this can cause issues it is very dependant on the exact setup. This does not apply to Rightworks hosted instances.
+
+:::note Rightworks Hosted instances
+
+Rightworks hosted instances come with the web connector pre-installed and so natively support our integration
 :::
 
 ## Hardware requirements
