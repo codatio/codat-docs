@@ -73,7 +73,7 @@ You may also encounter issues in a hosted environment where multiple users log i
 
 :::note Rightworks hosted instances
 
-Rightworks hosted instances already have the web connector installed and support our integration as a result.  Outside of the Rightworks solution, we cannot guarantee the behavior of the connector in multi-tenanted or hosted environments.
+Rightworks hosted instances already have the web connector installed and support our integration as a result.  Outside of the Rightworks solution, we cannot guarantee the behavior of the connector in multi-tenant or hosted environments.
 
 :::
 
