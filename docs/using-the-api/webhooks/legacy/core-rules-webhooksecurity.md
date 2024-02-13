@@ -1,9 +1,13 @@
 ---
 title: "Webhook security"
 description: "Securing your webhook to prevent unauthorized use"
-createdAt: "2020-04-02T10:24:15.274Z"
-updatedAt: "2022-11-24T12:14:59.848Z"
 ---
+
+:::caution New webhook service available
+
+This page describes the functionality of our legacy webhook offering. [Learn more](/using-the-api/webhooks/overview) about our new webhook service and see how you can [migrate](/using-the-api/webhooks/migration-guide) to use it instead.
+
+:::
 
 To prevent unauthorized users from posting content to your webhook, Codat can add an `Authorization` header to the requests sent. You can set this up either via the Codat portal or API.
 

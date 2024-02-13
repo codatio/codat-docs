@@ -3,6 +3,20 @@ title: "Event types"
 description: "Use webhooks to build responsive and resilient applications on Codat data."
 ---
 
+## Webhook Events
+We have a variety of event types that you can subscribe to. For example, one such event is `hello.world`. Here is a sample payload for `hello.world`:
+
+```
+{
+  "type": "hello.world",
+  "data": {
+    "hello": "world"
+  }
+}
+```
+
+
+
 The following rules can be configured in the Codat Portal to trigger webhook events. These can be use to help your respond to changes in your companies and their data.
 
 | Rule | Type | Trigger | Additional data | 

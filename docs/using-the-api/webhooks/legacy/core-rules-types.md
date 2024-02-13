@@ -3,6 +3,12 @@ title: "Rule types"
 description: "Use webhooks to build responsive and resilient applications on Codat data."
 ---
 
+:::caution New webhook service available
+
+This page describes the functionality of our legacy webhook offering. [Learn more](/using-the-api/webhooks/overview) about our new webhook service and see how you can [migrate](/using-the-api/webhooks/migration-guide) to use it instead.
+
+:::
+
 The following rules can be configured in the Codat Portal to trigger webhook events. These can be use to help your respond to changes in your companies and their data.
 
 | Rule | Type | Trigger | Additional data | 
