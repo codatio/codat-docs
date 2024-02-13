@@ -493,11 +493,11 @@ module.exports = {
     },
     {
       from: "/introduction/webhooks/core-rules-create",
-      to: "/using-the-api/webhooks/core-rules-create",
+      to: "/using-the-api/webhooks/create-event",
     },
     {
       from: "/introduction/webhooks/core-rules-types",
-      to: "/using-the-api/webhooks/core-rules-types",
+      to: "/using-the-api/webhooks/event-types",
     },
     {
       from: "/introduction/webhooks/core-rules-webhooks",

@@ -1,9 +1,13 @@
 ---
 title: "Receive webhooks events via email"
 description: "Review how to set up email notifications when managing rules"
-createdAt: "2022-11-16T11:55:04.460Z"
-updatedAt: "2022-11-23T13:55:59.785Z"
 ---
+
+:::caution New webhook service available
+
+This page describes the functionality of our legacy webhook offering. [Learn more](/using-the-api/webhooks/overview) about our new webhook service and see how you can [migrate](/using-the-api/webhooks/migration-guide) to use it instead.
+
+:::
 
 You can choose to specify an email address as a notification method for a rule. Then, if rule conditions are met and an event is triggered, the email address will receive a notification.
 

@@ -47,9 +47,13 @@ module.exports = [
     type: "category",
     label: "Webhooks",
     collapsed: true,
+    link: {
+      type: 'doc',
+      id: "using-the-api/webhooks/overview",
+    },
     items: [
-      "using-the-api/webhooks/core-rules-types",
-      "using-the-api/webhooks/core-rules-create",
+      "using-the-api/webhooks/event-types",
+      "using-the-api/webhooks/create-event",
       "using-the-api/webhooks/migration-guide",
       "using-the-api/webhooks/troubleshooting",
       {
