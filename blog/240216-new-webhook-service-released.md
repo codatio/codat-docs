@@ -1,15 +1,15 @@
 ---
-title: "🚀 Exciting announcement: Introducing our new webhooks service! 🚀"
+title: "🚀 Introducing our new webhooks service 🚀"
 date: "2024-02-16"
 tags: ["Product", "Update"]
 authors: dcoplowe
 ---
 
-We're thrilled to unveil our latest platform update designed to simplify your development experience: Our brand-new Webhooks Service! 🎉
+We're thrilled to unveil our latest platform update designed to simplify your development experience: our brand-new webhooks service! 🎉
 
 <!--truncate-->
 
-Say goodbye to complex development processes and hello to streamlined efficiency with our best-in-class solution. Here's what you can expect from our new Webhooks Service:
+Say goodbye to complex development processes and hello to streamlined efficiency with our best-in-class solution. Here's what you can expect from our new webhooks service:
 
 ⚙️ **Smart Retries**: No more worrying about missed events or failed deliveries. Our intelligent system automatically retries failed webhook deliveries, ensuring your crucial messages reach their destination without any hassle.
 
@@ -23,7 +23,7 @@ Say goodbye to complex development processes and hello to streamlined efficiency
 
 #### How can I migrate to our new service?
 
-Checkout out our [migration guide](/using-the-api/webhooks/migration) to see if you can move over and how to request this.
+Check out our [migration guide](/using-the-api/webhooks/migration) to see if you can move over and how to request the move.
 
 #### Planned deprecations
 
