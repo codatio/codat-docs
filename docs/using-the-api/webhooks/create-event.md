@@ -5,6 +5,33 @@ createdAt: "2019-02-20T11:20:32.835Z"
 updatedAt: "2022-11-16T12:54:20.055Z"
 ---
 
+## In Portal
+
+Monitor -> Webhooks -> Events 
+
+will be replaced with the svix component
+
+in the settuings, the rules button will redirect to the events list. 
+
+(SETTINGS MENU WILL CHANGE - NO LONGER IS RULES AND SECURITY, JUST WEBHOOKS -> EVENTS -> CONFIGURE CONSUMER)
+
+Add an endpoint URL / Create a consumer is what we will refer to this as
+
+select the event type you want to subscribe to 
+
+talk about the event catalog
+
+add customer headers - SCREENSHOTS FROM CONFLUENCE AND THOSE DESCRIPTIONS 
+
+https://codatdocs.atlassian.net/wiki/spaces/PRTL/pages/3246784546/Deprecations+and+migration+prep#:~:text=Based%20on%20the%20above%20here%20we%20outline%20whether%20they%20can%20migrate%20over%20to%20the%20new%20service%20completely%2C%20or%20swith%20to%20the%20new%20service%20but%20use%20the%20old%20endpoints%20or%20remain%20on%20the%20existing%20service.
+
+OAS - preview in the new repo - 
+
+
+
+
+
+
 ## Adding an Endpoint
 In order to start listening to messages sent through Svix, you will need to configure your  **endpoints**.
 
@@ -19,6 +46,8 @@ Adding an endpoint is as simple as providing a URL that you control and a list o
 >You'll be able to view and inspect all operational webhooks sent to your Svix Play URL, making it effortless to get started.
 
 If you don't specify any event types, by default, your endpoint will receive all events, regardless of type. This can be helpful for getting started and for testing, but we recommend changing this to a subset later on to avoid receiving unexpected messages.
+
+THIS ALL CAN ALSO BE DONE PROGRAMMATICALLY
 
 ### Testing your Endpoint
 The easiest way to be more confident in your endpoint configuration is to start receiving events as quickly as possible.
@@ -84,6 +113,11 @@ If all attempts to a specific endpoint fail for a period of 5 days, the endpoint
 
 ### Manual retries
 You can also use the application portal to manually retry each message at any time, or automatically retry ("Recover") all failed messages starting from a given date.
+
+
+
+
+
 
 
 ## IP Whitelist

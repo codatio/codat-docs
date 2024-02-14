@@ -1,5 +1,5 @@
 ---
-title: "Webhook services at Codat"
+title: "Webhook events at Codat"
 description: "Managing new and existing rules via Codat Portal"
 ---
 streamlined efficiency with our best-in-class solution
@@ -9,7 +9,8 @@ Webhooks are how services notify each other of events. At their core they are ju
 
 The way to indicate that a webhook has been processed is by returning a  `2xx`  (status code  `200-299`) response to the webhook message within a reasonable time-frame (15s). It's also important to disable  `CSRF`  protection for this endpoint if the framework you use enables them by default.
 
-Another important aspect of handling webhooks is to verify the signature and timestamp when processing them. You can learn more about it in the  [webhook signature verification](#webhook-signature-verification).
+WEBHOOK CONSUMER
+
 
 
 ⚙️ **Smart Retries**: No more worrying about missed events or failed deliveries. Our intelligent system automatically retries failed webhook deliveries, ensuring your crucial messages reach their destination without any hassle.
@@ -22,6 +23,8 @@ Another important aspect of handling webhooks is to verify the signature and tim
 
 🛡️ **Improved Stability**: Trust in a robust and reliable solution that prioritizes stability. Our Webhooks Service is engineered for resilience, delivering unmatched performance and uptime to support your mission-critical operations.
 
+
+CALLOUT TO THE OLD ONE - IF YOU ARE USING WEBHOOKS BEFORE THIS DATE, READ THESE DOCS
 
 ## Retries
 Svix attempts to deliver each webhook message based on a retry schedule with exponential backoff.
@@ -41,11 +44,3 @@ Each message is attempted based on the following schedule, where each period is 
 If an endpoint is removed or disabled delivery attempts to the endpoint will be disabled as well.
 
 For example, an attempt that fails three times before eventually succeeding will be delivered roughly 35 minutes and 5 seconds following the first attempt.
-
-## IP Whitelist
-In case your webhook receiving endpoint is behind a firewall or NAT, you may need to allow traffic from Svix's IP addresses.
-
-Codat's webhook rules are served from static IP addresses. This means that you are able to apply an allowlisting rule to grant network access to these notifications.
-
-20.77.82.168/32
-51.142.76.22/32
