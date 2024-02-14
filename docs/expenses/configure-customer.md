@@ -62,6 +62,7 @@ Next, use the [Create connection](/sync-for-expenses-api#/operations/create-conn
 | Accounting platform | platformKey |
 | ---  | ---  |
 | Oracle NetSuite | `akxx` |
+| QuickBooks Desktop | `pqsw`|
 | QuickBooks Online | `qhyg` |
 | Sage Intacct | `knfz` |
 | Xero | `gbol` |
