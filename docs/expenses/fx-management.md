@@ -119,6 +119,23 @@ We validate the multi-currency transactions you push to Sync for Expenses to ens
     <td>❌</td>
   </tr>
   <tr>
+    <td rowspan="2">QuickBooks Desktop</td>
+    <td>Credit</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>❌</td>
+    <td>✔️</td>
+    <td>❌</td>
+  </tr>
+  <tr>
+    <td>Prepaid</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>❌</td>
+    <td>✔️</td>
+    <td>❌</td>
+  </tr>
+  <tr>
     <td>Xero</td>
     <td></td>
     <td>✔️</td>
@@ -201,6 +218,23 @@ We validate the multi-currency transactions you push to Sync for Expenses to ens
   </tr>
   <tr>
     <td rowspan="2">QuickBooks Online</td>
+    <td>Credit</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>❌</td>
+    <td>✔️</td>
+    <td>❌</td>
+  </tr>
+  <tr>
+    <td>Prepaid</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>❌</td>
+    <td>✔️</td>
+    <td>❌</td>
+  </tr>
+  <tr>
+    <td rowspan="2">QuickBooks Desktop</td>
     <td>Credit</td>
     <td>✔️</td>
     <td>✔️</td>
