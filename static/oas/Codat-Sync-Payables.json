@@ -1115,13 +1115,10 @@
                               "quantity": 1,
                               "taxAmount": 0,
                               "accountRef": {
-                                "id": "16",
-                                "name": "Advertising"
+                                "id": "16"
                               },
                               "taxRateRef": {
-                                "id": "NON",
-                                "name": "NON",
-                                "effectiveTaxRate": 0
+                                "id": "NON"
                               },
                               "totalAmount": 5
                             }
@@ -1148,13 +1145,10 @@
                               "quantity": 1,
                               "taxAmount": 0,
                               "accountRef": {
-                                "id": "16",
-                                "name": "Advertising"
+                                "id": "16"
                               },
                               "taxRateRef": {
-                                "id": "NON",
-                                "name": "NON",
-                                "effectiveTaxRate": 0
+                                "id": "NON"
                               },
                               "totalAmount": 5
                             }
@@ -1208,9 +1202,6 @@
           "Bills"
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/timeoutInMinutes"
-          },
           {
             "in": "header",
             "name": "Idempotency-Key",
@@ -1509,7 +1500,7 @@
         }
       }
     },
-    "/companies/{companyId}/connections/{connectionId}/payables/bill/{billId}/payments": {
+    "/companies/{companyId}/connections/{connectionId}/payables/bills/{billId}/payments": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
