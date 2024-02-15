@@ -156,7 +156,7 @@ When creating an expense transaction, allow your SMB customer to save a copy of 
 | QuickBooks   Online | ✔️       | ✔️      | ✔️      | ✔️          | ✔️           | ✔️            | ✔️             | ✔️              |
 | Dynamics   365      | ✔️       | ✔️      | ✔️      | ✔️          |             |              |               |                |
 | Oracle   NetSuite   | ✔️       | ✔️      |        |            |             |              |               |                |
-
+| QuickBooks Desktop (credit card) | ✔️       | ✔️      |        |            |             |              |               |                |
 </details>
 
 ## Build with client libraries
