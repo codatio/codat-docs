@@ -42,6 +42,8 @@ Content-Disposition: form-data; name="yourFileData"; filename="TEST_SEND_FILE.tx
 | **NetSuite**          | 100 MB    | BMP, CSV, XLS, XLSX, JSON, PDF, PJPG, PJPEG, PNG, TXT, SVG, TIF, TIFF,   DOC, DOCX, ZIP                                                                      |
 | **Dynamics 365 Business Central** | 350 MB | [No explicit requirements outlined](https://learn.microsoft.com/en-gb/dynamics365/business-central/ui-how-add-link-to-record#to-attach-a-file-to-a-purchase-invoice) for text, image, and video files. |
 
+* Please note that Quickbooks Desktop does not support attachment upload.
+
 #### Attach a receipt using Postman
 
 If you are using Postman to attach files, there are additional steps you need to complete. 
