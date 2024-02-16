@@ -2010,19 +2010,69 @@
           },
           "bills": {
             "title": "Bills",
-            "allOf": [
-              {
-                "type": "object",
-                "properties": {
-                  "results": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/Bill"
-                    }
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Identifier for the bill, unique for the company in the accounting platform."
+              },
+              "reference": {
+                "type": "string",
+                "nullable": true,
+                "description": "User-friendly reference for the bill."
+              },
+              "supplierRef": {
+                "$ref": "#/components/schemas/Supplier/definitions/supplierRef"
+              },
+              "issueDate": {
+                "allOf": [
+                  {
+                    "description": "Date of the bill as recorded in the accounting platform."
+                  },
+                  {
+                    "$ref": "#/components/schemas/Company/properties/created"
                   }
+                ]
+              },
+              "dueDate": {
+                "allOf": [
+                  {
+                    "description": "Date the supplier is due to be paid."
+                  },
+                  {
+                    "$ref": "#/components/schemas/Company/properties/created"
+                  }
+                ]
+              },
+              "currency": {
+                "$ref": "#/components/schemas/MappingOptions/definitions/accountMappingOption/properties/currency"
+              },
+              "lineItems": {
+                "type": "array",
+                "nullable": true,
+                "description": "Array of Bill line items.",
+                "items": {
+                  "$ref": "#/components/schemas/Bill/definitions/billLineItem"
                 }
+              },
+              "status": {
+                "$ref": "#/components/schemas/Bill/definitions/billStatus"
+              },
+              "totalAmount": {
+                "type": "number",
+                "format": "decimal",
+                "description": "Amount of the bill, including tax."
+              },
+              "amountDue": {
+                "type": "number",
+                "format": "decimal",
+                "nullable": true,
+                "description": "Amount outstanding on the bill."
+              },
+              "sourceModifiedDate": {
+                "$ref": "#/components/schemas/Bill/allOf/1"
               }
-            ]
+            }
           }
         }
       },
@@ -2081,6 +2131,10 @@
         "type": "object",
         "description": "",
         "properties": {
+          "id": {
+            "type": "string",
+            "description": "Identifier for the bill payment, unique for the company in the accounting platform."
+          },
           "amount": {
             "type": "number",
             "format": "decimal",
