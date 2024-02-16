@@ -40,11 +40,11 @@ Register your Business Central application on the Microsoft Azure portal.
 
    - To gain access to any Azure configuration that your company has already set up—for example, for user authentication—enter your company email when you sign up.
 
-   - If your organization is using Azure Active Directory (Azure AD) to control access to Dynamics 365 Business Central, ask your Azure AD administrator to add your account to the correct group.
+   - If your organization is using Microsoft Entra ID to control access to Dynamics 365 Business Central, ask your Azure administrator to add your account to the correct group.
      :::caution Unable to create account
      > Contact your Business Central administrator if you can't create a new Business Central account. They might have disabled this feature.
 
-2. After you've signed in, select **Azure Active Directory** on the home page or left menu.
+2. After you've signed in, select **Microsoft Entra ID** on the home page or left menu.
 
    Details of the <a className="external" href="https://docs.microsoft.com/en-us/office365/enterprise/subscriptions-licenses-accounts-and-tenants-for-microsoft-cloud-offerings#tenants" target="_blank">tenant</a> that your account is connected to are displayed.
 
@@ -60,7 +60,7 @@ Register your Business Central application on the Microsoft Azure portal.
 
    - **Name**: Enter a short name for your application. Your customers will see this name when they authorize your connection to their accounting system.
 
-   - **Supported account types**: Select **Accounts in any organizational directory (Any Azure AD directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**. This allows Codat to access data in Dynamics 365 Business Central.
+   - **Supported account types**: Select **Accounts in any organizational directory (Any Microsoft Entra ID directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**. This allows Codat to access data in Dynamics 365 Business Central.
 
    - **Redirect URI**: Select **Web**, then enter the following URL: `https://dynamics365businesscentral.codat.io/oauth/callback`
 
