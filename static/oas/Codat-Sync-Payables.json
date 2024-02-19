@@ -1228,7 +1228,7 @@
                     "issueDate": "2023-04-23T00:00:00",
                     "dueDate": "2023-04-23T00:00:00",
                     "currency": "GBP",
-                    "currnecyRate": "1",
+                    "currencyRate": 1,
                     "lineItems": [
                       {
                         "description": "Half day training - Microsoft Office",
