@@ -80,6 +80,7 @@ module.exports = {
         id: "core-concepts/overview",
       },
       items: [
+        "core-concepts/organizations",
         "core-concepts/companies",
         "core-concepts/connections",
         "core-concepts/integrations",
