@@ -1228,6 +1228,7 @@
                     "issueDate": "2023-04-23T00:00:00",
                     "dueDate": "2023-04-23T00:00:00",
                     "currency": "GBP",
+                    "currencyRate": 1,
                     "lineItems": [
                       {
                         "description": "Half day training - Microsoft Office",
@@ -1618,22 +1619,28 @@
           "Suppliers"
         ],
         "summary": "List suppliers",
-        "x-internal": true,
-        "x-speakeasy-ignore": true,
-        "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.",
+        "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nBy default, this endpoint returns a list of active suppliers. You can use [querying](https://docs.codat.io/using-the-api/querying) to change that. \n\nFor example, to retrieve only suppliers associated with unpaid bills (i.e. `balance>0`) or suppliers created within the specified number of days (e.g. `sourceModifiedDate>2023-12-15T00:00:00.000Z`), query the endpoint as follows: `/payables/suppliers?query=sourceModifiedDate>2023-12-15T00:00:00.000Z||balance>0`.",
         "operationId": "list-suppliers",
         "parameters": [
           {
-            "$ref": "#/components/parameters/page"
-          },
-          {
-            "$ref": "#/components/parameters/pageSize"
-          },
-          {
-            "$ref": "#/components/parameters/query"
-          },
-          {
-            "$ref": "#/components/parameters/orderBy"
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "Modified after a given date": {
+                "value": "sourceModifiedDate>2023-12-15T00:00:00.000Z"
+              },
+              "Balances above 400 USD": {
+                "value": "balance>400"
+              },
+              "Combined": {
+                "value": "sourceModifiedDate>2023-12-15T00:00:00.000Z||balance>0"
+              }
+            },
+            "description": "Codat query string allows you to filter by `sourceModifiedDate` or if there is an outstanding balance (Unpaid bill) against a supplier. Learn more about Codat's query string [here](https://docs.codat.io/using-the-api/querying)."
           }
         ],
         "responses": {
@@ -1661,9 +1668,7 @@
                             }
                           ],
                           "status": "Active",
-                          "modifiedDate": "2023-01-18T11:02:36Z",
-                          "sourceModifiedDate": "2022-12-07T10:48:18Z",
-                          "defaultCurrency": "GBP"
+                          "sourceModifiedDate": "2022-12-07T10:48:18Z"
                         },
                         {
                           "id": "42",
@@ -1678,25 +1683,9 @@
                             }
                           ],
                           "status": "Active",
-                          "modifiedDate": "2023-01-18T11:02:36Z",
-                          "sourceModifiedDate": "2021-08-31T08:45:02Z",
-                          "defaultCurrency": "GBP"
+                          "sourceModifiedDate": "2021-08-31T08:45:02Z"
                         }
-                      ],
-                      "pageNumber": 1,
-                      "pageSize": 2,
-                      "totalResults": 23,
-                      "_links": {
-                        "current": {
-                          "href": "/companies/10818b5e-6e6a-4ed4-a1c5-3e3efe626e87/data/suppliers?page=1&pageSize=2"
-                        },
-                        "self": {
-                          "href": "/companies/10818b5e-6e6a-4ed4-a1c5-3e3efe626e87/data/suppliers"
-                        },
-                        "next": {
-                          "href": "/companies/10818b5e-6e6a-4ed4-a1c5-3e3efe626e87/data/suppliers?page=2&pageSize=2"
-                        }
-                      }
+                      ]
                     }
                   }
                 }
@@ -3410,7 +3399,7 @@
       "Supplier": {
         "x-internal": true,
         "title": "Supplier",
-        "description": "﻿> View the coverage for suppliers in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nFrom the **Suppliers** endpoints, you can retrieve a list of [all the suppliers for a company](https://docs.codat.io/sync-for-payables-api#/operations/list-suppliers). Suppliers' data links to accounts payable [bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill).",
+        "description": "﻿> View the coverage for suppliers in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nSuppliers are people or organizations that provide something, such as a product or service. Use **Suppliers** endpoints to retrieve supplier data for a company. \n\nSuppliers' data links to accounts payable [bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill).\n ",
         "type": "object",
         "allOf": [
           {
@@ -3504,79 +3493,13 @@
                   }
                 }
               },
-              "registrationNumber": {
-                "type": "string",
-                "nullable": true,
-                "description": "Company number of the supplier. In the UK, this is typically the company registration number issued by Companies House."
-              },
-              "taxNumber": {
-                "type": "string",
-                "nullable": true,
-                "description": "Supplier's company tax number."
-              },
               "status": {
                 "$ref": "#/components/schemas/Supplier/definitions/supplierStatus"
-              },
-              "defaultCurrency": {
-                "type": "string",
-                "nullable": true,
-                "description": "Default currency the supplier's transactional data is recorded in."
-              },
-              "metadata": {
-                "title": "Metadata",
-                "type": "object",
-                "x-internal": true,
-                "properties": {
-                  "isDeleted": {
-                    "type": "boolean",
-                    "description": "Indicates whether the record has been deleted in the third-party system this record originated from.",
-                    "nullable": true
-                  }
-                }
-              },
-              "supplementalData": {
-                "title": "Supplemental data",
-                "type": "object",
-                "x-internal": true,
-                "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting platform. [Learn more](https://docs.codat.io/using-the-api/supplemental-data/overview) about supplemental data.",
-                "properties": {
-                  "content": {
-                    "type": "object",
-                    "additionalProperties": {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    "nullable": true
-                  }
-                }
               }
             }
           },
           {
-            "title": "Modified dates",
-            "x-internal": true,
-            "allOf": [
-              {
-                "title": "ModifiedDate",
-                "x-internal": true,
-                "type": "object",
-                "properties": {
-                  "modifiedDate": {
-                    "allOf": [
-                      {
-                        "$ref": "#/components/schemas/Company/properties/created"
-                      },
-                      {
-                        "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
-                      }
-                    ]
-                  }
-                }
-              },
-              {
-                "$ref": "#/components/schemas/Bill/allOf/1"
-              }
-            ]
+            "$ref": "#/components/schemas/Bill/allOf/1"
           }
         ],
         "required": [
@@ -3625,9 +3548,6 @@
                     }
                   }
                 }
-              },
-              {
-                "$ref": "#/components/schemas/PagingInfo"
               }
             ]
           }
@@ -3650,26 +3570,7 @@
                 "postalcode": "93308"
               }
             ],
-            "registrationNumber": "string",
-            "taxNumber": "string",
             "status": "Unknown",
-            "defaultCurrency": "string",
-            "metadata": {
-              "isDeleted": true
-            },
-            "supplementalData": {
-              "content": {
-                "property1": {
-                  "property1": null,
-                  "property2": null
-                },
-                "property2": {
-                  "property1": null,
-                  "property2": null
-                }
-              }
-            },
-            "modifiedDate": "2022-10-23T00:00:00Z",
             "sourceModifiedDate": "2022-10-23T00:00:00Z"
           }
         ]
