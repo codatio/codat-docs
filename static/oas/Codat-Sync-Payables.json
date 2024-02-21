@@ -1058,7 +1058,7 @@
         }
       }
     },
-    "/companies/{companyId}/connection/{connectionId}/payables/bills": {
+    "/companies/{companyId}/connections/{connectionId}/payables/bills": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -1605,7 +1605,7 @@
         }
       }
     },
-    "/companies/{companyId}/connection/{connectionId}/payables/suppliers": {
+    "/companies/{companyId}/connections/{connectionId}/payables/suppliers": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -2181,8 +2181,7 @@
             "required": [
               "amount",
               "date",
-              "accountRef",
-              "currencyRate"
+              "accountRef"
             ]
           }
         },
