@@ -28,11 +28,7 @@ Reach out to your Codat contact with a request to be migrated to the new webhook
 
 ### Email notifications
 
-Our new webhook service uses a Zapier integration to support receiving email notifications for relevant events. 
-
-NOT CURRENTLY AVAILABLE - REMOVE FOR NOW
-
-You need to configure your webhook consumer to receive these events first, and then set up an automation for the required email addresses in Zapier. Use our step-by-step guide to create your own Zapier automation for email notifications with ease. 
+Our new service does not currently support email notifications for events. Start using our new service and endpoints now and check back soon for updates on email notification support.
 
 ### Event log endpoints
 
@@ -56,15 +52,17 @@ If you are using company-specific webhooks, please remain on our existing endpoi
 
 ### Source client header
 
-If you are using multiple Codat instances and need to differentiate between them, add the required Id as a custom `X-Codat-ClientId` header to the webhook endpoint using our Portal. 
+If you are using multiple Codat instances and need to differentiate between them, you can filter the messages by client. Add a custom `X-Codat-ClientId` header with the required client ID to the webhook endpoint using our Portal. 
 
-ADD A SCREENSHOT ON WHERE THE CLIEND ID IS
+You can find and copy your client ID in the [Portal](https://app.codat.io) by clicking on your instance dropdown.
+
+![A fragment of the UI that displays the dropdown with client instances and current client details](/img/use-the-api/0049-clientid-portal.png)
 
 For more information on creating custom headers in webhook consumers, see [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers).
 
 ### Webhook auth header
 
-If you are currently including an authorization header in your webhooks, you can add it as a custom `Authorization` header to the webhook consumer endpoint instead using our Portal. It is no longer possible to do this via an API endpoint.
+If you are currently securing your webhook endpoints with an authorization header, you can add it as a custom `Authorization` header to the webhook consumer endpoint using our Portal. It is no longer possible to do this via our API.
 
 For more information on creating custom headers in webhook consumers, see [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers).
 

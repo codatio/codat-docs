@@ -51,13 +51,18 @@ Then, click the triple-dot menu on the right and choose one of the applicable op
 
 For more granular date control, you can scroll to the endpoint's message attempts, click on the triple-dot options menu of a specific message, and choose **Replay > Replay all failed messages since this time**.
 
+:::info Missing messages
+
+A message could be missing if the endpoint was disabled, did not exist and was created after the send date, or was listening to other event types and is now listening to an additional one. 
+:::
+
 ## Endpoint failures
 
 Your webhook consumer endpoint could fail due to a variety of reasons. Let's have a look at resolving the most common ones. 
 
 #### Disabled endpoint
 
-If all delivery attempts to the endpoint failed for a period of 5 days, this endpoint will be disabled and an `EndpointDisabledEvent` webhook will be sent to your account. 
+If all delivery attempts to the endpoint fail for a period of 5 days, this endpoint will be disabled and an `EndpointDisabledEvent` webhook will be sent to your account. 
 
 To re-enable it, navigate to **Monitor > Webhooks > Events > Endpoints**, click to see the detailed view of the endpoint, then choose **Enable endpoint** in the triple-dot options menu.
 
@@ -81,7 +86,7 @@ When your webhook endpoint responds with a `2xx` status code, we consider this t
 
 #### Response timeout
 
-When your webhook endpoint fails to respond to the message within {timeout duration}, we consider this to be a failed message. 
+When your webhook endpoint fails to respond to the message within 15 seconds, we consider this to be a failed message. 
 
 We recommend you set up the endpoint to simply receive the message and respond to it, and add it to a queue for asynchronous processing. This will help avoid timeouts.
 
