@@ -493,7 +493,7 @@ module.exports = {
     },
     {
       from: "/introduction/webhooks/core-rules-create",
-      to: "/using-the-api/webhooks/create-event",
+      to: "/using-the-api/webhooks/create-consumer",
     },
     {
       from: "/introduction/webhooks/core-rules-types",
