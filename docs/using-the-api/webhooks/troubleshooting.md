@@ -1,14 +1,12 @@
 ---
-title: "Troubleshooting"
+title: "Webhook troubleshooting"
 sidebar_label: "Troubleshooting"
-description: "Use webhooks to build responsive and resilient applications on Codat data."
+description: "Learn how to replay failed events, resolve common issues, check webhook logs, and review our retry policy"
 ---
 
-## Retries
-Svix attempts to deliver each webhook message based on a retry schedule with exponential backoff.
+## Retry policy
 
-### The schedule
-Each message is attempted based on the following schedule, where each period is started following the failure of the preceding attempt:
+With our webhook service, we attempt to deliver an event multiple times over a 28-hour period in case of a delivery failure. Our attempts are based on the following schedule, where each period starts once the preceding attempt fails:
 
 -   Immediately
 -   5 seconds
@@ -17,74 +15,90 @@ Each message is attempted based on the following schedule, where each period is 
 -   2 hours
 -   5 hours
 -   10 hours
--   10 hours (in addition to the previous)
+-   Additional 10 hours
 
-If an endpoint is removed or disabled delivery attempts to the endpoint will be disabled as well.
+If you remove or disable your webhook consumer endpoint, this will remove or disable delivery attempts as well. 
 
-For example, an attempt that fails three times before eventually succeeding will be delivered roughly 35 minutes and 5 seconds following the first attempt.
+:::tip Retry schedule example
 
-### Disabling failing endpoints
-If all attempts to a specific endpoint fail for a period of 5 days, the endpoint will be disabled and a webhook (`EndpointDisabledEvent`) will be sent to your account (not to the failing endpoint).
+An event that fails three times and then succeeds will be delivered roughly 35 minutes and 5 seconds after the initial attempt.
 
-### Manual retries
-You can also use the application portal to manually retry each message at any time, or automatically retry ("Recover") all failed messages starting from a given date.
+:::
 
-## Troubleshooting Tips
-There are some common reasons why your webhook endpoint is failing:
+## Recover failed messages
 
-### Not using the raw payload body
-This is the most common issue. When generating the signed content, we use the raw string body of the message payload.
+If you want to resend or recover one or more messages in case of your app's downtime or incorrect configuration, you can do so in the [Codat Portal](https://app.codat.io/monitor/events). 
 
-If you convert JSON payloads into strings using methods like stringify, different implementations may produce different string representations of the JSON object, which can lead to discrepancies when verifying the signature. It's crucial to verify the payload exactly as it was sent, byte-for-byte or string-for-string, to ensure accurate verification.
+Navigate to **Monitor > Webhooks > Events > Endpoints** to view your consumer endpoints and retry the messages manually or automatically. 
 
-### Missing the secret key
-From time to time we see people simple using the wrong secret key. Remember that keys are unique to endpoints.
+You can also select **Monitor > Webhooks > Events > Logs** to view and filter messages in an event-agnostic list.
 
-### Sending the wrong response codes
-When we receive a response with a 2xx status code, we interpret that as a successful delivery even if you indicate a failure in the response payload. Make sure to use the right response status codes so we know when message are supposed to succeed vs fail.
+### Single message
 
-### Responses timing out
-We will consider any message that fails to send a response within {timeout duration} a failed message. If your endpoint is also processing complicated workflows, it may timeout and result in failed messages.
+If you want to replay a single event (i.e. resend a single message), click on the consumer endpoint on the **Webhook events** page and scroll to view its message attempts. 
 
-We suggest having your endpoint simply receive the message and add it to a queue to be processed asynchronously so you can respond promptly and avoiding getting timed out.
+Next, click the triple-dot menu next to the message and click **Resend**. This will send the same message to your endpoint again.
 
-## Failure Recovery
+![A fragment of the UI that displays a Resend button next to a failed attempt](https://docs.svix.com/assets/images/resend-single-a4fb6e65f27f27e5700becb523135c2f.png)
 
-### Re-enable a disabled endpoint
-If all attempts to a specific endpoint fail for a period of 5 days, the endpoint will be disabled. To re-enable a disabled endpoint, go to the webhook dashboard, find the endpoint from the list and select "Enable Endpoint".
+### Multiple messages
 
-### Recovering/Resending failed messages
+If you want to automatically recover all failed messages or resend missing messages for a certain date range, click on the consumer endpoint on the **Webhook events** page. 
 
-#### Why Replay
+Then, click the triple-dot menu on the right and choose one of the applicable options. In the pop-up window, select the time period you want to recover messages for.
 
--   If your service has downtime
--   If your endpoint was misconfigured
+![A fragment of the UI that displays multiple message recovery options](/img/use-the-api/0046-multiple-message-retry.png)
 
-If you want to replay a single event, you can find the message from the UI and click the options menu next to any of the attempts.
+For more granular date control, you can scroll to the endpoint's message attempts, click on the triple-dot options menu of a specific message, and choose **Replay > Replay all failed messages since this time**.
 
-![resend message](https://docs.svix.com/assets/images/resend-single-a4fb6e65f27f27e5700becb523135c2f.png)
+## Endpoint failures
 
-From there, click "resend" to have the same message send to your endpoint again.
+Your webhook consumer endpoint could fail due to a variety of reasons. Let's have a look at resolving the most common ones. 
 
-If you need to recover from a service outage and want to replay all the events since a given time, you can do so from the Endpoint page. On an endpoint's details page, click  `Options > Recover Failed Messages`.
+#### Disabled endpoint
 
-![recover modal](https://docs.svix.com/assets/images/replay-modal-fa510bd82e4eccbbb01df28581ad8901.png)
+If all delivery attempts to the endpoint failed for a period of 5 days, this endpoint will be disabled and an `EndpointDisabledEvent` webhook will be sent to your account. 
 
-From there, you can choose a time window to recover from.
+To re-enable it, navigate to **Monitor > Webhooks > Events > Endpoints**, click to see the detailed view of the endpoint, then choose **Enable endpoint** in the triple-dot options menu.
 
-For a more granular recovery - for example, if you know the exact timestamp that you want to recover from - you can click the options menu on any message from the endpoint page. From there, you can click "Replay..." and choose to "Replay all failed messages since this time."
+![A fragment of the UI that displays the Enable endpoint option in the endpoint details view](/img/use-the-api/0048-enable-disabled-webhook.png)
 
-## IP Whitelist
-In case your webhook receiving endpoint is behind a firewall or NAT, you may need to allow traffic from Svix's IP addresses.
+#### Converted payload body
 
-Codat's webhook rules are served from static IP addresses. This means that you are able to apply an allowlisting rule to grant network access to these notifications.
+When generating the signed content of the message, we use the raw string body of its payload. If you convert JSON payloads into strings, the method you choose may produce different string representation of these payloads. 
 
+This can create discrepancies when verifying the webhook signature. To resolve, make sure to verify the payload exactly as it was sent. 
+
+For more information, see [Webhook signature verification](/using-the-api/webhooks/create-consumer#webhook-signature-verification).
+
+#### Missing secret key
+
+A message can fail if the wrong secret key is used. Keys are unique to endpoints, so make sure you are using the correct one. 
+
+#### Wrong response codes
+
+When your webhook endpoint responds with a `2xx` status code, we consider this to be a successful message delivery even if the response payload indicates a failure. Ensure you're using the right response status codes so that we can interpret successes and failures correctly.
+
+#### Response timeout
+
+When your webhook endpoint fails to respond to the message within {timeout duration}, we consider this to be a failed message. 
+
+We recommend you set up the endpoint to simply receive the message and respond to it, and add it to a queue for asynchronous processing. This will help avoid timeouts.
+
+#### IP allowlist
+
+If your webhook consumer endpoint is behind a firewall or NAT, the message can fail if the traffic from our IP addresses is blocked. 
+
+Codat's webhook messages are served from static IP addresses. Apply an allowlisting rule to grant network access to messages from these addresses:
+
+```
 20.77.82.168/32
 51.142.76.22/32
+```
 
 This is the full list of IP addresses that webhooks may originate from grouped by the region of the sender:
 
-### US
+#### US
 
 ```
 44.228.126.217
@@ -93,7 +107,7 @@ This is the full list of IP addresses that webhooks may originate from grouped b
 54.148.139.208
 ```
 
-### EU
+#### EU
 
 ```
 52.215.16.239
@@ -101,7 +115,7 @@ This is the full list of IP addresses that webhooks may originate from grouped b
 63.33.109.123
 ```
 
-### India (Private Beta)
+#### India (Private Beta)
 
 ```
 13.126.41.108
@@ -109,9 +123,17 @@ This is the full list of IP addresses that webhooks may originate from grouped b
 65.2.133.31
 ```
 
->IMPORTANT
->
->Static source IPs are not guaranteed for the basic [pricing tiers](https://www.svix.com/pricing/).
+## Logs and activity
 
-## Logs and activities
+If you need to track down a particular message that was sent to one of your endpoints, you can check the endpoint's detailed view page that has a filtered list of all messages sent to it. You can filter the list by event type and date. 
+
+Alternatively, you can navigate to **Monitor > Webhooks > Events > Logs** to view the full list of messages sent to all endpoints and each message's payload directly in the [Portal](https://app.codat.io/monitor/events).
+
+Finally, you can view webhook activity in the graph form by going to **Monitor > Webhooks > Events > Activity**. The graph shows the last six hours of attempts to send you events. 
+
+---
+## Read next
+
+- [Manage webhook consumers](/using-the-api/webhooks/create-consumer)
+- [Migration guide](/using-the-api/webhooks/migration-guide)
 
