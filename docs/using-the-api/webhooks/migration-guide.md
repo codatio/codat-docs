@@ -1,46 +1,81 @@
 ---
 title: "Webhooks migration guide"
 sidebar_label: "Migration guide"
-description: "Use webhooks to build responsive and resilient applications on Codat data."
+description: "Check how you can transition your existing Codat webhooks setup to our new service and endpoints"
 ---
 
-Can I migrate?
+## Can I migrate?
 
-if you ve not been contacted by us already, here is our migration guide. 
+If you have not been contacted by Codat already to discuss the migration of your existing webhooks setup, use the table below to check if you can start using our new webhooks service and endpoints. 
 
-initially you can use existing rule types with the new service
+Simply find the scenarios applicable to your existing setup and see what we recommend.
 
-we will not announce all migrations immediately, 
+| I am using...                                                                    | New service and endpoints | New service and old endpoints | Old service and endpoints |
+|----------------------------------------------------------------------------------|---------------------------|-------------------------------|---------------------------|
+| ...email notification functionality                                              | ✔️                         | ❌                             | ❌                         |
+| ...event log endpoints (e.g. `/rules/alerts`)                                    | ❌                         | ❌                             | ✔️                         |
+| ...only company-agnostic webhook functionality                                   | ✔️                         | ❌                             | ❌                         |
+| ...company-specific webhook functionality                                        | ❌                         | ✔️                             | ❌                         |
+| ...`X-Codat-ClientId` header to determine the source Codat instance of the event | ✔️                         | ❌                             | ❌                         |
+| ...webhook auth header via the `/profile` endpoint                               | ✔️                         | ❌                             | ❌                         |
+| ...webhook auth header via the Portal                                            | ✔️                         | ❌                             | ❌                         |
+| ...`Retry-After` header to control the time between retries                      | ✔️                         | ❌                             | ❌                         |
+| ...`RuleId` in my application's existing logic                                   | ❌                         | ❌                             | ✔️                         |
 
-instructions are basically here - in comments and migrationrequirement s- https://codatdocs.atlassian.net/wiki/spaces/PRTL/pages/3246784546/Deprecations+and+migration+prep#:~:text=We%20have%20a%20number%20of%20scenarios%20we%20need%20to%20support%20during%20the%20migration%20of%20existing%20clients%20onto%20our%20new%20webhooks%20service.%20These%20are
+## How do I migrate?
 
-How do I migrate?
+Reach out to your Codat contact with a request to be migrated to the new webhooks service. Depending on the scenarios that apply to you, there may be additional steps you need to take during the migration. We describe these in more detail in the sections below. 
 
-Email your codat contact and ask to be migrated
+### Email notifications
 
-@David Coplowe docs on how to do it for Support
+Our new webhook service uses a Zapier integration to support receiving email notifications for relevant events. 
 
-The mapping between old and interim rules
+You need to configure your webhook consumer to receive these events first, and then set up an automation for the required email addresses in Zapier. Use our step-by-step guide to create your own Zapier automation for email notifications with ease. 
 
-What’s happening next?
+### Event log endpoints
 
-Deprecation calendar and blog
+Our new service has a robust [retry policy](/using-the-api/webhooks/troubleshooting#retry-policy) that ensures we attempt to deliver an event multiple times over a 28-hour period. Therefore, you don't need to write any complex logic to manage undelivered events. 
 
-thesea re sort of the options that are available to our clients based on what they do as a business
+If your application goes down for a longer period, you can retry all the failed events using the Portal. We walk you through this in detail in our [troubleshooting](/using-the-api/webhooks/troubleshooting#recover-failed-messages) documentation.
 
-ruleId will no longer be passed on in the new schemas - in scenarios for new service new endpoints + new service old endpoints - they should remain on the existing service until we have the new rules - we will change them, and then they can rewrite their logic
+### Company-agnostic webhooks
 
+If you are not using any of our existing company-specific webhooks, you can simply move to our new webhook endpoints: 
 
+- [Create webhook consumer](/platform-api#/operations/create-webhook-consumer)
+- [List webhook consumers](/platform-api#/operations/list-webhook-consumers)
+- [Delete webhook consumer](/platform-api#/operations/delete-webhook-consumer)
 
+### Company-specific webhooks
 
+If you are using company-specific webhooks, please remain on our existing endpoints. We will work with you to arrange the next steps. With the new service, you are able to see the `companyId` in the **Channels** field of the endpoint's detailed view or the message log. 
 
-| # | Scenario                                                                                         | New service and new endpoint | New service and old endpoints | Remains on old service and endpoints | Caveats                |
-|---|--------------------------------------------------------------------------------------------------|------------------------------|-------------------------------|--------------------------------------|------------------------|
-| 1 | Client uses email functionality                                                                  | ✔️                            | ❌                             | ❌                                    | Zapier setup           |
-| 2 | Client uses event logs endpoint (e.g. /rules/alerts)                                             | ❌                            | ❌                             | ✔️                                    |                        |
-| 3 | Client uses company agnostic webhook functionality only                                          | ✔️                            | ❌                             | ❌                                    |                        |
-| 4 | Client uses company specifc webhook functionality                                                | ❌                            | ✔️                             | ❌                                    |                        |
-| 5 | Client/Partner uses X-Codat-ClientId header to determine what Codat instance the event came from | ✔️                            | ❌                             | ❌                                    | Manual config required |
-| 6 | Client sets the webhook auth. header using the /profile endpoint                                 | ✔️                            | ❌                             | ❌                                    | Manual config required |
-| 7 | Client sets the webhook auth. header via the portal                                              | ✔️                            | ❌                             | ❌                                    | Manual config required |
-| 8 | Client uses the Retry-After header to control the time between retries                           | ✔️                            | ❌                             | ❌                                    |                        |
+![A fragment of the UI that displays the Channels column of the message log with the company ID value recorded in it](/img/use-the-api/0047-message-channels.png)
+
+### Source client header
+
+If you are using multiple Codat instances and need to differentiate between them, add the required Id as a custom `X-Codat-ClientId` header to the webhook endpoint using our Portal. 
+
+For more information on creating custom headers in webhook consumers, see [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers).
+
+### Webhook auth header
+
+If you are currently including an authorization header in your webhooks, you can add it as a custom `Authorization` header to the webhook consumer endpoint instead using our Portal. It is no longer possible to do this via an API endpoint.
+
+For more information on creating custom headers in webhook consumers, see [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers).
+
+### Time between retries
+
+Our new service has a robust [retry policy](/using-the-api/webhooks/troubleshooting#retry-policy) that ensures we attempt to deliver an event multiple times over a 28-hour period. As a result, you no longer need to set a `Retry-After` header to control the time between retries. 
+
+### Rule Ids in app logic
+
+If you are using `RuleId` properties returned by our existing webhooks in your application logic, please remain on our existing service and endpoints. We will work with you to arrange the next steps so that you can rewrite the logic to avoid using `RuleId`.
+
+---
+
+## Read next
+
+- [Event types](/using-the-api/webhooks/event-types)
+- [Manage webhook consumers](/using-the-api/webhooks/create-consumer)
+- [Troubleshooting](/using-the-api/webhooks/troubleshooting)

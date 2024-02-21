@@ -2,12 +2,12 @@
 title: "Webhook event types"
 sidebar_label: "Event types"
 hide_table_of_contents: true
-description: "Learn about the event types that are available to you for subscription"
+description: "Learn about the event types that are available to you for consumption"
 ---
 
-Codat supports the following event types you can [subscribe to](/using-the-api/webhooks/create-event) using the Codat Portal or our API. Use them to respond to changes in your companies and their data.
+Codat supports the following event types you can [consume](/using-the-api/webhooks/create-event) using the Codat Portal or our API. Use them to respond to changes in your companies and their data.
 
-Navigate to **Monitor > Webhooks > Events > Event Catalog** to view this list directly in the [Portal](https://app.codat.io/monitor/events). 
+Navigate to **Monitor > Webhooks > Events > Event Catalog** to view this list and each event's payload directly in the [Portal](https://app.codat.io/monitor/events). 
 
 | Event type                   | Event description                                                                                                                                                                        |
 |------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -28,4 +28,4 @@ Navigate to **Monitor > Webhooks > Events > Event Catalog** to view this list di
 ---
 ## Read next
 
-- See how you can [manage events](/using-the-api/webhooks/create-event) using the Portal or our API
+- See how you can [consume webhooks and manage consumers](/using-the-api/webhooks/create-event) using the Portal or our API

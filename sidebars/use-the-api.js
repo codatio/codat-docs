@@ -50,7 +50,7 @@ module.exports = [
     items: [
       "using-the-api/webhooks/overview",
       "using-the-api/webhooks/event-types",
-      "using-the-api/webhooks/create-event",
+      "using-the-api/webhooks/create-consumer",
       "using-the-api/webhooks/migration-guide",
       "using-the-api/webhooks/troubleshooting",
       {
