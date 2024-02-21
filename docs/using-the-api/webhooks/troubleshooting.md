@@ -96,33 +96,6 @@ Codat's webhook messages are served from static IP addresses. Apply an allowlist
 51.142.76.22/32
 ```
 
-This is the full list of IP addresses that webhooks may originate from grouped by the region of the sender:
-
-#### US
-
-```
-44.228.126.217
-50.112.21.217
-52.24.126.164
-54.148.139.208
-```
-
-#### EU
-
-```
-52.215.16.239
-54.216.8.72
-63.33.109.123
-```
-
-#### India (Private Beta)
-
-```
-13.126.41.108
-15.207.218.84
-65.2.133.31
-```
-
 ## Logs and activity
 
 If you need to track down a particular message that was sent to one of your endpoints, you can check the endpoint's detailed view page that has a filtered list of all messages sent to it. You can filter the list by event type and date. 
