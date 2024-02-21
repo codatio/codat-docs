@@ -9,6 +9,12 @@ Codat supports the following event types you can [consume](/using-the-api/webhoo
 
 Navigate to **Monitor > Webhooks > Events > Event Catalog** to view this list and each event's payload directly in the [Portal](https://app.codat.io/monitor/events). 
 
+::: still using the rules endpoints?
+
+check out our legacy event types
+
+:::
+
 | Event type                   | Event description                                                                                                                                                                        |
 |------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AccountCategoriesUpdated     | Triggered anytime a company's accounts are categorized. This can be when Codat updates the `suggested` category fields or a user updates the `confirmed` category fields.                |
