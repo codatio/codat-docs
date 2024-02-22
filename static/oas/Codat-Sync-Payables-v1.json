@@ -9963,6 +9963,7 @@
                               "description": "billcredit_test",
                               "unitAmount": 145.5,
                               "quantity": 1,
+                              "unitOfMeasurement": "pack",
                               "subTotal": 145.5,
                               "totalAmount": 145.5,
                               "accountRef": {
@@ -10019,6 +10020,7 @@
                               "description": "Cheese",
                               "unitAmount": 400,
                               "quantity": 1,
+                              "unitOfMeasurement": "pack",
                               "subTotal": 400,
                               "totalAmount": 400,
                               "accountRef": {
@@ -11657,6 +11659,7 @@
                           "description": "billcredit_test",
                           "unitAmount": 145.5,
                           "quantity": 1,
+                          "unitOfMeasurement": "pack",
                           "subTotal": 145.5,
                           "totalAmount": 145.5,
                           "accountRef": {
@@ -44342,6 +44345,11 @@
                 "type": "number",
                 "format": "decimal",
                 "description": "Number of units of the goods or service for which credit has been received."
+              },
+              "unitOfMeasurement": {
+                "type": "string",
+                "nullable": true,
+                "description": "The measurement which defines a unit for this item (e.g. 'kilogram', 'litre')."
               },
               "discountAmount": {
                 "type": "number",
