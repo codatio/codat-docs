@@ -46614,7 +46614,6 @@
           }
         },
         "required": [
-          "number",
           "type"
         ],
         "definitions": {

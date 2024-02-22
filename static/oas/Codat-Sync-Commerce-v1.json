@@ -13441,7 +13441,6 @@
                 }
               },
               "required": [
-                "number",
                 "type"
               ],
               "definitions": {

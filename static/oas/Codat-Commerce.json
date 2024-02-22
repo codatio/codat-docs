@@ -9117,7 +9117,6 @@
           }
         },
         "required": [
-          "number",
           "type"
         ],
         "definitions": {

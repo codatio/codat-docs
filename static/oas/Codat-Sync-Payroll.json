@@ -15369,7 +15369,6 @@
           }
         },
         "required": [
-          "number",
           "type"
         ],
         "definitions": {
