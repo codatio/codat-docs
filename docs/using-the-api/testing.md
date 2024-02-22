@@ -15,7 +15,7 @@ We recommend you use an additional instance of Codat for testing purposes. We wo
 * Enabled products and deprecations
 * Integration-specific settings and credentials
 * Client sync settings
-* Webhook rules and settings
+* Webhook consumer endpoints and settings
 * Auth flow settings
 
 Users can switch between the production client and the test client by using the client dropdown in the [Codat Portal](https://app.codat.io/). 

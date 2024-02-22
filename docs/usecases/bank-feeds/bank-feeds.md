@@ -57,7 +57,7 @@ diagram
 7. User selects which Bank Account to link, and which account to map the Bank Account to. This page is hosted by QBO. The user can select from any account in the chart of accounts that is a bank account or credit card and does not have an existing bank feed linked.
 8. Bank feed link is complete.
 9. Codat connection status changes to Linked.
-10. client can set up a webhook alert that will notify when the connection status changes to Linked, indicating a successful connection.
+10. Client can set up a [webhook endpoint](/using-the-api/webhooks/overview) to listen for events that notify when the connection status changes to Linked, indicating a successful connection.
 
 ### Deauthorization user journey
 

@@ -29,7 +29,7 @@ Build your account mapping process to use the Codat API as follows:
 
     You can also read more about [data type settings](/core-concepts/data-type-settings).
 
-2. Configure the [Dataset data changed](/using-the-api/webhooks/core-rules-types#dataset-data-changed) webhook to listen for changes in the underlying data for the `chartOfAccounts` data type. You will receive a notification when the data sync completes successfully. 
+2. [Configure a webhook consumer](/using-the-api/webhooks/create-consumer) to listen for the [DatasetDataChanged](/using-the-api/webhooks/event-types) event that indicates changes in the underlying data for the `chartOfAccounts` data type. You will receive a notification when the data sync completes successfully. 
 
 3. Once notified by the webhook, call our [List accounts](/accounting-api#/operations/list-accounts) endpoint and use the response to display `account.name` and `account.id` in a dropdown box for your customer to choose the correct mapping. You can also query the response to simplify the mapping experience for your customer:  
 
@@ -57,6 +57,6 @@ Read our guidance on [creating, updating, and deleting data](/using-the-api/push
 
 Once the initial mapping is complete, you need to validate account mappings periodically because customers may continue changing their list of accounts after they have set up your integration. 
 
-We recommend validating the mapping prior to performing any create or update operation. Use the [Dataset data changed](/using-the-api/webhooks/core-rules-types#dataset-data-changed) webhook you previously set up that informs you of changes in the `chartOfAccounts` data type. 
+We recommend validating the mapping prior to performing any create or update operation. Use the [DatasetDataChanged](/using-the-api/webhooks/event-types) webhook consumer you previously set up that informs you of changes in the `chartOfAccounts` data type. 
 
 If new accounts are present that have not been mapped yet, notify your customer and guide them back to the mapping page.

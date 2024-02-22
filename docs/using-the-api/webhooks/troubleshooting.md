@@ -62,9 +62,7 @@ Your webhook consumer endpoint could fail due to a variety of reasons. Let's hav
 
 #### Disabled endpoint
 
-If all delivery attempts to the endpoint fail for a period of 5 days, this endpoint will be disabled and an `EndpointDisabledEvent` webhook will be sent to your account. 
-
-To re-enable it, navigate to **Monitor > Webhooks > Events > Endpoints**, click to see the detailed view of the endpoint, then choose **Enable endpoint** in the triple-dot options menu.
+If all delivery attempts to the endpoint fail for a period of 5 days, this endpoint will be disabled. To re-enable it, navigate to **Monitor > Webhooks > Events > Endpoints**, click to see the detailed view of the endpoint, then choose **Enable endpoint** in the triple-dot options menu.
 
 ![A fragment of the UI that displays the Enable endpoint option in the endpoint details view](/img/use-the-api/0048-enable-disabled-webhook.png)
 
