@@ -27,9 +27,9 @@ The names of our new event types differ from our legacy rule types. We added the
 | `NewCompanySynchronized`       | `New company synchronised`          | Triggered when initial syncs are complete for all data types queued for a newly connected company, and at least one of those syncs is successful.                                        |
 | `PushOperationStatusChanged`   | `Push Operation Status Changed()`   | Indicates that a create, update, or delete operation's status has changed. You can [learn more](/using-the-api/push) about push operations at Codat.                                     |
 | `PushOperationTimedOut`        | `Push Operation Timed Out`          | Indicates that a create, update, or delete operation has timed out. You can learn more about [timeouts for push operations](/using-the-api/push#timeouts) at Codat.                      |
-| SyncCompleted                  | `Sync Completed`                    | Triggered anytime an expense sync completes. <br/> Used for [Sync for Expenses](/expenses/overview) only.                                                                                |
-| SyncConnectionDeleted          | `Sync Connection Deleted`           | Indicates a Sync for Commerce connection has been deleted. <br/> Used for [Sync for Commerce](/commerce/overview) only.                                                                  |
-| SyncFailed                     | `Sync Failed`                       | Indicates a failure occurred during an expense sync. <br/> Used for [Sync for Expenses](/expenses/overview) only.                                                                        |
+| `SyncCompleted`                  | `Sync Completed`                    | Triggered anytime an expense sync completes. <br/> Used for [Sync for Expenses](/expenses/overview) only.                                                                                |
+| `SyncConnectionDeleted`          | `Sync Connection Deleted`           | Indicates a Sync for Commerce connection has been deleted. <br/> Used for [Sync for Commerce](/commerce/overview) only.                                                                  |
+| `SyncFailed`                     | `Sync Failed`                       | Indicates a failure occurred during an expense sync. <br/> Used for [Sync for Expenses](/expenses/overview) only.                                                                        |
 
 ---
 ## Read next

@@ -62,7 +62,7 @@ Moving your existing integrations to Sync for Expenses lets you leverage the fol
 	<Question
 		question="How do I reconnect a company?"
 		answer={`
-If a user disconnects, you can use a <a href="https://docs.codat.io/using-the-api/webhooks/core-rules-types#company-data-connection-status-changed">webhook</a> and redirect your user to the <code>linkUrl</code> of the accounting connection to re-authenticate. If a company changes accounting platforms, it is better to remove the accounting connection completely and create a new one. 
+If a user disconnects, you can use a <a href="https://docs.codat.io/using-the-api/webhooks/event-types">webhook</a> and redirect your user to the <code>linkUrl</code> of the accounting connection to re-authenticate. If a company changes accounting platforms, it is better to remove the accounting connection completely and create a new one. 
 		`}
 	/>
 	<Question
@@ -88,7 +88,7 @@ If you want to use the accounting platform logos in your user interface, you can
 	<Question
 		question="How can I detect if an expense account has been deactivated?"
 		answer={`
-You can create a webhook in the Codat portal to inform you when the chart of accounts has been changed. By querying the Chart of Accounts data type and using the <code>isDeleted</code> flag, you can identify which accounts have been deleted before a sync occurs. For more information, please refer to the <a href="https://docs.codat.io/using-the-api/webhooks/core-rules-types">documentation</a> on creating and updating webhook rules.
+You can create a webhook consumer in the Codat portal to inform you when the chart of accounts has been changed. By querying the Chart of Accounts data type and using the <code>isDeleted</code> flag, you can identify which accounts have been deleted before a sync occurs. For more information, please refer to the <a href="https://docs.codat.io/using-the-api/webhooks/overview">documentation</a> on creating and updating webhook consumers.
 		`}
 	/>
 	<Question

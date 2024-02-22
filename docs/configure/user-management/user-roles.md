@@ -18,7 +18,7 @@ _Onboarding_ users have the ability to add companies to the Codat portal and lin
 
 ## Analyst
 
-_Analyst_ users have all the abilities of the _Onboarding_ users (adding and linking companies) as well as the ability to view the financial data that is uploaded, view webhooks that have been set, and resolve raised events in the portal.
+_Analyst_ users have all the abilities of the _Onboarding_ users (adding and linking companies) as well as the ability to view the financial data that is uploaded, view webhook consumers that have been configured, and resolve raised events in the portal.
 
 ## Developer
 
