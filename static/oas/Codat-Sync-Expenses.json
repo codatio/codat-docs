@@ -13309,7 +13309,6 @@
                     }
                   },
                   "required": [
-                    "number",
                     "type"
                   ],
                   "definitions": {
