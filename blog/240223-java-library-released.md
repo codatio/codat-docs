@@ -7,14 +7,14 @@ authors: dcoplowe
 
 import ClientLibraries from '@components/global/ClientLibraries';
 
-We are excited to announce the release of Java client libraries for our new product suite.
+We are excited to announce the release of Java client libraries for our product suite.
 
 <!--truncate-->
 
-Our suite of Java client libraries simplifies integration, saves time, and provides well-documented code bases for easy use across multiple services.
+Our Java libraries simplify integration, save time, and provide well-documented code bases for easy use across multiple services.
 Each library includes robust error handling, stays updated with the latest features, and enhances the reliability, productivity, and flexibility of your development projects.
 
-For example, creating a company:
+For example, this is how easy it is to create a company:
 
 ```java
 CompanyRequestBody req = CompanyRequestBody.builder()
@@ -38,11 +38,9 @@ CreateCompanyResponse res = sdk.companies().create()
 - [Platform](https://github.com/codatio/client-sdk-java/tree/main/platform)
 
 
-## All available languages
+## Other available languages
 
 Codat offers official SDK client libraries for different programming languages, which are regularly updated for breaking and non-breaking API changes. These client libraries are generated from our [OpenAPI specification](https://github.com/codatio/oas).
 
+Read our documentation for [more information on client libraries](/get-started/libraries) and other supported languages.
 <ClientLibraries/>
-
----
-[Click here](/get-started/libraries) for more information on client libraries and other supported languages.
