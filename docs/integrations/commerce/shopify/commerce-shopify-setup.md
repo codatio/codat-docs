@@ -25,7 +25,7 @@ This article explains how to set up the Shopify integration using the _public ap
 Before setting up the integration, make sure that you:
 
 - Understand [how public apps work](/integrations/commerce/shopify/commerce-shopify#about-public-apps)
-- Build an app that meets the [Requirements for public apps](/integrations/commerce/shopify/commerce-shopify-requirements-public-apps)
+- Build an endpoint that can be used to identify a merchant on your system ([See here](/integrations/commerce/shopify/commerce-shopify-public-app-authentication))
 
 ## Create a Shopify public app
 
@@ -42,7 +42,7 @@ When the app is created you can view the secure app credentials.
 4. In the **Use Shopify Partners** box, click **Create app manually**.
 5. On the **Create an app manually** page, enter the requested information:
    - **App name:** Enter a name for your app. Do not use _Shopify_ as part of the app name.
-   - **App URL:** Enter a URL for your app. Do not use _Shopify_ as part of the URL. Use the same URL when you submit your app to Shopify for review in the next procedure.
+   - **App URL:** Enter `https://commerceintegration.codat.io/publicApp/{your-client-id}`
    - **Allowed redirection URL(s):** Enter `https://commerceintegration.codat.io/oauth/callback`
 6. Click **Create app**. Your app is created and the app page is displayed.
 7. In the side panel, click **App setup** to view the app's configuration settings.
@@ -99,6 +99,7 @@ In the Codat Portal, add the secure credentials for your Shopify app to the inte
 3. Enter your app's credentials from Shopify (to find these, see [Create a Shopify public app](/integrations/commerce/shopify/commerce-shopify-setup#create-a-shopify-public-app)).
    - For **Client ID**, enter the **API key** from Shopify.
    - For **Client secret**, enter the **API secret key** from Shopify.
+   - For **App Redirect URL**, enter the location of your [authentication endpoint](/integrations/commerce/shopify/commerce-shopify-public-app-authentication)
 
 4. If you requested access to over 60 days of orders and your access was approved, turn on **Has request to read all orders**. Otherwise leave this setting turned off.
 
