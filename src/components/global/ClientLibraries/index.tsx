@@ -37,7 +37,7 @@ const languages = [
     },
     {
         name: "java",
-        namePretty: "Java - Coming soon",
+        namePretty: "Java",
         icon: "/img/libraries/java.svg",
         packageLocation: "https://central.sonatype.com/artifact/io.codat/",
         alt: "Java version",
