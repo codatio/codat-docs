@@ -19,7 +19,7 @@ When setting up the integration, you can take one of two approaches for enabling
 
     Created by merchants exclusively for their Shopify stores.
 
-- [Public apps](/integrations/commerce/shopify/commerce-shopify-setup)
+- [Public apps](/integrations/commerce/shopify/commerce-shopify-public-apps)
 
     Built by you and must be approved by Shopify before use. A single public app can be installed on multiple Shopify stores.
 
@@ -61,15 +61,15 @@ If you choose this connection method, you need to do the following:
 
 If you choose this connection method, you should be aware of Shopify's requirements for public apps, as well as the specific functionality that your app will need to provide. These are outlined in [Requirements for public apps](/integrations/commerce/shopify/commerce-shopify-requirements-public-apps).
 
-To get started, see [Set up Shopify using public apps](/integrations/commerce/shopify/commerce-shopify-setup).
+To get started, see [Set up Shopify using public apps](/integrations/commerce/shopify/commerce-shopify-public-apps).
 
 ## OAuth requirements to apps
 
-We handle this requirement for you. All we need is a redirect that can be used to [identify the merchant](/integrations/commerce/shopify/commerce-shopify-setup#).
+We handle this requirement for you. All we need is a redirect that can be used to [identify the merchant](/integrations/commerce/shopify/commerce-public-apps#buid-an-app-for-merchant-authorisation).
 
 ---
 
 ## Read next
 
 - [Set up Shopify using custom apps](/integrations/commerce/shopify/commerce-shopify-custom-apps)
-- [Set up Shopify using public apps](/integrations/commerce/shopify/commerce-shopify-setup)
+- [Set up Shopify using public apps](/integrations/commerce/shopify/commerce-shopify-public-apps)
