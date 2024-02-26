@@ -111,14 +111,15 @@ module.exports = [
   ],
 },
 {
-    type: "link",
-    href: '/lending/troubleshooting',
-    label: "Troubleshooting",
-    customProps: {
-      hr: true,
-      section: "Reference",
-    },
+  type: "link",
+  href: '/lending/functions/file-upload',
+  label: "Data upload",
+  customProps: {
+    hr: true,
+    section: "Reference",
   },
+},
+  "/lending/troubleshooting",
   "lending/data-types",
   {
     type: "link",
