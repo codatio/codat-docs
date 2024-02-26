@@ -119,7 +119,7 @@ module.exports = [
     section: "Reference",
   },
 },
-  "/lending/troubleshooting",
+  "lending/troubleshooting",
   "lending/data-types",
   {
     type: "link",
