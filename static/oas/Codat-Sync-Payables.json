@@ -1501,7 +1501,7 @@
         }
       }
     },
-    "/companies/{companyId}/connections/{connectionId}/payables/bills/{billId}/payments": {
+    "/companies/{companyId}/connections/{connectionId}/payables/bills/{billId}/payment": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
