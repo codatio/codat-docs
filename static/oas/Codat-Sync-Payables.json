@@ -8,7 +8,7 @@
   ],
   "info": {
     "title": "Sync for Payables",
-    "description": "The API for Sync for Payables. \n\nSync for Payables is an API and a set of supporting tools built to help integrate with your customers' accounting software, and keep their supplier information, invoices, and payments in sync.\n\n[Explore product](https://docs.codat.io/payables/overview) | [See OpenAPI spec](https://github.com/codatio/oas)\n\n---\n\n## Endpoints\n\n| Endpoints            | Description                                                                                                |\n|:---------------------|:-----------------------------------------------------------------------------------------------------------|\n| Companies            | Create and manage your SMB users' companies.                                                               |\n| Connections          | Create new and manage existing data connections for a company.                                             |\n| Accounts             | Get, create, and update Accounts                                                           |\n| Bills                | Get, create, and update Bills                                                                          |\n| Bill credit notes    | Get, create, and update Bill credit notes                                                              |\n| Bill payments        | Get, create, and update Bill payments                                                                  |\n| Journals             | Get, create, and update Journals                                                                       |\n| Journal entries      | Get, create, and update Journal entries                                                                |\n| Payment methods      | Get, create, and update Payment methods                                                                |\n| Suppliers            | Get, create, and update Suppliers                                                                      |\n| Tax rates            | Get, create, and update Tax rates                                                                      |\n| Tracking categories  | Get, create, and update Tracking categories                                                            |\n| Push operations      | View historic push operations                                                         |\n| Company info         | View company profile from the source platform.                                                             |\n| Manage data          | Control how data is retrieved from an integration.                                                         |",
+    "description": "The API for Sync for Payables. \n\nSync for Payables is an API and a set of supporting tools built to help integrate with your customers' accounting software, and keep their supplier information, bills, and payments in sync, through a standardized API.\n\n[Explore product](https://docs.codat.io/payables/overview) | [See OpenAPI spec](https://github.com/codatio/oas)\n",
     "version": "3.0.0",
     "contact": {
       "name": "Codat",
@@ -125,6 +125,10 @@
     {
       "name": "Suppliers",
       "description": "Suppliers"
+    },
+    {
+      "name": "Bank accounts",
+      "description": "Bank accounts"
     }
   ],
   "paths": {
@@ -1721,6 +1725,95 @@
           }
         }
       }
+    },
+    "/companies/{companyId}/connections/{connectionId}/payables/bankAccounts": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        }
+      ],
+      "post": {
+        "tags": [
+          "Bank accounts"
+        ],
+        "summary": "Create bank account",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Idempotency-Key",
+            "description": "A unique identifier to ensure idempotent behaviour for subsequent requests.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BankAccount/definitions/bankAccountPrototype"
+              },
+              "examples": {
+                "Bank account example": {
+                  "value": {
+                    "id": "fb623ab2-f6ff-4b22-b7d3-b7cc2a4aa0ea",
+                    "nominalCode": "22",
+                    "name": "Plutus - Payables - Bank Account 12",
+                    "accountNumber": "0120 0440",
+                    "sortCode": "50-50-50",
+                    "currency": "GBP",
+                    "accountType": "Debit",
+                    "status": "Active",
+                    "sourceModifiedDate": "2024-02-22T14:46:43.990Z"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BankAccount"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        },
+        "description": "The *Create bank account* creates a new [bank account](https://docs.codat.io/sync-for-payables-api#/schemas/BankAccount) for a given company's connection.\r\n\r\n[Bank accounts](https://docs.codat.io/sync-for-payables-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.",
+        "operationId": "create-bank-account"
+      }
     }
   },
   "webhooks": {
@@ -1782,6 +1875,107 @@
             "type": "string",
             "description": "The file to be uploaded as an attachment.",
             "format": "binary"
+          }
+        }
+      },
+      "BankAccount": {
+        "title": "Bank accounts",
+        "type": "object",
+        "allOf": [
+          {
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Identifier for the bank account, unique for the company in the accounting platform."
+              },
+              "nominalCode": {
+                "type": "string",
+                "nullable": true,
+                "description": "Code used to identify each nominal account for a business."
+              },
+              "name": {
+                "type": "string",
+                "nullable": true,
+                "description": "Name of the bank account in the accounting platform."
+              },
+              "accountType": {
+                "$ref": "#/components/schemas/MappingOptions/definitions/bankAccountMappingOption/properties/accountType"
+              },
+              "accountNumber": {
+                "type": "string",
+                "nullable": true,
+                "description": "Account number for the bank account.\n\nXero integrations\nOnly a UK account number shows for bank accounts with GBP currency and a combined total of sort code and account number that equals 14 digits, For non-GBP accounts, the full bank account number is populated."
+              },
+              "sortCode": {
+                "type": "string",
+                "nullable": true,
+                "description": "Sort code for the bank account. This is relevant to UK bank accounts.\n\nXero integrations\nThe sort code is only displayed when the currency = GBP and the sort code and account number sum to 14 digits. For non-GBP accounts, this field is not populated."
+              },
+              "currency": {
+                "$ref": "#/components/schemas/MappingOptions/definitions/accountMappingOption/properties/currency",
+                "description": "Base currency of the bank account."
+              },
+              "status": {
+                "$ref": "#/components/schemas/BankAccount/definitions/bankAccountStatus"
+              }
+            }
+          },
+          {
+            "title": "ModifiedDate",
+            "x-internal": true,
+            "type": "object",
+            "properties": {
+              "modifiedDate": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Company/properties/created"
+                  },
+                  {
+                    "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "definitions": {
+          "bankAccountStatus": {
+            "type": "string",
+            "description": "The current status of the bank account.",
+            "enum": [
+              "Active",
+              "Archived"
+            ]
+          },
+          "bankAccountPrototype": {
+            "title": "Bank account prototype",
+            "type": "object",
+            "properties": {
+              "nominalCode": {
+                "$ref": "#/components/schemas/BankAccount/allOf/0/properties/nominalCode"
+              },
+              "name": {
+                "$ref": "#/components/schemas/BankAccount/allOf/0/properties/name"
+              },
+              "accountType": {
+                "$ref": "#/components/schemas/MappingOptions/definitions/bankAccountMappingOption/properties/accountType"
+              },
+              "accountNumber": {
+                "$ref": "#/components/schemas/BankAccount/allOf/0/properties/accountNumber"
+              },
+              "sortCode": {
+                "$ref": "#/components/schemas/BankAccount/allOf/0/properties/sortCode"
+              },
+              "currency": {
+                "$ref": "#/components/schemas/BankAccount/allOf/0/properties/currency"
+              }
+            },
+            "required": [
+              "name",
+              "accountType",
+              "accountNumber",
+              "currency"
+            ]
           }
         }
       },
