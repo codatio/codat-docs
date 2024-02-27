@@ -24637,7 +24637,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *List bills* endpoint returns a list of [bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) for a given company's connection.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\nBy default, the endpoint will return all bills with a status of 'Open' & 'PartiallyPaid' to show all oustanding bills.",
+        "description": "The *List bills* endpoint returns a list of [bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) for a given company's connection.\r\n\r\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.",
         "operationId": "list-bills"
       }
     },
