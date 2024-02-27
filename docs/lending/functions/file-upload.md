@@ -1,6 +1,7 @@
 ---
 title: "Banking data file upload"
 sidebar_label: Data upload
+displayed_sidebar: lending
 description: "Upload your banking data to Codat and take advantage of our bank statement enrichment features and reports"
 ---
 
