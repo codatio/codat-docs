@@ -9,15 +9,14 @@ description: "Upload your banking data to Codat and take advantage of our bank s
 
 If you already have a banking data provider, you can still benefit from our bank statement categorization functionality by manually uploading that banking data to Codat.
 
-You can do this in three ways:
+You can do this in two ways:
 
 1. Upload banking data files and download the resulting categorized bank statement [in our Portal](/lending/functions/file-upload#upload-in-portal).
 2. Push the banking data records and get the resulting categorized bank statement [via our API](/lending/functions/file-upload#upload-via-api).
-3. Enable your customers to upload their banking data files in the Portal, then pull the resulting reports using our API.
 
 :::caution Prerequisites
 
-To use the data upload functionality, you need to create a Codat [company](../../terms/company) and its data connection first. We walk you through this in [Get started with Lending API](/lending/get-started#use-lending-api).
+To use the data upload functionality, you need to create a Codat [company](../../terms/company) first. We walk you through this in [Get started with Lending API](/lending/get-started#use-lending-api).
 
 :::
 
@@ -34,7 +33,9 @@ Download CSV templates with example data from this page and check the allowed va
 
 You can check the progress of the upload by navigating to **Data history > Pull history** of the company. Once the upload is complete, download the [Enhanced cash flow](/lending/features/excel-download-overview#feature-components) report to view the resulting categorized bank statement in **Lending > Reports**. 
 
-It's not possible to delete the data once the files have been successfully processed. To remove the records, you need to delete the data connection and upload the banking data again.
+To add, amend or remove records, upload a CSV file that contains the updated dataset you want recorded in Codat, and it will replace the existing dataset. For example, if you perform a monthly statement upload, each new CSV file must contain the data for all previously uploaded months as well as the new month. 
+
+To delete the dataset in its entirety, [delete the existing data connection](/core-concepts/connections#delete-a-data-connection) first, then upload the correct file. This will automatically create a new data connection.
 
 ## Upload via API
 
@@ -66,7 +67,7 @@ During an active session, use the [Upload data](/lending-api#/operations/upload-
 
 :::caution Updating the records
 
-If you need to update the banking transactions with new records, upload the whole dataset again and include new records in it. To delete the records, delete the connection and upload the data for the new `connectionId`.
+If you need to add, amend or remove the banking transaction records, upload the whole dataset again and include the changed records in it. To delete the records, delete the data connection first, create a new one, and upload the data for the new `connectionId`.
 
 :::
 
