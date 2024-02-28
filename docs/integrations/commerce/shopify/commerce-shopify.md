@@ -59,7 +59,7 @@ You should be aware of Shopify's requirements for public apps as well as the spe
 
 ## OAuth requirements to apps
 
-We handle this requirement for you. All we need is a redirect that can be used to [identify the merchant](/integrations/commerce/shopify/commerce-shopify-public-apps#build-an-app-for-merchant-authorisation).
+We handle this requirement for you. All we need is a redirect that can be used to [identify the merchant](/integrations/commerce/shopify/commerce-shopify-public-apps#build-an-app-for-merchant-authorization).
 
 ---
 

@@ -132,7 +132,7 @@ In the Codat Portal, add the secure credentials for your Shopify app to the inte
 3. Enter your app's credentials from Shopify (to find these, see [Create a Shopify public app](/integrations/commerce/shopify/commerce-shopify-public-apps#create-a-shopify-public-app)).
    - For **Client ID**, enter the **API key** from Shopify.
    - For **Client secret**, enter the **API secret key** from Shopify.
-   - For **App Redirect URL**, enter the location of your [authentication endpoint](/integrations/commerce/shopify/commerce-shopify-public-app#build-an-app-for-merchant-authorization).
+   - For **App Redirect URL**, enter the location of your [authentication endpoint](/integrations/commerce/shopify/commerce-shopify-public-apps#build-an-app-for-merchant-authorization).
 
 4. If you requested access to over 60 days of orders and your access was approved, turn on **Has request to read all orders**. Otherwise leave this setting turned off.
 
