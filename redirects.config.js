@@ -566,6 +566,14 @@ module.exports = {
 
     //
     {
+      from: "/integrations/commerce/shopify/commerce-shopify-requirements-public-apps",
+      to: "/integrations/commerce/shopify/commerce-shopify-public-apps",
+    },
+    {
+      from: "/integrations/commerce/shopify/commerce-shopify-setup",
+      to: "/integrations/commerce/shopify/commerce-shopify-public-apps",
+    },
+    {
       from: "/guides/underwriting/introduction",
       to: "/lending/overview",
     },

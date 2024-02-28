@@ -12,9 +12,9 @@ This article explains how to set up the Shopify integration using the _public ap
 
 <summary>You will learn how to...</summary>
 
-- [Create a Shopify app](/integrations/commerce/shopify/commerce-shopify-public-apps#create-a-shopify-app)
+- [Create a Shopify app](/integrations/commerce/shopify/commerce-shopify-public-apps#create-a-public-shopify-app)
 - [Submit your app to Shopify for approval](/integrations/commerce/shopify/commerce-shopify-public-apps#submit-your-app-to-shopify-for-approval)
-- [Buid an app for merchant authorisation](buid-an-app-for-merchant-authorisation)
+- [Buid an app for merchant authorization](/integrations/commerce/shopify/commerce-shopify-public-apps#build-an-app-for-merchant-authorization)
 - [Add your app's credentials to the Shopify integration](/integrations/commerce/shopify/commerce-shopify-public-apps#add-your-apps-credentials-to-the-shopify-integration)
 - [Enable the Shopify integration](/integrations/commerce/shopify/commerce-shopify-public-apps#enable-the-shopify-integration)
 - [Check the commerce sync settings](/integrations/commerce/shopify/commerce-shopify-public-apps#check-the-commerce-sync-settings)
@@ -25,12 +25,12 @@ This article explains how to set up the Shopify integration using the _public ap
 
 Before setting up the integration, make sure that you:
 
-- Understand [how public apps work](/integrations/commerce/shopify/commerce-shopify#about-public-apps)
-- Build an endpoint that can be used to identify a merchant on your system ([See here](/integrations/commerce/shopify/commerce-shopify-public-app-authentication))
+- Understand [how public apps work](/integrations/commerce/shopify/commerce-shopify#about-public-apps).
+- Have [built an endpoint](/integrations/commerce/shopify/commerce-shopify-public-apps#build-an-app-for-merchant-authorization) that can be used to identify a merchant on your system.
 
-## Create a Shopify public app
+## Create a public Shopify app
 
-When the app is created you can view the secure app credentials.
+When the app is created, you can view the app's secure credentials.
 
 1. Log in to the [Shopify Partners](https://developers.shopify.com/) site using your Shopify partner account credentials.
 
@@ -42,12 +42,12 @@ When the app is created you can view the secure app credentials.
 3. On the **Apps** page, click **Create app**.
 4. In the **Use Shopify Partners** box, click **Create app manually**.
 5. On the **Create an app manually** page, enter the requested information:
-   - **App name:** Enter a name for your app. Do not use _Shopify_ as part of the app name.
-   - **App URL:** Enter `https://commerceintegration.codat.io/publicApp/{your-client-id}`
-   - **Allowed redirection URL(s):** Enter `https://commerceintegration.codat.io/oauth/callback`
+   - **App name:** enter a name for your app. Do not use _Shopify_ as part of the app name.
+   - **App URL:** enter `https://commerceintegration.codat.io/publicApp/{your-client-id}`
+   - **Allowed redirection URL(s):** enter `https://commerceintegration.codat.io/oauth/callback`
 6. Click **Create app**. Your app is created and the app page is displayed.
 7. In the side panel, click **App setup** to view the app's configuration settings.
-8. Optional: On the **App setup** page, if you need to access over 60 days' of orders, do the following:
+8. Optional: if you need to access over 60 days' of orders, do the following on the **App setup** page:
    1. In the **Read all orders** box, click **Request access**.
    2. Enter the details requested in the dialog, then submit your request to Shopify.
 9. In the **GDPR mandatory webhooks** section, enter the following Codat webhook URLs:
@@ -68,7 +68,7 @@ In the Shopify Partners site:
 
 1. Click the name of your app.
 2. In the side panel, click **Distribution**.
-3. On the **Distribution** page, click **Choose Shopify App Store** then confirm your selection in the dialog that appears.
+3. On the **Distribution** page, click **Choose Shopify App Store**, then confirm your selection in the dialog that appears.
 
 <img src="/img/old/386725f-choose-shopify-app-store.png" />
 
@@ -79,29 +79,45 @@ In the Shopify Partners site:
 
    :::note Differences between listed and unlisted apps
 
-   You can choose whether to make your Shopify app _listed_ (fully visible in the Shopify App Store) or _unlisted_ (it will not appear in Shopify App Store search engines or results). Both types of apps have a public Shopify App Store URL.
+   You can make your Shopify app _listed_ (fully visible in the Shopify App Store) or _unlisted_ (it will not appear in Shopify App Store search engines or results). Both types of apps have a public Shopify App Store URL.
 
    :::
 
 8. Click **Start listing**. The **English listing** page is displayed.
-9. Enter all the required listing information and then save the form.
+9. Enter all the required listing information and save the form.
 10. On the **App listing** page, click the **Submit app** button at the top right. The button is not available until you've completed all the required listing information.
 
-Your app is sent to Shopify for review and approval.
+Your app is then sent to Shopify for review and approval.
 
-Additionally, if you need access to over 60 days of orders from Shopify stores, you must submit a _Read all orders_ request, as noted in [Create a Shopify public app](/integrations/commerce/shopify/commerce-shopify-public-apps#create-a-shopify-public-app). You'll receive an email from Shopify when your request has been processed; this might take up to seven business days.
+Additionally, if you need access to over 60 days of orders from Shopify stores, you must submit a _Read all orders_ request, as noted in [Create a Shopify public app](/integrations/commerce/shopify/commerce-shopify-public-apps#create-a-shopify-public-app). You'll receive an email from Shopify when your request has been processed. This might take up to seven business days.
 
 Codat can't guarantee that Shopify will approve your public app or grant access to over 60 days of order data.
 
-## Buid an app for merchant authorisation
+## Build an app for merchant authorization
 
-When a merchant adds your app to their store we need to be able to identify who this is on your end.
+When a merchant adds your app to their store, we need to be able to identify them. To do that, we will redirect them to the **App Redirect URL** endpoint you entered in the [integration settings](/integrations/commerce/shopify/commerce-shopify-public-apps#add-your-apps-credentials-to-the-shopify-integration) at the end of the auth flow. 
 
-During the auth flow, we will redirect the user to the **App Redirect URL** endpoint entered in the [integration settings](/integrations/commerce/shopify/commerce-shopify-public-apps#add-your-apps-credentials-to-the-shopify-integration). This page should allow the user to authenticate themselves with you and then create (or use an existing) Codat company & data connection that can be returned to us to complete the link flow.
+We will generate and include a `code` query string parameter in the initial redirect to maintain context. Allow the user to authenticate themselves on the redirect page, and then create (or use an existing) Codat company and data connection. The data connection response will contain a `linkURL`. Append the `code` to the query string of the URL and redirect the user to complete their auth flow with us.
 
-The initial redirect will include a `code` query string parameter. This is generated by us to maintain context. Upon authenticating the merchant, you will need to either use an existing company/data connection or create a new one. The data connection response will contain a `linkURL` that you can then append the `code` to the query string and redirect the user.
+```mermaid
+sequenceDiagram
+    participant shopify as Shopify
+    participant codat as Codat
+    participant client as Client
 
-![Merchent Authentication Flow](/img/integrations/commerce/shopify/merchant-auth-flow.png)
+
+    shopify ->> codat: Redirect to App URL in Shopify App configuration
+    codat ->> codat: Validate HMAC value
+    codat ->> codat: Handle OAuth flow with Shopify
+    codat ->> client: Redirect to App redirect URL with `code` in query string
+    client ->> client: Merchant authenticates to client's platform
+    client ->> codat: POST /companies
+    codat ->> client: Response with companyId
+    client ->> codat: POST /companies/{companyId}/connections
+    codat ->> client: Response with linkUrl
+    client ->> codat: Redirect to linkUrl with `code` in query string
+    codat ->> codat: Save access token and complete connection
+```
 
 ## Add your app's credentials to the Shopify integration
 
@@ -116,7 +132,7 @@ In the Codat Portal, add the secure credentials for your Shopify app to the inte
 3. Enter your app's credentials from Shopify (to find these, see [Create a Shopify public app](/integrations/commerce/shopify/commerce-shopify-public-apps#create-a-shopify-public-app)).
    - For **Client ID**, enter the **API key** from Shopify.
    - For **Client secret**, enter the **API secret key** from Shopify.
-   - For **App Redirect URL**, enter the location of your [authentication endpoint](/integrations/commerce/shopify/commerce-shopify-public-app#buid-an-app-for-merchant-authorisation)
+   - For **App Redirect URL**, enter the location of your [authentication endpoint](/integrations/commerce/shopify/commerce-shopify-public-app#build-an-app-for-merchant-authorization).
 
 4. If you requested access to over 60 days of orders and your access was approved, turn on **Has request to read all orders**. Otherwise leave this setting turned off.
 
@@ -131,11 +147,11 @@ In the Codat Portal, add the secure credentials for your Shopify app to the inte
 1. In the Codat Portal, go to the <a className="external" href="https://app.codat.io/settings/integrations/commerce" target="blank">**Commerce integrations**</a> page.
 2. Locate **Shopify** and click the toggle to enable the integration.
 
-You can also click **Manage** to view the integration's settings page, and then enable the integration from there.
+You can also click **Manage** to view the integration's settings page and then enable the integration from there.
 
 ## Check the commerce sync settings
 
-All commerce data types must be enabled before you can pull commerce transactions from Shopify to Codat. Follow the steps in [Commerce sync settings](/integrations/commerce/commerce-sync-settings); you only need to do this once.
+All commerce data types must be enabled before you can pull commerce transactions from Shopify to Codat. Follow the steps in [Commerce sync settings](/integrations/commerce/commerce-sync-settings). You only need to do this once.
 
 ## Next steps
 
