@@ -1811,7 +1811,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Create bank account* creates a new [bank account](https://docs.codat.io/sync-for-payables-api#/schemas/BankAccount) for a given company's connection.\r\n\r\n[Bank accounts](https://docs.codat.io/sync-for-payables-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.",
+        "description": "The *Create bank account* endpoint creates a new [bank account](https://docs.codat.io/sync-for-payables-api#/schemas/BankAccount) for a given company's connection.\r\n\r\n[Bank accounts](https://docs.codat.io/sync-for-payables-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.",
         "operationId": "create-bank-account"
       }
     }
@@ -1921,21 +1921,7 @@
             }
           },
           {
-            "title": "ModifiedDate",
-            "x-internal": true,
-            "type": "object",
-            "properties": {
-              "modifiedDate": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/Company/properties/created"
-                  },
-                  {
-                    "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
-                  }
-                ]
-              }
-            }
+            "$ref": "#/components/schemas/Bill/allOf/1"
           }
         ],
         "definitions": {
