@@ -59,7 +59,7 @@ To change it, delete the connection, set the configuration for the new `connecti
 
 Use the [Start upload session](/lending-api#/operations/start-bank-statement-upload-session) endpoint to initiate a bank statement upload session for a given company. A session is a one-time process that lets accounts and transactions to be uploaded to Codat. 
 
-You can only have one active session per data type at a time. Additionally, the session will time out if no data is uploaded for 90 minutes. You can complete or cancel a session using the [End upload session](lending-api#/operations/end-bank-statement-upload-session) endpoint.
+You can only have one active session per data type at a time. Additionally, the session will time out if no data is uploaded after 90 minutes. You can complete or cancel a session using the [End upload session](lending-api#/operations/end-bank-statement-upload-session) endpoint.
 
 3. **Upload the data**
 
