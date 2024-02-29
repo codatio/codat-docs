@@ -111,10 +111,6 @@
       "description": "Manage your companies' data connections."
     },
     {
-      "name": "Mapping options",
-      "description": "Mapping options for a company."
-    },
-    {
       "name": "Bills",
       "description": "Bills"
     },
@@ -990,7 +986,7 @@
         "operationId": "get-mapping-options-bills",
         "x-speakeasy-name-override": "get-bill-options",
         "tags": [
-          "Mapping options"
+          "Bills"
         ],
         "responses": {
           "200": {
@@ -1072,7 +1068,7 @@
         "operationId": "get-mapping-options-payments",
         "x-speakeasy-name-override": "get-payment-options",
         "tags": [
-          "Mapping options"
+          "Bill payments"
         ],
         "responses": {
           "200": {
