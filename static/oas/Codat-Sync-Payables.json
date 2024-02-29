@@ -986,7 +986,7 @@
       ],
       "get": {
         "summary": "Get bill mapping options",
-        "description": "﻿Use the *Get mapping options - Bills* endpoint to return a list of available [mapping options](https://docs.codat.io/sync-for-payables-api#/schemas/MappingOptions) for a given company's connection ID.\n\n[Mapping options](https://docs.codat.io/sync-for-payables-api#/schemas/MappingOptions) are a set of accounts and tax rates used to configure the SMB's payables integration.",
+        "description": "﻿Use the *Get mapping options - Bills* endpoint to return a list of available mapping options for a given company's connection ID.\n\nMapping options are a set of accounts and tax rates used to configure the SMB's payables integration.",
         "operationId": "get-mapping-options-bills",
         "x-speakeasy-name-override": "get-bill-options",
         "tags": [
@@ -1068,7 +1068,7 @@
       ],
       "get": {
         "summary": "Get payment mapping options",
-        "description": "Use the *Get mapping options - Payments* endpoint to return a list of available [mapping options](https://docs.codat.io/sync-for-payables-api#/schemas/MappingOptions) for a given company's connection ID.\r\n\r\n[Mapping options](https://docs.codat.io/sync-for-payables-api#/schemas/MappingOptions) are a set of bank accounts used to configure the SMB's payables integration.",
+        "description": "Use the *Get mapping options - Payments* endpoint to return a list of available mapping options for a given company's connection ID.\r\n\r\nMapping options are a set of bank accounts used to configure the SMB's payables integration.",
         "operationId": "get-mapping-options-payments",
         "x-speakeasy-name-override": "get-payment-options",
         "tags": [
@@ -3838,7 +3838,7 @@
       "Supplier": {
         "x-internal": true,
         "title": "Supplier",
-        "description": "﻿> View the coverage for suppliers in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nSuppliers are people or organizations that provide something, such as a product or service. Use **Suppliers** endpoints to retrieve supplier data for a company. \n\nSuppliers' data links to accounts payable [bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill).\n ",
+        "description": "﻿## Overview\n\nSuppliers are people or organizations that provide something, such as a product or service. Use **Suppliers** endpoints to retrieve supplier data for a company. \n\nSuppliers' data links to accounts payable [bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill).\n ",
         "type": "object",
         "allOf": [
           {
