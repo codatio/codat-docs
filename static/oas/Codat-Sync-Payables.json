@@ -112,7 +112,7 @@
     },
     {
       "name": "Mapping options",
-      "description": "Mapping options for a companies bills."
+      "description": "Mapping options for a company."
     },
     {
       "name": "Bills",
@@ -975,7 +975,7 @@
         }
       }
     },
-    "/companies/{companyId}/connection/{connectionId}/payables/mappingOptions": {
+    "/companies/{companyId}/connections/{connectionId}/payables/mappingOptions/bills": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -985,11 +985,10 @@
         }
       ],
       "get": {
-        "summary": "Get mapping options",
-        "x-internal": true,
-        "x-speakeasy-ignore": true,
-        "description": "﻿Use the *Get mapping options* endpoint to return a list of available [mapping options](https://docs.codat.io/sync-for-payables-api#/schemas/MappingOptions) for a given company's connection ID.\n\n[Mapping options](https://docs.codat.io/sync-for-payables-api#/schemas/MappingOptions) are a set of accounts, bank accounts and tax rates used to configure the SMBs payables integration.",
-        "operationId": "get-mapping-options",
+        "summary": "Get bill mapping options",
+        "description": "﻿Use the *Get mapping options - Bills* endpoint to return a list of available [mapping options](https://docs.codat.io/sync-for-payables-api#/schemas/MappingOptions) for a given company's connection ID.\n\n[Mapping options](https://docs.codat.io/sync-for-payables-api#/schemas/MappingOptions) are a set of accounts and tax rates used to configure the SMB's payables integration.",
+        "operationId": "get-mapping-options-bills",
+        "x-speakeasy-name-override": "get-bill-options",
         "tags": [
           "Mapping options"
         ],
@@ -999,7 +998,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MappingOptions"
+                  "$ref": "#/components/schemas/BillMappingOptions"
                 },
                 "examples": {
                   "Mapping options": {
@@ -1008,16 +1007,10 @@
                         {
                           "id": "1b6266d1-1e44-46c5-8eb5-a8f98e03124e",
                           "name": "Accounts payable",
+                          "accountType": "Liability",
                           "currency": "GBP",
-                          "accountType": "Active"
-                        }
-                      ],
-                      "bankAccounts": [
-                        {
-                          "id": "3d5a8e00-d108-4045-8823-7f342676cffa",
-                          "name": "Bank of Dave current account",
-                          "currency": "GBP",
-                          "accountType": "Debit"
+                          "status": "Active",
+                          "sourceModifiedDate": "2022-10-23T00:00:00.000Z"
                         }
                       ],
                       "taxRates": [
@@ -1026,7 +1019,83 @@
                           "name": "VAT @ 20%",
                           "code": "VAT20",
                           "effectiveTaxRate": 20,
-                          "totalTaxRate": 20
+                          "totalTaxRate": 20,
+                          "status": "Active",
+                          "sourceModifiedDate": "2022-10-23T00:00:00.000Z"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/payables/mappingOptions/payments": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        }
+      ],
+      "get": {
+        "summary": "Get payment mapping options",
+        "description": "Use the *Get mapping options - Payments* endpoint to return a list of available [mapping options](https://docs.codat.io/sync-for-payables-api#/schemas/MappingOptions) for a given company's connection ID.\r\n\r\n[Mapping options](https://docs.codat.io/sync-for-payables-api#/schemas/MappingOptions) are a set of bank accounts used to configure the SMB's payables integration.",
+        "operationId": "get-mapping-options-payments",
+        "x-speakeasy-name-override": "get-payment-options",
+        "tags": [
+          "Mapping options"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentMappingOptions"
+                },
+                "examples": {
+                  "Mapping options": {
+                    "value": {
+                      "bankAccounts": [
+                        {
+                          "id": "3d5a8e00-d108-4045-8823-7f342676cffa",
+                          "name": "Bank of Dave current account",
+                          "accountNumber": "12345678",
+                          "currency": "GBP",
+                          "nominalCode": "1234567",
+                          "sortCode": "123456",
+                          "status": "Active",
+                          "accountType": "Debit",
+                          "sourceModifiedDate": "2022-10-23T00:00:00.000Z"
                         }
                       ]
                     }
@@ -2011,7 +2080,15 @@
                 "description": "Name of the bank account in the accounting platform."
               },
               "accountType": {
-                "$ref": "#/components/schemas/MappingOptions/definitions/bankAccountMappingOption/properties/accountType"
+                "title": "Bank Account Type",
+                "x-internal": true,
+                "enum": [
+                  "Unknown",
+                  "Credit",
+                  "Debit"
+                ],
+                "type": "string",
+                "description": "The type of transactions and balances on the account.  \nFor Credit accounts, positive balances are liabilities, and positive transactions **reduce** liabilities.  \nFor Debit accounts, positive balances are assets, and positive transactions **increase** assets."
               },
               "accountNumber": {
                 "type": "string",
@@ -2024,7 +2101,7 @@
                 "description": "Sort code for the bank account. This is relevant to UK bank accounts.\n\nXero integrations\nThe sort code is only displayed when the currency = GBP and the sort code and account number sum to 14 digits. For non-GBP accounts, this field is not populated."
               },
               "currency": {
-                "$ref": "#/components/schemas/MappingOptions/definitions/accountMappingOption/properties/currency",
+                "$ref": "#/components/schemas/Bill/definitions/bills/properties/currency",
                 "description": "Base currency of the bank account."
               },
               "status": {
@@ -2056,7 +2133,7 @@
                 "$ref": "#/components/schemas/BankAccount/allOf/0/properties/name"
               },
               "accountType": {
-                "$ref": "#/components/schemas/MappingOptions/definitions/bankAccountMappingOption/properties/accountType"
+                "$ref": "#/components/schemas/BankAccount/allOf/0/properties/accountType"
               },
               "accountNumber": {
                 "$ref": "#/components/schemas/BankAccount/allOf/0/properties/accountNumber"
@@ -2118,7 +2195,7 @@
                 ]
               },
               "currency": {
-                "$ref": "#/components/schemas/MappingOptions/definitions/accountMappingOption/properties/currency"
+                "$ref": "#/components/schemas/Bill/definitions/bills/properties/currency"
               },
               "currencyRate": {
                 "$ref": "#/components/schemas/BillPayment/properties/currencyRate"
@@ -2184,7 +2261,7 @@
                 "$ref": "#/components/schemas/Bill/allOf/0/properties/dueDate"
               },
               "currency": {
-                "$ref": "#/components/schemas/MappingOptions/definitions/accountMappingOption/properties/currency"
+                "$ref": "#/components/schemas/Bill/definitions/bills/properties/currency"
               },
               "currencyRate": {
                 "$ref": "#/components/schemas/BillPayment/properties/currencyRate"
@@ -2326,7 +2403,16 @@
                 ]
               },
               "currency": {
-                "$ref": "#/components/schemas/MappingOptions/definitions/accountMappingOption/properties/currency"
+                "title": "Currency",
+                "x-internal": true,
+                "type": "string",
+                "description": "The currency data type in Codat is the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code, e.g. _GBP_.\n\n## Unknown currencies\n\nIn line with the ISO 4217 specification, the code _XXX_ is used when the data source does not return a currency for a transaction. \n\nThere are only a very small number of edge cases where this currency code is returned by the Codat system.",
+                "format": "ISO4217",
+                "examples": [
+                  "GBP",
+                  "USD",
+                  "EUR"
+                ]
               },
               "lineItems": {
                 "type": "array",
@@ -2404,6 +2490,122 @@
                 "$ref": "#/components/schemas/Bill"
               }
             }
+          }
+        }
+      },
+      "BillMappingOptions": {
+        "x-internal": true,
+        "title": "Mapping options bills",
+        "description": "The bill mapping options for a company's accounting software.",
+        "type": "object",
+        "properties": {
+          "accounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BillMappingOptions/definitions/accountMappingOption"
+            }
+          },
+          "taxRate": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BillMappingOptions/definitions/taxRateMappingOption"
+            }
+          }
+        },
+        "definitions": {
+          "accountMappingOption": {
+            "title": "Account mapping option",
+            "type": "object",
+            "allOf": [
+              {
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Identifier for the account, unique for the company.",
+                    "example": "1b6266d1-1e44-46c5-8eb5-a8f98e03124e"
+                  },
+                  "name": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Name of the account.",
+                    "example": "Accounts Payable"
+                  },
+                  "accountType": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Type of account.",
+                    "example": "Liability"
+                  },
+                  "currency": {
+                    "$ref": "#/components/schemas/Bill/definitions/bills/properties/currency"
+                  },
+                  "status": {
+                    "$ref": "#/components/schemas/BillMappingOptions/definitions/accountStatus"
+                  }
+                }
+              },
+              {
+                "$ref": "#/components/schemas/Bill/allOf/1"
+              }
+            ]
+          },
+          "taxRateMappingOption": {
+            "title": "Tax rate mapping option",
+            "type": "object",
+            "allOf": [
+              {
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Identifier for the tax rate, unique for the company in the accounting platform.",
+                    "example": "d2939064-dd3a-4c0f-9865-a238c2193515"
+                  },
+                  "name": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Codat-augmented name of the tax rate in the accounting platform."
+                  },
+                  "code": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Code for the tax rate from the accounting platform."
+                  },
+                  "effectiveTaxRate": {
+                    "type": "number",
+                    "format": "decimal",
+                    "nullable": true,
+                    "description": "See Effective tax rates description."
+                  },
+                  "totalTaxRate": {
+                    "type": "number",
+                    "format": "decimal",
+                    "nullable": true,
+                    "description": "Total (not compounded) sum of the components of a tax rate."
+                  },
+                  "status": {
+                    "title": "Tax rate status",
+                    "type": "string",
+                    "enum": [
+                      "Active",
+                      "Archived"
+                    ],
+                    "description": "Status of the tax rate in the accounting platform.  \n- `Active` - An active tax rate in use by a company.  \n- `Archived` - A tax rate that has been archived or is inactive in the accounting platform.  "
+                  }
+                }
+              },
+              {
+                "$ref": "#/components/schemas/Bill/allOf/1"
+              }
+            ]
+          },
+          "accountStatus": {
+            "type": "string",
+            "description": "The current status of the account.",
+            "enum": [
+              "Active",
+              "Archived"
+            ],
+            "example": "Active"
           }
         }
       },
@@ -3140,135 +3342,6 @@
           }
         }
       },
-      "MappingOptions": {
-        "x-internal": true,
-        "title": "Mapping Options",
-        "description": "Gets the bill mapping options for a companies accounting software",
-        "type": "object",
-        "properties": {
-          "accounts": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MappingOptions/definitions/accountMappingOption"
-            }
-          },
-          "bankAccounts": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MappingOptions/definitions/bankAccountMappingOption"
-            }
-          },
-          "taxRate": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MappingOptions/definitions/taxRateMappingOption"
-            }
-          }
-        },
-        "definitions": {
-          "accountMappingOption": {
-            "title": "Account mapping option",
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "Identifier for the account, unique for the company.",
-                "example": "1b6266d1-1e44-46c5-8eb5-a8f98e03124e"
-              },
-              "name": {
-                "type": "string",
-                "nullable": true,
-                "description": "Name of the account.",
-                "example": "Accounts Payable"
-              },
-              "currency": {
-                "title": "Currency",
-                "x-internal": true,
-                "type": "string",
-                "description": "The currency data type in Codat is the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code, e.g. _GBP_.\n\n## Unknown currencies\n\nIn line with the ISO 4217 specification, the code _XXX_ is used when the data source does not return a currency for a transaction. \n\nThere are only a very small number of edge cases where this currency code is returned by the Codat system.",
-                "format": "ISO4217",
-                "examples": [
-                  "GBP",
-                  "USD",
-                  "EUR"
-                ]
-              },
-              "accountType": {
-                "type": "string",
-                "nullable": true,
-                "description": "Type of account.",
-                "example": "Active"
-              }
-            }
-          },
-          "bankAccountMappingOption": {
-            "title": "Bank account mapping option",
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "Identifier for the account, unique for the company in the accounting platform.",
-                "example": "3d5a8e00-d108-4045-8823-7f342676cffa"
-              },
-              "name": {
-                "type": "string",
-                "nullable": true,
-                "description": "Name of the bank account in the accounting platform.",
-                "example": "Bank of Dave current account"
-              },
-              "currency": {
-                "type": "string",
-                "nullable": true,
-                "description": "The bank account's base currency."
-              },
-              "accountType": {
-                "title": "Bank Account Type",
-                "x-internal": true,
-                "enum": [
-                  "Unknown",
-                  "Credit",
-                  "Debit"
-                ],
-                "type": "string",
-                "description": "The type of transactions and balances on the account.  \nFor Credit accounts, positive balances are liabilities, and positive transactions **reduce** liabilities.  \nFor Debit accounts, positive balances are assets, and positive transactions **increase** assets."
-              }
-            }
-          },
-          "taxRateMappingOption": {
-            "title": "Tax rate mapping option",
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "Identifier for the tax rate, unique for the company in the accounting platform.",
-                "example": "d2939064-dd3a-4c0f-9865-a238c2193515"
-              },
-              "name": {
-                "type": "string",
-                "nullable": true,
-                "description": "Codat-augmented name of the tax rate in the accounting platform."
-              },
-              "code": {
-                "type": "string",
-                "nullable": true,
-                "description": "Code for the tax rate from the accounting platform."
-              },
-              "effectiveTaxRate": {
-                "type": "number",
-                "format": "decimal",
-                "nullable": true,
-                "description": "See Effective tax rates description."
-              },
-              "totalTaxRate": {
-                "type": "number",
-                "format": "decimal",
-                "nullable": true,
-                "description": "Total (not compounded) sum of the components of a tax rate."
-              }
-            }
-          }
-        }
-      },
       "PagingInfo": {
         "type": "object",
         "title": "Pagination information",
@@ -3357,6 +3430,81 @@
             }
           }
         ]
+      },
+      "PaymentMappingOptions": {
+        "x-internal": true,
+        "title": "Mapping Options Payments",
+        "description": "Gets the bill payments mapping options for a company's accounting software",
+        "type": "object",
+        "properties": {
+          "bankAccounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentMappingOptions/definitions/bankAccountMappingOption"
+            }
+          }
+        },
+        "definitions": {
+          "bankAccountMappingOption": {
+            "title": "Bank account mapping option",
+            "type": "object",
+            "allOf": [
+              {
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Identifier for the account, unique for the company in the accounting platform.",
+                    "example": "3d5a8e00-d108-4045-8823-7f342676cffa"
+                  },
+                  "name": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Name of the bank account in the accounting platform.",
+                    "example": "Bank of Dave current account"
+                  },
+                  "accountNumber": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Account number for the bank account.\n\nXero integrations\nOnly a UK account number shows for bank accounts with GBP currency and a combined total of sort code and account number that equals 14 digits, For non-GBP accounts, the full bank account number is populated."
+                  },
+                  "nominalCode": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Code used to identify each nominal account for a business."
+                  },
+                  "sortCode": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Sort code for the bank account.\n\nXero integrations\nThe sort code is only displayed when the currency = GBP and the sort code and account number sum to 14 digits. For non-GBP accounts, this field is not populated."
+                  },
+                  "currency": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "The bank account's base currency."
+                  },
+                  "status": {
+                    "$ref": "#/components/schemas/PaymentMappingOptions/definitions/bankAccountStatus"
+                  },
+                  "type": {
+                    "$ref": "#/components/schemas/BankAccount/allOf/0/properties/accountType"
+                  }
+                }
+              },
+              {
+                "$ref": "#/components/schemas/Bill/allOf/1"
+              }
+            ]
+          },
+          "bankAccountStatus": {
+            "type": "string",
+            "description": "The current status of the bank account.",
+            "enum": [
+              "Active",
+              "Archived"
+            ],
+            "example": "Active"
+          }
+        }
       },
       "PullOperation": {
         "title": "Pull operation",
