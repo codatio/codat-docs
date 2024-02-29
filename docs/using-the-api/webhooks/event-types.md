@@ -5,7 +5,7 @@ hide_table_of_contents: true
 description: "Learn about the event types that are available to you for consumption"
 ---
 
-Codat supports the following event types you can [consume](/using-the-api/webhooks/create-consumer) using the Codat Portal or our API. Use them to respond to changes in your companies and their data.
+Codat supports the following event types you can [consume](/using-the-api/webhooks/create-consumee) using the Codat Portal or our API. Use them to respond to changes in your companies and their data.
 
 Navigate to **Monitor > Webhooks > Events > Event Catalog** to view this list and each event's payload directly in the [Portal](https://app.codat.io/monitor/events). 
 
