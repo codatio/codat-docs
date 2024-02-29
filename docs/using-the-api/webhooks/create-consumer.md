@@ -6,7 +6,7 @@ description: "Create new webhook consumers and manage existing ones to receive w
 
 ## Create a webhook consumer
 
-To start listening to messages we send you, configure your webhook consumer endpoints. Navigate to **Settings > Webhooks > Events > Configure consumer** or **Monitor > Webhooks > Events** and click **Add endpoint** to create a new consumer. 
+To start listening to messages we send you, configure your webhook consumer endpoints. Navigate to **Settings > Webhooks > Events > Configure consumer** and click **Add endpoint** to create a new consumer. 
 
 Add the endpoint URL that you want to receive the messages, an optional description, and choose the events that this endpoint should listen to. If you don't specify the event types, your endpoint will receive all events by default. 
 
