@@ -1343,9 +1343,7 @@
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
-                          }
-                        },
-                        {
+                          },
                           "accountRef": {
                             "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
                             "name": "Business Current Account"
@@ -1362,14 +1360,13 @@
                               "Operating"
                             ]
                           },
-                          "platformName": "Shopify"
+                          "platformName": "Shopify",
+                          "modifiedDate": "2022-11-08T12:00:00"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
-                          }
-                        },
-                        {
+                          },
                           "accountRef": {
                             "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
                             "name": "Business Current Account"
@@ -1385,14 +1382,13 @@
                               "Expense"
                             ]
                           },
-                          "platformName": "Amazon"
+                          "platformName": "Amazon",
+                          "modifiedDate": "2022-11-08T12:00:00"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
-                          }
-                        },
-                        {
+                          },
                           "accountRef": {
                             "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
                             "name": "Business Undeposited Funds"
@@ -1409,14 +1405,13 @@
                               "Revenue"
                             ]
                           },
-                          "platformName": "Shopify"
+                          "platformName": "Shopify",
+                          "modifiedDate": "2022-11-08T12:00:00"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
-                          }
-                        },
-                        {
+                          },
                           "accountRef": {
                             "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
                             "name": "Business Current Account"
@@ -1433,14 +1428,13 @@
                               "CostOfSales"
                             ]
                           },
-                          "platformName": "Amazon"
+                          "platformName": "Amazon",
+                          "modifiedDate": "2022-11-08T12:00:00"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
-                          }
-                        },
-                        {
+                          },
                           "accountRef": {
                             "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
                             "name": "Business Undeposited Funds"
@@ -1457,14 +1451,13 @@
                               "Revenue"
                             ]
                           },
-                          "platformName": "Zettle"
+                          "platformName": "Zettle",
+                          "modifiedDate": "2022-11-08T12:00:00"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
-                          }
-                        },
-                        {
+                          },
                           "accountRef": {
                             "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
                             "name": "Business Current Account"
@@ -1480,14 +1473,13 @@
                               "Expense"
                             ]
                           },
-                          "platformName": "Amazon"
+                          "platformName": "Amazon",
+                          "modifiedDate": "2022-11-08T12:00:00"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
-                          }
-                        },
-                        {
+                          },
                           "accountRef": {
                             "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
                             "name": "Business Current Account"
@@ -1504,14 +1496,13 @@
                               "Operating"
                             ]
                           },
-                          "platformName": "Amazon"
+                          "platformName": "Amazon",
+                          "modifiedDate": "2022-11-08T12:00:00"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
-                          }
-                        },
-                        {
+                          },
                           "accountRef": {
                             "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
                             "name": "Business Undeposited Funds"
@@ -1527,14 +1518,13 @@
                               "Income"
                             ]
                           },
-                          "platformName": "DoorDash"
+                          "platformName": "DoorDash",
+                          "modifiedDate": "2022-11-08T12:00:00"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
-                          }
-                        },
-                        {
+                          },
                           "accountRef": {
                             "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
                             "name": "Business Undeposited Funds"
@@ -1551,14 +1541,13 @@
                               "Revenue"
                             ]
                           },
-                          "platformName": "Uber"
+                          "platformName": "Uber",
+                          "modifiedDate": "2022-11-08T12:00:00"
                         },
                         {
                           "sourceRef": {
                             "sourceType": "Banking"
-                          }
-                        },
-                        {
+                          },
                           "accountRef": {
                             "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
                             "name": "Business Undeposited Funds"
@@ -1575,7 +1564,8 @@
                               "Revenue"
                             ]
                           },
-                          "platformName": "DoorDash"
+                          "platformName": "DoorDash",
+                          "modifiedDate": "2022-11-08T12:00:00"
                         }
                       ]
                     }
@@ -4076,6 +4066,10 @@
               },
               "accountRef": {
                 "$ref": "#/components/schemas/EnhancedCashFlowTransactions/definitions/accountRef"
+              },
+              "modifiedDate": {
+                "description": "The date the bank transaction was last modified.",
+                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date"
               }
             }
           },
