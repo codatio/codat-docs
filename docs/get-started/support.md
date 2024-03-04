@@ -22,7 +22,7 @@ This can be accessed here https://status.codat.io/
 
 ## Raising a ticket
 
-If you run into an issue and need to raise a support ticket, you can do so through [this form](https://codat.zendesk.com/hc/en-gb/requests/new).
+If you run into an issue and need to raise a support ticket, use our [support request form](https://codat.zendesk.com/hc/en-gb/requests/new).
 
 To help us deal with your query efficiently please include the following:
 
