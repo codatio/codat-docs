@@ -24,7 +24,9 @@ Simply find the scenarios applicable to your existing setup and see what we reco
 
 ## How do I migrate?
 
-Reach out to your Codat contact with a request to be migrated to the new webhooks service. Depending on the scenarios that apply to you, there may be additional steps you need to take during the migration. We describe these in more detail in the sections below. 
+Reach out to your Codat contact so that we can enable the new webhooks service for you. Next, you will need to manually configure the required webhook consumers. We explain the process in [Manage webhook consumers](/using-the-api/webhooks/create-consumer). 
+
+Depending on the scenarios that apply to you, there may be additional steps you need to take during the migration. We describe these in more detail in the sections below. 
 
 ### Email notifications
 
