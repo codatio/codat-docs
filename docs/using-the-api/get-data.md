@@ -18,7 +18,7 @@ Once you've queued the sync, you can poll the [GET /companies/{companyId}/dataSt
 
 :::note Configuring the sync schedule
 
-You can configure a sync schedule in the Codat portal to keep each data type at an acceptable freshness. For more information, please refer to your onboarding docs or contact [support@codat.io](mailto:support@codat.io).
+You can configure a sync schedule in the Codat portal to keep each data type at an acceptable freshness. For more information, please refer to your onboarding docs or raise a ticket with our support team through [this form](https://codat.zendesk.com/hc/en-gb/requests/new).
 :::
 
 ## Request a specific data type

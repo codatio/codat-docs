@@ -148,7 +148,7 @@ For performance reasons, the default date range for pulling bank transactions fr
 
 If you need to increase or decrease this date range, edit the value of the `syncFromUTC` property for the `bankTransactions` data type in your additional sync settings (via a request to `POST /companies/{companyId}/syncSettings`).
 
-You can set `syncFromUTC` for all companies or for individual companies. For more information, see <a  class="external" href="https://codat.zendesk.com/hc/en-gb/articles/360018829477-Additional-sync-settings" target="_blank">Additional sync settings</a> in the Codat Knowledgebase or contact support@codat.io for further assistance.
+You can set `syncFromUTC` for all companies or for individual companies. For more information, see <a  class="external" href="https://codat.zendesk.com/hc/en-gb/articles/360018829477-Additional-sync-settings" target="_blank">Additional sync settings</a> in the Codat Knowledgebase or raise a ticket with our support team through [this form](https://codat.zendesk.com/hc/en-gb/requests/new) for further assistance.
 
 ### Why do I see a different reference value when I pull bank transactions to Xero that I'd previously pushed?
 

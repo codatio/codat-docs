@@ -38,7 +38,7 @@ To obtain the connector ID from your user, please ask them to:
 
 4. Paste their connector ID into a document or email and send it to you.
 
-You can then send the connector ID to the Codat Support team at [support@codat.io](mailto:support@codat.io). They will confirm when the **Restart connector** link has been enabled.
+You can then send the connector ID to the Codat Support team by raising a ticket through [this form](https://codat.zendesk.com/hc/en-gb/requests/new). They will confirm when the **Restart connector** link has been enabled.
 
 ## Use the restart connector link
 
