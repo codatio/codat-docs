@@ -3,7 +3,7 @@ title: "Support"
 draft: true
 ---
 
-Codat provides a second line support function during UK business hours (09:00 to 17:00 Monday to Friday) and can be contacted raising a ticket through [this form](https://codat.zendesk.com/hc/en-gb/requests/new).
+Codat provides a second line support function during UK business hours (09:00 to 17:00 Monday to Friday) and can be contacted via our [support request form](https://codat.zendesk.com/hc/en-gb/requests/new).
 
 :::caution Access to support
 
