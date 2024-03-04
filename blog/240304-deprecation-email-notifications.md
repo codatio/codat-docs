@@ -1,8 +1,7 @@
 ---
 title: "2024-07-10: Deprecation of email notifications for rules"
-date: "2024-02-16"
+date: "2024-03-04"
 tags: ["Deprecation"]
-draft: true
 authors: dcoplowe
 ---
 
@@ -14,6 +13,7 @@ To optimize and streamline our webhook service, we are decoupling our email noti
 
 ## Action required
 
+We are currently working on a Zapier integration that will allow you to create custom workflows based on events we dispatch.
 If you wish to continue receiving email notifications, we recommend configuring email-based webhook notifications through Zapier. 
 
 Follow the step-by-step instructions in [our Zapier guide](/using-the-api/webhooks/zapier-integration) to transition to this alternative solution and ensure uninterrupted email notifications for your configured events.

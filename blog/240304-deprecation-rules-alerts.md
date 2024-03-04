@@ -1,8 +1,7 @@
 ---
 title: "2024-07-10: Deprecation of rules alert endpoints"
-date: "2024-02-16"
+date: "2024-03-04"
 tags: ["Deprecation"]
-draft: true
 authors: dcoplowe
 ---
 
