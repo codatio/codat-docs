@@ -1,9 +1,13 @@
 ---
 title: "Listening to events"
 description: "Basics of webhook events when using Codat's APIs"
-createdAt: "2020-04-01T20:16:29.839Z"
-updatedAt: "2022-11-24T12:56:40.816Z"
 ---
+
+:::caution New webhook service available
+
+This page describes the functionality of our legacy webhook offering. [Learn more](/using-the-api/webhooks/overview) about our new webhook service and see how you can [migrate](/using-the-api/webhooks/migration-guide) to use it instead.
+
+:::
 
 If you've added a webhook URL to your rule, Codat will `POST` to that URL each time a webhook event is raised.
 

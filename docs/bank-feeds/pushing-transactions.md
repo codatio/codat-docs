@@ -201,7 +201,7 @@ QBO automatically polls Codat daily for updates, and users can also manually tri
 
 ### Monitor request status
 
-After you submit your request to create bank transactions to our API, it will have a status of `Pending`. Use the [Push Operation Status Changed](/bank-feeds/setup#webhooks) webhook to track when the status of your push operation changes to `Success` or `Failed`.
+After you submit your request to create bank transactions to our API, it will have a status of `Pending`. Use the [PushOperationStatusChanged](/bank-feeds/setup#webhooks) webhook to track when the status of your push operation changes to `Success` or `Failed`.
 
 If the request is successful, you will receive a webhook like this:
 

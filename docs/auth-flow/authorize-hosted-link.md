@@ -30,7 +30,7 @@ We recommend that you populate the name value with the ID that you use for the m
    - `companyId`, because you will need it for directing your customers to Link and managing their connections;
    - `redirect` URL value, because you will use this URL in your app to direct the customer to start their Link journey.
 
-Once your customer finishes the Link flow, they will be redirected back to the URL you have set in the [Link settings](/auth-flow/customize/set-up-redirects). You can also present your customer with a confirmation screen that shows [the integrations they have set up](using-the-api/webhooks/core-rules-types#company-data-connection-status-changed).
+Once your customer finishes the Link flow, they will be redirected back to the URL you have set in the [Link settings](/auth-flow/customize/set-up-redirects). You can also present your customer with a confirmation screen that shows [the integrations they have set up](using-the-api/webhooks/event-types).
 
 Review the parameters in the example response to creating a new company:
 
@@ -47,7 +47,7 @@ Review the parameters in the example response to creating a new company:
 }
 ```
 
-To enhance your Hosted Link experience, [set up a webhook](/auth-flow/customize/set-up-webhooks) to monitor the connection status of the newly created company. We recommend that you set up a webhook for when a user authorizes a data connection so that you can action it within your app.
+To enhance your Hosted Link experience, [set up a webhook](/using-the-api/webhooks/create-consumer) to monitor the connection status of the newly created company. We recommend that you set up a webhook for when a user authorizes a data connection so that you can action it within your app.
 
 :::note Use the `redirect` Link URL for existing customers
 
