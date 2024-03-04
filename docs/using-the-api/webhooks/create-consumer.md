@@ -194,7 +194,9 @@ scoop install svix
 
 ### Verify webhook
 
-Each endpoint uses its own secret to verify the webhook. In the [Codat Portal](https://app.codat.io/monitor/events) navigate to **Monitor > Webhooks > Events** and select the endpoint you want to verify. Make a copy of the **Signing secret** for use in your application.
+Each endpoint uses its own secret to verify the webhook. In the [Codat Portal](https://app.codat.io/monitor/events) navigate to **Monitor > Webhooks > Events**, select the endpoint you want to verify and copy the **Signing secret** for use in your application.
+
+Verify Codat's webhooks by passing the signing secret to the webhook constructor and use the verify method to confirm the event was sent by Codat.
 
 :::info Use the raw request body
 
