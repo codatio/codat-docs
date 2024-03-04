@@ -42,7 +42,7 @@ The authorization header is included in all webhook events sent to your account.
 
 ## Disable webhook security for specific rules
 
-If you want to override webhook security for specific rules, please raise a ticket with our support team through [this form](https://codat.zendesk.com/hc/en-gb/requests/new).
+If you want to override webhook security for specific rules, please raise a ticket with our support team through the [support request form](https://codat.zendesk.com/hc/en-gb/requests/new).
 
 ## Allowlisting Codat IP addresses for webhooks
 

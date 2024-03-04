@@ -8,7 +8,7 @@ The Maxio integration doesn't yet expose standardized data types or provide any 
 
 Instead, when an SMB customer (a company) has [linked their Maxio account](/integrations/commerce/chargify/commerce-chargify-setup), you can access their subscriptions and billing data through the `proxy` endpoint in the Codat API. Only GET requests are currently supported.
 
-By default, Codat disables users from making `proxy` requests. To enable proxy for Maxio, contact your account manager or raise a ticket with our support team through [this form](https://codat.zendesk.com/hc/en-gb/requests/new).
+By default, Codat disables users from making `proxy` requests. To enable proxy for Maxio, contact your account manager or raise a ticket with our support team through the [support request form](https://codat.zendesk.com/hc/en-gb/requests/new).
 
 ## Send a proxy request
 
