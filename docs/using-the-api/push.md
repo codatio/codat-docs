@@ -254,7 +254,7 @@ This results in a corresponding response from the endpoint, which includes the f
 
 Your operation will initially be in a `Pending` status. You can track an update on the final `Success` or `Failed` state to communicate the outcome of the operation to the user, or take further action in case of failures. We recommend [listening to our webhooks](/using-the-api/webhooks/overview) for this purpose. 
 
-In the **Monitor > Webhooks > Events** [view](https://app.codat.io/monitor/rules) of the Codat Portal, click **Add endpoint** to create a webhook consumer that listens for the `PushOperationStatusChanged` event type. You can review detailed instructions in our documentation for [consuming webhook messages](/using-the-api/webhooks/overview).
+In the **Settings > Webhooks > Events > Configure consumer** [view](https://app.codat.io/monitor/rules) of the Codat Portal, click **Add endpoint** to create a webhook consumer that listens for the `PushOperationStatusChanged` event type. You can review detailed instructions in our documentation for [consuming webhook messages](/using-the-api/webhooks/overview).
 
 You can also use our endpoints to monitor the status of your create, update, or delete operation. List all operations for a company using the [List push operations](/platform-api#/operations/get-company-push-history) endpoint, or list a single operation via the [Get push operation](/platform-api#/operations/get-push-operation). This is useful when you want to include summary information to your customers outlining the status of their CUD history.
 
