@@ -3,7 +3,7 @@ title: "Support"
 draft: true
 ---
 
-Codat provides a second line support function during UK business hours (09:00 to 17:00 Monday to Friday) and can be contacted by emailing support@codat.io.
+Codat provides a second line support function during UK business hours (09:00 to 17:00 Monday to Friday) and can be contacted raising a ticket through [this form](https://codat.zendesk.com/hc/en-gb/requests/new).
 
 :::caution Access to support
 
@@ -22,7 +22,7 @@ This can be accessed here https://status.codat.io/
 
 ## Raising a ticket
 
-If you run into an issue and need to raise a support ticket, you can do so by emailing support@codat.io.
+If you run into an issue and need to raise a support ticket, you can do so through [this form](https://codat.zendesk.com/hc/en-gb/requests/new).
 
 To help us deal with your query efficiently please include the following:
 

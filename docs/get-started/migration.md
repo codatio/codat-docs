@@ -71,7 +71,7 @@ The migration process usually involves the following steps.
 
 :::success Plan your migration
 
-Every migration is different so please make sure you talk to your solutions engineer, or contact our [support team](mailto:support@codat.io) as early as possible to discuss and plan your migration.
+Every migration is different so please make sure you talk to your solutions engineer, or raise a ticket with our support team through [this form](https://codat.zendesk.com/hc/en-gb/requests/new) as early as possible to discuss and plan your migration.
 :::
 
 | Step                                         | Details                                                                                                                                                                  | Responsibility                          |

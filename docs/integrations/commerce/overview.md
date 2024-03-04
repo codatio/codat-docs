@@ -15,7 +15,7 @@ You can connect to the following commerce platforms using our integrations:
 
 <IntegrationsList sourceType="commerce"/>
 
-`Subscription data` - _Contact your account manager or contact [support](mailto:support@codat.io) to access these integrations._
+`Subscription data` - _Contact your account manager or raise a ticket with our support team through [this form](https://codat.zendesk.com/hc/en-gb/requests/new) to access these integrations._
 
 To view and compare commerce data coverage by integration, use the <a  class="external" href="https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&integrationKey=aiwb&dataType=commerce-companyInfo" target="_blank">Data coverage explorer</a> and select the **Commerce API** product.
 

@@ -28,7 +28,7 @@ Every new library release will increment one of the version components depending
 ### Support
 
 If you encounter any challenges while utilizing our SDKs, please don't hesitate to reach out for assistance. 
-You can raise any issues by contacting your dedicated Codat representative or reaching out to our [support team](mailto:support@codat.io).
+You can raise any issues by contacting your dedicated Codat representative or raise a ticket with our support team through [this form](https://codat.zendesk.com/hc/en-gb/requests/new).
 We're here to help ensure a smooth experience for you.
 
 ### Change management
