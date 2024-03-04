@@ -30,5 +30,5 @@ Check out our [migration guide](/using-the-api/webhooks/migration) to see if you
 As part of this change we have had to make two deprecations. 
 Learn more about how these deprecations may impact you and any actions required for
 
-- [Email notifications](/updates/240216-deprecation-email-notifications)
-- [Rules alerts endpoint](/updates/240216-deprecation-rules-alerts)
+- [Email notifications](/updates/240304-deprecation-email-notifications)
+- [Rules alerts endpoint](/updates/240304-deprecation-rules-alerts)
