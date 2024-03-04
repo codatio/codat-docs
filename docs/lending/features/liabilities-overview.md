@@ -277,7 +277,7 @@ Configure the solution to refresh data when you need it by [setting a synchroniz
 
 #### Configure webhooks
 
-We recommend you [configure webhook consumers](/using-the-api/webhooks/create-consumer) the following [event types](/using-the-api/webhooks/event-types) to manage your data pipelines. These webhooks send a message for each `dataType` separately.
+We recommend you [configure webhook consumers](/using-the-api/webhooks/create-consumer) with the following [event types](/using-the-api/webhooks/event-types) to manage your data pipelines. These webhooks send a message for each `dataType` separately.
 
 - [DataSyncStatusChangedToError](/using-the-api/webhooks/event-types)  
 
