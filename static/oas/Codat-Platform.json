@@ -1693,6 +1693,7 @@
           }
         ],
         "x-internal": true,
+        "deprecated": true,
         "tags": [
           "Webhooks"
         ],
@@ -1702,7 +1703,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Webhooks"
+                  "$ref": "#/components/schemas/Webhook/definitions/webhooks"
                 },
                 "examples": {
                   "Example": {
@@ -1764,6 +1765,7 @@
         "summary": "Create webhook",
         "description": "Create a new webhook configuration",
         "operationId": "create-rule",
+        "deprecated": true,
         "tags": [
           "Webhooks"
         ],
@@ -1802,7 +1804,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateRule"
+                "$ref": "#/components/schemas/Webhook/definitions/createRule"
               },
               "examples": {
                 "Company data connection status changed": {
@@ -1931,6 +1933,7 @@
         "operationId": "get-webhook",
         "description": "Get a single webhook",
         "x-internal": true,
+        "deprecated": true,
         "tags": [
           "Webhooks"
         ],
@@ -1945,6 +1948,217 @@
                 "examples": {}
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/webhooks": {
+      "get": {
+        "summary": "List webhook consumers",
+        "operationId": "list-webhook-consumers",
+        "x-speakeasy-name-override": "list-consumers",
+        "description": "﻿Use the *List webhook consumers* endpoint to return a list of all webhook consumers that currently exist for your client.\n\n[Webhook consumer](https://docs.codat.io/platform-api#/schemas/WebhookConsumer) is an HTTP endpoint that you configure to subscribe to specific events. See our documentation for more details on [Codat's webhook service](https://docs.codat.io/using-the-api/webhooks/overview).",
+        "tags": [
+          "Webhooks"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WebhookConsumer/definitions/webhookConsumers"
+                },
+                "examples": {
+                  "Webhook consumers": {
+                    "value": {
+                      "results": [
+                        {
+                          "id": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+                          "url": "https://example.com/webhoook-consumers/sync-complete",
+                          "eventTypes": [
+                            "Data sync completed"
+                          ],
+                          "disabled": false
+                        },
+                        {
+                          "id": "ca3cac86-7925-4759-abc2-96405780fdfa",
+                          "url": "https://example.com/webhoook-consumers/dataset-changed",
+                          "eventTypes": [
+                            "Dataset data changed"
+                          ],
+                          "disabled": true
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Bad-Request"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create webhook consumer",
+        "operationId": "create-webhook-consumer",
+        "x-speakeasy-name-override": "create-consumer",
+        "description": "﻿Use the *Create webhook consumer* endpoint to create a new webhook consumer that will listen to messages we send you.\n\n[Webhook consumer](https://docs.codat.io/platform-api#/schemas/WebhookConsumer) is an HTTP endpoint that you configure to subscribe to specific events. See our documentation for more details on [Codat's webhook service](https://docs.codat.io/using-the-api/webhooks/overview).",
+        "tags": [
+          "Webhooks"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebhookConsumer/definitions/webhookConsumerPrototype"
+              },
+              "examples": {
+                "Subscribe consumer to one or more event types": {
+                  "value": {
+                    "url": "https://example.com/webhoook-consumer",
+                    "eventTypes": [
+                      "Data sync completed",
+                      "Dataset data changed"
+                    ]
+                  }
+                },
+                "Subscribe consumer with disabled endpoint": {
+                  "value": {
+                    "url": "https://example.com/webhoook-consumer",
+                    "eventTypes": [
+                      "Data sync completed"
+                    ],
+                    "disabled": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WebhookConsumer"
+                },
+                "examples": {
+                  "Subscribe consumer to all event types": {
+                    "value": {
+                      "id": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+                      "url": "https://example.com/webhoook-consumer",
+                      "eventTypes": [
+                        "*"
+                      ],
+                      "disabled": false
+                    }
+                  },
+                  "Subscribe consumer to one or more event types": {
+                    "value": {
+                      "id": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+                      "url": "https://example.com/webhoook-consumer",
+                      "eventTypes": [
+                        "Data sync completed",
+                        "Dataset data changed"
+                      ],
+                      "disabled": false
+                    }
+                  },
+                  "Subscribe consumer with disabled endpoint": {
+                    "value": {
+                      "id": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+                      "url": "https://example.com/webhoook-consumer",
+                      "eventTypes": [
+                        "Data sync completed"
+                      ],
+                      "disabled": true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/webhooks/{webhookId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/webhookId"
+        }
+      ],
+      "delete": {
+        "summary": "Delete webhook consumer",
+        "operationId": "delete-webhook-consumer",
+        "x-speakeasy-name-override": "delete-consumer",
+        "description": "﻿Use the *Delete webhook consumer* endpoint to delete an existing webhoook consumer, providing its valid `id` as a parameter.\n\n[Webhook consumer](https://docs.codat.io/platform-api#/schemas/WebhookConsumer) is an HTTP endpoint that you configure to subscribe to specific events. See our documentation for more details on [Codat's webhook service](https://docs.codat.io/using-the-api/webhooks/overview).",
+        "tags": [
+          "Webhooks"
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -4188,63 +4402,6 @@
           }
         }
       },
-      "CreateRule": {
-        "title": "Create webhook",
-        "description": "Create an event notification to a URL or list of email addresses based on the given type or condition.",
-        "type": "object",
-        "x-internal": true,
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "The type of webhook."
-          },
-          "companyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "notifiers": {
-            "$ref": "#/components/schemas/CreateRule/definitions/webhookNotifier"
-          }
-        },
-        "definitions": {
-          "webhookNotifier": {
-            "type": "object",
-            "title": "Webhook notifiers",
-            "properties": {
-              "emails": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "email",
-                  "description": "Receiver's email address.",
-                  "example": "info@client.com"
-                }
-              },
-              "webhook": {
-                "type": "string",
-                "format": "uri",
-                "description": "The URI the webhook service will POST events.",
-                "example": "https://webhook.client.com"
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "type": "DataConnectionStatusChanged",
-            "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
-            "notifiers": {
-              "emails": [
-                "info@client.com"
-              ],
-              "webhook": "https://webhook.client.com"
-            }
-          }
-        ],
-        "required": [
-          "type",
-          "notifiers"
-        ]
-      },
       "CustomDataTypeConfiguration": {
         "title": "Custom data type configuration",
         "type": "object",
@@ -5119,10 +5276,10 @@
             "examples": [
               {
                 "self": {
-                  "href": "/companies/{id}/data/{dataType}"
+                  "href": "/companies"
                 },
                 "current": {
-                  "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+                  "href": "/companies?page=1&pageSize=10"
                 }
               }
             ]
@@ -5147,10 +5304,10 @@
         ],
         "examples": [
           {
+            "pageNumber": 1,
+            "pageSize": 10,
+            "totalResults": 1,
             "_links": {
-              "pageNumber": 1,
-              "pageSize": 10,
-              "totalResults": 1,
               "self": {
                 "href": "/companies/{id}/data/{dataType}"
               },
@@ -6038,9 +6195,84 @@
             }
           },
           {
-            "$ref": "#/components/schemas/CreateRule"
+            "$ref": "#/components/schemas/Webhook/definitions/createRule"
           }
         ],
+        "definitions": {
+          "createRule": {
+            "title": "Create webhook",
+            "description": "Create a message that notifies a URL of an event based on its given type or condition.",
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "The type of webhook."
+              },
+              "companyId": {
+                "$ref": "#/components/parameters/companyId/schema"
+              },
+              "notifiers": {
+                "$ref": "#/components/schemas/Webhook/definitions/webhookNotifier"
+              }
+            },
+            "examples": [
+              {
+                "type": "DataConnectionStatusChanged",
+                "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
+                "notifiers": {
+                  "emails": [
+                    "info@client.com"
+                  ],
+                  "webhook": "https://webhook.client.com"
+                }
+              }
+            ],
+            "required": [
+              "type",
+              "notifiers"
+            ]
+          },
+          "webhookNotifier": {
+            "type": "object",
+            "title": "Webhook notifiers",
+            "properties": {
+              "emails": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "email",
+                  "description": "Receiver's email address.",
+                  "example": "info@client.com"
+                }
+              },
+              "webhook": {
+                "type": "string",
+                "format": "uri",
+                "description": "The URI the webhook service will use to post events.",
+                "example": "https://webhook.client.com"
+              }
+            }
+          },
+          "webhooks": {
+            "title": "Webhooks",
+            "allOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "results": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Webhook"
+                    }
+                  }
+                }
+              },
+              {
+                "$ref": "#/components/schemas/PagingInfo"
+              }
+            ]
+          }
+        },
         "examples": [
           {
             "id": "ff89c50e-a719-4ef5-a182-9917e53927b6",
@@ -6055,25 +6287,65 @@
           }
         ]
       },
-      "Webhooks": {
-        "title": "Webhooks",
-        "x-internal": true,
-        "allOf": [
-          {
+      "WebhookConsumer": {
+        "title": "Webhook consumer",
+        "type": "object",
+        "description": "﻿A webhook consumer is an HTTP endpoint that developers can configure to subscribe to Codat's supported event types.\n\nSee our documentation for more details on [Codat's webhook service](https://docs.codat.io/using-the-api/webhooks/overview).\n",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "description": "Unique identifier for the webhook consumer."
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "The URL that will consume webhook events dispatched by Codat."
+          },
+          "disabled": {
+            "type": "boolean",
+            "description": "Flag that enables or disables the endpoint from receiving events. Disabled when set to `true`.",
+            "nullable": true,
+            "default": false
+          },
+          "eventTypes": {
+            "type": "array",
+            "description": "An array of event types the webhook consumer subscribes to.",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "definitions": {
+          "webhookConsumerPrototype": {
+            "title": "Create webhook consumer",
+            "type": "object",
+            "properties": {
+              "url": {
+                "$ref": "#/components/schemas/WebhookConsumer/properties/url"
+              },
+              "disabled": {
+                "$ref": "#/components/schemas/WebhookConsumer/properties/disabled"
+              },
+              "eventTypes": {
+                "$ref": "#/components/schemas/WebhookConsumer/properties/eventTypes"
+              }
+            }
+          },
+          "webhookConsumers": {
+            "title": "Webhook consumers",
             "type": "object",
             "properties": {
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/Webhook"
+                  "$ref": "#/components/schemas/WebhookConsumer"
                 }
               }
             }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
           }
-        ]
+        }
       }
     },
     "responses": {
@@ -6452,6 +6724,15 @@
           "description": "A unique 4-letter key to represent a platform in each integration. View [accounting](https://docs.codat.io/integrations/accounting/overview#platform-keys), [banking](https://docs.codat.io/integrations/banking/overview#platform-keys), and [commerce](https://docs.codat.io/integrations/commerce/overview#platform-keys) platform keys."
         },
         "description": "A unique 4-letter key to represent a platform in each integration."
+      },
+      "webhookId": {
+        "name": "webhookId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/WebhookConsumer/properties/id"
+        },
+        "description": "Unique identifier for the webhook consumer."
       }
     },
     "securitySchemes": {
