@@ -3469,7 +3469,7 @@
     "schemas": {
       "AccountCategoriesUpdatedWebhook": {
         "title": "Account categories updated webhook",
-        "description": "Webhook request body for account categories updated.",
+        "description": "Webhook request body for the \"Account categories updated\" event.",
         "x-internal": true,
         "type": "object",
         "properties": {
@@ -3508,7 +3508,7 @@
           },
           "Message": {
             "type": "string",
-            "description": "A human readable message about the webhook."
+            "description": "A human-readable message about the webhook."
           },
           "Data": {
             "$ref": "#/components/schemas/AccountCategoriesUpdatedWebhook/definitions/AccountCategoriesUpdatedWebhookData"
@@ -3520,7 +3520,7 @@
             "title": "Account categories updated webhook data",
             "properties": {
               "modifiedDate": {
-                "description": "The date on which this account categories were last modified in Codat.",
+                "description": "The date on which the company's account categories were last modified in Codat.",
                 "type": "string",
                 "example": "2022-10-23",
                 "title": "Date"

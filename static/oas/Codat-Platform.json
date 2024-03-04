@@ -3466,8 +3466,8 @@
     },
     "Client rate limit reached": {
       "post": {
+        "description": "Triggered when the number of requests to Codat's API from the client exceeds the current quota.",
         "requestBody": {
-          "description": "Triggered when your Codat client's rate limit is reached.",
           "content": {
             "application/json": {
               "schema": {
@@ -3485,8 +3485,8 @@
     },
     "Client rate limit reset": {
       "post": {
+        "description": "Triggered when the rate limit quota has reset for the client, and more requests to Codat's API are available.",
         "requestBody": {
-          "description": "Triggered when your Codat client's rate limit is reset.",
           "content": {
             "application/json": {
               "schema": {
@@ -3707,7 +3707,7 @@
               },
               "ExpiresUtc": {
                 "$ref": "#/components/schemas/DateTime",
-                "description": "The date time in UTC that your daily quota is reset."
+                "description": "The date time in UTC when your daily quota is reset."
               }
             }
           }
@@ -3762,7 +3762,7 @@
             "properties": {
               "QuotaRemaining": {
                 "type": "integer",
-                "description": "Total number of request remaining for your client.",
+                "description": "Total number of requests remaining for your client.",
                 "nullable": true
               },
               "ResetReason": {
@@ -4145,9 +4145,11 @@
                 "$ref": "#/components/parameters/connectionId/schema"
               },
               "newStatus": {
+                "description": "The new authorization status of the data connection.",
                 "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
               },
               "oldStatus": {
+                "description": "The old authorization status of the data connection.",
                 "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
               },
               "platformKey": {
@@ -4501,7 +4503,7 @@
             "title": "Data types",
             "x-internal": true,
             "type": "string",
-            "description": "Available Data types",
+            "description": "Available data types",
             "enum": [
               "accountTransactions",
               "balanceSheet",
@@ -4625,7 +4627,7 @@
           },
           "Message": {
             "type": "string",
-            "description": "A human readable message about the webhook."
+            "description": "A human-readable message about the webhook."
           },
           "Data": {
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/definitions/DataSyncCompletedWebhookData"
@@ -6449,7 +6451,7 @@
           "example": "gbol",
           "description": "A unique 4-letter key to represent a platform in each integration. View [accounting](https://docs.codat.io/integrations/accounting/overview#platform-keys), [banking](https://docs.codat.io/integrations/banking/overview#platform-keys), and [commerce](https://docs.codat.io/integrations/commerce/overview#platform-keys) platform keys."
         },
-        "description": "A unique 4-letter key to represent a platform in each integration. View [accounting](https://docs.codat.io/integrations/accounting/overview#platform-keys), [banking](https://docs.codat.io/integrations/banking/overview#platform-keys), and [commerce](https://docs.codat.io/integrations/commerce/overview#platform-keys) platform keys."
+        "description": "A unique 4-letter key to represent a platform in each integration."
       }
     },
     "securitySchemes": {
