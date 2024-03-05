@@ -1,7 +1,8 @@
 ---
 title: "2024-07-10: Deprecation of email notifications for rules"
-date: "2024-03-04"
+date: "2024-03-06"
 tags: ["Deprecation"]
+draft: true
 authors: dcoplowe
 ---
 
