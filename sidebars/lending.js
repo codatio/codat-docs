@@ -112,7 +112,7 @@ module.exports = [
 },
 {
   type: "link",
-  href: '/lending/functions/file-upload',
+  href: '/lending/functions/data-upload',
   label: "Data upload",
   customProps: {
     hr: true,
