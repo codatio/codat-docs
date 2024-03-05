@@ -56,15 +56,6 @@ button.sl-bg-primary {
   color: var(--font-ui) !important;
 }
 
-blockquote {
-  border: none !important;
-  background: none !important;
-
-  > div {
-    border: 1px solid var(--token-secondary-bg-c-alt) !important;
-  }
-}
-
 .JsonSchemaViewer {
   border: 1px solid var(--token-secondary-bg-c-alt);
   border-radius: 4px;
@@ -98,6 +89,18 @@ blockquote {
   }
 }
 
-table thead {
-  background-color: var(--color-canvas-tint);
+
+[class*="stoplightWrapper"] {
+  blockquote {
+    border: none !important;
+    background: none !important;
+
+    > div {
+      border: 1px solid var(--token-secondary-bg-c-alt) !important;
+    }
+  }
+
+  table thead {
+    background-color: var(--color-canvas-tint);
+  }
 }
