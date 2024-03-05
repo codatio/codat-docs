@@ -25,7 +25,7 @@ Say goodbye to complex development processes and hello to streamlined efficiency
 
 #### How can I migrate to our new service?
 
-Check out our [migration guide](/using-the-api/webhooks/migration) to see if you can move over and how to request the move.
+Check out our [migration guide](/using-the-api/webhooks/migration-guide) to see if you can move over and how to request the move.
 
 #### Deprecation of rules alerts endpoints
 
