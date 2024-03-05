@@ -66,13 +66,11 @@ There are many reasons a message to your endpoint could fail. Have a look at our
 
 ## Webhook signature verification
 
-A webhook signature is your way to verify that the messages are sent by Codat and helps you avoid impersonation or replay attacks. We sign every webhook and its metadata with a unique key for each endpoint and include timestamps for when the message attempt occurred.
+A webhook signature is your way to verify that the messages are sent by Codat and helps you avoid impersonation or replay attacks. We sign every webhook and its metadata with a unique security key for each endpoint and include timestamps for when the message attempt occurred.
 
-You can use this signature to verify that the message truly came from Codat and process it. To do this, we advise using Svix's library to verify the event was sent by Codat. 
+You can use this signature to verify that the message truly came from Codat and process it. To do this, we advise using a library called Svix to verify the event was sent by Codat.
 
 ### Install library
-
-Install Svix's library in one of the supported languages.
 
 <Tabs>
 
@@ -194,9 +192,11 @@ scoop install svix
 
 ### Verify webhook
 
-Each endpoint uses its own secret to verify the webhook. In the [Codat Portal](https://app.codat.io/monitor/events) navigate to **Monitor > Webhooks > Events**, select the endpoint you want to verify and copy the **Signing secret** for use in your application.
+To verify incoming webhooks first retrieve the secret key for your endpoint. In the [Codat Portal](https://app.codat.io/monitor/events) navigate to **Monitor > Webhooks > Events**, select the endpoint you want to verify and copy the **Signing secret** for use in your application.
+ 
+  ![A fragment of the UI that highlights where to copy the signing secret](/img/use-the-api/0054-endpoint-detail-signing-secret.png)
 
-Verify Codat's webhooks by passing the signing secret to the webhook constructor and use the verify method to confirm the event was sent by Codat.
+The webhook is verified by passing the secret key, request body and headers to the verification library as demonstrated below.  
 
 :::info Use the raw request body
 
