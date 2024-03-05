@@ -213,6 +213,12 @@ Follow the respective guides to set up enable banking integrations that will ser
 
 <IntegrationsList integrations={bankingIntegrations} />
 
+:::tip Already have a banking integration?
+
+If you have an existing banking integration, you can use our [data upload](/lending/functions/file-upload.md) functionality to manually upload records that will be used as a source for bank statement categorization.
+
+:::
+
 #### Enable data types and sync schedule
 
 See how to [enable data types](/core-concepts/data-type-settings#override-the-default-sync-settings) and ensure the following data types have been switched on:
