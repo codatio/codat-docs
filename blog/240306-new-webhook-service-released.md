@@ -5,9 +5,7 @@ tags: ["Product", "Update"]
 authors: dcoplowe
 ---
 
-<!-- ![Announcement of new webhooks service](/img/updates/240306-webhooks-announcement.png) -->
-
-<img src="/img/updates/240306-webhooks-announcement.png" alt="Announcement of new webhooks service" width="10" />
+![Announcement of new webhooks service](/img/updates/240306-webhooks-announcement.svg)
 
 We're thrilled to unveil our latest platform update designed to simplify your development experience: our brand-new webhooks service! 🎉
 
