@@ -2,6 +2,7 @@
 title: "🚀 Introducing our new webhooks service 🚀"
 date: "2024-03-06"
 tags: ["Product", "Update"]
+hide_table_of_contents: true
 authors: dcoplowe
 ---
 We're thrilled to unveil our latest platform update that simplifies your development experience: our brand-new webhooks service!
