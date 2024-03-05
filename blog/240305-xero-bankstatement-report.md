@@ -9,7 +9,7 @@ On April 2, 2024, Xero are implementing a breaking change to their `BankStatemen
 
 <!--truncate-->
 
-If this affects you, your organization should have received a notification from Xero:
+If this affects you, your organization should have received an email from Xero:
 
 > On 2 April 2024 PDT/3 April 2024 NZT/AEST we plan to release a breaking change to how the Bank Statement report within the Reports endpoint of the Accounting API is accessed. **This change will make the Bank Statement report inaccessible unless you confirm that you meet some additional terms and conditions about your security practices.** We’re making this change as part of our ongoing efforts to improve the security of the Xero ecosystem.
 > 
