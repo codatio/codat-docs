@@ -37,7 +37,7 @@ Unless the Xero required steps outlined below are completed, we will no longer p
 
 **If you consume and use the affected datatypes and fields** you will need to: 
 
-1. **Read, understand and sign the addendum** to Xero’s developer terms and conditions here: https://au1.documents.adobe.com/public/esignWidget?wid=CBFCIBAA3AAABLblqZhBJeUiW3R6TEmiCOk1pgDH5Dkj52mWSuBQoofU2fw8p6TtE69YTVk2lKYzbpQm9_WI* 
+1. **Read, understand and sign the addendum** to Xero’s developer terms and conditions [here](https://au1.documents.adobe.com/public/esignWidget?wid=CBFCIBAA3AAABLblqZhBJeUiW3R6TEmiCOk1pgDH5Dkj52mWSuBQoofU2fw8p6TtE69YTVk2lKYzbpQm9_WI).
 2. **Confirm with Xero that you’ve taken these steps** by replying to Xero’s email (or email [api@support.xero.com](mailto:api@support.xero.com)).
 3. **Confirm with Codat you’ve done this.** Forward a copy of your email to Xero to [partners@codat.io](mailto:partners@codat.io).
 
