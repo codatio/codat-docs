@@ -68,7 +68,7 @@ There are many reasons a message to your endpoint could fail. Have a look at our
 
 A webhook signature is your way to verify that the messages are sent by Codat and helps you avoid impersonation or replay attacks. We sign every webhook and its metadata with a unique security key for each endpoint and include timestamps for when the message attempt occurred.
 
-You can use this signature to verify that the message truly came from Codat and process it. To do this, we advise using a library called Svix to verify the event was sent by Codat.
+You can use this signature to verify that the message truly came from Codat before processing it. To do the verification, we suggest using a library called Svix.
 
 ### Install library
 
@@ -112,14 +112,14 @@ go get github.com/svix/svix-webhooks/go
 
 #### Gradle
 
-Add this dependency to your project's build file
+Add this dependency to your project's build file:
 ```sh
 implementation "com.svix:svix:0.x.y"
 ```
 
 #### Maven
 
-Add this dependency to your project's POM
+Add this dependency to your project's POM:
 ```xml
 <dependency>
   <groupId>com.svix</groupId>
@@ -140,14 +140,14 @@ svix = "0"
 
 #### Gradle
 
-Add this dependency to your project's build file
+Add this dependency to your project's build file:
 ```sh
 implementation "com.svix.kotlin:svix-kotlin:0.x.y"
 ```
 
 #### Maven
 
-Add this dependency to your project's POM
+Add this dependency to your project's POM:
 ```xml
 <dependency>
   <groupId>com.svix.kotlin</groupId>
@@ -192,15 +192,19 @@ scoop install svix
 
 ### Verify webhook
 
-To verify incoming webhooks first retrieve the secret key for your endpoint. In the [Codat Portal](https://app.codat.io/monitor/events) navigate to **Monitor > Webhooks > Events**, select the endpoint you want to verify and copy the **Signing secret** for use in your application.
+To verify incoming webhooks, retrieve the secret key for your endpoint first. 
+
+In the [Codat Portal](https://app.codat.io/monitor/events), navigate to **Monitor > Webhooks > Events**, click the endpoint you want to verify, and copy the **Signing secret** from the endpoint's detailed view.
  
   ![A fragment of the UI that highlights where to copy the signing secret](/img/use-the-api/0054-endpoint-detail-signing-secret.png)
 
-The webhook is verified by passing the secret key, request body and headers to the verification library as demonstrated below.  
+Next, you need to pass the secret key, request body, and headers to the verification library as demonstrated below.  
 
 :::info Use the raw request body
 
-You need to use the raw request body when verifying webhooks, as the cryptographic signature is sensitive to even the slightest changes. You should watch out for frameworks that parse the request as JSON and then stringify it because this too will break the signature verification.
+You need to use the raw request body when verifying webhooks because the cryptographic signature is very sensitive to changes. 
+
+Watch out for frameworks that parse the request as JSON and then stringify it, because this will also break the signature verification.
 ::: 
 
 <Tabs>
