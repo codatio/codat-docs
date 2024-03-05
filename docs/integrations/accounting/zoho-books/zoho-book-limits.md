@@ -15,7 +15,7 @@ The following table summarizes the fields which are excluded when pulling reduce
 | Customers         | Address and contact information |
 | Invoices          | Line items                      |
 
-To remove these restrictions and pull complete datasets for the supported Zoho Books data types, please contact [Codat Support](mailto:support@codat.io). **After removing the restrictions, fetching large volumes of data from the above data types can take multiple days to complete.**
+To remove these restrictions and pull complete datasets for the supported Zoho Books data types, please raise a ticket through our [support request form](https://codat.zendesk.com/hc/en-gb/requests/new). **After removing the restrictions, fetching large volumes of data from the above data types can take multiple days to complete.**
 
 :::info totalTaxAmount for invoices
 
