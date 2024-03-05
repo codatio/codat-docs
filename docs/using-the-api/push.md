@@ -45,7 +45,7 @@ sequenceDiagram
 
 ### Asynchronous operations
 
-Data creation and updates will be handled asynchronously and will take between a few seconds to a couple of minutes to complete, depending on the underlying platform. This means you will receive a `Pending` status in response to your CUD request. You can [monitor the status of your request via a webhook](/using-the-api/push#monitor-the-status-of-your-operation) to verify when the operation completes (preferred), or poll the status. 
+Data creation and updates will be handled asynchronously and will take between a few seconds to a couple of minutes to complete, depending on the underlying platform. This means you will receive a `Pending` status in response to your CUD request. You can monitor the status of your request by listening to a [webhook event](/using-the-api/push#monitor-the-status-of-your-operation) to verify when the operation completes (preferred), or poll the status. 
 
 A CUD operation may be `Pending` indefinitely for integrations using offline connectors when the desktop application is unreachable. Manage this by setting [timeouts](/using-the-api/push#monitor-the-status-of-your-operation#timeouts). 
 
@@ -252,25 +252,9 @@ This results in a corresponding response from the endpoint, which includes the f
 
 ## Monitor the status of your operation
 
-Your operation will initially be in a `Pending` status. You can track an update on the final `Success` or `Failed` state to communicate the outcome of the operation to the user, or take further action in case of failures. We recommend listening to our webhooks for this purpose. 
+Your operation will initially be in a `Pending` status. You can track an update on the final `Success` or `Failed` state to communicate the outcome of the operation to the user, or take further action in case of failures. We recommend [listening to our webhooks](/using-the-api/webhooks/overview) for this purpose. 
 
-In the **Monitor > Alerting rules > Create new rule** [view](https://app.codat.io/monitor/rules) of the Codat Portal, create a subscription to the _Push operation status has changed_ rule type. You can review detailed instructions in our documentation for [subscribing to rules](/using-the-api/webhooks/core-rules-create) and receiving webhooks as [email alerts](/using-the-api/webhooks/receive-webhooks-as-email).
-
-You will receive the following response from the _Push operation status has changed_ webhook:
-
-```json 
-{
- "CompanyId":"fa115de8-5269-474e-8b63-fd697ec04b1b",
- "RuleId":"c40791fe-b6fd-45c3-9bf7-0a16abf1b8fd",
- "Type":"Push Operation Status Changed",
- "AlertId":"a62bfb38-d73c-4aab-9bb6-d8014bba5f29",
- "Message":"accounts triggered notification for PushOperationStatusChanged at 2019-05-22T18:19:42.742Z",
- "Data":{
-    "dataType":"chartOfAccounts",
-    "status":"Success",
-    "pushOperationKey":"8e42e5f6-c596-4ddf-a5e4-fdc9977f5a99"
- }
-```
+In the **Settings > Webhooks > Events > Configure consumer** [view](https://app.codat.io/monitor/rules) of the Codat Portal, click **Add endpoint** to create a webhook consumer that listens for the `PushOperationStatusChanged` event type. You can review detailed instructions in our documentation for [consuming webhook messages](/using-the-api/webhooks/overview).
 
 You can also use our endpoints to monitor the status of your create, update, or delete operation. List all operations for a company using the [List push operations](/platform-api#/operations/get-company-push-history) endpoint, or list a single operation via the [Get push operation](/platform-api#/operations/get-push-operation). This is useful when you want to include summary information to your customers outlining the status of their CUD history.
 

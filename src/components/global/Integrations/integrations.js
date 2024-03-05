@@ -22,6 +22,7 @@ export const integrationsFilterExpenses = [
   "Xero",
   "Oracle NetSuite",
   "Dynamics 365 Business Central",
+  "QuickBooks Desktop",
 ]
 
 export const integrationsFilterCommerceAcc = [

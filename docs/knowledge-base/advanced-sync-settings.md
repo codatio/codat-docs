@@ -15,8 +15,8 @@ You can configure the following advanced settings:
 | Sync   setting     | Property          | Description                                                                                                                                                                                                | Data types                                                            |
 |--------------------|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|
 | Months to   sync   | `monthsToSync`    | Determines how many months to   fetch data history for. Set to 24 months by default.                                                                                                                       | `balanceSheet`, `profitAndLoss`,   `cashFlowStatement`                |
-| Sync from   window | `syncFromWindow`  | Sets a number of months to fetch   data history for, where only data with a `modifiedDate` in that timeframe   will be synced.                                                                             | All except for `balanceSheet`,   `profitAndLoss`, `cashFlowStatement` |
-| Sync   from UTC    | `syncFromUtc`     | Sets a UTC value as a start date   for data syncing, where only data with a `modifiedDate` in that timeframe   will be synced. Records with a `modifiedDate` before `syncFromUtc` will not   be returned.  | All except for `balanceSheet`,   `profitAndLoss`, `cashFlowStatement` |
+| Sync from   window | `syncFromWindow`  | Sets a number of months to fetch   data history for, where only data with a modified date in that timeframe   will be synced.                                                                             | All except for `balanceSheet`,   `profitAndLoss`, `cashFlowStatement` |
+| Sync   from UTC    | `syncFromUtc`     | Sets a UTC value as a start date   for data syncing, where only data with a modified date in that timeframe   will be synced. Records with a modified date before `syncFromUtc` will not   be returned.  | All except for `balanceSheet`,   `profitAndLoss`, `cashFlowStatement` |
 
 ## Configuration
 
@@ -49,8 +49,8 @@ For example, to configure advanced settings for our `invoices` data type, send t
 
 - Advanced sync settings can be applied to all data types, but we advise you do not set them for reference data, such as customers, suppliers, chart of accounts, tax rates, tracking categories, and items.
 
-- Be aware of records that will not be linked if a record's date is our of range. For example, with `syncFromUtc` set to 01-01-2020, an invoice dated 01-12-2019 will not be synchornized, but a payment against that invoice dated 01-01-2020 will. As a result, these records will not be linked. 
+- Be aware of records that will not be linked if a record's date is our of range. For example, with `syncFromUtc` set to 01-01-2020, an invoice dated 01-12-2019 will not be synchronized, but a payment against that invoice dated 01-01-2020 will. As a result, these records will not be linked. 
 
-- Both `syncFromWindow` and `syncFromUtc` use `modifiedDate` to select records for syncing. You can [read more about modified dates](/using-the-api/modified-dates). 
+- Both `syncFromWindow` and `syncFromUtc` use `sourceModifiedDate` to select records for syncing. You can [read more about modified dates](/using-the-api/modified-dates). 
 
 - When a sync setting is introduced after a successful data sync, the records fetched prior to the new sync setting will be either deleted or updated with a _Void_ or _Archived_ status.

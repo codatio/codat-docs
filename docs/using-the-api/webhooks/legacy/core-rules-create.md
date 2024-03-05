@@ -1,9 +1,13 @@
 ---
 title: "Create or update rules"
 description: "Managing new and existing rules via Codat Portal"
-createdAt: "2019-02-20T11:20:32.835Z"
-updatedAt: "2022-11-16T12:54:20.055Z"
 ---
+
+:::caution New webhook service available
+
+This page describes the functionality of our legacy webhook offering. [Learn more](/using-the-api/webhooks/overview) about our new webhook service and see how you can [migrate](/using-the-api/webhooks/migration-guide) to use it instead.
+
+:::
 
 :::info Required permissions
 

@@ -493,23 +493,23 @@ module.exports = {
     },
     {
       from: "/introduction/webhooks/core-rules-create",
-      to: "/using-the-api/webhooks/core-rules-create",
+      to: "/using-the-api/webhooks/create-consumer",
     },
     {
       from: "/introduction/webhooks/core-rules-types",
-      to: "/using-the-api/webhooks/core-rules-types",
+      to: "/using-the-api/webhooks/event-types",
     },
     {
       from: "/introduction/webhooks/core-rules-webhooks",
-      to: "/using-the-api/webhooks/core-rules-webhooks",
+      to: "/using-the-api/webhooks/legacy/core-rules-webhooks",
     },
     {
       from: "/introduction/webhooks/core-rules-webhooksecurity",
-      to: "/using-the-api/webhooks/core-rules-webhooksecurity",
+      to: "/using-the-api/webhooks/legacy/core-rules-webhooksecurity",
     },
     {
       from: "/introduction/webhooks/receive-webhooks-as-email",
-      to: "/using-the-api/webhooks/receive-webhooks-as-email",
+      to: "/using-the-api/webhooks/legacy/receive-webhooks-as-email",
     },
     {
       from: "/other/cochat",
@@ -565,6 +565,14 @@ module.exports = {
     },
 
     //
+    {
+      from: "/integrations/commerce/shopify/commerce-shopify-requirements-public-apps",
+      to: "/integrations/commerce/shopify/commerce-shopify-public-apps",
+    },
+    {
+      from: "/integrations/commerce/shopify/commerce-shopify-setup",
+      to: "/integrations/commerce/shopify/commerce-shopify-public-apps",
+    },
     {
       from: "/guides/underwriting/introduction",
       to: "/lending/overview",

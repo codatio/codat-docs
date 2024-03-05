@@ -139,7 +139,7 @@ To view the pull history for your custom data types, use the following endpoints
 
 - Custom data types can be used at record and line item level, but only support fetch operations. 
 
-- Custom data types support ony JSON responses from the integrations' APIs.
+- Custom data types only support JSON responses from the integrations' APIs.
 
 - Codat's [querying](/using-the-api/querying) functionality doesn't support custom data types, but you can include URL parameters that are accepted by the underlying platform in the `dataSource` of your custom data type configuration.
 

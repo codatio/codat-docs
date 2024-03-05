@@ -8,7 +8,6 @@ const languages = [
         name: "typescript",
         namePretty: "TypeScript",
         icon: "/img/libraries/typescript.svg",
-        includeVersionInfo: true,
         packageLocation: "https://www.npmjs.com/package/",
         shield: "npm",
         alt: "NPM version",
@@ -17,7 +16,6 @@ const languages = [
         name: "python",
         namePretty: "Python",
         icon: "/img/libraries/python.svg",
-        includeVersionInfo: true,
         packageLocation: "https://pypi.python.org/pypi/",
         shield: "pypi",
         alt: "Python version",
@@ -26,7 +24,6 @@ const languages = [
         name: "csharp",
         namePretty: "C#",
         icon: "/img/libraries/csharp.svg",
-        includeVersionInfo: true,
         packageLocation: "https://www.nuget.org/packages/",
         shield: "nuget",
         alt: "Nuget version",
@@ -34,18 +31,15 @@ const languages = [
     {
         name: "go",
         namePretty: "Go",
-        includeVersionInfo: false,
         icon: "/img/libraries/go.svg",
-        packageLocation: "https://pkg.go.dev/github.com/codat/",
-        // shield: "https://pkg.go.dev/badge/github.com/svix",
+        packageLocation: "https://pkg.go.dev/github.com/codatio/client-sdk-go/",
         alt: "Go version",
     },
     {
         name: "java",
-        namePretty: "Java - Coming soon",
-        includeVersionInfo: false,
+        namePretty: "Java",
         icon: "/img/libraries/java.svg",
-        packageLocation: "https://search.maven.org/artifact/com.codat/",
+        packageLocation: "https://central.sonatype.com/artifact/io.codat/",
         alt: "Java version",
     },
 ]
@@ -74,24 +68,26 @@ const getPackageName = (productName, language) => {
         case "csharp":
             return getCSharpPackageName(productName)
         case "go":
-            return "TBC"
+            return productName
         case "java":
-            return "TBC"
+            return productName
         default:
             throw new Error('Unable to determine package name of ' + productName + 'in ' + language);
     }
 }
 
 const getShieldUrl = (productName, language) => {
-    switch(language){
+    switch(language.name){
         case "go":
-            throw new Error("No implemented for Go")
+            return "https://pkg.go.dev/badge/github.com/codatio/client-sdk-go/" + productName
         case "java":
-            return "https://img.shields.io/maven-central/v/com.codat/" + productName + "?label=maven-central%20(java)"
+            return "https://img.shields.io/maven-central/v/io.codat/" + productName + "?label=maven-central%20(java)"
         default:
             return "https://img.shields.io/" + language.shield + "/v/" + getPackageName(productName, language.name)
     }
 } 
+
+<img loading="lazy" src="https://img.shields.io/maven-central/v/io.codat/lending?label=maven-central%20(java)" alt="Maven Central (Java)" class="img_node_modules-@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module"></img>
 
 const ClientLibraries = ({productName}) => {
     const productUrl = !productName ? "" : "/tree/main/" + productName;
@@ -117,7 +113,7 @@ const ClientLibraries = ({productName}) => {
                                     <a href={repoBaseUrl + language.name + productUrl} target="_blank">Start using →</a>
                                     </p>
 
-                                    {productName !== undefined && language.includeVersionInfo ?
+                                    {productName !== undefined ?
                                     <a href={language.packageLocation + getPackageName(productName, language.name)} target="_blank" >
                                         <img loading="lazy" src={getShieldUrl(productName, language)} alt={language.alt}/>
                                     </a>

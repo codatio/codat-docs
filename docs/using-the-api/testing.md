@@ -15,7 +15,7 @@ We recommend you use an additional instance of Codat for testing purposes. We wo
 * Enabled products and deprecations
 * Integration-specific settings and credentials
 * Client sync settings
-* Webhook rules and settings
+* Webhook consumer endpoints and settings
 * Auth flow settings
 
 Users can switch between the production client and the test client by using the client dropdown in the [Codat Portal](https://app.codat.io/). 
@@ -53,7 +53,7 @@ You can also sign up and test with **Xero** and **QuickBooks Online**, both of w
 | Platform 	| Integration type 	| Account type 	| Notes 	|
 |---	|---	|---	|---	|
 | Codat Sandbox 	| Sandbox integration 	| Demo company 	| Active companies connected only to Codat Sandbox are excluded from billing in your production instance. <br/> [Read more](/integrations/accounting/sandbox/accounting-sandbox) about testing this integration.	|
-| [ClearBooks](https://www.clearbooks.co.uk/) 	| Live integration 	| Free trial 	|  	|
+| [Clear Books](https://www.clearbooks.co.uk/) 	| Live integration 	| Free trial 	|  	|
 | [Exact](https://www.exact.com/try) 	| Live integration 	| Free trial 	|  	|
 | [FreeAgent](https://signup.sandbox.freeagent.com/signup) 	| Live integration 	| Free trial 	| Temporary free account at the [FreeAgent   Sandbox](https://dev.freeagent.com/docs/quick_start). 	|
 | [FreshBooks](https://www.freshbooks.com/blog/freshbooks-trial) 	| Live integration 	| Free trial 	|  	|

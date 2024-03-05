@@ -3801,8 +3801,8 @@
   "webhooks": {
     "Client rate limit reached": {
       "post": {
+        "description": "Triggered when the number of requests to Codat's API from the client exceeds the current quota.",
         "requestBody": {
-          "description": "Triggered when your Codat client's rate limit is reached.",
           "content": {
             "application/json": {
               "schema": {
@@ -3820,8 +3820,8 @@
     },
     "Client rate limit reset": {
       "post": {
+        "description": "Triggered when the rate limit quota has reset for the client, and more requests to Codat's API are available.",
         "requestBody": {
-          "description": "Triggered when your Codat client's rate limit is reset.",
           "content": {
             "application/json": {
               "schema": {
@@ -4409,7 +4409,7 @@
               },
               "ExpiresUtc": {
                 "$ref": "#/components/schemas/DateTime",
-                "description": "The date time in UTC that your daily quota is reset."
+                "description": "The date time in UTC when your daily quota is reset."
               }
             }
           }
@@ -4464,7 +4464,7 @@
           },
           "Message": {
             "type": "string",
-            "description": "A human readable message about the webhook."
+            "description": "A human-readable message about the webhook."
           },
           "Data": {
             "$ref": "#/components/schemas/ClientRateLimitResetWebhook/definitions/ClientRateLimitResetWebhookData"
@@ -4477,7 +4477,7 @@
             "properties": {
               "QuotaRemaining": {
                 "type": "integer",
-                "description": "Total number of request remaining for your client.",
+                "description": "Total number of requests remaining for your client.",
                 "nullable": true
               },
               "ResetReason": {
@@ -4574,10 +4574,10 @@
                 "examples": [
                   {
                     "self": {
-                      "href": "/companies/{id}/data/{dataType}"
+                      "href": "/companies"
                     },
                     "current": {
-                      "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+                      "href": "/companies?page=1&pageSize=10"
                     }
                   }
                 ]
@@ -4602,10 +4602,10 @@
             ],
             "examples": [
               {
+                "pageNumber": 1,
+                "pageSize": 10,
+                "totalResults": 1,
                 "_links": {
-                  "pageNumber": 1,
-                  "pageSize": 10,
-                  "totalResults": 1,
                   "self": {
                     "href": "/companies/{id}/data/{dataType}"
                   },
@@ -5149,7 +5149,7 @@
         "title": "Data types",
         "x-internal": true,
         "type": "string",
-        "description": "Available Data types",
+        "description": "Available data types",
         "enum": [
           "accountTransactions",
           "balanceSheet",
@@ -5227,6 +5227,9 @@
             "type": "string",
             "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
           },
+          "validation": {
+            "$ref": "#/components/schemas/ErrorMessage/definitions/errorValidation"
+          },
           "canBeRetried": {
             "type": "string",
             "description": "`True` if the error occurred transiently and can be retried."
@@ -5234,6 +5237,51 @@
           "detailedErrorCode": {
             "type": "integer",
             "description": "Machine readable error code used to automate processes based on the code returned."
+          }
+        },
+        "definitions": {
+          "errorValidation": {
+            "title": "Validation error",
+            "type": "object",
+            "nullable": true,
+            "description": "A human-readable object describing validation decisions Codat has made. If an operation has failed because of validation errors, they will be detailed here.",
+            "properties": {
+              "errors": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/ErrorMessage/definitions/errorValidationItem"
+                }
+              },
+              "warnings": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/ErrorMessage/definitions/errorValidationItem"
+                }
+              }
+            }
+          },
+          "errorValidationItem": {
+            "title": "Validation error item",
+            "type": "object",
+            "properties": {
+              "itemId": {
+                "type": "string",
+                "nullable": true,
+                "description": "Unique identifier for a validation item."
+              },
+              "message": {
+                "type": "string",
+                "nullable": true,
+                "description": "A message outlining validation item's issue."
+              },
+              "validatorName": {
+                "type": "string",
+                "nullable": true,
+                "description": "Name of validator."
+              }
+            }
           }
         }
       },

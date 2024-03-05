@@ -68,21 +68,21 @@ Configure the solution to refresh data when you need it by [setting a synchroniz
 
 ### Webhooks
 
-Codat supports a range of [webhooks](/using-the-api/webhooks/core-rules-types) to help you manage your data pipelines. Many of these webhooks send a notification for each `dataType` separately.
+Codat supports a range of [event types](/using-the-api/webhooks/event-types) you can listen to that help you manage your data pipelines. Many of these events send a message for each `dataType` separately.
 
-In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Rules** and click **Create new rule** to set up the following webhooks and get the most out of Lending API:
+In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Create consumer** and click **Add endpoint** to add a new [webhook consumer endpoint](/using-the-api/webhooks/overview) and get the most out of Lending API:
 
-- [Dataset status has changed to an error state](/using-the-api/webhooks/core-rules-types#dataset-status-has-changed-to-an-error-state)  
+- [DataSyncStatusChangedToError](/using-the-api/webhooks/event-types)  
 
-  If you receive a notification from this webhook, it means an issue occured when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
+  If you receive a message from this webhook, it means an issue occured when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
  
-- [Dataset data changed](/using-the-api/webhooks/core-rules-types#dataset-data-changed)  
+- [Dataset data changed](/using-the-api/webhooks/event-types)  
 
-  If you receive a notification from this webhook, it means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform.
+  If you receive a message from this webhook, it means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform.
 
-- [Account categories updated](/using-the-api/webhooks/core-rules-types#account-categories-updated)
+- [Account categories updated](/using-the-api/webhooks/event-types)
 
-  If you receive a notification from this webhook, it means categories associated with accounts have been updated for the [categorized profit and loss statement](https://docs.codat.io/lending-api#/operations/get-enhanced-profit-and-loss-accounts) and the [categorized balance sheet statement](https://docs.codat.io/lending-api#/operations/get-enhanced-balance-sheet-accounts) components. 
+  If you receive a message from this webhook, it means categories associated with accounts have been updated for the [categorized profit and loss statement](https://docs.codat.io/lending-api#/operations/get-enhanced-profit-and-loss-accounts) and the [categorized balance sheet statement](https://docs.codat.io/lending-api#/operations/get-enhanced-balance-sheet-accounts) components. 
   
 
 ## Use Lending API
@@ -96,7 +96,7 @@ Remember to [authenticate](/using-the-api/authentication) if you are making call
 
 To establish a connection to a data source and sync business data, your customer must grant you access. They can do so using our [Link auth flow](/auth-flow/overview) solution, which we recommend you use in your app.
 
-Once the connection is established, Codat will retrieve data for the data types you have previously set up to fetch on first link. You can use the `New company synchronised` [webhook](/using-the-api/webhooks/core-rules-types#new-company-synchronized) to get notified once these initial syncs are complete, and at least one of them is successful.
+Once the connection is established, Codat will retrieve data for the data types you have previously set up to fetch on first link. You can listen for the `NewCompanySynchronized` [event](/using-the-api/webhooks/event-types) to get notified once these initial syncs are complete, and at least one of them is successful.
 
 <ul className="card-container col-2">
   <li className="card">

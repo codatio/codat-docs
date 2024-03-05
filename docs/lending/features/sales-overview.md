@@ -268,15 +268,15 @@ Configure the solution to refresh data when you need it by [setting a synchroniz
 
 #### Configure webhooks
 
-We recommend you configure the following [webhooks](/using-the-api/webhooks/core-rules-types) to manage your data pipelines. These webhooks send a notification for each `dataType` separately.
+We recommend you [configure webhook consumers](/using-the-api/webhooks/create-consumer) with the following [event types](/using-the-api/webhooks/event-types) to manage your data pipelines. These webhooks send a message for each `dataType` separately.
 
-- [Dataset status has changed to an error state](/using-the-api/webhooks/core-rules-types#dataset-status-has-changed-to-an-error-state)  
+- [DataSyncStatusChangedToError](/using-the-api/webhooks/event-types)  
 
-  If you receive a notification from this webhook, it means an issue has occurred when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
+  If you receive a message from this webhook, it means an issue has occurred when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
  
-- [Dataset data changed](/using-the-api/webhooks/core-rules-types#dataset-data-changed)  
+- [DatasetDataChanged](/using-the-api/webhooks/event-types)  
 
-  If you receive a notification from this webhook, it means data has been updated for the specified data type. This can include new, updated, or deleted data. You should then refresh the data in your platform.
+  If you receive a message from this webhook, it means data has been updated for the specified data type. This can include new, updated, or deleted data. You should then refresh the data in your platform.
 
 ---
 

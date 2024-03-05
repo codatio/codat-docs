@@ -8,7 +8,7 @@
   ],
   "info": {
     "title": "Sync for Payables",
-    "description": "The API for Sync for Payables. \n\nSync for Payables is an API and a set of supporting tools built to help integrate with your customers' accounting software, and keep their supplier information, invoices, and payments in sync.\n\n[Explore product](https://docs.codat.io/payables/overview) | [See OpenAPI spec](https://github.com/codatio/oas)\n\n---\n\n## Endpoints\n\n| Endpoints            | Description                                                                                                |\n|:---------------------|:-----------------------------------------------------------------------------------------------------------|\n| Companies            | Create and manage your SMB users' companies.                                                               |\n| Connections          | Create new and manage existing data connections for a company.                                             |\n| Accounts             | Get, create, and update Accounts                                                           |\n| Bills                | Get, create, and update Bills                                                                          |\n| Bill credit notes    | Get, create, and update Bill credit notes                                                              |\n| Bill payments        | Get, create, and update Bill payments                                                                  |\n| Journals             | Get, create, and update Journals                                                                       |\n| Journal entries      | Get, create, and update Journal entries                                                                |\n| Payment methods      | Get, create, and update Payment methods                                                                |\n| Suppliers            | Get, create, and update Suppliers                                                                      |\n| Tax rates            | Get, create, and update Tax rates                                                                      |\n| Tracking categories  | Get, create, and update Tracking categories                                                            |\n| Push operations      | View historic push operations                                                         |\n| Company info         | View company profile from the source platform.                                                             |\n| Manage data          | Control how data is retrieved from an integration.                                                         |",
+    "description": "The API for Sync for Payables. \n\nSync for Payables is an API and a set of supporting tools built to help integrate with your customers' accounting software, and keep their supplier information, bills, and payments in sync, through a standardized API.\n\n[Explore product](https://docs.codat.io/payables/overview) | [See OpenAPI spec](https://github.com/codatio/oas)\n",
     "version": "3.0.0",
     "contact": {
       "name": "Codat",
@@ -111,10 +111,6 @@
       "description": "Manage your companies' data connections."
     },
     {
-      "name": "Mapping options",
-      "description": "Mapping options for a companies bills."
-    },
-    {
       "name": "Bills",
       "description": "Bills"
     },
@@ -127,12 +123,8 @@
       "description": "Suppliers"
     },
     {
-      "name": "Push operations",
-      "description": "Access create, update and delete operations made to an SMB's data connection."
-    },
-    {
-      "name": "Manage data",
-      "description": "Asynchronously retrieve data from an integration to refresh data in Codat."
+      "name": "Bank accounts",
+      "description": "Bank accounts"
     }
   ],
   "paths": {
@@ -979,479 +971,22 @@
         }
       }
     },
-    "/companies/{companyId}/data/all": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ],
-      "post": {
-        "summary": "Refresh all data",
-        "operationId": "refresh-all-data-types",
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        },
-        "description": "Refreshes all data types with `fetch on first link` set to `true` for a given company.\n\nThis is an asynchronous operation, and will bring updated data into Codat from the linked integration for you to view.\n\n[Read more](https://docs.codat.io/core-concepts/data-type-settings) about data type settings and `fetch on first link`.",
-        "tags": [
-          "Manage data"
-        ]
-      }
-    },
-    "/companies/{companyId}/dataStatus": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ],
-      "get": {
-        "summary": "Get data status",
-        "operationId": "get-data-status",
-        "description": "Get the state of each data type for a company",
-        "tags": [
-          "Manage data"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "title": "Data statuses",
-                  "x-internal": true,
-                  "type": "object",
-                  "additionalProperties": {
-                    "$ref": "#/components/schemas/DataStatus"
-                  }
-                },
-                "examples": {
-                  "Example": {
-                    "value": {
-                      "invoices": {
-                        "dataType": "invoices",
-                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
-                        "currentStatus": "success",
-                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
-                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
-                      },
-                      "bills": {
-                        "dataType": "bills",
-                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
-                        "currentStatus": "failure",
-                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
-                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        }
-      }
-    },
-    "/companies/{companyId}/data/queue/{dataType}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/dataType"
-        }
-      ],
-      "post": {
-        "summary": "Refresh data type",
-        "operationId": "refresh-data-type",
-        "description": "Refreshes a given data type for a given company.\n\nThis is an asynchronous operation, and will bring updated data into Codat from the linked integration for you to view.",
-        "tags": [
-          "Manage data"
-        ],
-        "parameters": [
-          {
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            },
-            "in": "query",
-            "name": "connectionId",
-            "description": "Optionally, provide a data connection id to only queue pull operations on that connection."
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PullOperation"
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        }
-      }
-    },
-    "/companies/{companyId}/data/history": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ],
-      "get": {
-        "summary": "List pull operations",
-        "tags": [
-          "Manage data"
-        ],
-        "operationId": "list-pull-operations",
-        "x-speakeasy-name-override": "list-pull-operations",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PullOperations"
-                },
-                "examples": {
-                  "Example": {
-                    "value": {
-                      "results": [
-                        {
-                          "id": "97d60846-f07a-4d42-b5a0-0bdcc6ebf56b",
-                          "companyId": "4645bd78-8988-45bc-ac9e-67ba5df6e4e5",
-                          "connectionId": "51baa045-4836-4317-a42e-3542e991e581",
-                          "dataType": "invoices",
-                          "status": "Initial",
-                          "requested": "2022-11-14T11:18:37.2798351Z",
-                          "progress": 10,
-                          "isCompleted": false,
-                          "isErrored": false
-                        }
-                      ],
-                      "_links": {
-                        "current": {
-                          "href": "/companies/17129e41-5389-4f10-ac06-e0a37e47d177/data/history?page=1&pageSize=2"
-                        },
-                        "self": {
-                          "href": "/companies/17129e41-5389-4f10-ac06-e0a37e47d177/data/history"
-                        },
-                        "next": {
-                          "href": "/companies/17129e41-5389-4f10-ac06-e0a37e47d177/data/history?page=2&pageSize=2"
-                        }
-                      },
-                      "pageNumber": 0,
-                      "pageSize": 0,
-                      "totalResults": 0
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/Malformed-Query"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        },
-        "description": "Gets the pull operation history (datasets) for a given company.",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/page"
-          },
-          {
-            "$ref": "#/components/parameters/pageSize"
-          },
-          {
-            "$ref": "#/components/parameters/query"
-          },
-          {
-            "$ref": "#/components/parameters/orderBy"
-          }
-        ]
-      }
-    },
-    "/companies/{companyId}/data/history/{datasetId}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/datasetId"
-        }
-      ],
-      "get": {
-        "summary": "Get pull operation",
-        "operationId": "get-pull-operation",
-        "x-speakeasy-name-override": "get-pull-operation",
-        "tags": [
-          "Manage data"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PullOperation"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        },
-        "description": "Retrieve information about a single dataset or pull operation."
-      }
-    },
-    "/companies/{companyId}/push": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ],
-      "get": {
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/page"
-          },
-          {
-            "$ref": "#/components/parameters/pageSize"
-          },
-          {
-            "$ref": "#/components/parameters/query"
-          },
-          {
-            "$ref": "#/components/parameters/orderBy"
-          }
-        ],
-        "summary": "List push operations",
-        "tags": [
-          "Push operations"
-        ],
-        "operationId": "list-push-operations",
-        "description": "List push operation records.",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PushOperations"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/Malformed-Query"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        }
-      }
-    },
-    "/companies/{companyId}/push/{pushOperationKey}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "name": "pushOperationKey",
-          "schema": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "in": "path",
-          "required": true,
-          "description": "Unique identifier for the push operation."
-        }
-      ],
-      "get": {
-        "summary": "Get push operation",
-        "tags": [
-          "Push operations"
-        ],
-        "operationId": "get-push-operation",
-        "description": "Retrieve push operation.",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PushOperation"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        }
-      }
-    },
-    "/companies/{companyId}/connection/{connectionId}/payables/mappingOptions": {
+    "/companies/{companyId}/connections/{connectionId}/payables/mappingOptions/bills": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
         },
         {
           "$ref": "#/components/parameters/connectionId"
-        },
-        {
-          "$ref": "#/components/parameters/query"
         }
       ],
       "get": {
-        "summary": "Get mapping options",
-        "x-internal": true,
-        "x-speakeasy-ignore": true,
-        "description": "﻿Use the *Get mapping options* endpoint to return a list of available [mapping options](https://docs.codat.io/sync-for-payables-api#/schemas/MappingOptions) for a given company's connection ID.\n\n[Mapping options](https://docs.codat.io/sync-for-payables-api#/schemas/MappingOptions) are a set of accounts, bank accounts and tax rates used to configure the SMBs payables integration.",
-        "operationId": "get-mapping-options",
+        "summary": "Get bill mapping options",
+        "description": "﻿Use the *Get mapping options - Bills* endpoint to return a list of available mapping options for a given company's connection ID.\n\nMapping options are a set of accounts and tax rates used to configure the SMB's payables integration.",
+        "operationId": "get-mapping-options-bills",
+        "x-speakeasy-name-override": "get-bill-options",
         "tags": [
-          "Mapping options"
+          "Bills"
         ],
         "responses": {
           "200": {
@@ -1459,7 +994,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MappingOptions"
+                  "$ref": "#/components/schemas/BillMappingOptions"
                 },
                 "examples": {
                   "Mapping options": {
@@ -1468,16 +1003,10 @@
                         {
                           "id": "1b6266d1-1e44-46c5-8eb5-a8f98e03124e",
                           "name": "Accounts payable",
+                          "accountType": "Liability",
                           "currency": "GBP",
-                          "accountType": "Active"
-                        }
-                      ],
-                      "bankAccounts": [
-                        {
-                          "id": "3d5a8e00-d108-4045-8823-7f342676cffa",
-                          "name": "Bank of Dave current account",
-                          "currency": "GBP",
-                          "accountType": "Debit"
+                          "status": "Active",
+                          "sourceModifiedDate": "2022-10-23T00:00:00.000Z"
                         }
                       ],
                       "taxRates": [
@@ -1486,7 +1015,9 @@
                           "name": "VAT @ 20%",
                           "code": "VAT20",
                           "effectiveTaxRate": 20,
-                          "totalTaxRate": 20
+                          "totalTaxRate": 20,
+                          "status": "Active",
+                          "sourceModifiedDate": "2022-10-23T00:00:00.000Z"
                         }
                       ]
                     }
@@ -1522,7 +1053,81 @@
         }
       }
     },
-    "/companies/{companyId}/connection/{connectionId}/payables/bills": {
+    "/companies/{companyId}/connections/{connectionId}/payables/mappingOptions/payments": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        }
+      ],
+      "get": {
+        "summary": "Get payment mapping options",
+        "description": "Use the *Get mapping options - Payments* endpoint to return a list of available mapping options for a given company's connection ID.\r\n\r\nMapping options are a set of bank accounts used to configure the SMB's payables integration.",
+        "operationId": "get-mapping-options-payments",
+        "x-speakeasy-name-override": "get-payment-options",
+        "tags": [
+          "Bill payments"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentMappingOptions"
+                },
+                "examples": {
+                  "Mapping options": {
+                    "value": {
+                      "bankAccounts": [
+                        {
+                          "id": "3d5a8e00-d108-4045-8823-7f342676cffa",
+                          "name": "Bank of Dave current account",
+                          "accountNumber": "12345678",
+                          "currency": "GBP",
+                          "nominalCode": "1234567",
+                          "sortCode": "123456",
+                          "status": "Active",
+                          "accountType": "Debit",
+                          "sourceModifiedDate": "2022-10-23T00:00:00.000Z"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/payables/bills": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -1533,23 +1138,21 @@
       ],
       "get": {
         "summary": "List bills",
-        "description": "The *List bills* endpoint returns a list of [bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) for a given company's connection.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n    ",
+        "description": "The *List bills* endpoint returns a list of [bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) for a given company's connection.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\nBy default, the endpoint will return all bills with a status of 'Open' & 'PartiallyPaid' to show all oustanding bills.",
         "operationId": "list-bills",
         "tags": [
           "Bills"
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/page"
-          },
-          {
-            "$ref": "#/components/parameters/pageSize"
-          },
-          {
-            "$ref": "#/components/parameters/query"
-          },
-          {
-            "$ref": "#/components/parameters/orderBy"
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "status=Open",
+            "description": "Codat query string allows you to filter by `status` and `sourceModifiedDate`. Learn more about Codat's query string [here](https://docs.codat.io/using-the-api/querying)."
           }
         ],
         "responses": {
@@ -1571,61 +1174,28 @@
                             "id": "4",
                             "supplierName": "BILLy elliot"
                           },
-                          "purchaseOrderRefs": [],
                           "issueDate": "2019-05-13T00:00:00",
                           "dueDate": "2019-05-13T00:00:00",
                           "currency": "GBP",
-                          "currencyRate": 1,
                           "lineItems": [
                             {
+                              "description": "Dance shoes",
                               "unitAmount": 5,
                               "quantity": 1,
-                              "discountAmount": 0,
-                              "subTotal": 5,
                               "taxAmount": 0,
-                              "totalAmount": 5,
                               "accountRef": {
-                                "id": "16",
-                                "name": "Advertising"
+                                "id": "16"
                               },
                               "taxRateRef": {
-                                "id": "NON",
-                                "name": "NON",
-                                "effectiveTaxRate": 0
+                                "id": "NON"
                               },
-                              "trackingCategoryRefs": [],
-                              "tracking": {
-                                "categoryRefs": [],
-                                "isBilledTo": "Unknown",
-                                "isRebilledTo": "NotApplicable"
-                              },
-                              "isDirectCost": false
+                              "totalAmount": 5
                             }
                           ],
-                          "withholdingTax": [],
-                          "status": "Paid",
-                          "subTotal": 5,
-                          "taxAmount": 0,
+                          "status": "Open",
                           "totalAmount": 5,
                           "amountDue": 0,
-                          "modifiedDate": "2023-01-18T11:02:41Z",
-                          "sourceModifiedDate": "2022-05-26T10:34:10Z",
-                          "paymentAllocations": [
-                            {
-                              "payment": {
-                                "id": "20",
-                                "currency": "GBP",
-                                "currencyRate": 1,
-                                "paidOnDate": "2019-05-13T00:00:00",
-                                "totalAmount": 0
-                              },
-                              "allocation": {
-                                "currency": "GBP",
-                                "currencyRate": 1,
-                                "totalAmount": -5
-                              }
-                            }
-                          ]
+                          "sourceModifiedDate": "2022-05-26T10:34:10Z"
                         },
                         {
                           "id": "22",
@@ -1634,78 +1204,30 @@
                             "id": "4",
                             "supplierName": "BILLy elliot"
                           },
-                          "purchaseOrderRefs": [],
                           "issueDate": "2019-05-13T00:00:00",
                           "dueDate": "2019-05-13T00:00:00",
                           "currency": "GBP",
-                          "currencyRate": 1,
                           "lineItems": [
                             {
+                              "description": "Dance shoes",
                               "unitAmount": 5,
                               "quantity": 1,
-                              "discountAmount": 0,
-                              "subTotal": 5,
                               "taxAmount": 0,
-                              "totalAmount": 5,
                               "accountRef": {
-                                "id": "16",
-                                "name": "Advertising"
+                                "id": "16"
                               },
                               "taxRateRef": {
-                                "id": "NON",
-                                "name": "NON",
-                                "effectiveTaxRate": 0
+                                "id": "NON"
                               },
-                              "trackingCategoryRefs": [],
-                              "tracking": {
-                                "categoryRefs": [],
-                                "isBilledTo": "Unknown",
-                                "isRebilledTo": "NotApplicable"
-                              },
-                              "isDirectCost": false
+                              "totalAmount": 5
                             }
                           ],
-                          "withholdingTax": [],
                           "status": "Paid",
-                          "subTotal": 5,
-                          "taxAmount": 0,
                           "totalAmount": 5,
                           "amountDue": 0,
-                          "modifiedDate": "2023-01-18T11:02:41Z",
-                          "sourceModifiedDate": "2020-03-23T10:44:06Z",
-                          "paymentAllocations": [
-                            {
-                              "payment": {
-                                "id": "678",
-                                "note": "payment note test",
-                                "currency": "GBP",
-                                "currencyRate": 1,
-                                "paidOnDate": "2020-03-23T00:00:00",
-                                "totalAmount": 0
-                              },
-                              "allocation": {
-                                "currency": "GBP",
-                                "currencyRate": 1,
-                                "totalAmount": -5
-                              }
-                            }
-                          ]
+                          "sourceModifiedDate": "2022-05-26T10:34:10Z"
                         }
-                      ],
-                      "pageNumber": 1,
-                      "pageSize": 2,
-                      "totalResults": 147,
-                      "_links": {
-                        "current": {
-                          "href": "/companies/10818b5e-6e6a-4ed4-a1c5-3e3efe626e87/data/bills?page=1&pageSize=2"
-                        },
-                        "self": {
-                          "href": "/companies/10818b5e-6e6a-4ed4-a1c5-3e3efe626e87/data/bills"
-                        },
-                        "next": {
-                          "href": "/companies/10818b5e-6e6a-4ed4-a1c5-3e3efe626e87/data/bills?page=2&pageSize=2"
-                        }
-                      }
+                      ]
                     }
                   }
                 }
@@ -1743,17 +1265,12 @@
       },
       "post": {
         "summary": "Create bill",
-        "x-internal": true,
-        "x-speakeasy-ignore": true,
-        "description": "The *Create bill* endpoint creates a new [bill](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) for a given company's connection.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill model](https://docs.codat.io/sync-for-payables-api#/operations/get-create-update-bills-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support creating a bill.\n",
+        "description": "The *Create bill* endpoint creates a new [bill](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) for a given company's connection.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.",
         "operationId": "create-bill",
         "tags": [
           "Bills"
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/timeoutInMinutes"
-          },
           {
             "in": "header",
             "name": "Idempotency-Key",
@@ -1772,12 +1289,11 @@
               "examples": {
                 "Create bill": {
                   "value": {
-                    "reference": "",
+                    "reference": "bill_b8qmmj4ksf1suax",
                     "supplierRef": {
                       "id": "1262c350-fe0f-40ec-aeff-41c95b4a45af",
                       "supplierName": "DIISR - Small Business Services"
                     },
-                    "purchaseOrderRefs": [],
                     "issueDate": "2023-04-23T00:00:00",
                     "dueDate": "2023-04-23T00:00:00",
                     "currency": "GBP",
@@ -1787,67 +1303,43 @@
                         "description": "Half day training - Microsoft Office",
                         "unitAmount": 1800,
                         "quantity": 1,
-                        "subTotal": 1800,
                         "taxAmount": 360,
                         "totalAmount": 2160,
                         "accountRef": {
                           "id": "46f9461e-788b-4906-8b74-d1ea17f6dc10"
                         },
                         "taxRateRef": {
-                          "id": "INPUT2",
-                          "name": "20% (VAT on Expenses)",
-                          "effectiveTaxRate": 20
-                        },
-                        "itemRef": {
-                          "id": "489558f5-27b7-4f37-ad9f-d84611c2e2ab"
-                        },
-                        "trackingCategoryRefs": [],
-                        "isDirectCost": false
+                          "id": "INPUT2"
+                        }
                       },
                       {
                         "description": "Desktop/network support via email & phone.Per month fixed fee for minimum 20 hours/month.",
                         "unitAmount": 4000,
                         "quantity": 1,
-                        "subTotal": 4000,
                         "taxAmount": 800,
                         "totalAmount": 4800,
                         "accountRef": {
                           "id": "f96c9458-d724-47bf-8f74-a9d5726465ce"
                         },
                         "taxRateRef": {
-                          "id": "INPUT2",
-                          "name": "20% (VAT on Expenses)",
-                          "effectiveTaxRate": 20
-                        },
-                        "itemRef": {
-                          "id": "f8fb7e00-5e5d-466c-aef0-15861f73d04f"
-                        },
-                        "trackingCategoryRefs": [],
-                        "isDirectCost": false
+                          "id": "INPUT2"
+                        }
                       },
                       {
                         "description": "Stationery charges",
                         "unitAmount": 32,
                         "quantity": 8,
-                        "subTotal": 256,
                         "taxAmount": 51.2,
                         "totalAmount": 307.2,
                         "accountRef": {
                           "id": "cba6527d-f102-4538-b421-e483233e9d5a"
                         },
                         "taxRateRef": {
-                          "id": "INPUT2",
-                          "name": "20% (VAT on Expenses)",
-                          "effectiveTaxRate": 20
-                        },
-                        "trackingCategoryRefs": [],
-                        "isDirectCost": false
+                          "id": "INPUT2"
+                        }
                       }
                     ],
-                    "withholdingTax": [],
                     "status": "Open",
-                    "subTotal": 6056,
-                    "taxAmount": 1211.2,
                     "totalAmount": 7267.2,
                     "amountDue": 7267.2
                   }
@@ -1862,48 +1354,64 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PushOperation"
+                  "$ref": "#/components/schemas/Bill"
                 },
                 "examples": {
-                  "QuickBooks Desktop": {
+                  "Created bill": {
                     "value": {
-                      "changes": [
+                      "id": "bill-1029932",
+                      "reference": "bill_b8qmmj4ksf1suax",
+                      "supplierRef": {
+                        "id": "1262c350-fe0f-40ec-aeff-41c95b4a45af",
+                        "supplierName": "DIISR - Small Business Services"
+                      },
+                      "issueDate": "2023-04-23T00:00:00",
+                      "dueDate": "2023-04-23T00:00:00",
+                      "currency": "GBP",
+                      "lineItems": [
                         {
-                          "type": "Unknown",
-                          "recordRef": {
-                            "id": "bill-1029932",
-                            "dataType": "bills"
+                          "description": "Half day training - Microsoft Office",
+                          "unitAmount": 1800,
+                          "quantity": 1,
+                          "taxAmount": 360,
+                          "totalAmount": 2160,
+                          "accountRef": {
+                            "id": "46f9461e-788b-4906-8b74-d1ea17f6dc10"
                           },
-                          "attachmentId": "39282B023C8849B0A4413F900BFF489D"
+                          "taxRateRef": {
+                            "id": "INPUT2"
+                          }
+                        },
+                        {
+                          "description": "Desktop/network support via email & phone.Per month fixed fee for minimum 20 hours/month.",
+                          "unitAmount": 4000,
+                          "quantity": 1,
+                          "taxAmount": 800,
+                          "totalAmount": 4800,
+                          "accountRef": {
+                            "id": "f96c9458-d724-47bf-8f74-a9d5726465ce"
+                          },
+                          "taxRateRef": {
+                            "id": "INPUT2"
+                          }
+                        },
+                        {
+                          "description": "Stationery charges",
+                          "unitAmount": 32,
+                          "quantity": 8,
+                          "taxAmount": 51.2,
+                          "totalAmount": 307.2,
+                          "accountRef": {
+                            "id": "cba6527d-f102-4538-b421-e483233e9d5a"
+                          },
+                          "taxRateRef": {
+                            "id": "INPUT2"
+                          }
                         }
                       ],
-                      "dataType": "bills",
-                      "companyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-                      "pushOperationKey": "c2f8847d-3047-4619-a157-6d947d8e4a73",
-                      "dataConnectionKey": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-                      "requestedOnUtc": "2022-10-23T00:00:00.000Z",
-                      "completedOnUtc": "2022-10-23T00:00:00.000Z",
-                      "timeoutInMinutes": 0,
-                      "timeoutInSeconds": 0,
-                      "status": "Pending",
-                      "errorMessage": "",
-                      "validation": {
-                        "errors": [
-                          {
-                            "itemId": "string",
-                            "message": "string",
-                            "validatorName": "string"
-                          }
-                        ],
-                        "warnings": [
-                          {
-                            "itemId": "string",
-                            "message": "string",
-                            "validatorName": "string"
-                          }
-                        ]
-                      },
-                      "statusCode": 0
+                      "status": "Open",
+                      "totalAmount": 7267.2,
+                      "amountDue": 7267.2
                     }
                   }
                 }
@@ -2017,8 +1525,8 @@
         }
       ],
       "get": {
-        "x-internal": true,
         "x-speakeasy-ignore": true,
+        "x-internal": true,
         "summary": "Download bill attachment",
         "description": "The *Download bill attachment* endpoint downloads a specific attachment for a given `billId` and `attachmentId`.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support downloading a bill attachment.\n",
         "operationId": "download-bill-attachment",
@@ -2062,7 +1570,7 @@
         }
       }
     },
-    "/companies/{companyId}/connections/{connectionId}/payables/bill/{billId}/billPayments": {
+    "/companies/{companyId}/connections/{connectionId}/payables/bills/{billId}/payment": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -2084,9 +1592,7 @@
       ],
       "post": {
         "summary": "Create bill payment",
-        "x-internal": true,
-        "x-speakeasy-ignore": true,
-        "description": "The *Create bill payment* endpoint creates a new [bill payment](https://docs.codat.io/sync-for-payables-api#/schemas/BillPayment) for a given company's connection.\n\n[Bill payments](https://docs.codat.io/sync-for-payables-api#/schemas/BillPayment) are an allocation of money within any customer accounts payable account.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create bill payment model](https://docs.codat.io/sync-for-payables-api#/operations/get-create-billPayments-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billPayments) for integrations that support creating a bill payment.\n",
+        "description": "The *Create bill payment* endpoint creates a new [bill payment](https://docs.codat.io/sync-for-payables-api#/schemas/BillPayment) for a given company's connection.\n\n[Bill payments](https://docs.codat.io/sync-for-payables-api#/schemas/BillPayment) are an allocation of money within any customer accounts payable account.",
         "operationId": "create-bill-payment",
         "tags": [
           "Bill payments"
@@ -2095,15 +1601,18 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/BillPayment"
+                "$ref": "#/components/schemas/BillPayment/definitions/billPaymentPrototype"
               },
               "examples": {
                 "Bill payment example": {
                   "value": {
-                    "totalAmount": 22,
+                    "amount": 22,
                     "currencyRate": 0,
                     "date": "2022-10-23T00:00:00.000Z",
-                    "note": "Bill Payment against bill c13e37b6 dfaa-4894-b3be-9fe97bda9f44"
+                    "accountRef": {
+                      "id": "7bda9f44sr56"
+                    },
+                    "reference": "Bill Payment against bill c13e37b6 dfaa-4894-b3be-9fe97bda9f44"
                   }
                 }
               }
@@ -2116,48 +1625,19 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PushOperation"
+                  "$ref": "#/components/schemas/BillPayment"
                 },
                 "examples": {
                   "Bill payment": {
                     "value": {
-                      "changes": [
-                        {
-                          "type": "Unknown",
-                          "recordRef": {
-                            "id": "billPayment-1029932",
-                            "dataType": "billPayments"
-                          },
-                          "attachmentId": "39282B023C8849B0A4413F900BFF489D"
-                        }
-                      ],
-                      "dataType": "billPayments",
-                      "companyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-                      "pushOperationKey": "c2f8847d-3047-4619-a157-6d947d8e4a73",
-                      "dataConnectionKey": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-                      "requestedOnUtc": "2022-10-23T00:00:00.000Z",
-                      "completedOnUtc": "2022-10-23T00:00:00.000Z",
-                      "timeoutInMinutes": 0,
-                      "timeoutInSeconds": 0,
-                      "status": "Pending",
-                      "errorMessage": "",
-                      "validation": {
-                        "errors": [
-                          {
-                            "itemId": "string",
-                            "message": "string",
-                            "validatorName": "string"
-                          }
-                        ],
-                        "warnings": [
-                          {
-                            "itemId": "string",
-                            "message": "string",
-                            "validatorName": "string"
-                          }
-                        ]
+                      "id": "billPayment-1029932",
+                      "amount": 22,
+                      "currencyRate": 0,
+                      "date": "2022-10-23T00:00:00.000Z",
+                      "accountRef": {
+                        "id": "7bda9f44sr56"
                       },
-                      "statusCode": 0
+                      "reference": "Bill Payment against bill c13e37b6 dfaa-4894-b3be-9fe97bda9f44"
                     }
                   }
                 }
@@ -2194,7 +1674,7 @@
         }
       }
     },
-    "/companies/{companyId}/connection/{connectionId}/payables/suppliers": {
+    "/companies/{companyId}/connections/{connectionId}/payables/suppliers": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -2208,20 +1688,28 @@
           "Suppliers"
         ],
         "summary": "List suppliers",
-        "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.",
+        "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nBy default, this endpoint returns a list of active suppliers. You can use [querying](https://docs.codat.io/using-the-api/querying) to change that. \n\nFor example, to retrieve only suppliers associated with unpaid bills (i.e. `balance>0`) or suppliers created within the specified number of days (e.g. `sourceModifiedDate>2023-12-15T00:00:00.000Z`), query the endpoint as follows: `/payables/suppliers?query=sourceModifiedDate>2023-12-15T00:00:00.000Z||balance>0`.",
         "operationId": "list-suppliers",
         "parameters": [
           {
-            "$ref": "#/components/parameters/page"
-          },
-          {
-            "$ref": "#/components/parameters/pageSize"
-          },
-          {
-            "$ref": "#/components/parameters/query"
-          },
-          {
-            "$ref": "#/components/parameters/orderBy"
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "Modified after a given date": {
+                "value": "sourceModifiedDate>2023-12-15T00:00:00.000Z"
+              },
+              "Balances above 400 USD": {
+                "value": "balance>400"
+              },
+              "Combined": {
+                "value": "sourceModifiedDate>2023-12-15T00:00:00.000Z||balance>0"
+              }
+            },
+            "description": "Codat query string allows you to filter by `sourceModifiedDate` or if there is an outstanding balance (Unpaid bill) against a supplier. Learn more about Codat's query string [here](https://docs.codat.io/using-the-api/querying)."
           }
         ],
         "responses": {
@@ -2249,9 +1737,8 @@
                             }
                           ],
                           "status": "Active",
-                          "modifiedDate": "2023-01-18T11:02:36Z",
-                          "sourceModifiedDate": "2022-12-07T10:48:18Z",
-                          "defaultCurrency": "GBP"
+                          "defaultCurrency": "GBP",
+                          "sourceModifiedDate": "2022-12-07T10:48:18Z"
                         },
                         {
                           "id": "42",
@@ -2266,25 +1753,10 @@
                             }
                           ],
                           "status": "Active",
-                          "modifiedDate": "2023-01-18T11:02:36Z",
-                          "sourceModifiedDate": "2021-08-31T08:45:02Z",
-                          "defaultCurrency": "GBP"
+                          "defaultCurrency": "GBP",
+                          "sourceModifiedDate": "2021-08-31T08:45:02Z"
                         }
-                      ],
-                      "pageNumber": 1,
-                      "pageSize": 2,
-                      "totalResults": 23,
-                      "_links": {
-                        "current": {
-                          "href": "/companies/10818b5e-6e6a-4ed4-a1c5-3e3efe626e87/data/suppliers?page=1&pageSize=2"
-                        },
-                        "self": {
-                          "href": "/companies/10818b5e-6e6a-4ed4-a1c5-3e3efe626e87/data/suppliers"
-                        },
-                        "next": {
-                          "href": "/companies/10818b5e-6e6a-4ed4-a1c5-3e3efe626e87/data/suppliers?page=2&pageSize=2"
-                        }
-                      }
+                      ]
                     }
                   }
                 }
@@ -2319,14 +1791,213 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         }
+      },
+      "post": {
+        "tags": [
+          "Suppliers"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Idempotency-Key",
+            "description": "A unique identifier to ensure idempotent behaviour for subsequent requests.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supplier/definitions/supplierPrototype"
+              },
+              "examples": {
+                "Suppliers": {
+                  "value": {
+                    "supplierName": "Greggs",
+                    "contactName": "Greg Greggs",
+                    "emailAddress": "greg@greggs.com",
+                    "phone": "+44 (0)1223 322410",
+                    "address": [
+                      {
+                        "type": "Billing",
+                        "line1": "Flat 1",
+                        "line2": "2 Dennis Avenue",
+                        "city": "London",
+                        "region": "Camden",
+                        "country": "GBR",
+                        "postalCode": "EC1N 7TE"
+                      }
+                    ],
+                    "status": "Active",
+                    "defaultCurrency": "GBP"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Supplier"
+                },
+                "examples": {
+                  "Suppliers": {
+                    "value": {
+                      "id": "sup-10933920",
+                      "supplierName": "Greggs",
+                      "contactName": "Greg Greggs",
+                      "emailAddress": "greg@greggs.com",
+                      "phone": "+44 (0)1223 322410",
+                      "address": [
+                        {
+                          "type": "Billing",
+                          "line1": "Flat 1",
+                          "line2": "2 Dennis Avenue",
+                          "city": "London",
+                          "region": "Camden",
+                          "country": "GBR",
+                          "postalCode": "EC1N 7TE"
+                        }
+                      ],
+                      "status": "Active",
+                      "defaultCurrency": "GBP"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        },
+        "summary": "Create supplier",
+        "description": "The *Create supplier* endpoint creates a new [supplier](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) for a given company's connection.\r\n\r\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\r\n",
+        "operationId": "create-supplier"
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/payables/bankAccounts": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        }
+      ],
+      "post": {
+        "tags": [
+          "Bank accounts"
+        ],
+        "summary": "Create bank account",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Idempotency-Key",
+            "description": "A unique identifier to ensure idempotent behaviour for subsequent requests.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BankAccount/definitions/bankAccountPrototype"
+              },
+              "examples": {
+                "Bank account example": {
+                  "value": {
+                    "id": "fb623ab2-f6ff-4b22-b7d3-b7cc2a4aa0ea",
+                    "nominalCode": "22",
+                    "name": "Plutus - Payables - Bank Account 12",
+                    "accountNumber": "0120 0440",
+                    "sortCode": "50-50-50",
+                    "currency": "GBP",
+                    "accountType": "Debit",
+                    "status": "Active",
+                    "sourceModifiedDate": "2024-02-22T14:46:43.990Z"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BankAccount"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        },
+        "description": "The *Create bank account* endpoint creates a new [bank account](https://docs.codat.io/sync-for-payables-api#/schemas/BankAccount) for a given company's connection.\r\n\r\n[Bank accounts](https://docs.codat.io/sync-for-payables-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.",
+        "operationId": "create-bank-account"
       }
     }
   },
   "webhooks": {
     "Client rate limit reached": {
       "post": {
+        "description": "Triggered when the number of requests to Codat's API from the client exceeds the current quota.",
         "requestBody": {
-          "description": "Triggered when your Codat client's rate limit is reached.",
           "content": {
             "application/json": {
               "schema": {
@@ -2344,69 +2015,12 @@
     },
     "Client rate limit reset": {
       "post": {
+        "description": "Triggered when the rate limit quota has reset for the client, and more requests to Codat's API are available.",
         "requestBody": {
-          "description": "Triggered when your Codat client's rate limit is reset.",
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ClientRateLimitResetWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
-          }
-        }
-      }
-    },
-    "payables.bill.created": {
-      "post": {
-        "description": "Triggered once a bill is created in the accounting platform.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BillEventWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
-          }
-        }
-      }
-    },
-    "payables.bill.updated": {
-      "post": {
-        "description": "Triggered once a bill is updated in the accounting platform.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BillEventWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
-          }
-        }
-      }
-    },
-    "payables.bill.deleted": {
-      "post": {
-        "description": "Triggered once a bill is deleted in the accounting platform.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BillEventWebhook"
               }
             }
           }
@@ -2424,6 +2038,7 @@
       "AttachmentUpload": {
         "title": "Attachment upload",
         "type": "object",
+        "x-internal": true,
         "required": [
           "file"
         ],
@@ -2437,6 +2052,101 @@
             "type": "string",
             "description": "The file to be uploaded as an attachment.",
             "format": "binary"
+          }
+        }
+      },
+      "BankAccount": {
+        "title": "Bank accounts",
+        "type": "object",
+        "allOf": [
+          {
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Identifier for the bank account, unique for the company in the accounting platform."
+              },
+              "nominalCode": {
+                "type": "string",
+                "nullable": true,
+                "description": "Code used to identify each nominal account for a business."
+              },
+              "name": {
+                "type": "string",
+                "nullable": true,
+                "description": "Name of the bank account in the accounting platform."
+              },
+              "accountType": {
+                "title": "Bank Account Type",
+                "x-internal": true,
+                "enum": [
+                  "Unknown",
+                  "Credit",
+                  "Debit"
+                ],
+                "type": "string",
+                "description": "The type of transactions and balances on the account.  \nFor Credit accounts, positive balances are liabilities, and positive transactions **reduce** liabilities.  \nFor Debit accounts, positive balances are assets, and positive transactions **increase** assets."
+              },
+              "accountNumber": {
+                "type": "string",
+                "nullable": true,
+                "description": "Account number for the bank account.\n\nXero integrations\nOnly a UK account number shows for bank accounts with GBP currency and a combined total of sort code and account number that equals 14 digits, For non-GBP accounts, the full bank account number is populated."
+              },
+              "sortCode": {
+                "type": "string",
+                "nullable": true,
+                "description": "Sort code for the bank account. This is relevant to UK bank accounts.\n\nXero integrations\nThe sort code is only displayed when the currency = GBP and the sort code and account number sum to 14 digits. For non-GBP accounts, this field is not populated."
+              },
+              "currency": {
+                "$ref": "#/components/schemas/Bill/definitions/bills/properties/currency",
+                "description": "Base currency of the bank account."
+              },
+              "status": {
+                "$ref": "#/components/schemas/BankAccount/definitions/bankAccountStatus"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/Bill/allOf/1"
+          }
+        ],
+        "definitions": {
+          "bankAccountStatus": {
+            "type": "string",
+            "description": "The current status of the bank account.",
+            "enum": [
+              "Active",
+              "Archived"
+            ]
+          },
+          "bankAccountPrototype": {
+            "title": "Bank account prototype",
+            "type": "object",
+            "properties": {
+              "nominalCode": {
+                "$ref": "#/components/schemas/BankAccount/allOf/0/properties/nominalCode"
+              },
+              "name": {
+                "$ref": "#/components/schemas/BankAccount/allOf/0/properties/name"
+              },
+              "accountType": {
+                "$ref": "#/components/schemas/BankAccount/allOf/0/properties/accountType"
+              },
+              "accountNumber": {
+                "$ref": "#/components/schemas/BankAccount/allOf/0/properties/accountNumber"
+              },
+              "sortCode": {
+                "$ref": "#/components/schemas/BankAccount/allOf/0/properties/sortCode"
+              },
+              "currency": {
+                "$ref": "#/components/schemas/BankAccount/allOf/0/properties/currency"
+              }
+            },
+            "required": [
+              "name",
+              "accountType",
+              "accountNumber",
+              "currency"
+            ]
           }
         }
       },
@@ -2481,7 +2191,10 @@
                 ]
               },
               "currency": {
-                "$ref": "#/components/schemas/MappingOptions/definitions/accountMappingOption/properties/currency"
+                "$ref": "#/components/schemas/Bill/definitions/bills/properties/currency"
+              },
+              "currencyRate": {
+                "$ref": "#/components/schemas/BillPayment/properties/currencyRate"
               },
               "lineItems": {
                 "type": "array",
@@ -2544,7 +2257,10 @@
                 "$ref": "#/components/schemas/Bill/allOf/0/properties/dueDate"
               },
               "currency": {
-                "$ref": "#/components/schemas/MappingOptions/definitions/accountMappingOption/properties/currency"
+                "$ref": "#/components/schemas/Bill/definitions/bills/properties/currency"
+              },
+              "currencyRate": {
+                "$ref": "#/components/schemas/BillPayment/properties/currencyRate"
               },
               "lineItems": {
                 "$ref": "#/components/schemas/Bill/allOf/0/properties/lineItems"
@@ -2561,12 +2277,14 @@
             },
             "required": [
               "issueDate",
-              "status",
-              "totalAmount"
+              "dueDate",
+              "currency",
+              "supplierRef",
+              "status"
             ]
           },
           "billStatus": {
-            "description": "Current state of the bill.",
+            "description": "Current state of the bill. If creating a bill the status must be `Open`.",
             "type": "string",
             "enum": [
               "Unknown",
@@ -2575,7 +2293,8 @@
               "Paid",
               "Void",
               "Draft"
-            ]
+            ],
+            "example": "Open"
           },
           "billLineItem": {
             "title": "Bill line item",
@@ -2591,80 +2310,132 @@
                 "format": "decimal",
                 "description": "Unit price of the goods or service."
               },
+              "quantity": {
+                "type": "number",
+                "format": "decimal",
+                "description": "Number of units of goods or services received."
+              },
               "taxAmount": {
                 "type": "number",
                 "format": "decimal",
                 "description": "Amount of tax applied to the line item."
               },
               "accountRef": {
-                "description": "Reference to the account to which the line item is linked.",
-                "title": "Account reference",
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "string",
-                    "description": "'id' from the Accounts data type."
-                  },
-                  "name": {
-                    "type": "string",
-                    "description": "'name' from the Accounts data type."
-                  }
-                }
-              },
-              "taxRateRef": {
-                "description": "Reference to the tax rate to which the line item is linked.",
-                "title": "Tax rate reference",
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "string",
-                    "description": "Unique identifier for the tax rate in the accounting platform."
-                  },
-                  "name": {
-                    "type": "string",
-                    "description": "Name of the tax rate in the accounting platform."
-                  },
-                  "effectiveTaxRate": {
-                    "type": "number",
-                    "format": "decimal",
-                    "description": "Applicable tax rate."
-                  }
-                }
-              },
-              "quantity": {
-                "type": "number",
-                "format": "decimal",
-                "description": "Number of units of goods or services received."
+                "$ref": "#/components/schemas/Bill/definitions/billAccountRef"
               },
               "totalAmount": {
                 "type": "number",
                 "format": "decimal",
                 "nullable": true,
                 "description": "Total amount of the line, including tax."
+              },
+              "taxRateRef": {
+                "$ref": "#/components/schemas/Bill/definitions/billTaxRateRef"
               }
             },
             "required": [
-              "quantity"
+              "quantity",
+              "unitAmount",
+              "taxRateRef",
+              "accountRef"
             ]
+          },
+          "billAccountRef": {
+            "title": "Account reference",
+            "type": "object",
+            "description": "Reference to the account to which the line item is linked.",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "'id' from the Accounts data type."
+              }
+            }
+          },
+          "billTaxRateRef": {
+            "title": "Tax rate reference",
+            "type": "object",
+            "description": "Reference to the tax rate to which the line item is linked.",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique identifier for the tax rate in the accounting platform."
+              }
+            }
           },
           "bills": {
             "title": "Bills",
-            "allOf": [
-              {
-                "type": "object",
-                "properties": {
-                  "results": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/Bill"
-                    }
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Identifier for the bill, unique for the company in the accounting platform."
+              },
+              "reference": {
+                "type": "string",
+                "nullable": true,
+                "description": "User-friendly reference for the bill."
+              },
+              "supplierRef": {
+                "$ref": "#/components/schemas/Supplier/definitions/supplierRef"
+              },
+              "issueDate": {
+                "allOf": [
+                  {
+                    "description": "Date of the bill as recorded in the accounting platform."
+                  },
+                  {
+                    "$ref": "#/components/schemas/Company/properties/created"
                   }
+                ]
+              },
+              "dueDate": {
+                "allOf": [
+                  {
+                    "description": "Date the supplier is due to be paid."
+                  },
+                  {
+                    "$ref": "#/components/schemas/Company/properties/created"
+                  }
+                ]
+              },
+              "currency": {
+                "title": "Currency",
+                "x-internal": true,
+                "type": "string",
+                "description": "The currency data type in Codat is the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code, e.g. _GBP_.\n\n## Unknown currencies\n\nIn line with the ISO 4217 specification, the code _XXX_ is used when the data source does not return a currency for a transaction. \n\nThere are only a very small number of edge cases where this currency code is returned by the Codat system.",
+                "format": "ISO4217",
+                "examples": [
+                  "GBP",
+                  "USD",
+                  "EUR"
+                ]
+              },
+              "lineItems": {
+                "type": "array",
+                "nullable": true,
+                "description": "Array of Bill line items.",
+                "items": {
+                  "$ref": "#/components/schemas/Bill/definitions/billLineItem"
                 }
               },
-              {
-                "$ref": "#/components/schemas/PagingInfo"
+              "status": {
+                "$ref": "#/components/schemas/Bill/definitions/billStatus"
+              },
+              "totalAmount": {
+                "type": "number",
+                "format": "decimal",
+                "description": "Amount of the bill, including tax."
+              },
+              "amountDue": {
+                "type": "number",
+                "format": "decimal",
+                "nullable": true,
+                "description": "Amount outstanding on the bill."
+              },
+              "sourceModifiedDate": {
+                "$ref": "#/components/schemas/Bill/allOf/1"
               }
-            ]
+            }
           }
         }
       },
@@ -2718,23 +2489,136 @@
           }
         }
       },
+      "BillMappingOptions": {
+        "x-internal": true,
+        "title": "Mapping options bills",
+        "description": "The bill mapping options for a company's accounting software.",
+        "type": "object",
+        "properties": {
+          "accounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BillMappingOptions/definitions/accountMappingOption"
+            }
+          },
+          "taxRate": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BillMappingOptions/definitions/taxRateMappingOption"
+            }
+          }
+        },
+        "definitions": {
+          "accountMappingOption": {
+            "title": "Account mapping option",
+            "type": "object",
+            "allOf": [
+              {
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Identifier for the account, unique for the company.",
+                    "example": "1b6266d1-1e44-46c5-8eb5-a8f98e03124e"
+                  },
+                  "name": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Name of the account.",
+                    "example": "Accounts Payable"
+                  },
+                  "accountType": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Type of account.",
+                    "example": "Liability"
+                  },
+                  "currency": {
+                    "$ref": "#/components/schemas/Bill/definitions/bills/properties/currency"
+                  },
+                  "status": {
+                    "$ref": "#/components/schemas/BillMappingOptions/definitions/accountStatus"
+                  }
+                }
+              },
+              {
+                "$ref": "#/components/schemas/Bill/allOf/1"
+              }
+            ]
+          },
+          "taxRateMappingOption": {
+            "title": "Tax rate mapping option",
+            "type": "object",
+            "allOf": [
+              {
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Identifier for the tax rate, unique for the company in the accounting platform.",
+                    "example": "d2939064-dd3a-4c0f-9865-a238c2193515"
+                  },
+                  "name": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Codat-augmented name of the tax rate in the accounting platform."
+                  },
+                  "code": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Code for the tax rate from the accounting platform."
+                  },
+                  "effectiveTaxRate": {
+                    "type": "number",
+                    "format": "decimal",
+                    "nullable": true,
+                    "description": "See Effective tax rates description."
+                  },
+                  "totalTaxRate": {
+                    "type": "number",
+                    "format": "decimal",
+                    "nullable": true,
+                    "description": "Total (not compounded) sum of the components of a tax rate."
+                  },
+                  "status": {
+                    "title": "Tax rate status",
+                    "type": "string",
+                    "enum": [
+                      "Active",
+                      "Archived"
+                    ],
+                    "description": "Status of the tax rate in the accounting platform.  \n- `Active` - An active tax rate in use by a company.  \n- `Archived` - A tax rate that has been archived or is inactive in the accounting platform.  "
+                  }
+                }
+              },
+              {
+                "$ref": "#/components/schemas/Bill/allOf/1"
+              }
+            ]
+          },
+          "accountStatus": {
+            "type": "string",
+            "description": "The current status of the account.",
+            "enum": [
+              "Active",
+              "Archived"
+            ],
+            "example": "Active"
+          }
+        }
+      },
       "BillPayment": {
         "title": "Bill payment",
         "type": "object",
         "description": "",
         "properties": {
-          "totalAmount": {
+          "id": {
+            "type": "string",
+            "description": "Identifier for the bill payment, unique for the company in the accounting platform."
+          },
+          "amount": {
             "type": "number",
             "format": "decimal",
             "description": "Amount of the payment in the payment currency. This value never changes and represents the amount of money that is paid into the supplier's account.",
             "example": 1329.54
-          },
-          "currencyRate": {
-            "title": "Currency rate",
-            "type": "number",
-            "format": "decimal",
-            "nullable": true,
-            "description": "Rate to convert the total amount of the payment into the base currency for the company at the time of the payment.\n\nCurrency rates in Codat are implemented as the multiple of foreign currency units to each base currency unit.  \n\nIt is not possible to perform the currency conversion with two or more non-base currencies participating in the transaction. For example, if a company's base currency is USD, and it has a bill issued in EUR, then the bill payment must happen in USD or EUR.\n\nWhere the currency rate is provided by the underlying accounting platform, it will be available from Codat with the same precision (up to a maximum of 9 decimal places). \n\nFor accounting platforms which do not provide an explicit currency rate, it is calculated as `baseCurrency / foreignCurrency` and will be returned to 9 decimal places.\n\n## Examples with base currency of GBP\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (GBP) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **USD**          | $20            | 0.781         | £15.62                     |\n| **EUR**          | €20            | 0.885         | £17.70                     |\n| **RUB**          | ₽20            | 0.011         | £0.22                      |\n\n## Examples with base currency of USD\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (USD) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **GBP**          | £20            | 1.277         | $25.54                     |\n| **EUR**          | €20            | 1.134         | $22.68                     |\n| **RUB**          | ₽20            | 0.015         | $0.30                      |\n\n\n### Integration-specific details\n\n| Integration       | Scenario                                        | System behavior                                                                                                                                                      |\n|-------------------|-------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| QuickBooks Online | Transaction currency differs from base currency | If currency rate value is left `null`, a rate of 1 will be used by QBO by default. To override this, include the required currency rate in the expense transaction.  |"
           },
           "date": {
             "allOf": [
@@ -2746,23 +2630,60 @@
               }
             ]
           },
-          "note": {
+          "reference": {
             "type": "string",
             "nullable": true,
             "description": "Additional information associated with the payment.",
             "example": "Bill Payment against bill c13e37b6-dfaa-4894-b3be-9fe97bda9f44"
+          },
+          "accountRef": {
+            "$ref": "#/components/schemas/Bill/definitions/billAccountRef"
+          },
+          "currencyRate": {
+            "title": "Currency rate",
+            "type": "number",
+            "format": "decimal",
+            "nullable": true,
+            "description": "Rate to convert the total amount of the payment into the base currency for the company at the time of the payment.\n\nCurrency rates in Codat are implemented as the multiple of foreign currency units to each base currency unit.  \n\nIt is not possible to perform the currency conversion with two or more non-base currencies participating in the transaction. For example, if a company's base currency is USD, and it has a bill issued in EUR, then the bill payment must happen in USD or EUR.\n\nWhere the currency rate is provided by the underlying accounting platform, it will be available from Codat with the same precision (up to a maximum of 9 decimal places). \n\nFor accounting platforms which do not provide an explicit currency rate, it is calculated as `baseCurrency / foreignCurrency` and will be returned to 9 decimal places.\n\n## Examples with base currency of GBP\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (GBP) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **USD**          | $20            | 0.781         | £15.62                     |\n| **EUR**          | €20            | 0.885         | £17.70                     |\n| **RUB**          | ₽20            | 0.011         | £0.22                      |\n\n## Examples with base currency of USD\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (USD) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **GBP**          | £20            | 1.277         | $25.54                     |\n| **EUR**          | €20            | 1.134         | $22.68                     |\n| **RUB**          | ₽20            | 0.015         | $0.30                      |\n\n\n### Integration-specific details\n\n| Integration       | Scenario                                        | System behavior                                                                                                                                                      |\n|-------------------|-------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| QuickBooks Online | Transaction currency differs from base currency | If currency rate value is left `null`, a rate of 1 will be used by QBO by default. To override this, include the required currency rate in the expense transaction.  |"
           }
         },
-        "required": [
-          "totalAmount",
-          "currencyRate",
-          "date"
-        ],
+        "definitions": {
+          "billPaymentPrototype": {
+            "title": "Bill payment prototype",
+            "type": "object",
+            "properties": {
+              "amount": {
+                "$ref": "#/components/schemas/BillPayment/properties/amount"
+              },
+              "date": {
+                "$ref": "#/components/schemas/BillPayment/properties/date"
+              },
+              "reference": {
+                "$ref": "#/components/schemas/BillPayment/properties/reference"
+              },
+              "accountRef": {
+                "$ref": "#/components/schemas/Bill/definitions/billAccountRef"
+              },
+              "currencyRate": {
+                "$ref": "#/components/schemas/BillPayment/properties/currencyRate"
+              }
+            },
+            "required": [
+              "amount",
+              "date",
+              "accountRef"
+            ]
+          }
+        },
         "example": {
-          "totalAmount": 22,
-          "currencyRate": 0,
+          "amount": 22,
           "date": "2022-10-23T00:00:00.000Z",
-          "note": "Bill Payment against bill c13e37b6 dfaa-4894-b3be-9fe97bda9f44"
+          "reference": "Bill Payment against bill c13e37b6 dfaa-4894-b3be-9fe97bda9f44",
+          "accountRef": {
+            "id": "9e32cbf8-e7d5-4d4d-a593-08d550682aab",
+            "name": "string"
+          },
+          "currencyRate": 0
         }
       },
       "ClientRateLimitReachedWebhook": {
@@ -2804,7 +2725,7 @@
               },
               "ExpiresUtc": {
                 "$ref": "#/components/schemas/Company/properties/created",
-                "description": "The date time in UTC that your daily quota is reset."
+                "description": "The date time in UTC when your daily quota is reset."
               }
             }
           }
@@ -2859,7 +2780,7 @@
           },
           "Message": {
             "type": "string",
-            "description": "A human readable message about the webhook."
+            "description": "A human-readable message about the webhook."
           },
           "Data": {
             "$ref": "#/components/schemas/ClientRateLimitResetWebhook/definitions/ClientRateLimitResetWebhookData"
@@ -2872,7 +2793,7 @@
             "properties": {
               "QuotaRemaining": {
                 "type": "integer",
-                "description": "Total number of request remaining for your client.",
+                "description": "Total number of requests remaining for your client.",
                 "nullable": true
               },
               "ResetReason": {
@@ -3256,7 +3177,7 @@
             "title": "Data types",
             "x-internal": true,
             "type": "string",
-            "description": "Available Data types",
+            "description": "Available data types",
             "enum": [
               "accountTransactions",
               "balanceSheet",
@@ -3359,6 +3280,9 @@
             "type": "string",
             "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
           },
+          "validation": {
+            "$ref": "#/components/schemas/ErrorMessage/definitions/errorValidation"
+          },
           "canBeRetried": {
             "type": "string",
             "description": "`True` if the error occurred transiently and can be retried."
@@ -3367,132 +3291,48 @@
             "type": "integer",
             "description": "Machine readable error code used to automate processes based on the code returned."
           }
-        }
-      },
-      "MappingOptions": {
-        "x-internal": true,
-        "title": "Mapping Options",
-        "description": "Gets the bill mapping options for a companies accounting software",
-        "type": "object",
-        "properties": {
-          "accounts": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MappingOptions/definitions/accountMappingOption"
-            }
-          },
-          "bankAccounts": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MappingOptions/definitions/bankAccountMappingOption"
-            }
-          },
-          "taxRate": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MappingOptions/definitions/taxRateMappingOption"
-            }
-          }
         },
         "definitions": {
-          "accountMappingOption": {
-            "title": "Account mapping option",
+          "errorValidation": {
+            "title": "Validation error",
             "type": "object",
+            "nullable": true,
+            "description": "A human-readable object describing validation decisions Codat has made. If an operation has failed because of validation errors, they will be detailed here.",
             "properties": {
-              "id": {
-                "type": "string",
-                "description": "Identifier for the account, unique for the company.",
-                "example": "1b6266d1-1e44-46c5-8eb5-a8f98e03124e"
-              },
-              "name": {
-                "type": "string",
+              "errors": {
+                "type": "array",
                 "nullable": true,
-                "description": "Name of the account.",
-                "example": "Accounts Payable"
+                "items": {
+                  "$ref": "#/components/schemas/ErrorMessage/definitions/errorValidationItem"
+                }
               },
-              "currency": {
-                "title": "Currency",
-                "x-internal": true,
-                "type": "string",
-                "description": "The currency data type in Codat is the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code, e.g. _GBP_.\n\n## Unknown currencies\n\nIn line with the ISO 4217 specification, the code _XXX_ is used when the data source does not return a currency for a transaction. \n\nThere are only a very small number of edge cases where this currency code is returned by the Codat system.",
-                "format": "ISO4217",
-                "examples": [
-                  "GBP",
-                  "USD",
-                  "EUR"
-                ]
-              },
-              "accountType": {
-                "type": "string",
+              "warnings": {
+                "type": "array",
                 "nullable": true,
-                "description": "Type of account.",
-                "example": "Active"
+                "items": {
+                  "$ref": "#/components/schemas/ErrorMessage/definitions/errorValidationItem"
+                }
               }
             }
           },
-          "bankAccountMappingOption": {
-            "title": "Bank account mapping option",
+          "errorValidationItem": {
+            "title": "Validation error item",
             "type": "object",
             "properties": {
-              "id": {
-                "type": "string",
-                "description": "Identifier for the account, unique for the company in the accounting platform.",
-                "example": "3d5a8e00-d108-4045-8823-7f342676cffa"
-              },
-              "name": {
+              "itemId": {
                 "type": "string",
                 "nullable": true,
-                "description": "Name of the bank account in the accounting platform.",
-                "example": "Bank of Dave current account"
+                "description": "Unique identifier for a validation item."
               },
-              "currency": {
+              "message": {
                 "type": "string",
                 "nullable": true,
-                "description": "The bank account's base currency."
+                "description": "A message outlining validation item's issue."
               },
-              "accountType": {
-                "title": "Bank Account Type",
-                "x-internal": true,
-                "enum": [
-                  "Unknown",
-                  "Credit",
-                  "Debit"
-                ],
-                "type": "string",
-                "description": "The type of transactions and balances on the account.  \nFor Credit accounts, positive balances are liabilities, and positive transactions **reduce** liabilities.  \nFor Debit accounts, positive balances are assets, and positive transactions **increase** assets."
-              }
-            }
-          },
-          "taxRateMappingOption": {
-            "title": "Tax rate mapping option",
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "Identifier for the tax rate, unique for the company in the accounting platform.",
-                "example": "d2939064-dd3a-4c0f-9865-a238c2193515"
-              },
-              "name": {
+              "validatorName": {
                 "type": "string",
                 "nullable": true,
-                "description": "Codat-augmented name of the tax rate in the accounting platform."
-              },
-              "code": {
-                "type": "string",
-                "nullable": true,
-                "description": "Code for the tax rate from the accounting platform."
-              },
-              "effectiveTaxRate": {
-                "type": "number",
-                "format": "decimal",
-                "nullable": true,
-                "description": "See Effective tax rates description."
-              },
-              "totalTaxRate": {
-                "type": "number",
-                "format": "decimal",
-                "nullable": true,
-                "description": "Total (not compounded) sum of the components of a tax rate."
+                "description": "Name of validator."
               }
             }
           }
@@ -3545,10 +3385,10 @@
             "examples": [
               {
                 "self": {
-                  "href": "/companies/{id}/data/{dataType}"
+                  "href": "/companies"
                 },
                 "current": {
-                  "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+                  "href": "/companies?page=1&pageSize=10"
                 }
               }
             ]
@@ -3573,10 +3413,10 @@
         ],
         "examples": [
           {
+            "pageNumber": 1,
+            "pageSize": 10,
+            "totalResults": 1,
             "_links": {
-              "pageNumber": 1,
-              "pageSize": 10,
-              "totalResults": 1,
               "self": {
                 "href": "/companies/{id}/data/{dataType}"
               },
@@ -3586,6 +3426,81 @@
             }
           }
         ]
+      },
+      "PaymentMappingOptions": {
+        "x-internal": true,
+        "title": "Mapping Options Payments",
+        "description": "Gets the bill payments mapping options for a company's accounting software",
+        "type": "object",
+        "properties": {
+          "bankAccounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentMappingOptions/definitions/bankAccountMappingOption"
+            }
+          }
+        },
+        "definitions": {
+          "bankAccountMappingOption": {
+            "title": "Bank account mapping option",
+            "type": "object",
+            "allOf": [
+              {
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Identifier for the account, unique for the company in the accounting platform.",
+                    "example": "3d5a8e00-d108-4045-8823-7f342676cffa"
+                  },
+                  "name": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Name of the bank account in the accounting platform.",
+                    "example": "Bank of Dave current account"
+                  },
+                  "accountNumber": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Account number for the bank account.\n\nXero integrations\nOnly a UK account number shows for bank accounts with GBP currency and a combined total of sort code and account number that equals 14 digits, For non-GBP accounts, the full bank account number is populated."
+                  },
+                  "nominalCode": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Code used to identify each nominal account for a business."
+                  },
+                  "sortCode": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Sort code for the bank account.\n\nXero integrations\nThe sort code is only displayed when the currency = GBP and the sort code and account number sum to 14 digits. For non-GBP accounts, this field is not populated."
+                  },
+                  "currency": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "The bank account's base currency."
+                  },
+                  "status": {
+                    "$ref": "#/components/schemas/PaymentMappingOptions/definitions/bankAccountStatus"
+                  },
+                  "type": {
+                    "$ref": "#/components/schemas/BankAccount/allOf/0/properties/accountType"
+                  }
+                }
+              },
+              {
+                "$ref": "#/components/schemas/Bill/allOf/1"
+              }
+            ]
+          },
+          "bankAccountStatus": {
+            "type": "string",
+            "description": "The current status of the bank account.",
+            "enum": [
+              "Active",
+              "Archived"
+            ],
+            "example": "Active"
+          }
+        }
       },
       "PullOperation": {
         "title": "Pull operation",
@@ -3919,7 +3834,7 @@
       "Supplier": {
         "x-internal": true,
         "title": "Supplier",
-        "description": "﻿> View the coverage for suppliers in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nFrom the **Suppliers** endpoints, you can retrieve a list of [all the suppliers for a company](https://docs.codat.io/sync-for-payables-api#/operations/list-suppliers). Suppliers' data links to accounts payable [bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill).",
+        "description": "﻿## Overview\n\nSuppliers are people or organizations that provide something, such as a product or service. Use **Suppliers** endpoints to retrieve supplier data for a company. \n\nSuppliers' data links to accounts payable [bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill).\n ",
         "type": "object",
         "allOf": [
           {
@@ -4013,16 +3928,6 @@
                   }
                 }
               },
-              "registrationNumber": {
-                "type": "string",
-                "nullable": true,
-                "description": "Company number of the supplier. In the UK, this is typically the company registration number issued by Companies House."
-              },
-              "taxNumber": {
-                "type": "string",
-                "nullable": true,
-                "description": "Supplier's company tax number."
-              },
               "status": {
                 "$ref": "#/components/schemas/Supplier/definitions/supplierStatus"
               },
@@ -4030,68 +3935,44 @@
                 "type": "string",
                 "nullable": true,
                 "description": "Default currency the supplier's transactional data is recorded in."
-              },
-              "metadata": {
-                "title": "Metadata",
-                "type": "object",
-                "x-internal": true,
-                "properties": {
-                  "isDeleted": {
-                    "type": "boolean",
-                    "description": "Indicates whether the record has been deleted in the third-party system this record originated from.",
-                    "nullable": true
-                  }
-                }
-              },
-              "supplementalData": {
-                "title": "Supplemental data",
-                "type": "object",
-                "x-internal": true,
-                "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting platform. [Learn more](https://docs.codat.io/using-the-api/supplemental-data/overview) about supplemental data.",
-                "properties": {
-                  "content": {
-                    "type": "object",
-                    "additionalProperties": {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    "nullable": true
-                  }
-                }
               }
             }
           },
           {
-            "title": "Modified dates",
-            "x-internal": true,
-            "allOf": [
-              {
-                "title": "ModifiedDate",
-                "x-internal": true,
-                "type": "object",
-                "properties": {
-                  "modifiedDate": {
-                    "allOf": [
-                      {
-                        "$ref": "#/components/schemas/Company/properties/created"
-                      },
-                      {
-                        "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
-                      }
-                    ]
-                  }
-                }
-              },
-              {
-                "$ref": "#/components/schemas/Bill/allOf/1"
-              }
-            ]
+            "$ref": "#/components/schemas/Bill/allOf/1"
           }
         ],
         "required": [
           "status"
         ],
         "definitions": {
+          "supplierPrototype": {
+            "title": "Supplier prototype",
+            "type": "object",
+            "properties": {
+              "supplierName": {
+                "$ref": "#/components/schemas/Supplier/allOf/0/properties/supplierName"
+              },
+              "contactName": {
+                "$ref": "#/components/schemas/Supplier/allOf/0/properties/contactName"
+              },
+              "emailAddress": {
+                "$ref": "#/components/schemas/Supplier/allOf/0/properties/emailAddress"
+              },
+              "phone": {
+                "$ref": "#/components/schemas/Supplier/allOf/0/properties/phone"
+              },
+              "addresses": {
+                "$ref": "#/components/schemas/Supplier/allOf/0/properties/addresses"
+              },
+              "status": {
+                "$ref": "#/components/schemas/Supplier/definitions/supplierStatus"
+              },
+              "defaultCurrency": {
+                "$ref": "#/components/schemas/Supplier/allOf/0/properties/defaultCurrency"
+              }
+            }
+          },
           "supplierRef": {
             "title": "Supplier reference",
             "description": "Reference to the supplier the record relates to.",
@@ -4134,9 +4015,6 @@
                     }
                   }
                 }
-              },
-              {
-                "$ref": "#/components/schemas/PagingInfo"
               }
             ]
           }
@@ -4159,26 +4037,8 @@
                 "postalcode": "93308"
               }
             ],
-            "registrationNumber": "string",
-            "taxNumber": "string",
             "status": "Unknown",
-            "defaultCurrency": "string",
-            "metadata": {
-              "isDeleted": true
-            },
-            "supplementalData": {
-              "content": {
-                "property1": {
-                  "property1": null,
-                  "property2": null
-                },
-                "property2": {
-                  "property1": null,
-                  "property2": null
-                }
-              }
-            },
-            "modifiedDate": "2022-10-23T00:00:00Z",
+            "defaultCurrency": "GBP",
             "sourceModifiedDate": "2022-10-23T00:00:00Z"
           }
         ]

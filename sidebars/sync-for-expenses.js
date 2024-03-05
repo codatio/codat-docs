@@ -54,6 +54,11 @@ module.exports = [
   },
   {
     type: "doc",
+    label: "QuickBooks Desktop",
+    id: "integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop"
+  },
+  {
+    type: "doc",
     id: "expenses/fx-management",
     label: "Expenses in foreign currency",
     customProps: {

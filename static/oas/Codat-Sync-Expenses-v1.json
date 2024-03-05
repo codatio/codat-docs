@@ -2037,6 +2037,7 @@
       "AttachmentUpload": {
         "title": "Attachment upload",
         "type": "object",
+        "x-internal": true,
         "required": [
           "file"
         ],
@@ -2588,6 +2589,9 @@
             "type": "string",
             "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
           },
+          "validation": {
+            "$ref": "#/components/schemas/ErrorMessage/definitions/errorValidation"
+          },
           "canBeRetried": {
             "type": "string",
             "description": "`True` if the error occurred transiently and can be retried."
@@ -2595,6 +2599,51 @@
           "detailedErrorCode": {
             "type": "integer",
             "description": "Machine readable error code used to automate processes based on the code returned."
+          }
+        },
+        "definitions": {
+          "errorValidation": {
+            "title": "Validation error",
+            "type": "object",
+            "nullable": true,
+            "description": "A human-readable object describing validation decisions Codat has made. If an operation has failed because of validation errors, they will be detailed here.",
+            "properties": {
+              "errors": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/ErrorMessage/definitions/errorValidationItem"
+                }
+              },
+              "warnings": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/ErrorMessage/definitions/errorValidationItem"
+                }
+              }
+            }
+          },
+          "errorValidationItem": {
+            "title": "Validation error item",
+            "type": "object",
+            "properties": {
+              "itemId": {
+                "type": "string",
+                "nullable": true,
+                "description": "Unique identifier for a validation item."
+              },
+              "message": {
+                "type": "string",
+                "nullable": true,
+                "description": "A message outlining validation item's issue."
+              },
+              "validatorName": {
+                "type": "string",
+                "nullable": true,
+                "description": "Name of validator."
+              }
+            }
           }
         }
       },
@@ -2851,10 +2900,10 @@
             "examples": [
               {
                 "self": {
-                  "href": "/companies/{id}/data/{dataType}"
+                  "href": "/companies"
                 },
                 "current": {
-                  "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+                  "href": "/companies?page=1&pageSize=10"
                 }
               }
             ]
@@ -2879,10 +2928,10 @@
         ],
         "examples": [
           {
+            "pageNumber": 1,
+            "pageSize": 10,
+            "totalResults": 1,
             "_links": {
-              "pageNumber": 1,
-              "pageSize": 10,
-              "totalResults": 1,
               "self": {
                 "href": "/companies/{id}/data/{dataType}"
               },
@@ -3032,7 +3081,7 @@
           },
           "Message": {
             "type": "string",
-            "description": "A human readable message about the webhook."
+            "description": "A human-readable message about the webhook."
           },
           "Data": {
             "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData"

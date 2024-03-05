@@ -434,23 +434,6 @@ When you make the request, you will receive a pushOperation response, this will 
 - **changes**: an array that communicates which record has changed (`recordRef` property) and the manner in which it changed (`type` property that can be `Unknown`, `Created`, `Modified`, or `Deleted`)
 
 ### Monitoring the status of the request
-After your request has been accepted, it will have a status of `Pending`. You should use the [Push Operation Status Changed](../using-the-api/webhooks/core-rules-types#push-operation-status-has-changed) webhooks to track when the status of your pushOperation changes to `Success` or `Failed`.
-
-If the request is successfull, you will receive a webhook like this:
-
-```json
-{
- "CompanyId":"d7f743a9-1804-4116-8c8a-e606f7e2f66c",
- "RuleId":"c40791fe-b6fd-45c3-9bf7-0a16abf1b8fd",
- "Type":"Push Operation Status Changed",
- "AlertId":"a62bfb38-d73c-4aab-9bb6-d8014bba5f29",
- "Message":"journalEntries triggered notification for PushOperationStatusChanged at 2023-08-14T18:19:42.742Z",
- "Data":{
-    "dataType":"journalEntries",
-    "status":"Success",
-    "pushOperationKey":"b9c1381a-8742-4a45-9dc5-528101dbd0e3"
-    }
-}
-```
+After your request has been accepted, it will have a status of `Pending`. You should use the [PushOperationStatusChanged](../using-the-api/webhooks/event-types) event type to track when the status of your pushOperation changes to `Success` or `Failed`.
 
 If you want to see a history of all pushOperations for your company, you can retrieve these from the [list-push-operations](/sync-for-payroll-api#/operations/list-push-operations) endpoint.
