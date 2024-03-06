@@ -41,9 +41,9 @@ To delete the dataset in its entirety, [delete the existing data connection](/co
 
 To upload your customer's banking data using our API, follow these steps:
 
-1. **Create Data Connection**
+1. **Create data connection**
 
-First, [create a data connection](/lending-api#/operations/create-connection) for the company. The platform key for a 'Banking Data Upload' connection is `zpqy`.
+First, use the [Create a data connection](/lending-api#/operations/create-connection) endpoint to establish a new data connection for the company. Use `zpqy` as the platform key in the request body.
 
 2. **Set upload configuration**
 
