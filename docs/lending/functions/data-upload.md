@@ -11,8 +11,8 @@ If you already have a banking data provider, you can still benefit from our bank
 
 You can do this in two ways:
 
-1. Upload banking data files and download the resulting categorized bank statement [in our Portal](/lending/functions/file-upload#upload-in-portal).
-2. Push the banking data records and get the resulting categorized bank statement [via our API](/lending/functions/file-upload#upload-via-api).
+1. Upload banking data files and download the resulting categorized bank statement [in our Portal](/lending/functions/data-upload#upload-in-portal).
+2. Push the banking data records and get the resulting categorized bank statement [via our API](/lending/functions/data-upload#upload-via-api).
 
 :::caution Prerequisites
 
