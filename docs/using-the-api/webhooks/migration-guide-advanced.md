@@ -40,6 +40,10 @@ If you are using `RuleId` properties returned by our existing webhooks in your a
 
 Depending on your setup, you may need to configure your webhook consumers in Codat further or be aware of changes to the UI. 
 
+### IP allowlist
+
+If your consumer endpoint is behind a firewall or NAT, make sure to allow messages from `4.159.114.108`.
+
 ### Source client header
 
 If you are using multiple Codat instances and need to differentiate between them, you can filter the messages by client. 
