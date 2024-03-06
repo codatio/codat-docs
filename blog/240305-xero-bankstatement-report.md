@@ -30,7 +30,7 @@ The `BankStatement` report is used by Codat to populate various fields within th
 ## New behavior
 
 Unless the Xero required steps outlined below are completed:
-- The `Balance` fields within the `Bank Accounts` data type won't be populated for Xero connections.
+- The `Balance` field within the `Bank Accounts` data type won't be populated for Xero connections.
 - The `Bank Transactions` data type won't be populated for Xero connections.
 
 ## Action required
@@ -50,7 +50,7 @@ Xero’s communication requires changes to be made to scopes that are requested 
 ## Expected impact if no action is taken
 
 The `Bank Accounts` and `Bank Transactions` data types for Xero connections will be impacted:
-- The `Balance` fields within the `Bank Accounts` data type won't be populated for Xero connections.
+- The `Balance` field within the `Bank Accounts` data type won't be populated for Xero connections.
 - The `Bank Transactions` data type won't be populated for Xero connections.
 
 There is no impact to other integrations, data types, or other fields within the affected data types.
