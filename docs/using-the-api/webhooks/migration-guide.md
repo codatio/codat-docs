@@ -1,30 +1,29 @@
 ---
-title: "Webhooks migration guide"
-sidebar_label: "Migration guide"
+title: "Migration guide for basic webhook setup"
+sidebar_label: "Migration basics"
 description: "Check how you can transition your existing Codat webhooks setup to our new service"
 ---
 
 ## Can I migrate?
 
-Most clients can migrate to the new service without impacting your integration. There are however some exceptions
+Most clients can migrate to our new webhooks service without any impacts to their integration. However, your setup will need to change if any of these scenarios apply to you:
 
-- You subscribe to email notifications such as [company sync complete](/using-the-api/webhooks/legacy/core-rules-types#new-company-synchronized) emails
-- Your application calls the webhook logs endpoints (e.g. `/rules/alerts`)
-- Your application logic uses the `RuleId`
+- You subscribe to email notifications, such as [Company sync complete](/using-the-api/webhooks/legacy/core-rules-types#new-company-synchronized) emails.
+- Your application calls our webhook logs endpoints, such as `/rules/alerts`.
+- Your application's logic uses the `RuleId` parameter.
 
-If you fall into one or more exceptions, we recommend reading our [advanced migration guide](/using-the-api/webhooks/migration-guide-advanced) to understand how you can migrate. 
+Read our [advanced migration guide](/using-the-api/webhooks/migration-guide-advanced) to see what additional action you will need to take. 
 
 ## How do I migrate?
 
-Reach out to your Codat contact so that we can enable the new webhooks service for you.
-As part of enabling the webhooks, Codat will migrate your existing webhook rules (webhook notification URL, rule type and if defined the company ID) to the new service.
+Reach out to your Codat contact so that we can enable the new webhooks service for you. As part of that, we will migrate your existing webhook rules to the new service. This includes the webhook notification URL, rule type, and company ID, if used.
 
-Depending on your setup, there may be additional steps you need to take during the migration. We describe these in more detail in [advanced migration guide](/using-the-api/webhooks/migration-guide-advanced). 
+Depending on the complexity of your setup, you may need to take additional steps during the migration. We describe these in more detail in our [advanced migration guide](/using-the-api/webhooks/migration-guide-advanced). 
 
 ---
 
 ## Read next
 
-- [Advance migration guide](/using-the-api/webhooks/migration-guide-advanced)
+- [Advanced migration guide](/using-the-api/webhooks/migration-guide-advanced)
 - [Event types](/using-the-api/webhooks/event-types)
 - [Manage webhook consumers](/using-the-api/webhooks/create-consumer)
