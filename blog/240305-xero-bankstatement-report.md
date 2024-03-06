@@ -49,7 +49,7 @@ Xero’s communication requires changes to be made to scopes that are requested 
 
 ## Expected impact if no action is taken
 
-The `Bank Accounts` and `Bank Transactions` data types for Xero connections will be impacted:
+If you do not complete the steps outlined by Xero, the `Bank Accounts` and `Bank Transactions` data types for Xero connections will be impacted:
 - The `Balance` field within the `Bank Accounts` data type won't be populated for Xero connections.
 - The `Bank Transactions` data type won't be populated for Xero connections.
 
