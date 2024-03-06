@@ -9,7 +9,7 @@ On April 2, 2024, Xero are implementing a breaking change to their `BankStatemen
 
 <!--truncate-->
 
-If this affects you, your organization should have received an email from Xero:
+If this affects your current use of Codat, your organization should have received an email from Xero:
 
 > On 2 April 2024 PDT/3 April 2024 NZT/AEST we plan to release a breaking change to how the Bank Statement report within the Reports endpoint of the Accounting API is accessed. **This change will make the Bank Statement report inaccessible unless you confirm that you meet some additional terms and conditions about your security practices.** We’re making this change as part of our ongoing efforts to improve the security of the Xero ecosystem.
 > 
@@ -25,13 +25,13 @@ If this affects you, your organization should have received an email from Xero:
 > 
 > If you have any questions or if there is anything we can do to help please reply to this email and one of our team will get back to you.
 
-The `BankStatement` report is used by Codat to populate the `Balance` fields within the `Bank Accounts` and `Bank Transactions` data types.
-
-From April 2, 2024, these fields will not be populated in Codat’s data types unless you complete Xero’s required steps (as below).
+The `BankStatement` report is used by Codat to populate various fields within the `Bank Accounts` and `Bank Transactions` data types. From April 2, 2024, these Codat data types will be impacted unless you complete Xero’s required steps (as below).
 
 ## New behavior
 
-Unless the Xero required steps outlined below are completed, we will no longer populate the `Balance` fields within the `Bank Accounts` and `Bank Transactions` data types.
+Unless the Xero required steps outlined below are completed:
+- The `Balance` field within the `Bank Accounts` data type won't be populated for Xero connections.
+- The `Bank Transactions` data type won't be populated for Xero connections.
 
 ## Action required
 
@@ -45,10 +45,12 @@ Unless the Xero required steps outlined below are completed, we will no longer p
 Xero’s communication requires changes to be made to scopes that are requested for new connections. We will handle this on your behalf **as long as we are notified** that you have completed the required steps with Xero as above. 
 :::
 
-**If you do not use these data types or do not need the `Balance` field, then no action is required.**
+**If you do not use these data types, then no action is required.**
 
 ## Expected impact if no action is taken
 
-The `Balance` fields within the `Bank Accounts` and `Bank Transactions` data types will no longer be populated from Xero connections.
+If you do not complete the steps outlined by Xero, the `Bank Accounts` and `Bank Transactions` data types for Xero connections will be impacted:
+- The `Balance` field within the `Bank Accounts` data type won't be populated for Xero connections.
+- The `Bank Transactions` data type won't be populated for Xero connections.
 
 There is no impact to other integrations, data types, or other fields within the affected data types.
