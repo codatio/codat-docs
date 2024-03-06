@@ -34,4 +34,4 @@ The names of our new event types differ from our legacy rule types. We added the
 ---
 ## Read next
 
-- See how you can [consume webhooks and manage consumers](/using-the-api/webhooks/create-event) using the Portal or our API
+- See how you can [consume webhooks and manage consumers](/using-the-api/webhooks/create-consumer) using the Portal or our API

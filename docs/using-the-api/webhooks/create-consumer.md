@@ -1,17 +1,23 @@
 ---
-title: "Manage webhook consumers to subscribe to events"
-sidebar_label: "Manage webhook consumers"
+title: "Build webhook consumers to subscribe to events"
+sidebar_label: "Consume webhooks"
 description: "Create new webhook consumers and manage existing ones to receive webhooks using the Portal or the API"
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
 
-## Create a webhook consumer
+A webhook consumer is your application's implementation of a POST endpoint built to receive Codat's webhooks.
+In general, one webhook consumer is required per event type.
+The webhook consumer must receive a POST request and process the event within 15 seconds.
+We advise passing the event to an internal message queue to ensure the event is processed within the alloted time frame. 
 
-To start listening to messages we send you, configure your webhook consumer endpoints. Navigate to **Settings > Webhooks > Events > Configure consumer** and click **Add endpoint** to create a new consumer. 
+## Configure webhook consumer
 
-Add the endpoint URL that you want to receive the messages, an optional description, and choose the events that this endpoint should listen to. If you don't specify the event types, your endpoint will receive all events by default. 
+Once you have build your webhook consumer you will need to configure Codat to send the consumer events. 
+Navigate to **Settings > Webhooks > Events > Configure consumer** and click **Add endpoint** to create a new consumer. 
+
+Add the endpoint URL that you want to receive the messages, an optional description, and choose the events that this endpoint should listen to. You must specify a least one event type per endpoint. 
 
 Browse our event catalog [in the Portal](https://app.codat.io/monitor/events) or in our [documentation](/using-the-api/webhooks/event-types) to choose the event types that suit your use case. 
 
