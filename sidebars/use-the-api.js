@@ -54,12 +54,10 @@ module.exports = [
       {
         type: "category",
         label: "Migration guide",
-        link: {
-          type: "doc",
-          id: "using-the-api/webhooks/migration-guide"
-        },
+        collapsed: true,
         items: [
-          "using-the-api/webhooks/migration-guide-advanced"
+          "using-the-api/webhooks/migration-guide",
+          "using-the-api/webhooks/migration-guide-advanced",
         ]
       },
       "using-the-api/webhooks/troubleshooting",
