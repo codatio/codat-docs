@@ -4,6 +4,9 @@ sidebar_label: "Manage webhook consumers"
 description: "Create new webhook consumers and manage existing ones to receive webhooks using the Portal or the API"
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem"
+
 ## Create a webhook consumer
 
 To start listening to messages we send you, configure your webhook consumer endpoints. Navigate to **Settings > Webhooks > Events > Configure consumer** and click **Add endpoint** to create a new consumer. 
@@ -63,9 +66,355 @@ There are many reasons a message to your endpoint could fail. Have a look at our
 
 ## Webhook signature verification
 
-A webhook signature is your way to verify that the messages are sent by Codat and helps you avoid impersonation or replay attacks. We sign every webhook and its metadata with a unique key for each endpoint and include timestamps for when the message attempt occurred.
+A webhook signature is your way to verify that the messages are sent by Codat and helps you avoid impersonation or replay attacks. We sign every webhook and its metadata with a unique security key for each endpoint and include timestamps for when the message attempt occurred.
 
-You can use this signature to verify that the message truly came from Codat and process it. Our webhook service partner provides instructions, examples, and libraries in their [webhook verification documentation](https://docs.svix.com/receiving/verifying-payloads/how).
+You can use this signature to verify that the message truly came from Codat before processing it. To do the verification, we suggest using a library called Svix.
+
+### Install library
+
+<Tabs>
+
+<TabItem value="nodejs" label="JavaScript">
+
+##### NPM
+```sh
+npm install svix
+```
+
+##### Yarn
+```sh
+yarn add svix
+```
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```sh
+pip install svix
+```
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```sh
+dotnet add package Svix
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```sh
+go get github.com/svix/svix-webhooks/go
+```
+</TabItem>
+
+<TabItem value="java" label="Java">
+
+#### Gradle
+
+Add this dependency to your project's build file:
+```sh
+implementation "com.svix:svix:0.x.y"
+```
+
+#### Maven
+
+Add this dependency to your project's POM:
+```xml
+<dependency>
+  <groupId>com.svix</groupId>
+  <artifactId>svix</artifactId>
+  <version>0.x.y</version>
+</dependency>
+```
+</TabItem>
+
+<TabItem value="rust" label="Rust">
+
+```sh
+svix = "0"
+```
+</TabItem>
+
+<TabItem value="kotlin" label="Kotlin">
+
+#### Gradle
+
+Add this dependency to your project's build file:
+```sh
+implementation "com.svix.kotlin:svix-kotlin:0.x.y"
+```
+
+#### Maven
+
+Add this dependency to your project's POM:
+```xml
+<dependency>
+  <groupId>com.svix.kotlin</groupId>
+  <artifactId>svix-kotlin</artifactId>
+  <version>0.x.y</version>
+</dependency>
+```
+</TabItem>
+
+<TabItem value="ruby" label="Ruby">
+
+```sh
+gem install svix
+```
+</TabItem>
+
+<TabItem value="php" label="PHP">
+
+```sh
+composer require svix/svix
+```
+</TabItem>
+
+<TabItem value="cli" label="CLI">
+
+#### Homebrew
+
+```sh
+brew install svix/svix/svix
+```
+
+#### Scoop
+
+```sh
+scoop bucket add svix https://github.com/svix/scoop-svix.git
+scoop install svix
+```
+
+</TabItem>
+
+</Tabs>
+
+### Verify webhook
+
+To verify incoming webhooks, retrieve the secret key for your endpoint first. 
+
+In the [Codat Portal](https://app.codat.io/monitor/events), navigate to **Monitor > Webhooks > Events**, click the endpoint you want to verify, and copy the **Signing secret** from the endpoint's detailed view.
+ 
+  ![A fragment of the UI that highlights where to copy the signing secret](/img/use-the-api/0054-endpoint-detail-signing-secret.png)
+
+Next, you need to pass the secret key, request body, and headers to the verification library as demonstrated below.  
+
+:::info Use the raw request body
+
+You need to use the raw request body when verifying webhooks because the cryptographic signature is very sensitive to changes. 
+
+Watch out for frameworks that parse the request as JSON and then stringify it, because this will also break the signature verification.
+::: 
+
+<Tabs>
+
+<TabItem value="nodejs" label="JavaScript">
+
+```javascript
+import { Webhook } from "svix";
+
+const secret = "whsec_MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw";
+
+// These were all sent from the server
+const headers = {
+  "svix-id": "msg_p5jXN8AQM9LWM0D4loKWxJek",
+  "svix-timestamp": "1614265330",
+  "svix-signature": "v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE=",
+};
+const payload = '{"test": 2432232314}';
+
+const wh = new Webhook(secret);
+// Throws on error, returns the verified content on success
+const payload = wh.verify(payload, headers);
+```
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+from svix.webhooks import Webhook
+
+secret = "whsec_MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw"
+
+# These were all sent from the server
+headers = {
+  "svix-id": "msg_p5jXN8AQM9LWM0D4loKWxJek",
+  "svix-timestamp": "1614265330",
+  "svix-signature": "v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE=",
+}
+payload = '{"test": 2432232314}'
+
+wh = Webhook(secret)
+# Throws on error, returns the verified content on success
+payload = wh.verify(payload, headers)
+```
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+using Svix;
+using System.Net;
+
+// These were all sent from the server
+var headers = new WebHeaderCollection();
+headers.Set("svix-id", "msg_p5jXN8AQM9LWM0D4loKWxJek");
+headers.Set("svix-timestamp", "1614265330");
+headers.Set("svix-signature", "v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE=");
+var payload = "{\"test\": 2432232314}";
+
+var wh = new Webhook("whsec_MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw/Je4ZJEGP1QFb");
+
+// Throws on error
+wh.Verify(payload, headers);
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+import (
+    svix "github.com/svix/svix-webhooks/go"
+)
+
+secret := "whsec_MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw"
+
+// These were all sent from the server
+headers := http.Header{}
+headers.Set("svix-id", "msg_p5jXN8AQM9LWM0D4loKWxJek")
+headers.Set("svix-timestamp", "1614265330")
+headers.Set("svix-signature", "v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE=")
+
+payload := []byte(`{"test": 2432232314}`)
+
+wh, err := svix.NewWebhook(secret)
+err := wh.Verify(payload, headers)
+// returns nil on success, error otherwise
+```
+</TabItem>
+
+<TabItem value="java" label="Java">
+
+```java
+import com.svix.Webhook;
+
+String secret = "whsec_MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw";
+
+// These were all sent from the server
+HashMap<String, List<String>> headerMap = new HashMap<String, List<String>>();
+headerMap.put("svix-id", Arrays.asList("msg_p5jXN8AQM9LWM0D4loKWxJek"));
+headerMap.put("svix-timestamp", Arrays.asList("1614265330"));
+headerMap.put("svix-signature", Arrays.asList("v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE="));
+HttpHeaders headers = HttpHeaders.of(headerMap, BiPredicate<String, String>)
+
+String payload = "{\"test\": 2432232314}";
+
+Webhook webhook = new Webhook(secret);
+
+webhook.verify(payload, headers)
+// throws WebhookVerificationError exception on failure. 
+```
+</TabItem>
+
+<TabItem value="rust" label="Rust">
+
+```rust
+use svix::webhooks::Webhook;
+
+let secret = "whsec_MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw".to_string();
+
+let mut headers = http::header::HeaderMap::new();
+headers.insert("svix-id", "msg_p5jXN8AQM9LWM0D4loKWxJek");
+headers.insert("svix-timestamp", "1614265330");
+headers.insert(
+    "svix-signature",
+    "v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE=",
+);
+
+let payload = b"{\"test\": 2432232314}";
+
+let wh = Webhook::new(&secret)?;
+wh.verify(&payload, &headers)?;
+// returns Ok on success, Err otherwise
+```
+</TabItem>
+
+<TabItem value="kotlin" label="Kotlin">
+
+```java
+import com.svix.kotlin.Webhook
+
+val secret = "whsec_MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw";
+
+// These were all sent from the server
+val headersMap = mapOf(
+    "svix-id" to listOf("msg_p5jXN8AQM9LWM0D4loKWxJek"),
+    "svix-timestamp" to listOf("1614265330"),
+    "svix-signature" to listOf("v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE=")
+)
+val headers = HttpHeaders.of(headersMap) { _, _ -> true }
+
+val payload = "{\"test\": 2432232314}";
+
+val webhook = Webhook(secret);
+
+webhook.verify(payload, headers)
+// throws WebhookVerificationError exception on failure.
+```
+</TabItem>
+
+<TabItem value="ruby" label="Ruby">
+
+```ruby
+require 'svix'
+
+# These were all sent from the server
+headers = {
+  "svix-id" => "msg_p5jXN8AQM9LWM0D4loKWxJek",
+  "svix-timestamp" => "1614265330",
+  "svix-signature" => "v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE="
+}
+payload = '{"test": 2432232314}'
+
+wh = Svix::Webhook.new("whsec_MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw")
+# Raises on error, returns the verified content on success
+json = wh.verify(payload, headers)
+```
+</TabItem>
+
+<TabItem value="php" label="PHP">
+
+```php
+// import using composers autoload
+require_once('vendor/autoload.php');
+// or manually
+require_once('/path/to/svix/php/init.php');
+
+// These were all sent from the server
+$payload = '{"test": 2432232314}';
+$header = array(
+        'svix-id'  => 'msg_p5jXN8AQM9LWM0D4loKWxJek',
+        'svix-timestamp' => '1614265330',
+        'svix-signature' => 'v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE=',
+    );
+
+// Throws on error, returns the verified content on success
+$wh = new \Svix\Webhook('whsec_MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw');
+$json = $wh->verify($payload, $header);
+```
+</TabItem>
+
+<TabItem value="cli" label="CLI">
+
+```sh
+export SVIX_AUTH_TOKEN="AUTH_TOKEN"
+svix verify --secret whsec_MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw --msg-id msg_p5jXN8AQM9LWM0D4loKWxJek --timestamp 1614265330 --signature v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE= '{"test": 2432232314}'
+```
+
+</TabItem>
+
+</Tabs>
 
 ---
 
