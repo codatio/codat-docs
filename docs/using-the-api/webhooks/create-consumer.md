@@ -7,10 +7,11 @@ description: "Create new webhook consumers and manage existing ones to receive w
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
 
-A webhook consumer is your application's implementation of a POST endpoint built to receive Codat's webhooks.
-In general, one webhook consumer is required per event type.
-The webhook consumer must receive a POST request and process the event within 15 seconds.
-We advise passing the event to an internal message queue to ensure the event is processed within the alloted time frame. 
+## Overview
+
+A _webhook consumer_ is your implementation of a POST endpoint that you built to receive Codat's webhooks. In general, you need one consumer per [event type](/using-the-api/webhooks/event-types).
+
+This consumer must process the event within 15 seconds when it receives a POST request. We recommend passing the event to an internal message queue so that you can process it in time.
 
 ## Configure webhook consumer
 
@@ -21,7 +22,7 @@ Add the endpoint URL that you want to receive the messages, an optional descript
 
 Browse our event catalog [in the Portal](https://app.codat.io/monitor/events) or in our [documentation](/using-the-api/webhooks/event-types) to choose the event types that suit your use case. 
 
-:::tip Create a consumer via the API
+:::tip Configure a consumer via the API
 
 You can create a webhook consumer programmatically using our [Create webhook](/platform-api#/operations/create-webhook-consumer) endpoint.
 
